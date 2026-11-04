@@ -18,7 +18,9 @@ npm ci
 npm run dev
 ```
 
-`npm run check` runs lint, type checks, unit/UI tests, and the production build. After building, run `npx playwright install chromium webkit` and `npm run test:e2e` for browser journeys. GitHub Actions tests the actual `/kikimashta/` deployment path before publishing.
+`npm run check` runs lint, type checks, unit/UI tests, and the production build. After building, run `npx playwright install chromium webkit` and `npm run test:e2e` for browser journeys. GitHub Actions tests the `/` deployment path used by `kikimashta.com` before publishing.
+
+Production uses GitHub Pages with `kikimashta.com` configured in the repository’s Pages settings. Domain routing is managed there; the Actions deployment does not use a repository `CNAME` file.
 
 The word bank is in `content/ja.json`. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed.
 

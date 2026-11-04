@@ -23,7 +23,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     env:
-      VITE_BASE_PATH: /kikimashta/
+      VITE_BASE_PATH: /
     steps:
       - uses: actions/checkout@v7.0.1
         with:
