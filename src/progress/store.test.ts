@@ -1,0 +1,97 @@
+import 'fake-indexeddb/auto';
+import { deleteDB } from 'idb';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import type { PracticeAttempt } from '../types';
+import { ProgressStore } from './store';
+
+let sequence = 0;
+const stores: ProgressStore[] = [];
+const databaseNames: string[] = [];
+
+function openStore(name = `progress-test-${sequence++}`) {
+  const store = new ProgressStore(name);
+  stores.push(store);
+  if (!databaseNames.includes(name)) databaseNames.push(name);
+  return store;
+}
+
+function attempt(overrides: Partial<PracticeAttempt> = {}): PracticeAttempt {
+  return {
+    id: 'attempt-1', sessionId: 'session-1', itemId: 'cat', language: 'ja-JP',
+    choiceIds: ['cat', 'dog'], selectedId: 'cat', correct: true,
+    startedAt: 1000, answeredAt: 1500, responseMs: 500, ...overrides,
+  };
+}
+
+afterEach(async () => {
+  await Promise.all(stores.splice(0).map(store => store.close()));
+  await Promise.all(databaseNames.splice(0).map(name => deleteDB(name)));
+});
+
+describe('local progress', () => {
+  it('retains complete attempts when a store is closed and opened again', async () => {
+    const name = `progress-test-${sequence++}`;
+    const first = openStore(name);
+    const saved = attempt();
+    await first.record(saved);
+    await first.close();
+
+    const reopened = openStore(name);
+    expect(await reopened.history('ja-JP')).toEqual([saved]);
+  });
+
+  it('records an attempt only once even when deliveries overlap', async () => {
+    const store = openStore();
+    const saved = attempt();
+    await Promise.all([store.record(saved), store.record(saved)]);
+    await store.record(attempt({ correct: false }));
+
+    expect(await store.history('ja-JP')).toEqual([saved]);
+    expect(await store.summary('ja-JP')).toEqual([
+      { itemId: 'cat', language: 'ja-JP', attempts: 1, correct: 1, lastPracticedAt: 1500 },
+    ]);
+  });
+
+  it('keeps languages separate and summarizes out-of-order practice correctly', async () => {
+    const store = openStore();
+    await store.record(attempt({ id: 'later', answeredAt: 3000 }));
+    await store.record(attempt({ id: 'earlier', answeredAt: 2000, correct: false, selectedId: 'dog' }));
+    await store.record(attempt({ id: 'spanish', language: 'es-ES', answeredAt: 4000 }));
+
+    expect(await store.summary('ja-JP')).toEqual([
+      { itemId: 'cat', language: 'ja-JP', attempts: 2, correct: 1, lastPracticedAt: 3000 },
+    ]);
+    expect(await store.summary('es-ES')).toEqual([
+      { itemId: 'cat', language: 'es-ES', attempts: 1, correct: 1, lastPracticedAt: 4000 },
+    ]);
+    expect(await store.history('fr-FR')).toEqual([]);
+  });
+
+  it('reports an opening failure and allows a later retry', async () => {
+    const store = openStore();
+    vi.spyOn(indexedDB, 'open').mockImplementationOnce(() => {
+      throw new DOMException('Storage temporarily unavailable', 'UnknownError');
+    });
+    await expect(store.record(attempt())).rejects.toThrow(/unavailable/i);
+    await expect(store.record(attempt())).resolves.toBeUndefined();
+    expect(await store.history('ja-JP')).toHaveLength(1);
+  });
+
+  it('handles an aborted write without saving a partial record and allows retry', async () => {
+    const store = openStore();
+    const saved = attempt();
+    const originalAdd = IDBObjectStore.prototype.add;
+    vi.spyOn(IDBObjectStore.prototype, 'add').mockImplementationOnce(function (
+      this: IDBObjectStore, ...args: Parameters<IDBObjectStore['add']>
+    ) {
+      const request = originalAdd.apply(this, args);
+      this.transaction.abort();
+      return request;
+    });
+
+    await expect(store.record(saved)).rejects.toMatchObject({ name: 'AbortError' });
+    expect(await store.history('ja-JP')).toEqual([]);
+    await expect(store.record(saved)).resolves.toBeUndefined();
+    expect(await store.history('ja-JP')).toEqual([saved]);
+  });
+});
