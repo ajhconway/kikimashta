@@ -27,3 +27,27 @@ jobs:
               core.info(JSON.stringify({ title: milestone.title, number: milestone.number, url: milestone.html_url }));
               await core.summary.addLink(milestone.title, milestone.html_url).addEOL().write();
             }
+            const dependencies = [
+              { issue: 2, blockedBy: [1] },
+              { issue: 3, blockedBy: [1] },
+              { issue: 4, blockedBy: [1] },
+              { issue: 5, blockedBy: [2, 3, 4] },
+              { issue: 6, blockedBy: [5] },
+            ];
+            const headers = { 'X-GitHub-Api-Version': '2026-03-10' };
+            for (const { issue, blockedBy } of dependencies) {
+              const existingDependencies = await github.paginate(
+                'GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by',
+                { ...context.repo, issue_number: issue, headers }
+              );
+              for (const blocker of blockedBy) {
+                const { data: blockerIssue } = await github.rest.issues.get({ ...context.repo, issue_number: blocker });
+                if (!existingDependencies.some(item => item.id === blockerIssue.id)) {
+                  await github.request(
+                    'POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by',
+                    { ...context.repo, issue_number: issue, issue_id: blockerIssue.id, headers }
+                  );
+                }
+                core.info(JSON.stringify({ issue, blockedBy: blocker }));
+              }
+            }
