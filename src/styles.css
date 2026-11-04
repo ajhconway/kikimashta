@@ -62,12 +62,14 @@ height:6px;
 background:#829a6b;
 border-radius:50%}
 main{flex:1;
+min-width:0;
 width:100%;
 display:grid;
 align-content:center;
 justify-items:center;
 padding:52px 0}
 .home,.practice,.summary{width:100%;
+min-width:0;
 max-width:520px;
 text-align:center}
 .eyebrow{font-size:10px;
@@ -208,17 +210,33 @@ overflow:hidden}
 background:#9aaa83;
 transition:width .2s}
 .choices{display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,minmax(0,1fr));
+align-items:start;
 gap:15px;
+width:100%;
+min-width:0;
 max-width:420px;
 margin:0 auto}
 .picture-choice{border:1.5px solid #e2e1d4;
 background:#fffdf7;
-padding:20px;
+--picture-inset:20px;
+display:block;
+width:100%;
+min-width:0;
+min-height:0;
+padding:0;
 border-radius:23px;
 aspect-ratio:1;
 position:relative;
+overflow:hidden;
 transition:transform .15s,border-color .15s,background .15s}
+/* Keep image intrinsic dimensions out of grid and button sizing in WebKit. */
+.picture-choice>img{position:absolute;
+top:var(--picture-inset);
+left:var(--picture-inset);
+width:calc(100% - var(--picture-inset) - var(--picture-inset));
+height:calc(100% - var(--picture-inset) - var(--picture-inset));
+object-fit:contain}
 .picture-choice:not(:disabled):hover{transform:translateY(-3px);
 border-color:#8da283}
 .picture-choice.correct{border-color:#6f9773;
@@ -322,7 +340,7 @@ gap:10px}
 .primary{max-width:none}
 .practice-title{font-size:29px}
 .choices{gap:12px}
-.picture-choice{padding:17px;
+.picture-choice{--picture-inset:17px;
 border-radius:20px}
 .preview-picture{width:210px;
 height:210px}

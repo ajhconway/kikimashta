@@ -15,6 +15,14 @@ async function chooseHeardPicture(page: Page) {
   });
   await choice.click();
   await expect(page.getByText('You found it.', { exact: true })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => {
+    const choices = document.querySelector('.choices')!.getBoundingClientRect();
+    const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
+    const cards = Array.from(document.querySelectorAll('.picture-choice'), card => card.getBoundingClientRect());
+    return document.documentElement.scrollWidth <= innerWidth
+      && cards.every(card => card.left >= choices.left - 1 && card.right <= choices.right + 1
+        && card.bottom <= feedback.top && Math.abs(card.width - card.height) <= 1);
+  }), { message: 'picture cards fit the viewport and leave feedback unobscured' }).toBe(true);
 }
 
 test('preview, complete a short round, and retain real device progress after reload', async ({ page }, testInfo) => {
