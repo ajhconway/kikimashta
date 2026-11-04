@@ -8,7 +8,7 @@ Read `PLAN.md` before starting. Keep the product and plan simple, flexible, and 
 - Before app implementation, push the planning files to GitHub and create the initial milestones and issues. Every implementation task must reference a GitHub issue.
 - Establish the app skeleton and shared data types before parallel feature implementation. The coordinator owns shared interfaces, project configuration, integration, and final verification.
 - Give each worker an outcome, completion criteria, dependencies, owned files, and expected checks. Workers should request coordination before changing files owned by another task.
-- Use one branch and worktree per implementation task once Git is initialized. Until then, give workers disjoint file ownership in the shared workspace.
+- Use one branch and worktree per implementation task when the environment permits it. If Git metadata writes are restricted, keep disjoint file ownership in the shared workspace and publish through the GitHub connector; report this limit.
 - Workers return their changes, files touched, verification results, and unresolved concerns to the coordinator. The coordinator reviews and integrates them. Workers do not merge, push, or deploy independently.
 
 | Worker role | Responsibility |
@@ -35,4 +35,6 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 ## Project setup
 
-The app has not been scaffolded yet. Add verified setup, test, and build commands here when they exist.
+Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/kikimashta/` deployment path in Chromium and mobile WebKit.
+
+The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
