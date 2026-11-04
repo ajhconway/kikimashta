@@ -1,7 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
-import bank from '../content/ja.json';
+import bank from '../content/ja.json' with { type: 'json' };
 
 async function chooseHeardPicture(page: Page) {
+  for (const image of await page.locator('img').all()) {
+    await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
   const audio = page.locator('audio');
   await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).readyState)).toBeGreaterThanOrEqual(2);
   const source = await audio.getAttribute('src');
@@ -16,6 +19,9 @@ async function chooseHeardPicture(page: Page) {
 
 test('preview, complete a short round, and retain real device progress after reload', async ({ page }, testInfo) => {
   await page.goto('./');
+  for (const image of await page.locator('img').all()) {
+    await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
   await page.screenshot({ path: 'test-results/home-' + testInfo.project.name + '.png', fullPage: true });
   await page.getByRole('button', { name: /let's listen/i }).click();
   await expect(page.getByRole('heading', { name: /look. listen. let it sink in/i })).toBeVisible();
