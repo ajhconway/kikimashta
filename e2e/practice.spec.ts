@@ -22,9 +22,11 @@ test('preview, complete a short round, and retain real device progress after rel
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
-  await page.screenshot({ path: 'test-results/home-' + testInfo.project.name + '.png', fullPage: true });
+  await page.screenshot({ path: 'test-results/home-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
   await page.getByRole('button', { name: /let's listen/i }).click();
   await expect(page.getByRole('heading', { name: /look. listen. let it sink in/i })).toBeVisible();
+  await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await page.screenshot({ path: 'test-results/preview-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
   for (let i = 0; i < bank.items.length - 1; i++) {
     await page.getByRole('button', { name: /next little word/i }).click();
   }
@@ -32,10 +34,12 @@ test('preview, complete a short round, and retain real device progress after rel
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
     await chooseHeardPicture(page);
+    if (i === 0) await page.screenshot({ path: 'test-results/quiz-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
     await page.getByRole('button', { name: i + 1 === bank.items.length ? /see how you did/i : /next sound/i }).click();
   }
   await expect(page.getByRole('heading', { name: /nicely listened/i })).toBeVisible();
   await expect(page.getByText(`${bank.items.length} / ${bank.items.length}`, { exact: true })).toBeVisible();
+  await page.screenshot({ path: 'test-results/summary-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
   await page.getByRole('button', { name: /back to the beginning/i }).click();
   await expect(page.getByText(`${bank.items.length} answers tucked away on this device`)).toBeVisible();
   await page.reload();
