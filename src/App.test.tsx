@@ -122,6 +122,6 @@ describe('practice interactions', () => {
     await act(async () => { retry.resolve(); });
     expect(screen.getByRole('button', { name: /next sound/i })).toBeEnabled();
     await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    expect(await screen.findByText('1 answers tucked away on this device')).toBeInTheDocument();
+    expect(await screen.findByText('1 answer tucked away on this device')).toBeInTheDocument();
   });
 });
