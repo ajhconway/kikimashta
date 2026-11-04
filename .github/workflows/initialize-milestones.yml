@@ -1,0 +1,29 @@
+name: Initialize project milestones
+
+'on':
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/initialize-milestones.yml]
+
+permissions:
+  issues: write
+
+jobs:
+  milestones:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v9
+        with:
+          script: |
+            const definitions = [
+              { title: 'v0', description: 'A small, enjoyable listening game with previews, untimed sessions, local progress, and GitHub Pages hosting.' },
+              { title: 'Sync', description: 'Soon after v0: Supabase sign-in and cross-device sync, preserving existing history.' },
+            ];
+            const existing = await github.paginate(github.rest.issues.listMilestones, { ...context.repo, state: 'all', per_page: 100 });
+            for (const definition of definitions) {
+              const milestone = existing.find(item => item.title === definition.title)
+                ?? (await github.rest.issues.createMilestone({ ...context.repo, ...definition })).data;
+              core.info(JSON.stringify({ title: milestone.title, number: milestone.number, url: milestone.html_url }));
+              await core.summary.addLink(milestone.title, milestone.html_url).addEOL().write();
+            }
