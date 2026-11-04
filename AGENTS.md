@@ -35,6 +35,6 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 ## Project setup
 
-Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/kikimashta/` deployment path in Chromium and mobile WebKit.
+Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
 The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
