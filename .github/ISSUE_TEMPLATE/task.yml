@@ -1,0 +1,45 @@
+name: Task
+description: Define a small, verifiable piece of work.
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What should be different when this task is finished?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Identify the affected area, boundaries, and relevant files or interfaces.
+    validations:
+      required: true
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done when
+      description: List observable completion criteria as a short checklist.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: Describe relevant behavior tests and any iPhone Safari checks. Keep fixtures isolated and deterministic; record actual results in the PR.
+    validations:
+      required: true
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link any issues or decisions that must be completed first.
+    validations:
+      required: false
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Agent or person responsible; the coordinator can assign this later.
+    validations:
+      required: false
