@@ -33,11 +33,15 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 - Each agent includes relevant tests with its changes. Review test quality and integration; require lint, type checks, tests, and a production build in GitHub Actions before merging or deploying.
 - Check pronunciation, playback, touch interactions, and layout on the actual iPhone at playable milestones and before releases.
 
-## Build sequence
+## Current priorities
 
-1. Make a tiny playable sample. Test the audio, pictures, pacing, and feedback on the phone.
-2. Expand the mixed word bank, complete progress tracking, and publish v0.
-3. Soon after v0, add Supabase sign-in and cross-device sync, carrying forward existing progress.
+V0 is playable. Refine it in this order, reviewing each pass before moving on:
+
+1. **Visuals:** minimal, brighter purple/pink/orange, and more cartoony and game-like.
+2. **Audio:** replace the low-quality voice after comparing better samples.
+3. **Interactions:** more fun, engaging, fast-paced, and natural.
+
+Then add Supabase sign-in and cross-device sync, carrying forward existing progress.
 
 Later, add adaptive review scheduling and introduce new words as mastery improves. Sessions can then continue until no practice items are available. Add offline practice, decreasing answer time limits, delayed-picture and sentence quizzes, and Japanese writing alongside audio and pictures. English text remains an option.
 

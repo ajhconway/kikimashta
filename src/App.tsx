@@ -114,53 +114,53 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
     showQuestion(questions[index + 1]!, active.current.sessionId);
   }
   const correct = answers.filter(answer => answer.correct).length;
-  return <div className="app">
+  return <div className={'app app-' + screen}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    <header><button className="brand" onClick={home} aria-label="Kikimashta home"><span className="brand-mark">◒</span> kikimashta<span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
+    <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg> kikimashta<span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
-        <div className="eyebrow">A SMALL DAILY ADVENTURE</div>
-        <h1>A little listening.<br/><em>A little discovery.</em></h1>
-        <p className="intro">Find the picture hiding in the sound.<br/>Take your time. Let the words settle in.</p>
-        <div className="world" aria-hidden="true">{[bank.items[0]!, bank.items[2]!, bank.items[4]!].map((item, i) => <div className={'world-card card-' + i} key={item.id}><Picture item={item}/></div>)}<span className="spark spark-one">✧</span><span className="spark spark-two">✦</span></div>
-        <div className="session-note"><span>6 words</span><b>·</b><span>3 little worlds</span><b>·</b><span>your own pace</span></div>
-        <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); play(bank.items[0]!); }}>Let's listen <span aria-hidden="true">↗</span></button>
-        <button className="text-button" onClick={startQuiz}>Already familiar? Jump into a round <span aria-hidden="true">→</span></button>
-        <div className="history">{historyError ? 'Progress storage is unavailable. Saving may need a retry.' : total ? total + (total === 1 ? ' answer' : ' answers') + ' tucked away on this device' : 'A fresh start. One sound at a time.'}</div>
+        <div className="eyebrow">JAPANESE LISTENING</div>
+        <h1>Listen.<br/><em>Pick a picture.</em></h1>
+        <p className="intro">A little practice. A little play.</p>
+        <div className="world" aria-hidden="true">{[bank.items[0]!, bank.items[2]!, bank.items[4]!].map((item, i) => <div className={'world-card card-' + i} key={item.id}><Picture item={item}/></div>)}</div>
+        <div className="session-note"><span>6 words</span><b>·</b><span>No timer</span></div>
+        <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); play(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
+        <button className="text-button" onClick={startQuiz}>Skip to quiz <span aria-hidden="true">→</span></button>
+        <div className="history">{historyError ? 'Progress storage is unavailable. Saving may need a retry.' : total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
       </section>}
-      {screen === 'preview' && target && <section className="practice fade-in">
+      {screen === 'preview' && target && <section className="practice preview fade-in">
         <div className="section-top"><span className="eyebrow">MEET THE WORDS</span><span className="counter">{preview + 1} / {bank.items.length}</span></div>
-        <h1 className="practice-title">Look. Listen. Let it sink in.</h1>
+        <h1 className="practice-title">Listen & look</h1>
         <div className="preview-picture"><Picture item={target}/></div>
-        <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Listening…' : 'Listen again'}</span></button>
-        <p className="hint">Just the picture and the sound.</p>
-        {audioError && <p role="alert" className="error">The sound couldn't play. Tap listen again to retry.</p>}
+        <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+
+        {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="preview-dots" aria-label={'Word ' + (preview + 1) + ' of ' + bank.items.length}>{bank.items.map((item, i) => <span key={item.id} className={i === preview ? 'active' : ''}/>)}</div>
-        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < bank.items.length) { setPreview(preview + 1); play(bank.items[preview + 1]!); } else startQuiz(); }}>{preview + 1 === bank.items.length ? 'Play a round' : 'Next little word'} <span aria-hidden="true">→</span></button>
+        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < bank.items.length) { setPreview(preview + 1); play(bank.items[preview + 1]!); } else startQuiz(); }}>{preview + 1 === bank.items.length ? 'Play a round' : 'Next word'} <span aria-hidden="true">→</span></button>
       </section>}
-      {screen === 'quiz' && target && <section className="practice fade-in">
-        <div className="section-top"><span className="eyebrow">FOLLOW THE SOUND</span><span className="counter">{index + 1} / {questions.length}</span></div>
+      {screen === 'quiz' && target && <section className="practice quiz fade-in">
+        <div className="section-top"><span className="eyebrow">PICK THE PICTURE</span><span className="counter">{index + 1} / {questions.length}</span></div>
         <div className="progress-track" role="progressbar" aria-label="Session progress" aria-valuenow={index} aria-valuemin={0} aria-valuemax={questions.length}><div style={{ width: (index / questions.length * 100) + '%' }}/></div>
-        <h1 className="practice-title">Which picture did you hear?</h1>
-        <button className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Listening…' : 'Listen again'}</span></button>
-        {audioError && <p role="alert" className="error">The sound couldn't play. Tap listen again to retry.</p>}
+        <h1 className="practice-title">What did you hear?</h1>
+        <button className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+        {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="choices">{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           return <button key={item.id} className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button>;
         })}</div>
-        <div className="feedback" aria-live="polite">{feedback ? <><strong>{feedback.correct ? 'You found it.' : 'A new little connection.'}</strong><p>{feedback.correct ? 'That sound is finding a home.' : 'The highlighted picture matches the sound. Give it another listen.'}</p></> : <p className="hint">Listen as often as you like. There's no rush.</p>}</div>
+        <div className="feedback" aria-live="polite">{feedback ? <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct && <p>Listen again to match the picture.</p>}</> : <p className="hint">Tap a picture.</p>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
-        {feedback && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Tucking that away…' : index + 1 === questions.length ? 'See how you did' : 'Next sound'} <span aria-hidden="true">→</span></button>}
+        {feedback && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Next sound'} <span aria-hidden="true">→</span></button>}
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
-        <div className="eyebrow">A LITTLE MORE FAMILIAR</div><div className="finish-mark" aria-hidden="true">✧</div>
-        <h1>Nicely listened.</h1><p className="intro">Six small sounds.<br/>A few new connections.</p>
+        <div className="eyebrow">ROUND COMPLETE</div><div className="finish-mark" aria-hidden="true">★</div>
+        <h1>Nice round!</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong><p>pictures found</p></div>
         <div className="summary-pictures">{questions.map(question => <div key={question.target.id}><Picture item={question.target}/><span aria-label={answers.find(answer => answer.itemId === question.target.id)?.correct ? 'Correct' : 'To revisit'}>{answers.find(answer => answer.itemId === question.target.id)?.correct ? '✓' : '↺'}</span></div>)}</div>
-        <p className="hint">Every listen counts. Come back whenever you like.</p>
-        <button className="primary" onClick={startQuiz}>Another little round <span aria-hidden="true">↗</span></button><button className="text-button" onClick={home}>Back to the beginning</button>
+
+        <button className="primary" onClick={startQuiz}>Play again <span aria-hidden="true">↗</span></button><button className="text-button" onClick={home}>Back home</button>
       </section>}
-    </main><footer><span>small sounds, growing worlds</span><span aria-hidden="true">✧</span><a href={asset('credits.html')}>Media credits ↗</a></footer>
+    </main><footer><a href={asset('credits.html')}>Media credits ↗</a></footer>
   </div>;
 }
