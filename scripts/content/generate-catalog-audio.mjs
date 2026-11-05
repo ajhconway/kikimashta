@@ -17,12 +17,31 @@ export function entriesForLevel(catalog, level) {
   }
   return entries
 }
+export function requestsForLevel(catalog, level, selection) {
+  const entries = entriesForLevel(catalog, level)
+  if (selection === undefined) return entries.flatMap(item => VOICES.map(voice => ({ item, voice })))
+  if (!Array.isArray(selection)) throw new Error('Repair selection must be an array.')
+  const seen = new Set()
+  const requests = []
+  for (const repair of selection) {
+    const matches = catalog.items.filter(item => item.id === repair?.id)
+    if (matches.length !== 1 || matches[0].reuseStarterAssets || !VOICES.includes(repair?.voice)) throw new Error('Invalid repair selection: unknown item, reused asset, or voice.')
+    const item = matches[0]
+    // Validate every selected level before any directory creation or paid request.
+    entriesForLevel(catalog, item.sourceLevel)
+    const key = `${item.id}:${repair.voice}`
+    if (seen.has(key)) throw new Error('Duplicate repair selection: ' + key)
+    seen.add(key)
+    if (item.sourceLevel === level) requests.push({ item, voice: repair.voice })
+  }
+  return requests
+}
 export function instructionsFor(item) {
   return INSTRUCTIONS + ` Vocabulary context (do not read this metadata aloud): written form ${item.text}; pronunciation ${item.reading}; intended meaning ${item.meaning}. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.`
 }
 
-export async function generateLevel({ catalog, level, output, apiKey, speak = synthesize, encodeFile = encode }) {
-  const entries = entriesForLevel(catalog, level)
+export async function generateLevel({ catalog, level, output, apiKey, selection, speak = synthesize, encodeFile = encode }) {
+  const requests = requestsForLevel(catalog, level, selection)
   await mkdir(output, { recursive: false })
   const manifest = { provider: 'OpenAI', model: MODEL, language: catalog.language, sourceLevel: level,
     createdAt: new Date().toISOString(), sourceRevision: process.env.GITHUB_SHA ?? null,
@@ -30,8 +49,9 @@ export async function generateLevel({ catalog, level, output, apiKey, speak = sy
     contextTemplate: 'Written form, reading, and intended meaning are supplied as silent metadata via instructionsFor; only the reading is spoken.',
     processing: 'Original mono 24kHz PCM preserved as WAV; active-sample RMS target -22 dBFS, max boost 9 dB, pre-MP3 sample peak ceiling -4 dBFS; 120ms lead/240ms tail padding; no trimming or pitch/time alteration.',
     review: 'Generated speech; pronunciation and pitch accent require listening review.',
-    expectedClips: entries.length * VOICES.length, clips: [], failures: [] }
-  for (const item of entries) for (const voice of VOICES) {
+    expectedClips: requests.length, clips: [], failures: [] }
+  await writeFile(join(output, 'provenance.json'), JSON.stringify(manifest, null, 2) + '\n')
+  for (const { item, voice } of requests) {
     try {
       console.log(`Generating ${voice}: ${item.id} (${item.reading})`)
       const instructions = instructionsFor(item)
@@ -60,12 +80,14 @@ async function main() {
   const { values } = parseArgs({ options: { level: { type: 'string' }, output: { type: 'string' }, 'dry-run': { type: 'boolean' } } })
   const catalog = JSON.parse(await readFile('content/catalog/ja.json', 'utf8'))
   const level = Number(values.level)
-  const entries = entriesForLevel(catalog, level)
-  if (values['dry-run']) { console.log(JSON.stringify({ level, requests: entries.length * 2, reused: catalog.items.filter(x => x.sourceLevel === level && x.reuseStarterAssets).length })); return }
+  const request = JSON.parse(await readFile('content/audio-generation-request.json', 'utf8'))
+  const selection = request.repairs
+  const requests = requestsForLevel(catalog, level, selection)
+  if (values['dry-run']) { console.log(JSON.stringify({ level, requests: requests.length, reused: catalog.items.filter(x => x.sourceLevel === level && x.reuseStarterAssets).length })); return }
   if (!process.env.OPENAI_API_KEY?.trim()) throw new Error('OPENAI_API_KEY is required.')
   const output = resolve(values.output ?? `artifacts/catalog-audio-level-${level}`)
   await mkdir(resolve(output, '..'), { recursive: true })
-  const result = await generateLevel({ catalog, level, output, apiKey: process.env.OPENAI_API_KEY.trim() })
+  const result = await generateLevel({ catalog, level, output, selection, apiKey: process.env.OPENAI_API_KEY.trim() })
   console.log(`Generated ${result.clips.length}/${result.expectedClips}; failures: ${result.failures.length}`)
   if (result.failures.length) process.exitCode = 1
 }

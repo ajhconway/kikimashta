@@ -1,6 +1,33 @@
 {
-  "id": "2026-11-05-vocabulary-levels-1-5",
+  "id": "2026-11-05-vocabulary-five-repairs",
   "mode": "catalog",
-  "levels": [1, 2, 3, 4, 5],
+  "levels": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "repairs": [
+    {
+      "id": "ja-v-520308b3c3b4",
+      "voice": "marin"
+    },
+    {
+      "id": "ja-v-cf58c5cf08d9",
+      "voice": "cedar"
+    },
+    {
+      "id": "ja-v-f78f531c55a5",
+      "voice": "cedar"
+    },
+    {
+      "id": "ja-v-7930a252da9b",
+      "voice": "cedar"
+    },
+    {
+      "id": "ja-v-0cbc7661647e",
+      "voice": "cedar"
+    }
+  ],
   "issue": 27
 }
