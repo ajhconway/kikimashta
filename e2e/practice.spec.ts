@@ -6,6 +6,25 @@ async function captureScreen(page: Page, name: string) {
   await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
 }
 
+async function checkMobilePracticeSizes(page: Page, pictureSelector: string, name: string) {
+  const original = page.viewportSize()!;
+  for (const viewport of [{ width: 390, height: 664 }, { width: 430, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    await expect.poll(() => page.evaluate(selector => {
+      const app = document.querySelector('.app')!.getBoundingClientRect();
+      const picture = document.querySelector(selector)!.getBoundingClientRect();
+      const action = document.querySelector('.practice-actions .primary')!.getBoundingClientRect();
+      return Math.abs(app.height - innerHeight) <= 1
+        && document.documentElement.scrollHeight <= innerHeight + 1
+        && document.documentElement.scrollWidth <= innerWidth
+        && picture.width >= innerWidth - 48 && picture.height >= innerHeight * .35
+        && action.bottom <= innerHeight && action.bottom >= innerHeight - 48;
+    }, pictureSelector), { message: 'practice fills the phone viewport with large pictures and a reachable bottom action' }).toBe(true);
+    await captureScreen(page, name + '-' + viewport.width);
+  }
+  await page.setViewportSize(original);
+}
+
 async function chooseHeardPicture(page: Page) {
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -26,7 +45,7 @@ async function chooseHeardPicture(page: Page) {
     const cards = Array.from(document.querySelectorAll('.picture-choice'), card => card.getBoundingClientRect());
     return document.documentElement.scrollWidth <= innerWidth
       && cards.every(card => card.left >= choices.left - 1 && card.right <= choices.right + 1
-        && card.bottom <= feedback.top && Math.abs(card.width - card.height) <= 1);
+        && card.bottom <= feedback.top);
   }), { message: 'picture cards fit the viewport and leave feedback unobscured' }).toBe(true);
 }
 
@@ -40,16 +59,23 @@ test('preview, complete a short round, and retain real device progress after rel
   await expect(page.getByRole('heading', { name: /listen & look/i })).toBeVisible();
   await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await captureScreen(page, 'preview-' + testInfo.project.name);
+  if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'preview-mobile');
   for (let i = 0; i < bank.items.length - 1; i++) {
     await page.getByRole('button', { name: /next word/i }).click();
   }
   await page.getByRole('button', { name: /play a round/i }).click();
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
+    const beforeAnswer = i === 0 && testInfo.project.use.isMobile ? await page.locator('.choices').boundingBox() : null;
     await chooseHeardPicture(page);
     if (i === 0) {
       await captureScreen(page, 'quiz-' + testInfo.project.name);
-      if (testInfo.project.use.isMobile) await expect(page.getByRole('button', { name: /next sound/i })).toBeInViewport({ ratio: 1 });
+      if (testInfo.project.use.isMobile) {
+        const afterAnswer = await page.locator('.choices').boundingBox();
+        expect(Math.abs(afterAnswer!.height - beforeAnswer!.height), 'answer feedback keeps the picture grid stable').toBeLessThanOrEqual(1);
+        await checkMobilePracticeSizes(page, '.choices', 'quiz-mobile');
+        await expect(page.getByRole('button', { name: /next sound/i })).toBeInViewport({ ratio: 1 });
+      }
     }
     await page.getByRole('button', { name: i + 1 === bank.items.length ? /see results/i : /next sound/i }).click();
   }

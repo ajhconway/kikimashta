@@ -116,7 +116,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
   const correct = answers.filter(answer => answer.correct).length;
   return <div className={'app app-' + screen}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg> kikimashta<span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
+    <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
         <div className="eyebrow">JAPANESE LISTENING</div>
@@ -132,11 +132,13 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
         <div className="section-top"><span className="eyebrow">MEET THE WORDS</span><span className="counter">{preview + 1} / {bank.items.length}</span></div>
         <h1 className="practice-title">Listen & look</h1>
         <div className="preview-picture"><Picture item={target}/></div>
+        <div className="practice-actions">
         <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
 
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="preview-dots" aria-label={'Word ' + (preview + 1) + ' of ' + bank.items.length}>{bank.items.map((item, i) => <span key={item.id} className={i === preview ? 'active' : ''}/>)}</div>
         <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < bank.items.length) { setPreview(preview + 1); play(bank.items[preview + 1]!); } else startQuiz(); }}>{preview + 1 === bank.items.length ? 'Play a round' : 'Next word'} <span aria-hidden="true">→</span></button>
+        </div>
       </section>}
       {screen === 'quiz' && target && <section className="practice quiz fade-in">
         <div className="section-top"><span className="eyebrow">PICK THE PICTURE</span><span className="counter">{index + 1} / {questions.length}</span></div>
@@ -149,9 +151,11 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           return <button key={item.id} className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button>;
         })}</div>
+        <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback ? <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct && <p>Listen again to match the picture.</p>}</> : <p className="hint">Tap a picture.</p>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Next sound'} <span aria-hidden="true">→</span></button>}
+        </div>
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="eyebrow">ROUND COMPLETE</div><div className="finish-mark" aria-hidden="true">★</div>
