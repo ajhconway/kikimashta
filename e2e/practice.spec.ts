@@ -14,7 +14,7 @@ async function chooseHeardPicture(page: Page) {
     has: page.getByRole('img', { name: target!.image.alt, exact: true }),
   });
   await choice.click();
-  await expect(page.getByText('You found it.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Got it!', { exact: true })).toBeVisible();
   await expect.poll(() => page.evaluate(() => {
     const choices = document.querySelector('.choices')!.getBoundingClientRect();
     const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
@@ -31,33 +31,33 @@ test('preview, complete a short round, and retain real device progress after rel
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
   await page.screenshot({ path: 'test-results/home-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
-  await page.getByRole('button', { name: /let's listen/i }).click();
-  await expect(page.getByRole('heading', { name: /look. listen. let it sink in/i })).toBeVisible();
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByRole('heading', { name: /listen & look/i })).toBeVisible();
   await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await page.screenshot({ path: 'test-results/preview-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
   for (let i = 0; i < bank.items.length - 1; i++) {
-    await page.getByRole('button', { name: /next little word/i }).click();
+    await page.getByRole('button', { name: /next word/i }).click();
   }
   await page.getByRole('button', { name: /play a round/i }).click();
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
     await chooseHeardPicture(page);
     if (i === 0) await page.screenshot({ path: 'test-results/quiz-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
-    await page.getByRole('button', { name: i + 1 === bank.items.length ? /see how you did/i : /next sound/i }).click();
+    await page.getByRole('button', { name: i + 1 === bank.items.length ? /see results/i : /next sound/i }).click();
   }
-  await expect(page.getByRole('heading', { name: /nicely listened/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
   await expect(page.getByText(`${bank.items.length} / ${bank.items.length}`, { exact: true })).toBeVisible();
   await page.screenshot({ path: 'test-results/summary-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
-  await page.getByRole('button', { name: /back to the beginning/i }).click();
-  await expect(page.getByText(`${bank.items.length} answers tucked away on this device`)).toBeVisible();
+  await page.getByRole('button', { name: /back home/i }).click();
+  await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
   await page.reload();
-  await expect(page.getByText(`${bank.items.length} answers tucked away on this device`)).toBeVisible();
+  await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
 });
 
 test('an unavailable recording can be retried without recording a premature answer', async ({ page }) => {
   await page.route('**/audio/*.mp3', route => route.abort());
   await page.goto('./');
-  await page.getByRole('button', { name: /jump into a round/i }).click();
+  await page.getByRole('button', { name: /skip to quiz/i }).click();
   await expect(page.getByRole('alert')).toContainText(/sound couldn't play/i);
   for (const choice of await page.getByRole('button', { name: /choose picture/i }).all()) await expect(choice).toBeDisabled();
   await page.unroute('**/audio/*.mp3');
@@ -66,5 +66,5 @@ test('an unavailable recording can be retried without recording a premature answ
   await chooseHeardPicture(page);
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
-  await expect(page.getByText('1 answer tucked away on this device')).toBeVisible();
+  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
 });

@@ -3,11 +3,11 @@
   "language": "ja-JP",
   "title": "Little everyday things",
   "items": [
-    {"id":"ja-cat","language":"ja-JP","theme":"animals","label":"Cat","text":"猫","reading":"ねこ","image":{"src":"images/cat.jpg","source":"generated","alt":"A cat"},"audio":{"src":"audio/cat.mp3","source":"synthesized"}},
-    {"id":"ja-dog","language":"ja-JP","theme":"animals","label":"Dog","text":"犬","reading":"いぬ","image":{"src":"images/dog.jpg","source":"generated","alt":"A dog"},"audio":{"src":"audio/dog.mp3","source":"synthesized"}},
-    {"id":"ja-apple","language":"ja-JP","theme":"food","label":"Apple","text":"りんご","image":{"src":"images/apple.jpg","source":"generated","alt":"An apple"},"audio":{"src":"audio/apple.mp3","source":"synthesized"}},
-    {"id":"ja-banana","language":"ja-JP","theme":"food","label":"Banana","text":"バナナ","image":{"src":"images/banana.jpg","source":"generated","alt":"A banana"},"audio":{"src":"audio/banana.mp3","source":"synthesized"}},
-    {"id":"ja-umbrella","language":"ja-JP","theme":"objects","label":"Umbrella","text":"傘","reading":"かさ","image":{"src":"images/umbrella.jpg","source":"generated","alt":"An umbrella"},"audio":{"src":"audio/umbrella.mp3","source":"synthesized"}},
-    {"id":"ja-cup","language":"ja-JP","theme":"objects","label":"Cup","text":"コップ","image":{"src":"images/cup.jpg","source":"generated","alt":"A drinking cup"},"audio":{"src":"audio/cup.mp3","source":"synthesized"}}
+    {"id":"ja-cat","language":"ja-JP","theme":"animals","label":"Cat","text":"猫","reading":"ねこ","image":{"src":"images/cat.svg","source":"generated","alt":"A cat"},"audio":{"src":"audio/cat.mp3","source":"synthesized"}},
+    {"id":"ja-dog","language":"ja-JP","theme":"animals","label":"Dog","text":"犬","reading":"いぬ","image":{"src":"images/dog.svg","source":"generated","alt":"A dog"},"audio":{"src":"audio/dog.mp3","source":"synthesized"}},
+    {"id":"ja-apple","language":"ja-JP","theme":"food","label":"Apple","text":"りんご","image":{"src":"images/apple.svg","source":"generated","alt":"An apple"},"audio":{"src":"audio/apple.mp3","source":"synthesized"}},
+    {"id":"ja-banana","language":"ja-JP","theme":"food","label":"Banana","text":"バナナ","image":{"src":"images/banana.svg","source":"generated","alt":"A banana"},"audio":{"src":"audio/banana.mp3","source":"synthesized"}},
+    {"id":"ja-umbrella","language":"ja-JP","theme":"objects","label":"Umbrella","text":"傘","reading":"かさ","image":{"src":"images/umbrella.svg","source":"generated","alt":"An umbrella"},"audio":{"src":"audio/umbrella.mp3","source":"synthesized"}},
+    {"id":"ja-cup","language":"ja-JP","theme":"objects","label":"Cup","text":"コップ","image":{"src":"images/cup.svg","source":"generated","alt":"A drinking cup"},"audio":{"src":"audio/cup.mp3","source":"synthesized"}}
   ]
 }
