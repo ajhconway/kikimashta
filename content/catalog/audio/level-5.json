@@ -1,0 +1,60 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "language": "ja-JP",
+  "sourceLevel": 5,
+  "createdAt": "2026-11-05T15:40:17.699Z",
+  "sourceRevision": "b757589b87dadcdebfbb0a1c3055d265666a5711",
+  "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "contextTemplate": "Written form, reading, and intended meaning are supplied as silent metadata via instructionsFor; only the reading is spoken.",
+  "processing": "Original mono 24kHz PCM preserved as WAV; active-sample RMS target -22 dBFS, max boost 9 dB, pre-MP3 sample peak ceiling -4 dBFS; 120ms lead/240ms tail padding; no trimming or pitch/time alteration.",
+  "review": "Generated speech; pronunciation and pitch accent require listening review.",
+  "expectedClips": 1,
+  "clips": [
+    {
+      "id": "ja-v-c2a96f1d7abc",
+      "voice": "marin",
+      "spelling": "入社",
+      "text": "にゅうしゃ",
+      "meaning": "Joining A Company",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 入社; pronunciation にゅうしゃ; intended meaning Joining A Company. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "にゅうしゃ",
+      "usage": {
+        "total_tokens": 279,
+        "input_tokens": 158,
+        "output_tokens": 121,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 101,
+          "audio_tokens": 20,
+          "reasoning_tokens": 87
+        }
+      },
+      "file": "marin-ja-v-c2a96f1d7abc.mp3",
+      "original": "marin-ja-v-c2a96f1d7abc.wav",
+      "originalSha256": "347ab261f61bb66c9a519b117eb0343503030212ed7a7eabedc5beb52a0c33ca",
+      "deliverySha256": "1ab746b8ecf58f15d08b285f7a2a7cce12e66ff19878f93acdc0ace7aedda401",
+      "deliveryBytes": 9164,
+      "durationSeconds": 1,
+      "rmsDb": -19.675833340686502,
+      "peakDb": -10.08520494699453,
+      "gainDb": -2.324166659313498
+    }
+  ],
+  "failures": [],
+  "generation": {
+    "runId": "42057222621",
+    "attempt": "1",
+    "sourceRevision": "b757589b87dadcdebfbb0a1c3055d265666a5711"
+  }
+}
