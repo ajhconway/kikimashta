@@ -138,7 +138,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git switch -c "content/catalog-audio-${GITHUB_RUN_ID}"
+          git switch -c "content/catalog-audio-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           git add public/audio/vocabulary content/catalog/audio
           git commit -m 'Stage generated catalog recordings for review (#27)'
-          git push origin "content/catalog-audio-${GITHUB_RUN_ID}"
+          git push origin "content/catalog-audio-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
