@@ -1,7 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import rawBank from '../content/ja.json';
-import type { PracticeAttempt, WordBank, WordItem } from './types';
+import type { AudioAsset, PracticeAttempt, WordBank, WordItem } from './types';
 import { createSession, type Question } from './core/session';
+import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { themeColors } from './themes';
 import './styles.css';
@@ -19,7 +20,7 @@ function Picture({ item }: { item: WordItem }) {
 
 const wallClock = () => Date.now();
 
-export default function App({ now = wallClock }: { now?: () => number } = {}) {
+export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
   const [screen, setScreen] = useState<'home' | 'preview' | 'quiz' | 'summary'>('home');
   const [preview, setPreview] = useState(0);
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -33,6 +34,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
   const [total, setTotal] = useState(0);
   const [historyError, setHistoryError] = useState(false);
   const audio = useRef<HTMLAudioElement>(null);
+  const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '' });
   const playRequest = useRef(0);
   const pendingSaves = useRef(new Set<string>());
@@ -59,18 +61,22 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
     return () => { mounted = false; };
   }, []);
 
-  function play(item: WordItem) {
+  function play() {
     const element = audio.current;
-    if (!element) return;
+    if (!element || !recording.current) return;
     const request = ++playRequest.current;
     element.pause();
-    element.src = asset(item.audio.src);
+    element.src = asset(recording.current.src);
     element.currentTime = 0;
     setAudioError(false);
     setPlaying(true);
     void element.play().catch(() => {
       if (request === playRequest.current) { setAudioError(true); setPlaying(false); }
     });
+  }
+  function present(item: WordItem) {
+    recording.current = selectRecording(item.audio, random);
+    play();
   }
   function home() {
     playRequest.current++;
@@ -84,10 +90,10 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
   function showQuestion(next: Question, sessionId: string) {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false };
     setFeedback(null); setSaveError(false); setSaving(false);
-    play(next.target);
+    present(next.target);
   }
   function startQuiz() {
-    const session = createSession(bank);
+    const session = createSession(bank, 6, 4, random);
     const sessionId = crypto.randomUUID();
     setQuestions(session); setIndex(0); setAnswers([]); setScreen('quiz');
     showQuestion(session[0]!, sessionId);
@@ -139,7 +145,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
         <h1>kikimashta</h1>
         <p className="home-prompt">Listen. Pick a picture.</p>
         <div className="session-note"><span>6 words</span><b>·</b><span>No timer</span></div>
-        <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); play(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
+        <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); present(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
         <button className="text-button" onClick={startQuiz}>Skip to quiz <span aria-hidden="true">→</span></button>
         <div className="history">{historyError ? 'Progress storage is unavailable. Saving may need a retry.' : total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
       </section>}
@@ -148,18 +154,18 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
         <h1 className="practice-title">Lesson Time!</h1>
         <div className="preview-picture"><Picture item={target}/></div>
         <div className="practice-actions">
-        <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+        <button className={'listen ' + (playing ? 'playing' : '')} onClick={play} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
 
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="preview-dots" aria-label={'Word ' + (preview + 1) + ' of ' + bank.items.length}>{bank.items.map((item, i) => <span key={item.id} className={i === preview ? 'active' : ''}/>)}</div>
-        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < bank.items.length) { setPreview(preview + 1); play(bank.items[preview + 1]!); } else startQuiz(); }}>{preview + 1 === bank.items.length ? 'Play a round' : 'Next word'} <span aria-hidden="true">→</span></button>
+        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < bank.items.length) { setPreview(preview + 1); present(bank.items[preview + 1]!); } else startQuiz(); }}>{preview + 1 === bank.items.length ? 'Play a round' : 'Next word'} <span aria-hidden="true">→</span></button>
         </div>
       </section>}
       {screen === 'quiz' && target && <section className="practice quiz fade-in">
         <div className="section-top"><span className="eyebrow">PICK THE PICTURE</span><span className="counter">{index + 1} / {questions.length}</span></div>
         <div className="progress-track" role="progressbar" aria-label="Session progress" aria-valuenow={index} aria-valuemin={0} aria-valuemax={questions.length}><div style={{ width: (index / questions.length * 100) + '%' }}/></div>
         <h1 className="practice-title">What did you hear?</h1>
-        <button className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+        <button className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={play} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="choices">{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;

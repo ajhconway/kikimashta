@@ -1,80 +1,540 @@
 {
-  "status": "provisional voice; user audition and pronunciation review pending",
-  "method": "pregenerated text-to-speech",
-  "engine": {
-    "name": "Open JTalk",
-    "version": "1.11",
-    "license": "Modified BSD",
-    "source": "https://open-jtalk.sourceforge.net/"
-  },
-  "dictionary": "Open JTalk UTF-8 dictionary 1.11",
-  "voice": {
-    "name": "HTS Voice NIT ATR503 M001",
-    "version": "1.05",
-    "locale": "ja-JP",
-    "license": "CC-BY-3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-    "source": "https://open-jtalk.sourceforge.net/readme_hts_voice_nitech_jp_atr503_m001.php",
-    "attribution": "HTS Voice NIT ATR503 M001, HTS Working Group; copyright 2003–2012 Nagoya Institute of Technology and 2003–2008 Tokyo Institute of Technology. CC BY 3.0."
-  },
-  "settings": {
-    "speed": 1.0,
-    "sampleRate": 48000,
-    "channels": 1,
-    "encoding": "MP3 (LAME quality 4)",
-    "processing": "Trim outside silence, retain internal timing, add 80ms lead and 120ms tail padding; no background audio."
-  },
-  "distributionNotice": "These synthetic speech clips use the attributed HTS voice under CC BY 3.0. Keep this credit and license link with redistributed clips. Code licensing is separate.",
-  "qualityNotes": "This small HMM voice is a functional starter baseline. Technical decoding has been verified; native-speaker pronunciation, pitch accent, and subjective quality have not been verified.",
-  "regenerationScript": "scripts/content/generate-audio.py",
-  "assets": [
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "createdAt": "2026-11-05T05:27:20.645Z",
+  "language": "ja-JP",
+  "kind": "bank",
+  "bankId": "ja-starter",
+  "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "maxOutputTokens": 128,
+  "maxSeconds": 8,
+  "sampleRate": 24000,
+  "processing": "Gain only, active-sample RMS target -22 dBFS, max boost 9 dB, sample peak ceiling -4 dBFS before MP3; add 120 ms lead and 240 ms tail, no trimming.",
+  "review": "Marin and Cedar approved by the owner through word and sentence auditions. Full starter-bank pronunciation, pitch accent, and iPhone playback still need listening review.",
+  "clips": [
     {
-      "id": "cat",
+      "voice": "marin",
+      "id": "ja-cat",
       "text": "ねこ",
-      "language": "ja-JP",
-      "path": "public/audio/cat.mp3",
-      "durationSeconds": 0.456,
-      "sha256": "0c59ecab545b84209ce4528b4167ecae58217461d5bf5e0a269818b47ac75c01"
+      "file": "marin-ja-cat.mp3",
+      "original": "marin-ja-cat.wav",
+      "originalSha256": "a262d12b0ccdf0f81f76cd407263b7f409c30135c9befee4271630e56726b82c",
+      "transcript": "ねこ",
+      "usage": {
+        "total_tokens": 165,
+        "input_tokens": 111,
+        "output_tokens": 54,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 16,
+          "reasoning_tokens": 26
+        }
+      },
+      "durationSeconds": 0.8,
+      "rmsDb": -20.391782647183028,
+      "peakDb": -11.992562946786386,
+      "gainDb": -1.6082173528169719,
+      "deliverySha256": "cc27fc029ade4de1262edfb44b3df6ea4612461a2a72f4a24b677a2d6c369084",
+      "deliveryBytes": 7820,
+      "path": "public/audio/marin-ja-cat.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -13.527,
+        "clippedSamples": 0
+      }
     },
     {
-      "id": "dog",
+      "voice": "marin",
+      "id": "ja-dog",
       "text": "いぬ",
-      "language": "ja-JP",
-      "path": "public/audio/dog.mp3",
-      "durationSeconds": 0.432,
-      "sha256": "00335a8148c98d0293dcb797884fbaade74c94f5cbf0ea19d2c2b098dd4ff6be"
+      "file": "marin-ja-dog.mp3",
+      "original": "marin-ja-dog.wav",
+      "originalSha256": "bad127f2e92b19b06cfe2254efdf1d3f5d9b714bc3c827ad886d28f229bd3537",
+      "transcript": "いぬ",
+      "usage": {
+        "total_tokens": 186,
+        "input_tokens": 112,
+        "output_tokens": 74,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 37,
+          "audio_tokens": 37,
+          "reasoning_tokens": 24
+        }
+      },
+      "durationSeconds": 1.85,
+      "rmsDb": -17.581759742348744,
+      "peakDb": -9.235139923495295,
+      "gainDb": -4.418240257651256,
+      "deliverySha256": "f3c700d322e8a1aca55f708d5886844c175118ae0be0d46ed7f411b0bfb91a0f",
+      "deliveryBytes": 10604,
+      "path": "public/audio/marin-ja-dog.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -13.666,
+        "clippedSamples": 0
+      }
     },
     {
-      "id": "apple",
+      "voice": "marin",
+      "id": "ja-apple",
       "text": "りんご",
-      "language": "ja-JP",
-      "path": "public/audio/apple.mp3",
-      "durationSeconds": 0.552,
-      "sha256": "8544ecb3f1345313349f42237435c6da5fe83cae8c9764078a9d17e8ceee968c"
+      "file": "marin-ja-apple.mp3",
+      "original": "marin-ja-apple.wav",
+      "originalSha256": "e7b159214b8372b9b8a49de93adb5e04c1dcde7f83595a88f9168d3e65908a2d",
+      "transcript": "りんご",
+      "usage": {
+        "total_tokens": 160,
+        "input_tokens": 112,
+        "output_tokens": 48,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 10,
+          "reasoning_tokens": 27
+        }
+      },
+      "durationSeconds": 0.5,
+      "rmsDb": -19.917774854502092,
+      "peakDb": -10.457044777153595,
+      "gainDb": -2.082225145497908,
+      "deliverySha256": "ef566b090efc00f36e0a01c1223c1fe03092f2b06cb3ae25eb9a9a3cec8647a5",
+      "deliveryBytes": 5852,
+      "path": "public/audio/marin-ja-apple.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -12.637,
+        "clippedSamples": 0
+      }
     },
     {
-      "id": "banana",
+      "voice": "marin",
+      "id": "ja-banana",
       "text": "バナナ",
-      "language": "ja-JP",
-      "path": "public/audio/banana.mp3",
-      "durationSeconds": 0.552,
-      "sha256": "7dc98cfb441c6b58ad266b053fbfe4c905d83312fe3eda40df86653c488464e2"
+      "file": "marin-ja-banana.mp3",
+      "original": "marin-ja-banana.wav",
+      "originalSha256": "820ff1e57ef4299cd01b8655f642ccc994af2bd8013db676517346c0b310233b",
+      "transcript": "バナナ",
+      "usage": {
+        "total_tokens": 171,
+        "input_tokens": 112,
+        "output_tokens": 59,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 41,
+          "audio_tokens": 18,
+          "reasoning_tokens": 28
+        }
+      },
+      "durationSeconds": 0.9,
+      "rmsDb": -19.360124386132142,
+      "peakDb": -8.661909672574978,
+      "gainDb": -2.639875613867858,
+      "deliverySha256": "05af8c0182d9312f6917992e631f9b1f0394f8cee3872af859d2315fcc36d5ce",
+      "deliveryBytes": 8756,
+      "path": "public/audio/marin-ja-banana.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -11.232,
+        "clippedSamples": 0
+      }
     },
     {
-      "id": "umbrella",
+      "voice": "marin",
+      "id": "ja-umbrella",
       "text": "かさ",
-      "language": "ja-JP",
-      "path": "public/audio/umbrella.mp3",
-      "durationSeconds": 0.552,
-      "sha256": "eac315600debb08b66c9e5fa746d8fa6227d9b37d284ee0ad3ae58d1a30f7a0e"
+      "file": "marin-ja-umbrella.mp3",
+      "original": "marin-ja-umbrella.wav",
+      "originalSha256": "ed92bde5509cfd3d47ada3fd9cd2459c9c9a7b4364c94d4d4a7d4226b8104d5e",
+      "transcript": "かさ",
+      "usage": {
+        "total_tokens": 162,
+        "input_tokens": 111,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 17,
+          "reasoning_tokens": 24
+        }
+      },
+      "durationSeconds": 0.85,
+      "rmsDb": -21.920233028196286,
+      "peakDb": -7.421251217155623,
+      "gainDb": -0.07976697180371417,
+      "deliverySha256": "b28dde6e27e164d76a9f0b3142c7464b8968fe90983a7ed226bd5eafeed9d0a4",
+      "deliveryBytes": 8084,
+      "path": "public/audio/marin-ja-umbrella.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -7.714,
+        "clippedSamples": 0
+      }
     },
     {
-      "id": "cup",
+      "voice": "marin",
+      "id": "ja-cup",
       "text": "コップ",
-      "language": "ja-JP",
-      "path": "public/audio/cup.mp3",
-      "durationSeconds": 0.6,
-      "sha256": "6bec686994be3d3914bf5ddb2a15ccf66eb9ecf8127748d3b7a977470a56d12b"
+      "file": "marin-ja-cup.mp3",
+      "original": "marin-ja-cup.wav",
+      "originalSha256": "c749c05ea5f23585f46e254740082b97f673c7ff739cba4a9291d1c03bc45adf",
+      "transcript": "こっぷ",
+      "usage": {
+        "total_tokens": 156,
+        "input_tokens": 111,
+        "output_tokens": 45,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 11,
+          "reasoning_tokens": 23
+        }
+      },
+      "durationSeconds": 0.55,
+      "rmsDb": -24.282986474158484,
+      "peakDb": -13.255739812302973,
+      "gainDb": 2.282986474158484,
+      "deliverySha256": "49c909ba5e7e7649ba1180d4749b09725c0e3123a7f2090dd8fdb4327396f05d",
+      "deliveryBytes": 6020,
+      "path": "public/audio/marin-ja-cup.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Kana script difference only; コップ and こっぷ have the same reading.",
+        "decodedPeakDbfs": -10.99,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-cat",
+      "text": "ねこ",
+      "file": "cedar-ja-cat.mp3",
+      "original": "cedar-ja-cat.wav",
+      "originalSha256": "9afe6d612e7e8afd743eeecf34519262a024ff564e7d5602962336c4c64e40e2",
+      "transcript": "ねこ",
+      "usage": {
+        "total_tokens": 161,
+        "input_tokens": 111,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 18,
+          "reasoning_tokens": 20
+        }
+      },
+      "durationSeconds": 0.9,
+      "rmsDb": -17.152519003292426,
+      "peakDb": -1.9277362093433963,
+      "gainDb": -4.847480996707574,
+      "deliverySha256": "b1af48f670d002538d597d187cbf36e4989cb74b10886eaa77133cf68942b44e",
+      "deliveryBytes": 8132,
+      "path": "public/audio/cedar-ja-cat.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -6.908,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-dog",
+      "text": "いぬ",
+      "file": "cedar-ja-dog.mp3",
+      "original": "cedar-ja-dog.wav",
+      "originalSha256": "aff0abab06420b1b6d3600357f162b05c6207091a33955de07c2c66c088a6a5b",
+      "transcript": "いぬ",
+      "usage": {
+        "total_tokens": 158,
+        "input_tokens": 112,
+        "output_tokens": 46,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 33,
+          "audio_tokens": 13,
+          "reasoning_tokens": 22
+        }
+      },
+      "durationSeconds": 0.65,
+      "rmsDb": -18.754208088499674,
+      "peakDb": -10.073362088232223,
+      "gainDb": -3.2457919115003264,
+      "deliverySha256": "e7d02486393ac00ab1aa13efdb0a231862f317802d8e28b7719bdeace351dfc8",
+      "deliveryBytes": 5996,
+      "path": "public/audio/cedar-ja-dog.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -13.404,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-apple",
+      "text": "りんご",
+      "file": "cedar-ja-apple.mp3",
+      "original": "cedar-ja-apple.wav",
+      "originalSha256": "cc185c1d8fc43bfcf37f7f8d0d46e8e65efc99cef33c409ef819ba822924239c",
+      "transcript": "りんご",
+      "usage": {
+        "total_tokens": 170,
+        "input_tokens": 112,
+        "output_tokens": 58,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 42,
+          "audio_tokens": 16,
+          "reasoning_tokens": 29
+        }
+      },
+      "durationSeconds": 0.8,
+      "rmsDb": -16.287075558609146,
+      "peakDb": -5.003677741446807,
+      "gainDb": -5.712924441390854,
+      "deliverySha256": "c62e685e57acd2bea11c93869993334bfa0e7b6cb4f2a3b92f42f65c6e3c9134",
+      "deliveryBytes": 7628,
+      "path": "public/audio/cedar-ja-apple.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -10.681,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-banana",
+      "text": "バナナ",
+      "file": "cedar-ja-banana.mp3",
+      "original": "cedar-ja-banana.wav",
+      "originalSha256": "8367da8a5f08b283cde86c8370898739a0ca8c527966efca2e12621d87c4d6c1",
+      "transcript": "バナナ",
+      "usage": {
+        "total_tokens": 167,
+        "input_tokens": 112,
+        "output_tokens": 55,
+        "input_token_details": {
+          "text_tokens": 112,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 16,
+          "reasoning_tokens": 26
+        }
+      },
+      "durationSeconds": 0.8,
+      "rmsDb": -19.02830328955848,
+      "peakDb": -2.4487321411684992,
+      "gainDb": -2.9716967104415204,
+      "deliverySha256": "4f78636704e47f30fe79d0547036b739385ba55fcc66f37716bdc9879baf0471",
+      "deliveryBytes": 8108,
+      "path": "public/audio/cedar-ja-banana.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -5.439,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-umbrella",
+      "text": "かさ",
+      "file": "cedar-ja-umbrella.mp3",
+      "original": "cedar-ja-umbrella.wav",
+      "originalSha256": "a2d7c81285e263c7fd039495270b94a2d8f984400cede95f984bd7f1179813f0",
+      "transcript": "かさ",
+      "usage": {
+        "total_tokens": 174,
+        "input_tokens": 111,
+        "output_tokens": 63,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 31,
+          "reasoning_tokens": 20
+        }
+      },
+      "durationSeconds": 1.55,
+      "rmsDb": -17.174647870248183,
+      "peakDb": -2.4955944466707525,
+      "gainDb": -4.825352129751817,
+      "deliverySha256": "d929b38bcfbb029ad27deb8acea430684af3b21367ee080a50c3b27128408d89",
+      "deliveryBytes": 13196,
+      "path": "public/audio/cedar-ja-umbrella.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -7.487,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "ja-cup",
+      "text": "コップ",
+      "file": "cedar-ja-cup.mp3",
+      "original": "cedar-ja-cup.wav",
+      "originalSha256": "c6e3ad8c968e807665d1abdc54ac415515efd1200aa0e449f161ce503eb3439e",
+      "transcript": "コップ",
+      "usage": {
+        "total_tokens": 168,
+        "input_tokens": 111,
+        "output_tokens": 57,
+        "input_token_details": {
+          "text_tokens": 111,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 40,
+          "audio_tokens": 17,
+          "reasoning_tokens": 28
+        }
+      },
+      "durationSeconds": 0.85,
+      "rmsDb": -17.668281443170976,
+      "peakDb": -2.9525656508236073,
+      "gainDb": -4.331718556829024,
+      "deliverySha256": "c26fe19ba3aa7e9c2e97014826b99e2010a6de668009cd873d0b979faef70c76",
+      "deliveryBytes": 7844,
+      "path": "public/audio/cedar-ja-cup.mp3",
+      "validation": {
+        "transcriptMatchesRequestedReading": true,
+        "transcriptNote": "Exact text match.",
+        "decodedPeakDbfs": -7.306,
+        "clippedSamples": 0
+      }
     }
-  ]
+  ],
+  "generation": {
+    "workflowRunUrl": "https://github.com/ajhconway/kikimashta/actions/runs/41974069069",
+    "runId": 41974069069,
+    "attempt": 1,
+    "commit": "81427f74e9f002e339148ea0d78b99073c583835",
+    "artifactId": 13390902459,
+    "artifactSha256": "ce6f5130b9fbf5acec141b3d32e1ddcc682215814f8f037377409034745998f5"
+  }
 }

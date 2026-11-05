@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
+import bank from '../content/ja.json';
 
 beforeEach(() => {
   vi.spyOn(ProgressStore.prototype, 'history').mockResolvedValue([]);
@@ -21,22 +22,31 @@ function deferredSave() {
 describe('practice interactions', () => {
   it('introduces the first word with a picture and playable audio', async () => {
     const user = userEvent.setup();
-    const { container } = render(<App/>);
+    const random = vi.fn().mockReturnValueOnce(0).mockReturnValue(0.999);
+    const { container } = render(<App random={random}/>);
     await user.click(screen.getByRole('button', { name: /^start/i }));
 
     expect(screen.getByRole('heading', { name: /lesson time!/i })).toBeInTheDocument();
     expect(screen.getByRole('img')).toHaveAttribute('src', expect.stringContaining('images/'));
-    expect(container.querySelector('audio')).toHaveAttribute('src', expect.stringMatching(/audio\/.+\.mp3$/));
+    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[0]!.audio[0]!.src);
     await user.click(screen.getByRole('button', { name: /replay word/i }));
     expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[0]!.audio[0]!.src);
+    expect(random).toHaveBeenCalledTimes(1);
+    await user.click(screen.getByRole('button', { name: /next word/i }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[1]!.audio[1]!.src);
+    expect(random).toHaveBeenCalledTimes(2);
   });
 
   it('saves one answer when a picture receives rapid repeated taps', async () => {
     const user = userEvent.setup();
-    render(<App/>);
+    const random = vi.fn(() => 0.5);
+    const { container } = render(<App random={random}/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
     const choices = screen.getAllByRole('button', { name: /choose picture/i });
     expect(choices).toHaveLength(4);
+    const recording = container.querySelector('audio')!.getAttribute('src');
+    const randomCalls = random.mock.calls.length;
 
     fireEvent.click(choices[0]!);
     fireEvent.click(choices[0]!);
@@ -44,6 +54,10 @@ describe('practice interactions', () => {
     await waitFor(() => expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1));
     expect(screen.getByText(/got it!|try this one\./i)).toBeInTheDocument();
     for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeDisabled();
+    await user.click(screen.getByRole('button', { name: /replay word/i }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', recording);
+    expect(random).toHaveBeenCalledTimes(randomCalls);
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
     await user.click(screen.getByRole('button', { name: /next sound/i }));
     expect(screen.getByRole('progressbar', { name: /session progress/i })).toHaveAttribute('aria-valuenow', '1');
   });
@@ -51,16 +65,21 @@ describe('practice interactions', () => {
   it('blocks answers when playback fails and lets the user retry the audio', async () => {
     vi.mocked(HTMLMediaElement.prototype.play).mockRejectedValueOnce(new Error('Playback blocked'));
     const user = userEvent.setup();
-    render(<App/>);
+    const random = vi.fn(() => 0.5);
+    const { container } = render(<App random={random}/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/sound couldn't play/i);
     for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeDisabled();
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    const recording = container.querySelector('audio')!.getAttribute('src');
+    const randomCalls = random.mock.calls.length;
 
     await user.click(screen.getByRole('button', { name: /replay word/i }));
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
     for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeEnabled();
+    expect(container.querySelector('audio')).toHaveAttribute('src', recording);
+    expect(random).toHaveBeenCalledTimes(randomCalls);
   });
 
   it('shows a failed save honestly and offers a retry before advancing', async () => {

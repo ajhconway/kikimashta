@@ -34,8 +34,10 @@ async function chooseHeardPicture(page: Page) {
   const audio = page.locator('audio');
   await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).readyState)).toBeGreaterThanOrEqual(2);
   const source = await audio.getAttribute('src');
-  const target = bank.items.find(item => source?.endsWith(item.audio.src));
+  const target = bank.items.find(item => item.audio.some(recording => source?.endsWith(recording.src)));
   expect(target, 'the current recording belongs to the word bank').toBeDefined();
+  await page.getByRole('button', { name: /replay word/i }).click();
+  await expect(audio).toHaveAttribute('src', source!);
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target!.image.alt, exact: true }),
   });

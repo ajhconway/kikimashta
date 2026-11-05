@@ -16,7 +16,7 @@ A personal listening game, starting with Japanese and leaving room for other lan
 | App | React, TypeScript, and Vite; prioritize Safari on iPhone 17 |
 | Local progress | IndexedDB, with stable item and attempt IDs, answers, picture choices, and timing |
 | Content | JSON files and media in the repository; separate word banks and progress by language |
-| Audio | Reusable, pregenerated speech; choose the voice and provider by comparing samples |
+| Audio | Reusable, pregenerated speech; start with OpenAI Marin and Cedar, chosen through word and sentence samples |
 | Pictures | Start with AI-generated illustrations; also support library images and reuse suitable pictures across languages |
 | Hosting | Public GitHub repository, GitHub Actions, and GitHub Pages |
 | Code license | MIT |
