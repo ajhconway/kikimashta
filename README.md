@@ -4,7 +4,7 @@ A relaxed listening game that starts with Japanese. Hear a word, choose its pict
 
 The first version uses six words, picture-and-audio previews, untimed quizzes, and progress saved on the device. Japanese is the first language bank; words, media, and learning history are kept separate so other languages can follow.
 
-Quizzes use flat picture cards with a firm squash on press, Kiku the listening cat, and larger progress dots at the bottom. Correct answers move on after a short beat, once playback and saving finish. Replay holds that transition while the word plays again; misses wait for Continue. Leaving the page pauses playback and automatic transitions. Motion follows the device’s reduced-motion preference.
+Quizzes use flat picture cards with an expressive squash on press, Kiku the listening cat, and larger progress dots at the bottom. Cards slide into place, correct answers receive a warm background celebration, and misses receive a quieter muted response. Correct answers move on after a 1.2-second beat, once playback and saving finish. Replay holds that transition while the word plays again; misses wait for Continue. Leaving the page pauses playback and automatic transitions. Motion follows the device’s reduced-motion preference. Quiz cards suppress image callouts and selection during a hold while retaining native button activation.
 
 - [Project plan](PLAN.md)
 - [Agent working agreements](AGENTS.md)
