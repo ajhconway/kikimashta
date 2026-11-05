@@ -8,7 +8,7 @@ function bank(): WordBank {
     items: ['cat', 'dog', 'apple', 'banana', 'umbrella', 'cup'].map(id => ({
       id, language: 'ja-JP', theme: 'everyday', label: id, text: id,
       image: { src: `images/${id}.webp`, source: 'generated', alt: id },
-      audio: { src: `audio/${id}.mp3`, source: 'synthesized' },
+      audio: [{ src: `audio/${id}.mp3`, source: 'synthesized' }],
     })),
   };
 }
@@ -72,7 +72,17 @@ describe('word bank validation', () => {
     tooSmall.items = tooSmall.items.slice(0, 1);
     expect(() => validateBank(tooSmall)).toThrow(/at least two/i);
     const missingAudio = bank();
-    missingAudio.items[0]!.audio.src = '';
+    missingAudio.items[0]!.audio[0]!.src = '';
     expect(() => validateBank(missingAudio)).toThrow(/incomplete/i);
+  });
+
+  it('validates every voice variant and requires at least one recording', () => {
+    const words = bank();
+    words.items[0]!.audio.push({ src: 'audio/other-cat.mp3', source: 'recorded' });
+    expect(() => validateBank(words)).not.toThrow();
+    words.items[0]!.audio[1]!.src = '../other-cat.mp3';
+    expect(() => validateBank(words)).toThrow(/relative/i);
+    words.items[0]!.audio = [];
+    expect(() => validateBank(words)).toThrow(/incomplete/i);
   });
 });

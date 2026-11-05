@@ -20,7 +20,7 @@ export interface WordItem {
   text: string
   reading?: string
   image: ImageAsset
-  audio: AudioAsset
+  audio: AudioAsset[]
 }
 
 export interface WordBank {

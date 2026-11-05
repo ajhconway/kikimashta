@@ -24,7 +24,7 @@ Production uses GitHub Pages with `kikimashta.com` configured in the repositoryâ
 
 The word bank is in `content/ja.json`. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed. Named background colors live in `src/themes.ts`; give future quiz types their own theme.
 
-The initial Open JTalk voice is provisional. Voice preference and Japanese pronunciation still need human review, alongside audio playback and touch behavior on the iPhone 17.
+Starter words use OpenAI Marin and Cedar, selected through word and sentence auditions. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. The same format supports a single voice or a human recording. Progress remains tied to the language and word, across voices. Pronunciation and playback still need review on the iPhone 17.
 
 ## Voice auditions
 
@@ -52,4 +52,4 @@ Local runs preserve the provider-original WAVs, listening MP3s, and provenance u
 
 The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
 
-The code is licensed under [MIT](LICENSE). Speech uses the attributed CC BY 3.0 HTS voice; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Current vocabulary pictures are original SVG illustrations; creation records are in `content/vector-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+The code is licensed under [MIT](LICENSE). Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Current vocabulary pictures are original SVG illustrations; creation records are in `content/vector-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
