@@ -1,6 +1,6 @@
 // Give each new quiz type its own named theme here.
 export const themeColors = {
-  home: '#c4a2ff',
+  home: '#ffe4cc',
   lesson: '#ffa9d4',
-  pictureQuiz: '#ffbd80',
+  pictureQuiz: '#c4a2ff',
 } as const;
