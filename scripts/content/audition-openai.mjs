@@ -152,7 +152,7 @@ export function reviewHtml() {
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Kikimashta voice comparison</title>
 <style>body{font:18px system-ui;max-width:36rem;margin:2rem auto;padding:0 1rem;background:#ffe4cc;color:#301d49}section{background:#fff4fc;border:3px solid #9a4cff;border-radius:20px;padding:1rem;margin:1.5rem 0}audio{width:100%}h1{font-size:1.7rem}p{line-height:1.5}</style>
 <h1>Choose a listening voice</h1><p>AI-generated Japanese speech from OpenAI. Compare at the same device volume. Listen for warmth, clear pronunciation, and comfortable word endings.</p>
-${VOICES.map(voice => `<section><h2>${voice}</h2>${WORDS.map(word => `<p lang="ja">${word.text}</p><audio controls preload="none" src="${voice}-${word.id}.mp3"></audio>`).join('')}</section>`).join('')}
+${VOICES.map(voice => `<section><h2>${voice}</h2>${WORDS.map(word => `<p lang="ja">${word.text}</p><audio controls preload="none" aria-label="${voice}: ${word.text}" src="${voice}-${word.id}.mp3"></audio>`).join('')}</section>`).join('')}
 <p>These are audition clips. Japanese pronunciation and pitch accent still need listening review. Tell me your preferred voice and anything you would change.</p></html>`
 }
 

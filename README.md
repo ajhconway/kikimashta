@@ -30,6 +30,8 @@ The initial Open JTalk voice is provisional. Voice preference and Japanese pronu
 
 Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). To compare three OpenAI voices on the same three Japanese words:
 
+The current [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
+
 ```sh
 npm run audio:audition -- --dry-run
 # Add OPENAI_API_KEY=your-key to the ignored .env.local file, then:
