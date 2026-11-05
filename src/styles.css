@@ -60,6 +60,7 @@ header {
   letter-spacing: -1px;
 }
 .brand-mark { flex-shrink: 0; color: var(--purple); }
+.practice-close { display: none; }
 .brand-dot { color: #e86d9c; margin-left: -7px; }
 .language {
   display: flex;
@@ -193,27 +194,70 @@ footer a:hover { color: var(--purple-dark); }
   .world-card { max-width: 104px; height: 104px; padding: 11px; border-radius: 20px; }
   .session-note { margin: 16px 0; }
   .primary { max-width: 350px; min-height: 51px; padding: 12px 18px; }
-  .practice-title { margin: 16px 0; font-size: 27px; letter-spacing: -.6px; }
-  .preview-picture { width: 210px; height: 210px; margin: 20px auto; padding: 20px; }
-  .quiz .practice-title { margin: 14px 0; }
-  .quiz-listen { margin: 10px auto 16px; }
-  .quiz .choices { max-width: 310px; gap: 10px; }
-  .picture-choice { --picture-inset: 14px; border-radius: 20px; }
-  .feedback { min-height: 57px; margin-top: 14px; }
-  .feedback strong { font-size: 21px; }
-  .quiz .primary { margin-top: 8px; margin-bottom: 0; }
   .summary h1 { font-size: 39px; }
   .summary-pictures { gap: 5px; margin: 24px auto; }
   .summary-pictures > div { border-radius: 11px; }
   footer { padding: 14px 0; font-size: 10px; }
-}
 
-@media (max-height: 740px) and (max-width: 600px) {
-  .app-quiz main { padding-top: 10px; padding-bottom: 12px; }
-  .quiz .choices { max-width: 280px; }
-  .quiz .practice-title { margin: 10px 0; font-size: 25px; }
-  .quiz-listen { margin-bottom: 12px; }
-  .quiz .feedback { min-height: 52px; margin-top: 12px; }
+  /* Practice fills the visible screen; content can overflow vertically on small screens. */
+  .app-preview, .app-quiz {
+    position: relative;
+    height: 100svh;
+    min-height: 100svh;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  }
+  .app-preview header, .app-quiz header {
+    position: absolute;
+    z-index: 1;
+    top: max(12px, env(safe-area-inset-top));
+    left: max(16px, env(safe-area-inset-left));
+    padding: 0;
+  }
+  .app-preview .brand, .app-quiz .brand { justify-content: center; width: 44px; height: 44px; }
+  .app-preview .brand-mark, .app-quiz .brand-mark,
+  .app-preview .brand-name, .app-quiz .brand-name,
+  .app-preview .brand-dot, .app-quiz .brand-dot,
+  .app-preview .language, .app-quiz .language,
+  .app-preview footer, .app-quiz footer { display: none; }
+  .app-preview .practice-close, .app-quiz .practice-close { display: block; width: 24px; height: 24px; color: var(--muted); }
+  .app-preview main, .app-quiz main { display: flex; min-height: 0; padding: 0; }
+  .practice { display: flex; flex: 1; flex-direction: column; min-height: 0; max-width: none; }
+  .practice > .section-top { flex-shrink: 0; min-height: 44px; padding-left: 56px; }
+  .practice-title { flex-shrink: 0; margin: 12px 0; font-size: 27px; letter-spacing: -.6px; }
+  .preview-picture {
+    position: relative;
+    flex: 1 0 220px;
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    margin: 4px 0 0;
+    padding: 0;
+  }
+  .preview-picture > img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); }
+  .practice-actions { flex-shrink: 0; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .preview .practice-actions { padding-top: 16px; }
+  .preview .listen { margin: 0 auto; }
+  .preview-dots { margin: 16px 0; }
+  .practice-actions .primary { max-width: none; min-height: 52px; margin: 0; }
+  .quiz .progress-track { flex-shrink: 0; margin: 8px 0 10px; }
+  .quiz .practice-title { margin: 0 0 8px; font-size: 25px; }
+  .quiz-listen { flex-shrink: 0; margin: 0 auto 8px; }
+  .quiz .choices {
+    flex: 1 0 240px;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    min-height: 240px;
+    max-width: none;
+    gap: 12px;
+  }
+  .picture-choice { --picture-inset: 14px; height: 100%; aspect-ratio: auto; border-radius: 20px; }
+  /* Reserve the normal feedback and Next space before the learner answers. */
+  .quiz .practice-actions { min-height: calc(120px + max(12px, env(safe-area-inset-bottom))); margin-top: 10px; }
+  .quiz .feedback { min-height: 60px; margin: 0; }
+  .quiz .feedback strong { font-size: 21px; }
+  .quiz .practice-actions .primary { margin-top: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
