@@ -1,6 +1,13 @@
 import { expect, test, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import bank from '../content/ja.json' with { type: 'json' };
-import { practiceBanks } from '../src/core/practice';
+import type { WordItem } from '../src/types';
+
+const practiceSets = JSON.parse(readFileSync(new URL('../content/practice-sets.json', import.meta.url), 'utf8')) as { id: string; itemIds: string[] }[];
+const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as {
+  language: string;
+  items: Pick<WordItem, 'id' | 'image' | 'audio'>[];
+};
 
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 const screenColor = (page: Page) => page.evaluate(() => document.documentElement.style.getPropertyValue('--screen-background').trim());
@@ -239,7 +246,12 @@ test('preview, complete a short round, and retain real device progress after rel
 
 test('an expanded set previews its words, quizzes that set, and saves catalogue IDs after reload', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
-  const selectedBank = practiceBanks[1]!;
+  const selection = practiceSets[0]!;
+  const selectedBank = {
+    id: selection.id,
+    language: catalogue.language,
+    items: selection.itemIds.map(id => catalogue.items.find(item => item.id === id)!),
+  };
   await page.goto('./');
   await page.getByRole('combobox', { name: 'Practice set' }).selectOption(selectedBank.id);
   await captureScreen(page, 'expanded-home-' + testInfo.project.name);
