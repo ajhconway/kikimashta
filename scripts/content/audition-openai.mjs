@@ -16,6 +16,13 @@ export const WORDS = [
   { id: 'apple', text: 'りんご' },
   { id: 'cup', text: 'コップ' },
 ]
+export const SENTENCE_VOICES = ['marin', 'cedar']
+export const SENTENCES = [
+  { id: 'sleeping-cat', text: 'ねこがソファで寝ています。', meaning: 'The cat is sleeping on the sofa.' },
+  { id: 'three-apples', text: 'テーブルの上に、りんごが三つあります。', meaning: 'There are three apples on the table.' },
+  { id: 'red-cup', text: '赤いコップはどこですか？', meaning: 'Where is the red cup?' },
+  { id: 'rainy-day', text: '雨が降っているので、かさを持っていきます。', meaning: 'It is raining, so I will take an umbrella.' },
+]
 export const INSTRUCTIONS = 'You are recording individual vocabulary words for a Japanese listening game. '
   + 'Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. '
   + 'Use native standard Tokyo Japanese pronunciation and natural pitch accent. '
@@ -23,12 +30,14 @@ export const INSTRUCTIONS = 'You are recording individual vocabulary words for a
   + 'Use a clear, comfortable conversational pace, with natural word endings. '
   + 'Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. '
   + 'No music or sound effects.'
+export const SENTENCE_INSTRUCTIONS = INSTRUCTIONS
+  .replace('individual vocabulary words', 'complete sentences')
+  .replace('Japanese word', 'Japanese sentence')
 const RATE = 24000
-const MAX_BYTES = RATE * 2 * 8 // Reject unexpectedly long output; no automatic paid retries.
 
-export function sessionEvent(voice) {
+export function sessionEvent(voice, instructions = INSTRUCTIONS) {
   return { type: 'session.update', session: {
-    type: 'realtime', output_modalities: ['audio'], instructions: INSTRUCTIONS,
+    type: 'realtime', output_modalities: ['audio'], instructions,
     audio: {
       input: { turn_detection: null },
       output: { format: { type: 'audio/pcm', rate: RATE }, voice },
@@ -36,15 +45,15 @@ export function sessionEvent(voice) {
   } }
 }
 
-export function responseEvent(text) {
+export function responseEvent(text, maxOutputTokens = 128) {
   return { type: 'response.create', response: {
-    conversation: 'none', output_modalities: ['audio'], max_output_tokens: 128,
+    conversation: 'none', output_modalities: ['audio'], max_output_tokens: maxOutputTokens,
     input: [{ type: 'message', role: 'user', content: [{ type: 'input_text', text }] }],
   } }
 }
 
 // Kept independent of the transport so failure paths can be tested without billing.
-export function audioCollector() {
+export function audioCollector(maxSeconds = 8) {
   const chunks = []
   let bytes = 0
   let transcript = ''
@@ -56,7 +65,7 @@ export function audioCollector() {
     if (event.type === 'response.output_audio.delta') {
       const chunk = Buffer.from(event.delta, 'base64')
       bytes += chunk.length
-      if (bytes > MAX_BYTES) throw new Error('Unexpectedly long audio; stopped generation.')
+      if (bytes > RATE * 2 * maxSeconds) throw new Error('Unexpectedly long audio; stopped generation.')
       chunks.push(chunk)
     }
     if (event.type === 'response.output_audio_transcript.done') transcript = event.transcript
@@ -70,12 +79,14 @@ export function audioCollector() {
   }
 }
 
-export function synthesize(apiKey, voice, text, { Socket = WebSocket, timeoutMs = 45000 } = {}) {
+export function synthesize(apiKey, voice, text, {
+  Socket = WebSocket, timeoutMs = 45000, instructions = INSTRUCTIONS, maxOutputTokens = 128, maxSeconds = 8,
+} = {}) {
   return new Promise((accept, reject) => {
     const socket = new Socket(`wss://api.openai.com/v1/realtime?model=${MODEL}`, {
       headers: { Authorization: `Bearer ${apiKey}` },
     })
-    const collect = audioCollector()
+    const collect = audioCollector(maxSeconds)
     let settled = false
     let requested = false
     const finish = (error, result) => {
@@ -93,10 +104,10 @@ export function synthesize(apiKey, voice, text, { Socket = WebSocket, timeoutMs 
       if (settled) return
       try {
         const event = JSON.parse(data)
-        if (event.type === 'session.created') socket.send(JSON.stringify(sessionEvent(voice)))
+        if (event.type === 'session.created') socket.send(JSON.stringify(sessionEvent(voice, instructions)))
         if (event.type === 'session.updated' && !requested) {
           requested = true
-          socket.send(JSON.stringify(responseEvent(text)))
+          socket.send(JSON.stringify(responseEvent(text, maxOutputTokens)))
         }
         const result = collect(event)
         if (result) finish(null, result)
@@ -147,20 +158,27 @@ function encode(wav, mp3, gainDb) {
   if (result.error || result.status !== 0) throw new Error('MP3 encoding failed. Check ffmpeg is installed.')
 }
 
-export function reviewHtml() {
+export function reviewHtml({ includeSentences = false } = {}) {
   return `<!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Kikimashta voice comparison</title>
-<style>body{font:18px system-ui;max-width:36rem;margin:2rem auto;padding:0 1rem;background:#ffe4cc;color:#301d49}section{background:#fff4fc;border:3px solid #9a4cff;border-radius:20px;padding:1rem;margin:1.5rem 0}audio{width:100%}h1{font-size:1.7rem}p{line-height:1.5}</style>
+<style>body{font:18px system-ui;max-width:36rem;margin:2rem auto;padding:0 1rem;background:#ffe4cc;color:#301d49}section,article{background:#fff4fc;border:3px solid #9a4cff;border-radius:20px;padding:1rem;margin:1.5rem 0}audio{width:100%}h1{font-size:1.7rem}p{line-height:1.5}.meaning{font-size:.9rem;color:#695778}.voice{margin-bottom:.4rem}</style>
 <h1>Choose a listening voice</h1><p>AI-generated Japanese speech from OpenAI. Compare at the same device volume. Listen for warmth, clear pronunciation, and comfortable word endings.</p>
-${VOICES.map(voice => `<section><h2>${voice}</h2>${WORDS.map(word => `<p lang="ja">${word.text}</p><audio controls preload="none" aria-label="${voice}: ${word.text}" src="${voice}-${word.id}.mp3"></audio>`).join('')}</section>`).join('')}
+${includeSentences ? `<h2>Full sentences</h2><p>Compare Marin and Cedar on statements, a question, and a longer sentence. Listen for natural rhythm and expression.</p>
+${SENTENCES.map(sentence => `<article><p lang="ja">${sentence.text}</p><p class="meaning">${sentence.meaning}</p>${SENTENCE_VOICES.map(voice => `<p class="voice">${voice}</p><audio controls preload="none" data-kind="sentence" aria-label="${voice}: ${sentence.text}" src="${voice}-${sentence.id}.mp3"></audio>`).join('')}</article>`).join('')}` : ''}
+<h2>Single words</h2>
+${VOICES.map(voice => `<section><h3>${voice}</h3>${WORDS.map(word => `<p lang="ja">${word.text}</p><audio controls preload="none" data-kind="word" aria-label="${voice}: ${word.text}" src="${voice}-${word.id}.mp3"></audio>`).join('')}</section>`).join('')}
 <p>These are audition clips. Japanese pronunciation and pitch accent still need listening review. Tell me your preferred voice and anything you would change.</p></html>`
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { 'dry-run': { type: 'boolean' }, output: { type: 'string' } } })
+  const { values } = parseArgs({ options: { 'dry-run': { type: 'boolean' }, sentences: { type: 'boolean' }, output: { type: 'string' } } })
+  const voices = values.sentences ? SENTENCE_VOICES : VOICES
+  const items = values.sentences ? SENTENCES : WORDS
+  const instructions = values.sentences ? SENTENCE_INSTRUCTIONS : INSTRUCTIONS
+  const limits = values.sentences ? { maxOutputTokens: 512, maxSeconds: 12 } : { maxOutputTokens: 128, maxSeconds: 8 }
   if (values['dry-run']) {
-    console.log(JSON.stringify({ model: MODEL, voices: VOICES, words: WORDS, requests: VOICES.length * WORDS.length,
-      instructions: INSTRUCTIONS, note: 'No API calls or file changes. Production audio is untouched.' }, null, 2))
+    console.log(JSON.stringify({ model: MODEL, voices, items, requests: voices.length * items.length,
+      instructions, ...limits, note: 'No API calls or file changes. Production audio is untouched.' }, null, 2))
     return
   }
   if (existsSync('.env.local')) loadEnvFile('.env.local')
@@ -172,13 +190,13 @@ async function main() {
   await mkdir(dirname(output), { recursive: true })
   await mkdir(output, { recursive: false })
   const manifest = { provider: 'OpenAI', model: MODEL, createdAt: new Date().toISOString(),
-    language: 'ja-JP', instructions: INSTRUCTIONS, sampleRate: RATE,
+    language: 'ja-JP', kind: values.sentences ? 'sentences' : 'words', instructions, ...limits, sampleRate: RATE,
     processing: 'Gain only, active-sample RMS target -22 dBFS, max boost 9 dB, sample peak ceiling -4 dBFS before MP3; add 120 ms lead and 240 ms tail, no trimming.',
     review: 'Not yet approved; pronunciation and pitch accent require human listening.', clips: [] }
-  for (const voice of VOICES) {
-    for (const word of WORDS) {
+  for (const voice of voices) {
+    for (const word of items) {
       console.log(`Generating ${voice}: ${word.text}`)
-      const { pcm, transcript, usage } = await synthesize(key, voice, word.text)
+      const { pcm, transcript, usage } = await synthesize(key, voice, word.text, { instructions, ...limits })
       const stem = `${voice}-${word.id}`
       const wav = wavFromPcm(pcm)
       await writeFile(join(output, `${stem}.wav`), wav, { flag: 'wx' })
@@ -190,8 +208,8 @@ async function main() {
       await writeFile(join(output, 'provenance.json'), JSON.stringify(manifest, null, 2) + '\n')
     }
   }
-  await writeFile(join(output, 'index.html'), reviewHtml(), { flag: 'wx' })
-  console.log(`Ready to compare: ${join(output, 'index.html')}`)
+  if (!values.sentences) await writeFile(join(output, 'index.html'), reviewHtml(), { flag: 'wx' })
+  console.log(values.sentences ? `Sentence clips ready: ${output}` : `Ready to compare: ${join(output, 'index.html')}`)
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

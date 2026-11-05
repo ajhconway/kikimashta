@@ -1,0 +1,67 @@
+name: Generate audio
+
+'on':
+  push:
+    branches: [main]
+    paths: [content/audio-generation-request.json]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audition set
+        required: true
+        default: sentences
+        type: choice
+        options: [words, sentences]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: generate-audio
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Check credential
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo '::error::Add the OPENAI_API_KEY repository secret in Settings > Secrets and variables > Actions.'
+            exit 1
+          fi
+      - run: npm ci
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Generate requested clips
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REQUEST_MODE: ${{ inputs.mode }}
+        run: |
+          node --input-type=module - <<'JS'
+          import { readFileSync } from 'node:fs'
+          import { spawnSync } from 'node:child_process'
+          const mode = process.env.REQUEST_MODE || JSON.parse(readFileSync('content/audio-generation-request.json', 'utf8')).mode
+          if (!['words', 'sentences'].includes(mode)) throw new Error('Unknown audio request mode')
+          const args = ['scripts/content/audition-openai.mjs', '--output', 'artifacts/audio-generation']
+          if (mode === 'sentences') args.push('--sentences')
+          const result = spawnSync(process.execPath, args, { stdio: 'inherit' })
+          process.exit(result.status ?? 1)
+          JS
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: generated-audio-${{ github.run_id }}
+          path: artifacts/audio-generation/
+          if-no-files-found: ignore
+          retention-days: 30
