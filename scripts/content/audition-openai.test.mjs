@@ -1,7 +1,9 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { EventEmitter } from 'node:events'
-import { audioCollector, levelAudio, SENTENCE_INSTRUCTIONS, synthesize, wavFromPcm } from './audition-openai.mjs'
+import { spawnSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import { audioCollector, generationSet, INSTRUCTIONS, levelAudio, SENTENCE_INSTRUCTIONS, synthesize, wavFromPcm } from './audition-openai.mjs'
 
 const pcm = Buffer.alloc(24000)
 for (let i = 0; i < pcm.length; i += 2) pcm.writeInt16LE(i % 4 ? 4000 : -4000, i)
@@ -115,4 +117,40 @@ test('sentence generation preserves the full text and accepts speech beyond the 
   })
   assert.deepEqual(result.pcm, longerPcm)
   assert.throws(() => audioCollector(12)(delta(Buffer.alloc(24000 * 2 * 12 + 2))), /Unexpectedly long/)
+})
+
+test('full-bank mode generates both chosen voices for every stable item and uses its reading', () => {
+  const set = generationSet({ bank: true })
+  assert.equal(set.kind, 'bank')
+  assert.equal(set.bankId, 'ja-starter')
+  assert.equal(set.language, 'ja-JP')
+  assert.deepEqual(set.voices, ['marin', 'cedar'])
+  assert.deepEqual(set.items, [
+    { id: 'ja-cat', text: 'ねこ' },
+    { id: 'ja-dog', text: 'いぬ' },
+    { id: 'ja-apple', text: 'りんご' },
+    { id: 'ja-banana', text: 'バナナ' },
+    { id: 'ja-umbrella', text: 'かさ' },
+    { id: 'ja-cup', text: 'コップ' },
+  ])
+  assert.equal(set.voices.length * set.items.length, 12)
+  assert.equal(set.instructions, INSTRUCTIONS)
+  assert.equal(set.maxOutputTokens, 128)
+  assert.equal(set.maxSeconds, 8)
+})
+
+test('existing audition sets remain available and conflicting paid modes fail before generation', () => {
+  const words = generationSet()
+  assert.deepEqual(words.voices, ['marin', 'cedar', 'coral'])
+  assert.equal(words.items.length, 3)
+  assert.equal(words.kind, 'words')
+  const sentences = generationSet({ sentences: true })
+  assert.deepEqual(sentences.voices, ['marin', 'cedar'])
+  assert.equal(sentences.items.length, 4)
+  assert.equal(sentences.kind, 'sentences')
+  assert.equal(sentences.instructions, SENTENCE_INSTRUCTIONS)
+  const result = spawnSync(process.execPath, [fileURLToPath(new URL('./audition-openai.mjs', import.meta.url)), '--bank', '--sentences', '--dry-run'], { encoding: 'utf8' })
+  assert.equal(result.status, 1)
+  assert.equal(result.stdout, '')
+  assert.match(result.stderr, /mutually exclusive/)
 })
