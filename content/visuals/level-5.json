@@ -1,0 +1,925 @@
+[
+  {
+    "id": "ja-v-6992f8889c8c",
+    "concept": "School building with a paused calendar and student outside.",
+    "visualGroup": "休学",
+    "reviewRequired": true,
+    "reviewNote": "A school pause symbolizes leave of absence; distinguish from holiday or skipping school."
+  },
+  {
+    "id": "ja-v-d5a23463d010",
+    "concept": "Wind currents flow through a ring around floating leaves.",
+    "visualGroup": "空気",
+    "reviewRequired": true,
+    "reviewNote": "Wind is a visible symbol for invisible air."
+  },
+  {
+    "id": "ja-v-88c9d9718867",
+    "concept": "Excavation brush uncovers a buried broken ancient pot.",
+    "visualGroup": "考古学",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-e5e8eaecaa3f",
+    "concept": "Arrow lands in the center of a target with celebratory stars.",
+    "visualGroup": "successful-hit",
+    "reviewRequired": true,
+    "reviewNote": "A successful hit symbolizes the source gloss A Success."
+  },
+  {
+    "id": "ja-v-84c8eeeb03ab",
+    "concept": "A large clock and energetic lightning bolt.",
+    "visualGroup": "今すぐ",
+    "reviewRequired": true,
+    "reviewNote": "Clock plus urgency bolt symbolizes immediately."
+  },
+  {
+    "id": "ja-v-5dc14aea92c7",
+    "concept": "Steak with a small cow provenance bubble.",
+    "visualGroup": "牛肉",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-afb2c2f9a135",
+    "concept": "Baby cradle with map pin over its home.",
+    "visualGroup": "生まれ",
+    "reviewRequired": true,
+    "reviewNote": "Birthplace combines newborn and location; source 生まれ can also mean birth or origin."
+  },
+  {
+    "id": "ja-v-10e568715d3a",
+    "concept": "Saturated blue paint splash, brush, and blue swatch.",
+    "visualGroup": "blue-color",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-6e098e54aa63",
+    "concept": "Whole person silhouette highlighted from head to feet.",
+    "visualGroup": "体",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-83365ed9e3db",
+    "concept": "Thin and heavy versions of the same geometric letterform.",
+    "visualGroup": "太字",
+    "reviewRequired": true,
+    "reviewNote": "Typographic diagram uses letterforms, without a word caption."
+  },
+  {
+    "id": "ja-v-696107ad9e08",
+    "concept": "Young boy in shorts holds a bright ball.",
+    "visualGroup": "男の子",
+    "reviewRequired": true,
+    "reviewNote": "Age and gender identity are not reliably inferable from appearance; owner should review people cards."
+  },
+  {
+    "id": "ja-v-26a964fd9243",
+    "concept": "One whole loaf next to two sliced loaves, with count marks.",
+    "visualGroup": "～斤",
+    "reviewRequired": true,
+    "reviewNote": "Loaf counting cue; source counter 斤 has context-dependent quantities."
+  },
+  {
+    "id": "ja-v-2e7b28af830b",
+    "concept": "Two brothers stand together with a shared family branch.",
+    "visualGroup": "brothers",
+    "reviewRequired": true,
+    "reviewNote": "Shared family branch and age difference cue brothers; gender and family relationship require review."
+  },
+  {
+    "id": "ja-v-d10df0e56846",
+    "concept": "Fuzzy caterpillar crawls along a leaf.",
+    "visualGroup": "毛虫",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d72e08381953",
+    "concept": "Two houses almost touch, with a very short distance marker.",
+    "visualGroup": "近い",
+    "reviewRequired": true,
+    "reviewNote": "Short gap between nearby houses represents proximity."
+  },
+  {
+    "id": "ja-v-921d54ba31ef",
+    "concept": "Paint palette with five colorful paint wells.",
+    "visualGroup": "色",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c506bd7fb201",
+    "concept": "Office building with workers and briefcases.",
+    "visualGroup": "company-office",
+    "reviewRequired": true,
+    "reviewNote": "Office building stands for the organization."
+  },
+  {
+    "id": "ja-v-4b9574b8d3b9",
+    "concept": "Pencil writes several lines on a composition sheet.",
+    "visualGroup": "作文",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9a9a5c6d448c",
+    "concept": "Small neighborhood shop with striped awning and stocked shelves.",
+    "visualGroup": "コンビニ",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ceaf3971ff83",
+    "concept": "Street bends tightly around a building corner.",
+    "visualGroup": "角",
+    "reviewRequired": true,
+    "reviewNote": "Street corner scene; 角 can also mean the corner of an object."
+  },
+  {
+    "id": "ja-v-fd0090161525",
+    "concept": "Shopper exchanges coins for a wrapped purchase.",
+    "visualGroup": "代金",
+    "reviewRequired": true,
+    "reviewNote": "Payment exchange represents the price or cost."
+  },
+  {
+    "id": "ja-v-4aa5c84df90c",
+    "concept": "Single crescent moon with two small stars.",
+    "visualGroup": "三日月",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-6027e0e1c622",
+    "concept": "Large multistory shop with display windows and shopping bags.",
+    "visualGroup": "デパート",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9a8a0ffc08d3",
+    "concept": "Flow diagram connects a circle and three colored boxes.",
+    "visualGroup": "図",
+    "reviewRequired": true,
+    "reviewNote": "Generic flow diagram is intentional for diagram."
+  },
+  {
+    "id": "ja-v-7c4bedf9eff4",
+    "concept": "Two delegates meet beneath different fictional flags and a globe.",
+    "visualGroup": "外交",
+    "reviewRequired": true,
+    "reviewNote": "Meeting delegates and fictional flags symbolize diplomacy without nationality stereotypes."
+  },
+  {
+    "id": "ja-v-506e7ed10461",
+    "concept": "Close-packed low houses and shopfronts beneath a distant city.",
+    "visualGroup": "下町",
+    "reviewRequired": true,
+    "reviewNote": "Traditional low-rise neighborhood symbolizes source Downtown; 下町 is more specific than any city center."
+  },
+  {
+    "id": "ja-v-3534dd7d07d1",
+    "concept": "Orange sun sets behind a low horizon and small house.",
+    "visualGroup": "夕方",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-8ce0a0ec59c4",
+    "concept": "Gear, ruler, and bridge under construction.",
+    "visualGroup": "工学",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-1b6483e173f3",
+    "concept": "Calendar with every day marked in sequence.",
+    "visualGroup": "毎日",
+    "reviewRequired": true,
+    "reviewNote": "Every calendar cell is checked to show daily repetition."
+  },
+  {
+    "id": "ja-v-ad9fb52e6dff",
+    "concept": "Three month pages each show one recurring marked day.",
+    "visualGroup": "毎月",
+    "reviewRequired": true,
+    "reviewNote": "Numbered month pages with repeated checks represent monthly recurrence."
+  },
+  {
+    "id": "ja-v-a96ca9b29f0d",
+    "concept": "Three successive repeated turns all receive a check.",
+    "visualGroup": "毎回",
+    "reviewRequired": true,
+    "reviewNote": "All three attempts are checked; abstract recurrence needs owner review."
+  },
+  {
+    "id": "ja-v-d860a871b14d",
+    "concept": "Three yearly calendars with matching annual celebration stars.",
+    "visualGroup": "毎年",
+    "reviewRequired": true,
+    "reviewNote": "Consecutive years carry the same event."
+  },
+  {
+    "id": "ja-v-224fe0f121ab",
+    "concept": "Person bows toward another with a small apologetic speech bubble.",
+    "visualGroup": "すみません",
+    "reviewRequired": true,
+    "reviewNote": "Bowing symbolizes excuse me or apology; culturally contextual."
+  },
+  {
+    "id": "ja-v-188bdf18a50c",
+    "concept": "A single curved feather with branching vanes.",
+    "visualGroup": "羽",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-698044202165",
+    "concept": "Several distinct leafy trees form a small grove.",
+    "visualGroup": "林",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-4fd3d09440c1",
+    "concept": "Circle, square, and triangle shown as an outline shape family.",
+    "visualGroup": "shape-family",
+    "reviewRequired": true,
+    "reviewNote": "Shape family represents suffix ～形, not a particular shape."
+  },
+  {
+    "id": "ja-v-5bbf746af479",
+    "concept": "Continuous timeline spans several consecutive calendar years.",
+    "visualGroup": "～年来",
+    "reviewRequired": true,
+    "reviewNote": "Continuous multi-year duration symbolizes for some years."
+  },
+  {
+    "id": "ja-v-3813940acf07",
+    "concept": "Ancient pot, old column, and long arrow reaching the present sapling.",
+    "visualGroup": "古来",
+    "reviewRequired": true,
+    "reviewNote": "Ancient objects and an extending timeline symbolize from ancient times."
+  },
+  {
+    "id": "ja-v-97dfa455ab7e",
+    "concept": "Most dots agree, with a small minority differing.",
+    "visualGroup": "大体",
+    "reviewRequired": true,
+    "reviewNote": "Majority diagram symbolizes generally or roughly; may be confused with many."
+  },
+  {
+    "id": "ja-v-f754ac11a73b",
+    "concept": "Person waves a hand with motion arcs beside the raised arm.",
+    "visualGroup": "仕草",
+    "reviewRequired": true,
+    "reviewNote": "Hand gesture is a concrete example of gesture."
+  },
+  {
+    "id": "ja-v-597577664a1b",
+    "concept": "Three shiny gold ingots.",
+    "visualGroup": "金",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-74f77120e84d",
+    "concept": "Archer hits a bullseye and earns a star.",
+    "visualGroup": "上手い",
+    "reviewRequired": true,
+    "reviewNote": "A skilled action symbolizes good at; could also mean success."
+  },
+  {
+    "id": "ja-v-4063840184cf",
+    "concept": "Tufts of fresh blades sprout from the ground.",
+    "visualGroup": "草",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a491f1acccc3",
+    "concept": "Scissors, glue, and handmade paper house on a craft table.",
+    "visualGroup": "工作",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ede466428b1b",
+    "concept": "Main office links outward to two smaller branch offices.",
+    "visualGroup": "本社",
+    "reviewRequired": true,
+    "reviewNote": "Central starred building and subordinate branches distinguish headquarters."
+  },
+  {
+    "id": "ja-v-10984ece1206",
+    "concept": "Small rural home among hills, river, and fields.",
+    "visualGroup": "里",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-0cc907790ad0",
+    "concept": "Calendar with several day cells bracketed by a question mark.",
+    "visualGroup": "何日",
+    "reviewRequired": true,
+    "reviewNote": "Question plus calendar day grid represents how many days."
+  },
+  {
+    "id": "ja-v-a5dbfebd3fae",
+    "concept": "Three people grouped under a question mark.",
+    "visualGroup": "何人",
+    "reviewRequired": true,
+    "reviewNote": "Counting people is represented by a question above the group."
+  },
+  {
+    "id": "ja-v-1c7565a62dc9",
+    "concept": "Repeated circular turns beside a question mark.",
+    "visualGroup": "何回",
+    "reviewRequired": true,
+    "reviewNote": "Repetition plus question represents how many times."
+  },
+  {
+    "id": "ja-v-5ed3001d6892",
+    "concept": "Today calendar points to a page only three days ahead.",
+    "visualGroup": "近日",
+    "reviewRequired": true,
+    "reviewNote": "A short three-day calendar jump symbolizes in a few days."
+  },
+  {
+    "id": "ja-v-dc5177422a8b",
+    "concept": "Person stands alone on their own platform after leaving supporting hands.",
+    "visualGroup": "自立",
+    "reviewRequired": true,
+    "reviewNote": "Leaving support and standing independently is symbolic; avoid equating independence with physical ability."
+  },
+  {
+    "id": "ja-v-01016753b889",
+    "concept": "Simplified torso cutaway highlights internal heart and stomach.",
+    "visualGroup": "体内",
+    "reviewRequired": true,
+    "reviewNote": "Simplified educational internal-organ diagram, not medically precise."
+  },
+  {
+    "id": "ja-v-ebb68031a152",
+    "concept": "Smiling speech bubble gives a thumbs-up while the scene shows a spilled cake.",
+    "visualGroup": "皮肉",
+    "reviewRequired": true,
+    "reviewNote": "Praise over an obvious mishap symbolizes irony or sarcasm; high ambiguity requires review."
+  },
+  {
+    "id": "ja-v-c2a96f1d7abc",
+    "concept": "New worker with briefcase enters an office door.",
+    "visualGroup": "入社",
+    "reviewRequired": true,
+    "reviewNote": "Worker joining a company can resemble simply entering an office."
+  },
+  {
+    "id": "ja-v-96e39ee9cb18",
+    "concept": "A glowing lamp casts radiating light.",
+    "visualGroup": "light",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c2a7e49d3e08",
+    "concept": "Open book releases a quill and small imaginative stars.",
+    "visualGroup": "文学",
+    "reviewRequired": true,
+    "reviewNote": "Book and quill symbolize literature rather than ordinary reading."
+  },
+  {
+    "id": "ja-v-40dee6baff53",
+    "concept": "Person speaks with large expanding sound waves.",
+    "visualGroup": "大声",
+    "reviewRequired": true,
+    "reviewNote": "Large waves distinguish loud voice from ordinary voice."
+  },
+  {
+    "id": "ja-v-d34b59e423f3",
+    "concept": "Huge framed masterpiece dwarfs a small admiring visitor.",
+    "visualGroup": "大作",
+    "reviewRequired": true,
+    "reviewNote": "Large artwork symbolizes major work; source can refer to books or films too."
+  },
+  {
+    "id": "ja-v-bcfbced3ea21",
+    "concept": "Adult man stands with a small shoulder bag.",
+    "visualGroup": "男の人",
+    "reviewRequired": true,
+    "reviewNote": "Gender cannot reliably be inferred from an illustration; adult person is the visual cue."
+  },
+  {
+    "id": "ja-v-a249b72fa923",
+    "concept": "A jar contains a large number of colorful balls.",
+    "visualGroup": "多い",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-25611a347757",
+    "concept": "Thought bubble shows a likely sun and a smaller uncertain rain cloud.",
+    "visualGroup": "多分",
+    "reviewRequired": true,
+    "reviewNote": "Weather prediction with uncertainty symbolizes maybe; owner review needed."
+  },
+  {
+    "id": "ja-v-b639fedc63ec",
+    "concept": "Single marbled steak on a plain plate.",
+    "visualGroup": "meat",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d242b38667c8",
+    "concept": "Coins beside a paper banknote.",
+    "visualGroup": "money",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-2d7d45d5614e",
+    "concept": "Moon casts a pale beam and reflection on water.",
+    "visualGroup": "月光",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-55fef51b0694",
+    "concept": "Calendar page turns to the next numbered month.",
+    "visualGroup": "来月",
+    "reviewRequired": true,
+    "reviewNote": "Consecutive month numbers plus arrow cue next month."
+  },
+  {
+    "id": "ja-v-fb3e6c8865d4",
+    "concept": "Year calendar advances by one year.",
+    "visualGroup": "来年",
+    "reviewRequired": true,
+    "reviewNote": "Consecutive year numbers plus arrow cue next year."
+  },
+  {
+    "id": "ja-v-ba0c8a160c33",
+    "concept": "Dark night sky with moon, stars, and sleeping house.",
+    "visualGroup": "夜",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-5e97c99f1db9",
+    "concept": "Person shakes head beside a large refusal cross.",
+    "visualGroup": "いいえ",
+    "reviewRequired": true,
+    "reviewNote": "Head shaking and cross symbolize no."
+  },
+  {
+    "id": "ja-v-cda9169e9fa2",
+    "concept": "Taller older sibling is highlighted beside a younger sibling.",
+    "visualGroup": "兄",
+    "reviewRequired": true,
+    "reviewNote": "Relative age and family branch cue older brother; family and gender require review."
+  },
+  {
+    "id": "ja-v-7cc10603c197",
+    "concept": "Person points inward toward their own chest.",
+    "visualGroup": "自分",
+    "reviewRequired": true,
+    "reviewNote": "Self-directed arrow symbolizes oneself."
+  },
+  {
+    "id": "ja-v-aef5eed601c5",
+    "concept": "Adult portrait framed by the numeric age range 30–39.",
+    "visualGroup": "三十代",
+    "reviewRequired": true,
+    "reviewNote": "Numerical age range distinguishes thirties without appearance stereotypes."
+  },
+  {
+    "id": "ja-v-9f59b44e2237",
+    "concept": "One complete circular turn with a single tally.",
+    "visualGroup": "一回",
+    "reviewRequired": true,
+    "reviewNote": "One loop symbolizes one occurrence."
+  },
+  {
+    "id": "ja-v-a557e263cea4",
+    "concept": "Empty taxi interior with available green light.",
+    "visualGroup": "空車",
+    "reviewRequired": true,
+    "reviewNote": "Vacant taxi represented without an English taxi sign; source gloss Open Taxi is imprecise."
+  },
+  {
+    "id": "ja-v-50579c22e90d",
+    "concept": "Tree stump ring origin connects to the full grown tree.",
+    "visualGroup": "本来",
+    "reviewRequired": true,
+    "reviewNote": "Origin-to-natural-state metaphor for originally is highly ambiguous."
+  },
+  {
+    "id": "ja-v-cbb4297f3dd7",
+    "concept": "Two evenly separated lines remain parallel across the card.",
+    "visualGroup": "平行",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c244e16d1e60",
+    "concept": "Person lifts a weight beside a full energy gauge.",
+    "visualGroup": "体力",
+    "reviewRequired": true,
+    "reviewNote": "Weight and energy gauge cue physical strength and stamina."
+  },
+  {
+    "id": "ja-v-b1b10c2f6445",
+    "concept": "Friendly pink pig with snout, ears, and curly tail.",
+    "visualGroup": "豚",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-7e87850c448d",
+    "concept": "Rain falls from a soft cloud onto a puddle.",
+    "visualGroup": "雨",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-79f8de04d6f6",
+    "concept": "Mirror faithfully reflects a real apple with a check.",
+    "visualGroup": "本当",
+    "reviewRequired": true,
+    "reviewNote": "Matching object and reflection symbolize reality or truth; abstract and ambiguous."
+  },
+  {
+    "id": "ja-v-f2e8d12a8234",
+    "concept": "Recent end of a long year timeline is highlighted.",
+    "visualGroup": "近年",
+    "reviewRequired": true,
+    "reviewNote": "Highlighted most recent years symbolize recent years; numerical dates are illustrative."
+  },
+  {
+    "id": "ja-v-0958f7553d9f",
+    "concept": "Bowl heaped with distinct white rice grains.",
+    "visualGroup": "米",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9ff4f40a3428",
+    "concept": "Two identical orange stars joined by equality bars.",
+    "visualGroup": "同じ",
+    "reviewRequired": true,
+    "reviewNote": "Equality diagram intentionally uses identical objects."
+  },
+  {
+    "id": "ja-v-f9d62cb2d38a",
+    "concept": "Two appointments converge on one highlighted calendar day.",
+    "visualGroup": "同日",
+    "reviewRequired": true,
+    "reviewNote": "Two events share a calendar date."
+  },
+  {
+    "id": "ja-v-9fb793c875d7",
+    "concept": "Child with backpack enters a school building.",
+    "visualGroup": "入学",
+    "reviewRequired": true,
+    "reviewNote": "Entering school symbolizes school admission, rather than attendance."
+  },
+  {
+    "id": "ja-v-6777bcda7f1e",
+    "concept": "Three ascending school year steps with students.",
+    "visualGroup": "学年",
+    "reviewRequired": true,
+    "reviewNote": "Numbered school progression symbolizes grade/year."
+  },
+  {
+    "id": "ja-v-d0c8497457bd",
+    "concept": "Magnified layered skin patch with pores and hair.",
+    "visualGroup": "皮",
+    "reviewRequired": true,
+    "reviewNote": "Educational skin cross-section; 皮 can also refer to other coverings."
+  },
+  {
+    "id": "ja-v-19bd7db9d5d0",
+    "concept": "Broad blue sky with two white clouds and a tiny ground strip.",
+    "visualGroup": "空",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d42b5be1c4ad",
+    "concept": "Pale sky-blue paint drop and matching swatch.",
+    "visualGroup": "sky-blue-color",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b37750755344",
+    "concept": "Bell rings with visible sound waves.",
+    "visualGroup": "sound",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f14d2c0c7442",
+    "concept": "A single clear square with equal-length edge marks.",
+    "visualGroup": "四角",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9567eaf8fe9b",
+    "concept": "Student studies an open book with a backpack beside the chair.",
+    "visualGroup": "学生",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-cb7a14590e8e",
+    "concept": "Sun sends warm rays through a window onto a plant.",
+    "visualGroup": "日光",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-26d771953f4b",
+    "concept": "Simple educational diagram shows paired testes in a neutral anatomical cutaway.",
+    "visualGroup": "金玉",
+    "reviewRequired": true,
+    "reviewNote": "Tasteful nonsexual simplified educational anatomy; verify anatomical clarity and suitability for the owner’s lesson bank."
+  },
+  {
+    "id": "ja-v-cabda7989563",
+    "concept": "A hand points toward one nearby selected object among three.",
+    "visualGroup": "それ",
+    "reviewRequired": true,
+    "reviewNote": "Demonstrative that one requires conversational context; arrow selects the middle object."
+  },
+  {
+    "id": "ja-v-cc6f385f3a90",
+    "concept": "One separated selected object and a bracket enclosing all remaining objects.",
+    "visualGroup": "その他",
+    "reviewRequired": true,
+    "reviewNote": "Enclosed remainder group symbolizes the others."
+  },
+  {
+    "id": "ja-v-bdf7ba87a26a",
+    "concept": "Middle occurrence is highlighted in a sequence of three.",
+    "visualGroup": "今回",
+    "reviewRequired": true,
+    "reviewNote": "Current occurrence is singled out; depends on understanding sequence."
+  },
+  {
+    "id": "ja-v-2c3dfcbde58b",
+    "concept": "Several bundles of a thousand units beside a question mark.",
+    "visualGroup": "何千",
+    "reviewRequired": true,
+    "reviewNote": "Question with thousand bundles preserves 何千; source Thousands omits the interrogative."
+  },
+  {
+    "id": "ja-v-d6b0cff12d70",
+    "concept": "Three circular action cycles arranged as a countable sequence.",
+    "visualGroup": "～回",
+    "reviewRequired": true,
+    "reviewNote": "Countable repeated cycles represent times counter."
+  },
+  {
+    "id": "ja-v-fb6b2d93a83c",
+    "concept": "A chosen answer matches the key and gains a check.",
+    "visualGroup": "correct-answer",
+    "reviewRequired": true,
+    "reviewNote": "Matching answer cards symbolize being right; does not depict every sense of 当たる."
+  },
+  {
+    "id": "ja-v-e99feae5bc25",
+    "concept": "Eye has a clear unobstructed line of sight to a distant flower.",
+    "visualGroup": "見える",
+    "reviewRequired": true,
+    "reviewNote": "Visibility illustrated through clear sightline."
+  },
+  {
+    "id": "ja-v-bc01756b4d89",
+    "concept": "Person approaches the foreground observer along an inward arrow.",
+    "visualGroup": "来る",
+    "reviewRequired": true,
+    "reviewNote": "Approach toward viewer symbolizes come; distinguish from go."
+  },
+  {
+    "id": "ja-v-415802b8c769",
+    "concept": "Ball descends three stair levels beside downward arrow.",
+    "visualGroup": "下がる",
+    "reviewRequired": true,
+    "reviewNote": "Descending levels represent becoming lower, rather than physically falling."
+  },
+  {
+    "id": "ja-v-a8c0f98a1f64",
+    "concept": "Hen with newly laid egg in a straw nest.",
+    "visualGroup": "生む",
+    "reviewRequired": true,
+    "reviewNote": "Egg-laying is a nonsexual example of giving birth/producing; may fit 産む more naturally than source 生む."
+  },
+  {
+    "id": "ja-v-4397422fc9fb",
+    "concept": "Person leaves a foreground observer toward a distant destination.",
+    "visualGroup": "行く",
+    "reviewRequired": true,
+    "reviewNote": "Travel away from viewer toward destination symbolizes go."
+  },
+  {
+    "id": "ja-v-86592fe77e48",
+    "concept": "Ball climbs three steps beside an upward arrow.",
+    "visualGroup": "上がる",
+    "reviewRequired": true,
+    "reviewNote": "Ascending levels represent going up."
+  },
+  {
+    "id": "ja-v-b5e9e035a8be",
+    "concept": "Ball moves into an open box.",
+    "visualGroup": "入れる",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-bdc2a3d728dd",
+    "concept": "Learner connects an open book to a new idea bulb.",
+    "visualGroup": "学ぶ",
+    "reviewRequired": true,
+    "reviewNote": "Reading leads to a new idea as a symbol for learning."
+  },
+  {
+    "id": "ja-v-a4ccf0b7bace",
+    "concept": "Hands assemble blocks into a small house.",
+    "visualGroup": "作る",
+    "reviewRequired": true,
+    "reviewNote": "Constructing a model house represents making."
+  },
+  {
+    "id": "ja-v-40179481fcf6",
+    "concept": "Two approaching people greet each other in the middle.",
+    "visualGroup": "会う",
+    "reviewRequired": true,
+    "reviewNote": "People converging and greeting symbolize meeting."
+  },
+  {
+    "id": "ja-v-4690961b5456",
+    "concept": "Spoon swirls pink and yellow ingredients in a mixing bowl.",
+    "visualGroup": "交ぜる",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d31e008f6e8e",
+    "concept": "Pinwheel rotates around a fixed hub.",
+    "visualGroup": "回る",
+    "reviewRequired": true,
+    "reviewNote": "Pinwheel and rotation arrows show revolving."
+  },
+  {
+    "id": "ja-v-97526e11c703",
+    "concept": "Runner leans forward with bent arms and long strides.",
+    "visualGroup": "走る",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-4fa253e10946",
+    "concept": "Person speaks a small three-dot bubble toward a listener.",
+    "visualGroup": "言う",
+    "reviewRequired": true,
+    "reviewNote": "Speech bubble shows saying something."
+  },
+  {
+    "id": "ja-v-e9ad09158eb3",
+    "concept": "Hands rotate a horizontal board into an upright position.",
+    "visualGroup": "立てる",
+    "reviewRequired": true,
+    "reviewNote": "Transitive action sets a board upright; distinguish from standing up oneself."
+  },
+  {
+    "id": "ja-v-bd365f430f35",
+    "concept": "Moving ball halts against a firm stop bar.",
+    "visualGroup": "止まる",
+    "reviewRequired": true,
+    "reviewNote": "Motion lines terminate at barrier to symbolize stopping."
+  },
+  {
+    "id": "ja-v-a001b24baf12",
+    "concept": "Ball is lifted out of an open box.",
+    "visualGroup": "出す",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-4f9ae60eff62",
+    "concept": "Person thinks about a puzzle piece inside a thought bubble.",
+    "visualGroup": "考える",
+    "reviewRequired": true,
+    "reviewNote": "Thought bubble with unfinished puzzle represents thinking."
+  },
+  {
+    "id": "ja-v-eeb8ecca964f",
+    "concept": "Two puzzle pieces fit together under a bright idea spark.",
+    "visualGroup": "分かる",
+    "reviewRequired": true,
+    "reviewNote": "Pieces fitting and idea spark symbolize comprehension."
+  },
+  {
+    "id": "ja-v-0c5871310c83",
+    "concept": "Train tracks lead toward a marked distant destination.",
+    "visualGroup": "行き",
+    "reviewRequired": true,
+    "reviewNote": "Destination-bound train symbolizes 行き read ゆき; this word also functions as a destination suffix."
+  },
+  {
+    "id": "ja-v-fa26a112a479",
+    "concept": "Vehicle moves along a road with strong motion streaks.",
+    "visualGroup": "走行",
+    "reviewRequired": true,
+    "reviewNote": "Vehicle motion represents traveling/running of a vehicle, rather than tourism."
+  },
+  {
+    "id": "ja-v-ea952b83ac80",
+    "concept": "A single clear triangle with its three corners emphasized.",
+    "visualGroup": "三角",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9910372c1964",
+    "concept": "University hall topped by a graduation cap.",
+    "visualGroup": "大学",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b2f08cdf5ab4",
+    "concept": "Timeline of completed steps ends at a highlighted current clock.",
+    "visualGroup": "今まで",
+    "reviewRequired": true,
+    "reviewNote": "Past-to-present span ending at current clock represents until now."
+  },
+  {
+    "id": "ja-v-ceb7b2a20cbd",
+    "concept": "River flows between two steep green mountain sides.",
+    "visualGroup": "谷",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-7b2479107ae1",
+    "concept": "A collection of differently colored shapes and objects.",
+    "visualGroup": "色々",
+    "reviewRequired": true,
+    "reviewNote": "A varied collection symbolizes various."
+  },
+  {
+    "id": "ja-v-135a822fbf3a",
+    "concept": "Person produces small curved voice waves from mouth.",
+    "visualGroup": "声",
+    "reviewRequired": true,
+    "reviewNote": "Human source distinguishes voice from bell sound and larger waves distinguish loud voice."
+  },
+  {
+    "id": "ja-v-6f2e359ff6c8",
+    "concept": "Compass highlights the leftward direction with a setting sun.",
+    "visualGroup": "西",
+    "reviewRequired": true,
+    "reviewNote": "Map convention uses north up and west left; no direction caption."
+  },
+  {
+    "id": "ja-v-81b56dc2a618",
+    "concept": "Building exit on the left with westward compass cue.",
+    "visualGroup": "西口",
+    "reviewRequired": true,
+    "reviewNote": "Left exit and compass symbolize west exit; orientation requires review."
+  },
+  {
+    "id": "ja-v-115fd51b8d38",
+    "concept": "Three hidden objects under lids with a large question above.",
+    "visualGroup": "何",
+    "reviewRequired": true,
+    "reviewNote": "Mystery containers symbolize what; inherently abstract."
+  },
+  {
+    "id": "ja-v-5f4c2dcf05ba",
+    "concept": "Month page contains a question in place of its month number.",
+    "visualGroup": "何月",
+    "reviewRequired": true,
+    "reviewNote": "Question in month page represents which month; distinguish from how many days."
+  },
+  {
+    "id": "ja-v-d2a96c6d5f6a",
+    "concept": "Year calendar has four unresolved year digits.",
+    "visualGroup": "何年",
+    "reviewRequired": true,
+    "reviewNote": "Four question marks occupy year digits to cue what year."
+  },
+  {
+    "id": "ja-v-d215c2071f47",
+    "concept": "Golden wheat ears on tall stalks.",
+    "visualGroup": "麦",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b4d0a55dd496",
+    "concept": "Life arc spans baby, adult, and elderly person.",
+    "visualGroup": "一生",
+    "reviewRequired": true,
+    "reviewNote": "Life stages span a whole life; age depiction is schematic."
+  },
+  {
+    "id": "ja-v-4638d2c26682",
+    "concept": "Cutaway office shows people working inside its walls.",
+    "visualGroup": "社内",
+    "reviewRequired": true,
+    "reviewNote": "Interior office view represents within the company."
+  },
+  {
+    "id": "ja-v-ac1e4f6bee13",
+    "concept": "Round ball of yarn with knitting needles and loose strand.",
+    "visualGroup": "毛糸",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-01df3c579080",
+    "concept": "Foreground speaker points toward the facing listener.",
+    "visualGroup": "あなた",
+    "reviewRequired": true,
+    "reviewNote": "Directed attention toward the listener symbolizes you; conversational pronouns require review."
+  },
+  {
+    "id": "ja-v-7e8dc4d63e82",
+    "concept": "Younger shorter brother is highlighted beside older sibling.",
+    "visualGroup": "弟",
+    "reviewRequired": true,
+    "reviewNote": "Relative age and branch cue younger brother; family and gender need review."
+  },
+  {
+    "id": "ja-v-c370702e86ab",
+    "concept": "Young adult walks energetically with a shoulder bag.",
+    "visualGroup": "青年",
+    "reviewRequired": true,
+    "reviewNote": "Youth age category and gender cannot reliably be read from appearance; review against boy and adult man."
+  }
+]

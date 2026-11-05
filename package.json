@@ -13,6 +13,8 @@
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run && node --test scripts/*.test.mjs scripts/content/*.test.mjs",
     "audio:audition": "node scripts/content/audition-openai.mjs",
+    "content:illustrate": "node scripts/content/illustrate-levels-1-2.mjs && node scripts/content/illustrate-levels-3-4.mjs && node scripts/content/illustrate-level-5.mjs",
+    "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test && npm run build"

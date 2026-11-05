@@ -1,0 +1,1238 @@
+[
+  {
+    "id": "ja-v-8814378ebfc2",
+    "concept": "A large jug pours only a tiny amount into a glass",
+    "visualGroup": "a-little",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-22dcde10ff57",
+    "concept": "A traveler beside a United States flag",
+    "visualGroup": "american-person",
+    "reviewRequired": true,
+    "reviewNote": "Flag identifies nationality; a flag alone cannot establish an individual’s nationality."
+  },
+  {
+    "id": "ja-apple",
+    "concept": "Existing starter illustration of an apple",
+    "visualGroup": "apple",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-575c16528161",
+    "concept": "An arrow with feathered tail and pointed head",
+    "visualGroup": "arrow",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-09fcc851c1ab",
+    "concept": "Three appliances with a counting bracket",
+    "visualGroup": "big-machine-counter",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-143328009b51",
+    "concept": "A traveler beside a United Kingdom flag",
+    "visualGroup": "british-person",
+    "reviewRequired": true,
+    "reviewNote": "Flag identifies nationality; a flag alone cannot establish an individual’s nationality."
+  },
+  {
+    "id": "ja-v-6eab3743dc93",
+    "concept": "An event calendar crossed out",
+    "visualGroup": "cancellation",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-7930a252da9b",
+    "concept": "A single written character isolated on a writing sheet",
+    "visualGroup": "character",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-887f569257fd",
+    "concept": "A cluster of tall colorful city buildings",
+    "visualGroup": "city",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9ff5251e6f21",
+    "concept": "A steaming coffee mug",
+    "visualGroup": "coffee",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a47e21265374",
+    "concept": "An adult black and white dairy cow",
+    "visualGroup": "cow",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-18fe4d351abc",
+    "concept": "A signpost points toward two paths",
+    "visualGroup": "direction",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-56e27b2da5a6",
+    "concept": "A closed door with a knob",
+    "visualGroup": "door",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-12025d56c403",
+    "concept": "An open door with a highlighted threshold",
+    "visualGroup": "doorway",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-8fb11237e460",
+    "concept": "A foamy golden beer mug",
+    "visualGroup": "draft-beer",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-5a9132c195d6",
+    "concept": "Sound waves bounce back from mountains",
+    "visualGroup": "echo",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-b7ea6f7eb013",
+    "concept": "A thick rope beside a thin rope, with thick rope indicated",
+    "visualGroup": "thick",
+    "reviewRequired": true,
+    "reviewNote": "太い means thick in this source. The picture indicates rope thickness; avoid body-size distractors."
+  },
+  {
+    "id": "ja-v-d15ca6ea1179",
+    "concept": "A father holding his child’s hand",
+    "visualGroup": "father",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-9013d708ded7",
+    "concept": "A father holding his child’s hand",
+    "visualGroup": "father",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-89cc0156875d",
+    "concept": "Only two beads in a large counting tray",
+    "visualGroup": "few",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-4789ab8b6db0",
+    "concept": "Five small washing machines in one row",
+    "visualGroup": "five-machines",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-70a7f6854fea",
+    "concept": "Traveler with suitcase arriving from another place on a globe",
+    "visualGroup": "foreigner",
+    "reviewRequired": true,
+    "reviewNote": "Travel and a globe convey arrival from another country without assigning an ethnic appearance."
+  },
+  {
+    "id": "ja-v-3c205b816e51",
+    "concept": "A traveler beside a French tricolor flag",
+    "visualGroup": "french-person",
+    "reviewRequired": true,
+    "reviewNote": "Flag identifies nationality; a flag alone cannot establish an individual’s nationality."
+  },
+  {
+    "id": "ja-v-bee484b5ac81",
+    "concept": "Freshly harvested leafy vegetables with dew drops",
+    "visualGroup": "fresh",
+    "reviewRequired": true,
+    "reviewNote": "生 can mean raw, fresh, or unprocessed. This picture uses uncooked freshly harvested leaves."
+  },
+  {
+    "id": "ja-v-e9c77c4e99a7",
+    "concept": "Two friends together with an affectionate heart",
+    "visualGroup": "friend",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-a76119b3c712",
+    "concept": "A fluffy animal tail with tufts of fur",
+    "visualGroup": "fur",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-575ec5f060f3",
+    "concept": "A young girl with short pigtails",
+    "visualGroup": "girl",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-81e708aba22f",
+    "concept": "A round orange divided into two equal halves",
+    "visualGroup": "half",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d605986c3af4",
+    "concept": "A round orange divided into two equal halves",
+    "visualGroup": "half",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-3601c285284c",
+    "concept": "A warm pink heart",
+    "visualGroup": "heart",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ad9975e17a50",
+    "concept": "Two people wave in daylight",
+    "visualGroup": "hello",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-aad97415a910",
+    "concept": "A precious heart protected by two hands and a star",
+    "visualGroup": "important",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-137737e5ce1f",
+    "concept": "A glowing lamp bulb",
+    "visualGroup": "light",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ed2c1dbd0ee4",
+    "concept": "A glass marble with a colorful swirl",
+    "visualGroup": "marble",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b27125f41e7c",
+    "concept": "A mother holding her child’s hand",
+    "visualGroup": "mother",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-7fa86c660a00",
+    "concept": "A mother holding her child’s hand",
+    "visualGroup": "mother",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-44c14bbade4c",
+    "concept": "A civic building with a city emblem and flag",
+    "visualGroup": "municipal",
+    "reviewRequired": true,
+    "reviewNote": "Civic building and city flag are a symbolic association for city-operated facilities."
+  },
+  {
+    "id": "ja-v-b0a03cee753b",
+    "concept": "A compass with its upper needle highlighted",
+    "visualGroup": "north",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-a84051dc9f24",
+    "concept": "An exit doorway with a compass pointing upward",
+    "visualGroup": "north-exit",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-89beba69de5a",
+    "concept": "A clock face surrounded by an immediate attention ring",
+    "visualGroup": "now",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-08f79cb14fd4",
+    "concept": "Three people counted by a bracket and numerals",
+    "visualGroup": "number-of-people",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-77d63b3ebde3",
+    "concept": "A calm child stands with folded hands beside a checked instruction",
+    "visualGroup": "obedient",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-e5fd15d61360",
+    "concept": "An aged chest with worn corners, crack and cobweb",
+    "visualGroup": "old",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-7bbba1a9506e",
+    "concept": "The quantity 100000 represented by a numeral card and counting beads",
+    "visualGroup": "number-100000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-eba7f0968101",
+    "concept": "One large washing machine",
+    "visualGroup": "one-machine",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-032157e79367",
+    "concept": "A path linking baby, adult and elder stages of life",
+    "visualGroup": "one-s-life",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-dfb71d269e06",
+    "concept": "An orange ball resting on a table",
+    "visualGroup": "on-the-table",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-6109638dac53",
+    "concept": "A person outdoors beyond a house boundary",
+    "visualGroup": "outside",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-a0e6022cc115",
+    "concept": "One highlighted piece of a four-piece puzzle",
+    "visualGroup": "part",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-16fcea5b6e6e",
+    "concept": "Space Needle silhouette above a waterfront city skyline",
+    "visualGroup": "seattle",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-6cac3dee5967",
+    "concept": "A toy passed from one person’s hand to another",
+    "visualGroup": "secondhand",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-0c1b8280f1ee",
+    "concept": "Sun rising above a horizon",
+    "visualGroup": "sunrise",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-3aa47bb43d28",
+    "concept": "A checklist with three tasks and one checked item",
+    "visualGroup": "task",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-760cc08e40eb",
+    "concept": "Ten washing machines in two counted rows",
+    "visualGroup": "ten-machines",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a872d5e674a2",
+    "concept": "The quantity 10000 represented by a numeral card and counting beads",
+    "visualGroup": "number-10000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-1807218bf360",
+    "concept": "The quantity 10000 represented by a numeral card and counting beads",
+    "visualGroup": "number-10000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-309cfedd227d",
+    "concept": "A whole calendar month circled",
+    "visualGroup": "this-month",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-fb33e3a6798b",
+    "concept": "A hand points to the nearest of three objects",
+    "visualGroup": "this-one",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-3db312786ce8",
+    "concept": "A newborn emerging into caring hands",
+    "visualGroup": "to-be-born",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-1ee90bf5d13a",
+    "concept": "Scissors cutting a sheet along a dashed cut line",
+    "visualGroup": "to-cut",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-6b9362de88a7",
+    "concept": "A calendar with a single orange current-day dot",
+    "visualGroup": "today",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-dfb6d8ba613b",
+    "concept": "A person actively completing a checklist",
+    "visualGroup": "to-do",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-bb787ce6238a",
+    "concept": "A person pulls a wheeled wagon with a rope",
+    "visualGroup": "to-pull",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-01a3c397cb20",
+    "concept": "Two hands stretch a folded blanket outward",
+    "visualGroup": "to-spread-something",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-8b215c592588",
+    "concept": "A hand stops a rolling ball at a barrier",
+    "visualGroup": "to-stop-something",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-2924cd51557f",
+    "concept": "A hand uses a screwdriver to tighten a screw",
+    "visualGroup": "to-utilize",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-5f29c187353e",
+    "concept": "The quantity 20000 represented by a numeral card and counting beads",
+    "visualGroup": "number-20000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f5b4250aeb03",
+    "concept": "Two washing machines side by side",
+    "visualGroup": "two-machines",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-960de5429d2e",
+    "concept": "A ball tucked below a bed",
+    "visualGroup": "under-the-bed",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c9d354f557b3",
+    "concept": "A clock and a calendar connected by a question mark",
+    "visualGroup": "when",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-bb8fc62cf23d",
+    "concept": "A broad open arch measured with an outward arrow",
+    "visualGroup": "wide",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-7c4d1abbdd61",
+    "concept": "Snow-covered evergreen and falling snowflakes",
+    "visualGroup": "winter",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f25546e67181",
+    "concept": "An adult woman standing confidently",
+    "visualGroup": "woman",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-edbe60bbb7e3",
+    "concept": "A second person separated from a foreground person",
+    "visualGroup": "another-person",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-390f30691ca4",
+    "concept": "A clock triggers an immediate departure through a door",
+    "visualGroup": "as-soon-as",
+    "reviewRequired": true,
+    "reviewNote": "早々 and the supplied English gloss may need sense review. Immediate departure is a provisional scene."
+  },
+  {
+    "id": "ja-v-89fcef8e86d8",
+    "concept": "Air layers and drifting clouds around planet Earth",
+    "visualGroup": "atmosphere",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-10791214b2c9",
+    "concept": "A smiling baby swaddled in a pink blanket",
+    "visualGroup": "baby",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-dbe24910365e",
+    "concept": "Tall segmented green bamboo stems and narrow leaves",
+    "visualGroup": "bamboo",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c5425c81df8c",
+    "concept": "A pointed layered bamboo shoot emerging from soil",
+    "visualGroup": "bamboo-shoot",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-c22ee5be019b",
+    "concept": "A young boy with a baseball cap",
+    "visualGroup": "boy",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-f8249679701c",
+    "concept": "A radiant sun lights an open window",
+    "visualGroup": "bright",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-a4e5df148631",
+    "concept": "A six-legged ladybug with antennae",
+    "visualGroup": "bug",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f34264f6567c",
+    "concept": "Year calendar with arrow stopping before its final page edge",
+    "visualGroup": "by-the-end-of-the-year",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-754e1f2ea742",
+    "concept": "A small calf beside the outline of an adult cow",
+    "visualGroup": "calf",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d5bd6e2d7ad1",
+    "concept": "A relaxed person sits peacefully above gentle water ripples",
+    "visualGroup": "calm",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-f71f9de56223",
+    "concept": "An orange car seen from the side",
+    "visualGroup": "car",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a39af9252454",
+    "concept": "A highlighted central bead between four surrounding beads",
+    "visualGroup": "center",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-7733c49a7e4b",
+    "concept": "A calendar page with a reclining beach chair and sun",
+    "visualGroup": "day-off",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-dca5c9fc5908",
+    "concept": "A large outlined ear",
+    "visualGroup": "ear",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-72460e05df01",
+    "concept": "An alarm rings while the sun is just rising",
+    "visualGroup": "early",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-12f44a1311d1",
+    "concept": "A lively person with a lightning bolt and motion rays",
+    "visualGroup": "energy",
+    "reviewRequired": true,
+    "reviewNote": "元気 and 気 retain the supplied shared gloss and visual group; their senses require review."
+  },
+  {
+    "id": "ja-v-1e808c7b4b4e",
+    "concept": "A lively person with a lightning bolt and motion rays",
+    "visualGroup": "energy",
+    "reviewRequired": true,
+    "reviewNote": "元気 and 気 retain the supplied shared gloss and visual group; their senses require review."
+  },
+  {
+    "id": "ja-v-a98da0139f3a",
+    "concept": "A skilled craftsperson with tools and an award star",
+    "visualGroup": "expert",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-b90f6c64551b",
+    "concept": "Three colorful bursts of fireworks",
+    "visualGroup": "fireworks",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-16f8ed6ac847",
+    "concept": "The first step is highlighted on a three-step sequence",
+    "visualGroup": "first-of-all",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-51c2d1be305f",
+    "concept": "A small student with school bag and first-year numeral badge",
+    "visualGroup": "first-year-student",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-7707983a4026",
+    "concept": "The quantity 500 represented by a numeral card and counting beads",
+    "visualGroup": "number-500",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-0c337ec8cbd4",
+    "concept": "A level tabletop with a spirit level and straight horizon",
+    "visualGroup": "flat",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-fa6a4c8f27b4",
+    "concept": "A pink flower with a green stem",
+    "visualGroup": "flower",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-64289653ec1d",
+    "concept": "A bare foot with five toes",
+    "visualGroup": "foot",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-81893a02b959",
+    "concept": "The quantity 40 represented by a numeral card and counting beads",
+    "visualGroup": "number-40",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f623bb19b846",
+    "concept": "The quantity 400 represented by a numeral card and counting beads",
+    "visualGroup": "number-400",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-13ea3220cde0",
+    "concept": "A calendar page displaying day four",
+    "visualGroup": "fourth-day",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-947395f42397",
+    "concept": "Four colorful identical blocks",
+    "visualGroup": "four-things",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f0588b6224d0",
+    "concept": "The quantity 4000 represented by a numeral card and counting beads",
+    "visualGroup": "number-4000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b82f83d1deb0",
+    "concept": "Two people separate, one waving near a departure arrow",
+    "visualGroup": "goodbye",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-2798a7949600",
+    "concept": "Two people greet beneath a crescent moon",
+    "visualGroup": "good-evening",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-ff89f69552ed",
+    "concept": "A person holds a house key in front of the family home",
+    "visualGroup": "head-of-household",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-39903246fd52",
+    "concept": "A dark hole in a patch of earth",
+    "visualGroup": "hole",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-96a032e15dda",
+    "concept": "The quantity 100 represented by a numeral card and counting beads",
+    "visualGroup": "number-100",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-d19a39e4af55",
+    "concept": "Three translucent blue ice cubes",
+    "visualGroup": "ice",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-cfd55bbfe51c",
+    "concept": "An uncut whole orange enclosed by a complete ring",
+    "visualGroup": "in-its-entirety",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-cd6ac2533de0",
+    "concept": "A single uninterrupted arrow completes three checkpoints",
+    "visualGroup": "in-one-go",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-dd1d6132fe3c",
+    "concept": "A driver sits within the enclosed car window",
+    "visualGroup": "inside-the-car",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-41b543dc8fe4",
+    "concept": "A large faceted pink gemstone",
+    "visualGroup": "jewel",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-65da1512acab",
+    "concept": "A monthly calendar with one page turning backward",
+    "visualGroup": "last-month",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-e7ce924c4696",
+    "concept": "A year calendar turning back one year",
+    "visualGroup": "last-year",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-70230bf6d87c",
+    "concept": "A left hand seen palm-forward, thumb on the viewer’s right",
+    "visualGroup": "left-hand",
+    "reviewRequired": true,
+    "reviewNote": "Palm-forward left hand; check thumb orientation on the actual small-screen display."
+  },
+  {
+    "id": "ja-v-69c61c85a403",
+    "concept": "Alphabet letter on a writing card beside a pencil",
+    "visualGroup": "letter-of-the-alphabet-",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-4285b5f8fc72",
+    "concept": "A large majority of pink beads and only two purple beads",
+    "visualGroup": "mainly",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-4b9dfeafcab4",
+    "concept": "An adult man standing confidently",
+    "visualGroup": "man",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-5b39de46794f",
+    "concept": "Three connected steps lead to assembling a block tower",
+    "visualGroup": "method",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-823616f3288f",
+    "concept": "The quantity 1000000 represented by a numeral card and counting beads",
+    "visualGroup": "number-1000000",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a44aad5ce459",
+    "concept": "A hand secretly takes a coin from someone else’s purse, crossed out",
+    "visualGroup": "misconduct",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-f303d8ce6b20",
+    "concept": "A calendar turns back two monthly pages",
+    "visualGroup": "month-before-last",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-b22e3a1982e5",
+    "concept": "Three facial expressions show changing feelings",
+    "visualGroup": "mood",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-2f21cb2e8d02",
+    "concept": "A person watches a full moon above autumn grass",
+    "visualGroup": "moon-viewing",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-0cbc7661647e",
+    "concept": "A person wears an identity badge with a portrait and identifying line",
+    "visualGroup": "name",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-3ed4447f3492",
+    "concept": "A stylized North American landmass",
+    "visualGroup": "north-america",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-0c144e18f1b2",
+    "concept": "A purple spiral notebook",
+    "visualGroup": "notebook",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ff1538e35505",
+    "concept": "A numbered admission ticket",
+    "visualGroup": "number",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-8f43a7f01e9c",
+    "concept": "A bat makes exactly one contact with a ball",
+    "visualGroup": "one-hit",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-ed2b971b34ea",
+    "concept": "A determined person follows one straight path toward a goal",
+    "visualGroup": "one-track-mind",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-54c8da9a7bac",
+    "concept": "One orange object is separated from a cluster of purple objects",
+    "visualGroup": "other",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-3ee395a38c63",
+    "concept": "A paused music player with two pause bars",
+    "visualGroup": "pause",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-baa4dd2c5986",
+    "concept": "A large blue dinner plate",
+    "visualGroup": "plate",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-5b451287c47e",
+    "concept": "A person receives several hearts from a surrounding crowd",
+    "visualGroup": "popular",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-36897e1da4ac",
+    "concept": "A perforated postage stamp on an envelope",
+    "visualGroup": "postage-stamp",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-3144539c83d3",
+    "concept": "A vivid red paint puddle with a loaded paintbrush",
+    "visualGroup": "red",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-a595b5ca5679",
+    "concept": "A vivid red paint puddle with a loaded paintbrush",
+    "visualGroup": "red",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ebdaef0f21db",
+    "concept": "A resting person reclining on a couch",
+    "visualGroup": "rest",
+    "reviewRequired": true,
+    "reviewNote": "Shares resting scene with 休む; noun versus verb cannot be reliably separated by pictures."
+  },
+  {
+    "id": "ja-v-9553e3adbc2a",
+    "concept": "A right hand seen palm-forward, thumb on the viewer’s left",
+    "visualGroup": "right-hand",
+    "reviewRequired": true,
+    "reviewNote": "Palm-forward right hand; check thumb orientation on the actual small-screen display."
+  },
+  {
+    "id": "ja-v-42bb1cd7b3cd",
+    "concept": "A family tree highlights the second of three generations",
+    "visualGroup": "second-generation",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-4528932e2247",
+    "concept": "A focused person works at a desk with a goal in mind",
+    "visualGroup": "serious",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-74043c16db5e",
+    "concept": "A bowl of fluffy shaved ice with pink syrup",
+    "visualGroup": "shaved-ice",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-23d807f4f375",
+    "concept": "A ridged scallop shell",
+    "visualGroup": "shellfish",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b1ccc665edf2",
+    "concept": "A four-place tray has only two blocks and two empty outlines",
+    "visualGroup": "shortage",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-602940cfc449",
+    "concept": "A small side plate beside a full-size dinner plate",
+    "visualGroup": "small-plate",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-2f734ba866d9",
+    "concept": "A smooth gray-purple stone with an uneven silhouette",
+    "visualGroup": "stone",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-49863ee12a96",
+    "concept": "A ruler draws one perfectly straight horizontal line",
+    "visualGroup": "straight-line",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-ac4dde449fe8",
+    "concept": "A family shares the same colored identity badge on a family tree",
+    "visualGroup": "surname",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-497356cf0646",
+    "concept": "A teacher points at a classroom chalkboard",
+    "visualGroup": "teacher",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-99f7c98099b1",
+    "concept": "A television screen with antenna and feet",
+    "visualGroup": "television",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-68ea919020d5",
+    "concept": "One person bows while receiving a small gift with a heart",
+    "visualGroup": "thanks",
+    "reviewRequired": true,
+    "reviewNote": "Gift and bow symbolize gratitude; distinguish from humble speech before using both in one quiz."
+  },
+  {
+    "id": "ja-v-0b6bbed28f82",
+    "concept": "A calendar shows a loosely circled recent past day",
+    "visualGroup": "the-other-day",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-a8c7075ce096",
+    "concept": "A family tree highlights its youngest third generation",
+    "visualGroup": "third-generation",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-e05b8e36c6ca",
+    "concept": "A spool of purple thread trailing into a loop",
+    "visualGroup": "thread",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-317542d02c5e",
+    "concept": "The pointed end of a pencil is singled out by an arrow",
+    "visualGroup": "tip",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-cdc7fbcaab99",
+    "concept": "Four cups match four people with no empty places",
+    "visualGroup": "to-be-enough",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-eef9d372f5df",
+    "concept": "A matching drawing is transferred from one paper to another",
+    "visualGroup": "to-copy",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-75ac90da3b27",
+    "concept": "An arrow shows a fictional person’s silhouette growing broader",
+    "visualGroup": "to-get-fat",
+    "reviewRequired": true,
+    "reviewNote": "Fictional body-size change conveys the verb; review suitability and distinction from 太い (thick)."
+  },
+  {
+    "id": "ja-v-001a4faf05bd",
+    "concept": "A person leaves an open doorway carrying a bag",
+    "visualGroup": "to-go-out",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-5fb1d5e308b6",
+    "concept": "A mallet strikes a wooden peg",
+    "visualGroup": "to-hit-something",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-80b68bbbc870",
+    "concept": "A living seedling and a person with a heartbeat",
+    "visualGroup": "to-live",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-400da51eb499",
+    "concept": "A speaker’s speech bubble contains a tiny pictured flower",
+    "visualGroup": "to-mention",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-acc3dd26ba1e",
+    "concept": "A resting person reclining on a couch",
+    "visualGroup": "rest",
+    "reviewRequired": true,
+    "reviewNote": "Shares resting scene with 休み; noun versus verb cannot be reliably separated by pictures."
+  },
+  {
+    "id": "ja-v-d76e957b268f",
+    "concept": "A speaker bows politely while addressing another person",
+    "visualGroup": "to-say-humbly",
+    "reviewRequired": true,
+    "reviewNote": "Bowing speaker symbolizes humble speech, which is difficult to communicate without audio context."
+  },
+  {
+    "id": "ja-v-385cc0d9ee98",
+    "concept": "An eye gazes toward a flower",
+    "visualGroup": "to-see",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-859aec8573b3",
+    "concept": "A person presents a framed flower picture to another person",
+    "visualGroup": "to-show",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-e64b189d1607",
+    "concept": "A person smiles at an object with a heart above it",
+    "visualGroup": "to-take-a-liking",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-09d74d630a45",
+    "concept": "A compact row of modest houses and one shop",
+    "visualGroup": "town",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-b34b4a2e7a98",
+    "concept": "An open treasure chest full of jewels and coins",
+    "visualGroup": "treasure",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-08e3c50181be",
+    "concept": "A calendar page displaying day twenty",
+    "visualGroup": "twentieth-day",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-190aae33ad24",
+    "concept": "The quantity 200 represented by a numeral card and counting beads",
+    "visualGroup": "number-200",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-cb7d8a487c4f",
+    "concept": "People picnic beneath a pink flowering tree",
+    "visualGroup": "viewing-cherry-blossoms",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-92bebda5ac98",
+    "concept": "A few small cottages among trees and hills",
+    "visualGroup": "village",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-7cdf94430817",
+    "concept": "A resident stands beside a small rural cottage and garden",
+    "visualGroup": "villager",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-6fe6f680e0e0",
+    "concept": "Two viewers see different sides of the same cube",
+    "visualGroup": "way-of-seeing",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-2850b5703e8b",
+    "concept": "Sun, cloud and rain share a sky scene",
+    "visualGroup": "weather",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-ac3939d71e1e",
+    "concept": "Five consecutive workdays highlighted, two weekend days unfilled",
+    "visualGroup": "weekdays",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-67d99c6ae58e",
+    "concept": "A question mark over three equally offered objects",
+    "visualGroup": "which-one",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-d67a7d3dacc9",
+    "concept": "White paint on a brush and white swatch against a purple palette",
+    "visualGroup": "white",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-8438eda3cfc0",
+    "concept": "A bound calendar containing twelve monthly squares",
+    "visualGroup": "year",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-1a43c96593cb",
+    "concept": "A whole-year calendar headed by the numeral 2011",
+    "visualGroup": "year-2011",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-9e9dbd477486",
+    "concept": "Four seasons surround a full circular cycle",
+    "visualGroup": "year-round",
+    "reviewRequired": true,
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+  },
+  {
+    "id": "ja-v-f64f1036d22a",
+    "concept": "A casually nodding person with a check bubble",
+    "visualGroup": "affirmative",
+    "reviewRequired": true,
+    "reviewNote": "Shares affirmative visual group with はい; exclude the pair from simultaneous picture choices."
+  },
+  {
+    "id": "ja-v-6bbf1546d4d7",
+    "concept": "A person gives an affirmative nod and a check bubble",
+    "visualGroup": "affirmative",
+    "reviewRequired": true,
+    "reviewNote": "Shares affirmative visual group with うん; formality is not reliably visible."
+  }
+]
