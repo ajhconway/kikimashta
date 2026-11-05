@@ -12,3 +12,7 @@ test-results/
 .DS_Store
 *.log
 artifacts/generated-originals/
+public/license.txt
+public/notice.txt
+public/third-party-notices.txt
+public/licenses/MIT.txt

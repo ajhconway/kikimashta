@@ -6,7 +6,7 @@
   "license": "AGPL-3.0-only",
   "engines": { "node": ">=24.15.0" },
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "node scripts/package-notices.mjs --public && vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build && node scripts/package-notices.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

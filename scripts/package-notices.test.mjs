@@ -3,6 +3,8 @@ import assert from 'node:assert/strict'
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { spawnSync } from 'node:child_process'
 import { packageNotices } from './package-notices.mjs'
 
 const repository = 'https://github.com/ajhconway/kikimashta'
@@ -13,6 +15,7 @@ const dependencyLicenses = {
   'react-dom': 'MIT\nReact DOM copyright notice.\n',
   scheduler: 'MIT\nScheduler copyright notice.\n',
   idb: 'ISC License\nPermission from the idb author.\n',
+  vite: '# Vite core license\nMIT terms.\n\n# Licenses of bundled dependencies\nComplete bundled dependency notices.\n',
 }
 
 async function fixture(t) {
@@ -28,7 +31,7 @@ async function fixture(t) {
     writeFile(join(dist, 'credits.html'), credits),
     ...Object.entries(dependencyLicenses).map(async ([name, license]) => {
       await mkdir(join(root, 'node_modules', name), { recursive: true })
-      await writeFile(join(root, 'node_modules', name, 'LICENSE'), license)
+      await writeFile(join(root, 'node_modules', name, name === 'vite' ? 'LICENSE.md' : 'LICENSE'), license)
     }),
   ])
   return { root, dist }
@@ -42,7 +45,8 @@ test('packages exact license copies and dependency texts, and pins the source li
   }
   const thirdParty = await readFile(join(paths.dist, 'third-party-notices.txt'))
   for (const [name, license] of Object.entries(dependencyLicenses)) {
-    assert.ok(thirdParty.includes(Buffer.from(`=== ${name} ===\n\n`)))
+    const label = name === 'vite' ? 'vite (modulepreload polyfill)' : name
+    assert.ok(thirdParty.includes(Buffer.from(`=== ${label} ===\n\n`)))
     assert.ok(thirdParty.includes(Buffer.from(license)), `${name} retains its complete license text`)
   }
   const result = await readFile(join(paths.dist, 'credits.html'), 'utf8')
@@ -82,5 +86,20 @@ test('a missing source anchor fails instead of publishing an unpinned source not
   const paths = await fixture(t)
   await writeFile(join(paths.dist, 'credits.html'), '<p>No source link</p>')
   await assert.rejects(packageNotices({ ...paths, revision }), /data-source-link/)
+  await assert.rejects(readFile(join(paths.dist, 'license.txt')), { code: 'ENOENT' })
+})
+
+test('public CLI mode prepares local-dev notices without pinning an inherited revision', async t => {
+  const paths = await fixture(t)
+  const publicDir = join(paths.root, 'public')
+  await mkdir(publicDir)
+  await writeFile(join(publicDir, 'credits.html'), credits)
+  const result = spawnSync(process.execPath, [fileURLToPath(new URL('./package-notices.mjs', import.meta.url)), '--public'], {
+    cwd: paths.root, env: { ...process.env, SOURCE_REVISION: revision }, encoding: 'utf8',
+  })
+  assert.equal(result.status, 0, result.stderr)
+  assert.deepEqual(await readFile(join(publicDir, 'license.txt')), await readFile(join(paths.root, 'LICENSE')))
+  assert.equal(await readFile(join(publicDir, 'credits.html'), 'utf8'), credits)
+  assert.equal(await readFile(join(paths.dist, 'credits.html'), 'utf8'), credits)
   await assert.rejects(readFile(join(paths.dist, 'license.txt')), { code: 'ENOENT' })
 })

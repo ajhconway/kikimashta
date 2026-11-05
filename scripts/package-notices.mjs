@@ -2,10 +2,11 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
+import { parseArgs } from 'node:util'
 
 const repository = 'https://github.com/ajhconway/kikimashta'
 const sourceMarker = `data-source-link href="${repository}"`
-const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb']
+const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb', 'vite']
 
 export async function packageNotices({
   root = process.cwd(), dist = join(root, 'dist'), revision = process.env.SOURCE_REVISION,
@@ -21,7 +22,8 @@ export async function packageNotices({
     readFile(join(root, 'LICENSES', 'MIT.txt')),
     readFile(join(dist, 'credits.html'), 'utf8'),
     Promise.all(runtimePackages.map(async name => ({
-      name, license: await readFile(join(root, 'node_modules', name, 'LICENSE')),
+      name: name === 'vite' ? 'vite (modulepreload polyfill)' : name,
+      license: await readFile(join(root, 'node_modules', name, name === 'vite' ? 'LICENSE.md' : 'LICENSE')),
     }))),
   ])
   if (credits.split(sourceMarker).length !== 2) {
@@ -43,6 +45,13 @@ export async function packageNotices({
   ])
 }
 
+async function main() {
+  const { values } = parseArgs({ options: { public: { type: 'boolean' } } })
+  // Development serves public/ directly and should always link to the repository.
+  if (values.public) delete process.env.SOURCE_REVISION
+  await packageNotices(values.public ? { dist: resolve('public') } : {})
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  packageNotices().catch(error => { console.error(error.message); process.exitCode = 1 })
+  main().catch(error => { console.error(error.message); process.exitCode = 1 })
 }
