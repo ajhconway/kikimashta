@@ -42,6 +42,26 @@ function deferredSave() {
 }
 
 describe('practice interactions', () => {
+  it.each([true, false])('retains the right pictures after a correct=%s answer and restores all choices in a new round', async correct => {
+    const user = userEvent.setup();
+    const { container } = render(<App random={() => 0.5}/>);
+    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    const targetPicture = within(heardChoice(container)).getByRole('img').getAttribute('alt')!;
+    const selected = heardChoice(container, correct);
+    await user.click(selected);
+    const retained = screen.getAllByRole('button', { name: /choose picture/i });
+    expect(retained).toHaveLength(correct ? 1 : 2);
+    expect(retained).toContain(selected);
+    expect(screen.getByRole('img', { name: targetPicture })).toBeInTheDocument();
+    for (const button of retained) expect(button).toBeDisabled();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    expect(container.querySelector('.answer-departures')).not.toBeInTheDocument();
+    expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
+  });
+
   it('introduces the first word with a picture and playable audio', async () => {
     const user = userEvent.setup();
     const random = vi.fn().mockReturnValueOnce(0).mockReturnValue(0.999);
