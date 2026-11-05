@@ -35,14 +35,14 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Roadmap
 
-V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available; quizzes currently use the six starter words.
+V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. Practice offers the six-word starter and three additional six-word themed sets, ready for feedback.
 
 1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
 2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Start with simple, adjustable learning rules; sessions can continue while practice items are available.
 3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
 4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
 
-### Next milestone: expanded practice
+### Current milestone: expanded practice
 
 Keep the existing starter round. Add a few six-word themed sets using existing pictures and Marin/Cedar recordings. Let the user choose a set, preview its words, and practice that same set in a short untimed quiz. Preserve stable item IDs and saved history. Avoid ambiguous or synonymous choices in these first sets; pictures and pronunciation still need feedback through use.
 
