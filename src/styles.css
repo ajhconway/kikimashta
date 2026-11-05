@@ -162,7 +162,6 @@ h1 em { color: var(--purple); font-style: normal; }
 .choice-badge.wrong { background: var(--orange); color: #653b18; }
 .feedback { min-height: 62px; margin: 17px auto 0; }
 .feedback strong { color: var(--purple-dark); font-size: 23px; font-weight: 800; line-height: 1.3; }
-.feedback p { max-width: 330px; margin: 6px auto; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .error { margin: 12px auto; padding: 12px; border: 2px solid #f2bad1; border-radius: 16px; background: #fff0f5; color: #7b3155; font-size: 13px; line-height: 1.5; }
 .error p { margin: 0 0 5px; }
 
@@ -184,7 +183,7 @@ footer a:hover { color: var(--purple-dark); }
 /* Flat cards with a firm press, a listening companion, and one dot per sound. */
 .app-quiz { isolation: isolate; overflow-x: hidden; }
 @supports (overflow-x: clip) { .app-quiz { overflow-x: clip; } }
-.app-quiz[data-answer='correct']::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 30%, #fff0af80 0, #ffd6ee40 44%, transparent 74%); opacity: 0; animation: correct-glow .9s ease-out; }
+.app-quiz[data-answer='correct']::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 25%, #fff0af99 0, #ffd6ee60 46%, transparent 80%), radial-gradient(ellipse at 50% 80%, #ffb6dd33 0, transparent 70%); opacity: 0; animation: correct-glow .9s ease-out; }
 .app-quiz header { padding: 18px 0; }
 .app-quiz main { padding: 8px 0 20px; }
 .quiz-top { display: grid; grid-template-columns: minmax(0, 1fr) 128px minmax(0, 1fr); align-items: center; width: 100%; max-width: 380px; min-height: 128px; margin: 0 auto 14px; }
@@ -199,8 +198,15 @@ footer a:hover { color: var(--purple-dark); }
 .quiz-companion img { position: relative; z-index: 1; transform-origin: 50% 80%; }
 .quiz-companion.is-listening img { animation: companion-listen 1.4s ease-in-out infinite; }
 .quiz-companion.is-encouraging img { transform: rotate(-6deg); }
-.companion-spark { position: absolute; z-index: 2; top: 9px; right: -3px; color: #fff2b1; font-size: 25px; line-height: 1; opacity: 0; }
-.is-cheering .companion-spark { animation: companion-spark .58s ease-out; }
+.companion-sparks { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.companion-spark { position: absolute; color: #ffcf5a; font-size: 20px; line-height: 1; opacity: 0; }
+.companion-spark:nth-child(1) { top: 10px; left: 10px; font-size: 19px; --spark-x: -12px; --spark-y: -14px; --spark-delay: 0s; }
+.companion-spark:nth-child(2) { top: 9px; right: 8px; font-size: 25px; color: #ff91bc; --spark-x: 12px; --spark-y: -16px; --spark-delay: .05s; }
+.companion-spark:nth-child(3) { top: 48px; left: 1px; font-size: 16px; color: #ff91bc; --spark-x: -18px; --spark-y: -4px; --spark-delay: .1s; }
+.companion-spark:nth-child(4) { top: 49px; right: 2px; font-size: 17px; --spark-x: 8px; --spark-y: -2px; --spark-delay: .02s; }
+.companion-spark:nth-child(5) { bottom: 10px; left: 5px; font-size: 22px; --spark-x: -12px; --spark-y: 8px; --spark-delay: .08s; }
+.companion-spark:nth-child(6) { bottom: 10px; right: 4px; font-size: 14px; color: #ff91bc; --spark-x: 12px; --spark-y: 8px; --spark-delay: .14s; }
+.is-cheering .companion-spark { animation: companion-spark .86s ease-out both; animation-delay: var(--spark-delay, 0s); }
 .quiz-audio { grid-column: 3; justify-self: end; display: flex; justify-content: center; padding: 0; }
 .quiz .quiz-listen { position: relative; width: 66px; height: 66px; min-height: 66px; margin: 0; padding: 0; border: 3px solid var(--purple-dark); border-radius: 50%; background: #ffcee2; transition: transform .14s ease-out, background .12s; }
 .quiz .quiz-listen svg { width: 30px; height: 30px; }
@@ -220,7 +226,6 @@ footer a:hover { color: var(--purple-dark); }
 .quiz .choice-badge.wrong { background: var(--orange); }
 .quiz .practice-actions { width: 100%; max-width: 380px; min-height: 140px; margin: 0 auto; padding-top: 14px; }
 .quiz .feedback { min-height: 62px; margin: 0; }
-.quiz .feedback .next-cue { font-size: 12px; font-weight: 700; }
 .quiz .practice-actions .primary { max-width: none; margin: 8px 0 0; transition: transform .14s ease-out, background .12s; }
 .quiz .practice-actions .primary:not(:disabled):active { transform: translateY(3px) scale(.92, .84); transition-duration: .05s; }
 
@@ -232,7 +237,7 @@ footer a:hover { color: var(--purple-dark); }
 @keyframes card-slide-in { from { transform: translateX(var(--entry-x)); } to { transform: translateX(0); } }
 @keyframes correct-glow { 0%, 100% { opacity: 0; } 30% { opacity: 1; } }
 @keyframes companion-listen { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-@keyframes companion-spark { 0%, 100% { opacity: 0; } 35%, 65% { opacity: 1; } }
+@keyframes companion-spark { 0% { opacity: 0; transform: translate(0, 0); } 20%, 65% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)); } }
 @keyframes sound-pulse { from { opacity: .7; } to { opacity: 0; } }
 
 @media (max-width: 600px) {
