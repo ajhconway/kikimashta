@@ -272,12 +272,12 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
   expect(saved.map(item => item.itemId).sort()).toEqual(introduced.map(item => item.id).sort());
   expect(saved.every(item => item.correct && item.context?.phase === 'lesson' && item.context.recordingSrc && item.choiceIds.length === 4)).toBe(true);
   await page.getByText('Practice pace', { exact: true }).click();
-  await page.getByLabel('Minimum', { exact: true }).selectOption('minimal');
-  await page.getByLabel('Maximum', { exact: true }).selectOption('light');
+  await page.getByRole('combobox', { name: 'Minimum', exact: true }).selectOption('minimal');
+  await page.getByRole('combobox', { name: 'Maximum', exact: true }).selectOption('light');
   await page.reload();
   await page.getByText('Practice pace', { exact: true }).click();
-  await expect(page.getByLabel('Minimum', { exact: true })).toHaveValue('minimal');
-  await expect(page.getByLabel('Maximum', { exact: true })).toHaveValue('light');
+  await expect(page.getByRole('combobox', { name: 'Minimum', exact: true })).toHaveValue('minimal');
+  await expect(page.getByRole('combobox', { name: 'Maximum', exact: true })).toHaveValue('light');
 });
 
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
