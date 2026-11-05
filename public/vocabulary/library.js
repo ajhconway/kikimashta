@@ -137,7 +137,8 @@
     return article
   }
 
-  const normalized = value => value.normalize('NFKC').toLocaleLowerCase().trim()
+  const normalized = value => value.normalize('NFKC').toLocaleLowerCase()
+    .replace(/[ァ-ヶ]/g, character => String.fromCharCode(character.charCodeAt(0) - 0x60)).trim()
   function render() {
     stopAudio()
     audioError.hidden = true

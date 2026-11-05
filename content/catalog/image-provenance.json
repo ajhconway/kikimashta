@@ -1096,7 +1096,7 @@
       "id": "ja-v-afefe30bcb46",
       "path": "public/images/vocabulary/ja-v-afefe30bcb46.svg",
       "bytes": 480,
-      "sha256": "56fb704a7760478ff8cfec37b789b187fc5412543a0af5116eefff59297af30f",
+      "sha256": "1463a8fbfa01bec986a4b8df7510a5e2b2e774b7f9865e6ee13e20f96635eeb1",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-1-2.mjs",
       "concept": "An erupting volcano with lava and smoke",
@@ -1235,8 +1235,8 @@
     {
       "id": "ja-v-7930a252da9b",
       "path": "public/images/vocabulary/ja-v-7930a252da9b.svg",
-      "bytes": 600,
-      "sha256": "bfa0a3b463daf320f1378acdd6ff293fe4910f72d9994d2d2beb9345dbc9edee",
+      "bytes": 387,
+      "sha256": "6e10834c21aa2c8c72c7eb77a50d80820aa564400cf4a7e3e4bab720f8bc36af",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-3-4.mjs",
       "concept": "A single written character isolated on a writing sheet",
@@ -2055,8 +2055,8 @@
     {
       "id": "ja-v-72460e05df01",
       "path": "public/images/vocabulary/ja-v-72460e05df01.svg",
-      "bytes": 1756,
-      "sha256": "b3a72d59631f987b819c361147c764a41c80d79049b02cc0cb1310ae638e2979",
+      "bytes": 1755,
+      "sha256": "2d2b4e976a802b2dd34b953fa6721cf8ffa7ffe461a4c5fc2cb11f05d4a20125",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-3-4.mjs",
       "concept": "An alarm rings while the sun is just rising",
@@ -2345,8 +2345,8 @@
     {
       "id": "ja-v-69c61c85a403",
       "path": "public/images/vocabulary/ja-v-69c61c85a403.svg",
-      "bytes": 786,
-      "sha256": "0d99ac47ac824186c7a5b205f173cd17d93892c8187fb67d25cb3e25de777688",
+      "bytes": 573,
+      "sha256": "dd7fe22216446fa65211fc4f764bc2ff3a7001448f9a9f06279b8e595625a566",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-3-4.mjs",
       "concept": "Alphabet letter on a writing card beside a pencil",
@@ -2655,8 +2655,8 @@
     {
       "id": "ja-v-49863ee12a96",
       "path": "public/images/vocabulary/ja-v-49863ee12a96.svg",
-      "bytes": 1029,
-      "sha256": "cf98fa52a46103dfd9416af61d181c997f69fd9bc55aad5bda0e08394fb7b5ce",
+      "bytes": 984,
+      "sha256": "5730332fb9ab41d8439a63b1a39fd597f3c870c6dc7454c37ed24edd5e7b668c",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-3-4.mjs",
       "concept": "A ruler draws one perfectly straight horizontal line",
@@ -2905,8 +2905,8 @@
     {
       "id": "ja-v-cb7d8a487c4f",
       "path": "public/images/vocabulary/ja-v-cb7d8a487c4f.svg",
-      "bytes": 2673,
-      "sha256": "308c3ee0bb67ea643a34ff2a430b78a027d0d10a09f00d4d5425bcadbf1879f4",
+      "bytes": 1197,
+      "sha256": "42328b68d98507e6c4b2228dab70e76a0f453a03dd0f7ebbb888e0548d74bab1",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-levels-3-4.mjs",
       "concept": "People picnic beneath a pink flowering tree",
@@ -3145,11 +3145,11 @@
     {
       "id": "ja-v-26a964fd9243",
       "path": "public/images/vocabulary/ja-v-26a964fd9243.svg",
-      "bytes": 812,
-      "sha256": "46651fddf5e5ffc47a11ebb5823134dbd3ff52c64b3bcdf634ad7b2429f0e2ae",
+      "bytes": 1241,
+      "sha256": "76659311d5050d8f8d9b4594015b125d4e6c6406f69174a8b7883b6fb3fcd946",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-level-5.mjs",
-      "concept": "One whole loaf next to two sliced loaves, with count marks.",
+      "concept": "One whole three-dimensional bread loaf beside two equally sized whole loaves, grouped by count.",
       "reviewRequired": true
     },
     {
@@ -3365,11 +3365,11 @@
     {
       "id": "ja-v-188bdf18a50c",
       "path": "public/images/vocabulary/ja-v-188bdf18a50c.svg",
-      "bytes": 370,
-      "sha256": "439ec1b6ae1f66c9fb5edb4c2a1bcb1f231652540d09c3317bcc2f5f68523f7e",
+      "bytes": 711,
+      "sha256": "845fab703c50e5c96a6781bcb09e3b6d68578ee664df40a9c6a138da8c2fabb9",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-level-5.mjs",
-      "concept": "A single curved feather with branching vanes.",
+      "concept": "A narrow asymmetric feather with many fine diagonal barbs and a long exposed central quill.",
       "reviewRequired": false
     },
     {
@@ -4325,21 +4325,21 @@
     {
       "id": "ja-v-5f4c2dcf05ba",
       "path": "public/images/vocabulary/ja-v-5f4c2dcf05ba.svg",
-      "bytes": 1076,
-      "sha256": "3c85605c6d9315666b797766b896779a997cd9931faddd1f6f405e47aed9f15b",
+      "bytes": 506,
+      "sha256": "dd31c02b7c9a6bf1713004c67ff274a12b78374e80c3b73b83cdd2d9357e15df",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-level-5.mjs",
-      "concept": "Month page contains a question in place of its month number.",
+      "concept": "Clean month calendar page with a single large question in place of the month number.",
       "reviewRequired": true
     },
     {
       "id": "ja-v-d2a96c6d5f6a",
       "path": "public/images/vocabulary/ja-v-d2a96c6d5f6a.svg",
-      "bytes": 1555,
-      "sha256": "3cc1ec4c16906b3b73bd6206c370e9748ec4ac3c2fcc73687b87a182401951ac",
+      "bytes": 985,
+      "sha256": "6d6d16dd87f1261c9b4001efd949c665c26d12e3702f21b9a4f3e217b86063a2",
       "license": "AGPL-3.0-only",
       "generator": "scripts/content/illustrate-level-5.mjs",
-      "concept": "Year calendar has four unresolved year digits.",
+      "concept": "Clean year calendar page with four unresolved year digits and no day grid.",
       "reviewRequired": true
     },
     {

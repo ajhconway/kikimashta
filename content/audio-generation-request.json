@@ -1,6 +1,19 @@
 {
-  "id": "2026-11-05-vocabulary-levels-1-5",
+  "id": "2026-11-05-vocabulary-transcript-repairs",
   "mode": "catalog",
-  "levels": [1, 2, 3, 4, 5],
+  "levels": [
+    4,
+    5
+  ],
+  "repairs": [
+    {
+      "id": "ja-v-c2a96f1d7abc",
+      "voice": "marin"
+    },
+    {
+      "id": "ja-v-602940cfc449",
+      "voice": "cedar"
+    }
+  ],
   "issue": 27
 }

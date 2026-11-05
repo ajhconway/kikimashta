@@ -74,10 +74,10 @@
   },
   {
     "id": "ja-v-26a964fd9243",
-    "concept": "One whole loaf next to two sliced loaves, with count marks.",
+    "concept": "One whole three-dimensional bread loaf beside two equally sized whole loaves, grouped by count.",
     "visualGroup": "～斤",
     "reviewRequired": true,
-    "reviewNote": "Loaf counting cue; source counter 斤 has context-dependent quantities."
+    "reviewNote": "All three units are whole bread loaves, not slices. Source counter 斤 has context-dependent quantities."
   },
   {
     "id": "ja-v-2e7b28af830b",
@@ -220,7 +220,7 @@
   },
   {
     "id": "ja-v-188bdf18a50c",
-    "concept": "A single curved feather with branching vanes.",
+    "concept": "A narrow asymmetric feather with many fine diagonal barbs and a long exposed central quill.",
     "visualGroup": "羽",
     "reviewRequired": false
   },
@@ -863,14 +863,14 @@
   },
   {
     "id": "ja-v-5f4c2dcf05ba",
-    "concept": "Month page contains a question in place of its month number.",
+    "concept": "Clean month calendar page with a single large question in place of the month number.",
     "visualGroup": "何月",
     "reviewRequired": true,
     "reviewNote": "Question in month page represents which month; distinguish from how many days."
   },
   {
     "id": "ja-v-d2a96c6d5f6a",
-    "concept": "Year calendar has four unresolved year digits.",
+    "concept": "Clean year calendar page with four unresolved year digits and no day grid.",
     "visualGroup": "何年",
     "reviewRequired": true,
     "reviewNote": "Four question marks occupy year digits to cue what year."

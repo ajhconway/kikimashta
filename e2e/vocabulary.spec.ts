@@ -1,7 +1,8 @@
 import { expect, test } from '@playwright/test';
 
 test('browse provisional levels, search cards, and retry a voice recording', async ({ page }) => {
-  await page.goto('./vocabulary/');
+  await page.goto('./');
+  await page.getByRole('link', { name: /card library/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Vocabulary cards');
   await expect(page.locator('#results-status')).toContainText('441 cards');
   await expect(page.locator('.card')).toHaveCount(24);
@@ -20,6 +21,10 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await page.unroute('**/audio/cedar-ja-dog.mp3');
   await page.getByRole('button', { name: 'Cedar: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeHidden();
+  await page.getByLabel('Provisional level').selectOption('all');
+  await page.getByLabel('Search words').fill('りんご');
+  await expect(page.locator('.card')).toHaveCount(1);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText('リンゴ');
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
