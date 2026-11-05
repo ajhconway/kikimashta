@@ -346,24 +346,9 @@ footer a:hover { color: var(--purple-dark); }
   .quiz-companion.is-encouraging img { transform: none; }
 }
 
-.practice-set { display: grid; gap: 7px; margin: 16px auto 0; max-width: 300px; text-align: left; font-size: 12px; font-weight: 700; color: var(--muted); }
-.practice-set select { width: 100%; min-height: 48px; border: 3px solid var(--purple-dark); border-radius: 16px; padding: 8px 12px; background: #fff2df; color: var(--purple-dark); font: inherit; font-size: 16px; cursor: pointer; }
-.practice-set select:focus-visible { outline: 3px solid #ec5ba7; outline-offset: 3px; }
-
-/* A calm workload signal; numeric forecasts stay out of the practice flow. */
-.density-indicator { --density-color: #d9c1f4; display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 7px; margin: 8px auto; padding: 9px 13px; border: 3px solid var(--purple-dark); border-radius: 16px; background: #fff2e7; color: var(--purple-dark); font-size: 14px; font-weight: 800; }
-.density-indicator[data-density='light'] { --density-color: #ffcb78; }
-.density-indicator[data-density='moderate'] { --density-color: #ff89b3; }
-.density-indicator[data-density='high'] { --density-color: #aa72ff; }
-.density-indicator[data-density='intense'] { --density-color: #e655be; }
-.density-pip { width: 14px; height: 14px; border: 2px solid var(--purple-dark); border-radius: 50%; background: var(--density-color); }
-.density-caption { color: var(--muted); font-size: 11px; font-weight: 600; }
-.density-settings { max-width: 350px; margin: 4px auto 14px; color: var(--muted); font-size: 12px; }
-.density-settings summary { cursor: pointer; width: fit-content; margin: auto; padding: 8px; font-weight: 800; }
-.density-range { display: flex; gap: 10px; margin-top: 7px; text-align: left; }
-.density-range label { display: grid; flex: 1; gap: 6px; min-width: 0; font-weight: 700; }
-.density-range select { width: 100%; min-height: 44px; padding: 7px; border: 2px solid var(--purple-dark); border-radius: 12px; background: #fff2df; color: var(--purple-dark); font: inherit; font-size: 16px; }
-.density-range select:focus-visible, .density-settings summary:focus-visible { outline: 3px solid #ec5ba7; outline-offset: 3px; }
+/* Keep the pace row open and the home screen spare. */
+.home h1 { margin: 8px 0 28px; }
+.preview .section-top { justify-content: flex-end; }
 .block-note { margin: 16px auto; max-width: 300px; font-size: 14px; color: var(--muted); line-height: 1.5; }
 .progress-track { display: block; width: min(240px, 56vw); height: 18px; overflow: hidden; border: 3px solid var(--purple-dark); border-radius: 12px; background: #dfccff; }
 .progress-track > span { display: block; height: 100%; background: #ffbc59; }

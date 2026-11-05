@@ -91,7 +91,7 @@ describe('adaptive session flow', () => {
     records = [...legacy(2), { ...legacy(3)[2]!, answeredAt: clock + 1000 }];
     const { container } = render(<App now={() => clock} random={() => 0.5}/>);
     await start();
-    expect(await screen.findByText('2 words to revisit')).toBeInTheDocument();
+    expect(await screen.findByText('2 words')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /begin review/i }));
     clock += 60_000;
     for (let i = 0; i < 2; i++) {
@@ -149,14 +149,14 @@ describe('adaptive session flow', () => {
     const user = userEvent.setup();
     localStorage.setItem('kikimashta-density-range-v1', JSON.stringify({ min: 'intense', max: 'minimal' }));
     const view = render(<App now={fixedNow}/>);
-    await user.click(screen.getByText('Practice pace'));
-    expect(screen.getByLabelText('Minimum')).toHaveValue('light');
-    expect(screen.getByLabelText('Maximum')).toHaveValue('moderate');
-    await user.selectOptions(screen.getByLabelText('Minimum'), 'moderate');
+    expect(within(screen.getByRole('listbox', { name: 'Minimum' })).getByRole('option', { name: 'Light' })).toHaveAttribute('aria-selected', 'true');
+    expect(within(screen.getByRole('listbox', { name: 'Maximum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
+    await user.click(screen.getByRole('listbox', { name: 'Minimum' }));
+    await user.keyboard('{ArrowDown}');
     expect(JSON.parse(localStorage.getItem('kikimashta-density-range-v1')!)).toEqual({ min: 'moderate', max: 'moderate' });
     view.unmount(); render(<App now={fixedNow}/>);
-    expect(screen.getByLabelText('Minimum')).toHaveValue('moderate');
-    expect(screen.getByLabelText('Maximum')).toHaveValue('moderate');
+    expect(within(screen.getByRole('listbox', { name: 'Minimum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
+    expect(within(screen.getByRole('listbox', { name: 'Maximum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
   });
 });
 

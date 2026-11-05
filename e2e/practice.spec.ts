@@ -271,13 +271,76 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
   const saved = await savedAttempts(page);
   expect(saved.map(item => item.itemId).sort()).toEqual(introduced.map(item => item.id).sort());
   expect(saved.every(item => item.correct && item.context?.phase === 'lesson' && item.context.recordingSrc && item.choiceIds.length === 4)).toBe(true);
-  await page.getByText('Practice pace', { exact: true }).click();
-  await page.getByRole('combobox', { name: 'Minimum', exact: true }).selectOption('minimal');
-  await page.getByRole('combobox', { name: 'Maximum', exact: true }).selectOption('light');
+  const minimum = page.getByRole('listbox', { name: 'Minimum', exact: true });
+  const maximum = page.getByRole('listbox', { name: 'Maximum', exact: true });
+  await minimum.focus();
+  await minimum.press('Home');
+  await maximum.focus();
+  await maximum.press('Home');
+  await maximum.press('ArrowDown');
   await page.reload();
-  await page.getByText('Practice pace', { exact: true }).click();
-  await expect(page.getByRole('combobox', { name: 'Minimum', exact: true })).toHaveValue('minimal');
-  await expect(page.getByRole('combobox', { name: 'Maximum', exact: true })).toHaveValue('light');
+  for (const [wheel, label] of [[minimum, 'Minimal'], [maximum, 'Light']] as const) {
+    const selected = wheel.getByRole('option', { name: label, exact: true });
+    await expect(selected).toHaveAttribute('aria-selected', 'true');
+    await expect(wheel).toHaveAttribute('aria-activedescendant', (await selected.getAttribute('id'))!);
+  }
+});
+
+test('pace controls use browser scrolling, keep valid bounds, and fit around Kiku on a phone', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 390, height: 664 });
+  await page.goto('./');
+  const minimum = page.getByRole('listbox', { name: 'Minimum', exact: true });
+  const maximum = page.getByRole('listbox', { name: 'Maximum', exact: true });
+  const density = page.getByRole('status', { name: 'Review density' });
+  const pace = page.getByRole('group', { name: 'Practice pace' });
+  async function scrollPace(label: 'Minimum' | 'Maximum') {
+    const wheel = page.getByRole('listbox', { name: label, exact: true });
+    if (testInfo.project.use.isMobile) {
+      // Mobile WebKit has no mouse-wheel injection. Exercise the touch-event
+      // path plus browser overflow scrolling and CSS snap; this is not a
+      // trusted finger pan and does not replace real-iPhone gesture review.
+      await wheel.dispatchEvent('touchstart');
+      await wheel.evaluate(element => element.scrollBy({ top: 128, behavior: 'smooth' }));
+      await wheel.dispatchEvent('touchend');
+    } else {
+      await wheel.hover();
+      await page.mouse.wheel(0, 128);
+    }
+  }
+  await expect(pace.locator('.pace-kiku img')).toHaveCount(3);
+  for (const column of await pace.locator('.pace-column').all()) {
+    await expect(column.locator('.pace-heading')).toBeVisible();
+    await expect(column.locator('.pace-kiku img')).toBeVisible();
+    await expect.poll(() => column.locator('.pace-kiku img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
+  await expect(density).toContainText('Minimal');
+  await expect(minimum.getByRole('option', { name: 'Light', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await scrollPace('Minimum');
+  await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await scrollPace('Maximum');
+  const selectedMaximum = maximum.getByRole('option', { name: 'Intense', exact: true });
+  await expect(selectedMaximum).toHaveAttribute('aria-selected', 'true');
+  await expect(maximum).toHaveAttribute('aria-activedescendant', (await selectedMaximum.getAttribute('id'))!);
+  await expect.poll(() => page.evaluate(() => {
+    const minimum = document.querySelector<HTMLElement>('[role="listbox"][aria-label="Minimum"]')!;
+    const maximum = document.querySelector<HTMLElement>('[role="listbox"][aria-label="Maximum"]')!;
+    const density = document.querySelector<HTMLElement>('[role="status"][aria-label="Review density"]')!;
+    const levels = ['minimal', 'light', 'moderate', 'high', 'intense'];
+    const selectedMinimum = minimum.querySelector<HTMLElement>('[aria-selected="true"]')!;
+    const selectedMaximum = maximum.querySelector<HTMLElement>('[aria-selected="true"]')!;
+    const left = minimum.getBoundingClientRect(), center = density.getBoundingClientRect(), right = maximum.getBoundingClientRect();
+    const selected = selectedMaximum.getBoundingClientRect();
+    return levels.indexOf(selectedMinimum.dataset.density!) <= levels.indexOf(selectedMaximum.dataset.density!)
+      && left.right <= center.left && center.right <= right.left
+      && Math.abs((left.top + left.bottom) / 2 - (right.top + right.bottom) / 2) < 2
+      && Math.abs((selected.top + selected.bottom) / 2 - (right.top + right.bottom) / 2) < 2
+      && left.left >= 0 && right.right <= innerWidth
+      && document.documentElement.scrollWidth <= innerWidth;
+  }), { message: 'the native wheel centers its selection and the three pace columns fit without overlap' }).toBe(true);
+  await captureScreen(page, 'pace-phone-home-' + testInfo.project.name);
+  await page.reload();
+  await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(maximum.getByRole('option', { name: 'Intense', exact: true })).toHaveAttribute('aria-selected', 'true');
 });
 
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
@@ -303,7 +366,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   expect(saved.filter(item => !item.context)).toHaveLength(7);
   expect(saved.filter(item => item.context?.phase === 'review').map(item => item.itemId).sort()).toEqual(bank.items.map(item => item.id).sort());
   await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('1 word to revisit', { exact: true })).toBeVisible();
+  await expect(page.getByText('1 word', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
   expect((await heardWord(page)).target.id).toBe(laterWord.id);
 });

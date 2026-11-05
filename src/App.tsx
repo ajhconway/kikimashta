@@ -3,10 +3,11 @@ import { practicePool } from './core/practice';
 import type { AudioAsset, PracticeAttempt, WordItem } from './types';
 import { createQuestions, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
-import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { quizFeedbackColors, themeColors } from './themes';
+import { DensityIndicator, PaceControl } from './components/PaceControl';
 import './styles.css';
 
 const asset = (path: string) => import.meta.env.BASE_URL + path;
@@ -48,11 +49,6 @@ function initialRange(): DensityRange {
         DENSITY_LEVELS.findIndex(level => level.id === value.min) <= DENSITY_LEVELS.findIndex(level => level.id === value.max)) return value;
   } catch { /* Unavailable preferences never prevent practice. */ }
   return { ...DEFAULT_DENSITY_RANGE };
-}
-function DensityIndicator({ value }: { value: number | null }) {
-  const level = value === null ? null : densityLevel(value);
-  const label = DENSITY_LEVELS.find(candidate => candidate.id === level)?.label;
-  return <div className="density-indicator" data-density={level || undefined} role="status" aria-label="Review density"><span className="density-pip" aria-hidden="true"/><span>{label || 'Checking…'}</span><span className="density-caption">review density</span></div>;
 }
 interface DepartingCard { item: WordItem; slot: number; left: number; top: number; width: number; height: number }
 
@@ -282,14 +278,9 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
-        <img className="home-mascot" src={asset('brand/kikimashta-cat-v1.png')} alt="Cat wearing purple headphones" draggable={false}/>
-        <h1>kikimashta</h1><p className="home-prompt">Listen. Pick a picture.</p>
-        <DensityIndicator value={density}/>
-        <details className="density-settings"><summary>Practice pace</summary><div className="density-range">
-          <label>Minimum<select value={range.min} onChange={event => updateRange({ ...range, min: event.target.value as DensityRange['min'] })}>{DENSITY_LEVELS.filter(level => level.threshold <= DENSITY_LEVELS.find(candidate => candidate.id === range.max)!.threshold).map(level => <option key={level.id} value={level.id}>{level.label}</option>)}</select></label>
-          <label>Maximum<select value={range.max} onChange={event => updateRange({ ...range, max: event.target.value as DensityRange['max'] })}>{DENSITY_LEVELS.filter(level => level.threshold >= DENSITY_LEVELS.find(candidate => candidate.id === range.min)!.threshold).map(level => <option key={level.id} value={level.id}>{level.label}</option>)}</select></label>
-        </div>{preferenceError && <p role="status">This pace applies now, but couldn't be saved on this device.</p>}</details>
-        <div className="session-note"><span>Reviews, then new words</span><b>·</b><span>No timer</span></div>
+        <h1>kikimashta</h1>
+        <PaceControl value={density} range={range} onChange={updateRange}/>
+        {preferenceError && <p role="alert" className="error">Your pace couldn't be saved on this device.</p>}
         <button className="primary start" disabled={loading || historyError || pendingSaveCount > 0} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
@@ -297,14 +288,14 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Review Time!' : lessonItems.length ? 'Lesson Time!' : 'All set for now!'}</h1>
-        <p className="block-note">{phase === 'review' ? `${questions.length} ${questions.length === 1 ? 'word' : 'words'} to revisit` : lessonItems.length ? `${lessonItems.length} new words, then a mini-quiz` : 'Your next words can wait.'}</p>
+        {(phase === 'review' || lessonItems.length > 0) && <p className="block-note">{phase === 'review' ? questions.length : lessonItems.length} {(phase === 'review' ? questions.length : lessonItems.length) === 1 ? 'word' : 'words'}</p>}
         <DensityIndicator value={density}/>
         {phase === 'review' ? <button className="primary" onClick={() => beginQuiz(questions)}>Begin review <span aria-hidden="true">→</span></button> : lessonItems.length > 0 && <button className="primary" disabled={loading || historyError} onClick={beginLesson}>Begin lesson <span aria-hidden="true">→</span></button>}
         {historyError && <div className="error" role="alert"><p>The next lesson couldn't load.</p><button className="text-button" onClick={() => void prepareLessons(operation.current)}>Retry lesson</button></div>}
         <button className="text-button" onClick={home}>Finish</button>
       </section>}
       {screen === 'preview' && target && <section className="practice preview fade-in">
-        <div className="section-top"><span className="eyebrow">MEET THE WORDS</span><span className="counter">{preview + 1} / {lessonItems.length}</span></div>
+        <div className="section-top"><span className="counter">{preview + 1} / {lessonItems.length}</span></div>
         <h1 className="practice-title">Lesson Time!</h1>
         <div className="preview-picture"><Picture item={target}/></div>
         <div className="practice-actions">
@@ -337,11 +328,11 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         <QuizProgress total={questions.length} completed={answers.length}/>
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
-        <div className="eyebrow">{phase === 'review' ? 'REVIEW COMPLETE' : 'CHUNK COMPLETE'}</div><div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
+        <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
-        <div className="score"><strong>{correct}<span> / {answers.length}</span></strong><p>pictures found</p></div>
+        <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
         <DensityIndicator value={density}/>
-        {loading ? <p className="block-note" role="status">Getting your next words ready…</p> : lessonPlan?.items.length ? <><p className="block-note">{lessonPlan.reason === 'below-min' ? 'A few new words will keep things moving.' : 'A good place to finish. Up for more?'}</p><button className="primary" onClick={beginLesson}>{phase === 'review' ? 'Begin lesson' : 'Learn more'} <span aria-hidden="true">→</span></button></> : !historyError && <p className="block-note">All set for now. Come back for your next session.</p>}
+        {loading ? <p className="block-note" role="status" aria-label="Preparing lesson">…</p> : lessonPlan?.items.length ? <button className="primary" onClick={beginLesson}>{phase === 'review' ? 'Begin lesson' : 'Learn more'} <span aria-hidden="true">→</span></button> : null}
         {historyError && <div className="error" role="alert"><p>The next lesson couldn't load.</p><button className="text-button" onClick={() => void prepareLessons(operation.current)}>Retry lesson</button></div>}
         <button className="text-button" onClick={home}>Finish</button>
       </section>}
