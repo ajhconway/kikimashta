@@ -1,0 +1,359 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "createdAt": "2026-11-05T05:09:39.483Z",
+  "language": "ja-JP",
+  "kind": "sentences",
+  "instructions": "You are recording complete sentences for a Japanese listening game. Speak only the supplied Japanese sentence, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "maxOutputTokens": 512,
+  "maxSeconds": 12,
+  "sampleRate": 24000,
+  "processing": "Gain only, active-sample RMS target -22 dBFS, max boost 9 dB, sample peak ceiling -4 dBFS before MP3; add 120 ms lead and 240 ms tail, no trimming.",
+  "review": "Not yet approved; pronunciation and pitch accent require human listening.",
+  "clips": [
+    {
+      "voice": "marin",
+      "id": "sleeping-cat",
+      "text": "ねこがソファで寝ています。",
+      "meaning": "The cat is sleeping on the sofa.",
+      "file": "marin-sleeping-cat.mp3",
+      "original": "marin-sleeping-cat.wav",
+      "originalSha256": "05c632720f6166f9b0e12581970b978a334e027ab540f7195b866df33bf19580",
+      "transcript": "ねこがソファで寝ています。",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 117,
+        "output_tokens": 86,
+        "input_token_details": {
+          "text_tokens": 117,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 44,
+          "audio_tokens": 42,
+          "reasoning_tokens": 21
+        }
+      },
+      "durationSeconds": 2.1,
+      "rmsDb": -21.629691811094155,
+      "peakDb": -8.692862612507115,
+      "gainDb": -0.37030818890584527,
+      "deliverySha256": "1a2dca3a1175a718cb2fa8950d4831588dc2a59df33b7fd899cbfff927d291b8",
+      "deliveryBytes": 20252,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -9.006,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "marin",
+      "id": "three-apples",
+      "text": "テーブルの上に、りんごが三つあります。",
+      "meaning": "There are three apples on the table.",
+      "file": "marin-three-apples.mp3",
+      "original": "marin-three-apples.wav",
+      "originalSha256": "69416e22f4f07aeefcfb3544d99467a7396f5ca7ac2ee800f8a544ce66c64e86",
+      "transcript": "テーブルの上に、りんごが三つあります。",
+      "usage": {
+        "total_tokens": 232,
+        "input_tokens": 122,
+        "output_tokens": 110,
+        "input_token_details": {
+          "text_tokens": 122,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 48,
+          "audio_tokens": 62,
+          "reasoning_tokens": 20
+        }
+      },
+      "durationSeconds": 3.1,
+      "rmsDb": -19.54703010821018,
+      "peakDb": -9.25204303117715,
+      "gainDb": -2.45296989178982,
+      "deliverySha256": "d15a56849825d150cea6a36e430ca52b8b437ae2c54d400facc2020653a149e7",
+      "deliveryBytes": 27572,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -11.758,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "marin",
+      "id": "red-cup",
+      "text": "赤いコップはどこですか？",
+      "meaning": "Where is the red cup?",
+      "file": "marin-red-cup.mp3",
+      "original": "marin-red-cup.wav",
+      "originalSha256": "bc1094c821838f93845426adf807ccc23528ec0874b57ff54be53239c5bf3508",
+      "transcript": "赤いコップはどこですか？",
+      "usage": {
+        "total_tokens": 193,
+        "input_tokens": 118,
+        "output_tokens": 75,
+        "input_token_details": {
+          "text_tokens": 118,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 37,
+          "reasoning_tokens": 16
+        }
+      },
+      "durationSeconds": 1.85,
+      "rmsDb": -20.55133683711624,
+      "peakDb": -6.8762245285779855,
+      "gainDb": -1.4486631628837614,
+      "deliverySha256": "67487349831110cbbf2e8a6ea3e388e159772a8fbc7f294696b627691bd1a828",
+      "deliveryBytes": 17972,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -8.367,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "marin",
+      "id": "rainy-day",
+      "text": "雨が降っているので、かさを持っていきます。",
+      "meaning": "It is raining, so I will take an umbrella.",
+      "file": "marin-rainy-day.mp3",
+      "original": "marin-rainy-day.wav",
+      "originalSha256": "fe1cee3593aec0e14fda45688e665d34fce8ab0e26e3c042e41aa94f0346127b",
+      "transcript": "雨が降っているので、かさを持っていきます。",
+      "usage": {
+        "total_tokens": 238,
+        "input_tokens": 124,
+        "output_tokens": 114,
+        "input_token_details": {
+          "text_tokens": 124,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 49,
+          "audio_tokens": 65,
+          "reasoning_tokens": 19
+        }
+      },
+      "durationSeconds": 3.25,
+      "rmsDb": -19.93224628344978,
+      "peakDb": -5.853109076920221,
+      "gainDb": -2.0677537165502216,
+      "deliverySha256": "223f7982cbf9804fa80b2c7d31e10fcb18106bdb106566ae5f57aa77364cbe0d",
+      "deliveryBytes": 29708,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -8.047,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "sleeping-cat",
+      "text": "ねこがソファで寝ています。",
+      "meaning": "The cat is sleeping on the sofa.",
+      "file": "cedar-sleeping-cat.mp3",
+      "original": "cedar-sleeping-cat.wav",
+      "originalSha256": "f463e5a3b45d05913ef001c50eae8e91fc3fbb4a7b3bfd527c8e2de3693560cc",
+      "transcript": "ねこがソファで寝ています。",
+      "usage": {
+        "total_tokens": 199,
+        "input_tokens": 117,
+        "output_tokens": 82,
+        "input_token_details": {
+          "text_tokens": 117,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 44,
+          "audio_tokens": 38,
+          "reasoning_tokens": 21
+        }
+      },
+      "durationSeconds": 1.9,
+      "rmsDb": -19.615686413726657,
+      "peakDb": -3.8940291394508835,
+      "gainDb": -2.3843135862733433,
+      "deliverySha256": "e6abf3d5d89eca2908b469f140b3585e1dadcec8bee46b50ad71169a8843a069",
+      "deliveryBytes": 19220,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -6.652,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "three-apples",
+      "text": "テーブルの上に、りんごが三つあります。",
+      "meaning": "There are three apples on the table.",
+      "file": "cedar-three-apples.mp3",
+      "original": "cedar-three-apples.wav",
+      "originalSha256": "c7ee15d1e9be44c9562346686e5c87af87ffa92c1346720af8f9004b289fd4a9",
+      "transcript": "テーブルの上に、りんごが三つあります。",
+      "usage": {
+        "total_tokens": 240,
+        "input_tokens": 122,
+        "output_tokens": 118,
+        "input_token_details": {
+          "text_tokens": 122,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 53,
+          "audio_tokens": 65,
+          "reasoning_tokens": 25
+        }
+      },
+      "durationSeconds": 3.25,
+      "rmsDb": -18.492760275254938,
+      "peakDb": -3.59021731855977,
+      "gainDb": -3.5072397247450624,
+      "deliverySha256": "4e2a7e9597493822463bd748907dbffcaf9095a782948bae82692b48c1509af3",
+      "deliveryBytes": 28604,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -7.158,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "red-cup",
+      "text": "赤いコップはどこですか？",
+      "meaning": "Where is the red cup?",
+      "file": "cedar-red-cup.mp3",
+      "original": "cedar-red-cup.wav",
+      "originalSha256": "1cb5095d70aeae7e3a399b9bb2ffb76c823d01401f9db67b4ad860183af1ac08",
+      "transcript": "赤いコップはどこですか？",
+      "usage": {
+        "total_tokens": 198,
+        "input_tokens": 118,
+        "output_tokens": 80,
+        "input_token_details": {
+          "text_tokens": 118,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 37,
+          "audio_tokens": 43,
+          "reasoning_tokens": 15
+        }
+      },
+      "durationSeconds": 2.15,
+      "rmsDb": -20.64721519210512,
+      "peakDb": -5.668909039757759,
+      "gainDb": -1.3527848078948814,
+      "deliverySha256": "bc7ee0377a7da803093d22a917a783be1dea83c5b0e6b0cc44b16915fac434c9",
+      "deliveryBytes": 19532,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -6.936,
+        "clippedSamples": 0
+      }
+    },
+    {
+      "voice": "cedar",
+      "id": "rainy-day",
+      "text": "雨が降っているので、かさを持っていきます。",
+      "meaning": "It is raining, so I will take an umbrella.",
+      "file": "cedar-rainy-day.mp3",
+      "original": "cedar-rainy-day.wav",
+      "originalSha256": "e14d76fc30197fc17da9d09aeea68fe3b3364ee33b47de1b4975928f5c3fdd7d",
+      "transcript": "雨が降っているので、かさを持っていきます。",
+      "usage": {
+        "total_tokens": 236,
+        "input_tokens": 124,
+        "output_tokens": 112,
+        "input_token_details": {
+          "text_tokens": 124,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 55,
+          "audio_tokens": 57,
+          "reasoning_tokens": 25
+        }
+      },
+      "durationSeconds": 2.85,
+      "rmsDb": -20.496610483172752,
+      "peakDb": -6.209786416882313,
+      "gainDb": -1.503389516827248,
+      "deliverySha256": "aa370c3468dc60487ef3514a02e34c61d5714cb1d3915545f24a0e50423f3cdd",
+      "deliveryBytes": 26996,
+      "validation": {
+        "transcriptMatchesRequestedText": true,
+        "decodedPeakDbfs": -7.733,
+        "clippedSamples": 0
+      }
+    }
+  ],
+  "generation": {
+    "workflowRunUrl": "https://github.com/ajhconway/kikimashta/actions/runs/41971828435",
+    "runId": 41971828435,
+    "attempt": 2,
+    "commit": "1101f03365879579c4c5077e6e1f80fc80314a5c",
+    "artifactId": 13390855314,
+    "artifactSha256": "2fc63ade979e407895641a3848033ba92d90e49909caebc37b425661e18c60c8"
+  }
+}
