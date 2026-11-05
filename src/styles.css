@@ -176,6 +176,7 @@ h1 em { color: var(--purple); font-style: normal; }
 .summary-pictures img { position: absolute; inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px); }
 .summary-pictures span { display: grid; place-items: center; position: absolute; right: -3px; bottom: -5px; width: 20px; height: 20px; border-radius: 50%; background: #e9dcfc; color: var(--purple-dark); font-size: 12px; font-weight: 800; }
 footer { display: flex; justify-content: center; padding: 18px 0; color: var(--muted); font-size: 11px; }
+.app-quiz footer { display: none; }
 footer a { text-decoration: none; }
 footer a:hover { color: var(--purple-dark); }
 
@@ -208,6 +209,7 @@ footer a:hover { color: var(--purple-dark); }
 }
 
 @media (max-height: 740px) and (max-width: 600px) {
+  .app-quiz main { padding-top: 10px; padding-bottom: 12px; }
   .quiz .choices { max-width: 280px; }
   .quiz .practice-title { margin: 10px 0; font-size: 25px; }
   .quiz-listen { margin-bottom: 12px; }

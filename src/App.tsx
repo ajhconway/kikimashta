@@ -114,7 +114,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
     showQuestion(questions[index + 1]!, active.current.sessionId);
   }
   const correct = answers.filter(answer => answer.correct).length;
-  return <div className="app">
+  return <div className={'app app-' + screen}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
     <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg> kikimashta<span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
     <main>

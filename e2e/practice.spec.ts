@@ -1,6 +1,11 @@
 import { expect, test, type Page } from '@playwright/test';
 import bank from '../content/ja.json' with { type: 'json' };
 
+async function captureScreen(page: Page, name: string) {
+  await page.getByRole('button', { name: /kikimashta home/i }).scrollIntoViewIfNeeded();
+  await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
+}
+
 async function chooseHeardPicture(page: Page) {
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -30,11 +35,11 @@ test('preview, complete a short round, and retain real device progress after rel
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
-  await page.screenshot({ path: 'test-results/home-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
+  await captureScreen(page, 'home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByRole('heading', { name: /listen & look/i })).toBeVisible();
   await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-  await page.screenshot({ path: 'test-results/preview-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
+  await captureScreen(page, 'preview-' + testInfo.project.name);
   for (let i = 0; i < bank.items.length - 1; i++) {
     await page.getByRole('button', { name: /next word/i }).click();
   }
@@ -42,12 +47,15 @@ test('preview, complete a short round, and retain real device progress after rel
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
     await chooseHeardPicture(page);
-    if (i === 0) await page.screenshot({ path: 'test-results/quiz-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
+    if (i === 0) {
+      await captureScreen(page, 'quiz-' + testInfo.project.name);
+      if (testInfo.project.use.isMobile) await expect(page.getByRole('button', { name: /next sound/i })).toBeInViewport({ ratio: 1 });
+    }
     await page.getByRole('button', { name: i + 1 === bank.items.length ? /see results/i : /next sound/i }).click();
   }
   await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
   await expect(page.getByText(`${bank.items.length} / ${bank.items.length}`, { exact: true })).toBeVisible();
-  await page.screenshot({ path: 'test-results/summary-' + testInfo.project.name + '.png', fullPage: true, animations: 'disabled' });
+  await captureScreen(page, 'summary-' + testInfo.project.name);
   await page.getByRole('button', { name: /back home/i }).click();
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
   await page.reload();
