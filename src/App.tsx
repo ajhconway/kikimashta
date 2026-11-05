@@ -121,7 +121,6 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
       {screen === 'home' && <section className="home fade-in">
         <div className="eyebrow">JAPANESE LISTENING</div>
         <h1>Listen.<br/><em>Pick a picture.</em></h1>
-        <p className="intro">A little practice. A little play.</p>
         <div className="world" aria-hidden="true">{[bank.items[0]!, bank.items[2]!, bank.items[4]!].map((item, i) => <div className={'world-card card-' + i} key={item.id}><Picture item={item}/></div>)}</div>
         <div className="session-note"><span>6 words</span><b>·</b><span>No timer</span></div>
         <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); play(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
@@ -152,7 +151,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
           return <button key={item.id} className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button>;
         })}</div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback ? <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct && <p>Listen again to match the picture.</p>}</> : <p className="hint">Tap a picture.</p>}</div>
+        <div className="feedback" aria-live="polite">{feedback && <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct && <p>Listen again to match the picture.</p>}</>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Next sound'} <span aria-hidden="true">→</span></button>}
         </div>

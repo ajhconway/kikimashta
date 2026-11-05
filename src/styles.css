@@ -3,12 +3,12 @@
   font-synthesis: none;
   font-weight: 500;
   color: #382052;
-  background: #faf7ff;
+  background: #c4a2ff;
   --ink: #382052;
-  --muted: #766486;
-  --line: #dfd2ee;
-  --purple: #7952e8;
-  --purple-dark: #6340ca;
+  --muted: #50346b;
+  --line: #9e7bd1;
+  --purple: #6b38d6;
+  --purple-dark: #4c20ad;
   --pink: #ff89b3;
   --orange: #ffad65;
 }
@@ -88,7 +88,6 @@ main {
 .eyebrow { color: var(--muted); font-size: 11px; letter-spacing: 1.5px; font-weight: 800; }
 h1 { margin: 18px 0; font-size: 58px; line-height: 1.08; letter-spacing: -2.1px; font-weight: 800; }
 h1 em { color: var(--purple); font-style: normal; }
-.intro { margin: 18px 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .world { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 420px; margin: 28px auto 22px; }
 .world-card { flex: 1; min-width: 0; max-width: 128px; height: 128px; padding: 14px; overflow: hidden; border: 2px solid var(--line); border-radius: 23px; background: #fff; }
 .card-0 { background: #f1eaff; border-color: #ddcaf8; }
@@ -118,7 +117,7 @@ h1 em { color: var(--purple); font-style: normal; }
 .primary:not(:disabled):active { transform: translateY(1px); }
 .primary:disabled { opacity: .55; }
 .primary span { font-size: 22px; line-height: 1; }
-.text-button { display: block; margin: 0 auto; padding: 11px 6px; border: 0; background: transparent; color: #70528c; font-size: 13px; font-weight: 700; line-height: 1.4; }
+.text-button { display: block; margin: 0 auto; padding: 11px 6px; border: 0; background: transparent; color: var(--muted); font-size: 13px; font-weight: 700; line-height: 1.4; }
 .text-button:hover { color: var(--purple-dark); }
 .history { margin: 20px auto 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
 .history:empty { display: none; }
@@ -131,7 +130,6 @@ h1 em { color: var(--purple); font-style: normal; }
 .listen svg { width: 26px; height: 26px; }
 .listen.playing { background: #ffe3ef; border-color: #f6b6d0; }
 .quiz-listen { margin: 12px auto 20px; }
-.hint { margin: 8px 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .preview-dots { display: flex; gap: 8px; justify-content: center; margin: 20px; }
 .preview-dots span { width: 7px; height: 7px; border-radius: 50%; background: #ddceee; }
 .preview-dots .active { width: 20px; border-radius: 6px; background: var(--purple); }
@@ -189,7 +187,6 @@ footer a:hover { color: var(--purple-dark); }
   .language { padding: 7px 9px; font-size: 11px; }
   main { padding: 18px 0 24px; }
   h1 { margin: 16px 0; font-size: clamp(39px, 10.8vw, 48px); letter-spacing: -1.6px; }
-  .intro { margin: 15px 0; font-size: 15px; }
   .world { gap: 10px; margin: 23px auto 18px; }
   .world-card { max-width: 104px; height: 104px; padding: 11px; border-radius: 20px; }
   .session-note { margin: 16px 0; }
