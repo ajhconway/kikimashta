@@ -35,10 +35,10 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Current priorities
 
-V0 is playable. Refine it in this order, reviewing each pass before moving on:
+V0 is playable and the visual direction is approved. Audio is the current focus; review each pass before moving on:
 
 1. **Visuals:** minimal, brighter purple/pink/orange, and more cartoony and game-like, with distinct background colors for lessons and each quiz type.
-2. **Audio:** replace the low-quality voice after comparing better samples.
+2. **Audio:** compare natural Japanese voices, then replace the low-quality clips with consistent volume and comfortable timing.
 3. **Interactions:** more fun, engaging, fast-paced, and natural.
 
 Then add Supabase sign-in and cross-device sync, carrying forward existing progress.

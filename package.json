@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
-    "test": "vitest run",
+    "test": "vitest run && node --test scripts/content/*.test.mjs",
+    "audio:audition": "node scripts/content/audition-openai.mjs",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test && npm run build"
@@ -40,6 +41,7 @@
     "jsdom": "30.1.3",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
+    "undici": "8.12.3",
     "vite": "8.3.5",
     "vitest": "5.1.0"
   }
