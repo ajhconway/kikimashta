@@ -35,15 +35,26 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Roadmap
 
-V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. Practice offers the six-word starter and three additional six-word themed sets, ready for feedback.
+V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. Practice offers the six-word starter and three additional six-word themed sets. This temporary expansion is approved; adaptive practice is next.
 
 1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
-2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Start with simple, adjustable learning rules; sessions can continue while practice items are available.
+2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Use FSRS for per-word scheduling and forecast review density to guide new-word intake.
 3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
 4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
 
-### Current milestone: expanded practice
+### Current milestone: adaptive practice
 
-Keep the existing starter round. Add a few six-word themed sets using existing pictures and Marin/Cedar recordings. Let the user choose a set, preview its words, and practice that same set in a short untimed quiz. Preserve stable item IDs and saved history. Avoid ambiguous or synonymous choices in these first sets; pictures and pronunciation still need feedback through use.
+Replace fixed practice sets with adaptive sessions. Preserve stable item IDs and existing history.
+
+- **Scheduler:** use FSRS with shared defaults, adapting each word after answers. Fit personal parameters once enough relevant history accumulates. Start with correctness; record replay use and timing without grading speed. Keep scheduling separate from session and workload policies.
+- **Session:** snapshot the due queue at the start, complete that review block, then enter the lesson block. Reviews becoming due during a session, including scheduled retries after mistakes, wait for a later session. Give corrective feedback immediately; preserve FSRS due times.
+- **Lessons:** introduce roughly ten words through pictures and audio, then give a shuffled mini-quiz of those words. This is initial learning; later reviews measure retention over time.
+- **Density:** forecast reviews per day over the coming days, including repeat reviews. Offer lesson chunks toward the user's minimum; between minimum and maximum offer Finish or another chunk; at maximum stop introducing words. Smaller chunks can accommodate the maximum or a limited eligible pool. The user can always stop.
+- **Presentation:** show Minimal, Light, Moderate, High, or Intense, with colors and potentially matching Kiku expressions. Use the same qualitative levels for the preferred range. Numeric thresholds and the forecast window remain adjustable; the maximum controls new intake rather than guaranteeing future workload.
+- **Validation:** check delayed predictions against later first-attempt results. Picture-choice recognition is a specific skill, distinct from fluent comprehension. Preserve exercise context so later quiz formats can be evaluated separately.
+
+Spacing and retrieval practice have research support; our density controller and the application of FSRS to audio-to-picture recognition need evaluation through use. References: [language-learning spacing meta-analysis](https://doi.org/10.1111/lang.12479), [aural vocabulary with picture choices](https://doi.org/10.1037/mac0000174), [FSRS model documentation](https://open-spaced-repetition.github.io/ts-fsrs/guide/model/).
+
+Implementation proceeds through scheduling/history, workload forecasting, then the session interface. Keep forecast assumptions, density thresholds, and new-word selection explicit and adjustable.
 
 Keep only the next milestone detailed in GitHub. Later stages remain flexible, with no fixed dates. Keep *k*, word counts, session length, visual details, and the learning algorithm adjustable.
