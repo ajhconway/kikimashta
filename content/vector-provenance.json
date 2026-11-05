@@ -5,7 +5,7 @@
   "format": "SVG",
   "viewBox": "0 0 256 256",
   "background": "transparent",
-  "designBrief": "Original flat cartoon vocabulary picture; thick rounded dark-purple outlines (#3f2468); bright orange, pink, purple, and yellow fills; transparent 256 by 256 canvas; centered subject with generous margins; no text, object faces, gradients, shadows, textures, or external resources.",
+  "designBrief": "Original flat cartoon vocabulary picture; thick rounded saturated-purple outlines (#7537df, 10-unit exterior strokes); bright orange, pink, purple, and yellow fills; transparent 256 by 256 canvas; centered subject with generous margins; no text, object faces, gradients, shadows, textures, or external resources.",
   "historicMedia": "Earlier raster illustrations and their image-provenance.json records are retained; these SVGs are newly authored illustrations, not vectorizations of those images.",
   "assets": [
     {
@@ -15,8 +15,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Sitting orange cat with pointed upright ears, whiskers, striped forehead, separate paws, and a curled tail.",
-      "bytes": 900,
-      "sha256": "2c59a7ac4ae12d4252b2084213882e2b01d924717086f8a054f561dfdcd2c3ba"
+      "bytes": 918,
+      "sha256": "51f9ec91e424a3372e18bfa3dac6c2cdb3a00fa42d9796549cb679bdc421db1d"
     },
     {
       "id": "dog",
@@ -25,8 +25,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Sitting golden dog with long floppy purple ears, short rounded muzzle, pink collar, separate paws, and a short raised tail.",
-      "bytes": 994,
-      "sha256": "f884f51956aadaef162021dc9571cfa8b17ccead02fc8d1a7a45aaa604346937"
+      "bytes": 1012,
+      "sha256": "79ddd6b4f906289da0e39abf3fc1a629e6eda54ff78d80c37b261d2c093a763b"
     },
     {
       "id": "apple",
@@ -35,8 +35,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Whole pink apple with a short bent stem and a single purple leaf.",
-      "bytes": 484,
-      "sha256": "fb169f86cc4a9b35475151cc7ed9fe56097b4e4dbd893c9e14ffaddd8e24a881"
+      "bytes": 485,
+      "sha256": "12565854a271a4fd7d3a31d526e19d99a58688c01afe414b17a15d9036342f41"
     },
     {
       "id": "banana",
@@ -45,8 +45,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Whole curved yellow banana with an orange stem, purple tip, and one orange contour line.",
-      "bytes": 501,
-      "sha256": "971eedebd6d0668c336e6e166e39f81199f56e84cc65c1b7c84335aa95566fba"
+      "bytes": 502,
+      "sha256": "3cb1af473ca7c9281c31a836ad9b9cd8b529f0c443ec9179071ba0d9e2214ff2"
     },
     {
       "id": "umbrella",
@@ -55,8 +55,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Open umbrella with alternating pink and purple canopy panels and a hooked handle.",
-      "bytes": 651,
-      "sha256": "a1aae00c67a459fa99de29dd342dc4dede2ca214691f56ee28874aafe87727f4"
+      "bytes": 669,
+      "sha256": "b8bbc9a7e0922f5650030755d7eaf49cdecab713ef60bf4415ab780458d44be8"
     },
     {
       "id": "cup",
@@ -65,8 +65,14 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Pink ceramic drinking cup with a broad elliptical yellow opening and a clearly visible orange handle.",
-      "bytes": 480,
-      "sha256": "89fd86a8d2d9f19f3c1027ccdd5f147c58bd2538aa39c0852d2b11685ca25daa"
+      "bytes": 481,
+      "sha256": "ac9fbb7757e9d93af4f5ae24fe37d4da79108237e4aaee9a70a07551e0cd0d91"
+    }
+  ],
+  "revisions": [
+    {
+      "date": "2026-11-04",
+      "description": "Brightened all purple outlines and details from #3f2468 to #7537df and increased exterior strokes from 7 to 10 units. Kept fine facial, whisker, paw, and canopy details at their existing widths; original shapes and flat fills retained."
     }
   ]
 }

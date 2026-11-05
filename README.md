@@ -22,7 +22,7 @@ npm run dev
 
 Production uses GitHub Pages with `kikimashta.com` configured in the repository’s Pages settings. Domain routing is managed there; the Actions deployment does not use a repository `CNAME` file.
 
-The word bank is in `content/ja.json`. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed.
+The word bank is in `content/ja.json`. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed. Named background colors live in `src/themes.ts`; give future quiz types their own theme.
 
 The initial Open JTalk voice is provisional. Voice preference and Japanese pronunciation still need human review, alongside audio playback and touch behavior on the iPhone 17.
 

@@ -24,7 +24,7 @@ describe('practice interactions', () => {
     const { container } = render(<App/>);
     await user.click(screen.getByRole('button', { name: /^start/i }));
 
-    expect(screen.getByRole('heading', { name: /listen & look/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /lesson time!/i })).toBeInTheDocument();
     expect(screen.getByRole('img')).toHaveAttribute('src', expect.stringContaining('images/'));
     expect(container.querySelector('audio')).toHaveAttribute('src', expect.stringMatching(/audio\/.+\.mp3$/));
     await user.click(screen.getByRole('button', { name: /replay word/i }));

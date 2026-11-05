@@ -37,7 +37,7 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 V0 is playable. Refine it in this order, reviewing each pass before moving on:
 
-1. **Visuals:** minimal, brighter purple/pink/orange, and more cartoony and game-like.
+1. **Visuals:** minimal, brighter purple/pink/orange, and more cartoony and game-like, with distinct background colors for lessons and each quiz type.
 2. **Audio:** replace the low-quality voice after comparing better samples.
 3. **Interactions:** more fun, engaging, fast-paced, and natural.
 
