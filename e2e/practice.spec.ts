@@ -14,7 +14,7 @@ async function captureCorrectResponse(page: Page, name: string) {
     const glow = app.getAnimations({ subtree: true }).filter(candidate =>
       candidate instanceof CSSAnimation && candidate.animationName === 'correct-glow',
     );
-    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .quiz-starburst svg')).flatMap(effect => effect.getAnimations())];
+    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations())];
     for (const animation of animations) {
       animation.pause();
       animation.currentTime = 360;
@@ -134,7 +134,11 @@ async function heardWord(page: Page) {
 
 async function chooseHeardPicture(page: Page, pressScreenshot?: string, responseScreenshot?: string) {
   const { target } = await heardWord(page);
-  const originalPageHeight = await page.evaluate(() => document.documentElement.scrollHeight);
+  const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
+  const beforeAnswer = await page.locator('.choices').evaluate(grid => {
+    const bounds = grid.getBoundingClientRect();
+    return { pageHeight: document.documentElement.scrollHeight, gridWidth: bounds.width, gridHeight: bounds.height };
+  });
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
@@ -156,19 +160,24 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
   await expect(page.locator('.feedback')).toHaveText('Got it!');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
   await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
+  await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
   await expectAnswerPictures(page, [target.image.alt], 'fly');
   await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
-  if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
-  await expectDeparturesFinished(page, 3);
-  await expect.poll(() => page.evaluate(previousHeight => {
+  await expect.poll(() => page.evaluate(before => {
     const choices = document.querySelector('.choices')!.getBoundingClientRect();
     const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
     const cards = Array.from(document.querySelectorAll('.choices .choice-slot:not(.is-departing) .picture-choice'), card => card.getBoundingClientRect());
     return document.documentElement.scrollWidth <= innerWidth
-      && document.documentElement.scrollHeight <= previousHeight
+      && document.documentElement.scrollHeight <= before.pageHeight
+      && Math.abs(choices.width - before.gridWidth) <= 1 && Math.abs(choices.height - before.gridHeight) <= 1
       && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
         && card.bottom <= feedback.top);
-  }, originalPageHeight), { message: 'retained pictures fit the viewport, leave feedback unobscured, and departures add no page overflow' }).toBe(true);
+  }, beforeAnswer), { message: 'feedback keeps the grid stable; retained pictures fit and departures add no page overflow' }).toBe(true);
+  if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
+  // Check completion in one browser evaluation, then wait directly for the next word.
+  // All answer-state assertions above run before the longer flight finishes.
+  await expectDeparturesFinished(page, 3);
 }
 
 test('preview, complete a short round, and retain real device progress after reload', async ({ page }, testInfo) => {
@@ -210,17 +219,10 @@ test('preview, complete a short round, and retain real device progress after rel
     expect(source).not.toBe(previousSource);
     previousSource = source;
     expect(await originalAudio!.evaluate(element => element === document.querySelector('audio'))).toBe(true);
-    const beforeAnswer = i === 0 ? await page.locator('.choices').boundingBox() : null;
     await chooseHeardPicture(page,
       i === 0 ? 'quiz-pressed-' + testInfo.project.name : undefined,
       i === 0 ? 'quiz-correct-' + testInfo.project.name : undefined,
     );
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i + 1));
-    await expect(page.locator('.progress-bead.is-complete')).toHaveCount(i + 1);
-    if (i === 0) {
-      const afterAnswer = await page.locator('.choices').boundingBox();
-      expect(Math.abs(afterAnswer!.height - beforeAnswer!.height), 'answer feedback keeps the picture grid stable').toBeLessThanOrEqual(1);
-    }
     // The next iteration waits for new enabled choices and actual audio playback.
     // No Replay/Next click is used, so Safari autoplay failures remain visible.
   }
