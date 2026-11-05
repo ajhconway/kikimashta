@@ -16,8 +16,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Sitting orange cat with pointed upright ears, whiskers, striped forehead, separate paws, and a curled tail.",
-      "bytes": 917,
-      "sha256": "37c6539e4f7c29cd306646a825668770f53b0c7d8f1b18c87a6d4123d2005abf"
+      "bytes": 900,
+      "sha256": "2c59a7ac4ae12d4252b2084213882e2b01d924717086f8a054f561dfdcd2c3ba"
     },
     {
       "id": "dog",
@@ -26,8 +26,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Sitting golden dog with long floppy purple ears, short rounded muzzle, pink collar, separate paws, and a short raised tail.",
-      "bytes": 1010,
-      "sha256": "3ac6db5bb032aa68102f812e481b826f9b0a2662f106e392f6fd79fe3d9353b4"
+      "bytes": 994,
+      "sha256": "f884f51956aadaef162021dc9571cfa8b17ccead02fc8d1a7a45aaa604346937"
     },
     {
       "id": "apple",
@@ -56,8 +56,8 @@
       "authoringMethod": "Original SVG paths authored by OpenAI Codex for this project",
       "license": "MIT",
       "design": "Open umbrella with alternating pink and purple canopy panels and a hooked handle.",
-      "bytes": 668,
-      "sha256": "70440189dae0be9a73e362ada26c939b20704a9e5d3fb68c6daf27fd9f14aab4"
+      "bytes": 651,
+      "sha256": "a1aae00c67a459fa99de29dd342dc4dede2ca214691f56ee28874aafe87727f4"
     },
     {
       "id": "cup",
@@ -78,7 +78,8 @@
     {
       "date": "2026-11-05",
       "issue": "https://github.com/ajhconway/kikimashta/issues/25",
-      "description": "Restored original #3f2468 illustration outlines/details and 7-unit exterior strokes. The requested brighter, thicker outlines apply to the surrounding UI cards instead."
+      "description": "Restored original #3f2468 illustration outlines/details and 7-unit exterior strokes. The requested brighter, thicker outlines apply to the surrounding UI cards instead.",
+      "sourceCommit": "327581e18f5b014344147c0e41a89bdce6fbaa63"
     }
   ]
 }
