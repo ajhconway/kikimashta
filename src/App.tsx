@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import rawBank from '../content/ja.json';
 import type { AudioAsset, PracticeAttempt, WordBank, WordItem } from './types';
 import { createSession, type Question } from './core/session';
@@ -18,6 +18,17 @@ function Picture({ item }: { item: WordItem }) {
   return <img src={asset(item.image.src)} alt={item.image.alt} draggable={false}/>;
 }
 
+function QuizProgress({ total, completed, listening, response }: { total: number; completed: number; listening: boolean; response: boolean | null }) {
+  const mood = response === true ? 'is-cheering' : response === false ? 'is-encouraging' : listening ? 'is-listening' : '';
+  return <div className="quiz-top">
+    <div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
+      <div className="progress-beads" aria-hidden="true">{Array.from({ length: total }, (_, i) => <span key={i} className={'progress-bead' + (i < completed ? ' is-complete' : i === completed ? ' is-current' : '') + (response !== null && i === completed - 1 ? ' just-completed' : '')}>{i < completed ? '✦' : ''}</span>)}</div>
+      <span className="round-count" aria-hidden="true">{completed} / {total}</span>
+    </div>
+    <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-spark">✦</span></div>
+  </div>;
+}
+
 const wallClock = () => Date.now();
 
 export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
@@ -31,6 +42,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const [saveError, setSaveError] = useState(false);
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [autoPaused, setAutoPaused] = useState(false);
   const [total, setTotal] = useState(0);
   const [historyError, setHistoryError] = useState(false);
   const audio = useRef<HTMLAudioElement>(null);
@@ -38,6 +50,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '' });
   const playRequest = useRef(0);
   const pendingSaves = useRef(new Set<string>());
+  const replayButton = useRef<HTMLButtonElement>(null);
   const target = screen === 'preview' ? bank.items[preview] : questions[index]?.target;
   const theme = screen === 'preview' ? 'lesson' : screen === 'quiz' ? 'pictureQuiz' : 'home';
 
@@ -61,7 +74,30 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     return () => { mounted = false; };
   }, []);
 
-  function play() {
+  useEffect(() => {
+    const element = audio.current;
+    function stopPlayback() {
+      playRequest.current++;
+      element?.pause();
+    }
+    function suspend() {
+      if (document.visibilityState !== 'hidden') return;
+      stopPlayback();
+      setPlaying(false);
+      setAutoPaused(true);
+    }
+    document.addEventListener('visibilitychange', suspend);
+    return () => {
+      document.removeEventListener('visibilitychange', suspend);
+      stopPlayback();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (screen === 'quiz') replayButton.current?.focus({ preventScroll: true });
+  }, [screen, index]);
+
+  const play = useCallback(() => {
     const element = audio.current;
     if (!element || !recording.current) return;
     const request = ++playRequest.current;
@@ -69,15 +105,16 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     element.src = asset(recording.current.src);
     element.currentTime = 0;
     setAudioError(false);
+    setAutoPaused(false);
     setPlaying(true);
     void element.play().catch(() => {
       if (request === playRequest.current) { setAudioError(true); setPlaying(false); }
     });
-  }
-  function present(item: WordItem) {
+  }, []);
+  const present = useCallback((item: WordItem) => {
     recording.current = selectRecording(item.audio, random);
     play();
-  }
+  }, [play, random]);
   function home() {
     playRequest.current++;
     audio.current?.pause();
@@ -87,11 +124,11 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     setSaving(false); setSaveError(false); setFeedback(null);
     setScreen('home');
   }
-  function showQuestion(next: Question, sessionId: string) {
+  const showQuestion = useCallback((next: Question, sessionId: string) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false };
     setFeedback(null); setSaveError(false); setSaving(false);
     present(next.target);
-  }
+  }, [now, present]);
   function startQuiz() {
     const session = createSession(bank, 6, 4, random);
     const sessionId = crypto.randomUUID();
@@ -128,13 +165,28 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     setFeedback(attempt); setAnswers(previous => [...previous, attempt]);
     void save(attempt);
   }
-  function next() {
+  const next = useCallback(() => {
+    if (!active.current.answered || pendingSaves.current.has(active.current.id)) return;
     if (index + 1 === questions.length) {
+      active.current.answered = false;
+      playRequest.current++;
       audio.current?.pause(); setPlaying(false); setScreen('summary'); return;
     }
     setIndex(index + 1);
     showQuestion(questions[index + 1]!, active.current.sessionId);
-  }
+  }, [index, questions, showQuestion]);
+
+  useEffect(() => {
+    if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
+    const answerId = feedback.id;
+    const request = playRequest.current;
+    const timer = window.setTimeout(() => {
+      if (document.visibilityState === 'hidden') { setAutoPaused(true); return; }
+      if (active.current.id === answerId && request === playRequest.current) next();
+    }, 850);
+    return () => window.clearTimeout(timer);
+  }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next]);
+
   const correct = answers.filter(answer => answer.correct).length;
   return <div className={'app app-' + screen} data-theme={theme}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
@@ -162,24 +214,24 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         </div>
       </section>}
       {screen === 'quiz' && target && <section className="practice quiz fade-in">
-        <div className="section-top"><span className="eyebrow">PICK THE PICTURE</span><span className="counter">{index + 1} / {questions.length}</span></div>
-        <div className="progress-track" role="progressbar" aria-label="Session progress" aria-valuenow={index} aria-valuemin={0} aria-valuemax={questions.length}><div style={{ width: (index / questions.length * 100) + '%' }}/></div>
-        <h1 className="practice-title">What did you hear?</h1>
-        <button className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={play} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+        <QuizProgress total={questions.length} completed={answers.length} listening={playing} response={feedback?.correct ?? null}/>
+        <h1 className="sr-only">Listen and choose</h1>
+        <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={play} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
+        <span className="sr-only" aria-live="polite">Sound {index + 1} of {questions.length}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
-        <div className="choices">{questions[index]!.choices.map((item, i) => {
+        <div className="choices choices-enter" key={target.id}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           return <button key={item.id} className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button>;
         })}</div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct && <p>Listen again to match the picture.</p>}</>}</div>
+        <div className="feedback" aria-live="polite">{feedback && <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct ? <p>Listen again to match the picture.</p> : !saveError && !audioError && !autoPaused && <p className="next-cue">{saving ? 'Saving…' : index + 1 === questions.length ? 'Finishing up…' : 'Next sound…'}</p>}</>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
-        {feedback && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Next sound'} <span aria-hidden="true">→</span></button>}
+        {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
-        <div className="eyebrow">ROUND COMPLETE</div><div className="finish-mark" aria-hidden="true">★</div>
+        <div className="eyebrow">ROUND COMPLETE</div><div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>Nice round!</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong><p>pictures found</p></div>
         <div className="summary-pictures">{questions.map(question => <div key={question.target.id}><Picture item={question.target}/><span aria-label={answers.find(answer => answer.itemId === question.target.id)?.correct ? 'Correct' : 'To revisit'}>{answers.find(answer => answer.itemId === question.target.id)?.correct ? '✓' : '↺'}</span></div>)}</div>

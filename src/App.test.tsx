@@ -1,6 +1,6 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
 import bank from '../content/ja.json';
@@ -11,6 +11,27 @@ beforeEach(() => {
   vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
 });
+
+afterEach(() => { vi.useRealTimers(); });
+
+function heardChoice(container: HTMLElement, correct = true) {
+  const source = container.querySelector('audio')!.getAttribute('src');
+  const target = bank.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  return screen.getAllByRole('button', { name: /choose picture/i }).find(button =>
+    Boolean(within(button).queryByRole('img', { name: target.image.alt })) === correct,
+  )!;
+}
+
+async function timedQuiz() {
+  vi.useFakeTimers();
+  const view = render(<App random={() => 0.5}/>);
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: /skip to quiz/i })); });
+  return view;
+}
+
+async function advanceTime(ms: number) {
+  await act(async () => { vi.advanceTimersByTime(ms); });
+}
 
 function deferredSave() {
   let resolve!: () => void;
@@ -43,13 +64,13 @@ describe('practice interactions', () => {
     const random = vi.fn(() => 0.5);
     const { container } = render(<App random={random}/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    const choices = screen.getAllByRole('button', { name: /choose picture/i });
-    expect(choices).toHaveLength(4);
+    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    const choice = heardChoice(container, false);
     const recording = container.querySelector('audio')!.getAttribute('src');
     const randomCalls = random.mock.calls.length;
 
-    fireEvent.click(choices[0]!);
-    fireEvent.click(choices[0]!);
+    fireEvent.click(choice);
+    fireEvent.click(choice);
 
     await waitFor(() => expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1));
     expect(screen.getByText(/got it!|try this one\./i)).toBeInTheDocument();
@@ -58,7 +79,7 @@ describe('practice interactions', () => {
     expect(container.querySelector('audio')).toHaveAttribute('src', recording);
     expect(random).toHaveBeenCalledTimes(randomCalls);
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByRole('button', { name: /next sound/i }));
+    await user.click(screen.getByRole('button', { name: /^continue$/i }));
     expect(screen.getByRole('progressbar', { name: /session progress/i })).toHaveAttribute('aria-valuenow', '1');
   });
 
@@ -85,15 +106,15 @@ describe('practice interactions', () => {
   it('shows a failed save honestly and offers a retry before advancing', async () => {
     vi.mocked(ProgressStore.prototype.record).mockRejectedValueOnce(new Error('Storage failed'));
     const user = userEvent.setup();
-    render(<App/>);
+    const { container } = render(<App/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(screen.getAllByRole('button', { name: /choose picture/i })[0]!);
+    await user.click(heardChoice(container, false));
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/hasn't been saved/i);
-    expect(screen.getByRole('button', { name: /next sound/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /^continue$/i })).toBeDisabled();
     await user.click(screen.getByRole('button', { name: /retry saving/i }));
     await waitFor(() => expect(screen.queryByRole('alert')).not.toBeInTheDocument());
-    expect(screen.getByRole('button', { name: /next sound/i })).toBeEnabled();
+    expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
   });
 
@@ -104,19 +125,19 @@ describe('practice interactions', () => {
       .mockImplementationOnce(() => oldSave.promise)
       .mockImplementationOnce(() => currentSave.promise);
     const user = userEvent.setup();
-    render(<App/>);
+    const { container } = render(<App/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(screen.getAllByRole('button', { name: /choose picture/i })[0]!);
+    await user.click(heardChoice(container, false));
     await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(screen.getAllByRole('button', { name: /choose picture/i })[0]!);
+    await user.click(heardChoice(container, false));
 
     await act(async () => { oldSave.reject(new Error('Previous round failed to save')); });
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     await act(async () => { currentSave.resolve(); });
-    await user.click(screen.getByRole('button', { name: /next sound/i }));
+    await user.click(screen.getByRole('button', { name: /^continue$/i }));
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
   });
@@ -127,9 +148,9 @@ describe('practice interactions', () => {
       .mockRejectedValueOnce(new Error('Storage failed'))
       .mockImplementationOnce(() => retry.promise);
     const user = userEvent.setup();
-    render(<App/>);
+    const { container } = render(<App/>);
     await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(screen.getAllByRole('button', { name: /choose picture/i })[0]!);
+    await user.click(heardChoice(container, false));
     await user.dblClick(await screen.findByRole('button', { name: /retry saving/i }));
 
     const record = vi.mocked(ProgressStore.prototype.record);
@@ -139,8 +160,100 @@ describe('practice interactions', () => {
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     vi.mocked(ProgressStore.prototype.history).mockResolvedValue([savedAnswer]);
     await act(async () => { retry.resolve(); });
-    expect(screen.getByRole('button', { name: /next sound/i })).toBeEnabled();
+    expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
     await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
     expect(await screen.findByText('1 answer saved on this device')).toBeInTheDocument();
+  });
+
+  it('advances a correct answer once after playback and a short beat, without imposing an answer deadline', async () => {
+    const { container } = await timedQuiz();
+    const original = container.querySelector('audio')!.getAttribute('src');
+    await advanceTime(30_000);
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+    await advanceTime(5000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', original);
+    fireEvent.ended(container.querySelector('audio')!);
+    await advanceTime(849);
+    expect(screen.getByText('Got it!')).toBeInTheDocument();
+    await advanceTime(1);
+    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
+    for (const choice of screen.getAllByRole('button', { name: /choose picture/i })) expect(choice).toBeEnabled();
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+  });
+
+  it('holds a correct answer during replay, then gives it a fresh beat before advancing', async () => {
+    const { container } = await timedQuiz();
+    const original = container.querySelector('audio')!.getAttribute('src');
+    fireEvent.ended(container.querySelector('audio')!);
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    await advanceTime(500);
+    fireEvent.click(screen.getByRole('button', { name: /replay word/i }));
+    await advanceTime(5000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', original);
+    expect(screen.getByText('Got it!')).toBeInTheDocument();
+    fireEvent.ended(container.querySelector('audio')!);
+    await advanceTime(849);
+    expect(container.querySelector('audio')).toHaveAttribute('src', original);
+    await advanceTime(1);
+    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(3);
+    await advanceTime(5000);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  });
+
+  it('holds automatic advance for pending or failed saving, then advances after a successful retry', async () => {
+    const pending = deferredSave();
+    vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(() => pending.promise);
+    const { container } = await timedQuiz();
+    const original = container.querySelector('audio')!.getAttribute('src');
+    fireEvent.ended(container.querySelector('audio')!);
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    await advanceTime(5000);
+    expect(screen.getByText('Saving…')).toBeInTheDocument();
+    await act(async () => { pending.reject(new Error('Storage failed')); });
+    await advanceTime(5000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', original);
+    expect(screen.getByRole('alert')).toHaveTextContent(/hasn't been saved/i);
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: /retry saving/i })); });
+    await advanceTime(850);
+    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
+    const calls = vi.mocked(ProgressStore.prototype.record).mock.calls;
+    expect(calls).toHaveLength(2);
+    expect(calls[1]![0]).toEqual(calls[0]![0]);
+  });
+
+  it('cancels a pending transition when leaving and starting a new round', async () => {
+    const { container } = await timedQuiz();
+    fireEvent.ended(container.querySelector('audio')!);
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    await advanceTime(500);
+    fireEvent.click(screen.getByRole('button', { name: /kikimashta home/i }));
+    fireEvent.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    await advanceTime(5000);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
+    expect(screen.queryByText('Got it!')).not.toBeInTheDocument();
+    for (const choice of screen.getAllByRole('button', { name: /choose picture/i })) expect(choice).toBeEnabled();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+  });
+
+  it('pauses a hidden quiz and leaves Continue available when returning', async () => {
+    const { container } = await timedQuiz();
+    const original = container.querySelector('audio')!.getAttribute('src');
+    fireEvent.ended(container.querySelector('audio')!);
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    const visibility = vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
+    fireEvent(document, new Event('visibilitychange'));
+    await advanceTime(5000);
+    visibility.mockReturnValue('visible');
+    fireEvent(document, new Event('visibilitychange'));
+    await advanceTime(5000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', original);
+    fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
+    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
   });
 });
