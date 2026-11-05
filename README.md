@@ -58,6 +58,8 @@ The review library at `/vocabulary/` contains 441 entries transcribed from the o
 
 Original SVG scenes and symbols match the starter style. Context-sensitive entries carry review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the large collection; one shared audio player compares Marin and Cedar.
 
+Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Notes are local to the browser; sign-in and synchronization can follow later. Clearing a box removes its saved note. If saving fails, the draft stays available while the page is open and can still be exported.
+
 `npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. Hosted catalog audio runs by source level with two jobs in parallel, retaining original WAVs and partial results. Verified MP3s are staged to a review branch for integration, never deployed automatically.
 
 ## License and media

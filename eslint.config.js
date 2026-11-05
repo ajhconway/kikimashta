@@ -13,6 +13,11 @@ export default defineConfig([
     languageOptions: { ecmaVersion: 'latest', globals: globals.node },
   },
   {
+    files: ['public/vocabulary/*.js'],
+    extends: [js.configs.recommended],
+    languageOptions: { ecmaVersion: 'latest', globals: globals.browser },
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     extends: [js.configs.recommended, tseslint.configs.recommended],
     languageOptions: { ecmaVersion: 2022, globals: { ...globals.browser, ...globals.node } },
