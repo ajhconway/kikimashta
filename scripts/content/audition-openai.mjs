@@ -167,7 +167,7 @@ export function levelAudio(pcm) {
   return { rmsDb, peakDb, gainDb }
 }
 
-function encode(wav, mp3, gainDb) {
+export function encode(wav, mp3, gainDb) {
   const result = spawnSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-n', '-i', wav,
     '-af', `volume=${gainDb}dB,adelay=120,apad=pad_dur=0.24`,
     '-ac', '1', '-codec:a', 'libmp3lame', '-q:a', '2', mp3], { encoding: 'utf8' })
