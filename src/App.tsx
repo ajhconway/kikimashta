@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import rawBank from '../content/ja.json';
 import type { AudioAsset, PracticeAttempt, WordBank, WordItem } from './types';
 import { createSession, type Question } from './core/session';
@@ -10,6 +10,11 @@ import './styles.css';
 const bank: WordBank = rawBank as WordBank;
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const store = new ProgressStore();
+const fireworkOffsets = Array.from({ length: 16 }, (_, i) => {
+  const angle = i * Math.PI / 8 - Math.PI / 2;
+  const radius = i % 2 === 0 ? 155 : 130;
+  return { x: Math.round(Math.cos(angle) * radius), y: Math.round(Math.sin(angle) * radius) };
+});
 
 function Speaker({ small = false }: { small?: boolean }) {
   return <svg width={small ? 22 : 32} height={small ? 22 : 32} viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 12h5l7-6v20l-7-6H6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M23 10c4 3 4 9 0 12M26 6c7 5 7 15 0 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>;
@@ -211,7 +216,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const correct = answers.filter(answer => answer.correct).length;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    {screen === 'quiz' && feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{Array.from({ length: 12 }, (_, i) => <path key={i} d="M -4 -24 L -18 -190 L 18 -190 Z" transform={`rotate(${i * 30})`}/>)}</svg></div>}
+    {screen === 'quiz' && feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
     {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className="picture-choice departing-card" key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: `${i * 45}ms` }}><Picture item={card.item}/></div>)}</div>}
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>

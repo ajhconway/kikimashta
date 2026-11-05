@@ -187,12 +187,16 @@ footer a:hover { color: var(--purple-dark); }
 .app-quiz header { position: relative; z-index: 2; padding: 18px 0; }
 .app-quiz main { position: relative; z-index: 1; padding: 8px 0 20px; }
 .quiz-starburst { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.quiz-starburst svg { position: absolute; left: 50%; top: 36%; width: clamp(420px, 85vmin, 760px); height: auto; aspect-ratio: 1; color: #ffe9a0; opacity: 0; animation: quiz-starburst .95s cubic-bezier(.2, .65, .3, 1) both; }
+.quiz-starburst svg { position: absolute; left: 50%; top: 36%; width: clamp(400px, 70vmin, 600px); height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); }
+.firework-star { --star-scale: 1; transform-box: fill-box; transform-origin: center; color: #ffcf5a; opacity: 0; animation: firework-star 1.04s cubic-bezier(.16, .65, .3, 1) both; }
+.firework-star:nth-child(3n + 2) { color: #ff91bc; animation-delay: .03s; }
+.firework-star:nth-child(3n) { --star-scale: .8; color: #fff6ce; animation-delay: .06s; }
+.firework-star:nth-child(5n) { --star-scale: 1.15; }
 .answer-departures { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .departing-card { position: absolute; margin: 0; pointer-events: none; transition: none; --fly-x: -110vw; --fly-y: -25vh; --fly-rotation: -26deg; --fall-x: -8vw; --fall-rotation: -14deg; --slump-rotation: -3deg; }
 .departing-card[data-slot='1'], .departing-card[data-slot='3'] { --fly-x: 110vw; --fly-rotation: 26deg; --fall-x: 8vw; --fall-rotation: 14deg; --slump-rotation: 3deg; }
 .departing-card[data-slot='2'], .departing-card[data-slot='3'] { --fly-y: 15vh; }
-.departing-card[data-exit='fly'] { animation: card-fly-out .6s cubic-bezier(.22, .7, .5, 1) both; }
+.departing-card[data-exit='fly'] { animation: card-fly-out .9s cubic-bezier(.22, .7, .5, 1) both; }
 .departing-card[data-exit='fall'] { animation: card-fall-out .74s cubic-bezier(.4, 0, 1, 1) both; }
 .quiz-top { display: grid; grid-template-columns: minmax(0, 1fr) 128px minmax(0, 1fr); align-items: center; width: 100%; max-width: 380px; min-height: 128px; margin: 0 auto 14px; }
 .round-progress { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; width: 100%; min-width: 0; max-width: 380px; margin: 0 auto; padding: 14px 0 16px; }
@@ -244,9 +248,9 @@ footer a:hover { color: var(--purple-dark); }
 }
 
 @keyframes card-slide-in { from { transform: translateX(var(--entry-x)); } to { transform: translateX(0); } }
-@keyframes card-fly-out { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 85% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--fly-x), var(--fly-y)) rotate(var(--fly-rotation)); } }
+@keyframes card-fly-out { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 5% { transform: translate(-2px, -1px) rotate(-3deg); } 10% { transform: translate(2px, 1px) rotate(3deg); } 15% { transform: translate(-2px, 0) rotate(-2deg); } 20% { transform: translate(2px, -1px) rotate(2deg); } 24% { transform: translate(0, 0) rotate(0); animation-timing-function: cubic-bezier(.3, .1, .65, 1); } 85% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--fly-x), var(--fly-y)) rotate(var(--fly-rotation)); } }
 @keyframes card-fall-out { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 20% { opacity: .9; transform: translate(0, 12px) rotate(var(--slump-rotation)); } 80% { opacity: .65; } 100% { opacity: 0; transform: translate(var(--fall-x), 110vh) rotate(var(--fall-rotation)); } }
-@keyframes quiz-starburst { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.6) rotate(-8deg); } 30% { opacity: .5; transform: translate(-50%, -50%) scale(.92) rotate(-3deg); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2) rotate(8deg); } }
+@keyframes firework-star { 0% { opacity: 0; transform: translate(0, 0) scale(.2); } 15% { opacity: .95; } 58% { opacity: .8; transform: translate(var(--star-x), var(--star-y)) scale(var(--star-scale)); } 100% { opacity: 0; transform: translate(var(--star-x), calc(var(--star-y) + 16px)) scale(.45); } }
 @keyframes correct-glow { 0%, 100% { opacity: 0; } 30% { opacity: 1; } }
 @keyframes companion-listen { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 @keyframes companion-spark { 0% { opacity: 0; transform: translate(0, 0); } 20%, 65% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)); } }
