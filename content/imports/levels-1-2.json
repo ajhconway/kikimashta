@@ -1,0 +1,815 @@
+[
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "上",
+    "reading": "うえ",
+    "meaning": "Above"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "大人",
+    "reading": "おとな",
+    "meaning": "Adult"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "一人",
+    "reading": "ひとり",
+    "meaning": "Alone"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "人工",
+    "reading": "じんこう",
+    "meaning": "Artificial"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "下",
+    "reading": "した",
+    "meaning": "Below"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "大きい",
+    "reading": "おおきい",
+    "meaning": "Big"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "八",
+    "reading": "はち",
+    "meaning": "Eight"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "八つ",
+    "reading": "やっつ",
+    "meaning": "Eight Things"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "入り口",
+    "reading": "いりぐち",
+    "meaning": "Entrance"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "大した",
+    "reading": "たいした",
+    "meaning": "Great"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "山",
+    "reading": "やま",
+    "meaning": "Mountain"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "口",
+    "reading": "くち",
+    "meaning": "Mouth"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "ふじ山",
+    "reading": "ふじさん",
+    "meaning": "Mt Fuji"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "九",
+    "reading": "きゅう",
+    "meaning": "Nine"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "九つ",
+    "reading": "ここのつ",
+    "meaning": "Nine Things"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "一",
+    "reading": "いち",
+    "meaning": "One"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "一つ",
+    "reading": "ひとつ",
+    "meaning": "One Thing"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "人",
+    "reading": "ひと",
+    "meaning": "Person"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "下さい",
+    "reading": "ください",
+    "meaning": "Please Give Me"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "人口",
+    "reading": "じんこう",
+    "meaning": "Population"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "力",
+    "reading": "ちから",
+    "meaning": "Power"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "川",
+    "reading": "かわ",
+    "meaning": "River"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "七",
+    "reading": "なな",
+    "meaning": "Seven"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "七つ",
+    "reading": "ななつ",
+    "meaning": "Seven Things"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "大きさ",
+    "reading": "おおきさ",
+    "meaning": "Size"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "十",
+    "reading": "じゅう",
+    "meaning": "Ten"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "三",
+    "reading": "さん",
+    "meaning": "Three"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "三人",
+    "reading": "さんにん",
+    "meaning": "Three People"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "三つ",
+    "reading": "みっつ",
+    "meaning": "Three Things"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "入る",
+    "reading": "はいる",
+    "meaning": "To Enter"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "上げる",
+    "reading": "あげる",
+    "meaning": "To Lift Something"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "下げる",
+    "reading": "さげる",
+    "meaning": "To Lower Something"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "二",
+    "reading": "に",
+    "meaning": "Two"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "二人",
+    "reading": "ふたり",
+    "meaning": "Two People"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "二つ",
+    "reading": "ふたつ",
+    "meaning": "Two Things"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "力いっぱい",
+    "reading": "ちからいっぱい",
+    "meaning": "With All One's Strength"
+  },
+  {
+    "sourceLevel": 1,
+    "sourceFile": "level1.png",
+    "text": "女",
+    "reading": "おんな",
+    "meaning": "Woman"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "四月",
+    "reading": "しがつ",
+    "meaning": "April"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "玉",
+    "reading": "たま",
+    "meaning": "Ball"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "本",
+    "reading": "ほん",
+    "meaning": "Book"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "子",
+    "reading": "こ",
+    "meaning": "Child"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "丸",
+    "reading": "まる",
+    "meaning": "Circle"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "丸い",
+    "reading": "まるい",
+    "meaning": "Circular"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "正しい",
+    "reading": "ただしい",
+    "meaning": "Correct"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "土",
+    "reading": "つち",
+    "meaning": "Dirt"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "犬",
+    "reading": "いぬ",
+    "meaning": "Dog"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "八日",
+    "reading": "ようか",
+    "meaning": "Eighth Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "出口",
+    "reading": "でぐち",
+    "meaning": "Exit"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "目",
+    "reading": "め",
+    "meaning": "Eye"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "目玉",
+    "reading": "めだま",
+    "meaning": "Eyeball"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "二月",
+    "reading": "にがつ",
+    "meaning": "February"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "五日",
+    "reading": "いつか",
+    "meaning": "Fifth Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "五十",
+    "reading": "ごじゅう",
+    "meaning": "Fifty"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "火",
+    "reading": "ひ",
+    "meaning": "Fire"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "五",
+    "reading": "ご",
+    "meaning": "Five"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "五つ",
+    "reading": "いつつ",
+    "meaning": "Five Things"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "四",
+    "reading": "よん",
+    "meaning": "Four"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "天才",
+    "reading": "てんさい",
+    "meaning": "Genius"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "女子",
+    "reading": "じょし",
+    "meaning": "Girl"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "女の子",
+    "reading": "おんなのこ",
+    "meaning": "Girl"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "上手",
+    "reading": "じょうず",
+    "meaning": "Good At"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "おはよう",
+    "reading": "おはよう",
+    "meaning": "Good Morning"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "手",
+    "reading": "て",
+    "meaning": "Hand"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "天",
+    "reading": "てん",
+    "meaning": "Heavens"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "ホテル",
+    "reading": "ホテル",
+    "meaning": "Hotel"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "入力",
+    "reading": "にゅうりょく",
+    "meaning": "Input"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "中",
+    "reading": "なか",
+    "meaning": "Inside"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "一月",
+    "reading": "いちがつ",
+    "meaning": "January"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "日本",
+    "reading": "にほん",
+    "meaning": "Japan"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "六月",
+    "reading": "ろくがつ",
+    "meaning": "June"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "王",
+    "reading": "おう",
+    "meaning": "King"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "夕べ",
+    "reading": "ゆうべ",
+    "meaning": "Last Night"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "左右",
+    "reading": "さゆう",
+    "meaning": "Left And Right"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "左",
+    "reading": "ひだり",
+    "meaning": "Left Direction"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "五月",
+    "reading": "ごがつ",
+    "meaning": "May"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "月",
+    "reading": "つき",
+    "meaning": "Moon"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "九日",
+    "reading": "ここのか",
+    "meaning": "Ninth Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "十月",
+    "reading": "じゅうがつ",
+    "meaning": "October"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "一日",
+    "reading": "いちにち",
+    "meaning": "One Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "千円",
+    "reading": "せんえん",
+    "meaning": "One Thousand Yen"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "玉ねぎ",
+    "reading": "たまねぎ",
+    "meaning": "Onion"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "人々",
+    "reading": "ひとびと",
+    "meaning": "People"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "王子",
+    "reading": "おうじ",
+    "meaning": "Prince"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "王女",
+    "reading": "おうじょ",
+    "meaning": "Princess"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "子犬",
+    "reading": "こいぬ",
+    "meaning": "Puppy"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "女王",
+    "reading": "じょおう",
+    "meaning": "Queen"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "中々",
+    "reading": "なかなか",
+    "meaning": "Rather"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "田んぼ",
+    "reading": "たんぼ",
+    "meaning": "Rice Paddy"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "田",
+    "reading": "た",
+    "meaning": "Rice Paddy"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "右",
+    "reading": "みぎ",
+    "meaning": "Right Direction"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "二日",
+    "reading": "ふつか",
+    "meaning": "Second Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "七日",
+    "reading": "なのか",
+    "meaning": "Seventh Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "六",
+    "reading": "ろく",
+    "meaning": "Six"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "十六",
+    "reading": "じゅうろく",
+    "meaning": "Sixteen"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "六日",
+    "reading": "むいか",
+    "meaning": "Sixth Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "六つ",
+    "reading": "むっつ",
+    "meaning": "Six Things"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "小さい",
+    "reading": "ちいさい",
+    "meaning": "Small"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "日",
+    "reading": "ひ",
+    "meaning": "Sun"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "刀",
+    "reading": "かたな",
+    "meaning": "Sword"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "十日",
+    "reading": "とおか",
+    "meaning": "Tenth Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "三日",
+    "reading": "みっか",
+    "meaning": "Third Day"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "千",
+    "reading": "せん",
+    "meaning": "Thousand"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "上る",
+    "reading": "のぼる",
+    "meaning": "To Climb"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "正す",
+    "reading": "ただす",
+    "meaning": "To Correct"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "出る",
+    "reading": "でる",
+    "meaning": "To Exit"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "立つ",
+    "reading": "たつ",
+    "meaning": "To Stand"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "木",
+    "reading": "き",
+    "meaning": "Tree"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "水中",
+    "reading": "すいちゅう",
+    "meaning": "Underwater"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "下手",
+    "reading": "へた",
+    "meaning": "Unskillful"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "火山",
+    "reading": "かざん",
+    "meaning": "Volcano"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "水",
+    "reading": "みず",
+    "meaning": "Water"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "白",
+    "reading": "しろ",
+    "meaning": "White"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "白人",
+    "reading": "はくじん",
+    "meaning": "White Person"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "文",
+    "reading": "ぶん",
+    "meaning": "Writing"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "～才",
+    "reading": "さい",
+    "meaning": "Years Old"
+  },
+  {
+    "sourceLevel": 2,
+    "sourceFile": "level2.png",
+    "text": "～円",
+    "reading": "えん",
+    "meaning": "",
+    "notes": "English meaning is clipped below the screenshot; text and reading are visible."
+  }
+]

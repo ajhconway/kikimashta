@@ -11,7 +11,7 @@ name: Generate audio
         required: true
         default: sentences
         type: choice
-        options: [words, sentences, bank]
+        options: [words, sentences, bank, catalog]
 
 permissions:
   contents: read
@@ -21,8 +21,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  generate:
+  request:
     if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.plan.outputs.mode }}
+      levels: ${{ steps.plan.outputs.levels }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - id: plan
+        env:
+          REQUEST_MODE: ${{ inputs.mode }}
+        run: |
+          node --input-type=module - <<'JS'
+          import { readFileSync, appendFileSync } from 'node:fs'
+          const request = JSON.parse(readFileSync('content/audio-generation-request.json', 'utf8'))
+          const mode = process.env.REQUEST_MODE || request.mode
+          if (!['words', 'sentences', 'bank', 'catalog'].includes(mode)) throw new Error('Unknown audio request mode')
+          const levels = request.levels ?? [1,2,3,4,5]
+          if (!Array.isArray(levels) || !levels.length || new Set(levels).size !== levels.length || !levels.every(n => Number.isInteger(n) && n >= 1 && n <= 5)) throw new Error('Invalid source levels')
+          appendFileSync(process.env.GITHUB_OUTPUT, `mode=${mode}\nlevels=${JSON.stringify(levels)}\n`)
+          JS
+  generate:
+    needs: request
+    if: needs.request.outputs.mode != 'catalog'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -33,26 +60,16 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-      - name: Check credential
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          if [ -z "$OPENAI_API_KEY" ]; then
-            echo '::error::Add the OPENAI_API_KEY repository secret in Settings > Secrets and variables > Actions.'
-            exit 1
-          fi
       - run: npm ci
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Generate requested clips
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          REQUEST_MODE: ${{ inputs.mode }}
+          REQUEST_MODE: ${{ needs.request.outputs.mode }}
         run: |
           node --input-type=module - <<'JS'
-          import { readFileSync } from 'node:fs'
           import { spawnSync } from 'node:child_process'
-          const mode = process.env.REQUEST_MODE || JSON.parse(readFileSync('content/audio-generation-request.json', 'utf8')).mode
-          if (!['words', 'sentences', 'bank'].includes(mode)) throw new Error('Unknown audio request mode')
+          const mode = process.env.REQUEST_MODE
           const args = ['scripts/content/audition-openai.mjs', '--output', 'artifacts/audio-generation']
           if (mode === 'sentences') args.push('--sentences')
           if (mode === 'bank') args.push('--bank')
@@ -66,3 +83,62 @@ jobs:
           path: artifacts/audio-generation/
           if-no-files-found: ignore
           retention-days: 30
+  catalog:
+    needs: request
+    if: needs.request.outputs.mode == 'catalog'
+    name: Catalog audio level ${{ matrix.level }}
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        level: ${{ fromJSON(needs.request.outputs.levels) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Generate catalog recordings
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SOURCE_LEVEL: ${{ matrix.level }}
+        run: node scripts/content/generate-catalog-audio.mjs --level "$SOURCE_LEVEL"
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: catalog-audio-level-${{ matrix.level }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/catalog-audio-level-${{ matrix.level }}/
+          if-no-files-found: ignore
+          retention-days: 30
+  stage-catalog:
+    needs: [request, catalog]
+    if: always() && needs.request.outputs.mode == 'catalog' && needs.catalog.result != 'cancelled'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          pattern: catalog-audio-level-*-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/catalog-generated
+      - run: node scripts/content/stage-catalog-audio.mjs
+      - name: Save recordings to a review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "content/catalog-audio-${GITHUB_RUN_ID}"
+          git add public/audio/vocabulary content/catalog/audio
+          git commit -m 'Stage generated catalog recordings for review (#27)'
+          git push origin "content/catalog-audio-${GITHUB_RUN_ID}"

@@ -1,0 +1,978 @@
+[
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "休学",
+    "reading": "きゅうがく",
+    "meaning": "Absence From School"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "空気",
+    "reading": "くうき",
+    "meaning": "Air"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "考古学",
+    "reading": "こうこがく",
+    "meaning": "Archeology"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "当たり",
+    "reading": "あたり",
+    "meaning": "A Success"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "今すぐ",
+    "reading": "いますぐ",
+    "meaning": "At Once"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "牛肉",
+    "reading": "ぎゅうにく",
+    "meaning": "Beef"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "生まれ",
+    "reading": "うまれ",
+    "meaning": "Birthplace"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "青い",
+    "reading": "あおい",
+    "meaning": "Blue"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "体",
+    "reading": "からだ",
+    "meaning": "Body"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "太字",
+    "reading": "ふとじ",
+    "meaning": "Bold Letter"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "男の子",
+    "reading": "おとこのこ",
+    "meaning": "Boy"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "～斤",
+    "reading": "きん",
+    "meaning": "Bread Loaf Counter"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "兄弟",
+    "reading": "きょうだい",
+    "meaning": "Brothers"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "毛虫",
+    "reading": "けむし",
+    "meaning": "Caterpillar"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "近い",
+    "reading": "ちかい",
+    "meaning": "Close"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "色",
+    "reading": "いろ",
+    "meaning": "Color"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "会社",
+    "reading": "かいしゃ",
+    "meaning": "Company"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "作文",
+    "reading": "さくぶん",
+    "meaning": "Composition"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "コンビニ",
+    "reading": "コンビニ",
+    "meaning": "Convenience Store"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "角",
+    "reading": "かど",
+    "meaning": "Corner"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "代金",
+    "reading": "だいきん",
+    "meaning": "Cost"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "三日月",
+    "reading": "みかづき",
+    "meaning": "Crescent Moon"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "デパート",
+    "reading": "デパート",
+    "meaning": "Department Store"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "図",
+    "reading": "ず",
+    "meaning": "Diagram"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "外交",
+    "reading": "がいこう",
+    "meaning": "Diplomacy"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "下町",
+    "reading": "したまち",
+    "meaning": "Downtown"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "夕方",
+    "reading": "ゆうがた",
+    "meaning": "Early Evening"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "工学",
+    "reading": "こうがく",
+    "meaning": "Engineering"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "毎日",
+    "reading": "まいにち",
+    "meaning": "Every Day"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "毎月",
+    "reading": "まいつき",
+    "meaning": "Every Month"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "毎回",
+    "reading": "まいかい",
+    "meaning": "Every Time"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "毎年",
+    "reading": "まいとし",
+    "meaning": "Every Year"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "すみません",
+    "reading": "すみません",
+    "meaning": "Excuse Me"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "羽",
+    "reading": "はね",
+    "meaning": "Feathers"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "林",
+    "reading": "はやし",
+    "meaning": "Forest"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "～形",
+    "reading": "けい",
+    "meaning": "Form"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "～年来",
+    "reading": "ねんらい",
+    "meaning": "For Some Years"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "古来",
+    "reading": "こらい",
+    "meaning": "From Ancient Times"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "大体",
+    "reading": "だいたい",
+    "meaning": "Generally"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "仕草",
+    "reading": "しぐさ",
+    "meaning": "Gesture"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "金",
+    "reading": "きん",
+    "meaning": "Gold"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "上手い",
+    "reading": "うまい",
+    "meaning": "Good At"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "草",
+    "reading": "くさ",
+    "meaning": "Grass"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "工作",
+    "reading": "こうさく",
+    "meaning": "Handicraft"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "本社",
+    "reading": "ほんしゃ",
+    "meaning": "Headquarters"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "里",
+    "reading": "さと",
+    "meaning": "Hometown"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "何日",
+    "reading": "なんにち",
+    "meaning": "How Many Days"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "何人",
+    "reading": "なんにん",
+    "meaning": "How Many People"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "何回",
+    "reading": "なんかい",
+    "meaning": "How Many Times"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "近日",
+    "reading": "きんじつ",
+    "meaning": "In A Few Days"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "自立",
+    "reading": "じりつ",
+    "meaning": "Independence"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "体内",
+    "reading": "たいない",
+    "meaning": "Inside The Body"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "皮肉",
+    "reading": "ひにく",
+    "meaning": "Irony"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "入社",
+    "reading": "にゅうしゃ",
+    "meaning": "Joining A Company"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "光",
+    "reading": "ひかり",
+    "meaning": "Light"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "文学",
+    "reading": "ぶんがく",
+    "meaning": "Literature"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "大声",
+    "reading": "おおごえ",
+    "meaning": "Loud Voice"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "大作",
+    "reading": "たいさく",
+    "meaning": "Major Work"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "男の人",
+    "reading": "おとこのひと",
+    "meaning": "Man"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "多い",
+    "reading": "おおい",
+    "meaning": "Many"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "多分",
+    "reading": "たぶん",
+    "meaning": "Maybe"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "肉",
+    "reading": "にく",
+    "meaning": "Meat"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "お金",
+    "reading": "おかね",
+    "meaning": "Money"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "月光",
+    "reading": "げっこう",
+    "meaning": "Moonlight"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "来月",
+    "reading": "らいげつ",
+    "meaning": "Next Month"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "来年",
+    "reading": "らいねん",
+    "meaning": "Next Year"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "夜",
+    "reading": "よる",
+    "meaning": "Night"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-1.png",
+    "text": "いいえ",
+    "reading": "いいえ",
+    "meaning": "No"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "兄",
+    "reading": "あに",
+    "meaning": "Older Brother",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "自分",
+    "reading": "じぶん",
+    "meaning": "Oneself",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "三十代",
+    "reading": "さんじゅうだい",
+    "meaning": "One's Thirties",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "一回",
+    "reading": "いっかい",
+    "meaning": "One Time",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "空車",
+    "reading": "くうしゃ",
+    "meaning": "Open Taxi",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png. Source gloss \"Open Taxi\" preserved; the term denotes a vacant vehicle/taxi."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "本来",
+    "reading": "ほんらい",
+    "meaning": "Originally",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "平行",
+    "reading": "へいこう",
+    "meaning": "Parallel",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "体力",
+    "reading": "たいりょく",
+    "meaning": "Physical Strength",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "豚",
+    "reading": "ぶた",
+    "meaning": "Pig",
+    "notes": "Also visible in the clipped final row of level5-1.png; transcribed once from the complete row in level5-2.png."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "雨",
+    "reading": "あめ",
+    "meaning": "Rain"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "本当",
+    "reading": "ほんとう",
+    "meaning": "Reality"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "近年",
+    "reading": "きんねん",
+    "meaning": "Recent Years"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "米",
+    "reading": "こめ",
+    "meaning": "Rice"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "同じ",
+    "reading": "おなじ",
+    "meaning": "Same"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "同日",
+    "reading": "どうじつ",
+    "meaning": "Same Day"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "入学",
+    "reading": "にゅうがく",
+    "meaning": "School Admission"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "学年",
+    "reading": "がくねん",
+    "meaning": "School Grade"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "皮",
+    "reading": "かわ",
+    "meaning": "Skin"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "空",
+    "reading": "そら",
+    "meaning": "Sky"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "水色",
+    "reading": "みずいろ",
+    "meaning": "Sky Blue"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "音",
+    "reading": "おと",
+    "meaning": "Sound"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "四角",
+    "reading": "しかく",
+    "meaning": "Square"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "学生",
+    "reading": "がくせい",
+    "meaning": "Student"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "日光",
+    "reading": "にっこう",
+    "meaning": "Sunlight"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "金玉",
+    "reading": "きんたま",
+    "meaning": "Testicles"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "それ",
+    "reading": "それ",
+    "meaning": "That One"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "その他",
+    "reading": "そのほか",
+    "meaning": "The Others"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "今回",
+    "reading": "こんかい",
+    "meaning": "This Time"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "何千",
+    "reading": "なんぜん",
+    "meaning": "Thousands",
+    "notes": "Source gloss \"Thousands\" preserved; 何千 asks how many thousands."
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "～回",
+    "reading": "かい",
+    "meaning": "Times"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "当たる",
+    "reading": "あたる",
+    "meaning": "To Be Right"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "見える",
+    "reading": "みえる",
+    "meaning": "To Be Visible"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "来る",
+    "reading": "くる",
+    "meaning": "To Come"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "下がる",
+    "reading": "さがる",
+    "meaning": "To Get Lower"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "生む",
+    "reading": "うむ",
+    "meaning": "To Give Birth"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "行く",
+    "reading": "いく",
+    "meaning": "To Go"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "上がる",
+    "reading": "あがる",
+    "meaning": "To Go Up"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "入れる",
+    "reading": "いれる",
+    "meaning": "To Insert"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "学ぶ",
+    "reading": "まなぶ",
+    "meaning": "To Learn"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "作る",
+    "reading": "つくる",
+    "meaning": "To Make"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "会う",
+    "reading": "あう",
+    "meaning": "To Meet"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "交ぜる",
+    "reading": "まぜる",
+    "meaning": "To Mix Something"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "回る",
+    "reading": "まわる",
+    "meaning": "To Revolve"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "走る",
+    "reading": "はしる",
+    "meaning": "To Run"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "言う",
+    "reading": "いう",
+    "meaning": "To Say"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "立てる",
+    "reading": "たてる",
+    "meaning": "To Stand Something Up"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "止まる",
+    "reading": "とまる",
+    "meaning": "To Stop"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "出す",
+    "reading": "だす",
+    "meaning": "To Take Out"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "考える",
+    "reading": "かんがえる",
+    "meaning": "To Think About"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "分かる",
+    "reading": "わかる",
+    "meaning": "To Understand"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "行き",
+    "reading": "ゆき",
+    "meaning": "Train Direction"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "走行",
+    "reading": "そうこう",
+    "meaning": "Traveling"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "三角",
+    "reading": "さんかく",
+    "meaning": "Triangle"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "大学",
+    "reading": "だいがく",
+    "meaning": "University"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "今まで",
+    "reading": "いままで",
+    "meaning": "Until Now"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "谷",
+    "reading": "たに",
+    "meaning": "Valley"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "色々",
+    "reading": "いろいろ",
+    "meaning": "Various"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "声",
+    "reading": "こえ",
+    "meaning": "Voice"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "西",
+    "reading": "にし",
+    "meaning": "West"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "西口",
+    "reading": "にしぐち",
+    "meaning": "West Exit"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "何",
+    "reading": "なに",
+    "meaning": "What"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "何月",
+    "reading": "なんがつ",
+    "meaning": "What Month"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "何年",
+    "reading": "なんねん",
+    "meaning": "What Year"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "麦",
+    "reading": "むぎ",
+    "meaning": "Wheat"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "一生",
+    "reading": "いっしょう",
+    "meaning": "Whole Life"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "社内",
+    "reading": "しゃない",
+    "meaning": "Within The Company"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "毛糸",
+    "reading": "けいと",
+    "meaning": "Wool Yarn"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "あなた",
+    "reading": "あなた",
+    "meaning": "You"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "弟",
+    "reading": "おとうと",
+    "meaning": "Younger Brother"
+  },
+  {
+    "sourceLevel": 5,
+    "sourceFile": "level5-2.png",
+    "text": "青年",
+    "reading": "せいねん",
+    "meaning": "Youth"
+  }
+]
