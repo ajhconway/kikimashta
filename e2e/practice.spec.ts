@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import bank from '../content/ja.json' with { type: 'json' };
+import { practiceBanks } from '../src/core/practice';
 
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 const screenColor = (page: Page) => page.evaluate(() => document.documentElement.style.getPropertyValue('--screen-background').trim());
@@ -234,6 +235,69 @@ test('preview, complete a short round, and retain real device progress after rel
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
   await page.reload();
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
+});
+
+test('an expanded set previews its words, quizzes that set, and saves catalogue IDs after reload', async ({ page }, testInfo) => {
+  test.setTimeout(60_000);
+  const selectedBank = practiceBanks[1]!;
+  await page.goto('./');
+  await page.getByRole('combobox', { name: 'Practice set' }).selectOption(selectedBank.id);
+  await captureScreen(page, 'expanded-home-' + testInfo.project.name);
+  await page.getByRole('button', { name: /^start/i }).click();
+  for (let i = 0; i < selectedBank.items.length; i++) {
+    const item = selectedBank.items[i]!;
+    const picture = page.locator('.preview-picture img');
+    await expect.poll(async () => (await picture.getAttribute('src'))?.endsWith(item.image.src)).toBe(true);
+    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect.poll(async () => {
+      const source = await page.locator('audio').getAttribute('src');
+      return item.audio.some(clip => source?.endsWith(clip.src));
+    }).toBe(true);
+    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    await page.getByRole('button', { name: i + 1 === selectedBank.items.length ? /play a round/i : /next word/i }).click();
+  }
+  const seen = new Set<string>();
+  for (let i = 0; i < selectedBank.items.length; i++) {
+    const choices = page.getByRole('button', { name: /choose picture/i });
+    await expect(choices).toHaveCount(4);
+    await expect(choices.first()).toBeEnabled();
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
+    const source = await page.locator('audio').getAttribute('src');
+    const target = selectedBank.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)));
+    expect(target, 'each question uses a recording from the selected set').toBeDefined();
+    expect(seen.has(target!.id)).toBe(false);
+    seen.add(target!.id);
+    const pictures = await choices.locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
+    expect(pictures.every(alt => selectedBank.items.some(item => item.image.alt === alt))).toBe(true);
+    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+    await choices.filter({ has: page.getByRole('img', { name: target!.image.alt, exact: true }) }).click();
+    await expect(page.locator('.feedback')).toHaveText('Got it!');
+    // The normal answer delay and audio completion advance the round.
+  }
+  await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
+  expect([...seen].sort()).toEqual(selectedBank.items.map(item => item.id).sort());
+  await page.getByRole('button', { name: /back home/i }).click();
+  await expect(page.getByRole('combobox', { name: 'Practice set' })).toHaveValue(selectedBank.id);
+  await page.reload();
+  await expect(page.getByText('6 answers saved on this device')).toBeVisible();
+  const saved = await page.evaluate(async () => {
+    const database = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    try {
+      return await new Promise<{ itemId: string; language: string; correct: boolean; choiceIds: string[] }[]>((resolve, reject) => {
+        const request = database.transaction('attempts').objectStore('attempts').getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    } finally { database.close(); }
+  });
+  expect(saved.map(attempt => attempt.itemId).sort()).toEqual(selectedBank.items.map(item => item.id).sort());
+  expect(saved.every(attempt => attempt.correct && attempt.language === selectedBank.language
+    && attempt.choiceIds.length === 4 && attempt.choiceIds.every(id => selectedBank.items.some(item => item.id === id)))).toBe(true);
 });
 
 test('a miss waits for Continue and stays usable with reduced motion', async ({ page }, testInfo) => {

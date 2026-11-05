@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
 import bank from '../content/ja.json';
+import { practiceBanks } from './core/practice';
 import { quizFeedbackColors, themeColors } from './themes';
 
 beforeEach(() => {
@@ -60,6 +61,30 @@ describe('practice interactions', () => {
     expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
     expect(container.querySelector('.answer-departures')).not.toBeInTheDocument();
     expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
+  });
+
+  it('previews and quizzes the selected set, preserving its item identity when saving', async () => {
+    const user = userEvent.setup();
+    const selected = practiceBanks[1]!;
+    const { container } = render(<App random={() => 0.5}/>);
+    await user.selectOptions(screen.getByLabelText('Practice set'), selected.id);
+    await user.click(screen.getByRole('button', { name: /^start/i }));
+    for (let i = 0; i < selected.items.length; i++) {
+      expect(container.querySelector('audio')!.getAttribute('src')).toContain(selected.items[i]!.audio[1]!.src);
+      expect(screen.getByRole('img')).toHaveAttribute('alt', selected.items[i]!.image.alt);
+      await user.click(screen.getByRole('button', { name: i === selected.items.length - 1 ? /play a round/i : /next word/i }));
+    }
+    const source = container.querySelector('audio')!.getAttribute('src');
+    const target = selected.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+    const choices = screen.getAllByRole('button', { name: /choose picture/i });
+    for (const button of choices) expect(selected.items.some(item => item.image.alt === within(button).getByRole('img').getAttribute('alt'))).toBe(true);
+    await user.click(choices.find(button => within(button).queryByRole('img', { name: target.image.alt }))!);
+    expect(ProgressStore.prototype.record).toHaveBeenCalledWith(expect.objectContaining({ itemId: target.id, language: selected.language, correct: true }));
+    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
+    expect(screen.getByLabelText('Practice set')).toHaveValue(selected.id);
+    await user.selectOptions(screen.getByLabelText('Practice set'), bank.id);
+    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    expect(heardChoice(container)).toBeInTheDocument();
   });
 
   it('introduces the first word with a picture and playable audio', async () => {

@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
-import rawBank from '../content/ja.json';
-import type { AudioAsset, PracticeAttempt, WordBank, WordItem } from './types';
+import { practiceBanks } from './core/practice';
+import type { AudioAsset, PracticeAttempt, WordItem } from './types';
 import { createSession, type Question } from './core/session';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { quizFeedbackColors, themeColors } from './themes';
 import './styles.css';
 
-const bank: WordBank = rawBank as WordBank;
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const store = new ProgressStore();
 const fireworkOffsets = Array.from({ length: 16 }, (_, i) => {
@@ -49,6 +48,7 @@ interface DepartingCard {
 
 export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
   const [screen, setScreen] = useState<'home' | 'preview' | 'quiz' | 'summary'>('home');
+  const [bank, setBank] = useState(practiceBanks[0]!);
   const [preview, setPreview] = useState(0);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [index, setIndex] = useState(0);
@@ -92,7 +92,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     let mounted = true;
     store.history(bank.language).then(history => { if (mounted) setTotal(history.length); }).catch(() => { if (mounted) setHistoryError(true); });
     return () => { mounted = false; };
-  }, []);
+  }, [bank.language]);
 
   useEffect(() => {
     const element = audio.current;
@@ -224,7 +224,8 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         <img className="home-mascot" src={asset('brand/kikimashta-cat-v1.png')} alt="Cat wearing purple headphones" draggable={false}/>
         <h1>kikimashta</h1>
         <p className="home-prompt">Listen. Pick a picture.</p>
-        <div className="session-note"><span>6 words</span><b>·</b><span>No timer</span></div>
+        <label className="practice-set">Practice set<select value={bank.id} onChange={event => setBank(practiceBanks.find(candidate => candidate.id === event.target.value)!)}>{practiceBanks.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.title}</option>)}</select></label>
+        <div className="session-note"><span>{bank.items.length} words</span><b>·</b><span>No timer</span></div>
         <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); present(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
         <button className="text-button" onClick={startQuiz}>Skip to quiz <span aria-hidden="true">→</span></button>
         <div className="history">{historyError ? 'Progress storage is unavailable. Saving may need a retry.' : total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "ja-nature",
+    "title": "Nature",
+    "theme": "nature",
+    "itemIds": [
+      "ja-v-ddd9dca106e2",
+      "ja-v-46f8fe65f218",
+      "ja-v-a5d390dc4805",
+      "ja-v-fa6a4c8f27b4",
+      "ja-v-e0bb1d02fee0",
+      "ja-v-7e87850c448d"
+    ]
+  },
+  {
+    "id": "ja-everyday-objects",
+    "title": "Everyday objects",
+    "theme": "objects",
+    "itemIds": [
+      "ja-v-0ac038632611",
+      "ja-v-56e27b2da5a6",
+      "ja-v-baa4dd2c5986",
+      "ja-v-99f7c98099b1",
+      "ja-v-f71f9de56223",
+      "ja-v-66ccf8dd3399"
+    ]
+  },
+  {
+    "id": "ja-body",
+    "title": "Your body",
+    "theme": "body",
+    "itemIds": [
+      "ja-v-9e64feeea5ea",
+      "ja-v-6c0b9f3278dc",
+      "ja-v-dca5c9fc5908",
+      "ja-v-b1ff052549ed",
+      "ja-v-64289653ec1d",
+      "ja-v-6e098e54aa63"
+    ]
+  }
+]
