@@ -1,0 +1,60 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "language": "ja-JP",
+  "sourceLevel": 3,
+  "createdAt": "2026-11-05T15:36:45.564Z",
+  "sourceRevision": "bb9f70c1ddd44bd0c44baf71a1d87fe1782b0937",
+  "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "contextTemplate": "Written form, reading, and intended meaning are supplied as silent metadata via instructionsFor; only the reading is spoken.",
+  "processing": "Original mono 24kHz PCM preserved as WAV; active-sample RMS target -22 dBFS, max boost 9 dB, pre-MP3 sample peak ceiling -4 dBFS; 120ms lead/240ms tail padding; no trimming or pitch/time alteration.",
+  "review": "Generated speech; pronunciation and pitch accent require listening review.",
+  "expectedClips": 1,
+  "clips": [
+    {
+      "id": "ja-v-7930a252da9b",
+      "voice": "cedar",
+      "spelling": "字",
+      "text": "じ",
+      "meaning": "Character",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 字; pronunciation じ; intended meaning Character. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じ",
+      "usage": {
+        "total_tokens": 186,
+        "input_tokens": 150,
+        "output_tokens": 36,
+        "input_token_details": {
+          "text_tokens": 150,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 26,
+          "audio_tokens": 10,
+          "reasoning_tokens": 17
+        }
+      },
+      "file": "cedar-ja-v-7930a252da9b.mp3",
+      "original": "cedar-ja-v-7930a252da9b.wav",
+      "originalSha256": "1c88798234e8ce9382a8cfa05af54e441239d8898730e72085ed680afb54810a",
+      "deliverySha256": "beefc0ff12cd5d2d843300af60caff53eef79aaa1e89cd925ac22697c827357c",
+      "deliveryBytes": 5132,
+      "durationSeconds": 0.5,
+      "rmsDb": -18.629686004309505,
+      "peakDb": -5.006979374755626,
+      "gainDb": -3.370313995690495
+    }
+  ],
+  "failures": [],
+  "generation": {
+    "runId": "42056448746",
+    "attempt": "1",
+    "sourceRevision": "bb9f70c1ddd44bd0c44baf71a1d87fe1782b0937"
+  }
+}

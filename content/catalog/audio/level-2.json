@@ -1,0 +1,99 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "language": "ja-JP",
+  "sourceLevel": 2,
+  "createdAt": "2026-11-05T15:36:10.972Z",
+  "sourceRevision": "bb9f70c1ddd44bd0c44baf71a1d87fe1782b0937",
+  "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "contextTemplate": "Written form, reading, and intended meaning are supplied as silent metadata via instructionsFor; only the reading is spoken.",
+  "processing": "Original mono 24kHz PCM preserved as WAV; active-sample RMS target -22 dBFS, max boost 9 dB, pre-MP3 sample peak ceiling -4 dBFS; 120ms lead/240ms tail padding; no trimming or pitch/time alteration.",
+  "review": "Generated speech; pronunciation and pitch accent require listening review.",
+  "expectedClips": 2,
+  "clips": [
+    {
+      "id": "ja-v-cf58c5cf08d9",
+      "voice": "cedar",
+      "spelling": "火",
+      "text": "ひ",
+      "meaning": "Fire",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 火; pronunciation ひ; intended meaning Fire. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひ",
+      "usage": {
+        "total_tokens": 198,
+        "input_tokens": 150,
+        "output_tokens": 48,
+        "input_token_details": {
+          "text_tokens": 150,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 31,
+          "audio_tokens": 17,
+          "reasoning_tokens": 22
+        }
+      },
+      "file": "cedar-ja-v-cf58c5cf08d9.mp3",
+      "original": "cedar-ja-v-cf58c5cf08d9.wav",
+      "originalSha256": "7d7cb071d5e3c096e1589c9961a9585e1afdb2463c87533ef6d70e2c7ad97c92",
+      "deliverySha256": "a68faba20cdab1fae0d74ba801c26fe153698f18509b68fc5af3db21e927d6e7",
+      "deliveryBytes": 7676,
+      "durationSeconds": 0.85,
+      "rmsDb": -29.420958311351512,
+      "peakDb": -19.22163867939261,
+      "gainDb": 7.420958311351512
+    },
+    {
+      "id": "ja-v-f78f531c55a5",
+      "voice": "cedar",
+      "spelling": "上手",
+      "text": "じょうず",
+      "meaning": "Good At",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 上手; pronunciation じょうず; intended meaning Good At. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じょうず",
+      "usage": {
+        "total_tokens": 212,
+        "input_tokens": 156,
+        "output_tokens": 56,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 22,
+          "reasoning_tokens": 21
+        }
+      },
+      "file": "cedar-ja-v-f78f531c55a5.mp3",
+      "original": "cedar-ja-v-f78f531c55a5.wav",
+      "originalSha256": "dae23a80d4f521e57f27166450e124121dbf94d12262e4cd8495fdf4d7a92627",
+      "deliverySha256": "bef21340d16ab5222635bb15d31f5c9792a65c3f53f326ea2acbb7e274efb30f",
+      "deliveryBytes": 9764,
+      "durationSeconds": 1.1,
+      "rmsDb": -17.52347151233948,
+      "peakDb": -4.768739911663805,
+      "gainDb": -4.47652848766052
+    }
+  ],
+  "failures": [],
+  "generation": {
+    "runId": "42056448746",
+    "attempt": "1",
+    "sourceRevision": "bb9f70c1ddd44bd0c44baf71a1d87fe1782b0937"
+  }
+}
