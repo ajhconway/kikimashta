@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
 import bank from '../content/ja.json';
+import { quizFeedbackColors, themeColors } from './themes';
 
 beforeEach(() => {
   vi.spyOn(ProgressStore.prototype, 'history').mockResolvedValue([]);
@@ -176,7 +177,7 @@ describe('practice interactions', () => {
     await advanceTime(5000);
     expect(container.querySelector('audio')).toHaveAttribute('src', original);
     fireEvent.ended(container.querySelector('audio')!);
-    await advanceTime(849);
+    await advanceTime(1199);
     expect(screen.getByText('Got it!')).toBeInTheDocument();
     await advanceTime(1);
     expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
@@ -196,7 +197,7 @@ describe('practice interactions', () => {
     expect(container.querySelector('audio')).toHaveAttribute('src', original);
     expect(screen.getByText('Got it!')).toBeInTheDocument();
     fireEvent.ended(container.querySelector('audio')!);
-    await advanceTime(849);
+    await advanceTime(1199);
     expect(container.querySelector('audio')).toHaveAttribute('src', original);
     await advanceTime(1);
     expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
@@ -219,7 +220,7 @@ describe('practice interactions', () => {
     expect(container.querySelector('audio')).toHaveAttribute('src', original);
     expect(screen.getByRole('alert')).toHaveTextContent(/hasn't been saved/i);
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: /retry saving/i })); });
-    await advanceTime(850);
+    await advanceTime(1200);
     expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
     const calls = vi.mocked(ProgressStore.prototype.record).mock.calls;
     expect(calls).toHaveLength(2);
@@ -255,5 +256,45 @@ describe('practice interactions', () => {
     fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
     expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
     expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+  });
+
+  it('treats a card context menu as a held button rather than an image action', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<App/>);
+    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    const choice = heardChoice(container);
+    const image = within(choice).getByRole('img');
+    expect(image).toHaveAttribute('draggable', 'false');
+    const menu = new MouseEvent('contextmenu', { bubbles: true, cancelable: true });
+    expect(fireEvent(image, menu)).toBe(false);
+    expect(menu.defaultPrevented).toBe(true);
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    // Keyboard activation still uses the same native button path.
+    choice.focus();
+    await user.keyboard('{Enter}');
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  });
+
+  it('shows answer-specific backgrounds and resets them on the next question and exit', async () => {
+    const { container } = await timedQuiz();
+    const root = document.documentElement;
+    const color = () => root.style.getPropertyValue('--screen-background');
+    expect(color()).toBe(themeColors.pictureQuiz);
+    fireEvent.ended(container.querySelector('audio')!);
+    await act(async () => { fireEvent.click(heardChoice(container)); });
+    expect(color()).toBe(quizFeedbackColors.correct);
+    expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'correct');
+    await advanceTime(1200);
+    expect(color()).toBe(themeColors.pictureQuiz);
+    expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
+    await act(async () => { fireEvent.click(heardChoice(container, false)); });
+    expect(color()).toBe(quizFeedbackColors.incorrect);
+    expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'incorrect');
+    fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
+    expect(color()).toBe(themeColors.pictureQuiz);
+    fireEvent.click(screen.getByRole('button', { name: /kikimashta home/i }));
+    expect(color()).toBe(themeColors.home);
+    expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
   });
 });

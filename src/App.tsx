@@ -4,7 +4,7 @@ import type { AudioAsset, PracticeAttempt, WordBank, WordItem } from './types';
 import { createSession, type Question } from './core/session';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
-import { themeColors } from './themes';
+import { quizFeedbackColors, themeColors } from './themes';
 import './styles.css';
 
 const bank: WordBank = rawBank as WordBank;
@@ -31,6 +31,7 @@ function QuizCompanion({ listening, response }: { listening: boolean; response: 
 }
 
 const wallClock = () => Date.now();
+const correctAnswerPauseMs = 1200;
 
 export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
   const [screen, setScreen] = useState<'home' | 'preview' | 'quiz' | 'summary'>('home');
@@ -54,20 +55,22 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const replayButton = useRef<HTMLButtonElement>(null);
   const target = screen === 'preview' ? bank.items[preview] : questions[index]?.target;
   const theme = screen === 'preview' ? 'lesson' : screen === 'quiz' ? 'pictureQuiz' : 'home';
+  const response = screen === 'quiz' && feedback ? feedback.correct ? 'correct' : 'incorrect' : undefined;
+  const background = response ? quizFeedbackColors[response] : themeColors[theme];
 
   useLayoutEffect(() => {
     const root = document.documentElement;
     const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     const previousBackground = root.style.getPropertyValue('--screen-background');
     const previousColor = meta?.content;
-    root.style.setProperty('--screen-background', themeColors[theme]);
-    if (meta) meta.content = themeColors[theme];
+    root.style.setProperty('--screen-background', background);
+    if (meta) meta.content = background;
     return () => {
       if (previousBackground) root.style.setProperty('--screen-background', previousBackground);
       else root.style.removeProperty('--screen-background');
       if (meta && previousColor !== undefined) meta.content = previousColor;
     };
-  }, [theme]);
+  }, [background]);
 
   useEffect(() => {
     let mounted = true;
@@ -184,12 +187,12 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     const timer = window.setTimeout(() => {
       if (document.visibilityState === 'hidden') { setAutoPaused(true); return; }
       if (active.current.id === answerId && request === playRequest.current) next();
-    }, 850);
+    }, correctAnswerPauseMs);
     return () => window.clearTimeout(timer);
   }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next]);
 
   const correct = answers.filter(answer => answer.correct).length;
-  return <div className={'app app-' + screen} data-theme={theme}>
+  return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
@@ -225,7 +228,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         <div className="choices choices-enter" key={target.id}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
-          return <button key={item.id} className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button>;
+          return <div className="choice-slot" key={item.id} style={{ animationDelay: `${i * 40}ms` }}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div>
         <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback && <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct ? <p>Listen again to match the picture.</p> : !saveError && !audioError && !autoPaused && <p className="next-cue">{saving ? 'Saving…' : index + 1 === questions.length ? 'Finishing up…' : 'Next sound…'}</p>}</>}</div>

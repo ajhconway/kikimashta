@@ -4,3 +4,8 @@ export const themeColors = {
   lesson: '#ffa9d4',
   pictureQuiz: '#c4a2ff',
 } as const;
+
+export const quizFeedbackColors = {
+  correct: '#e9b6ff',
+  incorrect: '#b8a4cf',
+} as const;
