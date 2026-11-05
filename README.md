@@ -52,4 +52,12 @@ Local runs preserve the provider-original WAVs, listening MP3s, and provenance u
 
 The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
 
-The code is licensed under [MIT](LICENSE). Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Current vocabulary pictures are original SVG illustrations; creation records are in `content/vector-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+## License and media
+
+Copyright (c) 2026 Alex Conway. The project's own code and documentation are licensed under [GNU AGPLv3 only](LICENSE) (`AGPL-3.0-only`), except where separate terms are identified. Commercial use is permitted subject to the license's conditions, including applicable source-sharing requirements. See [NOTICE](NOTICE) for scope and history.
+
+The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](https://github.com/ajhconway/kikimashta/commit/02dcb58400f4971c6e54e2f7740b4d1c3328d25f) were released under MIT; their existing MIT permissions remain. New contributions to the project's code are offered under AGPLv3 only unless explicitly agreed otherwise.
+
+The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
+
+Media and dependencies retain separate terms. Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Existing vocabulary SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.

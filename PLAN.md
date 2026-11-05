@@ -19,7 +19,7 @@ A personal listening game, starting with Japanese and leaving room for other lan
 | Audio | Reusable, pregenerated speech; start with OpenAI Marin and Cedar, chosen through word and sentence samples |
 | Pictures | Start with AI-generated illustrations; also support library images and reuse suitable pictures across languages |
 | Hosting | Public GitHub repository, GitHub Actions, and GitHub Pages |
-| Code license | MIT |
+| Code license | GNU AGPLv3 only (AGPL-3.0-only); separately licensed media retain their terms |
 
 Keep the quiz interface, learning rules, and storage separate so each can evolve. Speech providers can vary by language.
 

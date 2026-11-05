@@ -1,0 +1,17 @@
+Kikimashta
+Copyright (c) 2026 Alex Conway
+
+The project's own software and documentation are licensed under the GNU Affero
+General Public License, version 3 only (SPDX: AGPL-3.0-only), except where a
+separate license is identified. You may redistribute and modify them under
+those terms. See LICENSE for the complete terms, including the absence of
+warranty.
+
+Media and third-party components keep their separate licenses. In particular,
+the existing vocabulary SVG illustrations remain under the MIT license in
+LICENSES/MIT.txt. Media records and credits are in content/ and public/credits.html.
+Runtime dependency notices are included in the production build.
+
+The licensing change was made on 2026-11-05. Releases through commit
+02dcb58400f4971c6e54e2f7740b4d1c3328d25f were published under MIT. This change
+does not withdraw the MIT permissions granted for those earlier versions.

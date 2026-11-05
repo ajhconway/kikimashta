@@ -183,7 +183,8 @@ ${includeSentences ? `<h2>Full sentences</h2><p>Compare Marin and Cedar on state
 ${SENTENCES.map(sentence => `<article><p lang="ja">${sentence.text}</p><p class="meaning">${sentence.meaning}</p>${SENTENCE_VOICES.map(voice => `<p class="voice">${voice}</p><audio controls preload="none" data-kind="sentence" aria-label="${voice}: ${sentence.text}" src="${voice}-${sentence.id}.mp3"></audio>`).join('')}</article>`).join('')}` : ''}
 <h2>Single words</h2>
 ${VOICES.map(voice => `<section><h3>${voice}</h3>${WORDS.map(word => `<p lang="ja">${word.text}</p><audio controls preload="none" data-kind="word" aria-label="${voice}: ${word.text}" src="${voice}-${word.id}.mp3"></audio>`).join('')}</section>`).join('')}
-<p>These are audition clips. Japanese pronunciation and pitch accent still need listening review. Tell me your preferred voice and anything you would change.</p></html>`
+<p>These are audition clips. Japanese pronunciation and pitch accent still need listening review. Tell me your preferred voice and anything you would change.</p>
+<p><a href="../credits.html">Code &amp; credits</a></p></html>`
 }
 
 async function main() {
