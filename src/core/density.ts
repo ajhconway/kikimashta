@@ -1,0 +1,184 @@
+import type { PracticeAttempt, WordItem } from '../types';
+import { advanceSchedule, retrievability, schedulerVersion, type ScheduledWord } from './scheduler';
+
+export const DENSITY_LEVELS = [
+  { id: 'minimal', label: 'Minimal', threshold: 0 },
+  { id: 'light', label: 'Light', threshold: 5 },
+  { id: 'moderate', label: 'Moderate', threshold: 15 },
+  { id: 'high', label: 'High', threshold: 30 },
+  { id: 'intense', label: 'Intense', threshold: 60 },
+] as const;
+export type DensityLevel = typeof DENSITY_LEVELS[number]['id'];
+export interface DensityRange { min: DensityLevel; max: DensityLevel }
+/** Provisional workload preferences, separate from FSRS desired retention. */
+export const DEFAULT_DENSITY_RANGE: DensityRange = { min: 'light', max: 'moderate' };
+/** Provisional finite admission ceiling for the open-ended Intense display band. */
+export const MAX_DENSITY_TARGET = 120;
+const DAY_MS = 86_400_000;
+
+export interface ForecastOptions {
+  horizonDays?: number;
+  scenarios?: number;
+  seed?: number;
+  /** Admission assumption for an unseen word's initial mini-quiz, not a measured retention rate. */
+  lessonSuccessRate?: number;
+}
+export interface DensityForecast {
+  reviewsPerDay: number;
+  daily: number[];
+  horizonDays: number;
+  scenarios: number;
+}
+export interface LessonPlan {
+  items: WordItem[];
+  /** Forecast from the actual current schedules. */
+  forecast: DensityForecast;
+  /** Estimate after the proposed words' initial mini-quiz; never saved as actual learning. */
+  projectedForecast: DensityForecast;
+  reason: 'below-min' | 'optional' | 'at-max' | 'exhausted' | 'capacity';
+}
+interface Options { horizonDays: number; scenarios: number; seed: number; lessonSuccessRate: number }
+
+function optionsFor(options: ForecastOptions, now: number): Options {
+  const config = { horizonDays: 7, scenarios: 32, seed: 5231, lessonSuccessRate: 0.8, ...options };
+  if (!Number.isFinite(now) || !Number.isFinite(new Date(now).getTime())) throw new Error('Invalid forecast time.');
+  if (!Number.isInteger(config.horizonDays) || config.horizonDays < 1 || config.horizonDays > 365 ||
+      !Number.isInteger(config.scenarios) || config.scenarios < 1 || config.scenarios > 256 ||
+      !Number.isInteger(config.seed) || !Number.isFinite(config.lessonSuccessRate) ||
+      config.lessonSuccessRate < 0 || config.lessonSuccessRate > 1) throw new Error('Invalid forecast options.');
+  return config;
+}
+
+export function densityLevel(reviewsPerDay: number): DensityLevel {
+  if (!Number.isFinite(reviewsPerDay) || reviewsPerDay < 0) throw new Error('Invalid review density.');
+  return [...DENSITY_LEVELS].reverse().find(level => reviewsPerDay >= level.threshold)!.id;
+}
+
+export function densityTargets(min: DensityLevel, max: DensityLevel): { minimum: number; maximum: number } {
+  const minimumIndex = DENSITY_LEVELS.findIndex(level => level.id === min);
+  const maximumIndex = DENSITY_LEVELS.findIndex(level => level.id === max);
+  if (minimumIndex < 0 || maximumIndex < 0 || minimumIndex > maximumIndex) throw new Error('Invalid density range.');
+  const minimum = DENSITY_LEVELS[minimumIndex]!.threshold;
+  const maximum = DENSITY_LEVELS[maximumIndex + 1]?.threshold ?? MAX_DENSITY_TARGET;
+  return { minimum, maximum };
+}
+
+/** Independent streams make estimates additive: adding a word cannot change existing words' simulations. */
+function randomFor(key: string, scenario: number, seed: number): () => number {
+  let state = seed >>> 0;
+  for (const character of `${key}:${scenario}`) state = Math.imul(state ^ character.charCodeAt(0), 16777619) >>> 0;
+  return () => {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let value = state;
+    value = Math.imul(value ^ value >>> 15, value | 1);
+    value ^= value + Math.imul(value ^ value >>> 7, value | 61);
+    return ((value ^ value >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function simulatedAttempt(itemId: string, language: string, at: number, correct: boolean): PracticeAttempt {
+  return {
+    id: 'forecast-only', sessionId: 'forecast-only', itemId, language,
+    choiceIds: [itemId], selectedId: correct ? itemId : 'forecast-wrong-answer', correct,
+    startedAt: at, answeredAt: at, responseMs: 0,
+    context: { phase: 'review', exercise: 'audio-picture', recordingSrc: '', replays: 0, schedulerVersion },
+  };
+}
+
+/**
+ * A forecast assumes one session each day at now + 24h offsets, with the due queue
+ * fixed at that session's start. Each word is reviewed at most once per simulated
+ * day; short-interval retries wait until the next session. Existing overdue work
+ * is counted on day zero. No later new words are assumed unless explicitly admitted.
+ *
+ * Outcomes sample FSRS's recall estimates; these estimates describe this task only
+ * after calibration. Daily attendance and a new lesson's success rate are explicit
+ * policy assumptions, not guarantees about the user's future workload.
+ */
+async function wordContribution(
+  key: string, initialize: (random: () => number) => Promise<ScheduledWord>, now: number, config: Options,
+): Promise<number[]> {
+  const daily = Array<number>(config.horizonDays).fill(0);
+  for (let scenario = 0; scenario < config.scenarios; scenario++) {
+    const random = randomFor(key, scenario, config.seed);
+    let schedule = await initialize(random);
+    for (let day = 0; day < config.horizonDays; day++) {
+      const at = now + day * DAY_MS;
+      if (schedule.dueAt > at) continue;
+      daily[day]! += 1 / config.scenarios;
+      const probability = await retrievability(schedule, at);
+      if (!Number.isFinite(probability) || probability < 0 || probability > 1) throw new Error('Invalid recall probability.');
+      schedule = await advanceSchedule(schedule, simulatedAttempt(schedule.itemId, schedule.language, at, random() < probability));
+    }
+  }
+  return daily;
+}
+
+function forecastFrom(daily: number[], config: Options): DensityForecast {
+  return {
+    daily, reviewsPerDay: daily.reduce((sum, reviews) => sum + reviews, 0) / config.horizonDays,
+    horizonDays: config.horizonDays, scenarios: config.scenarios,
+  };
+}
+
+export async function forecastDensity(schedules: ScheduledWord[], now: number, options: ForecastOptions = {}): Promise<DensityForecast> {
+  const config = optionsFor(options, now);
+  const daily = Array<number>(config.horizonDays).fill(0);
+  const keys = new Set<string>();
+  for (const schedule of schedules) {
+    const key = `${schedule.language}:${schedule.itemId}`;
+    if (keys.has(key)) throw new Error('Duplicate scheduled word.');
+    keys.add(key);
+    if (!Number.isFinite(schedule.dueAt) || schedule.lastReviewedAt > now) throw new Error('Invalid forecast schedule.');
+    const contribution = await wordContribution(key, async () => schedule, now, config);
+    contribution.forEach((count, day) => { daily[day]! += count; });
+  }
+  return forecastFrom(daily, config);
+}
+
+export async function planLessonChunk({
+  schedules, candidates, now, range = DEFAULT_DENSITY_RANGE, chunkSize = 10, options = {},
+}: {
+  schedules: ScheduledWord[];
+  candidates: WordItem[];
+  now: number;
+  range?: DensityRange;
+  chunkSize?: number;
+  options?: ForecastOptions;
+}): Promise<LessonPlan> {
+  if (!Number.isInteger(chunkSize) || chunkSize < 1 || chunkSize > 100) throw new Error('Invalid lesson chunk size.');
+  const config = optionsFor(options, now);
+  const { minimum, maximum } = densityTargets(range.min, range.max);
+  const forecast = await forecastDensity(schedules, now, options);
+  const result: LessonPlan = { items: [], forecast, projectedForecast: forecast, reason: 'at-max' };
+  if (forecast.reviewsPerDay >= maximum) return result;
+  const known = new Set(schedules.map(schedule => `${schedule.language}:${schedule.itemId}`));
+  const eligible = candidates.filter(item => {
+    const key = `${item.language}:${item.id}`;
+    if (known.has(key)) return false;
+    known.add(key);
+    return true;
+  });
+  if (!eligible.length) return { ...result, reason: 'exhausted' };
+  result.reason = forecast.reviewsPerDay < minimum ? 'below-min' : 'optional';
+  let projectedDaily = [...forecast.daily];
+  for (const item of eligible.slice(0, chunkSize)) {
+    // Hypothetical first answers seed possible states; previews alone never count as reviews.
+    const correct = simulatedAttempt(item.id, item.language, now, true);
+    correct.context = { ...correct.context!, phase: 'lesson' };
+    const incorrect = { ...correct, correct: false, selectedId: 'forecast-wrong-answer' };
+    const good = await advanceSchedule(undefined, correct);
+    const again = await advanceSchedule(undefined, incorrect);
+    const contribution = await wordContribution(`${item.language}:${item.id}`, async random => (
+      random() < config.lessonSuccessRate ? good : again
+    ), now, config);
+    const proposed = forecastFrom(projectedDaily.map((count, day) => count + contribution[day]!), config);
+    // The next band's threshold is exclusive: max=Moderate stays below High.
+    if (proposed.reviewsPerDay >= maximum - 1e-10) break;
+    result.items.push(item);
+    projectedDaily = proposed.daily;
+    result.projectedForecast = proposed;
+  }
+  if (!result.items.length) result.reason = 'capacity';
+  return result;
+}

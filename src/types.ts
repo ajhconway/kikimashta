@@ -42,6 +42,14 @@ export interface PracticeAttempt {
   startedAt: number
   answeredAt: number
   responseMs: number
+  /** Missing on legacy attempts; never infer delayed recall from old fixed rounds. */
+  context?: {
+    phase: 'lesson' | 'review'
+    exercise: 'audio-picture'
+    recordingSrc: string
+    replays: number
+    schedulerVersion: string
+  }
 }
 
 export interface WordProgress {

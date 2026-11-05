@@ -3,343 +3,297 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
-import bank from '../content/ja.json';
-import { practiceBanks } from './core/practice';
+import { practicePool } from './core/practice';
+import { forecastDensity, planLessonChunk } from './core/density';
+import type { PracticeAttempt } from './types';
 import { quizFeedbackColors, themeColors } from './themes';
 
+vi.mock('./core/density', async importOriginal => {
+  const actual = await importOriginal<typeof import('./core/density')>();
+  return { ...actual, forecastDensity: vi.fn(), planLessonChunk: vi.fn() };
+});
+const fixedNow = () => 1_000_000;
+let records: PracticeAttempt[];
+const forecast = { reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 };
+function legacy(count = 6): PracticeAttempt[] {
+  return practicePool.items.slice(0, count).map((item, i) => ({
+    id: 'old-' + i, sessionId: 'old-session', itemId: item.id, language: item.language,
+    choiceIds: practicePool.items.slice(0, 4).map(word => word.id), selectedId: item.id,
+    correct: true, startedAt: 900, answeredAt: 1000 + i, responseMs: 100,
+  }));
+}
 beforeEach(() => {
-  vi.spyOn(ProgressStore.prototype, 'history').mockResolvedValue([]);
-  vi.spyOn(ProgressStore.prototype, 'record').mockResolvedValue(undefined);
+  localStorage.clear(); records = [];
+  vi.spyOn(ProgressStore.prototype, 'history').mockImplementation(async () => [...records]);
+  vi.spyOn(ProgressStore.prototype, 'record').mockImplementation(async attempt => { records.push(attempt); });
   vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
+  vi.mocked(forecastDensity).mockResolvedValue(forecast);
+  vi.mocked(planLessonChunk).mockImplementation(async ({ candidates }) => ({
+    items: candidates.slice(0, 10), forecast, projectedForecast: forecast,
+    reason: candidates.length ? 'below-min' : 'exhausted',
+  }));
 });
-
 afterEach(() => { vi.useRealTimers(); });
 
 function heardChoice(container: HTMLElement, correct = true) {
   const source = container.querySelector('audio')!.getAttribute('src');
-  const target = bank.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
   return screen.getAllByRole('button', { name: /choose picture/i }).find(button =>
     Boolean(within(button).queryByRole('img', { name: target.image.alt })) === correct,
   )!;
 }
-
-async function timedQuiz() {
-  vi.useFakeTimers();
-  const view = render(<App random={() => 0.5}/>);
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: /skip to quiz/i })); });
+async function click(button: HTMLElement) { await act(async () => { fireEvent.click(button); }); }
+async function start() {
+  await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+  await click(screen.getByRole('button', { name: /^start/i }));
+}
+async function review(options: { now?: () => number; count?: number } = {}) {
+  records = legacy(options.count ?? 6);
+  const view = render(<App now={options.now ?? fixedNow} random={() => 0.5}/>);
+  await start();
+  await click(await screen.findByRole('button', { name: /begin review/i }));
   return view;
 }
-
-async function advanceTime(ms: number) {
-  await act(async () => { vi.advanceTimersByTime(ms); });
-}
-
-function deferredSave() {
-  let resolve!: () => void;
+function endAudio(container: HTMLElement) { fireEvent.ended(container.querySelector('audio')!); }
+async function advance(ms: number) { await act(async () => { vi.advanceTimersByTime(ms); }); }
+function deferred<T>() {
+  let resolve!: (value: T) => void;
   let reject!: (error: Error) => void;
-  const promise = new Promise<void>((yes, no) => { resolve = yes; reject = no; });
+  const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; });
   return { promise, resolve, reject };
 }
 
-describe('practice interactions', () => {
-  it.each([true, false])('retains the right pictures after a correct=%s answer and restores all choices in a new round', async correct => {
+describe('adaptive session flow', () => {
+  it('introduces ten new words before a mini-quiz of those words and records initial-learning context', async () => {
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start();
+    expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
+    await click(await screen.findByRole('button', { name: /begin lesson/i }));
+    const items = practicePool.items.slice(0, 10);
+    for (let i = 0; i < items.length; i++) {
+      expect(screen.getByRole('img')).toHaveAttribute('alt', items[i]!.image.alt);
+      expect(container.querySelector('audio')!.getAttribute('src')).toContain(items[i]!.audio[1]!.src);
+      expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+      await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
+    }
+    const choices = screen.getAllByRole('button', { name: /choose picture/i });
+    expect(choices).toHaveLength(4);
+    expect(choices.every(button => items.some(item => item.image.alt === within(button).getByRole('img').getAttribute('alt')))).toBe(true);
+    await click(heardChoice(container));
+    expect(records).toHaveLength(1);
+    expect(records[0]!.context).toMatchObject({ phase: 'lesson', exercise: 'audio-picture', replays: 0, schedulerVersion: 'fsrs-6-v1' });
+    expect(items.some(item => item.id === records[0]!.itemId)).toBe(true);
+  });
+
+  it('snapshots due reviews, defers newly due words and misses, then moves to lessons', async () => {
+    let clock = fixedNow();
+    records = [...legacy(2), { ...legacy(3)[2]!, answeredAt: clock + 1000 }];
+    const { container } = render(<App now={() => clock} random={() => 0.5}/>);
+    await start();
+    expect(await screen.findByText('2 words to revisit')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /begin review/i }));
+    clock += 60_000;
+    for (let i = 0; i < 2; i++) {
+      await click(heardChoice(container, false));
+      await click(screen.getByRole('button', { name: /continue|see results/i }));
+    }
+    expect(await screen.findByRole('heading', { name: /nice reviewing/i })).toBeInTheDocument();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
+    expect(records.slice(-2).every(attempt => attempt.context?.phase === 'review')).toBe(true);
+    expect(records.slice(-2).some(attempt => attempt.itemId === legacy(3)[2]!.itemId)).toBe(false);
+    expect(await screen.findByRole('button', { name: /begin lesson/i })).toBeInTheDocument();
+  });
+
+  it('offers another chunk at boundaries without introducing scheduled retries', async () => {
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start(); await click(await screen.findByRole('button', { name: /begin lesson/i }));
+    for (let i = 0; i < 10; i++) await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
+    const seen = new Set<string>();
+    for (let i = 0; i < 10; i++) {
+      const source = container.querySelector('audio')!.getAttribute('src');
+      const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+      expect(seen.has(target.id)).toBe(false); seen.add(target.id);
+      await click(heardChoice(container, false));
+      await click(screen.getByRole('button', { name: /continue|see results/i }));
+    }
+    expect(await screen.findByRole('heading', { name: /nice round/i })).toBeInTheDocument();
+    await click(await screen.findByRole('button', { name: /learn more/i }));
+    expect(screen.getByRole('img')).toHaveAttribute('alt', practicePool.items[10]!.image.alt);
+    expect(records).toHaveLength(10);
+    expect(records.every(attempt => !attempt.correct)).toBe(true);
+  });
+
+  it('shows only Finish when the forecast admits no new words', async () => {
+    vi.mocked(planLessonChunk).mockResolvedValue({ items: [], forecast: { ...forecast, reviewsPerDay: 35 }, projectedForecast: forecast, reason: 'at-max' });
+    render(<App now={fixedNow}/>);
+    await start();
+    expect(await screen.findByRole('heading', { name: /all set for now/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /begin lesson/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('status', { name: /review density/i })).toHaveTextContent('High');
+    await click(screen.getByRole('button', { name: /^finish$/i }));
+    expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
+  });
+
+  it('blocks new intake when history is unavailable and can retry loading', async () => {
+    vi.mocked(ProgressStore.prototype.history).mockRejectedValueOnce(new Error('Unavailable'));
+    render(<App now={fixedNow}/>);
+    expect(await screen.findByRole('alert')).toHaveTextContent(/history couldn't load/i);
+    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    await click(screen.getByRole('button', { name: /retry loading/i }));
+    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('persists a qualitative range, accepts matching levels, and ignores invalid saved preferences', async () => {
     const user = userEvent.setup();
-    const { container } = render(<App random={() => 0.5}/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    localStorage.setItem('kikimashta-density-range-v1', JSON.stringify({ min: 'intense', max: 'minimal' }));
+    const view = render(<App now={fixedNow}/>);
+    await user.click(screen.getByText('Practice pace'));
+    expect(screen.getByLabelText('Minimum')).toHaveValue('light');
+    expect(screen.getByLabelText('Maximum')).toHaveValue('moderate');
+    await user.selectOptions(screen.getByLabelText('Minimum'), 'moderate');
+    expect(JSON.parse(localStorage.getItem('kikimashta-density-range-v1')!)).toEqual({ min: 'moderate', max: 'moderate' });
+    view.unmount(); render(<App now={fixedNow}/>);
+    expect(screen.getByLabelText('Minimum')).toHaveValue('moderate');
+    expect(screen.getByLabelText('Maximum')).toHaveValue('moderate');
+  });
+});
+
+describe('quiz safeguards', () => {
+  it.each([true, false])('retains the right pictures after a correct=%s answer', async correct => {
+    const { container } = await review();
     const targetPicture = within(heardChoice(container)).getByRole('img').getAttribute('alt')!;
     const selected = heardChoice(container, correct);
-    await user.click(selected);
+    await click(selected);
     const retained = screen.getAllByRole('button', { name: /choose picture/i });
-    expect(retained).toHaveLength(correct ? 1 : 2);
-    expect(retained).toContain(selected);
+    expect(retained).toHaveLength(correct ? 1 : 2); expect(retained).toContain(selected);
     expect(screen.getByRole('img', { name: targetPicture })).toBeInTheDocument();
-    for (const button of retained) expect(button).toBeDisabled();
+    retained.forEach(button => expect(button).toBeDisabled());
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await start(); await click(await screen.findByRole('button', { name: /begin review/i }));
     expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
     expect(container.querySelector('.answer-departures')).not.toBeInTheDocument();
     expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
   });
 
-  it('previews and quizzes the selected set, preserving its item identity when saving', async () => {
-    const user = userEvent.setup();
-    const selected = practiceBanks[1]!;
-    const { container } = render(<App random={() => 0.5}/>);
-    await user.selectOptions(screen.getByLabelText('Practice set'), selected.id);
-    await user.click(screen.getByRole('button', { name: /^start/i }));
-    for (let i = 0; i < selected.items.length; i++) {
-      expect(container.querySelector('audio')!.getAttribute('src')).toContain(selected.items[i]!.audio[1]!.src);
-      expect(screen.getByRole('img')).toHaveAttribute('alt', selected.items[i]!.image.alt);
-      await user.click(screen.getByRole('button', { name: i === selected.items.length - 1 ? /play a round/i : /next word/i }));
-    }
+  it('records only one answer after rapid taps and keeps the selected voice for replay', async () => {
+    const { container } = await review();
     const source = container.querySelector('audio')!.getAttribute('src');
-    const target = selected.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-    const choices = screen.getAllByRole('button', { name: /choose picture/i });
-    for (const button of choices) expect(selected.items.some(item => item.image.alt === within(button).getByRole('img').getAttribute('alt'))).toBe(true);
-    await user.click(choices.find(button => within(button).queryByRole('img', { name: target.image.alt }))!);
-    expect(ProgressStore.prototype.record).toHaveBeenCalledWith(expect.objectContaining({ itemId: target.id, language: selected.language, correct: true }));
-    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    expect(screen.getByLabelText('Practice set')).toHaveValue(selected.id);
-    await user.selectOptions(screen.getByLabelText('Practice set'), bank.id);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    expect(heardChoice(container)).toBeInTheDocument();
-  });
-
-  it('introduces the first word with a picture and playable audio', async () => {
-    const user = userEvent.setup();
-    const random = vi.fn().mockReturnValueOnce(0).mockReturnValue(0.999);
-    const { container } = render(<App random={random}/>);
-    await user.click(screen.getByRole('button', { name: /^start/i }));
-
-    expect(screen.getByRole('heading', { name: /lesson time!/i })).toBeInTheDocument();
-    expect(screen.getByRole('img')).toHaveAttribute('src', expect.stringContaining('images/'));
-    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[0]!.audio[0]!.src);
-    await user.click(screen.getByRole('button', { name: /replay word/i }));
-    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
-    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[0]!.audio[0]!.src);
-    expect(random).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByRole('button', { name: /next word/i }));
-    expect(container.querySelector('audio')).toHaveAttribute('src', '/' + bank.items[1]!.audio[1]!.src);
-    expect(random).toHaveBeenCalledTimes(2);
-  });
-
-  it('saves one answer when a picture receives rapid repeated taps', async () => {
-    const user = userEvent.setup();
-    const random = vi.fn(() => 0.5);
-    const { container } = render(<App random={random}/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    await click(screen.getByRole('button', { name: /replay word/i }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
     const choice = heardChoice(container, false);
-    const recording = container.querySelector('audio')!.getAttribute('src');
-    const randomCalls = random.mock.calls.length;
-
-    fireEvent.click(choice);
-    fireEvent.click(choice);
-
-    await waitFor(() => expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1));
-    expect(screen.getByText(/got it!|try this one\./i)).toBeInTheDocument();
-    for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeDisabled();
-    await user.click(screen.getByRole('button', { name: /replay word/i }));
-    expect(container.querySelector('audio')).toHaveAttribute('src', recording);
-    expect(random).toHaveBeenCalledTimes(randomCalls);
+    await act(async () => { fireEvent.click(choice); fireEvent.click(choice); });
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByRole('button', { name: /^continue$/i }));
-    expect(screen.getByRole('progressbar', { name: /session progress/i })).toHaveAttribute('aria-valuenow', '1');
+    expect(records.at(-1)!.context).toMatchObject({ replays: 1, phase: 'review', recordingSrc: source!.slice(1) });
   });
 
-  it('blocks answers when playback fails and lets the user retry the audio', async () => {
-    vi.mocked(HTMLMediaElement.prototype.play).mockRejectedValueOnce(new Error('Playback blocked'));
-    const user = userEvent.setup();
-    const random = vi.fn(() => 0.5);
-    const { container } = render(<App random={random}/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-
+  it('blocks answers after an audio failure and retries the same recording', async () => {
+    vi.mocked(HTMLMediaElement.prototype.play).mockRejectedValueOnce(new Error('Blocked'));
+    const { container } = await review();
     expect(await screen.findByRole('alert')).toHaveTextContent(/sound couldn't play/i);
-    for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeDisabled();
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-    const recording = container.querySelector('audio')!.getAttribute('src');
-    const randomCalls = random.mock.calls.length;
-
-    await user.click(screen.getByRole('button', { name: /replay word/i }));
+    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeDisabled());
+    const source = container.querySelector('audio')!.getAttribute('src');
+    await click(screen.getByRole('button', { name: /replay word/i }));
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    for (const button of screen.getAllByRole('button', { name: /choose picture/i })) expect(button).toBeEnabled();
-    expect(container.querySelector('audio')).toHaveAttribute('src', recording);
-    expect(random).toHaveBeenCalledTimes(randomCalls);
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeEnabled());
   });
 
-  it('shows a failed save honestly and offers a retry before advancing', async () => {
-    vi.mocked(ProgressStore.prototype.record).mockRejectedValueOnce(new Error('Storage failed'));
-    const user = userEvent.setup();
-    const { container } = render(<App/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(heardChoice(container, false));
+  it('ignores an old rejected play request after a newer replay succeeds', async () => {
+    const stale = deferred<void>();
+    vi.mocked(HTMLMediaElement.prototype.play).mockReturnValueOnce(stale.promise);
+    await review();
+    await click(screen.getByRole('button', { name: /replay word/i }));
+    await act(async () => { stale.reject(new Error('Old request')); });
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeEnabled());
+  });
 
+  it('keeps a missed answer available for replay until Continue is pressed', async () => {
+    const { container } = await review();
+    vi.useFakeTimers();
+    endAudio(container); await click(heardChoice(container, false));
+    const source = container.querySelector('audio')!.getAttribute('src');
+    await advance(10_000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(2);
+    await click(screen.getByRole('button', { name: /replay word/i }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    await click(screen.getByRole('button', { name: /^continue$/i }));
+    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  });
+
+  it('shows a failed save, keeps the question in place, and retries the same attempt', async () => {
+    vi.mocked(ProgressStore.prototype.record).mockRejectedValueOnce(new Error('Unavailable'));
+    const { container } = await review();
+    await click(heardChoice(container, false));
     expect(await screen.findByRole('alert')).toHaveTextContent(/hasn't been saved/i);
     expect(screen.getByRole('button', { name: /^continue$/i })).toBeDisabled();
-    await user.click(screen.getByRole('button', { name: /retry saving/i }));
-    await waitFor(() => expect(screen.queryByRole('alert')).not.toBeInTheDocument());
-    expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
-  });
-
-  it('keeps an old save rejection from changing a new round or unlocking its pending answer', async () => {
-    const oldSave = deferredSave();
-    const currentSave = deferredSave();
-    vi.mocked(ProgressStore.prototype.record)
-      .mockImplementationOnce(() => oldSave.promise)
-      .mockImplementationOnce(() => currentSave.promise);
-    const user = userEvent.setup();
-    const { container } = render(<App/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(heardChoice(container, false));
-    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(heardChoice(container, false));
-
-    await act(async () => { oldSave.reject(new Error('Previous round failed to save')); });
-
+    const first = vi.mocked(ProgressStore.prototype.record).mock.calls[0]![0];
+    await click(screen.getByRole('button', { name: /retry saving/i }));
+    expect(vi.mocked(ProgressStore.prototype.record).mock.calls[1]![0]).toEqual(first);
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
-    await act(async () => { currentSave.resolve(); });
-    await user.click(screen.getByRole('button', { name: /^continue$/i }));
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
-  });
-
-  it('retries the same failed answer only once during rapid taps and counts one stored answer', async () => {
-    const retry = deferredSave();
-    vi.mocked(ProgressStore.prototype.record)
-      .mockRejectedValueOnce(new Error('Storage failed'))
-      .mockImplementationOnce(() => retry.promise);
-    const user = userEvent.setup();
-    const { container } = render(<App/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await user.click(heardChoice(container, false));
-    await user.dblClick(await screen.findByRole('button', { name: /retry saving/i }));
-
-    const record = vi.mocked(ProgressStore.prototype.record);
-    expect(record).toHaveBeenCalledTimes(2);
-    const savedAnswer = record.mock.calls[0]![0];
-    expect(record.mock.calls[1]![0]).toEqual(savedAnswer);
-    expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
-    vi.mocked(ProgressStore.prototype.history).mockResolvedValue([savedAnswer]);
-    await act(async () => { retry.resolve(); });
     expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
-    await user.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    expect(await screen.findByText('1 answer saved on this device')).toBeInTheDocument();
   });
 
-  it('advances a correct answer once after playback and a short beat, without imposing an answer deadline', async () => {
-    const { container } = await timedQuiz();
-    const original = container.querySelector('audio')!.getAttribute('src');
-    await advanceTime(30_000);
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
-    await act(async () => { fireEvent.click(heardChoice(container)); });
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
-    await advanceTime(5000);
-    expect(container.querySelector('audio')).toHaveAttribute('src', original);
-    fireEvent.ended(container.querySelector('audio')!);
-    await advanceTime(1199);
-    expect(screen.getByText('Got it!')).toBeInTheDocument();
-    await advanceTime(1);
-    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
-    for (const choice of screen.getAllByRole('button', { name: /choose picture/i })) expect(choice).toBeEnabled();
-    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+  it('keeps Start disabled after exiting until an in-flight answer has been saved', async () => {
+    const pending = deferred<void>();
+    vi.mocked(ProgressStore.prototype.record).mockReturnValueOnce(pending.promise);
+    const { container } = await review();
+    await click(heardChoice(container, false));
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    expect(screen.getByRole('button', { name: /^saving/i })).toBeDisabled();
+    expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
+    await act(async () => { pending.resolve(); });
+    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
   });
 
-  it('holds a correct answer during replay, then gives it a fresh beat before advancing', async () => {
-    const { container } = await timedQuiz();
-    const original = container.querySelector('audio')!.getAttribute('src');
-    fireEvent.ended(container.querySelector('audio')!);
-    await act(async () => { fireEvent.click(heardChoice(container)); });
-    await advanceTime(500);
-    fireEvent.click(screen.getByRole('button', { name: /replay word/i }));
-    await advanceTime(5000);
-    expect(container.querySelector('audio')).toHaveAttribute('src', original);
-    expect(screen.getByText('Got it!')).toBeInTheDocument();
-    fireEvent.ended(container.querySelector('audio')!);
-    await advanceTime(1199);
-    expect(container.querySelector('audio')).toHaveAttribute('src', original);
-    await advanceTime(1);
-    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
-    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(3);
-    await advanceTime(5000);
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  it('waits for saving and the full correct-answer beat before advancing', async () => {
+    const pending = deferred<void>();
+    vi.mocked(ProgressStore.prototype.record).mockReturnValueOnce(pending.promise);
+    const { container } = await review();
+    vi.useFakeTimers();
+    endAudio(container);
+    await click(heardChoice(container));
+    const source = container.querySelector('audio')!.getAttribute('src');
+    await advance(5000);
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    await act(async () => { pending.resolve(); });
+    await advance(1199); expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    await advance(1); expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(source);
   });
 
-  it('holds automatic advance for pending or failed saving, then advances after a successful retry', async () => {
-    const pending = deferredSave();
-    vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(() => pending.promise);
-    const { container } = await timedQuiz();
-    const original = container.querySelector('audio')!.getAttribute('src');
-    fireEvent.ended(container.querySelector('audio')!);
-    await act(async () => { fireEvent.click(heardChoice(container)); });
-    await advanceTime(5000);
-    expect(screen.getByText('Saving…')).toBeInTheDocument();
-    await act(async () => { pending.reject(new Error('Storage failed')); });
-    await advanceTime(5000);
-    expect(container.querySelector('audio')).toHaveAttribute('src', original);
-    expect(screen.getByRole('alert')).toHaveTextContent(/hasn't been saved/i);
-    await act(async () => { fireEvent.click(screen.getByRole('button', { name: /retry saving/i })); });
-    await advanceTime(1200);
-    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
-    const calls = vi.mocked(ProgressStore.prototype.record).mock.calls;
-    expect(calls).toHaveLength(2);
-    expect(calls[1]![0]).toEqual(calls[0]![0]);
-  });
-
-  it('cancels a pending transition when leaving and starting a new round', async () => {
-    const { container } = await timedQuiz();
-    fireEvent.ended(container.querySelector('audio')!);
-    await act(async () => { fireEvent.click(heardChoice(container)); });
-    await advanceTime(500);
-    fireEvent.click(screen.getByRole('button', { name: /kikimashta home/i }));
-    fireEvent.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    await advanceTime(5000);
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
-    expect(screen.queryByText('Got it!')).not.toBeInTheDocument();
-    for (const choice of screen.getAllByRole('button', { name: /choose picture/i })) expect(choice).toBeEnabled();
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-  });
-
-  it('pauses a hidden quiz and leaves Continue available when returning', async () => {
-    const { container } = await timedQuiz();
-    const original = container.querySelector('audio')!.getAttribute('src');
-    fireEvent.ended(container.querySelector('audio')!);
-    await act(async () => { fireEvent.click(heardChoice(container)); });
-    const visibility = vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
+  it('holds advancement through replay, and a hidden page requires resuming', async () => {
+    const { container } = await review();
+    vi.useFakeTimers();
+    endAudio(container); await click(heardChoice(container));
+    const source = container.querySelector('audio')!.getAttribute('src');
+    await advance(1000); await click(screen.getByRole('button', { name: /replay word/i }));
+    await advance(5000); expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    endAudio(container);
+    vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
     fireEvent(document, new Event('visibilitychange'));
-    await advanceTime(5000);
-    visibility.mockReturnValue('visible');
-    fireEvent(document, new Event('visibilitychange'));
-    await advanceTime(5000);
-    expect(container.querySelector('audio')).toHaveAttribute('src', original);
-    fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
-    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(original);
-    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+    await advance(5000); expect(container.querySelector('audio')).toHaveAttribute('src', source);
+    expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
+    await click(screen.getByRole('button', { name: /^continue$/i }));
+    expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(source);
   });
 
-  it('treats a card context menu as a held button rather than an image action', async () => {
-    const user = userEvent.setup();
-    const { container } = render(<App/>);
-    await user.click(screen.getByRole('button', { name: /skip to quiz/i }));
-    const choice = heardChoice(container);
-    const image = within(choice).getByRole('img');
-    expect(image).toHaveAttribute('draggable', 'false');
-    const menu = new MouseEvent('contextmenu', { bubbles: true, cancelable: true });
-    expect(fireEvent(image, menu)).toBe(false);
-    expect(menu.defaultPrevented).toBe(true);
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-    // Keyboard activation still uses the same native button path.
-    choice.focus();
-    await user.keyboard('{Enter}');
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
-  });
-
-  it('shows answer-specific backgrounds and resets them on the next question and exit', async () => {
-    const { container } = await timedQuiz();
-    const root = document.documentElement;
-    const color = () => root.style.getPropertyValue('--screen-background');
+  it('clears feedback colors and pending automatic transitions when exiting', async () => {
+    const { container } = await review();
+    vi.useFakeTimers();
+    const color = () => document.documentElement.style.getPropertyValue('--screen-background');
     expect(color()).toBe(themeColors.pictureQuiz);
-    fireEvent.ended(container.querySelector('audio')!);
-    await act(async () => { fireEvent.click(heardChoice(container)); });
+    endAudio(container); await click(heardChoice(container));
     expect(color()).toBe(quizFeedbackColors.correct);
-    expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'correct');
-    await advanceTime(1200);
-    expect(color()).toBe(themeColors.pictureQuiz);
-    expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
-    await act(async () => { fireEvent.click(heardChoice(container, false)); });
-    expect(color()).toBe(quizFeedbackColors.incorrect);
-    expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'incorrect');
-    fireEvent.click(screen.getByRole('button', { name: /^continue$/i }));
-    expect(color()).toBe(themeColors.pictureQuiz);
-    fireEvent.click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await advance(5000);
     expect(color()).toBe(themeColors.home);
     expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
+    expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
   });
 });

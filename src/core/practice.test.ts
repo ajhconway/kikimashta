@@ -5,7 +5,7 @@ import starter from '../../content/ja.json';
 import catalogue from '../../content/catalog/ja.json';
 import selections from '../../content/practice-sets.json';
 import library from '../../public/vocabulary/library-data.json';
-import { buildPracticeBanks, practiceBanks } from './practice';
+import { buildPracticeBanks, practiceBanks, practicePool } from './practice';
 import type { WordItem } from '../types';
 import { createSession } from './session';
 
@@ -41,6 +41,18 @@ describe('playable practice banks', () => {
       expect(cards.every(card => card && !card.reviewRequired)).toBe(true);
       expect(new Set(cards.map(card => card.visualGroup)).size).toBe(6);
       expect(new Set(cards.map(card => card.concept)).size).toBe(6);
+    }
+  });
+
+  it('keeps an eligible adaptive pool with original starter IDs, no flagged cards or duplicate cues', () => {
+    expect(practicePool.items.slice(0, starter.items.length)).toEqual(starter.items);
+    expect(practicePool.items.length).toBeGreaterThan(30);
+    expect(new Set(practicePool.items.map(item => item.id)).size).toBe(practicePool.items.length);
+    expect(new Set(practicePool.items.map(item => item.image.src)).size).toBe(practicePool.items.length);
+    expect(new Set(practicePool.items.map(item => item.reading ?? item.text)).size).toBe(practicePool.items.length);
+    for (const item of practicePool.items.slice(starter.items.length)) {
+      expect(library.cards.find(card => card.id === item.id)?.reviewRequired).toBe(false);
+      for (const src of [item.image.src, ...item.audio.map(clip => clip.src)]) expect(existsSync(resolve('public', src))).toBe(true);
     }
   });
 

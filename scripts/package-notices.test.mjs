@@ -14,6 +14,8 @@ const dependencyLicenses = {
   react: 'MIT\r\nReact copyright notice.\r\n',
   'react-dom': 'MIT\nReact DOM copyright notice.\n',
   scheduler: 'MIT\nScheduler copyright notice.\n',
+  'ts-fsrs': 'MIT\nFSRS copyright notice.\n',
+  '@open-spaced-repetition/srs-kit': 'BSD-3-Clause\nSRS kit copyright notice.\n',
   idb: 'ISC License\nPermission from the idb author.\n',
   vite: '# Vite core license\nMIT terms.\n\n# Licenses of bundled dependencies\nComplete bundled dependency notices.\n',
 }

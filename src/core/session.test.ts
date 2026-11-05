@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { WordBank } from '../types';
-import { createSession, validateBank } from './session';
+import { createSession, createQuestions, validateBank } from './session';
 
 function bank(): WordBank {
   return {
@@ -31,6 +31,23 @@ describe('practice sessions', () => {
       expect(ids.every(id => words.items.some(item => item.id === id))).toBe(true);
     }
     expect(words).toEqual(original);
+  });
+
+  it('quizzes only the frozen targets and excludes repeated images and homophones', () => {
+    const pool = bank().items;
+    const copy = structuredClone(pool);
+    const targets = pool.slice(0, 2);
+    const questions = createQuestions(targets, [...pool, { ...pool[2]!, id: 'alias' }], () => 0.5);
+    expect(questions.map(question => question.target.id).sort()).toEqual(targets.map(item => item.id).sort());
+    for (const question of questions) {
+      expect(question.choices).toHaveLength(4);
+      expect(new Set(question.choices.map(item => item.image.src)).size).toBe(4);
+      expect(question.choices.filter(item => item.id === question.target.id)).toHaveLength(1);
+    }
+    expect(pool).toEqual(copy);
+    expect(createQuestions([], pool)).toEqual([]);
+    expect(() => createQuestions([pool[0]!, pool[0]!], pool)).toThrow(/unique/i);
+    expect(() => createQuestions(targets, pool.slice(0, 2))).toThrow(/distinct/i);
   });
 
   it('honors a shorter session and bounds a longer session to available words', () => {

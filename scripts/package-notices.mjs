@@ -6,7 +6,7 @@ import { parseArgs } from 'node:util'
 
 const repository = 'https://github.com/ajhconway/kikimashta'
 const sourceMarker = `data-source-link href="${repository}"`
-const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb', 'vite']
+const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb', 'vite', 'ts-fsrs', '@open-spaced-repetition/srs-kit']
 
 export async function packageNotices({
   root = process.cwd(), dist = join(root, 'dist'), revision = process.env.SOURCE_REVISION,
