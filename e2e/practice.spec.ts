@@ -78,7 +78,7 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
   if (pressScreenshot) {
-    await choice.scrollIntoViewIfNeeded();
+    await choice.hover();
     const card = await choice.boundingBox();
     expect(card).not.toBeNull();
     await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
@@ -218,7 +218,7 @@ test('holding a picture acts as one button press on release', async ({ page }, t
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
-  await choice.scrollIntoViewIfNeeded();
+  await choice.hover();
   const protections = await choice.evaluate(button => {
     const image = button.querySelector('img')!;
     return {
