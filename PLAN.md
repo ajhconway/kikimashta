@@ -33,16 +33,17 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 - Each agent includes relevant tests with its changes. Review test quality and integration; require lint, type checks, tests, and a production build in GitHub Actions before merging or deploying.
 - Check pronunciation, playback, touch interactions, and layout on the actual iPhone at playable milestones and before releases.
 
-## Current priorities
+## Roadmap
 
-V0 is playable, the visual direction is approved, and the expanded picture/audio library is available for review. Playful quiz interactions are the current focus; review each pass before moving on:
+V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. Practice offers the six-word starter and three additional six-word themed sets, ready for feedback.
 
-1. **Visuals:** minimal, brighter purple/pink/orange, and more cartoony and game-like, with distinct background colors for lessons and each quiz type.
-2. **Audio:** compare natural Japanese voices, then replace the low-quality clips with consistent volume and comfortable timing.
-3. **Interactions:** more fun, engaging, fast-paced, and natural.
+1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
+2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Start with simple, adjustable learning rules; sessions can continue while practice items are available.
+3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
+4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
 
-Then add Supabase sign-in and cross-device sync, carrying forward existing progress.
+### Current milestone: expanded practice
 
-Later, add adaptive review scheduling and introduce new words as mastery improves. Sessions can then continue until no practice items are available. Add offline practice, decreasing answer time limits, delayed-picture and sentence quizzes, and Japanese writing alongside audio and pictures. English text remains an option.
+Keep the existing starter round. Add a few six-word themed sets using existing pictures and Marin/Cedar recordings. Let the user choose a set, preview its words, and practice that same set in a short untimed quiz. Preserve stable item IDs and saved history. Avoid ambiguous or synonymous choices in these first sets; pictures and pronunciation still need feedback through use.
 
-Keep *k*, word counts, session length, visual details, and the learning algorithm flexible.
+Keep only the next milestone detailed in GitHub. Later stages remain flexible, with no fixed dates. Keep *k*, word counts, session length, visual details, and the learning algorithm adjustable.

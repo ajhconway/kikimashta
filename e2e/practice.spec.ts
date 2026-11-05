@@ -1,5 +1,13 @@
 import { expect, test, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import bank from '../content/ja.json' with { type: 'json' };
+import type { WordItem } from '../src/types';
+
+const practiceSets = JSON.parse(readFileSync(new URL('../content/practice-sets.json', import.meta.url), 'utf8')) as { id: string; itemIds: string[] }[];
+const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as {
+  language: string;
+  items: Pick<WordItem, 'id' | 'image' | 'audio'>[];
+};
 
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 const screenColor = (page: Page) => page.evaluate(() => document.documentElement.style.getPropertyValue('--screen-background').trim());
@@ -75,8 +83,16 @@ async function expectAnswerPictures(page: Page, retainedAlts: string[], exit: 'f
 }
 
 async function expectDeparturesFinished(page: Page, count: number) {
+  // Computed end times include each card's stagger delay. A paused advance
+  // timer must not conceal exits that exceed the earliest 1.2-second advance.
+  const endTimes = await page.locator('.answer-departures').evaluate(layer =>
+    layer.getAnimations({ subtree: true }).map(animation => Number(animation.effect?.getComputedTiming().endTime)),
+  );
+  expect(endTimes).toHaveLength(count);
+  expect(Math.max(...endTimes), 'every exit including stagger fits within the answer beat').toBeLessThanOrEqual(1200);
   const result = await page.locator('.answer-departures').evaluate(async (layer, expectedCount) => {
-    const results = await Promise.allSettled(layer.getAnimations({ subtree: true }).map(animation => animation.finished));
+    const animations = layer.getAnimations({ subtree: true });
+    const results = await Promise.allSettled(animations.map(animation => animation.finished));
     const cards = Array.from(layer.querySelectorAll('.departing-card'));
     return {
       connected: layer.isConnected,
@@ -142,46 +158,54 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
-  if (pressScreenshot) {
-    await choice.hover();
-    const card = await choice.boundingBox();
-    expect(card).not.toBeNull();
-    await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
-    await page.mouse.down();
-    try {
-      await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
-    } finally {
-      // Releasing the real press answers normally; it does not alter quiz pacing.
-      await page.mouse.up();
+  // Inspect transient feedback without racing the app's 1.2-second advance timer.
+  // CSS animations and native audio keep running; resume timers before waiting
+  // for the next question so autoplay and the normal answer delay remain tested.
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+  try {
+    if (pressScreenshot) {
+      await choice.hover();
+      const card = await choice.boundingBox();
+      expect(card).not.toBeNull();
+      await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
+      await page.mouse.down();
+      try {
+        await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
+      } finally {
+        // Releasing the real press answers normally while its advance timer is paused.
+        await page.mouse.up();
+      }
+    } else {
+      await choice.click();
     }
-  } else {
-    await choice.click();
+    await expect(page.locator('.feedback')).toHaveText('Got it!');
+    await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
+    await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
+    await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
+    await expectAnswerPictures(page, [target.image.alt], 'fly');
+    await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
+    await expect.poll(() => page.evaluate(before => {
+      const choices = document.querySelector('.choices')!.getBoundingClientRect();
+      const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
+      const cards = Array.from(document.querySelectorAll('.choices .choice-slot:not(.is-departing) .picture-choice'), card => card.getBoundingClientRect());
+      return document.documentElement.scrollWidth <= innerWidth
+        && document.documentElement.scrollHeight <= before.pageHeight
+        && Math.abs(choices.width - before.gridWidth) <= 1 && Math.abs(choices.height - before.gridHeight) <= 1
+        && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
+          && card.bottom <= feedback.top);
+    }, beforeAnswer), { message: 'feedback keeps the grid stable; retained pictures fit and departures add no page overflow' }).toBe(true);
+    if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
+    // Native CSS animations finish while JavaScript timers remain paused.
+    await expectDeparturesFinished(page, 3);
+  } finally {
+    await page.clock.resume();
   }
-  await expect(page.locator('.feedback')).toHaveText('Got it!');
-  await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
-  await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
-  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
-  await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
-  await expectAnswerPictures(page, [target.image.alt], 'fly');
-  await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
-  await expect.poll(() => page.evaluate(before => {
-    const choices = document.querySelector('.choices')!.getBoundingClientRect();
-    const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
-    const cards = Array.from(document.querySelectorAll('.choices .choice-slot:not(.is-departing) .picture-choice'), card => card.getBoundingClientRect());
-    return document.documentElement.scrollWidth <= innerWidth
-      && document.documentElement.scrollHeight <= before.pageHeight
-      && Math.abs(choices.width - before.gridWidth) <= 1 && Math.abs(choices.height - before.gridHeight) <= 1
-      && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
-        && card.bottom <= feedback.top);
-  }, beforeAnswer), { message: 'feedback keeps the grid stable; retained pictures fit and departures add no page overflow' }).toBe(true);
-  if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
-  // Check completion in one browser evaluation, then wait directly for the next word.
-  // All answer-state assertions above run before the longer flight finishes.
-  await expectDeparturesFinished(page, 3);
 }
 
 test('preview, complete a short round, and retain real device progress after reload', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
+  await page.clock.install();
   await page.goto('./');
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -234,6 +258,74 @@ test('preview, complete a short round, and retain real device progress after rel
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
   await page.reload();
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
+});
+
+test('an expanded set previews its words, quizzes that set, and saves catalogue IDs after reload', async ({ page }, testInfo) => {
+  test.setTimeout(60_000);
+  const selection = practiceSets[0]!;
+  const selectedBank = {
+    id: selection.id,
+    language: catalogue.language,
+    items: selection.itemIds.map(id => catalogue.items.find(item => item.id === id)!),
+  };
+  await page.goto('./');
+  await page.getByRole('combobox', { name: 'Practice set' }).selectOption(selectedBank.id);
+  await captureScreen(page, 'expanded-home-' + testInfo.project.name);
+  await page.getByRole('button', { name: /^start/i }).click();
+  for (let i = 0; i < selectedBank.items.length; i++) {
+    const item = selectedBank.items[i]!;
+    const picture = page.locator('.preview-picture img');
+    await expect.poll(async () => (await picture.getAttribute('src'))?.endsWith(item.image.src)).toBe(true);
+    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect.poll(async () => {
+      const source = await page.locator('audio').getAttribute('src');
+      return item.audio.some(clip => source?.endsWith(clip.src));
+    }).toBe(true);
+    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    await page.getByRole('button', { name: i + 1 === selectedBank.items.length ? /play a round/i : /next word/i }).click();
+  }
+  const seen = new Set<string>();
+  for (let i = 0; i < selectedBank.items.length; i++) {
+    const choices = page.getByRole('button', { name: /choose picture/i });
+    await expect(choices).toHaveCount(4);
+    await expect(choices.first()).toBeEnabled();
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
+    const source = await page.locator('audio').getAttribute('src');
+    const target = selectedBank.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)));
+    expect(target, 'each question uses a recording from the selected set').toBeDefined();
+    expect(seen.has(target!.id)).toBe(false);
+    seen.add(target!.id);
+    const pictures = await choices.locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
+    expect(pictures.every(alt => selectedBank.items.some(item => item.image.alt === alt))).toBe(true);
+    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+    await choices.filter({ has: page.getByRole('img', { name: target!.image.alt, exact: true }) }).click();
+    await expect(page.locator('.feedback')).toHaveText('Got it!');
+    // The normal answer delay and audio completion advance the round.
+  }
+  await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
+  expect([...seen].sort()).toEqual(selectedBank.items.map(item => item.id).sort());
+  await page.getByRole('button', { name: /back home/i }).click();
+  await expect(page.getByRole('combobox', { name: 'Practice set' })).toHaveValue(selectedBank.id);
+  await page.reload();
+  await expect(page.getByText('6 answers saved on this device')).toBeVisible();
+  const saved = await page.evaluate(async () => {
+    const database = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    try {
+      return await new Promise<{ itemId: string; language: string; correct: boolean; choiceIds: string[] }[]>((resolve, reject) => {
+        const request = database.transaction('attempts').objectStore('attempts').getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    } finally { database.close(); }
+  });
+  expect(saved.map(attempt => attempt.itemId).sort()).toEqual(selectedBank.items.map(item => item.id).sort());
+  expect(saved.every(attempt => attempt.correct && attempt.language === selectedBank.language
+    && attempt.choiceIds.length === 4 && attempt.choiceIds.every(id => selectedBank.items.some(item => item.id === id)))).toBe(true);
 });
 
 test('a miss waits for Continue and stays usable with reduced motion', async ({ page }, testInfo) => {
@@ -364,6 +456,7 @@ test('holding a picture acts as one button press on release', async ({ page }, t
 });
 
 test('an unavailable recording can be retried without recording a premature answer', async ({ page }) => {
+  await page.clock.install();
   await page.route('**/audio/*.mp3', route => route.abort());
   await page.goto('./');
   await page.getByRole('button', { name: /skip to quiz/i }).click();

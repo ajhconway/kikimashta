@@ -2,7 +2,7 @@
 
 A relaxed listening game that starts with Japanese. Hear a word, choose its picture, and build recognition through short practice sessions.
 
-The first version uses six words, picture-and-audio previews, untimed quizzes, and progress saved on the device. Japanese is the first language bank; words, media, and learning history are kept separate so other languages can follow.
+Practice offers a six-word starter round and three additional themed sets, with picture-and-audio previews, untimed quizzes, and progress saved on the device. Japanese is the first language bank; words, media, and learning history are kept separate so other languages can follow.
 
 Quizzes use flat picture cards with an expressive squash on press, Kiku the listening cat, and larger progress dots at the bottom. Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a small firework of stars while the other cards give an excited shake and fly away. After a miss, the two uninvolved pictures slump and fall away, leaving the chosen and correct pictures visible against a muted background. Grid spacing stays fixed. Answer messages keep only their main text. Correct answers move on after a 1.2-second beat, once playback and saving finish. Replay holds that transition while the word plays again; misses wait for Continue. Leaving the page pauses playback and automatic transitions. Motion follows the device’s reduced-motion preference. Quiz cards suppress image callouts and selection during a hold while retaining native button activation.
 
@@ -24,7 +24,7 @@ npm run dev
 
 Production uses GitHub Pages with `kikimashta.com` configured in the repository’s Pages settings. Domain routing is managed there; the Actions deployment does not use a repository `CNAME` file.
 
-The word bank is in `content/ja.json`. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed. Named background colors live in `src/themes.ts`; give future quiz types their own theme.
+The starter bank is in `content/ja.json`. Additional six-word sets are listed in `content/practice-sets.json`, referencing stable IDs from `content/catalog/ja.json`; `src/core/practice.ts` resolves them into playable banks. Source levels remain provisional. Keep media paths relative to the app. Picture count and session length are parameters in `src/core/session.ts`. Response timing starts when a question is presented; no deadline is imposed. Named background colors live in `src/themes.ts`; give future quiz types their own theme.
 
 Starter words use OpenAI Marin and Cedar, selected through word and sentence auditions. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. The same format supports a single voice or a human recording. Progress remains tied to the language and word, across voices. Pronunciation and playback still need review on the iPhone 17.
 
