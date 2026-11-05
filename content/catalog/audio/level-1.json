@@ -1,0 +1,2874 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-realtime-2.1-mini",
+  "language": "ja-JP",
+  "sourceLevel": 1,
+  "createdAt": "2026-11-05T07:03:02.645Z",
+  "sourceRevision": "728fa255e45a991a0c3dfeb2e14e3b7d4cbb45a7",
+  "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects.",
+  "contextTemplate": "Written form, reading, and intended meaning are supplied as silent metadata via instructionsFor; only the reading is spoken.",
+  "processing": "Original mono 24kHz PCM preserved as WAV; active-sample RMS target -22 dBFS, max boost 9 dB, pre-MP3 sample peak ceiling -4 dBFS; 120ms lead/240ms tail padding; no trimming or pitch/time alteration.",
+  "review": "Generated speech; pronunciation and pitch accent require listening review.",
+  "expectedClips": 74,
+  "clips": [
+    {
+      "id": "ja-v-c0f58bfab324",
+      "voice": "marin",
+      "spelling": "上",
+      "text": "うえ",
+      "meaning": "Above",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 上; pronunciation うえ; intended meaning Above. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "うえ",
+      "usage": {
+        "total_tokens": 202,
+        "input_tokens": 152,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 40,
+          "audio_tokens": 10,
+          "reasoning_tokens": 30
+        }
+      },
+      "file": "marin-ja-v-c0f58bfab324.mp3",
+      "original": "marin-ja-v-c0f58bfab324.wav",
+      "originalSha256": "af144ca149d58d3cbdae636d655fd828544e6dd7ad9a706da53dde01e8f6e85c",
+      "deliverySha256": "0dcea922cecbd823939057f14c8feb19dda8dfe653c8d5c21fb2f2814191327e",
+      "deliveryBytes": 5804,
+      "durationSeconds": 0.5,
+      "rmsDb": -20.492583663023993,
+      "peakDb": -12.133938315503682,
+      "gainDb": -1.5074163369760072
+    },
+    {
+      "id": "ja-v-c0f58bfab324",
+      "voice": "cedar",
+      "spelling": "上",
+      "text": "うえ",
+      "meaning": "Above",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 上; pronunciation うえ; intended meaning Above. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "うえ",
+      "usage": {
+        "total_tokens": 217,
+        "input_tokens": 152,
+        "output_tokens": 65,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 42,
+          "audio_tokens": 23,
+          "reasoning_tokens": 30
+        }
+      },
+      "file": "cedar-ja-v-c0f58bfab324.mp3",
+      "original": "cedar-ja-v-c0f58bfab324.wav",
+      "originalSha256": "7148a76d156bb4978d1c815c1c4fe78864fe5e386b0170c7926754e4bc5d46ff",
+      "deliverySha256": "f83fca03eaf2b770395ecfeba48af608b8272e4c05ffd2cbff4474f37c9394fd",
+      "deliveryBytes": 9956,
+      "durationSeconds": 1.15,
+      "rmsDb": -18.42421504578612,
+      "peakDb": -5.376565445274598,
+      "gainDb": -3.57578495421388
+    },
+    {
+      "id": "ja-v-2cc50c2d66a6",
+      "voice": "marin",
+      "spelling": "大人",
+      "text": "おとな",
+      "meaning": "Adult",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大人; pronunciation おとな; intended meaning Adult. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おとな",
+      "usage": {
+        "total_tokens": 269,
+        "input_tokens": 152,
+        "output_tokens": 117,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 101,
+          "audio_tokens": 16,
+          "reasoning_tokens": 89
+        }
+      },
+      "file": "marin-ja-v-2cc50c2d66a6.mp3",
+      "original": "marin-ja-v-2cc50c2d66a6.wav",
+      "originalSha256": "eab48cb02304455c45cde4bf1bed7840071ba899951471461fd9add05ef3d88e",
+      "deliverySha256": "6c38936c67d2f771e92cccd01564e7fc2aca0cb9a67ddf68bb7e41ac6f45090e",
+      "deliveryBytes": 8300,
+      "durationSeconds": 0.8,
+      "rmsDb": -18.463926333539135,
+      "peakDb": -9.611618771971745,
+      "gainDb": -3.536073666460865
+    },
+    {
+      "id": "ja-v-2cc50c2d66a6",
+      "voice": "cedar",
+      "spelling": "大人",
+      "text": "おとな",
+      "meaning": "Adult",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大人; pronunciation おとな; intended meaning Adult. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おとな",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 152,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 19,
+          "reasoning_tokens": 20
+        }
+      },
+      "file": "cedar-ja-v-2cc50c2d66a6.mp3",
+      "original": "cedar-ja-v-2cc50c2d66a6.wav",
+      "originalSha256": "6a326ff96860faa86629bbedf95d8a5e7daeadbf39144d289b03f38370888cc6",
+      "deliverySha256": "a158045f322214da9beeda78e675cb324c650835c293e1a30cf0c9e6f63d79ce",
+      "deliveryBytes": 9620,
+      "durationSeconds": 0.95,
+      "rmsDb": -20.753024086040842,
+      "peakDb": -7.08523355954917,
+      "gainDb": -1.246975913959158
+    },
+    {
+      "id": "ja-v-7de8b40e4f57",
+      "voice": "marin",
+      "spelling": "一人",
+      "text": "ひとり",
+      "meaning": "Alone",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一人; pronunciation ひとり; intended meaning Alone. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひとり",
+      "usage": {
+        "total_tokens": 266,
+        "input_tokens": 155,
+        "output_tokens": 111,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 93,
+          "audio_tokens": 18,
+          "reasoning_tokens": 80
+        }
+      },
+      "file": "marin-ja-v-7de8b40e4f57.mp3",
+      "original": "marin-ja-v-7de8b40e4f57.wav",
+      "originalSha256": "c2df7b9cbcb1d06ae356452a021278db3a853b900749845d2a0969f0943bbad6",
+      "deliverySha256": "f513516ebdd517663c9e031963b7b8c192e3bf7943edde95331430a12a744e30",
+      "deliveryBytes": 7892,
+      "durationSeconds": 0.9,
+      "rmsDb": -21.740565148313713,
+      "peakDb": -11.498669000543014,
+      "gainDb": -0.25943485168628655
+    },
+    {
+      "id": "ja-v-7de8b40e4f57",
+      "voice": "cedar",
+      "spelling": "一人",
+      "text": "ひとり",
+      "meaning": "Alone",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一人; pronunciation ひとり; intended meaning Alone. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひとり",
+      "usage": {
+        "total_tokens": 217,
+        "input_tokens": 155,
+        "output_tokens": 62,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 47,
+          "audio_tokens": 15,
+          "reasoning_tokens": 36
+        }
+      },
+      "file": "cedar-ja-v-7de8b40e4f57.mp3",
+      "original": "cedar-ja-v-7de8b40e4f57.wav",
+      "originalSha256": "830fc0344249f626ea8a2d4a445686eb7810a08df4d60fb6beaae75f7863532f",
+      "deliverySha256": "ed4cd705659672bcd9108bb5b9b074719e7139b98cc673780e7abd3e12b2b2ea",
+      "deliveryBytes": 7292,
+      "durationSeconds": 0.75,
+      "rmsDb": -17.102135817470064,
+      "peakDb": -5.284023453077467,
+      "gainDb": -4.897864182529936
+    },
+    {
+      "id": "ja-v-3fef4445ce13",
+      "voice": "marin",
+      "spelling": "人工",
+      "text": "じんこう",
+      "meaning": "Artificial",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人工; pronunciation じんこう; intended meaning Artificial. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じんこう",
+      "usage": {
+        "total_tokens": 308,
+        "input_tokens": 155,
+        "output_tokens": 153,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 121,
+          "audio_tokens": 32,
+          "reasoning_tokens": 108
+        }
+      },
+      "file": "marin-ja-v-3fef4445ce13.mp3",
+      "original": "marin-ja-v-3fef4445ce13.wav",
+      "originalSha256": "e53328f0ea9d466611ad0bc3ca362b8127f0dccb8a077dc066c0d3bdcc4e0d8c",
+      "deliverySha256": "dbb00f3b6641f5ecdbbb05cbe8d6de3bf2dede04a3441b2c5c4646b8ac64db40",
+      "deliveryBytes": 13868,
+      "durationSeconds": 1.6,
+      "rmsDb": -18.62082202839302,
+      "peakDb": -8.169550701460889,
+      "gainDb": -3.3791779716069783
+    },
+    {
+      "id": "ja-v-3fef4445ce13",
+      "voice": "cedar",
+      "spelling": "人工",
+      "text": "じんこう",
+      "meaning": "Artificial",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人工; pronunciation じんこう; intended meaning Artificial. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じんこう",
+      "usage": {
+        "total_tokens": 304,
+        "input_tokens": 155,
+        "output_tokens": 149,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 125,
+          "audio_tokens": 24,
+          "reasoning_tokens": 112
+        }
+      },
+      "file": "cedar-ja-v-3fef4445ce13.mp3",
+      "original": "cedar-ja-v-3fef4445ce13.wav",
+      "originalSha256": "55d840a0f722b5d07784cbe9693de52b298d652d552112f68ee48da06f453db1",
+      "deliverySha256": "38e030044b5e78f6497dfae18eb486e7faaeb77dbde7e4d151e7d4de7c11fa3d",
+      "deliveryBytes": 10532,
+      "durationSeconds": 1.2,
+      "rmsDb": -18.109067350720643,
+      "peakDb": -4.213588928729188,
+      "gainDb": -3.890932649279357
+    },
+    {
+      "id": "ja-v-520308b3c3b4",
+      "voice": "cedar",
+      "spelling": "下",
+      "text": "した",
+      "meaning": "Below",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 下; pronunciation した; intended meaning Below. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "した",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 150,
+        "output_tokens": 53,
+        "input_token_details": {
+          "text_tokens": 150,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 14,
+          "reasoning_tokens": 30
+        }
+      },
+      "file": "cedar-ja-v-520308b3c3b4.mp3",
+      "original": "cedar-ja-v-520308b3c3b4.wav",
+      "originalSha256": "ac6f6a3c4258e8b32824fe6efeb2896b35de5dc69ab3e272935d1b7b4c89eafa",
+      "deliverySha256": "55ac9420d93c741b636f64780982edcd5bb4456c1a2ad039a748aab4375c8f03",
+      "deliveryBytes": 7484,
+      "durationSeconds": 0.7,
+      "rmsDb": -21.776207768499106,
+      "peakDb": -4.642521746818633,
+      "gainDb": -0.22379223150089445
+    },
+    {
+      "id": "ja-v-f6377dcbb564",
+      "voice": "marin",
+      "spelling": "大きい",
+      "text": "おおきい",
+      "meaning": "Big",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大きい; pronunciation おおきい; intended meaning Big. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おおきい",
+      "usage": {
+        "total_tokens": 222,
+        "input_tokens": 157,
+        "output_tokens": 65,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 48,
+          "audio_tokens": 17,
+          "reasoning_tokens": 34
+        }
+      },
+      "file": "marin-ja-v-f6377dcbb564.mp3",
+      "original": "marin-ja-v-f6377dcbb564.wav",
+      "originalSha256": "6275209c3ec046bd1512461f6ddf632086b2c98eeb606ce0a586656d14b706fd",
+      "deliverySha256": "623d2985c1026510b3729e2e748b169e8f0c89ee22107b9c4cee93c152e2d52e",
+      "deliveryBytes": 8636,
+      "durationSeconds": 0.85,
+      "rmsDb": -23.81208442498906,
+      "peakDb": -13.211951450837677,
+      "gainDb": 1.8120844249890595
+    },
+    {
+      "id": "ja-v-f6377dcbb564",
+      "voice": "cedar",
+      "spelling": "大きい",
+      "text": "おおきい",
+      "meaning": "Big",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大きい; pronunciation おおきい; intended meaning Big. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おおきい",
+      "usage": {
+        "total_tokens": 234,
+        "input_tokens": 157,
+        "output_tokens": 77,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 51,
+          "audio_tokens": 26,
+          "reasoning_tokens": 37
+        }
+      },
+      "file": "cedar-ja-v-f6377dcbb564.mp3",
+      "original": "cedar-ja-v-f6377dcbb564.wav",
+      "originalSha256": "79e17e1645e43484d1fd639ecfbf3dc401322d93f7340ae2cb0cb41e66b2b4cb",
+      "deliverySha256": "a4359142e54d3a7d7305e171b8b71635f6b485b0189f3c9857caaeeaa657dd80",
+      "deliveryBytes": 11228,
+      "durationSeconds": 1.3,
+      "rmsDb": -18.435537150151433,
+      "peakDb": -5.825073305989562,
+      "gainDb": -3.5644628498485673
+    },
+    {
+      "id": "ja-v-f6ed7c17c0d5",
+      "voice": "marin",
+      "spelling": "八",
+      "text": "はち",
+      "meaning": "Eight",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 八; pronunciation はち; intended meaning Eight. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "はち",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 151,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 12,
+          "reasoning_tokens": 28
+        }
+      },
+      "file": "marin-ja-v-f6ed7c17c0d5.mp3",
+      "original": "marin-ja-v-f6ed7c17c0d5.wav",
+      "originalSha256": "0975c41f494189bfbd15f40c78cfd22d22f5dbb783ac6d4b76abc453f5a53985",
+      "deliverySha256": "be54be7214c93561d98bcef33b1604b736e83648905e34494c23f459aa4f54d3",
+      "deliveryBytes": 7028,
+      "durationSeconds": 0.6,
+      "rmsDb": -22.799007274796075,
+      "peakDb": -11.962039946638928,
+      "gainDb": 0.7990072747960753
+    },
+    {
+      "id": "ja-v-f6ed7c17c0d5",
+      "voice": "cedar",
+      "spelling": "八",
+      "text": "はち",
+      "meaning": "Eight",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 八; pronunciation はち; intended meaning Eight. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "はち",
+      "usage": {
+        "total_tokens": 206,
+        "input_tokens": 151,
+        "output_tokens": 55,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 41,
+          "audio_tokens": 14,
+          "reasoning_tokens": 31
+        }
+      },
+      "file": "cedar-ja-v-f6ed7c17c0d5.mp3",
+      "original": "cedar-ja-v-f6ed7c17c0d5.wav",
+      "originalSha256": "b3e842cb6efc8b128207f0127a0ea32edc2903db2a2dcfe269d515c739ff1555",
+      "deliverySha256": "7a821ad7ab5f15c594ab7d001f35cfd33008ee8b26b4485667d51da9f8be7fba",
+      "deliveryBytes": 7052,
+      "durationSeconds": 0.7,
+      "rmsDb": -22.0692702984384,
+      "peakDb": -5.707176304219425,
+      "gainDb": 0.0692702984384006
+    },
+    {
+      "id": "ja-v-6c9351ae67e6",
+      "voice": "marin",
+      "spelling": "八つ",
+      "text": "やっつ",
+      "meaning": "Eight Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 八つ; pronunciation やっつ; intended meaning Eight Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "やっつ",
+      "usage": {
+        "total_tokens": 209,
+        "input_tokens": 156,
+        "output_tokens": 53,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 21,
+          "reasoning_tokens": 19
+        }
+      },
+      "file": "marin-ja-v-6c9351ae67e6.mp3",
+      "original": "marin-ja-v-6c9351ae67e6.wav",
+      "originalSha256": "0aff4ae97cf23ab0d8be202e705e1e1367b6c700c554b68266752b1a3bd0c307",
+      "deliverySha256": "24824c5b376e33e547ad04c66a5a3d63af0f80f8711a7b87ae4014a3379f8df4",
+      "deliveryBytes": 9812,
+      "durationSeconds": 1.05,
+      "rmsDb": -19.18683438709305,
+      "peakDb": -5.7133147423816695,
+      "gainDb": -2.8131656129069498
+    },
+    {
+      "id": "ja-v-6c9351ae67e6",
+      "voice": "cedar",
+      "spelling": "八つ",
+      "text": "やっつ",
+      "meaning": "Eight Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 八つ; pronunciation やっつ; intended meaning Eight Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "やっつ",
+      "usage": {
+        "total_tokens": 206,
+        "input_tokens": 156,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 29,
+          "audio_tokens": 21,
+          "reasoning_tokens": 16
+        }
+      },
+      "file": "cedar-ja-v-6c9351ae67e6.mp3",
+      "original": "cedar-ja-v-6c9351ae67e6.wav",
+      "originalSha256": "bc6f41c5baa555f1adab62e00421e3046e0e49f76f41578b71382d0390c3517f",
+      "deliverySha256": "921e2fbee5445709884be016c50dc2f69d722b84ef4a0f2c05dfac64d3e0b4a6",
+      "deliveryBytes": 10052,
+      "durationSeconds": 1.05,
+      "rmsDb": -19.446694414566476,
+      "peakDb": -0.7865741604347039,
+      "gainDb": -3.2134258395652964
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "voice": "marin",
+      "spelling": "入り口",
+      "text": "いりぐち",
+      "meaning": "Entrance",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 入り口; pronunciation いりぐち; intended meaning Entrance. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "いりぐち",
+      "usage": {
+        "total_tokens": 218,
+        "input_tokens": 158,
+        "output_tokens": 60,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 42,
+          "audio_tokens": 18,
+          "reasoning_tokens": 28
+        }
+      },
+      "file": "marin-ja-v-20cbd1c15a35.mp3",
+      "original": "marin-ja-v-20cbd1c15a35.wav",
+      "originalSha256": "c926713d15532be54e16262afb6ec19e04ba1e0d2798176941ce6fb81041a65e",
+      "deliverySha256": "ba9bca9c6c96118349607567e47cfdf861b559c30de7ed15a8c2bd6ab87f6ac9",
+      "deliveryBytes": 9092,
+      "durationSeconds": 0.9,
+      "rmsDb": -19.306712297924513,
+      "peakDb": -8.093838521596606,
+      "gainDb": -2.6932877020754873
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "voice": "cedar",
+      "spelling": "入り口",
+      "text": "いりぐち",
+      "meaning": "Entrance",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 入り口; pronunciation いりぐち; intended meaning Entrance. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "いりぐち",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 158,
+        "output_tokens": 43,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 25,
+          "audio_tokens": 18,
+          "reasoning_tokens": 11
+        }
+      },
+      "file": "cedar-ja-v-20cbd1c15a35.mp3",
+      "original": "cedar-ja-v-20cbd1c15a35.wav",
+      "originalSha256": "55e26ed6bead6e80a3a7d864eb4b9d24dda3342b6ef79ccb0cbcd9f41558fefc",
+      "deliverySha256": "180fe15e54b29ad5b0a1c1670cf2f5fe10593433907fb4f5bf4ccedc07cf3025",
+      "deliveryBytes": 8564,
+      "durationSeconds": 0.9,
+      "rmsDb": -18.36494615500452,
+      "peakDb": -7.0005506829029605,
+      "gainDb": -3.635053844995479
+    },
+    {
+      "id": "ja-v-1d446778d33c",
+      "voice": "marin",
+      "spelling": "大した",
+      "text": "たいした",
+      "meaning": "Great",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大した; pronunciation たいした; intended meaning Great. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "たいした",
+      "usage": {
+        "total_tokens": 218,
+        "input_tokens": 153,
+        "output_tokens": 65,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 37,
+          "audio_tokens": 28,
+          "reasoning_tokens": 25
+        }
+      },
+      "file": "marin-ja-v-1d446778d33c.mp3",
+      "original": "marin-ja-v-1d446778d33c.wav",
+      "originalSha256": "2cf755823bf4e03b95a0f245087aab47107a4c20dcd6dec1ffb7e004a8877308",
+      "deliverySha256": "8addea6dc1f1141d4f0b02781bdb9e3240b5191820f2ed973962ef8b1529f5b0",
+      "deliveryBytes": 12092,
+      "durationSeconds": 1.4,
+      "rmsDb": -19.86599520036244,
+      "peakDb": -8.910459324144911,
+      "gainDb": -2.134004799637559
+    },
+    {
+      "id": "ja-v-1d446778d33c",
+      "voice": "cedar",
+      "spelling": "大した",
+      "text": "たいした",
+      "meaning": "Great",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大した; pronunciation たいした; intended meaning Great. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "たいした",
+      "usage": {
+        "total_tokens": 267,
+        "input_tokens": 153,
+        "output_tokens": 114,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 94,
+          "audio_tokens": 20,
+          "reasoning_tokens": 82
+        }
+      },
+      "file": "cedar-ja-v-1d446778d33c.mp3",
+      "original": "cedar-ja-v-1d446778d33c.wav",
+      "originalSha256": "2f4be003548d0f8ccc1407a853f7fae36f755ab72529a636d5af7b155d2a39a4",
+      "deliverySha256": "7d4f6a730ebb4d9a1a5604402e5ed5b92af543b9a2687ab47dec143ccaa72cf5",
+      "deliveryBytes": 9020,
+      "durationSeconds": 1,
+      "rmsDb": -17.757092105974692,
+      "peakDb": -0.49326021549912835,
+      "gainDb": -4.242907894025308
+    },
+    {
+      "id": "ja-v-ddd9dca106e2",
+      "voice": "marin",
+      "spelling": "山",
+      "text": "やま",
+      "meaning": "Mountain",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 山; pronunciation やま; intended meaning Mountain. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "やま",
+      "usage": {
+        "total_tokens": 202,
+        "input_tokens": 152,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 37,
+          "audio_tokens": 13,
+          "reasoning_tokens": 27
+        }
+      },
+      "file": "marin-ja-v-ddd9dca106e2.mp3",
+      "original": "marin-ja-v-ddd9dca106e2.wav",
+      "originalSha256": "b3be57f30991af333023288dc1bd315ed72594c73857eb720a9830a35f08f0a5",
+      "deliverySha256": "74cb579abf0064194e713cd8f1c1477d7d3cefe7b06cbdfc3dcafb8f2ce15805",
+      "deliveryBytes": 7028,
+      "durationSeconds": 0.65,
+      "rmsDb": -20.150687274504836,
+      "peakDb": -9.981705110068479,
+      "gainDb": -1.8493127254951638
+    },
+    {
+      "id": "ja-v-ddd9dca106e2",
+      "voice": "cedar",
+      "spelling": "山",
+      "text": "やま",
+      "meaning": "Mountain",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 山; pronunciation やま; intended meaning Mountain. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "やま",
+      "usage": {
+        "total_tokens": 204,
+        "input_tokens": 152,
+        "output_tokens": 52,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 36,
+          "audio_tokens": 16,
+          "reasoning_tokens": 24
+        }
+      },
+      "file": "cedar-ja-v-ddd9dca106e2.mp3",
+      "original": "cedar-ja-v-ddd9dca106e2.wav",
+      "originalSha256": "9b04da5cfe5d5cf4d67bbab9f3d0999a15f8786be3f76ad6b79539e0e5b4c6f6",
+      "deliverySha256": "b630629c2d136953fc99d6d4f163397564450adb45bf9f340df6fc1cb2f3819e",
+      "deliveryBytes": 6884,
+      "durationSeconds": 0.8,
+      "rmsDb": -20.740144400022913,
+      "peakDb": -4.4086584615652,
+      "gainDb": -1.2598555999770866
+    },
+    {
+      "id": "ja-v-9e64feeea5ea",
+      "voice": "marin",
+      "spelling": "口",
+      "text": "くち",
+      "meaning": "Mouth",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 口; pronunciation くち; intended meaning Mouth. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "くち",
+      "usage": {
+        "total_tokens": 209,
+        "input_tokens": 153,
+        "output_tokens": 56,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 42,
+          "audio_tokens": 14,
+          "reasoning_tokens": 32
+        }
+      },
+      "file": "marin-ja-v-9e64feeea5ea.mp3",
+      "original": "marin-ja-v-9e64feeea5ea.wav",
+      "originalSha256": "7d8431c12a6395d6be196fcb5b125507340900d4898cc646afcab43640f72a23",
+      "deliverySha256": "5a47cbd5aec72d8e8bfdf166000facbd23df7e74571d9d446976dff5c3efc51c",
+      "deliveryBytes": 7124,
+      "durationSeconds": 0.7,
+      "rmsDb": -21.04254658746177,
+      "peakDb": -10.687130236275763,
+      "gainDb": -0.9574534125382286
+    },
+    {
+      "id": "ja-v-9e64feeea5ea",
+      "voice": "cedar",
+      "spelling": "口",
+      "text": "くち",
+      "meaning": "Mouth",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 口; pronunciation くち; intended meaning Mouth. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "くち",
+      "usage": {
+        "total_tokens": 210,
+        "input_tokens": 153,
+        "output_tokens": 57,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 19,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "cedar-ja-v-9e64feeea5ea.mp3",
+      "original": "cedar-ja-v-9e64feeea5ea.wav",
+      "originalSha256": "0ebb6bde021f38557a670ba455461f425222f02b91bb21ffc042a9ea786c1940",
+      "deliverySha256": "496c058e5b4eb4909138947bc79d3e2d3c135534508501f478935a2b1adb57dd",
+      "deliveryBytes": 8780,
+      "durationSeconds": 0.95,
+      "rmsDb": -22.967879893619738,
+      "peakDb": -11.036074969497491,
+      "gainDb": 0.9678798936197381
+    },
+    {
+      "id": "ja-v-0181fab128a1",
+      "voice": "marin",
+      "spelling": "ふじ山",
+      "text": "ふじさん",
+      "meaning": "Mt Fuji",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form ふじ山; pronunciation ふじさん; intended meaning Mt Fuji. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふじさん",
+      "usage": {
+        "total_tokens": 221,
+        "input_tokens": 158,
+        "output_tokens": 63,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 46,
+          "audio_tokens": 17,
+          "reasoning_tokens": 33
+        }
+      },
+      "file": "marin-ja-v-0181fab128a1.mp3",
+      "original": "marin-ja-v-0181fab128a1.wav",
+      "originalSha256": "a7b45fdc18f8d237d1059930a714d10537c511761e2ce85fd7b7c64cd187db2e",
+      "deliverySha256": "ae5efe93e4743a5485f530492af7b7611bfc723be664cab234112b4ac6300b66",
+      "deliveryBytes": 8420,
+      "durationSeconds": 0.85,
+      "rmsDb": -21.442650876438798,
+      "peakDb": -11.424281823324755,
+      "gainDb": -0.5573491235612025
+    },
+    {
+      "id": "ja-v-0181fab128a1",
+      "voice": "cedar",
+      "spelling": "ふじ山",
+      "text": "ふじさん",
+      "meaning": "Mt Fuji",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form ふじ山; pronunciation ふじさん; intended meaning Mt Fuji. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふじさん",
+      "usage": {
+        "total_tokens": 219,
+        "input_tokens": 158,
+        "output_tokens": 61,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 43,
+          "audio_tokens": 18,
+          "reasoning_tokens": 30
+        }
+      },
+      "file": "cedar-ja-v-0181fab128a1.mp3",
+      "original": "cedar-ja-v-0181fab128a1.wav",
+      "originalSha256": "ddf34aba1672d2f611fa76012f97943caf81e531059e33ad07f186b7879a7249",
+      "deliverySha256": "28eb0500af2a71da4a775911cca58f1ceea112a8df1b4b4b4d51c5ee059f5036",
+      "deliveryBytes": 9044,
+      "durationSeconds": 0.9,
+      "rmsDb": -21.42969262248588,
+      "peakDb": -6.522000212410402,
+      "gainDb": -0.5703073775141192
+    },
+    {
+      "id": "ja-v-d33ed6be2a48",
+      "voice": "marin",
+      "spelling": "九",
+      "text": "きゅう",
+      "meaning": "Nine",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 九; pronunciation きゅう; intended meaning Nine. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "きゅう",
+      "usage": {
+        "total_tokens": 205,
+        "input_tokens": 154,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 13,
+          "reasoning_tokens": 27
+        }
+      },
+      "file": "marin-ja-v-d33ed6be2a48.mp3",
+      "original": "marin-ja-v-d33ed6be2a48.wav",
+      "originalSha256": "ae00d586f2d6c899582dd0bb8e29112d466951732d045f0198e3a2f8e6950187",
+      "deliverySha256": "0dbaf63070e040ef03cb0cd166c5f529709152a6d782febdec1e77ad17f745bb",
+      "deliveryBytes": 6380,
+      "durationSeconds": 0.65,
+      "rmsDb": -21.002563082683906,
+      "peakDb": -12.98798021900886,
+      "gainDb": -0.9974369173160937
+    },
+    {
+      "id": "ja-v-d33ed6be2a48",
+      "voice": "cedar",
+      "spelling": "九",
+      "text": "きゅう",
+      "meaning": "Nine",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 九; pronunciation きゅう; intended meaning Nine. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "きゅう",
+      "usage": {
+        "total_tokens": 207,
+        "input_tokens": 154,
+        "output_tokens": 53,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 36,
+          "audio_tokens": 17,
+          "reasoning_tokens": 23
+        }
+      },
+      "file": "cedar-ja-v-d33ed6be2a48.mp3",
+      "original": "cedar-ja-v-d33ed6be2a48.wav",
+      "originalSha256": "9fff068d9a70a87a84c5b56ee7da1e25df29ec3984b2c3f94cdcea5a72b86280",
+      "deliverySha256": "53f396e31751408f3b890ac1d0e33901dfddbf2527056c355b01de491da853cc",
+      "deliveryBytes": 5780,
+      "durationSeconds": 0.85,
+      "rmsDb": -17.191249509448333,
+      "peakDb": -4.971200049773301,
+      "gainDb": -4.808750490551667
+    },
+    {
+      "id": "ja-v-0d0163a40587",
+      "voice": "marin",
+      "spelling": "九つ",
+      "text": "ここのつ",
+      "meaning": "Nine Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 九つ; pronunciation ここのつ; intended meaning Nine Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ここのつ",
+      "usage": {
+        "total_tokens": 270,
+        "input_tokens": 156,
+        "output_tokens": 114,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 88,
+          "audio_tokens": 26,
+          "reasoning_tokens": 75
+        }
+      },
+      "file": "marin-ja-v-0d0163a40587.mp3",
+      "original": "marin-ja-v-0d0163a40587.wav",
+      "originalSha256": "9a9e74e1cf85e1610170cdbd5be6a38ed8d08f02b93372f1828e6cd128c53500",
+      "deliverySha256": "453197882a690183ec5aeb65ce46d0418e208cb1f8d203aad19c0957e0fb06d6",
+      "deliveryBytes": 11948,
+      "durationSeconds": 1.3,
+      "rmsDb": -20.767026944747244,
+      "peakDb": -10.820607222148634,
+      "gainDb": -1.2329730552527565
+    },
+    {
+      "id": "ja-v-0d0163a40587",
+      "voice": "cedar",
+      "spelling": "九つ",
+      "text": "ここのつ",
+      "meaning": "Nine Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 九つ; pronunciation ここのつ; intended meaning Nine Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ここのつ",
+      "usage": {
+        "total_tokens": 213,
+        "input_tokens": 156,
+        "output_tokens": 57,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 22,
+          "reasoning_tokens": 22
+        }
+      },
+      "file": "cedar-ja-v-0d0163a40587.mp3",
+      "original": "cedar-ja-v-0d0163a40587.wav",
+      "originalSha256": "5eac9ef708a5312577694c2c06b60a62a190f41823780481e1281bf80187e20e",
+      "deliverySha256": "e68b08b5171cb0d2d6b706f98a23a2fbabb0a7e26afffc8e556c150ac76e7084",
+      "deliveryBytes": 10532,
+      "durationSeconds": 1.1,
+      "rmsDb": -18.621068489492806,
+      "peakDb": -6.254329538285494,
+      "gainDb": -3.3789315105071935
+    },
+    {
+      "id": "ja-v-5d8047464c5d",
+      "voice": "marin",
+      "spelling": "一",
+      "text": "いち",
+      "meaning": "One",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一; pronunciation いち; intended meaning One. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "いち",
+      "usage": {
+        "total_tokens": 200,
+        "input_tokens": 152,
+        "output_tokens": 48,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 16,
+          "reasoning_tokens": 20
+        }
+      },
+      "file": "marin-ja-v-5d8047464c5d.mp3",
+      "original": "marin-ja-v-5d8047464c5d.wav",
+      "originalSha256": "3cfcbe5fc7bddfcfaef328dd99a11c755371dd69ec561e0bb1bf5fbb5f11ec3a",
+      "deliverySha256": "ca3c10dee304e35e0e352bb4177d0295f45d87995cfbd7e6fad2ed61d2871204",
+      "deliveryBytes": 7292,
+      "durationSeconds": 0.8,
+      "rmsDb": -21.368291342142406,
+      "peakDb": -11.009671202572399,
+      "gainDb": -0.6317086578575939
+    },
+    {
+      "id": "ja-v-5d8047464c5d",
+      "voice": "cedar",
+      "spelling": "一",
+      "text": "いち",
+      "meaning": "One",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一; pronunciation いち; intended meaning One. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "いち",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 152,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 19,
+          "reasoning_tokens": 20
+        }
+      },
+      "file": "cedar-ja-v-5d8047464c5d.mp3",
+      "original": "cedar-ja-v-5d8047464c5d.wav",
+      "originalSha256": "51489d5fda3f754f0835e1c4593cc3fe4ea6c4215c8a67260b369db05521f4d4",
+      "deliverySha256": "f72391e01b283484440a4dff82dd1cb1e53e31f4b856175798ef70cc155f44bb",
+      "deliveryBytes": 8348,
+      "durationSeconds": 0.95,
+      "rmsDb": -18.559385246291036,
+      "peakDb": -7.947012457634469,
+      "gainDb": -3.4406147537089637
+    },
+    {
+      "id": "ja-v-277587e6fa07",
+      "voice": "marin",
+      "spelling": "一つ",
+      "text": "ひとつ",
+      "meaning": "One Thing",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一つ; pronunciation ひとつ; intended meaning One Thing. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひとつ",
+      "usage": {
+        "total_tokens": 218,
+        "input_tokens": 156,
+        "output_tokens": 62,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 44,
+          "audio_tokens": 18,
+          "reasoning_tokens": 31
+        }
+      },
+      "file": "marin-ja-v-277587e6fa07.mp3",
+      "original": "marin-ja-v-277587e6fa07.wav",
+      "originalSha256": "2d625bf13e45948e3c944eab8845ce915c857cafd763241b5135584108523493",
+      "deliverySha256": "e9708a56dc22307d224c89c75e43ebf940a362f2b2f810a11dfdbe7a9572b68f",
+      "deliveryBytes": 9308,
+      "durationSeconds": 0.9,
+      "rmsDb": -21.37018207769245,
+      "peakDb": -10.194237846165862,
+      "gainDb": -0.6298179223075486
+    },
+    {
+      "id": "ja-v-277587e6fa07",
+      "voice": "cedar",
+      "spelling": "一つ",
+      "text": "ひとつ",
+      "meaning": "One Thing",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 一つ; pronunciation ひとつ; intended meaning One Thing. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひとつ",
+      "usage": {
+        "total_tokens": 209,
+        "input_tokens": 156,
+        "output_tokens": 53,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 19,
+          "reasoning_tokens": 23
+        }
+      },
+      "file": "cedar-ja-v-277587e6fa07.mp3",
+      "original": "cedar-ja-v-277587e6fa07.wav",
+      "originalSha256": "1c7e5709dcff0aa434a3a6cd01a8b4ecdc44caa589810739654b17cbc2d3f487",
+      "deliverySha256": "a9cefcd396240aa03d1663bcefbcd523ff4f079dc70b0fd5633b7d412a7737dc",
+      "deliveryBytes": 8876,
+      "durationSeconds": 0.95,
+      "rmsDb": -21.940325320974516,
+      "peakDb": -11.092926200958964,
+      "gainDb": -0.05967467902548407
+    },
+    {
+      "id": "ja-v-ad7167347a2a",
+      "voice": "marin",
+      "spelling": "人",
+      "text": "ひと",
+      "meaning": "Person",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人; pronunciation ひと; intended meaning Person. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひと",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 152,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 12,
+          "reasoning_tokens": 29
+        }
+      },
+      "file": "marin-ja-v-ad7167347a2a.mp3",
+      "original": "marin-ja-v-ad7167347a2a.wav",
+      "originalSha256": "f957c708ced911811bb6db88c5be40406304d9f7224d5e864970d0945b0fc330",
+      "deliverySha256": "086b6aa7c2f48fd8ec099c6beceab251ebc2e45da74c02c54da5a8c8eedbbdf2",
+      "deliveryBytes": 6524,
+      "durationSeconds": 0.6,
+      "rmsDb": -22.260291117169892,
+      "peakDb": -11.706325782372007,
+      "gainDb": 0.26029111716989206
+    },
+    {
+      "id": "ja-v-ad7167347a2a",
+      "voice": "cedar",
+      "spelling": "人",
+      "text": "ひと",
+      "meaning": "Person",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人; pronunciation ひと; intended meaning Person. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ひと",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 152,
+        "output_tokens": 49,
+        "input_token_details": {
+          "text_tokens": 152,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 10,
+          "reasoning_tokens": 29
+        }
+      },
+      "file": "cedar-ja-v-ad7167347a2a.mp3",
+      "original": "cedar-ja-v-ad7167347a2a.wav",
+      "originalSha256": "4c99907c2667d8b9270dd3a98d777d6aa6d1c59487b7d6695cecd6cd9bd00d46",
+      "deliverySha256": "072ae2b710b7d80c75bc2985fae78dabb2adc15ce47a2f74f5e12abe3a1b5e3d",
+      "deliveryBytes": 5564,
+      "durationSeconds": 0.5,
+      "rmsDb": -20.81151423585808,
+      "peakDb": -7.628645785674691,
+      "gainDb": -1.1884857641419195
+    },
+    {
+      "id": "ja-v-fae75d2d18b2",
+      "voice": "marin",
+      "spelling": "下さい",
+      "text": "ください",
+      "meaning": "Please Give Me",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 下さい; pronunciation ください; intended meaning Please Give Me. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ください",
+      "usage": {
+        "total_tokens": 270,
+        "input_tokens": 153,
+        "output_tokens": 117,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 100,
+          "audio_tokens": 17,
+          "reasoning_tokens": 91
+        }
+      },
+      "file": "marin-ja-v-fae75d2d18b2.mp3",
+      "original": "marin-ja-v-fae75d2d18b2.wav",
+      "originalSha256": "c3d8f2613adbae545b59efc8f2582ef529c0f6d2bc8eea8fc91ac3ef2a3edf50",
+      "deliverySha256": "5074e81cd1db9f9603ca72b70cae3570f60fc36c1c78c5600e8a8ca2e722489b",
+      "deliveryBytes": 8396,
+      "durationSeconds": 0.85,
+      "rmsDb": -21.463925214387224,
+      "peakDb": -10.801281719405011,
+      "gainDb": -0.5360747856127759
+    },
+    {
+      "id": "ja-v-fae75d2d18b2",
+      "voice": "cedar",
+      "spelling": "下さい",
+      "text": "ください",
+      "meaning": "Please Give Me",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 下さい; pronunciation ください; intended meaning Please Give Me. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ください",
+      "usage": {
+        "total_tokens": 216,
+        "input_tokens": 153,
+        "output_tokens": 63,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 25,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "cedar-ja-v-fae75d2d18b2.mp3",
+      "original": "cedar-ja-v-fae75d2d18b2.wav",
+      "originalSha256": "a9b93503f567dd2c3190c79c0d0999270efc392d44045803745e83bb3f58184d",
+      "deliverySha256": "95fe2a816175b059379046eb203f1e170a63f9e1d517daf57ae56a0b2b69c589",
+      "deliveryBytes": 11636,
+      "durationSeconds": 1.25,
+      "rmsDb": -19.993573321403847,
+      "peakDb": -3.8237612565329853,
+      "gainDb": -2.006426678596153
+    },
+    {
+      "id": "ja-v-2ef4da30cf39",
+      "voice": "marin",
+      "spelling": "人口",
+      "text": "じんこう",
+      "meaning": "Population",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人口; pronunciation じんこう; intended meaning Population. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じんこう",
+      "usage": {
+        "total_tokens": 262,
+        "input_tokens": 155,
+        "output_tokens": 107,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 75,
+          "audio_tokens": 32,
+          "reasoning_tokens": 62
+        }
+      },
+      "file": "marin-ja-v-2ef4da30cf39.mp3",
+      "original": "marin-ja-v-2ef4da30cf39.wav",
+      "originalSha256": "d8573fa35bd3e59fbf5c3501d8796dd597ba05bb3d32715f7d2f421b7b53c925",
+      "deliverySha256": "3dd54a5f7e18d46ab325818244f70dd391447cdb5f7bdf5749d6307fed200126",
+      "deliveryBytes": 13676,
+      "durationSeconds": 1.6,
+      "rmsDb": -18.93207365343973,
+      "peakDb": -8.468629284138418,
+      "gainDb": -3.06792634656027
+    },
+    {
+      "id": "ja-v-2ef4da30cf39",
+      "voice": "cedar",
+      "spelling": "人口",
+      "text": "じんこう",
+      "meaning": "Population",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 人口; pronunciation じんこう; intended meaning Population. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じんこう",
+      "usage": {
+        "total_tokens": 238,
+        "input_tokens": 155,
+        "output_tokens": 83,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 56,
+          "audio_tokens": 27,
+          "reasoning_tokens": 43
+        }
+      },
+      "file": "cedar-ja-v-2ef4da30cf39.mp3",
+      "original": "cedar-ja-v-2ef4da30cf39.wav",
+      "originalSha256": "30bbf1fd3a9bb77a7c531592b13dbb1cbcb22fc732db523dfb80a240b602a25a",
+      "deliverySha256": "265c7e81369cfd33174f50e3f66020b746e6240d737eaa82238df71da4f2f11c",
+      "deliveryBytes": 12620,
+      "durationSeconds": 1.35,
+      "rmsDb": -19.518780392837748,
+      "peakDb": -8.202201903088632,
+      "gainDb": -2.4812196071622523
+    },
+    {
+      "id": "ja-v-33c00f4a1a8b",
+      "voice": "marin",
+      "spelling": "力",
+      "text": "ちから",
+      "meaning": "Power",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 力; pronunciation ちから; intended meaning Power. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ちから",
+      "usage": {
+        "total_tokens": 189,
+        "input_tokens": 153,
+        "output_tokens": 36,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 22,
+          "audio_tokens": 14,
+          "reasoning_tokens": 12
+        }
+      },
+      "file": "marin-ja-v-33c00f4a1a8b.mp3",
+      "original": "marin-ja-v-33c00f4a1a8b.wav",
+      "originalSha256": "3523f388a2e0350c09226b916a8bff7d0b412c8d58d857b3670ef8f98a4358e4",
+      "deliverySha256": "31628cb3a154cbc0425cab30f60989358c1836e1d40e5e59222a488bf8d7044f",
+      "deliveryBytes": 7100,
+      "durationSeconds": 0.7,
+      "rmsDb": -21.013121763262625,
+      "peakDb": -10.554779836588242,
+      "gainDb": -0.9868782367373754
+    },
+    {
+      "id": "ja-v-33c00f4a1a8b",
+      "voice": "cedar",
+      "spelling": "力",
+      "text": "ちから",
+      "meaning": "Power",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 力; pronunciation ちから; intended meaning Power. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ちから",
+      "usage": {
+        "total_tokens": 213,
+        "input_tokens": 153,
+        "output_tokens": 60,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 38,
+          "audio_tokens": 22,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "cedar-ja-v-33c00f4a1a8b.mp3",
+      "original": "cedar-ja-v-33c00f4a1a8b.wav",
+      "originalSha256": "8aae36973b4d2ff8a3b756d6cd32b975e13a585e7dc71c8f3a04bc4caae7675c",
+      "deliverySha256": "4d8a24d46731a6513b04d11f5dd473916c71654e67a8f6d0fab8382f8d4e3036",
+      "deliveryBytes": 9956,
+      "durationSeconds": 1.1,
+      "rmsDb": -15.820797567747016,
+      "peakDb": -1.164384225448976,
+      "gainDb": -6.179202432252984
+    },
+    {
+      "id": "ja-v-46f8fe65f218",
+      "voice": "marin",
+      "spelling": "川",
+      "text": "かわ",
+      "meaning": "River",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 川; pronunciation かわ; intended meaning River. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "かわ",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 151,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 36,
+          "audio_tokens": 14,
+          "reasoning_tokens": 27
+        }
+      },
+      "file": "marin-ja-v-46f8fe65f218.mp3",
+      "original": "marin-ja-v-46f8fe65f218.wav",
+      "originalSha256": "4ad570001f998e74ec883fb47b61c7753e330b470d5681c1f0f55e35a8a11765",
+      "deliverySha256": "bc6d3f753be0d8dd76ca87fedfa743aaf1d6497ece615a84cc3b73b220692fc7",
+      "deliveryBytes": 7484,
+      "durationSeconds": 0.7,
+      "rmsDb": -23.940906765651295,
+      "peakDb": -10.577146562750139,
+      "gainDb": 1.9409067656512953
+    },
+    {
+      "id": "ja-v-46f8fe65f218",
+      "voice": "cedar",
+      "spelling": "川",
+      "text": "かわ",
+      "meaning": "River",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 川; pronunciation かわ; intended meaning River. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "かわ",
+      "usage": {
+        "total_tokens": 205,
+        "input_tokens": 151,
+        "output_tokens": 54,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 42,
+          "audio_tokens": 12,
+          "reasoning_tokens": 33
+        }
+      },
+      "file": "cedar-ja-v-46f8fe65f218.mp3",
+      "original": "cedar-ja-v-46f8fe65f218.wav",
+      "originalSha256": "7548752a17279ed59ab2bfbe13162bfa7d94032fec74fcfde6293bb70e0d019a",
+      "deliverySha256": "5fe94ba5ae2d6521dc03c25b1bf4d785008ee27d1de026a53c35d4eb73914e9d",
+      "deliveryBytes": 6212,
+      "durationSeconds": 0.6,
+      "rmsDb": -23.88196443882951,
+      "peakDb": -8.222671408959805,
+      "gainDb": 1.8819644388295096
+    },
+    {
+      "id": "ja-v-eda9a40b0c91",
+      "voice": "marin",
+      "spelling": "七",
+      "text": "なな",
+      "meaning": "Seven",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 七; pronunciation なな; intended meaning Seven. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "なな",
+      "usage": {
+        "total_tokens": 263,
+        "input_tokens": 151,
+        "output_tokens": 112,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 103,
+          "audio_tokens": 9,
+          "reasoning_tokens": 93
+        }
+      },
+      "file": "marin-ja-v-eda9a40b0c91.mp3",
+      "original": "marin-ja-v-eda9a40b0c91.wav",
+      "originalSha256": "560912210de42716205cccad98e822c93ced52d6359c134eb517b476c97d5206",
+      "deliverySha256": "0bcdd25cd127cc246bb3f0f564e2e16706fc614cf677ffb4d5722df0f0b9e732",
+      "deliveryBytes": 5564,
+      "durationSeconds": 0.45,
+      "rmsDb": -19.087268316654157,
+      "peakDb": -9.323087332539918,
+      "gainDb": -2.912731683345843
+    },
+    {
+      "id": "ja-v-eda9a40b0c91",
+      "voice": "cedar",
+      "spelling": "七",
+      "text": "なな",
+      "meaning": "Seven",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 七; pronunciation なな; intended meaning Seven. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "なな",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 151,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 11,
+          "reasoning_tokens": 29
+        }
+      },
+      "file": "cedar-ja-v-eda9a40b0c91.mp3",
+      "original": "cedar-ja-v-eda9a40b0c91.wav",
+      "originalSha256": "9ecbf89a1486cae090415b2235db58dcd4b77f3048dca12810c4a57bb6c81f94",
+      "deliverySha256": "4a1a47ffb84c3dd6382da69230fb7260719ebbc900a928a54fd2a07d140c6b43",
+      "deliveryBytes": 6740,
+      "durationSeconds": 0.55,
+      "rmsDb": -21.117646307879284,
+      "peakDb": -4.625348806456327,
+      "gainDb": -0.8823536921207165
+    },
+    {
+      "id": "ja-v-f6bc974a7405",
+      "voice": "marin",
+      "spelling": "七つ",
+      "text": "ななつ",
+      "meaning": "Seven Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 七つ; pronunciation ななつ; intended meaning Seven Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ななつ",
+      "usage": {
+        "total_tokens": 263,
+        "input_tokens": 155,
+        "output_tokens": 108,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 91,
+          "audio_tokens": 17,
+          "reasoning_tokens": 78
+        }
+      },
+      "file": "marin-ja-v-f6bc974a7405.mp3",
+      "original": "marin-ja-v-f6bc974a7405.wav",
+      "originalSha256": "3d4990cde1e7d38f316bc7ef79754feacebc28a261fdf05b1a8519d8475fdf8d",
+      "deliverySha256": "96c13a35dbf58878f159c23a1e6c00e76ffd7d06620e8f2b105759c0888f42c7",
+      "deliveryBytes": 8324,
+      "durationSeconds": 0.85,
+      "rmsDb": -21.86007656009602,
+      "peakDb": -12.617622400827692,
+      "gainDb": -0.13992343990398126
+    },
+    {
+      "id": "ja-v-f6bc974a7405",
+      "voice": "cedar",
+      "spelling": "七つ",
+      "text": "ななつ",
+      "meaning": "Seven Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 七つ; pronunciation ななつ; intended meaning Seven Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ななつ",
+      "usage": {
+        "total_tokens": 249,
+        "input_tokens": 155,
+        "output_tokens": 94,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 75,
+          "audio_tokens": 19,
+          "reasoning_tokens": 62
+        }
+      },
+      "file": "cedar-ja-v-f6bc974a7405.mp3",
+      "original": "cedar-ja-v-f6bc974a7405.wav",
+      "originalSha256": "21f165b9caade43bf6999f4d01e467fe5010fe71677dad0ab575e238bf747f87",
+      "deliverySha256": "f1abf58299a2b79c0599f9679d7f93f741ea948ccc7b8b5c1ff45114ffb9bb13",
+      "deliveryBytes": 9500,
+      "durationSeconds": 0.95,
+      "rmsDb": -19.78593623391667,
+      "peakDb": -3.9652885468856445,
+      "gainDb": -2.2140637660833313
+    },
+    {
+      "id": "ja-v-26d0ad7af566",
+      "voice": "marin",
+      "spelling": "大きさ",
+      "text": "おおきさ",
+      "meaning": "Size",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大きさ; pronunciation おおきさ; intended meaning Size. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おおきさ",
+      "usage": {
+        "total_tokens": 226,
+        "input_tokens": 157,
+        "output_tokens": 69,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 52,
+          "audio_tokens": 17,
+          "reasoning_tokens": 38
+        }
+      },
+      "file": "marin-ja-v-26d0ad7af566.mp3",
+      "original": "marin-ja-v-26d0ad7af566.wav",
+      "originalSha256": "60a394ecf27aa33891f44848bed34b4615acf51b2591adf1343e6e573eccc60a",
+      "deliverySha256": "f3a8ba8b0b7588142b3f89134ebec4c136682548238f710afc7820eac4127872",
+      "deliveryBytes": 8468,
+      "durationSeconds": 0.85,
+      "rmsDb": -24.031483195041528,
+      "peakDb": -11.549618640165303,
+      "gainDb": 2.0314831950415275
+    },
+    {
+      "id": "ja-v-26d0ad7af566",
+      "voice": "cedar",
+      "spelling": "大きさ",
+      "text": "おおきさ",
+      "meaning": "Size",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 大きさ; pronunciation おおきさ; intended meaning Size. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おおきさ",
+      "usage": {
+        "total_tokens": 209,
+        "input_tokens": 157,
+        "output_tokens": 52,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 17,
+          "reasoning_tokens": 23
+        }
+      },
+      "file": "cedar-ja-v-26d0ad7af566.mp3",
+      "original": "cedar-ja-v-26d0ad7af566.wav",
+      "originalSha256": "5b2e67f3bd3849fde1e6898aee961637d7758317c8b3fc12053f1368f8fd4e57",
+      "deliverySha256": "4fbb4d3bd34a144d84ed7bd9ffce62e85b426a6b51628d457511490c1838ebe4",
+      "deliveryBytes": 8180,
+      "durationSeconds": 0.85,
+      "rmsDb": -16.666000729481677,
+      "peakDb": -2.7199874876347345,
+      "gainDb": -5.333999270518323
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "voice": "marin",
+      "spelling": "十",
+      "text": "じゅう",
+      "meaning": "Ten",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 十; pronunciation じゅう; intended meaning Ten. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じゅう",
+      "usage": {
+        "total_tokens": 210,
+        "input_tokens": 154,
+        "output_tokens": 56,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 17,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "marin-ja-v-877b9ba07a47.mp3",
+      "original": "marin-ja-v-877b9ba07a47.wav",
+      "originalSha256": "88b7fc757391585ec3851ddbe70fe8299d8b6bed7f86de48e2c9f23feb019433",
+      "deliverySha256": "cceea59f029d44d6f8f7e9258ceb98b86b5cab03110258971b22156aaa195dfa",
+      "deliveryBytes": 7628,
+      "durationSeconds": 0.85,
+      "rmsDb": -22.061152215897813,
+      "peakDb": -11.647355451798537,
+      "gainDb": 0.06115221589781328
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "voice": "cedar",
+      "spelling": "十",
+      "text": "じゅう",
+      "meaning": "Ten",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 十; pronunciation じゅう; intended meaning Ten. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "じゅう",
+      "usage": {
+        "total_tokens": 215,
+        "input_tokens": 154,
+        "output_tokens": 61,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 39,
+          "audio_tokens": 22,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "cedar-ja-v-877b9ba07a47.mp3",
+      "original": "cedar-ja-v-877b9ba07a47.wav",
+      "originalSha256": "86f61bf2947b4c47924bfb739ab05780ba3238690e5f9f51685deada774cfb2e",
+      "deliverySha256": "dcfcccbf5614ba08d6945ea6636762f1935d3a8c14a4eff33d8ed6909c6cddc8",
+      "deliveryBytes": 9596,
+      "durationSeconds": 1.1,
+      "rmsDb": -16.41654007976541,
+      "peakDb": -5.098984744412593,
+      "gainDb": -5.5834599202345885
+    },
+    {
+      "id": "ja-v-1bedf722c04a",
+      "voice": "marin",
+      "spelling": "三",
+      "text": "さん",
+      "meaning": "Three",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三; pronunciation さん; intended meaning Three. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さん",
+      "usage": {
+        "total_tokens": 313,
+        "input_tokens": 149,
+        "output_tokens": 164,
+        "input_token_details": {
+          "text_tokens": 149,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 150,
+          "audio_tokens": 14,
+          "reasoning_tokens": 141
+        }
+      },
+      "file": "marin-ja-v-1bedf722c04a.mp3",
+      "original": "marin-ja-v-1bedf722c04a.wav",
+      "originalSha256": "c8b256c197e99c59751cce14dd88cd6af359e63c676b820a6f26e64db4ef40a6",
+      "deliverySha256": "9e09496c9fc63d21f6c767448dfcaeb5774ea748e9aa83dd34e63aa92b6617bd",
+      "deliveryBytes": 6932,
+      "durationSeconds": 0.7,
+      "rmsDb": -19.08768296438601,
+      "peakDb": -8.011443701337647,
+      "gainDb": -2.9123170356139916
+    },
+    {
+      "id": "ja-v-1bedf722c04a",
+      "voice": "cedar",
+      "spelling": "三",
+      "text": "さん",
+      "meaning": "Three",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三; pronunciation さん; intended meaning Three. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さん",
+      "usage": {
+        "total_tokens": 205,
+        "input_tokens": 149,
+        "output_tokens": 56,
+        "input_token_details": {
+          "text_tokens": 149,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 30,
+          "audio_tokens": 26,
+          "reasoning_tokens": 19
+        }
+      },
+      "file": "cedar-ja-v-1bedf722c04a.mp3",
+      "original": "cedar-ja-v-1bedf722c04a.wav",
+      "originalSha256": "7609404db17f4a6ea85625fd01c4395a3d7569494f2cefeceb17a3c8bdbbe361",
+      "deliverySha256": "280db4ed908fda558a193393829bef4d1cac1049236a729cbd41e1328daf5b11",
+      "deliveryBytes": 11132,
+      "durationSeconds": 1.3,
+      "rmsDb": -22.05086404622652,
+      "peakDb": -4.941652190764684,
+      "gainDb": 0.05086404622651841
+    },
+    {
+      "id": "ja-v-2a318f5ee1c8",
+      "voice": "marin",
+      "spelling": "三人",
+      "text": "さんにん",
+      "meaning": "Three People",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三人; pronunciation さんにん; intended meaning Three People. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さんにん",
+      "usage": {
+        "total_tokens": 205,
+        "input_tokens": 155,
+        "output_tokens": 50,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 29,
+          "audio_tokens": 21,
+          "reasoning_tokens": 16
+        }
+      },
+      "file": "marin-ja-v-2a318f5ee1c8.mp3",
+      "original": "marin-ja-v-2a318f5ee1c8.wav",
+      "originalSha256": "90865a49190efb14f8550521b83b6abd5208b9f3ba99b10be1a9c14bb9ba8c45",
+      "deliverySha256": "7abd45388d2d18f9c2dfa3d21aa8d77621d5c6acaf2a185a817aa832a57c1461",
+      "deliveryBytes": 9692,
+      "durationSeconds": 1.05,
+      "rmsDb": -20.38917060054552,
+      "peakDb": -8.522909662236945,
+      "gainDb": -1.610829399454481
+    },
+    {
+      "id": "ja-v-2a318f5ee1c8",
+      "voice": "cedar",
+      "spelling": "三人",
+      "text": "さんにん",
+      "meaning": "Three People",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三人; pronunciation さんにん; intended meaning Three People. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さんにん",
+      "usage": {
+        "total_tokens": 200,
+        "input_tokens": 155,
+        "output_tokens": 45,
+        "input_token_details": {
+          "text_tokens": 155,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 24,
+          "audio_tokens": 21,
+          "reasoning_tokens": 11
+        }
+      },
+      "file": "cedar-ja-v-2a318f5ee1c8.mp3",
+      "original": "cedar-ja-v-2a318f5ee1c8.wav",
+      "originalSha256": "4fe8aa59aa4e226d8cee2002457c50e69d5a7a8f7e82d815a5f47290d5811674",
+      "deliverySha256": "87e2a696a71cd41c28fdfbb5e9f2a624558481cf787b3c72ebf024422a28c34d",
+      "deliveryBytes": 9956,
+      "durationSeconds": 1.05,
+      "rmsDb": -22.13789208120678,
+      "peakDb": -8.725373778241861,
+      "gainDb": 0.13789208120677898
+    },
+    {
+      "id": "ja-v-8b887bc8af0c",
+      "voice": "marin",
+      "spelling": "三つ",
+      "text": "みっつ",
+      "meaning": "Three Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三つ; pronunciation みっつ; intended meaning Three Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "みっつ",
+      "usage": {
+        "total_tokens": 210,
+        "input_tokens": 156,
+        "output_tokens": 54,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 19,
+          "reasoning_tokens": 24
+        }
+      },
+      "file": "marin-ja-v-8b887bc8af0c.mp3",
+      "original": "marin-ja-v-8b887bc8af0c.wav",
+      "originalSha256": "f3fe165cb0540e445d57bb26175a87ed99463f62786e318741e0d824e641227d",
+      "deliverySha256": "bd6a803bd39fba6fae4348a34a3d4887e19136563158eb1364dfb96769f7368a",
+      "deliveryBytes": 8372,
+      "durationSeconds": 0.95,
+      "rmsDb": -17.97706905624708,
+      "peakDb": -8.151238195538387,
+      "gainDb": -4.022930943752922
+    },
+    {
+      "id": "ja-v-8b887bc8af0c",
+      "voice": "cedar",
+      "spelling": "三つ",
+      "text": "みっつ",
+      "meaning": "Three Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 三つ; pronunciation みっつ; intended meaning Three Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "みっつ",
+      "usage": {
+        "total_tokens": 238,
+        "input_tokens": 156,
+        "output_tokens": 82,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 49,
+          "audio_tokens": 33,
+          "reasoning_tokens": 36
+        }
+      },
+      "file": "cedar-ja-v-8b887bc8af0c.mp3",
+      "original": "cedar-ja-v-8b887bc8af0c.wav",
+      "originalSha256": "a24a9a534fdf089b21580b9a1d700103e7ecba7c7b87310d3eef32349caf5fe0",
+      "deliverySha256": "ee2acf351067c77119efa08f450ef10a7ce147c05321bca9db506ae9fc3bf4b3",
+      "deliveryBytes": 14036,
+      "durationSeconds": 1.65,
+      "rmsDb": -20.23887331645831,
+      "peakDb": -5.552094161962076,
+      "gainDb": -1.7611266835416899
+    },
+    {
+      "id": "ja-v-82a114897d9c",
+      "voice": "marin",
+      "spelling": "入る",
+      "text": "はいる",
+      "meaning": "To Enter",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 入る; pronunciation はいる; intended meaning To Enter. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "はいる",
+      "usage": {
+        "total_tokens": 202,
+        "input_tokens": 153,
+        "output_tokens": 49,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 28,
+          "audio_tokens": 21,
+          "reasoning_tokens": 16
+        }
+      },
+      "file": "marin-ja-v-82a114897d9c.mp3",
+      "original": "marin-ja-v-82a114897d9c.wav",
+      "originalSha256": "32b9072751b47954787a871e3639b9d56fb6f53282d11f9d1f60a9ae51e23f6b",
+      "deliverySha256": "d70ca0517cd7b6e64d78a9ebd37accc426470dc5aad4f3efec51a2ec15c8c413",
+      "deliveryBytes": 9644,
+      "durationSeconds": 1.05,
+      "rmsDb": -21.938975677803718,
+      "peakDb": -10.328999254827952,
+      "gainDb": -0.061024322196281844
+    },
+    {
+      "id": "ja-v-82a114897d9c",
+      "voice": "cedar",
+      "spelling": "入る",
+      "text": "はいる",
+      "meaning": "To Enter",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 入る; pronunciation はいる; intended meaning To Enter. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "はいる",
+      "usage": {
+        "total_tokens": 201,
+        "input_tokens": 153,
+        "output_tokens": 48,
+        "input_token_details": {
+          "text_tokens": 153,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 14,
+          "reasoning_tokens": 24
+        }
+      },
+      "file": "cedar-ja-v-82a114897d9c.mp3",
+      "original": "cedar-ja-v-82a114897d9c.wav",
+      "originalSha256": "5ca499fac78659f892455503a6f7b6fb67bde6f4652f1f09cca530bbd44ee762",
+      "deliverySha256": "3a4bd3049b9e679f0593f249a000b160419533ca252e23228989146f6482f140",
+      "deliveryBytes": 6572,
+      "durationSeconds": 0.7,
+      "rmsDb": -17.087496621032983,
+      "peakDb": -1.4763526255080865,
+      "gainDb": -4.912503378967017
+    },
+    {
+      "id": "ja-v-6d1d47c9258e",
+      "voice": "marin",
+      "spelling": "上げる",
+      "text": "あげる",
+      "meaning": "To Lift Something",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 上げる; pronunciation あげる; intended meaning To Lift Something. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "あげる",
+      "usage": {
+        "total_tokens": 196,
+        "input_tokens": 157,
+        "output_tokens": 39,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 25,
+          "audio_tokens": 14,
+          "reasoning_tokens": 14
+        }
+      },
+      "file": "marin-ja-v-6d1d47c9258e.mp3",
+      "original": "marin-ja-v-6d1d47c9258e.wav",
+      "originalSha256": "3d9f9255e517f49939cc5ef1e48a9dba343191c3abea8d2b35bb945a5ff8eb1c",
+      "deliverySha256": "d8fe621f81a2995333da6aca7a0b828ac3b7bae34243501781ec3e3804175479",
+      "deliveryBytes": 7316,
+      "durationSeconds": 0.7,
+      "rmsDb": -20.62226988235536,
+      "peakDb": -11.039853496860207,
+      "gainDb": -1.3777301176446386
+    },
+    {
+      "id": "ja-v-6d1d47c9258e",
+      "voice": "cedar",
+      "spelling": "上げる",
+      "text": "あげる",
+      "meaning": "To Lift Something",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 上げる; pronunciation あげる; intended meaning To Lift Something. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "あげる",
+      "usage": {
+        "total_tokens": 204,
+        "input_tokens": 157,
+        "output_tokens": 47,
+        "input_token_details": {
+          "text_tokens": 157,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 29,
+          "audio_tokens": 18,
+          "reasoning_tokens": 16
+        }
+      },
+      "file": "cedar-ja-v-6d1d47c9258e.mp3",
+      "original": "cedar-ja-v-6d1d47c9258e.wav",
+      "originalSha256": "797b4b946ccbef37c1f9cc9d05c49aeb23362992ed7faf31c4141ba3962d6699",
+      "deliverySha256": "2cddc48a4556504396b28934b6a6a234d0187249fe315f2aa2290d8b5ce410fa",
+      "deliveryBytes": 8612,
+      "durationSeconds": 0.9,
+      "rmsDb": -19.895969858884598,
+      "peakDb": -5.4810578662014295,
+      "gainDb": -2.104030141115402
+    },
+    {
+      "id": "ja-v-06a4c07236b5",
+      "voice": "marin",
+      "spelling": "下げる",
+      "text": "さげる",
+      "meaning": "To Lower Something",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 下げる; pronunciation さげる; intended meaning To Lower Something. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さげる",
+      "usage": {
+        "total_tokens": 209,
+        "input_tokens": 158,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 16,
+          "reasoning_tokens": 22
+        }
+      },
+      "file": "marin-ja-v-06a4c07236b5.mp3",
+      "original": "marin-ja-v-06a4c07236b5.wav",
+      "originalSha256": "3157ca62662ec179c58c43c621d1eb2c6932ac4d8458a11579cd1633038b477b",
+      "deliverySha256": "258f11912235b08e1cd342fbec822467ef5a92efd9a704e457a3e5c6f95aa06b",
+      "deliveryBytes": 7892,
+      "durationSeconds": 0.8,
+      "rmsDb": -21.017656961647898,
+      "peakDb": -9.927504115636385,
+      "gainDb": -0.9823430383521021
+    },
+    {
+      "id": "ja-v-06a4c07236b5",
+      "voice": "cedar",
+      "spelling": "下げる",
+      "text": "さげる",
+      "meaning": "To Lower Something",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 下げる; pronunciation さげる; intended meaning To Lower Something. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "さげる",
+      "usage": {
+        "total_tokens": 213,
+        "input_tokens": 158,
+        "output_tokens": 55,
+        "input_token_details": {
+          "text_tokens": 158,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 20,
+          "reasoning_tokens": 22
+        }
+      },
+      "file": "cedar-ja-v-06a4c07236b5.mp3",
+      "original": "cedar-ja-v-06a4c07236b5.wav",
+      "originalSha256": "141b463a2b94220d12c5fc5c93464aea11bdda281ee01fafd8995ed133d2ad5e",
+      "deliverySha256": "602082cc8a5a218dc361d6b30e559b61e9816a0707f672b9f5c068d8d2d83951",
+      "deliveryBytes": 9020,
+      "durationSeconds": 1,
+      "rmsDb": -21.339329576529455,
+      "peakDb": -4.862417833713986,
+      "gainDb": -0.6606704234705454
+    },
+    {
+      "id": "ja-v-7fc81b0ddd17",
+      "voice": "marin",
+      "spelling": "二",
+      "text": "に",
+      "meaning": "Two",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二; pronunciation に; intended meaning Two. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "に",
+      "usage": {
+        "total_tokens": 240,
+        "input_tokens": 149,
+        "output_tokens": 91,
+        "input_token_details": {
+          "text_tokens": 149,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 80,
+          "audio_tokens": 11,
+          "reasoning_tokens": 71
+        }
+      },
+      "file": "marin-ja-v-7fc81b0ddd17.mp3",
+      "original": "marin-ja-v-7fc81b0ddd17.wav",
+      "originalSha256": "7fae9b90708068592c0dfaf6f5ec79b97579a2293d6fc74dd355edd93ab4cf1d",
+      "deliverySha256": "09ea48c468bb66831a76ce891d33f5ab59174118ae1b63419d8d7164f44f6520",
+      "deliveryBytes": 5564,
+      "durationSeconds": 0.55,
+      "rmsDb": -19.646869882580503,
+      "peakDb": -10.720763046505652,
+      "gainDb": -2.3531301174194965
+    },
+    {
+      "id": "ja-v-7fc81b0ddd17",
+      "voice": "cedar",
+      "spelling": "二",
+      "text": "に",
+      "meaning": "Two",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二; pronunciation に; intended meaning Two. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "に",
+      "usage": {
+        "total_tokens": 193,
+        "input_tokens": 149,
+        "output_tokens": 44,
+        "input_token_details": {
+          "text_tokens": 149,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 35,
+          "audio_tokens": 9,
+          "reasoning_tokens": 26
+        }
+      },
+      "file": "cedar-ja-v-7fc81b0ddd17.mp3",
+      "original": "cedar-ja-v-7fc81b0ddd17.wav",
+      "originalSha256": "7edd85286cc8f74d224eb3acc225f62195c181aa752dc9d1c12e2f27cb076ac3",
+      "deliverySha256": "231c8ee29bfd59ddc78c71e7a1a87c4c209ffff1b79b51057300dc4d090fc52e",
+      "deliveryBytes": 5372,
+      "durationSeconds": 0.45,
+      "rmsDb": -18.320008916635032,
+      "peakDb": -5.7158737058500995,
+      "gainDb": -3.6799910833649676
+    },
+    {
+      "id": "ja-v-4fa716f651b2",
+      "voice": "marin",
+      "spelling": "二人",
+      "text": "ふたり",
+      "meaning": "Two People",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二人; pronunciation ふたり; intended meaning Two People. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふたり",
+      "usage": {
+        "total_tokens": 187,
+        "input_tokens": 154,
+        "output_tokens": 33,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 0,
+          "cached_tokens_details": {
+            "text_tokens": 0,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 21,
+          "audio_tokens": 12,
+          "reasoning_tokens": 11
+        }
+      },
+      "file": "marin-ja-v-4fa716f651b2.mp3",
+      "original": "marin-ja-v-4fa716f651b2.wav",
+      "originalSha256": "69f236b581e233d7060851ecd2d3111bce589cdacc9821d7ec7aa8851f921cdf",
+      "deliverySha256": "b7f4eb61c95db7bb42c6eb7e57986122c0e5e176531282340e08079169ffba6f",
+      "deliveryBytes": 6356,
+      "durationSeconds": 0.6,
+      "rmsDb": -19.85416299930985,
+      "peakDb": -9.269749703533417,
+      "gainDb": -2.1458370006901504
+    },
+    {
+      "id": "ja-v-4fa716f651b2",
+      "voice": "cedar",
+      "spelling": "二人",
+      "text": "ふたり",
+      "meaning": "Two People",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二人; pronunciation ふたり; intended meaning Two People. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふたり",
+      "usage": {
+        "total_tokens": 205,
+        "input_tokens": 154,
+        "output_tokens": 51,
+        "input_token_details": {
+          "text_tokens": 154,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 34,
+          "audio_tokens": 17,
+          "reasoning_tokens": 22
+        }
+      },
+      "file": "cedar-ja-v-4fa716f651b2.mp3",
+      "original": "cedar-ja-v-4fa716f651b2.wav",
+      "originalSha256": "d02b10c37e9ff134191beb2f71b2793053497c0e8c4501898459cf7f8f5ecfb2",
+      "deliverySha256": "c658e4f2a78f842daffceb54c82c0fef497c162514657e385a5ccc185b4bda06",
+      "deliveryBytes": 8516,
+      "durationSeconds": 0.85,
+      "rmsDb": -21.277476924557632,
+      "peakDb": -4.643878952421238,
+      "gainDb": -0.7225230754423677
+    },
+    {
+      "id": "ja-v-bb85f028d944",
+      "voice": "marin",
+      "spelling": "二つ",
+      "text": "ふたつ",
+      "meaning": "Two Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二つ; pronunciation ふたつ; intended meaning Two Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふたつ",
+      "usage": {
+        "total_tokens": 215,
+        "input_tokens": 156,
+        "output_tokens": 59,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 43,
+          "audio_tokens": 16,
+          "reasoning_tokens": 30
+        }
+      },
+      "file": "marin-ja-v-bb85f028d944.mp3",
+      "original": "marin-ja-v-bb85f028d944.wav",
+      "originalSha256": "dea8236f914e97f5fa25ae3d08d1305ddd78f7e99ced04ef5246c255d2f4faef",
+      "deliverySha256": "f4beb0ebc68572794711e80f5fc47c8494724ae7f31d066ea7237c063c546d7c",
+      "deliveryBytes": 8084,
+      "durationSeconds": 0.8,
+      "rmsDb": -21.749144611241945,
+      "peakDb": -10.866794131137747,
+      "gainDb": -0.2508553887580547
+    },
+    {
+      "id": "ja-v-bb85f028d944",
+      "voice": "cedar",
+      "spelling": "二つ",
+      "text": "ふたつ",
+      "meaning": "Two Things",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 二つ; pronunciation ふたつ; intended meaning Two Things. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ふたつ",
+      "usage": {
+        "total_tokens": 228,
+        "input_tokens": 156,
+        "output_tokens": 72,
+        "input_token_details": {
+          "text_tokens": 156,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 51,
+          "audio_tokens": 21,
+          "reasoning_tokens": 38
+        }
+      },
+      "file": "cedar-ja-v-bb85f028d944.mp3",
+      "original": "cedar-ja-v-bb85f028d944.wav",
+      "originalSha256": "b2b1307089448fcc241b8cb4c41a8fbdc10e14a665a6da628bf1888383c7e8f3",
+      "deliverySha256": "c9b099b2a1d2487d6fce290662d9c350ba1d67c211d7d14b95c7b78a8caf6915",
+      "deliveryBytes": 10220,
+      "durationSeconds": 1.05,
+      "rmsDb": -21.69566673226178,
+      "peakDb": -7.067273894377264,
+      "gainDb": -0.3043332677382189
+    },
+    {
+      "id": "ja-v-c70f2920b2de",
+      "voice": "marin",
+      "spelling": "力いっぱい",
+      "text": "ちからいっぱい",
+      "meaning": "With All One's Strength",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 力いっぱい; pronunciation ちからいっぱい; intended meaning With All One's Strength. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ちからいっぱい",
+      "usage": {
+        "total_tokens": 214,
+        "input_tokens": 160,
+        "output_tokens": 54,
+        "input_token_details": {
+          "text_tokens": 160,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 33,
+          "audio_tokens": 21,
+          "reasoning_tokens": 20
+        }
+      },
+      "file": "marin-ja-v-c70f2920b2de.mp3",
+      "original": "marin-ja-v-c70f2920b2de.wav",
+      "originalSha256": "76048fea0b5dd4bf4df25e48a099b79cf6a4f893b5fa87e1273e310103cc9126",
+      "deliverySha256": "75abfb55148d5876d90ffe9660cb95ff477af2bdab48ac3e3158bc7154cdd68c",
+      "deliveryBytes": 10244,
+      "durationSeconds": 1.05,
+      "rmsDb": -21.70812838141242,
+      "peakDb": -9.591602425283304,
+      "gainDb": -0.2918716185875816
+    },
+    {
+      "id": "ja-v-c70f2920b2de",
+      "voice": "cedar",
+      "spelling": "力いっぱい",
+      "text": "ちからいっぱい",
+      "meaning": "With All One's Strength",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 力いっぱい; pronunciation ちからいっぱい; intended meaning With All One's Strength. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "ちからいっぱい",
+      "usage": {
+        "total_tokens": 246,
+        "input_tokens": 160,
+        "output_tokens": 86,
+        "input_token_details": {
+          "text_tokens": 160,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 61,
+          "audio_tokens": 25,
+          "reasoning_tokens": 48
+        }
+      },
+      "file": "cedar-ja-v-c70f2920b2de.mp3",
+      "original": "cedar-ja-v-c70f2920b2de.wav",
+      "originalSha256": "f4ecce668603927880d6841153950ccc1cd6fa0845609b42feae97fc8430f746",
+      "deliverySha256": "b1a49ab67b57f5f037adb57dff1beaa9ddde14adeaae614d936fc6026393c187",
+      "deliveryBytes": 11924,
+      "durationSeconds": 1.25,
+      "rmsDb": -22.63470838291992,
+      "peakDb": -7.547999815096567,
+      "gainDb": 0.6347083829199214
+    },
+    {
+      "id": "ja-v-4d9423288cb2",
+      "voice": "marin",
+      "spelling": "女",
+      "text": "おんな",
+      "meaning": "Woman",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 女; pronunciation おんな; intended meaning Woman. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おんな",
+      "usage": {
+        "total_tokens": 203,
+        "input_tokens": 151,
+        "output_tokens": 52,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 32,
+          "audio_tokens": 20,
+          "reasoning_tokens": 20
+        }
+      },
+      "file": "marin-ja-v-4d9423288cb2.mp3",
+      "original": "marin-ja-v-4d9423288cb2.wav",
+      "originalSha256": "1d043c1bff10e0d0849b592d6de2b2ec29a1bf9bdbff19f846255c8cdf5e619c",
+      "deliverySha256": "4186c715b9d8992c8c4a9dd6ade472ab8441be3b5ff93d60c4e708c535d1438d",
+      "deliveryBytes": 9092,
+      "durationSeconds": 1,
+      "rmsDb": -17.842200362212985,
+      "peakDb": -11.59180273843675,
+      "gainDb": -4.157799637787015
+    },
+    {
+      "id": "ja-v-4d9423288cb2",
+      "voice": "cedar",
+      "spelling": "女",
+      "text": "おんな",
+      "meaning": "Woman",
+      "instructions": "You are recording individual vocabulary words for a Japanese listening game. Speak only the supplied Japanese word, exactly once, with no introduction, translation, or explanation. Use native standard Tokyo Japanese pronunciation and natural pitch accent. Sound warm, friendly, and attentive, like a relaxed person speaking to a friend. Use a clear, comfortable conversational pace, with natural word endings. Avoid exaggerated teaching intonation, an announcer voice, whispering, or a singsong delivery. No music or sound effects. Vocabulary context (do not read this metadata aloud): written form 女; pronunciation おんな; intended meaning Woman. Speak only the pronunciation, once. Use the pitch accent appropriate to that word and meaning.",
+      "transcript": "おんな",
+      "usage": {
+        "total_tokens": 234,
+        "input_tokens": 151,
+        "output_tokens": 83,
+        "input_token_details": {
+          "text_tokens": 151,
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "cached_tokens": 64,
+          "cached_tokens_details": {
+            "text_tokens": 64,
+            "audio_tokens": 0,
+            "image_tokens": 0
+          }
+        },
+        "output_token_details": {
+          "text_tokens": 65,
+          "audio_tokens": 18,
+          "reasoning_tokens": 53
+        }
+      },
+      "file": "cedar-ja-v-4d9423288cb2.mp3",
+      "original": "cedar-ja-v-4d9423288cb2.wav",
+      "originalSha256": "68a4e65249c228dcfa6b125490441d2603e57ae1997b42e45ce64cb1a3e5a8ce",
+      "deliverySha256": "177d5db0c0950e639a033a3de50ed836f77d0ce482c24de34c80466697ec7165",
+      "deliveryBytes": 7532,
+      "durationSeconds": 0.9,
+      "rmsDb": -15.640202719828869,
+      "peakDb": -3.006355359900535,
+      "gainDb": -6.359797280171131
+    }
+  ],
+  "failures": [
+    {
+      "id": "ja-v-520308b3c3b4",
+      "voice": "marin",
+      "error": "Audio contains no usable speech signal."
+    }
+  ],
+  "generation": {
+    "runId": "41984428401",
+    "attempt": "1",
+    "sourceRevision": "728fa255e45a991a0c3dfeb2e14e3b7d4cbb45a7"
+  }
+}
