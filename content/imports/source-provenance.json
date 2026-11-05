@@ -1,0 +1,49 @@
+{
+  "method": "Transcribed from owner-supplied screenshots; raw records retain source spelling, reading, gloss, and source-level labels. Original screenshots retained locally.",
+  "sources": [
+    {
+      "file": "level1.png",
+      "bytes": 336134,
+      "sha256": "6a943480a15f45bc2e46d6f918d33f22571b89abdf95906c62ca671596330c1e"
+    },
+    {
+      "file": "level2.png",
+      "bytes": 376326,
+      "sha256": "87db5a4ee5a9f80548fd3ebac5daf12e68f17b692740ce998665954e7be2b475"
+    },
+    {
+      "file": "level3.png",
+      "bytes": 406531,
+      "sha256": "2e89cd3b37025de103f3434c2288fae68e028fa4345ed4aa975664332c3e33a1"
+    },
+    {
+      "file": "level4-1.png",
+      "bytes": 382972,
+      "sha256": "7277cee66c3559c36a494a9b3bbefb73dbca68ba33f36b377fc781e58cda0a62"
+    },
+    {
+      "file": "level4-2.png",
+      "bytes": 256165,
+      "sha256": "a9afe25a1b580038e415faac886c6df2614e4bba2c95c8b6aff40f34714a2469"
+    },
+    {
+      "file": "level5-1.png",
+      "bytes": 427301,
+      "sha256": "78ec694d72966b440a17a7b98f61a405f80b34e5e5aecfd6e9805f02d7d9c37b"
+    },
+    {
+      "file": "level5-2.png",
+      "bytes": 391191,
+      "sha256": "206e3d5d07498ef4aba7404444b60b1e976cfc17f58290e6593e341c6656ae24"
+    }
+  ],
+  "entries": 441,
+  "levelsAreProvisional": true,
+  "readingChecks": [
+    {
+      "text": "四千",
+      "reading": "よんせん",
+      "source": "https://www.kyozai.jpf.go.jp/kyozai/material/BTS00022/ja/render.do"
+    }
+  ]
+}

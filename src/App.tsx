@@ -186,6 +186,6 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
 
         <button className="primary" onClick={startQuiz}>Play again <span aria-hidden="true">↗</span></button><button className="text-button" onClick={home}>Back home</button>
       </section>}
-    </main><footer><a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
+    </main><footer>{screen === 'home' && <a href={asset('vocabulary/')}>Card library ↗</a>}<a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
   </div>;
 }

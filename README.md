@@ -52,6 +52,14 @@ Local runs preserve the provider-original WAVs, listening MP3s, and provenance u
 
 The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
 
+## Vocabulary library
+
+The review library at `/vocabulary/` contains 441 entries transcribed from the owner's level 1–5 screenshots. Levels are provisional source labels, separate from stable word IDs. The original transcriptions and screenshot hashes are in `content/imports/`; the flat catalog is in `content/catalog/ja.json`.
+
+Original SVG scenes and symbols match the starter style. Context-sensitive entries carry review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the large collection; one shared audio player compares Marin and Cedar.
+
+`npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. Hosted catalog audio runs by source level with two jobs in parallel, retaining original WAVs and partial results. Verified MP3s are staged to a review branch for integration, never deployed automatically.
+
 ## License and media
 
 Copyright (c) 2026 Alex Conway. The project's own code and documentation are licensed under [GNU AGPLv3 only](LICENSE) (`AGPL-3.0-only`), except where separate terms are identified. Commercial use is permitted subject to the license's conditions, including applicable source-sharing requirements. See [NOTICE](NOTICE) for scope and history.
@@ -60,4 +68,4 @@ The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](http
 
 The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
 
-Media and dependencies retain separate terms. Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Existing vocabulary SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+Media and dependencies retain separate terms. Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0dc">
+  <title>Vocabulary cards</title>
+  <link rel="stylesheet" href="./library.css">
+  <script src="./library.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <a class="home-link" href="../">← Listening practice</a>
+      <h1>Vocabulary cards</h1>
+      <p>Browse pictures and compare two Japanese voices. Source levels are provisional.</p>
+    </header>
+    <form class="filters" role="search" aria-label="Find vocabulary" id="filters">
+      <label>Provisional level
+        <select id="level" name="level">
+          <option value="all">All levels</option>
+          <option value="1">Level 1</option><option value="2">Level 2</option>
+          <option value="3">Level 3</option><option value="4">Level 4</option>
+          <option value="5">Level 5</option>
+        </select>
+      </label>
+      <label class="search-label">Search words
+        <input id="search" name="search" type="search" placeholder="Japanese, reading, or English" autocomplete="off">
+      </label>
+    </form>
+    <p id="results-status" role="status">Loading vocabulary…</p>
+    <p id="library-error" role="alert" hidden></p>
+    <p id="audio-status" role="status" class="audio-status"></p>
+    <p id="audio-error" role="alert" hidden></p>
+    <nav class="pagination" aria-label="Vocabulary pages">
+      <button type="button" id="previous" disabled>← Previous</button>
+      <span id="page-status">Page 1</span>
+      <button type="button" id="next" disabled>Next →</button>
+    </nav>
+    <section id="cards" class="cards" aria-label="Vocabulary cards"></section>
+    <noscript><p>Enable JavaScript to browse the vocabulary cards and listen to the voices.</p></noscript>
+    <footer><a href="../credits.html">Credits and licenses</a></footer>
+  </main>
+</body>
+</html>

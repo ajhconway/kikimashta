@@ -8,8 +8,10 @@ those terms. See LICENSE for the complete terms, including the absence of
 warranty.
 
 Media and third-party components keep their separate licenses. In particular,
-the existing vocabulary SVG illustrations remain under the MIT license in
-LICENSES/MIT.txt. Media records and credits are in content/ and public/credits.html.
+the six original starter SVG illustrations remain under the MIT license in
+LICENSES/MIT.txt. The new SVG vocabulary illustrations in public/images/vocabulary/
+are licensed under AGPL-3.0-only as recorded in content/catalog/image-provenance.json.
+Media records and credits are in content/ and public/credits.html.
 Runtime dependency notices are included in the production build.
 
 The licensing change was made on 2026-11-05. Releases through commit

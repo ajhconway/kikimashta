@@ -1,0 +1,758 @@
+[
+  {
+    "id": "ja-v-c0f58bfab324",
+    "concept": "A pink ball floating above a shelf",
+    "reviewRequired": false,
+    "visualGroup": "上"
+  },
+  {
+    "id": "ja-v-2cc50c2d66a6",
+    "concept": "An adult next to a smaller child; adult highlighted",
+    "reviewRequired": true,
+    "reviewNote": "Relative height alone cannot establish adulthood.",
+    "visualGroup": "大人"
+  },
+  {
+    "id": "ja-v-7de8b40e4f57",
+    "concept": "A single person sitting alone on a park bench",
+    "reviewRequired": true,
+    "reviewNote": "Could also read as one person or sitting.",
+    "visualGroup": "一人"
+  },
+  {
+    "id": "ja-v-3fef4445ce13",
+    "concept": "A manufactured robot watering a plastic-looking potted flower",
+    "reviewRequired": true,
+    "reviewNote": "Robot symbolizes human-made/artificial; not a literal depiction of all artificial objects.",
+    "visualGroup": "人工"
+  },
+  {
+    "id": "ja-v-520308b3c3b4",
+    "concept": "A pink ball underneath a shelf",
+    "reviewRequired": false,
+    "visualGroup": "下"
+  },
+  {
+    "id": "ja-v-f6377dcbb564",
+    "concept": "A large orange ball beside a tiny purple ball; large one highlighted",
+    "reviewRequired": false,
+    "visualGroup": "大きい"
+  },
+  {
+    "id": "ja-v-f6ed7c17c0d5",
+    "concept": "The numeral 8 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-8"
+  },
+  {
+    "id": "ja-v-6c9351ae67e6",
+    "concept": "Exactly 8 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-8"
+  },
+  {
+    "id": "ja-v-20cbd1c15a35",
+    "concept": "An open doorway with an inward arrow",
+    "reviewRequired": true,
+    "reviewNote": "Entrance and entering share a motif; avoid pairing them as choices.",
+    "visualGroup": "enter-door"
+  },
+  {
+    "id": "ja-v-1d446778d33c",
+    "concept": "A huge gold trophy surrounded by celebratory stars",
+    "reviewRequired": true,
+    "reviewNote": "Trophy symbolizes impressive/great, a context-dependent adjective.",
+    "visualGroup": "大した"
+  },
+  {
+    "id": "ja-v-ddd9dca106e2",
+    "concept": "Two peaked mountains",
+    "reviewRequired": false,
+    "visualGroup": "山"
+  },
+  {
+    "id": "ja-v-9e64feeea5ea",
+    "concept": "A smiling open mouth with teeth and tongue",
+    "reviewRequired": false,
+    "visualGroup": "口"
+  },
+  {
+    "id": "ja-v-0181fab128a1",
+    "concept": "Mount Fuji with a broad symmetrical snowy summit",
+    "reviewRequired": true,
+    "reviewNote": "Stylized Mount Fuji may resemble another snow-capped mountain.",
+    "visualGroup": "ふじ山"
+  },
+  {
+    "id": "ja-v-d33ed6be2a48",
+    "concept": "The numeral 9 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-9"
+  },
+  {
+    "id": "ja-v-0d0163a40587",
+    "concept": "Exactly 9 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-9"
+  },
+  {
+    "id": "ja-v-5d8047464c5d",
+    "concept": "The numeral 1 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-1"
+  },
+  {
+    "id": "ja-v-277587e6fa07",
+    "concept": "Exactly 1 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-1"
+  },
+  {
+    "id": "ja-v-ad7167347a2a",
+    "concept": "A standing person",
+    "reviewRequired": true,
+    "reviewNote": "Person also overlaps adult and woman; avoid ambiguous choice sets.",
+    "visualGroup": "person"
+  },
+  {
+    "id": "ja-v-fae75d2d18b2",
+    "concept": "Two hands offering and receiving a round gift",
+    "reviewRequired": true,
+    "reviewNote": "Gift exchange symbolizes please give me; phrase requires context.",
+    "visualGroup": "下さい"
+  },
+  {
+    "id": "ja-v-2ef4da30cf39",
+    "concept": "A crowd within a town boundary",
+    "reviewRequired": true,
+    "reviewNote": "Town crowd symbolizes population rather than simply people.",
+    "visualGroup": "人口"
+  },
+  {
+    "id": "ja-v-33c00f4a1a8b",
+    "concept": "A strong bent arm lifting a dumbbell",
+    "reviewRequired": true,
+    "reviewNote": "Physical strength is one sense of power.",
+    "visualGroup": "力"
+  },
+  {
+    "id": "ja-v-46f8fe65f218",
+    "concept": "A winding blue river between green banks",
+    "reviewRequired": false,
+    "visualGroup": "川"
+  },
+  {
+    "id": "ja-v-eda9a40b0c91",
+    "concept": "The numeral 7 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-7"
+  },
+  {
+    "id": "ja-v-f6bc974a7405",
+    "concept": "Exactly 7 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-7"
+  },
+  {
+    "id": "ja-v-26d0ad7af566",
+    "concept": "A ball measured in two dimensions",
+    "reviewRequired": true,
+    "reviewNote": "Dimension arrows symbolize size.",
+    "visualGroup": "大きさ"
+  },
+  {
+    "id": "ja-v-877b9ba07a47",
+    "concept": "The numeral 10 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-10"
+  },
+  {
+    "id": "ja-v-1bedf722c04a",
+    "concept": "The numeral 3 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-3"
+  },
+  {
+    "id": "ja-v-2a318f5ee1c8",
+    "concept": "Exactly three people standing together",
+    "reviewRequired": false,
+    "visualGroup": "people-3"
+  },
+  {
+    "id": "ja-v-8b887bc8af0c",
+    "concept": "Exactly 3 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-3"
+  },
+  {
+    "id": "ja-v-82a114897d9c",
+    "concept": "A person moving through an open doorway",
+    "reviewRequired": true,
+    "reviewNote": "Action and entrance are visually related.",
+    "visualGroup": "enter-door"
+  },
+  {
+    "id": "ja-v-6d1d47c9258e",
+    "concept": "A person raising a box; upward motion arrow",
+    "reviewRequired": true,
+    "reviewNote": "Static image shows the intended lifting action.",
+    "visualGroup": "上げる"
+  },
+  {
+    "id": "ja-v-06a4c07236b5",
+    "concept": "A person lowering a box; downward motion arrow",
+    "reviewRequired": true,
+    "reviewNote": "Static image shows the intended lowering action.",
+    "visualGroup": "下げる"
+  },
+  {
+    "id": "ja-v-7fc81b0ddd17",
+    "concept": "The numeral 2 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-2"
+  },
+  {
+    "id": "ja-v-4fa716f651b2",
+    "concept": "Exactly two people standing together",
+    "reviewRequired": false,
+    "visualGroup": "people-2"
+  },
+  {
+    "id": "ja-v-bb85f028d944",
+    "concept": "Exactly 2 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-2"
+  },
+  {
+    "id": "ja-v-c70f2920b2de",
+    "concept": "A straining person pushing a large boulder",
+    "reviewRequired": true,
+    "reviewNote": "Exertion symbolizes with all one’s strength.",
+    "visualGroup": "力いっぱい"
+  },
+  {
+    "id": "ja-v-4d9423288cb2",
+    "concept": "An adult woman with a long hairstyle",
+    "reviewRequired": true,
+    "reviewNote": "Gender is not reliably inferred from appearance; owner review required.",
+    "visualGroup": "女"
+  },
+  {
+    "id": "ja-v-7dddc1af4eb5",
+    "concept": "A whole-month calendar with month number 4",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-4"
+  },
+  {
+    "id": "ja-v-66ccf8dd3399",
+    "concept": "A round toy ball with curved colored panels",
+    "reviewRequired": false,
+    "visualGroup": "玉"
+  },
+  {
+    "id": "ja-v-0ac038632611",
+    "concept": "An open book with illustrated pages",
+    "reviewRequired": false,
+    "visualGroup": "本"
+  },
+  {
+    "id": "ja-v-27d5744f36a2",
+    "concept": "A child holding a toy pinwheel",
+    "reviewRequired": true,
+    "reviewNote": "A child is indicated by proportions and a toy; age remains approximate.",
+    "visualGroup": "子"
+  },
+  {
+    "id": "ja-v-d1b6831b65c8",
+    "concept": "A simple flat pink circle",
+    "reviewRequired": false,
+    "visualGroup": "丸"
+  },
+  {
+    "id": "ja-v-b1514b201acd",
+    "concept": "Several circular everyday objects: plate, ball, clock",
+    "reviewRequired": true,
+    "reviewNote": "Round/circular overlaps circle; avoid pairing them as alternatives.",
+    "visualGroup": "丸い"
+  },
+  {
+    "id": "ja-v-7003bbe10d0b",
+    "concept": "A large green check mark in a circle",
+    "reviewRequired": true,
+    "reviewNote": "A conventional check mark symbolizes correctness.",
+    "visualGroup": "正しい"
+  },
+  {
+    "id": "ja-v-5352aea4e4bb",
+    "concept": "A mound of brown soil with stones and a small sprout",
+    "reviewRequired": false,
+    "visualGroup": "土"
+  },
+  {
+    "id": "ja-dog",
+    "concept": "Existing starter illustration of a dog",
+    "visualGroup": "dog",
+    "reviewRequired": false
+  },
+  {
+    "id": "ja-v-f50fcf40e898",
+    "concept": "A single-day tear-off calendar showing 8",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-8"
+  },
+  {
+    "id": "ja-v-a19157e62dee",
+    "concept": "An open doorway with an outward arrow",
+    "reviewRequired": true,
+    "reviewNote": "Exit and exiting share a motif; avoid pairing them as choices.",
+    "visualGroup": "exit-door"
+  },
+  {
+    "id": "ja-v-6c0b9f3278dc",
+    "concept": "An eye with iris and pupil",
+    "reviewRequired": false,
+    "visualGroup": "eye"
+  },
+  {
+    "id": "ja-v-a8ca5ef684b8",
+    "concept": "A round eyeball with iris and pupil",
+    "reviewRequired": true,
+    "reviewNote": "Eye and eyeball should not be contrasted in a picture-only quiz.",
+    "visualGroup": "eye"
+  },
+  {
+    "id": "ja-v-6eed6b905b8e",
+    "concept": "A whole-month calendar with month number 2",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-2"
+  },
+  {
+    "id": "ja-v-a02edbda9f4c",
+    "concept": "A single-day tear-off calendar showing 5",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-5"
+  },
+  {
+    "id": "ja-v-61c516578fee",
+    "concept": "The numeral 50 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-50"
+  },
+  {
+    "id": "ja-v-cf58c5cf08d9",
+    "concept": "A bright orange flame with yellow center",
+    "reviewRequired": false,
+    "visualGroup": "火"
+  },
+  {
+    "id": "ja-v-d4473f87e438",
+    "concept": "The numeral 5 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-5"
+  },
+  {
+    "id": "ja-v-084edf1fdd10",
+    "concept": "Exactly 5 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-5"
+  },
+  {
+    "id": "ja-v-b066e78531d6",
+    "concept": "The numeral 4 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-4"
+  },
+  {
+    "id": "ja-v-f1a679bd7d06",
+    "concept": "A person solving a puzzle with a bright idea bulb",
+    "reviewRequired": true,
+    "reviewNote": "Light bulb and puzzle symbolize genius; may read as an idea.",
+    "visualGroup": "天才"
+  },
+  {
+    "id": "ja-v-0bf44d10d860",
+    "concept": "A young girl with pigtails holding a ball",
+    "reviewRequired": true,
+    "reviewNote": "Gender cannot be known from hairstyle; both source words intentionally share this scene.",
+    "visualGroup": "girl"
+  },
+  {
+    "id": "ja-v-185a632e3742",
+    "concept": "A young girl with pigtails holding a ball",
+    "reviewRequired": true,
+    "reviewNote": "Gender cannot be known from hairstyle; both source words intentionally share this scene.",
+    "visualGroup": "girl"
+  },
+  {
+    "id": "ja-v-f78f531c55a5",
+    "concept": "A person skillfully juggling three balls",
+    "reviewRequired": true,
+    "reviewNote": "Juggling illustrates being good at a skill.",
+    "visualGroup": "上手"
+  },
+  {
+    "id": "ja-v-cbf0bc9a0df7",
+    "concept": "Two people waving beneath a rising sun",
+    "reviewRequired": true,
+    "reviewNote": "Morning greeting is conveyed by waving and sunrise.",
+    "visualGroup": "おはよう"
+  },
+  {
+    "id": "ja-v-b1ff052549ed",
+    "concept": "An open hand with five fingers",
+    "reviewRequired": false,
+    "visualGroup": "手"
+  },
+  {
+    "id": "ja-v-45b445caeb43",
+    "concept": "A bright sky with sun and clouds",
+    "reviewRequired": true,
+    "reviewNote": "Sky/heavens is one interpretation of 天.",
+    "visualGroup": "天"
+  },
+  {
+    "id": "ja-v-d5c177de5126",
+    "concept": "A large lodging building with a bed symbol",
+    "reviewRequired": false,
+    "visualGroup": "ホテル"
+  },
+  {
+    "id": "ja-v-a30018dbdb6b",
+    "concept": "A keyboard sending information into a monitor",
+    "reviewRequired": true,
+    "reviewNote": "Keyboard and inward arrow represent computer input.",
+    "visualGroup": "入力"
+  },
+  {
+    "id": "ja-v-5849925b131d",
+    "concept": "A pink ball visibly inside a transparent box",
+    "reviewRequired": true,
+    "reviewNote": "Transparent box symbolizes inside.",
+    "visualGroup": "中"
+  },
+  {
+    "id": "ja-v-ed82bb95d4cc",
+    "concept": "A whole-month calendar with month number 1",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-1"
+  },
+  {
+    "id": "ja-v-9752b818f9f8",
+    "concept": "The Japanese flag on a pole",
+    "reviewRequired": false,
+    "visualGroup": "日本"
+  },
+  {
+    "id": "ja-v-8ffa8462a479",
+    "concept": "A whole-month calendar with month number 6",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-6"
+  },
+  {
+    "id": "ja-v-fce7743a6cc5",
+    "concept": "An adult king wearing a large crown and cloak",
+    "reviewRequired": true,
+    "reviewNote": "Royal roles rely on conventional crowns and age cues.",
+    "visualGroup": "王"
+  },
+  {
+    "id": "ja-v-38acee5bccbe",
+    "concept": "A moonlit window beside a calendar with a backward arrow",
+    "reviewRequired": true,
+    "reviewNote": "Moon plus backward calendar arrow symbolizes last night; may need contextual teaching.",
+    "visualGroup": "夕べ"
+  },
+  {
+    "id": "ja-v-4ac46ddaa10f",
+    "concept": "Two arrows pointing left and right from one center",
+    "reviewRequired": false,
+    "visualGroup": "左右"
+  },
+  {
+    "id": "ja-v-14be5202d5b3",
+    "concept": "A bold arrow pointing left",
+    "reviewRequired": false,
+    "visualGroup": "左"
+  },
+  {
+    "id": "ja-v-2850d52ee4d2",
+    "concept": "A whole-month calendar with month number 5",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-5"
+  },
+  {
+    "id": "ja-v-e0bb1d02fee0",
+    "concept": "A crescent moon and star",
+    "reviewRequired": false,
+    "visualGroup": "月"
+  },
+  {
+    "id": "ja-v-9acbf1542642",
+    "concept": "A single-day tear-off calendar showing 9",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-9"
+  },
+  {
+    "id": "ja-v-cacf3a45ed07",
+    "concept": "A whole-month calendar with month number 10",
+    "reviewRequired": true,
+    "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
+    "visualGroup": "month-10"
+  },
+  {
+    "id": "ja-v-3d24eb7fb7b5",
+    "concept": "Sunrise to moonrise showing one full day",
+    "reviewRequired": true,
+    "reviewNote": "Duration one day is different from first day of month.",
+    "visualGroup": "一日"
+  },
+  {
+    "id": "ja-v-30d6b7d7e837",
+    "concept": "A banknote with the numeric currency amount ¥1000",
+    "reviewRequired": false,
+    "visualGroup": "千円"
+  },
+  {
+    "id": "ja-v-223e5321ecb8",
+    "concept": "A golden onion with papery skin and green shoots",
+    "reviewRequired": false,
+    "visualGroup": "玉ねぎ"
+  },
+  {
+    "id": "ja-v-3bcce8de9d04",
+    "concept": "A group of five people with varied skin tones",
+    "reviewRequired": false,
+    "visualGroup": "people"
+  },
+  {
+    "id": "ja-v-069e01664247",
+    "concept": "A young prince wearing a small crown",
+    "reviewRequired": true,
+    "reviewNote": "Prince and king differ mainly by age/proportions; review distinction.",
+    "visualGroup": "王子"
+  },
+  {
+    "id": "ja-v-e34a140da9c0",
+    "concept": "A young princess wearing a small crown",
+    "reviewRequired": true,
+    "reviewNote": "Princess and queen differ mainly by age/proportions; gender is conventional.",
+    "visualGroup": "王女"
+  },
+  {
+    "id": "ja-v-79140f0bf8e7",
+    "concept": "A tiny floppy-eared puppy beside a large paw print",
+    "reviewRequired": true,
+    "reviewNote": "Puppy proportions convey young dog; size alone can be ambiguous.",
+    "visualGroup": "子犬"
+  },
+  {
+    "id": "ja-v-1cc9ac39c880",
+    "concept": "An adult queen wearing a large crown and cloak",
+    "reviewRequired": true,
+    "reviewNote": "Royal role and gender rely on conventional costume.",
+    "visualGroup": "女王"
+  },
+  {
+    "id": "ja-v-e507b462aa49",
+    "concept": "A gauge showing a fairly high amount without reaching maximum",
+    "reviewRequired": true,
+    "reviewNote": "Rather/quite is context-dependent; gauge is symbolic and needs owner review.",
+    "visualGroup": "中々"
+  },
+  {
+    "id": "ja-v-0da81020c173",
+    "concept": "Flooded rice paddy with rows of green shoots",
+    "reviewRequired": false,
+    "visualGroup": "rice-paddy"
+  },
+  {
+    "id": "ja-v-762983bc3fe7",
+    "concept": "Flooded rice paddy with rows of green shoots",
+    "reviewRequired": false,
+    "visualGroup": "rice-paddy"
+  },
+  {
+    "id": "ja-v-ed6bd4d73b76",
+    "concept": "A bold arrow pointing right",
+    "reviewRequired": false,
+    "visualGroup": "右"
+  },
+  {
+    "id": "ja-v-56d52b7869ab",
+    "concept": "A single-day tear-off calendar showing 2",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-2"
+  },
+  {
+    "id": "ja-v-0655c242d1db",
+    "concept": "A single-day tear-off calendar showing 7",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-7"
+  },
+  {
+    "id": "ja-v-06ef406f5569",
+    "concept": "The numeral 6 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-6"
+  },
+  {
+    "id": "ja-v-e368e3aa9bf6",
+    "concept": "The numeral 16 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-16"
+  },
+  {
+    "id": "ja-v-7b2351210462",
+    "concept": "A single-day tear-off calendar showing 6",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-6"
+  },
+  {
+    "id": "ja-v-df70a01acaec",
+    "concept": "Exactly 6 apples to count as things",
+    "reviewRequired": false,
+    "visualGroup": "things-6"
+  },
+  {
+    "id": "ja-v-769a80524957",
+    "concept": "A tiny purple ball beside a large orange ball; tiny one highlighted",
+    "reviewRequired": false,
+    "visualGroup": "小さい"
+  },
+  {
+    "id": "ja-v-f3881ce313e7",
+    "concept": "A bright yellow sun with eight rays",
+    "reviewRequired": false,
+    "visualGroup": "日"
+  },
+  {
+    "id": "ja-v-65df49688ef0",
+    "concept": "A curved sword with a wrapped handle",
+    "reviewRequired": false,
+    "visualGroup": "刀"
+  },
+  {
+    "id": "ja-v-da2913ad7e4c",
+    "concept": "A single-day tear-off calendar showing 10",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-10"
+  },
+  {
+    "id": "ja-v-b0489d428339",
+    "concept": "A single-day tear-off calendar showing 3",
+    "reviewRequired": true,
+    "reviewNote": "Day-of-month calendar; avoid contrasting date with duration until taught.",
+    "visualGroup": "date-3"
+  },
+  {
+    "id": "ja-v-86ef0852f80f",
+    "concept": "The numeral 1000 on a colorful circular counting token",
+    "reviewRequired": false,
+    "visualGroup": "number-1000"
+  },
+  {
+    "id": "ja-v-b0a6475686ea",
+    "concept": "A person climbing a ladder with an upward arrow",
+    "reviewRequired": true,
+    "reviewNote": "Climbing a ladder illustrates upward movement.",
+    "visualGroup": "上る"
+  },
+  {
+    "id": "ja-v-5f0cf40d1630",
+    "concept": "An incorrect equation being changed into a correct one",
+    "reviewRequired": true,
+    "reviewNote": "Correction action is conveyed by a before-and-after arithmetic example.",
+    "visualGroup": "正す"
+  },
+  {
+    "id": "ja-v-b2a9df4d0301",
+    "concept": "A person leaving through an open doorway",
+    "reviewRequired": true,
+    "reviewNote": "Action and exit are visually related.",
+    "visualGroup": "exit-door"
+  },
+  {
+    "id": "ja-v-17e3177c62d5",
+    "concept": "A person rising from a chair with an upward arrow",
+    "reviewRequired": true,
+    "reviewNote": "Standing up and standing still share a picture; movement arrow provides the action cue.",
+    "visualGroup": "立つ"
+  },
+  {
+    "id": "ja-v-a5d390dc4805",
+    "concept": "A leafy green tree with a brown trunk",
+    "reviewRequired": false,
+    "visualGroup": "木"
+  },
+  {
+    "id": "ja-v-d0c9a070fa56",
+    "concept": "A fish beneath a wavy water surface",
+    "reviewRequired": false,
+    "visualGroup": "水中"
+  },
+  {
+    "id": "ja-v-8aeedc2d7a47",
+    "concept": "A person dropping juggling balls onto the ground",
+    "reviewRequired": true,
+    "reviewNote": "Dropping balls illustrates being unskillful at an activity.",
+    "visualGroup": "下手"
+  },
+  {
+    "id": "ja-v-afefe30bcb46",
+    "concept": "An erupting volcano with lava and smoke",
+    "reviewRequired": false,
+    "visualGroup": "火山"
+  },
+  {
+    "id": "ja-v-28ddfdc9290c",
+    "concept": "A large blue water droplet with small ripples",
+    "reviewRequired": false,
+    "visualGroup": "水"
+  },
+  {
+    "id": "ja-v-cbda72b9dd04",
+    "concept": "A white paint swatch on a purple backing",
+    "reviewRequired": true,
+    "reviewNote": "Color swatch uses a border so white remains visible on white screens.",
+    "visualGroup": "白"
+  },
+  {
+    "id": "ja-v-a7b882deb9b5",
+    "concept": "Three people with different skin tones; an arrow highlights the fair-skinned person",
+    "reviewRequired": true,
+    "reviewNote": "Race cannot be reliably determined by skin color or appearance. This provisional image requires owner review before quiz use.",
+    "visualGroup": "白人"
+  },
+  {
+    "id": "ja-v-d4fb59f8c32c",
+    "concept": "A pencil writing lines on a sheet of paper",
+    "reviewRequired": false,
+    "visualGroup": "文"
+  },
+  {
+    "id": "ja-v-8101bd0ca76a",
+    "concept": "A birthday cake with five candles and the numeral 5",
+    "reviewRequired": true,
+    "reviewNote": "Birthday cake symbolizes age; numeral 5 is an example, not part of the spoken counter.",
+    "visualGroup": "～才"
+  },
+  {
+    "id": "ja-v-a119c15d9de4",
+    "concept": "Several yen coins with the currency symbol",
+    "reviewRequired": true,
+    "reviewNote": "Currency symbol represents yen counter; source English gloss was clipped.",
+    "visualGroup": "～円"
+  }
+]
