@@ -27,7 +27,7 @@ function QuizProgress({ total, completed }: { total: number; completed: number }
 
 function QuizCompanion({ listening, response }: { listening: boolean; response: boolean | null }) {
   const mood = response === true ? 'is-cheering' : response === false ? 'is-encouraging' : listening ? 'is-listening' : '';
-  return <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-spark">✦</span></div>;
+  return <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-sparks">{Array.from({ length: 6 }, (_, i) => <span className="companion-spark" key={i}>✦</span>)}</span></div>;
 }
 
 const wallClock = () => Date.now();
@@ -231,7 +231,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
           return <div className="choice-slot" key={item.id} style={{ animationDelay: `${i * 40}ms` }}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <><strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>{!feedback.correct ? <p>Listen again to match the picture.</p> : !saveError && !audioError && !autoPaused && <p className="next-cue">{saving ? 'Saving…' : index + 1 === questions.length ? 'Finishing up…' : 'Next sound…'}</p>}</>}</div>
+        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>

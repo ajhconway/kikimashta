@@ -10,24 +10,25 @@ async function captureScreen(page: Page, name: string) {
 }
 
 async function captureCorrectResponse(page: Page, name: string) {
-  const glow = await page.locator('.app').evaluateHandle(app => {
-    const animation = app.getAnimations({ subtree: true }).find(candidate =>
+  const decorations = await page.locator('.app').evaluateHandle(app => {
+    const glow = app.getAnimations({ subtree: true }).filter(candidate =>
       candidate instanceof CSSAnimation && candidate.animationName === 'correct-glow',
     );
-    if (animation) {
+    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark')).flatMap(spark => spark.getAnimations())];
+    for (const animation of animations) {
       animation.pause();
-      animation.currentTime = 270;
+      animation.currentTime = 360;
     }
-    return animation ?? null;
+    return animations;
   });
   try {
-    // Hold only the decorative glow for review; quiz/audio timing continues normally.
+    // Hold only the decorative effects for review; quiz/audio timing continues normally.
     await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
   } finally {
     try {
-      await glow.evaluate(animation => animation?.play());
+      await decorations.evaluate(animations => animations.forEach(animation => animation.play()));
     } finally {
-      await glow.dispose();
+      await decorations.dispose();
     }
   }
 }
@@ -92,7 +93,7 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
   } else {
     await choice.click();
   }
-  await expect(page.getByText('Got it!', { exact: true })).toBeVisible();
+  await expect(page.locator('.feedback')).toHaveText('Got it!');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
   await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
   if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
@@ -181,6 +182,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await wrongChoice.focus();
   await page.keyboard.press('Space');
   await expect(page.getByText('Try this one.', { exact: true })).toBeVisible();
+  await expect(page.locator('.feedback')).toHaveText('Try this one.');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'incorrect');
   await expect.poll(() => screenColor(page)).toBe('#b8a4cf');
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
