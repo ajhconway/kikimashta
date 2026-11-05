@@ -1,6 +1,8 @@
 import { expect, test, type Page } from '@playwright/test';
 import bank from '../content/ja.json' with { type: 'json' };
 
+const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
+
 async function captureScreen(page: Page, name: string) {
   await page.getByRole('button', { name: /kikimashta home/i }).scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
@@ -54,9 +56,12 @@ test('preview, complete a short round, and retain real device progress after rel
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
+  const homeColor = await backgroundColor(page);
   await captureScreen(page, 'home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByRole('heading', { name: /listen & look/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
+  await expect.poll(() => backgroundColor(page)).not.toBe(homeColor);
+  const lessonColor = await backgroundColor(page);
   await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await captureScreen(page, 'preview-' + testInfo.project.name);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'preview-mobile');
@@ -64,6 +69,7 @@ test('preview, complete a short round, and retain real device progress after rel
     await page.getByRole('button', { name: /next word/i }).click();
   }
   await page.getByRole('button', { name: /play a round/i }).click();
+  await expect.poll(async () => [homeColor, lessonColor].includes(await backgroundColor(page))).toBe(false);
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
     const beforeAnswer = i === 0 && testInfo.project.use.isMobile ? await page.locator('.choices').boundingBox() : null;
@@ -83,6 +89,7 @@ test('preview, complete a short round, and retain real device progress after rel
   await expect(page.getByText(`${bank.items.length} / ${bank.items.length}`, { exact: true })).toBeVisible();
   await captureScreen(page, 'summary-' + testInfo.project.name);
   await page.getByRole('button', { name: /back home/i }).click();
+  await expect.poll(() => backgroundColor(page)).toBe(homeColor);
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();
   await page.reload();
   await expect(page.getByText(`${bank.items.length} answers saved on this device`)).toBeVisible();

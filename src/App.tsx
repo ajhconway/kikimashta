@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import rawBank from '../content/ja.json';
 import type { PracticeAttempt, WordBank, WordItem } from './types';
 import { createSession, type Question } from './core/session';
 import { ProgressStore } from './progress/store';
+import { themeColors } from './themes';
 import './styles.css';
 
 const bank: WordBank = rawBank as WordBank;
@@ -36,6 +37,21 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
   const playRequest = useRef(0);
   const pendingSaves = useRef(new Set<string>());
   const target = screen === 'preview' ? bank.items[preview] : questions[index]?.target;
+  const theme = screen === 'preview' ? 'lesson' : screen === 'quiz' ? 'pictureQuiz' : 'home';
+
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const previousBackground = root.style.getPropertyValue('--screen-background');
+    const previousColor = meta?.content;
+    root.style.setProperty('--screen-background', themeColors[theme]);
+    if (meta) meta.content = themeColors[theme];
+    return () => {
+      if (previousBackground) root.style.setProperty('--screen-background', previousBackground);
+      else root.style.removeProperty('--screen-background');
+      if (meta && previousColor !== undefined) meta.content = previousColor;
+    };
+  }, [theme]);
 
   useEffect(() => {
     let mounted = true;
@@ -114,7 +130,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
     showQuestion(questions[index + 1]!, active.current.sessionId);
   }
   const correct = answers.filter(answer => answer.correct).length;
-  return <div className={'app app-' + screen}>
+  return <div className={'app app-' + screen} data-theme={theme}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
     <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
     <main>
@@ -129,7 +145,7 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
       </section>}
       {screen === 'preview' && target && <section className="practice preview fade-in">
         <div className="section-top"><span className="eyebrow">MEET THE WORDS</span><span className="counter">{preview + 1} / {bank.items.length}</span></div>
-        <h1 className="practice-title">Listen & look</h1>
+        <h1 className="practice-title">Lesson Time!</h1>
         <div className="preview-picture"><Picture item={target}/></div>
         <div className="practice-actions">
         <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(target)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
