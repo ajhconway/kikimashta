@@ -286,13 +286,27 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
   }
 });
 
-test('pace wheels scroll natively, keep valid bounds, and fit around Kiku on a phone', async ({ page }, testInfo) => {
+test('pace controls use browser scrolling, keep valid bounds, and fit around Kiku on a phone', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 664 });
   await page.goto('./');
   const minimum = page.getByRole('listbox', { name: 'Minimum', exact: true });
   const maximum = page.getByRole('listbox', { name: 'Maximum', exact: true });
   const density = page.getByRole('status', { name: 'Review density' });
   const pace = page.getByRole('group', { name: 'Practice pace' });
+  async function scrollPace(label: 'Minimum' | 'Maximum') {
+    const wheel = page.getByRole('listbox', { name: label, exact: true });
+    if (testInfo.project.use.isMobile) {
+      // Mobile WebKit has no mouse-wheel injection. Exercise the touch-event
+      // path plus browser overflow scrolling and CSS snap; this is not a
+      // trusted finger pan and does not replace real-iPhone gesture review.
+      await wheel.dispatchEvent('touchstart');
+      await wheel.evaluate(element => element.scrollBy({ top: 128, behavior: 'smooth' }));
+      await wheel.dispatchEvent('touchend');
+    } else {
+      await wheel.hover();
+      await page.mouse.wheel(0, 128);
+    }
+  }
   await expect(pace.locator('.pace-kiku img')).toHaveCount(3);
   for (const column of await pace.locator('.pace-column').all()) {
     await expect(column.locator('.pace-heading')).toBeVisible();
@@ -301,11 +315,9 @@ test('pace wheels scroll natively, keep valid bounds, and fit around Kiku on a p
   }
   await expect(density).toContainText('Minimal');
   await expect(minimum.getByRole('option', { name: 'Light', exact: true })).toHaveAttribute('aria-selected', 'true');
-  await minimum.hover();
-  await page.mouse.wheel(0, 128);
+  await scrollPace('Minimum');
   await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
-  await maximum.hover();
-  await page.mouse.wheel(0, 128);
+  await scrollPace('Maximum');
   const selectedMaximum = maximum.getByRole('option', { name: 'Intense', exact: true });
   await expect(selectedMaximum).toHaveAttribute('aria-selected', 'true');
   await expect(maximum).toHaveAttribute('aria-activedescendant', (await selectedMaximum.getAttribute('id'))!);
