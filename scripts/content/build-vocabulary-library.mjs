@@ -25,7 +25,7 @@ const html = `<!doctype html>
   <meta name="theme-color" content="#fff0dc">
   <title>Vocabulary cards</title>
   <link rel="stylesheet" href="./library.css">
-  <script src="./library.js" defer></script>
+  <script src="./library.js" type="module"></script>
 </head>
 <body>
   <main>
@@ -47,6 +47,10 @@ const html = `<!doctype html>
         <input id="search" name="search" type="search" placeholder="Japanese, reading, or English" autocomplete="off">
       </label>
     </form>
+    <section class="feedback-tools" aria-label="Card feedback">
+      <button type="button" id="export-feedback" disabled>Export feedback</button>
+      <p>Feedback stays in this browser. Export it to share or back it up.</p>
+    </section>
     <p id="results-status" role="status">Loading vocabulary…</p>
     <p id="library-error" role="alert" hidden></p>
     <p id="audio-status" role="status" class="audio-status"></p>

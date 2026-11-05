@@ -16,8 +16,8 @@ h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 22px 0 12px;
 .filters { display: flex; flex-wrap: wrap; gap: 16px; padding: 18px; background: #ffd5dd; border: 6px solid #8748ef; border-radius: 20px; }
 label { display: flex; flex-direction: column; gap: 7px; font-weight: 750; min-width: 0; }
 .search-label { flex: 1; min-width: 190px; }
-input, select, button { font: inherit; color: inherit; }
-input, select { min-height: 48px; width: 100%; padding: 9px 12px; border: 3px solid #3f2468; border-radius: 10px; background: #fffdfa; }
+input, select, button, textarea { font: inherit; color: inherit; }
+input, select, textarea { min-height: 48px; width: 100%; padding: 9px 12px; border: 3px solid #3f2468; border-radius: 10px; background: #fffdfa; }
 input::placeholder { color: #756181; opacity: 1; }
 button { min-height: 46px; border: 3px solid #3f2468; border-radius: 12px; padding: 8px 14px; background: #fffdfa; font-weight: 750; cursor: pointer; }
 button:hover:enabled { background: #ffe178; }
@@ -44,6 +44,14 @@ button:disabled { opacity: .55; cursor: default; }
 .picture-notes { margin-top: 17px; font-size: .88rem; }
 .picture-notes summary { cursor: pointer; padding: 5px 0; font-weight: 700; }
 .picture-notes p { margin: 9px 0; }
+.feedback-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 18px; }
+.feedback-tools p { margin: 0; font-size: .85rem; }
+.card-feedback { margin-top: 8px; font-size: .88rem; }
+.card-feedback summary { cursor: pointer; padding: 5px 0; font-weight: 700; }
+.card-feedback label { margin: 8px 0 6px; }
+.card-feedback textarea { display: block; resize: vertical; font-size: 1rem; }
+.feedback-status { margin: 7px 0 0; font-size: .8rem; }
+.feedback-status.save-error { color: #822342; font-weight: 700; }
 footer { margin-top: 34px; text-align: center; font-size: .9rem; }
 @media (max-width: 440px) {
   main { padding: 18px 13px 32px; }

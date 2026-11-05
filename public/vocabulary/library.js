@@ -1,4 +1,6 @@
 /* One shared player; render only the current page. Vocabulary library for #27. */
+import { createFeedbackStore, exportFeedback } from './feedback.js'
+
 (() => {
   'use strict'
   const pageSize = 24
@@ -11,6 +13,8 @@
   const next = document.getElementById('next')
   const audioStatus = document.getElementById('audio-status')
   const audioError = document.getElementById('audio-error')
+  const exportButton = document.getElementById('export-feedback')
+  const feedbackStore = createFeedbackStore({ language: 'ja' })
   const audio = new Audio()
   audio.preload = 'none'
   let cards = []
@@ -89,6 +93,62 @@
     if (activeSource && audio.currentSrc === activeSource) failAudio(playRequest, activeButton.dataset.label)
   })
 
+  function updateFeedbackCount() {
+    const count = cards.filter(card => feedbackStore.read(card.id).text.trim()).length
+    exportButton.disabled = count === 0
+    exportButton.textContent = count ? `Export feedback (${count})` : 'Export feedback'
+  }
+
+  function renderFeedback(card) {
+    const details = element('details', 'card-feedback')
+    const summary = element('summary')
+    const label = element('label', '', 'Your notes')
+    const input = element('textarea')
+    input.id = `feedback-${card.id}`
+    input.rows = 4
+    input.placeholder = 'Picture, pronunciation, meaning…'
+    label.htmlFor = input.id
+    const status = element('p', 'feedback-status')
+    status.id = `feedback-status-${card.id}`
+    status.setAttribute('role', 'status')
+    input.setAttribute('aria-describedby', status.id)
+    input.value = feedbackStore.read(card.id).text
+
+    function update(note, edited = false) {
+      summary.textContent = note.text.trim() ? 'Your feedback · Has notes' : 'Your feedback'
+      status.textContent = !note.saved ? (note.dirty && !note.text.trim()
+        ? 'Could not clear the saved feedback. Try editing and clearing this box again.'
+        : 'Could not save on this device. Keep this page open and export your feedback.')
+        : note.text.trim() ? 'Saved on this device.' : edited ? 'Feedback cleared.' : ''
+      status.classList.toggle('save-error', !note.saved)
+    }
+    update(feedbackStore.read(card.id))
+    input.addEventListener('input', () => {
+      update(feedbackStore.write(card.id, input.value), true)
+      updateFeedbackCount()
+    })
+    details.append(summary, label, input, status)
+    return details
+  }
+
+  exportButton.addEventListener('click', () => {
+    const data = exportFeedback(cards, feedbackStore, 'ja')
+    const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' }))
+    const link = element('a')
+    link.href = url
+    link.download = `kikimashta-feedback-${data.exportedAt.slice(0, 10)}.json`
+    document.body.append(link)
+    link.click()
+    link.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  })
+
+  window.addEventListener('beforeunload', event => {
+    if (!feedbackStore.hasUnsavedChanges()) return
+    event.preventDefault()
+    event.returnValue = ''
+  })
+
   function renderCard(card) {
     const article = element('article', 'card')
     const headingId = `word-${card.id}`
@@ -132,7 +192,7 @@
     if (cards.some(other => other.id !== card.id && other.visualGroup === card.visualGroup)) {
       notes.append(element('p', '', 'Other cards share this picture idea. Consider them together when reviewing.'))
     }
-    content.append(notes)
+    content.append(notes, renderFeedback(card))
     article.append(content)
     return article
   }
@@ -173,6 +233,7 @@
     .then(data => {
       if (!Array.isArray(data.cards) || !data.cards.length) throw new Error('Vocabulary is empty')
       cards = data.cards
+      updateFeedbackCount()
       render()
     })
     .catch(() => {
