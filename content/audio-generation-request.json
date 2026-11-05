@@ -1,31 +1,17 @@
 {
-  "id": "2026-11-05-vocabulary-five-repairs",
+  "id": "2026-11-05-vocabulary-transcript-repairs",
   "mode": "catalog",
   "levels": [
-    1,
-    2,
-    3,
-    4
+    4,
+    5
   ],
   "repairs": [
     {
-      "id": "ja-v-520308b3c3b4",
+      "id": "ja-v-c2a96f1d7abc",
       "voice": "marin"
     },
     {
-      "id": "ja-v-cf58c5cf08d9",
-      "voice": "cedar"
-    },
-    {
-      "id": "ja-v-f78f531c55a5",
-      "voice": "cedar"
-    },
-    {
-      "id": "ja-v-7930a252da9b",
-      "voice": "cedar"
-    },
-    {
-      "id": "ja-v-0cbc7661647e",
+      "id": "ja-v-602940cfc449",
       "voice": "cedar"
     }
   ],
