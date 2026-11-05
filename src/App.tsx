@@ -18,15 +18,16 @@ function Picture({ item }: { item: WordItem }) {
   return <img src={asset(item.image.src)} alt={item.image.alt} draggable={false}/>;
 }
 
-function QuizProgress({ total, completed, listening, response }: { total: number; completed: number; listening: boolean; response: boolean | null }) {
-  const mood = response === true ? 'is-cheering' : response === false ? 'is-encouraging' : listening ? 'is-listening' : '';
-  return <div className="quiz-top">
-    <div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
-      <div className="progress-beads" aria-hidden="true">{Array.from({ length: total }, (_, i) => <span key={i} className={'progress-bead' + (i < completed ? ' is-complete' : i === completed ? ' is-current' : '') + (response !== null && i === completed - 1 ? ' just-completed' : '')}>{i < completed ? '✦' : ''}</span>)}</div>
-      <span className="round-count" aria-hidden="true">{completed} / {total}</span>
-    </div>
-    <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-spark">✦</span></div>
+function QuizProgress({ total, completed }: { total: number; completed: number }) {
+  return <div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
+    <div className="progress-beads" aria-hidden="true">{Array.from({ length: total }, (_, i) => <span key={i} className={'progress-bead' + (i < completed ? ' is-complete' : i === completed ? ' is-current' : '')}/>)}</div>
+    <span className="round-count" aria-hidden="true">{completed} / {total}</span>
   </div>;
+}
+
+function QuizCompanion({ listening, response }: { listening: boolean; response: boolean | null }) {
+  const mood = response === true ? 'is-cheering' : response === false ? 'is-encouraging' : listening ? 'is-listening' : '';
+  return <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-spark">✦</span></div>;
 }
 
 const wallClock = () => Date.now();
@@ -214,9 +215,11 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         </div>
       </section>}
       {screen === 'quiz' && target && <section className="practice quiz fade-in">
-        <QuizProgress total={questions.length} completed={answers.length} listening={playing} response={feedback?.correct ?? null}/>
         <h1 className="sr-only">Listen and choose</h1>
+        <div className="quiz-top">
+        <QuizCompanion listening={playing} response={feedback?.correct ?? null}/>
         <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={play} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
+        </div>
         <span className="sr-only" aria-live="polite">Sound {index + 1} of {questions.length}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="choices choices-enter" key={target.id}>{questions[index]!.choices.map((item, i) => {
@@ -229,6 +232,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
+        <QuizProgress total={questions.length} completed={answers.length}/>
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="eyebrow">ROUND COMPLETE</div><div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>

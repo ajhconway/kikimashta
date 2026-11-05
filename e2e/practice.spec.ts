@@ -17,12 +17,15 @@ async function checkMobilePracticeSizes(page: Page, pictureSelector: string, nam
       const picture = document.querySelector(selector)!.getBoundingClientRect();
       const actions = document.querySelector('.practice-actions')!.getBoundingClientRect();
       const action = document.querySelector('.practice-actions .primary')?.getBoundingClientRect() ?? actions;
+      const progress = document.querySelector('.quiz > .round-progress')?.getBoundingClientRect();
+      const bottomControl = progress ?? action;
       return Math.abs(app.height - innerHeight) <= 1
         && document.documentElement.scrollHeight <= innerHeight + 1
         && document.documentElement.scrollWidth <= innerWidth
         && picture.width >= innerWidth - 48 && picture.height >= innerHeight * .35
-        && action.bottom <= innerHeight && action.bottom >= innerHeight - 48;
-    }, pictureSelector), { message: 'practice fills the phone viewport with large pictures and a reachable feedback/action area' }).toBe(true);
+        && bottomControl.bottom <= innerHeight && bottomControl.bottom >= innerHeight - 48
+        && (!progress || (picture.bottom <= actions.top + 1 && actions.bottom <= progress.top + 1 && action.bottom <= progress.top + 1));
+    }, pictureSelector), { message: 'practice fills the phone viewport with large pictures; quiz feedback sits above bottom progress, and lesson actions stay reachable' }).toBe(true);
     await captureScreen(page, name + '-' + viewport.width);
   }
   await page.setViewportSize(original);
@@ -45,12 +48,26 @@ async function heardWord(page: Page) {
   return { source: source!, target: target! };
 }
 
-async function chooseHeardPicture(page: Page) {
+async function chooseHeardPicture(page: Page, pressScreenshot?: string) {
   const { target } = await heardWord(page);
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
-  await choice.click();
+  if (pressScreenshot) {
+    await choice.scrollIntoViewIfNeeded();
+    const card = await choice.boundingBox();
+    expect(card).not.toBeNull();
+    await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
+    await page.mouse.down();
+    try {
+      await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
+    } finally {
+      // Releasing the real press answers normally; it does not alter quiz pacing.
+      await page.mouse.up();
+    }
+  } else {
+    await choice.click();
+  }
   await expect(page.getByText('Got it!', { exact: true })).toBeVisible();
   await expect.poll(() => page.evaluate(() => {
     const choices = document.querySelector('.choices')!.getBoundingClientRect();
@@ -97,7 +114,7 @@ test('preview, complete a short round, and retain real device progress after rel
     previousSource = source;
     expect(await originalAudio!.evaluate(element => element === document.querySelector('audio'))).toBe(true);
     const beforeAnswer = i === 0 ? await page.locator('.choices').boundingBox() : null;
-    await chooseHeardPicture(page);
+    await chooseHeardPicture(page, i === 0 ? 'quiz-pressed-' + testInfo.project.name : undefined);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i + 1));
     await expect(page.locator('.progress-bead.is-complete')).toHaveCount(i + 1);
     if (i === 0) {
@@ -133,6 +150,14 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect(page.locator('audio')).toHaveAttribute('src', source);
   await expect(page.getByRole('button', { name: /choose picture/i }).first()).toBeDisabled();
   await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
+  if (testInfo.project.use.isMobile) {
+    await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeInViewport({ ratio: 1 });
+    await expect.poll(() => page.evaluate(() => {
+      const action = document.querySelector('.quiz .practice-actions .primary')!.getBoundingClientRect();
+      const progress = document.querySelector('.quiz > .round-progress')!.getBoundingClientRect();
+      return action.bottom <= progress.top + 1 && progress.bottom <= innerHeight;
+    }), { message: 'Continue remains fully reachable above the bottom progress row' }).toBe(true);
+  }
   await expect.poll(() => page.locator('.quiz-companion, .quiz-companion *, .progress-bead, .picture-choice, .choices').evaluateAll(elements =>
     elements.every(element => getComputedStyle(element).animationName === 'none'),
   )).toBe(true);
