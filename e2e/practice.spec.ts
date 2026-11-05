@@ -4,7 +4,7 @@ import bank from '../content/ja.json' with { type: 'json' };
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 
 async function captureScreen(page: Page, name: string) {
-  await page.getByRole('button', { name: /kikimashta home/i }).scrollIntoViewIfNeeded();
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
 }
 
