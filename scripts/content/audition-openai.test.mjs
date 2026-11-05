@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { EventEmitter } from 'node:events'
-import { audioCollector, levelAudio, synthesize, wavFromPcm } from './audition-openai.mjs'
+import { audioCollector, levelAudio, SENTENCE_INSTRUCTIONS, synthesize, wavFromPcm } from './audition-openai.mjs'
 
 const pcm = Buffer.alloc(24000)
 for (let i = 0; i < pcm.length; i += 2) pcm.writeInt16LE(i % 4 ? 4000 : -4000, i)
@@ -95,4 +95,24 @@ test('early close and timeout reject without retrying or exposing the key', asyn
   const stalled = fakeTransport(() => {})
   await assert.rejects(synthesize('local-test-key', 'marin', 'ねこ', { ...stalled, timeoutMs: 5 }), /timed out/)
   assert.equal(stalled.instance.closed, true)
+})
+
+test('sentence generation preserves the full text and accepts speech beyond the word limit', async () => {
+  const text = '雨が降っているので、かさを持っていきます。'
+  const longerPcm = Buffer.alloc(24000 * 2 * 9)
+  const transport = fakeTransport(socket => {
+    socket.event({ type: 'session.created' })
+    assert.equal(socket.sent[0].session.instructions, SENTENCE_INSTRUCTIONS)
+    assert.match(socket.sent[0].session.instructions, /complete sentences/)
+    socket.event({ type: 'session.updated' })
+    assert.equal(socket.sent[1].response.input[0].content[0].text, text)
+    assert.equal(socket.sent[1].response.max_output_tokens, 512)
+    socket.event(delta(longerPcm))
+    socket.event(completed)
+  })
+  const result = await synthesize('local-test-key', 'cedar', text, {
+    Socket: transport.Socket, instructions: SENTENCE_INSTRUCTIONS, maxOutputTokens: 512, maxSeconds: 12,
+  })
+  assert.deepEqual(result.pcm, longerPcm)
+  assert.throws(() => audioCollector(12)(delta(Buffer.alloc(24000 * 2 * 12 + 2))), /Unexpectedly long/)
 })

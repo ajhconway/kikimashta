@@ -28,19 +28,25 @@ The initial Open JTalk voice is provisional. Voice preference and Japanese pronu
 
 ## Voice auditions
 
-Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). To compare three OpenAI voices on the same three Japanese words:
+Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
 
-The current [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
+Generation normally runs in GitHub Actions. Configure an `OPENAI_API_KEY` repository secret once under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow** with a word/sentence choice. To request another run, change the request's `id` and choose `mode`: `words` or `sentences`. Unrelated pushes and pull requests do not generate paid audio.
+
+The agent can submit a request, collect the resulting artifact, review the audio and provenance, then publish approved audition clips through a PR. Generation does not publish files automatically. Original WAVs and listening MP3s are retained in the workflow artifact for 30 days; download and preserve originals before expiry.
+
+For local generation instead:
 
 ```sh
 npm run audio:audition -- --dry-run
 # Add OPENAI_API_KEY=your-key to the ignored .env.local file, then:
 npm run audio:audition
+# Four full sentences each for Marin and Cedar:
+npm run audio:audition -- --sentences
 ```
 
-Generation requires FFmpeg and an OpenAI API account with billing and access to `gpt-realtime-2.1-mini`. The live command makes nine paid requests without automatic retries. The key is read only by the local generation tool; never prefix it with `VITE_`, put it in browser code, or commit it.
+Generation requires FFmpeg and an OpenAI API account with billing and access to `gpt-realtime-2.1-mini`. Each run makes nine paid requests for words or eight for sentences, without automatic retries. The key is available only to the generation tool; never prefix it with `VITE_`, put it in browser code, or commit it.
 
-Open the generated `index.html` under `artifacts/generated-originals/audio-audition/` to compare. Each run preserves the provider-original WAVs, listening MP3s, and provenance locally. It leaves the lesson bank unchanged. Choose a voice and review pronunciation, pitch accent, volume, and word endings before publishing replacement audio.
+Local runs preserve the provider-original WAVs, listening MP3s, and provenance under `artifacts/generated-originals/audio-audition/`. Word auditions include an `index.html`; sentence clips are added to the shared comparison after review. Choose a voice and review pronunciation, pitch accent, volume, and word endings before publishing replacement audio.
 
 The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
 
