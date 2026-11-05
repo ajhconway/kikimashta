@@ -132,12 +132,12 @@ export default function App({ now = wallClock }: { now?: () => number } = {}) {
   const correct = answers.filter(answer => answer.correct).length;
   return <div className={'app app-' + screen} data-theme={theme}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    <header><button className="brand" onClick={home} aria-label="Kikimashta home"><svg className="brand-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="10" fill="currentColor"/><path d="M10 16v-3m12 3v-3M11 21q5 5 10 0" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button><span className="language"><i/> Japanese</span></header>
+    <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
-        <div className="eyebrow">JAPANESE LISTENING</div>
-        <h1>Listen.<br/><em>Pick a picture.</em></h1>
-        <div className="world" aria-hidden="true">{[bank.items[0]!, bank.items[2]!, bank.items[4]!].map((item, i) => <div className={'world-card card-' + i} key={item.id}><Picture item={item}/></div>)}</div>
+        <img className="home-mascot" src={asset('brand/kikimashta-cat-v1.png')} alt="Cat wearing purple headphones" draggable={false}/>
+        <h1>kikimashta</h1>
+        <p className="home-prompt">Listen. Pick a picture.</p>
         <div className="session-note"><span>6 words</span><b>·</b><span>No timer</span></div>
         <button className="primary start" onClick={() => { setPreview(0); setScreen('preview'); play(bank.items[0]!); }}>Start <span aria-hidden="true">↗</span></button>
         <button className="text-button" onClick={startQuiz}>Skip to quiz <span aria-hidden="true">→</span></button>

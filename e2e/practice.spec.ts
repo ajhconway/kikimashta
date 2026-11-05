@@ -4,7 +4,7 @@ import bank from '../content/ja.json' with { type: 'json' };
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 
 async function captureScreen(page: Page, name: string) {
-  await page.getByRole('button', { name: /kikimashta home/i }).scrollIntoViewIfNeeded();
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
 }
 
@@ -62,7 +62,7 @@ test('preview, complete a short round, and retain real device progress after rel
   await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
   await expect.poll(() => backgroundColor(page)).not.toBe(homeColor);
   const lessonColor = await backgroundColor(page);
-  await expect.poll(() => page.locator('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect.poll(() => page.getByRole('img').evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await captureScreen(page, 'preview-' + testInfo.project.name);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'preview-mobile');
   for (let i = 0; i < bank.items.length - 1; i++) {

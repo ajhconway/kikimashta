@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/ajhconway/kikimashta/issues/9",
+  "createdOn": "2026-11-04",
+  "source": {
+    "path": "Kikimashta Japanese Listening Cat.png",
+    "bytes": 1568814,
+    "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGB",
+    "alphaExtrema": null,
+    "transparentPixels": 0
+  },
+  "assets": [
+    {
+      "id": "icon",
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1a555-923c-7653-8af9-1955f5e807cb/exec-3be8e99a-e4de-4b7d-b1de-fa714eea6d93.png",
+      "original": {
+        "path": "artifacts/generated-originals/brand/kikimashta-icon-v1-original.png",
+        "bytes": 1558201,
+        "sha256": "dd21354a66d11e898993fd1c2910d67191a8506918aa1e09698d2edd51756f97",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixels": 0
+      },
+      "delivery": {
+        "path": "public/brand/kikimashta-icon-v1.png",
+        "bytes": 300611,
+        "sha256": "4e8a8eecfa28a42c0e13d56240f92cdd276feb60c7c2dc10a714b5aaf88ea7e8",
+        "width": 512,
+        "height": 512,
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixels": 0
+      },
+      "optimization": {
+        "tool": "sips",
+        "maxDimension": 512,
+        "operation": "PNG delivery downscale only"
+      },
+      "prompt": "Use case: precise-object-edit\nAsset type: square app icon and brand artwork\nInput image 1: edit target, the supplied Kikimashta cat-and-headphones icon.\nPrimary request: Make a minimal lettering edit to this exact image. Completely remove the small uppercase words \"JAPANESE LISTENING\" in the bottom purple banner and reconstruct the uninterrupted purple banner smoothly. Move only the existing large cream lowercase wordmark \"kikimashta\" down slightly, approximately 3 percent of the whole canvas height, to balance the newly empty space. Keep the wordmark fully inside the lower purple banner.\nText (verbatim): \"kikimashta\" — k i k i m a s h t a — all lowercase, matching the original friendly rounded lettering.\nConstraints: Preserve the original cat, facial expression, headphones, paws, tail, surrounding cherry blossoms, mountain, gate, sound marks, scenery, rounded-square shape, lavender outside background, purple banner shape, colors, shading, proportions, and square framing. Change only removal of the small tagline and the slight downward shift of the wordmark. Opaque background. No new objects or extra text.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/Kikimashta Japanese Listening Cat.png"
+        ],
+        "transparent_background": false
+      },
+      "visualReview": "Inspected: tagline removed cleanly, accurate lowercase kikimashta moved slightly down within purple banner; cat, headphones, scenery and palette preserved."
+    },
+    {
+      "id": "cat",
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1a555-923c-7653-8af9-1955f5e807cb/exec-0e9af2be-3ec7-438b-8806-25a421a9fcd0.png",
+      "original": {
+        "path": "artifacts/generated-originals/brand/kikimashta-cat-v1-original.png",
+        "bytes": 933966,
+        "sha256": "9c854ddab384e62b7940eaf78509965f51d0f47f5cee7cf6f3bdfbbe6208402a",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 889822
+      },
+      "delivery": {
+        "path": "public/brand/kikimashta-cat-v1.png",
+        "bytes": 295090,
+        "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+        "width": 640,
+        "height": 640,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 232933
+      },
+      "optimization": {
+        "tool": "sips",
+        "maxDimension": 640,
+        "operation": "PNG delivery downscale only"
+      },
+      "prompt": "Use case: background-extraction\nAsset type: transparent mascot cutout for a listening app\nInput image 1: edit target, the supplied Kikimashta cat-and-headphones icon.\nPrimary request: Extract the exact same orange cat wearing purple over-ear headphones into a clean transparent PNG. Retain the cat's closed contented eyes, small nose and smile, whiskers, ears, headphones and arch, front paws and curled tail. Preserve this cat's identity, drawing style, orange and purple colors, thick purple outlines and soft existing shading.\nComposition/framing: The cat, complete headphone arch, paws, and tail as a single centered mascot cutout with a small clear transparent margin. Preserve the visible pose and anatomy; finish the lower silhouette naturally where the purple banner previously concealed it.\nBackground: Genuine transparent alpha, including all space inside the headphone arch and around the cat. Remove every part of the lavender square background, scenery, blossoms, mountain, gate, separate sound marks, purple banner, lettering and tagline.\nConstraints: Cat and headphones only. No scenery, no banner, no words, no decorative sound rays, no new accessories, no shadow or flat-color rectangle behind the mascot. Do not simulate transparency with checkerboard pixels.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/Kikimashta Japanese Listening Cat.png"
+        ],
+        "transparent_background": true
+      },
+      "visualReview": "Inspected: same cat/headphones/paws/tail on genuine transparency; no scenery, banner, sound rays or lettering."
+    }
+  ],
+  "generator": "OpenAI built-in image_gen.imagegen",
+  "sourcePolicy": "User-supplied source PNG preserved unchanged. Full generated originals retained in ignored artifacts/generated-originals/brand/; PNG delivery files are downscaled copies."
+}
