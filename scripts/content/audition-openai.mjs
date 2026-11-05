@@ -8,6 +8,7 @@ import { spawnSync } from 'node:child_process'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { WebSocket } from 'undici'
+import japaneseBank from '../../content/ja.json' with { type: 'json' }
 
 export const MODEL = 'gpt-realtime-2.1-mini'
 export const VOICES = ['marin', 'cedar', 'coral']
@@ -34,6 +35,21 @@ export const SENTENCE_INSTRUCTIONS = INSTRUCTIONS
   .replace('individual vocabulary words', 'complete sentences')
   .replace('Japanese word', 'Japanese sentence')
 const RATE = 24000
+
+export function generationSet({ sentences = false, bank = false } = {}) {
+  if (sentences && bank) throw new Error('--bank and --sentences are mutually exclusive.')
+  const kind = bank ? 'bank' : sentences ? 'sentences' : 'words'
+  return {
+    kind,
+    language: bank ? japaneseBank.language : 'ja-JP',
+    ...(bank ? { bankId: japaneseBank.id } : {}),
+    voices: sentences || bank ? SENTENCE_VOICES : VOICES,
+    items: bank ? japaneseBank.items.map(({ id, reading, text }) => ({ id, text: reading ?? text })) : sentences ? SENTENCES : WORDS,
+    instructions: sentences ? SENTENCE_INSTRUCTIONS : INSTRUCTIONS,
+    maxOutputTokens: sentences ? 512 : 128,
+    maxSeconds: sentences ? 12 : 8,
+  }
+}
 
 export function sessionEvent(voice, instructions = INSTRUCTIONS) {
   return { type: 'session.update', session: {
@@ -171,14 +187,13 @@ ${VOICES.map(voice => `<section><h3>${voice}</h3>${WORDS.map(word => `<p lang="j
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { 'dry-run': { type: 'boolean' }, sentences: { type: 'boolean' }, output: { type: 'string' } } })
-  const voices = values.sentences ? SENTENCE_VOICES : VOICES
-  const items = values.sentences ? SENTENCES : WORDS
-  const instructions = values.sentences ? SENTENCE_INSTRUCTIONS : INSTRUCTIONS
-  const limits = values.sentences ? { maxOutputTokens: 512, maxSeconds: 12 } : { maxOutputTokens: 128, maxSeconds: 8 }
+  const { values } = parseArgs({ options: { 'dry-run': { type: 'boolean' }, sentences: { type: 'boolean' }, bank: { type: 'boolean' }, output: { type: 'string' } } })
+  const set = generationSet(values)
+  const { kind, language, bankId, voices, items, instructions, maxOutputTokens, maxSeconds } = set
+  const limits = { maxOutputTokens, maxSeconds }
   if (values['dry-run']) {
-    console.log(JSON.stringify({ model: MODEL, voices, items, requests: voices.length * items.length,
-      instructions, ...limits, note: 'No API calls or file changes. Production audio is untouched.' }, null, 2))
+    console.log(JSON.stringify({ model: MODEL, ...set, requests: voices.length * items.length,
+      note: 'No API calls or file changes. Production audio is untouched.' }, null, 2))
     return
   }
   if (existsSync('.env.local')) loadEnvFile('.env.local')
@@ -190,7 +205,7 @@ async function main() {
   await mkdir(dirname(output), { recursive: true })
   await mkdir(output, { recursive: false })
   const manifest = { provider: 'OpenAI', model: MODEL, createdAt: new Date().toISOString(),
-    language: 'ja-JP', kind: values.sentences ? 'sentences' : 'words', instructions, ...limits, sampleRate: RATE,
+    language, kind, ...(bankId ? { bankId } : {}), instructions, ...limits, sampleRate: RATE,
     processing: 'Gain only, active-sample RMS target -22 dBFS, max boost 9 dB, sample peak ceiling -4 dBFS before MP3; add 120 ms lead and 240 ms tail, no trimming.',
     review: 'Not yet approved; pronunciation and pitch accent require human listening.', clips: [] }
   for (const voice of voices) {
@@ -208,8 +223,8 @@ async function main() {
       await writeFile(join(output, 'provenance.json'), JSON.stringify(manifest, null, 2) + '\n')
     }
   }
-  if (!values.sentences) await writeFile(join(output, 'index.html'), reviewHtml(), { flag: 'wx' })
-  console.log(values.sentences ? `Sentence clips ready: ${output}` : `Ready to compare: ${join(output, 'index.html')}`)
+  if (kind === 'words') await writeFile(join(output, 'index.html'), reviewHtml(), { flag: 'wx' })
+  console.log(kind === 'words' ? `Ready to compare: ${join(output, 'index.html')}` : `${kind === 'bank' ? 'Bank' : 'Sentence'} clips ready: ${output}`)
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
