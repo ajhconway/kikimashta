@@ -14,7 +14,7 @@ async function captureCorrectResponse(page: Page, name: string) {
     const glow = app.getAnimations({ subtree: true }).filter(candidate =>
       candidate instanceof CSSAnimation && candidate.animationName === 'correct-glow',
     );
-    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark')).flatMap(spark => spark.getAnimations())];
+    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .quiz-starburst svg')).flatMap(effect => effect.getAnimations())];
     for (const animation of animations) {
       animation.pause();
       animation.currentTime = 360;
@@ -31,6 +31,65 @@ async function captureCorrectResponse(page: Page, name: string) {
       await decorations.dispose();
     }
   }
+}
+
+async function captureFallingCards(page: Page, name: string) {
+  const departures = await page.locator('.answer-departures').evaluateHandle(layer => {
+    const animations = layer.getAnimations({ subtree: true });
+    for (const animation of animations) {
+      animation.pause();
+      animation.currentTime = 220;
+    }
+    return animations;
+  });
+  try {
+    await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
+  } finally {
+    try {
+      await departures.evaluate(animations => animations.forEach(animation => animation.play()));
+    } finally {
+      await departures.dispose();
+    }
+  }
+}
+
+async function expectAnswerPictures(page: Page, retainedAlts: string[], exit: 'fly' | 'fall') {
+  const choices = page.getByRole('button', { name: /choose picture/i });
+  const departingCount = 4 - retainedAlts.length;
+  await expect(choices).toHaveCount(retainedAlts.length);
+  expect(await choices.locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')).sort())).toEqual([...retainedAlts].sort());
+  for (const choice of await choices.all()) {
+    await expect(choice).toBeVisible();
+    await expect(choice).toBeDisabled();
+  }
+  await expect(page.locator('.choices .picture-choice:disabled')).toHaveCount(4);
+  const hiddenSlots = page.locator('.choices .choice-slot.is-departing[aria-hidden="true"]');
+  await expect(hiddenSlots).toHaveCount(departingCount);
+  for (const slot of await hiddenSlots.all()) await expect(slot).toBeHidden();
+  await expect(page.locator('.answer-departures')).toHaveAttribute('aria-hidden', 'true');
+  await expect(page.locator(`.answer-departures .departing-card[data-exit="${exit}"]`)).toHaveCount(departingCount);
+  await expect(page.locator('.answer-departures button')).toHaveCount(0);
+  const departedAlts = await page.locator('.answer-departures img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
+  expect(new Set(departedAlts).size).toBe(departingCount);
+  expect(departedAlts.every(alt => !retainedAlts.includes(alt!))).toBe(true);
+}
+
+async function expectDeparturesFinished(page: Page, count: number) {
+  const result = await page.locator('.answer-departures').evaluate(async (layer, expectedCount) => {
+    const results = await Promise.allSettled(layer.getAnimations({ subtree: true }).map(animation => animation.finished));
+    const cards = Array.from(layer.querySelectorAll('.departing-card'));
+    return {
+      connected: layer.isConnected,
+      finished: results.every(result => result.status === 'fulfilled'),
+      gone: cards.length === expectedCount && cards.every(card => {
+        const style = getComputedStyle(card);
+        const box = card.getBoundingClientRect();
+        return style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0
+          || box.right <= 0 || box.left >= innerWidth || box.bottom <= 0 || box.top >= innerHeight;
+      }),
+    };
+  }, count);
+  expect(result, 'outgoing cards finish leaving before the quiz moves on').toEqual({ connected: true, finished: true, gone: true });
 }
 
 async function checkMobilePracticeSizes(page: Page, pictureSelector: string, name: string) {
@@ -75,6 +134,7 @@ async function heardWord(page: Page) {
 
 async function chooseHeardPicture(page: Page, pressScreenshot?: string, responseScreenshot?: string) {
   const { target } = await heardWord(page);
+  const originalPageHeight = await page.evaluate(() => document.documentElement.scrollHeight);
   const choice = page.getByRole('button', { name: /choose picture/i }).filter({
     has: page.getByRole('img', { name: target.image.alt, exact: true }),
   });
@@ -96,15 +156,19 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
   await expect(page.locator('.feedback')).toHaveText('Got it!');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
   await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
+  await expectAnswerPictures(page, [target.image.alt], 'fly');
+  await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
   if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
-  await expect.poll(() => page.evaluate(() => {
+  await expectDeparturesFinished(page, 3);
+  await expect.poll(() => page.evaluate(previousHeight => {
     const choices = document.querySelector('.choices')!.getBoundingClientRect();
     const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
-    const cards = Array.from(document.querySelectorAll('.picture-choice'), card => card.getBoundingClientRect());
+    const cards = Array.from(document.querySelectorAll('.choices .choice-slot:not(.is-departing) .picture-choice'), card => card.getBoundingClientRect());
     return document.documentElement.scrollWidth <= innerWidth
+      && document.documentElement.scrollHeight <= previousHeight
       && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
         && card.bottom <= feedback.top);
-  }), { message: 'picture cards fit the viewport and leave feedback unobscured' }).toBe(true);
+  }, originalPageHeight), { message: 'retained pictures fit the viewport, leave feedback unobscured, and departures add no page overflow' }).toBe(true);
 }
 
 test('preview, complete a short round, and retain real device progress after reload', async ({ page }, testInfo) => {
@@ -137,6 +201,8 @@ test('preview, complete a short round, and retain real device progress after rel
   let previousSource: string | null = null;
   for (let i = 0; i < bank.items.length; i++) {
     await expect(page.getByRole('button', { name: /choose picture/i }).first()).toBeEnabled();
+    await expect(page.getByRole('button', { name: /choose picture/i })).toHaveCount(4);
+    await expect(page.locator('.answer-departures, .quiz-starburst')).toHaveCount(0);
     await expect.poll(() => page.locator('.app').getAttribute('data-answer')).toBeNull();
     await expect.poll(() => screenColor(page)).toBe(quizColor);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
@@ -178,6 +244,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   const wrongChoice = page.getByRole('button', { name: /choose picture/i }).filter({
     hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
   }).first();
+  const selectedAlt = await wrongChoice.locator('img').getAttribute('alt');
   // Native button activation still works from the keyboard.
   await wrongChoice.focus();
   await page.keyboard.press('Space');
@@ -185,6 +252,9 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect(page.locator('.feedback')).toHaveText('Try this one.');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'incorrect');
   await expect.poll(() => screenColor(page)).toBe('#b8a4cf');
+  await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
+  await expect(page.locator('.answer-departures')).toHaveCSS('display', 'none');
+  await expect(page.locator('.quiz-starburst')).toHaveCount(0);
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
   await page.clock.fastForward(5000);
   await expect(page.locator('audio')).toHaveAttribute('src', source);
@@ -208,9 +278,41 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await page.getByRole('button', { name: 'Continue', exact: true }).click();
   const nextWord = await heardWord(page);
   expect(nextWord.source).not.toBe(source);
+  await expect(page.getByRole('button', { name: /choose picture/i })).toHaveCount(4);
+  await expect(page.locator('.answer-departures, .quiz-starburst')).toHaveCount(0);
   await expect.poll(() => page.locator('.app').getAttribute('data-answer')).toBeNull();
   await expect.poll(() => screenColor(page)).toBe(quizColor);
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+});
+
+test('a miss drops only uninvolved pictures without shifting the grid or adding answers', async ({ page }, testInfo) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: /skip to quiz/i }).click();
+  const { target, source } = await heardWord(page);
+  const beforeGrid = await page.locator('.choices').boundingBox();
+  const beforeHeight = await page.evaluate(() => document.documentElement.scrollHeight);
+  const wrongChoice = page.getByRole('button', { name: /choose picture/i }).filter({
+    hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
+  }).first();
+  const selectedAlt = await wrongChoice.locator('img').getAttribute('alt');
+  await wrongChoice.click();
+  await expect(page.locator('.feedback')).toHaveText('Try this one.');
+  await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
+  await captureFallingCards(page, 'quiz-falling-' + testInfo.project.name);
+  await expectDeparturesFinished(page, 2);
+  await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
+  await expect(page.locator('audio')).toHaveAttribute('src', source);
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  const afterGrid = await page.locator('.choices').boundingBox();
+  expect(Math.abs(afterGrid!.height - beforeGrid!.height)).toBeLessThanOrEqual(1);
+  expect(Math.abs(afterGrid!.width - beforeGrid!.width)).toBeLessThanOrEqual(1);
+  await expect.poll(() => page.evaluate(height => document.documentElement.scrollWidth <= innerWidth
+    && document.documentElement.scrollHeight <= height, beforeHeight), {
+    message: 'falling cards stay in a clipped layer and add no scrollbars',
+  }).toBe(true);
+  await page.getByRole('button', { name: /kikimashta home/i }).click();
+  await page.reload();
+  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
 });
 
 test('holding a picture acts as one button press on release', async ({ page }, testInfo) => {
