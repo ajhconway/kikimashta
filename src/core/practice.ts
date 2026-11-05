@@ -1,6 +1,7 @@
 import starter from '../../content/ja.json';
 import catalogue from '../../content/catalog/ja.json';
 import sets from '../../content/practice-sets.json';
+import poolSelection from '../../content/practice-pool.json';
 import type { WordBank, WordItem } from '../types';
 import { validateBank } from './session';
 
@@ -40,3 +41,18 @@ export function buildPracticeBanks(items: CatalogueItem[], selections: PracticeS
 }
 
 export const practiceBanks: WordBank[] = buildPracticeBanks(catalogue.items as CatalogueItem[], sets);
+
+/** Initial eligible pool. Source labels control only introduction order, not mastery. */
+export const practicePool: WordBank = {
+  id: 'ja-adaptive', language: starter.language, title: 'Japanese listening',
+  items: [
+    ...starter.items as WordItem[],
+    ...poolSelection.itemIds.map(id => {
+      const item = catalogue.items.find(candidate => candidate.id === id);
+      if (!item) throw new Error('Unknown practice-pool item: ' + id);
+      return { id: item.id, language: item.language, theme: 'vocabulary', label: item.meaning,
+        text: item.text, reading: item.reading, image: item.image, audio: item.audio } as WordItem;
+    }),
+  ],
+};
+validateBank(practicePool);

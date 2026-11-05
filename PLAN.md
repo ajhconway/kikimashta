@@ -35,7 +35,7 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Roadmap
 
-V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. Practice offers the six-word starter and three additional six-word themed sets. This temporary expansion is approved; adaptive practice is next.
+V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. The temporary fixed sets are being replaced with adaptive practice, using an initial pool of 170 eligible words while the full library remains available for card feedback.
 
 1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
 2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Use FSRS for per-word scheduling and forecast review density to guide new-word intake.

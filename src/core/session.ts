@@ -32,3 +32,19 @@ export function createSession(bank: WordBank, count = 6, choiceCount = 4, random
     choices: shuffled([target, ...shuffled(bank.items.filter(item => item.id !== target.id), random).slice(0, choiceCount - 1)], random),
   }));
 }
+
+/** Build questions for a fixed target snapshot; unrelated due items cannot enter it. */
+export function createQuestions(targets: WordItem[], pool: WordItem[], random = Math.random): Question[] {
+  if (!targets.length) return [];
+  if (new Set(targets.map(item => item.id)).size !== targets.length) throw new Error('Targets must be unique.');
+  return shuffled(targets, random).map(target => {
+    const seen = new Set([target.image.src]);
+    const candidates = shuffled(pool.filter(item => item.id !== target.id && item.language === target.language), random).filter(item => {
+      if (seen.has(item.image.src) || (item.reading ?? item.text) === (target.reading ?? target.text)) return false;
+      seen.add(item.image.src);
+      return true;
+    });
+    if (candidates.length < 3) throw new Error('Four distinct pictures are required.');
+    return { target, choices: shuffled([target, ...candidates.slice(0, 3)], random) };
+  });
+}
