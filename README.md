@@ -18,7 +18,7 @@ Work is tracked in GitHub Issues and implemented through linked pull requests. I
 
 ## Development
 
-Use Node 24.15 or newer.
+Use Node 24.15 or newer, Python 3.10 or newer, and FFmpeg for the audio-processing checks.
 
 ```sh
 npm ci
@@ -35,7 +35,7 @@ Scheduling uses pinned `ts-fsrs` 6.0.0 with the explicit FSRS-6 model, 90% desir
 
 Density forecasts simulate seven days with 32 deterministic scenarios, one fixed review session per day, repeat reviews and sampled FSRS success/failure. New-word admission initially assumes an 80% mini-quiz success rate. These are adjustable forecast assumptions, not measured learning efficacy. Qualitative levels start at 0/5/15/30/60 reviews per day; preferred minimum uses a band's lower edge and maximum its upper edge (Intense admission ceiling: 120/day). Default Light–Moderate targets 5–30/day. Thresholds and assumptions live in `src/core/density.ts`; the UI shows labels, not these numbers. Newly due work waits for the next session, and actual future demand can exceed the admission forecast.
 
-Starter words use OpenAI Marin and Cedar, selected through word and sentence auditions. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. The same format supports a single voice or a human recording. Progress remains tied to the language and word, across voices. Pronunciation and playback still need review on the iPhone 17.
+Existing cards use eight approved ElevenLabs voices: Otani, Morioki, Goro, Tsuki, Takeshi, Lime, Ritsuto, and Itsuki. The set balances male and female voices across standard Japanese, Kansai and Kyushu labels, plus character delivery. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. Progress remains tied to the language and word across voices. Gain adjustments aim for −22 LUFS with at least 2 dB of true-peak headroom; constrained clips remain quieter and are listed in provenance. Pronunciation, regional accents and playback of the new words still need listening review on the iPhone 17.
 
 ## Account sync
 
@@ -45,9 +45,13 @@ The database migration and rollback access-policy checks live in `supabase/`. Al
 
 ## Voice auditions
 
+The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. The older hosted OpenAI workflow below is retained for historical comparisons.
+
+### Existing OpenAI recordings
+
 Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
 
-Generation normally runs in GitHub Actions. Configure an `OPENAI_API_KEY` repository secret once under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow**. To request another run, change the request's `id` and choose `mode`: `words`, `sentences`, or `bank`. Bank mode reads the Japanese word bank and records every item with both Marin and Cedar. Unrelated pushes and pull requests do not generate paid audio.
+The legacy OpenAI generator runs in GitHub Actions with an `OPENAI_API_KEY` repository secret under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow**. Its request modes remain `words`, `sentences`, `bank`, and `catalog`; bank mode records every starter item with Marin and Cedar. Unrelated pushes and pull requests do not generate paid audio. Use the ElevenLabs command for new card recordings.
 
 The agent can submit a request, collect the resulting artifact, review the audio and provenance, then publish approved audition clips through a PR. Generation does not publish files automatically. Original WAVs and listening MP3s are retained in the workflow artifact for 30 days; download and preserve originals before expiry.
 
@@ -73,7 +77,7 @@ The generator follows the current [OpenAI Realtime audio guide](https://develope
 
 The review library at `/vocabulary/` contains 441 entries transcribed from the owner's level 1–5 screenshots. Levels are provisional source labels, separate from stable word IDs. The original transcriptions and screenshot hashes are in `content/imports/`; the flat catalog is in `content/catalog/ja.json`.
 
-Original SVG scenes and symbols match the starter style. Context-sensitive entries carry review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the large collection; one shared audio player compares Marin and Cedar.
+Original SVG scenes and symbols match the starter style. Context-sensitive entries carry review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the large collection; one shared audio player compares the eight named voices.
 
 Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Guest notes stay local. When optional Supabase sync is configured, signed-in notes synchronize with the account; clearing a box syncs a deletion. Each account and guest practice use separate local storage. Copying guest history and notes into an account is an explicit action in Account. Existing account note edits take precedence over imported guest notes. If saving fails, the draft stays available while the page is open and can still be exported.
 
@@ -87,7 +91,7 @@ The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](http
 
 The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
 
-Media and dependencies retain separate terms. Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+Media and dependencies retain separate terms. Current practice speech is AI-generated with ElevenLabs; historical OpenAI recordings are preserved with their provenance. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
 
 ## Card regeneration
 

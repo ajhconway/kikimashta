@@ -1,4 +1,7 @@
 import { expect, test } from '@playwright/test';
+import catalog from '../content/catalog/ja.json' with { type: 'json' };
+
+const voiceNames = ['Otani', 'Morioki', 'Goro', 'Tsuki', 'Takeshi', 'Lime', 'Ritsuto', 'Itsuki'];
 
 test('browse provisional levels, search cards, and retry a voice recording', async ({ page }) => {
   await page.goto('./');
@@ -12,14 +15,21 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await expect(page.locator('.card')).toHaveCount(1);
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('犬');
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'Marin: Dog', exact: true }).click();
-  await expect(page.locator('#audio-status')).toContainText('Marin');
-  await page.getByRole('button', { name: 'Stop Marin: Dog', exact: true }).click();
-  await page.route('**/audio/cedar-ja-dog.mp3', route => route.abort());
-  await page.getByRole('button', { name: 'Cedar: Dog', exact: true }).click();
+  const voices = page.getByRole('group', { name: 'Japanese voices for Dog', exact: true });
+  await expect(voices.getByRole('button')).toHaveCount(8);
+  for (const voice of voiceNames) await expect(voices.getByRole('button', { name: `${voice}: Dog`, exact: true })).toBeEnabled();
+  await voices.getByRole('button', { name: 'Otani: Dog', exact: true }).click();
+  await expect(page.locator('#audio-status')).toContainText('Otani');
+  await voices.getByRole('button', { name: 'Stop Otani: Dog', exact: true }).click();
+  const retryRecording = catalog.items.find(item => item.id === 'ja-dog')?.audio.find(clip => clip.voice === 'morioki');
+  expect(retryRecording, 'Dog has a Morioki recording to retry').toBeDefined();
+  const retryRoute = `**/${retryRecording!.src}`;
+  await page.route(retryRoute, route => route.abort());
+  await voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeVisible();
-  await page.unroute('**/audio/cedar-ja-dog.mp3');
-  await page.getByRole('button', { name: 'Cedar: Dog', exact: true }).click();
+  await expect(page.locator('#audio-error')).toContainText('Morioki');
+  await page.unroute(retryRoute);
+  await voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeHidden();
   await page.getByLabel('Provisional level').selectOption('all');
   await page.getByLabel('Search words').fill('りんご');

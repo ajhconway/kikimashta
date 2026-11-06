@@ -14,14 +14,18 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run && node --test scripts/*.test.mjs scripts/content/*.test.mjs",
+    "test:audio": "python3 -m unittest discover -s scripts/content -p 'test_*.py'",
     "audio:audition": "node scripts/content/audition-openai.mjs",
+    "audio:audition:elevenlabs": "node --env-file-if-exists=.env.local scripts/content/audition-elevenlabs.mjs",
+    "audio:cards:elevenlabs": "node --env-file-if-exists=.env.local scripts/content/generate-elevenlabs-cards.mjs",
     "content:illustrate": "node scripts/content/illustrate-levels-1-2.mjs && node scripts/content/illustrate-levels-3-4.mjs && node scripts/content/illustrate-level-5.mjs",
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+    "check": "npm run lint && npm run typecheck && npm test && npm run test:audio && npm run build"
   },
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "2.77.0",
     "@supabase/supabase-js": "2.119.0",
     "idb": "8.0.4",
     "react": "19.3.1",

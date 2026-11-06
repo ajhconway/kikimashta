@@ -79,7 +79,7 @@ test('rejects traversal, foreign URLs, and media-family mismatches', () => {
   assert.equal(libraryMediaPath('images/apple.svg', 'images'), '../images/apple.svg')
 })
 
-test('requires complete unique visual records and both named voices', t => {
+test('requires complete unique visual records and unique recording voices', t => {
   const { root, item, visual, put, save } = fixture(t)
   save([item], [])
   assert.throws(() => buildLibrary({ root }), /Incomplete visual metadata/)
@@ -90,11 +90,48 @@ test('requires complete unique visual records and both named voices', t => {
   assert.throws(() => buildLibrary({ root }), /duplicate visual metadata ID/)
   rmSync(join(root, 'content/visuals/other.json'))
   save([{ ...item, audio: [item.audio[0], item.audio[0]] }])
-  assert.throws(() => buildLibrary({ root }), /Expected one marin clip/)
+  assert.throws(() => buildLibrary({ root }), /Duplicate audio voice marin/)
   save([item, item])
   assert.throws(() => buildLibrary({ root }), /duplicate catalogue ID/)
   save([{ ...item, reading: '' }])
   assert.throws(() => buildLibrary({ root }), /Incomplete catalogue item/)
+})
+
+test('supports eight named voices in input order and counts their individual availability', t => {
+  const { root, item, put, save, readData } = fixture(t)
+  const names = ['Otani', 'Morioki', 'Goro', 'Tsuki', 'Takeshi', 'Lime', 'Ritsuto', 'Itsuki']
+  const audio = names.map(voiceName => ({ voice: voiceName.toLowerCase(), voiceName, src: `audio/elevenlabs/${voiceName.toLowerCase()}/flower.mp3` }))
+  for (const clip of audio.slice(0, -1)) put(`public/${clip.src}`, 'fixture clip')
+  save([{ ...item, audio }])
+  assert.throws(() => buildLibrary({ root }), /Missing 1 audio files/)
+  assert.deepEqual(buildLibrary({ root, allowMissingAudio: true }), { cards: 1, availableAudio: 7, missingAudio: 1 })
+  assert.deepEqual(readData().cards[0].audio.map(clip => clip.voiceName), names)
+  assert.deepEqual(readData().cards[0].audio.map(clip => clip.available), [true, true, true, true, true, true, true, false])
+  put(`public/${audio[7].src}`, 'fixture clip')
+  assert.deepEqual(buildLibrary({ root }), { cards: 1, availableAudio: 8, missingAudio: 0 })
+})
+
+test('a single recording is sufficient without a special provider or voice name', t => {
+  const { root, item, save, readData } = fixture(t)
+  save([{ ...item, audio: [item.audio[0]] }])
+  assert.deepEqual(buildLibrary({ root }), { cards: 1, availableAudio: 1, missingAudio: 0 })
+  assert.deepEqual(readData().cards[0].audio, [{ voice: 'marin', src: '../audio/vocabulary/marin-flower.mp3', available: true }])
+})
+
+for (const [description, audio, pattern] of [
+  ['no recordings', [], /at least one audio recording/],
+  ['missing recordings', undefined, /at least one audio recording/],
+  ['null recording', [null], /Invalid audio voice/],
+  ['empty voice', [{ voice: '', src: 'audio/a.mp3' }], /Invalid audio voice/],
+  ['unsafe voice', [{ voice: '../voice', src: 'audio/a.mp3' }], /Invalid audio voice/],
+  ['blank display name', [{ voice: 'otani', voiceName: ' ', src: 'audio/a.mp3' }], /Invalid audio voice name/],
+  ['duplicate voice', [{ voice: 'otani', src: 'audio/a.mp3' }, { voice: 'otani', src: 'audio/b.mp3' }], /Duplicate audio voice/],
+]) test(`rejects ${description} before emitting library files`, t => {
+  const { root, item, save } = fixture(t)
+  save([{ ...item, audio }])
+  assert.throws(() => buildLibrary({ root, allowMissingAudio: true }), pattern)
+  assert.equal(existsSync(join(root, 'vocabulary/index.html')), false)
+  assert.equal(existsSync(join(root, 'public/vocabulary/library-data.json')), false)
 })
 
 test('preserves text as data without interpolating it into markup; hides starter implementation notes', t => {

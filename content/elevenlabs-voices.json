@@ -1,0 +1,18 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "language": "ja-JP",
+  "voiceSettings": { "stability": 0.5, "similarity_boost": 0.75 },
+  "normalization": { "targetLufs": -22, "truePeakCeilingDbtp": -2, "dualMono": true },
+  "approval": "All eight voices and volume-matched audition approved by project owner in conversation; initial-approved-leveled-v2.",
+  "voices": [
+    { "voice": "otani", "id": "3JDquces8E8bkmvbh6Bc", "name": "Otani", "gender": "male", "accent": "standard" },
+    { "voice": "morioki", "id": "8EkOjt4xTPGMclNlh1pk", "name": "Morioki", "gender": "female", "accent": "standard" },
+    { "voice": "goro", "id": "OixLI492Bx532sSKQRim", "name": "Goro", "gender": "male", "accent": "kansai" },
+    { "voice": "tsuki", "id": "IbNtK9ck5SyXyxyjqHEN", "name": "Tsuki", "gender": "female", "accent": "kansai" },
+    { "voice": "takeshi", "id": "GkhCSuueAs6ydLJFwX4G", "name": "Takeshi", "gender": "male", "accent": "kyushu" },
+    { "voice": "lime", "id": "q3eHxuMah31iifOfMrz0", "name": "Lime", "gender": "female", "accent": "kyushu" },
+    { "voice": "ritsuto", "id": "A4AyGcPAjb1pHgflyZZp", "name": "Ritsuto", "gender": "male", "accent": "standard", "style": "anime" },
+    { "voice": "itsuki", "id": "oAlEJuW30knHWhA6cF0e", "name": "Itsuki", "gender": "female", "accent": "standard", "style": "anime" }
+  ]
+}
