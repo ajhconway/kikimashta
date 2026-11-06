@@ -1,0 +1,18 @@
+{
+  "id": "ja-v-1ee90bf5d13a",
+  "meaning": "To Cut",
+  "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v3.png",
+  "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary card showing the action of cutting paper\nInput image is the STYLE/OBJECT EDIT TARGET. Keep its orange-handled scissors, lavender metal blades, clean violet outlines and soft cat-reference shading, but CORRECT the mechanical scene.\nPrimary request: Show a plausible scissors cut entering the RIGHT EDGE of one sheet of paper. Handles stay to the right, pivot just outside the sheet edge, blade tips point LEFT into the sheet. The scissors are only partly open. The paper is physically BETWEEN the two blades: one blade is in front, the other is partly occluded behind the sheet. Their cutting edges meet at a single clear active cutting point near the right edge, just forward of the pivot. The already-cut slit runs from that point BACK to the right edge toward the handles. A narrow offcut strip peels DOWN and RIGHT on the already-cut/handle side and remains attached at the active cutting point. The main uncut sheet extends left of the tips. A short subtle dashed guide may extend ahead to the left, aligned with the cut.\nImportant: do not put a detached strip floating in front of the blade tips; do not draw scissors simply lying on top of an intact sheet; do not make the paper weave impossibly through the handles or cross the pivot. No extra blades, fake holes, torn jagged paper, arrows, words, labels or hands. The action should read immediately at thumbnail size.\nBackdrop: pure opaque WHITE (#FFFFFF), matching the earlier cards. No lavender canvas tint. Preserve the established illustration style and overall centered scale; changing the scissors-paper interaction is authorized. Output one square card.",
+  "tool": "built-in image_gen",
+  "styleProfile": "cat-png",
+  "styleVariant": "cat-white-v3",
+  "styleTrialRound": 2,
+  "status": "awaiting-user-feedback",
+  "visualReview": "Correct scissors/paper interaction: paper between partly open blades, cut at sheet edge, offcut trailing behind the cutting point; white background.",
+  "references": [
+    {
+      "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v2.png",
+      "role": "edit target; preserve foreground design and shading; apply only requested edits"
+    }
+  ]
+}

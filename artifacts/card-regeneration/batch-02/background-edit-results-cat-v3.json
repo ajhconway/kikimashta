@@ -1,0 +1,188 @@
+{
+  "issue": 72,
+  "batch": "batch-02",
+  "round": 2,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "ja-banana",
+      "meaning": "Banana",
+      "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-dog",
+      "meaning": "Dog",
+      "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-umbrella",
+      "meaning": "Umbrella",
+      "path": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-10e568715d3a",
+      "meaning": "Blue",
+      "path": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Remove the entire paint pot/jar and all of its outline and contents. Leave ONLY the existing saturated blue paint splash (with its small droplets) and the existing blue-loaded brush. Rebalance this two-part composition: enlarge/recenter the splash toward the center-left and position the brush diagonally at its lower-right, so together they fill about 70–75 percent of the canvas with clean margins and no empty space reserved for the removed pot. Preserve the current soft shading, shapes and color design of the splash and brush; only scale/reposition them as needed. Replace the pink/lavender-tinted canvas backdrop with pure opaque white (#FFFFFF), matching the older cards. No pot, container, extra paint stroke, new objects, logo or text.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Removed paint pot; enlarged/recentered splash and balanced brush; pure white canvas.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/14-blue-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-137737e5ce1f",
+      "meaning": "Light",
+      "path": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-188bdf18a50c",
+      "meaning": "Feathers",
+      "path": "artifacts/card-regeneration/batch-02/16-feather-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/16-feather-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-19bd7db9d5d0",
+      "meaning": "Sky",
+      "path": "artifacts/card-regeneration/batch-02/17-sky-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Remove the ENTIRE green ground strip at the bottom, including its dark purple curved horizon line and every trace of green. Continue the existing blue sky naturally into the removed area. Preserve the two clouds exactly: same shapes, positions, scale, purple contours and lavender undershading. Preserve the softly shaded blue sky as the literal subject, but change the outer lavender/pink canvas tint to pure white (#FFFFFF), so the scene fades into a white outer margin. No ground, horizon, grass, land, mountains, sun, frame or extra objects.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Removed all ground and horizon marks; kept clouds and blue sky treatment with white outer canvas.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/17-sky-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-1ee90bf5d13a",
+      "meaning": "To Cut",
+      "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary card showing the action of cutting paper\nInput image is the STYLE/OBJECT EDIT TARGET. Keep its orange-handled scissors, lavender metal blades, clean violet outlines and soft cat-reference shading, but CORRECT the mechanical scene.\nPrimary request: Show a plausible scissors cut entering the RIGHT EDGE of one sheet of paper. Handles stay to the right, pivot just outside the sheet edge, blade tips point LEFT into the sheet. The scissors are only partly open. The paper is physically BETWEEN the two blades: one blade is in front, the other is partly occluded behind the sheet. Their cutting edges meet at a single clear active cutting point near the right edge, just forward of the pivot. The already-cut slit runs from that point BACK to the right edge toward the handles. A narrow offcut strip peels DOWN and RIGHT on the already-cut/handle side and remains attached at the active cutting point. The main uncut sheet extends left of the tips. A short subtle dashed guide may extend ahead to the left, aligned with the cut.\nImportant: do not put a detached strip floating in front of the blade tips; do not draw scissors simply lying on top of an intact sheet; do not make the paper weave impossibly through the handles or cross the pivot. No extra blades, fake holes, torn jagged paper, arrows, words, labels or hands. The action should read immediately at thumbnail size.\nBackdrop: pure opaque WHITE (#FFFFFF), matching the earlier cards. No lavender canvas tint. Preserve the established illustration style and overall centered scale; changing the scissors-paper interaction is authorized. Output one square card.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Correct scissors/paper interaction: paper between partly open blades, cut at sheet edge, offcut trailing behind the cutting point; white background.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-223e5321ecb8",
+      "meaning": "Onion",
+      "path": "artifacts/card-regeneration/batch-02/19-onion-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/19-onion-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-23d807f4f375",
+      "meaning": "Shellfish",
+      "path": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "awaiting-user-feedback",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "issue": 72,
+  "batch": "batch-01",
+  "round": 5,
+  "approvedCardIds": [
+    "ja-apple",
+    "ja-v-ad7167347a2a",
+    "ja-v-b1ff052549ed",
+    "ja-v-baa4dd2c5986",
+    "ja-cup",
+    "ja-v-a47e21265374",
+    "ja-v-ddd9dca106e2",
+    "ja-v-2f734ba866d9",
+    "ja-v-0958f7553d9f",
+    "ja-v-66ccf8dd3399",
+    "ja-banana",
+    "ja-dog",
+    "ja-umbrella",
+    "ja-v-10e568715d3a",
+    "ja-v-137737e5ce1f",
+    "ja-v-188bdf18a50c",
+    "ja-v-19bd7db9d5d0",
+    "ja-v-223e5321ecb8",
+    "ja-v-23d807f4f375",
+    "ja-v-1ee90bf5d13a",
+    "ja-v-3144539c83d3",
+    "ja-v-3601c285284c",
+    "ja-v-39903246fd52",
+    "ja-v-4063840184cf",
+    "ja-v-46f8fe65f218",
+    "ja-v-5352aea4e4bb",
+    "ja-v-597577664a1b",
+    "ja-v-5fb1d5e308b6",
+    "ja-v-64289653ec1d",
+    "ja-v-28ddfdc9290c",
+    "ja-v-887f569257fd",
+    "ja-v-88c9d9718867",
+    "ja-v-8ce0a0ec59c4",
+    "ja-v-921d54ba31ef",
+    "ja-v-947395f42397",
+    "ja-v-99f7c98099b1",
+    "ja-v-7c4d1abbdd61",
+    "ja-v-7e87850c448d",
+    "ja-v-96e39ee9cb18",
+    "ja-v-81e708aba22f"
+  ],
+  "requests": [],
+  "conceptOverrides": {
+    "ja-v-66ccf8dd3399": "One orange basketball in the tilted three-quarter orientation of v3, with a recognizable visible seam intersection slightly above and right of center. Two main continuous channels form one clean four-way crossing; additional bowed panel seams wrap around the sphere and meet/cross at separate points rather than all converging into a six-spoke knot. Keep broad orange panels toward the viewer and narrower receding panels to one side, a round silhouette, dark-purple outline, slightly narrower purple seams and the established simple cartoon style. White background; no branding, extra objects or motion marks.",
+    "ja-v-ddd9dca106e2": "Two purple mountain peaks with white snow caps, one larger peak in front and a smaller peak behind. Clear gently irregular mountain slopes, angular snow edges and the shared dark-purple outline. Plain white background; ordinary non-erupting mountains.",
+    "ja-v-0958f7553d9f": "A plain open rice bag spilling a mound of medium-small slender uncooked ivory rice grains, sized between the first oversized draft and the second tiny-grain draft. Each visible kernel is roughly twice the length of v2 and about half the length of v1; approximately 1/8 to 1/10 of the bag opening width. Tapered ends and a slender 3:1 length-to-width shape, light beige-gray detail. A few scattered kernels show this intermediate scale clearly. Preserve the bag and composition. No plump peanut-like ovals, heavy purple outlines around every grain, cooked rice bowl or steam.",
+    "ja-v-2f734ba866d9": "One recognizable ordinary gray stone with an irregular angular silhouette, a few broad subtly planar surfaces and restrained mineral texture: several small darker speckles and two short natural cracks. The stone feels solid and slightly rough, not a smooth featureless blob. Keep the dark-purple exterior outline and simple cartoon treatment. No symmetric gemstone facets, sparkle, face or eyes.",
+    "ja-dog": "One friendly domestic dog sitting, full body, floppy ears, a distinct short muzzle, four paws and a curved tail; simple warm tan fur, no collar text or props. Clearly canine rather than feline.",
+    "ja-v-10e568715d3a": "A large saturated blue paint splash and a single blue-loaded paintbrush, balanced and centered together. The splash is the dominant color cue and the brush is secondary. No paint pot, paint jar, container or extra props. Retain the cat-reference soft shading on a pure white background.",
+    "ja-v-19bd7db9d5d0": "Broad blue sky with two softly shaded white clouds, no ground, no green strip and no horizon line. Keep the existing cloud shapes, placement and blue sky treatment, fading or ending into the plain pure-white outer card background. No extra scene elements.",
+    "ja-v-1ee90bf5d13a": "One intact plain rectangular paper sheet on the left with a horizontal dashed violet guide across its middle. A separate pair of slightly open orange-handled scissors on the right faces left toward the sheet, aligned with the dashed guide. Keep a clear white gap between the blade tips and paper, with no cutting interaction, overlap, slit or offcut. Preserve soft cat-reference shading, violet contours and white background.",
+    "ja-v-28ddfdc9290c": "One large blue water droplet with a smooth teardrop silhouette, soft blue interior shading and thick violet contour on a pure white background. No ripple lines, arcs, ground, shadow, extra drops or props.",
+    "ja-v-7c4d1abbdd61": "Winter version of the shared seasonal park scene: one bare forked deciduous tree on the left and small wooden bench on the right on a shallow oval ground patch. Snow covers branches, bench and ground; a few falling snowflakes. Preserve tree, bench, viewpoint and layout across seasonal variants, changing only foliage, weather and ground covering. Pure white outer background.",
+    "ja-v-7e87850c448d": "One soft lavender cloud with blue raindrops descending below it, centered and evenly spaced on white. No puddle, ground or splash.",
+    "ja-v-81e708aba22f": "One front-facing circle divided by a straight vertical diameter into two equal semicircles, left half soft app lavender (#AF86EF) and right half white, violet outline and divider. Exactly half colored; no fruit, labels or numerals.",
+    "ja-v-96e39ee9cb18": "A small golden sun in the upper left casts three prominent broad golden rays diagonally down/right, separated by white gaps. Sun rays convey light. Pure white background; no lamp, landscape, face or labels.",
+    "ja-v-6c9351ae67e6": "Exactly eight separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-0d0163a40587": "Exactly nine separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-f6bc974a7405": "Exactly seven separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-8b887bc8af0c": "Exactly three separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-bb85f028d944": "Exactly two separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-084edf1fdd10": "Exactly five separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-df70a01acaec": "Exactly six separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-947395f42397": "Exactly four separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects."
+  },
+  "componentGuidance": {
+    "ball": "Shared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.",
+    "mountain": "Shared mountain design: purple slopes with white snow caps and dark-purple outlines. Preserve scene-specific features: ordinary mountains have closed summits, while an erupting volcano needs a visible open crater with connected plume and lava; snow may remain on unaffected flanks only. Keep Fuji's characteristic profile when Fuji is the subject.",
+    "rice": "Shared uncooked rice design: medium-small slender tapered ivory kernels, roughly 1/8 to 1/10 of the bag opening width in the still life, intermediate between the oversized v1 and tiny v2. Keep grains individually readable at quiz size with light economical detail, not thick purple outlines or peanut-like plump ovals. Do not apply the bag still life to a rice-paddy landscape.",
+    "stone": "Shared stone design: a slightly angular irregular gray silhouette with restrained mineral speckles, short cracks and a few broad natural planes. Avoid a smooth blob, symmetric gem facets or sparkles. Keep texture sparse enough to read at quiz size; scale this treatment for boulders."
+  },
+  "history": [
+    {
+      "round": 1,
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "Let's make it an orange basketball"
+        },
+        {
+          "number": 8,
+          "id": "ja-v-ddd9dca106e2",
+          "feedback": "Let's have it be purple and snow-capped."
+        },
+        {
+          "number": 9,
+          "id": "ja-v-0958f7553d9f",
+          "feedback": "Rice grains are too large, they look like peanuts."
+        },
+        {
+          "number": 10,
+          "id": "ja-v-2f734ba866d9",
+          "feedback": "The stone is too blobby. It needs a little texture."
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "2 is a little too head on and symmetrical."
+        },
+        {
+          "number": 9,
+          "id": "ja-v-0958f7553d9f",
+          "feedback": "9 the rice is too small now. Let's try something in the middle."
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "The stripes aren't right on the basketball."
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "It's better, but I prefered the last angle. The place where the seams meet is what makes it recognizably a basketball."
+        }
+      ]
+    },
+    {
+      "batch": "batch-03",
+      "round": 1,
+      "feedback": "Remove the lines underneath the water drop. Everything else is good."
+    },
+    {
+      "batch": "batch-04",
+      "round": 1,
+      "feedback": "34–38 and 40 good. 38 establishes X things design language. Reuse a single seasonal scene for 31. Remove puddle from 32 and rebalance. Replace ambiguous 33. Use sun rays for 39."
+    },
+    {
+      "batch": "batch-04",
+      "round": 2,
+      "feedback": "31, 32, and 39 approved. 33 composition approved; recolor yellow to app-appropriate lavender."
+    }
+  ],
+  "acceptedWithKnownIssues": {
+    "ja-v-66ccf8dd3399": "Basketball v4 is accepted for now to proceed. Improve its seam geometry and restore a more natural tilted angle with a recognizable seam intersection in a later pass."
+  },
+  "designFamilies": {
+    "counting-blocks": {
+      "seedCard": "ja-v-947395f42397",
+      "memberIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944",
+        "ja-v-084edf1fdd10",
+        "ja-v-df70a01acaec",
+        "ja-v-947395f42397"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
+      "status": "approved",
+      "guidance": "Reuse card 38 cube shape, viewpoint, contour, soft shading and palette for X things; change only exact count and spacing. Replaces apples for this family.",
+      "replaceComponents": []
+    },
+    "seasonal-park": {
+      "seedCard": "ja-v-7c4d1abbdd61",
+      "memberIds": [
+        "ja-v-7c4d1abbdd61"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/31-winter-v2.png",
+      "status": "approved",
+      "guidance": "Reuse identical forked deciduous tree at left, bench at right, oval land footprint and camera across winter/spring/summer/autumn. Change only foliage, weather and ground covering. Winter reference approved; other seasons are not yet in the current bank."
+    }
+  }
+}

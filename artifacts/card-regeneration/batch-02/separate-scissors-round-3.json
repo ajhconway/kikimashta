@@ -1,0 +1,23 @@
+{
+  "issue": 72,
+  "round": 3,
+  "asset": {
+    "id": "ja-v-1ee90bf5d13a",
+    "meaning": "To Cut",
+    "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v4.png",
+    "prompt": "Use case: precise-object-edit\nAsset type: one Japanese vocabulary illustration, card 18\nPrimary request: Show scissors and paper as TWO SEPARATE OBJECTS, with no cutting interaction.\nInput image is the style/object edit target. Preserve the existing orange handles, softly shaded lavender blades, violet outlines, pale paper shading and white background.\nComposition: one complete uncut rectangular sheet on the LEFT, and one pair of scissors on the RIGHT, angled diagonally with the blades pointing upward/right and handles lower/right. The scissors may be slightly open. Both objects fully visible, similar visual prominence, centered together with generous outer margin. There must be a clear WHITE GAP between the entire paper silhouette and every part of the scissors. Nothing overlaps or touches the paper.\nRemove the existing cut, offcut strip, dashed cutting guide and all simulated cutting geometry. Paper has four continuous intact edges. Keep exactly one sheet and one pair of scissors; no scraps, hands, arrows, action marks, labels, logos, text or extra tools. No background tint or frame. Keep the accepted cat-reference cartoon shading and contour treatment. One square picture.",
+    "tool": "built-in image_gen",
+    "styleProfile": "cat-png",
+    "styleVariant": "cat-white-v3",
+    "styleTrialRound": 3,
+    "revisionRound": 3,
+    "status": "awaiting-user-feedback",
+    "visualReview": "One intact paper sheet and one pair of scissors shown side by side, with a clear white gap and no cutting interaction, dashed guide or offcut.",
+    "references": [
+      {
+        "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v3.png",
+        "role": "object/style edit target; separate scissors and intact paper, preserving shading and white backdrop"
+      }
+    ]
+  }
+}

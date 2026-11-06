@@ -88,3 +88,7 @@ The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](http
 The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
 
 Media and dependencies retain separate terms. Current practice speech is AI-generated with OpenAI. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+
+## Card regeneration
+
+[Approved artwork and prompt workflow](content/card-regeneration/README.md) tracks issue #72. Batches 01–04 contain 40 approved selected cards, with original variants and feedback preserved. Assets remain staged for review rather than active in practice.

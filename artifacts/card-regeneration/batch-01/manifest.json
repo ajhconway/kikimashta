@@ -1,0 +1,473 @@
+{
+  "batch": "batch-01",
+  "issue": 72,
+  "status": "approved",
+  "tool": "built-in image_gen",
+  "createdOn": "2026-11-06",
+  "userFeedback": [
+    {
+      "round": 1,
+      "approvedCardIds": [
+        "ja-apple",
+        "ja-v-ad7167347a2a",
+        "ja-v-b1ff052549ed",
+        "ja-v-baa4dd2c5986",
+        "ja-cup",
+        "ja-v-a47e21265374"
+      ],
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "Let's make it an orange basketball"
+        },
+        {
+          "number": 8,
+          "id": "ja-v-ddd9dca106e2",
+          "feedback": "Let's have it be purple and snow-capped."
+        },
+        {
+          "number": 9,
+          "id": "ja-v-0958f7553d9f",
+          "feedback": "Rice grains are too large, they look like peanuts."
+        },
+        {
+          "number": 10,
+          "id": "ja-v-2f734ba866d9",
+          "feedback": "The stone is too blobby. It needs a little texture."
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "approvedCardIds": [
+        "ja-v-ddd9dca106e2",
+        "ja-v-2f734ba866d9"
+      ],
+      "approval": "8 and 10 are now good.",
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "2 is a little too head on and symmetrical."
+        },
+        {
+          "number": 9,
+          "id": "ja-v-0958f7553d9f",
+          "feedback": "9 the rice is too small now. Let's try something in the middle."
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "approvedCardIds": [
+        "ja-v-0958f7553d9f"
+      ],
+      "approval": "I'm ok with the rice.",
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "The stripes aren't right on the basketball."
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "approvedCardIds": [],
+      "requests": [
+        {
+          "number": 2,
+          "id": "ja-v-66ccf8dd3399",
+          "feedback": "It's better, but I prefered the last angle. The place where the seams meet is what makes it recognizably a basketball."
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "selectedBasketball": "02-ball-v4.png",
+      "acceptedWithKnownIssue": true,
+      "feedback": "That one's the worst yet. Let's go with the prior one but leave feedback that it should be improved. I want to proceed to batch 2."
+    }
+  ],
+  "reviewNotes": [
+    "Batch 01 is accepted for proceeding to batch 02.",
+    "Basketball v4 is accepted for now to proceed. Improve its seam geometry and restore a more natural tilted angle with a recognizable seam intersection in a later pass.",
+    "The other nine cards retain their approved selected files. All rejected versions and exact prompts remain preserved."
+  ],
+  "assets": [
+    {
+      "id": "ja-apple",
+      "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One pink-red apple with a short brown stem and one green leaf; simple natural apple silhouette. No counting symbols.\nReview constraints:\n- F02: Prevent semantically overlapping pictures from appearing together. Prefer count-only practice or a contextual counting prompt for counters; do not treat a different SVG path as a sufficient distinction.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.\nRender exactly one square 1024×1024 illustration, not a sheet or mockup. This is the fresh style anchor for the whole set.",
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "approved",
+      "visualReview": "Recognizable apple, purple outline, centered clear silhouette. Model added subtle tonal variation despite flat-fill request; review style with user.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1120338,
+      "sha256": "693c57b57b06ea4beba0ab8dbd61e6efbf6279a5cd3b6d2c371f21867a82b919",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-v-66ccf8dd3399",
+      "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: one Japanese vocabulary card illustration\nPrimary request: Correct ONLY the basketball's seam layout.\nImage 1: EDIT TARGET and style reference. Its interior purple seams are WRONG. REMOVE every existing interior seam before redrawing; do not reuse the six-spoke junction.\nImage 2: AUTHORITATIVE SEAM-GEOMETRY REFERENCE, an actual basketball product photograph. Reproduce its visible channel topology faithfully in simplified line art. Do not invent extra channels or a central star. In this view there is one cross-ball equatorial seam and the large looping curved channel above and below it, meeting toward the outer silhouette rather than converging at an interior point. Rotate that photographed seam layout about 25 degrees to give the card an informal tilted orientation. Keep the circle circular.\nKeep Image 1's orange fill, clean dark-purple exterior outline, generous white background, canvas framing and cartoon treatment. Interior channels should be purple, a little narrower than the outer outline. No logos, writing, signatures, valve detail, leather grain or photographic shading from Image 2. No frame, shadow, extra objects or watermark.\nUpdated subject specification:\nOne orange basketball with a real conventional basketball seam layout, informed by the NBA Store product-photo reference. Use a slightly tilted orientation: one continuous gently curved groove crosses the ball diagonally, with the additional sweeping curved channel layout wrapping over the sphere as in the product reference. Keep the channels separate where the reference does; do not bunch the seams into a star-like multiway junction in the visible center. Preserve a round silhouette, dark-purple exterior outline, slightly narrower purple seams, broad orange panels and the simple cartoon style. Plain white background; no branding, text, leather texture, motion lines or extra objects.\nThe product photograph governs seam geometry; the existing illustration governs visual style. Deliver one square illustration.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v3.png",
+          "role": "edit target and style reference only; replace incorrect seam topology"
+        },
+        {
+          "path": "artifacts/card-regeneration/references/basketball-nba-store-reference.jpg",
+          "role": "authoritative visible seam geometry reference; omit branding and photo texture",
+          "sourcePage": "https://global.nbastore.com/en/p-12065488"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Prior version v4 restored by user request. Accepted for now with a recorded seam/angle improvement; v5 rejected.",
+      "requestedChange": "The stripes aren't right on the basketball.",
+      "revisionRound": 3,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1159531,
+      "sha256": "546aecaf1c0049c56b124110aa9d59b65807626a2af4d229eb1dd4b15d913f8d",
+      "previousVersions": [
+        {
+          "id": "ja-v-66ccf8dd3399",
+          "path": "artifacts/card-regeneration/batch-01/02-ball.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One round toy ball with three broad curved pink, orange and lavender panels; simple circular silhouette.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "style-only provisional reference within batch one"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Clear recognizable subject, purple outline; slight tonal shading remains.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1155879,
+          "sha256": "21d77a69a975d2d4554c3e9abe4438ad205694169c90a22b5fcdc8f2a5ce4ab5",
+          "requestedChange": "Let's make it an orange basketball"
+        },
+        {
+          "id": "ja-v-66ccf8dd3399",
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v2.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary picture card, batch 01 revision\nPrimary request: Edit target: replace the multicolored beach/toy ball with ONE orange basketball. Use a uniform orange surface and recognizable dark-purple basketball seams: a horizontal seam, vertical seam and two curved side seams. Keep its round silhouette, size, centered framing, white background, rounded purple outline and overall cartoon style. No branding or letters.\nInput image role: edit target; preserve the established drawing style and background.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One round orange basketball with a dark-purple circular exterior outline and the recognizable curved and crossing basketball seams. No multicolored toy-ball panels or branding. Centered full ball on white.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball with dark-purple basketball seams and exterior outline. Reuse its appearance for ordinary toy/sports balls in action, position and comparison cards; preserve the intended size, count and spatial relation. Keep specifically implied objects such as baseballs beside bats, beads, glass marbles, yarn balls and small jar counters appropriate to their own scene; share outline treatment instead of converting these into basketballs.\nChange only the requested subject appearance. Render exactly one square card image; no sheet, frame, caption or watermark.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball.png",
+              "role": "edit target; preserve style and composition while applying user feedback"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Orange basketball with recognizable purple seams; round silhouette and white background preserved.",
+          "requestedChange": "2 is a little too head on and symmetrical.",
+          "revisionRound": 1,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1127762,
+          "sha256": "8367bcf7328f1a2e2396499c3c9a532838406380193506eaaef5d4593035ccd5"
+        },
+        {
+          "id": "ja-v-66ccf8dd3399",
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v3.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary card, batch 01 feedback round 2\nPrimary request: Image 1 is the edit target. Rotate the basketball's surface pattern into a natural slightly tilted three-quarter view. Replace the straight central plus sign and mirrored panels with off-center seam intersections and curved, diagonally wrapping basketball seams. Visibly unequal panel widths: a broad panel toward the viewer, narrower receding panels to one side. Keep the ball circular, orange, the same approximate size and position, white background, dark-purple exterior stroke and simple cartoon style. No motion lines, logos, text, or extra objects.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One orange basketball, slightly rotated and shown from a natural three-quarter angle. Keep a round silhouette, dark-purple outline and recognizable basketball seams. The seam intersections sit off-center; broad curved seams wrap around the sphere with unequal visible panel widths, one diagonal equatorial seam and no front-facing mirrored cross. A lively understated pose without motion marks. Centered full ball on white, no branding.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball with dark-purple exterior outline and basketball seams, viewed at a slight three-quarter angle. Use offset seam intersections, curved diagonal wrapping and unequal visible panels rather than a head-on mirrored cross. Reuse its appearance for ordinary toy/sports balls; preserve intended size, count and spatial relations. Keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene.\nPreserve the approved collection's illustration style. Render one square illustration.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v2.png",
+              "role": "edit target: preserve orange basketball style; change seam perspective"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Basketball seams wrap diagonally with off-center intersections and unequal panel widths; circular orange silhouette and purple outline retained.",
+          "requestedChange": "The stripes aren't right on the basketball.",
+          "revisionRound": 2,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1195613,
+          "sha256": "8e88bc2abf12b5621a2dc8ea6b71138b950345b2e610a00099c0a66af3727cbb"
+        },
+        {
+          "id": "ja-v-66ccf8dd3399",
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v5.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: one vocabulary card illustration\nPrimary request: Restore the preferred tilted basketball angle with a clean recognizable seam crossing.\nIMAGE 1 is the EDIT TARGET and preferred ANGLE/POSE reference (v3). Preserve its orange color, ball position, round silhouette, tilted three-quarter viewpoint and off-center visible intersection. Do not switch to a side-on view with only parallel curved bands.\nIMAGE 2 is a SEAM ARRANGEMENT reference (v2). It shows the conventional cross seam plus bowed side channels, but its head-on symmetric orientation was rejected. Project that conventional arrangement onto IMAGE 1's tilted spherical view. The main crossing should be visible slightly above and right of center, with FOUR clearly continuing arms from TWO intersecting grooves. The additional bowed side channel must pass separately, meeting/crossing elsewhere; do not merge three seams into the same six-spoke knot. Keep every groove smooth and continuous as it wraps over the sphere. Keep internal seams slightly narrower than the exterior outline.\nThis is a targeted seam correction to image 1, not a new aesthetic. Preserve the plain white background, purple outlines, orange broad panels and simple cartoon style. No text, logos, valve, tiny leather texture, shadows, extra objects, frame or watermark.\nSubject: One orange basketball in the tilted three-quarter orientation of v3, with a recognizable visible seam intersection slightly above and right of center. Two main continuous channels form one clean four-way crossing; additional bowed panel seams wrap around the sphere and meet/cross at separate points rather than all converging into a six-spoke knot. Keep broad orange panels toward the viewer and narrower receding panels to one side, a round silhouette, dark-purple outline, slightly narrower purple seams and the established simple cartoon style. White background; no branding, extra objects or motion marks.\nGenerate exactly one square image.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v3.png",
+              "role": "edit target and preferred tilted pose; keep visible off-center junction"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v2.png",
+              "role": "conventional crossing and bowed-channel arrangement reference only; do not adopt head-on orientation"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Restored v3's tilted orientation and visible off-center crossing. The two main grooves cross visibly; additional bowed curves meet the main seams at separated points instead of a single six-spoke junction.",
+          "requestedChange": "It's better, but I prefered the last angle. The place where the seams meet is what makes it recognizably a basketball.",
+          "revisionRound": 4,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1172899,
+          "sha256": "c6e5298ec8a84c256ee9bf5edfdb9b68f8540052ab8ab9332d55bc63e18b8932"
+        }
+      ],
+      "acceptedWithKnownIssue": true,
+      "followUp": "Basketball v4 is accepted for now to proceed. Improve its seam geometry and restore a more natural tilted angle with a recognizable seam intersection in a later pass.",
+      "userApproval": "User chose the prior version (v4), requested improvement feedback, and explicitly authorized batch 2."
+    },
+    {
+      "id": "ja-v-ad7167347a2a",
+      "path": "artifacts/card-regeneration/batch-01/03-person.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One standing person, full body, neutral friendly face, simple short hair, pink shirt and lavender trousers; relaxed arms with hands visible. This is a reusable character, not an identity category cue.\nReview constraints:\n- F10: Retain semantic exclusion groups across the whole choice pool, including broader terms versus their specific instances. Synonyms may share an image safely when never posed as competing answers.\n- F11: Set target line weights for full-size subjects and grouped subjects; use non-scaling strokes where appropriate or normalize after scaling. Keep an explicit minimum detail/line threshold at quiz size.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "style-only provisional reference within batch one"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Clear recognizable subject, purple outline; slight tonal shading remains.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1100652,
+      "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-v-b1ff052549ed",
+      "path": "artifacts/card-regeneration/batch-01/04-hand.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One human hand held palm-forward with wrist visible; exactly one thumb and four fingers, five digits total. Clearly separate each digit; no sixth projection. Two simple palm creases.\nReview constraints:\n- F01: Redraw with one thumb and four fingers. Recheck the outline at quiz size.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "style-only provisional reference within batch one"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Five digits confirmed: one thumb and four fingers; palm creases visible.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1154270,
+      "sha256": "cdb61c07af095a0745b90087f40a08dd6b2cadbc243aa4043944917d2b9b6737",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-v-baa4dd2c5986",
+      "path": "artifacts/card-regeneration/batch-01/05-plate.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One empty round sky-blue dinner plate in a slight overhead view; one simple inner rim. No nested plate or utensils.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "style-only provisional reference within batch one"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Recognizable simple single plate with one inner rim.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1155493,
+      "sha256": "d9c5d78f567cf19bf2a1df53092eee7fec43b27bffa48a4781d53595f080cc6f",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-cup",
+      "path": "artifacts/card-regeneration/batch-01/06-cup.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One handleless transparent drinking tumbler, flat base, slightly tapered straight sides, open elliptical rim, partly filled with visible pale-blue water; no handle, stem, mug or saucer.\nReview constraints:\n- F36: Use a handleless tumbler, optionally with visible water; reserve the handled mug for a mug/cup term.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "style-only provisional reference within batch one"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Handleless tumbler, open rim and visible water; no mug handle.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1094729,
+      "sha256": "a6b3cf43ae549b459e3d64e35795b9fbb4a7c36df37fac4006aa20962076fc5a",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-v-a47e21265374",
+      "path": "artifacts/card-regeneration/batch-01/07-cow.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One adult dairy cow, full body, side view with head turned slightly toward viewer, white body with a few charcoal patches, pink muzzle, four legs and one tail. Adult proportions, no calf.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "style-only provisional reference within batch one"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Recognizable adult dairy cow, four legs and one tail; body sits close to side margins.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1228575,
+      "sha256": "e25de9fd2ee72434754d464915349f79c6d8b06419abde304cc477c4cc8126a6",
+      "userApproval": "User: card is good (batch 01 feedback round 1)."
+    },
+    {
+      "id": "ja-v-ddd9dca106e2",
+      "path": "artifacts/card-regeneration/batch-01/08-mountain-v2.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary picture card, batch 01 revision\nPrimary request: Edit target: keep the two-peak mountain composition and purple exterior outline, recolor BOTH slopes lavender-purple and add crisp white snow caps at BOTH summits with a natural angular snow line. Keep ordinary closed summits and the white background. Improve side margin slightly if needed; no scenery, clouds, lava or smoke.\nInput image role: edit target; preserve the established drawing style and background.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Two purple mountain peaks with white snow caps, one larger peak in front and a smaller peak behind. Clear gently irregular mountain slopes, angular snow edges and the shared dark-purple outline. Plain white background; ordinary non-erupting mountains.\nReview constraints:\n- F03: Keep the ordinary mountain silhouette simple and clearly non-erupting. This card depicts a mountain only.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared mountain design: purple slopes with white snow caps and dark-purple outlines. Preserve scene-specific features: ordinary mountains have closed summits, while an erupting volcano needs a visible open crater with connected plume and lava; snow may remain on unaffected flanks only. Keep Fuji's characteristic profile when Fuji is the subject.\nChange only the requested subject appearance. Render exactly one square card image; no sheet, frame, caption or watermark.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/08-mountain.png",
+          "role": "edit target; preserve style and composition while applying user feedback"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Both peaks are lavender-purple with white snow caps and closed summits.",
+      "requestedChange": "Let's have it be purple and snow-capped.",
+      "revisionRound": 1,
+      "previousVersions": [
+        {
+          "id": "ja-v-ddd9dca106e2",
+          "path": "artifacts/card-regeneration/batch-01/08-mountain.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Two clear green-gray mountain peaks, one dominant in front, simple sloping silhouettes. Ordinary non-erupting mountains, no crater, plume or lava.\nReview constraints:\n- F03: Keep the ordinary mountain silhouette simple and clearly non-erupting. This card depicts a mountain only.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image: STYLE REFERENCE ONLY for the purple outline and flat cartoon rendering. Do not include the apple. The entire subject is TWO ORDINARY MOUNTAIN PEAKS with sloping green-gray solid triangular silhouettes. Their tops are closed, pointed rocky summits. Empty white sky. One square illustration.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "style-only provisional reference within batch one"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Two closed ordinary mountain peaks, no volcanic eruption. Corrected the first rejected draft's finding leakage; side margins are tight.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1099931,
+          "sha256": "17450d2cd617a9371f487eb8e1b6d80dbd714727240020b6c3624a65b2fa33b1",
+          "requestedChange": "Let's have it be purple and snow-capped."
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1117731,
+      "sha256": "e3cd97f96a43a1f478e84303839208e81b8de425463cf3be365ae817c18348e1",
+      "userApproval": "User: card is now good (batch 01 feedback round 2)."
+    },
+    {
+      "id": "ja-v-0958f7553d9f",
+      "path": "artifacts/card-regeneration/batch-01/09-rice-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary card, batch 01 feedback round 2\nPrimary request: Image 1 is the EDIT TARGET: the rice grains are TOO SMALL. Image 2 is ONLY a grain-size comparison: its grains were TOO LARGE and too thickly outlined. Make the grain size visibly BETWEEN the two references. Starting from image 1, make kernels approximately twice as long and wide, with fewer grains in the same mound. They should be roughly HALF the length of image 2's oversized kernels, slender tapered 3:1 kernels, not plump ovals. Aim for kernels about 1/8–1/10 of the bag opening width, including several visible scattered grains. Keep the light beige-gray detail on ivory grains from image 1, not the heavy purple grain outlines of image 2. Preserve the exact bag design, orientation, pile footprint, thick purple exterior outline on the bag, white background and overall cartoon style. Change grain size/density only; no text, frame or extras.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A plain open rice bag spilling a mound of medium-small slender uncooked ivory rice grains, sized between the first oversized draft and the second tiny-grain draft. Each visible kernel is roughly twice the length of v2 and about half the length of v1; approximately 1/8 to 1/10 of the bag opening width. Tapered ends and a slender 3:1 length-to-width shape, light beige-gray detail. A few scattered kernels show this intermediate scale clearly. Preserve the bag and composition. No plump peanut-like ovals, heavy purple outlines around every grain, cooked rice bowl or steam.\nReview constraints:\n- F32: Show loose uncooked grains spilling from a plain rice bag or scoop. Keep the served rice bowl for ご飯.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared uncooked rice design: medium-small slender tapered ivory kernels, roughly 1/8 to 1/10 of the bag opening width in the still life, intermediate between the oversized v1 and tiny v2. Keep grains individually readable at quiz size with light economical detail, not thick purple outlines or peanut-like plump ovals. Do not apply the bag still life to a rice-paddy landscape.\nPreserve the approved collection's illustration style. Render one square illustration.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/09-rice-v2.png",
+          "role": "edit target: enlarge grains while preserving light detail and bag"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/09-rice.png",
+          "role": "size comparison only: grain-size upper bound; do not copy heavy outlines"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Intermediate grain size: visibly larger than v2, smaller and slimmer than v1, with light grain detail and original bag composition retained.",
+      "requestedChange": "9 the rice is too small now. Let's try something in the middle.",
+      "revisionRound": 2,
+      "previousVersions": [
+        {
+          "id": "ja-v-0958f7553d9f",
+          "path": "artifacts/card-regeneration/batch-01/09-rice.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Loose dry uncooked ivory rice grains spilling from a small plain open rice bag; the grains dominate. Slim separate elongated kernels, no cooked rice mound, bowl, steam or chopsticks.\nReview constraints:\n- F32: Show loose uncooked grains spilling from a plain rice bag or scoop. Keep the served rice bowl for ご飯.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "style-only provisional reference within batch one"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Dry uncooked grains spill from a plain bag, no cooked rice bowl.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1318244,
+          "sha256": "65731eb3703857b112e1e0b71ce0a91a49ffef8cc0f487290723c3b0e7e8d853",
+          "requestedChange": "Rice grains are too large, they look like peanuts."
+        },
+        {
+          "id": "ja-v-0958f7553d9f",
+          "path": "artifacts/card-regeneration/batch-01/09-rice-v2.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary picture card, batch 01 revision\nPrimary request: Correct the SCALE OF THE RICE GRAINS. Keep the plain bag, its opening, tilt, white background and cartoon style. Replace EVERY large thick-outlined peanut-like oval with MANY MUCH SMALLER slender rice kernels: each kernel about 1/25–1/35 of the bag-opening width, pointed/tapered ends, small ivory strokes with light gray detail. Show a dense mound pouring out and just a few small scattered kernels. Use fine grain detail, not thick purple outlines around individual kernels. Keep the dark purple exterior outline on the bag.\nInput image role: edit target; preserve the established drawing style and background.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A plain open rice bag spilling a dense mound of many SMALL slender dry uncooked ivory rice grains. Each grain is a fine tapered kernel about 1/25 to 1/35 of the bag opening width, much smaller than in the first draft; modestly vary grain direction. A few scattered kernels remain small. The bag provides scale. No large plump peanut-like ovals, thick individual purple outlines, cooked rice bowl or steam.\nReview constraints:\n- F32: Show loose uncooked grains spilling from a plain rice bag or scoop. Keep the served rice bowl for ご飯.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared uncooked rice design: many small slender tapered ivory grains, correctly scaled to the bag or scoop, never large plump peanut-like ovals. Use a light economical grain treatment rather than thick purple outlines around every kernel. Do not apply the bag/grain still life to a rice-paddy landscape.\nChange only the requested subject appearance. Render exactly one square card image; no sheet, frame, caption or watermark. The user requested these material details, so fine rice kernels and sparse stone texture are allowed within the established simple cartoon style.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/09-rice.png",
+              "role": "edit target; preserve style and composition while applying user feedback"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Many much smaller slender ivory grains; light grain detail replaces the peanut-like thick outlines.",
+          "requestedChange": "9 the rice is too small now. Let's try something in the middle.",
+          "revisionRound": 1,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1430763,
+          "sha256": "f7a4754d552bd514fc71526cdcfa4ca2879f45bb601f1bbcecaf50ee1f2dfe72"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1316446,
+      "sha256": "304fac5b04e185585404b02b7ed4b0978284bafdf623fa7ec87bb1db1a602ccf",
+      "userApproval": "User: ok with the rice (feedback round 3)."
+    },
+    {
+      "id": "ja-v-2f734ba866d9",
+      "path": "artifacts/card-regeneration/batch-01/10-stone-v2.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary picture card, batch 01 revision\nPrimary request: Make this gray stone look slightly rough and rocky instead of blobby. Change the soft oval silhouette to an asymmetric slightly angular natural rock with about 5–7 broad irregular contour segments. Add a few broad subtle gray planes, sparse darker mineral speckles, and two short fine cracks. Texture is restrained and readable at small size. Keep the gray color, thick purple exterior outline, one centered stone and white background. No crystalline gemstone facets, no sparkle, no eyes or face.\nInput image role: edit target; preserve the established drawing style and background.\nUpdated card specification:\nUse case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One recognizable ordinary gray stone with an irregular angular silhouette, a few broad subtly planar surfaces and restrained mineral texture: several small darker speckles and two short natural cracks. The stone feels solid and slightly rough, not a smooth featureless blob. Keep the dark-purple exterior outline and simple cartoon treatment. No symmetric gemstone facets, sparkle, face or eyes.\nReview constraints:\n- F20: Show an ordinary rounded irregular gray stone with minimal marks.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared stone design: a slightly angular irregular gray silhouette with restrained mineral speckles, short cracks and a few broad natural planes. Avoid a smooth blob, symmetric gem facets or sparkles. Keep texture sparse enough to read at quiz size; scale this treatment for boulders.\nChange only the requested subject appearance. Render exactly one square card image; no sheet, frame, caption or watermark. The user requested these material details, so fine rice kernels and sparse stone texture are allowed within the established simple cartoon style.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/10-stone.png",
+          "role": "edit target; preserve style and composition while applying user feedback"
+        }
+      ],
+      "status": "approved",
+      "visualReview": "Gray stone has a slightly angular asymmetric silhouette, broad natural planes, sparse speckles and two short cracks.",
+      "requestedChange": "The stone is too blobby. It needs a little texture.",
+      "revisionRound": 1,
+      "previousVersions": [
+        {
+          "id": "ja-v-2f734ba866d9",
+          "path": "artifacts/card-regeneration/batch-01/10-stone.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One ordinary smooth irregular rounded gray pebble, asymmetrical natural silhouette, at most one broad flat tone patch. No triangular facets, symmetry, sparkles or jewel setting.\nReview constraints:\n- F20: Give 石 a rounded irregular pebble silhouette with very few surface marks, reserving symmetric facets and sparkle cues for 宝石.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nInput image role: STYLE REFERENCE ONLY. Match the reference's dark-purple outline thickness, rounded contours and restrained palette. Do not include the apple or its leaf. Keep fills uniform and flat, with no glossy highlights or texture. Render one square 1024×1024 picture, not a sheet.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "style-only provisional reference within batch one"
+            }
+          ],
+          "status": "revision-required",
+          "visualReview": "Irregular rounded gray pebble; no facets or sparkles.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1139626,
+          "sha256": "e5a8290472819ae00657d99be06e9eec64158326bc4a5837a224d0201528345c",
+          "requestedChange": "The stone is too blobby. It needs a little texture."
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1146581,
+      "sha256": "5bd1f3cb9579a0c08097958ad81844e2fb22576b3987aab5a42a8b8968f04994",
+      "userApproval": "User: card is now good (batch 01 feedback round 2)."
+    }
+  ],
+  "revisionSummary": "Batch complete. Basketball v4 restored and accepted with an improvement note."
+}

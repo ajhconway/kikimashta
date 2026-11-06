@@ -1,0 +1,415 @@
+{
+  "issue": 72,
+  "groups": [
+    {
+      "id": "source-enter-door",
+      "cardIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-woman",
+      "cardIds": [
+        "ja-v-4d9423288cb2",
+        "ja-v-f25546e67181"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-exit-door",
+      "cardIds": [
+        "ja-v-a19157e62dee",
+        "ja-v-b2a9df4d0301"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-eye",
+      "cardIds": [
+        "ja-v-6c0b9f3278dc",
+        "ja-v-a8ca5ef684b8"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-girl",
+      "cardIds": [
+        "ja-v-0bf44d10d860",
+        "ja-v-185a632e3742",
+        "ja-v-575ec5f060f3"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-skilled",
+      "cardIds": [
+        "ja-v-74f77120e84d",
+        "ja-v-f78f531c55a5"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-rice-paddy",
+      "cardIds": [
+        "ja-v-0da81020c173",
+        "ja-v-762983bc3fe7"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-white",
+      "cardIds": [
+        "ja-v-cbda72b9dd04",
+        "ja-v-d67a7d3dacc9"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-father",
+      "cardIds": [
+        "ja-v-9013d708ded7",
+        "ja-v-d15ca6ea1179"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-half",
+      "cardIds": [
+        "ja-v-81e708aba22f",
+        "ja-v-d605986c3af4"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-light",
+      "cardIds": [
+        "ja-v-137737e5ce1f",
+        "ja-v-96e39ee9cb18"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-mother",
+      "cardIds": [
+        "ja-v-7fa86c660a00",
+        "ja-v-b27125f41e7c"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-number-10000",
+      "cardIds": [
+        "ja-v-1807218bf360",
+        "ja-v-a872d5e674a2"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-boy",
+      "cardIds": [
+        "ja-v-696107ad9e08",
+        "ja-v-c22ee5be019b"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-energy",
+      "cardIds": [
+        "ja-v-12f44a1311d1",
+        "ja-v-1e808c7b4b4e"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-man",
+      "cardIds": [
+        "ja-v-4b9dfeafcab4",
+        "ja-v-bcfbced3ea21"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-red",
+      "cardIds": [
+        "ja-v-3144539c83d3",
+        "ja-v-a595b5ca5679"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-rest",
+      "cardIds": [
+        "ja-v-acc3dd26ba1e",
+        "ja-v-ebdaef0f21db"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "source-affirmative",
+      "cardIds": [
+        "ja-v-6bbf1546d4d7",
+        "ja-v-f64f1036d22a"
+      ],
+      "rule": "never-compete",
+      "reason": "Existing shared visual group; usage/reading cannot be distinguished by this picture."
+    },
+    {
+      "id": "apple-and-counts-ja-v-277587e6fa07",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-277587e6fa07"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-bb85f028d944",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-bb85f028d944"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-8b887bc8af0c",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-8b887bc8af0c"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-084edf1fdd10",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-084edf1fdd10"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-df70a01acaec",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-df70a01acaec"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-f6bc974a7405",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-f6bc974a7405"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-6c9351ae67e6",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-6c9351ae67e6"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "apple-and-counts-ja-v-0d0163a40587",
+      "cardIds": [
+        "ja-apple",
+        "ja-v-0d0163a40587"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "meat-and-beef",
+      "cardIds": [
+        "ja-v-5dc14aea92c7",
+        "ja-v-b639fedc63ec"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "sentence-composition-writing",
+      "cardIds": [
+        "ja-v-4b9574b8d3b9",
+        "ja-v-d4fb59f8c32c"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "plate-and-small-plate",
+      "cardIds": [
+        "ja-v-602940cfc449",
+        "ja-v-baa4dd2c5986"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "entrance-and-entering",
+      "cardIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-82a114897d9c"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "exit-and-leaving",
+      "cardIds": [
+        "ja-v-001a4faf05bd",
+        "ja-v-a19157e62dee",
+        "ja-v-b2a9df4d0301"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "eye-and-eyeball",
+      "cardIds": [
+        "ja-v-6c0b9f3278dc",
+        "ja-v-a8ca5ef684b8"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "people-and-person-ja-v-4fa716f651b2",
+      "cardIds": [
+        "ja-v-4fa716f651b2",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "people-and-person-ja-v-2a318f5ee1c8",
+      "cardIds": [
+        "ja-v-2a318f5ee1c8",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "people-and-person-ja-v-3bcce8de9d04",
+      "cardIds": [
+        "ja-v-3bcce8de9d04",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "people-and-person-ja-v-7de8b40e4f57",
+      "cardIds": [
+        "ja-v-7de8b40e4f57",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "people-and-person-ja-v-08f79cb14fd4",
+      "cardIds": [
+        "ja-v-08f79cb14fd4",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "people-and-person-ja-v-a5dbfebd3fae",
+      "cardIds": [
+        "ja-v-a5dbfebd3fae",
+        "ja-v-ad7167347a2a"
+      ],
+      "rule": "never-compete",
+      "reason": "The category matches every depicted instance; counts can still compete within a taught counting exercise."
+    },
+    {
+      "id": "paddy-synonyms",
+      "cardIds": [
+        "ja-v-0da81020c173",
+        "ja-v-762983bc3fe7"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "circle-and-round",
+      "cardIds": [
+        "ja-v-b1514b201acd",
+        "ja-v-d1b6831b65c8"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "written-characters",
+      "cardIds": [
+        "ja-v-69c61c85a403",
+        "ja-v-7930a252da9b"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "rural-settlements",
+      "cardIds": [
+        "ja-v-09d74d630a45",
+        "ja-v-10984ece1206",
+        "ja-v-92bebda5ac98"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "cow-and-calf",
+      "cardIds": [
+        "ja-v-754e1f2ea742",
+        "ja-v-a47e21265374"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    },
+    {
+      "id": "mountain-and-fuji-volcano",
+      "cardIds": [
+        "ja-v-0181fab128a1",
+        "ja-v-afefe30bcb46",
+        "ja-v-ddd9dca106e2"
+      ],
+      "rule": "never-compete",
+      "reason": "Category/instance, synonym or otherwise overlapping referents; image-path differences do not disambiguate."
+    }
+  ],
+  "note": "Staged policy metadata. Integrate with the app choice filter separately before activating regenerated cards."
+}
