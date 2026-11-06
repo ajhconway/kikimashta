@@ -44,27 +44,78 @@ async function captureScreen(page: Page, name: string) {
   await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
 }
 
+async function expectCompanionMotion(page: Page) {
+  await expect.poll(() => page.locator('.quiz-companion').evaluate(companion => {
+    const picture = companion.querySelector('img')!;
+    const motions = picture.getAnimations();
+    const motion = motions[0];
+    const timing = motion?.effect?.getComputedTiming();
+    return companion.getAnimations().length === 0 && motions.length === 1
+      && motion instanceof CSSAnimation && motion.animationName === 'companion-listen'
+      && motion.playState === 'running' && typeof timing?.duration === 'number' && timing.duration >= 2400 && timing.iterations === Infinity;
+  }), { message: 'Kiku has one slow image sway and a stationary outer wrapper' }).toBe(true);
+}
+
 async function captureCorrectResponse(page: Page, name: string) {
-  const decorations = await page.locator('.app').evaluateHandle(app => {
-    const glow = app.getAnimations({ subtree: true }).filter(candidate =>
-      candidate instanceof CSSAnimation && candidate.animationName === 'correct-glow',
-    );
-    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations())];
-    for (const animation of animations) {
-      animation.pause();
-      animation.currentTime = 360;
-    }
-    return animations;
+  const inspection = await page.locator('.app').evaluateHandle(app => {
+    const cards = Array.from(app.querySelectorAll<HTMLElement>('.choices .picture-choice.correct, .departing-card[data-exit="fly"]')).map(element => {
+      const celebration = element.getAnimations().find(animation => animation instanceof CSSAnimation && animation.animationName === 'card-celebrate');
+      if (!celebration) throw new Error('Every answer card must celebrate, including the correct card.');
+      const slot = element.dataset.slot === undefined ? Number(element.getAttribute('aria-label')?.match(/\d+/)?.[0]) - 1 : Number(element.dataset.slot);
+      return { element, celebration, slot };
+    });
+    const glow = app.getAnimations({ subtree: true }).filter(animation => animation instanceof CSSAnimation && animation.animationName === 'correct-glow');
+    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations()), ...cards.flatMap(card => card.element.getAnimations())];
+    const snapshots = animations.map(animation => ({ animation, time: animation.currentTime, state: animation.playState }));
+    for (const animation of animations) { animation.pause(); animation.currentTime = 0; }
+    return { snapshots, cards };
   });
   try {
-    // Hold only the decorative effects for review; quiz/audio timing continues normally.
+    const motion = await inspection.evaluate(({ cards }) => cards.map(({ element, celebration, slot }) => {
+      const timing = celebration.effect!.getComputedTiming();
+      const delay = Number(timing.delay);
+      function transform() {
+        const value = getComputedStyle(element).transform;
+        const matrix = value === 'none' ? new DOMMatrix() : new DOMMatrix(value);
+        return { lift: matrix.f, tilt: Math.atan2(matrix.b, matrix.a) };
+      }
+      const samples = [100, 200, 300].map(time => { celebration.currentTime = delay + time; return transform(); });
+      celebration.currentTime = Number(timing.endTime) + 1;
+      return { slot, delay, duration: timing.duration, samples, settled: transform() };
+    }));
+    expect(motion.map(card => card.slot).sort()).toEqual([0, 1, 2, 3]);
+    const ordered = [...motion].sort((a, b) => a.slot - b.slot);
+    expect(ordered[0]!.delay).toBe(0);
+    for (let i = 1; i < ordered.length; i++) {
+      expect(ordered[i]!.delay).toBeGreaterThan(ordered[i - 1]!.delay);
+      expect(ordered[i]!.delay - ordered[i - 1]!.delay).toBeLessThanOrEqual(100);
+    }
+    for (const card of motion) {
+      expect(card.duration).toBe(ordered[0]!.duration);
+      expect(Number(card.duration)).toBeLessThanOrEqual(500);
+      expect(card.samples.some(sample => sample.lift < -1), 'the card rectangle visibly lifts').toBe(true);
+      expect(card.samples.some(sample => Math.abs(sample.tilt) > .01), 'the card rectangle visibly tilts').toBe(true);
+      expect(Math.abs(card.settled.lift)).toBeLessThan(.1);
+      expect(Math.abs(card.settled.tilt)).toBeLessThan(.001);
+    }
+    await inspection.evaluate(({ snapshots, cards }) => {
+      // One shared time preserves the staggered wave across the four cards.
+      for (const { animation } of snapshots) animation.currentTime = 220;
+      for (const { element, celebration } of cards) {
+        for (const animation of element.getAnimations()) if (animation !== celebration) animation.currentTime = 0;
+      }
+    });
     await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
   } finally {
     try {
-      await decorations.evaluate(animations => animations.forEach(animation => animation.play()));
-    } finally {
-      await decorations.dispose();
-    }
+      await inspection.evaluate(({ snapshots }) => {
+        for (const { animation, time, state } of snapshots) {
+          animation.currentTime = time;
+          if (state === 'finished') animation.finish();
+          else animation.play();
+        }
+      });
+    } finally { await inspection.dispose(); }
   }
 }
 
@@ -112,11 +163,14 @@ async function expectAnswerPictures(page: Page, retainedAlts: string[], exit: 'f
 async function expectDeparturesFinished(page: Page, count: number) {
   // Computed end times include each card's stagger delay. A paused advance
   // timer must not conceal exits that exceed the earliest 1.2-second advance.
-  const endTimes = await page.locator('.answer-departures').evaluate(layer =>
-    layer.getAnimations({ subtree: true }).map(animation => Number(animation.effect?.getComputedTiming().endTime)),
+  const timings = await page.locator('.answer-departures').evaluate(layer =>
+    Array.from(layer.querySelectorAll('.departing-card'), card => card.getAnimations().map(animation => Number(animation.effect?.getComputedTiming().endTime))),
   );
-  expect(endTimes).toHaveLength(count);
-  expect(Math.max(...endTimes), 'every exit including stagger fits within the answer beat').toBeLessThanOrEqual(1200);
+  expect(timings).toHaveLength(count);
+  for (const endTimes of timings) {
+    expect(endTimes.length).toBeGreaterThanOrEqual(1);
+    expect(Math.max(...endTimes), 'every exit including celebration and stagger fits within the answer beat').toBeLessThanOrEqual(1200);
+  }
   const result = await page.locator('.answer-departures').evaluate(async (layer, expectedCount) => {
     const animations = layer.getAnimations({ subtree: true });
     const results = await Promise.allSettled(animations.map(animation => animation.finished));
@@ -177,9 +231,7 @@ async function heardWord(page: Page) {
 
 async function chooseHeardPicture(page: Page, pressScreenshot?: string, responseScreenshot?: string) {
   const { target } = await heardWord(page);
-  await expect.poll(() => page.locator('.quiz-companion').evaluate(companion => companion.getAnimations({ subtree: true }).some(animation =>
-    animation.playState === 'running' && animation.effect?.getComputedTiming().iterations === Infinity,
-  )), { message: 'Kiku keeps gently bobbing while waiting for an answer' }).toBe(true);
+  await expectCompanionMotion(page);
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
   const beforeAnswer = await page.locator('.choices').evaluate(grid => {
     const bounds = grid.getBoundingClientRect();
@@ -210,6 +262,7 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
     }
     await expect(page.locator('.feedback')).toHaveText('Got it!');
     await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
+    await expectCompanionMotion(page);
     await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
     await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
@@ -575,6 +628,7 @@ test('a miss drops only uninvolved pictures without shifting the grid or adding 
   const selectedAlt = await wrongChoice.locator('img').getAttribute('alt');
   await wrongChoice.click();
   await expect(page.locator('.feedback')).toHaveText('Try this one.');
+  await expectCompanionMotion(page);
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await captureFallingCards(page, 'quiz-falling-' + testInfo.project.name);
   await expectDeparturesFinished(page, 2);
