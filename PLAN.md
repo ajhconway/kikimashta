@@ -16,7 +16,7 @@ A personal listening game, starting with Japanese and leaving room for other lan
 | App | React, TypeScript, and Vite; prioritize Safari on iPhone 17 |
 | Local progress | IndexedDB, with stable item and attempt IDs, answers, picture choices, and timing |
 | Content | JSON files and media in the repository; separate word banks and progress by language |
-| Audio | Reusable, pregenerated speech; start with OpenAI Marin and Cedar, chosen through word and sentence samples |
+| Audio | Reusable, pregenerated speech; moving to ElevenLabs through Japanese voice auditions ([#78](https://github.com/ajhconway/kikimashta/issues/78)); current recordings use OpenAI Marin and Cedar |
 | Pictures | Start with AI-generated illustrations; also support library images and reuse suitable pictures across languages |
 | Hosting | Public GitHub repository, GitHub Actions, and GitHub Pages |
 | Code license | GNU AGPLv3 only (AGPL-3.0-only); separately licensed media retain their terms |

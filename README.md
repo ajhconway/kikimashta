@@ -45,6 +45,10 @@ The database migration and rollback access-policy checks live in `supabase/`. Al
 
 ## Voice auditions
 
+New voice generation is moving to ElevenLabs, starting with a local Japanese audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) to create an account, choose voices, configure a generation key, and compare samples. Start with `npm run audio:audition:elevenlabs -- --dry-run`. Production recordings and the hosted OpenAI generation workflow remain in place until replacement voices pass listening review.
+
+### Existing OpenAI recordings
+
 Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
 
 Generation normally runs in GitHub Actions. Configure an `OPENAI_API_KEY` repository secret once under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow**. To request another run, change the request's `id` and choose `mode`: `words`, `sentences`, or `bank`. Bank mode reads the Japanese word bank and records every item with both Marin and Cedar. Unrelated pushes and pull requests do not generate paid audio.
