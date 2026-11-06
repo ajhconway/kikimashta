@@ -1,0 +1,66 @@
+/** Activate reviewed image selections without changing vocabulary or practice eligibility (#72). */
+import { createHash } from 'node:crypto'
+import { execFileSync } from 'node:child_process'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { dirname, join, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const hash = bytes => createHash('sha256').update(bytes).digest('hex')
+const read = (root, path) => JSON.parse(readFileSync(join(root, path), 'utf8'))
+const write = (root, path, data) => writeFileSync(join(root, path), JSON.stringify(data, null, 2) + '\n')
+const defaultEncoder = (source, target) => execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '85', '-Z', '640', source, '--out', target], { stdio: 'pipe' })
+
+export function activateArtwork({ root, batches, encode = defaultEncoder }) {
+  if (!Array.isArray(batches) || !batches.length || new Set(batches).size !== batches.length || batches.some(batch => !/^batch-\d{2}$/.test(batch))) throw new Error('Select unique batch-NN names')
+  const catalog = read(root, 'content/catalog/ja.json')
+  const starter = read(root, 'content/ja.json')
+  const activation = read(root, 'content/card-regeneration/activation.json')
+  const visualPaths = ['levels-1-2.json', 'levels-3-4.json', 'level-5.json'].map(file => `content/visuals/${file}`)
+  const visuals = visualPaths.map(path => ({ path, records: read(root, path) }))
+  const allItems = [...catalog.items, ...starter.items]
+  const seen = new Set()
+  // Preflight every selection before changing any mapping or delivery.
+  const plan = batches.flatMap(batch => {
+    const manifestPath = `artifacts/card-regeneration/${batch}/manifest.json`
+    const manifest = read(root, manifestPath)
+    if (manifest.status !== 'approved') throw new Error(`Batch is not approved: ${batch}`)
+    return manifest.assets.map(asset => {
+      if (seen.has(asset.id) || !allItems.some(item => item.id === asset.id) || asset.status !== 'approved') throw new Error(`Unapproved, duplicate or unknown image: ${asset.id}`)
+      seen.add(asset.id)
+      if (!/^ja-[a-z0-9-]+$/.test(asset.id) || typeof asset.path !== 'string' || !asset.path.startsWith(`artifacts/card-regeneration/${batch}/`) || !/^[a-zA-Z0-9_./-]+\.png$/.test(asset.path) || asset.path.split('/').includes('..')) throw new Error(`Unsafe artwork identity: ${asset.id}`)
+      const source = readFileSync(join(root, asset.path))
+      if (source.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a' || hash(source) !== asset.sha256) throw new Error(`Source hash mismatch: ${asset.id}`)
+      if (catalog.items.some(item => item.id === asset.id) && !visuals.some(file => file.records.some(visual => visual.id === asset.id))) throw new Error(`Missing visual metadata: ${asset.id}`)
+      const description = asset.imageDescription ?? asset.visualReview
+      if (typeof description !== 'string' || !description.trim()) throw new Error(`Missing visual description: ${asset.id}`)
+      return { asset, manifestPath, description, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.jpg` }
+    })
+  })
+  const deliveries = plan.map(({ asset, manifestPath, description, path }) => {
+    mkdirSync(dirname(join(root, path)), { recursive: true })
+    if (!existsSync(join(root, path))) encode(join(root, asset.path), join(root, path))
+    const bytes = readFileSync(join(root, path))
+    if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
+    return { id: asset.id, sourcePath: asset.path, sourceSha256: asset.sha256, manifestPath, path, sha256: hash(bytes), bytes: bytes.length,
+      ...(asset.followUp ? { followUp: asset.followUp } : {}), description }
+  })
+  for (const delivery of deliveries) {
+    for (const item of allItems.filter(item => item.id === delivery.id)) item.image = { ...item.image, src: delivery.path.slice('public/'.length), alt: delivery.description }
+    for (const file of visuals) for (const visual of file.records.filter(visual => visual.id === delivery.id)) visual.concept = delivery.description
+    const record = { ...delivery }
+    delete record.description
+    const index = activation.assets.findIndex(asset => asset.id === delivery.id)
+    if (index < 0) activation.assets.push(record)
+    else activation.assets[index] = record
+  }
+  write(root, 'content/catalog/ja.json', catalog)
+  write(root, 'content/ja.json', starter)
+  for (const file of visuals) write(root, file.path, file.records)
+  write(root, 'content/card-regeneration/activation.json', activation)
+  return deliveries.map(delivery => delivery.id)
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const batches = process.argv.slice(2)
+  console.log(`Activated ${activateArtwork({ root: fileURLToPath(new URL('../../', import.meta.url)), batches }).length} approved illustrations.`)
+}

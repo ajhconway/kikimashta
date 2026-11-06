@@ -47,7 +47,7 @@ def render_graph(cards, graph):
               '3. Record feedback; revise the shared style, affected prompts and artwork before continuing. Invalidate references affected by those revisions.',
               '4. Only approved seed artwork becomes a downstream object/character reference. Match geometry, colors and proportions; never add the reference object to an unrelated scene.',
               '5. Unseeded components are shared prompt conventions, with no visual reference claimed. Establish and review a support reference before depending on a precise recurring design.',
-              '6. Pick up to ten cards whose reference dependencies are ready. The later order in batches.json is provisional; regroup after feedback if necessary.',
+              '6. Pick up to 25 cards whose reference dependencies are ready (the first six reviewed batches retain ten each). The later order in batches.json is provisional; regroup after feedback if necessary.',
               '7. Record exact generation prompts and reference paths in each batch manifest. Repeat the feedback gate after each batch.',
               '8. Semantic exclusions and previous review restrictions remain. App integration and real-device checks are separate work before activation.', '',
               '## Per-card dependencies', '',

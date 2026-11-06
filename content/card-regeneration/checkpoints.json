@@ -1,0 +1,18 @@
+{
+  "issue": 72,
+  "checkpoints": [
+    {
+      "batches": [
+        "batch-01",
+        "batch-02",
+        "batch-03",
+        "batch-04"
+      ],
+      "approvedCards": 40,
+      "pullRequest": "https://github.com/ajhconway/kikimashta/pull/75",
+      "mainMerge": "0855715fa14e7e4ec970ba22f0c3f2cedb5d970d",
+      "checks": "Local npm run check passed: lint, typecheck, 143 Vitest tests, 52 Node tests and production build. Eight Python tests and content validation passed. GitHub Checks run 42238588849 succeeded, including Chromium, mobile WebKit and database checks.",
+      "note": "Basketball retains known improvement note. Assets staged, not activated in practice. Original local main worktree left untouched."
+    }
+  ]
+}

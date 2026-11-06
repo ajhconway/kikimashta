@@ -99,7 +99,7 @@ def validate():
     assert by_id['ja-v-41b543dc8fe4']['components'] == ['gem']
     all_batched = [i for b in batches for i in b['cardIds']]
     assert Counter(all_batched) == Counter(ids), 'Batches omit or duplicate a card'
-    assert all(1 <= len(b['cardIds']) <= 10 for b in batches)
+    assert all(1 <= len(b['cardIds']) <= feedback.get('generationBatchSize', 10) for b in batches)
     for index, batch in enumerate(batches[1:], 1):
         if batches[index-1]['status'] != 'approved':
             assert batch['status'] == 'blocked-on-previous-feedback', 'Batch unlocked before previous review'
@@ -118,7 +118,15 @@ def validate():
         for asset in manifest['assets']:
             path = ROOT / asset['path']
             assert asset['id'] in ids and path.is_file(), asset
-            assert asset['prompt'] and asset['tool'] == 'built-in image_gen'
+            assert asset['prompt'] and asset['tool'] in {'built-in image_gen', 'reuse approved image'}
+            if asset['tool'] == 'reuse approved image':
+                sources = [source for source_file in filename.parent.parent.glob('batch-*/manifest.json')
+                           for source in json.loads(source_file.read_text())['assets']
+                           if source['id'] == asset['reusedFromCard']]
+                assert len(sources) == 1 and sources[0]['status'] == 'approved', 'Reuse requires one approved source'
+                source_path = ROOT / sources[0]['path']
+                assert source_path.read_bytes() == path.read_bytes(), 'Reused artwork must match approved source exactly'
+                assert asset['references'][0]['path'] == sources[0]['path']
             assert by_id[asset['id']]['artworkStatus'] == asset['status']
             if asset['id'] in feedback.get('approvedCardIds', []):
                 assert asset['status'] == 'approved', 'User approval was lost'

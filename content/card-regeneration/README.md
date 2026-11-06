@@ -2,8 +2,6 @@
 
 Work record: [GitHub issue #72](https://github.com/ajhconway/kikimashta/issues/72).
 
-Artwork activation: [issue #77](https://github.com/ajhconway/kikimashta/issues/77) publishes all 40 selected approved images from PR #75. `activation.json` records source manifests, source hashes and compressed 640px JPEG delivery hashes. Starter and catalogue media paths and picture descriptions point to these assets; stable IDs, practice eligibility, review restrictions and answer-choice policies remain unchanged. Policy integration is deferred at the owner's request to [issue #79](https://github.com/ajhconway/kikimashta/issues/79). The staged generation records below continue to describe the review workflow.
-
 All 445 reviewed entries retain their stable IDs. The 441 library concepts and four additional starter concepts are snapshotted from the original checkout, including effective review overrides. The snapshot records source hashes. The original app files are not present in this worktree.
 
 - [Prompt changes by finding](review-changes.md): all 48 findings, including context requirements and provisional gloss clarifications.
@@ -41,3 +39,5 @@ python3 scripts/cards/validate.py
 The preparation script never generates images or calls the network. Existing app lint, type checks, tests and build are unavailable in this planning-only worktree.
 
 Batch 04 (31–40) is approved, including lavender half, rain without a puddle, sun rays and a reusable winter park scene. Card 38 establishes the cube design for X things. The graph records both design families. Batch 05 is next.
+
+Batches 05 and 06 (41–60) are approved in full. Future review batches contain 25 cards, starting with batch 07 (61–85); previous membership stays fixed. Activation is tracked separately in `activation.json`; app image mappings and published assets must be updated together with source visual records, so content rebuilds preserve approved artwork.
