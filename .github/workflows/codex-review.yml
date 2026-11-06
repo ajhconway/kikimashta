@@ -24,8 +24,7 @@ jobs:
     if: >-
       github.event_name != 'issue_comment' ||
       (github.event.issue.pull_request &&
-       github.event.comment.user.login == 'chatgpt-codex-connector[bot]' &&
-       contains(github.event.comment.body, '<!-- codex-pull-request-review-summary -->'))
+       github.event.comment.user.login == 'chatgpt-codex-connector[bot]')
     # Filter first: skipped human-comment runs must not displace a queued refresh.
     concurrency:
       group: codex-review-${{ github.event.pull_request.number || github.event.issue.number || inputs.pull_request }}

@@ -131,6 +131,22 @@ test('an interrupted refresh leaves pending status, not a previous success', asy
   assert.deepEqual(writes.map(w => w.state), ['pending'])
 })
 
+test('a bot edit that removes its summary marker invalidates a same-head success', async () => {
+  let comments = [summary()]
+  let latestStatus
+  const api = async (path, body) => {
+    if (body) { latestStatus = body; return {} }
+    return path === 'pulls/1' ? pr : comments
+  }
+  const event = { issue: { number: 1 }, action: 'edited' }
+  await refreshGate({ api, event })
+  assert.equal(latestStatus.state, 'success')
+  comments = [summary(clean, { body: 'Changed integration format' })]
+  await refreshGate({ api, event })
+  assert.equal(latestStatus.state, 'pending')
+  assert.equal(latestStatus.context, 'codex-review')
+})
+
 test('rejects malformed PR numbers without making requests', async () => {
   for (const value of ['1; malicious', '-1', '1.5', '0', undefined]) {
     await assert.rejects(refreshGate({ event: { inputs: { pull_request: value } }, api: () => assert.fail('No request expected') }), /valid pull request/)
