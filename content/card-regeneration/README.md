@@ -2,6 +2,8 @@
 
 Work record: [GitHub issue #72](https://github.com/ajhconway/kikimashta/issues/72).
 
+Artwork activation: [issue #77](https://github.com/ajhconway/kikimashta/issues/77) publishes all 40 selected approved images from PR #75. `activation.json` records source manifests, source hashes and compressed 640px JPEG delivery hashes. Starter and catalogue media paths and picture descriptions point to these assets; stable IDs, practice eligibility, review restrictions and answer-choice policies remain unchanged. Policy integration is deferred at the owner's request to [issue #79](https://github.com/ajhconway/kikimashta/issues/79). The staged generation records below continue to describe the review workflow.
+
 All 445 reviewed entries retain their stable IDs. The 441 library concepts and four additional starter concepts are snapshotted from the original checkout, including effective review overrides. The snapshot records source hashes. The original app files are not present in this worktree.
 
 - [Prompt changes by finding](review-changes.md): all 48 findings, including context requirements and provisional gloss clarifications.

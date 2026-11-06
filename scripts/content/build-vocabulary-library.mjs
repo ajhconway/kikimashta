@@ -12,7 +12,7 @@ export function libraryMediaPath(value, family) {
       value.split('/').some(segment => !/^[a-zA-Z0-9_-][a-zA-Z0-9_.-]*$/.test(segment))) {
     throw new Error(`Unsafe ${family} media path: ${String(value)}`)
   }
-  if (family === 'images' && !value.endsWith('.svg')) throw new Error(`Library images must be SVG: ${value}`)
+  if (family === 'images' && !/\.(svg|jpg|png|webp)$/.test(value)) throw new Error(`Unsupported library image format: ${value}`)
   if (family === 'audio' && !value.endsWith('.mp3')) throw new Error(`Library audio must be MP3: ${value}`)
   return `../${value}`
 }

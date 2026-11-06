@@ -74,9 +74,9 @@
       "text": "犬",
       "reading": "いぬ",
       "image": {
-        "src": "images/dog.svg",
+        "src": "images/approved/ja-dog-eeb90977cdd7.jpg",
         "source": "generated",
-        "alt": "A dog"
+        "alt": "A sitting tan dog with floppy ears"
       },
       "audio": [
         {
@@ -136,9 +136,9 @@
       "label": "Apple",
       "text": "りんご",
       "image": {
-        "src": "images/apple.svg",
+        "src": "images/approved/ja-apple-693c57b57b06.jpg",
         "source": "generated",
-        "alt": "An apple"
+        "alt": "A pink-red apple with a green leaf"
       },
       "audio": [
         {
@@ -198,9 +198,9 @@
       "label": "Banana",
       "text": "バナナ",
       "image": {
-        "src": "images/banana.svg",
+        "src": "images/approved/ja-banana-b36ca21f7582.jpg",
         "source": "generated",
-        "alt": "A banana"
+        "alt": "A curved yellow banana"
       },
       "audio": [
         {
@@ -261,9 +261,9 @@
       "text": "傘",
       "reading": "かさ",
       "image": {
-        "src": "images/umbrella.svg",
+        "src": "images/approved/ja-umbrella-87536b6a75df.jpg",
         "source": "generated",
-        "alt": "An umbrella"
+        "alt": "An open umbrella with a curved handle"
       },
       "audio": [
         {
@@ -323,9 +323,9 @@
       "label": "Cup",
       "text": "コップ",
       "image": {
-        "src": "images/cup.svg",
+        "src": "images/approved/ja-cup-a6b3cf43ae54.jpg",
         "source": "generated",
-        "alt": "A drinking cup"
+        "alt": "A handleless transparent tumbler partly filled with water"
       },
       "audio": [
         {

@@ -176,7 +176,14 @@ add('青年','Young adult walks energetically with a shoulder bag.',person(123,1
 const output=[]
 mkdirSync(resolve(root,'content/visuals'),{recursive:true})
 mkdirSync(resolve(root,'public/images/vocabulary'),{recursive:true})
+const existingVisuals = new Map(JSON.parse(readFileSync(resolve(root, 'content/visuals/level-5.json'), 'utf8')).map(entry => [entry.id, entry]))
 for(const item of catalog) {
+  if (!item.image.src.endsWith('.svg')) {
+    const visual = existingVisuals.get(item.id)
+    if (!visual) throw new Error(`Missing visual metadata for approved artwork: ${item.id}`)
+    output.push(visual)
+    continue
+  }
   const entry=rows.get(item.text)
   if(!entry)throw new Error(`Missing explicit scene: ${item.text}`)
   const {body,...meta}=entry
