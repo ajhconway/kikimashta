@@ -260,6 +260,7 @@ async function chooseHeardPicture(page: Page, target: WordItem) {
     // Native media is not governed by the Playwright clock.
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
     await expect(page.getByRole('button', { name: /replay word/i })).toHaveText('Replay');
+    await expect(page.locator('.feedback').getByText('Saving…', { exact: true })).toHaveCount(0);
     await page.clock.fastForward(1200);
     await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
   } finally {
