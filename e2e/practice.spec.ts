@@ -313,7 +313,7 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
     }
     expect(await pace.locator('.pace-wheel-bubble').evaluateAll(wheels => wheels.map(wheel => getComputedStyle(wheel).backgroundColor))).toEqual(neutralColors);
   }
-  async function scrollPace(label: 'Minimum' | 'Maximum') {
+  async function scrollPace(label: 'Minimum' | 'Maximum', direction = 1) {
     const wheel = page.getByRole('listbox', { name: label, exact: true });
     if (testInfo.project.use.isMobile) {
       // Mobile WebKit has no mouse-wheel injection. Exercise the touch-event
@@ -322,14 +322,14 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
       const previousSelection = await wheel.locator('[aria-selected="true"]').getAttribute('id');
       const previousScroll = await wheel.evaluate(element => element.scrollTop);
       await wheel.dispatchEvent('touchstart');
-      await wheel.evaluate(element => element.scrollBy({ top: element.scrollHeight, behavior: 'smooth' }));
-      await expect.poll(() => wheel.evaluate(element => element.scrollTop)).toBeGreaterThan(previousScroll);
+      await wheel.evaluate((element, direction) => element.scrollBy({ top: direction * element.scrollHeight, behavior: 'smooth' }), direction);
+      await expect.poll(async () => ((await wheel.evaluate(element => element.scrollTop)) - previousScroll) * direction).toBeGreaterThan(0);
       await expectFixedColors();
       await expect(wheel).toHaveAttribute('aria-activedescendant', previousSelection!);
       await wheel.dispatchEvent('touchend');
     } else {
       await wheel.hover();
-      await page.mouse.wheel(0, 1000);
+      await page.mouse.wheel(0, direction * 1000);
     }
   }
   for (const column of await pace.locator('.pace-column').all()) await expect(column.locator('.pace-heading')).toBeVisible();
@@ -348,14 +348,35 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
   await expectFixedColors();
   await expect(density).toContainText('Minimal');
   await expect(density).toHaveCSS('background-color', initialColors.get('minimal')!);
+  await expect(minimum.getByRole('option')).toHaveCount(5);
+  await expect(maximum.getByRole('option')).toHaveCount(5);
+  const unavailableMinimum = minimum.getByRole('option', { name: 'Intense', exact: true });
+  await expect(unavailableMinimum).toBeDisabled();
+  await expect(unavailableMinimum.locator('img')).toHaveCSS('opacity', '0.35');
+  await expect(maximum.getByRole('option', { name: 'Minimal', exact: true })).toBeDisabled();
   await expect(minimum.getByRole('option', { name: 'Light', exact: true })).toHaveAttribute('aria-selected', 'true');
   await scrollPace('Minimum');
+  await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(minimum.getByRole('option')).toHaveCount(5);
+  await expect(maximum.getByRole('option')).toHaveCount(5);
+  await expect(maximum.getByRole('option', { name: 'Light', exact: true })).toBeDisabled();
+  // Even an injected click cannot bypass the disabled choice's event guard.
+  await unavailableMinimum.dispatchEvent('click');
   await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
   await scrollPace('Maximum');
   await expectFixedColors();
   const selectedMaximum = maximum.getByRole('option', { name: 'Intense', exact: true });
   await expect(selectedMaximum).toHaveAttribute('aria-selected', 'true');
   await expect(maximum).toHaveAttribute('aria-activedescendant', (await selectedMaximum.getAttribute('id'))!);
+  await expect(unavailableMinimum).toBeEnabled();
+  await expect(unavailableMinimum.locator('img')).toHaveCSS('opacity', '1');
+  await scrollPace('Maximum', -1);
+  await expect(maximum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(unavailableMinimum).toBeDisabled();
+  await expectFixedColors();
+  await captureScreen(page, 'pace-phone-disabled-' + testInfo.project.name);
+  await maximum.press('End');
+  await expect(selectedMaximum).toHaveAttribute('aria-selected', 'true');
   await expectFixedColors();
   await expect.poll(() => page.evaluate(() => {
     const minimum = document.querySelector<HTMLElement>('[role="listbox"][aria-label="Minimum"]')!;
