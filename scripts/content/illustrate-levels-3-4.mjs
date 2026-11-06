@@ -244,7 +244,14 @@ for(const [meaning,reviewNote] of Object.entries(reviewNotes)) rows[meaning].rev
 const catalog=JSON.parse(readFileSync(new URL('../../content/catalog/ja.json',import.meta.url),'utf8'))
 const items=catalog.items.filter(item=>item.sourceLevel===3||item.sourceLevel===4)
 const metadata=[]
+const existingVisuals = new Map(JSON.parse(readFileSync(new URL('../../content/visuals/levels-3-4.json', import.meta.url), 'utf8')).map(entry => [entry.id, entry]))
 for(const item of items){
+ if (!item.image.src.endsWith('.svg')) {
+  const visual = existingVisuals.get(item.id)
+  if (!visual) throw new Error(`Missing visual metadata for approved artwork: ${item.id}`)
+  metadata.push(visual)
+  continue
+ }
   if(item.reuseStarterAssets){metadata.push({id:item.id,concept:'Existing starter illustration of an apple',visualGroup:'apple',reviewRequired:false});continue}
   const scene=rows[item.meaning]
   if(!scene)throw Error(`Missing explicit scene for ${item.id}: ${item.meaning}`)

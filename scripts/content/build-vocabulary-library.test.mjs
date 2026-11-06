@@ -74,7 +74,10 @@ test('rejects traversal, foreign URLs, and media-family mismatches', () => {
   for (const path of ['../images/a.svg', '/images/a.svg', 'https://example.com/a.svg', 'images/../a.svg', 'images/%2e%2e/a.svg', 'images/a.svg?x=1', 'images/a.svg#x', 'images//a.svg', 'audio/a.svg']) {
     assert.throws(() => libraryMediaPath(path, 'images'), /Unsafe images media path/)
   }
-  assert.throws(() => libraryMediaPath('images/a.png', 'images'), /must be SVG/)
+  assert.throws(() => libraryMediaPath('images/a.html', 'images'), /Unsupported library image/)
+  for (const extension of ['jpg', 'png', 'webp']) {
+    assert.equal(libraryMediaPath(`images/apple.${extension}`, 'images'), `../images/apple.${extension}`)
+  }
   assert.throws(() => libraryMediaPath('audio/a.wav', 'audio'), /must be MP3/)
   assert.equal(libraryMediaPath('images/apple.svg', 'images'), '../images/apple.svg')
 })

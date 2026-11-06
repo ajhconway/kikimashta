@@ -114,7 +114,14 @@ for(const [key,n] of Object.entries({'一月':1,'二月':2,'四月':4,'五月':5
 for(const [key,n] of Object.entries({'二日':2,'三日':3,'五日':5,'六日':6,'七日':7,'八日':8,'九日':9,'十日':10}))add(key,`A single-day tear-off calendar showing ${n}`,calendar(n),'Day-of-month calendar; avoid contrasting date with duration until taught.',`date-${n}`)
 mkdirSync('public/images/vocabulary',{recursive:true});mkdirSync('content/visuals',{recursive:true})
 const metadata=[]
+const existingVisuals = new Map(JSON.parse(readFileSync(new URL('../../content/visuals/levels-1-2.json', import.meta.url), 'utf8')).map(entry => [entry.id, entry]))
 for(const item of catalogue){
+ if (!item.image.src.endsWith('.svg')) {
+  const visual = existingVisuals.get(item.id)
+  if (!visual) throw new Error(`Missing visual metadata for approved artwork: ${item.id}`)
+  metadata.push(visual)
+  continue
+ }
  if(item.reuseStarterAssets){metadata.push({id:item.id,concept:'Existing starter illustration of a dog',visualGroup:'dog',reviewRequired:false});continue}
  const scene=scenes.get(item.text)
  if(!scene)throw new Error(`No deliberate scene for ${item.text}`)
