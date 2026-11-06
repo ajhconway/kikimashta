@@ -39,7 +39,6 @@ function QuizCompanion({ listening, response }: { listening: boolean; response: 
 
 const wallClock = () => Date.now();
 const correctAnswerPauseMs = 1200;
-const cardCelebrationStaggerMs = 55;
 const preferenceKey = 'kikimashta-density-range-v1';
 type LessonPlan = Awaited<ReturnType<typeof planLessonChunk>>;
 
@@ -51,7 +50,7 @@ function initialRange(): DensityRange {
   } catch { /* Unavailable preferences never prevent practice. */ }
   return { ...DEFAULT_DENSITY_RANGE };
 }
-interface DepartingCard { item: WordItem; slot: number; left: number; top: number; width: number; height: number }
+interface DepartingCard { item: WordItem; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
 
 export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
@@ -246,10 +245,16 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
       context: { phase, exercise: 'audio-picture', recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
         ...(question.retryOf ? { retryOf: question.retryOf } : {}) },
     };
+    const gridBounds = choiceGrid.current?.getBoundingClientRect();
     setDepartures(question.choices.flatMap((choice, slot) => {
       if (choice.id === question.target.id || (!attempt.correct && choice.id === item.id)) return [];
       const bounds = choiceGrid.current?.children[slot]?.getBoundingClientRect();
-      return bounds ? [{ item: choice, slot, left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height }] : [];
+      if (!bounds || !gridBounds) return [];
+      const dx = bounds.left + bounds.width / 2 - (gridBounds.left + gridBounds.width / 2);
+      const dy = bounds.top + bounds.height / 2 - (gridBounds.top + gridBounds.height / 2);
+      const reach = Math.hypot(window.innerWidth, window.innerHeight) + Math.hypot(bounds.width, bounds.height);
+      const scale = reach / (Math.hypot(dx, dy) || 1);
+      return [{ item: choice, slot, left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height, flyX: dx * scale, flyY: dy * scale }];
     }));
     if (!attempt.correct) setQuestions(requeueMissedQuestion(questions, index, attempt.id, random));
     setFeedback(attempt); setAnswers(previous => [...previous, attempt]); void save(attempt);
@@ -278,7 +283,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className="picture-choice departing-card" key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--celebration-delay': `${card.slot * cardCelebrationStaggerMs}ms` } as CSSProperties}><Picture item={card.item}/></div>)}</div>}
+    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className="picture-choice departing-card" key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><Picture item={card.item}/></div>)}</div>}
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
@@ -324,7 +329,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms`, '--celebration-delay': `${i * cardCelebrationStaggerMs}ms` } as CSSProperties}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>

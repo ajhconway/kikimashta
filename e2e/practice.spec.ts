@@ -52,58 +52,73 @@ async function expectCompanionMotion(page: Page) {
     const timing = motion?.effect?.getComputedTiming();
     return companion.getAnimations().length === 0 && motions.length === 1
       && motion instanceof CSSAnimation && motion.animationName === 'companion-listen'
-      && motion.playState === 'running' && typeof timing?.duration === 'number' && timing.duration >= 2400 && timing.iterations === Infinity;
+      && motion.playState === 'running' && typeof timing?.duration === 'number' && timing.duration >= 2100 && timing.duration <= 2400 && timing.iterations === Infinity;
   }), { message: 'Kiku has one slow image sway and a stationary outer wrapper' }).toBe(true);
 }
 
 async function captureCorrectResponse(page: Page, name: string) {
+  // Let the ordinary button-press release settle before inspecting feedback motion.
+  await expect(page.locator('.choices .picture-choice.correct')).toHaveCSS('transform', 'none');
   const inspection = await page.locator('.app').evaluateHandle(app => {
-    const cards = Array.from(app.querySelectorAll<HTMLElement>('.choices .picture-choice.correct, .departing-card[data-exit="fly"]')).map(element => {
-      const celebration = element.getAnimations().find(animation => animation instanceof CSSAnimation && animation.animationName === 'card-celebrate');
-      if (!celebration) throw new Error('Every answer card must celebrate, including the correct card.');
-      const slot = element.dataset.slot === undefined ? Number(element.getAttribute('aria-label')?.match(/\d+/)?.[0]) - 1 : Number(element.dataset.slot);
-      return { element, celebration, slot };
+    const cards = Array.from(app.querySelectorAll<HTMLElement>('.departing-card[data-exit="fly"]')).map(element => {
+      const animations = element.getAnimations().filter(animation => animation instanceof CSSAnimation);
+      const flight = animations[0];
+      if (animations.length !== 1 || !(flight instanceof CSSAnimation) || flight.animationName !== 'card-fly-out') throw new Error('Each outgoing card needs one direct flight.');
+      return { element, flight };
     });
     const glow = app.getAnimations({ subtree: true }).filter(animation => animation instanceof CSSAnimation && animation.animationName === 'correct-glow');
-    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations()), ...cards.flatMap(card => card.element.getAnimations())];
+    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations()), ...cards.map(card => card.flight)];
     const snapshots = animations.map(animation => ({ animation, time: animation.currentTime, state: animation.playState }));
     for (const animation of animations) { animation.pause(); animation.currentTime = 0; }
-    return { snapshots, cards };
+    return { snapshots, cards, correct: app.querySelector<HTMLElement>('.choices .picture-choice.correct')!, grid: app.querySelector<HTMLElement>('.choices')! };
   });
   try {
-    const motion = await inspection.evaluate(({ cards }) => cards.map(({ element, celebration, slot }) => {
-      const timing = celebration.effect!.getComputedTiming();
-      const delay = Number(timing.delay);
-      function transform() {
+    const motion = await inspection.evaluate(({ cards, correct, grid }) => {
+      const center = grid.getBoundingClientRect();
+      function transform(element: HTMLElement) {
         const value = getComputedStyle(element).transform;
         const matrix = value === 'none' ? new DOMMatrix() : new DOMMatrix(value);
-        return { lift: matrix.f, tilt: Math.atan2(matrix.b, matrix.a) };
+        return { x: matrix.e, y: matrix.f, a: matrix.a, b: matrix.b, c: matrix.c, d: matrix.d, opacity: getComputedStyle(element).opacity };
       }
-      const samples = [100, 200, 300].map(time => { celebration.currentTime = delay + time; return transform(); });
-      celebration.currentTime = Number(timing.endTime) + 1;
-      return { slot, delay, duration: timing.duration, samples, settled: transform() };
-    }));
-    expect(motion.map(card => card.slot).sort()).toEqual([0, 1, 2, 3]);
-    const ordered = [...motion].sort((a, b) => a.slot - b.slot);
-    expect(ordered[0]!.delay).toBe(0);
-    for (let i = 1; i < ordered.length; i++) {
-      expect(ordered[i]!.delay).toBeGreaterThan(ordered[i - 1]!.delay);
-      expect(ordered[i]!.delay - ordered[i - 1]!.delay).toBeLessThanOrEqual(100);
-    }
-    for (const card of motion) {
-      expect(card.duration).toBe(ordered[0]!.duration);
-      expect(Number(card.duration)).toBeLessThanOrEqual(500);
-      expect(card.samples.some(sample => sample.lift < -1), 'the card rectangle visibly lifts').toBe(true);
-      expect(card.samples.some(sample => Math.abs(sample.tilt) > .01), 'the card rectangle visibly tilts').toBe(true);
-      expect(Math.abs(card.settled.lift)).toBeLessThan(.1);
-      expect(Math.abs(card.settled.tilt)).toBeLessThan(.001);
+      return {
+        correctAnimations: correct.getAnimations().filter(animation => animation instanceof CSSAnimation).length,
+        cards: cards.map(({ element, flight }) => {
+          const timing = flight.effect!.getComputedTiming();
+          // Offset geometry ignores the flight transform. Allow rounding of the
+          // layout offsets when comparing the direction at the original radius.
+          const radial = { x: element.offsetLeft + element.offsetWidth / 2 - (center.left + center.right) / 2,
+            y: element.offsetTop + element.offsetHeight / 2 - (center.top + center.bottom) / 2 };
+          const samples = [0, .25, .5, .75, 1].map(fraction => {
+            flight.currentTime = Number(timing.duration) * fraction;
+            return { moving: transform(element), stationary: transform(correct) };
+          });
+          return { radial, delay: timing.delay, duration: timing.duration, samples };
+        }),
+      };
+    });
+    expect(motion.cards).toHaveLength(3);
+    expect(motion.correctAnimations, 'the correct rectangle stays still').toBe(0);
+    for (const card of motion.cards) {
+      expect(card.delay).toBe(0);
+      expect(Number(card.duration)).toBeGreaterThanOrEqual(700);
+      expect(Number(card.duration)).toBeLessThanOrEqual(900);
+      const distances = card.samples.map(({ moving }) => Math.hypot(moving.x, moving.y));
+      expect(distances[0]).toBeLessThan(.1);
+      const steps = distances.slice(1).map((distance, i) => distance - distances[i]!);
+      for (let i = 1; i < steps.length; i++) expect(steps[i]!).toBeGreaterThan(steps[i - 1]! + 1);
+      for (const [i, { moving, stationary }] of card.samples.entries()) {
+        expect(stationary).toMatchObject({ x: 0, y: 0, a: 1, b: 0, c: 0, d: 1 });
+        expect(moving).toMatchObject({ a: 1, b: 0, c: 0, d: 1, opacity: '1' });
+        if (i > 0) {
+          expect(moving.x * card.radial.x + moving.y * card.radial.y, 'flight points away from the actual grid center').toBeGreaterThan(0);
+          const perpendicular = Math.abs(card.radial.x * moving.y - card.radial.y * moving.x) / distances[i]!;
+          expect(perpendicular, 'flight stays radial within layout rounding').toBeLessThan(1);
+        }
+      }
     }
     await inspection.evaluate(({ snapshots, cards }) => {
-      // One shared time preserves the staggered wave across the four cards.
-      for (const { animation } of snapshots) animation.currentTime = 220;
-      for (const { element, celebration } of cards) {
-        for (const animation of element.getAnimations()) if (animation !== celebration) animation.currentTime = 0;
-      }
+      for (const { animation } of snapshots) animation.currentTime = 360;
+      for (const { flight } of cards) flight.currentTime = Number(flight.effect!.getComputedTiming().duration) * .35;
     });
     await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
   } finally {
@@ -161,7 +176,7 @@ async function expectAnswerPictures(page: Page, retainedAlts: string[], exit: 'f
 }
 
 async function expectDeparturesFinished(page: Page, count: number) {
-  // Computed end times include each card's stagger delay. A paused advance
+  // Computed end times include any delay on wrong-answer falls. A paused advance
   // timer must not conceal exits that exceed the earliest 1.2-second advance.
   const timings = await page.locator('.answer-departures').evaluate(layer =>
     Array.from(layer.querySelectorAll('.departing-card'), card => card.getAnimations().map(animation => Number(animation.effect?.getComputedTiming().endTime))),
@@ -169,7 +184,7 @@ async function expectDeparturesFinished(page: Page, count: number) {
   expect(timings).toHaveLength(count);
   for (const endTimes of timings) {
     expect(endTimes.length).toBeGreaterThanOrEqual(1);
-    expect(Math.max(...endTimes), 'every exit including celebration and stagger fits within the answer beat').toBeLessThanOrEqual(1200);
+    expect(Math.max(...endTimes), 'every outgoing animation fits within the answer beat').toBeLessThanOrEqual(1200);
   }
   const result = await page.locator('.answer-departures').evaluate(async (layer, expectedCount) => {
     const animations = layer.getAnimations({ subtree: true });
