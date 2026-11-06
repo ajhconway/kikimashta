@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import type { AccountRuntime, AccountSnapshot } from '../sync/runtime';
+import { EmailCodeRateLimitError } from '../sync/runtime';
 import './AccountPanel.css';
 
 type AccountActions = Pick<AccountRuntime, 'sendCode' | 'verifyCode' | 'signOut' | 'copyGuestProgress' | 'sync'>;
@@ -47,7 +48,9 @@ export function AccountPanel({ state, runtime }: { state: AccountSnapshot; runti
     pending.current = true;
     setBusy(true); setActionError(null); setMessage(null);
     try { await action(); success?.(); }
-    catch { setActionError(failure); }
+    catch (error) { setActionError(error instanceof EmailCodeRateLimitError
+      ? 'Too many sign-in emails have been requested. Please wait before requesting another code.'
+      : failure); }
     finally { pending.current = false; setBusy(false); }
   }
   function send(event: FormEvent<HTMLFormElement>) {

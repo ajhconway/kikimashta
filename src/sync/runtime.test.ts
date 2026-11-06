@@ -1,6 +1,7 @@
 import 'fake-indexeddb/auto';
 import { webcrypto } from 'node:crypto';
 import { deleteDB } from 'idb';
+import { AuthApiError } from '@supabase/supabase-js';
 import type { AuthChangeEvent, Session, SupabaseClient, User } from '@supabase/supabase-js';
 import { waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -8,7 +9,7 @@ import type { PracticeAttempt } from '../types';
 import { ProgressStore } from '../progress/store';
 import { NoteStore } from './notes';
 import type { NoteEvent, SyncRemote } from './types';
-import { AccountRuntime } from './runtime';
+import { AccountRuntime, EmailCodeRateLimitError } from './runtime';
 
 const { remotes } = vi.hoisted(() => ({ remotes: new Map<string, SyncRemote>() }));
 vi.mock('./remote', () => ({ SupabaseRemote: vi.fn(function (_client: SupabaseClient, id: string) {
@@ -253,6 +254,18 @@ describe('account runtime lifecycle', () => {
     await current.sync();
     expect(account.attempts.get('legacy-local')).toEqual(attempt());
     expect(current.snapshot()).toMatchObject({ status: 'synced', error: null });
+  });
+
+  it('preserves a rate-limit failure as an actionable email-code error', async () => {
+    const identity = auth(null);
+    vi.spyOn(identity.client.auth, 'signInWithOtp').mockResolvedValueOnce({
+      data: { user: null, session: null },
+      error: new AuthApiError('Email rate limit exceeded', 429, 'over_email_send_rate_limit'),
+    });
+    const current = runtime(identity.client);
+    await current.ready();
+    await expect(current.sendCode('person@example.com')).rejects.toBeInstanceOf(EmailCodeRateLimitError);
+    expect(current.snapshot().user).toBeNull();
   });
 
   it('returns to the guest store on sign-out and delegates email code requests', async () => {

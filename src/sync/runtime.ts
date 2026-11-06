@@ -20,6 +20,8 @@ async function guestNoteId(key: string, text: string): Promise<string> {
   return 'guest:' + Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
+export class EmailCodeRateLimitError extends Error {}
+
 export class AccountRuntime {
   private state: AccountSnapshot = { loading: true, user: null, status: 'idle', error: null, revision: 0 };
   private listeners = new Set<() => void>();
@@ -109,6 +111,7 @@ export class AccountRuntime {
   }
   async sendCode(email: string) {
     const { error } = await this.client.auth.signInWithOtp({ email });
+    if (error?.status === 429) throw new EmailCodeRateLimitError();
     if (error) throw new Error(error.message);
   }
   async verifyCode(email: string, token: string) {

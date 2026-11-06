@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AccountRuntime, AccountSnapshot } from '../sync/runtime';
+import { EmailCodeRateLimitError } from '../sync/runtime';
 import { AccountPanel } from './AccountPanel';
 
 type Actions = Pick<AccountRuntime, 'sendCode' | 'verifyCode' | 'signOut' | 'copyGuestProgress' | 'sync'>;
@@ -80,6 +81,21 @@ describe('optional account panel', () => {
     expect(actions.sendCode).toHaveBeenCalledTimes(2);
     expect(await within(dialog).findByLabelText('Email code')).toHaveFocus();
     expect(within(dialog).queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('explains rate limits on both sending and resending without losing the current step', async () => {
+    vi.mocked(actions.sendCode).mockRejectedValueOnce(new EmailCodeRateLimitError());
+    const { user, dialog } = await openGuest();
+    await user.type(within(dialog).getByLabelText('Email'), 'learner@example.invalid');
+    await user.click(within(dialog).getByRole('button', { name: /^send code$/i }));
+    expect(await within(dialog).findByRole('alert')).toHaveTextContent(/please wait before requesting another code/i);
+    expect(within(dialog).getByLabelText('Email')).toHaveValue('learner@example.invalid');
+    await user.click(within(dialog).getByRole('button', { name: /^send code$/i }));
+    await within(dialog).findByLabelText('Email code');
+    vi.mocked(actions.sendCode).mockRejectedValueOnce(new EmailCodeRateLimitError());
+    await user.click(within(dialog).getByRole('button', { name: /send a new code/i }));
+    expect(await within(dialog).findByRole('alert')).toHaveTextContent(/please wait before requesting another code/i);
+    expect(within(dialog).getByLabelText('Email code')).toBeVisible();
   });
 
   it.each(['123456', '12345678', '1234567890'])('verifies a valid %s email code and closes without copying guest data', async code => {
