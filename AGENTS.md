@@ -38,3 +38,5 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
 The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
+
+Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. These checks supplement the app checks above.

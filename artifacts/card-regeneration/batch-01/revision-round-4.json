@@ -1,0 +1,27 @@
+{
+  "issue": 72,
+  "round": 4,
+  "concept": "One orange basketball in the tilted three-quarter orientation of v3, with a recognizable visible seam intersection slightly above and right of center. Two main continuous channels form one clean four-way crossing; additional bowed panel seams wrap around the sphere and meet/cross at separate points rather than all converging into a six-spoke knot. Keep broad orange panels toward the viewer and narrower receding panels to one side, a round silhouette, dark-purple outline, slightly narrower purple seams and the established simple cartoon style. White background; no branding, extra objects or motion marks.",
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "ja-v-66ccf8dd3399",
+      "path": "artifacts/card-regeneration/batch-01/02-ball-v5.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: one vocabulary card illustration\nPrimary request: Restore the preferred tilted basketball angle with a clean recognizable seam crossing.\nIMAGE 1 is the EDIT TARGET and preferred ANGLE/POSE reference (v3). Preserve its orange color, ball position, round silhouette, tilted three-quarter viewpoint and off-center visible intersection. Do not switch to a side-on view with only parallel curved bands.\nIMAGE 2 is a SEAM ARRANGEMENT reference (v2). It shows the conventional cross seam plus bowed side channels, but its head-on symmetric orientation was rejected. Project that conventional arrangement onto IMAGE 1's tilted spherical view. The main crossing should be visible slightly above and right of center, with FOUR clearly continuing arms from TWO intersecting grooves. The additional bowed side channel must pass separately, meeting/crossing elsewhere; do not merge three seams into the same six-spoke knot. Keep every groove smooth and continuous as it wraps over the sphere. Keep internal seams slightly narrower than the exterior outline.\nThis is a targeted seam correction to image 1, not a new aesthetic. Preserve the plain white background, purple outlines, orange broad panels and simple cartoon style. No text, logos, valve, tiny leather texture, shadows, extra objects, frame or watermark.\nSubject: One orange basketball in the tilted three-quarter orientation of v3, with a recognizable visible seam intersection slightly above and right of center. Two main continuous channels form one clean four-way crossing; additional bowed panel seams wrap around the sphere and meet/cross at separate points rather than all converging into a six-spoke knot. Keep broad orange panels toward the viewer and narrower receding panels to one side, a round silhouette, dark-purple outline, slightly narrower purple seams and the established simple cartoon style. White background; no branding, extra objects or motion marks.\nGenerate exactly one square image.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v3.png",
+          "role": "edit target and preferred tilted pose; keep visible off-center junction"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v2.png",
+          "role": "conventional crossing and bowed-channel arrangement reference only; do not adopt head-on orientation"
+        }
+      ],
+      "status": "awaiting-user-feedback",
+      "revisionRound": 4,
+      "visualReview": "Restored v3's tilted orientation and visible off-center crossing. The two main grooves cross visibly; additional bowed curves meet the main seams at separated points instead of a single six-spoke junction."
+    }
+  ]
+}

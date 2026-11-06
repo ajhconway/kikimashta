@@ -1,0 +1,6177 @@
+{
+  "issue": 72,
+  "edgeMeaning": "from must be specified/generated before to; only approved artwork may become a downstream reference",
+  "nodes": [
+    {
+      "id": "style",
+      "kind": "style",
+      "status": "proposed",
+      "specification": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning."
+    },
+    {
+      "id": "style:cat-png",
+      "kind": "style",
+      "status": "approved-direction",
+      "specification": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png"
+    },
+    {
+      "id": "component:apple",
+      "kind": "component",
+      "seedCard": "ja-apple",
+      "status": "approved",
+      "detectionPattern": "\\bapple",
+      "referencePath": "artifacts/card-regeneration/batch-01/01-apple.png"
+    },
+    {
+      "id": "component:ball",
+      "kind": "component",
+      "seedCard": "ja-v-66ccf8dd3399",
+      "status": "approved",
+      "detectionPattern": "\\bball\\b|\\bballs\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+      "outstandingFeedback": "Basketball v4 is accepted for now to proceed. Improve its seam geometry and restore a more natural tilted angle with a recognizable seam intersection in a later pass.",
+      "referenceGuidance": "Shared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork."
+    },
+    {
+      "id": "component:person",
+      "kind": "component",
+      "seedCard": "ja-v-ad7167347a2a",
+      "status": "approved",
+      "detectionPattern": "\\bperson\\b|\\bpeople\\b|\\bchild\\b|\\bchildren\\b|\\badult\\b|\\bstudent\\b|\\blearner\\b|\\bworker\\b|\\btraveler\\b|\\bsibling\\b|\\bfather\\b|\\bmother\\b|\\bbrother\\b|\\bspeaker\\b|\\blistener\\b|\\bviewer\\b|\\bshopper\\b|\\bdelegate\\b|\\brunner\\b|\\bfriends?\\b|\\bboy\\b|\\bgirl\\b|\\bwoman\\b|\\bman\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/03-person.png"
+    },
+    {
+      "id": "component:hand",
+      "kind": "component",
+      "seedCard": "ja-v-b1ff052549ed",
+      "status": "approved",
+      "detectionPattern": "\\bhand\\b|\\bhands\\b|\\bpalm\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/04-hand.png"
+    },
+    {
+      "id": "component:plate",
+      "kind": "component",
+      "seedCard": "ja-v-baa4dd2c5986",
+      "status": "approved",
+      "detectionPattern": "\\bplate\\b|\\bplates\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/05-plate.png"
+    },
+    {
+      "id": "component:glass",
+      "kind": "component",
+      "seedCard": "ja-cup",
+      "status": "approved",
+      "detectionPattern": "\\btumbler\\b|\\bglass\\b|\\bcups?\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/06-cup.png"
+    },
+    {
+      "id": "component:cow",
+      "kind": "component",
+      "seedCard": "ja-v-a47e21265374",
+      "status": "approved",
+      "detectionPattern": "\\bcow\\b|\\bcalf\\b|\\bbeef\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/07-cow.png"
+    },
+    {
+      "id": "component:mountain",
+      "kind": "component",
+      "seedCard": "ja-v-ddd9dca106e2",
+      "status": "approved",
+      "detectionPattern": "\\bmountain|\\bvolcano|\\bfuji\\b|\\bvalley\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/08-mountain-v2.png",
+      "referenceGuidance": "Shared mountain design: purple slopes with white snow caps and dark-purple outlines. Preserve scene-specific features: ordinary mountains have closed summits, while an erupting volcano needs a visible open crater with connected plume and lava; snow may remain on unaffected flanks only. Keep Fuji's characteristic profile when Fuji is the subject."
+    },
+    {
+      "id": "component:rice",
+      "kind": "component",
+      "seedCard": "ja-v-0958f7553d9f",
+      "status": "approved",
+      "detectionPattern": "\\brice\\b|\\bpaddy\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/09-rice-v3.png",
+      "referenceGuidance": "Shared uncooked rice design: medium-small slender tapered ivory kernels, roughly 1/8 to 1/10 of the bag opening width in the still life, intermediate between the oversized v1 and tiny v2. Keep grains individually readable at quiz size with light economical detail, not thick purple outlines or peanut-like plump ovals. Do not apply the bag still life to a rice-paddy landscape."
+    },
+    {
+      "id": "component:stone",
+      "kind": "component",
+      "seedCard": "ja-v-2f734ba866d9",
+      "status": "approved",
+      "detectionPattern": "\\bstone\\b|\\bpebble\\b|\\bboulder\\b",
+      "referencePath": "artifacts/card-regeneration/batch-01/10-stone-v2.png",
+      "referenceGuidance": "Shared stone design: a slightly angular irregular gray silhouette with restrained mineral speckles, short cracks and a few broad natural planes. Avoid a smooth blob, symmetric gem facets or sparkles. Keep texture sparse enough to read at quiz size; scale this treatment for boulders."
+    },
+    {
+      "id": "component:calendar",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bcalendar|\\btimeline\\b|\\bmonthly\\b"
+    },
+    {
+      "id": "component:arrow",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\barrow\\b|\\barrows\\b|\\bmotion cue\\b"
+    },
+    {
+      "id": "component:open-box",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bopen (orange )?box\\b"
+    },
+    {
+      "id": "component:doorway",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bdoor\\b|\\bdoorway\\b|\\bexit\\b|\\bentrance\\b"
+    },
+    {
+      "id": "component:house",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bhouse\\b|\\bhouses\\b|\\bhome\\b|\\bcottage"
+    },
+    {
+      "id": "component:shop",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bshop\\b|\\bshops\\b|\\bstore\\b|\\bshopfront|\\bstorefront"
+    },
+    {
+      "id": "component:office-school",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\boffice\\b|\\bschool\\b|\\buniversity\\b"
+    },
+    {
+      "id": "component:sun-moon-horizon",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bsun\\b|\\bmoon\\b|\\bhorizon\\b"
+    },
+    {
+      "id": "component:tree-plant",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\btree\\b|\\btrees\\b|\\bplant\\b|\\bsapling\\b|\\bleaf\\b|\\bleaves\\b|\\bseedling\\b|\\bflower\\b|\\bblossom"
+    },
+    {
+      "id": "component:paper-book-pencil",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bpaper\\b|\\bbook\\b|\\bpage\\b|\\bsentence\\b|\\bcomposition\\b|\\bpencil\\b|\\bcharacter\\b|\\bnotebook\\b"
+    },
+    {
+      "id": "component:bowl",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bbowl\\b|\\bbowls\\b"
+    },
+    {
+      "id": "component:car-taxi",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bcar\\b|\\btaxi\\b|\\bvehicle\\b"
+    },
+    {
+      "id": "component:washer",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bwashing machine"
+    },
+    {
+      "id": "component:numeral",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bnumeral\\b|\\bquantity\\b|\\bnumeric\\b|\\bage range\\b"
+    },
+    {
+      "id": "component:flag",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bflag\\b|\\bflags\\b|\\btricolor\\b"
+    },
+    {
+      "id": "component:cat",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bcat\\b|\\bkitten"
+    },
+    {
+      "id": "component:yarn-thread-rope",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\byarn\\b|\\bthread\\b|\\brope\\b|\\bropes\\b"
+    },
+    {
+      "id": "component:gem",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bgemstone\\b|\\bjewel|\\btreasure\\b"
+    },
+    {
+      "id": "component:fabric",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bblanket\\b|\\bcloth\\b"
+    },
+    {
+      "id": "component:character-relationship",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bfamily\\b|\\bsibling\\b|\\bfather\\b|\\bmother\\b|\\bbrother\\b|\\bking\\b|\\bqueen\\b|\\bprince"
+    },
+    {
+      "id": "component:diagram-convention",
+      "kind": "component",
+      "seedCard": null,
+      "status": "prompt-convention",
+      "detectionPattern": "\\bdiagram\\b|\\bequality\\b|\\bsequence\\b|\\bbracket\\b"
+    },
+    {
+      "id": "card:ja-v-c0f58bfab324",
+      "kind": "card",
+      "label": "Above"
+    },
+    {
+      "id": "card:ja-v-2cc50c2d66a6",
+      "kind": "card",
+      "label": "Adult"
+    },
+    {
+      "id": "card:ja-v-7de8b40e4f57",
+      "kind": "card",
+      "label": "Alone"
+    },
+    {
+      "id": "card:ja-v-3fef4445ce13",
+      "kind": "card",
+      "label": "Artificial"
+    },
+    {
+      "id": "card:ja-v-520308b3c3b4",
+      "kind": "card",
+      "label": "Below"
+    },
+    {
+      "id": "card:ja-v-f6377dcbb564",
+      "kind": "card",
+      "label": "Big"
+    },
+    {
+      "id": "card:ja-v-f6ed7c17c0d5",
+      "kind": "card",
+      "label": "Eight"
+    },
+    {
+      "id": "card:ja-v-6c9351ae67e6",
+      "kind": "card",
+      "label": "Eight Things"
+    },
+    {
+      "id": "card:ja-v-20cbd1c15a35",
+      "kind": "card",
+      "label": "Entrance"
+    },
+    {
+      "id": "card:ja-v-1d446778d33c",
+      "kind": "card",
+      "label": "Great"
+    },
+    {
+      "id": "card:ja-v-ddd9dca106e2",
+      "kind": "card",
+      "label": "Mountain"
+    },
+    {
+      "id": "card:ja-v-9e64feeea5ea",
+      "kind": "card",
+      "label": "Mouth"
+    },
+    {
+      "id": "card:ja-v-0181fab128a1",
+      "kind": "card",
+      "label": "Mt Fuji"
+    },
+    {
+      "id": "card:ja-v-d33ed6be2a48",
+      "kind": "card",
+      "label": "Nine"
+    },
+    {
+      "id": "card:ja-v-0d0163a40587",
+      "kind": "card",
+      "label": "Nine Things"
+    },
+    {
+      "id": "card:ja-v-5d8047464c5d",
+      "kind": "card",
+      "label": "One"
+    },
+    {
+      "id": "card:ja-v-277587e6fa07",
+      "kind": "card",
+      "label": "One Thing"
+    },
+    {
+      "id": "card:ja-v-ad7167347a2a",
+      "kind": "card",
+      "label": "Person"
+    },
+    {
+      "id": "card:ja-v-fae75d2d18b2",
+      "kind": "card",
+      "label": "Please Give Me"
+    },
+    {
+      "id": "card:ja-v-2ef4da30cf39",
+      "kind": "card",
+      "label": "Population"
+    },
+    {
+      "id": "card:ja-v-33c00f4a1a8b",
+      "kind": "card",
+      "label": "Power"
+    },
+    {
+      "id": "card:ja-v-46f8fe65f218",
+      "kind": "card",
+      "label": "River"
+    },
+    {
+      "id": "card:ja-v-eda9a40b0c91",
+      "kind": "card",
+      "label": "Seven"
+    },
+    {
+      "id": "card:ja-v-f6bc974a7405",
+      "kind": "card",
+      "label": "Seven Things"
+    },
+    {
+      "id": "card:ja-v-26d0ad7af566",
+      "kind": "card",
+      "label": "Size"
+    },
+    {
+      "id": "card:ja-v-877b9ba07a47",
+      "kind": "card",
+      "label": "Ten"
+    },
+    {
+      "id": "card:ja-v-1bedf722c04a",
+      "kind": "card",
+      "label": "Three"
+    },
+    {
+      "id": "card:ja-v-2a318f5ee1c8",
+      "kind": "card",
+      "label": "Three People"
+    },
+    {
+      "id": "card:ja-v-8b887bc8af0c",
+      "kind": "card",
+      "label": "Three Things"
+    },
+    {
+      "id": "card:ja-v-82a114897d9c",
+      "kind": "card",
+      "label": "To Enter"
+    },
+    {
+      "id": "card:ja-v-6d1d47c9258e",
+      "kind": "card",
+      "label": "To Lift Something"
+    },
+    {
+      "id": "card:ja-v-06a4c07236b5",
+      "kind": "card",
+      "label": "To Lower Something"
+    },
+    {
+      "id": "card:ja-v-7fc81b0ddd17",
+      "kind": "card",
+      "label": "Two"
+    },
+    {
+      "id": "card:ja-v-4fa716f651b2",
+      "kind": "card",
+      "label": "Two People"
+    },
+    {
+      "id": "card:ja-v-bb85f028d944",
+      "kind": "card",
+      "label": "Two Things"
+    },
+    {
+      "id": "card:ja-v-c70f2920b2de",
+      "kind": "card",
+      "label": "With All One's Strength"
+    },
+    {
+      "id": "card:ja-v-4d9423288cb2",
+      "kind": "card",
+      "label": "Woman"
+    },
+    {
+      "id": "card:ja-v-7dddc1af4eb5",
+      "kind": "card",
+      "label": "April"
+    },
+    {
+      "id": "card:ja-v-66ccf8dd3399",
+      "kind": "card",
+      "label": "Ball"
+    },
+    {
+      "id": "card:ja-v-0ac038632611",
+      "kind": "card",
+      "label": "Book"
+    },
+    {
+      "id": "card:ja-v-27d5744f36a2",
+      "kind": "card",
+      "label": "Child"
+    },
+    {
+      "id": "card:ja-v-d1b6831b65c8",
+      "kind": "card",
+      "label": "Circle"
+    },
+    {
+      "id": "card:ja-v-b1514b201acd",
+      "kind": "card",
+      "label": "Circular"
+    },
+    {
+      "id": "card:ja-v-7003bbe10d0b",
+      "kind": "card",
+      "label": "Correct"
+    },
+    {
+      "id": "card:ja-v-5352aea4e4bb",
+      "kind": "card",
+      "label": "Dirt"
+    },
+    {
+      "id": "card:ja-dog",
+      "kind": "card",
+      "label": "Dog"
+    },
+    {
+      "id": "card:ja-v-f50fcf40e898",
+      "kind": "card",
+      "label": "Eighth Day"
+    },
+    {
+      "id": "card:ja-v-a19157e62dee",
+      "kind": "card",
+      "label": "Exit"
+    },
+    {
+      "id": "card:ja-v-6c0b9f3278dc",
+      "kind": "card",
+      "label": "Eye"
+    },
+    {
+      "id": "card:ja-v-a8ca5ef684b8",
+      "kind": "card",
+      "label": "Eyeball"
+    },
+    {
+      "id": "card:ja-v-6eed6b905b8e",
+      "kind": "card",
+      "label": "February"
+    },
+    {
+      "id": "card:ja-v-a02edbda9f4c",
+      "kind": "card",
+      "label": "Fifth Day"
+    },
+    {
+      "id": "card:ja-v-61c516578fee",
+      "kind": "card",
+      "label": "Fifty"
+    },
+    {
+      "id": "card:ja-v-cf58c5cf08d9",
+      "kind": "card",
+      "label": "Fire"
+    },
+    {
+      "id": "card:ja-v-d4473f87e438",
+      "kind": "card",
+      "label": "Five"
+    },
+    {
+      "id": "card:ja-v-084edf1fdd10",
+      "kind": "card",
+      "label": "Five Things"
+    },
+    {
+      "id": "card:ja-v-b066e78531d6",
+      "kind": "card",
+      "label": "Four"
+    },
+    {
+      "id": "card:ja-v-f1a679bd7d06",
+      "kind": "card",
+      "label": "Genius"
+    },
+    {
+      "id": "card:ja-v-0bf44d10d860",
+      "kind": "card",
+      "label": "Girl"
+    },
+    {
+      "id": "card:ja-v-185a632e3742",
+      "kind": "card",
+      "label": "Girl"
+    },
+    {
+      "id": "card:ja-v-f78f531c55a5",
+      "kind": "card",
+      "label": "Good At"
+    },
+    {
+      "id": "card:ja-v-cbf0bc9a0df7",
+      "kind": "card",
+      "label": "Good Morning"
+    },
+    {
+      "id": "card:ja-v-b1ff052549ed",
+      "kind": "card",
+      "label": "Hand"
+    },
+    {
+      "id": "card:ja-v-45b445caeb43",
+      "kind": "card",
+      "label": "Heavens"
+    },
+    {
+      "id": "card:ja-v-d5c177de5126",
+      "kind": "card",
+      "label": "Hotel"
+    },
+    {
+      "id": "card:ja-v-a30018dbdb6b",
+      "kind": "card",
+      "label": "Input"
+    },
+    {
+      "id": "card:ja-v-5849925b131d",
+      "kind": "card",
+      "label": "Inside"
+    },
+    {
+      "id": "card:ja-v-ed82bb95d4cc",
+      "kind": "card",
+      "label": "January"
+    },
+    {
+      "id": "card:ja-v-9752b818f9f8",
+      "kind": "card",
+      "label": "Japan"
+    },
+    {
+      "id": "card:ja-v-8ffa8462a479",
+      "kind": "card",
+      "label": "June"
+    },
+    {
+      "id": "card:ja-v-fce7743a6cc5",
+      "kind": "card",
+      "label": "King"
+    },
+    {
+      "id": "card:ja-v-38acee5bccbe",
+      "kind": "card",
+      "label": "Last Night"
+    },
+    {
+      "id": "card:ja-v-4ac46ddaa10f",
+      "kind": "card",
+      "label": "Left And Right"
+    },
+    {
+      "id": "card:ja-v-14be5202d5b3",
+      "kind": "card",
+      "label": "Left Direction"
+    },
+    {
+      "id": "card:ja-v-2850d52ee4d2",
+      "kind": "card",
+      "label": "May"
+    },
+    {
+      "id": "card:ja-v-e0bb1d02fee0",
+      "kind": "card",
+      "label": "Moon"
+    },
+    {
+      "id": "card:ja-v-9acbf1542642",
+      "kind": "card",
+      "label": "Ninth Day"
+    },
+    {
+      "id": "card:ja-v-cacf3a45ed07",
+      "kind": "card",
+      "label": "October"
+    },
+    {
+      "id": "card:ja-v-3d24eb7fb7b5",
+      "kind": "card",
+      "label": "One Day"
+    },
+    {
+      "id": "card:ja-v-30d6b7d7e837",
+      "kind": "card",
+      "label": "One Thousand Yen"
+    },
+    {
+      "id": "card:ja-v-223e5321ecb8",
+      "kind": "card",
+      "label": "Onion"
+    },
+    {
+      "id": "card:ja-v-3bcce8de9d04",
+      "kind": "card",
+      "label": "People"
+    },
+    {
+      "id": "card:ja-v-069e01664247",
+      "kind": "card",
+      "label": "Prince"
+    },
+    {
+      "id": "card:ja-v-e34a140da9c0",
+      "kind": "card",
+      "label": "Princess"
+    },
+    {
+      "id": "card:ja-v-79140f0bf8e7",
+      "kind": "card",
+      "label": "Puppy"
+    },
+    {
+      "id": "card:ja-v-1cc9ac39c880",
+      "kind": "card",
+      "label": "Queen"
+    },
+    {
+      "id": "card:ja-v-e507b462aa49",
+      "kind": "card",
+      "label": "Rather"
+    },
+    {
+      "id": "card:ja-v-0da81020c173",
+      "kind": "card",
+      "label": "Rice Paddy"
+    },
+    {
+      "id": "card:ja-v-762983bc3fe7",
+      "kind": "card",
+      "label": "Rice Paddy"
+    },
+    {
+      "id": "card:ja-v-ed6bd4d73b76",
+      "kind": "card",
+      "label": "Right Direction"
+    },
+    {
+      "id": "card:ja-v-56d52b7869ab",
+      "kind": "card",
+      "label": "Second Day"
+    },
+    {
+      "id": "card:ja-v-0655c242d1db",
+      "kind": "card",
+      "label": "Seventh Day"
+    },
+    {
+      "id": "card:ja-v-06ef406f5569",
+      "kind": "card",
+      "label": "Six"
+    },
+    {
+      "id": "card:ja-v-e368e3aa9bf6",
+      "kind": "card",
+      "label": "Sixteen"
+    },
+    {
+      "id": "card:ja-v-7b2351210462",
+      "kind": "card",
+      "label": "Sixth Day"
+    },
+    {
+      "id": "card:ja-v-df70a01acaec",
+      "kind": "card",
+      "label": "Six Things"
+    },
+    {
+      "id": "card:ja-v-769a80524957",
+      "kind": "card",
+      "label": "Small"
+    },
+    {
+      "id": "card:ja-v-f3881ce313e7",
+      "kind": "card",
+      "label": "Sun"
+    },
+    {
+      "id": "card:ja-v-65df49688ef0",
+      "kind": "card",
+      "label": "Sword"
+    },
+    {
+      "id": "card:ja-v-da2913ad7e4c",
+      "kind": "card",
+      "label": "Tenth Day"
+    },
+    {
+      "id": "card:ja-v-b0489d428339",
+      "kind": "card",
+      "label": "Third Day"
+    },
+    {
+      "id": "card:ja-v-86ef0852f80f",
+      "kind": "card",
+      "label": "Thousand"
+    },
+    {
+      "id": "card:ja-v-b0a6475686ea",
+      "kind": "card",
+      "label": "To Climb"
+    },
+    {
+      "id": "card:ja-v-5f0cf40d1630",
+      "kind": "card",
+      "label": "To Correct"
+    },
+    {
+      "id": "card:ja-v-b2a9df4d0301",
+      "kind": "card",
+      "label": "To Exit"
+    },
+    {
+      "id": "card:ja-v-17e3177c62d5",
+      "kind": "card",
+      "label": "To Stand"
+    },
+    {
+      "id": "card:ja-v-a5d390dc4805",
+      "kind": "card",
+      "label": "Tree"
+    },
+    {
+      "id": "card:ja-v-d0c9a070fa56",
+      "kind": "card",
+      "label": "Underwater"
+    },
+    {
+      "id": "card:ja-v-8aeedc2d7a47",
+      "kind": "card",
+      "label": "Unskillful"
+    },
+    {
+      "id": "card:ja-v-afefe30bcb46",
+      "kind": "card",
+      "label": "Volcano"
+    },
+    {
+      "id": "card:ja-v-28ddfdc9290c",
+      "kind": "card",
+      "label": "Water"
+    },
+    {
+      "id": "card:ja-v-cbda72b9dd04",
+      "kind": "card",
+      "label": "White"
+    },
+    {
+      "id": "card:ja-v-a7b882deb9b5",
+      "kind": "card",
+      "label": "White Person"
+    },
+    {
+      "id": "card:ja-v-d4fb59f8c32c",
+      "kind": "card",
+      "label": "Sentence / written text"
+    },
+    {
+      "id": "card:ja-v-8101bd0ca76a",
+      "kind": "card",
+      "label": "Years Old"
+    },
+    {
+      "id": "card:ja-v-a119c15d9de4",
+      "kind": "card",
+      "label": "Yen (currency counter)"
+    },
+    {
+      "id": "card:ja-v-8814378ebfc2",
+      "kind": "card",
+      "label": "A Little"
+    },
+    {
+      "id": "card:ja-v-22dcde10ff57",
+      "kind": "card",
+      "label": "American Person"
+    },
+    {
+      "id": "card:ja-apple",
+      "kind": "card",
+      "label": "Apple"
+    },
+    {
+      "id": "card:ja-v-575c16528161",
+      "kind": "card",
+      "label": "Arrow"
+    },
+    {
+      "id": "card:ja-v-09fcc851c1ab",
+      "kind": "card",
+      "label": "Big Machine Counter"
+    },
+    {
+      "id": "card:ja-v-143328009b51",
+      "kind": "card",
+      "label": "British Person"
+    },
+    {
+      "id": "card:ja-v-6eab3743dc93",
+      "kind": "card",
+      "label": "Cancellation"
+    },
+    {
+      "id": "card:ja-v-7930a252da9b",
+      "kind": "card",
+      "label": "Character"
+    },
+    {
+      "id": "card:ja-v-887f569257fd",
+      "kind": "card",
+      "label": "City"
+    },
+    {
+      "id": "card:ja-v-9ff5251e6f21",
+      "kind": "card",
+      "label": "Coffee"
+    },
+    {
+      "id": "card:ja-v-a47e21265374",
+      "kind": "card",
+      "label": "Cow"
+    },
+    {
+      "id": "card:ja-v-18fe4d351abc",
+      "kind": "card",
+      "label": "Direction"
+    },
+    {
+      "id": "card:ja-v-56e27b2da5a6",
+      "kind": "card",
+      "label": "Door"
+    },
+    {
+      "id": "card:ja-v-12025d56c403",
+      "kind": "card",
+      "label": "Doorway"
+    },
+    {
+      "id": "card:ja-v-8fb11237e460",
+      "kind": "card",
+      "label": "Draft Beer"
+    },
+    {
+      "id": "card:ja-v-5a9132c195d6",
+      "kind": "card",
+      "label": "Echo"
+    },
+    {
+      "id": "card:ja-v-b7ea6f7eb013",
+      "kind": "card",
+      "label": "Thick"
+    },
+    {
+      "id": "card:ja-v-d15ca6ea1179",
+      "kind": "card",
+      "label": "Father"
+    },
+    {
+      "id": "card:ja-v-9013d708ded7",
+      "kind": "card",
+      "label": "Father"
+    },
+    {
+      "id": "card:ja-v-89cc0156875d",
+      "kind": "card",
+      "label": "Few"
+    },
+    {
+      "id": "card:ja-v-4789ab8b6db0",
+      "kind": "card",
+      "label": "Five Machines"
+    },
+    {
+      "id": "card:ja-v-70a7f6854fea",
+      "kind": "card",
+      "label": "Foreigner"
+    },
+    {
+      "id": "card:ja-v-3c205b816e51",
+      "kind": "card",
+      "label": "French Person"
+    },
+    {
+      "id": "card:ja-v-bee484b5ac81",
+      "kind": "card",
+      "label": "Fresh"
+    },
+    {
+      "id": "card:ja-v-e9c77c4e99a7",
+      "kind": "card",
+      "label": "Friend"
+    },
+    {
+      "id": "card:ja-v-a76119b3c712",
+      "kind": "card",
+      "label": "Fur"
+    },
+    {
+      "id": "card:ja-v-575ec5f060f3",
+      "kind": "card",
+      "label": "Girl"
+    },
+    {
+      "id": "card:ja-v-81e708aba22f",
+      "kind": "card",
+      "label": "Half"
+    },
+    {
+      "id": "card:ja-v-d605986c3af4",
+      "kind": "card",
+      "label": "Half"
+    },
+    {
+      "id": "card:ja-v-3601c285284c",
+      "kind": "card",
+      "label": "Heart"
+    },
+    {
+      "id": "card:ja-v-ad9975e17a50",
+      "kind": "card",
+      "label": "Hello"
+    },
+    {
+      "id": "card:ja-v-aad97415a910",
+      "kind": "card",
+      "label": "Important"
+    },
+    {
+      "id": "card:ja-v-137737e5ce1f",
+      "kind": "card",
+      "label": "Light"
+    },
+    {
+      "id": "card:ja-v-ed2c1dbd0ee4",
+      "kind": "card",
+      "label": "Marble"
+    },
+    {
+      "id": "card:ja-v-b27125f41e7c",
+      "kind": "card",
+      "label": "Mother"
+    },
+    {
+      "id": "card:ja-v-7fa86c660a00",
+      "kind": "card",
+      "label": "Mother"
+    },
+    {
+      "id": "card:ja-v-44c14bbade4c",
+      "kind": "card",
+      "label": "Municipal"
+    },
+    {
+      "id": "card:ja-v-b0a03cee753b",
+      "kind": "card",
+      "label": "North"
+    },
+    {
+      "id": "card:ja-v-a84051dc9f24",
+      "kind": "card",
+      "label": "North Exit"
+    },
+    {
+      "id": "card:ja-v-89beba69de5a",
+      "kind": "card",
+      "label": "Now"
+    },
+    {
+      "id": "card:ja-v-08f79cb14fd4",
+      "kind": "card",
+      "label": "Number Of People"
+    },
+    {
+      "id": "card:ja-v-77d63b3ebde3",
+      "kind": "card",
+      "label": "Obedient"
+    },
+    {
+      "id": "card:ja-v-e5fd15d61360",
+      "kind": "card",
+      "label": "Old"
+    },
+    {
+      "id": "card:ja-v-7bbba1a9506e",
+      "kind": "card",
+      "label": "One Hundred Thousand"
+    },
+    {
+      "id": "card:ja-v-eba7f0968101",
+      "kind": "card",
+      "label": "One Machine"
+    },
+    {
+      "id": "card:ja-v-032157e79367",
+      "kind": "card",
+      "label": "One's Life"
+    },
+    {
+      "id": "card:ja-v-dfb71d269e06",
+      "kind": "card",
+      "label": "On The Table"
+    },
+    {
+      "id": "card:ja-v-6109638dac53",
+      "kind": "card",
+      "label": "Outside"
+    },
+    {
+      "id": "card:ja-v-a0e6022cc115",
+      "kind": "card",
+      "label": "Part"
+    },
+    {
+      "id": "card:ja-v-16fcea5b6e6e",
+      "kind": "card",
+      "label": "Seattle"
+    },
+    {
+      "id": "card:ja-v-6cac3dee5967",
+      "kind": "card",
+      "label": "Secondhand"
+    },
+    {
+      "id": "card:ja-v-0c1b8280f1ee",
+      "kind": "card",
+      "label": "Sunrise"
+    },
+    {
+      "id": "card:ja-v-3aa47bb43d28",
+      "kind": "card",
+      "label": "Task"
+    },
+    {
+      "id": "card:ja-v-760cc08e40eb",
+      "kind": "card",
+      "label": "Ten Machines"
+    },
+    {
+      "id": "card:ja-v-a872d5e674a2",
+      "kind": "card",
+      "label": "Ten Thousand"
+    },
+    {
+      "id": "card:ja-v-1807218bf360",
+      "kind": "card",
+      "label": "Ten Thousand"
+    },
+    {
+      "id": "card:ja-v-309cfedd227d",
+      "kind": "card",
+      "label": "This Month"
+    },
+    {
+      "id": "card:ja-v-fb33e3a6798b",
+      "kind": "card",
+      "label": "This One"
+    },
+    {
+      "id": "card:ja-v-3db312786ce8",
+      "kind": "card",
+      "label": "To Be Born"
+    },
+    {
+      "id": "card:ja-v-1ee90bf5d13a",
+      "kind": "card",
+      "label": "To Cut"
+    },
+    {
+      "id": "card:ja-v-6b9362de88a7",
+      "kind": "card",
+      "label": "Today"
+    },
+    {
+      "id": "card:ja-v-dfb6d8ba613b",
+      "kind": "card",
+      "label": "To Do"
+    },
+    {
+      "id": "card:ja-v-bb787ce6238a",
+      "kind": "card",
+      "label": "To Pull"
+    },
+    {
+      "id": "card:ja-v-01a3c397cb20",
+      "kind": "card",
+      "label": "To Spread Something"
+    },
+    {
+      "id": "card:ja-v-8b215c592588",
+      "kind": "card",
+      "label": "To Stop Something"
+    },
+    {
+      "id": "card:ja-v-2924cd51557f",
+      "kind": "card",
+      "label": "To Utilize"
+    },
+    {
+      "id": "card:ja-v-5f29c187353e",
+      "kind": "card",
+      "label": "Twenty Thousand"
+    },
+    {
+      "id": "card:ja-v-f5b4250aeb03",
+      "kind": "card",
+      "label": "Two Machines"
+    },
+    {
+      "id": "card:ja-v-960de5429d2e",
+      "kind": "card",
+      "label": "Under The Bed"
+    },
+    {
+      "id": "card:ja-v-c9d354f557b3",
+      "kind": "card",
+      "label": "When"
+    },
+    {
+      "id": "card:ja-v-bb8fc62cf23d",
+      "kind": "card",
+      "label": "Wide"
+    },
+    {
+      "id": "card:ja-v-7c4d1abbdd61",
+      "kind": "card",
+      "label": "Winter"
+    },
+    {
+      "id": "card:ja-v-f25546e67181",
+      "kind": "card",
+      "label": "Woman"
+    },
+    {
+      "id": "card:ja-v-edbe60bbb7e3",
+      "kind": "card",
+      "label": "Another Person"
+    },
+    {
+      "id": "card:ja-v-390f30691ca4",
+      "kind": "card",
+      "label": "As Soon As"
+    },
+    {
+      "id": "card:ja-v-89fcef8e86d8",
+      "kind": "card",
+      "label": "Atmosphere"
+    },
+    {
+      "id": "card:ja-v-10791214b2c9",
+      "kind": "card",
+      "label": "Baby"
+    },
+    {
+      "id": "card:ja-v-dbe24910365e",
+      "kind": "card",
+      "label": "Bamboo"
+    },
+    {
+      "id": "card:ja-v-c5425c81df8c",
+      "kind": "card",
+      "label": "Bamboo Shoot"
+    },
+    {
+      "id": "card:ja-v-c22ee5be019b",
+      "kind": "card",
+      "label": "Boy"
+    },
+    {
+      "id": "card:ja-v-f8249679701c",
+      "kind": "card",
+      "label": "Bright"
+    },
+    {
+      "id": "card:ja-v-a4e5df148631",
+      "kind": "card",
+      "label": "Bug"
+    },
+    {
+      "id": "card:ja-v-f34264f6567c",
+      "kind": "card",
+      "label": "By The End Of The Year"
+    },
+    {
+      "id": "card:ja-v-754e1f2ea742",
+      "kind": "card",
+      "label": "Calf"
+    },
+    {
+      "id": "card:ja-v-d5bd6e2d7ad1",
+      "kind": "card",
+      "label": "Calm"
+    },
+    {
+      "id": "card:ja-v-f71f9de56223",
+      "kind": "card",
+      "label": "Car"
+    },
+    {
+      "id": "card:ja-v-a39af9252454",
+      "kind": "card",
+      "label": "Center"
+    },
+    {
+      "id": "card:ja-v-7733c49a7e4b",
+      "kind": "card",
+      "label": "Day Off"
+    },
+    {
+      "id": "card:ja-v-dca5c9fc5908",
+      "kind": "card",
+      "label": "Ear"
+    },
+    {
+      "id": "card:ja-v-72460e05df01",
+      "kind": "card",
+      "label": "Early"
+    },
+    {
+      "id": "card:ja-v-12f44a1311d1",
+      "kind": "card",
+      "label": "Energy"
+    },
+    {
+      "id": "card:ja-v-1e808c7b4b4e",
+      "kind": "card",
+      "label": "Energy"
+    },
+    {
+      "id": "card:ja-v-a98da0139f3a",
+      "kind": "card",
+      "label": "Expert"
+    },
+    {
+      "id": "card:ja-v-b90f6c64551b",
+      "kind": "card",
+      "label": "Fireworks"
+    },
+    {
+      "id": "card:ja-v-16f8ed6ac847",
+      "kind": "card",
+      "label": "First Of All"
+    },
+    {
+      "id": "card:ja-v-51c2d1be305f",
+      "kind": "card",
+      "label": "First Year Student"
+    },
+    {
+      "id": "card:ja-v-7707983a4026",
+      "kind": "card",
+      "label": "Five Hundred"
+    },
+    {
+      "id": "card:ja-v-0c337ec8cbd4",
+      "kind": "card",
+      "label": "Flat"
+    },
+    {
+      "id": "card:ja-v-fa6a4c8f27b4",
+      "kind": "card",
+      "label": "Flower"
+    },
+    {
+      "id": "card:ja-v-64289653ec1d",
+      "kind": "card",
+      "label": "Foot"
+    },
+    {
+      "id": "card:ja-v-81893a02b959",
+      "kind": "card",
+      "label": "Forty"
+    },
+    {
+      "id": "card:ja-v-f623bb19b846",
+      "kind": "card",
+      "label": "Four Hundred"
+    },
+    {
+      "id": "card:ja-v-13ea3220cde0",
+      "kind": "card",
+      "label": "Fourth Day"
+    },
+    {
+      "id": "card:ja-v-947395f42397",
+      "kind": "card",
+      "label": "Four Things"
+    },
+    {
+      "id": "card:ja-v-f0588b6224d0",
+      "kind": "card",
+      "label": "Four Thousand"
+    },
+    {
+      "id": "card:ja-v-b82f83d1deb0",
+      "kind": "card",
+      "label": "Goodbye"
+    },
+    {
+      "id": "card:ja-v-2798a7949600",
+      "kind": "card",
+      "label": "Good Evening"
+    },
+    {
+      "id": "card:ja-v-ff89f69552ed",
+      "kind": "card",
+      "label": "Head Of Household"
+    },
+    {
+      "id": "card:ja-v-39903246fd52",
+      "kind": "card",
+      "label": "Hole"
+    },
+    {
+      "id": "card:ja-v-96a032e15dda",
+      "kind": "card",
+      "label": "Hundred"
+    },
+    {
+      "id": "card:ja-v-d19a39e4af55",
+      "kind": "card",
+      "label": "Ice"
+    },
+    {
+      "id": "card:ja-v-cfd55bbfe51c",
+      "kind": "card",
+      "label": "In Its Entirety"
+    },
+    {
+      "id": "card:ja-v-cd6ac2533de0",
+      "kind": "card",
+      "label": "In One Go"
+    },
+    {
+      "id": "card:ja-v-dd1d6132fe3c",
+      "kind": "card",
+      "label": "Inside The Car"
+    },
+    {
+      "id": "card:ja-v-41b543dc8fe4",
+      "kind": "card",
+      "label": "Jewel"
+    },
+    {
+      "id": "card:ja-v-65da1512acab",
+      "kind": "card",
+      "label": "Last Month"
+    },
+    {
+      "id": "card:ja-v-e7ce924c4696",
+      "kind": "card",
+      "label": "Last Year"
+    },
+    {
+      "id": "card:ja-v-70230bf6d87c",
+      "kind": "card",
+      "label": "Left Hand"
+    },
+    {
+      "id": "card:ja-v-69c61c85a403",
+      "kind": "card",
+      "label": "Written characters"
+    },
+    {
+      "id": "card:ja-v-4285b5f8fc72",
+      "kind": "card",
+      "label": "Mainly"
+    },
+    {
+      "id": "card:ja-v-4b9dfeafcab4",
+      "kind": "card",
+      "label": "Man"
+    },
+    {
+      "id": "card:ja-v-5b39de46794f",
+      "kind": "card",
+      "label": "Method"
+    },
+    {
+      "id": "card:ja-v-823616f3288f",
+      "kind": "card",
+      "label": "Million"
+    },
+    {
+      "id": "card:ja-v-a44aad5ce459",
+      "kind": "card",
+      "label": "Misconduct"
+    },
+    {
+      "id": "card:ja-v-f303d8ce6b20",
+      "kind": "card",
+      "label": "Month Before Last"
+    },
+    {
+      "id": "card:ja-v-b22e3a1982e5",
+      "kind": "card",
+      "label": "Mood"
+    },
+    {
+      "id": "card:ja-v-2f21cb2e8d02",
+      "kind": "card",
+      "label": "Moon Viewing"
+    },
+    {
+      "id": "card:ja-v-0cbc7661647e",
+      "kind": "card",
+      "label": "Name"
+    },
+    {
+      "id": "card:ja-v-3ed4447f3492",
+      "kind": "card",
+      "label": "North America"
+    },
+    {
+      "id": "card:ja-v-0c144e18f1b2",
+      "kind": "card",
+      "label": "Notebook"
+    },
+    {
+      "id": "card:ja-v-ff1538e35505",
+      "kind": "card",
+      "label": "Number"
+    },
+    {
+      "id": "card:ja-v-8f43a7f01e9c",
+      "kind": "card",
+      "label": "One Hit"
+    },
+    {
+      "id": "card:ja-v-ed2b971b34ea",
+      "kind": "card",
+      "label": "One Track Mind"
+    },
+    {
+      "id": "card:ja-v-54c8da9a7bac",
+      "kind": "card",
+      "label": "Other"
+    },
+    {
+      "id": "card:ja-v-3ee395a38c63",
+      "kind": "card",
+      "label": "Pause"
+    },
+    {
+      "id": "card:ja-v-baa4dd2c5986",
+      "kind": "card",
+      "label": "Plate"
+    },
+    {
+      "id": "card:ja-v-5b451287c47e",
+      "kind": "card",
+      "label": "Popular"
+    },
+    {
+      "id": "card:ja-v-36897e1da4ac",
+      "kind": "card",
+      "label": "Postage Stamp"
+    },
+    {
+      "id": "card:ja-v-3144539c83d3",
+      "kind": "card",
+      "label": "Red"
+    },
+    {
+      "id": "card:ja-v-a595b5ca5679",
+      "kind": "card",
+      "label": "Red"
+    },
+    {
+      "id": "card:ja-v-ebdaef0f21db",
+      "kind": "card",
+      "label": "Rest"
+    },
+    {
+      "id": "card:ja-v-9553e3adbc2a",
+      "kind": "card",
+      "label": "Right Hand"
+    },
+    {
+      "id": "card:ja-v-42bb1cd7b3cd",
+      "kind": "card",
+      "label": "Second Generation"
+    },
+    {
+      "id": "card:ja-v-4528932e2247",
+      "kind": "card",
+      "label": "Serious"
+    },
+    {
+      "id": "card:ja-v-74043c16db5e",
+      "kind": "card",
+      "label": "Shaved Ice"
+    },
+    {
+      "id": "card:ja-v-23d807f4f375",
+      "kind": "card",
+      "label": "Shellfish"
+    },
+    {
+      "id": "card:ja-v-b1ccc665edf2",
+      "kind": "card",
+      "label": "Shortage"
+    },
+    {
+      "id": "card:ja-v-602940cfc449",
+      "kind": "card",
+      "label": "Small Plate"
+    },
+    {
+      "id": "card:ja-v-2f734ba866d9",
+      "kind": "card",
+      "label": "Stone"
+    },
+    {
+      "id": "card:ja-v-49863ee12a96",
+      "kind": "card",
+      "label": "Straight Line"
+    },
+    {
+      "id": "card:ja-v-ac4dde449fe8",
+      "kind": "card",
+      "label": "Surname"
+    },
+    {
+      "id": "card:ja-v-497356cf0646",
+      "kind": "card",
+      "label": "Teacher"
+    },
+    {
+      "id": "card:ja-v-99f7c98099b1",
+      "kind": "card",
+      "label": "Television"
+    },
+    {
+      "id": "card:ja-v-68ea919020d5",
+      "kind": "card",
+      "label": "Thanks"
+    },
+    {
+      "id": "card:ja-v-0b6bbed28f82",
+      "kind": "card",
+      "label": "The Other Day"
+    },
+    {
+      "id": "card:ja-v-a8c7075ce096",
+      "kind": "card",
+      "label": "Third Generation"
+    },
+    {
+      "id": "card:ja-v-e05b8e36c6ca",
+      "kind": "card",
+      "label": "Thread"
+    },
+    {
+      "id": "card:ja-v-317542d02c5e",
+      "kind": "card",
+      "label": "Tip"
+    },
+    {
+      "id": "card:ja-v-cdc7fbcaab99",
+      "kind": "card",
+      "label": "To Be Enough"
+    },
+    {
+      "id": "card:ja-v-eef9d372f5df",
+      "kind": "card",
+      "label": "To Copy"
+    },
+    {
+      "id": "card:ja-v-75ac90da3b27",
+      "kind": "card",
+      "label": "To Get Fat"
+    },
+    {
+      "id": "card:ja-v-001a4faf05bd",
+      "kind": "card",
+      "label": "To Go Out"
+    },
+    {
+      "id": "card:ja-v-5fb1d5e308b6",
+      "kind": "card",
+      "label": "To Hit Something"
+    },
+    {
+      "id": "card:ja-v-80b68bbbc870",
+      "kind": "card",
+      "label": "To Live"
+    },
+    {
+      "id": "card:ja-v-400da51eb499",
+      "kind": "card",
+      "label": "To Mention"
+    },
+    {
+      "id": "card:ja-v-acc3dd26ba1e",
+      "kind": "card",
+      "label": "To Rest"
+    },
+    {
+      "id": "card:ja-v-d76e957b268f",
+      "kind": "card",
+      "label": "To Say Humbly"
+    },
+    {
+      "id": "card:ja-v-385cc0d9ee98",
+      "kind": "card",
+      "label": "To See"
+    },
+    {
+      "id": "card:ja-v-859aec8573b3",
+      "kind": "card",
+      "label": "To Show"
+    },
+    {
+      "id": "card:ja-v-e64b189d1607",
+      "kind": "card",
+      "label": "To Take A Liking"
+    },
+    {
+      "id": "card:ja-v-09d74d630a45",
+      "kind": "card",
+      "label": "Town"
+    },
+    {
+      "id": "card:ja-v-b34b4a2e7a98",
+      "kind": "card",
+      "label": "Treasure"
+    },
+    {
+      "id": "card:ja-v-08e3c50181be",
+      "kind": "card",
+      "label": "Twentieth Day"
+    },
+    {
+      "id": "card:ja-v-190aae33ad24",
+      "kind": "card",
+      "label": "Two Hundred"
+    },
+    {
+      "id": "card:ja-v-cb7d8a487c4f",
+      "kind": "card",
+      "label": "Viewing Cherry Blossoms"
+    },
+    {
+      "id": "card:ja-v-92bebda5ac98",
+      "kind": "card",
+      "label": "Village"
+    },
+    {
+      "id": "card:ja-v-7cdf94430817",
+      "kind": "card",
+      "label": "Villager"
+    },
+    {
+      "id": "card:ja-v-6fe6f680e0e0",
+      "kind": "card",
+      "label": "Way Of Seeing"
+    },
+    {
+      "id": "card:ja-v-2850b5703e8b",
+      "kind": "card",
+      "label": "Weather"
+    },
+    {
+      "id": "card:ja-v-ac3939d71e1e",
+      "kind": "card",
+      "label": "Weekdays"
+    },
+    {
+      "id": "card:ja-v-67d99c6ae58e",
+      "kind": "card",
+      "label": "Which One"
+    },
+    {
+      "id": "card:ja-v-d67a7d3dacc9",
+      "kind": "card",
+      "label": "White"
+    },
+    {
+      "id": "card:ja-v-8438eda3cfc0",
+      "kind": "card",
+      "label": "Year"
+    },
+    {
+      "id": "card:ja-v-1a43c96593cb",
+      "kind": "card",
+      "label": "Year 2011"
+    },
+    {
+      "id": "card:ja-v-9e9dbd477486",
+      "kind": "card",
+      "label": "Year Round"
+    },
+    {
+      "id": "card:ja-v-f64f1036d22a",
+      "kind": "card",
+      "label": "Yep"
+    },
+    {
+      "id": "card:ja-v-6bbf1546d4d7",
+      "kind": "card",
+      "label": "Yes"
+    },
+    {
+      "id": "card:ja-v-6992f8889c8c",
+      "kind": "card",
+      "label": "Absence From School"
+    },
+    {
+      "id": "card:ja-v-d5a23463d010",
+      "kind": "card",
+      "label": "Air"
+    },
+    {
+      "id": "card:ja-v-88c9d9718867",
+      "kind": "card",
+      "label": "Archeology"
+    },
+    {
+      "id": "card:ja-v-e5e8eaecaa3f",
+      "kind": "card",
+      "label": "A Success"
+    },
+    {
+      "id": "card:ja-v-84c8eeeb03ab",
+      "kind": "card",
+      "label": "At Once"
+    },
+    {
+      "id": "card:ja-v-5dc14aea92c7",
+      "kind": "card",
+      "label": "Beef"
+    },
+    {
+      "id": "card:ja-v-afb2c2f9a135",
+      "kind": "card",
+      "label": "Birthplace"
+    },
+    {
+      "id": "card:ja-v-10e568715d3a",
+      "kind": "card",
+      "label": "Blue"
+    },
+    {
+      "id": "card:ja-v-6e098e54aa63",
+      "kind": "card",
+      "label": "Body"
+    },
+    {
+      "id": "card:ja-v-83365ed9e3db",
+      "kind": "card",
+      "label": "Bold Letter"
+    },
+    {
+      "id": "card:ja-v-696107ad9e08",
+      "kind": "card",
+      "label": "Boy"
+    },
+    {
+      "id": "card:ja-v-26a964fd9243",
+      "kind": "card",
+      "label": "Bread Loaf Counter"
+    },
+    {
+      "id": "card:ja-v-2e7b28af830b",
+      "kind": "card",
+      "label": "Brothers"
+    },
+    {
+      "id": "card:ja-v-d10df0e56846",
+      "kind": "card",
+      "label": "Caterpillar"
+    },
+    {
+      "id": "card:ja-v-d72e08381953",
+      "kind": "card",
+      "label": "Close"
+    },
+    {
+      "id": "card:ja-v-921d54ba31ef",
+      "kind": "card",
+      "label": "Color"
+    },
+    {
+      "id": "card:ja-v-c506bd7fb201",
+      "kind": "card",
+      "label": "Company"
+    },
+    {
+      "id": "card:ja-v-4b9574b8d3b9",
+      "kind": "card",
+      "label": "Composition"
+    },
+    {
+      "id": "card:ja-v-9a9a5c6d448c",
+      "kind": "card",
+      "label": "Convenience Store"
+    },
+    {
+      "id": "card:ja-v-ceaf3971ff83",
+      "kind": "card",
+      "label": "Corner"
+    },
+    {
+      "id": "card:ja-v-fd0090161525",
+      "kind": "card",
+      "label": "Cost"
+    },
+    {
+      "id": "card:ja-v-4aa5c84df90c",
+      "kind": "card",
+      "label": "Crescent Moon"
+    },
+    {
+      "id": "card:ja-v-6027e0e1c622",
+      "kind": "card",
+      "label": "Department Store"
+    },
+    {
+      "id": "card:ja-v-9a8a0ffc08d3",
+      "kind": "card",
+      "label": "Diagram"
+    },
+    {
+      "id": "card:ja-v-7c4bedf9eff4",
+      "kind": "card",
+      "label": "Diplomacy"
+    },
+    {
+      "id": "card:ja-v-506e7ed10461",
+      "kind": "card",
+      "label": "Traditional urban neighborhood"
+    },
+    {
+      "id": "card:ja-v-3534dd7d07d1",
+      "kind": "card",
+      "label": "Early Evening"
+    },
+    {
+      "id": "card:ja-v-8ce0a0ec59c4",
+      "kind": "card",
+      "label": "Engineering"
+    },
+    {
+      "id": "card:ja-v-1b6483e173f3",
+      "kind": "card",
+      "label": "Every Day"
+    },
+    {
+      "id": "card:ja-v-ad9fb52e6dff",
+      "kind": "card",
+      "label": "Every Month"
+    },
+    {
+      "id": "card:ja-v-a96ca9b29f0d",
+      "kind": "card",
+      "label": "Every Time"
+    },
+    {
+      "id": "card:ja-v-d860a871b14d",
+      "kind": "card",
+      "label": "Every Year"
+    },
+    {
+      "id": "card:ja-v-224fe0f121ab",
+      "kind": "card",
+      "label": "Excuse Me"
+    },
+    {
+      "id": "card:ja-v-188bdf18a50c",
+      "kind": "card",
+      "label": "Feathers"
+    },
+    {
+      "id": "card:ja-v-698044202165",
+      "kind": "card",
+      "label": "Forest"
+    },
+    {
+      "id": "card:ja-v-4fd3d09440c1",
+      "kind": "card",
+      "label": "Form"
+    },
+    {
+      "id": "card:ja-v-5bbf746af479",
+      "kind": "card",
+      "label": "For Some Years"
+    },
+    {
+      "id": "card:ja-v-3813940acf07",
+      "kind": "card",
+      "label": "From Ancient Times"
+    },
+    {
+      "id": "card:ja-v-97dfa455ab7e",
+      "kind": "card",
+      "label": "Generally"
+    },
+    {
+      "id": "card:ja-v-f754ac11a73b",
+      "kind": "card",
+      "label": "Gesture"
+    },
+    {
+      "id": "card:ja-v-597577664a1b",
+      "kind": "card",
+      "label": "Gold"
+    },
+    {
+      "id": "card:ja-v-74f77120e84d",
+      "kind": "card",
+      "label": "Good At"
+    },
+    {
+      "id": "card:ja-v-4063840184cf",
+      "kind": "card",
+      "label": "Grass"
+    },
+    {
+      "id": "card:ja-v-a491f1acccc3",
+      "kind": "card",
+      "label": "Handicraft"
+    },
+    {
+      "id": "card:ja-v-ede466428b1b",
+      "kind": "card",
+      "label": "Headquarters"
+    },
+    {
+      "id": "card:ja-v-10984ece1206",
+      "kind": "card",
+      "label": "Rural village / home area"
+    },
+    {
+      "id": "card:ja-v-0cc907790ad0",
+      "kind": "card",
+      "label": "How Many Days"
+    },
+    {
+      "id": "card:ja-v-a5dbfebd3fae",
+      "kind": "card",
+      "label": "How Many People"
+    },
+    {
+      "id": "card:ja-v-1c7565a62dc9",
+      "kind": "card",
+      "label": "How Many Times"
+    },
+    {
+      "id": "card:ja-v-5ed3001d6892",
+      "kind": "card",
+      "label": "In A Few Days"
+    },
+    {
+      "id": "card:ja-v-dc5177422a8b",
+      "kind": "card",
+      "label": "Independence"
+    },
+    {
+      "id": "card:ja-v-01016753b889",
+      "kind": "card",
+      "label": "Inside The Body"
+    },
+    {
+      "id": "card:ja-v-ebb68031a152",
+      "kind": "card",
+      "label": "Irony"
+    },
+    {
+      "id": "card:ja-v-c2a96f1d7abc",
+      "kind": "card",
+      "label": "Joining A Company"
+    },
+    {
+      "id": "card:ja-v-96e39ee9cb18",
+      "kind": "card",
+      "label": "Light"
+    },
+    {
+      "id": "card:ja-v-c2a7e49d3e08",
+      "kind": "card",
+      "label": "Literature"
+    },
+    {
+      "id": "card:ja-v-40dee6baff53",
+      "kind": "card",
+      "label": "Loud Voice"
+    },
+    {
+      "id": "card:ja-v-d34b59e423f3",
+      "kind": "card",
+      "label": "Major Work"
+    },
+    {
+      "id": "card:ja-v-bcfbced3ea21",
+      "kind": "card",
+      "label": "Man"
+    },
+    {
+      "id": "card:ja-v-a249b72fa923",
+      "kind": "card",
+      "label": "Many"
+    },
+    {
+      "id": "card:ja-v-25611a347757",
+      "kind": "card",
+      "label": "Maybe"
+    },
+    {
+      "id": "card:ja-v-b639fedc63ec",
+      "kind": "card",
+      "label": "Meat"
+    },
+    {
+      "id": "card:ja-v-d242b38667c8",
+      "kind": "card",
+      "label": "Money"
+    },
+    {
+      "id": "card:ja-v-2d7d45d5614e",
+      "kind": "card",
+      "label": "Moonlight"
+    },
+    {
+      "id": "card:ja-v-55fef51b0694",
+      "kind": "card",
+      "label": "Next Month"
+    },
+    {
+      "id": "card:ja-v-fb3e6c8865d4",
+      "kind": "card",
+      "label": "Next Year"
+    },
+    {
+      "id": "card:ja-v-ba0c8a160c33",
+      "kind": "card",
+      "label": "Night"
+    },
+    {
+      "id": "card:ja-v-5e97c99f1db9",
+      "kind": "card",
+      "label": "No"
+    },
+    {
+      "id": "card:ja-v-cda9169e9fa2",
+      "kind": "card",
+      "label": "Older Brother"
+    },
+    {
+      "id": "card:ja-v-7cc10603c197",
+      "kind": "card",
+      "label": "Oneself"
+    },
+    {
+      "id": "card:ja-v-aef5eed601c5",
+      "kind": "card",
+      "label": "One's Thirties"
+    },
+    {
+      "id": "card:ja-v-9f59b44e2237",
+      "kind": "card",
+      "label": "One Time"
+    },
+    {
+      "id": "card:ja-v-a557e263cea4",
+      "kind": "card",
+      "label": "Vacant taxi"
+    },
+    {
+      "id": "card:ja-v-50579c22e90d",
+      "kind": "card",
+      "label": "Originally"
+    },
+    {
+      "id": "card:ja-v-cbb4297f3dd7",
+      "kind": "card",
+      "label": "Parallel"
+    },
+    {
+      "id": "card:ja-v-c244e16d1e60",
+      "kind": "card",
+      "label": "Physical Strength"
+    },
+    {
+      "id": "card:ja-v-b1b10c2f6445",
+      "kind": "card",
+      "label": "Pig"
+    },
+    {
+      "id": "card:ja-v-7e87850c448d",
+      "kind": "card",
+      "label": "Rain"
+    },
+    {
+      "id": "card:ja-v-79f8de04d6f6",
+      "kind": "card",
+      "label": "Reality"
+    },
+    {
+      "id": "card:ja-v-f2e8d12a8234",
+      "kind": "card",
+      "label": "Recent Years"
+    },
+    {
+      "id": "card:ja-v-0958f7553d9f",
+      "kind": "card",
+      "label": "Rice"
+    },
+    {
+      "id": "card:ja-v-9ff4f40a3428",
+      "kind": "card",
+      "label": "Same"
+    },
+    {
+      "id": "card:ja-v-f9d62cb2d38a",
+      "kind": "card",
+      "label": "Same Day"
+    },
+    {
+      "id": "card:ja-v-9fb793c875d7",
+      "kind": "card",
+      "label": "School Admission"
+    },
+    {
+      "id": "card:ja-v-6777bcda7f1e",
+      "kind": "card",
+      "label": "School Grade"
+    },
+    {
+      "id": "card:ja-v-d0c8497457bd",
+      "kind": "card",
+      "label": "Skin"
+    },
+    {
+      "id": "card:ja-v-19bd7db9d5d0",
+      "kind": "card",
+      "label": "Sky"
+    },
+    {
+      "id": "card:ja-v-d42b5be1c4ad",
+      "kind": "card",
+      "label": "Sky Blue"
+    },
+    {
+      "id": "card:ja-v-b37750755344",
+      "kind": "card",
+      "label": "Sound"
+    },
+    {
+      "id": "card:ja-v-f14d2c0c7442",
+      "kind": "card",
+      "label": "Square"
+    },
+    {
+      "id": "card:ja-v-9567eaf8fe9b",
+      "kind": "card",
+      "label": "Student"
+    },
+    {
+      "id": "card:ja-v-cb7a14590e8e",
+      "kind": "card",
+      "label": "Sunlight"
+    },
+    {
+      "id": "card:ja-v-26d771953f4b",
+      "kind": "card",
+      "label": "Testicles"
+    },
+    {
+      "id": "card:ja-v-cabda7989563",
+      "kind": "card",
+      "label": "That One"
+    },
+    {
+      "id": "card:ja-v-cc6f385f3a90",
+      "kind": "card",
+      "label": "The Others"
+    },
+    {
+      "id": "card:ja-v-bdf7ba87a26a",
+      "kind": "card",
+      "label": "This Time"
+    },
+    {
+      "id": "card:ja-v-2c3dfcbde58b",
+      "kind": "card",
+      "label": "Thousands"
+    },
+    {
+      "id": "card:ja-v-d6b0cff12d70",
+      "kind": "card",
+      "label": "Times"
+    },
+    {
+      "id": "card:ja-v-fb6b2d93a83c",
+      "kind": "card",
+      "label": "To Be Right"
+    },
+    {
+      "id": "card:ja-v-e99feae5bc25",
+      "kind": "card",
+      "label": "To Be Visible"
+    },
+    {
+      "id": "card:ja-v-bc01756b4d89",
+      "kind": "card",
+      "label": "To Come"
+    },
+    {
+      "id": "card:ja-v-415802b8c769",
+      "kind": "card",
+      "label": "To Get Lower"
+    },
+    {
+      "id": "card:ja-v-a8c0f98a1f64",
+      "kind": "card",
+      "label": "To Give Birth"
+    },
+    {
+      "id": "card:ja-v-4397422fc9fb",
+      "kind": "card",
+      "label": "To Go"
+    },
+    {
+      "id": "card:ja-v-86592fe77e48",
+      "kind": "card",
+      "label": "To Go Up"
+    },
+    {
+      "id": "card:ja-v-b5e9e035a8be",
+      "kind": "card",
+      "label": "To Insert"
+    },
+    {
+      "id": "card:ja-v-bdc2a3d728dd",
+      "kind": "card",
+      "label": "To Learn"
+    },
+    {
+      "id": "card:ja-v-a4ccf0b7bace",
+      "kind": "card",
+      "label": "To Make"
+    },
+    {
+      "id": "card:ja-v-40179481fcf6",
+      "kind": "card",
+      "label": "To Meet"
+    },
+    {
+      "id": "card:ja-v-4690961b5456",
+      "kind": "card",
+      "label": "To Mix Something"
+    },
+    {
+      "id": "card:ja-v-d31e008f6e8e",
+      "kind": "card",
+      "label": "To Revolve"
+    },
+    {
+      "id": "card:ja-v-97526e11c703",
+      "kind": "card",
+      "label": "To Run"
+    },
+    {
+      "id": "card:ja-v-4fa253e10946",
+      "kind": "card",
+      "label": "To Say"
+    },
+    {
+      "id": "card:ja-v-e9ad09158eb3",
+      "kind": "card",
+      "label": "To Stand Something Up"
+    },
+    {
+      "id": "card:ja-v-bd365f430f35",
+      "kind": "card",
+      "label": "To Stop"
+    },
+    {
+      "id": "card:ja-v-a001b24baf12",
+      "kind": "card",
+      "label": "To Take Out"
+    },
+    {
+      "id": "card:ja-v-4f9ae60eff62",
+      "kind": "card",
+      "label": "To Think About"
+    },
+    {
+      "id": "card:ja-v-eeb8ecca964f",
+      "kind": "card",
+      "label": "To Understand"
+    },
+    {
+      "id": "card:ja-v-0c5871310c83",
+      "kind": "card",
+      "label": "Train Direction"
+    },
+    {
+      "id": "card:ja-v-fa26a112a479",
+      "kind": "card",
+      "label": "Traveling"
+    },
+    {
+      "id": "card:ja-v-ea952b83ac80",
+      "kind": "card",
+      "label": "Triangle"
+    },
+    {
+      "id": "card:ja-v-9910372c1964",
+      "kind": "card",
+      "label": "University"
+    },
+    {
+      "id": "card:ja-v-b2f08cdf5ab4",
+      "kind": "card",
+      "label": "Until Now"
+    },
+    {
+      "id": "card:ja-v-ceb7b2a20cbd",
+      "kind": "card",
+      "label": "Valley"
+    },
+    {
+      "id": "card:ja-v-7b2479107ae1",
+      "kind": "card",
+      "label": "Various"
+    },
+    {
+      "id": "card:ja-v-135a822fbf3a",
+      "kind": "card",
+      "label": "Voice"
+    },
+    {
+      "id": "card:ja-v-6f2e359ff6c8",
+      "kind": "card",
+      "label": "West"
+    },
+    {
+      "id": "card:ja-v-81b56dc2a618",
+      "kind": "card",
+      "label": "West Exit"
+    },
+    {
+      "id": "card:ja-v-115fd51b8d38",
+      "kind": "card",
+      "label": "What"
+    },
+    {
+      "id": "card:ja-v-5f4c2dcf05ba",
+      "kind": "card",
+      "label": "What Month"
+    },
+    {
+      "id": "card:ja-v-d2a96c6d5f6a",
+      "kind": "card",
+      "label": "What Year"
+    },
+    {
+      "id": "card:ja-v-d215c2071f47",
+      "kind": "card",
+      "label": "Wheat"
+    },
+    {
+      "id": "card:ja-v-b4d0a55dd496",
+      "kind": "card",
+      "label": "Whole Life"
+    },
+    {
+      "id": "card:ja-v-4638d2c26682",
+      "kind": "card",
+      "label": "Within The Company"
+    },
+    {
+      "id": "card:ja-v-ac1e4f6bee13",
+      "kind": "card",
+      "label": "Wool Yarn"
+    },
+    {
+      "id": "card:ja-v-01df3c579080",
+      "kind": "card",
+      "label": "You"
+    },
+    {
+      "id": "card:ja-v-7e8dc4d63e82",
+      "kind": "card",
+      "label": "Younger Brother"
+    },
+    {
+      "id": "card:ja-v-c370702e86ab",
+      "kind": "card",
+      "label": "Youth"
+    },
+    {
+      "id": "card:ja-cat",
+      "kind": "card",
+      "label": "Cat"
+    },
+    {
+      "id": "card:ja-banana",
+      "kind": "card",
+      "label": "Banana"
+    },
+    {
+      "id": "card:ja-umbrella",
+      "kind": "card",
+      "label": "Umbrella"
+    },
+    {
+      "id": "card:ja-cup",
+      "kind": "card",
+      "label": "Cup"
+    },
+    {
+      "id": "family:counting-blocks",
+      "kind": "family",
+      "seedCard": "ja-v-947395f42397",
+      "memberIds": [
+        "ja-v-6c9351ae67e6",
+        "ja-v-0d0163a40587",
+        "ja-v-f6bc974a7405",
+        "ja-v-8b887bc8af0c",
+        "ja-v-bb85f028d944",
+        "ja-v-084edf1fdd10",
+        "ja-v-df70a01acaec",
+        "ja-v-947395f42397"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
+      "status": "approved",
+      "guidance": "Reuse card 38 cube shape, viewpoint, contour, soft shading and palette for X things; change only exact count and spacing. Replaces apples for this family.",
+      "replaceComponents": []
+    },
+    {
+      "id": "family:seasonal-park",
+      "kind": "family",
+      "seedCard": "ja-v-7c4d1abbdd61",
+      "memberIds": [
+        "ja-v-7c4d1abbdd61"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/31-winter-v2.png",
+      "status": "approved",
+      "guidance": "Reuse identical forked deciduous tree at left, bench at right, oval land footprint and camera across winter/spring/summer/autumn. Change only foliage, weather and ground covering. Winter reference approved; other seasons are not yet in the current bank."
+    }
+  ],
+  "edges": [
+    {
+      "from": "card:ja-apple",
+      "to": "component:apple"
+    },
+    {
+      "from": "card:ja-v-66ccf8dd3399",
+      "to": "component:ball"
+    },
+    {
+      "from": "card:ja-v-ad7167347a2a",
+      "to": "component:person"
+    },
+    {
+      "from": "card:ja-v-b1ff052549ed",
+      "to": "component:hand"
+    },
+    {
+      "from": "card:ja-v-baa4dd2c5986",
+      "to": "component:plate"
+    },
+    {
+      "from": "card:ja-cup",
+      "to": "component:glass"
+    },
+    {
+      "from": "card:ja-v-a47e21265374",
+      "to": "component:cow"
+    },
+    {
+      "from": "card:ja-v-ddd9dca106e2",
+      "to": "component:mountain"
+    },
+    {
+      "from": "card:ja-v-0958f7553d9f",
+      "to": "component:rice"
+    },
+    {
+      "from": "card:ja-v-2f734ba866d9",
+      "to": "component:stone"
+    },
+    {
+      "from": "style",
+      "to": "component:calendar"
+    },
+    {
+      "from": "style",
+      "to": "component:arrow"
+    },
+    {
+      "from": "style",
+      "to": "component:open-box"
+    },
+    {
+      "from": "style",
+      "to": "component:doorway"
+    },
+    {
+      "from": "style",
+      "to": "component:house"
+    },
+    {
+      "from": "style",
+      "to": "component:shop"
+    },
+    {
+      "from": "style",
+      "to": "component:office-school"
+    },
+    {
+      "from": "style",
+      "to": "component:sun-moon-horizon"
+    },
+    {
+      "from": "style",
+      "to": "component:tree-plant"
+    },
+    {
+      "from": "style",
+      "to": "component:paper-book-pencil"
+    },
+    {
+      "from": "style",
+      "to": "component:bowl"
+    },
+    {
+      "from": "style",
+      "to": "component:car-taxi"
+    },
+    {
+      "from": "style",
+      "to": "component:washer"
+    },
+    {
+      "from": "style",
+      "to": "component:numeral"
+    },
+    {
+      "from": "style",
+      "to": "component:flag"
+    },
+    {
+      "from": "style",
+      "to": "component:cat"
+    },
+    {
+      "from": "style",
+      "to": "component:yarn-thread-rope"
+    },
+    {
+      "from": "style",
+      "to": "component:gem"
+    },
+    {
+      "from": "style",
+      "to": "component:fabric"
+    },
+    {
+      "from": "style",
+      "to": "component:character-relationship"
+    },
+    {
+      "from": "style",
+      "to": "component:diagram-convention"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c0f58bfab324"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-c0f58bfab324"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2cc50c2d66a6"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-2cc50c2d66a6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7de8b40e4f57"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-7de8b40e4f57"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3fef4445ce13"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-3fef4445ce13"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-520308b3c3b4"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-520308b3c3b4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f6377dcbb564"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-f6377dcbb564"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f6ed7c17c0d5"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-f6ed7c17c0d5"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-6c9351ae67e6"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-6c9351ae67e6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-20cbd1c15a35"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-20cbd1c15a35"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-20cbd1c15a35"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1d446778d33c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ddd9dca106e2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9e64feeea5ea"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0181fab128a1"
+    },
+    {
+      "from": "component:mountain",
+      "to": "card:ja-v-0181fab128a1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d33ed6be2a48"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-d33ed6be2a48"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-0d0163a40587"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-0d0163a40587"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5d8047464c5d"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-5d8047464c5d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-277587e6fa07"
+    },
+    {
+      "from": "component:apple",
+      "to": "card:ja-v-277587e6fa07"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ad7167347a2a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fae75d2d18b2"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-fae75d2d18b2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2ef4da30cf39"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-33c00f4a1a8b"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-46f8fe65f218"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-eda9a40b0c91"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-eda9a40b0c91"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-f6bc974a7405"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-f6bc974a7405"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-26d0ad7af566"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-26d0ad7af566"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-877b9ba07a47"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-877b9ba07a47"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1bedf722c04a"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-1bedf722c04a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2a318f5ee1c8"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-2a318f5ee1c8"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-8b887bc8af0c"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-8b887bc8af0c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-82a114897d9c"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-82a114897d9c"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-82a114897d9c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6d1d47c9258e"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-6d1d47c9258e"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6d1d47c9258e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-06a4c07236b5"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-06a4c07236b5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-06a4c07236b5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7fc81b0ddd17"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-7fc81b0ddd17"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4fa716f651b2"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4fa716f651b2"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-bb85f028d944"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-bb85f028d944"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c70f2920b2de"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-c70f2920b2de"
+    },
+    {
+      "from": "component:stone",
+      "to": "card:ja-v-c70f2920b2de"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4d9423288cb2"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4d9423288cb2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7dddc1af4eb5"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-7dddc1af4eb5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-66ccf8dd3399"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0ac038632611"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-0ac038632611"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-27d5744f36a2"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-27d5744f36a2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d1b6831b65c8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b1514b201acd"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-b1514b201acd"
+    },
+    {
+      "from": "component:plate",
+      "to": "card:ja-v-b1514b201acd"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7003bbe10d0b"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-5352aea4e4bb"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-dog"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f50fcf40e898"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-f50fcf40e898"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a19157e62dee"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-a19157e62dee"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-a19157e62dee"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6c0b9f3278dc"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a8ca5ef684b8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6eed6b905b8e"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-6eed6b905b8e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a02edbda9f4c"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-a02edbda9f4c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-61c516578fee"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-61c516578fee"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cf58c5cf08d9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d4473f87e438"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-d4473f87e438"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-084edf1fdd10"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-084edf1fdd10"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b066e78531d6"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-b066e78531d6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f1a679bd7d06"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-f1a679bd7d06"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0bf44d10d860"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-0bf44d10d860"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-0bf44d10d860"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-185a632e3742"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-185a632e3742"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-185a632e3742"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f78f531c55a5"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-f78f531c55a5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-f78f531c55a5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cbf0bc9a0df7"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-cbf0bc9a0df7"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-cbf0bc9a0df7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b1ff052549ed"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-45b445caeb43"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-45b445caeb43"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d5c177de5126"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a30018dbdb6b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5849925b131d"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-5849925b131d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ed82bb95d4cc"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-ed82bb95d4cc"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9752b818f9f8"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-9752b818f9f8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8ffa8462a479"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-8ffa8462a479"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fce7743a6cc5"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-fce7743a6cc5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-fce7743a6cc5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-38acee5bccbe"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-38acee5bccbe"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-38acee5bccbe"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4ac46ddaa10f"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-4ac46ddaa10f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-14be5202d5b3"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-14be5202d5b3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2850d52ee4d2"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-2850d52ee4d2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e0bb1d02fee0"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-e0bb1d02fee0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9acbf1542642"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-9acbf1542642"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cacf3a45ed07"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-cacf3a45ed07"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3d24eb7fb7b5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-30d6b7d7e837"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-30d6b7d7e837"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-223e5321ecb8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3bcce8de9d04"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-3bcce8de9d04"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-069e01664247"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-069e01664247"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-069e01664247"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e34a140da9c0"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-e34a140da9c0"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-e34a140da9c0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-79140f0bf8e7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1cc9ac39c880"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-1cc9ac39c880"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-1cc9ac39c880"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e507b462aa49"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0da81020c173"
+    },
+    {
+      "from": "component:rice",
+      "to": "card:ja-v-0da81020c173"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-762983bc3fe7"
+    },
+    {
+      "from": "component:rice",
+      "to": "card:ja-v-762983bc3fe7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ed6bd4d73b76"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-ed6bd4d73b76"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-56d52b7869ab"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-56d52b7869ab"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0655c242d1db"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-0655c242d1db"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-06ef406f5569"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-06ef406f5569"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e368e3aa9bf6"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-e368e3aa9bf6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7b2351210462"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-7b2351210462"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-df70a01acaec"
+    },
+    {
+      "from": "family:counting-blocks",
+      "to": "card:ja-v-df70a01acaec"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-769a80524957"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-769a80524957"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f3881ce313e7"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-f3881ce313e7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-65df49688ef0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-da2913ad7e4c"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-da2913ad7e4c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b0489d428339"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-b0489d428339"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-86ef0852f80f"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-86ef0852f80f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b0a6475686ea"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-b0a6475686ea"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-b0a6475686ea"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5f0cf40d1630"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b2a9df4d0301"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-b2a9df4d0301"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-b2a9df4d0301"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-17e3177c62d5"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-17e3177c62d5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-17e3177c62d5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a5d390dc4805"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-a5d390dc4805"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d0c9a070fa56"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8aeedc2d7a47"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-8aeedc2d7a47"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-8aeedc2d7a47"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-afefe30bcb46"
+    },
+    {
+      "from": "component:mountain",
+      "to": "card:ja-v-afefe30bcb46"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-28ddfdc9290c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cbda72b9dd04"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a7b882deb9b5"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-a7b882deb9b5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-a7b882deb9b5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d4fb59f8c32c"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-d4fb59f8c32c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8101bd0ca76a"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-8101bd0ca76a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a119c15d9de4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8814378ebfc2"
+    },
+    {
+      "from": "component:glass",
+      "to": "card:ja-v-8814378ebfc2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-22dcde10ff57"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-22dcde10ff57"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-22dcde10ff57"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-apple"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-575c16528161"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-575c16528161"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-09fcc851c1ab"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-09fcc851c1ab"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-143328009b51"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-143328009b51"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-143328009b51"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6eab3743dc93"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-6eab3743dc93"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7930a252da9b"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-7930a252da9b"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-887f569257fd"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9ff5251e6f21"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a47e21265374"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-18fe4d351abc"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-56e27b2da5a6"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-56e27b2da5a6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-12025d56c403"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-12025d56c403"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8fb11237e460"
+    },
+    {
+      "from": "component:glass",
+      "to": "card:ja-v-8fb11237e460"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5a9132c195d6"
+    },
+    {
+      "from": "component:mountain",
+      "to": "card:ja-v-5a9132c195d6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b7ea6f7eb013"
+    },
+    {
+      "from": "component:yarn-thread-rope",
+      "to": "card:ja-v-b7ea6f7eb013"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d15ca6ea1179"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-d15ca6ea1179"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-d15ca6ea1179"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-d15ca6ea1179"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9013d708ded7"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-9013d708ded7"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-9013d708ded7"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-9013d708ded7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-89cc0156875d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4789ab8b6db0"
+    },
+    {
+      "from": "component:washer",
+      "to": "card:ja-v-4789ab8b6db0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-70a7f6854fea"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-70a7f6854fea"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3c205b816e51"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-3c205b816e51"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-3c205b816e51"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bee484b5ac81"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e9c77c4e99a7"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-e9c77c4e99a7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a76119b3c712"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-575ec5f060f3"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-575ec5f060f3"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-81e708aba22f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d605986c3af4"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-3601c285284c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ad9975e17a50"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-ad9975e17a50"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-aad97415a910"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-aad97415a910"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-137737e5ce1f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ed2c1dbd0ee4"
+    },
+    {
+      "from": "component:glass",
+      "to": "card:ja-v-ed2c1dbd0ee4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b27125f41e7c"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-b27125f41e7c"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-b27125f41e7c"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-b27125f41e7c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7fa86c660a00"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-7fa86c660a00"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-7fa86c660a00"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-7fa86c660a00"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-44c14bbade4c"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-44c14bbade4c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b0a03cee753b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a84051dc9f24"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-a84051dc9f24"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-89beba69de5a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-08f79cb14fd4"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-08f79cb14fd4"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-08f79cb14fd4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-77d63b3ebde3"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-77d63b3ebde3"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-77d63b3ebde3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e5fd15d61360"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7bbba1a9506e"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-7bbba1a9506e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-eba7f0968101"
+    },
+    {
+      "from": "component:washer",
+      "to": "card:ja-v-eba7f0968101"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-032157e79367"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-032157e79367"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dfb71d269e06"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-dfb71d269e06"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6109638dac53"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-6109638dac53"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6109638dac53"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a0e6022cc115"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-16fcea5b6e6e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6cac3dee5967"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-6cac3dee5967"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6cac3dee5967"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0c1b8280f1ee"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-0c1b8280f1ee"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-0c1b8280f1ee"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3aa47bb43d28"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-760cc08e40eb"
+    },
+    {
+      "from": "component:washer",
+      "to": "card:ja-v-760cc08e40eb"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a872d5e674a2"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-a872d5e674a2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1807218bf360"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-1807218bf360"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-309cfedd227d"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-309cfedd227d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fb33e3a6798b"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-fb33e3a6798b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3db312786ce8"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-3db312786ce8"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-1ee90bf5d13a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6b9362de88a7"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-6b9362de88a7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dfb6d8ba613b"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-dfb6d8ba613b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bb787ce6238a"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-bb787ce6238a"
+    },
+    {
+      "from": "component:yarn-thread-rope",
+      "to": "card:ja-v-bb787ce6238a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-01a3c397cb20"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-01a3c397cb20"
+    },
+    {
+      "from": "component:fabric",
+      "to": "card:ja-v-01a3c397cb20"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-01a3c397cb20"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8b215c592588"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-8b215c592588"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-8b215c592588"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2924cd51557f"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-2924cd51557f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5f29c187353e"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-5f29c187353e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f5b4250aeb03"
+    },
+    {
+      "from": "component:washer",
+      "to": "card:ja-v-f5b4250aeb03"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-960de5429d2e"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-960de5429d2e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c9d354f557b3"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-c9d354f557b3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bb8fc62cf23d"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-bb8fc62cf23d"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-7c4d1abbdd61"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f25546e67181"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-f25546e67181"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-edbe60bbb7e3"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-edbe60bbb7e3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-390f30691ca4"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-390f30691ca4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-89fcef8e86d8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-10791214b2c9"
+    },
+    {
+      "from": "component:fabric",
+      "to": "card:ja-v-10791214b2c9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dbe24910365e"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-dbe24910365e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c5425c81df8c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c22ee5be019b"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-c22ee5be019b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f8249679701c"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-f8249679701c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a4e5df148631"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f34264f6567c"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-f34264f6567c"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-f34264f6567c"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-f34264f6567c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-754e1f2ea742"
+    },
+    {
+      "from": "component:cow",
+      "to": "card:ja-v-754e1f2ea742"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d5bd6e2d7ad1"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-d5bd6e2d7ad1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f71f9de56223"
+    },
+    {
+      "from": "component:car-taxi",
+      "to": "card:ja-v-f71f9de56223"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a39af9252454"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7733c49a7e4b"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-7733c49a7e4b"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-7733c49a7e4b"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-7733c49a7e4b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dca5c9fc5908"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-72460e05df01"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-72460e05df01"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-12f44a1311d1"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-12f44a1311d1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1e808c7b4b4e"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-1e808c7b4b4e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a98da0139f3a"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-a98da0139f3a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b90f6c64551b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-16f8ed6ac847"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-16f8ed6ac847"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-51c2d1be305f"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-51c2d1be305f"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-51c2d1be305f"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-51c2d1be305f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7707983a4026"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-7707983a4026"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0c337ec8cbd4"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-0c337ec8cbd4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fa6a4c8f27b4"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-fa6a4c8f27b4"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-64289653ec1d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-81893a02b959"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-81893a02b959"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f623bb19b846"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-f623bb19b846"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-13ea3220cde0"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-13ea3220cde0"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-13ea3220cde0"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-947395f42397"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f0588b6224d0"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-f0588b6224d0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b82f83d1deb0"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-b82f83d1deb0"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-b82f83d1deb0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2798a7949600"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-2798a7949600"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-2798a7949600"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ff89f69552ed"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-ff89f69552ed"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-ff89f69552ed"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-ff89f69552ed"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-39903246fd52"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-96a032e15dda"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-96a032e15dda"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d19a39e4af55"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cfd55bbfe51c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cd6ac2533de0"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-cd6ac2533de0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dd1d6132fe3c"
+    },
+    {
+      "from": "component:car-taxi",
+      "to": "card:ja-v-dd1d6132fe3c"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-dd1d6132fe3c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-41b543dc8fe4"
+    },
+    {
+      "from": "component:gem",
+      "to": "card:ja-v-41b543dc8fe4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-65da1512acab"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-65da1512acab"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-65da1512acab"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e7ce924c4696"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-e7ce924c4696"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-70230bf6d87c"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-70230bf6d87c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-69c61c85a403"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-69c61c85a403"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4285b5f8fc72"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4b9dfeafcab4"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4b9dfeafcab4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5b39de46794f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-823616f3288f"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-823616f3288f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a44aad5ce459"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-a44aad5ce459"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f303d8ce6b20"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-f303d8ce6b20"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b22e3a1982e5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2f21cb2e8d02"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-2f21cb2e8d02"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-2f21cb2e8d02"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-2f21cb2e8d02"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0cbc7661647e"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-0cbc7661647e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3ed4447f3492"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0c144e18f1b2"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-0c144e18f1b2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ff1538e35505"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8f43a7f01e9c"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-8f43a7f01e9c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ed2b971b34ea"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-ed2b971b34ea"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-54c8da9a7bac"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3ee395a38c63"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-baa4dd2c5986"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5b451287c47e"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-5b451287c47e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-36897e1da4ac"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-36897e1da4ac"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-36897e1da4ac"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-3144539c83d3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a595b5ca5679"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ebdaef0f21db"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-ebdaef0f21db"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9553e3adbc2a"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-9553e3adbc2a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-42bb1cd7b3cd"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-42bb1cd7b3cd"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-42bb1cd7b3cd"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4528932e2247"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4528932e2247"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-74043c16db5e"
+    },
+    {
+      "from": "component:bowl",
+      "to": "card:ja-v-74043c16db5e"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-23d807f4f375"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b1ccc665edf2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-602940cfc449"
+    },
+    {
+      "from": "component:plate",
+      "to": "card:ja-v-602940cfc449"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-602940cfc449"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2f734ba866d9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-49863ee12a96"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ac4dde449fe8"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-ac4dde449fe8"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-ac4dde449fe8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-497356cf0646"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-497356cf0646"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-99f7c98099b1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-68ea919020d5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-68ea919020d5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0b6bbed28f82"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-0b6bbed28f82"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a8c7075ce096"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-a8c7075ce096"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-a8c7075ce096"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e05b8e36c6ca"
+    },
+    {
+      "from": "component:yarn-thread-rope",
+      "to": "card:ja-v-e05b8e36c6ca"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-317542d02c5e"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-317542d02c5e"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-317542d02c5e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cdc7fbcaab99"
+    },
+    {
+      "from": "component:glass",
+      "to": "card:ja-v-cdc7fbcaab99"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-cdc7fbcaab99"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-eef9d372f5df"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-eef9d372f5df"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-75ac90da3b27"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-75ac90da3b27"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-75ac90da3b27"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-001a4faf05bd"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-001a4faf05bd"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-001a4faf05bd"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-001a4faf05bd"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-5fb1d5e308b6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-80b68bbbc870"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-80b68bbbc870"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-80b68bbbc870"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-400da51eb499"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-400da51eb499"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-400da51eb499"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-acc3dd26ba1e"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-acc3dd26ba1e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d76e957b268f"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-d76e957b268f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-385cc0d9ee98"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-385cc0d9ee98"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-859aec8573b3"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-859aec8573b3"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-859aec8573b3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e64b189d1607"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-e64b189d1607"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-09d74d630a45"
+    },
+    {
+      "from": "component:shop",
+      "to": "card:ja-v-09d74d630a45"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-09d74d630a45"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b34b4a2e7a98"
+    },
+    {
+      "from": "component:gem",
+      "to": "card:ja-v-b34b4a2e7a98"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-08e3c50181be"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-08e3c50181be"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-08e3c50181be"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-190aae33ad24"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-190aae33ad24"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cb7d8a487c4f"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-cb7d8a487c4f"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-cb7d8a487c4f"
+    },
+    {
+      "from": "component:fabric",
+      "to": "card:ja-v-cb7d8a487c4f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-92bebda5ac98"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-92bebda5ac98"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7cdf94430817"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-7cdf94430817"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6fe6f680e0e0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2850b5703e8b"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-2850b5703e8b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ac3939d71e1e"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-ac3939d71e1e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-67d99c6ae58e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d67a7d3dacc9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-8438eda3cfc0"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-8438eda3cfc0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1a43c96593cb"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-1a43c96593cb"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-1a43c96593cb"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9e9dbd477486"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-9e9dbd477486"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f64f1036d22a"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-f64f1036d22a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6bbf1546d4d7"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6bbf1546d4d7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6992f8889c8c"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-6992f8889c8c"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-6992f8889c8c"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6992f8889c8c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d5a23463d010"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-d5a23463d010"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-88c9d9718867"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e5e8eaecaa3f"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-e5e8eaecaa3f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-84c8eeeb03ab"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5dc14aea92c7"
+    },
+    {
+      "from": "component:cow",
+      "to": "card:ja-v-5dc14aea92c7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-afb2c2f9a135"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-afb2c2f9a135"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-10e568715d3a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6e098e54aa63"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6e098e54aa63"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-83365ed9e3db"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-696107ad9e08"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-696107ad9e08"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-696107ad9e08"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-26a964fd9243"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2e7b28af830b"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-2e7b28af830b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d10df0e56846"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-d10df0e56846"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d72e08381953"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-d72e08381953"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-921d54ba31ef"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c506bd7fb201"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-c506bd7fb201"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4b9574b8d3b9"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-4b9574b8d3b9"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4b9574b8d3b9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9a9a5c6d448c"
+    },
+    {
+      "from": "component:shop",
+      "to": "card:ja-v-9a9a5c6d448c"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-9a9a5c6d448c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ceaf3971ff83"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fd0090161525"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-fd0090161525"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4aa5c84df90c"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-4aa5c84df90c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6027e0e1c622"
+    },
+    {
+      "from": "component:shop",
+      "to": "card:ja-v-6027e0e1c622"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-6027e0e1c622"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9a8a0ffc08d3"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-9a8a0ffc08d3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7c4bedf9eff4"
+    },
+    {
+      "from": "component:flag",
+      "to": "card:ja-v-7c4bedf9eff4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-506e7ed10461"
+    },
+    {
+      "from": "component:shop",
+      "to": "card:ja-v-506e7ed10461"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3534dd7d07d1"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-3534dd7d07d1"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-3534dd7d07d1"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-3534dd7d07d1"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-8ce0a0ec59c4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1b6483e173f3"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-1b6483e173f3"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-1b6483e173f3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ad9fb52e6dff"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a96ca9b29f0d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d860a871b14d"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-d860a871b14d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-224fe0f121ab"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-224fe0f121ab"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-188bdf18a50c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-698044202165"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-698044202165"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4fd3d09440c1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5bbf746af479"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-5bbf746af479"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-3813940acf07"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-3813940acf07"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-3813940acf07"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-97dfa455ab7e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f754ac11a73b"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-f754ac11a73b"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-f754ac11a73b"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-597577664a1b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-74f77120e84d"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-74f77120e84d"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-4063840184cf"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a491f1acccc3"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-a491f1acccc3"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-a491f1acccc3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ede466428b1b"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-ede466428b1b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-10984ece1206"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-10984ece1206"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0cc907790ad0"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-0cc907790ad0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a5dbfebd3fae"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-a5dbfebd3fae"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-1c7565a62dc9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5ed3001d6892"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-5ed3001d6892"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-5ed3001d6892"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-dc5177422a8b"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-dc5177422a8b"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-dc5177422a8b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-01016753b889"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ebb68031a152"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c2a96f1d7abc"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-c2a96f1d7abc"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-c2a96f1d7abc"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-c2a96f1d7abc"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-96e39ee9cb18"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c2a7e49d3e08"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-c2a7e49d3e08"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-40dee6baff53"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-40dee6baff53"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d34b59e423f3"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-d34b59e423f3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bcfbced3ea21"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-bcfbced3ea21"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a249b72fa923"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-a249b72fa923"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-25611a347757"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-25611a347757"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b639fedc63ec"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d242b38667c8"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-d242b38667c8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2d7d45d5614e"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-2d7d45d5614e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-55fef51b0694"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-55fef51b0694"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-55fef51b0694"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fb3e6c8865d4"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-fb3e6c8865d4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ba0c8a160c33"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-ba0c8a160c33"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-ba0c8a160c33"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5e97c99f1db9"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-5e97c99f1db9"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cda9169e9fa2"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-cda9169e9fa2"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-cda9169e9fa2"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7cc10603c197"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-7cc10603c197"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-aef5eed601c5"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-aef5eed601c5"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-aef5eed601c5"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9f59b44e2237"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a557e263cea4"
+    },
+    {
+      "from": "component:car-taxi",
+      "to": "card:ja-v-a557e263cea4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-50579c22e90d"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-50579c22e90d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cbb4297f3dd7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c244e16d1e60"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-c244e16d1e60"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b1b10c2f6445"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-7e87850c448d"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-79f8de04d6f6"
+    },
+    {
+      "from": "component:apple",
+      "to": "card:ja-v-79f8de04d6f6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f2e8d12a8234"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-f2e8d12a8234"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0958f7553d9f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9ff4f40a3428"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-9ff4f40a3428"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f9d62cb2d38a"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-f9d62cb2d38a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9fb793c875d7"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-9fb793c875d7"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-9fb793c875d7"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6777bcda7f1e"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-6777bcda7f1e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d0c8497457bd"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-19bd7db9d5d0"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d42b5be1c4ad"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b37750755344"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-f14d2c0c7442"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9567eaf8fe9b"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-9567eaf8fe9b"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-9567eaf8fe9b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cb7a14590e8e"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-cb7a14590e8e"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-cb7a14590e8e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-26d771953f4b"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-26d771953f4b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cabda7989563"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-cabda7989563"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-cc6f385f3a90"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-cc6f385f3a90"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bdf7ba87a26a"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-bdf7ba87a26a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-2c3dfcbde58b"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d6b0cff12d70"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-d6b0cff12d70"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fb6b2d93a83c"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e99feae5bc25"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-e99feae5bc25"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bc01756b4d89"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-bc01756b4d89"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-bc01756b4d89"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-415802b8c769"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-415802b8c769"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-415802b8c769"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a8c0f98a1f64"
+    },
+    {
+      "from": "component:cat",
+      "to": "card:ja-v-a8c0f98a1f64"
+    },
+    {
+      "from": "component:diagram-convention",
+      "to": "card:ja-v-a8c0f98a1f64"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4397422fc9fb"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4397422fc9fb"
+    },
+    {
+      "from": "component:tree-plant",
+      "to": "card:ja-v-4397422fc9fb"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-86592fe77e48"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-86592fe77e48"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-86592fe77e48"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b5e9e035a8be"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-b5e9e035a8be"
+    },
+    {
+      "from": "component:open-box",
+      "to": "card:ja-v-b5e9e035a8be"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-b5e9e035a8be"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bdc2a3d728dd"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-bdc2a3d728dd"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-bdc2a3d728dd"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a4ccf0b7bace"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-a4ccf0b7bace"
+    },
+    {
+      "from": "component:house",
+      "to": "card:ja-v-a4ccf0b7bace"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-40179481fcf6"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-40179481fcf6"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4690961b5456"
+    },
+    {
+      "from": "component:bowl",
+      "to": "card:ja-v-4690961b5456"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d31e008f6e8e"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-97526e11c703"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-97526e11c703"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4fa253e10946"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4fa253e10946"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-e9ad09158eb3"
+    },
+    {
+      "from": "component:hand",
+      "to": "card:ja-v-e9ad09158eb3"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-bd365f430f35"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-bd365f430f35"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-a001b24baf12"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-a001b24baf12"
+    },
+    {
+      "from": "component:open-box",
+      "to": "card:ja-v-a001b24baf12"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-a001b24baf12"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4f9ae60eff62"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4f9ae60eff62"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-eeb8ecca964f"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-0c5871310c83"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-fa26a112a479"
+    },
+    {
+      "from": "component:car-taxi",
+      "to": "card:ja-v-fa26a112a479"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ea952b83ac80"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-9910372c1964"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-9910372c1964"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b2f08cdf5ab4"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-b2f08cdf5ab4"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ceb7b2a20cbd"
+    },
+    {
+      "from": "component:mountain",
+      "to": "card:ja-v-ceb7b2a20cbd"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7b2479107ae1"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-135a822fbf3a"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-135a822fbf3a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-6f2e359ff6c8"
+    },
+    {
+      "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-6f2e359ff6c8"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-81b56dc2a618"
+    },
+    {
+      "from": "component:doorway",
+      "to": "card:ja-v-81b56dc2a618"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-115fd51b8d38"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-5f4c2dcf05ba"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-5f4c2dcf05ba"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-5f4c2dcf05ba"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d2a96c6d5f6a"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-d2a96c6d5f6a"
+    },
+    {
+      "from": "component:paper-book-pencil",
+      "to": "card:ja-v-d2a96c6d5f6a"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-d215c2071f47"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-b4d0a55dd496"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-b4d0a55dd496"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-4638d2c26682"
+    },
+    {
+      "from": "component:office-school",
+      "to": "card:ja-v-4638d2c26682"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-4638d2c26682"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-ac1e4f6bee13"
+    },
+    {
+      "from": "component:ball",
+      "to": "card:ja-v-ac1e4f6bee13"
+    },
+    {
+      "from": "component:yarn-thread-rope",
+      "to": "card:ja-v-ac1e4f6bee13"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-01df3c579080"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-01df3c579080"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-7e8dc4d63e82"
+    },
+    {
+      "from": "component:character-relationship",
+      "to": "card:ja-v-7e8dc4d63e82"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-7e8dc4d63e82"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-v-c370702e86ab"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-v-c370702e86ab"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-cat"
+    },
+    {
+      "from": "component:cat",
+      "to": "card:ja-cat"
+    },
+    {
+      "from": "component:person",
+      "to": "card:ja-cat"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-banana"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-umbrella"
+    },
+    {
+      "from": "style",
+      "to": "card:ja-cup"
+    },
+    {
+      "from": "card:ja-v-947395f42397",
+      "to": "family:counting-blocks"
+    },
+    {
+      "from": "card:ja-v-7c4d1abbdd61",
+      "to": "family:seasonal-park"
+    }
+  ],
+  "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."
+}

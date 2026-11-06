@@ -1,0 +1,148 @@
+{
+  "issue": 72,
+  "batch": "batch-04",
+  "numberStart": 31,
+  "styleProfile": "cat-png",
+  "assets": [
+    {
+      "id": "ja-v-7c4d1abbdd61",
+      "meaning": "Winter",
+      "path": "artifacts/card-regeneration/batch-04/31-winter.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Snow-covered evergreen and falling snowflakes\nProduction composition: One evergreen tree with green layered branches heavily capped in white snow, a little snow at its foot and a few clearly visible falling snowflakes. No Christmas ornaments, gifts, sky panel or text.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-7e87850c448d",
+      "meaning": "Rain",
+      "path": "artifacts/card-regeneration/batch-04/32-rain.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Rain falls from a soft cloud onto a puddle.\nProduction composition: One soft pale lavender-gray cloud above several descending blue raindrops and a shallow blue puddle. Make the falling rain clear; no lightning, sun, umbrella or ground strip.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-81e708aba22f",
+      "meaning": "Half",
+      "path": "artifacts/card-regeneration/batch-04/33-half.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A round orange divided into two equal halves\nProduction composition: Exactly two equal halves of ONE orange fruit cut across its middle, both cut circular faces visible at a slight three-quarter angle, placed side by side with a clean gap. Equal sizes, orange peel, pale pith ring, simple radial juicy segments. No whole fruit, knife or extra wedges.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-887f569257fd",
+      "meaning": "City",
+      "path": "artifacts/card-regeneration/batch-04/34-city.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A cluster of tall colorful city buildings\nProduction composition: A compact cluster of five colorful tall urban buildings of differing heights, with simple repeated windows, lavender, warm gold and pink facades. Taller buildings dominate, a small shared baseline only, no sky panel, roads, vehicles, signs or people.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-88c9d9718867",
+      "meaning": "Archeology",
+      "path": "artifacts/card-regeneration/batch-04/35-archeology.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Excavation brush uncovers a buried broken ancient pot.\nProduction composition: A small excavation patch showing an ancient terracotta pot partly buried in brown earth, with a missing rim section and one nearby pottery shard. A single small excavation brush with gold wooden handle and violet ferrule rests beside the exposed pot, bristles pointing toward it. Simple readable archaeological discovery, no person, hand, labels or extra tools.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-8ce0a0ec59c4",
+      "meaning": "Engineering",
+      "path": "artifacts/card-regeneration/batch-04/36-engineering.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Gear, ruler, and bridge under construction.\nProduction composition: A small bridge under construction with two supports and a visibly unfinished deck, accompanied by one violet gear and one golden ruler in the foreground. Balanced single composition, bridge dominant, no workers or cranes, ruler has simple tick marks without numerals, no labels or diagrams.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-921d54ba31ef",
+      "meaning": "Color",
+      "path": "artifacts/card-regeneration/batch-04/37-color.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Paint palette with five colorful paint wells.\nProduction composition: One warm golden wooden artists palette with thumb hole and exactly FIVE distinct paint wells: red, yellow, green, blue and violet. Clear separate saturated colors. No brush, paint container, letters or other objects.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-947395f42397",
+      "meaning": "Four Things",
+      "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Four colorful identical blocks\nProduction composition: Exactly FOUR identical-size cube toy blocks, separated in a tidy two-by-two arrangement with generous white gaps, same three-quarter orientation. One gold, one pink, one lavender, one sky blue. No letters, numerals, dots, extra blocks or cast shadows.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-96e39ee9cb18",
+      "meaning": "Light",
+      "path": "artifacts/card-regeneration/batch-04/39-light.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A glowing lamp casts radiating light.\nProduction composition: One switched-on table lamp with warm golden lampshade and violet stem/base. Several simple golden rays clearly radiate outward from the glowing shade to convey emitted LIGHT. Plain white background remains visible between rays, no room or furniture, text or face.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-99f7c98099b1",
+      "meaning": "Television",
+      "path": "artifacts/card-regeneration/batch-04/40-television.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A television screen with antenna and feet\nProduction composition: One compact retro television with rounded violet casing, two short feet, two angled aerial rods and a simple pale-blue blank screen, small golden control knobs. Three-quarter view, clear complete silhouette. No screen content, letters, logos, faces or surrounding furniture.\nOne square illustration only. Pure opaque WHITE background, no tint, vignette, drop shadow, enclosing frame, text or watermark. Match reference contour weight and soft interior shading, without copying reference subjects or decorative motifs.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; preserve white background"
+        }
+      ]
+    }
+  ]
+}

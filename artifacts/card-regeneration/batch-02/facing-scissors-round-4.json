@@ -1,0 +1,23 @@
+{
+  "issue": 72,
+  "round": 4,
+  "asset": {
+    "id": "ja-v-1ee90bf5d13a",
+    "meaning": "To Cut",
+    "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v5.png",
+    "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card 18\nInput image is the edit target. Make ONLY these two composition changes:\n1. Rotate/reposition the existing scissors on the RIGHT so the blade tips face LEFT toward the paper. Put the orange handles farther right and the blade opening aligned with the paper's middle. Keep a clear white gap between the blade tips and the sheet's right edge: the scissors must NOT touch, overlap, pierce or cut the paper.\n2. Add one clean HORIZONTAL DASHED VIOLET LINE across the middle of the intact paper sheet, aligned with the approaching blade tips. The dashes remain entirely on the paper and end at its right edge; they do not cross the white gap.\nKeep the whole paper rectangle on the LEFT, intact on all four edges. Preserve its current size, position and soft lavender shading. Preserve the scissors' design, orange handles, lavender blades, violet outline and soft shading; only change their orientation/placement as required. Keep the same pure white background and square canvas. No cut, missing paper section, strips, scraps, hands, arrows, words, extra objects or branding. Separate scissors facing a dashed cutting guide, ready to cut but not cutting.",
+    "tool": "built-in image_gen",
+    "styleProfile": "cat-png",
+    "styleVariant": "cat-white-v3",
+    "styleTrialRound": 4,
+    "revisionRound": 4,
+    "status": "awaiting-user-feedback",
+    "visualReview": "Scissors face left toward an intact paper sheet, aligned with a horizontal dashed violet guide. A clear gap keeps the objects separate; there is no cutting interaction.",
+    "references": [
+      {
+        "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v4.png",
+        "role": "edit target; keep separate objects and style, rotate scissors toward paper and add guide"
+      }
+    ]
+  }
+}

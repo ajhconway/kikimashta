@@ -1,0 +1,137 @@
+{
+  "issue": 72,
+  "batch": "batch-02",
+  "numberStart": 11,
+  "assets": [
+    {
+      "id": "ja-banana",
+      "meaning": "Banana",
+      "path": "artifacts/card-regeneration/batch-02/11-banana.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One recognizable curved yellow banana.\nProduction composition for this card: One single whole unpeeled yellow banana, full curved crescent with a small brown stem and brown tip; no bunch, peeled skin, face or fruit bowl.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-dog",
+      "meaning": "Dog",
+      "path": "artifacts/card-regeneration/batch-02/12-dog.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One friendly domestic dog sitting, full body, floppy ears, a distinct short muzzle, four paws and a curved tail; simple warm tan fur, no collar text or props. Clearly canine rather than feline.\nProduction composition for this card: A sitting tan domestic dog with floppy ears, distinct muzzle, visible front paws and hind paws, curved tail; friendly quiet expression. Keep the silhouette distinctly canine. One animal only.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-umbrella",
+      "meaning": "Umbrella",
+      "path": "artifacts/card-regeneration/batch-02/13-umbrella.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One open umbrella with curved handle.\nProduction composition for this card: One fully open umbrella with a simple curved hooked handle and a pink canopy divided into a few broad orange and pink panels; dark-purple shaft and outline. No rain, person or backdrop.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-10e568715d3a",
+      "meaning": "Blue",
+      "path": "artifacts/card-regeneration/batch-02/14-blue.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Saturated blue paint splash, brush, and blue swatch.\nProduction composition for this card: Use a truly SATURATED medium blue paint swatch with a large simple blue paint splash and one blue-loaded brush. Blue is the taught color, so use saturated blue rather than lavender or pale sky blue. The large blue region dominates; no letters or labels.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-137737e5ce1f",
+      "meaning": "Light",
+      "path": "artifacts/card-regeneration/batch-02/15-light-bulb.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A glowing lamp bulb\nProduction composition for this card: One recognizable yellow glowing electric light bulb with a short screw base, simple filament and four to six broad yellow light rays. Show light with rays and yellow fill rather than a background glow or gradient. No lamp stand or room.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-188bdf18a50c",
+      "meaning": "Feathers",
+      "path": "artifacts/card-regeneration/batch-02/16-feather.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A narrow asymmetric feather with many fine diagonal barbs and a long exposed central quill.\nProduction composition for this card: One narrow gently curved lavender feather tilted diagonally, visibly asymmetric vanes, several simple fine diagonal barbs and a long bare central quill. Keep it clearly feather-like rather than a leaf or fur tuft; no bird or decorative eye motif.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-19bd7db9d5d0",
+      "meaning": "Sky",
+      "path": "artifacts/card-regeneration/batch-02/17-sky.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Broad blue sky with two white clouds and a tiny ground strip.\nProduction composition for this card: A broad simple blue sky region with two white clouds and only a very thin green ground strip at the bottom. Sky occupies nearly all the scene; no sun, buildings, mountains or text. Center the scene with clean white outer margin and no drawn frame.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-1ee90bf5d13a",
+      "meaning": "To Cut",
+      "path": "artifacts/card-regeneration/batch-02/18-cutting.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Scissors cutting a sheet along a dashed cut line\nProduction composition for this card: One pair of open orange-handled scissors actively cutting into a plain white paper sheet along a short dashed guide, with a small separated paper strip making the cut visible. Dark-purple blade edges, accurate paired blades and joint. No hands, writing or other tools.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-223e5321ecb8",
+      "meaning": "Onion",
+      "path": "artifacts/card-regeneration/batch-02/19-onion.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A golden onion with papery skin and green shoots\nProduction composition for this card: One golden onion bulb with a pointed neck, short green shoots, fine root wisps and a few curved papery skin lines. Warm golden tan body with understated surface detail; no face, cut onion, chopping board or other vegetables.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    },
+    {
+      "id": "ja-v-23d807f4f375",
+      "meaning": "Shellfish",
+      "path": "artifacts/card-regeneration/batch-02/20-scallop-shell.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A ridged scallop shell\nProduction composition for this card: One recognizable fan-shaped scallop shell, pink with a few broad lavender radial ribs, scalloped outer edge and small hinge ears at the narrow base. Full shell visible, slightly tilted. No pearl, sand, water, plate or extra shells.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved shared illustration style only"
+        }
+      ]
+    }
+  ]
+}

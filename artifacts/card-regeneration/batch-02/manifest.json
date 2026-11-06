@@ -1,0 +1,774 @@
+{
+  "issue": 72,
+  "batch": "batch-02",
+  "numberStart": 11,
+  "status": "approved",
+  "tool": "built-in image_gen",
+  "userFeedback": [
+    {
+      "round": 1,
+      "request": "Let's try all 10 again with a different style reference. Can you use the cat png from the root directory?",
+      "scope": "all ten batch 02 cards",
+      "reference": "artifacts/card-regeneration/references/cat-style-reference.png"
+    },
+    {
+      "round": 2,
+      "request": "The background color should be the same as in the old cards. Remove the pot of paint from blue and adjust the size/placement accordingly. Remove the ground from sky. Keep the others the same.",
+      "changes": {
+        "all": "white background matching old cards",
+        "14": "remove paint pot, rebalance splash and brush",
+        "17": "remove ground"
+      },
+      "invariants": "Keep every other subject drawing and the cat style unchanged."
+    },
+    {
+      "round": 2,
+      "additionalRequest": "Oh and the scissors cutting the paper is unnatural.",
+      "handling": "Correct physical blade/paper occlusion and trailing offcut; preserve the illustration style and white background."
+    },
+    {
+      "round": 3,
+      "approvedCardIds": [
+        "ja-banana",
+        "ja-dog",
+        "ja-umbrella",
+        "ja-v-10e568715d3a",
+        "ja-v-137737e5ce1f",
+        "ja-v-188bdf18a50c",
+        "ja-v-19bd7db9d5d0",
+        "ja-v-223e5321ecb8",
+        "ja-v-23d807f4f375"
+      ],
+      "request": "All good except for 18. Can we have the scissors and paper separate. I don't think it's going to get the actual cutting part right."
+    },
+    {
+      "round": 4,
+      "request": "I still want the scissors facing the paper and the dashed line on the paper."
+    },
+    {
+      "round": 5,
+      "approval": "Approved, let's move to batch 3",
+      "approvedCardIds": [
+        "ja-v-1ee90bf5d13a"
+      ]
+    }
+  ],
+  "reviewNotes": [
+    "All ten cards are approved. The selected white-background cat-style artwork is retained.",
+    "Card 18 uses separate scissors facing the intact sheet and aligned with its dashed guide.",
+    "Batch 03 is authorized. Earlier variants, prompts and hashes remain preserved."
+  ],
+  "assets": [
+    {
+      "id": "ja-banana",
+      "meaning": "Banana",
+      "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-banana",
+          "meaning": "Banana",
+          "path": "artifacts/card-regeneration/batch-02/11-banana.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One recognizable curved yellow banana.\nProduction composition for this card: One single whole unpeeled yellow banana, full curved crescent with a small brown stem and brown tip; no bunch, peeled skin, face or fruit bowl.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Single curved yellow banana with stem and tip; clear silhouette.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1042662,
+          "sha256": "24e08bca63fbe68ded46512224436cc40a381c006cff33a5320b3e90872fdaaf"
+        },
+        {
+          "id": "ja-banana",
+          "meaning": "Banana",
+          "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One recognizable curved yellow banana.\nSubject composition: One single whole unpeeled yellow banana, full curved crescent with a small brown stem and brown tip; no bunch, peeled skin, face or fruit bowl.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Single banana with warm golden planes and soft shading on pale lavender-cream.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1163551,
+          "sha256": "0474fce868e6f0fb17eb17f8f5e34340d1a979e8f119f5f4db176a64daf441f4"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1071522,
+      "sha256": "b36ca21f7582e1edfdbdc72b5d6bd8813b3ab51fa560c0ac8cd5b47d651a8ed3",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-dog",
+      "meaning": "Dog",
+      "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-dog",
+          "meaning": "Dog",
+          "path": "artifacts/card-regeneration/batch-02/12-dog.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One friendly domestic dog sitting, full body, floppy ears, a distinct short muzzle, four paws and a curved tail; simple warm tan fur, no collar text or props. Clearly canine rather than feline.\nProduction composition for this card: A sitting tan domestic dog with floppy ears, distinct muzzle, visible front paws and hind paws, curved tail; friendly quiet expression. Keep the silhouette distinctly canine. One animal only.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Sitting floppy-eared dog with muzzle, four paws and tail.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1285414,
+          "sha256": "118f0e410901700670c05e64b6868b09cf6c2d7e775c3e4bfdd6802ac9742d8c"
+        },
+        {
+          "id": "ja-dog",
+          "meaning": "Dog",
+          "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One friendly domestic dog sitting, full body, floppy ears, a distinct short muzzle, four paws and a curved tail; simple warm tan fur, no collar text or props. Clearly canine rather than feline.\nSubject composition: A sitting tan domestic dog with floppy ears, distinct muzzle, visible front paws and hind paws, curved tail; friendly quiet expression. Keep the silhouette distinctly canine. One animal only.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Sitting tan dog with rounded features, violet contours and soft dimensional shading.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1483171,
+          "sha256": "0748b0ff0e69c435907061be74532198886afdb5541e03ad7eedd8b89da13672"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1263949,
+      "sha256": "eeb90977cdd71dd9a4223f27542f18b87e9d2da9da5e6958f1f989226fa89c8e",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-umbrella",
+      "meaning": "Umbrella",
+      "path": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-umbrella",
+          "meaning": "Umbrella",
+          "path": "artifacts/card-regeneration/batch-02/13-umbrella.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: One open umbrella with curved handle.\nProduction composition for this card: One fully open umbrella with a simple curved hooked handle and a pink canopy divided into a few broad orange and pink panels; dark-purple shaft and outline. No rain, person or backdrop.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Open pink/orange canopy with shaft and hooked handle.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1161157,
+          "sha256": "762e2c772f59bdd3e4e3d2ef802ecf55a502569efaa5127daaf82a659728f552"
+        },
+        {
+          "id": "ja-umbrella",
+          "meaning": "Umbrella",
+          "path": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One open umbrella with curved handle.\nSubject composition: One fully open umbrella with a simple curved hooked handle and a pink canopy divided into a few broad orange and pink panels; deep-violet shaft and outline. No rain, person or backdrop.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Open pink/gold umbrella with violet shaft and curved handle, softly shaded panels.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1256372,
+          "sha256": "3bccb5a070108dc1ff9edb9be2caf17869b8497bdb6b36066fd8d661dc2f511b"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1138794,
+      "sha256": "87536b6a75df16fa758e2e12db1e668c4499ea4400815f5e135da5266c9549ba",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-10e568715d3a",
+      "meaning": "Blue",
+      "path": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Remove the entire paint pot/jar and all of its outline and contents. Leave ONLY the existing saturated blue paint splash (with its small droplets) and the existing blue-loaded brush. Rebalance this two-part composition: enlarge/recenter the splash toward the center-left and position the brush diagonally at its lower-right, so together they fill about 70–75 percent of the canvas with clean margins and no empty space reserved for the removed pot. Preserve the current soft shading, shapes and color design of the splash and brush; only scale/reposition them as needed. Replace the pink/lavender-tinted canvas backdrop with pure opaque white (#FFFFFF), matching the older cards. No pot, container, extra paint stroke, new objects, logo or text.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Removed paint pot; enlarged/recentered splash and balanced brush; pure white canvas.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/14-blue-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-10e568715d3a",
+          "meaning": "Blue",
+          "path": "artifacts/card-regeneration/batch-02/14-blue.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Saturated blue paint splash, brush, and blue swatch.\nProduction composition for this card: Use a truly SATURATED medium blue paint swatch with a large simple blue paint splash and one blue-loaded brush. Blue is the taught color, so use saturated blue rather than lavender or pale sky blue. The large blue region dominates; no letters or labels.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Saturated blue splash, paint swatch and loaded brush; blue is dominant.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1191693,
+          "sha256": "2d988a0cfb2fe336adb6a413818717e2ed8483a875065b9d9f54718cdf22a1a8"
+        },
+        {
+          "id": "ja-v-10e568715d3a",
+          "meaning": "Blue",
+          "path": "artifacts/card-regeneration/batch-02/14-blue-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Saturated blue paint splash, brush, and blue swatch.\nSubject composition: Use a truly SATURATED medium blue paint swatch with a large simple blue paint splash and one blue-loaded brush. Blue is the taught color, so use saturated blue rather than lavender or pale sky blue. The large blue region dominates; no letters or labels.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Saturated blue paint with a softly shaded brush and paint pot; blue remains dominant.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1331591,
+          "sha256": "cbce8ca9dcdedc0865d3ba75c8a4dca2be086ad56479b0aaf2a51f29a5256767"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1236023,
+      "sha256": "5315406ba5022a6e79e47ba15c56f77b63da8889e25071daad8f0d56bf2ddcca",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-137737e5ce1f",
+      "meaning": "Light",
+      "path": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-137737e5ce1f",
+          "meaning": "Light",
+          "path": "artifacts/card-regeneration/batch-02/15-light-bulb.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A glowing lamp bulb\nProduction composition for this card: One recognizable yellow glowing electric light bulb with a short screw base, simple filament and four to six broad yellow light rays. Show light with rays and yellow fill rather than a background glow or gradient. No lamp stand or room.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Yellow electric bulb with visible filament, screw base and six light rays.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1124914,
+          "sha256": "eb84e07938d2cc553158b44776488c8bd9e64f979f72807b9401f4ee4bf56ebe"
+        },
+        {
+          "id": "ja-v-137737e5ce1f",
+          "meaning": "Light",
+          "path": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A glowing lamp bulb\nSubject composition: One recognizable yellow glowing electric light bulb with a short screw base, simple filament and four to six broad yellow light rays. Show light with rays and yellow fill rather than a background glow or gradient. No lamp stand or room.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Warm yellow bulb, violet screw base and softly shaded light rays; no face or labels.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1210774,
+          "sha256": "dc1db7f08cb8dad1cc6343abe0381fae25f21b9fc9677cc22227439a108139f2"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1165512,
+      "sha256": "95ec639d1a6cab64b5ac7a426472ae41ba20ca03175e398944b71aebad700f64",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-188bdf18a50c",
+      "meaning": "Feathers",
+      "path": "artifacts/card-regeneration/batch-02/16-feather-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/16-feather-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-188bdf18a50c",
+          "meaning": "Feathers",
+          "path": "artifacts/card-regeneration/batch-02/16-feather.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A narrow asymmetric feather with many fine diagonal barbs and a long exposed central quill.\nProduction composition for this card: One narrow gently curved lavender feather tilted diagonally, visibly asymmetric vanes, several simple fine diagonal barbs and a long bare central quill. Keep it clearly feather-like rather than a leaf or fur tuft; no bird or decorative eye motif.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Single asymmetric lavender feather with diagonal barbs and long exposed quill.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1219721,
+          "sha256": "dabc2ccd4e08a19550e8d7de8ca2c562406631e9f2598627eaef3dd6f6728016"
+        },
+        {
+          "id": "ja-v-188bdf18a50c",
+          "meaning": "Feathers",
+          "path": "artifacts/card-regeneration/batch-02/16-feather-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A narrow asymmetric feather with many fine diagonal barbs and a long exposed central quill.\nSubject composition: One narrow gently curved lavender feather tilted diagonally, visibly asymmetric vanes, several simple fine diagonal barbs and a long bare central quill. Keep it clearly feather-like rather than a leaf or fur tuft; no bird or decorative eye motif.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Lavender feather with finer barbs, long quill and soft tonal planes.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1234233,
+          "sha256": "dce9cbb1c6314e8b9f60274cbfcfaac54592264c61342b2b057ed7f656a56ec7"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1231155,
+      "sha256": "0e4f4b576500c9987f0fc0aab15d57755c14039b3f0cf2a406596edec7d1bd37",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-19bd7db9d5d0",
+      "meaning": "Sky",
+      "path": "artifacts/card-regeneration/batch-02/17-sky-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Remove the ENTIRE green ground strip at the bottom, including its dark purple curved horizon line and every trace of green. Continue the existing blue sky naturally into the removed area. Preserve the two clouds exactly: same shapes, positions, scale, purple contours and lavender undershading. Preserve the softly shaded blue sky as the literal subject, but change the outer lavender/pink canvas tint to pure white (#FFFFFF), so the scene fades into a white outer margin. No ground, horizon, grass, land, mountains, sun, frame or extra objects.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Removed all ground and horizon marks; kept clouds and blue sky treatment with white outer canvas.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/17-sky-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-19bd7db9d5d0",
+          "meaning": "Sky",
+          "path": "artifacts/card-regeneration/batch-02/17-sky.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Broad blue sky with two white clouds and a tiny ground strip.\nProduction composition for this card: A broad simple blue sky region with two white clouds and only a very thin green ground strip at the bottom. Sky occupies nearly all the scene; no sun, buildings, mountains or text. Center the scene with clean white outer margin and no drawn frame.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Sky-blue scene with two white clouds and a narrow ground strip; no other landscape subjects.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1165073,
+          "sha256": "f16872a6d0a9132a7a6a2e5cd7d878a495040070ceb9bea259bb5ff9deaf377c"
+        },
+        {
+          "id": "ja-v-19bd7db9d5d0",
+          "meaning": "Sky",
+          "path": "artifacts/card-regeneration/batch-02/17-sky-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Broad blue sky with two white clouds and a tiny ground strip.\nSubject composition: A broad simple blue sky region with two white clouds and only a very thin green ground strip at the bottom. Sky occupies nearly all the scene; no sun, buildings, mountains or text. Center the scene with clean white outer margin and no drawn frame.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Two softly shaded clouds over blue sky and a minimal green horizon; soft scene edges.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1545172,
+          "sha256": "a30b49b97eb0cf9191e3b4b99d7618e1ed86bbd5389a9591a5f907bd024c7976"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1511797,
+      "sha256": "1e9f5be4e15b8b51b454543b9952f9e3bd0dd52b51bf3b6252bb3dd0744817e5",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-1ee90bf5d13a",
+      "meaning": "To Cut",
+      "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v5.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card 18\nInput image is the edit target. Make ONLY these two composition changes:\n1. Rotate/reposition the existing scissors on the RIGHT so the blade tips face LEFT toward the paper. Put the orange handles farther right and the blade opening aligned with the paper's middle. Keep a clear white gap between the blade tips and the sheet's right edge: the scissors must NOT touch, overlap, pierce or cut the paper.\n2. Add one clean HORIZONTAL DASHED VIOLET LINE across the middle of the intact paper sheet, aligned with the approaching blade tips. The dashes remain entirely on the paper and end at its right edge; they do not cross the white gap.\nKeep the whole paper rectangle on the LEFT, intact on all four edges. Preserve its current size, position and soft lavender shading. Preserve the scissors' design, orange handles, lavender blades, violet outline and soft shading; only change their orientation/placement as required. Keep the same pure white background and square canvas. No cut, missing paper section, strips, scraps, hands, arrows, words, extra objects or branding. Separate scissors facing a dashed cutting guide, ready to cut but not cutting.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 4,
+      "revisionRound": 4,
+      "status": "approved",
+      "visualReview": "Scissors face left toward an intact paper sheet, aligned with a horizontal dashed violet guide. A clear gap keeps the objects separate; there is no cutting interaction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v4.png",
+          "role": "edit target; keep separate objects and style, rotate scissors toward paper and add guide"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-1ee90bf5d13a",
+          "meaning": "To Cut",
+          "path": "artifacts/card-regeneration/batch-02/18-cutting.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: Scissors cutting a sheet along a dashed cut line\nProduction composition for this card: One pair of open orange-handled scissors actively cutting into a plain white paper sheet along a short dashed guide, with a small separated paper strip making the cut visible. Dark-purple blade edges, accurate paired blades and joint. No hands, writing or other tools.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Scissors actively cutting paper along a dashed guide, with a separated strip showing the action.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1157083,
+          "sha256": "c61a00622e07ac8b2f08b93783e85c37e8c347ad2490edcff391b22b4b259e9e"
+        },
+        {
+          "id": "ja-v-1ee90bf5d13a",
+          "meaning": "To Cut",
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Scissors cutting a sheet along a dashed cut line\nSubject composition: One pair of open orange-handled scissors actively cutting into a plain white paper sheet along a short dashed guide, with a small separated paper strip making the cut visible. Deep-violet blade edges, accurate paired blades and joint. No hands, writing or other tools.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Orange-handled scissors cutting paper, with a separated strip and violet-toned shading.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1344522,
+          "sha256": "229ff777ecdab23f3e6c6085ff87d6bef0893ac11baaa9da72a431aaac838b99"
+        },
+        {
+          "id": "ja-v-1ee90bf5d13a",
+          "meaning": "To Cut",
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v3.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: Japanese vocabulary card showing the action of cutting paper\nInput image is the STYLE/OBJECT EDIT TARGET. Keep its orange-handled scissors, lavender metal blades, clean violet outlines and soft cat-reference shading, but CORRECT the mechanical scene.\nPrimary request: Show a plausible scissors cut entering the RIGHT EDGE of one sheet of paper. Handles stay to the right, pivot just outside the sheet edge, blade tips point LEFT into the sheet. The scissors are only partly open. The paper is physically BETWEEN the two blades: one blade is in front, the other is partly occluded behind the sheet. Their cutting edges meet at a single clear active cutting point near the right edge, just forward of the pivot. The already-cut slit runs from that point BACK to the right edge toward the handles. A narrow offcut strip peels DOWN and RIGHT on the already-cut/handle side and remains attached at the active cutting point. The main uncut sheet extends left of the tips. A short subtle dashed guide may extend ahead to the left, aligned with the cut.\nImportant: do not put a detached strip floating in front of the blade tips; do not draw scissors simply lying on top of an intact sheet; do not make the paper weave impossibly through the handles or cross the pivot. No extra blades, fake holes, torn jagged paper, arrows, words, labels or hands. The action should read immediately at thumbnail size.\nBackdrop: pure opaque WHITE (#FFFFFF), matching the earlier cards. No lavender canvas tint. Preserve the established illustration style and overall centered scale; changing the scissors-paper interaction is authorized. Output one square card.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-white-v3",
+          "styleTrialRound": 2,
+          "status": "awaiting-user-feedback",
+          "visualReview": "Correct scissors/paper interaction: paper between partly open blades, cut at sheet edge, offcut trailing behind the cutting point; white background.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v2.png",
+              "role": "edit target; preserve foreground design and shading; apply only requested edits"
+            }
+          ],
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1231289,
+          "sha256": "b4d6bd37ed888ae08ce483a8769e72646a5f3e7c3c7166afed607ff7528c61e9"
+        },
+        {
+          "id": "ja-v-1ee90bf5d13a",
+          "meaning": "To Cut",
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v4.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: one Japanese vocabulary illustration, card 18\nPrimary request: Show scissors and paper as TWO SEPARATE OBJECTS, with no cutting interaction.\nInput image is the style/object edit target. Preserve the existing orange handles, softly shaded lavender blades, violet outlines, pale paper shading and white background.\nComposition: one complete uncut rectangular sheet on the LEFT, and one pair of scissors on the RIGHT, angled diagonally with the blades pointing upward/right and handles lower/right. The scissors may be slightly open. Both objects fully visible, similar visual prominence, centered together with generous outer margin. There must be a clear WHITE GAP between the entire paper silhouette and every part of the scissors. Nothing overlaps or touches the paper.\nRemove the existing cut, offcut strip, dashed cutting guide and all simulated cutting geometry. Paper has four continuous intact edges. Keep exactly one sheet and one pair of scissors; no scraps, hands, arrows, action marks, labels, logos, text or extra tools. No background tint or frame. Keep the accepted cat-reference cartoon shading and contour treatment. One square picture.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-white-v3",
+          "styleTrialRound": 3,
+          "revisionRound": 3,
+          "status": "awaiting-user-feedback",
+          "visualReview": "One intact paper sheet and one pair of scissors shown side by side, with a clear white gap and no cutting interaction, dashed guide or offcut.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v3.png",
+              "role": "object/style edit target; separate scissors and intact paper, preserving shading and white backdrop"
+            }
+          ],
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1176389,
+          "sha256": "dcae6053d20934022e836c810828d118f8985e7605b1ab6002bf450e0ad9fc36"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1141296,
+      "sha256": "496f50c96ca4f81317b315b58ae64c3a5bc191c8d2ccba0bb33dd542e101a77e",
+      "userApproval": "User: approved, move to batch 3."
+    },
+    {
+      "id": "ja-v-223e5321ecb8",
+      "meaning": "Onion",
+      "path": "artifacts/card-regeneration/batch-02/19-onion-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/19-onion-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-223e5321ecb8",
+          "meaning": "Onion",
+          "path": "artifacts/card-regeneration/batch-02/19-onion.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A golden onion with papery skin and green shoots\nProduction composition for this card: One golden onion bulb with a pointed neck, short green shoots, fine root wisps and a few curved papery skin lines. Warm golden tan body with understated surface detail; no face, cut onion, chopping board or other vegetables.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Golden onion bulb with curved skin lines, roots and green shoots; recognizable isolated vegetable.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1158123,
+          "sha256": "236ada7f0849d3a3d96ec28f873d0f568ef3bb3263aa397740aa6dcd64e84c55"
+        },
+        {
+          "id": "ja-v-223e5321ecb8",
+          "meaning": "Onion",
+          "path": "artifacts/card-regeneration/batch-02/19-onion-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A golden onion with papery skin and green shoots\nSubject composition: One golden onion bulb with a pointed neck, short green shoots, fine root wisps and a few curved papery skin lines. Warm golden tan body with understated surface detail; no face, cut onion, chopping board or other vegetables.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Golden onion with softer layered shading, green shoots and roots; no white glare marks.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1272937,
+          "sha256": "3274eb03e573fcc4d931141fcaf62589c42114be775d483a40e27aec9a1bf84e"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1166741,
+      "sha256": "0aa0cb8ab63eb243a688f0262a3f90c8050278a5b432274c0176b80cb5e61cd0",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    },
+    {
+      "id": "ja-v-23d807f4f375",
+      "meaning": "Shellfish",
+      "path": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v3.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: existing vocabulary card, minimal edit\nInput image: edit target. Keep the existing cat-reference illustration style, soft internal shading, violet outlines, subject colors, exact drawing details and canvas dimensions. Do not redraw or restyle the subject. \nRequested edit: Change ONLY the empty outer background from its pale pink/lavender tint to pure opaque white (#FFFFFF), matching the older cards. Preserve the foreground illustration exactly as supplied: same silhouette, pose, size, placement, contours, color, soft shading, surface details and expression. Do not change any part of the drawing, including pale highlights or cream/violet shading inside it. Fill all genuine empty background regions with white, including the space around the subject and any open holes. No shadow, halo, tint, vignette, texture, added props or labels.\nOutput exactly one square card; opaque white backdrop, not transparency. The new background color is the only general style change. Do not add logos or text.",
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "styleVariant": "cat-white-v3",
+      "styleTrialRound": 2,
+      "status": "approved",
+      "visualReview": "Background-only edit to pure white; preserve the cat-style subject drawing and placement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v2.png",
+          "role": "edit target; preserve foreground design and shading; apply only requested edits"
+        }
+      ],
+      "previousVersions": [
+        {
+          "id": "ja-v-23d807f4f375",
+          "meaning": "Shellfish",
+          "path": "artifacts/card-regeneration/batch-02/20-scallop-shell.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for a Japanese listening game\nStyle/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.\nPalette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.\nScene/backdrop: plain solid white, opaque background, no frame or rounded card border.\nComposition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.\nLine system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.\nConstraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.\nPrimary request: A ridged scallop shell\nProduction composition for this card: One recognizable fan-shaped scallop shell, pink with a few broad lavender radial ribs, scalloped outer edge and small hinge ears at the narrow base. Full shell visible, slightly tilted. No pearl, sand, water, plate or extra shells.\nInput image role: APPROVED STYLE REFERENCE ONLY. Match the apple card’s dark-purple outline weight, rounded contour treatment and restrained bright cartoon rendering. Do not include the apple or leaf. Subject-specific colors override decorative palette when teaching a named color. Keep all main forms legible at 145px; exact small surface texture is secondary. No answer labels, frame, watermark or extra subjects. Generate one square illustration, not a sheet or mockup.",
+          "tool": "built-in image_gen",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+              "role": "approved shared illustration style only"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "visualReview": "Pink fan-shaped scallop shell with radial ribs, scalloped rim and hinge ears.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1185265,
+          "sha256": "9a857e96571a5d64ba0702f04cef721f5197ddc1c6f46a782ccfb68e840129d4"
+        },
+        {
+          "id": "ja-v-23d807f4f375",
+          "meaning": "Shellfish",
+          "path": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v2.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain very pale warm-cream background with a faint lavender cast, quiet and uniform; no decorative scene or frame. A literal sky scene may contain its necessary blue sky and clouds.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A ridged scallop shell\nSubject composition: One recognizable fan-shaped scallop shell, pink with a few broad lavender radial ribs, scalloped outer edge and small hinge ears at the narrow base. Full shell visible, slightly tilted. No pearl, sand, water, plate or extra shells.\nUse the supplied cat PNG as the ONLY visual style reference. Make this subject fresh from scratch in that style. Do not reuse the earlier card drawing. Keep the subject distinctive and the backdrop quiet. No added face on an inanimate object; no cat features or headphones. One square image.",
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "styleVariant": "cat-png-v2",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "user-selected root cat PNG; style only, not content or branding"
+            }
+          ],
+          "status": "awaiting-user-feedback",
+          "styleTrialRound": 1,
+          "visualReview": "Pink scallop shell with soft violet ribs and dimensional shading, retaining its fan silhouette.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1289915,
+          "sha256": "2e791ba8f90570ac96e486b525046c07d35ec9fce8f1e8eb1571fa99c56c8b8f"
+        }
+      ],
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1206832,
+      "sha256": "1f8969c3db86dda5a6cdbde02486c7fe3a0e5b01d2c50ef4884a7dacc2709c96",
+      "userApproval": "User: all good except 18 (batch 02 feedback round 3)."
+    }
+  ],
+  "styleProfile": "cat-png",
+  "styleVariant": "cat-white-v3",
+  "comparisonGallery": "review-cat-v2.html",
+  "comparisonSheet": "contact-sheet-cat-v2.png",
+  "revisionSummary": "Scissors now face the separate paper sheet and align with a horizontal dashed guide."
+}

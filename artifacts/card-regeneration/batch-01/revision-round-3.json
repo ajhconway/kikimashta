@@ -1,0 +1,27 @@
+{
+  "issue": 72,
+  "round": 3,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "ja-v-66ccf8dd3399",
+      "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: one Japanese vocabulary card illustration\nPrimary request: Correct ONLY the basketball's seam layout.\nImage 1: EDIT TARGET and style reference. Its interior purple seams are WRONG. REMOVE every existing interior seam before redrawing; do not reuse the six-spoke junction.\nImage 2: AUTHORITATIVE SEAM-GEOMETRY REFERENCE, an actual basketball product photograph. Reproduce its visible channel topology faithfully in simplified line art. Do not invent extra channels or a central star. In this view there is one cross-ball equatorial seam and the large looping curved channel above and below it, meeting toward the outer silhouette rather than converging at an interior point. Rotate that photographed seam layout about 25 degrees to give the card an informal tilted orientation. Keep the circle circular.\nKeep Image 1's orange fill, clean dark-purple exterior outline, generous white background, canvas framing and cartoon treatment. Interior channels should be purple, a little narrower than the outer outline. No logos, writing, signatures, valve detail, leather grain or photographic shading from Image 2. No frame, shadow, extra objects or watermark.\nUpdated subject specification:\nOne orange basketball with a real conventional basketball seam layout, informed by the NBA Store product-photo reference. Use a slightly tilted orientation: one continuous gently curved groove crosses the ball diagonally, with the additional sweeping curved channel layout wrapping over the sphere as in the product reference. Keep the channels separate where the reference does; do not bunch the seams into a star-like multiway junction in the visible center. Preserve a round silhouette, dark-purple exterior outline, slightly narrower purple seams, broad orange panels and the simple cartoon style. Plain white background; no branding, text, leather texture, motion lines or extra objects.\nThe product photograph governs seam geometry; the existing illustration governs visual style. Deliver one square illustration.",
+      "tool": "built-in image_gen",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/02-ball-v3.png",
+          "role": "edit target and style reference only; replace incorrect seam topology"
+        },
+        {
+          "path": "artifacts/card-regeneration/references/basketball-nba-store-reference.jpg",
+          "role": "authoritative visible seam geometry reference; omit branding and photo texture",
+          "sourcePage": "https://global.nbastore.com/en/p-12065488"
+        }
+      ],
+      "status": "awaiting-user-feedback",
+      "revisionRound": 3,
+      "visualReview": "Replaced the six-spoke interior junction with a continuous tilted cross-ball groove and separate sweeping arcs based on the real product-photo layout. Orange fill, circular outline and purple cartoon strokes retained."
+    }
+  ]
+}
