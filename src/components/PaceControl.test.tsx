@@ -69,16 +69,54 @@ describe('qualitative practice pace', () => {
     expect(changed).toHaveBeenLastCalledWith({ min: 'minimal', max: 'intense' });
   });
 
-  it('lets a clicked option select a bound and removes options that would reverse the range', () => {
+  it('keeps invalid choices disabled in place and enables them when the other bound allows them', () => {
     const changed = vi.fn();
     render(<Controlled initial={{ min: 'light', max: 'intense' }} changed={changed}/>);
     const min = screen.getByRole('listbox', { name: 'Minimum' });
     fireEvent.click(within(min).getByRole('option', { name: 'High' }));
     expect(changed).toHaveBeenLastCalledWith({ min: 'high', max: 'intense' });
     const max = screen.getByRole('listbox', { name: 'Maximum' });
-    expect(within(max).queryByRole('option', { name: 'Moderate' })).not.toBeInTheDocument();
+    const moderate = within(max).getByRole('option', { name: 'Moderate' });
+    expect(within(min).getAllByRole('option')).toHaveLength(5);
+    expect(within(max).getAllByRole('option')).toHaveLength(5);
+    expect(moderate).toHaveAttribute('aria-disabled', 'true');
+    fireEvent.click(moderate);
+    expect(changed).toHaveBeenCalledTimes(1);
+    expect(selected(max)).toHaveTextContent('Intense');
     fireEvent.click(within(max).getByRole('option', { name: 'High' }));
     expect(changed).toHaveBeenLastCalledWith({ min: 'high', max: 'high' });
+    const intense = within(min).getByRole('option', { name: 'Intense' });
+    expect(intense).toHaveAttribute('aria-disabled', 'true');
+    fireEvent.click(intense);
+    expect(changed).toHaveBeenCalledTimes(2);
+    expect(selected(min)).toHaveTextContent('High');
+    fireEvent.click(within(min).getByRole('option', { name: 'Moderate' }));
+    expect(within(max).getByRole('option', { name: 'Moderate' })).toBe(moderate);
+    expect(moderate).toHaveAttribute('aria-disabled', 'false');
+    fireEvent.click(moderate);
+    expect(changed).toHaveBeenLastCalledWith({ min: 'moderate', max: 'moderate' });
+  });
+
+  it('settles scrolling past disabled choices on the nearest valid bound in either wheel', () => {
+    vi.useFakeTimers();
+    const changed = vi.fn();
+    render(<Controlled changed={changed}/>);
+    const min = screen.getByRole('listbox', { name: 'Minimum' });
+    const max = screen.getByRole('listbox', { name: 'Maximum' });
+    fireEvent.wheel(min, { deltaY: 1000 });
+    min.scrollTop = 480;
+    fireEvent.scroll(min);
+    act(() => { vi.advanceTimersByTime(120); });
+    expect(selected(min)).toHaveTextContent('Moderate');
+    expect(min.scrollTop).toBe(240);
+    expect(changed).toHaveBeenCalledExactlyOnceWith({ min: 'moderate', max: 'moderate' });
+    fireEvent.wheel(max, { deltaY: -1000 });
+    max.scrollTop = 0;
+    fireEvent.scroll(max);
+    act(() => { vi.advanceTimersByTime(120); });
+    expect(selected(max)).toHaveTextContent('Moderate');
+    expect(max.scrollTop).toBe(240);
+    expect(changed).toHaveBeenCalledTimes(1);
   });
 
   it('preserves restored bounds through programmatic scroll events and emits once after user scrolling settles', () => {
