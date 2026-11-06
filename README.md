@@ -11,6 +11,8 @@ Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a
 - [Project plan](PLAN.md)
 - [Agent working agreements](AGENTS.md)
 
+The home screen's **Dev review** button opens a six-word random review for testing, even when nothing is due. It uses the usual quiz and corrective retries, without saving answers or changing learning progress. Finish returns to normal adaptive practice.
+
 Work is tracked in GitHub Issues and implemented through linked pull requests. Initial app setup, shared data types, and automated checks come before parallel feature work.
 
 ## Development
