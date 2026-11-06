@@ -10,7 +10,10 @@ Use the existing **Kikimashta** project in the **Kikimashta** organization: [`by
 - All 37 rollback SQL checks passed against hosted Supabase Auth/Postgres. Follow-up queries confirmed zero fixture users and zero event rows. Security, performance, and health advisors returned no notices. Both private tables deny anonymous reads through the live Data API (HTTP 401 / SQLSTATE 42501).
 - Email authentication is enabled with eight-digit OTPs. The Site URL is `https://kikimashta.com` and the redirect allowlist contains `https://kikimashta.com/`; a follow-up configuration comparison confirmed both settings match.
 - The local ignored `.env.local` and both GitHub Actions repository variables contain the project URL and its modern publishable key. The repository variables were read back and verified. PR checks passed for `866a25f`.
-- Still pending: custom SMTP, code email templates, deployment, received-email verification, authenticated cross-device API/browser verification, and real iPhone testing. Database checks alone do not verify email delivery or browser sync. No SMTP provider has been selected; Resend's free plan is the proposed starting point, pending account creation and sender-domain verification.
+- Resend is connected. The sending-only domain [`kikimashta.com`](https://resend.com/domains/3ef3e0e8-d1b4-4a01-b51e-f8be0c453352) is created in `us-east-1`, with receiving disabled. DNS verification is pending approval through GoDaddy's **Auto configure** flow. The existing DMARC policy is already present.
+- Supabase SMTP is configured with `smtp.resend.com:465`, username `resend`, and sender **Kikimashta <signin@kikimashta.com>**. Its key, **Kikimashta Supabase SMTP**, grants sending access only for this domain. The secret is stored in Supabase Auth settings, never in browser configuration or the repository.
+- Both **Magic link or OTP** and **Confirm signup** use [the code-email template](../supabase/templates/sign-in.html), with subject **Your Kikimashta sign-in code**. The configuration push succeeded and a follow-up comparison found no differences in the declared public SMTP settings or subjects; Supabase masks the password during reads.
+- Still pending: DNS verification, deployment, received-email verification, authenticated cross-device API/browser verification, and real iPhone testing. SMTP configuration alone does not verify email delivery or browser sync.
 
 ## Project and database
 
@@ -27,6 +30,8 @@ Keep the project's Data API maximum row limit at least 200, the client's page si
 In **Authentication → URL Configuration**, set the Site URL to `https://kikimashta.com` and allow `https://kikimashta.com/` as a redirect. Add an exact localhost development URL only if needed.
 
 For new free projects created on or after June 3, 2026, configure **custom SMTP before editing these templates**. Supabase locks email templates when these projects use its built-in sender. Keep the Supabase project on the free plan; supply SMTP credentials from an email provider with a verified sender. Store credentials only in Supabase Auth settings. Provider charges and sending limits depend on that provider. [Supabase's template restriction](https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier).
+
+For this project, Resend supplies SMTP. Approve its exact generated DNS records at GoDaddy, then confirm the domain status is **Verified** in Resend before testing sign-in. Use the domain-scoped sending key as the SMTP password. Open and click tracking are unnecessary for code emails. [Resend's Supabase integration](https://resend.com/docs/send-with-supabase-smtp).
 
 Enable the Email provider. In **Authentication → Email Templates**, edit **Magic link or OTP** to include the code rather than a link:
 
