@@ -37,6 +37,11 @@ jobs:
 
   checks:
     runs-on: ubuntu-24.04
+    container:
+      # Keep this version aligned with @playwright/test in package.json.
+      # Browsers and OS dependencies are bundled; no apt downloads during checks.
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host
     timeout-minutes: 15
     env:
       VITE_BASE_PATH: /
@@ -53,8 +58,6 @@ jobs:
       - name: Install audio verification tools
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: npm run check
-      - run: npx playwright install --with-deps chromium webkit
-        timeout-minutes: 5
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v7.0.2
         if: always()
