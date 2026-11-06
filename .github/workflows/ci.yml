@@ -50,6 +50,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Install audio verification tools
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: npm run check
       - run: npx playwright install --with-deps chromium webkit
         timeout-minutes: 5

@@ -120,7 +120,7 @@ describe('adaptive session flow', () => {
     const items = practicePool.items.slice(0, 10);
     for (let i = 0; i < items.length; i++) {
       expect(screen.getByRole('img')).toHaveAttribute('alt', items[i]!.image.alt);
-      expect(container.querySelector('audio')!.getAttribute('src')).toContain(items[i]!.audio[1]!.src);
+      expect(items[i]!.audio.map(recording => '/' + recording.src)).toContain(container.querySelector('audio')!.getAttribute('src'));
       expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
       await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
     }

@@ -9,6 +9,7 @@ export interface AudioAsset {
   src: string
   source: 'synthesized' | 'recorded'
   voice?: string
+  voiceName?: string
 }
 
 export interface WordItem {

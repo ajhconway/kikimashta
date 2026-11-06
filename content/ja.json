@@ -17,14 +17,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-cat.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-cat.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-cat.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-cat.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-cat.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     },
@@ -42,14 +80,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-dog.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-dog.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-dog.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-dog.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-dog.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     },
@@ -66,14 +142,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-apple.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-apple.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-apple.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-apple.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-apple.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     },
@@ -90,14 +204,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-banana.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-banana.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-banana.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-banana.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-banana.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     },
@@ -115,14 +267,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-umbrella.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-umbrella.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-umbrella.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-umbrella.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-umbrella.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     },
@@ -139,14 +329,52 @@
       },
       "audio": [
         {
-          "src": "audio/marin-ja-cup.mp3",
+          "src": "audio/elevenlabs-v1/otani/ja-cup.mp3",
           "source": "synthesized",
-          "voice": "marin"
+          "voice": "otani",
+          "voiceName": "Otani"
         },
         {
-          "src": "audio/cedar-ja-cup.mp3",
+          "src": "audio/elevenlabs-v1/morioki/ja-cup.mp3",
           "source": "synthesized",
-          "voice": "cedar"
+          "voice": "morioki",
+          "voiceName": "Morioki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/goro/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "goro",
+          "voiceName": "Goro"
+        },
+        {
+          "src": "audio/elevenlabs-v1/tsuki/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "tsuki",
+          "voiceName": "Tsuki"
+        },
+        {
+          "src": "audio/elevenlabs-v1/takeshi/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "takeshi",
+          "voiceName": "Takeshi"
+        },
+        {
+          "src": "audio/elevenlabs-v1/lime/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "lime",
+          "voiceName": "Lime"
+        },
+        {
+          "src": "audio/elevenlabs-v1/ritsuto/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "ritsuto",
+          "voiceName": "Ritsuto"
+        },
+        {
+          "src": "audio/elevenlabs-v1/itsuki/ja-cup.mp3",
+          "source": "synthesized",
+          "voice": "itsuki",
+          "voiceName": "Itsuki"
         }
       ]
     }

@@ -62,7 +62,7 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     audio.pause()
     resetButton()
     audioStatus.textContent = ''
-    audioError.textContent = `Could not play ${voice}. Try again, or try the other voice.`
+    audioError.textContent = `Could not play ${voice}. Try again, or try another voice.`
     audioError.hidden = false
   }
 
@@ -205,7 +205,7 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     voices.setAttribute('role', 'group')
     voices.setAttribute('aria-label', `Japanese voices for ${card.meaning}`)
     for (const clip of card.audio) {
-      const voice = clip.voice === 'marin' ? 'Marin' : 'Cedar'
+      const voice = clip.voiceName || clip.voice.charAt(0).toUpperCase() + clip.voice.slice(1)
       const button = element('button', 'voice-button', clip.available ? voice : `${voice} unavailable`)
       button.type = 'button'
       button.dataset.label = voice

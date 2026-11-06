@@ -761,11 +761,12 @@ test('holding a picture acts as one button press on release', async ({ page }, t
 
 test('an unavailable recording can be retried without recording a premature answer', async ({ page }) => {
   await page.clock.install();
-  await page.route('**/audio/*.mp3', route => route.abort());
+  const audioRequests = /\/audio\/.*\.mp3(?:\?.*)?$/;
+  await page.route(audioRequests, route => route.abort());
   await startReview(page);
   await expect(page.getByRole('alert')).toContainText(/sound couldn't play/i);
   for (const choice of await page.getByRole('button', { name: /choose picture/i }).all()) await expect(choice).toBeDisabled();
-  await page.unroute('**/audio/*.mp3');
+  await page.unroute(audioRequests);
   await page.getByRole('button', { name: /replay word/i }).click();
   await expect(page.getByRole('alert')).toHaveCount(0);
   await chooseHeardPicture(page);

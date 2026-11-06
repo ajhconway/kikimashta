@@ -1,4 +1,4 @@
-/** Build the static vocabulary review library (#27). No network calls. */
+/** Build the static vocabulary review library (#27, #86). No network calls. */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -32,7 +32,7 @@ const html = `<!doctype html>
     <header class="page-header">
       <a class="home-link" href="../">← Listening practice</a>
       <h1>Vocabulary cards</h1>
-      <p>Browse pictures and compare two Japanese voices. Source levels are provisional.</p>
+      <p>Browse pictures and compare Japanese voices. Source levels are provisional.</p>
     </header>
     <form class="filters" role="search" aria-label="Find vocabulary" id="filters">
       <label>Provisional level
@@ -106,14 +106,17 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
     const override = overrides[item.id] || {}
     const imageSrc = libraryMediaPath(item.image?.src, 'images')
     if (!existsSync(join(root, 'public', item.image.src))) throw new Error(`Missing image: ${item.image.src}`)
-    if (!Array.isArray(item.audio) || item.audio.length !== 2) throw new Error(`Expected Marin and Cedar audio: ${item.id}`)
-    const audio = ['marin', 'cedar'].map(voice => {
-      const clips = item.audio.filter(clip => clip.voice === voice)
-      if (clips.length !== 1) throw new Error(`Expected one ${voice} clip: ${item.id}`)
-      const src = libraryMediaPath(clips[0].src, 'audio')
-      const available = existsSync(join(root, 'public', clips[0].src))
-      if (!available) missingAudio.push(clips[0].src)
-      return { voice, src, available }
+    if (!Array.isArray(item.audio) || item.audio.length === 0) throw new Error(`Expected at least one audio recording: ${item.id}`)
+    const voices = new Set()
+    const audio = item.audio.map(clip => {
+      if (!clip || !nonempty(clip.voice) || !/^[a-zA-Z0-9_-]+$/.test(clip.voice)) throw new Error(`Invalid audio voice: ${item.id}`)
+      if (voices.has(clip.voice)) throw new Error(`Duplicate audio voice ${clip.voice}: ${item.id}`)
+      voices.add(clip.voice)
+      if (clip.voiceName !== undefined && !nonempty(clip.voiceName)) throw new Error(`Invalid audio voice name: ${item.id}`)
+      const src = libraryMediaPath(clip.src, 'audio')
+      const available = existsSync(join(root, 'public', clip.src))
+      if (!available) missingAudio.push(clip.src)
+      return { voice: clip.voice, ...(clip.voiceName !== undefined ? { voiceName: clip.voiceName } : {}), src, available }
     })
     return {
       id: item.id, text: item.text, reading: item.reading, meaning: item.meaning, sourceLevel: item.sourceLevel,
@@ -132,7 +135,7 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
   mkdirSync(join(root, 'vocabulary'), { recursive: true })
   writeFileSync(join(root, 'vocabulary/index.html'), html)
   writeFileSync(join(directory, 'library-data.json'), JSON.stringify(data, null, 2) + '\n')
-  return { cards: cards.length, availableAudio: cards.length * 2 - missingAudio.length, missingAudio: missingAudio.length }
+  return { cards: cards.length, availableAudio: cards.reduce((count, card) => count + card.audio.filter(clip => clip.available).length, 0), missingAudio: missingAudio.length }
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

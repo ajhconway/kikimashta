@@ -1,0 +1,87 @@
+{
+  "issue": 86,
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "language": "ja-JP",
+  "generationIdentity": "f38056b6ae38c53be42b2c9d3f8ec11b0fdfa508bc2fccf4105f0faed4b61f41",
+  "createdAt": "2026-11-06T20:19:48.092Z",
+  "cards": 445,
+  "recordings": 3560,
+  "inputCharacters": 11552,
+  "normalization": {
+    "targetLufs": -22,
+    "truePeakCeilingDbtp": -2,
+    "dualMono": true
+  },
+  "processing": "Provider-original MP3s preserved locally in the generation artifact. Delivery MP3s use constant gain and are remeasured after encoding; timing is preserved. True-peak-limited clips remain quieter and are listed for listening review.",
+  "voices": [
+    {
+      "voice": "otani",
+      "id": "3JDquces8E8bkmvbh6Bc",
+      "name": "Otani",
+      "gender": "male",
+      "accent": "standard",
+      "provenance": "content/audio/elevenlabs/otani.json"
+    },
+    {
+      "voice": "morioki",
+      "id": "8EkOjt4xTPGMclNlh1pk",
+      "name": "Morioki",
+      "gender": "female",
+      "accent": "standard",
+      "provenance": "content/audio/elevenlabs/morioki.json"
+    },
+    {
+      "voice": "goro",
+      "id": "OixLI492Bx532sSKQRim",
+      "name": "Goro",
+      "gender": "male",
+      "accent": "kansai",
+      "provenance": "content/audio/elevenlabs/goro.json"
+    },
+    {
+      "voice": "tsuki",
+      "id": "IbNtK9ck5SyXyxyjqHEN",
+      "name": "Tsuki",
+      "gender": "female",
+      "accent": "kansai",
+      "provenance": "content/audio/elevenlabs/tsuki.json"
+    },
+    {
+      "voice": "takeshi",
+      "id": "GkhCSuueAs6ydLJFwX4G",
+      "name": "Takeshi",
+      "gender": "male",
+      "accent": "kyushu",
+      "provenance": "content/audio/elevenlabs/takeshi.json"
+    },
+    {
+      "voice": "lime",
+      "id": "q3eHxuMah31iifOfMrz0",
+      "name": "Lime",
+      "gender": "female",
+      "accent": "kyushu",
+      "provenance": "content/audio/elevenlabs/lime.json"
+    },
+    {
+      "voice": "ritsuto",
+      "id": "A4AyGcPAjb1pHgflyZZp",
+      "name": "Ritsuto",
+      "gender": "male",
+      "accent": "standard",
+      "style": "anime",
+      "provenance": "content/audio/elevenlabs/ritsuto.json"
+    },
+    {
+      "voice": "itsuki",
+      "id": "oAlEJuW30knHWhA6cF0e",
+      "name": "Itsuki",
+      "gender": "female",
+      "accent": "standard",
+      "style": "anime",
+      "provenance": "content/audio/elevenlabs/itsuki.json"
+    }
+  ],
+  "targetLimited": [],
+  "review": "Voice selection and loudness profile approved through audition. New word pronunciation and regional accents require listening review on the iPhone."
+}
