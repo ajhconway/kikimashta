@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/ajhconway/kikimashta/issues/57",
+  "createdAt": "2026-11-06T00:26:12.937326+00:00",
+  "generator": "OpenAI built-in image_gen.imagegen",
+  "mode": "edit",
+  "modelMetadata": null,
+  "modelMetadataNote": "The built-in result did not provide a model identifier.",
+  "reference": {
+    "path": "public/brand/kikimashta-cat-v1.png",
+    "bytes": 295090,
+    "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+    "width": 640,
+    "height": 640,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "transparentPixels": 232933
+  },
+  "referenceSourceRecord": "content/brand-provenance.json",
+  "ownerSuppliedOriginal": "Kikimashta Japanese Listening Cat.png",
+  "sourcePolicy": "Character-expression derivatives of the owner-supplied Kiku artwork. Existing source assets and generated originals are preserved unchanged. Transparent mascot assets have no intensity colors baked in; the interface supplies colors.",
+  "assets": [
+    {
+      "id": "minimal",
+      "intensity": "Minimal",
+      "reuse": true,
+      "delivery": {
+        "path": "public/brand/kikimashta-cat-v1.png",
+        "bytes": 295090,
+        "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+        "width": 640,
+        "height": 640,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 232933
+      },
+      "sourceRecord": "content/brand-provenance.json",
+      "visualReview": "Existing sleepy closed-eye mascot reused unchanged for Minimal."
+    },
+    {
+      "id": "light",
+      "intensity": "Light",
+      "reuse": false,
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1ae3b-b275-7203-bc08-3dc8906848e8/exec-e9c574c1-b4d9-405b-8566-6fca9ded3565.png",
+      "delivery": {
+        "path": "public/brand/pace/kiku-light-v1.png",
+        "bytes": 910874,
+        "sha256": "8a74040902abc8ccd39b2dfc83267a77906ee25ed5c62429b74cf35677a71d3b",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 880164
+      },
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent game-mascot expression for a Japanese listening app, displayed at about 80 pixels.\nInput image 1 is the edit target: the exact existing Kiku orange cat wearing purple over-ear headphones.\nPrimary request: Create the LIGHT intensity version of this exact mascot. Change only the eyes to gently awake small open oval eyes, with a relaxed friendly smile. Keep the same seated pose, resting front paws, curled tail, orange fur, pink inner ears, small purple nose, purple headphones and arch, thick dark purple outlines, gentle cel shading, proportions, and overall character identity. The pose should be calm and lightly attentive, clearly different from the original sleepy closed eyes, not excited.\nComposition: one whole centered Kiku mascot on a square canvas, roughly the same framing as the reference, complete headphones, paws and tail with a small clear margin. Simple readable shapes for a small UI tile.\nBackground: genuine transparent alpha everywhere outside the cat and inside the headphone arch.\nConstraints: cat and headphones only; no text, labels, baked background, colored backdrop, checkerboard, shadow, extra objects, stars, sound rays, new accessories or additional cats. Preserve the original orange and purple palette; intensity colors will be supplied by the UI.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "visualReview": "Inspected: the original resting cat/headphones identity with small open oval eyes and relaxed smile. Cat only, no text or backdrop, genuine transparent alpha.",
+      "processing": "Original generated PNG copied byte-for-byte; no pixel edits, resizing or alpha changes."
+    },
+    {
+      "id": "moderate",
+      "intensity": "Moderate",
+      "reuse": false,
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1ae3b-b275-7203-bc08-3dc8906848e8/exec-60d05761-05ee-44b5-8735-e45772bc4277.png",
+      "delivery": {
+        "path": "public/brand/pace/kiku-moderate-v1.png",
+        "bytes": 922179,
+        "sha256": "e8bdf44cfee173100887b3354c34df77048cbb4580ead391f604bf6a046ccf6c",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 884676
+      },
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent game-mascot intensity expression for a Japanese listening app, displayed at about 80 pixels.\nInput image 1 is the edit target: the exact existing Kiku orange cat wearing purple over-ear headphones.\nPrimary request: Create the MODERATE intensity version of this exact mascot. Kiku is clearly awake and focused: upright attentive seated posture, noticeably larger round open eyes with small bright highlights, gently raised eyebrows, a small confident open smile. Both front paws stay resting in front. The expression is alert and engaged, more attentive than a relaxed small-eyed cat but not wildly excited or angry. Change facial expression and subtle posture only.\nComposition: one whole centered mascot on a square canvas, same visual scale and framing as the reference. Keep the complete headphone arch, ears, paws and curled tail visible with a small clear transparent margin. Simple bold shapes must remain recognizable at 80 pixels.\nInvariants: preserve Kiku's identity, golden-orange fur, pink inner ears, purple nose, purple over-ear headphones, thick dark-purple outlines, soft existing cel shading, round head, compact seated body proportions and curled tail. Preserve the illustration style closely; not a different cat.\nBackground: genuine transparent alpha everywhere outside the mascot and inside headphone arch. Cat and headphones only.\nAvoid: labels, text, colored backdrops, fake checkerboard, cast shadows, additional objects, loose stars or sound marks, new accessories, extra limbs, other cats, dramatic lighting or photorealism. Intensity background colors will be supplied by the UI.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "visualReview": "Inspected: upright attentive cat, large open highlighted eyes and small open smile; both paws resting. Same orange/purple palette, headphones and bold outlines; genuine transparent alpha.",
+      "processing": "Original generated PNG copied byte-for-byte; no pixel edits, resizing or alpha changes."
+    },
+    {
+      "id": "high",
+      "intensity": "High",
+      "reuse": false,
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1ae3b-b275-7203-bc08-3dc8906848e8/exec-c4f08253-ce24-42f5-96fe-6317f250fb4e.png",
+      "delivery": {
+        "path": "public/brand/pace/kiku-high-v1.png",
+        "bytes": 897354,
+        "sha256": "cea9b4e20f8d8b67252f2d632a28745c9d70ef0c35e58678dd56298c3606cce1",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 904550
+      },
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent game-mascot intensity expression for a Japanese listening app, displayed at about 80 pixels.\nInput image 1 is the edit target: the exact existing Kiku orange cat wearing purple over-ear headphones.\nPrimary request: Create the HIGH intensity version of this exact mascot. Kiku is energetic and cheerful: one front paw lifted next to the face in a small fist-pump, the other paw resting in front, bright happy wide open eyes, eyebrows lifted and a broad open smile. The body stays compact and seated and the tail remains curled. The lifted paw should be obvious in a tiny UI icon. Friendly enthusiastic expression, not angry or stressed. Change the facial expression and that one front-paw pose only.\nComposition: one whole centered mascot on a square canvas, same visual scale and framing as the reference. Keep the complete headphone arch, ears, paws and curled tail visible with a small clear transparent margin. Simple bold shapes must remain recognizable at 80 pixels.\nInvariants: preserve Kiku's identity, golden-orange fur, pink inner ears, purple nose, purple over-ear headphones, thick dark-purple outlines, soft existing cel shading, round head, compact seated body proportions and curled tail. Preserve the illustration style closely; not a different cat.\nBackground: genuine transparent alpha everywhere outside the mascot and inside headphone arch. Cat and headphones only.\nAvoid: labels, text, colored backdrops, fake checkerboard, cast shadows, additional objects, loose stars or sound marks, new accessories, extra limbs, other cats, dramatic lighting or photorealism. Intensity background colors will be supplied by the UI.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "visualReview": "Inspected: one front paw raised, wide happy eyes and broad open smile; compact seated form and tail retained. No added objects or background; genuine transparent alpha.",
+      "processing": "Original generated PNG copied byte-for-byte; no pixel edits, resizing or alpha changes."
+    },
+    {
+      "id": "intense",
+      "intensity": "Intense",
+      "reuse": false,
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1ae3b-b275-7203-bc08-3dc8906848e8/exec-81bd2f9a-a558-4fd0-8b41-0f9c87e4bacd.png",
+      "delivery": {
+        "path": "public/brand/pace/kiku-intense-v1.png",
+        "bytes": 964635,
+        "sha256": "6b1734d586d01462a8523cd958546bc9c6b1d8d9ad4fc75cda7885341e29d775",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 879455
+      },
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent game-mascot intensity expression for a Japanese listening app, displayed at about 80 pixels.\nInput image 1 is the edit target: the exact existing Kiku orange cat wearing purple over-ear headphones.\nPrimary request: Create the INTENSE intensity version of this exact mascot. Kiku is at peak joyful energy: both front paws raised beside the head in an excited cheer, a wide happy laughing mouth, large sparkling star-shaped highlights inside the eyes, eyebrows up. Keep the compact seated body with the same curled tail. Clearly distinct silhouette with both raised paws while keeping ears and headphones visible and unchanged. Happy playful determination, not anger, panic, sweat, aggression or stress. Change facial expression and both front-paw poses only.\nComposition: one whole centered mascot on a square canvas, same visual scale and framing as the reference. Keep the complete headphone arch, ears, paws and curled tail visible with a small clear transparent margin. Simple bold shapes must remain recognizable at 80 pixels.\nInvariants: preserve Kiku's identity, golden-orange fur, pink inner ears, purple nose, purple over-ear headphones, thick dark-purple outlines, soft existing cel shading, round head, compact seated body proportions and curled tail. Preserve the illustration style closely; not a different cat.\nBackground: genuine transparent alpha everywhere outside the mascot and inside headphone arch. Cat and headphones only.\nAvoid: labels, text, colored backdrops, fake checkerboard, cast shadows, additional objects, loose stars or sound marks, new accessories, extra limbs, other cats, dramatic lighting or photorealism. Intensity background colors will be supplied by the UI.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "visualReview": "Inspected: both front paws raised in a joyful cheer, star-shaped eye highlights and laughing mouth; seated rear paws and tail visible. Friendly rather than stressed; no loose decorations or background, genuine transparent alpha.",
+      "processing": "Original generated PNG copied byte-for-byte; no pixel edits, resizing or alpha changes."
+    }
+  ],
+  "createdOn": "2026-11-06"
+}

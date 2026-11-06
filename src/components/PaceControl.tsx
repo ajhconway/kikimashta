@@ -1,10 +1,22 @@
-import { useCallback, useId, useLayoutEffect, useMemo, useRef, type KeyboardEvent } from 'react';
+import { useCallback, useId, useLayoutEffect, useMemo, useRef, type CSSProperties, type KeyboardEvent } from 'react';
 import { DENSITY_LEVELS, densityLevel, type DensityLevel, type DensityRange } from '../core/density';
 import './PaceControl.css';
 
-const rowHeight = 32;
+const rowHeight = 120;
+const viewportHeight = 192;
 const settleDelay = 120;
 type Level = typeof DENSITY_LEVELS[number];
+
+const moodImages: Record<DensityLevel, string> = {
+  minimal: 'brand/kikimashta-cat-v1.png',
+  light: 'brand/pace/kiku-light-v1.png',
+  moderate: 'brand/pace/kiku-moderate-v1.png',
+  high: 'brand/pace/kiku-high-v1.png',
+  intense: 'brand/pace/kiku-intense-v1.png',
+};
+function KikuMood({ level }: { level: DensityLevel | null }) {
+  return <img className="pace-kiku" src={import.meta.env.BASE_URL + moodImages[level || 'minimal']} alt="" aria-hidden="true" draggable={false}/>;
+}
 
 export function DensityIndicator({ value }: { value: number | null }) {
   const level = value === null ? null : densityLevel(value);
@@ -76,12 +88,12 @@ function DensityWheel({ label, value, levels, onChange }: {
     // Once released, wait for any momentum scrolling to settle as usual.
     scrolling();
   }
-  return <div className="pace-wheel-bubble" data-density={value}>
+  return <div className="pace-wheel-bubble">
     <div ref={viewport} className="pace-wheel" role="listbox" aria-label={label} aria-activedescendant={`${id}-${levels[index]!.id}`}
       tabIndex={0} onKeyDown={keyboard} onPointerDown={arm} onTouchStart={startTouch} onTouchEnd={endTouch} onTouchCancel={endTouch} onWheel={arm} onScroll={scrolling} onScrollEnd={settle}>
       <div className="pace-wheel-spacer" aria-hidden="true"/>
-      {levels.map(level => <div key={level.id} id={`${id}-${level.id}`} className="pace-option" data-density={level.id}
-        role="option" aria-selected={level.id === value} onClick={() => select(levels.indexOf(level))}>{level.label}</div>)}
+      {levels.map(level => <div key={level.id} className="pace-option-slot" role="presentation"><div id={`${id}-${level.id}`} className="pace-option pace-choice" data-density={level.id}
+        role="option" aria-selected={level.id === value} onClick={() => select(levels.indexOf(level))}><KikuMood level={level.id}/><span>{level.label}</span></div></div>)}
       <div className="pace-wheel-spacer" aria-hidden="true"/>
     </div>
   </div>;
@@ -94,10 +106,12 @@ export function PaceControl({ value, range, onChange }: {
 }) {
   const minimumLevels = useMemo(() => DENSITY_LEVELS.filter(level => level.threshold <= DENSITY_LEVELS.find(candidate => candidate.id === range.max)!.threshold), [range.max]);
   const maximumLevels = useMemo(() => DENSITY_LEVELS.filter(level => level.threshold >= DENSITY_LEVELS.find(candidate => candidate.id === range.min)!.threshold), [range.min]);
-  const cat = import.meta.env.BASE_URL + 'brand/kikimashta-cat-v1.png';
-  return <div className="pace-control" role="group" aria-label="Practice pace">
-    <div className="pace-column"><span className="pace-heading">Min</span><div className="pace-kiku" aria-hidden="true"><img src={cat} alt="" draggable={false}/></div><DensityWheel label="Minimum" value={range.min} levels={minimumLevels} onChange={min => onChange({ ...range, min })}/></div>
-    <div className="pace-column"><span className="pace-heading">Now</span><div className="pace-kiku" aria-hidden="true"><img src={cat} alt="" draggable={false}/></div><DensityIndicator value={value}/></div>
-    <div className="pace-column"><span className="pace-heading">Max</span><div className="pace-kiku" aria-hidden="true"><img src={cat} alt="" draggable={false}/></div><DensityWheel label="Maximum" value={range.max} levels={maximumLevels} onChange={max => onChange({ ...range, max })}/></div>
+  const current = value === null ? null : densityLevel(value);
+  const currentLabel = DENSITY_LEVELS.find(level => level.id === current)?.label || '…';
+  const dimensions = { '--pace-row-height': `${rowHeight}px`, '--pace-viewport-height': `${viewportHeight}px` } as CSSProperties;
+  return <div className="pace-control" role="group" aria-label="Practice pace" style={dimensions}>
+    <div className="pace-column"><span className="pace-heading">Min</span><DensityWheel label="Minimum" value={range.min} levels={minimumLevels} onChange={min => onChange({ ...range, min })}/></div>
+    <div className="pace-column"><span className="pace-heading">Now</span><div className="pace-current-frame"><div className="pace-current-tile pace-choice" data-density={current || undefined} role="status" aria-label="Review density"><KikuMood level={current}/><span>{currentLabel}</span></div></div></div>
+    <div className="pace-column"><span className="pace-heading">Max</span><DensityWheel label="Maximum" value={range.max} levels={maximumLevels} onChange={max => onChange({ ...range, max })}/></div>
   </div>;
 }
