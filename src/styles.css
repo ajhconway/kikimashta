@@ -187,7 +187,7 @@ footer a:hover { color: var(--purple-dark); }
 .app-quiz header { position: relative; z-index: 2; padding: 18px 0; }
 .app-quiz main { position: relative; z-index: 1; padding: 8px 0 20px; }
 .quiz-cards { position: relative; isolation: isolate; width: 100%; min-width: 0; max-width: 380px; margin: 0 auto; }
-.quiz-starburst { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.quiz-starburst { position: absolute; inset: 0; z-index: 0; overflow: visible; pointer-events: none; }
 .quiz-starburst svg { position: absolute; left: 50%; top: 50%; width: clamp(400px, 70vmin, 600px); height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); }
 .firework-star { --star-scale: 1; transform-box: fill-box; transform-origin: center; color: #ffcf5a; opacity: 0; animation: firework-star 1.04s cubic-bezier(.16, .65, .3, 1) both; }
 .firework-star:nth-child(3n + 2) { color: #ff91bc; animation-delay: .03s; }
