@@ -7,11 +7,11 @@ Start with a small Japanese audition, then choose voices before regenerating the
 1. [Create an ElevenLabs account](https://elevenlabs.io/) and choose **ElevenCreative** for its Text to Speech and voice browsing tools. ElevenAgents is for conversational agents. The seven-sample audition is small; use your account's available credits to compare voices before choosing a larger plan. See [API pricing](https://elevenlabs.io/pricing/api) for current allowances and usage terms.
 2. Browse the Voice Library for Japanese voices and add one or two candidates to your voice collection. Favor natural standard Japanese, clear word endings, and a relaxed conversational delivery. Listen to Japanese samples: a voice's English demo does not establish its Japanese pronunciation. ElevenLabs recommends [matching the voice to the target region](https://elevenlabs.io/docs/overview/capabilities/voices).
 3. Copy each candidate's **voice ID** from the voice's menu/details. The generator accepts IDs, rather than display names. These IDs can be shared in chat when choosing voices.
-4. In [Developers → API Keys](https://elevenlabs.io/app/developers/api-keys), create a key for this project's generation script. Enable the Text to Speech permission and set a small credit quota. This command only uses the text-to-speech endpoint; it does not list, create, or clone voices. ElevenLabs documents [key scopes and quotas](https://elevenlabs.io/docs/api-reference/authentication).
-5. Add the values below to `.env.local` in the repository root. Preserve any existing settings in that file. It is already ignored by Git. Keep the key out of chat and do not prefix it with `VITE_`.
+4. Run `npx -y @elevenlabs/cli@latest onboard init` from the repository root and follow its browser authorization flow. It saves a project key directly in the ignored `.env.local` file. This project's account connection is configured locally; keys are never committed. To verify the key and SDK integration without generating speech, run `npx -y @elevenlabs/cli@latest onboard check --answered --env-path .env.local`.
+5. Set `ELEVENLABS_VOICE_IDS` in `.env.local` with the chosen IDs. Preserve existing settings and the key created by onboarding. Keep the key out of chat and do not prefix it with `VITE_`. ElevenLabs documents [key scopes and quotas](https://elevenlabs.io/docs/api-reference/authentication) if you want to adjust the generation key's access or credit limit.
 
 ```dotenv
-ELEVENLABS_API_KEY=your-private-key
+# ELEVENLABS_API_KEY is saved here by onboarding; leave it in place.
 ELEVENLABS_VOICE_IDS=first-voice-id,second-voice-id
 ```
 
@@ -19,7 +19,7 @@ Use one voice ID to start if you prefer. At most three voices are allowed per au
 
 ## Preview and generate
 
-Use Node 24.15 or newer. Run `npm ci` for project dependencies. The new command uses Node's built-in HTTP client and saves provider-original MP3s; it does not need an ElevenLabs SDK or FFmpeg.
+Use Node 24.15 or newer. Run `npm ci` for project dependencies, including the pinned official `@elevenlabs/elevenlabs-js` SDK. The npm audition command loads `.env.local` into the Node process using `--env-file-if-exists`; only this local generator uses the key. It saves provider-original MP3s and does not need FFmpeg.
 
 ```sh
 # No API calls or file changes; works before account setup.
@@ -40,14 +40,14 @@ Output is saved under the ignored `artifacts/generated-originals/elevenlabs-audi
 - `<voice-id>-<sample-id>.mp3`: the unmodified MP3 bytes received from ElevenLabs.
 - `provenance.json`: voice IDs, model, exact request text and settings, timestamps, request IDs when available, hashes, and failures. It contains no API key.
 
-The baseline is `eleven_multilingual_v2`, which supports Japanese. This is a starting point for comparison, not a final quality decision. You can compare another model with the same voices and texts:
+The initial model is `eleven_v4`, following ElevenLabs' current Text to Speech skill. It supports Japanese. This is a starting point for comparison, not a final quality decision. You can compare another model with the same voices and texts:
 
 ```sh
-npm run audio:audition:elevenlabs -- --model eleven_v3 --dry-run
-npm run audio:audition:elevenlabs -- --model eleven_v3
+npm run audio:audition:elevenlabs -- --model eleven_multilingual_v2 --dry-run
+npm run audio:audition:elevenlabs -- --model eleven_multilingual_v2
 ```
 
-The request uses stability `0.5` and similarity boost `0.75`. Only Japanese sample text goes in `text`: English directions would be spoken too. Multilingual v2 detects the language; for other models the script sends `language_code: ja`. See the [speech endpoint](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) for supported models and settings. The audition preserves provider levels; review volume before production processing.
+The request uses stability `0.5` and similarity boost `0.75`. Only Japanese sample text goes in `text`: English directions would be spoken too. Multilingual v2 detects the language; for other models the script sends `language_code: ja`. SDK requests have a 45-second timeout and `maxRetries: 0`. The saved provenance records the REST field names, including the exact text and settings sent through the SDK. See the [speech endpoint](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) for supported models and settings. The audition preserves provider levels; review volume before production processing.
 
 ## Listening review and migration
 

@@ -1,13 +1,12 @@
 /** Local Japanese voice audition for issue #78; never publishes production media. */
 import { createHash } from 'node:crypto'
-import { existsSync } from 'node:fs'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
-import { loadEnvFile } from 'node:process'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
+import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js'
 
-export const MODEL = 'eleven_multilingual_v2'
+export const MODEL = 'eleven_v4'
 export const OUTPUT_FORMAT = 'mp3_44100_128'
 class SpeechError extends Error {}
 export const SAMPLES = [
@@ -40,25 +39,34 @@ export function speechBody(plan, text) {
   }
 }
 
-export async function synthesize(apiKey, voice, body, { fetchImpl = fetch, timeoutMs = 45000 } = {}) {
+export async function synthesize(apiKey, voice, body, { timeoutMs = 45000 } = {}) {
+  const client = new ElevenLabsClient({ apiKey })
   let response
   try {
-    response = await fetchImpl(`https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voice)}?output_format=${OUTPUT_FORMAT}`, {
-      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(timeoutMs),
-      headers: { 'xi-api-key': apiKey, 'Content-Type': 'application/json', Accept: 'audio/mpeg' },
-      body: JSON.stringify(body),
-    })
-  } catch {
+    response = await client.textToSpeech.convert(voice, {
+      text: body.text, modelId: body.model_id, outputFormat: OUTPUT_FORMAT,
+      voiceSettings: { stability: body.voice_settings.stability, similarityBoost: body.voice_settings.similarity_boost },
+      ...(body.language_code ? { languageCode: body.language_code } : {}),
+    }, {
+      maxRetries: 0, timeoutInSeconds: timeoutMs / 1000, abortSignal: AbortSignal.timeout(timeoutMs),
+    }).withRawResponse()
+  } catch (error) {
     // Do not log transport errors or provider bodies: they can contain credentials.
-    throw new SpeechError('ElevenLabs connection failed or timed out. No automatic retry.')
+    const message = Number.isInteger(error?.statusCode)
+      ? `ElevenLabs HTTP ${error.statusCode}. Check key permissions, voice/model access, and credits. No automatic retry.`
+      : 'ElevenLabs connection failed or timed out. No automatic retry.'
+    throw new SpeechError(message)
   }
-  if (!response.ok) throw new SpeechError(`ElevenLabs HTTP ${response.status}. Check key permissions, voice/model access, and credits. No automatic retry.`)
-  if (!response.headers.get('content-type')?.toLowerCase().startsWith('audio/mpeg')) throw new SpeechError('ElevenLabs did not return MP3 audio.')
+  if (!response.rawResponse.headers.get('content-type')?.toLowerCase().startsWith('audio/mpeg')) throw new SpeechError('ElevenLabs did not return MP3 audio.')
   let audio
-  try { audio = Buffer.from(await response.arrayBuffer()) }
+  try {
+    const chunks = []
+    for await (const chunk of response.data) chunks.push(Buffer.from(chunk))
+    audio = Buffer.concat(chunks)
+  }
   catch { throw new SpeechError('ElevenLabs audio download failed. No automatic retry.') }
   if (!audio.length) throw new SpeechError('ElevenLabs returned empty audio.')
-  return { audio, requestId: response.headers.get('request-id') }
+  return { audio, requestId: response.rawResponse.headers.get('request-id') }
 }
 
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char])
@@ -115,7 +123,6 @@ async function main() {
     'dry-run': { type: 'boolean' }, voice: { type: 'string', multiple: true },
     model: { type: 'string' }, output: { type: 'string' },
   } })
-  if (existsSync('.env.local')) loadEnvFile('.env.local')
   const voices = values.voice ?? (process.env.ELEVENLABS_VOICE_IDS?.split(',').map(id => id.trim()).filter(Boolean) ?? [])
   const plan = auditionPlan({ voices, model: values.model ?? MODEL })
   if (values['dry-run']) {

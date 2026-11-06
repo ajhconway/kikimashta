@@ -15,7 +15,7 @@
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run && node --test scripts/*.test.mjs scripts/content/*.test.mjs",
     "audio:audition": "node scripts/content/audition-openai.mjs",
-    "audio:audition:elevenlabs": "node scripts/content/audition-elevenlabs.mjs",
+    "audio:audition:elevenlabs": "node --env-file-if-exists=.env.local scripts/content/audition-elevenlabs.mjs",
     "content:illustrate": "node scripts/content/illustrate-levels-1-2.mjs && node scripts/content/illustrate-levels-3-4.mjs && node scripts/content/illustrate-level-5.mjs",
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "test:watch": "vitest",
@@ -23,6 +23,7 @@
     "check": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "2.77.0",
     "@supabase/supabase-js": "2.119.0",
     "idb": "8.0.4",
     "react": "19.3.1",

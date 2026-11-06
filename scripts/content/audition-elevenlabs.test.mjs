@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdtemp, readFile, readdir, rm, access } from 'node:fs/promises'
+import { mkdtemp, readFile, readdir, rm, access, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -30,38 +30,51 @@ test('dry run works without credentials, reports paid request count, and creates
   assert.deepEqual(await readdir(root), [])
 })
 
-test('HTTP request uses the chosen voice, Japanese text and documented MP3 format, with no key in body', async () => {
+test('Node env-file loading configures audition voices without exposing the key in dry-run output', async t => {
+  const { root } = await fixture(t)
+  const script = fileURLToPath(new URL('./audition-elevenlabs.mjs', import.meta.url))
+  await writeFile(join(root, '.env.local'), 'ELEVENLABS_API_KEY=test-secret\nELEVENLABS_VOICE_IDS=voiceA,voiceB\n')
+  const result = spawnSync(process.execPath, ['--env-file-if-exists=.env.local', script, '--dry-run'], { cwd: root, env: {}, encoding: 'utf8' })
+  assert.equal(result.status, 0, result.stderr)
+  assert.deepEqual(JSON.parse(result.stdout).voices, ['voiceA', 'voiceB'])
+  assert.doesNotMatch(result.stdout + result.stderr, /test-secret/)
+  assert.deepEqual(await readdir(root), ['.env.local'])
+})
+
+test('SDK request uses the chosen voice, Japanese text and documented MP3 format, with no key in body', async t => {
   const audio = Buffer.from([0x49, 0x44, 0x33, 1, 2, 3])
   let calls = 0
   const plan = auditionPlan({ voices: ['native_voice'] })
   const body = speechBody(plan, 'ねこ')
-  const result = await synthesize('test-secret', plan.voices[0], body, { fetchImpl: async (url, options) => {
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
     calls++
     assert.equal(url, 'https://api.elevenlabs.io/v1/text-to-speech/native_voice?output_format=mp3_44100_128')
-    assert.equal(options.headers['xi-api-key'], 'test-secret')
+    assert.equal(new Headers(options.headers).get('xi-api-key'), 'test-secret')
     assert.equal(options.method, 'POST')
-    assert.equal(options.redirect, 'error')
-    assert.deepEqual(JSON.parse(options.body), { text: 'ねこ', model_id: 'eleven_multilingual_v2', voice_settings: { stability: 0.5, similarity_boost: 0.75 } })
+    assert.deepEqual(JSON.parse(options.body), { text: 'ねこ', model_id: 'eleven_v4', language_code: 'ja', voice_settings: { stability: 0.5, similarity_boost: 0.75 } })
     assert.ok(options.signal instanceof AbortSignal)
     return new Response(audio, { headers: { 'Content-Type': 'audio/mpeg', 'request-id': 'request-123' } })
-  } })
+  })
+  const result = await synthesize('test-secret', plan.voices[0], body, { timeoutMs: 1000 })
   assert.equal(calls, 1)
   assert.deepEqual(result.audio, audio)
   assert.equal(result.requestId, 'request-123')
-  assert.equal(speechBody(auditionPlan({ model: 'eleven_v3' }), 'ねこ').language_code, 'ja')
+  assert.equal(speechBody(auditionPlan({ model: 'eleven_multilingual_v2' }), 'ねこ').language_code, undefined)
 })
 
-test('rejects HTTP errors, nonaudio, empty responses and transport failure without retrying or exposing secrets', async () => {
+test('SDK rejects HTTP errors, nonaudio, empty responses and transport failure without retrying or exposing secrets', async t => {
   for (const [response, pattern] of [
     [() => new Response('test-secret', { status: 401 }), /HTTP 401/],
     [() => new Response('test-secret', { status: 429 }), /HTTP 429/],
+    [() => new Response('test-secret', { status: 500 }), /HTTP 500/],
     [() => new Response('{}', { headers: { 'Content-Type': 'application/json' } }), /MP3/],
     [() => new Response('', { headers: { 'Content-Type': 'audio/mpeg' } }), /empty/],
     [() => { throw new Error('test-secret') }, /connection failed/],
-    [() => ({ ok: true, headers: new Headers({ 'Content-Type': 'audio/mpeg' }), arrayBuffer: async () => { throw new Error('test-secret') } }), /download failed/],
+    [() => new Response(new ReadableStream({ start(controller) { controller.error(new Error('test-secret')) } }), { headers: { 'Content-Type': 'audio/mpeg' } }), /download failed/],
   ]) {
     let calls = 0
-    await assert.rejects(synthesize('test-secret', 'voiceA', {}, { fetchImpl: async () => { calls++; return response() } }), error => {
+    t.mock.method(globalThis, 'fetch', async () => { calls++; return response() })
+    await assert.rejects(synthesize('test-secret', 'voiceA', speechBody(auditionPlan(), 'ねこ'), { timeoutMs: 1000 }), error => {
       assert.match(error.message, pattern)
       assert.doesNotMatch(error.message, /test-secret/)
       return true
