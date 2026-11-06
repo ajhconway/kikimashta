@@ -2,6 +2,15 @@
 
 Sync is optional. Local practice works without a Supabase connection. This setup uses a free Supabase project and email sign-in codes; the app stays on GitHub Pages.
 
+## Activation status (November 6, 2026)
+
+Use the existing **Kikimashta** project in the **Kikimashta** organization: [`bykeuvervuprknuatzsi`](https://supabase.com/dashboard/project/bykeuvervuprknuatzsi), US East (`us-east-1`), free plan. Its API URL is `https://bykeuvervuprknuatzsi.supabase.co`.
+
+- The reviewed sync migration is applied as hosted migration `20261106045912_sync`. Do not apply it again. The repository retains its original migration filename.
+- All 37 rollback SQL checks passed against hosted Supabase Auth/Postgres. Follow-up queries confirmed zero fixture users and zero event rows. Security, performance, and health advisors returned no notices. Both private tables deny anonymous reads through the live Data API (HTTP 401 / SQLSTATE 42501).
+- Email authentication is enabled. The local ignored `.env.local` contains the project URL and its modern publishable key.
+- Still pending: custom SMTP, code email templates, production Auth URLs, GitHub Actions variables, deployment, received-email verification, authenticated cross-device API/browser verification, and real iPhone testing. Database checks alone do not verify email delivery or browser sync.
+
 ## Project and database
 
 1. Create a project at [Supabase](https://supabase.com/dashboard). Keep its database password out of the repository.
@@ -16,6 +25,8 @@ Keep the project's Data API maximum row limit at least 200, the client's page si
 
 In **Authentication → URL Configuration**, set the Site URL to `https://kikimashta.com` and allow `https://kikimashta.com/` as a redirect. Add an exact localhost development URL only if needed.
 
+For new free projects created on or after June 3, 2026, configure **custom SMTP before editing these templates**. Supabase locks email templates when these projects use its built-in sender. Keep the Supabase project on the free plan; supply SMTP credentials from an email provider with a verified sender. Store credentials only in Supabase Auth settings. Provider charges and sending limits depend on that provider. [Supabase's template restriction](https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier).
+
 Enable the Email provider. In **Authentication → Email Templates**, edit **Magic link or OTP** to include the code rather than a link:
 
 ```html
@@ -25,7 +36,7 @@ Enable the Email provider. In **Authentication → Email Templates**, edit **Mag
 
 Use the same code format for Confirm signup if the project sends a separate signup confirmation. Supabase's current guide describes six-digit codes; verify the project's configured OTP length and test a received email. The app accepts six- to ten-digit codes. Avoid hardcoding the length into the email copy. [Passwordless setup](https://supabase.com/docs/guides/auth/auth-email-passwordless), [template variables](https://supabase.com/docs/guides/auth/auth-email-templates).
 
-Supabase's built-in email sender is restricted to project-team addresses and has low sending limits. For personal testing, use your Supabase team email. Configure custom SMTP before using other addresses or broader access. [Email delivery setup](https://supabase.com/docs/guides/auth/auth-smtp).
+Supabase's built-in email sender is restricted to project-team addresses and has low sending limits. It does not provide the template customization required by this code-only sign-in flow on a new free project. Configure custom SMTP for live email-code testing and broader access. Check a received email for both first signup and later sign-in before publishing. [Email delivery setup](https://supabase.com/docs/guides/auth/auth-smtp).
 
 ## Browser configuration
 

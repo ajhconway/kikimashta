@@ -46,7 +46,7 @@ Adaptive practice is playable and accepted. The 441-card review library is avail
 
 Add optional Supabase email sign-in and sync practice history and card notes across devices. Save locally first, retry interrupted sync, and prevent duplicate attempts. Keep each account's data separate; offer an explicit copy of existing local progress into the signed-in account. Preserve local-only practice and the unsaved dev review. Keep the account controls small and the active quiz unchanged by incoming sync.
 
-Prepare the database schema and access policies before enabling live sync. Verify account isolation, interrupted transfers, note edits/deletions, and cross-device convergence. A new Supabase project and connection are needed for live verification.
+The Supabase project is connected and its schema and access policies pass the hosted SQL checks. Finish SMTP/email-code setup and deployment configuration before enabling live sync, then verify interrupted transfers, note edits/deletions, and cross-device convergence with real sign-in. Track activation in [docs/SUPABASE.md](docs/SUPABASE.md).
 
 ### Adaptive practice reference
 
