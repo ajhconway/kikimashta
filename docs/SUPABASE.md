@@ -8,8 +8,9 @@ Use the existing **Kikimashta** project in the **Kikimashta** organization: [`by
 
 - The reviewed sync migration is applied as hosted migration `20261106045912_sync`. Do not apply it again. The repository retains its original migration filename.
 - All 37 rollback SQL checks passed against hosted Supabase Auth/Postgres. Follow-up queries confirmed zero fixture users and zero event rows. Security, performance, and health advisors returned no notices. Both private tables deny anonymous reads through the live Data API (HTTP 401 / SQLSTATE 42501).
-- Email authentication is enabled. The local ignored `.env.local` contains the project URL and its modern publishable key.
-- Still pending: custom SMTP, code email templates, production Auth URLs, GitHub Actions variables, deployment, received-email verification, authenticated cross-device API/browser verification, and real iPhone testing. Database checks alone do not verify email delivery or browser sync.
+- Email authentication is enabled with eight-digit OTPs. The Site URL is `https://kikimashta.com` and the redirect allowlist contains `https://kikimashta.com/`; a follow-up configuration comparison confirmed both settings match.
+- The local ignored `.env.local` and both GitHub Actions repository variables contain the project URL and its modern publishable key. The repository variables were read back and verified. PR checks passed for `866a25f`.
+- Still pending: custom SMTP, code email templates, deployment, received-email verification, authenticated cross-device API/browser verification, and real iPhone testing. Database checks alone do not verify email delivery or browser sync. No SMTP provider has been selected; Resend's free plan is the proposed starting point, pending account creation and sender-domain verification.
 
 ## Project and database
 
