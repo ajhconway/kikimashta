@@ -1,0 +1,46 @@
+name: Codex review gate
+
+'on':
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft, edited]
+  issue_comment:
+    types: [created, edited, deleted]
+  workflow_dispatch:
+    inputs:
+      pull_request:
+        description: Pull request number to refresh
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  statuses: write
+
+jobs:
+  refresh:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.event.issue.pull_request &&
+       github.event.comment.user.login == 'chatgpt-codex-connector[bot]')
+    # Filter first: skipped human-comment runs must not displace a queued refresh.
+    concurrency:
+      group: codex-review-${{ github.event.pull_request.number || github.event.issue.number || inputs.pull_request }}
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      # This workflow has a write token, including on fork PR events. Only run
+      # trusted default-branch code: never check out or execute the PR's code.
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - run: node scripts/codex-review-gate.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
