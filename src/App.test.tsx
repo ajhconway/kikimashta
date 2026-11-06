@@ -86,42 +86,83 @@ describe('adaptive session flow', () => {
     expect(items.some(item => item.id === records[0]!.itemId)).toBe(true);
   });
 
-  it('snapshots due reviews, defers newly due words and misses, then moves to lessons', async () => {
+  it('keeps the due-word snapshot while requiring missed words to be answered correctly', async () => {
     let clock = fixedNow();
     records = [...legacy(2), { ...legacy(3)[2]!, answeredAt: clock + 1000 }];
     const { container } = render(<App now={() => clock} random={() => 0.5}/>);
     await start();
     expect(await screen.findByText('2 words')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /begin review/i }));
+    vi.useFakeTimers();
     clock += 60_000;
     for (let i = 0; i < 2; i++) {
       await click(heardChoice(container, false));
       await click(screen.getByRole('button', { name: /continue|see results/i }));
     }
-    expect(await screen.findByRole('heading', { name: /nice reviewing/i })).toBeInTheDocument();
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(2);
-    expect(records.slice(-2).every(attempt => attempt.context?.phase === 'review')).toBe(true);
-    expect(records.slice(-2).some(attempt => attempt.itemId === legacy(3)[2]!.itemId)).toBe(false);
-    expect(await screen.findByRole('button', { name: /begin lesson/i })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: /nice reviewing/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '2');
+    expect(screen.getByRole('status', { name: 'Mistakes' })).toHaveTextContent('2 incorrect answers');
+    for (let i = 0; i < 2; i++) {
+      endAudio(container); await click(heardChoice(container)); await advance(1200);
+    }
+    expect(screen.getByRole('heading', { name: /nice reviewing/i })).toBeInTheDocument();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(4);
+    const saved = records.filter(attempt => attempt.context);
+    expect(saved.every(attempt => attempt.context?.phase === 'review')).toBe(true);
+    expect(saved.some(attempt => attempt.itemId === legacy(3)[2]!.itemId)).toBe(false);
+    expect(saved.filter(attempt => attempt.context?.retryOf).map(attempt => attempt.context!.retryOf).sort()).toEqual(saved.filter(attempt => !attempt.correct).map(attempt => attempt.id).sort());
+    expect(screen.getByRole('button', { name: /begin lesson/i })).toBeInTheDocument();
   });
 
-  it('offers another chunk at boundaries without introducing scheduled retries', async () => {
+  it('finishes corrective retries before offering another lesson chunk', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start(); await click(await screen.findByRole('button', { name: /begin lesson/i }));
     for (let i = 0; i < 10; i++) await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
-    const seen = new Set<string>();
-    for (let i = 0; i < 10; i++) {
+    vi.useFakeTimers();
+    const missed = new Set<string>();
+    for (let i = 0; i < 20; i++) {
       const source = container.querySelector('audio')!.getAttribute('src');
       const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-      expect(seen.has(target.id)).toBe(false); seen.add(target.id);
-      await click(heardChoice(container, false));
-      await click(screen.getByRole('button', { name: /continue|see results/i }));
+      expect(practicePool.items.slice(0, 10).some(item => item.id === target.id)).toBe(true);
+      if (!missed.has(target.id)) {
+        missed.add(target.id);
+        await click(heardChoice(container, false));
+        await click(screen.getByRole('button', { name: /^continue$/i }));
+      } else {
+        endAudio(container); await click(heardChoice(container)); await advance(1200);
+      }
     }
-    expect(await screen.findByRole('heading', { name: /nice round/i })).toBeInTheDocument();
-    await click(await screen.findByRole('button', { name: /learn more/i }));
+    expect(missed.size).toBe(10);
+    expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /learn more/i }));
     expect(screen.getByRole('img')).toHaveAttribute('alt', practicePool.items[10]!.image.alt);
-    expect(records).toHaveLength(10);
-    expect(records.every(attempt => !attempt.correct)).toBe(true);
+    expect(records).toHaveLength(20);
+    expect(records.filter(attempt => !attempt.correct)).toHaveLength(10);
+    expect(records.filter(attempt => attempt.context?.retryOf)).toHaveLength(10);
+  });
+
+  it('keeps a final missed word in the quiz through repeated mistakes and resets the card each time', async () => {
+    const { container } = await review({ count: 1 });
+    vi.useFakeTimers();
+    const firstGrid = container.querySelector('.choices');
+    for (let i = 1; i <= 6; i++) {
+      await click(heardChoice(container, false));
+      expect(screen.getByRole('status', { name: 'Mistakes' })).toHaveTextContent(`${i} incorrect answer${i === 1 ? '' : 's'}`);
+      expect(container.querySelectorAll('.mistake-icon')).toHaveLength(Math.min(i, 5));
+      expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
+      expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '1');
+      await click(screen.getByRole('button', { name: /^continue$/i }));
+      expect(screen.queryByRole('heading', { name: /nice reviewing/i })).not.toBeInTheDocument();
+      expect(container.querySelector('.choices')).not.toBe(firstGrid);
+    }
+    expect(container.querySelector('.mistake-overflow')).toHaveTextContent('+1');
+    const attempts = records.filter(attempt => attempt.context);
+    expect(attempts.slice(1).every(attempt => attempt.context?.retryOf === attempts[0]!.id)).toBe(true);
+    endAudio(container); await click(heardChoice(container)); await advance(1200);
+    expect(screen.getByRole('heading', { name: /nice reviewing/i })).toBeInTheDocument();
+    expect(records.filter(attempt => attempt.context)).toHaveLength(7);
+    expect(records.at(-1)!.context?.retryOf).toBe(attempts[0]!.id);
   });
 
   it('shows only Finish when the forecast admits no new words', async () => {
@@ -223,7 +264,7 @@ describe('quiz safeguards', () => {
     expect(container.querySelector('audio')).toHaveAttribute('src', source);
     await click(screen.getByRole('button', { name: /^continue$/i }));
     expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   });
 
   it('shows a failed save, keeps the question in place, and retries the same attempt', async () => {

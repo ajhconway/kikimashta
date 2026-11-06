@@ -1,6 +1,6 @@
 import type { WordBank, WordItem } from '../types';
 
-export interface Question { target: WordItem; choices: WordItem[] }
+export interface Question { target: WordItem; choices: WordItem[]; retryOf?: string }
 
 export function validateBank(bank: WordBank): void {
   if (!bank.id || !bank.language || !Array.isArray(bank.items) || bank.items.length < 2) throw new Error('A bank needs at least two words.');
@@ -47,4 +47,20 @@ export function createQuestions(targets: WordItem[], pool: WordItem[], random = 
     if (candidates.length < 3) throw new Error('Four distinct pictures are required.');
     return { target, choices: shuffled([target, ...candidates.slice(0, 3)], random) };
   });
+}
+
+/** Revisit a miss within this block without admitting any new due-word targets. */
+export function requeueMissedQuestion(questions: readonly Question[], index: number, attemptId: string, random = Math.random): Question[] {
+  if (!Number.isInteger(index) || index < 0 || index >= questions.length || !attemptId) throw new Error('A retry needs a current question and miss ID.');
+  const current = questions[index]!;
+  const retryOf = current.retryOf ?? attemptId;
+  const result = [...questions];
+  // Repeating a transition cannot leave multiple pending copies of this miss.
+  if (questions.slice(index + 1).some(question => question.retryOf === retryOf)) return result;
+  const firstPosition = Math.min(index + 2, questions.length);
+  const positions = questions.length - firstPosition + 1;
+  const insertion = firstPosition + Math.min(positions - 1, Math.max(0, Math.floor(random() * positions)));
+  const retry: Question = { ...current, retryOf, choices: shuffled(current.choices, random) };
+  result.splice(insertion, 0, retry);
+  return result;
 }

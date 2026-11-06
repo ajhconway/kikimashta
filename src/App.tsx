@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { practicePool } from './core/practice';
 import type { AudioAsset, PracticeAttempt, WordItem } from './types';
-import { createQuestions, type Question } from './core/session';
+import { createQuestions, requeueMissedQuestion, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -25,11 +25,11 @@ function Picture({ item }: { item: WordItem }) {
   return <img src={asset(item.image.src)} alt={item.image.alt} draggable={false}/>;
 }
 
-function QuizProgress({ total, completed }: { total: number; completed: number }) {
-  return <div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
+function QuizProgress({ total, completed, mistakes }: { total: number; completed: number; mistakes: number }) {
+  return <div className="quiz-progress"><div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
     <div className="progress-beads" aria-hidden="true">{total > 12 ? <span className="progress-track"><span style={{ width: `${completed / total * 100}%` }}/></span> : Array.from({ length: total }, (_, i) => <span key={i} className={'progress-bead' + (i < completed ? ' is-complete' : i === completed ? ' is-current' : '')}/>)}</div>
     <span className="round-count" aria-hidden="true" style={{ minWidth: `${String(total).length * 2 + 3}ch` }}>{completed} / {total}</span>
-  </div>;
+  </div><div className="quiz-mistakes" role="status" aria-label="Mistakes"><span className="sr-only">{mistakes} incorrect answer{mistakes === 1 ? '' : 's'}</span><span className="mistake-icons" aria-hidden="true">{Array.from({ length: Math.min(mistakes, 5) }, (_, i) => <span className="mistake-icon" key={i}><svg viewBox="0 0 16 16" fill="none" focusable="false"><path d="m5 5 6 6M11 5l-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg></span>)}{mistakes > 5 && <span className="mistake-overflow">+{mistakes - 5}</span>}</span></div></div>;
 }
 
 function QuizCompanion({ listening, response }: { listening: boolean; response: boolean | null }) {
@@ -64,6 +64,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const [lessonItems, setLessonItems] = useState<WordItem[]>([]);
   const [preview, setPreview] = useState(0);
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [quizSize, setQuizSize] = useState(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<PracticeAttempt[]>([]);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
@@ -170,7 +171,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     present(next.target);
   }, [now, present]);
   function beginQuiz(block: Question[]) {
-    setQuestions(block); setIndex(0); setAnswers([]); setScreen('quiz');
+    setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
     showQuestion(block[0]!, session.current.id);
   }
   const prepareLessons = useCallback(async (request: number) => {
@@ -241,13 +242,15 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
       choiceIds: question.choices.map(choice => choice.id), selectedId: item.id,
       correct: item.id === question.target.id, startedAt: active.current.startedAt,
       answeredAt, responseMs: Math.max(0, answeredAt - active.current.startedAt),
-      context: { phase, exercise: 'audio-picture', recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion },
+      context: { phase, exercise: 'audio-picture', recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
+        ...(question.retryOf ? { retryOf: question.retryOf } : {}) },
     };
     setDepartures(question.choices.flatMap((choice, slot) => {
       if (choice.id === question.target.id || (!attempt.correct && choice.id === item.id)) return [];
       const bounds = choiceGrid.current?.children[slot]?.getBoundingClientRect();
       return bounds ? [{ item: choice, slot, left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height }] : [];
     }));
+    if (!attempt.correct) setQuestions(requeueMissedQuestion(questions, index, attempt.id, random));
     setFeedback(attempt); setAnswers(previous => [...previous, attempt]); void save(attempt);
   }
   const next = useCallback(() => {
@@ -271,9 +274,9 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next]);
 
   const correct = answers.filter(answer => answer.correct).length;
+  const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    {screen === 'quiz' && feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
     {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className="picture-choice departing-card" key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: `${i * 45}ms` }}><Picture item={card.item}/></div>)}</div>}
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
@@ -312,20 +315,22 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         <QuizCompanion listening={playing} response={feedback?.correct ?? null}/>
         <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
         </div>
-        <span className="sr-only" aria-live="polite">Sound {index + 1} of {questions.length}</span>
+        <span className="sr-only" aria-live="polite">Question {index + 1}{questions[index]?.retryOf ? ', retry' : ''}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
-        <div className="choices choices-enter" ref={choiceGrid} key={target.id}>{questions[index]!.choices.map((item, i) => {
+        <div className="quiz-cards">
+        {feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
+        <div className="choices choices-enter" ref={choiceGrid} key={target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
           return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
-        })}</div>
+        })}</div></div>
         <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
-        <QuizProgress total={questions.length} completed={answers.length}/>
+        <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>

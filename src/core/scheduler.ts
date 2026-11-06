@@ -69,14 +69,16 @@ export async function deriveSchedules(history: readonly PracticeAttempt[], langu
   const words: ScheduledWord[] = [];
   const engine = await scheduler;
   for (const [itemId, attempts] of groups) {
-    const modern = attempts.filter(attempt => attempt.context);
+    // Corrective retries occur after feedback within the same block. Retain them
+    // in history, but never let their success erase the original memory lapse.
+    const modern = attempts.filter(attempt => attempt.context && attempt.context.retryOf === undefined);
     if (modern.length) {
       let word: ScheduledWord | undefined;
       for (const attempt of modern) word = await advanceSchedule(word, attempt);
       words.push(word!);
     } else {
-      // Earlier quizzes lack exposure/phase metadata: surface each known word once
-      // as due, without inventing a long-term memory estimate from massed practice.
+      // Legacy or orphan-correction history cannot establish durable memory:
+      // surface the word as due without inventing a retention estimate.
       const latest = attempts[attempts.length - 1]!;
       const card = serialize(engine.newCard({ cardId: itemId, now: date(latest.answeredAt) }));
       words.push({ itemId, language, dueAt: card.dueAt, lastReviewedAt: latest.answeredAt, schedulerVersion, card });
