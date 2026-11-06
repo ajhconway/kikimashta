@@ -24,7 +24,7 @@ const html = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff0dc">
   <title>Vocabulary cards</title>
-  <link rel="stylesheet" href="./library.css">
+  <link rel="stylesheet" href="/vocabulary/library.css">
   <script src="./library.js" type="module"></script>
 </head>
 <body>
@@ -49,7 +49,8 @@ const html = `<!doctype html>
     </form>
     <section class="feedback-tools" aria-label="Card feedback">
       <button type="button" id="export-feedback" disabled>Export feedback</button>
-      <p>Feedback stays in this browser. Export it to share or back it up.</p>
+      <p id="feedback-description">Feedback stays in this browser. Export it to share or back it up.</p>
+      <p id="account-status" role="status" hidden></p>
     </section>
     <p id="results-status" role="status">Loading vocabulary…</p>
     <p id="library-error" role="alert" hidden></p>
@@ -128,7 +129,8 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
   const data = { cards }
   const directory = join(root, 'public/vocabulary')
   mkdirSync(directory, { recursive: true })
-  writeFileSync(join(directory, 'index.html'), html)
+  mkdirSync(join(root, 'vocabulary'), { recursive: true })
+  writeFileSync(join(root, 'vocabulary/index.html'), html)
   writeFileSync(join(directory, 'library-data.json'), JSON.stringify(data, null, 2) + '\n')
   return { cards: cards.length, availableAudio: cards.length * 2 - missingAudio.length, missingAudio: missingAudio.length }
 }

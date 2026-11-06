@@ -16,6 +16,7 @@ const dependencyLicenses = {
   scheduler: 'MIT\nScheduler copyright notice.\n',
   'ts-fsrs': 'MIT\nFSRS copyright notice.\n',
   '@open-spaced-repetition/srs-kit': 'BSD-3-Clause\nSRS kit copyright notice.\n',
+  ...Object.fromEntries(['@supabase/supabase-js', '@supabase/auth-js', '@supabase/storage-js', '@supabase/realtime-js', '@supabase/functions-js', '@supabase/postgrest-js', '@supabase/phoenix', 'iceberg-js', 'tslib'].map(name => [name, `MIT\n${name} copyright notice.\n`])),
   idb: 'ISC License\nPermission from the idb author.\n',
   vite: '# Vite core license\nMIT terms.\n\n# Licenses of bundled dependencies\nComplete bundled dependency notices.\n',
 }
@@ -33,7 +34,7 @@ async function fixture(t) {
     writeFile(join(dist, 'credits.html'), credits),
     ...Object.entries(dependencyLicenses).map(async ([name, license]) => {
       await mkdir(join(root, 'node_modules', name), { recursive: true })
-      await writeFile(join(root, 'node_modules', name, name === 'vite' ? 'LICENSE.md' : 'LICENSE'), license)
+      await writeFile(join(root, 'node_modules', name, name === 'vite' || name === '@supabase/phoenix' ? 'LICENSE.md' : name === 'tslib' ? 'LICENSE.txt' : 'LICENSE'), license)
     }),
   ])
   return { root, dist }

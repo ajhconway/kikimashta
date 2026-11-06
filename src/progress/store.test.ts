@@ -29,6 +29,58 @@ afterEach(async () => {
 });
 
 describe('local progress', () => {
+  it('atomically merges all languages without replacing immutable attempts or changing the v1 database', async () => {
+    const name = `progress-test-${sequence++}`;
+    const first = openStore(name);
+    const legacy = attempt();
+    const correction = attempt({ id: 'correction', context: { phase: 'review', exercise: 'audio-picture', recordingSrc: 'audio/cat.mp3',
+      replays: 1, schedulerVersion: 'fsrs-6-v1', retryOf: legacy.id } });
+    const spanish = attempt({ id: 'spanish', language: 'es-ES' });
+    await first.record(legacy);
+    await first.merge([attempt({ correct: false }), correction, correction, spanish]);
+    expect(await first.all()).toEqual([legacy, correction, spanish]);
+    await first.close();
+    const reopened = openStore(name);
+    expect(await reopened.all()).toEqual([legacy, correction, spanish]);
+    const request = indexedDB.open(name);
+    const database = await new Promise<IDBDatabase>((resolve, reject) => {
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    expect(database.version).toBe(1);
+    database.close();
+  });
+
+  it('keeps concurrent local writes and the first copy of overlapping incoming IDs', async () => {
+    const store = openStore();
+    const remote = attempt({ id: 'remote' });
+    const local = attempt({ id: 'local' });
+    await Promise.all([
+      store.merge([remote, attempt({ id: remote.id, correct: false })]),
+      store.record(local),
+      store.merge([remote]),
+    ]);
+    expect(await store.all()).toEqual([local, remote]);
+  });
+
+  it('rolls back the entire merge on a synchronous mid-batch failure and permits retry', async () => {
+    const store = openStore();
+    const incoming = [attempt({ id: 'a' }), attempt({ id: 'b' })];
+    const originalAdd = IDBObjectStore.prototype.add;
+    let writes = 0;
+    const failure = vi.spyOn(IDBObjectStore.prototype, 'add').mockImplementation(function (
+      this: IDBObjectStore, ...args: Parameters<IDBObjectStore['add']>
+    ) {
+      if (++writes === 2) throw new DOMException('Bad incoming record', 'DataError');
+      return originalAdd.apply(this, args);
+    });
+    await expect(store.merge(incoming)).rejects.toMatchObject({ name: 'DataError' });
+    expect(await store.all()).toEqual([]);
+    failure.mockRestore();
+    await store.merge(incoming);
+    expect(await store.all()).toEqual(incoming);
+  });
+
   it('retains complete attempts when a store is closed and opened again', async () => {
     const name = `progress-test-${sequence++}`;
     const first = openStore(name);

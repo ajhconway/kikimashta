@@ -2,7 +2,7 @@
 
 A relaxed listening game that starts with Japanese. Hear a word, choose its picture, and build recognition through short practice sessions.
 
-Adaptive sessions start with a fixed block of due reviews, followed by new-word lessons in chunks of roughly ten. Each chunk introduces pictures and audio, then mini-quizzes those words. A qualitative review-density range guides new-word intake. The home screen shows minimum and maximum selector wheels around the current density. Each intensity has its own Kiku expression, permanent color and label, bundled together inside the choice before and after selection. All five choices remain in each wheel; unavailable choices have dimmed artwork and labels and cannot be selected. An unavailable landing returns with a brief, interruptible spring; reduced motion skips it. Sessions remain untimed, and progress stays on the device. Japanese is the first language bank; words, media, and learning history are kept separate so other languages can follow.
+Adaptive sessions start with a fixed block of due reviews, followed by new-word lessons in chunks of roughly ten. Each chunk introduces pictures and audio, then mini-quizzes those words. A qualitative review-density range guides new-word intake. The home screen shows minimum and maximum selector wheels around the current density. Each intensity has its own Kiku expression, permanent color and label, bundled together inside the choice before and after selection. All five choices remain in each wheel; unavailable choices have dimmed artwork and labels and cannot be selected. An unavailable landing returns with a brief, interruptible spring; reduced motion skips it. Sessions remain untimed, and progress saves on the device first. Japanese is the first language bank; words, media, and learning history are kept separate so other languages can follow.
 
 Quizzes use flat picture cards with an expressive squash on press and Kiku's slow, gentle sway. Progress dots count words answered correctly; small pink crosses below them count mistakes. Missed words shuffle back into the remaining questions until each is answered correctly, with another word in between whenever possible. Every attempt is saved; corrective retries link to the original miss and are excluded from FSRS retention evidence.
 
@@ -10,6 +10,7 @@ Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a
 
 - [Project plan](PLAN.md)
 - [Agent working agreements](AGENTS.md)
+- [Optional account sync setup](docs/SUPABASE.md)
 
 The home screen's **Dev review** button opens a six-word random review for testing, even when nothing is due. It uses the usual quiz and corrective retries, without saving answers or changing learning progress. Finish returns to normal adaptive practice.
 
@@ -35,6 +36,12 @@ Scheduling uses pinned `ts-fsrs` 6.0.0 with the explicit FSRS-6 model, 90% desir
 Density forecasts simulate seven days with 32 deterministic scenarios, one fixed review session per day, repeat reviews and sampled FSRS success/failure. New-word admission initially assumes an 80% mini-quiz success rate. These are adjustable forecast assumptions, not measured learning efficacy. Qualitative levels start at 0/5/15/30/60 reviews per day; preferred minimum uses a band's lower edge and maximum its upper edge (Intense admission ceiling: 120/day). Default Light–Moderate targets 5–30/day. Thresholds and assumptions live in `src/core/density.ts`; the UI shows labels, not these numbers. Newly due work waits for the next session, and actual future demand can exceed the admission forecast.
 
 Starter words use OpenAI Marin and Cedar, selected through word and sentence auditions. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. The same format supports a single voice or a human recording. Progress remains tied to the language and word, across voices. Pronunciation and playback still need review on the iPhone 17.
+
+## Account sync
+
+Sync is optional and needs the project configuration in [the setup guide](docs/SUPABASE.md). Email sign-in adds account controls for sync, sign-out, and copying this device’s guest progress. Answers and card notes save locally first; interrupted transfers retry on the next change, browser focus, connection recovery, or Sync now. Incoming history affects the next session without changing an active quiz. Dev review stays unsaved. Preferred pace remains a device setting.
+
+The database migration and rollback access-policy checks live in `supabase/`. All 37 SQL checks also pass on the connected Supabase project, and its live Data API denies anonymous access. CI tests the real SDK against a simulated HTTP service and uses real browser storage for cross-device journeys. Resend SMTP and deployment variables are configured. Live signup and later sign-in, delivered code emails, and note edit/deletion sync pass in isolated Chromium browsers. The user confirmed both emails arrived. Production deployment and an actual iPhone check remain; see the setup guide's activation status.
 
 ## Voice auditions
 
@@ -68,7 +75,7 @@ The review library at `/vocabulary/` contains 441 entries transcribed from the o
 
 Original SVG scenes and symbols match the starter style. Context-sensitive entries carry review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the large collection; one shared audio player compares Marin and Cedar.
 
-Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Notes are local to the browser; sign-in and synchronization can follow later. Clearing a box removes its saved note. If saving fails, the draft stays available while the page is open and can still be exported.
+Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Guest notes stay local. When optional Supabase sync is configured, signed-in notes synchronize with the account; clearing a box syncs a deletion. Each account and guest practice use separate local storage. Copying guest history and notes into an account is an explicit action in Account. Existing account note edits take precedence over imported guest notes. If saving fails, the draft stays available while the page is open and can still be exported.
 
 `npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. Hosted catalog audio runs by source level with two jobs in parallel, retaining original WAVs and partial results. Verified MP3s are staged to a review branch for integration, never deployed automatically.
 

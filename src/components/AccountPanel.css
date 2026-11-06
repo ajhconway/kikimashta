@@ -1,0 +1,23 @@
+.account-controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 2px auto; }
+.account-controls .account-trigger { margin: 0; padding: 9px 4px; }
+.account-sync-state { color: #50346b; font-size: 11px; }
+.account-sync-state[data-status='error'] { color: #7b3155; }
+.account-dialog { width: min(360px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 20px; overflow-y: auto; overscroll-behavior: contain; border: 4px solid #4c20ad; border-radius: 24px; background: #ffe4cc; color: #382052; text-align: left; }
+.account-dialog::backdrop { background: #38205266; }
+.account-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.account-dialog-header h2 { margin: 0; color: #4c20ad; font-size: 25px; letter-spacing: -.5px; }
+.account-close { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; padding: 0; border: 2px solid #4c20ad; border-radius: 12px; background: #ffcee2; color: #4c20ad; font-size: 26px; }
+.account-form label { display: grid; gap: 7px; font-size: 13px; font-weight: 700; }
+.account-form input { width: 100%; min-height: 48px; padding: 10px 12px; border: 3px solid #4c20ad; border-radius: 14px; background: #fff2e7; color: #382052; font: inherit; font-size: 16px; }
+.account-form input:focus-visible { outline: 3px solid #ec5ba7; outline-offset: 3px; }
+.account-form p, .account-copy p { font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.account-form .primary, .account-dialog-content .primary { justify-content: center; max-width: none; margin: 14px 0 0; border-width: 3px; }
+.account-form .primary:disabled, .account-secondary:disabled { opacity: .55; }
+.account-code-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px; margin-top: 8px; }
+.account-code-actions .text-button { margin: 0; font-size: 12px; }
+.account-email { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+.account-status { margin: 6px 0 16px; color: #50346b; font-size: 12px; }
+.account-copy { margin-top: 18px; padding-top: 8px; border-top: 2px solid #cdb3ee; }
+.account-secondary { width: 100%; min-height: 48px; padding: 10px 12px; border: 3px solid #4c20ad; border-radius: 14px; background: #ffcee2; color: #4c20ad; font-size: 13px; font-weight: 800; }
+.account-error { margin: 12px 0 0; padding: 10px; border: 2px solid #d88db2; border-radius: 12px; background: #ffe3ef; color: #7b3155; font-size: 13px; line-height: 1.5; }
+.account-message { margin: 12px 0 0; color: #50346b; font-size: 13px; line-height: 1.5; }

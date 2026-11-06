@@ -43,8 +43,10 @@ test('builds a safely nested library from catalogue and visual metadata, with ac
   assert.equal(card.visualGroup, 'flower')
   assert.equal(card.reviewRequired, true)
   assert.equal(card.reviewNote, 'Check flower versus blossom in context.')
-  const html = readFileSync(join(root, 'public/vocabulary/index.html'), 'utf8')
+  const html = readFileSync(join(root, 'vocabulary/index.html'), 'utf8')
   assert.match(html, /<title>Vocabulary cards<\/title>/)
+  assert.match(html, /src="\.\/library.js" type="module"/)
+  assert.equal(existsSync(join(root, 'public/vocabulary/index.html')), false)
   assert.match(html, /href="\.\.\/"/)
   assert.match(html, /href="\.\.\/credits.html"/)
   assert.match(html, /value="all"/)
@@ -58,7 +60,7 @@ test('builds a safely nested library from catalogue and visual metadata, with ac
 test('default rejects missing audio before writing output; preview accurately disables only the absent clip', t => {
   const { root, readData } = fixture(t, { missingAudio: true })
   assert.throws(() => buildLibrary({ root }), /Missing 1 audio files/)
-  assert.equal(existsSync(join(root, 'public/vocabulary/index.html')), false)
+  assert.equal(existsSync(join(root, 'vocabulary/index.html')), false)
   assert.deepEqual(buildLibrary({ root, allowMissingAudio: true }), { cards: 1, availableAudio: 1, missingAudio: 1 })
   assert.deepEqual(readData().cards[0].audio.map(clip => clip.available), [true, false])
 })
@@ -102,7 +104,7 @@ test('preserves text as data without interpolating it into markup; hides starter
   buildLibrary({ root })
   assert.equal(readData().cards[0].text, text)
   assert.equal(readData().cards[0].concept, 'A pink flower')
-  assert.doesNotMatch(readFileSync(join(root, 'public/vocabulary/index.html'), 'utf8'), /onerror|bad\(\)|Existing starter/)
+  assert.doesNotMatch(readFileSync(join(root, 'vocabulary/index.html'), 'utf8'), /onerror|bad\(\)|Existing starter/)
 })
 
 

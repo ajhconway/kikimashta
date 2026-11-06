@@ -9,12 +9,40 @@ permissions:
   contents: read
 
 jobs:
-  checks:
+  database:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: kikimashta-ci
+          POSTGRES_DB: kikimashta
+        ports: [5432:5432]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Verify database policies
+        env:
+          PGPASSWORD: kikimashta-ci
+        run: >-
+          psql -h localhost -U postgres -d kikimashta -v ON_ERROR_STOP=1
+          -f supabase/tests/bootstrap.sql
+          -f supabase/migrations/202611060001_sync.sql
+          -f supabase/tests/sync.sql
+
+  checks:
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
       VITE_BASE_PATH: /
       SOURCE_REVISION: ${{ github.sha }}
+      VITE_SUPABASE_URL: https://kikimashta-sync-test.supabase.co
+      VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_kikimashta_browser_test
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7.1.0
