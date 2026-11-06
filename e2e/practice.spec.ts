@@ -400,6 +400,44 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
   await expect(maximum.getByRole('option', { name: 'Intense', exact: true })).toHaveAttribute('aria-selected', 'true');
 });
 
+test('pace wheels glide back from unavailable choices and respect reduced motion', async ({ page }) => {
+  await page.clock.install();
+  await page.goto('./');
+  const minimum = page.getByRole('listbox', { name: 'Minimum', exact: true });
+  const light = minimum.getByRole('option', { name: 'Light', exact: true });
+  const moderate = minimum.getByRole('option', { name: 'Moderate', exact: true });
+  await expect(light).toHaveAttribute('aria-selected', 'true');
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+  async function releaseOnUnavailableChoice() {
+    // Place native overflow at an unavailable row, then end the injected drag.
+    // A controlled clock lets us inspect real animation frames without sleeps.
+    await minimum.dispatchEvent('touchstart');
+    await minimum.evaluate(element => { element.scrollTop = 480; });
+    await minimum.dispatchEvent('scroll');
+    await minimum.dispatchEvent('touchend');
+    await minimum.dispatchEvent('scrollend');
+  }
+  await releaseOnUnavailableChoice();
+  await expect(minimum).toHaveAttribute('data-rebounding', 'true');
+  await page.clock.runFor(160);
+  const duringReturn = await minimum.evaluate(element => element.scrollTop);
+  expect(duringReturn).toBeGreaterThan(240);
+  expect(duringReturn).toBeLessThan(480);
+  await expect(light).toHaveAttribute('aria-selected', 'true');
+  await page.clock.runFor(160);
+  const spring = await minimum.evaluate(element => element.scrollTop);
+  expect(spring).toBeLessThan(240);
+  expect(spring).toBeGreaterThanOrEqual(232);
+  await page.clock.runFor(160);
+  await expect(moderate).toHaveAttribute('aria-selected', 'true');
+  expect(await minimum.evaluate(element => element.scrollTop)).toBe(240);
+  await expect(minimum).not.toHaveAttribute('data-rebounding');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await releaseOnUnavailableChoice();
+  expect(await minimum.evaluate(element => element.scrollTop)).toBe(240);
+  await expect(minimum).not.toHaveAttribute('data-rebounding');
+});
+
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
   await page.clock.install();

@@ -12,7 +12,7 @@ function Controlled({ initial = { min: 'light', max: 'moderate' }, changed = () 
   return <PaceControl value={8} range={range} onChange={next => { setRange(next); changed(next); }}/>;
 }
 function selected(wheel: HTMLElement) { return within(wheel).getByRole('option', { selected: true }); }
-afterEach(() => { vi.useRealTimers(); });
+afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe('qualitative practice pace', () => {
   it('shows only the current qualitative label and an accessible loading placeholder', () => {
@@ -97,7 +97,7 @@ describe('qualitative practice pace', () => {
     expect(changed).toHaveBeenLastCalledWith({ min: 'moderate', max: 'moderate' });
   });
 
-  it('settles scrolling past disabled choices on the nearest valid bound in either wheel', () => {
+  it('glides back from disabled choices before committing the nearest valid bound in either wheel', () => {
     vi.useFakeTimers();
     const changed = vi.fn();
     render(<Controlled changed={changed}/>);
@@ -107,16 +107,67 @@ describe('qualitative practice pace', () => {
     min.scrollTop = 480;
     fireEvent.scroll(min);
     act(() => { vi.advanceTimersByTime(120); });
+    expect(changed).not.toHaveBeenCalled();
+    expect(min.scrollTop).toBe(480);
+    act(() => { vi.advanceTimersByTime(160); });
+    expect(min.scrollTop).toBeLessThan(480);
+    expect(min.scrollTop).toBeGreaterThan(240);
+    expect(changed).not.toHaveBeenCalled();
+    act(() => { vi.advanceTimersByTime(300); });
     expect(selected(min)).toHaveTextContent('Moderate');
     expect(min.scrollTop).toBe(240);
     expect(changed).toHaveBeenCalledExactlyOnceWith({ min: 'moderate', max: 'moderate' });
     fireEvent.wheel(max, { deltaY: -1000 });
     max.scrollTop = 0;
     fireEvent.scroll(max);
-    act(() => { vi.advanceTimersByTime(120); });
+    act(() => { vi.advanceTimersByTime(520); });
     expect(selected(max)).toHaveTextContent('Moderate');
     expect(max.scrollTop).toBe(240);
     expect(changed).toHaveBeenCalledTimes(1);
+  });
+
+  it('lets a new touch interrupt the rebound without committing its stale choice', () => {
+    vi.useFakeTimers();
+    const changed = vi.fn();
+    render(<Controlled changed={changed}/>);
+    const min = screen.getByRole('listbox', { name: 'Minimum' });
+    fireEvent.wheel(min, { deltaY: 1000 });
+    min.scrollTop = 480;
+    fireEvent.scroll(min);
+    act(() => { vi.advanceTimersByTime(216); });
+    expect(min.scrollTop).toBeLessThan(480);
+    fireEvent.touchStart(min);
+    min.scrollTop = 0;
+    fireEvent.scroll(min);
+    act(() => { vi.advanceTimersByTime(500); });
+    expect(changed).not.toHaveBeenCalled();
+    expect(min.scrollTop).toBe(0);
+    fireEvent.touchEnd(min);
+    act(() => { vi.advanceTimersByTime(620); });
+    expect(changed).toHaveBeenCalledExactlyOnceWith({ min: 'minimal', max: 'moderate' });
+  });
+
+  it('skips the rebound for reduced motion and cancels it on unmount', () => {
+    vi.useFakeTimers();
+    const changed = vi.fn();
+    const view = render(<Controlled changed={changed}/>);
+    const min = screen.getByRole('listbox', { name: 'Minimum' });
+    fireEvent.wheel(min, { deltaY: 1000 });
+    min.scrollTop = 480;
+    fireEvent.scroll(min);
+    act(() => { vi.advanceTimersByTime(216); });
+    view.unmount();
+    act(() => { vi.advanceTimersByTime(500); });
+    expect(changed).not.toHaveBeenCalled();
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+    render(<Controlled changed={changed}/>);
+    const reduced = screen.getByRole('listbox', { name: 'Minimum' });
+    fireEvent.wheel(reduced, { deltaY: 1000 });
+    reduced.scrollTop = 480;
+    fireEvent.scroll(reduced);
+    act(() => { vi.advanceTimersByTime(120); });
+    expect(reduced.scrollTop).toBe(240);
+    expect(changed).toHaveBeenCalledExactlyOnceWith({ min: 'moderate', max: 'moderate' });
   });
 
   it('preserves restored bounds through programmatic scroll events and emits once after user scrolling settles', () => {
