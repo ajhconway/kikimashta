@@ -1,0 +1,375 @@
+{
+  "issue": 77,
+  "sourcePullRequest": 75,
+  "createdOn": "2026-11-06",
+  "generator": "OpenAI built-in image_gen; exact prompts and references retained in source manifests",
+  "delivery": {
+    "encoder": "sips",
+    "format": "jpeg",
+    "maxDimension": 640,
+    "quality": 85
+  },
+  "assets": [
+    {
+      "id": "ja-apple",
+      "sourcePath": "artifacts/card-regeneration/batch-01/01-apple.png",
+      "sourceSha256": "693c57b57b06ea4beba0ab8dbd61e6efbf6279a5cd3b6d2c371f21867a82b919",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-apple-693c57b57b06.jpg",
+      "sha256": "4b763836b91c4aca2bc1058e911b3456ba527742bf672742e90e88acfd35850f",
+      "bytes": 58915
+    },
+    {
+      "id": "ja-v-66ccf8dd3399",
+      "sourcePath": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+      "sourceSha256": "546aecaf1c0049c56b124110aa9d59b65807626a2af4d229eb1dd4b15d913f8d",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg",
+      "sha256": "5112038f0c7a74073a341a1815e2579b7edbc773c14c78b35e92b88c9e09a9d6",
+      "bytes": 68507,
+      "followUp": "Basketball v4 is accepted for now to proceed. Improve its seam geometry and restore a more natural tilted angle with a recognizable seam intersection in a later pass."
+    },
+    {
+      "id": "ja-v-ad7167347a2a",
+      "sourcePath": "artifacts/card-regeneration/batch-01/03-person.png",
+      "sourceSha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-ad7167347a2a-b26b917cda8d.jpg",
+      "sha256": "cd1fa47ae7c9774b6522f208ca569c1129668e5eabd504243524db4a6aa82a2c",
+      "bytes": 60927
+    },
+    {
+      "id": "ja-v-b1ff052549ed",
+      "sourcePath": "artifacts/card-regeneration/batch-01/04-hand.png",
+      "sourceSha256": "cdb61c07af095a0745b90087f40a08dd6b2cadbc243aa4043944917d2b9b6737",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-b1ff052549ed-cdb61c07af09.jpg",
+      "sha256": "916f6ec2b917c193243c2ded76d32230fe23798573d821aae2bfc225724be3ef",
+      "bytes": 66148
+    },
+    {
+      "id": "ja-v-baa4dd2c5986",
+      "sourcePath": "artifacts/card-regeneration/batch-01/05-plate.png",
+      "sourceSha256": "d9c5d78f567cf19bf2a1df53092eee7fec43b27bffa48a4781d53595f080cc6f",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+      "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+      "bytes": 61025
+    },
+    {
+      "id": "ja-cup",
+      "sourcePath": "artifacts/card-regeneration/batch-01/06-cup.png",
+      "sourceSha256": "a6b3cf43ae549b459e3d64e35795b9fbb4a7c36df37fac4006aa20962076fc5a",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "bytes": 53360
+    },
+    {
+      "id": "ja-v-a47e21265374",
+      "sourcePath": "artifacts/card-regeneration/batch-01/07-cow.png",
+      "sourceSha256": "e25de9fd2ee72434754d464915349f79c6d8b06419abde304cc477c4cc8126a6",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-a47e21265374-e25de9fd2ee7.jpg",
+      "sha256": "30834384228c72a800e66ac76d50c09e8d90b818590fff7287b3544809018764",
+      "bytes": 83599
+    },
+    {
+      "id": "ja-v-ddd9dca106e2",
+      "sourcePath": "artifacts/card-regeneration/batch-01/08-mountain-v2.png",
+      "sourceSha256": "e3cd97f96a43a1f478e84303839208e81b8de425463cf3be365ae817c18348e1",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg",
+      "sha256": "ce6f40bb2fde03ae06e1f1ea9be86797617f109e00684be8a08cc2caf782bfe2",
+      "bytes": 49727
+    },
+    {
+      "id": "ja-v-0958f7553d9f",
+      "sourcePath": "artifacts/card-regeneration/batch-01/09-rice-v3.png",
+      "sourceSha256": "304fac5b04e185585404b02b7ed4b0978284bafdf623fa7ec87bb1db1a602ccf",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+      "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c",
+      "bytes": 89912
+    },
+    {
+      "id": "ja-v-2f734ba866d9",
+      "sourcePath": "artifacts/card-regeneration/batch-01/10-stone-v2.png",
+      "sourceSha256": "5bd1f3cb9579a0c08097958ad81844e2fb22576b3987aab5a42a8b8968f04994",
+      "manifestPath": "artifacts/card-regeneration/batch-01/manifest.json",
+      "path": "public/images/approved/ja-v-2f734ba866d9-5bd1f3cb9579.jpg",
+      "sha256": "618f73548f667e0bcb450970bb8f845f19af5cd5bdc6a2ced09e026068b8202e",
+      "bytes": 48450
+    },
+    {
+      "id": "ja-banana",
+      "sourcePath": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
+      "sourceSha256": "b36ca21f7582e1edfdbdc72b5d6bd8813b3ab51fa560c0ac8cd5b47d651a8ed3",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+      "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af",
+      "bytes": 54465
+    },
+    {
+      "id": "ja-dog",
+      "sourcePath": "artifacts/card-regeneration/batch-02/12-dog-cat-v3.png",
+      "sourceSha256": "eeb90977cdd71dd9a4223f27542f18b87e9d2da9da5e6958f1f989226fa89c8e",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-dog-eeb90977cdd7.jpg",
+      "sha256": "215a40a64efb01ed072fd086298778419fd5ea192ceb503ed686f3f7ae74f8de",
+      "bytes": 85104
+    },
+    {
+      "id": "ja-umbrella",
+      "sourcePath": "artifacts/card-regeneration/batch-02/13-umbrella-cat-v3.png",
+      "sourceSha256": "87536b6a75df16fa758e2e12db1e668c4499ea4400815f5e135da5266c9549ba",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-umbrella-87536b6a75df.jpg",
+      "sha256": "f86d16756f43fd494e6f385a6c1056c96c1e9b806cdaec98733bc06b037e84b4",
+      "bytes": 66078
+    },
+    {
+      "id": "ja-v-10e568715d3a",
+      "sourcePath": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
+      "sourceSha256": "5315406ba5022a6e79e47ba15c56f77b63da8889e25071daad8f0d56bf2ddcca",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-10e568715d3a-5315406ba502.jpg",
+      "sha256": "c27e68c1598340bd70c04506f38a2769095c7fc5f22f5e396e6fa9dcf5b05a24",
+      "bytes": 77650
+    },
+    {
+      "id": "ja-v-137737e5ce1f",
+      "sourcePath": "artifacts/card-regeneration/batch-02/15-light-bulb-cat-v3.png",
+      "sourceSha256": "95ec639d1a6cab64b5ac7a426472ae41ba20ca03175e398944b71aebad700f64",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-137737e5ce1f-95ec639d1a6c.jpg",
+      "sha256": "e46bce00dbd509546783b0f5e38b7466f595d67607bf4d916fdadd53cda6fcba",
+      "bytes": 66002
+    },
+    {
+      "id": "ja-v-188bdf18a50c",
+      "sourcePath": "artifacts/card-regeneration/batch-02/16-feather-cat-v3.png",
+      "sourceSha256": "0e4f4b576500c9987f0fc0aab15d57755c14039b3f0cf2a406596edec7d1bd37",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-188bdf18a50c-0e4f4b576500.jpg",
+      "sha256": "2de1509e6962419d9d3df19b43c771825a6661fd4136a07b7ae3d79b7da3c6d2",
+      "bytes": 72101
+    },
+    {
+      "id": "ja-v-19bd7db9d5d0",
+      "sourcePath": "artifacts/card-regeneration/batch-02/17-sky-cat-v3.png",
+      "sourceSha256": "1e9f5be4e15b8b51b454543b9952f9e3bd0dd52b51bf3b6252bb3dd0744817e5",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-19bd7db9d5d0-1e9f5be4e15b.jpg",
+      "sha256": "e00307f99d2b885a89961f67f23f6ed49ec63100636693e785ae4b870b7419d6",
+      "bytes": 52898
+    },
+    {
+      "id": "ja-v-1ee90bf5d13a",
+      "sourcePath": "artifacts/card-regeneration/batch-02/18-cutting-cat-v5.png",
+      "sourceSha256": "496f50c96ca4f81317b315b58ae64c3a5bc191c8d2ccba0bb33dd542e101a77e",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-1ee90bf5d13a-496f50c96ca4.jpg",
+      "sha256": "3557f65aa69cf6ef607d19ebd14916c062945d8b77d2abe3e11ba0c60f954964",
+      "bytes": 61592
+    },
+    {
+      "id": "ja-v-223e5321ecb8",
+      "sourcePath": "artifacts/card-regeneration/batch-02/19-onion-cat-v3.png",
+      "sourceSha256": "0aa0cb8ab63eb243a688f0262a3f90c8050278a5b432274c0176b80cb5e61cd0",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-223e5321ecb8-0aa0cb8ab63e.jpg",
+      "sha256": "f75660f42b7982624afc51d4d6cecdcde85c873c8e0f24b295eff277f99b9490",
+      "bytes": 71463
+    },
+    {
+      "id": "ja-v-23d807f4f375",
+      "sourcePath": "artifacts/card-regeneration/batch-02/20-scallop-shell-cat-v3.png",
+      "sourceSha256": "1f8969c3db86dda5a6cdbde02486c7fe3a0e5b01d2c50ef4884a7dacc2709c96",
+      "manifestPath": "artifacts/card-regeneration/batch-02/manifest.json",
+      "path": "public/images/approved/ja-v-23d807f4f375-1f8969c3db86.jpg",
+      "sha256": "4ebe8d0885d0493fbc9f58c4da389f19030bde132d94aca2fc9df0a49d78d1f2",
+      "bytes": 68029
+    },
+    {
+      "id": "ja-v-28ddfdc9290c",
+      "sourcePath": "artifacts/card-regeneration/batch-03/21-water-v2.png",
+      "sourceSha256": "5516b22697b485a8ade38754d96282fd62a2af133396161ace469b867b28c540",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+      "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5",
+      "bytes": 47630
+    },
+    {
+      "id": "ja-v-3144539c83d3",
+      "sourcePath": "artifacts/card-regeneration/batch-03/22-red.png",
+      "sourceSha256": "8b08411a59b19a476fdea4fe88861d18e87a1e17595f237d8ab92e50d3bc0f6b",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-3144539c83d3-8b08411a59b1.jpg",
+      "sha256": "9ab9d6da8a2410698f6855169e74caeefdb2ccab17d3cfdd05605ba313c72b1a",
+      "bytes": 79152
+    },
+    {
+      "id": "ja-v-3601c285284c",
+      "sourcePath": "artifacts/card-regeneration/batch-03/23-heart.png",
+      "sourceSha256": "7748d30a1bc3508d3f9d988db64f265f322d09941081162075e071d8b43e3a05",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-3601c285284c-7748d30a1bc3.jpg",
+      "sha256": "4841f3a0d5a774522571371991913b6dfe4b4b8b51d74bdd918c1a6f8e47d0a9",
+      "bytes": 50181
+    },
+    {
+      "id": "ja-v-39903246fd52",
+      "sourcePath": "artifacts/card-regeneration/batch-03/24-hole.png",
+      "sourceSha256": "2343cc3be707109999b99705338d62ca5425c649ffcef5ec91a5e3f08192f1db",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-39903246fd52-2343cc3be707.jpg",
+      "sha256": "013e2fedacc4c48ab1aa3b1ee23a24fa842461b3ab2a131ba0b5e49ba45f3664",
+      "bytes": 62420
+    },
+    {
+      "id": "ja-v-4063840184cf",
+      "sourcePath": "artifacts/card-regeneration/batch-03/25-grass.png",
+      "sourceSha256": "419e5696eb9431c618c6058c2c6d995b6869d6ac3c7349162dcd4661a6acdd03",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-4063840184cf-419e5696eb94.jpg",
+      "sha256": "c4ed54dbc292f34bc08d98f527477f86e6bffcf3c1ffd9d4f8e882f02a2650db",
+      "bytes": 82466
+    },
+    {
+      "id": "ja-v-46f8fe65f218",
+      "sourcePath": "artifacts/card-regeneration/batch-03/26-river.png",
+      "sourceSha256": "0be609b2f37f06a6796465e0561a8bb36e423ab4404c8ba812a6593399454bf8",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg",
+      "sha256": "bf0fbf654b6c97a908a5eefe05fab21d704a1d3496a6757bb8a6c63523300519",
+      "bytes": 97302
+    },
+    {
+      "id": "ja-v-5352aea4e4bb",
+      "sourcePath": "artifacts/card-regeneration/batch-03/27-soil.png",
+      "sourceSha256": "10d57c5820e408a2d2fafe54facaed289d26e9597d371cad18721f87c25f78de",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-5352aea4e4bb-10d57c5820e4.jpg",
+      "sha256": "906632fb531475d9550631a9a09a1acd581502e406c36ad3535798017e915032",
+      "bytes": 64884
+    },
+    {
+      "id": "ja-v-597577664a1b",
+      "sourcePath": "artifacts/card-regeneration/batch-03/28-gold.png",
+      "sourceSha256": "1afc79fc903df418615c4b1de9b571e5f47222657ebdd68f9093713ee085cd07",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-597577664a1b-1afc79fc903d.jpg",
+      "sha256": "7ede2e3f4ce9fd35c1997aee5da2c50074e1a96bb8e024f297764b426ba1600a",
+      "bytes": 59012
+    },
+    {
+      "id": "ja-v-5fb1d5e308b6",
+      "sourcePath": "artifacts/card-regeneration/batch-03/29-hitting.png",
+      "sourceSha256": "e2eb9e9bc1b4aa883671d01a313d647199eb9cbea93cf3d37237c21c4992100d",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-5fb1d5e308b6-e2eb9e9bc1b4.jpg",
+      "sha256": "1881da0c790e279d6a31a3733cb3b1219fd222c57069e64f113ef9e0b20412ed",
+      "bytes": 66987
+    },
+    {
+      "id": "ja-v-64289653ec1d",
+      "sourcePath": "artifacts/card-regeneration/batch-03/30-foot.png",
+      "sourceSha256": "3778add185bbe9119972dc4146293ceef27241f2c658172b4c9a302841c2c571",
+      "manifestPath": "artifacts/card-regeneration/batch-03/manifest.json",
+      "path": "public/images/approved/ja-v-64289653ec1d-3778add185bb.jpg",
+      "sha256": "fffbaf5e8fa39bbcb54642f85af82fb3c097f9ba89a05b60b6f9d5e4d8738db2",
+      "bytes": 59472
+    },
+    {
+      "id": "ja-v-7c4d1abbdd61",
+      "sourcePath": "artifacts/card-regeneration/batch-04/31-winter-v2.png",
+      "sourceSha256": "8dbb45353d73c03be3f26dbce1780639121e80b00d95bae5757b38ead950794b",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-7c4d1abbdd61-8dbb45353d73.jpg",
+      "sha256": "9abb2e87129c19ab65c440da6e3b40ac395bb833bb7e1cd38a85e941bde45e20",
+      "bytes": 109954
+    },
+    {
+      "id": "ja-v-7e87850c448d",
+      "sourcePath": "artifacts/card-regeneration/batch-04/32-rain-v2.png",
+      "sourceSha256": "2f7b218d4ef82ba554e00d5d9fca1e3dfb165e46bd70c8055690f8f895636f2a",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-7e87850c448d-2f7b218d4ef8.jpg",
+      "sha256": "a3923c0fe8396811a124b7b5506947b0dc3b5790b78abe799f2a033c3d7bc1ba",
+      "bytes": 62739
+    },
+    {
+      "id": "ja-v-81e708aba22f",
+      "sourcePath": "artifacts/card-regeneration/batch-04/33-half-v3.png",
+      "sourceSha256": "b9a1102d2978c5018a18007a03686a646c4cddbf9ad1dfac63eabe207cd7f77b",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-81e708aba22f-b9a1102d2978.jpg",
+      "sha256": "d2e15fcabddde11ce69df805581d6b19f2a9e398ccacb5f56befc9df7ebf62dc",
+      "bytes": 52125
+    },
+    {
+      "id": "ja-v-887f569257fd",
+      "sourcePath": "artifacts/card-regeneration/batch-04/34-city.png",
+      "sourceSha256": "2344329d73eb8f3b037a7c60dd7a1f6da5f1a2b875c2b00dd4bea39b46ce1b0c",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-887f569257fd-2344329d73eb.jpg",
+      "sha256": "1eefa6a5269bd1e6180a948d42813016c1acee265b0e483aa1cb14482aa2de97",
+      "bytes": 85298
+    },
+    {
+      "id": "ja-v-88c9d9718867",
+      "sourcePath": "artifacts/card-regeneration/batch-04/35-archeology.png",
+      "sourceSha256": "6023f4134792f2fb040a26a5e5eac8e63ca339bf809b3a307a111db24e27a187",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-88c9d9718867-6023f4134792.jpg",
+      "sha256": "023aab2a5ec59c3ab3c593e86845ddc1e952768522618d9bf2f2f9723e7dae1c",
+      "bytes": 90228
+    },
+    {
+      "id": "ja-v-8ce0a0ec59c4",
+      "sourcePath": "artifacts/card-regeneration/batch-04/36-engineering.png",
+      "sourceSha256": "2c79f03f7c091fb77b255d67de2d7bf82129128263f45ca931a11990e436726f",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-8ce0a0ec59c4-2c79f03f7c09.jpg",
+      "sha256": "04d835673b1de3ded740eea86d2f157530391952e146d6d1165589287011d48d",
+      "bytes": 100706
+    },
+    {
+      "id": "ja-v-921d54ba31ef",
+      "sourcePath": "artifacts/card-regeneration/batch-04/37-color.png",
+      "sourceSha256": "f324e0c362802ca86d84cc4f8d481cd49e053f5573e4a03ce5f9ddeb762486d2",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-921d54ba31ef-f324e0c36280.jpg",
+      "sha256": "a3aa293ff0267a9e8f8143fa2b925d7975cb46c080b38f0fe417e50862450e84",
+      "bytes": 86049
+    },
+    {
+      "id": "ja-v-947395f42397",
+      "sourcePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
+      "sourceSha256": "e709a52773bce062e4052986b332c1a2e7a14c2632814dd124fdfbecc397f237",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-947395f42397-e709a52773bc.jpg",
+      "sha256": "40fa2ce992f7c07f8bf0c640bbc92517879b72f3e245db7390bb20e2a455f9dc",
+      "bytes": 79348
+    },
+    {
+      "id": "ja-v-96e39ee9cb18",
+      "sourcePath": "artifacts/card-regeneration/batch-04/39-light-v2.png",
+      "sourceSha256": "0258aece5ade52d26b1ee16f8c73dfab2cc0ce1a964af7484c29f0d20daeeeb0",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-96e39ee9cb18-0258aece5ade.jpg",
+      "sha256": "67207bfa5643a1758497152de2cf800dd3e5af7dd1848e5838ec8ccd76259269",
+      "bytes": 55635
+    },
+    {
+      "id": "ja-v-99f7c98099b1",
+      "sourcePath": "artifacts/card-regeneration/batch-04/40-television.png",
+      "sourceSha256": "3c4295d7984dbb368bad702e278a7271838078526ce267c90cb413e8b39eb78e",
+      "manifestPath": "artifacts/card-regeneration/batch-04/manifest.json",
+      "path": "public/images/approved/ja-v-99f7c98099b1-3c4295d7984d.jpg",
+      "sha256": "1e05e5740186e9d7b48390a64eccf7fc246b9f3be04d7dd6599deb2fabe4b515",
+      "bytes": 74962
+    }
+  ]
+}

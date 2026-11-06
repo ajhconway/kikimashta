@@ -11,6 +11,7 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await page.getByLabel('Search words').fill('Dog');
   await expect(page.locator('.card')).toHaveCount(1);
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('犬');
+  await expect(page.locator('.card-image')).toHaveAttribute('src', /images\/approved\/ja-dog-[a-f0-9]+\.jpg$/);
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await page.getByRole('button', { name: 'Marin: Dog', exact: true }).click();
   await expect(page.locator('#audio-status')).toContainText('Marin');
@@ -25,6 +26,8 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await page.getByLabel('Search words').fill('りんご');
   await expect(page.locator('.card')).toHaveCount(1);
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('リンゴ');
+  await expect(page.locator('.card-image')).toHaveAttribute('src', /images\/approved\/ja-apple-[a-f0-9]+\.jpg$/);
+  await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBe(640);
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
