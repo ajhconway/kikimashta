@@ -5,6 +5,7 @@ import './PaceControl.css';
 const rowHeight = 120;
 const viewportHeight = 192;
 const settleDelay = 120;
+const reboundDuration = 380;
 
 const moodImages: Record<DensityLevel, string> = {
   minimal: 'brand/kikimashta-cat-v1.png',
@@ -36,11 +37,17 @@ function DensityWheel({ label, value, firstEnabled = 0, lastEnabled = DENSITY_LE
   const interacting = useRef(false);
   const touching = useRef(false);
   const pending = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const rebound = useRef<number | null>(null);
   const index = Math.max(0, levels.findIndex(level => level.id === value));
 
   const cancelSettle = useCallback(() => {
     if (pending.current !== null) clearTimeout(pending.current);
     pending.current = null;
+  }, []);
+  const cancelRebound = useCallback(() => {
+    if (rebound.current !== null) cancelAnimationFrame(rebound.current);
+    rebound.current = null;
+    if (viewport.current) delete viewport.current.dataset.rebounding;
   }, []);
 
   useLayoutEffect(() => {
@@ -48,22 +55,57 @@ function DensityWheel({ label, value, firstEnabled = 0, lastEnabled = DENSITY_LE
     // or emit a new selection through a programmatic scroll event.
     interacting.current = false;
     cancelSettle();
+    cancelRebound();
     const element = viewport.current;
     if (element) element.scrollTop = index * rowHeight;
-    return cancelSettle;
-  }, [index, firstEnabled, lastEnabled, cancelSettle]);
+    return () => { cancelSettle(); cancelRebound(); };
+  }, [index, firstEnabled, lastEnabled, cancelSettle, cancelRebound]);
 
-  function select(nextIndex: number) {
+  function select(nextIndex: number, animateRebound = false) {
     interacting.current = false;
     cancelSettle();
-    const next = levels[Math.min(lastEnabled, Math.max(firstEnabled, nextIndex))]!;
-    if (viewport.current) viewport.current.scrollTop = levels.indexOf(next) * rowHeight;
-    if (next.id !== value) onChange(next.id);
+    cancelRebound();
+    const allowedIndex = Math.min(lastEnabled, Math.max(firstEnabled, nextIndex));
+    const next = levels[allowedIndex]!;
+    const element = viewport.current;
+    const target = allowedIndex * rowHeight;
+    const finish = () => {
+      rebound.current = null;
+      if (element) {
+        element.scrollTop = target;
+        delete element.dataset.rebounding;
+      }
+      if (next.id !== value) onChange(next.id);
+    };
+    if (!element || !animateRebound || allowedIndex === nextIndex ||
+        window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || Math.abs(element.scrollTop - target) < 1) {
+      finish();
+      return;
+    }
+    const from = element.scrollTop;
+    const overshoot = Math.sign(target - from) * Math.min(6, Math.abs(target - from) * 0.06);
+    let started: number | null = null;
+    // Let the spring pass the resting point a few pixels without native snap
+    // fighting each frame. Programmatic frames never count as new input.
+    element.dataset.rebounding = 'true';
+    function frame(now: number) {
+      started ??= now;
+      const progress = Math.min(1, (now - started) / reboundDuration);
+      if (progress === 1) { finish(); return; }
+      if (progress < 0.8) {
+        element!.scrollTop = from + (target + overshoot - from) * (1 - (1 - progress / 0.8) ** 3);
+      } else {
+        const tail = (progress - 0.8) / 0.2;
+        element!.scrollTop = target + overshoot * (1 - tail * tail * (3 - 2 * tail));
+      }
+      rebound.current = requestAnimationFrame(frame);
+    }
+    rebound.current = requestAnimationFrame(frame);
   }
   function settle() {
     cancelSettle();
     if (!interacting.current || touching.current || !viewport.current) return;
-    select(Math.round(viewport.current.scrollTop / rowHeight));
+    select(Math.round(viewport.current.scrollTop / rowHeight), true);
   }
   function scrolling() {
     if (!interacting.current) return;
@@ -77,7 +119,7 @@ function DensityWheel({ label, value, firstEnabled = 0, lastEnabled = DENSITY_LE
     event.preventDefault();
     select(next);
   }
-  const arm = () => { interacting.current = true; };
+  const arm = () => { cancelRebound(); interacting.current = true; };
   function startTouch() {
     touching.current = true;
     cancelSettle();
