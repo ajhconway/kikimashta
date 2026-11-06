@@ -156,8 +156,10 @@ h1 em { color: var(--purple); font-style: normal; }
 .picture-choice img { pointer-events: none; -webkit-user-drag: none; }
 /* Absolute image sizing prevents intrinsic row inflation in mobile WebKit. */
 .picture-choice > img { position: absolute; top: var(--picture-inset); left: var(--picture-inset); width: calc(100% - var(--picture-inset) - var(--picture-inset)); height: calc(100% - var(--picture-inset) - var(--picture-inset)); object-fit: contain; }
-.picture-choice.correct { border-color: var(--purple); background: #eee4ff; }
-.picture-choice.incorrect { border-color: #ed87ac; background: #fff0f5; }
+/* Keep opaque approved artwork on the same white surface in every state (#92).
+   Feedback uses borders and badges; tinted fills expose JPEG rectangles. */
+.picture-choice.correct { border-color: var(--purple); }
+.picture-choice.incorrect { border-color: #ed87ac; }
 .choice-badge { display: grid; place-items: center; position: absolute; right: 8px; bottom: 8px; width: 27px; height: 27px; border-radius: 50%; background: var(--purple); color: #fff; font-size: 17px; font-weight: 800; }
 .choice-badge.wrong { background: var(--orange); color: #653b18; }
 .feedback { min-height: 62px; margin: 17px auto 0; }
@@ -237,9 +239,7 @@ footer a:hover { color: var(--purple-dark); }
 .quiz .choices-enter .choice-slot:nth-child(even) { --entry-x: 110vw; }
 .choice-slot.is-departing { visibility: hidden; pointer-events: none; }
 .quiz .picture-choice:not(:disabled):active { transform: translateY(3px) scale(.9, .85); transition-duration: .05s; }
-.quiz .picture-choice.correct { border-color: var(--purple-dark); background: #fff2c5; }
-.quiz .picture-choice.incorrect { background: #fff0f5; }
-.quiz .picture-choice:disabled:not(.correct):not(.incorrect) { background: #f6efff; }
+.quiz .picture-choice.correct { border-color: var(--purple-dark); }
 .quiz .choice-badge { width: 30px; height: 30px; background: var(--purple-dark); }
 .quiz .choice-badge.wrong { background: var(--orange); }
 .quiz .practice-actions { width: 100%; max-width: 380px; min-height: 140px; margin: 0 auto; padding-top: 14px; }
@@ -248,7 +248,7 @@ footer a:hover { color: var(--purple-dark); }
 .quiz .practice-actions .primary:not(:disabled):active { transform: translateY(3px) scale(.92, .84); transition-duration: .05s; }
 
 @media (hover: hover) and (pointer: fine) {
-  .quiz .picture-choice:not(:disabled):hover:not(:active) { border-color: var(--purple-dark); background: #fff9ff; }
+  .quiz .picture-choice:not(:disabled):hover:not(:active) { border-color: var(--purple-dark); }
   .quiz .quiz-listen:hover { background: #ffe1ed; }
 }
 

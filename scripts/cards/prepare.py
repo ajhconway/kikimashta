@@ -17,10 +17,13 @@ STYLE = '''Use case: scientific-educational
 Asset type: one square vocabulary illustration for a Japanese listening game
 Style/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.
 Palette: ink #3f2468, pink #ff85b5, orange #ff9d47, yellow #ffe178, lavender #af86ef, sky blue #91d7ed, green #a6dbad, warm skin #ffcf9c. White and neutral gray allowed. Factual colors such as flags and named colors override decorative palette.
-Scene/backdrop: plain solid white, opaque background, no frame or rounded card border.
+Scene/backdrop: genuinely transparent outer background with an alpha channel; no painted white backdrop, checkerboard, frame or rounded card border.
 Composition/framing: square canvas, primary subject centered and fully visible, typically 65–75 percent of canvas; generous margin. Context is subordinate. Maintain legibility at 145px.
 Line system: rounded caps and joins; exterior stroke approximately 7 units on a 256-unit canvas. Keep apparent line weight consistent across single and grouped subjects, simplify detail for small groups; no hairline details below one pixel at 145px.
 Constraints: literal recognizable subject, accurate anatomy, exact quantities. No answer captions, translations, decorative badges, logos, watermarks, shadows or unrelated props. Only render text/numerals if explicitly essential to the subject, character, quantity, calendar or factual sign. An attractive mnemonic is not proof of an unambiguous meaning.'''
+
+# Final delivery rule overrides historical white-backdrop scene/reference wording (#92).
+BACKGROUND_POLICY = '''Background/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.'''
 
 # Corrected scene concepts, including the role-specific sides of paired findings.
 CONCEPTS = {
@@ -289,6 +292,7 @@ def prepare():
             item['prompt'] += '\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.'
         if item['componentGuidance']:
             item['prompt'] += '\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\n' + '\n'.join(item['componentGuidance'].values())
+        item['prompt'] += '\n' + BACKGROUND_POLICY
         cards.append(item)
 
     # Separate undirected answer collisions from the directed generation graph.
