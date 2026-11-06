@@ -244,7 +244,31 @@ async function heardWord(page: Page) {
   return { source: source!, target: target! };
 }
 
-async function chooseHeardPicture(page: Page, pressScreenshot?: string, responseScreenshot?: string) {
+async function chooseHeardPicture(page: Page, target: WordItem) {
+  const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
+  // Session journeys keep native playback and real storage, but skip the answer
+  // beat. Detailed motion and the ordinary timer are checked in a focused test.
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+  try {
+    await page.getByRole('button', { name: /choose picture/i }).filter({
+      has: page.getByRole('img', { name: target.image.alt, exact: true }),
+    }).click();
+    await expect(page.locator('.feedback')).toHaveText('Got it!');
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    // The app starts the advance timer only after playback and saving finish.
+    // Native media is not governed by the Playwright clock.
+    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
+    await expect(page.getByRole('button', { name: /replay word/i })).toHaveText('Replay');
+    await expect(page.locator('.feedback').getByText('Saving…', { exact: true })).toHaveCount(0);
+    await page.clock.fastForward(1200);
+    await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
+  } finally {
+    await page.clock.resume();
+  }
+}
+
+async function chooseWithAnimationChecks(page: Page, pressScreenshot: string, responseScreenshot: string) {
   const { target } = await heardWord(page);
   await expectCompanionMotion(page);
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
@@ -260,20 +284,16 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
   // for the next question so autoplay and the normal answer delay remain tested.
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   try {
-    if (pressScreenshot) {
-      await choice.hover();
-      const card = await choice.boundingBox();
-      expect(card).not.toBeNull();
-      await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
-      await page.mouse.down();
-      try {
-        await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
-      } finally {
-        // Releasing the real press answers normally while its advance timer is paused.
-        await page.mouse.up();
-      }
-    } else {
-      await choice.click();
+    await choice.hover();
+    const card = await choice.boundingBox();
+    expect(card).not.toBeNull();
+    await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
+    await page.mouse.down();
+    try {
+      await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
+    } finally {
+      // Releasing the real press answers normally while its advance timer is paused.
+      await page.mouse.up();
     }
     await expect(page.locator('.feedback')).toHaveText('Got it!');
     await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
@@ -299,13 +319,26 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
         && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
           && card.bottom <= feedback.top);
     }, beforeAnswer), { message: 'feedback keeps the grid stable; retained pictures fit and departures add no page overflow' }).toBe(true);
-    if (responseScreenshot) await captureCorrectResponse(page, responseScreenshot);
+    await captureCorrectResponse(page, responseScreenshot);
     // Native CSS animations finish while JavaScript timers remain paused.
     await expectDeparturesFinished(page, 3);
   } finally {
     await page.clock.resume();
   }
 }
+
+test('correct feedback finishes its animation, preserves layout, and advances to the next audible word', async ({ page }, testInfo) => {
+  await page.clock.install();
+  await startReview(page);
+  const { source } = await heardWord(page);
+  await chooseWithAnimationChecks(page, 'adaptive-pressed-' + testInfo.project.name, 'adaptive-correct-' + testInfo.project.name);
+  // Leave the clock running here: exercise the normal answer delay and autoplay
+  // rather than advancing timers as the longer session journeys do.
+  await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
+  const nextWord = await heardWord(page);
+  expect(nextWord.source).not.toBe(source);
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+});
 
 test('learn ten words, complete the mini-quiz, and retain lesson results after reload', async ({ page }, testInfo) => {
   test.setTimeout(90_000);
@@ -337,7 +370,7 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
     const { target } = await heardWord(page);
     expect(introduced.some(item => item.id === target.id)).toBe(true);
     expect(seen.has(target.id)).toBe(false); seen.add(target.id);
-    await chooseHeardPicture(page, i === 0 ? 'adaptive-pressed-' + testInfo.project.name : undefined, i === 0 ? 'adaptive-correct-' + testInfo.project.name : undefined);
+    await chooseHeardPicture(page, target);
   }
   await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
   await captureScreen(page, 'adaptive-chunk-end-' + testInfo.project.name);
@@ -544,7 +577,7 @@ test('Dev review practices six random words and a missed-word retry without savi
       await expect(mistakes.locator('.mistake-icon')).toHaveCount(1);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
-      await chooseHeardPicture(page);
+      await chooseHeardPicture(page, target);
       completed.add(target.id);
     }
     if (completed.size < 6) await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toHaveCount(0);
@@ -603,7 +636,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
       await expect(mistakes.locator('.mistake-icon')).toHaveCount(misses);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
-      await chooseHeardPicture(page);
+      await chooseHeardPicture(page, target);
       completed.add(target.id);
     }
     if (completed.size < 6) await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toHaveCount(0);
@@ -769,7 +802,7 @@ test('an unavailable recording can be retried without recording a premature answ
   await page.unroute(audioRequests);
   await page.getByRole('button', { name: /replay word/i }).click();
   await expect(page.getByRole('alert')).toHaveCount(0);
-  await chooseHeardPicture(page);
+  await chooseHeardPicture(page, (await heardWord(page)).target);
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
   await expect(page.getByText('7 answers saved on this device')).toBeVisible();
