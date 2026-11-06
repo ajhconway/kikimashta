@@ -285,6 +285,7 @@ async function chooseWithAnimationChecks(page: Page, pressScreenshot: string, re
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   try {
     await choice.hover();
+    await expect(choice).toHaveCSS('background-color', 'rgb(255, 255, 255)');
     const card = await choice.boundingBox();
     expect(card).not.toBeNull();
     await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
@@ -296,6 +297,11 @@ async function chooseWithAnimationChecks(page: Page, pressScreenshot: string, re
       await page.mouse.up();
     }
     await expect(page.locator('.feedback')).toHaveText('Got it!');
+    // Opaque approved JPEGs must not reveal a rectangle during feedback (#92).
+    for (const card of await page.locator('.choices .picture-choice').all()) {
+      await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+    }
+    await expect(choice.locator('.choice-badge')).toHaveText('✓');
     await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
     await expectCompanionMotion(page);
     await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
@@ -683,6 +689,10 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect(page.getByText('Try this one.', { exact: true })).toBeVisible();
   await expect(page.locator('.feedback')).toHaveText('Try this one.');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'incorrect');
+  for (const card of await page.locator('.choices .picture-choice').all()) {
+    await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  }
+  await expect(wrongChoice.locator('.choice-badge.wrong')).toBeVisible();
   await expect.poll(() => screenColor(page)).toBe('#b8a4cf');
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await expect(page.locator('.answer-departures')).toHaveCSS('display', 'none');

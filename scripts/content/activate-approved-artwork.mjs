@@ -1,7 +1,7 @@
 /** Activate reviewed image selections without changing vocabulary or practice eligibility (#72). */
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -37,9 +37,25 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     })
   })
   const deliveries = plan.map(({ asset, manifestPath, description, path }) => {
-    mkdirSync(dirname(join(root, path)), { recursive: true })
-    if (!existsSync(join(root, path))) encode(join(root, asset.path), join(root, path))
-    const bytes = readFileSync(join(root, path))
+    const target = join(root, path)
+    const recorded = activation.assets.find(record => record.id === asset.id && record.path === path &&
+      record.sourcePath === asset.path && record.sourceSha256 === asset.sha256 && record.manifestPath === manifestPath)
+    let bytes = existsSync(target) ? readFileSync(target) : undefined
+    // A hash-derived filename identifies the source, not the encoded delivery.
+    // Only reuse bytes verified by the previously recorded activation provenance.
+    if (!recorded || !bytes || hash(bytes) !== recorded.sha256 || bytes.length !== recorded.bytes) {
+      mkdirSync(dirname(target), { recursive: true })
+      const temporary = mkdtempSync(join(dirname(target), '.artwork-'))
+      try {
+        const staged = join(temporary, 'delivery.jpg')
+        encode(join(root, asset.path), staged)
+        bytes = readFileSync(staged)
+        if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
+        renameSync(staged, target)
+      } finally {
+        rmSync(temporary, { recursive: true, force: true })
+      }
+    }
     if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
     return { id: asset.id, sourcePath: asset.path, sourceSha256: asset.sha256, manifestPath, path, sha256: hash(bytes), bytes: bytes.length,
       ...(asset.followUp ? { followUp: asset.followUp } : {}), description }

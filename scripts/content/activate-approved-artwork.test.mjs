@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { activateArtwork } from './activate-approved-artwork.mjs'
@@ -54,4 +54,45 @@ for (const failure of ['unapproved', 'hash mismatch', 'unknown id']) test(`prefl
   assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Must validate before encoding') }))
   assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
   assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+})
+
+for (const previouslyActivated of [false, true]) test(`regenerates an untrusted delivery (${previouslyActivated ? 'corrupted recorded file' : 'unrecorded file'})`, t => {
+  const f = fixture(t)
+  const options = { root: f.root, batches: ['batch-05'] }
+  if (previouslyActivated) activateArtwork({ ...options, encode: f.encode })
+  const target = join(f.root, `public/images/approved/ja-test-${f.manifest.assets[0].sha256.slice(0, 12)}.jpg`)
+  mkdirSync(dirname(target), { recursive: true })
+  const stale = Buffer.from('ffd800000000', 'hex')
+  writeFileSync(target, stale)
+  let encodes = 0
+  activateArtwork({ ...options, encode: (source, staged) => {
+    encodes++
+    assert.notEqual(staged, target)
+    assert.deepEqual(readFileSync(target), stale, 'leave the old file intact until encoding completes')
+    f.encode(source, staged)
+  } })
+  assert.equal(encodes, 1)
+  const delivery = readFileSync(target)
+  assert.notDeepEqual(delivery, stale)
+  const record = f.read('content/card-regeneration/activation.json').assets.find(asset => asset.id === 'ja-test')
+  assert.equal(record.sha256, hash(delivery))
+  assert.equal(record.bytes, delivery.length)
+  assert.deepEqual(readdirSync(dirname(target)), [target.split('/').at(-1)])
+})
+
+for (const failure of ['encoder error', 'invalid output']) test(`failed regeneration preserves mappings and delivery after ${failure}`, t => {
+  const f = fixture(t)
+  const target = join(f.root, `public/images/approved/ja-test-${f.manifest.assets[0].sha256.slice(0, 12)}.jpg`)
+  mkdirSync(dirname(target), { recursive: true })
+  const stale = Buffer.from('ffd800000000', 'hex')
+  writeFileSync(target, stale)
+  const before = f.read('content/card-regeneration/activation.json')
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: (_, staged) => {
+    writeFileSync(staged, 'partial')
+    if (failure === 'encoder error') throw new Error('Interrupted encoder')
+  } }), failure === 'encoder error' ? /Interrupted encoder/ : /Delivery must be JPEG/)
+  assert.deepEqual(readFileSync(target), stale)
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
+  assert.deepEqual(readdirSync(dirname(target)), [target.split('/').at(-1)])
 })
