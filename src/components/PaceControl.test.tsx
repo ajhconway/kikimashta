@@ -26,11 +26,11 @@ describe('qualitative practice pace', () => {
     render(<Controlled initial={{ min: 'minimal', max: 'intense' }}/>);
     const min = screen.getByRole('listbox', { name: 'Minimum' });
     const expected = [
-      ['Minimal', 'minimal', '/brand/kikimashta-cat-v1.png'],
-      ['Light', 'light', '/brand/pace/kiku-light-v1.png'],
+      ['Minimal', 'minimal', '/brand/pace/kiku-minimal-v1.png'],
+      ['Light', 'light', '/brand/kikimashta-cat-v1.png'],
       ['Moderate', 'moderate', '/brand/pace/kiku-moderate-v1.png'],
       ['High', 'high', '/brand/pace/kiku-high-v1.png'],
-      ['Intense', 'intense', '/brand/pace/kiku-intense-v1.png'],
+      ['Intense', 'intense', '/brand/pace/kiku-intense-v2.png'],
     ];
     const assertChoices = () => {
       for (const [label, level, image] of expected) {
@@ -43,7 +43,7 @@ describe('qualitative practice pace', () => {
     fireEvent.keyDown(min, { key: 'End' });
     expect(selected(min)).toHaveTextContent('Intense');
     assertChoices();
-    expect(screen.getByRole('status', { name: 'Review density' }).querySelector('img')).toHaveAttribute('src', '/brand/pace/kiku-light-v1.png');
+    expect(screen.getByRole('status', { name: 'Review density' }).querySelector('img')).toHaveAttribute('src', '/brand/kikimashta-cat-v1.png');
   });
 
   it('supports keyboard selection with equal bounds while preventing minimum from exceeding maximum', () => {

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "issue": "https://github.com/ajhconway/kikimashta/issues/73",
+  "createdAt": "2026-11-06T14:51:06.276211+00:00",
+  "supersedes": "content/kiku-pace-provenance.json",
+  "generator": "OpenAI built-in image_gen.imagegen",
+  "mode": "edit",
+  "modelMetadata": null,
+  "modelMetadataNote": "The built-in result did not provide a model identifier.",
+  "reference": {
+    "path": "public/brand/kikimashta-cat-v1.png",
+    "bytes": 295090,
+    "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+    "width": 640,
+    "height": 640,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "transparentPixels": 232933
+  },
+  "ownerSuppliedOriginal": "Kikimashta Japanese Listening Cat.png",
+  "sourcePolicy": "Character-pose derivatives of the owner-supplied Kiku artwork. Standard Kiku and all previous assets/originals remain unchanged. Interface colors are supplied by CSS; new assets have genuine transparency.",
+  "assets": [
+    {
+      "id": "minimal",
+      "intensity": "Minimal",
+      "reuse": false,
+      "delivery": {
+        "path": "public/brand/pace/kiku-minimal-v1.png",
+        "bytes": 797240,
+        "sha256": "c5df84c17b8f070ed61bc0a70973e435ade5a8b59bd0b7046982e9393b725d86",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 1006085
+      },
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1af36-f501-7e52-a0b8-a791a2cd0a67/exec-83457ee8-0e8e-4f2d-a841-4dfe84c0a458.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent mascot pose for an existing Japanese listening app intensity selector, shown at 68 pixels.\nInput image 1 is the edit target: the exact standard Kiku golden-orange cat with purple over-ear headphones and thick dark-purple outlines.\nPrimary request: Create the MINIMAL intensity version: Kiku is unmistakably fast asleep. Change the pose so the compact seated cat has lowered its head onto its two folded front paws, nestled into a small curled resting body, tail curled comfortably alongside. The eyelids are fully and peacefully shut, the face is slack and restful with a tiny soft sleeping mouth. This must read as actually sleeping, not simply the original contented closed-eye smile. Keep the head large enough to read at icon size and keep the recognizable purple headphone arch on the head. The whole resting cat, tail, headphones and paws are visible.\nInvariants: preserve the exact character identity, round face, golden-orange fur, pink ear interiors, tiny purple nose, purple headphones, thick smooth dark-purple outlines and existing soft cel shading. Stay in the existing illustration style and palette, without new accessories.\nComposition: a single whole centered mascot on square canvas with a small clear margin, filling about 80% of the width, usable in the same UI image box as the reference.\nBackground: genuine transparent alpha, including empty spaces inside headphone arch. Cat and headphones only. No pillow, bed, ground shadow, background, backdrop, color field, checkerboard, labels, text, Z letters, stars or other objects.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "processing": "Generated PNG copied byte-for-byte; original preserved. No pixel edits, resizing or alpha changes.",
+      "visualReview": "Inspected full generated output and genuine transparent alpha. Sleeping head lowered onto paws, curled resting body and closed eyes."
+    },
+    {
+      "id": "light",
+      "intensity": "Light",
+      "reuse": true,
+      "delivery": {
+        "path": "public/brand/kikimashta-cat-v1.png",
+        "bytes": 295090,
+        "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+        "width": 640,
+        "height": 640,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 232933
+      },
+      "sourceRecord": "content/brand-provenance.json",
+      "visualReview": "Standard Kiku reused exactly for Light."
+    },
+    {
+      "id": "moderate",
+      "intensity": "Moderate",
+      "reuse": true,
+      "delivery": {
+        "path": "public/brand/pace/kiku-moderate-v1.png",
+        "bytes": 922179,
+        "sha256": "e8bdf44cfee173100887b3354c34df77048cbb4580ead391f604bf6a046ccf6c",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 884676
+      },
+      "sourceRecord": "content/kiku-pace-provenance.json",
+      "visualReview": "Existing approved artwork preserved byte-for-byte."
+    },
+    {
+      "id": "high",
+      "intensity": "High",
+      "reuse": true,
+      "delivery": {
+        "path": "public/brand/pace/kiku-high-v1.png",
+        "bytes": 897354,
+        "sha256": "cea9b4e20f8d8b67252f2d632a28745c9d70ef0c35e58678dd56298c3606cce1",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 904550
+      },
+      "sourceRecord": "content/kiku-pace-provenance.json",
+      "visualReview": "Existing approved artwork preserved byte-for-byte."
+    },
+    {
+      "id": "intense",
+      "intensity": "Intense",
+      "reuse": false,
+      "delivery": {
+        "path": "public/brand/pace/kiku-intense-v2.png",
+        "bytes": 925294,
+        "sha256": "ea5d4977dc6e846bfc20d3a692f73bde3938ef54b4f50732983e77f35c2f704e",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixels": 874021
+      },
+      "generatedToolOutputPath": "/Users/ajhconway/.codex/generated_images/01a1af36-f501-7e52-a0b8-a791a2cd0a67/exec-e3b66699-5ee7-46a6-9c71-6ff25814491a.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent mascot expression for an existing Japanese listening app intensity selector, shown at 68 pixels.\nInput image 1 is the edit target: the exact standard Kiku golden-orange cat with purple over-ear headphones and thick dark-purple outlines.\nPrimary request: Create the INTENSE intensity version of this same mascot. Kiku is seriously concentrating as if cramming for an exam: eyes open, narrower and intently focused, slightly lowered eyelids, clear angled concentration eyebrows drawn inward, small firm closed mouth rather than a smile, head and shoulders leaning just a little forward, both front paws planted together. Determined and studious, not furious or menacing. This should communicate maximum mental effort immediately at small size. Avoid cheerful open-mouth smiles, sparkling eyes, raised celebratory paws, or excitement. Change only expression and slight posture; no book or extra props needed.\nInvariants: keep the exact orange cat identity, round large head, compact seated body, pink inner ears, small purple nose, curled tail, purple over-ear headphones and headphone arch, thick dark-purple outlines, smooth existing soft cel shading and orange-purple palette.\nComposition: one whole centered mascot on square canvas, full ears/headphones, paws and tail visible with a small transparent margin, filling about 80% of the width. Match the reference's relative scale and visual weight for consistent small UI tiles.\nBackground: genuine transparent alpha everywhere outside mascot and inside headphone arch. Cat and headphones only. No backdrop, checkerboard, ground shadow, text, labels, study props, accessories, star eyes, sparkles or extra objects.",
+      "toolParameters": {
+        "referenced_image_paths": [
+          "/Users/ajhconway/Documents/kikimashta/public/brand/kikimashta-cat-v1.png"
+        ],
+        "transparent_background": true
+      },
+      "processing": "Generated PNG copied byte-for-byte; original preserved. No pixel edits, resizing or alpha changes.",
+      "visualReview": "Inspected full generated output and genuine transparent alpha. Narrow focused eyes, concentration eyebrows, firm closed mouth and planted paws."
+    }
+  ]
+}
