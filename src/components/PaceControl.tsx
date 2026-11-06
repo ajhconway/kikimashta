@@ -5,7 +5,7 @@ import './PaceControl.css';
 const rowHeight = 120;
 const viewportHeight = 192;
 const settleDelay = 120;
-const reboundDuration = 380;
+const reboundDuration = 200;
 
 const moodImages: Record<DensityLevel, string> = {
   minimal: 'brand/kikimashta-cat-v1.png',

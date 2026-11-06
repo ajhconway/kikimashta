@@ -23,6 +23,39 @@ async function established(): Promise<ScheduledWord> {
 }
 
 describe('FSRS listening schedules', () => {
+  it('retains corrective retries in history without letting them overwrite a miss or a later normal review', async () => {
+    const lesson = attempt();
+    const miss = attempt({ id: 'miss', answeredAt: start + day, correct: false, selectedId: 'dog',
+      context: { ...lesson.context!, phase: 'review' } });
+    const repeatedMiss = attempt({ id: 'correction-miss', answeredAt: start + day + 60000, correct: false, selectedId: 'dog',
+      context: { ...miss.context!, retryOf: miss.id } });
+    const correction = attempt({ id: 'correction-pass', answeredAt: start + day + 120000,
+      context: { ...miss.context!, retryOf: miss.id } });
+    const history = [correction, lesson, repeatedMiss, miss];
+    const original = structuredClone(history);
+    const afterMiss = await deriveSchedules([lesson, miss], 'ja-JP');
+    expect(await deriveSchedules(history, 'ja-JP')).toEqual(afterMiss);
+    expect(snapshotDue(afterMiss, ['cat'], correction.answeredAt)).toEqual(['cat']);
+    const later = attempt({ id: 'later-review', answeredAt: start + 3 * day, context: { ...miss.context! } });
+    expect(await deriveSchedules([...history, later], 'ja-JP')).toEqual(await deriveSchedules([lesson, miss, later], 'ja-JP'));
+    expect(history).toEqual(original);
+    expect(history).toHaveLength(4);
+  });
+
+  it('safely surfaces orphan corrective history as a due new word without retention evidence', async () => {
+    const first = attempt({ id: 'orphan-1', context: { ...attempt().context!, retryOf: 'missing-original' } });
+    const last = attempt({ id: 'orphan-2', answeredAt: start + 120000, context: { ...first.context! } });
+    const history = [last, first];
+    const original = structuredClone(history);
+    const words = await deriveSchedules(history, 'ja-JP');
+    expect(words).toHaveLength(1);
+    expect(words[0]!.card).toMatchObject({ reps: 0, stability: 0, lastReviewAt: null, scheduleStatus: 'new' });
+    expect(words[0]!.dueAt).toBe(last.answeredAt);
+    expect(snapshotDue(words, ['cat'], last.answeredAt)).toEqual(['cat']);
+    expect(await retrievability(words[0]!, last.answeredAt + day)).toBe(0);
+    expect(history).toEqual(original);
+  });
+
   it('initializes success and failure through FSRS with shorter relearning after a miss', async () => {
     const good = await advanceSchedule(undefined, attempt());
     const missed = await advanceSchedule(undefined, attempt({ correct: false, selectedId: 'dog' }));

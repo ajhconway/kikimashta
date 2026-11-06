@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { WordBank } from '../types';
-import { createSession, createQuestions, validateBank } from './session';
+import { createSession, createQuestions, requeueMissedQuestion, validateBank } from './session';
 
 function bank(): WordBank {
   return {
@@ -14,6 +14,51 @@ function bank(): WordBank {
 }
 
 describe('practice sessions', () => {
+  it.each([[0, 3], [0.5, 5], [0.999, 6]])('inserts a shuffled retry inside the remaining queue with random=%s', (random, expectedPosition) => {
+    const questions = createSession(bank(), 6, 4, () => 0.5);
+    const original = structuredClone(questions);
+    const result = requeueMissedQuestion(questions, 1, 'original-miss', () => random);
+    const retry = result[expectedPosition]!;
+    expect(result).toHaveLength(7);
+    expect(retry.target).toBe(questions[1]!.target);
+    expect(retry.retryOf).toBe('original-miss');
+    expect(retry).not.toBe(questions[1]);
+    expect(retry.choices).not.toBe(questions[1]!.choices);
+    expect(retry.choices.map(item => item.id).sort()).toEqual(questions[1]!.choices.map(item => item.id).sort());
+    const retained = result.filter((_, position) => position !== expectedPosition);
+    expect(retained).toEqual(questions);
+    retained.forEach((question, position) => expect(question).toBe(questions[position]));
+    expect(questions).toEqual(original);
+    if (random === 0) expect(retry.choices).not.toEqual(questions[1]!.choices);
+  });
+
+  it('retries a final miss next, while keeping the completed prefix intact', () => {
+    const questions = createSession(bank(), 2, 4, () => 0.5);
+    const result = requeueMissedQuestion(questions, 1, 'last-miss', () => 0);
+    expect(result.slice(0, 2)).toEqual(questions);
+    expect(result[2]).toMatchObject({ target: questions[1]!.target, retryOf: 'last-miss' });
+  });
+
+  it('keeps one pending retry across repeated transitions and repeated misses', () => {
+    const questions = createSession(bank(), 4, 4, () => 0.5);
+    const first = requeueMissedQuestion(questions, 0, 'original-miss', () => 0);
+    expect(first[2]!.retryOf).toBe('original-miss');
+    const duplicatedTransition = requeueMissedQuestion(first, 0, 'original-miss', () => 0.999);
+    expect(duplicatedTransition).toEqual(first);
+    const again = requeueMissedQuestion(first, 2, 'retry-miss', () => 0);
+    expect(again.slice(0, 3)).toEqual(first.slice(0, 3));
+    const pending = again.slice(3).filter(question => question.retryOf === 'original-miss');
+    expect(pending).toHaveLength(1);
+    expect(pending[0]!.target.id).toBe(first[2]!.target.id);
+    expect(again.some(question => question.retryOf === 'retry-miss')).toBe(false);
+  });
+
+  it('rejects a retry without a current question or original miss identity', () => {
+    const questions = createSession(bank());
+    for (const index of [-1, 0.5, questions.length]) expect(() => requeueMissedQuestion(questions, index, 'miss')).toThrow(/retry/i);
+    expect(() => requeueMissedQuestion(questions, 0, '')).toThrow(/retry/i);
+  });
+
   it('offers unique pictures with exactly one correct choice and no repeated targets', () => {
     const words = bank();
     const original = structuredClone(words);

@@ -49,6 +49,8 @@ export interface PracticeAttempt {
     recordingSrc: string
     replays: number
     schedulerVersion: string
+    /** Original miss ID when this answer is an in-block corrective retry. */
+    retryOf?: string
   }
 }
 

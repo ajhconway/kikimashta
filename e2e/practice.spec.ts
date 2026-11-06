@@ -31,7 +31,7 @@ async function savedAttempts(page: Page) {
   return page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open('kikimashta-v0', 1); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
     try {
-      return await new Promise<{itemId:string; context?:{phase:string;recordingSrc:string;replays:number};correct:boolean;choiceIds:string[]}[]>((resolve, reject) => { const request = db.transaction('attempts').objectStore('attempts').getAll(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
+      return await new Promise<{itemId:string; id:string;context?:{phase:string;recordingSrc:string;replays:number;retryOf?:string};correct:boolean;choiceIds:string[]}[]>((resolve, reject) => { const request = db.transaction('attempts').objectStore('attempts').getAll(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
     } finally { db.close(); }
   });
 }
@@ -144,7 +144,7 @@ async function checkMobilePracticeSizes(page: Page, pictureSelector: string, nam
       const picture = document.querySelector(selector)!.getBoundingClientRect();
       const actions = document.querySelector('.practice-actions')!.getBoundingClientRect();
       const action = document.querySelector('.practice-actions .primary')?.getBoundingClientRect() ?? actions;
-      const progress = document.querySelector('.quiz > .round-progress')?.getBoundingClientRect();
+      const progress = document.querySelector('.quiz .quiz-progress')?.getBoundingClientRect();
       const bottomControl = progress ?? action;
       return Math.abs(app.height - innerHeight) <= 1
         && document.documentElement.scrollHeight <= innerHeight + 1
@@ -177,6 +177,9 @@ async function heardWord(page: Page) {
 
 async function chooseHeardPicture(page: Page, pressScreenshot?: string, responseScreenshot?: string) {
   const { target } = await heardWord(page);
+  await expect.poll(() => page.locator('.quiz-companion').evaluate(companion => companion.getAnimations({ subtree: true }).some(animation =>
+    animation.playState === 'running' && animation.effect?.getComputedTiming().iterations === Infinity,
+  )), { message: 'Kiku keeps gently bobbing while waiting for an answer' }).toBe(true);
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
   const beforeAnswer = await page.locator('.choices').evaluate(grid => {
     const bounds = grid.getBoundingClientRect();
@@ -212,6 +215,12 @@ async function chooseHeardPicture(page: Page, pressScreenshot?: string, response
     await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
     await expectAnswerPictures(page, [target.image.alt], 'fly');
     await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
+    await expect.poll(() => page.evaluate(() => {
+      const cards = document.querySelector('.choices')!.getBoundingClientRect();
+      const burst = document.querySelector('.quiz-starburst svg')!.getBoundingClientRect();
+      return Math.abs((cards.left + cards.right - burst.left - burst.right) / 2) <= 1
+        && Math.abs((cards.top + cards.bottom - burst.top - burst.bottom) / 2) <= 1;
+    }), { message: 'the star firework originates at the center of the card grid' }).toBe(true);
     await expect.poll(() => page.evaluate(before => {
       const choices = document.querySelector('.choices')!.getBoundingClientRect();
       const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
@@ -419,16 +428,16 @@ test('pace wheels glide back from unavailable choices and respect reduced motion
   }
   await releaseOnUnavailableChoice();
   await expect(minimum).toHaveAttribute('data-rebounding', 'true');
-  await page.clock.runFor(160);
+  await page.clock.runFor(80);
   const duringReturn = await minimum.evaluate(element => element.scrollTop);
   expect(duringReturn).toBeGreaterThan(240);
   expect(duringReturn).toBeLessThan(480);
   await expect(light).toHaveAttribute('aria-selected', 'true');
-  await page.clock.runFor(160);
+  await page.clock.runFor(100);
   const spring = await minimum.evaluate(element => element.scrollTop);
   expect(spring).toBeLessThan(240);
   expect(spring).toBeGreaterThanOrEqual(232);
-  await page.clock.runFor(160);
+  await page.clock.runFor(80);
   await expect(moderate).toHaveAttribute('aria-selected', 'true');
   expect(await minimum.evaluate(element => element.scrollTop)).toBe(240);
   await expect(minimum).not.toHaveAttribute('data-rebounding');
@@ -444,22 +453,61 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   await startReview(page);
   const laterWord = catalogue.items.find(item => item.text === '山')!;
   await addLegacy(page, [laterWord.id]);
-  const seen = new Set<string>();
-  for (let i = 0; i < 6; i++) {
+  const completed = new Set<string>();
+  const presentations: string[] = [];
+  let missedId = '';
+  let misses = 0;
+  let previousMissIndex = -1;
+  for (let turn = 0; turn < 8 && completed.size < 6; turn++) {
     const { target } = await heardWord(page);
-    expect(bank.items.some(item => item.id === target.id)).toBe(true);
-    expect(seen.has(target.id)).toBe(false); seen.add(target.id);
-    await chooseHeardPicture(page);
+    expect(bank.items.some(item => item.id === target.id), 'later due words stay outside the starting snapshot').toBe(true);
+    expect(completed.has(target.id), 'correctly completed words are not repeated').toBe(false);
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
+    if (!missedId) missedId = target.id;
+    if (target.id === missedId && previousMissIndex >= 0 && completed.size < 5) {
+      expect(presentations.slice(previousMissIndex + 1).some(id => id !== missedId), 'a missed word returns after another word when one is available').toBe(true);
+    }
+    presentations.push(target.id);
+    if (target.id === missedId && misses < 2) {
+      const wrongChoice = page.getByRole('button', { name: /choose picture/i }).filter({
+        hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
+      }).first();
+      await wrongChoice.click();
+      misses++;
+      previousMissIndex = presentations.length - 1;
+      await expect(page.locator('.feedback')).toHaveText('Try this one.');
+      await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
+      const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
+      await expect(mistakes).toContainText(`${misses} incorrect ${misses === 1 ? 'answer' : 'answers'}`);
+      await expect(mistakes.locator('.mistake-icon')).toHaveCount(misses);
+      await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    } else {
+      await chooseHeardPicture(page);
+      completed.add(target.id);
+    }
+    if (completed.size < 6) await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toHaveCount(0);
   }
+  expect(misses).toBe(2);
+  expect(presentations.filter(id => id === missedId)).toHaveLength(3);
+  expect([...completed].sort()).toEqual(bank.items.map(item => item.id).sort());
   await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toBeVisible();
   await expect(page.getByRole('button', { name: /begin lesson/i })).toBeEnabled();
   await captureScreen(page, 'adaptive-review-end-' + testInfo.project.name);
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
-  await expect(page.getByText('13 answers saved on this device')).toBeVisible();
+  await expect(page.getByText('15 answers saved on this device')).toBeVisible();
   const saved = await savedAttempts(page);
   expect(saved.filter(item => !item.context)).toHaveLength(7);
-  expect(saved.filter(item => item.context?.phase === 'review').map(item => item.itemId).sort()).toEqual(bank.items.map(item => item.id).sort());
+  const reviews = saved.filter(item => item.context?.phase === 'review');
+  expect(reviews).toHaveLength(8);
+  const firstMiss = reviews.find(item => item.itemId === missedId && !item.context?.retryOf)!;
+  expect(firstMiss.correct).toBe(false);
+  const retries = reviews.filter(item => item.context?.retryOf);
+  expect(retries).toHaveLength(2);
+  expect(retries.every(item => item.itemId === missedId && item.context?.retryOf === firstMiss.id)).toBe(true);
+  expect(retries.filter(item => item.correct)).toHaveLength(1);
+  expect(reviews.filter(item => !item.context?.retryOf).map(item => item.itemId).sort()).toEqual(bank.items.map(item => item.id).sort());
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByText('1 word', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
@@ -486,7 +534,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await expect(page.locator('.answer-departures')).toHaveCSS('display', 'none');
   await expect(page.locator('.quiz-starburst')).toHaveCount(0);
-  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   await page.clock.fastForward(5000);
   await expect(page.locator('audio')).toHaveAttribute('src', source);
   await expect(page.getByRole('button', { name: /choose picture/i }).first()).toBeDisabled();
@@ -495,7 +543,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
     await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeInViewport({ ratio: 1 });
     await expect.poll(() => page.evaluate(() => {
       const action = document.querySelector('.quiz .practice-actions .primary')!.getBoundingClientRect();
-      const progress = document.querySelector('.quiz > .round-progress')!.getBoundingClientRect();
+      const progress = document.querySelector('.quiz .quiz-progress')!.getBoundingClientRect();
       return action.bottom <= progress.top + 1 && progress.bottom <= innerHeight;
     }), { message: 'Continue remains fully reachable above the bottom progress row' }).toBe(true);
   }
@@ -513,7 +561,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect(page.locator('.answer-departures, .quiz-starburst')).toHaveCount(0);
   await expect.poll(() => page.locator('.app').getAttribute('data-answer')).toBeNull();
   await expect.poll(() => screenColor(page)).toBe(quizColor);
-  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
 });
 
 test('a miss drops only uninvolved pictures without shifting the grid or adding answers', async ({ page }, testInfo) => {
@@ -532,7 +580,7 @@ test('a miss drops only uninvolved pictures without shifting the grid or adding 
   await expectDeparturesFinished(page, 2);
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await expect(page.locator('audio')).toHaveAttribute('src', source);
-  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   const afterGrid = await page.locator('.choices').boundingBox();
   expect(Math.abs(afterGrid!.height - beforeGrid!.height)).toBeLessThanOrEqual(1);
   expect(Math.abs(afterGrid!.width - beforeGrid!.width)).toBeLessThanOrEqual(1);
