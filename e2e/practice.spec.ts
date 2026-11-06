@@ -515,6 +515,57 @@ test('pace wheels glide back from unavailable choices and respect reduced motion
   await expect(minimum).not.toHaveAttribute('data-rebounding');
 });
 
+test('Dev review practices six random words and a missed-word retry without saving progress', async ({ page }) => {
+  test.setTimeout(90_000);
+  await page.clock.install();
+  await page.goto('./');
+  await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
+  expect(await savedAttempts(page)).toEqual([]);
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  const completed = new Set<string>();
+  const presented: string[] = [];
+  let missedId = '';
+  for (let turn = 0; turn < 7 && completed.size < 6; turn++) {
+    const { target } = await heardWord(page);
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
+    expect(completed.has(target.id), 'correct targets are unique within the dev round').toBe(false);
+    presented.push(target.id);
+    if (turn === 0) {
+      missedId = target.id;
+      await page.getByRole('button', { name: /choose picture/i }).filter({
+        hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
+      }).first().click();
+      await expect(page.locator('.feedback')).toHaveText('Try this one.');
+      await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
+      const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
+      await expect(mistakes).toContainText('1 incorrect answer');
+      await expect(mistakes.locator('.mistake-icon')).toHaveCount(1);
+      await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    } else {
+      await chooseHeardPicture(page);
+      completed.add(target.id);
+    }
+    if (completed.size < 6) await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toHaveCount(0);
+  }
+  expect(completed.size).toBe(6);
+  expect(presented.filter(id => id === missedId)).toHaveLength(2);
+  await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: /begin lesson|learn more/i })).toHaveCount(0);
+  await expect(page.getByRole('status', { name: 'Review density' })).toHaveCount(0);
+  expect(await savedAttempts(page)).toEqual([]);
+  await page.getByRole('button', { name: 'Finish', exact: true }).click();
+  await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
+  // Finishing the sandbox restores the ordinary adaptive flow without reload.
+  await page.getByRole('button', { name: /^start/i }).click();
+  await page.getByRole('button', { name: /begin lesson/i }).click();
+  await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
+  await page.getByRole('button', { name: /kikimashta home/i }).click();
+  await page.reload();
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
+  expect(await savedAttempts(page)).toEqual([]);
+});
+
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
   await page.clock.install();

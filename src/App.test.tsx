@@ -65,6 +65,53 @@ function deferred<T>() {
 }
 
 describe('adaptive session flow', () => {
+  it('starts a random dev review with no due words, retries misses, and leaves saved progress untouched', async () => {
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
+    vi.useFakeTimers();
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
+    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    await click(heardChoice(container, false));
+    expect(screen.getByRole('status', { name: 'Mistakes' })).toHaveTextContent('1 incorrect answer');
+    await click(screen.getByRole('button', { name: /^continue$/i }));
+    const completed = new Set<string>();
+    for (let i = 0; i < 6; i++) {
+      const choice = heardChoice(container);
+      const picture = within(choice).getByRole('img').getAttribute('alt')!;
+      expect(completed.has(picture)).toBe(false); completed.add(picture);
+      endAudio(container); await click(choice); await advance(1200);
+    }
+    expect(completed.size).toBe(6);
+    expect(screen.getByRole('heading', { name: 'Dev review complete' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /begin lesson|learn more/i })).not.toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(planLessonChunk).not.toHaveBeenCalled();
+    expect(records).toEqual([]);
+    vi.useRealTimers();
+    await click(screen.getByRole('button', { name: /^finish$/i }));
+    await start();
+    expect(screen.getByRole('button', { name: /begin lesson/i })).toBeInTheDocument();
+  });
+
+  it('keeps existing history when leaving a dev review and restores normal due reviews', async () => {
+    records = legacy(2);
+    const original = structuredClone(records);
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await click(heardChoice(container));
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(records).toEqual(original);
+    await start();
+    expect(screen.getByText('2 words')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /begin review/i }));
+    await click(heardChoice(container));
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+    expect(records).toHaveLength(3);
+  });
+
   it('introduces ten new words before a mini-quiz of those words and records initial-learning context', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start();
@@ -287,9 +334,11 @@ describe('quiz safeguards', () => {
     await click(heardChoice(container, false));
     await click(screen.getByRole('button', { name: /kikimashta home/i }));
     expect(screen.getByRole('button', { name: /^saving/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Dev review' })).toBeDisabled();
     expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
     await act(async () => { pending.resolve(); });
     await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled();
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
   });
 
