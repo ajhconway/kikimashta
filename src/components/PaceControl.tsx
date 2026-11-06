@@ -8,11 +8,11 @@ const settleDelay = 120;
 const reboundDuration = 200;
 
 const moodImages: Record<DensityLevel, string> = {
-  minimal: 'brand/kikimashta-cat-v1.png',
-  light: 'brand/pace/kiku-light-v1.png',
+  minimal: 'brand/pace/kiku-minimal-v1.png',
+  light: 'brand/kikimashta-cat-v1.png',
   moderate: 'brand/pace/kiku-moderate-v1.png',
   high: 'brand/pace/kiku-high-v1.png',
-  intense: 'brand/pace/kiku-intense-v1.png',
+  intense: 'brand/pace/kiku-intense-v2.png',
 };
 function KikuMood({ level }: { level: DensityLevel | null }) {
   return <img className="pace-kiku" src={import.meta.env.BASE_URL + moodImages[level || 'minimal']} alt="" aria-hidden="true" draggable={false}/>;

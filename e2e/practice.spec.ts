@@ -414,7 +414,8 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
   for (const option of await pace.getByRole('option').all()) {
     const level = await option.getAttribute('data-density');
     const picture = option.locator('img');
-    const expectedPath = level === 'minimal' ? 'brand/kikimashta-cat-v1.png' : `brand/pace/kiku-${level}-v1.png`;
+    const expectedPath = level === 'light' ? 'brand/kikimashta-cat-v1.png'
+      : level === 'intense' ? 'brand/pace/kiku-intense-v2.png' : `brand/pace/kiku-${level}-v1.png`;
     expect((await picture.getAttribute('src'))?.endsWith(expectedPath)).toBe(true);
     moodSources.add(expectedPath);
     await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
