@@ -22,6 +22,30 @@ describe('qualitative practice pace', () => {
     expect(screen.getByRole('status', { name: 'Review density' }).textContent).toBe('…');
   });
 
+  it('keeps every level paired with its own Kiku image while selection changes', () => {
+    render(<Controlled initial={{ min: 'minimal', max: 'intense' }}/>);
+    const min = screen.getByRole('listbox', { name: 'Minimum' });
+    const expected = [
+      ['Minimal', 'minimal', '/brand/kikimashta-cat-v1.png'],
+      ['Light', 'light', '/brand/pace/kiku-light-v1.png'],
+      ['Moderate', 'moderate', '/brand/pace/kiku-moderate-v1.png'],
+      ['High', 'high', '/brand/pace/kiku-high-v1.png'],
+      ['Intense', 'intense', '/brand/pace/kiku-intense-v1.png'],
+    ];
+    const assertChoices = () => {
+      for (const [label, level, image] of expected) {
+        const choice = within(min).getByRole('option', { name: label });
+        expect(choice).toHaveAttribute('data-density', level);
+        expect(choice.querySelector('img')).toHaveAttribute('src', image);
+      }
+    };
+    assertChoices();
+    fireEvent.keyDown(min, { key: 'End' });
+    expect(selected(min)).toHaveTextContent('Intense');
+    assertChoices();
+    expect(screen.getByRole('status', { name: 'Review density' }).querySelector('img')).toHaveAttribute('src', '/brand/pace/kiku-light-v1.png');
+  });
+
   it('supports keyboard selection with equal bounds while preventing minimum from exceeding maximum', () => {
     const changed = vi.fn();
     render(<Controlled changed={changed}/>);
@@ -66,8 +90,8 @@ describe('qualitative practice pace', () => {
     fireEvent.scroll(min);
     act(() => { vi.advanceTimersByTime(500); });
     expect(changed).not.toHaveBeenCalled();
-    fireEvent.wheel(min, { deltaY: -64 });
-    min.scrollTop = 32;
+    fireEvent.wheel(min, { deltaY: -240 });
+    min.scrollTop = 120;
     fireEvent.scroll(min);
     act(() => { vi.advanceTimersByTime(119); });
     expect(changed).not.toHaveBeenCalled();
@@ -92,7 +116,7 @@ describe('qualitative practice pace', () => {
     act(() => { vi.advanceTimersByTime(500); });
     expect(changed).not.toHaveBeenCalled();
     // Continue the same gesture after holding still beyond the fallback delay.
-    min.scrollTop = 64;
+    min.scrollTop = 240;
     fireEvent.scroll(min);
     act(() => { vi.advanceTimersByTime(500); });
     expect(changed).not.toHaveBeenCalled();
@@ -108,7 +132,7 @@ describe('qualitative practice pace', () => {
     const view = render(<Controlled changed={changed}/>);
     const min = screen.getByRole('listbox', { name: 'Minimum' });
     fireEvent.pointerDown(min);
-    min.scrollTop = 64;
+    min.scrollTop = 240;
     fireEvent.scroll(min);
     view.unmount();
     act(() => { vi.advanceTimersByTime(500); });

@@ -293,34 +293,70 @@ test('pace controls use browser scrolling, keep valid bounds, and fit around Kik
   const maximum = page.getByRole('listbox', { name: 'Maximum', exact: true });
   const density = page.getByRole('status', { name: 'Review density' });
   const pace = page.getByRole('group', { name: 'Practice pace' });
+  const initialColors = new Map<string, string>();
+  async function optionColors() {
+    return pace.getByRole('option').evaluateAll(options => options.map(option => ({
+      level: (option as HTMLElement).dataset.density!,
+      color: getComputedStyle(option).backgroundColor,
+      opacity: getComputedStyle(option).opacity,
+    })));
+  }
+  const neutralColors = await pace.locator('.pace-wheel-bubble').evaluateAll(wheels => wheels.map(wheel => getComputedStyle(wheel).backgroundColor));
+  for (const option of await optionColors()) initialColors.set(option.level, option.color);
+  expect(initialColors.size).toBe(5);
+  expect(new Set(initialColors.values()).size).toBe(5);
+  async function expectFixedColors() {
+    for (const option of await optionColors()) {
+      expect(option.color).toBe(initialColors.get(option.level));
+      expect(option.color).toMatch(/^rgb\(/); // Each tile has an opaque fill.
+      expect(option.opacity).toBe('1');
+    }
+    expect(await pace.locator('.pace-wheel-bubble').evaluateAll(wheels => wheels.map(wheel => getComputedStyle(wheel).backgroundColor))).toEqual(neutralColors);
+  }
   async function scrollPace(label: 'Minimum' | 'Maximum') {
     const wheel = page.getByRole('listbox', { name: label, exact: true });
     if (testInfo.project.use.isMobile) {
       // Mobile WebKit has no mouse-wheel injection. Exercise the touch-event
       // path plus browser overflow scrolling and CSS snap; this is not a
       // trusted finger pan and does not replace real-iPhone gesture review.
+      const previousSelection = await wheel.locator('[aria-selected="true"]').getAttribute('id');
+      const previousScroll = await wheel.evaluate(element => element.scrollTop);
       await wheel.dispatchEvent('touchstart');
-      await wheel.evaluate(element => element.scrollBy({ top: 128, behavior: 'smooth' }));
+      await wheel.evaluate(element => element.scrollBy({ top: element.scrollHeight, behavior: 'smooth' }));
+      await expect.poll(() => wheel.evaluate(element => element.scrollTop)).toBeGreaterThan(previousScroll);
+      await expectFixedColors();
+      await expect(wheel).toHaveAttribute('aria-activedescendant', previousSelection!);
       await wheel.dispatchEvent('touchend');
     } else {
       await wheel.hover();
-      await page.mouse.wheel(0, 128);
+      await page.mouse.wheel(0, 1000);
     }
   }
-  await expect(pace.locator('.pace-kiku img')).toHaveCount(3);
-  for (const column of await pace.locator('.pace-column').all()) {
-    await expect(column.locator('.pace-heading')).toBeVisible();
-    await expect(column.locator('.pace-kiku img')).toBeVisible();
-    await expect.poll(() => column.locator('.pace-kiku img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  for (const column of await pace.locator('.pace-column').all()) await expect(column.locator('.pace-heading')).toBeVisible();
+  const moodSources = new Set<string>();
+  for (const option of await pace.getByRole('option').all()) {
+    const level = await option.getAttribute('data-density');
+    const picture = option.locator('img');
+    const expectedPath = level === 'minimal' ? 'brand/kikimashta-cat-v1.png' : `brand/pace/kiku-${level}-v1.png`;
+    expect((await picture.getAttribute('src'))?.endsWith(expectedPath)).toBe(true);
+    moodSources.add(expectedPath);
+    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
+  expect(moodSources.size).toBe(5);
+  await expect(density.locator('img')).toBeVisible();
+  await expect.poll(() => density.locator('img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expectFixedColors();
   await expect(density).toContainText('Minimal');
+  await expect(density).toHaveCSS('background-color', initialColors.get('minimal')!);
   await expect(minimum.getByRole('option', { name: 'Light', exact: true })).toHaveAttribute('aria-selected', 'true');
   await scrollPace('Minimum');
   await expect(minimum.getByRole('option', { name: 'Moderate', exact: true })).toHaveAttribute('aria-selected', 'true');
   await scrollPace('Maximum');
+  await expectFixedColors();
   const selectedMaximum = maximum.getByRole('option', { name: 'Intense', exact: true });
   await expect(selectedMaximum).toHaveAttribute('aria-selected', 'true');
   await expect(maximum).toHaveAttribute('aria-activedescendant', (await selectedMaximum.getAttribute('id'))!);
+  await expectFixedColors();
   await expect.poll(() => page.evaluate(() => {
     const minimum = document.querySelector<HTMLElement>('[role="listbox"][aria-label="Minimum"]')!;
     const maximum = document.querySelector<HTMLElement>('[role="listbox"][aria-label="Maximum"]')!;
