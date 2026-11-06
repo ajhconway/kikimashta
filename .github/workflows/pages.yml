@@ -25,6 +25,8 @@ jobs:
     env:
       VITE_BASE_PATH: /
       SOURCE_REVISION: ${{ github.event.workflow_run.head_sha }}
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:

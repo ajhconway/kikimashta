@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
 import type { AudioAsset, PracticeAttempt, WordItem } from './types';
 import { createQuestions, createSession, requeueMissedQuestion, type Question } from './core/session';
@@ -11,7 +11,7 @@ import { DensityIndicator, PaceControl } from './components/PaceControl';
 import './styles.css';
 
 const asset = (path: string) => import.meta.env.BASE_URL + path;
-const store = new ProgressStore();
+const defaultStore = new ProgressStore();
 const fireworkOffsets = Array.from({ length: 16 }, (_, i) => {
   const angle = i * Math.PI / 8 - Math.PI / 2;
   const radius = i % 2 === 0 ? 155 : 130;
@@ -52,7 +52,11 @@ function initialRange(): DensityRange {
 }
 interface DepartingCard { item: WordItem; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
 
-export default function App({ now = wallClock, random = Math.random }: { now?: () => number; random?: () => number } = {}) {
+export default function App({ now = wallClock, random = Math.random, progressStore = defaultStore, historyRevision = 0, accountControls, accountLoading = false, onSaved }: {
+  now?: () => number; random?: () => number; progressStore?: ProgressStore; historyRevision?: number;
+  accountControls?: ReactNode; accountLoading?: boolean; onSaved?: () => void;
+} = {}) {
+  const store = progressStore;
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
@@ -110,7 +114,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   }, [background]);
 
   useEffect(() => {
-    if (screen !== 'home') return;
+    if (screen !== 'home' || preparing.current) return;
     const request = ++operation.current;
     let cancelled = false;
     void (async () => {
@@ -126,7 +130,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now]);
+  }, [screen, refresh, now, store, historyRevision]);
 
   useEffect(() => {
     const element = audio.current;
@@ -177,7 +181,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     showQuestion(block[0]!, session.current.id);
   }
   function startDevReview() {
-    if (loading || preparing.current || pendingSaves.current.size) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
@@ -186,7 +190,10 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
     try {
-      const schedules = await deriveSchedules(history.current, practicePool.language);
+      const attempts = await store.history(practicePool.language);
+      if (operation.current !== request) return;
+      history.current = attempts;
+      const schedules = await deriveSchedules(attempts, practicePool.language);
       const learned = new Set(schedules.map(word => word.itemId));
       const plan = await planLessonChunk({ schedules, now: now(), range,
         candidates: practicePool.items.filter(item => !learned.has(item.id) && !session.current.reserved.has(item.id)) });
@@ -194,9 +201,9 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
       setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(plan.items);
     } catch { if (operation.current === request) setHistoryError(true); }
     finally { if (operation.current === request) setLoading(false); }
-  }, [now, range]);
+  }, [now, range, store]);
   async function startSession() {
-    if (loading || preparing.current || pendingSaves.current.size) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
     setIsDevReview(false);
     preparing.current = true;
     const request = ++operation.current;
@@ -237,6 +244,7 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
     pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setSaving(true); setSaveError(false);
     try {
       await store.record(attempt);
+      onSaved?.();
       if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
       setTotal(history.current.length);
     } catch { if (active.current.id === attempt.id) setSaveError(true); }
@@ -301,10 +309,11 @@ export default function App({ now = wallClock, random = Math.random }: { now?: (
         <h1>kikimashta</h1>
         <PaceControl value={density} range={range} onChange={updateRange}/>
         {preferenceError && <p role="alert" className="error">Your pace couldn't be saved on this device.</p>}
-        <button className="primary start" disabled={loading || historyError || pendingSaveCount > 0} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
-        <button className="text-button" disabled={loading || pendingSaveCount > 0} onClick={startDevReview}>Dev review</button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0} onClick={startDevReview}>Dev review</button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
+        {accountControls}
       </section>}
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>

@@ -13,7 +13,7 @@ export default defineConfig([
     languageOptions: { ecmaVersion: 'latest', globals: globals.node },
   },
   {
-    files: ['public/vocabulary/*.js'],
+    files: ['public/vocabulary/*.js', 'vocabulary/*.js'],
     extends: [js.configs.recommended],
     languageOptions: { ecmaVersion: 'latest', globals: globals.browser },
   },

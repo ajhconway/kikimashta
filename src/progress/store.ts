@@ -21,12 +21,29 @@ export class ProgressStore {
     return this.connection;
   }
   async record(attempt: PracticeAttempt): Promise<void> {
+    return this.merge([attempt]);
+  }
+  /** Union incoming immutable attempts in one transaction; existing IDs win. */
+  async merge(attempts: readonly PracticeAttempt[]): Promise<void> {
+    const snapshot = structuredClone([...attempts]);
+    if (!snapshot.length) return;
     const db = await this.database();
     const tx = db.transaction('attempts', 'readwrite');
     const write = (async () => {
-      if (!await tx.store.get(attempt.id)) await tx.store.add(attempt);
+      try {
+        for (const attempt of snapshot) {
+          if (!await tx.store.get(attempt.id)) await tx.store.add(attempt);
+        }
+      } catch (error) {
+        // A synchronous IDB failure does not necessarily abort earlier writes.
+        try { tx.abort(); } catch { /* The request may already have aborted it. */ }
+        throw error;
+      }
     })();
     await Promise.all([write, tx.done]);
+  }
+  async all(): Promise<PracticeAttempt[]> {
+    return (await this.database()).getAll('attempts');
   }
   async history(language: string): Promise<PracticeAttempt[]> {
     return (await this.database()).getAllFromIndex('attempts', 'language', language);

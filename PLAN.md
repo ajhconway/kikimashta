@@ -35,14 +35,20 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Roadmap
 
-V0 is playable. The visual direction, natural voices, and playful quiz interactions are ready for this phase. The 441-card review library is available. The temporary fixed sets are being replaced with adaptive practice, using an initial pool of 170 eligible words while the full library remains available for card feedback.
+Adaptive practice is playable and accepted. The 441-card review library is available, with 170 eligible words in adaptive lessons. The next milestone is optional sign-in and progress sync.
 
 1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
 2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Use FSRS for per-word scheduling and forecast review density to guide new-word intake.
 3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
 4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
 
-### Current milestone: adaptive practice
+### Current milestone: progress sync
+
+Add optional Supabase email sign-in and sync practice history and card notes across devices. Save locally first, retry interrupted sync, and prevent duplicate attempts. Keep each account's data separate; offer an explicit copy of existing local progress into the signed-in account. Preserve local-only practice and the unsaved dev review. Keep the account controls small and the active quiz unchanged by incoming sync.
+
+Prepare the database schema and access policies before enabling live sync. Verify account isolation, interrupted transfers, note edits/deletions, and cross-device convergence. A new Supabase project and connection are needed for live verification.
+
+### Adaptive practice reference
 
 Replace fixed practice sets with adaptive sessions. Preserve stable item IDs and existing history.
 

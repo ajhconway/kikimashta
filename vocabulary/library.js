@@ -1,7 +1,8 @@
 /* One shared player; render only the current page. Vocabulary library for #27. */
-import { createFeedbackStore, exportFeedback } from './feedback.js'
+import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
+import { getLibraryAccount } from '../src/sync/library-bridge'
 
-(() => {
+(async () => {
   'use strict'
   const pageSize = 24
   const cardsElement = document.getElementById('cards')
@@ -14,7 +15,15 @@ import { createFeedbackStore, exportFeedback } from './feedback.js'
   const audioStatus = document.getElementById('audio-status')
   const audioError = document.getElementById('audio-error')
   const exportButton = document.getElementById('export-feedback')
-  const feedbackStore = createFeedbackStore({ language: 'ja' })
+  const accountStatus = document.getElementById('account-status')
+  // Resolve identity before reading feedback so guest and account notes stay separate.
+  const account = await getLibraryAccount()
+  const feedbackStore = account ? createAccountFeedbackStore({
+    language: 'ja', repository: account.notes, changed: account.changed,
+    canWrite: () => account.currentUserId() === account.userId,
+  }) : createFeedbackStore({ language: 'ja' })
+  if (account) document.getElementById('feedback-description').textContent = 'Feedback is saved to this account. Export it to share or back it up.'
+  const feedbackViews = new Map()
   const audio = new Audio()
   audio.preload = 'none'
   let cards = []
@@ -113,18 +122,22 @@ import { createFeedbackStore, exportFeedback } from './feedback.js'
     status.setAttribute('role', 'status')
     input.setAttribute('aria-describedby', status.id)
     input.value = feedbackStore.read(card.id).text
+    let edited = false
 
-    function update(note, edited = false) {
+    function update(note) {
+      if (input.value !== note.text) input.value = note.text
       summary.textContent = note.text.trim() ? 'Your feedback · Has notes' : 'Your feedback'
-      status.textContent = !note.saved ? (note.dirty && !note.text.trim()
+      status.textContent = note.pending ? 'Saving…' : !note.saved ? (note.dirty && !note.text.trim()
         ? 'Could not clear the saved feedback. Try editing and clearing this box again.'
         : 'Could not save on this device. Keep this page open and export your feedback.')
         : note.text.trim() ? 'Saved on this device.' : edited ? 'Feedback cleared.' : ''
-      status.classList.toggle('save-error', !note.saved)
+      status.classList.toggle('save-error', !note.saved && !note.pending)
     }
     update(feedbackStore.read(card.id))
+    feedbackViews.set(card.id, () => update(feedbackStore.read(card.id)))
     input.addEventListener('input', () => {
-      update(feedbackStore.write(card.id, input.value), true)
+      edited = true
+      update(feedbackStore.write(card.id, input.value))
       updateFeedbackCount()
     })
     details.append(summary, label, input, status)
@@ -148,6 +161,25 @@ import { createFeedbackStore, exportFeedback } from './feedback.js'
     event.preventDefault()
     event.returnValue = ''
   })
+
+  if (account) {
+    feedbackStore.subscribe(() => {
+      for (const update of feedbackViews.values()) update()
+      updateFeedbackCount()
+    })
+    account.subscribe(() => {
+      if (account.currentUserId() !== account.userId) {
+        stopAudio()
+        if (!feedbackStore.hasUnsavedChanges()) { window.location.reload(); return }
+        document.getElementById('feedback-description').textContent = 'These notes belong to the previous account.'
+        accountStatus.textContent = 'Account changed. Export your unsaved feedback, then reload this page to switch accounts.'
+        accountStatus.hidden = false
+        return
+      }
+      feedbackStore.refresh()
+      updateFeedbackCount()
+    })
+  }
 
   function renderCard(card) {
     const article = element('article', 'card')
@@ -201,6 +233,7 @@ import { createFeedbackStore, exportFeedback } from './feedback.js'
     .replace(/[ァ-ヶ]/g, character => String.fromCharCode(character.charCodeAt(0) - 0x60)).trim()
   function render() {
     stopAudio()
+    feedbackViews.clear()
     audioError.hidden = true
     const query = normalized(searchElement.value)
     const level = levelElement.value
@@ -242,4 +275,9 @@ import { createFeedbackStore, exportFeedback } from './feedback.js'
       error.textContent = 'The vocabulary cards could not load. Reload the page to try again.'
       error.hidden = false
     })
-})()
+})().catch(() => {
+  document.getElementById('results-status').textContent = ''
+  const error = document.getElementById('library-error')
+  error.textContent = 'The vocabulary cards could not load. Reload the page to try again.'
+  error.hidden = false
+})

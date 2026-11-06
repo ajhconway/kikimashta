@@ -6,7 +6,7 @@ import { parseArgs } from 'node:util'
 
 const repository = 'https://github.com/ajhconway/kikimashta'
 const sourceMarker = `data-source-link href="${repository}"`
-const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb', 'vite', 'ts-fsrs', '@open-spaced-repetition/srs-kit']
+const runtimePackages = ['react', 'react-dom', 'scheduler', 'idb', 'vite', 'ts-fsrs', '@open-spaced-repetition/srs-kit', '@supabase/supabase-js', '@supabase/auth-js', '@supabase/storage-js', '@supabase/realtime-js', '@supabase/functions-js', '@supabase/postgrest-js', '@supabase/phoenix', 'iceberg-js', 'tslib']
 
 export async function packageNotices({
   root = process.cwd(), dist = join(root, 'dist'), revision = process.env.SOURCE_REVISION,
@@ -23,7 +23,7 @@ export async function packageNotices({
     readFile(join(dist, 'credits.html'), 'utf8'),
     Promise.all(runtimePackages.map(async name => ({
       name: name === 'vite' ? 'vite (modulepreload polyfill)' : name,
-      license: await readFile(join(root, 'node_modules', name, name === 'vite' ? 'LICENSE.md' : 'LICENSE')),
+      license: await readFile(join(root, 'node_modules', name, name === 'vite' || name === '@supabase/phoenix' ? 'LICENSE.md' : name === 'tslib' ? 'LICENSE.txt' : 'LICENSE')),
     }))),
   ])
   if (credits.split(sourceMarker).length !== 2) {
