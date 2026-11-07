@@ -50,15 +50,19 @@ describe('writing font presentations', () => {
 describe('font availability', () => {
   it('uses a stable system fallback until a face is loaded and contains loading failures', async () => {
     const { availableWritingFont, preloadWritingFonts } = await import('./writing-fonts');
-    const check = vi.fn().mockReturnValue(false);
+    const faces = [
+      { family: 'Kikimashta Klee One', weight: '600', status: 'unloaded' },
+      { family: 'Kikimashta Noto Sans JP', weight: '600', status: 'unloaded' },
+      { family: 'Kikimashta Zen Maru Gothic', weight: '500', status: 'unloaded' },
+    ];
     const load = vi.fn().mockRejectedValue(new Error('Font unavailable'));
-    vi.stubGlobal('document', { fonts: { check, load } });
+    vi.stubGlobal('document', { fonts: Object.assign(faces, { load }) });
     try {
       expect(availableWritingFont('klee')).toBe('system');
       preloadWritingFonts();
       await Promise.resolve();
       expect(load).toHaveBeenCalledTimes(4);
-      check.mockReturnValue(true);
+      faces.forEach(face => { face.status = 'loaded'; });
       expect(availableWritingFont('klee')).toBe('klee');
       expect(availableWritingFont('zen-maru', ['犬', '～'])).toBe('noto-sans');
       expect(availableWritingFont('zen-maru', ['犬', '猫'])).toBe('zen-maru');

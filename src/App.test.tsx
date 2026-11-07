@@ -68,8 +68,8 @@ function deferred<T>() {
 describe('adaptive session flow', () => {
   it('holds the system fallback through replay after a font loads, then uses a font on the retry', async () => {
     const original = Object.getOwnPropertyDescriptor(document, 'fonts');
-    const check = vi.fn().mockReturnValue(false);
-    Object.defineProperty(document, 'fonts', { configurable: true, value: { check, load: vi.fn().mockRejectedValue(new Error('Font unavailable')) } });
+    const faces = ['Noto Sans JP', 'Noto Serif JP', 'Zen Maru Gothic', 'Klee One'].map(name => ({ family: 'Kikimashta ' + name, weight: name === 'Zen Maru Gothic' ? '500' : '600', status: 'unloaded' }));
+    Object.defineProperty(document, 'fonts', { configurable: true, value: Object.assign(faces, { load: vi.fn().mockRejectedValue(new Error('Font unavailable')) }) });
     try {
       records = legacy(1).map(attempt => ({ ...attempt, context: { phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/cat.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } }));
       const { container } = render(<App now={fixedNow} random={() => 0}/>);
@@ -77,7 +77,7 @@ describe('adaptive session flow', () => {
       await click(screen.getByRole('button', { name: /begin review/i }));
       const fonts = () => Array.from(container.querySelectorAll('.choices .written-answer'), label => label.getAttribute('data-font'));
       expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
-      check.mockReturnValue(true);
+      faces.forEach(face => { face.status = 'loaded'; });
       await click(screen.getByRole('button', { name: 'Replay word' }));
       expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
       await click(heardChoice(container, false));

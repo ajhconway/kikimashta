@@ -356,7 +356,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await page.clock.install();
   await page.goto('./');
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
-  await page.waitForFunction(() => document.fonts.check('600 24px "Kikimashta Noto Sans JP"', '犬りんご'));
+  await page.waitForFunction(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'));
   const homeColor = await backgroundColor(page);
   await captureScreen(page, 'adaptive-home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
@@ -506,7 +506,7 @@ test('reviews both saved formats of one word and preserves a writing retry after
     db.close();
   });
   await page.reload();
-  await page.waitForFunction(() => [['Kikimashta Noto Sans JP', 600], ['Kikimashta Noto Serif JP', 600], ['Kikimashta Zen Maru Gothic', 500], ['Kikimashta Klee One', 600]].every(([family, weight]) => document.fonts.check(`${weight} 24px "${family}"`, '犬りんご')));
+  await page.waitForFunction(() => ['Kikimashta Noto Sans JP', 'Kikimashta Noto Serif JP', 'Kikimashta Zen Maru Gothic', 'Kikimashta Klee One'].every(family => Array.from(document.fonts).some(face => face.family.includes(family) && face.status === 'loaded')));
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();

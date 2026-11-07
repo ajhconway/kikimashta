@@ -37,5 +37,8 @@ export function availableWritingFont(id: WritingFontId, texts: readonly string[]
   // Zen does not contain U+FF5E. Keep the entire question in standard print.
   if (id === 'zen-maru' && texts.some(text => text.includes('～'))) id = 'noto-sans';
   const font = writingFonts.find(font => font.id === id)!;
-  return document.fonts && !document.fonts.check(`${font.weight} 24px "${font.family}"`, '犬りんご') ? 'system' : id;
+  if (!document.fonts) return id;
+  const loaded = Array.from(document.fonts).some(face => face.status === 'loaded' &&
+    face.family.replace(/["']/g, '') === font.family && face.weight === String(font.weight));
+  return loaded ? id : 'system';
 }
