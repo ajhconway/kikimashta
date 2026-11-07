@@ -43,7 +43,14 @@ const screenColor = (page: Page) => page.evaluate(() => document.documentElement
 
 async function captureScreen(page: Page, name: string) {
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
+  // WebKit rebuilds font faces when screenshot capture temporarily disables CSS
+  // animation. Restore only faces that were already loaded before capture.
+  const loaded = await page.evaluate(() => Array.from(document.fonts).filter(face => face.status === 'loaded').map(face => ({ family: face.family.replace(/["']/g, ''), weight: face.weight })));
+  try {
+    await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
+  } finally {
+    await page.evaluate(fonts => Promise.all(fonts.map(font => document.fonts.load(`${font.weight} 24px "${font.family}"`, '犬りんご'))), loaded);
+  }
 }
 
 async function expectCompanionMotion(page: Page) {
@@ -356,6 +363,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await page.clock.install();
   await page.goto('./');
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
+  await page.waitForFunction(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'));
   const homeColor = await backgroundColor(page);
   await captureScreen(page, 'adaptive-home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
@@ -378,6 +386,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     } else {
       await expect(page.locator('.preview-picture img')).toHaveCount(0);
       await expect(page.locator('.preview-picture')).toHaveText(item.text);
+      await expect(page.locator('.preview-picture .written-answer')).toHaveAttribute('data-font', 'noto-sans');
       previewSizes.push({ length: Array.from(item.text).length, fontSize: await page.locator('.preview-picture .written-answer').evaluate(label => parseFloat(getComputedStyle(label).fontSize)) });
       if (introduced.filter(card => card.exercise === 'audio-text').length === 1) await captureScreen(page, 'writing-lesson-' + testInfo.project.name);
     }
@@ -402,6 +411,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     expect(seen.has(cardId)).toBe(false); seen.add(cardId);
     await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
     if (exercise === 'audio-text') {
+      for (const label of await page.locator('.choices .written-answer').all()) await expect(label).toHaveAttribute('data-font', 'noto-sans');
       const writingFits = await page.locator('.choices .written-answer').evaluateAll(labels => labels.every(label => {
         const box = label.getBoundingClientRect();
         const card = label.parentElement!.getBoundingClientRect();
@@ -503,19 +513,37 @@ test('reviews both saved formats of one word and preserves a writing retry after
     db.close();
   });
   await page.reload();
+  await page.waitForFunction(() => ['Kikimashta Noto Sans JP', 'Kikimashta Noto Serif JP', 'Kikimashta Zen Maru Gothic', 'Kikimashta Klee One'].every(family => Array.from(document.fonts).some(face => face.family.includes(family) && face.status === 'loaded')));
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
   const completed = new Set<string>();
   let writingMissed = false;
+  let firstWritingFont = '';
   for (let turn = 0; turn < 3; turn++) {
     const { target, exercise, cardId } = await heardWord(page);
     expect(target.id).toBe(bank.items[0]!.id);
     expect(completed.has(cardId)).toBe(false);
     await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
+    if (exercise === 'audio-text') {
+      const fonts = await page.locator('.choices .written-answer').evaluateAll(labels => labels.map(label => label.getAttribute('data-font')));
+      expect(new Set(fonts).size).toBe(1);
+      expect(['noto-serif', 'zen-maru', 'klee']).toContain(fonts[0]);
+      const families = await page.locator('.choices .written-answer').evaluateAll(labels => labels.map(label => getComputedStyle(label).fontFamily));
+      expect(new Set(families).size).toBe(1);
+      expect(families[0]).toContain('Kikimashta');
+      if (writingMissed) expect(fonts[0]).not.toBe(firstWritingFont);
+      else {
+        firstWritingFont = fonts[0]!;
+        await page.getByRole('button', { name: 'Replay word', exact: true }).click();
+        expect(await page.locator('.choices .written-answer').first().getAttribute('data-font')).toBe(firstWritingFont);
+      }
+    }
     if (exercise === 'audio-text' && !writingMissed) {
       writingMissed = true;
       await page.getByRole('button', { name: /choose writing/i }).filter({ hasNot: page.getByText(target.text, { exact: true }) }).first().click();
+      await expect(page.locator('.choices .written-answer').first()).toHaveAttribute('data-font', firstWritingFont);
+      for (const label of await page.locator('.answer-departures .written-answer').all()) await expect(label).toHaveAttribute('data-font', firstWritingFont);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
       await chooseHeardAnswer(page, target);

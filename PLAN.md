@@ -72,3 +72,7 @@ Spacing and retrieval practice have research support; our density controller and
 Implementation proceeds through scheduling/history, workload forecasting, then the session interface. Keep forecast assumptions, density thresholds, and new-word selection explicit and adjustable.
 
 Keep only the next milestone detailed in GitHub. Later stages remain flexible, with no fixed dates. Keep *k*, word counts, session length, visual details, and the learning algorithm adjustable.
+
+## Writing font variation (#101)
+
+Use Noto Sans JP consistently for lesson previews, their attached mini-quizzes, and lesson corrective retries. Later review quizzes (including dev review) rotate Noto Serif JP, Zen Maru Gothic, and Klee One on successive presentations of each language/item. All choices in a question use one stable font through replay and feedback. Lesson presentations do not consume review rotation. Preserve existing card sizing and shared learning progress. Self-host fonts with licenses and glyph coverage records; use the standard font for the whole question when a review font cannot cover its writing. Store only a local appearance preference across visits; unavailable storage never blocks practice.

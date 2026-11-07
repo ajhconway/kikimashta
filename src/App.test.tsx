@@ -66,6 +66,29 @@ function deferred<T>() {
 }
 
 describe('adaptive session flow', () => {
+  it('holds the system fallback through replay after a font loads, then uses a font on the retry', async () => {
+    const original = Object.getOwnPropertyDescriptor(document, 'fonts');
+    const faces = ['Noto Sans JP', 'Noto Serif JP', 'Zen Maru Gothic', 'Klee One'].map(name => ({ family: 'Kikimashta ' + name, weight: name === 'Zen Maru Gothic' ? '500' : '600', status: 'unloaded' }));
+    Object.defineProperty(document, 'fonts', { configurable: true, value: Object.assign(faces, { load: vi.fn().mockRejectedValue(new Error('Font unavailable')) }) });
+    try {
+      records = legacy(1).map(attempt => ({ ...attempt, context: { phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/cat.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } }));
+      const { container } = render(<App now={fixedNow} random={() => 0}/>);
+      await start();
+      await click(screen.getByRole('button', { name: /begin review/i }));
+      const fonts = () => Array.from(container.querySelectorAll('.choices .written-answer'), label => label.getAttribute('data-font'));
+      expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
+      faces.forEach(face => { face.status = 'loaded'; });
+      await click(screen.getByRole('button', { name: 'Replay word' }));
+      expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
+      await click(heardChoice(container, false));
+      await click(screen.getByRole('button', { name: /^continue$/i }));
+      expect(fonts()).toEqual(['zen-maru', 'zen-maru', 'zen-maru', 'zen-maru']);
+    } finally {
+      if (original) Object.defineProperty(document, 'fonts', original);
+      else Reflect.deleteProperty(document, 'fonts');
+    }
+  });
+
   it('starts a random dev review with no due words, retries misses, and leaves saved progress untouched', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
@@ -79,6 +102,7 @@ describe('adaptive session flow', () => {
     const completed = new Set<string>();
     for (let i = 0; i < 6; i++) {
       const choice = heardChoice(container);
+      for (const label of container.querySelectorAll('.choices .written-answer')) expect(['noto-serif', 'zen-maru', 'klee']).toContain(label.getAttribute('data-font'));
       const picture = container.querySelector('.practice.quiz')!.getAttribute('data-exercise') + '/' + container.querySelector('audio')!.getAttribute('src');
       expect(completed.has(picture)).toBe(false); completed.add(picture);
       endAudio(container); await click(choice); await advance(1200);
@@ -128,6 +152,7 @@ describe('adaptive session flow', () => {
       if (exercise === 'audio-text') {
         expect(container.querySelector('.preview-picture img')).toBeNull();
         expect(within(container.querySelector('.preview-picture') as HTMLElement).getByText(item.text)).toHaveAttribute('lang', item.language);
+        expect(container.querySelector('.preview-picture .written-answer')).toHaveAttribute('data-font', 'noto-sans');
       } else expect(screen.getByRole('img')).toHaveAttribute('alt', item.image.alt);
       expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
       await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }));
@@ -139,6 +164,7 @@ describe('adaptive session flow', () => {
       const choices = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
       expect(choices).toHaveLength(4);
       expect(choices.every(button => button.querySelector('img') !== null)).toBe(exercise === 'audio-picture');
+      if (exercise === 'audio-text') for (const label of container.querySelectorAll('.choices .written-answer')) expect(label).toHaveAttribute('data-font', 'noto-sans');
       endAudio(container); await click(heardChoice(container)); await advance(1200);
     }
     expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
@@ -204,6 +230,7 @@ describe('adaptive session flow', () => {
       const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
       expect(practicePool.items.slice(0, 5).some(item => item.id === target.id)).toBe(true);
       const key = container.querySelector('.quiz')!.getAttribute('data-exercise') + '/' + target.id;
+      for (const label of container.querySelectorAll('.choices .written-answer')) expect(label).toHaveAttribute('data-font', 'noto-sans');
       if (!missed.has(key)) {
         missed.add(key);
         await click(heardChoice(container, false));
