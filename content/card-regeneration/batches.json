@@ -170,7 +170,7 @@
     },
     {
       "id": "batch-09",
-      "status": "ready-to-generate",
+      "status": "approved",
       "cardIds": [
         "ja-cat",
         "ja-v-a491f1acccc3",
@@ -198,11 +198,11 @@
         "ja-v-3ee395a38c63",
         "ja-v-4285b5f8fc72"
       ],
-      "purpose": "Provisional order; apply feedback before generation"
+      "purpose": "Generated batch; membership preserved"
     },
     {
       "id": "batch-10",
-      "status": "blocked-on-previous-feedback",
+      "status": "ready-to-generate",
       "cardIds": [
         "ja-v-49863ee12a96",
         "ja-v-4fd3d09440c1",

@@ -1,0 +1,16 @@
+{
+  "issue": 72,
+  "batch": "batch-09",
+  "round": 2,
+  "number": 132,
+  "tool": "built-in image_gen",
+  "reason": "Initial revision rendered a wide canvas; preserve calendar progression content and correct to square.",
+  "path": "artifacts/card-regeneration/batch-09/132-one-day-v4.png",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary card, NOT a wide banner\nInput image 1: edit target, correct calendar progression content but wrong wide canvas format.\nPrimary request: put this exact12-to13calendar progression on a SQUARE transparent canvas. OUTPUT MUST HAVE EQUAL WIDTH AND HEIGHT, 1:1. Keep both matching calendars side by side horizontally with the right-pointing violet arrow between, left date12and right date13. Preserve the drawing, colors, opaque white paper, golden binding and lavender rings. Fit the entire existing pair in the MIDDLE of a SQUARE canvas with ample empty transparent space ABOVE and BELOW; subjects occupy about85percent of square WIDTH and about40percent of square HEIGHT. Do not crop or stretch the calendar pair. Do not fill the square with more subjects or enlarge vertically. Just expand the transparent canvas vertically to equal its width. Full silhouettes and clean violet outlines. No additional calendars, text, objects, clock, labels, backdrop, frame, shadow, watermark or checkerboard. Text allowed only12and13. Genuinely transparent outer background; opaque white paper stays filled. transparent_background=true.",
+  "references": [
+    {
+      "path": "artifacts/card-regeneration/batch-09/132-one-day-v3.png",
+      "role": "edit target: exact progression content, square-canvas correction only"
+    }
+  ]
+}

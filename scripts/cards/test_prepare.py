@@ -47,6 +47,21 @@ class ReuseTests(unittest.TestCase):
         self.assertIn('bowl', cards['ja-v-4690961b5456']['components'])
         self.assertEqual(cards['ja-v-66ccf8dd3399']['components'], ['ball'])
 
+    def test_revised_duration_retains_context_and_depends_on_current_visual_parts(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = {c['id']: c for c in json.loads((data / 'prompts.json').read_text())['cards']}
+        duration = cards['ja-v-3d24eb7fb7b5']
+        self.assertFalse(duration['pictureOnlyEligible'])
+        self.assertTrue(duration['requiresContext'])
+        self.assertIn('F07', [f['reference'] for f in duration['reviewFindings']])
+        self.assertIn('component:numeral', duration['dependsOn'])
+        self.assertIn('family:consecutive-calendar-days', duration['dependsOn'])
+        self.assertNotIn('component:sun-moon-horizon', duration['dependsOn'])
+        self.assertIn('component:arrow', duration['dependsOn'])
+        self.assertIn('component:calendar', duration['dependsOn'])
+        for item_id in ['ja-v-0c5871310c83', 'ja-v-18fe4d351abc']:
+            self.assertIn('component:arrow', cards[item_id]['dependsOn'])
+
     def test_number_ranges_exclude_currency_age_and_object_counters(self):
         data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
         cards = json.loads((data / 'prompts.json').read_text())['cards']

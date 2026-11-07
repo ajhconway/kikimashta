@@ -20,6 +20,16 @@
       "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
       "specification": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: CHARACTER IDENTITY AND STYLE REFERENCE. Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, replacing the basketball; preserve the word’s intended relation. Use ordinary literal objects where the vocabulary specifically names them. Batch 07 Kiku scenes are approved: under/on the chair, small/big comparisons, under the bed, on the table and mixing. Future scenes still require individual user review.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: keep Kiku recognizable, preserve intended action or spatial relation, no captions, words, logos, watermark, frame or unrelated decorations.",
       "approvalNote": "Batch 07 Kiku scenes are approved: under/on the chair, small/big comparisons, under the bed, on the table and mixing. Future scenes still require individual user review."
+    },
+    "kiku-cat": {
+      "id": "kiku-cat",
+      "label": "Kiku without headphones for literal cat vocabulary",
+      "status": "approved-direction",
+      "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "sourcePath": "/private/tmp/kikimashta-cards-05-06/public/brand/kikimashta-cat-v1.png",
+      "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "specification": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: CHARACTER IDENTITY AND STYLE REFERENCE. Kiku is the compact golden-yellow cat mascot with bare ears and NO headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, replacing the basketball; preserve the word’s intended relation. Use ordinary literal objects where the vocabulary specifically names them. Batch 07 Kiku scenes are approved: under/on the chair, small/big comparisons, under the bed, on the table and mixing. Future scenes still require individual user review.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: keep Kiku recognizable, preserve intended action or spatial relation, no captions, words, logos, watermark, frame or unrelated decorations.\nCard-specific identity variant for111: preserve Kiku’s golden cat face, paws and tail, but remove both headphone cups, ear pads and the entire arched band. No headphones or attention lines on this card. This exception does not change the approved headphone design in other Kiku scenes.",
+      "approvalNote": "User approved card111with Kiku without headphones. This accessory exception applies to the cat vocabulary card; existing Kiku scenes retain their approved headphones."
     }
   },
   "cardProfiles": {
@@ -151,7 +161,30 @@
     "ja-v-ac1e4f6bee13": "cat-png",
     "ja-v-1a43c96593cb": "cat-png",
     "ja-v-08e3c50181be": "cat-png",
-    "ja-v-13ea3220cde0": "cat-png"
+    "ja-v-13ea3220cde0": "cat-png",
+    "ja-cat": "kiku-cat",
+    "ja-v-a491f1acccc3": "cat-png",
+    "ja-v-ba0c8a160c33": "cat-png",
+    "ja-v-9567eaf8fe9b": "cat-png",
+    "ja-v-bb787ce6238a": "cat-png",
+    "ja-v-cb7a14590e8e": "cat-png",
+    "ja-v-001a4faf05bd": "cat-png",
+    "ja-v-01016753b889": "cat-png",
+    "ja-v-0c5871310c83": "cat-png",
+    "ja-v-115fd51b8d38": "cat-png",
+    "ja-v-16fcea5b6e6e": "cat-png",
+    "ja-v-18fe4d351abc": "cat-png",
+    "ja-v-1c7565a62dc9": "cat-png",
+    "ja-v-1d446778d33c": "cat-png",
+    "ja-v-26a964fd9243": "cat-png",
+    "ja-v-2c3dfcbde58b": "cat-png",
+    "ja-v-2ef4da30cf39": "cat-png",
+    "ja-v-33c00f4a1a8b": "cat-png",
+    "ja-v-3aa47bb43d28": "cat-png",
+    "ja-v-3d24eb7fb7b5": "cat-png",
+    "ja-v-3ed4447f3492": "cat-png",
+    "ja-v-3ee395a38c63": "cat-png",
+    "ja-v-4285b5f8fc72": "cat-png"
   },
   "request": "Regenerate all ten batch 02 cards from scratch using the cat PNG in the project root. Keep earlier variants for comparison. Await feedback before applying this style to other batches.",
   "history": [
@@ -184,6 +217,18 @@
       "scope": "batch-08",
       "request": "Continue next25 after batch07approval. Apply current main transparency policy and established cat-reference illustration language.",
       "handling": "Use true alpha outside subject silhouette; preserve opaque white clouds, book/calendar pages, washer cabinets and number patches. Keep approved historical PNGs unchanged."
+    },
+    {
+      "scope": "batch-09",
+      "round": 1,
+      "request": "111should be Kiku (obviously).",
+      "handling": "Assign111to approved kiku-scenes character profile and shared Kiku family; new art awaits feedback."
+    },
+    {
+      "scope": "batch-09",
+      "round": 2,
+      "request": "111, no headphones on kiku this time.",
+      "handling": "Use card-specific kiku-cat profile; preserve the original kiku-scenes profile and approved spatial scenes."
     }
   ]
 }

@@ -587,8 +587,8 @@
       "meaning": "Great",
       "sourceLevel": 1,
       "image": {
-        "src": "../images/vocabulary/ja-v-1d446778d33c.svg",
-        "alt": "Great"
+        "src": "../images/approved/ja-v-1d446778d33c-02afc5882e65.png",
+        "alt": "A golden trophy surrounded by stars."
       },
       "audio": [
         {
@@ -640,7 +640,7 @@
           "available": true
         }
       ],
-      "concept": "A huge gold trophy surrounded by celebratory stars",
+      "concept": "A golden trophy surrounded by stars.",
       "visualGroup": "大した",
       "reviewRequired": true,
       "reviewNote": "Trophy symbolizes impressive/great, a context-dependent adjective."
@@ -909,8 +909,8 @@
       "meaning": "Nine Things",
       "sourceLevel": 1,
       "image": {
-        "src": "../images/vocabulary/ja-v-0d0163a40587.svg",
-        "alt": "Nine Things"
+        "src": "../images/approved/ja-v-0d0163a40587-70ff49a64681.png",
+        "alt": "Nine colored toy cubes in a three-by-three arrangement."
       },
       "audio": [
         {
@@ -962,7 +962,7 @@
           "available": true
         }
       ],
-      "concept": "Exactly 9 apples to count as things",
+      "concept": "Nine colored toy cubes in a three-by-three arrangement.",
       "visualGroup": "things-9",
       "reviewRequired": false
     },
@@ -1231,8 +1231,8 @@
       "meaning": "Population",
       "sourceLevel": 1,
       "image": {
-        "src": "../images/vocabulary/ja-v-2ef4da30cf39.svg",
-        "alt": "Population"
+        "src": "../images/approved/ja-v-2ef4da30cf39-dfb4753694c1.png",
+        "alt": "A crowd within a green town boundary with houses behind."
       },
       "audio": [
         {
@@ -1284,7 +1284,7 @@
           "available": true
         }
       ],
-      "concept": "A crowd within a town boundary",
+      "concept": "A crowd within a green town boundary with houses behind.",
       "visualGroup": "人口",
       "reviewRequired": true,
       "reviewNote": "Town crowd symbolizes population rather than simply people."
@@ -1296,8 +1296,8 @@
       "meaning": "Power",
       "sourceLevel": 1,
       "image": {
-        "src": "../images/vocabulary/ja-v-33c00f4a1a8b.svg",
-        "alt": "Power"
+        "src": "../images/approved/ja-v-33c00f4a1a8b-91099f899caa.png",
+        "alt": "A bent arm lifting a violet dumbbell."
       },
       "audio": [
         {
@@ -1349,7 +1349,7 @@
           "available": true
         }
       ],
-      "concept": "A strong bent arm lifting a dumbbell",
+      "concept": "A bent arm lifting a violet dumbbell.",
       "visualGroup": "力",
       "reviewRequired": true,
       "reviewNote": "Physical strength is one sense of power."
@@ -3552,8 +3552,8 @@
       "meaning": "Five Things",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-084edf1fdd10.svg",
-        "alt": "Five Things"
+        "src": "../images/approved/ja-v-084edf1fdd10-454d5a494b65.png",
+        "alt": "Five colored toy cubes arranged in rows of three and two."
       },
       "audio": [
         {
@@ -3605,7 +3605,7 @@
           "available": true
         }
       ],
-      "concept": "Exactly 5 apples to count as things",
+      "concept": "Five colored toy cubes arranged in rows of three and two.",
       "visualGroup": "things-5",
       "reviewRequired": false
     },
@@ -5039,8 +5039,8 @@
       "meaning": "One Day",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-3d24eb7fb7b5.svg",
-        "alt": "One Day"
+        "src": "../images/approved/ja-v-3d24eb7fb7b5-19666f0ac1c4.png",
+        "alt": "Two pull-off calendar pages displaying 12 and 13, connected by a right-pointing arrow."
       },
       "audio": [
         {
@@ -5092,7 +5092,7 @@
           "available": true
         }
       ],
-      "concept": "Sunrise to moonrise showing one full day",
+      "concept": "Two pull-off calendar pages displaying 12 and 13, connected by a right-pointing arrow.",
       "visualGroup": "一日",
       "reviewRequired": true,
       "reviewNote": "Duration one day is different from first day of month."
@@ -8201,8 +8201,8 @@
       "meaning": "Direction",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-18fe4d351abc.svg",
-        "alt": "Direction"
+        "src": "../images/approved/ja-v-18fe4d351abc-def208d64c5e.png",
+        "alt": "A gold signpost with two lavender directional arrows."
       },
       "audio": [
         {
@@ -8254,7 +8254,7 @@
           "available": true
         }
       ],
-      "concept": "A signpost points toward two paths",
+      "concept": "A gold signpost with two lavender directional arrows.",
       "visualGroup": "direction",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -10660,8 +10660,8 @@
       "meaning": "Seattle",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-16fcea5b6e6e.svg",
-        "alt": "Seattle"
+        "src": "../images/approved/ja-v-16fcea5b6e6e-c18426020bf9.png",
+        "alt": "The Space Needle above a Seattle waterfront skyline."
       },
       "audio": [
         {
@@ -10713,7 +10713,7 @@
           "available": true
         }
       ],
-      "concept": "Space Needle silhouette above a waterfront city skyline",
+      "concept": "The Space Needle above a Seattle waterfront skyline.",
       "visualGroup": "seattle",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -10854,8 +10854,8 @@
       "meaning": "Task",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-3aa47bb43d28.svg",
-        "alt": "Task"
+        "src": "../images/approved/ja-v-3aa47bb43d28-f7f30e7a35e7.png",
+        "alt": "A clipboard with three task rows and the first checkbox checked."
       },
       "audio": [
         {
@@ -10907,7 +10907,7 @@
           "available": true
         }
       ],
-      "concept": "A checklist with three tasks and one checked item",
+      "concept": "A clipboard with three task rows and the first checkbox checked.",
       "visualGroup": "task",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -11500,8 +11500,8 @@
       "meaning": "To Pull",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-bb787ce6238a.svg",
-        "alt": "To Pull"
+        "src": "../images/approved/ja-v-bb787ce6238a-aab5786b9487.png",
+        "alt": "A person pulling a wheeled wagon with a taut rope."
       },
       "audio": [
         {
@@ -11553,7 +11553,7 @@
           "available": true
         }
       ],
-      "concept": "A person pulls a wheeled wagon with a rope",
+      "concept": "A person pulling a wheeled wagon with a taut rope.",
       "visualGroup": "to-pull",
       "reviewRequired": false
     },
@@ -15180,8 +15180,8 @@
       "meaning": "Mainly",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-4285b5f8fc72.svg",
-        "alt": "Mainly"
+        "src": "../images/approved/ja-v-4285b5f8fc72-c393b60a5e6f.png",
+        "alt": "A basket containing mainly apples and one banana, with attention lines around the apples."
       },
       "audio": [
         {
@@ -15233,7 +15233,7 @@
           "available": true
         }
       ],
-      "concept": "A large majority of pink beads and only two purple beads",
+      "concept": "A basket containing mainly apples and one banana, with attention lines around the apples.",
       "visualGroup": "mainly",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -15764,8 +15764,8 @@
       "meaning": "North America",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-3ed4447f3492.svg",
-        "alt": "North America"
+        "src": "../images/approved/ja-v-3ed4447f3492-957d02f14d69.png",
+        "alt": "A green North American landmass with Alaska, Greenland and Caribbean islands."
       },
       "audio": [
         {
@@ -15817,7 +15817,7 @@
           "available": true
         }
       ],
-      "concept": "A stylized North American landmass",
+      "concept": "A green North American landmass with Alaska, Greenland and Caribbean islands.",
       "visualGroup": "north-america",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -16153,8 +16153,8 @@
       "meaning": "Pause",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-3ee395a38c63.svg",
-        "alt": "Pause"
+        "src": "../images/approved/ja-v-3ee395a38c63-d98816e51371.png",
+        "alt": "A lavender player with two gold pause bars on a dark inset display."
       },
       "audio": [
         {
@@ -16206,7 +16206,7 @@
           "available": true
         }
       ],
-      "concept": "A paused music player with two pause bars",
+      "concept": "A lavender player with two gold pause bars on a dark inset display.",
       "visualGroup": "pause",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -17898,8 +17898,8 @@
       "meaning": "To Go Out",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-001a4faf05bd.svg",
-        "alt": "To Go Out"
+        "src": "../images/approved/ja-v-001a4faf05bd-93edcb6d82a6.png",
+        "alt": "A person carrying a bag and stepping out through an open doorway."
       },
       "audio": [
         {
@@ -17951,7 +17951,7 @@
           "available": true
         }
       ],
-      "concept": "A person leaves an open doorway carrying a bag",
+      "concept": "A person carrying a bag and stepping out through an open doorway.",
       "visualGroup": "to-go-out",
       "reviewRequired": false
     },
@@ -20289,8 +20289,8 @@
       "meaning": "Bread Loaf Counter",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-26a964fd9243.svg",
-        "alt": "Bread Loaf Counter"
+        "src": "../images/approved/ja-v-26a964fd9243-31c07089b7bf.png",
+        "alt": "One bread loaf beside a separate group of two whole loaves."
       },
       "audio": [
         {
@@ -20342,7 +20342,7 @@
           "available": true
         }
       ],
-      "concept": "One whole three-dimensional bread loaf beside two equally sized whole loaves, grouped by count.",
+      "concept": "One bread loaf beside a separate group of two whole loaves.",
       "visualGroup": "～斤",
       "reviewRequired": true,
       "reviewNote": "All three units are whole bread loaves, not slices. Source counter 斤 has context-dependent quantities."
@@ -22358,8 +22358,8 @@
       "meaning": "Handicraft",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-a491f1acccc3.svg",
-        "alt": "Handicraft"
+        "src": "../images/approved/ja-v-a491f1acccc3-d336a58a5cc5.png",
+        "alt": "A handmade paper house, scissors, glue and folded paper on a craft table."
       },
       "audio": [
         {
@@ -22411,7 +22411,7 @@
           "available": true
         }
       ],
-      "concept": "Scissors, glue, and handmade paper house on a craft table.",
+      "concept": "A handmade paper house, scissors, glue and folded paper on a craft table.",
       "visualGroup": "工作",
       "reviewRequired": false
     },
@@ -22681,8 +22681,8 @@
       "meaning": "How Many Times",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-1c7565a62dc9.svg",
-        "alt": "How Many Times"
+        "src": "../images/approved/ja-v-1c7565a62dc9-c1bc369a0a07.png",
+        "alt": "Three circular repeat arrows beside a question mark."
       },
       "audio": [
         {
@@ -22734,7 +22734,7 @@
           "available": true
         }
       ],
-      "concept": "Repeated circular turns beside a question mark.",
+      "concept": "Three circular repeat arrows beside a question mark.",
       "visualGroup": "何回",
       "reviewRequired": true,
       "reviewNote": "Repetition plus question represents how many times."
@@ -22876,8 +22876,8 @@
       "meaning": "Inside The Body",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-01016753b889.svg",
-        "alt": "Inside The Body"
+        "src": "../images/approved/ja-v-01016753b889-5ddf1d4cda93.png",
+        "alt": "A human torso cutaway showing the heart and stomach."
       },
       "audio": [
         {
@@ -22929,7 +22929,7 @@
           "available": true
         }
       ],
-      "concept": "Simplified torso cutaway highlights internal heart and stomach.",
+      "concept": "A human torso cutaway showing the heart and stomach.",
       "visualGroup": "体内",
       "reviewRequired": true,
       "reviewNote": "Simplified educational internal-organ diagram, not medically precise."
@@ -23846,8 +23846,8 @@
       "meaning": "Night",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-ba0c8a160c33.svg",
-        "alt": "Night"
+        "src": "../images/approved/ja-v-ba0c8a160c33-101ba4b11c89.png",
+        "alt": "A house under a violet night sky with a golden crescent and stars."
       },
       "audio": [
         {
@@ -23899,7 +23899,7 @@
           "available": true
         }
       ],
-      "concept": "Dark night sky with moon, stars, and sleeping house.",
+      "concept": "A house under a violet night sky with a golden crescent and stars.",
       "visualGroup": "夜",
       "reviewRequired": false
     },
@@ -25398,8 +25398,8 @@
       "meaning": "Student",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-9567eaf8fe9b.svg",
-        "alt": "Student"
+        "src": "../images/approved/ja-v-9567eaf8fe9b-fcf5ea56c94a.png",
+        "alt": "A student reading at a desk with a backpack beside the chair."
       },
       "audio": [
         {
@@ -25451,7 +25451,7 @@
           "available": true
         }
       ],
-      "concept": "Student studies an open book with a backpack beside the chair.",
+      "concept": "A student reading at a desk with a backpack beside the chair.",
       "visualGroup": "学生",
       "reviewRequired": false
     },
@@ -25462,8 +25462,8 @@
       "meaning": "Sunlight",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-cb7a14590e8e.svg",
-        "alt": "Sunlight"
+        "src": "../images/approved/ja-v-cb7a14590e8e-fc1e96a55ed8.png",
+        "alt": "A gold sun casting a pale beam onto green grass."
       },
       "audio": [
         {
@@ -25515,7 +25515,7 @@
           "available": true
         }
       ],
-      "concept": "Sun sends warm rays through a window onto a plant.",
+      "concept": "A gold sun casting a pale beam onto green grass.",
       "visualGroup": "日光",
       "reviewRequired": false
     },
@@ -25786,8 +25786,8 @@
       "meaning": "Thousands",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-2c3dfcbde58b.svg",
-        "alt": "Thousands"
+        "src": "../images/approved/ja-v-2c3dfcbde58b-541630d6ffe4.png",
+        "alt": "Three bundles labeled 1000 beside a question mark."
       },
       "audio": [
         {
@@ -25839,7 +25839,7 @@
           "available": true
         }
       ],
-      "concept": "Several bundles of a thousand units beside a question mark.",
+      "concept": "Three bundles labeled 1000 beside a question mark.",
       "visualGroup": "何千",
       "reviewRequired": true,
       "teachingNote": "How many thousands, or an indefinite thousands in context.",
@@ -27213,8 +27213,8 @@
       "meaning": "Train Direction",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-0c5871310c83.svg",
-        "alt": "Train Direction"
+        "src": "../images/approved/ja-v-0c5871310c83-28c374d3d1c1.png",
+        "alt": "A train traveling right beneath a right-pointing sign reading 東京."
       },
       "audio": [
         {
@@ -27266,7 +27266,7 @@
           "available": true
         }
       ],
-      "concept": "Train tracks lead toward a marked distant destination.",
+      "concept": "A train traveling right beneath a right-pointing sign reading 東京.",
       "visualGroup": "行き",
       "reviewRequired": true,
       "reviewNote": "Destination-bound train symbolizes 行き read ゆき; this word also functions as a destination suffix."
@@ -27860,8 +27860,8 @@
       "meaning": "What",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-115fd51b8d38.svg",
-        "alt": "What"
+        "src": "../images/approved/ja-v-115fd51b8d38-b6819e5db59a.png",
+        "alt": "A large violet question mark."
       },
       "audio": [
         {
@@ -27913,7 +27913,7 @@
           "available": true
         }
       ],
-      "concept": "Three hidden objects under lids with a large question above.",
+      "concept": "A large violet question mark.",
       "visualGroup": "何",
       "reviewRequired": true,
       "reviewNote": "Mystery containers symbolize what; inherently abstract."

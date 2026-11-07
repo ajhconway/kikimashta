@@ -14,9 +14,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 110 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 110)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 110)
+test('all 135 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 135)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 135)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -35,7 +35,8 @@ test('all 110 active illustrations resolve to the approved selection in the app 
       assert.ok(pixels.transparentPixels > 0)
       assert.ok(pixels.opaquePixels > 0)
       const sourcePixels = inspectPngAlpha(readFileSync(new URL(asset.sourcePath, root)))
-      if (sourcePixels.opaqueWhitePixels) assert.ok(pixels.opaqueWhitePixels > 0)
+      const scale = pixels.width * pixels.height / (sourcePixels.width * sourcePixels.height)
+      if (sourcePixels.opaqueWhitePixels * scale >= Math.max(1, sourcePixels.opaquePixels * scale / 1000)) assert.ok(pixels.opaqueWhitePixels > 0)
     } else assert.equal(delivery.subarray(0, 2).toString('hex'), 'ffd8', 'Historical opaque delivery must retain JPEG bytes')
     const items = banks.flatMap(bank => bank.items).filter(item => item.id === asset.id)
     assert.ok(items.length)

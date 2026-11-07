@@ -1,0 +1,134 @@
+{
+  "issue": 72,
+  "batch": "batch-09",
+  "round": 1,
+  "tool": "built-in image_gen",
+  "transparentBackground": true,
+  "requests": [
+    {
+      "number": 111,
+      "id": "ja-cat",
+      "file": "111-cat-v2.png",
+      "profile": "kiku-scenes",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "approved Kiku character identity and illustration style"
+        }
+      ],
+      "concept": "CAT: use Kiku, the approved compact golden-yellow cat mascot with lavender/violet headphones, pink inner ears, closed smiling eyes, violet whiskers, rounded forepaws and a curled golden tail. Match the approved character reference closely. Kiku alone, centered and fully visible. No ordinary gray tabby, other objects, scenery, attention lines, text or branding.",
+      "prompt": "Use case: identity-preserve\nAsset type: Japanese vocabulary card 111, CAT\nInput image1: approved Kiku identity and style reference, not a logo to reproduce.\nPrimary request: show exactly Kiku from image1 as the standalone cat card. Preserve the compact golden-yellow cat, lavender/violet over-ear headphones and arched band, pink inner ears, closed smiling eyes, violet nose/mouth/whiskers, two rounded front paws and curled golden tail. Match the reference character, pose, silhouette, proportions and colors very closely. Center Kiku alone, occupying about 75 percent of the square, with clear margin around all sides. Do not redesign as an ordinary tabby or add clothing, sound marks, attention lines, flowers, landscape, other animals or lettering.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Kiku alone: golden cat with lavender headphones, smiling eyes, rounded forepaws and curled tail.",
+      "path": "artifacts/card-regeneration/batch-09/111-cat-v2.png"
+    },
+    {
+      "number": 116,
+      "id": "ja-v-cb7a14590e8e",
+      "file": "116-sunlight-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-08/95-moonlight-v3.png",
+          "role": "approved moonlight composition; keep diagonal light beam and blue water; replace moon with sun"
+        }
+      ],
+      "concept": "SUNLIGHT: use the approved moonlight card95composition. Replace the upper-left crescent with a golden circular sun with short rounded rays. Preserve the broad pale-gold beam falling diagonally onto a blue water oval at lower-right, with three warm reflections. Reuse water silhouette, violet contour and proportions. No window, plant, pot, room or full-sky backdrop.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card116, SUNLIGHT\nInput image1: approved card95 MOONLIGHT, edit target and composition reference.\nPrimary request: create the matching SUNLIGHT card by replacing ONLY the upper-left crescent moon with a golden round SUN and short rounded rays. The sun is fully visible within the same general upper-left footprint. Keep the same diagonal broad light beam reaching the lower-right blue oval of water and its three warm reflection streaks. Keep the water outline, placement, wave shapes, overall visual balance and deep-violet line language. Make the beam pale warm yellow rather than lavender-tinted moonlight. No window, potted plant, room, landscape, clouds, text or extra props.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Golden sun shines a broad pale-gold diagonal beam onto blue water, matching approved moonlight95.",
+      "path": "artifacts/card-regeneration/batch-09/116-sunlight-v2.png"
+    },
+    {
+      "number": 120,
+      "id": "ja-v-0c5871310c83",
+      "file": "120-train-direction-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/120-train-direction.png",
+          "role": "edit target; preserve train palette and card illustration language, replace composition"
+        }
+      ],
+      "concept": "TOKYO-BOUND TRAIN: side-view lavender and white passenger train traveling left-to-right on a short horizontal track, front nose at right. A single right-pointing railway direction sign above the train reads exactly 東京 in large dark violet kanji. Clear rightward orientation; two small motion strokes behind train at left. No perspective-away layout, station building, flag, landscape or English text.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card120, TOKYO-BOUND TRAIN\nInput image1: current train card; retain its rounded lavender/white train design language, but replace its composition.\nPrimary request: a clean side-profile passenger train traveling LEFT TO RIGHT across the lower half of the square. The front driving cab and rounded nose are at the RIGHT end and clearly face RIGHT; rear carriage is at LEFT. Two connected carriages, opaque white body, lavender stripe, sky-blue windows, dark violet wheels and contours. Short horizontal rails beneath wheels. Two short motion strokes behind the rear on the LEFT. Above the train, centered with a clear gap, ONE large railway direction sign shaped as a RIGHT-POINTING ARROW, on one short golden post at its left. The sign has opaque white fill, deep-violet outline, and two large dark-violet kanji, exactly '東京'. Text is 東京, not TOKYO, no roman letters, no other text. The train's travel and sign arrow both point RIGHT. No station, Japanese flag, flowers, landscape, perspective track or extra symbols.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Side-view train travels left-to-right beneath a right-pointing white sign reading 東京.",
+      "path": "artifacts/card-regeneration/batch-09/120-train-direction-v2.png"
+    },
+    {
+      "number": 122,
+      "id": "ja-v-115fd51b8d38",
+      "file": "122-what-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/122-what.png",
+          "role": "edit target; preserve question-mark design only; remove cloches and tray"
+        }
+      ],
+      "concept": "WHAT: one large standalone deep-violet question mark, rounded and substantial, centered on transparent background. Its separate dot remains. Remove covered objects, tray, extra accent marks and all other props. Recenter and enlarge question mark for clear quiz-size reading.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card122, WHAT\nInput image1: current card with cloches and question mark, edit target.\nPrimary request: remove ALL covered dishes, cloches, tray and pink accent marks. Keep only the large deep-violet QUESTION MARK and its separate dot. Recenter and enlarge this one symbol so it occupies about 65 percent of square height with generous transparent margins. Preserve its rounded substantial silhouette and subtle violet/lavender tonal treatment. No other object, no rays, no punctuation beyond this single question mark.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "A single large rounded violet question mark with its dot; no objects or accent lines.",
+      "path": "artifacts/card-regeneration/batch-09/122-what-v2.png"
+    },
+    {
+      "number": 124,
+      "id": "ja-v-18fe4d351abc",
+      "file": "124-direction-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/124-direction.png",
+          "role": "edit target; preserve post and two arrowboards; remove path and ground"
+        }
+      ],
+      "concept": "DIRECTION: same golden signpost with two lavender arrowboards, upper pointing left and lower pointing right. Preserve shape, fasteners, proportions, palette and shading. Remove forked path, grass, shrubs and all ground. Recenter the isolated signpost with balanced transparent margins. No words.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card124, DIRECTION\nInput image1: current signpost card, edit target.\nPrimary request: remove the entire peach forked PATH and its green grass/shrubs. Keep the golden wooden POST and both lavender ARROWBOARDS exactly in their existing drawing language: upper board points left, lower board points right, violet round fasteners, rounded edges, violet outlines and restrained shading. Close the post's bottom edge cleanly. Recenter the isolated signpost in the square with balanced transparent margins and a complete silhouette. No ground, no grass, no shadow, no letters, no added props.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Isolated golden signpost with two lavender arrows; forked path and ground removed.",
+      "path": "artifacts/card-regeneration/batch-09/124-direction-v2.png"
+    },
+    {
+      "number": 132,
+      "id": "ja-v-3d24eb7fb7b5",
+      "file": "132-one-day-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/132-one-day.png",
+          "role": "old duration card; replace complex sunrise/noon/moonrise sequence with one 24-hour cycle"
+        }
+      ],
+      "concept": "ONE DAY as DURATION (いちにち), not the first of the month: one compact circular day/night cycle icon. Left half pale gold with a small golden sun, right half lavender with a small golden crescent. A white central circular badge has a large dark-violet24. One broad violet circular arrow around the outside completes exactly one loop. No clock hands, date1, calendar, timeline, multiple cycles or labels. The24represents24hours; keep F07 and contextual teaching requirement.",
+      "prompt": "Use case: scientific-educational\nAsset type: vocabulary card132, ONE DAY as a span of24hours\nInput image1: previous duration card, style reference only; replace its cluttered sequence.\nPrimary request: a SIMPLE compact circular DAY-AND-NIGHT CYCLE. One large round disk, left half pale golden-yellow daylight containing one small golden sun near upper-left, right half lavender night containing one small golden crescent near upper-right. An opaque WHITE circular badge overlaps the center lower than the two celestial icons, with a very large dark-violet numeral '24' centered in it. Around the outside of the main disk, one broad violet CIRCULAR ARROW completes exactly ONE full clockwise loop, ending with one clear arrowhead at the top. Balanced centered composition, substantial smooth forms. This is a duration of24hours, not a date. Only text allowed is '24'. No clock hands, other numerals, calendar pages, date1, sunrise/noon/moonrise timeline, stars, clouds, horizon or written caption.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "One circular day/night cycle with a single loop arrow and central24 to represent a full day's duration.",
+      "path": "artifacts/card-regeneration/batch-09/132-one-day-v2.png"
+    },
+    {
+      "number": 134,
+      "id": "ja-v-3ee395a38c63",
+      "file": "134-pause-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/134-pause.png",
+          "role": "edit target; remove yellow round control; preserve pause display"
+        }
+      ],
+      "concept": "PAUSE: preserve the lavender rounded player housing, dark violet inset display and two golden vertical pause bars. Remove the yellow circular control/dot below the display, including its ring. Adjust lower housing height/spacing so the pause display is centered and no knob-shaped scar remains. No extra controls.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card134, PAUSE\nInput image1: current pause player, edit target.\nPrimary request: remove the round YELLOW DOT/KNOB below the display AND its violet circular rim. Fill that area seamlessly with the same lavender player body. Shorten the empty bottom housing slightly so spacing around the display feels balanced. Keep the player shape, violet outline, soft lavender shading, dark inset display and TWO GOLDEN VERTICAL PAUSE BARS unchanged. Do not add any new control, small circle, highlight dot, label or decoration. Keep full player centered on transparent background.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Lavender player with dark inset display and two gold pause bars; yellow knob removed.",
+      "path": "artifacts/card-regeneration/batch-09/134-pause-v2.png"
+    },
+    {
+      "number": 135,
+      "id": "ja-v-4285b5f8fc72",
+      "file": "135-mainly-v2.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved apple shape, pink-red fruit with green leaf; simplify glare for current cards"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
+          "role": "approved curved yellow banana shape and palette; subject only, exclude white backdrop"
+        }
+      ],
+      "concept": "MAINLY: one shallow lavender fruit basket filled mostly with pink-red apples and one yellow banana. Seven clearly recognizable apples dominate the basket; one banana lies visibly across the front-right. Reuse approved apple and banana design language, scale fruit to read at145px. Minimal basket detail. No beads, dots, numerals, percentages, text, people or labels. This supports 'mainly apples' in spoken context; preserve existing picture-only restriction.",
+      "prompt": "Use case: scientific-educational\nAsset type: vocabulary card135, MAINLY\nInput image1: approved pink-red apple object reference; use apple silhouette, green leaf and violet contour, reduce glossy white glare. Input image2: approved yellow banana object reference; use banana silhouette and colors only, not white background.\nPrimary request: replace the abstract beads with ONE shallow LAVENDER FRUIT BASKET containing MAINLY APPLES: SEVEN plump recognizable pink-red apples with small green leaves, and just ONE yellow curved banana lying visibly across the front-right of the fruit pile. Apples form the clear dominant bulk. All fruit belongs to the same basket. Arrange apples in two shallow overlapping rows so they are separately readable, and show enough of the banana's complete curve and brown tip to distinguish it immediately. Basket has simple rounded lip and only two or three sparse weave lines, no tall handle. Close slightly elevated view, centered compact silhouette, visible fruit fills most of the image. No people, beads, candy, marbles, numeral, percent, question mark or text. This is a picture mnemonic for 'mainly apples'; do not draw any answer caption.\nStyle/medium: match the established Kikimashta cartoon cards: rounded substantial forms, clean bold deep-violet contours, restrained soft shading inside forms, warm gold, lavender and pink accents. Calm polished illustration, no photorealism, paper grain, glossy white glare or sketch strokes.\nComposition: one square vocabulary image, centered complete silhouette with generous margins, readable at 145px. No caption, logo, frame, watermark or unrelated decoration.\nBackground/export requirement: genuinely transparent outer background with an alpha channel; never a painted white rectangle, checkerboard or colored matte. Preserve opaque white subject details. No exterior glow, haze or cast shadow. transparent_background=true.",
+      "description": "Lavender basket containing mainly pink-red apples and a single yellow banana.",
+      "path": "artifacts/card-regeneration/batch-09/135-mainly-v2.png"
+    }
+  ]
+}

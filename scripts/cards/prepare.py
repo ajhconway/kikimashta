@@ -269,7 +269,8 @@ def prepare():
         item['practiceStatus'] = 'staged-for-review'
         item['pictureOnlyEligible'] = not (original['reviewRequired'] or item['requiresContext'])
         item['eligibilityNote'] = 'Provisional only; no generated image enters practice before visual/user review. Existing restrictions remain.'
-        item['components'] = components_for(item)
+        # Explicit feedback describes the current scene when it replaces the original.
+        item['components'] = feedback.get('componentOverrides', {}).get(item_id, components_for(item))
         for family in feedback.get('designFamilies', {}).values():
             if item_id in family['memberIds'] and 'replaceComponents' in family:
                 item['components'] = family['replaceComponents']

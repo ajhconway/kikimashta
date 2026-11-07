@@ -74,7 +74,7 @@
   },
   {
     "id": "ja-v-26a964fd9243",
-    "concept": "One whole three-dimensional bread loaf beside two equally sized whole loaves, grouped by count.",
+    "concept": "One bread loaf beside a separate group of two whole loaves.",
     "visualGroup": "～斤",
     "reviewRequired": true,
     "reviewNote": "All three units are whole bread loaves, not slices. Source counter 斤 has context-dependent quantities."
@@ -286,7 +286,7 @@
   },
   {
     "id": "ja-v-a491f1acccc3",
-    "concept": "Scissors, glue, and handmade paper house on a craft table.",
+    "concept": "A handmade paper house, scissors, glue and folded paper on a craft table.",
     "visualGroup": "工作",
     "reviewRequired": false
   },
@@ -319,7 +319,7 @@
   },
   {
     "id": "ja-v-1c7565a62dc9",
-    "concept": "Repeated circular turns beside a question mark.",
+    "concept": "Three circular repeat arrows beside a question mark.",
     "visualGroup": "何回",
     "reviewRequired": true,
     "reviewNote": "Repetition plus question represents how many times."
@@ -340,7 +340,7 @@
   },
   {
     "id": "ja-v-01016753b889",
-    "concept": "Simplified torso cutaway highlights internal heart and stomach.",
+    "concept": "A human torso cutaway showing the heart and stomach.",
     "visualGroup": "体内",
     "reviewRequired": true,
     "reviewNote": "Simplified educational internal-organ diagram, not medically precise."
@@ -440,7 +440,7 @@
   },
   {
     "id": "ja-v-ba0c8a160c33",
-    "concept": "Dark night sky with moon, stars, and sleeping house.",
+    "concept": "A house under a violet night sky with a golden crescent and stars.",
     "visualGroup": "夜",
     "reviewRequired": false
   },
@@ -599,13 +599,13 @@
   },
   {
     "id": "ja-v-9567eaf8fe9b",
-    "concept": "Student studies an open book with a backpack beside the chair.",
+    "concept": "A student reading at a desk with a backpack beside the chair.",
     "visualGroup": "学生",
     "reviewRequired": false
   },
   {
     "id": "ja-v-cb7a14590e8e",
-    "concept": "Sun sends warm rays through a window onto a plant.",
+    "concept": "A gold sun casting a pale beam onto green grass.",
     "visualGroup": "日光",
     "reviewRequired": false
   },
@@ -639,7 +639,7 @@
   },
   {
     "id": "ja-v-2c3dfcbde58b",
-    "concept": "Several bundles of a thousand units beside a question mark.",
+    "concept": "Three bundles labeled 1000 beside a question mark.",
     "visualGroup": "何千",
     "reviewRequired": true,
     "reviewNote": "Question with thousand bundles preserves 何千; source Thousands omits the interrogative."
@@ -789,7 +789,7 @@
   },
   {
     "id": "ja-v-0c5871310c83",
-    "concept": "Train tracks lead toward a marked distant destination.",
+    "concept": "A train traveling right beneath a right-pointing sign reading 東京.",
     "visualGroup": "行き",
     "reviewRequired": true,
     "reviewNote": "Destination-bound train symbolizes 行き read ゆき; this word also functions as a destination suffix."
@@ -856,7 +856,7 @@
   },
   {
     "id": "ja-v-115fd51b8d38",
-    "concept": "Three hidden objects under lids with a large question above.",
+    "concept": "A large violet question mark.",
     "visualGroup": "何",
     "reviewRequired": true,
     "reviewNote": "Mystery containers symbolize what; inherently abstract."
