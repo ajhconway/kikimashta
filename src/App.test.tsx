@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
+import { practiceCards, cardKey } from './core/cards';
 import { practicePool } from './core/practice';
 import { forecastDensity, planLessonChunk } from './core/density';
 import type { PracticeAttempt } from './types';
@@ -39,8 +40,8 @@ afterEach(() => { vi.useRealTimers(); });
 function heardChoice(container: HTMLElement, correct = true) {
   const source = container.querySelector('audio')!.getAttribute('src');
   const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-  return screen.getAllByRole('button', { name: /choose picture/i }).find(button =>
-    Boolean(within(button).queryByRole('img', { name: target.image.alt })) === correct,
+  return screen.getAllByRole('button', { name: /choose (picture|writing)/i }).find(button =>
+    Boolean(within(button).queryByRole('img', { name: target.image.alt }) || within(button).queryByText(target.text, { exact: true })) === correct,
   )!;
 }
 async function click(button: HTMLElement) { await act(async () => { fireEvent.click(button); }); }
@@ -71,14 +72,14 @@ describe('adaptive session flow', () => {
     await click(screen.getByRole('button', { name: 'Dev review' }));
     vi.useFakeTimers();
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
-    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
     await click(heardChoice(container, false));
     expect(screen.getByRole('status', { name: 'Mistakes' })).toHaveTextContent('1 incorrect answer');
     await click(screen.getByRole('button', { name: /^continue$/i }));
     const completed = new Set<string>();
     for (let i = 0; i < 6; i++) {
       const choice = heardChoice(container);
-      const picture = within(choice).getByRole('img').getAttribute('alt')!;
+      const picture = container.querySelector('.practice.quiz')!.getAttribute('data-exercise') + '/' + container.querySelector('audio')!.getAttribute('src');
       expect(completed.has(picture)).toBe(false); completed.add(picture);
       endAudio(container); await click(choice); await advance(1200);
     }
@@ -105,32 +106,62 @@ describe('adaptive session flow', () => {
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
     expect(records).toEqual(original);
     await start();
-    expect(screen.getByText('2 words')).toBeInTheDocument();
+    expect(screen.getByText('2 cards')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /begin review/i }));
     await click(heardChoice(container));
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
     expect(records).toHaveLength(3);
   });
 
-  it('introduces ten new words before a mini-quiz of those words and records initial-learning context', async () => {
+  it('introduces ten shuffled picture and writing cards, then quizzes exactly those cards', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start();
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
     await click(await screen.findByRole('button', { name: /begin lesson/i }));
-    const items = practicePool.items.slice(0, 10);
-    for (let i = 0; i < items.length; i++) {
-      expect(screen.getByRole('img')).toHaveAttribute('alt', items[i]!.image.alt);
-      expect(items[i]!.audio.map(recording => '/' + recording.src)).toContain(container.querySelector('audio')!.getAttribute('src'));
+    const expected = practiceCards(practicePool.items.slice(0, 5));
+    const introduced: string[] = [];
+    for (let i = 0; i < 10; i++) {
+      const source = container.querySelector('audio')!.getAttribute('src');
+      const item = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+      const exercise = container.querySelector('.preview')!.getAttribute('data-exercise')!;
+      introduced.push(JSON.stringify([item.language, item.id, exercise]));
+      if (exercise === 'audio-text') {
+        expect(container.querySelector('.preview-picture img')).toBeNull();
+        expect(within(container.querySelector('.preview-picture') as HTMLElement).getByText(item.text)).toHaveAttribute('lang', item.language);
+      } else expect(screen.getByRole('img')).toHaveAttribute('alt', item.image.alt);
       expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-      await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
+      await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }));
     }
-    const choices = screen.getAllByRole('button', { name: /choose picture/i });
-    expect(choices).toHaveLength(4);
-    expect(choices.every(button => items.some(item => item.image.alt === within(button).getByRole('img').getAttribute('alt')))).toBe(true);
-    await click(heardChoice(container));
-    expect(records).toHaveLength(1);
-    expect(records[0]!.context).toMatchObject({ phase: 'lesson', exercise: 'audio-picture', replays: 0, schedulerVersion: 'fsrs-6-v1' });
-    expect(items.some(item => item.id === records[0]!.itemId)).toBe(true);
+    expect(introduced.sort()).toEqual(expected.map(cardKey).sort());
+    vi.useFakeTimers();
+    for (let i = 0; i < 10; i++) {
+      const exercise = container.querySelector('.quiz')!.getAttribute('data-exercise')!;
+      const choices = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
+      expect(choices).toHaveLength(4);
+      expect(choices.every(button => button.querySelector('img') !== null)).toBe(exercise === 'audio-picture');
+      endAudio(container); await click(heardChoice(container)); await advance(1200);
+    }
+    expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
+    expect(records.map(attempt => JSON.stringify([attempt.language, attempt.itemId, attempt.context!.exercise])).sort()).toEqual(introduced);
+    expect(records.every(attempt => attempt.context?.phase === 'lesson' && attempt.context.schedulerVersion === 'fsrs-6-v1')).toBe(true);
+  });
+
+  it('mixes both due exercise cards for the same word without introducing other targets', async () => {
+    const picture = { ...legacy(1)[0]!, context: { phase: 'review' as const, exercise: 'audio-picture' as const, recordingSrc: 'audio/cat.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } };
+    const writing = { ...picture, id: 'writing-attempt', context: { ...picture.context, exercise: 'audio-text' as const } };
+    records = [picture, writing];
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start();
+    expect(screen.getByText('2 cards')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /begin review/i }));
+    vi.useFakeTimers();
+    for (let i = 0; i < 2; i++) {
+      const exercise = container.querySelector('.quiz')!.getAttribute('data-exercise');
+      expect(container.querySelectorAll('.choices img')).toHaveLength(exercise === 'audio-picture' ? 4 : 0);
+      endAudio(container); await click(heardChoice(container)); await advance(1200);
+    }
+    expect(records.slice(2).map(attempt => attempt.context!.exercise).sort()).toEqual(['audio-picture', 'audio-text']);
+    expect(records.slice(2).every(attempt => attempt.itemId === picture.itemId)).toBe(true);
   });
 
   it('keeps the due-word snapshot while requiring missed words to be answered correctly', async () => {
@@ -138,7 +169,7 @@ describe('adaptive session flow', () => {
     records = [...legacy(2), { ...legacy(3)[2]!, answeredAt: clock + 1000 }];
     const { container } = render(<App now={() => clock} random={() => 0.5}/>);
     await start();
-    expect(await screen.findByText('2 words')).toBeInTheDocument();
+    expect(await screen.findByText('2 cards')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /begin review/i }));
     vi.useFakeTimers();
     clock += 60_000;
@@ -165,15 +196,16 @@ describe('adaptive session flow', () => {
   it('finishes corrective retries before offering another lesson chunk', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start(); await click(await screen.findByRole('button', { name: /begin lesson/i }));
-    for (let i = 0; i < 10; i++) await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }));
+    for (let i = 0; i < 10; i++) await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }));
     vi.useFakeTimers();
     const missed = new Set<string>();
     for (let i = 0; i < 20; i++) {
       const source = container.querySelector('audio')!.getAttribute('src');
       const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-      expect(practicePool.items.slice(0, 10).some(item => item.id === target.id)).toBe(true);
-      if (!missed.has(target.id)) {
-        missed.add(target.id);
+      expect(practicePool.items.slice(0, 5).some(item => item.id === target.id)).toBe(true);
+      const key = container.querySelector('.quiz')!.getAttribute('data-exercise') + '/' + target.id;
+      if (!missed.has(key)) {
+        missed.add(key);
         await click(heardChoice(container, false));
         await click(screen.getByRole('button', { name: /^continue$/i }));
       } else {
@@ -183,7 +215,8 @@ describe('adaptive session flow', () => {
     expect(missed.size).toBe(10);
     expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /learn more/i }));
-    expect(screen.getByRole('img')).toHaveAttribute('alt', practicePool.items[10]!.image.alt);
+    const nextSource = container.querySelector('audio')!.getAttribute('src');
+    expect(practicePool.items.slice(5, 10).some(item => item.audio.some(clip => nextSource?.endsWith(clip.src)))).toBe(true);
     expect(records).toHaveLength(20);
     expect(records.filter(attempt => !attempt.correct)).toHaveLength(10);
     expect(records.filter(attempt => attempt.context?.retryOf)).toHaveLength(10);
@@ -254,14 +287,14 @@ describe('quiz safeguards', () => {
     const targetPicture = within(heardChoice(container)).getByRole('img').getAttribute('alt')!;
     const selected = heardChoice(container, correct);
     await click(selected);
-    const retained = screen.getAllByRole('button', { name: /choose picture/i });
+    const retained = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
     expect(retained).toHaveLength(correct ? 1 : 2); expect(retained).toContain(selected);
     expect(screen.getByRole('img', { name: targetPicture })).toBeInTheDocument();
     retained.forEach(button => expect(button).toBeDisabled());
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
     await click(screen.getByRole('button', { name: /kikimashta home/i }));
     await start(); await click(await screen.findByRole('button', { name: /begin review/i }));
-    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
     expect(container.querySelector('.answer-departures')).not.toBeInTheDocument();
     expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
   });
@@ -281,12 +314,12 @@ describe('quiz safeguards', () => {
     vi.mocked(HTMLMediaElement.prototype.play).mockRejectedValueOnce(new Error('Blocked'));
     const { container } = await review();
     expect(await screen.findByRole('alert')).toHaveTextContent(/sound couldn't play/i);
-    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeDisabled());
+    screen.getAllByRole('button', { name: /choose (picture|writing)/i }).forEach(button => expect(button).toBeDisabled());
     const source = container.querySelector('audio')!.getAttribute('src');
     await click(screen.getByRole('button', { name: /replay word/i }));
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
     expect(container.querySelector('audio')).toHaveAttribute('src', source);
-    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeEnabled());
+    screen.getAllByRole('button', { name: /choose (picture|writing)/i }).forEach(button => expect(button).toBeEnabled());
   });
 
   it('ignores an old rejected play request after a newer replay succeeds', async () => {
@@ -296,7 +329,7 @@ describe('quiz safeguards', () => {
     await click(screen.getByRole('button', { name: /replay word/i }));
     await act(async () => { stale.reject(new Error('Old request')); });
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    screen.getAllByRole('button', { name: /choose picture/i }).forEach(button => expect(button).toBeEnabled());
+    screen.getAllByRole('button', { name: /choose (picture|writing)/i }).forEach(button => expect(button).toBeEnabled());
   });
 
   it('keeps a missed answer available for replay until Continue is pressed', async () => {
@@ -306,11 +339,11 @@ describe('quiz safeguards', () => {
     const source = container.querySelector('audio')!.getAttribute('src');
     await advance(10_000);
     expect(container.querySelector('audio')).toHaveAttribute('src', source);
-    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(2);
+    expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(2);
     await click(screen.getByRole('button', { name: /replay word/i }));
     expect(container.querySelector('audio')).toHaveAttribute('src', source);
     await click(screen.getByRole('button', { name: /^continue$/i }));
-    expect(screen.getAllByRole('button', { name: /choose picture/i })).toHaveLength(4);
+    expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   });
 

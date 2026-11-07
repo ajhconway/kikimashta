@@ -1,6 +1,7 @@
-import type { WordBank, WordItem } from '../types';
+import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
+import { cardKey, practiceCards } from './cards';
 
-export interface Question { target: WordItem; choices: WordItem[]; retryOf?: string }
+export interface Question { target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string }
 
 export function validateBank(bank: WordBank): void {
   if (!bank.id || !bank.language || !Array.isArray(bank.items) || bank.items.length < 2) throw new Error('A bank needs at least two words.');
@@ -15,7 +16,7 @@ export function validateBank(bank: WordBank): void {
   }
 }
 
-function shuffled<T>(values: T[], random: () => number): T[] {
+export function shuffled<T>(values: readonly T[], random: () => number): T[] {
   const copy = [...values];
   for (let i = copy.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1));
@@ -26,27 +27,29 @@ function shuffled<T>(values: T[], random: () => number): T[] {
 
 export function createSession(bank: WordBank, count = 6, choiceCount = 4, random = Math.random): Question[] {
   validateBank(bank);
-  if (!Number.isInteger(count) || count < 1 || !Number.isInteger(choiceCount) || choiceCount < 2 || choiceCount > bank.items.length) throw new Error('Invalid session size or picture count.');
-  return shuffled(bank.items, random).slice(0, count).map(target => ({
-    target,
-    choices: shuffled([target, ...shuffled(bank.items.filter(item => item.id !== target.id), random).slice(0, choiceCount - 1)], random),
-  }));
+  if (!Number.isInteger(count) || count < 1 || !Number.isInteger(choiceCount) || choiceCount < 2 || choiceCount > bank.items.length) throw new Error('Invalid session size or choice count.');
+  return shuffled(practiceCards(bank.items), random).slice(0, count).map(card => questionFor(card, bank.items, choiceCount, random));
 }
 
-/** Build questions for a fixed target snapshot; unrelated due items cannot enter it. */
-export function createQuestions(targets: WordItem[], pool: WordItem[], random = Math.random): Question[] {
-  if (!targets.length) return [];
-  if (new Set(targets.map(item => item.id)).size !== targets.length) throw new Error('Targets must be unique.');
-  return shuffled(targets, random).map(target => {
-    const seen = new Set([target.image.src]);
-    const candidates = shuffled(pool.filter(item => item.id !== target.id && item.language === target.language), random).filter(item => {
-      if (seen.has(item.image.src) || (item.reading ?? item.text) === (target.reading ?? target.text)) return false;
-      seen.add(item.image.src);
-      return true;
-    });
-    if (candidates.length < 3) throw new Error('Four distinct pictures are required.');
-    return { target, choices: shuffled([target, ...candidates.slice(0, 3)], random) };
+const normalized = (text: string) => text.normalize('NFKC').trim();
+
+function questionFor({ item: target, exercise }: PracticeCard, pool: WordItem[], choiceCount: number, random: () => number): Question {
+  const visible = (item: WordItem) => exercise === 'audio-picture' ? item.image.src : normalized(item.text);
+  const seen = new Set([visible(target)]);
+  const candidates = shuffled(pool.filter(item => item.id !== target.id && item.language === target.language), random).filter(item => {
+    if (seen.has(visible(item)) || normalized(item.reading ?? item.text) === normalized(target.reading ?? target.text)) return false;
+    seen.add(visible(item));
+    return true;
   });
+  if (candidates.length < choiceCount - 1) throw new Error('Enough distinct, unambiguous choices are required.');
+  return { target, exercise, choices: shuffled([target, ...candidates.slice(0, choiceCount - 1)], random) };
+}
+
+/** Build mixed questions for a fixed card snapshot; each question keeps one answer format. */
+export function createQuestions(targets: PracticeCard[], pool: WordItem[], random = Math.random): Question[] {
+  if (!targets.length) return [];
+  if (new Set(targets.map(cardKey)).size !== targets.length) throw new Error('Targets must be unique cards.');
+  return shuffled(targets, random).map(card => questionFor(card, pool, 4, random));
 }
 
 /** Revisit a miss within this block without admitting any new due-word targets. */

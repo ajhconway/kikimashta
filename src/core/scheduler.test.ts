@@ -23,6 +23,44 @@ async function established(): Promise<ScheduledWord> {
 }
 
 describe('FSRS listening schedules', () => {
+  it('learns picture and writing recognition independently while retaining legacy picture history', async () => {
+    const legacy = attempt({ id: 'legacy', context: undefined });
+    const picture = attempt({ id: 'picture', answeredAt: start + day });
+    const writing = attempt({ id: 'writing', answeredAt: start + day, correct: false, selectedId: 'dog',
+      context: { ...attempt().context!, exercise: 'audio-text' } });
+    const retry = attempt({ id: 'writing-retry', answeredAt: start + day + 2000,
+      context: { ...writing.context!, retryOf: writing.id } });
+    const history = [writing, legacy, retry, picture];
+    const original = structuredClone(history);
+    const schedules = await deriveSchedules(history, 'ja-JP');
+    expect(schedules).toEqual([
+      await advanceSchedule(undefined, picture),
+      await advanceSchedule(undefined, writing),
+    ]);
+    expect(schedules[0]!.card.cardId).not.toBe(schedules[1]!.card.cardId);
+    expect(schedules[0]!.dueAt).toBeGreaterThan(schedules[1]!.dueAt);
+    expect(history).toEqual(original);
+    const legacyAndWriting = await deriveSchedules([legacy, writing], 'ja-JP');
+    expect(legacyAndWriting[0]).toMatchObject({ exercise: 'audio-picture', card: { reps: 0, stability: 0 } });
+    expect(legacyAndWriting[1]).toEqual(await advanceSchedule(undefined, writing));
+    await expect(advanceSchedule(schedules[0], writing)).rejects.toThrow(/exercise/i);
+  });
+
+  it('snapshots both due exercises of one word without sharing mutable schedule state', async () => {
+    const picture = await advanceSchedule(undefined, attempt());
+    const writing = await advanceSchedule(undefined, attempt({ id: 'writing',
+      context: { ...attempt().context!, exercise: 'audio-text' } }));
+    const schedules = [writing, picture];
+    const queue = snapshotDue(schedules, ['cat'], Math.max(picture.dueAt, writing.dueAt));
+    expect(queue.map(card => [card.itemId, card.exercise])).toEqual([
+      ['cat', 'audio-picture'], ['cat', 'audio-text'],
+    ]);
+    const original = structuredClone(queue);
+    picture.dueAt += day;
+    picture.card.dueAt += day;
+    expect(queue).toEqual(original);
+  });
+
   it('retains corrective retries in history without letting them overwrite a miss or a later normal review', async () => {
     const lesson = attempt();
     const miss = attempt({ id: 'miss', answeredAt: start + day, correct: false, selectedId: 'dog',
@@ -35,7 +73,7 @@ describe('FSRS listening schedules', () => {
     const original = structuredClone(history);
     const afterMiss = await deriveSchedules([lesson, miss], 'ja-JP');
     expect(await deriveSchedules(history, 'ja-JP')).toEqual(afterMiss);
-    expect(snapshotDue(afterMiss, ['cat'], correction.answeredAt)).toEqual(['cat']);
+    expect(snapshotDue(afterMiss, ['cat'], correction.answeredAt).map(card => card.itemId)).toEqual(['cat']);
     const later = attempt({ id: 'later-review', answeredAt: start + 3 * day, context: { ...miss.context! } });
     expect(await deriveSchedules([...history, later], 'ja-JP')).toEqual(await deriveSchedules([lesson, miss, later], 'ja-JP'));
     expect(history).toEqual(original);
@@ -51,7 +89,7 @@ describe('FSRS listening schedules', () => {
     expect(words).toHaveLength(1);
     expect(words[0]!.card).toMatchObject({ reps: 0, stability: 0, lastReviewAt: null, scheduleStatus: 'new' });
     expect(words[0]!.dueAt).toBe(last.answeredAt);
-    expect(snapshotDue(words, ['cat'], last.answeredAt)).toEqual(['cat']);
+    expect(snapshotDue(words, ['cat'], last.answeredAt).map(card => card.itemId)).toEqual(['cat']);
     expect(await retrievability(words[0]!, last.answeredAt + day)).toBe(0);
     expect(history).toEqual(original);
   });
@@ -112,7 +150,7 @@ describe('FSRS listening schedules', () => {
     expect(words).toHaveLength(1);
     expect(words[0]!.dueAt).toBe(start + 20000);
     expect(words[0]!.card).toMatchObject({ lastReviewAt: null, reps: 0, stability: 0, scheduleStatus: 'new' });
-    expect(snapshotDue(words, ['cat'], start + 20000)).toEqual(['cat']);
+    expect(snapshotDue(words, ['cat'], start + 20000).map(card => card.itemId)).toEqual(['cat']);
     expect(history).toEqual(original);
     const modern = attempt({ id: 'new-1', answeredAt: start + day, context: { ...attempt().context!, phase: 'review' } });
     const staleClient = attempt({ id: 'old-later', answeredAt: start + 2 * day, context: undefined });
@@ -131,9 +169,9 @@ describe('FSRS listening schedules', () => {
     const original = structuredClone(schedules);
     const ids = ['future', 'zebra', 'apple', 'oldest'];
     const queue = snapshotDue(schedules, ids, start);
-    expect(queue).toEqual(['oldest', 'apple', 'zebra']);
-    expect(snapshotDue(schedules, ids, start + 1)).toContain('future');
-    expect(queue).not.toContain('future');
+    expect(queue.map(card => card.itemId)).toEqual(['oldest', 'apple', 'zebra']);
+    expect(snapshotDue(schedules, ids, start + 1).map(card => card.itemId)).toContain('future');
+    expect(queue.map(card => card.itemId)).not.toContain('future');
     expect(schedules).toEqual(original);
   });
 

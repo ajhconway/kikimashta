@@ -25,6 +25,23 @@ function fixture(implementation: typeof fetch) {
 }
 
 describe('Supabase account-bound transport', () => {
+  it('round-trips writing attempts and corrective metadata through the API unchanged', async () => {
+    const saved = new Map<string, PracticeAttempt>();
+    const { remote } = fixture(async (_input, init) => {
+      if (init?.method === 'POST') {
+        const rows = JSON.parse(String(init.body)) as { attempt_id: string; payload: PracticeAttempt }[];
+        for (const row of rows) if (!saved.has(row.attempt_id)) saved.set(row.attempt_id, row.payload);
+        return new Response(null, { status: 201 });
+      }
+      return json([...saved.values()].map(payload => ({ user_id: userId, attempt_id: payload.id, payload })));
+    });
+    const writing: PracticeAttempt = { ...attempt(0), context: { phase: 'review', exercise: 'audio-text',
+      recordingSrc: 'audio/cat.mp3', replays: 1, schedulerVersion: 'fsrs-6-v1', retryOf: 'original-miss' } };
+    await remote.uploadAttempts([writing]);
+    await remote.uploadAttempts([{ ...writing, correct: false }]);
+    expect(await remote.attempts()).toEqual([writing]);
+  });
+
   it('reads all pages in stable ID order, filters by owner, and starts a fresh scan on each call', async () => {
     const attempts = Array.from({ length: 405 }, (_, index) => attempt(index));
     attempts[201] = { ...attempts[201]!, language: 'es-ES', context: { phase: 'review', exercise: 'audio-picture', recordingSrc: 'audio/cat.mp3',

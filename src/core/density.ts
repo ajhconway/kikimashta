@@ -1,4 +1,5 @@
-import type { PracticeAttempt, WordItem } from '../types';
+import type { CardIdentity, PracticeAttempt, PracticeCard } from '../types';
+import { cardKey } from './cards';
 import { advanceSchedule, retrievability, schedulerVersion, type ScheduledWord } from './scheduler';
 
 export const DENSITY_LEVELS = [
@@ -20,7 +21,7 @@ export interface ForecastOptions {
   horizonDays?: number;
   scenarios?: number;
   seed?: number;
-  /** Admission assumption for an unseen word's initial mini-quiz, not a measured retention rate. */
+  /** Admission assumption for an unseen card's initial mini-quiz, not a measured retention rate. */
   lessonSuccessRate?: number;
 }
 export interface DensityForecast {
@@ -30,10 +31,10 @@ export interface DensityForecast {
   scenarios: number;
 }
 export interface LessonPlan {
-  items: WordItem[];
+  items: PracticeCard[];
   /** Forecast from the actual current schedules. */
   forecast: DensityForecast;
-  /** Estimate after the proposed words' initial mini-quiz; never saved as actual learning. */
+  /** Estimate after the proposed cards' initial mini-quiz; never saved as actual learning. */
   projectedForecast: DensityForecast;
   reason: 'below-min' | 'optional' | 'at-max' | 'exhausted' | 'capacity';
 }
@@ -63,7 +64,7 @@ export function densityTargets(min: DensityLevel, max: DensityLevel): { minimum:
   return { minimum, maximum };
 }
 
-/** Independent streams make estimates additive: adding a word cannot change existing words' simulations. */
+/** Independent streams make estimates additive: adding a card cannot change existing cards' simulations. */
 function randomFor(key: string, scenario: number, seed: number): () => number {
   let state = seed >>> 0;
   for (const character of `${key}:${scenario}`) state = Math.imul(state ^ character.charCodeAt(0), 16777619) >>> 0;
@@ -76,26 +77,26 @@ function randomFor(key: string, scenario: number, seed: number): () => number {
   };
 }
 
-function simulatedAttempt(itemId: string, language: string, at: number, correct: boolean): PracticeAttempt {
+function simulatedAttempt({ itemId, language, exercise }: CardIdentity, at: number, correct: boolean): PracticeAttempt {
   return {
     id: 'forecast-only', sessionId: 'forecast-only', itemId, language,
     choiceIds: [itemId], selectedId: correct ? itemId : 'forecast-wrong-answer', correct,
     startedAt: at, answeredAt: at, responseMs: 0,
-    context: { phase: 'review', exercise: 'audio-picture', recordingSrc: '', replays: 0, schedulerVersion },
+    context: { phase: 'review', exercise, recordingSrc: '', replays: 0, schedulerVersion },
   };
 }
 
 /**
  * A forecast assumes one session each day at now + 24h offsets, with the due queue
- * fixed at that session's start. Each word is reviewed at most once per simulated
+ * fixed at that session's start. Each card is reviewed at most once per simulated
  * day; short-interval retries wait until the next session. Existing overdue work
  * is counted on day zero. No later new words are assumed unless explicitly admitted.
  *
  * Outcomes sample FSRS's recall estimates; these estimates describe this task only
- * after calibration. Daily attendance and a new lesson's success rate are explicit
+ * after calibration. Daily attendance and a new card's initial success rate are explicit
  * policy assumptions, not guarantees about the user's future workload.
  */
-async function wordContribution(
+async function cardContribution(
   key: string, initialize: (random: () => number) => Promise<ScheduledWord>, now: number, config: Options,
 ): Promise<number[]> {
   const daily = Array<number>(config.horizonDays).fill(0);
@@ -108,7 +109,7 @@ async function wordContribution(
       daily[day]! += 1 / config.scenarios;
       const probability = await retrievability(schedule, at);
       if (!Number.isFinite(probability) || probability < 0 || probability > 1) throw new Error('Invalid recall probability.');
-      schedule = await advanceSchedule(schedule, simulatedAttempt(schedule.itemId, schedule.language, at, random() < probability));
+      schedule = await advanceSchedule(schedule, simulatedAttempt(schedule, at, random() < probability));
     }
   }
   return daily;
@@ -126,11 +127,11 @@ export async function forecastDensity(schedules: ScheduledWord[], now: number, o
   const daily = Array<number>(config.horizonDays).fill(0);
   const keys = new Set<string>();
   for (const schedule of schedules) {
-    const key = `${schedule.language}:${schedule.itemId}`;
-    if (keys.has(key)) throw new Error('Duplicate scheduled word.');
+    const key = cardKey(schedule);
+    if (keys.has(key)) throw new Error('Duplicate scheduled card.');
     keys.add(key);
     if (!Number.isFinite(schedule.dueAt) || schedule.lastReviewedAt > now) throw new Error('Invalid forecast schedule.');
-    const contribution = await wordContribution(key, async () => schedule, now, config);
+    const contribution = await cardContribution(key, async () => schedule, now, config);
     contribution.forEach((count, day) => { daily[day]! += count; });
   }
   return forecastFrom(daily, config);
@@ -140,7 +141,7 @@ export async function planLessonChunk({
   schedules, candidates, now, range = DEFAULT_DENSITY_RANGE, chunkSize = 10, options = {},
 }: {
   schedules: ScheduledWord[];
-  candidates: WordItem[];
+  candidates: PracticeCard[];
   now: number;
   range?: DensityRange;
   chunkSize?: number;
@@ -152,9 +153,9 @@ export async function planLessonChunk({
   const forecast = await forecastDensity(schedules, now, options);
   const result: LessonPlan = { items: [], forecast, projectedForecast: forecast, reason: 'at-max' };
   if (forecast.reviewsPerDay >= maximum) return result;
-  const known = new Set(schedules.map(schedule => `${schedule.language}:${schedule.itemId}`));
-  const eligible = candidates.filter(item => {
-    const key = `${item.language}:${item.id}`;
+  const known = new Set(schedules.map(cardKey));
+  const eligible = candidates.filter(card => {
+    const key = cardKey(card);
     if (known.has(key)) return false;
     known.add(key);
     return true;
@@ -162,20 +163,21 @@ export async function planLessonChunk({
   if (!eligible.length) return { ...result, reason: 'exhausted' };
   result.reason = forecast.reviewsPerDay < minimum ? 'below-min' : 'optional';
   let projectedDaily = [...forecast.daily];
-  for (const item of eligible.slice(0, chunkSize)) {
+  for (const candidate of eligible.slice(0, chunkSize)) {
     // Hypothetical first answers seed possible states; previews alone never count as reviews.
-    const correct = simulatedAttempt(item.id, item.language, now, true);
+    const identity = { itemId: candidate.item.id, language: candidate.item.language, exercise: candidate.exercise };
+    const correct = simulatedAttempt(identity, now, true);
     correct.context = { ...correct.context!, phase: 'lesson' };
     const incorrect = { ...correct, correct: false, selectedId: 'forecast-wrong-answer' };
     const good = await advanceSchedule(undefined, correct);
     const again = await advanceSchedule(undefined, incorrect);
-    const contribution = await wordContribution(`${item.language}:${item.id}`, async random => (
+    const contribution = await cardContribution(cardKey(candidate), async random => (
       random() < config.lessonSuccessRate ? good : again
     ), now, config);
     const proposed = forecastFrom(projectedDaily.map((count, day) => count + contribution[day]!), config);
     // The next band's threshold is exclusive: max=Moderate stays below High.
     if (proposed.reviewsPerDay >= maximum - 1e-10) break;
-    result.items.push(item);
+    result.items.push(candidate);
     projectedDaily = proposed.daily;
     result.projectedForecast = proposed;
   }
