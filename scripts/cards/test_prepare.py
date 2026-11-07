@@ -17,6 +17,24 @@ class ReuseTests(unittest.TestCase):
         self.assertIn('transparent_background=true', BACKGROUND_POLICY)
         self.assertIn('Preserve opaque white subject details', BACKGROUND_POLICY)
 
+    def test_approved_kiku_profile_records_batch07_without_preapproving_future_scenes(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        profile = json.loads((data / 'style-overrides.json').read_text())['profiles']['kiku-scenes']
+        self.assertEqual(profile['status'], 'approved-direction')
+        self.assertIn('Batch 07', profile['approvalNote'])
+        self.assertNotIn('batch 02', profile['approvalNote'].lower())
+        for text in [profile['approvalNote'], profile['specification']]:
+            self.assertIn('Kiku scenes are approved', text)
+            self.assertNotRegex(text, r'(?i)current kiku scene revisions await approval')
+            self.assertIn('Future scenes still require individual user review.', text)
+        cards = json.loads((data / 'prompts.json').read_text())['cards']
+        kiku_cards = [card for card in cards if card.get('styleNode') == 'style:kiku-scenes']
+        self.assertTrue(kiku_cards)
+        for card in kiku_cards:
+            self.assertIn(profile['specification'], card['prompt'])
+            self.assertNotRegex(card['prompt'], r'(?i)current kiku scene revisions await approval')
+            self.assertIn('Future scenes still require individual user review.', card['prompt'])
+
     def test_kiku_replaces_generic_balls_without_removing_scene_components(self):
         data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
         cards = {c['id']: c for c in json.loads((data / 'prompts.json').read_text())['cards']}
