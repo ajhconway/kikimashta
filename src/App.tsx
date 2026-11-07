@@ -170,8 +170,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setAudioError(false); setAutoPaused(false); setPlaying(true);
     void element.play().catch(() => { if (request === playRequest.current) { setAudioError(true); setPlaying(false); } });
   }, []);
-  const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture') => {
-    if (exercise === 'audio-text') setWritingFont(availableWritingFont(fontRotation(item, random)));
+  const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture', presentationPhase: 'lesson' | 'review' = 'lesson', texts: readonly string[] = [item.text]) => {
+    if (exercise === 'audio-text') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
     recording.current = selectRecording(item.audio, random);
     active.current.replays = 0;
     play();
@@ -189,21 +189,21 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     try { localStorage.setItem(preferenceKey, JSON.stringify(value)); setPreferenceError(false); }
     catch { setPreferenceError(true); }
   }
-  const showQuestion = useCallback((next: Question, sessionId: string) => {
+  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
     setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
-    present(next.target, next.exercise);
+    present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present]);
-  function beginQuiz(block: Question[]) {
+  function beginQuiz(block: Question[], blockPhase = phase) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
-    showQuestion(block[0]!, session.current.id);
+    showQuestion(block[0]!, session.current.id, blockPhase);
   }
   function startDevReview() {
     if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(createSession(practicePool, 6, 4, random));
+    beginQuiz(createSession(practicePool, 6, 4, random), 'review');
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -308,8 +308,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (!isDevReview) void prepareLessons(operation.current);
       return;
     }
-    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id);
-  }, [index, questions, showQuestion, prepareLessons, isDevReview]);
+    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase);
+  }, [index, questions, showQuestion, prepareLessons, isDevReview, phase]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
     const answerId = feedback.id; const request = playRequest.current;

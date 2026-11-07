@@ -356,6 +356,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await page.clock.install();
   await page.goto('./');
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
+  await page.waitForFunction(() => document.fonts.check('600 24px "Kikimashta Noto Sans JP"', '犬りんご'));
   const homeColor = await backgroundColor(page);
   await captureScreen(page, 'adaptive-home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
@@ -378,6 +379,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     } else {
       await expect(page.locator('.preview-picture img')).toHaveCount(0);
       await expect(page.locator('.preview-picture')).toHaveText(item.text);
+      await expect(page.locator('.preview-picture .written-answer')).toHaveAttribute('data-font', 'noto-sans');
       previewSizes.push({ length: Array.from(item.text).length, fontSize: await page.locator('.preview-picture .written-answer').evaluate(label => parseFloat(getComputedStyle(label).fontSize)) });
       if (introduced.filter(card => card.exercise === 'audio-text').length === 1) await captureScreen(page, 'writing-lesson-' + testInfo.project.name);
     }
@@ -402,6 +404,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     expect(seen.has(cardId)).toBe(false); seen.add(cardId);
     await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
     if (exercise === 'audio-text') {
+      for (const label of await page.locator('.choices .written-answer').all()) await expect(label).toHaveAttribute('data-font', 'noto-sans');
       const writingFits = await page.locator('.choices .written-answer').evaluateAll(labels => labels.every(label => {
         const box = label.getBoundingClientRect();
         const card = label.parentElement!.getBoundingClientRect();
@@ -503,7 +506,7 @@ test('reviews both saved formats of one word and preserves a writing retry after
     db.close();
   });
   await page.reload();
-  await page.waitForFunction(() => ['Kikimashta Noto Sans JP', 'Kikimashta Noto Serif JP', 'Kikimashta Klee One'].every(family => document.fonts.check('600 24px "' + family + '"', '犬りんご')));
+  await page.waitForFunction(() => [['Kikimashta Noto Sans JP', 600], ['Kikimashta Noto Serif JP', 600], ['Kikimashta Zen Maru Gothic', 500], ['Kikimashta Klee One', 600]].every(([family, weight]) => document.fonts.check(`${weight} 24px "${family}"`, '犬りんご')));
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
@@ -518,7 +521,7 @@ test('reviews both saved formats of one word and preserves a writing retry after
     if (exercise === 'audio-text') {
       const fonts = await page.locator('.choices .written-answer').evaluateAll(labels => labels.map(label => label.getAttribute('data-font')));
       expect(new Set(fonts).size).toBe(1);
-      expect(['noto-sans', 'noto-serif', 'klee']).toContain(fonts[0]);
+      expect(['noto-serif', 'zen-maru', 'klee']).toContain(fonts[0]);
       const families = await page.locator('.choices .written-answer').evaluateAll(labels => labels.map(label => getComputedStyle(label).fontFamily));
       expect(new Set(families).size).toBe(1);
       expect(families[0]).toContain('Kikimashta');
