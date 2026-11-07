@@ -43,7 +43,14 @@ const screenColor = (page: Page) => page.evaluate(() => document.documentElement
 
 async function captureScreen(page: Page, name: string) {
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
+  // WebKit rebuilds font faces when screenshot capture temporarily disables CSS
+  // animation. Restore only faces that were already loaded before capture.
+  const loaded = await page.evaluate(() => Array.from(document.fonts).filter(face => face.status === 'loaded').map(face => ({ family: face.family.replace(/["']/g, ''), weight: face.weight })));
+  try {
+    await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
+  } finally {
+    await page.evaluate(fonts => Promise.all(fonts.map(font => document.fonts.load(`${font.weight} 24px "${font.family}"`, '犬りんご'))), loaded);
+  }
 }
 
 async function expectCompanionMotion(page: Page) {
