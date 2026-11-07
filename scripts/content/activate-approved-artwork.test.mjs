@@ -1,4 +1,6 @@
 import test from 'node:test'
+import { deflateSync } from 'node:zlib'
+import { inspectPngAlpha } from './png-alpha.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync } from 'node:fs'
@@ -95,4 +97,81 @@ for (const failure of ['encoder error', 'invalid output']) test(`failed regenera
   assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
   assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
   assert.deepEqual(readdirSync(dirname(target)), [target.split('/').at(-1)])
+})
+
+// Real two-by-two RGBA PNG fixtures include transparent, white and colored pixels.
+// CRCs and compressed pixels allow both the exporter and native image decoders to read them.
+function rgbaPng(pixels) {
+  const chunk = (name, data) => {
+    const type = Buffer.from(name), size = Buffer.alloc(4), checksum = Buffer.alloc(4)
+    size.writeUInt32BE(data.length)
+    let crc = 0xffffffff
+    for (const byte of Buffer.concat([type, data])) {
+      crc ^= byte
+      for (let bit = 0; bit < 8; bit++) crc = (crc >>> 1) ^ ((crc & 1) ? 0xedb88320 : 0)
+    }
+    checksum.writeUInt32BE((crc ^ 0xffffffff) >>> 0)
+    return Buffer.concat([size, type, data, checksum])
+  }
+  const header = Buffer.from('00000002000000020806000000', 'hex')
+  const raw = Buffer.from([0, ...pixels.slice(0, 8), 0, ...pixels.slice(8)])
+  return Buffer.concat([Buffer.from('89504e470d0a1a0a', 'hex'), chunk('IHDR', header), chunk('IDAT', deflateSync(raw)), chunk('IEND', Buffer.alloc(0))])
+}
+const transparentPixels = [0, 0, 0, 0, 255, 255, 255, 255, 63, 36, 104, 255, 63, 36, 104, 128]
+function transparentFixture(t, pixels = transparentPixels) {
+  const f = fixture(t), asset = f.manifest.assets[0]
+  const source = rgbaPng(pixels)
+  writeFileSync(join(f.root, asset.path), source)
+  Object.assign(asset, { sha256: hash(source), transparentBackground: true })
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  return { ...f, source }
+}
+
+test('transparent source uses PNG delivery and retains clear and opaque white pixels on reuse', t => {
+  const f = transparentFixture(t)
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: (source, target, options) => {
+    assert.equal(options.format, 'png')
+    assert.match(target, /\.png$/)
+    writeFileSync(target, readFileSync(source))
+  } })
+  const record = f.read('content/card-regeneration/activation.json').assets.at(-1)
+  assert.match(record.path, /\.png$/)
+  assert.equal(record.format, 'png')
+  assert.equal(record.alpha, 'preserved')
+  assert.deepEqual(inspectPngAlpha(readFileSync(join(f.root, record.path))), { width: 2, height: 2, transparentPixels: 1, opaquePixels: 2, opaqueWhitePixels: 1 })
+  const before = f.read('content/card-regeneration/activation.json')
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Verified PNG delivery should be reused') })
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
+})
+
+for (const failure of ['flattened RGBA', 'JPEG bytes', 'white detail removed', 'missing IEND', 'bad CRC', 'trailing bytes']) test(`transparent regeneration rejects ${failure} atomically`, t => {
+  const f = transparentFixture(t)
+  const before = f.read('content/card-regeneration/activation.json')
+  const target = join(f.root, `public/images/approved/ja-test-${f.manifest.assets[0].sha256.slice(0, 12)}.png`)
+  mkdirSync(dirname(target), { recursive: true })
+  const old = Buffer.from('old untrusted delivery')
+  writeFileSync(target, old)
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: (_, staged) => {
+    const pixels = [...transparentPixels]
+    if (failure === 'flattened RGBA') for (let index = 3; index < pixels.length; index += 4) pixels[index] = 255
+    if (failure === 'white detail removed') pixels.splice(4, 3, 63, 36, 104)
+    let output = failure === 'JPEG bytes' ? Buffer.from('ffd8ffe00000ffd9', 'hex') : rgbaPng(pixels)
+    if (failure === 'missing IEND') output = output.subarray(0, output.length - 12)
+    if (failure === 'bad CRC') output[29] ^= 1
+    if (failure === 'trailing bytes') output = Buffer.concat([output, Buffer.from('unexpected')])
+    writeFileSync(staged, output)
+  } }), failure === 'white detail removed' ? /lost opaque white/ : failure === 'JPEG bytes' ? /must be PNG/ : failure === 'missing IEND' ? /Missing PNG IEND/ : failure === 'bad CRC' ? /CRC/ : failure === 'trailing bytes' ? /Invalid PNG end/ : /preserve PNG transparency/)
+  assert.deepEqual(readFileSync(target), old)
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
+  assert.deepEqual(readdirSync(dirname(target)), [target.split('/').at(-1)])
+})
+
+test('source tagged transparent must contain transparent pixels before mappings or encoding change', t => {
+  const pixels = [...transparentPixels]
+  for (let index = 3; index < pixels.length; index += 4) pixels[index] = 255
+  const f = transparentFixture(t, pixels)
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Opaque source must fail preflight') }), /Source must have transparent/)
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
+  assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
 })

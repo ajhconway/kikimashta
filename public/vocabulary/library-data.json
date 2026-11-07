@@ -2520,8 +2520,8 @@
       "meaning": "Book",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-0ac038632611.svg",
-        "alt": "Book"
+        "src": "../images/approved/ja-v-0ac038632611-dbdeaee62c3e.png",
+        "alt": "An open book with white illustrated pages and a gold cover."
       },
       "audio": [
         {
@@ -2573,7 +2573,7 @@
           "available": true
         }
       ],
-      "concept": "An open book with illustrated pages",
+      "concept": "An open book with white illustrated pages and a gold cover.",
       "visualGroup": "本",
       "reviewRequired": false
     },
@@ -3616,8 +3616,8 @@
       "meaning": "Four",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-b066e78531d6.svg",
-        "alt": "Four"
+        "src": "../images/approved/ja-v-b066e78531d6-28277e339149.png",
+        "alt": "A purple pool ball numbered 4."
       },
       "audio": [
         {
@@ -3669,7 +3669,7 @@
           "available": true
         }
       ],
-      "concept": "The numeral 4 on a colorful circular counting token",
+      "concept": "A purple pool ball numbered 4.",
       "visualGroup": "number-4",
       "reviewRequired": false
     },
@@ -4845,8 +4845,8 @@
       "meaning": "Moon",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-e0bb1d02fee0.svg",
-        "alt": "Moon"
+        "src": "../images/approved/ja-v-e0bb1d02fee0-89b1cf2cf323.png",
+        "alt": "A broad golden crescent moon."
       },
       "audio": [
         {
@@ -4898,7 +4898,7 @@
           "available": true
         }
       ],
-      "concept": "A crescent moon and star",
+      "concept": "A broad golden crescent moon.",
       "visualGroup": "月",
       "reviewRequired": false
     },
@@ -6007,8 +6007,8 @@
       "meaning": "Sixteen",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-e368e3aa9bf6.svg",
-        "alt": "Sixteen"
+        "src": "../images/approved/ja-v-e368e3aa9bf6-4b15206a3b6f.png",
+        "alt": "A lavender circular token displaying 16."
       },
       "audio": [
         {
@@ -6060,7 +6060,7 @@
           "available": true
         }
       ],
-      "concept": "The numeral 16 on a colorful circular counting token",
+      "concept": "A lavender circular token displaying 16.",
       "visualGroup": "number-16",
       "reviewRequired": false
     },
@@ -6264,8 +6264,8 @@
       "meaning": "Sun",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-f3881ce313e7.svg",
-        "alt": "Sun"
+        "src": "../images/approved/ja-v-f3881ce313e7-ff78cb97ccb6.png",
+        "alt": "A gold sun with eight rounded rays."
       },
       "audio": [
         {
@@ -6317,7 +6317,7 @@
           "available": true
         }
       ],
-      "concept": "A bright yellow sun with eight rays",
+      "concept": "A gold sun with eight rounded rays.",
       "visualGroup": "日",
       "reviewRequired": false
     },
@@ -6846,8 +6846,8 @@
       "meaning": "Tree",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-a5d390dc4805.svg",
-        "alt": "Tree"
+        "src": "../images/approved/ja-v-a5d390dc4805-8826da5343ee.png",
+        "alt": "A leafy green tree with a forked brown trunk."
       },
       "audio": [
         {
@@ -6899,7 +6899,7 @@
           "available": true
         }
       ],
-      "concept": "A leafy green tree with a brown trunk",
+      "concept": "A leafy green tree with a forked brown trunk.",
       "visualGroup": "木",
       "reviewRequired": false
     },
@@ -10337,8 +10337,8 @@
       "meaning": "One Machine",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-eba7f0968101.svg",
-        "alt": "One Machine"
+        "src": "../images/approved/ja-v-eba7f0968101-73ae4b1a80d2.png",
+        "alt": "One white front-loading washing machine."
       },
       "audio": [
         {
@@ -10390,7 +10390,7 @@
           "available": true
         }
       ],
-      "concept": "One large washing machine",
+      "concept": "One white front-loading washing machine.",
       "visualGroup": "one-machine",
       "reviewRequired": false
     },
@@ -11822,8 +11822,8 @@
       "meaning": "Two Machines",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-f5b4250aeb03.svg",
-        "alt": "Two Machines"
+        "src": "../images/approved/ja-v-f5b4250aeb03-ebdedda62b32.png",
+        "alt": "Two matching white front-loading washing machines."
       },
       "audio": [
         {
@@ -11875,7 +11875,7 @@
           "available": true
         }
       ],
-      "concept": "Two washing machines side by side",
+      "concept": "Two matching white front-loading washing machines.",
       "visualGroup": "two-machines",
       "reviewRequired": false
     },
@@ -12468,8 +12468,8 @@
       "meaning": "Bamboo",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-dbe24910365e.svg",
-        "alt": "Bamboo"
+        "src": "../images/approved/ja-v-dbe24910365e-5cdeda90a3b2.png",
+        "alt": "Three segmented bamboo canes with narrow leaves."
       },
       "audio": [
         {
@@ -12521,7 +12521,7 @@
           "available": true
         }
       ],
-      "concept": "Tall segmented green bamboo stems and narrow leaves",
+      "concept": "Three segmented bamboo canes with narrow leaves.",
       "visualGroup": "bamboo",
       "reviewRequired": false
     },
@@ -13825,8 +13825,8 @@
       "meaning": "Flower",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-fa6a4c8f27b4.svg",
-        "alt": "Flower"
+        "src": "../images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+        "alt": "A pink flower with five petals, a gold center and two green leaves."
       },
       "audio": [
         {
@@ -13878,7 +13878,7 @@
           "available": true
         }
       ],
-      "concept": "A pink flower with a green stem",
+      "concept": "A pink flower with five petals, a gold center and two green leaves.",
       "visualGroup": "flower",
       "reviewRequired": false
     },
@@ -14081,8 +14081,8 @@
       "meaning": "Fourth Day",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-13ea3220cde0.svg",
-        "alt": "Fourth Day"
+        "src": "../images/approved/ja-v-13ea3220cde0-b9151ccf545e.png",
+        "alt": "A pull-off daily calendar displaying 4."
       },
       "audio": [
         {
@@ -14134,7 +14134,7 @@
           "available": true
         }
       ],
-      "concept": "A calendar page displaying day four",
+      "concept": "A pull-off daily calendar displaying 4.",
       "visualGroup": "fourth-day",
       "reviewRequired": false
     },
@@ -15829,8 +15829,8 @@
       "meaning": "Notebook",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-0c144e18f1b2.svg",
-        "alt": "Notebook"
+        "src": "../images/approved/ja-v-0c144e18f1b2-ee693f23f128.png",
+        "alt": "A closed lavender spiral notebook."
       },
       "audio": [
         {
@@ -15882,7 +15882,7 @@
           "available": true
         }
       ],
-      "concept": "A purple spiral notebook",
+      "concept": "A closed lavender spiral notebook.",
       "visualGroup": "notebook",
       "reviewRequired": false
     },
@@ -17251,8 +17251,8 @@
       "meaning": "Teacher",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-497356cf0646.svg",
-        "alt": "Teacher"
+        "src": "../images/approved/ja-v-497356cf0646-26ba5297ec38.png",
+        "alt": "A teacher pointing at a triangle on a classroom board."
       },
       "audio": [
         {
@@ -17304,7 +17304,7 @@
           "available": true
         }
       ],
-      "concept": "A teacher points at a classroom chalkboard",
+      "concept": "A teacher pointing at a triangle on a classroom board.",
       "visualGroup": "teacher",
       "reviewRequired": false
     },
@@ -17574,8 +17574,8 @@
       "meaning": "Thread",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-e05b8e36c6ca.svg",
-        "alt": "Thread"
+        "src": "../images/approved/ja-v-e05b8e36c6ca-41cd2e790bc7.png",
+        "alt": "A spool of fine purple thread with a trailing loop."
       },
       "audio": [
         {
@@ -17627,7 +17627,7 @@
           "available": true
         }
       ],
-      "concept": "A spool of purple thread trailing into a loop",
+      "concept": "A spool of fine purple thread with a trailing loop.",
       "visualGroup": "thread",
       "reviewRequired": false
     },
@@ -18609,8 +18609,8 @@
       "meaning": "Twentieth Day",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-08e3c50181be.svg",
-        "alt": "Twentieth Day"
+        "src": "../images/approved/ja-v-08e3c50181be-b3588ab8881e.png",
+        "alt": "A pull-off daily calendar displaying 20."
       },
       "audio": [
         {
@@ -18662,7 +18662,7 @@
           "available": true
         }
       ],
-      "concept": "A calendar page displaying day twenty",
+      "concept": "A pull-off daily calendar displaying 20.",
       "visualGroup": "twentieth-day",
       "reviewRequired": false
     },
@@ -18996,8 +18996,8 @@
       "meaning": "Weather",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-2850b5703e8b.svg",
-        "alt": "Weather"
+        "src": "../images/approved/ja-v-2850b5703e8b-e49099e43528.png",
+        "alt": "Sun behind a white cloud with five raindrops."
       },
       "audio": [
         {
@@ -19049,7 +19049,7 @@
           "available": true
         }
       ],
-      "concept": "Sun, cloud and rain share a sky scene",
+      "concept": "Sun behind a white cloud with five raindrops.",
       "visualGroup": "weather",
       "reviewRequired": false
     },
@@ -19319,8 +19319,8 @@
       "meaning": "Year 2011",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-1a43c96593cb.svg",
-        "alt": "Year 2011"
+        "src": "../images/approved/ja-v-1a43c96593cb-656ee642459a.png",
+        "alt": "A year calendar headed 2011 with twelve month panels."
       },
       "audio": [
         {
@@ -19372,7 +19372,7 @@
           "available": true
         }
       ],
-      "concept": "A whole-year calendar headed by the numeral 2011",
+      "concept": "A year calendar headed 2011 with twelve month panels.",
       "visualGroup": "year-2011",
       "reviewRequired": false
     },
@@ -20095,8 +20095,8 @@
       "meaning": "Body",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-6e098e54aa63.svg",
-        "alt": "Body"
+        "src": "../images/approved/ja-v-6e098e54aa63-764f3f00cdbd.png",
+        "alt": "A full standing person with emphasis lines around the body."
       },
       "audio": [
         {
@@ -20148,7 +20148,7 @@
           "available": true
         }
       ],
-      "concept": "Whole person silhouette highlighted from head to feet.",
+      "concept": "A full standing person with emphasis lines around the body.",
       "visualGroup": "体",
       "reviewRequired": false
     },
@@ -20419,8 +20419,8 @@
       "meaning": "Caterpillar",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d10df0e56846.svg",
-        "alt": "Caterpillar"
+        "src": "../images/approved/ja-v-d10df0e56846-5ce3352b2e1b.png",
+        "alt": "A fuzzy green caterpillar on a leaf."
       },
       "audio": [
         {
@@ -20472,7 +20472,7 @@
           "available": true
         }
       ],
-      "concept": "Fuzzy caterpillar crawls along a leaf.",
+      "concept": "A fuzzy green caterpillar on a leaf.",
       "visualGroup": "毛虫",
       "reviewRequired": false
     },
@@ -20935,8 +20935,8 @@
       "meaning": "Crescent Moon",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-4aa5c84df90c.svg",
-        "alt": "Crescent Moon"
+        "src": "../images/approved/ja-v-4aa5c84df90c-759e72c55c1d.png",
+        "alt": "A slim golden crescent moon."
       },
       "audio": [
         {
@@ -20988,7 +20988,7 @@
           "available": true
         }
       ],
-      "concept": "Single crescent moon with two small stars.",
+      "concept": "A slim golden crescent moon.",
       "visualGroup": "三日月",
       "reviewRequired": false
     },
@@ -21776,8 +21776,8 @@
       "meaning": "Forest",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-698044202165.svg",
-        "alt": "Forest"
+        "src": "../images/approved/ja-v-698044202165-8f2b6799af1c.png",
+        "alt": "Five leafy trees forming a small grove."
       },
       "audio": [
         {
@@ -21829,7 +21829,7 @@
           "available": true
         }
       ],
-      "concept": "Several distinct leafy trees form a small grove.",
+      "concept": "Five leafy trees forming a small grove.",
       "visualGroup": "林",
       "reviewRequired": false
     },
@@ -23588,8 +23588,8 @@
       "meaning": "Money",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d242b38667c8.svg",
-        "alt": "Money"
+        "src": "../images/approved/ja-v-d242b38667c8-dda631c2c7ad.png",
+        "alt": "A blue 1000-yen banknote beside three gold coins."
       },
       "audio": [
         {
@@ -23641,7 +23641,7 @@
           "available": true
         }
       ],
-      "concept": "Coins beside a paper banknote.",
+      "concept": "A blue 1000-yen banknote beside three gold coins.",
       "visualGroup": "money",
       "reviewRequired": false
     },
@@ -23652,8 +23652,8 @@
       "meaning": "Moonlight",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-2d7d45d5614e.svg",
-        "alt": "Moonlight"
+        "src": "../images/approved/ja-v-2d7d45d5614e-58ee0e90a521.png",
+        "alt": "A golden crescent shining a beam onto water with reflected light."
       },
       "audio": [
         {
@@ -23705,7 +23705,7 @@
           "available": true
         }
       ],
-      "concept": "Moon casts a pale beam and reflection on water.",
+      "concept": "A golden crescent shining a beam onto water with reflected light.",
       "visualGroup": "月光",
       "reviewRequired": false
     },
@@ -27407,8 +27407,8 @@
       "meaning": "University",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-9910372c1964.svg",
-        "alt": "University"
+        "src": "../images/approved/ja-v-9910372c1964-922b4439031a.png",
+        "alt": "A university hall with arched entrance and graduation cap."
       },
       "audio": [
         {
@@ -27460,7 +27460,7 @@
           "available": true
         }
       ],
-      "concept": "University hall topped by a graduation cap.",
+      "concept": "A university hall with arched entrance and graduation cap.",
       "visualGroup": "大学",
       "reviewRequired": false
     },
@@ -28249,8 +28249,8 @@
       "meaning": "Wool Yarn",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-ac1e4f6bee13.svg",
-        "alt": "Wool Yarn"
+        "src": "../images/approved/ja-v-ac1e4f6bee13-7cbef581cf3b.png",
+        "alt": "A ball of lavender wool yarn with two knitting needles."
       },
       "audio": [
         {
@@ -28302,7 +28302,7 @@
           "available": true
         }
       ],
-      "concept": "Round ball of yarn with knitting needles and loose strand.",
+      "concept": "A ball of lavender wool yarn with two knitting needles.",
       "visualGroup": "毛糸",
       "reviewRequired": false
     },

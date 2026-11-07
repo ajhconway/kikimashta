@@ -81,7 +81,7 @@ The generator follows the current [OpenAI Realtime audio guide](https://develope
 
 The review library at `/vocabulary/` contains 441 entries transcribed from the owner's level 1–5 screenshots. Levels are provisional source labels, separate from stable word IDs. The original transcriptions and screenshot hashes are in `content/imports/`; the flat catalog is in `content/catalog/ja.json`.
 
-The library combines original SVG scenes with 40 approved replacement illustrations from PR #75. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
+The library combines original SVG scenes with 110 approved replacement illustrations from batches 01–08. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 
 Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Guest notes stay local. When optional Supabase sync is configured, signed-in notes synchronize with the account; clearing a box syncs a deletion. Each account and guest practice use separate local storage. Copying guest history and notes into an account is an explicit action in Account. Existing account note edits take precedence over imported guest notes. If saving fails, the draft stays available while the page is open and can still be exported.
 
@@ -99,6 +99,8 @@ Media and dependencies retain separate terms. Current practice speech is AI-gene
 
 ## Card regeneration
 
-[Approved artwork and prompt workflow](content/card-regeneration/README.md) tracks issue #72. Batches 01–06 contain 60 approved selected cards, with original variants and feedback preserved. The selected illustrations are active in practice; [activation provenance](content/card-regeneration/activation.json) records their delivery hashes.
+[Approved artwork and prompt workflow](content/card-regeneration/README.md) tracks issue #72. Batches 01–08 contain 110 approved selected cards, with original variants and feedback preserved. The selected illustrations are active in practice; [activation provenance](content/card-regeneration/activation.json) records their delivery hashes.
 
-To activate reviewed batches on macOS: `node scripts/content/activate-approved-artwork.mjs batch-05 batch-06`, then `npm run content:library`. Approval and source hashes are checked before image mappings change.
+To activate reviewed batches on macOS: `node scripts/content/activate-approved-artwork.mjs batch-08`, then `npm run content:library`. Approval and source hashes are checked before image mappings change.
+
+Transparent approved sources export as alpha-preserving 640px PNGs. Earlier opaque deliveries retain their existing JPEG files and provenance. The activation command validates decoded transparency and opaque white subject details before atomically replacing a delivery.

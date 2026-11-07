@@ -2635,6 +2635,54 @@
       "status": "approved",
       "referencePath": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
       "guidance": "Reuse approved66chair: golden/honey wood, rounded slatted backrest, lavender seat pad, four straight legs, near-front gentle three-quarter view. Preserve chair size and Kiku scale. Under: Kiku beneath seat between legs, paws at chair-foot baseline. On top: Kiku supported by seat pad, backrest behind, empty opening beneath. Short straight violet attention lines emphasize Kiku. The66/70pair is approved and replaces disconnected box/cloud/bar layouts."
+    },
+    {
+      "id": "family:leafy-tree",
+      "kind": "family",
+      "seedCard": "ja-v-a5d390dc4805",
+      "memberIds": [
+        "ja-v-698044202165",
+        "ja-v-a5d390dc4805"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/100-tree.png",
+      "status": "approved",
+      "guidance": "Use the tree100prototype: rounded green three-lobe canopy, forked brown trunk, violet contours. Tree is single; forest repeats it at different depths. Same-batch prototypes are approved."
+    },
+    {
+      "id": "family:washing-machine-counts",
+      "kind": "family",
+      "seedCard": "ja-v-eba7f0968101",
+      "memberIds": [
+        "ja-v-eba7f0968101",
+        "ja-v-f5b4250aeb03"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/104-one-machine.png",
+      "status": "approved",
+      "guidance": "Use exactly the same front-loading washing machine design for one/two machine counts. Preserve opaque white cabinet, lavender control strip, violet circular door rim and blue glass. Change exact count and spacing only. Both are approved."
+    },
+    {
+      "id": "family:pull-off-calendar-dates",
+      "kind": "family",
+      "seedCard": "ja-v-08e3c50181be",
+      "memberIds": [
+        "ja-v-08e3c50181be",
+        "ja-v-13ea3220cde0"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+      "status": "approved",
+      "guidance": "Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved."
+    },
+    {
+      "id": "family:stylized-moon",
+      "kind": "family",
+      "seedCard": "ja-v-e0bb1d02fee0",
+      "memberIds": [
+        "ja-v-2d7d45d5614e",
+        "ja-v-e0bb1d02fee0"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+      "status": "approved",
+      "guidance": "95and97use the same fuller stylized golden crescent without crater spots or stars.96stays a slimmer crescent and has no stars. Moonlight95retains beam/water reflection; generic moon97is the lone fuller crescent. All revised scenes are approved."
     }
   ],
   "edges": [
@@ -3107,7 +3155,7 @@
       "to": "card:ja-v-66ccf8dd3399"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-0ac038632611"
     },
     {
@@ -3403,7 +3451,7 @@
       "to": "card:ja-v-2850d52ee4d2"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-e0bb1d02fee0"
     },
     {
@@ -3591,7 +3639,7 @@
       "to": "card:ja-v-769a80524957"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f3881ce313e7"
     },
     {
@@ -3671,7 +3719,7 @@
       "to": "card:ja-v-17e3177c62d5"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a5d390dc4805"
     },
     {
@@ -4095,7 +4143,7 @@
       "to": "card:ja-v-7bbba1a9506e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-eba7f0968101"
     },
     {
@@ -4311,11 +4359,15 @@
       "to": "card:ja-v-5f29c187353e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f5b4250aeb03"
     },
     {
       "from": "component:washer",
+      "to": "card:ja-v-f5b4250aeb03"
+    },
+    {
+      "from": "family:washing-machine-counts",
       "to": "card:ja-v-f5b4250aeb03"
     },
     {
@@ -4387,7 +4439,7 @@
       "to": "card:ja-v-10791214b2c9"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-dbe24910365e"
     },
     {
@@ -4563,7 +4615,7 @@
       "to": "card:ja-v-0c337ec8cbd4"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-fa6a4c8f27b4"
     },
     {
@@ -4599,7 +4651,7 @@
       "to": "card:ja-v-f623bb19b846"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-13ea3220cde0"
     },
     {
@@ -4608,6 +4660,10 @@
     },
     {
       "from": "component:paper-book-pencil",
+      "to": "card:ja-v-13ea3220cde0"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-13ea3220cde0"
     },
     {
@@ -4835,7 +4891,7 @@
       "to": "card:ja-v-3ed4447f3492"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-0c144e18f1b2"
     },
     {
@@ -4999,7 +5055,7 @@
       "to": "card:ja-v-ac4dde449fe8"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-497356cf0646"
     },
     {
@@ -5039,7 +5095,7 @@
       "to": "card:ja-v-a8c7075ce096"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-e05b8e36c6ca"
     },
     {
@@ -5199,7 +5255,7 @@
       "to": "card:ja-v-b34b4a2e7a98"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-08e3c50181be"
     },
     {
@@ -5259,7 +5315,7 @@
       "to": "card:ja-v-6fe6f680e0e0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-2850b5703e8b"
     },
     {
@@ -5295,7 +5351,7 @@
       "to": "card:ja-v-8438eda3cfc0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-1a43c96593cb"
     },
     {
@@ -5391,7 +5447,7 @@
       "to": "card:ja-v-10e568715d3a"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-6e098e54aa63"
     },
     {
@@ -5427,7 +5483,7 @@
       "to": "card:ja-v-2e7b28af830b"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d10df0e56846"
     },
     {
@@ -5491,7 +5547,7 @@
       "to": "card:ja-v-fd0090161525"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-4aa5c84df90c"
     },
     {
@@ -5595,11 +5651,15 @@
       "to": "card:ja-v-188bdf18a50c"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-698044202165"
     },
     {
       "from": "component:tree-plant",
+      "to": "card:ja-v-698044202165"
+    },
+    {
+      "from": "family:leafy-tree",
       "to": "card:ja-v-698044202165"
     },
     {
@@ -5811,7 +5871,7 @@
       "to": "card:ja-v-b639fedc63ec"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d242b38667c8"
     },
     {
@@ -5819,11 +5879,15 @@
       "to": "card:ja-v-d242b38667c8"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-2d7d45d5614e"
     },
     {
       "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-2d7d45d5614e"
+    },
+    {
+      "from": "family:stylized-moon",
       "to": "card:ja-v-2d7d45d5614e"
     },
     {
@@ -6303,7 +6367,7 @@
       "to": "card:ja-v-ea952b83ac80"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9910372c1964"
     },
     {
@@ -6407,7 +6471,7 @@
       "to": "card:ja-v-4638d2c26682"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ac1e4f6bee13"
     },
     {
@@ -6505,6 +6569,22 @@
     {
       "from": "card:ja-v-520308b3c3b4",
       "to": "family:chair-position-anchor"
+    },
+    {
+      "from": "card:ja-v-a5d390dc4805",
+      "to": "family:leafy-tree"
+    },
+    {
+      "from": "card:ja-v-eba7f0968101",
+      "to": "family:washing-machine-counts"
+    },
+    {
+      "from": "card:ja-v-08e3c50181be",
+      "to": "family:pull-off-calendar-dates"
+    },
+    {
+      "from": "card:ja-v-e0bb1d02fee0",
+      "to": "family:stylized-moon"
     }
   ],
   "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."
