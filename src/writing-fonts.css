@@ -1,0 +1,30 @@
+/* Approved Japanese writing fonts (#101). License and provenance: content/writing-fonts.json. */
+@font-face {
+  font-family: 'Kikimashta Noto Sans JP';
+  src: url('/fonts/japanese/noto-sans/font-26653d53d140.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
+
+.written-answer[data-font='noto-sans'] { font-family: 'Kikimashta Noto Sans JP', system-ui, sans-serif; }
+
+@font-face {
+  font-family: 'Kikimashta Noto Serif JP';
+  src: url('/fonts/japanese/noto-serif/font-98bae4145413.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
+
+.written-answer[data-font='noto-serif'] { font-family: 'Kikimashta Noto Serif JP', system-ui, sans-serif; }
+
+@font-face {
+  font-family: 'Kikimashta Klee One';
+  src: url('/fonts/japanese/klee/font-84a96291ae96.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
+
+.written-answer[data-font='klee'] { font-family: 'Kikimashta Klee One', system-ui, sans-serif; }
