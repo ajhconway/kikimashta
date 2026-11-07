@@ -364,8 +364,13 @@ footer a:hover { color: var(--purple-dark); }
 .summary .score { margin: 16px auto; }
 
 /* Written cards share picture-card dimensions, feedback, and motion. */
-.text-choice, .preview-writing { display: grid; place-items: center; padding: 14px; }
-.written-answer { max-width: 100%; font-family: system-ui, sans-serif; font-size: clamp(22px, 5vw, 34px); font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
-.written-answer.written-phrase { font-size: clamp(16px, 3.8vw, 24px); }
-.preview-writing .written-answer { font-size: clamp(32px, 8vw, 48px); }
-.preview-writing .written-phrase { font-size: clamp(22px, 5vw, 32px); }
+.text-choice, .preview-writing { display: grid; place-items: center; padding: 14px; container-type: size; }
+.written-answer {
+  max-width: 100%;
+  font-family: system-ui, sans-serif;
+  /* Keep short writing prominent and longer text readable within this card. */
+  font-size: clamp(16px, min(calc(88cqw / var(--writing-length)), 72cqh), 180px);
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}

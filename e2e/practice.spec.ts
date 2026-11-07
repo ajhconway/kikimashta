@@ -1,13 +1,13 @@
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 import bank from '../content/ja.json' with { type: 'json' };
-import type { WordItem } from '../src/types';
+import type { Exercise, WordItem } from '../src/types';
 
 const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
 const allWords = [...bank.items, ...catalogue.items] as WordItem[];
 
-async function addLegacy(page: Page, ids = bank.items.map(item => item.id)) {
-  await page.evaluate(async itemIds => {
+async function seedAttempts(page: Page, ids = bank.items.map(item => item.id), exercise?: Exercise) {
+  await page.evaluate(async ({ itemIds, exercise }) => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open('kikimashta-v0', 1);
       request.onupgradeneeded = () => { const store = request.result.createObjectStore('attempts', { keyPath: 'id' }); store.createIndex('language', 'language'); };
@@ -15,14 +15,16 @@ async function addLegacy(page: Page, ids = bank.items.map(item => item.id)) {
     });
     try {
       const transaction = db.transaction('attempts', 'readwrite');
-      itemIds.forEach((itemId, i) => transaction.objectStore('attempts').put({ id: 'legacy-' + itemId, sessionId: 'legacy', itemId, language: 'ja-JP', choiceIds: itemIds, selectedId: itemId, correct: true, startedAt: Date.now() - 86_400_000 - i, answeredAt: Date.now() - 86_400_000 - i, responseMs: 0 }));
+      itemIds.forEach((itemId, i) => transaction.objectStore('attempts').put({ id: 'legacy-' + itemId, sessionId: 'legacy', itemId, language: 'ja-JP', choiceIds: itemIds, selectedId: itemId, correct: true, startedAt: Date.now() - 86_400_000 - i, answeredAt: Date.now() - 86_400_000 - i, responseMs: 0,
+        ...(exercise ? { context: { phase: 'lesson', exercise, recordingSrc: 'audio/fixture.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } } : {}),
+      }));
       await new Promise<void>((resolve, reject) => { transaction.oncomplete = () => resolve(); transaction.onerror = () => reject(transaction.error); });
     } finally { db.close(); }
-  }, ids);
+  }, { itemIds: ids, exercise });
 }
 
 async function startReview(page: Page) {
-  await page.goto('./'); await addLegacy(page); await page.reload();
+  await page.goto('./'); await seedAttempts(page); await page.reload();
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: /begin review/i }).click();
 }
@@ -362,6 +364,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await expect.poll(() => backgroundColor(page)).not.toBe(homeColor);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'adaptive-lesson');
   const introduced: { item: WordItem; exercise: string }[] = [];
+  const previewSizes: { length: number; fontSize: number }[] = [];
   for (let i = 0; i < 10; i++) {
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
     const source = await page.locator('audio').getAttribute('src');
@@ -375,10 +378,15 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     } else {
       await expect(page.locator('.preview-picture img')).toHaveCount(0);
       await expect(page.locator('.preview-picture')).toHaveText(item.text);
+      previewSizes.push({ length: Array.from(item.text).length, fontSize: await page.locator('.preview-picture .written-answer').evaluate(label => parseFloat(getComputedStyle(label).fontSize)) });
       if (introduced.filter(card => card.exercise === 'audio-text').length === 1) await captureScreen(page, 'writing-lesson-' + testInfo.project.name);
     }
     await page.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }).click();
   }
+  const singleSizes = previewSizes.filter(sample => sample.length === 1).map(sample => sample.fontSize);
+  const longerSizes = previewSizes.filter(sample => sample.length > 1).map(sample => sample.fontSize);
+  expect(Math.min(...singleSizes), 'single characters are large in lesson previews').toBeGreaterThan(60);
+  expect(Math.min(...singleSizes)).toBeGreaterThan(Math.max(...longerSizes));
   const introducedIds = introduced.map(card => JSON.stringify([card.item.language, card.item.id, card.exercise]));
   expect(new Set(introducedIds).size).toBe(10);
   expect(introduced.filter(card => card.exercise === 'audio-text')).toHaveLength(5);
@@ -428,10 +436,56 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   }
 });
 
+test('writing scales by displayed length and card size across Japanese scripts', async ({ page }, testInfo) => {
+  await page.clock.install();
+  await page.addInitScript(() => { Math.random = () => 0.5; });
+  await page.goto('./');
+  const words = ['犬', '五十', 'りんご', 'バナナ', 'コーヒー', 'テーブルの上'].map(text => allWords.find(item => item.text === text)!);
+  expect(words.every(Boolean)).toBe(true);
+  await seedAttempts(page, words.map(item => item.id), 'audio-text');
+  await page.reload();
+  await page.getByRole('button', { name: /^start/i }).click();
+  await page.getByRole('button', { name: /begin review/i }).click();
+  const original = page.viewportSize()!;
+  const viewports = [{ width: 320, height: 664 }, { width: 430, height: 900 }, { width: 1280, height: 900 }];
+  const samples = new Map<string, number>();
+  for (let i = 0; i < words.length; i++) {
+    const { target, exercise } = await heardWord(page);
+    expect(exercise).toBe('audio-text');
+    expect(words.some(item => item.id === target.id)).toBe(true);
+    for (const viewport of viewports) {
+      await page.setViewportSize(viewport);
+      const label = page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true }).locator('.written-answer');
+      const metrics = await label.evaluate(element => {
+        const box = element.getBoundingClientRect();
+        const card = element.parentElement!.getBoundingClientRect();
+        return { fontSize: parseFloat(getComputedStyle(element).fontSize), fits: box.left >= card.left && box.right <= card.right && box.top >= card.top && box.bottom <= card.bottom };
+      });
+      expect(metrics.fits, target.text + ' fits at ' + viewport.width + 'px').toBe(true);
+      samples.set(viewport.width + '/' + target.text, metrics.fontSize);
+      if (target.text === '犬') await captureScreen(page, 'writing-size-' + viewport.width + '-' + testInfo.project.name);
+    }
+    await page.setViewportSize(original);
+    await chooseHeardAnswer(page, target);
+  }
+  for (const viewport of viewports) {
+    const size = (text: string) => samples.get(viewport.width + '/' + text)!;
+    expect(size('犬'), 'single kanji is prominent').toBeGreaterThan(40);
+    expect(size('犬')).toBeGreaterThan(size('五十'));
+    expect(size('五十')).toBeGreaterThan(size('りんご'));
+    expect(size('りんご')).toBeCloseTo(size('バナナ'), 1);
+    expect(size('バナナ')).toBeGreaterThan(size('コーヒー'));
+    expect(size('コーヒー')).toBeGreaterThan(size('テーブルの上'));
+    expect(size('テーブルの上')).toBeGreaterThanOrEqual(16);
+  }
+  expect(samples.get('430/りんご')!).toBeGreaterThan(samples.get('320/りんご')!);
+  await expect(page.getByRole('heading', { name: /nice reviewing/i })).toBeVisible();
+});
+
 test('reviews both saved formats of one word and preserves a writing retry after reload', async ({ page }) => {
   await page.clock.install();
   await page.goto('./');
-  await addLegacy(page, [bank.items[0]!.id]);
+  await seedAttempts(page, [bank.items[0]!.id]);
   await page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open('kikimashta-v0', 1);
@@ -691,7 +745,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   await page.clock.install();
   await startReview(page);
   const laterWord = catalogue.items.find(item => item.text === '山')!;
-  await addLegacy(page, [laterWord.id]);
+  await seedAttempts(page, [laterWord.id]);
   const completed = new Set<string>();
   const presentations: string[] = [];
   let missedId = '';

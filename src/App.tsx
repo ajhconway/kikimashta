@@ -26,8 +26,13 @@ function Picture({ item }: { item: WordItem }) {
   return <img src={asset(item.image.src)} alt={item.image.alt} draggable={false}/>;
 }
 
+const writingCharacters = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+
 function CardFace({ item, exercise }: PracticeCard) {
-  return exercise === 'audio-picture' ? <Picture item={item}/> : <span className={'written-answer' + (Array.from(item.text).length > 10 ? ' written-phrase' : '')} lang={item.language}>{item.text}</span>;
+  if (exercise === 'audio-picture') return <Picture item={item}/>;
+  // A combining mark or variation selector belongs to its displayed character.
+  const length = Math.max(1, Array.from(writingCharacters.segment(item.text)).length);
+  return <span className="written-answer" style={{ '--writing-length': length } as CSSProperties} lang={item.language}>{item.text}</span>;
 }
 const choiceClass = (exercise: Exercise) => 'answer-choice ' + (exercise === 'audio-picture' ? 'picture-choice' : 'text-choice');
 
