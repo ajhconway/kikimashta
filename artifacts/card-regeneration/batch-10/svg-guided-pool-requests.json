@@ -1,0 +1,249 @@
+{
+  "issue": 72,
+  "batch": "batch-10",
+  "round": 4,
+  "tool": "built-in image_gen",
+  "request": "User requested exact blank SVG circle templates as image inputs for PNG numeral generation.",
+  "requests": [
+    {
+      "number": 136,
+      "id": "ja-v-5d8047464c5d",
+      "value": 1,
+      "label": "1",
+      "path": "artifacts/card-regeneration/batch-10/136-1-svg-guided-r5.png",
+      "ids": [
+        "ja-v-5d8047464c5d"
+      ],
+      "numbers": [
+        136
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-1-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/136-one.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 1.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"1\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"1\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 137,
+      "id": "ja-v-7fc81b0ddd17",
+      "value": 2,
+      "label": "2",
+      "path": "artifacts/card-regeneration/batch-10/137-2-svg-guided-r5.png",
+      "ids": [
+        "ja-v-7fc81b0ddd17"
+      ],
+      "numbers": [
+        137
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-2-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/137-two.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 2.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"2\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"2\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 138,
+      "id": "ja-v-1bedf722c04a",
+      "value": 3,
+      "label": "3",
+      "path": "artifacts/card-regeneration/batch-10/138-3-svg-guided-r5.png",
+      "ids": [
+        "ja-v-1bedf722c04a"
+      ],
+      "numbers": [
+        138
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-3-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/138-three.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 3.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"3\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"3\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 86,
+      "id": "ja-v-b066e78531d6",
+      "value": 4,
+      "label": "4",
+      "path": "artifacts/card-regeneration/batch-10/86-4-svg-guided-r5.png",
+      "ids": [
+        "ja-v-b066e78531d6"
+      ],
+      "numbers": [
+        86
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/86-four.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 4.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"4\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"4\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 139,
+      "id": "ja-v-d4473f87e438",
+      "value": 5,
+      "label": "5",
+      "path": "artifacts/card-regeneration/batch-10/139-5-svg-guided-r5.png",
+      "ids": [
+        "ja-v-d4473f87e438"
+      ],
+      "numbers": [
+        139
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-5-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/139-five.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 5.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"5\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"5\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 140,
+      "id": "ja-v-06ef406f5569",
+      "value": 6,
+      "label": "6",
+      "path": "artifacts/card-regeneration/batch-10/140-6-svg-guided-r5.png",
+      "ids": [
+        "ja-v-06ef406f5569"
+      ],
+      "numbers": [
+        140
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-6-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/140-six.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 6.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"6\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"6\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 141,
+      "id": "ja-v-eda9a40b0c91",
+      "value": 7,
+      "label": "7",
+      "path": "artifacts/card-regeneration/batch-10/141-7-svg-guided-r5.png",
+      "ids": [
+        "ja-v-eda9a40b0c91"
+      ],
+      "numbers": [
+        141
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-7-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/141-seven.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 7.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"7\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"7\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 142,
+      "id": "ja-v-f6ed7c17c0d5",
+      "value": 8,
+      "label": "8",
+      "path": "artifacts/card-regeneration/batch-10/142-8-svg-guided-r5.png",
+      "ids": [
+        "ja-v-f6ed7c17c0d5"
+      ],
+      "numbers": [
+        142
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-8-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/142-eight.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 8.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"8\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"8\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 143,
+      "id": "ja-v-d33ed6be2a48",
+      "value": 9,
+      "label": "9",
+      "path": "artifacts/card-regeneration/batch-10/143-9-svg-guided-r5.png",
+      "ids": [
+        "ja-v-d33ed6be2a48"
+      ],
+      "numbers": [
+        143
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-9-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-10/143-nine.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 9.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"9\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"9\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    },
+    {
+      "number": 85,
+      "id": "ja-v-877b9ba07a47",
+      "value": 10,
+      "label": "10",
+      "path": "artifacts/card-regeneration/batch-10/85-10-svg-guided-r5.png",
+      "ids": [
+        "ja-v-877b9ba07a47"
+      ],
+      "numbers": [
+        85
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 10.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"10\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"10\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true."
+    }
+  ]
+}

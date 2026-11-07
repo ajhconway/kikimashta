@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 256 256" role="img" aria-label="4" data-value="4" data-label="4">
+<title>4</title>
+<circle data-role="badge" cx="128" cy="128" r="108" fill="#7e22ce"/>
+<circle data-role="number-patch" cx="128" cy="128" r="48" fill="#ffffff"/>
+<circle data-role="outline" cx="128" cy="128" r="108" fill="none" stroke="#3f2468" stroke-width="7"/>
+<path data-role="lettering" aria-label="4" d="M717 127V313H215Q120 313 72.5 356.0Q25 399 25 473Q25 492 32.0 511.5Q39 531 53.0 552.5Q67 574 82.0 594.0Q97 614 119 643L649 1352Q701 1422 734.5 1453.5Q768 1485 815 1485Q967 1485 967 1311V537H1010Q1087 537 1133.5 516.0Q1180 495 1180 424Q1180 366 1142.0 339.5Q1104 313 1028 313H967V127Q967 50 933.0 12.5Q899 -25 842 -25Q786 -25 751.5 13.5Q717 52 717 127ZM287 537H717V1118Z" transform="matrix(0.041059603 0 0 -0.041059603 103.261589404 157.973509934)" fill="#111111"/>
+</svg>

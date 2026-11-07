@@ -2617,8 +2617,8 @@
         "ja-v-823616f3288f",
         "ja-v-190aae33ad24"
       ],
-      "status": "prompt-convention",
-      "guidance": "Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients."
+      "status": "approved-direction",
+      "guidance": "Cardinal numbers use the approved illustrated PNG style with slightly lighter softly rounded badge lettering, restrained shading and violet contours. Pool balls1–15retain their heavier rounded black numerals and flat colors;16–99lavender;100–999pink;1000–9999skyblue;10000+gold. Use compact K/Mnotation from1000upward;colorsfollowactualvalues. SVGcirclesmayguidepool-ballPNGgeneration,buttheSVGletteringalternativeisrejected. Thecleanearliergreen6isapproveddespitefailedSVG-guidedalphaattempts. Currency,ageandspecificcountersretaintheirowndesigns.Futureartworkstillneedsreview."
     },
     {
       "id": "family:direction-arrows",

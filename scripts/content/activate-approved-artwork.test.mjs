@@ -196,3 +196,31 @@ test('resizing may remove a sub-resolution white highlight while retaining trans
   assert.equal(record.alpha, 'preserved')
   assert.match(f.read('content/catalog/ja.json').items[0].image.src, /\.png$/)
 })
+
+test('an approved replacement updates the existing card once and retains prior delivery history', t => {
+  const f = fixture(t)
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: f.encode })
+  const old = f.read('content/card-regeneration/activation.json').assets.find(asset => asset.id === 'ja-test')
+  const previousBytes = readFileSync(join(f.root, old.path))
+  const asset = f.manifest.assets[0]
+  const replacement = Buffer.from('89504e470d0a1a0a0000000001', 'hex')
+  asset.previousVersions = [{ path: asset.path, sha256: asset.sha256 }]
+  asset.path = 'artifacts/card-regeneration/batch-05/replacement.png'
+  asset.sha256 = hash(replacement)
+  asset.imageDescription = 'Replacement illustration'
+  writeFileSync(join(f.root, asset.path), replacement)
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: (_, target) => writeFileSync(target, Buffer.from('ffd8ffe00100ffd9', 'hex')) })
+  const records = f.read('content/card-regeneration/activation.json').assets
+  assert.equal(records.length, 2)
+  assert.equal(records.filter(record => record.id === 'ja-test').length, 1)
+  const current = records.find(record => record.id === 'ja-test')
+  assert.equal(current.sourcePath, asset.path)
+  assert.equal(current.sourceSha256, asset.sha256)
+  assert.notEqual(current.path, old.path)
+  assert.deepEqual(readFileSync(join(f.root, old.path)), previousBytes)
+  assert.equal(f.read('content/catalog/ja.json').items[0].image.src, current.path.slice('public/'.length))
+  assert.equal(f.read('content/catalog/ja.json').items[0].image.alt, 'Replacement illustration')
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0].audio, f.item.audio)
+  assert.deepEqual(f.read('content/practice-pool.json'), { itemIds: ['ja-test'] })
+})

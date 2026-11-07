@@ -1,0 +1,500 @@
+{
+  "tool": "Installed Chrome canvas inspection",
+  "assets": [
+    {
+      "src": "136-1-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 670046,
+      "opaque": 892185,
+      "semi": 10285,
+      "opaqueWhitePixels": 145675,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "137-2-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 643743,
+      "opaque": 917748,
+      "semi": 11025,
+      "opaqueWhitePixels": 129024,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "138-3-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 628824,
+      "opaque": 932924,
+      "semi": 10768,
+      "opaqueWhitePixels": 124849,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "139-5-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 679209,
+      "opaque": 883155,
+      "semi": 10152,
+      "opaqueWhitePixels": 113388,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "140-6-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 681130,
+      "opaque": 881136,
+      "semi": 10250,
+      "opaqueWhitePixels": 128704,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "141-7-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 633543,
+      "opaque": 928094,
+      "semi": 10879,
+      "opaqueWhitePixels": 144306,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "142-8-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 636676,
+      "opaque": 925002,
+      "semi": 10838,
+      "opaqueWhitePixels": 113020,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "143-9-svg-guided-r5.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 638190,
+      "opaque": 923595,
+      "semi": 10731,
+      "opaqueWhitePixels": 341100,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "144-40-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 693308,
+      "opaque": 869317,
+      "semi": 9891,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "145-100-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 670302,
+      "opaque": 891234,
+      "semi": 10980,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "146-200-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 667693,
+      "opaque": 893165,
+      "semi": 11658,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "147-400-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 668622,
+      "opaque": 892640,
+      "semi": 11254,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "148-500-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 669680,
+      "opaque": 891467,
+      "semi": 11369,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "149-4k-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 665323,
+      "opaque": 895327,
+      "semi": 11866,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "150-10k-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 669148,
+      "opaque": 892336,
+      "semi": 11032,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "150-10k-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 669148,
+      "opaque": 892336,
+      "semi": 11032,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "152-20k-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 670828,
+      "opaque": 890778,
+      "semi": 10910,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "153-100k-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 668271,
+      "opaque": 893319,
+      "semi": 10926,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "154-1m-png-r4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 672116,
+      "opaque": 889810,
+      "semi": 10590,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "155-one-thing.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 959275,
+      "opaque": 605468,
+      "semi": 7773,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "156-two-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1089936,
+      "opaque": 471184,
+      "semi": 11396,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "157-three-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1233778,
+      "opaque": 328310,
+      "semi": 10428,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "158-six-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 911604,
+      "opaque": 638848,
+      "semi": 22064,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "159-seven-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1063181,
+      "opaque": 485380,
+      "semi": 23955,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "160-eight-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1021602,
+      "opaque": 525781,
+      "semi": 25133,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "161-second-day.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 395241,
+      "opaque": 1163663,
+      "semi": 13612,
+      "opaqueWhitePixels": 617047,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "162-third-day.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 392792,
+      "opaque": 1168464,
+      "semi": 11260,
+      "opaqueWhitePixels": 602759,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "163-fifth-day.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 392556,
+      "opaque": 1166355,
+      "semi": 13605,
+      "opaqueWhitePixels": 582720,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "164-sixth-day-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 390481,
+      "opaque": 1164271,
+      "semi": 17764,
+      "opaqueWhitePixels": 598556,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "165-seventh-day-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 390551,
+      "opaque": 1167663,
+      "semi": 14302,
+      "opaqueWhitePixels": 642794,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "166-eighth-day.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 393055,
+      "opaque": 1164900,
+      "semi": 14561,
+      "opaqueWhitePixels": 586827,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "167-ninth-day-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 390502,
+      "opaque": 1168601,
+      "semi": 13413,
+      "opaqueWhitePixels": 593602,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "168-tenth-day.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 393652,
+      "opaque": 1163331,
+      "semi": 15533,
+      "opaqueWhitePixels": 499423,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

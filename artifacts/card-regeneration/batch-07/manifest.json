@@ -1060,44 +1060,84 @@
     {
       "id": "ja-v-61c516578fee",
       "meaning": "Fifty",
-      "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
-      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The numeral 50 on a colorful circular counting token\nProduction composition: One plain lavender circular counting token with deep violet outline, containing ONLY the large centered exact numeral '50' in dark violet. Numeral dominates and is clearly legible at145px. No beads, dots, stars, words, other numbers or decorative motifs.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "path": "artifacts/card-regeneration/batch-07/83-number-batch10-approved.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 50\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"50\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"50\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true.",
       "references": [
         {
-          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
-          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+          "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
         }
       ],
       "tool": "built-in image_gen",
       "styleProfile": "cat-png",
       "status": "approved",
-      "visualReview": "Existing lavender50 token retained; it already matches the selected16–99 range color. Number convention updated; approval pending.",
+      "visualReview": "Illustrated number badge with slightly lighter rounded lettering; contour and palette preserved.",
       "width": 1254,
       "height": 1254,
-      "bytes": 1291933,
-      "sha256": "ed397760c3ef3b8b0baead599ad95122bb4974f7170093d689c1b5e45cf5d655",
+      "bytes": 1064754,
+      "sha256": "290dc3f937733da431a46a08aea4c30ec31ef55730efebc9a8c72f96a5b391e3",
       "conventionUpdated": true,
-      "imageDescription": "A lavender circular token with the large numeral 50."
+      "imageDescription": "A circular number badge displaying 50.",
+      "previousVersions": [
+        {
+          "id": "ja-v-61c516578fee",
+          "meaning": "Fifty",
+          "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The numeral 50 on a colorful circular counting token\nProduction composition: One plain lavender circular counting token with deep violet outline, containing ONLY the large centered exact numeral '50' in dark violet. Numeral dominates and is clearly legible at145px. No beads, dots, stars, words, other numbers or decorative motifs.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "approved",
+          "visualReview": "Existing lavender50 token retained; it already matches the selected16–99 range color. Number convention updated; approval pending.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1291933,
+          "sha256": "ed397760c3ef3b8b0baead599ad95122bb4974f7170093d689c1b5e45cf5d655",
+          "conventionUpdated": true,
+          "imageDescription": "A lavender circular token with the large numeral 50.",
+          "number": 83,
+          "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-07/83-fifty.png",
+          "approvedSourceSha256": "ed397760c3ef3b8b0baead599ad95122bb4974f7170093d689c1b5e45cf5d655"
+        }
+      ],
+      "revisionRound": 3,
+      "pngColorType": 6,
+      "transparentBackground": true,
+      "displayLabel": "50",
+      "numericValue": 50,
+      "userFeedback": "Make badge lettering a touch less heavy; retain the PNG appearance.",
+      "userApproval": {
+        "date": "2026-11-07",
+        "feedback": "Let's publish this set. Afterwards, prepare the next batch.",
+        "scope": "All33newnumericalcardsand5revisedearliernumberexamples,includingthecleanearliergreen6selectedinthereview."
+      },
+      "approvedRevisionSource": "artifacts/card-regeneration/batch-10/83-50-png-r4.png"
     },
     {
       "id": "ja-v-86ef0852f80f",
       "meaning": "Thousand",
-      "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
-      "prompt": "Edit numeral1000 card. Recolor the lavender token FILL to pale SKY BLUE (#91D7ED) for the1000–9999 range. Preserve exact correct centered numeral '1000' in deep violet, circular shape, outline, scale, soft shading and white background. One clearly legible number only. No other numerals, words, dots, beads, extra tokens, shadows or decoration.",
+      "path": "artifacts/card-regeneration/batch-07/84-number-batch10-approved.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 1K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"1K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"1K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true.",
       "references": [
         {
-          "path": "artifacts/card-regeneration/batch-07/84-thousand.png",
-          "role": "edit target / supporting composition reference as specified in prompt"
+          "path": "artifacts/card-regeneration/batch-10/84-1k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
         }
       ],
       "tool": "built-in image_gen",
       "styleProfile": "cat-png",
       "status": "approved",
-      "visualReview": "Sky-blue token with correct numeral1000 for range1000–9999.",
+      "visualReview": "Illustrated number badge with slightly lighter rounded lettering; contour and palette preserved.",
       "width": 1254,
       "height": 1254,
-      "bytes": 1297037,
-      "sha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b",
+      "bytes": 1104354,
+      "sha256": "a7ac3f774e9c94b662d222834b4ce34e66db8a8c994ff4b1de31b9df1eaf0501",
       "previousVersions": [
         {
           "id": "ja-v-86ef0852f80f",
@@ -1118,30 +1158,130 @@
           "height": 1254,
           "bytes": 1312877,
           "sha256": "7d1370c3229fa49007bf208ba250c3d37e5e981c9827542d8966ccc02bec0485"
+        },
+        {
+          "id": "ja-v-86ef0852f80f",
+          "meaning": "Thousand",
+          "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+          "prompt": "Edit numeral1000 card. Recolor the lavender token FILL to pale SKY BLUE (#91D7ED) for the1000–9999 range. Preserve exact correct centered numeral '1000' in deep violet, circular shape, outline, scale, soft shading and white background. One clearly legible number only. No other numerals, words, dots, beads, extra tokens, shadows or decoration.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/84-thousand.png",
+              "role": "edit target / supporting composition reference as specified in prompt"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "approved",
+          "visualReview": "Sky-blue token with correct numeral1000 for range1000–9999.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1297037,
+          "sha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b",
+          "revisionRound": 2,
+          "imageDescription": "A sky-blue circular token with the large numeral 1000."
+        },
+        {
+          "id": "ja-v-86ef0852f80f",
+          "meaning": "Thousand",
+          "path": "artifacts/card-regeneration/batch-10/number-1000-circle-v2.png",
+          "prompt": "User-selected exact SVG geometry: square256viewBox, center128/128, radius108, violet stroke7; label exactly 1K; centered rounded outlined lettering; value-based color#91d7ed; transparent exterior. Preserve the vocabulary value1000, Japanese reading and restrictions.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+              "role": "previous artwork; palette and overall visual convention, not geometry source"
+            }
+          ],
+          "tool": "SVG renderer",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Perfectly circular number badge for 1000, displaying 1K.",
+          "width": 640,
+          "height": 640,
+          "bytes": 39417,
+          "sha256": "dca81e577e28db27bd854b4e37f389682722e8aaae4d641f93adcdd0e9bf47f9",
+          "revisionRound": 1,
+          "imageDescription": "Perfectly circular number badge for 1000, displaying 1K.",
+          "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-1000-circle-v2.svg",
+          "sourceSvgSha256": "3d590bba14f0973d4a3e2a557d644a6d8348a6570fef63fc1c11123d4570b83d",
+          "renderSpecification": "artifacts/card-regeneration/batch-10/svg-number-spec.json",
+          "transparentBackground": true,
+          "pngColorType": 6,
+          "displayLabel": "1K",
+          "numericValue": 1000,
+          "userFeedback": "Use exact SVG circles and text, with compact K/M labels from1000upward. Awaiting review.",
+          "number": 84,
+          "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+          "approvedSourceSha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b"
+        },
+        {
+          "id": "ja-v-86ef0852f80f",
+          "meaning": "Thousand",
+          "path": "artifacts/card-regeneration/batch-10/84-1k-illustrated-v3.png",
+          "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"1000\" with the compact label \"1K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, sky-blue fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"1K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+              "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Illustrated1Kbadge matching original thick rounded numeral style and sky-blue palette.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1142631,
+          "sha256": "8654f95c81b0b43630ec56e54b058c0ba6d53aa71721c461200057b0b2d808ae",
+          "revisionRound": 2,
+          "imageDescription": "Sky-blue illustrated1Knumber badge.",
+          "number": 84,
+          "displayLabel": "1K",
+          "numericValue": 1000,
+          "transparentBackground": true,
+          "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+          "approvedSourceSha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b"
         }
       ],
-      "revisionRound": 2,
-      "imageDescription": "A sky-blue circular token with the large numeral 1000."
+      "revisionRound": 3,
+      "imageDescription": "A circular number badge displaying 1K (1000).",
+      "displayLabel": "1K",
+      "numericValue": 1000,
+      "transparentBackground": true,
+      "pngColorType": 6,
+      "userFeedback": "Make badge lettering a touch less heavy; retain the PNG appearance.",
+      "userApproval": {
+        "date": "2026-11-07",
+        "feedback": "Let's publish this set. Afterwards, prepare the next batch.",
+        "scope": "All33newnumericalcardsand5revisedearliernumberexamples,includingthecleanearliergreen6selectedinthereview."
+      },
+      "approvedRevisionSource": "artifacts/card-regeneration/batch-10/84-1k-png-r4.png"
     },
     {
       "id": "ja-v-877b9ba07a47",
       "meaning": "Ten",
-      "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
-      "prompt": "Use case: style-transfer. Edit the supplied number10 pool-ball artwork into a FLAT calm cartoon illustration. Keep the exact circular silhouette, bold deep-violet outer outline, broad BLUE central stripe, WHITE top and bottom caps, WHITE circular number patch centered in the blue stripe, and exact BLACK numeral '10'. Keep square1:1 canvas, centered ball and generous pure opaque WHITE background margins. Replace all glossy spherical gradients with solid flat colors. Remove every bright reflection, shine streak, white glare oval, bevel, soft shadow, lighting effect and dark edge shading. Use one uniform medium blue stripe fill and white caps/patch, clean simple contours. The stripe's top and bottom edges may retain their gentle curves to identify a pool ball, but the rendering must feel flat like the app's simple number-token cards. No other balls, props, quantity dots, labels, decorations, watermark or text besides essential10.",
+      "path": "artifacts/card-regeneration/batch-07/85-number-batch10-approved.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 10.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"10\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"10\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true.",
       "references": [
         {
-          "path": "artifacts/card-regeneration/batch-07/85-revision-v2.png",
-          "role": "edit target; preserve established character, composition and styling except requested changes"
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
         }
       ],
       "tool": "built-in image_gen",
       "styleProfile": "cat-png",
       "status": "approved",
-      "visualReview": "Flat blue-striped number10 pool ball with white caps and white numeral patch; glossy shading and glare removed.",
+      "visualReview": "Pool ball generated by adding the numeral to an exact blank SVG circle template; original PNG numeral style supplied separately.",
       "width": 1254,
       "height": 1254,
-      "bytes": 1134061,
-      "sha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8",
+      "bytes": 940339,
+      "sha256": "6beebf94c4d2384d5e5ddd401e7002ddaedbdfdbcdcd4754de2acd3242cfe690",
       "previousVersions": [
         {
           "id": "ja-v-877b9ba07a47",
@@ -1183,10 +1323,82 @@
           "bytes": 1300017,
           "sha256": "fee418cc4bc844851a8068a8076bb08636714bfc1ab29f64d9c569f0885a6ca9",
           "revisionRound": 2
+        },
+        {
+          "id": "ja-v-877b9ba07a47",
+          "meaning": "Ten",
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "prompt": "Use case: style-transfer. Edit the supplied number10 pool-ball artwork into a FLAT calm cartoon illustration. Keep the exact circular silhouette, bold deep-violet outer outline, broad BLUE central stripe, WHITE top and bottom caps, WHITE circular number patch centered in the blue stripe, and exact BLACK numeral '10'. Keep square1:1 canvas, centered ball and generous pure opaque WHITE background margins. Replace all glossy spherical gradients with solid flat colors. Remove every bright reflection, shine streak, white glare oval, bevel, soft shadow, lighting effect and dark edge shading. Use one uniform medium blue stripe fill and white caps/patch, clean simple contours. The stripe's top and bottom edges may retain their gentle curves to identify a pool ball, but the rendering must feel flat like the app's simple number-token cards. No other balls, props, quantity dots, labels, decorations, watermark or text besides essential10.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/85-revision-v2.png",
+              "role": "edit target; preserve established character, composition and styling except requested changes"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "approved",
+          "visualReview": "Flat blue-striped number10 pool ball with white caps and white numeral patch; glossy shading and glare removed.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1134061,
+          "sha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8",
+          "revisionRound": 3,
+          "imageDescription": "A flat blue-striped pool ball with white caps and a white number patch marked 10.",
+          "number": 85,
+          "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "approvedSourceSha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8"
+        },
+        {
+          "id": "ja-v-877b9ba07a47",
+          "meaning": "Ten",
+          "path": "artifacts/card-regeneration/batch-10/85-10-png-r4.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 10\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, white caps and broad colored horizontal stripe, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"10\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"10\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+              "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Regenerated front-facing pool ball with a round silhouette and opaque white circular number patch.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 907826,
+          "sha256": "1fb54bd756932978c4ce3c1d24c39d7f0f4f442f1b65a85f46587427de9ddb31",
+          "revisionRound": 3,
+          "imageDescription": "Regenerated front-facing pool ball with a round silhouette and opaque white circular number patch.",
+          "number": 85,
+          "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "approvedSourceSha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8",
+          "pngColorType": 6,
+          "transparentBackground": true,
+          "displayLabel": "10",
+          "numericValue": 10,
+          "userFeedback": "Regenerate pool balls with better circles; retain PNG style and numeral weight."
         }
       ],
-      "revisionRound": 3,
-      "imageDescription": "A flat blue-striped pool ball with white caps and a white number patch marked 10."
+      "revisionRound": 4,
+      "imageDescription": "A pool ball numbered 10.",
+      "pngColorType": 6,
+      "transparentBackground": true,
+      "displayLabel": "10",
+      "numericValue": 10,
+      "userFeedback": "Start with SVG circles and use them as input images to generate the pool-ball numbers. Keep the final illustrated PNG appearance.",
+      "geometryTemplatePath": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.png",
+      "geometryTemplateSha256": "aa9e639273ad8cfd1631caba327f87d12d75ffcc134e02aa0e5d618ea750e0ee",
+      "geometryTemplateSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.svg",
+      "geometryTemplateSvgSha256": "3189f406b806c314cf2a96de285ac1990a9b91819fa1ab4493f349a3254fd5d7",
+      "userApproval": {
+        "date": "2026-11-07",
+        "feedback": "Let's publish this set. Afterwards, prepare the next batch.",
+        "scope": "All33newnumericalcardsand5revisedearliernumberexamples,includingthecleanearliergreen6selectedinthereview."
+      },
+      "approvedRevisionSource": "artifacts/card-regeneration/batch-10/85-10-svg-guided-r5.png"
     }
   ],
   "status": "approved",
