@@ -23,7 +23,7 @@ flowchart TD
 
 | Profile | Reference | Status | Cards |
 | --- | --- | --- | ---: |
-| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 37 |
+| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 57 |
 
 A style trial is an independent root in the generation graph. It replaces the previous style only for its assigned cards until user review.
 
@@ -70,7 +70,7 @@ A style trial is an independent root in the generation graph. It replaces the pr
 3. Record feedback; revise the shared style, affected prompts and artwork before continuing. Invalidate references affected by those revisions.
 4. Only approved seed artwork becomes a downstream object/character reference. Match geometry, colors and proportions; never add the reference object to an unrelated scene.
 5. Unseeded components are shared prompt conventions, with no visual reference claimed. Establish and review a support reference before depending on a precise recurring design.
-6. Pick up to ten cards whose reference dependencies are ready. The later order in batches.json is provisional; regroup after feedback if necessary.
+6. Pick up to 25 cards whose reference dependencies are ready (the first six reviewed batches retain ten each). The later order in batches.json is provisional; regroup after feedback if necessary.
 7. Record exact generation prompts and reference paths in each batch manifest. Repeat the feedback gate after each batch.
 8. Semantic exclusions and previous review restrictions remain. App integration and real-device checks are separate work before activation.
 
@@ -91,7 +91,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-20cbd1c15a35 | 入り口 | Entrance | arrow, doorway |
 | ja-v-1d446778d33c | 大した | Great | style only |
 | ja-v-ddd9dca106e2 | 山 | Mountain | mountain |
-| ja-v-9e64feeea5ea | 口 | Mouth | style only |
+| ja-v-9e64feeea5ea | 口 | Mouth | style only; style:cat-png |
 | ja-v-0181fab128a1 | ふじ山 | Mt Fuji | mountain |
 | ja-v-d33ed6be2a48 | 九 | Nine | numeral |
 | ja-v-0d0163a40587 | 九つ | Nine Things | style only; style:cat-png |
@@ -133,7 +133,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-6eed6b905b8e | 二月 | February | calendar |
 | ja-v-a02edbda9f4c | 五日 | Fifth Day | calendar |
 | ja-v-61c516578fee | 五十 | Fifty | numeral |
-| ja-v-cf58c5cf08d9 | 火 | Fire | style only |
+| ja-v-cf58c5cf08d9 | 火 | Fire | style only; style:cat-png |
 | ja-v-d4473f87e438 | 五 | Five | numeral |
 | ja-v-084edf1fdd10 | 五つ | Five Things | style only; style:cat-png |
 | ja-v-b066e78531d6 | 四 | Four | numeral |
@@ -144,7 +144,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-cbf0bc9a0df7 | おはよう | Good Morning | person, sun-moon-horizon |
 | ja-v-b1ff052549ed | 手 | Hand | hand |
 | ja-v-45b445caeb43 | 天 | Heavens | sun-moon-horizon |
-| ja-v-d5c177de5126 | ホテル | Hotel | style only |
+| ja-v-d5c177de5126 | ホテル | Hotel | style only; style:cat-png |
 | ja-v-a30018dbdb6b | 入力 | Input | style only |
 | ja-v-5849925b131d | 中 | Inside | ball |
 | ja-v-ed82bb95d4cc | 一月 | January | calendar |
@@ -187,7 +187,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-b2a9df4d0301 | 出る | To Exit | doorway, person |
 | ja-v-17e3177c62d5 | 立つ | To Stand | arrow, person |
 | ja-v-a5d390dc4805 | 木 | Tree | tree-plant |
-| ja-v-d0c9a070fa56 | 水中 | Underwater | style only |
+| ja-v-d0c9a070fa56 | 水中 | Underwater | style only; style:cat-png |
 | ja-v-8aeedc2d7a47 | 下手 | Unskillful | ball, person |
 | ja-v-afefe30bcb46 | 火山 | Volcano | mountain |
 | ja-v-28ddfdc9290c | 水 | Water | style only; style:cat-png |
@@ -205,7 +205,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-6eab3743dc93 | 中止 | Cancellation | calendar |
 | ja-v-7930a252da9b | 字 | Character | paper-book-pencil |
 | ja-v-887f569257fd | 市 | City | style only; style:cat-png |
-| ja-v-9ff5251e6f21 | コーヒー | Coffee | style only |
+| ja-v-9ff5251e6f21 | コーヒー | Coffee | style only; style:cat-png |
 | ja-v-a47e21265374 | 牛 | Cow | cow |
 | ja-v-18fe4d351abc | 方 | Direction | style only |
 | ja-v-56e27b2da5a6 | 戸 | Door | doorway |
@@ -224,7 +224,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-a76119b3c712 | 毛 | Fur | style only |
 | ja-v-575ec5f060f3 | 少女 | Girl | person |
 | ja-v-81e708aba22f | 半分 | Half | style only; style:cat-png |
-| ja-v-d605986c3af4 | 半 | Half | style only |
+| ja-v-d605986c3af4 | 半 | Half | style only; style:cat-png |
 | ja-v-3601c285284c | 心 | Heart | style only; style:cat-png |
 | ja-v-ad9975e17a50 | こんにちは | Hello | person |
 | ja-v-aad97415a910 | 大切 | Important | hand |
@@ -238,7 +238,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-89beba69de5a | 今 | Now | style only |
 | ja-v-08f79cb14fd4 | ～人 | Number Of People | diagram-convention, person |
 | ja-v-77d63b3ebde3 | 大人しい | Obedient | hand, person |
-| ja-v-e5fd15d61360 | 古い | Old | style only |
+| ja-v-e5fd15d61360 | 古い | Old | style only; style:cat-png |
 | ja-v-7bbba1a9506e | 十万 | One Hundred Thousand | numeral |
 | ja-v-eba7f0968101 | 一台 | One Machine | washer |
 | ja-v-032157e79367 | 人生 | One's Life | person |
@@ -274,22 +274,22 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-89fcef8e86d8 | 大気 | Atmosphere | style only |
 | ja-v-10791214b2c9 | 赤ちゃん | Baby | fabric |
 | ja-v-dbe24910365e | 竹 | Bamboo | tree-plant |
-| ja-v-c5425c81df8c | 竹の子 | Bamboo Shoot | style only |
+| ja-v-c5425c81df8c | 竹の子 | Bamboo Shoot | style only; style:cat-png |
 | ja-v-c22ee5be019b | 少年 | Boy | person |
 | ja-v-f8249679701c | 明るい | Bright | sun-moon-horizon |
-| ja-v-a4e5df148631 | 虫 | Bug | style only |
+| ja-v-a4e5df148631 | 虫 | Bug | style only; style:cat-png |
 | ja-v-f34264f6567c | 年内 | By The End Of The Year | arrow, calendar, paper-book-pencil |
 | ja-v-754e1f2ea742 | 子牛 | Calf | cow |
 | ja-v-d5bd6e2d7ad1 | 平気 | Calm | person |
 | ja-v-f71f9de56223 | 車 | Car | car-taxi |
 | ja-v-a39af9252454 | 中央 | Center | style only |
 | ja-v-7733c49a7e4b | 休日 | Day Off | calendar, paper-book-pencil, sun-moon-horizon |
-| ja-v-dca5c9fc5908 | 耳 | Ear | style only |
+| ja-v-dca5c9fc5908 | 耳 | Ear | style only; style:cat-png |
 | ja-v-72460e05df01 | 早い | Early | sun-moon-horizon |
 | ja-v-12f44a1311d1 | 元気 | Energy | person |
 | ja-v-1e808c7b4b4e | 気 | Energy | person |
 | ja-v-a98da0139f3a | 名人 | Expert | person |
-| ja-v-b90f6c64551b | 花火 | Fireworks | style only |
+| ja-v-b90f6c64551b | 花火 | Fireworks | style only; style:cat-png |
 | ja-v-16f8ed6ac847 | 先ず | First Of All | diagram-convention |
 | ja-v-51c2d1be305f | 一年生 | First Year Student | numeral, office-school, person |
 | ja-v-7707983a4026 | 五百 | Five Hundred | numeral |
@@ -306,7 +306,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-ff89f69552ed | 主人 | Head Of Household | character-relationship, house, person |
 | ja-v-39903246fd52 | 穴 | Hole | style only; style:cat-png |
 | ja-v-96a032e15dda | 百 | Hundred | numeral |
-| ja-v-d19a39e4af55 | 氷 | Ice | style only |
+| ja-v-d19a39e4af55 | 氷 | Ice | style only; style:cat-png |
 | ja-v-cfd55bbfe51c | 丸ごと | In Its Entirety | style only |
 | ja-v-cd6ac2533de0 | 一気に | In One Go | arrow |
 | ja-v-dd1d6132fe3c | 車内 | Inside The Car | car-taxi, person |
@@ -335,7 +335,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-5b451287c47e | 人気 | Popular | person |
 | ja-v-36897e1da4ac | 切手 | Postage Stamp | tree-plant, paper-book-pencil |
 | ja-v-3144539c83d3 | 赤 | Red | style only; style:cat-png |
-| ja-v-a595b5ca5679 | 赤い | Red | style only |
+| ja-v-a595b5ca5679 | 赤い | Red | style only; style:cat-png |
 | ja-v-ebdaef0f21db | 休み | Rest | person |
 | ja-v-9553e3adbc2a | 右手 | Right Hand | hand |
 | ja-v-42bb1cd7b3cd | 二世 | Second Generation | character-relationship, tree-plant |
@@ -377,7 +377,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-2850b5703e8b | 天気 | Weather | sun-moon-horizon |
 | ja-v-ac3939d71e1e | 平日 | Weekdays | calendar |
 | ja-v-67d99c6ae58e | どれ | Which One | style only |
-| ja-v-d67a7d3dacc9 | 白い | White | style only |
+| ja-v-d67a7d3dacc9 | 白い | White | style only; style:cat-png |
 | ja-v-8438eda3cfc0 | 年 | Year | calendar |
 | ja-v-1a43c96593cb | ２０１１年 | Year 2011 | calendar, numeral |
 | ja-v-9e9dbd477486 | 年中 | Year Round | calendar |
@@ -457,9 +457,9 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-9f59b44e2237 | 一回 | One Time | style only |
 | ja-v-a557e263cea4 | 空車 | Vacant taxi | car-taxi |
 | ja-v-50579c22e90d | 本来 | Originally | tree-plant |
-| ja-v-cbb4297f3dd7 | 平行 | Parallel | style only |
+| ja-v-cbb4297f3dd7 | 平行 | Parallel | style only; style:cat-png |
 | ja-v-c244e16d1e60 | 体力 | Physical Strength | person |
-| ja-v-b1b10c2f6445 | 豚 | Pig | style only |
+| ja-v-b1b10c2f6445 | 豚 | Pig | style only; style:cat-png |
 | ja-v-7e87850c448d | 雨 | Rain | style only; style:cat-png |
 | ja-v-79f8de04d6f6 | 本当 | Reality | apple |
 | ja-v-f2e8d12a8234 | 近年 | Recent Years | calendar |
@@ -470,8 +470,8 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-6777bcda7f1e | 学年 | School Grade | office-school |
 | ja-v-d0c8497457bd | 皮 | Skin | style only |
 | ja-v-19bd7db9d5d0 | 空 | Sky | style only; style:cat-png |
-| ja-v-d42b5be1c4ad | 水色 | Sky Blue | style only |
-| ja-v-b37750755344 | 音 | Sound | style only |
+| ja-v-d42b5be1c4ad | 水色 | Sky Blue | style only; style:cat-png |
+| ja-v-b37750755344 | 音 | Sound | style only; style:cat-png |
 | ja-v-f14d2c0c7442 | 四角 | Square | style only |
 | ja-v-9567eaf8fe9b | 学生 | Student | paper-book-pencil, person |
 | ja-v-cb7a14590e8e | 日光 | Sunlight | sun-moon-horizon, tree-plant |
@@ -503,7 +503,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-eeb8ecca964f | 分かる | To Understand | style only |
 | ja-v-0c5871310c83 | 行き | Train Direction | style only |
 | ja-v-fa26a112a479 | 走行 | Traveling | car-taxi |
-| ja-v-ea952b83ac80 | 三角 | Triangle | style only |
+| ja-v-ea952b83ac80 | 三角 | Triangle | style only; style:cat-png |
 | ja-v-9910372c1964 | 大学 | University | office-school |
 | ja-v-b2f08cdf5ab4 | 今まで | Until Now | calendar |
 | ja-v-ceb7b2a20cbd | 谷 | Valley | mountain |
@@ -514,7 +514,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-115fd51b8d38 | 何 | What | style only |
 | ja-v-5f4c2dcf05ba | 何月 | What Month | calendar, paper-book-pencil |
 | ja-v-d2a96c6d5f6a | 何年 | What Year | calendar, paper-book-pencil |
-| ja-v-d215c2071f47 | 麦 | Wheat | style only |
+| ja-v-d215c2071f47 | 麦 | Wheat | style only; style:cat-png |
 | ja-v-b4d0a55dd496 | 一生 | Whole Life | person |
 | ja-v-4638d2c26682 | 社内 | Within The Company | office-school, person |
 | ja-v-ac1e4f6bee13 | 毛糸 | Wool Yarn | ball, yarn-thread-rope |

@@ -95,4 +95,6 @@ Media and dependencies retain separate terms. Current practice speech is AI-gene
 
 ## Card regeneration
 
-[Approved artwork and prompt workflow](content/card-regeneration/README.md) tracks issue #72. Batches 01–04 contain 40 approved selected cards, with original variants and feedback preserved. The selected illustrations are active in practice; [activation provenance](content/card-regeneration/activation.json) records their delivery hashes.
+[Approved artwork and prompt workflow](content/card-regeneration/README.md) tracks issue #72. Batches 01–06 contain 60 approved selected cards, with original variants and feedback preserved. The selected illustrations are active in practice; [activation provenance](content/card-regeneration/activation.json) records their delivery hashes.
+
+To activate reviewed batches on macOS: `node scripts/content/activate-approved-artwork.mjs batch-05 batch-06`, then `npm run content:library`. Approval and source hashes are checked before image mappings change.

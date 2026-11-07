@@ -360,13 +360,15 @@ def prepare():
     write('graph.json', graph)
     # Deterministic order prefers simple scenes and families whose seeds are ready.
     remaining = [c for c in cards if c['id'] not in BATCH_ONE]
+    batch_size = feedback.get('generationBatchSize', 10)
+    assert isinstance(batch_size, int) and 1 <= batch_size <= 25
     remaining.sort(key=lambda c: (c['requiresContext'] or c['reviewRequired'], len(c['components']), c['components'], c['id']))
     batches = [{'id': 'batch-01', 'status': 'ready-to-generate', 'cardIds': BATCH_ONE, 'purpose': 'Reusable foundations and visual-direction feedback'}]
     manifest_path = ROOT / 'artifacts/card-regeneration/batch-01/manifest.json'
     if manifest_path.exists():
         batches[0]['status'] = json.loads(manifest_path.read_text())['status']
-    for start in range(0, len(remaining), 10):
-        batches.append({'id': f'batch-{len(batches)+1:02}', 'status': 'blocked-on-previous-feedback', 'cardIds': [c['id'] for c in remaining[start:start+10]], 'purpose': 'Provisional order; recompute references and apply feedback before generation'})
+    for start in range(0, len(remaining), batch_size):
+        batches.append({'id': f'batch-{len(batches)+1:02}', 'status': 'blocked-on-previous-feedback', 'cardIds': [c['id'] for c in remaining[start:start+batch_size]], 'purpose': 'Provisional order; recompute references and apply feedback before generation'})
     # Reviewed/generated batches retain their membership as family dependencies evolve.
     staged = []
     for manifest in sorted((ROOT / 'artifacts/card-regeneration').glob('batch-*/manifest.json')):
@@ -377,12 +379,12 @@ def prepare():
         staged_ids = {i for batch in staged for i in batch['cardIds']}
         pending = [c['id'] for c in remaining if c['id'] not in staged_ids]
         batches = staged
-        for start in range(0, len(pending), 10):
+        for start in range(0, len(pending), batch_size):
             batches.append({'id': f'batch-{len(batches)+1:02}', 'status': 'blocked-on-previous-feedback',
-                            'cardIds': pending[start:start+10], 'purpose': 'Provisional order; apply feedback before generation'})
+                            'cardIds': pending[start:start+batch_size], 'purpose': 'Provisional order; apply feedback before generation'})
     resolve_batch_statuses(batches, ROOT / 'artifacts/card-regeneration')
     write('prompts.json', {'schemaVersion': 1, 'issue': 72, 'style': STYLE, 'cards': cards})
-    write('batches.json', {'batchSize': 10, 'gate': 'Generate one batch; inspect; collect user feedback; revise prompts, component references and affected artwork; only then unlock the next batch.', 'batches': batches})
+    write('batches.json', {'batchSize': batch_size, 'gate': 'Generate one batch; inspect; collect user feedback; revise prompts, component references and affected artwork; only then unlock the next batch.', 'batches': batches})
     lines = ['# Card prompt changes', '', 'Tracked in [issue #72](https://github.com/ajhconway/kikimashta/issues/72). All cards remain staged for visual and user review. No practice eligibility is activated by these files.', '', 'The source concepts are preserved in `source-prompts.json`. `prompts.json` contains the complete revised generation prompts and provisional gloss clarifications. Existing review flags and notes remain. Appearance fixes do not resolve semantic ambiguity.', '']
     lookup = {c['id']: c for c in cards}
     for f in findings:

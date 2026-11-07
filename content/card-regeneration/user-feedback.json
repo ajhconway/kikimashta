@@ -42,7 +42,27 @@
     "ja-v-7c4d1abbdd61",
     "ja-v-7e87850c448d",
     "ja-v-96e39ee9cb18",
-    "ja-v-81e708aba22f"
+    "ja-v-81e708aba22f",
+    "ja-v-9e64feeea5ea",
+    "ja-v-9ff5251e6f21",
+    "ja-v-a4e5df148631",
+    "ja-v-a595b5ca5679",
+    "ja-v-b1b10c2f6445",
+    "ja-v-b37750755344",
+    "ja-v-b90f6c64551b",
+    "ja-v-c5425c81df8c",
+    "ja-v-cf58c5cf08d9",
+    "ja-v-cbb4297f3dd7",
+    "ja-v-d19a39e4af55",
+    "ja-v-d215c2071f47",
+    "ja-v-d5c177de5126",
+    "ja-v-d605986c3af4",
+    "ja-v-dca5c9fc5908",
+    "ja-v-d0c9a070fa56",
+    "ja-v-d42b5be1c4ad",
+    "ja-v-d67a7d3dacc9",
+    "ja-v-e5fd15d61360",
+    "ja-v-ea952b83ac80"
   ],
   "requests": [],
   "conceptOverrides": {
@@ -66,7 +86,14 @@
     "ja-v-bb85f028d944": "Exactly two separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
     "ja-v-084edf1fdd10": "Exactly five separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
     "ja-v-df70a01acaec": "Exactly six separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
-    "ja-v-947395f42397": "Exactly four separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects."
+    "ja-v-947395f42397": "Exactly four separate identical-size cube toy blocks matching approved card 38: same three-quarter orientation, rounded edges, violet contours, soft shading and gold/pink/lavender/sky-blue colors. Arrange with clear white gaps for counting, no overlap, numerals, letters, symbols, shadows or extra objects.",
+    "ja-v-cbb4297f3dd7": "Two straight parallel lines viewed in one-point perspective, widely separated in the lower foreground and receding forward toward the same vanishing point on a thin upper horizon. Lavender fill, violet outlines, line thickness diminishes with distance; lines never cross. Plain white background; no railroad ties, road, landscape, arrows or labels. Both lines continue through the bottom canvas edge into the foreground, visibly cropped there without rounded end caps; preserve horizon and vanishing point.",
+    "ja-v-d605986c3af4": "One front-facing circle divided by a straight vertical diameter into two equal semicircles, left half soft app lavender (#AF86EF) and right half white, violet outline and divider. Exactly half colored; no fruit, labels or numerals.",
+    "ja-v-d0c9a070fa56": "One small house fully submerged well below a visible wavy water surface, surrounded by pale blue water and a few rising bubbles. Golden walls, lavender roof, one door, two windows; no fish. White outer margins.",
+    "ja-v-d42b5be1c4ad": "Pale sky-blue counterpart of approved blue splash-and-brush card: same splash, small splash droplets and brush layout, golden handle and violet contours. All paint is light sky blue. White background; no standalone water drop, pot or palette.",
+    "ja-v-d67a7d3dacc9": "White counterpart of approved blue splash-and-brush card: same splash, small splash droplets and brush layout; all paint WHITE on a pure WHITE full-card background. Violet outlines provide separation. Golden brush handle, lavender ferrule; no tinted backdrop, palette, pot or standalone water drop.",
+    "ja-v-e5fd15d61360": "One visibly old broken rusty bicycle, full side view: faded lavender frame with broad rust patches, buckled front wheel and missing/bent spokes, flat sagging tires, broken chain hanging loose, and torn saddle exposing stuffing. Plain white background; no chest, treasure or cobweb.",
+    "ja-v-ea952b83ac80": "One plain upright equilateral triangle with lavender fill and a uniform violet outline. Exactly three straight sides and simple corners; no vertex dots, circles, labels, markers or extra shapes."
   },
   "componentGuidance": {
     "ball": "Shared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.",
@@ -149,6 +176,31 @@
       "batch": "batch-04",
       "round": 2,
       "feedback": "31, 32, and 39 approved. 33 composition approved; recolor yellow to app-appropriate lavender."
+    },
+    {
+      "batch": "batch-05",
+      "round": 1,
+      "feedback": "All good except parallel should be two lines going forward to the horizon using perspective."
+    },
+    {
+      "batch": "batch-05",
+      "round": 2,
+      "feedback": "Extend both perspective lines through the bottom edge into the foreground."
+    },
+    {
+      "batch": "batch-06",
+      "round": 1,
+      "feedback": "Underwater house; sky blue follows color convention without water drop; white follows color convention on light purple background; rusty old bicycle; simple triangle."
+    },
+    {
+      "batch": "batch-06",
+      "round": 2,
+      "feedback": "Bicycle needs to be more obviously old and broken."
+    },
+    {
+      "batch": "batch-06",
+      "round": 3,
+      "feedback": "White background preferred for white paint; outlines sufficient."
     }
   ],
   "acceptedWithKnownIssues": {
@@ -180,6 +232,40 @@
       "referencePath": "artifacts/card-regeneration/batch-04/31-winter-v2.png",
       "status": "approved",
       "guidance": "Reuse identical forked deciduous tree at left, bench at right, oval land footprint and camera across winter/spring/summer/autumn. Change only foliage, weather and ground covering. Winter reference approved; other seasons are not yet in the current bank."
+    },
+    "red-paint": {
+      "seedCard": "ja-v-3144539c83d3",
+      "memberIds": [
+        "ja-v-3144539c83d3",
+        "ja-v-a595b5ca5679"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-03/22-red.png",
+      "status": "approved",
+      "guidance": "These entries teach the same red paint concept. Reuse approved red splash/brush artwork exactly, with no paint pot."
+    },
+    "half-circle": {
+      "seedCard": "ja-v-81e708aba22f",
+      "memberIds": [
+        "ja-v-81e708aba22f",
+        "ja-v-d605986c3af4"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/33-half-v3.png",
+      "status": "approved",
+      "guidance": "Reuse approved lavender half-circle for both half entries; same meaning and visual convention."
+    },
+    "paint-colors": {
+      "seedCard": "ja-v-10e568715d3a",
+      "memberIds": [
+        "ja-v-10e568715d3a",
+        "ja-v-3144539c83d3",
+        "ja-v-a595b5ca5679",
+        "ja-v-d42b5be1c4ad",
+        "ja-v-d67a7d3dacc9"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
+      "status": "approved",
+      "guidance": "Use approved splash-and-brush layout for named colors, recoloring paint only; golden handle, violet contours, no pot or palette. White paint uses white background; violet contours provide separation. Sky blue and white revisions approved."
     }
-  }
+  },
+  "generationBatchSize": 25
 }

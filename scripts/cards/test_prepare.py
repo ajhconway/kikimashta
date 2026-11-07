@@ -7,6 +7,19 @@ from prepare import components_for, ROLE_CONSTRAINTS, resolve_batch_statuses, BA
 
 
 class ReuseTests(unittest.TestCase):
+
+    def test_twenty_five_card_batches_preserve_complete_coverage_and_feedback_gate(self):
+        root = Path(__file__).resolve().parents[2]
+        data = root / 'content/card-regeneration'
+        batches = json.loads((data / 'batches.json').read_text())
+        self.assertEqual(batches['batchSize'], 25)
+        self.assertTrue(all(len(b['cardIds']) == 10 for b in batches['batches'][:6]))
+        self.assertEqual(len(batches['batches'][6]['cardIds']), 25)
+        ids = [i for b in batches['batches'] for i in b['cardIds']]
+        self.assertEqual(len(ids), 445)
+        self.assertEqual(len(set(ids)), 445)
+        self.assertEqual(batches['batches'][7]['status'], 'blocked-on-previous-feedback')
+
     def test_every_generation_prompt_ends_with_current_background_policy(self):
         root = Path(__file__).resolve().parents[2]
         cards = json.loads((root / 'content/card-regeneration/prompts.json').read_text())['cards']
@@ -15,6 +28,7 @@ class ReuseTests(unittest.TestCase):
             self.assertTrue(card['prompt'].endswith(BACKGROUND_POLICY), card['id'])
         self.assertIn('transparent_background=true', BACKGROUND_POLICY)
         self.assertIn('Preserve opaque white subject details', BACKGROUND_POLICY)
+
 
     def test_counting_family_reuses_approved_blocks_and_preserves_reviewed_batches(self):
         root = Path(__file__).resolve().parents[2]
