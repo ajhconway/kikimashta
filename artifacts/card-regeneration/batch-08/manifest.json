@@ -9,56 +9,173 @@
     {
       "id": "ja-v-b066e78531d6",
       "meaning": "Four",
-      "path": "artifacts/card-regeneration/batch-08/86-four.png",
-      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One flat circular PURPLE pool ball numbered4. Solid purple fill, violet contour, one WHITE circular number patch with exact BLACK numeral4, matching the approved flat10ball rendering. No glossy gradients, reflections, dots or other balls.\nShared design convention: Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.\nProduction composition: One flat circular PURPLE pool ball numbered4. Solid purple fill, violet contour, one WHITE circular number patch with exact BLACK numeral4, matching the approved flat10ball rendering. No glossy gradients, reflections, dots or other balls.\nInput reference roles: image1is style only. Any further reference provides only the stated design. Transparent outer canvas takes priority over all older white backgrounds in references. One square1:1 vocabulary illustration, full subject within generous margins, no answer captions, watermark or enclosing frame. Only essential numeral/currency/date glyphs specifically requested may appear.",
+      "path": "artifacts/card-regeneration/batch-08/86-number-batch10-approved.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: one pool-ball number vocabulary card, 4.\nInput image 1: PRIMARY EDIT TARGET, a blank exact SVG circle rendered as PNG. This is the authoritative template for the round outer silhouette, position, scale, violet contour, circular white patch and flat colors/stripe. \nInput image 2: NUMERAL STYLE REFERENCE ONLY. Use its softly rounded bold black illustrated numeral style; do not copy its ball outline or distort the template geometry.\nPrimary request: add ONLY the exact black numeral \"4\" centered inside the blank white circle of image 1. The complete label must fit comfortably within the patch. Match the rounded numeral styling from image 2. Keep an illustrated PNG finish.\nPreserve image 1's circular exterior and circular white number patch: equal width and height, same center, constant radius, smooth uniform round contour. Do not redraw as an oval, tilted disk, egg, squashed or irregular silhouette. Preserve the blank template's palette, stripe/caps if present, flat fills, margins, opaque white subject details, and uniform exterior outline. No extra shading, gloss, perspective, shadow, decoration, text or objects.\nSquare 1:1 PNG. Genuinely transparent outside the ball. Fully opaque colored fill, white patch and white caps. Exact sole text \"4\". No checkerboard, background rectangle, halo, caption or watermark. transparent_background=true.",
       "references": [
         {
-          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
-          "role": "illustration style only; exclude cat, headphones, logo, lettering and scenery"
+          "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.png",
+          "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
         },
         {
-          "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
-          "role": "approved flat pool-ball rendering; change to solid purple4, remove blue stripe and white caps"
+          "path": "artifacts/card-regeneration/batch-08/86-four.png",
+          "role": "numeral style reference only; retain original rounded black illustrated numeral appearance, not old ball geometry"
         }
       ],
       "tool": "built-in image_gen",
       "styleProfile": "cat-png",
       "status": "approved",
-      "visualReview": "Purple pool ball with a white number patch displaying4; subtle tonal color within violet contour.",
-      "imageDescription": "A purple pool ball numbered 4.",
+      "visualReview": "Pool ball generated by adding the numeral to an exact blank SVG circle template; original PNG numeral style supplied separately.",
+      "imageDescription": "A pool ball numbered 4.",
       "transparentBackground": true,
       "width": 1254,
       "height": 1254,
-      "bytes": 909882,
-      "sha256": "28277e339149fde76ac2784883e524b31335025233dcf31cc0fb3094fbab548b",
-      "pngColorType": 6
+      "bytes": 900945,
+      "sha256": "b366b5c16988e1a7817b4d8c6f26d88ee6209560b7c6e58b711a80da91426881",
+      "pngColorType": 6,
+      "previousVersions": [
+        {
+          "id": "ja-v-b066e78531d6",
+          "meaning": "Four",
+          "path": "artifacts/card-regeneration/batch-08/86-four.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One flat circular PURPLE pool ball numbered4. Solid purple fill, violet contour, one WHITE circular number patch with exact BLACK numeral4, matching the approved flat10ball rendering. No glossy gradients, reflections, dots or other balls.\nShared design convention: Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.\nProduction composition: One flat circular PURPLE pool ball numbered4. Solid purple fill, violet contour, one WHITE circular number patch with exact BLACK numeral4, matching the approved flat10ball rendering. No glossy gradients, reflections, dots or other balls.\nInput reference roles: image1is style only. Any further reference provides only the stated design. Transparent outer canvas takes priority over all older white backgrounds in references. One square1:1 vocabulary illustration, full subject within generous margins, no answer captions, watermark or enclosing frame. Only essential numeral/currency/date glyphs specifically requested may appear.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "illustration style only; exclude cat, headphones, logo, lettering and scenery"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+              "role": "approved flat pool-ball rendering; change to solid purple4, remove blue stripe and white caps"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "approved",
+          "visualReview": "Purple pool ball with a white number patch displaying4; subtle tonal color within violet contour.",
+          "imageDescription": "A purple pool ball numbered 4.",
+          "transparentBackground": true,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 909882,
+          "sha256": "28277e339149fde76ac2784883e524b31335025233dcf31cc0fb3094fbab548b",
+          "pngColorType": 6,
+          "number": 86,
+          "revisesManifest": "artifacts/card-regeneration/batch-08/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-08/86-four.png",
+          "approvedSourceSha256": "28277e339149fde76ac2784883e524b31335025233dcf31cc0fb3094fbab548b"
+        },
+        {
+          "id": "ja-v-b066e78531d6",
+          "meaning": "Four",
+          "path": "artifacts/card-regeneration/batch-10/86-4-png-r4.png",
+          "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 4\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"4\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"4\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-08/86-four.png",
+              "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Regenerated front-facing pool ball with a round silhouette and opaque white circular number patch.",
+          "imageDescription": "Regenerated front-facing pool ball with a round silhouette and opaque white circular number patch.",
+          "transparentBackground": true,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 956041,
+          "sha256": "4001251dc63f2d42514ebf3dc0e8515eaf95197a2245e9c1a9d92382c00411e6",
+          "pngColorType": 6,
+          "number": 86,
+          "revisesManifest": "artifacts/card-regeneration/batch-08/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-08/86-four.png",
+          "approvedSourceSha256": "28277e339149fde76ac2784883e524b31335025233dcf31cc0fb3094fbab548b",
+          "revisionRound": 3,
+          "displayLabel": "4",
+          "numericValue": 4,
+          "userFeedback": "Regenerate pool balls with better circles; retain PNG style and numeral weight."
+        }
+      ],
+      "revisionRound": 4,
+      "displayLabel": "4",
+      "numericValue": 4,
+      "userFeedback": "Start with SVG circles and use them as input images to generate the pool-ball numbers. Keep the final illustrated PNG appearance.",
+      "geometryTemplatePath": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.png",
+      "geometryTemplateSha256": "32fc33b67e47025ef1342a91e211559d0f55caf7329a58e0e2a0629e7e3e5c0d",
+      "geometryTemplateSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.svg",
+      "geometryTemplateSvgSha256": "178479d77c8b876055847f92e6b2f3607d1e500a497eedca970dac18b1a50459",
+      "userApproval": {
+        "date": "2026-11-07",
+        "feedback": "Let's publish this set. Afterwards, prepare the next batch.",
+        "scope": "All33newnumericalcardsand5revisedearliernumberexamples,includingthecleanearliergreen6selectedinthereview."
+      },
+      "approvedRevisionSource": "artifacts/card-regeneration/batch-10/86-4-svg-guided-r5.png"
     },
     {
       "id": "ja-v-e368e3aa9bf6",
       "meaning": "Sixteen",
-      "path": "artifacts/card-regeneration/batch-08/87-sixteen.png",
-      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One plain lavender circular number token (#AF86EF), deep-violet contour and large exact dark-violet numeral16. Match approved50token geometry and restrained shading; this palette indicates16–99. No other marks, dots, beads or numbers.\nShared design convention: Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.\nProduction composition: One plain lavender circular number token (#AF86EF), deep-violet contour and large exact dark-violet numeral16. Match approved50token geometry and restrained shading; this palette indicates16–99. No other marks, dots, beads or numbers.\nInput reference roles: image1is style only. Any further reference provides only the stated design. Transparent outer canvas takes priority over all older white backgrounds in references. One square1:1 vocabulary illustration, full subject within generous margins, no answer captions, watermark or enclosing frame. Only essential numeral/currency/date glyphs specifically requested may appear.",
+      "path": "artifacts/card-regeneration/batch-08/87-number-batch10-approved.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 16\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"16\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"16\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true.",
       "references": [
         {
-          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
-          "role": "illustration style only; exclude cat, headphones, logo, lettering and scenery"
-        },
-        {
-          "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
-          "role": "approved lavender16–99number-token design; replace50with exact16"
+          "path": "artifacts/card-regeneration/batch-08/87-sixteen.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
         }
       ],
       "tool": "built-in image_gen",
       "styleProfile": "cat-png",
       "status": "approved",
-      "visualReview": "Lavender circular token displaying16 in large violet numerals.",
-      "imageDescription": "A lavender circular token displaying 16.",
+      "visualReview": "Illustrated number badge with slightly lighter rounded lettering; contour and palette preserved.",
+      "imageDescription": "A circular number badge displaying 16.",
       "transparentBackground": true,
       "width": 1254,
       "height": 1254,
-      "bytes": 1101630,
-      "sha256": "4b15206a3b6f5f1586937b9178b43cad70db3793213060b289dc379f1cb78c98",
-      "pngColorType": 6
+      "bytes": 1183125,
+      "sha256": "a136fa8d27dc0abbadb74e55835d705bcf662e33fe232e9df1ed11dbd1a0ea2a",
+      "pngColorType": 6,
+      "previousVersions": [
+        {
+          "id": "ja-v-e368e3aa9bf6",
+          "meaning": "Sixteen",
+          "path": "artifacts/card-regeneration/batch-08/87-sixteen.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One plain lavender circular number token (#AF86EF), deep-violet contour and large exact dark-violet numeral16. Match approved50token geometry and restrained shading; this palette indicates16–99. No other marks, dots, beads or numbers.\nShared design convention: Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.\nProduction composition: One plain lavender circular number token (#AF86EF), deep-violet contour and large exact dark-violet numeral16. Match approved50token geometry and restrained shading; this palette indicates16–99. No other marks, dots, beads or numbers.\nInput reference roles: image1is style only. Any further reference provides only the stated design. Transparent outer canvas takes priority over all older white backgrounds in references. One square1:1 vocabulary illustration, full subject within generous margins, no answer captions, watermark or enclosing frame. Only essential numeral/currency/date glyphs specifically requested may appear.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "illustration style only; exclude cat, headphones, logo, lettering and scenery"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
+              "role": "approved lavender16–99number-token design; replace50with exact16"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "approved",
+          "visualReview": "Lavender circular token displaying16 in large violet numerals.",
+          "imageDescription": "A lavender circular token displaying 16.",
+          "transparentBackground": true,
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1101630,
+          "sha256": "4b15206a3b6f5f1586937b9178b43cad70db3793213060b289dc379f1cb78c98",
+          "pngColorType": 6,
+          "number": 87,
+          "revisesManifest": "artifacts/card-regeneration/batch-08/manifest.json",
+          "approvedSourcePath": "artifacts/card-regeneration/batch-08/87-sixteen.png",
+          "approvedSourceSha256": "4b15206a3b6f5f1586937b9178b43cad70db3793213060b289dc379f1cb78c98"
+        }
+      ],
+      "revisionRound": 3,
+      "displayLabel": "16",
+      "numericValue": 16,
+      "userFeedback": "Make badge lettering a touch less heavy; retain the PNG appearance.",
+      "userApproval": {
+        "date": "2026-11-07",
+        "feedback": "Let's publish this set. Afterwards, prepare the next batch.",
+        "scope": "All33newnumericalcardsand5revisedearliernumberexamples,includingthecleanearliergreen6selectedinthereview."
+      },
+      "approvedRevisionSource": "artifacts/card-regeneration/batch-10/87-16-png-r4.png"
     },
     {
       "id": "ja-v-9910372c1964",

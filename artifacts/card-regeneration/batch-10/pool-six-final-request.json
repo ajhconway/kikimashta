@@ -1,0 +1,24 @@
+{
+  "issue": 72,
+  "round": 4,
+  "request": {
+    "number": 140,
+    "id": "ja-v-06ef406f5569",
+    "value": 6,
+    "label": "6",
+    "path": "artifacts/card-regeneration/batch-10/140-6-svg-guided-r7.png",
+    "ids": [
+      "ja-v-06ef406f5569"
+    ],
+    "numbers": [
+      140
+    ],
+    "references": [
+      {
+        "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-6-blank-v2.png",
+        "role": "primary and only edit target; exact SVG circles with opaque muted green fill and opaque white patch"
+      }
+    ],
+    "prompt": "Edit this exact blank pool-ball image. Add a single centered BLACK numeral \"6\" to its white circular patch. Use a bold softly rounded illustrated numeral, large but with a comfortable white margin, matching the earlier pool-ball PNG style.\nKeep the existing clean circular silhouette, violet outline, opaque muted emerald-green fill (#27865C), circular opaque white patch, scale, margins and transparent exterior unchanged. Green fill must be uniformly solid and opaque all the way across the ball; no green-screen removal inside the object. No texture, rings, stippling, holes, noise, gradients, light effects, shadow, glare or decoration. Change only the blank patch by adding the black 6.\nOutput a square PNG with genuine transparency outside the outer circle only, and fully opaque interiors. Sole text: \"6\"."
+  }
+}

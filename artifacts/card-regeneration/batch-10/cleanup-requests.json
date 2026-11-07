@@ -1,0 +1,60 @@
+{
+  "issue": 72,
+  "batch": "batch-10",
+  "tool": "built-in image_gen",
+  "reason": "Correct three visible gray/translucent paper artifacts discovered at quiz size.",
+  "requests": [
+    {
+      "number": 164,
+      "id": "ja-v-7b2351210462",
+      "path": "artifacts/card-regeneration/batch-10/164-sixth-day-v2.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/164-sixth-day.png",
+          "role": "edit target: preserve numeral/calendar and repair white paper only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary calendar card, date 6\nInput image1: current calendar, edit target.\nPrimary request: REPAIR THE WHITE PAPER. Remove every gray smudge, pale blob, textured crater, erased-number ghost and semi-transparent hole from the front sheet. The paper must be clean, smooth OPAQUE PURE WHITE, RGB255,255,255 and alpha255, everywhere inside the sheet except its dark-violet numeral 6, dashed perforation and lavender curled corner. The interior page is a SOLID FILLED white surface, never see-through. Keep the one exact numeral \"6\" unchanged, same size, position and shape. Preserve golden binding, both lavender rings, purple outlines, stacked paper edges, curled lower-right corner, camera and square canvas. Do not alter the correct numeral, add another digit, shadow, haze, texture or mark.\nTransparency: transparent ONLY OUTSIDE the calendar silhouette. The paper and other subject fills must remain fully opaque. No white rectangular outer background or checkerboard. Complete calendar within generous margins, readable at145px. No logo, caption, watermark or frame. transparent_background=true.",
+      "description": "Clean opaque-white pull-off calendar with large violet date 6; gray paper marks removed."
+    },
+    {
+      "number": 165,
+      "id": "ja-v-0655c242d1db",
+      "path": "artifacts/card-regeneration/batch-10/165-seventh-day-v2.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/165-seventh-day.png",
+          "role": "edit target: preserve numeral/calendar and repair white paper only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary calendar card, date 7\nInput image1: current calendar, edit target.\nPrimary request: REPAIR THE WHITE PAPER. Remove every gray smudge, pale blob, textured crater, erased-number ghost and semi-transparent hole from the front sheet. The paper must be clean, smooth OPAQUE PURE WHITE, RGB255,255,255 and alpha255, everywhere inside the sheet except its dark-violet numeral 7, dashed perforation and lavender curled corner. The interior page is a SOLID FILLED white surface, never see-through. Keep the one exact numeral \"7\" unchanged, same size, position and shape. Preserve golden binding, both lavender rings, purple outlines, stacked paper edges, curled lower-right corner, camera and square canvas. Do not alter the correct numeral, add another digit, shadow, haze, texture or mark.\nTransparency: transparent ONLY OUTSIDE the calendar silhouette. The paper and other subject fills must remain fully opaque. No white rectangular outer background or checkerboard. Complete calendar within generous margins, readable at145px. No logo, caption, watermark or frame. transparent_background=true.",
+      "description": "Clean opaque-white pull-off calendar with large violet date 7; gray paper marks removed."
+    },
+    {
+      "number": 167,
+      "id": "ja-v-9acbf1542642",
+      "path": "artifacts/card-regeneration/batch-10/167-ninth-day-v2.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/167-ninth-day.png",
+          "role": "edit target: preserve numeral/calendar and repair white paper only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary calendar card, date 9\nInput image1: current calendar, edit target.\nPrimary request: REPAIR THE WHITE PAPER. Remove every gray smudge, pale blob, textured crater, erased-number ghost and semi-transparent hole from the front sheet. The paper must be clean, smooth OPAQUE PURE WHITE, RGB255,255,255 and alpha255, everywhere inside the sheet except its dark-violet numeral 9, dashed perforation and lavender curled corner. The interior page is a SOLID FILLED white surface, never see-through. Keep the one exact numeral \"9\" unchanged, same size, position and shape. Preserve golden binding, both lavender rings, purple outlines, stacked paper edges, curled lower-right corner, camera and square canvas. Do not alter the correct numeral, add another digit, shadow, haze, texture or mark.\nTransparency: transparent ONLY OUTSIDE the calendar silhouette. The paper and other subject fills must remain fully opaque. No white rectangular outer background or checkerboard. Complete calendar within generous margins, readable at145px. No logo, caption, watermark or frame. transparent_background=true.",
+      "description": "Clean opaque-white pull-off calendar with large violet date 9; gray paper marks removed."
+    },
+    {
+      "number": 165,
+      "id": "ja-v-0655c242d1db",
+      "path": "artifacts/card-regeneration/batch-10/165-seventh-day-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-08/110-fourth-day-v2.png",
+          "role": "clean approved pull-off calendar geometry and illustration style only; create a fresh date7card"
+        }
+      ],
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary illustration for date 7\nInput image1: clean approved pull-off calendar, object design reference.\nCreate a fresh matching pull-off calendar for the SEVENTH DAY. One huge dark-violet numeral '7' centered on a smooth, flawless, uniformly OPAQUE PURE-WHITE front paper sheet. Golden rounded top binding, two lavender rings, dashed purple perforation line, stacked paper edges and lavender curled lower-right corner match the reference. The paper's fill is solid white and fully opaque throughout, as in the reference. The only ink on the blank white page is the single '7' and the perforation. Rounded violet contours and restrained shading on binding/rings, uniform flat white on the main sheet. Full calendar centered in a SQUARE 1:1 canvas with clear margins, legible at145px. Transparent only OUTSIDE the calendar silhouette; opaque fills inside. Exact text: '7'. No other numeral, decoration, texture, shadow, caption, logo or frame. transparent_background=true.",
+      "description": "Clean pull-off calendar with exact violet date7on a fully opaque white front sheet."
+    }
+  ]
+}

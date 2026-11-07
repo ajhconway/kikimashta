@@ -1,0 +1,309 @@
+{
+  "issue": 72,
+  "batch": "batch-10",
+  "numberStart": 136,
+  "scope": "Remaining cardinal numbers, generic ～つthings counts and numbered calendar dates; previously approved family members are comparison references.",
+  "records": [
+    {
+      "id": "ja-v-5d8047464c5d",
+      "category": "numbers",
+      "value": 1,
+      "status": "not-generated",
+      "number": 136
+    },
+    {
+      "id": "ja-v-7fc81b0ddd17",
+      "category": "numbers",
+      "value": 2,
+      "status": "not-generated",
+      "number": 137
+    },
+    {
+      "id": "ja-v-1bedf722c04a",
+      "category": "numbers",
+      "value": 3,
+      "status": "not-generated",
+      "number": 138
+    },
+    {
+      "id": "ja-v-b066e78531d6",
+      "category": "numbers",
+      "value": 4,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-d4473f87e438",
+      "category": "numbers",
+      "value": 5,
+      "status": "not-generated",
+      "number": 139
+    },
+    {
+      "id": "ja-v-06ef406f5569",
+      "category": "numbers",
+      "value": 6,
+      "status": "not-generated",
+      "number": 140
+    },
+    {
+      "id": "ja-v-eda9a40b0c91",
+      "category": "numbers",
+      "value": 7,
+      "status": "not-generated",
+      "number": 141
+    },
+    {
+      "id": "ja-v-f6ed7c17c0d5",
+      "category": "numbers",
+      "value": 8,
+      "status": "not-generated",
+      "number": 142
+    },
+    {
+      "id": "ja-v-d33ed6be2a48",
+      "category": "numbers",
+      "value": 9,
+      "status": "not-generated",
+      "number": 143
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "category": "numbers",
+      "value": 10,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-e368e3aa9bf6",
+      "category": "numbers",
+      "value": 16,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-81893a02b959",
+      "category": "numbers",
+      "value": 40,
+      "status": "not-generated",
+      "number": 144
+    },
+    {
+      "id": "ja-v-61c516578fee",
+      "category": "numbers",
+      "value": 50,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-96a032e15dda",
+      "category": "numbers",
+      "value": 100,
+      "status": "not-generated",
+      "number": 145
+    },
+    {
+      "id": "ja-v-190aae33ad24",
+      "category": "numbers",
+      "value": 200,
+      "status": "not-generated",
+      "number": 146
+    },
+    {
+      "id": "ja-v-f623bb19b846",
+      "category": "numbers",
+      "value": 400,
+      "status": "not-generated",
+      "number": 147
+    },
+    {
+      "id": "ja-v-7707983a4026",
+      "category": "numbers",
+      "value": 500,
+      "status": "not-generated",
+      "number": 148
+    },
+    {
+      "id": "ja-v-86ef0852f80f",
+      "category": "numbers",
+      "value": 1000,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-f0588b6224d0",
+      "category": "numbers",
+      "value": 4000,
+      "status": "not-generated",
+      "number": 149
+    },
+    {
+      "id": "ja-v-1807218bf360",
+      "category": "numbers",
+      "value": 10000,
+      "status": "not-generated",
+      "number": 150
+    },
+    {
+      "id": "ja-v-a872d5e674a2",
+      "category": "numbers",
+      "value": 10000,
+      "status": "not-generated",
+      "number": 151
+    },
+    {
+      "id": "ja-v-5f29c187353e",
+      "category": "numbers",
+      "value": 20000,
+      "status": "not-generated",
+      "number": 152
+    },
+    {
+      "id": "ja-v-7bbba1a9506e",
+      "category": "numbers",
+      "value": 100000,
+      "status": "not-generated",
+      "number": 153
+    },
+    {
+      "id": "ja-v-823616f3288f",
+      "category": "numbers",
+      "value": 1000000,
+      "status": "not-generated",
+      "number": 154
+    },
+    {
+      "id": "ja-v-277587e6fa07",
+      "category": "things",
+      "value": 1,
+      "status": "not-generated",
+      "number": 155
+    },
+    {
+      "id": "ja-v-bb85f028d944",
+      "category": "things",
+      "value": 2,
+      "status": "not-generated",
+      "number": 156
+    },
+    {
+      "id": "ja-v-8b887bc8af0c",
+      "category": "things",
+      "value": 3,
+      "status": "not-generated",
+      "number": 157
+    },
+    {
+      "id": "ja-v-947395f42397",
+      "category": "things",
+      "value": 4,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-084edf1fdd10",
+      "category": "things",
+      "value": 5,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-df70a01acaec",
+      "category": "things",
+      "value": 6,
+      "status": "not-generated",
+      "number": 158
+    },
+    {
+      "id": "ja-v-f6bc974a7405",
+      "category": "things",
+      "value": 7,
+      "status": "not-generated",
+      "number": 159
+    },
+    {
+      "id": "ja-v-6c9351ae67e6",
+      "category": "things",
+      "value": 8,
+      "status": "not-generated",
+      "number": 160
+    },
+    {
+      "id": "ja-v-0d0163a40587",
+      "category": "things",
+      "value": 9,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-56d52b7869ab",
+      "category": "dates",
+      "value": 2,
+      "status": "not-generated",
+      "number": 161
+    },
+    {
+      "id": "ja-v-b0489d428339",
+      "category": "dates",
+      "value": 3,
+      "status": "not-generated",
+      "number": 162
+    },
+    {
+      "id": "ja-v-13ea3220cde0",
+      "category": "dates",
+      "value": 4,
+      "status": "approved",
+      "number": null
+    },
+    {
+      "id": "ja-v-a02edbda9f4c",
+      "category": "dates",
+      "value": 5,
+      "status": "not-generated",
+      "number": 163
+    },
+    {
+      "id": "ja-v-7b2351210462",
+      "category": "dates",
+      "value": 6,
+      "status": "not-generated",
+      "number": 164
+    },
+    {
+      "id": "ja-v-0655c242d1db",
+      "category": "dates",
+      "value": 7,
+      "status": "not-generated",
+      "number": 165
+    },
+    {
+      "id": "ja-v-f50fcf40e898",
+      "category": "dates",
+      "value": 8,
+      "status": "not-generated",
+      "number": 166
+    },
+    {
+      "id": "ja-v-9acbf1542642",
+      "category": "dates",
+      "value": 9,
+      "status": "not-generated",
+      "number": 167
+    },
+    {
+      "id": "ja-v-da2913ad7e4c",
+      "category": "dates",
+      "value": 10,
+      "status": "not-generated",
+      "number": 168
+    },
+    {
+      "id": "ja-v-08e3c50181be",
+      "category": "dates",
+      "value": 20,
+      "status": "approved",
+      "number": null
+    }
+  ]
+}

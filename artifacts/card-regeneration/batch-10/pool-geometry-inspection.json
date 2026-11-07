@@ -1,0 +1,495 @@
+{
+  "method": "Chrome canvas alpha>=128 boundary sampled around bounding-box center. Raster geometry is measured, not assumed exact from SVG input.",
+  "assets": [
+    {
+      "number": 136,
+      "value": 1,
+      "path": "artifacts/card-regeneration/batch-10/136-1-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            86,
+            97,
+            1153,
+            1167
+          ],
+          "widthHeightRatio": 0.9971988795518207,
+          "rmsRadiusDeviationPct": 0.7854110522402643,
+          "maxRadiusDeviationPct": 1.757977489748306,
+          "opaqueWhitePixels": 151789
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            81,
+            96,
+            1153,
+            1173
+          ],
+          "widthHeightRatio": 0.9953617810760668,
+          "rmsRadiusDeviationPct": 0.7686169891628092,
+          "maxRadiusDeviationPct": 1.9686008019239372,
+          "opaqueWhitePixels": 145675
+        }
+      }
+    },
+    {
+      "number": 137,
+      "value": 2,
+      "path": "artifacts/card-regeneration/batch-10/137-2-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            87,
+            97,
+            1155,
+            1170
+          ],
+          "widthHeightRatio": 0.9953445065176909,
+          "rmsRadiusDeviationPct": 0.6664304099613232,
+          "maxRadiusDeviationPct": 1.593904311104698,
+          "opaqueWhitePixels": 133075
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            78,
+            80,
+            1165,
+            1172
+          ],
+          "widthHeightRatio": 0.9954254345837146,
+          "rmsRadiusDeviationPct": 0.5159545639008006,
+          "maxRadiusDeviationPct": 0.9987685608472651,
+          "opaqueWhitePixels": 129024
+        }
+      }
+    },
+    {
+      "number": 138,
+      "value": 3,
+      "path": "artifacts/card-regeneration/batch-10/138-3-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            86,
+            96,
+            1154,
+            1172
+          ],
+          "widthHeightRatio": 0.9925719591457753,
+          "rmsRadiusDeviationPct": 0.8463090066428992,
+          "maxRadiusDeviationPct": 2.062273449092775,
+          "opaqueWhitePixels": 129639
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            70,
+            73,
+            1165,
+            1172
+          ],
+          "widthHeightRatio": 0.9963636363636363,
+          "rmsRadiusDeviationPct": 0.5783849655954814,
+          "maxRadiusDeviationPct": 1.3698132298818662,
+          "opaqueWhitePixels": 124849
+        }
+      }
+    },
+    {
+      "number": 86,
+      "value": 4,
+      "path": "artifacts/card-regeneration/batch-10/86-4-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            86,
+            100,
+            1155,
+            1179
+          ],
+          "widthHeightRatio": 0.9907407407407407,
+          "rmsRadiusDeviationPct": 0.6911170371888122,
+          "maxRadiusDeviationPct": 1.358721268604606,
+          "opaqueWhitePixels": 137018
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            86,
+            98,
+            1157,
+            1176
+          ],
+          "widthHeightRatio": 0.9935125115848007,
+          "rmsRadiusDeviationPct": 0.5780855096005826,
+          "maxRadiusDeviationPct": 1.4108276990740691,
+          "opaqueWhitePixels": 126285
+        }
+      }
+    },
+    {
+      "number": 139,
+      "value": 5,
+      "path": "artifacts/card-regeneration/batch-10/139-5-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            80,
+            96,
+            1155,
+            1171
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.8490697848495771,
+          "maxRadiusDeviationPct": 2.1781962388258527,
+          "opaqueWhitePixels": 131664
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            82,
+            95,
+            1152,
+            1163
+          ],
+          "widthHeightRatio": 1.0018709073900842,
+          "rmsRadiusDeviationPct": 0.6583478362843136,
+          "maxRadiusDeviationPct": 1.4923607188495644,
+          "opaqueWhitePixels": 113388
+        }
+      }
+    },
+    {
+      "number": 140,
+      "value": 6,
+      "path": "artifacts/card-regeneration/batch-10/140-6-png-r4.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            84,
+            99,
+            1155,
+            1169
+          ],
+          "widthHeightRatio": 1.0009337068160598,
+          "rmsRadiusDeviationPct": 0.7553181046596499,
+          "maxRadiusDeviationPct": 1.8527613423944926,
+          "opaqueWhitePixels": 128704
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            84,
+            99,
+            1155,
+            1169
+          ],
+          "widthHeightRatio": 1.0009337068160598,
+          "rmsRadiusDeviationPct": 0.7553181046596499,
+          "maxRadiusDeviationPct": 1.8527613423944926,
+          "opaqueWhitePixels": 128704
+        }
+      }
+    },
+    {
+      "number": 141,
+      "value": 7,
+      "path": "artifacts/card-regeneration/batch-10/141-7-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            86,
+            98,
+            1154,
+            1171
+          ],
+          "widthHeightRatio": 0.9953445065176909,
+          "rmsRadiusDeviationPct": 0.6321242925819031,
+          "maxRadiusDeviationPct": 1.496689639811076,
+          "opaqueWhitePixels": 146931
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            71,
+            79,
+            1167,
+            1170
+          ],
+          "widthHeightRatio": 1.0045787545787546,
+          "rmsRadiusDeviationPct": 0.5090366110110459,
+          "maxRadiusDeviationPct": 1.1986990215421918,
+          "opaqueWhitePixels": 144306
+        }
+      }
+    },
+    {
+      "number": 142,
+      "value": 8,
+      "path": "artifacts/card-regeneration/batch-10/142-8-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 115228
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            84,
+            96,
+            1157,
+            1172
+          ],
+          "widthHeightRatio": 0.9972144846796658,
+          "rmsRadiusDeviationPct": 0.6882409763321127,
+          "maxRadiusDeviationPct": 1.5475714293655969,
+          "opaqueWhitePixels": 124055
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            75,
+            79,
+            1166,
+            1171
+          ],
+          "widthHeightRatio": 0.9990850869167429,
+          "rmsRadiusDeviationPct": 0.3360835436773241,
+          "maxRadiusDeviationPct": 0.7601656892759517,
+          "opaqueWhitePixels": 113020
+        }
+      }
+    },
+    {
+      "number": 143,
+      "value": 9,
+      "path": "artifacts/card-regeneration/batch-10/143-9-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 269225
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            88,
+            96,
+            1155,
+            1172
+          ],
+          "widthHeightRatio": 0.9916434540389972,
+          "rmsRadiusDeviationPct": 0.8834904105689859,
+          "maxRadiusDeviationPct": 1.6276224184879118,
+          "opaqueWhitePixels": 410309
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            78,
+            69,
+            1164,
+            1166
+          ],
+          "widthHeightRatio": 0.9899817850637522,
+          "rmsRadiusDeviationPct": 0.576342352672032,
+          "maxRadiusDeviationPct": 1.126507837178208,
+          "opaqueWhitePixels": 341100
+        }
+      }
+    },
+    {
+      "number": 85,
+      "value": 10,
+      "path": "artifacts/card-regeneration/batch-10/85-10-svg-guided-r5.png",
+      "metrics": {
+        "template": {
+          "width": 1024,
+          "height": 1024,
+          "bounds": [
+            66,
+            66,
+            957,
+            957
+          ],
+          "widthHeightRatio": 1,
+          "rmsRadiusDeviationPct": 0.05770788557085896,
+          "maxRadiusDeviationPct": 0.12120358188441338,
+          "opaqueWhitePixels": 269225
+        },
+        "previous": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            93,
+            101,
+            1152,
+            1170
+          ],
+          "widthHeightRatio": 0.9906542056074766,
+          "rmsRadiusDeviationPct": 0.843144394799987,
+          "maxRadiusDeviationPct": 1.5089077344018331,
+          "opaqueWhitePixels": 388169
+        },
+        "generated": {
+          "width": 1254,
+          "height": 1254,
+          "bounds": [
+            75,
+            78,
+            1168,
+            1167
+          ],
+          "widthHeightRatio": 1.003669724770642,
+          "rmsRadiusDeviationPct": 0.5882325828041346,
+          "maxRadiusDeviationPct": 1.1843660996883079,
+          "opaqueWhitePixels": 336377
+        }
+      }
+    }
+  ]
+}

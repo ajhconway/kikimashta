@@ -1,0 +1,471 @@
+{
+  "issue": 72,
+  "batch": "batch-10",
+  "round": 3,
+  "tool": "built-in image_gen",
+  "request": "Slightly lighter lettering on non-pool badges; regenerate pool balls with better circles.",
+  "requests": [
+    {
+      "number": 136,
+      "id": "ja-v-5d8047464c5d",
+      "value": 1,
+      "label": "1",
+      "path": "artifacts/card-regeneration/batch-10/136-1-png-r4.png",
+      "ids": [
+        "ja-v-5d8047464c5d"
+      ],
+      "numbers": [
+        136
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/136-one.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 1\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"1\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"1\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 137,
+      "id": "ja-v-7fc81b0ddd17",
+      "value": 2,
+      "label": "2",
+      "path": "artifacts/card-regeneration/batch-10/137-2-png-r4.png",
+      "ids": [
+        "ja-v-7fc81b0ddd17"
+      ],
+      "numbers": [
+        137
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/137-two.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 2\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"2\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"2\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 138,
+      "id": "ja-v-1bedf722c04a",
+      "value": 3,
+      "label": "3",
+      "path": "artifacts/card-regeneration/batch-10/138-3-png-r4.png",
+      "ids": [
+        "ja-v-1bedf722c04a"
+      ],
+      "numbers": [
+        138
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/138-three.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 3\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"3\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"3\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 86,
+      "id": "ja-v-b066e78531d6",
+      "value": 4,
+      "label": "4",
+      "path": "artifacts/card-regeneration/batch-10/86-4-png-r4.png",
+      "ids": [
+        "ja-v-b066e78531d6"
+      ],
+      "numbers": [
+        86
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-08/86-four.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 4\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"4\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"4\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 139,
+      "id": "ja-v-d4473f87e438",
+      "value": 5,
+      "label": "5",
+      "path": "artifacts/card-regeneration/batch-10/139-5-png-r4.png",
+      "ids": [
+        "ja-v-d4473f87e438"
+      ],
+      "numbers": [
+        139
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/139-five.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 5\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"5\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"5\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 140,
+      "id": "ja-v-06ef406f5569",
+      "value": 6,
+      "label": "6",
+      "path": "artifacts/card-regeneration/batch-10/140-6-png-r4.png",
+      "ids": [
+        "ja-v-06ef406f5569"
+      ],
+      "numbers": [
+        140
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/140-six.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 6\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"6\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"6\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 141,
+      "id": "ja-v-eda9a40b0c91",
+      "value": 7,
+      "label": "7",
+      "path": "artifacts/card-regeneration/batch-10/141-7-png-r4.png",
+      "ids": [
+        "ja-v-eda9a40b0c91"
+      ],
+      "numbers": [
+        141
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/141-seven.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 7\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"7\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"7\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 142,
+      "id": "ja-v-f6ed7c17c0d5",
+      "value": 8,
+      "label": "8",
+      "path": "artifacts/card-regeneration/batch-10/142-8-png-r4.png",
+      "ids": [
+        "ja-v-f6ed7c17c0d5"
+      ],
+      "numbers": [
+        142
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/142-eight.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 8\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"8\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"8\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 143,
+      "id": "ja-v-d33ed6be2a48",
+      "value": 9,
+      "label": "9",
+      "path": "artifacts/card-regeneration/batch-10/143-9-png-r4.png",
+      "ids": [
+        "ja-v-d33ed6be2a48"
+      ],
+      "numbers": [
+        143
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/143-nine.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 9\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, white caps and broad colored horizontal stripe, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"9\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"9\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 85,
+      "id": "ja-v-877b9ba07a47",
+      "value": 10,
+      "label": "10",
+      "path": "artifacts/card-regeneration/batch-10/85-10-png-r4.png",
+      "ids": [
+        "ja-v-877b9ba07a47"
+      ],
+      "numbers": [
+        85
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+          "role": "original PNG style, color, numeral and stripe reference; regenerate with circular geometry"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: pool-ball vocabulary card 10\nInput image1: current PNG, appearance reference.\nRegenerate this ONE pool ball with a geometrically REGULAR CIRCULAR OUTER SILHOUETTE. Look STRAIGHT ON, orthographic FRONT VIEW, equal height and width, symmetrical round shape, constant radius and a clean uniform smooth violet outline. Make a ball, not an oval, tilted disk, egg shape, squashed sphere, bulging shape or irregular hand-drawn contour.\nKeep its existing ball color, white caps and broad colored horizontal stripe, centered opaque WHITE CIRCULAR numeral patch, and exact BLACK numeral \"10\" in the same heavy rounded lettering as the PNG. The white patch must also be circular and face directly toward the viewer. Keep the same ball-to-canvas scale and illustration style. Flat colored fill with no new shading or perspective distortion. Only requested improvement is a more accurate ROUND outline and patch. Preserve the numeral's original weight.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"10\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 87,
+      "id": "ja-v-e368e3aa9bf6",
+      "value": 16,
+      "label": "16",
+      "path": "artifacts/card-regeneration/batch-10/87-16-png-r4.png",
+      "ids": [
+        "ja-v-e368e3aa9bf6"
+      ],
+      "numbers": [
+        87
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-08/87-sixteen.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 16\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"16\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"16\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 144,
+      "id": "ja-v-81893a02b959",
+      "value": 40,
+      "label": "40",
+      "path": "artifacts/card-regeneration/batch-10/144-40-png-r4.png",
+      "ids": [
+        "ja-v-81893a02b959"
+      ],
+      "numbers": [
+        144
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/144-forty.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 40\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"40\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"40\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 83,
+      "id": "ja-v-61c516578fee",
+      "value": 50,
+      "label": "50",
+      "path": "artifacts/card-regeneration/batch-10/83-50-png-r4.png",
+      "ids": [
+        "ja-v-61c516578fee"
+      ],
+      "numbers": [
+        83
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 50\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"50\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"50\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 145,
+      "id": "ja-v-96a032e15dda",
+      "value": 100,
+      "label": "100",
+      "path": "artifacts/card-regeneration/batch-10/145-100-png-r4.png",
+      "ids": [
+        "ja-v-96a032e15dda"
+      ],
+      "numbers": [
+        145
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/145-hundred.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 100\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"100\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"100\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 146,
+      "id": "ja-v-190aae33ad24",
+      "value": 200,
+      "label": "200",
+      "path": "artifacts/card-regeneration/batch-10/146-200-png-r4.png",
+      "ids": [
+        "ja-v-190aae33ad24"
+      ],
+      "numbers": [
+        146
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/146-two-hundred.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 200\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"200\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"200\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 147,
+      "id": "ja-v-f623bb19b846",
+      "value": 400,
+      "label": "400",
+      "path": "artifacts/card-regeneration/batch-10/147-400-png-r4.png",
+      "ids": [
+        "ja-v-f623bb19b846"
+      ],
+      "numbers": [
+        147
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/147-four-hundred.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 400\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"400\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"400\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 148,
+      "id": "ja-v-7707983a4026",
+      "value": 500,
+      "label": "500",
+      "path": "artifacts/card-regeneration/batch-10/148-500-png-r4.png",
+      "ids": [
+        "ja-v-7707983a4026"
+      ],
+      "numbers": [
+        148
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/148-five-hundred.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 500\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. \nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"500\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"500\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 84,
+      "id": "ja-v-86ef0852f80f",
+      "value": 1000,
+      "label": "1K",
+      "path": "artifacts/card-regeneration/batch-10/84-1k-png-r4.png",
+      "ids": [
+        "ja-v-86ef0852f80f"
+      ],
+      "numbers": [
+        84
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/84-1k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 1K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"1K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"1K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 149,
+      "id": "ja-v-f0588b6224d0",
+      "value": 4000,
+      "label": "4K",
+      "path": "artifacts/card-regeneration/batch-10/149-4k-png-r4.png",
+      "ids": [
+        "ja-v-f0588b6224d0"
+      ],
+      "numbers": [
+        149
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/149-4k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 4K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"4K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"4K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 150,
+      "id": "ja-v-1807218bf360",
+      "value": 10000,
+      "label": "10K",
+      "path": "artifacts/card-regeneration/batch-10/150-10k-png-r4.png",
+      "ids": [
+        "ja-v-1807218bf360",
+        "ja-v-a872d5e674a2"
+      ],
+      "numbers": [
+        150,
+        151
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/150-10k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 10K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"10K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"10K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 152,
+      "id": "ja-v-5f29c187353e",
+      "value": 20000,
+      "label": "20K",
+      "path": "artifacts/card-regeneration/batch-10/152-20k-png-r4.png",
+      "ids": [
+        "ja-v-5f29c187353e"
+      ],
+      "numbers": [
+        152
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/152-20k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 20K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"20K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"20K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 153,
+      "id": "ja-v-7bbba1a9506e",
+      "value": 100000,
+      "label": "100K",
+      "path": "artifacts/card-regeneration/batch-10/153-100k-png-r4.png",
+      "ids": [
+        "ja-v-7bbba1a9506e"
+      ],
+      "numbers": [
+        153
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/153-100k-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 100K\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and K must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"100K\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"100K\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    },
+    {
+      "number": 154,
+      "id": "ja-v-823616f3288f",
+      "value": 1000000,
+      "label": "1M",
+      "path": "artifacts/card-regeneration/batch-10/154-1m-png-r4.png",
+      "ids": [
+        "ja-v-823616f3288f"
+      ],
+      "numbers": [
+        154
+      ],
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/154-1m-illustrated-v3.png",
+          "role": "edit target; retain design and label, lighten lettering slightly only"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: number-badge vocabulary card 1M\nInput image1: current illustrated PNG, edit target.\nMake the LETTERING a touch LESS HEAVY: reduce the dark-violet ink thickness of the digits and uppercase suffix by approximately10–15percent. Retain the same softly rounded glyph design, generous lettering height, baseline, centering and spacing. Keep it confidently bold and illustrated; the change should be modest, not a thin or light font. The digits and M must have the same weight and height.\nDo not change the OUTER BADGE OUTLINE thickness, circular silhouette, colored fill, original soft interior shading, size or placement. Preserve the exact label \"1M\". Only adjust the lettering ink weight; all other parts stay the same.\nSquare1:1illustration with generous margins, complete centered silhouette, readable at145px. Preserve the illustrated PNGdesign language, rich violet contours and current colors. Exact label \"1M\". No other numbers, words, decoration, cast shadow, glossy glare, logo, frame or watermark. Genuinely transparent outside the subject silhouette, with fully opaque subject fills and white details. No painted white rectangle or checkerboard. transparent_background=true."
+    }
+  ]
+}

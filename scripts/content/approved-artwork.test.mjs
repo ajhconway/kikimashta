@@ -14,9 +14,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 135 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 135)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 135)
+test('all 168 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 168)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 168)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -70,5 +70,26 @@ test('legacy SVG regeneration preserves active raster files and their visual des
     for (const before of read(`content/visuals/${file}`)) {
       if (activation.assets.some(asset => asset.id === before.id)) assert.deepEqual(after.find(item => item.id === before.id), before)
     }
+  }
+})
+
+
+test('the five approved numerical reference replacements are selected in their original batches without duplicate activation records', () => {
+  const numerical = read('artifacts/card-regeneration/batch-10/manifest.json')
+  assert.equal(numerical.assets.length, 33)
+  assert.equal(numerical.approvedReferenceRevisions.length, 5)
+  assert.deepEqual(numerical.referenceRevisions, [])
+  for (const revision of numerical.approvedReferenceRevisions) {
+    const original = read(revision.promotedToManifest)
+    const selected = original.assets.find(asset => asset.id === revision.id)
+    assert.equal(selected.path, revision.promotedPath)
+    assert.equal(selected.sha256, revision.sha256)
+    assert.equal(selected.status, 'approved')
+    assert.ok(selected.previousVersions.some(old => old.path === revision.approvedSourcePath && old.sha256 === revision.approvedSourceSha256))
+    assert.deepEqual(readFileSync(new URL(selected.path, root)), readFileSync(new URL(revision.path, root)))
+    const records = activation.assets.filter(record => record.id === revision.id)
+    assert.equal(records.length, 1)
+    assert.equal(records[0].sourcePath, selected.path)
+    assert.equal(records[0].sourceSha256, selected.sha256)
   }
 })

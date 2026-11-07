@@ -1,0 +1,93 @@
+{
+  "issue": 72,
+  "batch": "batch-10",
+  "round": 2,
+  "tool": "built-in image_gen",
+  "request": "Restore preferred illustrated PNG style and consistent original typography; retain K/M labels.",
+  "requests": [
+    {
+      "number": 84,
+      "value": 1000,
+      "label": "1K",
+      "source": "batch-07/84-revision-v2.png",
+      "path": "artifacts/card-regeneration/batch-10/84-1k-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"1000\" with the compact label \"1K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, sky-blue fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"1K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    },
+    {
+      "number": 149,
+      "value": 4000,
+      "label": "4K",
+      "source": "batch-10/149-four-thousand.png",
+      "path": "artifacts/card-regeneration/batch-10/149-4k-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/149-four-thousand.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"4000\" with the compact label \"4K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, sky-blue fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"4K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    },
+    {
+      "number": 150,
+      "value": 10000,
+      "label": "10K",
+      "source": "batch-10/150-ten-thousand.png",
+      "path": "artifacts/card-regeneration/batch-10/150-10k-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/150-ten-thousand.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"10000\" with the compact label \"10K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, warm golden-yellow fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"10K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    },
+    {
+      "number": 152,
+      "value": 20000,
+      "label": "20K",
+      "source": "batch-10/152-twenty-thousand.png",
+      "path": "artifacts/card-regeneration/batch-10/152-20k-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/152-twenty-thousand.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"20000\" with the compact label \"20K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, warm golden-yellow fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"20K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    },
+    {
+      "number": 153,
+      "value": 100000,
+      "label": "100K",
+      "source": "batch-10/153-one-hundred-thousand.png",
+      "path": "artifacts/card-regeneration/batch-10/153-100k-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/153-one-hundred-thousand.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"100000\" with the compact label \"100K\". Keep the original illustrated number-badge appearance: rich deep-violet contour, warm golden-yellow fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase K must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"100K\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    },
+    {
+      "number": 154,
+      "value": 1000000,
+      "label": "1M",
+      "source": "batch-10/154-million.png",
+      "path": "artifacts/card-regeneration/batch-10/154-1m-illustrated-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-10/154-million.png",
+          "role": "original illustrated PNG edit target; preserve palette, contour, shading and heavy rounded typography"
+        }
+      ],
+      "prompt": "Use case: text-localization\nAsset type: one square vocabulary number card\nInput image1: original illustrated PNG, edit target.\nReplace only its large numeral \"1000000\" with the compact label \"1M\". Keep the original illustrated number-badge appearance: rich deep-violet contour, warm golden-yellow fill, soft restrained interior shading, and thick rounded dark-violet lettering. The new digit(s) and uppercase M must share the SAME HEAVY, SOFTLY ROUNDED LETTER STYLE as the original numeral, with consistent weight and height. This is illustrated lettering matching the original artwork. Keep the complete label on one line, centered and large, with comfortable margin inside the badge.\nPreserve the badge size, near-circular front-facing shape, placement, palette and shading. No extra numeral, punctuation, white patch, decorative object, shine streak, label or text. Exact text: \"1M\".\nSquare1:1canvas. Genuinely transparent outside the badge, no white rectangular background, checkerboard, shadow or halo. Subject fill remains opaque. Readable at145px. transparent_background=true."
+    }
+  ]
+}

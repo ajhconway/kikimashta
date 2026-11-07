@@ -1,0 +1,28 @@
+{
+  "issue": 72,
+  "round": 4,
+  "request": {
+    "number": 140,
+    "id": "ja-v-06ef406f5569",
+    "value": 6,
+    "label": "6",
+    "path": "artifacts/card-regeneration/batch-10/140-6-svg-guided-r6.png",
+    "ids": [
+      "ja-v-06ef406f5569"
+    ],
+    "numbers": [
+      140
+    ],
+    "references": [
+      {
+        "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-6-blank.png",
+        "role": "primary edit target; exact SVG circle geometry, outer contour, opaque white circular number patch, flat fill and stripe layout"
+      },
+      {
+        "path": "artifacts/card-regeneration/batch-10/139-5-svg-guided-r5.png",
+        "role": "clean rounded black numeral style reference only; change 5 to 6; do not copy orange color or ball geometry"
+      }
+    ],
+    "prompt": "Use case: precise-object-edit\nInput image 1: PRIMARY EDIT TARGET. This is a clean green blank pool ball from exact SVG circles, with opaque green fill, white circular number patch, violet contour, exact round geometry and transparent outside.\nInput image 2: NUMERAL STYLE ONLY. Match its softly rounded bold BLACK numeral lettering. Its numeral 5 becomes 6; do not copy its orange color.\nAdd ONLY the exact BLACK numeral \"6\" centered in the white patch of image 1. Preserve image 1's clean FLAT SOLID GREEN fill (#109437), exact circular exterior, circular opaque white patch, scale, placement and smooth violet outline. Every green area must be clean, uniform and fully opaque.\nAbsolutely NO texture, speckling, stippling, rings, circular artifacts, grain, gradients, shadows, glare, extra numbers, decoration or props. No repainting or distortion of the blank circle geometry. Final generated PNG should retain the illustrated rounded numeral appearance.\nSquare1:1 canvas. Genuine alpha transparency OUTSIDE the outer violet circle, and completely OPAQUE colored/white fills INSIDE the circle. Do not confuse the solid green fill with transparent background. No checkerboard or background rectangle. Exact sole text \"6\". transparent_background=true."
+  }
+}

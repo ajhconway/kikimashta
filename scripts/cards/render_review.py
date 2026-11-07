@@ -125,7 +125,9 @@ details{padding:12px 0;border-bottom:1px solid #ded5eb}summary{cursor:pointer}pr
         gallery = gallery.replace('Ten reusable foundations · Awaiting your feedback.', f'{approved_count} approved · {len(revised_panels)} revised cards awaiting your feedback.')
     if manifest.get('comparisonGallery'):
         comparison = html.escape(manifest['comparisonGallery'])
-        gallery = gallery.replace('<div class="grid">', f'<p>Cat PNG style trial · <a href="{comparison}">Compare the previous style</a></p><div class="grid">', 1)
+        label = html.escape(manifest.get('comparisonLabel', 'Compare the previous style'))
+        prefix = '' if manifest.get('comparisonLabel') else 'Cat PNG style trial · '
+        gallery = gallery.replace('<div class="grid">', f'<p>{prefix}<a href="{comparison}">{label}</a></p><div class="grid">', 1)
     gallery += ''.join(panels) + '</div></section>'
     if revised_panels:
         numbers = ', '.join(revised_numbers)
@@ -136,7 +138,8 @@ details{padding:12px 0;border-bottom:1px solid #ded5eb}summary{cursor:pointer}pr
     gallery += '<h2>At quiz size · 145px</h2><div class="small">' + ''.join(mini) + '</div>'
     gallery += '<h2>Review notes</h2>' + ''.join('<p>' + html.escape(note) + '</p>' for note in manifest.get('reviewNotes', []))
     gallery += ''.join(details) + '</main></html>'
-    (path.parent / 'review.html').write_text(gallery)
+    # Display prompts without trailing whitespace; exact generation text stays in the manifest.
+    (path.parent / 'review.html').write_text('\n'.join(line.rstrip() for line in gallery.split('\n')))
     path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     feedback_path = path.parent / 'feedback.md'
     if not feedback_path.exists():

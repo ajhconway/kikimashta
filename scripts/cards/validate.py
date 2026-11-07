@@ -2,11 +2,45 @@
 import json
 import hashlib
 import struct
+import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict, deque
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'content/card-regeneration'
+
+
+def validate_reference_selection(candidate, approved):
+    """A pending revision cannot replace a selection; promotion retains its history."""
+    assert candidate['id'] == approved['id']
+    assert approved['status'] == 'approved'
+    if candidate['status'] == 'approved':
+        assert approved['path'] == candidate['promotedPath']
+        assert approved['sha256'] == candidate['sha256']
+        assert any(old['path'] == candidate['approvedSourcePath']
+                   and old['sha256'] == candidate['approvedSourceSha256']
+                   for old in approved.get('previousVersions', [])), 'Promotion lost the previous approved artwork'
+    else:
+        assert candidate['status'] == 'awaiting-user-feedback'
+        assert approved['path'] == candidate['approvedSourcePath']
+        assert approved['sha256'] == candidate['approvedSourceSha256']
+
+
+def validate_svg_asset(asset):
+    source = ROOT / asset['sourceSvgPath']
+    raw = source.read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == asset['sourceSvgSha256']
+    svg = ET.fromstring(raw)
+    ns = {'svg': 'http://www.w3.org/2000/svg'}
+    assert svg.attrib['viewBox'] == '0 0 256 256'
+    assert svg.attrib['data-label'] == asset['displayLabel']
+    assert int(svg.attrib['data-value']) == asset['numericValue']
+    assert not svg.findall('.//svg:ellipse', ns), 'Number badge must be a circle'
+    assert not svg.findall('.//svg:text', ns), 'Saved SVG lettering must be self-contained'
+    circle = next(n for n in svg.findall('svg:circle', ns) if n.attrib.get('data-role') == 'outline')
+    assert [circle.attrib[k] for k in ['cx', 'cy', 'r', 'stroke-width']] == ['128', '128', '108', '7']
+    assert 'transform' not in circle.attrib, 'Circle geometry must not be stretched'
+    assert (ROOT / asset['renderSpecification']).is_file()
 
 
 def validate():
@@ -124,7 +158,7 @@ def validate():
         for asset in manifest['assets']:
             path = ROOT / asset['path']
             assert asset['id'] in ids and path.is_file(), asset
-            assert asset['prompt'] and asset['tool'] in {'built-in image_gen', 'reuse approved image'}
+            assert asset['prompt'] and asset['tool'] in {'built-in image_gen', 'reuse approved image', 'SVG renderer'}
             if asset['tool'] == 'reuse approved image':
                 sources = [source for source_file in filename.parent.parent.glob('batch-*/manifest.json')
                            for source in json.loads(source_file.read_text())['assets']
@@ -133,6 +167,8 @@ def validate():
                 source_path = ROOT / sources[0]['path']
                 assert source_path.read_bytes() == path.read_bytes(), 'Reused artwork must match approved source exactly'
                 assert asset['references'][0]['path'] == sources[0]['path']
+            if asset['tool'] == 'SVG renderer':
+                validate_svg_asset(asset)
             assert by_id[asset['id']]['artworkStatus'] == asset['status']
             if asset['id'] in feedback.get('approvedCardIds', []):
                 assert asset['status'] == 'approved', 'User approval was lost'
@@ -150,6 +186,24 @@ def validate():
                 assert struct.unpack('>II', raw[16:24]) == (asset['width'], asset['height'])
             for reference in asset['references']:
                 assert (ROOT / reference['path']).is_file()
+        # Revisions of earlier approved examples are candidates until the owner
+        # accepts them; they must not duplicate/reassign the generation schedule.
+        for candidate in manifest.get('referenceRevisions', []) + manifest.get('approvedReferenceRevisions', []):
+            assert candidate['id'] in feedback.get('approvedCardIds', [])
+            assert candidate['id'] not in asset_ids
+            approved_manifest = json.loads((ROOT / candidate['revisesManifest']).read_text())
+            approved = next(a for a in approved_manifest['assets'] if a['id'] == candidate['id'])
+            validate_reference_selection(candidate, approved)
+            assert by_id[candidate['id']]['artworkStatus'] == 'approved'
+            if candidate['tool'] == 'SVG renderer':
+                validate_svg_asset(candidate)
+            else:
+                assert candidate['tool'] == 'built-in image_gen'
+            raw = (ROOT / candidate['path']).read_bytes()
+            assert hashlib.sha256(raw).hexdigest() == candidate['sha256']
+            assert struct.unpack('>II', raw[16:24]) == (candidate['width'], candidate['height'])
+            for old in candidate.get('previousVersions', []):
+                assert hashlib.sha256((ROOT / old['path']).read_bytes()).hexdigest() == old['sha256']
         if manifest['status'] == 'awaiting-user-feedback':
             batch = next(b for b in batches if b['id'] == filename.parent.name)
             assert {a['id'] for a in manifest['assets']} == set(batch['cardIds'])

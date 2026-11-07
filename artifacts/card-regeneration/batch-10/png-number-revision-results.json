@@ -1,0 +1,56 @@
+[
+  {
+    "number": 84,
+    "path": "artifacts/card-regeneration/batch-10/84-1k-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-6320d534-562a-41a3-bdbf-a96c3e4de0de.png",
+    "sha256": "8654f95c81b0b43630ec56e54b058c0ba6d53aa71721c461200057b0b2d808ae",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1142631
+  },
+  {
+    "number": 149,
+    "path": "artifacts/card-regeneration/batch-10/149-4k-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-bdc6f2ac-8e61-4640-822c-0ea436a38ce6.png",
+    "sha256": "e315b209c95d47f8c5525cb42e78cb46f15aaa4b707d52e12367e77f25a41f8a",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1075857
+  },
+  {
+    "number": 150,
+    "path": "artifacts/card-regeneration/batch-10/150-10k-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-1d23e147-e802-40e0-a056-45d9f6ae699c.png",
+    "sha256": "e95d04a36d0296588c5197c65aba626ca3052c78b07f4a5dc9a4be5c93cc1ff0",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1087288
+  },
+  {
+    "number": 152,
+    "path": "artifacts/card-regeneration/batch-10/152-20k-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-3acc9a19-dabd-41a4-9d4e-4776997ac0dd.png",
+    "sha256": "ff9ea65697b3990d921fa5c07280d6cd69b150e069c696fc0afdd3990e36ed6d",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1099107
+  },
+  {
+    "number": 153,
+    "path": "artifacts/card-regeneration/batch-10/153-100k-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-9be234d9-75ba-4ce8-bc7a-6d657e2eff7a.png",
+    "sha256": "998deed12bb5f5d2bbfd3c558e19052fd79bcf138aea618f0f6868656f1671ec",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1146094
+  },
+  {
+    "number": 154,
+    "path": "artifacts/card-regeneration/batch-10/154-1m-illustrated-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-0a3c60f8-eec8-40e9-bb22-b9a34a3db306.png",
+    "sha256": "72f3861ccd80085f89c1a7a9eb00e34a8db1c976708267f54298c9bfe7ff847b",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1088632
+  }
+]

@@ -1,0 +1,672 @@
+{
+  "tool": "Chrome SVG renderer",
+  "assets": [
+    {
+      "id": "ja-v-5d8047464c5d",
+      "number": 136,
+      "value": 1,
+      "label": "1",
+      "color": "#ffd600",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-1-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-1-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/136-one.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 1,
+        "label": "1",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 113.09933437779546,
+          "y": 96.99998838081956,
+          "width": 29.801335532218218,
+          "height": 62.00000457465649
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-7fc81b0ddd17",
+      "number": 137,
+      "value": 2,
+      "label": "2",
+      "color": "#0057ed",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-2-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-2-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/137-two.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 2,
+        "label": "2",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.43661348894238,
+          "y": 96.99999812617898,
+          "width": 43.12678096443415,
+          "height": 62.00000187382102
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-1bedf722c04a",
+      "number": 138,
+      "value": 3,
+      "label": "3",
+      "color": "#ff1717",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-3-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-3-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/138-three.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 3,
+        "label": "3",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.8090789616108,
+          "y": 96.99999760836363,
+          "width": 42.38184356689453,
+          "height": 62.00000162422657
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-b066e78531d6",
+      "number": 86,
+      "value": 4,
+      "label": "4",
+      "color": "#7e22ce",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-4-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-4-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-08/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-08/86-four.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 4,
+        "label": "4",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 104.28807919472456,
+          "y": 96.99999616295099,
+          "width": 47.423844672739506,
+          "height": 62.0000047236681
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-d4473f87e438",
+      "number": 139,
+      "value": 5,
+      "label": "5",
+      "color": "#ff8900",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-5-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-5-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/139-five.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 5,
+        "label": "5",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.4110858514905,
+          "y": 96.99999256432056,
+          "width": 43.17782901227474,
+          "height": 62.00000884383917
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-06ef406f5569",
+      "number": 140,
+      "value": 6,
+      "label": "6",
+      "color": "#11943a",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-6-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-6-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/140-six.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 6,
+        "label": "6",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.36200293153524,
+          "y": 96.99998838081956,
+          "width": 43.27600319311023,
+          "height": 62.00000457465649
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-eda9a40b0c91",
+      "number": 141,
+      "value": 7,
+      "label": "7",
+      "color": "#800020",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-7-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-7-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/141-seven.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 7,
+        "label": "7",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.69668608903885,
+          "y": 97.00000056624413,
+          "width": 42.606635577976704,
+          "height": 62.00000073760748
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-f6ed7c17c0d5",
+      "number": 142,
+      "value": 8,
+      "label": "8",
+      "color": "#111111",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-8-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-8-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/142-eight.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 8,
+        "label": "8",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.50666496157646,
+          "y": 96.99999382719398,
+          "width": 42.9866698384285,
+          "height": 62.00000457465649
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-d33ed6be2a48",
+      "number": 143,
+      "value": 9,
+      "label": "9",
+      "color": "#ffd600",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-9-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-9-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/143-nine.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 9,
+        "label": "9",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 106.35380412638187,
+          "y": 96.9999995008111,
+          "width": 43.29239098727703,
+          "height": 62.00000162422657
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "number": 85,
+      "value": 10,
+      "label": "10",
+      "color": "#0057ed",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-10-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-10-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 10,
+        "label": "10",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 90.99999760836363,
+          "y": 102.83062271028757,
+          "width": 73.9999988079071,
+          "height": 50.33876730501652
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-e368e3aa9bf6",
+      "number": 87,
+      "value": 16,
+      "label": "16",
+      "color": "#af86ef",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-16-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-16-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-08/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-08/87-sixteen.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 16,
+        "label": "16",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 50.72800090163946,
+          "y": 75.99999015778303,
+          "width": 154.54400872439146,
+          "height": 104.00000587105751
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-81893a02b959",
+      "number": 144,
+      "value": 40,
+      "label": "40",
+      "color": "#af86ef",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-40-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-40-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/144-forty.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 40,
+        "label": "40",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 48.38145725429058,
+          "y": 76.00001682341099,
+          "width": 159.23707044124603,
+          "height": 103.99998977780342
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-61c516578fee",
+      "number": 83,
+      "value": 50,
+      "label": "50",
+      "color": "#af86ef",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-50-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-50-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-07/83-fifty.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 50,
+        "label": "50",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 50.86551198363304,
+          "y": 75.99999967217445,
+          "width": 154.26898610591888,
+          "height": 104.00000768899918
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-96a032e15dda",
+      "number": 145,
+      "value": 100,
+      "label": "100",
+      "color": "#ff85b5",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-100-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-100-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/145-hundred.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 100,
+        "label": "100",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 40.99999973922968,
+          "y": 89.84700094908476,
+          "width": 174.00001380592585,
+          "height": 76.30599145591259
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-190aae33ad24",
+      "number": 146,
+      "value": 200,
+      "label": "200",
+      "color": "#ff85b5",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-200-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-200-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/146-two-hundred.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 200,
+        "label": "200",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 41.00000241398811,
+          "y": 90.07497295737267,
+          "width": 174.0000253021717,
+          "height": 75.85005462169647
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-f623bb19b846",
+      "number": 147,
+      "value": 400,
+      "label": "400",
+      "color": "#ff85b5",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-400-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-400-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/147-four-hundred.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 400,
+        "label": "400",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 41.00000076368451,
+          "y": 90.77414744719863,
+          "width": 174.0000116713345,
+          "height": 74.45169102400541
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-7707983a4026",
+      "number": 148,
+      "value": 500,
+      "label": "500",
+      "color": "#ff85b5",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-500-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-500-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/148-five-hundred.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 500,
+        "label": "500",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 40.999999683350325,
+          "y": 90.06849329546094,
+          "width": 174.0000213496387,
+          "height": 75.86299914866686
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-86ef0852f80f",
+      "number": 84,
+      "value": 1000,
+      "label": "1K",
+      "color": "#91d7ed",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-1000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-1000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-07/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 1000,
+        "label": "1K",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 42.28232095390558,
+          "y": 75.99999327212572,
+          "width": 171.43536322563887,
+          "height": 104.0000042617321
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-f0588b6224d0",
+      "number": 149,
+      "value": 4000,
+      "label": "4K",
+      "color": "#91d7ed",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-4000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-4000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/149-four-thousand.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 4000,
+        "label": "4K",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 40.999998442828655,
+          "y": 77.33077188581228,
+          "width": 173.99999747425318,
+          "height": 101.33845415711403
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-a872d5e674a2",
+      "number": 151,
+      "value": 10000,
+      "label": "10K",
+      "color": "#ffe178",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-10000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-10000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/150-ten-thousand.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 10000,
+        "label": "10K",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 40.9999996162951,
+          "y": 92.506986040622,
+          "width": 174.00002183020115,
+          "height": 70.9860153645277
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-5f29c187353e",
+      "number": 152,
+      "value": 20000,
+      "label": "20K",
+      "color": "#ffe178",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-20000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-20000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/152-twenty-thousand.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 20000,
+        "label": "20K",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 40.99999913573265,
+          "y": 92.65916702151299,
+          "width": 174.00000751018524,
+          "height": 70.68167507648468
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-7bbba1a9506e",
+      "number": 153,
+      "value": 100000,
+      "label": "100K",
+      "color": "#ffe178",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-100000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-100000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/153-one-hundred-thousand.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 100000,
+        "label": "100K",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 41.00000100582838,
+          "y": 101.26333662122488,
+          "width": 173.9999845251441,
+          "height": 53.47333803772926
+        },
+        "hasFontDependency": false
+      }
+    },
+    {
+      "id": "ja-v-823616f3288f",
+      "number": 154,
+      "value": 1000000,
+      "label": "1M",
+      "color": "#ffe178",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/number-1000000-circle-v2.svg",
+      "path": "artifacts/card-regeneration/batch-10/number-1000000-circle-v2.png",
+      "revisesManifest": "artifacts/card-regeneration/batch-10/manifest.json",
+      "previousPath": "artifacts/card-regeneration/batch-10/154-million.png",
+      "status": "awaiting-user-feedback",
+      "geometry": {
+        "value": 1000000,
+        "label": "1M",
+        "center": [
+          128,
+          128
+        ],
+        "radius": 108,
+        "strokeWidth": 7,
+        "letterBounds": {
+          "x": 41.000001803040504,
+          "y": 78.73612721264362,
+          "width": 174.0000097900629,
+          "height": 98.52775186300278
+        },
+        "hasFontDependency": false
+      }
+    }
+  ]
+}

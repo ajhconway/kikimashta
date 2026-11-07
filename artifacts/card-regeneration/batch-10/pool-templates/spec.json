@@ -1,0 +1,121 @@
+{
+  "issue": 72,
+  "authorization": "User requested SVG circles as input images for generated PNG numerals.",
+  "geometry": {
+    "viewBox": [
+      0,
+      0,
+      256,
+      256
+    ],
+    "center": [
+      128,
+      128
+    ],
+    "radius": 108,
+    "strokeWidth": 7,
+    "outputSize": 640
+  },
+  "entries": [
+    {
+      "number": 136,
+      "id": "ja-v-5d8047464c5d",
+      "value": 1,
+      "label": "1",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-1-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-1-blank.png",
+      "sourceSvgSha256": "ac76ae4ca51b3d8bd3daa82fe815ba5343531c4b08cdb92656938dec08f5e096",
+      "sha256": "83b29ab28218b58fee4a7cde71f207c7a70045e6eb3733d80eb68c6172a46c16"
+    },
+    {
+      "number": 137,
+      "id": "ja-v-7fc81b0ddd17",
+      "value": 2,
+      "label": "2",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-2-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-2-blank.png",
+      "sourceSvgSha256": "cbdb1fd12042551f9424f424fa31e88e55117cbfb2cf8be53c70cd10a37c21d2",
+      "sha256": "826a7c7e01115555763f23f44dd086797c6b9a9711eb8c559dff1c3c19007fa5"
+    },
+    {
+      "number": 138,
+      "id": "ja-v-1bedf722c04a",
+      "value": 3,
+      "label": "3",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-3-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-3-blank.png",
+      "sourceSvgSha256": "78935b13eb522acf6d07e9ba474121423b465c4121211b8ba4a6fbfa85bddec1",
+      "sha256": "e711939445cc09ee4bee5ddb414c76835787ffe41ca24f858f4d2eb951c255a0"
+    },
+    {
+      "number": 86,
+      "id": "ja-v-b066e78531d6",
+      "value": 4,
+      "label": "4",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-4-blank.png",
+      "sourceSvgSha256": "178479d77c8b876055847f92e6b2f3607d1e500a497eedca970dac18b1a50459",
+      "sha256": "32fc33b67e47025ef1342a91e211559d0f55caf7329a58e0e2a0629e7e3e5c0d"
+    },
+    {
+      "number": 139,
+      "id": "ja-v-d4473f87e438",
+      "value": 5,
+      "label": "5",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-5-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-5-blank.png",
+      "sourceSvgSha256": "ea48848d38587f0d697b833683a44ce01e0de6e75ba21aaab8a4359e3ce5505f",
+      "sha256": "d0c8f8171095739aacce2d02921e6ed7e92051b5473548264f4619c3a4df02e6"
+    },
+    {
+      "number": 140,
+      "id": "ja-v-06ef406f5569",
+      "value": 6,
+      "label": "6",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-6-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-6-blank.png",
+      "sourceSvgSha256": "10001715a96a737f931602b858a5eb8ef97f8d7ce6ee262ba1d5a9d907a025df",
+      "sha256": "65b9285432cba683f1113dbeda8092f890c982ac11540c05d9c94e465dd92e17"
+    },
+    {
+      "number": 141,
+      "id": "ja-v-eda9a40b0c91",
+      "value": 7,
+      "label": "7",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-7-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-7-blank.png",
+      "sourceSvgSha256": "5f26aa2c10bede99ec8a5a8f7c103aa94c77804bea30c3ca37fc4f2141174427",
+      "sha256": "89422b928e7958144002701737e1a8d1e86b137ffc254f763aed9c98c208bc2e"
+    },
+    {
+      "number": 142,
+      "id": "ja-v-f6ed7c17c0d5",
+      "value": 8,
+      "label": "8",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-8-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-8-blank.png",
+      "sourceSvgSha256": "5b0cdd67aa224681995efde540807eab59ef63a8e5d641f79c567026fc1c46fc",
+      "sha256": "068680722af4d0ae39a87de05db19669954320c2f708ce29c996ee1eddace64f"
+    },
+    {
+      "number": 143,
+      "id": "ja-v-d33ed6be2a48",
+      "value": 9,
+      "label": "9",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-9-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-9-blank.png",
+      "sourceSvgSha256": "cc7a9c0aa10016f5741d226f03f9151a6b7fbcf8802dcc23b000af3a0b0bfa3c",
+      "sha256": "9f3598128348571e492b99d0ea66608a16fc061184a743e62278b607a2f11790"
+    },
+    {
+      "number": 85,
+      "id": "ja-v-877b9ba07a47",
+      "value": 10,
+      "label": "10",
+      "sourceSvgPath": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.svg",
+      "path": "artifacts/card-regeneration/batch-10/pool-templates/pool-10-blank.png",
+      "sourceSvgSha256": "3189f406b806c314cf2a96de285ac1990a9b91819fa1ab4493f349a3254fd5d7",
+      "sha256": "aa9e639273ad8cfd1631caba327f87d12d75ffcc134e02aa0e5d618ea750e0ee"
+    }
+  ]
+}
