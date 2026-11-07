@@ -91,7 +91,9 @@ def render_batch(path, lookup):
         caption = f'<b>{number} · {name}</b><span lang="ja">{jp}</span><small>{status}</small>'
         panel = f'<figure><a href="{src}"><img src="{src}" alt="{name}" width="{asset["width"]}" height="{asset["height"]}"></a><figcaption>{caption}</figcaption></figure>'
         panels.append(panel)
-        if (asset.get('revisionRound') or asset.get('conventionUpdated')) and asset['status'] != 'approved':
+        if ((asset.get('revisionRound') or asset.get('conventionUpdated')) and asset['status'] != 'approved'
+                and (manifest.get('currentRevisionRound') is None
+                     or asset.get('revisionRound') == manifest['currentRevisionRound'])):
             revised_panels.append(panel)
             revised_numbers.append(number)
         mini.append(f'<figure><img src="{src}" alt="{name}" width="145" height="145"><figcaption>{number} · {name}</figcaption></figure>')

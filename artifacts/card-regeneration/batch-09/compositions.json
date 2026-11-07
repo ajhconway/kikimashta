@@ -1,0 +1,413 @@
+{
+  "issue": 72,
+  "batch": "batch-09",
+  "numberStart": 111,
+  "items": [
+    {
+      "number": 111,
+      "id": "ja-cat",
+      "meaning": "Cat",
+      "japanese": "猫",
+      "slug": "cat",
+      "composition": "One seated ordinary DOMESTIC CAT, lavender-gray fur with cream muzzle/chest and paws, two triangular ears, almond-shaped eyes, short whiskers and a curled tail. Whole animal visible with natural compact cat proportions. This is literal cat vocabulary: show a cat, but do not copy Kiku mascot identity. No headphones, clothing, logo, decorative attention marks or other animals.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 112,
+      "id": "ja-v-a491f1acccc3",
+      "meaning": "Handicraft",
+      "japanese": "工作",
+      "slug": "handicraft",
+      "composition": "HANDICRAFT: a small clearly handmade paper house is the central object on a simple golden craft tabletop. Beside it, separate lavender-handled scissors, one small glue bottle and two folded colored paper pieces. Reuse approved18scissors geometry; scissors rest separately and point toward paper, never visibly cutting through it. Paper house has visibly folded card edges, simple door and window; it is a craft model, not a real building scene. No hands, labels, dashed cutting diagram, extra tools or room.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-02/18-cutting-cat-v5.png",
+          "role": "approved scissors design only; keep scissors separate from paper and do not copy the old dashed-cutting layout"
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "id": "ja-v-ba0c8a160c33",
+      "meaning": "Night",
+      "japanese": "夜",
+      "slug": "night",
+      "composition": "NIGHT: a compact dark-violet arched night-sky silhouette behind one small sleepy-looking house with dark windows, a golden fuller crescent moon and three modest golden stars. Reuse97moon shape at smaller scale. The dark night field is confined to a rounded teaching-scene silhouette; outside it stays transparent, never a full rectangular dark backdrop. House and night sky read together, no sun, daylight, people, Z letters or caption.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+          "role": "approved fuller stylized golden crescent silhouette and rendering; no craters"
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "id": "ja-v-9567eaf8fe9b",
+      "meaning": "Student",
+      "japanese": "学生",
+      "slug": "student",
+      "composition": "One HUMAN STUDENT seated on a simple golden chair at a small golden desk, leaning toward an OPEN BOOK on the desktop, with a lavender backpack clearly resting beside the chair. Reuse approved human design and approved open-book white pages/gold cover, simplified for the scene. Show the study posture and backpack clearly at145px. No teacher pointer, chalkboard, school-name sign, graduation cap, labels or extra people.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/03-person.png",
+          "role": "approved recurring human proportions and palette: short violet hair, pink shirt, lavender trousers, blue shoes; adapt pose only"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/89-book.png",
+          "role": "approved open-book geometry, opaque white pages and golden cover; omit decorative page illustrations if too small"
+        }
+      ]
+    },
+    {
+      "number": 115,
+      "id": "ja-v-bb787ce6238a",
+      "meaning": "To Pull",
+      "japanese": "引く",
+      "slug": "to-pull",
+      "composition": "One approved HUMAN character actively PULLING a small lavender wheeled wagon using one taut golden rope. Side view: person ahead at left, body leaning forward, one arm stretched back gripping rope; wagon trails at right on two clearly visible wheels. Rope connects hand to wagon front and tension is clear. Person walks left, wagon follows. Keep complete silhouettes and simple rounded outlines; no pushing contact, arrow, floating rope, extra person, labels or scenery.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/03-person.png",
+          "role": "approved recurring human proportions and palette: short violet hair, pink shirt, lavender trousers, blue shoes; adapt pose only"
+        }
+      ]
+    },
+    {
+      "number": 116,
+      "id": "ja-v-cb7a14590e8e",
+      "meaning": "Sunlight",
+      "japanese": "日光",
+      "slug": "sunlight",
+      "composition": "SUNLIGHT: one small golden sun outside a simple golden-framed open window, sending two or three broad warm pale-yellow beams through the window onto a small GREEN LEAFY PLANT in a lavender pot. Emphasize the visible shafts of sunlight crossing from outside to plant, not a nighttime spotlight. Match approved sunlight/rays palette and rounded shapes. Beam edges are clean, shading stays inside silhouettes; no exterior glow, haze, full room, rectangular backdrop, moon, words or extra props.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/39-light-v2.png",
+          "role": "approved golden sun-ray form/palette; adapt into sunlight through window"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/98-sun.png",
+          "role": "approved sun-disc and rounded-ray design"
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "id": "ja-v-001a4faf05bd",
+      "meaning": "To Go Out",
+      "japanese": "出かける",
+      "slug": "to-go-out",
+      "composition": "One approved HUMAN character visibly GOING OUT through an open golden doorway, carrying one small lavender shoulder bag. View the door opening at left and person stepping beyond its threshold toward the right, one foot outside and the other following. Door remains swung open behind the person; doorframe and threshold make the departure direction readable. Use approved75doorway proportions and violet outlines. No entering pose, arrow, second person, extra room, text or street scene.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/03-person.png",
+          "role": "approved recurring human proportions and palette: short violet hair, pink shirt, lavender trousers, blue shoes; adapt pose only"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/75-doorway.png",
+          "role": "approved open doorway/frame design and palette; adapt for a person departing through it"
+        }
+      ]
+    },
+    {
+      "number": 118,
+      "id": "ja-v-01016753b889",
+      "meaning": "Inside The Body",
+      "japanese": "体内",
+      "slug": "inside-the-body",
+      "composition": "INSIDE THE BODY: a simple front-facing human torso silhouette from shoulders to hips, opaque warm skin fill and violet outline. A clearly bounded pale-lavender cutaway window within the torso reveals a simple pink HEART in the chest and curved pink STOMACH below, connected by a slender esophagus cue. Organs remain inside the body contour, anatomically plausible, gently simplified, no gore. Small internal attention strokes emphasize the organs rather than the outside skin. No labels, arrows, skeleton, disembodied floating organs or extra body parts. Keep existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "id": "ja-v-084edf1fdd10",
+      "meaning": "Five Things",
+      "japanese": "五つ",
+      "slug": "five-things",
+      "composition": "Exactly FIVE separate toy CUBES matching approved38shape, three-quarter viewpoint, rounded edges, violet contours and gold/pink/lavender/sky-blue palette. Arrange in two balanced rows, THREE above and TWO below, all equal size with clear transparent gaps, no overlap. Count must be immediately readable at145px. No numerals, letters, dots, badges, apples, extra cubes or ground shadows. Retain F05 contextual counter-teaching restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved X-things cubes: same three-quarter orientation, proportions, violet outlines and gold/pink/lavender/blue colors; change exact count and spacing only"
+        }
+      ]
+    },
+    {
+      "number": 120,
+      "id": "ja-v-0c5871310c83",
+      "meaning": "Train Direction",
+      "japanese": "行き",
+      "slug": "train-direction",
+      "composition": "TRAIN BOUND FOR A DESTINATION: two railway tracks run from the foreground toward one small distant station marked by a simple golden destination flag. A small recognizable blue/lavender train is on the track facing AWAY toward that station; its rear and wheels align with rails. One clear violet direction arrow along the track points toward the station. Perspective rails and destination are prominent. No written destination, timetable, map labels, person, decorative horizon strip or extra train. This is a supporting directional mnemonic; preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "id": "ja-v-0d0163a40587",
+      "meaning": "Nine Things",
+      "japanese": "九つ",
+      "slug": "nine-things",
+      "composition": "Exactly NINE separate toy CUBES matching approved38shape, three-quarter viewpoint, rounded edges, violet contours and gold/pink/lavender/sky-blue palette. Arrange in an orderly THREE BY THREE grid, all equal size with clear transparent gaps, no overlaps. Maximize readable cube size within generous margins. No numerals, letters, counting dots, badges, apples, tenth cube or shadows. Retain F05 contextual counter-teaching restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved X-things cubes: same three-quarter orientation, proportions, violet outlines and gold/pink/lavender/blue colors; change exact count and spacing only"
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "id": "ja-v-115fd51b8d38",
+      "meaning": "What",
+      "japanese": "何",
+      "slug": "what",
+      "composition": "WHAT: three identical simple golden domed lids resting on a plain lavender tray, concealing their contents completely. One LARGE deep-violet QUESTION MARK floats centered above the closed lids as the essential question cue. No objects revealed, answer pictures, numerals, words, people, magic sparkles or extra punctuation. This is a taught question-word mnemonic, not a claim that mystery lids alone identify a lexical sense; preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 123,
+      "id": "ja-v-16fcea5b6e6e",
+      "meaning": "Seattle",
+      "japanese": "シアトル市",
+      "slug": "seattle",
+      "composition": "SEATTLE landmark illustration: a dominant recognizable SPACE NEEDLE with tall slender tapering tripod supports, elevated broad saucer-shaped observation deck and thin central spire above. Muted silver/lavender structure with golden deck accent; behind and below it a small simplified waterfront city skyline and one blue harbor-water oval. Landmark dominates and remains readable at145px. No lettering, city-name caption, unrelated tower, generic Eiffel shape, logo, flag or invented detailed map. Preserve existing contextual/picture-only limitation.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 124,
+      "id": "ja-v-18fe4d351abc",
+      "meaning": "Direction",
+      "japanese": "方",
+      "slug": "direction",
+      "composition": "DIRECTION: one simple golden wooden signpost with two clearly arrow-shaped lavender directional boards pointing left and right above a Y-shaped fork of two short curved paths. Boards have completely blank faces. The branching choices and opposing directions are the essential cue; compact isolated teaching scene, no broad landscape. No words, destination names, numerals, compass letters, people or decorative objects. Preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 125,
+      "id": "ja-v-1c7565a62dc9",
+      "meaning": "How Many Times",
+      "japanese": "何回",
+      "slug": "how-many-times",
+      "composition": "HOW MANY TIMES: three clear violet circular-turn arrows in a compact left-to-right row, all the same shape, followed by one LARGE QUESTION MARK. Circular arrows represent repetition of an action or turn, rather than three physical items to count. Clean substantial arrowheads with golden/pink accents only inside forms. No numeral answer, words, clock face, progress bar, decorative stars or extra symbols. Preserve existing picture-only restriction and teach the repeated-action question in spoken context.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 126,
+      "id": "ja-v-1d446778d33c",
+      "meaning": "Great",
+      "japanese": "大した",
+      "slug": "great",
+      "composition": "GREAT / impressive achievement mnemonic: one LARGE GOLDEN TROPHY with broad cup, two clear handles, lavender base and three small celebratory golden/pink stars around its upper sides. Trophy dominates, no winner number, medal text, ribbon words, person or confetti field. This remains an explicitly taught evaluative mnemonic requiring context; retain F08 and never infer picture-only eligibility from cleaner artwork.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 127,
+      "id": "ja-v-26a964fd9243",
+      "meaning": "Bread Loaf Counter",
+      "japanese": "～斤",
+      "slug": "bread-loaf-counter",
+      "composition": "BREAD LOAF COUNTER: a group of ONE whole three-dimensional bread loaf at left, and a separate group of TWO equally sized whole loaves at right. Use identical simple rounded rectangular golden-crust loaves, visible top/side faces, cream side and a few shallow crust scores. All three whole loaves have equal size and complete silhouettes. Put the right-hand two vertically with a clear gap; use a wider gap between the one-loaf and two-loaf groups. No slices, baguettes, utensils, plate, bread bag, numerals, multiplication sign or count labels. Preserve existing counter/context restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 128,
+      "id": "ja-v-2c3dfcbde58b",
+      "meaning": "Thousands",
+      "japanese": "何千",
+      "slug": "thousands",
+      "composition": "HOW MANY THOUSANDS: three compact bound bundles representing THOUSAND-UNIT GROUPS, each plainly marked with the essential dark-violet numeral1000on a sky-blue band, beside one LARGE QUESTION MARK. Use tidy small stacked-unit bundles without pretending that individually countable tiny dots visibly total1000. Labels identify their thousand-unit denomination. No banknotes, yen sign, coins, price tag, loose number tokens, unrelated numbers or answer caption. This illustrates 何千/how many thousands or indefinite thousands in context, not a fixed cardinal total; preserve the existing teaching note and picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 129,
+      "id": "ja-v-2ef4da30cf39",
+      "meaning": "Population",
+      "japanese": "人口",
+      "slug": "population",
+      "composition": "POPULATION: a clearly recognizable CROWD OF PEOPLE inside one simple soft-green oval town boundary. Reuse the supplied crowd people style: diverse warm skin tones, simple violet/brown hair, lavender/pink/gold/sky-blue shirts. About a dozen people in three compact staggered rows, with three small subdued lavender town-house roof silhouettes along the back inside the boundary. Crowd is dominant; people visibly belong to a town area. No jar, balls, flags, numerals, census caption or labels. Retain F08: this is a taught population mnemonic requiring spoken context. Do not reinterpret it as the many-objects card.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/69-revision-v2.png",
+          "role": "formerly rejected crowd-for-many candidate, repurposed only as a provisional people-design reference for population; NOT an approved population design"
+        }
+      ]
+    },
+    {
+      "number": 130,
+      "id": "ja-v-33c00f4a1a8b",
+      "meaning": "Power",
+      "japanese": "力",
+      "slug": "power",
+      "composition": "POWER / STRENGTH: one strong bent human arm flexed upward while the hand clearly grips the center bar of a small violet dumbbell. Warm skin, simple rounded muscle silhouette, exactly one upper arm, forearm and anatomically plausible gripping hand; two balanced dumbbell ends. Strength action should dominate rather than an isolated hand or general exercise scene. No detached extra fingers, second arm, person, lightning bolt, numbers or words. Preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 131,
+      "id": "ja-v-3aa47bb43d28",
+      "meaning": "Task",
+      "japanese": "用",
+      "slug": "task",
+      "composition": "TASK mnemonic: one opaque WHITE checklist sheet on a simple lavender clipboard with a golden top clip. Exactly THREE broad task rows indicated by violet horizontal strokes and square checkboxes. Only the FIRST checkbox contains a clear violet CHECKMARK; other two boxes remain empty. Rows are schematic lines, no actual words or fake lettering. One large readable clipboard, no pencil, desk, calendar, numerals or decorations. Preserve existing picture-only restriction; appearance does not resolve the broad sense of 用.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 132,
+      "id": "ja-v-3d24eb7fb7b5",
+      "meaning": "One Day",
+      "japanese": "一日",
+      "slug": "one-day",
+      "composition": "ONE FULL DAY as DURATION: one simple left-to-right TIME-SPAN illustration with a small sun rising at the left above a short horizon cue, a higher full sun at center for daytime, and the approved fuller crescent appearing low at the right for moonrise. A SINGLE broad violet bracket/arc underneath spans from the sunrise marker to the moonrise marker, clearly uniting the sequence into one complete day interval. Use a bold left endpoint tick as the start-time anchor. Golden sun forms, lavender time-span line, minimal contained scene. No numbered calendar page, pull-off date1, month grid, clock numerals, written labels or multiple cycles. Retain F07: distinguish duration from a specific date and introduce this supporting convention through contextual listening.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+          "role": "approved fuller stylized golden crescent silhouette and rendering; no craters"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/98-sun.png",
+          "role": "approved golden sun/ray form; reuse across sunrise and daytime states without adding text"
+        }
+      ]
+    },
+    {
+      "number": 133,
+      "id": "ja-v-3ed4447f3492",
+      "meaning": "North America",
+      "japanese": "北アメリカ",
+      "slug": "north-america",
+      "composition": "NORTH AMERICA: one recognizable stylized map silhouette of the North American landmass, soft green fill and deep-violet contour. Preserve broad Canada in the north, Alaska extending toward upper-left, the contiguous US below Canada, Mexico tapering south and the narrow Central American connection curling southeast. Include a separate appropriately placed Greenland silhouette at upper-right and a few simplified Caribbean island shapes to the southeast. Map outline is simplified but geographically recognizable; no invented country borders, labels, flags, compass letters, ocean rectangle, world globe or South America. Generous transparent margins; preserve existing picture-only/context restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 134,
+      "id": "ja-v-3ee395a38c63",
+      "meaning": "Pause",
+      "japanese": "休止",
+      "slug": "pause",
+      "composition": "PAUSE: one compact lavender music-player device with a dark-violet front display holding exactly TWO large parallel vertical PAUSE BARS in golden yellow. Bars equal height/width and centered, clearly separated. A single small round knob below the display and simple rounded device outline establish a music player. No play triangle, stop square, waveform, running progress, letters, song title, brand or extra playback symbols. Preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    },
+    {
+      "number": 135,
+      "id": "ja-v-4285b5f8fc72",
+      "meaning": "Mainly",
+      "japanese": "主に",
+      "slug": "mainly",
+      "composition": "MAINLY / majority mnemonic: one tightly arranged group of TWELVE simple equal-sized round beads, TEN PINK and exactly TWO PURPLE. Arrange in three rows of four with clear transparent gaps, pink visibly dominating and the two purple beads adjacent at lower-right. Use restrained soft shading and violet outlines, no glare or marbled swirls. The dominant color proportion is the teaching cue. No jar, necklaces, counting numerals, question mark, percentage labels or extra beads. Preserve existing picture-only restriction and teach the adverb in spoken context.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "STYLE ONLY: contours, rounded forms, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ]
+    }
+  ]
+}

@@ -170,7 +170,7 @@
     },
     {
       "id": "batch-09",
-      "status": "ready-to-generate",
+      "status": "approved",
       "cardIds": [
         "ja-cat",
         "ja-v-a491f1acccc3",
@@ -198,10 +198,50 @@
         "ja-v-3ee395a38c63",
         "ja-v-4285b5f8fc72"
       ],
-      "purpose": "Provisional order; apply feedback before generation"
+      "purpose": "Generated batch; membership preserved"
     },
     {
       "id": "batch-10",
+      "status": "ready-to-generate",
+      "cardIds": [
+        "ja-v-5d8047464c5d",
+        "ja-v-7fc81b0ddd17",
+        "ja-v-1bedf722c04a",
+        "ja-v-d4473f87e438",
+        "ja-v-06ef406f5569",
+        "ja-v-eda9a40b0c91",
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-81893a02b959",
+        "ja-v-96a032e15dda",
+        "ja-v-190aae33ad24",
+        "ja-v-f623bb19b846",
+        "ja-v-7707983a4026",
+        "ja-v-f0588b6224d0",
+        "ja-v-1807218bf360",
+        "ja-v-a872d5e674a2",
+        "ja-v-5f29c187353e",
+        "ja-v-7bbba1a9506e",
+        "ja-v-823616f3288f",
+        "ja-v-277587e6fa07",
+        "ja-v-bb85f028d944",
+        "ja-v-8b887bc8af0c",
+        "ja-v-df70a01acaec",
+        "ja-v-f6bc974a7405",
+        "ja-v-6c9351ae67e6",
+        "ja-v-56d52b7869ab",
+        "ja-v-b0489d428339",
+        "ja-v-a02edbda9f4c",
+        "ja-v-7b2351210462",
+        "ja-v-0655c242d1db",
+        "ja-v-f50fcf40e898",
+        "ja-v-9acbf1542642",
+        "ja-v-da2913ad7e4c"
+      ],
+      "purpose": "User-requested complete numerical batch: remaining cardinal numbers, generic X-things counts and numbered dates. Overrides normal25-card limit for this batch only."
+    },
+    {
+      "id": "batch-11",
       "status": "blocked-on-previous-feedback",
       "cardIds": [
         "ja-v-49863ee12a96",
@@ -212,7 +252,6 @@
         "ja-v-65df49688ef0",
         "ja-v-67d99c6ae58e",
         "ja-v-6c0b9f3278dc",
-        "ja-v-6c9351ae67e6",
         "ja-v-6fe6f680e0e0",
         "ja-v-7003bbe10d0b",
         "ja-v-79140f0bf8e7",
@@ -222,45 +261,14 @@
         "ja-v-89beba69de5a",
         "ja-v-89cc0156875d",
         "ja-v-89fcef8e86d8",
-        "ja-v-8b887bc8af0c",
         "ja-v-97dfa455ab7e",
         "ja-v-9f59b44e2237",
         "ja-v-a0e6022cc115",
         "ja-v-a119c15d9de4",
         "ja-v-a30018dbdb6b",
-        "ja-v-a39af9252454"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-11",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-a39af9252454",
         "ja-v-a76119b3c712",
-        "ja-v-a8ca5ef684b8",
-        "ja-v-a96ca9b29f0d",
-        "ja-v-ad9fb52e6dff",
-        "ja-v-b0a03cee753b",
-        "ja-v-b1ccc665edf2",
-        "ja-v-b22e3a1982e5",
-        "ja-v-b639fedc63ec",
-        "ja-v-bb85f028d944",
-        "ja-v-bee484b5ac81",
-        "ja-v-cbda72b9dd04",
-        "ja-v-ceaf3971ff83",
-        "ja-v-cfd55bbfe51c",
-        "ja-v-d0c8497457bd",
-        "ja-v-d1b6831b65c8",
-        "ja-v-d31e008f6e8e",
-        "ja-v-df70a01acaec",
-        "ja-v-e507b462aa49",
-        "ja-v-ebb68031a152",
-        "ja-v-eeb8ecca964f",
-        "ja-v-f6bc974a7405",
-        "ja-v-fb6b2d93a83c",
-        "ja-v-ff1538e35505",
-        "ja-v-277587e6fa07",
-        "ja-v-79f8de04d6f6"
+        "ja-v-a8ca5ef684b8"
       ],
       "purpose": "Provisional order; apply feedback before generation"
     },
@@ -268,31 +276,31 @@
       "id": "batch-12",
       "status": "blocked-on-previous-feedback",
       "cardIds": [
+        "ja-v-a96ca9b29f0d",
+        "ja-v-ad9fb52e6dff",
+        "ja-v-b0a03cee753b",
+        "ja-v-b1ccc665edf2",
+        "ja-v-b22e3a1982e5",
+        "ja-v-b639fedc63ec",
+        "ja-v-bee484b5ac81",
+        "ja-v-cbda72b9dd04",
+        "ja-v-ceaf3971ff83",
+        "ja-v-cfd55bbfe51c",
+        "ja-v-d0c8497457bd",
+        "ja-v-d1b6831b65c8",
+        "ja-v-d31e008f6e8e",
+        "ja-v-e507b462aa49",
+        "ja-v-ebb68031a152",
+        "ja-v-eeb8ecca964f",
+        "ja-v-fb6b2d93a83c",
+        "ja-v-ff1538e35505",
+        "ja-v-79f8de04d6f6",
         "ja-v-bb8fc62cf23d",
         "ja-v-cd6ac2533de0",
         "ja-v-e5e8eaecaa3f",
         "ja-v-26d0ad7af566",
         "ja-v-8f43a7f01e9c",
-        "ja-v-bd365f430f35",
-        "ja-v-74043c16db5e",
-        "ja-v-0655c242d1db",
-        "ja-v-0b6bbed28f82",
-        "ja-v-0cc907790ad0",
-        "ja-v-2850d52ee4d2",
-        "ja-v-309cfedd227d",
-        "ja-v-56d52b7869ab",
-        "ja-v-5bbf746af479",
-        "ja-v-6b9362de88a7",
-        "ja-v-6eab3743dc93",
-        "ja-v-6eed6b905b8e",
-        "ja-v-7b2351210462",
-        "ja-v-7dddc1af4eb5",
-        "ja-v-8438eda3cfc0",
-        "ja-v-8ffa8462a479",
-        "ja-v-9acbf1542642",
-        "ja-v-9e9dbd477486",
-        "ja-v-a02edbda9f4c",
-        "ja-v-ac3939d71e1e"
+        "ja-v-bd365f430f35"
       ],
       "purpose": "Provisional order; apply feedback before generation"
     },
@@ -300,20 +308,38 @@
       "id": "batch-13",
       "status": "blocked-on-previous-feedback",
       "cardIds": [
-        "ja-v-b0489d428339",
+        "ja-v-74043c16db5e",
+        "ja-v-0b6bbed28f82",
+        "ja-v-0cc907790ad0",
+        "ja-v-2850d52ee4d2",
+        "ja-v-309cfedd227d",
+        "ja-v-5bbf746af479",
+        "ja-v-6b9362de88a7",
+        "ja-v-6eab3743dc93",
+        "ja-v-6eed6b905b8e",
+        "ja-v-7dddc1af4eb5",
+        "ja-v-8438eda3cfc0",
+        "ja-v-8ffa8462a479",
+        "ja-v-9e9dbd477486",
+        "ja-v-ac3939d71e1e",
         "ja-v-b2f08cdf5ab4",
         "ja-v-c9d354f557b3",
         "ja-v-cacf3a45ed07",
         "ja-v-d860a871b14d",
-        "ja-v-da2913ad7e4c",
         "ja-v-e7ce924c4696",
         "ja-v-ed82bb95d4cc",
         "ja-v-f2e8d12a8234",
         "ja-v-f303d8ce6b20",
-        "ja-v-f50fcf40e898",
         "ja-v-f9d62cb2d38a",
         "ja-v-fb3e6c8865d4",
-        "ja-v-a557e263cea4",
+        "ja-v-a557e263cea4"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-14",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-fa26a112a479",
         "ja-v-5849925b131d",
         "ja-v-2e7b28af830b",
@@ -324,14 +350,7 @@
         "ja-v-26d771953f4b",
         "ja-v-9a8a0ffc08d3",
         "ja-v-9ff4f40a3428",
-        "ja-v-bdf7ba87a26a"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-14",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-bdf7ba87a26a",
         "ja-v-cc6f385f3a90",
         "ja-v-d6b0cff12d70",
         "ja-v-390f30691ca4",
@@ -345,7 +364,14 @@
         "ja-v-2924cd51557f",
         "ja-v-3db312786ce8",
         "ja-v-70230bf6d87c",
-        "ja-v-9553e3adbc2a",
+        "ja-v-9553e3adbc2a"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-15",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-a44aad5ce459",
         "ja-v-aad97415a910",
         "ja-v-cabda7989563",
@@ -356,46 +382,13 @@
         "ja-v-7cdf94430817",
         "ja-v-92bebda5ac98",
         "ja-v-afb2c2f9a135",
-        "ja-v-d72e08381953"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-15",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-d72e08381953",
         "ja-v-0181fab128a1",
         "ja-v-5a9132c195d6",
         "ja-v-afefe30bcb46",
-        "ja-v-06ef406f5569",
-        "ja-v-1807218bf360",
-        "ja-v-190aae33ad24",
-        "ja-v-1bedf722c04a",
-        "ja-v-5d8047464c5d",
-        "ja-v-5f29c187353e",
-        "ja-v-7707983a4026",
-        "ja-v-7bbba1a9506e",
-        "ja-v-7fc81b0ddd17",
         "ja-v-8101bd0ca76a",
-        "ja-v-81893a02b959",
-        "ja-v-823616f3288f",
-        "ja-v-96a032e15dda",
-        "ja-v-a872d5e674a2",
-        "ja-v-d33ed6be2a48",
-        "ja-v-d4473f87e438",
-        "ja-v-eda9a40b0c91",
-        "ja-v-f0588b6224d0",
-        "ja-v-f623bb19b846",
-        "ja-v-f6ed7c17c0d5",
         "ja-v-6777bcda7f1e",
-        "ja-v-c506bd7fb201"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-16",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-c506bd7fb201",
         "ja-v-ede466428b1b",
         "ja-v-69c61c85a403",
         "ja-v-7930a252da9b",
@@ -403,7 +396,14 @@
         "ja-v-d4fb59f8c32c",
         "ja-v-eef9d372f5df",
         "ja-v-01df3c579080",
-        "ja-v-032157e79367",
+        "ja-v-032157e79367"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-16",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-0cbc7661647e",
         "ja-v-12f44a1311d1",
         "ja-v-135a822fbf3a",
@@ -420,14 +420,7 @@
         "ja-v-4d9423288cb2",
         "ja-v-4f9ae60eff62",
         "ja-v-4fa253e10946",
-        "ja-v-4fa716f651b2"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-17",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-4fa716f651b2",
         "ja-v-575ec5f060f3",
         "ja-v-5b451287c47e",
         "ja-v-5e97c99f1db9",
@@ -435,7 +428,14 @@
         "ja-v-6bbf1546d4d7",
         "ja-v-70a7f6854fea",
         "ja-v-74f77120e84d",
-        "ja-v-7cc10603c197",
+        "ja-v-7cc10603c197"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-17",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-7de8b40e4f57",
         "ja-v-97526e11c703",
         "ja-v-a5dbfebd3fae",
@@ -452,14 +452,7 @@
         "ja-v-d76e957b268f",
         "ja-v-dfb6d8ba613b",
         "ja-v-e64b189d1607",
-        "ja-v-e9c77c4e99a7"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-18",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-e9c77c4e99a7",
         "ja-v-ebdaef0f21db",
         "ja-v-ed2b971b34ea",
         "ja-v-edbe60bbb7e3",
@@ -467,7 +460,14 @@
         "ja-v-f25546e67181",
         "ja-v-f64f1036d22a",
         "ja-v-fd0090161525",
-        "ja-v-0da81020c173",
+        "ja-v-0da81020c173"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-18",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-762983bc3fe7",
         "ja-v-506e7ed10461",
         "ja-v-0c337ec8cbd4",
@@ -484,14 +484,7 @@
         "ja-v-4789ab8b6db0",
         "ja-v-760cc08e40eb",
         "ja-v-b7ea6f7eb013",
-        "ja-v-415802b8c769"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-19",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-415802b8c769",
         "ja-v-86592fe77e48",
         "ja-v-38acee5bccbe",
         "ja-v-20cbd1c15a35",
@@ -499,7 +492,14 @@
         "ja-v-317542d02c5e",
         "ja-v-06a4c07236b5",
         "ja-v-17e3177c62d5",
-        "ja-v-6d1d47c9258e",
+        "ja-v-6d1d47c9258e"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-19",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-75ac90da3b27",
         "ja-v-a7b882deb9b5",
         "ja-v-b0a6475686ea",
@@ -516,14 +516,7 @@
         "ja-v-1b6483e173f3",
         "ja-v-55fef51b0694",
         "ja-v-5ed3001d6892",
-        "ja-v-5f4c2dcf05ba"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-20",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-5f4c2dcf05ba",
         "ja-v-65da1512acab",
         "ja-v-d2a96c6d5f6a",
         "ja-v-dd1d6132fe3c",
@@ -531,7 +524,14 @@
         "ja-v-069e01664247",
         "ja-v-1cc9ac39c880",
         "ja-v-7e8dc4d63e82",
-        "ja-v-cda9169e9fa2",
+        "ja-v-cda9169e9fa2"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-20",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-e34a140da9c0",
         "ja-v-fce7743a6cc5",
         "ja-v-42bb1cd7b3cd",
@@ -548,14 +548,7 @@
         "ja-v-6cac3dee5967",
         "ja-v-77d63b3ebde3",
         "ja-v-dc5177422a8b",
-        "ja-v-f754ac11a73b"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-21",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-f754ac11a73b",
         "ja-v-6109638dac53",
         "ja-v-aef5eed601c5",
         "ja-v-4638d2c26682",
@@ -563,7 +556,14 @@
         "ja-v-4b9574b8d3b9",
         "ja-v-bdc2a3d728dd",
         "ja-v-c70f2920b2de",
-        "ja-v-2798a7949600",
+        "ja-v-2798a7949600"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-21",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-cbf0bc9a0df7",
         "ja-v-400da51eb499",
         "ja-v-4397422fc9fb",
@@ -580,14 +580,7 @@
         "ja-v-b5e9e035a8be",
         "ja-v-6992f8889c8c",
         "ja-v-7733c49a7e4b",
-        "ja-v-7fa86c660a00"
-      ],
-      "purpose": "Provisional order; apply feedback before generation"
-    },
-    {
-      "id": "batch-22",
-      "status": "blocked-on-previous-feedback",
-      "cardIds": [
+        "ja-v-7fa86c660a00",
         "ja-v-9013d708ded7",
         "ja-v-b27125f41e7c",
         "ja-v-d15ca6ea1179",
@@ -595,7 +588,14 @@
         "ja-v-c2a96f1d7abc",
         "ja-v-01a3c397cb20",
         "ja-v-51c2d1be305f",
-        "ja-v-2f21cb2e8d02",
+        "ja-v-2f21cb2e8d02"
+      ],
+      "purpose": "Provisional order; apply feedback before generation"
+    },
+    {
+      "id": "batch-22",
+      "status": "blocked-on-previous-feedback",
+      "cardIds": [
         "ja-v-cb7d8a487c4f",
         "ja-v-3534dd7d07d1"
       ],

@@ -1,0 +1,74 @@
+[
+  {
+    "number": 111,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-bfce4728-8018-4e1b-ab5f-0290bb08d008.png",
+    "destination": "artifacts/card-regeneration/batch-09/111-cat-v2.png",
+    "sha256": "dfa4ca0a531e56bcd1a857dba96f75ecaadb07ccfdc79b6d2e63bae91245b662",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 896919
+  },
+  {
+    "number": 116,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-c5787693-b14e-4fdc-961e-d2007160f491.png",
+    "destination": "artifacts/card-regeneration/batch-09/116-sunlight-v2.png",
+    "sha256": "310bc4156496efd8e65a9aa5d6c7770bd957e69cd9c74624d00c73264ff1822f",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 561505
+  },
+  {
+    "number": 120,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-6fa15c98-5aa2-4302-902d-0a249a1def4d.png",
+    "destination": "artifacts/card-regeneration/batch-09/120-train-direction-v2.png",
+    "sha256": "28c374d3d1c153105f5a2c4ff08aaf6c28e8dfddca6ced76320c9284ad58e9f3",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 737333
+  },
+  {
+    "number": 122,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-181a8c58-76e6-4b33-8941-788c8a942ff8.png",
+    "destination": "artifacts/card-regeneration/batch-09/122-what-v2.png",
+    "sha256": "b6819e5db59af6e978ed34e24152ce2ea2891d196ab497424884368d291d7332",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 457307
+  },
+  {
+    "number": 124,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-6b6bc6e0-1a69-427f-b4ee-13502375e505.png",
+    "destination": "artifacts/card-regeneration/batch-09/124-direction-v2.png",
+    "sha256": "def208d64c5e1193507fa62617c9b994c2e53d29677a41a7e9691631c17eb43e",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 607020
+  },
+  {
+    "number": 134,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a083f869-9032-486c-ad17-b91f4c5e7cc9.png",
+    "destination": "artifacts/card-regeneration/batch-09/134-pause-v2.png",
+    "sha256": "d98816e5137105b759ffcdf72c6fc915ce1693422f121ad71ba88719c6dca3c9",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1029445
+  },
+  {
+    "number": 132,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-6e79b4a0-a3b6-4d02-a711-dec1b975e77a.png",
+    "destination": "artifacts/card-regeneration/batch-09/132-one-day-v2.png",
+    "sha256": "9e5989cbce2bd42ab6dbd51dfd60334bee53c1193e30c86163ab840448eca3cc",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1286690
+  },
+  {
+    "number": 135,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-85a89e67-8694-4777-a455-3fc4737a5409.png",
+    "destination": "artifacts/card-regeneration/batch-09/135-mainly-v2.png",
+    "sha256": "12b1cf077e24967b56986353444d289f5f1b1450123fc9dc455cb4ee907c3e80",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1195566
+  }
+]

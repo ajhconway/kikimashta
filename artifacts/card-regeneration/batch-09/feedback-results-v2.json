@@ -1,0 +1,53 @@
+[
+  {
+    "number": 111,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-87040c62-68b5-41f1-b8ca-8ee49e988e9d.png",
+    "destination": "artifacts/card-regeneration/batch-09/111-cat-v3.png",
+    "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 701671,
+    "selected": true
+  },
+  {
+    "number": 116,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-aa2b428a-7f8e-46c2-8aae-4aa4dde4d1a1.png",
+    "destination": "artifacts/card-regeneration/batch-09/116-sunlight-v3.png",
+    "sha256": "fc1e96a55ed8372b4058f779695cde348ad694a39865ac72935145faef01d782",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 584241,
+    "selected": true
+  },
+  {
+    "number": 132,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-733cef71-28a7-4bc9-a17c-25edf9fcf6c2.png",
+    "destination": "artifacts/card-regeneration/batch-09/132-one-day-v3.png",
+    "sha256": "040e9b707c5a060299c0743aa3d5a01a02ece0e5ca2a27d222fb996ade6a0518",
+    "width": 1774,
+    "height": 887,
+    "bytes": 1129097,
+    "selected": false
+  },
+  {
+    "number": 135,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-df38e468-7aa0-4cb1-8339-8fc975b92c2d.png",
+    "destination": "artifacts/card-regeneration/batch-09/135-mainly-v3.png",
+    "sha256": "c393b60a5e6f7ac81f313ff077863afe9c8915ac0c63ef7db7a91c92e22fbb8e",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1097012,
+    "selected": true
+  },
+  {
+    "number": 132,
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-5a8256ff-5418-4b56-8729-85cd44e1745c.png",
+    "destination": "artifacts/card-regeneration/batch-09/132-one-day-v4.png",
+    "productionCorrection": "square canvas, same calendar progression",
+    "sha256": "19666f0ac1c4ec7b8020c2a9069d60d4d8e9b53c61afc343a740d1b3650baf83",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 616644,
+    "selected": true
+  }
+]

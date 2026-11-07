@@ -59,7 +59,7 @@
   },
   {
     "id": "ja-v-1d446778d33c",
-    "concept": "A huge gold trophy surrounded by celebratory stars",
+    "concept": "A golden trophy surrounded by stars.",
     "reviewRequired": true,
     "reviewNote": "Trophy symbolizes impressive/great, a context-dependent adjective.",
     "visualGroup": "大した"
@@ -91,7 +91,7 @@
   },
   {
     "id": "ja-v-0d0163a40587",
-    "concept": "Exactly 9 apples to count as things",
+    "concept": "Nine colored toy cubes in a three-by-three arrangement.",
     "reviewRequired": false,
     "visualGroup": "things-9"
   },
@@ -123,14 +123,14 @@
   },
   {
     "id": "ja-v-2ef4da30cf39",
-    "concept": "A crowd within a town boundary",
+    "concept": "A crowd within a green town boundary with houses behind.",
     "reviewRequired": true,
     "reviewNote": "Town crowd symbolizes population rather than simply people.",
     "visualGroup": "人口"
   },
   {
     "id": "ja-v-33c00f4a1a8b",
-    "concept": "A strong bent arm lifting a dumbbell",
+    "concept": "A bent arm lifting a violet dumbbell.",
     "reviewRequired": true,
     "reviewNote": "Physical strength is one sense of power.",
     "visualGroup": "力"
@@ -356,7 +356,7 @@
   },
   {
     "id": "ja-v-084edf1fdd10",
-    "concept": "Exactly 5 apples to count as things",
+    "concept": "Five colored toy cubes arranged in rows of three and two.",
     "reviewRequired": false,
     "visualGroup": "things-5"
   },
@@ -509,7 +509,7 @@
   },
   {
     "id": "ja-v-3d24eb7fb7b5",
-    "concept": "Sunrise to moonrise showing one full day",
+    "concept": "Two pull-off calendar pages displaying 12 and 13, connected by a right-pointing arrow.",
     "reviewRequired": true,
     "reviewNote": "Duration one day is different from first day of month.",
     "visualGroup": "一日"

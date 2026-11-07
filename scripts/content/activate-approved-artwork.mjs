@@ -18,7 +18,11 @@ function validateDelivery(bytes, asset, format, sourceAlpha) {
   }
   const alpha = inspectPngAlpha(bytes)
   if (alpha.width > 640 || alpha.height > 640 || !alpha.transparentPixels || !alpha.opaquePixels) throw new Error(`Delivery must preserve PNG transparency: ${asset.id}`)
-  if (sourceAlpha.opaqueWhitePixels && !alpha.opaqueWhitePixels) throw new Error(`Delivery lost opaque white subject details: ${asset.id}`)
+  // Tiny bright antialias/highlight pixels may disappear when resized. Protect
+  // white subject regions, rather than requiring sub-resolution noise to survive.
+  const scale = alpha.width * alpha.height / (sourceAlpha.width * sourceAlpha.height)
+  const meaningfulWhite = sourceAlpha.opaqueWhitePixels * scale >= Math.max(1, sourceAlpha.opaquePixels * scale / 1000)
+  if (meaningfulWhite && !alpha.opaqueWhitePixels) throw new Error(`Delivery lost opaque white subject details: ${asset.id}`)
 }
 
 export function activateArtwork({ root, batches, encode = defaultEncoder }) {

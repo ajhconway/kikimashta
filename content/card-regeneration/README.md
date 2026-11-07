@@ -46,8 +46,12 @@ Batch07 feedback establishes Kiku as the generic reference subject for spatial a
 
 Pure cardinal-number vocabulary uses pool balls for1–15, lavender for16–99, pink for100–999, sky blue for1000–9999 and gold for10000+. `numberPresentation` records exact ranges and colors; currency, age and specific object counters are excluded. Number50 keeps the existing lavender artwork;1000 and10 revisions are approved; pool-ball rendering is flat, without glossy highlights.
 
-Batch07 (61–85) is approved in full. The chair pair66/70 establishes a physical under/on-seat comparison with the same furniture and Kiku proportions. Batch08 (86–110) has also been approved in full.
+Batch07 (61–85) is approved in full. The chair pair66/70 establishes a physical under/on-seat comparison with the same furniture and Kiku proportions. Batch08 (86–110) is also approved and activated.
 
 Batch08 (86–110) contains25approved transparent-background PNGs. Shared tree, washing-machine-count and pull-off daily-calendar prototypes are recorded in the dependency graph and approved. [Gallery](../../artifacts/card-regeneration/batch-08/review.html) and [four-background alpha inspection](../../artifacts/card-regeneration/batch-08/alpha-review.html). Current future-generation policy requests transparent_background=true and preserves opaque white subject details; historical opaque source files remain unchanged.
 
-Batch08 activation brings the app to110approved illustrations. Alpha sources use640pxPNG delivery with decoded transparency/opaque-white checks; the previous85JPEG delivery records are unchanged. Each transparent activation record identifies its PNG format and preserved alpha. New batches remain behind their own feedback gates.
+Batch09 (111–135) is approved in full. Reuses established scissors, human, doorway, book, moon and cube references; all existing semantic restrictions remain. The next batch is ready for its own generation and review gate.
+
+Batch09 activation brings the app to135approved selections. The25new640pxPNG deliveries preserve transparency and opaque subject details using the exporter introduced with batch08. Earlier110delivery records and all semantic restrictions remain unchanged.
+
+The owner's next requested group is all remaining cardinal numbers, generic X-things counts and numbered dates together. `user-feedback.json` records the ordered `requestedBatches` selection, and preparation preserves it as batch10 with33cards rather than splitting it at the normal25-card limit. Reviewed batches01–09 keep their original membership, every stable card ID appears once in the complete schedule, and later batches remain behind the batch10 feedback gate. This PR includes the durable numerical plan and its prompt/style dependencies only; new numerical artwork is generated and reviewed separately, and none is activated here.

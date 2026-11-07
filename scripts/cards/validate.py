@@ -99,7 +99,13 @@ def validate():
     assert by_id['ja-v-41b543dc8fe4']['components'] == ['gem']
     all_batched = [i for b in batches for i in b['cardIds']]
     assert Counter(all_batched) == Counter(ids), 'Batches omit or duplicate a card'
-    assert all(1 <= len(b['cardIds']) <= feedback.get('generationBatchSize', 10) for b in batches)
+    requested_batches = {request['id']: request for request in feedback.get('requestedBatches', [])}
+    for batch in batches:
+        request = requested_batches.get(batch['id'])
+        limit = request['maxCards'] if request else feedback.get('generationBatchSize', 10)
+        assert 1 <= len(batch['cardIds']) <= limit
+        if request:
+            assert batch['cardIds'] == request['cardIds'], 'Requested themed batch was split or reordered'
     for index, batch in enumerate(batches[1:], 1):
         if batches[index-1]['status'] != 'approved':
             assert batch['status'] == 'blocked-on-previous-feedback', 'Batch unlocked before previous review'

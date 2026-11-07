@@ -101,7 +101,7 @@ for (const failure of ['encoder error', 'invalid output']) test(`failed regenera
 
 // Real two-by-two RGBA PNG fixtures include transparent, white and colored pixels.
 // CRCs and compressed pixels allow both the exporter and native image decoders to read them.
-function rgbaPng(pixels) {
+function rgbaPng(pixels, width = 2, height = 2) {
   const chunk = (name, data) => {
     const type = Buffer.from(name), size = Buffer.alloc(4), checksum = Buffer.alloc(4)
     size.writeUInt32BE(data.length)
@@ -114,7 +114,8 @@ function rgbaPng(pixels) {
     return Buffer.concat([size, type, data, checksum])
   }
   const header = Buffer.from('00000002000000020806000000', 'hex')
-  const raw = Buffer.from([0, ...pixels.slice(0, 8), 0, ...pixels.slice(8)])
+  header.writeUInt32BE(width, 0); header.writeUInt32BE(height, 4)
+  const raw = Buffer.concat(Array.from({ length: height }, (_, row) => Buffer.from([0, ...pixels.slice(row * width * 4, (row + 1) * width * 4)])))
   return Buffer.concat([Buffer.from('89504e470d0a1a0a', 'hex'), chunk('IHDR', header), chunk('IDAT', deflateSync(raw)), chunk('IEND', Buffer.alloc(0))])
 }
 const transparentPixels = [0, 0, 0, 0, 255, 255, 255, 255, 63, 36, 104, 255, 63, 36, 104, 128]
@@ -174,4 +175,24 @@ test('source tagged transparent must contain transparent pixels before mappings 
   assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Opaque source must fail preflight') }), /Source must have transparent/)
   assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
   assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+})
+
+
+test('resizing may remove a sub-resolution white highlight while retaining transparent and opaque pixels', t => {
+  const f = transparentFixture(t)
+  const pixels = Array.from({ length: 64 * 64 }, () => [63, 36, 104, 255]).flat()
+  pixels.splice(0, 4, 0, 0, 0, 0)
+  pixels.splice(4, 4, 255, 255, 255, 255)
+  const source = rgbaPng(pixels, 64, 64)
+  const asset = f.manifest.assets[0]
+  writeFileSync(join(f.root, asset.path), source)
+  asset.sha256 = hash(source)
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  const resized = rgbaPng([0, 0, 0, 0, 63, 36, 104, 255, 63, 36, 104, 255, 63, 36, 104, 128])
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: (_, target) => writeFileSync(target, resized) })
+  const record = f.read('content/card-regeneration/activation.json').assets.at(-1)
+  assert.equal(inspectPngAlpha(source).opaqueWhitePixels, 1)
+  assert.equal(inspectPngAlpha(readFileSync(join(f.root, record.path))).opaqueWhitePixels, 0)
+  assert.equal(record.alpha, 'preserved')
+  assert.match(f.read('content/catalog/ja.json').items[0].image.src, /\.png$/)
 })

@@ -1,0 +1,380 @@
+{
+  "tool": "Installed Chrome canvas inspection",
+  "assets": [
+    {
+      "src": "111-cat-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1070943,
+      "opaque": 490888,
+      "semi": 10685,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "112-handicraft.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 623560,
+      "opaque": 933895,
+      "semi": 15061,
+      "opaqueWhitePixels": 2057,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "113-night.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 692835,
+      "opaque": 866651,
+      "semi": 13030,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "114-student.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 892194,
+      "opaque": 659608,
+      "semi": 20714,
+      "opaqueWhitePixels": 24702,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "115-to-pull.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1219503,
+      "opaque": 334088,
+      "semi": 18925,
+      "opaqueWhitePixels": 2711,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "116-sunlight-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1201481,
+      "opaque": 355786,
+      "semi": 15249,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "117-to-go-out.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 822314,
+      "opaque": 726472,
+      "semi": 23730,
+      "opaqueWhitePixels": 1740,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "118-inside-the-body-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 950079,
+      "opaque": 605036,
+      "semi": 17401,
+      "opaqueWhitePixels": 66,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "119-five-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 975302,
+      "opaque": 577234,
+      "semi": 19980,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "120-train-direction-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 966798,
+      "opaque": 583178,
+      "semi": 22540,
+      "opaqueWhitePixels": 179266,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "121-nine-things.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 704622,
+      "opaque": 834377,
+      "semi": 33517,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "122-what-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1243257,
+      "opaque": 318418,
+      "semi": 10841,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "123-seattle.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 947010,
+      "opaque": 593874,
+      "semi": 31632,
+      "opaqueWhitePixels": 1779,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "124-direction-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1100505,
+      "opaque": 457756,
+      "semi": 14255,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "125-how-many-times.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1303553,
+      "opaque": 251111,
+      "semi": 17852,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "126-great.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 870206,
+      "opaque": 679560,
+      "semi": 22750,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "127-bread-loaf-counter.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1062605,
+      "opaque": 494759,
+      "semi": 15152,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "128-thousands.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 875890,
+      "opaque": 675720,
+      "semi": 20906,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "129-population.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 637150,
+      "opaque": 920725,
+      "semi": 14641,
+      "opaqueWhitePixels": 6,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "130-power.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 935349,
+      "opaque": 620403,
+      "semi": 16764,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "131-task.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 619790,
+      "opaque": 939787,
+      "semi": 12939,
+      "opaqueWhitePixels": 447023,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "132-one-day-v4.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1083941,
+      "opaque": 473883,
+      "semi": 14692,
+      "opaqueWhitePixels": 177466,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "133-north-america.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 960346,
+      "opaque": 580122,
+      "semi": 32048,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "134-pause-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 710118,
+      "opaque": 852891,
+      "semi": 9507,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "135-mainly-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 744768,
+      "opaque": 810469,
+      "semi": 17279,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

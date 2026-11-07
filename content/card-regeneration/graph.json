@@ -23,6 +23,13 @@
       "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png"
     },
     {
+      "id": "style:kiku-cat",
+      "kind": "style",
+      "status": "approved-direction",
+      "specification": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: CHARACTER IDENTITY AND STYLE REFERENCE. Kiku is the compact golden-yellow cat mascot with bare ears and NO headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, replacing the basketball; preserve the word’s intended relation. Use ordinary literal objects where the vocabulary specifically names them. Batch 07 Kiku scenes are approved: under/on the chair, small/big comparisons, under the bed, on the table and mixing. Future scenes still require individual user review.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: keep Kiku recognizable, preserve intended action or spatial relation, no captions, words, logos, watermark, frame or unrelated decorations.\nCard-specific identity variant for111: preserve Kiku’s golden cat face, paws and tail, but remove both headphone cups, ear pads and the entire arched band. No headphones or attention lines on this card. This exception does not change the approved headphone design in other Kiku scenes.",
+      "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png"
+    },
+    {
       "id": "component:apple",
       "kind": "component",
       "seedCard": "ja-apple",
@@ -2491,11 +2498,12 @@
         "ja-v-bb85f028d944",
         "ja-v-084edf1fdd10",
         "ja-v-df70a01acaec",
-        "ja-v-947395f42397"
+        "ja-v-947395f42397",
+        "ja-v-277587e6fa07"
       ],
       "referencePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
       "status": "approved",
-      "guidance": "Reuse card 38 cube shape, viewpoint, contour, soft shading and palette for X things; change only exact count and spacing. Replaces apples for this family.",
+      "guidance": "Reuse approved card38cube shape, three-quarter viewpoint, rounded contours, restrained soft shading and gold/pink/lavender/sky-blue palette for all X-things entries including One Thing. Change only exact count and spacing. No apples, numerals or decorative counters. Keep objects separate and individually countable. New scenes still await review.",
       "replaceComponents": []
     },
     {
@@ -2563,12 +2571,13 @@
         "ja-v-4690961b5456",
         "ja-v-5849925b131d",
         "ja-v-6109638dac53",
-        "ja-v-dd1d6132fe3c"
+        "ja-v-dd1d6132fe3c",
+        "ja-cat"
       ],
       "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png",
       "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
       "status": "approved-character-source",
-      "guidance": "Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, preserving the intended relation. In position and size cards add four short straight violet attention lines beside Kiku to emphasize the cat; never emphasize the other object or use headphone sound waves. This attention convention does not alter the approved mixing-action scene. Use ordinary literal objects where vocabulary names them. Small/big comparisons, under-bed, on-table and mixing scenes are approved. The under/on-chair pair is also approved. Future scenes still require their own review.",
+      "guidance": "Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, preserving the intended relation. In position and size cards add four short straight violet attention lines beside Kiku to emphasize the cat; never emphasize the other object or use headphone sound waves. This attention convention does not alter the approved mixing-action scene. Use ordinary literal objects where vocabulary names them. Small/big comparisons, under-bed, on-table and mixing scenes are approved. The under/on-chair pair is also approved. Future scenes still require their own review. Card111/Cat depicts Kiku alone, WITHOUT headphones or spatial attention lines, as requested in batch09round2. Preserve his golden face, paws and tail; this accessory exception applies only to111. The headphone-free111cat card is approved.",
       "removeComponents": [
         "ball",
         "person"
@@ -2666,11 +2675,19 @@
       "seedCard": "ja-v-08e3c50181be",
       "memberIds": [
         "ja-v-08e3c50181be",
-        "ja-v-13ea3220cde0"
+        "ja-v-13ea3220cde0",
+        "ja-v-56d52b7869ab",
+        "ja-v-b0489d428339",
+        "ja-v-a02edbda9f4c",
+        "ja-v-7b2351210462",
+        "ja-v-0655c242d1db",
+        "ja-v-f50fcf40e898",
+        "ja-v-9acbf1542642",
+        "ja-v-da2913ad7e4c"
       ],
       "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
-      "status": "approved",
-      "guidance": "Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved."
+      "status": "approved-object-new-members-awaiting-review",
+      "guidance": "Reuse approved109pull-off calendar object for all numbered calendar dates: opaque white front sheet, golden binding, two lavender rings, perforation, stacked page edges and curled lower-right corner. Huge dark-violet date is the only numeral.109date20and110date4are approved; new dates await review. User-selected pull-off design overrides older full-month-grid appearance wording while retaining contextual date/duration restrictions. Do not use132two-calendar progression for a specific date."
     },
     {
       "id": "family:stylized-moon",
@@ -2678,11 +2695,52 @@
       "seedCard": "ja-v-e0bb1d02fee0",
       "memberIds": [
         "ja-v-2d7d45d5614e",
-        "ja-v-e0bb1d02fee0"
+        "ja-v-e0bb1d02fee0",
+        "ja-v-ba0c8a160c33"
       ],
       "referencePath": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
       "status": "approved",
-      "guidance": "95and97use the same fuller stylized golden crescent without crater spots or stars.96stays a slimmer crescent and has no stars. Moonlight95retains beam/water reflection; generic moon97is the lone fuller crescent. All revised scenes are approved."
+      "guidance": "Reuse the approved fuller stylized golden crescent shape from97as an object-only reference, with no crater spots or facial features.95and97approved this moon shape.96stays slimmer and has no stars. Preserve each new composition:95moonlight has beam/water;113night may have a contained night sky and stars. A shared approved moon object does not preapprove future scenes; each new scene requires user feedback."
+    },
+    {
+      "id": "family:light-beams",
+      "kind": "family",
+      "seedCard": "ja-v-2d7d45d5614e",
+      "memberIds": [
+        "ja-v-2d7d45d5614e",
+        "ja-v-cb7a14590e8e"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/95-moonlight-v3.png",
+      "status": "approved",
+      "guidance": "Reuse approved moonlight95for the upper-left celestial body and broad diagonal pale-gold beam reaching lower-right.95keeps its crescent, blue water oval and three reflections. Sunlight116uses a golden round sun with short rays and now lands on a small GREEN GRASS PATCH, with no water or reflection streaks. Preserve the overall beam layout across the pair.Both95and116are approved.",
+      "removeComponents": [
+        "tree-plant"
+      ]
+    },
+    {
+      "id": "family:fruit-basket-mnemonics",
+      "kind": "family",
+      "seedCard": "ja-banana",
+      "memberIds": [
+        "ja-v-4285b5f8fc72"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
+      "status": "approved",
+      "guidance": "Reuse approved pink-red apple01and yellow banana11object designs, with current restrained shading and transparent exterior. Mainly135proposes a basket containing mostly apples and one banana; exact apple count is not the vocabulary target. No bead ratios or population crowd. The apple-majority scene is approved and retains its spoken-context/picture-only restriction. For135add short straight violet attention lines targeting the apple cluster only, preserving the single banana and basket. Do not emphasize the banana or whole basket.",
+      "replaceComponents": [
+        "apple"
+      ]
+    },
+    {
+      "id": "family:consecutive-calendar-days",
+      "kind": "family",
+      "seedCard": "ja-v-08e3c50181be",
+      "memberIds": [
+        "ja-v-3d24eb7fb7b5"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+      "status": "approved",
+      "guidance": "Reuse approved pull-off calendar109object design: opaque white sheets, golden binding, lavender rings, violet contours, perforation and curled corner.132shows the same calendar in two successive states12and13, connected by one right-pointing arrow, expressing one elapsed day. This is a duration illustration, not a new particular-date meaning. Preserve F07and contextual teaching. The12→13duration scene is approved."
     }
   ],
   "edges": [
@@ -2907,7 +2965,7 @@
       "to": "card:ja-v-20cbd1c15a35"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-1d446778d33c"
     },
     {
@@ -2959,11 +3017,11 @@
       "to": "card:ja-v-5d8047464c5d"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-277587e6fa07"
     },
     {
-      "from": "component:apple",
+      "from": "family:counting-blocks",
       "to": "card:ja-v-277587e6fa07"
     },
     {
@@ -2979,11 +3037,11 @@
       "to": "card:ja-v-fae75d2d18b2"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-2ef4da30cf39"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-33c00f4a1a8b"
     },
     {
@@ -3199,11 +3257,15 @@
       "to": "card:ja-dog"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f50fcf40e898"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-f50fcf40e898"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-f50fcf40e898"
     },
     {
@@ -3235,11 +3297,15 @@
       "to": "card:ja-v-6eed6b905b8e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a02edbda9f4c"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-a02edbda9f4c"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-a02edbda9f4c"
     },
     {
@@ -3459,11 +3525,15 @@
       "to": "card:ja-v-e0bb1d02fee0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9acbf1542642"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-9acbf1542642"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-9acbf1542642"
     },
     {
@@ -3475,7 +3545,23 @@
       "to": "card:ja-v-cacf3a45ed07"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-3d24eb7fb7b5"
+    },
+    {
+      "from": "component:calendar",
+      "to": "card:ja-v-3d24eb7fb7b5"
+    },
+    {
+      "from": "component:arrow",
+      "to": "card:ja-v-3d24eb7fb7b5"
+    },
+    {
+      "from": "component:numeral",
+      "to": "card:ja-v-3d24eb7fb7b5"
+    },
+    {
+      "from": "family:consecutive-calendar-days",
       "to": "card:ja-v-3d24eb7fb7b5"
     },
     {
@@ -3571,7 +3657,7 @@
       "to": "card:ja-v-ed6bd4d73b76"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-56d52b7869ab"
     },
     {
@@ -3579,11 +3665,19 @@
       "to": "card:ja-v-56d52b7869ab"
     },
     {
-      "from": "style",
+      "from": "family:pull-off-calendar-dates",
+      "to": "card:ja-v-56d52b7869ab"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-0655c242d1db"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-0655c242d1db"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-0655c242d1db"
     },
     {
@@ -3611,11 +3705,15 @@
       "to": "card:ja-v-e368e3aa9bf6"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7b2351210462"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-7b2351210462"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-7b2351210462"
     },
     {
@@ -3651,7 +3749,7 @@
       "to": "card:ja-v-65df49688ef0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-da2913ad7e4c"
     },
     {
@@ -3659,11 +3757,19 @@
       "to": "card:ja-v-da2913ad7e4c"
     },
     {
-      "from": "style",
+      "from": "family:pull-off-calendar-dates",
+      "to": "card:ja-v-da2913ad7e4c"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-b0489d428339"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-b0489d428339"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-b0489d428339"
     },
     {
@@ -3871,7 +3977,11 @@
       "to": "card:ja-v-a47e21265374"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-18fe4d351abc"
+    },
+    {
+      "from": "component:arrow",
       "to": "card:ja-v-18fe4d351abc"
     },
     {
@@ -4191,7 +4301,7 @@
       "to": "card:ja-v-a0e6022cc115"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-16fcea5b6e6e"
     },
     {
@@ -4219,7 +4329,7 @@
       "to": "card:ja-v-0c1b8280f1ee"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-3aa47bb43d28"
     },
     {
@@ -4299,7 +4409,7 @@
       "to": "card:ja-v-dfb6d8ba613b"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-bb787ce6238a"
     },
     {
@@ -4815,7 +4925,15 @@
       "to": "card:ja-v-69c61c85a403"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-4285b5f8fc72"
+    },
+    {
+      "from": "component:apple",
+      "to": "card:ja-v-4285b5f8fc72"
+    },
+    {
+      "from": "family:fruit-basket-mnemonics",
       "to": "card:ja-v-4285b5f8fc72"
     },
     {
@@ -4887,7 +5005,7 @@
       "to": "card:ja-v-0cbc7661647e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-3ed4447f3492"
     },
     {
@@ -4923,7 +5041,7 @@
       "to": "card:ja-v-54c8da9a7bac"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-3ee395a38c63"
     },
     {
@@ -5147,7 +5265,7 @@
       "to": "card:ja-v-75ac90da3b27"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-001a4faf05bd"
     },
     {
@@ -5471,7 +5589,7 @@
       "to": "card:ja-v-696107ad9e08"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-26a964fd9243"
     },
     {
@@ -5719,7 +5837,7 @@
       "to": "card:ja-v-4063840184cf"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a491f1acccc3"
     },
     {
@@ -5763,7 +5881,7 @@
       "to": "card:ja-v-a5dbfebd3fae"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-1c7565a62dc9"
     },
     {
@@ -5791,7 +5909,7 @@
       "to": "card:ja-v-dc5177422a8b"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-01016753b889"
     },
     {
@@ -5911,7 +6029,7 @@
       "to": "card:ja-v-fb3e6c8865d4"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ba0c8a160c33"
     },
     {
@@ -5920,6 +6038,10 @@
     },
     {
       "from": "component:sun-moon-horizon",
+      "to": "card:ja-v-ba0c8a160c33"
+    },
+    {
+      "from": "family:stylized-moon",
       "to": "card:ja-v-ba0c8a160c33"
     },
     {
@@ -6083,7 +6205,7 @@
       "to": "card:ja-v-f14d2c0c7442"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9567eaf8fe9b"
     },
     {
@@ -6095,7 +6217,7 @@
       "to": "card:ja-v-9567eaf8fe9b"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-cb7a14590e8e"
     },
     {
@@ -6103,7 +6225,7 @@
       "to": "card:ja-v-cb7a14590e8e"
     },
     {
-      "from": "component:tree-plant",
+      "from": "family:light-beams",
       "to": "card:ja-v-cb7a14590e8e"
     },
     {
@@ -6139,7 +6261,7 @@
       "to": "card:ja-v-bdf7ba87a26a"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-2c3dfcbde58b"
     },
     {
@@ -6351,7 +6473,11 @@
       "to": "card:ja-v-eeb8ecca964f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-0c5871310c83"
+    },
+    {
+      "from": "component:arrow",
       "to": "card:ja-v-0c5871310c83"
     },
     {
@@ -6419,7 +6545,7 @@
       "to": "card:ja-v-81b56dc2a618"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-115fd51b8d38"
     },
     {
@@ -6511,7 +6637,7 @@
       "to": "card:ja-v-c370702e86ab"
     },
     {
-      "from": "style",
+      "from": "style:kiku-cat",
       "to": "card:ja-cat"
     },
     {
@@ -6519,7 +6645,7 @@
       "to": "card:ja-cat"
     },
     {
-      "from": "component:person",
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-cat"
     },
     {
@@ -6585,6 +6711,18 @@
     {
       "from": "card:ja-v-e0bb1d02fee0",
       "to": "family:stylized-moon"
+    },
+    {
+      "from": "card:ja-v-2d7d45d5614e",
+      "to": "family:light-beams"
+    },
+    {
+      "from": "card:ja-banana",
+      "to": "family:fruit-basket-mnemonics"
+    },
+    {
+      "from": "card:ja-v-08e3c50181be",
+      "to": "family:consecutive-calendar-days"
     }
   ],
   "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."

@@ -269,7 +269,8 @@ def prepare():
         item['practiceStatus'] = 'staged-for-review'
         item['pictureOnlyEligible'] = not (original['reviewRequired'] or item['requiresContext'])
         item['eligibilityNote'] = 'Provisional only; no generated image enters practice before visual/user review. Existing restrictions remain.'
-        item['components'] = components_for(item)
+        # Explicit feedback describes the current scene when it replaces the original.
+        item['components'] = feedback.get('componentOverrides', {}).get(item_id, components_for(item))
         for family in feedback.get('designFamilies', {}).values():
             if item_id in family['memberIds'] and 'replaceComponents' in family:
                 item['components'] = family['replaceComponents']
@@ -387,6 +388,19 @@ def prepare():
         staged_ids = {i for batch in staged for i in batch['cardIds']}
         pending = [c['id'] for c in remaining if c['id'] not in staged_ids]
         batches = staged
+        # Owner-requested themed groups can exceed the usual batch size without
+        # changing reviewed membership or duplicating cards in later batches.
+        for request in feedback.get('requestedBatches', []):
+            if any(batch['id'] == request['id'] for batch in batches):
+                continue
+            assert request['id'] == f'batch-{len(batches)+1:02}', 'Requested batch is out of sequence'
+            requested_ids = request['cardIds']
+            assert len(requested_ids) == len(set(requested_ids)), 'Duplicate requested card'
+            assert set(requested_ids) <= set(pending), 'Requested card is unavailable or already batched'
+            assert 1 <= len(requested_ids) <= request['maxCards']
+            batches.append({'id': request['id'], 'status': 'blocked-on-previous-feedback',
+                            'cardIds': requested_ids, 'purpose': request['purpose']})
+            pending = [item_id for item_id in pending if item_id not in set(requested_ids)]
         for start in range(0, len(pending), batch_size):
             batches.append({'id': f'batch-{len(batches)+1:02}', 'status': 'blocked-on-previous-feedback',
                             'cardIds': pending[start:start+batch_size], 'purpose': 'Provisional order; apply feedback before generation'})

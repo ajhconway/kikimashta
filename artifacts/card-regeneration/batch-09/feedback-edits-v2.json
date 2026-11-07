@@ -1,0 +1,83 @@
+{
+  "issue": 72,
+  "batch": "batch-09",
+  "round": 2,
+  "tool": "built-in image_gen",
+  "transparentBackground": true,
+  "requests": [
+    {
+      "number": 111,
+      "id": "ja-cat",
+      "file": "111-cat-v3.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/111-cat-v2.png",
+          "role": "edit target: preserve Kiku identity, remove headphones only"
+        }
+      ],
+      "concept": "CAT: Kiku without headphones for this card. Preserve the compact golden-yellow cat identity, pink inner ears, closed smiling eyes, violet nose/mouth/whiskers, rounded forepaws and curled golden tail. Remove all headphone cups, headband and ear pads, completing the natural golden head outline. Kiku alone; no attention lines, accessories, scenery or text. This card-specific headphone exception does not change Kiku's approved headphone design in other scenes.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card 111, CAT\nInput image 1: current Kiku card, edit target.\nPrimary request: remove Kiku's HEADPHONES completely: both lavender ear cups, all ear pads and the entire arched headband. Complete the natural golden head outline and show both pink-lined triangular cat ears unobstructed. Keep Kiku's golden cat identity, closed smiling eyes, violet nose/mouth/whiskers, compact rounded head/body, two rounded forepaws and curled golden tail. Preserve the pose, proportions, colors and centered composition. This is the same Kiku with bare ears and no headphones. Do not add a collar, clothing, sound marks, attention lines, flowers or other props.\nStyle/medium: keep the existing Kikimashta rounded cartoon forms, bold deep-violet contours and restrained soft shading inside forms. Preserve the established palette and illustration quality.\nComposition/export: one square card, complete silhouette within generous transparent margins; readable at 145px. Genuinely transparent outer background with alpha, not painted white or checkerboard. Preserve opaque white subject details. No exterior haze, shadow, frame, logo, watermark or caption. transparent_background=true.",
+      "description": "Kiku with bare ears and no headphones; golden cat, smiling eyes, pink ears, rounded paws and curled tail.",
+      "path": "artifacts/card-regeneration/batch-09/111-cat-v3.png",
+      "selectedPath": "artifacts/card-regeneration/batch-09/111-cat-v3.png"
+    },
+    {
+      "number": 116,
+      "id": "ja-v-cb7a14590e8e",
+      "file": "116-sunlight-v3.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/116-sunlight-v2.png",
+          "role": "edit target: preserve sun and diagonal beam, replace water with grass"
+        }
+      ],
+      "concept": "SUNLIGHT: keep the golden round sun at upper-left and broad warm pale-yellow beam extending diagonally toward lower-right. Replace the blue water oval with a small oval patch of green grass, a few short rounded grass tufts and a softly sunlit yellow-green area where the beam lands. No blue water, waves, water reflection streaks, flowers, exposed dirt, hills, window, plant pot or full background.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card 116, SUNLIGHT\nInput image 1: current sunlight card, edit target.\nPrimary request: have the sun shine onto GRASS. Keep the golden round sun, short rounded rays and broad warm pale-yellow diagonal light beam in the same upper-left to lower-right composition. Replace the entire blue water oval at lower-right with a similarly sized GREEN GRASS PATCH, a simple gently oval green ground silhouette with a few short rounded green grass tufts. The beam lands clearly on the grass, making a subtle pale-yellow-green illuminated patch. Remove all blue water, waves and the three water-reflection streaks. Keep grass sparse and low, no flowers, dirt cross-section, pond, hills, sky rectangle, plant pot or extra objects. Match the existing violet contours, sun design, beam shape and overall balance.\nStyle/medium: keep the existing Kikimashta rounded cartoon forms, bold deep-violet contours and restrained soft shading inside forms. Preserve the established palette and illustration quality.\nComposition/export: one square card, complete silhouette within generous transparent margins; readable at 145px. Genuinely transparent outer background with alpha, not painted white or checkerboard. Preserve opaque white subject details. No exterior haze, shadow, frame, logo, watermark or caption. transparent_background=true.",
+      "description": "Golden sun sends a pale-yellow diagonal beam onto a small green grass patch.",
+      "path": "artifacts/card-regeneration/batch-09/116-sunlight-v3.png",
+      "selectedPath": "artifacts/card-regeneration/batch-09/116-sunlight-v3.png"
+    },
+    {
+      "number": 132,
+      "id": "ja-v-3d24eb7fb7b5",
+      "file": "132-one-day-v3.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+          "role": "approved pull-off calendar object design; use the same calendar twice as consecutive-day states"
+        }
+      ],
+      "concept": "ONE DAY as DURATION: a pull-off calendar shown in two consecutive states, left page12 and right page13, connected by one clear right-pointing arrow. Reuse approved calendar109design: opaque white pages, gold binding, lavender rings, violet contours, stacked page edges and curled lower corner. Large violet12and13only; exactly one date increment represents one elapsed day. No month grid, date1, 24-hour dial, sun/moon, extra dates or caption. Preserve F07/context requirement: this is the span from one day to the next, not a particular date.",
+      "prompt": "Use case: scientific-educational\nAsset type: vocabulary card 132, ONE DAY as elapsed duration\nInput image 1: approved pull-off calendar card 109, object design reference only; replace its20with the requested dates.\nPrimary request: show ONE DAY PASSING by showing the SAME pull-off calendar in TWO successive states, side by side. LEFT calendar has one huge violet '12' on its opaque white front sheet. RIGHT calendar has one huge violet '13' on its opaque white front sheet. A single clear short RIGHT-POINTING VIOLET ARROW in the gap links12to13. The two calendars match exactly in size, viewpoint and design: warm golden top binding, two lavender rings, perforation line, opaque white sheets, stacked page edges and curled lower-right corner from image1. Use a compact balanced horizontal arrangement occupying about85percent of square width, with large dates readable at145px. Dates12and13are just consecutive states marking one elapsed day. Text allowed: exactly '12' and '13', once each. No20, calendar grid, month names, weekdays, date1, numeral24, sun, moon, clock, cyclic arrow, extra calendar, extra dates or captions.\nStyle/medium: keep the existing Kikimashta rounded cartoon forms, bold deep-violet contours and restrained soft shading inside forms. Preserve the established palette and illustration quality.\nComposition/export: one square card, complete silhouette within generous transparent margins; readable at 145px. Genuinely transparent outer background with alpha, not painted white or checkerboard. Preserve opaque white subject details. No exterior haze, shadow, frame, logo, watermark or caption. transparent_background=true.",
+      "description": "Matching pull-off calendar states show 12 → 13, illustrating the passage from one day to the next.",
+      "path": "artifacts/card-regeneration/batch-09/132-one-day-v3.png",
+      "selectedPath": "artifacts/card-regeneration/batch-09/132-one-day-v4.png",
+      "finalPrompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary card, NOT a wide banner\nInput image 1: edit target, correct calendar progression content but wrong wide canvas format.\nPrimary request: put this exact12-to13calendar progression on a SQUARE transparent canvas. OUTPUT MUST HAVE EQUAL WIDTH AND HEIGHT, 1:1. Keep both matching calendars side by side horizontally with the right-pointing violet arrow between, left date12and right date13. Preserve the drawing, colors, opaque white paper, golden binding and lavender rings. Fit the entire existing pair in the MIDDLE of a SQUARE canvas with ample empty transparent space ABOVE and BELOW; subjects occupy about85percent of square WIDTH and about40percent of square HEIGHT. Do not crop or stretch the calendar pair. Do not fill the square with more subjects or enlarge vertically. Just expand the transparent canvas vertically to equal its width. Full silhouettes and clean violet outlines. No additional calendars, text, objects, clock, labels, backdrop, frame, shadow, watermark or checkerboard. Text allowed only12and13. Genuinely transparent outer background; opaque white paper stays filled. transparent_background=true.",
+      "finalReferences": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/132-one-day-v3.png",
+          "role": "edit target: exact progression content, square-canvas correction only"
+        }
+      ]
+    },
+    {
+      "number": 135,
+      "id": "ja-v-4285b5f8fc72",
+      "file": "135-mainly-v3.png",
+      "refs": [
+        {
+          "path": "artifacts/card-regeneration/batch-09/135-mainly-v2.png",
+          "role": "edit target: preserve fruit basket and add attention lines emphasizing apples only"
+        }
+      ],
+      "concept": "MAINLY: preserve the lavender basket of six pink-red apples and one yellow banana. Add four to six short straight deep-violet attention strokes in the empty space around the upper apple cluster, directed toward the apples. Attention belongs to the apples only, not the banana or basket. Keep fruit positions, shapes, colors, basket and scale; allow margin for the new strokes. No sparkles, extra fruit, labels or percentages. Preserve existing picture-only restriction.",
+      "prompt": "Use case: precise-object-edit\nAsset type: vocabulary card 135, MAINLY\nInput image 1: current fruit basket, edit target.\nPrimary request: add clear ATTENTION LINES emphasizing the APPLES as the main content. Keep the same six pink-red apples with green leaves, one yellow banana at front-right, lavender basket, object shapes, colors and composition. Add four to six SHORT STRAIGHT DEEP-VIOLET attention strokes in the empty space just above and beside the upper pink-red APPLE CLUSTER, angled toward the apples. These are simple emphasis strokes, not arrows or sparkles. The lines should clearly refer to the apples, not the banana and not the whole basket. Give the new strokes enough transparent margin; slightly reduce the whole composition only if necessary. Do not change fruit count or position, enlarge the banana, add a face, star, glow, new object, label or text.\nStyle/medium: keep the existing Kikimashta rounded cartoon forms, bold deep-violet contours and restrained soft shading inside forms. Preserve the established palette and illustration quality.\nComposition/export: one square card, complete silhouette within generous transparent margins; readable at 145px. Genuinely transparent outer background with alpha, not painted white or checkerboard. Preserve opaque white subject details. No exterior haze, shadow, frame, logo, watermark or caption. transparent_background=true.",
+      "description": "The same apple-and-banana basket, with short violet attention lines emphasizing the apples only.",
+      "path": "artifacts/card-regeneration/batch-09/135-mainly-v3.png",
+      "selectedPath": "artifacts/card-regeneration/batch-09/135-mainly-v3.png"
+    }
+  ],
+  "productionCorrections": [
+    "artifacts/card-regeneration/batch-09/cleanup-requests-v2.json"
+  ]
+}

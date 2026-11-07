@@ -47,6 +47,21 @@ class ReuseTests(unittest.TestCase):
         self.assertIn('bowl', cards['ja-v-4690961b5456']['components'])
         self.assertEqual(cards['ja-v-66ccf8dd3399']['components'], ['ball'])
 
+    def test_revised_duration_retains_context_and_depends_on_current_visual_parts(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = {c['id']: c for c in json.loads((data / 'prompts.json').read_text())['cards']}
+        duration = cards['ja-v-3d24eb7fb7b5']
+        self.assertFalse(duration['pictureOnlyEligible'])
+        self.assertTrue(duration['requiresContext'])
+        self.assertIn('F07', [f['reference'] for f in duration['reviewFindings']])
+        self.assertIn('component:numeral', duration['dependsOn'])
+        self.assertIn('family:consecutive-calendar-days', duration['dependsOn'])
+        self.assertNotIn('component:sun-moon-horizon', duration['dependsOn'])
+        self.assertIn('component:arrow', duration['dependsOn'])
+        self.assertIn('component:calendar', duration['dependsOn'])
+        for item_id in ['ja-v-0c5871310c83', 'ja-v-18fe4d351abc']:
+            self.assertIn('component:arrow', cards[item_id]['dependsOn'])
+
     def test_number_ranges_exclude_currency_age_and_object_counters(self):
         data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
         cards = json.loads((data / 'prompts.json').read_text())['cards']
@@ -78,6 +93,23 @@ class ReuseTests(unittest.TestCase):
                                 for batch in batches['batches'][:index]))
             self.assertTrue(all(batch['status'] == 'blocked-on-previous-feedback'
                                 for batch in batches['batches'][index + 1:]))
+
+    def test_requested_numeric_batch_is_complete_and_preserves_other_feedback_gates(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = json.loads((data / 'prompts.json').read_text())['cards']
+        batches = json.loads((data / 'batches.json').read_text())['batches']
+        group = next(b for b in batches if b['id'] == 'batch-10')
+        previous = {i for b in batches[:9] for i in b['cardIds']}
+        expected = {c['id'] for c in cards if c['id'] not in previous and
+                    (re.fullmatch(r'number-\d+|things-\d+|date-\d+', c['visualGroup']) or
+                     c['meaning'] in {'Four Things', 'Fourth Day', 'Twentieth Day'})}
+        self.assertEqual(set(group['cardIds']), expected)
+        self.assertEqual(len(group['cardIds']), 33)
+        self.assertTrue(all(len(b['cardIds']) <= 25 for b in batches[10:]))
+        if group['status'] != 'approved':
+            self.assertTrue(all(b['status'] == 'blocked-on-previous-feedback' for b in batches[10:]))
+        self.assertIn('ja-v-277587e6fa07', group['cardIds'])
+        self.assertIn('family:counting-blocks', next(c for c in cards if c['id'] == 'ja-v-277587e6fa07')['dependsOn'])
 
     def test_counting_family_reuses_approved_blocks_and_preserves_reviewed_batches(self):
         root = Path(__file__).resolve().parents[2]
