@@ -1,7 +1,7 @@
 {
   "issue": 72,
-  "batch": "batch-07",
-  "round": 5,
+  "batch": "batch-08",
+  "round": 2,
   "approvedCardIds": [
     "ja-apple",
     "ja-v-ad7167347a2a",
@@ -87,7 +87,32 @@
     "ja-v-ceb7b2a20cbd",
     "ja-v-877b9ba07a47",
     "ja-v-520308b3c3b4",
-    "ja-v-c0f58bfab324"
+    "ja-v-c0f58bfab324",
+    "ja-v-b066e78531d6",
+    "ja-v-e368e3aa9bf6",
+    "ja-v-9910372c1964",
+    "ja-v-0ac038632611",
+    "ja-v-0c144e18f1b2",
+    "ja-v-d242b38667c8",
+    "ja-v-497356cf0646",
+    "ja-v-6e098e54aa63",
+    "ja-v-2850b5703e8b",
+    "ja-v-2d7d45d5614e",
+    "ja-v-4aa5c84df90c",
+    "ja-v-e0bb1d02fee0",
+    "ja-v-f3881ce313e7",
+    "ja-v-698044202165",
+    "ja-v-a5d390dc4805",
+    "ja-v-d10df0e56846",
+    "ja-v-dbe24910365e",
+    "ja-v-fa6a4c8f27b4",
+    "ja-v-eba7f0968101",
+    "ja-v-f5b4250aeb03",
+    "ja-v-e05b8e36c6ca",
+    "ja-v-ac1e4f6bee13",
+    "ja-v-1a43c96593cb",
+    "ja-v-08e3c50181be",
+    "ja-v-13ea3220cde0"
   ],
   "requests": [],
   "conceptOverrides": {
@@ -141,9 +166,9 @@
     "ja-v-7fc81b0ddd17": "One pool ball numbered 2: a solid blue sphere, a white circular number patch carrying the exact black numeral 2, flat solid-color cartoon rendering and violet exterior contour, without glossy highlights, deep gradients or cast shadows. Centered on pure white, no other balls, labels, props or quantity dots.",
     "ja-v-61c516578fee": "One plain lavender (#AF86EF) circular number token, violet contour and large exact dark-violet numeral 50. This color consistently marks range 16–99. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
     "ja-v-d4473f87e438": "One pool ball numbered 5: a solid orange sphere, a white circular number patch carrying the exact black numeral 5, flat solid-color cartoon rendering and violet exterior contour, without glossy highlights, deep gradients or cast shadows. Centered on pure white, no other balls, labels, props or quantity dots.",
-    "ja-v-b066e78531d6": "One pool ball numbered 4: a solid purple sphere, a white circular number patch carrying the exact black numeral 4, flat solid-color cartoon rendering and violet exterior contour, without glossy highlights, deep gradients or cast shadows. Centered on pure white, no other balls, labels, props or quantity dots.",
+    "ja-v-b066e78531d6": "One flat circular PURPLE pool ball numbered4. Solid purple fill, violet contour, one WHITE circular number patch with exact BLACK numeral4, matching the approved flat10ball rendering. No glossy gradients, reflections, dots or other balls.",
     "ja-v-06ef406f5569": "One pool ball numbered 6: a solid green sphere, a white circular number patch carrying the exact black numeral 6, flat solid-color cartoon rendering and violet exterior contour, without glossy highlights, deep gradients or cast shadows. Centered on pure white, no other balls, labels, props or quantity dots.",
-    "ja-v-e368e3aa9bf6": "One plain lavender (#AF86EF) circular number token, violet contour and large exact dark-violet numeral 16. This color consistently marks range 16–99. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
+    "ja-v-e368e3aa9bf6": "One plain lavender circular number token (#AF86EF), deep-violet contour and large exact dark-violet numeral16. Match approved50token geometry and restrained shading; this palette indicates16–99. No other marks, dots, beads or numbers.",
     "ja-v-86ef0852f80f": "One plain sky blue (#91D7ED) circular number token, violet contour and large exact dark-violet numeral 1000. This color consistently marks range 1000–9999. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
     "ja-v-7bbba1a9506e": "One plain gold (#FFE178) circular number token, violet contour and large exact dark-violet numeral 100000. This color consistently marks range 10000–above. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
     "ja-v-a872d5e674a2": "One plain gold (#FFE178) circular number token, violet contour and large exact dark-violet numeral 10000. This color consistently marks range 10000–above. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
@@ -156,7 +181,30 @@
     "ja-v-96a032e15dda": "One plain pink (#FF85B5) circular number token, violet contour and large exact dark-violet numeral 100. This color consistently marks range 100–999. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
     "ja-v-823616f3288f": "One plain gold (#FFE178) circular number token, violet contour and large exact dark-violet numeral 1000000. This color consistently marks range 10000–above. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
     "ja-v-190aae33ad24": "One plain pink (#FF85B5) circular number token, violet contour and large exact dark-violet numeral 200. This color consistently marks range 100–999. The numeral is dominant, on a white outer background. No decorative beads, extra numerals, quantity dots, symbols or labels.",
-    "ja-v-a249b72fa923": "A transparent jar filled with many small round objects in gold, pink, lavender and blue, matching the original selected jar composition approved by the user. Do not substitute a crowd of people, which conflicts with population."
+    "ja-v-a249b72fa923": "A transparent jar filled with many small round objects in gold, pink, lavender and blue, matching the original selected jar composition approved by the user. Do not substitute a crowd of people, which conflicts with population.",
+    "ja-v-9910372c1964": "A simple recognizable UNIVERSITY building: a broad lavender academic hall with symmetrical rows of windows and a central arched entrance, a small gold roof accent, and one large dark-violet GRADUATION CAP with gold tassel perched above the central roof as the educational cue. No school-name sign, alphabet letters, person, books or scenery.",
+    "ja-v-0ac038632611": "One clearly OPEN BOOK, slightly viewed from above, warm gold cover edges and spine, two thick opaque WHITE pages curving outward from the central binding, violet outlines. Two tiny simple pictures, a pink flower on one page and a blue cloud on the other, provide illustrated-page context without letters. Book is dominant; no pencil or loose sheets.",
+    "ja-v-0c144e18f1b2": "One CLOSED PURPLE SPIRAL NOTEBOOK at a slight three-quarter tilt. Lavender front cover, violet contour, visible white page block at right/bottom, six clearly separated dark-violet spiral loops down the left binding. Completely plain cover without words, title panel, letters, pencil or pictures.",
+    "ja-v-d242b38667c8": "MONEY: one sky-blue/lavender rectangular paper banknote using the approved1000yen note design, with exact essential currency marking ¥1000, behind three overlapping GOLD COINS. Clear banknote plus coins grouping; one coin may carry ¥. Currency is excluded from number-token range rules. No wallet, hand, price tag, extra banknote or lettering.",
+    "ja-v-497356cf0646": "One friendly human TEACHER standing beside a dark desaturated green classroom chalkboard on a simple golden frame. Reuse approved human design: warm skin, short violet hair, pink shirt, lavender trousers, blue shoes. Teacher holds a thin gold pointer aimed at one simple triangle drawn in chalk; free hand relaxed. Board and teaching gesture both readable. Teacher is a literal occupation, not Kiku. No caption, writing, numbers, pupils or desk.",
+    "ja-v-6e098e54aa63": "One complete human BODY from head to feet, same friendly human design: short violet hair, pink shirt, lavender trousers, blue shoes. Relaxed standing pose, arms slightly separated from torso, both hands and both feet visible. Four short violet attention strokes bracket the WHOLE BODY along its sides from shoulders to legs, with equal emphasis rather than highlighting a single body part. No organs, skeleton, facial close-up, labels, circle or background scene.",
+    "ja-v-2850b5703e8b": "WEATHER: one compact combined weather illustration with a golden SUN partly peeking from behind one large opaque WHITE CLOUD, and five blue RAIN DROPS hanging beneath. Each component distinct, sun rays visible at upper-left, rounded cloud violet contour, rain clearly below. No ground, puddle, horizon, rectangular sky panel or extra weather symbols.",
+    "ja-v-2d7d45d5614e": "A stylized fuller golden crescent moon, matching97, casts a clearly delineated pale yellow/lavender beam diagonally down onto a blue water oval with three reflection streaks. No full circular moon, craters, stars, clouds or exterior glow.",
+    "ja-v-4aa5c84df90c": "One slim golden crescent opening to the right with pointed tips and violet contours. No stars or other objects. Centered with transparent outer background and transparent crescent cutout.",
+    "ja-v-e0bb1d02fee0": "One fuller stylized golden crescent, visibly plumper than96, with a smaller curved bite removed from the right, pointed tips and violet contours. No crater spots, full circular disc, stars, face, glow or other objects.",
+    "ja-v-f3881ce313e7": "One bright golden-yellow SUN: a plain circular disc with exactly EIGHT substantial short rounded rays spaced evenly around it. Violet contours, restrained warm gold shading, no smiling face, eyes, cloud, moon, horizon or labels.",
+    "ja-v-698044202165": "A small FOREST / GROVE of five leafy green trees grouped at different depths. Reuse tree100s rounded green crown, forked brown trunk and violet contours, varying size modestly. Keep at least three visible trunks, overlapping canopies and a tight group that clearly reads as multiple trees. No mountains, river, log, people, ground strip or labels.",
+    "ja-v-a5d390dc4805": "One full LEAFY GREEN TREE: single sturdy brown forked trunk with three main branches, rounded green crown with three broad overlapping lobes and restrained leaf-tone patches, bold violet contour. Whole crown, trunk and small roots visible. No fruit, flowers, birds, bench, ground strip, forest or other trees.",
+    "ja-v-d10df0e56846": "One clearly FUZZY CATERPILLAR crawling along a broad green leaf. A green segmented plump body with short violet hair tufts around every segment, a small rounded head, two simple eyes, short antennae and tiny paired legs gripping the leaf. Hairy texture is important, not a smooth worm. Leaf has one simple violet midrib. No butterfly, cocoon, person, words or scenery.",
+    "ja-v-dbe24910365e": "Three slender GREEN BAMBOO CANES of different heights in one sparse cluster. Each stem has unmistakable segmented nodes and a few narrow pointed leaves in small side clusters. Warm green shafts, darker green nodes, violet outlines, clean simple upright silhouette. No pot, panda, grass base, forest or text.",
+    "ja-v-fa6a4c8f27b4": "One simple PINK FLOWER with exactly five rounded petals, small golden center, one curved green stem and two green leaves, whole flower visible. Bold violet contours and restrained soft shading. No pot, bouquet, extra blossoms, bee, ground strip or decoration.",
+    "ja-v-eba7f0968101": "Exactly ONE front-loading WASHING MACHINE, front view: rounded rectangular opaque WHITE cabinet, lavender control strip across top with two simple controls, large circular violet-rimmed door with pale-blue glass, simple visible inner drum. No laundry pile, numerals, words, detergent, other appliances or counting marks. One machine is the whole subject.",
+    "ja-v-f5b4250aeb03": "Exactly TWO IDENTICAL front-loading WASHING MACHINES side by side on the same baseline, evenly spaced and equal size. Reuse104s opaque white cabinet, lavender control panel, violet circular door rim and blue glass, simplifying tiny details only. Group fills about80%canvas width, generous margins, each full silhouette visible. No third appliance, laundry pile, words, numeral2, badges, arrows or counting dots.",
+    "ja-v-e05b8e36c6ca": "One golden wooden SPOOL OF FINE PURPLE SEWING THREAD, slight three-quarter view with clear top/bottom flanges and many thin closely wound parallel strands around central barrel. A single FINE loose thread trails into one simple loop to the right. Fine thread must look distinctly thinner than the thick wool yarn on107. No needle, cloth, ball of yarn, rope, scissors or text.",
+    "ja-v-ac1e4f6bee13": "One round BALL OF THICK LAVENDER WOOL YARN, with broad clearly wound curved strands and a thick loose yarn tail curling beside it. Two simple golden KNITTING NEEDLES crossed behind the upper part of the yarn ball. Soft plump fiber form, violet outline. This is yarn, not a sports ball; no basketball seams, spool, sewing needle, beads, rope or words.",
+    "ja-v-1a43c96593cb": "One FULL-YEAR CALENDAR for the year2011. Opaque white paper sheet with violet contour, golden top binding and two violet rings. Large exact essential numeral2011 centered at top. Beneath, exactly TWELVE small month panels arranged3columns by4rows, each indicated by a tiny seven-column grid. No individual tiny date numerals or month words needed; the twelve calendar panels and2011 are the clear year cue. No highlighted single day, clocks, extra years, arrows or caption.",
+    "ja-v-08e3c50181be": "One pull-off daily calendar with a huge exact dark-violet20filling most of an opaque white front page, gold top binding, two lavender rings, small perforation line, stacked paper edges and curled bottom-right corner. No month grid, other dates, year or captions. Transparent outer canvas.",
+    "ja-v-13ea3220cde0": "Same pull-off daily calendar as109, with only its giant numeral changed to exact4. Same binding, rings, perforation, opaque white paper, stacked edges and curled corner. No grid or extra numbers. Transparent outer canvas."
   },
   "componentGuidance": {
     "ball": "Shared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.",
@@ -375,6 +423,51 @@
         70
       ],
       "feedback": "Chair pair approved. Push approved cards and proceed to next25."
+    },
+    {
+      "batch": "batch-08",
+      "round": 1,
+      "revisedNumbers": [
+        95,
+        96,
+        97,
+        109,
+        110
+      ],
+      "feedback": "95and97use fuller stylized crescents. Remove96stars.109/110use legible pull-off daily calendars. User confirmed75was a typo for97.",
+      "approvedNumbers": []
+    },
+    {
+      "batch": "batch-08",
+      "round": 2,
+      "approvedNumbers": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "feedback": "Batch approved. Push new PR, then merge97, then next25."
     }
   ],
   "acceptedWithKnownIssues": {
@@ -519,6 +612,46 @@
       "status": "approved",
       "referencePath": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
       "guidance": "Reuse approved66chair: golden/honey wood, rounded slatted backrest, lavender seat pad, four straight legs, near-front gentle three-quarter view. Preserve chair size and Kiku scale. Under: Kiku beneath seat between legs, paws at chair-foot baseline. On top: Kiku supported by seat pad, backrest behind, empty opening beneath. Short straight violet attention lines emphasize Kiku. The66/70pair is approved and replaces disconnected box/cloud/bar layouts."
+    },
+    "leafy-tree": {
+      "seedCard": "ja-v-a5d390dc4805",
+      "memberIds": [
+        "ja-v-698044202165",
+        "ja-v-a5d390dc4805"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/100-tree.png",
+      "status": "approved",
+      "guidance": "Use the tree100prototype: rounded green three-lobe canopy, forked brown trunk, violet contours. Tree is single; forest repeats it at different depths. Same-batch prototypes are approved."
+    },
+    "washing-machine-counts": {
+      "seedCard": "ja-v-eba7f0968101",
+      "memberIds": [
+        "ja-v-eba7f0968101",
+        "ja-v-f5b4250aeb03"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/104-one-machine.png",
+      "status": "approved",
+      "guidance": "Use exactly the same front-loading washing machine design for one/two machine counts. Preserve opaque white cabinet, lavender control strip, violet circular door rim and blue glass. Change exact count and spacing only. Both are approved."
+    },
+    "pull-off-calendar-dates": {
+      "seedCard": "ja-v-08e3c50181be",
+      "memberIds": [
+        "ja-v-08e3c50181be",
+        "ja-v-13ea3220cde0"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+      "status": "approved",
+      "guidance": "Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved."
+    },
+    "stylized-moon": {
+      "seedCard": "ja-v-e0bb1d02fee0",
+      "memberIds": [
+        "ja-v-2d7d45d5614e",
+        "ja-v-e0bb1d02fee0"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+      "status": "approved",
+      "guidance": "95and97use the same fuller stylized golden crescent without crater spots or stars.96stays a slimmer crescent and has no stars. Moonlight95retains beam/water reflection; generic moon97is the lone fuller crescent. All revised scenes are approved."
     }
   },
   "generationBatchSize": 25,

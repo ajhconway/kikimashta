@@ -23,7 +23,7 @@ flowchart TD
 
 | Profile | Reference | Status | Cards |
 | --- | --- | --- | ---: |
-| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 96 |
+| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 119 |
 | style:kiku-scenes | [kiku-character-reference.png](../../artifacts/card-regeneration/references/kiku-character-reference.png) | approved-direction | 10 |
 
 A style trial is an independent root in the generation graph. It replaces the previous style only for its assigned cards until user review.
@@ -77,6 +77,10 @@ A style trial is an independent root in the generation graph. It replaces the pr
 | family:number-ranges | prompt-convention | Prompt convention | Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients. |
 | family:direction-arrows | approved | [62-left-direction.png](../../artifacts/card-regeneration/batch-07/62-left-direction.png) | Left direction uses approved card62. Right direction is the same arrow mirrored horizontally, including silhouette, contour and proportions. This applies to direction symbols, not literal archery arrows. |
 | family:chair-position-anchor | approved | [66-revision-v5.png](../../artifacts/card-regeneration/batch-07/66-revision-v5.png) | Reuse approved66chair: golden/honey wood, rounded slatted backrest, lavender seat pad, four straight legs, near-front gentle three-quarter view. Preserve chair size and Kiku scale. Under: Kiku beneath seat between legs, paws at chair-foot baseline. On top: Kiku supported by seat pad, backrest behind, empty opening beneath. Short straight violet attention lines emphasize Kiku. The66/70pair is approved and replaces disconnected box/cloud/bar layouts. |
+| family:leafy-tree | approved | [100-tree.png](../../artifacts/card-regeneration/batch-08/100-tree.png) | Use the tree100prototype: rounded green three-lobe canopy, forked brown trunk, violet contours. Tree is single; forest repeats it at different depths. Same-batch prototypes are approved. |
+| family:washing-machine-counts | approved | [104-one-machine.png](../../artifacts/card-regeneration/batch-08/104-one-machine.png) | Use exactly the same front-loading washing machine design for one/two machine counts. Preserve opaque white cabinet, lavender control strip, violet circular door rim and blue glass. Change exact count and spacing only. Both are approved. |
+| family:pull-off-calendar-dates | approved | [109-twentieth-day-v2.png](../../artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png) | Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved. |
+| family:stylized-moon | approved | [97-moon-v3.png](../../artifacts/card-regeneration/batch-08/97-moon-v3.png) | 95and97use the same fuller stylized golden crescent without crater spots or stars.96stays a slimmer crescent and has no stars. Moonlight95retains beam/water reflection; generic moon97is the lone fuller crescent. All revised scenes are approved. |
 
 ## Generation and feedback rules
 
@@ -134,7 +138,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-4d9423288cb2 | 女 | Woman | person |
 | ja-v-7dddc1af4eb5 | 四月 | April | calendar |
 | ja-v-66ccf8dd3399 | 玉 | Ball | ball |
-| ja-v-0ac038632611 | 本 | Book | paper-book-pencil |
+| ja-v-0ac038632611 | 本 | Book | paper-book-pencil; style:cat-png |
 | ja-v-27d5744f36a2 | 子 | Child | person |
 | ja-v-d1b6831b65c8 | 丸 | Circle | style only |
 | ja-v-b1514b201acd | 丸い | Circular | ball, plate |
@@ -170,7 +174,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-4ac46ddaa10f | 左右 | Left And Right | arrow; style:cat-png |
 | ja-v-14be5202d5b3 | 左 | Left Direction | arrow; style:cat-png |
 | ja-v-2850d52ee4d2 | 五月 | May | calendar |
-| ja-v-e0bb1d02fee0 | 月 | Moon | sun-moon-horizon |
+| ja-v-e0bb1d02fee0 | 月 | Moon | sun-moon-horizon; style:cat-png |
 | ja-v-9acbf1542642 | 九日 | Ninth Day | calendar |
 | ja-v-cacf3a45ed07 | 十月 | October | calendar |
 | ja-v-3d24eb7fb7b5 | 一日 | One Day | style only |
@@ -192,7 +196,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-7b2351210462 | 六日 | Sixth Day | calendar |
 | ja-v-df70a01acaec | 六つ | Six Things | style only; style:cat-png |
 | ja-v-769a80524957 | 小さい | Small | cat; style:kiku-scenes |
-| ja-v-f3881ce313e7 | 日 | Sun | sun-moon-horizon |
+| ja-v-f3881ce313e7 | 日 | Sun | sun-moon-horizon; style:cat-png |
 | ja-v-65df49688ef0 | 刀 | Sword | style only |
 | ja-v-da2913ad7e4c | 十日 | Tenth Day | calendar |
 | ja-v-b0489d428339 | 三日 | Third Day | calendar |
@@ -201,7 +205,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-5f0cf40d1630 | 正す | To Correct | style only |
 | ja-v-b2a9df4d0301 | 出る | To Exit | doorway, person |
 | ja-v-17e3177c62d5 | 立つ | To Stand | arrow, person |
-| ja-v-a5d390dc4805 | 木 | Tree | tree-plant |
+| ja-v-a5d390dc4805 | 木 | Tree | tree-plant; style:cat-png |
 | ja-v-d0c9a070fa56 | 水中 | Underwater | style only; style:cat-png |
 | ja-v-8aeedc2d7a47 | 下手 | Unskillful | ball, person |
 | ja-v-afefe30bcb46 | 火山 | Volcano | mountain |
@@ -255,7 +259,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-77d63b3ebde3 | 大人しい | Obedient | hand, person |
 | ja-v-e5fd15d61360 | 古い | Old | style only; style:cat-png |
 | ja-v-7bbba1a9506e | 十万 | One Hundred Thousand | numeral; style:cat-png |
-| ja-v-eba7f0968101 | 一台 | One Machine | washer |
+| ja-v-eba7f0968101 | 一台 | One Machine | washer; style:cat-png |
 | ja-v-032157e79367 | 人生 | One's Life | person |
 | ja-v-dfb71d269e06 | テーブルの上 | On The Table | cat; style:kiku-scenes |
 | ja-v-6109638dac53 | 外 | Outside | house, cat; style:kiku-scenes |
@@ -278,7 +282,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-8b215c592588 | 止める | To Stop Something | ball, hand |
 | ja-v-2924cd51557f | 用いる | To Utilize | hand |
 | ja-v-5f29c187353e | 二万 | Twenty Thousand | numeral; style:cat-png |
-| ja-v-f5b4250aeb03 | 二台 | Two Machines | washer |
+| ja-v-f5b4250aeb03 | 二台 | Two Machines | washer; style:cat-png |
 | ja-v-960de5429d2e | ベッドの下 | Under The Bed | cat; style:kiku-scenes |
 | ja-v-c9d354f557b3 | いつ | When | calendar |
 | ja-v-bb8fc62cf23d | 広い | Wide | arrow |
@@ -288,7 +292,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-390f30691ca4 | 早々 | As Soon As | doorway |
 | ja-v-89fcef8e86d8 | 大気 | Atmosphere | style only |
 | ja-v-10791214b2c9 | 赤ちゃん | Baby | fabric; style:cat-png |
-| ja-v-dbe24910365e | 竹 | Bamboo | tree-plant |
+| ja-v-dbe24910365e | 竹 | Bamboo | tree-plant; style:cat-png |
 | ja-v-c5425c81df8c | 竹の子 | Bamboo Shoot | style only; style:cat-png |
 | ja-v-c22ee5be019b | 少年 | Boy | person |
 | ja-v-f8249679701c | 明るい | Bright | sun-moon-horizon |
@@ -309,11 +313,11 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-51c2d1be305f | 一年生 | First Year Student | numeral, office-school, person |
 | ja-v-7707983a4026 | 五百 | Five Hundred | numeral; style:cat-png |
 | ja-v-0c337ec8cbd4 | 平ら | Flat | sun-moon-horizon |
-| ja-v-fa6a4c8f27b4 | 花 | Flower | tree-plant |
+| ja-v-fa6a4c8f27b4 | 花 | Flower | tree-plant; style:cat-png |
 | ja-v-64289653ec1d | 足 | Foot | style only; style:cat-png |
 | ja-v-81893a02b959 | 四十 | Forty | numeral; style:cat-png |
 | ja-v-f623bb19b846 | 四百 | Four Hundred | numeral; style:cat-png |
-| ja-v-13ea3220cde0 | 四日 | Fourth Day | calendar, paper-book-pencil |
+| ja-v-13ea3220cde0 | 四日 | Fourth Day | calendar, paper-book-pencil; style:cat-png |
 | ja-v-947395f42397 | 四つ | Four Things | style only; style:cat-png |
 | ja-v-f0588b6224d0 | 四千 | Four Thousand | numeral; style:cat-png |
 | ja-v-b82f83d1deb0 | さようなら | Goodbye | arrow, person |
@@ -340,7 +344,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-2f21cb2e8d02 | 月見 | Moon Viewing | person, sun-moon-horizon, tree-plant |
 | ja-v-0cbc7661647e | 名 | Name | person |
 | ja-v-3ed4447f3492 | 北アメリカ | North America | style only |
-| ja-v-0c144e18f1b2 | ノート | Notebook | paper-book-pencil |
+| ja-v-0c144e18f1b2 | ノート | Notebook | paper-book-pencil; style:cat-png |
 | ja-v-ff1538e35505 | 号 | Number | style only |
 | ja-v-8f43a7f01e9c | 一打 | One Hit | ball |
 | ja-v-ed2b971b34ea | 一本気 | One Track Mind | person |
@@ -362,12 +366,12 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-2f734ba866d9 | 石 | Stone | stone |
 | ja-v-49863ee12a96 | 一文字 | Straight Line | style only |
 | ja-v-ac4dde449fe8 | 名字 | Surname | character-relationship, tree-plant |
-| ja-v-497356cf0646 | 先生 | Teacher | person |
+| ja-v-497356cf0646 | 先生 | Teacher | person; style:cat-png |
 | ja-v-99f7c98099b1 | テレビ | Television | style only; style:cat-png |
 | ja-v-68ea919020d5 | お礼 | Thanks | person |
 | ja-v-0b6bbed28f82 | 先日 | The Other Day | calendar |
 | ja-v-a8c7075ce096 | 三世 | Third Generation | character-relationship, tree-plant |
-| ja-v-e05b8e36c6ca | 糸 | Thread | yarn-thread-rope |
+| ja-v-e05b8e36c6ca | 糸 | Thread | yarn-thread-rope; style:cat-png |
 | ja-v-317542d02c5e | 先 | Tip | arrow, paper-book-pencil |
 | ja-v-cdc7fbcaab99 | 足りる | To Be Enough | glass, person |
 | ja-v-eef9d372f5df | 写す | To Copy | paper-book-pencil |
@@ -383,18 +387,18 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-e64b189d1607 | 気に入る | To Take A Liking | person |
 | ja-v-09d74d630a45 | 町 | Town | shop, house |
 | ja-v-b34b4a2e7a98 | 宝 | Treasure | gem; style:cat-png |
-| ja-v-08e3c50181be | 二十日 | Twentieth Day | calendar, paper-book-pencil |
+| ja-v-08e3c50181be | 二十日 | Twentieth Day | calendar, paper-book-pencil; style:cat-png |
 | ja-v-190aae33ad24 | 二百 | Two Hundred | numeral; style:cat-png |
 | ja-v-cb7d8a487c4f | 花見 | Viewing Cherry Blossoms | person, tree-plant, fabric |
 | ja-v-92bebda5ac98 | 村 | Village | house |
 | ja-v-7cdf94430817 | 村人 | Villager | house |
 | ja-v-6fe6f680e0e0 | 見方 | Way Of Seeing | style only |
-| ja-v-2850b5703e8b | 天気 | Weather | sun-moon-horizon |
+| ja-v-2850b5703e8b | 天気 | Weather | sun-moon-horizon; style:cat-png |
 | ja-v-ac3939d71e1e | 平日 | Weekdays | calendar |
 | ja-v-67d99c6ae58e | どれ | Which One | style only |
 | ja-v-d67a7d3dacc9 | 白い | White | style only; style:cat-png |
 | ja-v-8438eda3cfc0 | 年 | Year | calendar |
-| ja-v-1a43c96593cb | ２０１１年 | Year 2011 | calendar, numeral |
+| ja-v-1a43c96593cb | ２０１１年 | Year 2011 | calendar, numeral; style:cat-png |
 | ja-v-9e9dbd477486 | 年中 | Year Round | calendar |
 | ja-v-f64f1036d22a | うん | Yep | person |
 | ja-v-6bbf1546d4d7 | はい | Yes | person |
@@ -406,12 +410,12 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-5dc14aea92c7 | 牛肉 | Beef | cow |
 | ja-v-afb2c2f9a135 | 生まれ | Birthplace | house |
 | ja-v-10e568715d3a | 青い | Blue | style only; style:cat-png |
-| ja-v-6e098e54aa63 | 体 | Body | person |
+| ja-v-6e098e54aa63 | 体 | Body | person; style:cat-png |
 | ja-v-83365ed9e3db | 太字 | Bold Letter | style only |
 | ja-v-696107ad9e08 | 男の子 | Boy | ball, person |
 | ja-v-26a964fd9243 | ～斤 | Bread Loaf Counter | style only |
 | ja-v-2e7b28af830b | 兄弟 | Brothers | character-relationship |
-| ja-v-d10df0e56846 | 毛虫 | Caterpillar | tree-plant |
+| ja-v-d10df0e56846 | 毛虫 | Caterpillar | tree-plant; style:cat-png |
 | ja-v-d72e08381953 | 近い | Close | house |
 | ja-v-921d54ba31ef | 色 | Color | style only; style:cat-png |
 | ja-v-c506bd7fb201 | 会社 | Company | office-school |
@@ -419,7 +423,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-9a9a5c6d448c | コンビニ | Convenience Store | shop, doorway |
 | ja-v-ceaf3971ff83 | 角 | Corner | style only |
 | ja-v-fd0090161525 | 代金 | Cost | person |
-| ja-v-4aa5c84df90c | 三日月 | Crescent Moon | sun-moon-horizon |
+| ja-v-4aa5c84df90c | 三日月 | Crescent Moon | sun-moon-horizon; style:cat-png |
 | ja-v-6027e0e1c622 | デパート | Department Store | shop, person |
 | ja-v-9a8a0ffc08d3 | 図 | Diagram | diagram-convention |
 | ja-v-7c4bedf9eff4 | 外交 | Diplomacy | flag |
@@ -432,7 +436,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-d860a871b14d | 毎年 | Every Year | calendar |
 | ja-v-224fe0f121ab | すみません | Excuse Me | person |
 | ja-v-188bdf18a50c | 羽 | Feathers | style only; style:cat-png |
-| ja-v-698044202165 | 林 | Forest | tree-plant |
+| ja-v-698044202165 | 林 | Forest | tree-plant; style:cat-png |
 | ja-v-4fd3d09440c1 | ～形 | Form | style only |
 | ja-v-5bbf746af479 | ～年来 | For Some Years | calendar |
 | ja-v-3813940acf07 | 古来 | From Ancient Times | arrow, tree-plant |
@@ -460,8 +464,8 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-a249b72fa923 | 多い | Many | ball; style:cat-png |
 | ja-v-25611a347757 | 多分 | Maybe | sun-moon-horizon |
 | ja-v-b639fedc63ec | 肉 | Meat | style only |
-| ja-v-d242b38667c8 | お金 | Money | paper-book-pencil |
-| ja-v-2d7d45d5614e | 月光 | Moonlight | sun-moon-horizon |
+| ja-v-d242b38667c8 | お金 | Money | paper-book-pencil; style:cat-png |
+| ja-v-2d7d45d5614e | 月光 | Moonlight | sun-moon-horizon; style:cat-png |
 | ja-v-55fef51b0694 | 来月 | Next Month | calendar, paper-book-pencil |
 | ja-v-fb3e6c8865d4 | 来年 | Next Year | calendar |
 | ja-v-ba0c8a160c33 | 夜 | Night | house, sun-moon-horizon |
@@ -519,7 +523,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-0c5871310c83 | 行き | Train Direction | style only |
 | ja-v-fa26a112a479 | 走行 | Traveling | car-taxi |
 | ja-v-ea952b83ac80 | 三角 | Triangle | style only; style:cat-png |
-| ja-v-9910372c1964 | 大学 | University | office-school |
+| ja-v-9910372c1964 | 大学 | University | office-school; style:cat-png |
 | ja-v-b2f08cdf5ab4 | 今まで | Until Now | calendar |
 | ja-v-ceb7b2a20cbd | 谷 | Valley | mountain; style:cat-png |
 | ja-v-7b2479107ae1 | 色々 | Various | style only |
@@ -532,7 +536,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-d215c2071f47 | 麦 | Wheat | style only; style:cat-png |
 | ja-v-b4d0a55dd496 | 一生 | Whole Life | person |
 | ja-v-4638d2c26682 | 社内 | Within The Company | office-school, person |
-| ja-v-ac1e4f6bee13 | 毛糸 | Wool Yarn | ball, yarn-thread-rope |
+| ja-v-ac1e4f6bee13 | 毛糸 | Wool Yarn | ball, yarn-thread-rope; style:cat-png |
 | ja-v-01df3c579080 | あなた | You | person |
 | ja-v-7e8dc4d63e82 | 弟 | Younger Brother | character-relationship, person |
 | ja-v-c370702e86ab | 青年 | Youth | person |

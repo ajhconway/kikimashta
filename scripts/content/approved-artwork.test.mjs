@@ -1,4 +1,5 @@
 import test from 'node:test'
+import { inspectPngAlpha } from './png-alpha.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from 'node:fs'
@@ -13,9 +14,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 85 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 85)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 85)
+test('all 110 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 110)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 110)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -26,7 +27,16 @@ test('all 85 active illustrations resolve to the approved selection in the app a
     const delivery = readFileSync(new URL(asset.path, root))
     assert.equal(hash(delivery), asset.sha256)
     assert.equal(delivery.length, asset.bytes)
-    assert.equal(delivery.subarray(0, 2).toString('hex'), 'ffd8', 'Delivery must contain JPEG bytes')
+    if (selected.transparentBackground) {
+      assert.equal(asset.format, 'png')
+      const pixels = inspectPngAlpha(delivery)
+      assert.equal(pixels.width, 640)
+      assert.equal(pixels.height, 640)
+      assert.ok(pixels.transparentPixels > 0)
+      assert.ok(pixels.opaquePixels > 0)
+      const sourcePixels = inspectPngAlpha(readFileSync(new URL(asset.sourcePath, root)))
+      if (sourcePixels.opaqueWhitePixels) assert.ok(pixels.opaqueWhitePixels > 0)
+    } else assert.equal(delivery.subarray(0, 2).toString('hex'), 'ffd8', 'Historical opaque delivery must retain JPEG bytes')
     const items = banks.flatMap(bank => bank.items).filter(item => item.id === asset.id)
     assert.ok(items.length)
     for (const item of items) assert.equal(`public/${item.image.src}`, asset.path)

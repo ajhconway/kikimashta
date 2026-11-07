@@ -1,0 +1,43 @@
+{
+  "issue": 72,
+  "round": 1,
+  "tool": "built-in image_gen",
+  "edits": [
+    {
+      "number": 96,
+      "target": "artifacts/card-regeneration/batch-08/96-crescent-moon.png",
+      "output": "artifacts/card-regeneration/batch-08/96-crescent-moon-v2.png",
+      "prompt": "Use case: precise-object-edit. Edit this crescent-moon vocabulary illustration. REMOVE BOTH STARS completely. Keep only the same slim golden crescent, same elegant curved shape opening to the right with two pointed tips, deep violet inner/outer outlines, and restrained warm tonal shading. Recenter the lone crescent in the square and resize as needed for generous balanced margins, roughly75%canvas height. Preserve truly transparent alpha outside the crescent AND within its open right-hand cutout. Clean crisp silhouette, no glow, haze, halo, stars, speckles, face, labels or other objects. One square vocabulary illustration.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-b690feb4-bf41-434a-8ced-bdb30c08b759.png"
+    },
+    {
+      "number": 109,
+      "target": "artifacts/card-regeneration/batch-08/109-twentieth-day.png",
+      "output": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+      "prompt": "Use case: precise-object-edit. Redesign this vocabulary illustration as a simple PULL-OFF DAILY CALENDAR that is very legible at145px. Retain the established golden top binding, two lavender/violet rings, deep-violet outlines and white paper. Replace the ENTIRE month grid and all its tiny dates with ONE HUGE exact DARK-VIOLET numeral '20', centered on the front white sheet and filling most of its available area. The numeral is the primary visual. Show a few stacked paper edges at the bottom and one small bottom-right corner of the FRONT PAGE curling upward to reveal lavender underside and the next opaque white sheet, clearly a tear-off daily calendar pad. One small perforation line under the gold header is allowed. No grid, other numbers, year, month words, weekday labels, circled date, arrows, flowers or decorative symbols. Clean rounded polished cartoon style and restrained soft shading matching the input. Calendar fully visible, centered in square1:1 canvas with generous TRANSPARENT outer margins. Paper and white subject details remain OPAQUE white, outer background true transparent alpha; no glow, shadow or painted rectangular backdrop.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-5f4b3737-f85e-474d-9e15-7762819b191e.png"
+    },
+    {
+      "number": 97,
+      "target": "artifacts/card-regeneration/batch-08/96-crescent-moon-v2.png",
+      "output": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+      "prompt": "Use case: precise-object-edit. Create the generic MOON card from this slim crescent reference. Keep the same golden-yellow cartoon moon language, elegant right-facing crescent, deep violet outline and restrained warm tonal shading, but make the crescent noticeably FULLER / THICKER: a plump broad crescent with a smaller, shallower curved bite removed from its right side, two clean pointed tips. Still clearly a stylized crescent rather than a full circle or half-disc. Its thick left middle should span about55\u201360% of the full implied moon diameter, compared with the much slimmer reference. No craters, mottled spots, stars, face or extra objects. Center the lone fuller crescent, about75% of square canvas height, generous balanced margins. Both outside and right-hand cutout truly transparent alpha. Crisp edges, no haze, glow, halo or painted backdrop.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-5d438f64-4d83-4098-bd34-e2caa99a109a.png"
+    },
+    {
+      "number": 110,
+      "target": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
+      "output": "artifacts/card-regeneration/batch-08/110-fourth-day-v2.png",
+      "prompt": "Use case: precise-object-edit. Edit this pull-off daily calendar to teach FOURTH DAY. Change ONLY the huge dark-violet numeral20 to one huge exact dark-violet numeral4, centered and filling most of the white front page. Keep identical calendar size, gold binding, two lavender rings, perforation line, stacked paper edges, curled bottom-right corner with lavender underside, violet outlines, white opaque paper, and restrained soft cartoon shading. Exactly one numeral4, no20, no month grid, other dates, year, day/month words, decorative marks or new objects. Preserve square1:1 canvas, generous margins and genuinely transparent outer background. White paper remains opaque; no white canvas rectangle, shadow, glow or halo.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-70838f63-ddca-4851-bb0b-f53e39d1f332.png"
+    },
+    {
+      "number": 95,
+      "target": "artifacts/card-regeneration/batch-08/95-moonlight-v2.png",
+      "reference": "artifacts/card-regeneration/batch-08/97-moon-v3.png",
+      "output": "artifacts/card-regeneration/batch-08/95-moonlight-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit image1MOONLIGHT scene. Replace ONLY its cratered circular full moon with a smaller copy of the stylized FULLER GOLDEN CRESCENT from image2, retaining image2's plump broad crescent silhouette, right-facing bite, pointed tips, deep violet contours and restrained gold tonal shading. Scale and position that crescent where the moon currently sits at upper-left; no craters or stars. Preserve image1's diagonal pale yellow/lavender light beam and blue water oval with three pale reflection streaks, same positions and overall composition. Connect the beam naturally from the lower edge of the crescent to the reflected light on water. Preserve clear moonlight teaching cue. Transparent outer background and crescent cutout, opaque subject fills. Crisp isolated cartoon shapes, no exterior glow, haze, halo, clouds, extra decorations, words or painted backdrop. Square1:1 canvas, full scene visible with generous clean margins.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-519bbf09-1c34-4f87-a49d-ad926c8958c2.png"
+    }
+  ]
+}

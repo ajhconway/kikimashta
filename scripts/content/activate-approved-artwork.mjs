@@ -4,11 +4,22 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { inspectPngAlpha } from './png-alpha.mjs'
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const read = (root, path) => JSON.parse(readFileSync(join(root, path), 'utf8'))
 const write = (root, path, data) => writeFileSync(join(root, path), JSON.stringify(data, null, 2) + '\n')
-const defaultEncoder = (source, target) => execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '85', '-Z', '640', source, '--out', target], { stdio: 'pipe' })
+const defaultEncoder = (source, target, { format }) => execFileSync('sips', ['-s', 'format', format, ...(format === 'jpeg' ? ['-s', 'formatOptions', '85'] : []), '-Z', '640', source, '--out', target], { stdio: 'pipe' })
+
+function validateDelivery(bytes, asset, format, sourceAlpha) {
+  if (format === 'jpeg') {
+    if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
+    return
+  }
+  const alpha = inspectPngAlpha(bytes)
+  if (alpha.width > 640 || alpha.height > 640 || !alpha.transparentPixels || !alpha.opaquePixels) throw new Error(`Delivery must preserve PNG transparency: ${asset.id}`)
+  if (sourceAlpha.opaqueWhitePixels && !alpha.opaqueWhitePixels) throw new Error(`Delivery lost opaque white subject details: ${asset.id}`)
+}
 
 export function activateArtwork({ root, batches, encode = defaultEncoder }) {
   if (!Array.isArray(batches) || !batches.length || new Set(batches).size !== batches.length || batches.some(batch => !/^batch-\d{2}$/.test(batch))) throw new Error('Select unique batch-NN names')
@@ -33,10 +44,13 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       if (catalog.items.some(item => item.id === asset.id) && !visuals.some(file => file.records.some(visual => visual.id === asset.id))) throw new Error(`Missing visual metadata: ${asset.id}`)
       const description = asset.imageDescription ?? asset.visualReview
       if (typeof description !== 'string' || !description.trim()) throw new Error(`Missing visual description: ${asset.id}`)
-      return { asset, manifestPath, description, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.jpg` }
+      const format = asset.transparentBackground === true ? 'png' : 'jpeg'
+      const sourceAlpha = format === 'png' ? inspectPngAlpha(source) : undefined
+      if (sourceAlpha && (!sourceAlpha.transparentPixels || !sourceAlpha.opaquePixels)) throw new Error(`Source must have transparent outer pixels and opaque subject details: ${asset.id}`)
+      return { asset, manifestPath, description, format, sourceAlpha, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.${format === 'png' ? 'png' : 'jpg'}` }
     })
   })
-  const deliveries = plan.map(({ asset, manifestPath, description, path }) => {
+  const deliveries = plan.map(({ asset, manifestPath, description, path, format, sourceAlpha }) => {
     const target = join(root, path)
     const recorded = activation.assets.find(record => record.id === asset.id && record.path === path &&
       record.sourcePath === asset.path && record.sourceSha256 === asset.sha256 && record.manifestPath === manifestPath)
@@ -47,19 +61,21 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       mkdirSync(dirname(target), { recursive: true })
       const temporary = mkdtempSync(join(dirname(target), '.artwork-'))
       try {
-        const staged = join(temporary, 'delivery.jpg')
-        encode(join(root, asset.path), staged)
+        const staged = join(temporary, `delivery.${format === 'png' ? 'png' : 'jpg'}`)
+        encode(join(root, asset.path), staged, { format })
         bytes = readFileSync(staged)
-        if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
+        validateDelivery(bytes, asset, format, sourceAlpha)
         renameSync(staged, target)
       } finally {
         rmSync(temporary, { recursive: true, force: true })
       }
     }
-    if (bytes.subarray(0, 2).toString('hex') !== 'ffd8') throw new Error(`Delivery must be JPEG: ${asset.id}`)
+    validateDelivery(bytes, asset, format, sourceAlpha)
     return { id: asset.id, sourcePath: asset.path, sourceSha256: asset.sha256, manifestPath, path, sha256: hash(bytes), bytes: bytes.length,
+      ...(format === 'png' ? { format: 'png', alpha: 'preserved' } : {}),
       ...(asset.followUp ? { followUp: asset.followUp } : {}), description }
   })
+  if (deliveries.some(delivery => delivery.format === 'png')) activation.transparentDelivery = { encoder: 'sips', format: 'png', maxDimension: 640, alpha: 'preserved' }
   for (const delivery of deliveries) {
     for (const item of allItems.filter(item => item.id === delivery.id)) item.image = { ...item.image, src: delivery.path.slice('public/'.length), alt: delivery.description }
     for (const file of visuals) for (const visual of file.records.filter(visual => visual.id === delivery.id)) visual.concept = delivery.description
