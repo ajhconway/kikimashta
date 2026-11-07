@@ -27,6 +27,10 @@ npm run dev
 
 `npm run check` runs lint, type checks, unit/UI tests, and the production build. After building, run `npx playwright install chromium webkit` and `npm run test:e2e` for browser journeys. GitHub Actions tests the `/` deployment path used by `kikimashta.com` before publishing.
 
+Local Playwright tests mute only the media elements in their test pages, before calling the real browser `play()` method. System audio and other apps are untouched. Recordings still download, decode, advance, end, replay, and report failures normally. Use `E2E_AUDIO=audible npm run test:e2e` for unchanged local playback, or `E2E_AUDIO=quiet npm run test:e2e` to explicitly request silence. This also applies to direct `npx playwright test` runs.
+
+Muted media can have different autoplay permissions. CI therefore runs the existing journeys without this muting, retaining unmuted autoplay coverage; dedicated quiet-mode regressions also run there. Use the shared `e2e/fixtures.ts` test import for new browser specs. Browser tests supplement pronunciation and interaction checks on the actual iPhone. See [issue #95](https://github.com/ajhconway/kikimashta/issues/95).
+
 Production uses GitHub Pages with `kikimashta.com` configured in the repository’s Pages settings. Domain routing is managed there; the Actions deployment does not use a repository `CNAME` file.
 
 The starter bank is in `content/ja.json`. The adaptive pool uses its original six IDs plus eligible IDs in `content/practice-pool.json`, resolved from `content/catalog/ja.json`. Flagged cards and duplicate pictures, readings, meanings and visual groups are excluded from the initial pool; source levels remain provisional introduction order. The earlier fixed-set manifest remains available as a content reference. Media paths stay relative to the app. Named background colors live in `src/themes.ts`.
