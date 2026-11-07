@@ -20,6 +20,16 @@
 .written-answer[data-font='noto-serif'] { font-family: 'Kikimashta Noto Serif JP', system-ui, sans-serif; }
 
 @font-face {
+  font-family: 'Kikimashta Zen Maru Gothic';
+  src: url('/fonts/japanese/zen-maru/font-b51908a73dde.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+}
+
+.written-answer[data-font='zen-maru'] { font-family: 'Kikimashta Zen Maru Gothic', system-ui, sans-serif; font-weight: 500; }
+
+@font-face {
   font-family: 'Kikimashta Klee One';
   src: url('/fonts/japanese/klee/font-84a96291ae96.ttf') format('truetype');
   font-style: normal;

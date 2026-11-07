@@ -12,14 +12,14 @@ const characters = new Set([json('content/ja.json'), json('content/catalog/ja.js
 
 // Decode the fonts' Unicode BMP cmap independently of their recorded metadata.
 // These approved TrueType subsets all contain a platform 3/encoding 1 format 4 map.
-function supportedCodepoints(bytes) {
+function supportedCodepoints(bytes, weight) {
   assert.equal(bytes.readUInt32BE(0), 0x00010000, 'delivery is a TrueType font')
   let cmap
   for (let i = 0; i < bytes.readUInt16BE(4); i++) {
     const record = 12 + i * 16
     const tag = bytes.toString('ascii', record, record + 4)
     if (tag === 'cmap') cmap = bytes.readUInt32BE(record + 8)
-    if (tag === 'OS/2') assert.equal(bytes.readUInt16BE(bytes.readUInt32BE(record + 8) + 4), 600, 'font contains the approved semibold weight')
+    if (tag === 'OS/2') assert.equal(bytes.readUInt16BE(bytes.readUInt32BE(record + 8) + 4), weight, 'font contains the approved authored weight')
   }
   assert.notEqual(cmap, undefined, 'font has a character map')
   let mapping
@@ -51,11 +51,11 @@ function supportedCodepoints(bytes) {
 
 test('approved print and handwriting fonts retain exact delivery bytes, licenses, and local CSS paths', () => {
   assert.equal(manifest.version, 1)
-  assert.deepEqual(manifest.fonts.map(font => font.id), ['noto-sans', 'noto-serif', 'klee'])
+  assert.deepEqual(manifest.fonts.map(font => font.id), ['noto-sans', 'noto-serif', 'zen-maru', 'klee'])
   const css = read('src/writing-fonts.css').toString()
   const credits = read('public/credits.html').toString()
   for (const font of manifest.fonts) {
-    assert.equal(font.weight, 600)
+    assert.equal(font.weight, font.id === 'zen-maru' ? 500 : 600)
     assert.equal(font.license, 'OFL-1.1')
     assert.match(font.path, /^fonts\/japanese\/[a-z-]+\/font-[a-f0-9]{12}\.ttf$/)
     assert.match(font.licensePath, /^fonts\/japanese\/[a-z-]+\/OFL\.txt$/)
@@ -75,9 +75,24 @@ test('approved print and handwriting fonts retain exact delivery bytes, licenses
   assert.ok(css.includes('font-display: optional;'), 'slow font delivery does not swap faces mid-card')
 })
 
-for (const font of manifest.fonts) test(font.name + ' actually covers every authored starter and catalogue character', () => {
-  const actual = supportedCodepoints(read('public/' + font.path))
+for (const font of manifest.fonts) test(font.name + ' covers authored bank text through its exact declared fallback policy', () => {
+  const actual = supportedCodepoints(read('public/' + font.path), font.weight)
   assert.deepEqual(actual, font.supportedCodepoints, 'recorded coverage matches actual glyph mappings')
   const supported = new Set(actual)
-  for (const character of characters) assert.ok(supported.has(character.codePointAt(0)), `${font.name} is missing ${character}`)
+  const missing = Array.from(characters, character => character.codePointAt(0)).filter(codepoint => !supported.has(codepoint)).sort((a, b) => a - b)
+  assert.deepEqual(missing, font.missingCodepoints, 'every actual omission must be explicitly recorded')
+  if (font.id === 'zen-maru') {
+    assert.deepEqual(font.missingCodepoints, [65374])
+    assert.equal(font.fallbackFontId, 'noto-sans')
+    const fallback = manifest.fonts.find(candidate => candidate.id === font.fallbackFontId)
+    assert.ok(fallback && fallback.id !== font.id, 'fallback names a distinct approved font')
+    const fallbackSupported = new Set(supportedCodepoints(read('public/' + fallback.path), fallback.weight))
+    for (const character of characters) assert.ok(supported.has(character.codePointAt(0)) || fallbackSupported.has(character.codePointAt(0)), `${font.name} and its fallback are missing ${character}`)
+    const selector = read('src/writing-fonts.css').toString().match(/\.written-answer\[data-font=['"]zen-maru['"]\]\s*\{([^}]+)\}/)?.[1]
+    assert.ok(selector, 'rounded writing has its own CSS selector')
+    assert.match(selector, /font-weight:\s*500\s*;/)
+  } else {
+    assert.deepEqual(font.missingCodepoints, [])
+    assert.equal(font.fallbackFontId, undefined)
+  }
 })

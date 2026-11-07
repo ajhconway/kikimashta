@@ -14,9 +14,9 @@ are licensed under AGPL-3.0-only as recorded in content/catalog/image-provenance
 Media records and credits are in content/ and public/credits.html.
 Runtime dependency notices are included in the production build.
 
-The self-hosted Japanese writing fonts Noto Sans JP, Noto Serif JP, and Klee One
-retain the SIL Open Font License, version 1.1. Their copyright notices and full
-license texts are preserved beside each font in public/fonts/japanese/.
+The self-hosted Japanese writing fonts Noto Sans JP, Noto Serif JP, Zen Maru
+Gothic, and Klee One retain the SIL Open Font License, version 1.1. Their
+copyright notices and full license texts are preserved beside each font in public/fonts/japanese/.
 The official Google Fonts delivery bytes are unchanged; content/writing-fonts.json
 records their sources, hashes, and supported characters.
 
