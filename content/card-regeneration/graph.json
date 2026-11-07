@@ -2498,11 +2498,12 @@
         "ja-v-bb85f028d944",
         "ja-v-084edf1fdd10",
         "ja-v-df70a01acaec",
-        "ja-v-947395f42397"
+        "ja-v-947395f42397",
+        "ja-v-277587e6fa07"
       ],
       "referencePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
       "status": "approved",
-      "guidance": "Reuse card 38 cube shape, viewpoint, contour, soft shading and palette for X things; change only exact count and spacing. Replaces apples for this family.",
+      "guidance": "Reuse approved card38cube shape, three-quarter viewpoint, rounded contours, restrained soft shading and gold/pink/lavender/sky-blue palette for all X-things entries including One Thing. Change only exact count and spacing. No apples, numerals or decorative counters. Keep objects separate and individually countable. New scenes still await review.",
       "replaceComponents": []
     },
     {
@@ -2674,11 +2675,19 @@
       "seedCard": "ja-v-08e3c50181be",
       "memberIds": [
         "ja-v-08e3c50181be",
-        "ja-v-13ea3220cde0"
+        "ja-v-13ea3220cde0",
+        "ja-v-56d52b7869ab",
+        "ja-v-b0489d428339",
+        "ja-v-a02edbda9f4c",
+        "ja-v-7b2351210462",
+        "ja-v-0655c242d1db",
+        "ja-v-f50fcf40e898",
+        "ja-v-9acbf1542642",
+        "ja-v-da2913ad7e4c"
       ],
       "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
-      "status": "approved",
-      "guidance": "Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved."
+      "status": "approved-object-new-members-awaiting-review",
+      "guidance": "Reuse approved109pull-off calendar object for all numbered calendar dates: opaque white front sheet, golden binding, two lavender rings, perforation, stacked page edges and curled lower-right corner. Huge dark-violet date is the only numeral.109date20and110date4are approved; new dates await review. User-selected pull-off design overrides older full-month-grid appearance wording while retaining contextual date/duration restrictions. Do not use132two-calendar progression for a specific date."
     },
     {
       "id": "family:stylized-moon",
@@ -2717,7 +2726,7 @@
       ],
       "referencePath": "artifacts/card-regeneration/batch-02/11-banana-cat-v3.png",
       "status": "approved",
-      "guidance": "Reuse approved pink-red apple01and yellow banana11object designs, with current restrained shading and transparent exterior. Mainly135uses a basket containing mostly apples and one banana; exact apple count is not the vocabulary target. No bead ratios or population crowd. The apple-majority scene is approved and retains its spoken-context/picture-only restriction. For135add short straight violet attention lines targeting the apple cluster only, preserving the single banana and basket. Do not emphasize the banana or whole basket.",
+      "guidance": "Reuse approved pink-red apple01and yellow banana11object designs, with current restrained shading and transparent exterior. Mainly135proposes a basket containing mostly apples and one banana; exact apple count is not the vocabulary target. No bead ratios or population crowd. The apple-majority scene is approved and retains its spoken-context/picture-only restriction. For135add short straight violet attention lines targeting the apple cluster only, preserving the single banana and basket. Do not emphasize the banana or whole basket.",
       "replaceComponents": [
         "apple"
       ]
@@ -3008,11 +3017,11 @@
       "to": "card:ja-v-5d8047464c5d"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-277587e6fa07"
     },
     {
-      "from": "component:apple",
+      "from": "family:counting-blocks",
       "to": "card:ja-v-277587e6fa07"
     },
     {
@@ -3248,11 +3257,15 @@
       "to": "card:ja-dog"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f50fcf40e898"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-f50fcf40e898"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-f50fcf40e898"
     },
     {
@@ -3284,11 +3297,15 @@
       "to": "card:ja-v-6eed6b905b8e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a02edbda9f4c"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-a02edbda9f4c"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-a02edbda9f4c"
     },
     {
@@ -3508,11 +3525,15 @@
       "to": "card:ja-v-e0bb1d02fee0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9acbf1542642"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-9acbf1542642"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-9acbf1542642"
     },
     {
@@ -3636,7 +3657,7 @@
       "to": "card:ja-v-ed6bd4d73b76"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-56d52b7869ab"
     },
     {
@@ -3644,11 +3665,19 @@
       "to": "card:ja-v-56d52b7869ab"
     },
     {
-      "from": "style",
+      "from": "family:pull-off-calendar-dates",
+      "to": "card:ja-v-56d52b7869ab"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-0655c242d1db"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-0655c242d1db"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-0655c242d1db"
     },
     {
@@ -3676,11 +3705,15 @@
       "to": "card:ja-v-e368e3aa9bf6"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7b2351210462"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-7b2351210462"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-7b2351210462"
     },
     {
@@ -3716,7 +3749,7 @@
       "to": "card:ja-v-65df49688ef0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-da2913ad7e4c"
     },
     {
@@ -3724,11 +3757,19 @@
       "to": "card:ja-v-da2913ad7e4c"
     },
     {
-      "from": "style",
+      "from": "family:pull-off-calendar-dates",
+      "to": "card:ja-v-da2913ad7e4c"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-b0489d428339"
     },
     {
       "from": "component:calendar",
+      "to": "card:ja-v-b0489d428339"
+    },
+    {
+      "from": "family:pull-off-calendar-dates",
       "to": "card:ja-v-b0489d428339"
     },
     {

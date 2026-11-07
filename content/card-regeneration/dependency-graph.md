@@ -23,7 +23,7 @@ flowchart TD
 
 | Profile | Reference | Status | Cards |
 | --- | --- | --- | ---: |
-| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 141 |
+| style:cat-png | [cat-style-reference.png](../../artifacts/card-regeneration/references/cat-style-reference.png) | approved-direction | 150 |
 | style:kiku-scenes | [kiku-character-reference.png](../../artifacts/card-regeneration/references/kiku-character-reference.png) | approved-direction | 10 |
 | style:kiku-cat | [kiku-character-reference.png](../../artifacts/card-regeneration/references/kiku-character-reference.png) | approved-direction | 1 |
 
@@ -33,7 +33,7 @@ A style trial is an independent root in the generation graph. It replaces the pr
 
 | Component | Seed card | Reference status | Dependent cards |
 | --- | --- | --- | ---: |
-| apple | リンゴ / Apple (`ja-apple`) | approved | 3 |
+| apple | リンゴ / Apple (`ja-apple`) | approved | 2 |
 | ball | 玉 / Ball (`ja-v-66ccf8dd3399`) | approved | 16 |
 | person | 人 / Person (`ja-v-ad7167347a2a`) | approved | 109 |
 | hand | 手 / Hand (`ja-v-b1ff052549ed`) | approved | 21 |
@@ -69,7 +69,7 @@ A style trial is an independent root in the generation graph. It replaces the pr
 
 | Family | Status | Reference | Guidance |
 | --- | --- | --- | --- |
-| family:counting-blocks | approved | [38-four-things.png](../../artifacts/card-regeneration/batch-04/38-four-things.png) | Reuse card 38 cube shape, viewpoint, contour, soft shading and palette for X things; change only exact count and spacing. Replaces apples for this family. |
+| family:counting-blocks | approved | [38-four-things.png](../../artifacts/card-regeneration/batch-04/38-four-things.png) | Reuse approved card38cube shape, three-quarter viewpoint, rounded contours, restrained soft shading and gold/pink/lavender/sky-blue palette for all X-things entries including One Thing. Change only exact count and spacing. No apples, numerals or decorative counters. Keep objects separate and individually countable. New scenes still await review. |
 | family:seasonal-park | approved | [31-winter-v2.png](../../artifacts/card-regeneration/batch-04/31-winter-v2.png) | Reuse identical forked deciduous tree at left, bench at right, oval land footprint and camera across winter/spring/summer/autumn. Change only foliage, weather and ground covering. Winter reference approved; other seasons are not yet in the current bank. |
 | family:red-paint | approved | [22-red.png](../../artifacts/card-regeneration/batch-03/22-red.png) | These entries teach the same red paint concept. Reuse approved red splash/brush artwork exactly, with no paint pot. |
 | family:half-circle | approved | [33-half-v3.png](../../artifacts/card-regeneration/batch-04/33-half-v3.png) | Reuse approved lavender half-circle for both half entries; same meaning and visual convention. |
@@ -80,10 +80,10 @@ A style trial is an independent root in the generation graph. It replaces the pr
 | family:chair-position-anchor | approved | [66-revision-v5.png](../../artifacts/card-regeneration/batch-07/66-revision-v5.png) | Reuse approved66chair: golden/honey wood, rounded slatted backrest, lavender seat pad, four straight legs, near-front gentle three-quarter view. Preserve chair size and Kiku scale. Under: Kiku beneath seat between legs, paws at chair-foot baseline. On top: Kiku supported by seat pad, backrest behind, empty opening beneath. Short straight violet attention lines emphasize Kiku. The66/70pair is approved and replaces disconnected box/cloud/bar layouts. |
 | family:leafy-tree | approved | [100-tree.png](../../artifacts/card-regeneration/batch-08/100-tree.png) | Use the tree100prototype: rounded green three-lobe canopy, forked brown trunk, violet contours. Tree is single; forest repeats it at different depths. Same-batch prototypes are approved. |
 | family:washing-machine-counts | approved | [104-one-machine.png](../../artifacts/card-regeneration/batch-08/104-one-machine.png) | Use exactly the same front-loading washing machine design for one/two machine counts. Preserve opaque white cabinet, lavender control strip, violet circular door rim and blue glass. Change exact count and spacing only. Both are approved. |
-| family:pull-off-calendar-dates | approved | [109-twentieth-day-v2.png](../../artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png) | Specific-day pair109/110uses a pull-off calendar with huge dark-violet date20or4on opaque white front sheet, gold binding, lavender rings, perforation, stacked page edges and curled corner. Replace the hard-to-read full-month grid. Change only the giant date between paired scenes. These revisions are approved. |
+| family:pull-off-calendar-dates | approved-object-new-members-awaiting-review | [109-twentieth-day-v2.png](../../artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png) | Reuse approved109pull-off calendar object for all numbered calendar dates: opaque white front sheet, golden binding, two lavender rings, perforation, stacked page edges and curled lower-right corner. Huge dark-violet date is the only numeral.109date20and110date4are approved; new dates await review. User-selected pull-off design overrides older full-month-grid appearance wording while retaining contextual date/duration restrictions. Do not use132two-calendar progression for a specific date. |
 | family:stylized-moon | approved | [97-moon-v3.png](../../artifacts/card-regeneration/batch-08/97-moon-v3.png) | Reuse the approved fuller stylized golden crescent shape from97as an object-only reference, with no crater spots or facial features.95and97approved this moon shape.96stays slimmer and has no stars. Preserve each new composition:95moonlight has beam/water;113night may have a contained night sky and stars. A shared approved moon object does not preapprove future scenes; each new scene requires user feedback. |
 | family:light-beams | approved | [95-moonlight-v3.png](../../artifacts/card-regeneration/batch-08/95-moonlight-v3.png) | Reuse approved moonlight95for the upper-left celestial body and broad diagonal pale-gold beam reaching lower-right.95keeps its crescent, blue water oval and three reflections. Sunlight116uses a golden round sun with short rays and now lands on a small GREEN GRASS PATCH, with no water or reflection streaks. Preserve the overall beam layout across the pair.Both95and116are approved. |
-| family:fruit-basket-mnemonics | approved | [11-banana-cat-v3.png](../../artifacts/card-regeneration/batch-02/11-banana-cat-v3.png) | Reuse approved pink-red apple01and yellow banana11object designs, with current restrained shading and transparent exterior. Mainly135uses a basket containing mostly apples and one banana; exact apple count is not the vocabulary target. No bead ratios or population crowd. The apple-majority scene is approved and retains its spoken-context/picture-only restriction. For135add short straight violet attention lines targeting the apple cluster only, preserving the single banana and basket. Do not emphasize the banana or whole basket. |
+| family:fruit-basket-mnemonics | approved | [11-banana-cat-v3.png](../../artifacts/card-regeneration/batch-02/11-banana-cat-v3.png) | Reuse approved pink-red apple01and yellow banana11object designs, with current restrained shading and transparent exterior. Mainly135proposes a basket containing mostly apples and one banana; exact apple count is not the vocabulary target. No bead ratios or population crowd. The apple-majority scene is approved and retains its spoken-context/picture-only restriction. For135add short straight violet attention lines targeting the apple cluster only, preserving the single banana and basket. Do not emphasize the banana or whole basket. |
 | family:consecutive-calendar-days | approved | [109-twentieth-day-v2.png](../../artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png) | Reuse approved pull-off calendar109object design: opaque white sheets, golden binding, lavender rings, violet contours, perforation and curled corner.132shows the same calendar in two successive states12and13, connected by one right-pointing arrow, expressing one elapsed day. This is a duration illustration, not a new particular-date meaning. Preserve F07and contextual teaching. The12→13duration scene is approved. |
 
 ## Generation and feedback rules
@@ -119,7 +119,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-d33ed6be2a48 | 九 | Nine | numeral; style:cat-png |
 | ja-v-0d0163a40587 | 九つ | Nine Things | style only; style:cat-png |
 | ja-v-5d8047464c5d | 一 | One | numeral; style:cat-png |
-| ja-v-277587e6fa07 | 一つ | One Thing | apple |
+| ja-v-277587e6fa07 | 一つ | One Thing | style only; style:cat-png |
 | ja-v-ad7167347a2a | 人 | Person | person |
 | ja-v-fae75d2d18b2 | 下さい | Please Give Me | hand |
 | ja-v-2ef4da30cf39 | 人口 | Population | style only; style:cat-png |
@@ -149,12 +149,12 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-7003bbe10d0b | 正しい | Correct | style only |
 | ja-v-5352aea4e4bb | 土 | Dirt | style only; style:cat-png |
 | ja-dog | 犬 | Dog | style only; style:cat-png |
-| ja-v-f50fcf40e898 | 八日 | Eighth Day | calendar |
+| ja-v-f50fcf40e898 | 八日 | Eighth Day | calendar; style:cat-png |
 | ja-v-a19157e62dee | 出口 | Exit | arrow, doorway |
 | ja-v-6c0b9f3278dc | 目 | Eye | style only |
 | ja-v-a8ca5ef684b8 | 目玉 | Eyeball | style only |
 | ja-v-6eed6b905b8e | 二月 | February | calendar |
-| ja-v-a02edbda9f4c | 五日 | Fifth Day | calendar |
+| ja-v-a02edbda9f4c | 五日 | Fifth Day | calendar; style:cat-png |
 | ja-v-61c516578fee | 五十 | Fifty | numeral; style:cat-png |
 | ja-v-cf58c5cf08d9 | 火 | Fire | style only; style:cat-png |
 | ja-v-d4473f87e438 | 五 | Five | numeral; style:cat-png |
@@ -179,7 +179,7 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-14be5202d5b3 | 左 | Left Direction | arrow; style:cat-png |
 | ja-v-2850d52ee4d2 | 五月 | May | calendar |
 | ja-v-e0bb1d02fee0 | 月 | Moon | sun-moon-horizon; style:cat-png |
-| ja-v-9acbf1542642 | 九日 | Ninth Day | calendar |
+| ja-v-9acbf1542642 | 九日 | Ninth Day | calendar; style:cat-png |
 | ja-v-cacf3a45ed07 | 十月 | October | calendar |
 | ja-v-3d24eb7fb7b5 | 一日 | One Day | calendar, arrow, numeral; style:cat-png |
 | ja-v-30d6b7d7e837 | 千円 | One Thousand Yen | numeral; style:cat-png |
@@ -193,17 +193,17 @@ Complete machine-readable nodes and directed edges: `graph.json`. Each card inhe
 | ja-v-0da81020c173 | 田んぼ | Rice Paddy | rice |
 | ja-v-762983bc3fe7 | 田 | Rice Paddy | rice |
 | ja-v-ed6bd4d73b76 | 右 | Right Direction | arrow; style:cat-png |
-| ja-v-56d52b7869ab | 二日 | Second Day | calendar |
-| ja-v-0655c242d1db | 七日 | Seventh Day | calendar |
+| ja-v-56d52b7869ab | 二日 | Second Day | calendar; style:cat-png |
+| ja-v-0655c242d1db | 七日 | Seventh Day | calendar; style:cat-png |
 | ja-v-06ef406f5569 | 六 | Six | numeral; style:cat-png |
 | ja-v-e368e3aa9bf6 | 十六 | Sixteen | numeral; style:cat-png |
-| ja-v-7b2351210462 | 六日 | Sixth Day | calendar |
+| ja-v-7b2351210462 | 六日 | Sixth Day | calendar; style:cat-png |
 | ja-v-df70a01acaec | 六つ | Six Things | style only; style:cat-png |
 | ja-v-769a80524957 | 小さい | Small | cat; style:kiku-scenes |
 | ja-v-f3881ce313e7 | 日 | Sun | sun-moon-horizon; style:cat-png |
 | ja-v-65df49688ef0 | 刀 | Sword | style only |
-| ja-v-da2913ad7e4c | 十日 | Tenth Day | calendar |
-| ja-v-b0489d428339 | 三日 | Third Day | calendar |
+| ja-v-da2913ad7e4c | 十日 | Tenth Day | calendar; style:cat-png |
+| ja-v-b0489d428339 | 三日 | Third Day | calendar; style:cat-png |
 | ja-v-86ef0852f80f | 千 | Thousand | numeral; style:cat-png |
 | ja-v-b0a6475686ea | 上る | To Climb | arrow, person |
 | ja-v-5f0cf40d1630 | 正す | To Correct | style only |

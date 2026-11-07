@@ -94,6 +94,23 @@ class ReuseTests(unittest.TestCase):
             self.assertTrue(all(batch['status'] == 'blocked-on-previous-feedback'
                                 for batch in batches['batches'][index + 1:]))
 
+    def test_requested_numeric_batch_is_complete_and_preserves_other_feedback_gates(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = json.loads((data / 'prompts.json').read_text())['cards']
+        batches = json.loads((data / 'batches.json').read_text())['batches']
+        group = next(b for b in batches if b['id'] == 'batch-10')
+        previous = {i for b in batches[:9] for i in b['cardIds']}
+        expected = {c['id'] for c in cards if c['id'] not in previous and
+                    (re.fullmatch(r'number-\d+|things-\d+|date-\d+', c['visualGroup']) or
+                     c['meaning'] in {'Four Things', 'Fourth Day', 'Twentieth Day'})}
+        self.assertEqual(set(group['cardIds']), expected)
+        self.assertEqual(len(group['cardIds']), 33)
+        self.assertTrue(all(len(b['cardIds']) <= 25 for b in batches[10:]))
+        if group['status'] != 'approved':
+            self.assertTrue(all(b['status'] == 'blocked-on-previous-feedback' for b in batches[10:]))
+        self.assertIn('ja-v-277587e6fa07', group['cardIds'])
+        self.assertIn('family:counting-blocks', next(c for c in cards if c['id'] == 'ja-v-277587e6fa07')['dependsOn'])
+
     def test_counting_family_reuses_approved_blocks_and_preserves_reviewed_batches(self):
         root = Path(__file__).resolve().parents[2]
         data = root / 'content/card-regeneration'

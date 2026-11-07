@@ -20,3 +20,11 @@ Validation on the final code:
 - `git diff --check` passed.
 
 This worker did not push, create a PR, merge or deploy. Actual iPhone verification remains separate; mobile WebKit emulation is supplemental. Source approval does not clear context-dependent teaching restrictions or the older basketball seam follow-up.
+
+## Numerical scheduling follow-up
+
+PR review found that the recorded request for a single numerical group was not yet reflected in the durable pushed schedule. This follow-up includes the reviewed root planning/workflow changes: `requestedBatches` stores all33remaining cardinal-number, generic X-things and numbered-date IDs in one ordered batch10; `prepare.py` preserves that owner-selected group before regrouping later pending cards. `validate.py` enforces its exact membership/order and limits the33-card exception to that request; the default25-card policy continues elsewhere. Regression coverage checks complete numerical scope, all445stable IDs exactly once, unchanged membership of reviewed batches01–09 and later feedback gates. The resulting batch10 is ready-to-generate, with all subsequent batches blocked.
+
+Only planning/configuration and workflow metadata were copied from the live root. No batch10 PNGs, manifest, generation results, activation records or checkpoint metadata were copied. All135active records, selected approved batch09pixels and runtime mappings remain unchanged. The numerical candidates remain a separate generation/review step after the approved batch09PR was pushed.
+
+Preparation and validator passed (445prompts,all48findings,496-node acyclic graph,22batches,45exclusiongroups). Card tests pass15/15. Full `npm run check` passed on the final planning changes:143Vitest,121Node,12audio tests,lint/types and productionbuild. No browser rerun was necessary for this follow-up because no runtime code, mappings or image bytes changed; the six existing focused journeys and25productionPNGdecodes above still apply. `git diff --check` passed.
