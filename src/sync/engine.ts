@@ -23,7 +23,8 @@ export function validateAttempt(value: unknown): PracticeAttempt {
   }
   if (value.context !== undefined) {
     const context = value.context;
-    if (!object(context) || (context.phase !== 'lesson' && context.phase !== 'review') || context.exercise !== 'audio-picture' ||
+    if (!object(context) || (context.phase !== 'lesson' && context.phase !== 'review') ||
+        (context.exercise !== 'audio-picture' && context.exercise !== 'audio-text') ||
         !identity(context.recordingSrc) || !Number.isInteger(context.replays) || !nonnegative(context.replays) ||
         !identity(context.schedulerVersion) || (context.retryOf !== undefined && !identity(context.retryOf))) {
       throw new Error('Invalid synchronized attempt context.');

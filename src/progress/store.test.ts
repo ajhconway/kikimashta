@@ -29,6 +29,25 @@ afterEach(async () => {
 });
 
 describe('local progress', () => {
+  it('keeps writing and picture progress separate after reopening while preserving legacy attempts', async () => {
+    const name = `progress-test-${sequence++}`;
+    const first = openStore(name);
+    const legacy = attempt();
+    const writing = attempt({ id: 'writing', correct: false, selectedId: 'dog', answeredAt: 2000,
+      context: { phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/cat.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } });
+    const picture = attempt({ id: 'picture', answeredAt: 2500,
+      context: { ...writing.context!, exercise: 'audio-picture' } });
+    await first.merge([legacy, writing, picture]);
+    await first.close();
+    const reopened = openStore(name);
+    expect(await reopened.summary('ja-JP')).toEqual([
+      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 2, correct: 2, lastPracticedAt: 2500 },
+      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-text', attempts: 1, correct: 0, lastPracticedAt: 2000 },
+    ]);
+    expect(await reopened.all()).toEqual([legacy, picture, writing]);
+    expect(legacy.context).toBeUndefined();
+  });
+
   it('atomically merges all languages without replacing immutable attempts or changing the v1 database', async () => {
     const name = `progress-test-${sequence++}`;
     const first = openStore(name);
@@ -100,7 +119,7 @@ describe('local progress', () => {
 
     expect(await store.history('ja-JP')).toEqual([saved]);
     expect(await store.summary('ja-JP')).toEqual([
-      { itemId: 'cat', language: 'ja-JP', attempts: 1, correct: 1, lastPracticedAt: 1500 },
+      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 1, correct: 1, lastPracticedAt: 1500 },
     ]);
   });
 
@@ -111,10 +130,10 @@ describe('local progress', () => {
     await store.record(attempt({ id: 'spanish', language: 'es-ES', answeredAt: 4000 }));
 
     expect(await store.summary('ja-JP')).toEqual([
-      { itemId: 'cat', language: 'ja-JP', attempts: 2, correct: 1, lastPracticedAt: 3000 },
+      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 2, correct: 1, lastPracticedAt: 3000 },
     ]);
     expect(await store.summary('es-ES')).toEqual([
-      { itemId: 'cat', language: 'es-ES', attempts: 1, correct: 1, lastPracticedAt: 4000 },
+      { itemId: 'cat', language: 'es-ES', exercise: 'audio-picture', attempts: 1, correct: 1, lastPracticedAt: 4000 },
     ]);
     expect(await store.history('fr-FR')).toEqual([]);
   });

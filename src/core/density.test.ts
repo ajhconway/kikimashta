@@ -1,24 +1,24 @@
 import { describe, expect, it } from 'vitest';
-import type { PracticeAttempt, WordItem } from '../types';
+import type { Exercise, PracticeAttempt, PracticeCard } from '../types';
 import { advanceSchedule, schedulerVersion, type ScheduledWord } from './scheduler';
 import { DENSITY_LEVELS, MAX_DENSITY_TARGET, densityLevel, densityTargets, forecastDensity, planLessonChunk } from './density';
 
 const NOW = Date.UTC(2026, 10, 5, 12);
 const DAY_MS = 86_400_000;
 const options = { scenarios: 8 };
-const word = (id: string): WordItem => ({
+const word = (id: string, exercise: Exercise = 'audio-picture'): PracticeCard => ({ item: {
   id, language: 'ja-JP', theme: 'nature', label: id, text: id,
   image: { src: `images/${id}.svg`, source: 'generated', alt: id },
   audio: [{ src: `audio/${id}.mp3`, source: 'synthesized' }],
-});
-function attempt(id: string, at: number, correct = true): PracticeAttempt {
+}, exercise });
+function attempt(id: string, at: number, correct = true, exercise: Exercise = 'audio-picture'): PracticeAttempt {
   return { id, sessionId: 'test', itemId: id, language: 'ja-JP', choiceIds: [id, 'other'],
     selectedId: correct ? id : 'other', correct, startedAt: at, answeredAt: at, responseMs: 0,
-    context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'audio/test.mp3', replays: 0, schedulerVersion },
+    context: { phase: 'lesson', exercise, recordingSrc: 'audio/test.mp3', replays: 0, schedulerVersion },
   };
 }
-async function introduced(id = 'one', at = NOW): Promise<ScheduledWord> {
-  return advanceSchedule(undefined, attempt(id, at));
+async function introduced(id = 'one', at = NOW, exercise: Exercise = 'audio-picture'): Promise<ScheduledWord> {
+  return advanceSchedule(undefined, attempt(id, at, true, exercise));
 }
 
 describe('qualitative review density', () => {
@@ -38,6 +38,18 @@ describe('qualitative review density', () => {
 });
 
 describe('future workload forecast', () => {
+  it('counts both exercises of one word as independent additive review work', async () => {
+    const picture = await introduced('same-word', NOW - DAY_MS);
+    const writing = await introduced('same-word', NOW - DAY_MS, 'audio-text');
+    const left = await forecastDensity([picture], NOW, options);
+    const right = await forecastDensity([writing], NOW, options);
+    const combined = await forecastDensity([picture, writing], NOW, options);
+    expect(combined.daily[0]).toBe(2);
+    combined.daily.forEach((count, day) => expect(count).toBe(left.daily[day]! + right.daily[day]!));
+    expect(await forecastDensity([writing, picture], NOW, options)).toEqual(combined);
+    await expect(forecastDensity([writing, writing], NOW, options)).rejects.toThrow(/duplicate/i);
+  });
+
   it('counts overdue work immediately and repeats across later sessions without changing real schedules', async () => {
     const schedule = await introduced('one', NOW - DAY_MS * 2);
     const original = structuredClone(schedule);
@@ -61,8 +73,8 @@ describe('future workload forecast', () => {
   });
 
   it('is additive and independent of input order while including sampled failures', async () => {
-    const first = await introduced('first', NOW - DAY_MS);
-    const second = await introduced('second', NOW - DAY_MS);
+    const first = await introduced('first', NOW - 30 * DAY_MS);
+    const second = await introduced('second', NOW - 30 * DAY_MS);
     const left = await forecastDensity([first], NOW, options);
     const right = await forecastDensity([second], NOW, options);
     const combined = await forecastDensity([first, second], NOW, options);
@@ -83,7 +95,26 @@ describe('future workload forecast', () => {
 });
 
 describe('lesson chunk admission', () => {
-  it('offers about ten new words below minimum, with explicit initial-quiz assumptions and no actual learning writes', async () => {
+  it('admits writing for a known picture word and deduplicates by exercise', async () => {
+    const picture = await introduced('known');
+    const writing = word('known', 'audio-text');
+    const plan = await planLessonChunk({ schedules: [picture], candidates: [word('known'), writing, writing], now: NOW, options });
+    expect(plan.items).toEqual([writing]);
+    expect(plan.projectedForecast.reviewsPerDay).toBeGreaterThan(plan.forecast.reviewsPerDay);
+    const learnedWriting = await introduced('known', NOW, 'audio-text');
+    const done = await planLessonChunk({ schedules: [picture, learnedWriting], candidates: [word('known'), writing], now: NOW, options });
+    expect(done.items).toEqual([]);
+    expect(done.reason).toBe('exhausted');
+  });
+
+  it('bounds mixed lesson size by cards rather than vocabulary items', async () => {
+    const candidates = [word('one'), word('one', 'audio-text'), word('two'), word('two', 'audio-text')];
+    const plan = await planLessonChunk({ schedules: [], candidates, now: NOW, chunkSize: 3, options });
+    expect(plan.items).toEqual(candidates.slice(0, 3));
+    expect(plan.projectedForecast.reviewsPerDay).toBeGreaterThan(0);
+  });
+
+  it('offers about ten new cards below minimum, with explicit initial-quiz assumptions and no actual learning writes', async () => {
     const candidates = Array.from({ length: 12 }, (_, index) => word('word-' + index));
     const original = structuredClone(candidates);
     const plan = await planLessonChunk({ schedules: [], candidates, now: NOW, options });
@@ -109,10 +140,10 @@ describe('lesson chunk admission', () => {
     expect(smallPool.projectedForecast.reviewsPerDay).toBeLessThan(5);
   });
 
-  it('excludes learned and duplicate words and stops new intake at the maximum', async () => {
+  it('excludes learned and duplicate cards and stops new intake at the maximum', async () => {
     const existing = await introduced('known');
     const plan = await planLessonChunk({ schedules: [existing], candidates: [word('known'), word('new'), word('new')], now: NOW, options });
-    expect(plan.items.map(item => item.id)).toEqual(['new']);
+    expect(plan.items.map(card => card.item.id)).toEqual(['new']);
     const noNew = await planLessonChunk({ schedules: [existing], candidates: [word('known')], now: NOW, options });
     expect(noNew.reason).toBe('exhausted');
     const busy = await Promise.all(Array.from({ length: 40 }, (_, index) => introduced('busy-' + index, NOW - DAY_MS)));

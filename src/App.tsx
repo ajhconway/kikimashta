@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
-import type { AudioAsset, PracticeAttempt, WordItem } from './types';
-import { createQuestions, createSession, requeueMissedQuestion, type Question } from './core/session';
+import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
+import { attemptExercise, cardKey, practiceCards } from './core/cards';
+import { createQuestions, createSession, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -9,6 +10,8 @@ import { ProgressStore } from './progress/store';
 import { quizFeedbackColors, themeColors } from './themes';
 import { DensityIndicator, PaceControl } from './components/PaceControl';
 import './styles.css';
+import './writing-fonts.css';
+import { availableWritingFont, createWritingFontRotation, preloadWritingFonts, type WritingFont } from './core/writing-fonts';
 
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const defaultStore = new ProgressStore();
@@ -24,6 +27,16 @@ function Speaker({ small = false }: { small?: boolean }) {
 function Picture({ item }: { item: WordItem }) {
   return <img src={asset(item.image.src)} alt={item.image.alt} draggable={false}/>;
 }
+
+const writingCharacters = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+
+function CardFace({ item, exercise, font }: PracticeCard & { font: WritingFont }) {
+  if (exercise === 'audio-picture') return <Picture item={item}/>;
+  // A combining mark or variation selector belongs to its displayed character.
+  const length = Math.max(1, Array.from(writingCharacters.segment(item.text)).length);
+  return <span className="written-answer" data-font={font} style={{ '--writing-length': length } as CSSProperties} lang={item.language}>{item.text}</span>;
+}
+const choiceClass = (exercise: Exercise) => 'answer-choice ' + (exercise === 'audio-picture' ? 'picture-choice' : 'text-choice');
 
 function QuizProgress({ total, completed, mistakes }: { total: number; completed: number; mistakes: number }) {
   return <div className="quiz-progress"><div className="round-progress" role="progressbar" aria-label="Session progress" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={total} aria-valuetext={`${completed} of ${total} sounds completed`}>
@@ -50,13 +63,16 @@ function initialRange(): DensityRange {
   } catch { /* Unavailable preferences never prevent practice. */ }
   return { ...DEFAULT_DENSITY_RANGE };
 }
-interface DepartingCard { item: WordItem; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
+interface DepartingCard extends PracticeCard { font: WritingFont; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
 
 export default function App({ now = wallClock, random = Math.random, progressStore = defaultStore, historyRevision = 0, accountControls, accountLoading = false, onSaved }: {
   now?: () => number; random?: () => number; progressStore?: ProgressStore; historyRevision?: number;
   accountControls?: ReactNode; accountLoading?: boolean; onSaved?: () => void;
 } = {}) {
   const store = progressStore;
+  const [fontRotation] = useState(() => createWritingFontRotation());
+  const [writingFont, setWritingFont] = useState<WritingFont>('system');
+  useEffect(() => { preloadWritingFonts(); }, []);
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
@@ -66,7 +82,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [loading, setLoading] = useState(true);
   const [historyError, setHistoryError] = useState(false);
   const [lessonPlan, setLessonPlan] = useState<LessonPlan | null>(null);
-  const [lessonItems, setLessonItems] = useState<WordItem[]>([]);
+  const [lessonItems, setLessonItems] = useState<PracticeCard[]>([]);
   const [preview, setPreview] = useState(0);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [quizSize, setQuizSize] = useState(0);
@@ -93,7 +109,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const pendingSaves = useRef(new Set<string>());
   const replayButton = useRef<HTMLButtonElement>(null);
   const choiceGrid = useRef<HTMLDivElement>(null);
-  const target = screen === 'preview' ? lessonItems[preview] : questions[index]?.target;
+  const target = screen === 'preview' ? lessonItems[preview]?.item : questions[index]?.target;
+  const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
   const theme = screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
   const response = screen === 'quiz' && feedback ? feedback.correct ? 'correct' : 'incorrect' : undefined;
   const background = response ? quizFeedbackColors[response] : themeColors[theme];
@@ -153,11 +170,12 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setAudioError(false); setAutoPaused(false); setPlaying(true);
     void element.play().catch(() => { if (request === playRequest.current) { setAudioError(true); setPlaying(false); } });
   }, []);
-  const present = useCallback((item: WordItem) => {
+  const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture', presentationPhase: 'lesson' | 'review' = 'lesson', texts: readonly string[] = [item.text]) => {
+    if (exercise === 'audio-text') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
     recording.current = selectRecording(item.audio, random);
     active.current.replays = 0;
     play();
-  }, [play, random]);
+  }, [play, random, fontRotation]);
   function home() {
     operation.current++; preparing.current = false;
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
@@ -171,21 +189,21 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     try { localStorage.setItem(preferenceKey, JSON.stringify(value)); setPreferenceError(false); }
     catch { setPreferenceError(true); }
   }
-  const showQuestion = useCallback((next: Question, sessionId: string) => {
+  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
     setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
-    present(next.target);
+    present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present]);
-  function beginQuiz(block: Question[]) {
+  function beginQuiz(block: Question[], blockPhase = phase) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
-    showQuestion(block[0]!, session.current.id);
+    showQuestion(block[0]!, session.current.id, blockPhase);
   }
   function startDevReview() {
     if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(createSession(practicePool, 6, 4, random));
+    beginQuiz(createSession(practicePool, 6, 4, random), 'review');
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -194,14 +212,14 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (operation.current !== request) return;
       history.current = attempts;
       const schedules = await deriveSchedules(attempts, practicePool.language);
-      const learned = new Set(schedules.map(word => word.itemId));
+      const learned = new Set(schedules.map(cardKey));
       const plan = await planLessonChunk({ schedules, now: now(), range,
-        candidates: practicePool.items.filter(item => !learned.has(item.id) && !session.current.reserved.has(item.id)) });
+        candidates: practiceCards(practicePool.items).filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
       if (operation.current !== request) return;
-      setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(plan.items);
+      setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(shuffled(plan.items, random));
     } catch { if (operation.current === request) setHistoryError(true); }
     finally { if (operation.current === request) setLoading(false); }
-  }, [now, range, store]);
+  }, [now, range, store, random]);
   async function startSession() {
     if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
     setIsDevReview(false);
@@ -218,7 +236,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       const due = snapshotDue(schedules, practicePool.items.map(item => item.id), at);
       const byId = new Map(practicePool.items.map(item => [item.id, item]));
       if (due.length) {
-        setPhase('review'); setQuestions(createQuestions(due.map(id => byId.get(id)!), practicePool.items, random));
+        setPhase('review'); setQuestions(createQuestions(due.map(card => ({ item: byId.get(card.itemId)!, exercise: card.exercise })), practicePool.items, random));
         setLessonItems([]); setLessonPlan(null); setLoading(false);
       } else {
         setPhase('lesson');
@@ -230,13 +248,17 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   }
   function beginLesson() {
     if (!lessonItems.length || loading || historyError) return;
-    lessonItems.forEach(item => session.current.reserved.add(item.id));
-    setPhase('lesson'); setPreview(0); setScreen('preview'); present(lessonItems[0]!);
+    lessonItems.forEach(card => session.current.reserved.add(cardKey(card)));
+    setPhase('lesson'); setPreview(0); setScreen('preview'); present(lessonItems[0]!.item, lessonItems[0]!.exercise);
   }
   function startLessonQuiz() {
-    const known = new Set(history.current.map(attempt => attempt.itemId));
-    const choices = practicePool.items.filter(item => known.has(item.id) || lessonItems.some(word => word.id === item.id));
-    beginQuiz(createQuestions(lessonItems, choices.length >= 4 ? choices : practicePool.items, random));
+    const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
+    const block = shuffled(lessonItems, random).flatMap(card => {
+      const choices = practicePool.items.filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
+        lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
+      return createQuestions([card], choices.length >= 4 ? choices : practicePool.items, random);
+    });
+    beginQuiz(block);
   }
   async function save(attempt: PracticeAttempt) {
     if (isDevReview) return;
@@ -261,7 +283,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       choiceIds: question.choices.map(choice => choice.id), selectedId: item.id,
       correct: item.id === question.target.id, startedAt: active.current.startedAt,
       answeredAt, responseMs: Math.max(0, answeredAt - active.current.startedAt),
-      context: { phase, exercise: 'audio-picture', recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
+      context: { phase, exercise: question.exercise, recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
         ...(question.retryOf ? { retryOf: question.retryOf } : {}) },
     };
     const gridBounds = choiceGrid.current?.getBoundingClientRect();
@@ -273,7 +295,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       const dy = bounds.top + bounds.height / 2 - (gridBounds.top + gridBounds.height / 2);
       const reach = Math.hypot(window.innerWidth, window.innerHeight) + Math.hypot(bounds.width, bounds.height);
       const scale = reach / (Math.hypot(dx, dy) || 1);
-      return [{ item: choice, slot, left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height, flyX: dx * scale, flyY: dy * scale }];
+      return [{ item: choice, exercise: question.exercise, font: writingFont, slot, left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height, flyX: dx * scale, flyY: dy * scale }];
     }));
     if (!attempt.correct) setQuestions(requeueMissedQuestion(questions, index, attempt.id, random));
     setFeedback(attempt); setAnswers(previous => [...previous, attempt]); void save(attempt);
@@ -286,8 +308,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (!isDevReview) void prepareLessons(operation.current);
       return;
     }
-    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id);
-  }, [index, questions, showQuestion, prepareLessons, isDevReview]);
+    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase);
+  }, [index, questions, showQuestion, prepareLessons, isDevReview, phase]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
     const answerId = feedback.id; const request = playRequest.current;
@@ -302,7 +324,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
     <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className="picture-choice departing-card" key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><Picture item={card.item}/></div>)}</div>}
+    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className={choiceClass(card.exercise) + ' departing-card'} key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><CardFace item={card.item} exercise={card.exercise} font={card.font}/></div>)}</div>}
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
@@ -318,25 +340,25 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Review Time!' : lessonItems.length ? 'Lesson Time!' : 'All set for now!'}</h1>
-        {(phase === 'review' || lessonItems.length > 0) && <p className="block-note">{phase === 'review' ? questions.length : lessonItems.length} {(phase === 'review' ? questions.length : lessonItems.length) === 1 ? 'word' : 'words'}</p>}
+        {(phase === 'review' || lessonItems.length > 0) && <p className="block-note">{phase === 'review' ? questions.length : lessonItems.length} {(phase === 'review' ? questions.length : lessonItems.length) === 1 ? 'card' : 'cards'}</p>}
         <DensityIndicator value={density}/>
         {phase === 'review' ? <button className="primary" onClick={() => beginQuiz(questions)}>Begin review <span aria-hidden="true">→</span></button> : lessonItems.length > 0 && <button className="primary" disabled={loading || historyError} onClick={beginLesson}>Begin lesson <span aria-hidden="true">→</span></button>}
         {historyError && <div className="error" role="alert"><p>The next lesson couldn't load.</p><button className="text-button" onClick={() => void prepareLessons(operation.current)}>Retry lesson</button></div>}
         <button className="text-button" onClick={home}>Finish</button>
       </section>}
-      {screen === 'preview' && target && <section className="practice preview fade-in">
+      {screen === 'preview' && target && <section className="practice preview fade-in" data-exercise={exercise}>
         <div className="section-top"><span className="counter">{preview + 1} / {lessonItems.length}</span></div>
         <h1 className="practice-title">Lesson Time!</h1>
-        <div className="preview-picture"><Picture item={target}/></div>
+        <div className={'preview-picture' + (exercise === 'audio-text' ? ' preview-writing' : '')}><CardFace item={target} exercise={exercise!} font={writingFont}/></div>
         <div className="practice-actions">
         <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
 
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
-        <div className="preview-dots" aria-label={'Word ' + (preview + 1) + ' of ' + lessonItems.length}>{lessonItems.map((item, i) => <span key={item.id} className={i === preview ? 'active' : ''}/>)}</div>
-        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < lessonItems.length) { setPreview(preview + 1); present(lessonItems[preview + 1]!); } else startLessonQuiz(); }}>{preview + 1 === lessonItems.length ? 'Mini-quiz' : 'Next word'} <span aria-hidden="true">→</span></button>
+        <div className="preview-dots" aria-label={'Card ' + (preview + 1) + ' of ' + lessonItems.length}>{lessonItems.map((item, i) => <span key={cardKey(item)} className={i === preview ? 'active' : ''}/>)}</div>
+        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < lessonItems.length) { setPreview(preview + 1); present(lessonItems[preview + 1]!.item, lessonItems[preview + 1]!.exercise); } else startLessonQuiz(); }}>{preview + 1 === lessonItems.length ? 'Mini-quiz' : 'Next card'} <span aria-hidden="true">→</span></button>
         </div>
       </section>}
-      {screen === 'quiz' && target && <section className="practice quiz fade-in">
+      {screen === 'quiz' && target && <section className="practice quiz fade-in" data-exercise={exercise}>
         <h1 className="sr-only">Listen and choose</h1>
         <div className="quiz-top">
         <QuizCompanion listening={playing} response={feedback?.correct ?? null}/>
@@ -346,11 +368,11 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="quiz-cards">
         {feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
-        <div className="choices choices-enter" ref={choiceGrid} key={target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
+        <div className="choices choices-enter" ref={choiceGrid} key={exercise + '-' + target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={'picture-choice ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={'Choose picture ' + (i + 1)} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><Picture item={item}/>{isCorrect && <span className="choice-badge" aria-label="Correct picture">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label="Correct answer">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>

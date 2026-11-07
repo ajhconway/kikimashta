@@ -19,12 +19,18 @@ Use the existing **Kikimashta** project in the **Kikimashta** organization: [`by
 ## Project and database
 
 1. Create a project at [Supabase](https://supabase.com/dashboard). Keep its database password out of the repository.
-2. In the SQL editor, run [the sync migration](../supabase/migrations/202611060001_sync.sql) once. It creates private, append-only attempt and card-note tables with row-level security.
+2. In the SQL editor, run [the sync migration](../supabase/migrations/202611060001_sync.sql) once. It creates private, append-only attempt and card-note tables with row-level security. Then apply [the audio-to-writing migration](../supabase/migrations/20261107032200_audio_text_attempts.sql) to accept both `audio-picture` and `audio-text` contexts.
 3. In a development project, run [the rollback test fixture](../supabase/tests/sync.sql) as `postgres`. It checks owner access, account isolation, anonymous denial, immutable records, duplicate uploads, payload validation, and server timestamps. It requires no extensions and rolls back its test users and data. Any error is a failed check; do not proceed until it is resolved.
 
 The schema grants authenticated users only SELECT and INSERT for their own rows. The browser can insert owner/ID/payload columns, while `created_at` is server-generated. No browser UPDATE or DELETE privileges are granted. [Supabase RLS documentation](https://supabase.com/docs/guides/database/postgres/row-level-security).
 
 Keep the project's Data API maximum row limit at least 200, the client's page size. The default limit is sufficient.
+
+### Audio-to-writing release (#99)
+
+Before publishing the writing-card app, apply only [the audio-to-writing migration](../supabase/migrations/20261107032200_audio_text_attempts.sql) to an existing sync database. It widens the attempt exercise allowlist, leaving stored payloads, all other validation rules, grants, and row-level security unchanged. The original sync migration is already deployed and must not be rerun. This repository change does not apply the new migration to the hosted project.
+
+Run the rollback fixture after both migrations in a disposable development database. It checks writing lessons and retries, unchanged picture and legacy events, invalid exercise rejection, and account isolation. Older app versions reject downloaded writing contexts, so both devices need the updated app to sync writing practice.
 
 ## Email sign-in
 
@@ -60,7 +66,7 @@ Build and publish after configuring the variables. Sign in on two devices, expli
 
 ## Sync protocol
 
-CI runs the migration and rollback fixture in PostgreSQL 17 with a small Auth boundary defined in `supabase/tests/bootstrap.sql`. That bootstrap is only for a disposable CI database; never apply it to Supabase. Hosted email delivery and the complete Supabase API still need live verification.
+CI runs both migrations in filename order and the rollback fixture in PostgreSQL 17 with a small Auth boundary defined in `supabase/tests/bootstrap.sql`. That bootstrap is only for a disposable CI database; never apply it to Supabase. Hosted email delivery and the complete Supabase API still need live verification.
 
 Attempts use `(user_id, attempt_id)` and notes use `(user_id, event_id)` as immutable identities. Upload with `upsert(..., { onConflict: 'user_id,attempt_id', ignoreDuplicates: true })` or its note equivalent; omit `created_at`. Retrying an upload cannot replace an existing event.
 

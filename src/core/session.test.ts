@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { WordBank } from '../types';
+import type { PracticeCard, WordBank } from '../types';
+import { cardKey, practiceCards } from './cards';
 import { createSession, createQuestions, requeueMissedQuestion, validateBank } from './session';
 
 function bank(): WordBank {
@@ -59,7 +60,7 @@ describe('practice sessions', () => {
     expect(() => requeueMissedQuestion(questions, 0, '')).toThrow(/retry/i);
   });
 
-  it('offers unique pictures with exactly one correct choice and no repeated targets', () => {
+  it('offers four choices with exactly one correct answer and no repeated exercise cards', () => {
     const words = bank();
     const original = structuredClone(words);
     const values = [0, 0.1, 0.25, 0.55, 0.9, 0.999];
@@ -67,7 +68,7 @@ describe('practice sessions', () => {
     const session = createSession(words, 6, 4, () => values[call++ % values.length]!);
 
     expect(session).toHaveLength(6);
-    expect(new Set(session.map(question => question.target.id)).size).toBe(6);
+    expect(new Set(session.map(question => cardKey({ item: question.target, exercise: question.exercise }))).size).toBe(6);
     for (const question of session) {
       const ids = question.choices.map(choice => choice.id);
       expect(ids).toHaveLength(4);
@@ -81,9 +82,9 @@ describe('practice sessions', () => {
   it('quizzes only the frozen targets and excludes repeated images and homophones', () => {
     const pool = bank().items;
     const copy = structuredClone(pool);
-    const targets = pool.slice(0, 2);
+    const targets: PracticeCard[] = pool.slice(0, 2).map(item => ({ item, exercise: 'audio-picture' }));
     const questions = createQuestions(targets, [...pool, { ...pool[2]!, id: 'alias' }], () => 0.5);
-    expect(questions.map(question => question.target.id).sort()).toEqual(targets.map(item => item.id).sort());
+    expect(questions.map(question => question.target.id).sort()).toEqual(targets.map(card => card.item.id).sort());
     for (const question of questions) {
       expect(question.choices).toHaveLength(4);
       expect(new Set(question.choices.map(item => item.image.src)).size).toBe(4);
@@ -91,13 +92,44 @@ describe('practice sessions', () => {
     }
     expect(pool).toEqual(copy);
     expect(createQuestions([], pool)).toEqual([]);
-    expect(() => createQuestions([pool[0]!, pool[0]!], pool)).toThrow(/unique/i);
+    expect(() => createQuestions([targets[0]!, targets[0]!], pool)).toThrow(/unique/i);
     expect(() => createQuestions(targets, pool.slice(0, 2))).toThrow(/distinct/i);
+  });
+
+  it('shuffles both card types together while retaining the exact target snapshot', () => {
+    const pool = bank().items;
+    const cards = practiceCards(pool.slice(0, 3));
+    const questions = createQuestions(cards, pool, () => 0.5);
+    expect(questions.map(question => cardKey({ item: question.target, exercise: question.exercise })).sort()).toEqual(cards.map(cardKey).sort());
+    const formats = questions.map(question => question.exercise);
+    expect(formats.filter((format, index) => index > 0 && format !== formats[index - 1]).length).toBeGreaterThan(1);
+    expect(questions.map(question => cardKey({ item: question.target, exercise: question.exercise }))).not.toEqual(cards.map(cardKey));
+    for (const exercise of ['audio-picture', 'audio-text'] as const) {
+      const index = questions.findIndex(question => question.exercise === exercise);
+      const retry = requeueMissedQuestion(questions, index, 'miss-' + exercise, () => 0).find(question => question.retryOf);
+      expect(retry).toMatchObject({ target: questions[index]!.target, exercise });
+    }
+  });
+
+  it('uses distinct written options, excludes a target homophone, and allows shared artwork', () => {
+    const pool = bank().items;
+    const target = { ...pool[0]!, text: '猫', reading: 'ねこ' };
+    const sameWriting = { ...pool[1]!, id: 'same-writing', text: '猫', reading: 'other' };
+    const homophone = { ...pool[1]!, id: 'homophone', text: 'ネコ', reading: 'ねこ' };
+    const sameImage = { ...pool[1]!, image: target.image };
+    const [question] = createQuestions([{ item: target, exercise: 'audio-text' }], [target, sameWriting, homophone, sameImage, ...pool.slice(2)], () => 0.999);
+    expect(question!.exercise).toBe('audio-text');
+    expect(question!.choices.map(item => item.id)).toContain(sameImage.id);
+    expect(question!.choices.map(item => item.id)).not.toContain('same-writing');
+    expect(question!.choices.map(item => item.id)).not.toContain('homophone');
+    expect(new Set(question!.choices.map(item => item.text)).size).toBe(4);
+    const duplicatedLabels = pool.map(item => ({ ...item, text: 'duplicate' }));
+    expect(() => createQuestions([{ item: target, exercise: 'audio-text' }], duplicatedLabels)).toThrow(/distinct/i);
   });
 
   it('honors a shorter session and bounds a longer session to available words', () => {
     expect(createSession(bank(), 2, 3, () => 0.5)).toHaveLength(2);
-    expect(createSession(bank(), 20, 4, () => 0.5)).toHaveLength(6);
+    expect(createSession(bank(), 20, 4, () => 0.5)).toHaveLength(12);
   });
 
   it.each([[0, 4], [1.5, 4], [6, 1], [6, 7], [6, 2.5]])(

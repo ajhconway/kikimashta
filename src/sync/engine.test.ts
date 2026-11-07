@@ -48,6 +48,23 @@ afterEach(async () => {
 });
 
 describe('account-bound synchronization', () => {
+  it('preserves separate writing, picture, and legacy attempts for the same word across repeated syncs', async () => {
+    const f = fixture();
+    const legacy = attempt('legacy');
+    const writing = attempt('writing', { context: { phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/cat.mp3',
+      replays: 1, schedulerVersion: 'fsrs-6-v1' } });
+    const picture = attempt('picture', { context: { ...writing.context!, exercise: 'audio-picture' } });
+    const retry = attempt('writing-retry', { context: { ...writing.context!, phase: 'review', retryOf: writing.id } });
+    await f.store.merge([legacy, writing]);
+    merge(f.remoteAttempts, [picture, retry]);
+    await synchronize(f.local, f.remote);
+    await synchronize(f.local, f.remote);
+    const expected = [legacy, picture, writing, retry];
+    expect(await f.store.all()).toEqual(expected);
+    expect([...f.remoteAttempts.values()].sort((a, b) => a.id.localeCompare(b.id))).toEqual(expected);
+    expect((await f.store.all()).find(item => item.id === legacy.id)).not.toHaveProperty('context');
+  });
+
   it('unions overlapping attempts and immutable note edits/deletions without changing legacy or retry context', async () => {
     const f = fixture();
     const first = attempt('legacy');
@@ -146,6 +163,17 @@ describe('account-bound synchronization', () => {
 });
 
 describe('sync payload validation', () => {
+  it.each(['audio-picture', 'audio-text'] as const)('accepts %s contexts and rejects unsupported exercises', exercise => {
+    const value = attempt('valid-context', { context: { phase: 'review', exercise, recordingSrc: 'audio/cat.mp3',
+      replays: 2, schedulerVersion: 'fsrs-6-v1', retryOf: 'original-miss' } });
+    const original = structuredClone(value);
+    expect(validateAttempt(value)).toEqual(original);
+    expect(value).toEqual(original);
+    for (const invalid of ['audio-writing', '', null, undefined, ['audio-text'], 1]) {
+      expect(() => validateAttempt({ ...value, context: { ...value.context, exercise: invalid } })).toThrow(/context/i);
+    }
+  });
+
   it('requires whole, safe millisecond values accepted by the database schema', () => {
     for (const invalid of [0.5, -1, Number.MAX_SAFE_INTEGER + 1, Infinity]) {
       for (const field of ['startedAt', 'answeredAt', 'responseMs']) {

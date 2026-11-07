@@ -110,6 +110,39 @@ values (auth.uid(), 'corrective-retry', pg_temp.attempt_payload('corrective-retr
 select pg_temp.assert_true((select payload -> 'context' ->> 'retryOf' = 'legacy-answer-one'
   from public.practice_attempts where attempt_id = 'corrective-retry'), 'retry metadata round-trips');
 
+-- Writing uses the same immutable event contract while retaining its own exercise.
+insert into public.practice_attempts (user_id, attempt_id, payload)
+values (auth.uid(), 'writing-lesson', pg_temp.attempt_payload('writing-lesson') ||
+  '{"context":{"phase":"lesson","exercise":"audio-text","recordingSrc":"audio/cat.mp3","replays":0,"schedulerVersion":"fsrs-6-v1"}}');
+insert into public.practice_attempts (user_id, attempt_id, payload)
+values (auth.uid(), 'writing-retry', pg_temp.attempt_payload('writing-retry') ||
+  '{"context":{"phase":"review","exercise":"audio-text","recordingSrc":"audio/cat.mp3","replays":2,"schedulerVersion":"fsrs-6-v1","retryOf":"writing-lesson"}}');
+select pg_temp.assert_true((select payload -> 'context' ->> 'exercise' = 'audio-text'
+  and payload -> 'context' ->> 'phase' = 'lesson'
+  from public.practice_attempts where attempt_id = 'writing-lesson'), 'writing lesson context round-trips');
+select pg_temp.assert_true((select payload -> 'context' ->> 'exercise' = 'audio-text'
+  and payload -> 'context' ->> 'retryOf' = 'writing-lesson'
+  and payload -> 'context' ->> 'replays' = '2'
+  from public.practice_attempts where attempt_id = 'writing-retry'), 'writing retry metadata round-trips');
+select pg_temp.assert_true((select payload -> 'context' ->> 'exercise' = 'audio-picture'
+  from public.practice_attempts where attempt_id = 'corrective-retry'), 'picture context stays unchanged');
+select pg_temp.assert_true((select payload = pg_temp.attempt_payload('legacy-answer-one')
+  from public.practice_attempts where attempt_id = 'legacy-answer-one'), 'legacy payload stays unchanged after writing inserts');
+
+-- Widening the exercise allowlist must not weaken context validation.
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'unsupported-exercise', pg_temp.attempt_payload('unsupported-exercise') ||
+    '{"context":{"phase":"review","exercise":"audio-writing","recordingSrc":"audio/cat.mp3","replays":0,"schedulerVersion":"fsrs-6-v1"}}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'missing-exercise', pg_temp.attempt_payload('missing-exercise') ||
+    '{"context":{"phase":"review","recordingSrc":"audio/cat.mp3","replays":0,"schedulerVersion":"fsrs-6-v1"}}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'invalid-writing-replays', pg_temp.attempt_payload('invalid-writing-replays') ||
+    '{"context":{"phase":"review","exercise":"audio-text","recordingSrc":"audio/cat.mp3","replays":0.5,"schedulerVersion":"fsrs-6-v1"}}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'invalid-writing-retry', pg_temp.attempt_payload('invalid-writing-retry') ||
+    '{"context":{"phase":"review","exercise":"audio-text","recordingSrc":"audio/cat.mp3","replays":0,"schedulerVersion":"fsrs-6-v1","retryOf":""}}')$q$, '23514');
+
 -- A second authenticated user sees no first-user events and cannot spoof ownership.
 set local request.jwt.claim.sub = '10000000-0000-4000-8000-000000000002';
 set local request.jwt.claims = '{"sub":"10000000-0000-4000-8000-000000000002","role":"authenticated"}';
@@ -145,13 +178,13 @@ select pg_temp.expect_sqlstate($q$insert into public.card_note_events (user_id, 
   values (auth.uid(), 'anon-note', pg_temp.note_payload('anon-note', '', 1000))$q$, '42501');
 
 reset role;
-select pg_temp.assert_true((select count(*) = 2 from public.practice_attempts
+select pg_temp.assert_true((select count(*) = 4 from public.practice_attempts
   where user_id = '10000000-0000-4000-8000-000000000001'), 'cross-user/anonymous attempts left original account intact');
 select pg_temp.assert_true((select count(*) = 2 from public.card_note_events
   where user_id = '10000000-0000-4000-8000-000000000001'), 'cross-user/anonymous attempts left original notes intact');
 delete from auth.users where id = '10000000-0000-4000-8000-000000000002';
 select pg_temp.assert_true(not exists (select 1 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000002'), 'account deletion cascades its attempt events');
 select pg_temp.assert_true(not exists (select 1 from public.card_note_events where user_id = '10000000-0000-4000-8000-000000000002'), 'account deletion cascades its note events');
-select pg_temp.assert_true((select count(*) = 2 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000001'), 'deleting another account preserves the first account');
+select pg_temp.assert_true((select count(*) = 4 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000001'), 'deleting another account preserves the first account');
 select count(*) as checks_passed, 'Sync SQL checks passed; fixtures are being rolled back.' as result from pg_temp.sync_test_results;
 rollback;
