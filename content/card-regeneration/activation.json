@@ -550,6 +550,231 @@
       "path": "public/images/approved/ja-v-ea952b83ac80-2e0e52a610c6.jpg",
       "sha256": "23e54920f5614c814c51d98a5fe94f123884ef0a1eaa43655f140649f2db8793",
       "bytes": 46224
+    },
+    {
+      "id": "ja-v-f14d2c0c7442",
+      "sourcePath": "artifacts/card-regeneration/batch-07/61-square.png",
+      "sourceSha256": "571035d0c10da235d1e934a610abeb862ca0383e35891a680011e404995a7335",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-f14d2c0c7442-571035d0c10d.jpg",
+      "sha256": "91a94a855018183334155f4af29dd70c6824219e67402ed06ac4e48d1bc3888e",
+      "bytes": 36603
+    },
+    {
+      "id": "ja-v-14be5202d5b3",
+      "sourcePath": "artifacts/card-regeneration/batch-07/62-left-direction.png",
+      "sourceSha256": "d47723e0d3e776cd3410e982b4c2e7cad7b5baf72c4bde57a6a4ef43f5a57962",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg",
+      "sha256": "1655b8eb2fb83cb318499b21722d36cf91d5e883d4e74bb23f9e150f661f79ce",
+      "bytes": 42737
+    },
+    {
+      "id": "ja-v-4ac46ddaa10f",
+      "sourcePath": "artifacts/card-regeneration/batch-07/63-left-and-right.png",
+      "sourceSha256": "0049cda5dbf888644f2ac535038acef055404407830ca4dc1a96757e000230f4",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-4ac46ddaa10f-0049cda5dbf8.jpg",
+      "sha256": "8e688deac8a9a1225e192dc8daeb11d2c2273f62e59e5dcf6bfcfdedd559e014",
+      "bytes": 43159
+    },
+    {
+      "id": "ja-v-575c16528161",
+      "sourcePath": "artifacts/card-regeneration/batch-07/64-arrow.png",
+      "sourceSha256": "29aec177aec1076888426aa2aab5e506f020a0b804872bc6b92ae4fcdd4cb28b",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-575c16528161-29aec177aec1.jpg",
+      "sha256": "0cac887d383aceffdeb2238080f58bbc7d6ac52bbdb5cfa727368e31ac305d83",
+      "bytes": 60432
+    },
+    {
+      "id": "ja-v-ed6bd4d73b76",
+      "sourcePath": "artifacts/card-regeneration/batch-07/65-revision-v2.png",
+      "sourceSha256": "9e9780ab58a50b46dd766a756e34c60341ba56a8570839a755919092f66f51ee",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg",
+      "sha256": "0de5c3868ec56a2804c170f6c539f1c632b4ab7d1c502db79a5fae16773c9a25",
+      "bytes": 42832
+    },
+    {
+      "id": "ja-v-520308b3c3b4",
+      "sourcePath": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+      "sourceSha256": "6fb26718fa996cfef6bff3509f943359c835a21d004f026a4db566b6f1874b37",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+      "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5",
+      "bytes": 97108
+    },
+    {
+      "id": "ja-v-769a80524957",
+      "sourcePath": "artifacts/card-regeneration/batch-07/67-revision-v4.png",
+      "sourceSha256": "bb9e93fe5bee3c3ddd252057d1699bddc32539e01b2d1cd4c2c4df7a4b8e5faa",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+      "sha256": "ed0a26999d386ade88cf8d363538d9562af4cba381503f7604186d016cbd6e11",
+      "bytes": 98068
+    },
+    {
+      "id": "ja-v-960de5429d2e",
+      "sourcePath": "artifacts/card-regeneration/batch-07/68-revision-v4.png",
+      "sourceSha256": "799551d6ddf22bbbe30f42ec0a813e602bb8e0895c70282f257d1a1d95125c77",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-960de5429d2e-799551d6ddf2.jpg",
+      "sha256": "ecf6f407b1525444a82abe8b040099b1a63369d9c0ec00684c3eb5cb372f095f",
+      "bytes": 85708
+    },
+    {
+      "id": "ja-v-a249b72fa923",
+      "sourcePath": "artifacts/card-regeneration/batch-07/69-many.png",
+      "sourceSha256": "6e442b16e04f3a79eddc42c34091c2c0cdd3e0e0a569ed65a034ec4935c2bfe2",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-a249b72fa923-6e442b16e04f.jpg",
+      "sha256": "bbba76dbb02dd9bfc151af35020a572e18a245eff091c05ae779780e7a6094ad",
+      "bytes": 97350
+    },
+    {
+      "id": "ja-v-c0f58bfab324",
+      "sourcePath": "artifacts/card-regeneration/batch-07/70-revision-v5.png",
+      "sourceSha256": "47c06b3b8efb7a5976cf1ebaf997bf7f3b7e7bcd15fa391684eead74ae57f6a0",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e",
+      "bytes": 88975
+    },
+    {
+      "id": "ja-v-dfb71d269e06",
+      "sourcePath": "artifacts/card-regeneration/batch-07/71-revision-v3.png",
+      "sourceSha256": "e406ac36d12654759b8385befd8a2e188f4d5341bd93e4af239b1164e5518f37",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-dfb71d269e06-e406ac36d126.jpg",
+      "sha256": "1b1b85908bacc4030c823344f12aac8c5a1518ef431c5afb5e817e57e8e78287",
+      "bytes": 96210
+    },
+    {
+      "id": "ja-v-f6377dcbb564",
+      "sourcePath": "artifacts/card-regeneration/batch-07/72-revision-v3.png",
+      "sourceSha256": "511e9b1b949bea5b4b654a9e00aef3033a34937687e0751f8406b5b782cb43a6",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+      "sha256": "e4e3a7c4b4a711e9eafb2c65f99d5d9803618a42597df959dd6f54c6ab6a845b",
+      "bytes": 82161
+    },
+    {
+      "id": "ja-v-4690961b5456",
+      "sourcePath": "artifacts/card-regeneration/batch-07/73-revision-v2.png",
+      "sourceSha256": "f6ffbbf211f7138ecb8b50cb9205d37791de1aae4b8a563461bcba9a1fdf0b26",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-4690961b5456-f6ffbbf211f7.jpg",
+      "sha256": "23e40282ddae95c45c63f45f6e5432333014516b262a0161dccef23581135911",
+      "bytes": 114150
+    },
+    {
+      "id": "ja-v-f71f9de56223",
+      "sourcePath": "artifacts/card-regeneration/batch-07/74-car.png",
+      "sourceSha256": "05ce2f4b730fc586ec47571f787db029fd9fbb24a73b84da7e8a7ba6c996b17c",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg",
+      "sha256": "cca51aa614f272be6bee1f7c66420eb585a5ae96094cecabb08b545a885f45ec",
+      "bytes": 74120
+    },
+    {
+      "id": "ja-v-12025d56c403",
+      "sourcePath": "artifacts/card-regeneration/batch-07/75-doorway.png",
+      "sourceSha256": "3f4750c5e972ae9d9f1dfb842631f7185d29f51ba488889fd233f874118e6aca",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+      "sha256": "5601a95a2085bea7bd788b5207e5c3ad374780fa75ae549ff84a4a4018314a56",
+      "bytes": 61918
+    },
+    {
+      "id": "ja-v-56e27b2da5a6",
+      "sourcePath": "artifacts/card-regeneration/batch-07/76-door.png",
+      "sourceSha256": "75c5a658149fffe82388d4fc63fc0c1f51edddadd2574ef81aa4b559392cd240",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+      "sha256": "bed4c2f3e39f2f6b8d8b8c6cf262001618abdbb05f2ba21592fbbb26eebbc072",
+      "bytes": 60164
+    },
+    {
+      "id": "ja-v-10791214b2c9",
+      "sourcePath": "artifacts/card-regeneration/batch-07/77-baby.png",
+      "sourceSha256": "0d480cbb091150a3258e6d96f6718f1a253b5a3eb937130994873eb21c8c1e7f",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-10791214b2c9-0d480cbb0911.jpg",
+      "sha256": "e24655f34d5d241ea284ab8a15e301142d54531ba6430a832df92f2a479ae5bd",
+      "bytes": 74701
+    },
+    {
+      "id": "ja-v-9752b818f9f8",
+      "sourcePath": "artifacts/card-regeneration/batch-07/78-revision-v3.png",
+      "sourceSha256": "607d54ee30ca4c92feeef15c6d198ab3bee79f3b39195dd859e400ab4c5b41e4",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-9752b818f9f8-607d54ee30ca.jpg",
+      "sha256": "1c02d4725a10bb710ac39f85cefdfc163f15973501c12402af213499386f169a",
+      "bytes": 45658
+    },
+    {
+      "id": "ja-v-b34b4a2e7a98",
+      "sourcePath": "artifacts/card-regeneration/batch-07/79-treasure.png",
+      "sourceSha256": "dcd9ca98818b5a8521eac66ed7a3effc7c3582727bab26f028bfef0e54bcfb2d",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-b34b4a2e7a98-dcd9ca98818b.jpg",
+      "sha256": "bde7a4064df6c06aecb9ef00f8ed522933f0c3e8e02cd217e4c6131051961fff",
+      "bytes": 104927
+    },
+    {
+      "id": "ja-v-ed2c1dbd0ee4",
+      "sourcePath": "artifacts/card-regeneration/batch-07/80-marble.png",
+      "sourceSha256": "b29132762e7fff90fe76235d8b7cd435af1546084514ced98eb744463dc8601e",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-ed2c1dbd0ee4-b29132762e7f.jpg",
+      "sha256": "0b877ba616d9574d831158b9cf3c22aae5980ca7e22dba6228a947d7fe304ec4",
+      "bytes": 68634
+    },
+    {
+      "id": "ja-v-ceb7b2a20cbd",
+      "sourcePath": "artifacts/card-regeneration/batch-07/81-revision-v3.png",
+      "sourceSha256": "e8693f9df94195daf874fc8a6d1d27b350e521a6c1a5f8cf59f542bd973d1cf8",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-ceb7b2a20cbd-e8693f9df941.jpg",
+      "sha256": "abbfd9bc4260dac14e76791e0a771817fe4989d868f9cb00ac63c332f2fa4999",
+      "bytes": 75537
+    },
+    {
+      "id": "ja-v-30d6b7d7e837",
+      "sourcePath": "artifacts/card-regeneration/batch-07/82-one-thousand-yen.png",
+      "sourceSha256": "1d3b164fcde9ab57bde7e1756825dc4f46b930c45814fea79066c4b43c9e5f39",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-30d6b7d7e837-1d3b164fcde9.jpg",
+      "sha256": "f163706856743f093f108dc64ec2e2fedcd8b99177ea397e1987f2fc2b64cb6d",
+      "bytes": 76761
+    },
+    {
+      "id": "ja-v-61c516578fee",
+      "sourcePath": "artifacts/card-regeneration/batch-07/83-fifty.png",
+      "sourceSha256": "ed397760c3ef3b8b0baead599ad95122bb4974f7170093d689c1b5e45cf5d655",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-61c516578fee-ed397760c3ef.jpg",
+      "sha256": "21da3fc8808b895a7be20f21d39e07c8bdb651ec22ff04bbec4961896b377031",
+      "bytes": 64213
+    },
+    {
+      "id": "ja-v-86ef0852f80f",
+      "sourcePath": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+      "sourceSha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-86ef0852f80f-18664ea30903.jpg",
+      "sha256": "85f6316bd6c62093fc1001ed42b450bbc05633d3dfc1defc9171a0e34a4536d0",
+      "bytes": 70358
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "sourcePath": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+      "sourceSha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8",
+      "manifestPath": "artifacts/card-regeneration/batch-07/manifest.json",
+      "path": "public/images/approved/ja-v-877b9ba07a47-a73cd96d1509.jpg",
+      "sha256": "c3fe54cc28347aaf6a06b22af8fc570ce05884ab217e67fd09e79117811e7c2b",
+      "bytes": 67999
     }
   ]
 }

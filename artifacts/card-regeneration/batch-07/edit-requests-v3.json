@@ -1,0 +1,86 @@
+{
+  "issue": 72,
+  "round": 2,
+  "requests": [
+    {
+      "number": 66,
+      "target": "artifacts/card-regeneration/batch-07/66-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/66-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Replace the orange horizontal bar completely with one recognizable fluffy white CLOUD, a simple rounded cloud silhouette with violet outline and a faint lavender lower edge. The cloud is centered in the upper third. Kiku remains centered clearly BELOW the cloud in the lower half, with a large white gap between them. Both whole silhouettes remain within clean margins. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. ",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-bedb4044-db5e-433e-bb1a-b5c9e604bec6.png",
+      "selected": true
+    },
+    {
+      "number": 67,
+      "target": "artifacts/card-regeneration/batch-07/67-revision-v3.png",
+      "output": "artifacts/card-regeneration/batch-07/67-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Keep the current composition and relative size of the SMALL Kiku on the left beside the MUCH LARGER friendly tan/cream seated bulldog on the right, same baseline. Keep both entire silhouettes and their smiling expressions, colors, positions and proportions. Make only this addition: Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Use the available white space around the small cat, never around the bulldog.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-af5b6507-9a47-4b55-ad9a-067799cde79e.png",
+      "selected": true
+    },
+    {
+      "number": 68,
+      "target": "artifacts/card-regeneration/batch-07/68-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/68-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Keep the recognizable golden bed with lavender blanket and white pillow, same three-quarter view, and Kiku crouched UNDER the bed between its legs. LOWER THE BED substantially to a plausible low bed height: shorten the long legs/under-bed clearance. The front horizontal frame and blanket slightly overlap and OCCLUDE the top of Kiku's headphone arch and upper ear tips, while Kiku's entire face, cheek headphones, paws and curled tail stay visible below the frame. This partial occlusion is intentional, helping show Kiku under a normally low bed. Keep the frame solid and continuous, no cutouts. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Place these small emphasis strokes in the clear white opening beside Kiku, below the frame, without crossing bed legs or face. Bed and Kiku fit well within square margins.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-c977108a-3885-43ec-aafa-9e8224295f43.png",
+      "selected": false
+    },
+    {
+      "number": 69,
+      "target": "artifacts/card-regeneration/batch-07/69-many.png",
+      "output": "artifacts/card-regeneration/batch-07/69-revision-v2.png",
+      "prompt": "Use case: scientific-educational. Redesign this square vocabulary card to teach MANY. Completely replace the jar and round objects with one clearly recognizable large CROWD OF PEOPLE, about fifteen simplified smiling people tightly gathered in three staggered rows. Each person has a distinct round human head with simple eyes and smile, hair, shoulders and colored shirt; show front row torsos and back row heads/shoulders peeking between. Use a few varied warm natural skin tones, simple brown/dark-violet hair and a balanced mix of lavender, soft pink, sky-blue and gold shirts. No single person emphasized, no attention rays, no mascot. The crowded cluster should read as MANY at145px rather than as marbles, candy or individual counters. Match reference's bold deep-violet contours, rounded simple forms, restrained gentle shading and polished calm cartoon language only. Pure opaque WHITE background, one square1:1 canvas, crowd centered filling about75%width with generous outer margins. No jar, container, colored balls, labels, numerals, quantity dots, badges, lettering, building, ground or decorative motifs.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-e278f1f9-1477-4b06-bd55-8c23d7ab5dae.png",
+      "selected": false
+    },
+    {
+      "number": 70,
+      "target": "artifacts/card-regeneration/batch-07/70-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/70-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Replace the orange horizontal bar completely with one recognizable fluffy white CLOUD, rounded cloud silhouette, violet outline and a faint lavender lower edge. Kiku remains centered clearly ABOVE this cloud in the upper half, a large white gap between Kiku's paws and the cloud. The cloud is centered in the lower third. Both whole silhouettes have clean outer margins. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. ",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-6353ffff-def7-495c-9ad4-729456ae854f.png",
+      "selected": true
+    },
+    {
+      "number": 71,
+      "target": "artifacts/card-regeneration/batch-07/71-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/71-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Preserve the current composition: Kiku sitting ON TOP OF the golden table, paws and body visibly supported by the tabletop. Keep table design, all legs, Kiku's size, placement, proportions, expression, colors and shading. Make only this addition: Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Place marks around Kiku's sides above the tabletop, without crossing the table or any contours.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-d3aef5a7-4de6-41e2-b6e0-77a99d4741fb.png",
+      "selected": true
+    },
+    {
+      "number": 72,
+      "target": "artifacts/card-regeneration/batch-07/72-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/72-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Retain Kiku on the LEFT beside the blue bird on the RIGHT on a common baseline. Rebalance their sizes: reduce Kiku and enlarge the bird, so the bird's total height is about ONE THIRD of Kiku's total height, rather than tiny. Kiku is still distinctly BIG compared with the bird. Kiku about60% of square height; bird about22%. Preserve bird design, blue body, golden beak and feet, smiling closed eye. Preserve both complete silhouettes with a clear white gap between them, generous margin outside the entire group. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Keep strokes close to Kiku so they never point toward the bird.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-65cb57ea-41c0-4c27-b80b-7efd4d5c8ca6.png",
+      "selected": true
+    },
+    {
+      "number": 81,
+      "target": "artifacts/card-regeneration/batch-07/81-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/81-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit this square VALLEY vocabulary image, preserving the wide low central passage, two mountain flanks, small snowy summits, rounded landscape footprint, bold violet outline, calm cartoon rendering, white outside background and generous margins. Make ONLY these two landscape changes. (1) WIDEN the winding blue river moderately, to about TWICE its current width at each point, still tapering into distance; it remains secondary to the valley. Foreground river about9%canvaswidth. (2) LOWER the grassline on both mountain slopes. The upper HALF of each mountain side should be exposed lavender/gray rock with simple faceted shapes and white snow on peaks, and grass covers only lower slopes and central valley floor. Keep an ample grassy lower valley, with a clear boundary of grass below rocky upper mountains. Do not change valley into two separate isolated peaks or make river dominate. No new objects, people, trees, buildings, sky panel, words or labels.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-8ee35a01-c306-48a4-a9c5-95f49b0eb3dd.png",
+      "selected": true
+    },
+    {
+      "number": 85,
+      "target": "artifacts/card-regeneration/batch-07/85-revision-v2.png",
+      "output": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+      "prompt": "Use case: style-transfer. Edit the supplied number10 pool-ball artwork into a FLAT calm cartoon illustration. Keep the exact circular silhouette, bold deep-violet outer outline, broad BLUE central stripe, WHITE top and bottom caps, WHITE circular number patch centered in the blue stripe, and exact BLACK numeral '10'. Keep square1:1 canvas, centered ball and generous pure opaque WHITE background margins. Replace all glossy spherical gradients with solid flat colors. Remove every bright reflection, shine streak, white glare oval, bevel, soft shadow, lighting effect and dark edge shading. Use one uniform medium blue stripe fill and white caps/patch, clean simple contours. The stripe's top and bottom edges may retain their gentle curves to identify a pool ball, but the rendering must feel flat like the app's simple number-token cards. No other balls, props, quantity dots, labels, decorations, watermark or text besides essential10.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-850ab45c-8c3c-4e49-a8d1-3b1076cb7536.png",
+      "selected": true
+    },
+    {
+      "number": 68,
+      "target": "artifacts/card-regeneration/batch-07/68-revision-v3.png",
+      "output": "artifacts/card-regeneration/batch-07/68-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Refine this square illustration of Kiku UNDER the bed. Keep the golden bed, lavender blanket, white pillow, bold violet outlines, soft cartoon shading, white background, all four short straight bed legs, four purple attention strokes beside Kiku, and generous margins. Adjust the front horizontal bed frame and bottom of blanket upward JUST ENOUGH to reveal Kiku's full forehead and MOST of both triangular golden cat ears with pink inner ears, while the bed still slightly overlaps ONLY the very tips of the ears and topmost part of the arched headphone headband. Currently too much of Kiku's upper head is hidden. Kiku's full face must have comfortable forehead space above its eyes. Keep all of Kiku's face, earcup headphones, paws and curved tail visible underneath between the legs. Keep Kiku the same scale and sitting low underneath; extend leg clearance only moderately, not to the original unnatural tall-bed height. Match actual mascot identity shown by second reference: gold cat, pink inner ears, lavender over-ear headphones. Scene remains bed above Kiku with small purposeful occlusion. No captions, arrows, sound waves, extra objects, shadows or floor.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-5c2ecb52-f3d7-4aa6-956f-62206eb3d52e.png",
+      "selected": true
+    }
+  ]
+}

@@ -16,6 +16,13 @@
       "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png"
     },
     {
+      "id": "style:kiku-scenes",
+      "kind": "style",
+      "status": "approved-direction",
+      "specification": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: CHARACTER IDENTITY AND STYLE REFERENCE. Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, replacing the basketball; preserve the word’s intended relation. Use ordinary literal objects where the vocabulary specifically names them. Current Kiku scene revisions await approval; the existing mascot identity source is established.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: keep Kiku recognizable, preserve intended action or spatial relation, no captions, words, logos, watermark, frame or unrelated decorations.",
+      "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png"
+    },
+    {
       "id": "component:apple",
       "kind": "component",
       "seedCard": "ja-apple",
@@ -2540,6 +2547,94 @@
       "referencePath": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
       "status": "approved",
       "guidance": "Use approved splash-and-brush layout for named colors, recoloring paint only; golden handle, violet contours, no pot or palette. White paint uses white background; violet contours provide separation. Sky blue and white revisions approved."
+    },
+    {
+      "id": "family:kiku-reference-subject",
+      "kind": "family",
+      "seedCard": null,
+      "styleNode": "style:kiku-scenes",
+      "memberIds": [
+        "ja-v-520308b3c3b4",
+        "ja-v-769a80524957",
+        "ja-v-960de5429d2e",
+        "ja-v-c0f58bfab324",
+        "ja-v-dfb71d269e06",
+        "ja-v-f6377dcbb564",
+        "ja-v-4690961b5456",
+        "ja-v-5849925b131d",
+        "ja-v-6109638dac53",
+        "ja-v-dd1d6132fe3c"
+      ],
+      "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "status": "approved-character-source",
+      "guidance": "Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, preserving the intended relation. In position and size cards add four short straight violet attention lines beside Kiku to emphasize the cat; never emphasize the other object or use headphone sound waves. This attention convention does not alter the approved mixing-action scene. Use ordinary literal objects where vocabulary names them. Small/big comparisons, under-bed, on-table and mixing scenes are approved. The under/on-chair pair is also approved. Future scenes still require their own review.",
+      "removeComponents": [
+        "ball",
+        "person"
+      ],
+      "addComponents": [
+        "cat"
+      ]
+    },
+    {
+      "id": "family:number-ranges",
+      "kind": "family",
+      "seedCard": null,
+      "styleNode": "style:cat-png",
+      "memberIds": [
+        "ja-v-f6ed7c17c0d5",
+        "ja-v-d33ed6be2a48",
+        "ja-v-5d8047464c5d",
+        "ja-v-eda9a40b0c91",
+        "ja-v-877b9ba07a47",
+        "ja-v-1bedf722c04a",
+        "ja-v-7fc81b0ddd17",
+        "ja-v-61c516578fee",
+        "ja-v-d4473f87e438",
+        "ja-v-b066e78531d6",
+        "ja-v-06ef406f5569",
+        "ja-v-e368e3aa9bf6",
+        "ja-v-86ef0852f80f",
+        "ja-v-7bbba1a9506e",
+        "ja-v-a872d5e674a2",
+        "ja-v-1807218bf360",
+        "ja-v-5f29c187353e",
+        "ja-v-7707983a4026",
+        "ja-v-81893a02b959",
+        "ja-v-f623bb19b846",
+        "ja-v-f0588b6224d0",
+        "ja-v-96a032e15dda",
+        "ja-v-823616f3288f",
+        "ja-v-190aae33ad24"
+      ],
+      "status": "prompt-convention",
+      "guidance": "Number1–15 uses standard pool balls with correct numeral;16–99 lavender,100–999 pink,1000–9999 sky blue,10000+ gold. Keep the numeral large. Pure cardinal vocabulary only, excluding currency, age and object counters. Color assignments are current implementation choices under the requested distinct ranges; artwork remains subject to review. Pool balls use flat solid-color rendering with violet contour, no glossy reflections or deep gradients."
+    },
+    {
+      "id": "family:direction-arrows",
+      "kind": "family",
+      "seedCard": "ja-v-14be5202d5b3",
+      "memberIds": [
+        "ja-v-14be5202d5b3",
+        "ja-v-ed6bd4d73b76"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-07/62-left-direction.png",
+      "status": "approved",
+      "guidance": "Left direction uses approved card62. Right direction is the same arrow mirrored horizontally, including silhouette, contour and proportions. This applies to direction symbols, not literal archery arrows."
+    },
+    {
+      "id": "family:chair-position-anchor",
+      "kind": "family",
+      "seedCard": "ja-v-520308b3c3b4",
+      "styleNode": "style:kiku-scenes",
+      "memberIds": [
+        "ja-v-520308b3c3b4",
+        "ja-v-c0f58bfab324"
+      ],
+      "status": "approved",
+      "referencePath": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+      "guidance": "Reuse approved66chair: golden/honey wood, rounded slatted backrest, lavender seat pad, four straight legs, near-front gentle three-quarter view. Preserve chair size and Kiku scale. Under: Kiku beneath seat between legs, paws at chair-foot baseline. On top: Kiku supported by seat pad, backrest behind, empty opening beneath. Short straight violet attention lines emphasize Kiku. The66/70pair is approved and replaces disconnected box/cloud/bar layouts."
     }
   ],
   "edges": [
@@ -2668,11 +2763,19 @@
       "to": "component:diagram-convention"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-c0f58bfab324"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
+      "to": "card:ja-v-c0f58bfab324"
+    },
+    {
+      "from": "family:kiku-reference-subject",
+      "to": "card:ja-v-c0f58bfab324"
+    },
+    {
+      "from": "family:chair-position-anchor",
       "to": "card:ja-v-c0f58bfab324"
     },
     {
@@ -2700,27 +2803,39 @@
       "to": "card:ja-v-3fef4445ce13"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-520308b3c3b4"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
       "to": "card:ja-v-520308b3c3b4"
     },
     {
-      "from": "style",
+      "from": "family:kiku-reference-subject",
+      "to": "card:ja-v-520308b3c3b4"
+    },
+    {
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-f6377dcbb564"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
       "to": "card:ja-v-f6377dcbb564"
     },
     {
-      "from": "style",
+      "from": "family:kiku-reference-subject",
+      "to": "card:ja-v-f6377dcbb564"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-f6ed7c17c0d5"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-f6ed7c17c0d5"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-f6ed7c17c0d5"
     },
     {
@@ -2764,11 +2879,15 @@
       "to": "card:ja-v-0181fab128a1"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d33ed6be2a48"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-d33ed6be2a48"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-d33ed6be2a48"
     },
     {
@@ -2780,11 +2899,15 @@
       "to": "card:ja-v-0d0163a40587"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-5d8047464c5d"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-5d8047464c5d"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-5d8047464c5d"
     },
     {
@@ -2820,11 +2943,15 @@
       "to": "card:ja-v-46f8fe65f218"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-eda9a40b0c91"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-eda9a40b0c91"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-eda9a40b0c91"
     },
     {
@@ -2844,7 +2971,7 @@
       "to": "card:ja-v-26d0ad7af566"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-877b9ba07a47"
     },
     {
@@ -2852,11 +2979,19 @@
       "to": "card:ja-v-877b9ba07a47"
     },
     {
-      "from": "style",
+      "from": "family:number-ranges",
+      "to": "card:ja-v-877b9ba07a47"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-1bedf722c04a"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-1bedf722c04a"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-1bedf722c04a"
     },
     {
@@ -2912,11 +3047,15 @@
       "to": "card:ja-v-06a4c07236b5"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7fc81b0ddd17"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-7fc81b0ddd17"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-7fc81b0ddd17"
     },
     {
@@ -3056,11 +3195,15 @@
       "to": "card:ja-v-a02edbda9f4c"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-61c516578fee"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-61c516578fee"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-61c516578fee"
     },
     {
@@ -3068,11 +3211,15 @@
       "to": "card:ja-v-cf58c5cf08d9"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d4473f87e438"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-d4473f87e438"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-d4473f87e438"
     },
     {
@@ -3084,11 +3231,15 @@
       "to": "card:ja-v-084edf1fdd10"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-b066e78531d6"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-b066e78531d6"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-b066e78531d6"
     },
     {
@@ -3168,11 +3319,15 @@
       "to": "card:ja-v-a30018dbdb6b"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-5849925b131d"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
+      "to": "card:ja-v-5849925b131d"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-5849925b131d"
     },
     {
@@ -3184,7 +3339,7 @@
       "to": "card:ja-v-ed82bb95d4cc"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9752b818f9f8"
     },
     {
@@ -3224,7 +3379,7 @@
       "to": "card:ja-v-38acee5bccbe"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-4ac46ddaa10f"
     },
     {
@@ -3232,7 +3387,7 @@
       "to": "card:ja-v-4ac46ddaa10f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-14be5202d5b3"
     },
     {
@@ -3276,7 +3431,7 @@
       "to": "card:ja-v-3d24eb7fb7b5"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-30d6b7d7e837"
     },
     {
@@ -3356,7 +3511,7 @@
       "to": "card:ja-v-762983bc3fe7"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ed6bd4d73b76"
     },
     {
@@ -3364,6 +3519,10 @@
       "to": "card:ja-v-ed6bd4d73b76"
     },
     {
+      "from": "family:direction-arrows",
+      "to": "card:ja-v-ed6bd4d73b76"
+    },
+    {
       "from": "style",
       "to": "card:ja-v-56d52b7869ab"
     },
@@ -3380,7 +3539,7 @@
       "to": "card:ja-v-0655c242d1db"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-06ef406f5569"
     },
     {
@@ -3388,11 +3547,19 @@
       "to": "card:ja-v-06ef406f5569"
     },
     {
-      "from": "style",
+      "from": "family:number-ranges",
+      "to": "card:ja-v-06ef406f5569"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-e368e3aa9bf6"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-e368e3aa9bf6"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-e368e3aa9bf6"
     },
     {
@@ -3412,11 +3579,15 @@
       "to": "card:ja-v-df70a01acaec"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-769a80524957"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
+      "to": "card:ja-v-769a80524957"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-769a80524957"
     },
     {
@@ -3448,11 +3619,15 @@
       "to": "card:ja-v-b0489d428339"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-86ef0852f80f"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-86ef0852f80f"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-86ef0852f80f"
     },
     {
@@ -3592,7 +3767,7 @@
       "to": "card:ja-apple"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-575c16528161"
     },
     {
@@ -3652,7 +3827,7 @@
       "to": "card:ja-v-18fe4d351abc"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-56e27b2da5a6"
     },
     {
@@ -3660,7 +3835,7 @@
       "to": "card:ja-v-56e27b2da5a6"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-12025d56c403"
     },
     {
@@ -3816,7 +3991,7 @@
       "to": "card:ja-v-137737e5ce1f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ed2c1dbd0ee4"
     },
     {
@@ -3908,11 +4083,15 @@
       "to": "card:ja-v-e5fd15d61360"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7bbba1a9506e"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-7bbba1a9506e"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-7bbba1a9506e"
     },
     {
@@ -3932,15 +4111,19 @@
       "to": "card:ja-v-032157e79367"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-dfb71d269e06"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
       "to": "card:ja-v-dfb71d269e06"
     },
     {
-      "from": "style",
+      "from": "family:kiku-reference-subject",
+      "to": "card:ja-v-dfb71d269e06"
+    },
+    {
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-6109638dac53"
     },
     {
@@ -3948,7 +4131,11 @@
       "to": "card:ja-v-6109638dac53"
     },
     {
-      "from": "component:person",
+      "from": "component:cat",
+      "to": "card:ja-v-6109638dac53"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-6109638dac53"
     },
     {
@@ -3996,7 +4183,7 @@
       "to": "card:ja-v-760cc08e40eb"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a872d5e674a2"
     },
     {
@@ -4004,11 +4191,19 @@
       "to": "card:ja-v-a872d5e674a2"
     },
     {
-      "from": "style",
+      "from": "family:number-ranges",
+      "to": "card:ja-v-a872d5e674a2"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-1807218bf360"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-1807218bf360"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-1807218bf360"
     },
     {
@@ -4104,11 +4299,15 @@
       "to": "card:ja-v-2924cd51557f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-5f29c187353e"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-5f29c187353e"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-5f29c187353e"
     },
     {
@@ -4120,11 +4319,15 @@
       "to": "card:ja-v-f5b4250aeb03"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-960de5429d2e"
     },
     {
-      "from": "component:ball",
+      "from": "component:cat",
+      "to": "card:ja-v-960de5429d2e"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-960de5429d2e"
     },
     {
@@ -4176,7 +4379,7 @@
       "to": "card:ja-v-89fcef8e86d8"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-10791214b2c9"
     },
     {
@@ -4248,7 +4451,7 @@
       "to": "card:ja-v-d5bd6e2d7ad1"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f71f9de56223"
     },
     {
@@ -4340,11 +4543,15 @@
       "to": "card:ja-v-51c2d1be305f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7707983a4026"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-7707983a4026"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-7707983a4026"
     },
     {
@@ -4368,7 +4575,7 @@
       "to": "card:ja-v-64289653ec1d"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-81893a02b959"
     },
     {
@@ -4376,11 +4583,19 @@
       "to": "card:ja-v-81893a02b959"
     },
     {
-      "from": "style",
+      "from": "family:number-ranges",
+      "to": "card:ja-v-81893a02b959"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-f623bb19b846"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-f623bb19b846"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-f623bb19b846"
     },
     {
@@ -4400,11 +4615,15 @@
       "to": "card:ja-v-947395f42397"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f0588b6224d0"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-f0588b6224d0"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-f0588b6224d0"
     },
     {
@@ -4452,11 +4671,15 @@
       "to": "card:ja-v-39903246fd52"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-96a032e15dda"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-96a032e15dda"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-96a032e15dda"
     },
     {
@@ -4476,7 +4699,7 @@
       "to": "card:ja-v-cd6ac2533de0"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-dd1d6132fe3c"
     },
     {
@@ -4484,7 +4707,11 @@
       "to": "card:ja-v-dd1d6132fe3c"
     },
     {
-      "from": "component:person",
+      "from": "component:cat",
+      "to": "card:ja-v-dd1d6132fe3c"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-dd1d6132fe3c"
     },
     {
@@ -4548,11 +4775,15 @@
       "to": "card:ja-v-5b39de46794f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-823616f3288f"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-823616f3288f"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-823616f3288f"
     },
     {
@@ -4960,7 +5191,7 @@
       "to": "card:ja-v-09d74d630a45"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-b34b4a2e7a98"
     },
     {
@@ -4980,11 +5211,15 @@
       "to": "card:ja-v-08e3c50181be"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-190aae33ad24"
     },
     {
       "from": "component:numeral",
+      "to": "card:ja-v-190aae33ad24"
+    },
+    {
+      "from": "family:number-ranges",
       "to": "card:ja-v-190aae33ad24"
     },
     {
@@ -5556,7 +5791,7 @@
       "to": "card:ja-v-bcfbced3ea21"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a249b72fa923"
     },
     {
@@ -5780,7 +6015,7 @@
       "to": "card:ja-v-b37750755344"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-f14d2c0c7442"
     },
     {
@@ -5972,11 +6207,19 @@
       "to": "card:ja-v-40179481fcf6"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
       "to": "card:ja-v-4690961b5456"
     },
     {
       "from": "component:bowl",
+      "to": "card:ja-v-4690961b5456"
+    },
+    {
+      "from": "component:cat",
+      "to": "card:ja-v-4690961b5456"
+    },
+    {
+      "from": "family:kiku-reference-subject",
       "to": "card:ja-v-4690961b5456"
     },
     {
@@ -6076,7 +6319,7 @@
       "to": "card:ja-v-b2f08cdf5ab4"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ceb7b2a20cbd"
     },
     {
@@ -6246,6 +6489,22 @@
     {
       "from": "card:ja-v-10e568715d3a",
       "to": "family:paint-colors"
+    },
+    {
+      "from": "style:kiku-scenes",
+      "to": "family:kiku-reference-subject"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "family:number-ranges"
+    },
+    {
+      "from": "card:ja-v-14be5202d5b3",
+      "to": "family:direction-arrows"
+    },
+    {
+      "from": "card:ja-v-520308b3c3b4",
+      "to": "family:chair-position-anchor"
     }
   ],
   "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."

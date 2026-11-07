@@ -41,6 +41,12 @@ def render_graph(cards, graph):
         section += ['', 'A style trial is an independent root in the generation graph. It replaces the previous style only for its assigned cards until user review.', '']
         position = lines.index('## Reusable components')
         lines[position:position] = section
+    families = [node for node in graph['nodes'] if node['kind'] == 'family']
+    if families:
+        lines += ['', '## Shared design families', '', '| Family | Status | Reference | Guidance |', '| --- | --- | --- | --- |']
+        for family in families:
+            ref = f'[{Path(family["referencePath"]).name}](../../{family["referencePath"]})' if family.get('referencePath') else 'Prompt convention'
+            lines.append(f'| {family["id"]} | {family["status"]} | {ref} | {family["guidance"]} |')
     lines += ['', '## Generation and feedback rules', '',
               '1. Generate batch 01 from scratch. The apple is a provisional style-only reference within this first batch.',
               '2. Review all ten cards together, including their appearance at 145px. Wait for user feedback.',
@@ -80,10 +86,12 @@ def render_batch(path, lookup):
         jp = html.escape(card['japanese'])
         number = f'{index:02}'
         status = ('Accepted · needs improvement' if asset.get('acceptedWithKnownIssue') else 'Approved') if asset['status'] == 'approved' else ('Revised · awaiting feedback' if asset.get('revisionRound') else 'Awaiting feedback')
+        if asset.get('conventionUpdated') and asset['status'] != 'approved':
+            status = 'Convention updated · awaiting feedback'
         caption = f'<b>{number} · {name}</b><span lang="ja">{jp}</span><small>{status}</small>'
         panel = f'<figure><a href="{src}"><img src="{src}" alt="{name}" width="{asset["width"]}" height="{asset["height"]}"></a><figcaption>{caption}</figcaption></figure>'
         panels.append(panel)
-        if asset.get('revisionRound') and asset['status'] != 'approved':
+        if (asset.get('revisionRound') or asset.get('conventionUpdated')) and asset['status'] != 'approved':
             revised_panels.append(panel)
             revised_numbers.append(number)
         mini.append(f'<figure><img src="{src}" alt="{name}" width="145" height="145"><figcaption>{number} · {name}</figcaption></figure>')

@@ -1,12 +1,46 @@
 """Regressions from independent review of the regeneration prompts (#72)."""
 import unittest
 import json
+import re
 import tempfile
 from pathlib import Path
 from prepare import components_for, ROLE_CONSTRAINTS, resolve_batch_statuses, BACKGROUND_POLICY
 
 
 class ReuseTests(unittest.TestCase):
+    def test_every_generation_prompt_ends_with_current_background_policy(self):
+        root = Path(__file__).resolve().parents[2]
+        cards = json.loads((root / 'content/card-regeneration/prompts.json').read_text())['cards']
+        self.assertTrue(cards)
+        for card in cards:
+            self.assertTrue(card['prompt'].endswith(BACKGROUND_POLICY), card['id'])
+        self.assertIn('transparent_background=true', BACKGROUND_POLICY)
+        self.assertIn('Preserve opaque white subject details', BACKGROUND_POLICY)
+
+    def test_kiku_replaces_generic_balls_without_removing_scene_components(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = {c['id']: c for c in json.loads((data / 'prompts.json').read_text())['cards']}
+        family = json.loads((data / 'user-feedback.json').read_text())['designFamilies']['kiku-reference-subject']
+        for item_id in family['memberIds']:
+            card = cards[item_id]
+            self.assertIn('family:kiku-reference-subject', card['dependsOn'])
+            self.assertNotIn('ball', card['components'])
+            self.assertIn('Kiku', card['concept'])
+        self.assertIn('bowl', cards['ja-v-4690961b5456']['components'])
+        self.assertEqual(cards['ja-v-66ccf8dd3399']['components'], ['ball'])
+
+    def test_number_ranges_exclude_currency_age_and_object_counters(self):
+        data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
+        cards = json.loads((data / 'prompts.json').read_text())['cards']
+        for card in cards:
+            if re.fullmatch(r'number-\d+', card['visualGroup']):
+                value = int(card['visualGroup'][7:])
+                expected = 'pool ball' if value <= 15 else 'lavender' if value <= 99 else 'pink' if value <= 999 else 'sky blue' if value <= 9999 else 'gold'
+                self.assertIn(expected, card['concept'])
+                self.assertIn(str(value), card['concept'])
+                self.assertIn('family:number-ranges', card['dependsOn'])
+            elif card['meaning'] in {'One Thousand Yen', 'Years Old'} or card['meaning'].endswith(' Things'):
+                self.assertNotIn('family:number-ranges', card['dependsOn'])
 
     def test_twenty_five_card_batches_preserve_complete_coverage_and_feedback_gate(self):
         root = Path(__file__).resolve().parents[2]
@@ -18,17 +52,14 @@ class ReuseTests(unittest.TestCase):
         ids = [i for b in batches['batches'] for i in b['cardIds']]
         self.assertEqual(len(ids), 445)
         self.assertEqual(len(set(ids)), 445)
-        self.assertEqual(batches['batches'][7]['status'], 'blocked-on-previous-feedback')
-
-    def test_every_generation_prompt_ends_with_current_background_policy(self):
-        root = Path(__file__).resolve().parents[2]
-        cards = json.loads((root / 'content/card-regeneration/prompts.json').read_text())['cards']
-        self.assertTrue(cards)
-        for card in cards:
-            self.assertTrue(card['prompt'].endswith(BACKGROUND_POLICY), card['id'])
-        self.assertIn('transparent_background=true', BACKGROUND_POLICY)
-        self.assertIn('Preserve opaque white subject details', BACKGROUND_POLICY)
-
+        ready = [index for index, batch in enumerate(batches['batches'])
+                 if batch['status'] == 'ready-to-generate']
+        self.assertLessEqual(len(ready), 1)
+        for index in ready:
+            self.assertTrue(all(batch['status'] == 'approved'
+                                for batch in batches['batches'][:index]))
+            self.assertTrue(all(batch['status'] == 'blocked-on-previous-feedback'
+                                for batch in batches['batches'][index + 1:]))
 
     def test_counting_family_reuses_approved_blocks_and_preserves_reviewed_batches(self):
         root = Path(__file__).resolve().parents[2]

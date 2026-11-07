@@ -1,0 +1,15 @@
+{
+  "issue": 72,
+  "requests": [
+    {
+      "number": 67,
+      "prompt": "Reframe this illustration onto a SQUARE 1:1 canvas. Preserve all foreground subjects, their exact shapes, colors, relative sizes and side-by-side arrangement. Scale the entire illustration uniformly to fit with white space above and below; do not stretch, distort or crop the subjects. Plain opaque pure white square background. Output MUST be square, with equal width and height. No other edits.",
+      "referencePath": "artifacts/card-regeneration/batch-07/67-revision-v2.png"
+    },
+    {
+      "number": 78,
+      "prompt": "Reframe this illustration onto a SQUARE 1:1 canvas. Preserve all foreground subjects, their exact shapes, colors, relative sizes and side-by-side arrangement. Scale the entire illustration uniformly to fit with white space above and below; do not stretch, distort or crop the subjects. Plain opaque pure white square background. Output MUST be square, with equal width and height. No other edits.",
+      "referencePath": "artifacts/card-regeneration/batch-07/78-revision-v2.png"
+    }
+  ]
+}

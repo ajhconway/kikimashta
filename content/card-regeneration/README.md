@@ -4,7 +4,7 @@ Work record: [GitHub issue #72](https://github.com/ajhconway/kikimashta/issues/7
 
 
 
-Artwork activation: [issue #77](https://github.com/ajhconway/kikimashta/issues/77) publishes all 40 selected approved images from PR #75. `activation.json` records source manifests, source hashes and compressed 640px JPEG delivery hashes. Starter and catalogue media paths and picture descriptions point to these assets; stable IDs, practice eligibility, review restrictions and answer-choice policies remain unchanged. Policy integration is deferred at the owner's request to [issue #79](https://github.com/ajhconway/kikimashta/issues/79). The staged generation records below continue to describe the review workflow.
+Artwork activation: [issue #77](https://github.com/ajhconway/kikimashta/issues/77) publishes the selected approved artwork; batches 01–06 provide 60 active cards, extended here to 85 with approved batch 07. `activation.json` records source manifests, source hashes and compressed 640px JPEG delivery hashes. Starter and catalogue media paths and picture descriptions point to these assets; stable IDs, practice eligibility, review restrictions and answer-choice policies remain unchanged. Policy integration is deferred at the owner's request to [issue #79](https://github.com/ajhconway/kikimashta/issues/79). The staged generation records below continue to describe the review workflow.
 
 ## Image backgrounds and delivery
 
@@ -56,8 +56,11 @@ python3 scripts/cards/validate.py
 
 The preparation script never generates images or calls the network. Run `npm run check` for app lint, type checks, tests and the production build.
 
-Batch 04 (31–40) is approved, including lavender half, rain without a puddle, sun rays and a reusable winter park scene. Card 38 establishes the cube design for X things. The graph records both design families. Batches 05–06 are also approved; batch 07 is next.
+Batch 04 (31–40) is approved, including lavender half, rain without a puddle, sun rays and a reusable winter park scene. Card 38 establishes the cube design for X things. The graph records both design families. Batches 05–07 are also approved; batch 08 is next.
 
-The activation command for the existing opaque approved batches is `node scripts/content/activate-approved-artwork.mjs batch-05 batch-06`. It reuses a delivery only when its source identity, delivery hash and byte length match recorded activation provenance. Otherwise it encodes to a temporary file beside the destination, validates the output and atomically replaces the delivery; an encoder failure leaves the existing file and mappings intact. This legacy JPEG encoder must be updated before activating future transparent PNG/WebP artwork under the policy above.
+The activation command for the existing opaque approved batches is `node scripts/content/activate-approved-artwork.mjs batch-07`. It reuses a delivery only when its source identity, delivery hash and byte length match recorded activation provenance. Otherwise it encodes to a temporary file beside the destination, validates the output and atomically replaces the delivery; an encoder failure leaves the existing file and mappings intact. This legacy JPEG encoder must be updated before activating future transparent PNG/WebP artwork under the policy above.
 
 Batches 05 and 06 (41–60) are approved in full. Future review batches contain 25 cards, starting with batch 07 (61–85); previous membership stays fixed. Activation is tracked separately in `activation.json`; app image mappings and published assets must be updated together with source visual records, so content rebuilds preserve approved artwork.
+
+
+Batch 07 (61–85) is fully approved and activated. It establishes Kiku as the generic spatial/size-comparison subject, with short straight violet attention lines emphasizing the cat. Cards 66 and 70 use the same chair for under/on-top scenes. The source mascot PNG and its hash/provenance are recorded under references/. Historical source PNGs and their opaque white-background generation/edit prompts remain unchanged; future generations retain the transparency policy above. Pure cardinal-number artwork uses flat pool balls for 1–15, lavender tokens for 16–99, pink for 100–999, sky blue for 1000–9999 and gold for 10000+. Currency, age and object counters retain separate designs. Batch 08 is ready for owner-reviewed generation; it is not activated in this change.

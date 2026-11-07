@@ -1,0 +1,22 @@
+{
+  "issue": 72,
+  "round": 3,
+  "tool": "built-in image_gen",
+  "requests": [
+    {
+      "number": 66,
+      "target": "artifacts/card-regeneration/batch-07/66-revision-v3.png",
+      "output": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Edit the provided square vocabulary card for BELOW. Replace the cloud with one clearly recognizable CLOSED CARDBOARD SHIPPING BOX centered ABOVE Kiku. Box design: a simple compact tan/kraft-brown cuboid in gentle three-quarter perspective, visible top/front/right faces, a single pale beige packing-tape strip across the closed top and continuing a short distance down the front, clean bold deep-violet contours and restrained soft cartoon shading. No text, address labels, logos, printed arrows or symbols on the box. Make the box about45% of canvas width and25% of canvas height in the upper part, with a clear white gap between its bottom and Kiku's headphone arch. Kiku remains clearly BELOW the box, centered in lower half, completely visible and separate from it. Preserve Kiku's established gold cat identity, pink inner ears, lavender over-ear headphones, closed smiling eyes, whiskers, two paws, curved tail, and four short straight violet attention lines beside the cat. Preserve pure opaque WHITE background, square1:1 canvas, generous clean margins and readable simple polished cartoon style. Resize Kiku only slightly if needed to fit box and separation comfortably. No ground, wall, support, clouds, extra objects, enclosing frame, shadow, watermark or answer captions.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-ff09590e-eb70-4e6c-8f10-6505f2ef41f2.png"
+    },
+    {
+      "number": 70,
+      "target": "artifacts/card-regeneration/batch-07/70-revision-v3.png",
+      "output": "artifacts/card-regeneration/batch-07/70-revision-v4.png",
+      "boxReference": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Edit image1, the square ABOVE vocabulary card. Replace its cloud completely with ONE CLOSED CARDBOARD SHIPPING BOX centered BELOW Kiku. Image2 supplies ONLY the matching cardboard-box design for this paired revision: use the same tan/kraft-brown compact cuboid, same gentle three-quarter viewpoint with visible top/front/right faces, same pale beige tape strip crossing the closed top and continuing a short distance down front, same bold deep-violet outlines and gentle cartoon shading. Do not copy image2's scene arrangement. In this card Kiku must be clearly ABOVE the box: Kiku in upper half, whole box centered in lower part, with a clear WHITE GAP between Kiku's paws and box top, not sitting on or touching the box. Rebalance scale as needed so Kiku and box each fit comfortably, both fully visible with generous outer margins. Preserve Kiku's established gold cat identity, pink inner ears, lavender over-ear headphones, closed smiling eyes, whiskers, two paws, curved tail and four short straight violet attention lines beside the cat. Keep white opaque background and square1:1 canvas. No cloud, bar, ground, room, shadow, extra objects, labels, printed markings, arrows, words, watermark or frame.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-83c3a6ab-61ec-4fa8-8b3c-36ac5d1de7a9.png"
+    }
+  ]
+}

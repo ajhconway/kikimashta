@@ -1,0 +1,1303 @@
+{
+  "issue": 72,
+  "batch": "batch-07",
+  "numberStart": 61,
+  "styleProfile": "cat-png",
+  "assets": [
+    {
+      "id": "ja-v-f14d2c0c7442",
+      "meaning": "Square",
+      "path": "artifacts/card-regeneration/batch-07/61-square.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A single clear square with equal-length edge marks.\nProduction composition: One plain front-facing SQUARE with four equal straight sides and simple right-angle corners. Lavender fill, uniform violet outline. Match the approved plain triangle family. No edge marks, corner dots, labels, text, shadows or extra shapes.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Plain lavender square without corner or edge markers.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1153889,
+      "sha256": "571035d0c10da235d1e934a610abeb862ca0383e35891a680011e404995a7335",
+      "imageDescription": "A plain lavender square with a violet outline."
+    },
+    {
+      "id": "ja-v-14be5202d5b3",
+      "meaning": "Left Direction",
+      "path": "artifacts/card-regeneration/batch-07/62-left-direction.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A bold arrow pointing left\nProduction composition: One bold simple LEFT-pointing direction arrow, horizontal shaft and large triangular head. Lavender fill, violet outline, centered, generous margins. No tail feathers, text, motion marks or other objects.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Lavender arrow pointing left.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1064975,
+      "sha256": "d47723e0d3e776cd3410e982b4c2e7cad7b5baf72c4bde57a6a4ef43f5a57962",
+      "imageDescription": "A lavender direction arrow pointing left."
+    },
+    {
+      "id": "ja-v-4ac46ddaa10f",
+      "meaning": "Left And Right",
+      "path": "artifacts/card-regeneration/batch-07/63-left-and-right.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Two arrows pointing left and right from one center\nProduction composition: One simple double-headed horizontal direction arrow, one head points LEFT and the other RIGHT from the same central shaft. Lavender fill, violet outline, clear balanced silhouette. No extra arrows, labels or other objects.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Double-headed horizontal arrow pointing left and right.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1050511,
+      "sha256": "0049cda5dbf888644f2ac535038acef055404407830ca4dc1a96757e000230f4",
+      "imageDescription": "A lavender double-headed direction arrow pointing left and right."
+    },
+    {
+      "id": "ja-v-575c16528161",
+      "meaning": "Arrow",
+      "path": "artifacts/card-regeneration/batch-07/64-arrow.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: An arrow with feathered tail and pointed head\nProduction composition: One actual archery ARROW on a gentle diagonal, a slender warm golden wooden shaft, pointed violet arrowhead at one end and three simple pink/lavender feather fletchings at the opposite end. No bow, target, direction symbol, text or other props.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Archery arrow with golden shaft, violet head and pink/lavender tail feathers.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1145280,
+      "sha256": "29aec177aec1076888426aa2aab5e506f020a0b804872bc6b92ae4fcdd4cb28b",
+      "imageDescription": "An archery arrow with a golden shaft, violet arrowhead and pink and lavender tail feathers."
+    },
+    {
+      "id": "ja-v-ed6bd4d73b76",
+      "meaning": "Right Direction",
+      "path": "artifacts/card-regeneration/batch-07/65-revision-v2.png",
+      "prompt": "Edit the approved LEFT direction arrow to create RIGHT direction. Mirror the entire arrow HORIZONTALLY, preserving its exact silhouette, rectangular shaft proportions, rounded corners, lavender fill, violet contour weight, size, placement and shading style. Change no other design details. Pure white square background. No extra elements, text or labels.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/62-left-direction.png",
+          "role": "edit target / supporting composition reference as specified in prompt"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Right arrow mirrors approved left-arrow silhouette.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1066138,
+      "sha256": "9e9780ab58a50b46dd766a756e34c60341ba56a8570839a755919092f66f51ee",
+      "previousVersions": [
+        {
+          "id": "ja-v-ed6bd4d73b76",
+          "meaning": "Right Direction",
+          "path": "artifacts/card-regeneration/batch-07/65-right-direction.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A bold arrow pointing right\nProduction composition: One bold simple RIGHT-pointing direction arrow, horizontal shaft and large triangular head. Lavender fill, violet outline, centered, generous margins. Same dimensions and design as left direction card, mirrored. No feathers, text or other objects.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Lavender arrow pointing right.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1058930,
+          "sha256": "628ec672d3d7b997d246b99751b890c3b762fac267260f09732fb2716754411a"
+        }
+      ],
+      "revisionRound": 2,
+      "imageDescription": "A lavender direction arrow pointing right."
+    },
+    {
+      "id": "ja-v-520308b3c3b4",
+      "meaning": "Below",
+      "path": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+      "prompt": "Use case: precise-object-edit. Redesign the provided square vocabulary card to show Kiku UNDER A CHAIR in one physically grounded scene. Remove the separate cardboard box entirely. Show ONE simple ordinary wooden dining CHAIR with a seat, backrest and four plausible short legs. Chair design: warm light honey/tan wood, a simple rounded rectangular slatted backrest, broad flat seat with a restrained lavender seat pad, sturdy straight legs, bold deep-violet contours and gentle cartoon shading. Near-front view with a slight three-quarter angle so the seat and legs are readable. Kiku is SMALL and crouched directly UNDER THE CHAIR SEAT, between the legs, paws on the same implied baseline as the chair feet. The seat is visibly OVER Kiku's head; the two front chair legs flank the cat. Kiku's full smiling face, headphones, ears, paws and curled tail should remain recognizable. The seat may slightly overlap the topmost headphone arch if needed; keep realistic chair proportions and sufficient low clearance for the compact cat. No hovering furniture, no large disconnected white gap. Preserve Kiku's recognizable mascot identity from the input: compact golden-yellow cat with pink inner ears, lavender over-ear headphones, closed smiling eyes, violet whiskers/nose/mouth, rounded forepaws and curved golden tail. Four short straight violet attention lines beside Kiku's body emphasize the CAT within the opening beneath the chair, separated from contours. These are emphasis ticks, not headphone sound waves. Pure opaque WHITE background, square1:1 canvas, whole chair and cat entirely visible within generous white margins, scene about75–80% of canvas height, legible at145px. No room, floor stripe, cast shadow, floating objects, cloud, box, arrow, text, logo or enclosing frame.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+          "role": "edit target; preserve Kiku identity and attention lines, replace box scene with cat under a chair"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Kiku crouched under the lavender-padded chair seat between four golden wooden legs, paws on chair-foot baseline; attention lines emphasize the cat.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1331429,
+      "sha256": "6fb26718fa996cfef6bff3509f943359c835a21d004f026a4db566b6f1874b37",
+      "previousVersions": [
+        {
+          "id": "ja-v-520308b3c3b4",
+          "meaning": "Below",
+          "path": "artifacts/card-regeneration/batch-07/66-below.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A orange basketball underneath a shelf\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: One simple short golden wall shelf in the upper third, one orange basketball centered clearly BELOW it with a large clean white gap separating shelf and ball. Exactly one shelf and one ball. No wall scene, floor, arrows, person or labels.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Orange basketball below golden shelf, white gap.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1085895,
+          "sha256": "682ad121b578883b543cbe7ae349951bb9f2c4df1a527502cc1bcab97d5cfedc"
+        },
+        {
+          "id": "ja-v-520308b3c3b4",
+          "meaning": "Below",
+          "path": "artifacts/card-regeneration/batch-07/66-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Positional relationship BELOW: show Kiku centered clearly BELOW one simple short horizontal GOLDEN BAR with violet outline, with a large white gap separating Kiku's headphone top from the bar. Replace the earlier ball/shelf scene. The bar sits in the upper third and Kiku in the lower half. Both completely visible, bar is a plain rounded horizontal rectangle without supports, not a table. No basketball, floor, walls or arrows.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku below a simple golden reference bar.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1179995,
+          "sha256": "8b773f9ad51ee3c2b57bbf37c49370db1ff73b3acf919a6f4bb02d3e074100a3",
+          "revisionRound": 2
+        },
+        {
+          "id": "ja-v-520308b3c3b4",
+          "meaning": "Below",
+          "path": "artifacts/card-regeneration/batch-07/66-revision-v3.png",
+          "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Replace the orange horizontal bar completely with one recognizable fluffy white CLOUD, a simple rounded cloud silhouette with violet outline and a faint lavender lower edge. The cloud is centered in the upper third. Kiku remains centered clearly BELOW the cloud in the lower half, with a large white gap between them. Both whole silhouettes remain within clean margins. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. ",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/66-revision-v2.png",
+              "role": "edit target; preserve established character, composition and styling except requested changes"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku below a fluffy white cloud; four straight attention lines emphasize the cat.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1219525,
+          "sha256": "f648b52d402192b9b880846b81377d9d115e18bfa34d8ca04c0b68b67ed820bb",
+          "revisionRound": 3
+        },
+        {
+          "id": "ja-v-520308b3c3b4",
+          "meaning": "Below",
+          "path": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+          "prompt": "Use case: precise-object-edit. Edit the provided square vocabulary card for BELOW. Replace the cloud with one clearly recognizable CLOSED CARDBOARD SHIPPING BOX centered ABOVE Kiku. Box design: a simple compact tan/kraft-brown cuboid in gentle three-quarter perspective, visible top/front/right faces, a single pale beige packing-tape strip across the closed top and continuing a short distance down the front, clean bold deep-violet contours and restrained soft cartoon shading. No text, address labels, logos, printed arrows or symbols on the box. Make the box about45% of canvas width and25% of canvas height in the upper part, with a clear white gap between its bottom and Kiku's headphone arch. Kiku remains clearly BELOW the box, centered in lower half, completely visible and separate from it. Preserve Kiku's established gold cat identity, pink inner ears, lavender over-ear headphones, closed smiling eyes, whiskers, two paws, curved tail, and four short straight violet attention lines beside the cat. Preserve pure opaque WHITE background, square1:1 canvas, generous clean margins and readable simple polished cartoon style. Resize Kiku only slightly if needed to fit box and separation comfortably. No ground, wall, support, clouds, extra objects, enclosing frame, shadow, watermark or answer captions.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/66-revision-v3.png",
+              "role": "edit target; preserve Kiku identity, attention lines, white background and above/below relation"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku clearly below a closed kraft cardboard box with pale tape, violet contours and matching three-quarter view. Four attention lines emphasize Kiku.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1241934,
+          "sha256": "7f49c0fed4138e6d25081ee40dac4230cda2a7c0b1f831cf724650f2d4021da5",
+          "revisionRound": 4,
+          "supersededReason": "User rejected the separate cardboard-box layout and requested Kiku under and on top of a chair."
+        }
+      ],
+      "revisionRound": 5,
+      "imageDescription": "Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat."
+    },
+    {
+      "id": "ja-v-769a80524957",
+      "meaning": "Small",
+      "path": "artifacts/card-regeneration/batch-07/67-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Keep the current composition and relative size of the SMALL Kiku on the left beside the MUCH LARGER friendly tan/cream seated bulldog on the right, same baseline. Keep both entire silhouettes and their smiling expressions, colors, positions and proportions. Make only this addition: Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Use the available white space around the small cat, never around the bulldog.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/67-revision-v3.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Small Kiku beside large bulldog; four small straight lines emphasize Kiku.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1250102,
+      "sha256": "bb9e93fe5bee3c3ddd252057d1699bddc32539e01b2d1cd4c2c4df7a4b8e5faa",
+      "previousVersions": [
+        {
+          "id": "ja-v-769a80524957",
+          "meaning": "Small",
+          "path": "artifacts/card-regeneration/batch-07/67-small.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A tiny orange basketball beside a large orange basketball; tiny one highlighted\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: Exactly TWO orange basketballs side by side on one baseline: a tiny ball at left and a much larger ball at right. A restrained thin violet ring surrounds ONLY THE TINY ball to indicate the target SMALL. Preserve shared basketball orange color and seam design. No arrows, numerals, words or extra objects.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Small orange basketball circled beside larger orange basketball.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1133740,
+          "sha256": "c16024529fb47b3660e84a8c1d0e642d5dada8261f61c53c16dae11dfe434b76"
+        },
+        {
+          "id": "ja-v-769a80524957",
+          "meaning": "Small",
+          "path": "artifacts/card-regeneration/batch-07/67-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Teach SMALL with exactly two subjects side by side on the same baseline: Kiku on the left, visibly SMALL beside one much LARGER friendly bulldog on the right. Bulldog is broad and stocky with a short wrinkled muzzle, floppy ears and four paws, warm tan/cream coat and violet contours, seated. Kiku's total height about half the bulldog's seated height. Kiku remains the referenced subject, no target ring needed. No basketballs, highlighting circles, arrows, people or props.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Small Kiku beside a much larger seated bulldog.",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1359610,
+          "sha256": "614f6a6a140d8354c9952fa0dcfda9c62075f8227fcd5189b3211100d9b9349d",
+          "revisionRound": 2
+        },
+        {
+          "id": "ja-v-769a80524957",
+          "meaning": "Small",
+          "path": "artifacts/card-regeneration/batch-07/67-revision-v3.png",
+          "prompt": "Reframe this illustration onto a SQUARE 1:1 canvas. Preserve all foreground subjects, their exact shapes, colors, relative sizes and side-by-side arrangement. Scale the entire illustration uniformly to fit with white space above and below; do not stretch, distort or crop the subjects. Plain opaque pure white square background. Output MUST be square, with equal width and height. No other edits.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/67-revision-v2.png",
+              "role": "edit target; fit complete foreground on square white canvas"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Small Kiku beside a much larger seated bulldog.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1257614,
+          "sha256": "6af50a7236f5850b93c78cceba571ef9a14448cfcf114a36518484f6524e59cc",
+          "revisionRound": 3
+        }
+      ],
+      "revisionRound": 4,
+      "imageDescription": "A small Kiku beside a much larger friendly bulldog, with attention lines around Kiku."
+    },
+    {
+      "id": "ja-v-960de5429d2e",
+      "meaning": "Under The Bed",
+      "path": "artifacts/card-regeneration/batch-07/68-revision-v4.png",
+      "prompt": "Use case: precise-object-edit. Refine this square illustration of Kiku UNDER the bed. Keep the golden bed, lavender blanket, white pillow, bold violet outlines, soft cartoon shading, white background, all four short straight bed legs, four purple attention strokes beside Kiku, and generous margins. Adjust the front horizontal bed frame and bottom of blanket upward JUST ENOUGH to reveal Kiku's full forehead and MOST of both triangular golden cat ears with pink inner ears, while the bed still slightly overlaps ONLY the very tips of the ears and topmost part of the arched headphone headband. Currently too much of Kiku's upper head is hidden. Kiku's full face must have comfortable forehead space above its eyes. Keep all of Kiku's face, earcup headphones, paws and curved tail visible underneath between the legs. Keep Kiku the same scale and sitting low underneath; extend leg clearance only moderately, not to the original unnatural tall-bed height. Match actual mascot identity shown by second reference: gold cat, pink inner ears, lavender over-ear headphones. Scene remains bed above Kiku with small purposeful occlusion. No captions, arrows, sound waves, extra objects, shadows or floor.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/68-revision-v3.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        },
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "Kiku character identity; recover ears and headphone details"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Lower bed with partial headphone/ear-tip overlap; full face, most ears, paws and tail visible. Four attention lines beside Kiku.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1265733,
+      "sha256": "799551d6ddf22bbbe30f42ec0a813e602bb8e0895c70282f257d1a1d95125c77",
+      "previousVersions": [
+        {
+          "id": "ja-v-960de5429d2e",
+          "meaning": "Under The Bed",
+          "path": "artifacts/card-regeneration/batch-07/68-under-the-bed.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A ball tucked below a bed\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: One simple bed with golden wooden frame, lavender blanket and a white pillow. One orange basketball sits visibly UNDER the raised bed, between legs and below the frame, clearly separated from the mattress. Show enough clearance to see the entire ball. No room, person, arrows or labels.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Basketball under a golden bed with lavender blanket and white pillow.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1248440,
+          "sha256": "4402b88c3413798d2c0b2e20a8ad510f933d6ae760e5a7c4156c30947d5c0753"
+        },
+        {
+          "id": "ja-v-960de5429d2e",
+          "meaning": "Under The Bed",
+          "path": "artifacts/card-regeneration/batch-07/68-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Teach UNDER THE BED: show a simple raised golden wooden bed with lavender blanket and one white pillow, in gentle three-quarter/front view. Kiku sits clearly UNDER the bed, between the legs and below the mattress. Give the space ample clearance so the ENTIRE small Kiku including headphones, paws and tail is visible below the horizontal bed frame. Natural geometry, Kiku's paws aligned with bed feet baseline. No basketball, bedroom scenery, floor patch or arrows.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku fully visible under a raised golden bed.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1168430,
+          "sha256": "b3493c3cb354156d19dcccf48d0a1aeb7db481779e0704e86d9d6613c64377ba",
+          "revisionRound": 2
+        },
+        {
+          "id": "ja-v-960de5429d2e",
+          "meaning": "Under The Bed",
+          "path": "artifacts/card-regeneration/batch-07/68-revision-v3.png",
+          "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Keep the recognizable golden bed with lavender blanket and white pillow, same three-quarter view, and Kiku crouched UNDER the bed between its legs. LOWER THE BED substantially to a plausible low bed height: shorten the long legs/under-bed clearance. The front horizontal frame and blanket slightly overlap and OCCLUDE the top of Kiku's headphone arch and upper ear tips, while Kiku's entire face, cheek headphones, paws and curled tail stay visible below the frame. This partial occlusion is intentional, helping show Kiku under a normally low bed. Keep the frame solid and continuous, no cutouts. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Place these small emphasis strokes in the clear white opening beside Kiku, below the frame, without crossing bed legs or face. Bed and Kiku fit well within square margins.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/68-revision-v2.png",
+              "role": "edit target; preserve established character, composition and styling except requested changes"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Lower bed with partial headphone/ear-tip overlap; full face, most ears, paws and tail visible. Four attention lines beside Kiku.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1162756,
+          "sha256": "7ee09c9e4cac709c22006a57f61a9d01528bf4de72137697306bcf42e1a17dc2",
+          "revisionRound": 3
+        }
+      ],
+      "revisionRound": 4,
+      "imageDescription": "Kiku under a low golden bed with a lavender blanket and white pillow, with attention lines around the cat."
+    },
+    {
+      "id": "ja-v-a249b72fa923",
+      "meaning": "Many",
+      "path": "artifacts/card-regeneration/batch-07/69-many.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A jar contains a large number of colorful balls.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: One transparent open jar filled with MANY small colorful round counting balls, roughly twenty, grouped densely but individually readable. Use small gold/pink/lavender/blue spheres, no basketball seams. Clear jar rim and sides, no lid, hand, labels, numerals, loose balls or extra jars.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Original jar restored and approved by user. Crowd rejected because it conflicts with population; no outstanding revision requested for the jar.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1330070,
+      "sha256": "6e442b16e04f3a79eddc42c34091c2c0cdd3e0e0a569ed65a034ec4935c2bfe2",
+      "previousVersions": [
+        {
+          "id": "ja-v-a249b72fa923",
+          "meaning": "Many",
+          "path": "artifacts/card-regeneration/batch-07/69-revision-v2.png",
+          "prompt": "Use case: scientific-educational. Redesign this square vocabulary card to teach MANY. Completely replace the jar and round objects with one clearly recognizable large CROWD OF PEOPLE, about fifteen simplified smiling people tightly gathered in three staggered rows. Each person has a distinct round human head with simple eyes and smile, hair, shoulders and colored shirt; show front row torsos and back row heads/shoulders peeking between. Use a few varied warm natural skin tones, simple brown/dark-violet hair and a balanced mix of lavender, soft pink, sky-blue and gold shirts. No single person emphasized, no attention rays, no mascot. The crowded cluster should read as MANY at145px rather than as marbles, candy or individual counters. Match reference's bold deep-violet contours, rounded simple forms, restrained gentle shading and polished calm cartoon language only. Pure opaque WHITE background, one square1:1 canvas, crowd centered filling about75%width with generous outer margins. No jar, container, colored balls, labels, numerals, quantity dots, badges, lettering, building, ground or decorative motifs.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/69-many.png",
+              "role": "edit target; replace scene while matching established illustration style"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "rejected",
+          "visualReview": "Crowd rejected: conflicts with population; user prefers the jar.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1616812,
+          "sha256": "94dabcd0857f9d6384908dafae19c62b2e1dbf7faedc36cfbe5cbbf6eb28ca8b",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 2,
+      "restoredAfterFeedback": true,
+      "imageDescription": "A transparent jar filled with many small colorful round objects."
+    },
+    {
+      "id": "ja-v-c0f58bfab324",
+      "meaning": "Above",
+      "path": "artifacts/card-regeneration/batch-07/70-revision-v5.png",
+      "prompt": "Use case: precise-object-edit. Create the companion ON TOP OF A CHAIR vocabulary illustration by editing this supplied UNDER THE CHAIR picture. Keep EXACTLY THE SAME chair: same rounded golden/honey wooden backrest with vertical slats, lavender seat pad, golden frame and four straight legs, near-front gentle three-quarter view, bold violet outlines and restrained soft cartoon shading. Keep its size and placement in the square as close as possible. Move the ONE Kiku from beneath the seat to SITTING DIRECTLY ON TOP OF THE LAVENDER SEAT. His paws, lower body and tail visibly rest on the seat pad and are supported by it, with no white gap. Kiku sits in FRONT of the chair backrest so the back slats continue behind his head. Keep the same compact golden-yellow mascot, lavender headphones, pink ears, closed smiling eyes, whiskers, two rounded paws and curled tail; retain approximately his current scale relative to the chair. Move the short straight violet attention lines WITH Kiku, arranging two on each side of his body above the seat to emphasize the cat. REMOVE Kiku and ALL attention marks from underneath the chair; that opening between legs is now empty white. Exactly ONE cat, ONE chair. Entire chair and Kiku visible, comfortable outer margins. Preserve square1:1 canvas and pure opaque WHITE background. Clear physical contact with seat is essential: cat ON the seat, not floating above the chair and not on top of its backrest. No floor stripe, room, shadow, extra objects, box, cloud, arrow, words, logo, watermark or enclosing frame.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+          "role": "same-batch chair candidate; preserve chair geometry, scale and style, move Kiku from under seat onto seat"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Same chair and Kiku scale as66; Kiku visibly supported by the lavender seat, with backrest behind and empty space beneath. Attention lines moved with cat.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1251541,
+      "sha256": "47c06b3b8efb7a5976cf1ebaf997bf7f3b7e7bcd15fa391684eead74ae57f6a0",
+      "previousVersions": [
+        {
+          "id": "ja-v-c0f58bfab324",
+          "meaning": "Above",
+          "path": "artifacts/card-regeneration/batch-07/70-above.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A orange basketball floating above a shelf\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: One short golden wall shelf lower in the composition, one orange basketball centered clearly ABOVE it with a large clean white gap. Mirror the same ball/shelf design used for BELOW, only vertical relation changes. No wall scene, floor, arrows, person or labels.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Basketball floating above golden shelf, white gap.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1118263,
+          "sha256": "df8aa0715d3b0b35f93385a1f9fe7a193c998bac357fda585fe4385cb4dbf138"
+        },
+        {
+          "id": "ja-v-c0f58bfab324",
+          "meaning": "Above",
+          "path": "artifacts/card-regeneration/batch-07/70-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Positional relationship ABOVE: show Kiku centered clearly ABOVE one short horizontal GOLDEN BAR with violet outline, with a large white gap separating Kiku's paws/tail from the bar. Kiku in the upper half, bar in lower third. Bar is a simple rounded horizontal rectangle with no supports, same visual convention as BELOW. Both entirely visible. No contact with bar, basketball, floor, walls or arrows.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku above a simple golden reference bar, separated by white space.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1105880,
+          "sha256": "77f0da1eaabd278568459b1ffc547b8634da2acebb5e33c7fbfde30eda30a788",
+          "revisionRound": 2
+        },
+        {
+          "id": "ja-v-c0f58bfab324",
+          "meaning": "Above",
+          "path": "artifacts/card-regeneration/batch-07/70-revision-v3.png",
+          "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Replace the orange horizontal bar completely with one recognizable fluffy white CLOUD, rounded cloud silhouette, violet outline and a faint lavender lower edge. Kiku remains centered clearly ABOVE this cloud in the upper half, a large white gap between Kiku's paws and the cloud. The cloud is centered in the lower third. Both whole silhouettes have clean outer margins. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. ",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/70-revision-v2.png",
+              "role": "edit target; preserve established character, composition and styling except requested changes"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku above a fluffy white cloud; four straight attention lines emphasize the cat.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1266922,
+          "sha256": "24fdb58da08cd760495e83fc6fff579770b2d8b59d09846703fb3b758c4ed48d",
+          "revisionRound": 3
+        },
+        {
+          "id": "ja-v-c0f58bfab324",
+          "meaning": "Above",
+          "path": "artifacts/card-regeneration/batch-07/70-revision-v4.png",
+          "prompt": "Use case: precise-object-edit. Edit image1, the square ABOVE vocabulary card. Replace its cloud completely with ONE CLOSED CARDBOARD SHIPPING BOX centered BELOW Kiku. Image2 supplies ONLY the matching cardboard-box design for this paired revision: use the same tan/kraft-brown compact cuboid, same gentle three-quarter viewpoint with visible top/front/right faces, same pale beige tape strip crossing the closed top and continuing a short distance down front, same bold deep-violet outlines and gentle cartoon shading. Do not copy image2's scene arrangement. In this card Kiku must be clearly ABOVE the box: Kiku in upper half, whole box centered in lower part, with a clear WHITE GAP between Kiku's paws and box top, not sitting on or touching the box. Rebalance scale as needed so Kiku and box each fit comfortably, both fully visible with generous outer margins. Preserve Kiku's established gold cat identity, pink inner ears, lavender over-ear headphones, closed smiling eyes, whiskers, two paws, curved tail and four short straight violet attention lines beside the cat. Keep white opaque background and square1:1 canvas. No cloud, bar, ground, room, shadow, extra objects, labels, printed markings, arrows, words, watermark or frame.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/70-revision-v3.png",
+              "role": "edit target; preserve Kiku identity, attention lines, white background and above/below relation"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+              "role": "same-batch candidate supplies matching box design only; neither paired scene is an approved downstream reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku clearly above a closed kraft cardboard box with pale tape, violet contours and matching three-quarter view. Four attention lines emphasize Kiku.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1244219,
+          "sha256": "677faaa89d48ee0a1b6ab6ec68b083aee421714297825690abb20127c53d3850",
+          "revisionRound": 4,
+          "supersededReason": "User rejected the separate cardboard-box layout and requested Kiku under and on top of a chair."
+        }
+      ],
+      "revisionRound": 5,
+      "imageDescription": "Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat."
+    },
+    {
+      "id": "ja-v-dfb71d269e06",
+      "meaning": "On The Table",
+      "path": "artifacts/card-regeneration/batch-07/71-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Preserve the current composition: Kiku sitting ON TOP OF the golden table, paws and body visibly supported by the tabletop. Keep table design, all legs, Kiku's size, placement, proportions, expression, colors and shading. Make only this addition: Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Place marks around Kiku's sides above the tabletop, without crossing the table or any contours.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/71-revision-v2.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Kiku remains supported by tabletop, with four attention lines around the cat.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1261873,
+      "sha256": "e406ac36d12654759b8385befd8a2e188f4d5341bd93e4af239b1164e5518f37",
+      "previousVersions": [
+        {
+          "id": "ja-v-dfb71d269e06",
+          "meaning": "On The Table",
+          "path": "artifacts/card-regeneration/batch-07/71-on-the-table.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: An orange basketball resting on a table\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: One orange basketball resting ON TOP of a simple golden table with four legs. Ball touches tabletop naturally, centered; all major parts fully visible. No room, person, arrows or labels.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Basketball resting on golden table; generator included a small contact shadow.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1133521,
+          "sha256": "c8a6a7c1274112d8700b09f934c3e6017e64fb9b5f6d876d6095c4710af23728"
+        },
+        {
+          "id": "ja-v-dfb71d269e06",
+          "meaning": "On The Table",
+          "path": "artifacts/card-regeneration/batch-07/71-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Teach ON THE TABLE: Kiku sits comfortably ON TOP of a simple golden wooden table in gentle three-quarter view, paws and body visibly resting on the tabletop. Show whole mascot and all table legs, clean natural contact. Table supports the cat and fits its compact size. No floating gap, basketball, room, floor patch, cast shadow or arrows.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Kiku sitting on a golden table.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1203425,
+          "sha256": "ce2e84bbf3d96adff768a056276dfdc700ae42075081c88066d214385b66a749",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 3,
+      "imageDescription": "Kiku sitting on top of a golden table, with attention lines around the cat."
+    },
+    {
+      "id": "ja-v-f6377dcbb564",
+      "meaning": "Big",
+      "path": "artifacts/card-regeneration/batch-07/72-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied vocabulary artwork, retaining its square 1:1 canvas, pure opaque WHITE background, generous clear margins, bold deep-violet contours, warm gold Kiku and lavender headphones, restrained soft shading and readable cartoon forms. No text, logo, frame, cast shadow, floor or extra scenery. Keep Kiku's exact recognizable mascot identity and compact proportions. Retain Kiku on the LEFT beside the blue bird on the RIGHT on a common baseline. Rebalance their sizes: reduce Kiku and enlarge the bird, so the bird's total height is about ONE THIRD of Kiku's total height, rather than tiny. Kiku is still distinctly BIG compared with the bird. Kiku about60% of square height; bird about22%. Preserve bird design, blue body, golden beak and feet, smiling closed eye. Preserve both complete silhouettes with a clear white gap between them, generous margin outside the entire group. Add four short straight deep-violet attention rays pointing inward toward Kiku, two on either side around the shoulders/body, separated from the silhouette by a little white space. These marks emphasize the whole CAT as the referenced subject, not the headphones. No curved sound-wave arcs, arrows, motion blur, or rays around the other object. Keep strokes close to Kiku so they never point toward the bird.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/72-revision-v2.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Kiku reduced and blue bird enlarged to roughly one-third cat height, same baseline; attention lines emphasize Kiku.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1215902,
+      "sha256": "511e9b1b949bea5b4b654a9e00aef3033a34937687e0751f8406b5b782cb43a6",
+      "previousVersions": [
+        {
+          "id": "ja-v-f6377dcbb564",
+          "meaning": "Big",
+          "path": "artifacts/card-regeneration/batch-07/72-big.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A large orange basketball beside a tiny orange basketball; large one highlighted\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared ball design: an orange basketball at the preferred tilted three-quarter angle, with a clearly visible off-center seam crossing. Keep two main grooves crossing clearly and bowed side channels connecting at separate points; preserve a recognizable basketball junction instead of showing only parallel arcs. Dark-purple exterior outline, slightly narrower purple grooves and broad orange panels. Reuse for ordinary toy/sports balls while preserving intended count, size and spatial relations; keep specifically implied baseballs, beads, marbles, yarn balls and small jar counters appropriate to their own scene. Current v4 reference is accepted provisionally, with an unresolved seam/angle improvement. Do not treat its seams as a finished design standard; retain the improvement note when planning dependent artwork.\nProduction composition: Exactly TWO orange basketballs side by side on one baseline: a tiny ball at left and a much larger ball at right. A restrained thin violet ring surrounds ONLY THE LARGE ball to indicate the target BIG. Same sizes and layout as SMALL card, changing only target ring. No arrows, numerals, words or extra objects.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/02-ball-v4.png",
+              "role": "approved provisional basketball shape/color reference; retain outstanding seam/angle improvement; do not copy any background"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Large basketball circled beside small basketball.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1142029,
+          "sha256": "8e5b5968fcdbd3cf08a09ff61b6c5c038e52bcbb11019666df377fbba9147e93"
+        },
+        {
+          "id": "ja-v-f6377dcbb564",
+          "meaning": "Big",
+          "path": "artifacts/card-regeneration/batch-07/72-revision-v2.png",
+          "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Teach BIG with exactly two subjects side by side on the same baseline: Kiku on the left, visibly BIG next to one tiny friendly bird on the right. Kiku occupies most of the composition height; little sky-blue bird about one-fifth Kiku's total height, with short beak, two little feet and a simple wing. Kiku remains the referenced subject. No basketballs, target rings, arrows, text or scenery.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+              "role": "approved character identity and illustration reference"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Large Kiku beside a tiny blue bird.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1267534,
+          "sha256": "2d72ea3e2154765f29800c26bd70181a04aa3c57239f24642901a415351350bc",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 3,
+      "imageDescription": "A large Kiku beside a smaller blue bird, with attention lines around Kiku."
+    },
+    {
+      "id": "ja-v-4690961b5456",
+      "meaning": "To Mix Something",
+      "path": "artifacts/card-regeneration/batch-07/73-revision-v2.png",
+      "prompt": "One square vocabulary illustration in the established polished cartoon language, bold deep-violet outlines and restrained soft shading. Pure opaque WHITE background, generous clean margins, readable at145px. No answer captions, words, logo, watermark, frame or scene decorations. Kiku must match the provided mascot identity: compact golden-yellow cat, large rounded head, pink inner ears, small violet nose/mouth and whiskers, two rounded forepaws, curved golden tail, violet/lavender over-ear headphones with arched headband. Keep the reference's cute proportions, closed smiling eyes, bold violet contours and soft shading. No clothes, lettering, logo, scenery or decorative reference motifs. Emphasize the ACTION OF MIXING: Kiku actively stirs pink and yellow batter in a lavender bowl using one golden wooden spoon. Kiku sits left/behind bowl, one paw clearly grips the spoon handle while the other steadies bowl rim. Spoon tip immersed in batter; show a clear swirling two-color vortex and two short curved violet motion strokes around the moving spoon. Pose forepaw/handle at an angle that reads as stirring, not a spoon resting unattended. The bowl and active spoon are prominent in foreground. Image2 supplies bowl/pink-yellow ingredient palette only. No human hands, floating spoon, extra utensils, words, numerals or action labels.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "approved character identity and illustration reference"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/73-mix.png",
+          "role": "edit target / supporting composition reference as specified in prompt"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Kiku grips a moving spoon and steadies a bowl while stirring pink/yellow batter; curved action strokes.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1371184,
+      "sha256": "f6ffbbf211f7138ecb8b50cb9205d37791de1aae4b8a563461bcba9a1fdf0b26",
+      "previousVersions": [
+        {
+          "id": "ja-v-4690961b5456",
+          "meaning": "To Mix Something",
+          "path": "artifacts/card-regeneration/batch-07/73-mix.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: Spoon swirls pink and yellow ingredients in a mixing bowl.\nProduction composition: One lavender mixing bowl, with pink and yellow ingredients inside being mixed by a single golden spoon. Spoon tip is visibly immersed in the ingredients, handle angled up/right. Simple partial pink/yellow swirl in bowl suggests mixing. No hand, person, flying ingredients, text, arrows or additional utensils.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Golden spoon mixing pink and yellow ingredients in lavender bowl.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1229331,
+          "sha256": "2f3a0b468e8dc6cfbda3f09c0a5e3fb0cee61f83f70d69a2fbdb76ca77a3c2de"
+        }
+      ],
+      "revisionRound": 2,
+      "imageDescription": "Kiku stirring pink and yellow batter in a bowl with a wooden spoon."
+    },
+    {
+      "id": "ja-v-f71f9de56223",
+      "meaning": "Car",
+      "path": "artifacts/card-regeneration/batch-07/74-car.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: An orange car seen from the side\nProduction composition: One compact rounded orange passenger car in clear side view, two visible black/violet tires with lavender hubs, pale blue windows, simple headlights. No driver, logo, road, motion marks, text or background props. Entire car visible with generous margins.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Side view of orange car with two visible wheels.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1059416,
+      "sha256": "05ce2f4b730fc586ec47571f787db029fd9fbb24a73b84da7e8a7ba6c996b17c",
+      "imageDescription": "An orange car viewed from the side, with two visible wheels."
+    },
+    {
+      "id": "ja-v-12025d56c403",
+      "meaning": "Doorway",
+      "path": "artifacts/card-regeneration/batch-07/75-doorway.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: An open door with a highlighted threshold\nProduction composition: One OPEN golden wooden door in a violet frame, seen at a slight three-quarter angle. Door leaf swung outward, open rectangular passage clearly visible. A modest lavender band across the bottom threshold makes the doorway clear. No person, room scene, arrows or labels.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Open golden door in violet frame with visible threshold.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1094686,
+      "sha256": "3f4750c5e972ae9d9f1dfb842631f7185d29f51ba488889fd233f874118e6aca",
+      "imageDescription": "An open golden door in a violet frame, with a visible threshold."
+    },
+    {
+      "id": "ja-v-56e27b2da5a6",
+      "meaning": "Door",
+      "path": "artifacts/card-regeneration/batch-07/76-door.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A closed door with a knob\nProduction composition: One CLOSED golden wooden door in the same violet frame, simple inset panels and one lavender round knob. Front view, full rectangular silhouette. No threshold highlight, open gap, room, person, arrows, words or extra props.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Closed golden door in matching violet frame.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1034299,
+      "sha256": "75c5a658149fffe82388d4fc63fc0c1f51edddadd2574ef81aa4b559392cd240",
+      "imageDescription": "A closed golden door in a violet frame."
+    },
+    {
+      "id": "ja-v-10791214b2c9",
+      "meaning": "Baby",
+      "path": "artifacts/card-regeneration/batch-07/77-baby.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A smiling baby swaddled in a pink blanket\nProduction composition: One smiling human baby swaddled snugly in a soft pink blanket, round warm peach face, tiny hair curl, simple eyes and small smile. Whole wrapped baby visible, no adult hands, bottle, cradle, text, hearts or props. Correct infant anatomy.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Smiling baby swaddled in pink blanket.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1219290,
+      "sha256": "0d480cbb091150a3258e6d96f6718f1a253b5a3eb937130994873eb21c8c1e7f",
+      "imageDescription": "A smiling baby swaddled in a pink blanket."
+    },
+    {
+      "id": "ja-v-9752b818f9f8",
+      "meaning": "Japan",
+      "path": "artifacts/card-regeneration/batch-07/78-revision-v3.png",
+      "prompt": "Reframe this illustration onto a SQUARE 1:1 canvas. Preserve all foreground subjects, their exact shapes, colors, relative sizes and side-by-side arrangement. Scale the entire illustration uniformly to fit with white space above and below; do not stretch, distort or crop the subjects. Plain opaque pure white square background. Output MUST be square, with equal width and height. No other edits.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/78-revision-v2.png",
+          "role": "edit target; fit complete foreground on square white canvas"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Japanese flag with centered red circle; pole removed.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1069211,
+      "sha256": "607d54ee30ca4c92feeef15c6d198ab3bee79f3b39195dd859e400ab4c5b41e4",
+      "previousVersions": [
+        {
+          "id": "ja-v-9752b818f9f8",
+          "meaning": "Japan",
+          "path": "artifacts/card-regeneration/batch-07/78-japan.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The Japanese flag on a pole\nProduction composition: The JAPANESE FLAG on one simple violet pole. White rectangular flag, width-to-height ratio 3:2, one centered clean red circular disc with diameter three-fifths of flag height. Keep actual flag colors, restrained violet exterior contour so white reads on white. No other symbols, lettering, country map, scenery or extra flags.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "White Japanese flag with centered red disc on violet pole.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1078278,
+          "sha256": "1fee340f45657e046474e2984baefab5aa731141af5769eaddd0e0c4d8aa1ab6"
+        },
+        {
+          "id": "ja-v-9752b818f9f8",
+          "meaning": "Japan",
+          "path": "artifacts/card-regeneration/batch-07/78-revision-v2.png",
+          "prompt": "Edit Japanese flag card: remove the entire pole and gold finial. Keep only the white rectangular flag with one centered RED CIRCLE and restrained violet outer outline. Recenter and enlarge the flag appropriately in the square with generous white margin. Keep aspect ratio approximately3:2, red disc centered and aboutthree-fifths the flag height. Gentle cloth wave allowed; preserve clear recognizable flag, plain white opaque background, no pole, stand, text, other symbols or props.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/78-japan.png",
+              "role": "edit target / supporting composition reference as specified in prompt"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Japanese flag with centered red circle; pole removed.",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1215035,
+          "sha256": "14c50669a8e0df4cc5b994b70dd15820840d27d7a96c0e58587be4c2111f6cf0",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 3,
+      "imageDescription": "A white Japanese flag with a centered red circle."
+    },
+    {
+      "id": "ja-v-b34b4a2e7a98",
+      "meaning": "Treasure",
+      "path": "artifacts/card-regeneration/batch-07/79-treasure.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: An open treasure chest full of jewels and coins\nProduction composition: One OPEN warm brown wooden treasure chest filled with visible golden coins and a few pink/lavender jewels. Chest in three-quarter view, lid clearly open. Clean well-kept chest rather than old broken/rusted chest; no cobweb, skull, text, sparkling marks or extra props.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Open chest containing golden coins and pink/lavender gems.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1322407,
+      "sha256": "dcd9ca98818b5a8521eac66ed7a3effc7c3582727bab26f028bfef0e54bcfb2d",
+      "imageDescription": "An open treasure chest filled with golden coins and pink and lavender gems."
+    },
+    {
+      "id": "ja-v-ed2c1dbd0ee4",
+      "meaning": "Marble",
+      "path": "artifacts/card-regeneration/batch-07/80-marble.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A glass marble with a colorful swirl\nProduction composition: One single round GLASS MARBLE, small spherical toy object with a colorful curved pink/lavender/gold swirl clearly enclosed INSIDE the transparent pale blue glass. Round silhouette, violet outline and restrained internal shading. No drinking glass, stem, face, beads, hand or extra marbles.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Single glass marble with colorful internal swirl.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1251313,
+      "sha256": "b29132762e7fff90fe76235d8b7cd435af1546084514ced98eb744463dc8601e",
+      "imageDescription": "A glass marble with a colorful swirl inside."
+    },
+    {
+      "id": "ja-v-ceb7b2a20cbd",
+      "meaning": "Valley",
+      "path": "artifacts/card-regeneration/batch-07/81-revision-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit this square VALLEY vocabulary image, preserving the wide low central passage, two mountain flanks, small snowy summits, rounded landscape footprint, bold violet outline, calm cartoon rendering, white outside background and generous margins. Make ONLY these two landscape changes. (1) WIDEN the winding blue river moderately, to about TWICE its current width at each point, still tapering into distance; it remains secondary to the valley. Foreground river about9%canvaswidth. (2) LOWER the grassline on both mountain slopes. The upper HALF of each mountain side should be exposed lavender/gray rock with simple faceted shapes and white snow on peaks, and grass covers only lower slopes and central valley floor. Keep an ample grassy lower valley, with a clear boundary of grass below rocky upper mountains. Do not change valley into two separate isolated peaks or make river dominate. No new objects, people, trees, buildings, sky panel, words or labels.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/81-revision-v2.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Wider winding river; grass confined to lower mountain slopes and valley floor, lavender rocky upper slopes and snow peaks.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1247663,
+      "sha256": "e8693f9df94195daf874fc8a6d1d27b350e521a6c1a5f8cf59f542bd973d1cf8",
+      "previousVersions": [
+        {
+          "id": "ja-v-ceb7b2a20cbd",
+          "meaning": "Valley",
+          "path": "artifacts/card-regeneration/batch-07/81-valley.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: River flows between two steep green mountain sides.\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\nShared mountain design: purple slopes with white snow caps and dark-purple outlines. Preserve scene-specific features: ordinary mountains have closed summits, while an erupting volcano needs a visible open crater with connected plume and lava; snow may remain on unaffected flanks only. Keep Fuji's characteristic profile when Fuji is the subject.\nProduction composition: A clearly recognizable VALLEY: a narrow winding blue river runs through the low gap between two steep mountain flanks. Use shared purple mountain slopes and small white snow caps, with green lower banks. The central low passage is dominant, rather than a single isolated mountain. Compact landscape with generous white outside, no sky panel, buildings, labels or people.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            },
+            {
+              "path": "artifacts/card-regeneration/batch-01/08-mountain-v2.png",
+              "role": "approved purple snow-capped mountain visual language; use to form valley flanks"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Blue river in low valley between purple snow-capped mountain flanks.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1256436,
+          "sha256": "57b849f183a3c91d4d6a0bf20d027cf750c94d851ded7629023488f962710d4b"
+        },
+        {
+          "id": "ja-v-ceb7b2a20cbd",
+          "meaning": "Valley",
+          "path": "artifacts/card-regeneration/batch-07/81-revision-v2.png",
+          "prompt": "Edit VALLEY card in same soft-shaded violet-contour cartoon style. Make valley substantially GRASSIER with broad green grassy slopes dominating both mountain flanks and central low valley floor. Reduce river to one narrow secondary winding blue stream, aboutone-quarter its previous width. Show clear low grassy passage between two steep sides; retain a little lavender exposed rock high up and small white snow patches near distant peaks. Grass and valley shape dominate, not river or two isolated peaks. Simple green turf, no bushes filling riverbanks, no forest, buildings, characters, text, sky panel or extra props. Pure white outer background with generous margin.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/81-valley.png",
+              "role": "edit target / supporting composition reference as specified in prompt"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Broad grassy valley with a narrow secondary stream; snow and lavender rock only high up.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1236054,
+          "sha256": "a60d02907d6e4b2286c1c1aee0cb822e344fe6e0d7411886e84aa9f5154af0e1",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 3,
+      "imageDescription": "A grassy valley with a winding blue river, lavender rocky mountain slopes and small snowy peaks."
+    },
+    {
+      "id": "ja-v-30d6b7d7e837",
+      "meaning": "One Thousand Yen",
+      "path": "artifacts/card-regeneration/batch-07/82-one-thousand-yen.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A banknote with the numeric currency amount ¥1000\nProduction composition: One generic simplified pale-blue banknote with violet outline, featuring the large legible exact currency amount '¥1000' in dark violet. This amount is essential teaching content and must be correct. Small restrained corner motifs allowed; no portrait, other amounts, denomination digits, extra bills, coin, flags or copied realistic banknote security details. Square canvas around fully visible horizontal bill.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Pale-blue generic banknote clearly marked ¥1000; decorative corner motifs.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1151839,
+      "sha256": "1d3b164fcde9ab57bde7e1756825dc4f46b930c45814fea79066c4b43c9e5f39",
+      "imageDescription": "A pale-blue banknote marked with the amount ¥1000."
+    },
+    {
+      "id": "ja-v-61c516578fee",
+      "meaning": "Fifty",
+      "path": "artifacts/card-regeneration/batch-07/83-fifty.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The numeral 50 on a colorful circular counting token\nProduction composition: One plain lavender circular counting token with deep violet outline, containing ONLY the large centered exact numeral '50' in dark violet. Numeral dominates and is clearly legible at145px. No beads, dots, stars, words, other numbers or decorative motifs.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration style only; exclude cat, text and decorative motifs"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Existing lavender50 token retained; it already matches the selected16–99 range color. Number convention updated; approval pending.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1291933,
+      "sha256": "ed397760c3ef3b8b0baead599ad95122bb4974f7170093d689c1b5e45cf5d655",
+      "conventionUpdated": true,
+      "imageDescription": "A lavender circular token with the large numeral 50."
+    },
+    {
+      "id": "ja-v-86ef0852f80f",
+      "meaning": "Thousand",
+      "path": "artifacts/card-regeneration/batch-07/84-revision-v2.png",
+      "prompt": "Edit numeral1000 card. Recolor the lavender token FILL to pale SKY BLUE (#91D7ED) for the1000–9999 range. Preserve exact correct centered numeral '1000' in deep violet, circular shape, outline, scale, soft shading and white background. One clearly legible number only. No other numerals, words, dots, beads, extra tokens, shadows or decoration.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/84-thousand.png",
+          "role": "edit target / supporting composition reference as specified in prompt"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Sky-blue token with correct numeral1000 for range1000–9999.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1297037,
+      "sha256": "18664ea30903d17a028aa20f69a0c6f54bd642ad77353d56f0d3d5fea098a92b",
+      "previousVersions": [
+        {
+          "id": "ja-v-86ef0852f80f",
+          "meaning": "Thousand",
+          "path": "artifacts/card-regeneration/batch-07/84-thousand.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The numeral 1000 on a colorful circular counting token\nProduction composition: One plain lavender circular counting token with deep violet outline, containing ONLY the large centered exact numeral '1000' in dark violet. Same design as 50/10 tokens, scale digits to fit generously. No beads, dots, stars, words, other numbers or decorative motifs.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Lavender token with numeral 1000.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1312877,
+          "sha256": "7d1370c3229fa49007bf208ba250c3d37e5e981c9827542d8966ccc02bec0485"
+        }
+      ],
+      "revisionRound": 2,
+      "imageDescription": "A sky-blue circular token with the large numeral 1000."
+    },
+    {
+      "id": "ja-v-877b9ba07a47",
+      "meaning": "Ten",
+      "path": "artifacts/card-regeneration/batch-07/85-revision-v3.png",
+      "prompt": "Use case: style-transfer. Edit the supplied number10 pool-ball artwork into a FLAT calm cartoon illustration. Keep the exact circular silhouette, bold deep-violet outer outline, broad BLUE central stripe, WHITE top and bottom caps, WHITE circular number patch centered in the blue stripe, and exact BLACK numeral '10'. Keep square1:1 canvas, centered ball and generous pure opaque WHITE background margins. Replace all glossy spherical gradients with solid flat colors. Remove every bright reflection, shine streak, white glare oval, bevel, soft shadow, lighting effect and dark edge shading. Use one uniform medium blue stripe fill and white caps/patch, clean simple contours. The stripe's top and bottom edges may retain their gentle curves to identify a pool ball, but the rendering must feel flat like the app's simple number-token cards. No other balls, props, quantity dots, labels, decorations, watermark or text besides essential10.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v2.png",
+          "role": "edit target; preserve established character, composition and styling except requested changes"
+        }
+      ],
+      "tool": "built-in image_gen",
+      "styleProfile": "cat-png",
+      "status": "approved",
+      "visualReview": "Flat blue-striped number10 pool ball with white caps and white numeral patch; glossy shading and glare removed.",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1134061,
+      "sha256": "a73cd96d15098b71e958ebeadb248de13f93300633d47611b0cef7f687c385a8",
+      "previousVersions": [
+        {
+          "id": "ja-v-877b9ba07a47",
+          "meaning": "Ten",
+          "path": "artifacts/card-regeneration/batch-07/85-ten.png",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: plain opaque pure WHITE (#FFFFFF), matching the earlier cards. No lavender or cream tint, colored vignette, decorative scene or frame. A sky scene may contain blue sky and clouds, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: The numeral 10 on a colorful circular counting token\nProduction composition: One plain lavender circular counting token with deep violet outline, containing ONLY the large centered exact numeral '10' in dark violet. Same design as 50/1000 tokens. No beads, dots, stars, words, other numbers or decorative motifs.\nReference roles: image 1 supplies style only. Any other image supplies only the specified shared object design, while the Production composition controls the scene. Plain opaque pure WHITE background, no enclosing frame, shadow, decorative motifs or watermark. One square vocabulary card, full scene within generous clean margins, readable at145px. No words or answer labels; essential numeral/currency amount is allowed only where explicitly requested.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved illustration style only; exclude cat, text and decorative motifs"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Lavender token with numeral 10.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1223907,
+          "sha256": "cd3b1786f5148d481c28b819f922ac2e8610df839e999c5ac4dc01a65af842f8"
+        },
+        {
+          "id": "ja-v-877b9ba07a47",
+          "meaning": "Ten",
+          "path": "artifacts/card-regeneration/batch-07/85-revision-v2.png",
+          "prompt": "Replace flat numeral10 token with ONE recognizable BILLIARD POOL BALL numbered '10'. A round white sphere with a broad BLUE stripe wrapping around the equator, white polar caps, one clear WHITE circular number patch within the blue band on the front carrying exact BLACK numeral '10'. Soft rounded cartoon shading and deep violet outer contour matching app style, gentle three-quarter spherical view. Centered on pure opaque white square background with generous margins. Correct 10 is essential. No other balls, cue, table, stars, shadow, labels, watermark or extra numbers.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/batch-07/85-ten.png",
+              "role": "edit target / supporting composition reference as specified in prompt"
+            }
+          ],
+          "tool": "built-in image_gen",
+          "styleProfile": "cat-png",
+          "status": "awaiting-user-feedback",
+          "visualReview": "Blue-striped pool ball with black numeral10 on white number patch.",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1300017,
+          "sha256": "fee418cc4bc844851a8068a8076bb08636714bfc1ab29f64d9c569f0885a6ca9",
+          "revisionRound": 2
+        }
+      ],
+      "revisionRound": 3,
+      "imageDescription": "A flat blue-striped pool ball with white caps and a white number patch marked 10."
+    }
+  ],
+  "status": "approved",
+  "tool": "built-in image_gen",
+  "userFeedback": [
+    {
+      "round": 1,
+      "approvedNumbers": [
+        61,
+        62,
+        63,
+        64,
+        74,
+        75,
+        76,
+        77,
+        79,
+        80,
+        82
+      ],
+      "unmentionedNumbers": [
+        69
+      ],
+      "retainedWithUpdatedConvention": [
+        83
+      ],
+      "revisedNumbers": [
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        78,
+        81,
+        84,
+        85
+      ],
+      "feedback": "Mirror left arrow for65. Use Kiku as generic position/size referent: below/above/underbed/ontable, small beside large bulldog and big beside small bird. Emphasize mixing action. Japan flag without pole. Grassier valley with smaller river. Number ranges:1–15 pool balls,16–99 one color,100–999 another,1000–9999 third,10000+ fourth."
+    },
+    {
+      "batch": "batch-07",
+      "round": 2,
+      "approvedNumbers": [
+        65,
+        73,
+        78,
+        83,
+        84
+      ],
+      "revisedNumbers": [
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        81,
+        85
+      ],
+      "restoredNumbers": [
+        69
+      ],
+      "feedback": "65,73,78,83,84 approved. Replace bars in66/70 with a more evocative object; use cloud anchor pair. Attention lines emphasize Kiku for66–68/70–72. Lower68bed, allow slight ear/headphone overlap. Enlarge72bird and reduceKiku. Try a different69concept. Widen81river moderately and lower grassline. Flatten85pool ball.",
+      "followUp": "User prefers the jar to the people because crowds conflict with population. Restore original69jar; retain rejected crowd attempt for provenance and record original small-content ambiguity."
+    },
+    {
+      "batch": "batch-07",
+      "round": 3,
+      "approvedNumbers": [
+        67,
+        68,
+        69,
+        71,
+        72,
+        81,
+        85
+      ],
+      "revisedNumbers": [
+        66,
+        70
+      ],
+      "feedback": "66 and70 should show Kiku under/below and above a cardboard box. All other batch07 cards are approved."
+    },
+    {
+      "batch": "batch-07",
+      "round": 4,
+      "approvedNumbers": [],
+      "revisedNumbers": [
+        66,
+        70
+      ],
+      "feedback": "Cardboard-box layouts are not working. Replace66/70 with Kiku under and on top of the same chair, making the spatial relationship physical."
+    },
+    {
+      "batch": "batch-07",
+      "round": 5,
+      "approvedNumbers": [
+        66,
+        70
+      ],
+      "feedback": "Chair pair approved. Push approved cards and proceed to next25."
+    }
+  ],
+  "reviewNotes": [
+    "All25cards61–85approved, including Kiku under/on the same chair.",
+    "Kiku is the referenced object in generic spatial and size scenes, emphasized by short straight violet attention lines.",
+    "Original69jar is approved; rejected crowd conflicts with population. Previous image variants, exact prompts and source hashes remain preserved.",
+    "Cardinal number ranges use flat pool balls1–15, lavender16–99,pink100–999,sky blue1000–9999,gold10000+. Currency, age and object counters retain their own conventions."
+  ],
+  "revisionSummary": "Kiku under the chair seat for66 and sitting directly on the same seat for70. Matching chair and character proportions, with attention lines. Other23cards remain approved."
+}
