@@ -375,6 +375,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
     } else {
       await expect(page.locator('.preview-picture img')).toHaveCount(0);
       await expect(page.locator('.preview-picture')).toHaveText(item.text);
+      if (introduced.filter(card => card.exercise === 'audio-text').length === 1) await captureScreen(page, 'writing-lesson-' + testInfo.project.name);
     }
     await page.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }).click();
   }
@@ -384,6 +385,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   expect(introduced.filter(card => card.exercise === 'audio-picture')).toHaveLength(5);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.choices', 'adaptive-quiz');
   const seen = new Set<string>();
+  let writingCaptured = false;
   for (let i = 0; i < 10; i++) {
     await expect(page.getByRole('button', { name: /choose (picture|writing)/i })).toHaveCount(4);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
@@ -398,6 +400,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
         return box.left >= card.left && box.right <= card.right && box.top >= card.top && box.bottom <= card.bottom;
       }));
       expect(writingFits, 'written options fit their cards').toBe(true);
+      if (!writingCaptured) { await captureScreen(page, 'writing-quiz-' + testInfo.project.name); writingCaptured = true; }
     }
     await chooseHeardAnswer(page, target);
   }
