@@ -31,6 +31,20 @@ export interface WordBank {
   items: WordItem[]
 }
 
+export type Exercise = 'audio-picture' | 'audio-text'
+
+/** Vocabulary stays shared; each exercise is learned independently. */
+export interface PracticeCard {
+  item: WordItem
+  exercise: Exercise
+}
+
+export interface CardIdentity {
+  itemId: string
+  language: string
+  exercise: Exercise
+}
+
 /** Epoch milliseconds make timing explicit and easy to sync later. */
 export interface PracticeAttempt {
   id: string
@@ -46,7 +60,7 @@ export interface PracticeAttempt {
   /** Missing on legacy attempts; never infer delayed recall from old fixed rounds. */
   context?: {
     phase: 'lesson' | 'review'
-    exercise: 'audio-picture'
+    exercise: Exercise
     recordingSrc: string
     replays: number
     schedulerVersion: string
@@ -58,6 +72,7 @@ export interface PracticeAttempt {
 export interface WordProgress {
   itemId: string
   language: string
+  exercise: Exercise
   attempts: number
   correct: number
   lastPracticedAt: number
