@@ -31,7 +31,7 @@ async function savedAttempts(page: Page) {
   return page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open('kikimashta-v0', 1); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
     try {
-      return await new Promise<{itemId:string; id:string;context?:{phase:string;recordingSrc:string;replays:number;retryOf?:string};correct:boolean;choiceIds:string[]}[]>((resolve, reject) => { const request = db.transaction('attempts').objectStore('attempts').getAll(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
+      return await new Promise<{itemId:string; id:string;context?:{phase:string;exercise:string;recordingSrc:string;replays:number;retryOf?:string};correct:boolean;choiceIds:string[]}[]>((resolve, reject) => { const request = db.transaction('attempts').objectStore('attempts').getAll(); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
     } finally { db.close(); }
   });
 }
@@ -228,7 +228,7 @@ async function checkMobilePracticeSizes(page: Page, pictureSelector: string, nam
 }
 
 async function heardWord(page: Page) {
-  await expect(page.getByRole('button', { name: /choose picture/i }).first()).toBeEnabled();
+  await expect(page.getByRole('button', { name: /choose (picture|writing)/i }).first()).toBeEnabled();
   for (const image of await page.locator('img').all()) {
     await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   }
@@ -241,18 +241,21 @@ async function heardWord(page: Page) {
   const source = await audio.getAttribute('src');
   const target = allWords.find(item => item.audio.some(recording => source?.endsWith(recording.src)));
   expect(target, 'the current recording belongs to the word bank').toBeDefined();
-  return { source: source!, target: target! };
+  const exercise = (await page.locator('.quiz').getAttribute('data-exercise'))!;
+  return { source: source!, target: target!, exercise, cardId: JSON.stringify([target!.language, target!.id, exercise]) };
 }
 
-async function chooseHeardPicture(page: Page, target: WordItem) {
+async function chooseHeardAnswer(page: Page, target: WordItem) {
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
   // Session journeys keep native playback and real storage, but skip the answer
   // beat. Detailed motion and the ordinary timer are checked in a focused test.
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   try {
-    await page.getByRole('button', { name: /choose picture/i }).filter({
-      has: page.getByRole('img', { name: target.image.alt, exact: true }),
-    }).click();
+    const exercise = await page.locator('.quiz').getAttribute('data-exercise');
+    const choice = exercise === 'audio-text'
+      ? page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true })
+      : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) });
+    await choice.click();
     await expect(page.locator('.feedback')).toHaveText('Got it!');
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
     await expect(page.getByRole('alert')).toHaveCount(0);
@@ -346,7 +349,7 @@ test('correct feedback finishes its animation, preserves layout, and advances to
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
 });
 
-test('learn ten words, complete the mini-quiz, and retain lesson results after reload', async ({ page }, testInfo) => {
+test('learn mixed picture and writing cards, complete their quiz, and retain both after reload', async ({ page }, testInfo) => {
   test.setTimeout(90_000);
   await page.clock.install();
   await page.goto('./');
@@ -358,25 +361,45 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
   await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
   await expect.poll(() => backgroundColor(page)).not.toBe(homeColor);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'adaptive-lesson');
-  const introduced: WordItem[] = [];
+  const introduced: { item: WordItem; exercise: string }[] = [];
   for (let i = 0; i < 10; i++) {
-    const picture = page.locator('.preview-picture img');
-    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
-    const src = await picture.getAttribute('src');
-    introduced.push(allWords.find(item => src?.endsWith(item.image.src))!);
-    await page.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next word/i }).click();
+    const source = await page.locator('audio').getAttribute('src');
+    const item = allWords.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+    const exercise = (await page.locator('.preview').getAttribute('data-exercise'))!;
+    introduced.push({ item, exercise });
+    if (exercise === 'audio-picture') {
+      const picture = page.locator('.preview-picture img');
+      await expect(picture).toHaveAttribute('alt', item.image.alt);
+      await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    } else {
+      await expect(page.locator('.preview-picture img')).toHaveCount(0);
+      await expect(page.locator('.preview-picture')).toHaveText(item.text);
+    }
+    await page.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }).click();
   }
-  expect(new Set(introduced.map(item => item.id)).size).toBe(10);
+  const introducedIds = introduced.map(card => JSON.stringify([card.item.language, card.item.id, card.exercise]));
+  expect(new Set(introducedIds).size).toBe(10);
+  expect(introduced.filter(card => card.exercise === 'audio-text')).toHaveLength(5);
+  expect(introduced.filter(card => card.exercise === 'audio-picture')).toHaveLength(5);
   if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.choices', 'adaptive-quiz');
   const seen = new Set<string>();
   for (let i = 0; i < 10; i++) {
-    await expect(page.getByRole('button', { name: /choose picture/i })).toHaveCount(4);
+    await expect(page.getByRole('button', { name: /choose (picture|writing)/i })).toHaveCount(4);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
-    const { target } = await heardWord(page);
-    expect(introduced.some(item => item.id === target.id)).toBe(true);
-    expect(seen.has(target.id)).toBe(false); seen.add(target.id);
-    await chooseHeardPicture(page, target);
+    const { target, exercise, cardId } = await heardWord(page);
+    expect(introducedIds).toContain(cardId);
+    expect(seen.has(cardId)).toBe(false); seen.add(cardId);
+    await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
+    if (exercise === 'audio-text') {
+      const writingFits = await page.locator('.choices .written-answer').evaluateAll(labels => labels.every(label => {
+        const box = label.getBoundingClientRect();
+        const card = label.parentElement!.getBoundingClientRect();
+        return box.left >= card.left && box.right <= card.right && box.top >= card.top && box.bottom <= card.bottom;
+      }));
+      expect(writingFits, 'written options fit their cards').toBe(true);
+    }
+    await chooseHeardAnswer(page, target);
   }
   await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
   await captureScreen(page, 'adaptive-chunk-end-' + testInfo.project.name);
@@ -385,7 +408,7 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
   await page.reload();
   await expect(page.getByText('10 answers saved on this device')).toBeVisible();
   const saved = await savedAttempts(page);
-  expect(saved.map(item => item.itemId).sort()).toEqual(introduced.map(item => item.id).sort());
+  expect(saved.map(attempt => JSON.stringify([bank.language, attempt.itemId, attempt.context?.exercise])).sort()).toEqual(introducedIds.sort());
   expect(saved.every(item => item.correct && item.context?.phase === 'lesson' && item.context.recordingSrc && item.choiceIds.length === 4)).toBe(true);
   const minimum = page.getByRole('listbox', { name: 'Minimum', exact: true });
   const maximum = page.getByRole('listbox', { name: 'Maximum', exact: true });
@@ -400,6 +423,60 @@ test('learn ten words, complete the mini-quiz, and retain lesson results after r
     await expect(selected).toHaveAttribute('aria-selected', 'true');
     await expect(wheel).toHaveAttribute('aria-activedescendant', (await selected.getAttribute('id'))!);
   }
+});
+
+test('reviews both saved formats of one word and preserves a writing retry after reload', async ({ page }) => {
+  await page.clock.install();
+  await page.goto('./');
+  await addLegacy(page, [bank.items[0]!.id]);
+  await page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+    });
+    const tx = db.transaction('attempts', 'readwrite');
+    const request = tx.objectStore('attempts').getAll();
+    request.onsuccess = () => {
+      const original = request.result[0];
+      tx.objectStore('attempts').add({ ...original, id: 'saved-writing', context: {
+        phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/fixture.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1',
+      } });
+    };
+    await new Promise<void>((resolve, reject) => { tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error); });
+    db.close();
+  });
+  await page.reload();
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: /begin review/i }).click();
+  const completed = new Set<string>();
+  let writingMissed = false;
+  for (let turn = 0; turn < 3; turn++) {
+    const { target, exercise, cardId } = await heardWord(page);
+    expect(target.id).toBe(bank.items[0]!.id);
+    expect(completed.has(cardId)).toBe(false);
+    await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
+    if (exercise === 'audio-text' && !writingMissed) {
+      writingMissed = true;
+      await page.getByRole('button', { name: /choose writing/i }).filter({ hasNot: page.getByText(target.text, { exact: true }) }).first().click();
+      await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    } else {
+      await chooseHeardAnswer(page, target);
+      completed.add(cardId);
+    }
+  }
+  expect(completed.size).toBe(2);
+  await expect(page.getByRole('heading', { name: /nice reviewing/i })).toBeVisible();
+  const saved = await savedAttempts(page);
+  expect(saved).toHaveLength(5);
+  const miss = saved.find(attempt => attempt.context?.exercise === 'audio-text' && !attempt.correct)!;
+  expect(miss).toBeDefined();
+  expect(saved.find(attempt => attempt.context?.retryOf === miss.id)).toMatchObject({
+    itemId: miss.itemId, correct: true, context: { exercise: 'audio-text', phase: 'review' },
+  });
+  await page.reload();
+  expect(await savedAttempts(page)).toEqual(saved);
+  await expect(page.getByText('5 answers saved on this device')).toBeVisible();
 });
 
 test('pace controls use browser scrolling, keep valid bounds, and fit around Kiku on a phone', async ({ page }, testInfo) => {
@@ -555,7 +632,7 @@ test('pace wheels glide back from unavailable choices and respect reduced motion
   await expect(minimum).not.toHaveAttribute('data-rebounding');
 });
 
-test('Dev review practices six random words and a missed-word retry without saving progress', async ({ page }) => {
+test('Dev review practices six random cards and a missed-word retry without saving progress', async ({ page }) => {
   test.setTimeout(90_000);
   await page.clock.install();
   await page.goto('./');
@@ -566,15 +643,15 @@ test('Dev review practices six random words and a missed-word retry without savi
   const presented: string[] = [];
   let missedId = '';
   for (let turn = 0; turn < 7 && completed.size < 6; turn++) {
-    const { target } = await heardWord(page);
+    const { target, exercise, cardId } = await heardWord(page);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
-    expect(completed.has(target.id), 'correct targets are unique within the dev round').toBe(false);
-    presented.push(target.id);
+    expect(completed.has(cardId), 'correct targets are unique within the dev round').toBe(false);
+    presented.push(cardId);
     if (turn === 0) {
-      missedId = target.id;
-      await page.getByRole('button', { name: /choose picture/i }).filter({
-        hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
+      missedId = cardId;
+      await page.getByRole('button', { name: /choose (picture|writing)/i }).filter({
+        hasNot: exercise === 'audio-picture' ? page.getByRole('img', { name: target.image.alt, exact: true }) : page.getByText(target.text, { exact: true }),
       }).first().click();
       await expect(page.locator('.feedback')).toHaveText('Try this one.');
       await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
@@ -583,8 +660,8 @@ test('Dev review practices six random words and a missed-word retry without savi
       await expect(mistakes.locator('.mistake-icon')).toHaveCount(1);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
-      await chooseHeardPicture(page, target);
-      completed.add(target.id);
+      await chooseHeardAnswer(page, target);
+      completed.add(cardId);
     }
     if (completed.size < 6) await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toHaveCount(0);
   }
@@ -642,7 +719,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
       await expect(mistakes.locator('.mistake-icon')).toHaveCount(misses);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
-      await chooseHeardPicture(page, target);
+      await chooseHeardAnswer(page, target);
       completed.add(target.id);
     }
     if (completed.size < 6) await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toHaveCount(0);
@@ -668,7 +745,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   expect(retries.filter(item => item.correct)).toHaveLength(1);
   expect(reviews.filter(item => !item.context?.retryOf).map(item => item.itemId).sort()).toEqual(bank.items.map(item => item.id).sort());
   await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('1 word', { exact: true })).toBeVisible();
+  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
   expect((await heardWord(page)).target.id).toBe(laterWord.id);
 });
@@ -812,7 +889,7 @@ test('an unavailable recording can be retried without recording a premature answ
   await page.unroute(audioRequests);
   await page.getByRole('button', { name: /replay word/i }).click();
   await expect(page.getByRole('alert')).toHaveCount(0);
-  await chooseHeardPicture(page, (await heardWord(page)).target);
+  await chooseHeardAnswer(page, (await heardWord(page)).target);
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
   await expect(page.getByText('7 answers saved on this device')).toBeVisible();
