@@ -42,6 +42,12 @@ Adaptive practice is playable and accepted. The 441-card review library is avail
 3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
 4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
 
+### Audio-to-writing cards (#99)
+
+Add a separately scheduled audio-to-writing card for each eligible vocabulary item, reusing its authored Japanese text and existing recordings. Shuffle picture and writing cards together in lesson previews, lesson mini-quizzes, due reviews, and dev review. Each question offers only pictures or only writing. Preserve playback, feedback, retries, and summaries.
+
+Keep card identity specific to language, vocabulary item, and exercise. Existing attempts remain picture-card history. Forecast workload and admit lessons per card; a learned picture card does not exclude its new writing card. Preserve both exercise types through local persistence and account sync. Test mixed lessons/reviews, distinct unambiguous written options, independent schedules, legacy history, retries, and browser persistence.
+
 ### Current milestone: progress sync
 
 Add optional Supabase email sign-in and sync practice history and card notes across devices. Save locally first, retry interrupted sync, and prevent duplicate attempts. Keep each account's data separate; offer an explicit copy of existing local progress into the signed-in account. Preserve local-only practice and the unsaved dev review. Keep the account controls small and the active quiz unchanged by incoming sync.
