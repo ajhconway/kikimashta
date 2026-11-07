@@ -8,5 +8,11 @@
     "sourcePath": "/Users/ajhconway/Documents/kikimashta/Kikimashta Japanese Listening Cat.png",
     "sourceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
     "role": "User-selected style reference for batch 02 regeneration; do not copy its branding or motifs."
+  },
+  "kiku-character-reference.png": {
+    "sourcePath": "/private/tmp/kikimashta-cards-05-06/public/brand/kikimashta-cat-v1.png",
+    "repositoryPath": "public/brand/kikimashta-cat-v1.png",
+    "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+    "role": "Established app mascot identity and style reference, explicitly requested as generic spatial/size subject. Preserve purple headphones, golden fur and character proportions; exclude logo/scenery."
   }
 }

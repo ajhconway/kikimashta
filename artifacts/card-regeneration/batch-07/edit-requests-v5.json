@@ -1,0 +1,22 @@
+{
+  "issue": 72,
+  "round": 4,
+  "tool": "built-in image_gen",
+  "requests": [
+    {
+      "number": 66,
+      "target": "artifacts/card-regeneration/batch-07/66-revision-v4.png",
+      "output": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+      "prompt": "Use case: precise-object-edit. Redesign the provided square vocabulary card to show Kiku UNDER A CHAIR in one physically grounded scene. Remove the separate cardboard box entirely. Show ONE simple ordinary wooden dining CHAIR with a seat, backrest and four plausible short legs. Chair design: warm light honey/tan wood, a simple rounded rectangular slatted backrest, broad flat seat with a restrained lavender seat pad, sturdy straight legs, bold deep-violet contours and gentle cartoon shading. Near-front view with a slight three-quarter angle so the seat and legs are readable. Kiku is SMALL and crouched directly UNDER THE CHAIR SEAT, between the legs, paws on the same implied baseline as the chair feet. The seat is visibly OVER Kiku's head; the two front chair legs flank the cat. Kiku's full smiling face, headphones, ears, paws and curled tail should remain recognizable. The seat may slightly overlap the topmost headphone arch if needed; keep realistic chair proportions and sufficient low clearance for the compact cat. No hovering furniture, no large disconnected white gap. Preserve Kiku's recognizable mascot identity from the input: compact golden-yellow cat with pink inner ears, lavender over-ear headphones, closed smiling eyes, violet whiskers/nose/mouth, rounded forepaws and curved golden tail. Four short straight violet attention lines beside Kiku's body emphasize the CAT within the opening beneath the chair, separated from contours. These are emphasis ticks, not headphone sound waves. Pure opaque WHITE background, square1:1 canvas, whole chair and cat entirely visible within generous white margins, scene about75–80% of canvas height, legible at145px. No room, floor stripe, cast shadow, floating objects, cloud, box, arrow, text, logo or enclosing frame.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-b7ac2761-4da0-495c-905d-6f76738168db.png"
+    },
+    {
+      "number": 70,
+      "target": "artifacts/card-regeneration/batch-07/66-revision-v5.png",
+      "previousSelection": "artifacts/card-regeneration/batch-07/70-revision-v4.png",
+      "output": "artifacts/card-regeneration/batch-07/70-revision-v5.png",
+      "prompt": "Use case: precise-object-edit. Create the companion ON TOP OF A CHAIR vocabulary illustration by editing this supplied UNDER THE CHAIR picture. Keep EXACTLY THE SAME chair: same rounded golden/honey wooden backrest with vertical slats, lavender seat pad, golden frame and four straight legs, near-front gentle three-quarter view, bold violet outlines and restrained soft cartoon shading. Keep its size and placement in the square as close as possible. Move the ONE Kiku from beneath the seat to SITTING DIRECTLY ON TOP OF THE LAVENDER SEAT. His paws, lower body and tail visibly rest on the seat pad and are supported by it, with no white gap. Kiku sits in FRONT of the chair backrest so the back slats continue behind his head. Keep the same compact golden-yellow mascot, lavender headphones, pink ears, closed smiling eyes, whiskers, two rounded paws and curled tail; retain approximately his current scale relative to the chair. Move the short straight violet attention lines WITH Kiku, arranging two on each side of his body above the seat to emphasize the cat. REMOVE Kiku and ALL attention marks from underneath the chair; that opening between legs is now empty white. Exactly ONE cat, ONE chair. Entire chair and Kiku visible, comfortable outer margins. Preserve square1:1 canvas and pure opaque WHITE background. Clear physical contact with seat is essential: cat ON the seat, not floating above the chair and not on top of its backrest. No floor stripe, room, shadow, extra objects, box, cloud, arrow, words, logo, watermark or enclosing frame.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-98962e2c-8ce0-4b74-a4c7-1c0cd2c8aec8.png"
+    }
+  ]
+}

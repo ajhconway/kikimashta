@@ -273,6 +273,10 @@ def prepare():
         for family in feedback.get('designFamilies', {}).values():
             if item_id in family['memberIds'] and 'replaceComponents' in family:
                 item['components'] = family['replaceComponents']
+            if item_id in family['memberIds']:
+                item['components'] = list(dict.fromkeys(
+                    [name for name in item['components'] if name not in family.get('removeComponents', [])]
+                    + family.get('addComponents', [])))
         item['artworkStatus'] = artwork.get(item_id, {}).get('status', 'not-generated')
         if item_id in feedback.get('acceptedWithKnownIssues', {}):
             item['outstandingFeedback'] = feedback['acceptedWithKnownIssues'][item_id]
@@ -292,6 +296,9 @@ def prepare():
             item['prompt'] += '\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.'
         if item['componentGuidance']:
             item['prompt'] += '\nUser feedback for shared designs (takes priority over obsolete appearance descriptions; retain the intended subject and action):\n' + '\n'.join(item['componentGuidance'].values())
+        for family in feedback.get('designFamilies', {}).values():
+            if item_id in family['memberIds']:
+                item['prompt'] += '\nShared design convention: ' + family['guidance']
         item['prompt'] += '\n' + BACKGROUND_POLICY
         cards.append(item)
 
@@ -355,7 +362,8 @@ def prepare():
             edges.append({'from': parent, 'to': node})
     for family_name, family in feedback.get('designFamilies', {}).items():
         nodes.append({'id': 'family:' + family_name, 'kind': 'family', **family})
-        edges.append({'from': 'card:' + family['seedCard'], 'to': 'family:' + family_name})
+        origin = 'card:' + family['seedCard'] if family.get('seedCard') else family.get('styleNode', 'style')
+        edges.append({'from': origin, 'to': 'family:' + family_name})
     graph = {'issue': 72, 'edgeMeaning': 'from must be specified/generated before to; only approved artwork may become a downstream reference', 'nodes': nodes, 'edges': edges, 'referencePolicy': 'Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene.'}
     write('graph.json', graph)
     # Deterministic order prefers simple scenes and families whose seeds are ready.
