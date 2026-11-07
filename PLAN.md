@@ -72,3 +72,7 @@ Spacing and retrieval practice have research support; our density controller and
 Implementation proceeds through scheduling/history, workload forecasting, then the session interface. Keep forecast assumptions, density thresholds, and new-word selection explicit and adjustable.
 
 Keep only the next milestone detailed in GitHub. Later stages remain flexible, with no fixed dates. Keep *k*, word counts, session length, visual details, and the learning algorithm adjustable.
+
+## Writing font variation (#101)
+
+Use Noto Sans JP, Noto Serif JP, and Klee One for writing. Rotate through the pool on later presentations of each language/item, including previews and corrective retries; all choices in a question use one stable font through replay and feedback. Keep existing card sizing and shared progress. Self-host the reviewed fonts with licenses and glyph coverage records. Store only a small local appearance preference to carry rotation across visits; unavailable storage never blocks practice. Zen Maru Gothic remains an optional future addition.
