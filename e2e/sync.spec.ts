@@ -1,4 +1,4 @@
-import { expect, test, type BrowserContext, type Page } from '@playwright/test';
+import { expect, test, silenceMedia, type BrowserContext, type Page } from './fixtures';
 import bank from '../content/ja.json' with { type: 'json' };
 import type { PracticeAttempt } from '../src/types';
 
@@ -115,7 +115,7 @@ test('email sign-in is optional and its dialog supports keyboard dismissal', asy
   await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
 });
 
-test('accounts converge across browser storage, retry offline answers, and sync note deletion', async ({ page, context, browser }, info) => {
+test('accounts converge across browser storage, retry offline answers, and sync note deletion', async ({ page, context, browser, quietAudio }, info) => {
   test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');
   test.setTimeout(60_000);
   const remote = cloud();
@@ -150,6 +150,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
 
   const second = await browser.newContext({ baseURL: new URL(page.url()).origin, viewport: info.project.use.viewport });
   try {
+    if (quietAudio) await silenceMedia(second);
     await remote.connect(second);
     const other = await second.newPage();
     await other.goto('./'); await signIn(other);

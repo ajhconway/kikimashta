@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 import bank from '../content/ja.json' with { type: 'json' };
 import type { WordItem } from '../src/types';

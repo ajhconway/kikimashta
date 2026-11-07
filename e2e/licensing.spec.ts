@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('the app provides its license, corresponding source, and separate notices', async ({ page }) => {
   await page.goto('./');
