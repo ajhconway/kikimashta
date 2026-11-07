@@ -48,6 +48,8 @@ Add a separately scheduled audio-to-writing card for each eligible vocabulary it
 
 Keep card identity specific to language, vocabulary item, and exercise. Existing attempts remain picture-card history. Forecast workload and admit lessons per card; a learned picture card does not exclude its new writing card. Preserve both exercise types through local persistence and account sync. Test mixed lessons/reviews, distinct unambiguous written options, independent schedules, legacy history, retries, and browser persistence.
 
+Writing size scales with the number of displayed characters and the card dimensions: a single character is large, while longer kanji, hiragana, katakana, and mixed text get progressively smaller. Apply this consistently in previews, choices, and feedback. Font selection is a separate follow-up after this PR.
+
 ### Current milestone: progress sync
 
 Add optional Supabase email sign-in and sync practice history and card notes across devices. Save locally first, retry interrupted sync, and prevent duplicate attempts. Keep each account's data separate; offer an explicit copy of existing local progress into the signed-in account. Preserve local-only practice and the unsaved dev review. Keep the account controls small and the active quiz unchanged by incoming sync.
