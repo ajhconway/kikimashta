@@ -1,0 +1,30 @@
+{
+  "issue": 72,
+  "tool": "built-in image_gen",
+  "edits": [
+    {
+      "number": 97,
+      "target": "artifacts/card-regeneration/batch-08/97-moon.png",
+      "output": "artifacts/card-regeneration/batch-08/97-moon-v2.png",
+      "reason": "Remove unwanted outer glow and alpha fringe.",
+      "prompt": "Use case: background-extraction. Clean up the supplied full-moon vocabulary artwork while preserving the moon disc itself. Keep the large pale-gold circular full moon, its dark-violet circular outline and subtle broad lavender crater patches. REMOVE ALL exterior glow, airbrushed haze, white mist, colored pixel noise, shadow and halo OUTSIDE the moon's violet outline. Every area outside that clean circular silhouette must be fully transparent alpha0, with only a narrow clean antialiased contour edge. This is a crisp isolated cartoon cutout with a hard outer silhouette, NOT a luminous glowing object. Preserve opaque colors inside the outlined moon. Keep centered circular moon with generous margins in square1:1canvas. No stars, sun rays, scenery, black/white backdrop, checkerboard, words, logos or new elements. The supplied background artifacts must not remain.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a036deed-5c7b-4518-a7ed-c42d565578c6.png"
+    },
+    {
+      "number": 95,
+      "target": "artifacts/card-regeneration/batch-08/95-moonlight.png",
+      "output": "artifacts/card-regeneration/batch-08/95-moonlight-v2.png",
+      "reason": "Remove exterior glow/artifacts and unrequested clouds; keep clear moonlight teaching cue.",
+      "prompt": "Use case: precise-object-edit. Clean and simplify the supplied MOONLIGHT vocabulary illustration. Retain the pale gold full moon in upper-left, the diagonal light beam going down to the blue water oval in lower-right, and three pale horizontal reflection streaks on the water. REMOVE BOTH CLOUDS entirely. Remove every exterior airbrush glow, haze, mist, white fog, colored pixel noise and halo outside the actual moon/beam/water shapes. Redraw the LIGHT BEAM as a clean simple broad trapezoid of SOLID PALE YELLOW-LAVENDER fill with a thin muted lavender edge, widening downward from the moon to water, no feathered or smoky edge, no gradients outside silhouette. It is a calm cartoon diagram of moonlight, not a luminous photographic effect. Keep crisp violet contours around the gold moon and blue water oval, gentle restrained cartoon tones INSIDE shapes. Every area outside the three clean silhouettes is fully transparent alpha0; only narrow ordinary antialiasing at the contour edges. Preserve opaque filled moon, beam and water. No glow bloom, shadow, rectangular background, checkerboard, cloud, stars, extra objects, text or labels. Square1:1canvas, subjects fully visible within generous transparent margins.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-5fc6289e-ff58-4038-8c7f-9571d58108f2.png"
+    },
+    {
+      "number": 108,
+      "target": "artifacts/card-regeneration/batch-08/108-year-2011.png",
+      "output": "artifacts/card-regeneration/batch-08/108-year-2011-v2.png",
+      "reason": "Remove unrequested decorative flowers from year-calendar page.",
+      "prompt": "Use case: precise-object-edit. Edit this year2011 calendar with ONE CHANGE ONLY: remove both pink flower decorations and their loose pink petals on either side of the2011header. Replace those decoration areas with plain opaque WHITE calendar paper matching the surrounding page. Keep the exact correct large2011numeral, all TWELVE month panels in3columns by4rows, every grid, lavender outlines, golden binding bar, two violet rings, the shape/scale/placement and gentle cartoon shading unchanged. The paper must remain opaque WHITE; do not punch transparent holes inside the page. Keep the OUTSIDE of the calendar genuinely transparent with a clean edge, no white canvas rectangle or glow. No additional decorations, new text, captions or extra numbers. Square1:1canvas with full calendar and generous margins.",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a421a0eb-36fd-4d61-8961-94ca66a49e6a.png"
+    }
+  ]
+}

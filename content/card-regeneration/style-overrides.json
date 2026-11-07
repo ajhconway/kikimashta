@@ -128,7 +128,30 @@
     "ja-v-f0588b6224d0": "cat-png",
     "ja-v-96a032e15dda": "cat-png",
     "ja-v-823616f3288f": "cat-png",
-    "ja-v-190aae33ad24": "cat-png"
+    "ja-v-190aae33ad24": "cat-png",
+    "ja-v-9910372c1964": "cat-png",
+    "ja-v-0ac038632611": "cat-png",
+    "ja-v-0c144e18f1b2": "cat-png",
+    "ja-v-d242b38667c8": "cat-png",
+    "ja-v-497356cf0646": "cat-png",
+    "ja-v-6e098e54aa63": "cat-png",
+    "ja-v-2850b5703e8b": "cat-png",
+    "ja-v-2d7d45d5614e": "cat-png",
+    "ja-v-4aa5c84df90c": "cat-png",
+    "ja-v-e0bb1d02fee0": "cat-png",
+    "ja-v-f3881ce313e7": "cat-png",
+    "ja-v-698044202165": "cat-png",
+    "ja-v-a5d390dc4805": "cat-png",
+    "ja-v-d10df0e56846": "cat-png",
+    "ja-v-dbe24910365e": "cat-png",
+    "ja-v-fa6a4c8f27b4": "cat-png",
+    "ja-v-eba7f0968101": "cat-png",
+    "ja-v-f5b4250aeb03": "cat-png",
+    "ja-v-e05b8e36c6ca": "cat-png",
+    "ja-v-ac1e4f6bee13": "cat-png",
+    "ja-v-1a43c96593cb": "cat-png",
+    "ja-v-08e3c50181be": "cat-png",
+    "ja-v-13ea3220cde0": "cat-png"
   },
   "request": "Regenerate all ten batch 02 cards from scratch using the cat PNG in the project root. Keep earlier variants for comparison. Await feedback before applying this style to other batches.",
   "history": [
@@ -156,6 +179,11 @@
       "scope": "batch-03",
       "request": "Approved, let's move to batch 3",
       "handling": "Continue the approved cat-reference style and white backgrounds for cards 21–30."
+    },
+    {
+      "scope": "batch-08",
+      "request": "Continue next25 after batch07approval. Apply current main transparency policy and established cat-reference illustration language.",
+      "handling": "Use true alpha outside subject silhouette; preserve opaque white clouds, book/calendar pages, washer cabinets and number patches. Keep approved historical PNGs unchanged."
     }
   ]
 }

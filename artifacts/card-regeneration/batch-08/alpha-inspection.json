@@ -1,0 +1,380 @@
+{
+  "tool": "Installed Chrome canvas inspection",
+  "assets": [
+    {
+      "src": "86-four.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 679383,
+      "opaque": 882672,
+      "semi": 10461,
+      "opaqueWhitePixels": 138300,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "87-sixteen.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 701212,
+      "opaque": 860587,
+      "semi": 10717,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "88-university.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 760343,
+      "opaque": 796825,
+      "semi": 15348,
+      "opaqueWhitePixels": 4274,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "89-book.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 813882,
+      "opaque": 747686,
+      "semi": 10948,
+      "opaqueWhitePixels": 245204,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "90-notebook.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 753769,
+      "opaque": 804207,
+      "semi": 14540,
+      "opaqueWhitePixels": 193,
+      "corners": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "src": "91-money.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 743768,
+      "opaque": 816158,
+      "semi": 12590,
+      "opaqueWhitePixels": 153,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "92-teacher.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 859232,
+      "opaque": 686835,
+      "semi": 26449,
+      "opaqueWhitePixels": 1347,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "93-body.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1177416,
+      "opaque": 378763,
+      "semi": 16337,
+      "opaqueWhitePixels": 2441,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "94-weather.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 941863,
+      "opaque": 607717,
+      "semi": 22936,
+      "opaqueWhitePixels": 151991,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "95-moonlight-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1234052,
+      "opaque": 326892,
+      "semi": 11572,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "96-crescent-moon-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1317829,
+      "opaque": 244267,
+      "semi": 10420,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "97-moon-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1207479,
+      "opaque": 354592,
+      "semi": 10445,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "98-sun.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1001797,
+      "opaque": 546616,
+      "semi": 24103,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "99-forest.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 893375,
+      "opaque": 660713,
+      "semi": 18428,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "100-tree.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 857826,
+      "opaque": 701061,
+      "semi": 13629,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "101-caterpillar.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1020447,
+      "opaque": 526522,
+      "semi": 25547,
+      "opaqueWhitePixels": 408,
+      "corners": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "src": "102-bamboo.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1210803,
+      "opaque": 329992,
+      "semi": 31721,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "103-flower.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1004953,
+      "opaque": 551331,
+      "semi": 16232,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "104-one-machine.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 589349,
+      "opaque": 970196,
+      "semi": 12971,
+      "opaqueWhitePixels": 20298,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "105-two-machines.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 814814,
+      "opaque": 742910,
+      "semi": 14792,
+      "opaqueWhitePixels": 8499,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "106-thread.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1102149,
+      "opaque": 455647,
+      "semi": 14720,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "107-wool-yarn.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 864810,
+      "opaque": 687929,
+      "semi": 19777,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "108-year-2011-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 476116,
+      "opaque": 1082142,
+      "semi": 14258,
+      "opaqueWhitePixels": 487308,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "109-twentieth-day-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 400381,
+      "opaque": 1158221,
+      "semi": 13914,
+      "opaqueWhitePixels": 455051,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "110-fourth-day-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 394546,
+      "opaque": 1149942,
+      "semi": 28028,
+      "opaqueWhitePixels": 583736,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}
