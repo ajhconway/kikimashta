@@ -716,8 +716,8 @@
       "meaning": "Mouth",
       "sourceLevel": 1,
       "image": {
-        "src": "../images/vocabulary/ja-v-9e64feeea5ea.svg",
-        "alt": "Mouth"
+        "src": "../images/approved/ja-v-9e64feeea5ea-5cb01f1fb407.jpg",
+        "alt": "An open smiling mouth with white teeth and a pink tongue."
       },
       "audio": [
         {
@@ -769,7 +769,7 @@
           "available": true
         }
       ],
-      "concept": "A smiling open mouth with teeth and tongue",
+      "concept": "An open smiling mouth with white teeth and a pink tongue.",
       "visualGroup": "口",
       "reviewRequired": false
     },
@@ -3424,8 +3424,8 @@
       "meaning": "Fire",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-cf58c5cf08d9.svg",
-        "alt": "Fire"
+        "src": "../images/approved/ja-v-cf58c5cf08d9-7bf35650d50a.jpg",
+        "alt": "An orange flame with a yellow center."
       },
       "audio": [
         {
@@ -3477,7 +3477,7 @@
           "available": true
         }
       ],
-      "concept": "A bright orange flame with yellow center",
+      "concept": "An orange flame with a yellow center.",
       "visualGroup": "火",
       "reviewRequired": false
     },
@@ -4134,8 +4134,8 @@
       "meaning": "Hotel",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-d5c177de5126.svg",
-        "alt": "Hotel"
+        "src": "../images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+        "alt": "A hotel building with a bed symbol above its entrance."
       },
       "audio": [
         {
@@ -4187,7 +4187,7 @@
           "available": true
         }
       ],
-      "concept": "A large lodging building with a bed symbol",
+      "concept": "A hotel building with a bed symbol above its entrance.",
       "visualGroup": "ホテル",
       "reviewRequired": false
     },
@@ -6910,8 +6910,8 @@
       "meaning": "Underwater",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-d0c9a070fa56.svg",
-        "alt": "Underwater"
+        "src": "../images/approved/ja-v-d0c9a070fa56-d08ad1f4f307.jpg",
+        "alt": "A house submerged beneath the water surface."
       },
       "audio": [
         {
@@ -6963,7 +6963,7 @@
           "available": true
         }
       ],
-      "concept": "A fish beneath a wavy water surface",
+      "concept": "A house submerged beneath the water surface.",
       "visualGroup": "水中",
       "reviewRequired": false
     },
@@ -8073,8 +8073,8 @@
       "meaning": "Coffee",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-9ff5251e6f21.svg",
-        "alt": "Coffee"
+        "src": "../images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+        "alt": "A golden mug filled with steaming coffee."
       },
       "audio": [
         {
@@ -8126,7 +8126,7 @@
           "available": true
         }
       ],
-      "concept": "A steaming coffee mug",
+      "concept": "A golden mug filled with steaming coffee.",
       "visualGroup": "coffee",
       "reviewRequired": false
     },
@@ -9302,8 +9302,8 @@
       "meaning": "Half",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-d605986c3af4.svg",
-        "alt": "Half"
+        "src": "../images/approved/ja-v-d605986c3af4-b9a1102d2978.jpg",
+        "alt": "A circle divided into equal halves, with the left half lavender and the right half white."
       },
       "audio": [
         {
@@ -9355,7 +9355,7 @@
           "available": true
         }
       ],
-      "concept": "A round orange divided into two equal halves",
+      "concept": "A circle divided into equal halves, with the left half lavender and the right half white.",
       "visualGroup": "half",
       "reviewRequired": false
     },
@@ -10209,8 +10209,8 @@
       "meaning": "Old",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-e5fd15d61360.svg",
-        "alt": "Old"
+        "src": "../images/approved/ja-v-e5fd15d61360-7a09b8179da1.jpg",
+        "alt": "An old rusty bicycle with flat tires, a bent wheel, a broken chain and a torn saddle."
       },
       "audio": [
         {
@@ -10262,7 +10262,7 @@
           "available": true
         }
       ],
-      "concept": "An aged chest with worn corners, crack and cobweb",
+      "concept": "An old rusty bicycle with flat tires, a bent wheel, a broken chain and a torn saddle.",
       "visualGroup": "old",
       "reviewRequired": false
     },
@@ -12532,8 +12532,8 @@
       "meaning": "Bamboo Shoot",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-c5425c81df8c.svg",
-        "alt": "Bamboo Shoot"
+        "src": "../images/approved/ja-v-c5425c81df8c-ef25e3eceb7b.jpg",
+        "alt": "A pointed bamboo shoot emerging from soil."
       },
       "audio": [
         {
@@ -12585,7 +12585,7 @@
           "available": true
         }
       ],
-      "concept": "A pointed layered bamboo shoot emerging from soil",
+      "concept": "A pointed bamboo shoot emerging from soil.",
       "visualGroup": "bamboo-shoot",
       "reviewRequired": false
     },
@@ -12726,8 +12726,8 @@
       "meaning": "Bug",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-a4e5df148631.svg",
-        "alt": "Bug"
+        "src": "../images/approved/ja-v-a4e5df148631-c84774347c61.jpg",
+        "alt": "A red ladybug with six legs and two antennae."
       },
       "audio": [
         {
@@ -12779,7 +12779,7 @@
           "available": true
         }
       ],
-      "concept": "A six-legged ladybug with antennae",
+      "concept": "A red ladybug with six legs and two antennae.",
       "visualGroup": "bug",
       "reviewRequired": false
     },
@@ -13178,8 +13178,8 @@
       "meaning": "Ear",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-dca5c9fc5908.svg",
-        "alt": "Ear"
+        "src": "../images/approved/ja-v-dca5c9fc5908-0039c5a352ff.jpg",
+        "alt": "A human ear."
       },
       "audio": [
         {
@@ -13231,7 +13231,7 @@
           "available": true
         }
       ],
-      "concept": "A large outlined ear",
+      "concept": "A human ear.",
       "visualGroup": "ear",
       "reviewRequired": false
     },
@@ -13502,8 +13502,8 @@
       "meaning": "Fireworks",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-b90f6c64551b.svg",
-        "alt": "Fireworks"
+        "src": "../images/approved/ja-v-b90f6c64551b-1a88be919163.jpg",
+        "alt": "Three colorful fireworks bursts."
       },
       "audio": [
         {
@@ -13555,7 +13555,7 @@
           "available": true
         }
       ],
-      "concept": "Three colorful bursts of fireworks",
+      "concept": "Three colorful fireworks bursts.",
       "visualGroup": "fireworks",
       "reviewRequired": false
     },
@@ -14596,8 +14596,8 @@
       "meaning": "Ice",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-d19a39e4af55.svg",
-        "alt": "Ice"
+        "src": "../images/approved/ja-v-d19a39e4af55-dbda97736640.jpg",
+        "alt": "Three blue ice cubes."
       },
       "audio": [
         {
@@ -14649,7 +14649,7 @@
           "available": true
         }
       ],
-      "concept": "Three translucent blue ice cubes",
+      "concept": "Three blue ice cubes.",
       "visualGroup": "ice",
       "reviewRequired": false
     },
@@ -16476,8 +16476,8 @@
       "meaning": "Red",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-a595b5ca5679.svg",
-        "alt": "Red"
+        "src": "../images/approved/ja-v-a595b5ca5679-8b08411a59b1.jpg",
+        "alt": "A red paint splash beside a paintbrush loaded with red paint."
       },
       "audio": [
         {
@@ -16529,7 +16529,7 @@
           "available": true
         }
       ],
-      "concept": "A vivid red paint puddle with a loaded paintbrush",
+      "concept": "A red paint splash beside a paintbrush loaded with red paint.",
       "visualGroup": "red",
       "reviewRequired": false
     },
@@ -19190,8 +19190,8 @@
       "meaning": "White",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-d67a7d3dacc9.svg",
-        "alt": "White"
+        "src": "../images/approved/ja-v-d67a7d3dacc9-2bdf00cae1f7.jpg",
+        "alt": "A white paint splash beside a brush loaded with white paint."
       },
       "audio": [
         {
@@ -19243,7 +19243,7 @@
           "available": true
         }
       ],
-      "concept": "White paint on a brush and white swatch against a purple palette",
+      "concept": "A white paint splash beside a brush loaded with white paint.",
       "visualGroup": "white",
       "reviewRequired": false
     },
@@ -24366,8 +24366,8 @@
       "meaning": "Parallel",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-cbb4297f3dd7.svg",
-        "alt": "Parallel"
+        "src": "../images/approved/ja-v-cbb4297f3dd7-3400d84d6117.jpg",
+        "alt": "Two lines receding from the foreground toward a shared point on the horizon."
       },
       "audio": [
         {
@@ -24419,7 +24419,7 @@
           "available": true
         }
       ],
-      "concept": "Two evenly separated lines remain parallel across the card.",
+      "concept": "Two lines receding from the foreground toward a shared point on the horizon.",
       "visualGroup": "平行",
       "reviewRequired": false
     },
@@ -24495,8 +24495,8 @@
       "meaning": "Pig",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-b1b10c2f6445.svg",
-        "alt": "Pig"
+        "src": "../images/approved/ja-v-b1b10c2f6445-9ec89058a0e3.jpg",
+        "alt": "A pink pig with four legs and a curled tail."
       },
       "audio": [
         {
@@ -24548,7 +24548,7 @@
           "available": true
         }
       ],
-      "concept": "Friendly pink pig with snout, ears, and curly tail.",
+      "concept": "A pink pig with four legs and a curled tail.",
       "visualGroup": "豚",
       "reviewRequired": false
     },
@@ -25206,8 +25206,8 @@
       "meaning": "Sky Blue",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d42b5be1c4ad.svg",
-        "alt": "Sky Blue"
+        "src": "../images/approved/ja-v-d42b5be1c4ad-8e784631ad2e.jpg",
+        "alt": "A sky-blue paint splash beside a brush loaded with sky-blue paint."
       },
       "audio": [
         {
@@ -25259,7 +25259,7 @@
           "available": true
         }
       ],
-      "concept": "Pale sky-blue paint drop and matching swatch.",
+      "concept": "A sky-blue paint splash beside a brush loaded with sky-blue paint.",
       "visualGroup": "sky-blue-color",
       "reviewRequired": false
     },
@@ -25270,8 +25270,8 @@
       "meaning": "Sound",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-b37750755344.svg",
-        "alt": "Sound"
+        "src": "../images/approved/ja-v-b37750755344-09dd43eae263.jpg",
+        "alt": "A golden bell ringing, with sound waves on either side."
       },
       "audio": [
         {
@@ -25323,7 +25323,7 @@
           "available": true
         }
       ],
-      "concept": "Bell rings with visible sound waves.",
+      "concept": "A golden bell ringing, with sound waves on either side.",
       "visualGroup": "sound",
       "reviewRequired": false
     },
@@ -27343,8 +27343,8 @@
       "meaning": "Triangle",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-ea952b83ac80.svg",
-        "alt": "Triangle"
+        "src": "../images/approved/ja-v-ea952b83ac80-2e0e52a610c6.jpg",
+        "alt": "A plain lavender triangle."
       },
       "audio": [
         {
@@ -27396,7 +27396,7 @@
           "available": true
         }
       ],
-      "concept": "A single clear triangle with its three corners emphasized.",
+      "concept": "A plain lavender triangle.",
       "visualGroup": "三角",
       "reviewRequired": false
     },
@@ -28055,8 +28055,8 @@
       "meaning": "Wheat",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d215c2071f47.svg",
-        "alt": "Wheat"
+        "src": "../images/approved/ja-v-d215c2071f47-553837e88940.jpg",
+        "alt": "Three golden ears of wheat on stalks."
       },
       "audio": [
         {
@@ -28108,7 +28108,7 @@
           "available": true
         }
       ],
-      "concept": "Golden wheat ears on tall stalks.",
+      "concept": "Three golden ears of wheat on stalks.",
       "visualGroup": "麦",
       "reviewRequired": false
     },

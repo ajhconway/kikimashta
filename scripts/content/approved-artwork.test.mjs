@@ -13,9 +13,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 40 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 40)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 40)
+test('all 60 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 60)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 60)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)

@@ -1,0 +1,30 @@
+{
+  "issue": 72,
+  "requests": [
+    {
+      "number": 51,
+      "source": "batch-06/51-underwater.png",
+      "prompt": "Replace the fish in the supplied UNDERWATER card with one simple small HOUSE fully submerged beneath the clearly visible wavy water surface. Keep the established soft cartoon shading, thick deep-violet contours and pure white outer background. House has warm golden walls, lavender pitched roof, one door and two windows; its entire roof is well BELOW the water surface with a generous visible blue-water gap above it. A few bubbles rise beside the house. Use a pale blue transparent water area surrounding and tinting the submerged house, ending softly within white margins. No fish, person, aquarium, text or extra objects. Make the UNDERWATER relationship the focus. One square composition readable at145px."
+    },
+    {
+      "number": 54,
+      "source": "batch-02/14-blue-cat-v3.png",
+      "prompt": "Create the SKY BLUE counterpart of the supplied approved BLUE color card. Preserve exactly the same splash-and-brush composition, shapes, placement, violet contour weight, soft shading, golden brush handle and lavender ferrule. Recolor ALL saturated blue PAINT in the splash, its few small droplets and brush tip to a clearly PALE SKY BLUE (#91D7ED). Keep the white background. No large standalone water drop, pot, palette, sky scene, text, extra props or shadows. One square card, fully visible with clean margins. Match the established color-card family."
+    },
+    {
+      "number": 57,
+      "source": "batch-02/14-blue-cat-v3.png",
+      "prompt": "Create the WHITE counterpart of the supplied approved BLUE color card. Preserve the same splash-and-brush composition, splash shape, few small splash droplets, brush placement, soft shading, golden brush handle, violet outlines and lavender ferrule. Change ALL blue PAINT to unmistakable WHITE paint, on splash and brush tip. Change the entire square card background to one uniform LIGHT PURPLE / pale lavender (#EEE5FA) so the white paint is clearly visible. Keep white paint dominant, not gray or cream; violet contour remains. No artist palette, pot, water drop, labels, words, shadows, scene or extra props. One square card. This requested lavender background overrides the usual white card backdrop."
+    },
+    {
+      "number": 59,
+      "source": "batch-06/59-old.png",
+      "prompt": "Replace the chest entirely with ONE clearly OLD RUSTY BICYCLE for the vocabulary OLD. Use supplied image as illustration style reference only: soft shading, warm colors, bold violet contours, plain white background. Full bicycle in readable side view with two round wheels, recognizable frame, pedals, handlebar and saddle. Faded muted lavender painted frame with several obvious orange-brown rust patches, worn saddle with a small tear, weathered dark tires and dulled metal. Keep mechanical geometry simple and plausible, sparse spokes. Age and wear should be apparent at145px. No treasure chest, cobweb, person, basket, background scene, text, numeral, watermark or extra props. Square, complete bicycle inside generous white margins."
+    },
+    {
+      "number": 60,
+      "source": "batch-06/60-triangle.png",
+      "prompt": "Simplify supplied TRIANGLE card. Remove all three round vertex dots and their circular outlines completely. Show ONLY one plain upright equilateral triangle, with exactly three straight sides, three clean simple corners, soft lavender fill and a uniform bold deep-violet outline. Preserve centered square composition, white background and established restrained soft color treatment. No circles, corner markers, extra shapes, text, labels, shadows or decorative elements. One simple triangle only."
+    }
+  ]
+}

@@ -2501,6 +2501,45 @@
       "referencePath": "artifacts/card-regeneration/batch-04/31-winter-v2.png",
       "status": "approved",
       "guidance": "Reuse identical forked deciduous tree at left, bench at right, oval land footprint and camera across winter/spring/summer/autumn. Change only foliage, weather and ground covering. Winter reference approved; other seasons are not yet in the current bank."
+    },
+    {
+      "id": "family:red-paint",
+      "kind": "family",
+      "seedCard": "ja-v-3144539c83d3",
+      "memberIds": [
+        "ja-v-3144539c83d3",
+        "ja-v-a595b5ca5679"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-03/22-red.png",
+      "status": "approved",
+      "guidance": "These entries teach the same red paint concept. Reuse approved red splash/brush artwork exactly, with no paint pot."
+    },
+    {
+      "id": "family:half-circle",
+      "kind": "family",
+      "seedCard": "ja-v-81e708aba22f",
+      "memberIds": [
+        "ja-v-81e708aba22f",
+        "ja-v-d605986c3af4"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/33-half-v3.png",
+      "status": "approved",
+      "guidance": "Reuse approved lavender half-circle for both half entries; same meaning and visual convention."
+    },
+    {
+      "id": "family:paint-colors",
+      "kind": "family",
+      "seedCard": "ja-v-10e568715d3a",
+      "memberIds": [
+        "ja-v-10e568715d3a",
+        "ja-v-3144539c83d3",
+        "ja-v-a595b5ca5679",
+        "ja-v-d42b5be1c4ad",
+        "ja-v-d67a7d3dacc9"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-02/14-blue-cat-v3.png",
+      "status": "approved",
+      "guidance": "Use approved splash-and-brush layout for named colors, recoloring paint only; golden handle, violet contours, no pot or palette. White paint uses white background; violet contours provide separation. Sky blue and white revisions approved."
     }
   ],
   "edges": [
@@ -2713,7 +2752,7 @@
       "to": "card:ja-v-ddd9dca106e2"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9e64feeea5ea"
     },
     {
@@ -3025,7 +3064,7 @@
       "to": "card:ja-v-61c516578fee"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-cf58c5cf08d9"
     },
     {
@@ -3121,7 +3160,7 @@
       "to": "card:ja-v-45b445caeb43"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d5c177de5126"
     },
     {
@@ -3465,7 +3504,7 @@
       "to": "card:ja-v-a5d390dc4805"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d0c9a070fa56"
     },
     {
@@ -3601,7 +3640,7 @@
       "to": "card:ja-v-887f569257fd"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9ff5251e6f21"
     },
     {
@@ -3745,7 +3784,11 @@
       "to": "card:ja-v-81e708aba22f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-d605986c3af4"
+    },
+    {
+      "from": "family:half-circle",
       "to": "card:ja-v-d605986c3af4"
     },
     {
@@ -3861,7 +3904,7 @@
       "to": "card:ja-v-77d63b3ebde3"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-e5fd15d61360"
     },
     {
@@ -4149,7 +4192,7 @@
       "to": "card:ja-v-dbe24910365e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-c5425c81df8c"
     },
     {
@@ -4169,7 +4212,7 @@
       "to": "card:ja-v-f8249679701c"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a4e5df148631"
     },
     {
@@ -4233,7 +4276,7 @@
       "to": "card:ja-v-7733c49a7e4b"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-dca5c9fc5908"
     },
     {
@@ -4269,7 +4312,7 @@
       "to": "card:ja-v-a98da0139f3a"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-b90f6c64551b"
     },
     {
@@ -4417,7 +4460,7 @@
       "to": "card:ja-v-96a032e15dda"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d19a39e4af55"
     },
     {
@@ -4625,7 +4668,19 @@
       "to": "card:ja-v-3144539c83d3"
     },
     {
-      "from": "style",
+      "from": "family:paint-colors",
+      "to": "card:ja-v-3144539c83d3"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-a595b5ca5679"
+    },
+    {
+      "from": "family:red-paint",
+      "to": "card:ja-v-a595b5ca5679"
+    },
+    {
+      "from": "family:paint-colors",
       "to": "card:ja-v-a595b5ca5679"
     },
     {
@@ -4989,7 +5044,11 @@
       "to": "card:ja-v-67d99c6ae58e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-d67a7d3dacc9"
+    },
+    {
+      "from": "family:paint-colors",
       "to": "card:ja-v-d67a7d3dacc9"
     },
     {
@@ -5625,7 +5684,7 @@
       "to": "card:ja-v-50579c22e90d"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-cbb4297f3dd7"
     },
     {
@@ -5637,7 +5696,7 @@
       "to": "card:ja-v-c244e16d1e60"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-b1b10c2f6445"
     },
     {
@@ -5709,11 +5768,15 @@
       "to": "card:ja-v-19bd7db9d5d0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d42b5be1c4ad"
     },
     {
-      "from": "style",
+      "from": "family:paint-colors",
+      "to": "card:ja-v-d42b5be1c4ad"
+    },
+    {
+      "from": "style:cat-png",
       "to": "card:ja-v-b37750755344"
     },
     {
@@ -5993,7 +6056,7 @@
       "to": "card:ja-v-fa26a112a479"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-ea952b83ac80"
     },
     {
@@ -6077,7 +6140,7 @@
       "to": "card:ja-v-d2a96c6d5f6a"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-d215c2071f47"
     },
     {
@@ -6171,6 +6234,18 @@
     {
       "from": "card:ja-v-7c4d1abbdd61",
       "to": "family:seasonal-park"
+    },
+    {
+      "from": "card:ja-v-3144539c83d3",
+      "to": "family:red-paint"
+    },
+    {
+      "from": "card:ja-v-81e708aba22f",
+      "to": "family:half-circle"
+    },
+    {
+      "from": "card:ja-v-10e568715d3a",
+      "to": "family:paint-colors"
     }
   ],
   "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."
