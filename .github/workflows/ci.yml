@@ -33,6 +33,7 @@ jobs:
           psql -h localhost -U postgres -d kikimashta -v ON_ERROR_STOP=1
           -f supabase/tests/bootstrap.sql
           -f supabase/migrations/202611060001_sync.sql
+          -f supabase/migrations/20261107032200_audio_text_attempts.sql
           -f supabase/tests/sync.sql
 
   checks:
