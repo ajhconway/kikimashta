@@ -2,6 +2,7 @@ import 'fake-indexeddb/auto';
 import { deleteDB } from 'idb';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { PracticeAttempt } from '../types';
+import { advanceSchedule, deriveSchedules } from '../core/scheduler';
 import { ProgressStore } from '../progress/store';
 import type { NoteEvent, SyncLocal, SyncRemote } from './types';
 import { synchronize, validateAttempt, validateNote } from './engine';
@@ -48,6 +49,36 @@ afterEach(async () => {
 });
 
 describe('account-bound synchronization', () => {
+  it('preserves timed partial successes through upload, download, and IndexedDB reopen', async () => {
+    const f = fixture();
+    const partial = attempt('partial', { outcome: 'partial', timer: { limitMs: 3000, startedAt: 1100 },
+      answeredAt: 4100, responseMs: 3100, context: { phase: 'review', exercise: 'audio-text',
+        recordingSrc: 'audio/cat.mp3', replays: 1, schedulerVersion: 'fsrs-6-v2' } });
+    merge(f.remoteAttempts, [partial]);
+    await synchronize(f.local, f.remote);
+    await f.store.close();
+    expect(await f.store.all()).toEqual([partial]);
+    const [schedule] = await deriveSchedules(await f.store.all(), 'ja-JP');
+    expect(schedule).toEqual(await advanceSchedule(undefined, partial));
+    expect(schedule!.dueAt).toBeLessThan((await advanceSchedule(undefined, { ...partial, outcome: 'success' })).dueAt);
+    await synchronize(f.local, f.remote);
+    expect([...f.remoteAttempts.values()]).toEqual([partial]);
+    expect(validateAttempt(attempt('old'))).not.toHaveProperty('outcome');
+  });
+
+  it('rejects inconsistent outcomes and invalid timer evidence at the sync boundary', () => {
+    for (const extra of [
+      { outcome: 'unknown' }, { outcome: 'failure' }, { outcome: 'partial' },
+      { correct: false, outcome: 'partial' },
+      { timer: { limitMs: 0, startedAt: 1000 } },
+      { timer: { limitMs: 3000, startedAt: 900 } },
+      { timer: { limitMs: 3000, startedAt: 1600 } },
+      { timer: { limitMs: 3000, startedAt: NaN } },
+      { outcome: 'partial', timer: { limitMs: 3000, startedAt: 1000 } },
+      { outcome: 'success', timer: { limitMs: 100, startedAt: 1000 } },
+    ]) expect(() => validateAttempt({ ...attempt('bad'), ...extra })).toThrow();
+  });
+
   it('preserves separate writing, picture, and legacy attempts for the same word across repeated syncs', async () => {
     const f = fixture();
     const legacy = attempt('legacy');

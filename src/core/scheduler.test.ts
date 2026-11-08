@@ -120,6 +120,43 @@ describe('FSRS listening schedules', () => {
     expect(word).toEqual(original);
   });
 
+  it('places partial success between Good and Again for an established card', async () => {
+    const word = await established();
+    const original = structuredClone(word);
+    const when = word.dueAt + 10 * day;
+    const good = await advanceSchedule(word, attempt({ answeredAt: when, outcome: 'success' }));
+    const partial = await advanceSchedule(word, attempt({ answeredAt: when, outcome: 'partial',
+      timer: { startedAt: when - 11000, limitMs: 10000 } }));
+    const missed = await advanceSchedule(word, attempt({ answeredAt: when, correct: false, selectedId: 'dog', outcome: 'failure' }));
+    expect(partial.dueAt).toBeGreaterThan(missed.dueAt);
+    expect(partial.dueAt).toBeLessThan(good.dueAt);
+    expect(partial.card.stability).toBeGreaterThan(missed.card.stability);
+    expect(partial.card.stability).toBeLessThan(good.card.stability);
+    expect(partial.card.lapses).toBe(word.card.lapses);
+    expect(word).toEqual(original);
+  });
+
+  it('rebuilds mixed v1/v2 history without regrading old answers or counting partial corrective retries', async () => {
+    const old = attempt({ id: 'old', responseMs: 90000, startedAt: start - 90000,
+      context: { ...attempt().context!, schedulerVersion: 'fsrs-6-v1', replays: 5 } });
+    const oldState = await advanceSchedule(undefined, old);
+    expect(oldState).toEqual(await advanceSchedule(undefined, attempt()));
+    // Additional fields on a v1 event cannot opt that event into the v2 policy.
+    expect(await advanceSchedule(undefined, { ...old, outcome: 'partial' })).toEqual(oldState);
+    const partial = attempt({ id: 'partial', answeredAt: start + day, outcome: 'partial',
+      context: { ...attempt().context!, phase: 'review' } });
+    const retry = attempt({ id: 'retry', answeredAt: start + day + 1000, outcome: 'partial',
+      context: { ...partial.context!, retryOf: partial.id } });
+    const legacy = attempt({ id: 'legacy', context: undefined });
+    const history = [retry, partial, old, legacy];
+    const original = structuredClone(history);
+    const expected = await advanceSchedule(oldState, partial);
+    expect(await deriveSchedules(history, 'ja-JP')).toEqual([expected]);
+    expect(await deriveSchedules([...history].reverse(), 'ja-JP')).toEqual([expected]);
+    expect(await advanceSchedule({ ...oldState, schedulerVersion: 'fsrs-6-v1' }, partial)).toEqual(expected);
+    expect(history).toEqual(original);
+  });
+
   it('does not assign subjective difficulty grades from response speed or replay use', async () => {
     const first = attempt();
     const slow = attempt({ responseMs: 90000, startedAt: start - 90000, context: { ...first.context!, replays: 5 } });

@@ -3,7 +3,8 @@ import type { Exercise, PracticeAttempt } from '../types';
 import { attemptExercise, cardKey } from './cards';
 
 /** Changing the model, defaults, or grade policy requires a new version. */
-export const schedulerVersion = 'fsrs-6-v1';
+export const schedulerVersion = 'fsrs-6-v2';
+const legacySchedulerVersion = 'fsrs-6-v1';
 export const desiredRetention = 0.9;
 
 export type SerializedCard = Omit<DefaultSchedulerCard<'FSRS-6'>, 'dueAt' | 'lastReviewAt'> & {
@@ -40,18 +41,23 @@ function deserialize(card: SerializedCard): DefaultSchedulerCard<'FSRS-6'> {
   return { ...card, dueAt: date(card.dueAt), lastReviewAt: card.lastReviewAt === null ? null : date(card.lastReviewAt) };
 }
 
-/** Correctness maps to Good/Again. Speed and replay count do not affect grades. */
+/** V2 adds an explicit partial-success (Hard) grade; v1 keeps Good/Again. */
 export async function advanceSchedule(previous: ScheduledWord | undefined, attempt: PracticeAttempt): Promise<ScheduledWord> {
   if (!attempt.id || !attempt.itemId || !attempt.language) throw new Error('Missing review identity.');
   const now = date(attempt.answeredAt);
   const identity = { itemId: attempt.itemId, language: attempt.language, exercise: attemptExercise(attempt) };
   if (previous && cardKey(previous) !== cardKey(identity)) throw new Error('Review belongs to another word, language, or exercise.');
-  if ((previous && previous.schedulerVersion !== schedulerVersion) ||
-      (attempt.context && attempt.context.schedulerVersion !== schedulerVersion)) throw new Error('Unsupported scheduler version.');
+  const supported = (version: string) => version === schedulerVersion || version === legacySchedulerVersion;
+  if ((previous && !supported(previous.schedulerVersion)) ||
+      (attempt.context && !supported(attempt.context.schedulerVersion))) throw new Error('Unsupported scheduler version.');
   if (previous?.card.lastReviewAt !== undefined && previous.card.lastReviewAt !== null && attempt.answeredAt < previous.card.lastReviewAt) throw new Error('Reviews must be chronological.');
   const engine = await scheduler;
   const before = previous ? deserialize(previous.card) : engine.newCard({ cardId: cardKey(identity), now });
-  const result = engine.review({ card: before, now, grade: attempt.correct ? Rating.Good : Rating.Again });
+  // Never reinterpret old speed/replay metadata as a difficulty rating. Only
+  // new, explicitly graded attempts can establish a partial success.
+  const partial = attempt.context?.schedulerVersion === schedulerVersion && attempt.outcome === 'partial';
+  const grade = !attempt.correct ? Rating.Again : partial ? Rating.Hard : Rating.Good;
+  const result = engine.review({ card: before, now, grade });
   const card = serialize(result.card);
   return { ...identity, dueAt: card.dueAt, lastReviewedAt: attempt.answeredAt, schedulerVersion, card };
 }
