@@ -1,7 +1,7 @@
 /** Bounded, text-approved contextual speech audition for #124. Never publishes media. */
 import { createHash } from 'node:crypto'
-import { readFile, writeFile } from 'node:fs/promises'
-import { isAbsolute, join, relative, resolve } from 'node:path'
+import { readFile, realpath, writeFile } from 'node:fs/promises'
+import { dirname, isAbsolute, join, relative, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 import { loadContextualAudition } from './contextual-audio-plan.mjs'
@@ -15,14 +15,27 @@ async function readOptional(path) {
   catch (error) { if (error.code === 'ENOENT') return undefined; throw error }
 }
 
-function outputPath(root, output) {
+async function outputPath(root, output) {
   if (typeof output !== 'string' || !output.trim()) throw new Error('Choose --output under artifacts/generated-originals/.')
   const destination = resolve(root, output)
   const within = relative(resolve(root, 'artifacts/generated-originals'), destination)
   if (!within || within === '..' || within.startsWith('../') || isAbsolute(within)) {
     throw new Error('Audition originals must stay under artifacts/generated-originals/.')
   }
-  return destination
+  let ancestor = destination
+  for (;;) {
+    try {
+      const actual = resolve(await realpath(ancestor), relative(ancestor, destination))
+      const fromOriginals = relative(resolve(await realpath(root), 'artifacts/generated-originals'), actual)
+      if (!fromOriginals || fromOriginals === '..' || fromOriginals.startsWith('../') || isAbsolute(fromOriginals)) {
+        throw new Error('Audition originals must stay under artifacts/generated-originals/.')
+      }
+      return actual
+    } catch (error) {
+      if (error.code !== 'ENOENT' || ancestor === dirname(ancestor)) throw error
+      ancestor = dirname(ancestor)
+    }
+  }
 }
 
 export function contextualAuditionSummary(plan) {
@@ -53,7 +66,7 @@ async function preserveAuditionPlan(output, plan) {
 export async function generateContextualAudition({ root = projectRoot, output, apiKey, generate = generateCards }) {
   // The approval check precedes output creation, key use and the external boundary.
   const { plan } = loadContextualAudition(root)
-  const destination = outputPath(root, output)
+  const destination = await outputPath(root, output)
   if (typeof apiKey !== 'string' || !apiKey.trim()) throw new Error('ELEVENLABS_API_KEY is required for live contextual generation.')
   const existing = await readOptional(join(destination, 'audition-plan.json'))
   if (existing !== undefined && JSON.stringify(existing) !== JSON.stringify(plan)) {

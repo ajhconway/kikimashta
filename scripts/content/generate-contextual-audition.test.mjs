@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, symlink, writeFile } from 'node:fs/promises'
 import { execFileSync } from 'node:child_process'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -81,6 +81,20 @@ test('uses sequential exact-budget generation and preserves the full approval an
   assert.equal(contextualAuditionSummary(plan).requests, 18)
   assert.deepEqual(await json(join(fixture.output, 'audition-plan.json')), plan)
   assert.doesNotMatch(await readFile(join(fixture.output, 'audition-plan.json'), 'utf8'), /fixture-secret/)
+})
+
+test('an artifact output symlink cannot redirect generation into production media', async t => {
+  const fixture = await contextualFixture(t)
+  const production = join(fixture.root, 'public/audio')
+  const alias = join(fixture.root, 'artifacts/generated-originals/production-alias')
+  await mkdir(production, { recursive: true })
+  await mkdir(join(fixture.root, 'artifacts/generated-originals'), { recursive: true })
+  await symlink(production, alias)
+  let calls = 0
+  await assert.rejects(generateContextualAudition({ root: fixture.root, output: join(alias, 'audition'), apiKey: 'fixture-secret',
+    generate: async () => { calls++ } }), /must stay under/)
+  assert.equal(calls, 0)
+  assert.equal(existsSync(join(production, 'audition')), false)
 })
 
 test('preserves partial successes and audition metadata, sanitizes provider failure and blocks ambiguous retries', async t => {
