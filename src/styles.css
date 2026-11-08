@@ -447,6 +447,3 @@ footer a:hover { color: var(--purple-dark); }
 .pack-library-link { display: block; margin: 12px auto; padding: 10px; font-size: 14px; }
 
 .dev-context-mastery .feedback { height: 76px; margin-top: 16px; }
-
-.primary.start { gap: 12px; }
-.start-review-count { margin-left: auto; padding: 5px 8px; border-radius: 999px; background: rgb(255 255 255 / .14); font-size: 13px; line-height: 1.25; font-weight: 750; letter-spacing: 0; white-space: nowrap; }

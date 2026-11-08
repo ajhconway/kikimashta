@@ -525,7 +525,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}</span>{' '}{dueNow !== null && <span className="start-review-count">{dueNow} {dueNow === 1 ? 'review' : 'reviews'} due</span>}<span aria-hidden="true">↗</span></button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
