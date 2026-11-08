@@ -718,3 +718,42 @@ describe('interval mastery feedback', () => {
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
   });
 });
+
+describe('all-level mastery demo (#140)', () => {
+  it('walks all eight levels with their timers, shows changes and an untimed retry, and never saves', async () => {
+    records = legacy(2);
+    const original = structuredClone(records);
+    const onSaved = vi.fn();
+    const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
+    vi.useFakeTimers();
+    await click(screen.getByRole('button', { name: 'Mastery demo' }));
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
+    for (const [label, limit] of [['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
+      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]] as const) {
+      expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent(`${label} · ${limit ? limit / 1000 + 's' : 'Untimed'} · Unsaved demo`);
+      endAudio(container); loadPictures(container); await advance(480); await advance(0);
+      if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
+      else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+      await click(heardChoice(container, label !== 'Strong'));
+      if (label === 'New') expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent('↑ Learning');
+      if (label === 'Strong') {
+        expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent('↓ Learning');
+        await click(screen.getByRole('button', { name: /^continue$/i }));
+      } else await advance(1200);
+    }
+    expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('Learning · Untimed · Unsaved demo');
+    endAudio(container); loadPictures(container); await advance(480);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await click(heardChoice(container));
+    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+    await advance(1200);
+    expect(screen.getByRole('heading', { name: 'Mastery demo complete' })).toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(onSaved).not.toHaveBeenCalled();
+    expect(records).toEqual(original);
+    await click(screen.getByRole('button', { name: 'Finish' }));
+    expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
+    expect(screen.getByText('2 answers saved on this device')).toBeInTheDocument();
+  });
+});

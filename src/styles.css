@@ -403,3 +403,5 @@ footer a:hover { color: var(--purple-dark); }
 .mastery-up { animation: mastery-rise .35s ease-out; }
 @keyframes mastery-rise { from { opacity: 0; transform: translateY(.5rem); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .mastery-up { animation: none; } }
+
+.demo-mastery { margin: 0; text-align: center; font-size: .8rem; font-weight: 700; color: var(--purple-dark); }

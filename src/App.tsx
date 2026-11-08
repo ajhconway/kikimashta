@@ -5,6 +5,7 @@ import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard
 import { attemptExercise, cardKey } from './core/cards';
 import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { createMasteryDemo } from './core/mastery-demo';
 import { cardMastery, masteryIndex, packMastery } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
@@ -90,6 +91,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
+  const [demoPresentation, setDemoPresentation] = useState<{ label: string; timerMs: number | null; retry: boolean } | null>(null);
+  const demoSchedules = useRef<Map<string, ScheduledWord | undefined> | null>(null);
   const [range] = useState<DensityRange>(initialRange);
   const [density, setDensity] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -204,12 +207,14 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
     active.current = { id: '', startedAt: 0, answered: true, sessionId: '', replays: 0 };
     setSaving(false); setSaveError(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
-    setIsDevReview(false);
+    setIsDevReview(false); demoSchedules.current = null; setDemoPresentation(null);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
-    setQuestionTimer({ id: active.current.id, limitMs: devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+    const demoLevel = next.demoId ? cardMastery(demoSchedules.current?.get(next.demoId)) : null;
+    setDemoPresentation(demoLevel ? { ...demoLevel, retry: !!next.retryOf } : null);
+    setQuestionTimer({ id: active.current.id, limitMs: demoLevel ? next.retryOf ? null : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
       ? quizTimeLimit(mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }))) : null });
     setAudioFinished(false);
     setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
@@ -225,6 +230,15 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
     beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
+  }
+  function startMasteryDemo() {
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    const demo = createMasteryDemo(selectedCards, now(), random);
+    operation.current++;
+    demoSchedules.current = demo.schedules;
+    session.current = { id: crypto.randomUUID(), reserved: new Set() };
+    setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
+    beginQuiz(demo.questions, 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -283,7 +297,24 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     beginQuiz(block);
   }
   async function save(attempt: PracticeAttempt) {
-    if (isDevReview) return;
+    if (isDevReview) {
+      const demoId = questions[index]?.demoId;
+      const samples = demoSchedules.current;
+      if (!demoId || !samples || attempt.context?.retryOf) return;
+      const request = operation.current;
+      const previous = samples.get(demoId);
+      setSaving(true);
+      try {
+        const updated = await advanceSchedule(previous, attempt);
+        if (operation.current !== request || active.current.id !== attempt.id) return;
+        samples.set(demoId, updated);
+        if (masteryIndex(previous) !== masteryIndex(updated)) {
+          setMasteryChange({ id: attempt.id, label: cardMastery(updated).label,
+            direction: masteryIndex(updated) > masteryIndex(previous) ? 'up' : 'down' });
+        }
+      } finally { if (active.current.id === attempt.id) setSaving(false); }
+      return;
+    }
     if (pendingSaves.current.has(attempt.id)) return;
     pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setSaving(true); setSaveError(false);
     const request = operation.current;
@@ -369,6 +400,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <HomeIntensity value={density}/>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startDevReview}>Dev review</button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         <details className="pack-picker">
@@ -411,6 +443,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <QuizCompanion listening={playing} response={feedback?.outcome ?? null}/>
         <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
         </div>
+        {demoPresentation && <p className="demo-mastery" role="status" aria-label="Demo mastery">{demoPresentation.label} · {demoPresentation.retry || demoPresentation.timerMs === null ? 'Untimed' : `${demoPresentation.timerMs / 1000}s`} · Unsaved demo</p>}
         <span className="sr-only" aria-live="polite">Question {index + 1}{questions[index]?.retryOf ? ', retry' : ''}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="quiz-cards">
@@ -430,7 +463,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
-        <h1>{isDevReview ? 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
+        <h1>{isDevReview ? demoPresentation ? 'Mastery demo complete' : 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
         {answers.some(answer => answer.outcome === 'partial') && <p>{answers.filter(answer => answer.outcome === 'partial').length} partial success{answers.filter(answer => answer.outcome === 'partial').length === 1 ? '' : 'es'}</p>}
         {!isDevReview && <>
