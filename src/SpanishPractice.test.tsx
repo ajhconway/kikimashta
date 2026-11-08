@@ -70,11 +70,12 @@ it('loads Spanish picture history and links to its language-specific pack librar
   expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
 });
 
-it('runs a Spanish-only mastery demo without saving practice', async () => {
+it('runs a Spanish-only simulated dev review without saving practice', async () => {
   const record = vi.spyOn(ProgressStore.prototype, 'record').mockResolvedValue(undefined);
   const { container } = render(<App now={() => 1000000} random={() => 0.5}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Mastery demo' })); });
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Dev review' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start dev review' })); });
   const source = container.querySelector('audio')!.getAttribute('src')!;
   const target = spanish.items.find(item => item.audio.some(clip => source.endsWith(clip.src)))!;
   expect(target).toBeDefined();

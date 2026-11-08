@@ -12,6 +12,7 @@ vi.mock('./core/density', async original => ({ ...await original<typeof import('
 const forecast = { reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 };
 let history: PracticeAttempt[];
 beforeEach(() => {
+  window.history.replaceState({}, '', '/');
   localStorage.clear(); history = [];
   vi.spyOn(ProgressStore.prototype, 'history').mockImplementation(async () => structuredClone(history));
   vi.spyOn(ProgressStore.prototype, 'record').mockImplementation(async attempt => { history.push(attempt); });
@@ -23,8 +24,8 @@ beforeEach(() => {
 async function click(element: HTMLElement) { await act(async () => { fireEvent.click(element); }); }
 
 it('opens all eighty questions for dev evaluation and never records an answer', async () => {
+  window.history.replaceState({}, '', '/?review=contextual');
   render(<App/>);
-  await click(screen.getByRole('button', { name: 'Contextual dev review' }));
   const jump = screen.getByLabelText('Jump to question');
   expect(within(jump).getAllByRole('option')).toHaveLength(80);
   await act(async () => { fireEvent.change(jump, { target: { value: '79' } }); });

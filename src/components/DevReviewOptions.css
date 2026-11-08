@@ -1,0 +1,42 @@
+.dev-review-options { width: min(100%, 760px); margin: 0 auto 32px; text-align: left; }
+.dev-options-intro { margin-bottom: 26px; }
+.dev-options-intro h1 { margin: 12px 0; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.1; }
+.dev-options-intro h1:focus { outline: none; }
+.dev-options-intro p { max-width: 44rem; margin: 10px 0; line-height: 1.6; }
+.dev-options-badge { display: inline-block; padding: 5px 11px; border: 2px solid var(--purple-dark); border-radius: 999px; background: #ffcee2; font-size: .8rem; font-weight: 800; }
+.dev-options-scope { color: var(--muted); font-size: .9rem; }
+.dev-options-scope a { font-weight: 800; text-underline-offset: .2em; }
+.dev-options-panel { min-width: 0; margin: 0 0 22px; padding: 18px; border: 2px solid var(--line); border-radius: 20px; background: rgb(255 253 250 / .75); }
+.dev-options-panel legend { padding: 0 8px; font-size: 1.15rem; font-weight: 850; }
+.dev-options-types, .dev-options-levels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.dev-option-choice { display: flex; align-items: center; gap: 11px; min-width: 0; min-height: 66px; padding: 10px 12px; border: 2px solid #c6b2e5; border-radius: 14px; background: #fffdfa; cursor: pointer; }
+.dev-option-choice:has(input:checked) { border-color: var(--purple); background: #f4e9ff; }
+.dev-option-choice:has(input:focus-visible) { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
+.dev-option-choice input { width: 22px; height: 22px; flex: 0 0 22px; margin: 0; accent-color: var(--purple-dark); }
+.dev-option-choice span { min-width: 0; }
+.dev-option-choice strong { display: block; font-size: .92rem; font-weight: 750; line-height: 1.4; overflow-wrap: anywhere; }
+.dev-option-choice small { display: block; margin-top: 2px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
+.dev-options-panel:disabled { opacity: .6; }
+.dev-options-panel:disabled .dev-option-choice { cursor: default; }
+.dev-options-help { margin: 0 0 14px; color: var(--muted); font-size: .88rem; line-height: 1.5; }
+.dev-options-level-actions { display: flex; gap: 12px; margin: 0 0 12px; }
+.dev-options-level-actions button { min-height: 44px; padding: 8px 12px; border: 2px solid var(--line); border-radius: 11px; background: #fffdfa; font-size: .85rem; font-weight: 750; }
+.dev-options-level-actions button:hover:enabled { background: #ffe6ef; }
+.dev-options-session { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 14px; }
+.dev-options-session label { display: flex; flex-direction: column; min-width: 0; gap: 8px; font-weight: 750; }
+.dev-options-session select { appearance: none; -webkit-appearance: none; width: 100%; height: 48px; min-height: 48px; padding: 10px 36px 10px 12px; border: 2px solid var(--purple-dark); border-radius: 12px; color: var(--ink); background: #fffdfa; font: inherit; font-size: 1rem; }
+.dev-options-session select:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
+.dev-options-hint, .dev-options-error { margin: 14px 0 0; color: #832b58; font-weight: 700; font-size: .9rem; line-height: 1.5; }
+.dev-options-error { padding: 14px 16px; border: 2px solid #a84e79; border-radius: 14px; background: #fff0f4; }
+.dev-options-start { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 24px; }
+.dev-options-start p { flex: 1 1 240px; margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+.dev-options-start .primary { width: auto; min-height: 50px; margin: 0; font-size: 1rem; }
+@media (max-width: 520px) {
+  .dev-options-panel { padding: 14px 12px; }
+  .dev-options-types, .dev-options-session { grid-template-columns: minmax(0, 1fr); }
+  .dev-option-choice { padding: 10px; gap: 9px; }
+  .dev-options-start { align-items: stretch; }
+  .dev-options-start .primary { width: 100%; }
+}
+
+.dev-options-session select { background-image: linear-gradient(45deg, transparent 50%, var(--purple-dark) 50%), linear-gradient(135deg, var(--purple-dark) 50%, transparent 50%); background-position: calc(100% - 19px) 50%, calc(100% - 14px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }

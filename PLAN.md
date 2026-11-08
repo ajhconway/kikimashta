@@ -73,7 +73,7 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
-Unsaved Dev review samples untimed/10/5/3/1.5 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s word timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Contextual questions and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
 
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
@@ -87,11 +87,12 @@ Derive mastery independently for each language/item/exercise from the scheduled 
 
 Show both lowest and average mastery on packs; average means the floor of the mean level ordinal, including New cards, across approved practice cards in that pack. Keep picture and writing cards separate in the library and show their individual mastery. Show an up/down arrow and the new label after a saved answer changes level; retries and Dev review do not change mastery.
 
-Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review samples the available timer choices. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
+Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review offers mastery-based, random, or untimed word timers. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
 
 ## Mastery demo (#140)
 
-Offer an unsaved Mastery demo alongside the existing random-timer Dev review. The demo presents all eight levels in order, using selected-pack cards and separate in-memory sample schedules. Show the current sample level and its timer; after answers, use the normal FSRS grading and mastery arrows against the sample schedule. Corrective retries stay untimed and do not advance the sample schedule. Keep all sample state separate from real mastery, saved attempts, account sync, and library/pack summaries. If a selected pool is small, repeat cards with separate demo identities so every level remains available. Verify all levels, timer mapping, arrows, retry isolation, and unchanged real browser storage. Serve the completed demo locally for owner review.
+Mastery samples are now covered by the expanded Dev review options (#152), with Dev review as the single Home entry point. Selecting all eight levels and eight questions covers each level once, in mixed order. Each sample has an independent in-memory schedule; normal FSRS feedback and untimed corrective retries remain separate from real mastery, saved attempts, account sync, and library/pack summaries. Small pools may repeat real cards under separate sample identities. Verify all levels, timers, arrows, retries and unchanged browser storage.
+
 
 ## Mastery feedback presentation (#141)
 
@@ -168,3 +169,7 @@ Select one or more of the eight approved voices in the card library, remembered 
 ## Voice accent labels (#149)
 
 Show accent/style descriptions beside each global practice voice and card audition button. Display the owner’s Tokyo (standard) label for Otani/Morioki, Kansai for Goro/Tsuki, Kyushu for Takeshi/Lime, and Anime (standard) for Ritsuto/Itsuki. Reuse the approved registry’s accent and anime-style metadata. Keep labels visible through playback and expose them as accessible descriptions. Voice identity and saved preferences stay unchanged.
+
+## Expanded Dev review (#152)
+
+Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed word timer policies. Contextual questions remain untimed. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Use Dev review as the single Home entry point; remove the separate Mastery demo and Contextual dev review Home buttons. Preserve the existing contextual inspection URL for authored-content audits. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.
