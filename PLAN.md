@@ -118,6 +118,8 @@ Log the exact sentence/question IDs and revisions, question kind, ordered choice
 
 The text pilot is review content, not an active practice pack. Pending or rejected text and missing/unreviewed recordings cannot become ordinary practice questions.
 
+The first text draft is in `content/contextual/ja-pilot.json`: ten targets, twenty contexts, and forty questions, including sixteen picture-capable questions. All forty support written choices. Text approval and audio generation remain pending. Validate with `npm run content:contextual:validate` and build the local gallery with `npm run content:contextual:review`; append `-- --github` to print the GitHub review. Declared answer formats reflect actual choice coverage: car, teacher and running contexts initially support writing only. Position-icon transfer and the older beer distractor picture remain explicit owner-review points.
+
 ### Acceptance
 
 Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; exact first-attempt delayed-review unlocks; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.

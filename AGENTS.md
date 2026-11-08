@@ -39,4 +39,6 @@ Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm ru
 
 The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
 
+Contextual quiz text preparation for issue #119 uses `npm run content:contextual:validate` for a read-only preflight and `npm run content:contextual:review` to rebuild `artifacts/contextual-pilot/review.html`. The review command's `-- --github` option prints a readable GitHub review. These commands do not approve content, generate speech, or activate practice cards. Obtain owner approval of the actual pilot text before speech generation, as recorded in PLAN.md. The usual `npm test` includes the checked-in pilot's validation and review-tool regression checks.
+
 Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. These checks supplement the app checks above.
