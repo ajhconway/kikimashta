@@ -1,7 +1,15 @@
 import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
 import { cardKey, practiceCards } from './cards';
+import type { ContextualItem, ContextualQuestion, ContextualRecording } from '../content/contextual-types';
 
-export interface Question { target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string }
+export interface Question {
+  target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string;
+  contextual?: { context: ContextualItem; question: ContextualQuestion; recording?: ContextualRecording };
+}
+
+export function correctChoiceId(question: Question): string {
+  return question.contextual?.question.correctOptionId ?? question.target.id;
+}
 
 export function validateBank(bank: WordBank): void {
   if (!bank.id || !bank.language || !Array.isArray(bank.items) || bank.items.length < 2) throw new Error('A bank needs at least two words.');
