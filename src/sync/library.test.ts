@@ -53,6 +53,7 @@ function dogStatus() { return document.getElementById('feedback-status-ja-dog-au
 
 beforeEach(() => {
   vi.resetModules();
+  window.history.replaceState({}, '', '/');
   localStorage.clear();
   document.body.innerHTML = shell.match(/<body>([\s\S]*)<\/body>/)![1]!;
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
@@ -71,6 +72,7 @@ afterEach(async () => {
   await Promise.all(stores.splice(0).map(store => deleteDB(store.databaseName)));
   await deleteDB('kikimashta-v0');
   vi.unstubAllGlobals();
+  window.history.replaceState({}, '', '/');
 });
 
 describe('account-aware vocabulary feedback UI', () => {
@@ -225,5 +227,48 @@ describe('library mastery and separate exercise cards (#135)', () => {
     await loadLibrary();
     for (const badge of document.querySelectorAll('.card-mastery')) expect(badge).toHaveTextContent('Mastery: unavailable');
     expect(document.querySelector('#pack option[value="ja-wanikani-2-pictures"]')).toHaveTextContent('Mastery unavailable');
+  });
+});
+
+
+describe('Spanish card library', () => {
+  it('browses the practice bank, searches both languages and saves guest notes under Spanish identity', async () => {
+    window.history.replaceState({}, '', '/vocabulary/?language=es-419&pack=es-419-travel-1-pictures');
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    localStorage.setItem('kikimashta:card-feedback:v1:ja:es-419-travel-coffee', 'Unrelated Japanese note');
+    await vi.importActual('../../vocabulary/library.js');
+    await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(6));
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Latin American Spanish cards');
+    expect(screen.getByLabelText('Card pack')).toHaveValue('es-419-travel-1-pictures');
+    expect(screen.getAllByRole('option')).toHaveLength(2);
+    expect(document.querySelectorAll('.word-text[lang="es-419"]')).toHaveLength(6);
+    expect(fetch).not.toHaveBeenCalled();
+    fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'Coffee' } });
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('café');
+    expect(screen.getByRole('button', { name: 'Cesar: Coffee' })).toBeEnabled();
+    fireEvent.input(screen.getByLabelText('Your notes'), { target: { value: 'Review the accent' } });
+    expect(localStorage.getItem('kikimashta:card-feedback:v1:es-419:es-419-travel-coffee')).toBe('Review the accent');
+    expect(localStorage.getItem('kikimashta:card-feedback:v1:ja:es-419-travel-coffee')).toBe('Unrelated Japanese note');
+    fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'cafe' } });
+    expect(document.querySelectorAll('.card')).toHaveLength(1);
+    expect(screen.getByLabelText('Your notes')).toHaveValue('Review the accent');
+  });
+
+  it('reads and writes signed-in notes with the Spanish language identity', async () => {
+    window.history.replaceState({}, '', '/vocabulary/?language=es-419');
+    const { bridge } = account();
+    await bridge.notes.write('es-419', 'es-419-travel-hotel', 'Spanish account note');
+    await bridge.progress.record({ id: 'spanish-picture', sessionId: 'spanish', itemId: 'es-419-travel-hotel', language: 'es-419',
+      choiceIds: ['es-419-travel-hotel'], selectedId: 'es-419-travel-hotel', correct: true, startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'spanish.mp3', replays: 0, schedulerVersion } });
+    vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
+    await vi.importActual('../../vocabulary/library.js');
+    await waitFor(() => expect(document.getElementById('feedback-es-419-travel-hotel-audio-picture')).toHaveValue('Spanish account note'));
+    fireEvent.input(document.getElementById('feedback-es-419-travel-hotel-audio-picture')!, { target: { value: 'Edited Spanish note' } });
+    await waitFor(() => expect(bridge.notes.read('es-419', 'es-419-travel-hotel')).toBe('Edited Spanish note'));
+    expect(bridge.notes.read('ja', 'es-419-travel-hotel')).toBe('');
+    expect(document.querySelectorAll('.card')).toHaveLength(6);
+    expect(document.querySelectorAll('.card-writing')).toHaveLength(0);
+    expect(document.querySelector('[data-item-id="es-419-travel-hotel"] .card-mastery')).toHaveTextContent('Mastery: Learning');
   });
 });

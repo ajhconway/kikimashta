@@ -151,3 +151,17 @@ it('explains when workload defers unlocked contextual lessons while leaving the 
   expect(screen.getByText('Practice demo. Progress is not saved.')).toBeInTheDocument();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
+
+
+it('keeps Japanese contextual demos out of the Spanish practice language', async () => {
+  localStorage.setItem('kikimashta-learning-language-v1', 'es-419');
+  window.history.replaceState({}, '', '/?demo=contextual');
+  try {
+    render(<App/>);
+    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveValue('es-419'));
+    expect(screen.queryByRole('button', { name: 'Contextual practice demo' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Contextual practice demo' })).not.toBeInTheDocument();
+    expect(screen.queryByText('Practice demo. Progress is not saved.')).not.toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  } finally { window.history.replaceState({}, '', '/'); }
+});

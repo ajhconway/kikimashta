@@ -1,0 +1,17 @@
+{
+  "issue": 143,
+  "language": "es-419",
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "voice": {
+    "id": "euXtEAlRno6A0KpxwWXn",
+    "name": "Cesar - Natural, Calm",
+    "language": "es",
+    "accent": "mexican"
+  },
+  "createdAt": "2026-11-08T19:26:38.333Z",
+  "characterBudget": 40,
+  "characters": 31,
+  "review": "Generated; owner pronunciation acceptance pending.",
+  "recordings": []
+}
