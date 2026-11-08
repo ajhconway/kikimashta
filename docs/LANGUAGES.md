@@ -1,0 +1,15 @@
+# Learning languages (#143)
+
+Menus remain in English. The home selector changes the learning language, available packs, approved practice pool, history, forecast and writing presentation. Selection and pack choices are device preferences. Account history and notes already use language/item identity and require no schema change.
+
+`src/core/languages.ts` registers each language's pool, packs, font policy and optional library route. Keep IDs stable: Japanese remains `ja-JP`; Latin American Spanish is `es-419`. Recording locale can be more specific without changing learning identity. Japanese keeps its original pack preference key. Additional languages use separate keys. An empty saved pack selection stays empty. Switching is available at home and waits for pending or failed answers to be resolved.
+
+## Spanish travel level 1
+
+Both pictures and writing reference the same six vocabulary items in `content/es-419.json`: hotel, agua, café, carro, entrada, salida. Each format has independent scheduling. “Carro” is a common Latin American choice; regional alternatives can be introduced later. Levels are practical content groupings, not proficiency certification. Later levels can add transport/tickets, accommodation and food; they are not exposed until content exists.
+
+Pictures reuse existing repository assets with their original provenance and terms. No new artwork was generated. Entrance and exit use existing directional door illustrations. Six Spanish recordings use the ElevenLabs Cesar voice, labeled Mexican Spanish by the provider. Original MP3s and request metadata are preserved in `artifacts/audio/es-419-travel-1`; delivery hashes, measurements, processing and provenance are in `content/es-419-audio-provenance.json`. Constant-gain matching uses the existing −22 LUFS / −2 dBTP policy. Two short clips are explicitly marked target-limited in the manifest; listen at the same device volume before release. No dynamics compression or timing changes were applied. Owner pronunciation and actual iPhone acceptance remain pending.
+
+Load the local ElevenLabs credential from `~/.config/kikimashta/elevenlabs.env` when running generation. Keep secrets out of the app, repository and chat. `scripts/content/generate-spanish-travel.mjs` records a bounded first generation (six words, at most 40 characters) and refuses reruns/interrupted runs to avoid duplicate charges. The existing normalizer prepares deliveries; provider originals remain unchanged. Items without recordings never enter practice. The language registry provides an unavailable-content message for future preparation states.
+
+Spanish uses system type including accents. A Japanese browse/review library link appears only for Japanese; a Spanish library remains later work. Verify pronunciation, picture meaning, audio permissions, touch/layout, both exercise formats, and persistence on the real iPhone before release. Chromium/mobile WebKit journeys check both Spanish formats and saved-history isolation, with real browser storage and media playback.

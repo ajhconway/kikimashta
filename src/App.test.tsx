@@ -583,7 +583,7 @@ describe('practice pack selection', () => {
     localStorage.setItem(packPreferenceKey, '[]');
     render(<App now={fixedNow}/>);
     await screen.findByText('Select a pack to start practicing.');
-    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    expect(await screen.findByRole('button', { name: /^start/i })).toBeDisabled();
     await click(screen.getByText('Card packs · 0 selected'));
     const checkbox = screen.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' });
     await waitFor(() => expect(checkbox).toBeEnabled());
@@ -736,4 +736,32 @@ it('catches up expiry from the wall clock when visibility changes after suspende
   expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(1)' });
   await click(heardChoice(container));
   expect(records[2]).toMatchObject({ correct: true, outcome: 'partial' });
+});
+
+
+describe('learning language switching', () => {
+  it('discards a stale Japanese history load after switching to Spanish', async () => {
+    const oldHistory = deferred<PracticeAttempt[]>();
+    vi.spyOn(ProgressStore.prototype, 'history').mockImplementation(language =>
+      language === 'ja-JP' ? oldHistory.promise : Promise.resolve([]));
+    render(<App now={fixedNow} random={() => 0.5}/>);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
+    await waitFor(() => expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419'));
+    await act(async () => { oldHistory.resolve(legacy()); });
+    expect(screen.queryByText('6 answers saved on this device')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
+    expect(screen.queryByRole('link', { name: /Card library/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveFocus();
+  });
+  it('keeps the language selector disabled until failed answer recovery is resolved', async () => {
+    const { AnswerRecovery } = await import('./progress/recovery');
+    const recovery = new AnswerRecovery();
+    const store = new ProgressStore();
+    vi.spyOn(store, 'record').mockRejectedValue(new Error('Unavailable'));
+    await recovery.save(store, legacy(1)[0]!);
+    render(<App now={fixedNow} answerRecovery={recovery}/>);
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeDisabled();
+    await click(screen.getByRole('button', { name: 'Continue without saving' }));
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeEnabled();
+  });
 });

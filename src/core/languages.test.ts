@@ -1,0 +1,64 @@
+import { beforeEach, describe, expect, it } from 'vitest';
+import { createQuestions, validateBank } from './session';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import audioProvenance from '../../content/es-419-audio-provenance.json';
+import { existsSync } from 'node:fs';
+import spanish from '../../content/es-419.json';
+import { initialLanguage, languagePreferenceKey, learningLanguages } from './languages';
+import { initialPackIds, packPreferenceKey, selectedPracticeCards, type CardPack } from './packs';
+
+beforeEach(() => localStorage.clear());
+describe('learning languages', () => {
+  it('defaults to Japanese and safely restores a known language', () => {
+    expect(initialLanguage().id).toBe('ja-JP');
+    localStorage.setItem(languagePreferenceKey, 'es-419');
+    expect(initialLanguage().title).toBe('Latin American Spanish');
+    localStorage.setItem(languagePreferenceKey, 'unknown');
+    expect(initialLanguage().id).toBe('ja-JP');
+  });
+  it('keeps pools and pack membership in their registered language', () => {
+    for (const language of learningLanguages) {
+      expect(language.pool.language).toBe(language.id);
+      expect(language.pool.items.every(item => item.language === language.id)).toBe(true);
+      expect(language.packs.every(pack => pack.language === language.id)).toBe(true);
+    }
+    expect(learningLanguages[0]!.packPreferenceKey).toBe(packPreferenceKey);
+    expect(new Set(learningLanguages.map(language => language.packPreferenceKey)).size).toBe(2);
+  });
+  it('preserves independent empty and selected pack preferences', () => {
+    const [ja, es] = learningLanguages;
+    localStorage.setItem(ja!.packPreferenceKey, JSON.stringify([ja!.packs[0]!.id]));
+    localStorage.setItem(es!.packPreferenceKey, '[]');
+    expect(initialPackIds(ja!.packs, ja!.packPreferenceKey)).toEqual([ja!.packs[0]!.id]);
+    expect(initialPackIds(es!.packs, es!.packPreferenceKey)).toEqual([]);
+  });
+  it('provides complete travel pictures, writing and recorded audio with preserved provenance', () => {
+    const spanishLanguage = learningLanguages[1]!;
+    expect(spanish.items).toHaveLength(6);
+    expect(new Set(spanish.items.map(item => item.id)).size).toBe(6);
+    expect(new Set(spanish.items.map(item => item.text)).size).toBe(6);
+    expect(new Set(spanish.items.map(item => item.image.src)).size).toBe(6);
+    expect(spanish.items.some(item => item.text === 'café')).toBe(true);
+    for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
+    validateBank(spanishLanguage.pool);
+    expect(spanishLanguage.pool.items).toHaveLength(6);
+    for (const record of audioProvenance.recordings) {
+      const original = readFileSync(audioProvenance.originalRoot + '/' + record.originalFile);
+      expect(createHash('sha256').update(original).digest('hex')).toBe(record.originalSha256);
+      const delivery = readFileSync('public/audio/es-419-travel-v1/' + record.file);
+      expect(createHash('sha256').update(delivery).digest('hex')).toBe(record.deliverySha256);
+      expect(record.after.truePeakDbtp).toBeLessThanOrEqual(-2);
+    }
+    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-text']);
+    const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
+    expect(cards).toHaveLength(12);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(12);
+  });
+  it('cannot admit another language through a colliding item ID', () => {
+    const item = learningLanguages[0]!.pool.items[0]!;
+    const pack: CardPack = { id: 'es-test', title: 'Test', language: 'es-419', exercise: 'audio-text', itemIds: [item.id] };
+    expect(selectedPracticeCards([item], [pack.id], [pack])).toEqual([]);
+    expect(selectedPracticeCards([{ ...item, language: 'es-419' }], [pack.id], [pack])).toHaveLength(1);
+  });
+});

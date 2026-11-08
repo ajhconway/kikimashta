@@ -6,7 +6,8 @@ import type { Exercise, PracticeCard, WordItem } from '../types';
 export interface CardPack {
   id: string;
   title: string;
-  sourceLevel: number;
+  sourceLevel?: number;
+  language: string;
   exercise: Exercise;
   itemIds: string[];
 }
@@ -17,6 +18,7 @@ export const cardPacks: CardPack[] = [1, 2, 3, 4, 5].flatMap(sourceLevel =>
     id: `ja-wanikani-${sourceLevel}-${format}`,
     title: `WaniKani level ${sourceLevel} · ${format === 'pictures' ? 'Pictures' : 'Writing'}`,
     sourceLevel,
+    language: 'ja-JP',
     exercise: format === 'pictures' ? 'audio-picture' as const : 'audio-text' as const,
     itemIds: catalogue.items.filter(item => item.sourceLevel === sourceLevel &&
       !('removalReason' in (overrides[item.id as keyof typeof overrides] ?? {}))).map(item => item.id),
@@ -24,21 +26,21 @@ export const cardPacks: CardPack[] = [1, 2, 3, 4, 5].flatMap(sourceLevel =>
 );
 export const packPreferenceKey = 'kikimashta-card-packs-v1';
 
-export function initialPackIds(): string[] {
+export function initialPackIds(packs: readonly CardPack[] = cardPacks, preferenceKey = packPreferenceKey): string[] {
   try {
-    const saved: unknown = JSON.parse(localStorage.getItem(packPreferenceKey) ?? 'null');
+    const saved: unknown = JSON.parse(localStorage.getItem(preferenceKey) ?? 'null');
     if (Array.isArray(saved) && saved.every(id => typeof id === 'string')) {
-      return cardPacks.filter(pack => saved.includes(pack.id)).map(pack => pack.id);
+      return packs.filter(pack => saved.includes(pack.id)).map(pack => pack.id);
     }
   } catch { /* Preferences are optional. */ }
-  return cardPacks.map(pack => pack.id);
+  return packs.map(pack => pack.id);
 }
 
 /** Only already approved practice items enter lessons; packs don't bypass content approval. */
-export function selectedPracticeCards(items: readonly WordItem[], packIds: readonly string[]): PracticeCard[] {
-  const memberships = cardPacks.filter(pack => packIds.includes(pack.id)).map(pack => ({
-    exercise: pack.exercise, ids: new Set(pack.itemIds),
+export function selectedPracticeCards(items: readonly WordItem[], packIds: readonly string[], packs: readonly CardPack[] = cardPacks): PracticeCard[] {
+  const memberships = packs.filter(pack => packIds.includes(pack.id)).map(pack => ({
+    language: pack.language, exercise: pack.exercise, ids: new Set(pack.itemIds),
   }));
   return items.flatMap(item => exercises.filter(exercise => memberships.some(pack =>
-    pack.exercise === exercise && pack.ids.has(item.id))).map(exercise => ({ item, exercise })));
+    pack.language === item.language && pack.exercise === exercise && pack.ids.has(item.id))).map(exercise => ({ item, exercise })));
 }

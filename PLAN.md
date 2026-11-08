@@ -59,7 +59,7 @@ Spacing and retrieval practice have research support; this density controller an
 
 ## Language framework (#143)
 
-Add a small registry of learning languages, each owning its practice pool, packs, and writing presentation. The home language selector scopes all practice and remembers the language and per-language pack selection on this device. Preserve existing Japanese identifiers and preferences. Progress and notes already include language identity. Spanish is the second language; starter content and pronunciation follow owner clarification. Keep unavailable content explicit and do not substitute Japanese audio. Cover switching, persistence, and isolation in focused and browser tests.
+Add a small registry of learning languages, each owning its practice pool, packs, and writing presentation. The home language selector scopes all practice and remembers the language and per-language pack selection on this device. Preserve existing Japanese identifiers and preferences. Progress and notes already include language identity. Latin American Spanish (`es-419`) is the second language, with Travel level 1 picture and writing packs (six vocabulary items). Reuse existing suitable artwork. Six Mexican Spanish recordings from ElevenLabs are generated and volume-matched, with originals and provenance preserved; owner pronunciation and real-iPhone acceptance remain pending. Menus stay in English; later travel levels remain flexible. Keep unavailable content explicit and do not substitute Japanese audio. Cover switching, persistence, and isolation in focused and browser tests.
 
 ## Later work
 

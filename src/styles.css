@@ -397,3 +397,5 @@ footer a:hover { color: var(--purple-dark); }
 .pack-picker label { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; }
 .pack-picker input { width: 20px; height: 20px; accent-color: var(--purple-dark); flex-shrink: 0; }
 .pack-picker p { font-size: 13px; line-height: 1.5; }
+
+.language select { font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 1rem; padding: .4rem .65rem; font-size: 16px; min-height: 44px; max-width: min(16rem, 75vw); }
