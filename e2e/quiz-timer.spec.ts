@@ -1,0 +1,100 @@
+import { readFileSync } from 'node:fs';
+import { expect, test, type Page } from './fixtures';
+import { advanceSchedule } from '../src/core/scheduler';
+import { quizTimeLimit } from '../src/core/quiz-timer';
+import type { Exercise, PracticeAttempt, WordItem } from '../src/types';
+
+const pool = JSON.parse(readFileSync(new URL('../content/practice-pool.json', import.meta.url), 'utf8')) as { itemIds: string[] };
+const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
+const target = catalogue.items.find(item => item.id === pool.itemIds[0])!;
+
+async function history(page: Page): Promise<PracticeAttempt[]> {
+  return page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+    });
+    try {
+      return await new Promise<PracticeAttempt[]>((resolve, reject) => {
+        const request = db.transaction('attempts').objectStore('attempts').getAll();
+        request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+      });
+    } finally { db.close(); }
+  });
+}
+
+for (const [exercise, reducedMotion] of [
+  ['audio-picture', false], ['audio-text', false], ['audio-picture', true],
+] as const) {
+  test(`late ${exercise} answer completes with partial feedback and persists${reducedMotion ? ' with reduced motion' : ''}`, async ({ page }) => {
+    if (reducedMotion) await page.emulateMedia({ reducedMotion: 'reduce' });
+    const first: PracticeAttempt = {
+      id: 'learn', sessionId: 'seed', itemId: target.id, language: target.language,
+      choiceIds: [target.id], selectedId: target.id, correct: true,
+      startedAt: Date.now() - 30 * 86_400_000, answeredAt: Date.now() - 30 * 86_400_000, responseMs: 0,
+      context: { phase: 'lesson', exercise: exercise as Exercise, recordingSrc: target.audio[0]!.src, replays: 0, schedulerVersion: 'fsrs-6-v1' },
+    };
+    const learning = await advanceSchedule(undefined, first);
+    const second = { ...first, id: 'graduate', startedAt: learning.dueAt, answeredAt: learning.dueAt };
+    const limit = quizTimeLimit(await advanceSchedule(learning, second))!;
+    expect(limit).toBeGreaterThan(0);
+    await page.clock.install();
+    await page.goto('./');
+    await page.evaluate(async attempts => {
+      const db = await new Promise<IDBDatabase>((resolve, reject) => {
+        const request = indexedDB.open('kikimashta-v0', 1);
+        request.onupgradeneeded = () => { const store = request.result.createObjectStore('attempts', { keyPath: 'id' }); store.createIndex('language', 'language'); };
+        request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+      });
+      try {
+        const tx = db.transaction('attempts', 'readwrite');
+        attempts.forEach(attempt => tx.objectStore('attempts').put(attempt));
+        await new Promise<void>((resolve, reject) => { tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error); });
+      } finally { db.close(); }
+    }, [first, second]);
+    await page.reload();
+    await page.getByRole('button', { name: /^start/i }).click();
+    await page.getByRole('button', { name: /begin review/i }).click();
+    const fill = page.locator('.quiz-timer-fill');
+    await expect(fill).toBeAttached();
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 50));
+    const startingFraction = await fill.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).d);
+    await page.clock.runFor(limit / 2);
+    const halfway = await fill.evaluate(element => ({ fraction: new DOMMatrix(getComputedStyle(element).transform).d,
+      origin: getComputedStyle(element).transformOrigin, color: getComputedStyle(element).backgroundColor }));
+    expect(halfway.fraction).toBeGreaterThan(startingFraction + .45);
+    expect(halfway.fraction).toBeLessThan(.9);
+    expect(halfway.origin).toMatch(/ 0px$/);
+    expect(halfway.color).toBe('rgb(255, 219, 153)');
+    if (!reducedMotion) await page.screenshot({ path: `test-results/timer-${exercise}-halfway.png` });
+    await page.getByRole('button', { name: 'Replay word' }).click();
+    await page.clock.runFor(limit / 2);
+    await expect(fill).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+    await expect(page.getByText(/correct answer still counts as partial success/i)).toBeAttached();
+    expect(await history(page)).toHaveLength(2);
+    const answer = exercise === 'audio-text'
+      ? page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true })
+      : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) });
+    await expect(answer).toBeEnabled();
+    await answer.click();
+    await expect(page.locator('.app')).toHaveAttribute('data-answer', 'partial');
+    await expect(page.getByLabel('Partial success', { exact: true })).toBeVisible();
+    await expect(page.locator('.quiz-starburst')).toHaveCount(0);
+    const motion = await page.locator('.answer-choice.partial').evaluate(element => element.getAnimations().filter(a => a instanceof CSSAnimation).map(a => (a as CSSAnimation).animationName));
+    expect(motion).toEqual(reducedMotion ? [] : ['partial-wobble']);
+    await expect.poll(async () => (await history(page)).length).toBe(3);
+    const saved = await history(page);
+    const partial = saved.find(attempt => attempt.outcome === 'partial')!;
+    expect(partial).toMatchObject({ correct: true, timer: { limitMs: limit }, context: { replays: 1, exercise, schedulerVersion: 'fsrs-6-v2' } });
+    expect(partial.answeredAt - partial.timer!.startedAt).toBeGreaterThanOrEqual(limit);
+    await expect.poll(() => page.locator('audio').evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
+    await expect(page.getByRole('button', { name: 'Replay word' })).toHaveText('Replay');
+    await expect(page.locator('.feedback').getByText('Saving…', { exact: true })).toHaveCount(0);
+    await page.clock.fastForward(1200);
+    await expect(page.getByRole('heading', { name: 'Nice reviewing!' })).toBeVisible();
+    await expect(page.getByText('1 partial success', { exact: true })).toBeVisible();
+    await page.clock.resume();
+    await page.reload();
+    expect(await history(page)).toEqual(saved);
+  });
+}

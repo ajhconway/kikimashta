@@ -184,6 +184,11 @@ footer a:hover { color: var(--purple-dark); }
 
 /* Flat cards with a firm press, a listening companion, and one dot per sound. */
 .app-quiz { isolation: isolate; overflow-x: hidden; }
+.quiz-timer-fill { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #ffdb99; transform-origin: top; }
+.quiz .answer-choice.partial { border-color: #976321; animation: partial-wobble .8s ease-in-out; }
+.quiz .answer-choice.partial .choice-badge { background: #976321; }
+.is-partial img { animation: partial-wobble .8s ease-in-out; }
+@keyframes partial-wobble { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-4deg); } 50% { transform: rotate(3deg); } 75% { transform: rotate(-2deg); } }
 @supports (overflow-x: clip) { .app-quiz { overflow-x: clip; } }
 .app-quiz[data-answer='correct']::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 25%, #fff0af99 0, #ffd6ee60 46%, transparent 80%), radial-gradient(ellipse at 50% 80%, #ffb6dd33 0, transparent 70%); opacity: 0; animation: correct-glow .9s ease-out; }
 .app-quiz header { position: relative; z-index: 2; padding: 18px 0; }

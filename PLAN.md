@@ -63,3 +63,14 @@ Spacing and retrieval practice have research support; this density controller an
 - [#48](https://github.com/ajhconway/kikimashta/issues/48) remains the flexible roadmap for phrases, sentences, contextual exercises, timing challenges, English text, and offline practice. Audio-to-writing cards and font variation have already shipped.
 
 Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.
+
+
+## Adaptive timer pilot (#121)
+
+Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Established review cards use FSRS stability in days: below 1 stays untimed; at 1/3/7/21 days use 10/7/5/3 seconds. This is an adjustable pilot policy, not a validated fluency measure.
+
+Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
+
+Show elapsed time as soft amber filling the background from top to bottom. Give partial success an amber response, a gentle card/companion wobble, and a distinct badge and message; respect reduced motion. Keep full-success and failure responses. Count partial successes as completed questions and identify their count in the summary.
+
+Persist explicit outcomes and the countdown limit/start alongside existing attempt timing. FSRS policy v2 maps success/partial/failure to Good/Hard/Again, retains v1 historical grading, and still excludes corrective retries from retention evidence. Local history and sync preserve the optional new fields without rewriting old attempts; the existing JSON payload constraint accepts these additions. Already-open v1 clients need a refresh before syncing v2 history. Review timing thresholds, exercise differences, and feedback after deployment and real iPhone use in [#122](https://github.com/ajhconway/kikimashta/issues/122).
