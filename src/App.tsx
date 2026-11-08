@@ -99,9 +99,10 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [answers, setAnswers] = useState<PracticeAttempt[]>([]);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
   const [departures, setDepartures] = useState<DepartingCard[]>([]);
-  const [saving, setSaving] = useState(false);
   const [pendingSaveCount, setPendingSaveCount] = useState(0);
-  const [saveError, setSaveError] = useState(false);
+  const [failedAttempt, setFailedAttempt] = useState<PracticeAttempt | null>(null);
+  const saving = pendingSaveCount > 0;
+  const saveError = failedAttempt !== null;
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [autoPaused, setAutoPaused] = useState(false);
@@ -189,13 +190,13 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     operation.current++; preparing.current = false;
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
     active.current = { id: '', startedAt: 0, answered: true, sessionId: '', replays: 0 };
-    setSaving(false); setSaveError(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
+    setFeedback(null); setDepartures([]); setLessonPlan(null);
     setIsDevReview(false);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
-    setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
+    setFeedback(null); setDepartures([]);
     present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present]);
   function beginQuiz(block: Question[], blockPhase = phase) {
@@ -203,7 +204,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     showQuestion(block[0]!, session.current.id, blockPhase);
   }
   function startDevReview() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size || failedAttempt || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
@@ -225,7 +226,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     finally { if (operation.current === request) setLoading(false); }
   }, [now, range, store, random, selectedCards, selectedKeys]);
   async function startSession() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size || failedAttempt || !selectedCards.length) return;
     setIsDevReview(false);
     preparing.current = true;
     const request = ++operation.current;
@@ -267,14 +268,15 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   async function save(attempt: PracticeAttempt) {
     if (isDevReview) return;
     if (pendingSaves.current.has(attempt.id)) return;
-    pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setSaving(true); setSaveError(false);
+    pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setFailedAttempt(null);
     try {
       await store.record(attempt);
       onSaved?.();
       if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
       setTotal(history.current.length);
-    } catch { if (active.current.id === attempt.id) setSaveError(true); }
-    finally { pendingSaves.current.delete(attempt.id); setPendingSaveCount(pendingSaves.current.size); if (active.current.id === attempt.id) setSaving(false); }
+      setRefresh(value => value + 1);
+    } catch { setFailedAttempt(attempt); }
+    finally { pendingSaves.current.delete(attempt.id); setPendingSaveCount(pendingSaves.current.size); }
   }
   function choose(item: WordItem) {
     if (active.current.answered || audioError) return;
@@ -334,13 +336,14 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
-        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startDevReview}>Dev review</button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startDevReview}>Dev review</button>
+        {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => setFailedAttempt(null)}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
-          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0}><legend>Practice packs</legend>
+          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0 || saveError}><legend>Practice packs</legend>
             {cardPacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
           </fieldset>
           <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
@@ -387,7 +390,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         })}</div></div>
         <div className="practice-actions">
         <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
-        {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
+        {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { setFailedAttempt(null); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
         <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>
