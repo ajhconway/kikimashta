@@ -42,7 +42,7 @@ Keep the interface, learning rules, content, and storage separate. Speech provid
 
 Correctness maps to Good/Again; speed and replay use are recorded without grading speed. Existing fixed-round attempts remain unchanged and surface known picture cards for review without inventing delayed-retention evidence. Personal parameter fitting waits for enough relevant history.
 
-The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
+The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Valid future-dated history from clock differences waits for its original review/due times, stays known for lesson admission, and keeps its saved timestamps. Unrelated practice remains available (#117). Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
 
 Forecast reviews over seven days with 32 deterministic scenarios, one session per day, and an initial 80% lesson success assumption. Qualitative bands are Minimal, Light, Moderate, High, and Intense. Preferred minimum and maximum guide new intake; they cannot guarantee future demand. Thresholds, forecast assumptions, chunk size, and choice count remain adjustable. The user can always stop.
 
