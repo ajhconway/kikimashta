@@ -838,6 +838,23 @@
         "ja-v-79140f0bf8e7",
         "ja-v-89cc0156875d"
       ]
+    },
+    {
+      "batch": "batch-11",
+      "round": 3,
+      "feedback": "I'd like to push the deferred drafts as well, but have them marked in some way as replace later.",
+      "publishDeferredDrafts": [
+        "ja-v-5b39de46794f",
+        "ja-v-6fe6f680e0e0",
+        "ja-v-83365ed9e3db",
+        "ja-v-84c8eeeb03ab",
+        "ja-v-89beba69de5a",
+        "ja-v-89fcef8e86d8",
+        "ja-v-97dfa455ab7e",
+        "ja-v-a30018dbdb6b",
+        "ja-v-a39af9252454"
+      ],
+      "replacementStatusRetained": true
     }
   ],
   "acceptedWithKnownIssues": {
@@ -1242,5 +1259,16 @@
   },
   "removedFromVocabulary": {
     "ja-v-4fd3d09440c1": "User requested removal of Form / ～形 from the vocabulary list (card170)."
-  }
+  },
+  "publishDeferredDrafts": [
+    "ja-v-5b39de46794f",
+    "ja-v-6fe6f680e0e0",
+    "ja-v-83365ed9e3db",
+    "ja-v-84c8eeeb03ab",
+    "ja-v-89beba69de5a",
+    "ja-v-89fcef8e86d8",
+    "ja-v-97dfa455ab7e",
+    "ja-v-a30018dbdb6b",
+    "ja-v-a39af9252454"
+  ]
 }

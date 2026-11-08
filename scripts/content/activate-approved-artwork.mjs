@@ -42,8 +42,16 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     return manifest.assets.flatMap(asset => {
       if (seen.has(asset.id) || !allItems.some(item => item.id === asset.id) || !['approved', 'replace-later', 'removed'].includes(asset.status)) throw new Error(`Unapproved, duplicate or unknown image: ${asset.id}`)
       seen.add(asset.id)
-      // Explicit owner dispositions resolve review without publishing these images.
-      if (asset.status !== 'approved') return []
+      if (asset.publishDraft !== undefined && typeof asset.publishDraft !== 'boolean') throw new Error(`Invalid draft publication flag: ${asset.id}`)
+      const replaceLater = asset.status === 'replace-later' && asset.publishDraft === true
+      if (asset.publishDraft === true && asset.status === 'removed') throw new Error(`Draft publication is not explicitly authorized: ${asset.id}`)
+      if (replaceLater && (manifest.deferredDraftPublication?.authorized !== true ||
+          typeof manifest.deferredDraftPublication.feedback !== 'string' || !manifest.deferredDraftPublication.feedback.trim() ||
+          !Array.isArray(manifest.deferredDraftPublication.cardIds) || !manifest.deferredDraftPublication.cardIds.includes(asset.id))) {
+        throw new Error(`Draft publication is not explicitly authorized: ${asset.id}`)
+      }
+      // Deferred drafts remain inactive unless this exact image has owner authorization.
+      if (asset.status !== 'approved' && !replaceLater) return []
       if (!/^ja-[a-z0-9-]+$/.test(asset.id) || typeof asset.path !== 'string' || !asset.path.startsWith(`artifacts/card-regeneration/${batch}/`) || !/^[a-zA-Z0-9_./-]+\.png$/.test(asset.path) || asset.path.split('/').includes('..')) throw new Error(`Unsafe artwork identity: ${asset.id}`)
       const source = readFileSync(join(root, asset.path))
       if (source.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a' || hash(source) !== asset.sha256) throw new Error(`Source hash mismatch: ${asset.id}`)
@@ -53,10 +61,10 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       const format = asset.transparentBackground === true ? 'png' : 'jpeg'
       const sourceAlpha = format === 'png' ? inspectPngAlpha(source) : undefined
       if (sourceAlpha && (!sourceAlpha.transparentPixels || !sourceAlpha.opaquePixels)) throw new Error(`Source must have transparent outer pixels and opaque subject details: ${asset.id}`)
-      return [{ asset, manifestPath, description, format, sourceAlpha, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.${format === 'png' ? 'png' : 'jpg'}` }]
+      return [{ asset, manifestPath, description, format, sourceAlpha, replaceLater, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.${format === 'png' ? 'png' : 'jpg'}` }]
     })
   })
-  const deliveries = plan.map(({ asset, manifestPath, description, path, format, sourceAlpha }) => {
+  const deliveries = plan.map(({ asset, manifestPath, description, path, format, sourceAlpha, replaceLater }) => {
     const target = join(root, path)
     const recorded = activation.assets.find(record => record.id === asset.id && record.path === path &&
       record.sourcePath === asset.path && record.sourceSha256 === asset.sha256 && record.manifestPath === manifestPath)
@@ -79,12 +87,17 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     validateDelivery(bytes, asset, format, sourceAlpha)
     return { id: asset.id, sourcePath: asset.path, sourceSha256: asset.sha256, manifestPath, path, sha256: hash(bytes), bytes: bytes.length,
       ...(format === 'png' ? { format: 'png', alpha: 'preserved' } : {}),
+      ...(replaceLater ? { replaceLater: true } : {}),
       ...(asset.followUp ? { followUp: asset.followUp } : {}), description }
   })
   if (deliveries.some(delivery => delivery.format === 'png')) activation.transparentDelivery = { encoder: 'sips', format: 'png', maxDimension: 640, alpha: 'preserved' }
   for (const delivery of deliveries) {
     for (const item of allItems.filter(item => item.id === delivery.id)) item.image = { ...item.image, src: delivery.path.slice('public/'.length), alt: delivery.description }
-    for (const file of visuals) for (const visual of file.records.filter(visual => visual.id === delivery.id)) visual.concept = delivery.description
+    for (const file of visuals) for (const visual of file.records.filter(visual => visual.id === delivery.id)) {
+      visual.concept = delivery.description
+      if (delivery.replaceLater) visual.replaceLater = true
+      else delete visual.replaceLater
+    }
     const record = { ...delivery }
     delete record.description
     const index = activation.assets.findIndex(asset => asset.id === delivery.id)
@@ -100,5 +113,5 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const batches = process.argv.slice(2)
-  console.log(`Activated ${activateArtwork({ root: fileURLToPath(new URL('../../', import.meta.url)), batches }).length} approved illustrations.`)
+  console.log(`Activated ${activateArtwork({ root: fileURLToPath(new URL('../../', import.meta.url)), batches }).length} reviewed illustrations.`)
 }

@@ -267,3 +267,39 @@ for (const failure of ['awaiting-user-feedback', 'unrecognized status', 'missing
   assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
   assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
 })
+
+test('owner-authorized deferred artwork publishes provisionally and clears its marker only when later approved', t => {
+  const f = fixture(t)
+  f.manifest.assets[0].status = 'replace-later'
+  f.manifest.assets[0].publishDraft = true
+  f.manifest.deferredDraftPublication = { authorized: true, feedback: 'Publish the deferred draft, marked Replace later.', cardIds: ['ja-test'] }
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: f.encode })
+  assert.equal(f.read('content/card-regeneration/activation.json').assets.find(asset => asset.id === 'ja-test').replaceLater, true)
+  assert.deepEqual(f.read('content/visuals/levels-1-2.json')[0], { ...f.visual, concept: 'Broken rusty bicycle', replaceLater: true })
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0].audio, f.item.audio)
+  assert.deepEqual(f.read('content/practice-pool.json'), { itemIds: ['ja-test'] })
+  assert.equal(f.read('artifacts/card-regeneration/batch-05/manifest.json').assets[0].status, 'replace-later')
+  f.manifest.assets[0].status = 'approved'
+  // Final approval clears the marker even if historical draft authorization remains.
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Must reuse unchanged delivery') })
+  assert.equal(f.read('content/card-regeneration/activation.json').assets.find(asset => asset.id === 'ja-test').replaceLater, undefined)
+  assert.equal(f.read('content/visuals/levels-1-2.json')[0].replaceLater, undefined)
+})
+
+for (const failure of ['missing authorization', 'wrong card', 'empty owner feedback', 'removed status', 'false authorization', 'nonboolean flag']) test(`draft publication rejects ${failure} before encoding`, t => {
+  const f = fixture(t)
+  Object.assign(f.manifest.assets[0], { status: 'replace-later', publishDraft: true })
+  f.manifest.deferredDraftPublication = { authorized: true, feedback: 'Owner requested publication.', cardIds: ['ja-test'] }
+  if (failure === 'missing authorization') delete f.manifest.deferredDraftPublication
+  if (failure === 'wrong card') f.manifest.deferredDraftPublication.cardIds = ['ja-other']
+  if (failure === 'empty owner feedback') f.manifest.deferredDraftPublication.feedback = ' '
+  if (failure === 'removed status') f.manifest.assets[0].status = 'removed'
+  if (failure === 'false authorization') f.manifest.deferredDraftPublication.authorized = false
+  if (failure === 'nonboolean flag') f.manifest.assets[0].publishDraft = 'true'
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Validate authorization first') }), /draft publication|Draft publication/)
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
+  assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+})

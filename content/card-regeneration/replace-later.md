@@ -15,3 +15,5 @@ These cards are deferred for a later pass. Their current batch11artwork is not a
 | 191 | 中央 / Center | `ja-v-a39af9252454` | [image](../../artifacts/card-regeneration/batch-11/191-center.png) |
 
 Tracked for issue #72 in user-feedback.json → replaceLater. Removed card170 is recorded separately under removedFromVocabulary.
+
+The owner subsequently requested publication of these nine drafts with a visible **Replace later** marker. They are provisionally published with `publishDraft: true` and `replaceLater: true` provenance; their status and outstanding replacement feedback remain unchanged. A future approved replacement clears the marker.

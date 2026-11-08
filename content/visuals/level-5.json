@@ -28,10 +28,11 @@
   },
   {
     "id": "ja-v-84c8eeeb03ab",
-    "concept": "A large clock and energetic lightning bolt.",
+    "concept": "A golden clock beside a lightning bolt and urgency marks.",
     "visualGroup": "今すぐ",
     "reviewRequired": true,
-    "reviewNote": "Clock plus urgency bolt symbolizes immediately."
+    "reviewNote": "Clock plus urgency bolt symbolizes immediately.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-5dc14aea92c7",
@@ -60,10 +61,11 @@
   },
   {
     "id": "ja-v-83365ed9e3db",
-    "concept": "Thin and heavy versions of the same geometric letterform.",
+    "concept": "Two uppercase A letters of matching height, one thin and one bold, with emphasis on the bold letter.",
     "visualGroup": "太字",
     "reviewRequired": true,
-    "reviewNote": "Typographic diagram uses letterforms, without a word caption."
+    "reviewNote": "Typographic diagram uses letterforms, without a word caption.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-696107ad9e08",
@@ -253,10 +255,11 @@
   },
   {
     "id": "ja-v-97dfa455ab7e",
-    "concept": "Most dots agree, with a small minority differing.",
+    "concept": "Eight green check tokens and two lavender dash tokens.",
     "visualGroup": "大体",
     "reviewRequired": true,
-    "reviewNote": "Majority diagram symbolizes generally or roughly; may be confused with many."
+    "reviewNote": "Majority diagram symbolizes generally or roughly; may be confused with many.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-f754ac11a73b",

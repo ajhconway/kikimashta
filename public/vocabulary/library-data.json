@@ -4198,8 +4198,8 @@
       "meaning": "Input",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-a30018dbdb6b.svg",
-        "alt": "Input"
+        "src": "../images/approved/ja-v-a30018dbdb6b-d87fc9a00123.png",
+        "alt": "A keyboard below a monitor, with an arrow carrying data upward into the screen."
       },
       "audio": [
         {
@@ -4251,10 +4251,11 @@
           "available": true
         }
       ],
-      "concept": "A keyboard sending information into a monitor",
+      "concept": "A keyboard below a monitor, with an arrow carrying data upward into the screen.",
       "visualGroup": "入力",
       "reviewRequired": true,
-      "reviewNote": "Keyboard and inward arrow represent computer input."
+      "reviewNote": "Keyboard and inward arrow represent computer input.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-5849925b131d",
@@ -10013,8 +10014,8 @@
       "meaning": "Now",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-89beba69de5a.svg",
-        "alt": "Now"
+        "src": "../images/approved/ja-v-89beba69de5a-6956b98f059e.png",
+        "alt": "A golden clock within a calm lavender attention ring."
       },
       "audio": [
         {
@@ -10066,10 +10067,11 @@
           "available": true
         }
       ],
-      "concept": "A clock face surrounded by an immediate attention ring",
+      "concept": "A golden clock within a calm lavender attention ring.",
       "visualGroup": "now",
       "reviewRequired": true,
-      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-08f79cb14fd4",
@@ -12339,8 +12341,8 @@
       "meaning": "Atmosphere",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-89fcef8e86d8.svg",
-        "alt": "Atmosphere"
+        "src": "../images/approved/ja-v-89fcef8e86d8-be8033284583.png",
+        "alt": "Earth surrounded by atmospheric layers and three white clouds."
       },
       "audio": [
         {
@@ -12392,10 +12394,11 @@
           "available": true
         }
       ],
-      "concept": "Air layers and drifting clouds around planet Earth",
+      "concept": "Earth surrounded by atmospheric layers and three white clouds.",
       "visualGroup": "atmosphere",
       "reviewRequired": true,
-      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-10791214b2c9",
@@ -13048,8 +13051,8 @@
       "meaning": "Center",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-a39af9252454.svg",
-        "alt": "Center"
+        "src": "../images/approved/ja-v-a39af9252454-bbf836340980.png",
+        "alt": "Kiku centered among four lavender cubes, with attention lines emphasizing the cat."
       },
       "audio": [
         {
@@ -13101,10 +13104,11 @@
           "available": true
         }
       ],
-      "concept": "A highlighted central bead between four surrounding beads",
+      "concept": "Kiku centered among four lavender cubes, with attention lines emphasizing the cat.",
       "visualGroup": "center",
       "reviewRequired": true,
-      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-7733c49a7e4b",
@@ -15310,8 +15314,8 @@
       "meaning": "Method",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-5b39de46794f.svg",
-        "alt": "Method"
+        "src": "../images/approved/ja-v-5b39de46794f-2c8fc54de034.png",
+        "alt": "A sequence showing a one-cube, two-cube and three-cube tower joined by arrows."
       },
       "audio": [
         {
@@ -15363,10 +15367,11 @@
           "available": true
         }
       ],
-      "concept": "Three connected steps lead to assembling a block tower",
+      "concept": "A sequence showing a one-cube, two-cube and three-cube tower joined by arrows.",
       "visualGroup": "method",
       "reviewRequired": true,
-      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-823616f3288f",
@@ -18931,8 +18936,8 @@
       "meaning": "Way Of Seeing",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-6fe6f680e0e0.svg",
-        "alt": "Way Of Seeing"
+        "src": "../images/approved/ja-v-6fe6f680e0e0-95e81e4077bd.png",
+        "alt": "Two viewers look at different colored faces of one cube."
       },
       "audio": [
         {
@@ -18984,10 +18989,11 @@
           "available": true
         }
       ],
-      "concept": "Two viewers see different sides of the same cube",
+      "concept": "Two viewers look at different colored faces of one cube.",
       "visualGroup": "way-of-seeing",
       "reviewRequired": true,
-      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+      "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-2850b5703e8b",
@@ -19837,8 +19843,8 @@
       "meaning": "At Once",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-84c8eeeb03ab.svg",
-        "alt": "At Once"
+        "src": "../images/approved/ja-v-84c8eeeb03ab-53fdb564ad56.png",
+        "alt": "A golden clock beside a lightning bolt and urgency marks."
       },
       "audio": [
         {
@@ -19890,10 +19896,11 @@
           "available": true
         }
       ],
-      "concept": "A large clock and energetic lightning bolt.",
+      "concept": "A golden clock beside a lightning bolt and urgency marks.",
       "visualGroup": "今すぐ",
       "reviewRequired": true,
-      "reviewNote": "Clock plus urgency bolt symbolizes immediately."
+      "reviewNote": "Clock plus urgency bolt symbolizes immediately.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-5dc14aea92c7",
@@ -20159,8 +20166,8 @@
       "meaning": "Bold Letter",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-83365ed9e3db.svg",
-        "alt": "Bold Letter"
+        "src": "../images/approved/ja-v-83365ed9e3db-080b5816a684.png",
+        "alt": "Two uppercase A letters of matching height, one thin and one bold, with emphasis on the bold letter."
       },
       "audio": [
         {
@@ -20212,10 +20219,11 @@
           "available": true
         }
       ],
-      "concept": "Thin and heavy versions of the same geometric letterform.",
+      "concept": "Two uppercase A letters of matching height, one thin and one bold, with emphasis on the bold letter.",
       "visualGroup": "太字",
       "reviewRequired": true,
-      "reviewNote": "Typographic diagram uses letterforms, without a word caption."
+      "reviewNote": "Typographic diagram uses letterforms, without a word caption.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-696107ad9e08",
@@ -21970,8 +21978,8 @@
       "meaning": "Generally",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-97dfa455ab7e.svg",
-        "alt": "Generally"
+        "src": "../images/approved/ja-v-97dfa455ab7e-cb8ed1f26302.png",
+        "alt": "Eight green check tokens and two lavender dash tokens."
       },
       "audio": [
         {
@@ -22023,10 +22031,11 @@
           "available": true
         }
       ],
-      "concept": "Most dots agree, with a small minority differing.",
+      "concept": "Eight green check tokens and two lavender dash tokens.",
       "visualGroup": "大体",
       "reviewRequired": true,
-      "reviewNote": "Majority diagram symbolizes generally or roughly; may be confused with many."
+      "reviewNote": "Majority diagram symbolizes generally or roughly; may be confused with many.",
+      "replaceLater": true
     },
     {
       "id": "ja-v-f754ac11a73b",

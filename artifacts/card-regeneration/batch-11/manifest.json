@@ -163,7 +163,8 @@
       "sha256": "2c8fc54de034559c6cdd0fdc29555749bff4adf0499a5e3f8d5afdf6d905ea3a",
       "pngColorType": 6,
       "userFeedback": "Card172: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card172: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card172: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-5f0cf40d1630",
@@ -375,7 +376,8 @@
       "sha256": "95e81e4077bddce594b6432cd492b8a7c7dc12886899572686ee809fb8a55bf3",
       "pngColorType": 6,
       "userFeedback": "Card177: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card177: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card177: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-7003bbe10d0b",
@@ -550,7 +552,8 @@
       ],
       "productionRevision": 2,
       "userFeedback": "Card181: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card181: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card181: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-84c8eeeb03ab",
@@ -576,7 +579,8 @@
       "sha256": "53fdb564ad568679fd8a9182e8af7443a7a6f4324be021c9f9dbfa36bb4c7761",
       "pngColorType": 6,
       "userFeedback": "Card182: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card182: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card182: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-89beba69de5a",
@@ -629,7 +633,8 @@
       ],
       "productionRevision": 2,
       "userFeedback": "Card183: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card183: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card183: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-89cc0156875d",
@@ -713,7 +718,8 @@
       "sha256": "be80332845832746ea5667a7e02289927d354e99a6369a575e398737b0732418",
       "pngColorType": 6,
       "userFeedback": "Card185: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card185: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card185: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-97dfa455ab7e",
@@ -739,7 +745,8 @@
       "sha256": "cb8ed1f263021a6542836facec07f03ab191be527ad4414bb9858ea1371bc1fa",
       "pngColorType": 6,
       "userFeedback": "Card186: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card186: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card186: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-9f59b44e2237",
@@ -863,7 +870,8 @@
       "sha256": "d87fc9a00123c4b79ff72825cc79f0bc363af8f07f65d1f07394239c152f4667",
       "pngColorType": 6,
       "userFeedback": "Card190: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card190: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card190: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-a39af9252454",
@@ -893,7 +901,8 @@
       "sha256": "bbf83634098060e40e508668c2d60b384f704971d24f3bfe47901f3b7ee1e32a",
       "pngColorType": 6,
       "userFeedback": "Card191: user requested replacement later; current artwork remains deferred.",
-      "followUp": "Card191: user requested replacement later; current artwork remains deferred."
+      "followUp": "Card191: user requested replacement later; current artwork remains deferred.",
+      "publishDraft": true
     },
     {
       "id": "ja-v-a76119b3c712",
@@ -958,8 +967,24 @@
   ],
   "reviewNotes": [
     "15 illustrations approved for activation. Nine drafts remain marked Replace later; Form170 is removed from vocabulary.",
-    "Revised cloches175, puppy179 and shared jar184 are approved. The next batch can proceed through its own feedback gate."
+    "Revised cloches175, puppy179 and shared jar184 are approved. The next batch can proceed through its own feedback gate.",
+    "Owner authorized publishing the nine deferred drafts with an explicit Replace later marker. Their replacement status remains; Form170 stays removed."
   ],
   "currentRevisionRound": 1,
-  "revisionSummary": "Review complete:15approved artworks,9deferred replacements and1removed vocabulary entry."
+  "revisionSummary": "Review complete:15approved artworks,9deferred replacements and1removed vocabulary entry.",
+  "deferredDraftPublication": {
+    "authorized": true,
+    "feedback": "I'd like to push the deferred drafts as well, but have them marked in some way as replace later.",
+    "cardIds": [
+      "ja-v-5b39de46794f",
+      "ja-v-6fe6f680e0e0",
+      "ja-v-83365ed9e3db",
+      "ja-v-84c8eeeb03ab",
+      "ja-v-89beba69de5a",
+      "ja-v-89fcef8e86d8",
+      "ja-v-97dfa455ab7e",
+      "ja-v-a30018dbdb6b",
+      "ja-v-a39af9252454"
+    ]
+  }
 }

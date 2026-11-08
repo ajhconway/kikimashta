@@ -14,14 +14,19 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 183 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 183)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 183)
+test('all 192 active illustrations resolve to the approved or owner-authorized draft selection in the app and library', () => {
+  assert.equal(activation.assets.length, 192)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 192)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
     assert.equal(manifest.status, 'approved')
-    assert.equal(selected.status, 'approved')
+    if (asset.replaceLater) {
+      assert.equal(selected.status, 'replace-later')
+      assert.equal(selected.publishDraft, true)
+      assert.equal(manifest.deferredDraftPublication.authorized, true)
+      assert.ok(manifest.deferredDraftPublication.cardIds.includes(asset.id))
+    } else assert.equal(selected.status, 'approved')
     assert.equal(asset.sourcePath, selected.path)
     assert.equal(hash(readFileSync(new URL(asset.sourcePath, root))), selected.sha256)
     const delivery = readFileSync(new URL(asset.path, root))
@@ -46,6 +51,7 @@ test('all 183 active illustrations resolve to the approved selection in the app 
       assert.equal(card.image.src, `../${asset.path.slice('public/'.length)}`)
       assert.equal(card.image.alt, items[0].image.alt)
       assert.equal(card.concept, items[0].image.alt)
+      assert.equal(card.replaceLater, asset.replaceLater)
     }
     if (selected.followUp) assert.equal(asset.followUp, selected.followUp)
   }
@@ -94,7 +100,7 @@ test('the five approved numerical reference replacements are selected in their o
   }
 })
 
-test('batch11 publishes only its15approved selections while deferred artwork and removed Form stay inactive', () => {
+test('batch11 publishes15approved selections and nine explicitly authorized Replace later drafts while removed Form stays inactive', () => {
   const reviewed = read('artifacts/card-regeneration/batch-11/manifest.json')
   assert.equal(reviewed.status, 'approved')
   const approved = reviewed.assets.filter(asset => asset.status === 'approved')
@@ -104,14 +110,19 @@ test('batch11 publishes only its15approved selections while deferred artwork and
   assert.equal(deferred.length, 9)
   assert.equal(removed.length, 1)
   assert.equal(reviewed.assets.length, 25)
-  for (const asset of approved) {
+  for (const asset of [...approved, ...deferred]) {
     const active = activation.assets.find(record => record.id === asset.id)
     assert.equal(active.sourcePath, asset.path)
     assert.equal(active.sourceSha256, asset.sha256)
     assert.ok(library.some(card => card.id === asset.id))
   }
-  for (const asset of [...deferred, ...removed]) assert.ok(!activation.assets.some(record => record.id === asset.id))
-  for (const asset of deferred) assert.ok(library.some(card => card.id === asset.id))
+  assert.deepEqual(new Set(reviewed.deferredDraftPublication.cardIds), new Set(deferred.map(asset => asset.id)))
+  for (const asset of deferred) {
+    assert.equal(asset.publishDraft, true)
+    assert.equal(activation.assets.find(record => record.id === asset.id).replaceLater, true)
+    assert.equal(library.find(card => card.id === asset.id).replaceLater, true)
+  }
+  for (const asset of removed) assert.ok(!activation.assets.some(record => record.id === asset.id))
   const removedId = 'ja-v-4fd3d09440c1'
   assert.equal(removed[0].id, removedId)
   assert.ok(!library.some(card => card.id === removedId))

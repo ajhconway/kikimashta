@@ -422,10 +422,11 @@
   },
   {
     "id": "ja-v-a30018dbdb6b",
-    "concept": "A keyboard sending information into a monitor",
+    "concept": "A keyboard below a monitor, with an arrow carrying data upward into the screen.",
     "reviewRequired": true,
     "reviewNote": "Keyboard and inward arrow represent computer input.",
-    "visualGroup": "入力"
+    "visualGroup": "入力",
+    "replaceLater": true
   },
   {
     "id": "ja-v-5849925b131d",

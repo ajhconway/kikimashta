@@ -1,5 +1,6 @@
 import { expect, test } from './fixtures';
 import catalog from '../content/catalog/ja.json' with { type: 'json' };
+import artworkReview from '../artifacts/card-regeneration/batch-11/manifest.json' with { type: 'json' };
 
 const voiceNames = ['Otani', 'Morioki', 'Goro', 'Tsuki', 'Takeshi', 'Lime', 'Ritsuto', 'Itsuki'];
 
@@ -64,4 +65,23 @@ test('render contact sheets for every vocabulary illustration', async ({ page },
       number++;
     }
   }
+});
+
+
+test('published deferred artwork is visibly marked Replace later in the vocabulary library', async ({ page }) => {
+  await page.goto('./vocabulary/');
+  const drafts = artworkReview.assets.filter(asset => asset.status === 'replace-later');
+  expect(drafts).toHaveLength(9);
+  for (const draft of drafts) {
+    const item = catalog.items.find(entry => entry.id === draft.id)!;
+    await page.getByLabel('Search words').fill(item.text);
+    const card = page.locator(`[aria-labelledby="word-${item.id}"]`);
+    await expect(card).toBeVisible();
+    await expect(card.locator('.replace-later-badge')).toHaveText('Replace later');
+    await expect(card.locator('.card-image')).toHaveAttribute('src', /images\/approved\/.*\.png$/);
+  }
+  await page.getByLabel('Search words').fill('犬');
+  await expect(page.locator('[aria-labelledby="word-ja-dog"] .replace-later-badge')).toHaveCount(0);
+  await page.getByLabel('Search words').fill('～形');
+  await expect(page.locator('.card')).toHaveCount(0);
 });
