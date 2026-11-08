@@ -35,7 +35,7 @@ Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked 
 
 ## Roadmap
 
-Adaptive practice is playable and accepted. The 441-card review library is available, with 170 eligible words in adaptive lessons. The next milestone is optional sign-in and progress sync.
+Adaptive practice is playable and accepted. The 440-card review library is available, with 170 eligible words in adaptive lessons. The next milestone is optional sign-in and progress sync.
 
 1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
 2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Use FSRS for per-word scheduling and forecast review density to guide new-word intake.

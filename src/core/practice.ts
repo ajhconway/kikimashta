@@ -2,6 +2,7 @@ import starter from '../../content/ja.json';
 import catalogue from '../../content/catalog/ja.json';
 import sets from '../../content/practice-sets.json';
 import poolSelection from '../../content/practice-pool.json';
+import reviewOverrides from '../../content/catalog/review-overrides.json';
 import type { WordBank, WordItem } from '../types';
 import { validateBank } from './session';
 
@@ -14,6 +15,9 @@ export interface PracticeSet {
 
 type CatalogueItem = Omit<WordItem, 'label' | 'theme'> & { meaning: string };
 
+const removedIds = new Set(Object.entries(reviewOverrides)
+  .filter(([, override]) => 'removalReason' in override).map(([id]) => id));
+
 /** Sets reference stable vocabulary IDs; source levels never determine membership. */
 export function buildPracticeBanks(items: CatalogueItem[], selections: PracticeSet[]): WordBank[] {
   const byId = new Map(items.map(item => [item.id, item]));
@@ -24,6 +28,7 @@ export function buildPracticeBanks(items: CatalogueItem[], selections: PracticeS
     ids.add(selection.id);
     if (selection.itemIds.length !== 6 || new Set(selection.itemIds).size !== 6) throw new Error('A practice set needs six unique words.');
     const words = selection.itemIds.map(id => {
+      if (removedIds.has(id)) throw new Error('Removed vocabulary item: ' + id);
       const item = byId.get(id);
       if (!item) throw new Error('Unknown vocabulary item: ' + id);
       return {
@@ -48,6 +53,7 @@ export const practicePool: WordBank = {
   items: [
     ...starter.items as WordItem[],
     ...poolSelection.itemIds.map(id => {
+      if (removedIds.has(id)) throw new Error('Removed practice-pool item: ' + id);
       const item = catalogue.items.find(candidate => candidate.id === id);
       if (!item) throw new Error('Unknown practice-pool item: ' + id);
       return { id: item.id, language: item.language, theme: 'vocabulary', label: item.meaning,

@@ -7,7 +7,7 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await page.goto('./');
   await page.getByRole('link', { name: /card library/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Vocabulary cards');
-  await expect(page.locator('#results-status')).toContainText('441 cards');
+  await expect(page.locator('#results-status')).toContainText('440 cards');
   await expect(page.locator('.card')).toHaveCount(24);
   await page.getByLabel('Provisional level').selectOption('2');
   await expect(page.locator('#results-status')).toContainText('79 cards');
@@ -33,6 +33,9 @@ test('browse provisional levels, search cards, and retry a voice recording', asy
   await voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeHidden();
   await page.getByLabel('Provisional level').selectOption('all');
+  await page.getByLabel('Search words').fill('～形');
+  await expect(page.locator('#results-status')).toContainText('No matching words.');
+  await expect(page.locator('.card')).toHaveCount(0);
   await page.getByLabel('Search words').fill('りんご');
   await expect(page.locator('.card')).toHaveCount(1);
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('リンゴ');
