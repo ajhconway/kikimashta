@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
 import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
 import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
@@ -14,6 +14,7 @@ import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
+import { AnswerRecovery } from './progress/recovery';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
 import { DensityIndicator, HomeIntensity } from './components/PaceControl';
 import './styles.css';
@@ -72,11 +73,14 @@ function initialRange(): DensityRange {
 }
 interface DepartingCard extends PracticeCard { font: WritingFont; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
 
-export default function App({ now = wallClock, random = Math.random, progressStore = defaultStore, historyRevision = 0, accountControls, accountLoading = false, onSaved }: {
-  now?: () => number; random?: () => number; progressStore?: ProgressStore; historyRevision?: number;
+export default function App({ now = wallClock, random = Math.random, progressStore = defaultStore, answerRecovery, historyRevision = 0, accountControls, accountLoading = false, onSaved }: {
+  now?: () => number; random?: () => number; progressStore?: ProgressStore; answerRecovery?: AnswerRecovery; historyRevision?: number;
   accountControls?: ReactNode; accountLoading?: boolean; onSaved?: () => void;
 } = {}) {
   const store = progressStore;
+  const [localRecovery] = useState(() => new AnswerRecovery());
+  const recovery = answerRecovery ?? localRecovery;
+  const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(initialPackIds);
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds), [packIds]);
   const selectedKeys = useMemo(() => new Set(selectedCards.map(cardKey)), [selectedCards]);
@@ -109,9 +113,11 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [masteryChange, setMasteryChange] = useState<{ id: string; label: string; direction: 'up' | 'down' } | null>(null);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
   const [departures, setDepartures] = useState<DepartingCard[]>([]);
-  const [saving, setSaving] = useState(false);
-  const [pendingSaveCount, setPendingSaveCount] = useState(0);
-  const [saveError, setSaveError] = useState(false);
+  const [demoSaving, setDemoSaving] = useState(false);
+  const pendingSaveCount = saveState.pendingId === null ? 0 : 1;
+  const failedAttempt = saveState.failed;
+  const saving = pendingSaveCount > 0 || demoSaving;
+  const saveError = failedAttempt !== null;
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [audioFinished, setAudioFinished] = useState(false);
@@ -128,7 +134,6 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const operation = useRef(0);
   const preparing = useRef(false);
   const playRequest = useRef(0);
-  const pendingSaves = useRef(new Set<string>());
   const replayButton = useRef<HTMLButtonElement>(null);
   const choiceGrid = useRef<HTMLDivElement>(null);
   const countdown = useQuizCountdown({ id: screen === 'quiz' ? questionTimer.id : '', limitMs: questionTimer.limitMs,
@@ -174,7 +179,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, selectedKeys]);
+  }, [screen, refresh, now, store, historyRevision, selectedKeys, saveState.revision]);
 
   useEffect(() => {
     const element = audio.current;
@@ -207,7 +212,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     operation.current++; preparing.current = false;
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
     active.current = { id: '', startedAt: 0, answered: true, sessionId: '', replays: 0 };
-    setSaving(false); setSaveError(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
+    setDemoSaving(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
     setIsDevReview(false); demoSchedules.current = null; setDemoPresentation(null);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
@@ -220,7 +225,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: demoLevel ? next.retryOf ? null : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
       ? quizTimeLimit(word) : null });
     setAudioFinished(false);
-    setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
+    setFeedback(null); setDepartures([]);
     present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present, random]);
   function beginQuiz(block: Question[], blockPhase = phase, devReview = isDevReview) {
@@ -228,14 +233,14 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     showQuestion(block[0]!, session.current.id, blockPhase, devReview);
   }
   function startDevReview() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
     beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
   }
   function startMasteryDemo() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     const demo = createMasteryDemo(selectedCards, now(), random);
     operation.current++;
     demoSchedules.current = demo.schedules;
@@ -259,7 +264,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     finally { if (operation.current === request) setLoading(false); }
   }, [now, range, store, random, selectedCards, selectedKeys]);
   async function startSession() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
+    if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     setIsDevReview(false);
     preparing.current = true;
     const request = ++operation.current;
@@ -306,7 +311,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (!demoId || !samples || attempt.context?.retryOf) return;
       const request = operation.current;
       const previous = samples.get(demoId);
-      setSaving(true);
+      setDemoSaving(true);
       try {
         const updated = await advanceSchedule(previous, attempt);
         if (operation.current !== request || active.current.id !== attempt.id) return;
@@ -315,30 +320,25 @@ export default function App({ now = wallClock, random = Math.random, progressSto
           setMasteryChange({ id: attempt.id, label: cardMastery(updated).label,
             direction: masteryIndex(updated) > masteryIndex(previous) ? 'up' : 'down' });
         }
-      } finally { if (active.current.id === attempt.id) setSaving(false); }
+      } finally { if (active.current.id === attempt.id) setDemoSaving(false); }
       return;
     }
-    if (pendingSaves.current.has(attempt.id)) return;
-    pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setSaving(true); setSaveError(false);
     const request = operation.current;
     const key = cardKey({ ...attempt, exercise: attemptExercise(attempt) });
     const previous = mastery.current.get(key);
-    try {
-      const updated = attempt.context?.retryOf ? undefined : await advanceSchedule(previous, attempt);
-      await store.record(attempt);
-      if (updated && operation.current === request) {
-        mastery.current.set(key, updated);
-        const before = masteryIndex(previous), after = masteryIndex(updated);
-        if (before !== after && active.current.id === attempt.id) {
-          setMasteryChange({ id: attempt.id, label: cardMastery(updated).label, direction: after > before ? 'up' : 'down' });
-        }
+    if (!await recovery.save(store, attempt)) return;
+    const updated = attempt.context?.retryOf ? undefined : await advanceSchedule(previous, attempt);
+    if (updated && operation.current === request) {
+      mastery.current.set(key, updated);
+      const before = masteryIndex(previous), after = masteryIndex(updated);
+      if (before !== after && active.current.id === attempt.id) {
+        setMasteryChange({ id: attempt.id, label: cardMastery(updated).label, direction: after > before ? 'up' : 'down' });
       }
-      onSaved?.();
-      if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
-      setTotal(history.current.length);
-      setRefresh(value => value + 1);
-    } catch { if (active.current.id === attempt.id) setSaveError(true); }
-    finally { pendingSaves.current.delete(attempt.id); setPendingSaveCount(pendingSaves.current.size); if (active.current.id === attempt.id) setSaving(false); }
+    }
+    onSaved?.();
+    if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
+    setTotal(history.current.length);
+    setRefresh(value => value + 1);
   }
   function choose(item: WordItem) {
     if (active.current.answered || audioError) return;
@@ -371,7 +371,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setFeedback(attempt); setAnswers(previous => [...previous, attempt]); void save(attempt);
   }
   const next = useCallback(() => {
-    if (!active.current.answered || pendingSaves.current.has(active.current.id)) return;
+    if (!active.current.answered || recovery.snapshot().pendingId === active.current.id) return;
     if (index + 1 === questions.length) {
       active.current.answered = false; playRequest.current++; audio.current?.pause();
       setPlaying(false); setDepartures([]); setScreen('summary');
@@ -379,7 +379,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       return;
     }
     setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase, isDevReview);
-  }, [index, questions, showQuestion, prepareLessons, isDevReview, phase]);
+  }, [index, questions, showQuestion, prepareLessons, isDevReview, phase, recovery]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
     const answerId = feedback.id; const request = playRequest.current;
@@ -401,14 +401,15 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
-        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startDevReview}>Dev review</button>
-        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startDevReview}>Dev review</button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
+        {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
-          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0}><legend>Practice packs</legend>
+          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0 || saveError}><legend>Practice packs</legend>
             {cardPacks.map(pack => {
               const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id]), packSchedules);
               return <label key={pack.id}><input type="checkbox" aria-label={pack.title} aria-describedby={`mastery-${pack.id}`} checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/><span>{pack.title}<small id={`mastery-${pack.id}`} className="pack-mastery">{loading || accountLoading ? 'Mastery loading…' : historyError ? 'Mastery unavailable' : `Lowest: ${levels.lowest.label} · Average: ${levels.average.label}`}</small></span></label>;
@@ -454,13 +455,13 @@ export default function App({ now = wallClock, random = Math.random, progressSto
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
         <MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: !!demoPresentation }}
           outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
           change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
-        {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
+        {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
         <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>

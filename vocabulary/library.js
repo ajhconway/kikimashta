@@ -40,6 +40,8 @@ import { ProgressStore } from '../src/progress/store'
   const progress = account?.progress ?? new ProgressStore()
   let schedules = null
   let masteryRequest = 0
+  let pageActive = true
+  let closingProgress = Promise.resolve()
   function updateMastery() {
     for (const update of masteryViews.values()) update()
     for (const pack of cardPacks) {
@@ -49,6 +51,12 @@ import { ProgressStore } from '../src/progress/store'
     }
   }
   async function refreshMastery() {
+    if (!pageActive) return
+    if (account && account.currentUserId() !== account.userId) {
+      schedules = null
+      updateMastery()
+      return
+    }
     const request = ++masteryRequest
     try {
       const history = await progress.history(practicePool.language)
@@ -327,7 +335,20 @@ import { ProgressStore } from '../src/progress/store'
   packElement.addEventListener('change', () => { page = 1; render() })
   previous.addEventListener('click', () => { page -= 1; render() })
   next.addEventListener('click', () => { page += 1; render() })
-  window.addEventListener('pagehide', () => { stopAudio(); if (!account) void progress.close() })
+  window.addEventListener('pagehide', () => {
+    stopAudio()
+    pageActive = false
+    masteryRequest++
+    if (!account) closingProgress = progress.close().catch(() => {})
+  })
+  async function refreshAfterReturn() {
+    // A BFCache restore can happen while the previous guest connection closes.
+    // Wait before reopening it; retain the existing identity and stale-read guards.
+    await closingProgress
+    if (pageActive) void refreshMastery()
+  }
+  window.addEventListener('pageshow', () => { pageActive = true; void refreshAfterReturn() })
+  window.addEventListener('focus', () => { void refreshAfterReturn() })
 
   await refreshMastery()
   fetch('./library-data.json')

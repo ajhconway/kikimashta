@@ -113,6 +113,20 @@ describe('mastery demo fixtures (#140)', () => {
     expect({ questions, schedules }).toEqual(original);
   });
 
+  it('keeps early demo misses behind all eight ordered samples', () => {
+    for (const random of [0, .5, .999]) {
+      const { questions } = createMasteryDemo(pool(), at, () => .999);
+      const withFirstMiss = requeueMissedQuestion(questions, 0, 'new-miss', () => random);
+      expect(withFirstMiss.slice(0, 8)).toEqual(questions);
+      expect(withFirstMiss[8]).toMatchObject({ demoId: questions[0]!.demoId, retryOf: 'new-miss' });
+      const withSecondMiss = requeueMissedQuestion(withFirstMiss, 1, 'learning-miss', () => random);
+      expect(withSecondMiss.slice(0, 8)).toEqual(questions);
+      expect(withSecondMiss.slice(8).map(question => question.retryOf)).toEqual(['new-miss', 'learning-miss']);
+      const repeated = requeueMissedQuestion(withSecondMiss, 8, 'new-miss-again', () => random);
+      expect(repeated.at(-1)).toMatchObject({ demoId: questions[0]!.demoId, retryOf: 'new-miss' });
+    }
+  });
+
   it('requires a selected pool', () => {
     expect(() => createMasteryDemo([], at, () => .5)).toThrow(/select a pack/i);
   });

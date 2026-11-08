@@ -8,6 +8,8 @@ import { NoteStore } from './notes';
 import { ProgressStore } from '../progress/store';
 import type { PracticeAttempt } from '../types';
 import { advanceSchedule, schedulerVersion } from '../core/scheduler';
+import { selectedPracticeCards } from '../core/packs';
+import { practicePool } from '../core/practice';
 
 vi.mock('./library-bridge', () => ({ getLibraryAccount: vi.fn() }));
 
@@ -67,6 +69,7 @@ afterEach(async () => {
   for (const args of windowListeners.splice(0)) window.removeEventListener(...args);
   await Promise.all(stores.map(store => store.close()));
   await Promise.all(stores.splice(0).map(store => deleteDB(store.databaseName)));
+  await deleteDB('kikimashta-v0');
   vi.unstubAllGlobals();
 });
 
@@ -182,6 +185,37 @@ describe('library mastery and separate exercise cards (#135)', () => {
     fireEvent.input(editors[0]!, { target: { value: 'One shared note' } });
     expect(editors[1]).toHaveValue('One shared note');
     expect(screen.getByRole('button', { name: 'Export feedback (1)' })).toBeEnabled();
+  });
+
+
+  it('refreshes guest mastery on focus and BFCache restore without replacing cards or notes', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    const writer = new ProgressStore();
+    progressStores.push(writer);
+    await loadLibrary();
+    const picture = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')!;
+    const writing = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-text"]')!;
+    expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
+    fireEvent.input(dogInput(), { target: { value: 'Keep this editor open' } });
+    const first: PracticeAttempt = {
+      id: 'guest-picture-lesson', sessionId: 'session', itemId: 'ja-dog', language: 'ja-JP',
+      choiceIds: ['ja-dog'], selectedId: 'ja-dog', correct: true, startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'dog.mp3', replays: 0, schedulerVersion },
+    };
+    // Practice in another tab updates the same real IndexedDB database.
+    await writer.merge(selectedPracticeCards(practicePool.items, ['ja-wanikani-2-pictures']).map(({ item }) => ({
+      ...first, id: `guest-lesson-${item.id}`, itemId: item.id, selectedId: item.id, choiceIds: [item.id],
+    })));
+    window.dispatchEvent(new Event('focus'));
+    await waitFor(() => expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning'));
+    expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
+    window.dispatchEvent(new Event('pagehide'));
+    await writer.record({ ...first, id: 'guest-writing-lesson', context: { ...first.context!, exercise: 'audio-text' } });
+    window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+    await waitFor(() => expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning'));
+    expect(document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')).toBe(picture);
+    expect(dogInput()).toHaveValue('Keep this editor open');
+    expect(document.querySelector('#pack option[value="ja-wanikani-2-pictures"]')).toHaveTextContent('Lowest: Learning · Average: Learning');
   });
 
   it('shows unavailable when history fails instead of presenting all cards as New', async () => {
