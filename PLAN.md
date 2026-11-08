@@ -189,3 +189,7 @@ Dev review opens a configuration screen before an unsaved session. The owner cho
 ## Contextual transcript styling (#160)
 
 Match the Japanese/English details popup to the app’s rounded cards and purple/pink controls. Enlarge the close icon and touch target, and increase both Japanese and English type. Keep translation space reserved before disclosure, support scrolling on short screens, and retain Escape dismissal and focus return. Verify phone/desktop presentation and the existing contextual browser journeys before review.
+
+## Four contextual answer choices (#163)
+
+Every current contextual question must offer exactly four authored choices, with one clear correct answer in every supported format. Add beginner-friendly distractors to the 46 three-choice questions and reuse approved pictures where required. Keep spoken sentences/questions, approved generation inputs and accepted media provenance unchanged. Apply answer-only amendments after exact media matching, increment affected question revisions for future attempts, and preserve old IDs, history and corrective retry snapshots. Enforce complete four-choice coverage and uniqueness in preflight/runtime regression checks; review all 80 questions locally with existing recordings. No new audio generation is needed.
