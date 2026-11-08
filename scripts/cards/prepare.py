@@ -407,7 +407,7 @@ def prepare():
     resolve_batch_statuses(batches, ROOT / 'artifacts/card-regeneration')
     write('prompts.json', {'schemaVersion': 1, 'issue': 72, 'style': STYLE, 'cards': cards})
     write('batches.json', {'batchSize': batch_size, 'gate': 'Generate one batch; inspect; collect user feedback; revise prompts, component references and affected artwork; only then unlock the next batch.', 'batches': batches})
-    lines = ['# Card prompt changes', '', 'Tracked in [issue #72](https://github.com/ajhconway/kikimashta/issues/72). All cards remain staged for visual and user review. No practice eligibility is activated by these files.', '', 'The source concepts are preserved in `source-prompts.json`. `prompts.json` contains the complete revised generation prompts and provisional gloss clarifications. Existing review flags and notes remain. Appearance fixes do not resolve semantic ambiguity.', '']
+    lines = ['# Card prompt changes', '', 'Tracked in [issue #72](https://github.com/ajhconway/kikimashta/issues/72). This document records the original review findings and prompt changes. Approved artwork activation is tracked separately in `activation.json`; unapproved drafts remain staged. These prompt changes do not grant practice eligibility or resolve the semantic policies deferred to #79.', '', 'The source concepts are preserved in `source-prompts.json`. `prompts.json` contains the complete revised generation prompts and provisional gloss clarifications. Existing review flags and notes remain. Appearance fixes do not resolve semantic ambiguity.', '']
     lookup = {c['id']: c for c in cards}
     for f in findings:
         labels = ', '.join(f"{lookup[i]['japanese']} ({i})" for i in f['ids'])

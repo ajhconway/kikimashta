@@ -54,3 +54,7 @@ This checks retry selection without publishing unreviewed code.
 After merging a publication change, verify the first production publish and one
 publication retry, checking artifact IDs and the public source notice each time.
 Record the actual results and any Pages service queue delay in the linked PR.
+
+## Verified release state — November 8, 2026
+
+The public source notice identifies `38f6619e63707df8db411a2697f21e726ea16c7e`. Its [main Checks run](https://github.com/ajhconway/kikimashta/actions/runs/42496296871) completed successfully for both `checks` and `database`. All 40 original approved deliveries from batches 01–04 match the current activation-manifest SHA-256 hashes on the public site, resolving the old deployment/hash-verification concern recorded in #77. The manifest now contains 168 active approved illustrations in total. This read-only smoke check does not replace real-iPhone acceptance or demonstrate a new publication retry.
