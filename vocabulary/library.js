@@ -6,7 +6,7 @@ import { initialPackIds, selectedPracticeCards } from '../src/core/packs'
 import { cardKey } from '../src/core/cards'
 import { cardMastery, packMastery } from '../src/core/mastery'
 import { deriveSchedules } from '../src/core/scheduler'
-import { initialVoiceIds, practiceVoices, voicePreferenceKey } from '../src/core/voices'
+import { initialVoiceIds, practiceVoicesFor, voicePreferenceKeyFor } from '../src/core/voices'
 import { ProgressStore } from '../src/progress/store'
 
 (async () => {
@@ -18,6 +18,8 @@ import { ProgressStore } from '../src/progress/store'
   // Preserve the existing Japanese notes namespace; new languages use their stable ID.
   const feedbackLanguage = language.id === 'ja-JP' ? 'ja' : language.id
   const japanese = language.id === 'ja-JP'
+  const practiceVoices = practiceVoicesFor(language.id)
+  const voicePreferenceKey = voicePreferenceKeyFor(language.id)
   const pageSize = 24
   const cardsElement = document.getElementById('cards')
   const packElement = document.getElementById('pack')
@@ -70,9 +72,9 @@ import { ProgressStore } from '../src/progress/store'
   updateSelection()
   window.addEventListener('storage', () => { selectedPackIds = initialPackIds(cardPacks, packPreferenceKey); updateSelection() })
   const practiceVoiceInputs = document.getElementById('practice-voices')
-  practiceVoiceInputs.closest('details').hidden = !japanese
+  practiceVoiceInputs.closest('details').hidden = !practiceVoices.length
   const voiceSelectionError = document.getElementById('voice-selection-error')
-  let selectedVoiceIds = initialVoiceIds()
+  let selectedVoiceIds = initialVoiceIds(language.id)
   function updateVoiceSelection() {
     for (const input of practiceVoiceInputs.querySelectorAll('input')) {
       input.checked = selectedVoiceIds.includes(input.value)
@@ -114,7 +116,7 @@ import { ProgressStore } from '../src/progress/store'
     })
   }
   updateVoiceSelection()
-  const refreshVoiceSelection = () => { selectedVoiceIds = initialVoiceIds(); updateVoiceSelection() }
+  const refreshVoiceSelection = () => { selectedVoiceIds = initialVoiceIds(language.id); updateVoiceSelection() }
   window.addEventListener('storage', refreshVoiceSelection)
   window.addEventListener('pageshow', refreshVoiceSelection)
   const searchElement = document.getElementById('search')
@@ -391,7 +393,8 @@ import { ProgressStore } from '../src/progress/store'
       const accent = element('small', 'voice-accent', practiceVoices.find(voice => voice.id === clip.voice)?.description ?? 'Accent unspecified')
       accent.id = `voice-accent-${headingId}-${clip.voice}`
       button.append(element('span', 'voice-name', clip.available ? voice : `${voice} unavailable`))
-      if (japanese) { button.append(accent); button.setAttribute('aria-describedby', accent.id) }
+      button.append(accent)
+      button.setAttribute('aria-describedby', accent.id)
       button.type = 'button'
       button.dataset.label = voice
       button.setAttribute('aria-pressed', 'false')
