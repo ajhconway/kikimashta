@@ -15,19 +15,27 @@ function attempt(overrides: Partial<PracticeAttempt> = {}): PracticeAttempt {
 describe('adaptive quiz timer policy', () => {
   it('samples each dev-review choice with an equal share, including untimed', () => {
     expect([0, .2, .4, .6, .8, .999999].map(value => devReviewTimeLimit(() => value)))
-      .toEqual([null, 10000, 7000, 5000, 3000, 3000]);
+      .toEqual([null, 10000, 5000, 3000, 1500, 1500]);
   });
-  it('starts untimed and shortens at explicit stability thresholds only for review cards', async () => {
+  it('uses scheduled interval mastery for timers, independent of FSRS stability', async () => {
     const learning = await advanceSchedule(undefined, attempt());
     expect(quizTimeLimit(undefined)).toBeNull();
     expect(quizTimeLimit(learning)).toBeNull();
-    const review = { ...learning, card: { ...learning.card, scheduleStatus: 'review' as const } };
-    for (const [stability, expected] of [[0, null], [.999, null], [1, 10000], [2.999, 10000], [3, 7000], [6.999, 7000], [7, 5000], [20.999, 5000], [21, 3000], [100, 3000], [NaN, null]] as const) {
-      expect(quizTimeLimit({ ...review, card: { ...review.card, stability } })).toBe(expected);
+    const hour = 60 * 60 * 1000;
+    const day = 24 * hour;
+    for (const [gap, expected] of [
+      [0, null], [4 * hour - 1, null], [4 * hour, 10000],
+      [day, 10000], [7 * day - 1, 10000], [7 * day, 5000],
+      [30 * day - 1, 5000], [30 * day, 3000], [90 * day - 1, 3000],
+      [90 * day, 1500], [365 * day, 1500],
+    ] as const) {
+      for (const stability of [0, 9999]) {
+        expect(quizTimeLimit({ ...learning, dueAt: start + gap,
+          card: { ...learning.card, stability } })).toBe(expected);
+      }
     }
-    for (const scheduleStatus of ['new', 'learning'] as const) {
-      expect(quizTimeLimit({ ...review, card: { ...review.card, scheduleStatus, stability: 100 } })).toBeNull();
-    }
+    expect(quizTimeLimit({ ...learning, dueAt: start + 365 * day,
+      card: { ...learning.card, lastReviewAt: null, stability: 9999 } })).toBeNull();
   });
 
   it('keeps mastery specific to language, word, and exercise and relaxes timing after a lapse', async () => {
@@ -44,7 +52,7 @@ describe('adaptive quiz timer policy', () => {
     history.push(attempt({ id: 'french-cat', language: 'fr-FR' }));
     const schedules = await deriveSchedules(history, 'ja-JP');
     expect(schedules.map(schedule => [schedule.itemId, schedule.exercise, quizTimeLimit(schedule)])).toEqual([
-      ['cat', 'audio-picture', 3000], ['cat', 'audio-text', null], ['dog', 'audio-picture', null],
+      ['cat', 'audio-picture', 1500], ['cat', 'audio-text', null], ['dog', 'audio-picture', null],
     ]);
     expect(quizTimeLimit((await deriveSchedules(history, 'fr-FR'))[0])).toBeNull();
     const lapse = await advanceSchedule(word, attempt({ id: 'lapse', answeredAt: word.dueAt, correct: false, selectedId: 'dog', outcome: 'failure' }));

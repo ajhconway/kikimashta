@@ -712,7 +712,7 @@ it('samples dev-review timers per question, retains the choice on replay, and ne
   vi.useFakeTimers();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   loadPictures(container); endAudio(container); await advance(480); await advance(0);
-  expect(screen.getByText('3 second timer started.')).toBeInTheDocument();
+  expect(screen.getByText('1.5 second timer started.')).toBeInTheDocument();
   draw = 0;
   await advance(1500); await click(screen.getByRole('button', { name: 'Replay word' }));
   endAudio(container); await advance(1500);
@@ -740,4 +740,114 @@ it('catches up expiry from the wall clock when visibility changes after suspende
   expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(1)' });
   await click(heardChoice(container));
   expect(records[2]).toMatchObject({ correct: true, outcome: 'partial' });
+});
+
+describe('interval mastery feedback', () => {
+  it('shows an upward arrow only after saving', async () => {
+    const pending = deferred<void>();
+    const { container } = await review({ count: 1 });
+    vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
+    await click(heardChoice(container));
+    expect(screen.queryByLabelText(/Mastery increased/)).not.toBeInTheDocument();
+    await act(async () => pending.resolve());
+    expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Learning/);
+  });
+
+  it('refreshes pack mastery when an answer finishes saving after returning Home', async () => {
+    const pack = cardPacks.find(pack => pack.id === 'ja-wanikani-1-pictures')!;
+    const cards = selectedPracticeCards(practicePool.items, [pack.id]);
+    const old = legacy(1)[0]!;
+    records = cards.map(({ item, exercise }, index) => ({
+      ...old, id: 'pack-history-' + index, itemId: item.id, selectedId: item.id,
+      ...(index === 0 ? {} : {
+        startedAt: fixedNow() - 2000, answeredAt: fixedNow() - 1000, responseMs: 1000,
+        context: { phase: 'lesson' as const, exercise, recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
+      }),
+    }));
+    localStorage.setItem(packPreferenceKey, JSON.stringify([pack.id]));
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start();
+    expect(screen.getByText('1 card')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /begin review/i }));
+    const pending = deferred<void>();
+    vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
+    await click(heardChoice(container));
+    await click(screen.getByRole('button', { name: 'Kikimashta home' }));
+    await click(screen.getByText(/Card packs ·/));
+    const packLabel = screen.getByRole('checkbox', { name: pack.title }).closest('label')!;
+    // Let Home finish its first history read while the answer is still unwritten.
+    await waitFor(() => expect(within(packLabel).getByText('Lowest: New · Average: New')).toBeInTheDocument());
+    expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
+    await act(async () => pending.resolve());
+    await waitFor(() => expect(within(packLabel).getByText('Lowest: Learning · Average: Learning')).toBeInTheDocument());
+    expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
+  });
+
+  it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
+    const { container, limit } = await timedReview();
+    const current = screen.getByRole('status', { name: 'Current mastery' });
+    expect(within(current).getByText('Familiar')).toBeInTheDocument();
+    expect(within(current).getByText(`${limit / 1000}s`)).toBeInTheDocument();
+    expect(current.closest('.practice-actions')).not.toBeNull();
+    await click(heardChoice(container, false));
+    expect(current).toHaveAttribute('aria-hidden', 'true');
+    expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
+    await click(screen.getByRole('button', { name: /^continue$/i }));
+    const retry = screen.getByRole('status', { name: 'Current mastery' });
+    expect(within(retry).getByText('Learning')).toBeInTheDocument();
+    expect(within(retry).getByText('Untimed')).toBeInTheDocument();
+    await click(heardChoice(container));
+    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+  });
+
+  it('does not show a mastery change for an unsaved dev answer', async () => {
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await click(heardChoice(container));
+    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+  });
+});
+
+describe('all-level mastery demo (#140)', () => {
+  it('walks all eight levels with their timers, shows changes and an untimed retry, and never saves', async () => {
+    records = legacy(2);
+    const original = structuredClone(records);
+    const onSaved = vi.fn();
+    const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
+    vi.useFakeTimers();
+    await click(screen.getByRole('button', { name: 'Mastery demo' }));
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
+    for (const [label, limit] of [['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
+      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]] as const) {
+      const context = screen.getByRole('status', { name: 'Demo mastery' });
+      expect(context).toHaveTextContent(label);
+      expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
+      expect(context.closest('.practice-actions')).not.toBeNull();
+      expect(container.querySelector('.quiz-top .question-mastery')).toBeNull();
+      endAudio(container); loadPictures(container); await advance(480); await advance(0);
+      if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
+      else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+      await click(heardChoice(container, label !== 'Strong'));
+      if (label === 'New') expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Learning/);
+      if (label === 'Strong') {
+        expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
+        await click(screen.getByRole('button', { name: /^continue$/i }));
+      } else await advance(1200);
+    }
+    expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
+    endAudio(container); loadPictures(container); await advance(480);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await click(heardChoice(container));
+    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+    await advance(1200);
+    expect(screen.getByRole('heading', { name: 'Mastery demo complete' })).toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(onSaved).not.toHaveBeenCalled();
+    expect(records).toEqual(original);
+    await click(screen.getByRole('button', { name: 'Finish' }));
+    expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
+    expect(screen.getByText('2 answers saved on this device')).toBeInTheDocument();
+  });
 });
