@@ -6,7 +6,7 @@ import { ProgressStore } from './progress/store';
 import { advanceSchedule, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { forecastDensity, planLessonChunk } from './core/density';
 import { practicePool } from './core/practice';
-import { contextualBanks } from './content/contextual-runtime';
+import { contextualVocabulary, contextualBanks } from './content/contextual-runtime';
 
 vi.mock('./core/density', async original => ({ ...await original<typeof import('./core/density')>(), forecastDensity: vi.fn(), planLessonChunk: vi.fn() }));
 const forecast = { reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 };
@@ -21,6 +21,21 @@ beforeEach(() => {
   vi.mocked(planLessonChunk).mockImplementation(async ({ candidates }) => ({ items: candidates.filter(card => card.exercise === 'context-simple-text'), forecast, projectedForecast: forecast, reason: 'below-min' }));
 });
 async function click(element: HTMLElement) { await act(async () => { fireEvent.click(element); }); }
+
+
+async function unlockedTarget() {
+  const target = practicePool.items.find(item => item.text === '上')!;
+  let schedule: ScheduledWord | undefined;
+  for (let index = 0; index < 12; index++) {
+    const at = schedule?.dueAt ?? 1000;
+    const attempt: PracticeAttempt = { id: 'word-' + index, sessionId: 'old', itemId: target.id, language: target.language,
+      choiceIds: [target.id, 'other'], selectedId: target.id, correct: true, startedAt: at, answeredAt: at, responseMs: 0,
+      context: { phase: index === 0 ? 'lesson' : 'review', exercise: 'audio-picture', recordingSrc: target.audio[0]!.src, replays: 0, schedulerVersion } };
+    history.push(attempt); schedule = await advanceSchedule(schedule, attempt);
+    if (index > 0 && schedule.dueAt - at > 7 * 86_400_000) break;
+  }
+  return { schedule: schedule!, target };
+}
 
 it('opens all eighty questions for dev evaluation and never records an answer', async () => {
   render(<App/>);
@@ -39,21 +54,13 @@ it('opens all eighty questions for dev evaluation and never records an answer', 
 });
 
 it('admits unlocked contextual lessons through workload planning and saves explicit authored answers', async () => {
-  const target = practicePool.items.find(item => item.text === '上')!;
-  let schedule: ScheduledWord | undefined;
-  for (let index = 0; index < 12; index++) {
-    const at = schedule?.dueAt ?? 1000;
-    const attempt: PracticeAttempt = { id: 'word-' + index, sessionId: 'old', itemId: target.id, language: target.language,
-      choiceIds: [target.id, 'other'], selectedId: target.id, correct: true, startedAt: at, answeredAt: at, responseMs: 0,
-      context: { phase: index === 0 ? 'lesson' : 'review', exercise: 'audio-picture', recordingSrc: target.audio[0]!.src, replays: 0, schedulerVersion } };
-    history.push(attempt); schedule = await advanceSchedule(schedule, attempt);
-    if (index > 0 && schedule.dueAt - at > 7 * 86_400_000) break;
-  }
+  const { schedule, target } = await unlockedTarget();
   const now = () => schedule!.lastReviewedAt + 1;
   const before = history.length;
   let draw = 0;
   const { container } = render(<App now={now} random={() => draw}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
+  expect(screen.getByText(/2 contextual cards are ready for lessons/)).toBeInTheDocument();
   await click(screen.getByRole('button', { name: /^Start/ }));
   await click(await screen.findByRole('button', { name: 'Begin lesson' }));
   expect(vi.mocked(planLessonChunk).mock.calls[0]![0].candidates.some(card => card.item.id === target.id && card.exercise === 'context-simple-text')).toBe(true);
@@ -80,4 +87,67 @@ it('admits unlocked contextual lessons through workload planning and saves expli
   expect(screen.getByRole('heading', { name: 'Sentence' })).toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Continue' }));
   expect(screen.getByRole('heading', { name: 'Nice round!' })).toBeInTheDocument();
+});
+
+
+it('runs the actual contextual practice screen as an unsaved demo with retries and both answer formats', async () => {
+  const onSaved = vi.fn();
+  const { container } = render(<App random={() => 0} onSaved={onSaved}/>);
+  await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
+  expect(screen.getByText('Practice demo. Progress is not saved.')).toBeInTheDocument();
+  expect(screen.queryByLabelText('Jump to question')).not.toBeInTheDocument();
+  const seen = new Set<string>();
+  let firstId: string | null = null;
+  let firstSource: string | null = null;
+  let retried = false;
+  for (let step = 0; step < 5; step++) {
+    const quiz = container.querySelector('.contextual-quiz')!;
+    const id = quiz.getAttribute('data-question-id');
+    const source = quiz.querySelector('audio')!.getAttribute('src');
+    const authored = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions).find(question => question.id === id)!;
+    const correct = authored.options.find(option => option.id === authored.correctOptionId)!;
+    const format = container.querySelector('.contextual-practice')!.getAttribute('data-exercise')!;
+    seen.add(format);
+    const buttons = screen.getAllByRole('button', { name: /^Choose (picture|writing)/ });
+    const correctButton = format.endsWith('text') ? buttons.find(button => button.textContent === correct.text)! :
+      buttons.find(button => within(button).getByRole('img').getAttribute('alt') === contextualVocabulary.find(word => word.id === correct.imageItemId)!.image.alt)!;
+    if (step === 0) { firstId = id; firstSource = source; }
+    else if (id === firstId) { expect(source).toBe(firstSource); retried = true; }
+    await click(step === 0 ? buttons.find(button => button !== correctButton)! : correctButton);
+    expect(screen.getByRole('heading', { name: 'Sentence' })).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Continue' }));
+  }
+  expect(retried).toBe(true);
+  expect(seen).toEqual(new Set(['context-simple-picture', 'context-simple-text', 'context-contrastive-picture', 'context-contrastive-text']));
+  expect(screen.getByRole('heading', { name: 'Contextual practice demo complete' })).toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  expect(onSaved).not.toHaveBeenCalled();
+  expect(history).toEqual([]);
+  await click(screen.getByRole('button', { name: 'Finish' }));
+  expect(screen.getByRole('button', { name: /^Start/ })).toBeInTheDocument();
+});
+
+it('offers a direct contextual demo link even with no selected packs', async () => {
+  window.history.replaceState({}, '', '/?demo=contextual');
+  localStorage.setItem('kikimashta-card-packs-v1', '[]');
+  try {
+    render(<App random={() => 0}/>);
+    expect(screen.getByRole('heading', { name: 'Contextual practice demo' })).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Begin review' }));
+    expect(screen.getByText('Practice demo. Progress is not saved.')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Jump to question')).not.toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  } finally { window.history.replaceState({}, '', '/'); }
+});
+
+
+it('explains when workload defers unlocked contextual lessons while leaving the demo available', async () => {
+  const { schedule } = await unlockedTarget();
+  vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
+  render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
+  await waitFor(() => expect(screen.getByText(/2 contextual cards are ready for lessons/)).toBeInTheDocument());
+  expect(screen.getByText(/New lessons are waiting for your review workload to ease/)).toBeInTheDocument();
+  await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
+  expect(screen.getByText('Practice demo. Progress is not saved.')).toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });

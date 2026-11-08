@@ -11,13 +11,14 @@ import { contextualBanks, contextualVocabulary, readyContextualCards } from './c
 import { ContextualQuiz } from './components/ContextualQuiz';
 import { ContextualDevReview } from './components/ContextualDevReview';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { createContextualDemo } from './core/contextual-demo';
 import { createMasteryDemo } from './core/mastery-demo';
 import { cardMastery, masteryIndex, packMastery } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
-import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, densityTargets, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { AnswerRecovery } from './progress/recovery';
@@ -116,14 +117,17 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
   useEffect(() => { preloadWritingFonts(); }, []);
-  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-dev'>(() =>
-    new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
+  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-dev' | 'contextual-demo-ready'>(() =>
+    new URLSearchParams(window.location.search).get('demo') === 'contextual' ? 'contextual-demo-ready' :
+      new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
+  const [isContextualDemo, setIsContextualDemo] = useState(false);
   const [demoPresentation, setDemoPresentation] = useState<{ label: string; timerMs: number | null; retry: boolean } | null>(null);
   const demoSchedules = useRef<Map<string, ScheduledWord | undefined> | null>(null);
   const [range] = useState<DensityRange>(initialRange);
   const [density, setDensity] = useState<number | null>(null);
+  const [contextualAdmission, setContextualAdmission] = useState({ ready: 0, atCapacity: false });
   const [loading, setLoading] = useState(true);
   const [historyError, setHistoryError] = useState(false);
   const [lessonPlan, setLessonPlan] = useState<LessonPlan | null>(null);
@@ -192,10 +196,13 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules, allSchedules } = await learningSnapshot(attempts);
+        const { schedules, allSchedules, cards } = await learningSnapshot(attempts);
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
+        const learned = new Set(schedules.map(cardKey));
+        setContextualAdmission({ ready: cards.filter(card => isContextualExercise(card.exercise) && !learned.has(cardKey(card))).length,
+          atCapacity: forecast.reviewsPerDay >= densityTargets(range.min, range.max).maximum });
         setPackSchedules(new Map(allSchedules.map(word => [cardKey(word), word])));
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
@@ -204,7 +211,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, range]);
 
   useEffect(() => {
     const element = audio.current;
@@ -238,7 +245,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
     active.current = { id: '', startedAt: 0, answered: true, sessionId: '', replays: 0 };
     setDemoSaving(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
-    setIsDevReview(false); demoSchedules.current = null; setDemoPresentation(null);
+    setIsDevReview(false); setIsContextualDemo(false); demoSchedules.current = null; setDemoPresentation(null);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
@@ -261,6 +268,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     showQuestion(block[0]!, session.current.id, blockPhase, devReview);
   }
   function startDevReview() {
+    setIsContextualDemo(false);
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
@@ -268,6 +276,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
   }
   function startMasteryDemo() {
+    setIsContextualDemo(false);
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     const demo = createMasteryDemo(selectedCards, now(), random);
     operation.current++;
@@ -275,6 +284,17 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
     beginQuiz(demo.questions, 'review', true);
+  }
+  function startContextualDemo() {
+    if (recovery.snapshot().pendingId || recovery.snapshot().failed) return;
+    const block = createContextualDemo(contextualBanks, contextualVocabulary, random);
+    if (!block.length) return;
+    operation.current++;
+    demoSchedules.current = null; setDemoPresentation(null); setDemoSaving(false); setMasteryChange(null);
+    session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: [] };
+    setIsDevReview(true); setIsContextualDemo(true); setPhase('review');
+    setLessonItems([]); setLessonPlan(null); setHistoryError(false);
+    beginQuiz(block, 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -294,7 +314,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   }, [now, range, store, random]);
   async function startSession() {
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
-    setIsDevReview(false);
+    setIsDevReview(false); setIsContextualDemo(false);
     preparing.current = true;
     const request = ++operation.current;
     const at = now();
@@ -454,11 +474,13 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startDevReview}>Dev review</button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
+        <button className="text-button" disabled={pendingSaveCount > 0 || saveError} onClick={startContextualDemo}>Contextual practice demo</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         <button className="text-button" disabled={accountLoading || pendingSaveCount > 0 || saveError} onClick={() => {
           operation.current++; playRequest.current++; audio.current?.pause(); setPlaying(false); setScreen('contextual-dev');
         }}>Contextual dev review</button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
+        {!loading && !historyError && contextualAdmission.ready > 0 && <p className="block-note">{contextualAdmission.ready} contextual {contextualAdmission.ready === 1 ? 'card is' : 'cards are'} ready for lessons. {contextualAdmission.atCapacity ? 'New lessons are waiting for your review workload to ease.' : 'Look for them in your next lesson block.'}</p>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
@@ -472,6 +494,12 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         </details>
         {!selectedCards.length && <p role="status">Select a pack to start practicing.</p>}
         {accountControls}
+      </section>}
+      {screen === 'contextual-demo-ready' && <section className="summary ready fade-in">
+        <h1>Contextual practice demo</h1>
+        <p>Try simple and contrastive questions with picture and writing answers.</p>
+        <p>Progress is not saved.</p>
+        <button className="primary" disabled={pendingSaveCount > 0 || saveError} onClick={startContextualDemo}>Begin review <span aria-hidden="true">→</span></button>
       </section>}
       {screen === 'contextual-dev' && <ContextualDevReview banks={contextualBanks} vocabulary={contextualVocabulary} onClose={home} random={random}/>}
       {screen === 'ready' && <section className="summary ready fade-in">
@@ -497,6 +525,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         </div>
       </section>}
       {screen === 'quiz' && target && questions[index]?.contextual && <section className="practice contextual-practice" data-exercise={exercise}>
+        {isContextualDemo && <p className="block-note" role="status">Practice demo. Progress is not saved.</p>}
         <ContextualQuiz key={index} question={questions[index]!} feedback={feedback} onChoose={choose}
           onContinue={next} onReplay={() => { active.current.replays++; }} disabled={saving || saveError}/>
         {saveError && feedback && <div role="alert" className="error"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
@@ -529,7 +558,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
-        <h1>{isDevReview ? demoPresentation ? 'Mastery demo complete' : 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
+        <h1>{isContextualDemo ? 'Contextual practice demo complete' : isDevReview ? demoPresentation ? 'Mastery demo complete' : 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
         {answers.some(answer => answer.outcome === 'partial') && <p>{answers.filter(answer => answer.outcome === 'partial').length} partial success{answers.filter(answer => answer.outcome === 'partial').length === 1 ? '' : 'es'}</p>}
         {!isDevReview && <>
