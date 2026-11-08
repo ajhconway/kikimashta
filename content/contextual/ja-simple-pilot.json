@@ -367,7 +367,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "One short location fact introduces direct questions before the matching contrastive context. Existing 上/下 pictures show Kiku on/under a chair, and left/right use arrows; owner review should confirm that these position concepts transfer clearly to the desk sentence.",
       "stage": "simple",
@@ -526,7 +526,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "One short event introduces direct questions before the matching contrastive context. Drink choices reuse existing concept pictures; the older draft-beer SVG needs owner confirmation as a clear distractor. People choices remain written.",
       "stage": "simple",
@@ -685,7 +685,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "One ongoing event introduces direct questions before the matching contrastive context. The target occurrence 走っています is an inflection of catalogue 走る. Choices remain written because clear matching pictures are not available for every action or person. The detail question uses subject が without a relative clause.",
       "stage": "simple",
