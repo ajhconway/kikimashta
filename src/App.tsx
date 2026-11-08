@@ -4,11 +4,11 @@ import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } fr
 import { attemptExercise, cardKey, practiceCards } from './core/cards';
 import { createQuestions, createSession, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
-import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
-import { quizFeedbackColors, themeColors } from './themes';
-import { DensityIndicator, PaceControl } from './components/PaceControl';
+import { intensityColors, quizFeedbackColors, themeColors } from './themes';
+import { DensityIndicator, HomeIntensity } from './components/PaceControl';
 import './styles.css';
 import './writing-fonts.css';
 import { availableWritingFont, createWritingFontRotation, preloadWritingFonts, type WritingFont } from './core/writing-fonts';
@@ -76,8 +76,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
-  const [range, setRange] = useState<DensityRange>(initialRange);
-  const [preferenceError, setPreferenceError] = useState(false);
+  const [range] = useState<DensityRange>(initialRange);
   const [density, setDensity] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [historyError, setHistoryError] = useState(false);
@@ -113,7 +112,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
   const theme = screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
   const response = screen === 'quiz' && feedback ? feedback.correct ? 'correct' : 'incorrect' : undefined;
-  const background = response ? quizFeedbackColors[response] : themeColors[theme];
+  const background = response ? quizFeedbackColors[response] : screen === 'home' && density !== null ? intensityColors[densityLevel(density)] : themeColors[theme];
   const invalidate = useCallback(() => { operation.current++; }, []);
 
   useLayoutEffect(() => {
@@ -183,11 +182,6 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setSaving(false); setSaveError(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
     setIsDevReview(false);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
-  }
-  function updateRange(value: DensityRange) {
-    setRange(value);
-    try { localStorage.setItem(preferenceKey, JSON.stringify(value)); setPreferenceError(false); }
-    catch { setPreferenceError(true); }
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
@@ -329,8 +323,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     <main>
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
-        <PaceControl value={density} range={range} onChange={updateRange}/>
-        {preferenceError && <p role="alert" className="error">Your pace couldn't be saved on this device.</p>}
+        <HomeIntensity value={density}/>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0} onClick={startDevReview}>Dev review</button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}

@@ -23,6 +23,14 @@ export function DensityIndicator({ value }: { value: number | null }) {
   return <div className="pace-density" data-density={level || undefined} role="status" aria-label="Review density">{DENSITY_LEVELS.find(candidate => candidate.id === level)?.label || '…'}</div>;
 }
 
+export function HomeIntensity({ value }: { value: number | null }) {
+  const level = value === null ? null : densityLevel(value);
+  return <div className="home-intensity" data-density={level || undefined} role="status" aria-label="Review density">
+    <KikuMood level={level}/>
+    <span>{DENSITY_LEVELS.find(candidate => candidate.id === level)?.label || '…'}</span>
+  </div>;
+}
+
 /** The scroll position changes selection only after an actual user interaction. */
 function DensityWheel({ label, value, firstEnabled = 0, lastEnabled = DENSITY_LEVELS.length - 1, onChange }: {
   label: string;
