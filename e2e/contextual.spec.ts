@@ -151,11 +151,12 @@ test('contextual scheduled reviews persist explicit answers and retain the same 
 
 test('every contextual writing and picture question renders exactly four usable choices', async ({ page }) => {
   test.setTimeout(120000);
+  page.setDefaultTimeout(10000);
   await page.goto('./?review=contextual');
   const jump = page.getByLabel('Jump to question');
   const quiz = page.locator('.contextual-quiz');
   for (const format of ['text', 'picture'] as const) {
-    await page.getByLabel('Answer format', { exact: true }).selectOption(format);
+    await page.getByRole('combobox', { name: 'Answer format', exact: true }).selectOption(format);
     const count = allQuestions.filter(question => question.formats.includes(format)).length;
     await expect(jump.locator('option')).toHaveCount(count);
     for (let index = 0; index < count; index++) {
