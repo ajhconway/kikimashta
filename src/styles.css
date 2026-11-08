@@ -184,6 +184,11 @@ footer a:hover { color: var(--purple-dark); }
 
 /* Flat cards with a firm press, a listening companion, and one dot per sound. */
 .app-quiz { isolation: isolate; overflow-x: hidden; }
+.quiz-timer-fill { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #ffdb99; transform-origin: top; }
+.quiz .answer-choice.partial { border-color: #976321; animation: partial-wobble .8s ease-in-out; }
+.quiz .answer-choice.partial .choice-badge { background: #976321; }
+.is-partial img { animation: partial-wobble .8s ease-in-out; }
+@keyframes partial-wobble { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-4deg); } 50% { transform: rotate(3deg); } 75% { transform: rotate(-2deg); } }
 @supports (overflow-x: clip) { .app-quiz { overflow-x: clip; } }
 .app-quiz[data-answer='correct']::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 25%, #fff0af99 0, #ffd6ee60 46%, transparent 80%), radial-gradient(ellipse at 50% 80%, #ffb6dd33 0, transparent 70%); opacity: 0; animation: correct-glow .9s ease-out; }
 .app-quiz header { position: relative; z-index: 2; padding: 18px 0; }
@@ -199,6 +204,7 @@ footer a:hover { color: var(--purple-dark); }
 .departing-card { position: absolute; margin: 0; pointer-events: none; transition: none; --fall-x: -8vw; --fall-rotation: -14deg; --slump-rotation: -3deg; }
 .departing-card[data-slot='1'], .departing-card[data-slot='3'] { --fall-x: 8vw; --fall-rotation: 14deg; --slump-rotation: 3deg; }
 .departing-card[data-exit='fly'] { animation: card-fly-out 800ms cubic-bezier(.33, 0, .67, .33) both; }
+.departing-card[data-exit='drift'] { animation: card-drift-out 1100ms linear both, card-drift-down 1100ms cubic-bezier(.42, 0, 1, 1) both; }
 .departing-card[data-exit='fall'] { animation: card-fall-out .74s cubic-bezier(.4, 0, 1, 1) both; }
 .quiz-top { display: grid; grid-template-columns: minmax(0, 1fr) 128px minmax(0, 1fr); align-items: center; width: 100%; max-width: 380px; min-height: 128px; margin: 0 auto 14px; }
 .quiz-progress { width: 100%; min-width: 0; max-width: 380px; margin: 0 auto; padding-bottom: 16px; }
@@ -257,6 +263,13 @@ footer a:hover { color: var(--purple-dark); }
   from { transform: translate(0, 0); }
   to { transform: translate(var(--fly-x), var(--fly-y)); }
 }
+/* Radial momentum plus accelerating gravity gives partial success a softer arc. */
+@keyframes card-drift-out {
+  from { transform: translate(0, 0) rotate(0); opacity: 1; }
+  80% { opacity: 1; }
+  to { transform: translate(calc(var(--fly-x) * .55), calc(var(--fly-y) * .55)) rotate(var(--fall-rotation)); opacity: 0; }
+}
+@keyframes card-drift-down { from { translate: 0 0; } to { translate: 0 110vh; } }
 @keyframes card-fall-out { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 20% { opacity: .9; transform: translate(0, 12px) rotate(var(--slump-rotation)); } 80% { opacity: .65; } 100% { opacity: 0; transform: translate(var(--fall-x), 110vh) rotate(var(--fall-rotation)); } }
 @keyframes firework-star { 0% { opacity: 0; transform: translate(0, 0) scale(.2); } 15% { opacity: .95; } 58% { opacity: .8; transform: translate(var(--star-x), var(--star-y)) scale(var(--star-scale)); } 100% { opacity: 0; transform: translate(var(--star-x), calc(var(--star-y) + 16px)) scale(.45); } }
 @keyframes correct-glow { 0%, 100% { opacity: 0; } 30% { opacity: 1; } }

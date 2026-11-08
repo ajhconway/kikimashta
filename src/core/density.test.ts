@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Exercise, PracticeAttempt, PracticeCard } from '../types';
-import { advanceSchedule, schedulerVersion, type ScheduledWord } from './scheduler';
+import { advanceSchedule, deriveSchedules, schedulerVersion, type ScheduledWord } from './scheduler';
 import { DENSITY_LEVELS, MAX_DENSITY_TARGET, densityLevel, densityTargets, forecastDensity, planLessonChunk } from './density';
 
 const NOW = Date.UTC(2026, 10, 5, 12);
@@ -72,6 +72,40 @@ describe('future workload forecast', () => {
     expect((await forecastDensity([future], NOW, options)).reviewsPerDay).toBe(0);
   });
 
+  it('defers future history while counting unrelated due work without changing schedules', async () => {
+    const future = await introduced('future', NOW + 60_000);
+    const due = await introduced('due', NOW - DAY_MS * 2);
+    const schedules = [future, due];
+    const original = structuredClone(schedules);
+    const forecast = await forecastDensity(schedules, NOW, options);
+    expect(forecast.daily[0]).toBe(1);
+    const futureOnly = await forecastDensity([future], NOW, options);
+    expect(futureOnly.daily[0]).toBe(0);
+    expect(futureOnly.daily.slice(1).some(count => count > 0)).toBe(true);
+    expect(await forecastDensity([due, future], NOW, options)).toEqual(forecast);
+    const distant = await introduced('distant', NOW + 30 * DAY_MS);
+    expect((await forecastDensity([distant], NOW, options)).daily).toEqual(Array(7).fill(0));
+    expect(schedules).toEqual(original);
+  });
+
+  it('handles a backward clock and counts a legacy card only when its original due time arrives', async () => {
+    const legacy = attempt('legacy', NOW);
+    delete legacy.context;
+    const [schedule] = await deriveSchedules([legacy], 'ja-JP');
+    const original = structuredClone(schedule!);
+    expect(schedule!.card.lastReviewAt).toBeNull();
+    expect((await forecastDensity([schedule!], NOW - 60_000, { ...options, horizonDays: 1 })).daily).toEqual([0]);
+    expect((await forecastDensity([schedule!], schedule!.dueAt, { ...options, horizonDays: 1 })).daily).toEqual([1]);
+    expect(schedule).toEqual(original);
+  });
+
+  it('never simulates before a serialized review even when a due timestamp is earlier', async () => {
+    const future = await introduced('future', NOW + 60_000);
+    const schedule = { ...future, dueAt: NOW, lastReviewedAt: NOW, card: { ...future.card, dueAt: NOW } };
+    expect((await forecastDensity([schedule], NOW, { ...options, horizonDays: 1 })).daily).toEqual([0]);
+    expect((await forecastDensity([schedule], NOW + 60_000, { ...options, horizonDays: 1 })).daily).toEqual([1]);
+  });
+
   it('is additive and independent of input order while including sampled failures', async () => {
     const first = await introduced('first', NOW - 30 * DAY_MS);
     const second = await introduced('second', NOW - 30 * DAY_MS);
@@ -82,6 +116,19 @@ describe('future workload forecast', () => {
     expect(await forecastDensity([second, first], NOW, options)).toEqual(combined);
     expect(combined.daily.slice(1).some(count => count % 1 !== 0)).toBe(true);
     await expect(forecastDensity([first, first], NOW, options)).rejects.toThrow(/duplicate/i);
+  });
+
+  it('rejects invalid schedule timestamps while accepting representable future times', async () => {
+    const schedule = await introduced();
+    for (const value of [Number.NaN, Number.POSITIVE_INFINITY, -1, 1.5, 8_640_000_000_000_001]) {
+      const invalid = [
+        { ...schedule, dueAt: value },
+        { ...schedule, lastReviewedAt: value },
+        { ...schedule, card: { ...schedule.card, dueAt: value } },
+        { ...schedule, card: { ...schedule.card, lastReviewAt: value } },
+      ];
+      for (const word of invalid) await expect(forecastDensity([word], NOW, options)).rejects.toThrow(/invalid forecast schedule/i);
+    }
   });
 
   it('handles empty state and validates options rather than permitting an unbounded simulation', async () => {
@@ -105,6 +152,14 @@ describe('lesson chunk admission', () => {
     const done = await planLessonChunk({ schedules: [picture, learnedWriting], candidates: [word('known'), writing], now: NOW, options });
     expect(done.items).toEqual([]);
     expect(done.reason).toBe('exhausted');
+  });
+
+  it('retains future cards as learned while admitting their unlearned sibling and unrelated cards', async () => {
+    const picture = await introduced('known', NOW + 60_000);
+    const plan = await planLessonChunk({ schedules: [picture],
+      candidates: [word('known'), word('known', 'audio-text'), word('new')], now: NOW, options });
+    expect(plan.items).toEqual([word('known', 'audio-text'), word('new')]);
+    expect(plan.forecast.daily[0]).toBe(0);
   });
 
   it('bounds mixed lesson size by cards rather than vocabulary items', async () => {

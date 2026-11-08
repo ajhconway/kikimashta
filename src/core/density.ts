@@ -90,7 +90,10 @@ function simulatedAttempt({ itemId, language, exercise }: CardIdentity, at: numb
  * A forecast assumes one session each day at now + 24h offsets, with the due queue
  * fixed at that session's start. Each card is reviewed at most once per simulated
  * day; short-interval retries wait until the next session. Existing overdue work
- * is counted on day zero. No later new words are assumed unless explicitly admitted.
+ * is counted on day zero. Future-dated reviews wait for their original review/due
+ * times without rewriting schedules. They remain in the known-card set when
+ * choosing new lesson cards.
+ * No later new words are assumed unless explicitly admitted.
  *
  * Outcomes sample FSRS's recall estimates; these estimates describe this task only
  * after calibration. Daily attendance and a new card's initial success rate are explicit
@@ -105,7 +108,10 @@ async function cardContribution(
     let schedule = await initialize(random);
     for (let day = 0; day < config.horizonDays; day++) {
       const at = now + day * DAY_MS;
-      if (schedule.dueAt > at) continue;
+      // A synced answer may come from a device whose wall clock is ahead.
+      // Defer only this card until both its review and due times have arrived.
+      if (schedule.dueAt > at || schedule.lastReviewedAt > at ||
+          (schedule.card.lastReviewAt !== null && schedule.card.lastReviewAt > at)) continue;
       daily[day]! += 1 / config.scenarios;
       const probability = await retrievability(schedule, at);
       if (!Number.isFinite(probability) || probability < 0 || probability > 1) throw new Error('Invalid recall probability.');
@@ -130,7 +136,10 @@ export async function forecastDensity(schedules: ScheduledWord[], now: number, o
     const key = cardKey(schedule);
     if (keys.has(key)) throw new Error('Duplicate scheduled card.');
     keys.add(key);
-    if (!Number.isFinite(schedule.dueAt) || schedule.lastReviewedAt > now) throw new Error('Invalid forecast schedule.');
+    const timestamps = [schedule.dueAt, schedule.lastReviewedAt, schedule.card.dueAt,
+      ...(schedule.card.lastReviewAt === null ? [] : [schedule.card.lastReviewAt])];
+    if (timestamps.some(value => !Number.isSafeInteger(value) || value < 0 ||
+        !Number.isFinite(new Date(value).getTime()))) throw new Error('Invalid forecast schedule.');
     const contribution = await cardContribution(key, async () => schedule, now, config);
     contribution.forEach((count, day) => { daily[day]! += count; });
   }

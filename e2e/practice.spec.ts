@@ -671,6 +671,51 @@ for (const key of ['Enter', 'Space']) {
   });
 }
 
+test('future history and a backward clock leave practice usable without changing saved attempts', async ({ page }) => {
+  const now = Date.UTC(2026, 10, 8, 12);
+  await page.clock.install({ time: now });
+  await page.goto('./');
+  const future = bank.items[0]!, due = bank.items[1]!;
+  await seedAttempts(page, [future.id, due.id]);
+  await page.evaluate(async ({ item, at }) => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+    });
+    try {
+      const transaction = db.transaction('attempts', 'readwrite');
+      transaction.objectStore('attempts').put({ id: 'legacy-' + item.id, sessionId: 'synced-device',
+        itemId: item.id, language: item.language, choiceIds: [item.id], selectedId: item.id, correct: true,
+        startedAt: at, answeredAt: at, responseMs: 0,
+        context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src,
+          replays: 0, schedulerVersion: 'fsrs-6-v2' } });
+      await new Promise<void>((resolve, reject) => {
+        transaction.oncomplete = () => resolve(); transaction.onerror = () => reject(transaction.error);
+      });
+    } finally { db.close(); }
+  }, { item: future, at: now + 60_000 });
+  const original = await savedAttempts(page);
+  await page.reload();
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  await expect(page.getByRole('alert')).toHaveCount(0);
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: /begin review/i }).click();
+  expect((await heardWord(page)).target.id).toBe(due.id);
+  await page.getByRole('button', { name: /kikimashta home/i }).click();
+  await page.clock.setSystemTime(now - 60_000);
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: /kikimashta home/i }).click();
+  await page.clock.setSystemTime(now + 86_400_000);
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: /begin review/i })).toBeEnabled();
+  await expect(page.getByRole('alert')).toHaveCount(0);
+  expect(await savedAttempts(page)).toEqual(original);
+});
+
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
   await page.clock.install();

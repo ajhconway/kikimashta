@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       # Keep this version aligned with @playwright/test in package.json.
-      # Browser OS dependencies are bundled; audio verification tools install separately.
+      # Browser OS dependencies are bundled; verification tools install separately.
       image: mcr.microsoft.com/playwright:v1.64.1-noble
       options: --init --ipc=host
     timeout-minutes: 15
@@ -56,8 +56,11 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Install audio verification tools
-        run: apt-get update && apt-get install -y --no-install-recommends ffmpeg
+      - name: Install audio and content verification tools
+        # Noble provides Python 3.12; card checks use only its standard library.
+        run: |
+          apt-get update && apt-get install -y --no-install-recommends ffmpeg python3
+          python3 --version
       - run: npm run check
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v7.0.2
