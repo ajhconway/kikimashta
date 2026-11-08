@@ -1,12 +1,19 @@
 /* One shared player; render only the current page. Vocabulary library for #27. */
 import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
 import { getLibraryAccount } from '../src/sync/library-bridge'
+import { cardPacks } from '../src/core/packs'
 
 (async () => {
   'use strict'
   const pageSize = 24
   const cardsElement = document.getElementById('cards')
-  const levelElement = document.getElementById('level')
+  const packElement = document.getElementById('pack')
+  for (const pack of cardPacks) {
+    const option = document.createElement('option')
+    option.value = pack.id
+    option.textContent = pack.title
+    packElement.append(option)
+  }
   const searchElement = document.getElementById('search')
   const resultsStatus = document.getElementById('results-status')
   const pageStatus = document.getElementById('page-status')
@@ -115,7 +122,7 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     const input = element('textarea')
     input.id = `feedback-${card.id}`
     input.rows = 4
-    input.placeholder = 'Picture, pronunciation, meaning…'
+    input.placeholder = 'Card, pronunciation, meaning…'
     label.htmlFor = input.id
     const status = element('p', 'feedback-status')
     status.id = `feedback-status-${card.id}`
@@ -181,18 +188,25 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     })
   }
 
-  function renderCard(card) {
+  function renderCard(card, exercise) {
+    const writing = exercise === 'audio-text'
     const article = element('article', 'card')
     const headingId = `word-${card.id}`
     article.setAttribute('aria-labelledby', headingId)
-    const image = element('img', 'card-image')
-    image.src = card.image.src
-    image.alt = card.image.alt
-    image.width = 256
-    image.height = 256
-    image.loading = 'lazy'
-    image.decoding = 'async'
-    article.append(image)
+    if (writing) {
+      const face = element('div', 'card-writing', card.text)
+      face.lang = 'ja'
+      article.append(face)
+    } else {
+      const image = element('img', 'card-image')
+      image.src = card.image.src
+      image.alt = card.image.alt
+      image.width = 256
+      image.height = 256
+      image.loading = 'lazy'
+      image.decoding = 'async'
+      article.append(image)
+    }
     const content = element('div', 'card-content')
     const heading = element('h2', 'japanese', card.text)
     heading.id = headingId
@@ -200,7 +214,7 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     const reading = element('p', 'reading', card.reading)
     reading.lang = 'ja'
     content.append(element('p', 'level-label', `Level ${card.sourceLevel}`), heading, reading, element('p', 'meaning', card.meaning))
-    if (card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
+    if (!writing && card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')
     voices.setAttribute('aria-label', `Japanese voices for ${card.meaning}`)
@@ -217,14 +231,17 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
       voices.append(button)
     }
     content.append(voices)
-    const notes = element('details', 'picture-notes')
-    notes.append(element('summary', '', 'Picture notes'), element('p', '', card.concept))
-    if (card.reviewNote) notes.append(element('p', '', card.reviewNote))
-    if (card.teachingNote) notes.append(element('p', 'teaching-note', card.teachingNote))
-    if (cards.some(other => other.id !== card.id && other.visualGroup === card.visualGroup)) {
-      notes.append(element('p', '', 'Other cards share this picture idea. Consider them together when reviewing.'))
+    if (!writing) {
+      const notes = element('details', 'picture-notes')
+      notes.append(element('summary', '', 'Picture notes'), element('p', '', card.concept))
+      if (card.reviewNote) notes.append(element('p', '', card.reviewNote))
+      if (card.teachingNote) notes.append(element('p', 'teaching-note', card.teachingNote))
+      if (cards.some(other => other.id !== card.id && other.visualGroup === card.visualGroup)) {
+        notes.append(element('p', '', 'Other cards share this picture idea. Consider them together when reviewing.'))
+      }
+      content.append(notes)
     }
-    content.append(notes, renderFeedback(card))
+    content.append(renderFeedback(card))
     article.append(content)
     return article
   }
@@ -236,24 +253,26 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     feedbackViews.clear()
     audioError.hidden = true
     const query = normalized(searchElement.value)
-    const level = levelElement.value
-    const filtered = cards.filter(card => (level === 'all' || card.sourceLevel === Number(level)) &&
+    const pack = cardPacks.find(pack => pack.id === packElement.value)
+    const itemIds = pack ? new Set(pack.itemIds) : null
+    const exercise = pack?.exercise || 'audio-picture'
+    const filtered = cards.filter(card => (!itemIds || itemIds.has(card.id)) &&
       (!query || [card.text, card.reading, card.meaning].some(value => normalized(value).includes(query))))
     const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize))
     page = Math.min(page, totalPages)
     const offset = (page - 1) * pageSize
     const fragment = document.createDocumentFragment()
-    for (const card of filtered.slice(offset, offset + pageSize)) fragment.append(renderCard(card))
+    for (const card of filtered.slice(offset, offset + pageSize)) fragment.append(renderCard(card, exercise))
     cardsElement.replaceChildren(fragment)
     previous.disabled = page === 1
     next.disabled = page === totalPages
     pageStatus.textContent = `Page ${page} of ${totalPages}`
-    resultsStatus.textContent = filtered.length ? `${filtered.length} cards · Showing ${offset + 1}–${Math.min(offset + pageSize, filtered.length)}` : 'No matching words. Try another search or level.'
+    resultsStatus.textContent = filtered.length ? `${filtered.length} cards · Showing ${offset + 1}–${Math.min(offset + pageSize, filtered.length)}` : 'No matching words. Try another search or pack.'
   }
 
   document.getElementById('filters').addEventListener('submit', event => event.preventDefault())
   searchElement.addEventListener('input', () => { page = 1; render() })
-  levelElement.addEventListener('change', () => { page = 1; render() })
+  packElement.addEventListener('change', () => { page = 1; render() })
   previous.addEventListener('click', () => { page -= 1; render() })
   next.addEventListener('click', () => { page += 1; render() })
   window.addEventListener('pagehide', stopAudio)

@@ -76,3 +76,7 @@ Keep only the next milestone detailed in GitHub. Later stages remain flexible, w
 ## Writing font variation (#101)
 
 Use Noto Sans JP consistently for lesson previews, their attached mini-quizzes, and lesson corrective retries. Later review quizzes (including dev review) rotate Noto Serif JP, Zen Maru Gothic, and Klee One on successive presentations of each language/item. All choices in a question use one stable font through replay and feedback. Lesson presentations do not consume review rotation. Preserve existing card sizing and shared learning progress. Self-host fonts with licenses and glyph coverage records; use the standard font for the whole question when a review font cannot cover its writing. Store only a local appearance preference across visits; unavailable storage never blocks practice.
+
+## Selectable card packs (#108)
+
+Organize the WaniKani library into ten packs: levels 1–5, separately for pictures and writing. Allow any combination for practice and remember the selection on this device. Apply it to lessons, due reviews, dev review, answer choices, and workload forecasting, while preserving all saved history and stable language/item/exercise identities. Keep the existing approved practice subset; browsing a pack does not approve additional content. Retain older starter words outside the WaniKani catalogue in separate starter selections so existing reviews remain available.

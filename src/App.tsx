@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
+import { practicePacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
 import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
-import { attemptExercise, cardKey, practiceCards } from './core/cards';
-import { createQuestions, createSession, requeueMissedQuestion, shuffled, type Question } from './core/session';
+import { attemptExercise, cardKey } from './core/cards';
+import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -70,6 +71,15 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   accountControls?: ReactNode; accountLoading?: boolean; onSaved?: () => void;
 } = {}) {
   const store = progressStore;
+  const [packIds, setPackIds] = useState(initialPackIds);
+  const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds), [packIds]);
+  const selectedKeys = useMemo(() => new Set(selectedCards.map(cardKey)), [selectedCards]);
+  const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
+  function togglePack(id: string) {
+    const next = packIds.includes(id) ? packIds.filter(value => value !== id) : [...packIds, id];
+    setLoading(true); setPackIds(next);
+    try { localStorage.setItem(packPreferenceKey, JSON.stringify(next)); } catch { /* Practice still works without preference storage. */ }
+  }
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
   useEffect(() => { preloadWritingFonts(); }, []);
@@ -136,7 +146,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const schedules = await deriveSchedules(attempts, practicePool.language);
+        const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
@@ -146,7 +156,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision]);
+  }, [screen, refresh, now, store, historyRevision, selectedKeys]);
 
   useEffect(() => {
     const element = audio.current;
@@ -193,11 +203,11 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     showQuestion(block[0]!, session.current.id, blockPhase);
   }
   function startDevReview() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(createSession(practicePool, 6, 4, random), 'review');
+    beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review');
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -205,17 +215,17 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       const attempts = await store.history(practicePool.language);
       if (operation.current !== request) return;
       history.current = attempts;
-      const schedules = await deriveSchedules(attempts, practicePool.language);
+      const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
       const learned = new Set(schedules.map(cardKey));
       const plan = await planLessonChunk({ schedules, now: now(), range,
-        candidates: practiceCards(practicePool.items).filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
+        candidates: selectedCards.filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
       if (operation.current !== request) return;
       setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(shuffled(plan.items, random));
     } catch { if (operation.current === request) setHistoryError(true); }
     finally { if (operation.current === request) setLoading(false); }
-  }, [now, range, store, random]);
+  }, [now, range, store, random, selectedCards, selectedKeys]);
   async function startSession() {
-    if (loading || accountLoading || preparing.current || pendingSaves.current.size) return;
+    if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
     setIsDevReview(false);
     preparing.current = true;
     const request = ++operation.current;
@@ -223,14 +233,14 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setLoading(true); setHistoryError(false);
     try {
       const attempts = await store.history(practicePool.language);
-      const schedules = await deriveSchedules(attempts, practicePool.language);
+      const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
       if (operation.current !== request) return;
       history.current = attempts; setTotal(attempts.length);
       session.current = { id: crypto.randomUUID(), reserved: new Set() };
-      const due = snapshotDue(schedules, practicePool.items.map(item => item.id), at);
+      const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
       const byId = new Map(practicePool.items.map(item => [item.id, item]));
       if (due.length) {
-        setPhase('review'); setQuestions(createQuestions(due.map(card => ({ item: byId.get(card.itemId)!, exercise: card.exercise })), practicePool.items, random));
+        setPhase('review'); setQuestions(shuffled(due, random).flatMap(card => createQuestions([{ item: byId.get(card.itemId)!, exercise: card.exercise }], choicesFor(card.exercise), random)));
         setLessonItems([]); setLessonPlan(null); setLoading(false);
       } else {
         setPhase('lesson');
@@ -248,9 +258,9 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
-      const choices = practicePool.items.filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
+      const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
-      return createQuestions([card], choices.length >= 4 ? choices : practicePool.items, random);
+      return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);
     });
     beginQuiz(block);
   }
@@ -324,10 +334,18 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
-        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0} onClick={startDevReview}>Dev review</button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || !selectedCards.length} onClick={startDevReview}>Dev review</button>
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
+        <details className="pack-picker">
+          <summary>Card packs · {packIds.length} selected</summary>
+          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0}><legend>Practice packs</legend>
+            {practicePacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
+          </fieldset>
+          <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
+        </details>
+        {!selectedCards.length && <p role="status">Select a pack to start practicing.</p>}
         {accountControls}
       </section>}
       {screen === 'ready' && <section className="summary ready fade-in">
