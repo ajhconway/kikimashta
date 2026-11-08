@@ -94,6 +94,7 @@ test('contextual practice demo uses real session feedback and retries without ch
     const exercise = presentation.exercise;
     const quiz = page.locator('.contextual-quiz');
     await expect(page.locator('.contextual-practice')).toHaveAttribute('data-exercise', exercise);
+    await expect(quiz.getByRole('button', { name: 'Replay sentence and question', exact: true })).toBeFocused();
     await expect(page.locator('.quiz-timer-fill')).toHaveCount(0);
     const questionId = (await quiz.getAttribute('data-question-id'))!;
     const { context, question } = authored.find(entry => entry.question.id === questionId)!;

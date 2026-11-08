@@ -192,6 +192,7 @@ it('waits for a replay to finish before automatically advancing a correct contex
   const { container } = render(<App random={() => 0}/>);
   await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
+  correctRenderedChoice(container).focus();
   await click(correctRenderedChoice(container));
   await act(async () => { await vi.advanceTimersByTimeAsync(1199); });
   expect(container.querySelector('.contextual-quiz')).toHaveAttribute('data-question-id', id);
@@ -204,6 +205,7 @@ it('waits for a replay to finish before automatically advancing a correct contex
   expect(container.querySelector('.contextual-quiz')).toHaveAttribute('data-question-id', id);
   await act(async () => { await vi.advanceTimersByTimeAsync(1); });
   expect(container.querySelector('.contextual-quiz')!.getAttribute('data-question-id')).not.toBe(id);
+  expect(screen.getByRole('button', { name: 'Replay sentence and question' })).toHaveFocus();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
 

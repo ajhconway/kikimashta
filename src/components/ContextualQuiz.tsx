@@ -37,6 +37,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const questionSrc = authored.recording?.questionSrcs[authored.question.id];
   const hasAudio = !!sentenceSrc && !!questionSrc;
   const audio = useRef<HTMLAudioElement>(null);
+  const replayControl = useRef<HTMLButtonElement>(null);
   const request = useRef(0);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const segment = useRef<'sentence' | 'question' | null>(null);
@@ -81,6 +82,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   }, [stop, playSegment, sentenceSrc, questionSrc]);
   useEffect(() => {
     answered.current = false;
+    if (!inspection && !preview) replayControl.current?.focus({ preventScroll: true });
     if (details.current?.open) details.current.close();
     play();
     const suspend = () => {
@@ -88,7 +90,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     };
     document.addEventListener('visibilitychange', suspend);
     return () => { document.removeEventListener('visibilitychange', suspend); stop(); };
-  }, [play, stop, authored.context.id, authored.question.id]);
+  }, [play, stop, authored.context.id, authored.question.id, inspection, preview]);
   function ended() {
     const token = request.current;
     if (segment.current === 'sentence' && questionSrc) {
@@ -108,7 +110,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     {hasAudio ? <>
       <div className="quiz-top">
         <QuizCompanion listening={playback === 'playing'} response={result}/>
-        <div className="quiz-audio"><button className={'listen quiz-listen contextual-replay' + (playback === 'playing' ? ' playing' : '')}
+        <div className="quiz-audio"><button ref={replayControl} className={'listen quiz-listen contextual-replay' + (playback === 'playing' ? ' playing' : '')}
           type="button" onClick={() => { onReplay?.(); play(); }} aria-label="Replay sentence and question">
           <Speaker/><span className="sr-only">{playback === 'playing' ? 'Playing…' : 'Replay'}</span>
         </button></div>
