@@ -2,7 +2,7 @@
   "issue": 150,
   "batch": 3,
   "tool": "built-in image_gen",
-  "status": "awaiting-owner-review",
+  "status": "reviewed",
   "images": [
     {
       "slug": "bed",
@@ -18,14 +18,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 969683,
         "opaquePixels": 589261,
         "opaqueWhitePixels": 685
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "key",
@@ -41,14 +42,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1189221,
         "opaquePixels": 371723,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "bathroom",
@@ -64,14 +66,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 985709,
         "opaquePixels": 569630,
         "opaqueWhitePixels": 28986
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "shower",
@@ -87,14 +90,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1129313,
         "opaquePixels": 416309,
         "opaqueWhitePixels": 2
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "towel",
@@ -110,14 +114,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 894649,
         "opaquePixels": 664315,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "elevator",
@@ -133,14 +138,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 625319,
         "opaquePixels": 934901,
         "opaqueWhitePixels": 40
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     }
   ]
 }

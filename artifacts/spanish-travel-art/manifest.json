@@ -1,11 +1,11 @@
 {
   "issue": 150,
   "language": "es-419",
-  "status": "awaiting-owner-review",
+  "status": "awaiting-passport-review",
   "generationTool": "built-in image_gen",
   "generationAuthorization": "Owner requested the full pack without intermediate batch pauses; final artwork approval remains pending.",
-  "newImageCount": 31,
-  "reusedImageCount": 5,
+  "newImageCount": 30,
+  "reusedImageCount": 6,
   "retiredItemIds": [
     "es-419-travel-entrance",
     "es-419-travel-exit"
@@ -26,7 +26,8 @@
         "path": "artifacts/spanish-travel-art/reused/hotel.jpg",
         "sourcePath": "public/images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
         "sha256": "550f40792cd4643d7d1f21ffbde1ed705902fac181badedcc53bd7d33d5f053b",
-        "background": "Existing opaque JPG, preserved unchanged"
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -39,7 +40,8 @@
         "path": "artifacts/spanish-travel-art/reused/water.jpg",
         "sourcePath": "public/images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
         "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5",
-        "background": "Existing opaque JPG, preserved unchanged"
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -52,7 +54,8 @@
         "path": "artifacts/spanish-travel-art/reused/coffee.jpg",
         "sourcePath": "public/images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
         "sha256": "14ff37f9a16578db1bbff76a63e876cea1bb63b358d587367e69b36d85d7022f",
-        "background": "Existing opaque JPG, preserved unchanged"
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -65,7 +68,8 @@
         "path": "artifacts/spanish-travel-art/reused/car.jpg",
         "sourcePath": "public/images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg",
         "sha256": "cca51aa614f272be6bee1f7c66420eb585a5ae96094cecabb08b545a885f45ec",
-        "background": "Existing opaque JPG, preserved unchanged"
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -87,14 +91,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 985395,
           "opaquePixels": 572544,
           "opaqueWhitePixels": 1
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -116,14 +121,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1088138,
           "opaquePixels": 470650,
           "opaqueWhitePixels": 82325
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -145,14 +151,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 949489,
           "opaquePixels": 611007,
           "opaqueWhitePixels": 537
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -174,14 +181,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 951650,
           "opaquePixels": 609936,
           "opaqueWhitePixels": 2418
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -203,14 +211,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1038732,
           "opaquePixels": 520047,
           "opaqueWhitePixels": 1849
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -232,14 +241,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1018557,
           "opaquePixels": 429651,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -250,26 +260,55 @@
       "artwork": {
         "slug": "passport",
         "id": "es-419-travel-passport",
-        "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One partially open passport booklet, deep violet cover with a simple gold globe emblem, and one ivory inner page showing a few abstract stamp shapes. Clearly a small travel identity booklet. No letters, numbers, flags, official seals, photographs of people or readable text. Do not write passport or pasaporte.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+        "version": 2,
+        "prompt": "Use case: precise-object-edit\nAsset type: Spanish travel vocabulary illustration, pasaporte / passport.\nInput image: edit target, the existing violet passport illustration.\nPrimary request: Correct only the booklet construction. Make this a CLOSED passport booklet, viewed at a gentle three-quarter angle. The violet front cover with its golden globe emblem faces the viewer. Behind the front cover show only a thin, compact ivory page block and the matching violet back cover, all fitted neatly inside the same rounded rectangular booklet footprint. The page block must be physically bound along the left spine. No open spread, unfolded sheet, projecting page, loose paper, stretched page or stamps visible outside the book.\nKeep unchanged: recognizable golden globe emblem, deep-violet and lavender cover, bold rounded violet contour treatment, gentle soft shading, warm golden accents, centered square composition and generous margins. Match the supplied artwork's illustration style and visual weight. Preserve the transparent outer background and opaque ivory page edge. No lettering, numbers, labels, logos, scenery, frame, shadows or extra objects.\nOutput: exactly one standalone square passport illustration with genuine alpha transparency. Keep the whole closed booklet visible and legible at 145px.",
+        "tool": "built-in image_gen",
+        "intent": "edit",
         "transparent_background": true,
-        "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
-        "referenceRole": "style-only",
-        "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
-        "path": "artifacts/spanish-travel-art/batch-02/passport-v1.png",
-        "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-081c8e09-ddac-4e38-beea-1c21641deebf.png",
-        "sha256": "ae8a6bf48df13ce04c9eab7933b831ebbef2abe0f77c6f018fdec8c59635d646",
+        "referenced_image_paths": [
+          "artifacts/spanish-travel-art/batch-02/passport-v1.png"
+        ],
+        "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-dbcad808-09bf-4f67-aa33-925197b5007e.png",
+        "path": "artifacts/spanish-travel-art/batch-02/passport-v2.png",
+        "sha256": "3eb38fe29b5ad6a9eace2a132d04244aa5895996c61fcce366ded6fd0d1ca40d",
         "width": 1254,
         "height": 1254,
-        "colorType": 6,
         "status": "awaiting-owner-review",
+        "inputSha256": "ae8a6bf48df13ce04c9eab7933b831ebbef2abe0f77c6f018fdec8c59635d646",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
-          "transparentPixels": 827492,
-          "opaquePixels": 733801,
-          "opaqueWhitePixels": 169
+          "transparentPixels": 1085305,
+          "opaquePixels": 477545,
+          "opaqueWhitePixels": 0
         }
-      }
+      },
+      "artworkHistory": [
+        {
+          "slug": "passport",
+          "id": "es-419-travel-passport",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One partially open passport booklet, deep violet cover with a simple gold globe emblem, and one ivory inner page showing a few abstract stamp shapes. Clearly a small travel identity booklet. No letters, numbers, flags, official seals, photographs of people or readable text. Do not write passport or pasaporte.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+          "transparent_background": true,
+          "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "referenceRole": "style-only",
+          "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+          "path": "artifacts/spanish-travel-art/batch-02/passport-v1.png",
+          "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-081c8e09-ddac-4e38-beea-1c21641deebf.png",
+          "sha256": "ae8a6bf48df13ce04c9eab7933b831ebbef2abe0f77c6f018fdec8c59635d646",
+          "width": 1254,
+          "height": 1254,
+          "colorType": 6,
+          "status": "rejected",
+          "alphaInspection": {
+            "width": 1254,
+            "height": 1254,
+            "transparentPixels": 827492,
+            "opaquePixels": 733801,
+            "opaqueWhitePixels": 169
+          },
+          "reviewNote": "The page appears to stretch out from the book."
+        }
+      ]
     },
     {
       "id": "es-419-travel-ticket",
@@ -290,14 +329,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1000165,
           "opaquePixels": 560576,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -319,14 +359,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 990114,
           "opaquePixels": 568730,
           "opaqueWhitePixels": 1
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -348,14 +389,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 763164,
           "opaquePixels": 790565,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -377,14 +419,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 857967,
           "opaquePixels": 701966,
           "opaqueWhitePixels": 1049
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -406,14 +449,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 939258,
           "opaquePixels": 622035,
           "opaqueWhitePixels": 359
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -435,14 +479,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 969683,
           "opaquePixels": 589261,
           "opaqueWhitePixels": 685
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -464,14 +509,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1189221,
           "opaquePixels": 371723,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -493,14 +539,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 985709,
           "opaquePixels": 569630,
           "opaqueWhitePixels": 28986
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -522,14 +569,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1129313,
           "opaquePixels": 416309,
           "opaqueWhitePixels": 2
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -551,14 +599,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 894649,
           "opaquePixels": 664315,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -580,14 +629,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 625319,
           "opaquePixels": 934901,
           "opaqueWhitePixels": 40
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -609,14 +659,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 593270,
           "opaquePixels": 965422,
           "opaqueWhitePixels": 20420
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -638,14 +689,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1062101,
           "opaquePixels": 501276,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -658,7 +710,8 @@
         "path": "artifacts/spanish-travel-art/reused/rice.jpg",
         "sourcePath": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
         "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c",
-        "background": "Existing opaque JPG, preserved unchanged"
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -680,14 +733,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 894249,
           "opaquePixels": 667027,
           "opaqueWhitePixels": 21784
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -709,14 +763,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1001650,
           "opaquePixels": 561259,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -738,14 +793,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 812175,
           "opaquePixels": 748638,
           "opaqueWhitePixels": 240
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -767,14 +823,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 962869,
           "opaquePixels": 598735,
           "opaqueWhitePixels": 81
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -796,14 +853,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1035138,
           "opaquePixels": 520408,
           "opaqueWhitePixels": 229
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -825,14 +883,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 643401,
           "opaquePixels": 915868,
           "opaqueWhitePixels": 62115
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -854,14 +913,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 735766,
           "opaquePixels": 824808,
           "opaqueWhitePixels": 633
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -883,14 +943,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 1050910,
           "opaquePixels": 512351,
           "opaqueWhitePixels": 0
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -912,14 +973,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 877143,
           "opaquePixels": 684424,
           "opaqueWhitePixels": 18366
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -941,14 +1003,15 @@
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "status": "awaiting-owner-review",
+        "status": "owner-approved",
         "alphaInspection": {
           "width": 1254,
           "height": 1254,
           "transparentPixels": 764649,
           "opaquePixels": 796316,
           "opaqueWhitePixels": 3656
-        }
+        },
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {
@@ -957,28 +1020,44 @@
       "text": "paraguas",
       "meaning": "Umbrella",
       "artwork": {
-        "slug": "umbrella",
-        "id": "es-419-travel-umbrella",
-        "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One open handheld umbrella with a domed canopy divided into alternating lavender and soft-pink panels, a slim golden shaft and deep-violet curved hook handle. Full canopy and handle visible, large simple rounded silhouette. No rain, person, beach, stand, text, brand or decorative marks.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
-        "transparent_background": true,
-        "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
-        "referenceRole": "style-only",
-        "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
-        "path": "artifacts/spanish-travel-art/batch-05/umbrella-v1.png",
-        "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2b5e47e0-e408-4637-9b06-7f55f345d10b.png",
-        "sha256": "a4179f0debd89f52c21504882e1c197645d5197e49838ef375a9132d5fd5b605",
-        "width": 1254,
-        "height": 1254,
-        "colorType": 6,
-        "status": "awaiting-owner-review",
-        "alphaInspection": {
+        "status": "reuse-approved",
+        "path": "artifacts/spanish-travel-art/reused/umbrella.jpg",
+        "sourcePath": "public/images/approved/ja-umbrella-87536b6a75df.jpg",
+        "sha256": "f86d16756f43fd494e6f385a6c1056c96c1e9b806cdaec98733bc06b037e84b4",
+        "background": "Existing opaque JPG, preserved unchanged",
+        "approvalSource": "content/card-regeneration/activation.json#ja-umbrella"
+      },
+      "artworkHistory": [
+        {
+          "slug": "umbrella",
+          "id": "es-419-travel-umbrella",
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One open handheld umbrella with a domed canopy divided into alternating lavender and soft-pink panels, a slim golden shaft and deep-violet curved hook handle. Full canopy and handle visible, large simple rounded silhouette. No rain, person, beach, stand, text, brand or decorative marks.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+          "transparent_background": true,
+          "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "referenceRole": "style-only",
+          "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+          "path": "artifacts/spanish-travel-art/batch-05/umbrella-v1.png",
+          "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2b5e47e0-e408-4637-9b06-7f55f345d10b.png",
+          "sha256": "a4179f0debd89f52c21504882e1c197645d5197e49838ef375a9132d5fd5b605",
           "width": 1254,
           "height": 1254,
-          "transparentPixels": 1078757,
-          "opaquePixels": 480183,
-          "opaqueWhitePixels": 0
+          "colorType": 6,
+          "status": "superseded-by-existing-approved-artwork",
+          "alphaInspection": {
+            "width": 1254,
+            "height": 1254,
+            "transparentPixels": 1078757,
+            "opaquePixels": 480183,
+            "opaqueWhitePixels": 0
+          }
         }
-      }
+      ]
     }
-  ]
+  ],
+  "totalGeneratedVariants": 32,
+  "ownerApprovedNewImageCount": 29,
+  "awaitingReviewIds": [
+    "es-419-travel-passport"
+  ],
+  "feedbackPath": "artifacts/spanish-travel-art/owner-feedback.json"
 }

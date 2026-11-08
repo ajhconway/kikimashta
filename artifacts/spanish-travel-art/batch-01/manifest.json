@@ -2,7 +2,7 @@
   "issue": 150,
   "batch": 1,
   "tool": "built-in image_gen",
-  "status": "awaiting-owner-review",
+  "status": "reviewed",
   "images": [
     {
       "slug": "airport",
@@ -18,14 +18,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 985395,
         "opaquePixels": 572544,
         "opaqueWhitePixels": 1
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "airplane",
@@ -41,14 +42,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1088138,
         "opaquePixels": 470650,
         "opaqueWhitePixels": 82325
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "bus",
@@ -64,14 +66,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 949489,
         "opaquePixels": 611007,
         "opaqueWhitePixels": 537
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "taxi",
@@ -87,14 +90,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 951650,
         "opaquePixels": 609936,
         "opaqueWhitePixels": 2418
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "train",
@@ -110,14 +114,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1038732,
         "opaquePixels": 520047,
         "opaqueWhitePixels": 1849
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "bicycle",
@@ -133,14 +138,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1018557,
         "opaquePixels": 429651,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     }
   ]
 }

@@ -1,21 +1,21 @@
-# Complete Spanish travel artwork review (#150)
+# Spanish travel artwork review (#150)
 
-All 36 words are shown in `review.html` and `contact-sheet.html`: 31 newly generated transparent PNGs plus five unchanged previously approved JPGs. Entrance and exit are excluded. The owner explicitly requested completing the full pack without intermediate batch pauses; final artwork approval is pending.
+The complete 36-word set is shown in `review.html` and `contact-sheet.html`. The selected set has 30 new transparent PNGs and six unchanged previously approved JPGs. Entrance and exit remain excluded.
 
-`manifest.json` records the complete ordered set, exact prompts, built-in tool, style-reference hashes, original source paths, preserved output hashes and PNG pixel inspections. Batch directories retain the individual requests and originals. Reused artwork is copied unchanged into `reused/` for a self-contained review. No generated original was overwritten or removed.
+The owner approved the other 34 pictures, asked about the existing umbrella, and rejected the passport's projecting page. `owner-feedback.json` binds approval to those exact original hashes. The gallery now reuses the already approved Japanese umbrella and shows a closed-booklet passport revision. Only the revised passport awaits artwork approval.
 
-Run a local static server from this directory to view the HTML. The compact overview is also saved as `contact-sheet.png` after browser verification. The detailed view includes the full images, four 145px background previews, and a selectable large-preview background.
+All 32 generated variants remain preserved: 31 original requests and one passport edit. The original passport is rejected; the newly generated umbrella is superseded by an existing approved picture. `manifest.json` contains the current selection, variant history, prompts, reference/input hashes, original source paths, output hashes and PNG pixel inspections. Batch manifests retain the generation history and approval states. No original was overwritten or removed.
 
-Review literal meaning, visual consistency and recognition at 145px. Pay particular attention to airport/airplane, passport/ticket/map, bathroom/shower and hospital/pharmacy. Generic car and taxi overlap semantically; review their distractor pairing before activating practice (#79).
+Run a static server from this directory to view the HTML. `contact-sheet.png` shows the current selection. Detailed review includes four 145px background previews per item and a selectable large-preview background.
 
-This is staged artwork only. Audio generation, semantic-choice changes and activating the expanded vocabulary remain separate work. New images are not yet approved for production.
+Generic car and taxi overlap semantically; review their distractor pairing before activating practice (#79). Artwork approval does not activate vocabulary or approve audio.
 
 ## Verification
 
-- `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`: 22 tests passed.
-- `python3 scripts/cards/validate.py`: passed (445 prompts, 48 findings, 496-node acyclic graph, 22 batches, 45 exclusion groups).
-- All 31 copied PNGs match their original source bytes and SHA-256 records. The existing `inspectPngAlpha` decoder verified valid pixel data, square 1254px dimensions, transparent outer pixels and opaque subject pixels.
-- Chromium decoded all 36 pictures, exposed all 31 prompts, rendered 144 previews at 145px, and verified the background selector. The saved contact sheet was visually reviewed.
-- Mobile WebKit emulation decoded all 36 pictures and confirmed the detailed gallery fits a 390px viewport. This is browser emulation; real-iPhone testing remains deferred to deployment as requested.
+- Card preparation tests: 22 passed; `scripts/cards/validate.py` passed.
+- All 32 generated PNG variants match their original source bytes and SHA-256 records and pass the existing pixel decoder with transparency and opaque subject pixels.
+- Current selection: 36 unique items, 29 owner-approved new pictures, one revised passport awaiting review, and six reused pictures. Reused originals and approval evidence are hash-verified.
+- Chromium decoded the complete gallery, exposed 30 prompts and 144 previews, verified the passport/umbrella replacements and saved a visually inspected contact sheet.
+- Mobile WebKit emulation decoded all 36 selected pictures without horizontal overflow at 390px. Real-iPhone testing remains deferred to deployment as requested.
 
-The app's active vocabulary and audio are unchanged; app runtime checks are outside this artifact-only preparation.
+App runtime and audio are unchanged by this artwork preparation.

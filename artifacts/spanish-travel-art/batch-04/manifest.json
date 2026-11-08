@@ -2,7 +2,7 @@
   "issue": 150,
   "batch": 4,
   "tool": "built-in image_gen",
-  "status": "awaiting-owner-review",
+  "status": "reviewed",
   "images": [
     {
       "slug": "restaurant",
@@ -18,14 +18,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 593270,
         "opaquePixels": 965422,
         "opaqueWhitePixels": 20420
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "bread",
@@ -41,14 +42,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1062101,
         "opaquePixels": 501276,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "milk",
@@ -64,14 +66,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 894249,
         "opaquePixels": 667027,
         "opaqueWhitePixels": 21784
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "juice",
@@ -87,14 +90,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1001650,
         "opaquePixels": 561259,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "money",
@@ -110,14 +114,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 812175,
         "opaquePixels": 748638,
         "opaqueWhitePixels": 240
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     }
   ]
 }

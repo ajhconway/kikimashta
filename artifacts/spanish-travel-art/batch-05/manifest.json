@@ -2,7 +2,7 @@
   "issue": 150,
   "batch": 5,
   "tool": "built-in image_gen",
-  "status": "awaiting-owner-review",
+  "status": "reviewed",
   "images": [
     {
       "slug": "boat",
@@ -18,14 +18,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 962869,
         "opaquePixels": 598735,
         "opaqueWhitePixels": 81
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "beach",
@@ -41,14 +42,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1035138,
         "opaquePixels": 520408,
         "opaqueWhitePixels": 229
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "hospital",
@@ -64,14 +66,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 643401,
         "opaquePixels": 915868,
         "opaqueWhitePixels": 62115
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "pharmacy",
@@ -87,14 +90,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 735766,
         "opaquePixels": 824808,
         "opaqueWhitePixels": 633
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "bottle",
@@ -110,14 +114,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1050910,
         "opaquePixels": 512351,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "credit-card",
@@ -133,14 +138,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 877143,
         "opaquePixels": 684424,
         "opaqueWhitePixels": 18366
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "camera",
@@ -156,14 +162,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 764649,
         "opaquePixels": 796316,
         "opaqueWhitePixels": 3656
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "umbrella",
@@ -179,14 +186,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "superseded-by-existing-approved-artwork",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1078757,
         "opaquePixels": 480183,
         "opaqueWhitePixels": 0
-      }
+      },
+      "reviewNote": "Reuse the existing approved umbrella."
     }
   ]
 }

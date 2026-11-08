@@ -1,0 +1,188 @@
+{
+  "issue": 150,
+  "ownerMessage": "Is there not already an umbrella? The passport is a bit weird: the page appear to stretch out from the book. The rest are approved.",
+  "approvedImages": [
+    {
+      "id": "es-419-travel-hotel",
+      "path": "artifacts/spanish-travel-art/reused/hotel.jpg",
+      "sha256": "550f40792cd4643d7d1f21ffbde1ed705902fac181badedcc53bd7d33d5f053b"
+    },
+    {
+      "id": "es-419-travel-water",
+      "path": "artifacts/spanish-travel-art/reused/water.jpg",
+      "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5"
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "path": "artifacts/spanish-travel-art/reused/coffee.jpg",
+      "sha256": "14ff37f9a16578db1bbff76a63e876cea1bb63b358d587367e69b36d85d7022f"
+    },
+    {
+      "id": "es-419-travel-car",
+      "path": "artifacts/spanish-travel-art/reused/car.jpg",
+      "sha256": "cca51aa614f272be6bee1f7c66420eb585a5ae96094cecabb08b545a885f45ec"
+    },
+    {
+      "id": "es-419-travel-airport",
+      "path": "artifacts/spanish-travel-art/batch-01/airport-v1.png",
+      "sha256": "6642b11abd88ab05d8ada9ea48e62bb6bb61ad910755eadff9102d6c7b75e145"
+    },
+    {
+      "id": "es-419-travel-airplane",
+      "path": "artifacts/spanish-travel-art/batch-01/airplane-v1.png",
+      "sha256": "31eb62af2c4036826cf1d2bde9dfdeffc24732ede5a63bde49b0ec8bed7c6297"
+    },
+    {
+      "id": "es-419-travel-bus",
+      "path": "artifacts/spanish-travel-art/batch-01/bus-v1.png",
+      "sha256": "27ad0d21281302b39f8a6fd2e0cb8f2cb58d6e9fa6a23b82e1c9309564cedeaf"
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "path": "artifacts/spanish-travel-art/batch-01/taxi-v1.png",
+      "sha256": "8bac03daf66fe033758cdd8650fbe71576ecc7140f397202027d3af0e3aa2e10"
+    },
+    {
+      "id": "es-419-travel-train",
+      "path": "artifacts/spanish-travel-art/batch-01/train-v1.png",
+      "sha256": "f36bbdd0065e3972095bd6a9e63d3d6b9fee26439369393072e50096bb09e981"
+    },
+    {
+      "id": "es-419-travel-bicycle",
+      "path": "artifacts/spanish-travel-art/batch-01/bicycle-v1.png",
+      "sha256": "bbafd811711d09ba4d2f8cafd2cd183e1c80ab4ff8fc0c4602205fd91fa6c5e8"
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "path": "artifacts/spanish-travel-art/batch-02/ticket-v1.png",
+      "sha256": "d6b16a19a7a00fd6824c782e9f9c3d0b6dacac6e7efaae1de7e50d04ca76f3af"
+    },
+    {
+      "id": "es-419-travel-suitcase",
+      "path": "artifacts/spanish-travel-art/batch-02/suitcase-v1.png",
+      "sha256": "6d4224762fc6beef5c856ddd184619526a36961d7e424bd686e0563e42e4a63b"
+    },
+    {
+      "id": "es-419-travel-backpack",
+      "path": "artifacts/spanish-travel-art/batch-02/backpack-v1.png",
+      "sha256": "0b08a4776a4420fde360b2bcc892104a8019bba92f3e30ab5766c5632cc2e558"
+    },
+    {
+      "id": "es-419-travel-map",
+      "path": "artifacts/spanish-travel-art/batch-02/map-v1.png",
+      "sha256": "3c9adf702be2a05fc9366e45db05e5c4b3f9c4b5130bde9e0194d6815e964325"
+    },
+    {
+      "id": "es-419-travel-phone",
+      "path": "artifacts/spanish-travel-art/batch-02/phone-v1.png",
+      "sha256": "10dd4649216bb3661b61176bec850795bb0313c316df739a055eeb067c460b22"
+    },
+    {
+      "id": "es-419-travel-bed",
+      "path": "artifacts/spanish-travel-art/batch-03/bed-v1.png",
+      "sha256": "52131766ae9b24f94ba992b62994f63b11b475d27615aa61ec948b1b0227b9f3"
+    },
+    {
+      "id": "es-419-travel-key",
+      "path": "artifacts/spanish-travel-art/batch-03/key-v1.png",
+      "sha256": "5dd79de14b34eac0598d2abfb1f61c1b328078a6e0d5c02aab279bb9f3a6dd7d"
+    },
+    {
+      "id": "es-419-travel-bathroom",
+      "path": "artifacts/spanish-travel-art/batch-03/bathroom-v1.png",
+      "sha256": "a3e9a9d56fa625f6a3cd0cbbb429b3d6ba7af49cf128ac224c32ee09aff239ba"
+    },
+    {
+      "id": "es-419-travel-shower",
+      "path": "artifacts/spanish-travel-art/batch-03/shower-v1.png",
+      "sha256": "6ace4149ea77e8db17bf98c8ae7fd2300321e296ba12f37d2bdec2dd01204326"
+    },
+    {
+      "id": "es-419-travel-towel",
+      "path": "artifacts/spanish-travel-art/batch-03/towel-v1.png",
+      "sha256": "af3dcb9df4b67539e845a64014c2f48d92b34088649d375f89d508b765070026"
+    },
+    {
+      "id": "es-419-travel-elevator",
+      "path": "artifacts/spanish-travel-art/batch-03/elevator-v1.png",
+      "sha256": "b48b27b15a6b626c70179449508b2635a3024415f6e7b0d49da73990c55b69ed"
+    },
+    {
+      "id": "es-419-travel-restaurant",
+      "path": "artifacts/spanish-travel-art/batch-04/restaurant-v1.png",
+      "sha256": "0df277e0e41d17ba695b9a0a4176671aa7aabaf549da9d715c17b1410eb6c2df"
+    },
+    {
+      "id": "es-419-travel-bread",
+      "path": "artifacts/spanish-travel-art/batch-04/bread-v1.png",
+      "sha256": "843bf04cbd401ce3ba501fbbaa30360ee055b46879ebd3c64e011924a93f5992"
+    },
+    {
+      "id": "es-419-travel-rice",
+      "path": "artifacts/spanish-travel-art/reused/rice.jpg",
+      "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+    },
+    {
+      "id": "es-419-travel-milk",
+      "path": "artifacts/spanish-travel-art/batch-04/milk-v1.png",
+      "sha256": "ab6c590f6879bb1404982b2a7c522973333d007e6bdd233c0d390f1b4dc2f831"
+    },
+    {
+      "id": "es-419-travel-juice",
+      "path": "artifacts/spanish-travel-art/batch-04/juice-v1.png",
+      "sha256": "7dcfc819e448fc65d826ddc07f11cc7b4ba64d54b6e800ec2fbb07ecc92f444d"
+    },
+    {
+      "id": "es-419-travel-money",
+      "path": "artifacts/spanish-travel-art/batch-04/money-v1.png",
+      "sha256": "cbd1310372763a7011d0aeb42d10c8319bfcdbcc3336985e6b2641ad9db3aba6"
+    },
+    {
+      "id": "es-419-travel-boat",
+      "path": "artifacts/spanish-travel-art/batch-05/boat-v1.png",
+      "sha256": "0261a13c914287bd5173eaf049fdd7445ee61b2eccc001791d681d659155c0ac"
+    },
+    {
+      "id": "es-419-travel-beach",
+      "path": "artifacts/spanish-travel-art/batch-05/beach-v1.png",
+      "sha256": "865816b51a610c23e07ba58da42dcb0e910f294315928c5ceeee464d16b61bcb"
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "path": "artifacts/spanish-travel-art/batch-05/hospital-v1.png",
+      "sha256": "c240ad4edc40b778b21e8546e8a4e7bc503216c6c462b152048d90d599050a5e"
+    },
+    {
+      "id": "es-419-travel-pharmacy",
+      "path": "artifacts/spanish-travel-art/batch-05/pharmacy-v1.png",
+      "sha256": "d5d214e03f72bcb770c71a43b3db422592e458625302d06306aa974f5db24b1e"
+    },
+    {
+      "id": "es-419-travel-bottle",
+      "path": "artifacts/spanish-travel-art/batch-05/bottle-v1.png",
+      "sha256": "beb0382d6a4a30303d19eaef7740e9eeca77058b71906b66749231f9614f5e73"
+    },
+    {
+      "id": "es-419-travel-credit-card",
+      "path": "artifacts/spanish-travel-art/batch-05/credit-card-v1.png",
+      "sha256": "b159c940b90939a91c8cec23fc20f962330c9936fc81dcd7978f25bc26ae8bcf"
+    },
+    {
+      "id": "es-419-travel-camera",
+      "path": "artifacts/spanish-travel-art/batch-05/camera-v1.png",
+      "sha256": "c1496b53ae1c3f3e6c5cccad3aa3489cf50cc073d937c71baee13e9dc6c49d10"
+    }
+  ],
+  "changes": {
+    "passport": {
+      "rejectedPath": "artifacts/spanish-travel-art/batch-02/passport-v1.png",
+      "reason": "The page appears to stretch out from the book.",
+      "revision": "Closed booklet with a neatly bound, thin page edge; new version requires review."
+    },
+    "umbrella": {
+      "supersededPath": "artifacts/spanish-travel-art/batch-05/umbrella-v1.png",
+      "replacementSource": "public/images/approved/ja-umbrella-87536b6a75df.jpg",
+      "reason": "Reuse the existing approved umbrella; preserve the unnecessary new variant."
+    }
+  }
+}

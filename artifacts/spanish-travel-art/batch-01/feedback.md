@@ -1,6 +1,6 @@
 # Batch 01 feedback
 
-Status: awaiting owner review.
+Status: approved by owner; see `../owner-feedback.json`.
 
 1. aeropuerto — airport
 2. avión — airplane

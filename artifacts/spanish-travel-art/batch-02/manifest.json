@@ -2,7 +2,7 @@
   "issue": 150,
   "batch": 2,
   "tool": "built-in image_gen",
-  "status": "awaiting-owner-review",
+  "status": "reviewed-with-passport-revision",
   "images": [
     {
       "slug": "passport",
@@ -18,14 +18,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "rejected",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 827492,
         "opaquePixels": 733801,
         "opaqueWhitePixels": 169
-      }
+      },
+      "reviewNote": "The page appears to stretch out from the book."
     },
     {
       "slug": "ticket",
@@ -41,14 +42,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 1000165,
         "opaquePixels": 560576,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "suitcase",
@@ -64,14 +66,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 990114,
         "opaquePixels": 568730,
         "opaqueWhitePixels": 1
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "backpack",
@@ -87,14 +90,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 763164,
         "opaquePixels": 790565,
         "opaqueWhitePixels": 0
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "map",
@@ -110,14 +114,15 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 857967,
         "opaquePixels": 701966,
         "opaqueWhitePixels": 1049
-      }
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
     },
     {
       "slug": "phone",
@@ -133,13 +138,40 @@
       "width": 1254,
       "height": 1254,
       "colorType": 6,
-      "status": "awaiting-owner-review",
+      "status": "owner-approved",
       "alphaInspection": {
         "width": 1254,
         "height": 1254,
         "transparentPixels": 939258,
         "opaquePixels": 622035,
         "opaqueWhitePixels": 359
+      },
+      "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
+    },
+    {
+      "slug": "passport",
+      "id": "es-419-travel-passport",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit\nAsset type: Spanish travel vocabulary illustration, pasaporte / passport.\nInput image: edit target, the existing violet passport illustration.\nPrimary request: Correct only the booklet construction. Make this a CLOSED passport booklet, viewed at a gentle three-quarter angle. The violet front cover with its golden globe emblem faces the viewer. Behind the front cover show only a thin, compact ivory page block and the matching violet back cover, all fitted neatly inside the same rounded rectangular booklet footprint. The page block must be physically bound along the left spine. No open spread, unfolded sheet, projecting page, loose paper, stretched page or stamps visible outside the book.\nKeep unchanged: recognizable golden globe emblem, deep-violet and lavender cover, bold rounded violet contour treatment, gentle soft shading, warm golden accents, centered square composition and generous margins. Match the supplied artwork's illustration style and visual weight. Preserve the transparent outer background and opaque ivory page edge. No lettering, numbers, labels, logos, scenery, frame, shadows or extra objects.\nOutput: exactly one standalone square passport illustration with genuine alpha transparency. Keep the whole closed booklet visible and legible at 145px.",
+      "tool": "built-in image_gen",
+      "intent": "edit",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "artifacts/spanish-travel-art/batch-02/passport-v1.png"
+      ],
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-dbcad808-09bf-4f67-aa33-925197b5007e.png",
+      "path": "artifacts/spanish-travel-art/batch-02/passport-v2.png",
+      "sha256": "3eb38fe29b5ad6a9eace2a132d04244aa5895996c61fcce366ded6fd0d1ca40d",
+      "width": 1254,
+      "height": 1254,
+      "status": "awaiting-owner-review",
+      "inputSha256": "ae8a6bf48df13ce04c9eab7933b831ebbef2abe0f77c6f018fdec8c59635d646",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1085305,
+        "opaquePixels": 477545,
+        "opaqueWhitePixels": 0
       }
     }
   ]
