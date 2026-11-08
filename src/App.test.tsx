@@ -1,3 +1,5 @@
+import 'fake-indexeddb/auto';
+import { deleteDB } from 'idb';
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
@@ -437,6 +439,63 @@ describe('quiz safeguards', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
     expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled();
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+  });
+
+  it.each(['before', 'after'] as const)('retains a save that fails %s Home and retries the original attempt exactly once', async timing => {
+    vi.mocked(ProgressStore.prototype.history).mockRestore();
+    vi.mocked(ProgressStore.prototype.record).mockRestore();
+    const name = 'save-after-home-' + timing;
+    const store = new ProgressStore(name);
+    const pending = deferred<void>();
+    const retry = deferred<void>();
+    const write = store.record.bind(store);
+    const record = vi.spyOn(store, 'record').mockImplementation(write)
+      .mockImplementationOnce(() => pending.promise)
+      .mockImplementationOnce(() => retry.promise);
+    try {
+      await store.merge(legacy());
+      const original = await store.all();
+      const { container } = render(<App now={fixedNow} random={() => 0.5} progressStore={store}/>);
+      await start();
+      await click(screen.getByRole('button', { name: /begin review/i }));
+      await click(heardChoice(container, false));
+      const attempt = structuredClone(record.mock.calls[0]![0]);
+      if (timing === 'before') await act(async () => { pending.reject(new Error('Unavailable')); });
+      await click(screen.getByRole('button', { name: /kikimashta home/i }));
+      if (timing === 'after') await act(async () => { pending.reject(new Error('Unavailable')); });
+      expect(await screen.findByRole('alert')).toHaveTextContent(/hasn't been saved/i);
+      expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+      expect(screen.getByRole('button', { name: 'Dev review' })).toBeDisabled();
+      expect(await store.all()).toEqual(original);
+      await click(screen.getByRole('button', { name: /retry saving/i }));
+      expect(screen.getByRole('button', { name: /^saving/i })).toBeDisabled();
+      await act(async () => { retry.reject(new Error('Still unavailable')); });
+      expect(await screen.findByRole('alert')).toHaveTextContent(/hasn't been saved/i);
+      await act(async () => {
+        const button = screen.getByRole('button', { name: /retry saving/i });
+        fireEvent.click(button); fireEvent.click(button);
+      });
+      await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+      expect(record).toHaveBeenCalledTimes(3);
+      record.mock.calls.forEach(([saved]) => expect(saved).toEqual(attempt));
+      expect((await store.all()).filter(saved => saved.id === attempt.id)).toEqual([attempt]);
+      expect(await store.all()).toHaveLength(original.length + 1);
+    } finally { await store.close(); await deleteDB(name); }
+  });
+
+  it.each(['quiz', 'home'] as const)('only discards a failed answer after explicit confirmation on %s', async location => {
+    vi.mocked(ProgressStore.prototype.record).mockRejectedValueOnce(new Error('Unavailable'));
+    const { container } = await review();
+    await click(heardChoice(container, false));
+    expect(await screen.findByRole('alert')).toHaveTextContent(/hasn't been saved/i);
+    if (location === 'home') await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await click(screen.getByRole('button', { name: /continue without saving/i }));
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+    expect(records).toHaveLength(6);
+    if (location === 'home') await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    else expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
   });
 
   it('waits for saving and the full correct-answer beat before advancing', async () => {
