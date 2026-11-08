@@ -1,4 +1,5 @@
 import type { PracticeAttempt } from '../types';
+import { answerOutcome } from '../core/quiz-timer';
 import type { NoteEvent, SyncLocal, SyncRemote } from './types';
 
 function object(value: unknown): value is Record<string, unknown> {
@@ -29,6 +30,25 @@ export function validateAttempt(value: unknown): PracticeAttempt {
         !identity(context.schedulerVersion) || (context.retryOf !== undefined && !identity(context.retryOf))) {
       throw new Error('Invalid synchronized attempt context.');
     }
+  }
+  if (value.outcome !== undefined && (
+    !['success', 'partial', 'failure'].includes(value.outcome as string) ||
+    (value.correct ? value.outcome === 'failure' : value.outcome !== 'failure')
+  )) throw new Error('Invalid synchronized answer outcome.');
+  if (value.timer !== undefined) {
+    const timer = value.timer;
+    if (!object(timer) || !nonnegative(timer.limitMs) || timer.limitMs === 0 || !timestamp(timer.startedAt) ||
+        timer.startedAt < value.startedAt || timer.startedAt > value.answeredAt) {
+      throw new Error('Invalid synchronized quiz timer.');
+    }
+  }
+  if (value.outcome === 'partial' && (!object(value.timer) ||
+      value.answeredAt - (value.timer.startedAt as number) < (value.timer.limitMs as number))) {
+    throw new Error('Partial success requires an expired quiz timer.');
+  }
+  if (value.outcome !== undefined && value.outcome !== answerOutcome(value.correct,
+    value.timer as PracticeAttempt['timer'], value.answeredAt)) {
+    throw new Error('Synchronized outcome does not match the timer.');
   }
   return value as unknown as PracticeAttempt;
 }
