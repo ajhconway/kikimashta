@@ -58,13 +58,13 @@ it('keeps the Japanese contextual shortcut out of Spanish practice', async () =>
 });
 
 it('loads Spanish picture history and links to its language-specific pack library', async () => {
-  vi.mocked(ProgressStore.prototype.history).mockResolvedValue(spanish.items.map(item => ({
+  vi.mocked(ProgressStore.prototype.history).mockResolvedValue(spanish.items.slice(0, 4).map(item => ({
     id: item.id, sessionId: 'spanish-lesson', itemId: item.id, language: 'es-419',
     choiceIds: [item.id], selectedId: item.id, correct: true, startedAt: 900, answeredAt: 1000, responseMs: 100,
     context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
   })));
   render(<App now={() => 1000000}/>);
-  await waitFor(() => expect(screen.getByText('6 answers saved on this device')).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByText('4 answers saved on this device')).toBeInTheDocument());
   expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419');
   expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
   expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();

@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import audioProvenance from '../../content/es-419-audio-provenance.json';
 import { existsSync } from 'node:fs';
 import spanish from '../../content/es-419.json';
+import activation from '../../content/spanish-travel-audio/activation.json';
 import { initialLanguage, languagePreferenceKey, learningLanguages } from './languages';
 import { initialPackIds, packPreferenceKey, selectedPracticeCards, type CardPack } from './packs';
 
@@ -35,14 +36,19 @@ describe('learning languages', () => {
   });
   it('provides complete travel pictures and recorded audio with preserved provenance', () => {
     const spanishLanguage = learningLanguages[1]!;
-    expect(spanish.items).toHaveLength(6);
-    expect(new Set(spanish.items.map(item => item.id)).size).toBe(6);
-    expect(new Set(spanish.items.map(item => item.text)).size).toBe(6);
-    expect(new Set(spanish.items.map(item => item.image.src)).size).toBe(6);
+    expect(spanish.items).toHaveLength(36);
+    expect(new Set(spanish.items.map(item => item.id)).size).toBe(36);
+    expect(new Set(spanish.items.map(item => item.text)).size).toBe(36);
+    expect(new Set(spanish.items.map(item => item.image.src)).size).toBe(36);
+    expect(spanish.items.some(item => /entrance|exit/.test(item.id))).toBe(false);
+    expect(spanish.items.every(item => item.audio.length === 8 && item.audio.every(clip => clip.voice !== ('cesar' as string)))).toBe(true);
     expect(spanish.items.some(item => item.text === 'café')).toBe(true);
     for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
     validateBank(spanishLanguage.pool);
-    expect(spanishLanguage.pool.items).toHaveLength(6);
+    expect(spanishLanguage.pool.items).toHaveLength(36);
+    for (const media of [...activation.images, ...activation.recordings]) {
+      expect(createHash('sha256').update(readFileSync('public/' + media.src)).digest('hex')).toBe(media.sha256);
+    }
     for (const record of audioProvenance.recordings) {
       const original = readFileSync(audioProvenance.originalRoot + '/' + record.originalFile);
       expect(createHash('sha256').update(original).digest('hex')).toBe(record.originalSha256);
@@ -52,8 +58,8 @@ describe('learning languages', () => {
     }
     expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture']);
     const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(6);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(6);
+    expect(cards).toHaveLength(36);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(36);
   });
   it('filters retired Spanish writing selections without reviving an empty selection', () => {
     const language = learningLanguages[1]!;
