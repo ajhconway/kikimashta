@@ -12,6 +12,7 @@ vi.mock('./core/density', async original => ({ ...await original<typeof import('
 const forecast = { reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 };
 let history: PracticeAttempt[];
 beforeEach(() => {
+  window.history.replaceState({}, '', '/');
   localStorage.clear(); history = [];
   vi.spyOn(ProgressStore.prototype, 'history').mockImplementation(async () => structuredClone(history));
   vi.spyOn(ProgressStore.prototype, 'record').mockImplementation(async attempt => { history.push(attempt); });
@@ -39,8 +40,8 @@ async function unlockedTarget() {
 }
 
 it('opens all eighty questions for dev evaluation and never records an answer', async () => {
+  window.history.replaceState({}, '', '/?review=contextual');
   render(<App/>);
-  await click(screen.getByRole('button', { name: 'Contextual dev review' }));
   const jump = screen.getByLabelText('Jump to question');
   expect(within(jump).getAllByRole('option')).toHaveLength(80);
   await act(async () => { fireEvent.change(jump, { target: { value: '79' } }); });
@@ -96,8 +97,9 @@ it('admits unlocked contextual lessons through workload planning and saves expli
 it('runs the actual contextual practice screen as an unsaved demo with retries and both answer formats', async () => {
   vi.useFakeTimers();
   const onSaved = vi.fn();
+  window.history.replaceState({}, '', '/?demo=contextual');
   const { container } = render(<App random={() => 0} onSaved={onSaved}/>);
-  await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
+  await click(screen.getByRole('button', { name: 'Begin review' }));
   expect(screen.getByLabelText('Practice demo. Progress is not saved.')).toBeInTheDocument();
   expect(screen.queryByLabelText('Jump to question')).not.toBeInTheDocument();
   const seen = new Set<string>();
@@ -159,8 +161,9 @@ it('explains when workload defers unlocked contextual lessons while leaving the 
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByText(/2 contextual cards are ready for lessons/)).toBeInTheDocument());
   expect(screen.getByText(/New lessons are waiting for your review workload to ease/)).toBeInTheDocument();
-  await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
-  expect(screen.getByLabelText('Practice demo. Progress is not saved.')).toBeInTheDocument();
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
+  expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
 
@@ -190,8 +193,9 @@ function correctRenderedChoice(container: HTMLElement): HTMLElement {
 
 it('waits for a replay to finish before automatically advancing a correct contextual answer', async () => {
   vi.useFakeTimers();
+  window.history.replaceState({}, '', '/?demo=contextual');
   const { container } = render(<App random={() => 0}/>);
-  await click(screen.getByRole('button', { name: 'Contextual practice demo' }));
+  await click(screen.getByRole('button', { name: 'Begin review' }));
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
   correctRenderedChoice(container).focus();
   await click(correctRenderedChoice(container));

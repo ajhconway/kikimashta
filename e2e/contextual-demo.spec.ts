@@ -69,7 +69,8 @@ test('contextual practice demo uses real session feedback and retries without ch
     language: 'ja-JP', choiceIds: ['a', 'b'], selectedId: 'a', correct: true, startedAt: 1, answeredAt: 2, responseMs: 1 }];
   await stored(page, baseline);
   await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
-  await page.getByRole('button', { name: 'Contextual practice demo', exact: true }).click();
+  await page.goto('./?demo=contextual');
+  await page.getByRole('button', { name: 'Begin review' }).click();
   await expect(page.locator('.contextual-practice')).toBeVisible();
   await expect(page.getByLabel('Practice demo. Progress is not saved.', { exact: true })).toHaveText('Demo · unsaved');
   await expect(page.locator('.contextual-dev-review')).toHaveCount(0);

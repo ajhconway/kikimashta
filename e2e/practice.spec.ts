@@ -601,6 +601,9 @@ test('Dev review practices six random cards and a missed-word retry without savi
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
   expect(await savedAttempts(page)).toEqual([]);
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await page.getByLabel('Questions', { exact: true }).selectOption('6');
+  await page.getByLabel('Timer behavior', { exact: true }).selectOption('random');
+  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
   const completed = new Set<string>();
   const presented: string[] = [];
   let missedId = '';

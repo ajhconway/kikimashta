@@ -2,7 +2,7 @@ import { approvedContextualQuestions, contextualMediaPath } from '../content/con
 import type { ContextualBank, ContextualRecording } from '../content/contextual-types';
 import type { WordItem } from '../types';
 import { contextualQuestion } from './contextual-questions';
-import { createDemoSchedule } from './mastery-demo';
+import { createMasterySample } from './mastery-demo';
 import type { ScheduledWord } from './scheduler';
 import type { Question } from './session';
 
@@ -47,7 +47,7 @@ export function createContextualDemoSession(
   const schedules = new Map<string, ScheduledWord | undefined>();
   const questions = createContextualDemo(banks, vocabulary, random, voiceIds).map((question, index) => {
     const demoId = `contextual-demo-${index}`;
-    schedules.set(demoId, createDemoSchedule({ item: question.target, exercise: question.exercise }, at, index + 3));
+    schedules.set(demoId, createMasterySample({ item: question.target, exercise: question.exercise }, index + 3, at));
     return { ...question, demoId };
   });
   return { questions, schedules };

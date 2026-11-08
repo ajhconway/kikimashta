@@ -9,13 +9,13 @@ const day = 86_400_000;
 // Representative intervals within each level; these are disposable demo fixtures.
 const gaps = [0, 600_000, day / 2, 3 * day, 14 * day, 60 * day, 180 * day, 730 * day];
 
-/** A fresh disposable FSRS sample; no saved history or other sample is changed. */
-export function createDemoSchedule(card: PracticeCard, at: number, levelIndex: number): ScheduledWord | undefined {
-  if (!Number.isInteger(levelIndex) || levelIndex < 0 || levelIndex >= gaps.length) throw new Error('Unknown demo mastery level.');
+/** Disposable schedule shared by the ordered tour and configurable Dev review. */
+export function createMasterySample(target: PracticeCard, levelIndex: number, at: number): ScheduledWord | undefined {
+  if (!Number.isInteger(levelIndex) || levelIndex < 0 || levelIndex >= masteryLevels.length || !Number.isFinite(at) || at < 1) throw new Error('Invalid sample mastery level or time.');
   if (levelIndex === 0) return undefined;
   const gap = gaps[levelIndex]!;
-  const lastReviewAt = Math.max(0, at - gap);
-  const identity = { itemId: card.item.id, language: card.item.language, exercise: card.exercise };
+  const lastReviewAt = Math.max(1, at - gap);
+  const identity = { itemId: target.item.id, language: target.item.language, exercise: target.exercise };
   return {
     ...identity, dueAt: lastReviewAt + gap, lastReviewedAt: lastReviewAt, schedulerVersion,
     card: { cardId: cardKey(identity), stability: gap / day, difficulty: 5,
@@ -34,7 +34,7 @@ export function createMasteryDemo(cards: readonly PracticeCard[], at: number, ra
   const questions: Question[] = masteryLevels.map((_, index) => {
     const target = pool[index % pool.length]!;
     const demoId = `mastery-demo-${index}`;
-    schedules.set(demoId, createDemoSchedule(target, at, index));
+    schedules.set(demoId, createMasterySample(target, index, at));
     return { ...createQuestions([target], cards.filter(card => card.exercise === target.exercise).map(card => card.item), random)[0]!, demoId };
   });
   return { questions, schedules };

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Exercise, PracticeAttempt, PracticeCard, WordItem } from '../types';
 import { cardKey } from './cards';
 import { cardMastery, masteryIndex } from './mastery';
-import { createDemoSchedule, createMasteryDemo } from './mastery-demo';
+import { createMasterySample, createMasteryDemo } from './mastery-demo';
 import { quizTimeLimit } from './quiz-timer';
 import { advanceSchedule, schedulerVersion } from './scheduler';
 import { requeueMissedQuestion, type Question } from './session';
@@ -35,15 +35,15 @@ describe('mastery demo fixtures (#140)', () => {
   it('constructs independent schedules for repeated cards and rejects unknown sample levels', () => {
     const card = pool()[0]!;
     const before = structuredClone(card);
-    expect(createDemoSchedule(card, at, 0)).toBeUndefined();
-    const first = createDemoSchedule(card, at, 3)!;
-    const second = createDemoSchedule(card, at, 3)!;
+    expect(createMasterySample(card, 0, at)).toBeUndefined();
+    const first = createMasterySample(card, 3, at)!;
+    const second = createMasterySample(card, 3, at)!;
     expect(first).toEqual(second);
     expect(cardMastery(first).label).toBe('Familiar');
     first.card.stability = 999;
     expect(second.card.stability).toBe(3);
     expect(card).toEqual(before);
-    for (const level of [-1, 8, .5, NaN]) expect(() => createDemoSchedule(card, at, level)).toThrow(/mastery level/i);
+    for (const level of [-1, 8, .5, NaN]) expect(() => createMasterySample(card, level, at)).toThrow(/mastery level/i);
   });
 
   it('presents all eight levels in order with their real timer policy', () => {
