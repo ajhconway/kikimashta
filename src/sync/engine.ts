@@ -13,6 +13,27 @@ function nonnegative(value: unknown): value is number {
 function timestamp(value: unknown): value is number {
   return nonnegative(value) && Number.isFinite(new Date(value).getTime());
 }
+const wordExercises = ['audio-picture', 'audio-text'];
+const contextualExercises = ['context-simple-picture', 'context-simple-text', 'context-contrastive-picture', 'context-contrastive-text'];
+function contextualAudioPath(value: unknown): value is string {
+  return identity(value) && value.startsWith('audio/') && /\.mp3$/i.test(value) && !/[\\%?#:]/u.test(value) &&
+    !value.split('/').some(part => !part || part === '.' || part === '..');
+}
+
+function validContextualDetails(value: Record<string, unknown>, context: Record<string, unknown>): boolean {
+  const details = context.contextual;
+  if (!object(details) || (details.stage !== 'simple' && details.stage !== 'contrastive') ||
+      !["context-" + details.stage + '-picture', "context-" + details.stage + '-text'].includes(context.exercise as string) ||
+      !['contextId', 'questionId', 'correctOptionId'].every(key => identity(details[key])) ||
+      !nonnegative(details.contextRevision) || details.contextRevision < 1 ||
+      !nonnegative(details.questionRevision) || details.questionRevision < 1 ||
+      (details.kind !== 'target' && details.kind !== 'detail') ||
+      !contextualAudioPath(details.sentenceSrc) || !contextualAudioPath(details.questionSrc) ||
+      context.recordingSrc !== details.sentenceSrc || details.sentenceSrc === details.questionSrc) return false;
+  const choices = value.choiceIds as string[];
+  return choices.length >= 2 && new Set(choices).size === choices.length && choices.includes(value.selectedId as string) &&
+    choices.includes(details.correctOptionId as string) && value.correct === (value.selectedId === details.correctOptionId);
+}
 
 /** Legacy identities are strings, not necessarily UUIDs. Never coerce payloads. */
 export function validateAttempt(value: unknown): PracticeAttempt {
@@ -24,10 +45,13 @@ export function validateAttempt(value: unknown): PracticeAttempt {
   if (value.context !== undefined) {
     const context = value.context;
     if (!object(context) || (context.phase !== 'lesson' && context.phase !== 'review') ||
-        (context.exercise !== 'audio-picture' && context.exercise !== 'audio-text') ||
+        ![...wordExercises, ...contextualExercises].includes(context.exercise as string) ||
         !identity(context.recordingSrc) || !Number.isInteger(context.replays) || !nonnegative(context.replays) ||
         !identity(context.schedulerVersion) || (context.retryOf !== undefined && !identity(context.retryOf))) {
       throw new Error('Invalid synchronized attempt context.');
+    }
+    if (contextualExercises.includes(context.exercise as string) ? !validContextualDetails(value, context) : context.contextual !== undefined) {
+      throw new Error('Invalid synchronized contextual attempt context.');
     }
   }
   return value as unknown as PracticeAttempt;
