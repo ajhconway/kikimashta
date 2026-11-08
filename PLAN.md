@@ -21,7 +21,7 @@ The Supabase schema, Resend SMTP, code-email templates, and production configura
 
 Keep [#6](https://github.com/ajhconway/kikimashta/issues/6) open for acceptance on the actual iPhone: complete audio/touch/session flow, persistence after reload, and sync with a second device, including notes and explicit guest-progress copy. Browser emulation does not complete this acceptance.
 
-The review recorded [save failure after leaving practice (#114)](https://github.com/ajhconway/kikimashta/issues/114), [picture-answer accessibility (#115)](https://github.com/ajhconway/kikimashta/issues/115), [missing artwork checks in CI (#116)](https://github.com/ajhconway/kikimashta/issues/116), and [clock-skew practice lockout (#117)](https://github.com/ajhconway/kikimashta/issues/117). These remain implementation work; this documentation update does not resolve them.
+The review recorded [save failure after leaving practice (#114)](https://github.com/ajhconway/kikimashta/issues/114), [picture-answer accessibility (#115)](https://github.com/ajhconway/kikimashta/issues/115), [missing artwork checks in CI (#116)](https://github.com/ajhconway/kikimashta/issues/116), and [clock-skew practice lockout (#117)](https://github.com/ajhconway/kikimashta/issues/117). Each finding has its own implementation task. #116 is addressed by the required card checks described below.
 
 ## Implementation
 
@@ -50,9 +50,9 @@ Spacing and retrieval practice have research support; this density controller an
 
 ## Testing and release
 
-- `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio tests, and the production build. Focused tests stay beside the code.
+- `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio/artwork tests, the card metadata validator, and the production build. Focused tests stay beside the code.
 - After building, `npm run test:e2e` checks Chromium and mobile WebKit journeys in `e2e/`, including complete sessions, actual IndexedDB persistence, both exercise formats, pack selection, failed audio, notes, and account isolation/convergence against a simulated HTTP service.
-- Run `python3 -m unittest discover -s scripts/cards -p 'test_*.py'` and `python3 scripts/cards/validate.py` for artwork preparation and content dependencies. They currently supplement required CI; #116 tracks adding them to it.
+- `npm run test:cards` runs the artwork preparation regressions and content/dependency validator. It is included in `npm run check`, so invalid metadata blocks required CI. Preparation and media generation remain manual.
 - Tests must be deterministic, isolated, and assert observable behavior. Use small fixtures, control time and randomness, mock external boundaries, and fix flaky tests instead of adding retries.
 - The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).
 - Verify pronunciation, playback, touch, layout, and VoiceOver on the real iPhone at playable milestones and releases. Hosted SQL checks and browser tests do not replace device acceptance.
