@@ -112,3 +112,5 @@ Media and dependencies retain separate terms. Current practice speech is AI-gene
 To activate reviewed batches on macOS: `node scripts/content/activate-approved-artwork.mjs batch-07 batch-08 batch-10`, then `npm run content:library`. Approval and source hashes are checked before image mappings change.
 
 Transparent approved sources export as alpha-preserving 640px PNGs. Earlier opaque deliveries retain their existing JPEG files and provenance. The activation command validates decoded transparency and opaque white subject details before atomically replacing a delivery.
+
+Practice packs and Japanese voice preferences are chosen in the card library and remembered on this device. Pack browsing stays independent of practice selection. Voice labels distinguish Tokyo (standard), Kansai, Kyushu, and Anime (standard).

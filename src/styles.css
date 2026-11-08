@@ -389,12 +389,6 @@ footer a:hover { color: var(--purple-dark); }
 .home-intensity { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0 auto 24px; font-size: 16px; font-weight: 800; }
 .home-intensity .pace-kiku { width: clamp(200px, 32svh, 300px); height: clamp(200px, 32svh, 300px); max-width: 100%; }
 
-.pack-picker { width: min(100%, 420px); margin: 12px auto; text-align: left; }
-.pack-picker summary { cursor: pointer; text-align: center; padding: 10px; font-weight: 700; }
-.pack-picker fieldset { border: 2px solid var(--purple-dark); border-radius: 16px; padding: 12px; }
-.pack-picker label { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; }
-.pack-picker input { width: 20px; height: 20px; accent-color: var(--purple-dark); flex-shrink: 0; }
-.pack-picker p { font-size: 13px; line-height: 1.5; }
 
 .language-picker { position: relative; display: inline-flex; max-width: 100%; color: var(--ink); }
 .language-picker select {
@@ -419,7 +413,6 @@ footer a:hover { color: var(--purple-dark); }
 .language-picker svg { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .language-globe { left: 16px; }
 .language-chevron { right: 15px; }
-.pack-mastery { display: block; margin-top: .25rem; font-size: .75rem; font-weight: 400; opacity: .8; }
 .feedback { position: relative; display: flex; justify-content: center; align-items: flex-start; }
 /* Caption-free badges fit the original feedback slot without resizing the cards. (#141) */
 .mastery-change { z-index: 1; position: absolute; top: -4px; inset-inline: 0; width: max-content; margin-inline: auto; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 64px; min-width: min(260px, 100%); max-width: 100%; padding: 2px 22px 2px 16px; border: 3px solid var(--purple-dark); border-radius: 23px; color: var(--purple-dark); background: #ffcee2; box-shadow: 0 4px 0 rgb(67 31 116 / .18); text-align: left; }
@@ -450,3 +443,5 @@ footer a:hover { color: var(--purple-dark); }
 .question-mastery-label { font-size: 24px; line-height: 1.15; font-weight: 800; }
 .question-mastery-timer { padding-left: 12px; border-left: 2px solid var(--line); font-size: 24px; line-height: 1.15; font-weight: 700; }
 .question-mastery .answer-result { width: 32px; height: 32px; font-size: 22px; }
+
+.pack-library-link { display: block; margin: 12px auto; padding: 10px; font-size: 14px; }

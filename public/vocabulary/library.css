@@ -41,6 +41,7 @@ button:disabled { opacity: .55; cursor: default; }
 .meaning { margin: 8px 0 15px; font-weight: 750; }
 .review-badge { display: inline-block; margin: 0 0 13px; padding: 3px 9px; border: 2px solid #81513c; border-radius: 20px; background: #ffe4b6; color: #65412f; font-size: .76rem; font-weight: 750; }
 .voices { display: flex; flex-wrap: wrap; gap: 9px; }
+.voice-accent { display: block; font-size: .75rem; font-weight: 400; }
 .voice-button { flex: 1; min-width: 88px; background: #ffd1e3; }
 .voice-button.is-playing { background: #ffe178; box-shadow: inset 0 0 0 2px #3f2468; }
 .picture-notes { margin-top: 17px; font-size: .88rem; }
@@ -66,3 +67,11 @@ footer { margin-top: 34px; text-align: center; font-size: .9rem; }
 
 .card-format { margin: 0 0 6px; font-size: .85rem; font-weight: 750; }
 .card-mastery { display: inline-block; margin: 0 0 14px; padding: 3px 10px; border: 2px solid #8748ef; border-radius: 20px; font-size: .85rem; font-weight: 750; }
+
+.practice-packs { margin: 0 0 22px; padding: 16px; border: 3px solid #8748ef; border-radius: 20px; background: #fffdfa; }
+.practice-packs summary { cursor: pointer; font-weight: 750; min-height: 44px; padding: 8px 0; }
+.practice-packs p { font-size: .9rem; }
+.practice-packs fieldset { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 8px 20px; padding: 12px; border: 2px solid #8748ef; border-radius: 12px; }
+.practice-packs label { flex-direction: row; align-items: center; gap: 10px; min-height: 48px; cursor: pointer; }
+.practice-packs input { width: 22px; height: 22px; min-height: 22px; flex-shrink: 0; accent-color: #8748ef; }
+.practice-packs small { display: block; font-size: .75rem; font-weight: 400; }
