@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 1,
+  "id": "ja-contextual-simple-pilot-v1",
+  "language": "ja-JP",
+  "grammarProfile": "genki-1",
+  "grammarReference": "https://bookclub2.japantimes.co.jp/download/files/genki3/genki-3rd_syllabus_E.pdf",
+  "grammarPoints": [
+    {
+      "id": "noun-no",
+      "label": "Noun linking and possession with の",
+      "genkiLesson": 1
+    },
+    {
+      "id": "questions",
+      "label": "Question sentences with か",
+      "genkiLesson": 1
+    },
+    {
+      "id": "question-words",
+      "label": "Basic question words",
+      "genkiLesson": 2
+    },
+    {
+      "id": "particles",
+      "label": "Core particles and word order",
+      "genkiLesson": 3
+    },
+    {
+      "id": "polite-verbs",
+      "label": "Polite present verb forms",
+      "genkiLesson": 3
+    },
+    {
+      "id": "location-existence",
+      "label": "Existence and relative location with あります/います",
+      "genkiLesson": 4
+    },
+    {
+      "id": "progressive",
+      "label": "Action in progress with ている",
+      "genkiLesson": 7
+    },
+    {
+      "id": "subject-ga",
+      "label": "Subject focus with が",
+      "genkiLesson": 8
+    }
+  ],
+  "supportingVocabulary": [
+    {
+      "id": "sup-above",
+      "text": "上",
+      "reading": "うえ",
+      "meaning": "on; above"
+    },
+    {
+      "id": "sup-below",
+      "text": "下",
+      "reading": "した",
+      "meaning": "under; below"
+    },
+    {
+      "id": "sup-left",
+      "text": "左",
+      "reading": "ひだり",
+      "meaning": "left"
+    },
+    {
+      "id": "sup-right",
+      "text": "右",
+      "reading": "みぎ",
+      "meaning": "right"
+    },
+    {
+      "id": "sup-book",
+      "text": "本",
+      "reading": "ほん",
+      "meaning": "book"
+    },
+    {
+      "id": "sup-notebook",
+      "text": "ノート",
+      "reading": "ノート",
+      "meaning": "notebook"
+    },
+    {
+      "id": "sup-plate",
+      "text": "皿",
+      "reading": "さら",
+      "meaning": "plate"
+    },
+    {
+      "id": "sup-ball",
+      "text": "玉",
+      "reading": "たま",
+      "meaning": "ball"
+    },
+    {
+      "id": "sup-water",
+      "text": "水",
+      "reading": "みず",
+      "meaning": "water"
+    },
+    {
+      "id": "sup-coffee",
+      "text": "コーヒー",
+      "reading": "コーヒー",
+      "meaning": "coffee"
+    },
+    {
+      "id": "sup-draft-beer",
+      "text": "生ビール",
+      "reading": "なまびーる",
+      "meaning": "draft beer"
+    },
+    {
+      "id": "sup-teacher",
+      "text": "先生",
+      "reading": "せんせい",
+      "meaning": "teacher"
+    },
+    {
+      "id": "sup-student",
+      "text": "学生",
+      "reading": "がくせい",
+      "meaning": "student"
+    },
+    {
+      "id": "sup-father",
+      "text": "父",
+      "reading": "ちち",
+      "meaning": "my father"
+    },
+    {
+      "id": "sup-desk",
+      "text": "机",
+      "reading": "つくえ",
+      "meaning": "desk"
+    },
+    {
+      "id": "sup-park",
+      "text": "公園",
+      "reading": "こうえん",
+      "meaning": "park"
+    },
+    {
+      "id": "sup-run",
+      "text": "走る",
+      "reading": "はしる",
+      "meaning": "to run"
+    },
+    {
+      "id": "sup-walk",
+      "text": "歩く",
+      "reading": "あるく",
+      "meaning": "to walk"
+    },
+    {
+      "id": "sup-swim",
+      "text": "泳ぐ",
+      "reading": "およぐ",
+      "meaning": "to swim"
+    },
+    {
+      "id": "sup-drink",
+      "text": "飲む",
+      "reading": "のむ",
+      "meaning": "to drink"
+    },
+    {
+      "id": "sup-what",
+      "text": "何",
+      "reading": "なに",
+      "meaning": "what (also read なん in some combinations)"
+    },
+    {
+      "id": "sup-who",
+      "text": "誰",
+      "reading": "だれ",
+      "meaning": "who"
+    },
+    {
+      "id": "sup-where",
+      "text": "どこ",
+      "reading": "どこ",
+      "meaning": "where"
+    }
+  ],
+  "contexts": [
+    {
+      "id": "ja-ctx-simple-ue-01",
+      "revision": 1,
+      "targetItemId": "ja-v-c0f58bfab324",
+      "targetOccurrence": {
+        "surface": "上",
+        "reading": "うえ"
+      },
+      "sentence": {
+        "text": "本は机の上にあります。",
+        "reading": "ほんはつくえのうえにあります。",
+        "meaning": "The book is on the desk.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-book",
+          "sup-desk"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-simple-ue-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "本はどこにありますか。",
+            "reading": "ほんはどこにありますか。",
+            "meaning": "Where is the book?",
+            "grammarTags": [
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-book",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "above",
+              "text": "上",
+              "reading": "うえ",
+              "meaning": "above",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-above"
+              ],
+              "vocabularyItemId": "ja-v-c0f58bfab324",
+              "imageItemId": "ja-v-c0f58bfab324"
+            },
+            {
+              "id": "below",
+              "text": "下",
+              "reading": "した",
+              "meaning": "below",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-below"
+              ],
+              "vocabularyItemId": "ja-v-520308b3c3b4",
+              "imageItemId": "ja-v-520308b3c3b4"
+            },
+            {
+              "id": "left",
+              "text": "左",
+              "reading": "ひだり",
+              "meaning": "left direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-left"
+              ],
+              "vocabularyItemId": "ja-v-14be5202d5b3",
+              "imageItemId": "ja-v-14be5202d5b3"
+            },
+            {
+              "id": "right",
+              "text": "右",
+              "reading": "みぎ",
+              "meaning": "right direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-right"
+              ],
+              "vocabularyItemId": "ja-v-ed6bd4d73b76",
+              "imageItemId": "ja-v-ed6bd4d73b76"
+            }
+          ],
+          "correctOptionId": "above",
+          "explanation": "The book is on the desk."
+        },
+        {
+          "id": "ja-ctx-simple-ue-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "机の上には何がありますか。",
+            "reading": "つくえのうえにはなにがありますか。",
+            "meaning": "What is on the desk?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-above",
+              "sup-desk",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "book",
+          "explanation": "The sentence says that a book is on the desk."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "pending",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "One short location fact introduces direct questions before the matching contrastive context. Existing 上/下 pictures show Kiku on/under a chair, and left/right use arrows; owner review should confirm that these position concepts transfer clearly to the desk sentence.",
+      "stage": "simple",
+      "comparisonContextId": "ja-ctx-ue-01"
+    },
+    {
+      "id": "ja-ctx-simple-mizu-01",
+      "revision": 1,
+      "targetItemId": "ja-v-28ddfdc9290c",
+      "targetOccurrence": {
+        "surface": "水",
+        "reading": "みず"
+      },
+      "sentence": {
+        "text": "先生は水を飲みます。",
+        "reading": "せんせいはみずをのみます。",
+        "meaning": "The teacher drinks water.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-water",
+          "sup-teacher",
+          "sup-drink"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-simple-mizu-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "先生は何を飲みますか。",
+            "reading": "せんせいはなにをのみますか。",
+            "meaning": "What does the teacher drink?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-drink",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "water",
+              "text": "水",
+              "reading": "みず",
+              "meaning": "water",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-water"
+              ],
+              "vocabularyItemId": "ja-v-28ddfdc9290c",
+              "imageItemId": "ja-v-28ddfdc9290c"
+            },
+            {
+              "id": "coffee",
+              "text": "コーヒー",
+              "reading": "コーヒー",
+              "meaning": "coffee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-coffee"
+              ],
+              "vocabularyItemId": "ja-v-9ff5251e6f21",
+              "imageItemId": "ja-v-9ff5251e6f21"
+            },
+            {
+              "id": "draft-beer",
+              "text": "生ビール",
+              "reading": "なまびーる",
+              "meaning": "draft beer",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-draft-beer"
+              ],
+              "vocabularyItemId": "ja-v-8fb11237e460",
+              "imageItemId": "ja-v-8fb11237e460"
+            }
+          ],
+          "correctOptionId": "water",
+          "explanation": "The teacher drinks water."
+        },
+        {
+          "id": "ja-ctx-simple-mizu-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "誰が水を飲みますか。",
+            "reading": "だれがみずをのみますか。",
+            "meaning": "Who drinks water?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "questions",
+              "question-words",
+              "subject-ga"
+            ],
+            "supportingVocabularyIds": [
+              "sup-water",
+              "sup-drink",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The sentence says that the teacher drinks water."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "pending",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "One short event introduces direct questions before the matching contrastive context. Drink choices reuse existing concept pictures; the older draft-beer SVG needs owner confirmation as a clear distractor. People choices remain written.",
+      "stage": "simple",
+      "comparisonContextId": "ja-ctx-mizu-01"
+    },
+    {
+      "id": "ja-ctx-simple-hashiru-01",
+      "revision": 1,
+      "targetItemId": "ja-v-97526e11c703",
+      "targetOccurrence": {
+        "surface": "走っています",
+        "reading": "はしっています"
+      },
+      "sentence": {
+        "text": "先生は公園で走っています。",
+        "reading": "せんせいはこうえんではしっています。",
+        "meaning": "The teacher is running in the park.",
+        "grammarTags": [
+          "particles",
+          "progressive"
+        ],
+        "supportingVocabularyIds": [
+          "sup-teacher",
+          "sup-park",
+          "sup-run"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-simple-hashiru-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "先生は公園で何をしていますか。",
+            "reading": "せんせいはこうえんでなにをしていますか。",
+            "meaning": "What is the teacher doing in the park?",
+            "grammarTags": [
+              "particles",
+              "progressive",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-park",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "running",
+              "text": "走っています",
+              "reading": "はしっています",
+              "meaning": "is running",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-run"
+              ],
+              "vocabularyItemId": "ja-v-97526e11c703"
+            },
+            {
+              "id": "walking",
+              "text": "歩いています",
+              "reading": "あるいています",
+              "meaning": "is walking",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-walk"
+              ]
+            },
+            {
+              "id": "swimming",
+              "text": "泳いでいます",
+              "reading": "およいでいます",
+              "meaning": "is swimming",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-swim"
+              ]
+            }
+          ],
+          "correctOptionId": "running",
+          "explanation": "The teacher is running in the park."
+        },
+        {
+          "id": "ja-ctx-simple-hashiru-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "誰が公園で走っていますか。",
+            "reading": "だれがこうえんではしっていますか。",
+            "meaning": "Who is running in the park?",
+            "grammarTags": [
+              "particles",
+              "progressive",
+              "questions",
+              "question-words",
+              "subject-ga"
+            ],
+            "supportingVocabularyIds": [
+              "sup-run",
+              "sup-park",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The sentence says that the teacher is running in the park."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "pending",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "One ongoing event introduces direct questions before the matching contrastive context. The target occurrence 走っています is an inflection of catalogue 走る. Choices remain written because clear matching pictures are not available for every action or person. The detail question uses subject が without a relative clause.",
+      "stage": "simple",
+      "comparisonContextId": "ja-ctx-hashiru-01"
+    }
+  ]
+}
