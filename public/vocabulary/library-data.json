@@ -2778,8 +2778,8 @@
       "meaning": "Correct",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-7003bbe10d0b.svg",
-        "alt": "Correct"
+        "src": "../images/approved/ja-v-7003bbe10d0b-c3c0ebdd7aa9.png",
+        "alt": "A green checkmark within a lavender circle."
       },
       "audio": [
         {
@@ -2831,7 +2831,7 @@
           "available": true
         }
       ],
-      "concept": "A large green check mark in a circle",
+      "concept": "A green checkmark within a lavender circle.",
       "visualGroup": "正しい",
       "reviewRequired": true,
       "reviewNote": "A conventional check mark symbolizes correctness."
@@ -3101,8 +3101,8 @@
       "meaning": "Eye",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-6c0b9f3278dc.svg",
-        "alt": "Eye"
+        "src": "../images/approved/ja-v-6c0b9f3278dc-8c3503ed6f4b.png",
+        "alt": "An almond-shaped human eye with a lavender iris and black pupil."
       },
       "audio": [
         {
@@ -3154,7 +3154,7 @@
           "available": true
         }
       ],
-      "concept": "An eye with iris and pupil",
+      "concept": "An almond-shaped human eye with a lavender iris and black pupil.",
       "visualGroup": "eye",
       "reviewRequired": false
     },
@@ -3165,8 +3165,8 @@
       "meaning": "Eyeball",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-a8ca5ef684b8.svg",
-        "alt": "Eyeball"
+        "src": "../images/approved/ja-v-a8ca5ef684b8-2c65f2203bbb.png",
+        "alt": "A whole white eyeball with a lavender iris and black pupil."
       },
       "audio": [
         {
@@ -3218,7 +3218,7 @@
           "available": true
         }
       ],
-      "concept": "A round eyeball with iris and pupil",
+      "concept": "A whole white eyeball with a lavender iris and black pupil.",
       "visualGroup": "eye",
       "reviewRequired": true,
       "reviewNote": "Eye and eyeball should not be contrasted in a picture-only quiz."
@@ -5426,8 +5426,8 @@
       "meaning": "Puppy",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-79140f0bf8e7.svg",
-        "alt": "Puppy"
+        "src": "../images/approved/ja-v-79140f0bf8e7-045f47fe7121.png",
+        "alt": "A very young golden puppy with an oversized round head, large gentle eyes, floppy ears and short legs."
       },
       "audio": [
         {
@@ -5479,7 +5479,7 @@
           "available": true
         }
       ],
-      "concept": "A tiny floppy-eared puppy beside a large paw print",
+      "concept": "A very young golden puppy with an oversized round head, large gentle eyes, floppy ears and short legs.",
       "visualGroup": "子犬",
       "reviewRequired": true,
       "reviewNote": "Puppy proportions convey young dog; size alone can be ambiguous."
@@ -6328,8 +6328,8 @@
       "meaning": "Sword",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-65df49688ef0.svg",
-        "alt": "Sword"
+        "src": "../images/approved/ja-v-65df49688ef0-98c01455628f.png",
+        "alt": "A slim curved Japanese sword with a golden guard and wrapped violet handle."
       },
       "audio": [
         {
@@ -6381,7 +6381,7 @@
           "available": true
         }
       ],
-      "concept": "A curved sword with a wrapped handle",
+      "concept": "A slim curved Japanese sword with a golden guard and wrapped violet handle.",
       "visualGroup": "刀",
       "reviewRequired": false
     },
@@ -6651,8 +6651,8 @@
       "meaning": "To Correct",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-5f0cf40d1630.svg",
-        "alt": "To Correct"
+        "src": "../images/approved/ja-v-5f0cf40d1630-c611f2edb01c.png",
+        "alt": "The equation 2 + 2 = 5, with the incorrect 5 crossed out and corrected to 4 above it."
       },
       "audio": [
         {
@@ -6704,7 +6704,7 @@
           "available": true
         }
       ],
-      "concept": "An incorrect equation being changed into a correct one",
+      "concept": "The equation 2 + 2 = 5, with the incorrect 5 crossed out and corrected to 4 above it.",
       "visualGroup": "正す",
       "reviewRequired": true,
       "reviewNote": "Correction action is conveyed by a before-and-after arithmetic example."
@@ -7426,8 +7426,8 @@
       "meaning": "Yen (currency counter)",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-a119c15d9de4.svg",
-        "alt": "Yen (currency counter)"
+        "src": "../images/approved/ja-v-a119c15d9de4-cab5be7722ae.png",
+        "alt": "Three golden coins, with a yen symbol on the front coin."
       },
       "audio": [
         {
@@ -7479,7 +7479,7 @@
           "available": true
         }
       ],
-      "concept": "Several yen coins with the currency symbol",
+      "concept": "Three golden coins, with a yen symbol on the front coin.",
       "visualGroup": "～円",
       "reviewRequired": true,
       "reviewNote": "Currency symbol represents yen counter; source English gloss was clipped."
@@ -8719,8 +8719,8 @@
       "meaning": "Few",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-89cc0156875d.svg",
-        "alt": "Few"
+        "src": "../images/approved/ja-v-89cc0156875d-5e1a35585f5e.png",
+        "alt": "A mostly empty lavender glass jar with three colored counters at the bottom."
       },
       "audio": [
         {
@@ -8772,7 +8772,7 @@
           "available": true
         }
       ],
-      "concept": "Only two beads in a large counting tray",
+      "concept": "A mostly empty lavender glass jar with three colored counters at the bottom.",
       "visualGroup": "few",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -9109,8 +9109,8 @@
       "meaning": "Fur",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-a76119b3c712.svg",
-        "alt": "Fur"
+        "src": "../images/approved/ja-v-a76119b3c712-297723fe5cac.png",
+        "alt": "A magnified patch of golden animal fur with a small cat inset."
       },
       "audio": [
         {
@@ -9162,7 +9162,7 @@
           "available": true
         }
       ],
-      "concept": "A fluffy animal tail with tufts of fur",
+      "concept": "A magnified patch of golden animal fur with a small cat inset.",
       "visualGroup": "fur",
       "reviewRequired": false
     },
@@ -10595,8 +10595,8 @@
       "meaning": "Part",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-a0e6022cc115.svg",
-        "alt": "Part"
+        "src": "../images/approved/ja-v-a0e6022cc115-b5ee17ea6988.png",
+        "alt": "A four-piece puzzle with one pink piece slightly separated from the other three."
       },
       "audio": [
         {
@@ -10648,7 +10648,7 @@
           "available": true
         }
       ],
-      "concept": "One highlighted piece of a four-piece puzzle",
+      "concept": "A four-piece puzzle with one pink piece slightly separated from the other three.",
       "visualGroup": "part",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -16088,8 +16088,8 @@
       "meaning": "Other",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-54c8da9a7bac.svg",
-        "alt": "Other"
+        "src": "../images/approved/ja-v-54c8da9a7bac-474723c83d2d.png",
+        "alt": "One golden cube apart from four lavender cubes, with attention marks."
       },
       "audio": [
         {
@@ -16141,7 +16141,7 @@
           "available": true
         }
       ],
-      "concept": "One orange object is separated from a cluster of purple objects",
+      "concept": "One golden cube apart from four lavender cubes, with attention marks.",
       "visualGroup": "other",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -17121,8 +17121,8 @@
       "meaning": "Straight Line",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-49863ee12a96.svg",
-        "alt": "Straight Line"
+        "src": "../images/approved/ja-v-49863ee12a96-11596f4eb5a7.png",
+        "alt": "A straight violet line guided by a golden ruler, with a pencil at its end."
       },
       "audio": [
         {
@@ -17174,7 +17174,7 @@
           "available": true
         }
       ],
-      "concept": "A ruler draws one perfectly straight horizontal line",
+      "concept": "A straight violet line guided by a golden ruler, with a pencil at its end.",
       "visualGroup": "straight-line",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -19125,8 +19125,8 @@
       "meaning": "Which One",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-67d99c6ae58e.svg",
-        "alt": "Which One"
+        "src": "../images/approved/ja-v-67d99c6ae58e-143fb4122be3.png",
+        "alt": "A violet question mark above three closed serving cloches."
       },
       "audio": [
         {
@@ -19178,7 +19178,7 @@
           "available": true
         }
       ],
-      "concept": "A question mark over three equally offered objects",
+      "concept": "A violet question mark above three closed serving cloches.",
       "visualGroup": "which-one",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -24105,8 +24105,8 @@
       "meaning": "One Time",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-9f59b44e2237.svg",
-        "alt": "One Time"
+        "src": "../images/approved/ja-v-9f59b44e2237-e32f360902b7.png",
+        "alt": "One circular turn arrow enclosing a single golden tally stroke."
       },
       "audio": [
         {
@@ -24158,7 +24158,7 @@
           "available": true
         }
       ],
-      "concept": "One complete circular turn with a single tally.",
+      "concept": "One circular turn arrow enclosing a single golden tally stroke.",
       "visualGroup": "一回",
       "reviewRequired": true,
       "reviewNote": "One loop symbolizes one occurrence."
@@ -27535,8 +27535,8 @@
       "meaning": "Various",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-7b2479107ae1.svg",
-        "alt": "Various"
+        "src": "../images/approved/ja-v-7b2479107ae1-90ca467ec2b1.png",
+        "alt": "Five different items: pink circle, lavender square, blue triangle, gold star and green leaf."
       },
       "audio": [
         {
@@ -27588,7 +27588,7 @@
           "available": true
         }
       ],
-      "concept": "A collection of differently colored shapes and objects.",
+      "concept": "Five different items: pink circle, lavender square, blue triangle, gold star and green leaf.",
       "visualGroup": "色々",
       "reviewRequired": true,
       "reviewNote": "A varied collection symbolizes various."

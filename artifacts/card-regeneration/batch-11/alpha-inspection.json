@@ -1,0 +1,380 @@
+{
+  "tool": "Installed Chrome canvas inspection",
+  "assets": [
+    {
+      "src": "169-straight-line.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1365192,
+      "opaque": 190896,
+      "semi": 16428,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "170-form-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1484994,
+      "opaque": 68514,
+      "semi": 19008,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "171-other.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1062429,
+      "opaque": 490606,
+      "semi": 19481,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "172-method.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1190623,
+      "opaque": 366312,
+      "semi": 15581,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "173-to-correct.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 681291,
+      "opaque": 879716,
+      "semi": 11509,
+      "opaqueWhitePixels": 550069,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "174-sword.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1429845,
+      "opaque": 132287,
+      "semi": 10384,
+      "opaqueWhitePixels": 65,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "175-which-one-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1139141,
+      "opaque": 413403,
+      "semi": 19972,
+      "opaqueWhitePixels": 3,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "176-eye.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1000955,
+      "opaque": 563079,
+      "semi": 8482,
+      "opaqueWhitePixels": 127262,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "177-way-of-seeing.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1134556,
+      "opaque": 422170,
+      "semi": 15790,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "178-correct.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1074928,
+      "opaque": 471741,
+      "semi": 25847,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "179-puppy-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 691335,
+      "opaque": 865907,
+      "semi": 15274,
+      "opaqueWhitePixels": 3218,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "180-various.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1054760,
+      "opaque": 497831,
+      "semi": 19925,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "181-bold-letter-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1309848,
+      "opaque": 240610,
+      "semi": 22058,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "182-at-once.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 794004,
+      "opaque": 764314,
+      "semi": 14198,
+      "opaqueWhitePixels": 270908,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "183-now-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 891431,
+      "opaque": 652873,
+      "semi": 28212,
+      "opaqueWhitePixels": 222875,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "184-few-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 688655,
+      "opaque": 872589,
+      "semi": 11272,
+      "opaqueWhitePixels": 295,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "185-atmosphere.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 646595,
+      "opaque": 914537,
+      "semi": 11384,
+      "opaqueWhitePixels": 46089,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "186-generally.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 890222,
+      "opaque": 655263,
+      "semi": 27031,
+      "opaqueWhitePixels": 87647,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "187-one-time.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 942200,
+      "opaque": 607051,
+      "semi": 23265,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "188-part.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 731782,
+      "opaque": 822751,
+      "semi": 17983,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "189-yen-currency-counter.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 959185,
+      "opaque": 603505,
+      "semi": 9826,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "190-input.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 662547,
+      "opaque": 895370,
+      "semi": 14599,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "191-center.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 1125793,
+      "opaque": 423401,
+      "semi": 23322,
+      "opaqueWhitePixels": 0,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "192-fur.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 719711,
+      "opaque": 834998,
+      "semi": 17807,
+      "opaqueWhitePixels": 271,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "src": "193-eyeball.png",
+      "width": 1254,
+      "height": 1254,
+      "transparent": 899203,
+      "opaque": 665052,
+      "semi": 8261,
+      "opaqueWhitePixels": 128285,
+      "corners": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

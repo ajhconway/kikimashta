@@ -1,0 +1,32 @@
+[
+  {
+    "number": 175,
+    "id": "ja-v-67d99c6ae58e",
+    "output": "artifacts/card-regeneration/batch-11/175-which-one-v3.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-cf86baa1-7f82-4efe-b5e3-8cbc61c35eda.png",
+    "sha256": "143fb4122be320acd43ff3935fb65a5503e49a9c5af4bcf485dd350d4a6337ad",
+    "bytes": 658312,
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "number": 179,
+    "id": "ja-v-79140f0bf8e7",
+    "output": "artifacts/card-regeneration/batch-11/179-puppy-v2.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-d13b8ce3-9f7f-4d94-b2de-1830c3dc4216.png",
+    "sha256": "045f47fe71214f4854a3d78affa5f9515285bc88f145b81302000b670061cfb7",
+    "bytes": 1192342,
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "number": 184,
+    "id": "ja-v-89cc0156875d",
+    "output": "artifacts/card-regeneration/batch-11/184-few-v2.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-2ba3e4d1-3a68-48cf-8437-24ebd5fc5a2b.png",
+    "sha256": "5e1a35585f5e460a6e0c75b634d3b879e4d36fb47def36ee2c40a8d4dcdf6dd6",
+    "bytes": 1127693,
+    "width": 1254,
+    "height": 1254
+  }
+]

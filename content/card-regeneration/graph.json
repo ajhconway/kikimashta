@@ -2572,7 +2572,8 @@
         "ja-v-5849925b131d",
         "ja-v-6109638dac53",
         "ja-v-dd1d6132fe3c",
-        "ja-cat"
+        "ja-cat",
+        "ja-v-a39af9252454"
       ],
       "referencePath": "artifacts/card-regeneration/references/kiku-character-reference.png",
       "sourceSha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
@@ -2741,6 +2742,56 @@
       "referencePath": "artifacts/card-regeneration/batch-08/109-twentieth-day-v2.png",
       "status": "approved",
       "guidance": "Reuse approved pull-off calendar109object design: opaque white sheets, golden binding, lavender rings, violet contours, perforation and curled corner.132shows the same calendar in two successive states12and13, connected by one right-pointing arrow, expressing one elapsed day. This is a duration illustration, not a new particular-date meaning. Preserve F07and contextual teaching. The12→13duration scene is approved."
+    },
+    {
+      "id": "family:shared-cube-scenes",
+      "kind": "family",
+      "seedCard": "ja-v-947395f42397",
+      "memberIds": [
+        "ja-v-54c8da9a7bac",
+        "ja-v-5b39de46794f",
+        "ja-v-6fe6f680e0e0",
+        "ja-v-a39af9252454"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-04/38-four-things.png",
+      "status": "approved-object-new-scenes-awaiting-review",
+      "guidance": "Reuse the approved rounded three-quarter cube geometry, violet contour and restrained shading. Scene-specific colors, grouping and emphasis follow each composition; these abstract scenes are separate from things counters. No new scene is approved by sharing the object."
+    },
+    {
+      "id": "family:clock-now-immediately",
+      "kind": "family",
+      "seedCard": null,
+      "styleNode": "style:cat-png",
+      "memberIds": [
+        "ja-v-84c8eeeb03ab",
+        "ja-v-89beba69de5a"
+      ],
+      "status": "prompt-convention",
+      "guidance": "Shared prompt convention only: round golden clock case, opaque white dial, violet rim, two hands schematically at10:10 and four quarter-hour ticks; no numerals. Immediately adds a gold lightning bolt and urgency marks; Now uses a calm lavender attention ring. Generate independently; neither pending image becomes an approved reference. Contextual overlap and existing eligibility restrictions remain."
+    },
+    {
+      "id": "family:eye-iris",
+      "kind": "family",
+      "seedCard": null,
+      "styleNode": "style:cat-png",
+      "memberIds": [
+        "ja-v-6c0b9f3278dc",
+        "ja-v-a8ca5ef684b8"
+      ],
+      "status": "prompt-convention",
+      "guidance": "Shared prompt convention only: opaque white sclera, large round lavender iris with violet rim, centered black pupil and one modest white highlight. Eye has an almond-shaped eyelid opening; Eyeball is an isolated whole spherical orb. Generate independently, with no pending-image dependency. Preserve F10 semantic exclusions and existing learning restrictions."
+    },
+    {
+      "id": "family:few-many-jar",
+      "kind": "family",
+      "seedCard": "ja-v-a249b72fa923",
+      "memberIds": [
+        "ja-v-a249b72fa923",
+        "ja-v-89cc0156875d"
+      ],
+      "referencePath": "artifacts/card-regeneration/batch-07/69-many.png",
+      "status": "approved",
+      "guidance": "Reuse the approved Many69glass jar: same rounded body, curved shoulders, broad violet/lavender oval rim, viewpoint, scale and simple shading. Many keeps its approved full contents. Few184uses only three matching colored counters at the bottom, leaving most of the jar empty. No tray, people or printed quantities. Sharing the approved jar does not preapprove the revised Few scene."
     }
   ],
   "edges": [
@@ -3245,7 +3296,7 @@
       "to": "card:ja-v-b1514b201acd"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7003bbe10d0b"
     },
     {
@@ -3281,11 +3332,19 @@
       "to": "card:ja-v-a19157e62dee"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-6c0b9f3278dc"
     },
     {
-      "from": "style",
+      "from": "family:eye-iris",
+      "to": "card:ja-v-6c0b9f3278dc"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "card:ja-v-a8ca5ef684b8"
+    },
+    {
+      "from": "family:eye-iris",
       "to": "card:ja-v-a8ca5ef684b8"
     },
     {
@@ -3429,7 +3488,7 @@
       "to": "card:ja-v-d5c177de5126"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a30018dbdb6b"
     },
     {
@@ -3609,7 +3668,7 @@
       "to": "card:ja-v-e34a140da9c0"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-79140f0bf8e7"
     },
     {
@@ -3745,7 +3804,7 @@
       "to": "card:ja-v-f3881ce313e7"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-65df49688ef0"
     },
     {
@@ -3797,7 +3856,7 @@
       "to": "card:ja-v-b0a6475686ea"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-5f0cf40d1630"
     },
     {
@@ -3893,7 +3952,7 @@
       "to": "card:ja-v-8101bd0ca76a"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a119c15d9de4"
     },
     {
@@ -4057,7 +4116,11 @@
       "to": "card:ja-v-9013d708ded7"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-89cc0156875d"
+    },
+    {
+      "from": "family:few-many-jar",
       "to": "card:ja-v-89cc0156875d"
     },
     {
@@ -4101,7 +4164,7 @@
       "to": "card:ja-v-e9c77c4e99a7"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a76119b3c712"
     },
     {
@@ -4209,7 +4272,11 @@
       "to": "card:ja-v-a84051dc9f24"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-89beba69de5a"
+    },
+    {
+      "from": "family:clock-now-immediately",
       "to": "card:ja-v-89beba69de5a"
     },
     {
@@ -4297,7 +4364,7 @@
       "to": "card:ja-v-6109638dac53"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-a0e6022cc115"
     },
     {
@@ -4537,7 +4604,7 @@
       "to": "card:ja-v-390f30691ca4"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-89fcef8e86d8"
     },
     {
@@ -4621,7 +4688,19 @@
       "to": "card:ja-v-f71f9de56223"
     },
     {
-      "from": "style",
+      "from": "style:kiku-scenes",
+      "to": "card:ja-v-a39af9252454"
+    },
+    {
+      "from": "component:cat",
+      "to": "card:ja-v-a39af9252454"
+    },
+    {
+      "from": "family:kiku-reference-subject",
+      "to": "card:ja-v-a39af9252454"
+    },
+    {
+      "from": "family:shared-cube-scenes",
       "to": "card:ja-v-a39af9252454"
     },
     {
@@ -4945,7 +5024,11 @@
       "to": "card:ja-v-4b9dfeafcab4"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-5b39de46794f"
+    },
+    {
+      "from": "family:shared-cube-scenes",
       "to": "card:ja-v-5b39de46794f"
     },
     {
@@ -5037,7 +5120,11 @@
       "to": "card:ja-v-ed2b971b34ea"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-54c8da9a7bac"
+    },
+    {
+      "from": "family:shared-cube-scenes",
       "to": "card:ja-v-54c8da9a7bac"
     },
     {
@@ -5157,7 +5244,7 @@
       "to": "card:ja-v-2f734ba866d9"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-49863ee12a96"
     },
     {
@@ -5429,7 +5516,11 @@
       "to": "card:ja-v-7cdf94430817"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-6fe6f680e0e0"
+    },
+    {
+      "from": "family:shared-cube-scenes",
       "to": "card:ja-v-6fe6f680e0e0"
     },
     {
@@ -5449,7 +5540,7 @@
       "to": "card:ja-v-ac3939d71e1e"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-67d99c6ae58e"
     },
     {
@@ -5541,7 +5632,11 @@
       "to": "card:ja-v-e5e8eaecaa3f"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
+      "to": "card:ja-v-84c8eeeb03ab"
+    },
+    {
+      "from": "family:clock-now-immediately",
       "to": "card:ja-v-84c8eeeb03ab"
     },
     {
@@ -5573,7 +5668,7 @@
       "to": "card:ja-v-6e098e54aa63"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-83365ed9e3db"
     },
     {
@@ -5781,7 +5876,7 @@
       "to": "card:ja-v-698044202165"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-4fd3d09440c1"
     },
     {
@@ -5805,7 +5900,7 @@
       "to": "card:ja-v-3813940acf07"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-97dfa455ab7e"
     },
     {
@@ -6085,7 +6180,7 @@
       "to": "card:ja-v-aef5eed601c5"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-9f59b44e2237"
     },
     {
@@ -6517,7 +6612,7 @@
       "to": "card:ja-v-ceb7b2a20cbd"
     },
     {
-      "from": "style",
+      "from": "style:cat-png",
       "to": "card:ja-v-7b2479107ae1"
     },
     {
@@ -6723,6 +6818,22 @@
     {
       "from": "card:ja-v-08e3c50181be",
       "to": "family:consecutive-calendar-days"
+    },
+    {
+      "from": "card:ja-v-947395f42397",
+      "to": "family:shared-cube-scenes"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "family:clock-now-immediately"
+    },
+    {
+      "from": "style:cat-png",
+      "to": "family:eye-iris"
+    },
+    {
+      "from": "card:ja-v-a249b72fa923",
+      "to": "family:few-many-jar"
     }
   ],
   "referencePolicy": "Generate batch 01 from scratch. Use first apple only as a style reference for the other foundations. After user feedback, approved component seed images become object/character references. Unseeded components are prompt conventions until a dedicated support reference is approved. Always label reference roles; never copy a reference subject into an unrelated scene."

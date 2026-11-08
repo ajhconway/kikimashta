@@ -224,3 +224,46 @@ test('an approved replacement updates the existing card once and retains prior d
   assert.deepEqual(f.read('content/catalog/ja.json').items[0].audio, f.item.audio)
   assert.deepEqual(f.read('content/practice-pool.json'), { itemIds: ['ja-test'] })
 })
+
+test('mixed approved review activates only approved assets and preserves explicitly deferred and removed mappings', t => {
+  const f = fixture(t)
+  const removed = { ...f.item, id: 'ja-removed', image: { ...f.item.image, src: 'images/removed.svg' } }
+  f.put('content/catalog/ja.json', { items: [f.item, { ...f.item, id: 'ja-untouched' }, removed] })
+  f.put('content/catalog/review-overrides.json', { [removed.id]: { removalReason: 'Owner removed this entry.' } })
+  const activationBefore = f.read('content/card-regeneration/activation.json')
+  const visualsBefore = f.read('content/visuals/levels-1-2.json')
+  f.manifest.assets.push({ id: 'ja-untouched', status: 'replace-later' }, { id: removed.id, status: 'removed' })
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  let encodes = 0
+  assert.deepEqual(activateArtwork({ root: f.root, batches: ['batch-05'], encode: (source, target) => {
+    encodes++
+    assert.match(source, /old\.png$/)
+    f.encode(source, target)
+  } }), ['ja-test'])
+  assert.equal(encodes, 1)
+  assert.deepEqual(f.read('content/catalog/ja.json').items.slice(1), [{ ...f.item, id: 'ja-untouched' }, removed])
+  assert.deepEqual(f.read('content/catalog/review-overrides.json'), { [removed.id]: { removalReason: 'Owner removed this entry.' } })
+  assert.deepEqual(f.read('content/visuals/levels-1-2.json').map(record => ({ ...record, concept: f.visual.concept })), visualsBefore)
+  const records = f.read('content/card-regeneration/activation.json').assets
+  assert.deepEqual(records.slice(0, -1), activationBefore.assets)
+  assert.equal(records.at(-1).id, 'ja-test')
+  assert.equal(records.length, 2)
+})
+
+for (const failure of ['awaiting-user-feedback', 'unrecognized status', 'missing status', 'duplicate deferred ID', 'unknown removed ID', 'unapproved manifest']) test(`mixed review rejects ${failure} before encoding or mapping changes`, t => {
+  const f = fixture(t)
+  const candidate = { id: 'ja-untouched', status: 'replace-later' }
+  if (failure === 'awaiting-user-feedback') candidate.status = 'awaiting-user-feedback'
+  if (failure === 'unrecognized status') candidate.status = 'deferred'
+  if (failure === 'missing status') delete candidate.status
+  if (failure === 'duplicate deferred ID') candidate.id = 'ja-test'
+  if (failure === 'unknown removed ID') Object.assign(candidate, { id: 'ja-missing', status: 'removed' })
+  if (failure === 'unapproved manifest') f.manifest.status = 'awaiting-user-feedback'
+  f.manifest.assets.push(candidate)
+  f.put('artifacts/card-regeneration/batch-05/manifest.json', f.manifest)
+  const before = f.read('content/card-regeneration/activation.json')
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['batch-05'], encode: () => assert.fail('Preflight must finish first') }))
+  assert.deepEqual(f.read('content/catalog/ja.json').items[0], f.item)
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), before)
+  assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+})

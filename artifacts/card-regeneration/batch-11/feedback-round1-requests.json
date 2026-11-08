@@ -1,0 +1,47 @@
+{
+  "issue": 72,
+  "batch": "batch-11",
+  "round": 1,
+  "tool": "built-in image_gen",
+  "edits": [
+    {
+      "number": 175,
+      "id": "ja-v-67d99c6ae58e",
+      "output": "artifacts/card-regeneration/batch-11/175-which-one-v3.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-11/175-which-one-v2.png",
+          "role": "edit target; preserve the question-mark design and replace only the bottom choices"
+        }
+      ],
+      "composition": "WHICH ONE: one large violet question mark above exactly THREE CLOSED OPAQUE SERVING CLOCHES, evenly spaced in one row. Each cloche has a small gold knob, a softly rounded silver/pale-lavender dome, a violet outline and a simple oval plate beneath. The contents are completely hidden. Remove all pink circles, lavender squares and blue triangles. Preserve the question-mark style, balanced grouping and legibility; the cloches are equally offered choices with none selected. No food, objects showing through, labels, extra question marks, trays, table or background.",
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary illustration in the established cat-PNG style\nInput roles: image 1: edit target; preserve the question-mark design and replace only the bottom choices\nPrimary request: WHICH ONE: one large violet question mark above exactly THREE CLOSED OPAQUE SERVING CLOCHES, evenly spaced in one row. Each cloche has a small gold knob, a softly rounded silver/pale-lavender dome, a violet outline and a simple oval plate beneath. The contents are completely hidden. Remove all pink circles, lavender squares and blue triangles. Preserve the question-mark style, balanced grouping and legibility; the cloches are equally offered choices with none selected. No food, objects showing through, labels, extra question marks, trays, table or background.\nStyle: smooth substantial deep-violet contours, rounded forms, original app palette and restrained soft shading inside subjects. Preserve clean edges, with no exterior glow, haze, cast shadow, speckling or texture residue. One SQUARE1:1 canvas, complete centered scene, generous clean margins, readable at145px. No lettering, branding, captions, watermark or unrelated decoration. Preserve existing contextual/picture-only learning restrictions; the image is a teaching cue.\nBackground/export: genuinely transparent OUTSIDE the intended silhouette and in gaps. Preserve fully opaque colored subject fills, white details and all intended jar glass/rim edges; keep the empty glass jar interior clean and lightly tinted rather than a white background rectangle. No checkerboard or rectangular matte. transparent_background=true."
+    },
+    {
+      "number": 179,
+      "id": "ja-v-79140f0bf8e7",
+      "output": "artifacts/card-regeneration/batch-11/179-puppy-v2.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-11/179-puppy.png",
+          "role": "edit target; retain fur colors/rendering but make juvenile puppy proportions clearer and remove paw print"
+        }
+      ],
+      "composition": "One unmistakably VERY YOUNG PUPPY, seated: disproportionately large round baby head, very short soft muzzle, round cheeks, big gentle eyes, floppy soft ears, small plump body, short stubby legs and slightly oversized rounded paws. Golden/tan fur and cream muzzle, chest and toes match the existing image. The juvenile proportions must read as puppy rather than a small adult dog. REMOVE the separate lavender paw-print icon completely. Center and enlarge the puppy alone to use the newly freed space, with full ears, tail and paws visible and generous margins. Keep four anatomically clear legs/paws; no extra limbs, comparison adult, baby bottle, pacifier, collar text or props.",
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary illustration in the established cat-PNG style\nInput roles: image 1: edit target; retain fur colors/rendering but make juvenile puppy proportions clearer and remove paw print\nPrimary request: One unmistakably VERY YOUNG PUPPY, seated: disproportionately large round baby head, very short soft muzzle, round cheeks, big gentle eyes, floppy soft ears, small plump body, short stubby legs and slightly oversized rounded paws. Golden/tan fur and cream muzzle, chest and toes match the existing image. The juvenile proportions must read as puppy rather than a small adult dog. REMOVE the separate lavender paw-print icon completely. Center and enlarge the puppy alone to use the newly freed space, with full ears, tail and paws visible and generous margins. Keep four anatomically clear legs/paws; no extra limbs, comparison adult, baby bottle, pacifier, collar text or props.\nStyle: smooth substantial deep-violet contours, rounded forms, original app palette and restrained soft shading inside subjects. Preserve clean edges, with no exterior glow, haze, cast shadow, speckling or texture residue. One SQUARE1:1 canvas, complete centered scene, generous clean margins, readable at145px. No lettering, branding, captions, watermark or unrelated decoration. Preserve existing contextual/picture-only learning restrictions; the image is a teaching cue.\nBackground/export: genuinely transparent OUTSIDE the intended silhouette and in gaps. Preserve fully opaque colored subject fills, white details and all intended jar glass/rim edges; keep the empty glass jar interior clean and lightly tinted rather than a white background rectangle. No checkerboard or rectangular matte. transparent_background=true."
+    },
+    {
+      "number": 184,
+      "id": "ja-v-89cc0156875d",
+      "output": "artifacts/card-regeneration/batch-11/184-few-v2.png",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-07/69-many.png",
+          "role": "approved Many jar; preserve the exact jar design, silhouette, rim, proportions, violet contours and glass rendering, changing only the quantity inside"
+        }
+      ],
+      "composition": "FEW: reuse the SAME OPEN GLASS JAR from the approved Many reference, preserving its broad rounded body, thick lavender/violet oval mouth/rim, curved shoulders, vertical sides and rounded bottom. Replace the crowded contents with ONLY THREE round counters resting separately at the BOTTOM: one gold, one pink and one sky blue, matching the reference counters' size and simple shading. Most of the jar must be visibly empty, emphasizing few compared with the approved full Many jar. Keep the three counters clearly readable, fully opaque and unnumbered. No tray, lid, food, written quantity, question mark, arrows or other objects. Same jar size, viewpoint and placement as the reference.",
+      "prompt": "Use case: precise-object-edit\nAsset type: one square vocabulary illustration in the established cat-PNG style\nInput roles: image 1: approved Many jar; preserve the exact jar design, silhouette, rim, proportions, violet contours and glass rendering, changing only the quantity inside\nPrimary request: FEW: reuse the SAME OPEN GLASS JAR from the approved Many reference, preserving its broad rounded body, thick lavender/violet oval mouth/rim, curved shoulders, vertical sides and rounded bottom. Replace the crowded contents with ONLY THREE round counters resting separately at the BOTTOM: one gold, one pink and one sky blue, matching the reference counters' size and simple shading. Most of the jar must be visibly empty, emphasizing few compared with the approved full Many jar. Keep the three counters clearly readable, fully opaque and unnumbered. No tray, lid, food, written quantity, question mark, arrows or other objects. Same jar size, viewpoint and placement as the reference.\nStyle: smooth substantial deep-violet contours, rounded forms, original app palette and restrained soft shading inside subjects. Preserve clean edges, with no exterior glow, haze, cast shadow, speckling or texture residue. One SQUARE1:1 canvas, complete centered scene, generous clean margins, readable at145px. No lettering, branding, captions, watermark or unrelated decoration. Preserve existing contextual/picture-only learning restrictions; the image is a teaching cue.\nBackground/export: genuinely transparent OUTSIDE the intended silhouette and in gaps. Preserve fully opaque colored subject fills, white details and all intended jar glass/rim edges; keep the empty glass jar interior clean and lightly tinted rather than a white background rectangle. No checkerboard or rectangular matte. transparent_background=true."
+    }
+  ]
+}

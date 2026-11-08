@@ -13,6 +13,37 @@ def write(name, value):
     (OUT / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
 
+def validate_feedback_dispositions(feedback, known_ids=None):
+    """Approval, deferral and removal are distinct owner decisions."""
+    groups = [set(feedback.get('approvedCardIds', []))]
+    for key in ['replaceLater', 'removedFromVocabulary']:
+        values = feedback.get(key, {})
+        if not isinstance(values, dict) or any(not isinstance(reason, str) or not reason.strip()
+                                              for reason in values.values()):
+            raise ValueError(f'{key} must map stable IDs to nonempty reasons')
+        groups.append(set(values))
+    if any(left & right for index, left in enumerate(groups) for right in groups[index + 1:]):
+        raise ValueError('Approved, replace-later and removed IDs must be disjoint')
+    if known_ids is not None and set.union(*groups) - set(known_ids):
+        raise ValueError('Disposition references an unknown stable ID')
+
+
+def apply_review_disposition(item, feedback):
+    """Keep historical identity/restrictions while disabling removed/deferred cards."""
+    item_id = item['id']
+    if item_id in feedback.get('removedFromVocabulary', {}):
+        reason = feedback['removedFromVocabulary'][item_id]
+        item.update(vocabularyStatus='removed', practiceStatus='removed',
+                    pictureOnlyEligible=False, removalReason=reason,
+                    eligibilityNote='Removed from vocabulary by owner: ' + reason)
+    elif item_id in feedback.get('replaceLater', {}):
+        reason = feedback['replaceLater'][item_id]
+        item.update(practiceStatus='replace-later', pictureOnlyEligible=False,
+                    replacementReason=reason, outstandingFeedback=reason,
+                    eligibilityNote='Replacement deferred by owner; artwork is not approved: ' + reason)
+    return item
+
+
 STYLE = '''Use case: scientific-educational
 Asset type: one square vocabulary illustration for a Japanese listening game
 Style/medium: simple flat cartoon, rounded natural silhouettes, solid fills, clean smooth dark-purple exterior outlines; understated charm. No gradients, 3D, watercolor, paper grain, sketch marks or photorealism.
@@ -222,6 +253,7 @@ def prepare():
     findings = review['findings']
     feedback_path = OUT / 'user-feedback.json'
     feedback = json.loads(feedback_path.read_text()) if feedback_path.exists() else {}
+    validate_feedback_dispositions(feedback, {item['id'] for item in source['records']})
     style_path = OUT / 'style-overrides.json'
     styles = json.loads(style_path.read_text()) if style_path.exists() else {'profiles': {}, 'cardProfiles': {}}
     artwork = {}
@@ -281,6 +313,7 @@ def prepare():
         item['artworkStatus'] = artwork.get(item_id, {}).get('status', 'not-generated')
         if item_id in feedback.get('acceptedWithKnownIssues', {}):
             item['outstandingFeedback'] = feedback['acceptedWithKnownIssues'][item_id]
+        apply_review_disposition(item, feedback)
         item['componentGuidance'] = {name: guidance for name, guidance in feedback.get('componentGuidance', {}).items() if name in item['components']}
         profile_id = styles['cardProfiles'].get(item_id)
         style_specification = styles['profiles'][profile_id]['specification'] if profile_id else STYLE

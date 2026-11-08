@@ -14,9 +14,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 168 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 168)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 168)
+test('all 183 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 183)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 183)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -92,4 +92,28 @@ test('the five approved numerical reference replacements are selected in their o
     assert.equal(records[0].sourcePath, selected.path)
     assert.equal(records[0].sourceSha256, selected.sha256)
   }
+})
+
+test('batch11 publishes only its15approved selections while deferred artwork and removed Form stay inactive', () => {
+  const reviewed = read('artifacts/card-regeneration/batch-11/manifest.json')
+  assert.equal(reviewed.status, 'approved')
+  const approved = reviewed.assets.filter(asset => asset.status === 'approved')
+  const deferred = reviewed.assets.filter(asset => asset.status === 'replace-later')
+  const removed = reviewed.assets.filter(asset => asset.status === 'removed')
+  assert.equal(approved.length, 15)
+  assert.equal(deferred.length, 9)
+  assert.equal(removed.length, 1)
+  assert.equal(reviewed.assets.length, 25)
+  for (const asset of approved) {
+    const active = activation.assets.find(record => record.id === asset.id)
+    assert.equal(active.sourcePath, asset.path)
+    assert.equal(active.sourceSha256, asset.sha256)
+    assert.ok(library.some(card => card.id === asset.id))
+  }
+  for (const asset of [...deferred, ...removed]) assert.ok(!activation.assets.some(record => record.id === asset.id))
+  for (const asset of deferred) assert.ok(library.some(card => card.id === asset.id))
+  const removedId = 'ja-v-4fd3d09440c1'
+  assert.equal(removed[0].id, removedId)
+  assert.ok(!library.some(card => card.id === removedId))
+  assert.ok(read('content/catalog/review-overrides.json')[removedId].removalReason)
 })

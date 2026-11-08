@@ -1,0 +1,32 @@
+[
+  {
+    "number": 175,
+    "id": "ja-v-67d99c6ae58e",
+    "output": "artifacts/card-regeneration/batch-11/175-which-one-v2.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-63f79195-7c45-4704-9a2b-472262fc8e1b.png",
+    "sha256": "6581efc88f8abcdb07f9d1d048362103e86d2e353c5bf5fcf1d741bab3dac6ef",
+    "bytes": 681551,
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "number": 181,
+    "id": "ja-v-83365ed9e3db",
+    "output": "artifacts/card-regeneration/batch-11/181-bold-letter-v2.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-46c04031-42ab-4060-b235-e98b78512b00.png",
+    "sha256": "080b5816a6849c4cd36d22f884392f3b9caa699f603d296cd60f0871cb70a8e4",
+    "bytes": 443753,
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "number": 183,
+    "id": "ja-v-89beba69de5a",
+    "output": "artifacts/card-regeneration/batch-11/183-now-v2.png",
+    "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a5e2b046-fbf9-4d91-a61e-73807e961965.png",
+    "sha256": "6956b98f059eca50552b1d3bb545e6fa30a8b121289c65504ae61a580555b932",
+    "bytes": 894776,
+    "width": 1254,
+    "height": 1254
+  }
+]

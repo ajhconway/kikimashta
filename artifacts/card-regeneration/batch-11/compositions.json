@@ -1,0 +1,426 @@
+{
+  "issue": 72,
+  "batch": "batch-11",
+  "numberStart": 169,
+  "items": [
+    {
+      "number": 169,
+      "id": "ja-v-49863ee12a96",
+      "meaning": "Straight Line",
+      "japanese": "一文字",
+      "slug": "straight-line",
+      "composition": "One clear STRAIGHT HORIZONTAL LINE in deep violet, with one simple short GOLDEN RULER lying directly above and parallel to it. The ruler has a completely straight edge and a few unnumbered violet tick marks; its edge visibly guides the line. A small lavender pencil touches the right end of the line, showing how it is drawn. Keep the long line dominant and perfectly straight. No hands, curved line, paper background rectangle, letters, numbers or captions. Existing picture-only restriction remains.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 170,
+      "id": "ja-v-4fd3d09440c1",
+      "meaning": "Form",
+      "japanese": "～形",
+      "slug": "form",
+      "composition": "An outline SHAPE FAMILY: exactly one CIRCLE, one SQUARE and one TRIANGLE, arranged neatly in a single horizontal row with equal visual size, equal deep-violet contour weight and generous gaps. All interiors are transparent and UNFILLED. Reuse the approved square/triangle silhouette proportions, rendered as simple outlines. No question mark, target highlight, arrows, extra shapes, text or decorative marks. This is an explicitly taught abstract diagram, retaining F48 contextual restrictions.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-07/61-square.png",
+          "role": "approved equal-sided square silhouette and violet contour; use outline only"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-06/60-triangle-v2.png",
+          "role": "approved simple triangle silhouette and violet contour; use outline only"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 171,
+      "id": "ja-v-54c8da9a7bac",
+      "meaning": "Other",
+      "japanese": "他",
+      "slug": "other",
+      "composition": "OTHER: one GOLDEN-ORANGE CUBE sits clearly apart at the right of a compact group of four LAVENDER CUBES at left. All cubes use identical rounded three-quarter geometry, size and violet contour; a gap approximately one cube wide separates the orange cube from the lavender group. Two short violet attention strokes beside the isolated orange cube emphasize that other item. No numerals, question mark, written labels, dividing frame, extra objects or shadows. This is a taught comparison mnemonic and remains picture-only restricted.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved cube geometry, three-quarter orientation and contour treatment only; this is not a counting prompt"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 172,
+      "id": "ja-v-5b39de46794f",
+      "meaning": "Method",
+      "japanese": "仕方",
+      "slug": "method",
+      "composition": "METHOD: a clean three-stage assembly sequence, left to right. First a single golden toy cube; next a golden cube with one lavender cube stacked on top; finally a simple three-cube tower with a sky-blue cube on top. Use the approved rounded cube geometry consistently. Two substantial simple violet RIGHT arrows connect the stages, visually showing the method of building a tower. Each stage is separate and fully visible, no step numbers or captions, hands, question mark or extra blocks. Keep scene compact and legible at145px; preserve the existing contextual/picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved cube geometry, three-quarter orientation and contour treatment only; this is not a counting prompt"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 173,
+      "id": "ja-v-5f0cf40d1630",
+      "meaning": "To Correct",
+      "japanese": "正す",
+      "slug": "to-correct",
+      "composition": "TO CORRECT: an opaque-white sheet of paper with a short golden pencil at the right. On the sheet, one large exact equation reads 2+2=5; the incorrect5is crossed through with one clear pink diagonal correction stroke, and a large exact4is written directly above that5in deep violet. Keep 2+2= untouched so the correction from5to4is unambiguous. No other equations, words, checkmarks or decorative text. Numerals and math signs are essential in-scene content. Fully visible rounded white page, violet contour, no hand or surrounding desk. Preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 174,
+      "id": "ja-v-65df49688ef0",
+      "meaning": "Sword",
+      "japanese": "刀",
+      "slug": "sword",
+      "composition": "One recognizable JAPANESE SWORD (katana) isolated diagonally from lower-left wrapped handle to upper-right blade tip. Slim gently curved single-edged SILVER-GRAY blade with one clear cutting edge and a restrained flat lighter strip, a small round GOLDEN guard, and proportionate dark-violet handle with simple pink/lavender diamond wrapping. Blade is long and narrow, handle aboutone-quarter of total length. No broad scimitar curve, dagger proportions, jagged fantasy blade, scabbard, blood, person, sparks or labels. Retain F12 Japanese-sword correction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 175,
+      "id": "ja-v-67d99c6ae58e",
+      "meaning": "Which One",
+      "japanese": "どれ",
+      "slug": "which-one",
+      "composition": "WHICH ONE: one LARGE violet QUESTION MARK above THREE VISIBLE, equally offered choices in a row: a pink CIRCLE, a lavender SQUARE, and a sky-blue TRIANGLE. All choices equal visual size with violet contours and clear gaps, none highlighted or selected. Reuse the approved question-mark rendering only; unlike the approved What card, the three visible alternatives are essential here. No hidden lids, answer marker, arrow, words, letters or numerals. This remains a taught question/choice mnemonic with its existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-09/122-what-v2.png",
+          "role": "approved violet question-mark glyph treatment only; include the three visible choices requested here, not just a lone question mark"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 176,
+      "id": "ja-v-6c0b9f3278dc",
+      "meaning": "Eye",
+      "japanese": "目",
+      "slug": "eye",
+      "composition": "One human EYE viewed straight-on: an almond-shaped opening bounded by a simple curved upper and lower eyelid, with opaque white sclera, centered lavender iris and black pupil. Slight warm-skin corners and a single simple upper-lid crease give anatomical context. Full eye and eyelid opening are visible; no whole face, eyeball sphere, detached organ stem, exaggerated eyelashes, brow, tear, arrows or labels. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eyeball; the outline difference is not a claim that these words can compete fairly as picture-only answers.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 177,
+      "id": "ja-v-6fe6f680e0e0",
+      "meaning": "Way Of Seeing",
+      "japanese": "見方",
+      "slug": "way-of-seeing",
+      "composition": "WAY OF SEEING / viewpoint mnemonic: one large three-quarter CUBE in the center, its left face pink and right face sky blue, with two small HUMAN HEAD-AND-SHOULDER VIEWERS at opposite sides looking toward it. One viewer on the left faces the pink face; the other on the right faces the blue face. Short thin violet dotted sight lines connect each viewer to the corresponding face. Cube and the two viewing positions are the complete idea. Use approved human design for the viewers, without detached eye icons, giant pupils, thought bubbles, text, numbers or diagram labels. Preserve existing restriction: this supports a taught perspective concept and does not picture a general eye noun.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved cube geometry, three-quarter orientation and contour treatment only; this is not a counting prompt"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/03-person.png",
+          "role": "approved human appearance: warm skin, short violet hair, pink/lavender clothing; use only for the explicitly requested human viewers"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 178,
+      "id": "ja-v-7003bbe10d0b",
+      "meaning": "Correct",
+      "japanese": "正しい",
+      "slug": "correct",
+      "composition": "CORRECT: one LARGE GREEN CHECKMARK centered inside one simple lavender circular outline. Checkmark has a short left descending arm and a long right ascending arm with rounded ends; strong clear silhouette, no other symbols. Reuse the established violet-outline/rounded-cap visual language, green check as the factual correctness cue. No equation, pencil, crossing-out action, checkbox list, person, words, letters or extra rings. The status symbol is separate from the To Correct action scene and retains its existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 179,
+      "id": "ja-v-79140f0bf8e7",
+      "meaning": "Puppy",
+      "japanese": "子犬",
+      "slug": "puppy",
+      "composition": "One unmistakably YOUNG FLOPPY-EARED PUPPY, seated, with oversized rounded head, short muzzle, small body, short legs and large soft paws. Tan/golden fur with cream muzzle/chest, violet contours, friendly simple eyes and a small curled tail. Reuse the approved dog palette/rendering while making juvenile proportions clear. One large subdued lavender PAW PRINT sits separately beside the puppy as the existing cue; no adult dog, collar lettering, bowl, person, headphones, captions or attention rays. Preserve existing picture-only limitation.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-02/12-dog-cat-v3.png",
+          "role": "approved dog palette, fur/outline treatment and simple anatomy; deliberately use juvenile puppy proportions, not the adult silhouette"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 180,
+      "id": "ja-v-7b2479107ae1",
+      "meaning": "Various",
+      "japanese": "色々",
+      "slug": "various",
+      "composition": "VARIOUS: a compact collection of FIVE CLEARLY DIFFERENT simple items: pink circle, lavender square, sky-blue triangle, golden star and small green leaf, each with matching violet contours and restrained shading. Keep varied colors AND varied recognizable shapes, equal general emphasis, two balanced rows with clear gaps. No duplicate collection, single highlighted target, question mark, numerals, text or surrounding container. This differs from Form by filled diverse objects rather than a uniform outline family. Retain F48 and its contextual teaching requirement.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 181,
+      "id": "ja-v-83365ed9e3db",
+      "meaning": "Bold Letter",
+      "japanese": "太字",
+      "slug": "bold-letter",
+      "composition": "BOLD LETTER: two large UPPERCASE A letterforms side by side, exactly the SAME geometric design and cap height. Left A uses a THIN lavender stroke; right A uses a VERY THICK DEEP-VIOLET stroke with clearly open triangular counter. Two short violet attention strokes beside the RIGHT HEAVY A emphasize the bold weight. Only the essential literal letterAappears twice; no words such as thin/bold, other letters, numbers, arrows, badges or page rectangle. This is a taught typography comparison and keeps existing picture-only restrictions.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 182,
+      "id": "ja-v-84c8eeeb03ab",
+      "meaning": "At Once",
+      "japanese": "今すぐ",
+      "slug": "at-once",
+      "composition": "AT ONCE / immediately mnemonic: one LARGE round CLOCK with a substantial GOLDEN LIGHTNING BOLT beside its right edge and TWO short violet action strokes indicating urgency. The bolt is large enough to remain visible at145px; the clock remains complete and recognizable. Shared clock convention: plain round GOLDEN CASE, opaque WHITE DIAL, deep-violet rim and two hands set schematically at10:10, four simple violet quarter-hour ticks, no numerals or letters, no second hand. Case diameter about60%of square width. This is a taught time cue, not a reading of the real current time. At Once adds a GOLD lightning bolt and two short directional action strokes; Now uses a calm lavender attention ring and NO bolt or motion strokes. No attention ring, alarm bells, calendar, person, words, labels or extra symbols. This urgency mnemonic remains semantically restricted and is not claimed to define 今すぐ without listening context.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 183,
+      "id": "ja-v-89beba69de5a",
+      "meaning": "Now",
+      "japanese": "今",
+      "slug": "now",
+      "composition": "NOW mnemonic: one LARGE front-facing round CLOCK inside a calm LAVENDER ATTENTION RING with four short straight violet emphasis ticks outside the ring. Shared clock convention: plain round GOLDEN CASE, opaque WHITE DIAL, deep-violet rim and two hands set schematically at10:10, four simple violet quarter-hour ticks, no numerals or letters, no second hand. Case diameter about60%of square width. This is a taught time cue, not a reading of the real current time. At Once adds a GOLD lightning bolt and two short directional action strokes; Now uses a calm lavender attention ring and NO bolt or motion strokes. Keep the clock upright and static. No lightning bolt, speed lines, direction arrows, alarm bells, calendar, person, words or labels. This present-time cue remains semantically restricted; the visual contrast with At Once does not remove their contextual overlap.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 184,
+      "id": "ja-v-89cc0156875d",
+      "meaning": "Few",
+      "japanese": "少ない",
+      "slug": "few",
+      "composition": "FEW: only TWO small round lavender beads in an otherwise mostly EMPTY large shallow GOLDEN COUNTING TRAY. The empty capacity must dominate: beads occupy less thanone-fifth of tray area and sit near its lower center, clearly separate from each other. Simple violet contours, calm soft shading, transparent outer background; interior tray is opaque pale cream, not a hole. No printed number2, other beads, question mark, utensil, jewelry string, words or other items. Preserve existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 185,
+      "id": "ja-v-89fcef8e86d8",
+      "meaning": "Atmosphere",
+      "japanese": "大気",
+      "slug": "atmosphere",
+      "composition": "ATMOSPHERE: one small recognizable BLUE/GREEN EARTH globe at center with a visible curved AIR LAYER hugging its surface. Show two broad pale-sky-blue/lavender concentric arcs around most of the globe and three small opaque WHITE CLOUDS drifting within the outer air layer. Earth has a simplified recognizable continental pattern, not an eye iris or an unlabeled ball. Air shell and clouds, not the planet alone, are the main cue. Keep all scene colors within the intended round atmospheric silhouette; outer canvas transparent. No outer space star field, sun, orbiting satellite, arrows, text, labels or gradient haze beyond silhouette. Preserve existing restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 186,
+      "id": "ja-v-97dfa455ab7e",
+      "meaning": "Generally",
+      "japanese": "大体",
+      "slug": "generally",
+      "composition": "GENERALLY mnemonic: a clear large MAJORITY of agreement tokens with a small minority that differ. Arrange EIGHT small GREEN CIRCLES each containing a simple WHITE CHECKMARK, and TWO LAVENDER CIRCLES each containing a simple WHITE horizontal dash, in a compact balanced group with transparent gaps. All tokens same size; checks and dashes remain visible at145px. No fruit basket, printed percentage, numerals, words, question mark or single target highlight. This is an explicitly taught agreement-pattern mnemonic, not a literal picture-only definition of 大体; retain F46 and all existing restrictions.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 187,
+      "id": "ja-v-9f59b44e2237",
+      "meaning": "One Time",
+      "japanese": "一回",
+      "slug": "one-time",
+      "composition": "ONE TIME / once: ONE clear complete VIOLET CIRCULAR TURN ARROW, aboutthree-quarter circle with a broad readable arrowhead returning close to its start, and ONE GOLDEN TALLY STROKE centered inside it. The single tally indicates one completed occurrence. No question mark, multiple arrows, repeated tallies, clock hands, numeral1, words or badges. Match the established repeated-turn language, but only one turn/tally is present. Keep existing picture-only restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-09/125-how-many-times.png",
+          "role": "approved circular-turn/repetition graphic language only; change to one turn with one tally and omit its question mark"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 188,
+      "id": "ja-v-a0e6022cc115",
+      "meaning": "Part",
+      "japanese": "分",
+      "slug": "part",
+      "composition": "PART: one simple FOUR-PIECE JIGSAW PUZZLE arranged as a complete two-by-two square, with chunky interlocking tabs and violet boundaries. Exactly ONE upper-right piece is PINK and slightly separated outward by a small clear gap; the remaining three pieces are LAVENDER and stay together. The highlighted piece remains clearly part of the whole puzzle, not an unrelated spare. No question mark, numerals, arrows, words, hand, extra pieces or background frame. Preserve existing picture-only/context restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 189,
+      "id": "ja-v-a119c15d9de4",
+      "meaning": "Yen (currency counter)",
+      "japanese": "～円",
+      "slug": "yen-currency-counter",
+      "composition": "YEN CURRENCY COUNTER: exactly THREE GOLDEN COINS grouped with slight overlap, one upright FRONT COIN dominant and carrying one large exact deep-violet ¥symbol. Two plain coins sit behind it at modest angles, with restrained coin-edge thickness and rounded violet contours. Reuse the approved money-card coin design but omit the banknote entirely. Currency-symbol glyph is essential in-scene content; no other numbers, price labels, bill, purse, hands, words or extra symbols. This currency counter is excluded from pure-cardinal number palette rules and retains its existing teaching restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-08/91-money.png",
+          "role": "approved golden coin geometry, violet outlines and factual yen-symbol design only; do not copy the paper banknote"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 190,
+      "id": "ja-v-a30018dbdb6b",
+      "meaning": "Input",
+      "japanese": "入力",
+      "slug": "input",
+      "composition": "INPUT: a simple LAVENDER COMPUTER MONITOR above a compact GOLDEN KEYBOARD with blank violet-outlined key shapes. A broad deep-violet arrow travels from the keyboard UPWARD INTO the monitor screen; three small golden data dots along the arrow reinforce the inward information path. The arrowhead is INSIDE the lower part of the opaque pale-blue screen, unmistakably input rather than output. No outgoing arrow, mouse, printed keyboard letters, text on screen, numbers, brand or extra devices. Keep existing picture-only/context restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 191,
+      "id": "ja-v-a39af9252454",
+      "meaning": "Center",
+      "japanese": "中央",
+      "slug": "center",
+      "composition": "CENTER: Kiku is the referenced subject, sitting exactly in the CENTER of a simple symmetric arrangement of FOUR smaller LAVENDER CUBES: one above, one below, one left and one right, each the same distance from Kiku with clear gaps. Kiku is the compact golden-yellow cat with lavender headphones, pink inner ears, closed smiling eyes, rounded paws and curled tail, matching the approved identity reference. FOUR short straight violet attention lines beside Kiku emphasize the cat as the central object, not the surrounding cubes; lines must not cross any silhouettes. Keep the group a clearly centered cross arrangement within generous margins, Kiku remains the dominant object and all four cubes are visible. No central bead, target circles, labels, arrows, words, numerals or extra characters. Preserve existing picture-only/context restriction.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "approved Kiku CHARACTER IDENTITY and illustration style: retain gold cat, lavender headphones, pink ears, paws and curled tail"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-04/38-four-things.png",
+          "role": "approved cube geometry, three-quarter orientation and contour treatment only; this is not a counting prompt"
+        }
+      ],
+      "styleProfile": "kiku-scenes"
+    },
+    {
+      "number": 192,
+      "id": "ja-v-a76119b3c712",
+      "meaning": "Fur",
+      "japanese": "毛",
+      "slug": "fur",
+      "composition": "FUR: a LARGE close-up animal-FLANK FUR PATCH with several soft overlapping rows of golden-brown and cream tufts, broad irregular roughly rectangular silhouette, fine short hair strokes within larger tuft groups. Fur fills most of the canvas and clearly looks like soft dense animal hair, not a leaf, feather, sawtooth crescent, circular iris or fleece ball. A SMALL subdued furry-cat silhouette at lower-left provides animal context, connected by one thin violet leader line from its flank to the magnified patch. The cat is subordinate, no headphones or facial emphasis; do not use a circular magnifying-glass frame. Opaque tufts with clean transparent outer background, no texture haze outside their silhouette, labels or words. Retain high-priority F13 and keep fur itself dominant.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 193,
+      "id": "ja-v-a8ca5ef684b8",
+      "meaning": "Eyeball",
+      "japanese": "目玉",
+      "slug": "eyeball",
+      "composition": "One whole round EYEBALL, isolated as a simple opaque WHITE SPHERICAL ORB in a gentle three-quarter view, with a large round lavender iris and black pupil on its front. A restrained pale-lavender lower-side tone gives the orb round volume. No eyelids, almond eye-opening shape, face, fur tufts, eyelashes, skin ring, veins, optic-nerve stem, blood, labels or other organs. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eye; the anatomical framing difference does not make these fair competing picture-only answers.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery"
+        }
+      ],
+      "styleProfile": "cat-png"
+    }
+  ]
+}

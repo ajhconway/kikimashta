@@ -1,0 +1,256 @@
+{
+  "issue": 72,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "number": 169,
+      "id": "ja-v-49863ee12a96",
+      "output": "artifacts/card-regeneration/batch-11/169-straight-line.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-56cc4e96-2136-4754-b6ce-6c79769c49a8.png",
+      "sha256": "11596f4eb5a727c5b952b152c1b0967bb1948254c91dde5e9365517cf84049e3",
+      "bytes": 306054,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 170,
+      "id": "ja-v-4fd3d09440c1",
+      "output": "artifacts/card-regeneration/batch-11/170-form.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-0c6c279c-0e8a-48f8-a765-86dc52160df6.png",
+      "sha256": "6289bedaaee112a1592782b31110622883513ff86fba83cee0091be44c817829",
+      "bytes": 337679,
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "number": 171,
+      "id": "ja-v-54c8da9a7bac",
+      "output": "artifacts/card-regeneration/batch-11/171-other.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-cd1ff0d4-6457-4367-92be-cfdfea95fb74.png",
+      "sha256": "474723c83d2d894468679da32e15569f9d6d517cc806912f708cc93005fe52f9",
+      "bytes": 704763,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 172,
+      "id": "ja-v-5b39de46794f",
+      "output": "artifacts/card-regeneration/batch-11/172-method.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-08f86d39-d76a-4728-95da-e57fd5f6e190.png",
+      "sha256": "2c8fc54de034559c6cdd0fdc29555749bff4adf0499a5e3f8d5afdf6d905ea3a",
+      "bytes": 523759,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 173,
+      "id": "ja-v-5f0cf40d1630",
+      "output": "artifacts/card-regeneration/batch-11/173-to-correct.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-af2a4435-2fd3-4372-90c8-94298bb6002b.png",
+      "sha256": "c611f2edb01caa5698af1664bd555dd259724310c5d8efebe8b0cb997634ddfb",
+      "bytes": 922787,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 174,
+      "id": "ja-v-65df49688ef0",
+      "output": "artifacts/card-regeneration/batch-11/174-sword.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-9997ae81-7b0d-4e0f-92ea-5ac626a22f1a.png",
+      "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08",
+      "bytes": 322108,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 175,
+      "id": "ja-v-67d99c6ae58e",
+      "output": "artifacts/card-regeneration/batch-11/175-which-one.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-e80f6ce9-0678-4690-9cf1-09096ed4daf7.png",
+      "sha256": "41e4b5df6e2d5aa247bb410a796047aefc58051699f819d22e6b3500e91c7d8f",
+      "bytes": 951053,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 176,
+      "id": "ja-v-6c0b9f3278dc",
+      "output": "artifacts/card-regeneration/batch-11/176-eye.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-1764e725-fabf-4b00-bf9d-8fd9775e107c.png",
+      "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee",
+      "bytes": 780739,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 177,
+      "id": "ja-v-6fe6f680e0e0",
+      "output": "artifacts/card-regeneration/batch-11/177-way-of-seeing.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-42e2d3fa-0588-466e-addf-42127316e066.png",
+      "sha256": "95e81e4077bddce594b6432cd492b8a7c7dc12886899572686ee809fb8a55bf3",
+      "bytes": 614492,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 178,
+      "id": "ja-v-7003bbe10d0b",
+      "output": "artifacts/card-regeneration/batch-11/178-correct.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-8d9bf73e-044a-4a4b-9345-3941eb64edc5.png",
+      "sha256": "c3c0ebdd7aa99e04f057f641cdc7e994a3edd4b95e3769bd557f614f45410f52",
+      "bytes": 736887,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 179,
+      "id": "ja-v-79140f0bf8e7",
+      "output": "artifacts/card-regeneration/batch-11/179-puppy.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-57fafaa3-b84b-4be0-9faa-1886ebff7355.png",
+      "sha256": "4359cfcd40bc96fc83b5249336ed9758949a0563f99fa7565bd2eb5b03055681",
+      "bytes": 978614,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 180,
+      "id": "ja-v-7b2479107ae1",
+      "output": "artifacts/card-regeneration/batch-11/180-various.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-3b68e85c-8c95-4fb2-9e88-5dc3875a0b9b.png",
+      "sha256": "90ca467ec2b164333756148fdebafe0031f40fa2bf4a40d56ced6d9e4801bd30",
+      "bytes": 737235,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 181,
+      "id": "ja-v-83365ed9e3db",
+      "output": "artifacts/card-regeneration/batch-11/181-bold-letter.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-99d21dae-c292-4e93-ba53-f2a960bcd757.png",
+      "sha256": "066f49b361d16d7c898ad06726bf88676f20e7e75b4999cac49d3d4f7bed0c43",
+      "bytes": 448453,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 182,
+      "id": "ja-v-84c8eeeb03ab",
+      "output": "artifacts/card-regeneration/batch-11/182-at-once.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-2b5505b9-7eef-4ee4-ac36-bbb5cc3b7769.png",
+      "sha256": "53fdb564ad568679fd8a9182e8af7443a7a6f4324be021c9f9dbfa36bb4c7761",
+      "bytes": 993114,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 183,
+      "id": "ja-v-89beba69de5a",
+      "output": "artifacts/card-regeneration/batch-11/183-now.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-1080b18f-daa4-4062-b2ed-1e648c8854af.png",
+      "sha256": "11d1af0873671925c12dc72af8848fb5ac5ae883c79cc685f92974a4bca21e04",
+      "bytes": 928133,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 184,
+      "id": "ja-v-89cc0156875d",
+      "output": "artifacts/card-regeneration/batch-11/184-few.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-3fb0f0fe-3b14-4d37-b469-c4a8969fa9d4.png",
+      "sha256": "a07fd74364615d1789fd738af193652ae3f749da70d5a6dd0f1677a6cc970936",
+      "bytes": 1055835,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 185,
+      "id": "ja-v-89fcef8e86d8",
+      "output": "artifacts/card-regeneration/batch-11/185-atmosphere.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-7c18f04c-28f3-47f3-9bd8-92e79c7a5c1c.png",
+      "sha256": "be80332845832746ea5667a7e02289927d354e99a6369a575e398737b0732418",
+      "bytes": 1287327,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 186,
+      "id": "ja-v-97dfa455ab7e",
+      "output": "artifacts/card-regeneration/batch-11/186-generally.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-d635f13b-7824-4ee2-a0f6-4581cadaf2ab.png",
+      "sha256": "cb8ed1f263021a6542836facec07f03ab191be527ad4414bb9858ea1371bc1fa",
+      "bytes": 1005694,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 187,
+      "id": "ja-v-9f59b44e2237",
+      "output": "artifacts/card-regeneration/batch-11/187-one-time.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-e4f6f1c5-1a2c-407c-ab6d-a29bf589d375.png",
+      "sha256": "e32f360902b7642170e66049a3e3e3491655509e21804773cec2c8ed459e48fd",
+      "bytes": 840646,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 188,
+      "id": "ja-v-a0e6022cc115",
+      "output": "artifacts/card-regeneration/batch-11/188-part.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-198c9049-956b-4133-a02f-7b4c4207d03f.png",
+      "sha256": "b5ee17ea698819324f50b7082167ba4d7b63bcb68b2d5aba1ae204e0449807f7",
+      "bytes": 1031199,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 189,
+      "id": "ja-v-a119c15d9de4",
+      "output": "artifacts/card-regeneration/batch-11/189-yen-currency-counter.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-69accd9c-db9f-4ed7-92eb-5c4e970415e1.png",
+      "sha256": "cab5be7722aea70a0c2bc73bab821e9cd4438533082feaa9d0634974c68928b3",
+      "bytes": 854417,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 190,
+      "id": "ja-v-a30018dbdb6b",
+      "output": "artifacts/card-regeneration/batch-11/190-input.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-e31bdfad-6ad1-404a-b416-a3591c275c35.png",
+      "sha256": "d87fc9a00123c4b79ff72825cc79f0bc363af8f07f65d1f07394239c152f4667",
+      "bytes": 1115919,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 191,
+      "id": "ja-v-a39af9252454",
+      "output": "artifacts/card-regeneration/batch-11/191-center.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-15228d2c-dffe-49ca-94e6-9d8faa7868a5.png",
+      "sha256": "bbf83634098060e40e508668c2d60b384f704971d24f3bfe47901f3b7ee1e32a",
+      "bytes": 693123,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 192,
+      "id": "ja-v-a76119b3c712",
+      "output": "artifacts/card-regeneration/batch-11/192-fur.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a96c1797-123f-4677-b91b-58fcc1811e3d.png",
+      "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31",
+      "bytes": 1472189,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "number": 193,
+      "id": "ja-v-a8ca5ef684b8",
+      "output": "artifacts/card-regeneration/batch-11/193-eyeball.png",
+      "source": "/Users/ajhconway/.codex/generated_images/01a1af63-91a6-7cd2-b37d-f72f97c59cae/exec-a0df7f50-78b6-4bf6-a106-4d567e16ce6b.png",
+      "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa",
+      "bytes": 899707,
+      "width": 1254,
+      "height": 1254
+    }
+  ]
+}
