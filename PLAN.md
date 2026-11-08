@@ -87,7 +87,7 @@ The owner approved this plan on November 8, 2026. Track the milestone in [#119](
 
 ### Experience
 
-Play a Japanese sentence containing the target word, pause briefly, then play a Japanese question about it. Support both questions whose answer is the target word and questions about another detail of its sentence. Offer pictures or Japanese written choices, with one answer format per presentation. Each authored question declares the formats for which it has clear choices.
+Play a Japanese sentence containing the target word, pause briefly, then play a Japanese question about it. Start with simple contexts containing one short event or fact and direct questions. Later introduce contrastive contexts requiring the learner to keep multiple facts straight. Support both questions whose answer is the target word and questions about another detail of its sentence. Offer pictures or Japanese written choices, with one answer format per presentation. Each authored question declares the formats for which it has clear choices. The existing approved audition examples form the contrastive material.
 
 After answering, reveal the Japanese sentence and question, their English meanings, and the correct answer. Keep contextual feedback visible until Continue, with replay available. Keep the target vocabulary identity separate from the correct answer identity.
 
@@ -101,11 +101,15 @@ Author plausible distractors for each question. Check natural Japanese, one defe
 
 ### Learning and progress
 
-Unlock contextual cards after a correct first attempt in a later saved review of either the target's picture or writing card. Initial lessons, immediate corrective retries and unsaved dev review do not supply that delayed-review evidence. Apply selected vocabulary scope and existing new-card workload limits to unlocked cards.
+Progress per word from word recognition to simple contextual practice, then contrastive contextual practice. Gate advancement using the FSRS-assigned next review interval, with an initial configurable threshold of strictly more than seven days. In the current scheduler adapter this interval is `dueAt - lastReviewedAt`; compare it with `7 * 24 * 60 * 60 * 1000`. Use the interval assigned after a saved, correct first attempt in a scheduled review. Initial lessons, corrective retries, unsaved dev review and time merely passing do not earn a stage unlock. This replaces the proposed fixed review-count and minimum-variant-count gate.
 
-Keep separate schedules for contextual picture and contextual written-choice exercises, independent of existing word-picture and word-writing progress. Comparable sentence/question variants share each target/format schedule. Adding variants does not add scheduled cards.
+For word recognition to simple context, either existing word-picture or word-writing card can earn the threshold, preserving the agreed prerequisite relationship. For simple to contrastive context, the prerequisite is the same language, target word and answer format's simple contextual card. Evaluate mastery through the scheduled interval rather than directly substituting the card's stability value. Keep grammar requirements separately tagged from contextual stage difficulty.
 
-Log the exact sentence/question IDs and revisions, question kind, ordered choices, correct and selected answers, paired recordings, replays and learning phase on each immutable attempt. Attribute progress to the target exercise even when the answer is another word or phrase. Preserve the chosen sentence, question and recordings for replay and corrective retries; later reviews may choose another approved variant. Corrective retries remain distinct from delayed retention evidence. Admit only approved contextual content with usable media. Preserve existing history and the fixed active-session snapshot.
+Once a qualifying interval earns an unlock, retain it. Later misses adjust the appropriate FSRS schedule while preserving earned stage access. Reaching the threshold makes the next stage eligible for later new-card admission; selected vocabulary scope, fixed active-session snapshots and existing workload limits still apply. Keep the initial seven-day threshold adjustable without adding a settings interface to this pilot.
+
+Keep independent schedules for each language, target word, contextual stage and answer format, separate from existing word-picture and word-writing progress. Comparable sentence/question variants share their target/stage/format schedule. Adding variants does not add scheduled cards.
+
+Log the contextual stage, exact sentence/question IDs and revisions, question kind, ordered choices, correct and selected answers, paired recordings, replays and learning phase on each immutable attempt. Attribute progress to the target exercise even when the answer is another word or phrase. Preserve the chosen sentence, question and recordings for replay and corrective retries; later reviews may choose another approved variant. Corrective retries remain distinct from delayed retention evidence. Admit only approved contextual content with usable media. Preserve existing history and the fixed active-session snapshot.
 
 ### Pilot sequence and approval gates
 
@@ -124,4 +128,4 @@ The first audio sample ([#124](https://github.com/ajhconway/kikimashta/issues/12
 
 ### Acceptance
 
-Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; exact first-attempt delayed-review unlocks; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.
+Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; interval boundaries below, exactly at and above seven days; qualifying scheduled-review unlocks and retained access after later misses; target/language/format/stage isolation; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.
