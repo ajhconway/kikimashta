@@ -77,6 +77,23 @@ class DispositionTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate_card_disposition(card, feedback)
 
+    def test_mixed_summary_includes_revision_required_and_every_nonfinal_asset(self):
+        manifest = {'currentRevisionRound': 2, 'assets': [
+            {'status': 'approved'}, {'status': 'replace-later'}, {'status': 'removed'},
+            {'status': 'revision-required', 'revisionRound': 1},
+            {'status': 'awaiting-user-feedback', 'revisionRound': 2},
+            {'status': 'awaiting-user-feedback', 'revisionRound': 1},
+        ]}
+        self.assertEqual(disposition_summary(manifest),
+                         '1 approved · 1 replace later · 1 removed · 1 revised · 2 awaiting feedback')
+        # Other nonfinal workflow states must not disappear from the total either.
+        for status in ['revision-required', 'awaiting-user-feedback', 'generating']:
+            with self.subTest(status=status):
+                mixed = {'assets': [{'status': final} for final in
+                                    ['approved', 'replace-later', 'removed', status]]}
+                self.assertEqual(disposition_summary(mixed),
+                                 '1 approved · 1 replace later · 1 removed · 1 awaiting feedback')
+
     def test_gallery_keeps_original_numbers_dispositions_and_only_pending_revisions(self):
         statuses = ['approved', 'removed', 'approved', 'replace-later', 'approved', 'approved',
                     'awaiting-user-feedback', 'approved', 'replace-later', 'approved',

@@ -97,7 +97,10 @@ def disposition_summary(manifest):
     revised = sum(is_pending_revision(a, manifest) for a in assets)
     if revised:
         parts.append(f'{revised} revised')
-    pending = sum(a['status'] == 'awaiting-user-feedback' for a in assets) - revised
+    # Every nonfinal disposition still needs feedback, including revision-required
+    # assets that have not yet been regenerated into an awaiting-feedback revision.
+    final_statuses = {'approved', 'replace-later', 'removed'}
+    pending = sum(a['status'] not in final_statuses for a in assets) - revised
     if pending:
         parts.append(f'{pending} awaiting feedback')
     return ' · '.join(parts)
