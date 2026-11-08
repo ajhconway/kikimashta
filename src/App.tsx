@@ -12,7 +12,7 @@ import { ContextualQuiz, type ContextualPlayback } from './components/Contextual
 import { QuizCompanion, Speaker } from './components/QuizChrome';
 import { ContextualDevReview } from './components/ContextualDevReview';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
-import { createContextualDemo } from './core/contextual-demo';
+import { createContextualDemoSession } from './core/contextual-demo';
 import { createMasteryDemo } from './core/mastery-demo';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
@@ -320,14 +320,14 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   }
   function startContextualDemo() {
     if (recovery.snapshot().pendingId || recovery.snapshot().failed) return;
-    const block = createContextualDemo(languageContextualBanks, languageContextualVocabulary, random, initialVoiceIds());
-    if (!block.length) return;
+    const demo = createContextualDemoSession(languageContextualBanks, languageContextualVocabulary, now(), random, initialVoiceIds());
+    if (!demo.questions.length) return;
     operation.current++;
-    demoSchedules.current = null; setDemoPresentation(null); setDemoSaving(false); setMasteryChange(null);
+    demoSchedules.current = demo.schedules; setDemoPresentation(null); setDemoSaving(false); setMasteryChange(null);
     session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: [] };
     setIsDevReview(true); setIsContextualDemo(true); setPhase('review');
     setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(block, 'review', true);
+    beginQuiz(demo.questions, 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -529,7 +529,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'contextual-demo-ready' && <section className="summary ready fade-in">
         <h1>Contextual practice demo</h1>
         <p>Try simple and contrastive questions with picture and writing answers.</p>
-        <p>Progress is not saved.</p>
+        <p>Sample mastery levels. Progress is not saved.</p>
         <button className="primary" disabled={pendingSaveCount > 0 || saveError} onClick={startContextualDemo}>Begin review <span aria-hidden="true">→</span></button>
       </section>}
       {screen === 'contextual-dev' && languageContextualBanks.length > 0 && <ContextualDevReview banks={languageContextualBanks} vocabulary={languageContextualVocabulary} onClose={home} random={random}/>}
@@ -559,7 +559,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {isContextualDemo && <span className="contextual-demo-indicator" role="status" aria-label="Practice demo. Progress is not saved.">Demo · unsaved</span>}
         <ContextualQuiz key={index} question={questions[index]!} feedback={feedback} onChoose={choose}
           onContinue={next} onReplay={() => { active.current.replays++; playRequest.current++; }}
-          onPlaybackChange={contextualPlaybackChanged} continueAfterCorrect={autoPaused || audioError || saveError} disabled={saving || saveError}/>
+          onPlaybackChange={contextualPlaybackChanged} continueAfterCorrect={autoPaused || audioError || saveError} disabled={saving || saveError}
+          feedbackContent={<MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: null, demo: isContextualDemo }}
+            outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
+            change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>}/>
         {saveError && feedback && <div role="alert" className="error"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>
       </section>}

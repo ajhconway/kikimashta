@@ -113,8 +113,10 @@ test('contextual scheduled reviews persist explicit answers and retain the same 
   await japanese.click();
   const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
   await expect(details.getByText(authored.prompt.text, { exact: true })).toBeVisible();
-  await expect(details.getByText(authored.prompt.meaning, { exact: true })).toHaveCount(0);
-  await details.getByRole('button', { name: 'Show English', exact: true }).click();
+  await expect(details.getByText(authored.prompt.meaning, { exact: true })).toBeHidden();
+  const initialDetailsBounds = await details.boundingBox();
+      await details.getByRole('button', { name: 'Show English', exact: true }).click();
+      expect(await details.boundingBox()).toEqual(initialDetailsBounds);
   await expect(details.getByText(authored.prompt.meaning, { exact: true })).toBeVisible();
   await details.getByRole('button', { name: 'Close Japanese', exact: true }).click();
   await expect(japanese).toBeFocused();

@@ -101,14 +101,14 @@ describe('contextual listening and feedback', () => {
     await click(trigger);
     const dialog = screen.getByRole('dialog', { name: 'Japanese' });
     expect(within(dialog).getByText('先生は水を飲みます。')).toBeVisible();
-    expect(within(dialog).queryByText('Who drinks water?')).not.toBeInTheDocument();
-    expect(within(dialog).queryByText('The teacher drinks water.')).not.toBeInTheDocument();
+    expect(within(dialog).getByText('Who drinks water?')).toHaveAttribute('aria-hidden', 'true');
+    expect(within(dialog).getByText('The teacher drinks water.')).toHaveAttribute('aria-hidden', 'true');
     await click(within(dialog).getByRole('button', { name: 'Show English' }));
     expect(within(dialog).getByText('Who drinks water?')).toBeVisible();
     await click(within(dialog).getByRole('button', { name: 'Close Japanese' }));
     expect(trigger).toHaveFocus();
     await click(trigger);
-    expect(within(screen.getByRole('dialog')).queryByText('Who drinks water?')).not.toBeInTheDocument();
+    expect(within(screen.getByRole('dialog')).getByText('Who drinks water?')).toHaveAttribute('aria-hidden', 'true');
     await click(screen.getByRole('button', { name: 'Close Japanese' }));
     await advance(10000); expect(onContinue).not.toHaveBeenCalled();
     await click(screen.getByRole('button', { name: 'Continue' }));

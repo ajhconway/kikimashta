@@ -86,9 +86,9 @@ test('contextual practice demo uses real session feedback and retries without ch
   const presentations = [
     { exercise: 'context-simple-picture', kind: 'target', miss: true },
     { exercise: 'context-simple-text', kind: 'detail', miss: false },
-    { exercise: 'context-simple-picture', kind: 'target', miss: false, retry: true },
     { exercise: 'context-contrastive-picture', kind: 'target', miss: false },
     { exercise: 'context-contrastive-text', kind: 'detail', miss: false },
+    { exercise: 'context-simple-picture', kind: 'target', miss: false, retry: true },
   ] as const;
   for (const [index, presentation] of presentations.entries()) {
     const exercise = presentation.exercise;
@@ -124,7 +124,7 @@ test('contextual practice demo uses real session feedback and retries without ch
     const layout = await gridLayout(page);
     const option = question.options.find(option => presentation.miss ? option.id !== question.correctOptionId : option.id === question.correctOptionId)!;
     await choice(page, option, exercise).click();
-    await expect(quiz.getByText(presentation.miss ? 'Keep going' : 'Correct', { exact: true })).toBeAttached();
+    await expect(quiz.locator('.contextual-feedback')).toContainText(presentation.miss ? 'Incorrect answer.' : 'Correct answer.');
     expect(await gridLayout(page)).toEqual(layout);
     expect(await stored(page)).toEqual(baseline);
     if (presentation.miss) {
@@ -132,21 +132,30 @@ test('contextual practice demo uses real session feedback and retries without ch
       await expect(quiz).toHaveAttribute('data-question-id', questionId);
       await expect(quiz.locator('.contextual-transcript:visible')).toHaveCount(0);
       const japanese = quiz.getByRole('button', { name: 'Show Japanese', exact: true });
+      const badge = quiz.getByRole('img', { name: 'Mastery decreased to Learning', exact: true });
+      await expect(badge).toBeVisible();
+      await page.clock.runFor(500);
+      const badgeBounds = (await badge.boundingBox())!;
+      const detailBounds = (await japanese.boundingBox())!;
+      expect(badgeBounds.x + badgeBounds.width).toBeLessThanOrEqual(detailBounds.x - 6);
+      expect(Math.abs(badgeBounds.y + badgeBounds.height / 2 - detailBounds.y - detailBounds.height / 2)).toBeLessThan(10);
       await japanese.click();
       const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
       await expect(details.getByText(context.sentence.text, { exact: true })).toBeVisible();
       await expect(details.getByText(question.prompt.text, { exact: true })).toBeVisible();
       await expect(details.locator('.contextual-reading')).toHaveCount(0);
-      await expect(details.getByText(question.prompt.meaning, { exact: true })).toHaveCount(0);
+      await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeHidden();
       expect(await gridLayout(page)).toEqual(layout);
+      const initialDetailsBounds = await details.boundingBox();
       await details.getByRole('button', { name: 'Show English', exact: true }).click();
+      expect(await details.boundingBox()).toEqual(initialDetailsBounds);
       await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeVisible();
       expect(await gridLayout(page)).toEqual(layout);
       await details.getByRole('button', { name: 'Close Japanese', exact: true }).click();
       await expect(japanese).toBeFocused();
       expect(await gridLayout(page)).toEqual(layout);
       await japanese.click();
-      await expect(details.getByText(question.prompt.meaning, { exact: true })).toHaveCount(0);
+      await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeHidden();
       await page.keyboard.press('Escape');
       await expect(details).toBeHidden();
       await expect(japanese).toBeFocused();

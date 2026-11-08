@@ -2,6 +2,8 @@ import { approvedContextualQuestions, contextualMediaPath } from '../content/con
 import type { ContextualBank, ContextualRecording } from '../content/contextual-types';
 import type { WordItem } from '../types';
 import { contextualQuestion } from './contextual-questions';
+import { createDemoSchedule } from './mastery-demo';
+import type { ScheduledWord } from './scheduler';
 import type { Question } from './session';
 
 const samples = [
@@ -36,4 +38,17 @@ export function createContextualDemo(
     const { context, question } = candidates[Math.floor(random() * candidates.length)]!;
     return [contextualQuestion(context, question, format, vocabulary, random, voiceIds)];
   });
+}
+
+/** Independent Familiar–Confident samples exercise the ordinary mastery feedback. */
+export function createContextualDemoSession(
+  banks: readonly ContextualBank[], vocabulary: readonly WordItem[], at: number, random: () => number, voiceIds?: readonly string[],
+): { questions: Question[]; schedules: Map<string, ScheduledWord | undefined> } {
+  const schedules = new Map<string, ScheduledWord | undefined>();
+  const questions = createContextualDemo(banks, vocabulary, random, voiceIds).map((question, index) => {
+    const demoId = `contextual-demo-${index}`;
+    schedules.set(demoId, createDemoSchedule({ item: question.target, exercise: question.exercise }, at, index + 3));
+    return { ...question, demoId };
+  });
+  return { questions, schedules };
 }

@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import type { ContextualBank, ContextualItem, ContextualPrompt, ContextualQuestion } from '../content/contextual-types';
-import type { ContextualStage, WordItem } from '../types';
-import { correctChoiceId, requeueMissedQuestion } from './session';
-import { createContextualDemo } from './contextual-demo';
+import type { ContextualStage, PracticeAttempt, WordItem } from '../types';
+import { cardKey } from './cards';
+import { cardMastery, masteryIndex } from './mastery';
+import { advanceSchedule, schedulerVersion } from './scheduler';
+import { correctChoiceId, requeueMissedQuestion, type Question } from './session';
+import { createContextualDemo, createContextualDemoSession } from './contextual-demo';
 
 const prompt = (text: string): ContextualPrompt => ({ text, reading: text, meaning: text, grammarTags: [], supportingVocabularyIds: [] });
 const vocabulary: WordItem[] = ['water', 'coffee', 'teacher', 'student'].map(id => ({
@@ -123,5 +126,77 @@ describe('contextual practice demo samples', () => {
       .toEqual(['context-simple-picture', 'context-simple-text', 'context-contrastive-picture', 'context-contrastive-text']);
     content.contexts.forEach(item => { item.recordings = []; });
     expect(createContextualDemo([content], vocabulary, () => 0)).toEqual([]);
+  });
+});
+
+const at = Date.parse('2026-11-08T12:00:00Z');
+function answer(question: Question, correct: boolean): PracticeAttempt {
+  const { context, question: authored, recording } = question.contextual!;
+  return {
+    id: `answer-${question.demoId}-${correct}`, sessionId: 'contextual-demo', itemId: question.target.id, language: question.target.language,
+    choiceIds: question.choices.map(choice => choice.id), correct, outcome: correct ? 'success' : 'failure',
+    selectedId: correct ? correctChoiceId(question) : question.choices.find(choice => choice.id !== correctChoiceId(question))!.id,
+    startedAt: at - 1000, answeredAt: at, responseMs: 1000,
+    context: { phase: 'review', exercise: question.exercise, recordingSrc: recording!.sentenceSrc, replays: 0, schedulerVersion,
+      contextual: { stage: context.stage ?? 'contrastive', contextId: context.id, contextRevision: context.revision,
+        questionId: authored.id, questionRevision: authored.revision, kind: authored.kind, correctOptionId: authored.correctOptionId,
+        sentenceSrc: recording!.sentenceSrc, questionSrc: recording!.questionSrcs[authored.id]! } },
+  };
+}
+
+describe('contextual mastery demo sessions', () => {
+  it('adds four unique independent samples while preserving authored questions, options and preferred voice', () => {
+    const banks = frozen([bank()]);
+    const snapshot = structuredClone(banks);
+    const { questions, schedules } = createContextualDemoSession(banks, vocabulary, at, () => 0, ['morioki']);
+    expect(questions.map(question => question.demoId)).toEqual(['contextual-demo-0', 'contextual-demo-1', 'contextual-demo-2', 'contextual-demo-3']);
+    expect(schedules.size).toBe(4);
+    expect(questions.map(question => cardMastery(schedules.get(question.demoId!)).label))
+      .toEqual(['Familiar', 'Steady', 'Strong', 'Confident']);
+    expect(questions.map(question => schedules.get(question.demoId!)!.card.scheduledDays)).toEqual([3, 14, 60, 180]);
+    expect(questions.map(question => {
+      const authored = { ...question };
+      delete authored.demoId;
+      return authored;
+    })).toEqual(createContextualDemo(banks, vocabulary, () => 0, ['morioki']));
+    for (const question of questions) {
+      const schedule = schedules.get(question.demoId!)!;
+      expect(schedule.dueAt).toBe(at);
+      expect(cardKey(schedule)).toBe(cardKey({ item: question.target, exercise: question.exercise }));
+    }
+    expect(banks).toEqual(snapshot);
+  });
+
+  it('uses real Good and Again grades without changing any sample until its caller replaces it', async () => {
+    const { questions, schedules } = createContextualDemoSession([bank()], vocabulary, at, () => 0);
+    const original = structuredClone({ questions, schedules });
+    const detail = questions[1]!;
+    expect(answer(detail, true).selectedId).not.toBe(detail.target.id);
+    const before = schedules.get(detail.demoId!)!;
+    const good = await advanceSchedule(before, answer(detail, true));
+    const again = await advanceSchedule(before, answer(detail, false));
+    expect(masteryIndex(good)).toBeGreaterThan(masteryIndex(before));
+    expect(masteryIndex(again)).toBeLessThan(masteryIndex(before));
+    expect(cardMastery(again).label).toBe('Learning');
+    expect({ questions, schedules }).toEqual(original);
+    schedules.set(detail.demoId!, again);
+    for (const question of questions.filter(question => question !== detail)) {
+      expect(schedules.get(question.demoId!)).toEqual(original.schedules.get(question.demoId!));
+    }
+    expect(createContextualDemoSession([bank()], vocabulary, at, () => 0)).toEqual(original);
+  });
+
+  it('keeps corrective retries linked to their original sample and exact audio without duplicating pending retries', () => {
+    const { questions, schedules } = createContextualDemoSession([bank()], vocabulary, at, () => 0);
+    const original = structuredClone({ questions, schedules });
+    const requeued = requeueMissedQuestion(questions, 0, 'first-miss', () => 0);
+    const retry = requeued.at(-1)!;
+    expect(requeued.slice(0, 4)).toEqual(questions);
+    expect(retry).toMatchObject({ demoId: questions[0]!.demoId, retryOf: 'first-miss', contextual: questions[0]!.contextual });
+    expect(correctChoiceId(retry)).toBe(correctChoiceId(questions[0]!));
+    const duplicate = requeueMissedQuestion(requeued, 0, 'first-miss', () => .99);
+    expect(duplicate.filter(question => question.retryOf === 'first-miss')).toHaveLength(1);
+    expect({ questions, schedules }).toEqual(original);
+    expect(createContextualDemoSession([], vocabulary, at, () => 0)).toEqual({ questions: [], schedules: new Map() });
   });
 });

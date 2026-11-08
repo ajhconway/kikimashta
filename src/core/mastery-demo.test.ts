@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Exercise, PracticeAttempt, PracticeCard, WordItem } from '../types';
 import { cardKey } from './cards';
 import { cardMastery, masteryIndex } from './mastery';
-import { createMasteryDemo } from './mastery-demo';
+import { createDemoSchedule, createMasteryDemo } from './mastery-demo';
 import { quizTimeLimit } from './quiz-timer';
 import { advanceSchedule, schedulerVersion } from './scheduler';
 import { requeueMissedQuestion, type Question } from './session';
@@ -32,6 +32,20 @@ function answer(question: Question, correct: boolean): PracticeAttempt {
 }
 
 describe('mastery demo fixtures (#140)', () => {
+  it('constructs independent schedules for repeated cards and rejects unknown sample levels', () => {
+    const card = pool()[0]!;
+    const before = structuredClone(card);
+    expect(createDemoSchedule(card, at, 0)).toBeUndefined();
+    const first = createDemoSchedule(card, at, 3)!;
+    const second = createDemoSchedule(card, at, 3)!;
+    expect(first).toEqual(second);
+    expect(cardMastery(first).label).toBe('Familiar');
+    first.card.stability = 999;
+    expect(second.card.stability).toBe(3);
+    expect(card).toEqual(before);
+    for (const level of [-1, 8, .5, NaN]) expect(() => createDemoSchedule(card, at, level)).toThrow(/mastery level/i);
+  });
+
   it('presents all eight levels in order with their real timer policy', () => {
     const { questions, schedules } = createMasteryDemo(pool(), at, () => .999);
     expect(questions).toHaveLength(8);

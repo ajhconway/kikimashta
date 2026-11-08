@@ -120,6 +120,7 @@ it('runs the actual contextual practice screen as an unsaved demo with retries a
     await click(step === 0 ? buttons.find(button => button !== correctButton)! : correctButton);
     if (step === 0) {
       expect(screen.getByRole('button', { name: 'Show Japanese' })).toBeInTheDocument();
+      expect(screen.getByRole('img', { name: 'Mastery decreased to Learning' })).toBeInTheDocument();
       await act(async () => { await vi.advanceTimersByTimeAsync(10000); });
       expect(container.querySelector('.contextual-quiz')!.getAttribute('data-question-id')).toBe(id);
       await click(screen.getByRole('button', { name: 'Continue' }));

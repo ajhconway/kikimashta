@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import type { ContextualPrompt } from '../content/contextual-types';
 import type { PracticeAttempt, WordItem } from '../types';
 import { answerFormat } from '../core/cards';
@@ -11,6 +11,7 @@ export type ContextualPlayback = 'playing' | 'paused' | 'ready' | 'idle' | 'erro
 export interface ContextualQuizProps {
   question: Question;
   feedback: PracticeAttempt | null;
+  feedbackContent?: ReactNode;
   onChoose: (choice: WordItem) => void;
   onContinue: () => void;
   onReplay?: () => void;
@@ -23,14 +24,14 @@ export interface ContextualQuizProps {
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const graphemes = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
 
-function Prompt({ title, value, english = true, reading = true, labelled = false }: { title: string; value: ContextualPrompt; english?: boolean; reading?: boolean; labelled?: boolean }) {
+function Prompt({ title, value, english = true, reading = true, labelled = false, reserveEnglish = false }: { title: string; value: ContextualPrompt; english?: boolean; reading?: boolean; labelled?: boolean; reserveEnglish?: boolean }) {
   return <div className="contextual-prompt"><h3 className={labelled ? undefined : 'sr-only'}>{title}</h3><p lang="ja" className="contextual-japanese">{value.text}</p>
     {reading && value.reading !== value.text && <p lang="ja" className="contextual-reading">{value.reading}</p>}
-    {english && <p className="contextual-english">{value.meaning}</p>}</div>;
+    {(english || reserveEnglish) && <p className="contextual-english" aria-hidden={!english || undefined}>{value.meaning}</p>}</div>;
 }
 
 /** Shared learner interaction; persistence and scheduling belong to its caller. */
-export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, preview = false, inspection = false, continueAfterCorrect = false, onPlaybackChange }: ContextualQuizProps) {
+export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, preview = false, inspection = false, continueAfterCorrect = false, onPlaybackChange, feedbackContent }: ContextualQuizProps) {
   const authored = question.contextual;
   if (!authored) throw new Error('A contextual quiz needs authored context.');
   const sentenceSrc = authored.recording?.sentenceSrc;
@@ -142,16 +143,19 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       {inspection && <p className="contextual-english">{authored.question.explanation}</p>}
     </div>}
     {!preview && <div className="practice-actions contextual-feedback">
-      <div className="feedback contextual-result" role={feedback ? 'status' : undefined}>{feedback && <><span className="contextual-result-symbol" aria-hidden="true">{feedback.correct ? '✓' : '↺'}</span><span className="sr-only">{feedback.correct ? 'Correct' : 'Keep going'}</span></>}</div>
-      {feedback && <div className="contextual-actions">
-        {!feedback.correct && !inspection && <button ref={detailsTrigger} className="text-button" type="button" onClick={() => { setEnglish(false); details.current?.showModal(); detailsClose.current?.focus(); }}>Show Japanese</button>}
-        {(!feedback.correct || inspection || inspecting || continueAfterCorrect) && <button type="button" className="primary" disabled={disabled} onClick={onContinue}>Continue</button>}
+      <div className={'contextual-response-row' + (feedback && !feedback.correct && !inspection ? ' has-contextual-details' : '')}>
+        <div className="contextual-status">{feedbackContent ?? <div className="feedback contextual-result" role={feedback ? 'status' : undefined}>{feedback && <><span className="contextual-result-symbol" aria-hidden="true">{feedback.correct ? '✓' : '↺'}</span><span className="sr-only">{feedback.correct ? 'Correct' : 'Keep going'}</span></>}</div>}</div>
+        <div className="contextual-detail-action">{feedback && !feedback.correct && !inspection && <button ref={detailsTrigger} className="text-button contextual-details-toggle" type="button" aria-label="Show Japanese" title="Show Japanese"
+          onClick={() => { setEnglish(false); details.current?.showModal(); detailsClose.current?.focus(); }}><span lang="ja" aria-hidden="true">文</span></button>}</div>
+      </div>
+      {feedback && (!feedback.correct || inspection || inspecting || continueAfterCorrect) && <div className="contextual-actions">
+        <button type="button" className="primary" disabled={disabled} onClick={onContinue}>Continue <span aria-hidden="true">→</span></button>
       </div>}
     </div>}
     {!inspection && !preview && feedback && !feedback.correct && <dialog ref={details} className="contextual-details-dialog" aria-labelledby={detailsTitle}
       onClose={() => { setEnglish(false); detailsTrigger.current?.focus(); }}>
       <div className="contextual-dialog-header"><h2 id={detailsTitle}>Japanese</h2><button ref={detailsClose} type="button" className="text-button" aria-label="Close Japanese" onClick={() => details.current?.close()}>×</button></div>
-      <div className="contextual-transcript"><Prompt title="Sentence" value={authored.context.sentence} english={english} reading={false}/><Prompt title="Question" value={authored.question.prompt} english={english} reading={false}/></div>
+      <div className="contextual-transcript"><Prompt title="Sentence" value={authored.context.sentence} english={english} reading={false} reserveEnglish/><Prompt title="Question" value={authored.question.prompt} english={english} reading={false} reserveEnglish/></div>
       <button type="button" className="text-button" aria-expanded={english} onClick={() => setEnglish(value => !value)}>{english ? 'Hide English' : 'Show English'}</button>
     </dialog>}
   </section>;
