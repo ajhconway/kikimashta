@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "bankId": "ja-contextual-pilot-v1",
+  "language": "ja-JP",
+  "sourceCommit": "003032b51d243ca4b6d5893a8b3375c1ef5202b6",
+  "sourceFileSha256": "61737d795175e08407e6f2f879335a63e464bfdf0d70df2ab68dd8b1a7b66f49",
+  "textSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+  "approvedAt": "2026-11-08T16:25:00.000Z",
+  "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/119#issuecomment-6723994903",
+  "scope": "Owner approved the actual pilot text for the first small audio sample; audio approval and expansion remain pending."
+}

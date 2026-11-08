@@ -34,8 +34,10 @@ export function generationPlan(items, config) {
       new Set(config.voices.map(v => v.voice)).size !== config.voices.length || new Set(config.voices.map(v => v.id)).size !== config.voices.length ||
       config.voices.some(v => !/^[a-z][a-z0-9-]*$/.test(v.voice) || !/^[a-zA-Z0-9_-]+$/.test(v.id) || !nonempty(v.name)) ||
       config.voiceSettings?.stability !== 0.5 || config.voiceSettings?.similarity_boost !== 0.75) throw new Error('Invalid approved voice configuration.')
+  const issue = config.issue ?? 86
+  if (!Number.isSafeInteger(issue) || issue < 1) throw new Error('Invalid generation issue.')
   const characters = items.reduce((sum, item) => sum + [...item.text].length, 0) * config.voices.length
-  return { issue: 86, provider: config.provider, model: config.model, language: config.language,
+  return { issue, provider: config.provider, model: config.model, language: config.language,
     voiceSettings: config.voiceSettings, voices: config.voices, items, characters, expectedClips: items.length * config.voices.length }
 }
 
