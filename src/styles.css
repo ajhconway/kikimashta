@@ -425,5 +425,5 @@ footer a:hover { color: var(--purple-dark); }
 .question-mastery { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--purple-dark); }
 .question-mastery[aria-hidden="true"] { visibility: hidden; }
 .question-mastery-label { font-size: 24px; line-height: 1.15; font-weight: 800; }
-.question-mastery-timer { padding-left: 12px; border-left: 2px solid var(--line); font-size: 20px; line-height: 1.15; font-weight: 700; }
+.question-mastery-timer { padding-left: 12px; border-left: 2px solid var(--line); font-size: 24px; line-height: 1.15; font-weight: 700; }
 .question-mastery .answer-result { width: 32px; height: 32px; font-size: 22px; }
