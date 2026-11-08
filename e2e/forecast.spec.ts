@@ -45,6 +45,7 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
   await page.reload();
   await expect(forecast.getByRole('listitem')).toHaveCount(7);
   await expect(today).toHaveText('3');
+  await expect(page.getByRole('button', { name: 'Start 3 reviews due', exact: true })).toBeEnabled();
   await expect(forecast).not.toContainText('Current cards · daily practice');
   expect((await forecast.boundingBox())!.height).toBeLessThanOrEqual(145);
   for (const size of [{ width: 320, height: 568 }, { width: 390, height: 664 }, { width: 1280, height: 800 }]) {
@@ -59,6 +60,7 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
   await page.evaluate(() => localStorage.setItem('kikimashta-card-packs-v1', JSON.stringify(['ja-wanikani-2-writing'])));
   await page.reload();
   await expect(today).toHaveText('1');
+  await expect(page.getByRole('button', { name: 'Start 1 review due', exact: true })).toBeEnabled();
   const practice = await page.context().newPage();
   await practice.clock.setFixedTime(at);
   await practice.goto(page.url());

@@ -967,9 +967,11 @@ describe('Home review forecast (#156)', () => {
     render(<App now={fixedNow}/>);
     expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
     expect(panel()).not.toHaveTextContent('No reviews expected this week.');
+    expect(screen.queryByRole('button', { name: /reviews? due/ })).not.toBeInTheDocument();
     await act(async () => pending.resolve(forecastWith([8, 6.25, .25, 0, 3, 4, 1])));
     expect(within(panel()).getAllByRole('listitem')).toHaveLength(7);
     expect(within(dailyCount(0)).getByText('8', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start 8 reviews due' })).toBeEnabled();
     expect(within(dailyCount(1)).getByText('6', { exact: true })).toBeInTheDocument();
     expect(within(dailyCount(2)).getByText('<1', { exact: true })).toBeInTheDocument();
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
@@ -979,6 +981,7 @@ describe('Home review forecast (#156)', () => {
     vi.mocked(ProgressStore.prototype.history).mockRejectedValueOnce(new Error('Unavailable'));
     render(<App now={fixedNow}/>);
     await waitFor(() => expect(panel()).toHaveTextContent(/unavailable/i));
+    expect(screen.queryByRole('button', { name: /reviews? due/ })).not.toBeInTheDocument();
     expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
     await click(screen.getByRole('button', { name: 'Retry loading' }));
     await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
@@ -1026,10 +1029,12 @@ describe('Home review forecast (#156)', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
     await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
     expect(within(dailyCount(0)).getByText('1', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start 1 review due' })).toBeEnabled();
     localStorage.setItem('kikimashta-card-packs-v1:es-419', '[]');
     await act(async () => { window.dispatchEvent(new Event('pageshow')); });
     await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
     expect(within(dailyCount(0)).getByText('0', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start 0 reviews due' })).toBeDisabled();
     expect(panel()).toHaveTextContent('No reviews expected this week.');
   });
 

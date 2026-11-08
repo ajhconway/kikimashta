@@ -512,6 +512,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     return () => window.clearTimeout(timer);
   }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next, questions, index]);
 
+  const dueNow = !loading && !accountLoading && !historyError && !pendingSaveCount && !saveError && currentForecast?.value
+    ? Math.round(currentForecast.value.daily[0] ?? 0) : null;
   const correct = answers.filter(answer => answer.correct).length;
   const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
@@ -523,7 +525,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}</span>{' '}{dueNow !== null && <span className="start-review-count">{dueNow} {dueNow === 1 ? 'review' : 'reviews'} due</span>}<span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
