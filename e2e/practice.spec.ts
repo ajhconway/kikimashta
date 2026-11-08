@@ -644,7 +644,7 @@ test('Dev review practices six random cards and a missed-word retry without savi
 });
 
 for (const key of ['Enter', 'Space']) {
-  test(`picture choices announce their contents and activate once with ${key}`, async ({ page }) => {
+  test(`picture choices announce their contents and activate once with ${key}`, async ({ page, browserName }) => {
     await startReview(page);
     const choices = page.getByRole('button', { name: /choose picture/i });
     await expect(choices).toHaveCount(4);
@@ -658,7 +658,8 @@ for (const key of ['Enter', 'Space']) {
       names.push(name);
     }
     await page.getByRole('button', { name: names[0]!, exact: true }).focus();
-    await page.keyboard.press('Tab');
+    // WebKit uses Option-Tab to include buttons in its default navigation.
+    await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab');
     const choice = page.getByRole('button', { name: names[1]!, exact: true });
     await expect(choice).toBeFocused();
     await page.keyboard.press(key);
