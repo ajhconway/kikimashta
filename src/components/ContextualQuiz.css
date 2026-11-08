@@ -140,17 +140,17 @@
   font-size: 15px;
 }
 
-/* Native modal details do not move the question or its reserved action row. */
+/* Transcript details use the same rounded card and pink controls as practice. */
 .contextual-details-dialog {
-  width: min(420px, calc(100vw - 32px));
+  width: min(560px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);
   margin: auto;
-  padding: 20px;
+  padding: 24px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  border: 3px solid var(--purple-dark);
-  border-radius: 24px;
-  background: #ffe4cc;
+  border: 4px solid var(--purple-dark);
+  border-radius: 28px;
+  background: #fff;
   color: var(--ink);
   text-align: left;
 }
@@ -163,30 +163,66 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
 }
 
 .contextual-dialog-header h2 {
   margin: 0;
   color: var(--purple-dark);
-  font-size: 23px;
+  font-size: 28px;
+  font-weight: 800;
   letter-spacing: -.5px;
 }
 
-.contextual-dialog-header .text-button {
+.contextual-dialog-close {
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
-  min-width: 44px;
-  min-height: 44px;
+  width: 52px;
+  height: 52px;
   margin: 0;
+  padding: 0;
+  border: 3px solid var(--purple-dark);
+  border-radius: 50%;
+  background: #ffcee2;
+  color: var(--purple-dark);
 }
 
 .contextual-details-dialog .contextual-transcript {
   max-width: none;
-  margin: 16px 0;
+  margin: 24px 0;
+}
+
+.contextual-details-dialog .contextual-prompt + .contextual-prompt {
+  margin-top: 28px;
+}
+
+.contextual-details-dialog .contextual-japanese {
+  font-size: clamp(26px, 5vw, 30px);
+  font-weight: 700;
+}
+
+.contextual-details-dialog .contextual-english {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .contextual-details-dialog > .text-button {
+  min-height: 48px;
   margin: 0;
+  padding: 10px 16px;
+  border: 3px solid var(--purple-dark);
+  border-radius: 16px;
+  background: #ffcee2;
+  color: var(--purple-dark);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .contextual-details-dialog {
+    padding: 20px;
+  }
 }
 
 /* The full content gallery keeps its separate evaluation controls. */

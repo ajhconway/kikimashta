@@ -154,7 +154,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     </div>}
     {!inspection && !preview && feedback && !feedback.correct && <dialog ref={details} className="contextual-details-dialog" aria-labelledby={detailsTitle}
       onClose={() => { setEnglish(false); detailsTrigger.current?.focus(); }}>
-      <div className="contextual-dialog-header"><h2 id={detailsTitle}>Japanese</h2><button ref={detailsClose} type="button" className="text-button" aria-label="Close Japanese" onClick={() => details.current?.close()}>×</button></div>
+      <div className="contextual-dialog-header"><h2 id={detailsTitle}>Japanese</h2><button ref={detailsClose} type="button" className="contextual-dialog-close" aria-label="Close Japanese" onClick={() => details.current?.close()}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg></button></div>
       <div className="contextual-transcript"><Prompt title="Sentence" value={authored.context.sentence} english={english} reading={false} reserveEnglish/><Prompt title="Question" value={authored.question.prompt} english={english} reading={false} reserveEnglish/></div>
       <button type="button" className="text-button" aria-expanded={english} onClick={() => setEnglish(value => !value)}>{english ? 'Hide English' : 'Show English'}</button>
     </dialog>}
