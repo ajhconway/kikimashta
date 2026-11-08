@@ -146,3 +146,10 @@ Generation reuses the sidecar/hash-verified engine with two concurrent requests,
 All 288 originals and normalized deliveries are complete. The existing profile fully decodes each delivery and preserves its duration. Four deliveries remain safely quieter and are listed in `content/spanish-travel-audio/generated-media.json`. A durable private copy of originals, sidecars, complete processing records and usage evidence is preserved under `~/.local/share/kikimashta/spanish-audio/155-v1`; every archived file was hash-verified. The checked-in review contains normalized MP3s and public provenance only. No key, account usage files or provider originals enter the review or browser code.
 
 Serve `artifacts/spanish-travel-audio-review/` locally and open `index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. Final listening acceptance precedes expanded-pack activation; this preparation does not change the active starter bank or delete historical Cesar audio.
+
+
+### Accepted Spanish pack activation (#159)
+
+The owner accepted the complete 288-recording review and requested release. Run `npm run content:spanish:activate` to reproduce staging from the exact accepted review/artwork manifests. `content/spanish-travel-audio/acceptance.json` binds owner approval to both manifest hashes; the activation journal records every copied production file hash. No live API or private original archive is needed for this local staging step. It validates all source bytes and target paths before copying.
+
+The active 36-word bank uses `audio/es-419-travel-v2/`, with all eight selected voices and their region labels. Historical v1 recordings and starter provenance remain preserved for old attempts. The Spanish picture-pack ID and four retained starter IDs are stable; entrance/exit are retired from selection. Voice choices are language-scoped. Actual iPhone listening/interaction testing remains the owner's post-deployment step.

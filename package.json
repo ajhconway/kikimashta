@@ -30,7 +30,8 @@
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test && npm run test:audio && npm run test:cards && npm run build",
     "audio:spanish:elevenlabs": "node scripts/content/generate-spanish-travel-pack.mjs",
-    "audio:spanish:review": "node scripts/content/build-spanish-audio-review.mjs"
+    "audio:spanish:review": "node scripts/content/build-spanish-audio-review.mjs",
+    "content:spanish:activate": "node scripts/content/stage-spanish-travel-pack.mjs"
   },
   "dependencies": {
     "@elevenlabs/elevenlabs-js": "2.77.0",

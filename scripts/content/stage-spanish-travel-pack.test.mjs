@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises'
+import { mkdtemp, mkdir, writeFile, readFile, rm, copyFile, symlink, readdir } from 'node:fs/promises'
 import { join, dirname } from 'node:path'
 import { tmpdir } from 'node:os'
 import art from '../../artifacts/spanish-travel-art/manifest.json' with { type: 'json' }
@@ -42,4 +42,24 @@ test('changed acceptance manifests stop staging before any bank or production as
   await assert.rejects(stageSpanishTravelPack({ root }), /Accepted media manifest changed/)
   assert.deepEqual(JSON.parse(await readFile(join(root, 'content/es-419.json'))), { retained: true })
   await assert.rejects(readFile(join(root, 'content/spanish-travel-audio/activation.json')), { code: 'ENOENT' })
+})
+
+for (const mode of ['directory', 'dangling-file']) test(`restaging rejects ${mode} production symlinks before copying any accepted media`, async t => {
+  const root = await mkdtemp(join(tmpdir(), 'spanish-activation-root-'))
+  const outside = await mkdtemp(join(tmpdir(), 'spanish-activation-outside-'))
+  t.after(async () => { await rm(root, { recursive: true, force: true }); await rm(outside, { recursive: true, force: true }) })
+  for (const file of ['content/spanish-travel-audio/acceptance.json', acceptance.artworkManifest, acceptance.audioReviewManifest,
+    'content/es-419-voices.json', 'artifacts/spanish-travel-art/owner-feedback.json']) {
+    await mkdir(dirname(join(root, file)), { recursive: true }); await copyFile(file, join(root, file))
+  }
+  await writeFile(join(root, 'content/es-419.json'), '{"retained":true}')
+  await mkdir(join(root, 'public/audio'), { recursive: true })
+  if (mode === 'directory') await symlink(outside, join(root, 'public/audio/es-419-travel-v2'))
+  else {
+    const target = join(root, 'public/audio/es-419-travel-v2/juan/es-419-travel-hotel.mp3')
+    await mkdir(dirname(target), { recursive: true }); await symlink(join(outside, 'unexpected.mp3'), target)
+  }
+  await assert.rejects(stageSpanishTravelPack({ root }), /Production media target escapes/)
+  assert.deepEqual(await readdir(outside), [])
+  assert.equal(await readFile(join(root, 'content/es-419.json'), 'utf8'), '{"retained":true}')
 })

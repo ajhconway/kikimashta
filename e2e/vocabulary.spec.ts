@@ -1,5 +1,6 @@
 import { expect, test } from './fixtures';
 import catalog from '../content/catalog/ja.json' with { type: 'json' };
+import spanish from '../content/es-419.json' with { type: 'json' };
 
 const voiceNames = ['Otani', 'Morioki', 'Goro', 'Tsuki', 'Takeshi', 'Lime', 'Ritsuto', 'Itsuki'];
 
@@ -170,22 +171,29 @@ test('browse the Spanish travel pack, listen, retry audio and retain Spanish not
   await page.getByRole('link', { name: /card library/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Latin American Spanish cards');
   await expect(page.getByLabel('Card pack')).toHaveValue('es-419-travel-1-pictures');
-  await expect(page.locator('.card')).toHaveCount(6);
-  await expect(page.locator('.card h2')).toHaveText(['hotel', 'agua', 'café', 'carro', 'entrada', 'salida']);
+  await expect(page.locator('.card')).toHaveCount(24);
+  await expect(page.locator('.card h2')).toHaveText(spanish.items.slice(0, 24).map(item => item.text));
+  await expect(page.locator('#results-status')).toContainText('36 cards');
+  await page.getByRole('button', { name: 'Next →' }).click();
+  await expect(page.locator('.card h2')).toHaveText(spanish.items.slice(24).map(item => item.text));
+  await expect(page.getByRole('heading', { level: 2, name: 'entrada', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('heading', { level: 2, name: 'salida', exact: true })).toHaveCount(0);
   await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(2);
   await page.getByLabel('Search words').fill('Coffee');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('café');
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await expect(page.getByRole('group', { name: 'Latin American Spanish voices for Coffee', exact: true }).getByRole('button')).toHaveCount(8);
+  await expect(page.getByRole('button', { name: 'Cesar: Coffee', exact: true })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Juan: Coffee', exact: true }).click();
   await expect(page.locator('#audio-status')).toContainText('café');
   await expect(page.locator('#audio-status')).toBeEmpty();
   await expect(page.locator('#audio-error')).toBeHidden();
-  const recording = '**/audio/es-419-travel-v1/cesar/es-419-travel-coffee.mp3';
+  const recording = '**/audio/es-419-travel-v2/juan/es-419-travel-coffee.mp3';
   await page.route(recording, route => route.abort());
-  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await page.getByRole('button', { name: 'Juan: Coffee', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeVisible();
   await page.unroute(recording);
-  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await page.getByRole('button', { name: 'Juan: Coffee', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeHidden();
   await page.locator('.card-feedback summary').click();
   await page.getByLabel('Your notes').fill('Check the café pronunciation.');

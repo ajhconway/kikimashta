@@ -1,7 +1,7 @@
 /** Activate only the owner's exact accepted Spanish media set (#159). No network. */
 import { createHash } from 'node:crypto'
-import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises'
-import { dirname, join, resolve } from 'node:path'
+import { readFile, writeFile, mkdir, copyFile, realpath, lstat } from 'node:fs/promises'
+import { dirname, join, resolve, relative, isAbsolute } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
 
@@ -47,6 +47,33 @@ export async function stageSpanishTravelPack({ root = process.cwd() } = {}) {
   const art = JSON.parse(artBytes), review = JSON.parse(audioBytes)
   if (JSON.stringify(config.voices) !== JSON.stringify(review.voices)) throw new Error('Accepted voice registry changed.')
   const bank = acceptedSpanishBank(art, review, config.voices)
+  const publicRoot = await realpath(join(root, 'public'))
+  // Existing directory or file symlinks must not redirect any production write.
+  for (const path of bank.items.flatMap(item => [item.image.src, ...item.audio.map(clip => clip.src)])) {
+    let component = publicRoot
+    for (const segment of path.split('/')) {
+      component = join(component, segment)
+      try {
+        if ((await lstat(component)).isSymbolicLink()) throw new Error('Production media target escapes public/.')
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error
+        break
+      }
+    }
+    const target = resolve(publicRoot, path)
+    let ancestor = target
+    for (;;) {
+      try {
+        const actual = resolve(await realpath(ancestor), relative(ancestor, target))
+        const within = relative(publicRoot, actual)
+        if (!within || within === '..' || within.startsWith('../') || isAbsolute(within)) throw new Error('Production media target escapes public/.')
+        break
+      } catch (error) {
+        if (error.code !== 'ENOENT' || ancestor === dirname(ancestor)) throw error
+        ancestor = dirname(ancestor)
+      }
+    }
+  }
   const approvedPictures = new Map(feedback.finalApproval.selectedImages.map(i => [i.id, i]))
   const images = [], recordings = []
   // Complete preflight before any production copy or bank change.
