@@ -5,6 +5,7 @@ import { dirname, join, resolve } from 'node:path'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js'
+import { loadElevenLabsKey } from './elevenlabs-key.mjs'
 
 export const MODEL = 'eleven_v4'
 export const OUTPUT_FORMAT = 'mp3_44100_128'
@@ -130,7 +131,7 @@ async function main() {
     return
   }
   const output = resolve(values.output ?? `artifacts/generated-originals/elevenlabs-audition/${new Date().toISOString().replaceAll(':', '-')}`)
-  const manifest = await generateAudition({ plan, output, apiKey: process.env.ELEVENLABS_API_KEY })
+  const manifest = await generateAudition({ plan, output, apiKey: loadElevenLabsKey() })
   console.log(`${manifest.clips.length} samples ready to compare: ${join(output, 'index.html')}`)
 }
 

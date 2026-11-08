@@ -161,7 +161,7 @@ test('Dev review offers a random timer without mastery and keeps partial success
   await page.addInitScript(() => { Math.random = () => .9; });
   await page.clock.install();
   await page.goto('./');
-  await page.getByRole('button', { name: 'Dev review' }).click();
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await expect(page.getByText('1.5 second timer started.', { exact: true })).toBeAttached();
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   await page.clock.runFor(3000);

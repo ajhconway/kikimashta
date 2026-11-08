@@ -5,6 +5,7 @@ import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 import { synthesize, speechBody } from './audition-elevenlabs.mjs'
+import { loadElevenLabsKey } from './elevenlabs-key.mjs'
 
 const hash = data => createHash('sha256').update(data).digest('hex')
 const nonempty = value => typeof value === 'string' && value.trim().length > 0
@@ -34,8 +35,10 @@ export function generationPlan(items, config) {
       new Set(config.voices.map(v => v.voice)).size !== config.voices.length || new Set(config.voices.map(v => v.id)).size !== config.voices.length ||
       config.voices.some(v => !/^[a-z][a-z0-9-]*$/.test(v.voice) || !/^[a-zA-Z0-9_-]+$/.test(v.id) || !nonempty(v.name)) ||
       config.voiceSettings?.stability !== 0.5 || config.voiceSettings?.similarity_boost !== 0.75) throw new Error('Invalid approved voice configuration.')
+  const issue = config.issue ?? 86
+  if (!Number.isSafeInteger(issue) || issue < 1) throw new Error('Invalid generation issue.')
   const characters = items.reduce((sum, item) => sum + [...item.text].length, 0) * config.voices.length
-  return { issue: 86, provider: config.provider, model: config.model, language: config.language,
+  return { issue, provider: config.provider, model: config.model, language: config.language,
     voiceSettings: config.voiceSettings, voices: config.voices, items, characters, expectedClips: items.length * config.voices.length }
 }
 
@@ -50,10 +53,11 @@ export async function subscription(apiKey) {
   } catch { throw new Error('Could not verify ElevenLabs credit balance. Generation stopped.') }
 }
 
-export async function generateCards({ plan, output, apiKey, concurrency = 3, budget = 13900, speak = synthesize, balance = subscription, log = console.log }) {
+export async function generateCards({ plan, output, apiKey, concurrency = 3, budget = 13900, speak = synthesize, balance = subscription, log = console.log, beforeRequests }) {
   plan = generationPlan(plan.items, plan)
   if (!apiKey?.trim()) throw new Error('ELEVENLABS_API_KEY is required in the ignored .env.local file.')
   if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 3 || !Number.isFinite(budget) || budget < plan.characters) throw new Error('Invalid concurrency or credit budget.')
+  if (beforeRequests !== undefined && typeof beforeRequests !== 'function') throw new Error('Invalid pre-request preparation hook.')
   const identity = hash(JSON.stringify(plan))
   const snapshot = { ...plan, identity }
   await mkdir(output, { recursive: true })
@@ -69,6 +73,9 @@ export async function generateCards({ plan, output, apiKey, concurrency = 3, bud
   let journalQueue = Promise.resolve()
   try {
     await lock.writeFile(JSON.stringify({ pid: process.pid, startedAt: new Date().toISOString() }))
+    // Contextual auditions bind their exact approval/pairing metadata while the
+    // same lock protects all subsequent balance checks and paid requests.
+    await beforeRequests?.()
     await mkdir(join(output, 'records'), { recursive: true })
     await mkdir(join(output, 'pending'), { recursive: true })
     const jobs = plan.items.flatMap(item => plan.voices.map(voice => ({ item, voice })))
@@ -172,6 +179,6 @@ async function main() {
   const plan = generationPlan(cardItems(catalog, starter), config)
   if (values['dry-run']) { console.log(JSON.stringify({ cards: plan.items.length, voices: plan.voices.map(v => v.name), requests: plan.expectedClips, characters: plan.characters, budget: 13900 }, null, 2)); return }
   if (!values.output) throw new Error('Choose --output under artifacts/generated-originals/elevenlabs-cards/.')
-  console.log(JSON.stringify(await generateCards({ plan, output: resolve(values.output), apiKey: process.env.ELEVENLABS_API_KEY, concurrency: Number(values.concurrency) })))
+  console.log(JSON.stringify(await generateCards({ plan, output: resolve(values.output), apiKey: loadElevenLabsKey(), concurrency: Number(values.concurrency) })))
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) main().catch(error => { console.error(error.message); process.exitCode = 1 })

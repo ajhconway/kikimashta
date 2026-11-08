@@ -581,9 +581,13 @@ describe('practice pack selection', () => {
 
   it('disables practice for an empty selection and saves a newly enabled pack', async () => {
     localStorage.setItem(packPreferenceKey, '[]');
+    const history = deferred<PracticeAttempt[]>();
+    vi.mocked(ProgressStore.prototype.history).mockReturnValueOnce(history.promise);
     render(<App now={fixedNow}/>);
     await screen.findByText('Select a pack to start practicing.');
-    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /getting ready/i })).toBeDisabled();
+    await act(async () => { history.resolve([]); });
+    expect(await screen.findByRole('button', { name: /^start/i })).toBeDisabled();
     await click(screen.getByText('Card packs · 0 selected'));
     const checkbox = screen.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' });
     await waitFor(() => expect(checkbox).toBeEnabled());

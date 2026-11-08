@@ -36,6 +36,12 @@ The writing-card app and its migration are deployed. Hosted migration history co
 
 Run the rollback fixture after both migrations in a disposable development database. It checks writing lessons and retries, unchanged picture and legacy events, invalid exercise rejection, and account isolation. Older app versions reject downloaded writing contexts, so both devices need the updated app to sync writing practice.
 
+### Contextual progression release (#139)
+
+Before publishing contextual practice, apply [the contextual-attempt migration](../supabase/migrations/20261108190549_contextual_attempts.sql). It accepts the four independent simple/contrastive picture/writing exercises and validates their authored sentence/question identity, revisions, paired recordings and explicit answer IDs. Existing events, grants and row-level security remain intact. The dev review saves no attempts and needs no database migration.
+
+The owner authorized release on November 8, 2026. The reviewed migration is applied to the existing hosted project as `20261108202250_contextual_attempts`; do not apply it again. Read-only verification confirmed the constraint is validated for all four contextual exercises, all 596 existing attempts remain, row-level security stays enabled, anonymous helper execution is denied and authenticated UPDATE remains denied. CI runs all three migrations and the expanded rollback fixture against isolated PostgreSQL 17. A proposed hosted rollback verification was rejected by automatic approval review because it would temporarily alter a live constraint and insert fixtures. Use the isolated CI result for pre-release verification. Both devices need the updated app before syncing contextual attempts; older versions do not recognize the new exercise values.
+
 ## Email sign-in
 
 In **Authentication → URL Configuration**, set the Site URL to `https://kikimashta.com` and allow `https://kikimashta.com/` as a redirect. Add an exact localhost development URL only if needed.

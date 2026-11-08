@@ -1,0 +1,3962 @@
+{
+  "schemaVersion": 1,
+  "id": "ja-contextual-pilot-v1",
+  "language": "ja-JP",
+  "grammarProfile": "genki-1",
+  "grammarReference": "https://bookclub2.japantimes.co.jp/download/files/genki3/genki-3rd_syllabus_E.pdf",
+  "grammarPoints": [
+    {
+      "id": "copula",
+      "label": "Noun predicates with です",
+      "genkiLesson": 1
+    },
+    {
+      "id": "noun-no",
+      "label": "Noun linking and possession with の",
+      "genkiLesson": 1
+    },
+    {
+      "id": "questions",
+      "label": "Question sentences with か",
+      "genkiLesson": 1
+    },
+    {
+      "id": "question-words",
+      "label": "Basic question words",
+      "genkiLesson": 2
+    },
+    {
+      "id": "particles",
+      "label": "Core particles and word order",
+      "genkiLesson": 3
+    },
+    {
+      "id": "polite-verbs",
+      "label": "Polite present verb forms",
+      "genkiLesson": 3
+    },
+    {
+      "id": "time-references",
+      "label": "Time references",
+      "genkiLesson": 3
+    },
+    {
+      "id": "location-existence",
+      "label": "Existence and relative location with あります/います",
+      "genkiLesson": 4
+    },
+    {
+      "id": "adjectives",
+      "label": "Adjectives and adjective noun modification",
+      "genkiLesson": 5
+    },
+    {
+      "id": "te-form-linking",
+      "label": "Verb te-forms joining activities or clauses",
+      "genkiLesson": 6
+    },
+    {
+      "id": "progressive",
+      "label": "Action in progress with ている",
+      "genkiLesson": 7
+    },
+    {
+      "id": "result-state",
+      "label": "Resulting state with ている",
+      "genkiLesson": 7
+    },
+    {
+      "id": "noun-adjective-linking",
+      "label": "Noun and adjective te-forms joining clauses",
+      "genkiLesson": 7
+    },
+    {
+      "id": "short-forms",
+      "label": "Short verb forms",
+      "genkiLesson": 8
+    },
+    {
+      "id": "subject-ga",
+      "label": "Subject focus with が",
+      "genkiLesson": 8
+    },
+    {
+      "id": "relative-clauses",
+      "label": "Qualifying nouns with verbs",
+      "genkiLesson": 9
+    },
+    {
+      "id": "transport",
+      "label": "Means of transport with で",
+      "genkiLesson": 10
+    }
+  ],
+  "supportingVocabulary": [
+    {
+      "id": "sup-above",
+      "text": "上",
+      "reading": "うえ",
+      "meaning": "on; above"
+    },
+    {
+      "id": "sup-below",
+      "text": "下",
+      "reading": "した",
+      "meaning": "under; below"
+    },
+    {
+      "id": "sup-left",
+      "text": "左",
+      "reading": "ひだり",
+      "meaning": "left"
+    },
+    {
+      "id": "sup-right",
+      "text": "右",
+      "reading": "みぎ",
+      "meaning": "right"
+    },
+    {
+      "id": "sup-large",
+      "text": "大きい",
+      "reading": "おおきい",
+      "meaning": "large"
+    },
+    {
+      "id": "sup-small",
+      "text": "小さい",
+      "reading": "ちいさい",
+      "meaning": "small"
+    },
+    {
+      "id": "sup-medium",
+      "text": "中くらい",
+      "reading": "ちゅうくらい",
+      "meaning": "medium-sized"
+    },
+    {
+      "id": "sup-size",
+      "text": "大きさ",
+      "reading": "おおきさ",
+      "meaning": "size"
+    },
+    {
+      "id": "sup-book",
+      "text": "本",
+      "reading": "ほん",
+      "meaning": "book"
+    },
+    {
+      "id": "sup-notebook",
+      "text": "ノート",
+      "reading": "ノート",
+      "meaning": "notebook"
+    },
+    {
+      "id": "sup-plate",
+      "text": "皿",
+      "reading": "さら",
+      "meaning": "plate"
+    },
+    {
+      "id": "sup-ball",
+      "text": "玉",
+      "reading": "たま",
+      "meaning": "ball"
+    },
+    {
+      "id": "sup-stone",
+      "text": "石",
+      "reading": "いし",
+      "meaning": "stone"
+    },
+    {
+      "id": "sup-flower",
+      "text": "花",
+      "reading": "はな",
+      "meaning": "flower"
+    },
+    {
+      "id": "sup-magazine",
+      "text": "雑誌",
+      "reading": "ざっし",
+      "meaning": "magazine"
+    },
+    {
+      "id": "sup-water",
+      "text": "水",
+      "reading": "みず",
+      "meaning": "water"
+    },
+    {
+      "id": "sup-coffee",
+      "text": "コーヒー",
+      "reading": "コーヒー",
+      "meaning": "coffee"
+    },
+    {
+      "id": "sup-draft-beer",
+      "text": "生ビール",
+      "reading": "なまびーる",
+      "meaning": "draft beer"
+    },
+    {
+      "id": "sup-car",
+      "text": "車",
+      "reading": "くるま",
+      "meaning": "car"
+    },
+    {
+      "id": "sup-bus",
+      "text": "バス",
+      "reading": "バス",
+      "meaning": "bus"
+    },
+    {
+      "id": "sup-bicycle",
+      "text": "自転車",
+      "reading": "じてんしゃ",
+      "meaning": "bicycle"
+    },
+    {
+      "id": "sup-train",
+      "text": "電車",
+      "reading": "でんしゃ",
+      "meaning": "train"
+    },
+    {
+      "id": "sup-teacher",
+      "text": "先生",
+      "reading": "せんせい",
+      "meaning": "teacher"
+    },
+    {
+      "id": "sup-student",
+      "text": "学生",
+      "reading": "がくせい",
+      "meaning": "student"
+    },
+    {
+      "id": "sup-mother",
+      "text": "母",
+      "reading": "はは",
+      "meaning": "my mother"
+    },
+    {
+      "id": "sup-father",
+      "text": "父",
+      "reading": "ちち",
+      "meaning": "my father"
+    },
+    {
+      "id": "sup-older-brother",
+      "text": "兄",
+      "reading": "あに",
+      "meaning": "my older brother"
+    },
+    {
+      "id": "sup-younger-sister",
+      "text": "妹",
+      "reading": "いもうと",
+      "meaning": "my younger sister"
+    },
+    {
+      "id": "sup-person",
+      "text": "人",
+      "reading": "ひと",
+      "meaning": "person"
+    },
+    {
+      "id": "sup-doctor",
+      "text": "医者",
+      "reading": "いしゃ",
+      "meaning": "doctor"
+    },
+    {
+      "id": "sup-office-worker",
+      "text": "会社員",
+      "reading": "かいしゃいん",
+      "meaning": "company employee"
+    },
+    {
+      "id": "sup-work",
+      "text": "お仕事",
+      "reading": "おしごと",
+      "meaning": "work; occupation"
+    },
+    {
+      "id": "sup-tanaka",
+      "text": "田中さん",
+      "reading": "たなかさん",
+      "meaning": "Mr./Ms. Tanaka"
+    },
+    {
+      "id": "sup-sato",
+      "text": "佐藤さん",
+      "reading": "さとうさん",
+      "meaning": "Mr./Ms. Sato"
+    },
+    {
+      "id": "sup-yamada",
+      "text": "山田さん",
+      "reading": "やまださん",
+      "meaning": "Mr./Ms. Yamada"
+    },
+    {
+      "id": "sup-desk",
+      "text": "机",
+      "reading": "つくえ",
+      "meaning": "desk"
+    },
+    {
+      "id": "sup-chair",
+      "text": "椅子",
+      "reading": "いす",
+      "meaning": "chair"
+    },
+    {
+      "id": "sup-shelf",
+      "text": "棚",
+      "reading": "たな",
+      "meaning": "shelf"
+    },
+    {
+      "id": "sup-box",
+      "text": "箱",
+      "reading": "はこ",
+      "meaning": "box"
+    },
+    {
+      "id": "sup-bridge",
+      "text": "橋",
+      "reading": "はし",
+      "meaning": "bridge"
+    },
+    {
+      "id": "sup-school",
+      "text": "学校",
+      "reading": "がっこう",
+      "meaning": "school"
+    },
+    {
+      "id": "sup-station",
+      "text": "駅",
+      "reading": "えき",
+      "meaning": "station"
+    },
+    {
+      "id": "sup-hospital",
+      "text": "病院",
+      "reading": "びょういん",
+      "meaning": "hospital"
+    },
+    {
+      "id": "sup-library",
+      "text": "図書館",
+      "reading": "としょかん",
+      "meaning": "library"
+    },
+    {
+      "id": "sup-park",
+      "text": "公園",
+      "reading": "こうえん",
+      "meaning": "park"
+    },
+    {
+      "id": "sup-classroom",
+      "text": "教室",
+      "reading": "きょうしつ",
+      "meaning": "classroom"
+    },
+    {
+      "id": "sup-front",
+      "text": "前",
+      "reading": "まえ",
+      "meaning": "in front of"
+    },
+    {
+      "id": "sup-morning",
+      "text": "朝",
+      "reading": "あさ",
+      "meaning": "morning"
+    },
+    {
+      "id": "sup-noon",
+      "text": "昼",
+      "reading": "ひる",
+      "meaning": "daytime; noon"
+    },
+    {
+      "id": "sup-night",
+      "text": "夜",
+      "reading": "よる",
+      "meaning": "night"
+    },
+    {
+      "id": "sup-six-oclock",
+      "text": "六時",
+      "reading": "ろくじ",
+      "meaning": "six o’clock"
+    },
+    {
+      "id": "sup-seven-oclock",
+      "text": "七時",
+      "reading": "しちじ",
+      "meaning": "seven o’clock"
+    },
+    {
+      "id": "sup-eight-oclock",
+      "text": "八時",
+      "reading": "はちじ",
+      "meaning": "eight o’clock"
+    },
+    {
+      "id": "sup-red",
+      "text": "赤",
+      "reading": "あか",
+      "meaning": "red"
+    },
+    {
+      "id": "sup-white",
+      "text": "白",
+      "reading": "しろ",
+      "meaning": "white"
+    },
+    {
+      "id": "sup-blue",
+      "text": "青",
+      "reading": "あお",
+      "meaning": "blue"
+    },
+    {
+      "id": "sup-color",
+      "text": "色",
+      "reading": "いろ",
+      "meaning": "colour"
+    },
+    {
+      "id": "sup-run",
+      "text": "走る",
+      "reading": "はしる",
+      "meaning": "to run"
+    },
+    {
+      "id": "sup-walk",
+      "text": "歩く",
+      "reading": "あるく",
+      "meaning": "to walk"
+    },
+    {
+      "id": "sup-swim",
+      "text": "泳ぐ",
+      "reading": "およぐ",
+      "meaning": "to swim"
+    },
+    {
+      "id": "sup-read",
+      "text": "読む",
+      "reading": "よむ",
+      "meaning": "to read"
+    },
+    {
+      "id": "sup-write",
+      "text": "書く",
+      "reading": "かく",
+      "meaning": "to write"
+    },
+    {
+      "id": "sup-drink",
+      "text": "飲む",
+      "reading": "のむ",
+      "meaning": "to drink"
+    },
+    {
+      "id": "sup-stop",
+      "text": "止まる",
+      "reading": "とまる",
+      "meaning": "to stop; to be parked"
+    },
+    {
+      "id": "sup-enter",
+      "text": "入る",
+      "reading": "はいる",
+      "meaning": "to enter; 入っている means to be inside"
+    },
+    {
+      "id": "sup-come",
+      "text": "来る",
+      "reading": "くる",
+      "meaning": "to come"
+    },
+    {
+      "id": "sup-go",
+      "text": "行く",
+      "reading": "いく",
+      "meaning": "to go"
+    },
+    {
+      "id": "sup-study",
+      "text": "勉強する",
+      "reading": "べんきょうする",
+      "meaning": "to study"
+    },
+    {
+      "id": "sup-what",
+      "text": "何",
+      "reading": "なに",
+      "meaning": "what (also read なん in some combinations)"
+    },
+    {
+      "id": "sup-who",
+      "text": "誰",
+      "reading": "だれ",
+      "meaning": "who"
+    },
+    {
+      "id": "sup-where",
+      "text": "どこ",
+      "reading": "どこ",
+      "meaning": "where"
+    },
+    {
+      "id": "sup-when",
+      "text": "いつ",
+      "reading": "いつ",
+      "meaning": "when"
+    },
+    {
+      "id": "sup-what-kind",
+      "text": "どんな",
+      "reading": "どんな",
+      "meaning": "what kind of"
+    },
+    {
+      "id": "sup-how",
+      "text": "どうやって",
+      "reading": "どうやって",
+      "meaning": "how; by what means"
+    }
+  ],
+  "contexts": [
+    {
+      "id": "ja-ctx-ue-01",
+      "revision": 1,
+      "targetItemId": "ja-v-c0f58bfab324",
+      "targetOccurrence": {
+        "surface": "上",
+        "reading": "うえ"
+      },
+      "sentence": {
+        "text": "本は机の上に、ノートは机の下にあります。",
+        "reading": "ほんはつくえのうえに、ノートはつくえのしたにあります。",
+        "meaning": "The book is on the desk, and the notebook is under the desk.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-below",
+          "sup-book",
+          "sup-notebook",
+          "sup-desk"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-ue-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "本はどこにありますか。",
+            "reading": "ほんはどこにありますか。",
+            "meaning": "Where is the book?",
+            "grammarTags": [
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-book",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "above",
+              "text": "上",
+              "reading": "うえ",
+              "meaning": "above",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-above"
+              ],
+              "vocabularyItemId": "ja-v-c0f58bfab324",
+              "imageItemId": "ja-v-c0f58bfab324"
+            },
+            {
+              "id": "below",
+              "text": "下",
+              "reading": "した",
+              "meaning": "below",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-below"
+              ],
+              "vocabularyItemId": "ja-v-520308b3c3b4",
+              "imageItemId": "ja-v-520308b3c3b4"
+            },
+            {
+              "id": "left",
+              "text": "左",
+              "reading": "ひだり",
+              "meaning": "left direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-left"
+              ],
+              "vocabularyItemId": "ja-v-14be5202d5b3",
+              "imageItemId": "ja-v-14be5202d5b3"
+            },
+            {
+              "id": "right",
+              "text": "右",
+              "reading": "みぎ",
+              "meaning": "right direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-right"
+              ],
+              "vocabularyItemId": "ja-v-ed6bd4d73b76",
+              "imageItemId": "ja-v-ed6bd4d73b76"
+            }
+          ],
+          "correctOptionId": "above",
+          "explanation": "The book is on the desk; the notebook is underneath."
+        },
+        {
+          "id": "ja-ctx-ue-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "机の上には何がありますか。",
+            "reading": "つくえのうえにはなにがありますか。",
+            "meaning": "What is on the desk?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-above",
+              "sup-desk",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "book",
+          "explanation": "The book is on the desk, while the notebook is under it."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "pending"
+      },
+      "reviewNotes": "The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location."
+    },
+    {
+      "id": "ja-ctx-ue-02",
+      "revision": 1,
+      "targetItemId": "ja-v-c0f58bfab324",
+      "targetOccurrence": {
+        "surface": "上",
+        "reading": "うえ"
+      },
+      "sentence": {
+        "text": "ノートは棚の上に、本は棚の下にあります。",
+        "reading": "ノートはたなのうえに、ほんはたなのしたにあります。",
+        "meaning": "The notebook is on the shelf, and the book is under the shelf.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-below",
+          "sup-book",
+          "sup-notebook",
+          "sup-shelf"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-ue-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "ノートはどこにありますか。",
+            "reading": "ノートはどこにありますか。",
+            "meaning": "Where is the notebook?",
+            "grammarTags": [
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-notebook",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "above",
+              "text": "上",
+              "reading": "うえ",
+              "meaning": "above",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-above"
+              ],
+              "vocabularyItemId": "ja-v-c0f58bfab324",
+              "imageItemId": "ja-v-c0f58bfab324"
+            },
+            {
+              "id": "below",
+              "text": "下",
+              "reading": "した",
+              "meaning": "below",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-below"
+              ],
+              "vocabularyItemId": "ja-v-520308b3c3b4",
+              "imageItemId": "ja-v-520308b3c3b4"
+            },
+            {
+              "id": "left",
+              "text": "左",
+              "reading": "ひだり",
+              "meaning": "left direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-left"
+              ],
+              "vocabularyItemId": "ja-v-14be5202d5b3",
+              "imageItemId": "ja-v-14be5202d5b3"
+            },
+            {
+              "id": "right",
+              "text": "右",
+              "reading": "みぎ",
+              "meaning": "right direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-right"
+              ],
+              "vocabularyItemId": "ja-v-ed6bd4d73b76",
+              "imageItemId": "ja-v-ed6bd4d73b76"
+            }
+          ],
+          "correctOptionId": "above",
+          "explanation": "The notebook is on the shelf; the book is underneath."
+        },
+        {
+          "id": "ja-ctx-ue-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "棚の上には何がありますか。",
+            "reading": "たなのうえにはなにがありますか。",
+            "meaning": "What is on the shelf?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-above",
+              "sup-shelf",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "notebook",
+          "explanation": "The notebook is on the shelf, while the book is underneath."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location."
+    },
+    {
+      "id": "ja-ctx-shita-01",
+      "revision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "targetOccurrence": {
+        "surface": "下",
+        "reading": "した"
+      },
+      "sentence": {
+        "text": "車は橋の下に、バスは橋の上に止まっています。",
+        "reading": "くるまははしのしたに、バスははしのうえにとまっています。",
+        "meaning": "The car is parked under the bridge, and the bus is stopped on the bridge.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence",
+          "result-state"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-below",
+          "sup-car",
+          "sup-bus",
+          "sup-bridge",
+          "sup-stop"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-shita-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "車はどこに止まっていますか。",
+            "reading": "くるまはどこにとまっていますか。",
+            "meaning": "Where is the car parked?",
+            "grammarTags": [
+              "questions",
+              "question-words",
+              "location-existence",
+              "result-state"
+            ],
+            "supportingVocabularyIds": [
+              "sup-car",
+              "sup-stop",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "above",
+              "text": "上",
+              "reading": "うえ",
+              "meaning": "above",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-above"
+              ],
+              "vocabularyItemId": "ja-v-c0f58bfab324",
+              "imageItemId": "ja-v-c0f58bfab324"
+            },
+            {
+              "id": "below",
+              "text": "下",
+              "reading": "した",
+              "meaning": "below",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-below"
+              ],
+              "vocabularyItemId": "ja-v-520308b3c3b4",
+              "imageItemId": "ja-v-520308b3c3b4"
+            },
+            {
+              "id": "left",
+              "text": "左",
+              "reading": "ひだり",
+              "meaning": "left direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-left"
+              ],
+              "vocabularyItemId": "ja-v-14be5202d5b3",
+              "imageItemId": "ja-v-14be5202d5b3"
+            },
+            {
+              "id": "right",
+              "text": "右",
+              "reading": "みぎ",
+              "meaning": "right direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-right"
+              ],
+              "vocabularyItemId": "ja-v-ed6bd4d73b76",
+              "imageItemId": "ja-v-ed6bd4d73b76"
+            }
+          ],
+          "correctOptionId": "below",
+          "explanation": "The car is under the bridge; the bus is on it."
+        },
+        {
+          "id": "ja-ctx-shita-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "橋の下には何が止まっていますか。",
+            "reading": "はしのしたにはなにがとまっていますか。",
+            "meaning": "What is stopped under the bridge?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence",
+              "result-state"
+            ],
+            "supportingVocabularyIds": [
+              "sup-below",
+              "sup-bridge",
+              "sup-stop",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "car",
+              "text": "車",
+              "reading": "くるま",
+              "meaning": "car",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car"
+              ],
+              "vocabularyItemId": "ja-v-f71f9de56223"
+            },
+            {
+              "id": "bus",
+              "text": "バス",
+              "reading": "バス",
+              "meaning": "bus",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-bus"
+              ]
+            },
+            {
+              "id": "bicycle",
+              "text": "自転車",
+              "reading": "じてんしゃ",
+              "meaning": "bicycle",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-bicycle"
+              ]
+            },
+            {
+              "id": "train",
+              "text": "電車",
+              "reading": "でんしゃ",
+              "meaning": "train",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-train"
+              ]
+            }
+          ],
+          "correctOptionId": "car",
+          "explanation": "The car is under the bridge, while the bus is on it."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location. Vehicle answers stay written because matching picture assets are not available for every option. 止まっている describes a resulting state, not an action in progress."
+    },
+    {
+      "id": "ja-ctx-shita-02",
+      "revision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "targetOccurrence": {
+        "surface": "下",
+        "reading": "した"
+      },
+      "sentence": {
+        "text": "ノートは椅子の下に、本は椅子の上にあります。",
+        "reading": "ノートはいすのしたに、ほんはいすのうえにあります。",
+        "meaning": "The notebook is under the chair, and the book is on the chair.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-below",
+          "sup-book",
+          "sup-notebook",
+          "sup-chair"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-shita-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "ノートはどこにありますか。",
+            "reading": "ノートはどこにありますか。",
+            "meaning": "Where is the notebook?",
+            "grammarTags": [
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-notebook",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "above",
+              "text": "上",
+              "reading": "うえ",
+              "meaning": "above",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-above"
+              ],
+              "vocabularyItemId": "ja-v-c0f58bfab324",
+              "imageItemId": "ja-v-c0f58bfab324"
+            },
+            {
+              "id": "below",
+              "text": "下",
+              "reading": "した",
+              "meaning": "below",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-below"
+              ],
+              "vocabularyItemId": "ja-v-520308b3c3b4",
+              "imageItemId": "ja-v-520308b3c3b4"
+            },
+            {
+              "id": "left",
+              "text": "左",
+              "reading": "ひだり",
+              "meaning": "left direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-left"
+              ],
+              "vocabularyItemId": "ja-v-14be5202d5b3",
+              "imageItemId": "ja-v-14be5202d5b3"
+            },
+            {
+              "id": "right",
+              "text": "右",
+              "reading": "みぎ",
+              "meaning": "right direction",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-right"
+              ],
+              "vocabularyItemId": "ja-v-ed6bd4d73b76",
+              "imageItemId": "ja-v-ed6bd4d73b76"
+            }
+          ],
+          "correctOptionId": "below",
+          "explanation": "The notebook is under the chair; the book is on it."
+        },
+        {
+          "id": "ja-ctx-shita-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "椅子の下には何がありますか。",
+            "reading": "いすのしたにはなにがありますか。",
+            "meaning": "What is under the chair?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-below",
+              "sup-chair",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "notebook",
+          "explanation": "The notebook is underneath the chair, while the book is on it."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location."
+    },
+    {
+      "id": "ja-ctx-ookii-01",
+      "revision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "targetOccurrence": {
+        "surface": "大きい",
+        "reading": "おおきい"
+      },
+      "sentence": {
+        "text": "大きい車は白くて、小さい車は青いです。",
+        "reading": "おおきいくるまはしろくて、ちいさいくるまはあおいです。",
+        "meaning": "The large car is white, and the small car is blue.",
+        "grammarTags": [
+          "adjectives",
+          "noun-adjective-linking",
+          "copula"
+        ],
+        "supportingVocabularyIds": [
+          "sup-large",
+          "sup-small",
+          "sup-car",
+          "sup-white",
+          "sup-blue"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-ookii-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "白い車はどんな大きさですか。",
+            "reading": "しろいくるまはどんなおおきさですか。",
+            "meaning": "What size is the white car?",
+            "grammarTags": [
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-size",
+              "sup-car",
+              "sup-white",
+              "sup-what-kind"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "large",
+              "text": "大きい",
+              "reading": "おおきい",
+              "meaning": "large",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-large"
+              ],
+              "vocabularyItemId": "ja-v-f6377dcbb564"
+            },
+            {
+              "id": "small",
+              "text": "小さい",
+              "reading": "ちいさい",
+              "meaning": "small",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-small"
+              ],
+              "vocabularyItemId": "ja-v-769a80524957"
+            },
+            {
+              "id": "medium",
+              "text": "中くらい",
+              "reading": "ちゅうくらい",
+              "meaning": "medium-sized",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-medium"
+              ]
+            }
+          ],
+          "correctOptionId": "large",
+          "explanation": "The white car is the large car, while the blue car is small."
+        },
+        {
+          "id": "ja-ctx-ookii-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "大きい車は何色ですか。",
+            "reading": "おおきいくるまはなにいろですか。",
+            "meaning": "What colour is the large car?",
+            "grammarTags": [
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-large",
+              "sup-car",
+              "sup-color",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "red",
+              "text": "赤",
+              "reading": "あか",
+              "meaning": "red",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-red"
+              ],
+              "imageItemId": "ja-v-3144539c83d3"
+            },
+            {
+              "id": "white",
+              "text": "白",
+              "reading": "しろ",
+              "meaning": "white",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-white"
+              ],
+              "imageItemId": "ja-v-d67a7d3dacc9"
+            },
+            {
+              "id": "blue",
+              "text": "青",
+              "reading": "あお",
+              "meaning": "blue",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-blue"
+              ],
+              "imageItemId": "ja-v-10e568715d3a"
+            }
+          ],
+          "correctOptionId": "white",
+          "explanation": "The large car is white; the small car is blue."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box."
+    },
+    {
+      "id": "ja-ctx-ookii-02",
+      "revision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "targetOccurrence": {
+        "surface": "大きい",
+        "reading": "おおきい"
+      },
+      "sentence": {
+        "text": "大きい箱には本が、小さい箱にはノートが入っています。",
+        "reading": "おおきいはこにはほんが、ちいさいはこにはノートがはいっています。",
+        "meaning": "There is a book in the large box and a notebook in the small box.",
+        "grammarTags": [
+          "adjectives",
+          "particles",
+          "result-state"
+        ],
+        "supportingVocabularyIds": [
+          "sup-large",
+          "sup-small",
+          "sup-book",
+          "sup-notebook",
+          "sup-box",
+          "sup-enter"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-ookii-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "本が入っている箱はどんな大きさですか。",
+            "reading": "ほんがはいっているはこはどんなおおきさですか。",
+            "meaning": "What size is the box with the book in it?",
+            "grammarTags": [
+              "relative-clauses",
+              "result-state",
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-size",
+              "sup-book",
+              "sup-box",
+              "sup-enter",
+              "sup-what-kind"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "large",
+              "text": "大きい",
+              "reading": "おおきい",
+              "meaning": "large",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-large"
+              ],
+              "vocabularyItemId": "ja-v-f6377dcbb564"
+            },
+            {
+              "id": "small",
+              "text": "小さい",
+              "reading": "ちいさい",
+              "meaning": "small",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-small"
+              ],
+              "vocabularyItemId": "ja-v-769a80524957"
+            },
+            {
+              "id": "medium",
+              "text": "中くらい",
+              "reading": "ちゅうくらい",
+              "meaning": "medium-sized",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-medium"
+              ]
+            }
+          ],
+          "correctOptionId": "large",
+          "explanation": "The book is in the large box; the notebook is in the small box."
+        },
+        {
+          "id": "ja-ctx-ookii-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "大きい箱には何が入っていますか。",
+            "reading": "おおきいはこにはなにがはいっていますか。",
+            "meaning": "What is in the large box?",
+            "grammarTags": [
+              "adjectives",
+              "particles",
+              "result-state",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-large",
+              "sup-box",
+              "sup-enter",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "book",
+          "explanation": "The large box contains the book, while the small box contains the notebook."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box. 入っている is taught as a resulting state. The relative-clause question reaches the later part of the Genki I grammar scope."
+    },
+    {
+      "id": "ja-ctx-chiisai-01",
+      "revision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "targetOccurrence": {
+        "surface": "小さい",
+        "reading": "ちいさい"
+      },
+      "sentence": {
+        "text": "小さい車は赤くて、大きい車は青いです。",
+        "reading": "ちいさいくるまはあかくて、おおきいくるまはあおいです。",
+        "meaning": "The small car is red, and the large car is blue.",
+        "grammarTags": [
+          "adjectives",
+          "noun-adjective-linking",
+          "copula"
+        ],
+        "supportingVocabularyIds": [
+          "sup-large",
+          "sup-small",
+          "sup-car",
+          "sup-red",
+          "sup-blue"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-chiisai-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "赤い車はどんな大きさですか。",
+            "reading": "あかいくるまはどんなおおきさですか。",
+            "meaning": "What size is the red car?",
+            "grammarTags": [
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-size",
+              "sup-car",
+              "sup-red",
+              "sup-what-kind"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "large",
+              "text": "大きい",
+              "reading": "おおきい",
+              "meaning": "large",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-large"
+              ],
+              "vocabularyItemId": "ja-v-f6377dcbb564"
+            },
+            {
+              "id": "small",
+              "text": "小さい",
+              "reading": "ちいさい",
+              "meaning": "small",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-small"
+              ],
+              "vocabularyItemId": "ja-v-769a80524957"
+            },
+            {
+              "id": "medium",
+              "text": "中くらい",
+              "reading": "ちゅうくらい",
+              "meaning": "medium-sized",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-medium"
+              ]
+            }
+          ],
+          "correctOptionId": "small",
+          "explanation": "The red car is the small car, while the blue car is large."
+        },
+        {
+          "id": "ja-ctx-chiisai-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "小さい車は何色ですか。",
+            "reading": "ちいさいくるまはなにいろですか。",
+            "meaning": "What colour is the small car?",
+            "grammarTags": [
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-small",
+              "sup-car",
+              "sup-color",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "red",
+              "text": "赤",
+              "reading": "あか",
+              "meaning": "red",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-red"
+              ],
+              "imageItemId": "ja-v-3144539c83d3"
+            },
+            {
+              "id": "white",
+              "text": "白",
+              "reading": "しろ",
+              "meaning": "white",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-white"
+              ],
+              "imageItemId": "ja-v-d67a7d3dacc9"
+            },
+            {
+              "id": "blue",
+              "text": "青",
+              "reading": "あお",
+              "meaning": "blue",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-blue"
+              ],
+              "imageItemId": "ja-v-10e568715d3a"
+            }
+          ],
+          "correctOptionId": "red",
+          "explanation": "The small car is red; the large car is blue."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box."
+    },
+    {
+      "id": "ja-ctx-chiisai-02",
+      "revision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "targetOccurrence": {
+        "surface": "小さい",
+        "reading": "ちいさい"
+      },
+      "sentence": {
+        "text": "小さい箱には石が、大きい箱には花が入っています。",
+        "reading": "ちいさいはこにはいしが、おおきいはこにははながはいっています。",
+        "meaning": "There is a stone in the small box and a flower in the large box.",
+        "grammarTags": [
+          "adjectives",
+          "particles",
+          "result-state"
+        ],
+        "supportingVocabularyIds": [
+          "sup-large",
+          "sup-small",
+          "sup-stone",
+          "sup-flower",
+          "sup-box",
+          "sup-enter"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-chiisai-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "石が入っている箱はどんな大きさですか。",
+            "reading": "いしがはいっているはこはどんなおおきさですか。",
+            "meaning": "What size is the box with the stone in it?",
+            "grammarTags": [
+              "relative-clauses",
+              "result-state",
+              "adjectives",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-size",
+              "sup-stone",
+              "sup-box",
+              "sup-enter",
+              "sup-what-kind"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "large",
+              "text": "大きい",
+              "reading": "おおきい",
+              "meaning": "large",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-large"
+              ],
+              "vocabularyItemId": "ja-v-f6377dcbb564"
+            },
+            {
+              "id": "small",
+              "text": "小さい",
+              "reading": "ちいさい",
+              "meaning": "small",
+              "grammarTags": [
+                "adjectives"
+              ],
+              "supportingVocabularyIds": [
+                "sup-small"
+              ],
+              "vocabularyItemId": "ja-v-769a80524957"
+            },
+            {
+              "id": "medium",
+              "text": "中くらい",
+              "reading": "ちゅうくらい",
+              "meaning": "medium-sized",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-medium"
+              ]
+            }
+          ],
+          "correctOptionId": "small",
+          "explanation": "The stone is in the small box, while the flower is in the large box."
+        },
+        {
+          "id": "ja-ctx-chiisai-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "小さい箱には何が入っていますか。",
+            "reading": "ちいさいはこにはなにがはいっていますか。",
+            "meaning": "What is in the small box?",
+            "grammarTags": [
+              "adjectives",
+              "particles",
+              "result-state",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-small",
+              "sup-box",
+              "sup-enter",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "stone",
+              "text": "石",
+              "reading": "いし",
+              "meaning": "stone",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-stone"
+              ],
+              "vocabularyItemId": "ja-v-2f734ba866d9",
+              "imageItemId": "ja-v-2f734ba866d9"
+            },
+            {
+              "id": "flower",
+              "text": "花",
+              "reading": "はな",
+              "meaning": "flower",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-flower"
+              ],
+              "vocabularyItemId": "ja-v-fa6a4c8f27b4",
+              "imageItemId": "ja-v-fa6a4c8f27b4"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            },
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            }
+          ],
+          "correctOptionId": "stone",
+          "explanation": "The small box contains the stone, while the large box contains the flower."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box. 入っている is taught as a resulting state. The relative-clause question reaches the later part of the Genki I grammar scope."
+    },
+    {
+      "id": "ja-ctx-hon-01",
+      "revision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "targetOccurrence": {
+        "surface": "本",
+        "reading": "ほん"
+      },
+      "sentence": {
+        "text": "本は机の上に、ノートは椅子の上にあります。",
+        "reading": "ほんはつくえのうえに、ノートはいすのうえにあります。",
+        "meaning": "The book is on the desk, and the notebook is on the chair.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence"
+        ],
+        "supportingVocabularyIds": [
+          "sup-above",
+          "sup-book",
+          "sup-notebook",
+          "sup-desk",
+          "sup-chair"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-hon-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "机の上には何がありますか。",
+            "reading": "つくえのうえにはなにがありますか。",
+            "meaning": "What is on the desk?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-above",
+              "sup-desk",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611",
+              "imageItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2",
+              "imageItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "plate",
+              "text": "皿",
+              "reading": "さら",
+              "meaning": "plate",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-plate"
+              ],
+              "vocabularyItemId": "ja-v-baa4dd2c5986",
+              "imageItemId": "ja-v-baa4dd2c5986"
+            },
+            {
+              "id": "ball",
+              "text": "玉",
+              "reading": "たま",
+              "meaning": "ball",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-ball"
+              ],
+              "vocabularyItemId": "ja-v-66ccf8dd3399",
+              "imageItemId": "ja-v-66ccf8dd3399"
+            }
+          ],
+          "correctOptionId": "book",
+          "explanation": "The book is on the desk; the notebook is on the chair."
+        },
+        {
+          "id": "ja-ctx-hon-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "本は何の上にありますか。",
+            "reading": "ほんはなんのうえにありますか。",
+            "meaning": "What is the book on?",
+            "grammarTags": [
+              "noun-no",
+              "questions",
+              "question-words",
+              "location-existence"
+            ],
+            "supportingVocabularyIds": [
+              "sup-above",
+              "sup-book",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "desk",
+              "text": "机",
+              "reading": "つくえ",
+              "meaning": "the desk",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-desk"
+              ]
+            },
+            {
+              "id": "chair",
+              "text": "椅子",
+              "reading": "いす",
+              "meaning": "the chair",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-chair"
+              ]
+            },
+            {
+              "id": "box",
+              "text": "箱",
+              "reading": "はこ",
+              "meaning": "the box",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-box"
+              ]
+            },
+            {
+              "id": "shelf",
+              "text": "棚",
+              "reading": "たな",
+              "meaning": "the shelf",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-shelf"
+              ]
+            }
+          ],
+          "correctOptionId": "desk",
+          "explanation": "The book is on the desk, while the notebook is on the chair."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Concrete object pictures identify answer concepts rather than recreating the sentence scene. The contrasted object/location facts must remain distinct in listening. Furniture choices are written: the answer is the supporting object (desk), not merely the relation 上."
+    },
+    {
+      "id": "ja-ctx-hon-02",
+      "revision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "targetOccurrence": {
+        "surface": "本",
+        "reading": "ほん"
+      },
+      "sentence": {
+        "text": "先生は図書館で本を読んでいて、学生は教室でノートに書いています。",
+        "reading": "せんせいはとしょかんでほんをよんでいて、がくせいはきょうしつでノートにかいています。",
+        "meaning": "The teacher is reading a book in the library, and the student is writing in a notebook in the classroom.",
+        "grammarTags": [
+          "particles",
+          "te-form-linking",
+          "progressive"
+        ],
+        "supportingVocabularyIds": [
+          "sup-book",
+          "sup-notebook",
+          "sup-teacher",
+          "sup-student",
+          "sup-library",
+          "sup-classroom",
+          "sup-read",
+          "sup-write"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-hon-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "先生は図書館で何を読んでいますか。",
+            "reading": "せんせいはとしょかんでなにをよんでいますか。",
+            "meaning": "What is the teacher reading in the library?",
+            "grammarTags": [
+              "particles",
+              "progressive",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-library",
+              "sup-read",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "book",
+              "text": "本",
+              "reading": "ほん",
+              "meaning": "book",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-book"
+              ],
+              "vocabularyItemId": "ja-v-0ac038632611"
+            },
+            {
+              "id": "notebook",
+              "text": "ノート",
+              "reading": "ノート",
+              "meaning": "notebook",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-notebook"
+              ],
+              "vocabularyItemId": "ja-v-0c144e18f1b2"
+            },
+            {
+              "id": "magazine",
+              "text": "雑誌",
+              "reading": "ざっし",
+              "meaning": "a magazine",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-magazine"
+              ]
+            }
+          ],
+          "correctOptionId": "book",
+          "explanation": "The teacher is reading the book; the student is writing in the notebook."
+        },
+        {
+          "id": "ja-ctx-hon-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "本を読んでいる人は誰ですか。",
+            "reading": "ほんをよんでいるひとはだれですか。",
+            "meaning": "Who is reading the book?",
+            "grammarTags": [
+              "particles",
+              "progressive",
+              "relative-clauses",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-book",
+              "sup-person",
+              "sup-read",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The teacher is reading the book, while the student is writing in the notebook."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Both questions are written because a clear picture is not available for every reading-material/person option. The two activities, objects and roles are deliberately contrasted. The relative-clause question is within later Genki I. 読んでいて explicitly carries the ongoing action into the joined clause. ノートに marks the notebook as the writing destination; its に is covered by the particles tag."
+    },
+    {
+      "id": "ja-ctx-mizu-01",
+      "revision": 1,
+      "targetItemId": "ja-v-28ddfdc9290c",
+      "targetOccurrence": {
+        "surface": "水",
+        "reading": "みず"
+      },
+      "sentence": {
+        "text": "先生は水を、学生はコーヒーを飲みます。",
+        "reading": "せんせいはみずを、がくせいはコーヒーをのみます。",
+        "meaning": "The teacher drinks water, and the student drinks coffee.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-water",
+          "sup-coffee",
+          "sup-teacher",
+          "sup-student",
+          "sup-drink"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-mizu-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "先生は何を飲みますか。",
+            "reading": "せんせいはなにをのみますか。",
+            "meaning": "What does the teacher drink?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-drink",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "water",
+              "text": "水",
+              "reading": "みず",
+              "meaning": "water",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-water"
+              ],
+              "vocabularyItemId": "ja-v-28ddfdc9290c",
+              "imageItemId": "ja-v-28ddfdc9290c"
+            },
+            {
+              "id": "coffee",
+              "text": "コーヒー",
+              "reading": "コーヒー",
+              "meaning": "coffee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-coffee"
+              ],
+              "vocabularyItemId": "ja-v-9ff5251e6f21",
+              "imageItemId": "ja-v-9ff5251e6f21"
+            },
+            {
+              "id": "draft-beer",
+              "text": "生ビール",
+              "reading": "なまびーる",
+              "meaning": "draft beer",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-draft-beer"
+              ],
+              "vocabularyItemId": "ja-v-8fb11237e460",
+              "imageItemId": "ja-v-8fb11237e460"
+            }
+          ],
+          "correctOptionId": "water",
+          "explanation": "The teacher drinks water; the student drinks coffee."
+        },
+        {
+          "id": "ja-ctx-mizu-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "誰が水を飲みますか。",
+            "reading": "だれがみずをのみますか。",
+            "meaning": "Who drinks water?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "questions",
+              "question-words",
+              "subject-ga"
+            ],
+            "supportingVocabularyIds": [
+              "sup-water",
+              "sup-drink",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The teacher drinks the water, while the student drinks coffee."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "pending"
+      },
+      "reviewNotes": "Water, coffee and draft-beer choices reuse their existing concept pictures. The beer picture is an older SVG and needs owner confirmation as a clear distractor; it is never the correct pilot answer. Supporting people or times are written. Contrast the person/time linked to each drink."
+    },
+    {
+      "id": "ja-ctx-mizu-02",
+      "revision": 1,
+      "targetItemId": "ja-v-28ddfdc9290c",
+      "targetOccurrence": {
+        "surface": "水",
+        "reading": "みず"
+      },
+      "sentence": {
+        "text": "父は朝に水を、夜にコーヒーを飲みます。",
+        "reading": "ちちはあさにみずを、よるにコーヒーをのみます。",
+        "meaning": "My father drinks water in the morning and coffee at night.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs",
+          "time-references"
+        ],
+        "supportingVocabularyIds": [
+          "sup-water",
+          "sup-coffee",
+          "sup-father",
+          "sup-morning",
+          "sup-night",
+          "sup-drink"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-mizu-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "父は朝に何を飲みますか。",
+            "reading": "ちちはあさになにをのみますか。",
+            "meaning": "What does my father drink in the morning?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "time-references",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-father",
+              "sup-morning",
+              "sup-drink",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "water",
+              "text": "水",
+              "reading": "みず",
+              "meaning": "water",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-water"
+              ],
+              "vocabularyItemId": "ja-v-28ddfdc9290c",
+              "imageItemId": "ja-v-28ddfdc9290c"
+            },
+            {
+              "id": "coffee",
+              "text": "コーヒー",
+              "reading": "コーヒー",
+              "meaning": "coffee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-coffee"
+              ],
+              "vocabularyItemId": "ja-v-9ff5251e6f21",
+              "imageItemId": "ja-v-9ff5251e6f21"
+            },
+            {
+              "id": "draft-beer",
+              "text": "生ビール",
+              "reading": "なまびーる",
+              "meaning": "draft beer",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-draft-beer"
+              ],
+              "vocabularyItemId": "ja-v-8fb11237e460",
+              "imageItemId": "ja-v-8fb11237e460"
+            }
+          ],
+          "correctOptionId": "water",
+          "explanation": "Water is the morning drink, while coffee is the drink at night."
+        },
+        {
+          "id": "ja-ctx-mizu-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "父はいつ水を飲みますか。",
+            "reading": "ちちはいつみずをのみますか。",
+            "meaning": "When does my father drink water?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "time-references",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-water",
+              "sup-father",
+              "sup-drink",
+              "sup-when"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "morning",
+              "text": "朝",
+              "reading": "あさ",
+              "meaning": "morning",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-morning"
+              ]
+            },
+            {
+              "id": "daytime",
+              "text": "昼",
+              "reading": "ひる",
+              "meaning": "daytime",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-noon"
+              ]
+            },
+            {
+              "id": "night",
+              "text": "夜",
+              "reading": "よる",
+              "meaning": "night",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-night"
+              ]
+            }
+          ],
+          "correctOptionId": "morning",
+          "explanation": "The sentence links water to the morning and coffee to the night."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Water, coffee and draft-beer choices reuse their existing concept pictures. The beer picture is an older SVG and needs owner confirmation as a clear distractor; it is never the correct pilot answer. Supporting people or times are written. Contrast the person/time linked to each drink. An explicit person in the question distinguishes the sentence facts from the learner’s own routine."
+    },
+    {
+      "id": "ja-ctx-koohii-01",
+      "revision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "targetOccurrence": {
+        "surface": "コーヒー",
+        "reading": "コーヒー"
+      },
+      "sentence": {
+        "text": "母はコーヒーを、父は水を飲みます。",
+        "reading": "はははコーヒーを、ちちはみずをのみます。",
+        "meaning": "My mother drinks coffee, and my father drinks water.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-water",
+          "sup-coffee",
+          "sup-mother",
+          "sup-father",
+          "sup-drink"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-koohii-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "母は何を飲みますか。",
+            "reading": "はははなにをのみますか。",
+            "meaning": "What does my mother drink?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-mother",
+              "sup-drink",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "water",
+              "text": "水",
+              "reading": "みず",
+              "meaning": "water",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-water"
+              ],
+              "vocabularyItemId": "ja-v-28ddfdc9290c",
+              "imageItemId": "ja-v-28ddfdc9290c"
+            },
+            {
+              "id": "coffee",
+              "text": "コーヒー",
+              "reading": "コーヒー",
+              "meaning": "coffee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-coffee"
+              ],
+              "vocabularyItemId": "ja-v-9ff5251e6f21",
+              "imageItemId": "ja-v-9ff5251e6f21"
+            },
+            {
+              "id": "draft-beer",
+              "text": "生ビール",
+              "reading": "なまびーる",
+              "meaning": "draft beer",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-draft-beer"
+              ],
+              "vocabularyItemId": "ja-v-8fb11237e460",
+              "imageItemId": "ja-v-8fb11237e460"
+            }
+          ],
+          "correctOptionId": "coffee",
+          "explanation": "My mother drinks coffee; my father drinks water."
+        },
+        {
+          "id": "ja-ctx-koohii-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "コーヒーを飲む人は誰ですか。",
+            "reading": "コーヒーをのむひとはだれですか。",
+            "meaning": "Who drinks coffee?",
+            "grammarTags": [
+              "particles",
+              "short-forms",
+              "relative-clauses",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-coffee",
+              "sup-person",
+              "sup-drink",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "mother",
+              "text": "母",
+              "reading": "はは",
+              "meaning": "my mother",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-mother"
+              ]
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            },
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "the teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ]
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "the student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ]
+            }
+          ],
+          "correctOptionId": "mother",
+          "explanation": "My mother is the person who drinks coffee, while my father drinks water."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Water, coffee and draft-beer choices reuse their existing concept pictures. The beer picture is an older SVG and needs owner confirmation as a clear distractor; it is never the correct pilot answer. Supporting people or times are written. Contrast the person/time linked to each drink. 母 and 父 refer to the speaker’s own parents. The relative-clause question is within later Genki I."
+    },
+    {
+      "id": "ja-ctx-koohii-02",
+      "revision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "targetOccurrence": {
+        "surface": "コーヒー",
+        "reading": "コーヒー"
+      },
+      "sentence": {
+        "text": "母は朝にコーヒーを、夜に水を飲みます。",
+        "reading": "はははあさにコーヒーを、よるにみずをのみます。",
+        "meaning": "My mother drinks coffee in the morning and water at night.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs",
+          "time-references"
+        ],
+        "supportingVocabularyIds": [
+          "sup-water",
+          "sup-coffee",
+          "sup-mother",
+          "sup-morning",
+          "sup-night",
+          "sup-drink"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-koohii-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "母は朝に何を飲みますか。",
+            "reading": "はははあさになにをのみますか。",
+            "meaning": "What does my mother drink in the morning?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "time-references",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-mother",
+              "sup-morning",
+              "sup-drink",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "picture",
+            "text"
+          ],
+          "options": [
+            {
+              "id": "water",
+              "text": "水",
+              "reading": "みず",
+              "meaning": "water",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-water"
+              ],
+              "vocabularyItemId": "ja-v-28ddfdc9290c",
+              "imageItemId": "ja-v-28ddfdc9290c"
+            },
+            {
+              "id": "coffee",
+              "text": "コーヒー",
+              "reading": "コーヒー",
+              "meaning": "coffee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-coffee"
+              ],
+              "vocabularyItemId": "ja-v-9ff5251e6f21",
+              "imageItemId": "ja-v-9ff5251e6f21"
+            },
+            {
+              "id": "draft-beer",
+              "text": "生ビール",
+              "reading": "なまびーる",
+              "meaning": "draft beer",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-draft-beer"
+              ],
+              "vocabularyItemId": "ja-v-8fb11237e460",
+              "imageItemId": "ja-v-8fb11237e460"
+            }
+          ],
+          "correctOptionId": "coffee",
+          "explanation": "Coffee is the morning drink, while water is the drink at night."
+        },
+        {
+          "id": "ja-ctx-koohii-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "母はいつコーヒーを飲みますか。",
+            "reading": "はははいつコーヒーをのみますか。",
+            "meaning": "When does my mother drink coffee?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "time-references",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-coffee",
+              "sup-mother",
+              "sup-drink",
+              "sup-when"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "morning",
+              "text": "朝",
+              "reading": "あさ",
+              "meaning": "morning",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-morning"
+              ]
+            },
+            {
+              "id": "daytime",
+              "text": "昼",
+              "reading": "ひる",
+              "meaning": "daytime",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-noon"
+              ]
+            },
+            {
+              "id": "night",
+              "text": "夜",
+              "reading": "よる",
+              "meaning": "night",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-night"
+              ]
+            }
+          ],
+          "correctOptionId": "morning",
+          "explanation": "The sentence links coffee to the morning and water to the night."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Water, coffee and draft-beer choices reuse their existing concept pictures. The beer picture is an older SVG and needs owner confirmation as a clear distractor; it is never the correct pilot answer. Supporting people or times are written. Contrast the person/time linked to each drink. An explicit person in the question distinguishes the sentence facts from the learner’s own routine."
+    },
+    {
+      "id": "ja-ctx-kuruma-01",
+      "revision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "targetOccurrence": {
+        "surface": "車",
+        "reading": "くるま"
+      },
+      "sentence": {
+        "text": "車は学校の前に、バスは駅の前に止まっています。",
+        "reading": "くるまはがっこうのまえに、バスはえきのまえにとまっています。",
+        "meaning": "The car is parked in front of the school, and the bus is stopped in front of the station.",
+        "grammarTags": [
+          "noun-no",
+          "particles",
+          "location-existence",
+          "result-state"
+        ],
+        "supportingVocabularyIds": [
+          "sup-car",
+          "sup-bus",
+          "sup-school",
+          "sup-station",
+          "sup-front",
+          "sup-stop"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-kuruma-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "学校の前には何が止まっていますか。",
+            "reading": "がっこうのまえにはなにがとまっていますか。",
+            "meaning": "What is stopped in front of the school?",
+            "grammarTags": [
+              "noun-no",
+              "particles",
+              "result-state",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-school",
+              "sup-front",
+              "sup-stop",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "car",
+              "text": "車",
+              "reading": "くるま",
+              "meaning": "car",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car"
+              ],
+              "vocabularyItemId": "ja-v-f71f9de56223"
+            },
+            {
+              "id": "bus",
+              "text": "バス",
+              "reading": "バス",
+              "meaning": "bus",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-bus"
+              ]
+            },
+            {
+              "id": "bicycle",
+              "text": "自転車",
+              "reading": "じてんしゃ",
+              "meaning": "bicycle",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-bicycle"
+              ]
+            },
+            {
+              "id": "train",
+              "text": "電車",
+              "reading": "でんしゃ",
+              "meaning": "train",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-train"
+              ]
+            }
+          ],
+          "correctOptionId": "car",
+          "explanation": "The car is in front of the school, while the bus is in front of the station."
+        },
+        {
+          "id": "ja-ctx-kuruma-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "車はどこの前に止まっていますか。",
+            "reading": "くるまはどこのまえにとまっていますか。",
+            "meaning": "What place is the car parked in front of?",
+            "grammarTags": [
+              "noun-no",
+              "particles",
+              "result-state",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-car",
+              "sup-front",
+              "sup-stop",
+              "sup-where"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "school",
+              "text": "学校",
+              "reading": "がっこう",
+              "meaning": "school",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-school"
+              ]
+            },
+            {
+              "id": "station",
+              "text": "駅",
+              "reading": "えき",
+              "meaning": "the station",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-station"
+              ]
+            },
+            {
+              "id": "hospital",
+              "text": "病院",
+              "reading": "びょういん",
+              "meaning": "the hospital",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-hospital"
+              ]
+            },
+            {
+              "id": "library",
+              "text": "図書館",
+              "reading": "としょかん",
+              "meaning": "the library",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-library"
+              ]
+            }
+          ],
+          "correctOptionId": "school",
+          "explanation": "The car is in front of the school; the bus is in front of the station."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Keep vehicle and place answers written because a clear matching picture is not available for every option. The distractors remain in the same vehicle/place categories. 止まっている describes a resulting state."
+    },
+    {
+      "id": "ja-ctx-kuruma-02",
+      "revision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "targetOccurrence": {
+        "surface": "車",
+        "reading": "くるま"
+      },
+      "sentence": {
+        "text": "父は車で、母はバスで駅に行きます。",
+        "reading": "ちちはくるまで、はははバスでえきにいきます。",
+        "meaning": "My father goes to the station by car, and my mother goes by bus.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs",
+          "transport"
+        ],
+        "supportingVocabularyIds": [
+          "sup-car",
+          "sup-bus",
+          "sup-mother",
+          "sup-father",
+          "sup-station",
+          "sup-go"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-kuruma-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "父はどうやって駅に行きますか。",
+            "reading": "ちちはどうやってえきにいきますか。",
+            "meaning": "How does my father go to the station?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "transport",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-father",
+              "sup-station",
+              "sup-go",
+              "sup-how"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "car",
+              "text": "車",
+              "reading": "くるま",
+              "meaning": "car",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car"
+              ],
+              "vocabularyItemId": "ja-v-f71f9de56223"
+            },
+            {
+              "id": "bus",
+              "text": "バス",
+              "reading": "バス",
+              "meaning": "bus",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-bus"
+              ]
+            },
+            {
+              "id": "bicycle",
+              "text": "自転車",
+              "reading": "じてんしゃ",
+              "meaning": "bicycle",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-bicycle"
+              ]
+            },
+            {
+              "id": "train",
+              "text": "電車",
+              "reading": "でんしゃ",
+              "meaning": "train",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-train"
+              ]
+            }
+          ],
+          "correctOptionId": "car",
+          "explanation": "My father goes by car, while my mother goes by bus."
+        },
+        {
+          "id": "ja-ctx-kuruma-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "誰が車で駅に行きますか。",
+            "reading": "だれがくるまでえきにいきますか。",
+            "meaning": "Who goes to the station by car?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "transport",
+              "questions",
+              "question-words",
+              "subject-ga"
+            ],
+            "supportingVocabularyIds": [
+              "sup-car",
+              "sup-station",
+              "sup-go",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "mother",
+              "text": "母",
+              "reading": "はは",
+              "meaning": "my mother",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-mother"
+              ]
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            },
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "the teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ]
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "the student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ]
+            }
+          ],
+          "correctOptionId": "father",
+          "explanation": "My father travels by car; my mother travels by bus."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Written vehicle/person choices keep all options semantically comparable. Transport で is a later Genki I point, so this variant should be filtered out if a future profile ends before that point. 母 and 父 refer to the speaker’s own parents."
+    },
+    {
+      "id": "ja-ctx-sensei-01",
+      "revision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "targetOccurrence": {
+        "surface": "先生",
+        "reading": "せんせい"
+      },
+      "sentence": {
+        "text": "田中さんは先生で、佐藤さんは医者です。",
+        "reading": "たなかさんはせんせいで、さとうさんはいしゃです。",
+        "meaning": "Mr./Ms. Tanaka is a teacher, and Mr./Ms. Sato is a doctor.",
+        "grammarTags": [
+          "copula",
+          "noun-adjective-linking"
+        ],
+        "supportingVocabularyIds": [
+          "sup-teacher",
+          "sup-doctor",
+          "sup-tanaka",
+          "sup-sato"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-sensei-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "田中さんのお仕事は何ですか。",
+            "reading": "たなかさんのおしごとはなんですか。",
+            "meaning": "What does Mr./Ms. Tanaka do for work?",
+            "grammarTags": [
+              "noun-no",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-work",
+              "sup-tanaka",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "doctor",
+              "text": "医者",
+              "reading": "いしゃ",
+              "meaning": "doctor",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-doctor"
+              ]
+            },
+            {
+              "id": "office-worker",
+              "text": "会社員",
+              "reading": "かいしゃいん",
+              "meaning": "company employee",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-office-worker"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "Mr./Ms. Tanaka is the teacher, while Mr./Ms. Sato is the doctor."
+        },
+        {
+          "id": "ja-ctx-sensei-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "先生は誰ですか。",
+            "reading": "せんせいはだれですか。",
+            "meaning": "Who is the teacher?",
+            "grammarTags": [
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "tanaka",
+              "text": "田中さん",
+              "reading": "たなかさん",
+              "meaning": "Mr./Ms. Tanaka",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-tanaka"
+              ]
+            },
+            {
+              "id": "sato",
+              "text": "佐藤さん",
+              "reading": "さとうさん",
+              "meaning": "Mr./Ms. Sato",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-sato"
+              ]
+            },
+            {
+              "id": "yamada",
+              "text": "山田さん",
+              "reading": "やまださん",
+              "meaning": "Mr./Ms. Yamada",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-yamada"
+              ]
+            }
+          ],
+          "correctOptionId": "tanaka",
+          "explanation": "Mr./Ms. Tanaka is the teacher; Mr./Ms. Sato is the doctor."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "Names and occupations use written options; generic people pictures cannot identify these named speakers. Job choices are all occupations. The honorific さん does not identify gender, so English uses Mr./Ms."
+    },
+    {
+      "id": "ja-ctx-sensei-02",
+      "revision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "targetOccurrence": {
+        "surface": "先生",
+        "reading": "せんせい"
+      },
+      "sentence": {
+        "text": "先生は七時に学校に来て、学生は八時に来ます。",
+        "reading": "せんせいはしちじにがっこうにきて、がくせいははちじにきます。",
+        "meaning": "The teacher comes to school at seven o’clock, and the student comes at eight.",
+        "grammarTags": [
+          "particles",
+          "polite-verbs",
+          "time-references",
+          "te-form-linking"
+        ],
+        "supportingVocabularyIds": [
+          "sup-teacher",
+          "sup-student",
+          "sup-school",
+          "sup-seven-oclock",
+          "sup-eight-oclock",
+          "sup-come"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-sensei-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "七時に学校に来る人は誰ですか。",
+            "reading": "しちじにがっこうにくるひとはだれですか。",
+            "meaning": "Who comes to school at seven o’clock?",
+            "grammarTags": [
+              "particles",
+              "time-references",
+              "short-forms",
+              "relative-clauses",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-person",
+              "sup-school",
+              "sup-seven-oclock",
+              "sup-come",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The teacher comes at seven, while the student comes at eight."
+        },
+        {
+          "id": "ja-ctx-sensei-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "先生は何時に学校に来ますか。",
+            "reading": "せんせいはなんじにがっこうにきますか。",
+            "meaning": "What time does the teacher come to school?",
+            "grammarTags": [
+              "particles",
+              "polite-verbs",
+              "time-references",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-school",
+              "sup-come",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "seven",
+              "text": "七時",
+              "reading": "しちじ",
+              "meaning": "seven o’clock",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-seven-oclock"
+              ]
+            },
+            {
+              "id": "eight",
+              "text": "八時",
+              "reading": "はちじ",
+              "meaning": "eight o’clock",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-eight-oclock"
+              ]
+            },
+            {
+              "id": "six",
+              "text": "六時",
+              "reading": "ろくじ",
+              "meaning": "six o’clock",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-six-oclock"
+              ]
+            }
+          ],
+          "correctOptionId": "seven",
+          "explanation": "The teacher comes to school at seven o’clock; eight is the student’s time."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "All roles/times remain written. The exact reading of 七時 is しちじ and 来る changes reading across 来て/来ます/来る. The relative-clause question is within later Genki I."
+    },
+    {
+      "id": "ja-ctx-hashiru-01",
+      "revision": 1,
+      "targetItemId": "ja-v-97526e11c703",
+      "targetOccurrence": {
+        "surface": "走っていて",
+        "reading": "はしっていて"
+      },
+      "sentence": {
+        "text": "先生は公園で走っていて、学生は教室で勉強しています。",
+        "reading": "せんせいはこうえんではしっていて、がくせいはきょうしつでべんきょうしています。",
+        "meaning": "The teacher is running in the park, and the student is studying in the classroom.",
+        "grammarTags": [
+          "particles",
+          "te-form-linking",
+          "progressive"
+        ],
+        "supportingVocabularyIds": [
+          "sup-teacher",
+          "sup-student",
+          "sup-park",
+          "sup-classroom",
+          "sup-run",
+          "sup-study"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-hashiru-01-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "先生は公園で何をしていますか。",
+            "reading": "せんせいはこうえんでなにをしていますか。",
+            "meaning": "What is the teacher doing in the park?",
+            "grammarTags": [
+              "particles",
+              "progressive",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-teacher",
+              "sup-park",
+              "sup-what"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "running",
+              "text": "走っています",
+              "reading": "はしっています",
+              "meaning": "is running",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-run"
+              ],
+              "vocabularyItemId": "ja-v-97526e11c703"
+            },
+            {
+              "id": "walking",
+              "text": "歩いています",
+              "reading": "あるいています",
+              "meaning": "is walking",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-walk"
+              ]
+            },
+            {
+              "id": "swimming",
+              "text": "泳いでいます",
+              "reading": "およいでいます",
+              "meaning": "is swimming",
+              "grammarTags": [
+                "progressive"
+              ],
+              "supportingVocabularyIds": [
+                "sup-swim"
+              ]
+            }
+          ],
+          "correctOptionId": "running",
+          "explanation": "The teacher is running; studying in the classroom is the student’s activity."
+        },
+        {
+          "id": "ja-ctx-hashiru-01-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "走っている人は誰ですか。",
+            "reading": "はしっているひとはだれですか。",
+            "meaning": "Who is running?",
+            "grammarTags": [
+              "progressive",
+              "relative-clauses",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-person",
+              "sup-run",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "teacher",
+              "text": "先生",
+              "reading": "せんせい",
+              "meaning": "teacher",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-teacher"
+              ],
+              "vocabularyItemId": "ja-v-497356cf0646"
+            },
+            {
+              "id": "student",
+              "text": "学生",
+              "reading": "がくせい",
+              "meaning": "student",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-student"
+              ],
+              "vocabularyItemId": "ja-v-9567eaf8fe9b"
+            },
+            {
+              "id": "father",
+              "text": "父",
+              "reading": "ちち",
+              "meaning": "my father",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-father"
+              ]
+            }
+          ],
+          "correctOptionId": "teacher",
+          "explanation": "The teacher is the person running in the park, while the student is studying."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "pending"
+      },
+      "reviewNotes": "The target occurrence is 走っていて, an inflection of catalogue 走る. Action choices keep the same progressive form and stay written because matching clear pictures do not exist for every action. The relative-clause question is within later Genki I. 走っていて explicitly carries the ongoing action into the joined clause."
+    },
+    {
+      "id": "ja-ctx-hashiru-02",
+      "revision": 1,
+      "targetItemId": "ja-v-97526e11c703",
+      "targetOccurrence": {
+        "surface": "走って",
+        "reading": "はしって"
+      },
+      "sentence": {
+        "text": "兄は学校まで走って、妹は歩いて行きます。",
+        "reading": "あにはがっこうまではしって、いもうとはあるいていきます。",
+        "meaning": "My older brother runs to school, and my younger sister walks there.",
+        "grammarTags": [
+          "particles",
+          "te-form-linking",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-older-brother",
+          "sup-younger-sister",
+          "sup-school",
+          "sup-run",
+          "sup-walk",
+          "sup-go"
+        ]
+      },
+      "questions": [
+        {
+          "id": "ja-ctx-hashiru-02-target",
+          "revision": 1,
+          "kind": "target",
+          "prompt": {
+            "text": "兄は学校までどうやって行きますか。",
+            "reading": "あにはがっこうまでどうやっていきますか。",
+            "meaning": "How does my older brother get to school?",
+            "grammarTags": [
+              "particles",
+              "te-form-linking",
+              "polite-verbs",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-older-brother",
+              "sup-school",
+              "sup-go",
+              "sup-how"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "running",
+              "text": "走って行きます",
+              "reading": "はしっていきます",
+              "meaning": "goes by running",
+              "grammarTags": [
+                "te-form-linking",
+                "polite-verbs"
+              ],
+              "supportingVocabularyIds": [
+                "sup-run",
+                "sup-go"
+              ],
+              "vocabularyItemId": "ja-v-97526e11c703"
+            },
+            {
+              "id": "walking",
+              "text": "歩いて行きます",
+              "reading": "あるいていきます",
+              "meaning": "goes on foot",
+              "grammarTags": [
+                "te-form-linking",
+                "polite-verbs"
+              ],
+              "supportingVocabularyIds": [
+                "sup-walk",
+                "sup-go"
+              ]
+            },
+            {
+              "id": "car",
+              "text": "車で行きます",
+              "reading": "くるまでいきます",
+              "meaning": "goes by car",
+              "grammarTags": [
+                "transport",
+                "polite-verbs"
+              ],
+              "supportingVocabularyIds": [
+                "sup-car",
+                "sup-go"
+              ]
+            }
+          ],
+          "correctOptionId": "running",
+          "explanation": "My older brother runs to school, while my younger sister walks."
+        },
+        {
+          "id": "ja-ctx-hashiru-02-detail",
+          "revision": 1,
+          "kind": "detail",
+          "prompt": {
+            "text": "学校まで走る人は誰ですか。",
+            "reading": "がっこうまではしるひとはだれですか。",
+            "meaning": "Who runs to school?",
+            "grammarTags": [
+              "particles",
+              "short-forms",
+              "relative-clauses",
+              "copula",
+              "questions",
+              "question-words"
+            ],
+            "supportingVocabularyIds": [
+              "sup-person",
+              "sup-school",
+              "sup-run",
+              "sup-who"
+            ]
+          },
+          "formats": [
+            "text"
+          ],
+          "options": [
+            {
+              "id": "older-brother",
+              "text": "兄",
+              "reading": "あに",
+              "meaning": "my older brother",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-older-brother"
+              ]
+            },
+            {
+              "id": "younger-sister",
+              "text": "妹",
+              "reading": "いもうと",
+              "meaning": "my younger sister",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-younger-sister"
+              ]
+            },
+            {
+              "id": "mother",
+              "text": "母",
+              "reading": "はは",
+              "meaning": "my mother",
+              "grammarTags": [],
+              "supportingVocabularyIds": [
+                "sup-mother"
+              ]
+            }
+          ],
+          "correctOptionId": "older-brother",
+          "explanation": "My older brother runs; my younger sister walks."
+        }
+      ],
+      "recordings": [],
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      },
+      "reviewNotes": "The target occurrence is 走って, an inflection of catalogue 走る. Action/person choices remain written. The car distractor adds transport で (later Genki I) to this question’s requirements; the form is tagged on that option. 兄 and 妹 refer to the speaker’s own siblings."
+    }
+  ]
+}

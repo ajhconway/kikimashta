@@ -35,6 +35,17 @@ create function pg_temp.note_payload(id text, body text, at_ms bigint) returns j
 language sql immutable security invoker as $$
   select jsonb_build_object('id', id, 'language', 'ja-JP', 'itemId', 'ja-cat', 'text', body, 'updatedAt', at_ms);
 $$;
+create function pg_temp.contextual_payload(id text, exercise text, correct boolean default true) returns jsonb
+language sql immutable security invoker as $$
+  select pg_temp.attempt_payload(id) || jsonb_build_object(
+    'choiceIds', jsonb_build_array('teacher', 'student'),
+    'selectedId', case when correct then 'teacher' else 'student' end, 'correct', correct,
+    'context', jsonb_build_object('phase', 'review', 'exercise', exercise,
+      'recordingSrc', 'audio/context/sentence.mp3', 'replays', 1, 'schedulerVersion', 'fsrs-6-v1',
+      'contextual', jsonb_build_object('stage', case when exercise like 'context-simple-%' then 'simple' else 'contrastive' end,
+        'contextId', 'water-at-school', 'contextRevision', 1, 'questionId', 'who-drinks-water', 'questionRevision', 2,
+        'kind', 'detail', 'correctOptionId', 'teacher', 'sentenceSrc', 'audio/context/sentence.mp3', 'questionSrc', 'audio/context/question.mp3')));
+$$;
 do $$
 begin
   execute format('grant usage on schema %I to authenticated, anon', pg_my_temp_schema()::regnamespace);
@@ -143,6 +154,52 @@ select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id,
   values (auth.uid(), 'invalid-writing-retry', pg_temp.attempt_payload('invalid-writing-retry') ||
     '{"context":{"phase":"review","exercise":"audio-text","recordingSrc":"audio/cat.mp3","replays":0,"schedulerVersion":"fsrs-6-v1","retryOf":""}}')$q$, '23514');
 
+-- Contextual attempts retain the vocabulary target even when the answer differs.
+insert into public.practice_attempts (user_id, attempt_id, payload) values
+  (auth.uid(), 'simple-picture', pg_temp.contextual_payload('simple-picture', 'context-simple-picture')),
+  (auth.uid(), 'simple-text', pg_temp.contextual_payload('simple-text', 'context-simple-text')),
+  (auth.uid(), 'contrastive-picture', pg_temp.contextual_payload('contrastive-picture', 'context-contrastive-picture')),
+  (auth.uid(), 'contrastive-text-miss', pg_temp.contextual_payload('contrastive-text-miss', 'context-contrastive-text', false));
+select pg_temp.assert_true((select count(*) = 4 from public.practice_attempts where attempt_id in
+  ('simple-picture', 'simple-text', 'contrastive-picture', 'contrastive-text-miss')), 'all four contextual exercises round-trip');
+select pg_temp.assert_true((select payload ->> 'itemId' = 'ja-cat'
+  and payload ->> 'selectedId' = 'teacher'
+  and payload -> 'context' -> 'contextual' ->> 'questionRevision' = '2'
+  from public.practice_attempts where attempt_id = 'simple-text'), 'contextual target, detail answer and authored revision stay separate');
+select pg_temp.assert_true((select payload -> 'correct' = 'false'::jsonb and payload ->> 'selectedId' = 'student'
+  from public.practice_attempts where attempt_id = 'contrastive-text-miss'), 'contextual incorrect answers remain valid evidence');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'missing-contextual', pg_temp.contextual_payload('missing-contextual', 'context-simple-text') #- '{context,contextual}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'mismatched-stage', jsonb_set(pg_temp.contextual_payload('mismatched-stage', 'context-simple-text'),
+    '{context,contextual,stage}', '"contrastive"'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'bad-revision', jsonb_set(pg_temp.contextual_payload('bad-revision', 'context-simple-text'),
+    '{context,contextual,questionRevision}', '1.5'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'missing-revision', pg_temp.contextual_payload('missing-revision', 'context-simple-text') #- '{context,contextual,contextRevision}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'unoffered-answer', jsonb_set(pg_temp.contextual_payload('unoffered-answer', 'context-simple-text'),
+    '{context,contextual,correctOptionId}', '"other"'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'unoffered-selection', pg_temp.contextual_payload('unoffered-selection', 'context-simple-text') || '{"selectedId":"other"}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'wrong-grade', pg_temp.contextual_payload('wrong-grade', 'context-simple-text') || '{"correct":false}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'duplicate-choices', pg_temp.contextual_payload('duplicate-choices', 'context-simple-text') || '{"choiceIds":["teacher","teacher"]}')$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'changed-sentence', jsonb_set(pg_temp.contextual_payload('changed-sentence', 'context-simple-text'),
+    '{context,recordingSrc}', '"audio/other.mp3"'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'same-segments', jsonb_set(pg_temp.contextual_payload('same-segments', 'context-simple-text'),
+    '{context,contextual,questionSrc}', '"audio/context/sentence.mp3"'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'unsafe-segment', jsonb_set(pg_temp.contextual_payload('unsafe-segment', 'context-simple-text'),
+    '{context,contextual,questionSrc}', '"audio/../question.mp3"'))$q$, '23514');
+select pg_temp.expect_sqlstate($q$insert into public.practice_attempts (user_id, attempt_id, payload)
+  values (auth.uid(), 'word-with-contextual', jsonb_set(pg_temp.contextual_payload('word-with-contextual', 'context-simple-text'),
+    '{context,exercise}', '"audio-text"'))$q$, '23514');
+
 -- A second authenticated user sees no first-user events and cannot spoof ownership.
 set local request.jwt.claim.sub = '10000000-0000-4000-8000-000000000002';
 set local request.jwt.claims = '{"sub":"10000000-0000-4000-8000-000000000002","role":"authenticated"}';
@@ -178,13 +235,13 @@ select pg_temp.expect_sqlstate($q$insert into public.card_note_events (user_id, 
   values (auth.uid(), 'anon-note', pg_temp.note_payload('anon-note', '', 1000))$q$, '42501');
 
 reset role;
-select pg_temp.assert_true((select count(*) = 4 from public.practice_attempts
+select pg_temp.assert_true((select count(*) = 8 from public.practice_attempts
   where user_id = '10000000-0000-4000-8000-000000000001'), 'cross-user/anonymous attempts left original account intact');
 select pg_temp.assert_true((select count(*) = 2 from public.card_note_events
   where user_id = '10000000-0000-4000-8000-000000000001'), 'cross-user/anonymous attempts left original notes intact');
 delete from auth.users where id = '10000000-0000-4000-8000-000000000002';
 select pg_temp.assert_true(not exists (select 1 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000002'), 'account deletion cascades its attempt events');
 select pg_temp.assert_true(not exists (select 1 from public.card_note_events where user_id = '10000000-0000-4000-8000-000000000002'), 'account deletion cascades its note events');
-select pg_temp.assert_true((select count(*) = 4 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000001'), 'deleting another account preserves the first account');
+select pg_temp.assert_true((select count(*) = 8 from public.practice_attempts where user_id = '10000000-0000-4000-8000-000000000001'), 'deleting another account preserves the first account');
 select count(*) as checks_passed, 'Sync SQL checks passed; fixtures are being rolled back.' as result from pg_temp.sync_test_results;
 rollback;
