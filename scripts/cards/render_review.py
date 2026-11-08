@@ -67,6 +67,45 @@ def render_graph(cards, graph):
     (DATA / 'dependency-graph.md').write_text('\n'.join(lines) + '\n')
 
 
+def asset_status_label(asset):
+    """Owner dispositions take precedence over historical revision metadata."""
+    if asset['status'] == 'removed':
+        return 'Removed from vocabulary'
+    if asset['status'] == 'replace-later':
+        return 'Replace later'
+    if asset['status'] == 'approved':
+        return 'Accepted · needs improvement' if asset.get('acceptedWithKnownIssue') else 'Approved'
+    if asset.get('conventionUpdated'):
+        return 'Convention updated · awaiting feedback'
+    return 'Revised · awaiting feedback' if asset.get('revisionRound') else 'Awaiting feedback'
+
+
+def is_pending_revision(asset, manifest):
+    return (asset['status'] == 'awaiting-user-feedback'
+            and bool(asset.get('revisionRound') or asset.get('conventionUpdated'))
+            and (manifest.get('currentRevisionRound') is None
+                 or asset.get('revisionRound') == manifest['currentRevisionRound']))
+
+
+def disposition_summary(manifest):
+    assets = manifest['assets']
+    parts = [f"{sum(a['status'] == 'approved' for a in assets)} approved"]
+    for status, label in [('replace-later', 'replace later'), ('removed', 'removed')]:
+        count = sum(a['status'] == status for a in assets)
+        if count:
+            parts.append(f'{count} {label}')
+    revised = sum(is_pending_revision(a, manifest) for a in assets)
+    if revised:
+        parts.append(f'{revised} revised')
+    # Every nonfinal disposition still needs feedback, including revision-required
+    # assets that have not yet been regenerated into an awaiting-feedback revision.
+    final_statuses = {'approved', 'replace-later', 'removed'}
+    pending = sum(a['status'] not in final_statuses for a in assets) - revised
+    if pending:
+        parts.append(f'{pending} awaiting feedback')
+    return ' · '.join(parts)
+
+
 def render_batch(path, lookup):
     manifest = json.loads(path.read_text())
     batch_label = 'Batch ' + path.parent.name.split('-')[-1]
@@ -85,18 +124,14 @@ def render_batch(path, lookup):
         name = html.escape(card['meaning'])
         jp = html.escape(card['japanese'])
         number = f'{index:02}'
-        status = ('Accepted · needs improvement' if asset.get('acceptedWithKnownIssue') else 'Approved') if asset['status'] == 'approved' else ('Revised · awaiting feedback' if asset.get('revisionRound') else 'Awaiting feedback')
-        if asset.get('conventionUpdated') and asset['status'] != 'approved':
-            status = 'Convention updated · awaiting feedback'
+        status = asset_status_label(asset)
         caption = f'<b>{number} · {name}</b><span lang="ja">{jp}</span><small>{status}</small>'
         panel = f'<figure><a href="{src}"><img src="{src}" alt="{name}" width="{asset["width"]}" height="{asset["height"]}"></a><figcaption>{caption}</figcaption></figure>'
         panels.append(panel)
-        if ((asset.get('revisionRound') or asset.get('conventionUpdated')) and asset['status'] != 'approved'
-                and (manifest.get('currentRevisionRound') is None
-                     or asset.get('revisionRound') == manifest['currentRevisionRound'])):
+        if is_pending_revision(asset, manifest):
             revised_panels.append(panel)
             revised_numbers.append(number)
-        mini.append(f'<figure><img src="{src}" alt="{name}" width="145" height="145"><figcaption>{number} · {name}</figcaption></figure>')
+        mini.append(f'<figure><img src="{src}" alt="{name}" width="145" height="145"><figcaption>{number} · {name}<small>{status}</small></figcaption></figure>')
         previous = asset.get('previousVersions', [])
         previous_links = ' '.join(f'<a href="{html.escape(Path(old["path"]).name)}">Previous version {i+1}</a>' for i, old in enumerate(previous))
         details.append(f'<details><summary>{number} · {name} — prompt and review notes</summary><p>{html.escape(asset["visualReview"])}</p><p>{previous_links}</p><pre>{html.escape(asset["prompt"])}</pre></details>')
@@ -117,7 +152,9 @@ details{padding:12px 0;border-bottom:1px solid #ded5eb}summary{cursor:pointer}pr
 <p>Ten reusable foundations · Awaiting your feedback. Reply with card numbers and any changes to shape, color, line weight, detail or spacing.</p><div class="grid">'''
     approved_count = sum(a['status'] == 'approved' for a in manifest['assets'])
     gallery = gallery.replace('Batch 01', batch_label)
-    if manifest['status'] == 'approved':
+    if any(a['status'] in {'removed', 'replace-later'} for a in manifest['assets']):
+        gallery = gallery.replace('Ten reusable foundations · Awaiting your feedback.', disposition_summary(manifest) + '.')
+    elif manifest['status'] == 'approved':
         gallery = gallery.replace('Ten reusable foundations · Awaiting your feedback.', 'Batch accepted. Any remaining improvement notes are recorded below.')
     elif not revised_panels:
         gallery = gallery.replace('Ten reusable foundations · Awaiting your feedback.', f'Cards {first_number:02}–{first_number+len(manifest["assets"])-1:02} · Awaiting your feedback.')

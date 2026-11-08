@@ -126,7 +126,7 @@
   },
   {
     "id": "ja-v-89cc0156875d",
-    "concept": "Only two beads in a large counting tray",
+    "concept": "A mostly empty lavender glass jar with three colored counters at the bottom.",
     "visualGroup": "few",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -167,7 +167,7 @@
   },
   {
     "id": "ja-v-a76119b3c712",
-    "concept": "A fluffy animal tail with tufts of fur",
+    "concept": "A magnified patch of golden animal fur with a small cat inset.",
     "visualGroup": "fur",
     "reviewRequired": false
   },
@@ -259,10 +259,11 @@
   },
   {
     "id": "ja-v-89beba69de5a",
-    "concept": "A clock face surrounded by an immediate attention ring",
+    "concept": "A golden clock within a calm lavender attention ring.",
     "visualGroup": "now",
     "reviewRequired": true,
-    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-08f79cb14fd4",
@@ -318,7 +319,7 @@
   },
   {
     "id": "ja-v-a0e6022cc115",
-    "concept": "One highlighted piece of a four-piece puzzle",
+    "concept": "A four-piece puzzle with one pink piece slightly separated from the other three.",
     "visualGroup": "part",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -496,10 +497,11 @@
   },
   {
     "id": "ja-v-89fcef8e86d8",
-    "concept": "Air layers and drifting clouds around planet Earth",
+    "concept": "Earth surrounded by atmospheric layers and three white clouds.",
     "visualGroup": "atmosphere",
     "reviewRequired": true,
-    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-10791214b2c9",
@@ -567,10 +569,11 @@
   },
   {
     "id": "ja-v-a39af9252454",
-    "concept": "A highlighted central bead between four surrounding beads",
+    "concept": "Kiku centered among four lavender cubes, with attention lines emphasizing the cat.",
     "visualGroup": "center",
     "reviewRequired": true,
-    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-7733c49a7e4b",
@@ -798,10 +801,11 @@
   },
   {
     "id": "ja-v-5b39de46794f",
-    "concept": "Three connected steps lead to assembling a block tower",
+    "concept": "A sequence showing a one-cube, two-cube and three-cube tower joined by arrows.",
     "visualGroup": "method",
     "reviewRequired": true,
-    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-823616f3288f",
@@ -880,7 +884,7 @@
   },
   {
     "id": "ja-v-54c8da9a7bac",
-    "concept": "One orange object is separated from a cluster of purple objects",
+    "concept": "One golden cube apart from four lavender cubes, with attention marks.",
     "visualGroup": "other",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -984,7 +988,7 @@
   },
   {
     "id": "ja-v-49863ee12a96",
-    "concept": "A ruler draws one perfectly straight horizontal line",
+    "concept": "A straight violet line guided by a golden ruler, with a pencil at its end.",
     "visualGroup": "straight-line",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -1170,10 +1174,11 @@
   },
   {
     "id": "ja-v-6fe6f680e0e0",
-    "concept": "Two viewers see different sides of the same cube",
+    "concept": "Two viewers look at different colored faces of one cube.",
     "visualGroup": "way-of-seeing",
     "reviewRequired": true,
-    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
+    "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices.",
+    "replaceLater": true
   },
   {
     "id": "ja-v-2850b5703e8b",
@@ -1190,7 +1195,7 @@
   },
   {
     "id": "ja-v-67d99c6ae58e",
-    "concept": "A question mark over three equally offered objects",
+    "concept": "A violet question mark above three closed serving cloches.",
     "visualGroup": "which-one",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."

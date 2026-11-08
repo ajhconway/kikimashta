@@ -278,7 +278,7 @@
   },
   {
     "id": "ja-v-7003bbe10d0b",
-    "concept": "A large green check mark in a circle",
+    "concept": "A green checkmark within a lavender circle.",
     "reviewRequired": true,
     "reviewNote": "A conventional check mark symbolizes correctness.",
     "visualGroup": "正しい"
@@ -311,13 +311,13 @@
   },
   {
     "id": "ja-v-6c0b9f3278dc",
-    "concept": "An eye with iris and pupil",
+    "concept": "An almond-shaped human eye with a lavender iris and black pupil.",
     "reviewRequired": false,
     "visualGroup": "eye"
   },
   {
     "id": "ja-v-a8ca5ef684b8",
-    "concept": "A round eyeball with iris and pupil",
+    "concept": "A whole white eyeball with a lavender iris and black pupil.",
     "reviewRequired": true,
     "reviewNote": "Eye and eyeball should not be contrasted in a picture-only quiz.",
     "visualGroup": "eye"
@@ -422,10 +422,11 @@
   },
   {
     "id": "ja-v-a30018dbdb6b",
-    "concept": "A keyboard sending information into a monitor",
+    "concept": "A keyboard below a monitor, with an arrow carrying data upward into the screen.",
     "reviewRequired": true,
     "reviewNote": "Keyboard and inward arrow represent computer input.",
-    "visualGroup": "入力"
+    "visualGroup": "入力",
+    "replaceLater": true
   },
   {
     "id": "ja-v-5849925b131d",
@@ -548,7 +549,7 @@
   },
   {
     "id": "ja-v-79140f0bf8e7",
-    "concept": "A tiny floppy-eared puppy beside a large paw print",
+    "concept": "A very young golden puppy with an oversized round head, large gentle eyes, floppy ears and short legs.",
     "reviewRequired": true,
     "reviewNote": "Puppy proportions convey young dog; size alone can be ambiguous.",
     "visualGroup": "子犬"
@@ -638,7 +639,7 @@
   },
   {
     "id": "ja-v-65df49688ef0",
-    "concept": "A curved sword with a wrapped handle",
+    "concept": "A slim curved Japanese sword with a golden guard and wrapped violet handle.",
     "reviewRequired": false,
     "visualGroup": "刀"
   },
@@ -671,7 +672,7 @@
   },
   {
     "id": "ja-v-5f0cf40d1630",
-    "concept": "An incorrect equation being changed into a correct one",
+    "concept": "The equation 2 + 2 = 5, with the incorrect 5 crossed out and corrected to 4 above it.",
     "reviewRequired": true,
     "reviewNote": "Correction action is conveyed by a before-and-after arithmetic example.",
     "visualGroup": "正す"
@@ -750,7 +751,7 @@
   },
   {
     "id": "ja-v-a119c15d9de4",
-    "concept": "Several yen coins with the currency symbol",
+    "concept": "Three golden coins, with a yen symbol on the front coin.",
     "reviewRequired": true,
     "reviewNote": "Currency symbol represents yen counter; source English gloss was clipped.",
     "visualGroup": "～円"

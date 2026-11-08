@@ -1,0 +1,17 @@
+{
+  "number": 170,
+  "id": "ja-v-4fd3d09440c1",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE vocabulary flashcard image.\nCorrect the canvas and framing of image1. Create a SQUARE1:1PNGcanvas (same width and height,1024x1024), not a landscape panorama. Keep exactly three UNFILLED violet outline shapes: a CIRCLE, SQUARE and TRIANGLE, equally sized, all in one compact horizontal row across the middle of the square. Each shape is about21%of canvas width, separated by8%canvas-width gaps. Large equal empty space above and below is intentional, so the complete square canvas must remain.\nKeep smooth substantial deep-violet outlines, rounded joins, all interiors empty/transparent, and genuinely transparent outside. No colored fill, symbols, letters, numerals, frame, labels, shadows or decoration. No mascot. Circle, square and triangle only; preserve shapes and exact count.\nThe square CANVAS takes priority over filling the image edge-to-edge. Do not crop the canvas to the horizontal row. Full silhouettes visible with generous margins, readable at145px. transparent_background=true.",
+  "references": [
+    {
+      "path": "artifacts/card-regeneration/batch-11/170-form.png",
+      "role": "edit target: same three unfilled violet shape outlines; change canvas/composition only"
+    },
+    {
+      "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "role": "square1:1 canvas and illustration style only; do not copy mascot or scenery"
+    }
+  ],
+  "output": "artifacts/card-regeneration/batch-11/170-form-v2.png",
+  "styleProfile": "cat-png"
+}

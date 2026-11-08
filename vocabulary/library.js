@@ -200,6 +200,7 @@ import { getLibraryAccount } from '../src/sync/library-bridge'
     const reading = element('p', 'reading', card.reading)
     reading.lang = 'ja'
     content.append(element('p', 'level-label', `Level ${card.sourceLevel}`), heading, reading, element('p', 'meaning', card.meaning))
+    if (card.replaceLater) content.append(element('span', 'review-badge replace-later-badge', 'Replace later'))
     if (card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')

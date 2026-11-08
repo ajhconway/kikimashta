@@ -5,9 +5,27 @@ import struct
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict, deque
 from pathlib import Path
+from prepare import validate_feedback_dispositions
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'content/card-regeneration'
+
+
+def validate_card_disposition(card, feedback):
+    item_id = card['id']
+    if item_id in feedback.get('removedFromVocabulary', {}):
+        reason = feedback['removedFromVocabulary'][item_id]
+        assert card['vocabularyStatus'] == card['practiceStatus'] == 'removed'
+        assert card['removalReason'] == reason and not card['pictureOnlyEligible']
+        assert card['artworkStatus'] != 'approved'
+    elif item_id in feedback.get('replaceLater', {}):
+        reason = feedback['replaceLater'][item_id]
+        assert card['practiceStatus'] == 'replace-later' and not card['pictureOnlyEligible']
+        assert card['replacementReason'] == card['outstandingFeedback'] == reason
+        assert card.get('vocabularyStatus') != 'removed' and card['artworkStatus'] != 'approved'
+    else:
+        assert card['practiceStatus'] == 'staged-for-review'
+        assert card.get('vocabularyStatus') != 'removed'
 
 
 def validate_reference_selection(candidate, approved):
@@ -56,6 +74,7 @@ def validate():
     by_id = {c['id']: c for c in cards}
     feedback_path = DATA / 'user-feedback.json'
     feedback = json.loads(feedback_path.read_text()) if feedback_path.exists() else {}
+    validate_feedback_dispositions(feedback, ids)
     for item_id, concept in feedback.get('conceptOverrides', {}).items():
         assert by_id[item_id]['concept'] == concept, 'User feedback was lost during preparation'
     for card in cards:
@@ -74,7 +93,7 @@ def validate():
     for c in cards:
         assert c['prompt'].strip() and c['concept'].strip()
         assert c['originalConcept'] == originals[c['id']]['concept']
-        assert c['practiceStatus'] == 'staged-for-review'
+        validate_card_disposition(c, feedback)
         if originals[c['id']]['reviewRequired']:
             assert c['reviewRequired'] and not c['pictureOnlyEligible']
         if c['requiresContext']:
@@ -158,6 +177,16 @@ def validate():
         for asset in manifest['assets']:
             path = ROOT / asset['path']
             assert asset['id'] in ids and path.is_file(), asset
+            assert asset['status'] in {'approved', 'awaiting-user-feedback', 'revision-required',
+                                       'generating', 'removed', 'replace-later'}
+            if asset['id'] in feedback.get('removedFromVocabulary', {}):
+                assert asset['status'] == 'removed', 'Removed vocabulary cannot remain approved/pending'
+            elif asset['id'] in feedback.get('replaceLater', {}):
+                assert asset['status'] == 'replace-later', 'Deferred artwork cannot remain approved/pending'
+            else:
+                assert asset['status'] not in {'removed', 'replace-later'}, 'Disposition lacks owner feedback'
+            if manifest['status'] == 'approved':
+                assert asset['status'] in {'approved', 'removed', 'replace-later'}, 'Batch still has unresolved revisions'
             assert asset['prompt'] and asset['tool'] in {'built-in image_gen', 'reuse approved image', 'SVG renderer'}
             if asset['tool'] == 'reuse approved image':
                 sources = [source for source_file in filename.parent.parent.glob('batch-*/manifest.json')
@@ -172,6 +201,8 @@ def validate():
             assert by_id[asset['id']]['artworkStatus'] == asset['status']
             if asset['id'] in feedback.get('approvedCardIds', []):
                 assert asset['status'] == 'approved', 'User approval was lost'
+            if asset['status'] == 'approved':
+                assert asset['id'] in feedback.get('approvedCardIds', []), 'Artwork approval lacks owner feedback'
             if asset['id'] in feedback.get('acceptedWithKnownIssues', {}):
                 assert asset.get('acceptedWithKnownIssue')
                 assert asset['followUp'] == feedback['acceptedWithKnownIssues'][asset['id']]

@@ -1,0 +1,44 @@
+{
+  "issue": 72,
+  "edits": [
+    {
+      "number": 175,
+      "id": "ja-v-67d99c6ae58e",
+      "prompt": "Use case: background-extraction\nMake a CLEAN PRECISE CUTOUT of the intended illustration in this input: one violet question mark above exactly three visible choices: a pink circle, lavender square and sky-blue triangle.\nRemove ALL stray colored pixels, purple/blue/pink fuzzy residue, mottled haze, grain, exterior glow, white fringes and semi-transparent smears OUTSIDE the intended smooth outlines. All space around and between the separate objects and all intended holes must be completely transparent. Retain the illustration's smooth violet contours, original palette, restrained shading INSIDE forms, relative sizes and arrangement.\nThe actual colored objects must have fully OPAQUE fills and smooth crisp edges, with only a very narrow normal antialiased edge. Preserve any opaque white subject details. Never cut holes in object interiors. Recenter the COMPLETE scene with a clean empty transparent margin of about6%on all sides; no object may touch the canvas edge.\nSQUARE1:1PNG canvas, equal width and height. No new objects, background rectangle, checkerboard, labels, shadows or decorative glow. Preserve only the intended one violet question mark above exactly three visible choices: a pink circle, lavender square and sky-blue triangle. transparent_background=true.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-11/175-which-one.png",
+          "role": "edit target; preserve the intended objects and their layout, remove only exterior alpha residue and edge artifacts"
+        }
+      ],
+      "output": "artifacts/card-regeneration/batch-11/175-which-one-v2.png",
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 181,
+      "id": "ja-v-83365ed9e3db",
+      "prompt": "Use case: background-extraction\nMake a CLEAN PRECISE CUTOUT of the intended illustration in this input: exactly two uppercase A glyphs side by side, same design and height, thin lavender A at left and thick dark-violet A at right, with two short attention lines beside the thick A.\nRemove ALL stray colored pixels, purple/blue/pink fuzzy residue, mottled haze, grain, exterior glow, white fringes and semi-transparent smears OUTSIDE the intended smooth outlines. All space around and between the separate objects and all intended holes must be completely transparent. Retain the illustration's smooth violet contours, original palette, restrained shading INSIDE forms, relative sizes and arrangement.\nThe actual colored objects must have fully OPAQUE fills and smooth crisp edges, with only a very narrow normal antialiased edge. Preserve any opaque white subject details. Never cut holes in object interiors. Recenter the COMPLETE scene with a clean empty transparent margin of about6%on all sides; no object may touch the canvas edge.\nSQUARE1:1PNG canvas, equal width and height. No new objects, background rectangle, checkerboard, labels, shadows or decorative glow. Preserve only the intended exactly two uppercase A glyphs side by side, same design and height, thin lavender A at left and thick dark-violet A at right, with two short attention lines beside the thick A. transparent_background=true.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-11/181-bold-letter.png",
+          "role": "edit target; preserve the intended objects and their layout, remove only exterior alpha residue and edge artifacts"
+        }
+      ],
+      "output": "artifacts/card-regeneration/batch-11/181-bold-letter-v2.png",
+      "styleProfile": "cat-png"
+    },
+    {
+      "number": 183,
+      "id": "ja-v-89beba69de5a",
+      "prompt": "Use case: background-extraction\nMake a CLEAN PRECISE CUTOUT of the intended illustration in this input: one golden round clock with opaque white dial, dark-violet hands and four ticks, surrounded by one pale-lavender attention ring and four external emphasis ticks.\nRemove ALL stray colored pixels, purple/blue/pink fuzzy residue, mottled haze, grain, exterior glow, white fringes and semi-transparent smears OUTSIDE the intended smooth outlines. All space around and between the separate objects and all intended holes must be completely transparent. Retain the illustration's smooth violet contours, original palette, restrained shading INSIDE forms, relative sizes and arrangement.\nThe actual colored objects must have fully OPAQUE fills and smooth crisp edges, with only a very narrow normal antialiased edge. Preserve any opaque white subject details. Never cut holes in object interiors. Recenter the COMPLETE scene with a clean empty transparent margin of about6%on all sides; no object may touch the canvas edge.\nSQUARE1:1PNG canvas, equal width and height. No new objects, background rectangle, checkerboard, labels, shadows or decorative glow. Preserve only the intended one golden round clock with opaque white dial, dark-violet hands and four ticks, surrounded by one pale-lavender attention ring and four external emphasis ticks. transparent_background=true.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/batch-11/183-now.png",
+          "role": "edit target; preserve the intended objects and their layout, remove only exterior alpha residue and edge artifacts"
+        }
+      ],
+      "output": "artifacts/card-regeneration/batch-11/183-now-v2.png",
+      "styleProfile": "cat-png"
+    }
+  ]
+}

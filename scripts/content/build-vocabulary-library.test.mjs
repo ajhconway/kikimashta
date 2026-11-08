@@ -186,3 +186,21 @@ test('owner removals survive repeated library rebuilds without changing retained
     assert.deepEqual(readData().cards, [retained])
   }
 })
+
+test('provisional artwork keeps its Replace later marker through repeated library rebuilds without changing context review', t => {
+  const { root, item, visual, save, readData } = fixture(t)
+  save([item], [{ ...visual, replaceLater: true }])
+  for (let rebuild = 0; rebuild < 2; rebuild++) {
+    buildLibrary({ root })
+    assert.equal(readData().cards[0].replaceLater, true)
+    assert.equal(readData().cards[0].reviewRequired, visual.reviewRequired)
+    assert.equal(readData().cards[0].reviewNote, visual.reviewNote)
+  }
+  save([item], [{ ...visual, replaceLater: false }])
+  buildLibrary({ root })
+  assert.equal(readData().cards[0].replaceLater, undefined)
+  for (const replaceLater of ['true', 1]) {
+    save([item], [{ ...visual, replaceLater }])
+    assert.throws(() => buildLibrary({ root }), /Incomplete visual metadata/)
+  }
+})

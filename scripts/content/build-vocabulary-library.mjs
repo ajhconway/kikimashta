@@ -102,7 +102,8 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
     }
     const visual = visuals.get(item.id)
     if (!visual || !nonempty(visual.concept) || !nonempty(visual.visualGroup) || typeof visual.reviewRequired !== 'boolean' ||
-        (visual.reviewRequired && !nonempty(visual.reviewNote))) throw new Error(`Incomplete visual metadata: ${item.id}`)
+        (visual.reviewRequired && !nonempty(visual.reviewNote)) ||
+        (visual.replaceLater !== undefined && typeof visual.replaceLater !== 'boolean')) throw new Error(`Incomplete visual metadata: ${item.id}`)
     const override = overrides[item.id] || {}
     const imageSrc = libraryMediaPath(item.image?.src, 'images')
     if (!existsSync(join(root, 'public', item.image.src))) throw new Error(`Missing image: ${item.image.src}`)
@@ -125,6 +126,7 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
       visualGroup: override.visualGroup || visual.visualGroup, reviewRequired: visual.reviewRequired || Boolean(override.teachingNote),
       ...(override.teachingNote ? { teachingNote: override.teachingNote } : {}),
       ...(visual.reviewNote ? { reviewNote: visual.reviewNote } : {}),
+      ...(visual.replaceLater === true ? { replaceLater: true } : {}),
     }
   }).filter(card => !overrides[card.id]?.removalReason)
   for (const id of Object.keys(overrides)) if (!ids.has(id)) throw new Error(`Unknown review override ID: ${id}`)
