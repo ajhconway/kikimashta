@@ -88,3 +88,7 @@ Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 secon
 ## Mastery demo (#140)
 
 Offer an unsaved Mastery demo alongside the existing random-timer Dev review. The demo presents all eight levels in order, using selected-pack cards and separate in-memory sample schedules. Show the current sample level and its timer; after answers, use the normal FSRS grading and mastery arrows against the sample schedule. Corrective retries stay untimed and do not advance the sample schedule. Keep all sample state separate from real mastery, saved attempts, account sync, and library/pack summaries. If a selected pool is small, repeat cards with separate demo identities so every level remains available. Verify all levels, timer mapping, arrows, retry isolation, and unchanged real browser storage. Serve the completed demo locally for owner review.
+
+## Mastery feedback presentation (#141)
+
+Replace the visible answer slogans with a prominent level-change badge: arrow, Level up/down context, and new mastery label. Level ups use a brief pop and sparkle animation; decreases use a gentler downward entrance. When mastery does not change, keep a simple outcome symbol and a screen-reader announcement. Preserve save gating, grading, question timing, reduced-motion support, and the existing feedback space so cards and Continue remain steady. Update the demo and ordinary review checks for the new presentation.
