@@ -42,6 +42,21 @@ function choice(page: Page, option: ContextualOption, exercise: Exercise) {
   });
 }
 
+async function gridLayout(page: Page) {
+  return page.locator('.contextual-choices').evaluate(grid => {
+    const rect = (element: Element) => {
+      const { x, y, width, height } = element.getBoundingClientRect();
+      return { x: x + scrollX, y: y + scrollY, width, height };
+    };
+    const bounds = rect(grid);
+    // Entrance animations translate cards, but must never change their grid slots.
+    return { grid: bounds, slots: Array.from(grid.querySelectorAll<HTMLElement>('.choice-slot')).map(slot => ({
+      label: slot.querySelector('button')!.getAttribute('aria-label'),
+      x: bounds.x + slot.offsetLeft, y: bounds.y + slot.offsetTop, width: slot.offsetWidth, height: slot.offsetHeight,
+    })) };
+  });
+}
+
 test('contextual practice demo uses real session feedback and retries without changing guest history', async ({ page }) => {
   test.setTimeout(90000);
   await page.addInitScript(() => {
@@ -56,7 +71,7 @@ test('contextual practice demo uses real session feedback and retries without ch
   await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
   await page.getByRole('button', { name: 'Contextual practice demo', exact: true }).click();
   await expect(page.locator('.contextual-practice')).toBeVisible();
-  await expect(page.getByText('Practice demo. Progress is not saved.', { exact: true })).toBeVisible();
+  await expect(page.getByLabel('Practice demo. Progress is not saved.', { exact: true })).toHaveText('Demo · unsaved');
   await expect(page.locator('.contextual-dev-review')).toHaveCount(0);
   expect(await stored(page)).toEqual(baseline);
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
@@ -84,7 +99,12 @@ test('contextual practice demo uses real session feedback and retries without ch
     const { context, question } = authored.find(entry => entry.question.id === questionId)!;
     expect(question.kind).toBe(presentation.kind);
     const audio = quiz.locator('audio');
-    await quiz.getByRole('button', { name: 'Replay sentence and question', exact: true }).click();
+    const replay = quiz.getByRole('button', { name: 'Replay sentence and question', exact: true });
+    await expect(quiz.locator('.quiz-companion')).toBeVisible();
+    const replayBounds = (await replay.boundingBox())!;
+    expect(replayBounds.width).toBeLessThanOrEqual(70);
+    expect(replayBounds.height).toBeCloseTo(replayBounds.width, 0);
+    await replay.click();
     await expect(audio).toHaveAttribute('src', /sentence\.mp3$/);
     const source = (await audio.getAttribute('src'))!;
     const recording = media.contexts.find(entry => entry.contextId === context.id)!.recordings
@@ -97,18 +117,50 @@ test('contextual practice demo uses real session feedback and retries without ch
       await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
     }
     if ('retry' in presentation) expect(snapshot).toEqual(missed);
-    await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
+    await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+    await page.clock.runFor(500);
+    const layout = await gridLayout(page);
     const option = question.options.find(option => presentation.miss ? option.id !== question.correctOptionId : option.id === question.correctOptionId)!;
     await choice(page, option, exercise).click();
-    await expect(page.getByText(presentation.miss ? 'Keep going' : 'Correct', { exact: true })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toBeVisible();
-    await expect(page.getByText(question.prompt.meaning, { exact: true })).toBeVisible();
-    await page.clock.fastForward(10000);
-    await expect(quiz).toHaveAttribute('data-question-id', questionId);
-    await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
+    await expect(quiz.getByText(presentation.miss ? 'Keep going' : 'Correct', { exact: true })).toBeAttached();
+    expect(await gridLayout(page)).toEqual(layout);
     expect(await stored(page)).toEqual(baseline);
-    if (index === 0) await page.evaluate(() => { Math.random = () => .99; });
-    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    if (presentation.miss) {
+      await page.clock.fastForward(10000);
+      await expect(quiz).toHaveAttribute('data-question-id', questionId);
+      await expect(quiz.locator('.contextual-transcript:visible')).toHaveCount(0);
+      const japanese = quiz.getByRole('button', { name: 'Show Japanese', exact: true });
+      await japanese.click();
+      const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
+      await expect(details.getByText(context.sentence.text, { exact: true })).toBeVisible();
+      await expect(details.getByText(question.prompt.text, { exact: true })).toBeVisible();
+      await expect(details.locator('.contextual-reading')).toHaveCount(0);
+      await expect(details.getByText(question.prompt.meaning, { exact: true })).toHaveCount(0);
+      expect(await gridLayout(page)).toEqual(layout);
+      await details.getByRole('button', { name: 'Show English', exact: true }).click();
+      await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeVisible();
+      expect(await gridLayout(page)).toEqual(layout);
+      await details.getByRole('button', { name: 'Close Japanese', exact: true }).click();
+      await expect(japanese).toBeFocused();
+      expect(await gridLayout(page)).toEqual(layout);
+      await japanese.click();
+      await expect(details.getByText(question.prompt.meaning, { exact: true })).toHaveCount(0);
+      await page.keyboard.press('Escape');
+      await expect(details).toBeHidden();
+      await expect(japanese).toBeFocused();
+      expect(await gridLayout(page)).toEqual(layout);
+      await page.evaluate(() => { Math.random = () => .99; });
+      const next = quiz.getByRole('button', { name: 'Continue', exact: true });
+      await expect(next).toBeInViewport();
+      await next.click();
+    } else {
+      await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
+      await expect(quiz.getByRole('button', { name: 'Show Japanese', exact: true })).toHaveCount(0);
+      await expect(quiz.getByRole('button', { name: 'Continue', exact: true })).toHaveCount(0);
+      await page.clock.runFor(1500);
+    }
+    await page.clock.resume();
   }
   await expect(page.getByRole('heading', { name: 'Contextual practice demo complete', exact: true })).toBeVisible();
   expect(await stored(page)).toEqual(baseline);

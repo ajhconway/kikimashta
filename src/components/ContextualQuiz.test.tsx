@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ContextualItem, ContextualPrompt, ContextualQuestion } from '../content/contextual-types';
 import type { PracticeAttempt, WordItem } from '../types';
@@ -23,6 +23,8 @@ function fixture({ recorded = true, id = 'who-drinks', format = 'text' }: {
     review: { text: recorded ? 'approved' : 'pending', audio: recorded ? 'approved' : 'not-generated' }, reviewNotes: 'Fixture.' };
   return contextualQuestion(context, authored, format, vocabulary, () => 0);
 }
+const originalShow = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'showModal');
+const originalClose = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'close');
 const onChoose = vi.fn();
 const onContinue = vi.fn();
 function Harness({ question = fixture(), preview = false }: { question?: Question; preview?: boolean }) {
@@ -39,11 +41,18 @@ const advance = async (ms: number) => { await act(async () => { vi.advanceTimers
 
 beforeEach(() => {
   vi.useFakeTimers();
+  Object.defineProperty(HTMLDialogElement.prototype, 'showModal', { configurable: true, value(this: HTMLDialogElement) { this.setAttribute('open', ''); } });
+  Object.defineProperty(HTMLDialogElement.prototype, 'close', { configurable: true, value(this: HTMLDialogElement) { this.removeAttribute('open'); this.dispatchEvent(new Event('close')); } });
   vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue();
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
   onChoose.mockReset(); onContinue.mockReset();
 });
-afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); });
+afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks();
+  for (const [name, descriptor] of [['showModal', originalShow], ['close', originalClose]] as const) {
+    if (descriptor) Object.defineProperty(HTMLDialogElement.prototype, name, descriptor);
+    else Reflect.deleteProperty(HTMLDialogElement.prototype, name);
+  }
+});
 
 describe('contextual listening and feedback', () => {
   it.each(['text', 'picture'] as const)('lets screen-reader users identify and select %s answers by their content', async format => {
@@ -70,16 +79,37 @@ describe('contextual listening and feedback', () => {
     expect(onReplay).toHaveBeenCalledOnce();
   });
 
-  it('hides the transcript, grades a detail answer separately, and waits for manual Continue', async () => {
+  it('keeps correct feedback compact without revealing Japanese or English', async () => {
     const { container } = render(<Harness/>);
     expect(screen.queryByText('Who drinks water?')).not.toBeInTheDocument();
-    expect(screen.queryByText('先生は水を飲みます。')).not.toBeInTheDocument();
-    await click(screen.getByText('先生').closest('button')!);
+    await click(screen.getByRole('button', { name: 'Choose writing 先生' }));
     expect(onChoose).toHaveBeenCalledWith(expect.objectContaining({ id: 'teacher-answer' }));
     expect(screen.getByText('Correct', { exact: true })).toBeInTheDocument();
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
-    expect(screen.getAllByText('先生は水を飲みます。')).toHaveLength(2);
+    expect(screen.queryByText('Who drinks water?')).not.toBeInTheDocument();
+    expect(screen.queryByText('先生は水を飲みます。')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Show Japanese' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Continue' })).not.toBeInTheDocument();
     expect(container.querySelector('[data-correct=true]')).toHaveAttribute('data-selected', 'true');
+  });
+
+  it('reveals Japanese then optional English after a miss and restores focus when closed', async () => {
+    render(<Harness/>);
+    await click(screen.getByText('学生').closest('button')!);
+    expect(screen.getByText('Keep going', { exact: true })).toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    const trigger = screen.getByRole('button', { name: 'Show Japanese' });
+    await click(trigger);
+    const dialog = screen.getByRole('dialog', { name: 'Japanese' });
+    expect(within(dialog).getByText('先生は水を飲みます。')).toBeVisible();
+    expect(within(dialog).queryByText('Who drinks water?')).not.toBeInTheDocument();
+    expect(within(dialog).queryByText('The teacher drinks water.')).not.toBeInTheDocument();
+    await click(within(dialog).getByRole('button', { name: 'Show English' }));
+    expect(within(dialog).getByText('Who drinks water?')).toBeVisible();
+    await click(within(dialog).getByRole('button', { name: 'Close Japanese' }));
+    expect(trigger).toHaveFocus();
+    await click(trigger);
+    expect(within(screen.getByRole('dialog')).queryByText('Who drinks water?')).not.toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Close Japanese' }));
     await advance(10000); expect(onContinue).not.toHaveBeenCalled();
     await click(screen.getByRole('button', { name: 'Continue' }));
     expect(onContinue).toHaveBeenCalledOnce();
@@ -157,7 +187,7 @@ describe('contextual listening and feedback', () => {
     screen.getAllByRole('button', { name: /Choose writing/ }).forEach(button => expect(button).toBeDisabled());
     await click(screen.getByRole('button', { name: 'Show text for inspection' }));
     expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
-    await click(screen.getByText('先生').closest('button')!);
+    await click(screen.getByRole('button', { name: 'Choose writing 先生' }));
     expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
   });
