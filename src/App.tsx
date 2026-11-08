@@ -18,12 +18,13 @@ import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-ti
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
-import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange, type DensityForecast } from './core/density';
 import { initialVoiceIds } from './core/voices';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { AnswerRecovery } from './progress/recovery';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
+import { ReviewForecast } from './components/ReviewForecast';
 import { DensityIndicator, HomeIntensity } from './components/PaceControl';
 import './styles.css';
 import './writing-fonts.css';
@@ -178,6 +179,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [autoPaused, setAutoPaused] = useState(false);
   const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
+  const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
+    [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
+  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
+  const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
@@ -239,17 +244,39 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       try {
         const attempts = await store.history(practicePool.language);
         const { schedules } = await learningSnapshot(attempts);
-        const forecast = await forecastDensity(schedules, now());
+        const at = now();
+        const forecast = await forecastDensity(schedules, at);
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
+        setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
       } catch {
-        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); }
+        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, forecastScope]);
+
+  useEffect(() => {
+    if (screen !== 'home') return;
+    const refreshHome = () => {
+      if (document.visibilityState !== 'hidden') setRefresh(value => value + 1);
+    };
+    const at = now();
+    const midnight = new Date(at);
+    midnight.setHours(24, 0, 0, 0);
+    const timer = window.setTimeout(refreshHome, Math.max(1, midnight.getTime() - at));
+    window.addEventListener('focus', refreshHome);
+    window.addEventListener('pageshow', refreshHome);
+    document.addEventListener('visibilitychange', refreshHome);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('focus', refreshHome);
+      window.removeEventListener('pageshow', refreshHome);
+      document.removeEventListener('visibilitychange', refreshHome);
+    };
+  }, [screen, refresh, now]);
 
   useEffect(() => {
     const element = audio.current;
@@ -497,6 +524,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
+          loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
