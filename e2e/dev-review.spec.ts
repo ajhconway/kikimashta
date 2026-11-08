@@ -62,6 +62,7 @@ test('Dev review opens options, simulates selected writing mastery and leaves re
 
 test('contextual samples use selected mastery, remain untimed and keep real progress unchanged', async ({ page }) => {
   await page.goto('./');
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
   const before = await storedHistory(page);
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await page.getByRole('checkbox', { name: 'Words · Pictures', exact: true }).uncheck();
