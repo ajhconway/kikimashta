@@ -1,0 +1,123 @@
+{
+  "issue": 150,
+  "batch": 4,
+  "tool": "built-in image_gen",
+  "status": "awaiting-owner-review",
+  "images": [
+    {
+      "slug": "restaurant",
+      "id": "es-419-travel-restaurant",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One friendly small restaurant facade with a warm golden awning, lavender roof trim, broad blue windows and a large simple plate-and-fork-and-spoon pictogram above the entrance. Make the dining symbol prominent enough to distinguish this building from a hotel, hospital or pharmacy. No words, letters, brand, people, outdoor tables, street or other buildings.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+      "transparent_background": true,
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceRole": "style-only",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "path": "artifacts/spanish-travel-art/batch-04/restaurant-v1.png",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6a8f07fc-46c0-4928-b6bd-6f2dcabdface.png",
+      "sha256": "0df277e0e41d17ba695b9a0a4176671aa7aabaf549da9d715c17b1410eb6c2df",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 6,
+      "status": "awaiting-owner-review",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 593270,
+        "opaquePixels": 965422,
+        "opaqueWhitePixels": 20420
+      }
+    },
+    {
+      "slug": "bread",
+      "id": "es-419-travel-bread",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One small golden-brown loaf of bread with two or three simple scored cuts on top and a single slice resting closely in front, showing an opaque ivory crumb interior. Rounded substantial forms and restrained shading. No plate, butter, knife, wheat stalks, labels or other foods.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+      "transparent_background": true,
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceRole": "style-only",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "path": "artifacts/spanish-travel-art/batch-04/bread-v1.png",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-5bd4ddae-1d40-4ed5-b14e-3ec64a7d5e44.png",
+      "sha256": "843bf04cbd401ce3ba501fbbaa30360ee055b46879ebd3c64e011924a93f5992",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 6,
+      "status": "awaiting-owner-review",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1062101,
+        "opaquePixels": 501276,
+        "opaqueWhitePixels": 0
+      }
+    },
+    {
+      "slug": "milk",
+      "id": "es-419-travel-milk",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One plain ivory-white milk carton with a folded top and small lavender cap, alongside one clear outlined drinking glass filled with opaque white milk. The glass and carton form one compact product vignette. No writing, brand, letters, numbers, fruit, straw or decorative splash. The white carton and milk must remain opaque against transparency.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+      "transparent_background": true,
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceRole": "style-only",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "path": "artifacts/spanish-travel-art/batch-04/milk-v1.png",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a7d00898-e17e-4377-a4bf-8b84a438635c.png",
+      "sha256": "ab6c590f6879bb1404982b2a7c522973333d007e6bdd233c0d390f1b4dc2f831",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 6,
+      "status": "awaiting-owner-review",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 894249,
+        "opaquePixels": 667027,
+        "opaqueWhitePixels": 21784
+      }
+    },
+    {
+      "slug": "juice",
+      "id": "es-419-travel-juice",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One simple clear outlined glass of orange fruit juice, with one small orange half resting beside it to make the juice meaning readable. Golden-orange liquid, lavender rim accents, soft shading, full silhouette visible. No straw, cocktail garnish, ice cubes, milk carton, drink label, letters, numbers or decorative splash.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+      "transparent_background": true,
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceRole": "style-only",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "path": "artifacts/spanish-travel-art/batch-04/juice-v1.png",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-862e987a-aef5-41d0-a136-c915028eba2e.png",
+      "sha256": "7dcfc819e448fc65d826ddc07f11cc7b4ba64d54b6e800ec2fbb07ecc92f444d",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 6,
+      "status": "awaiting-owner-review",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1001650,
+        "opaquePixels": 561259,
+        "opaqueWhitePixels": 0
+      }
+    },
+    {
+      "slug": "money",
+      "id": "es-419-travel-money",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Latin American Spanish listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: A compact group of two overlapping stylized banknotes and three golden coins. Banknotes use lavender and soft green, with simple abstract central medallions and blank corner panels; coins have plain circular centers. Clearly cash money, without borrowing Japanese yen or any specific national currency. No currency symbols, letters, numerals, faces, bank card, wallet or labels.\nOutput: exactly one standalone square vocabulary illustration, not a collage or contact sheet. Use the supplied image solely as a STYLE REFERENCE. Do not draw the reference cat, headphones, logo, lettering, landscape or enclosing panel. Transparent outer background, generous empty margins, centered subject readable at 145 pixels. Never add a painted white rectangle, checkerboard, vignette, frame, floor, cast shadow or watercolor texture. Keep any white subject details fully opaque.",
+      "transparent_background": true,
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceRole": "style-only",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "path": "artifacts/spanish-travel-art/batch-04/money-v1.png",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a1ba922a-3675-42d1-982c-251d85281477.png",
+      "sha256": "cbd1310372763a7011d0aeb42d10c8319bfcdbcc3336985e6b2641ad9db3aba6",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 6,
+      "status": "awaiting-owner-review",
+      "alphaInspection": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 812175,
+        "opaquePixels": 748638,
+        "opaqueWhitePixels": 240
+      }
+    }
+  ]
+}

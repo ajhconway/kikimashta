@@ -1,7 +1,7 @@
 {
   "issue": 150,
   "language": "es-419",
-  "status": "artwork-preparation",
+  "status": "awaiting-artwork-review",
   "retiredItemIds": [
     "es-419-travel-entrance",
     "es-419-travel-exit"
@@ -97,7 +97,8 @@
       "text": "aeropuerto",
       "meaning": "Airport",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/airport-v1.png"
       }
     },
     {
@@ -106,7 +107,8 @@
       "text": "avión",
       "meaning": "Airplane",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/airplane-v1.png"
       }
     },
     {
@@ -115,7 +117,8 @@
       "text": "autobús",
       "meaning": "Bus",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/bus-v1.png"
       }
     },
     {
@@ -124,7 +127,8 @@
       "text": "taxi",
       "meaning": "Taxi",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/taxi-v1.png"
       }
     },
     {
@@ -133,7 +137,8 @@
       "text": "tren",
       "meaning": "Train",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/train-v1.png"
       }
     },
     {
@@ -142,7 +147,8 @@
       "text": "bicicleta",
       "meaning": "Bicycle",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-01/bicycle-v1.png"
       }
     },
     {
@@ -151,7 +157,8 @@
       "text": "pasaporte",
       "meaning": "Passport",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/passport-v1.png"
       }
     },
     {
@@ -160,7 +167,8 @@
       "text": "boleto",
       "meaning": "Ticket",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/ticket-v1.png"
       }
     },
     {
@@ -169,7 +177,8 @@
       "text": "maleta",
       "meaning": "Suitcase",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/suitcase-v1.png"
       }
     },
     {
@@ -178,7 +187,8 @@
       "text": "mochila",
       "meaning": "Backpack",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/backpack-v1.png"
       }
     },
     {
@@ -187,7 +197,8 @@
       "text": "mapa",
       "meaning": "Map",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/map-v1.png"
       }
     },
     {
@@ -196,7 +207,8 @@
       "text": "teléfono",
       "meaning": "Phone",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-02/phone-v1.png"
       }
     },
     {
@@ -205,7 +217,8 @@
       "text": "cama",
       "meaning": "Bed",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/bed-v1.png"
       }
     },
     {
@@ -214,7 +227,8 @@
       "text": "llave",
       "meaning": "Key",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/key-v1.png"
       }
     },
     {
@@ -223,7 +237,8 @@
       "text": "baño",
       "meaning": "Bathroom",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/bathroom-v1.png"
       }
     },
     {
@@ -232,7 +247,8 @@
       "text": "ducha",
       "meaning": "Shower",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/shower-v1.png"
       }
     },
     {
@@ -241,7 +257,8 @@
       "text": "toalla",
       "meaning": "Towel",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/towel-v1.png"
       }
     },
     {
@@ -250,7 +267,8 @@
       "text": "ascensor",
       "meaning": "Elevator",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-03/elevator-v1.png"
       }
     },
     {
@@ -259,7 +277,8 @@
       "text": "restaurante",
       "meaning": "Restaurant",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-04/restaurant-v1.png"
       }
     },
     {
@@ -268,7 +287,8 @@
       "text": "pan",
       "meaning": "Bread",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-04/bread-v1.png"
       }
     },
     {
@@ -287,7 +307,8 @@
       "text": "leche",
       "meaning": "Milk",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-04/milk-v1.png"
       }
     },
     {
@@ -296,7 +317,8 @@
       "text": "jugo",
       "meaning": "Juice",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-04/juice-v1.png"
       }
     },
     {
@@ -305,7 +327,8 @@
       "text": "dinero",
       "meaning": "Money",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-04/money-v1.png"
       }
     },
     {
@@ -314,7 +337,8 @@
       "text": "barco",
       "meaning": "Boat",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/boat-v1.png"
       }
     },
     {
@@ -323,7 +347,8 @@
       "text": "playa",
       "meaning": "Beach",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/beach-v1.png"
       }
     },
     {
@@ -332,7 +357,8 @@
       "text": "hospital",
       "meaning": "Hospital",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/hospital-v1.png"
       }
     },
     {
@@ -341,7 +367,8 @@
       "text": "farmacia",
       "meaning": "Pharmacy",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/pharmacy-v1.png"
       }
     },
     {
@@ -350,7 +377,8 @@
       "text": "botella",
       "meaning": "Bottle",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/bottle-v1.png"
       }
     },
     {
@@ -359,7 +387,8 @@
       "text": "tarjeta de crédito",
       "meaning": "Credit card",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/credit-card-v1.png"
       }
     },
     {
@@ -368,7 +397,8 @@
       "text": "cámara",
       "meaning": "Camera",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/camera-v1.png"
       }
     },
     {
@@ -377,7 +407,8 @@
       "text": "paraguas",
       "meaning": "Umbrella",
       "artwork": {
-        "status": "pending-generation"
+        "status": "generated-awaiting-review",
+        "path": "artifacts/spanish-travel-art/batch-05/umbrella-v1.png"
       }
     }
   ],
@@ -385,5 +416,6 @@
     "Generic car and taxi have overlapping meanings; review their distractor pairing before practice activation (#79).",
     "Airport and airplane must use distinct primary silhouettes; airport shows terminal and control tower without a foreground airplane.",
     "Artwork review does not authorize audio generation or activate staged words in practice."
-  ]
+  ],
+  "generationAuthorization": "Owner requested the full pack without intermediate batch pauses; final artwork approval remains pending."
 }

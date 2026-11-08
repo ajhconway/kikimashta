@@ -63,7 +63,7 @@ Add a small registry of learning languages, each owning its practice pool, packs
 
 ## Spanish travel artwork (#150)
 
-The owner approved a 36-item expansion of Travel level 1, excluding entrada/salida, and requested image generation. Prepare language-independent pictures in the approved Kiku illustration style, reusing the four suitable current assets and the approved rice illustration. Generate 31 new assets with transparent outer backgrounds, preserve exact prompts, reference identities, originals and hashes, and review one batch at a time. Start with six transport pictures: airport, airplane, bus, taxi, train and bicycle. Stage artwork and semantic-choice concerns for review; audio and practice activation follow separately.
+The owner approved a 36-item expansion of Travel level 1, excluding entrada/salida, and requested image generation. All 31 new pictures have been generated individually with the built-in image tool, with transparent outer backgrounds; the four suitable current assets and approved rice illustration are reused unchanged. Exact prompts, reference identities, originals, hashes and PNG alpha inspections are preserved in `artifacts/spanish-travel-art/manifest.json`. The complete set is available in `artifacts/spanish-travel-art/review.html`, with a compact contact sheet beside it. The owner explicitly requested generating the full pack without intermediate batch pauses; the five batches are organization only. Final artwork approval and semantic-choice concerns remain pending; audio and practice activation follow separately.
 
 ## Later work
 
