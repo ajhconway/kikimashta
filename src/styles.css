@@ -192,7 +192,7 @@ footer a:hover { color: var(--purple-dark); }
 .app-quiz[data-answer='correct']::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 25%, #fff0af99 0, #ffd6ee60 46%, transparent 80%), radial-gradient(ellipse at 50% 80%, #ffb6dd33 0, transparent 70%); opacity: 0; animation: correct-glow .9s ease-out; }
 .app-quiz header { position: relative; z-index: 2; padding: 18px 0; }
 .app-quiz main { position: relative; z-index: 1; padding: 8px 0 20px; }
-.quiz-cards { position: relative; isolation: isolate; width: 100%; min-width: 0; max-width: clamp(240px, calc(100svh - 420px), 380px); margin: 0 auto; }
+.quiz-cards { position: relative; isolation: isolate; width: 100%; min-width: 0; max-width: 380px; margin: 0 auto; }
 .quiz-starburst { position: absolute; inset: 0; z-index: 0; overflow: visible; pointer-events: none; }
 .quiz-starburst svg { position: absolute; left: 50%; top: 50%; width: clamp(400px, 70vmin, 600px); height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); }
 .firework-star { --star-scale: 1; transform-box: fill-box; transform-origin: center; color: #ffcf5a; opacity: 0; animation: firework-star 1.04s cubic-bezier(.16, .65, .3, 1) both; }
@@ -247,8 +247,8 @@ footer a:hover { color: var(--purple-dark); }
 .quiz .answer-choice.correct { border-color: var(--purple-dark); }
 .quiz .choice-badge { width: 30px; height: 30px; background: var(--purple-dark); }
 .quiz .choice-badge.wrong { background: var(--orange); }
-.quiz .practice-actions { width: 100%; max-width: 380px; min-height: 166px; margin: 0 auto; padding-top: 14px; }
-.quiz .feedback { min-height: 88px; margin: 0; }
+.quiz .practice-actions { width: 100%; max-width: 380px; min-height: 140px; margin: 0 auto; padding-top: 14px; }
+.quiz .feedback { min-height: 62px; margin: 0; }
 .quiz .practice-actions .primary { max-width: none; margin: 8px 0 0; transition: transform .14s ease-out, background .12s; }
 .quiz .practice-actions .primary:not(:disabled):active { transform: translateY(3px) scale(.92, .84); transition-duration: .05s; }
 
@@ -355,8 +355,8 @@ footer a:hover { color: var(--purple-dark); }
   .choice-slot { height: 100%; aspect-ratio: auto; }
   .answer-choice { --picture-inset: 14px; height: 100%; aspect-ratio: auto; border-radius: 20px; }
   /* Reserve feedback and Continue space before answering so the grid stays still. */
-  .quiz .practice-actions { max-width: none; min-height: 146px; margin-top: 12px; padding: 0; }
-  .quiz .feedback { min-height: 86px; margin: 0; }
+  .quiz .practice-actions { max-width: none; min-height: 120px; margin-top: 12px; padding: 0; }
+  .quiz .feedback { min-height: 60px; margin: 0; }
   .quiz .practice-actions .primary { margin-top: 8px; }
 }
 
@@ -397,8 +397,9 @@ footer a:hover { color: var(--purple-dark); }
 .pack-picker p { font-size: 13px; line-height: 1.5; }
 
 .pack-mastery { display: block; margin-top: .25rem; font-size: .75rem; font-weight: 400; opacity: .8; }
-.feedback { display: flex; justify-content: center; align-items: flex-start; }
-.mastery-change { position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 72px; min-width: min(260px, 100%); max-width: 100%; padding: 6px 22px 6px 16px; border: 3px solid var(--purple-dark); border-radius: 23px; color: var(--purple-dark); background: #ffcee2; box-shadow: 0 4px 0 rgb(67 31 116 / .18); text-align: left; }
+.feedback { position: relative; display: flex; justify-content: center; align-items: flex-start; }
+/* Caption-free badges fit the original feedback slot without resizing the cards. (#141) */
+.mastery-change { position: absolute; top: -4px; inset-inline: 0; width: max-content; margin-inline: auto; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 64px; min-width: min(260px, 100%); max-width: 100%; padding: 2px 22px 2px 16px; border: 3px solid var(--purple-dark); border-radius: 23px; color: var(--purple-dark); background: #ffcee2; box-shadow: 0 4px 0 rgb(67 31 116 / .18); text-align: left; }
 .mastery-arrow { display: grid; place-items: center; width: 50px; height: 50px; font-size: 52px; line-height: 1; font-weight: 900; }
 .mastery-label { font-size: 34px; font-weight: 900; line-height: 1.1; }
 .mastery-up { animation: mastery-pop .55s cubic-bezier(.2, .8, .3, 1) both; }

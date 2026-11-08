@@ -69,7 +69,7 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
   expect(await history()).toEqual(original);
 });
 
-test('level-up animation fits the feedback space without moving cards', async ({ page }, testInfo) => {
+test('level-up animation fits the original layout without moving cards', async ({ page }, testInfo) => {
   await page.addInitScript(() => { Math.random = () => .5; });
   await page.clock.install();
   await page.goto('./');
@@ -77,6 +77,7 @@ test('level-up animation fits the feedback space without moving cards', async ({
   await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   const before = await page.locator('.choices').boundingBox();
+  if (!testInfo.project.use.isMobile) expect(before!.width).toBe(380);
   const source = await page.locator('audio').getAttribute('src');
   const target = [...starter.items, ...catalogue.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
   const exercise = await page.locator('.quiz').getAttribute('data-exercise');
@@ -92,8 +93,20 @@ test('level-up animation fits the feedback space without moving cards', async ({
   await expect(badge.locator('.mastery-arrow')).toHaveCSS('animation-name', 'mastery-arrow-up');
   await expect(badge.locator('.mastery-sparks i')).toHaveCount(6);
   const fits = await badge.evaluate(element => {
-    const badge = element.getBoundingClientRect(), feedback = element.parentElement!.getBoundingClientRect();
-    return badge.height <= feedback.height && badge.width <= innerWidth;
+    const animation = element.getAnimations().find(animation => animation instanceof CSSAnimation && animation.animationName === 'mastery-pop')!;
+    animation.pause();
+    const duration = Number(animation.effect!.getTiming().duration);
+    const feedback = element.parentElement!.getBoundingClientRect();
+    const cards = document.querySelector('.choices')!.getBoundingClientRect();
+    const samples = [0, .55, 1].map(fraction => {
+      animation.currentTime = duration * fraction;
+      const badge = element.getBoundingClientRect();
+      // The badge can use the gap above feedback and the 8px gap before Continue.
+      return badge.top >= cards.bottom - 1 && badge.bottom <= feedback.bottom + 4
+        && badge.left >= 0 && badge.right <= innerWidth;
+    });
+    animation.currentTime = duration;
+    return samples.every(Boolean);
   });
   expect(fits).toBe(true);
   const after = await page.locator('.choices').boundingBox();
