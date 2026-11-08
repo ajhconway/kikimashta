@@ -213,7 +213,12 @@ import { cardPacks } from '../src/core/packs'
     heading.lang = 'ja'
     const reading = element('p', 'reading', card.reading)
     reading.lang = 'ja'
-    content.append(element('p', 'level-label', `Level ${card.sourceLevel}`), heading, reading, element('p', 'meaning', card.meaning))
+    const packs = element('p', 'pack-labels')
+    packs.setAttribute('aria-label', 'Packs')
+    for (const pack of cardPacks.filter(pack => pack.itemIds.includes(card.id))) {
+      packs.append(element('span', '', pack.title))
+    }
+    content.append(packs, heading, reading, element('p', 'meaning', card.meaning))
     if (!writing && card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')

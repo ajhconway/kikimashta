@@ -50,7 +50,7 @@ test('render contact sheets for every vocabulary illustration', async ({ page },
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('./vocabulary/');
   await expect(page.locator('.card')).toHaveCount(24);
-  await page.addStyleTag({ content: 'main{max-width:1440px}.cards{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.card-image{height:140px;padding:5px}.card-content{padding:6px}.japanese{font-size:18px}.reading,.meaning{font-size:12px;margin:2px}.picture-notes,.voices,.review-badge,.audio-status,.page-header p{display:none!important}.level-label{font-size:10px;margin:0}' });
+  await page.addStyleTag({ content: 'main{max-width:1440px}.cards{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.card-image{height:140px;padding:5px}.card-content{padding:6px}.japanese{font-size:18px}.reading,.meaning{font-size:12px;margin:2px}.picture-notes,.voices,.review-badge,.audio-status,.page-header p{display:none!important}.pack-labels{font-size:10px;margin:0}' });
   for (let level = 1; level <= 5; level++) {
     await page.getByLabel('Card pack').selectOption(`ja-wanikani-${level}-pictures`);
     let number = 1;
@@ -76,11 +76,14 @@ test('ten packs keep level membership and switch between pictures and writing', 
     const pictureCount = await page.locator('.card').count();
     expect(pictureCount).toBeGreaterThan(0);
     const headings = await page.locator('.card h2').allTextContents();
-    await expect(page.locator('.card .level-label')).toHaveText(Array(pictureCount).fill(`Level ${level}`));
+    const packNames = [`WaniKani level ${level} · Pictures`, `WaniKani level ${level} · Writing`];
+    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => packNames).flat());
+    await expect(page.locator('.level-label')).toHaveCount(0);
     await expect(page.locator('.card-image')).toHaveCount(pictureCount);
     await selector.selectOption(`ja-wanikani-${level}-writing`);
     await expect(page.locator('.card h2')).toHaveText(headings);
     await expect(page.locator('.card-writing')).toHaveText(headings);
+    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => packNames).flat());
     await expect(page.locator('.card-image, .picture-notes, .review-badge')).toHaveCount(0);
   }
   await selector.selectOption('ja-wanikani-2-writing');
