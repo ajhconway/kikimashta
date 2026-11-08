@@ -377,3 +377,5 @@ footer a:hover { color: var(--purple-dark); }
 
 .home-intensity { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0 auto 24px; font-size: 16px; font-weight: 800; }
 .home-intensity .pace-kiku { width: clamp(200px, 32svh, 300px); height: clamp(200px, 32svh, 300px); max-width: 100%; }
+
+.app-home footer a:hover { color: var(--ink); }

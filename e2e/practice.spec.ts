@@ -1,3 +1,4 @@
+import { intensityColors } from '../src/themes';
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 import bank from '../content/ja.json' with { type: 'json' };
@@ -557,6 +558,27 @@ test('home centers a larger Kiku and fills the viewport with the current intensi
   const density = page.getByRole('status', { name: 'Review density' });
   await expect(density).toContainText('Minimal');
   await expect(page.getByRole('listbox')).toHaveCount(0);
+  // Check the real foreground styles against every full-screen intensity fill.
+  const textColors = await page.locator('.home-intensity, footer a').evaluateAll(elements =>
+    elements.map(element => getComputedStyle(element).color));
+  const footerLink = page.locator('footer a').first();
+  await footerLink.hover();
+  textColors.push(await footerLink.evaluate(link => getComputedStyle(link).color));
+  function luminance(rgb: number[]) {
+    const linear = rgb.map(channel => {
+      const value = channel / 255;
+      return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+    });
+    return linear[0]! * 0.2126 + linear[1]! * 0.7152 + linear[2]! * 0.0722;
+  }
+  for (const [level, color] of Object.entries(intensityColors)) {
+    const background = luminance(color.slice(1).match(/../g)!.map(channel => parseInt(channel, 16)));
+    for (const textColor of textColors) {
+      const foreground = luminance(textColor.match(/\d+/g)!.slice(0, 3).map(Number));
+      const contrast = (Math.max(background, foreground) + 0.05) / (Math.min(background, foreground) + 0.05);
+      expect(contrast, `${level} background with ${textColor} text`).toBeGreaterThanOrEqual(4.5);
+    }
+  }
   await expect.poll(() => backgroundColor(page)).toBe('rgb(217, 193, 244)');
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#d9c1f4');
   const picture = density.locator('img');
