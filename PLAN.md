@@ -65,6 +65,10 @@ Add a small registry of learning languages, each owning its practice pool, packs
 
 The owner approved a 36-item expansion of Travel level 1, excluding entrada/salida, and requested the full image set without intermediate batch pauses. The owner has now approved 34 pictures, rejected the passport's projecting page and identified the redundant umbrella generation. Reuse the existing approved Japanese umbrella. The owner has approved the closed-booklet passport revision and all 36 selected pictures; the approval records bind the selection to exact image hashes. The selected set contains 30 new transparent PNGs and six unchanged approved JPGs. All 32 generated variants, exact prompts, original bytes, hashes, approval evidence and replacement history are preserved under `artifacts/spanish-travel-art/`. Review the current selection in `review.html` or its compact contact sheet. Audio, semantic-choice policy and practice activation follow separately.
 
+## Spanish travel audio (#155)
+
+Generate the 36 approved Travel level 1 words in the four selected regional pairs: Juan/Pamela (Mexico City), Albeiro/Carito (Bogotá), Santiago/Agustina (Buenos Aires) and Carlos Figueroa/Veronica (Puerto Rico). Cesar and audition alternatives are excluded. The approved matrix is 288 clips / 1,824 Unicode input characters, using the existing eleven_v4 model and playback profile. Bind generation to exact text/voice snapshots, reuse the resumable engine with Spanish language enforcement, preserve provider originals, and prepare a complete volume-matched local listening gallery. No automatic paid retries or active-pack changes. Pronunciation and final listening acceptance remain pending.
+
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
