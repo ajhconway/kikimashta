@@ -105,7 +105,7 @@ The owner approved this plan on November 8, 2026. Track the milestone in [#119](
 
 Play a Japanese sentence containing the target word, pause briefly, then play a Japanese question about it. Start with simple contexts containing one short event or fact and direct questions. Later introduce contrastive contexts requiring the learner to keep multiple facts straight. Support both questions whose answer is the target word and questions about another detail of its sentence. Offer pictures or Japanese written choices, with one answer format per presentation. Each authored question declares the formats for which it has clear choices. The existing approved audition examples form the contrastive material.
 
-After answering, reveal the Japanese sentence and question, their English meanings, and the correct answer. Keep contextual feedback visible until Continue, with replay available. Keep the target vocabulary identity separate from the correct answer identity.
+The owner revised the contextual presentation after actual iPhone and Mac use: match the existing word-review layout and controls. Correct answers show compact success feedback and advance automatically like word reviews, with no transcript or explanation. After a miss, keep Continue manual; offer Show Japanese for the sentence/question and an optional English reveal after that. Keep the answer grid stable, use the existing replay/companion/card styling, and avoid extra panels, visible instruction headings and repeated readings. Lesson previews and the full content-inspection review retain access to their authored details. Keep the target vocabulary identity separate from the correct answer identity.
 
 ### Content
 
@@ -169,6 +169,18 @@ Select one or more of the eight approved voices in the card library, remembered 
 ## Voice accent labels (#149)
 
 Show accent/style descriptions beside each global practice voice and card audition button. Display the owner’s Tokyo (standard) label for Otani/Morioki, Kansai for Goro/Tsuki, Kyushu for Takeshi/Lime, and Anime (standard) for Ritsuto/Itsuki. Reuse the approved registry’s accent and anime-style metadata. Keep labels visible through playback and expose them as accessible descriptions. Voice identity and saved preferences stay unchanged.
+
+## Contextual practice evaluation (#145)
+
+The owner completed reviews and lessons without seeing contextual cards and wants to evaluate their actual session presentation. Investigate earned unlocks, selected scope and workload admission before changing the normal progression policy. Keep the existing fixed-session rules unless the investigation justifies a documented correction.
+
+Add a clearly unsaved contextual practice demo using the normal App quiz, feedback, retries, progress and summary, with bounded simple/contrastive picture/writing examples. It bypasses admission only for evaluation, keeps all real history and account sync untouched, and is accessible through the shared Dev review and a direct demo query link. Home reports unlocked contextual lesson cards in the selected scope and whether the workload ceiling is holding new lessons back. The existing full content review remains available. Verify isolation with real browser storage and regression checks; track work in [#145](https://github.com/ajhconway/kikimashta/issues/145).
+
+The owner reviewed the contextual practice on iPhone and Mac and requested a simpler presentation in #145. Correct contextual answers now follow the ordinary automatic-advance timing and save/audio recovery gates; mistakes retain manual Continue and optional Japanese → English disclosure. Update the shared practice UI and corresponding browser regressions before publishing this follow-up.
+
+The owner clarified that contextual reviews must share the ordinary level-up/down feedback, with Japanese details available beside that feedback area rather than beside Continue. Use a compact, separately reserved details control so badges and result symbols cannot cover it; keep Continue on its own row. The unsaved contextual demo must use disposable FSRS sample schedules to exercise real level changes, including a level decrease after a miss, while preserving all account history and scheduling.
+
+The Japanese-details control matches the shared badge height, and the feedback area shifts slightly when it appears. Reserve the English translations’ layout space when opening Japanese details so showing or hiding English never resizes the dialog. Verify the combined badges/control and dialog at phone and desktop sizes.
 
 ## Expanded Dev review (#152)
 

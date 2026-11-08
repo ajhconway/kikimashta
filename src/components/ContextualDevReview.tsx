@@ -62,7 +62,7 @@ export function ContextualDevReview({ banks, vocabulary, onClose, random = defau
       <label className="contextual-dev-jump">Jump to question<select value={currentIndex} onChange={event => navigate(Number(event.target.value))}>{entries.map((row, position) => <option key={row.question.id} value={position}>{position + 1}. {row.question.id}</option>)}</select></label>
       <p className="contextual-dev-position" role="status">Question {currentIndex + 1} of {entries.length} · {entry.context.stage ?? 'contrastive'} · {entry.question.kind === 'target' ? 'target-word answer' : 'other detail'}</p>
       <p className="contextual-dev-id">{entry.context.id} · sentence revision {entry.context.revision} · question revision {entry.question.revision}</p>
-      <ContextualQuiz key={`${entry.question.id}:${format}:${voice}:${visit}`} question={question} feedback={feedback} onContinue={next}
+      <ContextualQuiz key={`${entry.question.id}:${format}:${voice}:${visit}`} question={question} feedback={feedback} onContinue={next} inspection
         onChoose={choice => {
           const answeredAt = Date.now();
           setFeedback({ id: 'dev-answer', sessionId: 'contextual-dev', itemId: question.target.id, language: question.target.language,

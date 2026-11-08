@@ -1,1 +1,302 @@
-.contextual-quiz{width:100%;max-width:42rem;margin:0 auto;padding:1rem 0}.contextual-quiz h2{font-size:1.3rem;margin:.3rem 0 1rem}.contextual-replay{width:100%;min-height:3.5rem;font-size:1rem;margin-bottom:.7rem}.contextual-review-state,.contextual-inspection{font-size:.9rem;color:#51415d}.contextual-inspection{background:#fff9;border:1px solid #77608d50;border-radius:1rem;padding:1rem}.contextual-transcript{margin:1rem 0;padding:1rem;border-radius:1rem;background:#ffffffb8;text-align:left}.contextual-prompt h3{font-size:.85rem;font-weight:650;text-transform:uppercase;letter-spacing:.04em;margin:.5rem 0;color:#624d72}.contextual-prompt p{margin:.35rem 0;line-height:1.6}.contextual-japanese{font-size:1.25rem}.contextual-reading{font-size:.95rem;color:#665273}.contextual-prompt+.contextual-prompt{margin-top:1.4rem;border-top:1px solid #65527225;padding-top:.8rem}.contextual-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1rem 0}.contextual-choice{min-width:0;border:2px solid transparent;border-radius:1rem;min-height:8rem;display:flex;align-items:center;justify-content:center;background:#fff;color:#30233d;padding:.75rem;box-shadow:0 3px 0 #47345218}.contextual-choice:not(:disabled):hover{border-color:#77538e}.contextual-choice:focus-visible{outline:3px solid #563670;outline-offset:4px}.contextual-picture img{display:block;max-width:100%;width:100%;height:9rem;object-fit:contain}.contextual-written span{font-family:'Kikimashta Noto Sans JP',system-ui,sans-serif;font-size:clamp(1.1rem,calc(4.5rem / (1 + var(--writing-length) * .15)),3.6rem);line-height:1.4;overflow-wrap:anywhere}.contextual-choice:disabled{opacity:1}.contextual-choice[data-correct=true]{border-color:#4d7954;background:#f4fff2}.contextual-choice[data-selected=true][data-correct=false]{border-color:#92506e;background:#fff2f6}.contextual-feedback{padding:1rem;background:#ffffffad;border-radius:1rem;margin-top:1rem}.contextual-feedback p{line-height:1.6}.contextual-result{font-weight:750;font-size:1.2rem}.contextual-feedback .primary{margin-top:.7rem;width:100%}.contextual-dev-review{width:100%;max-width:52rem;margin:0 auto;padding:1rem}.contextual-dev-review h1{font-size:1.7rem}.contextual-dev-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;text-align:left}.contextual-dev-controls label{display:flex;flex-direction:column;gap:.3rem;font-size:.85rem}.contextual-dev-controls select,.contextual-dev-jump select{font:inherit;padding:.65rem;border:1px solid #877494;border-radius:.6rem;background:white;color:#30233d;min-width:0;width:100%}.contextual-dev-jump{display:block;text-align:left;margin-top:.8rem;font-size:.85rem}.contextual-dev-position{font-size:.9rem;color:#665273}.contextual-dev-navigation{display:flex;gap:.8rem;align-items:center;justify-content:space-between}.contextual-dev-navigation button{min-height:2.7rem}.contextual-dev-note{font-size:.9rem;line-height:1.5}.contextual-dev-id{overflow-wrap:anywhere;font-size:.75rem;color:#665273}@media(max-width:500px){.contextual-dev-review{padding:.5rem}.contextual-choices{gap:.6rem}.contextual-choice{min-height:7rem;padding:.6rem}.contextual-picture img{height:7rem}.contextual-written span{font-size:clamp(1rem,calc(3.8rem / (1 + var(--writing-length) * .15)),3rem)}}
+/* Contextual practice shares the word quiz's companion, cards and feedback space. */
+.contextual-quiz {
+  width: 100%;
+  min-width: 0;
+}
+
+.contextual-quiz .contextual-result {
+  align-items: center;
+}
+
+.contextual-response-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 0px;
+  align-items: center;
+  gap: 0;
+  min-height: 64px;
+  transition: grid-template-columns .22s ease-out, gap .22s ease-out;
+}
+
+.contextual-response-row.has-contextual-details {
+  grid-template-columns: minmax(0, 1fr) 64px;
+  gap: 12px;
+}
+
+.contextual-status {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.contextual-status .mastery-change {
+  top: calc((100% - 64px) / 2);
+  min-width: min(260px, 100%);
+  padding-inline: 10px;
+  gap: 8px;
+}
+
+.contextual-status .mastery-label {
+  font-size: clamp(22px, 13cqw, 34px);
+}
+
+.contextual-status .mastery-arrow {
+  font-size: clamp(36px, 20cqw, 52px);
+}
+
+.contextual-status .question-mastery {
+  gap: 6px;
+}
+
+.contextual-status .question-mastery-label,
+.contextual-status .question-mastery-timer {
+  font-size: clamp(16px, 8cqw, 24px);
+}
+
+.contextual-status .question-mastery-timer {
+  padding-left: 6px;
+}
+
+.contextual-details-toggle.text-button {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  min-height: 64px;
+  margin: 0;
+  padding: 0;
+  border: 3px solid var(--purple-dark);
+  border-radius: 23px;
+  background: #ffcee2;
+  color: var(--purple-dark);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.contextual-detail-action {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  width: 64px;
+}
+
+.has-contextual-details .contextual-details-toggle {
+  animation: contextual-details-appear .18s ease-out .12s both;
+}
+
+@keyframes contextual-details-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.contextual-english[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.contextual-actions {
+  display: flow-root;
+  min-height: 60px;
+}
+
+.contextual-actions .primary {
+  width: 100%;
+}
+
+/* Preview and draft inspection remain readable without adding panels to practice. */
+.contextual-review-state,
+.contextual-inspection {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contextual-transcript {
+  width: 100%;
+  max-width: 380px;
+  margin: 16px auto;
+  text-align: left;
+}
+
+.contextual-prompt + .contextual-prompt {
+  margin-top: 20px;
+}
+
+.contextual-prompt h3 {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.contextual-prompt p {
+  margin: 8px 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contextual-japanese {
+  font-size: 20px;
+}
+
+.contextual-reading {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Native modal details do not move the question or its reserved action row. */
+.contextual-details-dialog {
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 3px solid var(--purple-dark);
+  border-radius: 24px;
+  background: #ffe4cc;
+  color: var(--ink);
+  text-align: left;
+}
+
+.contextual-details-dialog::backdrop {
+  background: #38205266;
+}
+
+.contextual-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contextual-dialog-header h2 {
+  margin: 0;
+  color: var(--purple-dark);
+  font-size: 23px;
+  letter-spacing: -.5px;
+}
+
+.contextual-dialog-header .text-button {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+}
+
+.contextual-details-dialog .contextual-transcript {
+  max-width: none;
+  margin: 16px 0;
+}
+
+.contextual-details-dialog > .text-button {
+  margin: 0;
+}
+
+/* The full content gallery keeps its separate evaluation controls. */
+.contextual-dev-review {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.contextual-dev-review h1 {
+  font-size: 1.7rem;
+}
+
+.contextual-dev-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+  text-align: left;
+}
+
+.contextual-dev-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-size: .85rem;
+}
+
+.contextual-dev-controls select,
+.contextual-dev-jump select {
+  width: 100%;
+  min-width: 0;
+  padding: .65rem;
+  border: 1px solid #877494;
+  border-radius: .6rem;
+  background: #fff;
+  color: #30233d;
+  font: inherit;
+}
+
+.contextual-dev-jump {
+  display: block;
+  margin-top: .8rem;
+  text-align: left;
+  font-size: .85rem;
+}
+
+.contextual-dev-position {
+  color: #665273;
+  font-size: .9rem;
+}
+
+.contextual-dev-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+}
+
+.contextual-dev-navigation button {
+  min-height: 2.7rem;
+}
+
+.contextual-dev-note {
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.contextual-dev-id {
+  color: #665273;
+  font-size: .75rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .contextual-quiz .practice-actions.contextual-feedback {
+    min-height: 124px;
+  }
+
+  /* Fill the outer practice column so shared mobile card sizing still applies. */
+  .contextual-practice > .contextual-quiz {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    min-height: min-content;
+  }
+}
+
+@media (max-width: 500px) {
+  .contextual-dev-review {
+    padding: .5rem;
+  }
+}
+
+.contextual-result-symbol {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--purple-dark);
+  border-radius: 50%;
+  color: var(--purple-dark);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.contextual-demo-indicator {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  color: var(--muted);
+  font-size: 12px;
+}
