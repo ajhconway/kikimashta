@@ -11,7 +11,9 @@ const word = (id: string, text: string): WordItem => ({ id, text, language: 'ja-
   image: { src: `images/${id}.png`, source: 'generated', alt: id }, audio: [] });
 const vocabulary = [word('water', '水'), word('teacher', '先生'), word('student', '学生')];
 const prompt = (text: string, meaning: string): ContextualPrompt => ({ text, reading: text, meaning, grammarTags: [], supportingVocabularyIds: [] });
-function fixture({ recorded = true, id = 'who-drinks' } = {}) {
+function fixture({ recorded = true, id = 'who-drinks', format = 'text' }: {
+  recorded?: boolean; id?: string; format?: 'text' | 'picture';
+} = {}) {
   const authored: ContextualQuestion = { id, revision: 1, kind: 'detail', prompt: prompt('誰が水を飲みますか。', 'Who drinks water?'), formats: ['text', 'picture'],
     options: [{ id: 'teacher-answer', imageItemId: 'teacher', ...prompt('先生', 'teacher') }, { id: 'student-answer', imageItemId: 'student', ...prompt('学生', 'student') }],
     correctOptionId: 'teacher-answer', explanation: 'The teacher drinks water.' };
@@ -19,7 +21,7 @@ function fixture({ recorded = true, id = 'who-drinks' } = {}) {
     sentence: prompt('先生は水を飲みます。', 'The teacher drinks water.'), questions: [authored],
     recordings: recorded ? [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: { [id]: `audio/${id}.mp3` } }] : [],
     review: { text: recorded ? 'approved' : 'pending', audio: recorded ? 'approved' : 'not-generated' }, reviewNotes: 'Fixture.' };
-  return contextualQuestion(context, authored, 'text', vocabulary, () => 0);
+  return contextualQuestion(context, authored, format, vocabulary, () => 0);
 }
 const onChoose = vi.fn();
 const onContinue = vi.fn();
@@ -44,6 +46,16 @@ beforeEach(() => {
 afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); });
 
 describe('contextual listening and feedback', () => {
+  it.each(['text', 'picture'] as const)('lets screen-reader users identify and select %s answers by their content', async format => {
+    render(<Harness question={fixture({ format })}/>);
+    const teacher = format === 'text' ? 'Choose writing 先生' : /^Choose picture \d+: teacher$/;
+    const student = format === 'text' ? 'Choose writing 学生' : /^Choose picture \d+: student$/;
+    expect(screen.getByRole('button', { name: student })).toBeEnabled();
+    await click(screen.getByRole('button', { name: teacher }));
+    expect(onChoose).toHaveBeenCalledWith(expect.objectContaining({ id: 'teacher-answer' }));
+    expect(screen.getByText('Correct', { exact: true })).toBeInTheDocument();
+  });
+
   it('plays sentence then the question after 650 ms and replays the same pair', async () => {
     const onReplay = vi.fn();
     const { container } = render(<ContextualQuiz question={fixture()} feedback={null} onChoose={onChoose} onContinue={onContinue} onReplay={onReplay}/>);

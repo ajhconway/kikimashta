@@ -108,7 +108,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
         disabled={disabled || !!feedback || playback === 'error' || playback === 'ready' || (!hasAudio && !inspecting)}
         data-correct={feedback ? choice.id === correctId : undefined}
         data-selected={feedback ? choice.id === feedback.selectedId : undefined}
-        aria-label={`Choose ${format === 'picture' ? 'picture' : 'writing'} ${index + 1}`}
+        aria-label={format === 'picture' ? `Choose picture ${index + 1}: ${choice.image.alt}` : `Choose writing ${choice.text}`}
         onClick={() => { if (!answered.current) { answered.current = true; stop(); setPlayback('idle'); onChoose(choice); } }}>
         {format === 'picture' ? <img src={asset(choice.image.src)} alt={choice.image.alt} draggable={false}/> :
           <span lang={choice.language} style={{ '--writing-length': Math.max(1, Array.from(graphemes.segment(choice.text)).length) } as CSSProperties}>{choice.text}</span>}
