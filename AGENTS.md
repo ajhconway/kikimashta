@@ -37,6 +37,8 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
+When another worktree is serving the default preview port, use `E2E_PORT=4199 npm run test:e2e` (or another free port). An explicit E2E_PORT starts an isolated production preview rather than reusing another server. The complete contextual dev review opens with `?review=contextual`; it saves no attempts.
+
 The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
 
 Contextual quiz text preparation for issue #119 uses `npm run content:contextual:validate` for a read-only preflight and `npm run content:contextual:review` to rebuild `artifacts/contextual-pilot/review.html`. The review command's `-- --github` option prints a readable GitHub review. These commands do not approve content, generate speech, or activate practice cards. Obtain owner approval of the actual pilot text before speech generation, as recorded in PLAN.md. The usual `npm test` includes the checked-in pilot's validation and review-tool regression checks.

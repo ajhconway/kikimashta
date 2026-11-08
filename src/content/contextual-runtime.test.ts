@@ -8,6 +8,8 @@ describe('contextual runtime content', () => {
     const contexts = contextualBanks.flatMap(bank => bank.contexts);
     expect(contexts).toHaveLength(40);
     expect(contexts.flatMap(context => context.questions)).toHaveLength(80);
+    expect(new Set(contexts.map(context => context.id)).size).toBe(40);
+    expect(new Set(contexts.flatMap(context => context.questions.map(question => question.id))).size).toBe(80);
     const targets = new Set(contexts.map(context => context.targetItemId));
     expect(targets.size).toBe(10);
     for (const target of targets) for (const stage of ['simple', 'contrastive']) {
