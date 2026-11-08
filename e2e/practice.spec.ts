@@ -594,6 +594,8 @@ test('home centers a larger Kiku and fills the viewport with the current intensi
 
 test('Dev review practices six random cards and a missed-word retry without saving progress', async ({ page }) => {
   test.setTimeout(90_000);
+  // This journey checks session flow; focused timer tests cover timed Dev review.
+  await page.addInitScript(() => { Math.random = () => 0; });
   await page.clock.install();
   await page.goto('./');
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
