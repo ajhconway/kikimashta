@@ -80,3 +80,44 @@ Use Noto Sans JP consistently for lesson previews, their attached mini-quizzes, 
 ## Selectable card packs (#108)
 
 Organize the WaniKani library into ten packs: levels 1–5, separately for pictures and writing. Allow any combination for practice and remember the selection on this device. Apply it to lessons, due reviews, dev review, answer choices, and workload forecasting, while preserving all saved history and stable language/item/exercise identities. Keep the existing approved practice subset; browsing a pack does not approve additional content. Remove the two starter packs and retire starter-only words from active practice (#111). Retain their saved history, and keep WaniKani words with shared starter IDs and assets available. Restored pack preferences discard retired starter selections.
+
+## Contextual listening pilot (#119)
+
+The owner approved this plan on November 8, 2026. Track the milestone in [#119](https://github.com/ajhconway/kikimashta/issues/119), under the broader exercise roadmap (#48).
+
+### Experience
+
+Play a Japanese sentence containing the target word, pause briefly, then play a Japanese question about it. Support both questions whose answer is the target word and questions about another detail of its sentence. Offer pictures or Japanese written choices, with one answer format per presentation. Each authored question declares the formats for which it has clear choices.
+
+After answering, reveal the Japanese sentence and question, their English meanings, and the correct answer. Keep contextual feedback visible until Continue, with replay available. Keep the target vocabulary identity separate from the correct answer identity.
+
+### Content
+
+Use a separate authored contextual bank referencing existing stable vocabulary IDs. Store stable sentence and question IDs, revisions, Japanese text/readings, English meanings, paired recordings, explicit answer options and correct option, grammar requirements, supporting vocabulary, and review state. A sentence may support several questions and a target may have several sentence variants. Record inflected target occurrences explicitly where needed.
+
+Keep grammar roughly within Genki I and supporting vocabulary in an everyday beginner-friendly range; words beyond existing cards are allowed. Tag sentence, question and answer requirements so grammar filtering can become user-configurable later. The [publisher's syllabus](https://bookclub2.japantimes.co.jp/download/files/genki3/genki-3rd_syllabus_E.pdf) is a scope reference. The pilot does not add a grammar-settings interface.
+
+Author plausible distractors for each question. Check natural Japanese, one defensible answer, target relevance, and comparable difficulty across variants. Reuse existing pictures when they clearly represent an answer; picture approval does not establish sentence or question readiness. Prepare drafts ahead of time rather than generating quizzes in the browser.
+
+### Learning and progress
+
+Unlock contextual cards after a correct first attempt in a later saved review of either the target's picture or writing card. Initial lessons, immediate corrective retries and unsaved dev review do not supply that delayed-review evidence. Apply selected vocabulary scope and existing new-card workload limits to unlocked cards.
+
+Keep separate schedules for contextual picture and contextual written-choice exercises, independent of existing word-picture and word-writing progress. Comparable sentence/question variants share each target/format schedule. Adding variants does not add scheduled cards.
+
+Log the exact sentence/question IDs and revisions, question kind, ordered choices, correct and selected answers, paired recordings, replays and learning phase on each immutable attempt. Attribute progress to the target exercise even when the answer is another word or phrase. Preserve the chosen sentence, question and recordings for replay and corrective retries; later reviews may choose another approved variant. Corrective retries remain distinct from delayed retention evidence. Admit only approved contextual content with usable media. Preserve existing history and the fixed active-session snapshot.
+
+### Pilot sequence and approval gates
+
+1. Publish this plan and its issue before implementation.
+2. Prepare about ten currently eligible target words with two or three sentence contexts each, covering both question kinds and answer formats. Supply a readable review of all sentences, questions, translations and choices, plus deterministic structural/content validation.
+3. Obtain owner approval of the actual pilot text before generating speech. Plan approval is not text or media approval.
+4. After text approval, generate a small sentence/question audio batch using approved voices. Preserve originals, exact text/settings and provenance; review pronunciation, rhythm, pause and volume before expanding the batch.
+5. Integrate ordered playback and recovery, manual contextual feedback, explicit-answer grading, stable retries, automatic unlocks, eligible cards, workload accounting and independent persisted progress.
+6. Complete real-iPhone listening and interaction acceptance before expanding coverage.
+
+The text pilot is review content, not an active practice pack. Pending or rejected text and missing/unreviewed recordings cannot become ordinary practice questions.
+
+### Acceptance
+
+Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; exact first-attempt delayed-review unlocks; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.
