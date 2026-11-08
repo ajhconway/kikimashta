@@ -57,6 +57,10 @@ Spacing and retrieval practice have research support; this density controller an
 - The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).
 - Verify pronunciation, playback, touch, layout, and VoiceOver on the real iPhone at playable milestones and releases. Hosted SQL checks and browser tests do not replace device acceptance.
 
+## Language framework (#143)
+
+Add a small registry of learning languages, each owning its practice pool, packs, and writing presentation. The home language selector scopes all practice and remembers the language and per-language pack selection on this device. Preserve existing Japanese identifiers and preferences. Progress and notes already include language identity. Spanish is the second language; starter content and pronunciation follow owner clarification. Keep unavailable content explicit and do not substitute Japanese audio. Cover switching, persistence, and isolation in focused and browser tests.
+
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
