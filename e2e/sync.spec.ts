@@ -1,3 +1,4 @@
+import { expectReadableHomeText } from './contrast';
 import { expect, test, silenceMedia, type BrowserContext, type Page } from './fixtures';
 import bank from '../content/ja.json' with { type: 'json' };
 import type { PracticeAttempt } from '../src/types';
@@ -169,6 +170,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     await expect.poll(async () => (await attempts(other, 'kikimashta-account-' + alice)).length).toBe(2);
     await other.getByRole('button', { name: 'Kikimashta home' }).click();
     await expect(other.getByLabel('Sync status')).toHaveText('Needs sync');
+    expectReadableHomeText([await other.getByLabel('Sync status').evaluate(element => getComputedStyle(element).color)]);
     expect(remote.tables.practice_attempts.size).toBe(1);
     remote.reconnect(); await syncNow(other); await syncNow(page);
     await expect(page.locator('.history')).toHaveText('2 answers saved on this device');

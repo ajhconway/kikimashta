@@ -1,5 +1,4 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
@@ -7,7 +6,7 @@ import { practiceCards, cardKey } from './core/cards';
 import { practicePool } from './core/practice';
 import { forecastDensity, planLessonChunk } from './core/density';
 import type { PracticeAttempt } from './types';
-import { quizFeedbackColors, themeColors } from './themes';
+import { intensityColors, quizFeedbackColors, themeColors } from './themes';
 
 vi.mock('./core/density', async importOriginal => {
   const actual = await importOriginal<typeof import('./core/density')>();
@@ -293,19 +292,34 @@ describe('adaptive session flow', () => {
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
-  it('persists a qualitative range, accepts matching levels, and ignores invalid saved preferences', async () => {
-    const user = userEvent.setup();
-    localStorage.setItem('kikimashta-density-range-v1', JSON.stringify({ min: 'intense', max: 'minimal' }));
-    const view = render(<App now={fixedNow}/>);
-    expect(within(screen.getByRole('listbox', { name: 'Minimum' })).getByRole('option', { name: 'Light' })).toHaveAttribute('aria-selected', 'true');
-    expect(within(screen.getByRole('listbox', { name: 'Maximum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
-    await user.click(screen.getByRole('listbox', { name: 'Minimum' }));
-    await user.keyboard('{ArrowDown}');
-    expect(JSON.parse(localStorage.getItem('kikimashta-density-range-v1')!)).toEqual({ min: 'moderate', max: 'moderate' });
-    view.unmount(); render(<App now={fixedNow}/>);
-    expect(within(screen.getByRole('listbox', { name: 'Minimum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
-    expect(within(screen.getByRole('listbox', { name: 'Maximum' })).getByRole('option', { name: 'Moderate' })).toHaveAttribute('aria-selected', 'true');
+  it.each([
+    [{ min: 'moderate', max: 'moderate' }, { min: 'moderate', max: 'moderate' }],
+    [{ min: 'intense', max: 'minimal' }, { min: 'light', max: 'moderate' }],
+  ])('uses saved bounds or defaults without exposing home wheels: %j', async (saved, expected) => {
+    localStorage.setItem('kikimashta-density-range-v1', JSON.stringify(saved));
+    render(<App now={fixedNow}/>);
+    await start();
+    expect(planLessonChunk).toHaveBeenCalledWith(expect.objectContaining({ range: expected }));
+    expect(localStorage.getItem('kikimashta-density-range-v1')).toBe(JSON.stringify(saved));
   });
+
+  it.each([
+    [0, 'Minimal', 'minimal', 'pace/kiku-minimal-v1.png'],
+    [5, 'Light', 'light', 'kikimashta-cat-v1.png'],
+    [15, 'Moderate', 'moderate', 'pace/kiku-moderate-v1.png'],
+    [30, 'High', 'high', 'pace/kiku-high-v1.png'],
+    [60, 'Intense', 'intense', 'pace/kiku-intense-v2.png'],
+  ] as const)('shows Kiku and a full-screen intensity color at %s', async (value, label, level, image) => {
+    vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: value });
+    const view = render(<App now={fixedNow}/>);
+    await waitFor(() => expect(screen.getByRole('status', { name: 'Review density' })).toHaveTextContent(label));
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    expect(screen.getByRole('status', { name: 'Review density' }).querySelector('img')).toHaveAttribute('src', '/brand/' + image);
+    expect(document.documentElement.style.getPropertyValue('--screen-background')).toBe(intensityColors[level]);
+    view.unmount();
+    expect(document.documentElement.style.getPropertyValue('--screen-background')).toBe('');
+  });
+
 });
 
 describe('quiz safeguards', () => {
@@ -442,7 +456,7 @@ describe('quiz safeguards', () => {
     expect(color()).toBe(quizFeedbackColors.correct);
     await click(screen.getByRole('button', { name: /kikimashta home/i }));
     await advance(5000);
-    expect(color()).toBe(themeColors.home);
+    expect(color()).toBe(intensityColors.minimal);
     expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
     expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
   });
