@@ -79,7 +79,7 @@ The generator follows the current [OpenAI Realtime audio guide](https://develope
 
 ## Vocabulary library
 
-The review library at `/vocabulary/` contains 441 entries transcribed from the owner's level 1–5 screenshots. Levels are provisional source labels, separate from stable word IDs. The original transcriptions and screenshot hashes are in `content/imports/`; the flat catalog is in `content/catalog/ja.json`.
+The review library at `/vocabulary/` contains 440 visible entries from the 441 source entries transcribed from the owner's level 1–5 screenshots. Levels are provisional source labels, separate from stable word IDs. The original transcriptions and screenshot hashes are in `content/imports/`; the flat catalog is in `content/catalog/ja.json`. Owner removals are recorded with `removalReason` in `content/catalog/review-overrides.json`; library rebuilds omit them and practice selections reject them. Form / ～形 (card170) retains its source ID and media for historical progress compatibility.
 
 The library combines original SVG scenes with 168 approved replacement illustrations from batches 01–10. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Search, level filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 
