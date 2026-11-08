@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
-import { practicePacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
+import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
 import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey } from './core/cards';
 import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
@@ -341,7 +341,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
           <fieldset disabled={loading || accountLoading || pendingSaveCount > 0}><legend>Practice packs</legend>
-            {practicePacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
+            {cardPacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
           </fieldset>
           <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
         </details>
