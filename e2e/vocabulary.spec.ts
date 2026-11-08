@@ -7,7 +7,7 @@ test('browse picture packs, search cards, and retry a voice recording', async ({
   await page.goto('./');
   await page.getByRole('link', { name: /card library/i }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Vocabulary cards');
-  await expect(page.locator('#results-status')).toContainText('440 cards');
+  await expect(page.locator('#results-status')).toContainText('880 cards');
   await expect(page.locator('.card')).toHaveCount(24);
   await page.getByLabel('Card pack').selectOption('ja-wanikani-2-pictures');
   await expect(page.locator('#results-status')).toContainText('79 cards');
@@ -37,8 +37,9 @@ test('browse picture packs, search cards, and retry a voice recording', async ({
   await expect(page.locator('#results-status')).toContainText('No matching words.');
   await expect(page.locator('.card')).toHaveCount(0);
   await page.getByLabel('Search words').fill('りんご');
-  await expect(page.locator('.card')).toHaveCount(1);
-  await expect(page.getByRole('heading', { level: 2 })).toHaveText('リンゴ');
+  await expect(page.locator('.card')).toHaveCount(2);
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(['リンゴ', 'リンゴ']);
+  await expect(page.locator('.card-writing')).toHaveText('リンゴ');
   await expect(page.locator('.card-image')).toHaveAttribute('src', /images\/approved\/ja-apple-[a-f0-9]+\.jpg$/);
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBe(640);
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -76,14 +77,15 @@ test('ten packs keep level membership and switch between pictures and writing', 
     const pictureCount = await page.locator('.card').count();
     expect(pictureCount).toBeGreaterThan(0);
     const headings = await page.locator('.card h2').allTextContents();
-    const packNames = [`WaniKani level ${level} · Pictures`, `WaniKani level ${level} · Writing`];
-    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => packNames).flat());
+    const picturePackName = `WaniKani level ${level} · Pictures`;
+    const writingPackName = `WaniKani level ${level} · Writing`;
+    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => picturePackName));
     await expect(page.locator('.level-label')).toHaveCount(0);
     await expect(page.locator('.card-image')).toHaveCount(pictureCount);
     await selector.selectOption(`ja-wanikani-${level}-writing`);
     await expect(page.locator('.card h2')).toHaveText(headings);
     await expect(page.locator('.card-writing')).toHaveText(headings);
-    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => packNames).flat());
+    await expect(page.locator('.card .pack-labels span')).toHaveText(Array.from({ length: pictureCount }, () => writingPackName));
     await expect(page.locator('.card-image, .picture-notes, .review-badge')).toHaveCount(0);
   }
   await selector.selectOption('ja-wanikani-2-writing');
@@ -107,4 +109,46 @@ test('ten packs keep level membership and switch between pictures and writing', 
   await expect(page.locator('.card')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Next →', exact: true })).toBeDisabled();
   await expect(page.getByRole('button', { name: '← Previous', exact: true })).toBeDisabled();
+});
+
+
+test('library mastery survives reload and stays specific to picture and writing cards', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  await page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('kikimashta-v0', 1);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    try {
+      const tx = db.transaction('attempts', 'readwrite');
+      tx.objectStore('attempts').put({
+        id: 'library-picture-lesson', sessionId: 'library', itemId: 'ja-dog', language: 'ja-JP',
+        choiceIds: ['ja-dog'], selectedId: 'ja-dog', correct: true,
+        startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+        context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'dog.mp3', replays: 0, schedulerVersion: 'fsrs-6-v2' },
+      });
+      await new Promise<void>((resolve, reject) => { tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error); });
+    } finally { db.close(); }
+  });
+  await page.goto('./vocabulary/');
+  await page.getByLabel('Search words').fill('Dog');
+  const picture = page.locator('article[data-item-id="ja-dog"][data-exercise="audio-picture"]');
+  const writing = page.locator('article[data-item-id="ja-dog"][data-exercise="audio-text"]');
+  await expect(picture.locator('.card-mastery')).toHaveText('Mastery: Learning');
+  await expect(writing.locator('.card-mastery')).toHaveText('Mastery: New');
+  await expect(page.locator('#pack option[value="ja-wanikani-2-pictures"]')).toContainText('Lowest: New · Average: New');
+  await picture.locator('.card-feedback summary').click();
+  await writing.locator('.card-feedback summary').click();
+  await picture.getByLabel('Your notes').fill('Shared vocabulary note');
+  await expect(writing.getByLabel('Your notes')).toHaveValue('Shared vocabulary note');
+  await expect(page.getByRole('button', { name: 'Export feedback (1)' })).toBeEnabled();
+  await page.reload();
+  await page.getByLabel('Search words').fill('Dog');
+  await expect(picture.locator('.card-mastery')).toHaveText('Mastery: Learning');
+  await expect(writing.locator('.card-mastery')).toHaveText('Mastery: New');
+  await page.getByLabel('Card pack').selectOption('ja-wanikani-2-writing');
+  await expect(page.locator('.card')).toHaveCount(1);
+  await expect(writing.locator('.card-mastery')).toHaveText('Mastery: New');
 });

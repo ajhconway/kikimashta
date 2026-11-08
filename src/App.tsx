@@ -4,7 +4,8 @@ import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } f
 import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey } from './core/cards';
 import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
-import { deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { cardMastery, masteryIndex, packMastery } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { QuizTimerFill } from './components/QuizTimerFill';
@@ -100,6 +101,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [quizSize, setQuizSize] = useState(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<PracticeAttempt[]>([]);
+  const [packSchedules, setPackSchedules] = useState(new Map<string, ScheduledWord>());
+  const [masteryChange, setMasteryChange] = useState<{ id: string; label: string; direction: 'up' | 'down' } | null>(null);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
   const [departures, setDepartures] = useState<DepartingCard[]>([]);
   const [saving, setSaving] = useState(false);
@@ -154,10 +157,12 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
+        const allSchedules = await deriveSchedules(attempts, practicePool.language);
+        const schedules = allSchedules.filter(card => selectedKeys.has(cardKey(card)));
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
+        setPackSchedules(new Map(allSchedules.map(word => [cardKey(word), word])));
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
       } catch {
@@ -281,11 +286,23 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     if (isDevReview) return;
     if (pendingSaves.current.has(attempt.id)) return;
     pendingSaves.current.add(attempt.id); setPendingSaveCount(pendingSaves.current.size); setSaving(true); setSaveError(false);
+    const request = operation.current;
+    const key = cardKey({ ...attempt, exercise: attemptExercise(attempt) });
+    const previous = mastery.current.get(key);
     try {
+      const updated = attempt.context?.retryOf ? undefined : await advanceSchedule(previous, attempt);
       await store.record(attempt);
+      if (updated && operation.current === request) {
+        mastery.current.set(key, updated);
+        const before = masteryIndex(previous), after = masteryIndex(updated);
+        if (before !== after && active.current.id === attempt.id) {
+          setMasteryChange({ id: attempt.id, label: cardMastery(updated).label, direction: after > before ? 'up' : 'down' });
+        }
+      }
       onSaved?.();
       if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
       setTotal(history.current.length);
+      setRefresh(value => value + 1);
     } catch { if (active.current.id === attempt.id) setSaveError(true); }
     finally { pendingSaves.current.delete(attempt.id); setPendingSaveCount(pendingSaves.current.size); if (active.current.id === attempt.id) setSaving(false); }
   }
@@ -357,7 +374,10 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
           <fieldset disabled={loading || accountLoading || pendingSaveCount > 0}><legend>Practice packs</legend>
-            {cardPacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
+            {cardPacks.map(pack => {
+              const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id]), packSchedules);
+              return <label key={pack.id}><input type="checkbox" aria-label={pack.title} aria-describedby={`mastery-${pack.id}`} checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/><span>{pack.title}<small id={`mastery-${pack.id}`} className="pack-mastery">{loading || accountLoading ? 'Mastery loading…' : historyError ? 'Mastery unavailable' : `Lowest: ${levels.lowest.label} · Average: ${levels.average.label}`}</small></span></label>;
+            })}
           </fieldset>
           <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
         </details>
@@ -402,7 +422,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
           return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.outcome === 'partial' ? 'Got it — take your time.' : feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
+        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.outcome === 'partial' ? 'Got it — take your time.' : feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback && masteryChange?.id === feedback.id && <span className={'mastery-change mastery-' + masteryChange.direction} aria-label={`Mastery ${masteryChange.direction === 'up' ? 'increased' : 'decreased'} to ${masteryChange.label}`}><span aria-hidden="true">{masteryChange.direction === 'up' ? '↑' : '↓'}</span> {masteryChange.label}</span>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>

@@ -92,7 +92,7 @@ async function attempts(page: Page, name: string) {
 
 async function firstNote(page: Page) {
   await page.goto('./vocabulary/');
-  const card = page.getByRole('article', { name: '上', exact: true });
+  const card = page.getByRole('article', { name: '上', exact: true }).and(page.locator('[data-exercise="audio-picture"]'));
   await card.locator('.card-feedback summary').click();
   return { input: card.getByLabel('Your notes'), status: card.locator('.feedback-status') };
 }
@@ -189,7 +189,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     await expect(downloaded.status).toHaveText('Feedback cleared.');
     await expect.poll(() => remote.tables.card_note_events.size).toBe(3);
     await page.reload();
-    const cleared = page.getByRole('article', { name: '上', exact: true });
+    const cleared = page.getByRole('article', { name: '上', exact: true }).and(page.locator('[data-exercise="audio-picture"]'));
     await cleared.locator('.card-feedback summary').click();
     await expect(cleared.getByLabel('Your notes')).toHaveValue('');
 

@@ -57,7 +57,7 @@ for (const [exercise, reducedMotion] of [
     await page.getByRole('button', { name: /begin review/i }).click();
     const fill = page.locator('.quiz-timer-fill');
     await expect(fill).toBeAttached();
-    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 50));
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
     await page.clock.runFor(limit / 2);
     const smooth = await fill.evaluate(element => {
       const animations = element.getAnimations();
@@ -162,8 +162,8 @@ test('Dev review offers a random timer without mastery and keeps partial success
   await page.clock.install();
   await page.goto('./');
   await page.getByRole('button', { name: 'Dev review' }).click();
-  await expect(page.getByText('3 second timer started.', { exact: true })).toBeAttached();
-  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 50));
+  await expect(page.getByText('1.5 second timer started.', { exact: true })).toBeAttached();
+  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   await page.clock.runFor(3000);
   await expect(page.getByText(/correct answer still counts as partial success/i)).toBeAttached();
   const source = await page.locator('audio').getAttribute('src');
