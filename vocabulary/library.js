@@ -1,7 +1,12 @@
 /* One shared player; render only the current page. Vocabulary library for #27. */
 import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
 import { getLibraryAccount } from '../src/sync/library-bridge'
-import { cardPacks } from '../src/core/packs'
+import { cardPacks, selectedPracticeCards } from '../src/core/packs'
+import { cardKey } from '../src/core/cards'
+import { cardMastery, packMastery } from '../src/core/mastery'
+import { deriveSchedules } from '../src/core/scheduler'
+import { practicePool } from '../src/core/practice'
+import { ProgressStore } from '../src/progress/store'
 
 (async () => {
   'use strict'
@@ -31,6 +36,39 @@ import { cardPacks } from '../src/core/packs'
   }) : createFeedbackStore({ language: 'ja' })
   if (account) document.getElementById('feedback-description').textContent = 'Feedback is saved to this account. Export it to share or back it up.'
   const feedbackViews = new Map()
+  const masteryViews = new Map()
+  const progress = account?.progress ?? new ProgressStore()
+  let schedules = null
+  let masteryRequest = 0
+  let pageActive = true
+  let closingProgress = Promise.resolve()
+  function updateMastery() {
+    for (const update of masteryViews.values()) update()
+    for (const pack of cardPacks) {
+      const option = Array.from(packElement.options).find(option => option.value === pack.id)
+      const summary = schedules && packMastery(selectedPracticeCards(practicePool.items, [pack.id]), schedules)
+      option.textContent = `${pack.title} · ${summary ? `Lowest: ${summary.lowest.label} · Average: ${summary.average.label}` : 'Mastery unavailable'}`
+    }
+  }
+  async function refreshMastery() {
+    if (!pageActive) return
+    if (account && account.currentUserId() !== account.userId) {
+      schedules = null
+      updateMastery()
+      return
+    }
+    const request = ++masteryRequest
+    try {
+      const history = await progress.history(practicePool.language)
+      const derived = await deriveSchedules(history, practicePool.language)
+      if (request !== masteryRequest || (account && account.currentUserId() !== account.userId)) return
+      schedules = new Map(derived.map(word => [cardKey(word), word]))
+    } catch {
+      if (request !== masteryRequest) return
+      schedules = null
+    }
+    updateMastery()
+  }
   const audio = new Audio()
   audio.preload = 'none'
   let cards = []
@@ -115,17 +153,18 @@ import { cardPacks } from '../src/core/packs'
     exportButton.textContent = count ? `Export feedback (${count})` : 'Export feedback'
   }
 
-  function renderFeedback(card) {
+  function renderFeedback(card, exercise) {
+    const viewId = `${card.id}-${exercise}`
     const details = element('details', 'card-feedback')
     const summary = element('summary')
     const label = element('label', '', 'Your notes')
     const input = element('textarea')
-    input.id = `feedback-${card.id}`
+    input.id = `feedback-${viewId}`
     input.rows = 4
     input.placeholder = 'Card, pronunciation, meaning…'
     label.htmlFor = input.id
     const status = element('p', 'feedback-status')
-    status.id = `feedback-status-${card.id}`
+    status.id = `feedback-status-${viewId}`
     status.setAttribute('role', 'status')
     input.setAttribute('aria-describedby', status.id)
     input.value = feedbackStore.read(card.id).text
@@ -141,10 +180,11 @@ import { cardPacks } from '../src/core/packs'
       status.classList.toggle('save-error', !note.saved && !note.pending)
     }
     update(feedbackStore.read(card.id))
-    feedbackViews.set(card.id, () => update(feedbackStore.read(card.id)))
+    feedbackViews.set(viewId, () => update(feedbackStore.read(card.id)))
     input.addEventListener('input', () => {
       edited = true
       update(feedbackStore.write(card.id, input.value))
+      for (const refresh of feedbackViews.values()) refresh()
       updateFeedbackCount()
     })
     details.append(summary, label, input, status)
@@ -177,6 +217,9 @@ import { cardPacks } from '../src/core/packs'
     account.subscribe(() => {
       if (account.currentUserId() !== account.userId) {
         stopAudio()
+        masteryRequest++
+        schedules = null
+        updateMastery()
         if (!feedbackStore.hasUnsavedChanges()) { window.location.reload(); return }
         document.getElementById('feedback-description').textContent = 'These notes belong to the previous account.'
         accountStatus.textContent = 'Account changed. Export your unsaved feedback, then reload this page to switch accounts.'
@@ -185,14 +228,17 @@ import { cardPacks } from '../src/core/packs'
       }
       feedbackStore.refresh()
       updateFeedbackCount()
+      void refreshMastery()
     })
   }
 
   function renderCard(card, exercise) {
     const writing = exercise === 'audio-text'
     const article = element('article', 'card')
-    const headingId = `word-${card.id}`
-    article.setAttribute('aria-labelledby', headingId)
+    const headingId = `word-${card.id}-${exercise}`
+    article.dataset.itemId = card.id
+    article.dataset.exercise = exercise
+    article.setAttribute('aria-labelledby', `${headingId} ${headingId}-format`)
     if (writing) {
       const face = element('div', 'card-writing', card.text)
       face.lang = 'ja'
@@ -215,10 +261,18 @@ import { cardPacks } from '../src/core/packs'
     reading.lang = 'ja'
     const packs = element('p', 'pack-labels')
     packs.setAttribute('aria-label', 'Packs')
-    for (const pack of cardPacks.filter(pack => pack.itemIds.includes(card.id))) {
+    for (const pack of cardPacks.filter(pack => pack.exercise === exercise && pack.itemIds.includes(card.id))) {
       packs.append(element('span', '', pack.title))
     }
-    content.append(packs, heading, reading, element('p', 'meaning', card.meaning))
+    const mastery = element('p', 'card-mastery')
+    const update = () => {
+      mastery.textContent = `Mastery: ${schedules ? cardMastery(schedules.get(cardKey({ language: practicePool.language, itemId: card.id, exercise }))).label : 'unavailable'}`
+    }
+    masteryViews.set(headingId, update)
+    update()
+    const format = element('p', 'card-format', writing ? 'Writing' : 'Pictures')
+    format.id = `${headingId}-format`
+    content.append(format, packs, heading, reading, element('p', 'meaning', card.meaning), mastery)
     if (!writing && card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')
@@ -246,7 +300,7 @@ import { cardPacks } from '../src/core/packs'
       }
       content.append(notes)
     }
-    content.append(renderFeedback(card))
+    content.append(renderFeedback(card, exercise))
     article.append(content)
     return article
   }
@@ -256,18 +310,19 @@ import { cardPacks } from '../src/core/packs'
   function render() {
     stopAudio()
     feedbackViews.clear()
+    masteryViews.clear()
     audioError.hidden = true
     const query = normalized(searchElement.value)
     const pack = cardPacks.find(pack => pack.id === packElement.value)
     const itemIds = pack ? new Set(pack.itemIds) : null
-    const exercise = pack?.exercise || 'audio-picture'
     const filtered = cards.filter(card => (!itemIds || itemIds.has(card.id)) &&
       (!query || [card.text, card.reading, card.meaning].some(value => normalized(value).includes(query))))
+      .flatMap(card => (pack ? [pack.exercise] : ['audio-picture', 'audio-text']).map(exercise => ({ card, exercise })))
     const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize))
     page = Math.min(page, totalPages)
     const offset = (page - 1) * pageSize
     const fragment = document.createDocumentFragment()
-    for (const card of filtered.slice(offset, offset + pageSize)) fragment.append(renderCard(card, exercise))
+    for (const { card, exercise } of filtered.slice(offset, offset + pageSize)) fragment.append(renderCard(card, exercise))
     cardsElement.replaceChildren(fragment)
     previous.disabled = page === 1
     next.disabled = page === totalPages
@@ -280,8 +335,22 @@ import { cardPacks } from '../src/core/packs'
   packElement.addEventListener('change', () => { page = 1; render() })
   previous.addEventListener('click', () => { page -= 1; render() })
   next.addEventListener('click', () => { page += 1; render() })
-  window.addEventListener('pagehide', stopAudio)
+  window.addEventListener('pagehide', () => {
+    stopAudio()
+    pageActive = false
+    masteryRequest++
+    if (!account) closingProgress = progress.close().catch(() => {})
+  })
+  async function refreshAfterReturn() {
+    // A BFCache restore can happen while the previous guest connection closes.
+    // Wait before reopening it; retain the existing identity and stale-read guards.
+    await closingProgress
+    if (pageActive) void refreshMastery()
+  }
+  window.addEventListener('pageshow', () => { pageActive = true; void refreshAfterReturn() })
+  window.addEventListener('focus', () => { void refreshAfterReturn() })
 
+  await refreshMastery()
   fetch('./library-data.json')
     .then(response => {
       if (!response.ok) throw new Error('Vocabulary request failed')

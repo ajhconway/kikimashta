@@ -14,7 +14,7 @@ async function downloadFeedback(page: Page) {
 test('card feedback survives paging, filters and reload; export includes hidden notes', async ({ page }) => {
   await page.goto('./vocabulary/');
   await expect(page.locator('.card')).toHaveCount(24);
-  const above = page.getByRole('article', { name: '上', exact: true });
+  const above = page.locator('article[data-exercise="audio-picture"]').filter({ has: page.getByRole('heading', { name: '上', exact: true }) });
   await above.locator('.card-feedback summary').click();
   await above.getByLabel('Your notes').fill('Show more space above the shelf.\n余白');
   await expect(above.locator('.feedback-status')).toHaveText('Saved on this device.');
@@ -25,7 +25,7 @@ test('card feedback survives paging, filters and reload; export includes hidden 
   await expect(above.getByLabel('Your notes')).toHaveValue('Show more space above the shelf.\n余白');
   await page.getByLabel('Card pack').selectOption('ja-wanikani-2-pictures');
   await page.getByLabel('Search words').fill('Dog');
-  const dog = page.getByRole('article', { name: '犬', exact: true });
+  const dog = page.locator('article[data-exercise="audio-picture"]').filter({ has: page.getByRole('heading', { name: '犬', exact: true }) });
   await dog.locator('.card-feedback summary').click();
   await dog.getByLabel('Your notes').fill('Cedar sounds good. <keep this text>');
   await page.reload();
@@ -59,7 +59,7 @@ test('failed saves keep an editable draft across navigation and allow export', a
     };
   });
   await page.goto('./vocabulary/');
-  const above = page.getByRole('article', { name: '上', exact: true });
+  const above = page.locator('article[data-exercise="audio-picture"]').filter({ has: page.getByRole('heading', { name: '上', exact: true }) });
   await above.locator('.card-feedback summary').click();
   await above.getByLabel('Your notes').fill('Unsaved feedback 日本語');
   await expect(above.locator('.feedback-status')).toContainText('Could not save');

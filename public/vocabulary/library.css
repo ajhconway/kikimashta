@@ -63,3 +63,6 @@ footer { margin-top: 34px; text-align: center; font-size: .9rem; }
   .card-image { height: 245px; }
 }
 @media (prefers-reduced-motion: reduce) { button:active:enabled { transform: none; } }
+
+.card-format { margin: 0 0 6px; font-size: .85rem; font-weight: 750; }
+.card-mastery { display: inline-block; margin: 0 0 14px; padding: 3px 10px; border: 2px solid #8748ef; border-radius: 20px; font-size: .85rem; font-weight: 750; }

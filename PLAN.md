@@ -67,12 +67,28 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 ## Adaptive timer pilot (#121)
 
-Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Established review cards use FSRS stability in days: below 1 stays untimed; at 1/3/7/21 days use 10/7/5/3 seconds. This is an adjustable pilot policy, not a validated fluency measure.
+Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
-Unsaved Dev review samples untimed/10/7/5/3 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+Unsaved Dev review samples untimed/10/5/3/1.5 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
 
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
 Show elapsed time as soft amber filling the background from top to bottom. Use a browser-native linear transform animation for smooth visual progress; keep the wall-clock expiry and grading independent, and realign the visual when visibility changes (#128). Give partial success an amber response, a gentle card/companion wobble, slower outward departures that curve downward over 1.1 seconds, and a distinct badge and message; respect reduced motion. Keep full-success and failure responses. Count partial successes as completed questions and identify their count in the summary.
 
 Persist explicit outcomes and the countdown limit/start alongside existing attempt timing. FSRS policy v2 maps success/partial/failure to Good/Hard/Again, retains v1 historical grading, and still excludes corrective retries from retention evidence. Local history and sync preserve the optional new fields without rewriting old attempts; the existing JSON payload constraint accepts these additions. Already-open v1 clients need a refresh before syncing v2 history. Review timing thresholds, exercise differences, and feedback after deployment and real iPhone use in [#122](https://github.com/ajhconway/kikimashta/issues/122).
+
+## Interval mastery (#135)
+
+Derive mastery independently for each language/item/exercise from the scheduled gap between last review and next due date, never time remaining. New cards have no review evidence. Levels: Learning <4 hours, Improving <1 day, Familiar <7 days, Steady <30 days, Strong <90 days, Confident <365 days, Mastered thereafter. Months use fixed 30/90-day boundaries.
+
+Show both lowest and average mastery on packs; average means the floor of the mean level ordinal, including New cards, across approved practice cards in that pack. Keep picture and writing cards separate in the library and show their individual mastery. Show an up/down arrow and the new label after a saved answer changes level; retries and Dev review do not change mastery.
+
+Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review samples the available timer choices. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
+
+## Mastery demo (#140)
+
+Offer an unsaved Mastery demo alongside the existing random-timer Dev review. The demo presents all eight levels in order, using selected-pack cards and separate in-memory sample schedules. Show the current sample level and its timer; after answers, use the normal FSRS grading and mastery arrows against the sample schedule. Corrective retries stay untimed and do not advance the sample schedule. Keep all sample state separate from real mastery, saved attempts, account sync, and library/pack summaries. If a selected pool is small, repeat cards with separate demo identities so every level remains available. Verify all levels, timer mapping, arrows, retry isolation, and unchanged real browser storage. Serve the completed demo locally for owner review.
+
+## Mastery feedback presentation (#141)
+
+Replace the visible answer slogans with a prominent level-change badge: a direction arrow and the new mastery label, without extra Level up/down text. Level ups use a brief pop and sparkle animation; decreases use a gentler downward entrance. When mastery does not change, keep a simple outcome symbol and a screen-reader announcement. Preserve save gating, grading, question timing, reduced-motion support, and the existing feedback space so cards and Continue remain steady. Use a solid pink fill from the app’s palette for level ups, without a gradient. Keep the enlarged arrows and labels while restoring the earlier card sizes and quiz spacing. Fit the caption-free badges into the original reserved feedback area without moving cards or Continue after an answer. Show the current mastery level and effective timer duration in larger text at the bottom, inside the feedback area. Level-change badges cover that text after an answer, including for saved reviews and the unsaved mastery demo. Keep demo-only explanatory text out of the visible quiz header. Update the demo and ordinary review checks for the new presentation.
