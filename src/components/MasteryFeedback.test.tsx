@@ -22,7 +22,7 @@ describe('mastery answer feedback (#141)', () => {
     const { container } = render(<MasteryFeedback outcome={outcome} change={{ direction, label }}/>);
     const cue = screen.getByRole('img', { name: `Mastery ${accessible} to ${label}` });
     expect(within(cue).getByText(arrow)).toBeVisible();
-    expect(within(cue).getByText(`Level ${direction}`)).toBeVisible();
+    expect(screen.queryByText(/^level (up|down)$/i)).not.toBeInTheDocument();
     expect(within(cue).getByText(label)).toBeVisible();
     expect(within(cue).getByText(arrow)).toHaveAttribute('aria-hidden', 'true');
     expect(within(cue).getByText(label).closest('[aria-hidden]')).toHaveAttribute('aria-hidden', 'true');

@@ -14,7 +14,7 @@ export function MasteryFeedback({ outcome, change, saving = false }: {
       {change ? <div className={'mastery-change mastery-' + change.direction} role="img"
         aria-label={`Mastery ${change.direction === 'up' ? 'increased' : 'decreased'} to ${change.label}`}>
         <span className="mastery-arrow" aria-hidden="true">{change.direction === 'up' ? '↑' : '↓'}</span>
-        <span className="mastery-copy" aria-hidden="true"><span className="mastery-caption">Level {change.direction}</span><span className="mastery-label">{change.label}</span></span>
+        <span className="mastery-label" aria-hidden="true">{change.label}</span>
         {change.direction === 'up' && <span className="mastery-sparks" aria-hidden="true">{Array.from({ length: 6 }, (_, index) => <i key={index}>✦</i>)}</span>}
       </div> : <span className={'answer-result result-' + outcome} aria-hidden="true">{outcome === 'partial' ? '≈' : outcome === 'success' ? '✓' : '↺'}</span>}
     </>}

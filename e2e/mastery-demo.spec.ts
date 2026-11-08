@@ -41,7 +41,7 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
         : choices.filter({ hasNot: page.getByRole('img', { name: target.image.alt, exact: true }) }).first();
       await wrong.click();
       await expect(page.getByLabel('Mastery decreased to Learning')).toContainText('Learning');
-      await expect(page.locator('.mastery-caption')).toHaveText('Level down');
+      await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
       await expect(page.locator('.mastery-down')).toHaveCSS('animation-name', 'none');
       await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeInViewport();
       await page.screenshot({ path: `test-results/mastery-demo-${testInfo.project.name}.png` });
@@ -50,7 +50,7 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
       await correct.click();
       if (label === 'New') {
         await expect(page.getByLabel('Mastery increased to Learning')).toContainText('Learning');
-        await expect(page.locator('.mastery-caption')).toHaveText('Level up');
+        await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
         await expect(page.locator('.mastery-up')).toHaveCSS('animation-name', 'none');
         await expect(page.locator('.mastery-sparks')).toBeHidden();
       }
@@ -85,7 +85,8 @@ test('level-up animation fits the feedback space without moving cards', async ({
   await correct.click();
   const badge = page.getByRole('img', { name: 'Mastery increased to Learning', exact: true });
   await expect(badge).toBeVisible();
-  await expect(badge.locator('.mastery-caption')).toHaveText('Level up');
+  await expect(badge).toHaveCSS('background-image', 'none');
+  await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
   await expect(badge.locator('.mastery-arrow')).toHaveText('↑');
   await expect(badge).toHaveCSS('animation-name', 'mastery-pop');
   await expect(badge.locator('.mastery-arrow')).toHaveCSS('animation-name', 'mastery-arrow-up');
