@@ -8,10 +8,27 @@ import { loadContextualPilot, projectRoot } from './validate-contextual.mjs'
 export const AUDIO_CONTEXT_IDS = ['ja-ctx-ue-01', 'ja-ctx-mizu-01', 'ja-ctx-hashiru-01']
 export const AUDIO_VOICES = ['otani', 'morioki']
 export const GAP_MS = 650
-export function auditionProfile(stage = 'contrastive') {
+/** The remaining reviewed counterparts, excluding every already-recorded sample context. */
+export const EXPANSION_CONTEXT_IDS = [
+  'ja-ctx-ue-02', 'ja-ctx-shita-01', 'ja-ctx-shita-02',
+  'ja-ctx-ookii-01', 'ja-ctx-ookii-02', 'ja-ctx-chiisai-01', 'ja-ctx-chiisai-02',
+  'ja-ctx-hon-01', 'ja-ctx-hon-02', 'ja-ctx-mizu-02',
+  'ja-ctx-koohii-01', 'ja-ctx-koohii-02', 'ja-ctx-kuruma-01', 'ja-ctx-kuruma-02',
+  'ja-ctx-sensei-01', 'ja-ctx-sensei-02', 'ja-ctx-hashiru-02',
+]
+export function auditionProfile(stage = 'contrastive', batch = 'sample') {
+  if (batch !== 'sample' && batch !== 'expansion') throw new Error('Choose contextual batch sample or expansion.')
+  if (stage === 'simple' && batch === 'expansion') return {
+    bankPath: 'content/contextual/ja-simple-expansion.json', bankId: 'ja-contextual-simple-expansion-v1',
+    approvalPath: 'content/contextual/expansion-text-approval.json', issue: 139,
+    contextIds: EXPANSION_CONTEXT_IDS.map(id => id.replace('ja-ctx-', 'ja-ctx-simple-')),
+    evidenceUrl: 'https://github.com/ajhconway/kikimashta/issues/139#issuecomment-6725981021',
+  }
   if (stage === 'contrastive') return {
     bankPath: 'content/contextual/ja-pilot.json', bankId: 'ja-contextual-pilot-v1',
-    approvalPath: 'content/contextual/text-approval.json', contextIds: AUDIO_CONTEXT_IDS, issue: 124,
+    approvalPath: 'content/contextual/text-approval.json',
+    contextIds: batch === 'sample' ? AUDIO_CONTEXT_IDS : EXPANSION_CONTEXT_IDS,
+    issue: batch === 'sample' ? 124 : 139,
     evidenceUrl: 'https://github.com/ajhconway/kikimashta/issues/119#issuecomment-6723994903',
   }
   if (stage === 'simple') return {
@@ -38,8 +55,8 @@ export function contextualTextDigest(bank) {
   return hash(JSON.stringify(canonical(authored)))
 }
 
-export function validateContextualTextApproval(bank, approval, { stage = 'contrastive' } = {}) {
-  const profile = auditionProfile(stage)
+export function validateContextualTextApproval(bank, approval, { stage = 'contrastive', batch = 'sample' } = {}) {
+  const profile = auditionProfile(stage, batch)
   if (approval?.schemaVersion !== 1 || bank.id !== profile.bankId || approval.bankId !== bank.id || approval.language !== bank.language ||
       !/^[a-f0-9]{40}$/.test(approval.sourceCommit ?? '') || !/^[a-f0-9]{64}$/.test(approval.sourceFileSha256 ?? '') ||
       approval.textSha256 !== contextualTextDigest(bank) || !Number.isFinite(Date.parse(approval.recordedAt)) ||
@@ -50,9 +67,9 @@ export function validateContextualTextApproval(bank, approval, { stage = 'contra
   return approval
 }
 
-export function contextualAuditionPlan({ bank, approval, config, stage = 'contrastive' }) {
-  const profile = auditionProfile(stage)
-  validateContextualTextApproval(bank, approval, { stage })
+export function contextualAuditionPlan({ bank, approval, config, stage = 'contrastive', batch = 'sample' }) {
+  const profile = auditionProfile(stage, batch)
+  validateContextualTextApproval(bank, approval, { stage, batch })
   const voices = AUDIO_VOICES.map(name => {
     const voice = config.voices.find(voice => voice.voice === name)
     if (!voice) throw new Error('Missing approved audition voice: ' + name)
@@ -79,11 +96,11 @@ export function contextualAuditionPlan({ bank, approval, config, stage = 'contra
     generation: generationPlan(items, { ...config, voices, issue: profile.issue }) }
 }
 
-export function loadContextualAudition(root = projectRoot, { stage = 'contrastive' } = {}) {
-  const profile = auditionProfile(stage)
+export function loadContextualAudition(root = projectRoot, { stage = 'contrastive', batch = 'sample' } = {}) {
+  const profile = auditionProfile(stage, batch)
   const { bank } = loadContextualPilot(root, profile.bankPath)
   const read = path => JSON.parse(readFileSync(resolve(root, path), 'utf8'))
   const approval = read(profile.approvalPath)
   const config = read('content/elevenlabs-voices.json')
-  return { bank, plan: contextualAuditionPlan({ bank, approval, config, stage }) }
+  return { bank, plan: contextualAuditionPlan({ bank, approval, config, stage, batch }) }
 }

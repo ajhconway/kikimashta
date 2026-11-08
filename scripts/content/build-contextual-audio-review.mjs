@@ -116,8 +116,8 @@ ${review.samples.map(sample => `<article id="${escapeHtml(`${sample.voice}-${sam
 <p><a href="review-provenance.json">Review provenance</a></p></html>`
 }
 
-export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, stage = 'contrastive', ffmpeg = process.env.FFMPEG || 'ffmpeg' }) {
-  const { bank, plan } = loadContextualAudition(root, { stage })
+export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, stage = 'contrastive', batch = 'sample', ffmpeg = process.env.FFMPEG || 'ffmpeg' }) {
+  const { bank, plan } = loadContextualAudition(root, { stage, batch })
   if (![input, delivery, output].every(path => typeof path === 'string' && path.trim())) throw new Error('Choose --input originals, --delivery normalized recordings and a new --output review directory.')
   const sourceRoot = await realpath(resolve(root, input))
   const deliveryRoot = await realpath(resolve(root, delivery))
@@ -210,9 +210,9 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { input: { type: 'string' }, delivery: { type: 'string' }, output: { type: 'string' }, ffmpeg: { type: 'string' }, stage: { type: 'string', default: 'contrastive' } } })
+  const { values } = parseArgs({ options: { input: { type: 'string' }, delivery: { type: 'string' }, output: { type: 'string' }, ffmpeg: { type: 'string' }, stage: { type: 'string', default: 'contrastive' }, batch: { type: 'string', default: 'sample' } } })
   console.log(JSON.stringify(await buildContextualAudioReview({ input: values.input, delivery: values.delivery, output: values.output,
-    stage: values.stage, ...(values.ffmpeg ? { ffmpeg: values.ffmpeg } : {}) })))
+    stage: values.stage, batch: values.batch, ...(values.ffmpeg ? { ffmpeg: values.ffmpeg } : {}) })))
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

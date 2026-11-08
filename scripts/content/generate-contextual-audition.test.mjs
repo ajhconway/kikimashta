@@ -1,14 +1,16 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { mkdir, readFile, readdir, symlink, writeFile } from 'node:fs/promises'
+import { mkdir, mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises'
 import { execFileSync } from 'node:child_process'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { tmpdir } from 'node:os'
 import { contextualFixture, sha256 } from './contextual-audio-fixtures.mjs'
 import { loadContextualAudition } from './contextual-audio-plan.mjs'
 import { generateCards } from './generate-elevenlabs-cards.mjs'
 import { contextualAuditionSummary, generateContextualAudition } from './generate-contextual-audition.mjs'
+import { projectRoot } from './validate-contextual.mjs'
 
 const balance = async () => ({ usedCredits: 0, creditLimit: 10000, remainingCredits: 10000 })
 const json = async path => JSON.parse(await readFile(path, 'utf8'))
@@ -32,6 +34,49 @@ globalThis.fetch=()=>{throw new Error('dry-run network')};\n`)
   assert.equal(result.gapMs, 650)
   assert.equal(existsSync(fixture.output), false)
   assert.deepEqual((await readdir(fixture.root, { recursive: true })).filter(path => path !== 'no-external-effects.mjs').sort(), before.sort())
+})
+
+test('both expansion CLI dry runs need no credentials, make no requests or writes, and report the full approved budget', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'kikimashta-expansion-dry-run-'))
+  t.after(() => rm(directory, { recursive: true, force: true }))
+  const blocker = join(directory, 'no-external-effects.mjs')
+  await writeFile(blocker, `import fs from 'node:fs/promises';
+for (const name of ['writeFile','mkdir','appendFile','open','unlink','rename','copyFile']) fs[name]=()=>{throw new Error('dry-run write')};
+globalThis.fetch=()=>{throw new Error('dry-run network')};\n`)
+  for (const stage of ['simple', 'contrastive']) {
+    const result = JSON.parse(execFileSync(process.execPath, ['--import', blocker,
+      fileURLToPath(new URL('./generate-contextual-audition.mjs', import.meta.url)), '--stage', stage, '--batch', 'expansion', '--dry-run'],
+    { env: { ...process.env, ELEVENLABS_API_KEY: '', HOME: join(directory, 'no-private-key') }, encoding: 'utf8' }))
+    assert.deepEqual(result.voices, ['Otani', 'Morioki'])
+    assert.equal(result.contexts, 17)
+    assert.equal(result.requests, 102)
+    assert.equal(result.characters, stage === 'simple' ? 1324 : 1672)
+    assert.equal(result.budget, result.characters)
+    assert.equal(result.pairs, 68)
+    assert.equal(result.gapMs, 650)
+  }
+  assert.deepEqual(await readdir(directory), ['no-external-effects.mjs'])
+})
+
+test('expansion generation forwards its complete exact-budget plan through the same locked engine boundary', async () => {
+  for (const stage of ['simple', 'contrastive']) {
+    const { plan } = loadContextualAudition(projectRoot, { stage, batch: 'expansion' })
+    let calls = 0
+    const output = 'artifacts/generated-originals/expansion-boundary-fixture-' + stage
+    assert.equal(existsSync(join(projectRoot, output)), false)
+    const result = await generateContextualAudition({ root: projectRoot, output, stage, batch: 'expansion', apiKey: 'fixture-secret',
+      generate: async args => {
+        calls++
+        assert.equal(args.concurrency, 1)
+        assert.equal(args.budget, plan.generation.characters)
+        assert.deepEqual(args.plan, plan.generation)
+        assert.equal(typeof args.beforeRequests, 'function')
+        return { completed: args.plan.expectedClips }
+      } })
+    assert.equal(calls, 1)
+    assert.equal(result.completed, 102)
+    assert.equal(existsSync(join(projectRoot, output)), false)
+  }
 })
 
 test('changed or unapproved text fails before the generation boundary and any output creation', async t => {

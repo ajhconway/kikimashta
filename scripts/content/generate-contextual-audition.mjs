@@ -63,9 +63,9 @@ async function preserveAuditionPlan(output, plan) {
   }
 }
 
-export async function generateContextualAudition({ root = projectRoot, output, apiKey, generate = generateCards, stage = 'contrastive' }) {
+export async function generateContextualAudition({ root = projectRoot, output, apiKey, generate = generateCards, stage = 'contrastive', batch = 'sample' }) {
   // The approval check precedes output creation, key use and the external boundary.
-  const { plan } = loadContextualAudition(root, { stage })
+  const { plan } = loadContextualAudition(root, { stage, batch })
   const destination = await outputPath(root, output)
   if (typeof apiKey !== 'string' || !apiKey.trim()) throw new Error('ELEVENLABS_API_KEY is required for live contextual generation.')
   const existing = await readOptional(join(destination, 'audition-plan.json'))
@@ -81,8 +81,8 @@ export async function generateContextualAudition({ root = projectRoot, output, a
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { output: { type: 'string' }, 'dry-run': { type: 'boolean' }, stage: { type: 'string', default: 'contrastive' } } })
-  const { plan } = loadContextualAudition(projectRoot, { stage: values.stage })
+  const { values } = parseArgs({ options: { output: { type: 'string' }, 'dry-run': { type: 'boolean' }, stage: { type: 'string', default: 'contrastive' }, batch: { type: 'string', default: 'sample' } } })
+  const { plan } = loadContextualAudition(projectRoot, { stage: values.stage, batch: values.batch })
   if (values['dry-run']) {
     console.log(JSON.stringify(contextualAuditionSummary(plan), null, 2))
     return
@@ -91,7 +91,7 @@ async function main() {
   // A dry run returns before loading any credentials.
   const { loadElevenLabsKey } = await import('./elevenlabs-key.mjs')
   const apiKey = await loadElevenLabsKey()
-  console.log(JSON.stringify(await generateContextualAudition({ output: values.output, apiKey, stage: values.stage })))
+  console.log(JSON.stringify(await generateContextualAudition({ output: values.output, apiKey, stage: values.stage, batch: values.batch })))
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { contextualAuditionPlan, contextualTextDigest, loadContextualAudition, validateContextualTextApproval } from './contextual-audio-plan.mjs'
+import { AUDIO_CONTEXT_IDS, EXPANSION_CONTEXT_IDS, auditionProfile, contextualAuditionPlan, contextualTextDigest, loadContextualAudition, validateContextualTextApproval } from './contextual-audio-plan.mjs'
 import { projectRoot } from './validate-contextual.mjs'
 
 function fixture() {
@@ -44,6 +44,8 @@ test('simple sample uses its own approved text and bounded identities while stag
   assert.equal(plan.generation.characters, 214)
   assert.equal(plan.generation.items.length, 9)
   assert.equal(plan.contexts.length, 3)
+  const preview = JSON.parse(readFileSync(resolve(projectRoot, 'artifacts/contextual-audio-review/first-sample/simple-audio/review-provenance.json'), 'utf8'))
+  assert.equal(createHash('sha256').update(JSON.stringify(plan.generation)).digest('hex'), preview.generationIdentity)
   assert.deepEqual(plan.generation.voices.map(voice => voice.name), ['Otani', 'Morioki'])
   assert.ok(plan.contexts.every(context => context.id.startsWith('ja-ctx-simple-')))
   assert.ok(plan.generation.items.every(item => item.textApprovalSha256 === plan.approval.textSha256))
@@ -52,6 +54,57 @@ test('simple sample uses its own approved text and bounded identities while stag
   bank.contexts[0].questions[0].prompt.text += '変更'
   assert.throws(() => validateContextualTextApproval(bank, plan.approval, { stage: 'simple' }), /approval/)
   assert.throws(() => loadContextualAudition(projectRoot, { stage: 'unknown' }), /stage/)
+})
+
+for (const stage of ['simple', 'contrastive']) {
+  test(stage + ' expansion selects only its seventeen remaining contexts and preserves exact request metadata', () => {
+    const { bank, plan } = loadContextualAudition(projectRoot, { stage, batch: 'expansion' })
+    const sample = loadContextualAudition(projectRoot, { stage }).plan
+    const sampleIds = new Set(sample.contexts.map(context => context.id))
+    const expectedIds = EXPANSION_CONTEXT_IDS.map(id => stage === 'simple' ? id.replace('ja-ctx-', 'ja-ctx-simple-') : id)
+    assert.deepEqual(plan.contexts.map(context => context.id), expectedIds)
+    assert.equal(plan.contexts.length, 17)
+    assert.equal(new Set(plan.contexts.map(context => context.id)).size, 17)
+    assert.ok(plan.contexts.every(context => !sampleIds.has(context.id)))
+    assert.equal(plan.issue, 139)
+    assert.equal(plan.generation.issue, 139)
+    assert.equal(plan.generation.expectedClips, 102)
+    assert.equal(plan.generation.items.length, 51)
+    assert.equal(plan.generation.characters, stage === 'simple' ? 1324 : 1672)
+    assert.deepEqual(plan.generation.voices.map(voice => voice.name), ['Otani', 'Morioki'])
+    assert.equal(plan.gapMs, 650)
+    for (const context of plan.contexts) {
+      const authored = bank.contexts.find(entry => entry.id === context.id)
+      assert.deepEqual(context.questions.map(question => question.kind), ['target', 'detail'])
+      const sentence = plan.generation.items.find(item => item.id === context.sentenceItemId)
+      assert.equal(sentence.text, authored.sentence.text)
+      assert.equal(sentence.contextRevision, authored.revision)
+      for (const question of context.questions) {
+        const request = plan.generation.items.find(item => item.id === question.id)
+        assert.equal(request.contextId, context.id)
+        assert.equal(request.questionRevision, question.revision)
+        assert.equal(request.textApprovalSha256, plan.approval.textSha256)
+        assert.equal(request.text, authored.questions.find(entry => entry.id === question.id).prompt.text)
+      }
+    }
+    assert.ok(AUDIO_CONTEXT_IDS.every(id => !EXPANSION_CONTEXT_IDS.includes(id)))
+  })
+}
+
+test('the simple expansion requires its own actual text approval rather than a sample or another stage approval', () => {
+  const expansion = loadContextualAudition(projectRoot, { stage: 'simple', batch: 'expansion' })
+  const sample = loadContextualAudition(projectRoot, { stage: 'simple' })
+  const contrastive = loadContextualAudition(projectRoot, { stage: 'contrastive', batch: 'expansion' })
+  const options = { stage: 'simple', batch: 'expansion' }
+  assert.equal(validateContextualTextApproval(expansion.bank, expansion.plan.approval, options), expansion.plan.approval)
+  assert.throws(() => validateContextualTextApproval(expansion.bank, sample.plan.approval, options), /approval/)
+  assert.throws(() => validateContextualTextApproval(sample.bank, sample.plan.approval, options), /approval/)
+  assert.throws(() => validateContextualTextApproval(expansion.bank, expansion.plan.approval, { stage: 'simple' }), /approval/)
+  assert.throws(() => validateContextualTextApproval(expansion.bank, contrastive.plan.approval, options), /approval/)
+  assert.throws(() => validateContextualTextApproval(contrastive.bank, expansion.plan.approval, { stage: 'contrastive', batch: 'expansion' }), /approval/)
+  expansion.bank.contexts[0].questions[0].prompt.text += '変更'
+  assert.throws(() => validateContextualTextApproval(expansion.bank, expansion.plan.approval, options), /approval/)
+  assert.throws(() => auditionProfile('simple', 'all'), /batch/)
 })
 
 test('changing sentence, question, choice, grammar or revision invalidates text approval', () => {
