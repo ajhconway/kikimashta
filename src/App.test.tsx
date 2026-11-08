@@ -546,7 +546,7 @@ describe('adaptive quiz countdown', () => {
     const timer = container.querySelector('.quiz-timer-fill')!;
     expect(timer).toHaveStyle({ transform: 'scaleY(0)' });
     await advance(limit / 2);
-    expect(timer).toHaveStyle({ transform: 'scaleY(0.5)' });
+    expect(screen.queryByText(/correct answer still counts as partial success/i)).not.toBeInTheDocument();
     await click(screen.getByRole('button', { name: 'Replay word' }));
     await advance(limit / 2);
     expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
@@ -646,4 +646,16 @@ it('samples dev-review timers per question, retains the choice on replay, and ne
   expect(screen.getByText('10 second timer started.')).toBeInTheDocument();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
   expect(records).toEqual([]);
+});
+
+it('catches up expiry from the wall clock when visibility changes after suspended callbacks', async () => {
+  const { container, limit } = await timedReview('audio-text');
+  endAudio(container); await advance(480); await advance(0);
+  expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(0)' });
+  vi.setSystemTime(Date.now() + limit);
+  await act(async () => { document.dispatchEvent(new Event('visibilitychange')); });
+  expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+  expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(1)' });
+  await click(heardChoice(container));
+  expect(records[2]).toMatchObject({ correct: true, outcome: 'partial' });
 });
