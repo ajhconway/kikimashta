@@ -9,7 +9,9 @@ import { practicePool } from './core/practice';
 const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
 import { forecastDensity, planLessonChunk } from './core/density';
-import type { PracticeAttempt } from './types';
+import { advanceSchedule, schedulerVersion } from './core/scheduler';
+import { quizTimeLimit } from './core/quiz-timer';
+import type { Exercise, PracticeAttempt } from './types';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
 
 vi.mock('./core/density', async importOriginal => {
@@ -172,7 +174,7 @@ describe('adaptive session flow', () => {
     }
     expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
     expect(records.map(attempt => JSON.stringify([attempt.language, attempt.itemId, attempt.context!.exercise])).sort()).toEqual(introduced);
-    expect(records.every(attempt => attempt.context?.phase === 'lesson' && attempt.context.schedulerVersion === 'fsrs-6-v1')).toBe(true);
+    expect(records.every(attempt => attempt.context?.phase === 'lesson' && attempt.context.schedulerVersion === schedulerVersion)).toBe(true);
   });
 
   it('mixes both due exercise cards for the same word without introducing other targets', async () => {
@@ -570,4 +572,149 @@ describe('practice pack selection', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
     expect(JSON.parse(localStorage.getItem(packPreferenceKey)!)).toEqual(['ja-wanikani-1-pictures']);
   });
+});
+
+
+async function timedReview(exercise: Exercise = 'audio-picture', count = 1) {
+  const item = practicePool.items[0]!;
+  const first: PracticeAttempt = { ...legacy(1)[0]!, id: 'learn', answeredAt: 1000,
+    context: { phase: 'lesson', exercise, recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion: 'fsrs-6-v1' } };
+  const learning = await advanceSchedule(undefined, first);
+  const second = { ...first, id: 'graduate', answeredAt: learning.dueAt };
+  records = practicePool.items.slice(0, count).flatMap((item, i) => [first, second].map(attempt => ({ ...attempt, id: attempt.id + '-' + i, itemId: item.id, selectedId: item.id })));
+  const established = await advanceSchedule(learning, second);
+  const limit = quizTimeLimit(established)!;
+  expect(limit).toBeGreaterThan(0);
+  const view = render(<App random={() => 0.5}/>);
+  await start(); vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: /begin review/i }));
+  return { ...view, limit };
+}
+function loadPictures(container: HTMLElement) {
+  for (const image of container.querySelectorAll('.choices img')) fireEvent.load(image);
+}
+describe('adaptive quiz countdown', () => {
+  it('waits for audio, card entry, and pictures; expiry keeps choices open and late correct completes without a retry', async () => {
+    const { container, limit } = await timedReview();
+    await advance(600);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    endAudio(container);
+    await advance(1000);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await act(async () => loadPictures(container)); await advance(0);
+    const timer = container.querySelector('.quiz-timer-fill')!;
+    expect(timer).toHaveStyle({ transform: 'scaleY(0)' });
+    await advance(limit / 2);
+    expect(screen.queryByText(/correct answer still counts as partial success/i)).not.toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Replay word' }));
+    await advance(limit / 2);
+    expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+    expect(heardChoice(container)).toBeEnabled();
+    expect(records).toHaveLength(2);
+    endAudio(container); await click(heardChoice(container));
+    expect(records[2]).toMatchObject({ correct: true, outcome: 'partial', timer: { limitMs: limit }, context: { replays: 1, schedulerVersion } });
+    expect(records[2]!.answeredAt - records[2]!.timer!.startedAt).toBe(limit);
+    expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'partial');
+    expect(container.querySelector('.quiz-companion')).toHaveClass('is-partial');
+    expect(screen.getByLabelText('Partial success')).toBeInTheDocument();
+    expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+    await advance(1200);
+    expect(screen.getByRole('heading', { name: 'Nice reviewing!' })).toBeInTheDocument();
+    expect(screen.getByText('1 partial success')).toBeInTheDocument();
+  });
+
+  it('starts only after short audio and the card entrance, records an on-time writing answer, and cancels the timer', async () => {
+    const { container, limit } = await timedReview('audio-text');
+    endAudio(container);
+    await advance(479);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await advance(1); await advance(0);
+    expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(0)' });
+    await advance(500); await click(heardChoice(container));
+    expect(records[2]).toMatchObject({ outcome: 'success', timer: { limitMs: limit }, context: { exercise: 'audio-text' } });
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await advance(1200);
+    expect(screen.getByRole('heading', { name: 'Nice reviewing!' })).toBeInTheDocument();
+  });
+
+  it('keeps an expired wrong answer a failure and makes its corrective retry untimed', async () => {
+    const { container, limit } = await timedReview('audio-text');
+    endAudio(container); await advance(480); await advance(0); await advance(limit);
+    await click(heardChoice(container, false));
+    expect(records[2]).toMatchObject({ correct: false, outcome: 'failure' });
+    await click(screen.getByRole('button', { name: /^continue$/i }));
+    endAudio(container); await advance(480 + limit);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await click(heardChoice(container));
+    expect(records[3]).toMatchObject({ outcome: 'success', context: { retryOf: records[2]!.id } });
+    expect(records[3]).not.toHaveProperty('timer');
+  });
+
+  it('recovers from initial audio failure, and clears a running timer on Home', async () => {
+    const { container, limit } = await timedReview('audio-text');
+    fireEvent.error(container.querySelector('audio')!); await advance(480 + limit);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    expect(heardChoice(container)).toBeDisabled();
+    await click(screen.getByRole('button', { name: 'Replay word' }));
+    endAudio(container); await advance(50);
+    expect(container.querySelector('.quiz-timer-fill')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await advance(limit);
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    expect(records).toHaveLength(2);
+  });
+});
+
+
+it('starts a fresh countdown for each consecutive timed question', async () => {
+  const { container } = await timedReview('audio-text', 2);
+  endAudio(container); await advance(480); await advance(0); await advance(1000);
+  await click(heardChoice(container));
+  const first = records[4]!;
+  expect(first.outcome).toBe('success');
+  await advance(1200);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  endAudio(container); await advance(480); await advance(0);
+  expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(0)' });
+  await click(heardChoice(container));
+  expect(records[5]!.outcome).toBe('success');
+  expect(records[5]!.timer!.startedAt).toBeGreaterThan(first.answeredAt);
+});
+
+it('samples dev-review timers per question, retains the choice on replay, and never saves partial successes', async () => {
+  let draw = .9;
+  const { container } = render(<App random={() => draw}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  loadPictures(container); endAudio(container); await advance(480); await advance(0);
+  expect(screen.getByText('3 second timer started.')).toBeInTheDocument();
+  draw = 0;
+  await advance(1500); await click(screen.getByRole('button', { name: 'Replay word' }));
+  endAudio(container); await advance(1500);
+  expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+  await click(heardChoice(container));
+  expect(screen.getByLabelText('Partial success')).toBeInTheDocument();
+  await advance(1200);
+  loadPictures(container); endAudio(container); await advance(10000);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  draw = .3;
+  await click(heardChoice(container)); await advance(1200);
+  loadPictures(container); endAudio(container); await advance(480); await advance(0);
+  expect(screen.getByText('10 second timer started.')).toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  expect(records).toEqual([]);
+});
+
+it('catches up expiry from the wall clock when visibility changes after suspended callbacks', async () => {
+  const { container, limit } = await timedReview('audio-text');
+  endAudio(container); await advance(480); await advance(0);
+  expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(0)' });
+  vi.setSystemTime(Date.now() + limit);
+  await act(async () => { document.dispatchEvent(new Event('visibilitychange')); });
+  expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+  expect(container.querySelector('.quiz-timer-fill')).toHaveStyle({ transform: 'scaleY(1)' });
+  await click(heardChoice(container));
+  expect(records[2]).toMatchObject({ correct: true, outcome: 'partial' });
 });

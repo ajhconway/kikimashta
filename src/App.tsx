@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { practicePool } from './core/practice';
 import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
-import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
+import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey } from './core/cards';
 import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
-import { deriveSchedules, snapshotDue, schedulerVersion } from './core/scheduler';
+import { deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
+import { useQuizCountdown } from './hooks/useQuizCountdown';
+import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
@@ -46,8 +49,8 @@ function QuizProgress({ total, completed, mistakes }: { total: number; completed
   </div><div className="quiz-mistakes" role="status" aria-label="Mistakes"><span className="sr-only">{mistakes} incorrect answer{mistakes === 1 ? '' : 's'}</span><span className="mistake-icons" aria-hidden="true">{Array.from({ length: Math.min(mistakes, 5) }, (_, i) => <span className="mistake-icon" key={i}><svg viewBox="0 0 16 16" fill="none" focusable="false"><path d="m5 5 6 6M11 5l-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg></span>)}{mistakes > 5 && <span className="mistake-overflow">+{mistakes - 5}</span>}</span></div></div>;
 }
 
-function QuizCompanion({ listening, response }: { listening: boolean; response: boolean | null }) {
-  const mood = response === true ? 'is-cheering' : response === false ? 'is-encouraging' : listening ? 'is-listening' : '';
+function QuizCompanion({ listening, response }: { listening: boolean; response: AnswerOutcome | null }) {
+  const mood = response === 'partial' ? 'is-partial' : response === 'success' ? 'is-cheering' : response === 'failure' ? 'is-encouraging' : listening ? 'is-listening' : '';
   return <div className={'quiz-companion ' + mood} aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/><span className="companion-sparks">{Array.from({ length: 6 }, (_, i) => <span className="companion-spark" key={i}>✦</span>)}</span></div>;
 }
 
@@ -105,6 +108,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const saveError = failedAttempt !== null;
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [audioFinished, setAudioFinished] = useState(false);
+  const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null }>({ id: '', limitMs: null });
   const [autoPaused, setAutoPaused] = useState(false);
   const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
@@ -113,16 +118,19 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
   const session = useRef({ id: '', reserved: new Set<string>() });
   const history = useRef<PracticeAttempt[]>([]);
+  const mastery = useRef(new Map<string, ScheduledWord>());
   const operation = useRef(0);
   const preparing = useRef(false);
   const playRequest = useRef(0);
   const pendingSaves = useRef(new Set<string>());
   const replayButton = useRef<HTMLButtonElement>(null);
   const choiceGrid = useRef<HTMLDivElement>(null);
+  const countdown = useQuizCountdown({ id: screen === 'quiz' ? questionTimer.id : '', limitMs: questionTimer.limitMs,
+    audioFinished, answered: !!feedback, grid: choiceGrid, now });
   const target = screen === 'preview' ? lessonItems[preview]?.item : questions[index]?.target;
   const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
   const theme = screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
-  const response = screen === 'quiz' && feedback ? feedback.correct ? 'correct' : 'incorrect' : undefined;
+  const response = screen === 'quiz' && feedback ? feedback.outcome === 'partial' ? 'partial' : feedback.correct ? 'correct' : 'incorrect' : undefined;
   const background = response ? quizFeedbackColors[response] : screen === 'home' && density !== null ? intensityColors[densityLevel(density)] : themeColors[theme];
   const invalidate = useCallback(() => { operation.current++; }, []);
 
@@ -151,6 +159,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
+        mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
       } catch {
         if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); }
@@ -194,21 +203,24 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setIsDevReview(false);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
-  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
+  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
+    setQuestionTimer({ id: active.current.id, limitMs: devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+      ? quizTimeLimit(mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }))) : null });
+    setAudioFinished(false);
     setFeedback(null); setDepartures([]);
     present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
-  }, [now, present]);
-  function beginQuiz(block: Question[], blockPhase = phase) {
+  }, [now, present, random]);
+  function beginQuiz(block: Question[], blockPhase = phase, devReview = isDevReview) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
-    showQuestion(block[0]!, session.current.id, blockPhase);
+    showQuestion(block[0]!, session.current.id, blockPhase, devReview);
   }
   function startDevReview() {
     if (loading || accountLoading || preparing.current || pendingSaves.current.size || failedAttempt || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review');
+    beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -237,6 +249,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
       if (operation.current !== request) return;
       history.current = attempts; setTotal(attempts.length);
+      mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
       session.current = { id: crypto.randomUUID(), reserved: new Set() };
       const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
       const byId = new Map(practicePool.items.map(item => [item.id, item]));
@@ -283,11 +296,13 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     active.current.answered = true;
     const question = questions[index]!;
     const answeredAt = now();
+    const correct = item.id === question.target.id;
     const attempt: PracticeAttempt = {
       id: active.current.id, sessionId: active.current.sessionId,
       itemId: question.target.id, language: practicePool.language,
       choiceIds: question.choices.map(choice => choice.id), selectedId: item.id,
-      correct: item.id === question.target.id, startedAt: active.current.startedAt,
+      correct, outcome: answerOutcome(correct, countdown.timer, answeredAt),
+      ...(countdown.timer ? { timer: countdown.timer } : {}), startedAt: active.current.startedAt,
       answeredAt, responseMs: Math.max(0, answeredAt - active.current.startedAt),
       context: { phase, exercise: question.exercise, recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
         ...(question.retryOf ? { retryOf: question.retryOf } : {}) },
@@ -314,7 +329,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (!isDevReview) void prepareLessons(operation.current);
       return;
     }
-    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase);
+    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase, isDevReview);
   }, [index, questions, showQuestion, prepareLessons, isDevReview, phase]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
@@ -329,8 +344,9 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const correct = answers.filter(answer => answer.correct).length;
   const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
-    <audio ref={audio} preload="auto" onEnded={() => setPlaying(false)} onError={() => { setAudioError(true); setPlaying(false); }}/>
-    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className={choiceClass(card.exercise) + ' departing-card'} key={card.item.id} data-exit={feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><CardFace item={card.item} exercise={card.exercise} font={card.font}/></div>)}</div>}
+    <audio ref={audio} preload="auto" onEnded={() => { setPlaying(false); setAudioFinished(true); }} onError={() => { setAudioError(true); setPlaying(false); }}/>
+    {screen === 'quiz' && !feedback && countdown.timer && <><QuizTimerFill timer={countdown.timer} expired={countdown.expired} now={now}/><span className="sr-only" role="status">{countdown.expired ? 'Take your time. A correct answer still counts as partial success.' : `${countdown.timer.limitMs / 1000} second timer started.`}</span></>}
+    {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className={choiceClass(card.exercise) + ' departing-card'} key={card.item.id} data-exit={feedback.outcome === 'partial' ? 'drift' : feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><CardFace item={card.item} exercise={card.exercise} font={card.font}/></div>)}</div>}
     <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
     <main>
       {screen === 'home' && <section className="home fade-in">
@@ -375,21 +391,21 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       {screen === 'quiz' && target && <section className="practice quiz fade-in" data-exercise={exercise}>
         <h1 className="sr-only">Listen and choose</h1>
         <div className="quiz-top">
-        <QuizCompanion listening={playing} response={feedback?.correct ?? null}/>
+        <QuizCompanion listening={playing} response={feedback?.outcome ?? null}/>
         <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
         </div>
         <span className="sr-only" aria-live="polite">Question {index + 1}{questions[index]?.retryOf ? ', retry' : ''}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="quiz-cards">
-        {feedback?.correct && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
+        {feedback?.outcome === 'success' && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
         <div className="choices choices-enter" ref={choiceGrid} key={exercise + '-' + target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label="Correct answer">✓</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
+        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.outcome === 'partial' ? 'Got it — take your time.' : feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { setFailedAttempt(null); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
@@ -399,6 +415,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{isDevReview ? 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
+        {answers.some(answer => answer.outcome === 'partial') && <p>{answers.filter(answer => answer.outcome === 'partial').length} partial success{answers.filter(answer => answer.outcome === 'partial').length === 1 ? '' : 'es'}</p>}
         {!isDevReview && <>
         <DensityIndicator value={density}/>
         {loading ? <p className="block-note" role="status" aria-label="Preparing lesson">…</p> : lessonPlan?.items.length ? <button className="primary" onClick={beginLesson}>{phase === 'review' ? 'Begin lesson' : 'Learn more'} <span aria-hidden="true">→</span></button> : null}

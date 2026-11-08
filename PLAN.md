@@ -21,7 +21,7 @@ The Supabase schema, Resend SMTP, code-email templates, and production configura
 
 Keep [#6](https://github.com/ajhconway/kikimashta/issues/6) open for acceptance on the actual iPhone: complete audio/touch/session flow, persistence after reload, and sync with a second device, including notes and explicit guest-progress copy. Browser emulation does not complete this acceptance.
 
-The review recorded [save failure after leaving practice (#114)](https://github.com/ajhconway/kikimashta/issues/114), [picture-answer accessibility (#115)](https://github.com/ajhconway/kikimashta/issues/115), [missing artwork checks in CI (#116)](https://github.com/ajhconway/kikimashta/issues/116), and [clock-skew practice lockout (#117)](https://github.com/ajhconway/kikimashta/issues/117). These remain implementation work; this documentation update does not resolve them.
+The review recorded [save failure after leaving practice (#114)](https://github.com/ajhconway/kikimashta/issues/114), [picture-answer accessibility (#115)](https://github.com/ajhconway/kikimashta/issues/115), [missing artwork checks in CI (#116)](https://github.com/ajhconway/kikimashta/issues/116), and [clock-skew practice lockout (#117)](https://github.com/ajhconway/kikimashta/issues/117). Each finding has its own implementation task. #116 is addressed by the required card checks described below.
 
 ## Implementation
 
@@ -42,7 +42,7 @@ Keep the interface, learning rules, content, and storage separate. Speech provid
 
 Correctness maps to Good/Again; speed and replay use are recorded without grading speed. Existing fixed-round attempts remain unchanged and surface known picture cards for review without inventing delayed-retention evidence. Personal parameter fitting waits for enough relevant history.
 
-The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
+The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Valid future-dated history from clock differences waits for its original review/due times, stays known for lesson admission, and keeps its saved timestamps. Unrelated practice remains available (#117). Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
 
 Forecast reviews over seven days with 32 deterministic scenarios, one session per day, and an initial 80% lesson success assumption. Qualitative bands are Minimal, Light, Moderate, High, and Intense. Preferred minimum and maximum guide new intake; they cannot guarantee future demand. Thresholds, forecast assumptions, chunk size, and choice count remain adjustable. The user can always stop.
 
@@ -50,9 +50,9 @@ Spacing and retrieval practice have research support; this density controller an
 
 ## Testing and release
 
-- `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio tests, and the production build. Focused tests stay beside the code.
+- `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio/artwork tests, the card metadata validator, and the production build. Focused tests stay beside the code.
 - After building, `npm run test:e2e` checks Chromium and mobile WebKit journeys in `e2e/`, including complete sessions, actual IndexedDB persistence, both exercise formats, pack selection, failed audio, notes, and account isolation/convergence against a simulated HTTP service.
-- Run `python3 -m unittest discover -s scripts/cards -p 'test_*.py'` and `python3 scripts/cards/validate.py` for artwork preparation and content dependencies. They currently supplement required CI; #116 tracks adding them to it.
+- `npm run test:cards` runs the artwork preparation regressions and content/dependency validator. It is included in `npm run check`, so invalid metadata blocks required CI. Preparation and media generation remain manual.
 - Tests must be deterministic, isolated, and assert observable behavior. Use small fixtures, control time and randomness, mock external boundaries, and fix flaky tests instead of adding retries.
 - The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).
 - Verify pronunciation, playback, touch, layout, and VoiceOver on the real iPhone at playable milestones and releases. Hosted SQL checks and browser tests do not replace device acceptance.
@@ -63,3 +63,16 @@ Spacing and retrieval practice have research support; this density controller an
 - [#48](https://github.com/ajhconway/kikimashta/issues/48) remains the flexible roadmap for phrases, sentences, contextual exercises, timing challenges, English text, and offline practice. Audio-to-writing cards and font variation have already shipped.
 
 Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.
+
+
+## Adaptive timer pilot (#121)
+
+Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Established review cards use FSRS stability in days: below 1 stays untimed; at 1/3/7/21 days use 10/7/5/3 seconds. This is an adjustable pilot policy, not a validated fluency measure.
+
+Unsaved Dev review samples untimed/10/7/5/3 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+
+Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
+
+Show elapsed time as soft amber filling the background from top to bottom. Use a browser-native linear transform animation for smooth visual progress; keep the wall-clock expiry and grading independent, and realign the visual when visibility changes (#128). Give partial success an amber response, a gentle card/companion wobble, slower outward departures that curve downward over 1.1 seconds, and a distinct badge and message; respect reduced motion. Keep full-success and failure responses. Count partial successes as completed questions and identify their count in the summary.
+
+Persist explicit outcomes and the countdown limit/start alongside existing attempt timing. FSRS policy v2 maps success/partial/failure to Good/Hard/Again, retains v1 historical grading, and still excludes corrective retries from retention evidence. Local history and sync preserve the optional new fields without rewriting old attempts; the existing JSON payload constraint accepts these additions. Already-open v1 clients need a refresh before syncing v2 history. Review timing thresholds, exercise differences, and feedback after deployment and real iPhone use in [#122](https://github.com/ajhconway/kikimashta/issues/122).
