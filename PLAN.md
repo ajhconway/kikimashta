@@ -1,82 +1,65 @@
 # Listening practice app plan
 
-A personal listening game, starting with Japanese and leaving room for other languages. Focused and chill, with understated charm. V0 should feel good enough to repeat; complete polish can come later.
+A personal listening game, starting with Japanese and leaving room for other languages. Keep it relaxed, untimed, and simple enough to improve through use.
 
-## V0 experience
+## Current state — November 8, 2026
 
-- A fixed mixed word bank organized into themes such as food, animals, and household objects. Default starting level: some basics.
-- Introduce words with pictures and Japanese audio, then offer short, untimed sessions: hear a word and choose one of *k* pictures.
-- Give clear feedback and a satisfying session ending. Save per-word results and individual practice attempts.
-- Use pictures and audio by default. Require an internet connection initially.
+Adaptive practice and optional account sync are deployed at [kikimashta.com](https://kikimashta.com). This plan was reconciled against revision `38f6619e63707df8db411a2697f21e726ea16c7e` during [review #113](https://github.com/ajhconway/kikimashta/issues/113); findings and verification are in [docs/REVIEW.md](docs/REVIEW.md).
+
+- The library has 440 visible entries from 441 catalog records. The approved practice pool has 166 vocabulary items, each with independently scheduled picture and writing cards: 332 cards before pack filtering. Retired starter-only words keep their history.
+- Ten selectable WaniKani packs cover levels 1–5, separately for pictures and writing. Selection is remembered on this device and scopes lessons, due reviews, answer choices, dev review, and forecasts. Browsing a pack does not approve more content for practice.
+- Sessions snapshot due reviews, then offer lessons in chunks of roughly ten cards. Picture and writing cards mix within each block; each question offers one answer format. Missed cards return until answered correctly. Corrective retries are saved but excluded from retention evidence.
+- Writing lessons use Noto Sans JP. Later reviews rotate approved print and handwriting fonts, with coverage checks and a standard-font fallback. Font appearance is a local preference.
+- Each item has eight approved pregenerated ElevenLabs voices. Artwork activation covers 168 approved illustrations from batches 01–10. Batch 11 is ready to generate; later artwork still follows the owner's feedback gates.
+- Home centers Kiku and uses the current review-intensity color across the screen. The pace selector wheels were removed in #105. The density policy still uses saved device preferences or the Light–Moderate default.
+- Answers save to IndexedDB. Optional email-code sign-in adds account-scoped history and note sync, with explicit guest-progress copy. Dev review remains unsaved.
+- Code and documentation use AGPL-3.0-only; separately licensed media retain their terms.
+
+## Current milestone: finish progress-sync acceptance (#6)
+
+The Supabase schema, Resend SMTP, code-email templates, and production configuration are activated. Signup, later sign-in, and note edit/deletion convergence were verified in isolated Chromium browsers; the initial sync release was deployed in #71. The live site's source notice now identifies the reviewed revision. [Setup and activation evidence](docs/SUPABASE.md).
+
+Keep [#6](https://github.com/ajhconway/kikimashta/issues/6) open for acceptance on the actual iPhone: complete audio/touch/session flow, persistence after reload, and sync with a second device, including notes and explicit guest-progress copy. Browser emulation does not complete this acceptance.
+
+The review recorded [save failure after leaving practice (#114)](https://github.com/ajhconway/kikimashta/issues/114), [picture-answer accessibility (#115)](https://github.com/ajhconway/kikimashta/issues/115), [missing artwork checks in CI (#116)](https://github.com/ajhconway/kikimashta/issues/116), and [clock-skew practice lockout (#117)](https://github.com/ajhconway/kikimashta/issues/117). These remain implementation work; this documentation update does not resolve them.
 
 ## Implementation
 
 | Part | Choice |
 | --- | --- |
 | App | React, TypeScript, and Vite; prioritize Safari on iPhone 17 |
-| Local progress | IndexedDB, with stable item and attempt IDs, answers, picture choices, and timing |
-| Content | JSON files and media in the repository; separate word banks and progress by language |
-| Audio | Reusable, pregenerated ElevenLabs speech in eight approved voices; constant-gain volume matching around −22 LUFS with true-peak headroom ([#86](https://github.com/ajhconway/kikimashta/issues/86)) |
-| Pictures | Start with AI-generated illustrations; also support library images and reuse suitable pictures across languages |
-| Hosting | Public GitHub repository, GitHub Actions, and GitHub Pages |
-| Code license | GNU AGPLv3 only (AGPL-3.0-only); separately licensed media retain their terms |
+| Learning | Pinned `ts-fsrs` 6.0.0, explicit FSRS-6 model, 90% desired retention; separate scheduling, session, and workload policies |
+| Local progress | IndexedDB with stable attempt IDs and language/item/exercise identity; retain original answers, choices, recording, retries, replay counts, and timing |
+| Sync | Optional Supabase email-code auth; append-only private attempts and note events, idempotent uploads, paginated downloads, separate account databases |
+| Content | Repository JSON and static media, separate language banks; shared vocabulary and pictures can support later languages |
+| Audio | Eight approved ElevenLabs voices; constant-gain matching around −22 LUFS with true-peak headroom; constrained clips retain review notes |
+| Hosting | Public GitHub repository, GitHub Actions, and GitHub Pages at `kikimashta.com` |
+| Code license | GNU AGPLv3 only; media exceptions recorded in notices and provenance |
 
-Keep the quiz interface, learning rules, and storage separate so each can evolve. Speech providers can vary by language.
+Keep the interface, learning rules, content, and storage separate. Speech providers can vary by language. Coordinate through [AGENTS.md](AGENTS.md), GitHub Issues, and linked pull requests.
 
-Coordinate agent work through [AGENTS.md](AGENTS.md), GitHub Issues, and linked pull requests.
+## Learning and workload policy
 
-## Testing
+Correctness maps to Good/Again; speed and replay use are recorded without grading speed. Existing fixed-round attempts remain unchanged and surface known picture cards for review without inventing delayed-retention evidence. Personal parameter fitting waits for enough relevant history.
 
-- Use Vitest for quiz rules, content validation, and progress logic, plus React Testing Library for user interactions. Keep these tests beside the code.
-- Keep a small Playwright suite in `e2e/`, checking the built app in WebKit and Chromium. Cover a complete session, real IndexedDB persistence after reload, and important failure paths.
-- Keep tests readable, isolated, and deterministic, with small fixtures and controlled time and randomness. Assert observable behavior, mock external boundaries, and fix flaky tests. Use coverage to find important gaps.
-- Each agent includes relevant tests with its changes. Review test quality and integration; require lint, type checks, tests, and a production build in GitHub Actions before merging or deploying.
-- Check pronunciation, playback, touch interactions, and layout on the actual iPhone at playable milestones and before releases.
+The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
 
-## Roadmap
+Forecast reviews over seven days with 32 deterministic scenarios, one session per day, and an initial 80% lesson success assumption. Qualitative bands are Minimal, Light, Moderate, High, and Intense. Preferred minimum and maximum guide new intake; they cannot guarantee future demand. Thresholds, forecast assumptions, chunk size, and choice count remain adjustable. The user can always stop.
 
-Adaptive practice is playable and accepted. The 440-card review library is available, with 170 eligible words in adaptive lessons. The next milestone is optional sign-in and progress sync.
+Spacing and retrieval practice have research support; this density controller and FSRS for audio-choice recognition still need evaluation through use. Picture recognition and writing recognition are distinct skills, separate from fluent comprehension. References: [spacing meta-analysis](https://doi.org/10.1111/lang.12479), [aural vocabulary with picture choices](https://doi.org/10.1037/mac0000174), [FSRS model documentation](https://open-spaced-repetition.github.io/ts-fsrs/guide/model/).
 
-1. **Expand practice** ([#46](https://github.com/ajhconway/kikimashta/issues/46)). Bring a manageable selection from the library into lessons and quizzes. Start with small, coherent sets, use card feedback to improve them, and keep source levels provisional.
-2. **Add adaptive review** ([#47](https://github.com/ajhconway/kikimashta/issues/47)). Revisit words when they need practice and gradually introduce new ones. Use FSRS for per-word scheduling and forecast review density to guide new-word intake.
-3. **Sync progress** ([#6](https://github.com/ajhconway/kikimashta/issues/6)). Add Supabase sign-in and cross-device sync, preserving existing history and including card feedback.
-4. **Broaden the exercises** ([#48](https://github.com/ajhconway/kikimashta/issues/48)). Introduce phrases, sentences, and other quiz formats. Explore timing challenges, Japanese writing, and offline practice as separate additions. English text remains an option.
+## Testing and release
 
-### Audio-to-writing cards (#99)
+- `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio tests, and the production build. Focused tests stay beside the code.
+- After building, `npm run test:e2e` checks Chromium and mobile WebKit journeys in `e2e/`, including complete sessions, actual IndexedDB persistence, both exercise formats, pack selection, failed audio, notes, and account isolation/convergence against a simulated HTTP service.
+- Run `python3 -m unittest discover -s scripts/cards -p 'test_*.py'` and `python3 scripts/cards/validate.py` for artwork preparation and content dependencies. They currently supplement required CI; #116 tracks adding them to it.
+- Tests must be deterministic, isolated, and assert observable behavior. Use small fixtures, control time and randomness, mock external boundaries, and fix flaky tests instead of adding retries.
+- The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).
+- Verify pronunciation, playback, touch, layout, and VoiceOver on the real iPhone at playable milestones and releases. Hosted SQL checks and browser tests do not replace device acceptance.
 
-Add a separately scheduled audio-to-writing card for each eligible vocabulary item, reusing its authored Japanese text and existing recordings. Shuffle picture and writing cards together in lesson previews, lesson mini-quizzes, due reviews, and dev review. Each question offers only pictures or only writing. Preserve playback, feedback, retries, and summaries.
+## Later work
 
-Keep card identity specific to language, vocabulary item, and exercise. Existing attempts remain picture-card history. Forecast workload and admit lessons per card; a learned picture card does not exclude its new writing card. Preserve both exercise types through local persistence and account sync. Test mixed lessons/reviews, distinct unambiguous written options, independent schedules, legacy history, retries, and browser persistence.
+- Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
+- [#48](https://github.com/ajhconway/kikimashta/issues/48) remains the flexible roadmap for phrases, sentences, contextual exercises, timing challenges, English text, and offline practice. Audio-to-writing cards and font variation have already shipped.
 
-Writing size scales with the number of displayed characters and the card dimensions: a single character is large, while longer kanji, hiragana, katakana, and mixed text get progressively smaller. Apply this consistently in previews, choices, and feedback. Font selection is a separate follow-up after this PR.
-
-### Current milestone: progress sync
-
-Add optional Supabase email sign-in and sync practice history and card notes across devices. Save locally first, retry interrupted sync, and prevent duplicate attempts. Keep each account's data separate; offer an explicit copy of existing local progress into the signed-in account. Preserve local-only practice and the unsaved dev review. Keep the account controls small and the active quiz unchanged by incoming sync.
-
-The Supabase project is connected and its schema and access policies pass the hosted SQL checks. Resend SMTP and email-code templates are configured; live signup, later sign-in, and note edit/deletion convergence pass in isolated Chromium browsers. Complete release deployment and real iPhone verification; interrupted-transfer and account-isolation journeys remain covered by CI and hosted SQL checks. Track activation in [docs/SUPABASE.md](docs/SUPABASE.md).
-
-### Adaptive practice reference
-
-Replace fixed practice sets with adaptive sessions. Preserve stable item IDs and existing history.
-
-- **Scheduler:** use FSRS with shared defaults, adapting each word after answers. Fit personal parameters once enough relevant history accumulates. Start with correctness; record replay use and timing without grading speed. Keep scheduling separate from session and workload policies.
-- **Session:** snapshot the due queue at the start, complete that review block, then enter the lesson block. Shuffle missed quiz words back into their block until each is answered correctly. Save every answer, distinguishing immediate corrective retries from retention evidence. Newly due reviews wait for a later session; preserve FSRS due times.
-- **Lessons:** introduce roughly ten words through pictures and audio, then give a shuffled mini-quiz of those words. This is initial learning; later reviews measure retention over time.
-- **Density:** forecast reviews per day over the coming days, including repeat reviews. Offer lesson chunks toward the user's minimum; between minimum and maximum offer Finish or another chunk; at maximum stop introducing words. Smaller chunks can accommodate the maximum or a limited eligible pool. The user can always stop.
-- **Presentation:** show Minimal, Light, Moderate, High, or Intense, with colors and potentially matching Kiku expressions. Show minimum, current, and maximum side by side. Each intensity is a complete wheel choice with its own Kiku, fixed color and label; keep all choices visible, disabling those outside the valid range. Use the same qualitative levels for the preferred range. Numeric thresholds and the forecast window remain adjustable; the maximum controls new intake rather than guaranteeing future workload.
-- **Validation:** check delayed predictions against later first-attempt results. Picture-choice recognition is a specific skill, distinct from fluent comprehension. Preserve exercise context so later quiz formats can be evaluated separately.
-
-Spacing and retrieval practice have research support; our density controller and the application of FSRS to audio-to-picture recognition need evaluation through use. References: [language-learning spacing meta-analysis](https://doi.org/10.1111/lang.12479), [aural vocabulary with picture choices](https://doi.org/10.1037/mac0000174), [FSRS model documentation](https://open-spaced-repetition.github.io/ts-fsrs/guide/model/).
-
-Implementation proceeds through scheduling/history, workload forecasting, then the session interface. Keep forecast assumptions, density thresholds, and new-word selection explicit and adjustable.
-
-Keep only the next milestone detailed in GitHub. Later stages remain flexible, with no fixed dates. Keep *k*, word counts, session length, visual details, and the learning algorithm adjustable.
-
-## Writing font variation (#101)
-
-Use Noto Sans JP consistently for lesson previews, their attached mini-quizzes, and lesson corrective retries. Later review quizzes (including dev review) rotate Noto Serif JP, Zen Maru Gothic, and Klee One on successive presentations of each language/item. All choices in a question use one stable font through replay and feedback. Lesson presentations do not consume review rotation. Preserve existing card sizing and shared learning progress. Self-host fonts with licenses and glyph coverage records; use the standard font for the whole question when a review font cannot cover its writing. Store only a local appearance preference across visits; unavailable storage never blocks practice.
-
-## Selectable card packs (#108)
-
-Organize the WaniKani library into ten packs: levels 1–5, separately for pictures and writing. Allow any combination for practice and remember the selection on this device. Apply it to lessons, due reviews, dev review, answer choices, and workload forecasting, while preserving all saved history and stable language/item/exercise identities. Keep the existing approved practice subset; browsing a pack does not approve additional content. Remove the two starter packs and retire starter-only words from active practice (#111). Retain their saved history, and keep WaniKani words with shared starter IDs and assets available. Restored pack preferences discard retired starter selections.
+Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.

@@ -37,6 +37,8 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
-The current sandbox restricts npm network access and local listening servers. Dependencies have been installed from integrity-verified tarballs; use GitHub Actions for browser checks when local preview is unavailable. Never claim emulated WebKit is a real iPhone test.
+Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.
 
 Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. These checks supplement the app checks above.
+
+Run `python3 scripts/cards/validate.py` alongside the card preparation tests. These artwork checks are currently separate from `npm run check` and required CI; issue #116 tracks adding them. Account-sync browser specs require the explicit fake service configuration in [docs/REVIEW.md](docs/REVIEW.md#verification), so local runs do not silently skip sync coverage.

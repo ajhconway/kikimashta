@@ -1,13 +1,16 @@
 # Required CI and Codex review
 
-Merges to `main` should require passing app/browser and database checks plus a
+Merges to `main` require passing app/browser and database checks plus a
 completed Codex code review of the PR's current head with no unresolved findings.
 Automatic Codex review by itself does not enforce a merge requirement.
 
-## Activate in GitHub (repository owner)
+## Active configuration — November 8, 2026
 
-The connected GitHub integration cannot edit administration settings. After
-merging the review-gate workflow, open
+The [CI and Codex Review ruleset](https://github.com/ajhconway/kikimashta/rules/26727902) is active on the default branch. Read-back confirmed required contexts `checks`, `database`, and `codex-review`, strict up-to-date checks, required PRs with zero human approvals, conversation resolution, and no bypass actors. Activation was recorded in #89.
+
+## Recreate in GitHub (repository owner)
+
+The connected GitHub integration cannot edit administration settings. To restore this configuration if needed, open
 [Settings → Rules → Rulesets](https://github.com/ajhconway/kikimashta/settings/rules)
 and create a branch ruleset:
 
@@ -20,8 +23,7 @@ and create a branch ruleset:
    **Require branches to be up to date before merging**.
 4. Enable **Require conversation resolution before merging**, then save.
 
-If the Pages artifact validation job from #83 has landed, also require its
-`artifacts` check. Do not require the deployment job: it runs after merging.
+Keep `artifacts` optional while `.github/workflows/pages-artifacts.yml` has a workflow-level path filter. Requiring it globally would leave unrelated PRs waiting for a check that never runs. First change the workflow to report a result on every PR if making it mandatory. [GitHub documents skipped required workflows](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks#handling-skipped-but-required-checks). Do not require the deployment job: it runs after merging.
 
 The `codex-review` status first appears after this workflow is on the default
 branch and has refreshed an open PR. For an existing PR, run **Actions → Codex
@@ -57,11 +59,7 @@ additional account secrets are needed; the workflow uses `GITHUB_TOKEN`.
 
 ## Bootstrap and verification
 
-The event workflow and helper must first reach the default branch. Before that,
-CI runs the deterministic helper tests via `npm test`, but comment-driven status
-updates are not live. Review the bootstrap PR and its CI/Codex results manually,
-merge it, refresh an open PR, and activate the rule above. Until the rule is
-active, GitHub continues to allow merges without these requirements.
+The workflow and helper are already on the default branch, and live comment-driven updates and the active rule were verified in #89. For a future replacement, review its bootstrap PR manually before switching the required status. Confirm the replacement gate on the current PR head before relying on it.
 
 Focused check: `node --test scripts/codex-review-gate.test.mjs`.
 
