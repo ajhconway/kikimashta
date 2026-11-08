@@ -177,3 +177,8 @@ Dev review opens a configuration screen before an unsaved session. The owner cho
 ## Home review forecast (#156)
 
 Show a compact seven-day forecast below Start using the same existing density snapshot, selected language/packs and eligible contextual schedules. Display rounded daily estimates (fewer than one for positive fractions below one), a small accessible bar strip and day labels. Following owner feedback, omit the current-card/daily-practice caption, widen the bars, enlarge the counts, and use chunky outlined bars in varied violet, pink and golden shades for a playful game feel. Leave the forecast unboxed, directly on the Home background, and remove the heavy bottom bar shadows. Show the current due-review count as “Start · 7 reviews” in one text label without a badge, using the current scoped snapshot; hide it while loading, unavailable, or saving. Keep Kiku and Start prominent. Treat loading, history failure and zero scheduled work distinctly; do not show a stale forecast from a different scope. Refresh on Home return, saves/sync, scope changes, browser return and local midnight. Verify scoping, retry/error behavior, date labels, storage isolation and phone-width layout. Serve a localhost demo for owner review; merging waits for a new request.
+
+
+## Home copy cleanup (#164)
+
+Remove the contextual lesson-readiness/workload message and the saved-answer total from Home. Keep the forecast and Start count as the visible workload summary. Verify persistence and language/account scope through stored history and practice behavior rather than the removed count.

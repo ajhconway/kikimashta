@@ -778,11 +778,11 @@ describe('interval mastery feedback', () => {
     vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
     await click(heardChoice(container));
     await click(screen.getByRole('button', { name: 'Kikimashta home' }));
-    await waitFor(() => expect(screen.getByText(`${cards.length} answers saved on this device`)).toBeInTheDocument());
+    expect(records).toHaveLength(cards.length);
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     await act(async () => pending.resolve());
-    await waitFor(() => expect(screen.getByText(`${cards.length + 1} answers saved on this device`)).toBeInTheDocument());
-    expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+    expect(records).toHaveLength(cards.length + 1);
   });
 
   it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
@@ -860,7 +860,10 @@ describe('all-level simulated Dev review (#152)', () => {
     expect(records).toEqual(original);
     await click(screen.getByRole('button', { name: 'Finish' }));
     expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
-    expect(screen.getByText('2 answers saved on this device')).toBeInTheDocument();
+    await advance(0);
+    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
+    expect(records).toEqual(original);
+    expect(screen.queryByText(/answers? saved on this device/)).not.toBeInTheDocument();
   });
 });
 
@@ -874,7 +877,8 @@ describe('learning language switching', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
     await waitFor(() => expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419'));
     await act(async () => { oldHistory.resolve(legacy()); });
-    expect(screen.queryByText('6 answers saved on this device')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
+    expect(screen.getByRole('region', { name: 'Review forecast' })).toHaveTextContent('No reviews expected this week.');
     expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
     expect(screen.getByRole('link', { name: /Card library/ })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveFocus();

@@ -1,3 +1,4 @@
+import { savedAttempts } from './saved-attempts';
 import { expect, test } from '@playwright/test';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 
@@ -39,7 +40,7 @@ for (const format of ['pictures', 'writing']) {
     if (format === 'writing') await page.getByRole('button', { name: `Choose writing ${target.text}`, exact: true }).click();
     else await page.locator('.choices button').filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
     await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
-    await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+    await expect.poll(async () => (await savedAttempts(page)).length).toBe(1);
     await page.reload();
     const saved = await page.evaluate(async () => {
       const db = await new Promise<IDBDatabase>((resolve, reject) => {

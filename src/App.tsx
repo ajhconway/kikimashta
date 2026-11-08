@@ -177,7 +177,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [audioFinished, setAudioFinished] = useState(false);
   const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
-  const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
   const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
     [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
@@ -249,7 +248,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
-        setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
+        setDensity(forecast.reviewsPerDay); setHistoryError(false);
         setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
       } catch {
         if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
@@ -375,7 +374,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       const attempts = await store.history(practicePool.language);
       const { schedules, cards } = await learningSnapshot(attempts);
       if (operation.current !== request) return;
-      history.current = attempts; setTotal(attempts.length);
+      history.current = attempts;
       mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
       const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
@@ -447,7 +446,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     }
     onSaved?.();
     if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
-    setTotal(history.current.length);
     setRefresh(value => value + 1);
   }
   function choose(item: WordItem) {
@@ -531,7 +529,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
-        <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
         {accountControls}

@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import { beforeEach, expect, it, vi } from 'vitest';
 import App from './App';
 import spanish from '../content/es-419.json';
+import { forecastDensity } from './core/density';
 import { schedulerVersion } from './core/scheduler';
 import { ProgressStore } from './progress/store';
 import type { PracticeAttempt } from './types';
@@ -64,7 +65,10 @@ it('loads Spanish picture history and links to its language-specific pack librar
     context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
   })));
   render(<App now={() => 1000000}/>);
-  await waitFor(() => expect(screen.getByText('6 answers saved on this device')).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+  const schedules = vi.mocked(forecastDensity).mock.calls.at(-1)![0];
+  expect(schedules).toHaveLength(spanish.items.length);
+  expect(schedules.every(card => card.language === 'es-419' && spanish.items.some(item => item.id === card.itemId))).toBe(true);
   expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419');
   expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
   expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
