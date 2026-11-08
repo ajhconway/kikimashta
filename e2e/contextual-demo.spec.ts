@@ -135,7 +135,9 @@ test('contextual practice demo uses real session feedback and retries without ch
       const japanese = quiz.getByRole('button', { name: 'Show Japanese', exact: true });
       const badge = quiz.getByRole('img', { name: 'Mastery decreased to Learning', exact: true });
       await expect(badge).toBeVisible();
-      await page.clock.runFor(500);
+      // The fake JS clock does not advance native CSS transitions/animations.
+      await expect(quiz.locator('.contextual-response-row')).toHaveCSS('column-gap', '12px');
+      await expect(badge).toHaveCSS('transform', 'none');
       const badgeBounds = (await badge.boundingBox())!;
       const detailBounds = (await japanese.boundingBox())!;
       expect(badgeBounds.x + badgeBounds.width).toBeLessThanOrEqual(detailBounds.x - 6);
