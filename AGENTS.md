@@ -37,7 +37,13 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
+When another worktree is serving the default preview port, use `E2E_PORT=4199 npm run test:e2e` (or another free port). An explicit E2E_PORT starts an isolated production preview rather than reusing another server. The complete contextual dev review opens with `?review=contextual`; it saves no attempts.
+
 Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.
+
+Contextual quiz text preparation for issue #119 uses `npm run content:contextual:validate` for a read-only preflight and `npm run content:contextual:review` to rebuild `artifacts/contextual-pilot/review.html`. The review command's `-- --github` option prints a readable GitHub review. These commands do not approve content, generate speech, or activate practice cards. Obtain owner approval of the actual pilot text before speech generation, as recorded in PLAN.md. The usual `npm test` includes the checked-in pilot's validation and review-tool regression checks.
+
+Local ElevenLabs generation loads `ELEVENLABS_API_KEY` from the command environment or `~/.config/kikimashta/elevenlabs.env` (private mode 600), so separate worktrees can use one secret outside Git. Read it only through `scripts/content/elevenlabs-key.mjs` for generation. Never print, copy into the repository, include in browser code, or record its value in logs/provenance. See `docs/ELEVENLABS.md` for setup.
 
 Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. The card tests and validator run through `npm run test:cards`, included in `npm run check` and the required CI job. Preparation and gallery rendering remain manual.
 

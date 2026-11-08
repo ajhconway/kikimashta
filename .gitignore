@@ -12,6 +12,7 @@ test-results/
 .DS_Store
 *.log
 artifacts/generated-originals/
+artifacts/contextual-audio-review/expanded-*/
 public/license.txt
 public/notice.txt
 public/third-party-notices.txt

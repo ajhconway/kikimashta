@@ -95,3 +95,27 @@ test('periodic balance guard reserves the pending cost before launching further 
   assert.equal(calls, 100)
   assert.equal(JSON.parse(await readFile(join(output, 'summary.json'), 'utf8')).completed, 100)
 })
+
+test('pre-request metadata preparation runs under the exclusive lock before provider activity', async t => {
+  const output = await fixture(t)
+  const events = []
+  await generateCards({ plan: plan(), output, apiKey: 'fixture-key', concurrency: 1, budget: 100, log: () => {},
+    beforeRequests: async () => {
+      assert.ok(JSON.parse(await readFile(join(output, 'generation.lock'), 'utf8')).pid)
+      events.push('prepare')
+    },
+    balance: async () => { assert.equal(events[0], 'prepare'); events.push('balance'); return balance() },
+    speak: async () => { assert.equal(events[0], 'prepare'); events.push('speech'); return { audio: Buffer.from('ID3 fixture') } },
+  })
+  assert.equal(events.filter(event => event === 'speech').length, 4)
+  assert.equal(events[0], 'prepare')
+})
+
+test('failed pre-request preparation releases the lock without contacting the provider', async t => {
+  const output = await fixture(t)
+  const never = async () => assert.fail('No provider call may occur before metadata preparation succeeds')
+  await assert.rejects(generateCards({ plan: plan(), output, apiKey: 'fixture-key', concurrency: 1, budget: 100,
+    beforeRequests: async () => { throw new Error('Approval metadata differs') }, balance: never, speak: never,
+  }), /Approval metadata differs/)
+  await assert.rejects(readFile(join(output, 'generation.lock')), { code: 'ENOENT' })
+})

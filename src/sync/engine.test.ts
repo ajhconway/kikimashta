@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto';
 import { deleteDB } from 'idb';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import type { PracticeAttempt } from '../types';
+import type { ContextualExercise, PracticeAttempt } from '../types';
 import { advanceSchedule, deriveSchedules } from '../core/scheduler';
 import { ProgressStore } from '../progress/store';
 import type { NoteEvent, SyncLocal, SyncRemote } from './types';
@@ -15,6 +15,14 @@ function attempt(id: string, extra: Partial<PracticeAttempt> = {}): PracticeAtte
 }
 function note(id: string, text: string, updatedAt = 2000): NoteEvent {
   return { id, language: 'ja-JP', itemId: 'cat', text, updatedAt };
+}
+function contextualAttempt(id: string, exercise: ContextualExercise = 'context-simple-text'): PracticeAttempt {
+  return attempt(id, { choiceIds: ['teacher', 'student'], selectedId: 'teacher', context: {
+    phase: 'review', exercise, recordingSrc: 'audio/context/sentence.mp3', replays: 2, schedulerVersion: 'fsrs-6-v1',
+    contextual: { stage: exercise.includes('simple') ? 'simple' : 'contrastive', contextId: 'water-at-school', contextRevision: 1,
+      questionId: 'who-drinks-water', questionRevision: 2, kind: 'detail', correctOptionId: 'teacher',
+      sentenceSrc: 'audio/context/sentence.mp3', questionSrc: 'audio/context/question.mp3' },
+  } });
 }
 function merge<T extends { id: string }>(target: Map<string, T>, incoming: readonly T[]) {
   for (const item of incoming) if (!target.has(item.id)) target.set(item.id, structuredClone(item));
@@ -49,6 +57,22 @@ afterEach(async () => {
 });
 
 describe('account-bound synchronization', () => {
+  it('round-trips authored contextual detail answers and retries without mixing stage schedules', async () => {
+    const f = fixture();
+    const simple = contextualAttempt('simple');
+    const contrastive = contextualAttempt('contrastive', 'context-contrastive-text');
+    const retry = contextualAttempt('retry'); retry.context!.retryOf = 'simple';
+    await f.store.merge([simple, attempt('legacy')]);
+    merge(f.remoteAttempts, [contrastive, retry]);
+    await synchronize(f.local, f.remote);
+    await synchronize(f.local, f.remote);
+    const expected = [contrastive, attempt('legacy'), retry, simple];
+    expect(await f.store.all()).toEqual(expected);
+    expect([...f.remoteAttempts.values()].sort((a, b) => a.id.localeCompare(b.id))).toEqual(expected);
+    expect(f.remoteAttempts.get('simple')!.itemId).toBe('cat');
+    expect(f.remoteAttempts.get('simple')!.selectedId).toBe('teacher');
+  });
+
   it('preserves timed partial successes through upload, download, and IndexedDB reopen', async () => {
     const f = fixture();
     const partial = attempt('partial', { outcome: 'partial', timer: { limitMs: 3000, startedAt: 1100 },
@@ -194,6 +218,44 @@ describe('account-bound synchronization', () => {
 });
 
 describe('sync payload validation', () => {
+  it.each(['context-simple-picture', 'context-simple-text', 'context-contrastive-picture', 'context-contrastive-text'] as const)(
+    'accepts exact %s identities and metadata without mutating the attempt', exercise => {
+      const value = contextualAttempt('contextual', exercise);
+      const before = structuredClone(value);
+      expect(validateAttempt(value)).toEqual(before);
+      expect(value).toEqual(before);
+      value.correct = false; value.selectedId = 'student';
+      expect(validateAttempt(value)).toBe(value);
+    });
+
+  it('rejects incomplete, mismatched or ambiguous contextual attempts before synchronization', () => {
+    const original = contextualAttempt('contextual');
+    const edits: ((value: PracticeAttempt) => void)[] = [
+      value => { delete value.context!.contextual; },
+      value => { value.context!.exercise = 'context-contrastive-text'; },
+      value => { value.context!.exercise = 'audio-text'; },
+      value => { value.context!.contextual!.contextId = ''; },
+      value => { value.context!.contextual!.questionId = ''; },
+      value => { value.context!.contextual!.contextRevision = 0; },
+      value => { value.context!.contextual!.questionRevision = 1.5; },
+      value => { value.context!.contextual!.questionRevision = Number.MAX_SAFE_INTEGER + 1; },
+      value => { value.context!.contextual!.correctOptionId = 'not-offered'; },
+      value => { value.selectedId = 'not-offered'; },
+      value => { value.correct = false; },
+      value => { value.choiceIds = ['teacher', 'teacher']; },
+      value => { value.choiceIds = ['teacher']; },
+      value => { value.context!.recordingSrc = 'audio/another.mp3'; },
+      value => { value.context!.contextual!.questionSrc = value.context!.recordingSrc; },
+      value => { value.context!.contextual!.questionSrc = '../question.mp3'; },
+      value => { Object.assign(value.context!.contextual!, { stage: 'advanced' }); },
+      value => { Object.assign(value.context!.contextual!, { kind: 'other' }); },
+    ];
+    for (const edit of edits) {
+      const value = structuredClone(original); edit(value);
+      expect(() => validateAttempt(value)).toThrow(/context/i);
+    }
+  });
+
   it.each(['audio-picture', 'audio-text'] as const)('accepts %s contexts and rejects unsupported exercises', exercise => {
     const value = attempt('valid-context', { context: { phase: 'review', exercise, recordingSrc: 'audio/cat.mp3',
       replays: 2, schedulerVersion: 'fsrs-6-v1', retryOf: 'original-miss' } });

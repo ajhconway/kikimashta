@@ -1,7 +1,15 @@
 import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
 import { cardKey, practiceCards } from './cards';
+import type { ContextualItem, ContextualQuestion, ContextualRecording } from '../content/contextual-types';
 
-export interface Question { target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string }
+export interface Question {
+  target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string; demoId?: string;
+  contextual?: { context: ContextualItem; question: ContextualQuestion; recording?: ContextualRecording };
+}
+
+export function correctChoiceId(question: Question): string {
+  return question.contextual?.question.correctOptionId ?? question.target.id;
+}
 
 export function validateBank(bank: WordBank): void {
   if (!bank.id || !bank.language || !Array.isArray(bank.items) || bank.items.length < 2) throw new Error('A bank needs at least two words.');
@@ -62,7 +70,9 @@ export function requeueMissedQuestion(questions: readonly Question[], index: num
   if (questions.slice(index + 1).some(question => question.retryOf === retryOf)) return result;
   const firstPosition = Math.min(index + 2, questions.length);
   const positions = questions.length - firstPosition + 1;
-  const insertion = firstPosition + Math.min(positions - 1, Math.max(0, Math.floor(random() * positions)));
+  // Keep the eight ordered mastery samples together; demo corrections follow the tour.
+  const insertion = current.demoId ? questions.length
+    : firstPosition + Math.min(positions - 1, Math.max(0, Math.floor(random() * positions)));
   const retry: Question = { ...current, retryOf, choices: shuffled(current.choices, random) };
   result.splice(insertion, 0, retry);
   return result;

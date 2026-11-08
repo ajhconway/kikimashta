@@ -31,7 +31,22 @@ export interface WordBank {
   items: WordItem[]
 }
 
-export type Exercise = 'audio-picture' | 'audio-text'
+export type WordExercise = 'audio-picture' | 'audio-text'
+export type ContextualStage = 'simple' | 'contrastive'
+export type ContextualExercise = `context-${ContextualStage}-${'picture' | 'text'}`
+export type Exercise = WordExercise | ContextualExercise
+
+export interface ContextualAttemptDetails {
+  stage: ContextualStage
+  contextId: string
+  contextRevision: number
+  questionId: string
+  questionRevision: number
+  kind: 'target' | 'detail'
+  correctOptionId: string
+  sentenceSrc: string
+  questionSrc: string
+}
 export type AnswerOutcome = 'success' | 'partial' | 'failure'
 
 /** Vocabulary stays shared; each exercise is learned independently. */
@@ -69,6 +84,7 @@ export interface PracticeAttempt {
     recordingSrc: string
     replays: number
     schedulerVersion: string
+    contextual?: ContextualAttemptDetails
     /** Original miss ID when this answer is an in-block corrective retry. */
     retryOf?: string
   }

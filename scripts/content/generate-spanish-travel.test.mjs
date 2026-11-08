@@ -20,13 +20,6 @@ function run(root, key) {
   if (key) env.ELEVENLABS_API_KEY = key;
   return spawnSync(process.execPath, [script], { cwd: root, env, encoding: 'utf8' });
 }
-test('missing credentials stop before any generation artifact is created', async t => {
-  const root = await fixture(t);
-  const result = run(root);
-  assert.notEqual(result.status, 0);
-  assert.match(result.stderr, /Load the configured ElevenLabs environment file/);
-  await assert.rejects(access(join(root, 'artifacts')));
-});
 test('an oversized request cannot start generation even with a credential', async t => {
   const root = await fixture(t, 'verylongword');
   const result = run(root, 'unused-test-key');

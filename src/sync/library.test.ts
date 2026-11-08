@@ -5,6 +5,11 @@ import { deleteDB } from 'idb';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getLibraryAccount } from './library-bridge';
 import { NoteStore } from './notes';
+import { ProgressStore } from '../progress/store';
+import type { PracticeAttempt } from '../types';
+import { advanceSchedule, schedulerVersion } from '../core/scheduler';
+import { selectedPracticeCards } from '../core/packs';
+import { practicePool } from '../core/practice';
 
 vi.mock('./library-bridge', () => ({ getLibraryAccount: vi.fn() }));
 
@@ -14,6 +19,7 @@ const cards = [
   { id: 'ja-apple', text: 'リンゴ', reading: 'りんご', meaning: 'Apple', sourceLevel: 1, image: { src: '../images/apple.svg', alt: 'Apple' }, audio: [], concept: 'An apple', visualGroup: 'apple' },
 ];
 const stores: NoteStore[] = [];
+const progressStores: ProgressStore[] = [];
 const windowListeners: Parameters<Window['addEventListener']>[] = [];
 let sequence = 0;
 
@@ -21,10 +27,12 @@ function account() {
   const userId = `library-test-${sequence++}`;
   const notes = new NoteStore(userId, { now: () => 1000, id: () => `event-${sequence++}` });
   stores.push(notes);
+  const progress = new ProgressStore(`library-progress-${userId}`);
+  progressStores.push(progress);
   const listeners = new Set<() => void>();
   let currentUserId: string | null = userId;
   const bridge = {
-    userId, notes, changed: vi.fn(), currentUserId: () => currentUserId,
+    userId, notes, progress, changed: vi.fn(), currentUserId: () => currentUserId,
     subscribe: (listener: () => void) => { listeners.add(listener); return () => listeners.delete(listener); },
   };
   return {
@@ -38,10 +46,10 @@ async function loadLibrary() {
   // Import the browser entry as Vite does; its only external boundaries are the
   // account bridge and manifest fetch, not its feedback UI or DOM interactions.
   await vi.importActual('../../vocabulary/library.js');
-  await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(cards.length));
+  await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(cards.length * 2));
 }
-function dogInput() { return document.getElementById('feedback-ja-dog') as HTMLTextAreaElement; }
-function dogStatus() { return document.getElementById('feedback-status-ja-dog')!; }
+function dogInput() { return document.getElementById('feedback-ja-dog-audio-picture') as HTMLTextAreaElement; }
+function dogStatus() { return document.getElementById('feedback-status-ja-dog-audio-picture')!; }
 
 beforeEach(() => {
   vi.resetModules();
@@ -57,9 +65,12 @@ beforeEach(() => {
   vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({ cards }) })));
 });
 afterEach(async () => {
+  window.dispatchEvent(new Event('pagehide'));
+  await Promise.all(progressStores.splice(0).map(store => store.close()));
   for (const args of windowListeners.splice(0)) window.removeEventListener(...args);
   await Promise.all(stores.map(store => store.close()));
   await Promise.all(stores.splice(0).map(store => deleteDB(store.databaseName)));
+  await deleteDB('kikimashta-v0');
   vi.unstubAllGlobals();
   window.history.replaceState({}, '', '/');
 });
@@ -102,17 +113,23 @@ describe('account-aware vocabulary feedback UI', () => {
   });
 
   it('preserves failed drafts after an account change and prevents writes under the new identity', async () => {
-    const { bridge, switchTo } = account();
+    const { bridge, switchTo, emit } = account();
     await bridge.notes.load();
     vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
     const save = vi.spyOn(bridge.notes, 'write').mockRejectedValue(new Error('Storage unavailable'));
     await loadLibrary();
     fireEvent.input(dogInput(), { target: { value: 'Keep this draft for export' } });
     await waitFor(() => expect(dogStatus()).toHaveTextContent('Could not save'));
+    let resolveHistory!: (value: PracticeAttempt[]) => void;
+    vi.spyOn(bridge.progress, 'history').mockReturnValue(new Promise(resolve => { resolveHistory = resolve; }));
+    // A late sync read must not restore the previous account's mastery.
+    emit();
     switchTo('different-account');
     expect(screen.getByText(/Export your unsaved feedback, then reload/)).toBeVisible();
     expect(screen.getByText('These notes belong to the previous account.')).toBeVisible();
     expect(dogInput()).toHaveValue('Keep this draft for export');
+    resolveHistory([]);
+    await waitFor(() => expect(document.querySelector('.card-mastery')).toHaveTextContent('Mastery: unavailable'));
     fireEvent.input(dogInput(), { target: { value: 'A draft on the old page' } });
     await waitFor(() => expect(dogStatus()).toHaveTextContent('Could not save'));
     expect(save).toHaveBeenCalledOnce();
@@ -128,6 +145,88 @@ describe('account-aware vocabulary feedback UI', () => {
     expect(dogStatus()).toHaveTextContent('Saved on this device.');
     expect(localStorage.getItem('kikimashta:card-feedback:v1:ja:ja-dog')).toBe('Guest note');
     expect(screen.getByText('Feedback stays in this browser. Export it to share or back it up.')).toBeVisible();
+  });
+});
+
+
+describe('library mastery and separate exercise cards (#135)', () => {
+  it('shows separate mastery per exercise from persisted history and refreshes after sync', async () => {
+    const { bridge, emit } = account();
+    vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
+    const first: PracticeAttempt = {
+      id: 'picture-lesson', sessionId: 'session', itemId: 'ja-dog', language: 'ja-JP',
+      choiceIds: ['ja-dog'], selectedId: 'ja-dog', correct: true, startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'dog.mp3', replays: 0, schedulerVersion },
+    };
+    await bridge.progress.record(first);
+    await loadLibrary();
+    const picture = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')!;
+    const writing = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-text"]')!;
+    expect(picture).toHaveAccessibleName('犬 Pictures');
+    expect(writing).toHaveAccessibleName('犬 Writing');
+    expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning');
+    expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
+    const scheduled = await advanceSchedule(undefined, first);
+    await bridge.progress.record({ ...first, id: 'writing-lesson', context: { ...first.context!, exercise: 'audio-text' } });
+    await bridge.progress.record({ ...first, id: 'picture-review', answeredAt: scheduled.dueAt, context: { ...first.context!, phase: 'review' } });
+    emit();
+    await waitFor(() => expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning'));
+    await waitFor(() => expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: Familiar'));
+    expect(picture.querySelector('.pack-labels')).toHaveTextContent('Pictures');
+    expect(picture.querySelector('.pack-labels')).not.toHaveTextContent('Writing');
+    const ids = Array.from(document.querySelectorAll('[id]'), node => node.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(document.querySelector('#pack option[value="ja-wanikani-2-pictures"]')).toHaveTextContent('Lowest: New · Average: New');
+  });
+
+  it('keeps two visible note editors synchronized and counts each vocabulary note once', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    await loadLibrary();
+    const editors = document.querySelectorAll<HTMLTextAreaElement>('[data-item-id="ja-dog"] textarea');
+    expect(editors).toHaveLength(2);
+    fireEvent.input(editors[0]!, { target: { value: 'One shared note' } });
+    expect(editors[1]).toHaveValue('One shared note');
+    expect(screen.getByRole('button', { name: 'Export feedback (1)' })).toBeEnabled();
+  });
+
+
+  it('refreshes guest mastery on focus and BFCache restore without replacing cards or notes', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    const writer = new ProgressStore();
+    progressStores.push(writer);
+    await loadLibrary();
+    const picture = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')!;
+    const writing = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-text"]')!;
+    expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
+    fireEvent.input(dogInput(), { target: { value: 'Keep this editor open' } });
+    const first: PracticeAttempt = {
+      id: 'guest-picture-lesson', sessionId: 'session', itemId: 'ja-dog', language: 'ja-JP',
+      choiceIds: ['ja-dog'], selectedId: 'ja-dog', correct: true, startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'dog.mp3', replays: 0, schedulerVersion },
+    };
+    // Practice in another tab updates the same real IndexedDB database.
+    await writer.merge(selectedPracticeCards(practicePool.items, ['ja-wanikani-2-pictures']).map(({ item }) => ({
+      ...first, id: `guest-lesson-${item.id}`, itemId: item.id, selectedId: item.id, choiceIds: [item.id],
+    })));
+    window.dispatchEvent(new Event('focus'));
+    await waitFor(() => expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning'));
+    expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
+    window.dispatchEvent(new Event('pagehide'));
+    await writer.record({ ...first, id: 'guest-writing-lesson', context: { ...first.context!, exercise: 'audio-text' } });
+    window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+    await waitFor(() => expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning'));
+    expect(document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')).toBe(picture);
+    expect(dogInput()).toHaveValue('Keep this editor open');
+    expect(document.querySelector('#pack option[value="ja-wanikani-2-pictures"]')).toHaveTextContent('Lowest: Learning · Average: Learning');
+  });
+
+  it('shows unavailable when history fails instead of presenting all cards as New', async () => {
+    const { bridge } = account();
+    vi.spyOn(bridge.progress, 'history').mockRejectedValue(new Error('Storage failed'));
+    vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
+    await loadLibrary();
+    for (const badge of document.querySelectorAll('.card-mastery')) expect(badge).toHaveTextContent('Mastery: unavailable');
+    expect(document.querySelector('#pack option[value="ja-wanikani-2-pictures"]')).toHaveTextContent('Mastery unavailable');
   });
 });
 
@@ -159,11 +258,17 @@ describe('Spanish card library', () => {
     window.history.replaceState({}, '', '/vocabulary/?language=es-419');
     const { bridge } = account();
     await bridge.notes.write('es-419', 'es-419-travel-hotel', 'Spanish account note');
+    await bridge.progress.record({ id: 'spanish-picture', sessionId: 'spanish', itemId: 'es-419-travel-hotel', language: 'es-419',
+      choiceIds: ['es-419-travel-hotel'], selectedId: 'es-419-travel-hotel', correct: true, startedAt: 1000, answeredAt: 2000, responseMs: 1000,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'spanish.mp3', replays: 0, schedulerVersion } });
     vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
     await vi.importActual('../../vocabulary/library.js');
-    await waitFor(() => expect(document.getElementById('feedback-es-419-travel-hotel')).toHaveValue('Spanish account note'));
-    fireEvent.input(document.getElementById('feedback-es-419-travel-hotel')!, { target: { value: 'Edited Spanish note' } });
+    await waitFor(() => expect(document.getElementById('feedback-es-419-travel-hotel-audio-picture')).toHaveValue('Spanish account note'));
+    fireEvent.input(document.getElementById('feedback-es-419-travel-hotel-audio-picture')!, { target: { value: 'Edited Spanish note' } });
     await waitFor(() => expect(bridge.notes.read('es-419', 'es-419-travel-hotel')).toBe('Edited Spanish note'));
     expect(bridge.notes.read('ja', 'es-419-travel-hotel')).toBe('');
+    expect(document.querySelectorAll('.card')).toHaveLength(6);
+    expect(document.querySelectorAll('.card-writing')).toHaveLength(0);
+    expect(document.querySelector('[data-item-id="es-419-travel-hotel"] .card-mastery')).toHaveTextContent('Mastery: Learning');
   });
 });

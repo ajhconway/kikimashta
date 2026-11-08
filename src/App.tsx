@@ -2,11 +2,20 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, use
 import { initialLanguage, languagePreferenceKey, learningLanguages, type LearningLanguage } from './core/languages';
 import { initialPackIds, selectedPracticeCards } from './core/packs';
 import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
-import { attemptExercise, cardKey } from './core/cards';
-import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
-import { deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { attemptExercise, cardKey, isContextualExercise } from './core/cards';
+import { correctChoiceId, createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
+import { deriveContextualUnlocks, selectedContextualCards } from './core/contextual-progression';
+import { contextualQuestion } from './core/contextual-questions';
+import { approvedContextualQuestions } from './content/contextual';
+import { contextualBanks, contextualVocabulary, readyContextualCards } from './content/contextual-runtime';
+import { ContextualQuiz } from './components/ContextualQuiz';
+import { ContextualDevReview } from './components/ContextualDevReview';
+import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
+import { createMasteryDemo } from './core/mastery-demo';
+import { cardMastery, masteryIndex, packMastery } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
+import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -20,6 +29,7 @@ import { availableWritingFont, createWritingFontRotation, preloadWritingFonts, t
 
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const defaultStore = new ProgressStore();
+const contextualCards = readyContextualCards(contextualBanks, contextualVocabulary);
 const fireworkOffsets = Array.from({ length: 16 }, (_, i) => {
   const angle = i * Math.PI / 8 - Math.PI / 2;
   const radius = i % 2 === 0 ? 155 : 130;
@@ -99,14 +109,32 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const practicePool = language.pool;
   const cardPacks = language.packs;
   const packPreferenceKey = language.packPreferenceKey;
+  const languageContextualBanks = useMemo(() => contextualBanks.filter(bank => bank.language === language.id), [language.id]);
+  const languageContextualVocabulary = useMemo(() => contextualVocabulary.filter(item => item.language === language.id), [language.id]);
   const store = progressStore;
   const [localRecovery] = useState(() => new AnswerRecovery());
   const recovery = answerRecovery ?? localRecovery;
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
-  const selectedKeys = useMemo(() => new Set(selectedCards.map(cardKey)), [selectedCards]);
   const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
+  const learningSnapshot = useCallback(async (attempts: PracticeAttempt[]) => {
+    const unlocks = await deriveContextualUnlocks(attempts, practicePool.language);
+    const cards = [...selectedContextualCards(selectedCards, contextualCards, unlocks), ...selectedCards];
+    const keys = new Set(cards.map(cardKey));
+    const allSchedules = await deriveSchedules(attempts, practicePool.language);
+    return { cards, allSchedules, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
+  }, [selectedCards, practicePool]);
+  function questionForCard(card: PracticeCard): Question[] {
+    if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
+    const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
+    const candidates = languageContextualBanks.flatMap(bank => approvedContextualQuestions(bank, format))
+      .filter(({ context }) => context.targetItemId === card.item.id &&
+        `context-${context.stage ?? 'contrastive'}-${format}` === card.exercise);
+    const selected = candidates[Math.floor(random() * candidates.length)];
+    if (!selected) throw new Error('No approved contextual question for this card.');
+    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random)];
+  }
   function togglePack(id: string) {
     const next = packIds.includes(id) ? packIds.filter(value => value !== id) : [...packIds, id];
     setLoading(true); setPackIds(next);
@@ -115,9 +143,12 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
   useEffect(() => { if (language.writing === 'japanese') preloadWritingFonts(); }, [language]);
-  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary'>('home');
+  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-dev'>(() =>
+    languageContextualBanks.length > 0 && new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
+  const [demoPresentation, setDemoPresentation] = useState<{ label: string; timerMs: number | null; retry: boolean } | null>(null);
+  const demoSchedules = useRef<Map<string, ScheduledWord | undefined> | null>(null);
   const [range] = useState<DensityRange>(initialRange);
   const [density, setDensity] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -125,27 +156,32 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [lessonPlan, setLessonPlan] = useState<LessonPlan | null>(null);
   const [lessonItems, setLessonItems] = useState<PracticeCard[]>([]);
   const [preview, setPreview] = useState(0);
+  const [previewQuestion, setPreviewQuestion] = useState<Question | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [quizSize, setQuizSize] = useState(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<PracticeAttempt[]>([]);
+  const [packSchedules, setPackSchedules] = useState(new Map<string, ScheduledWord>());
+  const [masteryChange, setMasteryChange] = useState<{ id: string; label: string; direction: 'up' | 'down' } | null>(null);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
   const [departures, setDepartures] = useState<DepartingCard[]>([]);
+  const [demoSaving, setDemoSaving] = useState(false);
   const pendingSaveCount = saveState.pendingId === null ? 0 : 1;
   const failedAttempt = saveState.failed;
-  const saving = pendingSaveCount > 0;
+  const saving = pendingSaveCount > 0 || demoSaving;
   const saveError = failedAttempt !== null;
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [audioFinished, setAudioFinished] = useState(false);
-  const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null }>({ id: '', limitMs: null });
+  const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
   const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
-  const session = useRef({ id: '', reserved: new Set<string>() });
+  const session = useRef({ id: '', reserved: new Set<string>(), cards: [] as PracticeCard[] });
+  const lessonQuestions = useRef(new Map<string, Question>());
   const history = useRef<PracticeAttempt[]>([]);
   const mastery = useRef(new Map<string, ScheduledWord>());
   const operation = useRef(0);
@@ -157,7 +193,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     audioFinished, answered: !!feedback, grid: choiceGrid, now });
   const target = screen === 'preview' ? lessonItems[preview]?.item : questions[index]?.target;
   const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
-  const theme = screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
+  const theme = screen === 'contextual-dev' || (screen === 'quiz' && questions[index]?.contextual) ? 'contextualQuiz' : screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
   const response = screen === 'quiz' && feedback ? feedback.outcome === 'partial' ? 'partial' : feedback.correct ? 'correct' : 'incorrect' : undefined;
   const background = response ? quizFeedbackColors[response] : screen === 'home' && density !== null ? intensityColors[densityLevel(density)] : themeColors[theme];
   const invalidate = useCallback(() => { operation.current++; }, []);
@@ -183,10 +219,11 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
+        const { schedules, allSchedules } = await learningSnapshot(attempts);
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
+        setPackSchedules(new Map(allSchedules.map(word => [cardKey(word), word])));
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
       } catch {
@@ -194,7 +231,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, selectedKeys, saveState.revision, practicePool]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool]);
 
   useEffect(() => {
     const element = audio.current;
@@ -227,17 +264,24 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     operation.current++; preparing.current = false;
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
     active.current = { id: '', startedAt: 0, answered: true, sessionId: '', replays: 0 };
-    setFeedback(null); setDepartures([]); setLessonPlan(null);
-    setIsDevReview(false);
+    setDemoSaving(false); setFeedback(null); setDepartures([]); setLessonPlan(null);
+    setIsDevReview(false); demoSchedules.current = null; setDemoPresentation(null);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
-    setQuestionTimer({ id: active.current.id, limitMs: devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
-      ? quizTimeLimit(mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }))) : null });
+    const word = next.demoId ? demoSchedules.current?.get(next.demoId) : mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }));
+    const level = cardMastery(word);
+    const demoLevel = next.demoId ? level : null;
+    setDemoPresentation(demoLevel ? { ...demoLevel, retry: !!next.retryOf } : null);
+    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: next.contextual ? null : demoLevel ? next.retryOf ? null : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+      ? quizTimeLimit(word) : null });
     setAudioFinished(false);
     setFeedback(null); setDepartures([]);
-    present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
+    if (next.contextual) {
+      playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
+      recording.current = { src: next.contextual.recording!.sentenceSrc, source: 'synthesized' };
+    } else present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present, random]);
   function beginQuiz(block: Question[], blockPhase = phase, devReview = isDevReview) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
@@ -246,9 +290,18 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   function startDevReview() {
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     operation.current++;
-    session.current = { id: crypto.randomUUID(), reserved: new Set() };
+    session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
     beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
+  }
+  function startMasteryDemo() {
+    if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
+    const demo = createMasteryDemo(selectedCards, now(), random);
+    operation.current++;
+    demoSchedules.current = demo.schedules;
+    session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
+    setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
+    beginQuiz(demo.questions, 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -256,15 +309,16 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       const attempts = await store.history(practicePool.language);
       if (operation.current !== request) return;
       history.current = attempts;
-      const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
+      const keys = new Set(session.current.cards.map(cardKey));
+      const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => keys.has(cardKey(card)));
       const learned = new Set(schedules.map(cardKey));
       const plan = await planLessonChunk({ schedules, now: now(), range,
-        candidates: selectedCards.filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
+        candidates: session.current.cards.filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
       if (operation.current !== request) return;
       setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(shuffled(plan.items, random));
     } catch { if (operation.current === request) setHistoryError(true); }
     finally { if (operation.current === request) setLoading(false); }
-  }, [now, range, store, random, selectedCards, selectedKeys, practicePool]);
+  }, [now, range, store, random, practicePool]);
   async function startSession() {
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     setIsDevReview(false);
@@ -274,15 +328,15 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     setLoading(true); setHistoryError(false);
     try {
       const attempts = await store.history(practicePool.language);
-      const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => selectedKeys.has(cardKey(card)));
+      const { schedules, cards } = await learningSnapshot(attempts);
       if (operation.current !== request) return;
       history.current = attempts; setTotal(attempts.length);
       mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
-      session.current = { id: crypto.randomUUID(), reserved: new Set() };
+      session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
       const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
       const byId = new Map(practicePool.items.map(item => [item.id, item]));
       if (due.length) {
-        setPhase('review'); setQuestions(shuffled(due, random).flatMap(card => createQuestions([{ item: byId.get(card.itemId)!, exercise: card.exercise }], choicesFor(card.exercise), random)));
+        setPhase('review'); setQuestions(shuffled(due, random).flatMap(card => questionForCard({ item: byId.get(card.itemId)!, exercise: card.exercise })));
         setLessonItems([]); setLessonPlan(null); setLoading(false);
       } else {
         setPhase('lesson');
@@ -295,11 +349,20 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   function beginLesson() {
     if (!lessonItems.length || loading || historyError) return;
     lessonItems.forEach(card => session.current.reserved.add(cardKey(card)));
-    setPhase('lesson'); setPreview(0); setScreen('preview'); present(lessonItems[0]!.item, lessonItems[0]!.exercise);
+    lessonQuestions.current = new Map(lessonItems.filter(card => isContextualExercise(card.exercise))
+      .map(card => [cardKey(card), questionForCard(card)[0]!]));
+    setPhase('lesson'); setPreview(0); setScreen('preview'); presentLesson(lessonItems[0]!);
+  }
+  function presentLesson(card: PracticeCard) {
+    if (isContextualExercise(card.exercise)) {
+      playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
+      setPreviewQuestion(lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!);
+    } else { setPreviewQuestion(null); present(card.item, card.exercise); }
   }
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
+      if (isContextualExercise(card.exercise)) return [lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!];
       const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
       return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);
@@ -307,18 +370,47 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     beginQuiz(block);
   }
   async function save(attempt: PracticeAttempt) {
-    if (isDevReview || !await recovery.save(store, attempt)) return;
+    if (isDevReview) {
+      const demoId = questions[index]?.demoId;
+      const samples = demoSchedules.current;
+      if (!demoId || !samples || attempt.context?.retryOf) return;
+      const request = operation.current;
+      const previous = samples.get(demoId);
+      setDemoSaving(true);
+      try {
+        const updated = await advanceSchedule(previous, attempt);
+        if (operation.current !== request || active.current.id !== attempt.id) return;
+        samples.set(demoId, updated);
+        if (masteryIndex(previous) !== masteryIndex(updated)) {
+          setMasteryChange({ id: attempt.id, label: cardMastery(updated).label,
+            direction: masteryIndex(updated) > masteryIndex(previous) ? 'up' : 'down' });
+        }
+      } finally { if (active.current.id === attempt.id) setDemoSaving(false); }
+      return;
+    }
+    const request = operation.current;
+    const key = cardKey({ ...attempt, exercise: attemptExercise(attempt) });
+    const previous = mastery.current.get(key);
+    if (!await recovery.save(store, attempt)) return;
+    const updated = attempt.context?.retryOf ? undefined : await advanceSchedule(previous, attempt);
+    if (updated && operation.current === request) {
+      mastery.current.set(key, updated);
+      const before = masteryIndex(previous), after = masteryIndex(updated);
+      if (before !== after && active.current.id === attempt.id) {
+        setMasteryChange({ id: attempt.id, label: cardMastery(updated).label, direction: after > before ? 'up' : 'down' });
+      }
+    }
     onSaved?.();
     if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
     setTotal(history.current.length);
     setRefresh(value => value + 1);
   }
   function choose(item: WordItem) {
-    if (active.current.answered || audioError) return;
+    if (active.current.answered || (audioError && !questions[index]?.contextual)) return;
     active.current.answered = true;
     const question = questions[index]!;
     const answeredAt = now();
-    const correct = item.id === question.target.id;
+    const correct = item.id === correctChoiceId(question);
     const attempt: PracticeAttempt = {
       id: active.current.id, sessionId: active.current.sessionId,
       itemId: question.target.id, language: practicePool.language,
@@ -327,8 +419,20 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       ...(countdown.timer ? { timer: countdown.timer } : {}), startedAt: active.current.startedAt,
       answeredAt, responseMs: Math.max(0, answeredAt - active.current.startedAt),
       context: { phase, exercise: question.exercise, recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
+        ...(question.contextual ? { contextual: {
+          stage: question.contextual.context.stage ?? 'contrastive',
+          contextId: question.contextual.context.id, contextRevision: question.contextual.context.revision,
+          questionId: question.contextual.question.id, questionRevision: question.contextual.question.revision,
+          kind: question.contextual.question.kind, correctOptionId: question.contextual.question.correctOptionId,
+          sentenceSrc: question.contextual.recording!.sentenceSrc,
+          questionSrc: question.contextual.recording!.questionSrcs[question.contextual.question.id]!,
+        } } : {}),
         ...(question.retryOf ? { retryOf: question.retryOf } : {}) },
     };
+    if (question.contextual) {
+      if (!attempt.correct) setQuestions(requeueMissedQuestion(questions, index, attempt.id, random));
+      setFeedback(attempt); setAnswers(previous => [...previous, attempt]); void save(attempt); return;
+    }
     const gridBounds = choiceGrid.current?.getBoundingClientRect();
     setDepartures(question.choices.flatMap((choice, slot) => {
       if (choice.id === question.target.id || (!attempt.correct && choice.id === item.id)) return [];
@@ -354,14 +458,14 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase, isDevReview);
   }, [index, questions, showQuestion, prepareLessons, isDevReview, phase, recovery]);
   useEffect(() => {
-    if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
+    if (screen !== 'quiz' || questions[index]?.contextual || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;
     const answerId = feedback.id; const request = playRequest.current;
     const timer = window.setTimeout(() => {
       if (document.visibilityState === 'hidden') { setAutoPaused(true); return; }
       if (active.current.id === answerId && request === playRequest.current) next();
     }, correctAnswerPauseMs);
     return () => window.clearTimeout(timer);
-  }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next]);
+  }, [screen, feedback, saving, saveError, audioError, playing, autoPaused, next, questions, index]);
 
   const correct = answers.filter(answer => answer.correct).length;
   const mistakes = answers.length - correct;
@@ -376,19 +480,27 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <HomeIntensity value={density}/>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startDevReview}>Dev review</button>
+        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
+        {languageContextualBanks.length > 0 && <button className="text-button" disabled={accountLoading || pendingSaveCount > 0 || saveError} onClick={() => {
+          operation.current++; playRequest.current++; audio.current?.pause(); setPlaying(false); setScreen('contextual-dev');
+        }}>Contextual dev review</button>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         {cardPacks.length > 0 && <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
           <fieldset disabled={loading || accountLoading || pendingSaveCount > 0 || saveError}><legend>Practice packs</legend>
-            {cardPacks.map(pack => <label key={pack.id}><input type="checkbox" checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/>{pack.title}</label>)}
+            {cardPacks.map(pack => {
+              const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), packSchedules);
+              return <label key={pack.id}><input type="checkbox" aria-label={pack.title} aria-describedby={`mastery-${pack.id}`} checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/><span>{pack.title}<small id={`mastery-${pack.id}`} className="pack-mastery">{loading || accountLoading ? 'Mastery loading…' : historyError ? 'Mastery unavailable' : `Lowest: ${levels.lowest.label} · Average: ${levels.average.label}`}</small></span></label>;
+            })}
           </fieldset>
           <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
         </details>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack to start practicing.'}</p>}
         {accountControls}
       </section>}
+      {screen === 'contextual-dev' && languageContextualBanks.length > 0 && <ContextualDevReview banks={languageContextualBanks} vocabulary={languageContextualVocabulary} onClose={home} random={random}/>}
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Review Time!' : lessonItems.length ? 'Lesson Time!' : 'All set for now!'}</h1>
@@ -401,16 +513,23 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'preview' && target && <section className="practice preview fade-in" data-exercise={exercise}>
         <div className="section-top"><span className="counter">{preview + 1} / {lessonItems.length}</span></div>
         <h1 className="practice-title">Lesson Time!</h1>
-        <div className={'preview-picture' + (exercise === 'audio-text' ? ' preview-writing' : '')}><CardFace item={target} exercise={exercise!} font={writingFont}/></div>
+        {previewQuestion ? <ContextualQuiz key={preview} question={previewQuestion} feedback={null} onChoose={() => {}} onContinue={() => {}} preview/> :
+          <div className={'preview-picture' + (exercise === 'audio-text' ? ' preview-writing' : '')}><CardFace item={target} exercise={exercise!} font={writingFont}/></div>}
         <div className="practice-actions">
-        <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
+        {!previewQuestion && <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>}
 
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="preview-dots" aria-label={'Card ' + (preview + 1) + ' of ' + lessonItems.length}>{lessonItems.map((item, i) => <span key={cardKey(item)} className={i === preview ? 'active' : ''}/>)}</div>
-        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < lessonItems.length) { setPreview(preview + 1); present(lessonItems[preview + 1]!.item, lessonItems[preview + 1]!.exercise); } else startLessonQuiz(); }}>{preview + 1 === lessonItems.length ? 'Mini-quiz' : 'Next card'} <span aria-hidden="true">→</span></button>
+        <button className="primary" disabled={audioError} onClick={() => { if (preview + 1 < lessonItems.length) { setPreview(preview + 1); presentLesson(lessonItems[preview + 1]!); } else startLessonQuiz(); }}>{preview + 1 === lessonItems.length ? 'Mini-quiz' : 'Next card'} <span aria-hidden="true">→</span></button>
         </div>
       </section>}
-      {screen === 'quiz' && target && <section className="practice quiz fade-in" data-exercise={exercise}>
+      {screen === 'quiz' && target && questions[index]?.contextual && <section className="practice contextual-practice" data-exercise={exercise}>
+        <ContextualQuiz key={index} question={questions[index]!} feedback={feedback} onChoose={choose}
+          onContinue={next} onReplay={() => { active.current.replays++; }} disabled={saving || saveError}/>
+        {saveError && feedback && <div role="alert" className="error"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
+        <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>
+      </section>}
+      {screen === 'quiz' && target && !questions[index]?.contextual && <section className="practice quiz fade-in" data-exercise={exercise}>
         <h1 className="sr-only">Listen and choose</h1>
         <div className="quiz-top">
         <QuizCompanion listening={playing} response={feedback?.outcome ?? null}/>
@@ -427,7 +546,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
           return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.outcome === 'partial' ? 'Got it — take your time.' : feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
+        <MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: !!demoPresentation }}
+          outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
+          change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
@@ -435,7 +556,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
-        <h1>{isDevReview ? 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
+        <h1>{isDevReview ? demoPresentation ? 'Mastery demo complete' : 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
         {answers.some(answer => answer.outcome === 'partial') && <p>{answers.filter(answer => answer.outcome === 'partial').length} partial success{answers.filter(answer => answer.outcome === 'partial').length === 1 ? '' : 'es'}</p>}
         {!isDevReview && <>
