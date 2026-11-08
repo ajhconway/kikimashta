@@ -10,6 +10,7 @@ const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
 import { forecastDensity, planLessonChunk } from './core/density';
 import { advanceSchedule, schedulerVersion } from './core/scheduler';
+import { voicePreferenceKey } from './core/voices';
 import { quizTimeLimit } from './core/quiz-timer';
 import type { Exercise, PracticeAttempt } from './types';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
@@ -50,6 +51,14 @@ function heardChoice(container: HTMLElement, correct = true) {
   )!;
 }
 async function click(button: HTMLElement) { await act(async () => { fireEvent.click(button); }); }
+async function configuredDevReview() {
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  await act(async () => {
+    fireEvent.change(screen.getByLabelText('Questions'), { target: { value: '6' } });
+    fireEvent.change(screen.getByLabelText('Timer behavior'), { target: { value: 'random' } });
+  });
+  await click(screen.getByRole('button', { name: 'Start dev review' }));
+}
 async function start() {
   await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
   await click(screen.getByRole('button', { name: /^start/i }));
@@ -97,7 +106,7 @@ describe('adaptive session flow', () => {
   it('starts a random dev review with no due words, retries misses, and leaves saved progress untouched', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await configuredDevReview();
     vi.useFakeTimers();
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
     expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
@@ -129,7 +138,7 @@ describe('adaptive session flow', () => {
     const original = structuredClone(records);
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await configuredDevReview();
     await click(heardChoice(container));
     await click(screen.getByRole('button', { name: /kikimashta home/i }));
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
@@ -555,7 +564,7 @@ describe('practice pack selection', () => {
     expect(container.querySelector('.preview')).toHaveAttribute('data-exercise', 'audio-text');
     await click(screen.getByRole('button', { name: /kikimashta home/i }));
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await configuredDevReview();
     expect(container.querySelector('.quiz')).toHaveAttribute('data-exercise', 'audio-text');
     const source = container.querySelector('audio')!.getAttribute('src');
     expect(fullPool.items.some(item => pack.itemIds.includes(item.id) && item.audio.some(clip => source?.endsWith(clip.src)))).toBe(true);
@@ -579,21 +588,17 @@ describe('practice pack selection', () => {
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
   });
 
-  it('disables practice for an empty selection and saves a newly enabled pack', async () => {
+  it('directs an empty selection to the library and refreshes packs on browser return', async () => {
     localStorage.setItem(packPreferenceKey, '[]');
-    const history = deferred<PracticeAttempt[]>();
-    vi.mocked(ProgressStore.prototype.history).mockReturnValueOnce(history.promise);
     render(<App now={fixedNow}/>);
-    await screen.findByText('Select a pack to start practicing.');
-    expect(screen.getByRole('button', { name: /getting ready/i })).toBeDisabled();
-    await act(async () => { history.resolve([]); });
+    await screen.findByText('Select a pack in the card library to start practicing.');
     expect(await screen.findByRole('button', { name: /^start/i })).toBeDisabled();
-    await click(screen.getByText('Card packs · 0 selected'));
-    const checkbox = screen.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' });
-    await waitFor(() => expect(checkbox).toBeEnabled());
-    await click(checkbox);
+    expect(screen.getByRole('link', { name: 'Card library · 0 packs selected' })).toHaveAttribute('href', '/vocabulary/');
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-1-pictures']));
+    fireEvent(window, new Event('pageshow'));
     await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
-    expect(JSON.parse(localStorage.getItem(packPreferenceKey)!)).toEqual(['ja-wanikani-1-pictures']);
+    expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeInTheDocument();
   });
 });
 
@@ -710,7 +715,7 @@ it('samples dev-review timers per question, retains the choice on replay, and ne
   const { container } = render(<App random={() => draw}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
   vi.useFakeTimers();
-  await click(screen.getByRole('button', { name: 'Dev review' }));
+  await configuredDevReview();
   loadPictures(container); endAudio(container); await advance(480); await advance(0);
   expect(screen.getByText('1.5 second timer started.')).toBeInTheDocument();
   draw = 0;
@@ -753,7 +758,7 @@ describe('interval mastery feedback', () => {
     expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Learning/);
   });
 
-  it('refreshes pack mastery when an answer finishes saving after returning Home', async () => {
+  it('refreshes practice when an answer finishes saving after returning Home', async () => {
     const pack = cardPacks.find(pack => pack.id === 'ja-wanikani-1-pictures')!;
     const cards = selectedPracticeCards(practicePool.items, [pack.id]);
     const old = legacy(1)[0]!;
@@ -773,13 +778,10 @@ describe('interval mastery feedback', () => {
     vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
     await click(heardChoice(container));
     await click(screen.getByRole('button', { name: 'Kikimashta home' }));
-    await click(screen.getByText(/Card packs ·/));
-    const packLabel = screen.getByRole('checkbox', { name: pack.title }).closest('label')!;
-    // Let Home finish its first history read while the answer is still unwritten.
-    await waitFor(() => expect(within(packLabel).getByText('Lowest: New · Average: New')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(`${cards.length} answers saved on this device`)).toBeInTheDocument());
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     await act(async () => pending.resolve());
-    await waitFor(() => expect(within(packLabel).getByText('Lowest: Learning · Average: Learning')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(`${cards.length + 1} answers saved on this device`)).toBeInTheDocument());
     expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
   });
 
@@ -800,28 +802,37 @@ describe('interval mastery feedback', () => {
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
   });
 
-  it('does not show a mastery change for an unsaved dev answer', async () => {
+  it('keeps simulated dev mastery separate from saved progress', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await click(screen.getByRole('button', { name: 'Dev review' }));
+    await configuredDevReview();
+    expect(screen.getByRole('status', { name: 'Demo mastery' })).toBeInTheDocument();
     await click(heardChoice(container));
-    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+    expect(records).toEqual([]);
   });
 });
 
-describe('all-level mastery demo (#140)', () => {
+describe('all-level simulated Dev review (#152)', () => {
   it('walks all eight levels with their timers, shows changes and an untimed retry, and never saves', async () => {
     records = legacy(2);
     const original = structuredClone(records);
     const onSaved = vi.fn();
     const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
     vi.useFakeTimers();
-    await click(screen.getByRole('button', { name: 'Mastery demo' }));
+    await click(screen.getByRole('button', { name: 'Start dev review' }));
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
-    for (const [label, limit] of [['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
-      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]] as const) {
+    const levels = new Map<string, number | null>([['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
+      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]]);
+    const seen = new Set<string>();
+    for (let index = 0; index < 8; index++) {
       const context = screen.getByRole('status', { name: 'Demo mastery' });
+      const label = context.querySelector('.question-mastery-label')!.textContent!;
+      expect(seen.has(label)).toBe(false); seen.add(label);
+      expect(levels.has(label)).toBe(true);
+      const limit = levels.get(label)!;
       expect(context).toHaveTextContent(label);
       expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
       expect(context.closest('.practice-actions')).not.toBeNull();
@@ -836,13 +847,14 @@ describe('all-level mastery demo (#140)', () => {
         await click(screen.getByRole('button', { name: /^continue$/i }));
       } else await advance(1200);
     }
+    expect([...seen].sort()).toEqual([...levels.keys()].sort());
     expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
     endAudio(container); loadPictures(container); await advance(480);
     expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
     await advance(1200);
-    expect(screen.getByRole('heading', { name: 'Mastery demo complete' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Dev review complete' })).toBeInTheDocument();
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
     expect(onSaved).not.toHaveBeenCalled();
     expect(records).toEqual(original);
@@ -878,4 +890,66 @@ describe('learning language switching', () => {
     await click(screen.getByRole('button', { name: 'Continue without saving' }));
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeEnabled();
   });
+});
+
+describe('global practice voice selection (#148)', () => {
+  it.each(['lesson', 'review', 'Dev review'])('uses preferred voices in %s and preserves them on replay', async mode => {
+    localStorage.setItem(voicePreferenceKey, JSON.stringify(['lime']));
+    if (mode === 'review') records = legacy(1);
+    const { container } = render(<App now={fixedNow} random={() => 0}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    if (mode === 'lesson' || mode === 'review') {
+      await start();
+      await click(screen.getByRole('button', { name: mode === 'lesson' ? 'Begin lesson' : /begin review/i }));
+    } else if (mode === 'Dev review') await configuredDevReview();
+    const source = container.querySelector('audio')!.getAttribute('src');
+    expect(source).toContain('/lime/');
+    // Changing the preference never changes an already-presented question on replay.
+    localStorage.setItem(voicePreferenceKey, JSON.stringify(['otani']));
+    await click(screen.getByRole('button', { name: 'Replay word' }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
+  });
+});
+
+
+it('refreshes pack scope while Dev review options are open without leaving Start stuck loading', async () => {
+  render(<App now={fixedNow}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  expect(screen.getByRole('checkbox', { name: 'Words · Pictures' })).toBeInTheDocument();
+  localStorage.setItem(packPreferenceKey, '[]');
+  await act(async () => { window.dispatchEvent(new Event('pageshow')); });
+  expect(screen.queryByRole('checkbox', { name: 'Words · Pictures' })).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Start dev review' })).toBeDisabled();
+  localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-2-pictures']));
+  await act(async () => { window.dispatchEvent(new StorageEvent('storage', { key: packPreferenceKey })); });
+  expect(screen.getByRole('checkbox', { name: 'Words · Pictures' })).toBeInTheDocument();
+  expect(screen.queryByRole('checkbox', { name: 'Words · Writing' })).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Start dev review' })).toBeEnabled();
+  await click(screen.getByRole('button', { name: 'Kikimashta home' }));
+  await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+});
+
+it.each([['mastery', '1.5s'], ['random', '5s'], ['untimed', 'Untimed']] as const)('uses %s word timers at the selected simulated mastery', async (mode, label) => {
+  render(<App now={fixedNow} random={() => .5}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  await click(screen.getByRole('button', { name: 'Clear levels' }));
+  await click(screen.getByRole('checkbox', { name: 'Confident' }));
+  await act(async () => { fireEvent.change(screen.getByLabelText('Timer behavior'), { target: { value: mode } }); });
+  await click(screen.getByRole('button', { name: 'Start dev review' }));
+  const sample = screen.getByRole('status', { name: 'Demo mastery' });
+  expect(sample).toHaveTextContent('Confident');
+  expect(sample).toHaveTextContent(label);
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+});
+
+
+it('keeps Home focused on a single Dev review entry point', async () => {
+  render(<App now={fixedNow}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  expect(screen.queryByRole('button', { name: 'Mastery demo' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Contextual dev review' })).not.toBeInTheDocument();
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
 });

@@ -15,6 +15,20 @@
       <h1>Vocabulary cards</h1>
       <p>Browse WaniKani levels 1–5 in separate picture and writing packs, and compare Japanese voices.</p>
     </header>
+    <details class="practice-packs" open>
+      <summary id="pack-selection-summary">Practice packs</summary>
+      <p id="pack-selection-description">Choose the pictures and writing you want to practice. Lessons use cards ready for practice. Your selection stays on this device.</p>
+      <fieldset id="practice-packs" aria-describedby="pack-selection-description"><legend>Practice packs</legend></fieldset>
+      <p id="pack-selection-status" role="status"></p>
+      <p id="pack-selection-error" role="alert" hidden></p>
+    </details>
+    <details class="practice-packs" open>
+      <summary id="voice-selection-summary">Practice voices</summary>
+      <p id="voice-selection-description">Choose one or more voices for all practice on this device. Each word uses a random selected voice; Replay keeps the same voice. You can still compare every voice on the cards below.</p>
+      <fieldset id="practice-voices" aria-describedby="voice-selection-description"><legend>Practice voices</legend></fieldset>
+      <p id="voice-selection-status" role="status"></p>
+      <p id="voice-selection-error" role="alert" hidden></p>
+    </details>
     <form class="filters" role="search" aria-label="Find vocabulary" id="filters">
       <label>Card pack
         <select id="pack" name="pack">

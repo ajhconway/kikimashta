@@ -16,7 +16,7 @@ Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a
 - [Optional account sync setup](docs/SUPABASE.md)
 - [November 8 project review and open findings](docs/REVIEW.md)
 
-The home screen's **Dev review** button opens a six-card random review for testing, even when nothing is due. It uses the usual quiz and corrective retries, without saving answers or changing learning progress. Finish returns to normal adaptive practice.
+The home screen's **Dev review** button opens options for review types, simulated mastery levels, question count, and timers. Try selected word and contextual types even when nothing is due, using the current language, packs, and voice preferences. Each sample has its own in-memory schedule; normal feedback and corrective retries leave saved progress unchanged. Contextual questions and retries stay untimed. Finish returns to normal adaptive practice.
 
 Work is tracked in GitHub Issues and implemented through linked pull requests. Initial app setup, shared data types, and automated checks come before parallel feature work.
 
@@ -87,7 +87,7 @@ The review library at `/vocabulary/` contains 440 vocabulary entries displayed a
 
 Mastery uses the gap between the last review and the next scheduled review, so becoming overdue does not change the label. The shared level policy also controls review timers; thresholds and timer limits are documented in [PLAN.md](PLAN.md#interval-mastery-135).
 
-For an unsaved tour of all eight levels and their timers, choose **Mastery demo** on Home. Its sample schedules show real FSRS mastery changes without modifying progress. The separate **Dev review** keeps its random timer preview.
+Choose **Dev review** on Home to try all eight simulated mastery levels and their timers, or select specific levels and word/contextual review types. Sample schedules show real FSRS mastery changes without modifying progress. Dev review is the single Home entry point for these tools.
 
 The library combines original SVG scenes with 168 approved replacement illustrations from batches 01–10. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Each card shows its interval mastery independently. Pack selection shows both lowest mastery and the average level rounded down, including new cards, across approved practice cards. Search, pack filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 
@@ -112,3 +112,5 @@ Media and dependencies retain separate terms. Current practice speech is AI-gene
 To activate reviewed batches on macOS: `node scripts/content/activate-approved-artwork.mjs batch-07 batch-08 batch-10`, then `npm run content:library`. Approval and source hashes are checked before image mappings change.
 
 Transparent approved sources export as alpha-preserving 640px PNGs. Earlier opaque deliveries retain their existing JPEG files and provenance. The activation command validates decoded transparency and opaque white subject details before atomically replacing a delivery.
+
+Practice packs and Japanese voice preferences are chosen in the card library and remembered on this device. Pack browsing stays independent of practice selection. Voice labels distinguish Tokyo (standard), Kansai, Kyushu, and Anime (standard).

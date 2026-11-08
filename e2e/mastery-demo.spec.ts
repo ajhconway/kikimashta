@@ -5,12 +5,12 @@ import type { PracticeAttempt, WordItem } from '../src/types';
 
 const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
 
-test('mastery demo covers every level, shows arrows, and leaves real progress untouched', async ({ page }, testInfo) => {
+test('configured dev review covers every level, shows arrows, and leaves real progress untouched', async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.addInitScript(() => { Math.random = () => .5; });
   await page.clock.install();
   await page.goto('./');
-  await expect(page.getByRole('button', { name: 'Mastery demo', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
   const history = () => page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open('kikimashta-v0', 1);
@@ -24,11 +24,22 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
     } finally { db.close(); }
   });
   const original = await history();
-  await page.getByRole('button', { name: 'Mastery demo', exact: true }).click();
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Dev review options', exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
-  for (const label of ['New', 'Learning', 'Improving', 'Familiar', 'Steady', 'Strong', 'Confident', 'Mastered', 'Learning']) {
+  const levels = ['New', 'Learning', 'Improving', 'Familiar', 'Steady', 'Strong', 'Confident', 'Mastered'];
+  const timers: Record<string, string> = { New: 'Untimed', Learning: 'Untimed', Improving: '10s', Familiar: '10s', Steady: '5s', Strong: '3s', Confident: '1.5s', Mastered: '1.5s' };
+  const seen = new Set<string>();
+  for (let index = 0; index < 9; index++) {
     const context = page.getByRole('status', { name: 'Demo mastery' });
-    await expect(context.locator('.question-mastery-label')).toHaveText(label);
+    const label = (await context.locator('.question-mastery-label').innerText()).trim();
+    if (index < 8) {
+      expect(levels).toContain(label);
+      expect(seen.has(label)).toBe(false);
+      seen.add(label);
+    } else expect(label).toBe('Learning');
+    await expect(context.locator('.question-mastery-timer')).toHaveText(index === 8 ? 'Untimed' : timers[label]!);
     await expect(page.locator('.practice-actions .question-mastery')).toBeVisible();
     await expect(page.locator('.quiz-top .question-mastery, .demo-mastery')).toHaveCount(0);
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
@@ -52,6 +63,7 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
     } else {
       await correct.click();
+      if (index === 8) await expect(page.locator('.mastery-change')).toHaveCount(0);
       if (label === 'New') {
         await expect(page.getByLabel('Mastery increased to Learning')).toContainText('Learning');
         await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
@@ -65,7 +77,8 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
     }
     await page.clock.resume();
   }
-  await expect(page.getByRole('heading', { name: 'Mastery demo complete' })).toBeVisible();
+  expect([...seen].sort()).toEqual([...levels].sort());
+  await expect(page.getByRole('heading', { name: 'Dev review complete' })).toBeVisible();
   expect(await history()).toEqual(original);
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
@@ -77,7 +90,10 @@ test('level-up animation fits the original layout without moving cards', async (
   await page.addInitScript(() => { Math.random = () => .5; });
   await page.clock.install();
   await page.goto('./');
-  await page.getByRole('button', { name: 'Mastery demo', exact: true }).click();
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await page.getByRole('button', { name: 'Clear levels', exact: true }).click();
+  await page.getByRole('checkbox', { name: 'New', exact: true }).check();
+  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
   await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   const context = page.getByRole('status', { name: 'Demo mastery' });

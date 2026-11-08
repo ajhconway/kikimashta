@@ -57,21 +57,25 @@ it('keeps the Japanese contextual shortcut out of Spanish practice', async () =>
   } finally { window.history.replaceState({}, '', '/'); }
 });
 
-it('shows Spanish pack mastery from its own picture-card history', async () => {
+it('loads Spanish picture history and links to its language-specific pack library', async () => {
   vi.mocked(ProgressStore.prototype.history).mockResolvedValue(spanish.items.map(item => ({
     id: item.id, sessionId: 'spanish-lesson', itemId: item.id, language: 'es-419',
     choiceIds: [item.id], selectedId: item.id, correct: true, startedAt: 900, answeredAt: 1000, responseMs: 100,
     context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
   })));
   render(<App now={() => 1000000}/>);
-  await waitFor(() => expect(screen.getByText('Lowest: Learning · Average: Learning')).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByText('6 answers saved on this device')).toBeInTheDocument());
+  expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419');
+  expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
+  expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
 });
 
-it('runs a Spanish-only mastery demo without saving practice', async () => {
+it('runs a Spanish-only simulated dev review without saving practice', async () => {
   const record = vi.spyOn(ProgressStore.prototype, 'record').mockResolvedValue(undefined);
   const { container } = render(<App now={() => 1000000} random={() => 0.5}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Mastery demo' })); });
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Dev review' })); });
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start dev review' })); });
   const source = container.querySelector('audio')!.getAttribute('src')!;
   const target = spanish.items.find(item => item.audio.some(clip => source.endsWith(clip.src)))!;
   expect(target).toBeDefined();

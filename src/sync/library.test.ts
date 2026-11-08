@@ -8,7 +8,9 @@ import { NoteStore } from './notes';
 import { ProgressStore } from '../progress/store';
 import type { PracticeAttempt } from '../types';
 import { advanceSchedule, schedulerVersion } from '../core/scheduler';
-import { selectedPracticeCards } from '../core/packs';
+import { packPreferenceKey, selectedPracticeCards } from '../core/packs';
+import { voicePreferenceKey } from '../core/voices';
+import spanish from '../../content/es-419.json';
 import { practicePool } from '../core/practice';
 
 vi.mock('./library-bridge', () => ({ getLibraryAccount: vi.fn() }));
@@ -271,4 +273,81 @@ describe('Spanish card library', () => {
     expect(document.querySelectorAll('.card-writing')).toHaveLength(0);
     expect(document.querySelector('[data-item-id="es-419-travel-hotel"] .card-mastery')).toHaveTextContent('Mastery: Learning');
   });
+});
+
+describe('practice pack selection in the library (#146)', () => {
+  it('loads existing selection and saves changes independently of browsing', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-2-writing']));
+    await loadLibrary();
+    const writing = screen.getByRole('checkbox', { name: 'WaniKani level 2 · Writing' });
+    const pictures = screen.getByRole('checkbox', { name: 'WaniKani level 2 · Pictures' });
+    expect(writing).toBeChecked();
+    expect(pictures).not.toBeChecked();
+    fireEvent.change(screen.getByLabelText('Card pack'), { target: { value: 'ja-wanikani-1-pictures' } });
+    expect(localStorage.getItem(packPreferenceKey)).toBe(JSON.stringify(['ja-wanikani-2-writing']));
+    fireEvent.click(pictures);
+    expect(JSON.parse(localStorage.getItem(packPreferenceKey)!)).toEqual(['ja-wanikani-2-pictures', 'ja-wanikani-2-writing']);
+    fireEvent.click(writing);
+    fireEvent.click(pictures);
+    expect(localStorage.getItem(packPreferenceKey)).toBe('[]');
+    expect(screen.getByText('No packs selected. Select a pack to start practicing.')).toBeInTheDocument();
+  });
+
+  it('reports failed preference saves and restores the persisted selection', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    await loadLibrary();
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('Storage blocked'); });
+    const pictures = screen.getByRole('checkbox', { name: 'WaniKani level 2 · Pictures' });
+    fireEvent.click(pictures);
+    expect(pictures).toBeChecked();
+    expect(screen.getByText('Your pack selection could not be saved on this device. Try again.')).toBeVisible();
+  });
+});
+
+
+describe('global practice voices in the library (#148)', () => {
+  it('restores voices, saves changes, and prevents an empty selection', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    localStorage.setItem(voicePreferenceKey, JSON.stringify(['lime']));
+    await loadLibrary();
+    const lime = screen.getByRole('checkbox', { name: 'Lime' });
+    const otani = screen.getByRole('checkbox', { name: 'Otani' });
+    expect(lime).toBeChecked();
+    expect(otani).not.toBeChecked();
+    fireEvent.click(lime);
+    expect(lime).toBeChecked();
+    expect(screen.getByText('Keep at least one voice selected for practice.')).toBeVisible();
+    fireEvent.click(otani);
+    expect(JSON.parse(localStorage.getItem(voicePreferenceKey)!)).toEqual(['otani', 'lime']);
+    fireEvent.click(lime);
+    expect(JSON.parse(localStorage.getItem(voicePreferenceKey)!)).toEqual(['otani']);
+    expect(screen.getByText('Selected: Otani.')).toBeInTheDocument();
+  });
+
+  it('keeps the saved voice selection when preference storage fails', async () => {
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    await loadLibrary();
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('Blocked'); });
+    const lime = screen.getByRole('checkbox', { name: 'Lime' });
+    fireEvent.click(lime);
+    expect(lime).toBeChecked();
+    expect(screen.getByText('Your voice selection could not be saved on this device. Try again.')).toBeVisible();
+  });
+});
+
+
+it('shows Spanish pack mastery in the library from Spanish-only picture history', async () => {
+  window.history.replaceState({}, '', '/vocabulary/?language=es-419');
+  const { bridge } = account();
+  for (const item of spanish.items) await bridge.progress.record({
+    id: item.id, sessionId: 'spanish-lesson', itemId: item.id, language: 'es-419',
+    choiceIds: [item.id], selectedId: item.id, correct: true, startedAt: 900, answeredAt: 1000, responseMs: 100,
+    context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
+  });
+  vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
+  await vi.importActual('../../vocabulary/library.js');
+  await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(6));
+  expect(document.getElementById('pack-mastery-es-419-travel-1-pictures')).toHaveTextContent('Lowest: Learning · Average: Learning');
+  expect(screen.queryByRole('group', { name: 'Practice voices' })).not.toBeInTheDocument();
 });

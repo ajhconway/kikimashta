@@ -10,6 +10,7 @@ export function contextualQuestion(
   format: ContextualAnswerFormat,
   vocabulary: readonly WordItem[],
   random = Math.random,
+  voiceIds?: readonly string[],
 ): Question {
   if (!question.formats.includes(format) || !context.questions.some(candidate =>
     candidate.id === question.id && candidate.revision === question.revision)) throw new Error('Unsupported contextual question or answer format.');
@@ -26,7 +27,9 @@ export function contextualQuestion(
     };
   });
   const recordings = context.recordings.filter(recording => recording.sentenceSrc && recording.questionSrcs[question.id]);
-  const recording = recordings.length ? recordings[Math.floor(random() * recordings.length)] : undefined;
+  const preferred = voiceIds ? recordings.filter(recording => voiceIds.includes(recording.voice)) : recordings;
+  const available = preferred.length ? preferred : recordings;
+  const recording = available.length ? available[Math.floor(random() * available.length)] : undefined;
   return { target, exercise: contextualExercise(context.stage ?? 'contrastive', format),
     choices: shuffled(choices, random), contextual: { context, question, recording } };
 }

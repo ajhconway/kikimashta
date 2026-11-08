@@ -81,7 +81,7 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
-Unsaved Dev review samples untimed/10/5/3/1.5 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s word timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Contextual questions and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
 
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
@@ -95,11 +95,12 @@ Derive mastery independently for each language/item/exercise from the scheduled 
 
 Show both lowest and average mastery on packs; average means the floor of the mean level ordinal, including New cards, across approved practice cards in that pack. Keep picture and writing cards separate in the library and show their individual mastery. Show an up/down arrow and the new label after a saved answer changes level; retries and Dev review do not change mastery.
 
-Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review samples the available timer choices. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
+Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review offers mastery-based, random, or untimed word timers. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
 
 ## Mastery demo (#140)
 
-Offer an unsaved Mastery demo alongside the existing random-timer Dev review. The demo presents all eight levels in order, using selected-pack cards and separate in-memory sample schedules. Show the current sample level and its timer; after answers, use the normal FSRS grading and mastery arrows against the sample schedule. Corrective retries stay untimed and do not advance the sample schedule. Keep all sample state separate from real mastery, saved attempts, account sync, and library/pack summaries. If a selected pool is small, repeat cards with separate demo identities so every level remains available. Verify all levels, timer mapping, arrows, retry isolation, and unchanged real browser storage. Serve the completed demo locally for owner review.
+Mastery samples are now covered by the expanded Dev review options (#152), with Dev review as the single Home entry point. Selecting all eight levels and eight questions covers each level once, in mixed order. Each sample has an independent in-memory schedule; normal FSRS feedback and untimed corrective retries remain separate from real mastery, saved attempts, account sync, and library/pack summaries. Small pools may repeat real cards under separate sample identities. Verify all levels, timers, arrows, retries and unchanged browser storage.
+
 
 ## Mastery feedback presentation (#141)
 
@@ -112,7 +113,7 @@ The owner approved this plan on November 8, 2026. Track the milestone in [#119](
 
 Play a Japanese sentence containing the target word, pause briefly, then play a Japanese question about it. Start with simple contexts containing one short event or fact and direct questions. Later introduce contrastive contexts requiring the learner to keep multiple facts straight. Support both questions whose answer is the target word and questions about another detail of its sentence. Offer pictures or Japanese written choices, with one answer format per presentation. Each authored question declares the formats for which it has clear choices. The existing approved audition examples form the contrastive material.
 
-After answering, reveal the Japanese sentence and question, their English meanings, and the correct answer. Keep contextual feedback visible until Continue, with replay available. Keep the target vocabulary identity separate from the correct answer identity.
+The owner revised the contextual presentation after actual iPhone and Mac use: match the existing word-review layout and controls. Correct answers show compact success feedback and advance automatically like word reviews, with no transcript or explanation. After a miss, keep Continue manual; offer Show Japanese for the sentence/question and an optional English reveal after that. Keep the answer grid stable, use the existing replay/companion/card styling, and avoid extra panels, visible instruction headings and repeated readings. Lesson previews and the full content-inspection review retain access to their authored details. Keep the target vocabulary identity separate from the correct answer identity.
 
 ### Content
 
@@ -164,3 +165,31 @@ The implementation is in [#142](https://github.com/ajhconway/kikimashta/pull/142
 All forty contexts and eighty questions now have Otani/Morioki audio: 240 normalized MP3 clips in total. The expansion added 204 provider-original clips for 2,996 Japanese characters; all 204 deliveries meet the approved loudness/peak profile without level limitations. Source identity, normalization and complete decode passed before preparation of the 136 new paired previews and public dev-review deliveries. Private originals and normalization records are archived and hash-verified. All 240 MP3s passed native Chromium/WebKit playback checks. The owner [accepted the full dev review](https://github.com/ajhconway/kikimashta/issues/139#issuecomment-6726427897). All forty contexts are now eligible for ordinary practice through the agreed FSRS stage gates, selected scope and workload limits: eighty writing-capable questions, thirty-two picture-capable questions, and thirty-four independently scheduled stage/format cards. Variants share schedules, and the dev review remains unsaved.
 
 Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; interval boundaries below, exactly at and above seven days; qualifying scheduled-review unlocks and retained access after later misses; target/language/format/stage isolation; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.
+
+## Pack selection in the library (#146)
+
+Choose practice packs in the card library alongside pack mastery summaries. Keep browsing filters independent of practice selection and preserve the existing device preference. Home links to the library with the selected count; empty selection disables practice. Verify saved selection, browser return/reload, format scoping, and storage failure feedback.
+
+## Global practice voices (#148)
+
+Select one or more of the eight approved voices in the card library, remembered on this device. All voices are enabled by default. Each new presentation randomly selects among preferred recordings; replays keep their recording. If no preferred voice exists for a card, use its available recordings. Keep library auditions independent, reject empty selections, report storage failures, and verify reload/return, both formats, demos, and saved recording identity.
+
+## Voice accent labels (#149)
+
+Show accent/style descriptions beside each global practice voice and card audition button. Display the owner’s Tokyo (standard) label for Otani/Morioki, Kansai for Goro/Tsuki, Kyushu for Takeshi/Lime, and Anime (standard) for Ritsuto/Itsuki. Reuse the approved registry’s accent and anime-style metadata. Keep labels visible through playback and expose them as accessible descriptions. Voice identity and saved preferences stay unchanged.
+
+## Contextual practice evaluation (#145)
+
+The owner completed reviews and lessons without seeing contextual cards and wants to evaluate their actual session presentation. Investigate earned unlocks, selected scope and workload admission before changing the normal progression policy. Keep the existing fixed-session rules unless the investigation justifies a documented correction.
+
+Add a clearly unsaved contextual practice demo using the normal App quiz, feedback, retries, progress and summary, with bounded simple/contrastive picture/writing examples. It bypasses admission only for evaluation, keeps all real history and account sync untouched, and is accessible through the shared Dev review and a direct demo query link. Home reports unlocked contextual lesson cards in the selected scope and whether the workload ceiling is holding new lessons back. The existing full content review remains available. Verify isolation with real browser storage and regression checks; track work in [#145](https://github.com/ajhconway/kikimashta/issues/145).
+
+The owner reviewed the contextual practice on iPhone and Mac and requested a simpler presentation in #145. Correct contextual answers now follow the ordinary automatic-advance timing and save/audio recovery gates; mistakes retain manual Continue and optional Japanese → English disclosure. Update the shared practice UI and corresponding browser regressions before publishing this follow-up.
+
+The owner clarified that contextual reviews must share the ordinary level-up/down feedback, with Japanese details available beside that feedback area rather than beside Continue. Use a compact, separately reserved details control so badges and result symbols cannot cover it; keep Continue on its own row. The unsaved contextual demo must use disposable FSRS sample schedules to exercise real level changes, including a level decrease after a miss, while preserving all account history and scheduling.
+
+The Japanese-details control matches the shared badge height, and the feedback area shifts slightly when it appears. Reserve the English translations’ layout space when opening Japanese details so showing or hiding English never resizes the dialog. Verify the combined badges/control and dialog at phone and desktop sizes.
+
+## Expanded Dev review (#152)
+
+Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed word timer policies. Contextual questions remain untimed. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Use Dev review as the single Home entry point; remove the separate Mastery demo and Contextual dev review Home buttons. Preserve the existing contextual inspection URL for authored-content audits. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.

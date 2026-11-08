@@ -33,6 +33,17 @@ describe('contextual question snapshots', () => {
     expect(quiz.contextual?.recording?.questionSrcs[question.id]).toBe('audio/morioki-question.mp3');
   });
 
+  it('selects a preferred paired voice and falls back when none of its voices are available', () => {
+    const { context, question } = fixture();
+    const selected = contextualQuestion(context, question, 'text', vocabulary, () => 0.99, ['otani']);
+    expect(selected.contextual?.recording).toMatchObject({
+      voice: 'otani', sentenceSrc: 'audio/otani-sentence.mp3',
+      questionSrcs: { [question.id]: 'audio/otani-question.mp3' },
+    });
+    const fallback = contextualQuestion(context, question, 'text', vocabulary, () => 0.99, ['lime']);
+    expect(fallback.contextual?.recording?.voice).toBe('morioki');
+  });
+
   it('uses authored writing instead of substituting catalogue text and resolves each picture', () => {
     const { context, question } = fixture();
     question.options[0]!.text = '先生です';
