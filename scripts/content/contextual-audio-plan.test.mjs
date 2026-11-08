@@ -1,5 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { contextualAuditionPlan, contextualTextDigest, loadContextualAudition, validateContextualTextApproval } from './contextual-audio-plan.mjs'
@@ -20,6 +21,8 @@ test('the approved sample is bounded to three contexts, two named voices and eig
   assert.equal(plan.generation.issue, 124)
   assert.deepEqual(plan.generation.voices.map(voice => voice.name), ['Otani', 'Morioki'])
   assert.equal(plan.gapMs, 650)
+  assert.equal(createHash('sha256').update(JSON.stringify(plan.generation)).digest('hex'),
+    '37b0958502d32d36d2968b02fe512633c7a6703f8d5189163222472abf7fcd1a')
   for (const item of plan.generation.items) {
     assert.equal(item.textApprovalSha256, plan.approval.textSha256)
     assert.ok(plan.contexts.some(context => context.id === item.contextId))
@@ -29,6 +32,26 @@ test('the approved sample is bounded to three contexts, two named voices and eig
     assert.ok(plan.generation.items.some(item => item.id === context.sentenceItemId && item.kind === 'sentence'))
     assert.deepEqual(context.questions.map(question => question.kind), ['target', 'detail'])
   }
+})
+
+test('simple sample uses its own approved text and bounded identities while stages cannot share approval', () => {
+  const { bank, plan } = loadContextualAudition(projectRoot, { stage: 'simple' })
+  const original = loadContextualAudition()
+  assert.equal(plan.issue, 136)
+  assert.equal(plan.generation.issue, 136)
+  assert.equal(plan.bankId, 'ja-contextual-simple-pilot-v1')
+  assert.equal(plan.generation.expectedClips, 18)
+  assert.equal(plan.generation.characters, 214)
+  assert.equal(plan.generation.items.length, 9)
+  assert.equal(plan.contexts.length, 3)
+  assert.deepEqual(plan.generation.voices.map(voice => voice.name), ['Otani', 'Morioki'])
+  assert.ok(plan.contexts.every(context => context.id.startsWith('ja-ctx-simple-')))
+  assert.ok(plan.generation.items.every(item => item.textApprovalSha256 === plan.approval.textSha256))
+  assert.throws(() => validateContextualTextApproval(bank, plan.approval), /approval/)
+  assert.throws(() => validateContextualTextApproval(original.bank, original.plan.approval, { stage: 'simple' }), /approval/)
+  bank.contexts[0].questions[0].prompt.text += '変更'
+  assert.throws(() => validateContextualTextApproval(bank, plan.approval, { stage: 'simple' }), /approval/)
+  assert.throws(() => loadContextualAudition(projectRoot, { stage: 'unknown' }), /stage/)
 })
 
 test('changing sentence, question, choice, grammar or revision invalidates text approval', () => {

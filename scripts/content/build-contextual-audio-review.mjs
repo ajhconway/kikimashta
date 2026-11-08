@@ -116,8 +116,8 @@ ${review.samples.map(sample => `<article id="${escapeHtml(`${sample.voice}-${sam
 <p><a href="review-provenance.json">Review provenance</a></p></html>`
 }
 
-export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, ffmpeg = process.env.FFMPEG || 'ffmpeg' }) {
-  const { bank, plan } = loadContextualAudition(root)
+export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, stage = 'contrastive', ffmpeg = process.env.FFMPEG || 'ffmpeg' }) {
+  const { bank, plan } = loadContextualAudition(root, { stage })
   if (![input, delivery, output].every(path => typeof path === 'string' && path.trim())) throw new Error('Choose --input originals, --delivery normalized recordings and a new --output review directory.')
   const sourceRoot = await realpath(resolve(root, input))
   const deliveryRoot = await realpath(resolve(root, delivery))
@@ -193,7 +193,7 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
       }
     }
   }
-  const review = { schemaVersion: 1, issue: 124, bankId: bank.id, approval: plan.approval, generationIdentity: identity,
+  const review = { schemaVersion: 1, issue: plan.issue, bankId: bank.id, approval: plan.approval, generationIdentity: identity,
     input: relative(root, sourceRoot), delivery: relative(root, deliveryRoot), voices: generation.voices, contexts: plan.contexts,
     originalRecordings: originals.length, normalizationProfile: PROFILE, gapMs: plan.gapMs, gapFrames,
     previewEncoding: { container: 'WAV', codec: 'PCM signed 16-bit little-endian', sampleRate: RATE, channels: 1,
@@ -210,9 +210,9 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
 }
 
 async function main() {
-  const { values } = parseArgs({ options: { input: { type: 'string' }, delivery: { type: 'string' }, output: { type: 'string' }, ffmpeg: { type: 'string' } } })
+  const { values } = parseArgs({ options: { input: { type: 'string' }, delivery: { type: 'string' }, output: { type: 'string' }, ffmpeg: { type: 'string' }, stage: { type: 'string', default: 'contrastive' } } })
   console.log(JSON.stringify(await buildContextualAudioReview({ input: values.input, delivery: values.delivery, output: values.output,
-    ...(values.ffmpeg ? { ffmpeg: values.ffmpeg } : {}) })))
+    stage: values.stage, ...(values.ffmpeg ? { ffmpeg: values.ffmpeg } : {}) })))
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

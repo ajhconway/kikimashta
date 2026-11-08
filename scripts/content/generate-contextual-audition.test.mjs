@@ -49,6 +49,25 @@ test('changed or unapproved text fails before the generation boundary and any ou
   assert.equal(existsSync(fixture.output), false)
 })
 
+test('simple generation preserves its approved plan and rejects changed text before paid requests', async t => {
+  const fixture = await contextualFixture(t, { stage: 'simple' })
+  const { plan } = loadContextualAudition(fixture.root, { stage: 'simple' })
+  let requests = 0
+  const args = { root: fixture.root, output: fixture.output, apiKey: 'fixture-secret', stage: 'simple',
+    generate: args => generateCards({ ...args, balance, log: () => {}, speak: async () => {
+      requests++
+      return { audio: Buffer.from('ID3 local fixture') }
+    } }) }
+  assert.equal((await generateContextualAudition(args)).completed, 18)
+  assert.equal((await generateContextualAudition(args)).completed, 18)
+  assert.equal(requests, 18)
+  assert.deepEqual(await json(join(fixture.output, 'audition-plan.json')), plan)
+  fixture.bank.contexts[0].sentence.meaning += 'Changed'
+  await fixture.saveBank({ approve: false })
+  await assert.rejects(generateContextualAudition(args), /approval/)
+  assert.equal(requests, 18)
+})
+
 test('live generation requires a key and an ignored originals destination before external effects', async t => {
   const fixture = await contextualFixture(t)
   let calls = 0

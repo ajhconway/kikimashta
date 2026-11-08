@@ -16,8 +16,8 @@ const json = async path => JSON.parse(await readFile(path, 'utf8'))
 const journal = async path => (await readFile(path, 'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)
 const jsonl = records => records.map(record => JSON.stringify(record) + '\n').join('')
 
-async function mediaFixture(t) {
-  const fixture = await contextualFixture(t, { hostileText: true })
+async function mediaFixture(t, stage = 'contrastive') {
+  const fixture = await contextualFixture(t, { hostileText: true, stage })
   const audio = {}
   for (const [kind, frequency] of [['sentence', 440], ['question', 880]]) {
     const path = join(fixture.root, `${kind}.mp3`)
@@ -25,7 +25,7 @@ async function mediaFixture(t) {
       `sine=frequency=${frequency}:sample_rate=44100:duration=0.5`, '-af', 'volume=0.5', '-c:a', 'libmp3lame', '-b:a', '128k', path])
     audio[kind] = await readFile(path)
   }
-  await generateContextualAudition({ root: fixture.root, output: fixture.output, apiKey: 'fixture-secret',
+  await generateContextualAudition({ root: fixture.root, output: fixture.output, apiKey: 'fixture-secret', stage,
     generate: args => generateCards({ ...args, log: () => {},
       balance: async () => ({ usedCredits: 0, creditLimit: 10000, remainingCredits: 10000 }),
       speak: async (_key, _voice, request) => ({ audio: audio[request.text === fixture.bank.contexts[0].sentence.text ? 'sentence' : 'question'] }) }) })
@@ -34,8 +34,25 @@ async function mediaFixture(t) {
     '--input', fixture.output, '--output', delivery, '--ffmpeg', ffmpeg, '--workers', '2'], { encoding: 'utf8', timeout: 60000 }))
   assert.equal(normalization.clips, 18)
   return { ...fixture, delivery, review: join(fixture.root, 'artifacts/contextual-audio-review/complete'),
-    build: output => buildContextualAudioReview({ root: fixture.root, input: fixture.output, delivery, output, ffmpeg }) }
+    build: output => buildContextualAudioReview({ root: fixture.root, input: fixture.output, delivery, output, ffmpeg, stage }) }
 }
+
+test('simple review uses its approved bank and issue with independently verified source audio',
+  { skip: !hasFfmpeg && 'FFmpeg is required for real local preview checks' }, async t => {
+    const fixture = await mediaFixture(t, 'simple')
+    const result = await fixture.build(fixture.review)
+    const review = await json(join(fixture.review, 'review-provenance.json'))
+    assert.equal(result.recordings, 18)
+    assert.equal(result.pairs, 12)
+    assert.equal(review.issue, 136)
+    assert.equal(review.bankId, 'ja-contextual-simple-pilot-v1')
+    assert.equal(review.approval.bankId, review.bankId)
+    assert.ok(review.samples.every(sample => sample.contextId.startsWith('ja-ctx-simple-')))
+    assert.equal(review.gapFrames, 28665)
+    for (const sample of review.samples) {
+      assert.equal(sha256(await readFile(join(fixture.review, sample.src))), sample.sha256)
+    }
+  })
 
 test('review text escapes Japanese/English/answer labels while retaining native replay controls', () => {
   const unsafe = '<img src=x onerror="alert(1)"> & text'
