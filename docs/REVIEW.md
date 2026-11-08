@@ -36,12 +36,12 @@ No additional substantiated defect was found in question generation, pack filter
 
 The clean checkout used Node 26.12.0, npm 11.20.0, Python 3 and installed FFmpeg. Dependencies were installed with `npm ci --ignore-scripts --prefer-offline --no-audit --no-fund`. Normal setup remains `npm ci`.
 
-For the build and browser checks, use the same explicit test-only configuration:
+The recorded checks above used the reviewed revision. For a new checkout, derive the revision being tested and use the same explicit test-only configuration for the build and browser checks:
 
 ```sh
 export VITE_SUPABASE_URL=https://kikimashta-sync-test.supabase.co
 export VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_kikimashta_browser_test
-export SOURCE_REVISION=38f6619e63707df8db411a2697f21e726ea16c7e
+export SOURCE_REVISION="$(git rev-parse HEAD)"
 npm run check
 npm run test:e2e
 ```
