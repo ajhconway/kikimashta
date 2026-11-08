@@ -24,6 +24,7 @@
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "content:contextual:validate": "node scripts/content/validate-contextual.mjs",
     "content:contextual:review": "node scripts/content/build-contextual-review.mjs",
+    "content:contextual:comparison": "node scripts/content/build-contextual-comparison.mjs",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm test && npm run test:audio && npm run build"

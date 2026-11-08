@@ -79,6 +79,22 @@ describe('contextual content validation', () => {
     expect(approvedContextualQuestions(bank, 'text')).toEqual([])
   })
 
+  it('accepts explicit stages while preserving older untagged contexts', () => {
+    const bank = fixture()
+    expect(validateContextualBank(bank, refs)).toBe(bank)
+    const context = bank.contexts[0]!
+    context.stage = 'simple'
+    context.comparisonContextId = 'contrastive-books'
+    expect(validateContextualBank(bank, refs)).toBe(bank)
+    context.stage = 'contrastive'
+    expect(validateContextualBank(bank, refs)).toBe(bank)
+    context.comparisonContextId = context.id
+    expect(() => validateContextualBank(bank, refs)).toThrow(/another context/)
+    delete context.comparisonContextId
+    Object.assign(context, { stage: 'advanced' })
+    expect(() => validateContextualBank(bank, refs)).toThrow(/unknown contextual stage/)
+  })
+
   it('rejects recordings made before text approval and approval without recordings', () => {
     const bank = recordedFixture()
     bank.contexts[0]!.review.text = 'pending'

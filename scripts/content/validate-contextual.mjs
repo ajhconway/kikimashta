@@ -28,7 +28,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   try {
     if (process.argv.length !== 2) throw new Error('Usage: node scripts/content/validate-contextual.mjs')
     const { bank } = loadContextualPilot()
-    console.log(JSON.stringify(contextualSummary(bank), null, 2))
+    const { bank: simple } = loadContextualPilot(projectRoot, 'content/contextual/ja-simple-pilot.json')
+    console.log(JSON.stringify({ contrastive: contextualSummary(bank), simple: contextualSummary(simple) }, null, 2))
   } catch (error) {
     console.error(error.message)
     process.exitCode = 1
