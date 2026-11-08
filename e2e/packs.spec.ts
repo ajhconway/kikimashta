@@ -12,8 +12,9 @@ test('selected writing pack persists and saves only its cards to real browser st
   await page.goto('./');
   await page.evaluate(({ key, id }) => localStorage.setItem(key, JSON.stringify([id])), { key: packPreferenceKey, id: pack.id });
   await page.reload();
-  await page.getByText('Card packs · 1 selected', { exact: true }).click();
-  await expect(page.getByRole('checkbox', { checked: true })).toHaveAccessibleName(pack.title);
+  await page.getByRole('link', { name: 'Card library · 1 pack selected' }).click();
+  await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox', { checked: true })).toHaveAccessibleName(pack.title);
+  await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: 'Begin lesson', exact: true }).click();
   for (let turn = 0; turn < 10; turn++) {
@@ -36,21 +37,23 @@ test('selected writing pack persists and saves only its cards to real browser st
   await expect(page.getByText('1 answer saved on this device')).toBeVisible();
   await page.reload();
   await expect(page.getByText('1 answer saved on this device')).toBeVisible();
-  await expect(page.getByText('Card packs · 1 selected', { exact: true })).toBeVisible();
-  await page.getByText('Card packs · 1 selected', { exact: true }).click();
+  await expect(page.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeVisible();
+  await page.getByRole('link', { name: 'Card library · 1 pack selected' }).click();
   await page.getByRole('checkbox', { name: pack.title }).uncheck();
+  await page.getByRole('link', { name: '← Listening practice' }).click();
   await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
   await page.reload();
-  await expect(page.getByText('Card packs · 0 selected', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Card library · 0 packs selected' })).toBeVisible();
   await expect(page.getByText('1 answer saved on this device')).toBeVisible();
 });
 
 test('retired starter selections disappear while their saved history survives reload', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
-  await page.getByText('Card packs · 10 selected', { exact: true }).click();
-  await expect(page.getByRole('checkbox')).toHaveCount(10);
+  await page.getByRole('link', { name: 'Card library · 10 packs selected' }).click();
+  await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox')).toHaveCount(10);
   await expect(page.getByRole('checkbox', { name: /Starter words/ })).toHaveCount(0);
+  await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.evaluate(async ({ key, packId }) => {
     localStorage.setItem(key, JSON.stringify(['ja-starter-pictures', packId, 'ja-starter-writing']));
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
@@ -71,13 +74,14 @@ test('retired starter selections disappear while their saved history survives re
   }, { key: packPreferenceKey, packId: pack.id });
   await page.reload();
   await expect(page.getByText('4 answers saved on this device')).toBeVisible();
-  await page.getByText('Card packs · 1 selected', { exact: true }).click();
-  await expect(page.getByRole('checkbox', { checked: true })).toHaveAccessibleName(pack.title);
-  await expect(page.getByRole('checkbox')).toHaveCount(10);
+  await page.getByRole('link', { name: 'Card library · 1 pack selected' }).click();
+  await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox', { checked: true })).toHaveAccessibleName(pack.title);
+  await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox')).toHaveCount(10);
+  await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByRole('button', { name: 'Begin review', exact: true })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Begin lesson', exact: true })).toBeVisible();
   await page.reload();
   await expect(page.getByText('4 answers saved on this device')).toBeVisible();
-  await expect(page.getByText('Card packs · 1 selected', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeVisible();
 });

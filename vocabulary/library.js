@@ -2,10 +2,11 @@
 import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
 import { getLibraryAccount } from '../src/sync/library-bridge'
 import { learningLanguages } from '../src/core/languages'
-import { selectedPracticeCards } from '../src/core/packs'
+import { initialPackIds, selectedPracticeCards } from '../src/core/packs'
 import { cardKey } from '../src/core/cards'
 import { cardMastery, packMastery } from '../src/core/mastery'
 import { deriveSchedules } from '../src/core/scheduler'
+import { initialVoiceIds, practiceVoices, voicePreferenceKey } from '../src/core/voices'
 import { ProgressStore } from '../src/progress/store'
 
 (async () => {
@@ -28,6 +29,94 @@ import { ProgressStore } from '../src/progress/store'
   }
   const requestedPack = parameters.get('pack')
   if (cardPacks.some(pack => pack.id === requestedPack)) packElement.value = requestedPack
+  const practicePacks = document.getElementById('practice-packs')
+  const selectionStatus = document.getElementById('pack-selection-status')
+  const selectionError = document.getElementById('pack-selection-error')
+  const packPreferenceKey = language.packPreferenceKey
+  let selectedPackIds = initialPackIds(cardPacks, packPreferenceKey)
+  function updateSelection() {
+    for (const input of practicePacks.querySelectorAll('input')) input.checked = selectedPackIds.includes(input.value)
+    document.getElementById('pack-selection-summary').textContent = `Practice packs · ${selectedPackIds.length} selected`
+    selectionStatus.textContent = selectedPackIds.length ? `${selectedPackIds.length} ${selectedPackIds.length === 1 ? 'pack' : 'packs'} selected for practice.` : 'No packs selected. Select a pack to start practicing.'
+  }
+  for (const pack of cardPacks) {
+    const label = document.createElement('label')
+    const input = document.createElement('input')
+    input.type = 'checkbox'
+    input.value = pack.id
+    input.setAttribute('aria-label', pack.title)
+    input.setAttribute('aria-describedby', `pack-mastery-${pack.id}`)
+    const text = document.createElement('span')
+    text.textContent = pack.title
+    const mastery = document.createElement('small')
+    mastery.id = `pack-mastery-${pack.id}`
+    mastery.textContent = 'Mastery loading…'
+    text.append(mastery)
+    label.append(input, text)
+    practicePacks.append(label)
+    input.addEventListener('change', () => {
+      const next = cardPacks.filter(pack => pack.id === input.value ? input.checked : selectedPackIds.includes(pack.id)).map(pack => pack.id)
+      try {
+        localStorage.setItem(packPreferenceKey, JSON.stringify(next))
+        selectedPackIds = next
+        selectionError.hidden = true
+      } catch {
+        selectionError.textContent = 'Your pack selection could not be saved on this device. Try again.'
+        selectionError.hidden = false
+      }
+      updateSelection()
+    })
+  }
+  updateSelection()
+  window.addEventListener('storage', () => { selectedPackIds = initialPackIds(cardPacks, packPreferenceKey); updateSelection() })
+  const practiceVoiceInputs = document.getElementById('practice-voices')
+  practiceVoiceInputs.closest('details').hidden = !japanese
+  const voiceSelectionError = document.getElementById('voice-selection-error')
+  let selectedVoiceIds = initialVoiceIds()
+  function updateVoiceSelection() {
+    for (const input of practiceVoiceInputs.querySelectorAll('input')) {
+      input.checked = selectedVoiceIds.includes(input.value)
+    }
+    document.getElementById('voice-selection-summary').textContent = `Practice voices · ${selectedVoiceIds.length} selected`
+    document.getElementById('voice-selection-status').textContent = `Selected: ${practiceVoices.filter(voice => selectedVoiceIds.includes(voice.id)).map(voice => voice.name).join(', ')}.`
+  }
+  for (const voice of practiceVoices) {
+    const label = document.createElement('label')
+    const input = document.createElement('input')
+    input.type = 'checkbox'
+    input.value = voice.id
+    input.setAttribute('aria-label', voice.name)
+    const text = document.createElement('span')
+    text.textContent = voice.name
+    const accent = document.createElement('small')
+    accent.id = `practice-voice-accent-${voice.id}`
+    accent.textContent = voice.description
+    input.setAttribute('aria-describedby', accent.id)
+    text.append(accent)
+    label.append(input, text)
+    practiceVoiceInputs.append(label)
+    input.addEventListener('change', () => {
+      const next = practiceVoices.filter(voice => voice.id === input.value ? input.checked : selectedVoiceIds.includes(voice.id)).map(voice => voice.id)
+      if (!next.length) {
+        voiceSelectionError.textContent = 'Keep at least one voice selected for practice.'
+        voiceSelectionError.hidden = false
+      } else {
+        try {
+          localStorage.setItem(voicePreferenceKey, JSON.stringify(next))
+          selectedVoiceIds = next
+          voiceSelectionError.hidden = true
+        } catch {
+          voiceSelectionError.textContent = 'Your voice selection could not be saved on this device. Try again.'
+          voiceSelectionError.hidden = false
+        }
+      }
+      updateVoiceSelection()
+    })
+  }
+  updateVoiceSelection()
+  const refreshVoiceSelection = () => { selectedVoiceIds = initialVoiceIds(); updateVoiceSelection() }
+  window.addEventListener('storage', refreshVoiceSelection)
+  window.addEventListener('pageshow', refreshVoiceSelection)
   const searchElement = document.getElementById('search')
   if (!japanese) {
     document.title = `${language.title} cards`
@@ -62,7 +151,9 @@ import { ProgressStore } from '../src/progress/store'
     for (const pack of cardPacks) {
       const option = Array.from(packElement.options).find(option => option.value === pack.id)
       const summary = schedules && packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), schedules)
-      option.textContent = `${pack.title} · ${summary ? `Lowest: ${summary.lowest.label} · Average: ${summary.average.label}` : 'Mastery unavailable'}`
+      const text = summary ? `Lowest: ${summary.lowest.label} · Average: ${summary.average.label}` : 'Mastery unavailable'
+      option.textContent = `${pack.title} · ${text}`
+      document.getElementById(`pack-mastery-${pack.id}`).textContent = text
     }
   }
   async function refreshMastery() {
@@ -102,7 +193,7 @@ import { ProgressStore } from '../src/progress/store'
   function resetButton() {
     if (activeButton) {
       activeButton.setAttribute('aria-pressed', 'false')
-      activeButton.textContent = activeButton.dataset.label
+      activeButton.querySelector('.voice-name').textContent = activeButton.dataset.label
       activeButton.setAttribute('aria-label', activeButton.dataset.accessibleLabel)
       activeButton.classList.remove('is-playing')
     }
@@ -140,7 +231,7 @@ import { ProgressStore } from '../src/progress/store'
     activeSource = new URL(clip.src, document.baseURI).href
     button.setAttribute('aria-pressed', 'true')
     button.classList.add('is-playing')
-    button.textContent = `Stop ${voice}`
+    button.querySelector('.voice-name').textContent = `Stop ${voice}`
     button.setAttribute('aria-label', `Stop ${voice}: ${card.meaning}`)
     audioStatus.textContent = `Playing ${card.reading || card.text} · ${voice}`
     audio.src = activeSource
@@ -296,7 +387,11 @@ import { ProgressStore } from '../src/progress/store'
     voices.setAttribute('aria-label', `${language.title} voices for ${card.meaning}`)
     for (const clip of card.audio) {
       const voice = clip.voiceName || clip.voice.charAt(0).toUpperCase() + clip.voice.slice(1)
-      const button = element('button', 'voice-button', clip.available ? voice : `${voice} unavailable`)
+      const button = element('button', 'voice-button')
+      const accent = element('small', 'voice-accent', practiceVoices.find(voice => voice.id === clip.voice)?.description ?? 'Accent unspecified')
+      accent.id = `voice-accent-${headingId}-${clip.voice}`
+      button.append(element('span', 'voice-name', clip.available ? voice : `${voice} unavailable`))
+      if (japanese) { button.append(accent); button.setAttribute('aria-describedby', accent.id) }
       button.type = 'button'
       button.dataset.label = voice
       button.setAttribute('aria-pressed', 'false')
@@ -367,7 +462,7 @@ import { ProgressStore } from '../src/progress/store'
     await closingProgress
     if (pageActive) void refreshMastery()
   }
-  window.addEventListener('pageshow', () => { pageActive = true; void refreshAfterReturn() })
+  window.addEventListener('pageshow', () => { pageActive = true; selectedPackIds = initialPackIds(cardPacks, packPreferenceKey); updateSelection(); void refreshAfterReturn() })
   window.addEventListener('focus', () => { void refreshAfterReturn() })
 
   await refreshMastery()
