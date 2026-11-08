@@ -82,6 +82,39 @@ for (const [exercise, reducedMotion] of [
     await expect(page.locator('.quiz-starburst')).toHaveCount(0);
     const motion = await page.locator('.answer-choice.partial').evaluate(element => element.getAnimations().filter(a => a instanceof CSSAnimation).map(a => (a as CSSAnimation).animationName));
     expect(motion).toEqual(reducedMotion ? [] : ['partial-wobble']);
+    const drifting = page.locator('.departing-card[data-exit="drift"]');
+    await expect(drifting).toHaveCount(3);
+    if (reducedMotion) {
+      await expect(page.locator('.answer-departures')).toBeHidden();
+    } else {
+      const departures = await drifting.first().evaluate(element => {
+        const animations = element.getAnimations().filter(a => a instanceof CSSAnimation);
+        const names = animations.map(a => (a as CSSAnimation).animationName).sort();
+        const durations = animations.map(a => Number(a.effect!.getComputedTiming().duration));
+        animations.forEach(a => a.pause());
+        const samples = [0, 275, 550, 825, 1100].map(time => {
+          animations.forEach(a => { a.currentTime = time; });
+          const style = getComputedStyle(element);
+          const transform = new DOMMatrix(style.transform);
+          const gravity = Number.parseFloat(style.translate.split(' ')[1] ?? '0');
+          return { x: transform.e, gravity, opacity: Number(style.opacity) };
+        });
+        const flyX = Number.parseFloat((element as HTMLElement).style.getPropertyValue('--fly-x'));
+        animations.forEach(a => a.play());
+        return { names, durations, samples, flyX };
+      });
+      expect(departures.names).toEqual(['card-drift-down', 'card-drift-out']);
+      for (const duration of departures.durations) {
+        expect(duration).toBeGreaterThan(800);
+        expect(duration).toBeLessThanOrEqual(1200);
+      }
+      expect(departures.samples[0]).toMatchObject({ x: 0, gravity: 0, opacity: 1 });
+      expect(departures.samples[1]!.x * departures.flyX).toBeGreaterThan(0);
+      const falls = departures.samples.map(sample => sample.gravity);
+      expect(falls[4]! - falls[3]!).toBeGreaterThan(falls[1]! - falls[0]!);
+      expect(departures.samples[4]!.opacity).toBe(0);
+    }
+
     await expect.poll(async () => (await history(page)).length).toBe(3);
     const saved = await history(page);
     const partial = saved.find(attempt => attempt.outcome === 'partial')!;
