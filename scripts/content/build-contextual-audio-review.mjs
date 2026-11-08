@@ -110,8 +110,8 @@ export function contextualAudioReviewHtml(review) {
 <p>WAV previews decode the verified constant-gain MP3 deliveries, with no further lossy encoding or gain adjustment. Provider originals and normalization records remain preserved in their separate local artifacts.</p>
 ${review.samples.map(sample => `<article id="${escapeHtml(`${sample.voice}-${sample.question.id}`)}"><h2>${escapeHtml(sample.voiceName)} · ${escapeHtml(sample.contextId)} · ${sample.question.kind === 'target' ? 'Target-word answer' : 'Sentence-detail answer'}</h2>
 <audio controls preload="none" aria-label="${escapeHtml(`${sample.voiceName}: ${sample.contextId}, ${sample.question.kind} question, sentence then question`)}" src="${escapeHtml(sample.src)}"></audio>
-<p class="label">Sentence</p><p lang="ja">${escapeHtml(sample.sentence.text)}</p><p>${escapeHtml(sample.sentence.meaning)}</p>
-<p class="label">Question</p><p lang="ja">${escapeHtml(sample.question.text)}</p><p>${escapeHtml(sample.question.meaning)}</p>
+<p class="label">Sentence</p><p lang="ja">${escapeHtml(sample.sentence.text)}</p>${sample.sentence.reading ? `<p lang="ja">${escapeHtml(sample.sentence.reading)}</p>` : ''}<p>${escapeHtml(sample.sentence.meaning)}</p>
+<p class="label">Question</p><p lang="ja">${escapeHtml(sample.question.text)}</p>${sample.question.reading ? `<p lang="ja">${escapeHtml(sample.question.reading)}</p>` : ''}<p>${escapeHtml(sample.question.meaning)}</p>
 <p><strong>Correct answer:</strong> <span lang="ja">${escapeHtml(sample.question.correctAnswer)}</span> — ${escapeHtml(sample.question.correctMeaning)}</p></article>`).join('\n')}
 <p><a href="review-provenance.json">Review provenance</a></p></html>`
 }
@@ -175,8 +175,10 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
   const outputs = []
   for (const voice of generation.voices) {
     for (const context of plan.contexts) {
+      const authoredContext = bank.contexts.find(entry => entry.id === context.id)
       const sentence = clips.get(`${voice.voice}:${context.sentenceItemId}`)
       for (const question of context.questions) {
+        const authoredQuestion = authoredContext.questions.find(entry => entry.id === question.id)
         const answer = clips.get(`${voice.voice}:${question.id}`)
         const src = `samples/${voice.voice}-${question.id}.wav`
         const bytes = wave(Buffer.concat([sentence.pcm, pause, answer.pcm]))
@@ -186,8 +188,8 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
           targetLimited: clip.record.targetLimited, limitingReasons: clip.record.limitingReasons })
         samples.push({ src, sha256: hash(bytes), bytes: bytes.length, frames: sentence.record.decodedFrames + gapFrames + answer.record.decodedFrames,
           voice: voice.voice, voiceName: voice.name, contextId: context.id, contextRevision: context.revision, targetItemId: context.targetItemId,
-          sentence: { text: sentence.item.text, meaning: sentence.item.meaning, ...sourceInfo(sentence) },
-          question: { ...question, text: answer.item.text, meaning: answer.item.meaning, ...sourceInfo(answer) } })
+          sentence: { text: sentence.item.text, reading: authoredContext.sentence.reading, meaning: sentence.item.meaning, ...sourceInfo(sentence) },
+          question: { ...question, text: answer.item.text, reading: authoredQuestion.prompt.reading, meaning: answer.item.meaning, ...sourceInfo(answer) } })
       }
     }
   }

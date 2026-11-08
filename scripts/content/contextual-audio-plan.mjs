@@ -27,7 +27,7 @@ export function contextualTextDigest(bank) {
 export function validateContextualTextApproval(bank, approval) {
   if (approval?.schemaVersion !== 1 || approval.bankId !== bank.id || approval.language !== bank.language ||
       !/^[a-f0-9]{40}$/.test(approval.sourceCommit ?? '') || !/^[a-f0-9]{64}$/.test(approval.sourceFileSha256 ?? '') ||
-      approval.textSha256 !== contextualTextDigest(bank) || !Number.isFinite(Date.parse(approval.approvedAt)) ||
+      approval.textSha256 !== contextualTextDigest(bank) || !Number.isFinite(Date.parse(approval.recordedAt)) ||
       approval.evidenceUrl !== 'https://github.com/ajhconway/kikimashta/issues/119#issuecomment-6723994903' ||
       bank.contexts.some(context => context.review.text !== 'approved')) {
     throw new Error('Actual pilot text approval is missing or differs from the reviewed text. Stop before generation.')

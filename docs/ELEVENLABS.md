@@ -2,12 +2,28 @@
 
 The project owner approved eight Japanese voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The existing-card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). The app plays pregenerated static MP3 files. Generation runs locally; the browser never calls ElevenLabs.
 
+## Local key shared by worktrees
+
+For local agents and generation commands, store one key in `~/.config/kikimashta/elevenlabs.env`, outside the repository. This works across separate worktrees without copying credentials. The file is local plaintext protected by filesystem permissions; agents and processes with access as the same macOS user can read it.
+
+```sh
+mkdir -p ~/.config/kikimashta
+chmod 700 ~/.config/kikimashta
+touch ~/.config/kikimashta/elevenlabs.env
+chmod 600 ~/.config/kikimashta/elevenlabs.env
+open -e ~/.config/kikimashta/elevenlabs.env
+```
+
+Add `ELEVENLABS_API_KEY=your_key_here` in that editor, replacing the placeholder there. Keep the actual value out of chat and shell commands/history. Use a restricted key with a credit quota; generation needs speech access and its balance check needs read access to account usage. See [ElevenLabs authentication](https://elevenlabs.io/docs/api-reference/authentication).
+
+The generation CLIs use an explicitly supplied `ELEVENLABS_API_KEY` first, then read this private file only when actually generating. Legacy project `.env.local` support remains for the original audition/card npm commands. The shared file must have no group/other permission bits on macOS/Linux. The loader returns only the needed key, without exporting the file's other values or printing credentials. Never use a `VITE_` prefix, browser code, GitHub issue/PR content or committed provenance for this secret. Dry runs do not need credentials.
+
 ## Account and voice setup
 
 1. [Create an ElevenLabs account](https://elevenlabs.io/) and choose **ElevenCreative** for its Text to Speech and voice browsing tools. ElevenAgents is for conversational agents. The seven-sample audition is small; use your account's available credits to compare voices before choosing a larger plan. See [API pricing](https://elevenlabs.io/pricing/api) for current allowances and usage terms.
 2. Browse the Voice Library for Japanese voices and add one or two candidates to your voice collection. Favor natural standard Japanese, clear word endings, and a relaxed conversational delivery. Listen to Japanese samples: a voice's English demo does not establish its Japanese pronunciation. ElevenLabs recommends [matching the voice to the target region](https://elevenlabs.io/docs/overview/capabilities/voices).
 3. Copy each candidate's **voice ID** from the voice's menu/details. The generator accepts IDs, rather than display names. These IDs can be shared in chat when choosing voices.
-4. Run `npx -y @elevenlabs/cli@latest onboard init` from the repository root and follow its browser authorization flow. It saves a project key directly in the ignored `.env.local` file. This project's account connection is configured locally; keys are never committed. To verify the key and SDK integration without generating speech, run `npx -y @elevenlabs/cli@latest onboard check --answered --env-path .env.local`.
+4. Run `npx -y @elevenlabs/cli@latest onboard init` from the repository root and follow its browser authorization flow. Use `--env-path ~/.config/kikimashta/elevenlabs.env` on its connect/check steps to save directly to the shared private file above. This setup is configured on the owner's Mac; keys are never committed. Verify the key and SDK integration without generating speech with `npx -y @elevenlabs/cli@latest onboard check --env-path ~/.config/kikimashta/elevenlabs.env`.
 5. Set `ELEVENLABS_VOICE_IDS` in `.env.local` with the chosen IDs. Preserve existing settings and the key created by onboarding. Keep the key out of chat and do not prefix it with `VITE_`. ElevenLabs documents [key scopes and quotas](https://elevenlabs.io/docs/api-reference/authentication) if you want to adjust the generation key's access or credit limit.
 
 ```dotenv
@@ -86,6 +102,26 @@ npm run check
 Staging preflights the entire batch's card/voice identity, hashes, measured levels and durations before copying delivery audio to `public/audio/elevenlabs-v1/`. It replaces only the banks' audio arrays. Per-voice provenance is saved in `content/audio/elevenlabs/`; `content/elevenlabs-audio-provenance.json` lists the full profile and any constrained clips. The vocabulary library displays all eight names and uses the same playback behavior as before. Old recordings and their provenance are retained for reference.
 
 `npm run test:audio` runs the Python processing tests; set `FFMPEG=/absolute/path/to/ffmpeg` for a nonstandard test installation. CI installs FFmpeg and runs these checks together with the application checks and browser journeys.
+
+## Contextual pilot audition (#124)
+
+The owner approved the actual pilot text in #119 before generation. `content/contextual/text-approval.json` records its source snapshot, digest and evidence. Edited sentences, questions, answers, grammar or revisions invalidate that approval. The first sample selects three contexts and approved standard voices Otani and Morioki: eighteen requests, 274 Unicode input characters and twelve paired listening examples. Character count is input length, not a billing estimate.
+
+```sh
+# Read-only plan: no credentials, network or writes required.
+npm run audio:contextual:elevenlabs -- --dry-run
+
+# Consumes credits. Reuse this exact directory to resume verified results.
+npm run audio:contextual:elevenlabs -- --output artifacts/generated-originals/contextual-audition/2026-11-08-first-sample
+
+# Local processing only; provider originals remain untouched.
+python3 scripts/content/normalize-elevenlabs.py --input artifacts/generated-originals/contextual-audition/2026-11-08-first-sample --output artifacts/generated-originals/contextual-audition/2026-11-08-first-sample-normalized
+npm run audio:contextual:review -- --input artifacts/generated-originals/contextual-audition/2026-11-08-first-sample --delivery artifacts/generated-originals/contextual-audition/2026-11-08-first-sample-normalized --output artifacts/contextual-audio-review/first-sample
+```
+
+Generation uses one request at a time and preserves approval/pairing metadata under the same lock as the resumable engine. Existing pending requests are never blindly retried. Review generation preflights complete originals, sidecars, hashes, identities and normalized delivery measurements before writing output, then decodes sentence + exactly 650 ms silence + question into lossless WAV previews. It does not generate speech or activate cards. Use a new review output directory when deliberately rebuilding an existing gallery; the command refuses overwrite.
+
+The completed originals and normalized batch also have a durable private copy under `~/.local/share/kikimashta/contextual-audio/2026-11-08-first-sample/`. That archive includes local processing and account-usage records and stays outside Git. The listening gallery contains only review media and provenance. Owner listening feedback precedes expansion; real-iPhone listening remains required before release.
 
 ## Listening review
 

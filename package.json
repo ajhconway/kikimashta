@@ -18,6 +18,8 @@
     "audio:audition": "node scripts/content/audition-openai.mjs",
     "audio:audition:elevenlabs": "node --env-file-if-exists=.env.local scripts/content/audition-elevenlabs.mjs",
     "audio:cards:elevenlabs": "node --env-file-if-exists=.env.local scripts/content/generate-elevenlabs-cards.mjs",
+    "audio:contextual:elevenlabs": "node scripts/content/generate-contextual-audition.mjs",
+    "audio:contextual:review": "node scripts/content/build-contextual-audio-review.mjs",
     "content:illustrate": "node scripts/content/illustrate-levels-1-2.mjs && node scripts/content/illustrate-levels-3-4.mjs && node scripts/content/illustrate-level-5.mjs",
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "content:contextual:validate": "node scripts/content/validate-contextual.mjs",

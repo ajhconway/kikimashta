@@ -88,7 +88,7 @@ async function main() {
     return
   }
   if (!values.output) throw new Error('Choose --output under artifacts/generated-originals/.')
-  // A dry run neither imports the private-key loader nor reads credentials.
+  // A dry run returns before loading any credentials.
   const { loadElevenLabsKey } = await import('./elevenlabs-key.mjs')
   const apiKey = await loadElevenLabsKey()
   console.log(JSON.stringify(await generateContextualAudition({ output: values.output, apiKey })))

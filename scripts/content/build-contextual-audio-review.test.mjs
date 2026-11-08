@@ -70,6 +70,9 @@ test('verified originals and the real normalizer produce ordered lossless previe
     assert.doesNotMatch(html, /<script>|fixture-secret/)
     assert.doesNotMatch(JSON.stringify(review), /fixture-secret/)
     const first = review.samples[0]
+    assert.equal(first.sentence.reading, fixture.bank.contexts[0].sentence.reading)
+    assert.equal(first.question.reading, fixture.bank.contexts[0].questions[0].prompt.reading)
+    assert.ok(html.includes(first.sentence.reading))
     const wav = await readFile(join(fixture.review, first.src))
     assert.equal(wav.subarray(0, 4).toString(), 'RIFF')
     assert.equal(wav.readUInt16LE(20), 1)

@@ -5,6 +5,7 @@ import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { buildContextualReview, renderContextualMarkdown } from './build-contextual-review.mjs'
 import { loadContextualPilot } from './validate-contextual.mjs'
+import { AUDIO_CONTEXT_IDS } from './contextual-audio-plan.mjs'
 
 function fixture(t) {
   const root = mkdtempSync(join(tmpdir(), 'contextual-review-'))
@@ -106,10 +107,10 @@ test('GitHub review includes every question and identifies each authored correct
   assert.match(markdown, /\*\*what-is-there\*\*/)
   assert.match(markdown, /\| 本 \| ほん \| Book \| Correct \|/)
   assert.match(markdown, /\| ノート \| のーと \| Notebook \| Distractor \|/)
-  assert.match(markdown, /no contextual audio has been generated/)
+  assert.match(markdown, /Text approved for 0\/1 contexts/)
 })
 
-test('the checked-in pilot covers both question kinds and formats while every context awaits text approval', () => {
+test('the checked-in pilot covers both question kinds and formats with approved text and no active audio', () => {
   const { bank } = loadContextualPilot()
   const targets = new Map()
   for (const context of bank.contexts) {
@@ -117,8 +118,8 @@ test('the checked-in pilot covers both question kinds and formats while every co
     contexts.push(context)
     targets.set(context.targetItemId, contexts)
     assert.deepEqual(new Set(context.questions.map(question => question.kind)), new Set(['target', 'detail']))
-    assert.equal(context.review.text, 'pending')
-    assert.equal(context.review.audio, 'not-generated')
+    assert.equal(context.review.text, 'approved')
+    assert.equal(context.review.audio, AUDIO_CONTEXT_IDS.includes(context.id) ? 'pending' : 'not-generated')
     assert.deepEqual(context.recordings, [])
   }
   assert.equal(targets.size, 10)

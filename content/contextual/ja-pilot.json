@@ -720,7 +720,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location."
     },
@@ -2465,7 +2465,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "Water, coffee and draft-beer choices reuse their existing concept pictures. The beer picture is an older SVG and needs owner confirmation as a clear distractor; it is never the correct pilot answer. Supporting people or times are written. Contrast the person/time linked to each drink."
     },
@@ -3785,7 +3785,7 @@
       "recordings": [],
       "review": {
         "text": "approved",
-        "audio": "not-generated"
+        "audio": "pending"
       },
       "reviewNotes": "The target occurrence is 走っていて, an inflection of catalogue 走る. Action choices keep the same progressive form and stay written because matching clear pictures do not exist for every action. The relative-clause question is within later Genki I. 走っていて explicitly carries the ongoing action into the joined clause."
     },
