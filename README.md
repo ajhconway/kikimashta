@@ -116,4 +116,3 @@ Transparent approved sources export as alpha-preserving 640px PNGs. Earlier opaq
 Practice packs and Japanese voice preferences are chosen in the card library and remembered on this device. Pack browsing stays independent of practice selection. Voice labels distinguish Tokyo (standard), Kansai, Kyushu, and Anime (standard).
 
 Latin American Spanish offers a 36-word Travel level 1 picture pack, with male/female voice pairs from Mexico City, Bogotá, Buenos Aires and Puerto Rico. The card library shows regional labels and remembers voice selections independently for each learning language. Entrance and exit are retired from this pack; existing Spanish progress and historical recordings remain preserved. The interface stays in English.
-
