@@ -622,3 +622,28 @@ it('starts a fresh countdown for each consecutive timed question', async () => {
   expect(records[5]!.outcome).toBe('success');
   expect(records[5]!.timer!.startedAt).toBeGreaterThan(first.answeredAt);
 });
+
+it('samples dev-review timers per question, retains the choice on replay, and never saves partial successes', async () => {
+  let draw = .9;
+  const { container } = render(<App random={() => draw}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  loadPictures(container); endAudio(container); await advance(480); await advance(0);
+  expect(screen.getByText('3 second timer started.')).toBeInTheDocument();
+  draw = 0;
+  await advance(1500); await click(screen.getByRole('button', { name: 'Replay word' }));
+  endAudio(container); await advance(1500);
+  expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+  await click(heardChoice(container));
+  expect(screen.getByLabelText('Partial success')).toBeInTheDocument();
+  await advance(1200);
+  loadPictures(container); endAudio(container); await advance(10000);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  draw = .3;
+  await click(heardChoice(container)); await advance(1200);
+  loadPictures(container); endAudio(container); await advance(480); await advance(0);
+  expect(screen.getByText('10 second timer started.')).toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  expect(records).toEqual([]);
+});

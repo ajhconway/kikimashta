@@ -69,6 +69,8 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Established review cards use FSRS stability in days: below 1 stays untimed; at 1/3/7/21 days use 10/7/5/3 seconds. This is an adjustable pilot policy, not a validated fluency measure.
 
+Unsaved Dev review samples untimed/10/7/5/3 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
 Show elapsed time as soft amber filling the background from top to bottom. Give partial success an amber response, a gentle card/companion wobble, and a distinct badge and message; respect reduced motion. Keep full-success and failure responses. Count partial successes as completed questions and identify their count in the summary.

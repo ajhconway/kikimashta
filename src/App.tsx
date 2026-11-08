@@ -5,7 +5,7 @@ import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard
 import { attemptExercise, cardKey } from './core/cards';
 import { createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
-import { answerOutcome, quizTimeLimit } from './core/quiz-timer';
+import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -201,24 +201,24 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     setIsDevReview(false);
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
-  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
+  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
-    setQuestionTimer({ id: active.current.id, limitMs: questionPhase === 'review' && !next.retryOf
+    setQuestionTimer({ id: active.current.id, limitMs: devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
       ? quizTimeLimit(mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }))) : null });
     setAudioFinished(false);
     setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
     present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
-  }, [now, present]);
-  function beginQuiz(block: Question[], blockPhase = phase) {
+  }, [now, present, random]);
+  function beginQuiz(block: Question[], blockPhase = phase, devReview = isDevReview) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
-    showQuestion(block[0]!, session.current.id, blockPhase);
+    showQuestion(block[0]!, session.current.id, blockPhase, devReview);
   }
   function startDevReview() {
     if (loading || accountLoading || preparing.current || pendingSaves.current.size || !selectedCards.length) return;
     operation.current++;
     session.current = { id: crypto.randomUUID(), reserved: new Set() };
     setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review');
+    beginQuiz(shuffled(selectedCards, random).slice(0, 6).flatMap(card => createQuestions([card], choicesFor(card.exercise), random)), 'review', true);
   }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
@@ -326,7 +326,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       if (!isDevReview) void prepareLessons(operation.current);
       return;
     }
-    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase);
+    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase, isDevReview);
   }, [index, questions, showQuestion, prepareLessons, isDevReview, phase]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;

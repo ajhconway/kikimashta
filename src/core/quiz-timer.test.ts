@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { PracticeAttempt } from '../types';
 import { advanceSchedule, deriveSchedules, schedulerVersion, type ScheduledWord } from './scheduler';
-import { answerOutcome, quizTimeLimit } from './quiz-timer';
+import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './quiz-timer';
 
 const start = Date.parse('2026-01-01T12:00:00Z');
 function attempt(overrides: Partial<PracticeAttempt> = {}): PracticeAttempt {
@@ -13,6 +13,10 @@ function attempt(overrides: Partial<PracticeAttempt> = {}): PracticeAttempt {
 }
 
 describe('adaptive quiz timer policy', () => {
+  it('samples each dev-review choice with an equal share, including untimed', () => {
+    expect([0, .2, .4, .6, .8, .999999].map(value => devReviewTimeLimit(() => value)))
+      .toEqual([null, 10000, 7000, 5000, 3000, 3000]);
+  });
   it('starts untimed and shortens at explicit stability thresholds only for review cards', async () => {
     const learning = await advanceSchedule(undefined, attempt());
     expect(quizTimeLimit(undefined)).toBeNull();

@@ -1,6 +1,12 @@
 import type { AnswerOutcome, PracticeAttempt } from '../types';
 import type { ScheduledWord } from './scheduler';
 
+/** Dev review samples the pilot choices independently on each presentation. */
+export function devReviewTimeLimit(random = Math.random): number | null {
+  const choices = [null, 10000, 7000, 5000, 3000] as const;
+  return choices[Math.floor(random() * choices.length)]!;
+}
+
 /** Pilot policy (#121): FSRS stability is measured in days, per card identity. */
 export function quizTimeLimit(word: ScheduledWord | undefined): number | null {
   if (!word || word.card.scheduleStatus !== 'review' || !Number.isFinite(word.card.stability)) return null;
