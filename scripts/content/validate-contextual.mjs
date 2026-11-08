@@ -6,7 +6,7 @@ import { contextualSummary, validateContextualBank } from '../../src/content/con
 export const projectRoot = fileURLToPath(new URL('../../', import.meta.url))
 
 /** Read-only preflight: no generation, approval changes, writes or network requests. */
-export function loadContextualPilot(root = projectRoot) {
+export function loadContextualPilot(root = projectRoot, bankPath = 'content/contextual/ja-pilot.json') {
   const read = path => JSON.parse(readFileSync(resolve(root, path), 'utf8'))
   const catalogue = read('content/catalog/ja.json')
   const overrides = read('content/catalog/review-overrides.json')
@@ -16,7 +16,7 @@ export function loadContextualPilot(root = projectRoot) {
   for (const word of read('content/ja.json').items) {
     if (catalogueIds.has(word.id)) eligibleTargetIds.add(word.id)
   }
-  const bank = validateContextualBank(read('content/contextual/ja-pilot.json'), {
+  const bank = validateContextualBank(read(bankPath), {
     vocabulary, eligibleTargetIds,
     imageExists: src => existsSync(resolve(root, 'public', src)),
     audioExists: src => existsSync(resolve(root, 'public', src)),

@@ -39,6 +39,9 @@ export interface ContextualRecording {
 export interface ContextualItem {
   id: string
   revision: number
+  /** Absent on the original, approved contrastive bank. */
+  stage?: 'simple' | 'contrastive'
+  comparisonContextId?: string
   targetItemId: string
   targetOccurrence: { surface: string; reading: string }
   sentence: ContextualPrompt

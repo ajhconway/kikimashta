@@ -120,6 +120,10 @@ export function validateContextualBank(input: unknown, refs: ContextualReference
     const context = object(value, path)
     contextIds.push(id(context.id, `${path}.id`))
     revision(context.revision, `${path}.revision`)
+    if (context.stage !== undefined) check(context.stage === 'simple' || context.stage === 'contrastive', path, 'unknown contextual stage')
+    if (context.comparisonContextId !== undefined) {
+      check(id(context.comparisonContextId, `${path}.comparisonContextId`) !== context.id, path, 'comparison must reference another context')
+    }
     const target = knownVocabulary(context.targetItemId, `${path}.targetItemId`)
     check(refs.eligibleTargetIds.has(target.id), `${path}.targetItemId`, 'target is outside the approved practice pool')
     const sentence = prompt(context.sentence, `${path}.sentence`)
