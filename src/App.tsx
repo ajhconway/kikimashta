@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
-import { practicePool } from './core/practice';
-import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './core/packs';
+import { initialLanguage, languagePreferenceKey, learningLanguages, type LearningLanguage } from './core/languages';
+import { initialPackIds, selectedPracticeCards } from './core/packs';
 import type { AnswerOutcome, AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey, isContextualExercise } from './core/cards';
 import { correctChoiceId, createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
@@ -80,16 +80,43 @@ function initialRange(): DensityRange {
 }
 interface DepartingCard extends PracticeCard { font: WritingFont; slot: number; left: number; top: number; width: number; height: number; flyX: number; flyY: number }
 
-export default function App({ now = wallClock, random = Math.random, progressStore = defaultStore, answerRecovery, historyRevision = 0, accountControls, accountLoading = false, onSaved }: {
+interface AppProps {
   now?: () => number; random?: () => number; progressStore?: ProgressStore; answerRecovery?: AnswerRecovery; historyRevision?: number;
   accountControls?: ReactNode; accountLoading?: boolean; onSaved?: () => void;
-} = {}) {
+}
+
+export default function App(props: AppProps = {}) {
+  const [language, setLanguage] = useState(initialLanguage);
+  const [localRecovery] = useState(() => new AnswerRecovery());
+  function changeLanguage(id: string) {
+    const next = learningLanguages.find(candidate => candidate.id === id);
+    if (!next) return;
+    try { localStorage.setItem(languagePreferenceKey, next.id); } catch { /* Selection works in memory. */ }
+    focusLanguage.current = true;
+    setLanguage(next);
+  }
+  const focusLanguage = useRef(false);
+  useEffect(() => {
+    if (focusLanguage.current) document.querySelector<HTMLSelectElement>('select[aria-label="Learning language"]')?.focus();
+  }, [language]);
+  return <LanguagePractice key={language.id} {...props} answerRecovery={props.answerRecovery ?? localRecovery}
+    language={language} onLanguageChange={changeLanguage}/>;
+}
+
+function LanguagePractice({ now = wallClock, random = Math.random, progressStore = defaultStore, answerRecovery, historyRevision = 0, accountControls, accountLoading = false, onSaved, language, onLanguageChange }: AppProps & {
+  language: LearningLanguage; onLanguageChange: (id: string) => void;
+}) {
+  const practicePool = language.pool;
+  const cardPacks = language.packs;
+  const packPreferenceKey = language.packPreferenceKey;
+  const languageContextualBanks = useMemo(() => contextualBanks.filter(bank => bank.language === language.id), [language.id]);
+  const languageContextualVocabulary = useMemo(() => contextualVocabulary.filter(item => item.language === language.id), [language.id]);
   const store = progressStore;
   const [localRecovery] = useState(() => new AnswerRecovery());
   const recovery = answerRecovery ?? localRecovery;
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
-  const [packIds, setPackIds] = useState(initialPackIds);
-  const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds), [packIds]);
+  const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
+  const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
   const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
   const learningSnapshot = useCallback(async (attempts: PracticeAttempt[]) => {
     const unlocks = await deriveContextualUnlocks(attempts, practicePool.language);
@@ -97,16 +124,16 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     const keys = new Set(cards.map(cardKey));
     const allSchedules = await deriveSchedules(attempts, practicePool.language);
     return { cards, allSchedules, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
-  }, [selectedCards]);
+  }, [selectedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
     if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
-    const candidates = contextualBanks.flatMap(bank => approvedContextualQuestions(bank, format))
+    const candidates = languageContextualBanks.flatMap(bank => approvedContextualQuestions(bank, format))
       .filter(({ context }) => context.targetItemId === card.item.id &&
         `context-${context.stage ?? 'contrastive'}-${format}` === card.exercise);
     const selected = candidates[Math.floor(random() * candidates.length)];
     if (!selected) throw new Error('No approved contextual question for this card.');
-    return [contextualQuestion(selected.context, selected.question, format, contextualVocabulary, random)];
+    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random)];
   }
   function togglePack(id: string) {
     const next = packIds.includes(id) ? packIds.filter(value => value !== id) : [...packIds, id];
@@ -115,9 +142,9 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   }
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
-  useEffect(() => { preloadWritingFonts(); }, []);
+  useEffect(() => { if (language.writing === 'japanese') preloadWritingFonts(); }, [language]);
   const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-dev'>(() =>
-    new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
+    languageContextualBanks.length > 0 && new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
   const [demoPresentation, setDemoPresentation] = useState<{ label: string; timerMs: number | null; retry: boolean } | null>(null);
@@ -204,7 +231,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool]);
 
   useEffect(() => {
     const element = audio.current;
@@ -228,11 +255,11 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     void element.play().catch(() => { if (request === playRequest.current) { setAudioError(true); setPlaying(false); } });
   }, []);
   const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture', presentationPhase: 'lesson' | 'review' = 'lesson', texts: readonly string[] = [item.text]) => {
-    if (exercise === 'audio-text') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
+    if (exercise === 'audio-text' && language.writing === 'japanese') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
     recording.current = selectRecording(item.audio, random);
     active.current.replays = 0;
     play();
-  }, [play, random, fontRotation]);
+  }, [play, random, fontRotation, language]);
   function home() {
     operation.current++; preparing.current = false;
     playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
@@ -291,7 +318,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
       setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(shuffled(plan.items, random));
     } catch { if (operation.current === request) setHistoryError(true); }
     finally { if (operation.current === request) setLoading(false); }
-  }, [now, range, store, random]);
+  }, [now, range, store, random, practicePool]);
   async function startSession() {
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
     setIsDevReview(false);
@@ -446,7 +473,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
     <audio ref={audio} preload="auto" onEnded={() => { setPlaying(false); setAudioFinished(true); }} onError={() => { setAudioError(true); setPlaying(false); }}/>
     {screen === 'quiz' && !feedback && countdown.timer && <><QuizTimerFill timer={countdown.timer} expired={countdown.expired} now={now}/><span className="sr-only" role="status">{countdown.expired ? 'Take your time. A correct answer still counts as partial success.' : `${countdown.timer.limitMs / 1000} second timer started.`}</span></>}
     {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className={choiceClass(card.exercise) + ' departing-card'} key={card.item.id} data-exit={feedback.outcome === 'partial' ? 'drift' : feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><CardFace item={card.item} exercise={card.exercise} font={card.font}/></div>)}</div>}
-    <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}<span className="language"><i/> Japanese</span></header>
+    <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}{screen === 'home' ? <label className="language-picker"><svg className="language-globe" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><span className="sr-only">Learning language</span><select aria-label="Learning language" value={language.id} disabled={accountLoading || pendingSaveCount > 0 || saveError} onChange={event => onLanguageChange(event.target.value)}>{learningLanguages.map(option => <option key={option.id} value={option.id}>{option.title}</option>)}</select><svg className="language-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></label> : <span className="language"><i/> {language.title}</span>}</header>
     <main>
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
@@ -455,25 +482,25 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startDevReview}>Dev review</button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
-        <button className="text-button" disabled={accountLoading || pendingSaveCount > 0 || saveError} onClick={() => {
+        {languageContextualBanks.length > 0 && <button className="text-button" disabled={accountLoading || pendingSaveCount > 0 || saveError} onClick={() => {
           operation.current++; playRequest.current++; audio.current?.pause(); setPlaying(false); setScreen('contextual-dev');
-        }}>Contextual dev review</button>
+        }}>Contextual dev review</button>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
-        <details className="pack-picker">
+        {cardPacks.length > 0 && <details className="pack-picker">
           <summary>Card packs · {packIds.length} selected</summary>
           <fieldset disabled={loading || accountLoading || pendingSaveCount > 0 || saveError}><legend>Practice packs</legend>
             {cardPacks.map(pack => {
-              const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id]), packSchedules);
+              const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), packSchedules);
               return <label key={pack.id}><input type="checkbox" aria-label={pack.title} aria-describedby={`mastery-${pack.id}`} checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/><span>{pack.title}<small id={`mastery-${pack.id}`} className="pack-mastery">{loading || accountLoading ? 'Mastery loading…' : historyError ? 'Mastery unavailable' : `Lowest: ${levels.lowest.label} · Average: ${levels.average.label}`}</small></span></label>;
             })}
           </fieldset>
           <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
-        </details>
-        {!selectedCards.length && <p role="status">Select a pack to start practicing.</p>}
+        </details>}
+        {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack to start practicing.'}</p>}
         {accountControls}
       </section>}
-      {screen === 'contextual-dev' && <ContextualDevReview banks={contextualBanks} vocabulary={contextualVocabulary} onClose={home} random={random}/>}
+      {screen === 'contextual-dev' && languageContextualBanks.length > 0 && <ContextualDevReview banks={languageContextualBanks} vocabulary={languageContextualVocabulary} onClose={home} random={random}/>}
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Review Time!' : lessonItems.length ? 'Lesson Time!' : 'All set for now!'}</h1>
@@ -539,6 +566,6 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         </>}
         <button className="text-button" onClick={home}>Finish</button>
       </section>}
-    </main><footer>{screen === 'home' && <a href={asset('vocabulary/')}>Card library ↗</a>}<a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
+    </main><footer>{screen === 'home' && language.libraryPath && <a href={asset(language.libraryPath)}>Card library ↗</a>}<a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
   </div>;
 }

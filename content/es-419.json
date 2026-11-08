@@ -1,0 +1,128 @@
+{
+  "id": "es-419-travel-1",
+  "language": "es-419",
+  "title": "Travel level 1",
+  "status": "generated-awaiting-owner-listening",
+  "items": [
+    {
+      "id": "es-419-travel-hotel",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Hotel",
+      "text": "hotel",
+      "image": {
+        "src": "images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+        "source": "generated",
+        "alt": "A hotel building with a bed symbol above its entrance."
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-hotel.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-water",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Water",
+      "text": "agua",
+      "image": {
+        "src": "images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+        "source": "generated",
+        "alt": "A blue water droplet"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-water.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Coffee",
+      "text": "café",
+      "image": {
+        "src": "images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+        "source": "generated",
+        "alt": "A golden mug filled with steaming coffee."
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-coffee.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-car",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Car",
+      "text": "carro",
+      "image": {
+        "src": "images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg",
+        "source": "generated",
+        "alt": "An orange car viewed from the side, with two visible wheels."
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-car.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-entrance",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Entrance",
+      "text": "entrada",
+      "image": {
+        "src": "images/vocabulary/ja-v-20cbd1c15a35.svg",
+        "source": "generated",
+        "alt": "Entrance"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-entrance.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-exit",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Exit",
+      "text": "salida",
+      "image": {
+        "src": "images/vocabulary/ja-v-a19157e62dee.svg",
+        "source": "generated",
+        "alt": "Exit"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-v1/cesar/es-419-travel-exit.mp3",
+          "source": "synthesized",
+          "voice": "cesar",
+          "voiceName": "Cesar"
+        }
+      ]
+    }
+  ]
+}

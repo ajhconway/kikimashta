@@ -851,3 +851,31 @@ describe('all-level mastery demo (#140)', () => {
     expect(screen.getByText('2 answers saved on this device')).toBeInTheDocument();
   });
 });
+
+
+describe('learning language switching', () => {
+  it('discards a stale Japanese history load after switching to Spanish', async () => {
+    const oldHistory = deferred<PracticeAttempt[]>();
+    vi.spyOn(ProgressStore.prototype, 'history').mockImplementation(language =>
+      language === 'ja-JP' ? oldHistory.promise : Promise.resolve([]));
+    render(<App now={fixedNow} random={() => 0.5}/>);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
+    await waitFor(() => expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419'));
+    await act(async () => { oldHistory.resolve(legacy()); });
+    expect(screen.queryByText('6 answers saved on this device')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
+    expect(screen.getByRole('link', { name: /Card library/ })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveFocus();
+  });
+  it('keeps the language selector disabled until failed answer recovery is resolved', async () => {
+    const { AnswerRecovery } = await import('./progress/recovery');
+    const recovery = new AnswerRecovery();
+    const store = new ProgressStore();
+    vi.spyOn(store, 'record').mockRejectedValue(new Error('Unavailable'));
+    await recovery.save(store, legacy(1)[0]!);
+    render(<App now={fixedNow} answerRecovery={recovery}/>);
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeDisabled();
+    await click(screen.getByRole('button', { name: 'Continue without saving' }));
+    expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeEnabled();
+  });
+});

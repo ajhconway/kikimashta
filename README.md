@@ -1,10 +1,10 @@
 # Kikimashta
 
-A relaxed listening game that starts with Japanese. Hear a word or phrase, choose its picture or Japanese writing, and build recognition through short practice sessions.
+A relaxed listening game for Japanese and Latin American Spanish. Hear a word, choose its picture or writing, and build recognition through short practice sessions.
 
 Adaptive sessions start with a fixed block of due reviews, followed by lessons in chunks of roughly ten cards. Picture and writing cards shuffle together in previews and quizzes; each question offers only pictures or only written answers. Each chunk introduces cards with audio, then mini-quizzes them. Progress, schedules, and workload stay separate for each language, vocabulary item, and exercise. Sessions remain untimed and save on the device first.
 
-Home centers Kiku on the current review-intensity color. The pace selector wheels have been removed; workload still uses a saved device preference or the Light–Moderate default. Ten selectable WaniKani level/format packs scope practice and forecasts. The approved pool contains 166 vocabulary items / 332 exercise cards before selection. Retired starter-only words retain their saved history. Japanese is the first language bank; content, media, and learning history remain separate so other languages can follow.
+Home centers Kiku on the current review-intensity color. The pace selector wheels have been removed; workload still uses a saved device preference or the Light–Moderate default. Ten selectable WaniKani level/format packs scope practice and forecasts. The approved pool contains 166 vocabulary items / 332 exercise cards before selection. Retired starter-only words retain their saved history. The home language selector switches available packs and remembers each language’s pack choices. Latin American Spanish starts with six travel words in a picture pack, using a Mexican Spanish voice; menus remain in English. Content, media, and learning history remain separate by language.
 
 Quizzes use flat picture and writing cards with an expressive squash on press and Kiku's slow, gentle sway. Progress dots count cards answered correctly; small pink crosses below them count mistakes. Missed cards shuffle back into the remaining questions until each is answered correctly, with another card in between whenever possible. Every attempt is saved; corrective retries link to the original miss and are excluded from FSRS retention evidence.
 
@@ -12,6 +12,7 @@ Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a
 
 - [Project plan](PLAN.md)
 - [Agent working agreements](AGENTS.md)
+- [Language framework and Spanish content](docs/LANGUAGES.md)
 - [Optional account sync setup](docs/SUPABASE.md)
 - [November 8 project review and open findings](docs/REVIEW.md)
 
@@ -42,7 +43,7 @@ Scheduling uses pinned `ts-fsrs` 6.0.0 with the explicit FSRS-6 model, 90% desir
 
 Density forecasts simulate seven days with 32 deterministic scenarios, one fixed review session per day, repeat reviews and sampled FSRS success/failure. New-word admission initially assumes an 80% mini-quiz success rate. These are adjustable forecast assumptions, not measured learning efficacy. Qualitative levels start at 0/5/15/30/60 reviews per day; preferred minimum uses a band's lower edge and maximum its upper edge (Intense admission ceiling: 120/day). Default Light–Moderate targets 5–30/day. Thresholds and assumptions live in `src/core/density.ts`; the UI shows labels, not these numbers. Newly due work waits for the next session, and actual future demand can exceed the admission forecast.
 
-Existing cards use eight approved ElevenLabs voices: Otani, Morioki, Goro, Tsuki, Takeshi, Lime, Ritsuto, and Itsuki. The set balances male and female voices across standard Japanese, Kansai and Kyushu labels, plus character delivery. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. Progress remains tied to language, word, and exercise across voices. Gain adjustments aim for −22 LUFS with at least 2 dB of true-peak headroom; constrained clips remain quieter and are listed in provenance. Pronunciation, regional accents and playback of the new words still need listening review on the iPhone 17.
+Japanese cards use eight approved ElevenLabs voices: Otani, Morioki, Goro, Tsuki, Takeshi, Lime, Ritsuto, and Itsuki. The set balances male and female voices across standard Japanese, Kansai and Kyushu labels, plus character delivery. Each item has an array of recordings; practice chooses one when presenting the word and retains it for replay and retry. Progress remains tied to language, word, and exercise across voices. Gain adjustments aim for −22 LUFS with at least 2 dB of true-peak headroom; constrained clips remain quieter and are listed in provenance. Pronunciation, regional accents and playback of the new words still need listening review on the iPhone 17.
 
 ## Account sync
 
