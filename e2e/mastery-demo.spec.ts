@@ -27,7 +27,10 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
   await page.getByRole('button', { name: 'Mastery demo', exact: true }).click();
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
   for (const label of ['New', 'Learning', 'Improving', 'Familiar', 'Steady', 'Strong', 'Confident', 'Mastered', 'Learning']) {
-    await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText(label + ' ·');
+    const context = page.getByRole('status', { name: 'Demo mastery' });
+    await expect(context.locator('.question-mastery-label')).toHaveText(label);
+    await expect(page.locator('.practice-actions .question-mastery')).toBeVisible();
+    await expect(page.locator('.quiz-top .question-mastery, .demo-mastery')).toHaveCount(0);
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
     const source = await page.locator('audio').getAttribute('src');
     const target = [...starter.items, ...catalogue.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
@@ -41,6 +44,7 @@ test('mastery demo covers every level, shows arrows, and leaves real progress un
         : choices.filter({ hasNot: page.getByRole('img', { name: target.image.alt, exact: true }) }).first();
       await wrong.click();
       await expect(page.getByLabel('Mastery decreased to Learning')).toContainText('Learning');
+      await expect(page.locator('.question-mastery')).toBeHidden();
       await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
       await expect(page.locator('.mastery-down')).toHaveCSS('animation-name', 'none');
       await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeInViewport();
@@ -76,7 +80,14 @@ test('level-up animation fits the original layout without moving cards', async (
   await page.getByRole('button', { name: 'Mastery demo', exact: true }).click();
   await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+  const context = page.getByRole('status', { name: 'Demo mastery' });
+  await expect(context.locator('.question-mastery-label')).toHaveText('New');
+  await expect(context.locator('.question-mastery-timer')).toHaveText('Untimed');
+  const contextLabel = (await context.locator('.question-mastery-label').boundingBox())!;
+  const contextTimer = (await context.locator('.question-mastery-timer').boundingBox())!;
   const before = await page.locator('.choices').boundingBox();
+  expect(contextLabel.y).toBeGreaterThan(before!.y + before!.height);
+  await page.screenshot({ path: `test-results/mastery-context-${testInfo.project.name}.png`, animations: 'disabled' });
   if (!testInfo.project.use.isMobile) expect(before!.width).toBe(380);
   const source = await page.locator('audio').getAttribute('src');
   const target = [...starter.items, ...catalogue.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
@@ -86,6 +97,7 @@ test('level-up animation fits the original layout without moving cards', async (
   await correct.click();
   const badge = page.getByRole('img', { name: 'Mastery increased to Learning', exact: true });
   await expect(badge).toBeVisible();
+  await expect(page.locator('.question-mastery')).toBeHidden();
   await expect(badge).toHaveCSS('background-image', 'none');
   await expect(page.getByText(/^Level (up|down)$/i)).toHaveCount(0);
   await expect(badge.locator('.mastery-arrow')).toHaveText('↑');
@@ -109,6 +121,13 @@ test('level-up animation fits the original layout without moving cards', async (
     return samples.every(Boolean);
   });
   expect(fits).toBe(true);
+  const overlay = (await badge.boundingBox())!;
+  for (const text of [contextLabel, contextTimer]) {
+    expect(overlay.x).toBeLessThanOrEqual(text.x);
+    expect(overlay.x + overlay.width).toBeGreaterThanOrEqual(text.x + text.width);
+    expect(overlay.y).toBeLessThanOrEqual(text.y);
+    expect(overlay.y + overlay.height).toBeGreaterThanOrEqual(text.y + text.height);
+  }
   const after = await page.locator('.choices').boundingBox();
   expect(after).toEqual(before);
   await page.screenshot({ path: `test-results/mastery-level-up-${testInfo.project.name}.png`, animations: 'disabled' });

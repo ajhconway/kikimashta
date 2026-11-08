@@ -399,7 +399,7 @@ footer a:hover { color: var(--purple-dark); }
 .pack-mastery { display: block; margin-top: .25rem; font-size: .75rem; font-weight: 400; opacity: .8; }
 .feedback { position: relative; display: flex; justify-content: center; align-items: flex-start; }
 /* Caption-free badges fit the original feedback slot without resizing the cards. (#141) */
-.mastery-change { position: absolute; top: -4px; inset-inline: 0; width: max-content; margin-inline: auto; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 64px; min-width: min(260px, 100%); max-width: 100%; padding: 2px 22px 2px 16px; border: 3px solid var(--purple-dark); border-radius: 23px; color: var(--purple-dark); background: #ffcee2; box-shadow: 0 4px 0 rgb(67 31 116 / .18); text-align: left; }
+.mastery-change { z-index: 1; position: absolute; top: -4px; inset-inline: 0; width: max-content; margin-inline: auto; isolation: isolate; display: inline-flex; align-items: center; gap: 12px; height: 64px; min-width: min(260px, 100%); max-width: 100%; padding: 2px 22px 2px 16px; border: 3px solid var(--purple-dark); border-radius: 23px; color: var(--purple-dark); background: #ffcee2; box-shadow: 0 4px 0 rgb(67 31 116 / .18); text-align: left; }
 .mastery-arrow { display: grid; place-items: center; width: 50px; height: 50px; font-size: 52px; line-height: 1; font-weight: 900; }
 .mastery-label { font-size: 34px; font-weight: 900; line-height: 1.1; }
 .mastery-up { animation: mastery-pop .55s cubic-bezier(.2, .8, .3, 1) both; }
@@ -421,4 +421,9 @@ footer a:hover { color: var(--purple-dark); }
 @keyframes mastery-spark { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.2); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)) scale(.6) rotate(65deg); } }
 @media (prefers-reduced-motion: reduce) { .mastery-change, .mastery-arrow, .mastery-sparks i { animation: none; } .mastery-sparks { display: none; } }
 
-.demo-mastery { margin: 0; text-align: center; font-size: .8rem; font-weight: 700; color: var(--purple-dark); }
+
+.question-mastery { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--purple-dark); }
+.question-mastery[aria-hidden="true"] { visibility: hidden; }
+.question-mastery-label { font-size: 24px; line-height: 1.15; font-weight: 800; }
+.question-mastery-timer { padding-left: 12px; border-left: 2px solid var(--line); font-size: 20px; line-height: 1.15; font-weight: 700; }
+.question-mastery .answer-result { width: 32px; height: 32px; font-size: 22px; }

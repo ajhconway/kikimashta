@@ -702,10 +702,18 @@ describe('interval mastery feedback', () => {
   });
 
   it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
-    const { container } = await timedReview();
+    const { container, limit } = await timedReview();
+    const current = screen.getByRole('status', { name: 'Current mastery' });
+    expect(within(current).getByText('Familiar')).toBeInTheDocument();
+    expect(within(current).getByText(`${limit / 1000}s`)).toBeInTheDocument();
+    expect(current.closest('.practice-actions')).not.toBeNull();
     await click(heardChoice(container, false));
+    expect(current).toHaveAttribute('aria-hidden', 'true');
     expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
     await click(screen.getByRole('button', { name: /^continue$/i }));
+    const retry = screen.getByRole('status', { name: 'Current mastery' });
+    expect(within(retry).getByText('Learning')).toBeInTheDocument();
+    expect(within(retry).getByText('Untimed')).toBeInTheDocument();
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
   });
@@ -731,7 +739,11 @@ describe('all-level mastery demo (#140)', () => {
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
     for (const [label, limit] of [['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
       ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]] as const) {
-      expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent(`${label} · ${limit ? limit / 1000 + 's' : 'Untimed'} · Unsaved demo`);
+      const context = screen.getByRole('status', { name: 'Demo mastery' });
+      expect(context).toHaveTextContent(label);
+      expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
+      expect(context.closest('.practice-actions')).not.toBeNull();
+      expect(container.querySelector('.quiz-top .question-mastery')).toBeNull();
       endAudio(container); loadPictures(container); await advance(480); await advance(0);
       if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
       else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
@@ -742,7 +754,7 @@ describe('all-level mastery demo (#140)', () => {
         await click(screen.getByRole('button', { name: /^continue$/i }));
       } else await advance(1200);
     }
-    expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('Learning · Untimed · Unsaved demo');
+    expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
     endAudio(container); loadPictures(container); await advance(480);
     expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
     await click(heardChoice(container));

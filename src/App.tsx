@@ -115,7 +115,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [audioFinished, setAudioFinished] = useState(false);
-  const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null }>({ id: '', limitMs: null });
+  const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
   const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
@@ -213,10 +213,12 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   }
   const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
-    const demoLevel = next.demoId ? cardMastery(demoSchedules.current?.get(next.demoId)) : null;
+    const word = next.demoId ? demoSchedules.current?.get(next.demoId) : mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }));
+    const level = cardMastery(word);
+    const demoLevel = next.demoId ? level : null;
     setDemoPresentation(demoLevel ? { ...demoLevel, retry: !!next.retryOf } : null);
-    setQuestionTimer({ id: active.current.id, limitMs: demoLevel ? next.retryOf ? null : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
-      ? quizTimeLimit(mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }))) : null });
+    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: demoLevel ? next.retryOf ? null : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+      ? quizTimeLimit(word) : null });
     setAudioFinished(false);
     setFeedback(null); setDepartures([]); setSaveError(false); setSaving(false);
     present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
@@ -444,7 +446,6 @@ export default function App({ now = wallClock, random = Math.random, progressSto
         <QuizCompanion listening={playing} response={feedback?.outcome ?? null}/>
         <div className="quiz-audio"><button ref={replayButton} className={'listen quiz-listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span className="sr-only">{playing ? 'Playing…' : 'Replay'}</span></button></div>
         </div>
-        {demoPresentation && <p className="demo-mastery" role="status" aria-label="Demo mastery">{demoPresentation.label} · {demoPresentation.retry || demoPresentation.timerMs === null ? 'Untimed' : `${demoPresentation.timerMs / 1000}s`} · Unsaved demo</p>}
         <span className="sr-only" aria-live="polite">Question {index + 1}{questions[index]?.retryOf ? ', retry' : ''}</span>
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="quiz-cards">
@@ -456,7 +457,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
           return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
-        <MasteryFeedback outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
+        <MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: !!demoPresentation }}
+          outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
           change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
