@@ -21,14 +21,14 @@ Work is tracked in GitHub Issues and implemented through linked pull requests. I
 
 ## Development
 
-Use Node 24.15 or newer, Python 3.10 or newer, and FFmpeg for the audio-processing checks.
+Use Node 24.15 or newer, Python 3.12 or newer, and FFmpeg for the audio-processing checks.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-`npm run check` runs lint, type checks, unit/UI tests, script tests, Python audio tests, and the production build. Artwork checks currently run separately: `python3 -m unittest discover -s scripts/cards -p 'test_*.py'` and `python3 scripts/cards/validate.py` (#116). After building, run `npx playwright install chromium webkit` and `npm run test:e2e` for browser journeys. If setting `SOURCE_REVISION` when building, retain the same value for the browser run. The account-sync browser specs need the explicit fake service variables shown in [the review commands](docs/REVIEW.md#verification). GitHub Actions tests the `/` deployment path used by `kikimashta.com` before publishing.
+`npm run check` runs lint, type checks, unit/UI tests, script tests, Python audio/artwork tests, content validation, and the production build. `npm run test:cards` runs the Python artwork tests and content/dependency validator, and is included in `npm run check` and required CI. After building, run `npx playwright install chromium webkit` and `npm run test:e2e` for browser journeys. If setting `SOURCE_REVISION` when building, retain the same value for the browser run. The account-sync browser specs need the explicit fake service variables shown in [the review commands](docs/REVIEW.md#verification). GitHub Actions tests the `/` deployment path used by `kikimashta.com` before publishing.
 
 Local Playwright tests mute only the media elements in their test pages, before calling the real browser `play()` method. System audio and other apps are untouched. Recordings still download, decode, advance, end, replay, and report failures normally. Use `E2E_AUDIO=audible npm run test:e2e` for unchanged local playback, or `E2E_AUDIO=quiet npm run test:e2e` to explicitly request silence. This also applies to direct `npx playwright test` runs.
 
