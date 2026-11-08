@@ -643,6 +643,38 @@ test('Dev review practices six random cards and a missed-word retry without savi
   expect(await savedAttempts(page)).toEqual([]);
 });
 
+test('a failed answer can be retried from Home and persists exactly once after reload', async ({ page }) => {
+  await startReview(page);
+  const original = await savedAttempts(page);
+  // Fail one real browser storage request; the retry uses native IndexedDB.
+  await page.evaluate(() => {
+    const add = IDBObjectStore.prototype.add;
+    IDBObjectStore.prototype.add = function (value, key) {
+      if (this.name === 'attempts') {
+        IDBObjectStore.prototype.add = add;
+        sessionStorage.setItem('failed-save-attempt', JSON.stringify(value));
+        throw new DOMException('Storage temporarily unavailable', 'QuotaExceededError');
+      }
+      return add.call(this, value, key);
+    };
+  });
+  await page.getByRole('button', { name: /choose picture/i }).first().click();
+  await expect(page.getByRole('alert')).toContainText("This answer hasn't been saved yet.");
+  const expected = await page.evaluate(() => JSON.parse(sessionStorage.getItem('failed-save-attempt')!));
+  await page.getByRole('button', { name: /kikimashta home/i }).click();
+  await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
+  await expect(page.getByRole('alert')).toContainText("This answer hasn't been saved yet.");
+  expect(await savedAttempts(page)).toEqual(original);
+  await page.getByRole('button', { name: /retry saving/i }).click();
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  await expect(page.getByRole('alert')).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByText('7 answers saved on this device')).toBeVisible();
+  const saved = await savedAttempts(page);
+  expect(saved).toHaveLength(original.length + 1);
+  expect(saved.filter(attempt => attempt.id === expected.id)).toEqual([expected]);
+});
+
 test('future history and a backward clock leave practice usable without changing saved attempts', async ({ page }) => {
   const now = Date.UTC(2026, 10, 8, 12);
   await page.clock.install({ time: now });
