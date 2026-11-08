@@ -1,7 +1,7 @@
 {
   "issue": 150,
   "language": "es-419",
-  "status": "awaiting-passport-review",
+  "status": "artwork-approved",
   "retiredItemIds": [
     "es-419-travel-entrance",
     "es-419-travel-exit"
@@ -167,8 +167,9 @@
       "text": "pasaporte",
       "meaning": "Passport",
       "artwork": {
-        "status": "awaiting-owner-review",
-        "path": "artifacts/spanish-travel-art/batch-02/passport-v2.png"
+        "status": "owner-approved",
+        "path": "artifacts/spanish-travel-art/batch-02/passport-v2.png",
+        "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
       }
     },
     {

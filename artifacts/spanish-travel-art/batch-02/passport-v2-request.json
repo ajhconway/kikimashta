@@ -14,7 +14,7 @@
   "sha256": "3eb38fe29b5ad6a9eace2a132d04244aa5895996c61fcce366ded6fd0d1ca40d",
   "width": 1254,
   "height": 1254,
-  "status": "awaiting-owner-review",
+  "status": "owner-approved",
   "inputSha256": "ae8a6bf48df13ce04c9eab7933b831ebbef2abe0f77c6f018fdec8c59635d646",
   "alphaInspection": {
     "width": 1254,
@@ -22,5 +22,6 @@
     "transparentPixels": 1085305,
     "opaquePixels": 477545,
     "opaqueWhitePixels": 0
-  }
+  },
+  "approvalEvidence": "artifacts/spanish-travel-art/owner-feedback.json"
 }
