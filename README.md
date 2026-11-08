@@ -87,7 +87,7 @@ The review library at `/vocabulary/` contains 440 vocabulary entries displayed a
 
 Mastery uses the gap between the last review and the next scheduled review, so becoming overdue does not change the label. The shared level policy also controls review timers; thresholds and timer limits are documented in [PLAN.md](PLAN.md#interval-mastery-135).
 
-For an unsaved tour of all eight levels and their timers, choose **Mastery demo** on Home. Its sample schedules show real FSRS mastery changes without modifying progress. The separate **Dev review** lets you choose sample levels and either mastery-based, random, or untimed word reviews.
+Choose **Dev review** on Home to try all eight simulated mastery levels and their timers, or select specific levels and word/contextual review types. Sample schedules show real FSRS mastery changes without modifying progress. Dev review is the single Home entry point for these tools.
 
 The library combines original SVG scenes with 168 approved replacement illustrations from batches 01–10. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Each card shows its interval mastery independently. Pack selection shows both lowest mastery and the average level rounded down, including new cards, across approved practice cards. Search, pack filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 

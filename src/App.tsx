@@ -13,7 +13,6 @@ import { ContextualDevReview } from './components/ContextualDevReview';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevReviewOptions';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
-import { createMasteryDemo } from './core/mastery-demo';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
@@ -322,16 +321,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       setDevReviewError(null); beginQuiz(demo.questions, 'review', true);
     } catch (error) { setDevReviewError(error instanceof Error ? error.message : 'The selected review could not start. Try another selection.'); }
   }
-  function startMasteryDemo() {
-    if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed || !selectedCards.length) return;
-    const demo = createMasteryDemo(selectedCards, now(), random);
-    devTimerMode.current = null;
-    operation.current++;
-    demoSchedules.current = demo.schedules;
-    session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
-    setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-    beginQuiz(demo.questions, 'review', true);
-  }
   const prepareLessons = useCallback(async (request: number) => {
     setLoading(true); setHistoryError(false); setLessonPlan(null);
     try {
@@ -509,11 +498,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <HomeIntensity value={density}/>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
-        <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={startMasteryDemo}>Mastery demo</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
-        {languageContextualBanks.length > 0 && <button className="text-button" disabled={accountLoading || pendingSaveCount > 0 || saveError} onClick={() => {
-          operation.current++; playRequest.current++; audio.current?.pause(); setPlaying(false); setScreen('contextual-dev');
-        }}>Contextual dev review</button>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
@@ -579,7 +564,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       </section>}
       {screen === 'summary' && <section className="summary fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
-        <h1>{isDevReview ? demoPresentation && devTimerMode.current === null ? 'Mastery demo complete' : 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
+        <h1>{isDevReview ? 'Dev review complete' : phase === 'review' ? 'Nice reviewing!' : 'Nice round!'}</h1>
         <div className="score"><strong>{correct}<span> / {answers.length}</span></strong></div>
         {answers.some(answer => answer.outcome === 'partial') && <p>{answers.filter(answer => answer.outcome === 'partial').length} partial success{answers.filter(answer => answer.outcome === 'partial').length === 1 ? '' : 'es'}</p>}
         {!isDevReview && <>

@@ -813,19 +813,26 @@ describe('interval mastery feedback', () => {
   });
 });
 
-describe('all-level mastery demo (#140)', () => {
+describe('all-level simulated Dev review (#152)', () => {
   it('walks all eight levels with their timers, shows changes and an untimed retry, and never saves', async () => {
     records = legacy(2);
     const original = structuredClone(records);
     const onSaved = vi.fn();
     const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Mastery demo' })).toBeEnabled());
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
     vi.useFakeTimers();
-    await click(screen.getByRole('button', { name: 'Mastery demo' }));
+    await click(screen.getByRole('button', { name: 'Start dev review' }));
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
-    for (const [label, limit] of [['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
-      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]] as const) {
+    const levels = new Map<string, number | null>([['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
+      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]]);
+    const seen = new Set<string>();
+    for (let index = 0; index < 8; index++) {
       const context = screen.getByRole('status', { name: 'Demo mastery' });
+      const label = context.querySelector('.question-mastery-label')!.textContent!;
+      expect(seen.has(label)).toBe(false); seen.add(label);
+      expect(levels.has(label)).toBe(true);
+      const limit = levels.get(label)!;
       expect(context).toHaveTextContent(label);
       expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
       expect(context.closest('.practice-actions')).not.toBeNull();
@@ -840,13 +847,14 @@ describe('all-level mastery demo (#140)', () => {
         await click(screen.getByRole('button', { name: /^continue$/i }));
       } else await advance(1200);
     }
+    expect([...seen].sort()).toEqual([...levels.keys()].sort());
     expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
     endAudio(container); loadPictures(container); await advance(480);
     expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
     await advance(1200);
-    expect(screen.getByRole('heading', { name: 'Mastery demo complete' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Dev review complete' })).toBeInTheDocument();
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
     expect(onSaved).not.toHaveBeenCalled();
     expect(records).toEqual(original);
@@ -885,7 +893,7 @@ describe('learning language switching', () => {
 });
 
 describe('global practice voice selection (#148)', () => {
-  it.each(['lesson', 'review', 'Dev review', 'Mastery demo'])('uses preferred voices in %s and preserves them on replay', async mode => {
+  it.each(['lesson', 'review', 'Dev review'])('uses preferred voices in %s and preserves them on replay', async mode => {
     localStorage.setItem(voicePreferenceKey, JSON.stringify(['lime']));
     if (mode === 'review') records = legacy(1);
     const { container } = render(<App now={fixedNow} random={() => 0}/>);
@@ -894,7 +902,6 @@ describe('global practice voice selection (#148)', () => {
       await start();
       await click(screen.getByRole('button', { name: mode === 'lesson' ? 'Begin lesson' : /begin review/i }));
     } else if (mode === 'Dev review') await configuredDevReview();
-    else await click(screen.getByRole('button', { name: mode }));
     const source = container.querySelector('audio')!.getAttribute('src');
     expect(source).toContain('/lime/');
     // Changing the preference never changes an already-presented question on replay.
@@ -935,4 +942,14 @@ it.each([['mastery', '1.5s'], ['random', '5s'], ['untimed', 'Untimed']] as const
   expect(sample).toHaveTextContent('Confident');
   expect(sample).toHaveTextContent(label);
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+});
+
+
+it('keeps Home focused on a single Dev review entry point', async () => {
+  render(<App now={fixedNow}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  expect(screen.queryByRole('button', { name: 'Mastery demo' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Contextual dev review' })).not.toBeInTheDocument();
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
 });

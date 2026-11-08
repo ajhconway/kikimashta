@@ -19,6 +19,8 @@ async function storedHistory(page: Page) {
 test('Dev review opens options, simulates selected writing mastery and leaves real browser history untouched', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Mastery demo', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Contextual dev review', exact: true })).toHaveCount(0);
   const before = await storedHistory(page);
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Dev review options' })).toBeFocused();
