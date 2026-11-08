@@ -8,7 +8,7 @@ export function useQuizCountdown({ id, limitMs, audioFinished, answered, grid, n
 }) {
   const [visibleId, setVisibleId] = useState('');
   const [started, setStarted] = useState<{ id: string; timer: NonNullable<PracticeAttempt['timer']> } | null>(null);
-  const [at, setAt] = useState(0);
+  const [expiredId, setExpiredId] = useState('');
   useEffect(() => {
     if (!id || limitMs === null) return;
     let entered = false;
@@ -27,21 +27,24 @@ export function useQuizCountdown({ id, limitMs, audioFinished, answered, grid, n
     if (!id || limitMs === null || visibleId !== id || !audioFinished || answered || started?.id === id) return;
     const start = window.setTimeout(() => {
       const startedAt = now();
-      setStarted({ id, timer: { startedAt, limitMs } }); setAt(startedAt);
+      setStarted({ id, timer: { startedAt, limitMs } });
     }, 0);
     return () => window.clearTimeout(start);
   }, [id, limitMs, visibleId, audioFinished, answered, started, now]);
   const timer = started?.id === id ? started.timer : undefined;
   useEffect(() => {
     if (!timer || answered) return;
-    function tick() {
-      const at = now(); setAt(at);
-      if (at >= timer!.startedAt + timer!.limitMs) window.clearInterval(interval);
+    const deadline = timer.startedAt + timer.limitMs;
+    let timeout: number;
+    function checkDeadline() {
+      window.clearTimeout(timeout);
+      const remaining = deadline - now();
+      if (remaining <= 0) setExpiredId(id);
+      else timeout = window.setTimeout(checkDeadline, remaining);
     }
-    const interval = window.setInterval(tick, 50);
-    document.addEventListener('visibilitychange', tick);
-    return () => { window.clearInterval(interval); document.removeEventListener('visibilitychange', tick); };
-  }, [timer, answered, now]);
-  const fraction = timer ? Math.max(0, Math.min(1, (at - timer.startedAt) / timer.limitMs)) : 0;
-  return { timer, fraction, expired: fraction >= 1 };
+    timeout = window.setTimeout(checkDeadline, Math.max(0, deadline - now()));
+    document.addEventListener('visibilitychange', checkDeadline);
+    return () => { window.clearTimeout(timeout); document.removeEventListener('visibilitychange', checkDeadline); };
+  }, [id, timer, answered, now]);
+  return { timer, expired: !!id && expiredId === id };
 }

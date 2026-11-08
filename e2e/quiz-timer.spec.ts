@@ -58,14 +58,39 @@ for (const [exercise, reducedMotion] of [
     const fill = page.locator('.quiz-timer-fill');
     await expect(fill).toBeAttached();
     await page.clock.pauseAt(await page.evaluate(() => Date.now() + 50));
-    const startingFraction = await fill.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).d);
     await page.clock.runFor(limit / 2);
+    const smooth = await fill.evaluate(element => {
+      const animations = element.getAnimations();
+      if (animations.length !== 1) throw new Error('The timer needs one native animation.');
+      const animation = animations[0]!;
+      const timing = animation.effect!.getTiming();
+      animation.pause();
+      const samples = [0, 10, 20, 30].map(time => {
+        animation.currentTime = time;
+        return new DOMMatrix(getComputedStyle(element).transform).d;
+      });
+      animation.currentTime = Number(timing.duration) / 2;
+      return { duration: timing.duration, easing: timing.easing, samples };
+    });
+    expect(smooth.duration).toBe(limit);
+    expect(smooth.easing).toBe('linear');
+    for (let i = 1; i < smooth.samples.length; i++) {
+      expect(smooth.samples[i]).toBeGreaterThan(smooth.samples[i - 1]!);
+    }
     const halfway = await fill.evaluate(element => ({ fraction: new DOMMatrix(getComputedStyle(element).transform).d,
       origin: getComputedStyle(element).transformOrigin, color: getComputedStyle(element).backgroundColor }));
-    expect(halfway.fraction).toBeGreaterThan(startingFraction + .45);
-    expect(halfway.fraction).toBeLessThan(.9);
+    expect(halfway.fraction).toBeCloseTo(.5, 5);
     expect(halfway.origin).toMatch(/ 0px$/);
     expect(halfway.color).toBe('rgb(255, 219, 153)');
+    const caughtUp = await fill.evaluate(element => {
+      const animation = element.getAnimations()[0]!;
+      animation.currentTime = 0;
+      document.dispatchEvent(new Event('visibilitychange'));
+      return Number(animation.currentTime);
+    });
+    expect(caughtUp).toBeGreaterThanOrEqual(limit / 2);
+    expect(caughtUp).toBeLessThan(limit);
+
     if (!reducedMotion) await page.screenshot({ path: `test-results/timer-${exercise}-halfway.png` });
     await page.getByRole('button', { name: 'Replay word' }).click();
     await page.clock.runFor(limit / 2);
