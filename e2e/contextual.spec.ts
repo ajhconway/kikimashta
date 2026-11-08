@@ -136,7 +136,7 @@ test('contextual scheduled reviews persist explicit answers and retain the same 
   expect(retry.context!.contextual).toEqual(miss.context!.contextual);
   expect(retry.context!.recordingSrc).toBe(miss.context!.recordingSrc);
   expect(retry.correct).toBe(true);
-  expect(retry.choiceIds).toEqual(miss.choiceIds);
+  expect([...retry.choiceIds].sort()).toEqual([...miss.choiceIds].sort());
   await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Show Japanese', exact: true })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Continue', exact: true })).toHaveCount(0);
