@@ -1,0 +1,389 @@
+{
+  "issue": 150,
+  "language": "es-419",
+  "status": "artwork-preparation",
+  "retiredItemIds": [
+    "es-419-travel-entrance",
+    "es-419-travel-exit"
+  ],
+  "styleReference": "artifacts/card-regeneration/references/cat-style-reference.png",
+  "batches": [
+    [
+      "airport",
+      "airplane",
+      "bus",
+      "taxi",
+      "train",
+      "bicycle"
+    ],
+    [
+      "passport",
+      "ticket",
+      "suitcase",
+      "backpack",
+      "map",
+      "phone"
+    ],
+    [
+      "bed",
+      "key",
+      "bathroom",
+      "shower",
+      "towel",
+      "elevator"
+    ],
+    [
+      "restaurant",
+      "bread",
+      "milk",
+      "juice",
+      "money"
+    ],
+    [
+      "boat",
+      "beach",
+      "hospital",
+      "pharmacy",
+      "bottle",
+      "credit-card",
+      "camera",
+      "umbrella"
+    ]
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-hotel",
+      "slug": "hotel",
+      "text": "hotel",
+      "meaning": "Hotel",
+      "artwork": {
+        "status": "reuse-approved",
+        "path": "images/approved/ja-v-d5c177de5126-1b49282e86db.jpg"
+      }
+    },
+    {
+      "id": "es-419-travel-water",
+      "slug": "water",
+      "text": "agua",
+      "meaning": "Water",
+      "artwork": {
+        "status": "reuse-approved",
+        "path": "images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg"
+      }
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "slug": "coffee",
+      "text": "café",
+      "meaning": "Coffee",
+      "artwork": {
+        "status": "reuse-approved",
+        "path": "images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg"
+      }
+    },
+    {
+      "id": "es-419-travel-car",
+      "slug": "car",
+      "text": "carro",
+      "meaning": "Car",
+      "artwork": {
+        "status": "reuse-approved",
+        "path": "images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg"
+      }
+    },
+    {
+      "id": "es-419-travel-airport",
+      "slug": "airport",
+      "text": "aeropuerto",
+      "meaning": "Airport",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-airplane",
+      "slug": "airplane",
+      "text": "avión",
+      "meaning": "Airplane",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bus",
+      "slug": "bus",
+      "text": "autobús",
+      "meaning": "Bus",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "slug": "taxi",
+      "text": "taxi",
+      "meaning": "Taxi",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-train",
+      "slug": "train",
+      "text": "tren",
+      "meaning": "Train",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bicycle",
+      "slug": "bicycle",
+      "text": "bicicleta",
+      "meaning": "Bicycle",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-passport",
+      "slug": "passport",
+      "text": "pasaporte",
+      "meaning": "Passport",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "slug": "ticket",
+      "text": "boleto",
+      "meaning": "Ticket",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-suitcase",
+      "slug": "suitcase",
+      "text": "maleta",
+      "meaning": "Suitcase",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-backpack",
+      "slug": "backpack",
+      "text": "mochila",
+      "meaning": "Backpack",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-map",
+      "slug": "map",
+      "text": "mapa",
+      "meaning": "Map",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-phone",
+      "slug": "phone",
+      "text": "teléfono",
+      "meaning": "Phone",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bed",
+      "slug": "bed",
+      "text": "cama",
+      "meaning": "Bed",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-key",
+      "slug": "key",
+      "text": "llave",
+      "meaning": "Key",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bathroom",
+      "slug": "bathroom",
+      "text": "baño",
+      "meaning": "Bathroom",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-shower",
+      "slug": "shower",
+      "text": "ducha",
+      "meaning": "Shower",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-towel",
+      "slug": "towel",
+      "text": "toalla",
+      "meaning": "Towel",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-elevator",
+      "slug": "elevator",
+      "text": "ascensor",
+      "meaning": "Elevator",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-restaurant",
+      "slug": "restaurant",
+      "text": "restaurante",
+      "meaning": "Restaurant",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bread",
+      "slug": "bread",
+      "text": "pan",
+      "meaning": "Bread",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-rice",
+      "slug": "rice",
+      "text": "arroz",
+      "meaning": "Rice",
+      "artwork": {
+        "status": "reuse-approved",
+        "path": "images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg"
+      }
+    },
+    {
+      "id": "es-419-travel-milk",
+      "slug": "milk",
+      "text": "leche",
+      "meaning": "Milk",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-juice",
+      "slug": "juice",
+      "text": "jugo",
+      "meaning": "Juice",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-money",
+      "slug": "money",
+      "text": "dinero",
+      "meaning": "Money",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-boat",
+      "slug": "boat",
+      "text": "barco",
+      "meaning": "Boat",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-beach",
+      "slug": "beach",
+      "text": "playa",
+      "meaning": "Beach",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "slug": "hospital",
+      "text": "hospital",
+      "meaning": "Hospital",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-pharmacy",
+      "slug": "pharmacy",
+      "text": "farmacia",
+      "meaning": "Pharmacy",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-bottle",
+      "slug": "bottle",
+      "text": "botella",
+      "meaning": "Bottle",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-credit-card",
+      "slug": "credit-card",
+      "text": "tarjeta de crédito",
+      "meaning": "Credit card",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-camera",
+      "slug": "camera",
+      "text": "cámara",
+      "meaning": "Camera",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    },
+    {
+      "id": "es-419-travel-umbrella",
+      "slug": "umbrella",
+      "text": "paraguas",
+      "meaning": "Umbrella",
+      "artwork": {
+        "status": "pending-generation"
+      }
+    }
+  ],
+  "choiceReviewNotes": [
+    "Generic car and taxi have overlapping meanings; review their distractor pairing before practice activation (#79).",
+    "Airport and airplane must use distinct primary silhouettes; airport shows terminal and control tower without a foreground airplane.",
+    "Artwork review does not authorize audio generation or activate staged words in practice."
+  ]
+}
