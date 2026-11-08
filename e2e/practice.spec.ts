@@ -272,7 +272,7 @@ async function chooseHeardAnswer(page: Page, target: WordItem) {
       ? page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true })
       : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) });
     await choice.click();
-    await expect(page.locator('.feedback strong')).toHaveText('Got it!');
+    await expect(page.locator('.feedback')).toContainText('Correct answer.');
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
     await expect(page.getByRole('alert')).toHaveCount(0);
     // The app starts the advance timer only after playback and saving finish.
@@ -315,7 +315,7 @@ async function chooseWithAnimationChecks(page: Page, pressScreenshot: string, re
       // Releasing the real press answers normally while its advance timer is paused.
       await page.mouse.up();
     }
-    await expect(page.locator('.feedback strong')).toHaveText('Got it!');
+    await expect(page.locator('.feedback')).toContainText('Correct answer.');
     // Opaque approved JPEGs must not reveal a rectangle during feedback (#92).
     for (const card of await page.locator('.choices .picture-choice').all()) {
       await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
@@ -615,7 +615,7 @@ test('Dev review practices six random cards and a missed-word retry without savi
       await page.getByRole('button', { name: /choose (picture|writing)/i }).filter({
         hasNot: exercise === 'audio-picture' ? page.getByRole('img', { name: target.image.alt, exact: true }) : page.getByText(target.text, { exact: true }),
       }).first().click();
-      await expect(page.locator('.feedback strong')).toHaveText('Try this one.');
+      await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
       await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
       const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
       await expect(mistakes).toContainText('1 incorrect answer');
@@ -719,7 +719,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
       await wrongChoice.click();
       misses++;
       previousMissIndex = presentations.length - 1;
-      await expect(page.locator('.feedback strong')).toHaveText('Try this one.');
+      await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
       await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
       const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
       await expect(mistakes).toContainText(`${misses} incorrect ${misses === 1 ? 'answer' : 'answers'}`);
@@ -770,9 +770,8 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   // Native button activation still works from the keyboard.
   await wrongChoice.focus();
   await page.keyboard.press('Space');
-  await expect(page.getByText('Try this one.', { exact: true })).toBeVisible();
-  await expect(page.locator('.feedback strong')).toHaveText('Try this one.');
-  await expect(page.getByLabel('Mastery increased to Learning')).toHaveText('↑ Learning');
+  await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
+  await expect(page.getByLabel('Mastery increased to Learning')).toContainText('Learning');
   await expect(page.locator('.app')).toHaveAttribute('data-answer', 'incorrect');
   for (const card of await page.locator('.choices .picture-choice').all()) {
     await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
@@ -822,7 +821,7 @@ test('a miss drops only uninvolved pictures without shifting the grid or adding 
   }).first();
   const selectedAlt = await wrongChoice.locator('img').getAttribute('alt');
   await wrongChoice.click();
-  await expect(page.locator('.feedback strong')).toHaveText('Try this one.');
+  await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
   await expectCompanionMotion(page);
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await captureFallingCards(page, 'quiz-falling-' + testInfo.project.name);
@@ -879,7 +878,7 @@ test('holding a picture acts as one button press on release', async ({ page }, t
   } finally {
     await page.mouse.up();
   }
-  await expect(page.getByText('Got it!', { exact: true })).toBeVisible();
+  await expect(page.locator('.feedback')).toContainText('Correct answer.');
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
   for (const button of await page.getByRole('button', { name: /choose picture/i }).all()) await expect(button).toBeDisabled();
   await page.getByRole('button', { name: /kikimashta home/i }).click();

@@ -668,7 +668,7 @@ describe('interval mastery feedback', () => {
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery increased/)).not.toBeInTheDocument();
     await act(async () => pending.resolve());
-    expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent('↑ Learning');
+    expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Level up.*Learning/);
   });
 
   it('refreshes pack mastery when an answer finishes saving after returning Home', async () => {
@@ -704,7 +704,7 @@ describe('interval mastery feedback', () => {
   it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
     const { container } = await timedReview();
     await click(heardChoice(container, false));
-    expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent('↓ Learning');
+    expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Level down.*Learning/);
     await click(screen.getByRole('button', { name: /^continue$/i }));
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
@@ -736,9 +736,9 @@ describe('all-level mastery demo (#140)', () => {
       if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
       else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
       await click(heardChoice(container, label !== 'Strong'));
-      if (label === 'New') expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent('↑ Learning');
+      if (label === 'New') expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Level up.*Learning/);
       if (label === 'Strong') {
-        expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent('↓ Learning');
+        expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Level down.*Learning/);
         await click(screen.getByRole('button', { name: /^continue$/i }));
       } else await advance(1200);
     }

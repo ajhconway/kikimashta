@@ -9,6 +9,7 @@ import { createMasteryDemo } from './core/mastery-demo';
 import { cardMastery, masteryIndex, packMastery } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
+import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
 import { selectRecording } from './core/audio';
@@ -455,7 +456,8 @@ export default function App({ now = wallClock, random = Math.random, progressSto
           return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
-        <div className="feedback" aria-live="polite">{feedback && <strong>{feedback.outcome === 'partial' ? 'Got it — take your time.' : feedback.correct ? 'Got it!' : 'Try this one.'}</strong>}{feedback && masteryChange?.id === feedback.id && <span className={'mastery-change mastery-' + masteryChange.direction} aria-label={`Mastery ${masteryChange.direction === 'up' ? 'increased' : 'decreased'} to ${masteryChange.label}`}><span aria-hidden="true">{masteryChange.direction === 'up' ? '↑' : '↓'}</span> {masteryChange.label}</span>}{feedback?.correct && saving && <span className="sr-only">Saving…</span>}</div>
+        <MasteryFeedback outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
+          change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
         {saveError && feedback && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={next}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
