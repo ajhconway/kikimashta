@@ -23,7 +23,7 @@ test('card feedback survives paging, filters and reload; export includes hidden 
   await page.getByRole('button', { name: '← Previous', exact: true }).click();
   await above.locator('.card-feedback summary').click();
   await expect(above.getByLabel('Your notes')).toHaveValue('Show more space above the shelf.\n余白');
-  await page.getByLabel('Provisional level').selectOption('2');
+  await page.getByLabel('Card pack').selectOption('ja-wanikani-2-pictures');
   await page.getByLabel('Search words').fill('Dog');
   const dog = page.getByRole('article', { name: '犬', exact: true });
   await dog.locator('.card-feedback summary').click();

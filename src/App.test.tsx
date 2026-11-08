@@ -4,6 +4,8 @@ import App from './App';
 import { ProgressStore } from './progress/store';
 import { practiceCards, cardKey } from './core/cards';
 import { practicePool } from './core/practice';
+const fullPool = practicePool;
+import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
 import { forecastDensity, planLessonChunk } from './core/density';
 import type { PracticeAttempt } from './types';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
@@ -459,5 +461,54 @@ describe('quiz safeguards', () => {
     expect(color()).toBe(intensityColors.minimal);
     expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
     expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
+  });
+});
+
+describe('practice pack selection', () => {
+  it('restricts lessons and dev review to the selected level and writing format', async () => {
+    const pack = cardPacks.find(pack => pack.id === 'ja-wanikani-2-writing')!;
+    localStorage.setItem(packPreferenceKey, JSON.stringify([pack.id]));
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start();
+    expect(vi.mocked(planLessonChunk).mock.calls.at(-1)![0].candidates).toEqual(selectedPracticeCards(fullPool.items, [pack.id]));
+    await click(screen.getByRole('button', { name: /begin lesson/i }));
+    expect(container.querySelector('.preview')).toHaveAttribute('data-exercise', 'audio-text');
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+    await click(screen.getByRole('button', { name: 'Dev review' }));
+    expect(container.querySelector('.quiz')).toHaveAttribute('data-exercise', 'audio-text');
+    const source = container.querySelector('audio')!.getAttribute('src');
+    expect(fullPool.items.some(item => pack.itemIds.includes(item.id) && item.audio.some(clip => source?.endsWith(clip.src)))).toBe(true);
+  });
+
+  it('reviews only enabled cards and preserves disabled history', async () => {
+    const pack = cardPacks.find(pack => pack.id === 'ja-wanikani-2-writing')!;
+    const item = selectedPracticeCards(fullPool.items, [pack.id])[0]!.item;
+    records = [{ ...legacy(1)[0]!, itemId: item.id }, {
+      ...legacy(1)[0]!, id: 'writing', itemId: item.id,
+      context: { phase: 'review', exercise: 'audio-text', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion: 'fsrs-6-v1' },
+    }];
+    const original = structuredClone(records);
+    localStorage.setItem(packPreferenceKey, JSON.stringify([pack.id]));
+    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
+    await start();
+    expect(screen.getByText('1 card')).toBeInTheDocument();
+    await click(screen.getByRole('button', { name: /begin review/i }));
+    expect(container.querySelector('.quiz')).toHaveAttribute('data-exercise', 'audio-text');
+    expect(records).toEqual(original);
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  });
+
+  it('disables practice for an empty selection and saves a newly enabled pack', async () => {
+    localStorage.setItem(packPreferenceKey, '[]');
+    render(<App now={fixedNow}/>);
+    await screen.findByText('Select a pack to start practicing.');
+    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    await click(screen.getByText('Card packs · 0 selected'));
+    const checkbox = screen.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' });
+    await waitFor(() => expect(checkbox).toBeEnabled());
+    await click(checkbox);
+    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    expect(JSON.parse(localStorage.getItem(packPreferenceKey)!)).toEqual(['ja-wanikani-1-pictures']);
   });
 });
