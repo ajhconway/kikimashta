@@ -33,7 +33,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const request = useRef(0);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const segment = useRef<'sentence' | 'question' | null>(null);
-  const [playback, setPlayback] = useState<'playing' | 'paused' | 'idle' | 'error'>('idle');
+  const [playback, setPlayback] = useState<'playing' | 'paused' | 'ready' | 'idle' | 'error'>('idle');
   const [inspectedQuestion, setInspectedQuestion] = useState<string | null>(null);
   const questionKey = `${authored.context.id}:${authored.question.id}`;
   const inspecting = inspectedQuestion === questionKey;
@@ -51,8 +51,14 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     segment.current = kind;
     element.src = asset(src); element.currentTime = 0;
     setPlayback('playing');
-    void element.play().catch(() => {
-      if (request.current === token) { stop(); setPlayback('error'); }
+    void element.play().catch((error: unknown) => {
+      if (request.current === token) {
+        stop();
+        // A direct visit may have no user gesture yet. Keep replay available
+        // without treating the browser's autoplay policy as a broken recording.
+        const needsGesture = typeof error === 'object' && error !== null && 'name' in error && error.name === 'NotAllowedError';
+        setPlayback(needsGesture ? 'ready' : 'error');
+      }
     });
   }, [stop]);
   const play = useCallback(() => {
@@ -88,6 +94,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
         {playback === 'playing' ? 'Playing… · Replay' : 'Replay sentence and question'}
       </button>
       {playback === 'error' && <p className="error" role="alert">The sound couldn’t play. Replay the sentence and question to retry.</p>}
+      {playback === 'ready' && <p role="status">Ready to listen. Tap Replay to hear the sentence and question.</p>}
       {playback === 'paused' && <p role="status">Playback paused. Replay when you’re ready.</p>}
       {authored.context.review.audio !== 'approved' && <p className="contextual-review-state">Audio awaiting listening approval.</p>}
     </> : <div className="contextual-inspection"><p role="status">Text inspection · audio not available</p>
@@ -98,7 +105,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     {!preview && <div className="contextual-choices" aria-label={format === 'picture' ? 'Picture answers' : 'Written answers'}>
       {question.choices.map((choice, index) => <button type="button" key={choice.id}
         className={'contextual-choice ' + (format === 'picture' ? 'contextual-picture' : 'contextual-written')}
-        disabled={disabled || !!feedback || playback === 'error' || (!hasAudio && !inspecting)}
+        disabled={disabled || !!feedback || playback === 'error' || playback === 'ready' || (!hasAudio && !inspecting)}
         data-correct={feedback ? choice.id === correctId : undefined}
         data-selected={feedback ? choice.id === feedback.selectedId : undefined}
         aria-label={`Choose ${format === 'picture' ? 'picture' : 'writing'} ${index + 1}`}

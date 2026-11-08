@@ -102,6 +102,21 @@ describe('contextual listening and feedback', () => {
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
+  it('prompts for replay when autoplay needs a gesture and recovers without reporting broken audio', async () => {
+    vi.mocked(HTMLMediaElement.prototype.play).mockRejectedValueOnce(new DOMException('A user gesture is required.', 'NotAllowedError'));
+    const { container } = render(<Harness/>);
+    await act(async () => {});
+    expect(screen.getByRole('status')).toHaveTextContent('Ready to listen. Tap Replay');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    screen.getAllByRole('button', { name: /Choose writing/ }).forEach(button => expect(button).toBeDisabled());
+    await click(screen.getByRole('button', { name: 'Replay sentence and question' }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', '/audio/sentence.mp3');
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    screen.getAllByRole('button', { name: /Choose writing/ }).forEach(button => expect(button).toBeEnabled());
+  });
+
   it('cancels the gap on unmount and on hiding the page', async () => {
     const view = render(<Harness/>);
     fireEvent.ended(view.container.querySelector('audio')!);
