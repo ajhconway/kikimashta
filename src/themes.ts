@@ -11,6 +11,7 @@ export const themeColors = {
 export const quizFeedbackColors = {
   correct: '#e9b6ff',
   incorrect: '#b8a4cf',
+  partial: '#ffdb99',
 } as const;
 
 export const intensityColors: Record<DensityLevel, string> = {

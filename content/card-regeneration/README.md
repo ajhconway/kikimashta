@@ -2,13 +2,13 @@
 
 Work record: [GitHub issue #72](https://github.com/ajhconway/kikimashta/issues/72).
 
-All 445 reviewed entries retain their stable IDs. The 441 library concepts and four additional starter concepts are snapshotted from the original checkout, including effective review overrides. The snapshot records source hashes. The original app files are not present in this worktree.
+All 445 reviewed entries retain their stable IDs. The 441 library concepts and four additional starter concepts are snapshotted from the original checkout, including effective review overrides. The snapshot records source hashes. The app, content pipeline, and artwork work record now live together in this repository. As of November 8, batches 01–10 provide 168 active unique illustrations. Batch 11 is ready to generate; batches 12–22 remain blocked by the feedback workflow. Approval, activation, and practice eligibility are separate decisions.
 
 - [Prompt changes by finding](review-changes.md): all 48 findings, including context requirements and provisional gloss clarifications.
 - [Dependency graph](dependency-graph.md): shared visual language, reusable objects/characters and all card dependencies. `graph.json` stores the complete DAG.
 - `prompts.json`: complete revised prompts, original concepts, teaching restrictions and generation constraints. Grouped review findings are narrowed to each card's role before generation.
-- `semantic-exclusions.json`: staged answer-collision policy. This is separate from generation dependencies and still needs app integration before regenerated cards enter practice.
-- `batches.json`: 22 provisional batches; first six of ten, then up to25. Later batches remain blocked until previous feedback is applied and required references are ready.
+- `semantic-exclusions.json`: staged answer-collision policy. This is separate from generation dependencies. The owner explicitly deferred policy integration to [#79](https://github.com/ajhconway/kikimashta/issues/79) while activating approved artwork. Existing practice restrictions remain; artwork approval alone does not establish semantic fairness.
+- `batches.json`: 22 provisional batches; the first six contain ten cards, then usually up to 25. Batch 10 uses the approved 33-card numerical exception. Later batches remain blocked until previous feedback is applied and required references are ready.
 - [Batch 01 gallery](../../artifacts/card-regeneration/batch-01/review.html): ten independently generated images, full-resolution links, 145px previews and exact prompts.
 - [Batch 02 gallery](../../artifacts/card-regeneration/batch-02/review.html): approved cards 11–20.
 - [Batch 03 gallery](../../artifacts/card-regeneration/batch-03/review.html): approved cards 21–30.
@@ -36,7 +36,7 @@ python3 -m unittest discover -s scripts/cards -p 'test_*.py'
 python3 scripts/cards/validate.py
 ```
 
-The preparation script never generates images or calls the network. Existing app lint, type checks, tests and build are unavailable in this planning-only worktree.
+The preparation script never generates images or calls the network. App checks are available through `npm run check` and `npm run test:e2e` after building. `npm run test:cards` runs the Python card tests and validator as part of `npm run check` and required CI (#116). Preparation, gallery rendering, and image generation remain explicit manual actions. The semantic-policy deferral in #79 is unchanged.
 
 Batch 04 (31–40) is approved, including lavender half, rain without a puddle, sun rays and a reusable winter park scene. Card 38 establishes the cube design for X things. The graph records both design families. Batches05–07 have since been approved.
 

@@ -47,6 +47,7 @@ export interface ContextualAttemptDetails {
   sentenceSrc: string
   questionSrc: string
 }
+export type AnswerOutcome = 'success' | 'partial' | 'failure'
 
 /** Vocabulary stays shared; each exercise is learned independently. */
 export interface PracticeCard {
@@ -69,6 +70,10 @@ export interface PracticeAttempt {
   choiceIds: string[]
   selectedId: string
   correct: boolean
+  /** Missing on older attempts, whose grade remains based on correctness. */
+  outcome?: AnswerOutcome
+  /** Present only when a countdown actually started; replays never reset it. */
+  timer?: { limitMs: number; startedAt: number }
   startedAt: number
   answeredAt: number
   responseMs: number
