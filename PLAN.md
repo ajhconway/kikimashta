@@ -168,3 +168,7 @@ Select one or more of the eight approved voices in the card library, remembered 
 ## Voice accent labels (#149)
 
 Show accent/style descriptions beside each global practice voice and card audition button. Display the owner’s Tokyo (standard) label for Otani/Morioki, Kansai for Goro/Tsuki, Kyushu for Takeshi/Lime, and Anime (standard) for Ritsuto/Itsuki. Reuse the approved registry’s accent and anime-style metadata. Keep labels visible through playback and expose them as accessible descriptions. Voice identity and saved preferences stay unchanged.
+
+## Expanded Dev review (#152)
+
+Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed word timer policies. Contextual questions remain untimed. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Keep existing focused demo/inspection tools available. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.
