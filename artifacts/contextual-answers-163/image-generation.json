@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "issue": 163,
+  "tool": "built-in image_gen",
+  "transparentBackground": true,
+  "selected": "tea-v2.png",
+  "variants": [
+    {
+      "file": "tea-v1.png",
+      "prompt": "Use case: scientific-educational. Asset type: one square vocabulary answer-card illustration for Kikimashta, a beginner Japanese listening app. Primary subject: お茶 (tea), one short Japanese ceramic teacup with no handle, clearly filled with fresh green tea. View slightly from above so the green tea surface is unmistakable. Warm ivory ceramic cup, softly rounded silhouette, minimal simple shading, one or two gentle lavender steam curls. Match the established playful app illustration language: thick smooth deep-violet outlines, clean bold forms, soft cel shading, friendly proportions and high small-thumbnail readability. Center the whole cup, filling about 65–75 percent of the square with generous clear margins. This must look distinctly like green tea, not coffee, plain water, beer, matcha powder or a soup bowl. Genuinely transparent outer background with alpha; preserve opaque white/ivory ceramic details. No tabletop, saucer, teapot, leaves outside the cup, extra objects, mascot, face, hands, frame, words, labels, logos or watermark.",
+      "status": "superseded",
+      "reason": "Removed surrounding haze in v2."
+    },
+    {
+      "file": "tea-v2.png",
+      "prompt": "Edit target: the provided tea card illustration. Change only the background transparency outside the teacup and its TWO solid lavender steam curls: remove ALL surrounding purple/gray haze, glow, fog, soft clouds, diffuse steam and shadows. Outside the sharply defined cup/solid curls must be fully transparent alpha 0, clean crisp edges, no halo or vignette. Keep exactly the existing cup geometry, thick violet outlines, ivory opaque ceramic, green tea surface, small highlights and two solid lavender curls. Preserve the subject's opaque white/ivory details. No added objects, text or background. Genuinely transparent background.",
+      "reference": "tea-v1.png",
+      "status": "prepared-for-review"
+    }
+  ],
+  "delivery": {
+    "src": "public/images/contextual/tea-a3de617c4246.png",
+    "sha256": "a3de617c4246f8926abe479dd050f3fa2a37a873ef7f5ae96eda8a01b31f53a6",
+    "bytes": 775944
+  }
+}

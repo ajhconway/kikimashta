@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "language": "ja-JP",
+  "items": [
+    {
+      "id": "ja-contextual-tea",
+      "language": "ja-JP",
+      "text": "お茶",
+      "reading": "おちゃ",
+      "meaning": "tea",
+      "image": {
+        "src": "images/contextual/tea-a3de617c4246.png",
+        "source": "generated",
+        "alt": "A handleless ivory teacup filled with green tea."
+      },
+      "audio": []
+    }
+  ]
+}
