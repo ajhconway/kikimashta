@@ -36,7 +36,7 @@ export function auditionPlan({ voices = [], model = MODEL } = {}) {
 export function speechBody(plan, text) {
   return { text, model_id: plan.model, voice_settings: plan.voiceSettings,
     // Multilingual v2 detects language and does not support language_code.
-    ...(plan.model === 'eleven_multilingual_v2' ? {} : { language_code: 'ja' }),
+    ...(plan.model === 'eleven_multilingual_v2' ? {} : { language_code: plan.language === 'es-419' ? 'es' : 'ja' }),
   }
 }
 

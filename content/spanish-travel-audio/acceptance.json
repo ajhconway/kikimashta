@@ -1,0 +1,37 @@
+{
+  "issue": 159,
+  "ownerMessage": "Approved. Let's activate the pack.",
+  "language": "es-419",
+  "pack": "es-419-travel-1",
+  "status": "accepted-for-activation",
+  "audioReviewManifest": "artifacts/spanish-travel-audio-review/manifest.json",
+  "audioReviewSha256": "c874b1b6e334d4f17e9c15686912312bf8572fc5d9cc64f6741e92aa0f5d6a6a",
+  "artworkManifest": "artifacts/spanish-travel-art/manifest.json",
+  "artworkManifestSha256": "e74a7328e7d521e606407fc5b9bccfdc1125156f7e7e1c92192cebca82b0da73",
+  "recordings": 288,
+  "words": 36,
+  "voices": 8,
+  "targetLimitedAccepted": [
+    {
+      "id": "es-419-travel-car",
+      "voice": "santiago",
+      "sha256": "43118ac61f961ea67a7a3e897c66c76a022984e3dcd235a0f89490d77c23e26d"
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "voice": "santiago",
+      "sha256": "14b74a430808e393bced3d4d1ea9aff58964d81afa1ab37f01286577c8e1bdfa"
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "voice": "juan",
+      "sha256": "0d189a12afe98b387e28de9eb56bfbcbb6de5ede7a0e09d14da8ccaac8202d4a"
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "voice": "santiago",
+      "sha256": "1a6c87723bedc97612d305220f81137a9e067bdef6408d7caa8a276e1a65654f"
+    }
+  ],
+  "realIPhoneTesting": "Owner will test deployed version."
+}

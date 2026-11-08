@@ -130,7 +130,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         `context-${context.stage ?? 'contrastive'}-${format}` === card.exercise);
     const selected = candidates[Math.floor(random() * candidates.length)];
     if (!selected) throw new Error('No approved contextual question for this card.');
-    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random, initialVoiceIds())];
+    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random, initialVoiceIds(language.id))];
   }
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
@@ -275,7 +275,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   }, []);
   const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture', presentationPhase: 'lesson' | 'review' = 'lesson', texts: readonly string[] = [item.text]) => {
     if (exercise === 'audio-text' && language.writing === 'japanese') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
-    recording.current = selectRecording(item.audio, random, initialVoiceIds());
+    recording.current = selectRecording(item.audio, random, initialVoiceIds(item.language));
     active.current.replays = 0;
     play();
   }, [play, random, fontRotation, language]);
@@ -315,7 +315,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     setIsContextualDemo(false);
     if (accountLoading || recovery.snapshot().pendingId || recovery.snapshot().failed) return;
     try {
-      const demo = createDevReview(devEntries, devOptions, now(), random, initialVoiceIds(), languageContextualVocabulary);
+      const demo = createDevReview(devEntries, devOptions, now(), random, initialVoiceIds(language.id), languageContextualVocabulary);
       operation.current++;
       demoSchedules.current = demo.schedules; devTimerMode.current = devOptions.timerMode;
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
@@ -325,7 +325,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   }
   function startContextualDemo() {
     if (recovery.snapshot().pendingId || recovery.snapshot().failed) return;
-    const demo = createContextualDemoSession(languageContextualBanks, languageContextualVocabulary, now(), random, initialVoiceIds());
+    const demo = createContextualDemoSession(languageContextualBanks, languageContextualVocabulary, now(), random, initialVoiceIds(language.id));
     if (!demo.questions.length) return;
     operation.current++;
     demoSchedules.current = demo.schedules; devTimerMode.current = null; setDemoPresentation(null); setDemoSaving(false); setMasteryChange(null);
