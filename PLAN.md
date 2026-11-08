@@ -73,7 +73,7 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
-Unsaved Dev review samples untimed/10/5/3/1.5 seconds with equal probability for each presentation, including retries, regardless of mastery. Replays keep that question's selected limit and deadline. This lets the pilot feedback be tried without altering learning history.
+Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s word timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Contextual questions and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
 
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
@@ -87,7 +87,7 @@ Derive mastery independently for each language/item/exercise from the scheduled 
 
 Show both lowest and average mastery on packs; average means the floor of the mean level ordinal, including New cards, across approved practice cards in that pack. Keep picture and writing cards separate in the library and show their individual mastery. Show an up/down arrow and the new label after a saved answer changes level; retries and Dev review do not change mastery.
 
-Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review samples the available timer choices. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
+Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review offers mastery-based, random, or untimed word timers. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
 
 ## Mastery demo (#140)
 

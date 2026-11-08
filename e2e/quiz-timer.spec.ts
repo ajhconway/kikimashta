@@ -157,11 +157,14 @@ for (const [exercise, reducedMotion] of [
   });
 }
 
-test('Dev review offers a random timer without mastery and keeps partial success unsaved', async ({ page }) => {
+test('Dev review offers a random timer with simulated mastery and keeps partial success unsaved', async ({ page }) => {
   await page.addInitScript(() => { Math.random = () => .9; });
   await page.clock.install();
   await page.goto('./');
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await page.getByLabel('Questions', { exact: true }).selectOption('6');
+  await page.getByLabel('Timer behavior', { exact: true }).selectOption('random');
+  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
   await expect(page.getByText('1.5 second timer started.', { exact: true })).toBeAttached();
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   await page.clock.runFor(3000);
