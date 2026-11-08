@@ -78,7 +78,7 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
   if (!overrides || typeof overrides !== 'object' || Array.isArray(overrides)) throw new Error('Review overrides must be an object')
   for (const [id, override] of Object.entries(overrides)) {
     if (!override || typeof override !== 'object' || Array.isArray(override) ||
-        Object.keys(override).some(key => !['teachingNote', 'visualGroup'].includes(key) || !nonempty(override[key]))) {
+        Object.keys(override).some(key => !['teachingNote', 'visualGroup', 'removalReason'].includes(key) || !nonempty(override[key]))) {
       throw new Error(`Invalid review override: ${id}`)
     }
   }
@@ -126,7 +126,7 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
       ...(override.teachingNote ? { teachingNote: override.teachingNote } : {}),
       ...(visual.reviewNote ? { reviewNote: visual.reviewNote } : {}),
     }
-  })
+  }).filter(card => !overrides[card.id]?.removalReason)
   for (const id of Object.keys(overrides)) if (!ids.has(id)) throw new Error(`Unknown review override ID: ${id}`)
   if (!allowMissingAudio && missingAudio.length) throw new Error(`Missing ${missingAudio.length} audio files; first: ${missingAudio[0]}. Use --allow-missing-audio only for a preview.`)
   const data = { cards }

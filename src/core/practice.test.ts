@@ -56,6 +56,19 @@ describe('playable practice banks', () => {
     }
   });
 
+  it('retains removed source identity and media while excluding it from playable selections', () => {
+    const removedId = 'ja-v-4fd3d09440c1';
+    const archived = items.find(item => item.id === removedId);
+    expect(archived).toMatchObject({ text: '～形', reading: 'けい', meaning: 'Form' });
+    for (const clip of archived!.audio) expect(existsSync(resolve('public', clip.src))).toBe(true);
+    expect(library.cards.some(card => card.id === removedId)).toBe(false);
+    expect(practicePool.items.some(item => item.id === removedId)).toBe(false);
+    expect(practiceBanks.flatMap(bank => bank.items).some(item => item.id === removedId)).toBe(false);
+    const removedSelection = structuredClone(selections);
+    removedSelection[0]!.itemIds[0] = removedId;
+    expect(() => buildPracticeBanks(items, removedSelection)).toThrow(/removed vocabulary item/i);
+  });
+
   it('rejects unknown, duplicated and incomplete set memberships', () => {
     const unknown = structuredClone(selections);
     unknown[0]!.itemIds[0] = 'missing';

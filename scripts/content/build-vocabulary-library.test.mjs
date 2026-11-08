@@ -164,3 +164,25 @@ test('optional teaching overrides refine picture groups and flag context review 
   put('content/catalog/review-overrides.json', { [item.id]: { teachingNote: '' } })
   assert.throws(() => buildLibrary({ root }), /Invalid review override/)
 })
+
+test('owner removals survive repeated library rebuilds without changing retained source entries or media', t => {
+  const { root, put, item, visual, save, readData } = fixture(t)
+  const removed = { ...item, id: 'ja-removed', text: '～形', reading: 'けい', meaning: 'Form' }
+  save([item, removed], [visual, { ...visual, id: removed.id }])
+  buildLibrary({ root })
+  const retained = readData().cards[0]
+  const source = readFileSync(join(root, 'content/catalog/ja.json'))
+  put('content/catalog/review-overrides.json', { [removed.id]: { removalReason: 'Owner removed this vocabulary entry.' } })
+  for (let rebuild = 0; rebuild < 2; rebuild++) {
+    assert.deepEqual(buildLibrary({ root }), { cards: 1, availableAudio: 2, missingAudio: 0 })
+    assert.deepEqual(readData().cards, [retained])
+    assert.deepEqual(readFileSync(join(root, 'content/catalog/ja.json')), source)
+    assert.ok(existsSync(join(root, 'public', removed.image.src)))
+    for (const clip of removed.audio) assert.ok(existsSync(join(root, 'public', clip.src)))
+  }
+  for (const removalReason of ['', true, null]) {
+    put('content/catalog/review-overrides.json', { [removed.id]: { removalReason } })
+    assert.throws(() => buildLibrary({ root }), /Invalid review override/)
+    assert.deepEqual(readData().cards, [retained])
+  }
+})
