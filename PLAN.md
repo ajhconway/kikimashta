@@ -185,3 +185,7 @@ The Japanese-details control matches the shared badge height, and the feedback a
 ## Expanded Dev review (#152)
 
 Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed word timer policies. Contextual questions remain untimed. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Use Dev review as the single Home entry point; remove the separate Mastery demo and Contextual dev review Home buttons. Preserve the existing contextual inspection URL for authored-content audits. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.
+
+## Contextual transcript styling (#160)
+
+Match the Japanese/English details popup to the app’s rounded cards and purple/pink controls. Enlarge the close icon and touch target, and increase both Japanese and English type. Keep translation space reserved before disclosure, support scrolling on short screens, and retain Escape dismissal and focus return. Verify phone/desktop presentation and the existing contextual browser journeys before review.
