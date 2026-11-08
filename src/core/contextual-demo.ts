@@ -21,7 +21,7 @@ function paired(recording: ContextualRecording, questionId: string): boolean {
 
 /** Four approved samples for the ordinary quiz path; no history or unlock state. (#145) */
 export function createContextualDemo(
-  banks: readonly ContextualBank[], vocabulary: readonly WordItem[], random: () => number,
+  banks: readonly ContextualBank[], vocabulary: readonly WordItem[], random: () => number, voiceIds?: readonly string[],
 ): Question[] {
   const byId = new Map(vocabulary.map(item => [item.id, item]));
   return samples.flatMap(({ stage, format, kind }) => {
@@ -34,6 +34,6 @@ export function createContextualDemo(
       .filter(({ context }) => context.recordings.length > 0));
     if (!candidates.length) return [];
     const { context, question } = candidates[Math.floor(random() * candidates.length)]!;
-    return [contextualQuestion(context, question, format, vocabulary, random)];
+    return [contextualQuestion(context, question, format, vocabulary, random, voiceIds)];
   });
 }

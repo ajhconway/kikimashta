@@ -38,6 +38,12 @@ function frozen<T>(value: T): T {
 }
 
 describe('contextual practice demo samples', () => {
+  it.each([['morioki', 'morioki'], ['unavailable', 'otani']])('respects preferred voice %s with the ordinary availability fallback', (preferred, expected) => {
+    const questions = createContextualDemo([bank()], vocabulary, () => 0, [preferred]);
+    expect(questions).toHaveLength(4);
+    expect(questions.every(question => question.contextual?.recording?.voice === expected)).toBe(true);
+  });
+
   it('offers one bounded tour through both stages, formats and question kinds with authored answers', () => {
     const questions = createContextualDemo([bank()], vocabulary, () => 0);
     expect(questions.map(question => question.exercise)).toEqual([

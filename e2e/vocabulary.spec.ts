@@ -18,10 +18,19 @@ test('browse picture packs, search cards, and retry a voice recording', async ({
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   const voices = page.getByRole('group', { name: 'Japanese voices for Dog', exact: true });
   await expect(voices.getByRole('button')).toHaveCount(8);
-  for (const voice of voiceNames) await expect(voices.getByRole('button', { name: `${voice}: Dog`, exact: true })).toBeEnabled();
+  for (const voice of voiceNames) {
+    const accent = ['Goro', 'Tsuki'].includes(voice) ? 'Kansai' : ['Takeshi', 'Lime'].includes(voice) ? 'Kyushu' : ['Ritsuto', 'Itsuki'].includes(voice) ? 'Anime (standard)' : 'Tokyo (standard)';
+    const button = voices.getByRole('button', { name: `${voice}: Dog`, exact: true });
+    await expect(button).toBeEnabled();
+    await expect(button.locator('.voice-accent')).toHaveText(accent);
+    await expect(button).toHaveAccessibleDescription(accent);
+    await expect(page.getByRole('checkbox', { name: voice, exact: true })).toHaveAccessibleDescription(accent);
+  }
   await voices.getByRole('button', { name: 'Otani: Dog', exact: true }).click();
   await expect(page.locator('#audio-status')).toContainText('Otani');
+  await expect(voices.getByRole('button', { name: 'Stop Otani: Dog', exact: true }).locator('.voice-accent')).toHaveText('Tokyo (standard)');
   await voices.getByRole('button', { name: 'Stop Otani: Dog', exact: true }).click();
+  await expect(voices.getByRole('button', { name: 'Otani: Dog', exact: true }).locator('.voice-accent')).toHaveText('Tokyo (standard)');
   const retryRecording = catalog.items.find(item => item.id === 'ja-dog')?.audio.find(clip => clip.voice === 'morioki');
   expect(retryRecording, 'Dog has a Morioki recording to retry').toBeDefined();
   const retryRoute = `**/${retryRecording!.src}`;
@@ -29,6 +38,7 @@ test('browse picture packs, search cards, and retry a voice recording', async ({
   await voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeVisible();
   await expect(page.locator('#audio-error')).toContainText('Morioki');
+  await expect(voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).locator('.voice-accent')).toHaveText('Tokyo (standard)');
   await page.unroute(retryRoute);
   await voices.getByRole('button', { name: 'Morioki: Dog', exact: true }).click();
   await expect(page.locator('#audio-error')).toBeHidden();
@@ -194,4 +204,25 @@ test('browse the Spanish travel pack, listen, retry audio and retain Spanish not
   expect(feedback.language).toBe('es-419');
   expect(feedback.notes[0]).toMatchObject({ itemId: 'es-419-travel-coffee', feedback: 'Check the café pronunciation.' });
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('select practice packs in the library and keep them after returning home and reloading', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('link', { name: 'Card library · 10 packs selected' }).click();
+  await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox')).toHaveCount(10);
+  for (const checkbox of await page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox').all()) await checkbox.uncheck();
+  await page.getByRole('link', { name: '← Listening practice' }).click();
+  await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
+  await page.getByRole('link', { name: 'Card library · 0 packs selected' }).click();
+  await page.getByRole('checkbox', { name: 'WaniKani level 2 · Writing' }).check();
+  await page.getByLabel('Card pack').selectOption('ja-wanikani-1-pictures');
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'WaniKani level 2 · Writing' })).toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' })).not.toBeChecked();
+  await page.goBack();
+  await expect(page.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  await page.getByRole('button', { name: /^start/i }).click();
+  await page.getByRole('button', { name: 'Begin lesson' }).click();
+  await expect(page.locator('.preview')).toHaveAttribute('data-exercise', 'audio-text');
 });

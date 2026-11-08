@@ -157,6 +157,17 @@ All forty contexts and eighty questions now have Otani/Morioki audio: 240 normal
 
 Cover questions whose answer differs from their target; sentence/question ordering, replay and cancellation; failure in either audio segment; feedback text staying readable until Continue; stable corrective retries; interval boundaries below, exactly at and above seven days; qualifying scheduled-review unlocks and retained access after later misses; target/language/format/stage isolation; selected scope and workload; independent contextual schedules; legacy history and real browser persistence. Validate the authored bank and each supported answer format, including clear picture semantics. Run the configured lint, types, focused tests, production build and appropriate Chromium/WebKit journeys. Browser emulation supplements real-iPhone acceptance.
 
+## Pack selection in the library (#146)
+
+Choose practice packs in the card library alongside pack mastery summaries. Keep browsing filters independent of practice selection and preserve the existing device preference. Home links to the library with the selected count; empty selection disables practice. Verify saved selection, browser return/reload, format scoping, and storage failure feedback.
+
+## Global practice voices (#148)
+
+Select one or more of the eight approved voices in the card library, remembered on this device. All voices are enabled by default. Each new presentation randomly selects among preferred recordings; replays keep their recording. If no preferred voice exists for a card, use its available recordings. Keep library auditions independent, reject empty selections, report storage failures, and verify reload/return, both formats, demos, and saved recording identity.
+
+## Voice accent labels (#149)
+
+Show accent/style descriptions beside each global practice voice and card audition button. Display the owner’s Tokyo (standard) label for Otani/Morioki, Kansai for Goro/Tsuki, Kyushu for Takeshi/Lime, and Anime (standard) for Ritsuto/Itsuki. Reuse the approved registry’s accent and anime-style metadata. Keep labels visible through playback and expose them as accessible descriptions. Voice identity and saved preferences stay unchanged.
 
 ## Contextual practice evaluation (#145)
 

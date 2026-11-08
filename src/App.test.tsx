@@ -10,6 +10,7 @@ const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
 import { forecastDensity, planLessonChunk } from './core/density';
 import { advanceSchedule, schedulerVersion } from './core/scheduler';
+import { voicePreferenceKey } from './core/voices';
 import { quizTimeLimit } from './core/quiz-timer';
 import type { Exercise, PracticeAttempt } from './types';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
@@ -579,21 +580,17 @@ describe('practice pack selection', () => {
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
   });
 
-  it('disables practice for an empty selection and saves a newly enabled pack', async () => {
+  it('directs an empty selection to the library and refreshes packs on browser return', async () => {
     localStorage.setItem(packPreferenceKey, '[]');
-    const history = deferred<PracticeAttempt[]>();
-    vi.mocked(ProgressStore.prototype.history).mockReturnValueOnce(history.promise);
     render(<App now={fixedNow}/>);
-    await screen.findByText('Select a pack to start practicing.');
-    expect(screen.getByRole('button', { name: /getting ready/i })).toBeDisabled();
-    await act(async () => { history.resolve([]); });
-    expect(await screen.findByRole('button', { name: /^start/i })).toBeDisabled();
-    await click(screen.getByText('Card packs · 0 selected'));
-    const checkbox = screen.getByRole('checkbox', { name: 'WaniKani level 1 · Pictures' });
-    await waitFor(() => expect(checkbox).toBeEnabled());
-    await click(checkbox);
+    await screen.findByText('Select a pack in the card library to start practicing.');
+    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    expect(screen.getByRole('link', { name: 'Card library · 0 packs selected' })).toHaveAttribute('href', '/vocabulary/');
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-1-pictures']));
+    fireEvent(window, new Event('pageshow'));
     await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
-    expect(JSON.parse(localStorage.getItem(packPreferenceKey)!)).toEqual(['ja-wanikani-1-pictures']);
+    expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeInTheDocument();
   });
 });
 
@@ -753,7 +750,7 @@ describe('interval mastery feedback', () => {
     expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Learning/);
   });
 
-  it('refreshes pack mastery when an answer finishes saving after returning Home', async () => {
+  it('refreshes practice when an answer finishes saving after returning Home', async () => {
     const pack = cardPacks.find(pack => pack.id === 'ja-wanikani-1-pictures')!;
     const cards = selectedPracticeCards(practicePool.items, [pack.id]);
     const old = legacy(1)[0]!;
@@ -773,13 +770,10 @@ describe('interval mastery feedback', () => {
     vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
     await click(heardChoice(container));
     await click(screen.getByRole('button', { name: 'Kikimashta home' }));
-    await click(screen.getByText(/Card packs ·/));
-    const packLabel = screen.getByRole('checkbox', { name: pack.title }).closest('label')!;
-    // Let Home finish its first history read while the answer is still unwritten.
-    await waitFor(() => expect(within(packLabel).getByText('Lowest: New · Average: New')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(`${cards.length} answers saved on this device`)).toBeInTheDocument());
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     await act(async () => pending.resolve());
-    await waitFor(() => expect(within(packLabel).getByText('Lowest: Learning · Average: Learning')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText(`${cards.length + 1} answers saved on this device`)).toBeInTheDocument());
     expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
   });
 
@@ -877,5 +871,24 @@ describe('learning language switching', () => {
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeDisabled();
     await click(screen.getByRole('button', { name: 'Continue without saving' }));
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toBeEnabled();
+  });
+});
+
+describe('global practice voice selection (#148)', () => {
+  it.each(['lesson', 'review', 'Dev review', 'Mastery demo'])('uses preferred voices in %s and preserves them on replay', async mode => {
+    localStorage.setItem(voicePreferenceKey, JSON.stringify(['lime']));
+    if (mode === 'review') records = legacy(1);
+    const { container } = render(<App now={fixedNow} random={() => 0}/>);
+    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
+    if (mode === 'lesson' || mode === 'review') {
+      await start();
+      await click(screen.getByRole('button', { name: mode === 'lesson' ? 'Begin lesson' : /begin review/i }));
+    } else await click(screen.getByRole('button', { name: mode }));
+    const source = container.querySelector('audio')!.getAttribute('src');
+    expect(source).toContain('/lime/');
+    // Changing the preference never changes an already-presented question on replay.
+    localStorage.setItem(voicePreferenceKey, JSON.stringify(['otani']));
+    await click(screen.getByRole('button', { name: 'Replay word' }));
+    expect(container.querySelector('audio')).toHaveAttribute('src', source);
   });
 });

@@ -14,12 +14,13 @@ import { ContextualDevReview } from './components/ContextualDevReview';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { createContextualDemo } from './core/contextual-demo';
 import { createMasteryDemo } from './core/mastery-demo';
-import { cardMastery, masteryIndex, packMastery } from './core/mastery';
+import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, densityTargets, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { initialVoiceIds } from './core/voices';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { AnswerRecovery } from './progress/recovery';
@@ -128,12 +129,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         `context-${context.stage ?? 'contrastive'}-${format}` === card.exercise);
     const selected = candidates[Math.floor(random() * candidates.length)];
     if (!selected) throw new Error('No approved contextual question for this card.');
-    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random)];
-  }
-  function togglePack(id: string) {
-    const next = packIds.includes(id) ? packIds.filter(value => value !== id) : [...packIds, id];
-    setLoading(true); setPackIds(next);
-    try { localStorage.setItem(packPreferenceKey, JSON.stringify(next)); } catch { /* Practice still works without preference storage. */ }
+    return [contextualQuestion(selected.context, selected.question, format, languageContextualVocabulary, random, initialVoiceIds())];
   }
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
@@ -159,7 +155,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [quizSize, setQuizSize] = useState(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<PracticeAttempt[]>([]);
-  const [packSchedules, setPackSchedules] = useState(new Map<string, ScheduledWord>());
   const [masteryChange, setMasteryChange] = useState<{ id: string; label: string; direction: 'up' | 'down' } | null>(null);
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
   const [departures, setDepartures] = useState<DepartingCard[]>([]);
@@ -196,6 +191,24 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const background = response ? quizFeedbackColors[response] : screen === 'home' && density !== null ? intensityColors[densityLevel(density)] : themeColors[theme];
   const invalidate = useCallback(() => { operation.current++; }, []);
 
+  useEffect(() => {
+    const refreshPacks = () => {
+      if (screen !== 'home') return;
+      const next = initialPackIds(cardPacks, packPreferenceKey);
+      if (packIds.join() !== next.join()) {
+        setLoading(true);
+        setPackIds(next);
+      }
+    };
+    refreshPacks();
+    window.addEventListener('pageshow', refreshPacks);
+    window.addEventListener('storage', refreshPacks);
+    return () => {
+      window.removeEventListener('pageshow', refreshPacks);
+      window.removeEventListener('storage', refreshPacks);
+    };
+  }, [packIds, screen, cardPacks, packPreferenceKey]);
+
   useLayoutEffect(() => {
     const root = document.documentElement;
     const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
@@ -217,14 +230,13 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules, allSchedules, cards } = await learningSnapshot(attempts);
+        const { schedules, cards } = await learningSnapshot(attempts);
         const forecast = await forecastDensity(schedules, now());
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         const learned = new Set(schedules.map(cardKey));
         setContextualAdmission({ ready: cards.filter(card => isContextualExercise(card.exercise) && !learned.has(cardKey(card))).length,
           atCapacity: forecast.reviewsPerDay >= densityTargets(range.min, range.max).maximum });
-        setPackSchedules(new Map(allSchedules.map(word => [cardKey(word), word])));
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
       } catch {
@@ -257,7 +269,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   }, []);
   const present = useCallback((item: WordItem, exercise: Exercise = 'audio-picture', presentationPhase: 'lesson' | 'review' = 'lesson', texts: readonly string[] = [item.text]) => {
     if (exercise === 'audio-text' && language.writing === 'japanese') setWritingFont(availableWritingFont(fontRotation(item, random, presentationPhase), texts));
-    recording.current = selectRecording(item.audio, random);
+    recording.current = selectRecording(item.audio, random, initialVoiceIds());
     active.current.replays = 0;
     play();
   }, [play, random, fontRotation, language]);
@@ -308,7 +320,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   }
   function startContextualDemo() {
     if (recovery.snapshot().pendingId || recovery.snapshot().failed) return;
-    const block = createContextualDemo(languageContextualBanks, languageContextualVocabulary, random);
+    const block = createContextualDemo(languageContextualBanks, languageContextualVocabulary, random, initialVoiceIds());
     if (!block.length) return;
     operation.current++;
     demoSchedules.current = null; setDemoPresentation(null); setDemoSaving(false); setMasteryChange(null);
@@ -510,17 +522,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         {!loading && !historyError && contextualAdmission.ready > 0 && <p className="block-note">{contextualAdmission.ready} contextual {contextualAdmission.ready === 1 ? 'card is' : 'cards are'} ready for lessons. {contextualAdmission.atCapacity ? 'New lessons are waiting for your review workload to ease.' : 'They enter lessons when your review workload allows.'}</p>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
-        {cardPacks.length > 0 && <details className="pack-picker">
-          <summary>Card packs · {packIds.length} selected</summary>
-          <fieldset disabled={loading || accountLoading || pendingSaveCount > 0 || saveError}><legend>Practice packs</legend>
-            {cardPacks.map(pack => {
-              const levels = packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), packSchedules);
-              return <label key={pack.id}><input type="checkbox" aria-label={pack.title} aria-describedby={`mastery-${pack.id}`} checked={packIds.includes(pack.id)} onChange={() => togglePack(pack.id)}/><span>{pack.title}<small id={`mastery-${pack.id}`} className="pack-mastery">{loading || accountLoading ? 'Mastery loading…' : historyError ? 'Mastery unavailable' : `Lowest: ${levels.lowest.label} · Average: ${levels.average.label}`}</small></span></label>;
-            })}
-          </fieldset>
-          <p>Choose the pictures and writing you want to practice. Lessons use cards ready for practice.</p>
-        </details>}
-        {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack to start practicing.'}</p>}
+        {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
+        {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
         {accountControls}
       </section>}
       {screen === 'contextual-demo-ready' && <section className="summary ready fade-in">
@@ -597,6 +600,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         </>}
         <button className="text-button" onClick={home}>Finish</button>
       </section>}
-    </main><footer>{screen === 'home' && language.libraryPath && <a href={asset(language.libraryPath)}>Card library ↗</a>}<a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
+    </main><footer><a href={asset('credits.html')}>Code &amp; credits ↗</a></footer>
   </div>;
 }
