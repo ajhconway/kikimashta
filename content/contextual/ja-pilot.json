@@ -569,18 +569,16 @@
           "revision": 1,
           "kind": "target",
           "prompt": {
-            "text": "本は机のどこにありますか。",
-            "reading": "ほんはつくえのどこにありますか。",
-            "meaning": "Where is the book in relation to the desk?",
+            "text": "本はどこにありますか。",
+            "reading": "ほんはどこにありますか。",
+            "meaning": "Where is the book?",
             "grammarTags": [
-              "noun-no",
               "questions",
               "question-words",
               "location-existence"
             ],
             "supportingVocabularyIds": [
               "sup-book",
-              "sup-desk",
               "sup-where"
             ]
           },
@@ -757,18 +755,16 @@
           "revision": 1,
           "kind": "target",
           "prompt": {
-            "text": "ノートは棚のどこにありますか。",
-            "reading": "ノートはたなのどこにありますか。",
-            "meaning": "Where is the notebook in relation to the shelf?",
+            "text": "ノートはどこにありますか。",
+            "reading": "ノートはどこにありますか。",
+            "meaning": "Where is the notebook?",
             "grammarTags": [
-              "noun-no",
               "questions",
               "question-words",
               "location-existence"
             ],
             "supportingVocabularyIds": [
               "sup-notebook",
-              "sup-shelf",
               "sup-where"
             ]
           },
@@ -947,11 +943,10 @@
           "revision": 1,
           "kind": "target",
           "prompt": {
-            "text": "車は橋のどこに止まっていますか。",
-            "reading": "くるまははしのどこにとまっていますか。",
-            "meaning": "Where is the car parked in relation to the bridge?",
+            "text": "車はどこに止まっていますか。",
+            "reading": "くるまはどこにとまっていますか。",
+            "meaning": "Where is the car parked?",
             "grammarTags": [
-              "noun-no",
               "questions",
               "question-words",
               "location-existence",
@@ -959,7 +954,6 @@
             ],
             "supportingVocabularyIds": [
               "sup-car",
-              "sup-bridge",
               "sup-stop",
               "sup-where"
             ]
@@ -1133,18 +1127,16 @@
           "revision": 1,
           "kind": "target",
           "prompt": {
-            "text": "ノートは椅子のどこにありますか。",
-            "reading": "ノートはいすのどこにありますか。",
-            "meaning": "Where is the notebook in relation to the chair?",
+            "text": "ノートはどこにありますか。",
+            "reading": "ノートはどこにありますか。",
+            "meaning": "Where is the notebook?",
             "grammarTags": [
-              "noun-no",
               "questions",
               "question-words",
               "location-existence"
             ],
             "supportingVocabularyIds": [
               "sup-notebook",
-              "sup-chair",
               "sup-where"
             ]
           },
@@ -2166,8 +2158,8 @@
         "reading": "ほん"
       },
       "sentence": {
-        "text": "先生は図書館で本を読んで、学生は教室でノートを書いています。",
-        "reading": "せんせいはとしょかんでほんをよんで、がくせいはきょうしつでノートをかいています。",
+        "text": "先生は図書館で本を読んでいて、学生は教室でノートに書いています。",
+        "reading": "せんせいはとしょかんでほんをよんでいて、がくせいはきょうしつでノートにかいています。",
         "meaning": "The teacher is reading a book in the library, and the student is writing in a notebook in the classroom.",
         "grammarTags": [
           "particles",
@@ -2316,7 +2308,7 @@
         "text": "pending",
         "audio": "not-generated"
       },
-      "reviewNotes": "Both questions are written because a clear picture is not available for every reading-material/person option. The two activities, objects and roles are deliberately contrasted. The relative-clause question is within later Genki I."
+      "reviewNotes": "Both questions are written because a clear picture is not available for every reading-material/person option. The two activities, objects and roles are deliberately contrasted. The relative-clause question is within later Genki I. 読んでいて explicitly carries the ongoing action into the joined clause. ノートに marks the notebook as the writing destination; its に is covered by the particles tag."
     },
     {
       "id": "ja-ctx-mizu-01",
@@ -3641,12 +3633,12 @@
       "revision": 1,
       "targetItemId": "ja-v-97526e11c703",
       "targetOccurrence": {
-        "surface": "走って",
-        "reading": "はしって"
+        "surface": "走っていて",
+        "reading": "はしっていて"
       },
       "sentence": {
-        "text": "先生は公園で走って、学生は教室で勉強しています。",
-        "reading": "せんせいはこうえんではしって、がくせいはきょうしつでべんきょうしています。",
+        "text": "先生は公園で走っていて、学生は教室で勉強しています。",
+        "reading": "せんせいはこうえんではしっていて、がくせいはきょうしつでべんきょうしています。",
         "meaning": "The teacher is running in the park, and the student is studying in the classroom.",
         "grammarTags": [
           "particles",
@@ -3795,7 +3787,7 @@
         "text": "pending",
         "audio": "not-generated"
       },
-      "reviewNotes": "The target occurrence is 走って, an inflection of catalogue 走る. Action choices keep the same progressive form and stay written because matching clear pictures do not exist for every action. The relative-clause question is within later Genki I."
+      "reviewNotes": "The target occurrence is 走っていて, an inflection of catalogue 走る. Action choices keep the same progressive form and stay written because matching clear pictures do not exist for every action. The relative-clause question is within later Genki I. 走っていて explicitly carries the ongoing action into the joined clause."
     },
     {
       "id": "ja-ctx-hashiru-02",
