@@ -1,0 +1,24 @@
+[
+  {
+    "browser": "chromium",
+    "mobileEmulation": false,
+    "clipsDecodedAndPlaybackStarted": 288,
+    "verification": "One reused native audio player for all source files; gallery controls also exercised.",
+    "filters": "word/region/voice passed",
+    "sequence": "start/stop passed",
+    "noHorizontalOverflow": true,
+    "durationMin": 0.56,
+    "durationMax": 1.6
+  },
+  {
+    "browser": "webkit",
+    "mobileEmulation": true,
+    "clipsDecodedAndPlaybackStarted": 288,
+    "verification": "One reused native audio player for all source files; gallery controls also exercised.",
+    "filters": "word/region/voice passed",
+    "sequence": "start/stop passed",
+    "noHorizontalOverflow": true,
+    "durationMin": 0.6008163265306122,
+    "durationMax": 1.6457142857142857
+  }
+]

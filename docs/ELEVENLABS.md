@@ -128,3 +128,28 @@ The completed originals and normalized batch also have a durable private copy un
 Compare samples at the same volume. Listen for pronunciation, pitch accent, unwanted extra sounds, clipped endings, and natural sentence rhythm. Check the samples on the real iPhone before approving voices. Browser playback checks supplement that listening review.
 
 Voice and profile approval does not establish that every newly generated word has the right pitch accent or regional realization. Use the card library to review the complete set on the real iPhone before release. Hosted ElevenLabs generation can follow later; existing OpenAI workflows remain OpenAI-only, so use the local card command for this migration. The audition command itself never replaces production audio.
+
+
+## Spanish travel pack (#155)
+
+The selected eight-voice registry is `content/es-419-voices.json`. Exact text/voice approval in `content/spanish-travel-audio/approval.json` binds the 36-word list from #150 to all four regional pairs. The requested matrix is 288 recordings / 1,824 Unicode input characters. Cesar and the two Mexico City alternatives are excluded. Regional labels follow the creators' catalogue descriptions; pronunciation acceptance remains a listening task.
+
+```sh
+npm run audio:spanish:elevenlabs -- --dry-run
+npm run audio:spanish:elevenlabs -- --output artifacts/generated-originals/spanish-travel-155-v1
+python3 scripts/content/normalize-elevenlabs.py --input artifacts/generated-originals/spanish-travel-155-v1 --output artifacts/generated-originals/spanish-travel-155-v1-normalized
+npm run audio:spanish:review -- --input artifacts/generated-originals/spanish-travel-155-v1 --delivery artifacts/generated-originals/spanish-travel-155-v1-normalized --output artifacts/spanish-travel-audio-review
+```
+
+Generation reuses the sidecar/hash-verified engine with two concurrent requests, no automatic paid retries, an approximate 2,200-credit guard and periodic account checks. It enforces `language_code: es`; Japanese generation retains `ja`. An unresolved request blocks resume until provider history is inspected. Do not rerun a completed batch into a fresh directory. The review builder refuses an existing output directory and preflights the complete matrix, exact request/source-record identity, full normalization profile and source/delivery hashes before writing files.
+
+All 288 originals and normalized deliveries are complete. The existing profile fully decodes each delivery and preserves its duration. Four deliveries remain safely quieter and are listed in `content/spanish-travel-audio/generated-media.json`. A durable private copy of originals, sidecars, complete processing records and usage evidence is preserved under `~/.local/share/kikimashta/spanish-audio/155-v1`; every archived file was hash-verified. The checked-in review contains normalized MP3s and public provenance only. No key, account usage files or provider originals enter the review or browser code.
+
+Serve `artifacts/spanish-travel-audio-review/` locally and open `index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. Final listening acceptance precedes expanded-pack activation; this preparation does not change the active starter bank or delete historical Cesar audio.
+
+
+### Accepted Spanish pack activation (#159)
+
+The owner accepted the complete 288-recording review and requested release. Run `npm run content:spanish:activate` to reproduce staging from the exact accepted review/artwork manifests. `content/spanish-travel-audio/acceptance.json` binds owner approval to both manifest hashes; the activation journal records every copied production file hash. No live API or private original archive is needed for this local staging step. It validates all source bytes and target paths before copying.
+
+The active 36-word bank uses `audio/es-419-travel-v2/`, with all eight selected voices and their region labels. Historical v1 recordings and starter provenance remain preserved for old attempts. The Spanish picture-pack ID and four retained starter IDs are stable; entrance/exit are retired from selection. Voice choices are language-scoped. Actual iPhone listening/interaction testing remains the owner's post-deployment step.

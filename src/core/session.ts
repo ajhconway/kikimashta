@@ -22,6 +22,10 @@ export function validateBank(bank: WordBank): void {
       if (path.startsWith('/') || path.includes('..') || /^[a-z]+:/i.test(path)) throw new Error('Media paths must be relative to the app.');
     }
   }
+  for (const item of bank.items) {
+    if (item.pictureDistractorExclusions !== undefined && (!Array.isArray(item.pictureDistractorExclusions) ||
+        item.pictureDistractorExclusions.some(id => typeof id !== 'string' || id === item.id || !ids.has(id)))) throw new Error('Invalid picture distractor exclusion: ' + item.id);
+  }
 }
 
 export function shuffled<T>(values: readonly T[], random: () => number): T[] {
@@ -45,6 +49,7 @@ function questionFor({ item: target, exercise }: PracticeCard, pool: WordItem[],
   const visible = (item: WordItem) => exercise === 'audio-picture' ? item.image.src : normalized(item.text);
   const seen = new Set([visible(target)]);
   const candidates = shuffled(pool.filter(item => item.id !== target.id && item.language === target.language), random).filter(item => {
+    if (exercise === 'audio-picture' && (target.pictureDistractorExclusions?.includes(item.id) || item.pictureDistractorExclusions?.includes(target.id))) return false;
     if (seen.has(visible(item)) || normalized(item.reading ?? item.text) === normalized(target.reading ?? target.text)) return false;
     seen.add(visible(item));
     return true;
