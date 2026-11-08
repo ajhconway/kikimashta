@@ -15,7 +15,9 @@ describe('contextual runtime content', () => {
     for (const target of targets) for (const stage of ['simple', 'contrastive']) {
       expect(contexts.filter(context => context.targetItemId === target && (context.stage ?? 'contrastive') === stage)).toHaveLength(2);
     }
-    expect(contexts.filter(context => context.review.text === 'pending')).toHaveLength(17);
+    expect(contexts.filter(context => context.review.text === 'pending')).toHaveLength(0);
+    expect(contexts.filter(context => context.review.audio === 'pending')).toHaveLength(34);
+    expect(contexts.filter(context => context.recordings.length === 2)).toHaveLength(40);
     expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'text'))).toHaveLength(12);
     expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'picture'))).toHaveLength(6);
     const cards = readyContextualCards(contextualBanks, contextualVocabulary);
@@ -30,5 +32,18 @@ describe('contextual runtime content', () => {
     const changed = structuredClone(contextualBanks);
     changed[0]!.contexts[0]!.questions[0]!.revision++;
     expect(() => withAcceptedMedia(changed)).toThrow(/differs/);
+  });
+
+  it('preserves explicit text or audio rejection despite an older acceptance manifest', () => {
+    for (const rejected of ['text', 'audio'] as const) {
+      const banks = structuredClone(contextualBanks);
+      const context = banks[0]!.contexts[0]!;
+      context.review = { text: 'approved', audio: 'pending', [rejected]: 'rejected' };
+      context.recordings = [];
+      const result = withAcceptedMedia(banks);
+      expect(result[0]!.contexts[0]!.review[rejected]).toBe('rejected');
+      expect(result[0]!.contexts[0]!.recordings).toEqual([]);
+      expect(approvedContextualQuestions(result[0]!, 'text').some(entry => entry.context.id === context.id)).toBe(false);
+    }
   });
 });

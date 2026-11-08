@@ -135,6 +135,7 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
   const session = useRef({ id: '', reserved: new Set<string>(), cards: [] as PracticeCard[] });
+  const lessonQuestions = useRef(new Map<string, Question>());
   const history = useRef<PracticeAttempt[]>([]);
   const operation = useRef(0);
   const preparing = useRef(false);
@@ -281,18 +282,20 @@ export default function App({ now = wallClock, random = Math.random, progressSto
   function beginLesson() {
     if (!lessonItems.length || loading || historyError) return;
     lessonItems.forEach(card => session.current.reserved.add(cardKey(card)));
+    lessonQuestions.current = new Map(lessonItems.filter(card => isContextualExercise(card.exercise))
+      .map(card => [cardKey(card), questionForCard(card)[0]!]));
     setPhase('lesson'); setPreview(0); setScreen('preview'); presentLesson(lessonItems[0]!);
   }
   function presentLesson(card: PracticeCard) {
     if (isContextualExercise(card.exercise)) {
       playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
-      setPreviewQuestion(questionForCard(card)[0]!);
+      setPreviewQuestion(lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!);
     } else { setPreviewQuestion(null); present(card.item, card.exercise); }
   }
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
-      if (isContextualExercise(card.exercise)) return questionForCard(card);
+      if (isContextualExercise(card.exercise)) return [lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!];
       const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
       return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);

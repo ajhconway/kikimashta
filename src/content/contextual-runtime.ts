@@ -2,9 +2,10 @@ import contrastive from '../../content/contextual/ja-pilot.json';
 import simple from '../../content/contextual/ja-simple-pilot.json';
 import expansion from '../../content/contextual/ja-simple-expansion.json';
 import accepted from '../../content/contextual/accepted-media.json';
+import generated from '../../content/contextual/generated-media.json';
 import catalogue from '../../content/catalog/ja.json';
 import overrides from '../../content/catalog/review-overrides.json';
-import type { ContextualBank } from './contextual-types';
+import type { ContextualBank, ContextualRecording } from './contextual-types';
 import type { PracticeCard, WordItem } from '../types';
 import { contextualExercise } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
@@ -15,10 +16,17 @@ export const contextualVocabulary: WordItem[] = catalogue.items.flatMap(item => 
   return [{ ...item, ...override, label: item.meaning, theme: 'vocabulary' } as WordItem];
 });
 
-/** Listening acceptance is applied separately from digest-bound authored text. */
-export function withAcceptedMedia(banks: readonly ContextualBank[]): ContextualBank[] {
+interface MediaEntry {
+  contextId: string; contextRevision: number; targetItemId: string; stage: 'simple' | 'contrastive';
+  sentenceText: string; questions: Record<string, string | undefined>; questionRevisions: Record<string, number | undefined>;
+  recordings: ContextualRecording[];
+}
+
+/** Generation and listening acceptance stay separate from authored text approval. */
+function withMedia(banks: readonly ContextualBank[], entries: readonly MediaEntry[], state: 'pending' | 'approved'): ContextualBank[] {
   return banks.map(bank => ({ ...bank, contexts: bank.contexts.map(context => {
-    const media = accepted.contexts.find(entry => entry.contextId === context.id);
+    if (context.review.text === 'rejected' || context.review.audio === 'rejected') return context;
+    const media = entries.find(entry => entry.contextId === context.id);
     if (!media) return context;
     if (context.review.text !== 'approved' || context.revision !== media.contextRevision || context.targetItemId !== media.targetItemId || context.sentence.text !== media.sentenceText ||
         context.questions.length !== Object.keys(media.questions).length || context.questions.some(question =>
@@ -27,11 +35,16 @@ export function withAcceptedMedia(banks: readonly ContextualBank[]): ContextualB
       throw new Error('Accepted contextual media differs from authored text: ' + context.id);
     }
     return { ...context, stage: media.stage as 'simple' | 'contrastive',
-      review: { text: 'approved' as const, audio: 'approved' as const }, recordings: media.recordings };
+      review: { text: 'approved' as const, audio: state }, recordings: media.recordings };
   }) }));
 }
 
-export const contextualBanks = withAcceptedMedia([contrastive, simple, expansion] as unknown as ContextualBank[]);
+export function withAcceptedMedia(banks: readonly ContextualBank[]): ContextualBank[] {
+  return withMedia(banks, accepted.contexts as unknown as MediaEntry[], 'approved');
+}
+
+export const contextualBanks = withAcceptedMedia(withMedia([contrastive, simple, expansion] as unknown as ContextualBank[],
+  generated.contexts as unknown as MediaEntry[], 'pending'));
 
 export function readyContextualCards(banks: readonly ContextualBank[], vocabulary: readonly WordItem[]): PracticeCard[] {
   const result = new Map<string, PracticeCard>();

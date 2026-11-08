@@ -29,7 +29,6 @@ it('opens all eighty questions for dev evaluation and never records an answer', 
   expect(within(jump).getAllByRole('option')).toHaveLength(80);
   await act(async () => { fireEvent.change(jump, { target: { value: '79' } }); });
   expect(screen.getByText(/Question 80 of 80/)).toBeInTheDocument();
-  await click(screen.getByRole('button', { name: 'Show text for inspection' }));
   await click(screen.getAllByRole('button', { name: /Choose writing/ })[0]!);
   expect(screen.getByRole('heading', { name: 'Sentence' })).toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Continue' }));
@@ -52,15 +51,20 @@ it('admits unlocked contextual lessons through workload planning and saves expli
   }
   const now = () => schedule!.lastReviewedAt + 1;
   const before = history.length;
-  const { container } = render(<App now={now} random={() => 0}/>);
+  let draw = 0;
+  const { container } = render(<App now={now} random={() => draw}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
   await click(screen.getByRole('button', { name: /^Start/ }));
   await click(await screen.findByRole('button', { name: 'Begin lesson' }));
   expect(vi.mocked(planLessonChunk).mock.calls[0]![0].candidates.some(card => card.item.id === target.id && card.exercise === 'context-simple-text')).toBe(true);
   expect(screen.getByRole('heading', { name: 'Sentence' })).toBeInTheDocument();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  const previewId = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
+  const previewSource = container.querySelector('.contextual-quiz audio')!.getAttribute('src');
+  draw = 0.99;
   await click(screen.getByRole('button', { name: 'Mini-quiz' }));
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
+  expect(id).toBe(previewId);
   const authored = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions).find(question => question.id === id)!;
   const correct = authored.options.find(option => option.id === authored.correctOptionId)!;
   expect(screen.queryByRole('heading', { name: 'Sentence' })).not.toBeInTheDocument();
@@ -72,6 +76,7 @@ it('admits unlocked contextual lessons through workload planning and saves expli
   expect(saved.selectedId).toBe(authored.correctOptionId);
   expect(saved.context).toMatchObject({ phase: 'lesson', exercise: 'context-simple-text', contextual: { questionId: authored.id, correctOptionId: authored.correctOptionId, stage: 'simple' } });
   expect(saved.context!.recordingSrc).toBe(saved.context!.contextual!.sentenceSrc);
+  expect(previewSource).toBe('/' + saved.context!.recordingSrc);
   expect(screen.getByRole('heading', { name: 'Sentence' })).toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Continue' }));
   expect(screen.getByRole('heading', { name: 'Nice round!' })).toBeInTheDocument();

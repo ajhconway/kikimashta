@@ -7,11 +7,15 @@ import { loadContextualPilot, projectRoot } from './validate-contextual.mjs'
 
 test('accepted contextual practice media preserves the exact verified deliveries and authored identities', () => {
   const manifest = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/accepted-media.json'), 'utf8'))
-  const banks = ['ja-pilot.json', 'ja-simple-pilot.json'].map(file => loadContextualPilot(projectRoot, 'content/contextual/' + file).bank)
+  const generated = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/generated-media.json'), 'utf8'))
+  const banks = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.json'].map(file => loadContextualPilot(projectRoot, 'content/contextual/' + file).bank)
   assert.equal(manifest.evidenceUrl, 'https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626')
   assert.equal(manifest.contexts.length, 6)
+  assert.equal(generated.contexts.length, 34)
+  const all = [...manifest.contexts, ...generated.contexts]
+  assert.equal(new Set(all.map(context => context.contextId)).size, 40)
   let clips = 0
-  for (const media of manifest.contexts) {
+  for (const media of all) {
     const context = banks.flatMap(bank => bank.contexts).find(context => context.id === media.contextId)
     assert.equal(context.revision, media.contextRevision)
     assert.equal(context.targetItemId, media.targetItemId)
@@ -30,5 +34,5 @@ test('accepted contextual practice media preserves the exact verified deliveries
       }
     }
   }
-  assert.equal(clips, 36)
+  assert.equal(clips, 240)
 })

@@ -55,9 +55,8 @@ test('contextual dev review covers the full pilot, plays both clips, filters and
   await page.getByLabel('Question kind').selectOption('detail');
   await expect(jump.locator('option')).toHaveCount(20);
   await jump.selectOption('19');
-  await expect(page.getByText('Text awaiting approval.')).toBeVisible();
-  await page.getByRole('button', { name: 'Show text for inspection' }).click();
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toBeVisible();
+  await expect(page.getByText('Audio awaiting listening approval.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: /Choose writing/ }).first().click();
   await page.getByRole('button', { name: 'Continue', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Review complete' })).toBeVisible();
