@@ -72,14 +72,12 @@ export async function generateContextualAudition({ root = projectRoot, output, a
   if (existing !== undefined && JSON.stringify(existing) !== JSON.stringify(plan)) {
     throw new Error('Saved audition plan differs; use a separate output directory.')
   }
-  try {
-    return await generate({ plan: plan.generation, output: destination, apiKey,
-      concurrency: 1, budget: plan.generation.characters })
-  } finally {
-    // The resumable engine owns directory creation and its plan.json. Preserve
-    // pairing/approval details even when a partial paid batch stops afterward.
-    await preserveAuditionPlan(destination, plan)
-  }
+  // The engine invokes this callback while holding generation.lock, before
+  // checking balance or issuing requests. Metadata survives partial failures,
+  // and failed lock acquisition cannot write another process's audition plan.
+  return await generate({ plan: plan.generation, output: destination, apiKey,
+    concurrency: 1, budget: plan.generation.characters,
+    beforeRequests: () => preserveAuditionPlan(destination, plan) })
 }
 
 async function main() {

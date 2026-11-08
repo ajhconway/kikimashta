@@ -72,9 +72,8 @@ test('uses sequential exact-budget generation and preserves the full approval an
       assert.equal(args.budget, plan.generation.characters)
       assert.deepEqual(args.plan, plan.generation)
       assert.equal(args.apiKey, 'fixture-secret')
-      await mkdir(args.output, { recursive: true })
-      await writeFile(join(args.output, 'plan.json'), JSON.stringify({ ...args.plan, identity: sha256(JSON.stringify(args.plan)) }))
-      return { completed: 18, total: 18, status: 'generated' }
+      return generateCards({ ...args, balance, log: () => {},
+        speak: async () => ({ audio: Buffer.from('ID3 local fixture') }) })
     } })
   assert.equal(boundaryCalls, 1)
   assert.equal(result.completed, 18)
@@ -95,6 +94,44 @@ test('an artifact output symlink cannot redirect generation into production medi
     generate: async () => { calls++ } }), /must stay under/)
   assert.equal(calls, 0)
   assert.equal(existsSync(join(production, 'audition')), false)
+})
+
+test('a held engine lock cannot create audition metadata or reach balance and speech boundaries', async t => {
+  const fixture = await contextualFixture(t)
+  const { plan } = loadContextualAudition(fixture.root)
+  await mkdir(fixture.output, { recursive: true })
+  await writeFile(join(fixture.output, 'plan.json'), JSON.stringify({ ...plan.generation, identity: sha256(JSON.stringify(plan.generation)) }))
+  await writeFile(join(fixture.output, 'generation.lock'), 'another process')
+  let balanceCalls = 0
+  let speechCalls = 0
+  await assert.rejects(generateContextualAudition({ root: fixture.root, output: fixture.output, apiKey: 'fixture-secret',
+    generate: args => generateCards({ ...args, log: () => {}, balance: async () => { balanceCalls++; return balance() },
+      speak: async () => { speechCalls++; return { audio: Buffer.from('ID3 local fixture') } } }) }), { code: 'EEXIST' })
+  assert.equal(existsSync(join(fixture.output, 'audition-plan.json')), false)
+  assert.equal(balanceCalls, 0)
+  assert.equal(speechCalls, 0)
+  assert.equal(await readFile(join(fixture.output, 'generation.lock'), 'utf8'), 'another process')
+})
+
+test('a metadata conflict appearing after the wrapper precheck stops under the engine lock before paid boundaries', async t => {
+  const fixture = await contextualFixture(t)
+  const { plan } = loadContextualAudition(fixture.root)
+  const conflicting = { ...plan, gapMs: 700 }
+  let balanceCalls = 0
+  let speechCalls = 0
+  await assert.rejects(generateContextualAudition({ root: fixture.root, output: fixture.output, apiKey: 'fixture-secret',
+    generate: async args => {
+      // Simulate a competing metadata publication between precheck and lock.
+      await mkdir(args.output, { recursive: true })
+      await writeFile(join(args.output, 'plan.json'), JSON.stringify({ ...args.plan, identity: sha256(JSON.stringify(args.plan)) }))
+      await writeFile(join(args.output, 'audition-plan.json'), JSON.stringify(conflicting))
+      return generateCards({ ...args, log: () => {}, balance: async () => { balanceCalls++; return balance() },
+        speak: async () => { speechCalls++; return { audio: Buffer.from('ID3 local fixture') } } })
+    } }), /Saved audition plan differs/)
+  assert.equal(balanceCalls, 0)
+  assert.equal(speechCalls, 0)
+  assert.deepEqual(await json(join(fixture.output, 'audition-plan.json')), conflicting)
+  assert.equal(existsSync(join(fixture.output, 'generation.lock')), false)
 })
 
 test('preserves partial successes and audition metadata, sanitizes provider failure and blocks ambiguous retries', async t => {
