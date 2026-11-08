@@ -14,7 +14,7 @@ test('remembers learning language and independent pack choices across reloads', 
   expect(control!.x + control!.width).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({ path: `test-results/language-selector-${testInfo.project.name}.png` });
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
-  await expect(page.getByRole('link', { name: 'Card library' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Card library' })).toHaveAttribute('href', /language=es-419/);
   await page.getByText(/Card packs ·/).click();
   const esPack = page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true });
   await expect(page.getByRole('checkbox', { name: /Writing/ })).toHaveCount(0);

@@ -28,7 +28,7 @@ export const learningLanguages: readonly LearningLanguage[] = [
     packs: [{ id: 'es-419-travel-1-pictures', language: 'es-419',
       title: 'Travel level 1 · Pictures', exercise: 'audio-picture',
       itemIds: spanish.items.map(item => item.id),
-    }], packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system',
+    }], packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system', libraryPath: 'vocabulary/?language=es-419&pack=es-419-travel-1-pictures',
     unavailableMessage: 'Travel level 1 is being prepared. Spanish recordings are needed before practice is available.' },
 ];
 export const languagePreferenceKey = 'kikimashta-learning-language-v1';

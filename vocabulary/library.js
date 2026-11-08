@@ -1,10 +1,16 @@
 /* One shared player; render only the current page. Vocabulary library for #27. */
 import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
 import { getLibraryAccount } from '../src/sync/library-bridge'
-import { cardPacks } from '../src/core/packs'
+import { learningLanguages } from '../src/core/languages'
 
 (async () => {
   'use strict'
+  const parameters = new URLSearchParams(location.search)
+  const language = learningLanguages.find(language => language.id === parameters.get('language')) || learningLanguages[0]
+  const cardPacks = language.packs
+  // Preserve the existing Japanese notes namespace; new languages use their stable ID.
+  const feedbackLanguage = language.id === 'ja-JP' ? 'ja' : language.id
+  const japanese = language.id === 'ja-JP'
   const pageSize = 24
   const cardsElement = document.getElementById('cards')
   const packElement = document.getElementById('pack')
@@ -14,7 +20,15 @@ import { cardPacks } from '../src/core/packs'
     option.textContent = pack.title
     packElement.append(option)
   }
+  const requestedPack = parameters.get('pack')
+  if (cardPacks.some(pack => pack.id === requestedPack)) packElement.value = requestedPack
   const searchElement = document.getElementById('search')
+  if (!japanese) {
+    document.title = `${language.title} cards`
+    document.querySelector('h1').textContent = `${language.title} cards`
+    document.querySelector('.page-header p').textContent = 'Browse the travel pack, inspect each picture and meaning, and listen to the pronunciation.'
+    searchElement.placeholder = 'Spanish or English'
+  }
   const resultsStatus = document.getElementById('results-status')
   const pageStatus = document.getElementById('page-status')
   const previous = document.getElementById('previous')
@@ -26,9 +40,9 @@ import { cardPacks } from '../src/core/packs'
   // Resolve identity before reading feedback so guest and account notes stay separate.
   const account = await getLibraryAccount()
   const feedbackStore = account ? createAccountFeedbackStore({
-    language: 'ja', repository: account.notes, changed: account.changed,
+    language: feedbackLanguage, repository: account.notes, changed: account.changed,
     canWrite: () => account.currentUserId() === account.userId,
-  }) : createFeedbackStore({ language: 'ja' })
+  }) : createFeedbackStore({ language: feedbackLanguage })
   if (account) document.getElementById('feedback-description').textContent = 'Feedback is saved to this account. Export it to share or back it up.'
   const feedbackViews = new Map()
   const audio = new Audio()
@@ -89,7 +103,7 @@ import { cardPacks } from '../src/core/packs'
     button.classList.add('is-playing')
     button.textContent = `Stop ${voice}`
     button.setAttribute('aria-label', `Stop ${voice}: ${card.meaning}`)
-    audioStatus.textContent = `Playing ${card.reading} · ${voice}`
+    audioStatus.textContent = `Playing ${card.reading || card.text} · ${voice}`
     audio.src = activeSource
     // Call play synchronously inside the tap handler to preserve Safari's user gesture.
     try {
@@ -152,7 +166,7 @@ import { cardPacks } from '../src/core/packs'
   }
 
   exportButton.addEventListener('click', () => {
-    const data = exportFeedback(cards, feedbackStore, 'ja')
+    const data = exportFeedback(cards, feedbackStore, feedbackLanguage)
     const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' }))
     const link = element('a')
     link.href = url
@@ -195,7 +209,7 @@ import { cardPacks } from '../src/core/packs'
     article.setAttribute('aria-labelledby', headingId)
     if (writing) {
       const face = element('div', 'card-writing', card.text)
-      face.lang = 'ja'
+      face.lang = language.id
       article.append(face)
     } else {
       const image = element('img', 'card-image')
@@ -208,21 +222,23 @@ import { cardPacks } from '../src/core/packs'
       article.append(image)
     }
     const content = element('div', 'card-content')
-    const heading = element('h2', 'japanese', card.text)
+    const heading = element('h2', 'word-text', card.text)
     heading.id = headingId
-    heading.lang = 'ja'
+    heading.lang = language.id
     const reading = element('p', 'reading', card.reading)
-    reading.lang = 'ja'
+    reading.lang = language.id
     const packs = element('p', 'pack-labels')
     packs.setAttribute('aria-label', 'Packs')
     for (const pack of cardPacks.filter(pack => pack.itemIds.includes(card.id))) {
       packs.append(element('span', '', pack.title))
     }
-    content.append(packs, heading, reading, element('p', 'meaning', card.meaning))
+    content.append(packs, heading)
+    if (card.reading) content.append(reading)
+    content.append(element('p', 'meaning', card.meaning))
     if (!writing && card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')
-    voices.setAttribute('aria-label', `Japanese voices for ${card.meaning}`)
+    voices.setAttribute('aria-label', `${language.title} voices for ${card.meaning}`)
     for (const clip of card.audio) {
       const voice = clip.voiceName || clip.voice.charAt(0).toUpperCase() + clip.voice.slice(1)
       const button = element('button', 'voice-button', clip.available ? voice : `${voice} unavailable`)
@@ -251,8 +267,11 @@ import { cardPacks } from '../src/core/packs'
     return article
   }
 
-  const normalized = value => value.normalize('NFKC').toLocaleLowerCase()
-    .replace(/[ァ-ヶ]/g, character => String.fromCharCode(character.charCodeAt(0) - 0x60)).trim()
+  const normalized = value => {
+    const text = value.normalize('NFKC').toLocaleLowerCase().trim()
+    return japanese ? text.replace(/[ァ-ヶ]/g, character => String.fromCharCode(character.charCodeAt(0) - 0x60))
+      : text.normalize('NFD').replace(/\p{M}/gu, '')
+  }
   function render() {
     stopAudio()
     feedbackViews.clear()
@@ -282,11 +301,16 @@ import { cardPacks } from '../src/core/packs'
   next.addEventListener('click', () => { page += 1; render() })
   window.addEventListener('pagehide', stopAudio)
 
-  fetch('./library-data.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Vocabulary request failed')
-      return response.json()
-    })
+  const loadCards = japanese ? fetch('./library-data.json').then(response => {
+    if (!response.ok) throw new Error('Vocabulary request failed')
+    return response.json()
+  }) : Promise.resolve({ cards: language.pool.items.map(item => ({
+    id: item.id, text: item.text, reading: item.reading || '', meaning: item.label,
+    image: { ...item.image, src: '../' + item.image.src },
+    audio: item.audio.map(clip => ({ ...clip, src: '../' + clip.src, available: true })),
+    concept: item.image.alt, visualGroup: item.image.src,
+  })) })
+  loadCards
     .then(data => {
       if (!Array.isArray(data.cards) || !data.cards.length) throw new Error('Vocabulary is empty')
       cards = data.cards

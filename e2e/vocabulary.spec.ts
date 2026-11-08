@@ -50,7 +50,7 @@ test('render contact sheets for every vocabulary illustration', async ({ page },
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('./vocabulary/');
   await expect(page.locator('.card')).toHaveCount(24);
-  await page.addStyleTag({ content: 'main{max-width:1440px}.cards{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.card-image{height:140px;padding:5px}.card-content{padding:6px}.japanese{font-size:18px}.reading,.meaning{font-size:12px;margin:2px}.picture-notes,.voices,.review-badge,.audio-status,.page-header p{display:none!important}.pack-labels{font-size:10px;margin:0}' });
+  await page.addStyleTag({ content: 'main{max-width:1440px}.cards{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.card-image{height:140px;padding:5px}.card-content{padding:6px}.word-text{font-size:18px}.reading,.meaning{font-size:12px;margin:2px}.picture-notes,.voices,.review-badge,.audio-status,.page-header p{display:none!important}.pack-labels{font-size:10px;margin:0}' });
   for (let level = 1; level <= 5; level++) {
     await page.getByLabel('Card pack').selectOption(`ja-wanikani-${level}-pictures`);
     let number = 1;
@@ -107,4 +107,46 @@ test('ten packs keep level membership and switch between pictures and writing', 
   await expect(page.locator('.card')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Next →', exact: true })).toBeDisabled();
   await expect(page.getByRole('button', { name: '← Previous', exact: true })).toBeDisabled();
+});
+
+test('browse the Spanish travel pack, listen, retry audio and retain Spanish notes', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
+  await page.getByRole('link', { name: /card library/i }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Latin American Spanish cards');
+  await expect(page.getByLabel('Card pack')).toHaveValue('es-419-travel-1-pictures');
+  await expect(page.locator('.card')).toHaveCount(6);
+  await expect(page.locator('.card h2')).toHaveText(['hotel', 'agua', 'café', 'carro', 'entrada', 'salida']);
+  await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(2);
+  await page.getByLabel('Search words').fill('Coffee');
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText('café');
+  await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await expect(page.locator('#audio-status')).toContainText('café');
+  await expect(page.locator('#audio-status')).toBeEmpty();
+  await expect(page.locator('#audio-error')).toBeHidden();
+  const recording = '**/audio/es-419-travel-v1/cesar/es-419-travel-coffee.mp3';
+  await page.route(recording, route => route.abort());
+  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await expect(page.locator('#audio-error')).toBeVisible();
+  await page.unroute(recording);
+  await page.getByRole('button', { name: 'Cesar: Coffee', exact: true }).click();
+  await expect(page.locator('#audio-error')).toBeHidden();
+  await page.locator('.card-feedback summary').click();
+  await page.getByLabel('Your notes').fill('Check the café pronunciation.');
+  await expect(page.locator('.feedback-status')).toHaveText('Saved on this device.');
+  await page.reload();
+  await page.getByLabel('Search words').fill('cafe');
+  await page.locator('.card-feedback summary').click();
+  await expect(page.getByLabel('Your notes')).toHaveValue('Check the café pronunciation.');
+  const download = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export feedback (1)' }).click();
+  const exported = await download;
+  const stream = await exported.createReadStream();
+  const chunks: Buffer[] = [];
+  for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
+  const feedback = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  expect(feedback.language).toBe('es-419');
+  expect(feedback.notes[0]).toMatchObject({ itemId: 'es-419-travel-coffee', feedback: 'Check the café pronunciation.' });
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

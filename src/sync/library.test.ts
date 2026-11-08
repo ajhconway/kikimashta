@@ -45,6 +45,7 @@ function dogStatus() { return document.getElementById('feedback-status-ja-dog')!
 
 beforeEach(() => {
   vi.resetModules();
+  window.history.replaceState({}, '', '/');
   localStorage.clear();
   document.body.innerHTML = shell.match(/<body>([\s\S]*)<\/body>/)![1]!;
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
@@ -60,6 +61,7 @@ afterEach(async () => {
   await Promise.all(stores.map(store => store.close()));
   await Promise.all(stores.splice(0).map(store => deleteDB(store.databaseName)));
   vi.unstubAllGlobals();
+  window.history.replaceState({}, '', '/');
 });
 
 describe('account-aware vocabulary feedback UI', () => {
@@ -126,5 +128,42 @@ describe('account-aware vocabulary feedback UI', () => {
     expect(dogStatus()).toHaveTextContent('Saved on this device.');
     expect(localStorage.getItem('kikimashta:card-feedback:v1:ja:ja-dog')).toBe('Guest note');
     expect(screen.getByText('Feedback stays in this browser. Export it to share or back it up.')).toBeVisible();
+  });
+});
+
+
+describe('Spanish card library', () => {
+  it('browses the practice bank, searches both languages and saves guest notes under Spanish identity', async () => {
+    window.history.replaceState({}, '', '/vocabulary/?language=es-419&pack=es-419-travel-1-pictures');
+    vi.mocked(getLibraryAccount).mockResolvedValue(null);
+    localStorage.setItem('kikimashta:card-feedback:v1:ja:es-419-travel-coffee', 'Unrelated Japanese note');
+    await vi.importActual('../../vocabulary/library.js');
+    await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(6));
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Latin American Spanish cards');
+    expect(screen.getByLabelText('Card pack')).toHaveValue('es-419-travel-1-pictures');
+    expect(screen.getAllByRole('option')).toHaveLength(2);
+    expect(document.querySelectorAll('.word-text[lang="es-419"]')).toHaveLength(6);
+    expect(fetch).not.toHaveBeenCalled();
+    fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'Coffee' } });
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('café');
+    expect(screen.getByRole('button', { name: 'Cesar: Coffee' })).toBeEnabled();
+    fireEvent.input(screen.getByLabelText('Your notes'), { target: { value: 'Review the accent' } });
+    expect(localStorage.getItem('kikimashta:card-feedback:v1:es-419:es-419-travel-coffee')).toBe('Review the accent');
+    expect(localStorage.getItem('kikimashta:card-feedback:v1:ja:es-419-travel-coffee')).toBe('Unrelated Japanese note');
+    fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'cafe' } });
+    expect(document.querySelectorAll('.card')).toHaveLength(1);
+    expect(screen.getByLabelText('Your notes')).toHaveValue('Review the accent');
+  });
+
+  it('reads and writes signed-in notes with the Spanish language identity', async () => {
+    window.history.replaceState({}, '', '/vocabulary/?language=es-419');
+    const { bridge } = account();
+    await bridge.notes.write('es-419', 'es-419-travel-hotel', 'Spanish account note');
+    vi.mocked(getLibraryAccount).mockResolvedValue(bridge);
+    await vi.importActual('../../vocabulary/library.js');
+    await waitFor(() => expect(document.getElementById('feedback-es-419-travel-hotel')).toHaveValue('Spanish account note'));
+    fireEvent.input(document.getElementById('feedback-es-419-travel-hotel')!, { target: { value: 'Edited Spanish note' } });
+    await waitFor(() => expect(bridge.notes.read('es-419', 'es-419-travel-hotel')).toBe('Edited Spanish note'));
+    expect(bridge.notes.read('ja', 'es-419-travel-hotel')).toBe('');
   });
 });

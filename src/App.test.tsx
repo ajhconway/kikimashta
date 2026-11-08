@@ -750,7 +750,7 @@ describe('learning language switching', () => {
     await act(async () => { oldHistory.resolve(legacy()); });
     expect(screen.queryByText('6 answers saved on this device')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
-    expect(screen.queryByRole('link', { name: /Card library/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Card library/ })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveFocus();
   });
   it('keeps the language selector disabled until failed answer recovery is resolved', async () => {

@@ -36,7 +36,7 @@ button:disabled { opacity: .55; cursor: default; }
 .card-content { padding: 17px; }
 .pack-labels { margin: 0 0 7px; font-size: .8rem; color: #725a83; }
 .pack-labels span { display: block; }
-.japanese { margin: 0; font-size: 1.8rem; line-height: 1.35; overflow-wrap: anywhere; }
+.word-text { margin: 0; font-size: 1.8rem; line-height: 1.35; overflow-wrap: anywhere; }
 .reading { margin: 6px 0; font-size: 1rem; overflow-wrap: anywhere; }
 .meaning { margin: 8px 0 15px; font-weight: 750; }
 .review-badge { display: inline-block; margin: 0 0 13px; padding: 3px 9px; border: 2px solid #81513c; border-radius: 20px; background: #ffe4b6; color: #65412f; font-size: .76rem; font-weight: 750; }
