@@ -39,6 +39,6 @@ Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm ru
 
 Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.
 
-Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. These checks supplement the app checks above.
+Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. The card tests and validator run through `npm run test:cards`, included in `npm run check` and the required CI job. Preparation and gallery rendering remain manual.
 
-Run `python3 scripts/cards/validate.py` alongside the card preparation tests. These artwork checks are currently separate from `npm run check` and required CI; issue #116 tracks adding them. Account-sync browser specs require the explicit fake service configuration in [docs/REVIEW.md](docs/REVIEW.md#verification), so local runs do not silently skip sync coverage.
+Account-sync browser specs require the explicit fake service configuration in [docs/REVIEW.md](docs/REVIEW.md#verification), so local runs do not silently skip sync coverage.

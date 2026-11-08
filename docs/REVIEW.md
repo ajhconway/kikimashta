@@ -4,6 +4,8 @@ Work record: [#113](https://github.com/ajhconway/kikimashta/issues/113). Reviewe
 
 The supplied workspace's Git HEAD is the initial planning commit, with an older untracked app snapshot. A clean shallow checkout of current GitHub main at `/tmp/kikimashta-project-review` was used for the authoritative review and checks. The original implementation files were left in place. Documentation changes are separate from the fixes below.
 
+Follow-up for #116: `npm run test:cards` now runs the artwork tests and metadata validator inside `npm run check` and required CI. The review findings and command results below describe the original reviewed revision.
+
 ## New issues
 
 All four findings are P2: address them in ordinary development; no critical defect was demonstrated.

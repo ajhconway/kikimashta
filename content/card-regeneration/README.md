@@ -36,7 +36,7 @@ python3 -m unittest discover -s scripts/cards -p 'test_*.py'
 python3 scripts/cards/validate.py
 ```
 
-The preparation script never generates images or calls the network. App checks are available through `npm run check` and `npm run test:e2e` after building. The Python card tests and validator currently run separately and are not required by CI; [#116](https://github.com/ajhconway/kikimashta/issues/116) tracks that gap.
+The preparation script never generates images or calls the network. App checks are available through `npm run check` and `npm run test:e2e` after building. `npm run test:cards` runs the Python card tests and validator as part of `npm run check` and required CI (#116). Preparation, gallery rendering, and image generation remain explicit manual actions. The semantic-policy deferral in #79 is unchanged.
 
 Batch 04 (31–40) is approved, including lavender half, rain without a puddle, sun rays and a reusable winter park scene. Card 38 establishes the cube design for X things. The graph records both design families. Batches05–07 have since been approved.
 
