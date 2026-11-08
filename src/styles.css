@@ -398,4 +398,26 @@ footer a:hover { color: var(--purple-dark); }
 .pack-picker input { width: 20px; height: 20px; accent-color: var(--purple-dark); flex-shrink: 0; }
 .pack-picker p { font-size: 13px; line-height: 1.5; }
 
-.language select { font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 1rem; padding: .4rem .65rem; font-size: 16px; min-height: 44px; max-width: min(16rem, 75vw); }
+.language-picker { position: relative; display: inline-flex; max-width: 100%; color: var(--ink); }
+.language-picker select {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: inherit;
+  background: rgba(255, 255, 255, .82);
+  border: 2px solid rgba(74, 38, 126, .14);
+  border-radius: 999px;
+  padding: 10px 40px 10px 44px;
+  min-height: 48px;
+  max-width: min(19rem, calc(100vw - 48px));
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.language-picker select:hover { background: #fff; border-color: rgba(74, 38, 126, .35); }
+.language-picker select:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.language-picker select:disabled { cursor: default; opacity: .55; }
+.language-picker svg { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.language-globe { left: 16px; }
+.language-chevron { right: 15px; }

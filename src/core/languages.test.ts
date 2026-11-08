@@ -33,7 +33,7 @@ describe('learning languages', () => {
     expect(initialPackIds(ja!.packs, ja!.packPreferenceKey)).toEqual([ja!.packs[0]!.id]);
     expect(initialPackIds(es!.packs, es!.packPreferenceKey)).toEqual([]);
   });
-  it('provides complete travel pictures, writing and recorded audio with preserved provenance', () => {
+  it('provides complete travel pictures and recorded audio with preserved provenance', () => {
     const spanishLanguage = learningLanguages[1]!;
     expect(spanish.items).toHaveLength(6);
     expect(new Set(spanish.items.map(item => item.id)).size).toBe(6);
@@ -50,10 +50,18 @@ describe('learning languages', () => {
       expect(createHash('sha256').update(delivery).digest('hex')).toBe(record.deliverySha256);
       expect(record.after.truePeakDbtp).toBeLessThanOrEqual(-2);
     }
-    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-text']);
+    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture']);
     const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(12);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(12);
+    expect(cards).toHaveLength(6);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(6);
+  });
+  it('filters retired Spanish writing selections without reviving an empty selection', () => {
+    const language = learningLanguages[1]!;
+    localStorage.setItem(language.packPreferenceKey, JSON.stringify(['es-419-travel-1-pictures', 'es-419-travel-1-writing']));
+    expect(initialPackIds(language.packs, language.packPreferenceKey)).toEqual(['es-419-travel-1-pictures']);
+    localStorage.setItem(language.packPreferenceKey, JSON.stringify(['es-419-travel-1-writing']));
+    expect(initialPackIds(language.packs, language.packPreferenceKey)).toEqual([]);
+    expect(selectedPracticeCards(language.pool.items, ['es-419-travel-1-writing'], language.packs)).toEqual([]);
   });
   it('cannot admit another language through a colliding item ID', () => {
     const item = learningLanguages[0]!.pool.items[0]!;

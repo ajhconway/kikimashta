@@ -20,8 +20,8 @@ beforeEach(() => {
   vi.spyOn(ProgressStore.prototype, 'history').mockResolvedValue([]);
 });
 
-it.each(['pictures', 'writing'])('saves Spanish %s answers with Spanish-only choices once recordings exist', async format => {
-  localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify([`es-419-travel-1-${format}`]));
+it('saves Spanish picture answers with Spanish-only choices', async () => {
+  localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify(['es-419-travel-1-pictures']));
   const saved: PracticeAttempt[] = [];
   vi.spyOn(ProgressStore.prototype, 'record').mockImplementation(async attempt => { saved.push(attempt); });
   const { container } = render(<App now={() => 1000000} random={() => 0.5}/>);
@@ -35,11 +35,11 @@ it.each(['pictures', 'writing'])('saves Spanish %s answers with Spanish-only cho
   const source = container.querySelector('audio')!.getAttribute('src')!;
   const target = spanish.items.find(item => item.audio.some(clip => source.endsWith(clip.src)))!;
   const button = screen.getAllByRole('button', { name: /choose (picture|writing)/i }).find(button =>
-    format === 'pictures' ? within(button).queryByRole('img', { name: target.image.alt }) : within(button).queryByText(target.text, { exact: true }))!;
+    within(button).queryByRole('img', { name: target.image.alt }))!;
   await act(async () => { fireEvent.click(button); });
   await waitFor(() => expect(saved).toHaveLength(1));
   expect(saved[0]).toMatchObject({ language: 'es-419', itemId: target.id, correct: true,
-    context: { exercise: format === 'pictures' ? 'audio-picture' : 'audio-text' } });
+    context: { exercise: 'audio-picture' } });
   expect(saved[0]!.choiceIds.every(id => spanish.items.some(item => item.id === id))).toBe(true);
-  if (format === 'writing') expect(container.querySelector('.written-answer')).toHaveAttribute('data-font', 'system');
+  expect(screen.queryByRole('button', { name: /choose writing/i })).not.toBeInTheDocument();
 });

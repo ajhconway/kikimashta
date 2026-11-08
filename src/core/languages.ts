@@ -25,12 +25,10 @@ export const learningLanguages: readonly LearningLanguage[] = [
     packPreferenceKey, writing: 'japanese', libraryPath: 'vocabulary/' },
   { id: 'es-419', title: 'Latin American Spanish', pool: { id: 'es-419-adaptive', language: 'es-419', title: 'Spanish listening',
       items: spanishReady ? spanishBank.items : [] },
-    packs: (['pictures', 'writing'] as const).map(format => ({
-      id: `es-419-travel-1-${format}`, language: 'es-419',
-      title: `Travel level 1 · ${format === 'pictures' ? 'Pictures' : 'Writing'}`,
-      exercise: format === 'pictures' ? 'audio-picture' : 'audio-text',
+    packs: [{ id: 'es-419-travel-1-pictures', language: 'es-419',
+      title: 'Travel level 1 · Pictures', exercise: 'audio-picture',
       itemIds: spanish.items.map(item => item.id),
-    })), packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system',
+    }], packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system',
     unavailableMessage: 'Travel level 1 is being prepared. Spanish recordings are needed before practice is available.' },
 ];
 export const languagePreferenceKey = 'kikimashta-learning-language-v1';
