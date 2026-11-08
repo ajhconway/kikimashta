@@ -94,7 +94,7 @@ test('ten packs keep level membership and switch between pictures and writing', 
   await page.getByLabel('Search words').fill('Dog');
   await expect(page.locator('#page-status')).toHaveText('Page 1 of 1');
   await expect(page.locator('.card-writing')).toHaveText('犬');
-  const dog = page.getByRole('article', { name: '犬', exact: true });
+  const dog = page.getByRole('article', { name: /^犬 (Pictures|Writing)$/ });
   await dog.locator('.card-feedback summary').click();
   await dog.getByLabel('Your notes').fill('Check this pronunciation.');
   await expect(dog.locator('.feedback-status')).toHaveText('Saved on this device.');

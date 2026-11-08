@@ -157,6 +157,8 @@ describe('library mastery and separate exercise cards (#135)', () => {
     await loadLibrary();
     const picture = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-picture"]')!;
     const writing = document.querySelector('[data-item-id="ja-dog"][data-exercise="audio-text"]')!;
+    expect(picture).toHaveAccessibleName('犬 Pictures');
+    expect(writing).toHaveAccessibleName('犬 Writing');
     expect(picture.querySelector('.card-mastery')).toHaveTextContent('Mastery: Learning');
     expect(writing.querySelector('.card-mastery')).toHaveTextContent('Mastery: New');
     const scheduled = await advanceSchedule(undefined, first);

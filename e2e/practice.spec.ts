@@ -370,7 +370,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await page.clock.install();
   await page.goto('./');
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
-  await page.waitForFunction(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'));
+  await expect.poll(() => page.evaluate(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'))).toBe(true);
   const homeColor = await backgroundColor(page);
   await captureScreen(page, 'adaptive-home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();

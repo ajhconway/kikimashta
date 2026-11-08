@@ -230,7 +230,7 @@ import { ProgressStore } from '../src/progress/store'
     const headingId = `word-${card.id}-${exercise}`
     article.dataset.itemId = card.id
     article.dataset.exercise = exercise
-    article.setAttribute('aria-labelledby', headingId)
+    article.setAttribute('aria-labelledby', `${headingId} ${headingId}-format`)
     if (writing) {
       const face = element('div', 'card-writing', card.text)
       face.lang = 'ja'
@@ -262,7 +262,9 @@ import { ProgressStore } from '../src/progress/store'
     }
     masteryViews.set(headingId, update)
     update()
-    content.append(element('p', 'card-format', writing ? 'Writing' : 'Pictures'), packs, heading, reading, element('p', 'meaning', card.meaning), mastery)
+    const format = element('p', 'card-format', writing ? 'Writing' : 'Pictures')
+    format.id = `${headingId}-format`
+    content.append(format, packs, heading, reading, element('p', 'meaning', card.meaning), mastery)
     if (!writing && card.reviewRequired) content.append(element('span', 'review-badge', 'Review in context'))
     const voices = element('div', 'voices')
     voices.setAttribute('role', 'group')
