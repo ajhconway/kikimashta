@@ -553,17 +553,19 @@ test('reviews both saved formats of one word and preserves a writing retry after
 });
 
 test('home centers a larger Kiku and fills the viewport with the current intensity', async ({ page }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.setViewportSize({ width: 390, height: 664 });
   await page.goto('./');
   const density = page.getByRole('status', { name: 'Review density' });
   await expect(density).toContainText('Minimal');
   await expect(page.getByRole('listbox')).toHaveCount(0);
   // Check the real foreground styles against every full-screen intensity fill.
-  const textColors = await page.locator('.home-intensity, footer a').evaluateAll(elements =>
+  const textColors = await page.locator('.home-intensity, footer a, .home .text-button').evaluateAll(elements =>
     elements.map(element => getComputedStyle(element).color));
-  const footerLink = page.locator('footer a').first();
-  await footerLink.hover();
-  textColors.push(await footerLink.evaluate(link => getComputedStyle(link).color));
+  for (const control of await page.locator('footer a, .home .text-button').all()) {
+    await control.hover();
+    textColors.push(await control.evaluate(element => getComputedStyle(element).color));
+  }
   function luminance(rgb: number[]) {
     const linear = rgb.map(channel => {
       const value = channel / 255;

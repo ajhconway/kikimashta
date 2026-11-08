@@ -15,7 +15,7 @@ export const quizFeedbackColors = {
 export const intensityColors: Record<DensityLevel, string> = {
   minimal: '#d9c1f4',
   light: '#ffcb78',
-  moderate: '#ff89b3',
+  moderate: '#ff8fb7',
   high: '#c4a2ff',
   intense: '#f99bdc',
 };
