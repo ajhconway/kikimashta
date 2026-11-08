@@ -25,9 +25,8 @@ export function ReviewForecast({ forecast, at, loading, unavailable }: ReviewFor
   const maximum = Math.max(1, ...daily);
   const empty = ready && daily.every(count => count === 0);
 
-  return <section className="review-forecast" aria-labelledby={`${id}-heading`} aria-describedby={`${id}-assumption`} aria-busy={loading || undefined}>
+  return <section className="review-forecast" aria-labelledby={`${id}-heading`} aria-busy={loading || undefined}>
     <h2 id={`${id}-heading`}>Review forecast</h2>
-    <p id={`${id}-assumption`} className="review-forecast-assumption">Current cards · daily practice</p>
     {ready ? <>
       <ol className="review-forecast-days" role="list" aria-label="Estimated daily reviews">
         {daily.map((count, index) => {
@@ -36,9 +35,9 @@ export function ReviewForecast({ forecast, at, loading, unavailable }: ReviewFor
           const displayed = roundedCount(count);
           const accessibleCount = displayed === '<1' ? 'less than 1' : displayed;
           const description = `${index === 0 ? 'Today, ' : ''}${fullDate.format(date)}: ${accessibleCount} estimated ${displayed === '1' || displayed === '<1' ? 'review' : 'reviews'}`;
-          return <li key={index} aria-label={description}>
+          return <li key={index} aria-label={description} data-peak={count > 0 && count === maximum || undefined}>
             <span className="review-forecast-count" aria-hidden="true">{displayed}</span>
-            <span className="review-forecast-track" aria-hidden="true"><span className={'review-forecast-bar' + (count === 0 ? ' is-zero' : '')} style={{ height: `${count === 0 ? 2 : Math.max(3, count / maximum * 30)}px` }}/></span>
+            <span className="review-forecast-track" aria-hidden="true"><span className={'review-forecast-bar' + (count === 0 ? ' is-zero' : '')} style={{ height: `${count === 0 ? 3 : Math.max(6, count / maximum * 36)}px` }}/></span>
             <time dateTime={date.toISOString()} aria-hidden="true">{label}</time>
           </li>;
         })}

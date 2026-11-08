@@ -14,7 +14,7 @@ function renderForecast(daily: number[]) {
 describe('Home review forecast (#156)', () => {
   it('presents seven rounded daily estimates with English days and accessible dates', () => {
     renderForecast([3, 1, 2.4, 5.6, 0, 7, 8]);
-    expect(screen.getByRole('region', { name: 'Review forecast' })).toHaveAccessibleDescription('Current cards · daily practice');
+    expect(screen.getByRole('region', { name: 'Review forecast' })).not.toHaveTextContent('Current cards · daily practice');
     expect(screen.getByRole('heading', { name: 'Review forecast', level: 2 })).toBeVisible();
     const list = screen.getByRole('list', { name: 'Estimated daily reviews' });
     const rows = within(list).getAllByRole('listitem');

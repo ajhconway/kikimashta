@@ -45,7 +45,7 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
   await page.reload();
   await expect(forecast.getByRole('listitem')).toHaveCount(7);
   await expect(today).toHaveText('3');
-  await expect(forecast).toHaveAccessibleDescription('Current cards · daily practice');
+  await expect(forecast).not.toContainText('Current cards · daily practice');
   expect((await forecast.boundingBox())!.height).toBeLessThanOrEqual(145);
   for (const size of [{ width: 320, height: 568 }, { width: 390, height: 664 }, { width: 1280, height: 800 }]) {
     await page.setViewportSize(size);
