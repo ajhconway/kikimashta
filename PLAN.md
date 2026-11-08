@@ -67,7 +67,7 @@ The owner approved a 36-item expansion of Travel level 1, excluding entrada/sali
 
 ## Spanish travel audio (#155)
 
-Generate the 36 approved Travel level 1 words in the four selected regional pairs: Juan/Pamela (Mexico City), Albeiro/Carito (Bogotá), Santiago/Agustina (Buenos Aires) and Carlos Figueroa/Veronica (Puerto Rico). Cesar and audition alternatives are excluded. The approved matrix is 288 clips / 1,824 Unicode input characters, using the existing eleven_v4 model and playback profile. Bind generation to exact text/voice snapshots, reuse the resumable engine with Spanish language enforcement, preserve provider originals, and prepare a complete volume-matched local listening gallery. No automatic paid retries or active-pack changes. Pronunciation and final listening acceptance remain pending.
+All 36 approved Travel level 1 words are generated in the four selected regional pairs: Juan/Pamela (Mexico City), Albeiro/Carito (Bogotá), Santiago/Agustina (Buenos Aires) and Carlos Figueroa/Veronica (Puerto Rico). Cesar and audition alternatives are excluded. The complete matrix has 288 clips / 1,824 Unicode input characters, using eleven_v4 and enforced Spanish. Exact approvals, original requests, source hashes and constant-gain processing evidence are preserved; a durable private copy is hash-verified under `~/.local/share/kikimashta/spanish-audio/155-v1`. Review all words with region/voice filters in `artifacts/spanish-travel-audio-review/index.html`. Four clips stay slightly quieter within processing limits and are flagged. Final pronunciation/listening approval and active-pack replacement follow separately; historical starter recordings remain preserved.
 
 ## Later work
 

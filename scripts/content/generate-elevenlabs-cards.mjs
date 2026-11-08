@@ -30,8 +30,9 @@ export function cardItems(catalog, starter) {
 }
 
 export function generationPlan(items, config) {
-  if (!items.length || new Set(items.map(i => i.id)).size !== items.length || items.some(i => !/^ja-[a-z0-9-]+$/.test(i.id) || ![i.text, i.spelling, i.meaning].every(nonempty))) throw new Error('Invalid card selection.')
-  if (config.provider !== 'ElevenLabs' || config.model !== 'eleven_v4' || config.language !== 'ja-JP' || !Array.isArray(config.voices) || !config.voices.length ||
+  const itemId = { 'ja-JP': /^ja-[a-z0-9-]+$/, 'es-419': /^es-419-[a-z0-9-]+$/ }[config.language]
+  if (!itemId || !items.length || new Set(items.map(i => i.id)).size !== items.length || items.some(i => !itemId.test(i.id) || ![i.text, i.spelling, i.meaning].every(nonempty))) throw new Error('Invalid card selection.')
+  if (config.provider !== 'ElevenLabs' || config.model !== 'eleven_v4' || !Array.isArray(config.voices) || !config.voices.length ||
       new Set(config.voices.map(v => v.voice)).size !== config.voices.length || new Set(config.voices.map(v => v.id)).size !== config.voices.length ||
       config.voices.some(v => !/^[a-z][a-z0-9-]*$/.test(v.voice) || !/^[a-zA-Z0-9_-]+$/.test(v.id) || !nonempty(v.name)) ||
       config.voiceSettings?.stability !== 0.5 || config.voiceSettings?.similarity_boost !== 0.75) throw new Error('Invalid approved voice configuration.')
