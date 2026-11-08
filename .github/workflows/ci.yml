@@ -34,6 +34,7 @@ jobs:
           -f supabase/tests/bootstrap.sql
           -f supabase/migrations/202611060001_sync.sql
           -f supabase/migrations/20261107032200_audio_text_attempts.sql
+          -f supabase/migrations/20261108190549_contextual_attempts.sql
           -f supabase/tests/sync.sql
 
   checks:

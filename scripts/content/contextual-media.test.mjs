@@ -1,0 +1,34 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { loadContextualPilot, projectRoot } from './validate-contextual.mjs'
+
+test('accepted contextual practice media preserves the exact verified deliveries and authored identities', () => {
+  const manifest = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/accepted-media.json'), 'utf8'))
+  const banks = ['ja-pilot.json', 'ja-simple-pilot.json'].map(file => loadContextualPilot(projectRoot, 'content/contextual/' + file).bank)
+  assert.equal(manifest.evidenceUrl, 'https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626')
+  assert.equal(manifest.contexts.length, 6)
+  let clips = 0
+  for (const media of manifest.contexts) {
+    const context = banks.flatMap(bank => bank.contexts).find(context => context.id === media.contextId)
+    assert.equal(context.revision, media.contextRevision)
+    assert.equal(context.targetItemId, media.targetItemId)
+    assert.equal(context.sentence.text, media.sentenceText)
+    for (const question of context.questions) {
+      assert.equal(media.questions[question.id], question.prompt.text)
+      assert.equal(media.questionRevisions[question.id], question.revision)
+    }
+    assert.deepEqual(media.recordings.map(recording => recording.voice), ['otani', 'morioki'])
+    for (const recording of media.recordings) {
+      assert.equal(Object.keys(recording.hashes).length, 3)
+      for (const src of [recording.sentenceSrc, ...Object.values(recording.questionSrcs)]) {
+        const bytes = readFileSync(resolve(projectRoot, 'public', src))
+        assert.equal(createHash('sha256').update(bytes).digest('hex'), recording.hashes[src])
+        clips++
+      }
+    }
+  }
+  assert.equal(clips, 36)
+})
