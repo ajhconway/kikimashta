@@ -137,7 +137,7 @@ test('contextual practice demo uses real session feedback and retries without ch
       await expect(badge).toBeVisible();
       // The fake JS clock does not advance native CSS transitions/animations.
       await expect(quiz.locator('.contextual-response-row')).toHaveCSS('column-gap', '12px');
-      await expect(badge).toHaveCSS('transform', 'none');
+      await expect(badge).toHaveCSS('transform', /^(none|matrix\(1, 0, 0, 1, 0, 0\))$/);
       const badgeBounds = (await badge.boundingBox())!;
       const detailBounds = (await japanese.boundingBox())!;
       expect(badgeBounds.x + badgeBounds.width).toBeLessThanOrEqual(detailBounds.x - 6);
