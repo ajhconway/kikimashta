@@ -123,7 +123,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
   await remote.connect(context);
   await page.goto('./');
   await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
-  const word = bank.items[0]!;
+  const word = bank.items.find(item => item.id === 'ja-dog')!;
   const legacy: PracticeAttempt = { id: 'legacy-sync', sessionId: 'old-session', itemId: word.id, language: bank.language,
     choiceIds: bank.items.slice(0, 4).map(item => item.id), selectedId: word.id, correct: true,
     startedAt: Date.now() - 86_400_000, answeredAt: Date.now() - 86_400_000, responseMs: 0 };

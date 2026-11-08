@@ -44,13 +44,15 @@ describe('playable practice banks', () => {
     }
   });
 
-  it('keeps an eligible adaptive pool with original starter IDs, no flagged cards or duplicate cues', () => {
-    expect(practicePool.items.slice(0, starter.items.length)).toEqual(starter.items);
+  it('keeps shared WaniKani IDs and excludes retired starter words from the adaptive pool', () => {
+    const shared = starter.items.filter(item => catalogue.items.some(entry => entry.id === item.id));
+    expect(practicePool.items.slice(0, shared.length)).toEqual(shared);
+    expect(practicePool.items.every(item => catalogue.items.some(entry => entry.id === item.id))).toBe(true);
     expect(practicePool.items.length).toBeGreaterThan(30);
     expect(new Set(practicePool.items.map(item => item.id)).size).toBe(practicePool.items.length);
     expect(new Set(practicePool.items.map(item => item.image.src)).size).toBe(practicePool.items.length);
     expect(new Set(practicePool.items.map(item => item.reading ?? item.text)).size).toBe(practicePool.items.length);
-    for (const item of practicePool.items.slice(starter.items.length)) {
+    for (const item of practicePool.items.slice(shared.length)) {
       expect(library.cards.find(card => card.id === item.id)?.reviewRequired).toBe(false);
       for (const src of [item.image.src, ...item.audio.map(clip => clip.src)]) expect(existsSync(resolve('public', src))).toBe(true);
     }

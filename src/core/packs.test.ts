@@ -3,7 +3,7 @@ import catalogue from '../../content/catalog/ja.json';
 import library from '../../public/vocabulary/library-data.json';
 import { cardKey } from './cards';
 import { practicePool } from './practice';
-import { practicePacks, cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './packs';
+import { cardPacks, initialPackIds, packPreferenceKey, selectedPracticeCards } from './packs';
 import { createQuestions } from './session';
 
 beforeEach(() => localStorage.clear());
@@ -32,22 +32,24 @@ describe('WaniKani packs', () => {
     expect(selectedPracticeCards(practicePool.items, [])).toEqual([]);
     expect(selectedPracticeCards(practicePool.items, ['unknown'])).toEqual([]);
   });
-  it('preserves every starter card when all practice packs are enabled', () => {
-    const cards = selectedPracticeCards(practicePool.items, practicePacks.map(pack => pack.id));
+  it('includes every active card without retired starter words', () => {
+    const cards = selectedPracticeCards(practicePool.items, cardPacks.map(pack => pack.id));
     expect(cards).toHaveLength(practicePool.items.length * 2);
-    expect(cards.some(card => card.item.id === 'ja-cat' && card.exercise === 'audio-picture')).toBe(true);
+    expect(cards.some(card => ['ja-cat', 'ja-banana', 'ja-umbrella', 'ja-cup'].includes(card.item.id))).toBe(false);
+    expect(cards.some(card => card.item.id === 'ja-dog')).toBe(true);
+    expect(cards.some(card => card.item.id === 'ja-apple')).toBe(true);
   });
   it('defaults to all packs and restores empty, valid, stale and invalid preferences safely', () => {
-    expect(initialPackIds()).toEqual(practicePacks.map(pack => pack.id));
-    for (const value of ['[]', '["unknown"]']) {
+    expect(initialPackIds()).toEqual(cardPacks.map(pack => pack.id));
+    for (const value of ['[]', '["unknown"]', '["ja-starter-pictures","ja-starter-writing"]']) {
       localStorage.setItem(packPreferenceKey, value);
       expect(initialPackIds()).toEqual([]);
     }
-    localStorage.setItem(packPreferenceKey, JSON.stringify([cardPacks[3]!.id, 'unknown']));
+    localStorage.setItem(packPreferenceKey, JSON.stringify([cardPacks[3]!.id, 'ja-starter-pictures', 'ja-starter-writing', 'unknown']));
     expect(initialPackIds()).toEqual([cardPacks[3]!.id]);
     for (const value of ['bad json', '{}', '[null]']) {
       localStorage.setItem(packPreferenceKey, value);
-      expect(initialPackIds()).toHaveLength(12);
+      expect(initialPackIds()).toHaveLength(10);
     }
   });
 });

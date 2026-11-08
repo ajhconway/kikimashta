@@ -1,11 +1,17 @@
 import { expectReadableHomeText } from './contrast';
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
-import bank from '../content/ja.json' with { type: 'json' };
+import starter from '../content/ja.json' with { type: 'json' };
+import pool from '../content/practice-pool.json' with { type: 'json' };
 import type { Exercise, WordItem } from '../src/types';
 
 const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
-const allWords = [...bank.items, ...catalogue.items] as WordItem[];
+const allWords = [...starter.items, ...catalogue.items] as WordItem[];
+// Six active WaniKani words keep the existing session journeys bounded.
+const bank = { ...starter, items: [
+  ...starter.items.filter(item => catalogue.items.some(entry => entry.id === item.id)),
+  ...pool.itemIds.slice(0, 4).map(id => catalogue.items.find(item => item.id === id)!),
+] as WordItem[] };
 
 async function seedAttempts(page: Page, ids = bank.items.map(item => item.id), exercise?: Exercise) {
   await page.evaluate(async ({ itemIds, exercise }) => {
@@ -438,7 +444,7 @@ test('writing scales by displayed length and card size across Japanese scripts',
   await page.clock.install();
   await page.addInitScript(() => { Math.random = () => 0.5; });
   await page.goto('./');
-  const words = ['犬', '五十', 'りんご', 'バナナ', 'コーヒー', 'テーブルの上'].map(text => allWords.find(item => item.text === text)!);
+  const words = ['犬', '五十', 'りんご', 'ホテル', 'コーヒー', 'テーブルの上'].map(text => allWords.find(item => item.text === text)!);
   expect(words.every(Boolean)).toBe(true);
   await seedAttempts(page, words.map(item => item.id), 'audio-text');
   await page.reload();
@@ -471,8 +477,8 @@ test('writing scales by displayed length and card size across Japanese scripts',
     expect(size('犬'), 'single kanji is prominent').toBeGreaterThan(40);
     expect(size('犬')).toBeGreaterThan(size('五十'));
     expect(size('五十')).toBeGreaterThan(size('りんご'));
-    expect(size('りんご')).toBeCloseTo(size('バナナ'), 1);
-    expect(size('バナナ')).toBeGreaterThan(size('コーヒー'));
+    expect(size('りんご')).toBeCloseTo(size('ホテル'), 1);
+    expect(size('ホテル')).toBeGreaterThan(size('コーヒー'));
     expect(size('コーヒー')).toBeGreaterThan(size('テーブルの上'));
     expect(size('テーブルの上')).toBeGreaterThanOrEqual(16);
   }

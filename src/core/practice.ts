@@ -51,7 +51,8 @@ export const practiceBanks: WordBank[] = buildPracticeBanks(catalogue.items as C
 export const practicePool: WordBank = {
   id: 'ja-adaptive', language: starter.language, title: 'Japanese listening',
   items: [
-    ...starter.items as WordItem[],
+    // Keep shared WaniKani IDs and media; starter-only words are retired (#111).
+    ...starter.items.filter(item => catalogue.items.some(entry => entry.id === item.id)) as WordItem[],
     ...poolSelection.itemIds.map(id => {
       if (removedIds.has(id)) throw new Error('Removed practice-pool item: ' + id);
       const item = catalogue.items.find(candidate => candidate.id === id);
