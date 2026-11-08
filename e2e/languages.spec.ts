@@ -21,7 +21,6 @@ test('remembers learning language and independent pack choices across reloads', 
   await expect(page.getByRole('checkbox', { name: /Writing/ })).toHaveCount(0);
   await esPack.uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
-  await page.getByText('Practice voices · 8 selected', { exact: true }).click();
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
