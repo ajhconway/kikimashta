@@ -46,7 +46,7 @@ globalThis.fetch=()=>{throw new Error('dry-run network')};\n`)
   for (const stage of ['simple', 'contrastive']) {
     const result = JSON.parse(execFileSync(process.execPath, ['--import', blocker,
       fileURLToPath(new URL('./generate-contextual-audition.mjs', import.meta.url)), '--stage', stage, '--batch', 'expansion', '--dry-run'],
-    { env: { ...process.env, ELEVENLABS_API_KEY: '', HOME: join(directory, 'no-private-key') }, encoding: 'utf8' }))
+    { env: { ...process.env, ELEVENLABS_API_KEY: '' }, encoding: 'utf8' }))
     assert.deepEqual(result.voices, ['Otani', 'Morioki'])
     assert.equal(result.contexts, 17)
     assert.equal(result.requests, 102)
