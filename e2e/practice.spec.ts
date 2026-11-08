@@ -643,6 +643,33 @@ test('Dev review practices six random cards and a missed-word retry without savi
   expect(await savedAttempts(page)).toEqual([]);
 });
 
+for (const key of ['Enter', 'Space']) {
+  test(`picture choices announce their contents and activate once with ${key}`, async ({ page }) => {
+    await startReview(page);
+    const choices = page.getByRole('button', { name: /choose picture/i });
+    await expect(choices).toHaveCount(4);
+    const names: string[] = [];
+    for (let index = 0; index < 4; index++) {
+      const choice = choices.nth(index);
+      const description = await choice.getByRole('img').getAttribute('alt');
+      expect(description?.trim()).toBeTruthy();
+      const name = `Choose picture ${index + 1}: ${description}`;
+      await expect(choice).toHaveAccessibleName(name);
+      names.push(name);
+    }
+    await page.getByRole('button', { name: names[0]!, exact: true }).focus();
+    await page.keyboard.press('Tab');
+    const choice = page.getByRole('button', { name: names[1]!, exact: true });
+    await expect(choice).toBeFocused();
+    await page.keyboard.press(key);
+    await expect(choice).toBeDisabled();
+    await expect.poll(async () => (await savedAttempts(page)).length).toBe(7);
+    const answers = (await savedAttempts(page)).filter(attempt => attempt.context);
+    expect(answers).toHaveLength(1);
+    expect(answers[0]!.choiceIds).toHaveLength(4);
+  });
+}
+
 test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
   test.setTimeout(60_000);
   await page.clock.install();

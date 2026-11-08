@@ -325,6 +325,25 @@ describe('adaptive session flow', () => {
 });
 
 describe('quiz safeguards', () => {
+  it('gives every picture choice an identifying accessible name through replay and feedback', async () => {
+    const { container } = await review();
+    const choices = screen.getAllByRole('button', { name: /choose picture/i });
+    const descriptions = choices.map(button => within(button).getByRole('img').getAttribute('alt')!);
+    expect(choices).toHaveLength(4);
+    choices.forEach((button, index) => {
+      expect(descriptions[index]!.trim()).not.toBe('');
+      expect(button).toHaveAccessibleName('Choose picture ' + (index + 1) + ': ' + descriptions[index]);
+    });
+    await click(screen.getByRole('button', { name: 'Replay word' }));
+    choices.forEach((button, index) => expect(button).toHaveAccessibleName('Choose picture ' + (index + 1) + ': ' + descriptions[index]));
+    const wrong = heardChoice(container, false);
+    const name = wrong.getAttribute('aria-label')!;
+    await click(wrong);
+    expect(wrong).toHaveAccessibleName(name);
+    expect(wrong).toBeDisabled();
+    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
+  });
+
   it.each([true, false])('retains the right pictures after a correct=%s answer', async correct => {
     const { container } = await review();
     const targetPicture = within(heardChoice(container)).getByRole('img').getAttribute('alt')!;
