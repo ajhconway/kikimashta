@@ -16,12 +16,13 @@ describe('contextual runtime content', () => {
       expect(contexts.filter(context => context.targetItemId === target && (context.stage ?? 'contrastive') === stage)).toHaveLength(2);
     }
     expect(contexts.filter(context => context.review.text === 'pending')).toHaveLength(0);
-    expect(contexts.filter(context => context.review.audio === 'pending')).toHaveLength(34);
+    expect(contexts.filter(context => context.review.audio === 'pending')).toHaveLength(0);
+    expect(contexts.filter(context => context.review.audio === 'approved')).toHaveLength(40);
     expect(contexts.filter(context => context.recordings.length === 2)).toHaveLength(40);
-    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'text'))).toHaveLength(12);
-    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'picture'))).toHaveLength(6);
+    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'text'))).toHaveLength(80);
+    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'picture'))).toHaveLength(32);
     const cards = readyContextualCards(contextualBanks, contextualVocabulary);
-    expect(cards).toHaveLength(10);
+    expect(cards).toHaveLength(34);
     expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
   });
 

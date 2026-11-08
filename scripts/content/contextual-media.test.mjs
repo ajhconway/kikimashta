@@ -9,9 +9,13 @@ test('accepted contextual practice media preserves the exact verified deliveries
   const manifest = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/accepted-media.json'), 'utf8'))
   const generated = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/generated-media.json'), 'utf8'))
   const banks = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.json'].map(file => loadContextualPilot(projectRoot, 'content/contextual/' + file).bank)
-  assert.equal(manifest.evidenceUrl, 'https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626')
-  assert.equal(manifest.contexts.length, 6)
-  assert.equal(generated.contexts.length, 34)
+  assert.equal(manifest.evidenceUrl, 'https://github.com/ajhconway/kikimashta/issues/139#issuecomment-6726427897')
+  const firstAcceptance = manifest.previousAcceptances.find(acceptance => acceptance.evidenceUrl ===
+    'https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626')
+  assert.equal(firstAcceptance.contextIds.length, 6)
+  assert.equal(manifest.reviewedCommit, 'b0a8ca3810944d6670c65dd1a7fb275a7573780f')
+  assert.equal(manifest.contexts.length, 40)
+  assert.equal(generated.contexts.length, 0)
   const all = [...manifest.contexts, ...generated.contexts]
   assert.equal(new Set(all.map(context => context.contextId)).size, 40)
   let clips = 0

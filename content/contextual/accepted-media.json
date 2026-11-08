@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626",
+  "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/139#issuecomment-6726427897",
   "contexts": [
     {
       "contextId": "ja-ctx-ue-01",
@@ -271,6 +271,1619 @@
         "ja-ctx-simple-hashiru-01-target": 1,
         "ja-ctx-simple-hashiru-01-detail": 1
       }
+    },
+    {
+      "contextId": "ja-ctx-simple-ue-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-c0f58bfab324",
+      "sentenceText": "ノートは棚の上にあります。",
+      "questions": {
+        "ja-ctx-simple-ue-02-target": "ノートはどこにありますか。",
+        "ja-ctx-simple-ue-02-detail": "棚の上には何がありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-ue-02-target": 1,
+        "ja-ctx-simple-ue-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ue-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ue-02-target": "audio/contextual/ja-ctx-simple-ue-02/otani/ja-ctx-simple-ue-02-target.mp3",
+            "ja-ctx-simple-ue-02-detail": "audio/contextual/ja-ctx-simple-ue-02/otani/ja-ctx-simple-ue-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ue-02/otani/sentence.mp3": "3adba3418c3204eda76434aa896323ace0be43b6c9558dbfa2d4921617b8b2df",
+            "audio/contextual/ja-ctx-simple-ue-02/otani/ja-ctx-simple-ue-02-target.mp3": "b983d6d3e4ba3f57ecd898416b0f80693fd81249694c861a664f3aad51ae6d42",
+            "audio/contextual/ja-ctx-simple-ue-02/otani/ja-ctx-simple-ue-02-detail.mp3": "ccfed445e2926c84e28ddf3044e2f5ac58a288bd788b4d6eb3612bb520524fb0"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ue-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ue-02-target": "audio/contextual/ja-ctx-simple-ue-02/morioki/ja-ctx-simple-ue-02-target.mp3",
+            "ja-ctx-simple-ue-02-detail": "audio/contextual/ja-ctx-simple-ue-02/morioki/ja-ctx-simple-ue-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ue-02/morioki/sentence.mp3": "352d823b2e8e424eb99f0930830948bf5602ba1d101d115bd8bc1f4fa7e985c5",
+            "audio/contextual/ja-ctx-simple-ue-02/morioki/ja-ctx-simple-ue-02-target.mp3": "8e1d30c91c3b11ce6a0f118c5751649f635168d397e145991366d88eccf44939",
+            "audio/contextual/ja-ctx-simple-ue-02/morioki/ja-ctx-simple-ue-02-detail.mp3": "017a763fe0fb3283e60133b0104e205dc6da77181b16a647abc914abd54711fc"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-shita-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "sentenceText": "車は橋の下に止まっています。",
+      "questions": {
+        "ja-ctx-simple-shita-01-target": "車はどこに止まっていますか。",
+        "ja-ctx-simple-shita-01-detail": "橋の下には何が止まっていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-shita-01-target": 1,
+        "ja-ctx-simple-shita-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-shita-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-shita-01-target": "audio/contextual/ja-ctx-simple-shita-01/otani/ja-ctx-simple-shita-01-target.mp3",
+            "ja-ctx-simple-shita-01-detail": "audio/contextual/ja-ctx-simple-shita-01/otani/ja-ctx-simple-shita-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-shita-01/otani/sentence.mp3": "e49b590bdcae3c01865ab6cb2fa486f06922aca0ced0a09aca25db6802f0c68b",
+            "audio/contextual/ja-ctx-simple-shita-01/otani/ja-ctx-simple-shita-01-target.mp3": "0384d33b96eec98a795ddad37138e0fb9843f80446d71e566780a47c8a672e95",
+            "audio/contextual/ja-ctx-simple-shita-01/otani/ja-ctx-simple-shita-01-detail.mp3": "26168b187c28004273498bfa0fc01edfa41881df6349dc8d970cf6e2d2341650"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-shita-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-shita-01-target": "audio/contextual/ja-ctx-simple-shita-01/morioki/ja-ctx-simple-shita-01-target.mp3",
+            "ja-ctx-simple-shita-01-detail": "audio/contextual/ja-ctx-simple-shita-01/morioki/ja-ctx-simple-shita-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-shita-01/morioki/sentence.mp3": "a7b5370ad6bc3589222663903f4cf7f7be7eb31eede80f55d205ba785b4051d7",
+            "audio/contextual/ja-ctx-simple-shita-01/morioki/ja-ctx-simple-shita-01-target.mp3": "f4fd4e1f56439170154f70cfc02bb0a715678d7815a1df521da3b7d231d182bf",
+            "audio/contextual/ja-ctx-simple-shita-01/morioki/ja-ctx-simple-shita-01-detail.mp3": "5676da9a6adfbd843505cc9390de2224184e1b20f16c8d8e69a39e5a4ff34997"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-shita-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "sentenceText": "ノートは椅子の下にあります。",
+      "questions": {
+        "ja-ctx-simple-shita-02-target": "ノートはどこにありますか。",
+        "ja-ctx-simple-shita-02-detail": "椅子の下には何がありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-shita-02-target": 1,
+        "ja-ctx-simple-shita-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-shita-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-shita-02-target": "audio/contextual/ja-ctx-simple-shita-02/otani/ja-ctx-simple-shita-02-target.mp3",
+            "ja-ctx-simple-shita-02-detail": "audio/contextual/ja-ctx-simple-shita-02/otani/ja-ctx-simple-shita-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-shita-02/otani/sentence.mp3": "611bc31cba03f1343f1b4e204d7371f331a5029f8f9150faaff7e1575eaddc72",
+            "audio/contextual/ja-ctx-simple-shita-02/otani/ja-ctx-simple-shita-02-target.mp3": "319a8777cd24a0eec6ed874f1952e389b795c566f7b52ba750ba6fba475a21c9",
+            "audio/contextual/ja-ctx-simple-shita-02/otani/ja-ctx-simple-shita-02-detail.mp3": "a6db70c869f1fac5d6a256cc72f16fb8b49756a8fc28f4165a701976e0e4ad1d"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-shita-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-shita-02-target": "audio/contextual/ja-ctx-simple-shita-02/morioki/ja-ctx-simple-shita-02-target.mp3",
+            "ja-ctx-simple-shita-02-detail": "audio/contextual/ja-ctx-simple-shita-02/morioki/ja-ctx-simple-shita-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-shita-02/morioki/sentence.mp3": "00c070538564cb46afd86c72cb684645365861e3c87f2d9a0034abee27e7d267",
+            "audio/contextual/ja-ctx-simple-shita-02/morioki/ja-ctx-simple-shita-02-target.mp3": "8dd99ee140a65300f34b0cdef915dea4a33a2c7c00d8716fbcf85717bfbdf6f4",
+            "audio/contextual/ja-ctx-simple-shita-02/morioki/ja-ctx-simple-shita-02-detail.mp3": "1fa1ffe513a31f335cb1aa446c533a4abf02d5dac75ed5e1582ccc179f6e8558"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-ookii-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "sentenceText": "大きい車は白いです。",
+      "questions": {
+        "ja-ctx-simple-ookii-01-target": "車はどんな大きさですか。",
+        "ja-ctx-simple-ookii-01-detail": "車は何色ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-ookii-01-target": 1,
+        "ja-ctx-simple-ookii-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ookii-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ookii-01-target": "audio/contextual/ja-ctx-simple-ookii-01/otani/ja-ctx-simple-ookii-01-target.mp3",
+            "ja-ctx-simple-ookii-01-detail": "audio/contextual/ja-ctx-simple-ookii-01/otani/ja-ctx-simple-ookii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ookii-01/otani/sentence.mp3": "106e8c15300e17f5921059cf37701e97acfdc1eabfcc121b31d583d93af66a4e",
+            "audio/contextual/ja-ctx-simple-ookii-01/otani/ja-ctx-simple-ookii-01-target.mp3": "0fca79914c5ccbf175eb98dd7a188fdc46c0b1cdf649a3f454f7475b9027a6ec",
+            "audio/contextual/ja-ctx-simple-ookii-01/otani/ja-ctx-simple-ookii-01-detail.mp3": "ddc37dee4ace09e188b51a5afd5ebe72203d239fb3068aca26a0975ba38a0296"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ookii-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ookii-01-target": "audio/contextual/ja-ctx-simple-ookii-01/morioki/ja-ctx-simple-ookii-01-target.mp3",
+            "ja-ctx-simple-ookii-01-detail": "audio/contextual/ja-ctx-simple-ookii-01/morioki/ja-ctx-simple-ookii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ookii-01/morioki/sentence.mp3": "cd6e1984928e378c5aba02c62fb7b118e8fc3387a3d7002c9d8781b29c00770a",
+            "audio/contextual/ja-ctx-simple-ookii-01/morioki/ja-ctx-simple-ookii-01-target.mp3": "8a0aa30bee138c7738aebbdabc899302f492576d4b47a6f9ed537d1d600bdd97",
+            "audio/contextual/ja-ctx-simple-ookii-01/morioki/ja-ctx-simple-ookii-01-detail.mp3": "20e9b23ad4a2479d5f5cac5b8617029c7dd0526d3be408d3f8e95dd5ae65516c"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-ookii-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "sentenceText": "大きい箱に本が入っています。",
+      "questions": {
+        "ja-ctx-simple-ookii-02-target": "箱はどんな大きさですか。",
+        "ja-ctx-simple-ookii-02-detail": "箱には何が入っていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-ookii-02-target": 1,
+        "ja-ctx-simple-ookii-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ookii-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ookii-02-target": "audio/contextual/ja-ctx-simple-ookii-02/otani/ja-ctx-simple-ookii-02-target.mp3",
+            "ja-ctx-simple-ookii-02-detail": "audio/contextual/ja-ctx-simple-ookii-02/otani/ja-ctx-simple-ookii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ookii-02/otani/sentence.mp3": "312c77a8259ea15e83c5b0344932ba56ae5a58d99575861231e3c6b169015552",
+            "audio/contextual/ja-ctx-simple-ookii-02/otani/ja-ctx-simple-ookii-02-target.mp3": "51e50ce62a803e35da99683db5919790a9e87889d31f19e631e67a58d088c7e7",
+            "audio/contextual/ja-ctx-simple-ookii-02/otani/ja-ctx-simple-ookii-02-detail.mp3": "99b91208ceb20591fea125265bfae8164af01aa0b78d7a689a995471619d2b9f"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-ookii-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-ookii-02-target": "audio/contextual/ja-ctx-simple-ookii-02/morioki/ja-ctx-simple-ookii-02-target.mp3",
+            "ja-ctx-simple-ookii-02-detail": "audio/contextual/ja-ctx-simple-ookii-02/morioki/ja-ctx-simple-ookii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-ookii-02/morioki/sentence.mp3": "876181502c5f3902159360078a2b9b44390b28568b0078568b57e68cd27f8b95",
+            "audio/contextual/ja-ctx-simple-ookii-02/morioki/ja-ctx-simple-ookii-02-target.mp3": "a45600a3a95b8b63f6f14d4c65c3cffa6980c98244b6a83f27ba2e75f4dabca8",
+            "audio/contextual/ja-ctx-simple-ookii-02/morioki/ja-ctx-simple-ookii-02-detail.mp3": "a2ac9297c27951887ade2d1ae3b74152dc4122f51121c8e6cc48f99ee642a1b4"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-chiisai-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "sentenceText": "小さい車は赤いです。",
+      "questions": {
+        "ja-ctx-simple-chiisai-01-target": "車はどんな大きさですか。",
+        "ja-ctx-simple-chiisai-01-detail": "車は何色ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-chiisai-01-target": 1,
+        "ja-ctx-simple-chiisai-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-chiisai-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-chiisai-01-target": "audio/contextual/ja-ctx-simple-chiisai-01/otani/ja-ctx-simple-chiisai-01-target.mp3",
+            "ja-ctx-simple-chiisai-01-detail": "audio/contextual/ja-ctx-simple-chiisai-01/otani/ja-ctx-simple-chiisai-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-chiisai-01/otani/sentence.mp3": "f77dc68bc64233af1cfdcfe270e02375d31c3655a844246d6bf8abf5a2d523fb",
+            "audio/contextual/ja-ctx-simple-chiisai-01/otani/ja-ctx-simple-chiisai-01-target.mp3": "4a6176556f8dcd57be7b71888c01d808b5585d1c4688e4708f7ba18589eb9097",
+            "audio/contextual/ja-ctx-simple-chiisai-01/otani/ja-ctx-simple-chiisai-01-detail.mp3": "c87ecdd8399e7dceba0e66a23a66723a5201c21a2c16471a16390821bb6d1ba1"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-chiisai-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-chiisai-01-target": "audio/contextual/ja-ctx-simple-chiisai-01/morioki/ja-ctx-simple-chiisai-01-target.mp3",
+            "ja-ctx-simple-chiisai-01-detail": "audio/contextual/ja-ctx-simple-chiisai-01/morioki/ja-ctx-simple-chiisai-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-chiisai-01/morioki/sentence.mp3": "f8e23ffbcfa51970a4bf0d6287bef2e23d0a5e0cb41d96ca558c4da66bf09419",
+            "audio/contextual/ja-ctx-simple-chiisai-01/morioki/ja-ctx-simple-chiisai-01-target.mp3": "45d3cd8f744682a2ae1028db1a3250e29c50388d1e00a136d0b2ff18c9fc2dec",
+            "audio/contextual/ja-ctx-simple-chiisai-01/morioki/ja-ctx-simple-chiisai-01-detail.mp3": "5fd4a5803e0bf487b0c1e44873e147c6544b76e708b36c122dfffb48fc956365"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-chiisai-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "sentenceText": "小さい箱に石が入っています。",
+      "questions": {
+        "ja-ctx-simple-chiisai-02-target": "箱はどんな大きさですか。",
+        "ja-ctx-simple-chiisai-02-detail": "箱には何が入っていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-chiisai-02-target": 1,
+        "ja-ctx-simple-chiisai-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-chiisai-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-chiisai-02-target": "audio/contextual/ja-ctx-simple-chiisai-02/otani/ja-ctx-simple-chiisai-02-target.mp3",
+            "ja-ctx-simple-chiisai-02-detail": "audio/contextual/ja-ctx-simple-chiisai-02/otani/ja-ctx-simple-chiisai-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-chiisai-02/otani/sentence.mp3": "d8200c50bbb8d54bf5fb54635bbd4532c4313ffef1170357fec757733792dd5c",
+            "audio/contextual/ja-ctx-simple-chiisai-02/otani/ja-ctx-simple-chiisai-02-target.mp3": "ae7f8fcc8f8a3f34aa1fad1ae6a74269160cb94e3434d798f8ee0d2786af3320",
+            "audio/contextual/ja-ctx-simple-chiisai-02/otani/ja-ctx-simple-chiisai-02-detail.mp3": "51417bb2d5070d457279d89293f07bb1d2668c7b5d37e0fc7f75a31f74b2e28c"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-chiisai-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-chiisai-02-target": "audio/contextual/ja-ctx-simple-chiisai-02/morioki/ja-ctx-simple-chiisai-02-target.mp3",
+            "ja-ctx-simple-chiisai-02-detail": "audio/contextual/ja-ctx-simple-chiisai-02/morioki/ja-ctx-simple-chiisai-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-chiisai-02/morioki/sentence.mp3": "c758cb3251bb80b97da5d74af7595bf2c2b98c4306dfdefd20962daff799d9de",
+            "audio/contextual/ja-ctx-simple-chiisai-02/morioki/ja-ctx-simple-chiisai-02-target.mp3": "af995fc524dc30091dc117c033841a9c8d6221ace1efc232dadf0d5aa2d04966",
+            "audio/contextual/ja-ctx-simple-chiisai-02/morioki/ja-ctx-simple-chiisai-02-detail.mp3": "23d769e1da197a8be53e289c405fa06be09bd328be2b037efcf02d29d88a6d89"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-hon-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "sentenceText": "本は机の上にあります。",
+      "questions": {
+        "ja-ctx-simple-hon-01-target": "机の上には何がありますか。",
+        "ja-ctx-simple-hon-01-detail": "本は何の上にありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-hon-01-target": 1,
+        "ja-ctx-simple-hon-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hon-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hon-01-target": "audio/contextual/ja-ctx-simple-hon-01/otani/ja-ctx-simple-hon-01-target.mp3",
+            "ja-ctx-simple-hon-01-detail": "audio/contextual/ja-ctx-simple-hon-01/otani/ja-ctx-simple-hon-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hon-01/otani/sentence.mp3": "1bae3b71424dc26b7ec603329aee6b3e2f2c2f97351259d54a874ba27b673849",
+            "audio/contextual/ja-ctx-simple-hon-01/otani/ja-ctx-simple-hon-01-target.mp3": "9abacfffc1f0d08b92d06d4b26fbdae72c95b5b313bb03c8b1cc5a1607e2f132",
+            "audio/contextual/ja-ctx-simple-hon-01/otani/ja-ctx-simple-hon-01-detail.mp3": "13572aa52b6492714d2b493e529beeaeb18c5e133f86942c73638cad6593a2f7"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hon-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hon-01-target": "audio/contextual/ja-ctx-simple-hon-01/morioki/ja-ctx-simple-hon-01-target.mp3",
+            "ja-ctx-simple-hon-01-detail": "audio/contextual/ja-ctx-simple-hon-01/morioki/ja-ctx-simple-hon-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hon-01/morioki/sentence.mp3": "ec964b0b60792ceb368720b231efe297e5417bfb88099ba91db802fb1d5b1887",
+            "audio/contextual/ja-ctx-simple-hon-01/morioki/ja-ctx-simple-hon-01-target.mp3": "51f03e6a112f69167a9e4ab3add6520cf04f129c01b73866f92e811b91cee649",
+            "audio/contextual/ja-ctx-simple-hon-01/morioki/ja-ctx-simple-hon-01-detail.mp3": "172c6bd79d05aaf81fa421a909c59ef41e978ce1509bbadca952fc2506c68e56"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-hon-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "sentenceText": "先生は図書館で本を読んでいます。",
+      "questions": {
+        "ja-ctx-simple-hon-02-target": "先生は図書館で何を読んでいますか。",
+        "ja-ctx-simple-hon-02-detail": "誰が図書館で本を読んでいますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-hon-02-target": 1,
+        "ja-ctx-simple-hon-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hon-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hon-02-target": "audio/contextual/ja-ctx-simple-hon-02/otani/ja-ctx-simple-hon-02-target.mp3",
+            "ja-ctx-simple-hon-02-detail": "audio/contextual/ja-ctx-simple-hon-02/otani/ja-ctx-simple-hon-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hon-02/otani/sentence.mp3": "159d58d7893731301f579867a7ad2228fa6ae44a34490229fbe7bab2a885f862",
+            "audio/contextual/ja-ctx-simple-hon-02/otani/ja-ctx-simple-hon-02-target.mp3": "39f29c6db0494eb89d0434500a9ba456a83db2c48fa6933c27f82e57d84b8028",
+            "audio/contextual/ja-ctx-simple-hon-02/otani/ja-ctx-simple-hon-02-detail.mp3": "71ad9f1c8a33361749d1a057873d73f6865eb51c05faeea6d8fe8baff126bac0"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hon-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hon-02-target": "audio/contextual/ja-ctx-simple-hon-02/morioki/ja-ctx-simple-hon-02-target.mp3",
+            "ja-ctx-simple-hon-02-detail": "audio/contextual/ja-ctx-simple-hon-02/morioki/ja-ctx-simple-hon-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hon-02/morioki/sentence.mp3": "9d7d3ffe66bcb6a5d22101f383c127fb4d0b16c18db0be47bfa6564398074db1",
+            "audio/contextual/ja-ctx-simple-hon-02/morioki/ja-ctx-simple-hon-02-target.mp3": "ea1c494aecfda6c798e2eee4dc40378aa04af2f40e52f18344ef4ea56e895a01",
+            "audio/contextual/ja-ctx-simple-hon-02/morioki/ja-ctx-simple-hon-02-detail.mp3": "f69fc86cbc500bd0b6f7a9c6c30bfe30c784419a91ca8ed6904d1be99918917e"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-mizu-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-28ddfdc9290c",
+      "sentenceText": "父は朝に水を飲みます。",
+      "questions": {
+        "ja-ctx-simple-mizu-02-target": "父は朝に何を飲みますか。",
+        "ja-ctx-simple-mizu-02-detail": "父はいつ水を飲みますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-mizu-02-target": 1,
+        "ja-ctx-simple-mizu-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-mizu-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-mizu-02-target": "audio/contextual/ja-ctx-simple-mizu-02/otani/ja-ctx-simple-mizu-02-target.mp3",
+            "ja-ctx-simple-mizu-02-detail": "audio/contextual/ja-ctx-simple-mizu-02/otani/ja-ctx-simple-mizu-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-mizu-02/otani/sentence.mp3": "3e9fb03de0c313e3990c1492eb86fc5ea85d715f69c6159db5872a844fbd317c",
+            "audio/contextual/ja-ctx-simple-mizu-02/otani/ja-ctx-simple-mizu-02-target.mp3": "0edf043505de6fb0818d021992c0d55d2d6cc62189b82ed1b61a3442aaefdee2",
+            "audio/contextual/ja-ctx-simple-mizu-02/otani/ja-ctx-simple-mizu-02-detail.mp3": "920c15086a3f487eb285995c5e39f9157765a49681ab6615f7065ad3df5e024b"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-mizu-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-mizu-02-target": "audio/contextual/ja-ctx-simple-mizu-02/morioki/ja-ctx-simple-mizu-02-target.mp3",
+            "ja-ctx-simple-mizu-02-detail": "audio/contextual/ja-ctx-simple-mizu-02/morioki/ja-ctx-simple-mizu-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-mizu-02/morioki/sentence.mp3": "44baa39fb4c9b76bb6067186f6f8d3df4e884b044d190345ee5328c26c375cca",
+            "audio/contextual/ja-ctx-simple-mizu-02/morioki/ja-ctx-simple-mizu-02-target.mp3": "9681c3141d2405aaf2ecba1112c7f6d6a38c54a62a284187102f6a2596299040",
+            "audio/contextual/ja-ctx-simple-mizu-02/morioki/ja-ctx-simple-mizu-02-detail.mp3": "dd6a6c510f4f86235f25ac2e3f7e18f91eed9dadf81871d3a734b4ff44f34c0e"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-koohii-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "sentenceText": "母はコーヒーを飲みます。",
+      "questions": {
+        "ja-ctx-simple-koohii-01-target": "母は何を飲みますか。",
+        "ja-ctx-simple-koohii-01-detail": "誰がコーヒーを飲みますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-koohii-01-target": 1,
+        "ja-ctx-simple-koohii-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-koohii-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-koohii-01-target": "audio/contextual/ja-ctx-simple-koohii-01/otani/ja-ctx-simple-koohii-01-target.mp3",
+            "ja-ctx-simple-koohii-01-detail": "audio/contextual/ja-ctx-simple-koohii-01/otani/ja-ctx-simple-koohii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-koohii-01/otani/sentence.mp3": "120d98e1cea9bc6ce5d2708fb14bd660617cff61c50b56ef452b000c1724c6cb",
+            "audio/contextual/ja-ctx-simple-koohii-01/otani/ja-ctx-simple-koohii-01-target.mp3": "7df1a5c239c95371f497101160cfbbe848b7db1bc573ea098104277d5532c78d",
+            "audio/contextual/ja-ctx-simple-koohii-01/otani/ja-ctx-simple-koohii-01-detail.mp3": "f219bc0f4b24164f6bd45fb21df90f5fbcf4221f509ecb3bd07c9a3de3617e16"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-koohii-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-koohii-01-target": "audio/contextual/ja-ctx-simple-koohii-01/morioki/ja-ctx-simple-koohii-01-target.mp3",
+            "ja-ctx-simple-koohii-01-detail": "audio/contextual/ja-ctx-simple-koohii-01/morioki/ja-ctx-simple-koohii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-koohii-01/morioki/sentence.mp3": "543146d13bcff021efa965ce12170b729ab1a3f4a12ab70e0c76f2670d900c53",
+            "audio/contextual/ja-ctx-simple-koohii-01/morioki/ja-ctx-simple-koohii-01-target.mp3": "57d3d5320fd9743edfd8aca9265f0ca2f1bcf32e2842e4869feb6a8c1660fcc2",
+            "audio/contextual/ja-ctx-simple-koohii-01/morioki/ja-ctx-simple-koohii-01-detail.mp3": "f541d70afd21bff650039cad73bc3b4d00a21e3522729d2a4a9d2c5fec59b0f6"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-koohii-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "sentenceText": "母は朝にコーヒーを飲みます。",
+      "questions": {
+        "ja-ctx-simple-koohii-02-target": "母は朝に何を飲みますか。",
+        "ja-ctx-simple-koohii-02-detail": "母はいつコーヒーを飲みますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-koohii-02-target": 1,
+        "ja-ctx-simple-koohii-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-koohii-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-koohii-02-target": "audio/contextual/ja-ctx-simple-koohii-02/otani/ja-ctx-simple-koohii-02-target.mp3",
+            "ja-ctx-simple-koohii-02-detail": "audio/contextual/ja-ctx-simple-koohii-02/otani/ja-ctx-simple-koohii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-koohii-02/otani/sentence.mp3": "9c4e852621a5a4244d051ee7447c481b0364fcb3ed0225aabac3eb7fc54f866f",
+            "audio/contextual/ja-ctx-simple-koohii-02/otani/ja-ctx-simple-koohii-02-target.mp3": "21047fca9ed30843cf827504652b8dff4ea3e082b6d73b37a4be5fbc1095fce0",
+            "audio/contextual/ja-ctx-simple-koohii-02/otani/ja-ctx-simple-koohii-02-detail.mp3": "07d2996b35dc581b35c3b452a84d8f2aa87c0f0d3dc1ebd06d2005e615b4ba27"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-koohii-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-koohii-02-target": "audio/contextual/ja-ctx-simple-koohii-02/morioki/ja-ctx-simple-koohii-02-target.mp3",
+            "ja-ctx-simple-koohii-02-detail": "audio/contextual/ja-ctx-simple-koohii-02/morioki/ja-ctx-simple-koohii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-koohii-02/morioki/sentence.mp3": "2abd5a5137ebcdfede4c0cb04ef4b9ae7a46d141fcd38dcd911817f4c4ab83e5",
+            "audio/contextual/ja-ctx-simple-koohii-02/morioki/ja-ctx-simple-koohii-02-target.mp3": "b3aec272940d166535f60bbb50c5a01c7dbea185fa845560be3ccc971327072d",
+            "audio/contextual/ja-ctx-simple-koohii-02/morioki/ja-ctx-simple-koohii-02-detail.mp3": "c510d7094051c68a91ea456481c5ec4c9e9af3cc10b02c817e1c6a41aea8c343"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-kuruma-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "sentenceText": "車は学校の前に止まっています。",
+      "questions": {
+        "ja-ctx-simple-kuruma-01-target": "学校の前には何が止まっていますか。",
+        "ja-ctx-simple-kuruma-01-detail": "車はどこの前に止まっていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-kuruma-01-target": 1,
+        "ja-ctx-simple-kuruma-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-kuruma-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-kuruma-01-target": "audio/contextual/ja-ctx-simple-kuruma-01/otani/ja-ctx-simple-kuruma-01-target.mp3",
+            "ja-ctx-simple-kuruma-01-detail": "audio/contextual/ja-ctx-simple-kuruma-01/otani/ja-ctx-simple-kuruma-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-kuruma-01/otani/sentence.mp3": "15c128e45f84ddf82243a7628f105aba04c1f73ac33ff24e8ffe036935fc6353",
+            "audio/contextual/ja-ctx-simple-kuruma-01/otani/ja-ctx-simple-kuruma-01-target.mp3": "21b4d611b0af639f3deafaa2d0be0fe147e7c5b0615a83b54379a217fc7e6677",
+            "audio/contextual/ja-ctx-simple-kuruma-01/otani/ja-ctx-simple-kuruma-01-detail.mp3": "63421499b5a6b80e974966d0b3190db28d7b2178886bf279eb8dc5d86d414bfe"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-kuruma-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-kuruma-01-target": "audio/contextual/ja-ctx-simple-kuruma-01/morioki/ja-ctx-simple-kuruma-01-target.mp3",
+            "ja-ctx-simple-kuruma-01-detail": "audio/contextual/ja-ctx-simple-kuruma-01/morioki/ja-ctx-simple-kuruma-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-kuruma-01/morioki/sentence.mp3": "791b86656cc7938cba63865cc4c097c88be694044bca4c05185497f4fda3a325",
+            "audio/contextual/ja-ctx-simple-kuruma-01/morioki/ja-ctx-simple-kuruma-01-target.mp3": "08d666f7a2ae37adde9074f9f0f157fb0073a11707e4eda02592f627120c64df",
+            "audio/contextual/ja-ctx-simple-kuruma-01/morioki/ja-ctx-simple-kuruma-01-detail.mp3": "f8375ff0a64f4c8d5abad2fb83f0074479e8016d22afac6c00d4d0f5f24edbaa"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-kuruma-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "sentenceText": "父は車で駅に行きます。",
+      "questions": {
+        "ja-ctx-simple-kuruma-02-target": "父はどうやって駅に行きますか。",
+        "ja-ctx-simple-kuruma-02-detail": "誰が車で駅に行きますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-kuruma-02-target": 1,
+        "ja-ctx-simple-kuruma-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-kuruma-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-kuruma-02-target": "audio/contextual/ja-ctx-simple-kuruma-02/otani/ja-ctx-simple-kuruma-02-target.mp3",
+            "ja-ctx-simple-kuruma-02-detail": "audio/contextual/ja-ctx-simple-kuruma-02/otani/ja-ctx-simple-kuruma-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-kuruma-02/otani/sentence.mp3": "4f7da99faa4b4cc77042aaf9aaf6257d5f21e5d64693ed8691c05fd5fa2599f5",
+            "audio/contextual/ja-ctx-simple-kuruma-02/otani/ja-ctx-simple-kuruma-02-target.mp3": "c5b64c78b2e08d0bf90824648be989c10b4c681f29e131c9aeb4cc42af289c85",
+            "audio/contextual/ja-ctx-simple-kuruma-02/otani/ja-ctx-simple-kuruma-02-detail.mp3": "e379a716742484857f657c688d4bd5b4628976006cec28fcdad542bc20d5d16e"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-kuruma-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-kuruma-02-target": "audio/contextual/ja-ctx-simple-kuruma-02/morioki/ja-ctx-simple-kuruma-02-target.mp3",
+            "ja-ctx-simple-kuruma-02-detail": "audio/contextual/ja-ctx-simple-kuruma-02/morioki/ja-ctx-simple-kuruma-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-kuruma-02/morioki/sentence.mp3": "184242f81d86087d964a836e85c2f789c095cd00c7384c80fb1120adb6083302",
+            "audio/contextual/ja-ctx-simple-kuruma-02/morioki/ja-ctx-simple-kuruma-02-target.mp3": "6040322e11377aa8d03c0ef8962ba8123cde66ef318cb287a120d339fd84b46a",
+            "audio/contextual/ja-ctx-simple-kuruma-02/morioki/ja-ctx-simple-kuruma-02-detail.mp3": "ff19c6a3aed8a4f1c4f3eccc5ab9a69e73131ad08782e052787bc582b18d2c0f"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-sensei-01",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "sentenceText": "田中さんは先生です。",
+      "questions": {
+        "ja-ctx-simple-sensei-01-target": "田中さんのお仕事は何ですか。",
+        "ja-ctx-simple-sensei-01-detail": "先生は誰ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-sensei-01-target": 1,
+        "ja-ctx-simple-sensei-01-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-sensei-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-sensei-01-target": "audio/contextual/ja-ctx-simple-sensei-01/otani/ja-ctx-simple-sensei-01-target.mp3",
+            "ja-ctx-simple-sensei-01-detail": "audio/contextual/ja-ctx-simple-sensei-01/otani/ja-ctx-simple-sensei-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-sensei-01/otani/sentence.mp3": "aa27a7803f153fe6adfa039ee627e154ab894183cdc66c45c9d42e2d6b956ace",
+            "audio/contextual/ja-ctx-simple-sensei-01/otani/ja-ctx-simple-sensei-01-target.mp3": "f42d440ccc4a5fd8515b0b4594fc60aa614d1cc23bd235cb0783997511f6cde5",
+            "audio/contextual/ja-ctx-simple-sensei-01/otani/ja-ctx-simple-sensei-01-detail.mp3": "63375f353dbd9705e45f3e1e7426b489c86f313549a9b8b4dddd0e600551eed5"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-sensei-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-sensei-01-target": "audio/contextual/ja-ctx-simple-sensei-01/morioki/ja-ctx-simple-sensei-01-target.mp3",
+            "ja-ctx-simple-sensei-01-detail": "audio/contextual/ja-ctx-simple-sensei-01/morioki/ja-ctx-simple-sensei-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-sensei-01/morioki/sentence.mp3": "a536657a86160be792bc97add177d641b86308105e3b3ef46ec7a67d5ede641b",
+            "audio/contextual/ja-ctx-simple-sensei-01/morioki/ja-ctx-simple-sensei-01-target.mp3": "f9b25ecfa69d049e5e5192812b904a6ebe11a0e95274076440ae572ce59cb87c",
+            "audio/contextual/ja-ctx-simple-sensei-01/morioki/ja-ctx-simple-sensei-01-detail.mp3": "6fc6f5df46ee0b262cc45b6f562caed2e767822350df686b14bb18858fa99839"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-sensei-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "sentenceText": "先生は七時に学校に来ます。",
+      "questions": {
+        "ja-ctx-simple-sensei-02-target": "誰が七時に学校に来ますか。",
+        "ja-ctx-simple-sensei-02-detail": "先生は何時に学校に来ますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-sensei-02-target": 1,
+        "ja-ctx-simple-sensei-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-sensei-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-sensei-02-target": "audio/contextual/ja-ctx-simple-sensei-02/otani/ja-ctx-simple-sensei-02-target.mp3",
+            "ja-ctx-simple-sensei-02-detail": "audio/contextual/ja-ctx-simple-sensei-02/otani/ja-ctx-simple-sensei-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-sensei-02/otani/sentence.mp3": "1349b38364b0bc644876d59ef55e0ba178917fc32c59681e1a02c9d9c27806b1",
+            "audio/contextual/ja-ctx-simple-sensei-02/otani/ja-ctx-simple-sensei-02-target.mp3": "53a0b8b4bb3824b223cb4ad24fdb1fa1caa49508509b7cf9823977fe25e8d054",
+            "audio/contextual/ja-ctx-simple-sensei-02/otani/ja-ctx-simple-sensei-02-detail.mp3": "29456769a291e50a100acab0867ba44fdb44266aa0364feeb31bf2309357ff7a"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-sensei-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-sensei-02-target": "audio/contextual/ja-ctx-simple-sensei-02/morioki/ja-ctx-simple-sensei-02-target.mp3",
+            "ja-ctx-simple-sensei-02-detail": "audio/contextual/ja-ctx-simple-sensei-02/morioki/ja-ctx-simple-sensei-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-sensei-02/morioki/sentence.mp3": "a6391ab705ae4a71469066b06f466a4e2029d4be3871984b2a74403ecea80ecd",
+            "audio/contextual/ja-ctx-simple-sensei-02/morioki/ja-ctx-simple-sensei-02-target.mp3": "e6da6a0e78c8eec4c14c13f418c09c5264e38d6c6de75962a14ff956e797c2a8",
+            "audio/contextual/ja-ctx-simple-sensei-02/morioki/ja-ctx-simple-sensei-02-detail.mp3": "774e06ba17bc8a2e9ecf45019450fabc7e077e687f7192071013a1c59bde9fde"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-simple-hashiru-02",
+      "stage": "simple",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-97526e11c703",
+      "sentenceText": "兄は学校まで走って行きます。",
+      "questions": {
+        "ja-ctx-simple-hashiru-02-target": "兄は学校までどうやって行きますか。",
+        "ja-ctx-simple-hashiru-02-detail": "誰が学校まで走って行きますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-simple-hashiru-02-target": 1,
+        "ja-ctx-simple-hashiru-02-detail": 1
+      },
+      "textApprovalSha256": "2481761d7d22463a8f68a70743c3e91105ec6b0de97a2c64232cfe99344e80a8",
+      "generationIdentity": "019a3aee671acd950a9e1ce5ea8ab45249aa6002f1c7c7395b7471a6e1733872",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hashiru-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hashiru-02-target": "audio/contextual/ja-ctx-simple-hashiru-02/otani/ja-ctx-simple-hashiru-02-target.mp3",
+            "ja-ctx-simple-hashiru-02-detail": "audio/contextual/ja-ctx-simple-hashiru-02/otani/ja-ctx-simple-hashiru-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hashiru-02/otani/sentence.mp3": "477555e71ac1217bde686c346595edec1d0d0519d9ad2f188e93ec582a03a621",
+            "audio/contextual/ja-ctx-simple-hashiru-02/otani/ja-ctx-simple-hashiru-02-target.mp3": "db989318b0e2777c18dc2d4e91dbf8430fa17d3fe2f3264a0312ad5c172513eb",
+            "audio/contextual/ja-ctx-simple-hashiru-02/otani/ja-ctx-simple-hashiru-02-detail.mp3": "d422ccaa45828907f34c72e81453a1d2dfbdfa125de6f6523a9279a154d7a356"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-simple-hashiru-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-simple-hashiru-02-target": "audio/contextual/ja-ctx-simple-hashiru-02/morioki/ja-ctx-simple-hashiru-02-target.mp3",
+            "ja-ctx-simple-hashiru-02-detail": "audio/contextual/ja-ctx-simple-hashiru-02/morioki/ja-ctx-simple-hashiru-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-simple-hashiru-02/morioki/sentence.mp3": "d45be21b8b1deb5a0b7efd893c3ba76d0c7a65fc5f895c6ed478b54889c5e9eb",
+            "audio/contextual/ja-ctx-simple-hashiru-02/morioki/ja-ctx-simple-hashiru-02-target.mp3": "1997a138661d6189c8ee70ad30999574cd313d5c7e85ce5c06bc4970ddf654fb",
+            "audio/contextual/ja-ctx-simple-hashiru-02/morioki/ja-ctx-simple-hashiru-02-detail.mp3": "34c5f1e4972f99582923d210301d3f604bcef93f5e7fe7b16dbfe5faf3b112d9"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-ue-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-c0f58bfab324",
+      "sentenceText": "ノートは棚の上に、本は棚の下にあります。",
+      "questions": {
+        "ja-ctx-ue-02-target": "ノートはどこにありますか。",
+        "ja-ctx-ue-02-detail": "棚の上には何がありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-ue-02-target": 1,
+        "ja-ctx-ue-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-ue-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ue-02-target": "audio/contextual/ja-ctx-ue-02/otani/ja-ctx-ue-02-target.mp3",
+            "ja-ctx-ue-02-detail": "audio/contextual/ja-ctx-ue-02/otani/ja-ctx-ue-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ue-02/otani/sentence.mp3": "4756858f6849761211bc026281a9da21205b5b484d5ff0dbffc72c710a89f254",
+            "audio/contextual/ja-ctx-ue-02/otani/ja-ctx-ue-02-target.mp3": "c9e7319238b944d39f8399e9e515da4ca5b463e196a0f98458ede8c1f93950c1",
+            "audio/contextual/ja-ctx-ue-02/otani/ja-ctx-ue-02-detail.mp3": "6fe11dc1f450fdb7cc413a56e75b8eb0f9c65c8646cf36d1005fb7151fe2c460"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-ue-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ue-02-target": "audio/contextual/ja-ctx-ue-02/morioki/ja-ctx-ue-02-target.mp3",
+            "ja-ctx-ue-02-detail": "audio/contextual/ja-ctx-ue-02/morioki/ja-ctx-ue-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ue-02/morioki/sentence.mp3": "6f0fb05189d70748286306708f84cb659ac0e054fe59c6771f6b48ae6a550947",
+            "audio/contextual/ja-ctx-ue-02/morioki/ja-ctx-ue-02-target.mp3": "8afe3b89fba8708ec41b18b74ab63800ffa7e18a5e59752c9956ed06150b4987",
+            "audio/contextual/ja-ctx-ue-02/morioki/ja-ctx-ue-02-detail.mp3": "df1a6438a56661e3e65fada7e3996c89b4561a7dad484980bf8c5c792d79a212"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-shita-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "sentenceText": "車は橋の下に、バスは橋の上に止まっています。",
+      "questions": {
+        "ja-ctx-shita-01-target": "車はどこに止まっていますか。",
+        "ja-ctx-shita-01-detail": "橋の下には何が止まっていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-shita-01-target": 1,
+        "ja-ctx-shita-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-shita-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-shita-01-target": "audio/contextual/ja-ctx-shita-01/otani/ja-ctx-shita-01-target.mp3",
+            "ja-ctx-shita-01-detail": "audio/contextual/ja-ctx-shita-01/otani/ja-ctx-shita-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-shita-01/otani/sentence.mp3": "9a61b7a64fe04089834b7c1926684cc7104e8728624c8746d3251974b51b24db",
+            "audio/contextual/ja-ctx-shita-01/otani/ja-ctx-shita-01-target.mp3": "1cf48864357737268547e1624697b46aee0d5abc21e878e21444b20568f8e2b4",
+            "audio/contextual/ja-ctx-shita-01/otani/ja-ctx-shita-01-detail.mp3": "3b915b2fd03bd0f0d285ca7652da5eded15ddf4730fd326eb80700dfcb497669"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-shita-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-shita-01-target": "audio/contextual/ja-ctx-shita-01/morioki/ja-ctx-shita-01-target.mp3",
+            "ja-ctx-shita-01-detail": "audio/contextual/ja-ctx-shita-01/morioki/ja-ctx-shita-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-shita-01/morioki/sentence.mp3": "6bc56b43063f7b846281fa8f2f2e43c08c42b376c77e8d2184f5fcdbda085521",
+            "audio/contextual/ja-ctx-shita-01/morioki/ja-ctx-shita-01-target.mp3": "38380b078910aa50aee40817f5ee3ac2d64c8469ef72cb892b23554b6757aa8e",
+            "audio/contextual/ja-ctx-shita-01/morioki/ja-ctx-shita-01-detail.mp3": "7f0cf765c533b4dcb79bcd3d53f374fe445bc36a2e731b952949b044174a5226"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-shita-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-520308b3c3b4",
+      "sentenceText": "ノートは椅子の下に、本は椅子の上にあります。",
+      "questions": {
+        "ja-ctx-shita-02-target": "ノートはどこにありますか。",
+        "ja-ctx-shita-02-detail": "椅子の下には何がありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-shita-02-target": 1,
+        "ja-ctx-shita-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-shita-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-shita-02-target": "audio/contextual/ja-ctx-shita-02/otani/ja-ctx-shita-02-target.mp3",
+            "ja-ctx-shita-02-detail": "audio/contextual/ja-ctx-shita-02/otani/ja-ctx-shita-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-shita-02/otani/sentence.mp3": "46f6fcad339053a7533b7f8787a6930a2fc7827782339fa2dcd42be2cde48f6b",
+            "audio/contextual/ja-ctx-shita-02/otani/ja-ctx-shita-02-target.mp3": "40e1ea41b715420aa0ad62dfe97a280f695716ead3920f364cac2a6f30bcdd69",
+            "audio/contextual/ja-ctx-shita-02/otani/ja-ctx-shita-02-detail.mp3": "9c5a3d5b0621eea62e3c1babfb99a80376eae28c4aedea51231e6de93ad89c2a"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-shita-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-shita-02-target": "audio/contextual/ja-ctx-shita-02/morioki/ja-ctx-shita-02-target.mp3",
+            "ja-ctx-shita-02-detail": "audio/contextual/ja-ctx-shita-02/morioki/ja-ctx-shita-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-shita-02/morioki/sentence.mp3": "bc874db4706a43f9af2b77179fb1ce98a368eb66cc1180d9cb4291d88f9e967d",
+            "audio/contextual/ja-ctx-shita-02/morioki/ja-ctx-shita-02-target.mp3": "b20d1ec5bcff64449f5681213e65badc375af05d372f9c015bf8434a891c35b0",
+            "audio/contextual/ja-ctx-shita-02/morioki/ja-ctx-shita-02-detail.mp3": "db3fa5ab107d832f85b7e01c73ace272258331d4eeee177db52551c0f1919528"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-ookii-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "sentenceText": "大きい車は白くて、小さい車は青いです。",
+      "questions": {
+        "ja-ctx-ookii-01-target": "白い車はどんな大きさですか。",
+        "ja-ctx-ookii-01-detail": "大きい車は何色ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-ookii-01-target": 1,
+        "ja-ctx-ookii-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-ookii-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ookii-01-target": "audio/contextual/ja-ctx-ookii-01/otani/ja-ctx-ookii-01-target.mp3",
+            "ja-ctx-ookii-01-detail": "audio/contextual/ja-ctx-ookii-01/otani/ja-ctx-ookii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ookii-01/otani/sentence.mp3": "737b22ee626a7fc623e4821bf26d2094c64e8e2b2cf3d5fbab1f2f4a531144d5",
+            "audio/contextual/ja-ctx-ookii-01/otani/ja-ctx-ookii-01-target.mp3": "994691c5e823e5d7fdf78f235e792957c3492072b2f01b496eac724fe82ff693",
+            "audio/contextual/ja-ctx-ookii-01/otani/ja-ctx-ookii-01-detail.mp3": "54f0dea4104052f7f4c088663a5087ca79f739caf0e48539f0d8106e19e6eff2"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-ookii-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ookii-01-target": "audio/contextual/ja-ctx-ookii-01/morioki/ja-ctx-ookii-01-target.mp3",
+            "ja-ctx-ookii-01-detail": "audio/contextual/ja-ctx-ookii-01/morioki/ja-ctx-ookii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ookii-01/morioki/sentence.mp3": "a83af541b0d140c70d575a3f0e9412d72da4b99ad33a8295ad21dcf7bed7a72f",
+            "audio/contextual/ja-ctx-ookii-01/morioki/ja-ctx-ookii-01-target.mp3": "74d229c373a6ac1242147dba4adbf5e3b76d099e58d88b7b03c546bc32e8a6aa",
+            "audio/contextual/ja-ctx-ookii-01/morioki/ja-ctx-ookii-01-detail.mp3": "2ae223f819f4e550e1d0e5ec57864ac3b92c0d630ff4199c89b0d5a59d0fdfa0"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-ookii-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f6377dcbb564",
+      "sentenceText": "大きい箱には本が、小さい箱にはノートが入っています。",
+      "questions": {
+        "ja-ctx-ookii-02-target": "本が入っている箱はどんな大きさですか。",
+        "ja-ctx-ookii-02-detail": "大きい箱には何が入っていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-ookii-02-target": 1,
+        "ja-ctx-ookii-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-ookii-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ookii-02-target": "audio/contextual/ja-ctx-ookii-02/otani/ja-ctx-ookii-02-target.mp3",
+            "ja-ctx-ookii-02-detail": "audio/contextual/ja-ctx-ookii-02/otani/ja-ctx-ookii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ookii-02/otani/sentence.mp3": "b8ace656952ab6b0f3028c55191bcbc92e97c14454e1dd43f9559d1a00fcec38",
+            "audio/contextual/ja-ctx-ookii-02/otani/ja-ctx-ookii-02-target.mp3": "db937e0e374ddac7aac19d6307bfbcdbb7767c7ca2e32f3355acd4c478d762a4",
+            "audio/contextual/ja-ctx-ookii-02/otani/ja-ctx-ookii-02-detail.mp3": "7b29b07a270a30ac865f11f1adc44f258e817d14e45b7a3d4ab449b5379bfca3"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-ookii-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-ookii-02-target": "audio/contextual/ja-ctx-ookii-02/morioki/ja-ctx-ookii-02-target.mp3",
+            "ja-ctx-ookii-02-detail": "audio/contextual/ja-ctx-ookii-02/morioki/ja-ctx-ookii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-ookii-02/morioki/sentence.mp3": "fa952e779cee92acf4c2124223261aa26d4813c75ff611c1fdb1a1bdacc375dc",
+            "audio/contextual/ja-ctx-ookii-02/morioki/ja-ctx-ookii-02-target.mp3": "59aa3d722a790e3a575b63c2135d0d790e077e4566a5886a9b9334ac9554d9fd",
+            "audio/contextual/ja-ctx-ookii-02/morioki/ja-ctx-ookii-02-detail.mp3": "01cc055dea6893449ce14a16ff28b2778edf9ece6c9c105c39bf35722b90f493"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-chiisai-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "sentenceText": "小さい車は赤くて、大きい車は青いです。",
+      "questions": {
+        "ja-ctx-chiisai-01-target": "赤い車はどんな大きさですか。",
+        "ja-ctx-chiisai-01-detail": "小さい車は何色ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-chiisai-01-target": 1,
+        "ja-ctx-chiisai-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-chiisai-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-chiisai-01-target": "audio/contextual/ja-ctx-chiisai-01/otani/ja-ctx-chiisai-01-target.mp3",
+            "ja-ctx-chiisai-01-detail": "audio/contextual/ja-ctx-chiisai-01/otani/ja-ctx-chiisai-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-chiisai-01/otani/sentence.mp3": "c9b4ee1cbfd89ed6e4f927a71d1dc3c995f41300df63b575c51edec98733b9db",
+            "audio/contextual/ja-ctx-chiisai-01/otani/ja-ctx-chiisai-01-target.mp3": "31d0432944da18811dba528a102d925e502c11b80736010acc58997d1ced92d5",
+            "audio/contextual/ja-ctx-chiisai-01/otani/ja-ctx-chiisai-01-detail.mp3": "5bbfe5908774be1fd427331bc6dca75fbd82563dceecdb4504450ed351dcebf5"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-chiisai-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-chiisai-01-target": "audio/contextual/ja-ctx-chiisai-01/morioki/ja-ctx-chiisai-01-target.mp3",
+            "ja-ctx-chiisai-01-detail": "audio/contextual/ja-ctx-chiisai-01/morioki/ja-ctx-chiisai-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-chiisai-01/morioki/sentence.mp3": "1e5747693d77c54c3c5dde08c202e809495c63c206c19d8d08bcc289011a734a",
+            "audio/contextual/ja-ctx-chiisai-01/morioki/ja-ctx-chiisai-01-target.mp3": "6046c22b74b90542b440cf0ec75b7181566e98c5b1af3911bde0ef2ef0d7bb14",
+            "audio/contextual/ja-ctx-chiisai-01/morioki/ja-ctx-chiisai-01-detail.mp3": "4a52dc9fe1c57632bbc6b20d2e187c961a26011aabdfd57a5f887d719b1ab6fe"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-chiisai-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-769a80524957",
+      "sentenceText": "小さい箱には石が、大きい箱には花が入っています。",
+      "questions": {
+        "ja-ctx-chiisai-02-target": "石が入っている箱はどんな大きさですか。",
+        "ja-ctx-chiisai-02-detail": "小さい箱には何が入っていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-chiisai-02-target": 1,
+        "ja-ctx-chiisai-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-chiisai-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-chiisai-02-target": "audio/contextual/ja-ctx-chiisai-02/otani/ja-ctx-chiisai-02-target.mp3",
+            "ja-ctx-chiisai-02-detail": "audio/contextual/ja-ctx-chiisai-02/otani/ja-ctx-chiisai-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-chiisai-02/otani/sentence.mp3": "5334f2ff2d56f3097d1db633324b7bf56bf673c2d753d5e97ae7527c9614a6ed",
+            "audio/contextual/ja-ctx-chiisai-02/otani/ja-ctx-chiisai-02-target.mp3": "a9772418160845b8a8684d32ef58bc342fa849382c31c4056a4ac00e56ed3f5e",
+            "audio/contextual/ja-ctx-chiisai-02/otani/ja-ctx-chiisai-02-detail.mp3": "2da501bd67d6ed553f8c4a57cd0df6306af100e2aa1fd2f91a829f308d609939"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-chiisai-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-chiisai-02-target": "audio/contextual/ja-ctx-chiisai-02/morioki/ja-ctx-chiisai-02-target.mp3",
+            "ja-ctx-chiisai-02-detail": "audio/contextual/ja-ctx-chiisai-02/morioki/ja-ctx-chiisai-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-chiisai-02/morioki/sentence.mp3": "f5bed6c9117c97bc7901b34fa6b6f37ddcb4210340455952424201deb553f292",
+            "audio/contextual/ja-ctx-chiisai-02/morioki/ja-ctx-chiisai-02-target.mp3": "d87f6f3c2f0e449b3643b6e9fd066b7ce36390bcdc0972735d992c6d628d0636",
+            "audio/contextual/ja-ctx-chiisai-02/morioki/ja-ctx-chiisai-02-detail.mp3": "86ddeda124aec29a717cedf50c564dd8a8368add703e79a5c7dd4cb80028aeee"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-hon-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "sentenceText": "本は机の上に、ノートは椅子の上にあります。",
+      "questions": {
+        "ja-ctx-hon-01-target": "机の上には何がありますか。",
+        "ja-ctx-hon-01-detail": "本は何の上にありますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-hon-01-target": 1,
+        "ja-ctx-hon-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-hon-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hon-01-target": "audio/contextual/ja-ctx-hon-01/otani/ja-ctx-hon-01-target.mp3",
+            "ja-ctx-hon-01-detail": "audio/contextual/ja-ctx-hon-01/otani/ja-ctx-hon-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hon-01/otani/sentence.mp3": "5b9726e1316deff0c36f4da4ca86a6e1b407a2cf822e270a6b8eac32938db762",
+            "audio/contextual/ja-ctx-hon-01/otani/ja-ctx-hon-01-target.mp3": "91c9cf37104f373d1324540a4ccf0a98a701851f81c2c3d31eed9d75c4a7b2c0",
+            "audio/contextual/ja-ctx-hon-01/otani/ja-ctx-hon-01-detail.mp3": "3cf4dcfee12bae43c153290b2e67fe4fb6993813795e65f800ae20c667eeac82"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-hon-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hon-01-target": "audio/contextual/ja-ctx-hon-01/morioki/ja-ctx-hon-01-target.mp3",
+            "ja-ctx-hon-01-detail": "audio/contextual/ja-ctx-hon-01/morioki/ja-ctx-hon-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hon-01/morioki/sentence.mp3": "e7e8b39e69c3f8756c5202bc6d86f3f3b38f58bcac047fc8cdafaadb5e8f4d32",
+            "audio/contextual/ja-ctx-hon-01/morioki/ja-ctx-hon-01-target.mp3": "b2ff729bad03c8826a29c7ccc34500371a66ee737176be07e79f6a565191e162",
+            "audio/contextual/ja-ctx-hon-01/morioki/ja-ctx-hon-01-detail.mp3": "e8bc9da21e0f45219e81d09ea98455aa76f18784507dcd9fbb37b3d88aea8181"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-hon-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-0ac038632611",
+      "sentenceText": "先生は図書館で本を読んでいて、学生は教室でノートに書いています。",
+      "questions": {
+        "ja-ctx-hon-02-target": "先生は図書館で何を読んでいますか。",
+        "ja-ctx-hon-02-detail": "本を読んでいる人は誰ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-hon-02-target": 1,
+        "ja-ctx-hon-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-hon-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hon-02-target": "audio/contextual/ja-ctx-hon-02/otani/ja-ctx-hon-02-target.mp3",
+            "ja-ctx-hon-02-detail": "audio/contextual/ja-ctx-hon-02/otani/ja-ctx-hon-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hon-02/otani/sentence.mp3": "78d4a24c4ab0ce683085a3d4801d3cc4d7da02c709daac9cef6ddd2cf0f86e1a",
+            "audio/contextual/ja-ctx-hon-02/otani/ja-ctx-hon-02-target.mp3": "27c1a3b3c98ec3d1754f29c90049e666f1d1dd317a065ee2990807907c654df1",
+            "audio/contextual/ja-ctx-hon-02/otani/ja-ctx-hon-02-detail.mp3": "9102c3beb149959f9762f518ac7832774706d34935622b09df24297155e936cd"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-hon-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hon-02-target": "audio/contextual/ja-ctx-hon-02/morioki/ja-ctx-hon-02-target.mp3",
+            "ja-ctx-hon-02-detail": "audio/contextual/ja-ctx-hon-02/morioki/ja-ctx-hon-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hon-02/morioki/sentence.mp3": "5c7779e053b84f8ad04117e948d3a0aec5acd1c924b2095fa9f8f29d48621c5f",
+            "audio/contextual/ja-ctx-hon-02/morioki/ja-ctx-hon-02-target.mp3": "4dc24bac090986fa60f3523b7149e7c5ac2fd5a0e4371149e09d7350fbb2abed",
+            "audio/contextual/ja-ctx-hon-02/morioki/ja-ctx-hon-02-detail.mp3": "ce2ba5b01efc27cdfaa85ef81de0d696989f88a83aeecb9d4f7ac236a8f1cd66"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-mizu-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-28ddfdc9290c",
+      "sentenceText": "父は朝に水を、夜にコーヒーを飲みます。",
+      "questions": {
+        "ja-ctx-mizu-02-target": "父は朝に何を飲みますか。",
+        "ja-ctx-mizu-02-detail": "父はいつ水を飲みますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-mizu-02-target": 1,
+        "ja-ctx-mizu-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-mizu-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-mizu-02-target": "audio/contextual/ja-ctx-mizu-02/otani/ja-ctx-mizu-02-target.mp3",
+            "ja-ctx-mizu-02-detail": "audio/contextual/ja-ctx-mizu-02/otani/ja-ctx-mizu-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-mizu-02/otani/sentence.mp3": "e44b7e848fe13805c20034e0d058796e918577c2b9dd9a8bd001a913266685ad",
+            "audio/contextual/ja-ctx-mizu-02/otani/ja-ctx-mizu-02-target.mp3": "4553fb11d334522895ed43357811260ef6ba9414f790a6643359412f201e070f",
+            "audio/contextual/ja-ctx-mizu-02/otani/ja-ctx-mizu-02-detail.mp3": "5b3299b993b425a0ec7e1ad3f40007d0588e72e85f48c9ebca89bb52d141414e"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-mizu-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-mizu-02-target": "audio/contextual/ja-ctx-mizu-02/morioki/ja-ctx-mizu-02-target.mp3",
+            "ja-ctx-mizu-02-detail": "audio/contextual/ja-ctx-mizu-02/morioki/ja-ctx-mizu-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-mizu-02/morioki/sentence.mp3": "76ba9233646f0d7ee125daabc21f483527159075b406b3aaab8e0f4812a15dc0",
+            "audio/contextual/ja-ctx-mizu-02/morioki/ja-ctx-mizu-02-target.mp3": "d0b1198379a4de122c12c18f02c7fb14c08ab9435ca48a2cb73ec265bf2a901a",
+            "audio/contextual/ja-ctx-mizu-02/morioki/ja-ctx-mizu-02-detail.mp3": "e8176360d72e45bcdd9f51c83381d43f223ab99eea9961485b0ecb818633e48a"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-koohii-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "sentenceText": "母はコーヒーを、父は水を飲みます。",
+      "questions": {
+        "ja-ctx-koohii-01-target": "母は何を飲みますか。",
+        "ja-ctx-koohii-01-detail": "コーヒーを飲む人は誰ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-koohii-01-target": 1,
+        "ja-ctx-koohii-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-koohii-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-koohii-01-target": "audio/contextual/ja-ctx-koohii-01/otani/ja-ctx-koohii-01-target.mp3",
+            "ja-ctx-koohii-01-detail": "audio/contextual/ja-ctx-koohii-01/otani/ja-ctx-koohii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-koohii-01/otani/sentence.mp3": "55a056280148c281e19998ae372fe83afc127316e8f6853ff6c48122db8c31cc",
+            "audio/contextual/ja-ctx-koohii-01/otani/ja-ctx-koohii-01-target.mp3": "40787fbdd8b14583bf6f7ccbfb766049f7d91a15aceabbb80ea93089e2fa5d80",
+            "audio/contextual/ja-ctx-koohii-01/otani/ja-ctx-koohii-01-detail.mp3": "cc1bbae76009b6fc16044f83c08a6a0abe46f380d0ae60f8c1c62f77c8af47b7"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-koohii-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-koohii-01-target": "audio/contextual/ja-ctx-koohii-01/morioki/ja-ctx-koohii-01-target.mp3",
+            "ja-ctx-koohii-01-detail": "audio/contextual/ja-ctx-koohii-01/morioki/ja-ctx-koohii-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-koohii-01/morioki/sentence.mp3": "cb3b7475925fc06599525c935ad8ff6157603e5951515fdf9a93733e20045dad",
+            "audio/contextual/ja-ctx-koohii-01/morioki/ja-ctx-koohii-01-target.mp3": "6e4b3e8cf7748df2b7b4f18b78f4b6f4b48a571c8be4b7cac278a7a05b32a43f",
+            "audio/contextual/ja-ctx-koohii-01/morioki/ja-ctx-koohii-01-detail.mp3": "eda65acd4682a251260ebd2b46981cb17deb66facbbd24f573f3702c780acf4e"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-koohii-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-9ff5251e6f21",
+      "sentenceText": "母は朝にコーヒーを、夜に水を飲みます。",
+      "questions": {
+        "ja-ctx-koohii-02-target": "母は朝に何を飲みますか。",
+        "ja-ctx-koohii-02-detail": "母はいつコーヒーを飲みますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-koohii-02-target": 1,
+        "ja-ctx-koohii-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-koohii-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-koohii-02-target": "audio/contextual/ja-ctx-koohii-02/otani/ja-ctx-koohii-02-target.mp3",
+            "ja-ctx-koohii-02-detail": "audio/contextual/ja-ctx-koohii-02/otani/ja-ctx-koohii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-koohii-02/otani/sentence.mp3": "c01a57c89bceacc736853248fb094199a0228118704973a41f2e70b065d28c9e",
+            "audio/contextual/ja-ctx-koohii-02/otani/ja-ctx-koohii-02-target.mp3": "a3da39c1449e3e93eca06ae487245b753e2a5d490f4859e51ef229e9f7a71ca0",
+            "audio/contextual/ja-ctx-koohii-02/otani/ja-ctx-koohii-02-detail.mp3": "ff1c2cfae699acd9cd8f8c0ef628cf5aec618986be512908cd63f98e2fa75dce"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-koohii-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-koohii-02-target": "audio/contextual/ja-ctx-koohii-02/morioki/ja-ctx-koohii-02-target.mp3",
+            "ja-ctx-koohii-02-detail": "audio/contextual/ja-ctx-koohii-02/morioki/ja-ctx-koohii-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-koohii-02/morioki/sentence.mp3": "74cb74054d0654cf6addebc68b61a3d9177627e111543c771a45529ce934ba72",
+            "audio/contextual/ja-ctx-koohii-02/morioki/ja-ctx-koohii-02-target.mp3": "d69e589a8ed363dcce205d1041375b4b5c40d64480677010690eedcca4248723",
+            "audio/contextual/ja-ctx-koohii-02/morioki/ja-ctx-koohii-02-detail.mp3": "fbdedf5ff4be9022670c6e7c49af66310470c3923d07e397756e1f0bb544364a"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-kuruma-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "sentenceText": "車は学校の前に、バスは駅の前に止まっています。",
+      "questions": {
+        "ja-ctx-kuruma-01-target": "学校の前には何が止まっていますか。",
+        "ja-ctx-kuruma-01-detail": "車はどこの前に止まっていますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-kuruma-01-target": 1,
+        "ja-ctx-kuruma-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-kuruma-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-kuruma-01-target": "audio/contextual/ja-ctx-kuruma-01/otani/ja-ctx-kuruma-01-target.mp3",
+            "ja-ctx-kuruma-01-detail": "audio/contextual/ja-ctx-kuruma-01/otani/ja-ctx-kuruma-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-kuruma-01/otani/sentence.mp3": "84f61123fb1455bdf5aea87016b3ab5bc22f6abd1b474a114c92c0daab861e24",
+            "audio/contextual/ja-ctx-kuruma-01/otani/ja-ctx-kuruma-01-target.mp3": "18eab6fccef1848e60c56ce72defb964602bd6712bb435b4f322823a20d4c4a3",
+            "audio/contextual/ja-ctx-kuruma-01/otani/ja-ctx-kuruma-01-detail.mp3": "8683de93a463b3747a71db33d37b39acbe92128e691b141e7fafeb0ba1b06857"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-kuruma-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-kuruma-01-target": "audio/contextual/ja-ctx-kuruma-01/morioki/ja-ctx-kuruma-01-target.mp3",
+            "ja-ctx-kuruma-01-detail": "audio/contextual/ja-ctx-kuruma-01/morioki/ja-ctx-kuruma-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-kuruma-01/morioki/sentence.mp3": "7a6db51e56733f5b35132edffadd58722b583f754b39649ce71d47ad553167a0",
+            "audio/contextual/ja-ctx-kuruma-01/morioki/ja-ctx-kuruma-01-target.mp3": "fb21cf590206bd08f75c0fcc7386a9c0f9931659f2ffc9c8216f0fbf6a9ca3da",
+            "audio/contextual/ja-ctx-kuruma-01/morioki/ja-ctx-kuruma-01-detail.mp3": "b353ff8cfd7af0ea1f4b5d6e897ce40ceb4b89f7b7b84c513702bb89ba5a9c9f"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-kuruma-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-f71f9de56223",
+      "sentenceText": "父は車で、母はバスで駅に行きます。",
+      "questions": {
+        "ja-ctx-kuruma-02-target": "父はどうやって駅に行きますか。",
+        "ja-ctx-kuruma-02-detail": "誰が車で駅に行きますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-kuruma-02-target": 1,
+        "ja-ctx-kuruma-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-kuruma-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-kuruma-02-target": "audio/contextual/ja-ctx-kuruma-02/otani/ja-ctx-kuruma-02-target.mp3",
+            "ja-ctx-kuruma-02-detail": "audio/contextual/ja-ctx-kuruma-02/otani/ja-ctx-kuruma-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-kuruma-02/otani/sentence.mp3": "c56d9534af5377efcc4853b969360a8b0ab3c93619b60d1254c8d161a53355c8",
+            "audio/contextual/ja-ctx-kuruma-02/otani/ja-ctx-kuruma-02-target.mp3": "3e82935a89347b658b2f4ba9296c2e28ae6668d07879009e8d2dfc9ebc0686b2",
+            "audio/contextual/ja-ctx-kuruma-02/otani/ja-ctx-kuruma-02-detail.mp3": "fe4f556a1fae8e497c0bd1ae89b497082ee3c2d99a5eb44a18661c7608d886e5"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-kuruma-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-kuruma-02-target": "audio/contextual/ja-ctx-kuruma-02/morioki/ja-ctx-kuruma-02-target.mp3",
+            "ja-ctx-kuruma-02-detail": "audio/contextual/ja-ctx-kuruma-02/morioki/ja-ctx-kuruma-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-kuruma-02/morioki/sentence.mp3": "e3917f54c092417e7956c9f883d096d238836d1ad6ddabf693344f7c56f67051",
+            "audio/contextual/ja-ctx-kuruma-02/morioki/ja-ctx-kuruma-02-target.mp3": "820922061395083df86040ab8ec0f3392f775ecdf6922ea6e556817a826747f7",
+            "audio/contextual/ja-ctx-kuruma-02/morioki/ja-ctx-kuruma-02-detail.mp3": "ce757600c47fa59c07ea370382aa194f9a076f1f59f11a75aaf5f510798e1ac7"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-sensei-01",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "sentenceText": "田中さんは先生で、佐藤さんは医者です。",
+      "questions": {
+        "ja-ctx-sensei-01-target": "田中さんのお仕事は何ですか。",
+        "ja-ctx-sensei-01-detail": "先生は誰ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-sensei-01-target": 1,
+        "ja-ctx-sensei-01-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-sensei-01/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-sensei-01-target": "audio/contextual/ja-ctx-sensei-01/otani/ja-ctx-sensei-01-target.mp3",
+            "ja-ctx-sensei-01-detail": "audio/contextual/ja-ctx-sensei-01/otani/ja-ctx-sensei-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-sensei-01/otani/sentence.mp3": "47dfcc1d5520571c3216d29781ada0894e69eb79f527ab817907207795ad8346",
+            "audio/contextual/ja-ctx-sensei-01/otani/ja-ctx-sensei-01-target.mp3": "903faa1642d9e44a3a85650f26be012fef8c8739ed8836f9d7bde073dac3c7ca",
+            "audio/contextual/ja-ctx-sensei-01/otani/ja-ctx-sensei-01-detail.mp3": "0d2001d093a74b35e23e558291bd5a0f5cb13336d271445ef4662e364725bad7"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-sensei-01/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-sensei-01-target": "audio/contextual/ja-ctx-sensei-01/morioki/ja-ctx-sensei-01-target.mp3",
+            "ja-ctx-sensei-01-detail": "audio/contextual/ja-ctx-sensei-01/morioki/ja-ctx-sensei-01-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-sensei-01/morioki/sentence.mp3": "30201491c30d313cb38700fffdb5cc589a10cdce94e9835f60e36ee6c6edf774",
+            "audio/contextual/ja-ctx-sensei-01/morioki/ja-ctx-sensei-01-target.mp3": "e90e99b1a7a7e71b34022cc5684b03bebbc7cadc9317a288f30fcfa4b7662f1e",
+            "audio/contextual/ja-ctx-sensei-01/morioki/ja-ctx-sensei-01-detail.mp3": "0ea2dc5fcd3afe553394e71ce6cc3a740c86c3762948e57d80149c45e0d36b94"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-sensei-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-497356cf0646",
+      "sentenceText": "先生は七時に学校に来て、学生は八時に来ます。",
+      "questions": {
+        "ja-ctx-sensei-02-target": "七時に学校に来る人は誰ですか。",
+        "ja-ctx-sensei-02-detail": "先生は何時に学校に来ますか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-sensei-02-target": 1,
+        "ja-ctx-sensei-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-sensei-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-sensei-02-target": "audio/contextual/ja-ctx-sensei-02/otani/ja-ctx-sensei-02-target.mp3",
+            "ja-ctx-sensei-02-detail": "audio/contextual/ja-ctx-sensei-02/otani/ja-ctx-sensei-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-sensei-02/otani/sentence.mp3": "eb1c40b4b44465946154b0ba05918ed24bb1639ea4aeecf203c7b4f71f5c9f1a",
+            "audio/contextual/ja-ctx-sensei-02/otani/ja-ctx-sensei-02-target.mp3": "cdac7cb0c64e2a29689cab581e94b670752ff955539e37cff46874d8fb48b006",
+            "audio/contextual/ja-ctx-sensei-02/otani/ja-ctx-sensei-02-detail.mp3": "3e787bf769c49d00bf86964dc0352b004e4ad15b3cd4bb9e68ffecc09e2359c1"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-sensei-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-sensei-02-target": "audio/contextual/ja-ctx-sensei-02/morioki/ja-ctx-sensei-02-target.mp3",
+            "ja-ctx-sensei-02-detail": "audio/contextual/ja-ctx-sensei-02/morioki/ja-ctx-sensei-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-sensei-02/morioki/sentence.mp3": "a21a9c82e950b3bfc9c52df7f3ed4bdb91156a9aecfea778adcb4df92c75dbc2",
+            "audio/contextual/ja-ctx-sensei-02/morioki/ja-ctx-sensei-02-target.mp3": "eb73af583195405c423d703ef6301d232cddb7f25f15410ee935948e1cdc9995",
+            "audio/contextual/ja-ctx-sensei-02/morioki/ja-ctx-sensei-02-detail.mp3": "9afe0ebbe3bbca310168719efa0d5dc3c7be1d7825f636391f8f17d8fc9d4fec"
+          }
+        }
+      ]
+    },
+    {
+      "contextId": "ja-ctx-hashiru-02",
+      "stage": "contrastive",
+      "contextRevision": 1,
+      "targetItemId": "ja-v-97526e11c703",
+      "sentenceText": "兄は学校まで走って、妹は歩いて行きます。",
+      "questions": {
+        "ja-ctx-hashiru-02-target": "兄は学校までどうやって行きますか。",
+        "ja-ctx-hashiru-02-detail": "学校まで走る人は誰ですか。"
+      },
+      "questionRevisions": {
+        "ja-ctx-hashiru-02-target": 1,
+        "ja-ctx-hashiru-02-detail": 1
+      },
+      "textApprovalSha256": "8e0d47de0694204b9186cec88ced293b182b2c0e8634b5ab5a21073161173ac3",
+      "generationIdentity": "7a3e60a5ebe9242acd5b088c724db1c170cd0cd713d057ebad65f8754f3331e8",
+      "recordings": [
+        {
+          "id": "otani-v1",
+          "voice": "otani",
+          "sentenceSrc": "audio/contextual/ja-ctx-hashiru-02/otani/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hashiru-02-target": "audio/contextual/ja-ctx-hashiru-02/otani/ja-ctx-hashiru-02-target.mp3",
+            "ja-ctx-hashiru-02-detail": "audio/contextual/ja-ctx-hashiru-02/otani/ja-ctx-hashiru-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hashiru-02/otani/sentence.mp3": "5167a13b6c95a3f8a0107adb1c185d4ee48496195de8966f88c35bc6c95e8014",
+            "audio/contextual/ja-ctx-hashiru-02/otani/ja-ctx-hashiru-02-target.mp3": "c14c4d20e9e3fc1f2e24b39554e4959500c57ab13a6df5a21596080170db2475",
+            "audio/contextual/ja-ctx-hashiru-02/otani/ja-ctx-hashiru-02-detail.mp3": "223850dbca77014d3ab188ed99c5b5f01bfd8f6689e99cddbd25230aa9def85d"
+          }
+        },
+        {
+          "id": "morioki-v1",
+          "voice": "morioki",
+          "sentenceSrc": "audio/contextual/ja-ctx-hashiru-02/morioki/sentence.mp3",
+          "questionSrcs": {
+            "ja-ctx-hashiru-02-target": "audio/contextual/ja-ctx-hashiru-02/morioki/ja-ctx-hashiru-02-target.mp3",
+            "ja-ctx-hashiru-02-detail": "audio/contextual/ja-ctx-hashiru-02/morioki/ja-ctx-hashiru-02-detail.mp3"
+          },
+          "hashes": {
+            "audio/contextual/ja-ctx-hashiru-02/morioki/sentence.mp3": "553b2672a71463aed5ea1ec43c10cf503334489ade2558b3e31e5e83bd0ceb17",
+            "audio/contextual/ja-ctx-hashiru-02/morioki/ja-ctx-hashiru-02-target.mp3": "979361818d165e96cc0c1837fb165e8fc3ffb1cfd606ffa2b2ea5758233ea4db",
+            "audio/contextual/ja-ctx-hashiru-02/morioki/ja-ctx-hashiru-02-detail.mp3": "13fdd65ef8973fddf258f2d2acb8476c2cd101ee994253e591d5602f81155d4c"
+          }
+        }
+      ]
+    }
+  ],
+  "reviewedCommit": "b0a8ca3810944d6670c65dd1a7fb275a7573780f",
+  "recordedAt": "2026-11-08T20:04:01.935Z",
+  "previousAcceptances": [
+    {
+      "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/136#issuecomment-6725637626",
+      "contextIds": [
+        "ja-ctx-ue-01",
+        "ja-ctx-mizu-01",
+        "ja-ctx-hashiru-01",
+        "ja-ctx-simple-ue-01",
+        "ja-ctx-simple-mizu-01",
+        "ja-ctx-simple-hashiru-01"
+      ]
     }
   ]
 }
