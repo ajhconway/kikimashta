@@ -1,0 +1,625 @@
+{
+  "issue": 166,
+  "id": "es-419-travel-2",
+  "language": "es-419",
+  "title": "Travel level 2",
+  "status": "draft-awaiting-word-review",
+  "exercise": "audio-picture",
+  "interfaceLanguage": "en",
+  "scope": "36 additional concrete words for getting around town, eating out and everyday travel needs. Content grouping, not a CEFR level.",
+  "packId": "es-419-travel-2-pictures",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceSelection": [
+    {
+      "voice": "juan",
+      "id": "eqsD9RWsdCgHoRsbXS5q",
+      "name": "Juan",
+      "region": "Mexico City, Mexico"
+    },
+    {
+      "voice": "pamela",
+      "id": "pmruOMcxgUotq2bYO5Ne",
+      "name": "Pamela",
+      "region": "Mexico City, Mexico"
+    },
+    {
+      "voice": "albeiro",
+      "id": "OUfIyuG1GcVW5wnTy7Ru",
+      "name": "Albeiro O",
+      "region": "Bogotá, Colombia"
+    },
+    {
+      "voice": "carito",
+      "id": "J8BF9c7OgbHiqagCNoEj",
+      "name": "Carito",
+      "region": "Bogotá, Colombia"
+    },
+    {
+      "voice": "santiago",
+      "id": "O1CnH2NGEehfL1nmYACp",
+      "name": "Santiago",
+      "region": "Buenos Aires, Argentina"
+    },
+    {
+      "voice": "agustina",
+      "id": "TZvhlMgMw2P4gPSuD8v7",
+      "name": "Agustina",
+      "region": "Buenos Aires, Argentina"
+    },
+    {
+      "voice": "carlos-figueroa",
+      "id": "4ex71F9amHzL0fiUD2y1",
+      "name": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish"
+    },
+    {
+      "voice": "veronica",
+      "id": "cryPG4aBcWsmW2cCIXjB",
+      "name": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish"
+    }
+  ],
+  "groups": [
+    {
+      "id": "town",
+      "title": "Around town"
+    },
+    {
+      "id": "dining",
+      "title": "At the table"
+    },
+    {
+      "id": "food",
+      "title": "Food"
+    },
+    {
+      "id": "shopping",
+      "title": "Shopping and money"
+    },
+    {
+      "id": "hotel",
+      "title": "At the hotel"
+    },
+    {
+      "id": "essentials",
+      "title": "Personal essentials"
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-train-station",
+      "slug": "train-station",
+      "text": "estación de tren",
+      "meaning": "Train station",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "Railway station building, platform and visible rails; no foreground train."
+      }
+    },
+    {
+      "id": "es-419-travel-bus-stop",
+      "slug": "bus-stop",
+      "text": "parada de autobús",
+      "meaning": "Bus stop",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One bus shelter with a bench and small bus-symbol stop sign; no bus vehicle."
+      }
+    },
+    {
+      "id": "es-419-travel-street",
+      "slug": "street",
+      "text": "calle",
+      "meaning": "Street",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A short urban street between two simple rows of buildings; no cars as the main subject."
+      }
+    },
+    {
+      "id": "es-419-travel-bridge",
+      "slug": "bridge",
+      "text": "puente",
+      "meaning": "Bridge",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One arched bridge spanning a small blue river, with the bridge dominating the silhouette."
+      }
+    },
+    {
+      "id": "es-419-travel-park",
+      "slug": "park",
+      "text": "parque",
+      "meaning": "Park",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A compact green park scene with a tree, winding path and bench; no beach or sea."
+      }
+    },
+    {
+      "id": "es-419-travel-museum",
+      "slug": "museum",
+      "text": "museo",
+      "meaning": "Museum",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A museum portico with a clearly visible statue or artifact display, without written signage."
+      }
+    },
+    {
+      "id": "es-419-travel-menu",
+      "slug": "menu",
+      "text": "menú",
+      "meaning": "Menu",
+      "group": "dining",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One restaurant menu standing partly open, with food pictograms and a cutlery emblem; no legible text."
+      }
+    },
+    {
+      "id": "es-419-travel-plate",
+      "slug": "plate",
+      "text": "plato",
+      "meaning": "Plate",
+      "group": "dining",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "One empty dinner plate.",
+        "candidatePath": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+        "candidateSha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+        "candidateSourceId": "ja-v-baa4dd2c5986",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected: approved empty dinner plate, suitable for plato."
+      }
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "slug": "drinking-glass",
+      "text": "vaso",
+      "meaning": "Drinking glass",
+      "group": "dining",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "One clear drinking glass; existing approved glass illustration is a reuse candidate.",
+        "candidatePath": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+        "candidateSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+        "candidateSourceId": "ja-cup",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected; ja-cup depicts a handleless drinking glass, suitable for vaso, not taza."
+      }
+    },
+    {
+      "id": "es-419-travel-cup",
+      "slug": "cup",
+      "text": "taza",
+      "meaning": "Cup",
+      "group": "dining",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty handled cup, shown without coffee or another drink; not a handleless glass."
+      }
+    },
+    {
+      "id": "es-419-travel-fork",
+      "slug": "fork",
+      "text": "tenedor",
+      "meaning": "Fork",
+      "group": "dining",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One dinner fork with four clear tines, no other cutlery."
+      }
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "slug": "spoon",
+      "text": "cuchara",
+      "meaning": "Spoon",
+      "group": "dining",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One tablespoon with an oval bowl, clearly distinct from a fork."
+      }
+    },
+    {
+      "id": "es-419-travel-chicken",
+      "slug": "chicken",
+      "text": "pollo",
+      "meaning": "Chicken (food)",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One cooked chicken drumstick or roast portion; no live chicken and no dinner plate."
+      }
+    },
+    {
+      "id": "es-419-travel-cooked-fish",
+      "slug": "cooked-fish",
+      "text": "pescado",
+      "meaning": "Fish (food)",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One cooked fish portion, clearly food rather than a fish swimming in water; avoid a dinner plate."
+      }
+    },
+    {
+      "id": "es-419-travel-egg",
+      "slug": "egg",
+      "text": "huevo",
+      "meaning": "Egg",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One cracked egg with visible shell, white and yolk; no plate."
+      }
+    },
+    {
+      "id": "es-419-travel-cheese",
+      "slug": "cheese",
+      "text": "queso",
+      "meaning": "Cheese",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One recognizable cheese wedge with a few holes; no bread or plate."
+      }
+    },
+    {
+      "id": "es-419-travel-soup",
+      "slug": "soup",
+      "text": "sopa",
+      "meaning": "Soup",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One bowl of steaming soup with simple ingredients; no spoon as a second main subject."
+      }
+    },
+    {
+      "id": "es-419-travel-salad",
+      "slug": "salad",
+      "text": "ensalada",
+      "meaning": "Salad",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One bowl of leafy salad with a few vegetable pieces, no utensils."
+      }
+    },
+    {
+      "id": "es-419-travel-market",
+      "slug": "market",
+      "text": "mercado",
+      "meaning": "Market",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "Two open produce-market stalls under awnings; the stalls dominate, not one fruit."
+      }
+    },
+    {
+      "id": "es-419-travel-bakery",
+      "slug": "bakery",
+      "text": "panadería",
+      "meaning": "Bakery",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One bakery storefront with a simple bread emblem and bread display; no readable signage."
+      }
+    },
+    {
+      "id": "es-419-travel-atm",
+      "slug": "atm",
+      "text": "cajero automático",
+      "meaning": "ATM",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One freestanding ATM with screen, keypad, card slot and cash slot; no person or loose banknotes."
+      }
+    },
+    {
+      "id": "es-419-travel-receipt",
+      "slug": "receipt",
+      "text": "recibo",
+      "meaning": "Receipt",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One narrow curling receipt with a serrated edge and abstract printed rows; no readable words or prices."
+      }
+    },
+    {
+      "id": "es-419-travel-wallet",
+      "slug": "wallet",
+      "text": "cartera",
+      "meaning": "Wallet",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One closed bifold wallet with visible fold and stitching; no handbag, loose notes or coins."
+      }
+    },
+    {
+      "id": "es-419-travel-coin",
+      "slug": "coin",
+      "text": "moneda",
+      "meaning": "Coin",
+      "group": "shopping",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One single golden coin with a simple embossed geometric mark; no pile of cash or denomination."
+      }
+    },
+    {
+      "id": "es-419-travel-room",
+      "slug": "room",
+      "text": "habitación",
+      "meaning": "Room",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A compact hotel-room interior bounded by walls, showing the whole room rather than an isolated bed."
+      }
+    },
+    {
+      "id": "es-419-travel-table",
+      "slug": "table",
+      "text": "mesa",
+      "meaning": "Table",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty freestanding table, with all legs and the whole tabletop visible; no cat or objects on top."
+      }
+    },
+    {
+      "id": "es-419-travel-chair",
+      "slug": "chair",
+      "text": "silla",
+      "meaning": "Chair",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One freestanding chair with a backrest and four legs; no table or room scene."
+      }
+    },
+    {
+      "id": "es-419-travel-window",
+      "slug": "window",
+      "text": "ventana",
+      "meaning": "Window",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One open framed window, emphasizing the window structure; no building facade."
+      }
+    },
+    {
+      "id": "es-419-travel-stairs",
+      "slug": "stairs",
+      "text": "escaleras",
+      "meaning": "Stairs",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One short stairway with a visible sequence of steps and handrail."
+      }
+    },
+    {
+      "id": "es-419-travel-swimming-pool",
+      "slug": "swimming-pool",
+      "text": "piscina",
+      "meaning": "Swimming pool",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One blue tiled swimming pool with a ladder and compact deck; no beach or sea."
+      }
+    },
+    {
+      "id": "es-419-travel-soap",
+      "slug": "soap",
+      "text": "jabón",
+      "meaning": "Soap",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One bar of soap with a few bubbles; no dispenser bottle."
+      }
+    },
+    {
+      "id": "es-419-travel-shampoo",
+      "slug": "shampoo",
+      "text": "champú",
+      "meaning": "Shampoo",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One shampoo bottle with a simple hair-washing pictogram and a few bubbles; no readable lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-toothbrush",
+      "slug": "toothbrush",
+      "text": "cepillo de dientes",
+      "meaning": "Toothbrush",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One toothbrush with a clearly visible bristled head; no toothpaste tube."
+      }
+    },
+    {
+      "id": "es-419-travel-toothpaste",
+      "slug": "toothpaste",
+      "text": "pasta de dientes",
+      "meaning": "Toothpaste",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One toothpaste tube with a little paste at its open nozzle; no toothbrush."
+      }
+    },
+    {
+      "id": "es-419-travel-charger",
+      "slug": "charger",
+      "text": "cargador",
+      "meaning": "Charger",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One phone power adapter and attached charging lead; no phone or headphones."
+      }
+    },
+    {
+      "id": "es-419-travel-sunglasses",
+      "slug": "sunglasses",
+      "text": "lentes de sol",
+      "meaning": "Sunglasses",
+      "group": "essentials",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One pair of dark-lensed sunglasses with both arms visible; no face or case."
+      }
+    }
+  ],
+  "choiceReviewNotes": [
+    {
+      "ids": [
+        "es-419-travel-cup",
+        "es-419-travel-coffee"
+      ],
+      "reason": "A coffee mug can also answer taza; exclude both ways in picture practice."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-juice",
+        "es-419-travel-milk",
+        "es-419-travel-water"
+      ],
+      "reason": "Review glass/container/content ambiguity when both packs are selected. The existing vaso reuse candidate contains water."
+    },
+    {
+      "ids": [
+        "es-419-travel-coin",
+        "es-419-travel-money"
+      ],
+      "reason": "A coin is also dinero; exclude both ways."
+    },
+    {
+      "ids": [
+        "es-419-travel-shampoo",
+        "es-419-travel-bottle"
+      ],
+      "reason": "A shampoo container is also a bottle; exclude both ways."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-bed"
+      ],
+      "reason": "A room illustration may also answer cama. Final exclusions depend on approved room artwork."
+    },
+    {
+      "ids": [
+        "es-419-travel-receipt",
+        "es-419-travel-ticket"
+      ],
+      "reason": "Keep receipt/ticket silhouettes distinct and review printed-paper ambiguity."
+    },
+    {
+      "ids": [
+        "es-419-travel-plate",
+        "es-419-travel-chicken",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-soup",
+        "es-419-travel-salad"
+      ],
+      "reason": "Avoid plates under food subjects where possible; review dish/food ambiguity before activation."
+    },
+    {
+      "ids": [
+        "es-419-travel-shampoo",
+        "es-419-travel-soap"
+      ],
+      "reason": "Soap bar and shampoo bottle must be recognizable without labels. Confirm at 145px; replace a term if the picture alone is insufficient."
+    },
+    {
+      "ids": [
+        "es-419-travel-train-station",
+        "es-419-travel-train"
+      ],
+      "reason": "Station must emphasize station/platform, not a train vehicle."
+    },
+    {
+      "ids": [
+        "es-419-travel-bus-stop",
+        "es-419-travel-bus"
+      ],
+      "reason": "Stop must emphasize shelter/sign, not a bus vehicle."
+    }
+  ],
+  "wordingNotes": [
+    {
+      "id": "es-419-travel-cooked-fish",
+      "note": "pescado is fish as food; use a cooked portion rather than a swimming pez."
+    },
+    {
+      "id": "es-419-travel-wallet",
+      "note": "cartera is taught in its wallet sense here; billetera is an alternative for a future wording revision."
+    },
+    {
+      "id": "es-419-travel-swimming-pool",
+      "note": "Use piscina for this draft; alberca can be considered if the owner prefers Mexico-specific wording."
+    },
+    {
+      "id": "es-419-travel-egg",
+      "note": "huevo is singular even though the picture may show a cracked shell."
+    }
+  ],
+  "lexicalReferences": [
+    {
+      "word": "lentes de sol",
+      "url": "https://dem.colmex.mx/Ver/lente",
+      "purpose": "Mexican usage includes lenses/eyeglasses and lentes de sol."
+    },
+    {
+      "word": "champú",
+      "url": "https://dictionary.cambridge.org/dictionary/spanish-english/champu",
+      "purpose": "Spanish spelling and shampoo meaning."
+    },
+    {
+      "word": "cartera",
+      "url": "https://dictionary.cambridge.org/dictionary/spanish-english/cartera",
+      "purpose": "Wallet sense; the word also has purse/bag and other senses, so the intended picture is a bifold wallet."
+    },
+    {
+      "word": "piscina",
+      "url": "https://dictionary.cambridge.org/dictionary/spanish-english/piscina",
+      "purpose": "Swimming-pool meaning."
+    }
+  ],
+  "generation": {
+    "authorized": false,
+    "reason": "Draft words have not yet been reviewed by the owner. No media generated.",
+    "expectedClips": 288,
+    "inputCharacters": 2240
+  },
+  "activationPlan": [
+    "Retain level 1 bank, pack ID and all existing language/item history.",
+    "Keep level 2 in a separate bank; register its item IDs under a separately selectable picture pack only when media is approved.",
+    "Combine approved same-language items into the practice pool; test combined-pack distractor exclusions.",
+    "Preserve the existing eight regional voice preferences and English interface."
+  ]
+}

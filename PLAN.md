@@ -73,6 +73,10 @@ All 36 approved Travel level 1 words are generated in the four selected regional
 
 The owner approved the complete audio review and requested activation. Accept the exact 36-picture / 288-recording set through hash-bound `content/spanish-travel-audio/acceptance.json`. Activate all 36 words with eight regional voices, keeping existing word IDs and the picture-pack ID, retiring entrance/exit from selection and excluding Cesar from new audio. Preserve previous attempts and media. Copy approved transparent PNGs without flattening and verified normalized MP3s; expose regional voice labels in the library. Exclude car/taxi from each other's picture distractors. Verify staging and approval identities, 36×8 coverage, language/progress isolation, library membership and browser lesson flow before release. Consolidate the approved artwork/audio preparation branches into this activation release; real-iPhone tests follow deployment as requested.
 
+## Spanish travel level 2 draft (#166)
+
+Prepare 36 additional concrete travel words in `content/spanish-travel-2/draft.json`, with six groups covering town, dining, food, shopping/money, hotel spaces and personal essentials. Continue picture-only Spanish, English interface and the existing eight regional voices. The word list and literal image concepts are ready for owner review in the accompanying README and HTML review. Two approved reuse candidates are identified by source/hash after visual inspection: plate and drinking glass; the historical ja-cup image is a glass, not a handled taza. Track cross-pack picture ambiguity explicitly. Keep level 1 IDs/progress intact and use a separately selectable level 2 pack after media acceptance. This draft is not registered for practice and authorizes no media generation.
+
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
