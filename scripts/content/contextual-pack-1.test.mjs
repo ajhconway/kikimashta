@@ -1,12 +1,13 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { tmpdir } from 'node:os'
 import { JSDOM } from 'jsdom'
 import { approvedContextualQuestions } from '../../src/content/contextual.ts'
 import { projectRoot } from './validate-contextual.mjs'
-import { combinedPack1, contextualOnlyWords, draftPath, filterScript, renderPack1Review, targetCounterfactual, validateComprehension, validateFrozenPack1, validatePack1, wordFirstWords } from './prepare-contextual-pack-1.mjs'
+import { buildPack1, combinedPack1, contextualOnlyWords, draftPath, filterScript, renderPack1Review, sourceFiles, targetCounterfactual, validateComprehension, validateFrozenPack1, validatePack1, wordFirstWords } from './prepare-contextual-pack-1.mjs'
 
 test('rebuilding approved content cannot carry stale approval across text or source-byte changes', () => {
   const bytes = readFileSync(resolve(projectRoot, draftPath))
@@ -20,6 +21,30 @@ test('rebuilding approved content cannot carry stale approval across text or sou
   const updatedSourceHash = { ...approval, sourceFileSha256: createHash('sha256').update(rebuilt).digest('hex') }
   assert.throws(() => validateFrozenPack1(changed, rebuilt, updatedSourceHash), /approved digest/)
   assert.throws(() => validateFrozenPack1(bank, Buffer.concat([bytes, Buffer.from('\n')]), approval), /approved frozen snapshot/)
+})
+
+test('post-approval authoring changes fail preflight and leave rebuild outputs untouched', () => {
+  const root = mkdtempSync(resolve(tmpdir(), 'pack1-frozen-'))
+  try {
+    const files = [...sourceFiles, draftPath, 'content/catalog/ja.json', 'content/catalog/review-overrides.json',
+      'content/practice-pool.json', 'content/ja.json', ...['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.json',
+        'answer-amendments.json', 'answer-vocabulary.json', 'pack-1/target-dependence-baseline.json', 'pack-1/text-approval.json']
+        .map(name => 'content/contextual/' + name)]
+    for (const file of files) {
+      mkdirSync(dirname(resolve(root, file)), { recursive: true })
+      copyFileSync(resolve(projectRoot, file), resolve(root, file))
+    }
+    symlinkSync(resolve(projectRoot, 'public'), resolve(root, 'public'), 'dir')
+    const original = readFileSync(resolve(root, draftPath))
+    const path = resolve(root, sourceFiles[0])
+    const source = JSON.parse(readFileSync(path))
+    source.targets[0].contexts[0].sentence[2] += ' Changed after owner review.'
+    writeFileSync(path, JSON.stringify(source))
+    assert.throws(() => validatePack1(root), /approved digest/)
+    assert.throws(() => buildPack1({ root }), /approved frozen snapshot/)
+    assert.deepEqual(readFileSync(resolve(root, draftPath)), original)
+    assert.equal(existsSync(resolve(root, 'artifacts')), false, 'Rejected rebuild must not start writing review artifacts')
+  } finally { rmSync(root, { recursive: true, force: true }) }
 })
 
 test('pack 1 has full two-stage coverage and four choices while every new question remains inactive', () => {
