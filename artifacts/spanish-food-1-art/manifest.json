@@ -6,10 +6,10 @@
   "words": 36,
   "newSpanishItems": 12,
   "existingSpanishItems": 24,
-  "generatedImages": 11,
-  "reusedImages": 25,
+  "generatedImages": 12,
+  "reusedImages": 24,
   "pendingImages": 0,
-  "expectedNewImages": 11,
+  "expectedNewImages": 12,
   "audioGenerationAuthorized": false,
   "runtimeActivationAuthorized": false,
   "draft": "content/spanish-food-1/draft.json",
@@ -19,7 +19,25 @@
   "requests": "artifacts/spanish-food-1-art/requests.json",
   "requestsSha256": "d4546b07396a6cc034a98be6fd3b51aac458cf038da11f3949269eb60e957577",
   "selection": "artifacts/spanish-food-1-art/selection.json",
-  "selectionSha256": "c83501f971f2306024d923ec4e227cb30980ec99a69c7b0f25ce7fee75d39bbb",
+  "selectionSha256": "3152f59f49346ec9b4c2014356a0cd4e1017dc1db5f4954a1e9884af69372a6f",
+  "artworkAmendment": "content/spanish-food-1/artwork-revisions-v1.json",
+  "artworkAmendmentSha256": "bfa8c875997082fc0f023323170d07945319bd9bc8b206a2fda4e1a284653667",
+  "revisedItems": [
+    "es-419-travel-rice",
+    "es-419-food-beans",
+    "es-419-food-tomato"
+  ],
+  "expectedOriginalVersions": 14,
+  "verifiedOriginalVersions": 14,
+  "japaneseRicePreserved": {
+    "id": "ja-v-0958f7553d9f",
+    "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+    "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+  },
+  "previousManifest": "artifacts/spanish-food-1-art/revisions/before-feedback-v1-manifest.json",
+  "previousManifestSha256": "2b38c03b96350f6cbce43c852515943c627599413e77bde7bcdeda2b5822f14f",
+  "previousSelection": "artifacts/spanish-food-1-art/revisions/before-feedback-v1-selection.json",
+  "previousSelectionSha256": "c83501f971f2306024d923ec4e227cb30980ec99a69c7b0f25ce7fee75d39bbb",
   "groups": [
     {
       "id": "fruit",
@@ -162,20 +180,22 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "source": "generated",
-      "path": "artifacts/spanish-food-1-art/originals/tomato-v1.png",
-      "sha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167",
-      "bytes": 1012993,
-      "version": 1,
+      "version": 2,
+      "concept": "Reshape the round red fruit into a recognizably ripe tomato: a broad squat gently flattened body, wide rounded shoulders, two or three subtle lobes, and a shallow stem depression with short delicate contour creases near the crown. Use a small green star-shaped calyx and a short stem. No perfectly round ball, heart/apple silhouette, giant strawberry-like leaves or pointed bottom. Preserve the red colour, bold purple outline, smooth shading and transparent background.",
+      "supersedes": "artifacts/spanish-food-1-art/originals/tomato-v1.png",
+      "supersedesSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167",
+      "path": "artifacts/spanish-food-1-art/originals/tomato-v2.png",
+      "sha256": "6ba3ea9ff343567043fd301491db992768ffd52fe3e70437a902fda7dd27d1cc",
+      "bytes": 922840,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 809004,
-        "opaquePixels": 752444,
+        "transparentPixels": 877105,
+        "opaquePixels": 684900,
         "opaqueWhitePixels": 0
       },
-      "concept": "One plump ripe round red tomato, with a small green star-shaped calyx at its top. The smooth round tomato silhouette must be distinct from the heart-shaped strawberry and the indented apple. No sliced pieces or other produce.",
-      "promptSha256": "e7e7ab032c5e70db0bebff46ebcf57bae0586fd2c4c67e59f2436a737e71b272",
-      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+      "promptSha256": "3e1163941004c11fb42b2acc6fcb98efe194b4af8c0dac1be3b3410d0cfac265",
+      "referenceSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167"
     },
     {
       "id": "es-419-food-onion",
@@ -272,12 +292,23 @@
       "meaning": "Rice",
       "group": "staples",
       "membership": "existing-spanish-item",
-      "source": "approved-reuse",
-      "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
-      "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c",
-      "bytes": 89912,
-      "sourceId": "es-419-travel-rice",
-      "evidence": "content/spanish-travel-audio/activation.json"
+      "source": "generated",
+      "version": 1,
+      "concept": "A small purple-and-gold bowl filled with a modest fluffy mound of cooked white rice. Many small, short plump opaque white rice grains form a soft, slightly clumped cooked serving, with a few individual grain shapes clear around the surface. No uncooked grains, grain sack, garnish, other food, cutlery or chopsticks.",
+      "supersedes": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+      "supersedesSha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c",
+      "path": "artifacts/spanish-food-1-art/originals/rice-v1.png",
+      "sha256": "622cdf579932bbc07358bd73b590d9aa7b8db44c0e21b0a0ed34f5bf4e7452b3",
+      "bytes": 863469,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 943729,
+        "opaquePixels": 619093,
+        "opaqueWhitePixels": 22539
+      },
+      "promptSha256": "5b18066efde0e4dcb8b6215f1d01b0e8781d42e48df6c231e65c021c58da7f85",
+      "referenceSha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7"
     },
     {
       "id": "es-419-food-tortilla",
@@ -310,20 +341,22 @@
       "group": "staples",
       "membership": "new-spanish-item",
       "source": "generated",
-      "path": "artifacts/spanish-food-1-art/originals/beans-v1.png",
-      "sha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7",
-      "bytes": 988942,
-      "version": 1,
+      "version": 2,
+      "concept": "Keep the existing purple-and-gold bowl, but replace every oversized mottled bean with many smaller smoothly skinned cooked brown beans. Aim for roughly forty to sixty little plump oval/kidney-shaped beans, with about eight to ten fitting across the bowl opening. Use subtle natural crease marks and tiny soft highlights; no orange patches, speckles, pitted texture or pebble/potato appearance. A little cooking broth may appear between beans but must not dominate.",
+      "supersedes": "artifacts/spanish-food-1-art/originals/beans-v1.png",
+      "supersedesSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7",
+      "path": "artifacts/spanish-food-1-art/originals/beans-v2.png",
+      "sha256": "ac1df9367013017fc49cfbc74d560690f57130607f8153773db6b90caa4de8bd",
+      "bytes": 1064765,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 853174,
-        "opaquePixels": 709677,
-        "opaqueWhitePixels": 0
+        "transparentPixels": 861525,
+        "opaquePixels": 701195,
+        "opaqueWhitePixels": 9
       },
-      "concept": "A shallow simple purple-and-gold bowl containing cooked pinto beans. Large individual oval kidney-shaped beans in warm reddish-brown hues remain clear and distinct at card size. No spoon, rice, garnish, other ingredients or liquid soup.",
-      "promptSha256": "662e885d41d3e6e96fa7407ccf7d80160fc7c7ec052b99a1c58b7a7f9b70883b",
-      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+      "promptSha256": "6eebb0b7f5e1fa6c445ada339b8cbf42a06a40c6c1d24243ba323e900c64564e",
+      "referenceSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7"
     },
     {
       "id": "es-419-food-pasta",
