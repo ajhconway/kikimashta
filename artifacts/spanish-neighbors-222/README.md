@@ -1,6 +1,6 @@
 # Spanish neighbor evaluation (#222)
 
-This is an offline evaluation of semantic and pronunciation candidates for the 159 approved ordinary Spanish picture words. Spanish practice still uses its existing randomized choices. Nine direct foundation contexts stay outside the ordinary candidate pool. No model weights, phonemizer binaries or new speech are shipped by this experiment.
+This is the frozen offline evaluation of semantic and pronunciation candidates for the then-current 159 approved ordinary Spanish picture words. Practice retained its randomized choices during the comparison. Nine direct foundation contexts stay outside the ordinary candidate pool. No model weights, phonemizer binaries or new speech are shipped by this experiment.
 
 ## Measured semantic results
 
@@ -80,6 +80,8 @@ python artifacts/spanish-neighbors-222/phonemize.py --binary /path/to/build/src/
 node scripts/content/evaluate-spanish-neighbors.mjs
 ```
 
-## Remaining #222 work
+## Subsequent owner selection and integration
 
-Use the collected semantic preferences to inspect candidates, including the rejected tent sets; resolve the canonical yeísmo mismatch and any other transcription findings, decide Spanish pronunciation eligibility/weighting, then select one production semantic source and integrate language-specific compact tables under the established mastery rules. Current evidence provisionally favors the tested fastText composition over this E5 recipe. Spanish activation and physical-device acceptance remain pending. The partial owner preferences above support the semantic candidate but do not select a pronunciation winner or approve runtime integration. Future pronunciation comparisons should use one primary judgment per distinct pair, with optional regional checks rather than mandatory four-voice repeats.
+After the preserved partial review, the owner selected fastText composition and phoneme ranking for initial integration, and requested [#235](https://github.com/ajhconway/kikimashta/issues/235) for a later quality review with more vocabulary. The [Spanish production guide](../../content/semantic-neighbors/es-README.md) describes the selected generators and current 171-word, six-pack preparation, including shared Food identities. Production canonicalization resolves the raw halla/haya mismatch and passes all 22 controlled checks; this artifact retains its original 19/20 raw result and report/key unchanged.
+
+The collected preferences support the semantic candidate and show no pronunciation winner. The owner chose to proceed with the two methods; physical-device acceptance remains separate. Further phrase/sense inspection, Spanish eligibility/weighting evaluation and shorter targeted listening comparisons belong to #235 rather than requiring the owner to finish repetitive regional trials.
