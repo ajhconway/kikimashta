@@ -15,7 +15,7 @@ export function scoreSpanishResponses(saved, report, key) {
     semantic: counts(rows.filter(row => row.kind === 'semantic')),
     pronunciation: counts(rows.filter(row => row.kind === 'pronunciation')),
     pronunciationByVoice: Object.fromEntries(report.voices.map(voice => [voice.id, counts(rows.filter(row => row.kind === 'pronunciation' && row.voice === voice.id))])),
-    pronunciationUnexposed: counts(rows.filter(row => row.kind === 'pronunciation' && !row.revealed && !row.priorWordExposure)),
+    pronunciationUnexposed: counts(rows.filter(row => row.kind === 'pronunciation' && !row.revealed && !row.priorWordExposure && !row.semanticExposure)),
     pronunciationAfterWordExposure: counts(rows.filter(row => row.kind === 'pronunciation' && row.priorWordExposure)),
     pronunciationAfterSemanticExposure: counts(rows.filter(row => row.kind === 'pronunciation' && row.semanticExposure)),
     pronunciationUnrevealed: counts(rows.filter(row => row.kind === 'pronunciation' && !row.revealed)),

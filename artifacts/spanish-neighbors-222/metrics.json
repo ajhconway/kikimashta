@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "language": "es-419",
-  "inputDigest": "2ec9e70ce57900c1a6229c75c01c74deededfb5a82ed8f9884683ccf6a9717e5",
+  "inputDigest": "bd158c29052ced54e528ec838872a80abae347723569411d0623230828f0d229",
   "sourceHashes": {
     "bank.json": "0b39f6b6b40b1953e7efb9d3c9cdac4b86fa01de283d96fcea205e66dbf1cab3",
     "benchmark.json": "6c3b16312973a72cbef6a6e86b030f0c2d95dcb7cee2f46ed5e594c02c690fe9",
@@ -12,7 +12,7 @@
     "phonemize.py": "cc5d5d92b0e45bd5bac78b8aabe22d8e74a31cc397eadc6cd938ce17a33ae39a",
     "scripts/content/spanish-neighbor-metrics.mjs": "193e659f1eadfb78e678de1cd62ec95fa4d37075786c0bb7bad0aa1f147379e8",
     "scripts/content/evaluate-spanish-neighbors.mjs": "c69096b43732ec74088c228cbcdbcf7f4a5775f1ec3d99096d928dad0a2628db",
-    "scripts/content/spanish-neighbor-review.mjs": "39d4a2163843feedf2d647d64099027a36d13c3a13b676231dd4748a3d0b7690",
+    "scripts/content/spanish-neighbor-review.mjs": "ed230b30522b9d4fcfb0738df0acf696db507308152b6ee0b51753cafe7fc6f4",
     "scripts/content/spanish-neighbor-inspection.mjs": "ce95a34d5a625ed0f631e7c707cbb9a42445499e176c80ad0eefa489414a1228"
   },
   "mediaHashes": {

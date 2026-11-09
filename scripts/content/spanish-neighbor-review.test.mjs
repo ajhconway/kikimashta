@@ -93,7 +93,7 @@ test('restores only this revision, inventory order, kind, voice and valid respon
   assert.equal(validSpanishResponses(stale, report), false);
   const staleResponse = saved(report); delete staleResponse.responses[1].semanticExposure;
   assert.equal(validSpanishResponses(staleResponse, report), false);
-  const exposed = saved(report); exposed.semanticViewed = true; exposed.wordsViewed = true; exposed.responses[1].semanticExposure = true;
+  const exposed = saved(report); exposed.semanticViewed = true; exposed.wordsViewed = true; exposed.responses[1].semanticExposure = true; exposed.responses[1].priorWordExposure = true;
   assert.equal(validSpanishResponses(exposed, report), true);
   exposed.semanticViewed = false;
   assert.equal(validSpanishResponses(exposed, report), false);
@@ -133,6 +133,16 @@ test('requires consistent cross-trial word exposure flags and rejects the prior 
   assert.equal(validSpanishResponses(semanticExposure, report), false);
   semanticExposure.wordsViewed = true;
   assert.equal(validSpanishResponses(semanticExposure, report), true);
+  semanticExposure.responses[1].semanticExposure = true;
+  assert.equal(validSpanishResponses(semanticExposure, report), false);
+  semanticExposure.responses[1].priorWordExposure = true;
+  assert.equal(validSpanishResponses(semanticExposure, report), true);
   const impossiblePrior = saved(report); impossiblePrior.responses[1].priorWordExposure = true;
   assert.equal(validSpanishResponses(impossiblePrior, report), false);
+  for (const semanticAnswer of [{ preference: 'A' }, { notes: 'These meanings are closer.' }]) {
+    const semanticAnswered = saved(report); Object.assign(semanticAnswered.responses[0], semanticAnswer);
+    assert.equal(validSpanishResponses(semanticAnswered, report), false);
+    semanticAnswered.semanticViewed = true; semanticAnswered.wordsViewed = true;
+    assert.equal(validSpanishResponses(semanticAnswered, report), true);
+  }
 });

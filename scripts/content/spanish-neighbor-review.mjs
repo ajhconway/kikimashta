@@ -17,7 +17,9 @@ export function validSpanishResponses(saved, report) {
       typeof response.notes === 'string' && response.notes.length <= 4000 && typeof response.revealed === 'boolean' &&
       typeof response.semanticExposure === 'boolean' && (!response.semanticExposure || saved.semanticViewed) &&
       typeof response.priorWordExposure === 'boolean' && (!response.priorWordExposure || saved.wordsViewed) &&
-      (trials[index].kind !== 'semantic' || (response.revealed === true && response.semanticExposure === false && response.priorWordExposure === false)));
+      (!response.semanticExposure || response.priorWordExposure) &&
+      (trials[index].kind !== 'semantic' || (response.revealed === true && response.semanticExposure === false && response.priorWordExposure === false &&
+        ((response.preference === null && response.notes.length === 0) || saved.semanticViewed))));
 }
 
 function mediaPath(src, directory) {

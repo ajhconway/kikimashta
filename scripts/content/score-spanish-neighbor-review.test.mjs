@@ -14,6 +14,8 @@ test('Spanish scoring separates method/voice/reveal groups and preserves missing
   assert.equal(empty.semantic.unanswered, report.semanticTrials.length);
   assert.equal(empty.pronunciation.unanswered, report.pronunciationTrials.length);
   responses[0].preference = 'A';
+  pending.semanticViewed = true;
+  pending.wordsViewed = true;
   responses[report.semanticTrials.length].preference = 'tie';
   const scored = scoreSpanishResponses(pending, report, key);
   assert.equal(scored.semantic[key.trials.find(row => row.trialId === responses[0].trialId).A], 1);
@@ -23,6 +25,7 @@ test('Spanish scoring separates method/voice/reveal groups and preserves missing
   pending.semanticViewed = true;
   pending.wordsViewed = true;
   responses[report.semanticTrials.length].semanticExposure = true;
+  assert.throws(() => scoreSpanishResponses(pending, report, key), /do not match/);
   responses[report.semanticTrials.length].priorWordExposure = true;
   const exposed = scoreSpanishResponses(pending, report, key);
   assert.equal(exposed.pronunciationAfterSemanticExposure.tie, 1);
