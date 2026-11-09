@@ -3,6 +3,7 @@ import { expect, test } from './fixtures';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import spanish from '../content/es-419.json' with { type: 'json' };
 import spanishLevel2 from '../content/es-419-travel-2.json' with { type: 'json' };
+import spanishLevel3 from '../content/es-419-travel-3.json' with { type: 'json' };
 
 for (const format of ['pictures', 'writing']) {
   test(`global voice selection persists and supplies ${format} practice and saved answers`, async ({ page }) => {
@@ -98,7 +99,7 @@ test('Spanish regional voice preference persists independently and supplies prac
   expect(source).toContain('/juan/');
   await page.getByRole('button', { name: 'Replay word' }).click();
   await expect(page.locator('audio')).toHaveAttribute('src', source!);
-  const target = [...spanish.items, ...spanishLevel2.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  const target = [...spanish.items, ...spanishLevel2.items, ...spanishLevel3.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
   expect(target).toBeDefined();
   await page.locator('.choices button').filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();

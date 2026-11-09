@@ -1,6 +1,6 @@
 # Spanish Travel level 3 media review (#174)
 
-31 selected new transparent illustrations, five unchanged approved reuses and 288 recordings in eight regional voices. The word list and generation were approved; owner media acceptance is pending.
+31 selected new transparent illustrations, five unchanged approved reuses and 288 recordings in eight regional voices. The word list and generation were approved; the owner accepted the corrected complete media set and requested shipment.
 
 - [Combined pictures and voices](review.html)
 - [All 36 pictures at 145px](artwork.html)
@@ -23,4 +23,4 @@ node scripts/content/build-spanish-travel-level-3-media-review.mjs
 python3 -m http.server 5183 --bind 127.0.0.1 --directory .
 ```
 
-Open <http://localhost:5183/artifacts/spanish-travel-3-art/review.html>. Search, regional/voice filters and sequential playback are available. No active app bank or pack is changed by this review.
+Open <http://localhost:5183/artifacts/spanish-travel-3-art/review.html>. Search, regional/voice filters and sequential playback are available. The review remains a preserved generation record. The separate [activation acceptance](../../content/spanish-travel-3/acceptance.json) binds its exact bytes; [production provenance](../../content/spanish-travel-3/activation.json) records shipment.

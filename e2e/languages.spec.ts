@@ -22,6 +22,7 @@ test('remembers learning language and independent pack choices across reloads', 
   await expect(page.getByRole('checkbox', { name: /Writing/ })).toHaveCount(0);
   await esPack.uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
@@ -42,8 +43,9 @@ test('remembers learning language and independent pack choices across reloads', 
 
 import spanish from '../content/es-419.json' with { type: 'json' };
 import spanishLevel2 from '../content/es-419-travel-2.json' with { type: 'json' };
+import spanishLevel3 from '../content/es-419-travel-3.json' with { type: 'json' };
 
-for (const bank of [spanish, spanishLevel2]) test(`${bank.title} picture lessons play, save and stay isolated after reload`, async ({ page }) => {
+for (const bank of [spanish, spanishLevel2, spanishLevel3]) test(`${bank.title} picture lessons play, save and stay isolated after reload`, async ({ page }) => {
   test.setTimeout(60_000);
   await page.goto('./');
   await page.evaluate(id => {
@@ -134,5 +136,30 @@ test('level 2 library membership and pack selection stay independent of level 1'
   await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).not.toBeChecked();
   await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('72 cards');
+  await expect(page.locator('#results-status')).toContainText('108 cards');
+});
+
+
+test('level 3 library shows accepted revisions and keeps browsing independent of practice packs', async ({ page }) => {
+  await page.goto('vocabulary/?language=es-419&pack=es-419-travel-3-pictures');
+  await expect(page.locator('#results-status')).toContainText('36 cards');
+  await expect(page.locator('.card h2')).toHaveText(spanishLevel3.items.slice(0, 24).map(item => item.text));
+  for (const level of [1, 2]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
+  for (const slug of ['crosswalk', 'blanket', 'toilet-paper', 'banana']) {
+    const item = spanishLevel3.items.find(word => word.id === `es-419-travel-${slug}`)!;
+    await page.getByLabel('Search words').fill(item.text);
+    await expect(page.locator('.card h2')).toHaveText(item.text);
+    await expect(page.locator('.card-image')).toHaveAttribute('src', '../' + item.image.src);
+    await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect(page.getByRole('group', { name: `Latin American Spanish voices for ${item.label}`, exact: true }).getByRole('button')).toHaveCount(8);
+  }
+  await page.getByRole('button', { name: 'Juan: Banana', exact: true }).click();
+  await expect(page.locator('#audio-status')).toContainText('plátano');
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true })).toBeChecked();
+  for (const level of [1, 2]) await expect(page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true })).not.toBeChecked();
+  await page.getByLabel('Search words').fill('');
+  await page.getByLabel('Card pack').selectOption('all');
+  await expect(page.locator('#results-status')).toContainText('108 cards');
+  await expect(page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true })).toBeChecked();
 });
