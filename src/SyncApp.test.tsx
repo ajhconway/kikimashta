@@ -11,6 +11,12 @@ const runtime = vi.hoisted(() => ({
   snapshot: vi.fn(), subscribe: vi.fn(), store: vi.fn(), changed: vi.fn(),
   sendCode: vi.fn(), verifyCode: vi.fn(), signOut: vi.fn(), sync: vi.fn(), copyGuestProgress: vi.fn(),
 }));
+vi.mock('./content/contextual-runtime', async original => {
+  const actual = await original<typeof import('./content/contextual-runtime')>();
+  const { withHistoricalJapanesePractice } = await import('./test/contextual-pilot');
+  return withHistoricalJapanesePractice(actual);
+});
+
 vi.mock('./sync/runtime', async importOriginal => ({
   ...await importOriginal<typeof import('./sync/runtime')>(), getAccountRuntime: () => runtime,
 }));

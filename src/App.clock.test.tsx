@@ -8,6 +8,12 @@ import { practicePool } from './core/practice';
 import { deriveSchedules, schedulerVersion } from './core/scheduler';
 import type { PracticeAttempt } from './types';
 
+vi.mock('./content/contextual-runtime', async original => {
+  const actual = await original<typeof import('./content/contextual-runtime')>();
+  const { withHistoricalJapanesePractice } = await import('./test/contextual-pilot');
+  return withHistoricalJapanesePractice(actual);
+});
+
 const NOW = Date.UTC(2026, 10, 8, 12);
 const name = 'clock-skew-regression';
 let store: ProgressStore;

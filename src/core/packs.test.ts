@@ -34,7 +34,7 @@ describe('WaniKani packs', () => {
   });
   it('includes every active card without retired starter words', () => {
     const cards = selectedPracticeCards(practicePool.items, cardPacks.map(pack => pack.id));
-    expect(cards).toHaveLength(practicePool.items.length * 2);
+    expect(cards).toHaveLength(practicePool.items.reduce((count, item) => count + (item.wordExercises?.length ?? 2), 0));
     expect(cards.some(card => ['ja-cat', 'ja-banana', 'ja-umbrella', 'ja-cup'].includes(card.item.id))).toBe(false);
     expect(cards.some(card => card.item.id === 'ja-dog')).toBe(true);
     expect(cards.some(card => card.item.id === 'ja-apple')).toBe(true);
