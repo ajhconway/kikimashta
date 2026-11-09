@@ -3,7 +3,7 @@
   "id": "es-419-travel-2",
   "language": "es-419",
   "title": "Travel level 2",
-  "status": "media-generation-authorized",
+  "status": "generated-awaiting-owner-media-review",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
   "scope": "36 additional concrete words for getting around town, eating out and everyday travel needs. Content grouping, not a CEFR level.",
@@ -615,7 +615,15 @@
     "reason": "Owner approved generation: Please go ahead and generate the artwork and audio.",
     "expectedClips": 288,
     "inputCharacters": 2240,
-    "issue": 166
+    "issue": 166,
+    "completed": {
+      "newArtwork": 34,
+      "approvedReuse": 2,
+      "audioClips": 288,
+      "artworkManifest": "artifacts/spanish-travel-2-art/manifest.json",
+      "audioManifest": "artifacts/spanish-travel-2-audio-review/manifest.json",
+      "review": "artifacts/spanish-travel-2-art/review.html"
+    }
   },
   "activationPlan": [
     "Retain level 1 bank, pack ID and all existing language/item history.",

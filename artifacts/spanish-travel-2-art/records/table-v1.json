@@ -1,0 +1,11 @@
+{
+  "slug": "table",
+  "id": "es-419-travel-table",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8af91b38-c9eb-4014-8800-f199db709be4.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8af91b38-c9eb-4014-8800-f199db709be4.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "path": "originals/table-v1.png",
+  "sha256": "be2c092afe6358619e07451a7c6ad76e486f3cb6a6ff2c73821b55d3443e651d",
+  "promptSha256": "07ef48b30ad1216c7b6e3a66418bfac2e18c639a0f6f7c4c1f4b343c6c74021a",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen"
+}

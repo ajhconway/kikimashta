@@ -1,6 +1,8 @@
-# Spanish travel level 2 · draft (#166)
+# Spanish travel level 2 · media review (#166)
 
-36 additional words; picture vocabulary, English interface, and the existing eight regional voices. This list awaits owner review. No media has been generated and no new pack is active.
+36 additional words; picture vocabulary, English interface, and the existing eight regional voices. The owner approved the word list and generation. All 36 pictures (34 new transparent PNGs and 2 unchanged approved JPGs) and all 288 recordings are ready for media acceptance. The pack is not active.
+
+[Combined picture and voice review](../../artifacts/spanish-travel-2-art/review.html) · [All artwork at card size](../../artifacts/spanish-travel-2-art/artwork.html) · [Audio provenance](../../artifacts/spanish-travel-2-audio-review/manifest.json)
 
 ## Around town
 
@@ -70,12 +72,14 @@
 
 ## Preparation notes
 
-- Reuse candidates: approved empty plate for plato and the existing handleless glass for vaso. The asset historically named ja-cup is a glass; taza needs a handled cup image.
-- The remaining 34 subjects need artwork preparation after word review. Each candidate must work at 145px without answer text.
+- Reused unchanged: approved empty plate for plato and the existing handleless glass for vaso. The asset historically named ja-cup is a glass; taza needs a handled cup image.
+- The remaining 34 subjects were generated with the built-in image tool, using the same style reference. Original PNG bytes, exact prompts, per-image request hashes and decoded transparency measurements are preserved. Review each candidate at 145px without answer text.
 - Guard cup/coffee, glass/drink, coin/money, shampoo/bottle and room/bed overlap when both levels are selected. Menu, receipt and museum imagery also require careful review for recognition without labels.
 - Use pescado for fish as food. Cartera means wallet in this draft. Piscina is the selected pool term; wording remains editable.
 - Keep stable item IDs independent of pack level. The current level 1 bank and retired entrance/exit history remain intact.
-- With the same eight voices, this draft would require 288 recordings for 2240 Unicode input characters. This is a scope count, not a price estimate. The existing level-1 generator and its 2,200-credit guard are deliberately bounded to level 1; level 2 needs a separate approved plan/batch and an appropriate scope guard, without changing the level-1 approval or recordings.
+- All 288 recordings were generated in the eight existing regional voices from the exact 2240 Unicode input characters. They use the same constant-gain playback profile with no trimming or timing changes. None required quieter-level exceptions. Level 2 uses its own approved plan, batch, scope guard and private archive; level 1 approvals and recordings are untouched.
+- Provider originals, requests and normalization evidence are hash-verified in the private archive at `~/.local/share/kikimashta/spanish-audio/166-v1/` (1737 files). Public review files contain normalized recordings and provenance, with no credentials or private account usage.
+- Rebuild and verify the combined gallery with `node scripts/content/build-spanish-travel-level-2-media-review.mjs`; serve the repository artifacts directory with `python3 -m http.server 5180 --bind 127.0.0.1 --directory artifacts`, then open `/spanish-travel-2-art/review.html`.
 
 ## Lexical references
 
