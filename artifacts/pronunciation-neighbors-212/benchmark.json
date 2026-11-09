@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "issue": 212,
+  "language": "ja-JP",
+  "authorship": {
+    "method": "Hand-authored before consulting kanasim distances or generated weighted rankings.",
+    "bank": "Approved Japanese practice bank from japaneseSemanticBank; no draft-only words admitted.",
+    "status": "Frozen hypotheses; not human listening judgments."
+  },
+  "policy": {
+    "lowerDistanceIsCloser": true,
+    "tieTolerance": 1e-09,
+    "ties": "Report separately; a tie does not satisfy a strict expected ordering. Do not silently break ties using item IDs for benchmark accuracy.",
+    "unsupported": "Report unsupported probes separately and retain them in the declared denominator; never drop them silently.",
+    "invariants": "Report correctness separately from exploratory ordering; identity checks are not evidence that one model predicts perception better.",
+    "exploratory": "Report wins, ties, reversals and unsupported counts, plus categories; these are provisional phonetic hypotheses rather than empirical listener labels.",
+    "scope": "Synthetic probes exercise sound behavior only. Approved-bank triplets test raw phonetic ordering before pack, picture-validity or threshold filtering; production-scoped coverage is a separate diagnostic."
+  },
+  "triplets": [
+    {
+      "id": "I01",
+      "category": "script-normalization",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "カミ",
+      "closer": "かみ",
+      "farther": "かに",
+      "reason": "Hiragana and katakana versions must have zero distance; a changed consonant must remain distinct."
+    },
+    {
+      "id": "I02",
+      "category": "width-normalization",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "ｶﾐ",
+      "closer": "かみ",
+      "farther": "かに",
+      "reason": "Half-width katakana must normalize to the same reading without collapsing a changed consonant."
+    },
+    {
+      "id": "I03",
+      "category": "vowel-length",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "おばさん",
+      "closer": "おばさん",
+      "farther": "おばあさん",
+      "reason": "An identical sequence must be closer than one with an additional vowel mora; do not erase duration contrasts."
+    },
+    {
+      "id": "I04",
+      "category": "gemination",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "きて",
+      "closer": "きて",
+      "farther": "きって",
+      "reason": "An identical sequence must be closer than the geminate counterpart; small tsu must retain a nonzero cost."
+    },
+    {
+      "id": "I05",
+      "category": "voicing",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "かた",
+      "closer": "かた",
+      "farther": "がた",
+      "reason": "Voicing can affect similarity but must not collapse distinct readings to zero distance."
+    },
+    {
+      "id": "I06",
+      "category": "glide-segmentation",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "きやく",
+      "closer": "きやく",
+      "farther": "きゃく",
+      "reason": "Full-size ya and a small-ya glide must not become identical sequences."
+    },
+    {
+      "id": "I07",
+      "category": "moraic-nasal",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "さん",
+      "closer": "さん",
+      "farther": "さ",
+      "reason": "The moraic nasal must not be discarded."
+    },
+    {
+      "id": "I08",
+      "category": "compound-reading-identity",
+      "classification": "invariant",
+      "source": "controlled-probe",
+      "target": "じんこう",
+      "closer": "ジンコウ",
+      "farther": "にっこう",
+      "reason": "Same-reading compound spellings normalize to zero distance; a different sequence remains distinct. This does not establish pitch-accent identity."
+    },
+    {
+      "id": "E01",
+      "category": "voicing",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "かた",
+      "closer": "がた",
+      "farther": "さた",
+      "reason": "The same-place stop voicing change is hypothesized closer than replacing the stop with a fricative."
+    },
+    {
+      "id": "E02",
+      "category": "voicing",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "さき",
+      "closer": "ざき",
+      "farther": "まき",
+      "reason": "The voiced counterpart of the initial fricative is hypothesized closer than a nasal replacement."
+    },
+    {
+      "id": "E03",
+      "category": "shared-vowels",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "かみ",
+      "closer": "かに",
+      "farther": "かぬ",
+      "reason": "Changing only the nasal consonant is hypothesized closer than changing that consonant and the final vowel."
+    },
+    {
+      "id": "E04",
+      "category": "vowel-quality",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "きた",
+      "closer": "けた",
+      "farther": "こた",
+      "reason": "The front vowel change i to e is hypothesized closer than i to o; this is an exploratory feature-based expectation."
+    },
+    {
+      "id": "E05",
+      "category": "glides",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "きゃく",
+      "closer": "きゅく",
+      "farther": "さく",
+      "reason": "Preserving the palatalized consonant is hypothesized closer than replacing its entire initial mora. These strings are controlled sound probes, not vocabulary claims."
+    },
+    {
+      "id": "E06",
+      "category": "vowel-length",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "かど",
+      "closer": "かあど",
+      "farther": "さかな",
+      "reason": "A single vowel-length insertion is hypothesized closer than a substantially different consonant/vowel sequence."
+    },
+    {
+      "id": "E07",
+      "category": "gemination",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "きて",
+      "closer": "きって",
+      "farther": "はな",
+      "reason": "A gemination difference is hypothesized closer than changing both base morae; the length distinction must still remain nonzero."
+    },
+    {
+      "id": "E08",
+      "category": "moraic-nasal",
+      "classification": "exploratory",
+      "source": "controlled-probe",
+      "target": "かん",
+      "closer": "か",
+      "farther": "すし",
+      "reason": "Removing the final nasal is hypothesized closer than changing the base vowel and consonant sequence."
+    },
+    {
+      "id": "E09",
+      "category": "shared-prefix",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "いぬ",
+      "closer": "いと",
+      "farther": "やま",
+      "reason": "A shared initial mora with one remaining replacement is hypothesized closer than a two-mora replacement.",
+      "bankIds": {
+        "target": "ja-dog",
+        "closer": "ja-v-e05b8e36c6ca",
+        "farther": "ja-v-ddd9dca106e2"
+      }
+    },
+    {
+      "id": "E10",
+      "category": "shared-vowels",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "うし",
+      "closer": "むし",
+      "farther": "はな",
+      "reason": "Keeping the final mora and initial vowel is hypothesized closer than replacing the full sequence.",
+      "bankIds": {
+        "target": "ja-v-a47e21265374",
+        "closer": "ja-v-a4e5df148631",
+        "farther": "ja-v-fa6a4c8f27b4"
+      }
+    },
+    {
+      "id": "E11",
+      "category": "shared-vowels",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "くち",
+      "closer": "つち",
+      "farther": "いち",
+      "reason": "Both alternatives share chi; retaining the initial u vowel is hypothesized closer than replacing it with i. This ordering needs listening validation.",
+      "bankIds": {
+        "target": "ja-v-9e64feeea5ea",
+        "closer": "ja-v-5352aea4e4bb",
+        "farther": "ja-v-5d8047464c5d"
+      }
+    },
+    {
+      "id": "E12",
+      "category": "shared-rime",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "たま",
+      "closer": "やま",
+      "farther": "むし",
+      "reason": "Preserving the a-ma sequence with an initial consonant change is hypothesized closer than an unrelated vowel/consonant sequence.",
+      "bankIds": {
+        "target": "ja-v-66ccf8dd3399",
+        "closer": "ja-v-ddd9dca106e2",
+        "farther": "ja-v-a4e5df148631"
+      }
+    },
+    {
+      "id": "E13",
+      "category": "compound-insertion",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "こうがく",
+      "closer": "こうこがく",
+      "farther": "くるま",
+      "reason": "Engineering and archeology share an ordered sound sequence with one inserted mora; their semantic relation is not part of the phonetic expectation.",
+      "bankIds": {
+        "target": "ja-v-8ce0a0ec59c4",
+        "closer": "ja-v-88c9d9718867",
+        "farther": "ja-v-f71f9de56223"
+      }
+    },
+    {
+      "id": "E14",
+      "category": "compound-gemination",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "にっこう",
+      "closer": "げっこう",
+      "farther": "さんかく",
+      "reason": "The shared geminate-plus-kou ending is hypothesized closer than the different sequence in sankaku.",
+      "bankIds": {
+        "target": "ja-v-cb7a14590e8e",
+        "closer": "ja-v-2d7d45d5614e",
+        "farther": "ja-v-ea952b83ac80"
+      }
+    },
+    {
+      "id": "E15",
+      "category": "compound-length",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "おおきい",
+      "closer": "おおきさ",
+      "farther": "みかづき",
+      "reason": "Keeping the long initial vowel and the first three morae is hypothesized closer than a largely different sequence.",
+      "bankIds": {
+        "target": "ja-v-f6377dcbb564",
+        "closer": "ja-v-26d0ad7af566",
+        "farther": "ja-v-4aa5c84df90c"
+      }
+    },
+    {
+      "id": "E16",
+      "category": "counter-compound",
+      "classification": "exploratory",
+      "source": "approved-bank",
+      "target": "いちだい",
+      "closer": "にだい",
+      "farther": "ゆうがた",
+      "reason": "The shared dai suffix and partial initial vowel match are hypothesized closer than the different evening reading.",
+      "bankIds": {
+        "target": "ja-v-eba7f0968101",
+        "closer": "ja-v-f5b4250aeb03",
+        "farther": "ja-v-3534dd7d07d1"
+      }
+    }
+  ],
+  "listening": {
+    "status": "pending-human-listening",
+    "targetSelection": "Predeclared from approved vocabulary without consulting either ranking.",
+    "targets": [
+      {
+        "itemId": "ja-dog",
+        "text": "犬",
+        "reading": "いぬ",
+        "reason": "Short common two-mora word"
+      },
+      {
+        "itemId": "ja-v-9e64feeea5ea",
+        "text": "口",
+        "reading": "くち",
+        "reason": "Consonant/affricate and shared-vowel contrasts"
+      },
+      {
+        "itemId": "ja-v-36897e1da4ac",
+        "text": "切手",
+        "reading": "きって",
+        "reason": "Small-tsu gemination"
+      },
+      {
+        "itemId": "ja-v-5dc14aea92c7",
+        "text": "牛肉",
+        "reading": "ぎゅうにく",
+        "reason": "Palatalized mora and vowel length"
+      },
+      {
+        "itemId": "ja-v-9ff5251e6f21",
+        "text": "コーヒー",
+        "reading": "コーヒー",
+        "reason": "Katakana long-vowel marks"
+      },
+      {
+        "itemId": "ja-v-d19a39e4af55",
+        "text": "氷",
+        "reading": "こおり",
+        "reason": "Kana-spelled long vowel"
+      },
+      {
+        "itemId": "ja-v-8ce0a0ec59c4",
+        "text": "工学",
+        "reading": "こうがく",
+        "reason": "Multi-mora compound with shared prefixes"
+      },
+      {
+        "itemId": "ja-v-cb7a14590e8e",
+        "text": "日光",
+        "reading": "にっこう",
+        "reason": "Gemination and compound-ending contrasts"
+      },
+      {
+        "itemId": "ja-v-d242b38667c8",
+        "text": "お金",
+        "reading": "おかね",
+        "reason": "Longer ordinary noun"
+      },
+      {
+        "itemId": "ja-v-eba7f0968101",
+        "text": "一台",
+        "reading": "いちだい",
+        "reason": "Counter compound"
+      },
+      {
+        "itemId": "ja-v-001a4faf05bd",
+        "text": "出かける",
+        "reading": "でかける",
+        "reason": "Four-mora verb"
+      },
+      {
+        "itemId": "ja-v-3fef4445ce13",
+        "text": "人工",
+        "reading": "じんこう",
+        "reason": "Writing-only admission and known same-reading exclusion"
+      }
+    ],
+    "design": {
+      "targetCount": 12,
+      "voicePasses": 2,
+      "maximumTrials": 24,
+      "comparison": "For each target present the target audio followed by two methods’ top-three valid pronunciation alternatives. If the candidate sets are identical, record that as an unchanged set instead of inventing a preference.",
+      "blinding": "Hide algorithm names, numeric distances and word meanings until choices are saved. Present only A/B labels and recordings; reveal textual readings only after rating or in a separate inspection view.",
+      "balance": "Use opposite method-to-A/B assignments on the two voice passes for each target, with a fixed recorded seed/order. Use one common existing approved voice for target and alternatives within each trial, rotating two available native voices between passes.",
+      "responses": [
+        "A",
+        "B",
+        "tie",
+        "neither",
+        "uncertain"
+      ],
+      "prompt": "Which group contains alternatives that sound more similar to the target, while remaining distinguishable?",
+      "analysis": "Report each response category and voice separately, with the number of changed and unchanged sets. Do not convert missing, uncertain or neither responses into a win; no significance or learner-difficulty claim from a single reviewer."
+    }
+  }
+}
