@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-pasta",
+  "slug": "pasta",
+  "version": 1,
+  "path": "originals/pasta-v1.png",
+  "sha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7",
+  "promptSha256": "6374e36b28df8b9c82c6c88352a4af3cf2f3547526ec0a402560e0be0ebf84aa",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ea507780-c6d1-492b-a3ff-8707f1a02fad.png"
+}

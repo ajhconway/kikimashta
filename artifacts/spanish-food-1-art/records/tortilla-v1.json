@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-tortilla",
+  "slug": "tortilla",
+  "version": 1,
+  "path": "originals/tortilla-v1.png",
+  "sha256": "42b64854451626a9f6161ab60f0e661cd3efb85635d7f31ec0122421bbd96339",
+  "promptSha256": "95e141ee5eab31fa7a2c5a35395855d25a3b8df29ae2f7a2e52232841d04f854",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-335010e8-c7ac-4614-aac7-c644e4f5035c.png"
+}
