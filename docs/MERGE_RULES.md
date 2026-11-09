@@ -42,7 +42,7 @@ Checks cancels superseded PR runs, while main-push checks remain available for p
 
 After the final commit or an update from main, request a review of the new head promptly if its summary is stale. Run review alongside CI. The gate refresh only reports review state and does not request a review. Avoid duplicate requests for a head already under review. Automatic review triggering is an account integration setting; this change does not alter it.
 
-The gate uses a filtered sparse checkout of only its trusted default-branch script. Production publication still follows successful full main checks and rebuilds with production variables. Compare Actions job timings with #171 before claiming a speedup.
+The gate uses a sparse checkout of only its trusted default-branch script. Production publication still follows successful full main checks and rebuilds with production variables. Compare Actions job timings with #171 before claiming a speedup.
 
 ## How the gate works
 
