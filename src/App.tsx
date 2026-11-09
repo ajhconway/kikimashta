@@ -3,7 +3,7 @@ import { initialLanguage, languagePreferenceKey, learningLanguages, type Learnin
 import { initialPackIds, selectedPracticeCards } from './core/packs';
 import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey, isContextualExercise } from './core/cards';
-import { correctChoiceId, createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
+import { correctChoiceId, createQuestions, InsufficientChoicesError, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveContextualUnlocks, selectedContextualCards } from './core/contextual-progression';
 import { contextualQuestion } from './core/contextual-questions';
 import { approvedContextualQuestions } from './content/contextual';
@@ -58,6 +58,7 @@ function CardFace({ item, exercise, font }: PracticeCard & { font: WritingFont }
   const length = Math.max(1, Array.from(writingCharacters.segment(item.text)).length);
   return <span className="written-answer" data-font={font} style={{ '--writing-length': length } as CSSProperties} lang={item.language}>{item.text}</span>;
 }
+const devChoiceLabels = { correct: 'Correct answer', semantic: 'Semantic neighbor', pronunciation: 'Pronunciation neighbor', broad: 'Random card' } as const;
 const choiceClass = (exercise: Exercise) => 'answer-choice ' + (exercise === 'audio-picture' ? 'picture-choice' : 'text-choice');
 
 function QuizProgress({ total, completed, mistakes }: { total: number; completed: number; mistakes: number }) {
@@ -132,7 +133,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     return { cards, allSchedules, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
   }, [contextualScope, scopedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
-    if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
+    if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random, mastery.current);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
     const candidates = languageContextualBanks.flatMap(bank => approvedContextualQuestions(bank, format))
       .filter(({ context }) => context.targetItemId === card.item.id &&
@@ -413,9 +414,15 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
-      const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
+      const fullPool = choicesFor(card.exercise);
+      const choices = fullPool.filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
-      return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);
+      if (choices.length < 4) return createQuestions([card], fullPool, random);
+      try { return createQuestions([card], choices, random); }
+      catch (error) {
+        if (!(error instanceof InsufficientChoicesError)) throw error;
+        return createQuestions([card], fullPool, random);
+      }
     });
     beginQuiz(block);
   }
@@ -582,7 +589,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {saveError && feedback && <div role="alert" className="error"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         <QuizProgress total={quizSize} completed={correct} mistakes={mistakes}/>
       </section>}
-      {screen === 'quiz' && target && !questions[index]?.contextual && <section className="practice quiz" data-exercise={exercise}>
+      {screen === 'quiz' && target && !questions[index]?.contextual && <section className="practice quiz" data-exercise={exercise} data-dev-choice-borders={isDevReview || undefined}>
         <h1 className="sr-only">Listen and choose</h1>
         <div className="quiz-top">
         <QuizCompanion listening={playing} response={feedback?.outcome ?? null}/>
@@ -593,15 +600,17 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <div className="quiz-cards">
         {feedback?.outcome === 'success' && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
         <div className={'choices ' + (audioFirst ? 'choices-audio-first' : 'choices-enter')} ref={choiceGrid} key={exercise + '-' + target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
+          const diagnosticKind = isDevReview ? questions[index]?.choiceKinds?.[item.id] : undefined;
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError || !choicesReady} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} data-dev-choice-kind={diagnosticKind} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-describedby={diagnosticKind ? 'dev-choice-' + diagnosticKind : undefined} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError || !choicesReady} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
         <MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: isDemoQuestion }}
           outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
           change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
+        {isDevReview && <div className="dev-choice-legend" role="group" aria-label="Word choice border legend">{Object.entries(devChoiceLabels).map(([kind, label]) => <span id={"dev-choice-" + kind} data-dev-choice-kind={kind} key={kind}><i aria-hidden="true"/>{label}</span>)}</div>}
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>

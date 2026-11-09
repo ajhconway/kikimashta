@@ -39,6 +39,8 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
+Japanese word-neighbor preparation uses `npm run content:neighbors`; its deterministic data and reviewed-image check is `npm run content:neighbors:check`, included in `npm run check`. Offline semantic model regeneration remains separate; app development and ordinary checks need no Python model packages.
+
 When another worktree is serving the default preview port, use `E2E_PORT=4199 npm run test:e2e` (or another free port). An explicit E2E_PORT starts an isolated production preview rather than reusing another server. The card library has Words and Contextual questions views. Open `vocabulary/?view=contextual&language=ja-JP` for authored contextual cards; old `?review=contextual` links redirect there. Browsing saves no attempts.
 
 Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.

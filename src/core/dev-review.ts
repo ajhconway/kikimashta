@@ -79,12 +79,14 @@ export function createDevReview(entries: readonly DevReviewEntry[], options: Dev
     const visit = visits.get(exercise) ?? 0;
     const entry = pool[visit % pool.length]!;
     visits.set(exercise, visit + 1);
+    const sample = createMasterySample(entry.card, level, at);
     const authored = entry.contextual;
     const question = authored
       ? contextualQuestion(authored.context, authored.question, authored.format, vocabulary, random, voiceIds)
-      : createQuestions([entry.card], pool.map(candidate => candidate.card.item), random)[0]!;
+      : createQuestions([entry.card], pool.map(candidate => candidate.card.item), random,
+        new Map([[cardKey(entry.card), sample]]))[0]!;
     const demoId = `dev-review-${index}`;
-    schedules.set(demoId, createMasterySample(entry.card, level, at));
+    schedules.set(demoId, sample);
     return { ...question, demoId };
   });
   const ordered: Question[] = [];

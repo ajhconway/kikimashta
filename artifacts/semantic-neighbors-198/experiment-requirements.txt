@@ -1,0 +1,7 @@
+# Reproduction of both experimental approaches only; not deployment dependencies.
+fasttext-wheel==0.9.2
+sentence-transformers==6.2.0
+transformers==5.22.2
+torch==2.15.0
+numpy==2.5.4
+huggingface-hub==2.4.0
