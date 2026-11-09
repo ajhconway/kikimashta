@@ -414,11 +414,96 @@
         "es-419-travel-park"
       ],
       "reason": "The park scene includes three clearly visible pink blossoms on its main tree; these can also answer flor."
+    },
+    {
+      "ids": [
+        "es-419-food-tea",
+        "es-419-travel-cup"
+      ],
+      "reason": "The tea picture is a full handled cup, providing a second valid taza answer alongside the empty cup."
+    },
+    {
+      "ids": [
+        "es-419-food-tea",
+        "es-419-travel-coffee"
+      ],
+      "reason": "Both pictures prominently show steaming brown liquid in a handled cup. The tea bag identifies the selected tea, but the earlier unlabelled coffee cup is also a plausible tea answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-tortilla",
+        "es-419-travel-taco"
+      ],
+      "reason": "The taco prominently consists of a folded yellow tortilla; a tortilla prompt would have two valid pictures."
+    },
+    {
+      "ids": [
+        "es-419-food-sandwich",
+        "es-419-travel-bread"
+      ],
+      "reason": "Two large bread slices dominate the sandwich picture and are also valid pan objects."
+    },
+    {
+      "ids": [
+        "es-419-food-sandwich",
+        "es-419-travel-cheese"
+      ],
+      "reason": "A broad yellow cheese slice projects from the front of the sandwich and remains visible at145px, creating another queso answer."
+    },
+    {
+      "ids": [
+        "es-419-food-sandwich",
+        "es-419-food-lettuce"
+      ],
+      "reason": "A broad folded green lettuce layer projects from the sandwich beneath the top bread slice and remains identifiable at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-pizza",
+        "es-419-travel-cheese"
+      ],
+      "reason": "The pizza has a prominent continuous yellow cheese layer covering most of the slice; avoid a second visible queso answer."
+    },
+    {
+      "ids": [
+        "es-419-food-tomato",
+        "es-419-travel-salad"
+      ],
+      "reason": "The salad prominently shows two red tomato wedges with seeds, which also answer jitomate."
+    },
+    {
+      "ids": [
+        "es-419-food-lettuce",
+        "es-419-travel-salad"
+      ],
+      "reason": "Large ruffled lettuce leaves form the main visible mass of the salad, which also answers lechuga."
+    },
+    {
+      "ids": [
+        "es-419-food-tomato",
+        "es-419-travel-market"
+      ],
+      "reason": "The right market stall prominently displays round red tomatoes with green star-shaped tops, identifiable at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-lettuce",
+        "es-419-travel-market"
+      ],
+      "reason": "The right market stall displays large leafy green heads above the orange produce; these can also answer lechuga at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-carrot",
+        "es-419-travel-soup"
+      ],
+      "reason": "Two prominent orange carrot rounds are visible in the soup, creating another zanahoria picture even though the bowl is the main object."
     }
   ],
   "issues": [
     166,
     174,
-    207
+    207,
+    218
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "id": "es-419-travel-rice",
+  "slug": "rice",
+  "version": 1,
+  "path": "originals/rice-v1.png",
+  "sha256": "622cdf579932bbc07358bd73b590d9aa7b8db44c0e21b0a0ed34f5bf4e7452b3",
+  "promptSha256": "5b18066efde0e4dcb8b6215f1d01b0e8781d42e48df6c231e65c021c58da7f85",
+  "referenceSha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2fb63d66-e7a4-49cd-a677-5181d2ab3ce3.png",
+  "supersedes": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+  "supersedesSha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+}

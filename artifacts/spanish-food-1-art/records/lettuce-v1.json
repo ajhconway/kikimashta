@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-lettuce",
+  "slug": "lettuce",
+  "version": 1,
+  "path": "originals/lettuce-v1.png",
+  "sha256": "d8fe8f1aa24da7867b2de135864cf1a8abe014f8ed31406e49bcb15d1934537f",
+  "promptSha256": "2ffe26d002d71bc455a0519363dc13debfbc572d52596a75054df8b4889f2abc",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-907c07f4-ce4e-42eb-857f-8597cae50141.png"
+}

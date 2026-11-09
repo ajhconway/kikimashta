@@ -1,0 +1,3748 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "language": "es-419",
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "status": "generated-awaiting-owner-listening",
+  "expectedClips": 96,
+  "characters": 608,
+  "planIdentity": "430715b839778dad6e253f17b9892aca7540fb8393a9c58adc94a050a363ae37",
+  "voices": [
+    {
+      "voice": "juan",
+      "id": "eqsD9RWsdCgHoRsbXS5q",
+      "name": "Juan",
+      "gender": "male",
+      "accent": "latin american",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749/eqsD9RWsdCgHoRsbXS5q",
+      "accentEvidence": "Adult male voice (30–40), Mexican Spanish, neutral Mexico City accent. Warm, clear baritone timbre with chest resonance and low sibilance. Crisp diction, an audible smile, and natural pauses; a medium-slow pace with falling intonation patterns that convey confidence. Conversational and instructional style without exaggeration; capable of shifting to a motivational or empathetic tone. Avoids strong regionalisms and over-dramatization. Ideal for financial explanations, storytelling, and tutorials.\n"
+    },
+    {
+      "voice": "pamela",
+      "id": "pmruOMcxgUotq2bYO5Ne",
+      "name": "Pamela",
+      "gender": "female",
+      "accent": "mexican",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3/pmruOMcxgUotq2bYO5Ne",
+      "accentEvidence": "Female voice from Mexico City, mid-30s. Warm and confident tone, conversational yet professional. Mexican accent is present but subtle, with natural pacing and clear diction. Ideal for corporate narrations and brand videos."
+    },
+    {
+      "voice": "albeiro",
+      "id": "OUfIyuG1GcVW5wnTy7Ru",
+      "name": "Albeiro O",
+      "gender": "male",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3/OUfIyuG1GcVW5wnTy7Ru",
+      "accentEvidence": "Colombian man, Bogotá accent, young, calm and measured tone.\n"
+    },
+    {
+      "voice": "carito",
+      "id": "J8BF9c7OgbHiqagCNoEj",
+      "name": "Carito",
+      "gender": "female",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38/J8BF9c7OgbHiqagCNoEj",
+      "accentEvidence": "Young female voice from Bogotá. Cute, conversational delivery with natural warmth—ideal for intimate narration, casual dialogue, and relatable storytelling."
+    },
+    {
+      "voice": "santiago",
+      "id": "O1CnH2NGEehfL1nmYACp",
+      "name": "Santiago",
+      "gender": "male",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb/O1CnH2NGEehfL1nmYACp",
+      "accentEvidence": "Confident and natural Argentine Spanish with a clear Buenos Aires accent. Ideal for narration, voiceovers, educational content, and Latin American media."
+    },
+    {
+      "voice": "agustina",
+      "id": "TZvhlMgMw2P4gPSuD8v7",
+      "name": "Agustina",
+      "gender": "female",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e/TZvhlMgMw2P4gPSuD8v7",
+      "accentEvidence": "A clear, middle-aged Argentine female voice with a polished Buenos Aires accent and a calm, confident cadence. Her attentive, reassuring tone builds instant trust, perfect for customer service agents, guided interactions, and professional conversations."
+    },
+    {
+      "voice": "carlos-figueroa",
+      "id": "4ex71F9amHzL0fiUD2y1",
+      "name": "Carlos Figueroa",
+      "gender": "male",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224/4ex71F9amHzL0fiUD2y1",
+      "accentEvidence": "Puerto Rican accent male voice."
+    },
+    {
+      "voice": "veronica",
+      "id": "cryPG4aBcWsmW2cCIXjB",
+      "name": "Veronica",
+      "gender": "female",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f/cryPG4aBcWsmW2cCIXjB",
+      "accentEvidence": "Puerto Rican Spanish-speaking female voice."
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato"
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato"
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion"
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot"
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce"
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla"
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans"
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta"
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt"
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich"
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza"
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea"
+    }
+  ],
+  "processing": "Provider originals retained separately. Review MP3s use verified constant-gain matching, without trimming or timing changes.",
+  "clips": [
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-potato.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "7MqBVeMnxrlt3cLB85NN",
+      "originalFile": "originals/pamela/es-419-food-potato.mp3",
+      "originalSha256": "a75bf649a9c5944b73021c44b354d4c2edca3dfe5ed6185601e2abf71d7505e1",
+      "originalBytes": 11327,
+      "deliverySha256": "fd7ed1dfce3e982777af1e035a3c84d4f23ba6d4333a8bbf0a3208c827d84dec",
+      "deliveryBytes": 11327,
+      "decodedFrames": 28224,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.51
+      },
+      "gainDb": -5.92,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-potato.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "vrfHH27wQKIVGG4iZcI2",
+      "originalFile": "originals/albeiro/es-419-food-potato.mp3",
+      "originalSha256": "f34174d62524b3d5d6124762f7ec0ae01da3fffc33c501453701ce8b959fdad7",
+      "originalBytes": 13835,
+      "deliverySha256": "c086a0ebe3dbb38780cc872569b8974a0fbb5630ce3451cf8b9c940023fa231c",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.6
+      },
+      "gainDb": 4.42,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-potato.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "5tto0LKWNkjAeo9jpvTp",
+      "originalFile": "originals/juan/es-419-food-potato.mp3",
+      "originalSha256": "52f122b6d91dc8762753c680363f7ab73386c75532ac2a86eacd6484f32e1b69",
+      "originalBytes": 13835,
+      "deliverySha256": "16039683414d471219651031dc587aab6aba3f9161ddfab6e3582561c3a4daac",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.05,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.36
+      },
+      "gainDb": -2.6,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-potato.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "hnFOi5JKUQNjHmQIW4XN",
+      "originalFile": "originals/carito/es-419-food-potato.mp3",
+      "originalSha256": "e15c54ff8989abb20cb8ad4d6c51ea59ac903642dcc83d666df9efa79f274e23",
+      "originalBytes": 13835,
+      "deliverySha256": "bd06ccbd775450e7dffa69f792cbcba17701871deb39d0a53ab17148985f9a13",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.33
+      },
+      "gainDb": -3.71,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-potato.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "aLPn34Hn0x63AM4Lmc04",
+      "originalFile": "originals/carlos-figueroa/es-419-food-potato.mp3",
+      "originalSha256": "a83768252a1367a6d23ff3bb67485c403fe976e3478b24525b8b5607ba4c86a3",
+      "originalBytes": 11327,
+      "deliverySha256": "c794b1ffadc26d086a48f419293923f8ff814b35fb2bd3f521b624dd0b7b776c",
+      "deliveryBytes": 11327,
+      "decodedFrames": 28224,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.15
+      },
+      "gainDb": 4.21,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-potato.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "viQf3uTprxLN4KDWuKdj",
+      "originalFile": "originals/agustina/es-419-food-potato.mp3",
+      "originalSha256": "b2502e4746ba621562c862b4c32cce896247781228d9cb7238579f206098cd6d",
+      "originalBytes": 10074,
+      "deliverySha256": "204720b8c21b06fdf9f26690a65378cf4e250477a02d83846d576a8fa9bc58de",
+      "deliveryBytes": 10074,
+      "decodedFrames": 24696,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.56
+      },
+      "gainDb": -6.42,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-potato.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "J05Qv5boOwoeAgbKk0Om",
+      "originalFile": "originals/veronica/es-419-food-potato.mp3",
+      "originalSha256": "865c7253bc041116e0f912f2dfc4fb63f105192728ae6de972b75fc536f3b203",
+      "originalBytes": 13835,
+      "deliverySha256": "7122dfedfd8f4e4b982f3c6e12b0319f4a60708874de41eca7755c0fa65841e9",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.82
+      },
+      "gainDb": -3.82,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-potato.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "papa",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ZuXNLnl8EBZc1P5Hkdsd",
+      "originalFile": "originals/santiago/es-419-food-potato.mp3",
+      "originalSha256": "0e97f1f023d450e6c572489b30e931c89d4be1b990c295948a5d2fedfeb6cc1d",
+      "originalBytes": 12581,
+      "deliverySha256": "fa15df1716f9c10d37a108fa4dbaf90f3eb9c4ee249dbbcedd70075d539553ca",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -4.28
+      },
+      "gainDb": 1.5,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-tomato.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Fh5MaVzZV7PQ2y8Aq0eh",
+      "originalFile": "originals/albeiro/es-419-food-tomato.mp3",
+      "originalSha256": "cd0b075d0998a8b1f206bdc76049229ed8bcd3ddbdb7093598b8552837184809",
+      "originalBytes": 16343,
+      "deliverySha256": "6a086ba33344675531cb790b5512ef2dac78ba844447f19008abbb782f40e50b",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.98
+      },
+      "gainDb": 0.14,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-tomato.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "68YeljBHwONReIVvWAP5",
+      "originalFile": "originals/pamela/es-419-food-tomato.mp3",
+      "originalSha256": "038b00f3ab26a4858008c132a09e4585c4fc6886aba6cc5d3d08b06c8f4fc576",
+      "originalBytes": 17597,
+      "deliverySha256": "87d14224e6ba2723a1a56ad3b7c3db035a3cf2851ff378ba88a84656f7237917",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.81
+      },
+      "gainDb": -7.5,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-tomato.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "9tnm2AIVpRn9jUFEixSr",
+      "originalFile": "originals/juan/es-419-food-tomato.mp3",
+      "originalSha256": "9d51afc47ff08c775ec8a38db94e75d77897c348af6e794027a0a5efb64596b9",
+      "originalBytes": 17597,
+      "deliverySha256": "81d999d0ba3d3c8f89e623a8d959bafffc8e90ce7473a3bdeb4c0ed42911ce57",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.5
+      },
+      "gainDb": -1.64,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-tomato.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "jwMu5NxVgd8VlKOXj8AA",
+      "originalFile": "originals/carito/es-419-food-tomato.mp3",
+      "originalSha256": "4bda2ec031582339156586aec10b105c93ed7de99aec9b533a408ff4f9a8e597",
+      "originalBytes": 17597,
+      "deliverySha256": "0ec5663b7a624cd634959c88f42901bc80bf48eee711d295de1b958ea1baa2de",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.92
+      },
+      "gainDb": -6.24,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-tomato.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "qGD03qIpXaPHBo8YoZb6",
+      "originalFile": "originals/agustina/es-419-food-tomato.mp3",
+      "originalSha256": "dbbeca9f99463be56a90c910ca39bdb4963df3361c5e5039f1186167c5e1d44e",
+      "originalBytes": 16343,
+      "deliverySha256": "803bcaa55b33037eb03c8de7e2aac5d2670abcf8f7a823f176947b3ede435337",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.89
+      },
+      "gainDb": -6.31,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-tomato.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "CH72HT3tJmfOOZbmnHNs",
+      "originalFile": "originals/santiago/es-419-food-tomato.mp3",
+      "originalSha256": "9fbfc92ddc192c09e79c205580c6e5f9cc721b38b15cab72b88414d4cc2c6ea2",
+      "originalBytes": 18851,
+      "deliverySha256": "e4a0084476755a7a4188abb85e4840caaa7c7e9c92875935cb8ab7bfb5246121",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.99
+      },
+      "gainDb": -1.45,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-tomato.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "nUq5c6enuFQzdgTHrSJB",
+      "originalFile": "originals/carlos-figueroa/es-419-food-tomato.mp3",
+      "originalSha256": "d511d7eb4d77a40edf3b544377bab75d4922f7f6350a10d765ea065ac95289af",
+      "originalBytes": 16343,
+      "deliverySha256": "63c4cffa812338a33942419e998970d29b972cf7d31e1fe797fae6459437f4bd",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.05
+      },
+      "gainDb": 3.15,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-tomato.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "jitomate",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "wCMzEerTcl6ZGotbu3xL",
+      "originalFile": "originals/veronica/es-419-food-tomato.mp3",
+      "originalSha256": "3d139ca5834492c75c05d09f0443bc378a2c43746e0646634fae878cbf139444",
+      "originalBytes": 17597,
+      "deliverySha256": "6a1e587279ad9507566e12800f0bb13bc940da57e7a3c1ede848eb01a1620a3d",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.99
+      },
+      "gainDb": -8.11,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-onion.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "v7CTIFvzL1AkXEwhWPqa",
+      "originalFile": "originals/juan/es-419-food-onion.mp3",
+      "originalSha256": "961286e3f94142cd169cc8512e5d2c5d0ff9b53f8bbf6eb107964d12f1a05efd",
+      "originalBytes": 17597,
+      "deliverySha256": "44294ee50b19381f89fd7f0240ec6189a64cb7c0a984d313e2caeffb06a7e443",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.6
+      },
+      "gainDb": -5.58,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-onion.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "gaPcwf21w3GcvMNU05BD",
+      "originalFile": "originals/albeiro/es-419-food-onion.mp3",
+      "originalSha256": "3d0c72d14086287169e7508063a5eedd2360ee5282fbd29d210ed8f5fa24479d",
+      "originalBytes": 17597,
+      "deliverySha256": "7857d5a5d6931c5677d686fca21069a78c331f8d74af27ab6803dab9f53acd5b",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.88
+      },
+      "gainDb": 0.48,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-onion.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "262FVEHZe6ERmBZo5TvT",
+      "originalFile": "originals/pamela/es-419-food-onion.mp3",
+      "originalSha256": "6fb7ead179f21d546bd5bb32ad92b717261acb9e0670f45d4f46e552f7c2fd7f",
+      "originalBytes": 15089,
+      "deliverySha256": "6068a9835ba031598fe4bbcba44ba2a0e71d24770a06e97a2e63883b54181f55",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.09
+      },
+      "gainDb": -9.83,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-onion.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Q1XGdl25fjhAOsWN1hj1",
+      "originalFile": "originals/carito/es-419-food-onion.mp3",
+      "originalSha256": "b97187c831cf66eafcbd661fc90769a78b38ba8c8542e2c62157eead566a76c4",
+      "originalBytes": 15089,
+      "deliverySha256": "dae675dfd18bcf83f5eb43040dbb791812abc1c5a414a035685249d6a7201285",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.52
+      },
+      "gainDb": -6.82,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-onion.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "RcHAC17HxowoDxXUqjtq",
+      "originalFile": "originals/agustina/es-419-food-onion.mp3",
+      "originalSha256": "36f67ad67b949aaa257943c9271dc8d52b26affc8ded7a753e8b930041db8892",
+      "originalBytes": 15089,
+      "deliverySha256": "18250d7ffe750bb0cf2689896e2696225d47e53dc645103cf5c441c216036794",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.03
+      },
+      "gainDb": -6.47,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-onion.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "l3yiGSeiQOtXmiEj4YPF",
+      "originalFile": "originals/santiago/es-419-food-onion.mp3",
+      "originalSha256": "159d336fff6e0a2119a3054f2a7d0f8d3aca60e6b6eef3b0b04d16db6f41afe3",
+      "originalBytes": 15089,
+      "deliverySha256": "b25a662e4ab2a0374df1ccdd1c7bf68fc57476450b4465ce6940bbb25a0aea68",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.5
+      },
+      "gainDb": -4.17,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-onion.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ETjm1jFqlgX9gQUYtj7N",
+      "originalFile": "originals/veronica/es-419-food-onion.mp3",
+      "originalSha256": "922dc8b7fa4328617f73c09981b524b43231254c83f74bb27e93a2376f34da78",
+      "originalBytes": 16343,
+      "deliverySha256": "f26e9e1ae5561e201571f07dabf2f54c0a4df9d9042ff760bbc4565e65b1db2e",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -13.99
+      },
+      "gainDb": -8.28,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-onion.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "cebolla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "7GYcuZU3WRngXHhmla4o",
+      "originalFile": "originals/carlos-figueroa/es-419-food-onion.mp3",
+      "originalSha256": "fc34690714910cb92dc7fc426c2156199b14951778661a0e78b97d6b798bf657",
+      "originalBytes": 15089,
+      "deliverySha256": "61ab36f25ec28f41e7eb68bfee8bb2cc7e81296d91c0e64cec7892e1899ecec1",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.97
+      },
+      "gainDb": 3.1,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-carrot.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "zcB25oZ2R83x3CgBAccT",
+      "originalFile": "originals/juan/es-419-food-carrot.mp3",
+      "originalSha256": "2343a75d6804fa3eb5d71fdb0c20c61730901908695a5a66fcfb46e6d03a7441",
+      "originalBytes": 17597,
+      "deliverySha256": "573dc8cb68a4c925f87c1863b0b3035d18be164d1a7b679032520bd469a611b3",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.95
+      },
+      "gainDb": -3,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-carrot.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "fFtXd1VBqSvLzVZd7Jyl",
+      "originalFile": "originals/pamela/es-419-food-carrot.mp3",
+      "originalSha256": "917a86804e834a9acc405fbb86df80800aea6bade766c639d8ab7aabf2ef4069",
+      "originalBytes": 17597,
+      "deliverySha256": "6ecda5a8d50be9071697a159e55905c9a446509385effbccb40a7d15be674539",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.94
+      },
+      "gainDb": -9.3,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-carrot.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "TzfXE7zbHQRcr8NKuIxK",
+      "originalFile": "originals/albeiro/es-419-food-carrot.mp3",
+      "originalSha256": "d77bb4a59023b4de3d4d6eaec6a412194ab6fdc5407d32d7c2aa287c55c55e7d",
+      "originalBytes": 16343,
+      "deliverySha256": "9c535444814d5e7a88a9e998a3b6df0835b7fe51fc8e32d43153803bf14c809f",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -14.33
+      },
+      "gainDb": -1.5,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-carrot.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "rc7wBDhLxT69zD5BYmNw",
+      "originalFile": "originals/carito/es-419-food-carrot.mp3",
+      "originalSha256": "59876d6a8aea2c6cbaf8b41b9a1aa2d8168fd2b9913ab9d0a98748888c08c934",
+      "originalBytes": 17597,
+      "deliverySha256": "b730364b406158067ee2be9307b665d2da48261a87b012c70117762847a1f138",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.86
+      },
+      "gainDb": -7.32,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-carrot.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ynhqF2FWxz06s3DxuzEN",
+      "originalFile": "originals/santiago/es-419-food-carrot.mp3",
+      "originalSha256": "257ce34b6f591af8dc08a758fba4312f1be0c3e6b25fa25aa73644781e6a7521",
+      "originalBytes": 18851,
+      "deliverySha256": "1652a7d531ae4529075801391998d805b19c7daf60fa4348723cadc7c0b9e1fc",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.47
+      },
+      "gainDb": -3.94,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-carrot.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "iB1gXBV79DcYvIEtzgcW",
+      "originalFile": "originals/agustina/es-419-food-carrot.mp3",
+      "originalSha256": "8706d015dbcd84a20a5be9cf904f8031c38951145293c779de582191d6cf71ce",
+      "originalBytes": 17597,
+      "deliverySha256": "784cac7a7b4114914c2d8c22cd3c96478850a2e18eda626f7dd217139f5c071c",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.56
+      },
+      "gainDb": -5.8,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-carrot.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "kWwvScqnQ83RI9ToEWYh",
+      "originalFile": "originals/carlos-figueroa/es-419-food-carrot.mp3",
+      "originalSha256": "36608457de4350b53170a6f38bfc70eb686c9d7c328281ecf1dc6c0396ea539f",
+      "originalBytes": 16343,
+      "deliverySha256": "f13637b4f60db59457d8f04afe6fb7eb046e23943912a13cc5a209f0285ffd5b",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.75
+      },
+      "gainDb": 2.24,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-carrot.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "zanahoria",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "RnJwlrQcB5EV8oC2oEj2",
+      "originalFile": "originals/veronica/es-419-food-carrot.mp3",
+      "originalSha256": "f5abf30033d570ce49ad76b5f922e791cf8c04c8c646a3887c327733289e157e",
+      "originalBytes": 18851,
+      "deliverySha256": "62a0f58bcf0dd8b58606892504042604f2de3cc37398979c8a8cf52587d80866",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.14
+      },
+      "gainDb": -9.37,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-lettuce.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ChvLSd0xrkLLc6SB0f4L",
+      "originalFile": "originals/juan/es-419-food-lettuce.mp3",
+      "originalSha256": "97358c6374233e5c9c4cec116a3fa450a8717a6ca57a0caa080a72b0c6b5aeb9",
+      "originalBytes": 17597,
+      "deliverySha256": "b59784eecab6e2cb0adda1887262d0882150ad5542d76f73ef275daefaade166",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.46
+      },
+      "gainDb": -1.34,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-lettuce.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "3IPSaNmZycupsSiYNEa5",
+      "originalFile": "originals/pamela/es-419-food-lettuce.mp3",
+      "originalSha256": "63c3f3f1f9c299c6ceb1bd885aca1fbc3124f9586e61f7d739dd5b312fbc6f1f",
+      "originalBytes": 16343,
+      "deliverySha256": "7ef9a06b00a0cd244218d2a30007a8a9e4ccf2fb67955a7484324bbb1b5166c5",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.28
+      },
+      "gainDb": -6.88,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-lettuce.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "HokV1w5YPxBG0hg4EAXb",
+      "originalFile": "originals/albeiro/es-419-food-lettuce.mp3",
+      "originalSha256": "522d622e611a299e83083d651d1022171708f6a20c64864ec05b868afcadc7a0",
+      "originalBytes": 15089,
+      "deliverySha256": "88e6a6690c1b4df8a1b22bda0423f581f7083855c60dbc84567ae4f05c4ffd8e",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.54
+      },
+      "gainDb": 0.36,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-lettuce.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "k2CbHVTFlLn0mWHlAr0I",
+      "originalFile": "originals/carito/es-419-food-lettuce.mp3",
+      "originalSha256": "cd10b9877875229b8af55df95290e131365f802d9eb197a81dca678bdeef3b62",
+      "originalBytes": 18851,
+      "deliverySha256": "5d2e725e78a2684e6f3e8ccebdd82856ef6e2d652d367e40c54dd640c2e17628",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.77
+      },
+      "gainDb": -4.08,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-lettuce.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "OyPfwnb4XnxJtz2Mi8hT",
+      "originalFile": "originals/santiago/es-419-food-lettuce.mp3",
+      "originalSha256": "9241d4d45137526c80c1459ad7a49876c55d0c289a6795c099c10c5cbc2c3110",
+      "originalBytes": 17597,
+      "deliverySha256": "d7238e5097de8c91e7b18b5e1d21fc99e8fb442c54d0633f4618fbfe871a3ada",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.41
+      },
+      "gainDb": 1.08,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-lettuce.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "dYyOzVO3CqhC6lHscZWu",
+      "originalFile": "originals/agustina/es-419-food-lettuce.mp3",
+      "originalSha256": "533057805fe2f83f6ec92d6a1e1428a567f233b856c137af0c86c30daca1a3cc",
+      "originalBytes": 15089,
+      "deliverySha256": "9208183e2a64c219b8c85d80c80fc9d355e12bd449ed424a923aa04dbc882c48",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.45
+      },
+      "gainDb": -4.82,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-lettuce.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "uvkEKDxqqILpOWGhkhWv",
+      "originalFile": "originals/carlos-figueroa/es-419-food-lettuce.mp3",
+      "originalSha256": "8f0398a694b190eaacca6a5ac71e51b1371bf23f120f46bb3aa433b48f894764",
+      "originalBytes": 15089,
+      "deliverySha256": "127d0d13ccb7ba3450a3812bb130519b3e7d3f85ca36081de90969595eebb1d2",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.54
+      },
+      "gainDb": 4.64,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-lettuce.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "lechuga",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "7h6uKV8WKnRbiywLkT9R",
+      "originalFile": "originals/veronica/es-419-food-lettuce.mp3",
+      "originalSha256": "9cc123193f5af3bd09d33e09780869f2797e324a679795cd34734c82b6ccaad8",
+      "originalBytes": 16343,
+      "deliverySha256": "689d6147dac4ee349ddc6e0b38fc01adf43697d1280939c496ac4ac2f6324a09",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.39
+      },
+      "gainDb": -7.07,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-tortilla.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "tn0tUi6LRMTiuhRmbHHv",
+      "originalFile": "originals/juan/es-419-food-tortilla.mp3",
+      "originalSha256": "fe4e355b113943510060e878c241ab0e7a597cea11ca70455463635ec18ce397",
+      "originalBytes": 17597,
+      "deliverySha256": "004197c3b170fd2715cd2002a4a690e6fee8f1b5f078e6e99c98123133d200d1",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -4.69
+      },
+      "gainDb": 0.92,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-tortilla.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ctwGi3XuZ01uqxuMyD7x",
+      "originalFile": "originals/pamela/es-419-food-tortilla.mp3",
+      "originalSha256": "9c5b49da1155c56a128531d71d7f2e55227fbe87d3ca1f87c279bd1db0780523",
+      "originalBytes": 16343,
+      "deliverySha256": "8cae14986201b507dea1bd19db006cb0e0ac029d144a03337f09df65ed6dd69d",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.85
+      },
+      "gainDb": -5.77,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-tortilla.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "FlihoaNTTOSMPVhzXesg",
+      "originalFile": "originals/albeiro/es-419-food-tortilla.mp3",
+      "originalSha256": "363b506dd595142bc95a00314cf58bb94d3c8cd21909ccdad5167d7cd11d1d3a",
+      "originalBytes": 16343,
+      "deliverySha256": "cac976c991808d4f21e776a060daf8be9882df512800f96d0cddc7f9f9ae8c1f",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.3
+      },
+      "gainDb": 2.08,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-tortilla.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Hq5Dee8uRZnUOm5wgR4D",
+      "originalFile": "originals/carito/es-419-food-tortilla.mp3",
+      "originalSha256": "1b05dfde53534b0ad298e7da7a4b1ad52cb90e91906d96ea981d82907c22fff1",
+      "originalBytes": 16343,
+      "deliverySha256": "7b4fdf8f7b56939ffe4225c1550e9c48cef5f5e0cf3733dbbb64326639185025",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.98
+      },
+      "gainDb": -3.71,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-tortilla.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "wzRyOjyabwh5vbrb9Tut",
+      "originalFile": "originals/santiago/es-419-food-tortilla.mp3",
+      "originalSha256": "e2fa62c2f51ececdf9d3f4584610050b3819a71f93eb83f6554f7dcbc2b124b4",
+      "originalBytes": 15089,
+      "deliverySha256": "29ae69577db80eea5b06300502260a52dbfdfac4d9db9f2577c86d37f91ac765",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.85
+      },
+      "gainDb": 2.16,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-tortilla.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "2Ny467GxmRxWk0no62qE",
+      "originalFile": "originals/agustina/es-419-food-tortilla.mp3",
+      "originalSha256": "d102617eac4181b967a9e6e0632c133db03e3167031f2bcf58fc235751d455e6",
+      "originalBytes": 15089,
+      "deliverySha256": "430c1ee3252aaa67118364df77620aee9ff5b1705c4f966b360c0c7c42ec0e23",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.86
+      },
+      "gainDb": -3.94,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-tortilla.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "4HZzQ04k0YgX0J0NjSnS",
+      "originalFile": "originals/carlos-figueroa/es-419-food-tortilla.mp3",
+      "originalSha256": "33dcc0fc4c4dde9a7fe69197586a91fc7e1e5fc7746312bcbbccfcc99fec8dca",
+      "originalBytes": 16343,
+      "deliverySha256": "58f5ad4c54d8dd054b6c486e968a0ae9dd71aa648b394a361c07cfaebedb42e2",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9
+      },
+      "gainDb": 6.41,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-tortilla.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "tortilla",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "XgiwHDyCVeMYSLMjlA8Z",
+      "originalFile": "originals/veronica/es-419-food-tortilla.mp3",
+      "originalSha256": "8a12d121fa608d0e550768a06e680a40e412ed90a241baccb7f5cd0acaeafed2",
+      "originalBytes": 16343,
+      "deliverySha256": "c07dc1a62a35baa7d8b72ab6eae28451c168d5114fd678de9843b52781fdae41",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.57
+      },
+      "gainDb": -6.59,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-beans.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "XBk9pUgBoCSNBh6nxLAU",
+      "originalFile": "originals/juan/es-419-food-beans.mp3",
+      "originalSha256": "df31060ed6f0a4adf9d1b342c74686754529222140601f4c04b30fb4bcc23f43",
+      "originalBytes": 17597,
+      "deliverySha256": "39cfca373f4c9586a1f54e1dcda68d6b363252d349fe04507f3aa7fe1c6e1233",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.62
+      },
+      "gainDb": -6.08,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-beans.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "iK5jMhLogao1mOErOuML",
+      "originalFile": "originals/pamela/es-419-food-beans.mp3",
+      "originalSha256": "0113e02770c1818dd369bf10703baf9a617aa96c481ebf948dc7724109191969",
+      "originalBytes": 17597,
+      "deliverySha256": "5ffb9406c05ce27a500d2ce2e13323cd8c15ba1d47b3f29fb4dc50d177a8a29b",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.62
+      },
+      "gainDb": -7.67,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-beans.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "i4hmJkVuto220rNDbgxg",
+      "originalFile": "originals/albeiro/es-419-food-beans.mp3",
+      "originalSha256": "a87e0f662da904634dee6e1b3ec680d7013451847dd35b690557a0894a0b6d18",
+      "originalBytes": 16343,
+      "deliverySha256": "5ee8cae53c7233adfa4aa0da7000282b6f7a438d3516f6b2a39d88c8236bd0aa",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.21
+      },
+      "gainDb": 0.73,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-beans.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "wIFeEY2JEgCxEnkV3zB5",
+      "originalFile": "originals/carito/es-419-food-beans.mp3",
+      "originalSha256": "0c55cdd06a3688ce132a153257e70f92386f14be982622a731aac72938f08377",
+      "originalBytes": 17597,
+      "deliverySha256": "21b8a576607b1833bb9741735a9429e97d7effeb8da8d47516a38a2c8e8655f1",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.8
+      },
+      "gainDb": -6.1,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-beans.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "dvSVE8tNAg6QVzUWCwsx",
+      "originalFile": "originals/santiago/es-419-food-beans.mp3",
+      "originalSha256": "f1dbe6da95ea519af8be9d30db6c5aac877c7def6ef9e2b8c61417006046ab78",
+      "originalBytes": 16343,
+      "deliverySha256": "ae8c23151f240c0564b78f09b5a7d7c4427aa25d8c54d112625577981e23ce48",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.6
+      },
+      "gainDb": -3.45,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-beans.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "k4Ttr0HhGcDwkjcBY04Y",
+      "originalFile": "originals/agustina/es-419-food-beans.mp3",
+      "originalSha256": "f4d35dd2f6a9d99ce3a42588eefdbcc7175efd82f719721d30fa3ae99fb64c75",
+      "originalBytes": 17597,
+      "deliverySha256": "da66bfaf7f232c586b839f3f46742aa40e8136d33b2b9a15855ec03d31b75a7d",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.9
+      },
+      "gainDb": -8.05,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-beans.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "tHxm3A9GNnt1wOK5o8so",
+      "originalFile": "originals/carlos-figueroa/es-419-food-beans.mp3",
+      "originalSha256": "ba8f405e35ee659683cdf33ede2fc5ba18c599fc06bc5966b54727554f805019",
+      "originalBytes": 16343,
+      "deliverySha256": "d14d0e484f70f6bc9c3f78756dfcd26102e1498df34c81772969d8a524966717",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.01
+      },
+      "gainDb": 0.47,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-beans.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "frijoles",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "vpWZt0woEK4JwUk0UZRL",
+      "originalFile": "originals/veronica/es-419-food-beans.mp3",
+      "originalSha256": "97e7681f3e350236123dd779f5cb7f61004f791a2c991e5a5e8eae1f1950710f",
+      "originalBytes": 17597,
+      "deliverySha256": "9642e925dcf9da8892dd0d504c6563b65144f9c4b1d629b3837cb647d1cdeed8",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.34
+      },
+      "gainDb": -8.1,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-pasta.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "vUBdEKeVKyLtz6y5nf9V",
+      "originalFile": "originals/juan/es-419-food-pasta.mp3",
+      "originalSha256": "4faa0ab89bd3495f385abf48927b8a78a15358a6511336733d708bdf7038bca7",
+      "originalBytes": 16343,
+      "deliverySha256": "19a06f2cda29379748deba4304c3a86e8e51f02064ba7fead06fdabd00ac9f2c",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -3.72
+      },
+      "gainDb": -1.01,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-pasta.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "thgiokx5tIJ972SFjOSV",
+      "originalFile": "originals/pamela/es-419-food-pasta.mp3",
+      "originalSha256": "3837918c48047959c17cd645a79ace433b6e89d8350366e0fbcdb11e92428de3",
+      "originalBytes": 13835,
+      "deliverySha256": "d69664ba594ab91a2b3ff608203407d147c52ca835d29d13d796f1ec57d61ae8",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.74
+      },
+      "gainDb": -2.08,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-pasta.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "RxxorEGqFbuA4rCRoHdw",
+      "originalFile": "originals/albeiro/es-419-food-pasta.mp3",
+      "originalSha256": "b6fa65411b63b652a476c8b15f1af3f006a79568b064649fb6622059d7a323ef",
+      "originalBytes": 15089,
+      "deliverySha256": "ef59b1fbb59d36f59cf6443663d4608ae16ed50f693e5110ce067a7c45a12ef5",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.95,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -4.52
+      },
+      "gainDb": 4.78,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-pasta.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "B8XyPPydH5Cb1mM32EWR",
+      "originalFile": "originals/carito/es-419-food-pasta.mp3",
+      "originalSha256": "5fa88bdf7fab95b96de27306c486dec02cfd81d851eb21d77e557ef9f9487906",
+      "originalBytes": 12581,
+      "deliverySha256": "70f2e6011bef2dce714b73d7e0536436a3074666afddd77227c2b4cd5bf248bf",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.04,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.13
+      },
+      "gainDb": -2.92,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-pasta.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "l56S9DNrzv1JXzWAkFUg",
+      "originalFile": "originals/santiago/es-419-food-pasta.mp3",
+      "originalSha256": "aaa7b111283ad433c0b84b4624512937a3052ba15c2c8a5bd2fb8b10451385f2",
+      "originalBytes": 12581,
+      "deliverySha256": "31fb0e6d6efd0fe47c651f098f564b6d16b433b341987db010be300148c55242",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.4,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.2
+      },
+      "gainDb": 3.33,
+      "targetLimited": true,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-pasta.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "phv930DS74rZNOEXetBm",
+      "originalFile": "originals/agustina/es-419-food-pasta.mp3",
+      "originalSha256": "b636f6a2b1de395c0fd27e33fb259a0845fc48fdd99ed67831302a5c3df09a49",
+      "originalBytes": 13835,
+      "deliverySha256": "14c1f2c66aa6944c58fde76f037bf21707730526f6ef81a992dd9e86e3bcf55c",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.67
+      },
+      "gainDb": -3.81,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-pasta.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "FjgNS4BhNNTDki2ejODA",
+      "originalFile": "originals/carlos-figueroa/es-419-food-pasta.mp3",
+      "originalSha256": "15e3a405f74e6d29754dc9ca19d1329924834034f77f9653f3dd0f5fe710f4d6",
+      "originalBytes": 12581,
+      "deliverySha256": "c5d9e5d859e761340975f664b2021c3e6db4d1e1c167d20f64d169dc031f4923",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -4.91
+      },
+      "gainDb": 3.51,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-pasta.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "pasta",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "vpENYpuioJzDszdKha12",
+      "originalFile": "originals/veronica/es-419-food-pasta.mp3",
+      "originalSha256": "ad62ea5328e087aa6e9d4996ac7add5ce6a5a194862877807cd9f5315b5dd6b3",
+      "originalBytes": 13835,
+      "deliverySha256": "c2b20a9a45922c08a31166db70f20635d0712a5d7ee4c20b56bb555bb1a7afcc",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.69
+      },
+      "gainDb": -4.96,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-yogurt.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Ug3XEogEJsJ3hOJmjtkC",
+      "originalFile": "originals/juan/es-419-food-yogurt.mp3",
+      "originalSha256": "d8a6d5f167eea873662db1935f4726eb74c8572afe75510eb06b1868c8425cb0",
+      "originalBytes": 15089,
+      "deliverySha256": "9fc0d52f3201695e95792e0cd541a415af94852263c101a4805e2db3163b8f6b",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.48
+      },
+      "gainDb": -3.83,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-yogurt.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "6u3v0J99zE7EBjJB6VjA",
+      "originalFile": "originals/pamela/es-419-food-yogurt.mp3",
+      "originalSha256": "b7f2a26f8dc4767d1fb6ac51864ae11074aa32045e73c3815f0c4e918453c57e",
+      "originalBytes": 16343,
+      "deliverySha256": "b3538ab864caa3df46a5ce59f7e3ea5144dc13d7c506a44bf63d09e488c87ae6",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.82
+      },
+      "gainDb": -8.92,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-yogurt.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Zyb7bijMe9QzagqxKvuW",
+      "originalFile": "originals/albeiro/es-419-food-yogurt.mp3",
+      "originalSha256": "e01f7ca0e625746d52341a5e5b1f15d82cdcb1d44030183540eba8545996f594",
+      "originalBytes": 17597,
+      "deliverySha256": "f0aae413c28ffd43ee1658ef0f66f5fa2aa1dcd22fc9b9c3ba2f32384e08a995",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.14
+      },
+      "gainDb": 1.22,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-yogurt.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "85JLexCRp2uUazvlfT7W",
+      "originalFile": "originals/carito/es-419-food-yogurt.mp3",
+      "originalSha256": "d4ac371531de6ac05c206ff9b90a153444c551bf428acc0100355dfd672a7856",
+      "originalBytes": 16343,
+      "deliverySha256": "7fd711e665440132074c22c03e1e21115bd00185a70f0e8a46d203750673a27e",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.31
+      },
+      "gainDb": -5.34,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-yogurt.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "UjgnSiqJzW2PsjTzph6H",
+      "originalFile": "originals/santiago/es-419-food-yogurt.mp3",
+      "originalSha256": "79d52f879253863354dc7216438bbeecdbcd354d1d282d3dda392c4c5d9cac32",
+      "originalBytes": 16343,
+      "deliverySha256": "aeb728593664adfe0489e32c4a4fe05935981a2b8090050704855d9560af2a8c",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.2
+      },
+      "gainDb": -2.75,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-yogurt.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "4H7dLDTOep2aeREkaTZ2",
+      "originalFile": "originals/agustina/es-419-food-yogurt.mp3",
+      "originalSha256": "9b8ea02f9bcee916dc1b877f0058fe6d58d6068403a5de95769b34c5df8651f8",
+      "originalBytes": 13835,
+      "deliverySha256": "ac7baabb5380d760254b4b66632928eec928959e5e6cd67da3609dc5e5aa5c9e",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.45
+      },
+      "gainDb": -5.6,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-yogurt.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Wr1KSyuDf4TBWhsPEnBq",
+      "originalFile": "originals/carlos-figueroa/es-419-food-yogurt.mp3",
+      "originalSha256": "84062ef0f6e1fa3626d2de8db187c4b459f6819622f6ea569fb8c278ec3ec133",
+      "originalBytes": 16343,
+      "deliverySha256": "8005ab138db43369807d71d834e980758a9d4de514200989313fc2c9e9e2591e",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.89
+      },
+      "gainDb": 4.36,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-yogurt.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "yogur",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "1Co4fmRqEFM4kQvVYj6h",
+      "originalFile": "originals/veronica/es-419-food-yogurt.mp3",
+      "originalSha256": "21ca49bcae8a2eafcb8f6a43b66b0fef915005bc1b57a677e51c40a28909ea77",
+      "originalBytes": 17597,
+      "deliverySha256": "fe0f2045544201eb8d4f8b5f343eb1c250d9b3e782ff5407c4351a9f58793fee",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.78
+      },
+      "gainDb": -8.45,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-sandwich.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "cbEvA3XYRMUvVbXkL77Q",
+      "originalFile": "originals/pamela/es-419-food-sandwich.mp3",
+      "originalSha256": "133be3c288f6f89a1a0a425e264d499dba6072f37c54c95effd7b960692b9b16",
+      "originalBytes": 17597,
+      "deliverySha256": "518409c0462cefcc5b1ded5f456c8458de479ef55b861f15c308140b37073781",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.63
+      },
+      "gainDb": -4.72,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-sandwich.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "ogbfT0V62sZP6N96Ncd7",
+      "originalFile": "originals/albeiro/es-419-food-sandwich.mp3",
+      "originalSha256": "a14831477e571ef304991ef9368e20abf85cd282ba6e9fc9acaee4137ed4c234",
+      "originalBytes": 16343,
+      "deliverySha256": "4d698fc9c4b261e0182c414ed196151030706c95826b96b56229091b50b0010e",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.25
+      },
+      "gainDb": 1.99,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-sandwich.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "TSZ83hHpwLsNvYVKtaZu",
+      "originalFile": "originals/carito/es-419-food-sandwich.mp3",
+      "originalSha256": "f6a70cac31aa081ff8ab6c9fb2f7874c20c330981df4dc9126dfbefcfefe69b2",
+      "originalBytes": 16343,
+      "deliverySha256": "63a108f8c0659af0d2ba677a30b99f8514e31f54d68cb531998b48d556b8ed4c",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.91
+      },
+      "gainDb": -5.26,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-sandwich.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Yk6vI4jSFejVslkwY6kI",
+      "originalFile": "originals/santiago/es-419-food-sandwich.mp3",
+      "originalSha256": "3830d912edaa3e6a38228bd762dcb95ec1a75cd34b49c20edea5c6866c72315b",
+      "originalBytes": 16343,
+      "deliverySha256": "1a67015c1406ef2b6cd0babffdc2d04fcb6105ea23160b01ee0348a6d2a498b6",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.11
+      },
+      "gainDb": -0.04,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-sandwich.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "fvhZQjHr2aqMpATEwNcs",
+      "originalFile": "originals/agustina/es-419-food-sandwich.mp3",
+      "originalSha256": "5b6a853509c24b8e0a84e2224030958d258340316624a17515371bc72ea85e63",
+      "originalBytes": 16343,
+      "deliverySha256": "8bb6497310eb6fb345aacb867ebe7499be1bb786bc0f1367b0e62a1b15dd43b5",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.21
+      },
+      "gainDb": -6.12,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-sandwich.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "jOExkjdzcBJOgV7CG4Cx",
+      "originalFile": "originals/carlos-figueroa/es-419-food-sandwich.mp3",
+      "originalSha256": "0da36bd4cb055db260831e23e7c507bfe5c23600bf4fb6dda10e0f4b275fb85e",
+      "originalBytes": 16343,
+      "deliverySha256": "76f8cbe12bb3ace0023e4fa36932219a3d06670ff5966136b63a1a3ea7efeffe",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.96
+      },
+      "gainDb": 3.6,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-sandwich.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "xYPh1Fhhk74psaaVdlwE",
+      "originalFile": "originals/juan/es-419-food-sandwich.mp3",
+      "originalSha256": "43441691b8de068fade039c1bcb7c5d477a4490741d56111c7025aebdea22a84",
+      "originalBytes": 18851,
+      "deliverySha256": "fd709523b8f14c8476cb3246ef1c42a6ac6618e834fa63a8411ed58e1ef7eec1",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.54,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.15
+      },
+      "gainDb": 2.41,
+      "targetLimited": true,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-sandwich.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "sándwich",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "DSsCZBDhv6cpUTsijpwb",
+      "originalFile": "originals/veronica/es-419-food-sandwich.mp3",
+      "originalSha256": "da8faeb677ef3d7a7101d61b1e798a6811993e8e11abb0e03544d24168f0e89e",
+      "originalBytes": 16343,
+      "deliverySha256": "0ddc26bef3255eff4be7e3bd65cd3cf69e654f2698febd0dd4b6c20df3a8ac80",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.33
+      },
+      "gainDb": -9.54,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-pizza.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "neNJ0QuE4Ii7wHMdAFoa",
+      "originalFile": "originals/juan/es-419-food-pizza.mp3",
+      "originalSha256": "8a1446bf2da70f9616bb16140fa59f5fd3a3e41cac71893e7f1788d1008db035",
+      "originalBytes": 15089,
+      "deliverySha256": "a13e3df763523ed028aa3d396f691b50f33b62021e0c0b34e06be88053461963",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.05,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -4.67
+      },
+      "gainDb": 2.3,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-pizza.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "U0QUVRaoEe2JQdPIPTFl",
+      "originalFile": "originals/pamela/es-419-food-pizza.mp3",
+      "originalSha256": "6b3816d08686eebaa810a331ee69e2c7e66cada912e7f4ed31203266938084d0",
+      "originalBytes": 15089,
+      "deliverySha256": "ab1a5c41e031f039bc970c97088172a032b7f2fbd0e374e60c32c55005b18d36",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.96
+      },
+      "gainDb": -3.72,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-pizza.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "zk1aXKD28BLDy5YkAqGN",
+      "originalFile": "originals/albeiro/es-419-food-pizza.mp3",
+      "originalSha256": "6e75cb7566dc1cde69bfcd04b419346a34e715a944a653dc543abb3eec0d6537",
+      "originalBytes": 13835,
+      "deliverySha256": "4ddd63d62c69d36686adfca4df9312bca54268601ba2223c76e25a69db71bd1f",
+      "deliveryBytes": 13835,
+      "decodedFrames": 35280,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.04,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9
+      },
+      "gainDb": 2.74,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-pizza.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "qsX4vbAOuc8U6WbHohBh",
+      "originalFile": "originals/carito/es-419-food-pizza.mp3",
+      "originalSha256": "cc0e089e50b5bb30ccd69e22d086d20b8eb2c23fd8a6d8d16ed742e667249905",
+      "originalBytes": 15089,
+      "deliverySha256": "834c94e29653ad98c37ad46792126b92ffb2a7a5c80d7b2bf39702bcbe690ce5",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.99
+      },
+      "gainDb": 0.36,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-pizza.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "0wCboIRXy3cubYePlwO0",
+      "originalFile": "originals/santiago/es-419-food-pizza.mp3",
+      "originalSha256": "274e92292092d57085ddbfc6655b1873410fc08383b95006160b73cf294673be",
+      "originalBytes": 15089,
+      "deliverySha256": "2a82530d52157f435f6ad5dae3cff468d339c29a2794fcec4fff3d4666288b01",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.85
+      },
+      "gainDb": 2.87,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-pizza.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "6XtPtOoCtX0SPt4GpXI6",
+      "originalFile": "originals/agustina/es-419-food-pizza.mp3",
+      "originalSha256": "c3eaade302ad8736eceb60ab783f68ff6930abf132108e885c0d175949f7b2e1",
+      "originalBytes": 12581,
+      "deliverySha256": "2909980735ff30fecd5ece003b174224e924c1264aeb4247c6c79a701f68b439",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -5.62
+      },
+      "gainDb": -3.14,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-pizza.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "6WSky9UmQHCQdY8G666z",
+      "originalFile": "originals/carlos-figueroa/es-419-food-pizza.mp3",
+      "originalSha256": "6a422dbd67662e36b9044fa0c6bc8560ac88f4e262fa2b18c535eb2a38fac930",
+      "originalBytes": 15089,
+      "deliverySha256": "859e9d64db214e27d36f37b47e2de84686cbdc97dccc5d1ece4ff04e3ed5d0d0",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.66
+      },
+      "gainDb": 9,
+      "targetLimited": true,
+      "limitingReasons": [
+        "maximum_gain"
+      ]
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-pizza.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "pizza",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "o9TsKumQy1GEaFEre2vS",
+      "originalFile": "originals/veronica/es-419-food-pizza.mp3",
+      "originalSha256": "a9f193a94d11bdd269c2debd46d8fea63107c95cd5c7faedb4dc3e8042d3e9a6",
+      "originalBytes": 15089,
+      "deliverySha256": "072b61c8e12817f2a688a81c91a34de5925467f09d8eb684a36a0f0fb47fcfc3",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.52
+      },
+      "gainDb": -3.98,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-food-tea.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "KQAnwNWNpflXyiRAdiO6",
+      "originalFile": "originals/juan/es-419-food-tea.mp3",
+      "originalSha256": "5aba3bde934b105042060e3da74e45013b62f5308346f8807a47a6dc86e8c57d",
+      "originalBytes": 11327,
+      "deliverySha256": "bd4f76179d8412848f8a63452873f8b21cf6857a26303d0f1d54940c911c7a5d",
+      "deliveryBytes": 11327,
+      "decodedFrames": 28224,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.79
+      },
+      "gainDb": -0.2,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-food-tea.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "44CgQjzR7tqQMkNPLyRI",
+      "originalFile": "originals/pamela/es-419-food-tea.mp3",
+      "originalSha256": "61e525df415aefd25d344904c998bd36e99f5ea17a54b2a82bed1b8e91a3ff9d",
+      "originalBytes": 8820,
+      "deliverySha256": "801863b6ac17f6c7467dcfa9b15d18882bb651791ca9a9618a2fac6049c8122c",
+      "deliveryBytes": 8820,
+      "decodedFrames": 21168,
+      "after": {
+        "analysisPadding": true,
+        "integratedLufs": -22,
+        "measurementMethod": "r128-analysis-padded-to-500ms",
+        "truePeakDbtp": -9.68
+      },
+      "gainDb": -5.2,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-food-tea.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "teeiP4AoEU4qdxBviIgj",
+      "originalFile": "originals/albeiro/es-419-food-tea.mp3",
+      "originalSha256": "5a38597723b9f4915ad3c85fd87ff7e89fe046143d3b5f210800b282f5c54c0d",
+      "originalBytes": 11327,
+      "deliverySha256": "5a4701cd6d236f536910cf71e404e61615f747a71b63d0ba7f20e61d502f0037",
+      "deliveryBytes": 11327,
+      "decodedFrames": 28224,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -6.98
+      },
+      "gainDb": 5.61,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-food-tea.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "GzAnH2EA03hH9qPZW0SU",
+      "originalFile": "originals/carito/es-419-food-tea.mp3",
+      "originalSha256": "2fc866659d654fba6fa1aa392a5fdcb324ddec75db117b00d5ecf36441f36545",
+      "originalBytes": 12581,
+      "deliverySha256": "3d14cc3728a58fa3b4c000554520a51ba241df19d1abc64f3e4156d987e3555c",
+      "deliveryBytes": 12581,
+      "decodedFrames": 31752,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.54
+      },
+      "gainDb": -4.16,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-food-tea.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "a62xbehZVHBcGqIiF2IR",
+      "originalFile": "originals/santiago/es-419-food-tea.mp3",
+      "originalSha256": "795cc305359f6c0b02c0426b8e633dc36404c2b555e60939ca5853b9d632f9be",
+      "originalBytes": 11327,
+      "deliverySha256": "37cb7ec75d310569563d7c7b8c6f3fec9bafd0715869682bf45b46e79ee0f675",
+      "deliveryBytes": 11327,
+      "decodedFrames": 28224,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.26
+      },
+      "gainDb": -0.16,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-food-tea.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "11cLla6kBIT3BWducRQ9",
+      "originalFile": "originals/agustina/es-419-food-tea.mp3",
+      "originalSha256": "6cb3985a83cf1ae13adb50500e80dfe41055a9d1bc58915bc48ce49efd2f21f9",
+      "originalBytes": 8820,
+      "deliverySha256": "663888e04e3e6755ba8b96e2b1b11a975fa84bdf45900f14aaae5f1965516ae2",
+      "deliveryBytes": 8820,
+      "decodedFrames": 21168,
+      "after": {
+        "analysisPadding": true,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128-analysis-padded-to-500ms",
+        "truePeakDbtp": -8.41
+      },
+      "gainDb": -4.67,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-food-tea.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "jzRhr1CHPyiBpk8I3mhP",
+      "originalFile": "originals/carlos-figueroa/es-419-food-tea.mp3",
+      "originalSha256": "3c68e0b207361bd07e7d9db1017fcfe49b49422b36cd59870ee154356b1ab11c",
+      "originalBytes": 8820,
+      "deliverySha256": "cf29bc24082fcdde114d4764da182e927b3077b98fc9f75773d4656a25835c24",
+      "deliveryBytes": 8820,
+      "decodedFrames": 21168,
+      "after": {
+        "analysisPadding": true,
+        "integratedLufs": -21.93,
+        "measurementMethod": "r128-analysis-padded-to-500ms",
+        "truePeakDbtp": -7.81
+      },
+      "gainDb": 7.06,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-food-tea.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "té",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "Wk2TYD5XQVoSmvYuIJGD",
+      "originalFile": "originals/veronica/es-419-food-tea.mp3",
+      "originalSha256": "4db7547e58321ebdea9f9247ea2624b66a0b813c267db6fffc16a9493fa390b7",
+      "originalBytes": 10074,
+      "deliverySha256": "16bd98a73255abafce01b93486a97cf645e4ae532c71840f11725abbe3acb1a1",
+      "deliveryBytes": 10074,
+      "decodedFrames": 24696,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.88
+      },
+      "gainDb": -4.6,
+      "targetLimited": false,
+      "limitingReasons": []
+    }
+  ],
+  "draftSha256": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+  "artworkAcceptanceSha256": "e33086297c0692de7ce365aaa2ef104f9069e982a453ddfefba9576a0ad2ef34",
+  "audioApprovalSha256": "97af6193654992f7f4d6c3e16249a57ace34ff6d0f17471e5db4449f472f2ca4",
+  "audioReuseSha256": "de6f11b29f33b73eb63f6b5598a9372b72e563f672576d4010107a67de6b0321"
+}

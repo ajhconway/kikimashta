@@ -17,9 +17,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 168 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 168)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 168)
+test('all 190 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 190)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 190)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -33,11 +33,11 @@ test('all 168 active illustrations resolve to the approved selection in the app 
     if (selected.transparentBackground) {
       assert.equal(asset.format, 'png')
       const pixels = inspectPngAlpha(delivery)
-      assert.equal(pixels.width, 640)
-      assert.equal(pixels.height, 640)
+      assert.equal(Math.max(pixels.width, pixels.height), 640)
       assert.ok(pixels.transparentPixels > 0)
       assert.ok(pixels.opaquePixels > 0)
       const sourcePixels = inspectPngAlpha(source(asset.sourcePath))
+      assert.ok(Math.abs(pixels.width / pixels.height - sourcePixels.width / sourcePixels.height) < 0.01, 'Delivery preserves source proportions')
       const scale = pixels.width * pixels.height / (sourcePixels.width * sourcePixels.height)
       if (sourcePixels.opaqueWhitePixels * scale >= Math.max(1, sourcePixels.opaquePixels * scale / 1000)) assert.ok(pixels.opaqueWhitePixels > 0)
     } else assert.equal(delivery.subarray(0, 2).toString('hex'), 'ffd8', 'Historical opaque delivery must retain JPEG bytes')
@@ -74,6 +74,33 @@ test('legacy SVG regeneration preserves active raster files and their visual des
       if (activation.assets.some(asset => asset.id === before.id)) assert.deepEqual(after.find(item => item.id === before.id), before)
     }
   }
+})
+
+test('all 22 shipped visual-reference selections retain exact owner approval and existing practice eligibility', () => {
+  const manifest = read('artifacts/visual-reference-art-213/manifest.json')
+  const approvals = read('artifacts/visual-reference-art-213/approvals.json')
+  const planned = read('content/card-regeneration/prompts.json').cards
+  const pool = read('content/practice-pool.json').itemIds
+  assert.equal(manifest.assets.length, 22)
+  assert.equal(manifest.releaseApproval.selections.length, 22)
+  assert.equal(approvals.approvals.length, 22)
+  for (const asset of manifest.assets) {
+    const record = activation.assets.find(record => record.id === asset.id)
+    assert.equal(record.manifestPath, 'artifacts/visual-reference-art-213/manifest.json')
+    assert.equal(record.sourcePath, asset.path)
+    assert.equal(asset.approval.sha256, asset.sha256)
+    assert.equal(asset.approval.selectedVersion, asset.selectedVersion)
+    assert.equal(asset.approval.scope, 'artwork only')
+    assert.ok(asset.approval.ownerStatement)
+    assert.ok(asset.versions.some(version => version.version === asset.selectedVersion && version.path === asset.path && version.sha256 === asset.sha256))
+    assert.deepEqual(approvals.approvals.find(a => a.id === asset.id), { id: asset.id, text: asset.text, path: asset.path, ...asset.approval })
+    assert.deepEqual(manifest.releaseApproval.selections.find(a => a.id === asset.id), { id: asset.id, path: asset.path, sha256: asset.sha256, selectedVersion: asset.selectedVersion })
+    assert.equal(planned.find(card => card.id === asset.id).artworkStatus, 'approved')
+    assert.ok(!pool.includes(asset.id), 'Artwork shipment does not add new picture practice eligibility')
+  }
+  assert.equal(manifest.assets.find(a => a.text === '年').selectedVersion, 1)
+  assert.equal(manifest.assets.find(a => a.text === '左手').selectedVersion, 4)
+  assert.equal(manifest.assets.find(a => a.text === '右手').selectedVersion, 5)
 })
 
 
