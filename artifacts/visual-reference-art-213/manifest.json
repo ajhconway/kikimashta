@@ -1,0 +1,1033 @@
+{
+  "issue": 213,
+  "sourceRevision": "fa1cfe382d2196f2e0efb8e515d9754f2dec5e99",
+  "tool": "built-in image_gen",
+  "ownerAuthorization": "Generate all missing visual-reference artwork as one large batch; final artwork approval pending.",
+  "assets": [
+    {
+      "id": "ja-v-7dddc1af4eb5",
+      "text": "四月",
+      "reading": "しがつ",
+      "meaning": "April",
+      "prompt": "Use case: style-transfer. Create a replacement vocabulary illustration for APRIL, 四月, a calendar MONTH, using the supplied approved calendar ONLY as the style reference. Replace 2011 and all day grids with a clear year-at-a-glance MONTH SELECTOR: exactly twelve equally sized rounded tiles arranged in three columns and four rows, containing the exact Arabic numbers 1 through 12 in row-major order, once each. Highlight ONLY tile 4 with a warm golden fill and a thick plum outline; other eleven tiles pale lavender/white. No calendar dates, no weekdays, no year number, no text outside the twelve numerals. Make month-selection visually different from a tear-off day/date page. Match the reference's charming polished illustrated style, rounded bold plum outlines, lavender, golden yellow and white palette, very restrained soft shading. Square isolated asset, generous transparent margin, clean crisp readable numerals. Transparent background with genuine alpha; no checkerboard, watermark or English/Japanese labels. Educational mathematical accuracy: exactly 12 month tiles, exactly one highlighted month, number 4.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "prompt": "Use case: style-transfer. Create a replacement vocabulary illustration for APRIL, 四月, a calendar MONTH, using the supplied approved calendar ONLY as the style reference. Replace 2011 and all day grids with a clear year-at-a-glance MONTH SELECTOR: exactly twelve equally sized rounded tiles arranged in three columns and four rows, containing the exact Arabic numbers 1 through 12 in row-major order, once each. Highlight ONLY tile 4 with a warm golden fill and a thick plum outline; other eleven tiles pale lavender/white. No calendar dates, no weekdays, no year number, no text outside the twelve numerals. Make month-selection visually different from a tear-off day/date page. Match the reference's charming polished illustrated style, rounded bold plum outlines, lavender, golden yellow and white palette, very restrained soft shading. Square isolated asset, generous transparent margin, clean crisp readable numerals. Transparent background with genuine alpha; no checkerboard, watermark or English/Japanese labels. Educational mathematical accuracy: exactly 12 month tiles, exactly one highlighted month, number 4.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-73a75f6b-4249-47ff-b524-bbad2c6d57d3.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-7003bbe10d0b",
+      "text": "正しい",
+      "reading": "ただしい",
+      "meaning": "Correct",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CORRECT: a large clear green check mark inside a white rounded circular medallion with a bold plum rim. A single check, no cross, no equation, no text. Simple universally recognizable correctness symbol.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CORRECT: a large clear green check mark inside a white rounded circular medallion with a bold plum rim. A single check, no cross, no equation, no text. Simple universally recognizable correctness symbol.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3c557e59-b1bf-4c21-9d3a-121954e12ec0.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-6eed6b905b8e",
+      "text": "二月",
+      "reading": "にがつ",
+      "meaning": "February",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 2: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 2 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 2: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 2 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d454a233-416e-4f74-98bf-f8d62432e499.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-ed82bb95d4cc",
+      "text": "一月",
+      "reading": "いちがつ",
+      "meaning": "January",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 1: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 1 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 1: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 1 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-675019b8-c2bc-499f-a99c-0ca72b23d37e.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-8ffa8462a479",
+      "text": "六月",
+      "reading": "ろくがつ",
+      "meaning": "June",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 6: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 6 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 6: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 6 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-575606f4-2c91-413a-a00c-2425af3b0cd1.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-2850d52ee4d2",
+      "text": "五月",
+      "reading": "ごがつ",
+      "meaning": "May",
+      "prompt": "Use case: precise-object-edit. Edit this MAY month-selector illustration only to remove the stray detached white/pale lavender circular blob above its left binding. That tiny unwanted mark near the top edge must become clean fully transparent background. Preserve the complete calendar shape, binding rings, all numerals 1–12, exact 3-column by 4-row layout, gold highlight ONLY behind 5, original colors, style, dimensions and all other pixels as closely as possible. Do not add anything, crop or redraw the calendar. Transparent alpha outside calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+          "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 5: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 5 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1171b24c-fa03-4521-90be-222a1b88c1d4.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+          "prompt": "Use case: precise-object-edit. Edit this MAY month-selector illustration only to remove the stray detached white/pale lavender circular blob above its left binding. That tiny unwanted mark near the top edge must become clean fully transparent background. Preserve the complete calendar shape, binding rings, all numerals 1–12, exact 3-column by 4-row layout, gold highlight ONLY behind 5, original colors, style, dimensions and all other pixels as closely as possible. Do not add anything, crop or redraw the calendar. Transparent alpha outside calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+              "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f8ac7494-cae4-48d9-8eaa-4aae46d9f648.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-cacf3a45ed07",
+      "text": "十月",
+      "reading": "じゅうがつ",
+      "meaning": "October",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 10: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 10 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 10: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 10 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4619acdb-b354-4dd7-b04d-c506c7c75d83.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-7930a252da9b",
+      "text": "字",
+      "reading": "じ",
+      "meaning": "Character",
+      "prompt": "Use case: precise-object-edit. Edit this clean written-character specimen card. Preserve the paper, binding, clean white surface, exactly three glyphs あ 木 カ, exact layout, style and sizes. Change ONLY the highlight: replace the wide golden rectangle behind ALL THREE glyphs with a rounded golden square behind ONLY the middle glyph 木. Recolor the unhighlighted あ and カ in pale lavender with plum outlines. Middle 木 remains dark plum. Result must clearly select just ONE written character. Clean opaque white paper without dirty marks, blur, holes, smudges or extra shadows. Preserve transparent outside background. No new text or objects.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v2.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "43f2af05bd1867a71d22a274ffc55350970c921e8a5657a29086b59b52f3905c",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+          "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WRITTEN CHARACTER: white rounded paper card with exactly three large Japanese glyphs laid out horizontally: あ 木 カ. Put a golden rounded highlight box behind ONLY the middle glyph 木; others muted lavender. Precisely readable glyphs; no pencil, target word 字 or reading. The highlight singles out one written character; do not confuse character with sentence.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "3e8f62f42a7ed8b6f00f9d0d7c79b33ae09a9ceefe91d7f19f10072eda09ea56",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a30477c5-e5bf-43cb-aec3-d4b26e0ff66b.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v2.png",
+          "prompt": "Use case: precise-object-edit. Edit this clean written-character specimen card. Preserve the paper, binding, clean white surface, exactly three glyphs あ 木 カ, exact layout, style and sizes. Change ONLY the highlight: replace the wide golden rectangle behind ALL THREE glyphs with a rounded golden square behind ONLY the middle glyph 木. Recolor the unhighlighted あ and カ in pale lavender with plum outlines. Middle 木 remains dark plum. Result must clearly select just ONE written character. Clean opaque white paper without dirty marks, blur, holes, smudges or extra shadows. Preserve transparent outside background. No new text or objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+              "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "43f2af05bd1867a71d22a274ffc55350970c921e8a5657a29086b59b52f3905c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8dafe95a-f7c8-45f8-adfa-af1ebfc655cb.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-b0a03cee753b",
+      "text": "北",
+      "reading": "きた",
+      "meaning": "North",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH: flat front-facing compass rose with four equally spaced rays, top ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor; gold ray points straight up. No E/S/W labels, needle pointing elsewhere, map or target Japanese word.",
+      "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH: flat front-facing compass rose with four equally spaced rays, top ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor; gold ray points straight up. No E/S/W labels, needle pointing elsewhere, map or target Japanese word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-de1d8f93-85e4-44c0-bd98-5666b1300463.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-a84051dc9f24",
+      "text": "北口",
+      "reading": "きたぐち",
+      "meaning": "North Exit",
+      "prompt": "Use case: style-transfer. Use the supplied clean compass illustration as STYLE REFERENCE ONLY. Completely redraw a NORTH EXIT MAP: one rectangular station room seen flat from directly overhead. Its floor is a solid, uniformly colored OPAQUE pale lavender rectangle, no white, no shading, no gradient or texture. Four thick dark-plum outer walls with EXACTLY one opening centered in each wall (four openings total). One large golden arrow extends outward through the TOP opening and points straight UP. Other three exit openings have no arrows. In upper right outside the station put a small matching compass badge with crisp N on top and needle pointing up. Everything has clean smooth rounded plum outlines with flat lavender and gold fills. The room interior must be a FLAT EVEN SOLID COLORED RECTANGLE with absolutely no holes, blur or eraser marks. Transparent background ONLY OUTSIDE the station and separate compass badge. Clear isolated square vocabulary icon, generous margins, no other text, objects or labels.",
+      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH EXIT: flat overhead simple rectangular station floor plan; exactly four clear openings centered on its top, right, bottom and left edges, large empty white interior, lavender walls. Highlight ONLY top opening with a bold golden outward arrow through that top opening pointing up. Small compass N-up marker upper right outside plan. No other text, no train, no perspective doorway. Clear map north at top.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "30a4d0c421d62367aef5050b03bf6eec67aab7b0d07eb90c6fab72e587eacd28",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-45d736ed-4156-4c59-b154-9b37424f8f42.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v2.png",
+          "prompt": "Use case: precise-object-edit. Fix the supplied NORTH EXIT station-plan draft. Replace the ENTIRE irregular transparent black/gray hole and dirty blur inside the station with a SOLID OPAQUE clean white floor, continuous flat white right up to all four purple walls. Absolutely no holes, gradients, shadows, translucent interior or dark patches. Only the OUTSIDE of the station and compass badge should be transparent. Preserve simple lavender rectangular overhead station walls, exactly four centered exit gaps, prominent GOLD UPWARD ARROW through the TOP exit only, purple outline and polished illustration style. Add small crisp plum letter N above the upward-pointing compass needle in the upper-right round compass badge, with sufficient transparent outside margin so no cropping. No other text or objects. The floor must have alpha255 everywhere inside the room.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v1.png",
+              "sha256": "30a4d0c421d62367aef5050b03bf6eec67aab7b0d07eb90c6fab72e587eacd28",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "d90e4fd0396bec4620b8b3d6355b2b74353efa60b5cb686c7401aabd3e69aac6",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-6484dfa3-53f4-42b4-95b1-ffa2d37059ce.png"
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v3.png",
+          "prompt": "Use case: precise-object-edit. Repair this station-map illustration by changing the whole floor rectangle INSIDE the purple walls to a uniform solid OPAQUE pastel GOLD color #F7E2A6. Cover the entire interior including the central hole and all gray blurry fringes with that solid light-gold floor. The center is NOT a hole, not glass and not a cutout: it is an opaque colored rectangular FLOOR. No white fill or white shading on the floor anywhere. Keep its opacity255 throughout. Clean flat illustrated geometry. Preserve the lavender walls with exactly four exit gaps, ONLY top exit's large outward gold arrow, and upper-right compass badge with N pointing up. Keep the background outside the station and compass transparent. Keep generous outside margins. No gradient, blurring, shadows, extra text or objects. Replace the dark ragged hole completely with the solid opaque colored floor.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v2.png",
+              "sha256": "d90e4fd0396bec4620b8b3d6355b2b74353efa60b5cb686c7401aabd3e69aac6",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "8755aabcda59d02f017b085418117c2b21d8fe9b19e2830cff54112b76bbfb01",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a2a162f2-95a9-48a5-94c5-fc8bc496c1d7.png"
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+          "prompt": "Use case: style-transfer. Use the supplied clean compass illustration as STYLE REFERENCE ONLY. Completely redraw a NORTH EXIT MAP: one rectangular station room seen flat from directly overhead. Its floor is a solid, uniformly colored OPAQUE pale lavender rectangle, no white, no shading, no gradient or texture. Four thick dark-plum outer walls with EXACTLY one opening centered in each wall (four openings total). One large golden arrow extends outward through the TOP opening and points straight UP. Other three exit openings have no arrows. In upper right outside the station put a small matching compass badge with crisp N on top and needle pointing up. Everything has clean smooth rounded plum outlines with flat lavender and gold fills. The room interior must be a FLAT EVEN SOLID COLORED RECTANGLE with absolutely no holes, blur or eraser marks. Transparent background ONLY OUTSIDE the station and separate compass badge. Clear isolated square vocabulary icon, generous margins, no other text, objects or labels.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-bfa6532d-a051-4e7a-b6b8-2525202f6c81.png"
+        }
+      ],
+      "selectedVersion": 4,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-70230bf6d87c",
+      "text": "左手",
+      "reading": "ひだりて",
+      "meaning": "Left Hand",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. LEFT HAND anatomical viewpoint: a single friendly stylized child viewed squarely FROM BEHIND, wearing lavender short sleeves and trousers, both arms spread slightly away from body, five-digit hands clearly visible palms pointing forward away from viewer. Highlight ONLY the child's anatomical LEFT hand, which is on the LEFT side of this rear view, in gold with subtle plum attention rays. All other skin including right hand is muted beige. Back of head and neck visible, no face at all, so perspective is unambiguous. No lettering or arrows. Full body enough for body-side reference.",
+      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. LEFT HAND anatomical viewpoint: a single friendly stylized child viewed squarely FROM BEHIND, wearing lavender short sleeves and trousers, both arms spread slightly away from body, five-digit hands clearly visible palms pointing forward away from viewer. Highlight ONLY the child's anatomical LEFT hand, which is on the LEFT side of this rear view, in gold with subtle plum attention rays. All other skin including right hand is muted beige. Back of head and neck visible, no face at all, so perspective is unambiguous. No lettering or arrows. Full body enough for body-side reference.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-94dff37c-3514-420b-88d3-e55ce39c2ae2.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-69c61c85a403",
+      "text": "文字",
+      "reading": "もじ",
+      "meaning": "Letter (Of The Alphabet)",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WRITTEN CHARACTERS: white rounded paper card with exactly three large Japanese glyphs horizontally: あ 木 カ. Place ONE golden rounded highlight rectangle behind the ENTIRE three-character group, not individual glyphs. Glyphs clear plum. No target word 文字, no reading. Same typography specimen as single-character card, but highlight all characters. These synonyms will not be competing quiz answers.",
+      "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WRITTEN CHARACTERS: white rounded paper card with exactly three large Japanese glyphs horizontally: あ 木 カ. Place ONE golden rounded highlight rectangle behind the ENTIRE three-character group, not individual glyphs. Glyphs clear plum. No target word 文字, no reading. Same typography specimen as single-character card, but highlight all characters. These synonyms will not be competing quiz answers.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-315cd7fc-a870-473f-afbc-78642badacbb.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-9553e3adbc2a",
+      "text": "右手",
+      "reading": "みぎて",
+      "meaning": "Right Hand",
+      "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion from this LEFT HAND card. Preserve exactly the same child seen FROM BEHIND, hair, clothes, stance, all anatomy and hand shapes, five digits on each hand, layout, plum outlines, and transparent background. Change ONLY the highlight: recolor the LEFT-side hand back to the same normal peach skin as its arm and remove the three attention rays next to that left hand. Recolor ONLY the RIGHT-side hand golden yellow, and put three matching plum attention rays beside that right hand instead. The anatomical RIGHT hand is on the RIGHT of this rear view. No other changes, extra fingers, facial features, labels or arrows.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v2.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "1db69141ea7a3caad9904c844f812090665da8f617388e48ac37279faab48d29",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+          "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. RIGHT HAND anatomical viewpoint: a single friendly stylized child viewed squarely FROM BEHIND, lavender short sleeves and trousers, both arms slightly spread away from body, five-digit hands clearly visible palms pointing forward away from viewer. Highlight ONLY anatomical RIGHT hand, which is on RIGHT side of this rear view, gold with subtle plum attention rays. Other skin including left hand muted beige. Back of head and neck visible, no face, unambiguous rear perspective. No lettering or arrows. Full body provides body-side reference.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "fd5d2ede2857feeac4a7139a5c27f7bc4736f544d277e01393d93157bffbddbc",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2e89f1c2-2be6-4bf5-b42d-d1d88af2ed72.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v2.png",
+          "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion from this LEFT HAND card. Preserve exactly the same child seen FROM BEHIND, hair, clothes, stance, all anatomy and hand shapes, five digits on each hand, layout, plum outlines, and transparent background. Change ONLY the highlight: recolor the LEFT-side hand back to the same normal peach skin as its arm and remove the three attention rays next to that left hand. Recolor ONLY the RIGHT-side hand golden yellow, and put three matching plum attention rays beside that right hand instead. The anatomical RIGHT hand is on the RIGHT of this rear view. No other changes, extra fingers, facial features, labels or arrows.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+              "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "1db69141ea7a3caad9904c844f812090665da8f617388e48ac37279faab48d29",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-32c36698-196d-41b2-bc9c-cd1a01d1d789.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-49863ee12a96",
+      "text": "一文字",
+      "reading": "いちもんじ",
+      "meaning": "Straight Line",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. STRAIGHT HORIZONTAL LINE: exactly one long thick perfectly straight plum horizontal stroke with subtly rounded ends, centered on transparent canvas. About 70 percent canvas width. Restrained illustrated lavender edge highlight but flat frontal geometry. No paper, no vertical strokes, arrowheads, text, numeral or handwriting flourish. This one line is the whole asset.",
+      "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. STRAIGHT HORIZONTAL LINE: exactly one long thick perfectly straight plum horizontal stroke with subtly rounded ends, centered on transparent canvas. About 70 percent canvas width. Restrained illustrated lavender edge highlight but flat frontal geometry. No paper, no vertical strokes, arrowheads, text, numeral or handwriting flourish. This one line is the whole asset.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2c849d80-3536-4080-b7c3-c3fcb27c5611.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-8438eda3cfc0",
+      "text": "年",
+      "reading": "とし",
+      "meaning": "Year",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. ONE YEAR interval: white rounded year-planner sheet with golden top binding and exactly twelve equally sized MINIATURE MONTH GRID PANELS in a 3-column by 4-row arrangement. Each panel has a tiny lavender header and unnumbered pale grid. Enclose all twelve panels together with one rounded golden brace or outline to signify the entire year. No year number, no highlighted single month, no words or tiny numerals. Exactly twelve month panels as one complete year, clean and simple.",
+      "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. ONE YEAR interval: white rounded year-planner sheet with golden top binding and exactly twelve equally sized MINIATURE MONTH GRID PANELS in a 3-column by 4-row arrangement. Each panel has a tiny lavender header and unnumbered pale grid. Enclose all twelve panels together with one rounded golden brace or outline to signify the entire year. No year number, no highlighted single month, no words or tiny numerals. Exactly twelve month panels as one complete year, clean and simple.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-aa507aba-4866-4f60-a5fa-7ba21878286d.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-83365ed9e3db",
+      "text": "太字",
+      "reading": "ふとじ",
+      "meaning": "Bold Letter",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. BOLD TYPE: white rounded typography specimen card showing exactly two copies of the SAME Latin letter A side by side in the SAME typeface, same height and baseline: left regular thin weight muted lavender; right very bold/heavy plum weight. Highlight only the bold RIGHT A with a soft golden rounded backing. Keep counters/openings correct; no other glyphs, labels, words or pencil. Exact text A A.",
+      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "3948c69ba70c376e96e4a0c5c25a970ce515787fe8b6b4025836da17ae171093",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. BOLD TYPE: white rounded typography specimen card showing exactly two copies of the SAME Latin letter A side by side in the SAME typeface, same height and baseline: left regular thin weight muted lavender; right very bold/heavy plum weight. Highlight only the bold RIGHT A with a soft golden rounded backing. Keep counters/openings correct; no other glyphs, labels, words or pencil. Exact text A A.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "3948c69ba70c376e96e4a0c5c25a970ce515787fe8b6b4025836da17ae171093",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0ddc9049-292b-460c-9a94-9a82eea99bdf.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-9a8a0ffc08d3",
+      "text": "図",
+      "reading": "ず",
+      "meaning": "Diagram",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. DIAGRAM: one simple clean flowchart on a white rounded paper card. One gold rounded rectangle at top connects downward to two lavender rounded rectangles side by side using thin plum connectors with tiny arrowheads. Empty nodes with NO TEXT. Clearly a structured diagram, all connections unambiguous, no axes, legend, extra decoration or target word.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "9a2e022b9d57bda78e54c52e422b25462e90fe166e51507efd15abd8ab60d274",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. DIAGRAM: one simple clean flowchart on a white rounded paper card. One gold rounded rectangle at top connects downward to two lavender rounded rectangles side by side using thin plum connectors with tiny arrowheads. Empty nodes with NO TEXT. Clearly a structured diagram, all connections unambiguous, no axes, legend, extra decoration or target word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "9a2e022b9d57bda78e54c52e422b25462e90fe166e51507efd15abd8ab60d274",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9b0eab1b-b9c6-4b00-b65a-7848bf6c3477.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-aef5eed601c5",
+      "text": "三十代",
+      "reading": "さんじゅうだい",
+      "meaning": "One's Thirties",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. AGE RANGE THIRTIES: a clean white rounded age-range card with the exact large typography 30–39 centered in plum. Beneath, a simple golden horizontal range bar bounded by two short endpoint ticks, no arrowheads. No other digits, English words, portraits, calendar rings, yen/currency symbols, percent marks or target Japanese. Display age interval explicitly; no guessing age from appearance.",
+      "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v1.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "faa7c82931d64cc41e4ee3ea43eed9a6cf6862f9402a073e352de76c234052c2",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. AGE RANGE THIRTIES: a clean white rounded age-range card with the exact large typography 30–39 centered in plum. Beneath, a simple golden horizontal range bar bounded by two short endpoint ticks, no arrowheads. No other digits, English words, portraits, calendar rings, yen/currency symbols, percent marks or target Japanese. Display age interval explicitly; no guessing age from appearance.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "faa7c82931d64cc41e4ee3ea43eed9a6cf6862f9402a073e352de76c234052c2",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-236094a8-9a30-4599-bad9-fe95c91f2c37.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-6f2e359ff6c8",
+      "text": "西",
+      "reading": "にし",
+      "meaning": "West",
+      "prompt": "Use case: precise-object-edit. Create the WEST companion card from this NORTH compass. Preserve exactly the circular white face, plum rim, lavender inset circle, four-ray geometry, N above the top, sizing, palette, all positions, and transparent outside. Change ONLY which ray is highlighted: the LEFT/WEST ray must be golden yellow, and the TOP/NORTH ray must become pale lavender like the bottom and right rays. Exactly one golden ray, pointing LEFT; small N remains above TOP. No W letter or new markings. Keep entire circular border, do not simplify or remove it.",
+      "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WEST: same flat front-facing four-ray compass rose; left ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor. Gold ray points straight left; north remains up. No W answer label, E/S labels, map or target Japanese word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "32e63b1833b0d36e9ec83c31b7a1800efc605e30f16698981df2703f8f495a0d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1421ec0c-7be8-4e8b-961b-e7d1177f1a8a.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST companion card from this NORTH compass. Preserve exactly the circular white face, plum rim, lavender inset circle, four-ray geometry, N above the top, sizing, palette, all positions, and transparent outside. Change ONLY which ray is highlighted: the LEFT/WEST ray must be golden yellow, and the TOP/NORTH ray must become pale lavender like the bottom and right rays. Exactly one golden ray, pointing LEFT; small N remains above TOP. No W letter or new markings. Keep entire circular border, do not simplify or remove it.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9dab140c-4c32-48d6-a4be-7e9ee2172f1e.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-81b56dc2a618",
+      "text": "西口",
+      "reading": "にしぐち",
+      "meaning": "West Exit",
+      "prompt": "Use case: precise-object-edit. Make a WEST EXIT companion card from this NORTH EXIT floor plan. Preserve EXACTLY the same station outline, opaque pale lavender floor, four centered exit gaps, plum wall thickness, upper-right north-up compass with N, positions, sizes, palette, transparent outer background and illustration style. Change ONLY the large exit arrow: remove the gold arrow from the TOP exit and place the same large gold outward arrow through the LEFT exit, pointing LEFT out of the room. Top/right/bottom openings remain plain and empty. Keep floor opaque and clean with no holes, smudges or blur. No other changes or added text.",
+      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v2.png",
+      "status": "generated-pending-owner-review",
+      "sha256": "b905ee7b43d3eee60ccefe021e7a17311398bbb0b544ba2eb71ea113cc3fe093",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+          "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WEST EXIT: flat overhead same rectangular station floor plan; exactly four openings centered on top, right, bottom and left edges, empty white interior, lavender walls. Highlight ONLY LEFT opening with golden outward arrow through left opening pointing left. Small compass N-up marker upper right outside plan. No other text or train. Clear map north at top.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "7be2c7af5bfa8592176dbb6cf49733b466196fa913146c16cfd921539961f6b6",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a4efe6d3-8bd9-492b-9b90-e45e8b3b0633.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v2.png",
+          "prompt": "Use case: precise-object-edit. Make a WEST EXIT companion card from this NORTH EXIT floor plan. Preserve EXACTLY the same station outline, opaque pale lavender floor, four centered exit gaps, plum wall thickness, upper-right north-up compass with N, positions, sizes, palette, transparent outer background and illustration style. Change ONLY the large exit arrow: remove the gold arrow from the TOP exit and place the same large gold outward arrow through the LEFT exit, pointing LEFT out of the room. Top/right/bottom openings remain plain and empty. Keep floor opaque and clean with no holes, smudges or blur. No other changes or added text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+              "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "b905ee7b43d3eee60ccefe021e7a17311398bbb0b544ba2eb71ea113cc3fe093",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0bb45c38-6911-4f40-83f5-85ff2fa56c20.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    }
+  ],
+  "excludedUpdatedIds": [
+    "ja-v-f50fcf40e898",
+    "ja-v-a02edbda9f4c",
+    "ja-v-61c516578fee",
+    "ja-v-d4473f87e438",
+    "ja-v-b066e78531d6",
+    "ja-v-9752b818f9f8",
+    "ja-v-4ac46ddaa10f",
+    "ja-v-14be5202d5b3",
+    "ja-v-9acbf1542642",
+    "ja-v-3d24eb7fb7b5",
+    "ja-v-30d6b7d7e837",
+    "ja-v-ed6bd4d73b76",
+    "ja-v-56d52b7869ab",
+    "ja-v-0655c242d1db",
+    "ja-v-06ef406f5569",
+    "ja-v-e368e3aa9bf6",
+    "ja-v-7b2351210462",
+    "ja-v-da2913ad7e4c",
+    "ja-v-b0489d428339",
+    "ja-v-86ef0852f80f",
+    "ja-v-81e708aba22f",
+    "ja-v-d605986c3af4",
+    "ja-v-7bbba1a9506e",
+    "ja-v-16fcea5b6e6e",
+    "ja-v-a872d5e674a2",
+    "ja-v-1807218bf360",
+    "ja-v-5f29c187353e",
+    "ja-v-7707983a4026",
+    "ja-v-81893a02b959",
+    "ja-v-f623bb19b846",
+    "ja-v-13ea3220cde0",
+    "ja-v-f0588b6224d0",
+    "ja-v-96a032e15dda",
+    "ja-v-823616f3288f",
+    "ja-v-3ed4447f3492",
+    "ja-v-08e3c50181be",
+    "ja-v-190aae33ad24",
+    "ja-v-2850b5703e8b",
+    "ja-v-1a43c96593cb",
+    "ja-v-01016753b889",
+    "ja-v-cbb4297f3dd7"
+  ],
+  "status": "complete-pending-owner-review",
+  "generatedAssetCount": 20,
+  "generatedVersionCount": 28,
+  "checks": {
+    "exactScope": true,
+    "noAlreadyUpdatedIds": true,
+    "allSelectedHashesVerified": true,
+    "allSelectedHaveTransparency": true,
+    "existingCardTests": "python3 -m unittest discover -s scripts/cards -p test_*.py: 27 passed"
+  }
+}
