@@ -1,5 +1,9 @@
 {
   "issue": 218,
   "pack": "es-419-food-1",
-  "versions": {}
+  "versions": {
+    "rice": 1,
+    "beans": 2,
+    "tomato": 2
+  }
 }
