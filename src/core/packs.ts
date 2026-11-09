@@ -4,6 +4,7 @@ import { exercises } from './cards';
 import type { Exercise, PracticeCard, WordItem } from '../types';
 
 export interface CardPack {
+  badgeFamily?: 'wanikani' | 'suitcase';
   id: string;
   title: string;
   sourceLevel?: number;
@@ -15,6 +16,7 @@ export interface CardPack {
 /** Pack membership shares vocabulary identity; format keeps learning independent. (#108) */
 export const cardPacks: CardPack[] = [1, 2, 3, 4, 5].flatMap(sourceLevel =>
   (['pictures', 'writing'] as const).map(format => ({
+    badgeFamily: 'wanikani' as const,
     id: `ja-wanikani-${sourceLevel}-${format}`,
     title: `WaniKani level ${sourceLevel} · ${format === 'pictures' ? 'Pictures' : 'Writing'}`,
     sourceLevel,

@@ -1,13 +1,22 @@
 import { expect, test } from './fixtures';
+import { badgeArtwork } from '../src/core/badge-art';
 import { badgeHistory } from '../src/test/pack-badge-history';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import pool from '../content/practice-pool.json' with { type: 'json' };
 import starter from '../content/ja.json' with { type: 'json' };
-import type { PracticeCard, WordItem } from '../src/types';
+import wordPolicy from '../content/contextual/pack-1/practice-policy.json' with { type: 'json' };
+import type { PracticeCard, WordExercise, WordItem } from '../src/types';
 const packPreferenceKey = 'kikimashta-card-packs-v1';
 const pack = { id: 'ja-wanikani-1-pictures', title: 'WaniKani level 1 · Pictures' };
-const cards: PracticeCard[] = catalogue.items.filter(item => item.sourceLevel === 1 && [...pool.itemIds, ...starter.items.map(item => item.id)].includes(item.id))
-  .map(item => ({ exercise: 'audio-picture', item: { ...item, label: item.meaning, theme: 'vocabulary' } as WordItem }));
+const poolIds = new Set([...pool.itemIds, ...starter.items.map(item => item.id)]);
+const writingOnlyIds = new Set(wordPolicy.writingOnlyItemIds);
+function packCards(level: number, exercise: WordExercise): PracticeCard[] {
+  return catalogue.items.filter(item => item.sourceLevel === level &&
+    (poolIds.has(item.id) || exercise === 'audio-text' && writingOnlyIds.has(item.id)) &&
+    (exercise === 'audio-text' || !writingOnlyIds.has(item.id)))
+    .map(item => ({ exercise, item: { ...item, label: item.meaning, theme: 'vocabulary' } as WordItem }));
+}
+const cards = packCards(1, 'audio-picture');
 import { savedAttempts } from './saved-attempts';
 
 test('Home pack badges survive reload, remain visible for deselected packs and follow current mastery', async ({ page }, testInfo) => {
@@ -34,11 +43,16 @@ test('Home pack badges survive reload, remain visible for deselected packs and f
   await expect(badge).toBeVisible();
   const alignment = await badge.locator('.badge-wk').evaluate(element => {
     const box = (element as SVGGraphicsElement).getBBox();
-    return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+    return { x: Number(element.getAttribute('x')), y: Number(element.getAttribute('y')),
+      inkX: box.x + box.width / 2, inkY: box.y + box.height / 2 };
   });
-  // Familiar’s cream inlay is centered at x=49.2%, slightly left of its canvas.
-  expect(alignment.x).toBeCloseTo(49.2, 0);
-  expect(Math.abs(alignment.y - 47.6)).toBeLessThan(1.5);
+  const faceCenter = badgeArtwork.Familiar.center;
+  // Slot placement is exact; glyph ink bounds vary across the supported rounded font fallbacks.
+  expect(alignment.x).toBe(faceCenter.x);
+  expect(alignment.y).toBe(faceCenter.y);
+  await expect(badge.locator('.badge-wk')).toHaveAttribute('text-anchor', 'middle');
+  expect(Math.abs(alignment.inkX - faceCenter.x)).toBeLessThan(2);
+  expect(Math.abs(alignment.inkY - faceCenter.y)).toBeLessThan(3);
   const ribbon = await badge.locator('.badge-number').evaluate(element => {
     const box = (element as SVGGraphicsElement).getBBox();
     return { left: box.x, right: box.x + box.width, top: box.y, bottom: box.y + box.height };
@@ -84,9 +98,9 @@ test('ten upright static medals follow a circle around Kiku on a narrow screen',
   await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
   const attempts = [];
   for (const level of [1, 2, 3, 4, 5]) for (const format of ['pictures', 'writing'] as const) {
-    const packCards: PracticeCard[] = catalogue.items.filter(item => item.sourceLevel === level && [...pool.itemIds, ...starter.items.map(item => item.id)].includes(item.id))
-      .map(item => ({ exercise: format === 'pictures' ? 'audio-picture' : 'audio-text', item: { ...item, label: item.meaning, theme: 'vocabulary' } as WordItem }));
-    attempts.push(...await badgeHistory(packCards, `ja-wanikani-${level}-${format}`));
+    // Include the writing-only cards that have separate approval in the contextual pack policy.
+    const exercise = format === 'pictures' ? 'audio-picture' : 'audio-text';
+    attempts.push(...await badgeHistory(packCards(level, exercise), `ja-wanikani-${level}-${format}`));
   }
   await page.evaluate(async history => {
     const request = indexedDB.open('kikimashta-v0', 1);
