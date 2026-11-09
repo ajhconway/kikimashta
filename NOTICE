@@ -29,3 +29,10 @@ records their sources, hashes, and supported characters.
 The licensing change was made on 2026-11-05. Releases through commit
 02dcb58400f4971c6e54e2f7740b4d1c3328d25f were published under MIT. This change
 does not withdraw the MIT permissions granted for those earlier versions.
+
+The offline pronunciation experiment in artifacts/pronunciation-neighbors-212/
+uses unchanged acoustic-distance CSV tables from Jiro Shimaya's kanasim,
+revision f067a4e8be10d818b37b8b9f08de933dae01524b, under Apache-2.0.
+Source: https://github.com/jiroshimaya/kanasim
+The full upstream license and provenance are preserved in that artifact's vendor/
+directory. These experimental tables are not included in the browser bundle.
