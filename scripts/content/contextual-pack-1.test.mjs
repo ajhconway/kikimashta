@@ -1,11 +1,26 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { JSDOM } from 'jsdom'
 import { approvedContextualQuestions } from '../../src/content/contextual.ts'
 import { projectRoot } from './validate-contextual.mjs'
-import { combinedPack1, contextualOnlyWords, draftPath, filterScript, renderPack1Review, targetCounterfactual, validateComprehension, validatePack1, wordFirstWords } from './prepare-contextual-pack-1.mjs'
+import { combinedPack1, contextualOnlyWords, draftPath, filterScript, renderPack1Review, targetCounterfactual, validateComprehension, validateFrozenPack1, validatePack1, wordFirstWords } from './prepare-contextual-pack-1.mjs'
+
+test('rebuilding approved content cannot carry stale approval across text or source-byte changes', () => {
+  const bytes = readFileSync(resolve(projectRoot, draftPath))
+  const bank = JSON.parse(bytes)
+  const approval = JSON.parse(readFileSync(resolve(projectRoot, 'content/contextual/pack-1/text-approval.json')))
+  assert.doesNotThrow(() => validateFrozenPack1(bank, bytes, approval))
+  const changed = structuredClone(bank)
+  changed.contexts[0].sentence.meaning += ' Changed after review.'
+  const rebuilt = JSON.stringify(changed, null, 2) + '\n'
+  assert.throws(() => validateFrozenPack1(changed, rebuilt, approval), /approved frozen snapshot/)
+  const updatedSourceHash = { ...approval, sourceFileSha256: createHash('sha256').update(rebuilt).digest('hex') }
+  assert.throws(() => validateFrozenPack1(changed, rebuilt, updatedSourceHash), /approved digest/)
+  assert.throws(() => validateFrozenPack1(bank, Buffer.concat([bytes, Buffer.from('\n')]), approval), /approved frozen snapshot/)
+})
 
 test('pack 1 has full two-stage coverage and four choices while every new question remains inactive', () => {
   const loaded = validatePack1()
