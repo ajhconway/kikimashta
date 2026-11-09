@@ -26,6 +26,7 @@ test('writing Dev review reports matching endings and scoped fallbacks without s
   await selectWordPractice(page, ['ja-wanikani-5-writing']);
   await page.addInitScript(() => { Math.random = () => .999; });
   await page.goto('./');
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
   const before = await storedHistory(page);
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await page.getByRole('button', { name: 'Clear levels' }).click();
@@ -46,6 +47,7 @@ test('writing Dev review reports matching endings and scoped fallbacks without s
   expect(await storedHistory(page)).toEqual(before);
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
   await page.reload();
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
   expect(await storedHistory(page)).toEqual(before);
 });
 
