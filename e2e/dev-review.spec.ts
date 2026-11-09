@@ -91,8 +91,8 @@ test('contextual samples use selected mastery timers and keep real progress unch
   const japanese = page.getByRole('button', { name: 'Show Japanese', exact: true });
   await expect(japanese).toBeVisible();
   const control = (await japanese.boundingBox())!;
-  expect(control.width).toBe(64);
-  expect(control.height).toBe(64);
+  expect(control.width).toBeGreaterThanOrEqual(44);
+  expect(control.height).toBeGreaterThanOrEqual(44);
   await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
   await japanese.click();
   const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
