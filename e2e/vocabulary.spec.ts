@@ -156,7 +156,7 @@ test('browse the Spanish travel pack, listen, retry audio and retain Spanish not
   await expect(page.locator('.card h2')).toHaveText(spanish.items.slice(24).map(item => item.text));
   await expect(page.getByRole('heading', { level: 2, name: 'entrada', exact: true })).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 2, name: 'salida', exact: true })).toHaveCount(0);
-  await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(4);
+  await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(5);
   await page.getByLabel('Search words').fill('Coffee');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('café');
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);

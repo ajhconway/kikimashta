@@ -76,6 +76,27 @@ describe('contextual listening and feedback', () => {
     expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
   });
 
+  it('offers native canonical-word audio in the paired voice and pauses it before the foundation question', async () => {
+    const question = structuredClone(fixture()); question.introduction = true;
+    question.target.language = 'es-419';
+    question.target.audio = [
+      { src: 'audio/other-tener.mp3', source: 'synthesized', voice: 'other' },
+      { src: 'audio/matching-tener.mp3', source: 'synthesized', voice: 'otani' },
+    ];
+    question.contextual!.context.introduction = { text: 'tener', meaning: 'Have' };
+    render(<Harness question={question}/>);
+    const wordAudio = screen.getByLabelText('Hear tener');
+    expect(wordAudio).toHaveAttribute('controls');
+    expect(wordAudio).toHaveAttribute('src', '/audio/matching-tener.mp3');
+    expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
+    fireEvent.play(wordAudio);
+    vi.mocked(HTMLMediaElement.prototype.pause).mockClear();
+    await click(screen.getByRole('button', { name: 'Listen and answer' }));
+    expect(vi.mocked(HTMLMediaElement.prototype.pause).mock.contexts).toContain(wordAudio);
+    expect(screen.queryByLabelText('Hear tener')).not.toBeInTheDocument();
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+  });
+
   it.each(['text', 'picture'] as const)('lets screen-reader users identify and select %s answers by their content', async format => {
     render(<Harness question={fixture({ format })}/>);
     const teacher = format === 'text' ? 'Choose writing 先生' : /^Choose picture \d+: teacher$/;

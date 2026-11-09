@@ -134,16 +134,16 @@ test('contextual library redirects old links, browses authored detail and retrie
   expect(await history(page)).toEqual(baseline);
 });
 
-test('Spanish contextual library is explicitly empty while Spanish words remain available', async ({ page }) => {
+test('Spanish foundation contexts remain read-only while switching library views', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
   const baseline = await history(page);
   await page.goto('./vocabulary/?view=contextual&language=es-419');
   const gallery = page.locator('#contextual-library');
   await expect(gallery).toBeVisible();
-  await expect(gallery).toContainText(/no contextual cards.*this language/i);
-  await expect(gallery.locator('article')).toHaveCount(0);
-  await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(1);
+  await expect(gallery).toContainText('9 contextual questions');
+  await expect(gallery.locator('article')).toHaveCount(9);
+  await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(10);
   const views = page.getByRole('group', { name: 'Library content', exact: true });
   await views.getByRole('button', { name: 'Words', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Latin American Spanish cards', exact: true })).toBeVisible();
@@ -151,7 +151,7 @@ test('Spanish contextual library is explicitly empty while Spanish words remain 
   await expect(page.getByLabel('Card pack')).not.toContainText('WaniKani');
   await views.getByRole('button', { name: 'Contextual questions', exact: true }).click();
   await page.reload();
-  await expect(gallery).toContainText(/no contextual cards.*this language/i);
-  await expect(gallery.locator('article')).toHaveCount(0);
+  await expect(gallery).toContainText('9 contextual questions');
+  await expect(gallery.locator('article')).toHaveCount(9);
   expect(await history(page)).toEqual(baseline);
 });

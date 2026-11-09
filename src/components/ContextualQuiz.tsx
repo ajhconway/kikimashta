@@ -40,6 +40,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const needsIntroduction = !!question.introduction && !!authored.context.introduction && !question.retryOf;
   const [introduced, setIntroduced] = useState(false);
   const introducing = needsIntroduction && !introduced;
+  const introductionRecording = question.target.audio.find(clip => clip.voice === authored.recording?.voice) ?? question.target.audio[0];
   const sentenceSrc = authored.recording?.sentenceSrc;
   const questionSrc = authored.recording?.questionSrcs[authored.question.id];
   const hasAudio = !!sentenceSrc && !!questionSrc;
@@ -103,7 +104,8 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       if (document.visibilityState === 'hidden') { stop(); setPlayback('paused'); }
     };
     document.addEventListener('visibilitychange', suspend);
-    return () => { document.removeEventListener('visibilitychange', suspend); stop(); };
+    window.addEventListener('pagehide', stop);
+    return () => { document.removeEventListener('visibilitychange', suspend); window.removeEventListener('pagehide', stop); stop(); };
   }, [play, stop, authored.context.id, authored.question.id, introducing]);
   function ended() {
     const token = request.current;
@@ -117,8 +119,9 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const result = feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null;
   if (introducing) return <section className="quiz contextual-quiz foundation-introduction" aria-label="New Spanish word">
     <h2 lang={language}>{authored.context.introduction!.text}</h2><p>{authored.context.introduction!.meaning}</p>
+    {introductionRecording && <audio ref={audio} controls preload="none" src={asset(introductionRecording.src)} aria-label={`Hear ${authored.context.introduction!.text}`}/>}
     <Prompt language={language} title="Example" value={authored.context.sentence} labelled/>
-    <button type="button" className="primary" onClick={() => setIntroduced(true)}>Listen and answer</button>
+    <button type="button" className="primary" onClick={() => { stop(); setIntroduced(true); }}>Listen and answer</button>
   </section>;
   return <section className="quiz contextual-quiz" data-exercise={question.exercise} data-question-id={authored.question.id}>
     <audio ref={audio} preload="auto" onEnded={ended} onError={() => { stop(); setPlayback('error'); }}/>

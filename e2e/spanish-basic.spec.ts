@@ -43,7 +43,7 @@ test('Basic Spanish introduces abstract vocabulary directly and persists its ind
       await expect(page.locator('.foundation-introduction')).toHaveCount(0);
       await quiz.getByRole('button', { name: new RegExp('Choose picture \\d+: ' + correct.meaning + '$') }).click();
       await expect.poll(async () => (await savedAttempts(page, 'es-419')).filter(saved => saved.itemId === target.id).length).toBe(2);
-      expect((await savedAttempts(page, 'es-419')).filter(saved => saved.itemId === target.id).at(-1)!.context!.phase).toBe('review');
+      expect((await savedAttempts(page, 'es-419')).find(saved => saved.itemId === target.id && saved.id !== attempt.id)!.context!.phase).toBe('review');
       return;
     }
     const other = draft.contexts.find(candidate => candidate.id + '-question' === questionId)!;

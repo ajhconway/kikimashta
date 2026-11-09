@@ -66,6 +66,7 @@ for (const format of ['pictures', 'writing']) {
 
 test('Spanish regional voice preference persists independently and supplies practice audio', async ({ page }) => {
   await page.goto('./vocabulary/?language=es-419');
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
   await expect(voices.getByRole('checkbox')).toHaveCount(8);
   await expect(voices.getByRole('checkbox', { name: 'Juan', exact: true })).toHaveAccessibleDescription('Mexico City, Mexico');
