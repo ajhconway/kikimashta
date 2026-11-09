@@ -1,6 +1,6 @@
 {
   "issue": 191,
-  "ownerMessage": "Sleepiness should have a bigger pillow which Kiku is more on. The rest are good.",
+  "ownerMessage": "Great, let's ship it.",
   "approvedPictures": [
     {
       "id": "es-419-basic-eat",
@@ -71,10 +71,13 @@
       "id": "es-419-basic-thirst",
       "path": "artifacts/spanish-basic-1-art/originals/thirst-v2.png",
       "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v3.png",
+      "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79"
     }
   ],
-  "pendingPictures": [
-    "es-419-basic-sleepiness"
-  ],
-  "scope": "Picture acceptance only. Sleepiness revision remains pending owner review."
+  "pendingPictures": [],
+  "scope": "All final pictures and generated audio accepted for activation and deployment."
 }
