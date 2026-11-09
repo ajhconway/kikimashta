@@ -53,11 +53,11 @@ The two ordered database migrations and rollback access-policy checks live in `s
 
 ## Voice auditions
 
-The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Retired recordings and comparisons are recoverable from Git history; new generation uses ElevenLabs.
+The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Retired recordings, generators and completed sample comparisons are recoverable from Git history; new generation uses ElevenLabs.
 
 ### Retired recordings
 
-OpenAI/Open JTalk starter and catalog recordings, the Cesar Spanish starter deliveries, and the old `/audio-review/` comparison are retired. Their binaries are recoverable from Git history before the [media cleanup (#193)](https://github.com/ajhconway/kikimashta/issues/193). Generation and approval provenance remains in `content/`; current lessons and library cards use ElevenLabs. Saved attempt paths are metadata and do not fetch retired recordings.
+OpenAI/Open JTalk starter and catalog recordings, the Cesar Spanish starter deliveries, and the old `/audio-review/` comparison are retired. Their binaries are recoverable from Git history before the [media cleanup (#193)](https://github.com/ajhconway/kikimashta/issues/193). Records describing only retired media are removed too; current lessons and library cards use ElevenLabs with their active provenance retained. Saved attempt paths are metadata and do not fetch retired recordings.
 
 ## Vocabulary library
 
@@ -83,7 +83,7 @@ The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](http
 
 The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
 
-Media and dependencies retain separate terms. Current practice speech is AI-generated with ElevenLabs; historical OpenAI recordings are recoverable from Git history, with provenance retained in the current tree. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs, recoverable from Git history, remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Retired starter watercolor assets are recoverable from Git history and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+Media and dependencies retain separate terms. Current practice speech is AI-generated with ElevenLabs. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Current catalog SVGs are AGPLv3 only; retained asset records are in `content/catalog/image-provenance.json`. Provenance for retired media is removed with it and remains recoverable from Git history. See [media credits](public/credits.html) for current assets.
 
 ## Card regeneration
 
