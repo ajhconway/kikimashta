@@ -1,0 +1,4879 @@
+{
+  "targets": [
+    {
+      "text": "一つ",
+      "slug": "hitotsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "一つ",
+            "ひとつ"
+          ],
+          "sentence": [
+            "りんごが一つあります。",
+            "りんごがひとつあります。",
+            "There is 1 apple."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "りんごはいくつありますか。",
+                "りんごはいくつありますか。",
+                "How many apples are there?"
+              ],
+              "options": [
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives 1 as the number of apples.",
+              "pictureOptions": [
+                "一つ",
+                "二つ",
+                "三つ",
+                "四つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "一つあるのは何ですか。",
+                "ひとつあるのはなんですか。",
+                "Which item is there one of?"
+              ],
+              "options": [
+                [
+                  "みかん",
+                  "みかん",
+                  "mandarin orange"
+                ],
+                [
+                  "卵",
+                  "たまご",
+                  "egg"
+                ],
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives one as the number of apples."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "一つ",
+            "ひとつ"
+          ],
+          "sentence": [
+            "母は卵を一つ買いました。",
+            "はははたまごをひとつかいました。",
+            "My mother bought 1 egg."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "母は卵をいくつ買いましたか。",
+                "はははたまごをいくつかいましたか。",
+                "How many eggs did my mother buy?"
+              ],
+              "options": [
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "My mother bought 1 egg.",
+              "pictureOptions": [
+                "三つ",
+                "四つ",
+                "一つ",
+                "二つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が卵を一つ買いましたか。",
+                "だれがたまごをひとつかいましたか。",
+                "Who bought 1 egg?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence attributes the purchase of 1 to my mother."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "一つ",
+            "ひとつ"
+          ],
+          "sentence": [
+            "りんごが一つ、みかんが二つあります。",
+            "りんごがひとつ、みかんがふたつあります。",
+            "There is 1 apple, and 2 mandarin oranges."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "りんごはいくつありますか。",
+                "りんごはいくつありますか。",
+                "How many apples are there?"
+              ],
+              "options": [
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives 1 as the number of apples.",
+              "pictureOptions": [
+                "二つ",
+                "三つ",
+                "四つ",
+                "一つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "一つあるのは何ですか。",
+                "ひとつあるのはなんですか。",
+                "Which item is there one of?"
+              ],
+              "options": [
+                [
+                  "卵",
+                  "たまご",
+                  "egg"
+                ],
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "みかん",
+                  "みかん",
+                  "mandarin orange"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives one as the number of apples."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "一つ",
+            "ひとつ"
+          ],
+          "sentence": [
+            "母は卵を一つ、父は卵を三つ買いました。",
+            "はははたまごをひとつ、ちちはたまごをみっつかいました。",
+            "My mother bought 1 egg. My father bought 3 eggs."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "母は卵をいくつ買いましたか。",
+                "はははたまごをいくつかいましたか。",
+                "How many eggs did my mother buy?"
+              ],
+              "options": [
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "My mother bought 1; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "四つ",
+                "一つ",
+                "二つ",
+                "三つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が卵を一つ買いましたか。",
+                "だれがたまごをひとつかいましたか。",
+                "Who bought 1 egg?"
+              ],
+              "options": [
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence attributes the purchase of 1 to my mother."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "二つ",
+      "slug": "futatsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "二つ",
+            "ふたつ"
+          ],
+          "sentence": [
+            "みかんが二つあります。",
+            "みかんがふたつあります。",
+            "There are 2 mandarin oranges."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "みかんはいくつありますか。",
+                "みかんはいくつありますか。",
+                "How many mandarin oranges are there?"
+              ],
+              "options": [
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives 2 as the number of mandarin oranges.",
+              "pictureOptions": [
+                "二つ",
+                "三つ",
+                "四つ",
+                "一つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "二つあるのは何ですか。",
+                "ふたつあるのはなんですか。",
+                "Which item are there two of?"
+              ],
+              "options": [
+                [
+                  "卵",
+                  "たまご",
+                  "egg"
+                ],
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "みかん",
+                  "みかん",
+                  "mandarin orange"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives two as the number of mandarin oranges."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "二つ",
+            "ふたつ"
+          ],
+          "sentence": [
+            "父はパンを二つ買いました。",
+            "ちちはパンをふたつかいました。",
+            "My father bought 2 bread rolls."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父はパンをいくつ買いましたか。",
+                "ちちはパンをいくつかいましたか。",
+                "How many bread rolls did my father buy?"
+              ],
+              "options": [
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "My father bought 2 bread rolls.",
+              "pictureOptions": [
+                "四つ",
+                "一つ",
+                "二つ",
+                "三つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がパンを二つ買いましたか。",
+                "だれがパンをふたつかいましたか。",
+                "Who bought 2 bread rolls?"
+              ],
+              "options": [
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence attributes the purchase of 2 to my father."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "二つ",
+            "ふたつ"
+          ],
+          "sentence": [
+            "みかんが二つ、りんごが三つあります。",
+            "みかんがふたつ、りんごがみっつあります。",
+            "There are 2 mandarin oranges, and 3 apples."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "卵",
+              "たまご",
+              "egg"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "みかんはいくつありますか。",
+                "みかんはいくつありますか。",
+                "How many mandarin oranges are there?"
+              ],
+              "options": [
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives 2 as the number of mandarin oranges.",
+              "pictureOptions": [
+                "三つ",
+                "四つ",
+                "一つ",
+                "二つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "二つあるのは何ですか。",
+                "ふたつあるのはなんですか。",
+                "Which item are there two of?"
+              ],
+              "options": [
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "みかん",
+                  "みかん",
+                  "mandarin orange"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "卵",
+                  "たまご",
+                  "egg"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence gives two as the number of mandarin oranges."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "二つ",
+            "ふたつ"
+          ],
+          "sentence": [
+            "父はパンを二つ、母はパンを四つ買いました。",
+            "ちちはパンをふたつ、はははパンをよっつかいました。",
+            "My father bought 2 bread rolls. My mother bought 4 bread rolls."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父はパンをいくつ買いましたか。",
+                "ちちはパンをいくつかいましたか。",
+                "How many bread rolls did my father buy?"
+              ],
+              "options": [
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "My father bought 2; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "一つ",
+                "二つ",
+                "三つ",
+                "四つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がパンを二つ買いましたか。",
+                "だれがパンをふたつかいましたか。",
+                "Who bought 2 bread rolls?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence attributes the purchase of 2 to my father."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "三つ",
+      "slug": "mittsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "三つ",
+            "みっつ"
+          ],
+          "sentence": [
+            "玉が三つあります。",
+            "たまがみっつあります。",
+            "There are 3 balls."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "玉はいくつありますか。",
+                "たまはいくつありますか。",
+                "How many balls are there?"
+              ],
+              "options": [
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives 3 as the number of balls.",
+              "pictureOptions": [
+                "三つ",
+                "四つ",
+                "一つ",
+                "二つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "三つあるのは何ですか。",
+                "みっつあるのはなんですか。",
+                "Which item are there three of?"
+              ],
+              "options": [
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence gives three as the number of balls."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "三つ",
+            "みっつ"
+          ],
+          "sentence": [
+            "姉はケーキを三つ買いました。",
+            "あねはケーキをみっつかいました。",
+            "My older sister bought 3 cakes."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "ケーキ",
+              "ケーキ",
+              "cake"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "姉はケーキをいくつ買いましたか。",
+                "あねはケーキをいくつかいましたか。",
+                "How many cakes did my older sister buy?"
+              ],
+              "options": [
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "My older sister bought 3 cakes.",
+              "pictureOptions": [
+                "一つ",
+                "二つ",
+                "三つ",
+                "四つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がケーキを三つ買いましたか。",
+                "だれがケーキをみっつかいましたか。",
+                "Who bought 3 cakes?"
+              ],
+              "options": [
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence attributes the purchase of 3 to my older sister."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "三つ",
+            "みっつ"
+          ],
+          "sentence": [
+            "玉が三つ、石が二つあります。",
+            "たまがみっつ、いしがふたつあります。",
+            "There are 3 balls, and 2 stones."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "玉はいくつありますか。",
+                "たまはいくつありますか。",
+                "How many balls are there?"
+              ],
+              "options": [
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives 3 as the number of balls.",
+              "pictureOptions": [
+                "四つ",
+                "一つ",
+                "二つ",
+                "三つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "三つあるのは何ですか。",
+                "みっつあるのはなんですか。",
+                "Which item are there three of?"
+              ],
+              "options": [
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives three as the number of balls."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "三つ",
+            "みっつ"
+          ],
+          "sentence": [
+            "姉はケーキを三つ、兄はケーキを二つ買いました。",
+            "あねはケーキをみっつ、あにはケーキをふたつかいました。",
+            "My older sister bought 3 cakes. My older brother bought 2 cakes."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "ケーキ",
+              "ケーキ",
+              "cake"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "姉はケーキをいくつ買いましたか。",
+                "あねはケーキをいくつかいましたか。",
+                "How many cakes did my older sister buy?"
+              ],
+              "options": [
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four things"
+                ],
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one thing"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "My older sister bought 3; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "二つ",
+                "三つ",
+                "四つ",
+                "一つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がケーキを三つ買いましたか。",
+                "だれがケーキをみっつかいましたか。",
+                "Who bought 3 cakes?"
+              ],
+              "options": [
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence attributes the purchase of 3 to my older sister."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "七つ",
+      "slug": "nanatsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "七つ",
+            "ななつ"
+          ],
+          "sentence": [
+            "箱が七つあります。",
+            "はこがななつあります。",
+            "There are 7 boxes."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "箱はいくつありますか。",
+                "はこはいくつありますか。",
+                "How many boxes are there?"
+              ],
+              "options": [
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "六つ",
+                  "むっつ",
+                  "six things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives 7 as the number of boxes.",
+              "pictureOptions": [
+                "八つ",
+                "三つ",
+                "六つ",
+                "七つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "七つあるのは何ですか。",
+                "ななつあるのはなんですか。",
+                "Which item are there seven of?"
+              ],
+              "options": [
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives seven as the number of boxes."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "七つ",
+            "ななつ"
+          ],
+          "sentence": [
+            "兄はコップを七つ買いました。",
+            "あにはコップをななつかいました。",
+            "My older brother bought 7 drinking glasses."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "コップ",
+              "コップ",
+              "drinking glass"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄はコップをいくつ買いましたか。",
+                "あにはコップをいくつかいましたか。",
+                "How many drinking glasses did my older brother buy?"
+              ],
+              "options": [
+                [
+                  "六つ",
+                  "むっつ",
+                  "six things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "My older brother bought 7 drinking glasses.",
+              "pictureOptions": [
+                "六つ",
+                "七つ",
+                "八つ",
+                "三つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がコップを七つ買いましたか。",
+                "だれがコップをななつかいましたか。",
+                "Who bought 7 drinking glasses?"
+              ],
+              "options": [
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence attributes the purchase of 7 to my older brother."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "七つ",
+            "ななつ"
+          ],
+          "sentence": [
+            "箱が七つ、かばんが八つあります。",
+            "はこがななつ、かばんがやっつあります。",
+            "There are 7 boxes, and 8 bags."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "箱はいくつありますか。",
+                "はこはいくつありますか。",
+                "How many boxes are there?"
+              ],
+              "options": [
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "六つ",
+                  "むっつ",
+                  "six things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives 7 as the number of boxes.",
+              "pictureOptions": [
+                "三つ",
+                "六つ",
+                "七つ",
+                "八つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "七つあるのは何ですか。",
+                "ななつあるのはなんですか。",
+                "Which item are there seven of?"
+              ],
+              "options": [
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives seven as the number of boxes."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "七つ",
+            "ななつ"
+          ],
+          "sentence": [
+            "兄はコップを七つ、姉はコップを六つ買いました。",
+            "あにはコップをななつ、あねはコップをむっつかいました。",
+            "My older brother bought 7 drinking glasses. My older sister bought 6 drinking glasses."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "コップ",
+              "コップ",
+              "drinking glass"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄はコップをいくつ買いましたか。",
+                "あにはコップをいくつかいましたか。",
+                "How many drinking glasses did my older brother buy?"
+              ],
+              "options": [
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "六つ",
+                  "むっつ",
+                  "six things"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "My older brother bought 7; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "七つ",
+                "八つ",
+                "三つ",
+                "六つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がコップを七つ買いましたか。",
+                "だれがコップをななつかいましたか。",
+                "Who bought 7 drinking glasses?"
+              ],
+              "options": [
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence attributes the purchase of 7 to my older brother."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "八つ",
+      "slug": "yattsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "八つ",
+            "やっつ"
+          ],
+          "sentence": [
+            "石が八つあります。",
+            "いしがやっつあります。",
+            "There are 8 stones."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "石はいくつありますか。",
+                "いしはいくつありますか。",
+                "How many stones are there?"
+              ],
+              "options": [
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives 8 as the number of stones.",
+              "pictureOptions": [
+                "二つ",
+                "七つ",
+                "八つ",
+                "九つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "八つあるのは何ですか。",
+                "やっつあるのはなんですか。",
+                "Which item are there eight of?"
+              ],
+              "options": [
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence gives eight as the number of stones."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "八つ",
+            "やっつ"
+          ],
+          "sentence": [
+            "妹はクッキーを八つ買いました。",
+            "いもうとはクッキーをやっつかいました。",
+            "My younger sister bought 8 cookies."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "妹",
+              "いもうと",
+              "my younger sister"
+            ],
+            [
+              "クッキー",
+              "クッキー",
+              "cookie"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "妹はクッキーをいくつ買いましたか。",
+                "いもうとはクッキーをいくつかいましたか。",
+                "How many cookies did my younger sister buy?"
+              ],
+              "options": [
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "My younger sister bought 8 cookies.",
+              "pictureOptions": [
+                "八つ",
+                "九つ",
+                "二つ",
+                "七つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がクッキーを八つ買いましたか。",
+                "だれがクッキーをやっつかいましたか。",
+                "Who bought 8 cookies?"
+              ],
+              "options": [
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "妹",
+                  "いもうと",
+                  "my younger sister"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence attributes the purchase of 8 to my younger sister."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "八つ",
+            "やっつ"
+          ],
+          "sentence": [
+            "石が八つ、玉が七つあります。",
+            "いしがやっつ、たまがななつあります。",
+            "There are 8 stones, and 7 balls."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "石はいくつありますか。",
+                "いしはいくつありますか。",
+                "How many stones are there?"
+              ],
+              "options": [
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence gives 8 as the number of stones.",
+              "pictureOptions": [
+                "七つ",
+                "八つ",
+                "九つ",
+                "二つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "八つあるのは何ですか。",
+                "やっつあるのはなんですか。",
+                "Which item are there eight of?"
+              ],
+              "options": [
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ],
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives eight as the number of stones."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "八つ",
+            "やっつ"
+          ],
+          "sentence": [
+            "妹はクッキーを八つ、兄はクッキーを九つ買いました。",
+            "いもうとはクッキーをやっつ、あにはクッキーをここのつかいました。",
+            "My younger sister bought 8 cookies. My older brother bought 9 cookies."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "妹",
+              "いもうと",
+              "my younger sister"
+            ],
+            [
+              "クッキー",
+              "クッキー",
+              "cookie"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "妹はクッキーをいくつ買いましたか。",
+                "いもうとはクッキーをいくつかいましたか。",
+                "How many cookies did my younger sister buy?"
+              ],
+              "options": [
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "My younger sister bought 8; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "九つ",
+                "二つ",
+                "七つ",
+                "八つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がクッキーを八つ買いましたか。",
+                "だれがクッキーをやっつかいましたか。",
+                "Who bought 8 cookies?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "妹",
+                  "いもうと",
+                  "my younger sister"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence attributes the purchase of 8 to my younger sister."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "九つ",
+      "slug": "kokonotsu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "九つ",
+            "ここのつ"
+          ],
+          "sentence": [
+            "かばんが九つあります。",
+            "かばんがここのつあります。",
+            "There are 9 bags."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "かばんはいくつありますか。",
+                "かばんはいくつありますか。",
+                "How many bags are there?"
+              ],
+              "options": [
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives 9 as the number of bags.",
+              "pictureOptions": [
+                "七つ",
+                "八つ",
+                "九つ",
+                "三つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "九つあるのは何ですか。",
+                "ここのつあるのはなんですか。",
+                "Which item are there nine of?"
+              ],
+              "options": [
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ],
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence gives nine as the number of bags."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "九つ",
+            "ここのつ"
+          ],
+          "sentence": [
+            "友達はお菓子を九つ買いました。",
+            "ともだちはおかしをここのつかいました。",
+            "My friend bought 9 snacks."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "お菓子",
+              "おかし",
+              "sweets; snacks"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "友達はお菓子をいくつ買いましたか。",
+                "ともだちはおかしをいくつかいましたか。",
+                "How many snacks did my friend buy?"
+              ],
+              "options": [
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "My friend bought 9 snacks.",
+              "pictureOptions": [
+                "九つ",
+                "三つ",
+                "七つ",
+                "八つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がお菓子を九つ買いましたか。",
+                "だれがおかしをここのつかいましたか。",
+                "Who bought 9 snacks?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence attributes the purchase of 9 to my friend."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "九つ",
+            "ここのつ"
+          ],
+          "sentence": [
+            "かばんが九つ、箱が八つあります。",
+            "かばんがここのつ、はこがやっつあります。",
+            "There are 9 bags, and 8 boxes."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "かばん",
+              "かばん",
+              "bag"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "ある",
+              "ある",
+              "to exist (inanimate)"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "石",
+              "いし",
+              "stone"
+            ],
+            [
+              "玉",
+              "たま",
+              "ball"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "かばんはいくつありますか。",
+                "かばんはいくつありますか。",
+                "How many bags are there?"
+              ],
+              "options": [
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence gives 9 as the number of bags.",
+              "pictureOptions": [
+                "八つ",
+                "九つ",
+                "三つ",
+                "七つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "九つあるのは何ですか。",
+                "ここのつあるのはなんですか。",
+                "Which item are there nine of?"
+              ],
+              "options": [
+                [
+                  "玉",
+                  "たま",
+                  "ball"
+                ],
+                [
+                  "かばん",
+                  "かばん",
+                  "bag"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "石",
+                  "いし",
+                  "stone"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence gives nine as the number of bags."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "九つ",
+            "ここのつ"
+          ],
+          "sentence": [
+            "友達はお菓子を九つ、先生はお菓子を八つ買いました。",
+            "ともだちはおかしをここのつ、せんせいはおかしをやっつかいました。",
+            "My friend bought 9 snacks. The teacher bought 8 snacks."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "subject-ga",
+            "counting",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "お菓子",
+              "おかし",
+              "sweets; snacks"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "友達はお菓子をいくつ買いましたか。",
+                "ともだちはおかしをいくつかいましたか。",
+                "How many snacks did my friend buy?"
+              ],
+              "options": [
+                [
+                  "三つ",
+                  "みっつ",
+                  "three things"
+                ],
+                [
+                  "七つ",
+                  "ななつ",
+                  "seven things"
+                ],
+                [
+                  "八つ",
+                  "やっつ",
+                  "eight things"
+                ],
+                [
+                  "九つ",
+                  "ここのつ",
+                  "nine things"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "My friend bought 9; the other person's quantity is irrelevant.",
+              "pictureOptions": [
+                "三つ",
+                "七つ",
+                "八つ",
+                "九つ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がお菓子を九つ買いましたか。",
+                "だれがおかしをここのつかいましたか。",
+                "Who bought 9 snacks?"
+              ],
+              "options": [
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence attributes the purchase of 9 to my friend."
+            }
+          ],
+          "reviewNotes": "The general ～つ counter counts purchased objects. Family terms refer to the speaker's own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter."
+        }
+      ]
+    },
+    {
+      "text": "一人",
+      "slug": "hitori",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "一人",
+            "ひとり"
+          ],
+          "sentence": [
+            "公園に子どもが一人います。",
+            "こうえんにこどもがひとりいます。",
+            "There is one child in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園には子どもが何人いますか。",
+                "こうえんにはこどもがなんにんいますか。",
+                "How many children are in the park?"
+              ],
+              "options": [
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The stated number in the park is 1."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "子どもはどこにいますか。",
+                "こどもはどこにいますか。",
+                "Where is the child?"
+              ],
+              "options": [
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence locates the child in the park."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "一人",
+            "ひとり"
+          ],
+          "sentence": [
+            "兄は一人で映画を見ます。",
+            "あにはひとりでえいがをみます。",
+            "My older brother watches a movie alone."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "妹",
+              "いもうと",
+              "my younger sister"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "映画",
+              "えいが",
+              "movie"
+            ],
+            [
+              "テレビ",
+              "テレビ",
+              "television"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "地図",
+              "ちず",
+              "map"
+            ],
+            [
+              "見る",
+              "みる",
+              "to watch; to see"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄は誰と映画を見ますか。",
+                "あにはだれとえいがをみますか。",
+                "Who does my older brother watch a movie with?"
+              ],
+              "options": [
+                [
+                  "母と",
+                  "ははと",
+                  "with my mother"
+                ],
+                [
+                  "父と",
+                  "ちちと",
+                  "with my father"
+                ],
+                [
+                  "一人で",
+                  "ひとりで",
+                  "alone"
+                ],
+                [
+                  "妹と",
+                  "いもうとと",
+                  "with my younger sister"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "一人で means that my older brother watches by himself; no companion joins him."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "兄は一人で何を見ますか。",
+                "あにはひとりでなにをみますか。",
+                "What does my older brother watch alone?"
+              ],
+              "options": [
+                [
+                  "テレビ",
+                  "テレビ",
+                  "television"
+                ],
+                [
+                  "写真",
+                  "しゃしん",
+                  "photograph"
+                ],
+                [
+                  "地図",
+                  "ちず",
+                  "map"
+                ],
+                [
+                  "映画",
+                  "えいが",
+                  "movie"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "He watches a movie alone."
+            }
+          ],
+          "reviewNotes": "This variant teaches 一人で (alone/by oneself), separately from the one-person counting use. 一人で naturally answers the question about a companion by explaining that he watches by himself."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "一人",
+            "ひとり"
+          ],
+          "sentence": [
+            "公園に子どもが一人、学校に子どもが三人います。",
+            "こうえんにこどもがひとり、がっこうにこどもがさんにんいます。",
+            "There is one child in the park. There are 3 children in the school."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園には子どもが何人いますか。",
+                "こうえんにはこどもがなんにんいますか。",
+                "How many children are in the park?"
+              ],
+              "options": [
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The stated number in the park is 1."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "子どもが一人いるのはどこですか。",
+                "こどもがひとりいるのはどこですか。",
+                "Where is there one child?"
+              ],
+              "options": [
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The park has 1; the school has 3."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "一人",
+            "ひとり"
+          ],
+          "sentence": [
+            "兄は一人で映画を見ます。妹は友達と映画を見ます。",
+            "あにはひとりでえいがをみます。いもうとはともだちとえいがをみます。",
+            "My older brother watches a movie alone. My younger sister watches a movie with a friend."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "妹",
+              "いもうと",
+              "my younger sister"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "映画",
+              "えいが",
+              "movie"
+            ],
+            [
+              "テレビ",
+              "テレビ",
+              "television"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "地図",
+              "ちず",
+              "map"
+            ],
+            [
+              "見る",
+              "みる",
+              "to watch; to see"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄は誰と映画を見ますか。",
+                "あにはだれとえいがをみますか。",
+                "Who does my older brother watch a movie with?"
+              ],
+              "options": [
+                [
+                  "父と",
+                  "ちちと",
+                  "with my father"
+                ],
+                [
+                  "一人で",
+                  "ひとりで",
+                  "alone"
+                ],
+                [
+                  "妹と",
+                  "いもうとと",
+                  "with my younger sister"
+                ],
+                [
+                  "友達と",
+                  "ともだちと",
+                  "with a friend"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "一人で means that my older brother watches by himself; no companion joins him."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が一人で映画を見ますか。",
+                "だれがひとりでえいがをみますか。",
+                "Who watches the movie alone?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "妹",
+                  "いもうと",
+                  "my younger sister"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "My older brother watches alone; my younger sister watches with a friend."
+            }
+          ],
+          "reviewNotes": "This variant teaches 一人で (alone/by oneself), separately from the one-person counting use. 一人で naturally answers the question about a companion by explaining that he watches by himself."
+        }
+      ]
+    },
+    {
+      "text": "二人",
+      "slug": "futari",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "二人",
+            "ふたり"
+          ],
+          "sentence": [
+            "図書館に学生が二人います。",
+            "としょかんにがくせいがふたりいます。",
+            "There are 2 students in the library."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "図書館には学生が何人いますか。",
+                "としょかんにはがくせいがなんにんいますか。",
+                "How many students are in the library?"
+              ],
+              "options": [
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The stated number in the library is 2."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "学生はどこにいますか。",
+                "がくせいはどこにいますか。",
+                "Where are the students?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "図書館",
+                  "としょかん",
+                  "library"
+                ],
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence locates the students in the library."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "二人",
+            "ふたり"
+          ],
+          "sentence": [
+            "学生が二人、パンを食べています。",
+            "がくせいがふたり、パンをたべています。",
+            "Two students are eating bread."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "progressive",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "ご飯",
+              "ごはん",
+              "rice; meal"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "ケーキ",
+              "ケーキ",
+              "cake"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学生は何人いますか。",
+                "がくせいはなんにんいますか。",
+                "How many students are there?"
+              ],
+              "options": [
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "Two students are eating bread."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "二人の学生は何を食べていますか。",
+                "ふたりのがくせいはなにをたべていますか。",
+                "What are the two students eating?"
+              ],
+              "options": [
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "ケーキ",
+                  "ケーキ",
+                  "cake"
+                ],
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "ご飯",
+                  "ごはん",
+                  "rice; meal"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The sentence says the two students are eating bread."
+            }
+          ],
+          "reviewNotes": "Two students and (in the contrastive version) three teachers are separate groups. Written choices avoid overlapping depictions of teacher/student identities."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "二人",
+            "ふたり"
+          ],
+          "sentence": [
+            "図書館に学生が二人、教室に学生が四人います。",
+            "としょかんにがくせいがふたり、きょうしつにがくせいがよにんいます。",
+            "There are 2 students in the library. There are 4 students in the classroom."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "図書館には学生が何人いますか。",
+                "としょかんにはがくせいがなんにんいますか。",
+                "How many students are in the library?"
+              ],
+              "options": [
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The stated number in the library is 2."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "学生が二人いるのはどこですか。",
+                "がくせいがふたりいるのはどこですか。",
+                "Where are there 2 students?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "図書館",
+                  "としょかん",
+                  "library"
+                ],
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The library has 2; the classroom has 4."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "二人",
+            "ふたり"
+          ],
+          "sentence": [
+            "学生が二人、パンを食べています。先生が三人、ご飯を食べています。",
+            "がくせいがふたり、パンをたべています。せんせいがさんにん、ごはんをたべています。",
+            "Two students are eating bread. Three teachers are eating rice."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "progressive",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "ご飯",
+              "ごはん",
+              "rice; meal"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "ケーキ",
+              "ケーキ",
+              "cake"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学生は何人いますか。",
+                "がくせいはなんにんいますか。",
+                "How many students are there?"
+              ],
+              "options": [
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "There are two students; the teachers in the contrastive version are a separate group."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "二人の学生は何を食べていますか。",
+                "ふたりのがくせいはなにをたべていますか。",
+                "What are the two students eating?"
+              ],
+              "options": [
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "ケーキ",
+                  "ケーキ",
+                  "cake"
+                ],
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "ご飯",
+                  "ごはん",
+                  "rice; meal"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The students are eating bread; the teachers in the contrastive version eat rice."
+            }
+          ],
+          "reviewNotes": "Two students and (in the contrastive version) three teachers are separate groups. Written choices avoid overlapping depictions of teacher/student identities."
+        }
+      ]
+    },
+    {
+      "text": "三人",
+      "slug": "sannin",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "三人",
+            "さんにん"
+          ],
+          "sentence": [
+            "学校に子どもが三人います。",
+            "がっこうにこどもがさんにんいます。",
+            "There are 3 children in the school."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学校には子どもが何人いますか。",
+                "がっこうにはこどもがなんにんいますか。",
+                "How many children are in the school?"
+              ],
+              "options": [
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The stated number in the school is 3."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "子どもはどこにいますか。",
+                "こどもはどこにいますか。",
+                "Where are the children?"
+              ],
+              "options": [
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence locates the children in the school."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "三人",
+            "さんにん"
+          ],
+          "sentence": [
+            "子どもが三人、公園で遊んでいます。",
+            "こどもがさんにん、こうえんであそんでいます。",
+            "Three children are playing in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "progressive",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "遊ぶ",
+              "あそぶ",
+              "to play"
+            ],
+            [
+              "勉強する",
+              "べんきょうする",
+              "to study"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "子どもは何人で遊んでいますか。",
+                "こどもはなんにんであそんでいますか。",
+                "How many children are playing together?"
+              ],
+              "options": [
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The playing group contains three children."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "三人の子どもはどこで遊んでいますか。",
+                "さんにんのこどもはどこであそんでいますか。",
+                "Where are the three children playing?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The three children are playing in the park."
+            }
+          ],
+          "reviewNotes": "People-count readings are さんにん and よにん. Distinguish the three playing children from the separate studying group in the contrastive version."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "三人",
+            "さんにん"
+          ],
+          "sentence": [
+            "学校に子どもが三人、公園に子どもが二人います。",
+            "がっこうにこどもがさんにん、こうえんにこどもがふたりいます。",
+            "There are 3 children in the school. There are 2 children in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "short-forms",
+            "relative-clauses",
+            "copula",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "いる",
+              "いる",
+              "to exist (animate)"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学校には子どもが何人いますか。",
+                "がっこうにはこどもがなんにんいますか。",
+                "How many children are in the school?"
+              ],
+              "options": [
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ],
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The stated number in the school is 3."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "子どもが三人いるのはどこですか。",
+                "こどもがさんにんいるのはどこですか。",
+                "Where are there 3 children?"
+              ],
+              "options": [
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The school has 3; the park has 2."
+            }
+          ],
+          "reviewNotes": "People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "三人",
+            "さんにん"
+          ],
+          "sentence": [
+            "子どもが三人、公園で遊んでいます。学生が四人、学校で勉強しています。",
+            "こどもがさんにん、こうえんであそんでいます。がくせいがよにん、がっこうでべんきょうしています。",
+            "Three children are playing in the park. Four students are studying at school."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "progressive",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "子ども",
+              "こども",
+              "child"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "home"
+            ],
+            [
+              "遊ぶ",
+              "あそぶ",
+              "to play"
+            ],
+            [
+              "勉強する",
+              "べんきょうする",
+              "to study"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "子どもは何人で遊んでいますか。",
+                "こどもはなんにんであそんでいますか。",
+                "How many children are playing together?"
+              ],
+              "options": [
+                [
+                  "三人",
+                  "さんにん",
+                  "three people"
+                ],
+                [
+                  "四人",
+                  "よにん",
+                  "four people"
+                ],
+                [
+                  "一人",
+                  "ひとり",
+                  "one person"
+                ],
+                [
+                  "二人",
+                  "ふたり",
+                  "two people"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "Three children are playing; the four students are a separate group."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "三人の子どもはどこで遊んでいますか。",
+                "さんにんのこどもはどこであそんでいますか。",
+                "Where are the three children playing?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "home"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The three children play in the park; the four students study at school."
+            }
+          ],
+          "reviewNotes": "People-count readings are さんにん and よにん. Distinguish the three playing children from the separate studying group in the contrastive version."
+        }
+      ]
+    }
+  ]
+}

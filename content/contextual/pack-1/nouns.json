@@ -1,0 +1,5366 @@
+{
+  "targets": [
+    {
+      "text": "山",
+      "slug": "yama",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "山",
+            "やま"
+          ],
+          "sentence": [
+            "町の北に山があります。",
+            "まちのきたにやまがあります。",
+            "There is a mountain north of town."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "北",
+              "きた",
+              "north"
+            ],
+            [
+              "南",
+              "みなみ",
+              "south"
+            ],
+            [
+              "東",
+              "ひがし",
+              "east"
+            ],
+            [
+              "西",
+              "にし",
+              "west"
+            ],
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "林",
+              "はやし",
+              "woods"
+            ],
+            [
+              "田んぼ",
+              "たんぼ",
+              "rice field"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "町の北に何がありますか。",
+                "まちのきたになにがありますか。",
+                "What is north of town?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "林",
+                  "はやし",
+                  "woods"
+                ],
+                [
+                  "田んぼ",
+                  "たんぼ",
+                  "rice field"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The mountain is north of town.",
+              "pictureOptions": [
+                "川",
+                "山",
+                "林",
+                "田んぼ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "山はどこにありますか。",
+                "やまはどこにありますか。",
+                "Where is the mountain?"
+              ],
+              "options": [
+                [
+                  "町の南",
+                  "まちのみなみ",
+                  "south of town"
+                ],
+                [
+                  "町の北",
+                  "まちのきた",
+                  "north of town"
+                ],
+                [
+                  "町の東",
+                  "まちのひがし",
+                  "east of town"
+                ],
+                [
+                  "町の西",
+                  "まちのにし",
+                  "west of town"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The sentence locates the mountain north of town."
+            }
+          ],
+          "reviewNotes": "North is a relation to town, not the top of a picture. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "山",
+            "やま"
+          ],
+          "sentence": [
+            "山で写真を撮ります。",
+            "やまでしゃしんをとります。",
+            "I take photographs in the mountains."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "海",
+              "うみ",
+              "sea"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "撮る",
+              "とる",
+              "take a photograph"
+            ],
+            [
+              "泳ぐ",
+              "およぐ",
+              "swim"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで写真を撮りますか。",
+                "どこでしゃしんをとりますか。",
+                "Where do I take photographs?"
+              ],
+              "options": [
+                [
+                  "海",
+                  "うみ",
+                  "sea"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The photographs are taken in the mountains."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "山で何をしますか。",
+                "やまでなにをしますか。",
+                "What do I do in the mountains?"
+              ],
+              "options": [
+                [
+                  "泳ぎます",
+                  "およぎます",
+                  "swim"
+                ],
+                [
+                  "本を読みます",
+                  "ほんをよみます",
+                  "read a book"
+                ],
+                [
+                  "写真を撮ります",
+                  "しゃしんをとります",
+                  "take photographs"
+                ],
+                [
+                  "走ります",
+                  "はしります",
+                  "run"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The activity in the mountains is taking photographs."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "山",
+            "やま"
+          ],
+          "sentence": [
+            "町の北に山があります。町の南に川があります。",
+            "まちのきたにやまがあります。まちのみなみにかわがあります。",
+            "There is a mountain north of town. There is a river south of town."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "北",
+              "きた",
+              "north"
+            ],
+            [
+              "南",
+              "みなみ",
+              "south"
+            ],
+            [
+              "東",
+              "ひがし",
+              "east"
+            ],
+            [
+              "西",
+              "にし",
+              "west"
+            ],
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "林",
+              "はやし",
+              "woods"
+            ],
+            [
+              "田んぼ",
+              "たんぼ",
+              "rice field"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "町の北に何がありますか。",
+                "まちのきたになにがありますか。",
+                "What is north of town?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "林",
+                  "はやし",
+                  "woods"
+                ],
+                [
+                  "田んぼ",
+                  "たんぼ",
+                  "rice field"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "North is the mountain; south is the river.",
+              "pictureOptions": [
+                "川",
+                "山",
+                "林",
+                "田んぼ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "山はどこにありますか。",
+                "やまはどこにありますか。",
+                "Where is the mountain?"
+              ],
+              "options": [
+                [
+                  "町の南",
+                  "まちのみなみ",
+                  "south of town"
+                ],
+                [
+                  "町の北",
+                  "まちのきた",
+                  "north of town"
+                ],
+                [
+                  "町の東",
+                  "まちのひがし",
+                  "east of town"
+                ],
+                [
+                  "町の西",
+                  "まちのにし",
+                  "west of town"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The mountain is north of town, while the river is south."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "山",
+            "やま"
+          ],
+          "sentence": [
+            "山では写真を撮ります。海では泳ぎます。",
+            "やまではしゃしんをとります。うみではおよぎます。",
+            "In the mountains I take photographs. At the sea I swim."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "海",
+              "うみ",
+              "sea"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "撮る",
+              "とる",
+              "take a photograph"
+            ],
+            [
+              "泳ぐ",
+              "およぐ",
+              "swim"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで写真を撮りますか。",
+                "どこでしゃしんをとりますか。",
+                "Where do I take photographs?"
+              ],
+              "options": [
+                [
+                  "海",
+                  "うみ",
+                  "sea"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Photographs belong to the mountain activity; swimming belongs to the sea."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "山で何をしますか。",
+                "やまでなにをしますか。",
+                "What do I do in the mountains?"
+              ],
+              "options": [
+                [
+                  "泳ぎます",
+                  "およぎます",
+                  "swim"
+                ],
+                [
+                  "本を読みます",
+                  "ほんをよみます",
+                  "read a book"
+                ],
+                [
+                  "写真を撮ります",
+                  "しゃしんをとります",
+                  "take photographs"
+                ],
+                [
+                  "走ります",
+                  "はしります",
+                  "run"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "In the mountains the activity is taking photographs, not swimming."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "川",
+      "slug": "kawa",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "川",
+            "かわ"
+          ],
+          "sentence": [
+            "学校の近くに川があります。",
+            "がっこうのちかくにかわがあります。",
+            "There is a river near the school."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "病院",
+              "びょういん",
+              "hospital"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "近く",
+              "ちかく",
+              "nearby"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学校の近くに何がありますか。",
+                "がっこうのちかくになにがありますか。",
+                "What is near the school?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "林",
+                  "はやし",
+                  "woods"
+                ],
+                [
+                  "田んぼ",
+                  "たんぼ",
+                  "rice field"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence places a river near the school.",
+              "pictureOptions": [
+                "川",
+                "山",
+                "林",
+                "田んぼ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "川は何の近くにありますか。",
+                "かわはなんのちかくにありますか。",
+                "What is the river near?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "病院",
+                  "びょういん",
+                  "hospital"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The river is near the school."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "川",
+            "かわ"
+          ],
+          "sentence": [
+            "川で魚を見ます。",
+            "かわでさかなをみます。",
+            "I see fish in the river."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "海",
+              "うみ",
+              "sea"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "湖",
+              "みずうみ",
+              "lake"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで魚を見ますか。",
+                "どこでさかなをみますか。",
+                "Where do I see fish?"
+              ],
+              "options": [
+                [
+                  "海",
+                  "うみ",
+                  "sea"
+                ],
+                [
+                  "池",
+                  "いけ",
+                  "pond"
+                ],
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "湖",
+                  "みずうみ",
+                  "lake"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The fish are seen in the river."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "川で何を見ますか。",
+                "かわでなにをみますか。",
+                "What do I see in the river?"
+              ],
+              "options": [
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ],
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "魚",
+                  "さかな",
+                  "fish"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence says that I see fish."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "川",
+            "かわ"
+          ],
+          "sentence": [
+            "学校の近くに川があります。駅の近くに山があります。",
+            "がっこうのちかくにかわがあります。えきのちかくにやまがあります。",
+            "There is a river near the school. There is a mountain near the station."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "病院",
+              "びょういん",
+              "hospital"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "近く",
+              "ちかく",
+              "nearby"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "山",
+              "やま",
+              "mountain"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学校の近くに何がありますか。",
+                "がっこうのちかくになにがありますか。",
+                "What is near the school?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "山",
+                  "やま",
+                  "mountain"
+                ],
+                [
+                  "林",
+                  "はやし",
+                  "woods"
+                ],
+                [
+                  "田んぼ",
+                  "たんぼ",
+                  "rice field"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The river is near the school; the mountain is near the station.",
+              "pictureOptions": [
+                "川",
+                "山",
+                "林",
+                "田んぼ"
+              ]
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "川は何の近くにありますか。",
+                "かわはなんのちかくにありますか。",
+                "What is the river near?"
+              ],
+              "options": [
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "病院",
+                  "びょういん",
+                  "hospital"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The river belongs to the school location, not the station location."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "川",
+            "かわ"
+          ],
+          "sentence": [
+            "川で魚を見ます。公園で鳥を見ます。",
+            "かわでさかなをみます。こうえんでとりをみます。",
+            "I see fish in the river. I see birds in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "海",
+              "うみ",
+              "sea"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "湖",
+              "みずうみ",
+              "lake"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで魚を見ますか。",
+                "どこでさかなをみますか。",
+                "Where do I see fish?"
+              ],
+              "options": [
+                [
+                  "海",
+                  "うみ",
+                  "sea"
+                ],
+                [
+                  "池",
+                  "いけ",
+                  "pond"
+                ],
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "湖",
+                  "みずうみ",
+                  "lake"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Fish are seen in the river; birds are seen in the park."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "川で何を見ますか。",
+                "かわでなにをみますか。",
+                "What do I see in the river?"
+              ],
+              "options": [
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ],
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "魚",
+                  "さかな",
+                  "fish"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The river is associated with fish, while the park is associated with birds."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "口",
+      "slug": "kuchi",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "口",
+            "くち"
+          ],
+          "sentence": [
+            "口を開けます。",
+            "くちをあけます。",
+            "I open my mouth."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "口",
+              "くち",
+              "mouth"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "開ける",
+              "あける",
+              "open"
+            ],
+            [
+              "閉じる",
+              "とじる",
+              "close"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "wash"
+            ],
+            [
+              "拭く",
+              "ふく",
+              "wipe"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "何を開けますか。",
+                "なにをあけますか。",
+                "What do I open?"
+              ],
+              "options": [
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ],
+                [
+                  "窓",
+                  "まど",
+                  "window"
+                ],
+                [
+                  "口",
+                  "くち",
+                  "mouth"
+                ],
+                [
+                  "本",
+                  "ほん",
+                  "book"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The object being opened is the mouth."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "口をどうしますか。",
+                "くちをどうしますか。",
+                "What do I do with my mouth?"
+              ],
+              "options": [
+                [
+                  "閉じます",
+                  "とじます",
+                  "close it"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "wash it"
+                ],
+                [
+                  "拭きます",
+                  "ふきます",
+                  "wipe it"
+                ],
+                [
+                  "開けます",
+                  "あけます",
+                  "open it"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The stated action is opening the mouth."
+            }
+          ],
+          "reviewNotes": "Literal body-part meaning; avoid the entrance or opening sense of 口."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "口",
+            "くち"
+          ],
+          "sentence": [
+            "口の中に飴があります。",
+            "くちのなかにあめがあります。",
+            "There is candy in my mouth."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "口",
+              "くち",
+              "mouth"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "飴",
+              "あめ",
+              "candy"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "飴はどこにありますか。",
+                "あめはどこにありますか。",
+                "Where is the candy?"
+              ],
+              "options": [
+                [
+                  "箱の中",
+                  "はこのなか",
+                  "inside the box"
+                ],
+                [
+                  "口の中",
+                  "くちのなか",
+                  "inside the mouth"
+                ],
+                [
+                  "袋の中",
+                  "ふくろのなか",
+                  "inside the bag"
+                ],
+                [
+                  "机の上",
+                  "つくえのうえ",
+                  "on the desk"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The candy is inside the mouth."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "口の中に何がありますか。",
+                "くちのなかになにがありますか。",
+                "What is inside my mouth?"
+              ],
+              "options": [
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "飴",
+                  "あめ",
+                  "candy"
+                ],
+                [
+                  "水",
+                  "みず",
+                  "water"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Candy is the item stated to be in the mouth."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "口",
+            "くち"
+          ],
+          "sentence": [
+            "口を開けます。目を閉じます。",
+            "くちをあけます。めをとじます。",
+            "I open my mouth. I close my eyes."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "口",
+              "くち",
+              "mouth"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "開ける",
+              "あける",
+              "open"
+            ],
+            [
+              "閉じる",
+              "とじる",
+              "close"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "wash"
+            ],
+            [
+              "拭く",
+              "ふく",
+              "wipe"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "何を開けますか。",
+                "なにをあけますか。",
+                "What do I open?"
+              ],
+              "options": [
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ],
+                [
+                  "窓",
+                  "まど",
+                  "window"
+                ],
+                [
+                  "口",
+                  "くち",
+                  "mouth"
+                ],
+                [
+                  "本",
+                  "ほん",
+                  "book"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The mouth is opened; the eyes are closed."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "口をどうしますか。",
+                "くちをどうしますか。",
+                "What do I do with my mouth?"
+              ],
+              "options": [
+                [
+                  "閉じます",
+                  "とじます",
+                  "close it"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "wash it"
+                ],
+                [
+                  "拭きます",
+                  "ふきます",
+                  "wipe it"
+                ],
+                [
+                  "開けます",
+                  "あけます",
+                  "open it"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "Opening belongs to the mouth, while closing belongs to the eyes."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "口",
+            "くち"
+          ],
+          "sentence": [
+            "口の中に飴があります。袋の中にパンがあります。",
+            "くちのなかにあめがあります。ふくろのなかにパンがあります。",
+            "There is candy in my mouth. There is bread in the bag."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "口",
+              "くち",
+              "mouth"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "飴",
+              "あめ",
+              "candy"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "パン",
+              "パン",
+              "bread"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "飴はどこにありますか。",
+                "あめはどこにありますか。",
+                "Where is the candy?"
+              ],
+              "options": [
+                [
+                  "箱の中",
+                  "はこのなか",
+                  "inside the box"
+                ],
+                [
+                  "口の中",
+                  "くちのなか",
+                  "inside the mouth"
+                ],
+                [
+                  "袋の中",
+                  "ふくろのなか",
+                  "inside the bag"
+                ],
+                [
+                  "机の上",
+                  "つくえのうえ",
+                  "on the desk"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The candy is inside the mouth; the bread is inside the bag."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "口の中に何がありますか。",
+                "くちのなかになにがありますか。",
+                "What is inside my mouth?"
+              ],
+              "options": [
+                [
+                  "パン",
+                  "パン",
+                  "bread"
+                ],
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "飴",
+                  "あめ",
+                  "candy"
+                ],
+                [
+                  "水",
+                  "みず",
+                  "water"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The mouth contains candy, while the bag contains bread."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "入り口",
+      "slug": "iriguchi",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "入り口",
+            "いりぐち"
+          ],
+          "sentence": [
+            "入り口は右にあります。",
+            "いりぐちはみぎにあります。",
+            "The entrance is on the right."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "入り口",
+              "いりぐち",
+              "entrance"
+            ],
+            [
+              "出口",
+              "でぐち",
+              "exit"
+            ],
+            [
+              "受付",
+              "うけつけ",
+              "reception desk"
+            ],
+            [
+              "トイレ",
+              "トイレ",
+              "restroom"
+            ],
+            [
+              "右",
+              "みぎ",
+              "right"
+            ],
+            [
+              "左",
+              "ひだり",
+              "left"
+            ],
+            [
+              "前",
+              "まえ",
+              "front"
+            ],
+            [
+              "後ろ",
+              "うしろ",
+              "back"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "右に何がありますか。",
+                "みぎになにがありますか。",
+                "What is on the right?"
+              ],
+              "options": [
+                [
+                  "出口",
+                  "でぐち",
+                  "exit"
+                ],
+                [
+                  "受付",
+                  "うけつけ",
+                  "reception desk"
+                ],
+                [
+                  "トイレ",
+                  "トイレ",
+                  "restroom"
+                ],
+                [
+                  "入り口",
+                  "いりぐち",
+                  "entrance"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The entrance is stated to be on the right."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "入り口はどこにありますか。",
+                "いりぐちはどこにありますか。",
+                "Where is the entrance?"
+              ],
+              "options": [
+                [
+                  "右",
+                  "みぎ",
+                  "right"
+                ],
+                [
+                  "左",
+                  "ひだり",
+                  "left"
+                ],
+                [
+                  "前",
+                  "まえ",
+                  "front"
+                ],
+                [
+                  "後ろ",
+                  "うしろ",
+                  "back"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The entrance is on the right."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "入り口",
+            "いりぐち"
+          ],
+          "sentence": [
+            "入り口で友達を待ちます。",
+            "いりぐちでともだちをまちます。",
+            "I wait for my friend at the entrance."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "入り口",
+              "いりぐち",
+              "entrance"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "wait for"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで友達を待ちますか。",
+                "どこでともだちをまちますか。",
+                "Where do I wait for my friend?"
+              ],
+              "options": [
+                [
+                  "入り口",
+                  "いりぐち",
+                  "entrance"
+                ],
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The meeting location is the entrance."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "入り口で誰を待ちますか。",
+                "いりぐちでだれをまちますか。",
+                "Who do I wait for at the entrance?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The person I wait for is my friend."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "入り口",
+            "いりぐち"
+          ],
+          "sentence": [
+            "入り口は右にあります。出口は左にあります。",
+            "いりぐちはみぎにあります。でぐちはひだりにあります。",
+            "The entrance is on the right. The exit is on the left."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "入り口",
+              "いりぐち",
+              "entrance"
+            ],
+            [
+              "出口",
+              "でぐち",
+              "exit"
+            ],
+            [
+              "受付",
+              "うけつけ",
+              "reception desk"
+            ],
+            [
+              "トイレ",
+              "トイレ",
+              "restroom"
+            ],
+            [
+              "右",
+              "みぎ",
+              "right"
+            ],
+            [
+              "左",
+              "ひだり",
+              "left"
+            ],
+            [
+              "前",
+              "まえ",
+              "front"
+            ],
+            [
+              "後ろ",
+              "うしろ",
+              "back"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "右に何がありますか。",
+                "みぎになにがありますか。",
+                "What is on the right?"
+              ],
+              "options": [
+                [
+                  "出口",
+                  "でぐち",
+                  "exit"
+                ],
+                [
+                  "受付",
+                  "うけつけ",
+                  "reception desk"
+                ],
+                [
+                  "トイレ",
+                  "トイレ",
+                  "restroom"
+                ],
+                [
+                  "入り口",
+                  "いりぐち",
+                  "entrance"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The entrance is on the right, while the exit is on the left."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "入り口はどこにありますか。",
+                "いりぐちはどこにありますか。",
+                "Where is the entrance?"
+              ],
+              "options": [
+                [
+                  "右",
+                  "みぎ",
+                  "right"
+                ],
+                [
+                  "左",
+                  "ひだり",
+                  "left"
+                ],
+                [
+                  "前",
+                  "まえ",
+                  "front"
+                ],
+                [
+                  "後ろ",
+                  "うしろ",
+                  "back"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "Right belongs to the entrance, and left belongs to the exit."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "入り口",
+            "いりぐち"
+          ],
+          "sentence": [
+            "入り口で友達を待ちます。教室で先生を待ちます。",
+            "いりぐちでともだちをまちます。きょうしつでせんせいをまちます。",
+            "I wait for my friend at the entrance. I wait for my teacher in the classroom."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "入り口",
+              "いりぐち",
+              "entrance"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "友達",
+              "ともだち",
+              "friend"
+            ],
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "wait for"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "どこで友達を待ちますか。",
+                "どこでともだちをまちますか。",
+                "Where do I wait for my friend?"
+              ],
+              "options": [
+                [
+                  "入り口",
+                  "いりぐち",
+                  "entrance"
+                ],
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "I wait for my friend at the entrance, and my teacher in the classroom."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "入り口で誰を待ちますか。",
+                "いりぐちでだれをまちますか。",
+                "Who do I wait for at the entrance?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "友達",
+                  "ともだち",
+                  "friend"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "My friend belongs to the entrance location; my teacher belongs to the classroom."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "人",
+      "slug": "hito",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "人",
+            "ひと"
+          ],
+          "sentence": [
+            "公園で人を見ました。",
+            "こうえんでひとをみました。",
+            "I saw a person in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "house"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園で何を見ましたか。",
+                "こうえんでなにをみましたか。",
+                "What did I see in the park?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "人",
+                  "ひと",
+                  "person"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "I saw a person in the park."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "どこで人を見ましたか。",
+                "どこでひとをみましたか。",
+                "Where did I see the person?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "house"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The person was seen in the park."
+            }
+          ],
+          "reviewNotes": "人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "人",
+            "ひと"
+          ],
+          "sentence": [
+            "駅で人を見ました。",
+            "えきでひとをみました。",
+            "I saw a person at the station."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "house"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "駅で何を見ましたか。",
+                "えきでなにをみましたか。",
+                "What did I see at the station?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "人",
+                  "ひと",
+                  "person"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "I saw a person at the station."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "どこで人を見ましたか。",
+                "どこでひとをみましたか。",
+                "Where did I see the person?"
+              ],
+              "options": [
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "house"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The person was seen at the station."
+            }
+          ],
+          "reviewNotes": "人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "人",
+            "ひと"
+          ],
+          "sentence": [
+            "公園で人を見ました。川で鳥を見ました。",
+            "こうえんでひとをみました。かわでとりをみました。",
+            "I saw a person in the park. I saw a bird at the river."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "house"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園で何を見ましたか。",
+                "こうえんでなにをみましたか。",
+                "What did I see in the park?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "人",
+                  "ひと",
+                  "person"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "I saw a person in the park. The other sighting concerns an animal."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "どこで人を見ましたか。",
+                "どこでひとをみましたか。",
+                "Where did I see the person?"
+              ],
+              "options": [
+                [
+                  "川",
+                  "かわ",
+                  "river"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "house"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The person was seen in the park."
+            }
+          ],
+          "reviewNotes": "人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "人",
+            "ひと"
+          ],
+          "sentence": [
+            "駅で人を見ました。家で犬を見ました。",
+            "えきでひとをみました。いえでいぬをみました。",
+            "I saw a person at the station. I saw a dog at home."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "家",
+              "いえ",
+              "house"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "見る",
+              "みる",
+              "see"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "駅で何を見ましたか。",
+                "えきでなにをみましたか。",
+                "What did I see at the station?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "人",
+                  "ひと",
+                  "person"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "I saw a person at the station. The other sighting concerns an animal."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "どこで人を見ましたか。",
+                "どこでひとをみましたか。",
+                "Where did I see the person?"
+              ],
+              "options": [
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "家",
+                  "いえ",
+                  "house"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The person was seen at the station."
+            }
+          ],
+          "reviewNotes": "人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels."
+        }
+      ]
+    },
+    {
+      "text": "女",
+      "slug": "onna",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "女",
+            "おんな"
+          ],
+          "sentence": [
+            "公園に女の人がいます。",
+            "こうえんにおんなのひとがいます。",
+            "There is a woman in the park."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "女",
+              "おんな",
+              "woman; female"
+            ],
+            [
+              "女の人",
+              "おんなのひと",
+              "woman"
+            ],
+            [
+              "男の人",
+              "おとこのひと",
+              "man"
+            ],
+            [
+              "女の子",
+              "おんなのこ",
+              "girl"
+            ],
+            [
+              "男の子",
+              "おとこのこ",
+              "boy"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園には誰がいますか。",
+                "こうえんにはだれがいますか。",
+                "Who is in the park?"
+              ],
+              "options": [
+                [
+                  "男の人",
+                  "おとこのひと",
+                  "adult man"
+                ],
+                [
+                  "女の子",
+                  "おんなのこ",
+                  "girl"
+                ],
+                [
+                  "女の人",
+                  "おんなのひと",
+                  "adult woman"
+                ],
+                [
+                  "男の子",
+                  "おとこのこ",
+                  "boy"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The person mentioned is an adult woman."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "女の人はどこにいますか。",
+                "おんなのひとはどこにいますか。",
+                "Where is the woman?"
+              ],
+              "options": [
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The woman is in the park."
+            }
+          ],
+          "reviewNotes": "Use the natural neutral expression 女の人. Choices distinguish adult men/women and boys/girls, avoiding generic 人/大人 overlap."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "女",
+            "おんな"
+          ],
+          "sentence": [
+            "女の人は本を読んでいます。",
+            "おんなのひとはほんをよんでいます。",
+            "The woman is reading a book."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "progressive",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "女",
+              "おんな",
+              "woman; female"
+            ],
+            [
+              "女の人",
+              "おんなのひと",
+              "woman"
+            ],
+            [
+              "男の人",
+              "おとこのひと",
+              "man"
+            ],
+            [
+              "女の子",
+              "おんなのこ",
+              "girl"
+            ],
+            [
+              "男の子",
+              "おとこのこ",
+              "boy"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "eat"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "sleep"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "誰が本を読んでいますか。",
+                "だれがほんをよんでいますか。",
+                "Who is reading a book?"
+              ],
+              "options": [
+                [
+                  "男の人",
+                  "おとこのひと",
+                  "adult man"
+                ],
+                [
+                  "女の子",
+                  "おんなのこ",
+                  "girl"
+                ],
+                [
+                  "女の人",
+                  "おんなのひと",
+                  "adult woman"
+                ],
+                [
+                  "男の子",
+                  "おとこのこ",
+                  "boy"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The woman is the person reading."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "女の人は何をしていますか。",
+                "おんなのひとはなにをしていますか。",
+                "What is the woman doing?"
+              ],
+              "options": [
+                [
+                  "走っています",
+                  "はしっています",
+                  "is running"
+                ],
+                [
+                  "本を読んでいます",
+                  "ほんをよんでいます",
+                  "is reading a book"
+                ],
+                [
+                  "食べています",
+                  "たべています",
+                  "is eating"
+                ],
+                [
+                  "寝ています",
+                  "ねています",
+                  "is sleeping"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The woman is reading a book."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "女",
+            "おんな"
+          ],
+          "sentence": [
+            "公園に女の人がいます。駅に男の人がいます。",
+            "こうえんにおんなのひとがいます。えきにおとこのひとがいます。",
+            "There is a woman in the park. There is a man at the station."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "女",
+              "おんな",
+              "woman; female"
+            ],
+            [
+              "女の人",
+              "おんなのひと",
+              "woman"
+            ],
+            [
+              "男の人",
+              "おとこのひと",
+              "man"
+            ],
+            [
+              "女の子",
+              "おんなのこ",
+              "girl"
+            ],
+            [
+              "男の子",
+              "おとこのこ",
+              "boy"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園には誰がいますか。",
+                "こうえんにはだれがいますか。",
+                "Who is in the park?"
+              ],
+              "options": [
+                [
+                  "男の人",
+                  "おとこのひと",
+                  "adult man"
+                ],
+                [
+                  "女の子",
+                  "おんなのこ",
+                  "girl"
+                ],
+                [
+                  "女の人",
+                  "おんなのひと",
+                  "adult woman"
+                ],
+                [
+                  "男の子",
+                  "おとこのこ",
+                  "boy"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The woman is in the park; the man is at the station."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "女の人はどこにいますか。",
+                "おんなのひとはどこにいますか。",
+                "Where is the woman?"
+              ],
+              "options": [
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The woman belongs to the park location, not the station."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "女",
+            "おんな"
+          ],
+          "sentence": [
+            "女の人は本を読んでいます。男の人は走っています。",
+            "おんなのひとはほんをよんでいます。おとこのひとははしっています。",
+            "The woman is reading a book. The man is running."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "progressive",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "女",
+              "おんな",
+              "woman; female"
+            ],
+            [
+              "女の人",
+              "おんなのひと",
+              "woman"
+            ],
+            [
+              "男の人",
+              "おとこのひと",
+              "man"
+            ],
+            [
+              "女の子",
+              "おんなのこ",
+              "girl"
+            ],
+            [
+              "男の子",
+              "おとこのこ",
+              "boy"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "eat"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "sleep"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "誰が本を読んでいますか。",
+                "だれがほんをよんでいますか。",
+                "Who is reading a book?"
+              ],
+              "options": [
+                [
+                  "男の人",
+                  "おとこのひと",
+                  "adult man"
+                ],
+                [
+                  "女の子",
+                  "おんなのこ",
+                  "girl"
+                ],
+                [
+                  "女の人",
+                  "おんなのひと",
+                  "adult woman"
+                ],
+                [
+                  "男の子",
+                  "おとこのこ",
+                  "boy"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Reading is the woman activity; running is the man activity."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "女の人は何をしていますか。",
+                "おんなのひとはなにをしていますか。",
+                "What is the woman doing?"
+              ],
+              "options": [
+                [
+                  "走っています",
+                  "はしっています",
+                  "is running"
+                ],
+                [
+                  "本を読んでいます",
+                  "ほんをよんでいます",
+                  "is reading a book"
+                ],
+                [
+                  "食べています",
+                  "たべています",
+                  "is eating"
+                ],
+                [
+                  "寝ています",
+                  "ねています",
+                  "is sleeping"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The woman is reading, while the man is running."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "大人",
+      "slug": "otona",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "大人",
+            "おとな"
+          ],
+          "sentence": [
+            "部屋には大人が二人います。",
+            "へやにはおとながふたりいます。",
+            "There are two adults in the room."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "大人",
+              "おとな",
+              "adult"
+            ],
+            [
+              "子供",
+              "こども",
+              "child"
+            ],
+            [
+              "二人",
+              "ふたり",
+              "two people"
+            ],
+            [
+              "三人",
+              "さんにん",
+              "three people"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "部屋には誰が何人いますか。",
+                "へやにはだれがなんにんいますか。",
+                "Who is in the room, and how many are there?"
+              ],
+              "options": [
+                [
+                  "子供が二人",
+                  "こどもがふたり",
+                  "two children"
+                ],
+                [
+                  "大人が三人",
+                  "おとながさんにん",
+                  "three adults"
+                ],
+                [
+                  "子供が三人",
+                  "こどもがさんにん",
+                  "three children"
+                ],
+                [
+                  "大人が二人",
+                  "おとながふたり",
+                  "two adults"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The sentence states two adults in the room."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "大人はどこにいますか。",
+                "おとなはどこにいますか。",
+                "Where are the adults?"
+              ],
+              "options": [
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ],
+                [
+                  "部屋",
+                  "へや",
+                  "room"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The adults are in the room."
+            }
+          ],
+          "reviewNotes": "Phrase choices distinguish age group and count; no generic 人 or gender labels compete with 大人."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "大人",
+            "おとな"
+          ],
+          "sentence": [
+            "大人は本を読んでいます。",
+            "おとなはほんをよんでいます。",
+            "The adults are reading books."
+          ],
+          "grammarTags": [
+            "particles",
+            "progressive",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "大人",
+              "おとな",
+              "adult"
+            ],
+            [
+              "子供",
+              "こども",
+              "child"
+            ],
+            [
+              "二人",
+              "ふたり",
+              "two people"
+            ],
+            [
+              "三人",
+              "さんにん",
+              "three people"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "sleep"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "eat"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "誰が本を読んでいますか。",
+                "だれがほんをよんでいますか。",
+                "Who is reading books?"
+              ],
+              "options": [
+                [
+                  "子供",
+                  "こども",
+                  "children"
+                ],
+                [
+                  "大人",
+                  "おとな",
+                  "adults"
+                ],
+                [
+                  "犬",
+                  "いぬ",
+                  "dogs"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cats"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The adults are the people reading."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "大人は何をしていますか。",
+                "おとなはなにをしていますか。",
+                "What are the adults doing?"
+              ],
+              "options": [
+                [
+                  "走っています",
+                  "はしっています",
+                  "are running"
+                ],
+                [
+                  "寝ています",
+                  "ねています",
+                  "are sleeping"
+                ],
+                [
+                  "本を読んでいます",
+                  "ほんをよんでいます",
+                  "are reading books"
+                ],
+                [
+                  "食べています",
+                  "たべています",
+                  "are eating"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The adults are reading books."
+            }
+          ],
+          "reviewNotes": "Adult/child distinction; dog/cat choices are named animals, not overlapping human categories."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "大人",
+            "おとな"
+          ],
+          "sentence": [
+            "部屋には大人が二人います。公園には子供が三人います。",
+            "へやにはおとながふたりいます。こうえんにはこどもがさんにんいます。",
+            "There are two adults in the room. There are three children in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "location-existence",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "大人",
+              "おとな",
+              "adult"
+            ],
+            [
+              "子供",
+              "こども",
+              "child"
+            ],
+            [
+              "二人",
+              "ふたり",
+              "two people"
+            ],
+            [
+              "三人",
+              "さんにん",
+              "three people"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "部屋には誰が何人いますか。",
+                "へやにはだれがなんにんいますか。",
+                "Who is in the room, and how many are there?"
+              ],
+              "options": [
+                [
+                  "子供が二人",
+                  "こどもがふたり",
+                  "two children"
+                ],
+                [
+                  "大人が三人",
+                  "おとながさんにん",
+                  "three adults"
+                ],
+                [
+                  "子供が三人",
+                  "こどもがさんにん",
+                  "three children"
+                ],
+                [
+                  "大人が二人",
+                  "おとながふたり",
+                  "two adults"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The room has two adults; the park has three children."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "大人はどこにいますか。",
+                "おとなはどこにいますか。",
+                "Where are the adults?"
+              ],
+              "options": [
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ],
+                [
+                  "部屋",
+                  "へや",
+                  "room"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The adults are in the room, while the children are in the park."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "大人",
+            "おとな"
+          ],
+          "sentence": [
+            "大人は本を読んでいます。子供は走っています。",
+            "おとなはほんをよんでいます。こどもははしっています。",
+            "The adults are reading books. The children are running."
+          ],
+          "grammarTags": [
+            "particles",
+            "progressive",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "大人",
+              "おとな",
+              "adult"
+            ],
+            [
+              "子供",
+              "こども",
+              "child"
+            ],
+            [
+              "二人",
+              "ふたり",
+              "two people"
+            ],
+            [
+              "三人",
+              "さんにん",
+              "three people"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "本",
+              "ほん",
+              "book"
+            ],
+            [
+              "読む",
+              "よむ",
+              "read"
+            ],
+            [
+              "走る",
+              "はしる",
+              "run"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "sleep"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "eat"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "誰が本を読んでいますか。",
+                "だれがほんをよんでいますか。",
+                "Who is reading books?"
+              ],
+              "options": [
+                [
+                  "子供",
+                  "こども",
+                  "children"
+                ],
+                [
+                  "大人",
+                  "おとな",
+                  "adults"
+                ],
+                [
+                  "犬",
+                  "いぬ",
+                  "dogs"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cats"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "Reading belongs to the adults; running belongs to the children."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "大人は何をしていますか。",
+                "おとなはなにをしていますか。",
+                "What are the adults doing?"
+              ],
+              "options": [
+                [
+                  "走っています",
+                  "はしっています",
+                  "are running"
+                ],
+                [
+                  "寝ています",
+                  "ねています",
+                  "are sleeping"
+                ],
+                [
+                  "本を読んでいます",
+                  "ほんをよんでいます",
+                  "are reading books"
+                ],
+                [
+                  "食べています",
+                  "たべています",
+                  "are eating"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The adults read books, while the children run."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    },
+    {
+      "text": "力",
+      "slug": "chikara",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "力",
+            "ちから"
+          ],
+          "sentence": [
+            "父は力が強いです。",
+            "ちちはちからがつよいです。",
+            "My father is physically strong."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga",
+            "relative-clauses"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "力",
+              "ちから",
+              "strength"
+            ],
+            [
+              "強い",
+              "つよい",
+              "strong"
+            ],
+            [
+              "弱い",
+              "よわい",
+              "weak"
+            ],
+            [
+              "声",
+              "こえ",
+              "voice"
+            ],
+            [
+              "大きい",
+              "おおきい",
+              "loud; big"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "名前",
+              "なまえ",
+              "name"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父は何が強いですか。",
+                "ちちはなにがつよいですか。",
+                "What is strong about my father?"
+              ],
+              "options": [
+                [
+                  "声",
+                  "こえ",
+                  "voice"
+                ],
+                [
+                  "名前",
+                  "なまえ",
+                  "name"
+                ],
+                [
+                  "力",
+                  "ちから",
+                  "strength"
+                ],
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The strength described is my father’s physical strength."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "力が強い人は誰ですか。",
+                "ちからがつよいひとはだれですか。",
+                "Who is physically strong?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "My father is the person described as physically strong."
+            }
+          ],
+          "reviewNotes": "Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "力",
+            "ちから"
+          ],
+          "sentence": [
+            "兄は力が弱いです。",
+            "あにはちからがよわいです。",
+            "My older brother has little physical strength."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga",
+            "relative-clauses"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "力",
+              "ちから",
+              "strength"
+            ],
+            [
+              "強い",
+              "つよい",
+              "strong"
+            ],
+            [
+              "弱い",
+              "よわい",
+              "weak"
+            ],
+            [
+              "声",
+              "こえ",
+              "voice"
+            ],
+            [
+              "大きい",
+              "おおきい",
+              "loud; big"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "名前",
+              "なまえ",
+              "name"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄は何が弱いですか。",
+                "あにはなにがよわいですか。",
+                "What is weak about my older brother?"
+              ],
+              "options": [
+                [
+                  "声",
+                  "こえ",
+                  "voice"
+                ],
+                [
+                  "名前",
+                  "なまえ",
+                  "name"
+                ],
+                [
+                  "力",
+                  "ちから",
+                  "strength"
+                ],
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The weakness described is physical strength."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "力が弱い人は誰ですか。",
+                "ちからがよわいひとはだれですか。",
+                "Who has little physical strength?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "My older brother is the person described."
+            }
+          ],
+          "reviewNotes": "Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "力",
+            "ちから"
+          ],
+          "sentence": [
+            "父は力が強いです。兄は声が大きいです。",
+            "ちちはちからがつよいです。あにはこえがおおきいです。",
+            "My father is physically strong. My older brother has a loud voice."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga",
+            "relative-clauses"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "力",
+              "ちから",
+              "strength"
+            ],
+            [
+              "強い",
+              "つよい",
+              "strong"
+            ],
+            [
+              "弱い",
+              "よわい",
+              "weak"
+            ],
+            [
+              "声",
+              "こえ",
+              "voice"
+            ],
+            [
+              "大きい",
+              "おおきい",
+              "loud; big"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "名前",
+              "なまえ",
+              "name"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父は何が強いですか。",
+                "ちちはなにがつよいですか。",
+                "What is strong about my father?"
+              ],
+              "options": [
+                [
+                  "声",
+                  "こえ",
+                  "voice"
+                ],
+                [
+                  "名前",
+                  "なまえ",
+                  "name"
+                ],
+                [
+                  "力",
+                  "ちから",
+                  "strength"
+                ],
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Physical strength describes my father; a loud voice describes my brother."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "力が強い人は誰ですか。",
+                "ちからがつよいひとはだれですか。",
+                "Who is physically strong?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "My father has physical strength; my brother is described by his voice."
+            }
+          ],
+          "reviewNotes": "Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "力",
+            "ちから"
+          ],
+          "sentence": [
+            "兄は力が弱いです。姉は力が強いです。",
+            "あにはちからがよわいです。あねはちからがつよいです。",
+            "My older brother has little physical strength. My older sister is physically strong."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga",
+            "relative-clauses"
+          ],
+          "vocabulary": [
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "兄",
+              "あに",
+              "my older brother"
+            ],
+            [
+              "姉",
+              "あね",
+              "my older sister"
+            ],
+            [
+              "力",
+              "ちから",
+              "strength"
+            ],
+            [
+              "強い",
+              "つよい",
+              "strong"
+            ],
+            [
+              "弱い",
+              "よわい",
+              "weak"
+            ],
+            [
+              "声",
+              "こえ",
+              "voice"
+            ],
+            [
+              "大きい",
+              "おおきい",
+              "loud; big"
+            ],
+            [
+              "人",
+              "ひと",
+              "person"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "名前",
+              "なまえ",
+              "name"
+            ],
+            [
+              "目",
+              "め",
+              "eyes"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "兄は何が弱いですか。",
+                "あにはなにがよわいですか。",
+                "What is weak about my older brother?"
+              ],
+              "options": [
+                [
+                  "声",
+                  "こえ",
+                  "voice"
+                ],
+                [
+                  "名前",
+                  "なまえ",
+                  "name"
+                ],
+                [
+                  "力",
+                  "ちから",
+                  "strength"
+                ],
+                [
+                  "目",
+                  "め",
+                  "eyes"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The weak attribute of my brother is physical strength."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "力が強い人は誰ですか。",
+                "ちからがつよいひとはだれですか。",
+                "Who is physically strong?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "兄",
+                  "あに",
+                  "my older brother"
+                ],
+                [
+                  "姉",
+                  "あね",
+                  "my older sister"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "My sister is strong; my brother has little physical strength."
+            }
+          ],
+          "reviewNotes": "Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description."
+        }
+      ]
+    },
+    {
+      "text": "大きさ",
+      "slug": "ookisa",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "大きさ",
+            "おおきさ"
+          ],
+          "sentence": [
+            "箱の大きさを比べます。",
+            "はこのおおきさをくらべます。",
+            "I compare the sizes of the boxes."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "靴",
+              "くつ",
+              "shoes"
+            ],
+            [
+              "傘",
+              "かさ",
+              "umbrella"
+            ],
+            [
+              "大きさ",
+              "おおきさ",
+              "size"
+            ],
+            [
+              "色",
+              "いろ",
+              "color"
+            ],
+            [
+              "重さ",
+              "おもさ",
+              "weight"
+            ],
+            [
+              "値段",
+              "ねだん",
+              "price"
+            ],
+            [
+              "比べる",
+              "くらべる",
+              "compare"
+            ],
+            [
+              "調べる",
+              "しらべる",
+              "check; examine"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "箱の何を比べますか。",
+                "はこのなにをくらべますか。",
+                "What property of the boxes do I compare?"
+              ],
+              "options": [
+                [
+                  "色",
+                  "いろ",
+                  "color"
+                ],
+                [
+                  "重さ",
+                  "おもさ",
+                  "weight"
+                ],
+                [
+                  "値段",
+                  "ねだん",
+                  "price"
+                ],
+                [
+                  "大きさ",
+                  "おおきさ",
+                  "size"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The property being compared is size."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何の大きさを比べますか。",
+                "なんのおおきさをくらべますか。",
+                "What objects do I compare the sizes of?"
+              ],
+              "options": [
+                [
+                  "袋",
+                  "ふくろ",
+                  "bag"
+                ],
+                [
+                  "靴",
+                  "くつ",
+                  "shoes"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "傘",
+                  "かさ",
+                  "umbrella"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "I compare the boxes’ sizes."
+            }
+          ],
+          "reviewNotes": "大きさ names the size property; other choices name color, weight and price."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "大きさ",
+            "おおきさ"
+          ],
+          "sentence": [
+            "靴の大きさを調べます。",
+            "くつのおおきさをしらべます。",
+            "I check the size of the shoes."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "靴",
+              "くつ",
+              "shoes"
+            ],
+            [
+              "傘",
+              "かさ",
+              "umbrella"
+            ],
+            [
+              "大きさ",
+              "おおきさ",
+              "size"
+            ],
+            [
+              "色",
+              "いろ",
+              "color"
+            ],
+            [
+              "重さ",
+              "おもさ",
+              "weight"
+            ],
+            [
+              "値段",
+              "ねだん",
+              "price"
+            ],
+            [
+              "比べる",
+              "くらべる",
+              "compare"
+            ],
+            [
+              "調べる",
+              "しらべる",
+              "check; examine"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "靴の何を調べますか。",
+                "くつのなにをしらべますか。",
+                "What property of the shoes do I check?"
+              ],
+              "options": [
+                [
+                  "色",
+                  "いろ",
+                  "color"
+                ],
+                [
+                  "重さ",
+                  "おもさ",
+                  "weight"
+                ],
+                [
+                  "値段",
+                  "ねだん",
+                  "price"
+                ],
+                [
+                  "大きさ",
+                  "おおきさ",
+                  "size"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The property being checked is the shoes’ size."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何の大きさを調べますか。",
+                "なんのおおきさをしらべますか。",
+                "What do I check the size of?"
+              ],
+              "options": [
+                [
+                  "袋",
+                  "ふくろ",
+                  "bag"
+                ],
+                [
+                  "靴",
+                  "くつ",
+                  "shoes"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "傘",
+                  "かさ",
+                  "umbrella"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "I check the shoes’ size."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "大きさ",
+            "おおきさ"
+          ],
+          "sentence": [
+            "箱の大きさを比べます。袋の重さを比べます。",
+            "はこのおおきさをくらべます。ふくろのおもさをくらべます。",
+            "I compare the sizes of the boxes. I compare the weights of the bags."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "靴",
+              "くつ",
+              "shoes"
+            ],
+            [
+              "傘",
+              "かさ",
+              "umbrella"
+            ],
+            [
+              "大きさ",
+              "おおきさ",
+              "size"
+            ],
+            [
+              "色",
+              "いろ",
+              "color"
+            ],
+            [
+              "重さ",
+              "おもさ",
+              "weight"
+            ],
+            [
+              "値段",
+              "ねだん",
+              "price"
+            ],
+            [
+              "比べる",
+              "くらべる",
+              "compare"
+            ],
+            [
+              "調べる",
+              "しらべる",
+              "check; examine"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "箱の何を比べますか。",
+                "はこのなにをくらべますか。",
+                "What property of the boxes do I compare?"
+              ],
+              "options": [
+                [
+                  "色",
+                  "いろ",
+                  "color"
+                ],
+                [
+                  "重さ",
+                  "おもさ",
+                  "weight"
+                ],
+                [
+                  "値段",
+                  "ねだん",
+                  "price"
+                ],
+                [
+                  "大きさ",
+                  "おおきさ",
+                  "size"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "For boxes the compared property is size; for bags it is weight."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何の大きさを比べますか。",
+                "なんのおおきさをくらべますか。",
+                "What objects do I compare the sizes of?"
+              ],
+              "options": [
+                [
+                  "袋",
+                  "ふくろ",
+                  "bag"
+                ],
+                [
+                  "靴",
+                  "くつ",
+                  "shoes"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "傘",
+                  "かさ",
+                  "umbrella"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "Size belongs to the boxes; weight belongs to the bags."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "大きさ",
+            "おおきさ"
+          ],
+          "sentence": [
+            "靴の大きさを調べます。傘の値段を調べます。",
+            "くつのおおきさをしらべます。かさのねだんをしらべます。",
+            "I check the size of the shoes. I check the price of the umbrella."
+          ],
+          "grammarTags": [
+            "noun-no",
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "袋",
+              "ふくろ",
+              "bag"
+            ],
+            [
+              "靴",
+              "くつ",
+              "shoes"
+            ],
+            [
+              "傘",
+              "かさ",
+              "umbrella"
+            ],
+            [
+              "大きさ",
+              "おおきさ",
+              "size"
+            ],
+            [
+              "色",
+              "いろ",
+              "color"
+            ],
+            [
+              "重さ",
+              "おもさ",
+              "weight"
+            ],
+            [
+              "値段",
+              "ねだん",
+              "price"
+            ],
+            [
+              "比べる",
+              "くらべる",
+              "compare"
+            ],
+            [
+              "調べる",
+              "しらべる",
+              "check; examine"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "靴の何を調べますか。",
+                "くつのなにをしらべますか。",
+                "What property of the shoes do I check?"
+              ],
+              "options": [
+                [
+                  "色",
+                  "いろ",
+                  "color"
+                ],
+                [
+                  "重さ",
+                  "おもさ",
+                  "weight"
+                ],
+                [
+                  "値段",
+                  "ねだん",
+                  "price"
+                ],
+                [
+                  "大きさ",
+                  "おおきさ",
+                  "size"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "I check size for the shoes and price for the umbrella."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何の大きさを調べますか。",
+                "なんのおおきさをしらべますか。",
+                "What do I check the size of?"
+              ],
+              "options": [
+                [
+                  "袋",
+                  "ふくろ",
+                  "bag"
+                ],
+                [
+                  "靴",
+                  "くつ",
+                  "shoes"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ],
+                [
+                  "傘",
+                  "かさ",
+                  "umbrella"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The shoes’ size is checked; the umbrella’s price is checked."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation."
+        }
+      ]
+    }
+  ]
+}

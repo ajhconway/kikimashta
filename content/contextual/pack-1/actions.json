@@ -1,0 +1,6624 @@
+{
+  "targets": [
+    {
+      "text": "入る",
+      "slug": "hairu",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "入ります",
+            "はいります"
+          ],
+          "sentence": [
+            "先生は教室に入ります。",
+            "せんせいはきょうしつにはいります。",
+            "The teacher enters the classroom."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "入る",
+              "はいる",
+              "to enter"
+            ],
+            [
+              "出る",
+              "でる",
+              "to leave"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "to wait"
+            ],
+            [
+              "掃除する",
+              "そうじする",
+              "to clean"
+            ],
+            [
+              "乗る",
+              "のる",
+              "to get onto"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "to sleep"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生はどうしますか。",
+                "せんせいはどうしますか。",
+                "What does the teacher do?"
+              ],
+              "options": [
+                [
+                  "教室に入ります",
+                  "きょうしつにはいります",
+                  "enters the classroom"
+                ],
+                [
+                  "教室から出ます",
+                  "きょうしつからでます",
+                  "leaves the classroom"
+                ],
+                [
+                  "教室で待ちます",
+                  "きょうしつでまちます",
+                  "waits in the classroom"
+                ],
+                [
+                  "教室を掃除します",
+                  "きょうしつをそうじします",
+                  "cleans the classroom"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The teacher enters the classroom."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "先生はどこに入りますか。",
+                "せんせいはどこにはいりますか。",
+                "Where does the teacher enter?"
+              ],
+              "options": [
+                [
+                  "図書館",
+                  "としょかん",
+                  "library"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ],
+                [
+                  "教室",
+                  "きょうしつ",
+                  "classroom"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The stated destination is the classroom."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "入ります",
+            "はいります"
+          ],
+          "sentence": [
+            "猫は箱に入ります。",
+            "ねこははこにはいります。",
+            "The cat goes into the box."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "noun-no"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "入る",
+              "はいる",
+              "to enter"
+            ],
+            [
+              "出る",
+              "でる",
+              "to leave"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "to wait"
+            ],
+            [
+              "掃除する",
+              "そうじする",
+              "to clean"
+            ],
+            [
+              "乗る",
+              "のる",
+              "to get onto"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "to sleep"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "猫はどうしますか。",
+                "ねこはどうしますか。",
+                "What does the cat do?"
+              ],
+              "options": [
+                [
+                  "箱の上に乗ります",
+                  "はこのうえにのります",
+                  "gets onto the box"
+                ],
+                [
+                  "箱に入ります",
+                  "はこにはいります",
+                  "goes into the box"
+                ],
+                [
+                  "箱のそばで寝ます",
+                  "はこのそばでねます",
+                  "sleeps beside the box"
+                ],
+                [
+                  "箱から出ます",
+                  "はこからでます",
+                  "comes out of the box"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The cat moves into the box."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何が箱に入りますか。",
+                "なにがはこにはいりますか。",
+                "What goes into the box?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "魚",
+                  "さかな",
+                  "fish"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The cat goes into the box."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "入ります",
+            "はいります"
+          ],
+          "sentence": [
+            "先生は教室に入ります。学生は図書館に入ります。",
+            "せんせいはきょうしつにはいります。がくせいはとしょかんにはいります。",
+            "The teacher enters the classroom. The student enters the library."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "入る",
+              "はいる",
+              "to enter"
+            ],
+            [
+              "出る",
+              "でる",
+              "to leave"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "to wait"
+            ],
+            [
+              "掃除する",
+              "そうじする",
+              "to clean"
+            ],
+            [
+              "乗る",
+              "のる",
+              "to get onto"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "to sleep"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生はどうしますか。",
+                "せんせいはどうしますか。",
+                "What does the teacher do?"
+              ],
+              "options": [
+                [
+                  "図書館に入ります",
+                  "としょかんにはいります",
+                  "enters the library"
+                ],
+                [
+                  "教室から出ます",
+                  "きょうしつからでます",
+                  "leaves the classroom"
+                ],
+                [
+                  "図書館から出ます",
+                  "としょかんからでます",
+                  "leaves the library"
+                ],
+                [
+                  "教室に入ります",
+                  "きょうしつにはいります",
+                  "enters the classroom"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The teacher enters the classroom; the student enters the library."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "図書館には誰が入りますか。",
+                "としょかんにはだれがはいりますか。",
+                "Who enters the library?"
+              ],
+              "options": [
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The student, rather than the teacher, enters the library."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "入ります",
+            "はいります"
+          ],
+          "sentence": [
+            "猫は箱に入ります。犬は部屋から出ます。",
+            "ねこははこにはいります。いぬはへやからでます。",
+            "The cat goes into the box. The dog leaves the room."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "猫",
+              "ねこ",
+              "cat"
+            ],
+            [
+              "犬",
+              "いぬ",
+              "dog"
+            ],
+            [
+              "鳥",
+              "とり",
+              "bird"
+            ],
+            [
+              "魚",
+              "さかな",
+              "fish"
+            ],
+            [
+              "教室",
+              "きょうしつ",
+              "classroom"
+            ],
+            [
+              "図書館",
+              "としょかん",
+              "library"
+            ],
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "部屋",
+              "へや",
+              "room"
+            ],
+            [
+              "入る",
+              "はいる",
+              "to enter"
+            ],
+            [
+              "出る",
+              "でる",
+              "to leave"
+            ],
+            [
+              "待つ",
+              "まつ",
+              "to wait"
+            ],
+            [
+              "掃除する",
+              "そうじする",
+              "to clean"
+            ],
+            [
+              "乗る",
+              "のる",
+              "to get onto"
+            ],
+            [
+              "寝る",
+              "ねる",
+              "to sleep"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "猫はどうしますか。",
+                "ねこはどうしますか。",
+                "What does the cat do?"
+              ],
+              "options": [
+                [
+                  "箱から出ます",
+                  "はこからでます",
+                  "comes out of the box"
+                ],
+                [
+                  "部屋に入ります",
+                  "へやにはいります",
+                  "goes into the room"
+                ],
+                [
+                  "箱に入ります",
+                  "はこにはいります",
+                  "goes into the box"
+                ],
+                [
+                  "部屋から出ます",
+                  "へやからでます",
+                  "leaves the room"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The cat enters the box while the dog leaves the room."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何が箱に入りますか。",
+                "なにがはこにはいりますか。",
+                "What goes into the box?"
+              ],
+              "options": [
+                [
+                  "犬",
+                  "いぬ",
+                  "dog"
+                ],
+                [
+                  "猫",
+                  "ねこ",
+                  "cat"
+                ],
+                [
+                  "鳥",
+                  "とり",
+                  "bird"
+                ],
+                [
+                  "魚",
+                  "さかな",
+                  "fish"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "Entering the box belongs to the cat, not the dog."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        }
+      ]
+    },
+    {
+      "text": "上げる",
+      "slug": "ageru",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "上げます",
+            "あげます"
+          ],
+          "sentence": [
+            "父は右手を上げます。",
+            "ちちはみぎてをあげます。",
+            "My father raises his right hand."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父は右手をどうしますか。",
+                "ちちはみぎてをどうしますか。",
+                "What does my father do with his right hand?"
+              ],
+              "options": [
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "He raises his right hand."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "父は何を上げますか。",
+                "ちちはなにをあげますか。",
+                "What does my father raise?"
+              ],
+              "options": [
+                [
+                  "右手",
+                  "みぎて",
+                  "right hand"
+                ],
+                [
+                  "左手",
+                  "ひだりて",
+                  "left hand"
+                ],
+                [
+                  "右足",
+                  "みぎあし",
+                  "right foot"
+                ],
+                [
+                  "左足",
+                  "ひだりあし",
+                  "left foot"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The right hand, not another limb, is raised."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "上げます",
+            "あげます"
+          ],
+          "sentence": [
+            "先生は旗を上げます。",
+            "せんせいははたをあげます。",
+            "The teacher raises the flag."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生は旗をどうしますか。",
+                "せんせいははたをどうしますか。",
+                "What does the teacher do with the flag?"
+              ],
+              "options": [
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The teacher raises the flag."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が旗を上げますか。",
+                "だれがはたをあげますか。",
+                "Who raises the flag?"
+              ],
+              "options": [
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The teacher is the person raising the flag."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "上げます",
+            "あげます"
+          ],
+          "sentence": [
+            "先生は右手を上げます。学生は左手を下げます。",
+            "せんせいはみぎてをあげます。がくせいはひだりてをさげます。",
+            "The teacher raises their right hand. The student lowers their left hand."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生は右手をどうしますか。",
+                "せんせいはみぎてをどうしますか。",
+                "What does the teacher do with their right hand?"
+              ],
+              "options": [
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ],
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The teacher raises a hand; the student lowers a hand."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が右手を上げますか。",
+                "だれがみぎてをあげますか。",
+                "Who raises their right hand?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The teacher is linked to raising the right hand."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "上げます",
+            "あげます"
+          ],
+          "sentence": [
+            "先生は赤い旗を上げます。青い旗を下げます。",
+            "せんせいはあかいはたをあげます。あおいはたをさげます。",
+            "The teacher raises the red flag. They lower the blue flag."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "adjectives",
+            "noun-no"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生は赤い旗をどうしますか。",
+                "せんせいはあかいはたをどうしますか。",
+                "What does the teacher do with the red flag?"
+              ],
+              "options": [
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The red flag is raised and the blue flag is lowered."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "先生は何色の旗を上げますか。",
+                "せんせいはなにいろのはたをあげますか。",
+                "What color flag does the teacher raise?"
+              ],
+              "options": [
+                [
+                  "青い旗",
+                  "あおいはた",
+                  "blue flag"
+                ],
+                [
+                  "赤い旗",
+                  "あかいはた",
+                  "red flag"
+                ],
+                [
+                  "白い旗",
+                  "しろいはた",
+                  "white flag"
+                ],
+                [
+                  "緑の旗",
+                  "みどりのはた",
+                  "green flag"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "Raising applies to the red flag."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        }
+      ]
+    },
+    {
+      "text": "下げる",
+      "slug": "sageru",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "下げます",
+            "さげます"
+          ],
+          "sentence": [
+            "母は左手を下げます。",
+            "はははひだりてをさげます。",
+            "My mother lowers her left hand."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "母は左手をどうしますか。",
+                "はははひだりてをどうしますか。",
+                "What does my mother do with her left hand?"
+              ],
+              "options": [
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "She lowers her left hand."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "母は何を下げますか。",
+                "はははなにをさげますか。",
+                "What does my mother lower?"
+              ],
+              "options": [
+                [
+                  "右手",
+                  "みぎて",
+                  "right hand"
+                ],
+                [
+                  "左手",
+                  "ひだりて",
+                  "left hand"
+                ],
+                [
+                  "右足",
+                  "みぎあし",
+                  "right foot"
+                ],
+                [
+                  "左足",
+                  "ひだりあし",
+                  "left foot"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The left hand is lowered."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "下げます",
+            "さげます"
+          ],
+          "sentence": [
+            "学生は旗を下げます。",
+            "がくせいははたをさげます。",
+            "The student lowers the flag."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学生は旗をどうしますか。",
+                "がくせいははたをどうしますか。",
+                "What does the student do with the flag?"
+              ],
+              "options": [
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ],
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The student lowers the flag."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が旗を下げますか。",
+                "だれがはたをさげますか。",
+                "Who lowers the flag?"
+              ],
+              "options": [
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The student is the person lowering the flag."
+            }
+          ],
+          "reviewNotes": "One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "下げます",
+            "さげます"
+          ],
+          "sentence": [
+            "母は左手を下げます。父は右手を上げます。",
+            "はははひだりてをさげます。ちちはみぎてをあげます。",
+            "My mother lowers her left hand. My father raises his right hand."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "母は左手をどうしますか。",
+                "はははひだりてをどうしますか。",
+                "What does my mother do with her left hand?"
+              ],
+              "options": [
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The mother lowers her left hand; the father raises his right hand."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が左手を下げますか。",
+                "だれがひだりてをさげますか。",
+                "Who lowers their left hand?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "Lowering the left hand is the mother's action."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "下げます",
+            "さげます"
+          ],
+          "sentence": [
+            "学生は青い旗を下げます。白い旗を上げます。",
+            "がくせいはあおいはたをさげます。しろいはたをあげます。",
+            "The student lowers the blue flag. They raise the white flag."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs",
+            "adjectives",
+            "noun-no"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "右手",
+              "みぎて",
+              "right hand"
+            ],
+            [
+              "左手",
+              "ひだりて",
+              "left hand"
+            ],
+            [
+              "右足",
+              "みぎあし",
+              "right foot"
+            ],
+            [
+              "左足",
+              "ひだりあし",
+              "left foot"
+            ],
+            [
+              "旗",
+              "はた",
+              "flag"
+            ],
+            [
+              "赤い",
+              "あかい",
+              "red"
+            ],
+            [
+              "青い",
+              "あおい",
+              "blue"
+            ],
+            [
+              "白い",
+              "しろい",
+              "white"
+            ],
+            [
+              "緑",
+              "みどり",
+              "green"
+            ],
+            [
+              "何色",
+              "なにいろ",
+              "what color"
+            ],
+            [
+              "上げる",
+              "あげる",
+              "to raise"
+            ],
+            [
+              "下げる",
+              "さげる",
+              "to lower"
+            ],
+            [
+              "洗う",
+              "あらう",
+              "to wash"
+            ],
+            [
+              "振る",
+              "ふる",
+              "to wave"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学生は青い旗をどうしますか。",
+                "がくせいはあおいはたをどうしますか。",
+                "What does the student do with the blue flag?"
+              ],
+              "options": [
+                [
+                  "上げます",
+                  "あげます",
+                  "raises"
+                ],
+                [
+                  "下げます",
+                  "さげます",
+                  "lowers"
+                ],
+                [
+                  "洗います",
+                  "あらいます",
+                  "washes"
+                ],
+                [
+                  "振ります",
+                  "ふります",
+                  "waves"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The blue flag is lowered; the white flag is raised."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "学生は何色の旗を下げますか。",
+                "がくせいはなにいろのはたをさげますか。",
+                "What color flag does the student lower?"
+              ],
+              "options": [
+                [
+                  "青い旗",
+                  "あおいはた",
+                  "blue flag"
+                ],
+                [
+                  "赤い旗",
+                  "あかいはた",
+                  "red flag"
+                ],
+                [
+                  "白い旗",
+                  "しろいはた",
+                  "white flag"
+                ],
+                [
+                  "緑の旗",
+                  "みどりのはた",
+                  "green flag"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "Lowering applies to the blue flag."
+            }
+          ],
+          "reviewNotes": "Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments."
+        }
+      ]
+    },
+    {
+      "text": "人工",
+      "slug": "jinkou-artificial",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "人工",
+            "じんこう"
+          ],
+          "sentence": [
+            "机の上には人工の花があります。",
+            "つくえのうえにはじんこうのはながあります。",
+            "There are artificial flowers on the desk."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "人工",
+              "じんこう",
+              "artificial; man-made"
+            ],
+            [
+              "花",
+              "はな",
+              "flower"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "本物",
+              "ほんもの",
+              "real thing"
+            ],
+            [
+              "自然",
+              "しぜん",
+              "nature; natural"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "棚",
+              "たな",
+              "shelf"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "床",
+              "ゆか",
+              "floor"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "どんな",
+              "どんな",
+              "what kind of"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "机の上の花はどんな花ですか。",
+                "つくえのうえのはなはどんなはなですか。",
+                "What kind of flowers are on the desk?"
+              ],
+              "options": [
+                [
+                  "人工の花",
+                  "じんこうのはな",
+                  "artificial flowers"
+                ],
+                [
+                  "本物の花",
+                  "ほんもののはな",
+                  "real flowers"
+                ],
+                [
+                  "花の写真",
+                  "はなのしゃしん",
+                  "a photograph of flowers"
+                ],
+                [
+                  "花の絵",
+                  "はなのえ",
+                  "a picture of flowers"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The flowers on the desk are artificial, not real flowers or an image of flowers."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "人工の花はどこにありますか。",
+                "じんこうのはなはどこにありますか。",
+                "Where are the artificial flowers?"
+              ],
+              "options": [
+                [
+                  "棚の上",
+                  "たなのうえ",
+                  "on the shelf"
+                ],
+                [
+                  "窓のそば",
+                  "まどのそば",
+                  "by the window"
+                ],
+                [
+                  "机の上",
+                  "つくえのうえ",
+                  "on the desk"
+                ],
+                [
+                  "床の上",
+                  "ゆかのうえ",
+                  "on the floor"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The artificial flowers are on the desk."
+            }
+          ],
+          "reviewNotes": "Artificial/real/image choices remain text-only because isolated illustrations cannot reliably represent the distinction."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "人工",
+            "じんこう"
+          ],
+          "sentence": [
+            "人工の池は公園の中にあります。",
+            "じんこうのいけはこうえんのなかにあります。",
+            "The man-made pond is in the park."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "人工",
+              "じんこう",
+              "artificial; man-made"
+            ],
+            [
+              "花",
+              "はな",
+              "flower"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "本物",
+              "ほんもの",
+              "real thing"
+            ],
+            [
+              "自然",
+              "しぜん",
+              "nature; natural"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "棚",
+              "たな",
+              "shelf"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "床",
+              "ゆか",
+              "floor"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "どんな",
+              "どんな",
+              "what kind of"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "公園の池はどんな池ですか。",
+                "こうえんのいけはどんないけですか。",
+                "What kind of pond is in the park?"
+              ],
+              "options": [
+                [
+                  "自然の池",
+                  "しぜんのいけ",
+                  "a natural pond"
+                ],
+                [
+                  "人工の池",
+                  "じんこうのいけ",
+                  "a man-made pond"
+                ],
+                [
+                  "池の写真",
+                  "いけのしゃしん",
+                  "a photograph of a pond"
+                ],
+                [
+                  "池の絵",
+                  "いけのえ",
+                  "a picture of a pond"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The pond is described as man-made rather than natural or an image of a pond."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "人工の池はどこにありますか。",
+                "じんこうのいけはどこにありますか。",
+                "Where is the man-made pond?"
+              ],
+              "options": [
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ],
+                [
+                  "駅",
+                  "えき",
+                  "station"
+                ],
+                [
+                  "公園",
+                  "こうえん",
+                  "park"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The stated location of the man-made pond is the park."
+            }
+          ],
+          "reviewNotes": "Use 自然 for the natural-origin contrast: a man-made pond is also real."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "人工",
+            "じんこう"
+          ],
+          "sentence": [
+            "机の上には人工の花があります。棚の上には本物の花があります。",
+            "つくえのうえにはじんこうのはながあります。たなのうえにはほんもののはながあります。",
+            "There are artificial flowers on the desk. There are real flowers on the shelf."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "人工",
+              "じんこう",
+              "artificial; man-made"
+            ],
+            [
+              "花",
+              "はな",
+              "flower"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "本物",
+              "ほんもの",
+              "real thing"
+            ],
+            [
+              "自然",
+              "しぜん",
+              "nature; natural"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "棚",
+              "たな",
+              "shelf"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "床",
+              "ゆか",
+              "floor"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "どんな",
+              "どんな",
+              "what kind of"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "机の上の花はどんな花ですか。",
+                "つくえのうえのはなはどんなはなですか。",
+                "What kind of flowers are on the desk?"
+              ],
+              "options": [
+                [
+                  "本物の花",
+                  "ほんもののはな",
+                  "real flowers"
+                ],
+                [
+                  "花の写真",
+                  "はなのしゃしん",
+                  "a photograph of flowers"
+                ],
+                [
+                  "人工の花",
+                  "じんこうのはな",
+                  "artificial flowers"
+                ],
+                [
+                  "花の絵",
+                  "はなのえ",
+                  "a picture of flowers"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The artificial flowers belong to the desk; the real flowers belong to the shelf."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "人工の花はどこにありますか。",
+                "じんこうのはなはどこにありますか。",
+                "Where are the artificial flowers?"
+              ],
+              "options": [
+                [
+                  "机の上",
+                  "つくえのうえ",
+                  "on the desk"
+                ],
+                [
+                  "棚の上",
+                  "たなのうえ",
+                  "on the shelf"
+                ],
+                [
+                  "窓のそば",
+                  "まどのそば",
+                  "by the window"
+                ],
+                [
+                  "床の上",
+                  "ゆかのうえ",
+                  "on the floor"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The desk holds the artificial flowers; the shelf holds the real ones."
+            }
+          ],
+          "reviewNotes": "Keep each type of flower bound to its stated location."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "人工",
+            "じんこう"
+          ],
+          "sentence": [
+            "この公園には人工の池があります。あの公園には自然の川があります。",
+            "このこうえんにはじんこうのいけがあります。あのこうえんにはしぜんのかわがあります。",
+            "This park has a man-made pond. That park has a natural river."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "location-existence"
+          ],
+          "vocabulary": [
+            [
+              "公園",
+              "こうえん",
+              "park"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "school"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "駅",
+              "えき",
+              "station"
+            ],
+            [
+              "人工",
+              "じんこう",
+              "artificial; man-made"
+            ],
+            [
+              "花",
+              "はな",
+              "flower"
+            ],
+            [
+              "池",
+              "いけ",
+              "pond"
+            ],
+            [
+              "川",
+              "かわ",
+              "river"
+            ],
+            [
+              "本物",
+              "ほんもの",
+              "real thing"
+            ],
+            [
+              "自然",
+              "しぜん",
+              "nature; natural"
+            ],
+            [
+              "写真",
+              "しゃしん",
+              "photograph"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "棚",
+              "たな",
+              "shelf"
+            ],
+            [
+              "上",
+              "うえ",
+              "on; above"
+            ],
+            [
+              "窓",
+              "まど",
+              "window"
+            ],
+            [
+              "床",
+              "ゆか",
+              "floor"
+            ],
+            [
+              "そば",
+              "そば",
+              "beside"
+            ],
+            [
+              "中",
+              "なか",
+              "inside"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "どんな",
+              "どんな",
+              "what kind of"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どこ",
+              "どこ",
+              "where"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "この公園には何がありますか。",
+                "このこうえんにはなにがありますか。",
+                "What is in this park?"
+              ],
+              "options": [
+                [
+                  "自然の池",
+                  "しぜんのいけ",
+                  "a natural pond"
+                ],
+                [
+                  "人工の川",
+                  "じんこうのかわ",
+                  "a man-made river"
+                ],
+                [
+                  "自然の川",
+                  "しぜんのかわ",
+                  "a natural river"
+                ],
+                [
+                  "人工の池",
+                  "じんこうのいけ",
+                  "a man-made pond"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "This park has the man-made pond, not either river or a natural pond."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "人工の池はどこにありますか。",
+                "じんこうのいけはどこにありますか。",
+                "Where is the man-made pond?"
+              ],
+              "options": [
+                [
+                  "あの公園",
+                  "あのこうえん",
+                  "that park"
+                ],
+                [
+                  "この公園",
+                  "このこうえん",
+                  "this park"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "school"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shop"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The man-made pond belongs to this park; the natural river belongs to that park."
+            }
+          ],
+          "reviewNotes": "Answers contrast origin and water feature, keeping each choice distinct."
+        }
+      ]
+    },
+    {
+      "text": "人口",
+      "slug": "jinkou-population",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "人口",
+            "じんこう"
+          ],
+          "sentence": [
+            "この町の人口は千人です。",
+            "このまちのじんこうはせんにんです。",
+            "This town has a population of one thousand."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "copula",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "人口",
+              "じんこう",
+              "population"
+            ],
+            [
+              "天気",
+              "てんき",
+              "weather"
+            ],
+            [
+              "時間",
+              "じかん",
+              "time"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "place"
+            ],
+            [
+              "千人",
+              "せんにん",
+              "one thousand people"
+            ],
+            [
+              "二千人",
+              "にせんにん",
+              "two thousand people"
+            ],
+            [
+              "三千人",
+              "さんぜんにん",
+              "three thousand people"
+            ],
+            [
+              "四千人",
+              "よんせんにん",
+              "four thousand people"
+            ],
+            [
+              "車",
+              "くるま",
+              "cars"
+            ],
+            [
+              "店",
+              "みせ",
+              "shops"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "schools"
+            ],
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "村",
+              "むら",
+              "village"
+            ],
+            [
+              "市",
+              "し",
+              "city"
+            ],
+            [
+              "多い",
+              "おおい",
+              "many; large in number"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; small in number"
+            ],
+            [
+              "同じ",
+              "おなじ",
+              "the same"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "隣",
+              "となり",
+              "neighboring"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "話",
+              "はなし",
+              "topic; story"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "何の話ですか。",
+                "なんのはなしですか。",
+                "What is the topic?"
+              ],
+              "options": [
+                [
+                  "天気",
+                  "てんき",
+                  "weather"
+                ],
+                [
+                  "人口",
+                  "じんこう",
+                  "population"
+                ],
+                [
+                  "時間",
+                  "じかん",
+                  "time"
+                ],
+                [
+                  "場所",
+                  "ばしょ",
+                  "place"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The stated topic is the town's population, a count of its residents."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "この町の人口は何人ですか。",
+                "このまちのじんこうはなんにんですか。",
+                "What is this town's population?"
+              ],
+              "options": [
+                [
+                  "千人",
+                  "せんにん",
+                  "one thousand people"
+                ],
+                [
+                  "二千人",
+                  "にせんにん",
+                  "two thousand people"
+                ],
+                [
+                  "三千人",
+                  "さんぜんにん",
+                  "three thousand people"
+                ],
+                [
+                  "四千人",
+                  "よんせんにん",
+                  "four thousand people"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The sentence gives a population of one thousand."
+            }
+          ],
+          "reviewNotes": "人工 is not used as a homophonic distractor."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "人口",
+            "じんこう"
+          ],
+          "sentence": [
+            "あの村は人口が少ないです。",
+            "あのむらはじんこうがすくないです。",
+            "That village has a small population."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga"
+          ],
+          "vocabulary": [
+            [
+              "人口",
+              "じんこう",
+              "population"
+            ],
+            [
+              "天気",
+              "てんき",
+              "weather"
+            ],
+            [
+              "時間",
+              "じかん",
+              "time"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "place"
+            ],
+            [
+              "千人",
+              "せんにん",
+              "one thousand people"
+            ],
+            [
+              "二千人",
+              "にせんにん",
+              "two thousand people"
+            ],
+            [
+              "三千人",
+              "さんぜんにん",
+              "three thousand people"
+            ],
+            [
+              "四千人",
+              "よんせんにん",
+              "four thousand people"
+            ],
+            [
+              "車",
+              "くるま",
+              "cars"
+            ],
+            [
+              "店",
+              "みせ",
+              "shops"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "schools"
+            ],
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "村",
+              "むら",
+              "village"
+            ],
+            [
+              "市",
+              "し",
+              "city"
+            ],
+            [
+              "多い",
+              "おおい",
+              "many; large in number"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; small in number"
+            ],
+            [
+              "同じ",
+              "おなじ",
+              "the same"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "隣",
+              "となり",
+              "neighboring"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "話す",
+              "はなす",
+              "to talk"
+            ],
+            [
+              "について",
+              "について",
+              "about"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "あの村は何が少ないですか。",
+                "あのむらはなにがすくないですか。",
+                "What is small in number in that village?"
+              ],
+              "options": [
+                [
+                  "車",
+                  "くるま",
+                  "cars"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shops"
+                ],
+                [
+                  "人口",
+                  "じんこう",
+                  "population"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "schools"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The population is described as small; no other count is given."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "あの村の人口はどうですか。",
+                "あのむらのじんこうはどうですか。",
+                "How is that village's population described?"
+              ],
+              "options": [
+                [
+                  "多いです",
+                  "おおいです",
+                  "It is large."
+                ],
+                [
+                  "同じです",
+                  "おなじです",
+                  "It is the same."
+                ],
+                [
+                  "わかりません",
+                  "わかりません",
+                  "It is not known."
+                ],
+                [
+                  "少ないです",
+                  "すくないです",
+                  "It is small."
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The village's population is described as small."
+            }
+          ],
+          "reviewNotes": "多い/少ない describe the number of residents, not physical area."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "人口",
+            "じんこう"
+          ],
+          "sentence": [
+            "この町の人口は千人です。隣の町の人口は二千人です。",
+            "このまちのじんこうはせんにんです。となりのまちのじんこうはにせんにんです。",
+            "This town has a population of one thousand. The neighboring town has a population of two thousand."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "copula",
+            "counting-people"
+          ],
+          "vocabulary": [
+            [
+              "人口",
+              "じんこう",
+              "population"
+            ],
+            [
+              "天気",
+              "てんき",
+              "weather"
+            ],
+            [
+              "時間",
+              "じかん",
+              "time"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "place"
+            ],
+            [
+              "千人",
+              "せんにん",
+              "one thousand people"
+            ],
+            [
+              "二千人",
+              "にせんにん",
+              "two thousand people"
+            ],
+            [
+              "三千人",
+              "さんぜんにん",
+              "three thousand people"
+            ],
+            [
+              "四千人",
+              "よんせんにん",
+              "four thousand people"
+            ],
+            [
+              "車",
+              "くるま",
+              "cars"
+            ],
+            [
+              "店",
+              "みせ",
+              "shops"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "schools"
+            ],
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "村",
+              "むら",
+              "village"
+            ],
+            [
+              "市",
+              "し",
+              "city"
+            ],
+            [
+              "多い",
+              "おおい",
+              "many; large in number"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; small in number"
+            ],
+            [
+              "同じ",
+              "おなじ",
+              "the same"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "隣",
+              "となり",
+              "neighboring"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "話",
+              "はなし",
+              "topic; story"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "何の話ですか。",
+                "なんのはなしですか。",
+                "What is the topic?"
+              ],
+              "options": [
+                [
+                  "天気",
+                  "てんき",
+                  "weather"
+                ],
+                [
+                  "時間",
+                  "じかん",
+                  "time"
+                ],
+                [
+                  "場所",
+                  "ばしょ",
+                  "place"
+                ],
+                [
+                  "人口",
+                  "じんこう",
+                  "population"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "Both numerical facts describe population, rather than weather, time or location."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "隣の町の人口は何人ですか。",
+                "となりのまちのじんこうはなんにんですか。",
+                "What is the neighboring town's population?"
+              ],
+              "options": [
+                [
+                  "千人",
+                  "せんにん",
+                  "one thousand people"
+                ],
+                [
+                  "二千人",
+                  "にせんにん",
+                  "two thousand people"
+                ],
+                [
+                  "三千人",
+                  "さんぜんにん",
+                  "three thousand people"
+                ],
+                [
+                  "四千人",
+                  "よんせんにん",
+                  "four thousand people"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The neighboring town has two thousand residents; this town has one thousand."
+            }
+          ],
+          "reviewNotes": "The numerical detail requires keeping the towns separate."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "人口",
+            "じんこう"
+          ],
+          "sentence": [
+            "この村は人口が少ないです。あの市は人口が多いです。",
+            "このむらはじんこうがすくないです。あのしはじんこうがおおいです。",
+            "This village has a small population. That city has a large population."
+          ],
+          "grammarTags": [
+            "particles",
+            "adjectives",
+            "subject-ga"
+          ],
+          "vocabulary": [
+            [
+              "人口",
+              "じんこう",
+              "population"
+            ],
+            [
+              "天気",
+              "てんき",
+              "weather"
+            ],
+            [
+              "時間",
+              "じかん",
+              "time"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "place"
+            ],
+            [
+              "千人",
+              "せんにん",
+              "one thousand people"
+            ],
+            [
+              "二千人",
+              "にせんにん",
+              "two thousand people"
+            ],
+            [
+              "三千人",
+              "さんぜんにん",
+              "three thousand people"
+            ],
+            [
+              "四千人",
+              "よんせんにん",
+              "four thousand people"
+            ],
+            [
+              "車",
+              "くるま",
+              "cars"
+            ],
+            [
+              "店",
+              "みせ",
+              "shops"
+            ],
+            [
+              "学校",
+              "がっこう",
+              "schools"
+            ],
+            [
+              "町",
+              "まち",
+              "town"
+            ],
+            [
+              "村",
+              "むら",
+              "village"
+            ],
+            [
+              "市",
+              "し",
+              "city"
+            ],
+            [
+              "多い",
+              "おおい",
+              "many; large in number"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; small in number"
+            ],
+            [
+              "同じ",
+              "おなじ",
+              "the same"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "隣",
+              "となり",
+              "neighboring"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "あの",
+              "あの",
+              "that"
+            ],
+            [
+              "何人",
+              "なんにん",
+              "how many people"
+            ],
+            [
+              "話す",
+              "はなす",
+              "to talk"
+            ],
+            [
+              "について",
+              "について",
+              "about"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "この村は何が少ないですか。",
+                "このむらはなにがすくないですか。",
+                "What is small in number in this village?"
+              ],
+              "options": [
+                [
+                  "人口",
+                  "じんこう",
+                  "population"
+                ],
+                [
+                  "車",
+                  "くるま",
+                  "cars"
+                ],
+                [
+                  "店",
+                  "みせ",
+                  "shops"
+                ],
+                [
+                  "学校",
+                  "がっこう",
+                  "schools"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The population is described as small in the village."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "あの市の人口はどうですか。",
+                "あのしのじんこうはどうですか。",
+                "How is that city's population described?"
+              ],
+              "options": [
+                [
+                  "少ないです",
+                  "すくないです",
+                  "It is small."
+                ],
+                [
+                  "同じです",
+                  "おなじです",
+                  "It is the same."
+                ],
+                [
+                  "多いです",
+                  "おおいです",
+                  "It is large."
+                ],
+                [
+                  "わかりません",
+                  "わかりません",
+                  "It is not known."
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The city's population is large, unlike the village's small population."
+            }
+          ],
+          "reviewNotes": "No claim about land area is made."
+        }
+      ]
+    },
+    {
+      "text": "下さい",
+      "slug": "kudasai",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "ください",
+            "ください"
+          ],
+          "sentence": [
+            "先生は「水をください」と言いました。",
+            "せんせいは「みずをください」といいました。",
+            "The teacher said, “Water, please.”"
+          ],
+          "grammarTags": [
+            "particles",
+            "requests",
+            "quoted-speech",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "お茶",
+              "おちゃ",
+              "tea"
+            ],
+            [
+              "コーヒー",
+              "コーヒー",
+              "coffee"
+            ],
+            [
+              "牛乳",
+              "ぎゅうにゅう",
+              "milk"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "バナナ",
+              "バナナ",
+              "banana"
+            ],
+            [
+              "ぶどう",
+              "ぶどう",
+              "grape"
+            ],
+            [
+              "一つ",
+              "ひとつ",
+              "one"
+            ],
+            [
+              "二つ",
+              "ふたつ",
+              "two"
+            ],
+            [
+              "三つ",
+              "みっつ",
+              "three"
+            ],
+            [
+              "四つ",
+              "よっつ",
+              "four"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "ください",
+              "ください",
+              "please give me"
+            ],
+            [
+              "言う",
+              "いう",
+              "to say"
+            ],
+            [
+              "頼む",
+              "たのむ",
+              "to request"
+            ],
+            [
+              "飲む",
+              "のむ",
+              "to drink"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生は何と言いましたか。",
+                "せんせいはなんといいましたか。",
+                "What did the teacher say?"
+              ],
+              "options": [
+                [
+                  "水を飲みます",
+                  "みずをのみます",
+                  "I drink water."
+                ],
+                [
+                  "水を買いました",
+                  "みずをかいました",
+                  "I bought water."
+                ],
+                [
+                  "水をください",
+                  "みずをください",
+                  "Water, please."
+                ],
+                [
+                  "水があります",
+                  "みずがあります",
+                  "There is water."
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The teacher makes a request, 水をください, rather than a statement about drinking, buying or having water."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が水を頼みましたか。",
+                "だれがみずをたのみましたか。",
+                "Who asked for water?"
+              ],
+              "options": [
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The teacher is the speaker requesting water."
+            }
+          ],
+          "reviewNotes": "Kanaください links explicitly to catalogue 下さい. The correct target answer preserves the complete request."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "ください",
+            "ください"
+          ],
+          "sentence": [
+            "母は店で「りんごを二つください」と言いました。",
+            "はははみせで「りんごをふたつください」といいました。",
+            "My mother said at the shop, “Two apples, please.”"
+          ],
+          "grammarTags": [
+            "particles",
+            "requests",
+            "quoted-speech",
+            "polite-past",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "お茶",
+              "おちゃ",
+              "tea"
+            ],
+            [
+              "コーヒー",
+              "コーヒー",
+              "coffee"
+            ],
+            [
+              "牛乳",
+              "ぎゅうにゅう",
+              "milk"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "バナナ",
+              "バナナ",
+              "banana"
+            ],
+            [
+              "ぶどう",
+              "ぶどう",
+              "grape"
+            ],
+            [
+              "一つ",
+              "ひとつ",
+              "one"
+            ],
+            [
+              "二つ",
+              "ふたつ",
+              "two"
+            ],
+            [
+              "三つ",
+              "みっつ",
+              "three"
+            ],
+            [
+              "四つ",
+              "よっつ",
+              "four"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "ください",
+              "ください",
+              "please give me"
+            ],
+            [
+              "言う",
+              "いう",
+              "to say"
+            ],
+            [
+              "頼む",
+              "たのむ",
+              "to request"
+            ],
+            [
+              "飲む",
+              "のむ",
+              "to drink"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "母は何と言いましたか。",
+                "はははなんといいましたか。",
+                "What did my mother say?"
+              ],
+              "options": [
+                [
+                  "りんごを二つください",
+                  "りんごをふたつください",
+                  "Two apples, please."
+                ],
+                [
+                  "りんごを二つ食べます",
+                  "りんごをふたつたべます",
+                  "I eat two apples."
+                ],
+                [
+                  "りんごを二つ買いました",
+                  "りんごをふたつかいました",
+                  "I bought two apples."
+                ],
+                [
+                  "りんごが二つあります",
+                  "りんごがふたつあります",
+                  "There are two apples."
+                ]
+              ],
+              "correct": 0,
+              "explanation": "She requests two apples using ください."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "母はりんごをいくつ頼みましたか。",
+                "はははりんごをいくつたのみましたか。",
+                "How many apples did my mother ask for?"
+              ],
+              "options": [
+                [
+                  "一つ",
+                  "ひとつ",
+                  "one"
+                ],
+                [
+                  "三つ",
+                  "みっつ",
+                  "three"
+                ],
+                [
+                  "四つ",
+                  "よっつ",
+                  "four"
+                ],
+                [
+                  "二つ",
+                  "ふたつ",
+                  "two"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "She asks for two apples."
+            }
+          ],
+          "reviewNotes": "One shopping request includes an explicit quantity. No te-form request is introduced."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "ください",
+            "ください"
+          ],
+          "sentence": [
+            "先生は「水をください」と言いました。学生は「お茶をください」と言いました。",
+            "せんせいは「みずをください」といいました。がくせいは「おちゃをください」といいました。",
+            "The teacher said, “Water, please.” The student said, “Tea, please.”"
+          ],
+          "grammarTags": [
+            "particles",
+            "requests",
+            "quoted-speech",
+            "polite-past"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "お茶",
+              "おちゃ",
+              "tea"
+            ],
+            [
+              "コーヒー",
+              "コーヒー",
+              "coffee"
+            ],
+            [
+              "牛乳",
+              "ぎゅうにゅう",
+              "milk"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "バナナ",
+              "バナナ",
+              "banana"
+            ],
+            [
+              "ぶどう",
+              "ぶどう",
+              "grape"
+            ],
+            [
+              "一つ",
+              "ひとつ",
+              "one"
+            ],
+            [
+              "二つ",
+              "ふたつ",
+              "two"
+            ],
+            [
+              "三つ",
+              "みっつ",
+              "three"
+            ],
+            [
+              "四つ",
+              "よっつ",
+              "four"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "ください",
+              "ください",
+              "please give me"
+            ],
+            [
+              "言う",
+              "いう",
+              "to say"
+            ],
+            [
+              "頼む",
+              "たのむ",
+              "to request"
+            ],
+            [
+              "飲む",
+              "のむ",
+              "to drink"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生は何と言いましたか。",
+                "せんせいはなんといいましたか。",
+                "What did the teacher say?"
+              ],
+              "options": [
+                [
+                  "お茶をください",
+                  "おちゃをください",
+                  "Tea, please."
+                ],
+                [
+                  "水をください",
+                  "みずをください",
+                  "Water, please."
+                ],
+                [
+                  "コーヒーをください",
+                  "コーヒーをください",
+                  "Coffee, please."
+                ],
+                [
+                  "牛乳をください",
+                  "ぎゅうにゅうをください",
+                  "Milk, please."
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The teacher requests water; the student requests tea."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰がお茶を頼みましたか。",
+                "だれがおちゃをたのみましたか。",
+                "Who asked for tea?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The student asks for tea while the teacher asks for water."
+            }
+          ],
+          "reviewNotes": "The speaker and requested drink must stay bound together."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "ください",
+            "ください"
+          ],
+          "sentence": [
+            "母は「りんごを二つください」と言いました。父は「みかんを三つください」と言いました。",
+            "ははは「りんごをふたつください」といいました。ちちは「みかんをみっつください」といいました。",
+            "My mother said, “Two apples, please.” My father said, “Three mandarins, please.”"
+          ],
+          "grammarTags": [
+            "particles",
+            "requests",
+            "quoted-speech",
+            "polite-past",
+            "counting"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "水",
+              "みず",
+              "water"
+            ],
+            [
+              "お茶",
+              "おちゃ",
+              "tea"
+            ],
+            [
+              "コーヒー",
+              "コーヒー",
+              "coffee"
+            ],
+            [
+              "牛乳",
+              "ぎゅうにゅう",
+              "milk"
+            ],
+            [
+              "りんご",
+              "りんご",
+              "apple"
+            ],
+            [
+              "みかん",
+              "みかん",
+              "mandarin orange"
+            ],
+            [
+              "バナナ",
+              "バナナ",
+              "banana"
+            ],
+            [
+              "ぶどう",
+              "ぶどう",
+              "grape"
+            ],
+            [
+              "一つ",
+              "ひとつ",
+              "one"
+            ],
+            [
+              "二つ",
+              "ふたつ",
+              "two"
+            ],
+            [
+              "三つ",
+              "みっつ",
+              "three"
+            ],
+            [
+              "四つ",
+              "よっつ",
+              "four"
+            ],
+            [
+              "店",
+              "みせ",
+              "shop"
+            ],
+            [
+              "ください",
+              "ください",
+              "please give me"
+            ],
+            [
+              "言う",
+              "いう",
+              "to say"
+            ],
+            [
+              "頼む",
+              "たのむ",
+              "to request"
+            ],
+            [
+              "飲む",
+              "のむ",
+              "to drink"
+            ],
+            [
+              "買う",
+              "かう",
+              "to buy"
+            ],
+            [
+              "食べる",
+              "たべる",
+              "to eat"
+            ],
+            [
+              "いくつ",
+              "いくつ",
+              "how many things"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父は何と言いましたか。",
+                "ちちはなんといいましたか。",
+                "What did my father say?"
+              ],
+              "options": [
+                [
+                  "りんごを二つください",
+                  "りんごをふたつください",
+                  "Two apples, please."
+                ],
+                [
+                  "りんごを三つください",
+                  "りんごをみっつください",
+                  "Three apples, please."
+                ],
+                [
+                  "みかんを二つください",
+                  "みかんをふたつください",
+                  "Two mandarins, please."
+                ],
+                [
+                  "みかんを三つください",
+                  "みかんをみっつください",
+                  "Three mandarins, please."
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The father asks for three mandarins; the mother asks for two apples."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "母は何を頼みましたか。",
+                "はははなにをたのみましたか。",
+                "What did my mother ask for?"
+              ],
+              "options": [
+                [
+                  "りんご",
+                  "りんご",
+                  "apple"
+                ],
+                [
+                  "みかん",
+                  "みかん",
+                  "mandarin orange"
+                ],
+                [
+                  "バナナ",
+                  "バナナ",
+                  "banana"
+                ],
+                [
+                  "ぶどう",
+                  "ぶどう",
+                  "grape"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The mother requests apples while the father requests mandarins."
+            }
+          ],
+          "reviewNotes": "Quantity and requested object vary together; the request form stays constant."
+        }
+      ]
+    },
+    {
+      "text": "力いっぱい",
+      "slug": "chikaraippai",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "力いっぱい",
+            "ちからいっぱい"
+          ],
+          "sentence": [
+            "父は力いっぱいドアを押します。",
+            "ちちはちからいっぱいドアをおします。",
+            "My father pushes the door with all his strength."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "ドア",
+              "ドア",
+              "door"
+            ],
+            [
+              "ロープ",
+              "ロープ",
+              "rope"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "椅子",
+              "いす",
+              "chair"
+            ],
+            [
+              "力いっぱい",
+              "ちからいっぱい",
+              "with all one's strength"
+            ],
+            [
+              "軽く",
+              "かるく",
+              "lightly"
+            ],
+            [
+              "押す",
+              "おす",
+              "to push"
+            ],
+            [
+              "引く",
+              "ひく",
+              "to pull"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父はドアをどうしますか。",
+                "ちちはドアをどうしますか。",
+                "What does my father do with the door?"
+              ],
+              "options": [
+                [
+                  "力いっぱい押します",
+                  "ちからいっぱいおします",
+                  "pushes with all their strength"
+                ],
+                [
+                  "軽く押します",
+                  "かるくおします",
+                  "pushes lightly"
+                ],
+                [
+                  "力いっぱい引きます",
+                  "ちからいっぱいひきます",
+                  "pulls with all their strength"
+                ],
+                [
+                  "軽く引きます",
+                  "かるくひきます",
+                  "pulls lightly"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "Both pushing and using all his strength are explicitly stated."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "父は何を力いっぱい押しますか。",
+                "ちちはなにをちからいっぱいおしますか。",
+                "What does my father push with all his strength?"
+              ],
+              "options": [
+                [
+                  "机",
+                  "つくえ",
+                  "desk"
+                ],
+                [
+                  "椅子",
+                  "いす",
+                  "chair"
+                ],
+                [
+                  "ドア",
+                  "ドア",
+                  "door"
+                ],
+                [
+                  "箱",
+                  "はこ",
+                  "box"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The door is the object he pushes with all his strength."
+            }
+          ],
+          "reviewNotes": "Effort and pushing/pulling distinguish the options. Speed is not used as a distractor, because slow movement can still involve full strength."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "力いっぱい",
+            "ちからいっぱい"
+          ],
+          "sentence": [
+            "学生は力いっぱいロープを引きます。",
+            "がくせいはちからいっぱいロープをひきます。",
+            "The student pulls the rope with all their strength."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "ドア",
+              "ドア",
+              "door"
+            ],
+            [
+              "ロープ",
+              "ロープ",
+              "rope"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "椅子",
+              "いす",
+              "chair"
+            ],
+            [
+              "力いっぱい",
+              "ちからいっぱい",
+              "with all one's strength"
+            ],
+            [
+              "軽く",
+              "かるく",
+              "lightly"
+            ],
+            [
+              "押す",
+              "おす",
+              "to push"
+            ],
+            [
+              "引く",
+              "ひく",
+              "to pull"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "学生はロープをどうしますか。",
+                "がくせいはロープをどうしますか。",
+                "What does the student do with the rope?"
+              ],
+              "options": [
+                [
+                  "軽く引きます",
+                  "かるくひきます",
+                  "pulls lightly"
+                ],
+                [
+                  "力いっぱい引きます",
+                  "ちからいっぱいひきます",
+                  "pulls with all their strength"
+                ],
+                [
+                  "力いっぱい押します",
+                  "ちからいっぱいおします",
+                  "pushes with all their strength"
+                ],
+                [
+                  "軽く押します",
+                  "かるくおします",
+                  "pushes lightly"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The student pulls using all their strength."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が力いっぱいロープを引きますか。",
+                "だれがちからいっぱいロープをひきますか。",
+                "Who pulls the rope with all their strength?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The student is the person pulling with full effort."
+            }
+          ],
+          "reviewNotes": "The options cross effort with pulling/pushing, giving four distinct actions."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "力いっぱい",
+            "ちからいっぱい"
+          ],
+          "sentence": [
+            "父は力いっぱいドアを押します。母は軽くドアを押します。",
+            "ちちはちからいっぱいドアをおします。はははかるくドアをおします。",
+            "My father pushes the door with all his strength. My mother pushes it lightly."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "ドア",
+              "ドア",
+              "door"
+            ],
+            [
+              "ロープ",
+              "ロープ",
+              "rope"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "椅子",
+              "いす",
+              "chair"
+            ],
+            [
+              "力いっぱい",
+              "ちからいっぱい",
+              "with all one's strength"
+            ],
+            [
+              "軽く",
+              "かるく",
+              "lightly"
+            ],
+            [
+              "押す",
+              "おす",
+              "to push"
+            ],
+            [
+              "引く",
+              "ひく",
+              "to pull"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父はドアをどうしますか。",
+                "ちちはドアをどうしますか。",
+                "What does my father do with the door?"
+              ],
+              "options": [
+                [
+                  "軽く押します",
+                  "かるくおします",
+                  "pushes lightly"
+                ],
+                [
+                  "力いっぱい引きます",
+                  "ちからいっぱいひきます",
+                  "pulls with all their strength"
+                ],
+                [
+                  "力いっぱい押します",
+                  "ちからいっぱいおします",
+                  "pushes with all their strength"
+                ],
+                [
+                  "軽く引きます",
+                  "かるくひきます",
+                  "pulls lightly"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The father pushes with all his strength; the mother pushes lightly."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が力いっぱいドアを押しますか。",
+                "だれがちからいっぱいドアをおしますか。",
+                "Who pushes the door with all their strength?"
+              ],
+              "options": [
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "Full effort belongs to the father, not the mother."
+            }
+          ],
+          "reviewNotes": "Both people push a door. The amount of effort is the decisive distinction."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "力いっぱい",
+            "ちからいっぱい"
+          ],
+          "sentence": [
+            "先生は力いっぱいロープを引きます。学生は軽くロープを引きます。",
+            "せんせいはちからいっぱいロープをひきます。がくせいはかるくロープをひきます。",
+            "The teacher pulls the rope with all their strength. The student pulls it lightly."
+          ],
+          "grammarTags": [
+            "particles",
+            "polite-verbs"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "ドア",
+              "ドア",
+              "door"
+            ],
+            [
+              "ロープ",
+              "ロープ",
+              "rope"
+            ],
+            [
+              "箱",
+              "はこ",
+              "box"
+            ],
+            [
+              "机",
+              "つくえ",
+              "desk"
+            ],
+            [
+              "椅子",
+              "いす",
+              "chair"
+            ],
+            [
+              "力いっぱい",
+              "ちからいっぱい",
+              "with all one's strength"
+            ],
+            [
+              "軽く",
+              "かるく",
+              "lightly"
+            ],
+            [
+              "押す",
+              "おす",
+              "to push"
+            ],
+            [
+              "引く",
+              "ひく",
+              "to pull"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "先生はロープをどうしますか。",
+                "せんせいはロープをどうしますか。",
+                "What does the teacher do with the rope?"
+              ],
+              "options": [
+                [
+                  "軽く引きます",
+                  "かるくひきます",
+                  "pulls lightly"
+                ],
+                [
+                  "力いっぱい押します",
+                  "ちからいっぱいおします",
+                  "pushes with all their strength"
+                ],
+                [
+                  "軽く押します",
+                  "かるくおします",
+                  "pushes lightly"
+                ],
+                [
+                  "力いっぱい引きます",
+                  "ちからいっぱいひきます",
+                  "pulls with all their strength"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The teacher pulls with all their strength; the student pulls lightly."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰が力いっぱいロープを引きますか。",
+                "だれがちからいっぱいロープをひきますか。",
+                "Who pulls the rope with all their strength?"
+              ],
+              "options": [
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ],
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The teacher, rather than the student, uses full effort."
+            }
+          ],
+          "reviewNotes": "The shared pulling action requires distinguishing the people by effort."
+        }
+      ]
+    },
+    {
+      "text": "大した",
+      "slug": "taishita",
+      "contexts": [
+        {
+          "stage": "simple",
+          "variant": 1,
+          "occurrence": [
+            "大した",
+            "たいした"
+          ],
+          "sentence": [
+            "これは大したけがではありません。",
+            "これはたいしたけがではありません。",
+            "This is not a serious injury."
+          ],
+          "grammarTags": [
+            "particles",
+            "copula",
+            "copula-negative",
+            "adjectives",
+            "noun-no"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "けが",
+              "けが",
+              "injury"
+            ],
+            [
+              "風邪",
+              "かぜ",
+              "a cold"
+            ],
+            [
+              "頭痛",
+              "ずつう",
+              "headache"
+            ],
+            [
+              "熱",
+              "ねつ",
+              "fever"
+            ],
+            [
+              "花子さん",
+              "はなこさん",
+              "Hanako"
+            ],
+            [
+              "太郎さん",
+              "たろうさん",
+              "Taro"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "大した",
+              "たいした",
+              "considerable; impressive"
+            ],
+            [
+              "大したことはありません",
+              "たいしたことはありません",
+              "It is no big deal."
+            ],
+            [
+              "もの",
+              "もの",
+              "thing"
+            ],
+            [
+              "こと",
+              "こと",
+              "matter"
+            ],
+            [
+              "ひどい",
+              "ひどい",
+              "severe; terrible"
+            ],
+            [
+              "下手",
+              "へた",
+              "poor at; unskilled"
+            ],
+            [
+              "普通",
+              "ふつう",
+              "ordinary"
+            ],
+            [
+              "まだ",
+              "まだ",
+              "yet"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "これ",
+              "これ",
+              "this"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ],
+            [
+              "話",
+              "はなし",
+              "topic; story"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "このけがはどうですか。",
+                "このけがはどうですか。",
+                "How is this injury described?"
+              ],
+              "options": [
+                [
+                  "ひどいけがです",
+                  "ひどいけがです",
+                  "It is a serious injury."
+                ],
+                [
+                  "大したけがではありません",
+                  "たいしたけがではありません",
+                  "It is not a serious injury."
+                ],
+                [
+                  "けがはありません",
+                  "けがはありません",
+                  "There is no injury."
+                ],
+                [
+                  "まだわかりません",
+                  "まだわかりません",
+                  "It is not known yet."
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The injury is not serious; this does not mean that there is no injury."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "何の話ですか。",
+                "なんのはなしですか。",
+                "What is the topic?"
+              ],
+              "options": [
+                [
+                  "けが",
+                  "けが",
+                  "injury"
+                ],
+                [
+                  "風邪",
+                  "かぜ",
+                  "a cold"
+                ],
+                [
+                  "頭痛",
+                  "ずつう",
+                  "headache"
+                ],
+                [
+                  "熱",
+                  "ねつ",
+                  "fever"
+                ]
+              ],
+              "correct": 0,
+              "explanation": "The stated subject is an injury, not another health problem."
+            }
+          ],
+          "reviewNotes": "The negative expression denies seriousness, not the existence of an injury."
+        },
+        {
+          "stage": "simple",
+          "variant": 2,
+          "occurrence": [
+            "大した",
+            "たいした"
+          ],
+          "sentence": [
+            "花子さんの絵は大したものです。",
+            "はなこさんのえはたいしたものです。",
+            "Hanako's picture is impressive."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "copula",
+            "adjectives"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "けが",
+              "けが",
+              "injury"
+            ],
+            [
+              "風邪",
+              "かぜ",
+              "a cold"
+            ],
+            [
+              "頭痛",
+              "ずつう",
+              "headache"
+            ],
+            [
+              "熱",
+              "ねつ",
+              "fever"
+            ],
+            [
+              "花子さん",
+              "はなこさん",
+              "Hanako"
+            ],
+            [
+              "太郎さん",
+              "たろうさん",
+              "Taro"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "大した",
+              "たいした",
+              "considerable; impressive"
+            ],
+            [
+              "大したことはありません",
+              "たいしたことはありません",
+              "It is no big deal."
+            ],
+            [
+              "もの",
+              "もの",
+              "thing"
+            ],
+            [
+              "こと",
+              "こと",
+              "matter"
+            ],
+            [
+              "ひどい",
+              "ひどい",
+              "severe; terrible"
+            ],
+            [
+              "下手",
+              "へた",
+              "poor at; unskilled"
+            ],
+            [
+              "普通",
+              "ふつう",
+              "ordinary"
+            ],
+            [
+              "まだ",
+              "まだ",
+              "yet"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "話す",
+              "はなす",
+              "to talk"
+            ],
+            [
+              "について",
+              "について",
+              "about"
+            ],
+            [
+              "これ",
+              "これ",
+              "this"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "花子さんの絵はどうですか。",
+                "はなこさんのえはどうですか。",
+                "How is Hanako's picture described?"
+              ],
+              "options": [
+                [
+                  "下手です",
+                  "へたです",
+                  "It is poorly done."
+                ],
+                [
+                  "普通です",
+                  "ふつうです",
+                  "It is ordinary."
+                ],
+                [
+                  "大したものです",
+                  "たいしたものです",
+                  "It is impressive."
+                ],
+                [
+                  "まだありません",
+                  "まだありません",
+                  "It does not exist yet."
+                ]
+              ],
+              "correct": 2,
+              "explanation": "大したものです praises the picture as impressive."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰の絵が大したものですか。",
+                "だれのえがたいしたものですか。",
+                "Whose picture is impressive?"
+              ],
+              "options": [
+                [
+                  "太郎さん",
+                  "たろうさん",
+                  "Taro"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "花子さん",
+                  "はなこさん",
+                  "Hanako"
+                ]
+              ],
+              "correct": 3,
+              "explanation": "Hanako's picture receives the praise."
+            }
+          ],
+          "reviewNotes": "Positive 大したものです is praise. もの belongs to this expression; no ironic reading is intended."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 1,
+          "occurrence": [
+            "大した",
+            "たいした"
+          ],
+          "sentence": [
+            "父のけがは大したことはありません。母のけがはひどいです。",
+            "ちちのけがはたいしたことはありません。ははのけがはひどいです。",
+            "My father's injury is no big deal. My mother's injury is serious."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "copula",
+            "copula-negative",
+            "adjectives"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "けが",
+              "けが",
+              "injury"
+            ],
+            [
+              "風邪",
+              "かぜ",
+              "a cold"
+            ],
+            [
+              "頭痛",
+              "ずつう",
+              "headache"
+            ],
+            [
+              "熱",
+              "ねつ",
+              "fever"
+            ],
+            [
+              "花子さん",
+              "はなこさん",
+              "Hanako"
+            ],
+            [
+              "太郎さん",
+              "たろうさん",
+              "Taro"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "大した",
+              "たいした",
+              "considerable; impressive"
+            ],
+            [
+              "大したことはありません",
+              "たいしたことはありません",
+              "It is no big deal."
+            ],
+            [
+              "もの",
+              "もの",
+              "thing"
+            ],
+            [
+              "こと",
+              "こと",
+              "matter"
+            ],
+            [
+              "ひどい",
+              "ひどい",
+              "severe; terrible"
+            ],
+            [
+              "下手",
+              "へた",
+              "poor at; unskilled"
+            ],
+            [
+              "普通",
+              "ふつう",
+              "ordinary"
+            ],
+            [
+              "まだ",
+              "まだ",
+              "yet"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "話す",
+              "はなす",
+              "to talk"
+            ],
+            [
+              "について",
+              "について",
+              "about"
+            ],
+            [
+              "これ",
+              "これ",
+              "this"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "父のけがはどうですか。",
+                "ちちのけがはどうですか。",
+                "How is my father's injury described?"
+              ],
+              "options": [
+                [
+                  "ひどいけがです",
+                  "ひどいけがです",
+                  "It is a serious injury."
+                ],
+                [
+                  "けがはありません",
+                  "けがはありません",
+                  "There is no injury."
+                ],
+                [
+                  "まだわかりません",
+                  "まだわかりません",
+                  "It is not known yet."
+                ],
+                [
+                  "大したことはありません",
+                  "たいしたことはありません",
+                  "It is no big deal."
+                ]
+              ],
+              "correct": 3,
+              "explanation": "The father's injury is no big deal; the mother's injury is serious."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰のけががひどいですか。",
+                "だれのけががひどいですか。",
+                "Whose injury is serious?"
+              ],
+              "options": [
+                [
+                  "父",
+                  "ちち",
+                  "my father"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "学生",
+                  "がくせい",
+                  "student"
+                ]
+              ],
+              "correct": 1,
+              "explanation": "The mother's injury is serious, unlike the father's."
+            }
+          ],
+          "reviewNotes": "大したことはありません is the conventional no-big-deal expression. The contrast concerns seriousness, not injury versus no injury."
+        },
+        {
+          "stage": "contrastive",
+          "variant": 2,
+          "occurrence": [
+            "大した",
+            "たいした"
+          ],
+          "sentence": [
+            "花子さんの絵は大したものです。太郎さんの絵は普通です。",
+            "はなこさんのえはたいしたものです。たろうさんのえはふつうです。",
+            "Hanako's picture is impressive. Taro's picture is ordinary."
+          ],
+          "grammarTags": [
+            "particles",
+            "noun-no",
+            "copula",
+            "adjectives"
+          ],
+          "vocabulary": [
+            [
+              "先生",
+              "せんせい",
+              "teacher"
+            ],
+            [
+              "学生",
+              "がくせい",
+              "student"
+            ],
+            [
+              "父",
+              "ちち",
+              "my father"
+            ],
+            [
+              "母",
+              "はは",
+              "my mother"
+            ],
+            [
+              "誰",
+              "だれ",
+              "who"
+            ],
+            [
+              "何",
+              "なに",
+              "what"
+            ],
+            [
+              "どう",
+              "どう",
+              "how"
+            ],
+            [
+              "けが",
+              "けが",
+              "injury"
+            ],
+            [
+              "風邪",
+              "かぜ",
+              "a cold"
+            ],
+            [
+              "頭痛",
+              "ずつう",
+              "headache"
+            ],
+            [
+              "熱",
+              "ねつ",
+              "fever"
+            ],
+            [
+              "花子さん",
+              "はなこさん",
+              "Hanako"
+            ],
+            [
+              "太郎さん",
+              "たろうさん",
+              "Taro"
+            ],
+            [
+              "絵",
+              "え",
+              "picture"
+            ],
+            [
+              "大した",
+              "たいした",
+              "considerable; impressive"
+            ],
+            [
+              "大したことはありません",
+              "たいしたことはありません",
+              "It is no big deal."
+            ],
+            [
+              "もの",
+              "もの",
+              "thing"
+            ],
+            [
+              "こと",
+              "こと",
+              "matter"
+            ],
+            [
+              "ひどい",
+              "ひどい",
+              "severe; terrible"
+            ],
+            [
+              "下手",
+              "へた",
+              "poor at; unskilled"
+            ],
+            [
+              "普通",
+              "ふつう",
+              "ordinary"
+            ],
+            [
+              "まだ",
+              "まだ",
+              "yet"
+            ],
+            [
+              "わかる",
+              "わかる",
+              "to know; to understand"
+            ],
+            [
+              "話す",
+              "はなす",
+              "to talk"
+            ],
+            [
+              "について",
+              "について",
+              "about"
+            ],
+            [
+              "これ",
+              "これ",
+              "this"
+            ],
+            [
+              "この",
+              "この",
+              "this"
+            ]
+          ],
+          "questions": [
+            {
+              "kind": "target",
+              "prompt": [
+                "花子さんの絵はどうですか。",
+                "はなこさんのえはどうですか。",
+                "How is Hanako's picture described?"
+              ],
+              "options": [
+                [
+                  "大したものです",
+                  "たいしたものです",
+                  "It is impressive."
+                ],
+                [
+                  "下手です",
+                  "へたです",
+                  "It is poorly done."
+                ],
+                [
+                  "普通です",
+                  "ふつうです",
+                  "It is ordinary."
+                ],
+                [
+                  "まだありません",
+                  "まだありません",
+                  "It does not exist yet."
+                ]
+              ],
+              "correct": 0,
+              "explanation": "Hanako's picture is impressive, while Taro's is ordinary."
+            },
+            {
+              "kind": "detail",
+              "prompt": [
+                "誰の絵が普通ですか。",
+                "だれのえがふつうですか。",
+                "Whose picture is ordinary?"
+              ],
+              "options": [
+                [
+                  "花子さん",
+                  "はなこさん",
+                  "Hanako"
+                ],
+                [
+                  "先生",
+                  "せんせい",
+                  "teacher"
+                ],
+                [
+                  "太郎さん",
+                  "たろうさん",
+                  "Taro"
+                ],
+                [
+                  "母",
+                  "はは",
+                  "my mother"
+                ]
+              ],
+              "correct": 2,
+              "explanation": "The ordinary picture belongs to Taro, not Hanako."
+            }
+          ],
+          "reviewNotes": "大したものです contrasts with 普通です and retains its positive praise meaning."
+        }
+      ]
+    }
+  ]
+}
