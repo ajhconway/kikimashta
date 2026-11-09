@@ -1,0 +1,56 @@
+{
+  "issue": 233,
+  "round": 3,
+  "date": "2026-11-09",
+  "ownerStatement": "広げる the arrows should be centered with the map and a little larger, no attention lines needed\n近い version 4 but let's have Kiku with a friend (maybe a dog?)\n作る version 5 is ok\n立てる I want a clearly non-posable figurine with a base\n走行 I like version 7",
+  "status": "planned",
+  "directRevisions": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "basePath": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+      "baseSha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+      "version": 4,
+      "concept": "Center two slightly larger outward arrows vertically with the map; remove all attention lines. Preserve map and hands."
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "basePath": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+      "baseSha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+      "version": 6,
+      "concept": "Preserve near/far contrast; replace both trees with the same friendly dog companion, keeping Kiku next to dog above and far apart below."
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "basePath": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+      "baseSha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+      "version": 6,
+      "concept": "Replace articulated robot with a clearly rigid one-piece animal figurine permanently attached to a flat base; one hand setting the base upright on the table."
+    }
+  ],
+  "ownerChoices": [
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 5,
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+      "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+      "ownerStatement": "作る version 5 is ok"
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 7,
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+      "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+      "ownerStatement": "走行 I like version 7"
+    }
+  ],
+  "notes": [
+    "Three new derivatives remain pending owner review.",
+    "Preserve all prior PNGs and exact prompts; no new alternatives requested.",
+    "Keep frozen43-card scope and active runtime unchanged."
+  ]
+}
