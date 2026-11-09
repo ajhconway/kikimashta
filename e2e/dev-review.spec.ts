@@ -43,6 +43,7 @@ test('Dev review opens options, simulates selected writing mastery and leaves re
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('button', { name: 'Start dev review' }).click();
   await expect(page.locator('.quiz')).toHaveAttribute('data-exercise', 'audio-text');
+  await expect(page.locator('.choices')).toHaveClass(/choices-audio-first/);
   const current = page.getByRole('status', { name: 'Demo mastery' });
   await expect(current).toContainText('Confident');
   await expect(current).toContainText('1.5s');
@@ -60,7 +61,7 @@ test('Dev review opens options, simulates selected writing mastery and leaves re
   expect(await storedHistory(page)).toEqual(before);
 });
 
-test('contextual samples use selected mastery, remain untimed and keep real progress unchanged', async ({ page }) => {
+test('contextual samples use selected mastery timers and keep real progress unchanged', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
   const before = await storedHistory(page);
@@ -73,8 +74,10 @@ test('contextual samples use selected mastery, remain untimed and keep real prog
   await page.getByRole('button', { name: 'Start dev review' }).click();
   await expect(page.locator('.contextual-practice')).toHaveAttribute('data-exercise', 'context-simple-picture');
   await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('Strong');
-  await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('Untimed');
+  await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('3s');
   await expect(page.locator('.quiz-timer-fill')).toHaveCount(0);
+  await expect(page.locator('.contextual-choices')).toHaveClass(/choices-audio-first/);
+  await expect(page.locator('.contextual-choices')).toBeHidden();
   const quiz = page.locator('.contextual-quiz');
   const questionId = await quiz.getAttribute('data-question-id');
   const question = authoredQuestions.find(question => question.id === questionId)!;
@@ -136,4 +139,33 @@ test('options respect language and handle empty selected packs', async ({ page }
   await page.bringToFront();
   await expect(types.getByRole('checkbox')).toHaveAccessibleName('Words · Pictures');
   await expect(page.getByRole('button', { name: 'Start dev review' })).toBeEnabled();
+});
+
+test('contextual countdown starts after paired audio, survives replay and gives partial credit after expiry', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  const before = await storedHistory(page);
+  for (const name of ['Words · Pictures', 'Words · Writing']) await page.getByRole('checkbox', { name, exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Simple contexts · Writing', exact: true }).check();
+  await page.getByRole('button', { name: 'Clear levels' }).click();
+  await page.getByRole('checkbox', { name: 'Confident', exact: true }).check();
+  await page.getByRole('button', { name: 'Start dev review' }).click();
+  await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('1.5s');
+  await expect(page.locator('.quiz-timer-fill')).toHaveCount(0);
+  await expect(page.locator('.contextual-choices')).toHaveClass(/choices-audio-first/);
+  await expect(page.locator('.contextual-choices')).toBeHidden();
+  const quiz = page.locator('.contextual-quiz');
+  // Wait for the native sentence and question playback to finish.
+  await expect(page.locator('.quiz-timer-fill')).toBeAttached({ timeout: 20000 });
+  await expect(page.locator('.contextual-choices')).toBeVisible();
+  await expect(page.locator('.contextual-choices .choice-slot').first()).toHaveCSS('transform', 'none');
+  const questionId = await quiz.getAttribute('data-question-id');
+  const current = authoredQuestions.find(candidate => candidate.id === questionId)!;
+  const correct = current.options.find(option => option.id === current.correctOptionId)!;
+  await page.getByRole('button', { name: 'Replay sentence and question', exact: true }).click();
+  await expect(page.getByText('Take your time. A correct answer still counts as partial success.', { exact: true })).toBeAttached();
+  await quiz.getByRole('button', { name: `Choose writing ${correct.text}`, exact: true }).click();
+  await expect(page.locator('.app')).toHaveAttribute('data-answer', 'partial');
+  await expect(page.getByLabel('Partial success', { exact: true })).toHaveText('≈');
+  expect(await storedHistory(page)).toEqual(before);
 });

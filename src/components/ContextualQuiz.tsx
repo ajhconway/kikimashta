@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode, type RefObject } from 'react';
 import type { ContextualPrompt } from '../content/contextual-types';
 import type { PracticeAttempt, WordItem } from '../types';
 import { answerFormat } from '../core/cards';
 import { correctChoiceId, type Question } from '../core/session';
+import { useAudioChoiceEntrance } from '../hooks/useAudioChoiceEntrance';
 import { QuizCompanion, Speaker } from './QuizChrome';
 import './ContextualQuiz.css';
 
@@ -19,6 +20,9 @@ export interface ContextualQuizProps {
   preview?: boolean;
   inspection?: boolean;
   continueAfterCorrect?: boolean;
+  delayChoices?: boolean;
+  choicesRef?: RefObject<HTMLDivElement | null>;
+  onAudioFinished?: () => void;
   onPlaybackChange?: (state: ContextualPlayback) => void;
 }
 const asset = (path: string) => import.meta.env.BASE_URL + path;
@@ -31,7 +35,7 @@ function Prompt({ title, value, english = true, reading = true, labelled = false
 }
 
 /** Shared learner interaction; persistence and scheduling belong to its caller. */
-export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, preview = false, inspection = false, continueAfterCorrect = false, onPlaybackChange, feedbackContent }: ContextualQuizProps) {
+export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, preview = false, inspection = false, continueAfterCorrect = false, onPlaybackChange, feedbackContent, choicesRef, onAudioFinished, delayChoices = false }: ContextualQuizProps) {
   const authored = question.contextual;
   if (!authored) throw new Error('A contextual quiz needs authored context.');
   const sentenceSrc = authored.recording?.sentenceSrc;
@@ -42,10 +46,17 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const request = useRef(0);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const segment = useRef<'sentence' | 'question' | null>(null);
+  // Keep final-clip identity through ended, even when React clears segment first.
+  const finalAudio = useRef(false);
   const [playback, setPlayback] = useState<ContextualPlayback>('idle');
   const [inspectedQuestion, setInspectedQuestion] = useState<string | null>(null);
   const questionKey = `${authored.context.id}:${authored.question.id}`;
   const inspecting = inspectedQuestion === questionKey;
+  const localChoices = useRef<HTMLDivElement>(null);
+  const grid = choicesRef ?? localChoices;
+  const isFinalAudio = useCallback(() => finalAudio.current, []);
+  const delayed = delayChoices && hasAudio && !preview && !inspection;
+  const choicesReady = useAudioChoiceEntrance({ id: questionKey, enabled: delayed, audio, grid, canReveal: isFinalAudio });
   const answered = useRef(false);
   const details = useRef<HTMLDialogElement>(null);
   const detailsTrigger = useRef<HTMLButtonElement>(null);
@@ -58,12 +69,14 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     if (timer.current !== undefined) clearTimeout(timer.current);
     timer.current = undefined;
     segment.current = null;
+    finalAudio.current = false;
     audio.current?.pause();
   }, []);
   const playSegment = useCallback((src: string, kind: 'sentence' | 'question', token: number) => {
     const element = audio.current;
     if (!element || request.current !== token) return;
     segment.current = kind;
+    finalAudio.current = kind === 'question';
     element.src = asset(src); element.currentTime = 0;
     setPlayback('playing');
     void element.play().catch((error: unknown) => {
@@ -97,14 +110,14 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     if (segment.current === 'sentence' && questionSrc) {
       segment.current = null;
       timer.current = setTimeout(() => { timer.current = undefined; playSegment(questionSrc, 'question', token); }, 650);
-    } else if (segment.current === 'question') { segment.current = null; setPlayback('idle'); }
+    } else if (segment.current === 'question') { segment.current = null; setPlayback('idle'); onAudioFinished?.(); }
   }
   const revealed = preview || !!feedback || inspecting;
   const correctId = correctChoiceId(question);
   const correct = question.choices.find(choice => choice.id === correctId)!;
   const format = answerFormat(question.exercise);
   const fullTranscript = revealed && (preview || inspection || inspecting);
-  const result = feedback ? feedback.correct ? 'success' : 'failure' : null;
+  const result = feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null;
   return <section className="quiz contextual-quiz" data-exercise={question.exercise} data-question-id={authored.question.id}>
     <audio ref={audio} preload="auto" onEnded={ended} onError={() => { stop(); setPlayback('error'); }}/>
     <h2 className="sr-only">{preview ? 'Listen in context' : 'Listen and choose'}</h2>
@@ -124,17 +137,17 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       {!revealed && <button className="text-button" type="button" onClick={() => setInspectedQuestion(questionKey)}>Show text for inspection</button>}
     </div>}
     {authored.context.review.text !== 'approved' && <p className="contextual-review-state">Text awaiting approval.</p>}
-    {!preview && <div className="quiz-cards"><div className="choices contextual-choices choices-enter" aria-label={format === 'picture' ? 'Picture answers' : 'Written answers'}>
+    {!preview && <div className="quiz-cards"><div ref={grid} className={'choices contextual-choices ' + (delayed ? 'choices-audio-first' : 'choices-enter')} aria-label={format === 'picture' ? 'Picture answers' : 'Written answers'}>
       {question.choices.map((choice, index) => <div className="choice-slot" key={choice.id} style={{ animationDelay: `${index * 40}ms` }}><button type="button"
-        className={'answer-choice contextual-choice ' + (format === 'picture' ? 'picture-choice' : 'text-choice') + (feedback ? choice.id === correctId ? ' correct' : choice.id === feedback.selectedId ? ' incorrect' : '' : '')}
-        disabled={disabled || !!feedback || playback === 'error' || playback === 'ready' || (!hasAudio && !inspecting)}
+        className={'answer-choice contextual-choice ' + (format === 'picture' ? 'picture-choice' : 'text-choice') + (feedback ? choice.id === correctId ? feedback.outcome === 'partial' ? ' partial' : ' correct' : choice.id === feedback.selectedId ? ' incorrect' : '' : '')}
+        disabled={disabled || !choicesReady || !!feedback || playback === 'error' || playback === 'ready' || (!hasAudio && !inspecting)}
         data-correct={feedback ? choice.id === correctId : undefined}
         data-selected={feedback ? choice.id === feedback.selectedId : undefined}
         aria-label={format === 'picture' ? `Choose picture ${index + 1}: ${choice.image.alt}` : `Choose writing ${choice.text}`}
         onClick={() => { if (!answered.current) { answered.current = true; stop(); setPlayback('idle'); onChoose(choice); } }}>
         {format === 'picture' ? <img src={asset(choice.image.src)} alt={choice.image.alt} draggable={false}/> :
           <span lang={choice.language} className="written-answer" data-font="noto-sans" style={{ '--writing-length': Math.max(1, Array.from(graphemes.segment(choice.text)).length) } as CSSProperties}>{choice.text}</span>}
-        {feedback && choice.id === correctId && <span className="choice-badge" aria-label="Correct answer">✓</span>}
+        {feedback && choice.id === correctId && <span className="choice-badge" aria-label={feedback.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback.outcome === 'partial' ? '≈' : '✓'}</span>}
         {feedback && choice.id === feedback.selectedId && !feedback.correct && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}
       </button></div>)}
     </div></div>}

@@ -77,7 +77,7 @@ export function DevReviewOptions({ availableTypes, value, onChange, onStart, dis
             <option value="untimed">Untimed</option>
           </select></label>
         </div>
-        <p id={`${id}-timer-note`} className="dev-options-help">Timers apply to word reviews. Contextual reviews and corrective retries stay untimed.</p>
+        <p id={`${id}-timer-note`} className="dev-options-help">Timers apply to word and contextual reviews after playback. Lessons and corrective retries stay untimed.</p>
       </fieldset>
       {error && <p className="dev-options-error" role="alert">{error}</p>}
       <div className="dev-options-start">

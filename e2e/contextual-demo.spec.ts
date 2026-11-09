@@ -113,14 +113,12 @@ test('contextual practice demo uses real session feedback and retries without ch
       .find(recording => source.endsWith(recording.sentenceSrc))!;
     expect(recording).toBeDefined();
     const snapshot = { questionId, sentenceSrc: recording.sentenceSrc, questionSrc: recording.questionSrcs[questionId]! };
-    if (index === 0) {
-      missed = snapshot;
-      await expect(audio).toHaveAttribute('src', '/' + snapshot.questionSrc, { timeout: 15000 });
-      await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
-    }
+    if (index === 0) missed = snapshot;
+    await expect(audio).toHaveAttribute('src', '/' + snapshot.questionSrc, { timeout: 15000 });
+    await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
     if ('retry' in presentation) expect(snapshot).toEqual(missed);
     await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
-    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 100));
     await page.clock.runFor(500);
     const layout = await gridLayout(page);
     const option = question.options.find(option => presentation.miss ? option.id !== question.correctOptionId : option.id === question.correctOptionId)!;
