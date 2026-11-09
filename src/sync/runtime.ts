@@ -1,6 +1,6 @@
 import type { SupabaseClient, User } from '@supabase/supabase-js';
 import { ProgressStore } from '../progress/store';
-import { createCloudClient } from './client';
+import { cachedCloudUser, createCloudClient } from './client';
 import { synchronize } from './engine';
 import { NoteStore } from './notes';
 import { SupabaseRemote } from './remote';
@@ -36,20 +36,27 @@ export class AccountRuntime {
   private unsubscribeAuth: () => void;
   private authEvents = 0;
   private disposed = false;
-  constructor(private client: SupabaseClient) {
-    const { data } = client.auth.onAuthStateChange((_event, session) => {
+  private localIdentityOnly = false;
+  constructor(private client: SupabaseClient, offlineUser: AccountSnapshot['user'] = null) {
+    const offlineReady = navigator.onLine === false && offlineUser ? this.switchUser(offlineUser) : null;
+    this.localIdentityOnly = !!offlineReady;
+    const { data } = client.auth.onAuthStateChange((event, session) => {
       if (this.disposed) return;
+      if (event === 'INITIAL_SESSION' && !session && this.localIdentityOnly && navigator.onLine === false) return;
       this.authEvents++;
+      if (session || event === 'SIGNED_OUT') this.localIdentityOnly = false;
       // Never run another Supabase request while its auth callback holds a lock.
       queueMicrotask(() => { if (!this.disposed) void this.switchUser(session?.user ?? null); });
     });
     this.unsubscribeAuth = () => data.subscription.unsubscribe();
-    this.initialized = client.auth.getSession().then(async ({ data, error }) => {
+    const authReady = client.auth.getSession().then(async ({ data, error }) => {
       if (this.disposed) return;
       if (this.authEvents) { await Promise.resolve(); await this.switching; return; }
+      if (this.localIdentityOnly && navigator.onLine === false) return;
       if (error) { this.update({ loading: false, error: 'Sign in again to resume sync.' }); return; }
       await this.switchUser(data.session?.user ?? null);
     }).catch(() => { if (!this.disposed) this.update({ loading: false, error: 'Sign in again to resume sync.' }); });
+    this.initialized = offlineReady ?? authReady;
     window.addEventListener('online', this.changed);
     window.addEventListener('focus', this.changed);
   }
@@ -62,7 +69,7 @@ export class AccountRuntime {
     this.state = { ...this.state, ...change };
     for (const listener of this.listeners) listener();
   }
-  private switchUser(user: User | null): Promise<void> {
+  private switchUser(user: Pick<User, 'id' | 'email'> | null): Promise<void> {
     if (this.disposed) return Promise.resolve();
     const id = user?.id ?? null;
     if (this.targetUserId === id) return this.switching ?? Promise.resolve();
@@ -89,6 +96,23 @@ export class AccountRuntime {
   changed = () => { void this.sync(); };
   sync = async (): Promise<void> => {
     if (this.disposed || !this.state.user || this.state.loading) return;
+    if (navigator.onLine === false) {
+      this.update({ status: 'error', error: 'Saved on this device. Sync will retry when connected.' });
+      return;
+    }
+    if (this.localIdentityOnly) {
+      const generation = this.generation;
+      const { data, error } = await this.client.auth.getSession();
+      if (this.disposed || generation !== this.generation) return;
+      if (error || !data.session) {
+        this.update({ status: 'error', error: 'Saved on this device. Sign in again to resume sync.' });
+        return;
+      }
+      this.localIdentityOnly = false;
+      await this.switchUser(data.session.user);
+      // A different authenticated identity must never upload the cached account's data.
+      if (this.state.user?.id !== data.session.user.id) return;
+    }
     this.queued = true;
     if (this.running) return this.running;
     this.running = this.drain();
@@ -121,7 +145,9 @@ export class AccountRuntime {
   }
   async signOut() {
     const { error } = await this.client.auth.signOut({ scope: 'local' });
-    if (error) throw new Error(error.message);
+    // Local sign-out can succeed even if best-effort server revocation fails.
+    if (error && this.state.user) throw new Error(error.message);
+    this.localIdentityOnly = false;
     await this.switchUser(null);
   }
   async copyGuestProgress() {
@@ -160,7 +186,10 @@ export class AccountRuntime {
 let singleton: AccountRuntime | null | undefined;
 export function getAccountRuntime(): AccountRuntime | null {
   if (singleton !== undefined) return singleton;
-  try { const client = createCloudClient(); singleton = client ? new AccountRuntime(client) : null; }
+  try {
+    const offlineUser = navigator.onLine === false ? cachedCloudUser() : null;
+    const client = createCloudClient(); singleton = client ? new AccountRuntime(client, offlineUser) : null;
+  }
   catch { singleton = null; }
   return singleton;
 }
