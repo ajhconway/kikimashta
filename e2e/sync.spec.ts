@@ -1,3 +1,4 @@
+import { selectWordPractice } from './practice-selection';
 import { expectReadableHomeText } from './contrast';
 import { expect, test, silenceMedia, type BrowserContext, type Page } from './fixtures';
 import bank from '../content/ja.json' with { type: 'json' };
@@ -116,6 +117,7 @@ test('email sign-in is optional and its dialog supports keyboard dismissal', asy
 });
 
 test('accounts converge across browser storage, retry offline answers, and sync note deletion', async ({ page, context, browser, quietAudio }, info) => {
+  await selectWordPractice(page);
   test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');
   test.setTimeout(60_000);
   const remote = cloud();
@@ -153,6 +155,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     if (quietAudio) await silenceMedia(second);
     await remote.connect(second);
     const other = await second.newPage();
+    await selectWordPractice(other);
     await other.goto('./'); await signIn(other);
     await expect.poll(async () => (await attempts(other, 'kikimashta-account-' + alice)).length).toBe(1);
     expect(await attempts(other, 'kikimashta-account-' + alice)).toEqual([legacy]);
