@@ -1,0 +1,42 @@
+.badge-fireworks { display: block; position: absolute; left: -160px; top: -160px; width: 320px; height: 320px; overflow: visible; pointer-events: none; transform: scaleX(var(--firework-inward, 1)); }
+.badge-fireworks .firework-burst, .badge-fireworks .firework-ring, .badge-fireworks .firework-flash { transform-origin: 0 0; }
+.badge-fireworks .firework-burst { opacity: 0; animation: kiku-firework-bloom var(--burst-duration) cubic-bezier(.12,.62,.22,1) var(--burst-delay) both; }
+.badge-fireworks .firework-ray-shadow { fill: none; stroke: #652394; stroke-width: 6; opacity: .28; stroke-linecap: round; }
+.badge-fireworks .firework-ray-color { fill: none; stroke-width: 3.2; stroke-linecap: round; }
+.badge-fireworks .firework-ember { fill: #fff8dd; stroke: #ffc331; stroke-width: 1.1; }
+.badge-fireworks .firework-star, .badge-fireworks .firework-center-star { fill: #fff8d9; stroke: #d39716; stroke-width: .85; stroke-linejoin: round; }
+.badge-fireworks .firework-ray-color, .badge-fireworks .firework-star { filter: drop-shadow(0 0 2px rgb(255 242 180 / .9)); }
+.badge-fireworks .firework-center-star { stroke-width: .55; }
+.badge-fireworks .firework-ring { fill: none; stroke: #fff3c2; stroke-width: 2.5; opacity: 0; animation: kiku-firework-ring 1050ms ease-out var(--burst-delay) both; }
+.badge-fireworks .firework-ring-inner { stroke: #e76ec2; stroke-width: 1.5; animation-duration: 850ms; }
+.badge-fireworks .firework-flash { opacity: 0; animation: kiku-firework-flash 720ms ease-out var(--burst-delay) both; }
+.badge-fireworks .firework-rocket { opacity: 0; stroke-dasharray: .12 1; stroke-dashoffset: 1.12; animation: kiku-firework-launch 380ms ease-in var(--rocket-delay) both; filter: drop-shadow(0 0 3px #fff1a8); }
+@keyframes kiku-firework-bloom {
+  0% { opacity: 0; transform: scale(.16); }
+  8% { opacity: 1; }
+  35% { opacity: 1; transform: scale(.85); }
+  66% { opacity: .95; }
+  100% { opacity: 0; transform: translateY(20px) scale(1.16); }
+}
+@keyframes kiku-firework-ring {
+  0% { opacity: 0; transform: scale(.35); }
+  12% { opacity: .85; }
+  100% { opacity: 0; transform: scale(1.9); }
+}
+@keyframes kiku-firework-flash {
+  0% { opacity: 0; transform: scale(.25); }
+  15% { opacity: .95; }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+@keyframes kiku-firework-launch {
+  0% { opacity: 0; stroke-dashoffset: 1.12; }
+  12%, 80% { opacity: 1; }
+  100% { opacity: 0; stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .badge-fireworks .firework-burst, .badge-fireworks .firework-ring, .badge-fireworks .firework-flash, .badge-fireworks .firework-rocket { animation: none; }
+  .badge-fireworks [data-burst]:not([data-burst='0']), .badge-fireworks .firework-ring, .badge-fireworks .firework-flash, .badge-fireworks .firework-rocket { display: none; }
+  .badge-fireworks .firework-burst { opacity: .85; transform: scale(.68); }
+  .badge-fireworks .firework-ray:nth-child(2n), .badge-fireworks .firework-center-star { display: none; }
+  .badge-fireworks .firework-ray-color, .badge-fireworks .firework-star { filter: none; }
+}

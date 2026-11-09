@@ -1,6 +1,7 @@
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
+import starter from '../content/ja.json' with { type: 'json' };
 import { authoredContextualQuestion } from './contextual-content';
 
 const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, { image?: { alt: string } }>;
@@ -46,7 +47,8 @@ test('Dev review opens options, simulates selected writing mastery and leaves re
   await expect(current).toContainText('Confident');
   await expect(current).toContainText('1.5s');
   const source = await page.locator('.app > audio').getAttribute('src');
-  const target = catalogue.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  // Practice retains starter writing (e.g. りんご) ahead of catalogue variants (リンゴ).
+  const target = [...starter.items, ...catalogue.items].find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
   const replay = page.getByRole('button', { name: 'Replay word' });
   await replay.click();
   await expect(page.locator('.app > audio')).toHaveAttribute('src', source!);
