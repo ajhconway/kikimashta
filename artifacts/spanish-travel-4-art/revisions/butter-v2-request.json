@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-butter",
+  "slug": "butter",
+  "version": 2,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "concept": "Remove ONLY the separate thin butter sliver lying in front of the main butter block. The dish should now contain one complete butter block, with clean empty dish surface in front. Preserve the main block, open lid, dish, colours, proportions and composition. Do not add a knife, slices, crumbs or other objects.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Remove ONLY the separate thin butter sliver lying in front of the main butter block. The dish should now contain one complete butter block, with clean empty dish surface in front. Preserve the main block, open lid, dish, colours, proportions and composition. Do not add a knife, slices, crumbs or other objects.\nPreserve the established smooth bold cartoon outlines and soft shading. One complete centered illustration with generous transparent outer margin on a square canvas. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/butter-v1.png",
+  "referenceSha256": "2e9ed6dfa09f38d0818a84d78dec578918b9beb4db2cbed370e34e5317390f8a"
+}
