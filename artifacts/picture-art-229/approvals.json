@@ -1,0 +1,359 @@
+{
+  "issue": 229,
+  "scope": "artwork only",
+  "date": "2026-11-09",
+  "ownerStatement": "Ok, let's ship this updated artwork.",
+  "assets": [
+    {
+      "id": "ja-v-27d5744f36a2",
+      "text": "子",
+      "path": "artifacts/picture-art-229/ja-v-27d5744f36a2-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "be94a349440a96a1b900f60299d1cdc290f18bc39a49206249804b69bbeedfb0"
+    },
+    {
+      "id": "ja-v-d1b6831b65c8",
+      "text": "丸",
+      "path": "artifacts/picture-art-229/ja-v-d1b6831b65c8-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "777be8ef01192908420c936dc818d0a4977a23fbc94a22c9972e0711f903d814"
+    },
+    {
+      "id": "ja-v-6c0b9f3278dc",
+      "text": "目",
+      "path": "artifacts/picture-art-229/ja-v-6c0b9f3278dc-reuse.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee"
+    },
+    {
+      "id": "ja-v-a8ca5ef684b8",
+      "text": "目玉",
+      "path": "artifacts/picture-art-229/ja-v-a8ca5ef684b8-reuse.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa"
+    },
+    {
+      "id": "ja-v-0bf44d10d860",
+      "text": "女子",
+      "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+    },
+    {
+      "id": "ja-v-185a632e3742",
+      "text": "女の子",
+      "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+    },
+    {
+      "id": "ja-v-3bcce8de9d04",
+      "text": "人々",
+      "path": "artifacts/picture-art-229/ja-v-3bcce8de9d04-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "73d7c181a56abe7b95e49bced9258dd4e814f73c634b8bd6083d128c80edc372"
+    },
+    {
+      "id": "ja-v-0da81020c173",
+      "text": "田んぼ",
+      "path": "artifacts/picture-art-229/ja-v-0da81020c173-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588"
+    },
+    {
+      "id": "ja-v-762983bc3fe7",
+      "text": "田",
+      "path": "artifacts/picture-art-229/ja-v-0da81020c173-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588"
+    },
+    {
+      "id": "ja-v-65df49688ef0",
+      "text": "刀",
+      "path": "artifacts/picture-art-229/ja-v-65df49688ef0-reuse.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08"
+    },
+    {
+      "id": "ja-v-afefe30bcb46",
+      "text": "火山",
+      "path": "artifacts/picture-art-229/ja-v-afefe30bcb46-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "040f6ed3a77ddc704ad72b860d0e3d990a9bbed71510231c5a91c3551e4e3473"
+    },
+    {
+      "id": "ja-v-cbda72b9dd04",
+      "text": "白",
+      "path": "artifacts/picture-art-229/ja-v-cbda72b9dd04-reuse.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c"
+    },
+    {
+      "id": "ja-v-a76119b3c712",
+      "text": "毛",
+      "path": "artifacts/picture-art-229/ja-v-a76119b3c712-reuse.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31"
+    },
+    {
+      "id": "ja-v-575ec5f060f3",
+      "text": "少女",
+      "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+    },
+    {
+      "id": "ja-v-f25546e67181",
+      "text": "女の人",
+      "path": "artifacts/picture-art-229/ja-v-f25546e67181-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "1b43ca60111b99865c797309d4b44a4f292b2446f74b479fd5108e087f85ccd1"
+    },
+    {
+      "id": "ja-v-c22ee5be019b",
+      "text": "少年",
+      "path": "artifacts/picture-art-229/ja-v-c22ee5be019b-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f"
+    },
+    {
+      "id": "ja-v-41b543dc8fe4",
+      "text": "宝石",
+      "path": "artifacts/picture-art-229/ja-v-41b543dc8fe4-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "26b4e115f916248e7c184449c9e38c75832c436adb794ec3659dc4457c7b7d4a"
+    },
+    {
+      "id": "ja-v-4b9dfeafcab4",
+      "text": "男",
+      "path": "artifacts/picture-art-229/ja-v-4b9dfeafcab4-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
+    },
+    {
+      "id": "ja-v-2f21cb2e8d02",
+      "text": "月見",
+      "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v2.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 2,
+      "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
+    },
+    {
+      "id": "ja-v-36897e1da4ac",
+      "text": "切手",
+      "path": "artifacts/picture-art-229/ja-v-36897e1da4ac-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "8a99b4a2f12d1ec66d5d464f2d234569416ae9e45caf24abb6aaa6a71a9139e5"
+    },
+    {
+      "id": "ja-v-74043c16db5e",
+      "text": "かき氷",
+      "path": "artifacts/picture-art-229/ja-v-74043c16db5e-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "4d154b483167a4223dbcd3ccc7c8e4ef11bd48f29d9534d8f5f3e6058ba8d5cb"
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "text": "町",
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v4.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 4,
+      "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
+    },
+    {
+      "id": "ja-v-cb7d8a487c4f",
+      "text": "花見",
+      "path": "artifacts/picture-art-229/ja-v-cb7d8a487c4f-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "7389890615e1ab974c538fbe7f2a8889e305996692b4d572655aca3a505bc2e8"
+    },
+    {
+      "id": "ja-v-92bebda5ac98",
+      "text": "村",
+      "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "69cd15888d861b97523d0c10415d8df8560b1916f35c1e503bedff04512cfdd2"
+    },
+    {
+      "id": "ja-v-696107ad9e08",
+      "text": "男の子",
+      "path": "artifacts/picture-art-229/ja-v-c22ee5be019b-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f"
+    },
+    {
+      "id": "ja-v-9a9a5c6d448c",
+      "text": "コンビニ",
+      "path": "artifacts/picture-art-229/ja-v-9a9a5c6d448c-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "73b1e883b5d4a33fd3ecf8c2683ad4fac11782db07334b11a57f2ef1fa959853"
+    },
+    {
+      "id": "ja-v-bcfbced3ea21",
+      "text": "男の人",
+      "path": "artifacts/picture-art-229/ja-v-4b9dfeafcab4-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
+    },
+    {
+      "id": "ja-v-b639fedc63ec",
+      "text": "肉",
+      "path": "artifacts/picture-art-229/ja-v-b639fedc63ec-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "3c21c6cc1fa8450e81bc2bddc62dc10634fdf6531f9175376ddbbe5609c6516e"
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "text": "皮",
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 4,
+      "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2"
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "text": "金玉",
+      "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v3.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 3,
+      "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
+    },
+    {
+      "id": "ja-v-97526e11c703",
+      "text": "走る",
+      "path": "artifacts/picture-art-229/ja-v-97526e11c703-v1.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "selectedVersion": 1,
+      "sha256": "a3f12a249f82659912b9e1b130cfd8ebe72a33f098fdd2b0c3d711d6a476b6aa"
+    }
+  ],
+  "previousApprovals": [
+    {
+      "issue": 229,
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+      "interpretation": "Approval applies to the other three images in the immediately preceding four-card revision. Skin remains under review; other batch cards have no new approval inferred.",
+      "assets": [
+        {
+          "id": "ja-v-2f21cb2e8d02",
+          "text": "月見",
+          "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v2.png",
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 2,
+          "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
+        },
+        {
+          "id": "ja-v-09d74d630a45",
+          "text": "町",
+          "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v4.png",
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 4,
+          "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
+        },
+        {
+          "id": "ja-v-26d771953f4b",
+          "text": "金玉",
+          "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v3.png",
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 3,
+          "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
+        }
+      ]
+    }
+  ]
+}

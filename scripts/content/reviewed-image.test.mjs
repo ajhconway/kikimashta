@@ -89,3 +89,35 @@ test('all consolidated artwork retains its exact hash and bytes and gallery link
     for (const match of html.matchAll(/(?:src|href)="([^"]+\.(?:png|jpg))"/g)) assert.ok(readFileSync(new URL(match[1], page)).length)
   }
 })
+
+for (const filename of ['ja-v-d0c8497457bd-v4.png', 'ja-v-cbda72b9dd04-reuse.png']) test(`picture review resolves exact approved source ${filename}`, t => {
+  const f = fixture(t)
+  const reviewPath = `artifacts/picture-art-229/${filename}`
+  f.put(reviewPath)
+  assert.deepEqual(reviewedImage({ ...f.args, reviewPath }), { bytes: f.bytes, path: reviewPath })
+  f.put(reviewPath, 'changed artwork')
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /hash or size mismatch/)
+})
+
+for (const reviewPath of [
+  'artifacts/picture-art-230/ja-v-a-v1.png',
+  'artifacts/picture-art-229/../ja-v-a-v1.png',
+  'artifacts/picture-art-229/nested/ja-v-a-v1.png',
+  'artifacts/picture-art-229/ja-v-a-v0.png',
+  'artifacts/picture-art-229/ja-v-a-v1.jpg',
+  'artifacts/picture-art-229/style-object.png',
+]) test(`picture review rejects an unapproved source pattern: ${reviewPath}`, t => {
+  const f = fixture(t)
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /Unsafe artwork source/)
+})
+
+for (const mode of ['file', 'directory']) test(`picture review rejects ${mode} symlinks`, t => {
+  const f = fixture(t)
+  const reviewPath = 'artifacts/picture-art-229/ja-v-a-v1.png'
+  f.put('outside/ja-v-a-v1.png')
+  f.put(reviewPath)
+  const path = mode === 'file' ? reviewPath : 'artifacts/picture-art-229'
+  rmSync(join(f.root, path), { recursive: true, force: true })
+  symlinkSync(join(f.root, mode === 'file' ? 'outside/ja-v-a-v1.png' : 'outside'), join(f.root, path))
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /symlink/)
+})

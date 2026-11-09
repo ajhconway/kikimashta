@@ -2273,6 +2273,14 @@
       "horizontalOverflow": false,
       "visualInspection": "All43 selected cards reviewed in native browser contact sheets. Final revised roundness/inside/calf concepts and faded motion reference poses are clear. Recorded alpha1 corner traces are not visible as a background wash."
     },
-    "builderFixtures": "Absent/partial/complete manifests render;16 scope, identity, hash, path, source-revision and frozen-review tampering cases reject before output replacement."
+    "builderFixtures": "Absent/partial/complete manifests render;16 scope, identity, hash, path, source-revision and frozen-review tampering cases reject before output replacement.",
+    "postPictureReleaseScopeAudit": {
+      "revision": "5389e16268b635348c75f2e24242940f4a491ae4",
+      "activeArtworkCount": 221,
+      "excludedUpdatedSceneIds": 24,
+      "remainingSelectedSceneIds": 43,
+      "newPictureReleaseOverlap": [],
+      "result": "The same43 selected cards remain unupdated after the31-card picture release."
+    }
   }
 }
