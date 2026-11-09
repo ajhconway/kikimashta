@@ -813,15 +813,15 @@
       "text": "太字",
       "reading": "ふとじ",
       "meaning": "Bold Letter",
-      "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove all calendar/notepad elements: rings, gold header, white sheet, page outline and outer frame. Keep ONLY exactly two letter A specimens side by side, same baseline and height and same basic typeface. LEFT A is regular/light weight in muted lavender. RIGHT A is genuinely heavy bold in dark plum, on a modest rounded golden highlight directly behind the letter. Enlarge and center the standalone AA comparison on transparent background. No paper, page, calendar, labels, dates, frame or extra glyphs. Exact text A A.",
-      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
+      "prompt": "Use case: precise-object-edit. Fix exactly ONE defect in the supplied bold-type comparison. The triangular enclosed counter inside the RIGHT dark-plum BOLD A currently has a transparent hole. Fill ONLY that enclosed triangular area with opaque warm GOLD/YELLOW matching the golden rounded backing immediately surrounding the letter. The golden backing must be continuous beneath the letter, including visible gold through its triangular counter. Do not change the letter shape, any strokes, typography, gold backing silhouette, colors elsewhere, LEFT regular lavender A, spacing or dimensions. Preserve transparency outside the objects and inside the LEFT A counter (which has no backing). No glow, paper, border, calendar, shadow or additional objects.",
+      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
       "status": "generated-pending-owner-review",
-      "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d",
+      "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v1.png",
-          "role": "edit/style reference",
-          "sha256": "3948c69ba70c376e96e4a0c5c25a970ce515787fe8b6b4025836da17ae171093"
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
+          "role": "edit target",
+          "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d"
         }
       ],
       "versions": [
@@ -853,9 +853,24 @@
           "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-43d7f6ad-0500-40dd-9204-dd50ae400a5a.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+          "prompt": "Use case: precise-object-edit. Fix exactly ONE defect in the supplied bold-type comparison. The triangular enclosed counter inside the RIGHT dark-plum BOLD A currently has a transparent hole. Fill ONLY that enclosed triangular area with opaque warm GOLD/YELLOW matching the golden rounded backing immediately surrounding the letter. The golden backing must be continuous beneath the letter, including visible gold through its triangular counter. Do not change the letter shape, any strokes, typography, gold backing silhouette, colors elsewhere, LEFT regular lavender A, spacing or dimensions. Preserve transparency outside the objects and inside the LEFT A counter (which has no backing). No glow, paper, border, calendar, shadow or additional objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
+              "role": "edit target",
+              "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d"
+            }
+          ],
+          "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9122d6da-ca35-4408-8ade-7f7d81670421.png",
+          "ownerFeedbackRevision": true
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 3,
       "image": {
         "width": 1774,
         "height": 887,
@@ -1175,7 +1190,7 @@
   ],
   "status": "complete-pending-owner-review",
   "generatedAssetCount": 20,
-  "generatedVersionCount": 39,
+  "generatedVersionCount": 40,
   "checks": {
     "exactScope": true,
     "noAlreadyUpdatedIds": true,
