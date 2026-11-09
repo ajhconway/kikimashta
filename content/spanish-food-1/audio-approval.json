@@ -1,0 +1,100 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "language": "es-419",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "Please go ahead and generate them.",
+  "scope": "96 missing word recordings only; existing audio reuse and completed artwork remain unchanged. Listening acceptance and runtime activation remain separate.",
+  "draft": "content/spanish-food-1/draft.json",
+  "draftSha256": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+  "artworkAcceptance": "content/spanish-food-1/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "e33086297c0692de7ce365aaa2ef104f9069e982a453ddfefba9576a0ad2ef34",
+  "configuration": "content/spanish-food-1/audio-config.json",
+  "configurationSha256": "51e2c1467a65e1c4855ec423fca2517c212e9080de5cfc42840b91fc89dd5d45",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceRegistrySha256": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+  "items": [
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "spelling": "papa",
+      "meaning": "Potato"
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "spelling": "jitomate",
+      "meaning": "Tomato"
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "spelling": "cebolla",
+      "meaning": "Onion"
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "spelling": "zanahoria",
+      "meaning": "Carrot"
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "spelling": "lechuga",
+      "meaning": "Lettuce"
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "spelling": "tortilla",
+      "meaning": "Tortilla"
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "spelling": "frijoles",
+      "meaning": "Beans"
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "spelling": "pasta",
+      "meaning": "Pasta"
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "spelling": "yogur",
+      "meaning": "Yogurt"
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "spelling": "sándwich",
+      "meaning": "Sandwich"
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "spelling": "pizza",
+      "meaning": "Pizza"
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "spelling": "té",
+      "meaning": "Tea"
+    }
+  ],
+  "itemsSha256": "41ab1184db41670b98f12534b1f14dfe61a15dd5c66fa6e9dbedd69ec8072365",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 96,
+  "characters": 608,
+  "budget": 1000,
+  "reusedWords": 24,
+  "reusedClips": 192,
+  "runtimeActivationAuthorized": false,
+  "audioReuse": "content/spanish-food-1/audio-reuse.json",
+  "audioReuseSha256": "de6f11b29f33b73eb63f6b5598a9372b72e563f672576d4010107a67de6b0321"
+}
