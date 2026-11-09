@@ -1,0 +1,589 @@
+{
+  "issue": 233,
+  "round": 1,
+  "tool": "built-in image_gen",
+  "status": "complete-pending-owner-review",
+  "requests": [
+    {
+      "id": "ja-v-b1514b201acd",
+      "text": "丸い",
+      "version": 3,
+      "concept": "Exactly two circular objects and two matched noncircular objects; attention rays distinguish each circular object. No trays or extra objects.",
+      "basePath": "artifacts/scene-art-233/ja-v-b1514b201acd-v2.png",
+      "baseSha256": "3d4b11d2c4d4364f40600a9f17dd4a4a52953343b9710aca055391644c6f5442",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the two trays and six objects with EXACTLY FOUR OBJECTS arranged in a compact2x2 square. Top row: one GOLD CIRCULAR DISC and one LAVENDER CIRCULAR PLATE, each perfectly round front-on. Bottom row: one matching GOLD SQUARE DISC and one matching LAVENDER SQUARE PLATE. Each circular object has its OWN three short GOLD ATTENTION RAYS just outside its contour. Noncircular objects have no attention marks. No trays, extra objects or extra comparison groups. Same object sizes/material colors across matched round/square pairs; roundness is the only contrast. FOUR objects total: TWO ROUND and TWO NONROUND. Square canvas and transparent gaps.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v2.png",
+          "sha256": "3d4b11d2c4d4364f40600a9f17dd4a4a52953343b9710aca055391644c6f5442",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-b0a6475686ea",
+      "text": "上る",
+      "version": 2,
+      "concept": "Remove only the faded starting person; retain one solid climbing person, ladder and motion direction.",
+      "basePath": "artifacts/scene-art-233/ja-v-b0a6475686ea-v1.png",
+      "baseSha256": "f7bca911884f48284b3213dbcf2435c4582c1afb7578cf410810981a7ae3c9af",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Remove ONLY the small faded/transparent STARTING PERSON at lower left. Keep the ONE SOLID CLIMBING PERSON, their pose/anatomy/clothing, the same full ladder and the existing upward arrow. The lower ladder area should be transparent wherever the removed ghost person used to be. Do not add another person, extra limbs, steps, labels or scenery. Preserve square canvas, entire ladder and person, and clean transparent exterior.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v1.png",
+          "sha256": "f7bca911884f48284b3213dbcf2435c4582c1afb7578cf410810981a7ae3c9af",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-760cc08e40eb",
+      "text": "十台",
+      "version": 2,
+      "concept": "Exactly ten identical machines in three centered rows of3,4,3, maximized within a square with clean margins.",
+      "basePath": "artifacts/scene-art-233/ja-v-760cc08e40eb-v1.png",
+      "baseSha256": "35b25745ec0d88b97d8cef9cb757f3b855e2dc3d537f0a3b8556e75ba50a2577",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Rearrange the same TEN identical washing machines into EXACTLY THREE CENTERED ROWS: TOP ROW3 MACHINES, MIDDLE ROW4 MACHINES, BOTTOM ROW3 MACHINES. Preserve the existing lavender/white appliance design and blue round doors. All ten the same size, all complete, separated by small even gaps, each individually countable. Fill a square composition efficiently with generous exterior margin. No overlap, hidden devices, extra machines, numerals or labels. Count carefully:3+4+3 equals TEN, not two rows of five.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v1.png",
+          "sha256": "35b25745ec0d88b97d8cef9cb757f3b855e2dc3d537f0a3b8556e75ba50a2577",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 2,
+      "concept": "Hands spreading open one folded map with simple roads/river/green terrain, outward gesture, no words or duplicate ghost map.",
+      "basePath": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
+      "baseSha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace blanket and folded blanket comparison completely with ONE partially unfolded paper MAP being SPREAD OPEN by TWO hands, one holding each outer edge and pulling outward. The single map has three or four connected accordion folds with alternating angles, unfolding into a broad surface. Simple map graphics: a winding BLUE RIVER, thin pale roads and a few GREEN terrain patches, with no text, letters, numerals or labels. Use two tiny outward motion strokes beside the hands only if needed. No ghost map, duplicate map, small folded-map inset, before/after panels or big connecting arrow. One real map only. Correct simple hand anatomy, whole map/hands visible on square transparency.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
+          "sha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 2,
+      "concept": "A wide open room contrasted with a narrow cramped room, plausible matching furniture at consistent scale; emphasize wide room.",
+      "basePath": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
+      "baseSha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the empty box-like openings with TWO PLAUSIBLE FURNISHED ROOM CUTAWAYS, same camera angle, wall height, depth, floor treatment and furniture scale. LEFT: a narrow cramped room with one small lavender sofa and one low golden coffee table squeezed together with little walking space. RIGHT: a WIDE OPEN room containing the SAME-SIZED same sofa and same table with generous empty floor/walking space around them. Do not enlarge furniture in the wide room. Warm cream walls, lavender/gold furnishings, coherent perspective. Three small GOLD ATTENTION RAYS around the OUTER right room identify the wide room as target. Two compact scenes fit inside square canvas with clean transparent exterior; no enclosing panels, labels or isolated width arrows.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
+          "sha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-f8249679701c",
+      "text": "明るい",
+      "version": 2,
+      "concept": "Same bright/dim room contrast; distribute attention around whole bright room rather than lamp.",
+      "basePath": "artifacts/scene-art-233/ja-v-f8249679701c-v1.png",
+      "baseSha256": "44569118bfc0f3358de24b139da9d355ef15ac0db4ded63d8a4ba94ce459135e",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep the SAME dim-left / bright-right furnished room pair, same room geometry, furniture positions and lighting contrast. Remove the existing three attention rays that cluster directly above the bright LAMP. Instead place THREE SMALL GOLD ATTENTION RAYS around the OUTSIDE of the WHOLE BRIGHT RIGHT ROOM: one just above its right upper wall corner, one outside its right edge midway down, and one just outside its lower-right floor corner. They must highlight the room overall, not the lamp, and never overlap its silhouette. Keep both room cutaways otherwise unchanged, square canvas and transparent exterior. No glow or new lighting source.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-f8249679701c-v1.png",
+          "sha256": "44569118bfc0f3358de24b139da9d355ef15ac0db4ded63d8a4ba94ce459135e",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 2,
+      "concept": "Correct car body/wheel/roof/seat/dashboard proportions while retaining clear cabin cutaway.",
+      "basePath": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
+      "baseSha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Redraw this cabin-cutaway CAR with NORMAL REAL-WORLD COMPACT HATCHBACK PROPORTIONS while keeping friendly illustration style and clear car-interior concept. Overall body length approximately2.2 times total body-plus-wheel height. Two properly separated wheels with plausible wheelbase, small front hood at left, gently curved roof, rear hatch at right. Side cutaway reveals correctly scaled TWO front seats and ONE rear bench; steering wheel/dashboard at FRONT left, front seats behind dashboard, rear bench behind front seats. Roof and floor boundaries enclose a roomy but believable cabin, not a stretched limousine or swollen toy bubble. Use three small gold attention rays beside the visible cabin as target cue. Lavender exterior, cream upholstery, gentle gold cabin light. No text or external room; whole car complete in square transparent composition.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
+          "sha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 2,
+      "concept": "Controlled near/far relation using a flowerpot beside a bench; same objects and viewpoint, emphasize nearer gap.",
+      "basePath": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+      "baseSha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace houses/tree with TWO MATCHED BENCH-AND-FLOWERPOT arrangements. Same ordinary small wooden park BENCH and same small terracotta FLOWERPOT holding a simple pink flower in BOTH arrangements, identical sizes/colors/viewpoint. TOP dominant arrangement: flowerpot is VERY CLOSE to bench leg, a narrow but visible gap; three small GOLD ATTENTION RAYS emphasize that near gap. BOTTOM comparison: the identical flowerpot is farther from the identical bench with a much larger visible gap. Fixed scale so only distance changes. Compact vertical grouping in a square, each whole bench/flowerpot visible. No people, house, tree, distance numerals, labels, ruler or large arrow.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+          "sha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "text": "同じ",
+      "version": 2,
+      "concept": "Play on duplicate-superhero pointing meme using two identical Kikus pointing at each other; same size/character/headphones.",
+      "basePath": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+      "baseSha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace stars/comparison entirely with TWO IDENTICAL KIKUS pointing at each other, playful duplicate-superhero-pointing meme composition. Image2 is Kiku CHARACTER IDENTITY reference: gold compact friendly cat, lavender headphones, pink inner ears, closed smiling eyes, rounded forepaws and curved tail. Match EXACT SAME Kiku design, size, face, headphones, color and body proportions on both sides. Both stand/sit facing each other in mirrored three-quarter poses, each extends ONE FOREPAW toward the OTHER KIKU as a clear pointing gesture, other paw relaxed. Keep feline rounded paws and simple anatomy, no human body, costume, logos or props. Identical pair alone, whole ears/headphones/paws/tails visible with clear gap between. No speech bubbles, text, equality sign, rays or extra cats. Square transparent canvas.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+          "sha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403",
+          "role": "edit target"
+        },
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "approved Kiku character identity and illustration reference"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 2,
+      "concept": "One hand clearly inserting one gold ball across the rim of an open lavender box; no ghost ball.",
+      "basePath": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+      "baseSha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace prior hands/ghosts with ONE RIGHT HUMAN HAND entering from ABOVE-RIGHT, palm angled toward viewer, fingers gently pushing/holding ONE GOLD BALL downward across the rim INTO ONE OPEN LAVENDER BOX. Exactly ONE HAND, ONE BALL, ONE BOX. The ball is visibly crossing into the opening: its lower half just inside the box and upper half visible above rim, with clear FRONT RIM occluding the appropriate lower ball edge. One short DOWNWARD GOLD ARROW at left of ball shows insertion. No second hand, spare ball, translucent/ghost ball, duplicate positions or extra objects. Keep box three-quarter viewpoint with open top and visible interior, simple plum outlines, lavender surfaces. Correct natural hand anatomy, fingers contact ball. Whole hand/box fit square with generous margins. This image will be the paired reference for removal.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+          "sha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "text": "回る",
+      "version": 2,
+      "concept": "Remove faded blade, one solid pinwheel only with motion lines and counterclockwise rotation, opposite current clockwise.",
+      "basePath": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+      "baseSha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep ONE four-bladed pinwheel around the SAME FIXED CENTRAL HUB. Remove ALL faded/ghost blade positions. Exactly FOUR FULLY SOLID blades, all opaque and equally complete, in gold/lavender palette. Add two or three small clean motion strokes just outside blade tips. Reverse the direction to COUNTERCLOCKWISE: one curved arrow ABOVE the pinwheel must have its ARROWHEAD POINTING LEFT, so the TOP arc moves from RIGHT TO LEFT. The rightmost blade motion is upward and leftmost blade motion downward, consistent counterclockwise rotation. No clockwise arrow, extra/faded blades, circles of repeated pinwheels or text. Preserve square transparency and generous margins.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+          "sha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 2,
+      "concept": "Paired inverse of insertion: one hand clearly lifting one gold ball out across the same box rim; no ghost ball.",
+      "basePath": "artifacts/scene-art-233/ja-v-a001b24baf12-v1.png",
+      "baseSha256": "37861ff27f8be3493d3bbed375600154b43de71cd7aa9ce23212bc6579cb8505",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent canvas. Turn this ONE-HAND INSERTION picture into its paired REMOVAL picture. Keep the exact same lavender box geometry, open interior/front rim, plum contours, gold ball size and lighting, right hand skin tone/sleeve and three-quarter camera. Move the SAME SINGLE RIGHT HAND upward so it naturally GRASPS and LIFTS the SINGLE GOLD BALL fully above and outside the box opening, leaving a clear small transparent gap between ball and box rim. Change the short gold DOWNWARD ARROW at left into a short gold UPWARD ARROW at left of the lifted ball. EXACTLY ONE HAND, ONE BALL, ONE BOX. No extra hand, ghost/faded ball, duplicate position, new objects or second scene. The box stays in its same place and proportions; the empty interior remains visible. Keep full hand/ball/box inside square with generous transparent margins. Friendly rounded plum outlines and restrained interior shading; real transparent alpha outside silhouettes, no glow, haze, labels, words, numeral or background wash.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "role": "edit target: selected paired insertion image; preserve exact box/ball/viewpoint",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628"
+        }
+      ],
+      "transparent_background": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "ja-v-b1514b201acd",
+      "text": "丸い",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the two trays and six objects with EXACTLY FOUR OBJECTS arranged in a compact2x2 square. Top row: one GOLD CIRCULAR DISC and one LAVENDER CIRCULAR PLATE, each perfectly round front-on. Bottom row: one matching GOLD SQUARE DISC and one matching LAVENDER SQUARE PLATE. Each circular object has its OWN three short GOLD ATTENTION RAYS just outside its contour. Noncircular objects have no attention marks. No trays, extra objects or extra comparison groups. Same object sizes/material colors across matched round/square pairs; roundness is the only contrast. FOUR objects total: TWO ROUND and TWO NONROUND. Square canvas and transparent gaps.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v2.png",
+          "sha256": "3d4b11d2c4d4364f40600a9f17dd4a4a52953343b9710aca055391644c6f5442",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-d33b112f-f4f7-4215-97f4-fafa7c38075d.png",
+      "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v3.png",
+      "sha256": "fce9dd1ce9667f8f6a3e86427e7106c66514e1dd6582b813b9c3b40e72e2c352",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-b0a6475686ea",
+      "text": "上る",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Remove ONLY the small faded/transparent STARTING PERSON at lower left. Keep the ONE SOLID CLIMBING PERSON, their pose/anatomy/clothing, the same full ladder and the existing upward arrow. The lower ladder area should be transparent wherever the removed ghost person used to be. Do not add another person, extra limbs, steps, labels or scenery. Preserve square canvas, entire ladder and person, and clean transparent exterior.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v1.png",
+          "sha256": "f7bca911884f48284b3213dbcf2435c4582c1afb7578cf410810981a7ae3c9af",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-dc603839-5d99-4c24-8288-967c98040556.png",
+      "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v2.png",
+      "sha256": "86fcc2e4faca6306b2b3455434f7fb235902d2a3c514ded75bb9e67e76d515b4",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-760cc08e40eb",
+      "text": "十台",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Rearrange the same TEN identical washing machines into EXACTLY THREE CENTERED ROWS: TOP ROW3 MACHINES, MIDDLE ROW4 MACHINES, BOTTOM ROW3 MACHINES. Preserve the existing lavender/white appliance design and blue round doors. All ten the same size, all complete, separated by small even gaps, each individually countable. Fill a square composition efficiently with generous exterior margin. No overlap, hidden devices, extra machines, numerals or labels. Count carefully:3+4+3 equals TEN, not two rows of five.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v1.png",
+          "sha256": "35b25745ec0d88b97d8cef9cb757f3b855e2dc3d537f0a3b8556e75ba50a2577",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-47faa3e2-9384-49f7-b2ca-c023374f4fd5.png",
+      "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v2.png",
+      "sha256": "784ddefde9bb398684b4df935a617e4f092669812e627704b886fa0531332b7f",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace blanket and folded blanket comparison completely with ONE partially unfolded paper MAP being SPREAD OPEN by TWO hands, one holding each outer edge and pulling outward. The single map has three or four connected accordion folds with alternating angles, unfolding into a broad surface. Simple map graphics: a winding BLUE RIVER, thin pale roads and a few GREEN terrain patches, with no text, letters, numerals or labels. Use two tiny outward motion strokes beside the hands only if needed. No ghost map, duplicate map, small folded-map inset, before/after panels or big connecting arrow. One real map only. Correct simple hand anatomy, whole map/hands visible on square transparency.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
+          "sha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-3ae703ff-0928-494c-8638-e67c9ff5836a.png",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+      "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the empty box-like openings with TWO PLAUSIBLE FURNISHED ROOM CUTAWAYS, same camera angle, wall height, depth, floor treatment and furniture scale. LEFT: a narrow cramped room with one small lavender sofa and one low golden coffee table squeezed together with little walking space. RIGHT: a WIDE OPEN room containing the SAME-SIZED same sofa and same table with generous empty floor/walking space around them. Do not enlarge furniture in the wide room. Warm cream walls, lavender/gold furnishings, coherent perspective. Three small GOLD ATTENTION RAYS around the OUTER right room identify the wide room as target. Two compact scenes fit inside square canvas with clean transparent exterior; no enclosing panels, labels or isolated width arrows.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
+          "sha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-7410d9a2-b1a0-4b2c-bb99-a63f5f7f2568.png",
+      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+      "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-f8249679701c",
+      "text": "明るい",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep the SAME dim-left / bright-right furnished room pair, same room geometry, furniture positions and lighting contrast. Remove the existing three attention rays that cluster directly above the bright LAMP. Instead place THREE SMALL GOLD ATTENTION RAYS around the OUTSIDE of the WHOLE BRIGHT RIGHT ROOM: one just above its right upper wall corner, one outside its right edge midway down, and one just outside its lower-right floor corner. They must highlight the room overall, not the lamp, and never overlap its silhouette. Keep both room cutaways otherwise unchanged, square canvas and transparent exterior. No glow or new lighting source.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-f8249679701c-v1.png",
+          "sha256": "44569118bfc0f3358de24b139da9d355ef15ac0db4ded63d8a4ba94ce459135e",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-af4cf6bf-2d89-499d-ad09-b03f1c0fdda3.png",
+      "path": "artifacts/scene-art-233/ja-v-f8249679701c-v2.png",
+      "sha256": "846ca6e52c0b6cc81931ee22f63f1d444ef64f2be5eef23959c4033f996c6eac",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Redraw this cabin-cutaway CAR with NORMAL REAL-WORLD COMPACT HATCHBACK PROPORTIONS while keeping friendly illustration style and clear car-interior concept. Overall body length approximately2.2 times total body-plus-wheel height. Two properly separated wheels with plausible wheelbase, small front hood at left, gently curved roof, rear hatch at right. Side cutaway reveals correctly scaled TWO front seats and ONE rear bench; steering wheel/dashboard at FRONT left, front seats behind dashboard, rear bench behind front seats. Roof and floor boundaries enclose a roomy but believable cabin, not a stretched limousine or swollen toy bubble. Use three small gold attention rays beside the visible cabin as target cue. Lavender exterior, cream upholstery, gentle gold cabin light. No text or external room; whole car complete in square transparent composition.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
+          "sha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-51a900bd-d43a-4989-b80d-e69ef1daaa0b.png",
+      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+      "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace houses/tree with TWO MATCHED BENCH-AND-FLOWERPOT arrangements. Same ordinary small wooden park BENCH and same small terracotta FLOWERPOT holding a simple pink flower in BOTH arrangements, identical sizes/colors/viewpoint. TOP dominant arrangement: flowerpot is VERY CLOSE to bench leg, a narrow but visible gap; three small GOLD ATTENTION RAYS emphasize that near gap. BOTTOM comparison: the identical flowerpot is farther from the identical bench with a much larger visible gap. Fixed scale so only distance changes. Compact vertical grouping in a square, each whole bench/flowerpot visible. No people, house, tree, distance numerals, labels, ruler or large arrow.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+          "sha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-b20f1e97-1ec6-43f8-8044-5b2f7e8985b0.png",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v2.png",
+      "sha256": "93039cbaf1cfedc214dbe22323a044a0213de1b05af45ad534c53c6987429b23",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "text": "同じ",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace stars/comparison entirely with TWO IDENTICAL KIKUS pointing at each other, playful duplicate-superhero-pointing meme composition. Image2 is Kiku CHARACTER IDENTITY reference: gold compact friendly cat, lavender headphones, pink inner ears, closed smiling eyes, rounded forepaws and curved tail. Match EXACT SAME Kiku design, size, face, headphones, color and body proportions on both sides. Both stand/sit facing each other in mirrored three-quarter poses, each extends ONE FOREPAW toward the OTHER KIKU as a clear pointing gesture, other paw relaxed. Keep feline rounded paws and simple anatomy, no human body, costume, logos or props. Identical pair alone, whole ears/headphones/paws/tails visible with clear gap between. No speech bubbles, text, equality sign, rays or extra cats. Square transparent canvas.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+          "sha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403",
+          "role": "edit target"
+        },
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "approved Kiku character identity and illustration reference"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-5d938f88-c299-4f73-a1ba-bbf3c2193662.png",
+      "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v2.png",
+      "sha256": "c35714bc3bc5ad1b1bcb9b33ac3e22c2b1a97f69f18d64ddf2e9379aa793ebcf",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace prior hands/ghosts with ONE RIGHT HUMAN HAND entering from ABOVE-RIGHT, palm angled toward viewer, fingers gently pushing/holding ONE GOLD BALL downward across the rim INTO ONE OPEN LAVENDER BOX. Exactly ONE HAND, ONE BALL, ONE BOX. The ball is visibly crossing into the opening: its lower half just inside the box and upper half visible above rim, with clear FRONT RIM occluding the appropriate lower ball edge. One short DOWNWARD GOLD ARROW at left of ball shows insertion. No second hand, spare ball, translucent/ghost ball, duplicate positions or extra objects. Keep box three-quarter viewpoint with open top and visible interior, simple plum outlines, lavender surfaces. Correct natural hand anatomy, fingers contact ball. Whole hand/box fit square with generous margins. This image will be the paired reference for removal.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+          "sha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-b4345e23-181f-494c-a0af-320e468b2fbe.png",
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+      "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "text": "回る",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep ONE four-bladed pinwheel around the SAME FIXED CENTRAL HUB. Remove ALL faded/ghost blade positions. Exactly FOUR FULLY SOLID blades, all opaque and equally complete, in gold/lavender palette. Add two or three small clean motion strokes just outside blade tips. Reverse the direction to COUNTERCLOCKWISE: one curved arrow ABOVE the pinwheel must have its ARROWHEAD POINTING LEFT, so the TOP arc moves from RIGHT TO LEFT. The rightmost blade motion is upward and leftmost blade motion downward, consistent counterclockwise rotation. No clockwise arrow, extra/faded blades, circles of repeated pinwheels or text. Preserve square transparency and generous margins.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+          "sha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ff292642-eccc-4944-800e-82d9faf934e7.png",
+      "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v2.png",
+      "sha256": "a0abdc9e0c132999d9e9d45a42aeb7b0f58be2614fdba94d2a796fab3b69d615",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent canvas. Turn this ONE-HAND INSERTION picture into its paired REMOVAL picture. Keep the exact same lavender box geometry, open interior/front rim, plum contours, gold ball size and lighting, right hand skin tone/sleeve and three-quarter camera. Move the SAME SINGLE RIGHT HAND upward so it naturally GRASPS and LIFTS the SINGLE GOLD BALL fully above and outside the box opening, leaving a clear small transparent gap between ball and box rim. Change the short gold DOWNWARD ARROW at left into a short gold UPWARD ARROW at left of the lifted ball. EXACTLY ONE HAND, ONE BALL, ONE BOX. No extra hand, ghost/faded ball, duplicate position, new objects or second scene. The box stays in its same place and proportions; the empty interior remains visible. Keep full hand/ball/box inside square with generous transparent margins. Friendly rounded plum outlines and restrained interior shading; real transparent alpha outside silhouettes, no glow, haze, labels, words, numeral or background wash.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "role": "edit target: selected paired insertion image; preserve exact box/ball/viewpoint",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-23a3a18b-249b-438b-975b-c479fad01e8c.png",
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+      "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    }
+  ],
+  "checks": {
+    "assets": 12,
+    "allSelectedSquareRGBA": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "selectedAndOriginalSha256": "All12 copied PNGs match preserved built-in generator originals.",
+    "referenceSha256": "All actual edit/character/paired-reference hashes match.",
+    "countChecks": "丸い exactly2round+2nonround objects;十台 exactly3/4/3 machines (10total).",
+    "dependentPair": "Removal generated by editing selected insertion v2; exact one hand,one ball,one open lavender box in both, inverse arrows and ball position.",
+    "pinwheel": "One pinwheel,four fully solid blades,no ghost blade; top arrowhead points left/counterclockwise.",
+    "kiku": "Two identical headphone-wearing Kikus point at each other; character identity reference used.",
+    "earlierVersions": "All earlier files preserved.",
+    "exteriorCornerAlphaExceptions": [],
+    "runtime": "No manifest/request/gallery/runtime/eligibility/audio/progress edits by worker."
+  }
+}

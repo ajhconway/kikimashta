@@ -1354,5 +1354,1100 @@
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8923ba3d-6867-4923-b7bb-89737bbd1fcf.png",
       "tool": "built-in image_gen"
     }
+  ],
+  "ownerRevisionRequests": [
+    {
+      "id": "ja-v-b1514b201acd",
+      "text": "丸い",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the two trays and six objects with EXACTLY FOUR OBJECTS arranged in a compact2x2 square. Top row: one GOLD CIRCULAR DISC and one LAVENDER CIRCULAR PLATE, each perfectly round front-on. Bottom row: one matching GOLD SQUARE DISC and one matching LAVENDER SQUARE PLATE. Each circular object has its OWN three short GOLD ATTENTION RAYS just outside its contour. Noncircular objects have no attention marks. No trays, extra objects or extra comparison groups. Same object sizes/material colors across matched round/square pairs; roundness is the only contrast. FOUR objects total: TWO ROUND and TWO NONROUND. Square canvas and transparent gaps.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v2.png",
+          "sha256": "3d4b11d2c4d4364f40600a9f17dd4a4a52953343b9710aca055391644c6f5442",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-d33b112f-f4f7-4215-97f4-fafa7c38075d.png",
+      "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v3.png",
+      "sha256": "fce9dd1ce9667f8f6a3e86427e7106c66514e1dd6582b813b9c3b40e72e2c352",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-b0a6475686ea",
+      "text": "上る",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Remove ONLY the small faded/transparent STARTING PERSON at lower left. Keep the ONE SOLID CLIMBING PERSON, their pose/anatomy/clothing, the same full ladder and the existing upward arrow. The lower ladder area should be transparent wherever the removed ghost person used to be. Do not add another person, extra limbs, steps, labels or scenery. Preserve square canvas, entire ladder and person, and clean transparent exterior.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v1.png",
+          "sha256": "f7bca911884f48284b3213dbcf2435c4582c1afb7578cf410810981a7ae3c9af",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-dc603839-5d99-4c24-8288-967c98040556.png",
+      "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v2.png",
+      "sha256": "86fcc2e4faca6306b2b3455434f7fb235902d2a3c514ded75bb9e67e76d515b4",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-760cc08e40eb",
+      "text": "十台",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Rearrange the same TEN identical washing machines into EXACTLY THREE CENTERED ROWS: TOP ROW3 MACHINES, MIDDLE ROW4 MACHINES, BOTTOM ROW3 MACHINES. Preserve the existing lavender/white appliance design and blue round doors. All ten the same size, all complete, separated by small even gaps, each individually countable. Fill a square composition efficiently with generous exterior margin. No overlap, hidden devices, extra machines, numerals or labels. Count carefully:3+4+3 equals TEN, not two rows of five.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v1.png",
+          "sha256": "35b25745ec0d88b97d8cef9cb757f3b855e2dc3d537f0a3b8556e75ba50a2577",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-47faa3e2-9384-49f7-b2ca-c023374f4fd5.png",
+      "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v2.png",
+      "sha256": "784ddefde9bb398684b4df935a617e4f092669812e627704b886fa0531332b7f",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace blanket and folded blanket comparison completely with ONE partially unfolded paper MAP being SPREAD OPEN by TWO hands, one holding each outer edge and pulling outward. The single map has three or four connected accordion folds with alternating angles, unfolding into a broad surface. Simple map graphics: a winding BLUE RIVER, thin pale roads and a few GREEN terrain patches, with no text, letters, numerals or labels. Use two tiny outward motion strokes beside the hands only if needed. No ghost map, duplicate map, small folded-map inset, before/after panels or big connecting arrow. One real map only. Correct simple hand anatomy, whole map/hands visible on square transparency.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
+          "sha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-3ae703ff-0928-494c-8638-e67c9ff5836a.png",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+      "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the empty box-like openings with TWO PLAUSIBLE FURNISHED ROOM CUTAWAYS, same camera angle, wall height, depth, floor treatment and furniture scale. LEFT: a narrow cramped room with one small lavender sofa and one low golden coffee table squeezed together with little walking space. RIGHT: a WIDE OPEN room containing the SAME-SIZED same sofa and same table with generous empty floor/walking space around them. Do not enlarge furniture in the wide room. Warm cream walls, lavender/gold furnishings, coherent perspective. Three small GOLD ATTENTION RAYS around the OUTER right room identify the wide room as target. Two compact scenes fit inside square canvas with clean transparent exterior; no enclosing panels, labels or isolated width arrows.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
+          "sha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-7410d9a2-b1a0-4b2c-bb99-a63f5f7f2568.png",
+      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+      "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-f8249679701c",
+      "text": "明るい",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep the SAME dim-left / bright-right furnished room pair, same room geometry, furniture positions and lighting contrast. Remove the existing three attention rays that cluster directly above the bright LAMP. Instead place THREE SMALL GOLD ATTENTION RAYS around the OUTSIDE of the WHOLE BRIGHT RIGHT ROOM: one just above its right upper wall corner, one outside its right edge midway down, and one just outside its lower-right floor corner. They must highlight the room overall, not the lamp, and never overlap its silhouette. Keep both room cutaways otherwise unchanged, square canvas and transparent exterior. No glow or new lighting source.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-f8249679701c-v1.png",
+          "sha256": "44569118bfc0f3358de24b139da9d355ef15ac0db4ded63d8a4ba94ce459135e",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-af4cf6bf-2d89-499d-ad09-b03f1c0fdda3.png",
+      "path": "artifacts/scene-art-233/ja-v-f8249679701c-v2.png",
+      "sha256": "846ca6e52c0b6cc81931ee22f63f1d444ef64f2be5eef23959c4033f996c6eac",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Redraw this cabin-cutaway CAR with NORMAL REAL-WORLD COMPACT HATCHBACK PROPORTIONS while keeping friendly illustration style and clear car-interior concept. Overall body length approximately2.2 times total body-plus-wheel height. Two properly separated wheels with plausible wheelbase, small front hood at left, gently curved roof, rear hatch at right. Side cutaway reveals correctly scaled TWO front seats and ONE rear bench; steering wheel/dashboard at FRONT left, front seats behind dashboard, rear bench behind front seats. Roof and floor boundaries enclose a roomy but believable cabin, not a stretched limousine or swollen toy bubble. Use three small gold attention rays beside the visible cabin as target cue. Lavender exterior, cream upholstery, gentle gold cabin light. No text or external room; whole car complete in square transparent composition.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
+          "sha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-51a900bd-d43a-4989-b80d-e69ef1daaa0b.png",
+      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+      "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace houses/tree with TWO MATCHED BENCH-AND-FLOWERPOT arrangements. Same ordinary small wooden park BENCH and same small terracotta FLOWERPOT holding a simple pink flower in BOTH arrangements, identical sizes/colors/viewpoint. TOP dominant arrangement: flowerpot is VERY CLOSE to bench leg, a narrow but visible gap; three small GOLD ATTENTION RAYS emphasize that near gap. BOTTOM comparison: the identical flowerpot is farther from the identical bench with a much larger visible gap. Fixed scale so only distance changes. Compact vertical grouping in a square, each whole bench/flowerpot visible. No people, house, tree, distance numerals, labels, ruler or large arrow.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+          "sha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-b20f1e97-1ec6-43f8-8044-5b2f7e8985b0.png",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v2.png",
+      "sha256": "93039cbaf1cfedc214dbe22323a044a0213de1b05af45ad534c53c6987429b23",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-0c1b8280f1ee",
+      "text": "日の出",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+      "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153",
+      "prompt": "Use case: precise-object-edit. Create ONE SQUARE 1:1 Japanese vocabulary illustration for sunrise. Image1 is the edit target: REMOVE the entire small LEFT comparison scene; keep only the large RIGHT sunrise landscape, enlarged and centered with generous clear margins. Image2 supplies the small cottage motif for a shared time-of-day family. Make one compact landscape: three gentle rolling green hills and two low rounded foreground shrubs, plus one small cream cottage with a lavender pitched roof at the lower RIGHT, front-facing at a slight three-quarter angle. Keep the cottage modest and correctly proportioned, not dominating the scene. The sun is a SINGLE golden disk low LEFT of the cottage, partly emerging above the middle hill horizon, with a few short rays and one small flat upward-curving plum/gold arrow showing sunrise. No second sun, previous position, ghost, split panel or inset. The sky is pale peach and light warm gold within a clean rounded cloud-like scene silhouette. The cottage windows are unlit. This exact house, hills, shrub positions and scene outline will be retained for evening and night variants. Match the supplied polished friendly illustration: substantial rounded plum contours, restrained internal shading, natural green terrain, calm gold/lavender accents. The entire landscape fits inside the square, about75–80 percent canvas; clear transparent margins on ALL four sides. Genuine alpha0 exterior and transparent gaps; sky remains an intentional opaque part of the compact scene. No aura, exterior gradient, haze, glow, drop shadow, white backdrop, checkerboard, calendar, letters, numerals, text, logos or watermark. SQUARE canvas; single main scene only.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v1.png",
+          "role": "edit target",
+          "sha256": "5108059b89fa97d87a9390f18b892d06965c02d6bf8b413b338c6f8ec0e94f71"
+        },
+        {
+          "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v1.png",
+          "role": "house motif for matching time family",
+          "sha256": "6a63eb1cdd79856d51bcd5e1783d610c26b85b5d06feac5e8c593fa3ad598f29"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47ab6682-9411-4faf-a76f-0735dc0dd762.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "text": "夕方",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+      "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
+      "prompt": "Use case: precise-object-edit. This is a STRICT SAME-SCENE time-of-day edit of the supplied sunrise illustration. Preserve the exact cottage position/shape/size, roof, windows, rolling hills, shrub silhouettes, horizon geometry, rounded sky outline, plum contours, composition and transparent exterior. Do not move, stretch, add or remove any ground feature. Keep SQUARE1:1 canvas and the same generous margins. Only change the time-of-day elements and lighting described below. EARLY EVENING: turn the peach dawn sky into a soft warm pink-to-lavender evening sky inside the existing outline. Keep only ONE low golden sun in exactly its current horizon position, partly behind the same hill. Replace the upward arrow with one similarly small flat DOWNWARD arrow beside the sun; delete upward movement completely. Keep rays modest. Light the cottage window with a warm gold interior glow that remains INSIDE the window frame, not outside the scene. Gently deepen the greens without changing any terrain boundaries. No floating second sun, ghost position, second panel, calendar, words, numerals, exterior glow, haze, wash, shadow, border panel or checkerboard. Same original geometry and true transparent exterior.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+          "role": "exact common landscape edit target",
+          "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d57dd754-6ff6-4748-b374-e12b9f5bd1f3.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-ba0c8a160c33",
+      "text": "夜",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-ba0c8a160c33-family-v1.png",
+      "sha256": "fc2c2914e58d6c6a9224d2de8965fd19687d41233b5a5247788bf5b0870e8e98",
+      "prompt": "Use case: precise-object-edit. This is a STRICT SAME-SCENE time-of-day edit of the supplied sunrise illustration. Preserve the exact cottage position/shape/size, roof, windows, rolling hills, shrub silhouettes, horizon geometry, rounded sky outline, plum contours, composition and transparent exterior. Do not move, stretch, add or remove any ground feature. Keep SQUARE1:1 canvas and the same generous margins. Only change the time-of-day elements and lighting described below. NIGHT: remove the sun, all sun rays and the motion arrow completely, filling their old positions with uninterrupted night sky. Add one golden crescent moon higher in the upper-left sky and exactly three small gold stars. Deep violet sky contained strictly inside the unchanged rounded scene outline; softly darkened blue-green hills/shrubs with the same boundaries. Light the cottage window warm gold inside its frame. Preserve the modest small cottage, roof and house geometry exactly; do NOT replace it with a larger house or change the landscape. No sun, directional arrow, motion ghost, second panel, words, numerals, calendar, exterior glow/haze/wash/drop-shadow or checkerboard. All exterior pixels genuinely transparent.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+          "role": "exact common landscape edit target",
+          "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d9ee0658-c48f-43c1-b798-535c6a905dd8.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "family": "time-of-day"
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "A: elevator cabin descending in a short shaft.",
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+      "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One simple elevator CABIN DESCENDING within a short vertical lavender shaft frame. Single solid gold cabin positioned in the LOWER half, one small opaque blue window and closed door. Shaft rails and upper empty space are visible so vertical movement is clear. A single thick gold DOWNWARD arrow beside shaft points straight DOWN, with two short downward movement strokes on cabin side. No people, duplicate cabin, ghost cabin, floor numbers or buttons with writing. Compact vertical composition.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d3177a25-7307-4ab5-aae3-890a89f30ed4.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "B: water level falling in a transparent tank.",
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v3.png",
+      "sha256": "3ff9d74a7cfb6c9551eb9f1096cc7afef04a20596096792e462cedd79c288e5e",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One simple transparent glass water tank with plum frame and stable lavender base, seen straight-on. Visible BLUE WATER has dropped to the LOWER THIRD of the tank. A thick short gold DOWNWARD arrow immediately beside the water surface indicates FALLING WATER LEVEL. One solid water volume and one clear horizontal wavy surface, transparent empty tank above. No second level line, ghost water volume, fish, taps, measuring graduations or numerals.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a33f9c0e-3066-48c2-a97b-1e04f1c8bdac.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "C: hot-air balloon descending above a compact ground landmark.",
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v4.png",
+      "sha256": "624ae4a380652dabac6b363aa36c0fe3e21037dfd9d6dfcdd1b02313902094d5",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One solid GOLD/LAVENDER HOT-AIR BALLOON DESCENDING above a compact small green hill and simple tiny house as a fixed ground landmark. Balloon occupies LOWER position nearer ground while still clearly airborne. Three short movement strokes and one bold short DOWNWARD arrow beside balloon point DOWN. Entire balloon envelope, ropes and basket visible. No people, extra balloon, ghost balloon, sky panel, clouds or written signs. Ground is a compact isolated footprint.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-52bac2c2-bc7e-493b-a42d-27cf6107c031.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-a39af9252454",
+      "text": "中央",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "Kiku centered between two identical potted plants with equal gaps.",
+      "path": "artifacts/scene-art-233/ja-v-a39af9252454-v2.png",
+      "sha256": "c342a177f47942f2df0f0594b29a73889de2b49c7dc49bd088c2e0ba485840cd",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. Use the Kiku character reference faithfully: one golden cat with purple headphones sits at exact horizontal CENTER between TWO IDENTICAL potted green plants. The pots are same size on the same baseline and equal distances from Kiku on left and right. Symmetric composition, Kiku centered in canvas, three tiny gold attention rays above Kiku emphasize central position. Only Kiku and the two matching plants.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "role": "Kiku character identity reference",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-37081b7b-dd8a-421e-ac5a-bae1dabfbc1f.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "A: matching elevator cabin ascending in the same shaft.",
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v2.png",
+      "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2",
+      "prompt": "Use case: precise-object-edit. Edit this descending elevator illustration into its ASCENDING companion. Preserve EXACTLY the same square canvas, shaft geometry, lavender rails, gold elevator cabin shape and size, blue window, outlines and palette. Move the ONE solid cabin into the UPPER half of the SAME shaft, leaving lower shaft empty and visible. Reverse the gold direction arrow to point straight UP; short movement strokes show UPWARD movement. No duplicate cabin, ghost position, numbers, labels or background. Only one cabin, genuine transparent alpha outside the complete compact diagram.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+          "role": "matching downward option layout/edit target",
+          "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-2c32c33e-3b49-4803-bcc0-1206f7d55e96.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "B: matching water level rising in the same tank.",
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v3.png",
+      "sha256": "2226e3901bf7e70c2b7b8ad3828f836991b8ed882d0cc42a7c293cfc441b77e6",
+      "prompt": "Use case: precise-object-edit. Edit this falling-water illustration into its RISING companion. Preserve EXACTLY the same square canvas, glass tank outline, lavender base, viewpoint, highlights and palette. Raise the ONE solid blue water volume to the UPPER TWO THIRDS of the SAME tank. Reverse the gold arrow so it points straight UP beside the water surface, clearly indicating RISING WATER LEVEL. Only ONE wavy water surface, no earlier-level line, ghost water, extra tank, measuring marks, labels or numbers. Keep true transparency in exterior and empty glass space above the water.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-415802b8c769-v3.png",
+          "role": "matching downward option layout/edit target",
+          "sha256": "3ff9d74a7cfb6c9551eb9f1096cc7afef04a20596096792e462cedd79c288e5e"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-aa19ff4b-9b0e-441e-8b83-8db3da6cb0ba.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "C: matching hot-air balloon ascending above the same landmark.",
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v4.png",
+      "sha256": "6238cf04998cd0096898e9a46327c0f592668b26d8b44bfc58619bd071dbbd12",
+      "prompt": "Use case: precise-object-edit. Edit this descending hot-air balloon illustration into its ASCENDING companion. Preserve EXACTLY the same square canvas, small green hill, house landmark, gold/lavender balloon design, basket and outline style. Move the ONE solid balloon HIGHER above the SAME ground landmark with a clear larger vertical gap between basket and ground; keep entire balloon within clear canvas margins and maintain balloon size as closely as space permits. Reverse the direction arrow to point straight UP and change short movement strokes to upward movement. No duplicate balloon, ghost starting position, clouds, labels or sky background. Genuine transparent exterior.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-415802b8c769-v4.png",
+          "role": "matching downward option layout/edit target",
+          "sha256": "624ae4a380652dabac6b363aa36c0fe3e21037dfd9d6dfcdd1b02313902094d5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-2f99d307-ff84-46aa-800b-c299f7a20c41.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-a39af9252454",
+      "text": "中央",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "Kiku sitting at the exact center of a circular rug, with four small cushions symmetrically around its edge.",
+      "path": "artifacts/scene-art-233/ja-v-a39af9252454-v3.png",
+      "sha256": "f4ee1451e1353ba62e86d190468e60ddbaf3939c2ef806a39d7a3641f8b4b7ca",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. Use the Kiku character reference faithfully: one golden cat with purple headphones sits at the exact CENTER of ONE ROUND lavender rug, viewed slightly from above. FOUR small identical gold cushions sit symmetrically at the rug edge: top, bottom, left and right, each equally distant from the center. Kiku remains dominant and centered; show the whole circular rug footprint with transparent exterior. No extra furnishings or stars.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "role": "Kiku character identity reference",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-779da6ab-874c-4e7f-930e-01a7088bd914.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "text": "同じ",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace stars/comparison entirely with TWO IDENTICAL KIKUS pointing at each other, playful duplicate-superhero-pointing meme composition. Image2 is Kiku CHARACTER IDENTITY reference: gold compact friendly cat, lavender headphones, pink inner ears, closed smiling eyes, rounded forepaws and curved tail. Match EXACT SAME Kiku design, size, face, headphones, color and body proportions on both sides. Both stand/sit facing each other in mirrored three-quarter poses, each extends ONE FOREPAW toward the OTHER KIKU as a clear pointing gesture, other paw relaxed. Keep feline rounded paws and simple anatomy, no human body, costume, logos or props. Identical pair alone, whole ears/headphones/paws/tails visible with clear gap between. No speech bubbles, text, equality sign, rays or extra cats. Square transparent canvas.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+          "sha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403",
+          "role": "edit target"
+        },
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "approved Kiku character identity and illustration reference"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-5d938f88-c299-4f73-a1ba-bbf3c2193662.png",
+      "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v2.png",
+      "sha256": "c35714bc3bc5ad1b1bcb9b33ac3e22c2b1a97f69f18d64ddf2e9379aa793ebcf",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace prior hands/ghosts with ONE RIGHT HUMAN HAND entering from ABOVE-RIGHT, palm angled toward viewer, fingers gently pushing/holding ONE GOLD BALL downward across the rim INTO ONE OPEN LAVENDER BOX. Exactly ONE HAND, ONE BALL, ONE BOX. The ball is visibly crossing into the opening: its lower half just inside the box and upper half visible above rim, with clear FRONT RIM occluding the appropriate lower ball edge. One short DOWNWARD GOLD ARROW at left of ball shows insertion. No second hand, spare ball, translucent/ghost ball, duplicate positions or extra objects. Keep box three-quarter viewpoint with open top and visible interior, simple plum outlines, lavender surfaces. Correct natural hand anatomy, fingers contact ball. Whole hand/box fit square with generous margins. This image will be the paired reference for removal.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+          "sha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-b4345e23-181f-494c-a0af-320e468b2fbe.png",
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+      "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "text": "回る",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Keep ONE four-bladed pinwheel around the SAME FIXED CENTRAL HUB. Remove ALL faded/ghost blade positions. Exactly FOUR FULLY SOLID blades, all opaque and equally complete, in gold/lavender palette. Add two or three small clean motion strokes just outside blade tips. Reverse the direction to COUNTERCLOCKWISE: one curved arrow ABOVE the pinwheel must have its ARROWHEAD POINTING LEFT, so the TOP arc moves from RIGHT TO LEFT. The rightmost blade motion is upward and leftmost blade motion downward, consistent counterclockwise rotation. No clockwise arrow, extra/faded blades, circles of repeated pinwheels or text. Preserve square transparency and generous margins.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+          "sha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01",
+          "role": "edit target"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ff292642-eccc-4944-800e-82d9faf934e7.png",
+      "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v2.png",
+      "sha256": "a0abdc9e0c132999d9e9d45a42aeb7b0f58be2614fdba94d2a796fab3b69d615",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 2,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent canvas. Turn this ONE-HAND INSERTION picture into its paired REMOVAL picture. Keep the exact same lavender box geometry, open interior/front rim, plum contours, gold ball size and lighting, right hand skin tone/sleeve and three-quarter camera. Move the SAME SINGLE RIGHT HAND upward so it naturally GRASPS and LIFTS the SINGLE GOLD BALL fully above and outside the box opening, leaving a clear small transparent gap between ball and box rim. Change the short gold DOWNWARD ARROW at left into a short gold UPWARD ARROW at left of the lifted ball. EXACTLY ONE HAND, ONE BALL, ONE BOX. No extra hand, ghost/faded ball, duplicate position, new objects or second scene. The box stays in its same place and proportions; the empty interior remains visible. Keep full hand/ball/box inside square with generous transparent margins. Friendly rounded plum outlines and restrained interior shading; real transparent alpha outside silhouettes, no glow, haze, labels, words, numeral or background wash.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "role": "edit target: selected paired insertion image; preserve exact box/ball/viewpoint",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-23a3a18b-249b-438b-975b-c479fad01e8c.png",
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+      "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+    },
+    {
+      "id": "ja-v-a39af9252454",
+      "text": "中央",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "Concentric target rings with central gold disk and short attention rays at center; no arrow or numerals.",
+      "path": "artifacts/scene-art-233/ja-v-a39af9252454-v4.png",
+      "sha256": "6f3c1023394076e10516426cb9b504fe4be8a36fff7df7458647a6a8f5bcb51c",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. A simple front-on circular target consisting of THREE concentric lavender/plum rings and one small GOLD DISK at their exact shared center. The circular rings are fully visible and geometrically concentric, with three short gold attention rays immediately around the central disk identifying the exact CENTER. No arrow, numbers, crosshair lines, dart, stand or background.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-584f9a00-da5b-4de7-94d6-c3f5d3be1c15.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "Hands forming a clay bowl on a simple pottery wheel.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v2.png",
+      "sha256": "d84650f83c699cf3f01b28ce4e399399b782492d0c7bd64b65ebdd062d922449",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. Two adult hands FORMING A CLAY BOWL on one small simple pottery wheel. Fingers gently shape the clay sides, unfinished clay bowl visibly becoming round, a few restrained curved movement strokes at spinning wheel. Warm terracotta clay, lavender wheel base. Only hands, bowl and wheel; no duplicate finished bowl, ghost hands, labels or background.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-03c37d8a-166d-4e5d-b80a-4c6dfc46cada.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "An adult assembling a small wooden birdhouse with simple materials and hammer.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+      "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One casually dressed ADULT actively ASSEMBLES a small WOODEN BIRDHOUSE. One hand holds a short roof plank onto the partly assembled birdhouse, the other holds a small hammer near a nail. Show a small few wooden offcuts beside workpiece on a compact low tabletop. Friendly clear natural wood with gold/lavender clothing accents, correct hands, no busy workshop, extra people, ghost object, text or numbers.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8bdbdbdb-56b5-4ed8-ad46-7203574372f2.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "Hands assembling a sandwich from bread and visible fillings.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v4.png",
+      "sha256": "b00de821a5d38c563380c88bdd919e3e8e8613bdede967dbd0dd430a093fe67d",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. Two adult hands ASSEMBLING A SANDWICH: one hand supports bottom bread slice with visible lettuce, tomato and cheese, the other lowers a single top bread slice toward fillings. Clear partly assembled sandwich centered, hands actively making it. Natural appetizing colors with friendly plum outlines. No ghost bread, duplicate sandwich, knife, plate, table panel or text.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-74475367-6d37-46e8-8d81-b71b7c860944.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "A hand setting a book upright on a table.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v2.png",
+      "sha256": "8f9816541c25907f2f72e46f95795f9eff69ada86cd76315a1383435aecc6210",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One adult hand SETTING A BOOK UPRIGHT on its narrow bottom edge on a short plain tabletop. Book is a plain closed lavender hardcover with visible page block and no title, held tilted just a little from vertical as hand makes it stand. Small curved gold arrow indicates rotation TOWARD VERTICAL; one book only, no ghost book, no duplicate hand, no text. Whole book and hand visible.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-0a82bc6a-b469-4b1c-b947-1e67c2167ef9.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "A hand standing a bottle upright on its base.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+      "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One adult hand STANDING A BOTTLE UPRIGHT ON ITS BASE on a short stable tabletop. Bottle is a plain solid lavender reusable bottle with gold cap, held slightly tilted just before its flat base settles fully upright. Small curved gold arrow indicates turning toward vertical. One bottle and one hand only; no labels, ghost bottle, spill, duplicate image, text or numerals.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-facb79e1-ec14-4949-8fe2-40067aa6c3f9.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "Hands erecting a simple folding easel; clear upright orientation change.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v4.png",
+      "sha256": "e929538e21d3e9bf7db5bc30b9f496e69a07e687c7e343bdc0b25539ff49edb5",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. Two adult hands ERECTING A SIMPLE FOLDING WOODEN EASEL: one hand raises the main rectangular support upright while the other opens its rear supporting leg outward to make the easel stand. Plain empty easel, no canvas or painting. Clear upright triangular side support and small upward motion arrow at top, short motion strokes at hinged leg. Whole hands and easel visible, compact composition, no ghost positions or duplicate easel.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-e210965f-c917-497c-a1a4-734efd0f6ec5.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "A person halting at a crosswalk with a red pedestrian signal.",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+      "sha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One casually dressed ADULT has HALTED at the edge of a short marked CROSSWALK. Both feet planted firmly before the first white crossing stripe, body slightly settling after walking, palm gently raised, gaze toward a small pedestrian signal showing ONE RED STANDING PERSON ICON. Signal is plain pole at right, red figure only, no lettering. A few short motion strokes terminate BEHIND the person and do not continue forward. One solid person, no ghost pose, no moving vehicle, no second signal.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-5ecaf7a9-48c3-4b87-b3b5-bab27284d760.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "An adult cyclist braking with one foot down, bicycle halted.",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v3.png",
+      "sha256": "78754b031ceb982e7fe74f8d179e9863cb6b8d6556b5f84b81a61661a36cb084",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One ADULT CYCLIST BRAKING TO A HALT on a single simple lavender bicycle. One hand visibly squeezing brake lever, one foot securely on the ground beside bicycle, both wheels still and aligned. Adult body slightly leaned back to stop. Two short trailing motion strokes end behind rear wheel; no motion strokes around the still wheels, no ghost cyclist or second bicycle. Short isolated ground line only, no busy road scene, signs or text.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-c76859f3-08f6-4675-9e1d-ccd9de78e93b.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "A rolling ball coming to rest against a soft block, trailing motion marks ending before it.",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v4.png",
+      "sha256": "31f89490ae39f5b6943f7c6646bbf1ddec41ce17e75b5690d803b96ea8dda882",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One GOLDEN BALL has COME TO REST in gentle contact against a soft lavender foam block on a short stable ground strip. Ball sits still at block's left side, block is intact and softly rounded. Three short trailing movement strokes behind ball end BEFORE the solid ball, with a small subtle settling mark beneath it. Gentle stop without bounce, impact burst, damage, extra ball, ghost position, arrow, text or numbers.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a9daec2c-4113-4cc4-804e-baa69ef18edb.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 2,
+      "candidateLabel": "A",
+      "conceptLabel": "A single train moving along a short track with motion lines.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v2.png",
+      "sha256": "63b0acb877b661ae7c6b5f20b265f32e9fc1cdbc5a0e8340ade0b94445c25e14",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. ONE SINGLE compact lavender TRAIN ENGINE traveling along a short simple track segment. Entire train and track visible, wheels with a few small curved rotation strokes, short trailing horizontal movement lines behind the engine. Gold accents, blue window, no ghost train, extra carriages, smoke clouds, destination text, signs, written labels or background landscape.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-71c08cc2-1dcf-4d89-8244-986a51b68125.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 3,
+      "candidateLabel": "B",
+      "conceptLabel": "An adult riding a bicycle along a short road with wheel movement lines.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v3.png",
+      "sha256": "24a5e289a70a872d688f45f77a9fdd8a8258c63c7be8041ac561b2d87bbeff78",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One ADULT actively RIDES A BICYCLE along a short isolated road strip. Both feet positioned on pedals in an active cycling posture, hands on handlebars, body leaning slightly forward. Small curved movement lines at wheels and two short trailing strokes behind show travel. One solid rider and one bicycle only, no ghost rider, red signal, foot on ground, signs, text or extra scenery.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-c8d2fea7-a1b2-4771-bfaf-aa177d13bcae.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative"
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 4,
+      "candidateLabel": "C",
+      "conceptLabel": "One car driving along a curved road, wheel and trailing motion lines, no ghost car.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v4.png",
+      "sha256": "bd6cfecf4fe420b11b55e69775f446410f7ce9ac3be0093cf5ee12adb01d3967",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. ONE solid lavender compact CAR DRIVING along a short gently CURVED isolated road strip. Car angled naturally with road, blue windows and gold lights, clear rotating wheel strokes and a few short trailing movement lines. Full car and compact road footprint visible. No ghost car, second car, speed numbers, written signs, tourist icons, map or background scenery.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-f1028e8a-3d86-4e8b-8cf9-3967ca665da8.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 1,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected for requested concept and readable action/relationship; no duplicate ghost subject.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
   ]
 }

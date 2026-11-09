@@ -3,7 +3,7 @@
   "round": 1,
   "date": "2026-11-09",
   "ownerStatement": "丸い is a little busy; can we have two circular objects and two non-circular objects, using attention lines to distinguish the circular ones?\n中 there is an existing Kiku artwork of Kiku in a box\n上る let's remove the shadowed starting pose\n日の出 let's remove the left part and reposition/resize accordingly\n十台 let's do 3, 4, then 3 to make them as large as possible\n広げる Maybe spreading out a map or equivalent would be more intuitive?\n広い the objects are a little weird. Can we do rooms like a wide open room and a narrow cramped one?\n明るい the emphasis should be on the whole scene, not the lamp\n中央 it's ok, but I'd like to try something different. Can you generate several alternatives?\n車内 nice concept, but the proportions are weird.\n近い I'd like different objects.\n夕方 Let's have all the time of day cards use the same scene.\n同じ Can we do a play on the spiderman meme?\n下がる/上がる I don't like the concept. Can you generate several alternatives?\n入れる Ok, but maybe just one hand more clearly inserting, no shadow object.\n作る ok, but I'd like to see several other concepts\n回る is ok, but the shadow isn't helpful. It should have movement lines instead. I think it should spin the other direction.\n立てる let's see some other concepts\n止まる let's see some other concepts\n出す same as 入れる but inverse\n走行 lets' see some other concepts",
-  "status": "authorized-for-revision",
+  "status": "complete-pending-owner-review",
   "directRevisions": [
     {
       "id": "ja-v-b1514b201acd",
@@ -228,5 +228,14 @@
     "Create matching single-scene sunrise/evening/night family. Sunrise removes left comparison. Night proposal is related-scope review only; retain its active approved art until separately accepted."
   ],
   "acceptance": "No approval inferred for unmentioned or revised cards. All new options remain for owner review.",
-  "preservation": "Keep frozen43-card source plan and original review unchanged; preserve every previous PNG and exact prompt."
+  "preservation": "Keep frozen43-card source plan and original review unchanged; preserve every previous PNG and exact prompt.",
+  "completion": {
+    "newGeneratedImages": 36,
+    "directedEdits": 12,
+    "timeFamily": 3,
+    "alternatives": 21,
+    "reusedInside": 1,
+    "cardsWithAlternatives": 7,
+    "allGeneratedVersions": 80
+  }
 }
