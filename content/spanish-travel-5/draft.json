@@ -4,16 +4,16 @@
   "packId": "es-419-travel-5-pictures",
   "language": "es-419",
   "title": "Travel level 5 · Art, music and culture",
-  "status": "word-list-proposal",
+  "status": "artwork-generation-authorized",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
-  "generationAuthorized": false,
+  "generationAuthorized": true,
   "audioGenerationAuthorized": false,
   "runtimeActivationAuthorized": false,
   "groups": [
     {
       "id": "places",
-      "title": "Cultural places"
+      "title": "Cultural places and events"
     },
     {
       "id": "art",
@@ -24,34 +24,23 @@
       "title": "Musical instruments"
     },
     {
-      "id": "stage",
-      "title": "Stage and sound"
+      "id": "sound",
+      "title": "Sound and recordings"
     },
     {
-      "id": "festivals",
-      "title": "Festivals and crafts"
+      "id": "crafts",
+      "title": "Crafts and celebration"
     },
     {
       "id": "books",
-      "title": "Books and keepsakes"
+      "title": "Books and postcards"
+    },
+    {
+      "id": "actions",
+      "title": "Art and music actions"
     }
   ],
   "items": [
-    {
-      "id": "es-419-travel-museum",
-      "slug": "museum",
-      "text": "museo",
-      "meaning": "Museum",
-      "group": "places",
-      "membership": "existing-spanish-item",
-      "artwork": {
-        "source": "approved-reuse",
-        "path": "public/images/approved/es-419-travel-museum-22a089082940.png",
-        "sha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
-        "sourceId": "es-419-travel-museum"
-      },
-      "existingBank": "content/es-419-travel-2.json"
-    },
     {
       "id": "es-419-travel-theater",
       "slug": "theater",
@@ -59,6 +48,7 @@
       "meaning": "Theater",
       "group": "places",
       "membership": "new-spanish-item",
+      "concept": "A cutaway theater auditorium, tiered purple seats facing a distant warmly lit proscenium. Emphasize the whole indoor venue, not a standalone stage.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -70,39 +60,10 @@
       "meaning": "Art gallery",
       "group": "places",
       "membership": "new-spanish-item",
+      "concept": "An airy cutaway art gallery corner with three different framed abstract paintings hung on white walls and one low bench. No ticket desk or books.",
       "artwork": {
         "source": "pending-reuse-review"
       }
-    },
-    {
-      "id": "es-419-travel-library",
-      "slug": "library",
-      "text": "biblioteca",
-      "meaning": "Library",
-      "group": "places",
-      "membership": "existing-spanish-item",
-      "artwork": {
-        "source": "approved-reuse",
-        "path": "public/images/approved/es-419-travel-library-81ddcafae8f1.png",
-        "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
-        "sourceId": "es-419-travel-library"
-      },
-      "existingBank": "content/es-419-travel-4.json"
-    },
-    {
-      "id": "es-419-travel-cinema",
-      "slug": "cinema",
-      "text": "cine",
-      "meaning": "Movie theater",
-      "group": "places",
-      "membership": "existing-spanish-item",
-      "artwork": {
-        "source": "approved-reuse",
-        "path": "public/images/approved/es-419-travel-cinema-51f0fa177a8c.png",
-        "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
-        "sourceId": "es-419-travel-cinema"
-      },
-      "existingBank": "content/es-419-travel-4.json"
     },
     {
       "id": "es-419-travel-bookstore",
@@ -111,6 +72,43 @@
       "meaning": "Bookstore",
       "group": "places",
       "membership": "new-spanish-item",
+      "concept": "A compact open-front bookshop with well-stocked bookshelves and a checkout counter, two upright books on display. Clearly a shop, no readable signs.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-concert",
+      "slug": "concert",
+      "text": "concierto",
+      "meaning": "Concert",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "concept": "A small band of three friendly adult human performers with a guitar, keyboard and microphone under colorful concert spotlights, with a few audience silhouettes in foreground. A live music performance, no cats.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-festival",
+      "slug": "festival",
+      "text": "festival",
+      "meaning": "Festival",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "concept": "A cheerful small outdoor festival scene with two colorful vendor tents, a string of triangular pennants and three adult people enjoying live music and dancing on an open lawn. No text, no paper-cut decorations.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-stage",
+      "slug": "stage",
+      "text": "escenario",
+      "meaning": "Stage",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "concept": "One empty raised wooden performance stage with visible front edge and three shallow steps, overhead stage lights and two short side curtains. No audience seats, no performers; stage platform is the clear subject.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -122,6 +120,7 @@
       "meaning": "Framed painting",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One complete rectangular framed landscape painting with a simple blue lake, green hill and sun, viewed nearly straight on. Clearly a finished framed picture, no easel.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -133,6 +132,7 @@
       "meaning": "Sculpture",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One small carved pale stone classical human head-and-shoulders bust on a short square plinth. Rounded stylized sculpture, no living person.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -144,6 +144,7 @@
       "meaning": "Mural",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One low wide freestanding brick wall whose front face is painted edge-to-edge with a bold colorful stylized sun, bird and flowers. The brick edges remain visible, clearly a mural on a wall, no frame.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -155,6 +156,7 @@
       "meaning": "Paintbrush",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One large artists paintbrush shown diagonally, long lavender handle, silver ferrule and tapered soft bristles tipped with a little turquoise paint. Single object, no palette.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -166,6 +168,7 @@
       "meaning": "Painter’s palette",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One oval wooden artists palette with a thumb hole and five distinct blobs of colorful paint. No paintbrush, no food.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -177,6 +180,7 @@
       "meaning": "Easel",
       "group": "art",
       "membership": "new-spanish-item",
+      "concept": "One complete freestanding wooden A-frame artists easel with its rear leg visible and an empty cream canvas resting on its ledge. The easel legs and supporting structure are prominent. No painted image, no brushes.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -188,6 +192,7 @@
       "meaning": "Guitar",
       "group": "instruments",
       "membership": "new-spanish-item",
+      "concept": "One warm wooden six-string acoustic guitar, full instrument visible upright at a slight angle. Clear curved body, round sound hole, bridge, six strings and six tuning pegs.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -199,6 +204,7 @@
       "meaning": "Piano",
       "group": "instruments",
       "membership": "new-spanish-item",
+      "concept": "One small black grand piano with its lid raised and a clearly visible neat black-and-white keyboard. Whole instrument with stable legs. No bench, no player.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -210,6 +216,7 @@
       "meaning": "Violin",
       "group": "instruments",
       "membership": "new-spanish-item",
+      "concept": "One warm brown wooden violin upright at a slight angle with four strings, chin rest, curved waist and two f-holes; one slim bow beside it.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -221,6 +228,7 @@
       "meaning": "Trumpet",
       "group": "instruments",
       "membership": "new-spanish-item",
+      "concept": "One gleaming warm golden brass trumpet viewed in three-quarter side view, flared bell, three valves and compact looped tubing. No player.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -232,6 +240,7 @@
       "meaning": "Drum",
       "group": "instruments",
       "membership": "new-spanish-item",
+      "concept": "One round cylindrical marching drum with a taut cream top, purple shell and simple silver tension lugs. Two wooden drumsticks rest crossed on the top. No drum kit.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -243,17 +252,7 @@
       "meaning": "Flute",
       "group": "instruments",
       "membership": "new-spanish-item",
-      "artwork": {
-        "source": "pending-reuse-review"
-      }
-    },
-    {
-      "id": "es-419-travel-stage",
-      "slug": "stage",
-      "text": "escenario",
-      "meaning": "Stage",
-      "group": "stage",
-      "membership": "new-spanish-item",
+      "concept": "One straight silver transverse concert flute at a gentle diagonal, with clearly spaced round keys and a side embouchure hole near its closed head. Complete instrument, no player, no recorder mouthpiece.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -263,8 +262,9 @@
       "slug": "microphone",
       "text": "micrófono",
       "meaning": "Microphone",
-      "group": "stage",
+      "group": "sound",
       "membership": "new-spanish-item",
+      "concept": "One handheld microphone at a gentle diagonal with a silver rounded mesh grille and short purple handle. No stand, no singer.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -274,8 +274,9 @@
       "slug": "speaker",
       "text": "altavoz",
       "meaning": "Loudspeaker",
-      "group": "stage",
+      "group": "sound",
       "membership": "new-spanish-item",
+      "concept": "One substantial upright purple loudspeaker cabinet with one large dark circular woofer, one smaller tweeter and a simple side edge. No sound waves, no person.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -285,30 +286,33 @@
       "slug": "headphones",
       "text": "audífonos",
       "meaning": "Headphones",
-      "group": "stage",
+      "group": "sound",
       "membership": "new-spanish-item",
+      "concept": "One complete pair of over-ear purple headphones with a padded curved headband and two substantial soft ear cushions turned slightly inward. No head, no cat.",
       "artwork": {
         "source": "pending-reuse-review"
       }
     },
     {
-      "id": "es-419-travel-puppet",
-      "slug": "puppet",
-      "text": "títere",
-      "meaning": "Puppet",
-      "group": "stage",
+      "id": "es-419-travel-record",
+      "slug": "record",
+      "text": "disco",
+      "meaning": "Vinyl record",
+      "group": "sound",
       "membership": "new-spanish-item",
+      "concept": "One black vinyl record with visible circular grooves and a round lavender center label with a tiny center hole. A plain cream square paper sleeve sits partially behind it. No writing, no turntable.",
       "artwork": {
         "source": "pending-reuse-review"
       }
     },
     {
-      "id": "es-419-travel-stage-curtain",
-      "slug": "stage-curtain",
-      "text": "telón",
-      "meaning": "Stage curtain",
-      "group": "stage",
+      "id": "es-419-travel-pottery",
+      "slug": "pottery",
+      "text": "cerámica",
+      "meaning": "Pottery",
+      "group": "crafts",
       "membership": "new-spanish-item",
+      "concept": "Three handmade glazed ceramic vessels grouped closely: a rounded turquoise decorative vase with a narrow neck, a small terracotta bowl, and a cream pot with a purple geometric band. Visibly pottery, no plants, no flowers.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -318,30 +322,9 @@
       "slug": "pinata",
       "text": "piñata",
       "meaning": "Piñata",
-      "group": "festivals",
+      "group": "crafts",
       "membership": "new-spanish-item",
-      "artwork": {
-        "source": "pending-reuse-review"
-      }
-    },
-    {
-      "id": "es-419-travel-candle",
-      "slug": "candle",
-      "text": "vela",
-      "meaning": "Candle",
-      "group": "festivals",
-      "membership": "new-spanish-item",
-      "artwork": {
-        "source": "pending-reuse-review"
-      }
-    },
-    {
-      "id": "es-419-travel-folding-fan",
-      "slug": "folding-fan",
-      "text": "abanico",
-      "meaning": "Folding fan",
-      "group": "festivals",
-      "membership": "new-spanish-item",
+      "concept": "One traditional colorful seven-point star piñata with bright paper fringe, a short hanging cord and two dangling tissue ribbons. Whole star clearly visible, no stick or candy.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -351,19 +334,9 @@
       "slug": "festival-mask",
       "text": "máscara",
       "meaning": "Festival mask",
-      "group": "festivals",
+      "group": "crafts",
       "membership": "new-spanish-item",
-      "artwork": {
-        "source": "pending-reuse-review"
-      }
-    },
-    {
-      "id": "es-419-travel-papel-picado",
-      "slug": "papel-picado",
-      "text": "papel picado",
-      "meaning": "Decorative cut-paper bunting",
-      "group": "festivals",
-      "membership": "new-spanish-item",
+      "concept": "One decorative festival masquerade mask, full symmetrical face with two eye holes, rounded cheek shapes and simple purple, turquoise and gold painted ornament. No feathers, no person, no medical mask.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -373,8 +346,9 @@
       "slug": "basket",
       "text": "canasta",
       "meaning": "Woven basket",
-      "group": "festivals",
+      "group": "crafts",
       "membership": "new-spanish-item",
+      "concept": "One empty warm tan woven basket with a single large arched handle and an open oval rim, clear chunky wicker weave. No contents, no flowers.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -386,6 +360,7 @@
       "meaning": "Book",
       "group": "books",
       "membership": "new-spanish-item",
+      "concept": "One substantial closed purple hardcover book at a slight three-quarter angle, cream page block and a plain cover. No lettering, no notebook spiral.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -397,6 +372,7 @@
       "meaning": "Magazine",
       "group": "books",
       "membership": "new-spanish-item",
+      "concept": "One thin glossy magazine lying slightly open, a bright abstract travel photograph on the cover and a few page edges; graphic blocks only, no legible letters. Clearly thin flexible paper, not a hardcover book.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -408,6 +384,7 @@
       "meaning": "Newspaper",
       "group": "books",
       "membership": "new-spanish-item",
+      "concept": "One neatly folded newspaper with visible paper pages, simple gray column-like line marks and one small generic picture block. No legible words or letters.",
       "artwork": {
         "source": "pending-reuse-review"
       }
@@ -419,42 +396,87 @@
       "meaning": "Postcard",
       "group": "books",
       "membership": "new-spanish-item",
+      "concept": "One landscape postcard showing a simple colorful tropical beach photograph, with a second card partially behind showing address lines and a small postage stamp. No readable text. Small flat rigid cards, not a book.",
       "artwork": {
         "source": "pending-reuse-review"
       }
     },
     {
-      "id": "es-419-travel-magnet",
-      "slug": "magnet",
-      "text": "imán",
-      "meaning": "Souvenir magnet",
-      "group": "books",
+      "id": "es-419-travel-dance",
+      "slug": "dance",
+      "text": "bailar",
+      "meaning": "To dance",
+      "group": "actions",
       "membership": "new-spanish-item",
+      "concept": "Kiku dancing happily: standing on her two hind paws with a small relaxed sideways sway, forepaws raised slightly and one foot lifted. Two small curved motion marks show dance rhythm. No instruments, microphone or headphones.",
       "artwork": {
         "source": "pending-reuse-review"
       }
     },
     {
-      "id": "es-419-travel-ticket",
-      "slug": "ticket",
-      "text": "boleto",
-      "meaning": "Ticket",
-      "group": "books",
-      "membership": "existing-spanish-item",
+      "id": "es-419-travel-sing",
+      "slug": "sing",
+      "text": "cantar",
+      "meaning": "To sing",
+      "group": "actions",
+      "membership": "new-spanish-item",
+      "concept": "Kiku singing happily with a gently open mouth into a small handheld microphone held in one forepaw. Two small musical notes near her mouth. No headphones, guitar or stage.",
       "artwork": {
-        "source": "approved-reuse",
-        "path": "public/images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
-        "sha256": "d6b16a19a7a00fd6824c782e9f9c3d0b6dacac6e7efaae1de7e50d04ca76f3af",
-        "sourceId": "es-419-travel-ticket"
-      },
-      "existingBank": "content/es-419.json"
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "slug": "play-instrument",
+      "text": "tocar",
+      "meaning": "To play an instrument",
+      "group": "actions",
+      "membership": "new-spanish-item",
+      "concept": "Kiku sitting comfortably while actively playing a small acoustic guitar: one forepaw on the neck and the other strumming across the strings. Both paws clearly contact the guitar correctly. No headphones, no microphone.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-listen",
+      "slug": "listen",
+      "text": "escuchar",
+      "meaning": "To listen",
+      "group": "actions",
+      "membership": "new-spanish-item",
+      "concept": "Kiku in her usual relaxed seated pose, eyes gently closed, enjoying music through her familiar over-ear purple headphones, one forepaw lightly touching an ear cup. Two little music notes to the side. No instrument, no microphone.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-paint",
+      "slug": "paint",
+      "text": "pintar",
+      "meaning": "To paint",
+      "group": "actions",
+      "membership": "new-spanish-item",
+      "concept": "Kiku comfortably seated beside a small easel, holding a paintbrush in one forepaw and applying turquoise paint to a simple colorful flower on the upright canvas. A little palette rests near the easel. Clearly actively painting.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-draw",
+      "slug": "draw",
+      "text": "dibujar",
+      "meaning": "To draw",
+      "group": "actions",
+      "membership": "new-spanish-item",
+      "concept": "Kiku in a comfortable seated pose, holding a large graphite pencil in one forepaw and actively drawing a simple uncolored flower outline on a flat white sheet of paper in front of her. No paint, no easel, no brushes.",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
     }
   ],
   "notes": [
-    "Retain Latin American Spanish and the existing eight regional voices after audio authorization.",
-    "Reuse four existing Spanish identities/audio/progress; inspect approved artwork for the32 new Spanish nouns before generation.",
-    "Intended senses: cuadro is a framed painting; paleta is a painter’s palette; audífonos are headphones; máscara is a decorative festival mask; imán is shown as a souvenir magnet.",
-    "Use characteristic interiors/objects for venues, and review gallery/museum, library/bookstore, theater/stage/curtain and picture-component ambiguity before activation.",
-    "Word review precedes media generation; complete all artwork before consolidated feedback."
+    "Owner approved replacing four prior Travel words and eight weak items with the revised art/music vocabulary, six verbs and two event words. All36 Spanish entries are new.",
+    "Six verbs use Kiku action scenes. Tocar teaches playing a musical instrument.",
+    "Complete the whole artwork set before consolidated owner feedback. Audio and runtime activation remain separately gated."
   ]
 }

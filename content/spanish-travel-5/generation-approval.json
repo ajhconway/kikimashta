@@ -1,0 +1,35 @@
+{
+  "issue": 243,
+  "scope": "Artwork only for all36 revised words",
+  "ownerMessage": "Looks good to me. Please go ahead and generate the first round of artwork",
+  "draftSha256": "2ebd18782feba9fdd90909ace098002a893fe4b8e2d69f8ab05e7c8e6e319745",
+  "approvedReplacements": [
+    "cerámica",
+    "disco",
+    "bailar",
+    "cantar",
+    "tocar",
+    "escuchar",
+    "pintar",
+    "dibujar",
+    "concierto",
+    "festival"
+  ],
+  "removed": [
+    "museo",
+    "biblioteca",
+    "cine",
+    "boleto",
+    "títere",
+    "telón",
+    "vela",
+    "abanico",
+    "papel picado",
+    "imán",
+    "partitura",
+    "maracas"
+  ],
+  "workflow": "complete-pack-before-feedback",
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false
+}
