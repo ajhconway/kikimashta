@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import starter from '../content/ja.json' with { type: 'json' };
 import { authoredContextualQuestion } from './contextual-content';
+import { selectWordPractice } from './practice-selection';
 
 const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, { image?: { alt: string } }>;
 
@@ -20,6 +21,33 @@ async function storedHistory(page: Page) {
     } finally { db.close(); }
   });
 }
+
+test('writing Dev review reports matching endings and scoped fallbacks without saving history', async ({ page }) => {
+  await selectWordPractice(page, ['ja-wanikani-5-writing']);
+  await page.addInitScript(() => { Math.random = () => .999; });
+  await page.goto('./');
+  const before = await storedHistory(page);
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await page.getByRole('button', { name: 'Clear levels' }).click();
+  await page.getByRole('checkbox', { name: 'Familiar', exact: true }).check();
+  await page.getByRole('combobox', { name: 'Timer behavior', exact: true }).selectOption('untimed');
+  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
+  for (const text of ['考古学', '牛肉']) {
+    await expect(page.getByRole('status', { name: 'Writing distractor matching' })).toHaveCount(0);
+    const source = await page.locator('.app > audio').getAttribute('src');
+    await page.getByRole('button', { name: `Choose writing ${text}`, exact: true }).click();
+    await expect(page.locator('.app > audio')).not.toHaveAttribute('src', source!);
+  }
+  await expect(page.getByRole('button', { name: 'Choose writing 青い', exact: true })).toBeEnabled();
+  const choices = await page.locator('.choices .written-answer').allTextContents();
+  const matching = choices.filter(text => text !== '青い' && /\p{Script=Han}/u.test(text) && text.match(/[\p{Script=Hiragana}]+$/u)?.[0] === 'い').length;
+  await expect(page.getByRole('status', { name: 'Writing distractor matching' })).toHaveText(`Kana ending “い”: ${matching} matching, ${3 - matching} fallback.`);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(await storedHistory(page)).toEqual(before);
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await page.reload();
+  expect(await storedHistory(page)).toEqual(before);
+});
 
 test('Dev review opens options, simulates selected writing mastery and leaves real browser history untouched', async ({ page }) => {
   await page.goto('./');

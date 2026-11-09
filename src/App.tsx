@@ -611,6 +611,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
           outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
           change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
         {isDevReview && <div className="dev-choice-legend" role="group" aria-label="Word choice border legend">{Object.entries(devChoiceLabels).map(([kind, label]) => <span id={"dev-choice-" + kind} data-dev-choice-kind={kind} key={kind}><i aria-hidden="true"/>{label}</span>)}</div>}
+        {isDevReview && questions[index]?.writingChoicePolicy && <p role="status" aria-label="Writing distractor matching">Kana ending “{questions[index]!.writingChoicePolicy!.ending}”: {questions[index]!.writingChoicePolicy!.matching} matching, {questions[index]!.writingChoicePolicy!.fallback} fallback.</p>}
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>
