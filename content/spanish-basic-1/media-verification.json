@@ -1,0 +1,69 @@
+{
+  "issue": 191,
+  "status": "accepted-activation-release-checks-in-progress",
+  "pictures": {
+    "selected": 15,
+    "generated": 9,
+    "reused": 6,
+    "versionsPreserved": 21,
+    "manifest": "artifacts/spanish-basic-1-art/manifest.json",
+    "revisedSelected": 7,
+    "revisionHistory": "artifacts/spanish-basic-1-art/revisions/history.json",
+    "approved": 15,
+    "pending": [],
+    "ownerReview": "artifacts/spanish-basic-1-art/owner-review.json"
+  },
+  "audio": {
+    "clips": 336,
+    "words": 24,
+    "contexts": 9,
+    "voices": 8,
+    "nativePlayback": "artifacts/spanish-basic-1-audio-review/verification.json",
+    "privateArchiveFilesVerified": 2027
+  },
+  "fullCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 446,
+    "node": 266,
+    "pythonAudio": 12,
+    "pythonCards": 22,
+    "lint": "passed",
+    "types": "passed",
+    "validator": "passed",
+    "build": "passed",
+    "revisionScope": "Sleepiness v3 larger pillow supporting Kiku; no application behavior changes."
+  },
+  "limitations": [
+    "Real iPhone tests deferred to deployed version."
+  ],
+  "galleryBrowserChecks": [
+    {
+      "browser": "chromium",
+      "pictures": 15,
+      "allImages": 51,
+      "recordings": 336,
+      "pairButtons": 72,
+      "filters": true,
+      "orderedPairPlayback": true,
+      "pauseMs": 656,
+      "cancelGap": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "pictures": 15,
+      "allImages": 51,
+      "recordings": 336,
+      "pairButtons": 72,
+      "filters": true,
+      "orderedPairPlayback": true,
+      "pauseMs": 820,
+      "cancelGap": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "independentReview": "Prior seven-picture round independently reviewed with no material findings. Follow-up sleepiness v3 visually inspected with larger pillow supporting chin and both paws; selected-file alpha/hash and gallery checks refreshed."
+}

@@ -117,14 +117,17 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
   // Catalogue membership scopes contextual formats without admitting unreviewed word pictures.
   const contextualScope = useMemo(() => selectedPracticeCards(languageContextualVocabulary, packIds, cardPacks), [languageContextualVocabulary, packIds, cardPacks]);
+  const foundationCards = useMemo(() => (language.foundationCards ?? []).filter(card => cardPacks.some(pack =>
+    packIds.includes(pack.id) && pack.language === card.item.language && pack.itemIds.includes(card.item.id))), [language, cardPacks, packIds]);
+  const scopedCards = useMemo(() => [...selectedCards, ...foundationCards], [selectedCards, foundationCards]);
   const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
   const learningSnapshot = useCallback(async (attempts: PracticeAttempt[]) => {
     const unlocks = await deriveContextualUnlocks(attempts, practicePool.language);
-    const cards = [...selectedContextualCards(contextualScope, contextualCards, unlocks, directContextualTargets), ...selectedCards];
+    const cards = [...selectedContextualCards(contextualScope, contextualCards, unlocks, directContextualTargets), ...scopedCards];
     const keys = new Set(cards.map(cardKey));
     const allSchedules = await deriveSchedules(attempts, practicePool.language);
     return { cards, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
-  }, [selectedCards, contextualScope, practicePool]);
+  }, [contextualScope, scopedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
     if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
@@ -142,7 +145,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [devOptions, setDevOptions] = useState<DevReviewOptions>(defaultDevReviewOptions);
   const [devReviewError, setDevReviewError] = useState<string | null>(null);
   const devTimerMode = useRef<DevReviewOptions['timerMode'] | null>(null);
-  const devEntries = useMemo(() => devReviewEntries(selectedCards, languageContextualBanks, languageContextualVocabulary, contextualScope), [selectedCards, languageContextualBanks, languageContextualVocabulary, contextualScope]);
+  const devEntries = useMemo(() => devReviewEntries(scopedCards, languageContextualBanks, languageContextualVocabulary, contextualScope), [scopedCards, languageContextualBanks, languageContextualVocabulary, contextualScope]);
   const devTypes = useMemo(() => availableDevReviewTypes(devEntries), [devEntries]);
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
@@ -173,8 +176,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
   const [refresh, setRefresh] = useState(0);
-  const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
-    [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
+  const forecastScope = useMemo(() => ({ store, cards: scopedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
+    [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
   const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);

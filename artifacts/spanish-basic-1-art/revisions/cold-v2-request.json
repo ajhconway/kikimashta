@@ -1,0 +1,14 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-cold",
+  "slug": "cold",
+  "version": 2,
+  "ownerFeedback": "Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot.",
+  "concept": "A LARGE upright thermometer is the primary object and occupies most of the card height, with low BLUE liquid in its bulb and a short blue column. Put just TWO SMALL ICE CUBES at its base as a supporting cold cue. Remove the drinking glass and all water. Use a rounded violet thermometer outline with three plain ticks and no numbers, letters or words. No flame. Keep the thermometer visually dominant, not a small accessory.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a transparent background, readable at 145px.\nInput image1: EDIT TARGET to replace its composition according to the owner correction.\nOwner correction: Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot.\nPrimary request: A LARGE upright thermometer is the primary object and occupies most of the card height, with low BLUE liquid in its bulb and a short blue column. Put just TWO SMALL ICE CUBES at its base as a supporting cold cue. Remove the drinking glass and all water. Use a rounded violet thermometer outline with three plain ticks and no numbers, letters or words. No flame. Keep the thermometer visually dominant, not a small accessory.\nStyle and constraints: preserve the established rounded friendly cartoon style, smooth bold deep-violet contours and gentle soft shading. Kiku remains golden-yellow with purple headphones, pink ear interiors, tiny whiskers and curled tail. One complete centered illustration on a square canvas with generous transparent margin. No text, numbers, logo, watermark, decorative background, outside glow or ground shadow. Preserve opaque subject interiors and genuinely transparent outside pixels.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/cold-v1.png",
+  "referenceSha256": "889edba100272b43cc92d4be84a2c433eab7d42ed1156ad8762c068ac0af71d3",
+  "additionalReferences": []
+}

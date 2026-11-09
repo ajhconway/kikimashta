@@ -1,0 +1,19 @@
+{
+  "id": "es-419-basic-inside",
+  "slug": "inside",
+  "version": 2,
+  "path": "originals/inside-v2.png",
+  "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df",
+  "promptSha256": "0080ca83516a25bfd2d5d38170bda1233420ae79d615bc7427c4ef6e78fd7e20",
+  "referenceSha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-7661cbf5-b1fa-4260-b4c9-6670cc36b544.png",
+  "supersedes": "originals/inside-v1.png"
+}

@@ -119,8 +119,9 @@ test('options respect language and handle empty selected packs', async ({ page }
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   const types = page.getByRole('group', { name: 'Review types', exact: true });
-  await expect(types.getByRole('checkbox')).toHaveCount(1);
-  await expect(types.getByRole('checkbox')).toHaveAccessibleName('Words · Pictures');
+  await expect(types.getByRole('checkbox')).toHaveCount(2);
+  await expect(types.getByRole('checkbox', { name: 'Words · Pictures', exact: true })).toBeVisible();
+  await types.getByRole('checkbox', { name: 'Simple contexts · Pictures', exact: true }).uncheck();
   await page.getByRole('button', { name: 'Start dev review' }).click();
   await expect(page.locator('.quiz')).toHaveAttribute('data-exercise', 'audio-picture');
   await expect(page.locator('.app > audio')).toHaveAttribute('src', /es-419/);

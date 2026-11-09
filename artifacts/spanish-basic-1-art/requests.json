@@ -1,0 +1,117 @@
+{
+  "issue": 191,
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "requests": [
+    {
+      "id": "es-419-basic-eat",
+      "slug": "eat",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku taking a visible bite of bread; mouth and food contact clearly show eating.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "slug": "drink",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku actively sipping from a plain glass of water; no coffee cup or other food.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "id": "es-419-basic-cold",
+      "slug": "cold",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: A glass of water with ice cubes and condensation, paired with a simple blue low thermometer. No snow scene.\nDetails: \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "slug": "hot",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: The matching glass with clearly rising steam and a red high thermometer; no flame or coffee-specific cues.\nDetails: \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.\nInput image 2: matching geometry reference for the glass and thermometer only. Keep their shapes, placement and scale. Show HOT water by removing all ice and condensation, adding a few clear rising steam curls above the rim and replacing the low blue thermometer fill with a HIGH RED fill. No ice cubes. No text or numbers.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "additionalReferences": [
+        {
+          "path": "artifacts/spanish-basic-1-art/originals/cold-v1.png",
+          "role": "matched-counterpart",
+          "sha256": "889edba100272b43cc92d4be84a2c433eab7d42ed1156ad8762c068ac0af71d3"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-inside",
+      "slug": "inside",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku sitting clearly inside an open box, with the front wall partly cut away so Kiku is visible within the box. Keep Kiku and the box fully in frame. Use the same box, Kiku proportions, colors and viewing angle as the next-to card. No key, backpack, words or arrows.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. Use a plain open warm-tan cardboard box with violet contours. The front panel is cut away just enough to show the cat torso enclosed by the other three walls; Kiku sits at the bottom INSIDE the box. No second cat or second box. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "slug": "next-to",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku sitting on the ground beside the same open box used for the inside card, entirely outside it with a clear gap. Match Kiku proportions, box size, colors and viewing angle; Kiku and the box share the same ground level. No key, backpack, words or arrows.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. Use the same plain warm-tan cardboard box shape and violet contours as the inside card; Kiku sits ENTIRELY BESIDE the box on its left, with a clear gap and both on the same level. The box interior is empty. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.\nInput image2 is the MATCHING BOX AND CHARACTER reference. Reuse that same tan open cardboard box with outward side flaps and lowered front panel, now EMPTY. Place one seated Kiku fully OUTSIDE and BESIDE the box with a clear transparent gap between cat and box; do not leave any part of Kiku inside it. Both sit on the same implied ground level. No extra cat. Keep proportions and style coherent.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "additionalReferences": [
+        {
+          "path": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
+          "role": "matched-counterpart",
+          "sha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "slug": "hunger",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku holding an empty stomach and looking at bread in a thought bubble; not actively eating.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "slug": "thirst",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku with a dry mouth, looking at a water glass in a thought bubble; not actively drinking.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.\nInput image2 is a MATCHING CHARACTER AND COMPOSITION reference for the thirst counterpart to hunger. Replace the bread in the thought bubble with one glass of water; Kiku has an open dry mouth with a small pink tongue, a paw near the throat and a longing expression toward the water thought bubble. No paw holding stomach, no bread, no eating or drinking action, no crying tears.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "additionalReferences": [
+        {
+          "path": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
+          "role": "matched-counterpart",
+          "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "slug": "sleepiness",
+      "version": 1,
+      "prompt": "Use case: illustration-story\nAsset type: one square beginner Spanish picture card, readable at 145px\nInput image 1: STYLE AND CHARACTER REFERENCE ONLY; do not copy its pose.\nPrimary request: Kiku yawning with drooping eyelids beside a bed; awake, not asleep; no dream bubble.\nDetails: Kiku is the golden-yellow rounded cat with deep-violet outlines and purple headphones in image1. Retain the headphones, triangular ears, pink ear interiors, small whiskers, rounded paws and curled tail. A compact seated chibi body is allowed for the action. \nStyle: Match the approved app artwork: bold clean deep-violet outlines, rounded friendly shapes, restrained soft shading, golden-yellow, lavender and purple palette. One complete coherent vocabulary illustration, centered with generous clear margin.\nBackground: genuinely transparent, preserving all opaque subject interiors.\nAvoid: all writing, letters, numbers, logos, watermarks, decorative frames, shadows outside the subject, glow, floor or surrounding room. Do not add extra food or props beyond those needed for this concept.",
+      "transparent_background": true,
+      "referenceRole": "style-and-character",
+      "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    }
+  ]
+}

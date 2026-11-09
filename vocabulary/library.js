@@ -126,7 +126,7 @@ import { mountContextualLibrary } from './contextual'
   if (!japanese) {
     document.title = `${language.title} cards`
     document.querySelector('h1').textContent = `${language.title} cards`
-    document.querySelector('.page-header p').textContent = 'Browse the travel pack, inspect each picture and meaning, and listen to the pronunciation.'
+    document.querySelector('.page-header p').textContent = 'Browse Spanish pictures and meanings, listen to each voice, or switch to Contextual questions.'
     searchElement.placeholder = 'Spanish or English'
   }
   const resultsStatus = document.getElementById('results-status')
@@ -188,7 +188,7 @@ import { mountContextualLibrary } from './contextual'
     for (const update of masteryViews.values()) update()
     for (const pack of cardPacks) {
       const option = Array.from(packElement.options).find(option => option.value === pack.id)
-      const summary = schedules && packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), schedules)
+      const summary = schedules && packMastery([...selectedPracticeCards(practicePool.items, [pack.id], cardPacks), ...(language.foundationCards ?? []).filter(card => pack.itemIds.includes(card.item.id))], schedules)
       const text = summary ? `Lowest: ${summary.lowest.label} · Average: ${summary.average.label}` : 'Mastery unavailable'
       option.textContent = `${pack.title} · ${text}`
       document.getElementById(`pack-mastery-${pack.id}`).textContent = text

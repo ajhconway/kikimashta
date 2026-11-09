@@ -1,3 +1,4 @@
+import { spanishBasicContexts, spanishContextualVocabulary } from './spanish-basic';
 import contrastive from '../../content/contextual/ja-pilot.json';
 import simple from '../../content/contextual/ja-simple-pilot.json';
 import expansion from '../../content/contextual/ja-simple-expansion.json';
@@ -17,11 +18,11 @@ import type { PracticeCard, WordItem } from '../types';
 import { contextualExercise } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
 
-export const contextualVocabulary: WordItem[] = withAnswerVocabulary(catalogue.items.flatMap(item => {
+export const contextualVocabulary: WordItem[] = [...spanishContextualVocabulary, ...withAnswerVocabulary(catalogue.items.flatMap(item => {
   const override = overrides[item.id as keyof typeof overrides] ?? {};
   if ('removalReason' in override) return [];
   return [{ ...item, ...override, label: item.meaning, theme: 'vocabulary' } as WordItem];
-}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem));
+}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem))];
 
 interface MediaEntry {
   contextId: string; contextRevision: number; targetItemId: string; stage: 'simple' | 'contrastive';
@@ -67,7 +68,7 @@ export const pack1ContextualBank = loadPack1Content({ bank: pack1Source as unkno
 pack1ContextualBank.contexts = pack1ContextualBank.contexts.map(context => ({ ...context, questions: context.questions.map(question => ({
   ...question, focus: question.id.endsWith('-target') ? 'target' as const : 'detail' as const,
 })) }));
-const pilotBanks = withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments);
+const pilotBanks = [...withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments), spanishBasicContexts];
 export const contextualBanks = pack1ContextualBank.contexts.every(context => context.review.audio === 'approved')
   ? replacePack1Pilot(pilotBanks, pack1ContextualBank, pack1Policy.supersededPilotItemIds) : pilotBanks;
 /** Library inspection may audition pending recordings; ordinary practice never does. */

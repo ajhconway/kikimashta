@@ -1,0 +1,12 @@
+{
+  "issue": 191,
+  "versions": {
+    "cold": 4,
+    "hot": 3,
+    "inside": 2,
+    "next-to": 3,
+    "hunger": 2,
+    "thirst": 2,
+    "sleepiness": 3
+  }
+}

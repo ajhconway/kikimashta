@@ -1,0 +1,12 @@
+{
+  "id": "es-419-basic-hunger",
+  "slug": "hunger",
+  "version": 1,
+  "path": "originals/hunger-v1.png",
+  "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
+  "promptSha256": "a35216939ffcc079584998036aedf6d18972e457d6bd7c5ffc36f7592faa103f",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ba40faad-b24c-4ee7-80da-9542b7d3914b.png"
+}
