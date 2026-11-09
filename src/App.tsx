@@ -21,6 +21,7 @@ import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
 import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, densityTargets, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { planContextualIntroductions } from './core/contextual-admission';
 import { initialVoiceIds } from './core/voices';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
@@ -156,7 +157,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [lessonPlan, setLessonPlan] = useState<LessonPlan | null>(null);
   const [lessonItems, setLessonItems] = useState<PracticeCard[]>([]);
   const [preview, setPreview] = useState(0);
-  const [previewQuestion, setPreviewQuestion] = useState<Question | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [quizSize, setQuizSize] = useState(0);
   const [index, setIndex] = useState(0);
@@ -180,7 +180,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
   const session = useRef({ id: '', reserved: new Set<string>(), cards: [] as PracticeCard[] });
-  const lessonQuestions = useRef(new Map<string, Question>());
   const history = useRef<PracticeAttempt[]>([]);
   const mastery = useRef(new Map<string, ScheduledWord>());
   const operation = useRef(0);
@@ -344,7 +343,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       const schedules = (await deriveSchedules(attempts, practicePool.language)).filter(card => keys.has(cardKey(card)));
       const learned = new Set(schedules.map(cardKey));
       const plan = await planLessonChunk({ schedules, now: now(), range,
-        candidates: session.current.cards.filter(card => !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
+        candidates: session.current.cards.filter(card => !isContextualExercise(card.exercise) && !learned.has(cardKey(card)) && !session.current.reserved.has(cardKey(card))) });
       if (operation.current !== request) return;
       setLessonPlan(plan); setDensity(plan.forecast.reviewsPerDay); setLessonItems(shuffled(plan.items, random));
     } catch { if (operation.current === request) setHistoryError(true); }
@@ -366,8 +365,14 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
       const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
       const byId = new Map(practicePool.items.map(item => [item.id, item]));
-      if (due.length) {
-        setPhase('review'); setQuestions(shuffled(due, random).flatMap(card => questionForCard({ item: byId.get(card.itemId)!, exercise: card.exercise })));
+      const candidates = cards.filter(card => isContextualExercise(card.exercise) && !mastery.current.has(cardKey(card)));
+      const introductions = candidates.length ? await planContextualIntroductions({ schedules,
+        cards: shuffled(candidates, random), now: at, range }) : undefined;
+      if (operation.current !== request) return;
+      const reviews = shuffled(due, random).flatMap(card => questionForCard({ item: byId.get(card.itemId)!, exercise: card.exercise }));
+      const initial = (introductions?.items ?? []).map(card => ({ ...questionForCard(card)[0]!, introduction: true }));
+      if (reviews.length || initial.length) {
+        setPhase('review'); setQuestions(initial.length ? shuffled([...reviews, ...initial], random) : reviews);
         setLessonItems([]); setLessonPlan(null); setLoading(false);
       } else {
         setPhase('lesson');
@@ -380,20 +385,12 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   function beginLesson() {
     if (!lessonItems.length || loading || historyError) return;
     lessonItems.forEach(card => session.current.reserved.add(cardKey(card)));
-    lessonQuestions.current = new Map(lessonItems.filter(card => isContextualExercise(card.exercise))
-      .map(card => [cardKey(card), questionForCard(card)[0]!]));
     setPhase('lesson'); setPreview(0); setScreen('preview'); presentLesson(lessonItems[0]!);
   }
-  function presentLesson(card: PracticeCard) {
-    if (isContextualExercise(card.exercise)) {
-      playRequest.current++; audio.current?.pause(); setPlaying(false); setAudioError(false);
-      setPreviewQuestion(lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!);
-    } else { setPreviewQuestion(null); present(card.item, card.exercise); }
-  }
+  function presentLesson(card: PracticeCard) { present(card.item, card.exercise); }
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
-      if (isContextualExercise(card.exercise)) return [lessonQuestions.current.get(cardKey(card)) ?? questionForCard(card)[0]!];
       const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
       return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);
@@ -449,7 +446,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       correct, outcome: answerOutcome(correct, countdown.timer, answeredAt),
       ...(countdown.timer ? { timer: countdown.timer } : {}), startedAt: active.current.startedAt,
       answeredAt, responseMs: Math.max(0, answeredAt - active.current.startedAt),
-      context: { phase, exercise: question.exercise, recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
+      context: { phase: question.introduction ? 'lesson' : phase, exercise: question.exercise, recordingSrc: recording.current!.src, replays: active.current.replays, schedulerVersion,
         ...(question.contextual ? { contextual: {
           stage: question.contextual.context.stage ?? 'contrastive',
           contextId: question.contextual.context.id, contextRevision: question.contextual.context.revision,
@@ -520,7 +517,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
-        {!loading && !historyError && contextualAdmission.ready > 0 && <p className="block-note">{contextualAdmission.ready} contextual {contextualAdmission.ready === 1 ? 'card is' : 'cards are'} ready for lessons. {contextualAdmission.atCapacity ? 'New lessons are waiting for your review workload to ease.' : 'They enter lessons when your review workload allows.'}</p>}
+        {!loading && !historyError && contextualAdmission.ready > 0 && <p className="block-note">{contextualAdmission.ready} contextual {contextualAdmission.ready === 1 ? 'card is' : 'cards are'} ready for reviews. {contextualAdmission.atCapacity ? 'New contextual questions are waiting for your review workload to ease.' : 'They enter review sessions when your review workload allows.'}</p>}
         <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
@@ -546,10 +543,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'preview' && target && <section className="practice preview fade-in" data-exercise={exercise}>
         <div className="section-top"><span className="counter">{preview + 1} / {lessonItems.length}</span></div>
         <h1 className="practice-title">Lesson Time!</h1>
-        {previewQuestion ? <ContextualQuiz key={preview} question={previewQuestion} feedback={null} onChoose={() => {}} onContinue={() => {}} onPlaybackChange={contextualPlaybackChanged} preview/> :
-          <div className={'preview-picture' + (exercise === 'audio-text' ? ' preview-writing' : '')}><CardFace item={target} exercise={exercise!} font={writingFont}/></div>}
+        <div className={'preview-picture' + (exercise === 'audio-text' ? ' preview-writing' : '')}><CardFace item={target} exercise={exercise!} font={writingFont}/></div>
         <div className="practice-actions">
-        {!previewQuestion && <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>}
+        <button className={'listen ' + (playing ? 'playing' : '')} onClick={() => play(true)} aria-label="Replay word"><Speaker/><span>{playing ? 'Playing…' : 'Replay'}</span></button>
 
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="preview-dots" aria-label={'Card ' + (preview + 1) + ' of ' + lessonItems.length}>{lessonItems.map((item, i) => <span key={cardKey(item)} className={i === preview ? 'active' : ''}/>)}</div>
