@@ -307,3 +307,7 @@ Use the approved illustrated medal for each of eight mastery ranks, with interch
 Keep badges upright and stationary on a circle around Kiku, mirrored left/right: odd counts have one at the top plus pairs; even counts begin with a matched top pair. Extend pairs down the sides toward the bottom. Home badges are 50% larger than the first circular demo (57–84px), with responsive spacing and accessible focus/hover details.
 
 The isolated Kiku demo compares mastery, families, counts 1–10 and all moods without touching progress. Verify award boundaries, foundation coverage, account/language isolation, reload, current-mastery changes, symmetric phone layout and keyboard access. The owner approved publishing and auto-merging the final badge feature on November 9, 2026. Actual iPhone acceptance remains manual.
+
+## Spanish Travel level 4 (#207)
+
+Prepare a 36-word picture-only Latin American Spanish draft continuing the English interface and eight regional voices. Extend practical town, transport, food, clothing, first-aid and outdoors vocabulary without duplicating Travel levels 1–3 or Basic Spanish. Review exact senses and Mexican variants, inspect any approved picture reuses, and record cross-pack ambiguity notes. Deliver a local word/concept review before requesting artwork/audio generation. Keep existing packs, progress and selections unchanged.
