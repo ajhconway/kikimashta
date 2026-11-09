@@ -340,7 +340,8 @@ function pictureFixture(t) {
   const f = transparentFixture(t)
   const directory = 'artifacts/picture-art-229'
   const opaqueId = 'ja-v-cbda72b9dd04'
-  const accepted = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/plan.json', import.meta.url), 'utf8')).items.map(item => item.id)
+  const plan = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/plan.json', import.meta.url), 'utf8'))
+  const accepted = plan.items.map(item => item.id)
   const acceptedIds = [...accepted.filter(id => id !== opaqueId), opaqueId]
   const assets = Array.from({ length: 31 }, (_, index) => {
     const id = acceptedIds[index]
@@ -357,13 +358,10 @@ function pictureFixture(t) {
   })
   f.put('content/catalog/ja.json', { items: assets.map(asset => ({ ...f.item, id: asset.id })) })
   f.put('content/visuals/levels-1-2.json', assets.map(asset => ({ ...f.visual, id: asset.id })))
-  const sourceRevision = 'a'.repeat(40)
-  const items = assets.map(asset => ({ id: asset.id, category: 'picture', recommendation: 'Preserve the reviewed scene.' }))
-  const excluded = Array.from({ length: 61 }, (_, index) => ({ id: `ja-v-excluded-${index}`, category: 'picture' }))
-  f.put(`${directory}/sources/suitability-review.json`, { items: [...items, ...excluded] })
-  const plan = { issue: 229, category: 'picture', expectedAssetCount: 31, pictureCardCount: 92, sourceRevision,
-    suitabilityReviewSha256: hash(readFileSync(join(f.root, directory, 'sources/suitability-review.json'))),
-    items, excludedUpdatedIds: excluded.map(item => item.id) }
+  const sourceRevision = plan.sourceRevision
+  const sourcePath = join(f.root, directory, 'sources/suitability-review.json')
+  mkdirSync(dirname(sourcePath), { recursive: true })
+  writeFileSync(sourcePath, readFileSync(new URL('../../artifacts/picture-art-229/sources/suitability-review.json', import.meta.url)))
   f.put(`${directory}/plan.json`, plan)
   const manifest = { status: 'approved', expectedAssetCount: 31, sourceRevision, assets,
     releaseApproval: { ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09',
@@ -374,7 +372,7 @@ function pictureFixture(t) {
   return { ...f, manifest, plan, save }
 }
 
-for (const failure of ['substituted known ID', 'valid selected/excluded swap', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions']) {
+for (const failure of ['substituted known ID', 'valid selected/excluded swap', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions', 'coordinated source replacement', 'coordinated revision replacement']) {
   test(`picture-set frozen scope rejects ${failure} before any deliveries`, t => {
     const f = pictureFixture(t)
     if (failure === 'substituted known ID') {
@@ -407,6 +405,20 @@ for (const failure of ['substituted known ID', 'valid selected/excluded swap', '
     if (failure === 'changed review identity') f.plan.items[0].recommendation = 'A different scene.'
     if (failure === 'changed source revision') f.manifest.sourceRevision = 'b'.repeat(40)
     if (failure === 'changed exclusions') f.plan.excludedUpdatedIds[0] = f.plan.items[0].id
+    if (failure === 'coordinated source replacement') {
+      const source = f.read('artifacts/picture-art-229/sources/suitability-review.json')
+      const item = source.items.find(item => item.id === f.plan.items[0].id)
+      item.recommendation = 'Replacement historical guidance.'
+      f.plan.items[0] = item
+      f.put('artifacts/picture-art-229/sources/suitability-review.json', source)
+      f.plan.suitabilityReviewSha256 = hash(readFileSync(join(f.root, 'artifacts/picture-art-229/sources/suitability-review.json')))
+      f.plan.sourceRevision = 'b'.repeat(40)
+      f.manifest.sourceRevision = f.plan.sourceRevision
+    }
+    if (failure === 'coordinated revision replacement') {
+      f.plan.sourceRevision = 'b'.repeat(40)
+      f.manifest.sourceRevision = f.plan.sourceRevision
+    }
     f.put('artifacts/picture-art-229/plan.json', f.plan)
     f.save()
     const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']

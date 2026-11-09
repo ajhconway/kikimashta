@@ -16,10 +16,13 @@ const reviewedSets = {
   'visual-reference-213': { directory: 'artifacts/visual-reference-art-213', count: 22, statement: "Let's ship this artwork set." },
   'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04',
     // SHA-256 of JSON.stringify(sorted accepted IDs), independent of the mutable plan partition.
-    selectionIdsSha256: '924e14881f03e105874f477e9e8d015f0f014dd3b1b020c06f053e24126a0a2c' },
+    selectionIdsSha256: '924e14881f03e105874f477e9e8d015f0f014dd3b1b020c06f053e24126a0a2c',
+    suitabilityReviewSha256: 'cc051840c23297a4f5d3c86983fdf642e1334657daf03b94a750d6da76c0d136',
+    sourceRevision: '7942fddd9f08eab3f8a4d6b5b2c9d2b80ec72030' },
 }
 
 function validatePictureScope(root, manifest, directory) {
+  const expected = reviewedSets['picture-229']
   const plan = read(root, `${directory}/plan.json`)
   const originalBytes = readFileSync(join(root, directory, 'sources/suitability-review.json'))
   const original = JSON.parse(originalBytes)
@@ -28,10 +31,10 @@ function validatePictureScope(root, manifest, directory) {
   const excluded = new Set(plan.excludedUpdatedIds)
   if (plan.issue !== 229 || plan.category !== 'picture' || plan.expectedAssetCount !== 31 ||
       plan.pictureCardCount !== 92 || picture.size !== 92 || selected.size !== 31 || plan.items.length !== 31 ||
-      hash(Buffer.from(JSON.stringify([...selected.keys()].sort()))) !== reviewedSets['picture-229'].selectionIdsSha256 ||
+      hash(Buffer.from(JSON.stringify([...selected.keys()].sort()))) !== expected.selectionIdsSha256 ||
       excluded.size !== 61 || plan.excludedUpdatedIds.length !== 61 ||
-      !/^[a-f0-9]{40}$/.test(plan.sourceRevision) || manifest.sourceRevision !== plan.sourceRevision ||
-      hash(originalBytes) !== plan.suitabilityReviewSha256 ||
+      plan.sourceRevision !== expected.sourceRevision || manifest.sourceRevision !== expected.sourceRevision ||
+      plan.suitabilityReviewSha256 !== expected.suitabilityReviewSha256 || hash(originalBytes) !== expected.suitabilityReviewSha256 ||
       [...excluded].some(id => !picture.has(id) || selected.has(id)) ||
       [...selected].some(([id, item]) => !isDeepStrictEqual(item, picture.get(id))) ||
       [...picture.keys()].some(id => !excluded.has(id) && !selected.has(id)) ||
