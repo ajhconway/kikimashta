@@ -1,5 +1,5 @@
-import { expect, test } from './fixtures';
-import bank from '../content/ja.json' with { type: 'json' };
+import { expect, test } from '../fixtures';
+import bank from '../../content/ja.json' with { type: 'json' };
 
 test('all eight voices are playable for every starter word', async ({ page }) => {
   await page.goto('./');

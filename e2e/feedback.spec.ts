@@ -18,7 +18,6 @@ test('card feedback survives paging, filters and reload; export includes hidden 
   await above.locator('.card-feedback summary').click();
   await above.getByLabel('Your notes').fill('Show more space above the shelf.\n余白');
   await expect(above.locator('.feedback-status')).toHaveText('Saved on this device.');
-  await above.screenshot({ path: `test-results/card-feedback-${test.info().project.name}.png` });
   await page.getByRole('button', { name: 'Next →', exact: true }).click();
   await page.getByRole('button', { name: '← Previous', exact: true }).click();
   await above.locator('.card-feedback summary').click();

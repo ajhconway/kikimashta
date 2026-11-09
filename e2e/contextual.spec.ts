@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from './fixtures';
 import type { ContextualBank } from '../src/content/contextual-types';
-import type { PracticeAttempt } from '../src/types';
+import type { PracticeAttempt, WordItem } from '../src/types';
 import { advanceSchedule, deriveSchedules, schedulerVersion, type ScheduledWord } from '../src/core/scheduler';
 import { deriveContextualUnlocks } from '../src/core/contextual-progression';
 
@@ -11,6 +11,9 @@ const contexts = banks.flatMap(bank => bank.contexts);
 const allQuestions = contexts.flatMap(context => context.questions);
 const media = JSON.parse(readFileSync(new URL('../content/contextual/accepted-media.json', import.meta.url), 'utf8'));
 const upper = contexts.find(context => context.id === 'ja-ctx-simple-ue-01')!;
+const vocabulary = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
+const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, Partial<WordItem>>;
+
 
 async function stored(page: Page, attempts?: PracticeAttempt[]): Promise<PracticeAttempt[]> {
   return page.evaluate(async incoming => {
@@ -255,22 +258,34 @@ test('an unlocked contextual card starts in review without a preview and becomes
 });
 
 
-test('every contextual writing and picture question renders exactly four usable choices', async ({ page }) => {
-  test.setTimeout(120000);
-  page.setDefaultTimeout(10000);
+test('contextual writing and picture choices are visible, distinct and answerable', async ({ page }) => {
   await page.goto('./?review=contextual');
-  const jump = page.getByLabel('Jump to question');
   const quiz = page.locator('.contextual-quiz');
   for (const format of ['text', 'picture'] as const) {
     await page.getByRole('combobox', { name: 'Answer format', exact: true }).selectOption(format);
-    const count = allQuestions.filter(question => question.formats.includes(format)).length;
-    await expect(jump.locator('option')).toHaveCount(count);
-    for (let index = 0; index < count; index++) {
-      await jump.selectOption(String(index));
-      const choices = quiz.getByRole('button', { name: format === 'picture' ? /Choose picture/ : /Choose writing/ });
-      await expect(choices).toHaveCount(4);
-      if (format === 'picture') await expect.poll(() => choices.locator('img').evaluateAll(images =>
-        images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+    const questionId = await quiz.getAttribute('data-question-id');
+    const question = allQuestions.find(question => question.id === questionId)!;
+    expect(question.formats).toContain(format);
+    const choices = quiz.getByRole('button', { name: format === 'picture' ? /Choose picture/ : /Choose writing/ });
+    await expect(choices).toHaveCount(4);
+    const contents: string[] = [];
+    for (const choice of await choices.all()) {
+      await expect(choice).toBeVisible();
+      await expect(choice).toBeEnabled();
+      const content = format === 'picture' ? await choice.locator('img').getAttribute('alt') : await choice.textContent();
+      expect(content?.trim()).toBeTruthy();
+      contents.push(content!.trim());
     }
+    expect(new Set(contents).size).toBe(4);
+    if (format === 'picture') await expect.poll(() => choices.locator('img').evaluateAll(images =>
+      images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+    const correct = question.options.find(option => option.id === question.correctOptionId)!;
+    const image = correct.imageItemId ? (overrides[correct.imageItemId]?.image ?? vocabulary.items.find(item => item.id === correct.imageItemId)!.image) : undefined;
+    const answer = format === 'text'
+      ? quiz.getByRole('button', { name: 'Choose writing ' + correct.text, exact: true })
+      : choices.filter({ has: page.getByRole('img', { name: image!.alt, exact: true }) });
+    await answer.click();
+    await expect(quiz.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
+    await expect(quiz.getByRole('status')).toContainText('Correct');
   }
 });

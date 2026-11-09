@@ -33,7 +33,7 @@ async function stored(page: Page, incoming?: PracticeAttempt[]) {
   }, incoming);
 }
 
-test('Home forecast persists, follows language/pack scope and refreshes after practice in another tab', async ({ page }, testInfo) => {
+test('Home forecast persists, follows language/pack scope and refreshes after practice in another tab', async ({ page }) => {
   await page.clock.setFixedTime(at);
   await page.goto('./');
   const forecast = page.getByRole('region', { name: 'Review forecast', exact: true });
@@ -53,8 +53,6 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByRole('button', { name: /^start/i })).toBeInViewport();
   }
-  await page.setViewportSize(testInfo.project.use.isMobile ? { width: 390, height: 664 } : { width: 1280, height: 800 });
-  await page.screenshot({ path: `test-results/home-forecast-${testInfo.project.name}.png`, fullPage: true });
   expect(await stored(page)).toEqual(original);
 
   await page.evaluate(() => localStorage.setItem('kikimashta-card-packs-v1', JSON.stringify(['ja-wanikani-2-writing'])));

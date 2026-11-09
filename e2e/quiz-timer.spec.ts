@@ -91,7 +91,6 @@ for (const [exercise, reducedMotion] of [
     expect(caughtUp).toBeGreaterThanOrEqual(limit / 2);
     expect(caughtUp).toBeLessThan(limit);
 
-    if (!reducedMotion) await page.screenshot({ path: `test-results/timer-${exercise}-halfway.png` });
     await page.getByRole('button', { name: 'Replay word' }).click();
     await page.clock.runFor(limit / 2);
     await expect(fill).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');

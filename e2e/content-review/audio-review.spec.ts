@@ -1,4 +1,4 @@
-import { expect, test } from './fixtures';
+import { expect, test } from '../fixtures';
 
 test('word and sentence voice samples load as playable audio', async ({ page }) => {
   await page.goto('./audio-review/');

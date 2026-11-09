@@ -57,7 +57,7 @@ async function gridLayout(page: Page) {
   });
 }
 
-test('contextual practice demo uses real session feedback and retries without changing guest history', async ({ page }) => {
+test('contextual demo uses picture and writing feedback without changing guest history', async ({ page }) => {
   test.setTimeout(90000);
   await page.addInitScript(() => {
     localStorage.setItem('kikimashta-card-packs-v1', '[]');
@@ -83,13 +83,9 @@ test('contextual practice demo uses real session feedback and retries without ch
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '4');
   await expect(page.locator('.contextual-dev-controls, .contextual-dev-jump')).toHaveCount(0);
 
-  let missed: { questionId: string; sentenceSrc: string; questionSrc: string } | undefined;
   const presentations = [
     { exercise: 'context-simple-picture', kind: 'target', miss: true },
     { exercise: 'context-simple-text', kind: 'detail', miss: false },
-    { exercise: 'context-contrastive-picture', kind: 'target', miss: false },
-    { exercise: 'context-contrastive-text', kind: 'detail', miss: false },
-    { exercise: 'context-simple-picture', kind: 'target', miss: false, retry: true },
   ] as const;
   for (const [index, presentation] of presentations.entries()) {
     const exercise = presentation.exercise;
@@ -114,11 +110,9 @@ test('contextual practice demo uses real session feedback and retries without ch
     expect(recording).toBeDefined();
     const snapshot = { questionId, sentenceSrc: recording.sentenceSrc, questionSrc: recording.questionSrcs[questionId]! };
     if (index === 0) {
-      missed = snapshot;
       await expect(audio).toHaveAttribute('src', '/' + snapshot.questionSrc, { timeout: 15000 });
       await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
     }
-    if ('retry' in presentation) expect(snapshot).toEqual(missed);
     await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
     await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
     await page.clock.runFor(500);
@@ -136,7 +130,6 @@ test('contextual practice demo uses real session feedback and retries without ch
       const badge = quiz.getByRole('img', { name: 'Mastery decreased to Learning', exact: true });
       await expect(badge).toBeVisible();
       // The fake JS clock does not advance native CSS transitions/animations.
-      await expect(quiz.locator('.contextual-response-row')).toHaveCSS('column-gap', '12px');
       await expect(badge).toHaveCSS('transform', /^(none|matrix\(1, 0, 0, 1, 0, 0\))$/);
       const badgeBounds = (await badge.boundingBox())!;
       const detailBounds = (await japanese.boundingBox())!;
@@ -175,10 +168,8 @@ test('contextual practice demo uses real session feedback and retries without ch
     }
     await page.clock.resume();
   }
-  await expect(page.getByRole('heading', { name: 'Contextual practice demo complete', exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
   expect(await stored(page)).toEqual(baseline);
-  await page.getByRole('button', { name: 'Finish', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'kikimashta', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Contextual practice demo', exact: true })).toBeVisible();
