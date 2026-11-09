@@ -5,7 +5,6 @@ import importlib.metadata
 import json
 import os
 from pathlib import Path
-import subprocess
 import time
 
 import numpy as np
@@ -23,8 +22,7 @@ def main():
     parser.add_argument('model', choices=MODELS)
     parser.add_argument('--download', action='store_true', help='Allow fetching the pinned public model into the Hugging Face cache.')
     args = parser.parse_args()
-    bank = json.loads(subprocess.check_output(['node', '--input-type=module', '-e',
-        "import {japaneseSemanticBank} from './scripts/content/semantic-neighbor-utils.mjs'; console.log(JSON.stringify(japaneseSemanticBank(process.cwd())));"], cwd=ROOT, text=True))
+    bank = json.loads((OUT / 'bank.json').read_text())
     model_id, revision = MODELS[args.model]
     inputs = [item['text'] if args.model == 'fasttext' else f"query: {item['text']} — {item['label']}" for item in bank]
     start = time.monotonic()

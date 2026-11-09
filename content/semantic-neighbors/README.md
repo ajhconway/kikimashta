@@ -1,6 +1,6 @@
 # Japanese word neighbors
 
-Runtime integration is tracked in #200. The selected semantic method is Japanese fastText, evaluated in #198/#199. Ordinary Japanese word-picture and word-writing questions use the current card's existing FSRS mastery. Contextual answers remain authored, and unprepared languages/items keep ordinary selection.
+Runtime integration is tracked in #200. The selected semantic method is Japanese fastText, evaluated in #198/#199. The current table covers all 178 approved Japanese words, including the 12 writing-only words admitted in #197/#201. The original 166-word model comparison is frozen separately. Ordinary Japanese word-picture and word-writing questions use the current card's existing FSRS mastery. Contextual answers remain authored, and unprepared languages/items keep ordinary selection.
 
 | Mastery | Requested alternatives |
 | --- | --- |
@@ -43,5 +43,7 @@ This audit is targeted, not an assertion that every picture pair is unambiguous.
 Focused tests cover all eight mastery mixtures, scoped fallback and maximum available close-neighbor retention, pairwise picture ambiguity, format/language isolation, exact normalized homophones, changed later-review mastery and stable retries. Real-bank checks exercise each Japanese pack and all packs at New, Steady and Mastered. Browser journeys verify saved semantic choices and corrective snapshots through reload, plus actual New/Mastered Dev review alternatives without history writes.
 
 For listening evaluation, open Dev review, choose ordinary word pictures or writing, select a mastery level and use Untimed to assess choices separately from the existing timers. Then try Follow mastery and check audio/touch interaction on the actual iPhone. Browser emulation does not complete that acceptance.
+
+Verified after integrating #201: `npm run check` passed 517 Vitest/React tests, 270 Node tests, 18 content Python tests, 27 card Python tests, runtime-neighbor validation, lint, TypeScript and the production build. `E2E_PORT=4281 npm run test:e2e -- e2e/distractors.spec.ts e2e/dev-review.spec.ts e2e/practice.spec.ts e2e/contextual.spec.ts e2e/contextual-pack1.spec.ts` passed all 54 Chromium/mobile-WebKit journeys. Independent review verified 178-word app parity, 166 picture/178 writing admission, exact preservation of the original 166-word cosine submatrix and no remaining blocking findings.
 
 The semantic model is Facebook Research's [Japanese fastText vectors](https://huggingface.co/facebook/fasttext-ja-vectors), revision `be286af953967df11e163522974fff118569f1fb`, distributed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Rankings are adapted with intended-sense exceptions; model attribution is retained in `NOTICE` and public credits.

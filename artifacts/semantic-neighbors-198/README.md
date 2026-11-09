@@ -4,6 +4,8 @@ Selected deployment candidate: **Japanese fastText with a compositional zero-vec
 
 Both models were actually run on the same 166 approved Japanese practice words at source revision `f1333b6d94e189efe3533c8ceb800596e4e95345`. All comparisons use exact cosine similarity. An independent reviewer defined the benchmark before inspecting any model output; its SHA-256 is `79aafd5fc6423a0b81910b4b42072c8dbf9ba4a019fd4a928ce085d6e4c1c1ce`.
 
+`bank.json` freezes those original 166 inputs and their answer-filter metadata. Reproduction and review generation use that snapshot even as current practice expands. Runtime preparation in #200 additionally covers the newly approved writing-only cards; their inclusion does not rewrite these experimental measurements.
+
 | Check | fastText, Japanese spelling | multilingual E5 base, word + meaning |
 | --- | --- | --- |
 | Semantic ordering triplets | 30 / 32 | 28 / 32 |

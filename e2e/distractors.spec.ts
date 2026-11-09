@@ -3,6 +3,7 @@ import { expect, test, type Page } from './fixtures';
 import { advanceSchedule, schedulerVersion } from '../src/core/scheduler';
 import { cardMastery } from '../src/core/mastery';
 import type { PracticeAttempt, WordItem } from '../src/types';
+import { selectWordPractice } from './practice-selection';
 
 const catalog = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
 const prepared = JSON.parse(readFileSync(new URL('../content/semantic-neighbors/ja-runtime.json', import.meta.url), 'utf8')) as { ids: string[] };
@@ -40,10 +41,8 @@ test('saved word mastery selects semantic alternatives and keeps the shown choic
   const familiar = await advanceSchedule(learned, second);
   expect(cardMastery(familiar).label).toBe('Familiar');
   await page.clock.install({ time: new Date(familiar.dueAt + 1000) });
-  await page.addInitScript(() => {
-    Math.random = () => .999;
-    localStorage.setItem('kikimashta-card-packs-v1', JSON.stringify([1, 2, 3, 4, 5].map(level => `ja-wanikani-${level}-writing`)));
-  });
+  await selectWordPractice(page, [2, 3, 4, 5].map(level => `ja-wanikani-${level}-writing`));
+  await page.addInitScript(() => { Math.random = () => .999; });
   await page.goto('./'); await history(page, [first, second]); await page.reload();
   await page.getByRole('button', { name: /^Start/ }).click();
   await page.getByRole('button', { name: 'Begin review' }).click();

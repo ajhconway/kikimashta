@@ -110,6 +110,17 @@ describe('mastery-based word distractors (#200)', () => {
     expect(createQuestions([writing], practicePool.items, fixed, schedules)[0]!.choicePolicy?.mastery).toBe('Learning');
   });
 
+  it('adapts newly approved writing-only words while keeping their homophones out of the choices', () => {
+    const pool = selectedPracticeCards(practicePool.items, cardPacks.filter(pack => pack.exercise === 'audio-text').map(pack => pack.id)).map(card => card.item);
+    const artificial = pool.find(item => item.text === '人工')!;
+    const population = pool.find(item => item.text === '人口')!;
+    for (const [target, homophone] of [[artificial, population], [population, artificial]]) {
+      const result = selectWordChoices({ item: target!, exercise: 'audio-text' }, pool, masteryLevels[7], fixed);
+      expect(result.choicePolicy?.mastery).toBe('Mastered');
+      expect(result.choices.map(item => item.id)).not.toContain(homophone!.id);
+    }
+  });
+
   it('builds safe scoped choices across every Japanese pack and the combined bank at low and high mastery', () => {
     const scopes = [...[1, 2, 3, 4, 5].map(level => cardPacks.filter(pack => pack.sourceLevel === level)), cardPacks];
     for (const packs of scopes) {

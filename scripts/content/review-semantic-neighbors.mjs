@@ -1,12 +1,12 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { bankDigest, evaluateNeighbors, japaneseSemanticBank, rankedNeighbors } from './semantic-neighbor-utils.mjs';
+import { bankDigest, evaluateNeighbors, rankedNeighbors } from './semantic-neighbor-utils.mjs';
 
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
 const directory = resolve(root, 'artifacts/semantic-neighbors-198');
 const readJson = name => JSON.parse(readFileSync(resolve(directory, name), 'utf8'));
-const bank = japaneseSemanticBank(root);
+const bank = readJson('bank.json');
 const byId = new Map(bank.map(item => [item.id, item]));
 const benchmark = readJson('benchmark.json');
 const results = Object.fromEntries(['fasttext', 'e5'].map(name => [name, readJson(`${name}-results.json`)]));

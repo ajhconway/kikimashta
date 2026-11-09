@@ -12,12 +12,19 @@ export function japaneseSemanticBank(root) {
   const starter = readJson(resolve(root, 'content/ja.json'));
   const selection = readJson(resolve(root, 'content/practice-pool.json'));
   const overrides = readJson(resolve(root, 'content/catalog/review-overrides.json'));
+  const packPolicy = readJson(resolve(root, 'content/contextual/pack-1/practice-policy.json'));
+  const selectedIds = new Set([...selection.itemIds, ...starter.items.map(item => item.id)]);
   const items = [
     ...starter.items.filter(item => catalog.items.some(entry => entry.id === item.id)),
     ...selection.itemIds.map(id => {
       if ('removalReason' in (overrides[id] ?? {})) throw new Error(`Removed practice item: ${id}`);
       const item = catalog.items.find(entry => entry.id === id);
       if (!item) throw new Error(`Unknown practice item: ${id}`);
+      return { ...item, label: item.meaning, theme: 'vocabulary' };
+    }),
+    ...packPolicy.writingOnlyItemIds.filter(id => !selectedIds.has(id)).map(id => {
+      const item = catalog.items.find(entry => entry.id === id);
+      if (!item || 'removalReason' in (overrides[id] ?? {})) throw new Error(`Unknown writing-only practice item: ${id}`);
       return { ...item, label: item.meaning, theme: 'vocabulary' };
     }),
   ];
