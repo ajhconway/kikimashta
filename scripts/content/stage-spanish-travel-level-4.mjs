@@ -11,6 +11,8 @@ const AUDIO = 'artifacts/spanish-travel-4-audio-review'
 const REPLACEMENT = 'artifacts/spanish-travel-4-replacement-audio-review'
 const FOLDER = 'content/spanish-travel-4'
 const ACCEPTANCE = FOLDER + '/acceptance.json'
+const ARTWORK_REGISTRY = 'content/card-regeneration/activation.json'
+const ACCEPTED_ARTWORK_REGISTRY = FOLDER + '/accepted-artwork-registry.json'
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 const validHash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value)
@@ -85,7 +87,9 @@ export async function stageSpanishTravelLevel4({ root = process.cwd() } = {}) {
   for (const path of Object.keys(acceptance.inputs)) {
     if (!validHash(acceptance.inputs[path]))
       throw Error('Invalid accepted input hash.')
-    const bytes = await read(path)
+    // Preserve the exact accepted reuse evidence independently of later Japanese
+    // artwork releases. The reused flower must also remain in the live registry.
+    const bytes = await read(path === ARTWORK_REGISTRY ? ACCEPTED_ARTWORK_REGISTRY : path)
     if (hash(bytes) !== acceptance.inputs[path])
       throw Error('Accepted input bytes changed: ' + path)
     inputs.set(path, bytes)
@@ -191,6 +195,7 @@ export async function stageSpanishTravelLevel4({ root = process.cwd() } = {}) {
   if (clips.length !== 288)
     throw Error('Effective recording matrix changed.')
   const approved = data('content/card-regeneration/activation.json')
+  const currentArtwork = JSON.parse(await read(ARTWORK_REGISTRY))
   const images = []
   const recordings = []
   const copies = []
@@ -240,6 +245,7 @@ export async function stageSpanishTravelLevel4({ root = process.cwd() } = {}) {
         && a.path === picture.path
         && a.sha256 === picture.sha256)
       if (!entry
+        || !currentArtwork.assets.some(a => a.id === entry.id && a.path === entry.path && a.sha256 === entry.sha256)
         || picture.id !== 'es-419-travel-flower'
         || picture.evidence !== 'content/card-regeneration/activation.json'
         || !/^public\/images\/approved\/[a-z0-9-]+\.png$/.test(picture.path))

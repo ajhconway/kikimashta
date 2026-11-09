@@ -3,7 +3,7 @@ import { deflateSync } from 'node:zlib'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync, symlinkSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { activateArtwork } from './activate-approved-artwork.mjs'
@@ -247,3 +247,65 @@ test('activation encodes a verified canonical source while retaining the origina
   assert.equal(record.sourcePath, asset.path)
   assert.equal(record.sourceSha256, asset.sha256)
 })
+
+function visualReferenceFixture(t) {
+  const f = transparentFixture(t)
+  const assets = Array.from({ length: 22 }, (_, i) => {
+    const id = i === 0 ? 'ja-test' : `ja-v-${i.toString(16)}`
+    const path = `artifacts/visual-reference-art-213/ja-v-${i.toString(16)}-v1.png`
+    mkdirSync(dirname(join(f.root, path)), { recursive: true })
+    writeFileSync(join(f.root, path), f.source)
+    return { id, path, status: 'approved', sha256: hash(f.source), selectedVersion: 1,
+      imageDescription: 'Two hands with inward-facing thumbs', transparentBackground: true,
+      versions: [{ version: 1, path, sha256: hash(f.source) }],
+      approval: { sha256: hash(f.source), selectedVersion: 1, scope: 'artwork only', ownerStatement: 'Ship this set.', date: '2026-11-09' } }
+  })
+  f.put('content/catalog/ja.json', { items: assets.map(a => ({ ...f.item, id: a.id })) })
+  f.put('content/visuals/levels-1-2.json', assets.map(a => ({ ...f.visual, id: a.id })))
+  const manifest = { status: 'approved', expectedAssetCount: 22, assets }
+  const save = () => f.put('artifacts/visual-reference-art-213/manifest.json', manifest)
+  save()
+  return { ...f, manifest, save }
+}
+
+test('the complete approved visual-reference set activates through the shared pipeline without changing eligibility', t => {
+  const f = visualReferenceFixture(t)
+  const options = { root: f.root, batches: ['visual-reference-213'] }
+  const ids = activateArtwork({ ...options, encode: (source, target) => writeFileSync(target, readFileSync(source)) })
+  assert.equal(ids.length, 22)
+  const active = f.read('content/card-regeneration/activation.json')
+  assert.equal(active.assets.length, 23)
+  for (const item of f.read('content/catalog/ja.json').items) {
+    assert.deepEqual({ ...item, id: f.item.id, image: f.item.image }, f.item)
+    assert.match(item.image.src, /\.png$/)
+    assert.equal(item.image.alt, 'Two hands with inward-facing thumbs')
+    const delivery = active.assets.find(a => a.id === item.id)
+    assert.equal(delivery.manifestPath, 'artifacts/visual-reference-art-213/manifest.json')
+    assert.equal(delivery.alpha, 'preserved')
+  }
+  assert.deepEqual(f.read('content/practice-pool.json'), { itemIds: ['ja-test'] })
+  activateArtwork({ ...options, encode: () => assert.fail('Verified deliveries should be reused') })
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), active)
+})
+
+for (const failure of ['pending selection', 'missing approval', 'stale hash', 'stale version', 'wrong version record', 'incomplete set', 'symlink source']) {
+  test(`visual-reference preflight rejects ${failure} before encoding any image`, t => {
+    const f = visualReferenceFixture(t)
+    const a = f.manifest.assets.at(-1)
+    if (failure === 'pending selection') a.status = 'generated-pending-owner-review'
+    if (failure === 'missing approval') delete a.approval
+    if (failure === 'stale hash') a.approval.sha256 = '0'.repeat(64)
+    if (failure === 'stale version') a.approval.selectedVersion = 2
+    if (failure === 'wrong version record') a.versions[0].path = a.versions[0].path.replace('-v1', '-v2')
+    if (failure === 'incomplete set') f.manifest.assets.pop()
+    if (failure === 'symlink source') {
+      rmSync(join(f.root, a.path))
+      symlinkSync(join(f.root, f.manifest.assets[0].path), join(f.root, a.path))
+    }
+    f.save()
+    const before = f.read('content/catalog/ja.json')
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['visual-reference-213'], encode: () => assert.fail('Must reject before encoding') }))
+    assert.deepEqual(f.read('content/catalog/ja.json'), before)
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
+}

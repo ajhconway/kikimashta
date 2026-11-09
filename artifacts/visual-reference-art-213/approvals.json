@@ -4,12 +4,122 @@
   "scope": "artwork only",
   "approvals": [
     {
+      "id": "ja-v-7dddc1af4eb5",
+      "text": "四月",
+      "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+      "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-7003bbe10d0b",
+      "text": "正しい",
+      "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+      "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-6eed6b905b8e",
+      "text": "二月",
+      "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+      "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-ed82bb95d4cc",
+      "text": "一月",
+      "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+      "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-8ffa8462a479",
+      "text": "六月",
+      "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+      "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-2850d52ee4d2",
+      "text": "五月",
+      "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+      "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+      "selectedVersion": 2,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-cacf3a45ed07",
+      "text": "十月",
+      "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+      "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-7930a252da9b",
+      "text": "字",
+      "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v3.png",
+      "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+      "selectedVersion": 3,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-b0a03cee753b",
+      "text": "北",
+      "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+      "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-a84051dc9f24",
+      "text": "北口",
+      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+      "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+      "selectedVersion": 10,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
       "id": "ja-v-70230bf6d87c",
       "text": "左手",
       "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
       "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
       "selectedVersion": 4,
       "ownerStatement": "These are good-to-go.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-69c61c85a403",
+      "text": "文字",
+      "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v2.png",
+      "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+      "selectedVersion": 2,
+      "ownerStatement": "Let's ship this artwork set.",
       "date": "2026-11-09",
       "scope": "artwork only"
     },
@@ -24,12 +134,42 @@
       "scope": "artwork only"
     },
     {
+      "id": "ja-v-49863ee12a96",
+      "text": "一文字",
+      "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+      "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+      "selectedVersion": 1,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
       "id": "ja-v-8438eda3cfc0",
       "text": "年",
       "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
       "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
       "selectedVersion": 1,
       "ownerStatement": "I prefer the old year artwork, which I'm approving now.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-83365ed9e3db",
+      "text": "太字",
+      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+      "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+      "selectedVersion": 4,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-9a8a0ffc08d3",
+      "text": "図",
+      "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v4.png",
+      "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+      "selectedVersion": 4,
+      "ownerStatement": "Let's ship this artwork set.",
       "date": "2026-11-09",
       "scope": "artwork only"
     },
@@ -42,6 +182,185 @@
       "ownerStatement": "三十代 is good.",
       "date": "2026-11-09",
       "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-6f2e359ff6c8",
+      "text": "西",
+      "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+      "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+      "selectedVersion": 2,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-81b56dc2a618",
+      "text": "西口",
+      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+      "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+      "selectedVersion": 7,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-a19157e62dee",
+      "text": "出口",
+      "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+      "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+      "selectedVersion": 5,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "text": "入り口",
+      "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+      "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+      "selectedVersion": 5,
+      "ownerStatement": "Let's ship this artwork set.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
     }
-  ]
+  ],
+  "releaseApproval": {
+    "ownerStatement": "Let's ship this artwork set.",
+    "date": "2026-11-09",
+    "scope": "Activate the complete selected artwork set; preserve vocabulary eligibility and progress.",
+    "selections": [
+      {
+        "id": "ja-v-7dddc1af4eb5",
+        "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+        "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-7003bbe10d0b",
+        "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+        "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-6eed6b905b8e",
+        "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+        "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-ed82bb95d4cc",
+        "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+        "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-8ffa8462a479",
+        "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+        "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-2850d52ee4d2",
+        "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+        "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-cacf3a45ed07",
+        "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+        "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-7930a252da9b",
+        "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v3.png",
+        "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+        "selectedVersion": 3
+      },
+      {
+        "id": "ja-v-b0a03cee753b",
+        "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+        "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-a84051dc9f24",
+        "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+        "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+        "selectedVersion": 10
+      },
+      {
+        "id": "ja-v-70230bf6d87c",
+        "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+        "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-69c61c85a403",
+        "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v2.png",
+        "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-9553e3adbc2a",
+        "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+        "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+        "selectedVersion": 5
+      },
+      {
+        "id": "ja-v-49863ee12a96",
+        "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+        "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-8438eda3cfc0",
+        "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+        "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-83365ed9e3db",
+        "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+        "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-9a8a0ffc08d3",
+        "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v4.png",
+        "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-aef5eed601c5",
+        "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+        "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-6f2e359ff6c8",
+        "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+        "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-81b56dc2a618",
+        "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+        "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+        "selectedVersion": 7
+      },
+      {
+        "id": "ja-v-a19157e62dee",
+        "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+        "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+        "selectedVersion": 5
+      },
+      {
+        "id": "ja-v-20cbd1c15a35",
+        "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+        "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+        "selectedVersion": 5
+      }
+    ]
+  }
 }
