@@ -1,4 +1,4 @@
-import type { CardIdentity, ContextualExercise, ContextualStage, Exercise, PracticeAttempt, PracticeCard, WordExercise, WordItem } from '../types';
+import type { CardIdentity, ContextualExercise, ContextualStage, Exercise, PracticeAttempt, PracticeCard, WordExercise } from '../types';
 
 export const exercises: readonly WordExercise[] = ['audio-picture', 'audio-text'];
 
@@ -22,8 +22,4 @@ export function cardKey(card: CardIdentity | PracticeCard): string {
   return 'item' in card
     ? JSON.stringify([card.item.language, card.item.id, card.exercise])
     : JSON.stringify([card.language, card.itemId, card.exercise]);
-}
-
-export function practiceCards(items: readonly WordItem[]): PracticeCard[] {
-  return items.flatMap(item => exercises.map(exercise => ({ item, exercise })));
 }

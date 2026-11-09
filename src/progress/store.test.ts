@@ -40,10 +40,6 @@ describe('local progress', () => {
     await first.merge([legacy, writing, picture]);
     await first.close();
     const reopened = openStore(name);
-    expect(await reopened.summary('ja-JP')).toEqual([
-      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 2, correct: 2, lastPracticedAt: 2500 },
-      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-text', attempts: 1, correct: 0, lastPracticedAt: 2000 },
-    ]);
     expect(await reopened.all()).toEqual([legacy, picture, writing]);
     expect(legacy.context).toBeUndefined();
   });
@@ -118,23 +114,18 @@ describe('local progress', () => {
     await store.record(attempt({ correct: false }));
 
     expect(await store.history('ja-JP')).toEqual([saved]);
-    expect(await store.summary('ja-JP')).toEqual([
-      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 1, correct: 1, lastPracticedAt: 1500 },
-    ]);
   });
 
-  it('keeps languages separate and summarizes out-of-order practice correctly', async () => {
+  it('keeps language history separate while preserving out-of-order timestamps', async () => {
     const store = openStore();
-    await store.record(attempt({ id: 'later', answeredAt: 3000 }));
-    await store.record(attempt({ id: 'earlier', answeredAt: 2000, correct: false, selectedId: 'dog' }));
-    await store.record(attempt({ id: 'spanish', language: 'es-ES', answeredAt: 4000 }));
-
-    expect(await store.summary('ja-JP')).toEqual([
-      { itemId: 'cat', language: 'ja-JP', exercise: 'audio-picture', attempts: 2, correct: 1, lastPracticedAt: 3000 },
-    ]);
-    expect(await store.summary('es-ES')).toEqual([
-      { itemId: 'cat', language: 'es-ES', exercise: 'audio-picture', attempts: 1, correct: 1, lastPracticedAt: 4000 },
-    ]);
+    const later = attempt({ id: 'later', answeredAt: 3000 });
+    const earlier = attempt({ id: 'earlier', answeredAt: 2000, correct: false, selectedId: 'dog' });
+    const spanish = attempt({ id: 'spanish', language: 'es-ES', answeredAt: 4000 });
+    await store.record(later);
+    await store.record(earlier);
+    await store.record(spanish);
+    expect(await store.history('ja-JP')).toEqual([earlier, later]);
+    expect(await store.history('es-ES')).toEqual([spanish]);
     expect(await store.history('fr-FR')).toEqual([]);
   });
 

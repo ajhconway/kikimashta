@@ -224,3 +224,26 @@ test('an approved replacement updates the existing card once and retains prior d
   assert.deepEqual(f.read('content/catalog/ja.json').items[0].audio, f.item.audio)
   assert.deepEqual(f.read('content/practice-pool.json'), { itemIds: ['ja-test'] })
 })
+
+
+test('activation encodes a verified canonical source while retaining the original approved source path', t => {
+  const f = fixture(t), asset = f.manifest.assets[0]
+  const canonical = 'artifacts/card-regeneration/batch-03/shared.png'
+  const bytes = readFileSync(join(f.root, asset.path))
+  mkdirSync(dirname(join(f.root, canonical)), { recursive: true })
+  writeFileSync(join(f.root, canonical), bytes)
+  rmSync(join(f.root, asset.path))
+  f.put('artifacts/artwork-aliases.json', { version: 1, aliases: {
+    [asset.path]: { path: canonical, sha256: asset.sha256, bytes: bytes.length },
+  } })
+  let encodes = 0
+  activateArtwork({ root: f.root, batches: ['batch-05'], encode: (source, target) => {
+    assert.equal(source, join(f.root, canonical))
+    encodes++
+    f.encode(source, target)
+  } })
+  assert.equal(encodes, 1)
+  const record = f.read('content/card-regeneration/activation.json').assets.find(item => item.id === asset.id)
+  assert.equal(record.sourcePath, asset.path)
+  assert.equal(record.sourceSha256, asset.sha256)
+})

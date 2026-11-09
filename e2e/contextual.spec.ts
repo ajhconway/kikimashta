@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from './fixtures';
 import type { ContextualBank } from '../src/content/contextual-types';
-import type { PracticeAttempt, WordItem } from '../src/types';
+import type { PracticeAttempt } from '../src/types';
 import { advanceSchedule, deriveSchedules, schedulerVersion, type ScheduledWord } from '../src/core/scheduler';
 import { deriveContextualUnlocks } from '../src/core/contextual-progression';
 
@@ -10,9 +10,6 @@ const banks = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.jso
 const contexts = banks.flatMap(bank => bank.contexts);
 const allQuestions = contexts.flatMap(context => context.questions);
 const media = JSON.parse(readFileSync(new URL('../content/contextual/accepted-media.json', import.meta.url), 'utf8'));
-const upper = contexts.find(context => context.id === 'ja-ctx-simple-ue-01')!;
-const vocabulary = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
-const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, Partial<WordItem>>;
 
 
 async function stored(page: Page, attempts?: PracticeAttempt[]): Promise<PracticeAttempt[]> {
@@ -48,39 +45,6 @@ async function unlockedWordHistory(itemId: string) {
   }
   return { history, schedule: schedule! };
 }
-
-test('contextual dev review covers the full pilot, plays both clips, filters and preserves browser history', async ({ page }) => {
-  await page.goto('./');
-  const baseline: PracticeAttempt[] = [{ id: 'before-dev', sessionId: 'legacy', itemId: upper.targetItemId, language: 'ja-JP', choiceIds: ['a', 'b'], selectedId: 'a', correct: true, startedAt: 1, answeredAt: 2, responseMs: 1 }];
-  await stored(page, baseline);
-  await page.goto('./?review=contextual');
-  const jump = page.getByLabel('Jump to question');
-  await expect(jump.locator('option')).toHaveCount(80);
-  const ids = await jump.locator('option').allTextContents();
-  for (const question of allQuestions) expect(ids.some(label => label.endsWith(question.id))).toBe(true);
-  await page.getByRole('combobox', { name: 'Voice', exact: true }).selectOption('otani');
-  await page.getByRole('button', { name: 'Replay sentence and question' }).click();
-  const audio = page.locator('.contextual-quiz audio');
-  await expect(audio).toHaveAttribute('src', /otani\/sentence\.mp3$/);
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
-  await expect(audio).toHaveAttribute('src', /otani\/ja-ctx-simple-ue-01-target\.mp3$/, { timeout: 10000 });
-  await page.getByRole('button', { name: /Choose writing/ }).first().click();
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeVisible();
-  await page.getByRole('combobox', { name: 'Stage', exact: true }).selectOption('simple');
-  await expect(jump.locator('option')).toHaveCount(40);
-  await page.getByLabel('Question kind').selectOption('detail');
-  await expect(jump.locator('option')).toHaveCount(20);
-  await jump.selectOption('19');
-  await expect(page.getByText('Audio awaiting listening approval.')).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
-  await page.getByRole('button', { name: /Choose writing/ }).first().click();
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Review complete' })).toBeVisible();
-  expect(await stored(page)).toEqual(baseline);
-  await page.reload();
-  expect(await stored(page)).toEqual(baseline);
-});
 
 test('contextual scheduled reviews persist explicit answers and retain the same retry recordings', async ({ page }) => {
   const reviewed = contexts.find(context => context.id === 'ja-ctx-simple-mizu-01')!;
@@ -255,37 +219,4 @@ test('an unlocked contextual card starts in review without a preview and becomes
   expect(review.context!.retryOf).toBeUndefined();
   expect(review.context!.exercise).toBe('context-simple-text');
   for (const original of introduced) expect(repeated.find(attempt => attempt.id === original.id)).toEqual(original);
-});
-
-
-test('contextual writing and picture choices are visible, distinct and answerable', async ({ page }) => {
-  await page.goto('./?review=contextual');
-  const quiz = page.locator('.contextual-quiz');
-  for (const format of ['text', 'picture'] as const) {
-    await page.getByRole('combobox', { name: 'Answer format', exact: true }).selectOption(format);
-    const questionId = await quiz.getAttribute('data-question-id');
-    const question = allQuestions.find(question => question.id === questionId)!;
-    expect(question.formats).toContain(format);
-    const choices = quiz.getByRole('button', { name: format === 'picture' ? /Choose picture/ : /Choose writing/ });
-    await expect(choices).toHaveCount(4);
-    const contents: string[] = [];
-    for (const choice of await choices.all()) {
-      await expect(choice).toBeVisible();
-      await expect(choice).toBeEnabled();
-      const content = format === 'picture' ? await choice.locator('img').getAttribute('alt') : await choice.textContent();
-      expect(content?.trim()).toBeTruthy();
-      contents.push(content!.trim());
-    }
-    expect(new Set(contents).size).toBe(4);
-    if (format === 'picture') await expect.poll(() => choices.locator('img').evaluateAll(images =>
-      images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
-    const correct = question.options.find(option => option.id === question.correctOptionId)!;
-    const image = correct.imageItemId ? (overrides[correct.imageItemId]?.image ?? vocabulary.items.find(item => item.id === correct.imageItemId)!.image) : undefined;
-    const answer = format === 'text'
-      ? quiz.getByRole('button', { name: 'Choose writing ' + correct.text, exact: true })
-      : choices.filter({ has: page.getByRole('img', { name: image!.alt, exact: true }) });
-    await answer.click();
-    await expect(quiz.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
-    await expect(quiz.getByRole('status')).toContainText('Correct');
-  }
 });

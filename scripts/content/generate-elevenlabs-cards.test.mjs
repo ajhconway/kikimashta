@@ -4,6 +4,10 @@ import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import config from '../../content/elevenlabs-voices.json' with { type: 'json' }
+import catalog from '../../content/catalog/ja.json' with { type: 'json' }
+import starter from '../../content/ja.json' with { type: 'json' }
+import overrides from '../../content/catalog/review-overrides.json' with { type: 'json' }
+import provenance from '../../content/elevenlabs-audio-provenance.json' with { type: 'json' }
 import { cardItems, generationPlan, generateCards } from './generate-elevenlabs-cards.mjs'
 
 const item = { id: 'ja-cat', text: 'ねこ', spelling: '猫', meaning: 'Cat' }
@@ -23,6 +27,28 @@ test('preserves distinct IDs and the canonical starter reading when the banks ov
   assert.equal(generationPlan(items, config).expectedClips, 16)
   assert.equal(generationPlan(items, config).characters, 40)
   assert.throws(() => cardItems({ ...catalog, items: [catalog.items[0], catalog.items[0]] }, starter), /duplicate/)
+})
+test('selects nonremoved catalogue cards without reviving starter-only entries or mutating source metadata', () => {
+  const catalog = { language: 'ja-JP', items: [{ id: 'ja-apple', text: 'りんご', meaning: 'Apple' }, { id: 'ja-form', text: '～形', reading: 'けい', meaning: 'Form' }] }
+  const starter = { language: 'ja-JP', items: [{ id: 'ja-apple', text: '林檎', reading: 'りんご', label: 'Apple' }, { id: 'ja-cat', text: '猫', reading: 'ねこ', label: 'Cat' }] }
+  const before = structuredClone({ catalog, starter })
+  assert.deepEqual(cardItems(catalog, starter, { 'ja-form': { removalReason: 'Owner removed this entry.' } }), [{ id: 'ja-apple', text: 'りんご', spelling: '林檎', meaning: 'Apple' }])
+  assert.deepEqual({ catalog, starter }, before)
+})
+test('the current selection and retained provenance cover exactly 440 cards with eight voices', async () => {
+  const selected = cardItems(catalog, starter, overrides)
+  const plan = generationPlan(selected, config)
+  assert.equal(selected.length, 440)
+  assert.equal(plan.expectedClips, 3520)
+  assert.equal(plan.characters, 11456)
+  assert.equal(provenance.cards, selected.length)
+  assert.equal(provenance.recordings, plan.expectedClips)
+  assert.equal(provenance.inputCharacters, plan.characters)
+  for (const voice of provenance.voices) {
+    const records = JSON.parse(await readFile(new URL('../../' + voice.provenance, import.meta.url)))
+    assert.deepEqual(records.clips.map(clip => clip.id).sort(), selected.map(item => item.id).sort())
+    assert.ok(records.clips.every(clip => clip.voice === voice.voice && clip.planIdentity === provenance.generationIdentity))
+  }
 })
 test('resumes from verified sidecars without repeat paid calls, even if the journal was interrupted', async t => {
   const output = await fixture(t)

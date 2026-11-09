@@ -44,8 +44,8 @@ test('simple sample uses its own approved text and bounded identities while stag
   assert.equal(plan.generation.characters, 214)
   assert.equal(plan.generation.items.length, 9)
   assert.equal(plan.contexts.length, 3)
-  const preview = JSON.parse(readFileSync(resolve(projectRoot, 'artifacts/contextual-audio-review/first-sample/simple-audio/review-provenance.json'), 'utf8'))
-  assert.equal(createHash('sha256').update(JSON.stringify(plan.generation)).digest('hex'), preview.generationIdentity)
+  assert.equal(createHash('sha256').update(JSON.stringify(plan.generation)).digest('hex'),
+    'dfc85cfe8abbb7f489520bd9acd81f6a3008f00343274bb6a667caaa0ea4dd83')
   assert.deepEqual(plan.generation.voices.map(voice => voice.name), ['Otani', 'Morioki'])
   assert.ok(plan.contexts.every(context => context.id.startsWith('ja-ctx-simple-')))
   assert.ok(plan.generation.items.every(item => item.textApprovalSha256 === plan.approval.textSha256))

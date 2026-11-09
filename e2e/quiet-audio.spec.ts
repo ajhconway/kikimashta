@@ -1,5 +1,5 @@
 import { expect, test } from './fixtures';
-import bank from '../content/ja.json' with { type: 'json' };
+import library from '../public/vocabulary/library-data.json' with { type: 'json' };
 
 // Exercise quiet mode in CI too; other specs keep native unmuted playback there.
 test.use({ quietAudio: true });
@@ -24,7 +24,7 @@ test('quiet audio really plays, ends, and replays after navigation', async ({ pa
       document.body.append(button);
       // Retain a reference without attaching the audio element to the document.
       Object.assign(window, { fixtureAudio: audio });
-    }, bank.items[0]!.audio[0]!.src);
+    }, library.cards[0]!.audio.find(clip => clip.available)!.src.replace(/^\.\.\//, ''));
     await page.getByRole('button', { name: 'Play fixture recording', exact: true }).click();
     const state = () => page.evaluate(() => {
       const audio = (window as unknown as { fixtureAudio: HTMLAudioElement }).fixtureAudio;
