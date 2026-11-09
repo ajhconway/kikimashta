@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { isDeepStrictEqual } from 'node:util'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import { reviewedImage } from './reviewed-image.mjs'
 
@@ -11,6 +12,37 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const read = (root, path) => JSON.parse(readFileSync(join(root, path), 'utf8'))
 const write = (root, path, data) => writeFileSync(join(root, path), JSON.stringify(data, null, 2) + '\n')
 const defaultEncoder = (source, target, { format }) => execFileSync('sips', ['-s', 'format', format, ...(format === 'jpeg' ? ['-s', 'formatOptions', '85'] : []), '-Z', '640', source, '--out', target], { stdio: 'pipe' })
+const reviewedSets = {
+  'visual-reference-213': { directory: 'artifacts/visual-reference-art-213', count: 22, statement: "Let's ship this artwork set." },
+  'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04',
+    // SHA-256 of JSON.stringify(sorted accepted IDs), independent of the mutable plan partition.
+    selectionIdsSha256: '924e14881f03e105874f477e9e8d015f0f014dd3b1b020c06f053e24126a0a2c',
+    mediaSelectionSha256: '35769faf43c01ad7a3ae8681887be4f40fd37ae9700cc5c7e931ce08a2f4431f',
+    suitabilityReviewSha256: 'cc051840c23297a4f5d3c86983fdf642e1334657daf03b94a750d6da76c0d136',
+    sourceRevision: '7942fddd9f08eab3f8a4d6b5b2c9d2b80ec72030' },
+}
+
+function validatePictureScope(root, manifest, directory) {
+  const expected = reviewedSets['picture-229']
+  const plan = read(root, `${directory}/plan.json`)
+  const originalBytes = readFileSync(join(root, directory, 'sources/suitability-review.json'))
+  const original = JSON.parse(originalBytes)
+  const selected = new Map(plan.items?.map(item => [item.id, item]))
+  const picture = new Map(original.items?.filter(item => item.category === 'picture').map(item => [item.id, item]))
+  const excluded = new Set(plan.excludedUpdatedIds)
+  if (plan.issue !== 229 || plan.category !== 'picture' || plan.expectedAssetCount !== 31 ||
+      plan.pictureCardCount !== 92 || picture.size !== 92 || selected.size !== 31 || plan.items.length !== 31 ||
+      hash(Buffer.from(JSON.stringify([...selected.keys()].sort()))) !== expected.selectionIdsSha256 ||
+      excluded.size !== 61 || plan.excludedUpdatedIds.length !== 61 ||
+      plan.sourceRevision !== expected.sourceRevision || manifest.sourceRevision !== expected.sourceRevision ||
+      plan.suitabilityReviewSha256 !== expected.suitabilityReviewSha256 || hash(originalBytes) !== expected.suitabilityReviewSha256 ||
+      [...excluded].some(id => !picture.has(id) || selected.has(id)) ||
+      [...selected].some(([id, item]) => !isDeepStrictEqual(item, picture.get(id))) ||
+      [...picture.keys()].some(id => !excluded.has(id) && !selected.has(id)) ||
+      manifest.assets.some(asset => !selected.has(asset.id))) {
+    throw new Error('Picture artwork must match the frozen 31-card selection and source review')
+  }
+}
 
 function validateDelivery(bytes, asset, format, sourceAlpha) {
   if (format === 'jpeg') {
@@ -27,7 +59,7 @@ function validateDelivery(bytes, asset, format, sourceAlpha) {
 }
 
 export function activateArtwork({ root, batches, encode = defaultEncoder }) {
-  if (!Array.isArray(batches) || !batches.length || new Set(batches).size !== batches.length || batches.some(batch => !/^batch-\d{2}$/.test(batch) && batch !== 'visual-reference-213')) throw new Error('Select unique batch-NN names or visual-reference-213')
+  if (!Array.isArray(batches) || !batches.length || new Set(batches).size !== batches.length || batches.some(batch => !/^batch-\d{2}$/.test(batch) && !Object.hasOwn(reviewedSets, batch))) throw new Error('Select unique batch-NN names, visual-reference-213 or picture-229')
   const catalog = read(root, 'content/catalog/ja.json')
   const starter = read(root, 'content/ja.json')
   const activation = read(root, 'content/card-regeneration/activation.json')
@@ -37,19 +69,25 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
   const seen = new Set()
   // Preflight every selection before changing any mapping or delivery.
   const plan = batches.flatMap(batch => {
-    const visualReference = batch === 'visual-reference-213'
-    const directory = visualReference ? 'artifacts/visual-reference-art-213' : `artifacts/card-regeneration/${batch}`
+    const reviewedSet = reviewedSets[batch]
+    const directory = reviewedSet ? reviewedSet.directory : `artifacts/card-regeneration/${batch}`
     const manifestPath = `${directory}/manifest.json`
     const manifest = read(root, manifestPath)
     if (manifest.status !== 'approved') throw new Error(`Batch is not approved: ${batch}`)
-    if (visualReference && (manifest.expectedAssetCount !== 22 || manifest.assets.length !== 22)) throw new Error('Expected the complete 22-image visual-reference set')
-    if (visualReference) {
+    if (reviewedSet && (manifest.expectedAssetCount !== reviewedSet.count || manifest.assets.length !== reviewedSet.count)) throw new Error(`Expected the complete ${reviewedSet.count}-image ${batch} set`)
+    if (batch === 'picture-229') {
+      validatePictureScope(root, manifest, directory)
+      const selections = manifest.assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion }))
+        .sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+      if (hash(Buffer.from(JSON.stringify(selections))) !== reviewedSet.mediaSelectionSha256) throw new Error('Selections do not match the owner-approved picture media')
+    }
+    if (reviewedSet) {
       const release = manifest.releaseApproval
-      if (!release || release.ownerStatement !== "Let's ship this artwork set." ||
+      if (!release || release.ownerStatement !== reviewedSet.statement ||
           release.scope !== 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.' ||
           typeof release.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(release.date) ||
-          !Array.isArray(release.selections) || release.selections.length !== 22 ||
-          new Set(release.selections.map(selection => selection.id)).size !== 22 ||
+          !Array.isArray(release.selections) || release.selections.length !== reviewedSet.count ||
+          new Set(release.selections.map(selection => selection.id)).size !== reviewedSet.count ||
           release.selections.some(selection => !manifest.assets.some(asset =>
             asset.id === selection.id && asset.path === selection.path && asset.sha256 === selection.sha256 && asset.selectedVersion === selection.selectedVersion))) {
         throw new Error('Missing or stale complete-set release approval')
@@ -59,12 +97,13 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       if (seen.has(asset.id) || !allItems.some(item => item.id === asset.id) || asset.status !== 'approved') throw new Error(`Unapproved, duplicate or unknown image: ${asset.id}`)
       seen.add(asset.id)
       if (!/^ja-[a-z0-9-]+$/.test(asset.id) || typeof asset.path !== 'string' || !asset.path.startsWith(`${directory}/`) || !/^[a-zA-Z0-9_./-]+\.png$/.test(asset.path) || asset.path.split('/').includes('..')) throw new Error(`Unsafe artwork identity: ${asset.id}`)
-      if (visualReference) {
+      if (reviewedSet) {
         const approval = asset.approval
         const selected = asset.versions?.filter(version => version.version === asset.selectedVersion && version.path === asset.path && version.sha256 === asset.sha256)
         if (!approval || approval.scope !== 'artwork only' || !approval.ownerStatement?.trim() || !approval.date?.trim() ||
             approval.sha256 !== asset.sha256 || approval.selectedVersion !== asset.selectedVersion ||
-            !Number.isSafeInteger(asset.selectedVersion) || asset.selectedVersion < 1 || selected?.length !== 1 || asset.transparentBackground !== true) throw new Error(`Missing or stale artwork approval: ${asset.id}`)
+            !Number.isSafeInteger(asset.selectedVersion) || asset.selectedVersion < 1 || selected?.length !== 1 ||
+            asset.transparentBackground !== (asset.id !== reviewedSet.opaqueId)) throw new Error(`Missing or stale artwork approval: ${asset.id}`)
       }
       const resolved = reviewedImage({ root, reviewPath: asset.path, sha256: asset.sha256, size: asset.bytes, message: `Source hash mismatch: ${asset.id}` })
       const source = resolved.bytes
