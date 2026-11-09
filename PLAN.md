@@ -112,6 +112,8 @@ The implementation uses a deterministic 178-word runtime table, including the 12
 
 ## Adaptive timer pilot (#121)
 
+Dev review word-card diagnostics (#206): snapshot each choice's actual selection source, including fallbacks, and show distinct borders for the correct answer, semantic neighbors, pronunciation neighbors and random alternatives. Provide a compact accessible legend and preserve categories on retries. Apply diagnostics only to unsaved ordinary word Dev review; retain normal practice and authored contextual presentation. Verify attribution, scope, retries and browser layout.
+
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
 Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Lessons and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
