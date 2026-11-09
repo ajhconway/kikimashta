@@ -267,37 +267,48 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
 });
 
 test('writing scales by displayed length and card size across Japanese scripts', async ({ page }) => {
-  await page.clock.install();
-  await page.addInitScript(() => { Math.random = () => 0.5; });
   await page.goto('./');
-  const words = ['犬', '五十', 'りんご', 'ホテル', 'コーヒー', 'テーブルの上'].map(text => allWords.find(item => item.text === text)!);
-  expect(words.every(Boolean)).toBe(true);
-  await seedAttempts(page, words.map(item => item.id), 'audio-text');
-  await page.reload();
-  await page.getByRole('button', { name: /^start/i }).click();
-  await page.getByRole('button', { name: /begin review/i }).click();
-  const original = page.viewportSize()!;
+  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
+  const texts = ['犬', '五十', 'りんご', 'ホテル', 'コーヒー', 'テーブルの上'];
+  expect(texts.every(text => allWords.some(item => item.text === text))).toBe(true);
+  // Exercise the production stylesheet and self-hosted font without replaying a
+  // session for each layout sample. Real writing journeys cover CardFace and saves.
+  const fontLoaded = await page.evaluate(async () => {
+    const app = document.createElement('div');
+    app.className = 'app app-quiz';
+    app.innerHTML = '<main><section class="practice quiz" data-exercise="audio-text"><div class="quiz-top"></div>'
+      + '<div class="quiz-cards"><div class="choices"></div></div>'
+      + '<div class="practice-actions"><div class="feedback"></div></div>'
+      + '<div class="quiz-progress"><div class="round-progress"><div class="progress-beads"><span class="progress-bead"></span></div></div></div>'
+      + '</section></main>';
+    for (let index = 0; index < 4; index++) {
+      const slot = document.createElement('div'); slot.className = 'choice-slot';
+      const button = document.createElement('button'); button.className = 'answer-choice text-choice';
+      const label = document.createElement('span'); label.className = 'written-answer';
+      label.lang = 'ja-JP'; label.dataset.font = 'noto-sans';
+      button.append(label); slot.append(button); app.querySelector('.choices')!.append(slot);
+    }
+    document.body.replaceChildren(app);
+    const fonts = await document.fonts.load('600 32px "Kikimashta Noto Sans JP"');
+    return fonts.some(font => font.family.includes('Kikimashta Noto Sans JP'));
+  });
+  expect(fontLoaded, 'the production writing font is available in the layout fixture').toBe(true);
   const viewports = [{ width: 320, height: 664 }, { width: 430, height: 900 }, { width: 1280, height: 900 }];
   const samples = new Map<string, number>();
-  for (let i = 0; i < words.length; i++) {
-    const { target, exercise } = await heardWord(page);
-    expect(exercise).toBe('audio-text');
-    expect(words.some(item => item.id === target.id)).toBe(true);
-    for (const viewport of viewports) {
-      await page.setViewportSize(viewport);
-      const label = page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true }).locator('.written-answer');
-      const metrics = await label.evaluate(element => {
+  for (const viewport of viewports) {
+    await page.setViewportSize(viewport);
+    for (const text of texts) {
+      const metrics = await page.locator('.written-answer').first().evaluate((element, text) => {
+        element.textContent = text;
+        const length = Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text)).length;
+        (element as HTMLElement).style.setProperty('--writing-length', String(length));
         const box = element.getBoundingClientRect();
         const card = element.parentElement!.getBoundingClientRect();
         return { fontSize: parseFloat(getComputedStyle(element).fontSize), fits: box.left >= card.left && box.right <= card.right && box.top >= card.top && box.bottom <= card.bottom };
-      });
-      expect(metrics.fits, target.text + ' fits at ' + viewport.width + 'px').toBe(true);
-      samples.set(viewport.width + '/' + target.text, metrics.fontSize);
+      }, text);
+      expect(metrics.fits, text + ' fits at ' + viewport.width + 'px').toBe(true);
+      samples.set(viewport.width + '/' + text, metrics.fontSize);
     }
-    await page.setViewportSize(original);
-    await chooseHeardAnswer(page, target);
-  }
-  for (const viewport of viewports) {
     const size = (text: string) => samples.get(viewport.width + '/' + text)!;
     expect(size('犬'), 'single kanji is prominent').toBeGreaterThan(40);
     expect(size('犬')).toBeGreaterThan(size('五十'));
@@ -308,7 +319,6 @@ test('writing scales by displayed length and card size across Japanese scripts',
     expect(size('テーブルの上')).toBeGreaterThanOrEqual(16);
   }
   expect(samples.get('430/りんご')!).toBeGreaterThan(samples.get('320/りんご')!);
-  await expect(page.getByRole('heading', { name: /nice reviewing/i })).toBeVisible();
 });
 
 test('reviews both saved formats of one word and preserves a writing retry after reload', async ({ page }) => {

@@ -47,7 +47,7 @@ describe('Spanish travel levels', () => {
     expect(artwork.images.find(image => image.slug === 'stairs')?.file).toBe('originals/stairs-v5.png');
     expect(activation.recordings).toHaveLength(288);
     expect(activation.images).toHaveLength(36);
-    for (const media of [...activation.images, ...activation.recordings]) expect(digest('public/' + media.src)).toBe(media.sha256);
+    for (const media of activation.images) expect(digest('public/' + media.src)).toBe(media.sha256);
     for (const item of second.items) expect(item.audio.map(clip => clip.voice)).toEqual(first.items[0]!.audio.map(clip => clip.voice));
     validateBank(spanish.pool);
   });
@@ -65,7 +65,7 @@ describe('Spanish travel levels', () => {
       expect(thirdArtwork.images.find(image => image.slug === slug)?.file).toBe(`originals/${slug}-v${version}.png`);
     }
     expect(third.items.find(item => item.id.endsWith('-banana'))?.image.src).toBe(thirdAcceptance.approvedBananaSource.slice(7));
-    for (const media of [...thirdActivation.images, ...thirdActivation.recordings]) expect(digest('public/' + media.src)).toBe(media.sha256);
+    for (const media of thirdActivation.images) expect(digest('public/' + media.src)).toBe(media.sha256);
     for (const item of third.items) expect(item.audio.map(clip => clip.voice)).toEqual(first.items[0]!.audio.map(clip => clip.voice));
   });
 

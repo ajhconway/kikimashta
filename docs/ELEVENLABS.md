@@ -67,7 +67,7 @@ The request uses stability `0.5` and similarity boost `0.75`. Only Japanese samp
 
 ## Existing cards: generation, resume, and volume matching
 
-The approved registry is `content/elevenlabs-voices.json`: Otani, Morioki, Goro, Tsuki, Takeshi, Lime, Ritsuto, and Itsuki. Generation covers the union of catalog and starter IDs, with the starter reading taking precedence for an overlapping ID. The initial batch contains 445 distinct IDs, 3,560 recordings, and 11,552 input characters. Shared IDs retain the same learning history; pronunciation aliases in different card IDs remain separate recordings.
+The approved registry is `content/elevenlabs-voices.json`: Otani, Morioki, Goro, Tsuki, Takeshi, Lime, Ritsuto, and Itsuki. Generation covers the 440 active catalog IDs, with the starter reading taking precedence for a shared ID. Removed catalog entries and starter-only IDs are excluded. The current matrix contains 3,520 recordings and 11,456 input characters. Shared IDs retain the same learning history; pronunciation aliases in different card IDs remain separate recordings.
 
 ```sh
 npm run audio:cards:elevenlabs -- --dry-run
@@ -99,7 +99,7 @@ npm run content:library
 npm run check
 ```
 
-Staging preflights the entire batch's card/voice identity, hashes, measured levels and durations before copying delivery audio to `public/audio/elevenlabs-v1/`. It replaces only the banks' audio arrays. Per-voice provenance is saved in `content/audio/elevenlabs/`; `content/elevenlabs-audio-provenance.json` lists the full profile and any constrained clips. The vocabulary library displays all eight names and uses the same playback behavior as before. Old recordings and their provenance are retained for reference.
+Staging preflights the entire batch's card/voice identity, hashes, measured levels and durations before copying delivery audio to `public/audio/elevenlabs-v1/`. It replaces only the banks' audio arrays. Per-voice provenance is saved in `content/audio/elevenlabs/`; `content/elevenlabs-audio-provenance.json` lists the full profile and any constrained clips. The vocabulary library displays all eight names and uses the same playback behavior as before. Retired delivery recordings are recoverable from Git history (#193); records describing only retired clips are removed with them.
 
 `npm run test:audio` runs the Python processing tests; set `FFMPEG=/absolute/path/to/ffmpeg` for a nonstandard test installation. CI installs FFmpeg and runs these checks together with the application checks and browser journeys.
 
@@ -116,18 +116,18 @@ npm run audio:contextual:elevenlabs -- --output artifacts/generated-originals/co
 
 # Local processing only; provider originals remain untouched.
 python3 scripts/content/normalize-elevenlabs.py --input artifacts/generated-originals/contextual-audition/2026-11-08-first-sample --output artifacts/generated-originals/contextual-audition/2026-11-08-first-sample-normalized
-npm run audio:contextual:review -- --input artifacts/generated-originals/contextual-audition/2026-11-08-first-sample --delivery artifacts/generated-originals/contextual-audition/2026-11-08-first-sample-normalized --output artifacts/contextual-audio-review/first-sample
+npm run audio:contextual:review -- --input artifacts/generated-originals/contextual-audition/2026-11-08-first-sample --delivery artifacts/generated-originals/contextual-audition/2026-11-08-first-sample-normalized --output artifacts/contextual-audio-review/new-listening-review
 ```
 
 Generation uses one request at a time and preserves approval/pairing metadata under the same lock as the resumable engine. Existing pending requests are never blindly retried. Review generation preflights complete originals, sidecars, hashes, identities and normalized delivery measurements before writing output, then decodes sentence + exactly 650 ms silence + question into lossless WAV previews. It does not generate speech or activate cards. Use a new review output directory when deliberately rebuilding an existing gallery; the command refuses overwrite.
 
-The completed originals and normalized batch also have a durable private copy under `~/.local/share/kikimashta/contextual-audio/2026-11-08-first-sample/`. That archive includes local processing and account-usage records and stays outside Git. The listening gallery contains only review media and provenance. Owner listening feedback precedes expansion; real-iPhone listening remains required before release.
+The completed originals and normalized batch also have a durable private copy under `~/.local/share/kikimashta/contextual-audio/2026-11-08-first-sample/`. That archive includes local processing and account-usage records and stays outside Git. The completed first-sample gallery, WAV previews and dedicated comparison tool are retired; recover them from Git history before #195. The retired previews’ provenance records are removed too; current contextual approval and practice-delivery records remain. Generic review generation remains available for new listening reviews. Owner listening feedback precedes expansion; real-iPhone listening remains required before release.
 
 ## Listening review
 
 Compare samples at the same volume. Listen for pronunciation, pitch accent, unwanted extra sounds, clipped endings, and natural sentence rhythm. Check the samples on the real iPhone before approving voices. Browser playback checks supplement that listening review.
 
-Voice and profile approval does not establish that every newly generated word has the right pitch accent or regional realization. Use the card library to review the complete set on the real iPhone before release. Hosted ElevenLabs generation can follow later; existing OpenAI workflows remain OpenAI-only, so use the local card command for this migration. The audition command itself never replaces production audio.
+Voice and profile approval does not establish that every newly generated word has the right pitch accent or regional realization. Use the card library to review the complete set on the real iPhone before release. Use the local card command for new recordings; the historical OpenAI generation workflow is retired. The audition command itself never replaces production audio.
 
 
 ## Spanish travel pack (#155)
@@ -143,9 +143,9 @@ npm run audio:spanish:review -- --input artifacts/generated-originals/spanish-tr
 
 Generation reuses the sidecar/hash-verified engine with two concurrent requests, no automatic paid retries, an approximate 2,200-credit guard and periodic account checks. It enforces `language_code: es`; Japanese generation retains `ja`. An unresolved request blocks resume until provider history is inspected. Do not rerun a completed batch into a fresh directory. The review builder refuses an existing output directory and preflights the complete matrix, exact request/source-record identity, full normalization profile and source/delivery hashes before writing files.
 
-All 288 originals and normalized deliveries are complete. The existing profile fully decodes each delivery and preserves its duration. Four deliveries remain safely quieter and are listed in `content/spanish-travel-audio/generated-media.json`. A durable private copy of originals, sidecars, complete processing records and usage evidence is preserved under `~/.local/share/kikimashta/spanish-audio/155-v1`; every archived file was hash-verified. The checked-in review contains normalized MP3s and public provenance only. No key, account usage files or provider originals enter the review or browser code.
+All 288 originals and normalized deliveries are complete. The existing profile fully decodes each delivery and preserves its duration. Four deliveries remain safely quieter and are listed in `content/spanish-travel-audio/generated-media.json`. A durable private copy of originals, sidecars, complete processing records and usage evidence is preserved under `~/.local/share/kikimashta/spanish-audio/155-v1`; every archived file was hash-verified. The checked-in review retains public provenance and plays the identical accepted production MP3s. No key, account usage files or provider originals enter the review or browser code.
 
-Serve `artifacts/spanish-travel-audio-review/` locally and open `index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. Final listening acceptance precedes expanded-pack activation; this preparation does not change the active starter bank or delete historical Cesar audio.
+Serve the repository root with `python3 -m http.server 5180 --bind 127.0.0.1 --directory .` and open `/artifacts/spanish-travel-audio-review/index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. New listening reviews need owner acceptance before activation. Retired Cesar audio and its records are recoverable from Git history.
 
 
 ### Accepted Spanish pack activation (#159)

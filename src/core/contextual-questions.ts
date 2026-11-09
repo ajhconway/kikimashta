@@ -29,7 +29,8 @@ export function contextualQuestion(
   const recordings = context.recordings.filter(recording => recording.sentenceSrc && recording.questionSrcs[question.id]);
   const preferred = voiceIds ? recordings.filter(recording => voiceIds.includes(recording.voice)) : recordings;
   const available = preferred.length ? preferred : recordings;
-  const recording = available.length ? available[Math.floor(random() * available.length)] : undefined;
+  if (!available.length) throw new Error('Contextual practice requires sentence and question recordings.');
+  const recording = available[Math.floor(random() * available.length)]!;
   return { target, exercise: contextualExercise(context.stage ?? 'contrastive', format),
     choices: shuffled(choices, random), contextual: { context, question, recording } };
 }
