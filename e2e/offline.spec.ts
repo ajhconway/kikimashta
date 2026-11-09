@@ -50,9 +50,14 @@ test('downloaded packs play and save a complete lesson after an offline reload',
   expect(await savedAttempts(page, 'es-419')).toEqual(saved);
   await page.getByText(/Offline practice/).click();
   await page.getByRole('button', { name: 'Remove all downloads' }).click();
+  await expect(page.getByText('Download selected packs before going offline.')).toBeVisible();
+  await expect.poll(() => page.evaluate(async () => {
+    const names = (await caches.keys()).filter(name => name.startsWith('kikimashta-offline-'));
+    const counts = await Promise.all(names.map(async name => (await (await caches.open(name)).keys()).length));
+    return counts.reduce((sum, count) => sum + count, 0);
+  })).toBe(0);
   expect(await savedAttempts(page, 'es-419')).toEqual(saved);
   await context.setOffline(true);
-  await page.reload().catch(() => {});
-  // Removal is verified in CacheStorage; browser HTTP cache may retain the shell.
+  await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
   await context.setOffline(false);
 });

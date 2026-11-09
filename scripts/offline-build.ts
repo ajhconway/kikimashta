@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative } from 'node:path'
-import type { Plugin } from 'vite'
+import { loadEnv, type Plugin } from 'vite'
 
 export function filesUnder(directory: string): string[] {
   return readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory()
@@ -16,10 +16,16 @@ export function offlineBuild(root = process.cwd()): Plugin {
     .filter(file => !/\.test\./.test(file)).sort()
   const versionHash = createHash('sha256').update(process.env.SOURCE_REVISION ?? '')
   for (const file of inputFiles) versionHash.update(relative(root, file)).update(readFileSync(file))
-  const version = versionHash.digest('hex').slice(0, 24)
+  let version = ''
   return {
     name: 'offline-practice', apply: 'build', enforce: 'post',
-    config: () => ({ define: { __OFFLINE_VERSION__: JSON.stringify(version) } }),
+    config: (_config, { mode }) => {
+      // Build configuration changes emitted JS even when content is unchanged.
+      const environment = loadEnv(mode, root, 'VITE_')
+      versionHash.update(mode).update(JSON.stringify(Object.entries(environment).sort()))
+      version = versionHash.digest('hex').slice(0, 24)
+      return { define: { __OFFLINE_VERSION__: JSON.stringify(version) } }
+    },
     generateBundle() {
       this.emitFile({ type: 'asset', fileName: 'offline-version.json', source: JSON.stringify({ version }) })
     },

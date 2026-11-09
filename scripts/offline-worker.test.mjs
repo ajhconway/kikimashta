@@ -32,7 +32,7 @@ function setup() {
     return new Response(body ?? 'missing', { status: body === undefined ? 404 : 200 });
   };
   const context = { self: { registration: { scope: origin }, addEventListener(type, listener) { listeners[type] = listener; } },
-    caches: cacheStorage, crypto: webcrypto, Headers, Response, Request, URL, fetch: fetcher };
+    caches: cacheStorage, crypto: webcrypto, Headers, Response, Request, URL, AbortSignal, fetch: fetcher };
   vm.runInNewContext(template.replace('__OFFLINE_MANIFEST__', JSON.stringify(manifest)), context);
   async function message(type, urls = ['audio/a.mp3'], version = 'v1') {
     const replies = [];

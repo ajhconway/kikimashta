@@ -2,19 +2,19 @@ declare const __OFFLINE_VERSION__: string;
 export interface OfflineResult { ready: boolean; completed: number; total: number; bytes: number; error?: string }
 export interface OfflineManifest { version: string; shell: string[]; sizes: Record<string, number> }
 const base = import.meta.env.BASE_URL;
-let connection: Promise<ServiceWorker> | undefined;
-function worker(): Promise<ServiceWorker> {
-  if (!('serviceWorker' in navigator) || !import.meta.env.PROD) return Promise.reject(new Error('Downloads are available in the published app.'));
-  connection ??= (async () => {
-    await navigator.serviceWorker.register(base + 'offline-worker.js', { scope: base });
-    const registration = await navigator.serviceWorker.ready;
-    if (!registration.active) throw new Error('Offline preparation is unavailable. Reload and retry.');
-    return registration.active;
-  })().catch(error => { connection = undefined; throw error; });
-  return connection;
+async function worker(create: boolean): Promise<ServiceWorker | null> {
+  if (!('serviceWorker' in navigator) || !import.meta.env.PROD) throw new Error('Downloads are available in the published app.');
+  let registration = await navigator.serviceWorker.getRegistration(base);
+  // Explicit preparation also asks the browser to check for a worker update.
+  if (create) registration = await navigator.serviceWorker.register(base + 'offline-worker.js', { scope: base });
+  if (!registration) return null;
+  registration = registration.active ? registration : await navigator.serviceWorker.ready;
+  if (!registration.active) throw new Error('Offline preparation is unavailable. Reload and retry.');
+  return registration.active;
 }
 export async function offlineRequest(type: 'STATUS' | 'DOWNLOAD' | 'REMOVE', urls: readonly string[], progress?: (result: OfflineResult) => void): Promise<OfflineResult> {
-  const target = await worker();
+  const target = await worker(type === 'DOWNLOAD');
+  if (!target) return { ready: false, completed: 0, total: urls.length, bytes: 0 };
   return new Promise((resolve, reject) => {
     const channel = new MessageChannel();
     // The worker reports progress throughout downloads; reset the inactivity timer.

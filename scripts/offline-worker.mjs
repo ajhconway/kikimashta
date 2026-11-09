@@ -74,7 +74,7 @@ async function download(urls, port) {
   for (const url of urls) {
     const path = known.get(url);
     if (!(await cache.match(url))) {
-      const response = await fetch(new Request(url, { cache: 'no-store', credentials: 'same-origin' }));
+      const response = await fetch(new Request(url, { cache: 'no-store', credentials: 'same-origin', signal: AbortSignal.timeout(30000) }));
       if (!response.ok || response.status !== 200 || response.redirected) throw new Error('Download failed. Reconnect and try again.');
       const body = await response.clone().arrayBuffer();
       const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', body))].map(value => value.toString(16).padStart(2, '0')).join('');

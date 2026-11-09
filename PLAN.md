@@ -11,7 +11,7 @@ Reconciled in [#217](https://github.com/ajhconway/kikimashta/issues/217) against
 - Spanish has five picture packs (Basic Spanish and Travel levels 1–4), totaling 159 picture words plus nine Basic Spanish foundation contexts. See [the language guide](docs/LANGUAGES.md) for accepted media and release records.
 - Batches 01–10 provide 168 active approved illustrations. Batch 11 is already generated and awaits integration through [PR #110](https://github.com/ajhconway/kikimashta/pull/110); do not restart its generation. The separate twenty-card visual-reference preparation is in [PR #215](https://github.com/ajhconway/kikimashta/pull/215), awaiting owner acceptance under #213. Full regeneration remains open in #72.
 - Required CI includes the artwork tests and metadata validator (#127/#116). Fourteen reviewed picture exclusions and three sense overrides shipped in #204; generic counting/equal-quantity policy remains open in #79.
-- Real-iPhone, live-account and timer-evaluation acceptance remains explicit in #6, #119, #143 and #122. Implementation, media approval, publication and device acceptance are separate records. Follow [the issue-resolution rules](AGENTS.md#issue-resolution).
+- Timer evaluation was approved by the owner on iPhone and #122 is closed. Other real-iPhone and live-account acceptance remains explicit in #6, #119 and #143. Implementation, media approval, publication and device acceptance are separate records. Follow [the issue-resolution rules](AGENTS.md#issue-resolution).
 
 ## Historical snapshot — November 8, 2026
 
@@ -97,7 +97,7 @@ Prepare the next 36 concrete travel words in six practical groups for a separate
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
-- [#48](https://github.com/ajhconway/kikimashta/issues/48) remains the flexible roadmap for phrases, sentences, contextual exercises, timing challenges, English text, and offline practice. Audio-to-writing cards and font variation have already shipped.
+- The #48 roadmap is split into offline practice (#223, current implementation), broader sentence/phrase coverage (#224), and optional English text (#225). Adaptive timing has shipped and the owner approved iPhone evaluation in #122. See [offline operation and verification](docs/OFFLINE.md) for selected-pack downloads, versioning, storage and remaining device acceptance.
 
 Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.
 

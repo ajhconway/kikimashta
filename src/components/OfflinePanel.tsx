@@ -14,7 +14,6 @@ export function OfflinePanel({ urls, online, onReady }: { urls: readonly string[
     void offlineRequest('STATUS', urls).then(value => {
       if (active) { setResult(value); onReady(value.ready); setError(value.error ?? ''); }
     }).catch(reason => { if (active) setAvailability(reason.message); });
-    void downloadSize(urls).then(value => { if (active) setBytes(value); }).catch(() => {});
     const verify = () => { void offlineRequest('STATUS', urls).then(value => { if (active) { setResult(value); onReady(value.ready); } }).catch(() => { if (active) onReady(false); }); };
     window.addEventListener('focus', verify);
     return () => { active = false; window.removeEventListener('focus', verify); };
@@ -27,7 +26,7 @@ export function OfflinePanel({ urls, online, onReady }: { urls: readonly string[
     } catch (reason) { setError(reason instanceof Error ? reason.message : 'Download failed. Retry when connected.'); }
     finally { setBusy(false); }
   }
-  return <details className="offline-panel"><summary>Offline practice{!online ? ' · offline' : result?.ready ? ' · ready' : ''}</summary>
+  return <details className="offline-panel" onToggle={event => { if (event.currentTarget.open && online) void downloadSize(urls).then(setBytes).catch(() => {}); }}><summary>Offline practice{!online ? ' · offline' : result?.ready ? ' · ready' : ''}</summary>
     <p role="status">{busy ? `Preparing ${result?.completed ?? 0} of ${result?.total ?? urls.length} files…` : result?.ready ? 'Selected packs are downloaded for offline practice.' : 'Download selected packs before going offline.'}</p>
     <p>Includes all voices and contextual questions{bytes !== null ? ` · ${(bytes / 1024 / 1024).toFixed(1)} MB` : ''}. Downloads are shared on this device. Your practice history is saved separately.</p>
     {availability && <p>{availability}</p>}

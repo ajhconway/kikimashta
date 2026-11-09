@@ -12,6 +12,9 @@ beforeEach(() => {
 it('only declares readiness after completed download and reports its size', async () => {
   const onReady = vi.fn();
   render(<OfflinePanel urls={urls} online onReady={onReady}/>);
+  expect(downloadSize).not.toHaveBeenCalled();
+  const details = screen.getByText('Offline practice').closest('details')!;
+  details.open = true; fireEvent(details, new Event('toggle'));
   await waitFor(() => expect(downloadSize).toHaveBeenCalledWith(urls));
   expect(screen.getByText(/1.0 MB/)).toBeInTheDocument();
   let finish!: (value: typeof empty) => void;

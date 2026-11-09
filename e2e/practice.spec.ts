@@ -424,6 +424,8 @@ test('Home remains readable with reachable controls at phone and desktop sizes',
   const density = page.getByRole('status', { name: 'Review density' });
   await expect(density).toContainText('Minimal');
   await expect(page.getByRole('listbox')).toHaveCount(0);
+  // Include the download controls exposed by the offline disclosure.
+  await page.getByText('Offline practice', { exact: true }).click();
   // Check the real foreground styles against every full-screen intensity fill.
   const textColors = await page.locator('.home-intensity, footer a, .home .text-button').evaluateAll(elements =>
     elements.map(element => getComputedStyle(element).color));
@@ -432,6 +434,8 @@ test('Home remains readable with reachable controls at phone and desktop sizes',
     textColors.push(await control.evaluate(element => getComputedStyle(element).color));
   }
   expectReadableHomeText(textColors);
+  await page.getByText('Offline practice', { exact: true }).click();
+  await page.evaluate(() => window.scrollTo(0, 0));
   const picture = density.locator('img');
   await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   for (const size of [{ width: 390, height: 664 }, { width: 320, height: 568 }, { width: 1280, height: 800 }]) {

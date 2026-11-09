@@ -28,3 +28,20 @@ test('final manifest pins HTML, emitted chunks, writing fonts, mascot/badges and
     assert.notEqual((await offlineManifest(root, 'v1')).hashes['index.html'], result.hashes['index.html']);
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+test('offline versions change with build environment as well as source bytes', async () => {
+  const { offlineBuild } = await import('./offline-build.ts');
+  const root = await mkdtemp(join(tmpdir(), 'offline-version-'));
+  try {
+    for (const dir of ['public', 'src', 'vocabulary', 'content', 'scripts']) await mkdir(join(root, dir));
+    for (const file of ['index.html', 'package-lock.json', 'vite.config.ts', 'scripts/offline-build.ts', 'scripts/offline-worker.mjs', 'scripts/offline-finalize.mjs', 'scripts/package-notices.mjs']) await writeFile(join(root, file), file);
+    const version = () => offlineBuild(root).config({}, { mode: 'production' }).define.__OFFLINE_VERSION__;
+    const first = version();
+    assert.equal(version(), first);
+    await writeFile(join(root, '.env.production'), 'VITE_BASE_PATH=/game/\n');
+    assert.notEqual(version(), first);
+    const configured = version();
+    await writeFile(join(root, 'src/main.ts'), 'changed');
+    assert.notEqual(version(), configured);
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
