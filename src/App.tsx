@@ -113,14 +113,17 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
+  const foundationCards = useMemo(() => (language.foundationCards ?? []).filter(card => cardPacks.some(pack =>
+    packIds.includes(pack.id) && pack.language === card.item.language && pack.itemIds.includes(card.item.id))), [language, cardPacks, packIds]);
+  const scopedCards = useMemo(() => [...selectedCards, ...foundationCards], [selectedCards, foundationCards]);
   const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
   const learningSnapshot = useCallback(async (attempts: PracticeAttempt[]) => {
     const unlocks = await deriveContextualUnlocks(attempts, practicePool.language);
-    const cards = [...selectedContextualCards(selectedCards, contextualCards, unlocks), ...selectedCards];
+    const cards = [...selectedContextualCards(selectedCards, contextualCards, unlocks), ...scopedCards];
     const keys = new Set(cards.map(cardKey));
     const allSchedules = await deriveSchedules(attempts, practicePool.language);
     return { cards, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
-  }, [selectedCards, practicePool]);
+  }, [selectedCards, scopedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
     if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
@@ -138,7 +141,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [devOptions, setDevOptions] = useState<DevReviewOptions>(defaultDevReviewOptions);
   const [devReviewError, setDevReviewError] = useState<string | null>(null);
   const devTimerMode = useRef<DevReviewOptions['timerMode'] | null>(null);
-  const devEntries = useMemo(() => devReviewEntries(selectedCards, languageContextualBanks, languageContextualVocabulary), [selectedCards, languageContextualBanks, languageContextualVocabulary]);
+  const devEntries = useMemo(() => devReviewEntries(scopedCards, languageContextualBanks, languageContextualVocabulary), [scopedCards, languageContextualBanks, languageContextualVocabulary]);
   const devTypes = useMemo(() => availableDevReviewTypes(devEntries), [devEntries]);
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
@@ -169,8 +172,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
   const [refresh, setRefresh] = useState(0);
-  const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
-    [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
+  const forecastScope = useMemo(() => ({ store, cards: scopedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
+    [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
   const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
@@ -370,8 +373,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       history.current = attempts;
       mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
-      const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
-      const byId = new Map(practicePool.items.map(item => [item.id, item]));
+      const due = snapshotDue(schedules, scopedCards.map(card => card.item.id), at);
+      const byId = new Map([...languageContextualVocabulary, ...practicePool.items].map(item => [item.id, item]));
       const candidates = cards.filter(card => isContextualExercise(card.exercise) && !mastery.current.has(cardKey(card)));
       const introductions = candidates.length ? await planContextualIntroductions({ schedules,
         cards: shuffled(candidates, random), now: at, range }) : undefined;

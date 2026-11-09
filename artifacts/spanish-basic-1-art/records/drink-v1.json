@@ -1,0 +1,11 @@
+{
+  "id": "es-419-basic-drink",
+  "slug": "drink",
+  "version": 1,
+  "path": "originals/drink-v1.png",
+  "sha256": "45313e5cd9db24fbdaf5fda8aadce00803d5a0f0ed97b01839a3aad920658be8",
+  "promptSha256": "d733a676d8726fd1f94dd809c3af54c1701890c2ade7413ff83e50a06bedc829",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f65a08f0-b962-41bf-a7a6-531a42e8887e.png"
+}

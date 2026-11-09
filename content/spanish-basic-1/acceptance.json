@@ -1,0 +1,18 @@
+{
+  "issue": 191,
+  "pack": "es-419-basic-1",
+  "language": "es-419",
+  "status": "accepted-for-activation",
+  "ownerMessage": "Great, let's ship it.",
+  "words": 24,
+  "images": 15,
+  "contexts": 9,
+  "recordings": 336,
+  "voices": 8,
+  "draftPath": "content/spanish-basic-1/draft.json",
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "artworkPath": "artifacts/spanish-basic-1-art/manifest.json",
+  "artworkSha256": "20d44185dbcbb24fbf15e0aeabf918daa2e4f944b3d9781f02aafef683852380",
+  "audioPath": "artifacts/spanish-basic-1-audio-review/manifest.json",
+  "audioSha256": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07"
+}

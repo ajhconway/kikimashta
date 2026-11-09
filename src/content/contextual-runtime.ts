@@ -1,3 +1,4 @@
+import { spanishBasicContexts, spanishContextualVocabulary } from './spanish-basic';
 import contrastive from '../../content/contextual/ja-pilot.json';
 import simple from '../../content/contextual/ja-simple-pilot.json';
 import expansion from '../../content/contextual/ja-simple-expansion.json';
@@ -13,11 +14,11 @@ import type { PracticeCard, WordItem } from '../types';
 import { contextualExercise } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
 
-export const contextualVocabulary: WordItem[] = withAnswerVocabulary(catalogue.items.flatMap(item => {
+export const contextualVocabulary: WordItem[] = [...spanishContextualVocabulary, ...withAnswerVocabulary(catalogue.items.flatMap(item => {
   const override = overrides[item.id as keyof typeof overrides] ?? {};
   if ('removalReason' in override) return [];
   return [{ ...item, ...override, label: item.meaning, theme: 'vocabulary' } as WordItem];
-}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem));
+}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem))];
 
 interface MediaEntry {
   contextId: string; contextRevision: number; targetItemId: string; stage: 'simple' | 'contrastive';
@@ -49,7 +50,7 @@ export function withAcceptedMedia(banks: readonly ContextualBank[]): ContextualB
 export const recordedContextualBanks = withAcceptedMedia(withMedia([contrastive, simple, expansion] as unknown as ContextualBank[],
   generated.contexts as unknown as MediaEntry[], 'pending'));
 
-export const contextualBanks = withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments);
+export const contextualBanks = [...withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments), spanishBasicContexts];
 
 export function readyContextualCards(banks: readonly ContextualBank[], vocabulary: readonly WordItem[]): PracticeCard[] {
   const result = new Map<string, PracticeCard>();

@@ -1,0 +1,13 @@
+{
+  "id": "es-419-basic-hot",
+  "slug": "hot",
+  "version": 3,
+  "path": "originals/hot-v3.png",
+  "sha256": "23f788a2971b17fec68c1b156af86201f37cbae7a0f5bef2eea2e906912eeb2c",
+  "promptSha256": "136b4f44d06ad31bf1482e97c95b88c53d696a63815db7ed7454bfad8abadfe4",
+  "referenceSha256": "ebb9df9cc45ca0c7418827165af2f5ef9cac8e19a1dfa0f57b37ae4a42108275",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2b2ed2b3-8396-4df6-948e-d2dd91249f3a.png",
+  "supersedes": "originals/hot-v2.png"
+}

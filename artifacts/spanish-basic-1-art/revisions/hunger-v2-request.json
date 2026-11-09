@@ -1,0 +1,20 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-hunger",
+  "slug": "hunger",
+  "version": 2,
+  "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
+  "concept": "A CALM hungry Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body/tail, no upright torso, seated legs or belly gestures. Keep the usual relaxed closed-eye expression and small mouth. A modest compact thought bubble above her contains one small plain bread roll to indicate hunger. No worried eyebrows, pleading wide eyes, open crying mouth, stomach lines, pain, tears or distress. Food stays in the thought bubble; she is not eating.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a transparent background, readable at 145px.\nInput image1: EDIT TARGET to replace its composition according to the owner correction.\nInput image2: CANONICAL KIKU CHARACTER AND NORMAL RESTING POSE reference. Copy the low resting pose, proportions and expression; do not add an upright body or seated back legs.\nOwner correction: Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.\nPrimary request: A CALM hungry Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body/tail, no upright torso, seated legs or belly gestures. Keep the usual relaxed closed-eye expression and small mouth. A modest compact thought bubble above her contains one small plain bread roll to indicate hunger. No worried eyebrows, pleading wide eyes, open crying mouth, stomach lines, pain, tears or distress. Food stays in the thought bubble; she is not eating.\nStyle and constraints: preserve the established rounded friendly cartoon style, smooth bold deep-violet contours and gentle soft shading. Kiku remains golden-yellow with purple headphones, pink ear interiors, tiny whiskers and curled tail. One complete centered illustration on a square canvas with generous transparent margin. No text, numbers, logo, watermark, decorative background, outside glow or ground shadow. Preserve opaque subject interiors and genuinely transparent outside pixels.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
+  "referenceSha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ]
+}

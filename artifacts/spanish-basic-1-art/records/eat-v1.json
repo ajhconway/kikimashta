@@ -1,0 +1,11 @@
+{
+  "id": "es-419-basic-eat",
+  "slug": "eat",
+  "version": 1,
+  "path": "originals/eat-v1.png",
+  "sha256": "c495ddb8644cb6ae010606575f6718279f820d3e041434d2f3824ed2edd7641d",
+  "promptSha256": "60b6d74bc060aeee2fa5d7370e66dd0d1d1a2c16c826a101e87413f518b9e14f",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-79d1a30b-c0d8-498e-9b0f-2206d707ffa1.png"
+}

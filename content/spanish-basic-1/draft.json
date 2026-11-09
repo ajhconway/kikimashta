@@ -1,0 +1,1255 @@
+{
+  "schemaVersion": 1,
+  "issue": 191,
+  "id": "es-419-basic-1",
+  "language": "es-419",
+  "title": "Basic Spanish level 1",
+  "status": "text-approved-media-generation-authorized",
+  "interfaceLanguage": "en",
+  "ownerRequest": "Please go ahead and create a level one basic pack",
+  "formatDecision": "Short contextual questions for abstract words",
+  "packId": "es-419-basic-1",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voices": [
+    {
+      "voice": "juan",
+      "id": "eqsD9RWsdCgHoRsbXS5q",
+      "name": "Juan",
+      "gender": "male",
+      "accent": "latin american",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749/eqsD9RWsdCgHoRsbXS5q",
+      "accentEvidence": "Adult male voice (30–40), Mexican Spanish, neutral Mexico City accent. Warm, clear baritone timbre with chest resonance and low sibilance. Crisp diction, an audible smile, and natural pauses; a medium-slow pace with falling intonation patterns that convey confidence. Conversational and instructional style without exaggeration; capable of shifting to a motivational or empathetic tone. Avoids strong regionalisms and over-dramatization. Ideal for financial explanations, storytelling, and tutorials.\n"
+    },
+    {
+      "voice": "pamela",
+      "id": "pmruOMcxgUotq2bYO5Ne",
+      "name": "Pamela",
+      "gender": "female",
+      "accent": "mexican",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3/pmruOMcxgUotq2bYO5Ne",
+      "accentEvidence": "Female voice from Mexico City, mid-30s. Warm and confident tone, conversational yet professional. Mexican accent is present but subtle, with natural pacing and clear diction. Ideal for corporate narrations and brand videos."
+    },
+    {
+      "voice": "albeiro",
+      "id": "OUfIyuG1GcVW5wnTy7Ru",
+      "name": "Albeiro O",
+      "gender": "male",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3/OUfIyuG1GcVW5wnTy7Ru",
+      "accentEvidence": "Colombian man, Bogotá accent, young, calm and measured tone.\n"
+    },
+    {
+      "voice": "carito",
+      "id": "J8BF9c7OgbHiqagCNoEj",
+      "name": "Carito",
+      "gender": "female",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38/J8BF9c7OgbHiqagCNoEj",
+      "accentEvidence": "Young female voice from Bogotá. Cute, conversational delivery with natural warmth—ideal for intimate narration, casual dialogue, and relatable storytelling."
+    },
+    {
+      "voice": "santiago",
+      "id": "O1CnH2NGEehfL1nmYACp",
+      "name": "Santiago",
+      "gender": "male",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb/O1CnH2NGEehfL1nmYACp",
+      "accentEvidence": "Confident and natural Argentine Spanish with a clear Buenos Aires accent. Ideal for narration, voiceovers, educational content, and Latin American media."
+    },
+    {
+      "voice": "agustina",
+      "id": "TZvhlMgMw2P4gPSuD8v7",
+      "name": "Agustina",
+      "gender": "female",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e/TZvhlMgMw2P4gPSuD8v7",
+      "accentEvidence": "A clear, middle-aged Argentine female voice with a polished Buenos Aires accent and a calm, confident cadence. Her attentive, reassuring tone builds instant trust, perfect for customer service agents, guided interactions, and professional conversations."
+    },
+    {
+      "voice": "carlos-figueroa",
+      "id": "4ex71F9amHzL0fiUD2y1",
+      "name": "Carlos Figueroa",
+      "gender": "male",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224/4ex71F9amHzL0fiUD2y1",
+      "accentEvidence": "Puerto Rican accent male voice."
+    },
+    {
+      "voice": "veronica",
+      "id": "cryPG4aBcWsmW2cCIXjB",
+      "name": "Veronica",
+      "gender": "female",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f/cryPG4aBcWsmW2cCIXjB",
+      "accentEvidence": "Puerto Rican Spanish-speaking female voice."
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-basic-have",
+      "slug": "have",
+      "text": "tener",
+      "meaning": "Have",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Stationary possession is hard to distinguish from carrying or wanting."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "tengo"
+    },
+    {
+      "id": "es-419-basic-want",
+      "slug": "want",
+      "text": "querer",
+      "meaning": "Want",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "A desire cannot be established reliably by an isolated object picture."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "quiero"
+    },
+    {
+      "id": "es-419-basic-need",
+      "slug": "need",
+      "text": "necesitar",
+      "meaning": "Need",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Need and want require an explicit spoken distinction."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "necesito"
+    },
+    {
+      "id": "es-419-basic-go",
+      "slug": "go",
+      "text": "ir",
+      "meaning": "Go",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Use a stated destination, not an ambiguous generic walking picture."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "voy"
+    },
+    {
+      "id": "es-419-basic-carry",
+      "slug": "carry",
+      "text": "llevar",
+      "meaning": "Carry / take",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Contrast an object being carried with an object left elsewhere."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "llevo"
+    },
+    {
+      "id": "es-419-basic-buy",
+      "slug": "buy",
+      "text": "comprar",
+      "meaning": "Buy",
+      "group": "actions",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "A transaction scene may represent selling, paying or shopping."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "compro"
+    },
+    {
+      "id": "es-419-basic-eat",
+      "slug": "eat",
+      "text": "comer",
+      "meaning": "Eat",
+      "group": "actions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku taking a visible bite of bread; mouth and food contact clearly show eating."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "como"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "slug": "drink",
+      "text": "beber",
+      "meaning": "Drink",
+      "group": "actions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku actively sipping from a plain glass of water; no coffee cup or other food."
+      },
+      "reviewNotes": [],
+      "spokenExampleForm": "bebo"
+    },
+    {
+      "id": "es-419-basic-large",
+      "slug": "large",
+      "text": "grande",
+      "meaning": "Big",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved Kiku relative-size illustration emphasizes the larger character. Review alongside the small counterpart.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-f6377dcbb564",
+          "path": "public/images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+          "sha256": "e4e3a7c4b4a711e9eafb2c65f99d5d9803618a42597df959dd6f54c6ab6a845b",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": []
+    },
+    {
+      "id": "es-419-basic-small",
+      "slug": "small",
+      "text": "pequeño",
+      "meaning": "Small",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved matching Kiku relative-size illustration emphasizes the smaller character.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-769a80524957",
+          "path": "public/images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+          "sha256": "ed0a26999d386ade88cf8d363538d9562af4cba381503f7604186d016cbd6e11",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": [],
+      "variants": [
+        {
+          "text": "pequeña",
+          "usage": "Feminine singular; introduced in sentences, not a separate scheduled item."
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-cold",
+      "slug": "cold",
+      "text": "frío",
+      "meaning": "Cold",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "A glass of water with ice cubes and condensation, paired with a simple blue low thermometer. No snow scene."
+      },
+      "reviewNotes": [],
+      "variants": [
+        {
+          "text": "fría",
+          "usage": "Feminine singular; introduced in sentences, not a separate scheduled item."
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-hot",
+      "slug": "hot",
+      "text": "caliente",
+      "meaning": "Hot",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "The matching glass with clearly rising steam and a red high thermometer; no flame or coffee-specific cues."
+      },
+      "reviewNotes": []
+    },
+    {
+      "id": "es-419-basic-open",
+      "slug": "open",
+      "text": "abierto",
+      "meaning": "Open",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved open-door illustration. Physical open state, not business opening hours.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-12025d56c403",
+          "path": "public/images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+          "sha256": "5601a95a2085bea7bd788b5207e5c3ad374780fa75ae549ff84a4a4018314a56",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": [],
+      "variants": [
+        {
+          "text": "abierta",
+          "usage": "Feminine singular; introduced in sentences, not a separate scheduled item."
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-closed",
+      "slug": "closed",
+      "text": "cerrado",
+      "meaning": "Closed",
+      "group": "descriptions",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved matching closed-door illustration. Physical closed state, not business opening hours.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-56e27b2da5a6",
+          "path": "public/images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+          "sha256": "bed4c2f3e39f2f6b8d8b8c6cf262001618abdbb05f2ba21592fbbb26eebbc072",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": [],
+      "variants": [
+        {
+          "text": "cerrada",
+          "usage": "Feminine singular; introduced in sentences, not a separate scheduled item."
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-inside",
+      "slug": "inside",
+      "text": "dentro de",
+      "meaning": "Inside",
+      "group": "locations",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku sitting clearly inside an open box, with the front wall partly cut away so Kiku is visible within the box. Keep Kiku and the box fully in frame. Use the same box, Kiku proportions, colors and viewing angle as the next-to card. No key, backpack, words or arrows.",
+        "ownerFeedback": "Kiku inside a box or something like that."
+      },
+      "reviewNotes": []
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "slug": "on-top",
+      "text": "encima de",
+      "meaning": "On top of",
+      "group": "locations",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved Kiku sitting on top of a chair. Review spatial meaning independently from the chair noun.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-c0f58bfab324",
+          "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+          "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": [
+        "Review transfer between chair/character imagery and key/backpack examples; exclude chair/scene collisions if packs mix."
+      ]
+    },
+    {
+      "id": "es-419-basic-under",
+      "slug": "under",
+      "text": "debajo de",
+      "meaning": "Under",
+      "group": "locations",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Approved matching Kiku under the same chair; character and furniture remain identifiable.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-520308b3c3b4",
+          "path": "public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+          "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5",
+          "evidence": "content/card-regeneration/activation.json",
+          "inspection": "Visually inspected; hash verified. Candidate pending pack-specific owner review."
+        }
+      },
+      "reviewNotes": [
+        "Review transfer between chair/character imagery and key/backpack examples; exclude chair/scene collisions if packs mix."
+      ]
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "slug": "next-to",
+      "text": "al lado de",
+      "meaning": "Next to",
+      "group": "locations",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku sitting on the ground beside the same open box used for the inside card, entirely outside it with a clear gap. Match Kiku proportions, box size, colors and viewing angle; Kiku and the box share the same ground level. No key, backpack, words or arrows.",
+        "ownerFeedback": "Kiku beside something."
+      },
+      "reviewNotes": []
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "slug": "hunger",
+      "text": "hambre",
+      "meaning": "Hunger",
+      "group": "needs",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku holding an empty stomach and looking at bread in a thought bubble; not actively eating."
+      },
+      "reviewNotes": [],
+      "usageFrame": "Tengo hambre."
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "slug": "thirst",
+      "text": "sed",
+      "meaning": "Thirst",
+      "group": "needs",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku with a dry mouth, looking at a water glass in a thought bubble; not actively drinking."
+      },
+      "reviewNotes": [],
+      "usageFrame": "Tengo sed."
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "slug": "sleepiness",
+      "text": "sueño",
+      "meaning": "Sleepiness",
+      "group": "needs",
+      "practice": {
+        "kind": "picture",
+        "exercise": "audio-picture"
+      },
+      "artwork": {
+        "status": "concept-awaiting-review",
+        "concept": "Kiku yawning with drooping eyelids beside a bed; awake, not asleep; no dream bubble."
+      },
+      "reviewNotes": [
+        "Sleepiness in tener sueño; not a dream."
+      ],
+      "usageFrame": "Tengo sueño."
+    },
+    {
+      "id": "es-419-basic-today",
+      "slug": "today",
+      "text": "hoy",
+      "meaning": "Today",
+      "group": "time",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Teach the stated destination for today, without calendar symbols or printed labels."
+      },
+      "reviewNotes": []
+    },
+    {
+      "id": "es-419-basic-tomorrow",
+      "slug": "tomorrow",
+      "text": "mañana",
+      "meaning": "Tomorrow",
+      "group": "time",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Teach tomorrow explicitly; the morning sense is outside this item."
+      },
+      "reviewNotes": [
+        "Tomorrow only; mañana meaning morning is a separate sense."
+      ]
+    },
+    {
+      "id": "es-419-basic-afterward",
+      "slug": "afterward",
+      "text": "después",
+      "meaning": "Afterward",
+      "group": "time",
+      "practice": {
+        "kind": "contextual",
+        "answerFormats": [
+          "picture",
+          "text"
+        ],
+        "admission": "direct-foundation"
+      },
+      "artwork": {
+        "status": "not-required",
+        "concept": "Identify the later of two stated actions; static clocks do not express this relation clearly."
+      },
+      "reviewNotes": []
+    }
+  ],
+  "contexts": [
+    {
+      "id": "es-419-basic-ctx-have-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-have",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Tengo una llave. Necesito un boleto.",
+        "meaning": "I have a key. I need a ticket."
+      },
+      "question": {
+        "text": "¿Qué tengo?",
+        "meaning": "What do I have?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "key",
+          "text": "llave",
+          "meaning": "Key",
+          "vocabularyItemId": "es-419-travel-key",
+          "image": {
+            "src": "images/approved/es-419-travel-key-5dd79de14b34.png",
+            "alt": "Key"
+          }
+        },
+        {
+          "id": "ticket",
+          "text": "boleto",
+          "meaning": "Ticket",
+          "vocabularyItemId": "es-419-travel-ticket",
+          "image": {
+            "src": "images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
+            "alt": "Ticket"
+          }
+        },
+        {
+          "id": "passport",
+          "text": "pasaporte",
+          "meaning": "Passport",
+          "vocabularyItemId": "es-419-travel-passport",
+          "image": {
+            "src": "images/approved/es-419-travel-passport-3eb38fe29b5a.png",
+            "alt": "Passport"
+          }
+        },
+        {
+          "id": "phone",
+          "text": "teléfono",
+          "meaning": "Phone",
+          "vocabularyItemId": "es-419-travel-phone",
+          "image": {
+            "src": "images/approved/es-419-travel-phone-10dd4649216b.png",
+            "alt": "Phone"
+          }
+        }
+      ],
+      "correctOptionId": "key",
+      "explanation": "The key is possessed; the ticket is needed.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-want-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-want",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Tengo agua. Quiero café.",
+        "meaning": "I have water. I want coffee."
+      },
+      "question": {
+        "text": "¿Qué quiero?",
+        "meaning": "What do I want?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "coffee",
+          "text": "café",
+          "meaning": "Coffee",
+          "vocabularyItemId": "es-419-travel-coffee",
+          "image": {
+            "src": "images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+            "alt": "Coffee"
+          }
+        },
+        {
+          "id": "water",
+          "text": "agua",
+          "meaning": "Water",
+          "vocabularyItemId": "es-419-travel-water",
+          "image": {
+            "src": "images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+            "alt": "Water"
+          }
+        },
+        {
+          "id": "milk",
+          "text": "leche",
+          "meaning": "Milk",
+          "vocabularyItemId": "es-419-travel-milk",
+          "image": {
+            "src": "images/approved/es-419-travel-milk-ab6c590f6879.png",
+            "alt": "Milk"
+          }
+        },
+        {
+          "id": "juice",
+          "text": "jugo",
+          "meaning": "Juice",
+          "vocabularyItemId": "es-419-travel-juice",
+          "image": {
+            "src": "images/approved/es-419-travel-juice-7dcfc819e448.png",
+            "alt": "Juice"
+          }
+        }
+      ],
+      "correctOptionId": "coffee",
+      "explanation": "The desired drink is coffee; the water is already possessed.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-need-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-need",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Tengo dinero. Necesito un boleto.",
+        "meaning": "I have money. I need a ticket."
+      },
+      "question": {
+        "text": "¿Qué necesito?",
+        "meaning": "What do I need?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "ticket",
+          "text": "boleto",
+          "meaning": "Ticket",
+          "vocabularyItemId": "es-419-travel-ticket",
+          "image": {
+            "src": "images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
+            "alt": "Ticket"
+          }
+        },
+        {
+          "id": "money",
+          "text": "dinero",
+          "meaning": "Money",
+          "vocabularyItemId": "es-419-travel-money",
+          "image": {
+            "src": "images/approved/es-419-travel-money-cbd131037276.png",
+            "alt": "Money"
+          }
+        },
+        {
+          "id": "key",
+          "text": "llave",
+          "meaning": "Key",
+          "vocabularyItemId": "es-419-travel-key",
+          "image": {
+            "src": "images/approved/es-419-travel-key-5dd79de14b34.png",
+            "alt": "Key"
+          }
+        },
+        {
+          "id": "passport",
+          "text": "pasaporte",
+          "meaning": "Passport",
+          "vocabularyItemId": "es-419-travel-passport",
+          "image": {
+            "src": "images/approved/es-419-travel-passport-3eb38fe29b5a.png",
+            "alt": "Passport"
+          }
+        }
+      ],
+      "correctOptionId": "ticket",
+      "explanation": "The ticket is needed; the money is already possessed.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-go-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-go",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Voy al hotel. No voy a la playa.",
+        "meaning": "I am going to the hotel. I am not going to the beach."
+      },
+      "question": {
+        "text": "¿Adónde voy?",
+        "meaning": "Where am I going?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "hotel",
+          "text": "hotel",
+          "meaning": "Hotel",
+          "vocabularyItemId": "es-419-travel-hotel",
+          "image": {
+            "src": "images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+            "alt": "Hotel"
+          }
+        },
+        {
+          "id": "beach",
+          "text": "playa",
+          "meaning": "Beach",
+          "vocabularyItemId": "es-419-travel-beach",
+          "image": {
+            "src": "images/approved/es-419-travel-beach-865816b51a61.png",
+            "alt": "Beach"
+          }
+        },
+        {
+          "id": "airport",
+          "text": "aeropuerto",
+          "meaning": "Airport",
+          "vocabularyItemId": "es-419-travel-airport",
+          "image": {
+            "src": "images/approved/es-419-travel-airport-6642b11abd88.png",
+            "alt": "Airport"
+          }
+        },
+        {
+          "id": "restaurant",
+          "text": "restaurante",
+          "meaning": "Restaurant",
+          "vocabularyItemId": "es-419-travel-restaurant",
+          "image": {
+            "src": "images/approved/es-419-travel-restaurant-0df277e0e41d.png",
+            "alt": "Restaurant"
+          }
+        }
+      ],
+      "correctOptionId": "hotel",
+      "explanation": "The hotel is the stated destination; the beach is explicitly excluded.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-carry-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-carry",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Llevo una mochila. La maleta está en el hotel.",
+        "meaning": "I am carrying a backpack. The suitcase is at the hotel."
+      },
+      "question": {
+        "text": "¿Qué llevo?",
+        "meaning": "What am I carrying?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "backpack",
+          "text": "mochila",
+          "meaning": "Backpack",
+          "vocabularyItemId": "es-419-travel-backpack",
+          "image": {
+            "src": "images/approved/es-419-travel-backpack-0b08a4776a44.png",
+            "alt": "Backpack"
+          }
+        },
+        {
+          "id": "suitcase",
+          "text": "maleta",
+          "meaning": "Suitcase",
+          "vocabularyItemId": "es-419-travel-suitcase",
+          "image": {
+            "src": "images/approved/es-419-travel-suitcase-6d4224762fc6.png",
+            "alt": "Suitcase"
+          }
+        },
+        {
+          "id": "passport",
+          "text": "pasaporte",
+          "meaning": "Passport",
+          "vocabularyItemId": "es-419-travel-passport",
+          "image": {
+            "src": "images/approved/es-419-travel-passport-3eb38fe29b5a.png",
+            "alt": "Passport"
+          }
+        },
+        {
+          "id": "phone",
+          "text": "teléfono",
+          "meaning": "Phone",
+          "vocabularyItemId": "es-419-travel-phone",
+          "image": {
+            "src": "images/approved/es-419-travel-phone-10dd4649216b.png",
+            "alt": "Phone"
+          }
+        }
+      ],
+      "correctOptionId": "backpack",
+      "explanation": "The backpack is carried; the suitcase is elsewhere.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-buy-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-buy",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Compro pan. No compro arroz.",
+        "meaning": "I am buying bread. I am not buying rice."
+      },
+      "question": {
+        "text": "¿Qué compro?",
+        "meaning": "What am I buying?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "bread",
+          "text": "pan",
+          "meaning": "Bread",
+          "vocabularyItemId": "es-419-travel-bread",
+          "image": {
+            "src": "images/approved/es-419-travel-bread-843bf04cbd40.png",
+            "alt": "Bread"
+          }
+        },
+        {
+          "id": "rice",
+          "text": "arroz",
+          "meaning": "Rice",
+          "vocabularyItemId": "es-419-travel-rice",
+          "image": {
+            "src": "images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+            "alt": "Rice"
+          }
+        },
+        {
+          "id": "milk",
+          "text": "leche",
+          "meaning": "Milk",
+          "vocabularyItemId": "es-419-travel-milk",
+          "image": {
+            "src": "images/approved/es-419-travel-milk-ab6c590f6879.png",
+            "alt": "Milk"
+          }
+        },
+        {
+          "id": "juice",
+          "text": "jugo",
+          "meaning": "Juice",
+          "vocabularyItemId": "es-419-travel-juice",
+          "image": {
+            "src": "images/approved/es-419-travel-juice-7dcfc819e448.png",
+            "alt": "Juice"
+          }
+        }
+      ],
+      "correctOptionId": "bread",
+      "explanation": "Bread is bought; rice is explicitly excluded.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-today-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-today",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Hoy voy al hotel. Mañana voy a la playa.",
+        "meaning": "Today I am going to the hotel. Tomorrow I am going to the beach."
+      },
+      "question": {
+        "text": "¿Adónde voy hoy?",
+        "meaning": "Where am I going today?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "hotel",
+          "text": "hotel",
+          "meaning": "Hotel",
+          "vocabularyItemId": "es-419-travel-hotel",
+          "image": {
+            "src": "images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+            "alt": "Hotel"
+          }
+        },
+        {
+          "id": "beach",
+          "text": "playa",
+          "meaning": "Beach",
+          "vocabularyItemId": "es-419-travel-beach",
+          "image": {
+            "src": "images/approved/es-419-travel-beach-865816b51a61.png",
+            "alt": "Beach"
+          }
+        },
+        {
+          "id": "airport",
+          "text": "aeropuerto",
+          "meaning": "Airport",
+          "vocabularyItemId": "es-419-travel-airport",
+          "image": {
+            "src": "images/approved/es-419-travel-airport-6642b11abd88.png",
+            "alt": "Airport"
+          }
+        },
+        {
+          "id": "restaurant",
+          "text": "restaurante",
+          "meaning": "Restaurant",
+          "vocabularyItemId": "es-419-travel-restaurant",
+          "image": {
+            "src": "images/approved/es-419-travel-restaurant-0df277e0e41d.png",
+            "alt": "Restaurant"
+          }
+        }
+      ],
+      "correctOptionId": "hotel",
+      "explanation": "Today selects the hotel, not tomorrow’s beach destination.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-tomorrow-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-tomorrow",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Hoy voy a la playa. Mañana voy al aeropuerto.",
+        "meaning": "Today I am going to the beach. Tomorrow I am going to the airport."
+      },
+      "question": {
+        "text": "¿Adónde voy mañana?",
+        "meaning": "Where am I going tomorrow?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "airport",
+          "text": "aeropuerto",
+          "meaning": "Airport",
+          "vocabularyItemId": "es-419-travel-airport",
+          "image": {
+            "src": "images/approved/es-419-travel-airport-6642b11abd88.png",
+            "alt": "Airport"
+          }
+        },
+        {
+          "id": "beach",
+          "text": "playa",
+          "meaning": "Beach",
+          "vocabularyItemId": "es-419-travel-beach",
+          "image": {
+            "src": "images/approved/es-419-travel-beach-865816b51a61.png",
+            "alt": "Beach"
+          }
+        },
+        {
+          "id": "hotel",
+          "text": "hotel",
+          "meaning": "Hotel",
+          "vocabularyItemId": "es-419-travel-hotel",
+          "image": {
+            "src": "images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+            "alt": "Hotel"
+          }
+        },
+        {
+          "id": "restaurant",
+          "text": "restaurante",
+          "meaning": "Restaurant",
+          "vocabularyItemId": "es-419-travel-restaurant",
+          "image": {
+            "src": "images/approved/es-419-travel-restaurant-0df277e0e41d.png",
+            "alt": "Restaurant"
+          }
+        }
+      ],
+      "correctOptionId": "airport",
+      "explanation": "Tomorrow selects the airport, not today’s beach destination.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    },
+    {
+      "id": "es-419-basic-ctx-afterward-01",
+      "revision": 1,
+      "targetItemId": "es-419-basic-afterward",
+      "stage": "foundation",
+      "sentence": {
+        "text": "Compro pan. Después compro leche.",
+        "meaning": "I buy bread. Afterward I buy milk."
+      },
+      "question": {
+        "text": "¿Qué compro después?",
+        "meaning": "What do I buy afterward?"
+      },
+      "answerFormats": [
+        "picture",
+        "text"
+      ],
+      "options": [
+        {
+          "id": "milk",
+          "text": "leche",
+          "meaning": "Milk",
+          "vocabularyItemId": "es-419-travel-milk",
+          "image": {
+            "src": "images/approved/es-419-travel-milk-ab6c590f6879.png",
+            "alt": "Milk"
+          }
+        },
+        {
+          "id": "bread",
+          "text": "pan",
+          "meaning": "Bread",
+          "vocabularyItemId": "es-419-travel-bread",
+          "image": {
+            "src": "images/approved/es-419-travel-bread-843bf04cbd40.png",
+            "alt": "Bread"
+          }
+        },
+        {
+          "id": "rice",
+          "text": "arroz",
+          "meaning": "Rice",
+          "vocabularyItemId": "es-419-travel-rice",
+          "image": {
+            "src": "images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+            "alt": "Rice"
+          }
+        },
+        {
+          "id": "juice",
+          "text": "jugo",
+          "meaning": "Juice",
+          "vocabularyItemId": "es-419-travel-juice",
+          "image": {
+            "src": "images/approved/es-419-travel-juice-7dcfc819e448.png",
+            "alt": "Juice"
+          }
+        }
+      ],
+      "correctOptionId": "milk",
+      "explanation": "Milk is bought after bread.",
+      "review": {
+        "text": "approved",
+        "audio": "not-generated"
+      }
+    }
+  ],
+  "sentenceSupport": [
+    {
+      "pattern": "Tengo… / Quiero… / Necesito…",
+      "meaning": "I have… / I want… / I need…"
+    },
+    {
+      "pattern": "Voy a… / Llevo… / Compro…",
+      "meaning": "I am going to… / I carry… / I buy…"
+    },
+    {
+      "pattern": "Está… / Hay…",
+      "meaning": "It is [location/state]… / There is or are…"
+    },
+    {
+      "pattern": "¿Qué…? / ¿Dónde…? / ¿Adónde…?",
+      "meaning": "What…? / Where…? / Where to…?"
+    },
+    {
+      "pattern": "el / la / un / una; en / de / a; y / pero / no",
+      "meaning": "Articles, location/linking words, and / but / not; introduce through examples."
+    }
+  ],
+  "admissionPlan": {
+    "pictureWords": "Ordinary word-picture introduction and schedule.",
+    "abstractWords": "Introduce meaning, spoken form and worked context, then admit a foundation context directly; no picture-word mastery prerequisite.",
+    "progress": "Keep language/target/exercise identity and existing travel progress; foundation entry must be implemented separately from the existing gated Japanese contextual stages.",
+    "dependencies": "Contextual examples use Travel level 1 nouns. Show their meanings in the introduction; do not require level 2/3."
+  },
+  "mediaPlan": {
+    "wordRecordings": 192,
+    "contextualRecordings": 144,
+    "totalRecordings": 336,
+    "newPictureConcepts": 9,
+    "generationAuthorized": true,
+    "textApproval": "Context sentence/question text requires owner review before generation.",
+    "activation": "Only after exact selected artwork and recordings are accepted.",
+    "approvedReuseCandidates": 6,
+    "ownerAuthorization": "Please go ahead and generate the pictures and audio."
+  }
+}

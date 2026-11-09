@@ -1,0 +1,14 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-sleepiness",
+  "slug": "sleepiness",
+  "version": 3,
+  "ownerFeedback": "Sleepiness should have a bigger pillow which Kiku is more on. The rest are good.",
+  "concept": "Calm sleepy Kiku in her normal low resting pose, with her chin and both front paws supported on a large soft purple pillow spanning most of her width. The pillow is clearly beneath Kiku, compressed gently by her weight, with its edges visible around her paws.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a genuinely transparent background, readable at 145px.\nInput image1: EDIT TARGET. Owner correction: Sleepiness should have a bigger pillow which Kiku is more on.\nPrimary request: Enlarge the purple pillow substantially and move it UNDER Kiku. The soft pillow spans most of Kiku's width beneath her face and two front paws; Kiku rests her chin and BOTH front paws ON TOP of the pillow, comfortably leaning down into it. The cushion gently compresses beneath her, with broad purple edges visible to the left, right and below her paws. This must read clearly as Kiku resting ON a large pillow, rather than a small pillow beside her.\nPreserve: Kiku's normal low resting head-and-front-paws pose, golden fur, closed relaxed eyes, tiny subtle yawning mouth, purple headphones, pink ear interiors, two front paws and curled tail. Keep the established smooth deep-violet contour, rounded friendly cartoon style and soft shading. Allow only the small head/paw position adjustment needed to rest naturally on the enlarged pillow.\nComposition: complete centered subject, square canvas, generous transparent outer margins. No upright torso, seated rear legs, bed frame, blanket, additional objects, text, Z symbols, decorative background, ground shadow, glow or watermark. Opaque subject interiors and transparent outside pixels.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/sleepiness-v2.png",
+  "referenceSha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+  "additionalReferences": []
+}
