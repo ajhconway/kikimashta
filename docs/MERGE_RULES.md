@@ -78,9 +78,10 @@ References: [Codex review setup](https://learn.chatgpt.com/docs/third-party/gith
 ## Focused test coverage (#179)
 
 Pure core/content tests use Node; UI, preference and storage tests retain jsdom.
-Each browser runner executes half of Chromium followed by half of mobile WebKit,
-so slower WebKit work is shared while every required journey still runs in both engines.
-Reports are retained separately for each engine and shard.
+Each browser runner executes half of Chromium followed by the opposite half of
+mobile WebKit, counterbalancing expensive halves while every required journey
+still runs in both engines. Reports are retained separately for each engine and
+actual shard. See [browser coverage and timing](BROWSER_TESTS.md).
 
 Historical audition/decoder sweeps and generated contact sheets live under
 `e2e/content-review/`. Run `npm run test:content-review` after building, or use

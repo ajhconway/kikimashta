@@ -1,0 +1,53 @@
+{
+  "issue": 198,
+  "bankSha256": "01166da5b9e5143fb699ef9f693623f2771cec28e5c4872e7913f03f14895388",
+  "words": 166,
+  "models": {
+    "fasttext": {
+      "id": "facebook/fasttext-ja-vectors",
+      "revision": "be286af953967df11e163522974fff118569f1fb",
+      "dimension": 300,
+      "inputTemplate": "{text}",
+      "dependencies": {
+        "fasttext-wheel": "0.9.2",
+        "numpy": "2.5.4",
+        "huggingface-hub": "2.4.0"
+      },
+      "repeatMaxAbsoluteDifference": 0,
+      "executionSecondsIncludingLoadAndRepeat": 7.21,
+      "coverage": {
+        "whole-word": 145,
+        "subword": 4,
+        "mean-of-kanji": 17
+      },
+      "meanRecallAt5": 0.6250000000000001,
+      "hitRateAt5": 0.875,
+      "passedTriplets": 30,
+      "totalTriplets": 32,
+      "macroGroupAccuracy": 0.9375
+    },
+    "e5": {
+      "id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "dimension": 768,
+      "inputTemplate": "query: {text} — {label}",
+      "dependencies": {
+        "sentence-transformers": "6.2.0",
+        "transformers": "5.22.2",
+        "torch": "2.15.0",
+        "numpy": "2.5.4",
+        "huggingface-hub": "2.4.0"
+      },
+      "repeatMaxAbsoluteDifference": 0,
+      "executionSecondsIncludingLoadAndRepeat": 12.4,
+      "coverage": {
+        "text": 166
+      },
+      "meanRecallAt5": 0.5625,
+      "hitRateAt5": 0.875,
+      "passedTriplets": 28,
+      "totalTriplets": 32,
+      "macroGroupAccuracy": 0.8958333333333334
+    }
+  }
+}

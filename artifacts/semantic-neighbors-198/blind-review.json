@@ -1,0 +1,855 @@
+{
+  "note": "Compare usefulness as semantic picture alternatives. Labels hide the model. Identify ambiguous pictures separately. This is exploratory review, not a held-out accuracy test.",
+  "items": [
+    {
+      "target": {
+        "text": "コーヒー",
+        "meaning": "Coffee"
+      },
+      "A": [
+        {
+          "text": "水",
+          "meaning": "Water"
+        },
+        {
+          "text": "川",
+          "meaning": "River"
+        },
+        {
+          "text": "花",
+          "meaning": "Flower"
+        },
+        {
+          "text": "氷",
+          "meaning": "Ice"
+        },
+        {
+          "text": "テレビ",
+          "meaning": "Television"
+        }
+      ],
+      "B": [
+        {
+          "text": "生ビール",
+          "meaning": "Draft Beer"
+        },
+        {
+          "text": "コンビニ",
+          "meaning": "Convenience Store"
+        },
+        {
+          "text": "かき氷",
+          "meaning": "Shaved Ice"
+        },
+        {
+          "text": "ホテル",
+          "meaning": "Hotel"
+        },
+        {
+          "text": "テレビ",
+          "meaning": "Television"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "考古学",
+        "meaning": "Archeology"
+      },
+      "A": [
+        {
+          "text": "工学",
+          "meaning": "Engineering"
+        },
+        {
+          "text": "火山",
+          "meaning": "Volcano"
+        },
+        {
+          "text": "大学",
+          "meaning": "University"
+        },
+        {
+          "text": "石",
+          "meaning": "Stone"
+        },
+        {
+          "text": "古い",
+          "meaning": "Old"
+        }
+      ],
+      "B": [
+        {
+          "text": "火山",
+          "meaning": "Volcano"
+        },
+        {
+          "text": "大学",
+          "meaning": "University"
+        },
+        {
+          "text": "工学",
+          "meaning": "Engineering"
+        },
+        {
+          "text": "水中",
+          "meaning": "Underwater"
+        },
+        {
+          "text": "学生",
+          "meaning": "Student"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "耳",
+        "meaning": "Ear"
+      },
+      "A": [
+        {
+          "text": "音",
+          "meaning": "Sound"
+        },
+        {
+          "text": "目",
+          "meaning": "Eye"
+        },
+        {
+          "text": "口",
+          "meaning": "Mouth"
+        },
+        {
+          "text": "手",
+          "meaning": "Hand"
+        },
+        {
+          "text": "心",
+          "meaning": "Heart"
+        }
+      ],
+      "B": [
+        {
+          "text": "足",
+          "meaning": "Foot"
+        },
+        {
+          "text": "音",
+          "meaning": "Sound"
+        },
+        {
+          "text": "目",
+          "meaning": "Eye"
+        },
+        {
+          "text": "手",
+          "meaning": "Hand"
+        },
+        {
+          "text": "口",
+          "meaning": "Mouth"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "上",
+        "meaning": "Above"
+      },
+      "A": [
+        {
+          "text": "下",
+          "meaning": "Below"
+        },
+        {
+          "text": "一",
+          "meaning": "One"
+        },
+        {
+          "text": "山",
+          "meaning": "Mountain"
+        },
+        {
+          "text": "テーブルの上",
+          "meaning": "On The Table"
+        },
+        {
+          "text": "一万",
+          "meaning": "Ten Thousand"
+        }
+      ],
+      "B": [
+        {
+          "text": "下",
+          "meaning": "Below"
+        },
+        {
+          "text": "右",
+          "meaning": "Right Direction"
+        },
+        {
+          "text": "一つ",
+          "meaning": "One Thing"
+        },
+        {
+          "text": "平行",
+          "meaning": "Parallel"
+        },
+        {
+          "text": "半分",
+          "meaning": "Half"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "竹の子",
+        "meaning": "Bamboo Shoot"
+      },
+      "A": [
+        {
+          "text": "竹",
+          "meaning": "Bamboo"
+        },
+        {
+          "text": "田んぼ",
+          "meaning": "Rice Paddy"
+        },
+        {
+          "text": "赤ちゃん",
+          "meaning": "Baby"
+        },
+        {
+          "text": "月光",
+          "meaning": "Moonlight"
+        },
+        {
+          "text": "四つ",
+          "meaning": "Four Things"
+        }
+      ],
+      "B": [
+        {
+          "text": "竹",
+          "meaning": "Bamboo"
+        },
+        {
+          "text": "玉ねぎ",
+          "meaning": "Onion"
+        },
+        {
+          "text": "牛肉",
+          "meaning": "Beef"
+        },
+        {
+          "text": "りんご",
+          "meaning": "Apple"
+        },
+        {
+          "text": "肉",
+          "meaning": "Meat"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "本",
+        "meaning": "Book"
+      },
+      "A": [
+        {
+          "text": "ノート",
+          "meaning": "Notebook"
+        },
+        {
+          "text": "手",
+          "meaning": "Hand"
+        },
+        {
+          "text": "目",
+          "meaning": "Eye"
+        },
+        {
+          "text": "体",
+          "meaning": "Body"
+        },
+        {
+          "text": "車",
+          "meaning": "Car"
+        }
+      ],
+      "B": [
+        {
+          "text": "一万",
+          "meaning": "Ten Thousand"
+        },
+        {
+          "text": "一",
+          "meaning": "One"
+        },
+        {
+          "text": "一台",
+          "meaning": "One Machine"
+        },
+        {
+          "text": "二万",
+          "meaning": "Twenty Thousand"
+        },
+        {
+          "text": "三人",
+          "meaning": "Three People"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "五台",
+        "meaning": "Five Machines"
+      },
+      "A": [
+        {
+          "text": "十台",
+          "meaning": "Ten Machines"
+        },
+        {
+          "text": "二台",
+          "meaning": "Two Machines"
+        },
+        {
+          "text": "五つ",
+          "meaning": "Five Things"
+        },
+        {
+          "text": "五",
+          "meaning": "Five"
+        },
+        {
+          "text": "一台",
+          "meaning": "One Machine"
+        }
+      ],
+      "B": [
+        {
+          "text": "十台",
+          "meaning": "Ten Machines"
+        },
+        {
+          "text": "二台",
+          "meaning": "Two Machines"
+        },
+        {
+          "text": "一台",
+          "meaning": "One Machine"
+        },
+        {
+          "text": "五",
+          "meaning": "Five"
+        },
+        {
+          "text": "五十",
+          "meaning": "Fifty"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "日光",
+        "meaning": "Sunlight"
+      },
+      "A": [
+        {
+          "text": "月光",
+          "meaning": "Moonlight"
+        },
+        {
+          "text": "日の出",
+          "meaning": "Sunrise"
+        },
+        {
+          "text": "夜",
+          "meaning": "Night"
+        },
+        {
+          "text": "明かり",
+          "meaning": "Light"
+        },
+        {
+          "text": "月",
+          "meaning": "Moon"
+        }
+      ],
+      "B": [
+        {
+          "text": "月光",
+          "meaning": "Moonlight"
+        },
+        {
+          "text": "市",
+          "meaning": "City"
+        },
+        {
+          "text": "八つ",
+          "meaning": "Eight Things"
+        },
+        {
+          "text": "雨",
+          "meaning": "Rain"
+        },
+        {
+          "text": "日の出",
+          "meaning": "Sunrise"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "牛",
+        "meaning": "Cow"
+      },
+      "A": [
+        {
+          "text": "牛肉",
+          "meaning": "Beef"
+        },
+        {
+          "text": "豚",
+          "meaning": "Pig"
+        },
+        {
+          "text": "子牛",
+          "meaning": "Calf"
+        },
+        {
+          "text": "肉",
+          "meaning": "Meat"
+        },
+        {
+          "text": "犬",
+          "meaning": "Dog"
+        }
+      ],
+      "B": [
+        {
+          "text": "子牛",
+          "meaning": "Calf"
+        },
+        {
+          "text": "牛肉",
+          "meaning": "Beef"
+        },
+        {
+          "text": "豚",
+          "meaning": "Pig"
+        },
+        {
+          "text": "肉",
+          "meaning": "Meat"
+        },
+        {
+          "text": "犬",
+          "meaning": "Dog"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "市",
+        "meaning": "City"
+      },
+      "A": [
+        {
+          "text": "町",
+          "meaning": "Town"
+        },
+        {
+          "text": "体",
+          "meaning": "Body"
+        },
+        {
+          "text": "手",
+          "meaning": "Hand"
+        },
+        {
+          "text": "車",
+          "meaning": "Car"
+        },
+        {
+          "text": "川",
+          "meaning": "River"
+        }
+      ],
+      "B": [
+        {
+          "text": "町",
+          "meaning": "Town"
+        },
+        {
+          "text": "村",
+          "meaning": "Village"
+        },
+        {
+          "text": "月",
+          "meaning": "Moon"
+        },
+        {
+          "text": "土",
+          "meaning": "Dirt"
+        },
+        {
+          "text": "川",
+          "meaning": "River"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "丸",
+        "meaning": "Circle"
+      },
+      "A": [
+        {
+          "text": "三角",
+          "meaning": "Triangle"
+        },
+        {
+          "text": "玉",
+          "meaning": "Ball"
+        },
+        {
+          "text": "谷",
+          "meaning": "Valley"
+        },
+        {
+          "text": "夜",
+          "meaning": "Night"
+        },
+        {
+          "text": "四角",
+          "meaning": "Square"
+        }
+      ],
+      "B": [
+        {
+          "text": "四角",
+          "meaning": "Square"
+        },
+        {
+          "text": "玉",
+          "meaning": "Ball"
+        },
+        {
+          "text": "花",
+          "meaning": "Flower"
+        },
+        {
+          "text": "三角",
+          "meaning": "Triangle"
+        },
+        {
+          "text": "八",
+          "meaning": "Eight"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "左",
+        "meaning": "Left Direction"
+      },
+      "A": [
+        {
+          "text": "右",
+          "meaning": "Right Direction"
+        },
+        {
+          "text": "左右",
+          "meaning": "Left And Right"
+        },
+        {
+          "text": "手",
+          "meaning": "Hand"
+        },
+        {
+          "text": "上",
+          "meaning": "Above"
+        },
+        {
+          "text": "冬",
+          "meaning": "Winter"
+        }
+      ],
+      "B": [
+        {
+          "text": "右",
+          "meaning": "Right Direction"
+        },
+        {
+          "text": "下",
+          "meaning": "Below"
+        },
+        {
+          "text": "左右",
+          "meaning": "Left And Right"
+        },
+        {
+          "text": "四つ",
+          "meaning": "Four Things"
+        },
+        {
+          "text": "上",
+          "meaning": "Above"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "白い",
+        "meaning": "White"
+      },
+      "A": [
+        {
+          "text": "青い",
+          "meaning": "Blue"
+        },
+        {
+          "text": "大きい",
+          "meaning": "Big"
+        },
+        {
+          "text": "小さい",
+          "meaning": "Small"
+        },
+        {
+          "text": "赤ちゃん",
+          "meaning": "Baby"
+        },
+        {
+          "text": "冬",
+          "meaning": "Winter"
+        }
+      ],
+      "B": [
+        {
+          "text": "青い",
+          "meaning": "Blue"
+        },
+        {
+          "text": "水色",
+          "meaning": "Sky Blue"
+        },
+        {
+          "text": "四角",
+          "meaning": "Square"
+        },
+        {
+          "text": "赤",
+          "meaning": "Red"
+        },
+        {
+          "text": "古い",
+          "meaning": "Old"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "かき氷",
+        "meaning": "Shaved Ice"
+      },
+      "A": [
+        {
+          "text": "氷",
+          "meaning": "Ice"
+        },
+        {
+          "text": "冬",
+          "meaning": "Winter"
+        },
+        {
+          "text": "玉ねぎ",
+          "meaning": "Onion"
+        },
+        {
+          "text": "白い",
+          "meaning": "White"
+        },
+        {
+          "text": "日の出",
+          "meaning": "Sunrise"
+        }
+      ],
+      "B": [
+        {
+          "text": "氷",
+          "meaning": "Ice"
+        },
+        {
+          "text": "生ビール",
+          "meaning": "Draft Beer"
+        },
+        {
+          "text": "コーヒー",
+          "meaning": "Coffee"
+        },
+        {
+          "text": "コンビニ",
+          "meaning": "Convenience Store"
+        },
+        {
+          "text": "りんご",
+          "meaning": "Apple"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "花火",
+        "meaning": "Fireworks"
+      },
+      "A": [
+        {
+          "text": "火",
+          "meaning": "Fire"
+        },
+        {
+          "text": "花",
+          "meaning": "Flower"
+        },
+        {
+          "text": "月光",
+          "meaning": "Moonlight"
+        },
+        {
+          "text": "火山",
+          "meaning": "Volcano"
+        },
+        {
+          "text": "雨",
+          "meaning": "Rain"
+        }
+      ],
+      "B": [
+        {
+          "text": "ビー玉",
+          "meaning": "Marble"
+        },
+        {
+          "text": "花",
+          "meaning": "Flower"
+        },
+        {
+          "text": "かき氷",
+          "meaning": "Shaved Ice"
+        },
+        {
+          "text": "音",
+          "meaning": "Sound"
+        },
+        {
+          "text": "雨",
+          "meaning": "Rain"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "金",
+        "meaning": "Gold"
+      },
+      "A": [
+        {
+          "text": "お金",
+          "meaning": "Money"
+        },
+        {
+          "text": "宝石",
+          "meaning": "Jewel"
+        },
+        {
+          "text": "石",
+          "meaning": "Stone"
+        },
+        {
+          "text": "百万",
+          "meaning": "Million"
+        },
+        {
+          "text": "宝",
+          "meaning": "Treasure"
+        }
+      ],
+      "B": [
+        {
+          "text": "土",
+          "meaning": "Dirt"
+        },
+        {
+          "text": "火",
+          "meaning": "Fire"
+        },
+        {
+          "text": "木",
+          "meaning": "Tree"
+        },
+        {
+          "text": "月",
+          "meaning": "Moon"
+        },
+        {
+          "text": "水",
+          "meaning": "Water"
+        }
+      ]
+    },
+    {
+      "target": {
+        "text": "毛",
+        "meaning": "Fur"
+      },
+      "A": [
+        {
+          "text": "犬",
+          "meaning": "Dog"
+        },
+        {
+          "text": "毛糸",
+          "meaning": "Wool Yarn"
+        },
+        {
+          "text": "肉",
+          "meaning": "Meat"
+        },
+        {
+          "text": "毛虫",
+          "meaning": "Caterpillar"
+        },
+        {
+          "text": "足",
+          "meaning": "Foot"
+        }
+      ],
+      "B": [
+        {
+          "text": "玉",
+          "meaning": "Ball"
+        },
+        {
+          "text": "毛糸",
+          "meaning": "Wool Yarn"
+        },
+        {
+          "text": "羽",
+          "meaning": "Feathers"
+        },
+        {
+          "text": "耳",
+          "meaning": "Ear"
+        },
+        {
+          "text": "糸",
+          "meaning": "Thread"
+        }
+      ]
+    }
+  ]
+}

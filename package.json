@@ -22,6 +22,8 @@
     "audio:contextual:review": "node scripts/content/build-contextual-audio-review.mjs",
     "content:illustrate": "node scripts/content/illustrate-levels-1-2.mjs && node scripts/content/illustrate-levels-3-4.mjs && node scripts/content/illustrate-level-5.mjs",
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
+    "content:neighbors": "node scripts/content/build-word-neighbors.mjs",
+    "content:neighbors:check": "node scripts/content/build-word-neighbors.mjs --check",
     "content:contextual:validate": "node scripts/content/validate-contextual.mjs",
     "content:contextual:review": "node scripts/content/build-contextual-review.mjs",
     "content:contextual:pack1": "node scripts/content/prepare-contextual-pack-1.mjs",
@@ -29,7 +31,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:content-review": "E2E_CONTENT_REVIEW=1 playwright test content-review",
-    "check": "npm run lint && npm test && npm run test:audio && npm run test:cards && npm run build",
+    "check": "npm run lint && npm test && npm run test:audio && npm run test:cards && npm run content:neighbors:check && npm run build",
     "audio:spanish:elevenlabs": "node scripts/content/generate-spanish-travel-pack.mjs",
     "audio:spanish:review": "node scripts/content/build-spanish-audio-review.mjs",
     "content:spanish:activate": "node scripts/content/stage-spanish-travel-pack.mjs"
