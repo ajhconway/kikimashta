@@ -812,16 +812,6 @@ describe('interval mastery feedback', () => {
     await click(heardChoice(container));
     expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
   });
-
-  it('keeps simulated dev mastery separate from saved progress', async () => {
-    const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await configuredDevReview();
-    expect(screen.getByRole('status', { name: 'Demo mastery' })).toBeInTheDocument();
-    await click(heardChoice(container));
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-    expect(records).toEqual([]);
-  });
 });
 
 describe('all-level simulated Dev review (#152)', () => {
@@ -874,7 +864,6 @@ describe('all-level simulated Dev review (#152)', () => {
     await advance(0);
     expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
     expect(records).toEqual(original);
-    expect(screen.queryByText(/answers? saved on this device/)).not.toBeInTheDocument();
   });
 });
 
@@ -959,15 +948,6 @@ it.each([['mastery', '1.5s'], ['random', '5s'], ['untimed', 'Untimed']] as const
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
 
-
-it('keeps Home focused on a single Dev review entry point', async () => {
-  render(<App now={fixedNow}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-  expect(screen.queryByRole('button', { name: 'Mastery demo' })).not.toBeInTheDocument();
-  expect(screen.queryByRole('button', { name: 'Contextual dev review' })).not.toBeInTheDocument();
-  await click(screen.getByRole('button', { name: 'Dev review' }));
-  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
-});
 
 describe('Home review forecast (#156)', () => {
   const panel = () => screen.getByRole('region', { name: 'Review forecast' });

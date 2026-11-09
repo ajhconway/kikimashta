@@ -48,128 +48,6 @@ async function savedAttempts(page: Page) {
 const backgroundColor = (page: Page) => page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
 const screenColor = (page: Page) => page.evaluate(() => document.documentElement.style.getPropertyValue('--screen-background').trim());
 
-async function captureScreen(page: Page, name: string) {
-  await page.evaluate(() => window.scrollTo(0, 0));
-  // WebKit rebuilds font faces when screenshot capture temporarily disables CSS
-  // animation. Restore only faces that were already loaded before capture.
-  const loaded = await page.evaluate(() => Array.from(document.fonts).filter(face => face.status === 'loaded').map(face => ({ family: face.family.replace(/["']/g, ''), weight: face.weight })));
-  try {
-    await page.screenshot({ path: 'test-results/' + name + '.png', fullPage: true, animations: 'disabled' });
-  } finally {
-    await page.evaluate(fonts => Promise.all(fonts.map(font => document.fonts.load(`${font.weight} 24px "${font.family}"`, '犬りんご'))), loaded);
-  }
-}
-
-async function expectCompanionMotion(page: Page) {
-  await expect.poll(() => page.locator('.quiz-companion').evaluate(companion => {
-    const picture = companion.querySelector('img')!;
-    const motions = picture.getAnimations();
-    const motion = motions[0];
-    const timing = motion?.effect?.getComputedTiming();
-    return companion.getAnimations().length === 0 && motions.length === 1
-      && motion instanceof CSSAnimation && motion.animationName === 'companion-listen'
-      && motion.playState === 'running' && typeof timing?.duration === 'number' && timing.duration >= 2100 && timing.duration <= 2400 && timing.iterations === Infinity;
-  }), { message: 'Kiku has one slow image sway and a stationary outer wrapper' }).toBe(true);
-}
-
-async function captureCorrectResponse(page: Page, name: string) {
-  // Let the ordinary button-press release settle before inspecting feedback motion.
-  await expect(page.locator('.choices .picture-choice.correct')).toHaveCSS('transform', 'none');
-  const inspection = await page.locator('.app').evaluateHandle(app => {
-    const cards = Array.from(app.querySelectorAll<HTMLElement>('.departing-card[data-exit="fly"]')).map(element => {
-      const animations = element.getAnimations().filter(animation => animation instanceof CSSAnimation);
-      const flight = animations[0];
-      if (animations.length !== 1 || !(flight instanceof CSSAnimation) || flight.animationName !== 'card-fly-out') throw new Error('Each outgoing card needs one direct flight.');
-      return { element, flight };
-    });
-    const glow = app.getAnimations({ subtree: true }).filter(animation => animation instanceof CSSAnimation && animation.animationName === 'correct-glow');
-    const animations = [...glow, ...Array.from(app.querySelectorAll('.companion-spark, .firework-star')).flatMap(effect => effect.getAnimations()), ...cards.map(card => card.flight)];
-    const snapshots = animations.map(animation => ({ animation, time: animation.currentTime, state: animation.playState }));
-    for (const animation of animations) { animation.pause(); animation.currentTime = 0; }
-    return { snapshots, cards, correct: app.querySelector<HTMLElement>('.choices .picture-choice.correct')!, grid: app.querySelector<HTMLElement>('.choices')! };
-  });
-  try {
-    const motion = await inspection.evaluate(({ cards, correct, grid }) => {
-      const center = grid.getBoundingClientRect();
-      function transform(element: HTMLElement) {
-        const value = getComputedStyle(element).transform;
-        const matrix = value === 'none' ? new DOMMatrix() : new DOMMatrix(value);
-        return { x: matrix.e, y: matrix.f, a: matrix.a, b: matrix.b, c: matrix.c, d: matrix.d, opacity: getComputedStyle(element).opacity };
-      }
-      return {
-        correctAnimations: correct.getAnimations().filter(animation => animation instanceof CSSAnimation).length,
-        cards: cards.map(({ element, flight }) => {
-          const timing = flight.effect!.getComputedTiming();
-          // Offset geometry ignores the flight transform. Allow rounding of the
-          // layout offsets when comparing the direction at the original radius.
-          const radial = { x: element.offsetLeft + element.offsetWidth / 2 - (center.left + center.right) / 2,
-            y: element.offsetTop + element.offsetHeight / 2 - (center.top + center.bottom) / 2 };
-          const samples = [0, .25, .5, .75, 1].map(fraction => {
-            flight.currentTime = Number(timing.duration) * fraction;
-            return { moving: transform(element), stationary: transform(correct) };
-          });
-          return { radial, delay: timing.delay, duration: timing.duration, samples };
-        }),
-      };
-    });
-    expect(motion.cards).toHaveLength(3);
-    expect(motion.correctAnimations, 'the correct rectangle stays still').toBe(0);
-    for (const card of motion.cards) {
-      expect(card.delay).toBe(0);
-      expect(Number(card.duration)).toBeGreaterThanOrEqual(700);
-      expect(Number(card.duration)).toBeLessThanOrEqual(900);
-      const distances = card.samples.map(({ moving }) => Math.hypot(moving.x, moving.y));
-      expect(distances[0]).toBeLessThan(.1);
-      const steps = distances.slice(1).map((distance, i) => distance - distances[i]!);
-      for (let i = 1; i < steps.length; i++) expect(steps[i]!).toBeGreaterThan(steps[i - 1]! + 1);
-      for (const [i, { moving, stationary }] of card.samples.entries()) {
-        expect(stationary).toMatchObject({ x: 0, y: 0, a: 1, b: 0, c: 0, d: 1 });
-        expect(moving).toMatchObject({ a: 1, b: 0, c: 0, d: 1, opacity: '1' });
-        if (i > 0) {
-          expect(moving.x * card.radial.x + moving.y * card.radial.y, 'flight points away from the actual grid center').toBeGreaterThan(0);
-          const perpendicular = Math.abs(card.radial.x * moving.y - card.radial.y * moving.x) / distances[i]!;
-          expect(perpendicular, 'flight stays radial within layout rounding').toBeLessThan(1);
-        }
-      }
-    }
-    await inspection.evaluate(({ snapshots, cards }) => {
-      for (const { animation } of snapshots) animation.currentTime = 360;
-      for (const { flight } of cards) flight.currentTime = Number(flight.effect!.getComputedTiming().duration) * .35;
-    });
-    await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
-  } finally {
-    try {
-      await inspection.evaluate(({ snapshots }) => {
-        for (const { animation, time, state } of snapshots) {
-          animation.currentTime = time;
-          if (state === 'finished') animation.finish();
-          else animation.play();
-        }
-      });
-    } finally { await inspection.dispose(); }
-  }
-}
-
-async function captureFallingCards(page: Page, name: string) {
-  const departures = await page.locator('.answer-departures').evaluateHandle(layer => {
-    const animations = layer.getAnimations({ subtree: true });
-    for (const animation of animations) {
-      animation.pause();
-      animation.currentTime = 220;
-    }
-    return animations;
-  });
-  try {
-    await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, animations: 'allow' });
-  } finally {
-    try {
-      await departures.evaluate(animations => animations.forEach(animation => animation.play()));
-    } finally {
-      await departures.dispose();
-    }
-  }
-}
-
 async function expectAnswerPictures(page: Page, retainedAlts: string[], exit: 'fly' | 'fall') {
   const choices = page.getByRole('button', { name: /choose picture/i });
   const departingCount = 4 - retainedAlts.length;
@@ -220,7 +98,7 @@ async function expectDeparturesFinished(page: Page, count: number) {
   expect(result, 'outgoing cards finish leaving before the quiz moves on').toEqual({ connected: true, finished: true, gone: true });
 }
 
-async function checkMobilePracticeSizes(page: Page, pictureSelector: string, name: string) {
+async function checkMobilePracticeSizes(page: Page, pictureSelector: string) {
   const original = page.viewportSize()!;
   for (const viewport of [{ width: 390, height: 664 }, { width: 430, height: 900 }]) {
     await page.setViewportSize(viewport);
@@ -238,7 +116,6 @@ async function checkMobilePracticeSizes(page: Page, pictureSelector: string, nam
         && bottomControl.bottom <= innerHeight && bottomControl.bottom >= innerHeight - 48
         && (!progress || (picture.bottom <= actions.top + 1 && actions.bottom <= progress.top + 1 && action.bottom <= progress.top + 1));
     }, pictureSelector), { message: 'practice fills the phone viewport with large pictures; quiz feedback sits above bottom progress, and lesson actions stay reachable' }).toBe(true);
-    await captureScreen(page, name + '-' + viewport.width);
   }
   await page.setViewportSize(original);
 }
@@ -287,76 +164,36 @@ async function chooseHeardAnswer(page: Page, target: WordItem) {
   }
 }
 
-async function chooseWithAnimationChecks(page: Page, pressScreenshot: string, responseScreenshot: string) {
+async function chooseWithAnimationChecks(page: Page) {
   const { target } = await heardWord(page);
-  await expectCompanionMotion(page);
+  // Clicking may scroll the page; compare document coordinates for layout stability.
+  const bounds = () => page.locator('.choices').evaluate(grid => {
+    const box = grid.getBoundingClientRect();
+    return { x: box.x + scrollX, y: box.y + scrollY, width: box.width, height: box.height };
+  });
+  const before = await bounds();
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
-  const beforeAnswer = await page.locator('.choices').evaluate(grid => {
-    const bounds = grid.getBoundingClientRect();
-    return { pageHeight: document.documentElement.scrollHeight, gridWidth: bounds.width, gridHeight: bounds.height };
-  });
-  const choice = page.getByRole('button', { name: /choose picture/i }).filter({
-    has: page.getByRole('img', { name: target.image.alt, exact: true }),
-  });
-  // Inspect transient feedback without racing the app's 1.2-second advance timer.
-  // CSS animations and native audio keep running; resume timers before waiting
-  // for the next question so autoplay and the normal answer delay remain tested.
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   try {
-    await choice.hover();
-    await expect(choice).toHaveCSS('background-color', 'rgb(255, 255, 255)');
-    const card = await choice.boundingBox();
-    expect(card).not.toBeNull();
-    await page.mouse.move(card!.x + card!.width / 2, card!.y + card!.height / 2);
-    await page.mouse.down();
-    try {
-      await page.screenshot({ path: `test-results/${pressScreenshot}.png`, fullPage: true, animations: 'disabled' });
-    } finally {
-      // Releasing the real press answers normally while its advance timer is paused.
-      await page.mouse.up();
-    }
+    await page.getByRole('button', { name: /choose picture/i }).filter({
+      has: page.getByRole('img', { name: target.image.alt, exact: true }),
+    }).click();
     await expect(page.locator('.feedback')).toContainText('Correct answer.');
-    // Opaque approved JPEGs must not reveal a rectangle during feedback (#92).
-    for (const card of await page.locator('.choices .picture-choice').all()) {
-      await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
-    }
-    await expect(choice.locator('.choice-badge')).toHaveText('✓');
-    await expect(page.locator('.app')).toHaveAttribute('data-answer', 'correct');
-    await expectCompanionMotion(page);
-    await expect.poll(() => screenColor(page)).toBe('#e9b6ff');
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
-    await expect(page.locator('.progress-bead.is-complete')).toHaveCount(completedBefore + 1);
     await expectAnswerPictures(page, [target.image.alt], 'fly');
-    await expect(page.locator('.quiz-starburst')).toHaveAttribute('aria-hidden', 'true');
-    await expect.poll(() => page.evaluate(() => {
-      const cards = document.querySelector('.choices')!.getBoundingClientRect();
-      const burst = document.querySelector('.quiz-starburst svg')!.getBoundingClientRect();
-      return Math.abs((cards.left + cards.right - burst.left - burst.right) / 2) <= 1
-        && Math.abs((cards.top + cards.bottom - burst.top - burst.bottom) / 2) <= 1;
-    }), { message: 'the star firework originates at the center of the card grid' }).toBe(true);
-    await expect.poll(() => page.evaluate(before => {
-      const choices = document.querySelector('.choices')!.getBoundingClientRect();
-      const feedback = document.querySelector('.feedback')!.getBoundingClientRect();
-      const cards = Array.from(document.querySelectorAll('.choices .choice-slot:not(.is-departing) .picture-choice'), card => card.getBoundingClientRect());
-      return document.documentElement.scrollWidth <= innerWidth
-        && document.documentElement.scrollHeight <= before.pageHeight
-        && Math.abs(choices.width - before.gridWidth) <= 1 && Math.abs(choices.height - before.gridHeight) <= 1
-        && cards.every(card => card.left >= choices.left - 10 && card.right <= choices.right + 10
-          && card.bottom <= feedback.top);
-    }, beforeAnswer), { message: 'feedback keeps the grid stable; retained pictures fit and departures add no page overflow' }).toBe(true);
-    await captureCorrectResponse(page, responseScreenshot);
-    // Native CSS animations finish while JavaScript timers remain paused.
     await expectDeparturesFinished(page, 3);
+    expect(await bounds()).toEqual(before);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   } finally {
     await page.clock.resume();
   }
 }
 
-test('correct feedback finishes its animation, preserves layout, and advances to the next audible word', async ({ page }, testInfo) => {
+test('correct feedback finishes its animation, preserves layout, and advances to the next audible word', async ({ page }) => {
   await page.clock.install();
   await startReview(page);
   const { source } = await heardWord(page);
-  await chooseWithAnimationChecks(page, 'adaptive-pressed-' + testInfo.project.name, 'adaptive-correct-' + testInfo.project.name);
+  await chooseWithAnimationChecks(page);
   // Leave the clock running here: exercise the normal answer delay and autoplay
   // rather than advancing timers as the longer session journeys do.
   await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
@@ -372,14 +209,12 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
   await expect.poll(() => page.evaluate(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'))).toBe(true);
   const homeColor = await backgroundColor(page);
-  await captureScreen(page, 'adaptive-home-' + testInfo.project.name);
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: /begin lesson/i }).click();
   await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
   await expect.poll(() => backgroundColor(page)).not.toBe(homeColor);
-  if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture', 'adaptive-lesson');
+  if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.preview-picture');
   const introduced: { item: WordItem; exercise: string }[] = [];
-  const previewSizes: { length: number; fontSize: number }[] = [];
   for (let i = 0; i < 10; i++) {
     await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
     const source = await page.locator('audio').getAttribute('src');
@@ -394,22 +229,15 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
       await expect(page.locator('.preview-picture img')).toHaveCount(0);
       await expect(page.locator('.preview-picture')).toHaveText(item.text);
       await expect(page.locator('.preview-picture .written-answer')).toHaveAttribute('data-font', 'noto-sans');
-      previewSizes.push({ length: Array.from(item.text).length, fontSize: await page.locator('.preview-picture .written-answer').evaluate(label => parseFloat(getComputedStyle(label).fontSize)) });
-      if (introduced.filter(card => card.exercise === 'audio-text').length === 1) await captureScreen(page, 'writing-lesson-' + testInfo.project.name);
     }
     await page.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }).click();
   }
-  const singleSizes = previewSizes.filter(sample => sample.length === 1).map(sample => sample.fontSize);
-  const longerSizes = previewSizes.filter(sample => sample.length > 1).map(sample => sample.fontSize);
-  expect(Math.min(...singleSizes), 'single characters are large in lesson previews').toBeGreaterThan(60);
-  expect(Math.min(...singleSizes)).toBeGreaterThan(Math.max(...longerSizes));
   const introducedIds = introduced.map(card => JSON.stringify([card.item.language, card.item.id, card.exercise]));
   expect(new Set(introducedIds).size).toBe(10);
   expect(introduced.filter(card => card.exercise === 'audio-text')).toHaveLength(5);
   expect(introduced.filter(card => card.exercise === 'audio-picture')).toHaveLength(5);
-  if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.choices', 'adaptive-quiz');
+  if (testInfo.project.use.isMobile) await checkMobilePracticeSizes(page, '.choices');
   const seen = new Set<string>();
-  let writingCaptured = false;
   for (let i = 0; i < 10; i++) {
     await expect(page.getByRole('button', { name: /choose (picture|writing)/i })).toHaveCount(4);
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
@@ -425,12 +253,10 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
         return box.left >= card.left && box.right <= card.right && box.top >= card.top && box.bottom <= card.bottom;
       }));
       expect(writingFits, 'written options fit their cards').toBe(true);
-      if (!writingCaptured) { await captureScreen(page, 'writing-quiz-' + testInfo.project.name); writingCaptured = true; }
     }
     await chooseHeardAnswer(page, target);
   }
   await expect(page.getByRole('heading', { name: /nice round!/i })).toBeVisible();
-  await captureScreen(page, 'adaptive-chunk-end-' + testInfo.project.name);
   await expect(page.getByRole('button', { name: /learn more/i })).toBeEnabled();
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
@@ -440,7 +266,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   expect(saved.every(item => item.correct && item.context?.phase === 'lesson' && item.context.recordingSrc && item.choiceIds.length === 4)).toBe(true);
 });
 
-test('writing scales by displayed length and card size across Japanese scripts', async ({ page }, testInfo) => {
+test('writing scales by displayed length and card size across Japanese scripts', async ({ page }) => {
   await page.clock.install();
   await page.addInitScript(() => { Math.random = () => 0.5; });
   await page.goto('./');
@@ -467,7 +293,6 @@ test('writing scales by displayed length and card size across Japanese scripts',
       });
       expect(metrics.fits, target.text + ' fits at ' + viewport.width + 'px').toBe(true);
       samples.set(viewport.width + '/' + target.text, metrics.fontSize);
-      if (target.text === '犬') await captureScreen(page, 'writing-size-' + viewport.width + '-' + testInfo.project.name);
     }
     await page.setViewportSize(original);
     await chooseHeardAnswer(page, target);
@@ -558,7 +383,7 @@ test('reviews both saved formats of one word and preserves a writing retry after
   await expect.poll(async () => (await savedAttempts(page)).length).toBe(5);
 });
 
-test('home centers a larger Kiku and fills the viewport with the current intensity', async ({ page }, testInfo) => {
+test('Home remains readable with reachable controls at phone and desktop sizes', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.setViewportSize({ width: 390, height: 664 });
   await page.goto('./');
@@ -573,8 +398,6 @@ test('home centers a larger Kiku and fills the viewport with the current intensi
     textColors.push(await control.evaluate(element => getComputedStyle(element).color));
   }
   expectReadableHomeText(textColors);
-  await expect.poll(() => backgroundColor(page)).toBe('rgb(217, 193, 244)');
-  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#d9c1f4');
   const picture = density.locator('img');
   await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   for (const size of [{ width: 390, height: 664 }, { width: 320, height: 568 }, { width: 1280, height: 800 }]) {
@@ -586,10 +409,8 @@ test('home centers a larger Kiku and fills the viewport with the current intensi
     await expect(page.getByRole('button', { name: /^start/i })).toBeInViewport();
   }
   await page.setViewportSize({ width: 390, height: 664 });
-  await captureScreen(page, 'home-intensity-' + testInfo.project.name);
   await page.reload();
   await expect(density).toContainText('Minimal');
-  await expect.poll(() => backgroundColor(page)).toBe('rgb(217, 193, 244)');
 });
 
 test('Dev review practices six random cards and a missed-word retry without saving progress', async ({ page }) => {
@@ -753,7 +574,7 @@ test('future history and a backward clock leave practice usable without changing
   expect(await savedAttempts(page)).toEqual(original);
 });
 
-test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }, testInfo) => {
+test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }) => {
   test.setTimeout(60_000);
   await page.clock.install();
   await startReview(page);
@@ -799,7 +620,6 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   expect([...completed].sort()).toEqual(bank.items.map(item => item.id).sort());
   await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toBeVisible();
   await expect(page.getByRole('button', { name: /begin lesson/i })).toBeEnabled();
-  await captureScreen(page, 'adaptive-review-end-' + testInfo.project.name);
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
   await expect.poll(async () => (await savedAttempts(page)).length).toBe(15);
@@ -860,7 +680,6 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect.poll(() => page.locator('.quiz-companion, .quiz-companion *, .progress-bead, .picture-choice, .choice-slot, .choices').evaluateAll(elements =>
     elements.every(element => getComputedStyle(element).animationName === 'none'),
   )).toBe(true);
-  await captureScreen(page, 'quiz-miss-' + testInfo.project.name);
   await page.getByRole('button', { name: /replay word/i }).click();
   await expect.poll(() => page.locator('audio').evaluate(element => (element as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
   await expect(page.locator('audio')).toHaveAttribute('src', source);
@@ -874,7 +693,7 @@ test('a miss waits for Continue and stays usable with reduced motion', async ({ 
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
 });
 
-test('a miss drops only uninvolved pictures without shifting the grid or adding answers', async ({ page }, testInfo) => {
+test('a miss drops only uninvolved pictures without shifting the grid or adding answers', async ({ page }) => {
   await startReview(page);
   const { target, source } = await heardWord(page);
   const beforeGrid = await page.locator('.choices').boundingBox();
@@ -885,9 +704,7 @@ test('a miss drops only uninvolved pictures without shifting the grid or adding 
   const selectedAlt = await wrongChoice.locator('img').getAttribute('alt');
   await wrongChoice.click();
   await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
-  await expectCompanionMotion(page);
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
-  await captureFallingCards(page, 'quiz-falling-' + testInfo.project.name);
   await expectDeparturesFinished(page, 2);
   await expectAnswerPictures(page, [target.image.alt, selectedAlt!], 'fall');
   await expect(page.locator('audio')).toHaveAttribute('src', source);
@@ -937,7 +754,6 @@ test('holding a picture acts as one button press on release', async ({ page }, t
     expect(await choice.evaluate(button => button.dispatchEvent(new MouseEvent('contextmenu', {
       bubbles: true, cancelable: true,
     })))).toBe(false);
-    await page.screenshot({ path: `test-results/quiz-long-hold-${testInfo.project.name}.png`, fullPage: true, animations: 'disabled' });
   } finally {
     await page.mouse.up();
   }

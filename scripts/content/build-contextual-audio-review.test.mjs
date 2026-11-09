@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
 import { execFileSync, spawnSync } from 'node:child_process'
-import { mkdir, readFile, symlink, unlink, writeFile } from 'node:fs/promises'
+import { copyFile, mkdir, readFile, symlink, unlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { contextualFixture, sha256 } from './contextual-audio-fixtures.mjs'
@@ -16,7 +16,7 @@ const json = async path => JSON.parse(await readFile(path, 'utf8'))
 const journal = async path => (await readFile(path, 'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)
 const jsonl = records => records.map(record => JSON.stringify(record) + '\n').join('')
 
-async function mediaFixture(t, stage = 'contrastive') {
+async function mediaFixture(t, stage = 'contrastive', { representativeNormalization = false } = {}) {
   const fixture = await contextualFixture(t, { hostileText: true, stage })
   const audio = {}
   for (const [kind, frequency] of [['sentence', 440], ['question', 880]]) {
@@ -30,16 +30,39 @@ async function mediaFixture(t, stage = 'contrastive') {
       balance: async () => ({ usedCredits: 0, creditLimit: 10000, remainingCredits: 10000 }),
       speak: async (_key, _voice, request) => ({ audio: audio[request.text === fixture.bank.contexts[0].sentence.text ? 'sentence' : 'question'] }) }) })
   const delivery = join(fixture.root, 'artifacts/generated-originals/contextual-audition/normalized')
+  const originalsPath = join(fixture.output, 'originals.jsonl')
+  const originals = await journal(originalsPath)
+  // The simple-stage case tests review metadata, not eighteen identical encodes.
+  // Normalize one real sentence and question; keep the full matrix integration below.
+  const representatives = [...new Map(originals.map(record => [record.kind, record])).values()]
+  if (representativeNormalization) await writeFile(originalsPath, jsonl(representatives))
   const normalization = JSON.parse(execFileSync('python3', [fileURLToPath(new URL('./normalize-elevenlabs.py', import.meta.url)),
     '--input', fixture.output, '--output', delivery, '--ffmpeg', ffmpeg, '--workers', '2'], { encoding: 'utf8', timeout: 60000 }))
-  assert.equal(normalization.clips, 18)
+  assert.equal(normalization.clips, representativeNormalization ? 2 : 18)
+  if (representativeNormalization) {
+    await writeFile(originalsPath, jsonl(originals))
+    const normalized = await journal(join(delivery, 'deliveries.jsonl'))
+    const sorted = value => Array.isArray(value) ? value.map(sorted) : value !== null && typeof value === 'object'
+      ? Object.fromEntries(Object.keys(value).sort().map(key => [key, sorted(value[key])])) : value
+    const expanded = []
+    for (const original of originals) {
+      const representative = normalized.find(record => record.kind === original.kind)
+      assert.equal(original.sha256, representative.originalSha256, 'representatives contain identical original waveform bytes')
+      const file = original.file.slice('originals/'.length)
+      await mkdir(join(delivery, original.voice), { recursive: true })
+      if (file !== representative.file) await copyFile(join(delivery, representative.file), join(delivery, file))
+      expanded.push({ ...representative, ...original, file, originalFile: original.file,
+        originalSha256: original.sha256, sourceRecordSha256: sha256(JSON.stringify(sorted(original))) })
+    }
+    await writeFile(join(delivery, 'deliveries.jsonl'), jsonl(expanded))
+  }
   return { ...fixture, delivery, review: join(fixture.root, 'artifacts/contextual-audio-review/complete'),
     build: output => buildContextualAudioReview({ root: fixture.root, input: fixture.output, delivery, output, ffmpeg, stage }) }
 }
 
 test('simple review uses its approved bank and issue with independently verified source audio',
   { skip: !hasFfmpeg && 'FFmpeg is required for real local preview checks' }, async t => {
-    const fixture = await mediaFixture(t, 'simple')
+    const fixture = await mediaFixture(t, 'simple', { representativeNormalization: true })
     const result = await fixture.build(fixture.review)
     const review = await json(join(fixture.review, 'review-provenance.json'))
     assert.equal(result.recordings, 18)

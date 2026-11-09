@@ -6,6 +6,7 @@ if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Inv
 
 export default defineConfig({
   testDir: './e2e',
+  testIgnore: process.env.E2E_CONTENT_REVIEW === '1' ? [] : ['**/content-review/**'],
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: 0,

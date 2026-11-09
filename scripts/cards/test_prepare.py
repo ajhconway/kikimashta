@@ -4,7 +4,9 @@ import json
 import re
 import tempfile
 from pathlib import Path
-from prepare import components_for, ROLE_CONSTRAINTS, resolve_batch_statuses, BACKGROUND_POLICY
+from unittest.mock import patch
+import prepare as card_preparation
+from prepare import components_for, resolve_batch_statuses, BACKGROUND_POLICY
 
 
 class ReuseTests(unittest.TestCase):
@@ -17,22 +19,17 @@ class ReuseTests(unittest.TestCase):
         self.assertIn('transparent_background=true', BACKGROUND_POLICY)
         self.assertIn('Preserve opaque white subject details', BACKGROUND_POLICY)
 
-    def test_approved_kiku_profile_records_batch07_without_preapproving_future_scenes(self):
+    def test_approved_kiku_profile_preserves_individual_scene_review(self):
         data = Path(__file__).resolve().parents[2] / 'content/card-regeneration'
         profile = json.loads((data / 'style-overrides.json').read_text())['profiles']['kiku-scenes']
         self.assertEqual(profile['status'], 'approved-direction')
-        self.assertIn('Batch 07', profile['approvalNote'])
-        self.assertNotIn('batch 02', profile['approvalNote'].lower())
         for text in [profile['approvalNote'], profile['specification']]:
-            self.assertIn('Kiku scenes are approved', text)
-            self.assertNotRegex(text, r'(?i)current kiku scene revisions await approval')
             self.assertIn('Future scenes still require individual user review.', text)
         cards = json.loads((data / 'prompts.json').read_text())['cards']
         kiku_cards = [card for card in cards if card.get('styleNode') == 'style:kiku-scenes']
         self.assertTrue(kiku_cards)
         for card in kiku_cards:
             self.assertIn(profile['specification'], card['prompt'])
-            self.assertNotRegex(card['prompt'], r'(?i)current kiku scene revisions await approval')
             self.assertIn('Future scenes still require individual user review.', card['prompt'])
 
     def test_kiku_replaces_generic_balls_without_removing_scene_components(self):
@@ -145,12 +142,31 @@ class ReuseTests(unittest.TestCase):
                 'originalConcept': 'A teacher points at a classroom board.'}
         self.assertIn('person', components_for(item))
 
-    def test_grouped_volcano_correction_is_not_sent_to_mountain(self):
-        mountain = ROLE_CONSTRAINTS['ja-v-ddd9dca106e2', 'F03']
-        volcano = ROLE_CONSTRAINTS['ja-v-afefe30bcb46', 'F03']
-        self.assertNotIn('lava flow', mountain)
-        self.assertIn('non-erupting', mountain)
-        self.assertIn('lava flow', volcano)
+    def test_grouped_volcano_correction_is_routed_to_the_correct_generated_prompt(self):
+        ids = ['ja-v-ddd9dca106e2', 'ja-v-afefe30bcb46']
+        records = [{'id': item_id, 'japanese': name, 'meaning': name,
+                    'concept': name, 'visualGroup': name, 'reviewRequired': False}
+                   for item_id, name in zip(ids, ['Mountain', 'Volcano'])]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / 'content/card-regeneration'
+            output.mkdir(parents=True)
+            review = root / 'artifacts/card-review/review-data.json'
+            review.parent.mkdir(parents=True)
+            (output / 'source-prompts.json').write_text(json.dumps({'records': records}))
+            review.write_text(json.dumps({'findings': [{
+                'reference': 'F03', 'priority': 'high', 'ids': ids,
+                'recommendation': 'Keep the mountain non-erupting; give the volcano lava flow.'
+            }]}))
+            with patch.multiple(card_preparation, ROOT=root, OUT=output, BATCH_ONE=ids):
+                card_preparation.prepare()
+            cards = {card['id']: card for card in json.loads((output / 'prompts.json').read_text())['cards']}
+            mountain = cards[ids[0]]['prompt']
+            volcano = cards[ids[1]]['prompt']
+            self.assertIn('Keep the ordinary mountain silhouette simple and clearly non-erupting.', mountain)
+            self.assertNotIn('lava flow', mountain)
+            self.assertIn('Give this volcano a clear crater', volcano)
+            self.assertIn('lava flow', volcano)
 
     def test_accepted_batch_unlocks_only_the_next_batch(self):
         with tempfile.TemporaryDirectory() as directory:

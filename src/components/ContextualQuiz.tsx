@@ -17,7 +17,6 @@ export interface ContextualQuizProps {
   onContinue: () => void;
   onReplay?: () => void;
   disabled?: boolean;
-  preview?: boolean;
   inspection?: boolean;
   continueAfterCorrect?: boolean;
   delayChoices?: boolean;
@@ -35,7 +34,7 @@ function Prompt({ title, value, english = true, reading = true, labelled = false
 }
 
 /** Shared learner interaction; persistence and scheduling belong to its caller. */
-export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, preview = false, inspection = false, continueAfterCorrect = false, onPlaybackChange, feedbackContent, choicesRef, onAudioFinished, delayChoices = false }: ContextualQuizProps) {
+export function ContextualQuiz({ question, feedback, onChoose, onContinue, onReplay, disabled = false, inspection = false, continueAfterCorrect = false, onPlaybackChange, feedbackContent, choicesRef, onAudioFinished, delayChoices = false }: ContextualQuizProps) {
   const authored = question.contextual;
   if (!authored) throw new Error('A contextual quiz needs authored context.');
   const sentenceSrc = authored.recording?.sentenceSrc;
@@ -55,7 +54,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const localChoices = useRef<HTMLDivElement>(null);
   const grid = choicesRef ?? localChoices;
   const isFinalAudio = useCallback(() => finalAudio.current, []);
-  const delayed = delayChoices && hasAudio && !preview && !inspection;
+  const delayed = delayChoices && hasAudio && !inspection;
   const choicesReady = useAudioChoiceEntrance({ id: questionKey, enabled: delayed, audio, grid, canReveal: isFinalAudio });
   const answered = useRef(false);
   const details = useRef<HTMLDialogElement>(null);
@@ -96,7 +95,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   }, [stop, playSegment, sentenceSrc, questionSrc]);
   useEffect(() => {
     answered.current = false;
-    if (!inspection && !preview) replayControl.current?.focus({ preventScroll: true });
+    if (!inspection) replayControl.current?.focus({ preventScroll: true });
     if (details.current?.open) details.current.close();
     play();
     const suspend = () => {
@@ -104,7 +103,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     };
     document.addEventListener('visibilitychange', suspend);
     return () => { document.removeEventListener('visibilitychange', suspend); stop(); };
-  }, [play, stop, authored.context.id, authored.question.id, inspection, preview]);
+  }, [play, stop, authored.context.id, authored.question.id, inspection]);
   function ended() {
     const token = request.current;
     if (segment.current === 'sentence' && questionSrc) {
@@ -112,15 +111,15 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       timer.current = setTimeout(() => { timer.current = undefined; playSegment(questionSrc, 'question', token); }, 650);
     } else if (segment.current === 'question') { segment.current = null; setPlayback('idle'); onAudioFinished?.(); }
   }
-  const revealed = preview || !!feedback || inspecting;
+  const revealed = !!feedback || inspecting;
   const correctId = correctChoiceId(question);
   const correct = question.choices.find(choice => choice.id === correctId)!;
   const format = answerFormat(question.exercise);
-  const fullTranscript = revealed && (preview || inspection || inspecting);
+  const fullTranscript = revealed && (inspection || inspecting);
   const result = feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null;
   return <section className="quiz contextual-quiz" data-exercise={question.exercise} data-question-id={authored.question.id}>
     <audio ref={audio} preload="auto" onEnded={ended} onError={() => { stop(); setPlayback('error'); }}/>
-    <h2 className="sr-only">{preview ? 'Listen in context' : 'Listen and choose'}</h2>
+    <h2 className="sr-only">Listen and choose</h2>
     {hasAudio ? <>
       <div className="quiz-top">
         <QuizCompanion listening={playback === 'playing'} response={result}/>
@@ -137,7 +136,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       {!revealed && <button className="text-button" type="button" onClick={() => setInspectedQuestion(questionKey)}>Show text for inspection</button>}
     </div>}
     {authored.context.review.text !== 'approved' && <p className="contextual-review-state">Text awaiting approval.</p>}
-    {!preview && <div className="quiz-cards"><div ref={grid} className={'choices contextual-choices ' + (delayed ? 'choices-audio-first' : 'choices-enter')} aria-label={format === 'picture' ? 'Picture answers' : 'Written answers'}>
+    <div className="quiz-cards"><div ref={grid} className={'choices contextual-choices ' + (delayed ? 'choices-audio-first' : 'choices-enter')} aria-label={format === 'picture' ? 'Picture answers' : 'Written answers'}>
       {question.choices.map((choice, index) => <div className="choice-slot" key={choice.id} style={{ animationDelay: `${index * 40}ms` }}><button type="button"
         className={'answer-choice contextual-choice ' + (format === 'picture' ? 'picture-choice' : 'text-choice') + (feedback ? choice.id === correctId ? feedback.outcome === 'partial' ? ' partial' : ' correct' : choice.id === feedback.selectedId ? ' incorrect' : '' : '')}
         disabled={disabled || !choicesReady || !!feedback || playback === 'error' || playback === 'ready' || (!hasAudio && !inspecting)}
@@ -150,12 +149,12 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
         {feedback && choice.id === correctId && <span className="choice-badge" aria-label={feedback.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback.outcome === 'partial' ? '≈' : '✓'}</span>}
         {feedback && choice.id === feedback.selectedId && !feedback.correct && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}
       </button></div>)}
-    </div></div>}
+    </div></div>
     {fullTranscript && <div className="contextual-transcript"><Prompt title="Sentence" value={authored.context.sentence} labelled={inspection}/><Prompt title="Question" value={authored.question.prompt} labelled={inspection}/>
       <p className="contextual-answer">Correct answer: <span lang="ja">{correct.text}</span> · {correct.label}</p>
       {inspection && <p className="contextual-english">{authored.question.explanation}</p>}
     </div>}
-    {!preview && <div className="practice-actions contextual-feedback">
+    <div className="practice-actions contextual-feedback">
       <div className={'contextual-response-row' + (feedback && !feedback.correct && !inspection ? ' has-contextual-details' : '')}>
         <div className="contextual-status">{feedbackContent ?? <div className="feedback contextual-result" role={feedback ? 'status' : undefined}>{feedback && <><span className="contextual-result-symbol" aria-hidden="true">{feedback.correct ? '✓' : '↺'}</span><span className="sr-only">{feedback.correct ? 'Correct' : 'Keep going'}</span></>}</div>}</div>
         <div className="contextual-detail-action">{feedback && !feedback.correct && !inspection && <button ref={detailsTrigger} className="text-button contextual-details-toggle" type="button" aria-label="Show Japanese" title="Show Japanese"
@@ -164,8 +163,8 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       {feedback && (!feedback.correct || inspection || inspecting || continueAfterCorrect) && <div className="contextual-actions">
         <button type="button" className="primary" disabled={disabled} onClick={onContinue}>Continue <span aria-hidden="true">→</span></button>
       </div>}
-    </div>}
-    {!inspection && !preview && feedback && !feedback.correct && <dialog ref={details} className="contextual-details-dialog" aria-labelledby={detailsTitle}
+    </div>
+    {!inspection && feedback && !feedback.correct && <dialog ref={details} className="contextual-details-dialog" aria-labelledby={detailsTitle}
       onClose={() => { setEnglish(false); detailsTrigger.current?.focus(); }}>
       <div className="contextual-dialog-header"><h2 id={detailsTitle}>Japanese</h2><button ref={detailsClose} type="button" className="contextual-dialog-close" aria-label="Close Japanese" onClick={() => details.current?.close()}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg></button></div>
       <div className="contextual-transcript"><Prompt title="Sentence" value={authored.context.sentence} english={english} reading={false} reserveEnglish/><Prompt title="Question" value={authored.question.prompt} english={english} reading={false} reserveEnglish/></div>

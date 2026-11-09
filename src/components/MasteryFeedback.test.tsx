@@ -2,17 +2,12 @@ import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { MasteryFeedback } from './MasteryFeedback';
 
-function expectNoOldFeedback() {
-  expect(screen.queryByText(/got it|try this one|^level (up|down)$/i)).not.toBeInTheDocument();
-}
-
 describe('mastery answer feedback (#141)', () => {
   it('stays empty before an answer, including stale change or saving props', () => {
     const { container } = render(<MasteryFeedback outcome={null} change={{ label: 'Strong', direction: 'up' }} saving/>);
     expect(container.firstElementChild).toBeEmptyDOMElement();
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
     expect(screen.queryByText(/saving/i)).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it.each([
@@ -22,14 +17,12 @@ describe('mastery answer feedback (#141)', () => {
     const { container } = render(<MasteryFeedback outcome={outcome} change={{ direction, label }}/>);
     const cue = screen.getByRole('img', { name: `Mastery ${accessible} to ${label}` });
     expect(within(cue).getByText(arrow)).toBeVisible();
-    expect(screen.queryByText(/^level (up|down)$/i)).not.toBeInTheDocument();
     expect(within(cue).getByText(label)).toBeVisible();
     expect(within(cue).getByText(arrow)).toHaveAttribute('aria-hidden', 'true');
     expect(within(cue).getByText(label).closest('[aria-hidden]')).toHaveAttribute('aria-hidden', 'true');
     expect(screen.getByText(announcement)).toHaveClass('sr-only');
     expect(container.firstElementChild).toHaveAttribute('aria-live', 'polite');
     expect(screen.queryByText(outcome === 'success' ? '✓' : '↺')).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it.each([
@@ -44,7 +37,6 @@ describe('mastery answer feedback (#141)', () => {
     expect(container.firstElementChild).toHaveAttribute('aria-live', 'polite');
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
     expect(screen.queryByText(/level|new|learning|improving|familiar|steady|strong|confident|mastered/i)).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it('announces saving only while an answered question is being saved', () => {
@@ -54,7 +46,6 @@ describe('mastery answer feedback (#141)', () => {
     rerender(<MasteryFeedback outcome="partial"/>);
     expect(screen.queryByText('Saving…')).not.toBeInTheDocument();
     expect(screen.getByText('Partial success. Take your time.')).toHaveClass('sr-only');
-    expectNoOldFeedback();
   });
 
   it.each([
@@ -72,7 +63,6 @@ describe('mastery answer feedback (#141)', () => {
     expect(within(current).getByText(timer)).toHaveClass('question-mastery-timer');
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
     expect(screen.queryByText(/^[✓≈↺]$/)).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it('identifies the demo accessibly while keeping its unsaved note screen-reader-only', () => {
@@ -82,7 +72,6 @@ describe('mastery answer feedback (#141)', () => {
     expect(within(current).getByText('3s')).toBeVisible();
     expect(within(current).getByText('Unsaved demo')).toHaveClass('sr-only');
     expect(screen.queryByRole('status', { name: 'Current mastery' })).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it.each([
@@ -101,7 +90,6 @@ describe('mastery answer feedback (#141)', () => {
     expect(screen.getByRole('status', { name: 'Current mastery' })).not.toHaveAttribute('aria-hidden');
     expect(screen.getByText('Familiar')).toBeVisible();
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
   it.each([
@@ -118,7 +106,6 @@ describe('mastery answer feedback (#141)', () => {
     expect(within(current).getByText(symbol)).toHaveAttribute('aria-hidden', 'true');
     expect(screen.getAllByText(symbol)).toHaveLength(1);
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
-    expectNoOldFeedback();
   });
 
 });

@@ -27,9 +27,9 @@ const originalShow = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype
 const originalClose = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'close');
 const onChoose = vi.fn();
 const onContinue = vi.fn();
-function Harness({ question = fixture(), preview = false }: { question?: Question; preview?: boolean }) {
+function Harness({ question = fixture() }: { question?: Question }) {
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
-  return <ContextualQuiz question={question} feedback={feedback} preview={preview} onContinue={onContinue} onChoose={choice => {
+  return <ContextualQuiz question={question} feedback={feedback} onContinue={onContinue} onChoose={choice => {
     onChoose(choice);
     setFeedback({ id: 'attempt', sessionId: 'session', itemId: question.target.id, language: 'ja-JP',
       choiceIds: question.choices.map(option => option.id), selectedId: choice.id, correct: choice.id === 'teacher-answer',
@@ -192,13 +192,6 @@ describe('contextual listening and feedback', () => {
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
   });
 
-  it('reveals lesson preview text and the correct answer without grading or internal Continue', () => {
-    render(<Harness preview/>);
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
-    expect(screen.getByText(/Correct answer:/)).toHaveTextContent('先生 · teacher');
-    expect(screen.queryByRole('button', { name: 'Continue' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Choose writing/ })).not.toBeInTheDocument();
-  });
 });
 
 it.each(['picture', 'text'] as const)('delays %s choices until the final question audio tail, then keeps them on replay', async format => {
