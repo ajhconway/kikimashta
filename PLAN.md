@@ -230,3 +230,8 @@ Remove the contextual lesson-readiness/workload message and the saved-answer tot
 Word and contextual reviews use the same mastery timers: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Dev review applies mastery/random/untimed controls to both question types. Countdown begins after the final recording, entrance and loaded pictures; replays preserve the deadline. Late correct answers receive partial feedback and Hard grading without a retry.
 
 At Steady and higher, both picture and writing choices stay hidden until the final 360 ms of audio and land together at its endpoint, following the media clock through stalls. Contextual choices wait through the sentence and 650 ms pause before entering at the end of the question clip. Familiar and lower keep the ordinary entrance. Replays after reveal keep choices visible; reduced motion reveals at the endpoint without movement. Lessons, contextual introductions, corrective retries and content inspection keep their ordinary entrances. Real-iPhone timing acceptance remains manual.
+
+
+## Retired evaluation and generation paths (#184)
+
+The fixed contextual demo URL is retired in favor of configurable Dev review; old `?demo=contextual` links open Home. Keep `?review=contextual` for full authored-content inspection, including draft/text-only content, filtering, direct navigation and paired recording review without storage or scheduling writes. Future OpenAI generation and its hosted workflow are retired. Preserve earlier provider recordings, accepted manifests and attribution; use ElevenLabs for new speech.
