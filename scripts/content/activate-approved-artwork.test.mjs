@@ -355,13 +355,49 @@ function pictureFixture(t) {
   })
   f.put('content/catalog/ja.json', { items: assets.map(asset => ({ ...f.item, id: asset.id })) })
   f.put('content/visuals/levels-1-2.json', assets.map(asset => ({ ...f.visual, id: asset.id })))
-  const manifest = { status: 'approved', expectedAssetCount: 31, assets,
+  const sourceRevision = 'a'.repeat(40)
+  const items = assets.map(asset => ({ id: asset.id, category: 'picture', recommendation: 'Preserve the reviewed scene.' }))
+  const excluded = Array.from({ length: 61 }, (_, index) => ({ id: `ja-v-excluded-${index}`, category: 'picture' }))
+  f.put(`${directory}/sources/suitability-review.json`, { items: [...items, ...excluded] })
+  const plan = { issue: 229, category: 'picture', expectedAssetCount: 31, pictureCardCount: 92, sourceRevision,
+    suitabilityReviewSha256: hash(readFileSync(join(f.root, directory, 'sources/suitability-review.json'))),
+    items, excludedUpdatedIds: excluded.map(item => item.id) }
+  f.put(`${directory}/plan.json`, plan)
+  const manifest = { status: 'approved', expectedAssetCount: 31, sourceRevision, assets,
     releaseApproval: { ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09',
       scope: 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.',
       selections: assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion })) } }
   const save = () => f.put(`${directory}/manifest.json`, manifest)
   save()
-  return { ...f, manifest, save }
+  return { ...f, manifest, plan, save }
+}
+
+for (const failure of ['substituted known ID', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions']) {
+  test(`picture-set frozen scope rejects ${failure} before any deliveries`, t => {
+    const f = pictureFixture(t)
+    if (failure === 'substituted known ID') {
+      const id = 'ja-v-abcdef'
+      f.manifest.assets[29].id = id
+      f.manifest.releaseApproval.selections[29].id = id
+      const catalog = f.read('content/catalog/ja.json')
+      catalog.items[29].id = id
+      f.put('content/catalog/ja.json', catalog)
+      const visuals = f.read('content/visuals/levels-1-2.json')
+      visuals[29].id = id
+      f.put('content/visuals/levels-1-2.json', visuals)
+    }
+    if (failure === 'changed source review') f.put('artifacts/picture-art-229/sources/suitability-review.json', { items: [] })
+    if (failure === 'changed review identity') f.plan.items[0].recommendation = 'A different scene.'
+    if (failure === 'changed source revision') f.manifest.sourceRevision = 'b'.repeat(40)
+    if (failure === 'changed exclusions') f.plan.excludedUpdatedIds[0] = f.plan.items[0].id
+    f.put('artifacts/picture-art-229/plan.json', f.plan)
+    f.save()
+    const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
+    const before = paths.map(path => f.read(path))
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }), /frozen 31-card selection/)
+    paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
 }
 
 test('the complete picture set activates shared and approved-source selections while retaining opaque white and all eligibility', t => {

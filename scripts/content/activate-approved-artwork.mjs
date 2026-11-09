@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { isDeepStrictEqual } from 'node:util'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import { reviewedImage } from './reviewed-image.mjs'
 
@@ -14,6 +15,26 @@ const defaultEncoder = (source, target, { format }) => execFileSync('sips', ['-s
 const reviewedSets = {
   'visual-reference-213': { directory: 'artifacts/visual-reference-art-213', count: 22, statement: "Let's ship this artwork set." },
   'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04' },
+}
+
+function validatePictureScope(root, manifest, directory) {
+  const plan = read(root, `${directory}/plan.json`)
+  const originalBytes = readFileSync(join(root, directory, 'sources/suitability-review.json'))
+  const original = JSON.parse(originalBytes)
+  const selected = new Map(plan.items?.map(item => [item.id, item]))
+  const picture = new Map(original.items?.filter(item => item.category === 'picture').map(item => [item.id, item]))
+  const excluded = new Set(plan.excludedUpdatedIds)
+  if (plan.issue !== 229 || plan.category !== 'picture' || plan.expectedAssetCount !== 31 ||
+      plan.pictureCardCount !== 92 || picture.size !== 92 || selected.size !== 31 || plan.items.length !== 31 ||
+      excluded.size !== 61 || plan.excludedUpdatedIds.length !== 61 ||
+      !/^[a-f0-9]{40}$/.test(plan.sourceRevision) || manifest.sourceRevision !== plan.sourceRevision ||
+      hash(originalBytes) !== plan.suitabilityReviewSha256 ||
+      [...excluded].some(id => !picture.has(id) || selected.has(id)) ||
+      [...selected].some(([id, item]) => !isDeepStrictEqual(item, picture.get(id))) ||
+      [...picture.keys()].some(id => !excluded.has(id) && !selected.has(id)) ||
+      manifest.assets.some(asset => !selected.has(asset.id))) {
+    throw new Error('Picture artwork must match the frozen 31-card selection and source review')
+  }
 }
 
 function validateDelivery(bytes, asset, format, sourceAlpha) {
@@ -47,6 +68,7 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     const manifest = read(root, manifestPath)
     if (manifest.status !== 'approved') throw new Error(`Batch is not approved: ${batch}`)
     if (reviewedSet && (manifest.expectedAssetCount !== reviewedSet.count || manifest.assets.length !== reviewedSet.count)) throw new Error(`Expected the complete ${reviewedSet.count}-image ${batch} set`)
+    if (batch === 'picture-229') validatePictureScope(root, manifest, directory)
     if (reviewedSet) {
       const release = manifest.releaseApproval
       if (!release || release.ownerStatement !== reviewedSet.statement ||
