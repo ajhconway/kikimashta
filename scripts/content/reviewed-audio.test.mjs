@@ -67,10 +67,16 @@ test('retained Spanish review galleries link all accepted voices to the exact pr
   ]) {
     const manifest = JSON.parse(await readFile(new URL(`artifacts/${folder}/manifest.json`, root)))
     const journal = JSON.parse(await readFile(new URL(`content/${activation}/activation.json`, root)))
+    assert.equal(journal.recordings.length, 288)
+    assert.equal(new Set(journal.recordings.map(record => `${record.id}/${record.voice}`)).size, 288)
     const expected = new Map(manifest.clips.map(clip => {
       const delivered = journal.recordings.find(record => record.id === clip.id && record.voice === clip.voice)
+      assert.ok(delivered, 'activation retains every accepted word and voice')
+      assert.equal(delivered.sha256, clip.deliverySha256)
+      assert.equal(delivered.bytes, clip.deliveryBytes)
       return [new URL('public/' + delivered.src, root).href, clip]
     }))
+    assert.equal(expected.size, 288)
     for (const path of htmls) {
       const page = new URL(path, root)
       const html = await readFile(page, 'utf8')

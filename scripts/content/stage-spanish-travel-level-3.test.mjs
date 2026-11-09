@@ -19,7 +19,7 @@ function transparentPng(opaque = false) {
   const pixels = Buffer.from([0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]); if (opaque) for (const offset of [4, 8, 13, 17]) pixels[offset] = 255
   return Buffer.concat([Buffer.from('89504e470d0a1a0a', 'hex'), chunk('IHDR', header), chunk('IDAT', deflateSync(pixels)), chunk('IEND', Buffer.alloc(0))])
 }
-async function fixture(t, { opaqueForest = false } = {}) {
+async function fixture(t, { opaqueForest = false, media = true } = {}) {
   const root = await mkdtemp(join(tmpdir(), 'spanish-level3-stage-'))
   t.after(() => rm(root, { recursive: true, force: true }))
   const save = async (path, bytes) => { await mkdir(dirname(join(root, path)), { recursive: true }); await writeFile(join(root, path), bytes) }
@@ -27,12 +27,14 @@ async function fixture(t, { opaqueForest = false } = {}) {
   const pictures = structuredClone(art), audio = structuredClone(review), accepted = structuredClone(acceptance)
   const png = transparentPng(), jpg = Buffer.from('unchanged approved JPG fixture'), mp3 = Buffer.from('accepted normalized MP3 fixture')
   const reusable = []
-  for (const image of pictures.images) {
-    const bytes = image.source === 'generated' ? png : image.file.endsWith('.png') ? transparentPng(opaqueForest) : jpg; image.sha256 = hash(bytes); image.bytes = bytes.length
-    await save('artifacts/spanish-travel-3-art/' + image.file, bytes)
-    if (image.source === 'approved-reuse') { await save(image.sourcePath, bytes); reusable.push({ id: image.sourceId, path: image.sourcePath, sha256: image.sha256, bytes: bytes.length, ...(image.file.endsWith('.png') ? { format: 'png', alpha: 'preserved' } : {}) }) }
+  if (media) {
+    for (const image of pictures.images) {
+      const bytes = image.source === 'generated' ? png : image.file.endsWith('.png') ? transparentPng(opaqueForest) : jpg; image.sha256 = hash(bytes); image.bytes = bytes.length
+      await save('artifacts/spanish-travel-3-art/' + image.file, bytes)
+      if (image.source === 'approved-reuse') { await save(image.sourcePath, bytes); reusable.push({ id: image.sourceId, path: image.sourcePath, sha256: image.sha256, bytes: bytes.length, ...(image.file.endsWith('.png') ? { format: 'png', alpha: 'preserved' } : {}) }) }
+    }
+    for (const clip of audio.clips) { const bytes = clip.targetLimited ? await readFile(new URL('../../public/audio/es-419-travel-3/' + clip.file.slice(6), import.meta.url)) : mp3; clip.deliverySha256 = hash(bytes); clip.deliveryBytes = bytes.length; await save('artifacts/spanish-travel-3-audio-review/' + clip.file, bytes) }
   }
-  for (const clip of audio.clips) { const bytes = clip.targetLimited ? await readFile(new URL('../../public/audio/es-419-travel-3/' + clip.file.slice(6), import.meta.url)) : mp3; clip.deliverySha256 = hash(bytes); clip.deliveryBytes = bytes.length; await save('artifacts/spanish-travel-3-audio-review/' + clip.file, bytes) }
   accepted.audioReviewSha256 = hash(await saveJson(accepted.audioReviewManifest, audio)); pictures.audioManifestSha256 = accepted.audioReviewSha256
   accepted.artworkManifestSha256 = hash(await saveJson(accepted.artworkManifest, pictures))
   await saveJson('content/spanish-travel-3/acceptance.json', accepted); await saveJson('content/spanish-travel-3/draft.json', draft)
@@ -103,7 +105,7 @@ test('a missing archived matrix cannot hide changed active recording bytes', asy
 })
 
 for (const mode of ['directory', 'dangling-file', 'bank']) test(`rejects ${mode} output symlinks before copying`, async t => {
-  const { root } = await fixture(t), outside = await mkdtemp(join(tmpdir(), 'spanish-level3-outside-'))
+  const { root } = await fixture(t, { media: false }), outside = await mkdtemp(join(tmpdir(), 'spanish-level3-outside-'))
   t.after(() => rm(outside, { recursive: true, force: true }))
   if (mode === 'directory') { await mkdir(join(root, 'public/audio'), { recursive: true }); await symlink(outside, join(root, 'public/audio/es-419-travel-3')) }
   else {
