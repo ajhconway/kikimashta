@@ -1,0 +1,30 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "status": "generation-authorized-media-review-pending",
+  "ownerRequest": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "ownerSelection": "Enchufe — power outlet",
+  "baseDraftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "retiredItemId": "es-419-travel-bandage",
+  "item": {
+    "id": "es-419-travel-power-outlet",
+    "slug": "power-outlet",
+    "text": "enchufe",
+    "meaning": "Power outlet",
+    "group": "health",
+    "artwork": {
+      "status": "needs-generation",
+      "concept": "One ivory wall plate with two vertically stacked North American type-B power receptacles; each socket has two short straight parallel vertical slots and one round grounding hole below. No plug, cord, appliance or wall scenery."
+    },
+    "reviewNotes": [
+      "Power outlet sense chosen by owner; related terms include tomacorriente/contacto. Keep both receptacles simple and geometrically correct."
+    ]
+  },
+  "groupTitleAmendment": {
+    "id": "health",
+    "title": "Practical essentials"
+  },
+  "voices": 8,
+  "recordings": 8,
+  "artworkRequest": "artifacts/spanish-travel-4-art/revisions/power-outlet-v1-request.json"
+}

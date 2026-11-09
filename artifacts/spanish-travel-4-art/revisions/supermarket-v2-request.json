@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-supermarket",
+  "slug": "supermarket",
+  "version": 2,
+  "ownerFeedback": "Let's also have a green themed super market.",
+  "concept": "Recolour the same supermarket with a clear GREEN AND WHITE theme: rich leaf-green roof trim, green-and-white striped awning, white/cream walls, green shopping carts and green shelf accents. Let green lead instead of purple, pink and gold; use restrained yellow highlights only where helpful. Preserve the existing storefront layout, large shopping-cart pictogram, foreground cart and shelves of packaged groceries. Keep the recognizable friendly rounded cartoon shapes and dark green/deep-violet contours. Do not add lettering, logos, fruit piles or new objects.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/supermarket-v1.png",
+  "referenceSha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Recolour the same supermarket with a clear GREEN AND WHITE theme: rich leaf-green roof trim, green-and-white striped awning, white/cream walls, green shopping carts and green shelf accents. Let green lead instead of purple, pink and gold; use restrained yellow highlights only where helpful. Preserve the existing storefront layout, large shopping-cart pictogram, foreground cart and shelves of packaged groceries. Keep the recognizable friendly rounded cartoon shapes and dark green/deep-violet contours. Do not add lettering, logos, fruit piles or new objects.\nChange colour treatment only; preserve object geometry and composition. One complete centered illustration with generous transparent outer margin. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas."
+}

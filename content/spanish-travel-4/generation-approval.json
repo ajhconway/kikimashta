@@ -1,0 +1,14 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "status": "generation-authorized-media-review-pending",
+  "ownerMessage": "Please go ahead",
+  "scope": "Generate all 35 missing illustrations and all 36 words in the existing eight voices; reuse the exact approved flower.",
+  "draft": "content/spanish-travel-4/draft.json",
+  "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "words": 36,
+  "voices": 8,
+  "recordings": 288,
+  "newPictures": 35,
+  "approvedReuses": 1
+}

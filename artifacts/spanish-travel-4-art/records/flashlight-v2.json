@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-flashlight",
+  "slug": "flashlight",
+  "version": 2,
+  "path": "originals/flashlight-v2.png",
+  "sha256": "52fc58f35fa47d39362fc9c2d14e441f53809df585b747e5a3238f597833d8d6",
+  "promptSha256": "15c46abd71def787c42c77c39fa649527282efd70d5b04273990f197a07b532d",
+  "referenceSha256": "ec5db61e2fca510b8007164ae4b81aefbff1a9474c3e4b8c694d70ecb6371197",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a2bf8d30-4b0b-4d7f-b50e-97c669f696a0.png",
+  "supersedes": "originals/flashlight-v1.png"
+}

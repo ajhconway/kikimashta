@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-wristwatch",
+  "slug": "wristwatch",
+  "version": 1,
+  "path": "originals/wristwatch-v1.png",
+  "sha256": "d54e7457f61ae894fed409b675a0517ec6037a640dc6068025e7b1f58709f416",
+  "promptSha256": "7c0bf537b5429fe270432fc8d45e2f5ff2b3b4ecdd11f57f55608727f871a37b",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-c6ea05f8-1763-4705-82a4-69a628f81da7.png"
+}

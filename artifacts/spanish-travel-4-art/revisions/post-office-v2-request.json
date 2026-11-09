@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-post-office",
+  "slug": "post-office",
+  "version": 2,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "concept": "Change the colour treatment of this SAME post office to a clear RED AND WHITE postal theme: rich red roof trim, red-and-white awning, white/cream walls, red mail box and white envelope pictograms. Reduce the purple and gold areas substantially. Keep the recognizable envelope, mail slot, counter, parcels, friendly rounded shapes, proportions and composition. Retain subtle deep-purple or dark-red contours, but let red and white lead. No lettering, flags or postal-company logo.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Change the colour treatment of this SAME post office to a clear RED AND WHITE postal theme: rich red roof trim, red-and-white awning, white/cream walls, red mail box and white envelope pictograms. Reduce the purple and gold areas substantially. Keep the recognizable envelope, mail slot, counter, parcels, friendly rounded shapes, proportions and composition. Retain subtle deep-purple or dark-red contours, but let red and white lead. No lettering, flags or postal-company logo.\nPreserve the established smooth bold cartoon outlines and soft shading. One complete centered illustration with generous transparent outer margin on a square canvas. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/post-office-v1.png",
+  "referenceSha256": "5a0e3c15bc95b6f19e75427daa9a748bd5c218f8f700efd63b6356845b08121e"
+}

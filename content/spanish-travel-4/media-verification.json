@@ -1,0 +1,94 @@
+{
+  "issue": 207,
+  "status": "accepted-and-activated",
+  "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "pictures": {
+    "newReady": 35,
+    "approvedReuse": 1,
+    "newPending": 0,
+    "tool": "built-in image_gen",
+    "manifest": "artifacts/spanish-travel-4-art/manifest.json",
+    "selected": 36,
+    "revisedSelected": 6,
+    "replacedWords": 1,
+    "originalVersionsPreserved": 42,
+    "revisionHistory": "artifacts/spanish-travel-4-art/revisions/history.json",
+    "acceptance": "content/spanish-travel-4/artwork-acceptance.json",
+    "approved": 36
+  },
+  "audio": {
+    "recordings": 288,
+    "words": 36,
+    "voices": 8,
+    "nativePlayback": "artifacts/spanish-travel-4-audio-review/verification.json",
+    "quietClips": [
+      {
+        "voice": "carlos-figueroa",
+        "text": "azúcar",
+        "lufs": -22.65,
+        "reason": "maximum9dBgain"
+      }
+    ],
+    "archiveFilesVerified": 1736,
+    "archiveManifest": 1,
+    "currentBaseClips": 280,
+    "currentReplacementClips": 8,
+    "historicalBaseClipsRetained": 288,
+    "replacementNativePlayback": "artifacts/spanish-travel-4-replacement-audio-review/verification.json",
+    "replacementArchiveFilesVerified": 56,
+    "replacementArchiveManifest": 1
+  },
+  "fullCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 496,
+    "node": 275,
+    "pythonAudio": 12,
+    "pythonCards": 27,
+    "lint": "passed",
+    "types": "passed",
+    "validator": "passed",
+    "build": "passed",
+    "revisionScope": "Historical pre-activation green-supermarket verification. Release verification is recorded in PR #211 and its current-head CI checks."
+  },
+  "galleryBrowserChecks": [
+    {
+      "browser": "chromium",
+      "entries": 36,
+      "newPictures": 35,
+      "approvedReuse": 1,
+      "pendingPictures": 0,
+      "audioControls": 288,
+      "groupFilter": true,
+      "accentSearch": true,
+      "nativeAudioClock": true,
+      "stop": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "entries": 36,
+      "newPictures": 35,
+      "approvedReuse": 1,
+      "pendingPictures": 0,
+      "audioControls": 288,
+      "groupFilter": true,
+      "accentSearch": true,
+      "nativeAudioClock": true,
+      "stop": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Real-iPhone listening and touch acceptance follows deployment by the owner; mobile WebKit is supplementary."
+  ],
+  "independentReview": "Activation independently reviewed: acceptance/provenance, complete effective matrix, exact quiet exception, all source and production hashes, source/destination symlink checks and all 31 pack combinations; no material findings.",
+  "reviewWorkflow": "complete-pack-before-owner-feedback",
+  "reviewWorkflowAmendment": "artifacts/spanish-travel-4-art/review-workflow.json",
+  "preservation": "Immutable approved draft, authorization/config/approval, initial prompts, all 35 original artworks and 288 base recordings preserved. The active 36-word pack applies enchufe for venda, six selected picture revisions and eight replacement recordings; production copies retain accepted bytes.",
+  "acceptance": "content/spanish-travel-4/acceptance.json",
+  "activation": "content/spanish-travel-4/activation.json",
+  "ownerMessage": "Let's ship it!"
+}

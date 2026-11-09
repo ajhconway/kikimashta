@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-police-station",
+  "slug": "police-station",
+  "version": 2,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "concept": "Recolour this SAME police station with a strong BLUE AND WHITE police theme: deep navy roof/door/trim, white walls, cool blue windows and medium-blue shield border. Keep the gold shield/star as a small badge accent. Remove the dominant purple/pink/gold architectural palette and pink flourishes; blue and white should clearly lead. Preserve the same recognizable building, shield, entrance, proportions and friendly rounded outlines. No text or real police logo.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Recolour this SAME police station with a strong BLUE AND WHITE police theme: deep navy roof/door/trim, white walls, cool blue windows and medium-blue shield border. Keep the gold shield/star as a small badge accent. Remove the dominant purple/pink/gold architectural palette and pink flourishes; blue and white should clearly lead. Preserve the same recognizable building, shield, entrance, proportions and friendly rounded outlines. No text or real police logo.\nPreserve the established smooth bold cartoon outlines and soft shading. One complete centered illustration with generous transparent outer margin on a square canvas. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/police-station-v1.png",
+  "referenceSha256": "f266955b2c37b1a554c1d4140d2dd726102b96641aa5cd2cdc947c70e034dc36"
+}

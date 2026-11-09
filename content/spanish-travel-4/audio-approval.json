@@ -1,0 +1,230 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "Please go ahead",
+  "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "generationApprovalSha256": "c29e79aed9057bdd0bfc13ac76c82ebb89f037ca9d6e616b4b053e7110ee6063",
+  "items": [
+    {
+      "id": "es-419-travel-supermarket",
+      "text": "supermercado",
+      "spelling": "supermercado",
+      "meaning": "Supermarket"
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "text": "oficina de correos",
+      "spelling": "oficina de correos",
+      "meaning": "Post office"
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "text": "estación de policía",
+      "spelling": "estación de policía",
+      "meaning": "Police station"
+    },
+    {
+      "id": "es-419-travel-library",
+      "text": "biblioteca",
+      "spelling": "biblioteca",
+      "meaning": "Library"
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "text": "cine",
+      "spelling": "cine",
+      "meaning": "Movie theater"
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "text": "lavandería",
+      "spelling": "lavandería",
+      "meaning": "Laundromat"
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "text": "helicóptero",
+      "spelling": "helicóptero",
+      "meaning": "Helicopter"
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "text": "camión de carga",
+      "spelling": "camión de carga",
+      "meaning": "Cargo truck"
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "text": "ambulancia",
+      "spelling": "ambulancia",
+      "meaning": "Ambulance"
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "text": "patrulla",
+      "spelling": "patrulla",
+      "meaning": "Police car"
+    },
+    {
+      "id": "es-419-travel-tire",
+      "text": "llanta",
+      "spelling": "llanta",
+      "meaning": "Tire"
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "text": "volante",
+      "spelling": "volante",
+      "meaning": "Steering wheel"
+    },
+    {
+      "id": "es-419-travel-salt",
+      "text": "sal",
+      "spelling": "sal",
+      "meaning": "Salt"
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "text": "azúcar",
+      "spelling": "azúcar",
+      "meaning": "Sugar"
+    },
+    {
+      "id": "es-419-travel-butter",
+      "text": "mantequilla",
+      "spelling": "mantequilla",
+      "meaning": "Butter"
+    },
+    {
+      "id": "es-419-travel-lime",
+      "text": "limón",
+      "spelling": "limón",
+      "meaning": "Lime"
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "text": "fresa",
+      "spelling": "fresa",
+      "meaning": "Strawberry"
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "text": "piña",
+      "spelling": "piña",
+      "meaning": "Pineapple"
+    },
+    {
+      "id": "es-419-travel-sock",
+      "text": "calcetín",
+      "spelling": "calcetín",
+      "meaning": "Sock"
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "text": "falda",
+      "spelling": "falda",
+      "meaning": "Skirt"
+    },
+    {
+      "id": "es-419-travel-dress",
+      "text": "vestido",
+      "spelling": "vestido",
+      "meaning": "Dress"
+    },
+    {
+      "id": "es-419-travel-glove",
+      "text": "guante",
+      "spelling": "guante",
+      "meaning": "Glove"
+    },
+    {
+      "id": "es-419-travel-belt",
+      "text": "cinturón",
+      "spelling": "cinturón",
+      "meaning": "Belt"
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "text": "reloj de pulsera",
+      "spelling": "reloj de pulsera",
+      "meaning": "Wristwatch"
+    },
+    {
+      "id": "es-419-travel-pill",
+      "text": "pastilla",
+      "spelling": "pastilla",
+      "meaning": "Pill"
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "text": "curita",
+      "spelling": "curita",
+      "meaning": "Adhesive bandage"
+    },
+    {
+      "id": "es-419-travel-bandage",
+      "text": "venda",
+      "spelling": "venda",
+      "meaning": "Bandage roll"
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "text": "tijeras",
+      "spelling": "tijeras",
+      "meaning": "Scissors"
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "text": "protector solar",
+      "spelling": "protector solar",
+      "meaning": "Sunscreen"
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "text": "repelente",
+      "spelling": "repelente",
+      "meaning": "Insect repellent"
+    },
+    {
+      "id": "es-419-travel-tent",
+      "text": "tienda de campaña",
+      "spelling": "tienda de campaña",
+      "meaning": "Tent"
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "text": "linterna",
+      "spelling": "linterna",
+      "meaning": "Flashlight"
+    },
+    {
+      "id": "es-419-travel-compass",
+      "text": "brújula",
+      "spelling": "brújula",
+      "meaning": "Compass"
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "text": "saco de dormir",
+      "spelling": "saco de dormir",
+      "meaning": "Sleeping bag"
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "text": "binoculares",
+      "spelling": "binoculares",
+      "meaning": "Binoculars"
+    },
+    {
+      "id": "es-419-travel-flower",
+      "text": "flor",
+      "spelling": "flor",
+      "meaning": "Flower"
+    }
+  ],
+  "itemsSha256": "8519e38f57ff312c57f3f3dafd242ea6508f7c53fdea24a76d27bfbc3db074de",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 288,
+  "characters": 2600
+}
