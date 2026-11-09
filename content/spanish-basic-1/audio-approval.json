@@ -1,0 +1,386 @@
+{
+  "issue": 191,
+  "pack": "es-419-basic-1",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "Please go ahead and generate the pictures and audio.",
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "generationApprovalSha256": "6c07ee6197ad6303f5c813289cf6068a49b091f3cc73879ca342af56bb7423db",
+  "items": [
+    {
+      "id": "es-419-basic-have",
+      "text": "tener",
+      "spelling": "tener",
+      "meaning": "Have",
+      "role": "word",
+      "targetItemId": "es-419-basic-have"
+    },
+    {
+      "id": "es-419-basic-want",
+      "text": "querer",
+      "spelling": "querer",
+      "meaning": "Want",
+      "role": "word",
+      "targetItemId": "es-419-basic-want"
+    },
+    {
+      "id": "es-419-basic-need",
+      "text": "necesitar",
+      "spelling": "necesitar",
+      "meaning": "Need",
+      "role": "word",
+      "targetItemId": "es-419-basic-need"
+    },
+    {
+      "id": "es-419-basic-go",
+      "text": "ir",
+      "spelling": "ir",
+      "meaning": "Go",
+      "role": "word",
+      "targetItemId": "es-419-basic-go"
+    },
+    {
+      "id": "es-419-basic-carry",
+      "text": "llevar",
+      "spelling": "llevar",
+      "meaning": "Carry / take",
+      "role": "word",
+      "targetItemId": "es-419-basic-carry"
+    },
+    {
+      "id": "es-419-basic-buy",
+      "text": "comprar",
+      "spelling": "comprar",
+      "meaning": "Buy",
+      "role": "word",
+      "targetItemId": "es-419-basic-buy"
+    },
+    {
+      "id": "es-419-basic-eat",
+      "text": "comer",
+      "spelling": "comer",
+      "meaning": "Eat",
+      "role": "word",
+      "targetItemId": "es-419-basic-eat"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "text": "beber",
+      "spelling": "beber",
+      "meaning": "Drink",
+      "role": "word",
+      "targetItemId": "es-419-basic-drink"
+    },
+    {
+      "id": "es-419-basic-large",
+      "text": "grande",
+      "spelling": "grande",
+      "meaning": "Big",
+      "role": "word",
+      "targetItemId": "es-419-basic-large"
+    },
+    {
+      "id": "es-419-basic-small",
+      "text": "pequeño",
+      "spelling": "pequeño",
+      "meaning": "Small",
+      "role": "word",
+      "targetItemId": "es-419-basic-small"
+    },
+    {
+      "id": "es-419-basic-cold",
+      "text": "frío",
+      "spelling": "frío",
+      "meaning": "Cold",
+      "role": "word",
+      "targetItemId": "es-419-basic-cold"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "text": "caliente",
+      "spelling": "caliente",
+      "meaning": "Hot",
+      "role": "word",
+      "targetItemId": "es-419-basic-hot"
+    },
+    {
+      "id": "es-419-basic-open",
+      "text": "abierto",
+      "spelling": "abierto",
+      "meaning": "Open",
+      "role": "word",
+      "targetItemId": "es-419-basic-open"
+    },
+    {
+      "id": "es-419-basic-closed",
+      "text": "cerrado",
+      "spelling": "cerrado",
+      "meaning": "Closed",
+      "role": "word",
+      "targetItemId": "es-419-basic-closed"
+    },
+    {
+      "id": "es-419-basic-inside",
+      "text": "dentro de",
+      "spelling": "dentro de",
+      "meaning": "Inside",
+      "role": "word",
+      "targetItemId": "es-419-basic-inside"
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "text": "encima de",
+      "spelling": "encima de",
+      "meaning": "On top of",
+      "role": "word",
+      "targetItemId": "es-419-basic-on-top"
+    },
+    {
+      "id": "es-419-basic-under",
+      "text": "debajo de",
+      "spelling": "debajo de",
+      "meaning": "Under",
+      "role": "word",
+      "targetItemId": "es-419-basic-under"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "text": "al lado de",
+      "spelling": "al lado de",
+      "meaning": "Next to",
+      "role": "word",
+      "targetItemId": "es-419-basic-next-to"
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "text": "hambre",
+      "spelling": "hambre",
+      "meaning": "Hunger",
+      "role": "word",
+      "targetItemId": "es-419-basic-hunger"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "text": "sed",
+      "spelling": "sed",
+      "meaning": "Thirst",
+      "role": "word",
+      "targetItemId": "es-419-basic-thirst"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "text": "sueño",
+      "spelling": "sueño",
+      "meaning": "Sleepiness",
+      "role": "word",
+      "targetItemId": "es-419-basic-sleepiness"
+    },
+    {
+      "id": "es-419-basic-today",
+      "text": "hoy",
+      "spelling": "hoy",
+      "meaning": "Today",
+      "role": "word",
+      "targetItemId": "es-419-basic-today"
+    },
+    {
+      "id": "es-419-basic-tomorrow",
+      "text": "mañana",
+      "spelling": "mañana",
+      "meaning": "Tomorrow",
+      "role": "word",
+      "targetItemId": "es-419-basic-tomorrow"
+    },
+    {
+      "id": "es-419-basic-afterward",
+      "text": "después",
+      "spelling": "después",
+      "meaning": "Afterward",
+      "role": "word",
+      "targetItemId": "es-419-basic-afterward"
+    },
+    {
+      "id": "es-419-basic-ctx-have-01-sentence",
+      "text": "Tengo una llave. Necesito un boleto.",
+      "spelling": "Tengo una llave. Necesito un boleto.",
+      "meaning": "I have a key. I need a ticket.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-have-01",
+      "targetItemId": "es-419-basic-have",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-have-01-question",
+      "text": "¿Qué tengo?",
+      "spelling": "¿Qué tengo?",
+      "meaning": "What do I have?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-have-01",
+      "targetItemId": "es-419-basic-have",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-want-01-sentence",
+      "text": "Tengo agua. Quiero café.",
+      "spelling": "Tengo agua. Quiero café.",
+      "meaning": "I have water. I want coffee.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-want-01",
+      "targetItemId": "es-419-basic-want",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-want-01-question",
+      "text": "¿Qué quiero?",
+      "spelling": "¿Qué quiero?",
+      "meaning": "What do I want?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-want-01",
+      "targetItemId": "es-419-basic-want",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-need-01-sentence",
+      "text": "Tengo dinero. Necesito un boleto.",
+      "spelling": "Tengo dinero. Necesito un boleto.",
+      "meaning": "I have money. I need a ticket.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-need-01",
+      "targetItemId": "es-419-basic-need",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-need-01-question",
+      "text": "¿Qué necesito?",
+      "spelling": "¿Qué necesito?",
+      "meaning": "What do I need?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-need-01",
+      "targetItemId": "es-419-basic-need",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-go-01-sentence",
+      "text": "Voy al hotel. No voy a la playa.",
+      "spelling": "Voy al hotel. No voy a la playa.",
+      "meaning": "I am going to the hotel. I am not going to the beach.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-go-01",
+      "targetItemId": "es-419-basic-go",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-go-01-question",
+      "text": "¿Adónde voy?",
+      "spelling": "¿Adónde voy?",
+      "meaning": "Where am I going?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-go-01",
+      "targetItemId": "es-419-basic-go",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-carry-01-sentence",
+      "text": "Llevo una mochila. La maleta está en el hotel.",
+      "spelling": "Llevo una mochila. La maleta está en el hotel.",
+      "meaning": "I am carrying a backpack. The suitcase is at the hotel.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-carry-01",
+      "targetItemId": "es-419-basic-carry",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-carry-01-question",
+      "text": "¿Qué llevo?",
+      "spelling": "¿Qué llevo?",
+      "meaning": "What am I carrying?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-carry-01",
+      "targetItemId": "es-419-basic-carry",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-buy-01-sentence",
+      "text": "Compro pan. No compro arroz.",
+      "spelling": "Compro pan. No compro arroz.",
+      "meaning": "I am buying bread. I am not buying rice.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-buy-01",
+      "targetItemId": "es-419-basic-buy",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-buy-01-question",
+      "text": "¿Qué compro?",
+      "spelling": "¿Qué compro?",
+      "meaning": "What am I buying?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-buy-01",
+      "targetItemId": "es-419-basic-buy",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-today-01-sentence",
+      "text": "Hoy voy al hotel. Mañana voy a la playa.",
+      "spelling": "Hoy voy al hotel. Mañana voy a la playa.",
+      "meaning": "Today I am going to the hotel. Tomorrow I am going to the beach.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-today-01",
+      "targetItemId": "es-419-basic-today",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-today-01-question",
+      "text": "¿Adónde voy hoy?",
+      "spelling": "¿Adónde voy hoy?",
+      "meaning": "Where am I going today?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-today-01",
+      "targetItemId": "es-419-basic-today",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-tomorrow-01-sentence",
+      "text": "Hoy voy a la playa. Mañana voy al aeropuerto.",
+      "spelling": "Hoy voy a la playa. Mañana voy al aeropuerto.",
+      "meaning": "Today I am going to the beach. Tomorrow I am going to the airport.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-tomorrow-01",
+      "targetItemId": "es-419-basic-tomorrow",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-tomorrow-01-question",
+      "text": "¿Adónde voy mañana?",
+      "spelling": "¿Adónde voy mañana?",
+      "meaning": "Where am I going tomorrow?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-tomorrow-01",
+      "targetItemId": "es-419-basic-tomorrow",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-afterward-01-sentence",
+      "text": "Compro pan. Después compro leche.",
+      "spelling": "Compro pan. Después compro leche.",
+      "meaning": "I buy bread. Afterward I buy milk.",
+      "role": "sentence",
+      "contextId": "es-419-basic-ctx-afterward-01",
+      "targetItemId": "es-419-basic-afterward",
+      "contextRevision": 1
+    },
+    {
+      "id": "es-419-basic-ctx-afterward-01-question",
+      "text": "¿Qué compro después?",
+      "spelling": "¿Qué compro después?",
+      "meaning": "What do I buy afterward?",
+      "role": "question",
+      "contextId": "es-419-basic-ctx-afterward-01",
+      "targetItemId": "es-419-basic-afterward",
+      "contextRevision": 1
+    }
+  ],
+  "itemsSha256": "0968bb80b84eb1f2be4f51aa5a9cf71977147ad81d3b87f974b82ecbb43e26e4",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 336,
+  "characters": 4760
+}

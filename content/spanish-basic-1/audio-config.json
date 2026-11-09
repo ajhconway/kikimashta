@@ -1,0 +1,117 @@
+{
+  "issue": 191,
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "language": "es-419",
+  "voiceSettings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+  },
+  "normalization": {
+    "targetLufs": -22,
+    "truePeakCeilingDbtp": -2,
+    "dualMono": true
+  },
+  "approval": {
+    "ownerMessage": "Please go ahead and generate the pictures and audio.",
+    "scope": "Basic Spanish level 1: 24 canonical word forms and nine sentence/question pairs in the same eight regional voices; 336 clips."
+  },
+  "voices": [
+    {
+      "voice": "juan",
+      "id": "eqsD9RWsdCgHoRsbXS5q",
+      "name": "Juan",
+      "gender": "male",
+      "accent": "latin american",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749/eqsD9RWsdCgHoRsbXS5q",
+      "accentEvidence": "Adult male voice (30–40), Mexican Spanish, neutral Mexico City accent. Warm, clear baritone timbre with chest resonance and low sibilance. Crisp diction, an audible smile, and natural pauses; a medium-slow pace with falling intonation patterns that convey confidence. Conversational and instructional style without exaggeration; capable of shifting to a motivational or empathetic tone. Avoids strong regionalisms and over-dramatization. Ideal for financial explanations, storytelling, and tutorials.\n"
+    },
+    {
+      "voice": "pamela",
+      "id": "pmruOMcxgUotq2bYO5Ne",
+      "name": "Pamela",
+      "gender": "female",
+      "accent": "mexican",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3/pmruOMcxgUotq2bYO5Ne",
+      "accentEvidence": "Female voice from Mexico City, mid-30s. Warm and confident tone, conversational yet professional. Mexican accent is present but subtle, with natural pacing and clear diction. Ideal for corporate narrations and brand videos."
+    },
+    {
+      "voice": "albeiro",
+      "id": "OUfIyuG1GcVW5wnTy7Ru",
+      "name": "Albeiro O",
+      "gender": "male",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3/OUfIyuG1GcVW5wnTy7Ru",
+      "accentEvidence": "Colombian man, Bogotá accent, young, calm and measured tone.\n"
+    },
+    {
+      "voice": "carito",
+      "id": "J8BF9c7OgbHiqagCNoEj",
+      "name": "Carito",
+      "gender": "female",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38/J8BF9c7OgbHiqagCNoEj",
+      "accentEvidence": "Young female voice from Bogotá. Cute, conversational delivery with natural warmth—ideal for intimate narration, casual dialogue, and relatable storytelling."
+    },
+    {
+      "voice": "santiago",
+      "id": "O1CnH2NGEehfL1nmYACp",
+      "name": "Santiago",
+      "gender": "male",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb/O1CnH2NGEehfL1nmYACp",
+      "accentEvidence": "Confident and natural Argentine Spanish with a clear Buenos Aires accent. Ideal for narration, voiceovers, educational content, and Latin American media."
+    },
+    {
+      "voice": "agustina",
+      "id": "TZvhlMgMw2P4gPSuD8v7",
+      "name": "Agustina",
+      "gender": "female",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e/TZvhlMgMw2P4gPSuD8v7",
+      "accentEvidence": "A clear, middle-aged Argentine female voice with a polished Buenos Aires accent and a calm, confident cadence. Her attentive, reassuring tone builds instant trust, perfect for customer service agents, guided interactions, and professional conversations."
+    },
+    {
+      "voice": "carlos-figueroa",
+      "id": "4ex71F9amHzL0fiUD2y1",
+      "name": "Carlos Figueroa",
+      "gender": "male",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224/4ex71F9amHzL0fiUD2y1",
+      "accentEvidence": "Puerto Rican accent male voice."
+    },
+    {
+      "voice": "veronica",
+      "id": "cryPG4aBcWsmW2cCIXjB",
+      "name": "Veronica",
+      "gender": "female",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f/cryPG4aBcWsmW2cCIXjB",
+      "accentEvidence": "Puerto Rican Spanish-speaking female voice."
+    }
+  ]
+}
