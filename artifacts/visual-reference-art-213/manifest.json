@@ -439,20 +439,20 @@
       "text": "北口",
       "reading": "きたぐち",
       "meaning": "North Exit",
-      "prompt": "Use case: compositing. Image1 is the PRIMARY approved-proposal EXIT SYMBOL to preserve: open lavender door to the left, plum arched frame, gold handle, dark interior, low threshold, broad gold arrow coming OUT toward RIGHT. Image2 is supporting NORTH compass. Create NORTH EXIT with the exit symbol clearly PRIMARY: retain the large exit drawing at roughly its current size and centered slightly lower/left on a square transparent canvas. Place a SMALLER copy of the compass in the UPPER RIGHT corner, spatially separate with a little clear margin, about 40 PERCENT of the doorway's height. The exit must visually dominate; the compass must read as a secondary directional badge, never equal-size side-by-side. Compass stays north-up, with N at TOP and ONLY top/NORTH ray gold, other three lavender. Preserve all defining artwork/colors/forms of the doorway and compass. No backing panel, giant badge container, arrows connecting components, words, landscape, calendar or extra objects. Genuine transparent outside background. Do not crop either component.",
-      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+      "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY TOP/NORTH ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
       "status": "generated-pending-owner-review",
-      "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8",
+      "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
           "role": "edit/style reference",
-          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+          "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
         },
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
           "role": "edit/style reference",
-          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8"
+          "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
         }
       ],
       "versions": [
@@ -546,9 +546,89 @@
           "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f47aa710-a734-43ab-9038-f7ed135b5d5b.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 7,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v7.png",
+          "prompt": "Use case: compositing / precise-object-edit. Image1 is the previous NORTH EXIT composition with small compass; image2 is the NEW center-origin perspective EXIT doorway which must replace its old doorway/arrow unchanged. Use exactly image2's doorway: lavender door open left, arched plum frame, golden arrow emerging from the CENTER of the opening and curving FORWARD DOWN/RIGHT toward the viewer with large foreground arrowhead. That primary doorway must keep its prominent size and proportions. Change compass relative to image1: enlarge its circular dial and N label to 175 PERCENT of their previous dimensions (75% larger), maintaining the compass's actual shape, colors and north-up orientation. Position this larger compass in the UPPER RIGHT, noticeably CLOSER to the door, nearly touching the upper-right arch with a small clean transparent gap, rather than floating far away. The new compass should be roughly TWO THIRDS the doorway's height. Highlight only its TOP/NORTH ray gold; other rays lavender, N stays top. Keep everything fully visible with margin; slightly increase overall canvas room if needed instead of shrinking doorway or cropping compass. No overlap obscuring the door or arrow, no connector, words, background panel or other new elements. Genuine transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+              "role": "edit/style reference",
+              "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "c43074314d0893f267ae99e1de786a61c4449cdabc526d3bef8c4b2d39363328",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-e9ee83fc-21f3-4b30-b28b-f3207d031b7e.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 8,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v8.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 is the north-exit composition. Image2 is the gentler EXIT symbol, whose doorway AND slimmer center-origin arrow must replace the corresponding doorway/arrow in image1. Preserve image2's normal curved gold arrow emerging from the middle of the dark opening and pointing down/right outward, with modest arrowhead and slight taper, not the exaggerated giant ribbon. Keep this door primary and large. The north-up compass stays UPPER RIGHT and close to the doorway. Enlarge the compass DIAL from image1 by an ADDITIONAL 30 PERCENT to achieve the owner's 75-percent enlargement relative to the original small-compass proposal. Target compass circle DIAMETER about 58–60 PERCENT of the doorframe's full HEIGHT (roughly 525px dial for a 900px tall door), with N above. Move it snugly next to the upper-right arch, with only a narrow transparent gap; extend canvas to the right if needed to avoid cropping or hiding door details, rather than shrinking the door or compass. Highlight ONLY TOP/NORTH ray gold, all others lavender; N fixed at top. Keep circular rim, palette, all door details and transparent background. No other symbols, labels or connector.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v7.png",
+              "role": "edit/style reference",
+              "sha256": "c43074314d0893f267ae99e1de786a61c4449cdabc526d3bef8c4b2d39363328"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "bcdbc3e52f3da0779fbd6301db2cdf51488762604aee9a41088b231db101328d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7168129d-168d-492e-a7d9-5bf39f2e54e6.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 9,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 is NORTH EXIT with the enlarged upper-right compass and close placement. Image2 is the FINAL gentler exit doorway and normal curved arrow. Replace ONLY image1's door/arrow drawing with image2's exact door and especially its nearly uniform-width gold arrow with rounded inner tail at the doorway center, modest foreground arrowhead, flat soft-gold shading and just a hint of depth. Retain the overall doorway as primary and its large placement. Keep compass north-up and snug beside the upper-right arch. Increase the compass dial and N label by another 15 PERCENT relative to image1 so the total enlargement is about 75 percent from the original small-compass card; new circle diameter roughly60% of doorframe height. Keep the entire compass visible with narrow margin, and it can slightly overlap the outside top-right frame without hiding the dark door opening. Gold highlight ONLY on TOP/NORTH ray; other rays lavender, N fixed above top. Match existing style, sizes otherwise, clean transparent background. No other changes, text, shadows, scenery or giant arrow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v8.png",
+              "role": "edit/style reference",
+              "sha256": "bcdbc3e52f3da0779fbd6301db2cdf51488762604aee9a41088b231db101328d"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+              "role": "edit/style reference",
+              "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+            }
+          ],
+          "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b489ccef-de89-4b4e-a85c-27c32f1f30e7.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 10,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY TOP/NORTH ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+              "role": "edit/style reference",
+              "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
+            }
+          ],
+          "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-fd440b89-789b-4193-844f-2d6fc62e05e0.png",
+          "ownerFeedbackRound": 4
         }
       ],
-      "selectedVersion": 6,
+      "selectedVersion": 10,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -827,7 +907,7 @@
       "meaning": "Year",
       "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. ONE YEAR interval: white rounded year-planner sheet with golden top binding and exactly twelve equally sized MINIATURE MONTH GRID PANELS in a 3-column by 4-row arrangement. Each panel has a tiny lavender header and unnumbered pale grid. Enclose all twelve panels together with one rounded golden brace or outline to signify the entire year. No year number, no highlighted single month, no words or tiny numerals. Exactly twelve month panels as one complete year, clean and simple.",
       "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
       "references": [
         {
@@ -881,13 +961,13 @@
           255
         ]
       },
-      "comparisons": [
-        {
-          "label": "Alternative: a complete four-season cycle",
-          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v3.png",
-          "version": 3
-        }
-      ]
+      "approval": {
+        "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+        "selectedVersion": 1,
+        "ownerStatement": "I prefer the old year artwork, which I'm approving now.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
     },
     {
       "id": "ja-v-83365ed9e3db",
@@ -1060,7 +1140,7 @@
       "meaning": "One's Thirties",
       "prompt": "A clean friendly illustrated reference for ADULTS IN THEIR THIRTIES. Exactly three SIMPLE adult head-and-shoulder bust icons arranged evenly in one horizontal row. Warm peach faces, simple dark-plum hair and tiny friendly facial features; solid lavender clothing with a clean smoothly curved bottom silhouette, thick crisp plum outlines. Each portrait is isolated with real transparent gaps. Below left portrait a small gold rounded age badge with exact large plum text 30. Below middle badge text 35. Below right badge text 39. Three portraits, three badges, numbers exactly 30 35 39, easily legible. Keep a visible transparent gap between each bust and its number badge. Flat smooth colors and just a small interior highlight, consistent polished plum/lavender/gold educational-game aesthetic. Square transparent canvas, generous margins. NO grouping brace, underline, ribbon, shadows, glow, soft edges, smoke, haze, white outline, white trimming, rough cutouts, extra numerals, text, calendars, card frames, paper or background panel. Crisp finished silhouettes only. The age numbers provide explicit facts so no guessing anyone's age from appearance is required.",
       "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
       "references": [],
       "versions": [
@@ -1121,6 +1201,13 @@
           0,
           255
         ]
+      },
+      "approval": {
+        "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+        "selectedVersion": 4,
+        "ownerStatement": "三十代 is good.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
       }
     },
     {
@@ -1185,15 +1272,15 @@
       "text": "西口",
       "reading": "にしぐち",
       "meaning": "West Exit",
-      "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this improved NORTH EXIT. Preserve the entire LARGE refined doorway and its outward right-pointing gold arrow exactly, as the primary subject; preserve the SMALL compass's UPPER RIGHT position, scale (40% door height), round border, white face, lavender inset ring, N above top, geometry and margins. Change ONLY which compass ray is gold: LEFT/WEST ray gold, TOP/NORTH ray becomes lavender like bottom/right. Exactly one highlighted gold compass ray pointing LEFT. Do not move, rotate, resize or change the doorway, arrow, handle, door leaf, compass, N label, colors or transparent background. No new words or objects.",
-      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v4.png",
+      "prompt": "Use case: precise-object-edit. Change ONLY the gold highlight in the upper-right COMPASS. This must be WEST, not north: color the LEFT-POINTING triangular compass ray solid GOLD, and recolor the UPWARD/TOP triangular compass ray pale LAVENDER matching the bottom and right rays. Exactly ONE gold compass ray pointing LEFT toward the door. N remains fixed above the TOP and stays plum; do not rotate the compass. Preserve EVERY OTHER PART of this image exactly: enlarged compass size/position/rim, the entire doorway, the bolder center-origin outward arrow, colors, shading, margins and transparency. The gold doorway arrow remains unchanged; ONLY swap the compass's TOP gold fill to LEFT gold fill.",
+      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
       "status": "generated-pending-owner-review",
-      "sha256": "6b65f19bac26a7b6413639687335e0e4300eb10acc67c9ac77ed3646669c430c",
+      "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
           "role": "edit/style reference",
-          "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
+          "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05"
         }
       ],
       "versions": [
@@ -1254,9 +1341,59 @@
           "sha256": "6b65f19bac26a7b6413639687335e0e4300eb10acc67c9ac77ed3646669c430c",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07a13347-7104-4fd0-b61c-bf4183957691.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v5.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this FINAL NORTH EXIT composition. Preserve EVERY detail of the doorway and the newly gentle center-origin exit arrow: its rounded inner tail, almost constant curved shaft, small foreground arrowhead and flat gold shading must remain identical. Preserve the enlarged compass's close UPPER RIGHT position, circular rim, white face, N label above TOP, size, overlap with outside arch, geometry, colors and all margins. Change ONLY the compass rays' highlight: LEFT/WEST ray gold, TOP/NORTH ray lavender like right/bottom. Exactly one gold compass ray pointing left; N stays at top. Keep all other objects, proportions, pixels and transparent background as closely unchanged as possible. No further changes, perspective exaggeration or added elements.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            }
+          ],
+          "sha256": "735bd4b27a69e92d9d6b906a005d4ec08c26efe1d0d9395f4aecce669a6e86f0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9e961603-aad4-4e48-9b16-2d52ce435c67.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 6,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY LEFT/WEST ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+              "role": "edit/style reference",
+              "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
+            }
+          ],
+          "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-373c398d-fc61-41a4-98ed-87e60f5f1c58.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 7,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+          "prompt": "Use case: precise-object-edit. Change ONLY the gold highlight in the upper-right COMPASS. This must be WEST, not north: color the LEFT-POINTING triangular compass ray solid GOLD, and recolor the UPWARD/TOP triangular compass ray pale LAVENDER matching the bottom and right rays. Exactly ONE gold compass ray pointing LEFT toward the door. N remains fixed above the TOP and stays plum; do not rotate the compass. Preserve EVERY OTHER PART of this image exactly: enlarged compass size/position/rim, the entire doorway, the bolder center-origin outward arrow, colors, shading, margins and transparency. The gold doorway arrow remains unchanged; ONLY swap the compass's TOP gold fill to LEFT gold fill.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
+              "role": "edit/style reference",
+              "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05"
+            }
+          ],
+          "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c15cd039-8c41-4825-8f54-4c042997f65c.png",
+          "ownerFeedbackRound": 4
         }
       ],
-      "selectedVersion": 4,
+      "selectedVersion": 7,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -1281,15 +1418,81 @@
           "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-08417089-da3e-4a20-8ee2-8fd9e0f23370.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+          "prompt": "Use case: precise-object-edit. Preserve the supplied refined open lavender doorway, plum arched frame, door leaf opening left, golden handle, depth, proportions, colors, low threshold, position, style and transparent outside. Replace the EXISTING SIDEWAYS ARROW completely with a GOLD ARROW THAT COMES FROM THE CENTER OF THE DOORWAY AND MOVES OUT TOWARD THE VIEWER IN PERSPECTIVE. Its narrow distant tail must start exactly in the MIDDLE of the dark doorway opening (center horizontally and about halfway up the opening), clearly surrounded by the interior on all sides. From that center the arrow travels forward, curving down and slightly right across the threshold into the foreground. The arrow grows broader as it approaches the viewer, with a large arrowhead in the LOWER-RIGHT FOREGROUND pointing toward the viewer. Strong foreshortening: small/narrow at the center of the doorway, larger/closer outside. It must read emerging from the center/depth of the doorway, NOT sliding horizontally across its face, NOT starting at the hinge, jamb or bottom corner. No remnants of the old lateral arrow. Keep a single continuous clean golden arrow, crisp plum outline and restrained highlight. No added compass, person, text, scene, floor platform or shadow. Genuine transparent background; keep generous margin around the foreground arrowhead.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            }
+          ],
+          "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8b78f61e-d7c8-4278-b9cd-1513f4121e8f.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+          "prompt": "Use case: precise-object-edit. The doorway and arrow DIRECTION/PATH in this image are correct. Preserve the doorway exactly, and preserve the gold EXIT arrow's center-origin curved path from the middle of the dark opening toward the lower-right foreground. Make the arrow MUCH LESS EXAGGERATED in perspective: use a modest almost-constant-width curved shaft, only gently widening from about 60 pixels at its inner tail to about 85 pixels near the head on this 1254px canvas. Replace the oversized triangular foreground head with a tidy, moderate arrowhead about 150 pixels across (around one-third the width of the doorway opening), NOT a huge wedge. Flat readable directional arrow with a subtle gold interior highlight, very small bevel if any; no thick 3D underside. This should feel like a graceful normal arrow curving out from the center, with just a hint of depth, not a dramatic perspective ribbon. Keep the original path endpoints and foreground direction. Background around the now slimmer arrow must become clean transparent outside the door, or restore matching dark lavender where the old arrow covered the interior. Preserve door, handle, frame, threshold, colors, margins and dimensions. No new objects or text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50658b9f-91e2-4a36-8888-63b37ebd6189.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+          "prompt": "Use case: precise-object-edit. Make just ONE final subtle reduction in perspective on the existing gold EXIT arrow. Everything else, including the door, curved center-origin path, outward down/right direction, endpoint, moderate arrowhead size, colors and transparency, stays unchanged. Remove the sharp needle-like taper at the INNER TAIL inside the doorway: give that tail a small soft rounded end about 50–60px wide, not a point. Then make the curved shaft almost constant-width, about 65–75px along the full curve, with only a tiny increase toward the foreground. Keep the same tidy existing arrowhead around 150px across. Flatten the arrow's shading to a soft gold fill with only a faint highlight and no visible thick 3D side wall. It should feel like a normal elegant curved arrow with JUST A HINT of depth into/out of the door, not a perspective ribbon. Preserve door details and composition exactly. No additional changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07d85bbc-4d9c-4faa-a201-21250fd64027.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+          "prompt": "Use case: precise-object-edit. Make this EXIT arrow BIGGER AND BOLDER THROUGHOUT while preserving its correct center-origin curved direction and gentle depth. Increase the entire curved gold shaft to about 110px width consistently along its whole length (about 1.5x the current shaft), including its rounded inner tail at the CENTER of the doorway. Give the foreground arrowhead a clear width about 210–220px, proportional to the thicker shaft. This is a uniform increase in arrow visual weight, NOT increased perspective: maintain almost constant shaft width from inner tail to head, no pointed tiny far tail, no enormous wedge, no 3D sidewall. Keep exactly the same center-origin path, endpoints, flat soft-gold shading, curve and outward lower-right direction. The rounded inner tail must be visibly substantial, not thin. The doorway, frame, handle, threshold, colors, position, dimensions and clean transparency remain unchanged. No compass or other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+              "role": "edit/style reference",
+              "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+            }
+          ],
+          "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-57f38cfe-ab55-4d23-9bb5-abdf2049fedc.png",
+          "ownerFeedbackRound": 4
         }
       ],
       "ownerAdded": true,
       "sourceLevel": 2,
-      "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
-      "prompt": "Create one refined, friendly illustrated EXIT symbol for a Japanese listening game. A beautiful open doorway is the main subject: softly rounded plum doorframe with a little depth, pale lavender door leaf opened toward the LEFT, neat small golden handle, clearly darker lavender doorway interior, and a clean low threshold. A broad smooth golden arrow starts INSIDE the doorway opening and passes OUT through the threshold toward the RIGHT, ending clearly outside the doorway. Exit must read as outward motion. Elegant simple polished storybook-object style, consistent bold dark-plum contours, warm gold and lavender palette, restrained dimensional highlights only within objects. Isolated centered symbol on genuine transparent background, square canvas, generous margins. No compass on this base symbol. No person, lettering, label, word EXIT, scenery, floor plan, calendar, glow, large shadow or backing card. Preserve a simple clear silhouette at small quiz size.",
-      "references": [],
-      "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0",
-      "selectedVersion": 1,
+      "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+      "prompt": "Use case: precise-object-edit. Make this EXIT arrow BIGGER AND BOLDER THROUGHOUT while preserving its correct center-origin curved direction and gentle depth. Increase the entire curved gold shaft to about 110px width consistently along its whole length (about 1.5x the current shaft), including its rounded inner tail at the CENTER of the doorway. Give the foreground arrowhead a clear width about 210–220px, proportional to the thicker shaft. This is a uniform increase in arrow visual weight, NOT increased perspective: maintain almost constant shaft width from inner tail to head, no pointed tiny far tail, no enormous wedge, no 3D sidewall. Keep exactly the same center-origin path, endpoints, flat soft-gold shading, curve and outward lower-right direction. The rounded inner tail must be visibly substantial, not thin. The doorway, frame, handle, threshold, colors, position, dimensions and clean transparency remain unchanged. No compass or other changes.",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+          "role": "edit/style reference",
+          "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+        }
+      ],
+      "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+      "selectedVersion": 5,
       "status": "generated-pending-owner-review",
       "image": {
         "width": 1254,
@@ -1321,21 +1524,86 @@
           "sha256": "71a2f17a63aab757bf5827b05a794d332166772686a62fee06901348cbd2e3f8",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3ecaae10-5367-4fa4-8965-52d08eb38b29.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v2.png",
+          "prompt": "Use case: precise-object-edit. Make the ENTRANCE companion to this revised perspective EXIT symbol. Preserve exactly the open lavender doorway, arched plum frame, left-open door, handle, threshold, proportions, palette, illustration style and transparent background. Reverse the gold arrow's FLOW along the same curved path: its broad BLUNT tail starts in the LOWER-RIGHT FOREGROUND outside the doorway, and it tapers as it travels away from the viewer toward a SMALL CLEAR ARROWHEAD that ends EXACTLY in the CENTER of the DARK DOORWAY OPENING (center horizontally and halfway up the opening). The arrowhead points INTO the deep middle of the opening, UP/LEFT and away from the viewer. The head must NOT point at a hinge, door edge or floor corner. Near tail large, distant tip smaller = visible depth into the doorway. Remove the former large outward-pointing arrowhead entirely; there must be no arrowhead in foreground. One continuous golden arrow, clean plum contours and restrained highlights. No sideways flat arrow, compass, people, text, added scene, floor platform or shadow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "f0131706608c48311bcd952cb54254e8ac9d673de58f7348264c49cc654d487a",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2fac4f99-6cf4-4e59-973b-c9293eea0320.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v3.png",
+          "prompt": "Use case: precise-object-edit. Image1 is ENTRANCE with the correct inward direction and center-door destination, but too exaggerated arrow perspective. Image2 is the newly gentler EXIT arrow and is a STYLE/WEIGHT reference ONLY, not a direction reference. Keep image1's doorway exactly and keep its entrance arrow flowing from lower-right foreground INTO the CENTER of the dark opening, with the small arrowhead INSIDE at the center. Slim its arrow to a normal curved gold shaft, about 70px width along most of the curve with only very gentle taper (not a huge foreground ribbon). Use a tidy inward arrowhead about 110px across, centered in the doorway; near tail is a modest rounded 85px-wide end, not a large bulb. Remove dramatic 3D thickness, wide wedge and excessive foreshortening. Gentle curve and a subtle gold highlight only, matching image2's calmer arrow treatment. Preserve exact inward motion/path and all other door details. Clean transparency around slimmed arrow; restore dark-lavender interior wherever old arrow has been removed. No compass, new objects or text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v2.png",
+              "role": "edit/style reference",
+              "sha256": "f0131706608c48311bcd952cb54254e8ac9d673de58f7348264c49cc654d487a"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "071f35d7f46f2001907fae7c0609cfd73ee71e5881a34936e63494c0ccf99f04",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-674edd2d-9df7-4896-a169-b4631a5cb4fc.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
+          "prompt": "Use case: precise-object-edit. Make just a subtle final reduction in depth on this ENTRANCE arrow. Preserve the doorway exactly, and preserve the arrow's curved inward direction from lower-right foreground to its small arrowhead at the CENTER of the doorway opening. Make its shaft nearly constant-width around65–75px throughout, only a barely perceptible taper toward the doorway, instead of a wider foreground tail. The outside tail remains a modest blunt rounded end, not a bulb. Keep the same small readable arrowhead centered in the opening. Flatten the arrow to a gentle gold fill with only a faint highlight; no thick 3D side wall or dramatic perspective. Keep all existing positions, exact path, door details, colors, size and transparent background. A normal curved arrow with only a hint of depth. No other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v3.png",
+              "role": "edit/style reference",
+              "sha256": "071f35d7f46f2001907fae7c0609cfd73ee71e5881a34936e63494c0ccf99f04"
+            }
+          ],
+          "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47f65600-6af9-430a-80e1-691e5827dca5.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+          "prompt": "Use case: precise-object-edit. Make this ENTRANCE arrow BIGGER AND BOLDER THROUGHOUT, matching the visual weight of an exit arrow with a 110px-wide shaft and 210–220px-wide head. Preserve its correct inward curved path: from lower-right foreground INTO the CENTER of the dark doorway opening. Make the entire gold shaft about110px wide with almost CONSTANT apparent width, from the substantial blunt rounded outside tail to the base of the arrowhead. Enlarge the inward-pointing arrowhead at the CENTER of the doorway to about210–220px across: it must NOT appear smaller, thinner or weaker than the exit arrowhead. Do not shrink the interior tip for perspective. Keep gentle depth only through the curve/path, NOT through dramatic taper. Flat soft-gold shading, no heavy 3D underside. Keep exact path endpoints, doorway details, frame, handle, threshold, colors, composition and genuine transparent background unchanged. One clear bold curved inward arrow; no compass, tiny arrowhead or other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
+              "role": "edit/style reference",
+              "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707"
+            }
+          ],
+          "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-5c7ea770-8264-44d7-ad9f-97920a39d5e4.png",
+          "ownerFeedbackRound": 4
         }
       ],
       "ownerAdded": true,
       "sourceLevel": 1,
-      "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v1.png",
-      "prompt": "Use case: precise-object-edit. Create ENTRANCE as a matched companion to the supplied EXIT icon. Preserve EXACTLY the refined open doorway, door leaf open to LEFT, lavender panels, golden handle, plum arched frame, dark-lavender interior, low threshold, illustration style, dimensions, location, clean transparent outside background and all margins. Reverse ONLY the golden arrow so it now clearly points INTO the doorway: arrow tail starts OUTSIDE on the RIGHT and arrowhead ends INSIDE the dark doorway opening, pointing LEFT/inward. Keep arrow visibly crossing the threshold, same thickness and polished gold treatment. The right-side arrow tip of the exit must become the right-side tail of entrance, with the new left-pointing tip inside. Do not mirror the whole door, recolor anything, add a compass, words, letters, body or scenery.",
+      "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+      "prompt": "Use case: precise-object-edit. Make this ENTRANCE arrow BIGGER AND BOLDER THROUGHOUT, matching the visual weight of an exit arrow with a 110px-wide shaft and 210–220px-wide head. Preserve its correct inward curved path: from lower-right foreground INTO the CENTER of the dark doorway opening. Make the entire gold shaft about110px wide with almost CONSTANT apparent width, from the substantial blunt rounded outside tail to the base of the arrowhead. Enlarge the inward-pointing arrowhead at the CENTER of the doorway to about210–220px across: it must NOT appear smaller, thinner or weaker than the exit arrowhead. Do not shrink the interior tip for perspective. Keep gentle depth only through the curve/path, NOT through dramatic taper. Flat soft-gold shading, no heavy 3D underside. Keep exact path endpoints, doorway details, frame, handle, threshold, colors, composition and genuine transparent background unchanged. One clear bold curved inward arrow; no compass, tiny arrowhead or other changes.",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
           "role": "edit/style reference",
-          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+          "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707"
         }
       ],
-      "sha256": "71a2f17a63aab757bf5827b05a794d332166772686a62fee06901348cbd2e3f8",
-      "selectedVersion": 1,
+      "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+      "selectedVersion": 5,
       "status": "generated-pending-owner-review",
       "image": {
         "width": 1254,
@@ -1391,9 +1659,9 @@
     "ja-v-01016753b889",
     "ja-v-cbb4297f3dd7"
   ],
-  "status": "complete-pending-owner-review",
+  "status": "partially-approved",
   "generatedAssetCount": 22,
-  "generatedVersionCount": 51,
+  "generatedVersionCount": 66,
   "checks": {
     "exactScope": true,
     "noAlreadyUpdatedIds": true,
@@ -1427,12 +1695,22 @@
         "ja-v-a19157e62dee"
       ],
       "yearSelectionPreserved": true
+    },
+    {
+      "round": 4,
+      "request": "Arrows originate from or enter the center of the doorway, with mild perspective. Compasses75% larger and closer. 三十代 accepted; original 年v1 explicitly approved. Subsequent steering requests further reduction in arrow perspective.",
+      "status": "revised-pending-owner-review",
+      "acceptedIds": [
+        "ja-v-8438eda3cfc0",
+        "ja-v-aef5eed601c5"
+      ],
+      "finalSteering": "Keep arrow direction and center-door paths; gentler perspective; enlarge both arrows throughout and make entrance match exit weight."
     }
   ],
   "exitSymbolConvention": {
     "meaning": "Exit/entrance",
-    "design": "Refined open lavender doorway, plum arched frame and a gold arrow crossing the threshold. Outward rightward arrow means exit; inward leftward arrow means entrance.",
-    "direction": "For north/west exits the doorway remains primary and identical; a smaller compass in the upper right indicates the direction, gold north ray or west ray with N fixed at top.",
+    "design": "Refined open lavender doorway with a thick gold curved arrow anchored at the center of its dark opening. Exit arrow points outward toward the foreground; entrance arrow points inward to the center. Shafts and arrowheads have matching stronger visual weight with only slight perspective.",
+    "direction": "Directional exits use the same exit door/arrow with a larger compass close to the upper-right arch; only north/top or west/left compass ray is gold.",
     "cards": [
       "ja-v-a19157e62dee",
       "ja-v-20cbd1c15a35",

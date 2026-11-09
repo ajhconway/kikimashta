@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "issue": 213,
+  "scope": "artwork only",
+  "approvals": [
+    {
+      "id": "ja-v-8438eda3cfc0",
+      "text": "年",
+      "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+      "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+      "selectedVersion": 1,
+      "ownerStatement": "I prefer the old year artwork, which I'm approving now.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-aef5eed601c5",
+      "text": "三十代",
+      "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+      "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+      "selectedVersion": 4,
+      "ownerStatement": "三十代 is good.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    }
+  ]
+}
