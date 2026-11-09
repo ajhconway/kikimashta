@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import type { WordBank } from '../types';
 import first from '../../content/es-419.json';
 import second from '../../content/es-419-travel-2.json';
 import third from '../../content/es-419-travel-3.json';
@@ -22,11 +23,13 @@ describe('Spanish travel levels', () => {
   it('keeps separate pack membership and restores existing device choices', () => {
     expect(spanish.pool.items).toHaveLength(108);
     expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(108);
-    for (const bank of [first, second, third]) {
+    for (const bank of [first, second, third] as WordBank[]) {
       const cards = selectedPracticeCards(spanish.pool.items, [`${bank.id}-pictures`], spanish.packs);
       expect(cards.map(card => card.item.id)).toEqual(bank.items.map(item => item.id));
       expect(cards.every(card => card.exercise === 'audio-picture')).toBe(true);
-      for (const item of bank.items) expect(spanish.pool.items.find(word => word.id === item.id)).toMatchObject(item);
+      for (const item of bank.items) expect(spanish.pool.items.find(word => word.id === item.id)).toMatchObject({
+        ...item, pictureDistractorExclusions: expect.arrayContaining(item.pictureDistractorExclusions ?? []),
+      });
     }
     localStorage.setItem(spanish.packPreferenceKey, JSON.stringify(['es-419-travel-1-pictures']));
     expect(initialPackIds(spanish.packs, spanish.packPreferenceKey)).toEqual(['es-419-travel-1-pictures']);
@@ -73,6 +76,18 @@ describe('Spanish travel levels', () => {
       const question = createQuestions([{ item: target!, exercise: 'audio-picture' }], [target!, ambiguous!, ...safe], () => 0.5)[0]!;
       expect(question.choices).toHaveLength(4);
       expect(question.choices.map(choice => choice.id)).not.toContain(ambiguous!.id);
+    }
+  });
+
+  it('does not offer the orange half in the juice picture as a competing naranja answer', () => {
+    const word = (slug: string) => spanish.pool.items.find(item => item.id === `es-419-travel-${slug}`)!;
+    const safe = ['table', 'chair', 'spoon'].map(word);
+    for (const [target, ambiguous] of [[word('orange'), word('juice')], [word('juice'), word('orange')]]) {
+      for (const random of [() => 0, () => 0.5, () => 0.99]) {
+        const question = createQuestions([{ item: target!, exercise: 'audio-picture' }], [target!, ambiguous!, ...safe], random)[0]!;
+        expect(question.choices).toHaveLength(4);
+        expect(question.choices.map(choice => choice.id)).not.toContain(ambiguous!.id);
+      }
     }
   });
 

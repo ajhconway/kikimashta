@@ -3,7 +3,7 @@
   "id": "es-419-travel-3",
   "language": "es-419",
   "title": "Travel level 3",
-  "status": "generated-awaiting-owner-media-review",
+  "status": "approved-for-activation",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
   "packId": "es-419-travel-3-pictures",
@@ -637,7 +637,7 @@
         "es-419-travel-blanket",
         "es-419-travel-towel"
       ],
-      "note": "Give cobija a thick warm textile fold/fringe and preserve the towel silhouette; reject any pair of nearly identical folded rectangles."
+      "note": "The accepted blanket is broad and open with a stitched hem and no fringe; the towel hangs narrowly. Exclude this pair to avoid competing rectangular textiles at small card size."
     },
     {
       "ids": [
@@ -756,5 +756,6 @@
     "After word approval, generate only the missing subjects and all 36×8 recordings under a separate approved level 3 batch; retain exact sources and prompts.",
     "Obtain picture/listening acceptance before registering a separately selectable level 3 picture pack.",
     "Review semantic ambiguity across all three levels and bind any exclusions to stable IDs, without rewriting historical attempts."
-  ]
+  ],
+  "ownerMediaAcceptance": "content/spanish-travel-3/acceptance.json"
 }

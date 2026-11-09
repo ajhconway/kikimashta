@@ -242,7 +242,7 @@ describe('Spanish card library', () => {
     await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(Math.min(24, spanish.items.length)));
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Latin American Spanish cards');
     expect(screen.getByLabelText('Card pack')).toHaveValue('es-419-travel-1-pictures');
-    expect(screen.getAllByRole('option')).toHaveLength(3);
+    expect(screen.getAllByRole('option')).toHaveLength(4);
     expect(document.querySelectorAll('.word-text[lang="es-419"]')).toHaveLength(Math.min(24, spanish.items.length));
     expect(fetch).not.toHaveBeenCalled();
     fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'Coffee' } });
