@@ -15,3 +15,5 @@ export function spanishNeighborBank(root) {
   if (new Set(items.map(item => item.id)).size !== items.length || items.some(item => item.language !== 'es-419')) throw new Error('Invalid Spanish ordinary bank.');
   return items;
 }
+
+export { spanishPictureCompatible, firstSpanishTrio, normalizedEditDistance } from './spanish-neighbor-metrics.mjs';

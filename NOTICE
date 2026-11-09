@@ -42,3 +42,12 @@ experiment inputs retain their separate copy and provenance in the artifact's
 vendor/ directory. Source tables are used only during offline preparation; the
 browser receives compact neighbor indices rather than acoustic tables or model
 weights.
+
+The offline Spanish comparison in artifacts/spanish-neighbors-222/ preserves
+adapted cosine rankings from Facebook Research's Spanish fastText vectors
+(CC BY-SA 3.0) and intfloat/multilingual-e5-base (model-card MIT license).
+Model/input revisions, hashes, composition recipes and source attribution are
+recorded in that artifact's README and measured outputs. IPA preparation uses
+the separately built eSpeak-NG 1.52.0 (GPL-3.0-or-later); its full upstream GPL
+text and tool/data provenance are retained with the experiment. No Spanish
+model weights, phonemizer binary or experimental rankings enter app practice.

@@ -1,0 +1,286 @@
+{
+  "inputDigest": "2ec9e70ce57900c1a6229c75c01c74deededfb5a82ed8f9884683ccf6a9717e5",
+  "orderSeed": "222-v1",
+  "trials": [
+    {
+      "trialId": "S01",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S02",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "S03",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S04",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "S05",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S06",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "S07",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S08",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "S09",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S10",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "S11",
+      "kind": "semantic",
+      "voice": null,
+      "A": "fasttext",
+      "B": "e5"
+    },
+    {
+      "trialId": "S12",
+      "kind": "semantic",
+      "voice": null,
+      "A": "e5",
+      "B": "fasttext"
+    },
+    {
+      "trialId": "P01-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P01-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P01-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P01-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P02-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P02-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P02-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P02-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P03-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P03-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P03-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P03-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P04-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P04-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P04-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P04-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P06-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P06-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P06-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P06-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P07-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P07-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P07-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P07-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P08-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P08-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "A": "letters",
+      "B": "phones"
+    },
+    {
+      "trialId": "P08-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "A": "phones",
+      "B": "letters"
+    },
+    {
+      "trialId": "P08-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "A": "letters",
+      "B": "phones"
+    }
+  ]
+}
