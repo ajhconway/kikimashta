@@ -4,6 +4,8 @@ import type { ContextualItem, ContextualQuestion, ContextualRecording } from '..
 
 export interface Question {
   target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string; demoId?: string;
+  /** First contextual encounter: review UI, initial-learning evidence. */
+  introduction?: boolean;
   contextual?: { context: ContextualItem; question: ContextualQuestion; recording?: ContextualRecording };
 }
 
