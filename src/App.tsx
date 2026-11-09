@@ -10,7 +10,6 @@ import { approvedContextualQuestions } from './content/contextual';
 import { contextualBanks, contextualVocabulary, readyContextualCards } from './content/contextual-runtime';
 import { ContextualQuiz, type ContextualPlayback } from './components/ContextualQuiz';
 import { QuizCompanion, Speaker } from './components/QuizChrome';
-import { ContextualDevReview } from './components/ContextualDevReview';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { createContextualDemoSession } from './core/contextual-demo';
 import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevReviewOptions';
@@ -138,9 +137,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [fontRotation] = useState(() => createWritingFontRotation());
   const [writingFont, setWritingFont] = useState<WritingFont>('system');
   useEffect(() => { if (language.writing === 'japanese') preloadWritingFonts(); }, [language]);
-  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-dev' | 'contextual-demo-ready' | 'dev-options'>(() =>
+  const [screen, setScreen] = useState<'home' | 'ready' | 'preview' | 'quiz' | 'summary' | 'contextual-demo-ready' | 'dev-options'>(() =>
     languageContextualBanks.length > 0 && new URLSearchParams(window.location.search).get('demo') === 'contextual' ? 'contextual-demo-ready' :
-      languageContextualBanks.length > 0 && new URLSearchParams(window.location.search).get('review') === 'contextual' ? 'contextual-dev' : 'home');
+      'home');
   const [devOptions, setDevOptions] = useState<DevReviewOptions>(defaultDevReviewOptions);
   const [devReviewError, setDevReviewError] = useState<string | null>(null);
   const devTimerMode = useRef<DevReviewOptions['timerMode'] | null>(null);
@@ -198,7 +197,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     audioFinished: audioFinished && choicesReady, answered: !!feedback, grid: choiceGrid, now });
   const target = screen === 'preview' ? lessonItems[preview]?.item : questions[index]?.target;
   const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
-  const theme = screen === 'contextual-dev' || (screen === 'quiz' && questions[index]?.contextual) ? 'contextualQuiz' : screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
+  const theme = (screen === 'quiz' && questions[index]?.contextual) ? 'contextualQuiz' : screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
   const response = screen === 'quiz' && feedback ? feedback.outcome === 'partial' ? 'partial' : feedback.correct ? 'correct' : 'incorrect' : undefined;
   const background = response ? quizFeedbackColors[response] : screen === 'home' && density !== null ? intensityColors[densityLevel(density)] : themeColors[theme];
   const invalidate = useCallback(() => { operation.current++; }, []);
@@ -558,7 +557,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <button className="primary" disabled={pendingSaveCount > 0 || saveError} onClick={startContextualDemo}>Begin review <span aria-hidden="true">→</span></button>
       </section>}
       {screen === 'dev-options' && <DevReviewOptionsScreen availableTypes={devTypes} value={devOptions} onChange={options => { setDevOptions(options); setDevReviewError(null); }} onStart={startDevReview} disabled={accountLoading || pendingSaveCount > 0 || saveError} error={devReviewError ?? undefined} libraryHref={asset(language.libraryPath ?? 'vocabulary/')}/>}
-      {screen === 'contextual-dev' && languageContextualBanks.length > 0 && <ContextualDevReview banks={languageContextualBanks} vocabulary={languageContextualVocabulary} onClose={home} random={random}/>}
       {screen === 'ready' && <section className="summary ready fade-in">
         <div className="finish-companion" aria-hidden="true"><img src={asset('brand/kikimashta-cat-v1.png')} alt="" draggable={false}/></div>
         <h1>{phase === 'review' ? 'Review Time!' : lessonItems.length ? 'Lesson Time!' : 'All set for now!'}</h1>

@@ -8,6 +8,7 @@ import { cardMastery, packMastery } from '../src/core/mastery'
 import { deriveSchedules } from '../src/core/scheduler'
 import { initialVoiceIds, practiceVoicesFor, voicePreferenceKeyFor } from '../src/core/voices'
 import { ProgressStore } from '../src/progress/store'
+import { mountContextualLibrary } from './contextual'
 
 (async () => {
   'use strict'
@@ -134,6 +135,41 @@ import { ProgressStore } from '../src/progress/store'
   const audioError = document.getElementById('audio-error')
   const exportButton = document.getElementById('export-feedback')
   const accountStatus = document.getElementById('account-status')
+  const wordLibrary = document.getElementById('word-library')
+  const contextualLibrary = document.getElementById('contextual-library')
+  const wordToggle = document.getElementById('show-words')
+  const contextualToggle = document.getElementById('show-contexts')
+  const wordHeading = document.querySelector('h1').textContent
+  const wordDescription = document.querySelector('.page-header p').textContent
+  let contextView = null
+  let stopWordAudio = () => {}
+  function showLibraryView(view, push = false) {
+    const contextual = view === 'contextual'
+    stopWordAudio()
+    contextView?.stop()
+    wordLibrary.hidden = contextual
+    contextualLibrary.hidden = !contextual
+    wordToggle.setAttribute('aria-pressed', String(!contextual))
+    contextualToggle.setAttribute('aria-pressed', String(contextual))
+    document.querySelector('h1').textContent = contextual ? 'Contextual questions' : wordHeading
+    document.querySelector('.page-header p').textContent = contextual
+      ? 'Browse authored sentences, questions, answers and recordings. Browsing does not change your practice progress.' : wordDescription
+    document.title = contextual ? 'Contextual questions · Card library' : wordHeading
+    if (contextual && !contextView) contextView = mountContextualLibrary({ container: contextualLibrary, language })
+    if (push) {
+      const url = new URL(location.href)
+      if (contextual) url.searchParams.set('view', 'contextual')
+      else url.searchParams.delete('view')
+      history.pushState(null, '', url)
+    }
+  }
+  wordToggle.addEventListener('click', () => { if (wordLibrary.hidden) showLibraryView('words', true) })
+  contextualToggle.addEventListener('click', () => { if (contextualLibrary.hidden) showLibraryView('contextual', true) })
+  window.addEventListener('popstate', () => showLibraryView(new URLSearchParams(location.search).get('view')))
+  window.addEventListener('pagehide', () => contextView?.stop())
+  document.addEventListener('visibilitychange', () => { if (document.hidden) contextView?.stop() })
+  showLibraryView(parameters.get('view'))
+
   // Resolve identity before reading feedback so guest and account notes stay separate.
   const account = await getLibraryAccount()
   const feedbackStore = account ? createAccountFeedbackStore({
@@ -209,6 +245,8 @@ import { ProgressStore } from '../src/progress/store'
     resetButton()
     audioStatus.textContent = ''
   }
+
+  stopWordAudio = stopAudio
 
   function failAudio(request, voice) {
     if (request !== playRequest || !activeButton) return
