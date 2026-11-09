@@ -2033,16 +2033,6 @@
       "reviewRequired": true
     },
     {
-      "id": "ja-v-4fd3d09440c1",
-      "path": "public/images/vocabulary/ja-v-4fd3d09440c1.svg",
-      "bytes": 331,
-      "sha256": "d661e195767c449612780c0ec092d69d7bd50fd30748464a350357f17eb3fb8c",
-      "license": "AGPL-3.0-only",
-      "generator": "scripts/content/illustrate-level-5.mjs",
-      "concept": "Circle, square, and triangle shown as an outline shape family.",
-      "reviewRequired": true
-    },
-    {
       "id": "ja-v-5bbf746af479",
       "path": "public/images/vocabulary/ja-v-5bbf746af479.svg",
       "bytes": 1662,
