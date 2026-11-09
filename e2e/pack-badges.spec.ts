@@ -96,7 +96,7 @@ test('ten compact pack medals fit around Kiku on a narrow screen', async ({ page
     expect(box.right <= kiku.x || box.x >= kiku.x + kiku.width || box.bottom <= kiku.y || box.y >= kiku.y + kiku.height).toBe(true);
     expect(box.bottom).toBeLessThan(start.y);
     for (const other of boxes.slice(index + 1)) {
-      expect(box.right <= other.x || box.x >= other.right || box.bottom <= other.y || box.y >= other.bottom).toBe(true);
+      expect(box.right <= other.x || box.x >= other.right || box.bottom <= other.y || box.y >= other.bottom, JSON.stringify({ index, box, other })).toBe(true);
     }
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

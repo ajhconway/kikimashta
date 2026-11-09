@@ -1,25 +1,39 @@
 .home-kiku-stage { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
-.home-kiku-stage.has-pack-badges { display: grid; place-items: center; padding-inline: 62px; min-height: calc(clamp(330px, 46svh, 380px) + 56px); }
+.home-kiku-stage.has-pack-badges { display: grid; place-items: center; padding-inline: 72px; min-height: calc(clamp(330px, 46svh, 380px) + 56px); }
+.home-kiku-stage.has-pack-badges:has(.pack-badge:nth-child(9)) { min-height: calc(clamp(390px, 52svh, 440px) + 56px); }
 .home-kiku-stage .home-intensity { width: 100%; }
 .home-kiku-stage.has-pack-badges .pace-kiku { width: clamp(160px, 24svh, 220px); height: auto; aspect-ratio: 1; }
 .pack-badges { position: absolute; inset: 0 0 56px; pointer-events: none; }
 .pack-badges ul { position: relative; width: 100%; height: 100%; list-style: none; margin: 0; padding: 0; }
-.pack-badge { --badge-fill: #ffe29a; --badge-ribbon: #ffb6cf; position: absolute; width: 44px; height: 50px; transform: translate(-50%, -50%); animation: badge-float var(--badge-duration) ease-in-out var(--badge-delay) infinite; pointer-events: auto; color: var(--purple-dark); border-radius: 12px; outline-offset: 3px; }
+.pack-badge { --badge-fill: #ffe29a; --badge-ribbon: #ffb6cf; position: absolute; width: 56px; height: 70px; transform: translate(-50%, -50%); animation: badge-float var(--badge-duration) ease-in-out var(--badge-delay) infinite; pointer-events: auto; color: var(--purple-dark); border-radius: 12px; outline-offset: 3px; }
 .pack-badge-medal { display: block; width: 100%; height: 100%; overflow: visible; stroke: var(--purple-dark); stroke-width: 3; stroke-linejoin: round; }
 .badge-ribbons { fill: var(--badge-ribbon); }
+.badge-ribbon-tails { fill: var(--badge-ribbon); }
+.badge-ribbon-fold { fill: var(--purple-dark); }
+.badge-inlay { fill: #fff5df; stroke-width: 1.8; }
+.badge-stitch { fill: none; stroke-dasharray: 3 4; stroke-width: 1; }
+.badge-leaves, .badge-laurel { fill: var(--badge-ribbon); stroke-width: 2; }
+.badge-studs, .badge-crown, .badge-wings { fill: var(--badge-ribbon); }
+.badge-engraving { fill: none; stroke-width: 1.8; }
+.badge-family text { fill: var(--purple-dark); stroke: none; font-size: 15px; font-weight: 900; letter-spacing: -.5px; }
+.badge-crab { fill: var(--badge-fill); stroke-width: 2; stroke-linecap: round; }
+.badge-suitcase { fill: var(--badge-fill); stroke-width: 2; }
+.badge-new { --badge-fill: #ece4f1; --badge-ribbon: #d6c9e6; }
+.badge-learning { --badge-fill: #d1e5b4; --badge-ribbon: #b9d8a8; }
 .badge-disc { fill: var(--badge-fill); }
 .badge-ring { fill: none; stroke-width: 1.5; opacity: .45; }
-.badge-number { fill: var(--purple-dark); stroke: none; font-size: 28px; font-weight: 900; }
+.badge-number { fill: var(--purple-dark); stroke: none; font-size: 22px; font-weight: 900; }
 .badge-format { fill: #fff8e4; stroke-width: 2.5; }
 .pack-badge::after { content: attr(aria-label); display: none; position: absolute; z-index: 3; top: calc(100% + 6px); left: 0; width: max-content; max-width: min(210px, 60vw); padding: 9px 12px; border: 2px solid var(--purple-dark); border-radius: 12px; color: var(--purple-dark); background: #fff8ed; font-size: 13px; line-height: 1.4; text-align: left; box-shadow: 0 3px 0 rgb(67 31 116 / .12); }
 .pack-badge.badge-right::after { left: auto; right: 0; }
 .pack-badge.badge-center::after { left: 50%; right: auto; transform: translateX(-50%); }
 .pack-badge:hover::after, .pack-badge:focus::after { display: block; }
-.badge-familiar { --badge-fill: #ffc5df; --badge-ribbon: #ffd680; }
+.badge-familiar { --badge-fill: #ffc5df; --badge-ribbon: #f4a8c8; }
 .badge-steady { --badge-fill: #dbc6ff; --badge-ribbon: #ffb6cf; }
 .badge-strong { --badge-fill: #ffbc86; --badge-ribbon: #ccb0ff; }
 .badge-confident { --badge-fill: #bce2da; --badge-ribbon: #ffcf79; }
 .badge-mastered { --badge-fill: #ffcf59; --badge-ribbon: #c9a3ff; }
+@media (min-width: 440px) { .pack-badge { width: 64px; height: 80px; } }
 
 @keyframes badge-float {
   0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
