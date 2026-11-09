@@ -1,0 +1,70 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "status": "artwork-generated-awaiting-owner-review",
+  "tool": "built-in image_gen",
+  "words": 36,
+  "pictures": {
+    "generated": 11,
+    "approvedReuse": 25,
+    "pending": 0,
+    "originalVersionsPreserved": 11,
+    "manifest": "artifacts/spanish-food-1-art/manifest.json",
+    "manifestSha256": "2b38c03b96350f6cbce43c852515943c627599413e77bde7bcdeda2b5822f14f",
+    "requests": "artifacts/spanish-food-1-art/requests.json",
+    "requestsSha256": "d4546b07396a6cc034a98be6fd3b51aac458cf038da11f3949269eb60e957577",
+    "contactSheet": "artifacts/spanish-food-1-art/contact-sheet.png"
+  },
+  "generationAuthorization": "content/spanish-food-1/generation-approval.json",
+  "draftSha256": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+  "checks": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 571,
+    "node": 291,
+    "pythonAudioContent": 18,
+    "pythonCards": 27,
+    "lint": "passed",
+    "typecheck": "passed",
+    "cardValidator": "passed",
+    "neighborValidator": "passed",
+    "productionBuild": "passed",
+    "focusedArtworkTests": 4
+  },
+  "galleryBrowsers": [
+    {
+      "browser": "chromium",
+      "loadedImages": 36,
+      "new": 11,
+      "reused": 25,
+      "groupFilter": true,
+      "sourceFilter": true,
+      "accentSearch": true,
+      "stableExistingSpanishIds": 24,
+      "audioElements": 0,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "loadedImages": 36,
+      "new": 11,
+      "reused": 25,
+      "groupFilter": true,
+      "sourceFilter": true,
+      "accentSearch": true,
+      "stableExistingSpanishIds": 24,
+      "audioElements": 0,
+      "overflow": false,
+      "pageErrors": []
+    }
+  ],
+  "independentReview": "Read-only code, scope, reuse, source/hash and visual review found no material findings. All36selectedimagehashes and11prompt/reference/recordchains validated.",
+  "audioGenerated": 0,
+  "runtimeActivated": false,
+  "limitations": [
+    "Artwork awaits consolidated owner feedback.",
+    "Future practice activation requires new-audio authorization/acceptance and cross-pack picture-choice review.",
+    "Mobile WebKit is supplementary to real-iPhone testing."
+  ]
+}
