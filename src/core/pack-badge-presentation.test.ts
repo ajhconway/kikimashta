@@ -2,8 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { masteryLevels } from './mastery';
 import type { PackBadge } from './pack-badges';
 import {
-  BADGE_CELEBRATE_MS, BADGE_REDUCED_CELEBRATE_MS, BADGE_REORDER_MS,
-  BadgePresentationController, badgeChanges, packBadgePosition, sortPackBadges,
+  BADGE_CELEBRATE_MS, BADGE_UPGRADE_MS, BADGE_REDUCED_CELEBRATE_MS, BADGE_REORDER_MS,
+  BadgePresentationController, badgeChanges, layoutPackBadges, sortPackBadges,
 } from './pack-badge-presentation';
 
 function badge(id: string, level = 3): PackBadge {
@@ -24,7 +24,7 @@ it('orders highest mastery first while preserving source order for ties without 
 
 it('fills upright mirrored unit-circle slots from the top for odd and even counts', () => {
   for (let count = 1; count <= 12; count++) {
-    const points = Array.from({ length: count }, (_, index) => packBadgePosition(index, count));
+    const points = layoutPackBadges(Array.from({ length: count }, (_, index) => badge(String(index)))).map(entry => entry.position);
     expect(new Set(points.map(point => `${point.x.toFixed(8)},${point.y.toFixed(8)}`)).size).toBe(count);
     points.forEach(point => expect(Math.hypot(point.x, point.y)).toBeCloseTo(1, 8));
     if (count % 2) expect(points[0]).toEqual({ x: 0, y: -1 });
@@ -64,19 +64,19 @@ describe('BadgePresentationController', () => {
 
   it('replaces an upgraded medal in its old slot before reordering both badges', () => {
     const controller = new BadgePresentationController();
-    controller.update(input([badge('a'), badge('b', 5)]));
+    controller.update(input([badge('a'), badge('b', 5), badge('c', 6)]));
     const originalPositions = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.position]));
-    controller.update(input([badge('a', 7), badge('b', 5)]));
+    controller.update(input([badge('a', 7), badge('b', 5), badge('c', 6)]));
     expect(controller.getSnapshot().phase).toBe('celebrate');
-    expect(ids(controller)).toEqual(['b', 'a']);
+    expect(ids(controller)).toEqual(['c', 'a', 'b']);
     expect(current(controller)).toMatchObject({ badge: { pack: { id: 'a' }, level: { label: 'Mastered' } },
       position: originalPositions.get('a'), celebration: { kind: 'upgrade', previous: { level: { label: 'Familiar' } } } });
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS - 1);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS - 1);
     expect(controller.getSnapshot().phase).toBe('celebrate');
-    expect(controller.getSnapshot().entries.map(entry => entry.position)).toEqual([originalPositions.get('b'), originalPositions.get('a')]);
+    expect(controller.getSnapshot().entries.map(entry => entry.position)).toEqual([originalPositions.get('c'), originalPositions.get('a'), originalPositions.get('b')]);
     vi.advanceTimersByTime(1);
-    expect(controller.getSnapshot().phase).toBe('reorder'); expect(ids(controller)).toEqual(['a', 'b']);
-    expect(controller.getSnapshot().entries[0]!.position).toEqual(packBadgePosition(0, 2));
+    expect(controller.getSnapshot().phase).toBe('reorder'); expect(ids(controller)).toEqual(['a', 'c', 'b']);
+    expect(controller.getSnapshot().entries[0]!.position).toEqual({ x: 0, y: -1 });
     expect(current(controller)).toBeUndefined();
     vi.advanceTimersByTime(BADGE_REORDER_MS);
     expect(controller.getSnapshot().phase).toBe('idle'); expect(vi.getTimerCount()).toBe(0);
@@ -86,7 +86,7 @@ describe('BadgePresentationController', () => {
     const controller = new BadgePresentationController(); controller.update(input([badge('a')]));
     controller.update(input([badge('a', 5)]));
     const accepted = controller.getSnapshot();
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS - 1);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS - 1);
     controller.update(input([badge('a', 5)]));
     expect(controller.getSnapshot()).toBe(accepted);
     vi.advanceTimersByTime(1);
@@ -94,11 +94,11 @@ describe('BadgePresentationController', () => {
   });
 
   it('uses source order for ties after an upgrade changes the ordering', () => {
-    const controller = new BadgePresentationController(); controller.update(input([badge('a'), badge('b', 5)]));
-    expect(ids(controller)).toEqual(['b', 'a']);
-    controller.update(input([badge('a', 5), badge('b', 5)]));
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
-    expect(controller.getSnapshot().phase).toBe('reorder'); expect(ids(controller)).toEqual(['a', 'b']);
+    const controller = new BadgePresentationController(); controller.update(input([badge('a'), badge('b', 5), badge('c', 6)]));
+    expect(ids(controller)).toEqual(['c', 'a', 'b']);
+    controller.update(input([badge('a', 6), badge('b', 5), badge('c', 6)]));
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
+    expect(controller.getSnapshot().phase).toBe('reorder'); expect(ids(controller)).toEqual(['a', 'c', 'b']);
     vi.advanceTimersByTime(BADGE_REORDER_MS); expect(controller.getSnapshot().phase).toBe('idle');
   });
 
@@ -117,7 +117,7 @@ describe('BadgePresentationController', () => {
   it('does not add a reorder phase when an upgrade does not change any slots', () => {
     const controller = new BadgePresentationController(); controller.update(input([badge('a', 5), badge('b')]));
     controller.update(input([badge('a', 6), badge('b')]));
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
     expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['a', 'b']);
     expect(vi.getTimerCount()).toBe(0);
   });
@@ -140,18 +140,17 @@ describe('BadgePresentationController', () => {
     expect(controller.getSnapshot().phase).toBe('idle');
   });
 
-  it('takes the short arc across the bottom instead of revolving almost a whole circle', () => {
+  it('moves an upgraded medal up its own side instead of swapping across the bottom', () => {
     const controller = new BadgePresentationController();
     const before = Array.from({ length: 10 }, (_, index) => badge(String(index), index < 8 ? 5 : index === 8 ? 3 : 4));
     controller.update(input(before));
     const original = controller.getSnapshot().entries.find(entry => entry.badge.pack.id === '8')!;
-    expect(original.angle).toBeCloseTo(162);
-    controller.update(input(before.map(entry => entry.pack.id === '8' ? badge('8', 4) : entry)));
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    expect(original.angle).toBeCloseTo(162); expect(original.side).toBe('right');
+    controller.update(input(before.map(entry => entry.pack.id === '8' ? badge('8', 7) : entry)));
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
     const moved = controller.getSnapshot().entries.find(entry => entry.badge.pack.id === '8')!;
-    expect(moved.angle).toBeCloseTo(198);
-    expect(moved.angle - original.angle).toBeCloseTo(36);
-    expect(moved.position).toEqual(packBadgePosition(8, 10));
+    expect(moved.angle).toBeCloseTo(18); expect(moved.side).toBe('right');
+    expect(controller.getSnapshot().entries.filter(entry => entry.side === 'right')[0]!.badge.pack.id).toBe('8');
   });
 
   it('chooses alternating open sides so every medal makes the same small turn for a new lowest badge', () => {
@@ -174,21 +173,40 @@ describe('BadgePresentationController', () => {
     }
   });
 
-  it('keeps a common award rotation direction even when the new badge inserts among higher ranks or ties', () => {
+  it('retains sides and orders each side when an award inserts among higher mastery or ties', () => {
     for (const level of [2, 4, 7]) {
       const controller = new BadgePresentationController();
       const before = [badge('a', 5), badge('b', 3), badge('c', 3), badge('d', 2)];
       controller.update(input(before));
+      const sides = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.side]));
       controller.update(input([badge('new', level), ...before]));
-      const start = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.angle]));
-      vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+      vi.advanceTimersByTime(BADGE_CELEBRATE_MS + BADGE_REORDER_MS);
       const entries = controller.getSnapshot().entries;
-      const deltas = entries.map(entry => entry.angle - start.get(entry.badge.pack.id)!);
-      expect(new Set(deltas.filter(delta => Math.abs(delta) > 1e-8).map(Math.sign)).size).toBe(1);
-      entries.forEach((entry, index) => expect(entry.position).toEqual(packBadgePosition(index, entries.length)));
-      expect(entries.map(entry => entry.badge.pack.id)).toEqual(sortPackBadges([badge('new', level), ...before]).map(entry => entry.pack.id));
+      entries.forEach(entry => {
+        if (sides.has(entry.badge.pack.id)) expect(entry.side).toBe(sides.get(entry.badge.pack.id));
+        expect(entry.side === 'left' ? entry.position.x <= 0 : entry.position.x >= 0).toBe(true);
+      });
+      for (const side of ['left', 'right']) {
+        const group = entries.filter(entry => entry.side === side).map(entry => entry.badge);
+        expect(group).toEqual(sortPackBadges([badge('new', level), ...before].filter(badge => group.some(entry => entry.pack.id === badge.pack.id))));
+      }
       controller.dispose();
     }
+  });
+
+  it('keeps side membership through removals, downward changes and a re-earned badge', () => {
+    const controller = new BadgePresentationController();
+    const before = Array.from({ length: 8 }, (_, index) => badge(String(index), 5));
+    controller.update(input(before));
+    const sides = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.side]));
+    const remaining = before.filter(entry => ['0', '1', '3', '5', '7'].includes(entry.pack.id));
+    controller.update(input(remaining.map(entry => entry.pack.id === '3' ? badge('3', 2) : entry)));
+    vi.runAllTimers();
+    controller.update(input(before)); vi.runAllTimers();
+    controller.getSnapshot().entries.forEach(entry => {
+      expect(entry.side).toBe(sides.get(entry.badge.pack.id));
+      expect(entry.side === 'left' ? entry.angle <= 0 : entry.angle >= 0).toBe(true);
+    });
   });
 
   it('queues multiple awards, holding revealed badges still until each celebration ends', () => {
@@ -199,7 +217,7 @@ describe('BadgePresentationController', () => {
     expect(ids(controller)).toEqual(['a', 'b']); expect(current(controller)?.badge.pack.id).toBe('b');
     expect(controller.getSnapshot().entries[0]!.position).toEqual({ x: 0, y: -1 });
     cycle();
-    expect(ids(controller)).toEqual(['b', 'a']); expect(controller.getSnapshot().phase).toBe('idle');
+    expect(ids(controller)).toEqual(['a', 'b']); expect(controller.getSnapshot().phase).toBe('idle');
     expect(vi.getTimerCount()).toBe(0);
   });
 
@@ -211,11 +229,11 @@ describe('BadgePresentationController', () => {
     controller.update(input([badge('a', 7), badge('b', 2)]));
     expect(current(controller)!.celebration!.token).toBe(token);
     expect(current(controller)?.badge.level.label).toBe('Strong');
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS - 200);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS - 200);
     expect(current(controller)).toMatchObject({ badge: { pack: { id: 'a' }, level: { label: 'Mastered' } },
       celebration: { previous: { level: { label: 'Strong' } } } });
     expect(current(controller)!.celebration!.token).not.toBe(token);
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
     expect(current(controller)?.badge.pack.id).toBe('b');
     cycle();
     expect(ids(controller)).toEqual(['a', 'b']); expect(controller.getSnapshot().phase).toBe('idle');
@@ -223,17 +241,17 @@ describe('BadgePresentationController', () => {
   });
 
   it('queues progress arriving during the reorder phase after the current move finishes', () => {
-    const controller = new BadgePresentationController(); controller.update(input([badge('a'), badge('b', 5)]));
-    controller.update(input([badge('a', 7), badge('b', 5)]));
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
-    controller.update(input([badge('a', 7), badge('b', 6), badge('c', 5)]));
+    const controller = new BadgePresentationController(); controller.update(input([badge('a'), badge('b', 5), badge('z', 6)]));
+    controller.update(input([badge('a', 7), badge('b', 5), badge('z', 6)]));
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
+    controller.update(input([badge('a', 7), badge('b', 6), badge('z', 6), badge('c', 5)]));
     expect(controller.getSnapshot().phase).toBe('reorder'); expect(current(controller)).toBeUndefined();
     vi.advanceTimersByTime(BADGE_REORDER_MS);
     expect(current(controller)).toMatchObject({ badge: { pack: { id: 'b' }, level: { label: 'Confident' } },
       celebration: { kind: 'upgrade', previous: { level: { label: 'Strong' } } } });
-    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS);
     expect(current(controller)?.badge.pack.id).toBe('c');
-    cycle(); expect(ids(controller)).toEqual(['a', 'b', 'c']); expect(controller.getSnapshot().phase).toBe('idle');
+    cycle(); expect(ids(controller)).toEqual(['a', 'b', 'z', 'c']); expect(controller.getSnapshot().phase).toBe('idle');
   });
 
   it('keeps the last accepted baseline through pending or failed Home history loads', () => {
@@ -270,7 +288,7 @@ describe('BadgePresentationController', () => {
     expect(ids(controller)).toEqual(['b', 'a']);
     expect(controller.getSnapshot().entries.find(entry => entry.badge.pack.id === 'b')?.badge.level.label).toBe('Improving');
     expect(current(controller)?.badge.pack.id).toBe('a');
-    vi.runAllTimers(); expect(ids(controller)).toEqual(['a', 'd', 'b']); expect(controller.getSnapshot().phase).toBe('idle');
+    vi.runAllTimers(); expect(ids(controller)).toEqual(['a', 'b', 'd']); expect(controller.getSnapshot().phase).toBe('idle');
   });
 
   it('settles an interrupted celebration on leaving Home but detects later saved progress on return', () => {
@@ -282,7 +300,7 @@ describe('BadgePresentationController', () => {
     expect(controller.getSnapshot().entries[0]?.badge.level.label).toBe('Strong');
     controller.update(input([badge('a', 7)]));
     expect(current(controller)).toMatchObject({ celebration: { kind: 'upgrade', previous: { level: { label: 'Strong' } } } });
-    cycle(); controller.update(input(null, { active: false })); controller.update(input([badge('a', 7)]));
+    vi.advanceTimersByTime(BADGE_UPGRADE_MS + BADGE_REORDER_MS); controller.update(input(null, { active: false })); controller.update(input([badge('a', 7)]));
     expect(current(controller)).toBeUndefined(); expect(vi.getTimerCount()).toBe(0);
   });
 
@@ -306,7 +324,7 @@ describe('BadgePresentationController', () => {
     vi.advanceTimersByTime(BADGE_REDUCED_CELEBRATE_MS - 1);
     expect(controller.getSnapshot().phase).toBe('celebrate');
     vi.advanceTimersByTime(1);
-    expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['a', 'b']); expect(vi.getTimerCount()).toBe(0);
+    expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['b', 'a']); expect(vi.getTimerCount()).toBe(0);
   });
 
   it('honors reduced motion when it changes mid-celebration or mid-reorder', () => {
@@ -314,7 +332,7 @@ describe('BadgePresentationController', () => {
     controller.update(input([badge('a', 7), badge('b', 5)]));
     controller.update(input(null, { reducedMotion: true }));
     vi.advanceTimersByTime(BADGE_REDUCED_CELEBRATE_MS);
-    expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['a', 'b']);
+    expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['b', 'a']);
     controller.update(input([badge('a', 7), badge('b', 5)], { reducedMotion: false }));
     controller.update(input([badge('a', 7), badge('b', 5), badge('c', 6)]));
     vi.advanceTimersByTime(BADGE_CELEBRATE_MS); expect(controller.getSnapshot().phase).toBe('reorder');

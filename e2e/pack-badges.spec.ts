@@ -176,12 +176,14 @@ test('saved badge changes celebrate on Home return before reordering and respect
   const firstId = 'ja-wanikani-1-pictures', secondId = 'ja-wanikani-2-pictures';
   const first = await badgeHistory(packCards(1, 'audio-picture'), firstId, 3);
   const second = await badgeHistory(packCards(2, 'audio-picture'), secondId, 4);
-  await putBadgeHistory(page, [...first, ...second]);
+  const anchorId = 'ja-wanikani-3-pictures';
+  const anchor = await badgeHistory(packCards(3, 'audio-picture'), anchorId, 5);
+  await putBadgeHistory(page, [...first, ...second, ...anchor]);
   await page.reload();
   const region = page.getByRole('region', { name: 'Pack mastery badges' });
   await expect(region).toHaveAttribute('data-phase', 'idle');
-  await expect(region.getByRole('listitem')).toHaveCount(2);
-  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', secondId);
+  await expect(region.getByRole('listitem')).toHaveCount(3);
+  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', anchorId);
   await expect(page.locator('.badge-fireworks')).toHaveCount(0);
   const firstBadge = page.locator(`[data-pack-id="${firstId}"]`);
   const oldSlot = await firstBadge.getAttribute('style');
@@ -195,9 +197,23 @@ test('saved badge changes celebrate on Home return before reordering and respect
     slot: element.getAttribute('style'), kind: element.getAttribute('data-celebration'),
     previous: element.querySelector('.badge-previous-art .pack-badge-medal')?.getAttribute('data-rank'),
     current: element.querySelector('.badge-current-art .pack-badge-medal')?.getAttribute('data-rank'),
-    sparks: element.querySelectorAll('.badge-fireworks i').length,
+    side: element.getAttribute('data-side'),
   }));
-  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', sparks: 48 });
+  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', side: 'left' });
+  const fireworks = page.locator('.badge-fireworks[data-kind="upgrade"]');
+  await expect(fireworks.locator('[data-burst]')).toHaveCount(5);
+  expect(await fireworks.locator('.firework-ray').count()).toBeGreaterThan(100);
+  // Seek the actual CSS animations to inspect the disappearance/pause/reveal deterministically.
+  await firstBadge.evaluate(element => {
+    const previous = element.querySelector('.badge-previous-art')!.getAnimations()[0]!;
+    const current = element.querySelector('.badge-current-art')!.getAnimations()[0]!;
+    if (Number(previous.effect!.getTiming().duration) !== 500 || Number(current.effect!.getTiming().delay) !== 1050) throw new Error('Unexpected upgrade pacing');
+    previous.pause(); current.pause(); previous.currentTime = 750; current.currentTime = 750;
+  });
+  await expect(firstBadge.locator('.badge-previous-art')).toHaveCSS('opacity', '0');
+  await expect(firstBadge.locator('.badge-current-art')).toHaveCSS('opacity', '0');
+  await firstBadge.evaluate(element => { const animation = element.querySelector('.badge-current-art')!.getAnimations()[0]!; animation.currentTime = 1500; animation.play(); });
+  await expect(firstBadge.locator('.badge-current-art')).toHaveCSS('opacity', '1');
   await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
   await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', firstId);
   expect(await firstBadge.getAttribute('style')).not.toBe(oldSlot);
@@ -218,12 +234,14 @@ test('saved badge changes celebrate on Home return before reordering and respect
   }));
   expect(orbit.length).toBeGreaterThan(10);
   expect(Math.max(...orbit.map(sample => sample.angle)) - Math.min(...orbit.map(sample => sample.angle))).toBeGreaterThan(10);
+  orbit.forEach(sample => expect(sample.angle).toBeLessThanOrEqual(.01));
+  await expect(firstBadge).toHaveAttribute('data-side', 'left');
   const radii = orbit.map(sample => sample.radius);
   expect(Math.max(...radii) - Math.min(...radii)).toBeLessThan(1);
   await expect(region).toHaveAttribute('data-phase', 'idle');
   await expect(page.locator('.badge-previous-art, .badge-fireworks')).toHaveCount(0);
 
-  const third = await badgeHistory(packCards(3, 'audio-picture'), 'ja-wanikani-3-pictures', 3);
+  const third = await badgeHistory(packCards(4, 'audio-picture'), 'ja-wanikani-4-pictures', 3);
   const settledSlots = await region.getByRole('listitem').evaluateAll(elements => elements.map(element => element.getAttribute('style')));
   await putBadgeHistory(page, third);
   await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
@@ -233,26 +251,27 @@ test('saved badge changes celebrate on Home return before reordering and respect
     return Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2);
   });
   expect(awardRadius).toBeCloseTo(radii.at(-1)!, 0);
-  expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 2).map(element => element.getAttribute('style')))).toEqual(settledSlots);
+  expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 3).map(element => element.getAttribute('style')))).toEqual(settledSlots);
   const startAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id'), Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
   await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
   const turns = await region.getByRole('listitem').evaluateAll((elements, start) => elements.map(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')) - start[element.getAttribute('data-pack-id')!]!), startAngles);
-  turns.forEach(turn => expect(turn).toBeCloseTo(18));
+  turns.forEach(turn => expect(turn).toBeCloseTo(-18));
   await expect(region).toHaveAttribute('data-phase', 'idle');
 
-  const thirdUpgrade = await badgeHistory(packCards(3, 'audio-picture'), 'ja-wanikani-3-pictures', 7);
+  const thirdUpgrade = await badgeHistory(packCards(4, 'audio-picture'), 'ja-wanikani-4-pictures', 7);
   await putBadgeHistory(page, thirdUpgrade);
   await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
   await expect(page.locator('[data-celebration="upgrade"]')).toHaveCount(1);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(page.locator('[data-celebration="upgrade"] .badge-current-art')).toHaveCSS('animation-name', 'none');
   await expect(region).toHaveAttribute('data-phase', 'idle');
-  await expect(region.getByRole('listitem')).toHaveCount(3);
+  await expect(region.getByRole('listitem')).toHaveCount(4);
+  await expect(page.locator('[data-pack-id="ja-wanikani-4-pictures"]')).toHaveAttribute('data-side', 'right');
   await expect(region.getByRole('listitem').first()).toHaveCSS('transition-property', 'none');
-  const expectedIds = new Set([...first, ...second, ...upgraded, ...third, ...thirdUpgrade].map(attempt => attempt.id));
+  const expectedIds = new Set([...first, ...second, ...anchor, ...upgraded, ...third, ...thirdUpgrade].map(attempt => attempt.id));
   expect(new Set((await savedAttempts(page)).map(attempt => attempt.id))).toEqual(expectedIds);
   await page.reload();
   await expect(region).toHaveAttribute('data-phase', 'idle');
-  await expect(region.getByRole('listitem')).toHaveCount(3);
+  await expect(region.getByRole('listitem')).toHaveCount(4);
   await expect(page.locator('.badge-fireworks')).toHaveCount(0);
 });

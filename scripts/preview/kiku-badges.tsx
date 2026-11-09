@@ -88,7 +88,7 @@ function KikuBadgeDemo() {
           <button type="button" onClick={() => configure(defaults)}>Reset preview</button>
         </div>
       </form>
-      <p className="demo-badge-phase" role="status">{presentation.phase === 'celebrate' ? 'Celebrating!' : presentation.phase === 'reorder' ? 'Moving into mastery order…' : 'Highest mastery at the top'}</p>
+      <p className="demo-badge-phase" role="status">{presentation.phase === 'celebrate' ? 'Celebrating!' : presentation.phase === 'reorder' ? 'Moving into mastery order…' : 'Highest mastery at the top of each side'}</p>
       <p className="kiku-demo-note">Sample badges only. Your learning progress stays unchanged. Earn or upgrade a badge to try its celebration.</p>
     </div>
   </div>;

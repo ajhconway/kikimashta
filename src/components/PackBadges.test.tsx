@@ -23,7 +23,7 @@ it('renders named pack badges and removes the section when no badge is available
 
 it('uses a distinct illustrated background for every rank and independent accessible overlay content', () => {
   const orderedLevels = [...masteryLevels].reverse();
-  const badges = masteryLevels.map(level => ({ ...badge, level }));
+  const badges = masteryLevels.map(level => ({ ...badge, level, pack: { ...badge.pack, id: `rank-${level.label}` } }));
   const { container } = render(<PackBadges badges={badges}/>);
   const medals = Array.from(container.querySelectorAll('.pack-badge-medal'));
   expect(medals).toHaveLength(8);
