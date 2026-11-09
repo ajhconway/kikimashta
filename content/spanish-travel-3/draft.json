@@ -1,0 +1,735 @@
+{
+  "issue": 174,
+  "id": "es-419-travel-3",
+  "language": "es-419",
+  "title": "Travel level 3",
+  "status": "draft-awaiting-word-review",
+  "exercise": "audio-picture",
+  "interfaceLanguage": "en",
+  "packId": "es-419-travel-3-pictures",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceRegistrySha256": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+  "voiceSelection": [
+    {
+      "voice": "juan",
+      "name": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX"
+    },
+    {
+      "voice": "pamela",
+      "name": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX"
+    },
+    {
+      "voice": "albeiro",
+      "name": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO"
+    },
+    {
+      "voice": "carito",
+      "name": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO"
+    },
+    {
+      "voice": "santiago",
+      "name": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR"
+    },
+    {
+      "voice": "agustina",
+      "name": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR"
+    },
+    {
+      "voice": "carlos-figueroa",
+      "name": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR"
+    },
+    {
+      "voice": "veronica",
+      "name": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR"
+    }
+  ],
+  "groups": [
+    {
+      "id": "town",
+      "title": "Walking around town"
+    },
+    {
+      "id": "transport",
+      "title": "Getting around"
+    },
+    {
+      "id": "food",
+      "title": "Fruit and quick food"
+    },
+    {
+      "id": "clothing",
+      "title": "Clothing"
+    },
+    {
+      "id": "outdoors",
+      "title": "Outdoors"
+    },
+    {
+      "id": "hotel",
+      "title": "Hotel comforts and essentials"
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-sidewalk",
+      "slug": "sidewalk",
+      "text": "banqueta",
+      "meaning": "Sidewalk",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A raised paved sidewalk and curb beside a narrow strip of street; the broad pedestrian surface dominates, with no cars, crossing stripes or signs."
+      }
+    },
+    {
+      "id": "es-419-travel-crosswalk",
+      "slug": "crosswalk",
+      "text": "cruce peatonal",
+      "meaning": "Pedestrian crossing",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One clear zebra crossing of broad white stripes spanning a small road segment, seen from above at a slight angle; no cars, arrows, lettering or traffic signal."
+      }
+    },
+    {
+      "id": "es-419-travel-traffic-light",
+      "slug": "traffic-light",
+      "text": "semáforo",
+      "meaning": "Traffic light",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One freestanding traffic signal with three vertically arranged circular red, amber and green lenses; no road scene, car, lettering or arrows."
+      }
+    },
+    {
+      "id": "es-419-travel-fountain",
+      "slug": "fountain",
+      "text": "fuente",
+      "meaning": "Fountain",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One outdoor fountain with a clearly visible central upward water jet and round basin; no swimming-pool ladder, people or surrounding park."
+      }
+    },
+    {
+      "id": "es-419-travel-bench",
+      "slug": "bench",
+      "text": "banca",
+      "meaning": "Bench",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty park bench with a long seat and backrest wide enough for several people; no tree, shelter, people or snowy scene."
+      }
+    },
+    {
+      "id": "es-419-travel-church",
+      "slug": "church",
+      "text": "iglesia",
+      "meaning": "Church",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One small church with a bell tower, arched entrance and simple cross on the roof; no museum columns, statue display, lettering or people."
+      }
+    },
+    {
+      "id": "es-419-travel-subway",
+      "slug": "subway",
+      "text": "metro",
+      "meaning": "Subway (metro)",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One metro train inside a clearly visible underground tunnel with tiled platform edge; the tunnel distinguishes the system from an ordinary open-air train. No readable station name, letter M, people or separate entrance-stair subject."
+      }
+    },
+    {
+      "id": "es-419-travel-motorcycle",
+      "slug": "motorcycle",
+      "text": "motocicleta",
+      "meaning": "Motorcycle",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One complete motorcycle with motor, fuel tank, saddle and two wheels visible; no rider, bicycle pedals, helmet as a second subject or background."
+      }
+    },
+    {
+      "id": "es-419-travel-parking-lot",
+      "slug": "parking-lot",
+      "text": "estacionamiento",
+      "meaning": "Parking lot",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A compact marked parking area seen obliquely from above, with three clear parking bays and one small parked car; emphasize the parking layout, with no letter P, words or prices."
+      }
+    },
+    {
+      "id": "es-419-travel-gas-station",
+      "slug": "gas-station",
+      "text": "gasolinera",
+      "meaning": "Gas station",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One small fuel station canopy and two recognizable fuel pumps with hoses; no car as a main subject, brands, prices or readable text."
+      }
+    },
+    {
+      "id": "es-419-travel-helmet",
+      "slug": "helmet",
+      "text": "casco",
+      "meaning": "Helmet",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One protective motorcycle helmet with an open face area, clear visor and chin guard; no rider, motorcycle, hat brim or written logo."
+      }
+    },
+    {
+      "id": "es-419-travel-seat-belt",
+      "slug": "seat-belt",
+      "text": "cinturón de seguridad",
+      "meaning": "Seat belt",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A clearly fastened three-point seat belt across one empty car seat, with its diagonal shoulder strap, lap strap and buckle visible; no car exterior, person or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-apple",
+      "slug": "apple",
+      "text": "manzana",
+      "meaning": "Apple",
+      "group": "food",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "One whole red apple with a stem and green leaf; reuse the approved standalone apple.",
+        "candidatePath": "public/images/approved/ja-apple-693c57b57b06.jpg",
+        "candidateSha256": "4b763836b91c4aca2bc1058e911b3456ba527742bf672742e90e88acfd35850f",
+        "candidateSourceId": "ja-apple",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected: one standalone red apple, stem and leaf; suitable for manzana."
+      }
+    },
+    {
+      "id": "es-419-travel-banana",
+      "slug": "banana",
+      "text": "plátano",
+      "meaning": "Banana",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One ripe yellow dessert banana, gently curved with a short stem; no other fruit, basket, cooked plantain or plate."
+      }
+    },
+    {
+      "id": "es-419-travel-orange",
+      "slug": "orange",
+      "text": "naranja",
+      "meaning": "Orange (fruit)",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One whole orange fruit with its characteristic dimpled peel and small green leaf; no glass of juice, other fruit or plate."
+      }
+    },
+    {
+      "id": "es-419-travel-avocado",
+      "slug": "avocado",
+      "text": "aguacate",
+      "meaning": "Avocado",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One avocado cut in half to show green flesh and one large brown pit; no other foods, plate, knife or person."
+      }
+    },
+    {
+      "id": "es-419-travel-taco",
+      "slug": "taco",
+      "text": "taco",
+      "meaning": "Taco",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One folded soft corn tortilla taco with visible simple filling; no menu booklet, plate, cutlery, brand, lettering or second food."
+      }
+    },
+    {
+      "id": "es-419-travel-ice-cream",
+      "slug": "ice-cream",
+      "text": "helado",
+      "meaning": "Ice cream",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One scoop of ice cream in a recognizable waffle cone, with a small soft edge or drip; no shaved-ice bowl, spoon, logo or other food."
+      }
+    },
+    {
+      "id": "es-419-travel-shirt",
+      "slug": "shirt",
+      "text": "camisa",
+      "meaning": "Shirt",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty collared button-front shirt with long sleeves, shown alone and unfolded; no person, tie, jacket or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-pants",
+      "slug": "pants",
+      "text": "pantalones",
+      "meaning": "Pants / trousers",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One complete pair of long trousers with waistband and two full legs, shown alone; no person, belt as a separate subject or swimming shorts."
+      }
+    },
+    {
+      "id": "es-419-travel-shoe",
+      "slug": "shoe",
+      "text": "zapato",
+      "meaning": "Shoe",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One closed-toe everyday walking shoe in side view, with its sole, heel and lace area recognizable; no foot, second shoe or other clothing."
+      }
+    },
+    {
+      "id": "es-419-travel-hat",
+      "slug": "hat",
+      "text": "sombrero",
+      "meaning": "Hat",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One simple broad-brimmed sun hat with a crown and plain band; no head, helmet, culturally exaggerated decoration or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-jacket",
+      "slug": "jacket",
+      "text": "chamarra",
+      "meaning": "Jacket",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty casual jacket with a clearly visible front zipper, standing collar and two pockets; no person, shirt underneath or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-swimsuit",
+      "slug": "swimsuit",
+      "text": "traje de baño",
+      "meaning": "Swimsuit",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One empty one-piece swimsuit with two shoulder straps and clear leg openings; no person, shorts, pool or other garments."
+      }
+    },
+    {
+      "id": "es-419-travel-mountain",
+      "slug": "mountain",
+      "text": "montaña",
+      "meaning": "Mountain",
+      "group": "outdoors",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "Snow-capped mountain peaks; reuse the approved isolated mountain illustration.",
+        "candidatePath": "public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg",
+        "candidateSha256": "ce6f40bb2fde03ae06e1f1ea9be86797617f109e00684be8a08cc2caf782bfe2",
+        "candidateSourceId": "ja-v-ddd9dca106e2",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected: isolated snow-capped mountain peaks; suitable for generic montaña despite showing two peaks."
+      }
+    },
+    {
+      "id": "es-419-travel-river",
+      "slug": "river",
+      "text": "río",
+      "meaning": "River",
+      "group": "outdoors",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "A winding river between green banks; reuse the approved river illustration.",
+        "candidatePath": "public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg",
+        "candidateSha256": "bf0fbf654b6c97a908a5eefe05fab21d704a1d3496a6757bb8a6c63523300519",
+        "candidateSourceId": "ja-v-46f8fe65f218",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected: winding blue river between green banks, with no unrelated main subject."
+      }
+    },
+    {
+      "id": "es-419-travel-lake",
+      "slug": "lake",
+      "text": "lago",
+      "meaning": "Lake",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One broad enclosed freshwater lake with an irregular natural shoreline visibly wrapping around it; no straight tiled edges, ladder, winding river, beach umbrella or boat."
+      }
+    },
+    {
+      "id": "es-419-travel-island",
+      "slug": "island",
+      "text": "isla",
+      "meaning": "Island",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One compact green island completely surrounded by blue water, seen from an elevated angle; water must be visible around every side, with no mainland, beach umbrella or boat."
+      }
+    },
+    {
+      "id": "es-419-travel-forest",
+      "slug": "forest",
+      "text": "bosque",
+      "meaning": "Forest",
+      "group": "outdoors",
+      "artwork": {
+        "status": "reuse-candidate",
+        "concept": "A group of leafy trees forming a compact grove; reuse the approved forest illustration.",
+        "candidatePath": "public/images/approved/ja-v-698044202165-8f2b6799af1c.png",
+        "candidateSha256": "be4cc43854267ee04f90c1d5927c307a15021b0bed71afa7dd5a5ebe0ed85d5e",
+        "candidateSourceId": "ja-v-698044202165",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected: five leafy trees form a grove; suitable for bosque and already transparent."
+      }
+    },
+    {
+      "id": "es-419-travel-waterfall",
+      "slug": "waterfall",
+      "text": "cascada",
+      "meaning": "Waterfall",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One clearly vertical waterfall pouring over a low rocky ledge into a small pool, with a few white splash shapes; no mountain peaks, bridge, fountain jet or surrounding forest."
+      }
+    },
+    {
+      "id": "es-419-travel-pillow",
+      "slug": "pillow",
+      "text": "almohada",
+      "meaning": "Pillow",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One soft rectangular sleeping pillow with a simple seam and gentle corner folds; no bed, blanket, person or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-blanket",
+      "slug": "blanket",
+      "text": "cobija",
+      "meaning": "Blanket",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One folded warm rectangular blanket with a clearly visible soft textile fold and small fringe; no bed, pillow, person or towel loop."
+      }
+    },
+    {
+      "id": "es-419-travel-hair-dryer",
+      "slug": "hair-dryer",
+      "text": "secadora de pelo",
+      "meaning": "Hair dryer",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One handheld hair dryer with handle, nozzle and short visible power lead; no person, hairbrush, charger or lettering."
+      }
+    },
+    {
+      "id": "es-419-travel-toilet-paper",
+      "slug": "toilet-paper",
+      "text": "papel higiénico",
+      "meaning": "Toilet paper",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One toilet-paper roll with visible cardboard core and a short loose perforated paper tail; no toilet, towel, person or readable text."
+      }
+    },
+    {
+      "id": "es-419-travel-comb",
+      "slug": "comb",
+      "text": "peine",
+      "meaning": "Comb",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One simple hair comb with a straight spine and a single row of clearly separated teeth; no hairbrush, person or scissors."
+      }
+    },
+    {
+      "id": "es-419-travel-mirror",
+      "slug": "mirror",
+      "text": "espejo",
+      "meaning": "Mirror",
+      "group": "hotel",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One oval handheld mirror with a short handle and reflective blue-grey face, using a simple reflection highlight; no person, open window, room scene or spoon bowl."
+      }
+    }
+  ],
+  "choiceReviewNotes": [
+    {
+      "ids": [
+        "es-419-travel-subway",
+        "es-419-travel-train",
+        "es-419-travel-train-station"
+      ],
+      "note": "The metro picture must show an underground tunnel/platform. Exclude metro versus the generic train and train-station pictures when packs combine; all can depict rail travel."
+    },
+    {
+      "ids": [
+        "es-419-travel-sidewalk",
+        "es-419-travel-crosswalk",
+        "es-419-travel-street"
+      ],
+      "note": "Keep the pedestrian sidewalk and zebra crossing distinct from the level 2 street scene. Review these three together at 145px before choosing distractors."
+    },
+    {
+      "ids": [
+        "es-419-travel-bench",
+        "es-419-travel-park",
+        "es-419-travel-bus-stop",
+        "es-419-travel-chair"
+      ],
+      "note": "The park and bus-stop pictures already contain a bench; exclude banca versus those scenes. The new banca must read as a long multi-person seat, distinct from silla."
+    },
+    {
+      "ids": [
+        "es-419-travel-church",
+        "es-419-travel-museum"
+      ],
+      "note": "Keep the bell tower and roof cross distinct from the museum portico/statue; no generic civic building can serve as both pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-parking-lot",
+        "es-419-travel-car",
+        "es-419-travel-taxi"
+      ],
+      "note": "The parking picture includes a small car to establish scale/use. Exclude parking-lot versus car/taxi if the vehicle makes either answer defensible."
+    },
+    {
+      "ids": [
+        "es-419-travel-seat-belt",
+        "es-419-travel-car",
+        "es-419-travel-taxi"
+      ],
+      "note": "Use the belt and empty seat as the whole subject, not a car exterior. Review against the vehicle cards before activation."
+    },
+    {
+      "ids": [
+        "es-419-travel-apple",
+        "es-419-travel-banana",
+        "es-419-travel-orange",
+        "es-419-travel-avocado",
+        "es-419-travel-market"
+      ],
+      "note": "The approved market contains apples and bananas among its produce. Exclude affected fruit/market pairs when the same fruit is clearly present."
+    },
+    {
+      "ids": [
+        "es-419-travel-taco",
+        "es-419-travel-menu"
+      ],
+      "note": "The approved menu has a taco pictogram. Exclude taco/menu as picture distractors; retain the full menu booklet as the primary menu subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-river",
+        "es-419-travel-bridge"
+      ],
+      "note": "The approved bridge includes a river. Exclude río/puente as picture distractors."
+    },
+    {
+      "ids": [
+        "es-419-travel-lake",
+        "es-419-travel-river",
+        "es-419-travel-swimming-pool"
+      ],
+      "note": "A lake needs an enclosed irregular natural shoreline. Keep it distinct from a winding river and the rectangular tiled pool; review together at 145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-island",
+        "es-419-travel-beach"
+      ],
+      "note": "Show water surrounding every side of the island. A shoreline fragment alone can read as either isla or playa."
+    },
+    {
+      "ids": [
+        "es-419-travel-forest",
+        "es-419-travel-park"
+      ],
+      "note": "The park includes a tree; forest needs a clear grove. Check that bosque/parque remains unambiguous at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-waterfall",
+        "es-419-travel-fountain",
+        "es-419-travel-river",
+        "es-419-travel-lake"
+      ],
+      "note": "The falling sheet of water and ledge must dominate cascada, distinct from the fountain jet and horizontal natural water bodies."
+    },
+    {
+      "ids": [
+        "es-419-travel-pillow",
+        "es-419-travel-blanket",
+        "es-419-travel-bed",
+        "es-419-travel-room"
+      ],
+      "note": "The approved bed and hotel-room pictures contain bedding. Exclude isolated pillow/blanket versus scenes where those objects are clearly present."
+    },
+    {
+      "ids": [
+        "es-419-travel-blanket",
+        "es-419-travel-towel"
+      ],
+      "note": "Give cobija a thick warm textile fold/fringe and preserve the towel silhouette; reject any pair of nearly identical folded rectangles."
+    },
+    {
+      "ids": [
+        "es-419-travel-mirror",
+        "es-419-travel-window",
+        "es-419-travel-spoon"
+      ],
+      "note": "The mirror must read as reflective glass in a frame and handle. Review against the open window and spoon at 145px; revise or exclude if either answer becomes plausible."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-jacket",
+        "es-419-travel-swimsuit",
+        "es-419-travel-pants"
+      ],
+      "note": "Collar/buttons, zipper/pockets, one-piece swim shape and long trouser legs must remain clear; do not generate one garment that reasonably names another."
+    }
+  ],
+  "wordingNotes": [
+    "Mexican vocabulary focus: banqueta (sidewalk), banca (bench), chamarra (jacket), cobija (blanket). Acera, banco, chaqueta and manta/frazada remain useful regional alternatives, not extra cards in this pack.",
+    "Plátano means a ripe yellow dessert banana here, not a cooked plantain. Naranja is the fruit, not the color. Fuente is a water fountain, not a source or dish.",
+    "Metro is the underground urban rail system here, not a length unit; the tunnel/platform concept and train distractor review are required.",
+    "Casco is a protective motorcycle helmet. Secadora de pelo is the handheld hair dryer, not a clothes dryer.",
+    "Pantalones names one pair of long trousers; zapato is one shoe. Montaña is a generic mountain; the existing approved illustration has two peaks.",
+    "The same text is read by all eight regional voices; regional voice labels do not imply alternate vocabulary lists."
+  ],
+  "artworkReuseAudit": {
+    "scope": [
+      "Japanese catalog image descriptions and all approved activation records",
+      "Spanish level 1 selected artwork and level 2 selected 36-picture manifest",
+      "Current contextual answer artwork (tea only; no matching subject)"
+    ],
+    "candidateCount": 4,
+    "newArtworkCount": 32,
+    "candidates": "The four candidates carry inspected source paths and hashes on their item records.",
+    "rejectedCandidates": [
+      {
+        "sourceId": "ja-v-7c4d1abbdd61",
+        "path": "public/images/approved/ja-v-7c4d1abbdd61-8dbb45353d73.jpg",
+        "sha256": "9abb2e87129c19ab65c440da6e3b40ac395bb833bb7e1cd38a85e941bde45e20",
+        "proposedSubject": "bench",
+        "inspection": "Visually inspected. The winter picture contains a large snowy tree and ground scene as well as a bench; unsuitable as an isolated banca.",
+        "decision": "do-not-reuse"
+      },
+      {
+        "sourceId": "ja-v-4285b5f8fc72",
+        "path": "public/images/approved/ja-v-4285b5f8fc72-c393b60a5e6f.png",
+        "sha256": "dc654f966504a019b5cafb7272412e4379a60e0e3dba2a94f3859b7831069836",
+        "proposedSubject": "banana",
+        "inspection": "Visually inspected. The mainly picture has many apples, one banana, a basket and attention lines; unsuitable as isolated plátano.",
+        "decision": "do-not-reuse"
+      },
+      {
+        "sourceId": "ja-v-960de5429d2e",
+        "path": "public/images/approved/ja-v-960de5429d2e-799551d6ddf2.jpg",
+        "sha256": "ecf6f407b1525444a82abe8b040099b1a63369d9c0ec00684c3eb5cb372f095f",
+        "proposedSubject": "pillow and blanket",
+        "inspection": "Visually inspected. The picture teaches under the bed and includes Kiku plus a bed, blanket and pillow; unsuitable as either isolated object.",
+        "decision": "do-not-reuse"
+      }
+    ],
+    "otherFindings": [
+      "No suitable approved standalone clothing, transport, toiletry or remaining food pictures were identified.",
+      "Do not extract incidental objects from approved scenes and call the result an unchanged reuse. New generation or an explicit image edit needs its own request and approval."
+    ]
+  },
+  "lexicalReferences": [
+    {
+      "term": "banqueta",
+      "url": "https://dem.colmex.mx/Ver/banqueta",
+      "publisher": "El Colegio de México · Diccionario del español de México",
+      "supports": "Paved pedestrian sidewalk along a street; chosen over acera for the Mexican vocabulary focus."
+    },
+    {
+      "term": "banca",
+      "url": "https://dle.rae.es/banca",
+      "publisher": "RAE / ASALE · Diccionario de la lengua española",
+      "supports": "The multi-person bench sense is explicitly used in Mexico and other American varieties."
+    },
+    {
+      "term": "chamarra",
+      "url": "https://www.asale.org/damer/chamarra",
+      "publisher": "ASALE · Diccionario de americanismos",
+      "supports": "Jacket/cazadora sense is marked for Mexico and several other American varieties."
+    },
+    {
+      "term": "cobija",
+      "url": "https://dle.rae.es/cobija",
+      "publisher": "RAE / ASALE · Diccionario de la lengua española",
+      "supports": "Bed blanket sense explicitly includes Mexico and many other American varieties."
+    }
+  ],
+  "generation": {
+    "authorized": false,
+    "reason": "The proposed level 3 words and picture concepts await owner review. No level 3 generation is authorized by this draft.",
+    "expectedWords": 36,
+    "expectedVoices": 8,
+    "expectedClips": 288,
+    "charactersPerVoice": 292,
+    "inputCharacters": 2336,
+    "expectedNewArtwork": 32,
+    "expectedApprovedReuse": 4
+  },
+  "activationPlan": [
+    "Keep all level 1/2 words, media, stable IDs and progress intact.",
+    "After word approval, generate only the missing subjects and all 36×8 recordings under a separate approved level 3 batch; retain exact sources and prompts.",
+    "Obtain picture/listening acceptance before registering a separately selectable level 3 picture pack.",
+    "Review semantic ambiguity across all three levels and bind any exclusions to stable IDs, without rewriting historical attempts."
+  ]
+}
