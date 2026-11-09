@@ -1,9 +1,10 @@
 import runtime from '../../content/semantic-neighbors/ja-runtime.json';
 import type { Exercise, PracticeCard, WordItem } from '../types';
-import type { JapaneseNeighborTable, WordChoiceKind, WordChoicePolicySnapshot } from './distractor-types';
+import type { JapaneseNeighborTable, WordChoiceKind, WordChoicePolicySnapshot, WritingChoicePolicySnapshot } from './distractor-types';
 import type { MasteryLevel } from './mastery';
 import { japanesePronunciationKey } from './pronunciation';
 import { shuffled } from './random';
+import { writtenKanaEnding } from './written-plausibility';
 
 type Kind = 'semantic' | 'pronunciation' | 'broad';
 interface Candidate { item: WordItem; kind: Kind }
@@ -54,43 +55,59 @@ function compatible(a: WordItem, b: WordItem, exercise: Exercise, relations?: Wo
 export function selectWordChoices(
   { item: target, exercise }: PracticeCard, pool: readonly WordItem[], level: MasteryLevel,
   random: () => number, relations: WordNeighborRelations = japaneseWordNeighbors,
-): { choices: WordItem[]; choiceKinds: Record<string, WordChoiceKind>; choicePolicy?: WordChoicePolicySnapshot } {
+): { choices: WordItem[]; choiceKinds: Record<string, WordChoiceKind>; choicePolicy?: WordChoicePolicySnapshot; writingChoicePolicy?: WritingChoicePolicySnapshot } {
   const semanticIds = target.language === relations.language ? relations.semanticIds(target.id) : undefined;
   const active = semanticIds !== undefined && (exercise === 'audio-picture' || exercise === 'audio-text');
   const candidates = shuffled(pool, random).filter(item => compatible(target, item, exercise, active ? relations : undefined) &&
     sound(target) !== sound(item));
+  const ending = target.language === 'ja-JP' && exercise === 'audio-text' && level.preferMatchingKana ? writtenKanaEnding(target.text) : undefined;
+  const matchingIds = new Set(ending ? candidates.filter(item => writtenKanaEnding(item.text) === ending).map(item => item.id) : []);
+  const preferMatches = (items: WordItem[]) => ending ? [...items.filter(item => matchingIds.has(item.id)), ...items.filter(item => !matchingIds.has(item.id))] : items;
+  const writingPolicy = (items: WordItem[]): WritingChoicePolicySnapshot | undefined => {
+    if (!ending) return undefined;
+    const matching = items.filter(item => matchingIds.has(item.id)).length;
+    return { version: 'trailing-kana-v1', ending, matching, fallback: items.length - matching };
+  };
   if (!active) {
     // Preserve ordinary selection for languages/items without prepared neighbors.
     const seen = new Set([visible(target, exercise)]);
-    const legacy = candidates.filter(item => {
+    const legacy = preferMatches(candidates).filter(item => {
       if (seen.has(visible(item, exercise))) return false;
       seen.add(visible(item, exercise)); return true;
     }).slice(0, 3);
     if (legacy.length < 3) throw new InsufficientChoicesError();
-    return { choices: shuffled([target, ...legacy], random),
+    return { choices: shuffled([target, ...legacy], random), writingChoicePolicy: writingPolicy(legacy),
       choiceKinds: Object.fromEntries([[target.id, 'correct'], ...legacy.map(item => [item.id, 'broad'])]) };
   }
   const byId = new Map(candidates.map(item => [item.id, item]));
   // Filter the selected scope first, then sample a small nearest-neighbor window.
-  const nearest = (ids: readonly string[]) => shuffled(ids.flatMap(id => byId.has(id) ? [byId.get(id)!] : []).slice(0, 6), random);
+  const nearest = (ids: readonly string[]) => {
+    const ranked = ids.flatMap(id => byId.has(id) ? [byId.get(id)!] : []);
+    // Preserve ranked matching candidates before cutting the window; randomize only that window.
+    const window = preferMatches(ranked).slice(0, 6);
+    return preferMatches(shuffled(window, random));
+  };
   const semantic = nearest(semanticIds), pronunciation = nearest(relations.pronunciationIds(target.id));
   const closeIds = new Set([...semantic, ...pronunciation].map(item => item.id));
-  const broad = candidates.filter(item => !closeIds.has(item.id));
+  const broad = preferMatches(candidates.filter(item => !closeIds.has(item.id)));
   const tagged = (items: readonly WordItem[], kind: Kind): Candidate[] => items.map(item => ({ item, kind }));
   const desired = level.distractors;
   const options: Record<Kind, Candidate[]> = {
     pronunciation: tagged(pronunciation, 'pronunciation'),
     semantic: tagged(semantic, 'semantic'), broad: tagged(broad, 'broad'),
   };
-  function search(slots: Kind[], selected: Candidate[] = []): Candidate[] | undefined {
-    if (selected.length === 3) return selected;
+  function search(slots: Kind[], selected: Candidate[] = [], minimumMatches = 0): Candidate[] | undefined {
+    const matched = minimumMatches ? selected.filter(candidate => matchingIds.has(candidate.item.id)).length : 0;
+    if (selected.length === 3) return matched >= minimumMatches ? selected : undefined;
+    if (minimumMatches && matched + slots.slice(selected.length).filter(kind => options[kind].some(candidate =>
+      matchingIds.has(candidate.item.id) && selected.every(other => compatible(other.item, candidate.item, exercise, relations)))).length < minimumMatches) return undefined;
     const kind = slots[selected.length]!;
     const seen = new Set<string>();
     for (const candidate of options[kind]) {
       if (seen.has(candidate.item.id)) continue;
       seen.add(candidate.item.id);
       if (!selected.every(other => compatible(other.item, candidate.item, exercise, relations))) continue;
-      const result = search(slots, [...selected, candidate]);
+      const result = search(slots, [...selected, candidate], minimumMatches);
       if (result) return result;
     }
     return undefined;
@@ -113,10 +130,15 @@ export function selectWordChoices(
   }
   let selected: Candidate[] | undefined;
   for (const mix of patterns) {
-    selected = search([
+    const slots: Kind[] = [
       ...Array<Kind>(mix.pronunciation).fill('pronunciation'), ...Array<Kind>(mix.semantic).fill('semantic'),
       ...Array<Kind>(3 - mix.pronunciation - mix.semantic).fill('broad'),
-    ]);
+    ];
+    // Maximize ending agreement within a complete mastery mixture before relaxing it.
+    for (let minimum = ending ? 3 : 0; minimum >= 0; minimum--) {
+      selected = search(slots, [], minimum);
+      if (selected) break;
+    }
     if (selected) break;
   }
   if (!selected) throw new InsufficientChoicesError();
@@ -124,6 +146,7 @@ export function selectWordChoices(
   for (const candidate of selected) actual[candidate.kind]++;
   return {
     choices: shuffled([target, ...selected.map(candidate => candidate.item)], random),
+    writingChoicePolicy: writingPolicy(selected.map(candidate => candidate.item)),
     choiceKinds: Object.fromEntries([[target.id, 'correct'], ...selected.map(candidate => [candidate.item.id, candidate.kind])]),
     choicePolicy: { version: 'word-neighbors-v1', mastery: level.label, requested: { ...desired }, actual },
   };

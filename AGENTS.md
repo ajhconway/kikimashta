@@ -22,6 +22,14 @@ Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues a
 
 - After the final PR commit (including updates from main), promptly request a Codex review of that head when the existing review is stale. Start review alongside CI instead of waiting for CI to finish. The status-refresh workflow does not launch a review. Avoid duplicate requests while that head is already being reviewed.
 
+## Issue resolution
+
+- Keep each issue's current summary and completion checklist aligned with delivered work. After a partial delivery or merge, record completed criteria, implementation PRs/commits, actual verification results, and the remaining work or acceptance. Clearly label superseded scope and preserve dated historical evidence.
+- Use `Refs #N` for partial work and `Closes #N` only when the PR completes all required criteria on merge. An open or superseded PR alone does not prove integration; link the PR or commit that actually reached the target branch.
+- Before closing, record the resolution and supporting evidence on the issue. Keep required deployment, owner/media approval, real-iPhone, and live-account checks open until accepted. Move independent remaining work only to an explicitly linked follow-up, without implying its acceptance is complete.
+- Close duplicates with a link to the canonical issue and retain any unique requirements there. Record canceled or superseded work as such rather than marking it completed.
+- Update affected repository guidance when behavior or workflow changes. The coordinator verifies issue states and residual acceptance alongside final integration checks.
+
 ## Engineering and tests
 
 - Keep the interface, learning rules, content, and storage separate. Use stable item and attempt IDs, and keep progress specific to its language and item.
@@ -40,6 +48,8 @@ Start with GPT-6.1 Sol at Medium effort for routine development. Use High for di
 Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm run check` for lint, types, focused tests and build, and `npm run test:e2e` for browser tests after building. CI checks the `/` deployment path used by `kikimashta.com` in Chromium and mobile WebKit.
 
 Japanese word-neighbor preparation uses `npm run content:neighbors`; its deterministic data and reviewed-image check is `npm run content:neighbors:check`, included in `npm run check`. Offline semantic model regeneration remains separate; app development and ordinary checks need no Python model packages.
+
+The same preparation command rebuilds pronunciation rows using the current shared mora normalization, the existing unit-cost similarity eligibility gate and the selected acoustic-weighted ordering. Checked-in kanasim tables and their recipe are pinned in [pronunciation provenance](content/pronunciation-neighbors/README.md); no pronunciation model download or training is needed. Keep the baseline gate, normalized homophone exclusions, special-mora costs, six-valid-neighbor shuffle and mastery quotas intact unless a separate policy change is authorized. Resolve unsupported-reading preparation errors explicitly. Preserve frozen experiment inputs and collected listening responses under `artifacts/pronunciation-neighbors-212/`.
 
 When a pack expands approved Japanese vocabulary, regenerate semantic rankings and pronunciation neighbors across the entire approved pool, then review affected choices. Follow the [pack and neighbor maintenance checklist](content/semantic-neighbors/README.md#adding-packs-and-maintaining-neighbors), including its reading-only and selection-only rules.
 

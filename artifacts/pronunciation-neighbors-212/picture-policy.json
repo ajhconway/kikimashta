@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "language": "ja-JP",
+  "semanticOverrides": [
+    {
+      "itemId": "ja-v-0ac038632611",
+      "neighborIds": [
+        "ja-v-0c144e18f1b2",
+        "ja-v-d4fb59f8c32c",
+        "ja-v-4b9574b8d3b9",
+        "ja-v-36897e1da4ac"
+      ],
+      "reason": "The active card teaches book, not a counting unit. Prefer distinct reading/writing and paper artifacts. Composition and writing must still pass the picture pair exclusion against one another."
+    },
+    {
+      "itemId": "ja-v-597577664a1b",
+      "neighborIds": [
+        "ja-v-41b543dc8fe4",
+        "ja-v-d242b38667c8",
+        "ja-v-2f734ba866d9"
+      ],
+      "reason": "The active card teaches gold as a material. Use a distinct precious mineral, currency, and ordinary stone as nearby concepts. Omit the treasure chest from this curated set because it visibly combines coins and gemstones."
+    },
+    {
+      "itemId": "ja-v-cb7a14590e8e",
+      "neighborIds": [
+        "ja-v-2d7d45d5614e",
+        "ja-v-0c1b8280f1ee",
+        "ja-v-3534dd7d07d1",
+        "ja-v-ba0c8a160c33"
+      ],
+      "reason": "The active card teaches sunlight, not the place name Nikko. Prefer contrasting natural-light and day/night phenomena. Omit generic light from this bounded set to avoid relying on a broad light-versus-sunlight interpretation."
+    }
+  ],
+  "pictureExclusionPairs": [
+    {
+      "ids": [
+        "ja-v-5dc14aea92c7",
+        "ja-v-b639fedc63ec"
+      ],
+      "reason": "Both current pictures show the same steak-like meat; the cow badge on the beef image does not stop it from also depicting generic meat."
+    },
+    {
+      "ids": [
+        "ja-v-4b9574b8d3b9",
+        "ja-v-d4fb59f8c32c"
+      ],
+      "reason": "Both current pictures show a sheet with writing and a pencil. Either can reasonably answer the generic writing prompt, and the composition picture supplies no distinguishing composition content."
+    },
+    {
+      "ids": [
+        "ja-v-602940cfc449",
+        "ja-v-baa4dd2c5986"
+      ],
+      "reason": "Both current pictures depict a single plate without an external scale reference. The small-plate illustration can also answer the ordinary plate prompt."
+    },
+    {
+      "ids": [
+        "ja-v-09d74d630a45",
+        "ja-v-10984ece1206"
+      ],
+      "reason": "Both current pictures depict a small settlement; the image cannot establish the personal hometown relationship."
+    },
+    {
+      "ids": [
+        "ja-v-09d74d630a45",
+        "ja-v-92bebda5ac98"
+      ],
+      "reason": "Both current pictures depict a small group of houses without enough scale or civic context to distinguish town from village."
+    },
+    {
+      "ids": [
+        "ja-v-10984ece1206",
+        "ja-v-92bebda5ac98"
+      ],
+      "reason": "Both current pictures depict houses in a rural landscape; the image cannot establish whether the village is the learner's hometown."
+    },
+    {
+      "ids": [
+        "ja-v-754e1f2ea742",
+        "ja-v-a47e21265374"
+      ],
+      "reason": "The current calf picture visibly includes an adult cow as well as its calf. Both it and the standalone cow can answer the cow prompt."
+    },
+    {
+      "ids": [
+        "ja-v-afefe30bcb46",
+        "ja-v-ddd9dca106e2"
+      ],
+      "reason": "The current volcano picture depicts an erupting mountain, so it can also answer the generic mountain prompt."
+    },
+    {
+      "ids": [
+        "ja-v-c0f58bfab324",
+        "ja-v-dfb71d269e06"
+      ],
+      "reason": "Both current pictures place Kiku on top of furniture. The on-the-table picture also answers the generic above/on-top prompt."
+    },
+    {
+      "ids": [
+        "ja-v-520308b3c3b4",
+        "ja-v-960de5429d2e"
+      ],
+      "reason": "Both current pictures place Kiku underneath furniture. The under-the-bed picture also answers the generic below/underneath prompt."
+    },
+    {
+      "ids": [
+        "ja-v-d19a39e4af55",
+        "ja-v-74043c16db5e"
+      ],
+      "reason": "The current shaved-ice dessert depicts ice as well as the ice-cube picture; the narrower dessert can reasonably answer the generic ice prompt."
+    },
+    {
+      "ids": [
+        "ja-v-e05b8e36c6ca",
+        "ja-v-ac1e4f6bee13"
+      ],
+      "reason": "The current spool of thread and knitting-yarn ball both depict continuous thread/yarn. Generic 糸 can reasonably name either; the knitting needles identify only the narrower yarn use."
+    },
+    {
+      "ids": [
+        "ja-v-e0bb1d02fee0",
+        "ja-v-4aa5c84df90c"
+      ],
+      "reason": "Both current pictures depict a standalone golden crescent moon. One has no visual information that separates generic moon from crescent moon."
+    },
+    {
+      "ids": [
+        "ja-v-d242b38667c8",
+        "ja-v-30d6b7d7e837"
+      ],
+      "reason": "Both current pictures visibly include the same 1000-yen banknote. The added coins in the money picture do not remove that competing 1000-yen answer."
+    }
+  ],
+  "imageReview": [
+    {
+      "itemId": "ja-v-09d74d630a45",
+      "src": "images/vocabulary/ja-v-09d74d630a45.svg",
+      "sha256": "160f8649e80f6f29d789523ecfadfa221ef30ff42f29d5329e3b4bf5b33e4b73"
+    },
+    {
+      "itemId": "ja-v-10984ece1206",
+      "src": "images/vocabulary/ja-v-10984ece1206.svg",
+      "sha256": "959b0c528816e014b808cdd4e630a7aeff8126441290a8225b2afb830fbdf72f"
+    },
+    {
+      "itemId": "ja-v-30d6b7d7e837",
+      "src": "images/approved/ja-v-30d6b7d7e837-1d3b164fcde9.jpg",
+      "sha256": "f163706856743f093f108dc64ec2e2fedcd8b99177ea397e1987f2fc2b64cb6d"
+    },
+    {
+      "itemId": "ja-v-4aa5c84df90c",
+      "src": "images/approved/ja-v-4aa5c84df90c-759e72c55c1d.png",
+      "sha256": "a3652886e5e0bcc20f5e799cbce08947fe3be33ce2d657c3ae80c1a6cb76a9c4"
+    },
+    {
+      "itemId": "ja-v-4b9574b8d3b9",
+      "src": "images/vocabulary/ja-v-4b9574b8d3b9.svg",
+      "sha256": "e85a102362090a5bef886072e9855c1cf2c41eb06b4c4c39b125039daebfc85d"
+    },
+    {
+      "itemId": "ja-v-520308b3c3b4",
+      "src": "images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+      "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5"
+    },
+    {
+      "itemId": "ja-v-5dc14aea92c7",
+      "src": "images/vocabulary/ja-v-5dc14aea92c7.svg",
+      "sha256": "f921bff8e76eb08e76004ea38878b6088febcaa9a2d5de03bc1f3f4fc1f10bd8"
+    },
+    {
+      "itemId": "ja-v-602940cfc449",
+      "src": "images/vocabulary/ja-v-602940cfc449.svg",
+      "sha256": "b21f2b36fa0894cfce6ee9845c81b078f35d720d4db66c24f5e2b47ce165fe0f"
+    },
+    {
+      "itemId": "ja-v-74043c16db5e",
+      "src": "images/vocabulary/ja-v-74043c16db5e.svg",
+      "sha256": "a87e88cc6e86c8c786a2e1b3c4871154b4eede638291d220184964610511e49e"
+    },
+    {
+      "itemId": "ja-v-754e1f2ea742",
+      "src": "images/vocabulary/ja-v-754e1f2ea742.svg",
+      "sha256": "5f1ffed62a39d78822de8d3aaef972fc2ced763b88b1247dd739fa9c82663232"
+    },
+    {
+      "itemId": "ja-v-92bebda5ac98",
+      "src": "images/vocabulary/ja-v-92bebda5ac98.svg",
+      "sha256": "db638c15d7746e347919ce9e1719955b40bbe700625e397f3a7dc96fcf6e8e8b"
+    },
+    {
+      "itemId": "ja-v-960de5429d2e",
+      "src": "images/approved/ja-v-960de5429d2e-799551d6ddf2.jpg",
+      "sha256": "ecf6f407b1525444a82abe8b040099b1a63369d9c0ec00684c3eb5cb372f095f"
+    },
+    {
+      "itemId": "ja-v-a47e21265374",
+      "src": "images/approved/ja-v-a47e21265374-e25de9fd2ee7.jpg",
+      "sha256": "30834384228c72a800e66ac76d50c09e8d90b818590fff7287b3544809018764"
+    },
+    {
+      "itemId": "ja-v-ac1e4f6bee13",
+      "src": "images/approved/ja-v-ac1e4f6bee13-7cbef581cf3b.png",
+      "sha256": "7dbfa80079df48d6eac527b6fd0ba91ce878b3cf3f090202ce1c3ead500ab694"
+    },
+    {
+      "itemId": "ja-v-afefe30bcb46",
+      "src": "images/vocabulary/ja-v-afefe30bcb46.svg",
+      "sha256": "1463a8fbfa01bec986a4b8df7510a5e2b2e774b7f9865e6ee13e20f96635eeb1"
+    },
+    {
+      "itemId": "ja-v-b639fedc63ec",
+      "src": "images/vocabulary/ja-v-b639fedc63ec.svg",
+      "sha256": "c437e84246904d7ae5125c2737886b1489c61f3083185b74e3227ff883f16359"
+    },
+    {
+      "itemId": "ja-v-baa4dd2c5986",
+      "src": "images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+      "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6"
+    },
+    {
+      "itemId": "ja-v-c0f58bfab324",
+      "src": "images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e"
+    },
+    {
+      "itemId": "ja-v-d19a39e4af55",
+      "src": "images/approved/ja-v-d19a39e4af55-dbda97736640.jpg",
+      "sha256": "eb7833c12afe1e2a2f33ba42f43949e0b49881ca55e7e2de4bc0faa01115c4e7"
+    },
+    {
+      "itemId": "ja-v-d242b38667c8",
+      "src": "images/approved/ja-v-d242b38667c8-dda631c2c7ad.png",
+      "sha256": "491742074a51d2914c6ea725589662d1b8ef8fae3052df0644ada5156db278ae"
+    },
+    {
+      "itemId": "ja-v-d4fb59f8c32c",
+      "src": "images/vocabulary/ja-v-d4fb59f8c32c.svg",
+      "sha256": "f083bf5baa60bd1063eb31206f7cf324f57f6bdb988b0288ece5ca04ec5e03ca"
+    },
+    {
+      "itemId": "ja-v-ddd9dca106e2",
+      "src": "images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg",
+      "sha256": "ce6f40bb2fde03ae06e1f1ea9be86797617f109e00684be8a08cc2caf782bfe2"
+    },
+    {
+      "itemId": "ja-v-dfb71d269e06",
+      "src": "images/approved/ja-v-dfb71d269e06-e406ac36d126.jpg",
+      "sha256": "1b1b85908bacc4030c823344f12aac8c5a1518ef431c5afb5e817e57e8e78287"
+    },
+    {
+      "itemId": "ja-v-e05b8e36c6ca",
+      "src": "images/approved/ja-v-e05b8e36c6ca-41cd2e790bc7.png",
+      "sha256": "608c12b0137643c7e3d0afc6fbfdbb3bf39df98298755ce127af0e996bef8076"
+    },
+    {
+      "itemId": "ja-v-e0bb1d02fee0",
+      "src": "images/approved/ja-v-e0bb1d02fee0-89b1cf2cf323.png",
+      "sha256": "7264ae68c31a66d4b694ceeebd092bc429deaf363546473e4ca331b089e001e5"
+    }
+  ]
+}

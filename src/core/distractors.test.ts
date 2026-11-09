@@ -22,6 +22,14 @@ function relations(pairs: string[][] = []): WordNeighborRelations {
 const card = (exercise: PracticeCard['exercise'] = 'audio-picture'): PracticeCard => ({ item: target, exercise });
 
 describe('mastery-based word distractors (#200)', () => {
+  it('uses the selected acoustic ordering for real mastered writing choices (#216)', () => {
+    const engineering = practicePool.items.find(item => item.text === '工学')!;
+    const result = selectWordChoices({ item: engineering, exercise: 'audio-text' }, practicePool.items, masteryLevels[7]!, fixed);
+    expect(result.choices.filter(item => item.id !== engineering.id).map(item => item.text)).toEqual(['工作', '考古学', '大学']);
+    expect(result.choicePolicy?.actual).toEqual({ semantic: 0, pronunciation: 3, broad: 0 });
+    for (const item of result.choices.filter(item => item.id !== engineering.id)) expect(result.choiceKinds[item.id]).toBe('pronunciation');
+  });
+
   it.each([
     [0, 0, 0, 3], [1, 0, 0, 3], [2, 1, 0, 2], [3, 2, 0, 1],
     [4, 3, 0, 0], [5, 2, 1, 0], [6, 1, 2, 0], [7, 0, 3, 0],
