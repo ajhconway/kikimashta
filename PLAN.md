@@ -89,6 +89,12 @@ Prepare the next 36 concrete travel words in six practical groups for a separate
 
 Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.
 
+## Semantic neighbor comparison (#198)
+
+Compare pretrained Japanese fastText vectors for surface words with multilingual semantic text embeddings for each Japanese word and its existing intended meaning. Use the same approved Japanese practice bank, exact cosine ranking and existing answer-validity filters. Define a small independent semantic benchmark before inspecting model output, covering compounds, ambiguous senses and ordinary concrete vocabulary. Inspect coverage and neighbor quality as well as benchmark scores; these are initial content-quality checks, not evidence of learning effectiveness.
+
+Run both approaches offline and preserve pinned model/input provenance, comparison results and a readable neighbor report. Select one approach for the deployment candidate; retain only its generator and generated neighbor data in the deployment path. Large models and experimental dependencies stay outside the browser bundle. Keep contextual questions' fixed authored distractors, current practice eligibility, FSRS mastery, timers and scheduling intact during this experiment. Review vocabulary/pack filtering and reproducibility with focused tests and configured checks. Track the experiment in [#198](https://github.com/ajhconway/kikimashta/issues/198), related to [#79](https://github.com/ajhconway/kikimashta/issues/79).
+
 
 ## Adaptive timer pilot (#121)
 
