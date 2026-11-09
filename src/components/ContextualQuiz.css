@@ -226,77 +226,6 @@
 }
 
 /* The full content gallery keeps its separate evaluation controls. */
-.contextual-dev-review {
-  width: 100%;
-  max-width: 52rem;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.contextual-dev-review h1 {
-  font-size: 1.7rem;
-}
-
-.contextual-dev-controls {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .7rem;
-  text-align: left;
-}
-
-.contextual-dev-controls label {
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-  font-size: .85rem;
-}
-
-.contextual-dev-controls select,
-.contextual-dev-jump select {
-  width: 100%;
-  min-width: 0;
-  padding: .65rem;
-  border: 1px solid #877494;
-  border-radius: .6rem;
-  background: #fff;
-  color: #30233d;
-  font: inherit;
-}
-
-.contextual-dev-jump {
-  display: block;
-  margin-top: .8rem;
-  text-align: left;
-  font-size: .85rem;
-}
-
-.contextual-dev-position {
-  color: #665273;
-  font-size: .9rem;
-}
-
-.contextual-dev-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: .8rem;
-}
-
-.contextual-dev-navigation button {
-  min-height: 2.7rem;
-}
-
-.contextual-dev-note {
-  font-size: .9rem;
-  line-height: 1.5;
-}
-
-.contextual-dev-id {
-  color: #665273;
-  font-size: .75rem;
-  overflow-wrap: anywhere;
-}
-
 @media (max-width: 600px) {
   .contextual-quiz .practice-actions.contextual-feedback {
     min-height: 124px;
@@ -312,10 +241,7 @@
 }
 
 @media (max-width: 500px) {
-  .contextual-dev-review {
-    padding: .5rem;
   }
-}
 
 .contextual-result-symbol {
   display: grid;
@@ -327,12 +253,4 @@
   color: var(--purple-dark);
   font-size: 26px;
   font-weight: 800;
-}
-
-.contextual-demo-indicator {
-  position: absolute;
-  top: max(16px, env(safe-area-inset-top));
-  right: max(16px, env(safe-area-inset-right));
-  color: var(--muted);
-  font-size: 12px;
 }

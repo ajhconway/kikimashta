@@ -53,33 +53,13 @@ The two ordered database migrations and rollback access-policy checks live in `s
 
 ## Voice auditions
 
-The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. The older hosted OpenAI workflow below is retained for historical comparisons.
+The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Historical OpenAI recordings remain available for comparison; new generation uses ElevenLabs.
 
 ### Existing OpenAI recordings
 
 Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
 
-The legacy OpenAI generator runs in GitHub Actions with an `OPENAI_API_KEY` repository secret under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow**. Its request modes remain `words`, `sentences`, `bank`, and `catalog`; bank mode records every starter item with Marin and Cedar. Unrelated pushes and pull requests do not generate paid audio. Use the ElevenLabs command for new card recordings.
-
-The agent can submit a request, collect the resulting artifact, review the audio and provenance, then publish approved audition clips through a PR. Generation does not publish files automatically. Original WAVs and listening MP3s are retained in the workflow artifact for 30 days; download and preserve originals before expiry.
-
-For local generation instead:
-
-```sh
-npm run audio:audition -- --dry-run
-# Add OPENAI_API_KEY=your-key to the ignored .env.local file, then:
-npm run audio:audition
-# Four full sentences each for Marin and Cedar:
-npm run audio:audition -- --sentences
-# Both selected voices for every word in the starter bank:
-npm run audio:audition -- --bank
-```
-
-Generation requires FFmpeg and an OpenAI API account with billing and access to `gpt-realtime-2.1-mini`. Each run makes nine paid requests for word auditions, eight for sentence auditions, or two per bank item (currently twelve), without automatic retries. The key is available only to the generation tool; never prefix it with `VITE_`, put it in browser code, or commit it.
-
-Local runs preserve the provider-original WAVs, listening MP3s, and provenance under `artifacts/generated-originals/audio-audition/`. Word auditions include an `index.html`; sentence clips are added to the shared comparison after review. Choose a voice and review pronunciation, pitch accent, volume, and word endings before publishing replacement audio.
-
-The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
+Future OpenAI audio generation is retired. Historical comparison pages, recordings and provenance remain preserved. Use the ElevenLabs tools for new speech.
 
 ## Vocabulary library
 
@@ -89,11 +69,13 @@ Mastery uses the gap between the last review and the next scheduled review, so b
 
 Choose **Dev review** on Home to try all eight simulated mastery levels and their timers, or select specific levels and word/contextual review types. Sample schedules show real FSRS mastery changes without modifying progress. Dev review is the single Home entry point for these tools.
 
+For authored-content inspection, open [`?review=contextual`](https://kikimashta.com/?review=contextual). This unsaved inspector offers every contextual question, including drafts and missing-audio text inspection; filter by stage, target word, question kind, answer format and voice, or jump to a question ID. It shows sentence/question revisions and transcripts with manual navigation. It bypasses selected packs and progression gates, and does not simulate mastery, run practice timers or save answers. Configurable Dev review instead samples ready content from selected language/packs/voices and uses ordinary practice with simulated mastery, timers, feedback and retries. The older `?demo=contextual` practice shortcut is retired; existing links open normal Home.
+
 The library combines original SVG scenes with 168 approved replacement illustrations from batches 01–10. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Each card shows its interval mastery independently. Pack selection shows both lowest mastery and the average level rounded down, including new cards, across approved practice cards. Search, pack filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 
 Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Guest notes stay local. When optional Supabase sync is configured, signed-in notes synchronize with the account; clearing a box syncs a deletion. Each account and guest practice use separate local storage. Copying guest history and notes into an account is an explicit action in Account. Existing account note edits take precedence over imported guest notes. If saving fails, the draft stays available while the page is open and can still be exported.
 
-`npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. Hosted catalog audio runs by source level with two jobs in parallel, retaining original WAVs and partial results. Verified MP3s are staged to a review branch for integration, never deployed automatically.
+`npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. New speech generation and staging use the documented ElevenLabs tools; retained historical recordings are not regenerated.
 
 ## License and media
 
