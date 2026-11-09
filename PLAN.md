@@ -240,3 +240,8 @@ At Steady and higher, both picture and writing choices stay hidden until the fin
 ## Retired evaluation and generation paths (#184)
 
 The fixed contextual demo URL is retired in favor of configurable Dev review; old `?demo=contextual` links open Home. Keep `?review=contextual` for full authored-content inspection, including draft/text-only content, filtering, direct navigation and paired recording review without storage or scheduling writes. Future OpenAI generation and its hosted workflow are retired. Preserve earlier provider recordings, accepted manifests and attribution; use ElevenLabs for new speech.
+
+
+## Contextual questions in the card library (#189)
+
+Move full authored-context inspection into the library beside word cards, selected with an accessible Words / Contextual questions switch. Use browsable cards with sentence/question text and meanings, authored answers and pictures, stage/target/kind/format/voice filters, search, revision details and paired native audio. Retain all accepted/draft content and stable identities; browsing does not change practice history, pack selection or voice preferences. Scope content by learning language and provide a clear empty state where none exists. Preserve old `?review=contextual` bookmarks by redirecting to `vocabulary/?view=contextual`; normal configurable Dev review remains the practice simulation.
