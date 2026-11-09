@@ -38,7 +38,7 @@ export const learningLanguages: readonly LearningLanguage[] = [
     packPreferenceKey, writing: 'japanese', libraryPath: 'vocabulary/' },
   { id: 'es-419', title: 'Latin American Spanish', pool: spanishPool,
     foundationCards: spanishFoundationCards,
-    packs: spanishBanks.map(bank => ({ id: `${bank.id}-pictures`, language: bank.language,
+    packs: spanishBanks.map(bank => ({ badgeFamily: 'suitcase' as const, id: `${bank.id}-pictures`, language: bank.language,
       title: `${bank.title} · ${bank.id === spanishBasic.id ? 'Pictures + contexts' : 'Pictures'}`, exercise: 'audio-picture' as const, itemIds: [...bank.items.map(item => item.id), ...(bank.id === spanishBasic.id ? spanishFoundationCards.map(card => card.item.id) : [])],
     })), packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system', libraryPath: 'vocabulary/?language=es-419&pack=es-419-travel-1-pictures' },
 ];

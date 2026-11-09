@@ -1,0 +1,4 @@
+/** Keep the established badge-review URL pointed at the interchangeable illustrated layers. */
+import { writeFile } from 'node:fs/promises';
+import './badge-layers.mjs';
+await writeFile('artifacts/pack-badge-designs/index.html', '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=layers/index.html"><title>Badge layers</title><a href="layers/index.html">Open interchangeable badge preview</a></html>');

@@ -1,0 +1,19 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "samples": [
+    {
+      "id": "mastered-wk-redraw-v1",
+      "prompt": "Use case: stylized-concept. Create a completely NEW Mastered mastery badge from scratch for Kikimashta, using the supplied Strong and Confident badges only as style and layout references. Do NOT reproduce an older Mastered design. Match their same square canvas, chunky deep-purple contours, warm cream center, soft illustrated shading and yellow/pink/lavender palette.\n\nCRITICAL SHARED LAYOUT: the circular cream medallion must have the SAME SIZE and POSITION as the supplied Confident badge: x about24%..74%, y about20%..61% above the ribbon. Cream circle approximately50% canvas diameter, centered x49% y45%. The front lavender ribbon must be in the EXACT SAME POSITION and have the SAME SIZE as the reference Confident ribbon: front panel upper arch y60% at center, y67% near outer corners; lower arch y84% at center and y90% near corners; front panel x12%..88%. Side folded tails and curl folds around y75%..98%. Do not put the ribbon lower. No extra space above the ribbon. Keep this common medallion/ribbon layout unchanged while decorating around it.\n\nMASTERED DESIGN: a golden scalloped outer medal rim instead of Confident's pink/laurel frame; a SMALL lavender-and-pink crown centered just above the medallion (roughly x38%..61%, y1%..18%), and compact lavender wings extending sideways beside the medal (roughly x7%..23% and x76%..93%, y32%..60%). Crown and wings should distinguish Mastered without enlarging or moving the center or ribbon. Graceful rounded crown with pink tips and a small pink flower emblem. Keep outer silhouette within x2%..98%, y1%..99%.\n\nInside the cream face place the SAME little pink sakura flower and two detached side petals from the references, centered around x49% y28%, spanning about29% canvas width and13% height. Leave the face BELOW it empty for interchangeable WK text. The ribbon front must be completely empty for interchangeable picture/pencil and level overlays. No WK letters, suitcase, level text, picture icon or pencil. One finished polished transparent badge base only. True alpha outside complete silhouette, preserve all opaque pale cream details; no backdrop, checkerboard, glow or extra objects.",
+      "references": [
+        "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/strong-base-v1.png",
+        "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/confident-base-v1.png"
+      ]
+    },
+    {
+      "id": "mastered-travel-redraw-v1",
+      "prompt": "Use case: precise-object-edit. Create the matching Travel blank of this NEW Mastered badge. Remove ONLY the pink sakura flower and the two detached side petals INSIDE the central cream medallion, filling with the local cream/pale-pink gradient. Preserve the exact cream face size/position, full badge dimensions, crown and its flower emblem, compact wings, all outer gold/rim decorations and their pink petal details, and the EXACT same blank lavender ribbon in exactly the same position. The face must be completely empty for an interchangeable suitcase. No suitcase, letters, icons or other additions. Preserve original transparent alpha background and all opaque cream subject details. Change only those three pink elements inside the cream face.",
+      "references": "artifacts/pack-badge-designs/generated/batch-07/mastered-wk-redraw-v1.png"
+    }
+  ]
+}

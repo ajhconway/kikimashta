@@ -1,0 +1,43 @@
+import 'fake-indexeddb/auto';
+import { act, render, screen, waitFor } from '@testing-library/react';
+import { beforeEach, expect, it, vi } from 'vitest';
+import App from './App';
+import { ProgressStore } from './progress/store';
+import { badgeHistory } from './test/pack-badge-history';
+import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
+import { practicePool } from './core/practice';
+import type { PracticeAttempt } from './types';
+vi.mock('./core/density', async original => ({ ...await original<typeof import('./core/density')>(),
+  forecastDensity: vi.fn(async () => ({ reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 })) }));
+beforeEach(() => { localStorage.clear(); });
+it('shows a deselected pack badge, removes it after a lapse, and restores it from saved progress', async () => {
+  let history = await badgeHistory(selectedPracticeCards(practicePool.items, [cardPacks[0]!.id]), cardPacks[0]!.id);
+  const store = new ProgressStore();
+  vi.spyOn(store, 'history').mockImplementation(async () => history);
+  localStorage.setItem(packPreferenceKey, '[]');
+  const view = render(<App progressStore={store}/>);
+  const label = `${cardPacks[0]!.title}: Familiar minimum mastery`;
+  await screen.findByRole('listitem', { name: label });
+  expect(screen.queryByRole('listitem', { name: /Writing/ })).not.toBeInTheDocument();
+  const original = history;
+  const last = [...history].reverse().find(attempt => attempt.itemId === history[0]!.itemId)!;
+  history = [...history, { ...last, id: 'lapse', correct: false, answeredAt: Date.parse('2026-11-01'), context: { ...last.context!, phase: 'review' } }];
+  view.rerender(<App progressStore={store} historyRevision={1}/>);
+  await waitFor(() => expect(screen.queryByRole('region', { name: 'Pack mastery badges' })).not.toBeInTheDocument());
+  history = original;
+  view.rerender(<App progressStore={store} historyRevision={2}/>);
+  await screen.findByRole('listitem', { name: label });
+});
+it('hides old account badges immediately while replacement history is pending or fails', async () => {
+  const store = new ProgressStore();
+  vi.spyOn(store, 'history').mockResolvedValue(await badgeHistory(selectedPracticeCards(practicePool.items, [cardPacks[0]!.id]), cardPacks[0]!.id));
+  const view = render(<App progressStore={store}/>);
+  await screen.findByRole('region', { name: 'Pack mastery badges' });
+  let reject!: (error: Error) => void;
+  const next = new ProgressStore();
+  vi.spyOn(next, 'history').mockReturnValue(new Promise<PracticeAttempt[]>((_, fail) => { reject = fail; }));
+  view.rerender(<App progressStore={next}/>);
+  expect(screen.queryByRole('region', { name: 'Pack mastery badges' })).not.toBeInTheDocument();
+  await act(async () => { reject(new Error('unavailable')); });
+  expect(screen.queryByRole('region', { name: 'Pack mastery badges' })).not.toBeInTheDocument();
+});
