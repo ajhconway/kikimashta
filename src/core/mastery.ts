@@ -6,14 +6,14 @@ const hour = 60 * 60 * 1000;
 const day = 24 * hour;
 /** Shared interval mastery and feature policy (#135); fixed days keep boundaries deterministic. */
 export const masteryLevels = [
-  { label: 'New', minimumMs: 0, timerMs: null },
-  { label: 'Learning', minimumMs: 0, timerMs: null },
-  { label: 'Improving', minimumMs: 4 * hour, timerMs: 10000 },
-  { label: 'Familiar', minimumMs: day, timerMs: 10000 },
-  { label: 'Steady', minimumMs: 7 * day, timerMs: 5000 },
-  { label: 'Strong', minimumMs: 30 * day, timerMs: 3000 },
-  { label: 'Confident', minimumMs: 90 * day, timerMs: 1500 },
-  { label: 'Mastered', minimumMs: 365 * day, timerMs: 1500 },
+  { label: 'New', minimumMs: 0, timerMs: null, distractors: { semantic: 0, pronunciation: 0 } },
+  { label: 'Learning', minimumMs: 0, timerMs: null, distractors: { semantic: 0, pronunciation: 0 } },
+  { label: 'Improving', minimumMs: 4 * hour, timerMs: 10000, distractors: { semantic: 1, pronunciation: 0 } },
+  { label: 'Familiar', minimumMs: day, timerMs: 10000, distractors: { semantic: 2, pronunciation: 0 } },
+  { label: 'Steady', minimumMs: 7 * day, timerMs: 5000, distractors: { semantic: 3, pronunciation: 0 } },
+  { label: 'Strong', minimumMs: 30 * day, timerMs: 3000, distractors: { semantic: 2, pronunciation: 1 } },
+  { label: 'Confident', minimumMs: 90 * day, timerMs: 1500, distractors: { semantic: 1, pronunciation: 2 } },
+  { label: 'Mastered', minimumMs: 365 * day, timerMs: 1500, distractors: { semantic: 0, pronunciation: 3 } },
 ] as const;
 export type MasteryLevel = typeof masteryLevels[number];
 

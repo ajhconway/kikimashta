@@ -1,0 +1,4 @@
+# Offline content generation only; never browser/runtime dependencies.
+fasttext-wheel==0.9.2
+numpy==2.5.4
+huggingface-hub==2.4.0

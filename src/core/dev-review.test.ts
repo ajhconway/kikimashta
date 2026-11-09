@@ -5,6 +5,7 @@ import { advanceSchedule, schedulerVersion } from './scheduler';
 import { cardMastery } from './mastery';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries } from './dev-review';
 import { requeueMissedQuestion } from './session';
+import { practicePool } from './practice';
 
 const at = Date.parse('2026-11-08T12:00:00Z');
 const cards: PracticeCard[] = ['cat', 'dog', 'apple', 'cup'].flatMap(id => (['audio-picture', 'audio-text'] as const).map(exercise => ({
@@ -14,6 +15,15 @@ const cards: PracticeCard[] = ['cat', 'dog', 'apple', 'cup'].flatMap(id => (['au
 })));
 
 describe('configured simulated Dev review (#152)', () => {
+  it('uses each real word sample level when constructing its distractors', () => {
+    const cards: PracticeCard[] = practicePool.items.map(item => ({ item, exercise: 'audio-picture' }));
+    const { questions, schedules } = createDevReview(devReviewEntries(cards, [], []),
+      { ...defaultDevReviewOptions, exercises: ['audio-picture'], masteryLevels: [0, 4, 7], count: 6 }, at, () => .999);
+    for (const question of questions) {
+      expect(question.choicePolicy?.mastery).toBe(cardMastery(schedules.get(question.demoId!)).label);
+      expect(question.choicePolicy?.version).toBe('word-neighbors-v1');
+    }
+  });
   it('balances selected types and levels, repeats small pools as independent samples, and is deterministic', () => {
     const entries = devReviewEntries(cards, [], []);
     const before = structuredClone(entries);
@@ -81,6 +91,7 @@ describe('configured simulated Dev review (#152)', () => {
       expect(question.contextual?.recording?.voice).toBe('otani');
       expect(question.contextual?.recording?.questionSrcs[question.contextual.question.id]).toBeTruthy();
       expect(cardMastery(result.schedules.get(question.demoId!)).label).toBe('Mastered');
+      expect(question.choicePolicy).toBeUndefined();
     }
     expect(devReviewEntries([{ item: { ...target, language: 'es-419' }, exercise: 'audio-picture' }], [subset], contextualVocabulary)).toHaveLength(1);
     expect(devReviewEntries(selected, [{ ...subset, contexts: [{ ...context, review: { text: 'pending', audio: 'pending' } }] }], contextualVocabulary)).toHaveLength(1);

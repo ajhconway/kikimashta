@@ -1,0 +1,304 @@
+{
+  "issue": 198,
+  "definedBeforeInspectingOutputs": true,
+  "limitations": [
+    "This is a small authored lexical sanity suite with many deliberately clear negatives. It cannot establish learner difficulty or statistical superiority; review actual top-neighbor lists alongside it.",
+    "The eight query sets contain incomplete positive-neighbor labels. Report hit/recall at 5; do not count unlisted neighbors as errors.",
+    "Report triplet results by group as well as overall, because the bank is heavily numerical. Raw cosine margins are not directly comparable across models.",
+    "The sense examples reflect the intended card meanings but do not directly contrast two meanings of the same written surface. The approved bank lacks enough separately identified same-surface senses for that test.",
+    "Semantic quality and picture validity are separate. Staged issue-79 never-compete groups remain diagnostics and must not be activated silently by this benchmark.",
+    "Partially overlapping number/character controls remain unscored diagnostics: 三人 versus 二人/三角, 四千 versus 二百/四角, 千円 versus お金/千, and 三日月 versus 月光/三人."
+  ],
+  "triplets": [
+    {
+      "targetId": "ja-v-a47e21265374",
+      "relatedId": "ja-v-b1b10c2f6445",
+      "unrelatedId": "ja-v-0c144e18f1b2",
+      "group": "category",
+      "rationale": "Cow and pig are distinct livestock animals; notebook is stationery."
+    },
+    {
+      "targetId": "ja-v-dca5c9fc5908",
+      "relatedId": "ja-v-6c0b9f3278dc",
+      "unrelatedId": "ja-v-9ff5251e6f21",
+      "group": "category",
+      "rationale": "Ear and eye are sensory body parts; coffee is a drink."
+    },
+    {
+      "targetId": "ja-v-ddd9dca106e2",
+      "relatedId": "ja-v-ceb7b2a20cbd",
+      "unrelatedId": "ja-v-9567eaf8fe9b",
+      "group": "category",
+      "rationale": "Mountain and valley are contrasting landforms; student is a human role."
+    },
+    {
+      "targetId": "ja-v-887f569257fd",
+      "relatedId": "ja-v-92bebda5ac98",
+      "unrelatedId": "ja-v-ac1e4f6bee13",
+      "group": "category",
+      "rationale": "City and village are settlements; wool yarn is a material."
+    },
+    {
+      "targetId": "ja-v-9ff5251e6f21",
+      "relatedId": "ja-v-8fb11237e460",
+      "unrelatedId": "ja-v-e05b8e36c6ca",
+      "group": "category",
+      "rationale": "Coffee and draft beer are beverages; thread is a material."
+    },
+    {
+      "targetId": "ja-v-9a9a5c6d448c",
+      "relatedId": "ja-v-6027e0e1c622",
+      "unrelatedId": "ja-v-d10df0e56846",
+      "group": "category",
+      "rationale": "Convenience store and department store are retail establishments; caterpillar is an animal."
+    },
+    {
+      "targetId": "ja-v-d1b6831b65c8",
+      "relatedId": "ja-v-f14d2c0c7442",
+      "unrelatedId": "ja-v-497356cf0646",
+      "group": "category",
+      "rationale": "Circle and square are shapes; teacher is a human role."
+    },
+    {
+      "targetId": "ja-v-0958f7553d9f",
+      "relatedId": "ja-v-d215c2071f47",
+      "unrelatedId": "ja-v-99f7c98099b1",
+      "group": "category",
+      "rationale": "Rice and wheat are cereal staples; television is an appliance."
+    },
+    {
+      "targetId": "ja-v-c0f58bfab324",
+      "relatedId": "ja-v-520308b3c3b4",
+      "unrelatedId": "ja-v-d19a39e4af55",
+      "group": "contrast",
+      "rationale": "Above and below are opposing vertical positions; ice is a substance."
+    },
+    {
+      "targetId": "ja-v-14be5202d5b3",
+      "relatedId": "ja-v-ed6bd4d73b76",
+      "unrelatedId": "ja-v-b1b10c2f6445",
+      "group": "contrast",
+      "rationale": "Left and right are opposing lateral directions; pig is an animal."
+    },
+    {
+      "targetId": "ja-v-f6377dcbb564",
+      "relatedId": "ja-v-769a80524957",
+      "unrelatedId": "ja-v-e5fd15d61360",
+      "group": "contrast",
+      "rationale": "Big and small share the size dimension; old concerns age."
+    },
+    {
+      "targetId": "ja-v-b5e9e035a8be",
+      "relatedId": "ja-v-a001b24baf12",
+      "unrelatedId": "ja-v-97526e11c703",
+      "group": "contrast",
+      "rationale": "Insert and take out reverse containment; run concerns locomotion."
+    },
+    {
+      "targetId": "ja-v-d67a7d3dacc9",
+      "relatedId": "ja-v-10e568715d3a",
+      "unrelatedId": "ja-v-a249b72fa923",
+      "group": "contrast",
+      "rationale": "White and blue are color properties; many concerns quantity."
+    },
+    {
+      "targetId": "ja-v-cb7a14590e8e",
+      "relatedId": "ja-v-2d7d45d5614e",
+      "unrelatedId": "ja-v-8ce0a0ec59c4",
+      "group": "contrast",
+      "rationale": "Sunlight and moonlight are parallel sources of natural light; engineering is a discipline."
+    },
+    {
+      "targetId": "ja-v-c5425c81df8c",
+      "relatedId": "ja-v-223e5321ecb8",
+      "unrelatedId": "ja-v-99f7c98099b1",
+      "group": "compound",
+      "rationale": "Bamboo shoot and onion are edible plant parts; television is an appliance."
+    },
+    {
+      "targetId": "ja-v-88c9d9718867",
+      "relatedId": "ja-v-8ce0a0ec59c4",
+      "unrelatedId": "ja-v-9ff5251e6f21",
+      "group": "compound",
+      "rationale": "Archeology and engineering are academic disciplines; coffee is a beverage."
+    },
+    {
+      "targetId": "ja-v-0c1b8280f1ee",
+      "relatedId": "ja-v-3534dd7d07d1",
+      "unrelatedId": "ja-v-36897e1da4ac",
+      "group": "compound",
+      "rationale": "Sunrise and early evening are daily temporal transitions; postage stamp is stationery."
+    },
+    {
+      "targetId": "ja-v-dfb71d269e06",
+      "relatedId": "ja-v-960de5429d2e",
+      "unrelatedId": "ja-v-5dc14aea92c7",
+      "group": "compound",
+      "rationale": "On the table and under the bed are spatial-location phrases; beef is food."
+    },
+    {
+      "targetId": "ja-v-74043c16db5e",
+      "relatedId": "ja-v-8fb11237e460",
+      "unrelatedId": "ja-v-497356cf0646",
+      "group": "compound",
+      "rationale": "Shaved ice and draft beer are cold refreshments; teacher is a human role."
+    },
+    {
+      "targetId": "ja-v-ac1e4f6bee13",
+      "relatedId": "ja-v-a491f1acccc3",
+      "unrelatedId": "ja-v-9ff5251e6f21",
+      "group": "compound",
+      "rationale": "Wool yarn is used in handicraft; coffee has no comparable making-material relation."
+    },
+    {
+      "targetId": "ja-v-36897e1da4ac",
+      "relatedId": "ja-v-0c144e18f1b2",
+      "unrelatedId": "ja-v-5dc14aea92c7",
+      "group": "compound",
+      "rationale": "Postage stamp and notebook are paper artifacts; beef is food."
+    },
+    {
+      "targetId": "ja-v-b90f6c64551b",
+      "relatedId": "ja-v-0c1b8280f1ee",
+      "unrelatedId": "ja-v-d10df0e56846",
+      "group": "compound",
+      "rationale": "Fireworks and sunrise are luminous sky events; caterpillar is an animal."
+    },
+    {
+      "targetId": "ja-v-5dc14aea92c7",
+      "relatedId": "ja-v-23d807f4f375",
+      "unrelatedId": "ja-v-8ce0a0ec59c4",
+      "group": "compound",
+      "rationale": "Beef and shellfish are distinct animal foods; engineering is a discipline."
+    },
+    {
+      "targetId": "ja-v-602940cfc449",
+      "relatedId": "ja-v-9ff5251e6f21",
+      "unrelatedId": "ja-v-8ce0a0ec59c4",
+      "group": "compound",
+      "rationale": "Small plate and coffee belong to dining; engineering is unrelated to that situation."
+    },
+    {
+      "targetId": "ja-v-4789ab8b6db0",
+      "relatedId": "ja-v-f5b4250aeb03",
+      "unrelatedId": "ja-v-0c144e18f1b2",
+      "group": "compound",
+      "rationale": "Five machines and two machines share the counted-object category; notebook is stationery."
+    },
+    {
+      "targetId": "ja-v-1a43c96593cb",
+      "relatedId": "ja-v-13ea3220cde0",
+      "unrelatedId": "ja-v-9910372c1964",
+      "group": "compound",
+      "rationale": "Year 2011 and fourth day are calendar expressions; university is an institution."
+    },
+    {
+      "targetId": "ja-v-0ac038632611",
+      "relatedId": "ja-v-0c144e18f1b2",
+      "unrelatedId": "ja-v-eba7f0968101",
+      "group": "sense",
+      "rationale": "Book and notebook are reading/writing objects; one machine does not match the card's book sense of 本."
+    },
+    {
+      "targetId": "ja-v-597577664a1b",
+      "relatedId": "ja-v-b34b4a2e7a98",
+      "unrelatedId": "ja-v-9567eaf8fe9b",
+      "group": "sense",
+      "rationale": "Gold and treasure are valuable materials/possessions; student is a human role."
+    },
+    {
+      "targetId": "ja-v-19bd7db9d5d0",
+      "relatedId": "ja-v-2850b5703e8b",
+      "unrelatedId": "ja-v-b639fedc63ec",
+      "group": "sense",
+      "rationale": "The card teaches sky, which relates to weather; meat does not match this sense."
+    },
+    {
+      "targetId": "ja-v-d4fb59f8c32c",
+      "relatedId": "ja-v-0c144e18f1b2",
+      "unrelatedId": "ja-v-9ff5251e6f21",
+      "group": "sense",
+      "rationale": "The card teaches writing, related to a notebook; coffee is a beverage."
+    },
+    {
+      "targetId": "ja-v-a76119b3c712",
+      "relatedId": "ja-dog",
+      "unrelatedId": "ja-v-8ce0a0ec59c4",
+      "group": "sense",
+      "rationale": "The card teaches fur, associated with a dog; engineering is an academic discipline."
+    },
+    {
+      "targetId": "ja-v-9e64feeea5ea",
+      "relatedId": "ja-v-dca5c9fc5908",
+      "unrelatedId": "ja-v-2d7d45d5614e",
+      "group": "sense",
+      "rationale": "The card teaches mouth, which relates to another body part; moonlight does not match this sense."
+    }
+  ],
+  "queries": [
+    {
+      "targetId": "ja-v-9ff5251e6f21",
+      "expectedUsefulIds": [
+        "ja-v-8fb11237e460",
+        "ja-v-28ddfdc9290c"
+      ]
+    },
+    {
+      "targetId": "ja-v-88c9d9718867",
+      "expectedUsefulIds": [
+        "ja-v-8ce0a0ec59c4",
+        "ja-v-9910372c1964"
+      ]
+    },
+    {
+      "targetId": "ja-v-dca5c9fc5908",
+      "expectedUsefulIds": [
+        "ja-v-6c0b9f3278dc",
+        "ja-v-9e64feeea5ea",
+        "ja-v-b1ff052549ed",
+        "ja-v-64289653ec1d"
+      ]
+    },
+    {
+      "targetId": "ja-v-c0f58bfab324",
+      "expectedUsefulIds": [
+        "ja-v-520308b3c3b4",
+        "ja-v-14be5202d5b3",
+        "ja-v-ed6bd4d73b76",
+        "ja-v-4ac46ddaa10f"
+      ]
+    },
+    {
+      "targetId": "ja-v-c5425c81df8c",
+      "expectedUsefulIds": [
+        "ja-v-223e5321ecb8",
+        "ja-v-0958f7553d9f",
+        "ja-v-d215c2071f47"
+      ]
+    },
+    {
+      "targetId": "ja-v-0ac038632611",
+      "expectedUsefulIds": [
+        "ja-v-0c144e18f1b2",
+        "ja-v-d4fb59f8c32c",
+        "ja-v-4b9574b8d3b9"
+      ]
+    },
+    {
+      "targetId": "ja-v-4789ab8b6db0",
+      "expectedUsefulIds": [
+        "ja-v-eba7f0968101",
+        "ja-v-f5b4250aeb03",
+        "ja-v-760cc08e40eb"
+      ]
+    },
+    {
+      "targetId": "ja-v-cb7a14590e8e",
+      "expectedUsefulIds": [
+        "ja-v-2d7d45d5614e",
+        "ja-v-0c1b8280f1ee",
+        "ja-v-3534dd7d07d1"
+      ]
+    }
+  ]
+}
