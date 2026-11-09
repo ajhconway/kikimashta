@@ -4,9 +4,36 @@
   "tool": "built-in image_gen",
   "ownerFeedback": [
     "Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot. Inside should use a more rectangular box. Next to should use a chair. Hungry, thirsty and sleepy should be chiller. I think I'd prefer Kiku in her normal position as well.",
-    "Let's have a bunco of ice for cold, and a little more fire for hot"
+    "Let's have a bunco of ice for cold, and a little more fire for hot",
+    "Sleepiness should have a bigger pillow which Kiku is more on. The rest are good."
   ],
-  "changes": [
+  "unchangedSelectedPictures": [
+    "es-419-basic-eat",
+    "es-419-basic-drink",
+    "es-419-basic-large",
+    "es-419-basic-small",
+    "es-419-basic-open",
+    "es-419-basic-closed",
+    "es-419-basic-on-top",
+    "es-419-basic-under"
+  ],
+  "allPreviousOriginalsPreserved": 10,
+  "versionsPreserved": 21,
+  "immutableInputsVerified": {
+    "content/spanish-basic-1/draft.json": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+    "content/spanish-basic-1/generation-approval.json": "6c07ee6197ad6303f5c813289cf6068a49b091f3cc73879ca342af56bb7423db",
+    "content/spanish-basic-1/audio-approval.json": "42c474c6bf7fcdbce976d14ef095b3a4bb769a81e589d6c1d42ded782d80958e",
+    "content/spanish-basic-1/audio-config.json": "8b8a217ca628edb08a60e2299dc5b7b0deac66a774859bbcf66d562a18f878ba",
+    "artifacts/spanish-basic-1-audio-review/manifest.json": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07"
+  },
+  "audioRecordingsUnchanged": 336,
+  "notes": [
+    "cold v2 preserved as a portrait draft; v3 reframed to square; v4 adds the requested ice pile.",
+    "hot v3 enlarges the flame after v2; both remain preserved.",
+    "Kiku uses the canonical low resting pose for inside, next to and the three needs.",
+    "The next-to chair uses the approved chair artwork as a furniture reference."
+  ],
+  "initialRevisionChanges": [
     {
       "id": "es-419-basic-cold",
       "previous": {
@@ -106,30 +133,31 @@
       "request": "revisions/sleepiness-v2-request.json"
     }
   ],
-  "unchangedSelectedPictures": [
-    "es-419-basic-eat",
-    "es-419-basic-drink",
-    "es-419-basic-large",
-    "es-419-basic-small",
-    "es-419-basic-open",
-    "es-419-basic-closed",
-    "es-419-basic-on-top",
-    "es-419-basic-under"
+  "followUpChanges": [
+    {
+      "id": "es-419-basic-sleepiness",
+      "previous": {
+        "path": "originals/sleepiness-v2.png",
+        "sha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+        "version": 2
+      },
+      "selected": {
+        "path": "originals/sleepiness-v3.png",
+        "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79",
+        "version": 3
+      },
+      "request": "revisions/sleepiness-v3-request.json",
+      "ownerFeedback": "Sleepiness should have a bigger pillow which Kiku is more on. The rest are good."
+    }
   ],
-  "allPreviousOriginalsPreserved": 10,
-  "versionsPreserved": 20,
-  "immutableInputsVerified": {
-    "content/spanish-basic-1/draft.json": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
-    "content/spanish-basic-1/generation-approval.json": "6c07ee6197ad6303f5c813289cf6068a49b091f3cc73879ca342af56bb7423db",
-    "content/spanish-basic-1/audio-approval.json": "42c474c6bf7fcdbce976d14ef095b3a4bb769a81e589d6c1d42ded782d80958e",
-    "content/spanish-basic-1/audio-config.json": "8b8a217ca628edb08a60e2299dc5b7b0deac66a774859bbcf66d562a18f878ba",
-    "artifacts/spanish-basic-1-audio-review/manifest.json": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07"
+  "currentSelectedVersions": {
+    "cold": 4,
+    "hot": 3,
+    "inside": 2,
+    "next-to": 3,
+    "hunger": 2,
+    "thirst": 2,
+    "sleepiness": 3
   },
-  "audioRecordingsUnchanged": 336,
-  "notes": [
-    "cold v2 preserved as a portrait draft; v3 reframed to square; v4 adds the requested ice pile.",
-    "hot v3 enlarges the flame after v2; both remain preserved.",
-    "Kiku uses the canonical low resting pose for inside, next to and the three needs.",
-    "The next-to chair uses the approved chair artwork as a furniture reference."
-  ]
+  "ownerPictureAcceptance": "artifacts/spanish-basic-1-art/owner-review.json"
 }

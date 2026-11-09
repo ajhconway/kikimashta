@@ -259,27 +259,21 @@
       "text": "sueño",
       "meaning": "Sleepiness",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v2.png",
-      "sha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
-      "bytes": 832578,
-      "version": 2,
+      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v3.png",
+      "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79",
+      "bytes": 1002949,
+      "version": 3,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 977605,
-        "opaquePixels": 582370,
+        "transparentPixels": 814550,
+        "opaquePixels": 744413,
         "opaqueWhitePixels": 0
       },
-      "promptSha256": "dc79a4627798a4b92e8a634edad43b1e67b54a946dd833bd31f8d604a6c70e81",
-      "concept": "A CALM mildly sleepy Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body and tail, no upright torso or seated legs. Retain relaxed closed eyes and a TINY subtle yawn, or gently drooping eyelids. A SMALL simple purple pillow beside her can cue sleepiness. Remove the large bed and attention rays. No giant yawning mouth, raised hand, exhausted or grumpy face, distress, letters or Z symbols. She looks comfortably ready for a nap.",
-      "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
-      "additionalReferences": [
-        {
-          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
-          "role": "character-pose",
-          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
-        }
-      ]
+      "promptSha256": "3f1e660e7956672fcd691e76eb85410ccdf90d92bb3dcedcd480c14ce63815d7",
+      "concept": "Calm sleepy Kiku in her normal low resting pose, with her chin and both front paws supported on a large soft purple pillow spanning most of her width. The pillow is clearly beneath Kiku, compressed gently by her weight, with its edges visible around her paws.",
+      "ownerFeedback": "Sleepiness should have a bigger pillow which Kiku is more on. The rest are good.",
+      "additionalReferences": []
     }
   ]
 }

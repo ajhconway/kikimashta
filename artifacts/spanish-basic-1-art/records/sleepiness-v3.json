@@ -1,0 +1,13 @@
+{
+  "id": "es-419-basic-sleepiness",
+  "slug": "sleepiness",
+  "version": 3,
+  "path": "originals/sleepiness-v3.png",
+  "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79",
+  "promptSha256": "3f1e660e7956672fcd691e76eb85410ccdf90d92bb3dcedcd480c14ce63815d7",
+  "referenceSha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-242e1e61-02e0-405e-aae3-ed4ce34862aa.png",
+  "supersedes": "originals/sleepiness-v2.png"
+}

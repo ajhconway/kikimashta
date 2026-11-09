@@ -5,10 +5,15 @@
     "selected": 15,
     "generated": 9,
     "reused": 6,
-    "versionsPreserved": 20,
+    "versionsPreserved": 21,
     "manifest": "artifacts/spanish-basic-1-art/manifest.json",
     "revisedSelected": 7,
-    "revisionHistory": "artifacts/spanish-basic-1-art/revisions/history.json"
+    "revisionHistory": "artifacts/spanish-basic-1-art/revisions/history.json",
+    "approved": 14,
+    "pending": [
+      "es-419-basic-sleepiness"
+    ],
+    "ownerReview": "artifacts/spanish-basic-1-art/owner-review.json"
   },
   "audio": {
     "clips": 336,
@@ -29,10 +34,10 @@
     "types": "passed",
     "validator": "passed",
     "build": "passed",
-    "revisionScope": "Seven artwork replacements, revised reference guards and gallery concept display."
+    "revisionScope": "Sleepiness v3 larger pillow supporting Kiku; no application behavior changes."
   },
   "limitations": [
-    "Owner picture and listening acceptance pending.",
+    "Owner acceptance of sleepiness v3 and listening remains pending.",
     "Real iPhone tests deferred to deployed version.",
     "Foundation admission/runtime activation not included."
   ],
@@ -45,7 +50,7 @@
       "pairButtons": 72,
       "filters": true,
       "orderedPairPlayback": true,
-      "pauseMs": 657,
+      "pauseMs": 656,
       "cancelGap": true,
       "overflow": false,
       "errors": []
@@ -58,11 +63,11 @@
       "pairButtons": 72,
       "filters": true,
       "orderedPairPlayback": true,
-      "pauseMs": 842,
+      "pauseMs": 820,
       "cancelGap": true,
       "overflow": false,
       "errors": []
     }
   ],
-  "independentReview": "No material findings. Seven selected revisions visually match owner requests. All 20 image/record hashes and revision prompt/reference hashes checked; previous 10 originals, exact approved draft/authorization inputs and all 336 audio delivery hashes preserved. Focused gallery test passed (1/1)."
+  "independentReview": "Prior seven-picture round independently reviewed with no material findings. Follow-up sleepiness v3 visually inspected with larger pillow supporting chin and both paws; selected-file alpha/hash and gallery checks refreshed."
 }
