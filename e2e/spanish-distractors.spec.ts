@@ -125,7 +125,7 @@ test('Spanish saved mastery keeps canonical shared-word choices through a miss, 
   const ids = await shownIds(page);
   expect(ids).toContain(rice.id);
   expect(ids.filter(id => nearest(rice, 'semantic').includes(id))).toHaveLength(2);
-  await expect(page.getByRole('img', { name: rice.image.alt, exact: true })).toHaveAttribute('src', rice.image.src);
+  await expect(page.getByRole('img', { name: rice.image.alt, exact: true })).toHaveJSProperty('src', new URL(rice.image.src, page.url()).href);
   const wrong = food.items.find(item => ids.includes(item.id) && item.id !== rice.id)!;
   await page.getByRole('button', { name: /Choose picture/ }).filter({ has: page.getByRole('img', { name: wrong.image.alt, exact: true }) }).click();
   await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(3);
