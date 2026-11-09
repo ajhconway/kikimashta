@@ -1,7 +1,7 @@
 {
   "issue": 218,
   "pack": "es-419-food-1",
-  "status": "artwork-accepted-audio-pending",
+  "status": "artwork-accepted-new-audio-generated-listening-pending",
   "tool": "built-in image_gen",
   "words": 36,
   "pictures": {
@@ -93,6 +93,8 @@
     "newRecordings": 96,
     "voices": 8,
     "inputCharacters": 608,
-    "authorized": false
-  }
+    "authorized": true,
+    "approval": "content/spanish-food-1/audio-approval.json"
+  },
+  "mediaVerification": "content/spanish-food-1/media-verification.json"
 }

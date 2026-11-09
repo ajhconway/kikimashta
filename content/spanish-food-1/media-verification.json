@@ -1,0 +1,95 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "status": "generated-awaiting-owner-listening-review",
+  "words": 36,
+  "pictures": 36,
+  "recordings": 288,
+  "newRecordings": 96,
+  "reusedRecordings": 192,
+  "voices": 8,
+  "characters": 608,
+  "newAudioManifest": "artifacts/spanish-food-1-audio-review/manifest.json",
+  "newAudioManifestSha256": "3083df947944176542b6fcb6ff31db5d4aed93ccffa86e3ce199e25c7d4b12c9",
+  "combinedManifest": "artifacts/spanish-food-1-media-review/manifest.json",
+  "combinedManifestSha256": "6143a08cf6c827a644e8b2b1d564836b94499c46f840723cea39d7c0509c61a2",
+  "artworkAcceptance": "content/spanish-food-1/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "e33086297c0692de7ce365aaa2ef104f9069e982a453ddfefba9576a0ad2ef34",
+  "audioApproval": "content/spanish-food-1/audio-approval.json",
+  "audioApprovalSha256": "97af6193654992f7f4d6c3e16249a57ace34ff6d0f17471e5db4449f472f2ca4",
+  "review": "content/spanish-food-1/media-review.html",
+  "checks": {
+    "command": "VITEST_MAX_WORKERS=2 npm run check",
+    "exitCode": 0,
+    "vitest": 571,
+    "node": 303,
+    "pythonAudioContent": 18,
+    "pythonCards": 27,
+    "lint": "passed",
+    "types": "passed",
+    "validators": "passed",
+    "productionBuild": "passed",
+    "focusedAudioTests": 7,
+    "focusedCombinedReviewTests": 3,
+    "artworkProvenanceRegression": "Both predecessor path and hash are required in generated revision records; omitted fields reject before output writes."
+  },
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "clips": 96,
+      "passed": 96,
+      "advanced": 96,
+      "failures": []
+    },
+    {
+      "engine": "mobile-webkit",
+      "clips": 96,
+      "passed": 96,
+      "advanced": 96,
+      "failures": []
+    }
+  ],
+  "combinedBrowserEvidence": "artifacts/spanish-food-1-media-review/browser-verification.json",
+  "newQuieterClips": [
+    {
+      "id": "es-419-food-pasta",
+      "voice": "santiago",
+      "text": "pasta",
+      "integratedLufs": -22.4,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "voice": "juan",
+      "text": "sándwich",
+      "integratedLufs": -22.54,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-pizza",
+      "voice": "carlos-figueroa",
+      "text": "pizza",
+      "integratedLufs": -22.98,
+      "limitingReasons": [
+        "maximum_gain"
+      ]
+    }
+  ],
+  "privateArchive": {
+    "path": "~/.local/share/kikimashta/spanish-audio/218-v1/",
+    "filesVerified": 584,
+    "archiveManifest": 1
+  },
+  "preservation": "The approved draft, artwork acceptance, selected artwork, audio configuration/approval/reuse records and all 192 accepted production recordings remain unchanged. Provider originals and account-usage evidence are private; the review includes processed MP3s and public provenance.",
+  "independentReview": "Read-only code, scope, provenance, source-byte and test-quality review found no material findings. All 288 recording hashes and byte counts match; reused clips also match their current accepted bank/voice/activation records.",
+  "ownerListeningAccepted": false,
+  "runtimeActivated": false,
+  "limitations": [
+    "New recordings await owner listening acceptance.",
+    "Actual iPhone listening and touch testing remains manual."
+  ]
+}

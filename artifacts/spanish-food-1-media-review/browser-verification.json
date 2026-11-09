@@ -1,0 +1,111 @@
+{
+  "realIPhoneTest": false,
+  "artworkPreserved": [
+    {
+      "path": "artifacts/spanish-food-1-art/manifest.json",
+      "sha256": "c47af3dc7cd25a15529988ceebe323640210dc3a75e730d6774ec33c7a457e87"
+    },
+    {
+      "path": "artifacts/spanish-food-1-art/review.html",
+      "sha256": "8c74d9f8f9b20f3f0f4322397307f88419a74ada4b1f132fbee95715adc11f1e"
+    },
+    {
+      "path": "artifacts/spanish-food-1-art/artwork.html",
+      "sha256": "efe678589ff87359e5400cbb5dd18a705ec566a319b2b033efa2e92a3262bac0"
+    },
+    {
+      "path": "artifacts/spanish-food-1-art/contact-sheet.png",
+      "sha256": "6cf25cc53e4fb5078eeb55768dae0b619490ac3ce72c3158887aff234470e9c6"
+    },
+    {
+      "path": "content/spanish-food-1/artwork-acceptance.json",
+      "sha256": "e33086297c0692de7ce365aaa2ef104f9069e982a453ddfefba9576a0ad2ef34"
+    }
+  ],
+  "results": [
+    {
+      "browser": "chromium",
+      "words": 36,
+      "pictures": 36,
+      "recordings": 288,
+      "newRecordings": 96,
+      "reusedRecordings": 192,
+      "filters": [
+        "source",
+        "region",
+        "voice",
+        "group",
+        "accent-search"
+      ],
+      "playback": [
+        {
+          "source": "new-generation",
+          "path": "/artifacts/spanish-food-1-audio-review/audio/juan/es-419-food-potato.mp3",
+          "time": 0.045431,
+          "duration": 0.8,
+          "readyState": 4,
+          "error": null,
+          "queueAndNativeStop": true
+        },
+        {
+          "source": "accepted-reuse",
+          "path": "/public/audio/es-419-travel-3/juan/es-419-travel-apple.mp3",
+          "time": 0.042396,
+          "duration": 1.04,
+          "readyState": 4,
+          "error": null,
+          "queueAndNativeStop": true
+        }
+      ],
+      "artworkAccepted": true,
+      "listeningPending": true,
+      "packInactive": true,
+      "overflow": false,
+      "storageWrites": false,
+      "pageErrors": [],
+      "httpErrors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "words": 36,
+      "pictures": 36,
+      "recordings": 288,
+      "newRecordings": 96,
+      "reusedRecordings": 192,
+      "filters": [
+        "source",
+        "region",
+        "voice",
+        "group",
+        "accent-search"
+      ],
+      "playback": [
+        {
+          "source": "new-generation",
+          "path": "/artifacts/spanish-food-1-audio-review/audio/juan/es-419-food-potato.mp3",
+          "time": 0.03688945830799639,
+          "duration": 0.8359183673469388,
+          "readyState": 4,
+          "error": null,
+          "queueAndNativeStop": true
+        },
+        {
+          "source": "accepted-reuse",
+          "path": "/public/audio/es-419-travel-3/juan/es-419-travel-apple.mp3",
+          "time": 0.04240137501619756,
+          "duration": 1.0710204081632653,
+          "readyState": 4,
+          "error": null,
+          "queueAndNativeStop": true
+        }
+      ],
+      "artworkAccepted": true,
+      "listeningPending": true,
+      "packInactive": true,
+      "overflow": false,
+      "storageWrites": false,
+      "pageErrors": [],
+      "httpErrors": []
+    }
+  ]
+}
