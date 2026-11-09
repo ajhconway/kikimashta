@@ -70,6 +70,10 @@
 | cargador | Charger |
 | lentes de sol | Sunglasses |
 
+## Artwork feedback
+
+The earlier Japanese table and chair scenes include Kiku and teach spatial relations (on/under). They are not standalone furniture pictures. Keep the new isolated table and chair for mesa and silla. The owner rejected the original staircase taper; the gallery now selects stairs v5 with consistent-width treads. Earlier variants, their exact prompts and the geometry reference remain preserved under the artwork revisions. All other pictures and all 288 recordings are unchanged.
+
 ## Preparation notes
 
 - Reused unchanged: approved empty plate for plato and the existing handleless glass for vaso. The asset historically named ja-cup is a glass; taza needs a handled cup image.

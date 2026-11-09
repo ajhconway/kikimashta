@@ -412,7 +412,10 @@
       "group": "hotel",
       "artwork": {
         "status": "needs-generation",
-        "concept": "One short stairway with a visible sequence of steps and handrail."
+        "concept": "One short stairway with a visible sequence of steps and handrail.",
+        "selectedVersion": 5,
+        "feedback": "The stairs are oddly wide at the bottom and narrow at the top.",
+        "revisionNote": "Select the uniform-width parallel-projection revision. Preserve all earlier original bytes and requests; v2 still tapered, v3 still varied at the bottom, v4 head-on view read poorly."
       }
     },
     {

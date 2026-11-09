@@ -6,7 +6,7 @@
     "command": "npm run check",
     "exitCode": 0,
     "vitest": 399,
-    "nodeTests": 227,
+    "nodeTests": 228,
     "pythonAudio": 12,
     "pythonCards": 22,
     "artworkValidator": "passed",
@@ -5841,5 +5841,13 @@
   "limitations": [
     "Real iPhone tests deferred to deployed version as requested.",
     "Browser playback checks do not constitute owner pronunciation or artwork acceptance."
-  ]
+  ],
+  "artworkRevision": {
+    "item": "es-419-travel-stairs",
+    "selectedVersion": 5,
+    "history": "artifacts/spanish-travel-2-art/revisions/history.json",
+    "other35ImageHashesUnchanged": true,
+    "audioManifestHashUnchanged": true,
+    "checks": "npm run check and Chromium/mobile WebKit gallery verification passed after revision."
+  }
 }

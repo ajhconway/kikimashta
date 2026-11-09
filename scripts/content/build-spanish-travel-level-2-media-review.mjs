@@ -27,22 +27,31 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
     const { id, slug, text, meaning, group, artwork } = item
     if (!/^[a-z0-9-]+$/.test(slug)) throw new Error('Invalid image slug.')
     if (artwork.status === 'needs-generation') {
-      const request = requests.requests.find(q => q.id === id)
-      if (request.transparent_background !== true || request.referenceRole !== 'style-only' ||
+      const version = artwork.selectedVersion ?? 1
+      if (!Number.isSafeInteger(version) || version < 1) throw new Error('Invalid selected artwork version.')
+      const request = version === 1 ? requests.requests.find(q => q.id === id) : await json(join(art, 'revisions', `${slug}-v${version}-request.json`))
+      if (request.id !== id || request.slug !== slug || (version > 1 && (request.version !== version || !request.ownerFeedback)) ||
+          request.transparent_background !== true || (version === 1 ? request.referenceRole !== 'style-only' : !['style-only', 'geometry-and-style'].includes(request.referenceRole)) ||
           request.referencePath !== 'artifacts/card-regeneration/references/cat-style-reference.png' ||
           !request.prompt.includes('Primary request: ' + artwork.concept)) throw new Error('Image request identity changed.')
       const reference = await readFile(join(root, request.referencePath))
       if (hash(reference) !== request.referenceSha256) throw new Error('Style reference hash mismatch.')
-      const record = await json(join(art, 'records', slug + '-v1.json'))
-      if (record.id !== id || record.slug !== slug || record.path !== `originals/${slug}-v1.png` ||
+      const record = await json(join(art, 'records', `${slug}-v${version}.json`))
+      if (record.id !== id || record.slug !== slug || record.path !== `originals/${slug}-v${version}.png` ||
           record.promptSha256 !== hash(request.prompt) || record.referenceSha256 !== request.referenceSha256) throw new Error('Image record identity changed.')
+      const additionalReferences = request.additionalReferences ?? []
+      if (JSON.stringify(additionalReferences) !== JSON.stringify(record.additionalReferences ?? [])) throw new Error('Additional reference identity changed.')
+      for (const extra of additionalReferences) {
+        if (extra.role !== 'strict-geometry' || extra.path !== `artifacts/spanish-travel-2-art/revisions/${slug}-geometry-reference.png` ||
+            hash(await readFile(join(root, extra.path))) !== extra.sha256) throw new Error('Geometry reference hash mismatch.')
+      }
       const bytes = await readFile(join(art, record.path))
       if (hash(bytes) !== record.sha256) throw new Error('Generated image hash mismatch.')
       const pixels = inspectPngAlpha(bytes)
       if (pixels.width !== pixels.height || pixels.width < 1024 || !pixels.transparentPixels || !pixels.opaquePixels) throw new Error('Image requires a square transparent canvas and opaque subject.')
       images.push({ id, slug, text, meaning, group, source: 'generated', file: record.path,
         sha256: record.sha256, bytes: bytes.length, pixels, promptSha256: hash(request.prompt),
-        referenceSha256: request.referenceSha256, reviewStatus: 'awaiting-owner-review' })
+        referenceSha256: request.referenceSha256, additionalReferences, version, reviewStatus: 'awaiting-owner-review' })
     } else if (artwork.status === 'reuse-candidate') {
       const bytes = await readFile(join(root, artwork.candidatePath))
       if (hash(bytes) !== artwork.candidateSha256) throw new Error('Approved reuse hash mismatch.')

@@ -1,0 +1,38 @@
+{
+  "issue": 166,
+  "item": "es-419-travel-stairs",
+  "ownerFeedback": "The stairs are oddly wide at the bottom and narrow at the top.",
+  "selectedVersion": 5,
+  "versions": [
+    {
+      "version": 1,
+      "file": "originals/stairs-v1.png",
+      "sha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+      "status": "owner-rejected-taper"
+    },
+    {
+      "version": 2,
+      "file": "originals/stairs-v2.png",
+      "sha256": "6ec17e11c8e49e394177f19eb977ea1c55166b19c054ecf02c9001781e4e3f43",
+      "status": "preserved-unselected-revision"
+    },
+    {
+      "version": 3,
+      "file": "originals/stairs-v3.png",
+      "sha256": "032966709ba71ce76dbeb53fc1b179b30149d539d5b8572ec2d2371ddfe3c7ca",
+      "status": "preserved-unselected-revision"
+    },
+    {
+      "version": 4,
+      "file": "originals/stairs-v4.png",
+      "sha256": "a8e839bc3a3620a0a38d711adafc9ea700b3d34b83eb3b70d865acf549c3f500",
+      "status": "preserved-unselected-revision"
+    },
+    {
+      "version": 5,
+      "file": "originals/stairs-v5.png",
+      "sha256": "ad411dfdee2034d23e7f8fc93be61ad6b6fc32ecb430abba902118c982e30e83",
+      "status": "selected-awaiting-owner-review"
+    }
+  ]
+}

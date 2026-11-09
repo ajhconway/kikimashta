@@ -1,0 +1,23 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 5,
+  "issue": 166,
+  "prompt": "Use case: scientific-educational\nAsset type: single square vocabulary card, stairs\nPrimary request: One short stairway with a visible sequence of steps and handrail.\nImage 1 is the exact structural reference. Image 2 supplies only the app's smooth polished cartoon style and bold deep-violet outlines; do not reproduce its cat or scene.\nReproduce image 1's staircase with precisely equal-width steps. Keep all four front edges the same length and parallel, with exactly the same horizontal offset between successive steps as the geometry reference. Keep each tread the same depth, each riser the same height. Parallel-projection diagram, no perspective scaling. This is a solid straight flight of four stairs, not a fan or pyramid. All four front faces have identical dimensions, shifted diagonally up-left relative to each other. Keep the single side handrail from image1. Maintain that geometry while adding gentle rounded corners and soft shading inside the solid forms: golden-yellow treads, lavender risers, rich violet side panel and contours. No bright-white shine stripes. The subject should be beautifully finished but simple and readable at145px. Center the complete stairway on a square transparent canvas with generous margins. No cat, letters, numbers, labels, checkerboard, floor patch, shadow, scenery, frame or background fill. Preserve true background transparency.",
+  "transparent_background": true,
+  "referenceRole": "geometry-and-style",
+  "referencePath": "artifacts/card-regeneration/references/cat-style-reference.png",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-travel-2-art/revisions/stairs-geometry-reference.png",
+      "role": "strict-geometry",
+      "sha256": "6f6515160130121f9c42a7d210362daed89e846898f9c167ff906f3a5d3ea288"
+    }
+  ],
+  "referenceOrder": [
+    "artifacts/spanish-travel-2-art/revisions/stairs-geometry-reference.png",
+    "artifacts/card-regeneration/references/cat-style-reference.png"
+  ],
+  "ownerFeedback": "The stairs are oddly wide at the bottom and narrow at the top."
+}

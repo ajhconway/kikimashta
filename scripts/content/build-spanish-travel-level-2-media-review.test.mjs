@@ -26,6 +26,7 @@ async function fixture(t) {
   const save = async (path, data) => { const dest = join(root, path); await mkdir(join(dest, '..'), { recursive: true }); await writeFile(dest, typeof data === 'object' && !Buffer.isBuffer(data) ? JSON.stringify(data) : data) }
   const art = 'artifacts/spanish-travel-2-art/'
   const bank = await metadata('content/spanish-travel-2/draft.json')
+  for (const item of bank.items) delete item.artwork.selectedVersion
   const requests = await metadata(art + 'requests.json')
   for (const name of ['audio-config.json', 'audio-approval.json']) await save('content/spanish-travel-2/' + name, await metadata('content/spanish-travel-2/' + name))
   const reference = Buffer.from('style reference fixture'), picture = png(), reused = Buffer.from('preserved JPG fixture')
@@ -87,4 +88,32 @@ test('changed exact prompts cannot claim the original image provenance', async t
   requests.requests[0].prompt += '\nChanged rendering instruction.'
   await save(path, requests)
   await assert.rejects(buildLevel2MediaReview(root), /Image record identity changed/)
+})
+
+
+test('a selected revision replaces only its picture and keeps the first original intact', async t => {
+  const { root, save, bank } = await fixture(t)
+  const stairs = bank.items.find(item => item.slug === 'stairs')
+  const art = 'artifacts/spanish-travel-2-art/'
+  const original = await readFile(join(root, art + 'originals/stairs-v1.png'))
+  const requests = JSON.parse(await readFile(join(root, art + 'requests.json'), 'utf8'))
+  const q = { ...requests.requests.find(q => q.slug === 'stairs'), version: 2, ownerFeedback: 'Fix taper.', prompt: 'Primary request: ' + stairs.artwork.concept + '\nUse equal-width treads.' }
+  const record = { id: stairs.id, slug: stairs.slug, version: 2, path: 'originals/stairs-v2.png', sha256: hash(original), promptSha256: hash(q.prompt), referenceSha256: q.referenceSha256 }
+  stairs.artwork.selectedVersion = 2
+  await save('content/spanish-travel-2/draft.json', bank)
+  await save(art + 'revisions/stairs-v2-request.json', q)
+  await save(art + 'records/stairs-v2.json', record)
+  await save(art + 'originals/stairs-v2.png', original)
+  const result = await buildLevel2MediaReview(root)
+  assert.equal(result.images.find(i => i.slug === 'stairs').file, 'originals/stairs-v2.png')
+  assert.equal(result.images.filter(i => i.file.endsWith('-v1.png')).length, 33)
+  assert.deepEqual(await readFile(join(root, art + 'originals/stairs-v1.png')), original)
+  const html = await readFile(join(root, art + 'review.html'), 'utf8')
+  assert.match(html, /src="originals\/stairs-v2.png"/)
+  q.additionalReferences = [{ path: art + 'revisions/stairs-geometry-reference.png', role: 'strict-geometry', sha256: hash('reference') }]
+  record.additionalReferences = q.additionalReferences
+  await save(art + 'revisions/stairs-v2-request.json', q)
+  await save(art + 'records/stairs-v2.json', record)
+  await save(q.additionalReferences[0].path, 'changed reference')
+  await assert.rejects(buildLevel2MediaReview(root), /Geometry reference hash mismatch/)
 })

@@ -1,0 +1,19 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 3,
+  "path": "originals/stairs-v3.png",
+  "sha256": "032966709ba71ce76dbeb53fc1b179b30149d539d5b8572ec2d2371ddfe3c7ca",
+  "promptSha256": "54eef9ee9bf379316a2a21811f924d0178e9f0b261b2a1f2a8dacfd1fce41805",
+  "referenceSha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-travel-2-art/revisions/stairs-geometry-reference.png",
+      "role": "strict-geometry",
+      "sha256": "6f6515160130121f9c42a7d210362daed89e846898f9c167ff906f3a5d3ea288"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-03542b6c-ef70-4000-8d0b-d816cbe922ba.png",
+  "supersedes": "originals/stairs-v1.png"
+}

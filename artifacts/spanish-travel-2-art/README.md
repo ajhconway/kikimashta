@@ -8,7 +8,7 @@
 - [Exact built-in image prompts](requests.json)
 - [Audio provenance](../spanish-travel-2-audio-review/manifest.json)
 
-Original generated PNGs are preserved without flattening or resizing under `originals/`. Generation records bind each original to the exact prompt and style-reference hash. Approved plate and drinking-glass JPGs are copied unchanged under `reused/`; their source paths and approval evidence are in the manifest. No images are activated by this review.
+Original generated PNGs are preserved without flattening or resizing under `originals/`. Generation records bind each original to the exact prompt and style-reference hash. Approved plate and drinking-glass JPGs are copied unchanged under `reused/`; their source paths and approval evidence are in the manifest. The selected staircase is v5, revised after owner feedback about the tapering steps. Versions 1–4, exact revision requests and the geometry reference are retained; see [revision history](revisions/history.json). The other 35 selected pictures and all recordings retain their previous hashes. No images are activated by this review.
 
 Rebuild and validate all picture and review-audio hashes with:
 
