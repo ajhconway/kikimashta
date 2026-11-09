@@ -15,7 +15,13 @@ export interface DensityRange { min: DensityLevel; max: DensityLevel }
 export const DEFAULT_DENSITY_RANGE: DensityRange = { min: 'light', max: 'moderate' };
 /** Provisional finite admission ceiling for the open-ended Intense display band. */
 export const MAX_DENSITY_TARGET = 120;
-const DAY_MS = 86_400_000;
+/** Daily sessions stay at the same local time; each offset starts from the original date. */
+export function forecastDayAt(now: number, day: number): number {
+  if (day === 0) return now;
+  const date = new Date(now);
+  date.setDate(date.getDate() + day);
+  return date.getTime();
+}
 
 export interface ForecastOptions {
   horizonDays?: number;
@@ -87,8 +93,8 @@ function simulatedAttempt({ itemId, language, exercise }: CardIdentity, at: numb
 }
 
 /**
- * A forecast assumes one session each day at now + 24h offsets, with the due queue
- * fixed at that session's start. Each card is reviewed at most once per simulated
+ * A forecast assumes one session each local calendar day at the same local time,
+ * with the due queue fixed at that session's start. Each card is reviewed at most once per simulated
  * day; short-interval retries wait until the next session. Existing overdue work
  * is counted on day zero. Future-dated reviews wait for their original review/due
  * times without rewriting schedules. They remain in the known-card set when
@@ -107,7 +113,7 @@ async function cardContribution(
     const random = randomFor(key, scenario, config.seed);
     let schedule = await initialize(random);
     for (let day = 0; day < config.horizonDays; day++) {
-      const at = now + day * DAY_MS;
+      const at = forecastDayAt(now, day);
       // A synced answer may come from a device whose wall clock is ahead.
       // Defer only this card until both its review and due times have arrived.
       if (schedule.dueAt > at || schedule.lastReviewedAt > at ||

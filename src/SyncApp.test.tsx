@@ -76,7 +76,8 @@ it.each(['before', 'after'] as const)('retains the original account answer when 
   await click(screen.getByRole('button', { name: /retry saving/i }));
   await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
   expect((await currentStore.all()).filter(attempt => attempt.id === original.id)).toEqual([original]);
-  await waitFor(() => expect(view.container.querySelector('.history')).toHaveTextContent('5 answers saved'));
+  expect(await currentStore.all()).toHaveLength(5);
+  await waitFor(() => expect(screen.getByRole('button', { name: /^Start · \d+ reviews?/ })).toBeEnabled());
   await switchAccount('b');
   expect(await currentStore.all()).toEqual([]);
 });
@@ -108,7 +109,8 @@ it('refreshes the original account when a pending write succeeds after switching
   await waitFor(() => expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled());
   await act(async () => { resolve(); });
   await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
-  await waitFor(() => expect(view.container.querySelector('.history')).toHaveTextContent('5 answers saved'));
+  expect(await currentStore.all()).toHaveLength(5);
+  await waitFor(() => expect(screen.getByRole('button', { name: /^Start · \d+ reviews?/ })).toBeEnabled());
   expect((await currentStore.all()).filter(attempt => attempt.id === original.id)).toEqual([original]);
   await switchAccount('b');
   expect(await currentStore.all()).toEqual([]);

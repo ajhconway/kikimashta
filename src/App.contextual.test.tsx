@@ -62,7 +62,7 @@ it('admits unlocked contextual lessons through workload planning and saves expli
   let draw = 0;
   const { container } = render(<App now={now} random={() => draw}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
-  expect(screen.getByText(/2 contextual cards are ready for lessons/)).toBeInTheDocument();
+  expect(screen.queryByText(/contextual cards are ready for lessons/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: /^Start/ }));
   await click(await screen.findByRole('button', { name: 'Begin lesson' }));
   expect(vi.mocked(planLessonChunk).mock.calls[0]![0].candidates.some(card => card.item.id === target.id && card.exercise === 'context-simple-text')).toBe(true);
@@ -155,12 +155,12 @@ it('offers a direct contextual demo link even with no selected packs', async () 
 });
 
 
-it('explains when workload defers unlocked contextual lessons while leaving the demo available', async () => {
+it('keeps the demo available at high workload without Home admission copy', async () => {
   const { schedule } = await unlockedTarget();
   vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
-  await waitFor(() => expect(screen.getByText(/2 contextual cards are ready for lessons/)).toBeInTheDocument());
-  expect(screen.getByText(/New lessons are waiting for your review workload to ease/)).toBeInTheDocument();
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+  expect(screen.queryByText(/contextual cards are ready for lessons|New lessons are waiting for your review workload to ease/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
   expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();
