@@ -25,7 +25,7 @@ function KikuBadgeDemo() {
       pack: {
         id: `${travel ? 'es-419-travel' : 'ja-wanikani'}-${packLevel}-${writing ? 'writing' : 'pictures'}-${index}`,
         title: `${travel ? 'Travel' : 'WaniKani'} level ${packLevel} · ${writing ? 'Writing' : 'Pictures'}`,
-        sourceLevel: packLevel, language: travel ? 'es-419' : 'ja-JP',
+        sourceLevel: packLevel, language: travel ? 'es-419' : 'ja-JP', badgeFamily: travel ? 'suitcase' : 'wanikani',
         exercise: writing ? 'audio-text' : 'audio-picture', itemIds: [],
       },
       level: rank === 'mixed' ? earnedLevels[index % earnedLevels.length]! : earnedLevels.find(level => level.label === rank)!,

@@ -11,10 +11,10 @@ export function PackBadgeMedal({ badge: { pack, level } }: { badge: PackBadge })
   const ribbonId = useId();
   const art = badgeArtwork[level.label];
   const { ribbon } = art;
-  const waniKani = pack.id.startsWith('ja-wanikani-');
-  const travel = pack.id.includes('travel');
-  const family = waniKani ? 'WaniKani' : travel ? 'Travel' : pack.title;
-  const center = travel ? art.travelCenter ?? art.center : art.center;
+  // Keep older developer fixtures usable while production packs declare their artwork family.
+  const family = pack.badgeFamily ?? (pack.id.startsWith('ja-wanikani-') ? 'wanikani' : 'suitcase');
+  const waniKani = family === 'wanikani';
+  const center = waniKani ? art.center : art.travelCenter ?? art.center;
   const format = pack.exercise.endsWith('picture') ? 'picture' : 'writing';
   const formatArt = formatArtwork[format];
   const iconHeight = ribbon.iconHeight * (format === 'writing' ? 1.05 : 1);
@@ -27,16 +27,16 @@ export function PackBadgeMedal({ badge: { pack, level } }: { badge: PackBadge })
   const labelSize = Math.min(ribbon.fontSize, labelWidth / (label.length * .68));
   const textStyle = { fill: ink, stroke: 'none', filter: 'none', fontFamily: roundedFont, fontWeight: 900, letterSpacing: '-.04em' } as const;
 
-  return <svg className="pack-badge-medal" data-rank={level.label} data-family={family} viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-    <image className="badge-background" href={asset(travel ? art.travelSrc ?? art.src : art.src)} x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
+  return <svg className="pack-badge-medal" data-rank={level.label} data-family={waniKani ? 'WaniKani' : 'Suitcase'} viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    <image className="badge-background" href={asset(waniKani ? art.src : art.travelSrc ?? art.src)} x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
     <g className="badge-family" data-overlay="family" style={{ stroke: 'none', filter: 'none' }}>
-      {travel
+      {!waniKani
         ? <svg className="badge-suitcase-slot" x={center.x - center.width / 2} y={center.y - center.height / 2}
             width={center.width} height={center.height} viewBox={suitcaseViewBox} preserveAspectRatio="xMidYMid meet">
           <image className="badge-suitcase" href={asset(suitcaseArtwork)} width="1254" height="1254"/>
         </svg>
-        : <text className={waniKani ? 'badge-wk' : 'badge-family-monogram'} x={center.x} y={center.y} textAnchor="middle" dominantBaseline="central"
-            style={{ ...textStyle, fontSize: Math.min(center.width * .6, center.height * .86) }}>{waniKani ? 'WK' : pack.title.split(' ')[0]!.slice(0, 2).toUpperCase()}</text>}
+        : <text className="badge-wk" x={center.x} y={center.y} textAnchor="middle" dominantBaseline="central"
+            style={{ ...textStyle, fontSize: Math.min(center.width * .6, center.height * .86) }}>WK</text>}
     </g>
     <defs><path id={ribbonId} d={`M${ribbon.left} ${ribbon.baseline}Q${(ribbon.left + ribbon.right) / 2} ${ribbon.baseline + ribbon.bow} ${ribbon.right} ${ribbon.baseline}`}/></defs>
     <g className="badge-format" data-overlay="format" data-format={format}
