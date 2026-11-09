@@ -108,6 +108,9 @@ it('runs the actual contextual practice screen as an unsaved demo with retries a
     const correct = authored.options.find(option => option.id === authored.correctOptionId)!;
     const format = container.querySelector('.contextual-practice')!.getAttribute('data-exercise')!;
     seen.add(format);
+    fireEvent.ended(quiz.querySelector('audio')!);
+    await act(async () => { await vi.advanceTimersByTimeAsync(650); });
+    fireEvent.ended(quiz.querySelector('audio')!);
     const buttons = screen.getAllByRole('button', { name: /^Choose (picture|writing)/ });
     const correctButton = format.endsWith('text') ? buttons.find(button => button.textContent === correct.text)! :
       buttons.find(button => within(button).getByRole('img').getAttribute('alt') === contextualVocabulary.find(word => word.id === correct.imageItemId)!.image.alt)!;

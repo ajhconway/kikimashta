@@ -2,7 +2,7 @@
 
 A relaxed listening game for Japanese and Latin American Spanish. Hear a word, choose its picture or writing, and build recognition through short practice sessions.
 
-Adaptive sessions start with a fixed block of due reviews, followed by lessons in chunks of roughly ten cards. Picture and writing cards shuffle together in previews and quizzes; each question offers only pictures or only written answers. Each chunk introduces cards with audio, then mini-quizzes them. Progress, schedules, and workload stay separate for each language, vocabulary item, and exercise. Sessions remain untimed and save on the device first.
+Adaptive sessions start with a fixed block of due reviews, followed by lessons in chunks of roughly ten cards. Picture and writing cards shuffle together in previews and quizzes; each question offers only pictures or only written answers. Each chunk introduces cards with audio, then mini-quizzes them. Progress, schedules, and workload stay separate for each language, vocabulary item, and exercise. Review timers follow mastery; lessons and corrective retries stay untimed. Progress saves on the device first.
 
 Home centers Kiku on the current review-intensity color. A compact seven-day review forecast below Start shows estimated daily counts for the selected language and packs, assuming daily practice of current cards. The pace selector wheels have been removed; workload still uses a saved device preference or the Light–Moderate default. Ten selectable WaniKani level/format packs scope practice and forecasts. The approved pool contains 166 vocabulary items / 332 exercise cards before selection. Retired starter-only words retain their saved history. The home language selector switches available packs and remembers each language’s pack choices. Latin American Spanish offers 72 travel words in two picture packs with eight voices across Mexico City, Bogotá, Buenos Aires and Puerto Rico; menus remain in English. Content, media, and learning history remain separate by language.
 
@@ -16,7 +16,7 @@ Cards slide into place. Correct answers receive a warm glow, Kiku sparkles and a
 - [Optional account sync setup](docs/SUPABASE.md)
 - [November 8 project review and open findings](docs/REVIEW.md)
 
-The home screen's **Dev review** button opens options for review types, simulated mastery levels, question count, and timers. Try selected word and contextual types even when nothing is due, using the current language, packs, and voice preferences. Each sample has its own in-memory schedule; normal feedback and corrective retries leave saved progress unchanged. Contextual questions and retries stay untimed. Finish returns to normal adaptive practice.
+The home screen's **Dev review** button opens options for review types, simulated mastery levels, question count, and timers. Try selected word and contextual types even when nothing is due, using the current language, packs, and voice preferences. Each sample has its own in-memory schedule; normal feedback and corrective retries leave saved progress unchanged. Word and contextual timers follow the selected policy after playback; corrective retries stay untimed. Finish returns to normal adaptive practice.
 
 Work is tracked in GitHub Issues and implemented through linked pull requests. Initial app setup, shared data types, and automated checks come before parallel feature work.
 

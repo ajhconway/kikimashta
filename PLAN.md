@@ -89,7 +89,7 @@ Keep only the next milestone detailed. Avoid fixed dates and commitments to ever
 
 Timers adapt per language, vocabulary item, and exercise. Lessons, new/learning cards, and corrective retries stay untimed. Review timers now follow the interval mastery levels defined in #135 below. This is an adjustable pilot policy, not a validated fluency measure.
 
-Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s word timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Contextual questions and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
+Unsaved Dev review opens options for simulated mastery and timer behavior (#152). Follow mastery uses each sample level’s timer; Random timers samples untimed/10/5/3/1.5 seconds with equal probability for each first presentation. Lessons and corrective retries stay untimed. Replays keep that question’s selected limit and deadline. Samples never change saved learning history.
 
 Start the countdown after the recording ends, all choices have entered, and their pictures have loaded. Replays do not pause or reset it. Elapsed wall time continues while the page is hidden. Expiry never submits an answer or ends a quiz: a late correct answer is partial success and completes the question; an incorrect answer remains a failure with an untimed corrective retry.
 
@@ -103,7 +103,7 @@ Derive mastery independently for each language/item/exercise from the scheduled 
 
 Show both lowest and average mastery on packs; average means the floor of the mean level ordinal, including New cards, across approved practice cards in that pack. Keep picture and writing cards separate in the library and show their individual mastery. Show an up/down arrow and the new label after a saved answer changes level; retries and Dev review do not change mastery.
 
-Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review offers mastery-based, random, or untimed word timers. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
+Attach timers to these levels: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Lessons and corrective retries remain untimed. Dev review offers mastery-based, random, or untimed timers. Mastery is derived from existing history without a storage migration. Test boundaries, aggregation, answer transitions, identity separation, timers, library display, and browser persistence; real iPhone acceptance remains manual.
 
 ## Mastery demo (#140)
 
@@ -200,7 +200,7 @@ The Japanese-details control matches the shared badge height, and the feedback a
 
 ## Expanded Dev review (#152)
 
-Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed word timer policies. Contextual questions remain untimed. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Use Dev review as the single Home entry point; remove the separate Mastery demo and Contextual dev review Home buttons. Preserve the existing contextual inspection URL for authored-content audits. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.
+Dev review opens a configuration screen before an unsaved session. The owner chose simulated mastery levels, independent of saved progress. Offer available word-picture/writing and simple/contrastive contextual picture/writing types scoped to the selected language and packs, multi-select mastery levels, question count, and mastery/random/untimed timer policies for word and contextual questions. Use independent in-memory sample schedules, preserve authored contextual recordings and retries, and reuse ordinary answer/grading/feedback. Invalid or unavailable selections cannot start. Use Dev review as the single Home entry point; remove the separate Mastery demo and Contextual dev review Home buttons. Preserve the existing contextual inspection URL for authored-content audits. Verify boundaries, mixed types, retry/sample isolation, no saved attempts or sync, empty packs, language scope and browser persistence; serve a localhost demo for owner review.
 
 ## Contextual transcript styling (#160)
 
@@ -224,3 +224,9 @@ Show a compact seven-day forecast below Start using the same existing density sn
 ## Home copy cleanup (#164)
 
 Remove the contextual lesson-readiness/workload message and the saved-answer total from Home. Keep the forecast and Start count as the visible workload summary. Verify persistence and language/account scope through stored history and practice behavior rather than the removed count.
+
+## Contextual timers and audio-first choices (#175, #177)
+
+Word and contextual reviews use the same mastery timers: New/Learning untimed, Improving/Familiar 10 seconds, Steady 5 seconds, Strong 3 seconds, Confident/Mastered 1.5 seconds. Dev review applies mastery/random/untimed controls to both question types. Countdown begins after the final recording, entrance and loaded pictures; replays preserve the deadline. Late correct answers receive partial feedback and Hard grading without a retry.
+
+At Steady and higher, both picture and writing choices stay hidden until the final 360 ms of audio and land together at its endpoint, following the media clock through stalls. Contextual choices wait through the sentence and 650 ms pause before entering at the end of the question clip. Familiar and lower keep the ordinary entrance. Replays after reveal keep choices visible; reduced motion reveals at the endpoint without movement. Lessons, contextual introductions, corrective retries and content inspection keep their ordinary entrances. Real-iPhone timing acceptance remains manual.

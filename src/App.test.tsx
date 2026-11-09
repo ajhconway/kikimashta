@@ -115,6 +115,7 @@ describe('adaptive session flow', () => {
     await click(screen.getByRole('button', { name: /^continue$/i }));
     const completed = new Set<string>();
     for (let i = 0; i < 6; i++) {
+      endAudio(container);
       const choice = heardChoice(container);
       for (const label of container.querySelectorAll('.choices .written-answer')) expect(['noto-serif', 'zen-maru', 'klee']).toContain(label.getAttribute('data-font'));
       const picture = container.querySelector('.practice.quiz')!.getAttribute('data-exercise') + '/' + container.querySelector('audio')!.getAttribute('src');
@@ -621,6 +622,13 @@ async function timedReview(exercise: Exercise = 'audio-picture', count = 1) {
 function loadPictures(container: HTMLElement) {
   for (const image of container.querySelectorAll('.choices img')) fireEvent.load(image);
 }
+it.each(['audio-picture', 'audio-text'] as const)('shows Familiar %s choices with the ordinary entrance', async exercise => {
+  const { container } = await timedReview(exercise);
+  expect(container.querySelector('.choices')).toHaveClass('choices-enter');
+  expect(container.querySelector('.choices')).toBeVisible();
+  expect(heardChoice(container)).toBeEnabled();
+});
+
 describe('adaptive quiz countdown', () => {
   it('waits for audio, card entry, and pictures; expiry keeps choices open and late correct completes without a retry', async () => {
     const { container, limit } = await timedReview();
@@ -683,7 +691,8 @@ describe('adaptive quiz countdown', () => {
     const { container, limit } = await timedReview('audio-text');
     fireEvent.error(container.querySelector('audio')!); await advance(480 + limit);
     expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
-    expect(heardChoice(container)).toBeDisabled();
+    expect(container.querySelector('.choices')).toBeVisible();
+    expect(container.querySelector('.choices button')).toBeDisabled();
     await click(screen.getByRole('button', { name: 'Replay word' }));
     endAudio(container); await advance(50);
     expect(container.querySelector('.quiz-timer-fill')).toBeInTheDocument();
@@ -791,6 +800,8 @@ describe('interval mastery feedback', () => {
     expect(within(current).getByText('Familiar')).toBeInTheDocument();
     expect(within(current).getByText(`${limit / 1000}s`)).toBeInTheDocument();
     expect(current.closest('.practice-actions')).not.toBeNull();
+    expect(container.querySelector('.choices')).toBeVisible();
+    endAudio(container);
     await click(heardChoice(container, false));
     expect(current).toHaveAttribute('aria-hidden', 'true');
     expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
@@ -1037,4 +1048,134 @@ describe('Home review forecast (#156)', () => {
     expect(dailyCount(1)).toHaveTextContent('Tue');
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
   });
+});
+
+// Contextual timers begin after both clips, never at the sentence/pause boundary (#175).
+async function contextualTimerDemo(format: 'Pictures' | 'Writing', level = 'Strong', mode = 'mastery') {
+  const view = render(<App now={() => Date.now()} random={() => .5}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  for (const name of ['Words · Pictures', 'Words · Writing']) await click(screen.getByRole('checkbox', { name }));
+  await click(screen.getByRole('checkbox', { name: `Simple contexts · ${format}` }));
+  await click(screen.getByRole('button', { name: 'Clear levels' }));
+  await click(screen.getByRole('checkbox', { name: level }));
+  fireEvent.change(screen.getByLabelText('Timer behavior'), { target: { value: mode } });
+  vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: 'Start dev review' }));
+  const audio = view.container.querySelector('.contextual-quiz audio')!;
+  return { ...view, audio };
+}
+
+it.each([
+  ['Pictures', 'New', 'mastery', null], ['Pictures', 'Learning', 'mastery', null], ['Writing', 'Improving', 'mastery', 10000],
+  ['Pictures', 'Familiar', 'mastery', 10000], ['Writing', 'Steady', 'mastery', 5000],
+  ['Pictures', 'Strong', 'mastery', 3000], ['Writing', 'Confident', 'mastery', 1500],
+  ['Pictures', 'Mastered', 'mastery', 1500], ['Writing', 'Strong', 'random', 5000],
+  ['Pictures', 'Strong', 'untimed', null],
+] as const)('times contextual %s at %s with %s policy', async (format, level, mode, limit) => {
+  const { container, audio } = await contextualTimerDemo(format, level, mode);
+  expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent(limit ? `${limit / 1000}s` : 'Untimed');
+  const delayed = ['Steady', 'Strong', 'Confident', 'Mastered'].includes(level);
+  expect(container.querySelector('.choices')).toHaveClass(delayed ? 'choices-audio-first' : 'choices-enter');
+  if (delayed) expect(container.querySelector('.choices')).not.toBeVisible();
+  else expect(container.querySelector('.choices')).toBeVisible();
+  await advance(1000);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  fireEvent.ended(audio); await advance(649);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  await advance(1);
+  expect(audio.getAttribute('src')).toBeTruthy();
+  fireEvent.ended(audio); await advance(0);
+  if (format === 'Pictures' && limit) {
+    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    for (const image of container.querySelectorAll('.contextual-choices img')) fireEvent.load(image);
+    await advance(0);
+  }
+  if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
+  else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+});
+
+it('keeps contextual deadlines through replay and grades late correct partial', async () => {
+  const { container, audio } = await contextualTimerDemo('Writing');
+  const { contextualBanks } = await import('./content/contextual-runtime');
+  const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
+  const question = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions).find(question => question.id === id)!;
+  const correct = question.options.find(option => option.id === question.correctOptionId)!;
+  fireEvent.ended(audio); await advance(650); fireEvent.ended(audio); await advance(0);
+  await advance(1000);
+  await click(screen.getByRole('button', { name: 'Replay sentence and question' }));
+  await advance(2000);
+  expect(screen.getByText(/correct answer still counts as partial success/i)).toBeInTheDocument();
+  await click(screen.getByRole('button', { name: `Choose writing ${correct.text}` }));
+  expect(screen.getByLabelText('Partial success')).toHaveTextContent('≈');
+  expect(container.querySelector('.app')).toHaveAttribute('data-answer', 'partial');
+  expect(container.querySelector('.contextual-choice.partial')).toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+});
+
+it('does not start a contextual timer after playback failure and recovers on replay', async () => {
+  const { container, audio } = await contextualTimerDemo('Writing');
+  fireEvent.error(audio); await advance(5000);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  await click(screen.getByRole('button', { name: 'Replay sentence and question' }));
+  fireEvent.ended(audio); await advance(650);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  fireEvent.ended(audio); await advance(0);
+  expect(screen.getByText('3 second timer started.')).toBeInTheDocument();
+});
+
+it('keeps contextual corrective retries untimed even with a timed sample level', async () => {
+  const { container } = await contextualTimerDemo('Writing');
+  const { contextualBanks } = await import('./content/contextual-runtime');
+  const authored = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions);
+  const question = () => authored.find(question => question.id === container.querySelector('.contextual-quiz')!.getAttribute('data-question-id'))!;
+  const first = question();
+  fireEvent.ended(container.querySelector('.contextual-quiz audio')!); await advance(650);
+  fireEvent.ended(container.querySelector('.contextual-quiz audio')!); await advance(0);
+  const wrong = first.options.find(option => option.id !== first.correctOptionId)!;
+  await click(screen.getByRole('button', { name: `Choose writing ${wrong.text}` }));
+  await click(screen.getByRole('button', { name: 'Continue' }));
+  for (let index = 1; index < 8; index++) {
+    const current = question();
+    const correct = current.options.find(option => option.id === current.correctOptionId)!;
+    fireEvent.ended(container.querySelector('.contextual-quiz audio')!); await advance(650);
+    fireEvent.ended(container.querySelector('.contextual-quiz audio')!); await advance(0);
+    await click(screen.getByRole('button', { name: `Choose writing ${correct.text}` }));
+    await advance(1200);
+  }
+  expect(container.querySelector('.contextual-quiz')).toHaveAttribute('data-question-id', first.id);
+  expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('Untimed');
+  const retryAudio = container.querySelector('.contextual-quiz audio')!;
+  fireEvent.ended(retryAudio); await advance(650); fireEvent.ended(retryAudio); await advance(10000);
+  expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+});
+
+it.each((['Pictures', 'Writing'] as const).flatMap(format =>
+  ['Familiar', 'Steady', 'Strong', 'Confident', 'Mastered'].map(level => [format, level] as const)))('uses the audio-first threshold for %s word samples at %s', async (format, level) => {
+  const { container } = render(<App now={() => Date.now()} random={() => .5}/>);
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  await click(screen.getByRole('checkbox', { name: `Words · ${format === 'Pictures' ? 'Writing' : 'Pictures'}` }));
+  await click(screen.getByRole('button', { name: 'Clear levels' }));
+  await click(screen.getByRole('checkbox', { name: level }));
+  vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: 'Start dev review' }));
+  const grid = container.querySelector('.choices')!;
+  if (level === 'Familiar') {
+    expect(grid).toHaveClass('choices-enter');
+    expect(grid).toBeVisible();
+  } else {
+    expect(grid).toHaveClass('choices-audio-first');
+    expect(grid).not.toBeVisible();
+    const audio = container.querySelector('audio')!;
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 2 });
+    audio.currentTime = 1.82; await advance(20);
+    expect(grid).toBeVisible();
+    expect(grid.querySelector('button')).toBeDisabled();
+    endAudio(container);
+    expect(grid.querySelector('button')).toBeEnabled();
+    expect((grid.firstElementChild as HTMLElement).style.transform).toBe('');
+  }
 });

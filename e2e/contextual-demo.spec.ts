@@ -87,7 +87,7 @@ test('contextual demo uses picture and writing feedback without changing guest h
     { exercise: 'context-simple-picture', kind: 'target', miss: true },
     { exercise: 'context-simple-text', kind: 'detail', miss: false },
   ] as const;
-  for (const [index, presentation] of presentations.entries()) {
+  for (const presentation of presentations) {
     const exercise = presentation.exercise;
     const quiz = page.locator('.contextual-quiz');
     await expect(page.locator('.contextual-practice')).toHaveAttribute('data-exercise', exercise);
@@ -109,12 +109,10 @@ test('contextual demo uses picture and writing feedback without changing guest h
       .find(recording => source.endsWith(recording.sentenceSrc))!;
     expect(recording).toBeDefined();
     const snapshot = { questionId, sentenceSrc: recording.sentenceSrc, questionSrc: recording.questionSrcs[questionId]! };
-    if (index === 0) {
-      await expect(audio).toHaveAttribute('src', '/' + snapshot.questionSrc, { timeout: 15000 });
-      await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
-    }
+    await expect(audio).toHaveAttribute('src', '/' + snapshot.questionSrc, { timeout: 15000 });
+    await expect.poll(() => audio.evaluate(element => (element as HTMLAudioElement).ended)).toBe(true);
     await expect(quiz.locator('.contextual-transcript')).toHaveCount(0);
-    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 100));
     await page.clock.runFor(500);
     const layout = await gridLayout(page);
     const option = question.options.find(option => presentation.miss ? option.id !== question.correctOptionId : option.id === question.correctOptionId)!;

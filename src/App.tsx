@@ -17,6 +17,7 @@ import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevRevi
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
+import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
@@ -172,6 +173,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [audioError, setAudioError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [audioFinished, setAudioFinished] = useState(false);
+  const [audioFirst, setAudioFirst] = useState(false);
   const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
   const [refresh, setRefresh] = useState(0);
@@ -190,8 +192,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const playRequest = useRef(0);
   const replayButton = useRef<HTMLButtonElement>(null);
   const choiceGrid = useRef<HTMLDivElement>(null);
+  const choicesReady = useAudioChoiceEntrance({ id: screen === 'quiz' ? questionTimer.id : '',
+    enabled: audioFirst && !questions[index]?.contextual, audio, grid: choiceGrid });
   const countdown = useQuizCountdown({ id: screen === 'quiz' ? questionTimer.id : '', limitMs: questionTimer.limitMs,
-    audioFinished, answered: !!feedback, grid: choiceGrid, now });
+    audioFinished: audioFinished && choicesReady, answered: !!feedback, grid: choiceGrid, now });
   const target = screen === 'preview' ? lessonItems[preview]?.item : questions[index]?.target;
   const exercise = screen === 'preview' ? lessonItems[preview]?.exercise : questions[index]?.exercise;
   const theme = screen === 'contextual-dev' || (screen === 'quiz' && questions[index]?.contextual) ? 'contextualQuiz' : screen === 'preview' || (screen === 'ready' && phase === 'lesson') ? 'lesson' : screen === 'quiz' || (screen === 'ready' && phase === 'review') ? 'pictureQuiz' : 'home';
@@ -314,8 +318,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     const level = cardMastery(word);
     const demoLevel = next.demoId ? level : null;
     setDemoPresentation(demoLevel ? { ...demoLevel, retry: !!next.retryOf } : null);
-    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: next.contextual ? null : demoLevel ? next.retryOf || devTimerMode.current === 'untimed' ? null : devTimerMode.current === 'random' ? devReviewTimeLimit(random) : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: demoLevel ? next.retryOf || devTimerMode.current === 'untimed' ? null : devTimerMode.current === 'random' ? devReviewTimeLimit(random) : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
       ? quizTimeLimit(word) : null });
+    setAudioFirst(masteryIndex(word) >= 4 && !next.retryOf && questionPhase === 'review' && (!devReview || !!demoLevel));
     setAudioFinished(false);
     setFeedback(null); setDepartures([]);
     if (next.contextual) {
@@ -579,8 +584,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {isContextualDemo && <span className="contextual-demo-indicator" role="status" aria-label="Practice demo. Progress is not saved.">Demo · unsaved</span>}
         <ContextualQuiz key={index} question={questions[index]!} feedback={feedback} onChoose={choose}
           onContinue={next} onReplay={() => { active.current.replays++; playRequest.current++; }}
+          delayChoices={audioFirst} choicesRef={choiceGrid} onAudioFinished={() => setAudioFinished(true)}
           onPlaybackChange={contextualPlaybackChanged} continueAfterCorrect={autoPaused || audioError || saveError} disabled={saving || saveError}
-          feedbackContent={<MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: null, demo: !!demoPresentation }}
+          feedbackContent={<MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: !!demoPresentation }}
             outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
             change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>}/>
         {saveError && feedback && <div role="alert" className="error"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(feedback)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
@@ -596,11 +602,11 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {audioError && <p role="alert" className="error">The sound couldn't play. Tap replay to retry.</p>}
         <div className="quiz-cards">
         {feedback?.outcome === 'success' && <div className="quiz-starburst" key={feedback.id} aria-hidden="true"><svg viewBox="-200 -200 400 400" fill="currentColor" focusable="false">{fireworkOffsets.map((offset, i) => <g className="firework-star" key={i} style={{ '--star-x': `${offset.x}px`, '--star-y': `${offset.y}px` } as CSSProperties}><path d="M0 -7 L2.1 -2.3 L6.7 -2.2 L3.4 1.1 L4.1 6.3 L0 3.7 L-4.1 6.3 L-3.4 1.1 L-6.7 -2.2 L-2.1 -2.3 Z"/></g>)}</svg></div>}
-        <div className="choices choices-enter" ref={choiceGrid} key={exercise + '-' + target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
+        <div className={'choices ' + (audioFirst ? 'choices-audio-first' : 'choices-enter')} ref={choiceGrid} key={exercise + '-' + target.id + '-' + index}>{questions[index]!.choices.map((item, i) => {
           const isCorrect = feedback && item.id === target.id;
           const isWrong = feedback && item.id === feedback.selectedId && !feedback.correct;
           const isDeparting = Boolean(feedback && !isCorrect && (feedback.correct || !isWrong));
-          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
+          return <div className={'choice-slot' + (isDeparting ? ' is-departing' : '')} key={item.id} aria-hidden={isDeparting || undefined} style={{ animationDelay: `${i * 40}ms` }}><button className={choiceClass(exercise!) + ' ' + (isCorrect ? feedback?.outcome === 'partial' ? 'partial ' : 'correct ' : '') + (isWrong ? 'incorrect' : '')} aria-label={exercise === 'audio-picture' ? 'Choose picture ' + (i + 1) + ': ' + item.image.alt : 'Choose writing ' + item.text} disabled={!!feedback || audioError || !choicesReady} onContextMenu={event => event.preventDefault()} onClick={() => choose(item)}><CardFace item={item} exercise={exercise!} font={writingFont}/>{isCorrect && <span className="choice-badge" aria-label={feedback?.outcome === 'partial' ? 'Partial success' : 'Correct answer'}>{feedback?.outcome === 'partial' ? '≈' : '✓'}</span>}{isWrong && <span className="choice-badge wrong" aria-label="Your choice">↺</span>}</button></div>;
         })}</div></div>
         <div className="practice-actions">
         <MasteryFeedback current={{ label: questionTimer.masteryLabel, timerMs: questionTimer.limitMs, demo: !!demoPresentation }}
