@@ -1,4 +1,5 @@
 import { expect, test, type Page } from './fixtures';
+import type { Locator } from '@playwright/test';
 import { badgeArtwork } from '../src/core/badge-art';
 import { badgeHistory } from '../src/test/pack-badge-history';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
@@ -169,6 +170,36 @@ async function putBadgeHistory(page: Page, attempts: PracticeAttempt[]) {
   }, attempts);
 }
 
+/** Every moving medal must share the same easing progress, without snapping when nodes reorder. */
+async function expectCalmBadgeMove(region: Locator, starts: Record<string, number>): Promise<number> {
+  const targets = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id')!, Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
+  const moving = Object.keys(targets).filter(id => Math.abs(targets[id]! - starts[id]!) > .01);
+  expect(moving.length).toBeGreaterThanOrEqual(2);
+  const frames = await region.evaluate(section => new Promise<{ id: string; radius: number; angle: number }[][]>(resolve => {
+    const samples: { id: string; radius: number; angle: number }[][] = [];
+    const frame = () => {
+      const stage = section.closest('.home-kiku-stage')!.getBoundingClientRect();
+      samples.push(Array.from(section.querySelectorAll<HTMLElement>('.pack-badge'), element => {
+        const box = element.getBoundingClientRect();
+        return { id: element.dataset.packId!, radius: Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2),
+          angle: Number.parseFloat(getComputedStyle(element).getPropertyValue('--badge-angle')) };
+      }));
+      if (section.getAttribute('data-phase') === 'reorder') requestAnimationFrame(frame);
+      else resolve(samples);
+    };
+    requestAnimationFrame(frame);
+  }));
+  expect(frames.length).toBeGreaterThan(10);
+  for (const [index, frame] of frames.entries()) {
+    const progress = moving.map(id => (frame.find(entry => entry.id === id)!.angle - starts[id]!) / (targets[id]! - starts[id]!));
+    // A cancelled transition jumps straight to 1 while its neighbors are near 0.
+    if (index === 0) progress.forEach(value => expect(value).toBeLessThan(.98));
+    expect(Math.max(...progress) - Math.min(...progress)).toBeLessThan(.025);
+    frame.forEach(entry => expect(Math.abs(entry.radius - frames[0]![0]!.radius)).toBeLessThan(1));
+  }
+  return frames[0]![0]!.radius;
+}
+
 test('saved badge changes celebrate on Home return before reordering and respect reduced motion', async ({ page }) => {
   await page.addInitScript(key => localStorage.setItem(key, '[]'), packPreferenceKey);
   await page.goto('./');
@@ -183,10 +214,11 @@ test('saved badge changes celebrate on Home return before reordering and respect
   const region = page.getByRole('region', { name: 'Pack mastery badges' });
   await expect(region).toHaveAttribute('data-phase', 'idle');
   await expect(region.getByRole('listitem')).toHaveCount(3);
-  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', anchorId);
+  expect(await page.locator(`[data-pack-id="${anchorId}"]`).evaluate(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')))).toBe(0);
   await expect(page.locator('.badge-fireworks')).toHaveCount(0);
   const firstBadge = page.locator(`[data-pack-id="${firstId}"]`);
   const oldSlot = await firstBadge.getAttribute('style');
+  const beforeAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id')!, Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await expect(region).toHaveCount(0);
   const upgraded = await badgeHistory(packCards(1, 'audio-picture'), firstId, 7);
@@ -215,29 +247,12 @@ test('saved badge changes celebrate on Home return before reordering and respect
   await firstBadge.evaluate(element => { const animation = element.querySelector('.badge-current-art')!.getAnimations()[0]!; animation.currentTime = 1500; animation.play(); });
   await expect(firstBadge.locator('.badge-current-art')).toHaveCSS('opacity', '1');
   await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
-  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', firstId);
+  expect(await firstBadge.evaluate(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')))).toBe(0);
   expect(await firstBadge.getAttribute('style')).not.toBe(oldSlot);
   await expect(firstBadge).toHaveCSS('transition-property', '--badge-angle');
   await expect(firstBadge).toHaveCSS('transition-duration', '1.7s');
-  // Sample actual rendered centers throughout the glide, not just destination styles.
-  const orbit = await firstBadge.evaluate(element => new Promise<{ radius: number; angle: number }[]>(resolve => {
-    const samples: { radius: number; angle: number }[] = [];
-    const frame = () => {
-      const stage = element.closest('.home-kiku-stage')!.getBoundingClientRect();
-      const box = element.getBoundingClientRect();
-      samples.push({ radius: Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2),
-        angle: Number.parseFloat(getComputedStyle(element).getPropertyValue('--badge-angle')) });
-      if (element.closest('.pack-badges')!.getAttribute('data-phase') === 'reorder') requestAnimationFrame(frame);
-      else resolve(samples);
-    };
-    requestAnimationFrame(frame);
-  }));
-  expect(orbit.length).toBeGreaterThan(10);
-  expect(Math.max(...orbit.map(sample => sample.angle)) - Math.min(...orbit.map(sample => sample.angle))).toBeGreaterThan(10);
-  orbit.forEach(sample => expect(sample.angle).toBeLessThanOrEqual(.01));
+  const radius = await expectCalmBadgeMove(region, beforeAngles);
   await expect(firstBadge).toHaveAttribute('data-side', 'left');
-  const radii = orbit.map(sample => sample.radius);
-  expect(Math.max(...radii) - Math.min(...radii)).toBeLessThan(1);
   await expect(region).toHaveAttribute('data-phase', 'idle');
   await expect(page.locator('.badge-previous-art, .badge-fireworks')).toHaveCount(0);
 
@@ -250,12 +265,13 @@ test('saved badge changes celebrate on Home return before reordering and respect
     const stage = element.closest('.home-kiku-stage')!.getBoundingClientRect(), box = element.getBoundingClientRect();
     return Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2);
   });
-  expect(awardRadius).toBeCloseTo(radii.at(-1)!, 0);
+  expect(awardRadius).toBeCloseTo(radius, 0);
   expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 3).map(element => element.getAttribute('style')))).toEqual(settledSlots);
   const startAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id'), Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
   await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
   const turns = await region.getByRole('listitem').evaluateAll((elements, start) => elements.map(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')) - start[element.getAttribute('data-pack-id')!]!), startAngles);
   turns.forEach(turn => expect(turn).toBeCloseTo(-18));
+  await expectCalmBadgeMove(region, startAngles);
   await expect(region).toHaveAttribute('data-phase', 'idle');
 
   const thirdUpgrade = await badgeHistory(packCards(4, 'audio-picture'), 'ja-wanikani-4-pictures', 7);

@@ -7,11 +7,13 @@ import './PackBadges.css';
 
 export function PackBadges({ badges, presentation }: { badges: readonly PackBadge[]; presentation?: BadgePresentation }) {
   const entries: readonly PresentedPackBadge[] = presentation?.entries ?? layoutPackBadges(badges);
+  // Moving a DOM node cancels its CSS transition. Visual order belongs to the orbit coordinates.
+  const stableEntries = [...entries].sort((a, b) => a.badge.pack.id < b.badge.pack.id ? -1 : a.badge.pack.id > b.badge.pack.id ? 1 : 0);
   return <>
     <span className="sr-only" role="status" aria-live="polite">{presentation?.announcement ?? ''}</span>
     {entries.length > 0 && <section className="pack-badges" aria-label="Pack mastery badges" data-phase={presentation?.phase ?? 'idle'}
     style={{ '--badge-celebrate-duration': `${BADGE_CELEBRATE_MS}ms`, '--badge-upgrade-fade': `${BADGE_UPGRADE_FADE_MS}ms`, '--badge-upgrade-reveal-delay': `${BADGE_UPGRADE_REVEAL_MS}ms`, '--badge-reorder-duration': `${BADGE_REORDER_MS}ms` } as CSSProperties}>
-    <ul>{entries.map(entry => {
+    <ul>{stableEntries.map(entry => {
       const { badge, position, angle: orbitAngle, celebration } = entry;
       const { pack, level, cardCount } = badge;
       const right = position.x > .1;

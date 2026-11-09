@@ -24,6 +24,7 @@ it('celebrates a replacement before moving it to the top, including StrictMode l
   const before = [badge(0, 2), badge(1, 5), badge(2, 6)];
   const view = render(<StrictMode><Harness badges={before}/></StrictMode>);
   expect(region()).toHaveAttribute('data-phase', 'idle');
+  const originalNodes = screen.getAllByRole('listitem');
   const original = screen.getByRole('listitem', { name: `${before[0]!.pack.title}: Improving minimum mastery` }).getAttribute('style');
   view.rerender(<StrictMode><Harness badges={[badge(0, 7), badge(1, 5), badge(2, 6)]}/></StrictMode>);
   const upgraded = screen.getByRole('listitem', { name: `${before[0]!.pack.title}: Mastered minimum mastery` });
@@ -38,7 +39,7 @@ it('celebrates a replacement before moving it to the top, including StrictMode l
   expect(screen.getByRole('status')).toHaveTextContent('Badge upgraded');
   act(() => { vi.advanceTimersByTime(BADGE_UPGRADE_MS); });
   expect(region()).toHaveAttribute('data-phase', 'reorder');
-  expect(screen.getAllByRole('listitem')[0]).toBe(upgraded);
+  screen.getAllByRole('listitem').forEach((element, index) => expect(element).toBe(originalNodes[index]));
   expect(upgraded.getAttribute('style')).not.toBe(original);
   expect(upgraded.querySelector('.badge-previous-art, .badge-fireworks')).toBeNull();
   act(() => { vi.advanceTimersByTime(BADGE_REORDER_MS); });
