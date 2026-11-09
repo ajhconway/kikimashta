@@ -18,13 +18,31 @@ def local_url(path, output):
     return quote(os.path.relpath(path, output.parent).replace(os.sep, '/'), safe='/')
 
 
-def build(root, manifest_path, output, expected_count=20):
+def image_path_in_root(root, path, item_id):
+    if path is None:
+        return None
+    if not isinstance(path, str) or not path:
+        raise ValueError(f'{item_id}: path must be null or a repository-relative string.')
+    candidate = Path(path)
+    if candidate.is_absolute() or '..' in candidate.parts:
+        raise ValueError(f'{item_id}: image path must stay inside the repository.')
+    image_path = (root / candidate).resolve()
+    if not image_path.is_relative_to(root):
+        raise ValueError(f'{item_id}: resolved image path leaves the repository.')
+    return image_path
+
+
+def build(root, manifest_path, output, expected_count=None):
     root = root.resolve()
     manifest_path = manifest_path.resolve()
     output = output.resolve()
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
     if manifest.get('issue') != 213:
         raise ValueError('Expected issue 213 manifest.')
+    if expected_count is None:
+        expected_count = manifest.get('expectedAssetCount', 20)
+    if type(expected_count) is not int or expected_count < 1:
+        raise ValueError('Expected asset count must be a positive integer.')
     assets = manifest.get('assets')
     if not isinstance(assets, list) or len(assets) != expected_count:
         raise ValueError(f'Expected exactly {expected_count} assets.')
@@ -42,17 +60,7 @@ def build(root, manifest_path, output, expected_count=20):
         for key in ['text', 'reading', 'meaning', 'prompt']:
             if not isinstance(asset.get(key), str) or not asset[key].strip():
                 raise ValueError(f'{asset["id"]}: missing {key}.')
-        path = asset.get('path')
-        if path is not None and (not isinstance(path, str) or not path):
-            raise ValueError(f'{asset["id"]}: path must be null or a repository-relative string.')
-        image_path = None
-        if path:
-            candidate = Path(path)
-            if candidate.is_absolute() or '..' in candidate.parts:
-                raise ValueError(f'{asset["id"]}: image path must stay inside the repository.')
-            image_path = (root / candidate).resolve()
-            if not image_path.is_relative_to(root):
-                raise ValueError(f'{asset["id"]}: resolved image path leaves the repository.')
+        image_path = image_path_in_root(root, asset.get('path'), asset['id'])
         ready = image_path is not None and image_path.is_file()
         counts['generated' if ready else 'pending'] += 1
         if ready:
@@ -67,6 +75,29 @@ def build(root, manifest_path, output, expected_count=20):
             media = '<div class="preview placeholder">Artwork pending generation</div>'
             status = 'Pending generation'
             full_link = ''
+        comparisons = asset.get('comparisons', [])
+        if not isinstance(comparisons, list):
+            raise ValueError(f'{asset["id"]}: comparisons must be a list.')
+        comparison_html = []
+        for comparison in comparisons:
+            if not isinstance(comparison, dict) or not isinstance(comparison.get('label'), str) or not comparison['label'].strip():
+                raise ValueError(f'{asset["id"]}: comparison needs a nonempty label.')
+            if 'path' not in comparison:
+                raise ValueError(f'{asset["id"]}: comparison needs a path or null.')
+            label = escaped(comparison['label'])
+            alternate = image_path_in_root(root, comparison['path'], asset['id'])
+            if alternate is not None and alternate.is_file():
+                alternate_url = escaped(local_url(alternate, output))
+                preview = (f'<a class="preview" href="{alternate_url}" target="_blank" rel="noopener" '
+                           f'aria-label="Open full-size alternative: {label}">'
+                           f'<img src="{alternate_url}" alt="Alternative artwork: {label}" loading="lazy"></a>'
+                           f'<a href="{alternate_url}" target="_blank" rel="noopener">Open alternative full size ↗</a>')
+            else:
+                preview = '<div class="preview placeholder">Alternative artwork pending generation</div>'
+            comparison_html.append(f'<figure class="comparison"><figcaption>{label}</figcaption>{preview}</figure>')
+        alternatives = ('<section class="comparisons"><h3>Alternative artwork · not selected</h3>'
+                        '<p class="technical">The current image remains selected. Alternatives require explicit owner selection.</p>'
+                        + ''.join(comparison_html) + '</section>') if comparison_html else ''
         metadata = f'<p class="technical">Stable ID: <code>{escaped(asset["id"])}</code></p>'
         if asset.get('sha256'):
             metadata += f'<p class="technical">SHA-256: <code>{escaped(asset["sha256"])}</code></p>'
@@ -78,7 +109,7 @@ def build(root, manifest_path, output, expected_count=20):
             f'<div class="body"><h2 lang="ja">{escaped(asset["text"])}</h2>'
             f'<p class="reading" lang="ja">{escaped(asset["reading"])}</p>'
             f'<p class="meaning">{escaped(asset["meaning"])}</p>'
-            f'<p class="status">{status}</p>{full_link}'
+            f'<p class="status">{status}</p>{full_link}{alternatives}'
             f'<details><summary>Exact generation prompt and source details</summary>'
             f'<pre>{escaped(asset["prompt"])}</pre>{metadata}</details></div></article>'
         )
@@ -90,9 +121,10 @@ def build(root, manifest_path, output, expected_count=20):
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.5;color:#352246;background:#faf8fe;color-scheme:light}
 *{box-sizing:border-box}body{max-width:1600px;margin:auto;padding:28px}header{max-width:1000px;margin-bottom:28px}h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.03em;margin:8px 0 16px}p{margin:8px 0}a{color:#65339a;text-underline-offset:3px}a:focus-visible,summary:focus-visible{outline:3px solid #ae6b00;outline-offset:4px}.eyebrow{color:#796385;font-size:.85rem}.notice{border-left:4px solid #dfad38;background:#fff5d8;border-radius:6px;padding:12px 16px;margin:20px 0}.tallies{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.tally{background:#eee5fa;border-radius:20px;padding:7px 14px;font-weight:650;font-size:.9rem}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}.card{background:white;border:1px solid #dfd3ed;border-radius:18px;overflow:hidden;box-shadow:0 3px 12px #44205a08}.number{padding:10px 16px;font-size:.8rem;font-weight:700;color:#74617c}.preview{display:flex;width:100%;aspect-ratio:1;align-items:center;justify-content:center;background-color:white;background-image:linear-gradient(45deg,#f0eafa 25%,transparent 25%),linear-gradient(-45deg,#f0eafa 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f0eafa 75%),linear-gradient(-45deg,transparent 75%,#f0eafa 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}.preview img{display:block;width:100%;height:100%;object-fit:contain;padding:14px}.placeholder{font-size:.9rem;color:#75617e;padding:24px;text-align:center}.body{padding:18px}h2{font-size:1.65rem;line-height:1.2;margin:0}.reading{font-size:.92rem;color:#7b6286}.meaning{font-size:1.05rem;font-weight:650}.status{display:table;font-size:.78rem;background:#fff1c7;color:#6e4a12;border-radius:8px;padding:5px 9px;margin:12px 0}details{margin-top:18px;border-top:1px solid #eee6f4;padding-top:12px}summary{cursor:pointer;color:#65477a;font-size:.83rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.83rem;background:#f6f2fb;padding:12px;border-radius:8px}.technical{font-size:.72rem;color:#786480;overflow-wrap:anywhere}footer{font-size:.85rem;color:#7b6286;margin:28px 0}@media(max-width:600px){body{padding:16px}.gallery{gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}}@media print{body{background:white}.gallery{grid-template-columns:repeat(3,1fr)}details{display:none}.card{break-inside:avoid;box-shadow:none}.preview img{padding:8px}}
+.comparisons{border-top:1px solid #eee6f4;margin-top:18px;padding-top:10px}.comparisons h3{font-size:.9rem;margin:4px 0}.comparison{margin:14px 0 0}.comparison figcaption{font-weight:650;font-size:.85rem;margin:8px 0}.comparison .preview{border:1px solid #e4d9ef;border-radius:10px;overflow:hidden}.comparison>a:last-child{font-size:.8rem}
 </style></head><body><header><p class="eyebrow">Kikimashta · Artwork review · Issue #213</p>
 <h1>Visual-reference artwork</h1>
-<p>One batch of the visual-reference cards at WaniKani source levels 2–5 that had no updated artwork.</p>
+<p>The original 20 visual-reference cards at WaniKani source levels 2–5, with owner-requested entrance additions and exit revisions. Any alternative artwork is shown alongside the current selection for comparison.</p>
 <div class="notice"><b>Pending owner review.</b> These are proposed assets. Generation and browsing this gallery do not approve or activate artwork, vocabulary, or practice cards.</div>
 <div class="tallies"><span class="tally">__TOTAL__ expected assets</span><span class="tally">__READY__ generated</span><span class="tally">__PENDING__ pending generation</span><span class="tally">__EXCLUDED__ already updated IDs excluded</span></div>
 <p>Open any image to inspect the original at full size. Expand its details to read the exact generation prompt.</p>
@@ -114,7 +146,7 @@ def main():
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument('--manifest', type=Path, help='Defaults to the artwork manifest under --root.')
     parser.add_argument('--output', type=Path, help='Defaults to index.html beside the manifest.')
-    parser.add_argument('--expected-count', type=int, default=20)
+    parser.add_argument('--expected-count', type=int, help='Override manifest.expectedAssetCount (legacy default: 20).')
     args = parser.parse_args()
     manifest = args.manifest or args.root / 'artifacts/visual-reference-art-213/manifest.json'
     output = args.output or manifest.parent / 'index.html'

@@ -439,11 +439,16 @@
       "text": "北口",
       "reading": "きたぐち",
       "meaning": "North Exit",
-      "prompt": "Use case: style-transfer. Use the supplied NORTH compass as the exact compass and illustrated-style reference. Create a NORTH EXIT vocabulary illustration with TWO SIMPLE COMPONENTS side by side. LEFT: a reusable neutral EXIT SYMBOL, a plum open rectangular doorway with pale lavender interior and a short golden arrow starting inside the opening and passing out across its right edge, pointing right. The doorway-plus-outward-arrow means exit; it is identical regardless of geographic direction. RIGHT: the supplied circular compass, with white face, plum rim, lavender inset circle, exactly four rays, small plum N above top. Highlight ONLY compass TOP/NORTH ray gold; remaining three rays lavender. Components balanced in scale and visually separated, no connecting arrow. The compass alone conveys north; the doorway arrow always means exiting and stays rightward for all companion cards. Charming rounded plum/lavender/gold style, clean readable at small sizes, square isolated transparent cutout. NO floor plan, station map, enclosing room, calendar, backing panel, landscape, extra letters, labels or words. Exactly one exit glyph and one compass.",
-      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v5.png",
+      "prompt": "Use case: compositing. Image1 is the PRIMARY approved-proposal EXIT SYMBOL to preserve: open lavender door to the left, plum arched frame, gold handle, dark interior, low threshold, broad gold arrow coming OUT toward RIGHT. Image2 is supporting NORTH compass. Create NORTH EXIT with the exit symbol clearly PRIMARY: retain the large exit drawing at roughly its current size and centered slightly lower/left on a square transparent canvas. Place a SMALLER copy of the compass in the UPPER RIGHT corner, spatially separate with a little clear margin, about 40 PERCENT of the doorway's height. The exit must visually dominate; the compass must read as a secondary directional badge, never equal-size side-by-side. Compass stays north-up, with N at TOP and ONLY top/NORTH ray gold, other three lavender. Preserve all defining artwork/colors/forms of the doorway and compass. No backing panel, giant badge container, arrows connecting components, words, landscape, calendar or extra objects. Genuine transparent outside background. Do not crop either component.",
+      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
       "status": "generated-pending-owner-review",
-      "sha256": "d01688fd76b65230b6e41e588b0c47f9e9ab84b2e254ca1549edd3a561f71ab0",
+      "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8",
       "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "role": "edit/style reference",
+          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+        },
         {
           "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
           "role": "edit/style reference",
@@ -521,12 +526,32 @@
           "sha256": "d01688fd76b65230b6e41e588b0c47f9e9ab84b2e254ca1549edd3a561f71ab0",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-ec50bd73-203b-4be2-845b-a4a8357fe27b.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 6,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+          "prompt": "Use case: compositing. Image1 is the PRIMARY approved-proposal EXIT SYMBOL to preserve: open lavender door to the left, plum arched frame, gold handle, dark interior, low threshold, broad gold arrow coming OUT toward RIGHT. Image2 is supporting NORTH compass. Create NORTH EXIT with the exit symbol clearly PRIMARY: retain the large exit drawing at roughly its current size and centered slightly lower/left on a square transparent canvas. Place a SMALLER copy of the compass in the UPPER RIGHT corner, spatially separate with a little clear margin, about 40 PERCENT of the doorway's height. The exit must visually dominate; the compass must read as a secondary directional badge, never equal-size side-by-side. Compass stays north-up, with N at TOP and ONLY top/NORTH ray gold, other three lavender. Preserve all defining artwork/colors/forms of the doorway and compass. No backing panel, giant badge container, arrows connecting components, words, landscape, calendar or extra objects. Genuine transparent outside background. Do not crop either component.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "role": "edit/style reference",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8"
+            }
+          ],
+          "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f47aa710-a734-43ab-9038-f7ed135b5d5b.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 5,
+      "selectedVersion": 6,
       "image": {
-        "width": 1774,
-        "height": 887,
+        "width": 1254,
+        "height": 1254,
         "mode": "RGBA",
         "alphaRange": [
           0,
@@ -539,15 +564,15 @@
       "text": "左手",
       "reading": "ひだりて",
       "meaning": "Left Hand",
-      "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Replace the entire full-body child with JUST TWO OPEN HUMAN HANDS side by side at equal size, fingertips pointing up and short wrists down, PALMS FACING THE VIEWER. No body, head, arms, clothes, face or figure. Anatomically correct left hand on LEFT with its thumb on its RIGHT edge toward center; correct right hand on RIGHT with thumb on its LEFT edge toward center. Each hand exactly one thumb and four separate fingers, natural rounded fingers, peach skin, plum outlines, simple palm creases. Both hands must have exactly the same normal peach skin color; NO golden recoloring. Use ONLY three short bold plum ATTENTION LINES above/beside the LEFT hand to identify left. NO attention lines on right hand. Symmetric relaxed hand poses, two hands total, generous transparent space between them. Transparent background.",
-      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+      "prompt": "Use case: precise-object-edit. Replace the two PALMS in this reference with the BACKS of the two hands, fingers still pointing up and wrists down. We must see knuckles and small subtle fingernails, NOT palms and NOT palm creases. Correct dorsal-view anatomy: anatomical LEFT HAND is on the LEFT with thumb at its OUTER LEFT edge; anatomical RIGHT HAND is on the RIGHT with thumb at its OUTER RIGHT edge. The two thumbs point AWAY from the gap between the hands. Each hand exactly four fingers plus one thumb (five digits). Two hands only, matching peach skin, plum outlines, no body or arms. Highlight LEFT hand only with the same three plum attention rays beside/above the left hand. Right has no attention rays. Keep equal size, same height, generous transparent spacing, soft friendly illustration treatment. Absolutely no palm lines, no palm pads, no inward-pointing thumbs, no colored hand highlight, no labels or letters. Genuine transparent background.",
+      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
       "status": "generated-pending-owner-review",
-      "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958",
+      "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
           "role": "edit/style reference",
-          "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f"
+          "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
         }
       ],
       "versions": [
@@ -579,9 +604,24 @@
           "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2f4d7172-3359-4381-81c6-1db7842f72c2.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+          "prompt": "Use case: precise-object-edit. Replace the two PALMS in this reference with the BACKS of the two hands, fingers still pointing up and wrists down. We must see knuckles and small subtle fingernails, NOT palms and NOT palm creases. Correct dorsal-view anatomy: anatomical LEFT HAND is on the LEFT with thumb at its OUTER LEFT edge; anatomical RIGHT HAND is on the RIGHT with thumb at its OUTER RIGHT edge. The two thumbs point AWAY from the gap between the hands. Each hand exactly four fingers plus one thumb (five digits). Two hands only, matching peach skin, plum outlines, no body or arms. Highlight LEFT hand only with the same three plum attention rays beside/above the left hand. Right has no attention rays. Keep equal size, same height, generous transparent spacing, soft friendly illustration treatment. Absolutely no palm lines, no palm pads, no inward-pointing thumbs, no colored hand highlight, no labels or letters. Genuine transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+              "role": "edit/style reference",
+              "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
+            }
+          ],
+          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-34124b21-c452-40bb-a27c-f6fea3815e50.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 3,
       "image": {
         "width": 1774,
         "height": 887,
@@ -655,15 +695,15 @@
       "text": "右手",
       "reading": "みぎて",
       "meaning": "Right Hand",
-      "prompt": "Use case: precise-object-edit. Create RIGHT HAND companion to this two-hand LEFT HAND illustration. Preserve EXACTLY the two open palms, normal peach skin, all five digits on each hand, thumb anatomy, palm creases, wrist shapes, dimensions, positions, plum outlines, transparent background, and every other element. Change ONLY the three plum attention rays: remove them from above the LEFT hand and put the identical three rays above/beside the RIGHT hand instead. Right hand means the palm on the RIGHT side of this image (its thumb is on its left edge toward the center). Both hands keep the same normal peach color, no gold highlight, no body, no additional objects or labels.",
-      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v3.png",
+      "prompt": "Use case: precise-object-edit. Make the RIGHT HAND companion to this corrected BACK-OF-HANDS illustration. Preserve EXACTLY both dorsal hands, fingernails, knuckles, thumb positions (thumbs point OUTWARD), all five digits each, normal matching peach color, plum outlines, sizes, positions, transparent background and every other element. Change ONLY the three plum attention lines: remove them from above/beside the LEFT hand and put the same three lines above/beside the RIGHT hand. No other changes. No palm creases, colored highlights, text or body.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v4.png",
       "status": "generated-pending-owner-review",
-      "sha256": "fdacd6e3ed138aee42640c7a46794b7e5580f049813ec3e40430ed3286439b26",
+      "sha256": "790ab4ce0eb6f08182d446752d95392de95073c7e5e6fdaeb43270385d9cd2d3",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
           "role": "edit/style reference",
-          "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
+          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
         }
       ],
       "versions": [
@@ -709,9 +749,24 @@
           "sha256": "fdacd6e3ed138aee42640c7a46794b7e5580f049813ec3e40430ed3286439b26",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-11236d91-17db-4db6-9c30-830f52e53c1f.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v4.png",
+          "prompt": "Use case: precise-object-edit. Make the RIGHT HAND companion to this corrected BACK-OF-HANDS illustration. Preserve EXACTLY both dorsal hands, fingernails, knuckles, thumb positions (thumbs point OUTWARD), all five digits each, normal matching peach color, plum outlines, sizes, positions, transparent background and every other element. Change ONLY the three plum attention lines: remove them from above/beside the LEFT hand and put the same three lines above/beside the RIGHT hand. No other changes. No palm creases, colored highlights, text or body.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+              "role": "edit/style reference",
+              "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+            }
+          ],
+          "sha256": "790ab4ce0eb6f08182d446752d95392de95073c7e5e6fdaeb43270385d9cd2d3",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1bd9a578-9f69-4ccc-887d-8bd7d990970c.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
         "width": 1774,
         "height": 887,
@@ -795,6 +850,25 @@
           ],
           "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-aa507aba-4866-4f60-a5fa-7ba21878286d.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v2.png",
+          "prompt": "An alternative visual reference illustration for ONE YEAR as a COMPLETE CYCLE OF FOUR SEASONS. Four small versions of the SAME recognizable tree are arranged around a circle: upper-left spring tree with pink blossom clusters; upper-right summer tree with full green leaves; lower-right autumn tree with orange/gold leaves; lower-left winter tree with bare branches and a little snow on the branches. One smooth golden circular clockwise arrow connects the four seasons into ONE closed complete annual cycle. Exactly four trees, balanced equal-sized scenes, no extra tree in center. Friendly polished educational illustration with plum outlines, lavender accents, gold circular arrow, simple clean natural leaf colors, white/snow details. Isolated on genuine transparent background, square composition, generous margins. No calendar, page, bindings, month names, dates, numbers, lettering, labels, landscape background, glow or giant shadow. Make the closed full-year cycle, not one isolated season, the main idea.",
+          "references": [],
+          "sha256": "3e24879d76aedecc7a96fa92daf0f145e2fe26e423af22aef8dcc5c5e27ffe8d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ca442c0-3cf0-4137-8d62-d12c85235b1f.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v3.png",
+          "prompt": "Create a beautifully CLEAN simple educational illustration of ONE YEAR as a closed FOUR-SEASON CYCLE. Square isolated graphic on genuinely transparent background. Exactly four small versions of the same tree, placed around a circle: upper left SPRING (rounded green canopy with FIVE large simple pink blossoms), upper right SUMMER (one rounded lush green canopy), lower right AUTUMN (one rounded orange/gold canopy with just a few simple leaves), lower left WINTER (a simple bare tree with smooth sturdy branches and a little opaque white snow resting on branches). Each tree has the same brown trunk and plum outlines. NO ground plates, grass, ground shadows, fallen petals or loose scattered leaves. Connect seasons clockwise with four gold curved arrows forming one complete closed circular loop, outlined dark plum, clean simple geometry. The four trees are separated with generous negative space; no fifth tree or object in center. Style: friendly polished flat illustration, solid smooth color fills, thick crisp plum boundaries, minimal interior highlights only. Absolutely NO gradients, glow, haze, blur, multicolored edge halos, rough edges, speckles, scattered pixels, drop shadows, vignette, paper, calendar, numbers, words, labels or background panel. Only the four clear trees and circular gold arrow loop, completely transparent everywhere else.",
+          "references": [],
+          "sha256": "cec9ae5461640da1e43a4cc9ad85419ce481ee7429b4bef964e53ca8647ffa28",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7902ec10-ab93-4204-a031-c9ba819fb300.png",
+          "ownerFeedbackRound": 3,
+          "comparisonOnly": true
         }
       ],
       "selectedVersion": 1,
@@ -806,22 +880,29 @@
           0,
           255
         ]
-      }
+      },
+      "comparisons": [
+        {
+          "label": "Alternative: a complete four-season cycle",
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v3.png",
+          "version": 3
+        }
+      ]
     },
     {
       "id": "ja-v-83365ed9e3db",
       "text": "太字",
       "reading": "ふとじ",
       "meaning": "Bold Letter",
-      "prompt": "Use case: precise-object-edit. Fix exactly ONE defect in the supplied bold-type comparison. The triangular enclosed counter inside the RIGHT dark-plum BOLD A currently has a transparent hole. Fill ONLY that enclosed triangular area with opaque warm GOLD/YELLOW matching the golden rounded backing immediately surrounding the letter. The golden backing must be continuous beneath the letter, including visible gold through its triangular counter. Do not change the letter shape, any strokes, typography, gold backing silhouette, colors elsewhere, LEFT regular lavender A, spacing or dimensions. Preserve transparency outside the objects and inside the LEFT A counter (which has no backing). No glow, paper, border, calendar, shadow or additional objects.",
-      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+      "prompt": "Use case: precise-object-edit. Make the comparison letter on the LEFT dramatically SKINNIER. Preserve exactly the bold dark-plum RIGHT A, its gold rounded backing, gold-filled triangular counter, typography size, baseline, positions, spacing, transparent background and all other details. Change ONLY LEFT lavender A stroke weight: reduce every left-A stroke to approximately ONE THIRD of its current thickness. It should look like an elegant extra-light/thin sans-serif A, with its diagonal stems and crossbar all distinctly thin. Same letter height and outer width, same lavender color, no outline to thicken it again. This is a very clear THIN versus BOLD weight contrast, not a change in glyph size. No calendar, page, frame, words, new objects or glow.",
+      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
       "status": "generated-pending-owner-review",
-      "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a",
+      "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
-          "role": "edit target",
-          "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d"
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+          "role": "edit/style reference",
+          "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a"
         }
       ],
       "versions": [
@@ -868,9 +949,24 @@
           "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9122d6da-ca35-4408-8ade-7f7d81670421.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+          "prompt": "Use case: precise-object-edit. Make the comparison letter on the LEFT dramatically SKINNIER. Preserve exactly the bold dark-plum RIGHT A, its gold rounded backing, gold-filled triangular counter, typography size, baseline, positions, spacing, transparent background and all other details. Change ONLY LEFT lavender A stroke weight: reduce every left-A stroke to approximately ONE THIRD of its current thickness. It should look like an elegant extra-light/thin sans-serif A, with its diagonal stems and crossbar all distinctly thin. Same letter height and outer width, same lavender color, no outline to thicken it again. This is a very clear THIN versus BOLD weight contrast, not a change in glyph size. No calendar, page, frame, words, new objects or glow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+              "role": "edit/style reference",
+              "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a"
+            }
+          ],
+          "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f123ba61-0f8c-4409-8ef2-6f4773d6cdd7.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
         "width": 1774,
         "height": 887,
@@ -962,17 +1058,11 @@
       "text": "三十代",
       "reading": "さんじゅうだい",
       "meaning": "One's Thirties",
-      "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove ALL the calendar/card/paper framing: gold header bar, white sheet, outer plum page border and shadow. Keep ONLY the exact large plum text 30–39 and the gold range bar below it bounded by two short plum endpoint ticks. Enlarge and center this floating age-range diagram on transparent background, with ample margin. Exact numbers 30 and 39, connected by a dash; no extra numbers, years, date labels, card, calendar, page, frame, binding, people, words or currency symbols.",
-      "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v2.png",
+      "prompt": "A clean friendly illustrated reference for ADULTS IN THEIR THIRTIES. Exactly three SIMPLE adult head-and-shoulder bust icons arranged evenly in one horizontal row. Warm peach faces, simple dark-plum hair and tiny friendly facial features; solid lavender clothing with a clean smoothly curved bottom silhouette, thick crisp plum outlines. Each portrait is isolated with real transparent gaps. Below left portrait a small gold rounded age badge with exact large plum text 30. Below middle badge text 35. Below right badge text 39. Three portraits, three badges, numbers exactly 30 35 39, easily legible. Keep a visible transparent gap between each bust and its number badge. Flat smooth colors and just a small interior highlight, consistent polished plum/lavender/gold educational-game aesthetic. Square transparent canvas, generous margins. NO grouping brace, underline, ribbon, shadows, glow, soft edges, smoke, haze, white outline, white trimming, rough cutouts, extra numerals, text, calendars, card frames, paper or background panel. Crisp finished silhouettes only. The age numbers provide explicit facts so no guessing anyone's age from appearance is required.",
+      "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
       "status": "generated-pending-owner-review",
-      "sha256": "8ee3456fc4e8a48b905fdb3c08198a5816cc427990ef7b7207d212fa3c387c7b",
-      "references": [
-        {
-          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v1.png",
-          "role": "edit/style reference",
-          "sha256": "faa7c82931d64cc41e4ee3ea43eed9a6cf6862f9402a073e352de76c234052c2"
-        }
-      ],
+      "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+      "references": [],
       "versions": [
         {
           "version": 1,
@@ -1002,12 +1092,30 @@
           "sha256": "8ee3456fc4e8a48b905fdb3c08198a5816cc427990ef7b7207d212fa3c387c7b",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c65ddaf6-dd91-4363-9fda-2d005da1c4f7.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v3.png",
+          "prompt": "An alternative educational vocabulary illustration for PEOPLE IN THEIR THIRTIES. Show three simple friendly adult head-and-shoulder portraits in a row, lavender clothing, warm peach skin, plum outlines, varied ordinary hair, equal scale. Beneath EACH portrait put a small warm-gold oval age badge containing a clear dark-plum Arabic age: exactly 30 under left portrait, 35 under middle, 39 under right. The age numbers must be large and legible at small quiz size. A single subtle gold grouping brace underneath unites the three adults into the same age decade. Ages are explicit: do not ask the learner to guess age from appearances. Clean polished learning-game illustration, rounded plum/lavender/gold style, restrained soft interior shading, freestanding transparent cutout, generous square margins. NO paper, calendar, date, framing cards, birthday cake, candles, labels, words, age ranges, Japanese answer text or other numerals. Exactly three portraits and three badges, exact text 30 35 39.",
+          "references": [],
+          "sha256": "0c6b76e7001070e197565b8efce2a930eaa3a560b450d0dfb8d51ffc5744dd64",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3c76508d-1fb6-4439-a4fa-b8dddbfa2e67.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+          "prompt": "A clean friendly illustrated reference for ADULTS IN THEIR THIRTIES. Exactly three SIMPLE adult head-and-shoulder bust icons arranged evenly in one horizontal row. Warm peach faces, simple dark-plum hair and tiny friendly facial features; solid lavender clothing with a clean smoothly curved bottom silhouette, thick crisp plum outlines. Each portrait is isolated with real transparent gaps. Below left portrait a small gold rounded age badge with exact large plum text 30. Below middle badge text 35. Below right badge text 39. Three portraits, three badges, numbers exactly 30 35 39, easily legible. Keep a visible transparent gap between each bust and its number badge. Flat smooth colors and just a small interior highlight, consistent polished plum/lavender/gold educational-game aesthetic. Square transparent canvas, generous margins. NO grouping brace, underline, ribbon, shadows, glow, soft edges, smoke, haze, white outline, white trimming, rough cutouts, extra numerals, text, calendars, card frames, paper or background panel. Crisp finished silhouettes only. The age numbers provide explicit facts so no guessing anyone's age from appearance is required.",
+          "references": [],
+          "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ef7f1eb-3123-4a49-822a-712e855f77f1.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 4,
       "image": {
-        "width": 2172,
-        "height": 724,
+        "width": 1254,
+        "height": 1254,
         "mode": "RGBA",
         "alphaRange": [
           0,
@@ -1077,15 +1185,15 @@
       "text": "西口",
       "reading": "にしぐち",
       "meaning": "West Exit",
-      "prompt": "Use case: precise-object-edit. Make WEST EXIT companion to this NORTH EXIT illustration. Preserve EXACTLY the LEFT doorway-and-outward-right-arrow EXIT SYMBOL, including its rightward arrow, shapes, colors, location and size. That exit symbol is a reusable constant and must NOT point left or change at all. Preserve the RIGHT circular compass's whole geometry, white face, plum border, lavender inset ring, all four rays and N at TOP. Change ONLY the compass highlighting: LEFT/WEST ray becomes golden yellow; TOP/NORTH ray becomes pale lavender matching bottom/right rays. Exactly one highlighted gold compass ray pointing LEFT. Keep N fixed above TOP, north-up orientation, component positions, size, typography, transparent background and all margins identical. No other changes.",
-      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v3.png",
+      "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this improved NORTH EXIT. Preserve the entire LARGE refined doorway and its outward right-pointing gold arrow exactly, as the primary subject; preserve the SMALL compass's UPPER RIGHT position, scale (40% door height), round border, white face, lavender inset ring, N above top, geometry and margins. Change ONLY which compass ray is gold: LEFT/WEST ray gold, TOP/NORTH ray becomes lavender like bottom/right. Exactly one highlighted gold compass ray pointing LEFT. Do not move, rotate, resize or change the doorway, arrow, handle, door leaf, compass, N label, colors or transparent background. No new words or objects.",
+      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v4.png",
       "status": "generated-pending-owner-review",
-      "sha256": "929cff941ba152e1abf8e0083217422cace7ecd7388076c23bbb378e398befa3",
+      "sha256": "6b65f19bac26a7b6413639687335e0e4300eb10acc67c9ac77ed3646669c430c",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v5.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
           "role": "edit/style reference",
-          "sha256": "d01688fd76b65230b6e41e588b0c47f9e9ab84b2e254ca1549edd3a561f71ab0"
+          "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
         }
       ],
       "versions": [
@@ -1131,12 +1239,107 @@
           "sha256": "929cff941ba152e1abf8e0083217422cace7ecd7388076c23bbb378e398befa3",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0781b697-1036-4e29-9a31-98e36fdc3a72.png",
           "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v4.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this improved NORTH EXIT. Preserve the entire LARGE refined doorway and its outward right-pointing gold arrow exactly, as the primary subject; preserve the SMALL compass's UPPER RIGHT position, scale (40% door height), round border, white face, lavender inset ring, N above top, geometry and margins. Change ONLY which compass ray is gold: LEFT/WEST ray gold, TOP/NORTH ray becomes lavender like bottom/right. Exactly one highlighted gold compass ray pointing LEFT. Do not move, rotate, resize or change the doorway, arrow, handle, door leaf, compass, N label, colors or transparent background. No new words or objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+              "role": "edit/style reference",
+              "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
+            }
+          ],
+          "sha256": "6b65f19bac26a7b6413639687335e0e4300eb10acc67c9ac77ed3646669c430c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07a13347-7104-4fd0-b61c-bf4183957691.png",
+          "ownerFeedbackRound": 3
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
-        "width": 1774,
-        "height": 887,
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-a19157e62dee",
+      "text": "出口",
+      "reading": "でぐち",
+      "meaning": "Exit",
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "prompt": "Create one refined, friendly illustrated EXIT symbol for a Japanese listening game. A beautiful open doorway is the main subject: softly rounded plum doorframe with a little depth, pale lavender door leaf opened toward the LEFT, neat small golden handle, clearly darker lavender doorway interior, and a clean low threshold. A broad smooth golden arrow starts INSIDE the doorway opening and passes OUT through the threshold toward the RIGHT, ending clearly outside the doorway. Exit must read as outward motion. Elegant simple polished storybook-object style, consistent bold dark-plum contours, warm gold and lavender palette, restrained dimensional highlights only within objects. Isolated centered symbol on genuine transparent background, square canvas, generous margins. No compass on this base symbol. No person, lettering, label, word EXIT, scenery, floor plan, calendar, glow, large shadow or backing card. Preserve a simple clear silhouette at small quiz size.",
+          "references": [],
+          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-08417089-da3e-4a20-8ee2-8fd9e0f23370.png",
+          "ownerFeedbackRound": 3
+        }
+      ],
+      "ownerAdded": true,
+      "sourceLevel": 2,
+      "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+      "prompt": "Create one refined, friendly illustrated EXIT symbol for a Japanese listening game. A beautiful open doorway is the main subject: softly rounded plum doorframe with a little depth, pale lavender door leaf opened toward the LEFT, neat small golden handle, clearly darker lavender doorway interior, and a clean low threshold. A broad smooth golden arrow starts INSIDE the doorway opening and passes OUT through the threshold toward the RIGHT, ending clearly outside the doorway. Exit must read as outward motion. Elegant simple polished storybook-object style, consistent bold dark-plum contours, warm gold and lavender palette, restrained dimensional highlights only within objects. Isolated centered symbol on genuine transparent background, square canvas, generous margins. No compass on this base symbol. No person, lettering, label, word EXIT, scenery, floor plan, calendar, glow, large shadow or backing card. Preserve a simple clear silhouette at small quiz size.",
+      "references": [],
+      "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0",
+      "selectedVersion": 1,
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "text": "入り口",
+      "reading": "いりぐち",
+      "meaning": "Entrance",
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v1.png",
+          "prompt": "Use case: precise-object-edit. Create ENTRANCE as a matched companion to the supplied EXIT icon. Preserve EXACTLY the refined open doorway, door leaf open to LEFT, lavender panels, golden handle, plum arched frame, dark-lavender interior, low threshold, illustration style, dimensions, location, clean transparent outside background and all margins. Reverse ONLY the golden arrow so it now clearly points INTO the doorway: arrow tail starts OUTSIDE on the RIGHT and arrowhead ends INSIDE the dark doorway opening, pointing LEFT/inward. Keep arrow visibly crossing the threshold, same thickness and polished gold treatment. The right-side arrow tip of the exit must become the right-side tail of entrance, with the new left-pointing tip inside. Do not mirror the whole door, recolor anything, add a compass, words, letters, body or scenery.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            }
+          ],
+          "sha256": "71a2f17a63aab757bf5827b05a794d332166772686a62fee06901348cbd2e3f8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3ecaae10-5367-4fa4-8965-52d08eb38b29.png",
+          "ownerFeedbackRound": 3
+        }
+      ],
+      "ownerAdded": true,
+      "sourceLevel": 1,
+      "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v1.png",
+      "prompt": "Use case: precise-object-edit. Create ENTRANCE as a matched companion to the supplied EXIT icon. Preserve EXACTLY the refined open doorway, door leaf open to LEFT, lavender panels, golden handle, plum arched frame, dark-lavender interior, low threshold, illustration style, dimensions, location, clean transparent outside background and all margins. Reverse ONLY the golden arrow so it now clearly points INTO the doorway: arrow tail starts OUTSIDE on the RIGHT and arrowhead ends INSIDE the dark doorway opening, pointing LEFT/inward. Keep arrow visibly crossing the threshold, same thickness and polished gold treatment. The right-side arrow tip of the exit must become the right-side tail of entrance, with the new left-pointing tip inside. Do not mirror the whole door, recolor anything, add a compass, words, letters, body or scenery.",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "role": "edit/style reference",
+          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+        }
+      ],
+      "sha256": "71a2f17a63aab757bf5827b05a794d332166772686a62fee06901348cbd2e3f8",
+      "selectedVersion": 1,
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
         "mode": "RGBA",
         "alphaRange": [
           0,
@@ -1189,8 +1392,8 @@
     "ja-v-cbb4297f3dd7"
   ],
   "status": "complete-pending-owner-review",
-  "generatedAssetCount": 20,
-  "generatedVersionCount": 40,
+  "generatedAssetCount": 22,
+  "generatedVersionCount": 51,
   "checks": {
     "exactScope": true,
     "noAlreadyUpdatedIds": true,
@@ -1214,15 +1417,28 @@
         "西口"
       ],
       "status": "revised-pending-owner-review"
+    },
+    {
+      "round": 3,
+      "request": "Nicer primary exit symbol; update entrance and exit. Compass in upper right and slightly smaller. Thinner comparison letter. Backs of hands. New thirties concept. Show an alternative to the current year calendar before choosing.",
+      "status": "revised-pending-owner-review",
+      "addedIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-a19157e62dee"
+      ],
+      "yearSelectionPreserved": true
     }
   ],
   "exitSymbolConvention": {
-    "meaning": "Exit",
-    "design": "Plum doorway with lavender interior and a gold arrow pointing outward to the right. The same doorway and arrow are used for both geographic exits.",
-    "direction": "Only the adjacent north-up compass supplies geographic direction: gold top ray for north, gold left ray for west.",
+    "meaning": "Exit/entrance",
+    "design": "Refined open lavender doorway, plum arched frame and a gold arrow crossing the threshold. Outward rightward arrow means exit; inward leftward arrow means entrance.",
+    "direction": "For north/west exits the doorway remains primary and identical; a smaller compass in the upper right indicates the direction, gold north ray or west ray with N fixed at top.",
     "cards": [
+      "ja-v-a19157e62dee",
+      "ja-v-20cbd1c15a35",
       "ja-v-a84051dc9f24",
       "ja-v-81b56dc2a618"
     ]
-  }
+  },
+  "expectedAssetCount": 22
 }
