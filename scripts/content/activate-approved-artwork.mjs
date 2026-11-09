@@ -43,6 +43,18 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     const manifest = read(root, manifestPath)
     if (manifest.status !== 'approved') throw new Error(`Batch is not approved: ${batch}`)
     if (visualReference && (manifest.expectedAssetCount !== 22 || manifest.assets.length !== 22)) throw new Error('Expected the complete 22-image visual-reference set')
+    if (visualReference) {
+      const release = manifest.releaseApproval
+      if (!release || release.ownerStatement !== "Let's ship this artwork set." ||
+          release.scope !== 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.' ||
+          typeof release.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(release.date) ||
+          !Array.isArray(release.selections) || release.selections.length !== 22 ||
+          new Set(release.selections.map(selection => selection.id)).size !== 22 ||
+          release.selections.some(selection => !manifest.assets.some(asset =>
+            asset.id === selection.id && asset.path === selection.path && asset.sha256 === selection.sha256 && asset.selectedVersion === selection.selectedVersion))) {
+        throw new Error('Missing or stale complete-set release approval')
+      }
+    }
     return manifest.assets.map(asset => {
       if (seen.has(asset.id) || !allItems.some(item => item.id === asset.id) || asset.status !== 'approved') throw new Error(`Unapproved, duplicate or unknown image: ${asset.id}`)
       seen.add(asset.id)

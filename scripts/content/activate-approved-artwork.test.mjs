@@ -262,7 +262,10 @@ function visualReferenceFixture(t) {
   })
   f.put('content/catalog/ja.json', { items: assets.map(a => ({ ...f.item, id: a.id })) })
   f.put('content/visuals/levels-1-2.json', assets.map(a => ({ ...f.visual, id: a.id })))
-  const manifest = { status: 'approved', expectedAssetCount: 22, assets }
+  const manifest = { status: 'approved', expectedAssetCount: 22, assets,
+    releaseApproval: { ownerStatement: "Let's ship this artwork set.", date: '2026-11-09',
+      scope: 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.',
+      selections: assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion })) } }
   const save = () => f.put('artifacts/visual-reference-art-213/manifest.json', manifest)
   save()
   return { ...f, manifest, save }
@@ -305,6 +308,29 @@ for (const failure of ['pending selection', 'missing approval', 'stale hash', 's
     f.save()
     const before = f.read('content/catalog/ja.json')
     assert.throws(() => activateArtwork({ root: f.root, batches: ['visual-reference-213'], encode: () => assert.fail('Must reject before encoding') }))
+    assert.deepEqual(f.read('content/catalog/ja.json'), before)
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
+}
+
+for (const failure of ['missing release', 'artwork-only statement', 'missing scope', 'missing date', 'missing selection', 'duplicate selection', 'changed id', 'changed path', 'changed hash', 'changed version']) {
+  test(`visual-reference activation rejects ${failure} in release authorization before writing`, t => {
+    const f = visualReferenceFixture(t)
+    const release = f.manifest.releaseApproval
+    const selection = release.selections.at(-1)
+    if (failure === 'missing release') delete f.manifest.releaseApproval
+    if (failure === 'artwork-only statement') release.ownerStatement = 'These pictures look good.'
+    if (failure === 'missing scope') delete release.scope
+    if (failure === 'missing date') delete release.date
+    if (failure === 'missing selection') release.selections.pop()
+    if (failure === 'duplicate selection') release.selections[21] = release.selections[0]
+    if (failure === 'changed id') selection.id = 'ja-unknown'
+    if (failure === 'changed path') selection.path = selection.path.replace('-v1', '-v2')
+    if (failure === 'changed hash') selection.sha256 = '0'.repeat(64)
+    if (failure === 'changed version') selection.selectedVersion = 2
+    f.save()
+    const before = f.read('content/catalog/ja.json')
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['visual-reference-213'], encode: () => assert.fail('Must reject before encoding') }), /complete-set release approval/)
     assert.deepEqual(f.read('content/catalog/ja.json'), before)
     assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
   })

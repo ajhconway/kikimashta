@@ -143,28 +143,18 @@ async function heardWord(page: Page) {
 
 async function chooseHeardAnswer(page: Page, target: WordItem) {
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
-  // Session journeys keep native playback and real storage, but skip the answer
-  // beat. Detailed motion and the ordinary timer are checked in a focused test.
-  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
-  try {
-    const exercise = await page.locator('.quiz').getAttribute('data-exercise');
-    const choice = exercise === 'audio-text'
-      ? page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true })
-      : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) });
-    await choice.click();
-    await expect(page.locator('.feedback')).toContainText('Correct answer.');
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
-    await expect(page.getByRole('alert')).toHaveCount(0);
-    // The app starts the advance timer only after playback and saving finish.
-    // Native media is not governed by the Playwright clock.
-    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).ended)).toBe(true);
-    await expect(page.getByRole('button', { name: /replay word/i })).toHaveText('Replay');
-    await expect(page.locator('.feedback').getByText('Saving…', { exact: true })).toHaveCount(0);
-    await page.clock.fastForward(1200);
-    await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
-  } finally {
-    await page.clock.resume();
-  }
+  // Keep native playback, storage and automatic advancement on the running clock.
+  // Rendered save/playback indicators can settle before React registers its
+  // advance timer; advancing a paused clock here can strand that later timer.
+  const exercise = await page.locator('.quiz').getAttribute('data-exercise');
+  const choice = exercise === 'audio-text'
+    ? page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true })
+    : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) });
+  await choice.click();
+  await expect(page.locator('.feedback')).toContainText('Correct answer.');
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
+  await expect(page.getByRole('alert')).toHaveCount(0);
+  await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'correct');
 }
 
 async function chooseWithAnimationChecks(page: Page) {
