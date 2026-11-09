@@ -335,3 +335,97 @@ for (const failure of ['missing release', 'artwork-only statement', 'missing sco
     assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
   })
 }
+
+function pictureFixture(t) {
+  const f = transparentFixture(t)
+  const directory = 'artifacts/picture-art-229'
+  const opaqueId = 'ja-v-cbda72b9dd04'
+  const assets = Array.from({ length: 31 }, (_, index) => {
+    const id = index === 30 ? opaqueId : `ja-v-${index.toString(16)}`
+    const path = `${directory}/ja-v-${(index === 1 ? 0 : index).toString(16)}-v1.png`
+    const bytes = index === 30 ? rgbaPng(Array.from({ length: 4 }, () => [255, 255, 255, 255]).flat()) : f.source
+    mkdirSync(dirname(join(f.root, path)), { recursive: true })
+    writeFileSync(join(f.root, path), bytes)
+    return { id, path, status: 'approved', sha256: hash(bytes), selectedVersion: 1,
+      imageDescription: index === 30 ? 'White paint swatch' : 'Friendly vocabulary illustration', transparentBackground: index !== 30,
+      sourceKind: index === 1 ? 'shared-new' : index >= 26 ? 'existing-approved' : 'generated',
+      ...(index === 1 ? { sharedFromId: 'ja-v-0' } : {}),
+      versions: [{ version: 1, path, sha256: hash(bytes) }],
+      approval: { sha256: hash(bytes), selectedVersion: 1, scope: 'artwork only', ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09' } }
+  })
+  f.put('content/catalog/ja.json', { items: assets.map(asset => ({ ...f.item, id: asset.id })) })
+  f.put('content/visuals/levels-1-2.json', assets.map(asset => ({ ...f.visual, id: asset.id })))
+  const manifest = { status: 'approved', expectedAssetCount: 31, assets,
+    releaseApproval: { ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09',
+      scope: 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.',
+      selections: assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion })) } }
+  const save = () => f.put(`${directory}/manifest.json`, manifest)
+  save()
+  return { ...f, manifest, save }
+}
+
+test('the complete picture set activates shared and approved-source selections while retaining opaque white and all eligibility', t => {
+  const f = pictureFixture(t)
+  const before = f.read('content/catalog/ja.json')
+  const pool = f.read('content/practice-pool.json')
+  const options = { root: f.root, batches: ['picture-229'] }
+  const ids = activateArtwork({ ...options, encode: (source, target, { format }) => {
+    writeFileSync(target, format === 'png' ? readFileSync(source) : Buffer.from('ffd8ffe00000ffd9', 'hex'))
+  } })
+  assert.equal(ids.length, 31)
+  const active = f.read('content/card-regeneration/activation.json')
+  assert.equal(active.assets.length, 32)
+  assert.deepEqual(f.read('content/practice-pool.json'), pool)
+  const after = f.read('content/catalog/ja.json')
+  assert.deepEqual(after.items.map((item, index) => ({ ...item, image: before.items[index].image })), before.items)
+  for (const item of after.items) {
+    const delivery = active.assets.find(asset => asset.id === item.id)
+    assert.equal(delivery.manifestPath, 'artifacts/picture-art-229/manifest.json')
+    const opaque = item.id === 'ja-v-cbda72b9dd04'
+    assert.equal(delivery.alpha, opaque ? undefined : 'preserved')
+    assert.match(item.image.src, opaque ? /\.jpg$/ : /\.png$/)
+  }
+  const shared = active.assets.find(asset => asset.id === 'ja-v-1')
+  const original = active.assets.find(asset => asset.id === 'ja-v-0')
+  assert.equal(shared.sourcePath, original.sourcePath)
+  assert.equal(shared.sourceSha256, original.sourceSha256)
+  activateArtwork({ ...options, encode: () => assert.fail('Verified picture deliveries should be reused') })
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), active)
+})
+
+for (const failure of ['pending selection', 'missing approval', 'stale approval hash', 'stale approval version', 'missing version record', 'stale version path', 'duplicate version record', 'opaque new image', 'incomplete set', 'missing release', 'wrong release statement', 'missing release date', 'missing release scope', 'missing release selection', 'duplicate release selection', 'stale release path', 'stale release hash', 'stale release version', 'duplicate asset id', 'symlink source']) {
+  test(`picture-set preflight rejects ${failure} before any encoding or mapping changes`, t => {
+    const f = pictureFixture(t)
+    const asset = f.manifest.assets[29]
+    const release = f.manifest.releaseApproval
+    const selection = release.selections[29]
+    if (failure === 'pending selection') asset.status = 'generated-pending-owner-review'
+    if (failure === 'missing approval') delete asset.approval
+    if (failure === 'stale approval hash') asset.approval.sha256 = '0'.repeat(64)
+    if (failure === 'stale approval version') asset.approval.selectedVersion = 2
+    if (failure === 'missing version record') asset.versions = []
+    if (failure === 'stale version path') asset.versions[0].path = asset.path.replace('-v1', '-v2')
+    if (failure === 'duplicate version record') asset.versions.push({ ...asset.versions[0] })
+    if (failure === 'opaque new image') asset.transparentBackground = false
+    if (failure === 'incomplete set') f.manifest.assets.pop()
+    if (failure === 'missing release') delete f.manifest.releaseApproval
+    if (failure === 'wrong release statement') release.ownerStatement = 'The pictures look good.'
+    if (failure === 'missing release date') delete release.date
+    if (failure === 'missing release scope') delete release.scope
+    if (failure === 'missing release selection') release.selections.pop()
+    if (failure === 'duplicate release selection') release.selections[29] = release.selections[0]
+    if (failure === 'stale release path') selection.path = selection.path.replace('-v1', '-v2')
+    if (failure === 'stale release hash') selection.sha256 = '0'.repeat(64)
+    if (failure === 'stale release version') selection.selectedVersion = 2
+    if (failure === 'duplicate asset id') asset.id = f.manifest.assets[0].id
+    if (failure === 'symlink source') {
+      rmSync(join(f.root, asset.path))
+      symlinkSync(join(f.root, f.manifest.assets[0].path), join(f.root, asset.path))
+    }
+    f.save()
+    const before = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json'].map(path => [path, f.read(path)])
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }))
+    for (const [path, value] of before) assert.deepEqual(f.read(path), value)
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
+}

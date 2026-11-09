@@ -17,9 +17,9 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
 
-test('all 190 active illustrations resolve to the approved selection in the app and library', () => {
-  assert.equal(activation.assets.length, 190)
-  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 190)
+test('all 221 active illustrations resolve to the approved selection in the app and library', () => {
+  assert.equal(activation.assets.length, 221)
+  assert.equal(new Set(activation.assets.map(asset => asset.id)).size, 221)
   for (const asset of activation.assets) {
     const manifest = read(asset.manifestPath)
     const selected = manifest.assets.find(item => item.id === asset.id)
@@ -122,4 +122,44 @@ test('the five approved numerical reference replacements are selected in their o
     assert.equal(records[0].sourcePath, selected.path)
     assert.equal(records[0].sourceSha256, selected.sha256)
   }
+})
+
+test('all 31 shipped picture selections retain exact batch acceptance, version history and frozen review scope', () => {
+  const manifest = read('artifacts/picture-art-229/manifest.json')
+  const approvals = read('artifacts/picture-art-229/approvals.json')
+  const plan = read('artifacts/picture-art-229/plan.json')
+  const planned = read('content/card-regeneration/prompts.json').cards
+  assert.equal(manifest.assets.length, 31)
+  assert.equal(manifest.releaseApproval.ownerStatement, "Ok, let's ship this updated artwork.")
+  assert.equal(manifest.releaseApproval.selections.length, 31)
+  assert.equal(approvals.assets.length, 31)
+  assert.deepEqual(manifest.assets.map(asset => asset.id).sort(), plan.items.map(item => item.id).sort())
+  assert.ok(plan.items.every(item => item.category === 'picture'))
+  for (const asset of manifest.assets) {
+    const record = activation.assets.find(record => record.id === asset.id)
+    assert.equal(record.manifestPath, 'artifacts/picture-art-229/manifest.json')
+    assert.equal(record.sourcePath, asset.path)
+    assert.equal(asset.approval.sha256, asset.sha256)
+    assert.equal(asset.approval.selectedVersion, asset.selectedVersion)
+    assert.equal(asset.approval.scope, 'artwork only')
+    assert.ok(asset.approval.ownerStatement)
+    assert.ok(asset.versions.some(version => version.version === asset.selectedVersion && version.path === asset.path && version.sha256 === asset.sha256))
+    const approval = approvals.assets.find(approval => approval.id === asset.id)
+    assert.equal(approval.sha256, asset.sha256)
+    assert.equal(approval.selectedVersion, asset.selectedVersion)
+    assert.equal(approval.path, asset.path)
+    assert.deepEqual(manifest.releaseApproval.selections.find(selection => selection.id === asset.id), { id: asset.id, path: asset.path, sha256: asset.sha256, selectedVersion: asset.selectedVersion })
+    assert.equal(planned.find(card => card.id === asset.id).artworkStatus, 'approved')
+    for (const version of asset.versions) assert.equal(hash(source(version.path)), version.sha256, 'Original and selected PNG versions stay intact')
+    if (asset.sourceKind === 'shared-new') {
+      const shared = manifest.assets.find(source => source.id === asset.sharedFromId)
+      assert.equal(asset.path, shared.path)
+      assert.equal(asset.sha256, shared.sha256)
+    }
+    assert.equal(asset.transparentBackground, asset.text !== '白')
+  }
+  assert.equal(manifest.assets.find(asset => asset.text === '皮').selectedVersion, 4)
+  assert.equal(manifest.assets.find(asset => asset.text === '町').selectedVersion, 4)
+  assert.equal(manifest.assets.find(asset => asset.text === '月見').selectedVersion, 2)
+  assert.equal(manifest.assets.find(asset => asset.text === '金玉').selectedVersion, 3)
 })

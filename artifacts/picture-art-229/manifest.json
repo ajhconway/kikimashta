@@ -2,7 +2,7 @@
   "issue": 229,
   "sourceRevision": "7942fddd9f08eab3f8a4d6b5b2c9d2b80ec72030",
   "tool": "built-in image_gen",
-  "status": "partially-approved",
+  "status": "approved",
   "expectedAssetCount": 31,
   "expectedNewImageCount": 21,
   "existingApprovedReuseCount": 5,
@@ -77,7 +77,7 @@
       "reading": "こ",
       "meaning": "Child",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a consistent named child with juvenile proportions; do not test exact age, gender or family role from appearance. Exclude overlapping child categories, including 女の子, 少年, 少女, 男の子 and 赤ちゃん, as competing picture answers.",
       "suitabilityRationale": "A child is a workable broad category in an illustration.",
@@ -117,7 +117,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "be94a349440a96a1b900f60299d1cdc290f18bc39a49206249804b69bbeedfb0"
+      },
+      "imageDescription": "A young child in a lavender shirt and gold shorts, standing with empty hands.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-d1b6831b65c8",
@@ -125,7 +134,7 @@
       "reading": "まる",
       "meaning": "Circle",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a plain circle; exclude 丸い and round objects as competing answers.",
       "suitabilityRationale": "A circle can be shown directly as a shape.",
@@ -165,7 +174,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "777be8ef01192908420c936dc818d0a4977a23fbc94a22c9972e0711f903d814"
+      },
+      "imageDescription": "A single flat pink circle with a smooth plum outline.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-6c0b9f3278dc",
@@ -173,11 +191,19 @@
       "reading": "め",
       "meaning": "Eye",
       "level": 2,
-      "status": "existing-approved-reuse",
+      "status": "approved",
       "sourceKind": "existing-approved",
       "suitabilityRecommendation": "Use an eye in a face or a clear eye close-up; never contrast with 目玉 in a picture-only question.",
       "suitabilityRationale": "An eye can be depicted directly.",
-      "versions": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/picture-art-229/ja-v-6c0b9f3278dc-reuse.png",
+          "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee",
+          "sourceKind": "existing-approved",
+          "note": "Exact existing approved source reused without regeneration; local selection version for this batch."
+        }
+      ],
       "path": "artifacts/picture-art-229/ja-v-6c0b9f3278dc-reuse.png",
       "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One human EYE viewed straight-on: an almond-shaped opening bounded by a simple curved upper and lower eyelid, with opaque white sclera, centered lavender iris and black pupil. Slight warm-skin corners and a single simple upper-lid crease give anatomical context. Full eye and eyelid opening are visible; no whole face, eyeball sphere, detached organ stem, exaggerated eyelashes, brow, tear, arrows or labels. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eyeball; the outline difference is not a claim that these words can compete fairly as picture-only answers.\nReview constraints:\n- F10: Retain semantic exclusion groups across the whole choice pool, including broader terms versus their specific instances. Synonyms may share an image safely when never posed as competing answers.\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.\nShared design convention: Shared prompt convention only: opaque white sclera, large round lavender iris with violet rim, centered black pupil and one modest white highlight. Eye has an almond-shaped eyelid opening; Eyeball is an isolated whole spherical orb. Generate independently, with no pending-image dependency. Preserve F10 semantic exclusions and existing learning restrictions.\nProduction composition: One human EYE viewed straight-on: an almond-shaped opening bounded by a simple curved upper and lower eyelid, with opaque white sclera, centered lavender iris and black pupil. Slight warm-skin corners and a single simple upper-lid crease give anatomical context. Full eye and eyelid opening are visible; no whole face, eyeball sphere, detached organ stem, exaggerated eyelashes, brow, tear, arrows or labels. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eyeball; the outline difference is not a claim that these words can compete fairly as picture-only answers.\nInput reference roles: image1: approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery\nDo not copy unrelated reference subjects, lettering, logos or scenery. One square1:1 illustration, full subject visible with generous margins, readable at145px. Essential in-scene numerals/symbols only where specified. No answer captions, watermark or extra decoration.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.",
       "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee",
@@ -201,7 +227,17 @@
         "sourceManifestSha256": "dad59ad78f5057d08c943175f9cfe093e6792cd71300fb7ce239b03b6f716a2d",
         "sourceUrl": "https://github.com/ajhconway/kikimashta/blob/3237d2348970a458de973a56be8654022c1c924d/artifacts/card-regeneration/batch-11/176-eye.png",
         "snapshotPath": "artifacts/picture-art-229/sources/batch-11-manifest.json"
-      }
+      },
+      "selectedVersion": 1,
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee"
+      },
+      "imageDescription": "A close-up of one open human eye.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-a8ca5ef684b8",
@@ -209,11 +245,19 @@
       "reading": "めだま",
       "meaning": "Eyeball",
       "level": 2,
-      "status": "existing-approved-reuse",
+      "status": "approved",
       "sourceKind": "existing-approved",
       "suitabilityRecommendation": "Use a simple anatomy view; share or exclude eye-family images rather than forcing a 目 versus 目玉 contrast.",
       "suitabilityRationale": "An eyeball has a direct anatomical referent, but overlaps eye.",
-      "versions": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/picture-art-229/ja-v-a8ca5ef684b8-reuse.png",
+          "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa",
+          "sourceKind": "existing-approved",
+          "note": "Exact existing approved source reused without regeneration; local selection version for this batch."
+        }
+      ],
       "path": "artifacts/picture-art-229/ja-v-a8ca5ef684b8-reuse.png",
       "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One whole round EYEBALL, isolated as a simple opaque WHITE SPHERICAL ORB in a gentle three-quarter view, with a large round lavender iris and black pupil on its front. A restrained pale-lavender lower-side tone gives the orb round volume. No eyelids, almond eye-opening shape, face, fur tufts, eyelashes, skin ring, veins, optic-nerve stem, blood, labels or other organs. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eye; the anatomical framing difference does not make these fair competing picture-only answers.\nReview constraints:\n- F10: Retain semantic exclusion groups across the whole choice pool, including broader terms versus their specific instances. Synonyms may share an image safely when never posed as competing answers.\nLearning limitation: supporting contextual illustration; do not try to encode an abstract or grammatical distinction with arbitrary colors or tiny badges.\nShared design convention: Shared prompt convention only: opaque white sclera, large round lavender iris with violet rim, centered black pupil and one modest white highlight. Eye has an almond-shaped eyelid opening; Eyeball is an isolated whole spherical orb. Generate independently, with no pending-image dependency. Preserve F10 semantic exclusions and existing learning restrictions.\nProduction composition: One whole round EYEBALL, isolated as a simple opaque WHITE SPHERICAL ORB in a gentle three-quarter view, with a large round lavender iris and black pupil on its front. A restrained pale-lavender lower-side tone gives the orb round volume. No eyelids, almond eye-opening shape, face, fur tufts, eyelashes, skin ring, veins, optic-nerve stem, blood, labels or other organs. Shared iris convention for Eye/Eyeball: opaque WHITE sclera, large round LAVENDER IRIS with dark-violet perimeter, one centered BLACK round PUPIL and one modest opaque-white highlight dot. Simple polished cartoon anatomy, no vascular texture or photographic iris fibers. Eye has an almond-shaped eyelid opening; Eyeball is a whole spherical white orb with the same iris/pupil proportions. These are shared prompt conventions, not newly approved image references; semantic exclusion remains mandatory. Retain F10 semantic exclusion from Eye; the anatomical framing difference does not make these fair competing picture-only answers.\nInput reference roles: image1: approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery\nDo not copy unrelated reference subjects, lettering, logos or scenery. One square1:1 illustration, full subject visible with generous margins, readable at145px. Essential in-scene numerals/symbols only where specified. No answer captions, watermark or extra decoration.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.",
       "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa",
@@ -237,7 +281,17 @@
         "sourceManifestSha256": "dad59ad78f5057d08c943175f9cfe093e6792cd71300fb7ce239b03b6f716a2d",
         "sourceUrl": "https://github.com/ajhconway/kikimashta/blob/3237d2348970a458de973a56be8654022c1c924d/artifacts/card-regeneration/batch-11/193-eyeball.png",
         "snapshotPath": "artifacts/picture-art-229/sources/batch-11-manifest.json"
-      }
+      },
+      "selectedVersion": 1,
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa"
+      },
+      "imageDescription": "A single isolated eyeball showing the iris and pupil.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-0bf44d10d860",
@@ -245,7 +299,7 @@
       "reading": "じょし",
       "meaning": "Girl",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Share an established girl character and exclude synonymous girl cards from distractors; teach 女子 usage/register in context, not through hair or clothes.",
       "suitabilityRationale": "A girl can be introduced through a consistent illustrated character; the two words overlap in this source gloss.",
@@ -285,7 +339,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+      },
+      "imageDescription": "A young girl standing in ordinary casual clothes.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-185a632e3742",
@@ -293,7 +356,7 @@
       "reading": "おんなのこ",
       "meaning": "Girl",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "shared-new",
       "suitabilityRecommendation": "Share an established girl character and exclude synonymous girl cards from distractors; teach 女子 usage/register in context, not through hair or clothes.",
       "suitabilityRationale": "A girl can be introduced through a consistent illustrated character; the two words overlap in this source gloss.",
@@ -326,7 +389,16 @@
           "role": "shared exact new image",
           "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
         }
-      ]
+      ],
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+      },
+      "imageDescription": "A young girl standing in ordinary casual clothes.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-3bcce8de9d04",
@@ -334,7 +406,7 @@
       "reading": "ひとびと",
       "meaning": "People",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a group of people; exclude exact-person-count answers and person subcategories from competing choices.",
       "suitabilityRationale": "A crowd or group directly supports the broad people sense.",
@@ -374,7 +446,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "73d7c181a56abe7b95e49bced9258dd4e814f73c634b8bd6083d128c80edc372"
+      },
+      "imageDescription": "A friendly group of several different people standing together.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-0da81020c173",
@@ -382,7 +463,7 @@
       "reading": "たんぼ",
       "meaning": "Rice Paddy",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Reuse the rice-paddy illustration and exclude these synonyms from each other's distractors; teach different usage in context.",
       "suitabilityRationale": "A flooded rice field is a recognizable physical scene; both words denote the same referent here.",
@@ -422,7 +503,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588"
+      },
+      "imageDescription": "A flooded rice paddy with rows of young green rice plants.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-762983bc3fe7",
@@ -430,7 +520,7 @@
       "reading": "た",
       "meaning": "Rice Paddy",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "shared-new",
       "suitabilityRecommendation": "Reuse the rice-paddy illustration and exclude these synonyms from each other's distractors; teach different usage in context.",
       "suitabilityRationale": "A flooded rice field is a recognizable physical scene; both words denote the same referent here.",
@@ -463,7 +553,16 @@
           "role": "shared exact new image",
           "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588"
         }
-      ]
+      ],
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588"
+      },
+      "imageDescription": "A flooded rice paddy with rows of young green rice plants.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-65df49688ef0",
@@ -471,11 +570,19 @@
       "reading": "かたな",
       "meaning": "Sword",
       "level": 2,
-      "status": "existing-approved-reuse",
+      "status": "approved",
       "sourceKind": "existing-approved",
       "suitabilityRecommendation": "Show a single-edged curved sword with a guard and wrapped handle; do not teach every blade as 刀.",
       "suitabilityRationale": "A Japanese sword has a recognizable physical referent.",
-      "versions": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/picture-art-229/ja-v-65df49688ef0-reuse.png",
+          "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08",
+          "sourceKind": "existing-approved",
+          "note": "Exact existing approved source reused without regeneration; local selection version for this batch."
+        }
+      ],
       "path": "artifacts/picture-art-229/ja-v-65df49688ef0-reuse.png",
       "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: One recognizable JAPANESE SWORD (katana) isolated diagonally from lower-left wrapped handle to upper-right blade tip. Slim gently curved single-edged SILVER-GRAY blade with one clear cutting edge and a restrained flat lighter strip, a small round GOLDEN guard, and proportionate dark-violet handle with simple pink/lavender diamond wrapping. Blade is long and narrow, handle aboutone-quarter of total length. No broad scimitar curve, dagger proportions, jagged fantasy blade, scabbard, blood, person, sparks or labels. Retain F12 Japanese-sword correction.\nReview constraints:\n- F12: If the intended sense is specifically Japanese sword, use a slimmer gently curved single-edged blade, a clear guard, and a proportionate wrapped handle; otherwise retain as a generic sword mnemonic.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nProduction composition: One recognizable JAPANESE SWORD (katana) isolated diagonally from lower-left wrapped handle to upper-right blade tip. Slim gently curved single-edged SILVER-GRAY blade with one clear cutting edge and a restrained flat lighter strip, a small round GOLDEN guard, and proportionate dark-violet handle with simple pink/lavender diamond wrapping. Blade is long and narrow, handle aboutone-quarter of total length. No broad scimitar curve, dagger proportions, jagged fantasy blade, scabbard, blood, person, sparks or labels. Retain F12 Japanese-sword correction.\nInput reference roles: image1: approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery\nDo not copy unrelated reference subjects, lettering, logos or scenery. One square1:1 illustration, full subject visible with generous margins, readable at145px. Essential in-scene numerals/symbols only where specified. No answer captions, watermark or extra decoration.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.",
       "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08",
@@ -499,7 +606,17 @@
         "sourceManifestSha256": "dad59ad78f5057d08c943175f9cfe093e6792cd71300fb7ce239b03b6f716a2d",
         "sourceUrl": "https://github.com/ajhconway/kikimashta/blob/3237d2348970a458de973a56be8654022c1c924d/artifacts/card-regeneration/batch-11/174-sword.png",
         "snapshotPath": "artifacts/picture-art-229/sources/batch-11-manifest.json"
-      }
+      },
+      "selectedVersion": 1,
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08"
+      },
+      "imageDescription": "A single curved Japanese sword with its handle and blade visible.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-afefe30bcb46",
@@ -507,7 +624,7 @@
       "reading": "かざん",
       "meaning": "Volcano",
       "level": 2,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a clear crater, plume and lava; do not contrast with the broader 山 category as if mutually exclusive.",
       "suitabilityRationale": "An erupting mountain is a recognizable volcano.",
@@ -547,7 +664,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "040f6ed3a77ddc704ad72b860d0e3d990a9bbed71510231c5a91c3551e4e3473"
+      },
+      "imageDescription": "A volcano erupting with glowing lava and a plume above the crater.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-cbda72b9dd04",
@@ -555,11 +681,19 @@
       "reading": "しろ",
       "meaning": "White",
       "level": 2,
-      "status": "existing-approved-reuse",
+      "status": "approved",
       "sourceKind": "existing-approved",
       "suitabilityRecommendation": "Use a bordered white swatch; never contrast with 白い as if the noun/adjective difference were visible.",
       "suitabilityRationale": "A color swatch directly represents the intended color.",
-      "versions": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/picture-art-229/ja-v-cbda72b9dd04-reuse.png",
+          "sha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c",
+          "sourceKind": "existing-approved",
+          "note": "Exact existing approved source reused without regeneration; local selection version for this batch."
+        }
+      ],
       "path": "artifacts/picture-art-229/ja-v-cbda72b9dd04-reuse.png",
       "prompt": "Edit supplied WHITE color vocabulary card. Change ONLY the pale lavender background to plain opaque pure WHITE (#FFFFFF). Preserve the white paint splash, three small white splash droplets, brush, golden handle, lavender ferrule, violet outlines, subtle interior shading, sizes, placement and composition exactly. The violet outline is enough to separate white paint from white background. No tinted backdrop, halo, shadow, extra props, text, frame, labels or transparency.",
       "sha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c",
@@ -578,7 +712,17 @@
         "sourceSha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c",
         "sourceStatus": "approved",
         "note": "Exact approved white paint swatch reused for the noun; noun/adjective forms must not compete as pictures."
-      }
+      },
+      "selectedVersion": 1,
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c"
+      },
+      "imageDescription": "A white paint swatch with a lavender outline.",
+      "transparentBackground": false
     },
     {
       "id": "ja-v-a76119b3c712",
@@ -586,11 +730,19 @@
       "reading": "け",
       "meaning": "Fur",
       "level": 3,
-      "status": "existing-approved-reuse",
+      "status": "approved",
       "sourceKind": "existing-approved",
       "suitabilityRecommendation": "Focus on fur tufts or animal hair, not the entire animal; note broader hair uses in feedback.",
       "suitabilityRationale": "Fur/hair has a concrete visible texture.",
-      "versions": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/picture-art-229/ja-v-a76119b3c712-reuse.png",
+          "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31",
+          "sourceKind": "existing-approved",
+          "note": "Exact existing approved source reused without regeneration; local selection version for this batch."
+        }
+      ],
       "path": "artifacts/picture-art-229/ja-v-a76119b3c712-reuse.png",
       "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nPrimary request: FUR: a LARGE close-up animal-FLANK FUR PATCH with several soft overlapping rows of golden-brown and cream tufts, broad irregular roughly rectangular silhouette, fine short hair strokes within larger tuft groups. Fur fills most of the canvas and clearly looks like soft dense animal hair, not a leaf, feather, sawtooth crescent, circular iris or fleece ball. A SMALL subdued furry-cat silhouette at lower-left provides animal context, connected by one thin violet leader line from its flank to the magnified patch. The cat is subordinate, no headphones or facial emphasis; do not use a circular magnifying-glass frame. Opaque tufts with clean transparent outer background, no texture haze outside their silhouette, labels or words. Retain high-priority F13 and keep fur itself dominant.\nReview constraints:\n- F13: Show a recognizable furry animal patch with a magnified tuft or a clear bundle of hairs; keep the fur itself dominant.\nRole-specific scene above takes priority over a grouped review recommendation that also describes another card.\nProduction composition: FUR: a LARGE close-up animal-FLANK FUR PATCH with several soft overlapping rows of golden-brown and cream tufts, broad irregular roughly rectangular silhouette, fine short hair strokes within larger tuft groups. Fur fills most of the canvas and clearly looks like soft dense animal hair, not a leaf, feather, sawtooth crescent, circular iris or fleece ball. A SMALL subdued furry-cat silhouette at lower-left provides animal context, connected by one thin violet leader line from its flank to the magnified patch. The cat is subordinate, no headphones or facial emphasis; do not use a circular magnifying-glass frame. Opaque tufts with clean transparent outer background, no texture haze outside their silhouette, labels or words. Retain high-priority F13 and keep fur itself dominant.\nInput reference roles: image1: approved illustration STYLE ONLY: rounded forms, violet contours, restrained shading and palette; exclude mascot identity, headphones, logo, lettering and unrelated scenery\nDo not copy unrelated reference subjects, lettering, logos or scenery. One square1:1 illustration, full subject visible with generous margins, readable at145px. Essential in-scene numerals/symbols only where specified. No answer captions, watermark or extra decoration.\nBackground/export requirement (takes priority over older white-background wording above): genuinely transparent outer background with an alpha channel, never a painted white rectangle or checkerboard. Preserve opaque white subject details such as clouds, snow and animal markings. Keep teaching scenes inside their intended silhouette. Request transparent_background=true from the built-in image tool and retain alpha in PNG or WebP delivery; never flatten to JPEG. Inspect at 145px over white, yellow #fff2c5, pink #fff0f5 and lavender #f6efff before approval; reject rectangular backdrops and edge halos.",
       "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31",
@@ -614,7 +766,17 @@
         "sourceManifestSha256": "dad59ad78f5057d08c943175f9cfe093e6792cd71300fb7ce239b03b6f716a2d",
         "sourceUrl": "https://github.com/ajhconway/kikimashta/blob/3237d2348970a458de973a56be8654022c1c924d/artifacts/card-regeneration/batch-11/192-fur.png",
         "snapshotPath": "artifacts/picture-art-229/sources/batch-11-manifest.json"
-      }
+      },
+      "selectedVersion": 1,
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31"
+      },
+      "imageDescription": "A tuft of soft brown fur.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-575ec5f060f3",
@@ -622,7 +784,7 @@
       "reading": "しょうじょ",
       "meaning": "Girl",
       "level": 3,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "shared-new",
       "suitabilityRecommendation": "Use an ordinary child portrait and exclude 女子/女の子 synonyms from competing picture choices.",
       "suitabilityRationale": "A young girl can serve as a basic person-category picture.",
@@ -655,7 +817,16 @@
           "role": "shared exact new image",
           "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
         }
-      ]
+      ],
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda"
+      },
+      "imageDescription": "A young girl standing in ordinary casual clothes.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-f25546e67181",
@@ -663,7 +834,7 @@
       "reading": "おんなのひと",
       "meaning": "Woman",
       "level": 3,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use an ordinary adult portrait; exclude 女 and near-synonymous female-person choices and avoid clothing stereotypes.",
       "suitabilityRationale": "An adult woman can be represented by a basic person-category picture.",
@@ -703,7 +874,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "1b43ca60111b99865c797309d4b44a4f292b2446f74b479fd5108e087f85ccd1"
+      },
+      "imageDescription": "An adult woman standing in ordinary casual clothes.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-c22ee5be019b",
@@ -711,7 +891,7 @@
       "reading": "しょうねん",
       "meaning": "Boy",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a child portrait and exclude 男の子 near-synonyms; do not require hairstyle or clothing to establish a lexical difference.",
       "suitabilityRationale": "A young boy can be introduced as a person-category picture.",
@@ -751,7 +931,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f"
+      },
+      "imageDescription": "A young boy standing in a gold shirt and lavender trousers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-41b543dc8fe4",
@@ -759,7 +948,7 @@
       "reading": "ほうせき",
       "meaning": "Jewel",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a loose faceted gem; avoid a treasure chest that overlaps 宝.",
       "suitabilityRationale": "A cut gemstone is a directly visible concrete object.",
@@ -799,7 +988,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "26b4e115f916248e7c184449c9e38c75832c436adb794ec3659dc4457c7b7d4a"
+      },
+      "imageDescription": "A single loose pink faceted gemstone.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-4b9dfeafcab4",
@@ -807,7 +1005,7 @@
       "reading": "おとこ",
       "meaning": "Man",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use an adult portrait and exclude 男の人 as a competing synonym; age distinctions need clear adult proportions.",
       "suitabilityRationale": "An adult man can be represented as a basic person category.",
@@ -847,7 +1045,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
+      },
+      "imageDescription": "An adult man standing in a teal shirt and lavender trousers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-2f21cb2e8d02",
@@ -916,10 +1123,21 @@
       "approval": {
         "scope": "artwork only",
         "date": "2026-11-09",
-        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
         "selectedVersion": 2,
         "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
-      }
+      },
+      "approvalHistory": [
+        {
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 2,
+          "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
+        }
+      ],
+      "imageDescription": "A person in casual clothes sitting outside and looking up at a full moon.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-36897e1da4ac",
@@ -927,7 +1145,7 @@
       "reading": "きって",
       "meaning": "Postage Stamp",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show the stamp highlighted on an envelope; make it distinct from a generic sticker.",
       "suitabilityRationale": "A perforated postage stamp on mail has a clear referent.",
@@ -967,7 +1185,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "8a99b4a2f12d1ec66d5d464f2d234569416ae9e45caf24abb6aaa6a71a9139e5"
+      },
+      "imageDescription": "An envelope with an emphasized perforated pink postage stamp in its upper-right corner.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-74043c16db5e",
@@ -975,7 +1202,7 @@
       "reading": "かきごおり",
       "meaning": "Shaved Ice",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show fine shaved ice with syrup; distinguish it from a solid ice cube or ice cream.",
       "suitabilityRationale": "Shaved ice has a recognizable snowy dessert texture and serving bowl.",
@@ -1015,7 +1242,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "4d154b483167a4223dbcd3ccc7c8e4ef11bd48f29d9534d8f5f3e6058ba8d5cb"
+      },
+      "imageDescription": "A bowl of fluffy shaved ice topped with pink syrup, with a small spoon.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-09d74d630a45",
@@ -1137,10 +1373,21 @@
       "approval": {
         "scope": "artwork only",
         "date": "2026-11-09",
-        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
         "selectedVersion": 4,
         "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
-      }
+      },
+      "approvalHistory": [
+        {
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 4,
+          "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
+        }
+      ],
+      "imageDescription": "A green miniature town with straight intersecting streets and rectangular building blocks.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-cb7d8a487c4f",
@@ -1148,7 +1395,7 @@
       "reading": "はなみ",
       "meaning": "Viewing Cherry Blossoms",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use people under clearly blooming cherry trees; distinguish the activity from a single flower or generic picnic.",
       "suitabilityRationale": "A picnic intentionally viewing blooming cherry trees depicts the cultural activity.",
@@ -1188,7 +1435,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "7389890615e1ab974c538fbe7f2a8889e305996692b4d572655aca3a505bc2e8"
+      },
+      "imageDescription": "Two people picnicking beneath a blossoming cherry tree and admiring its pink flowers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-92bebda5ac98",
@@ -1196,7 +1452,7 @@
       "reading": "むら",
       "meaning": "Village",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a small cohesive rural settlement; do not imply that exact municipality type is visible from building count.",
       "suitabilityRationale": "A rural village scene is a useful concrete settlement exemplar.",
@@ -1236,7 +1492,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "69cd15888d861b97523d0c10415d8df8560b1916f35c1e503bedff04512cfdd2"
+      },
+      "imageDescription": "A small rural village with modest homes along a winding path among trees and fields.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-696107ad9e08",
@@ -1244,7 +1509,7 @@
       "reading": "おとこのこ",
       "meaning": "Boy",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "shared-new",
       "suitabilityRecommendation": "Introduce the character in the lesson and share/exclude equivalent 少年 imagery; do not test gender or age through stereotypes or contrast with 青年 alone.",
       "suitabilityRationale": "A clearly introduced child character can support this everyday person category.",
@@ -1277,7 +1542,16 @@
           "role": "shared exact new image",
           "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f"
         }
-      ]
+      ],
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f"
+      },
+      "imageDescription": "A young boy standing in a gold shirt and lavender trousers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-9a9a5c6d448c",
@@ -1285,7 +1559,7 @@
       "reading": "コンビニ",
       "meaning": "Convenience Store",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Make the checkout, food shelves and compact storefront clear; avoid a generic office facade or adding English labels to rescue it.",
       "suitabilityRationale": "A recognizable convenience-store storefront and stocked small-shop interior can establish the concrete place.",
@@ -1325,7 +1599,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "73b1e883b5d4a33fd3ecf8c2683ad4fac11782db07334b11a57f2ef1fa959853"
+      },
+      "imageDescription": "A small convenience store with glass doors, snack shelves, a drinks fridge and a checkout.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-bcfbced3ea21",
@@ -1333,7 +1616,7 @@
       "reading": "おとこのひと",
       "meaning": "Man",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "shared-new",
       "suitabilityRecommendation": "Reuse/exclude equivalent 男 imagery and avoid presenting appearance alone as proof of identity; use context for lexical contrasts.",
       "suitabilityRationale": "An introduced adult character can support the everyday man category.",
@@ -1366,7 +1649,16 @@
           "role": "shared exact new image",
           "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
         }
-      ]
+      ],
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
+      },
+      "imageDescription": "An adult man standing in a teal shirt and lavender trousers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-b639fedc63ec",
@@ -1374,7 +1666,7 @@
       "reading": "にく",
       "meaning": "Meat",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use varied cuts rather than the same steak as 牛肉; exclude specific meats as competing picture answers.",
       "suitabilityRationale": "A varied group of meat cuts directly represents the category.",
@@ -1414,7 +1706,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "3c21c6cc1fa8450e81bc2bddc62dc10634fdf6531f9175376ddbbe5609c6516e"
+      },
+      "imageDescription": "Three different raw meat cuts on a plate, including poultry, pork and beef.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-d0c8497457bd",
@@ -1422,7 +1723,7 @@
       "reading": "かわ",
       "meaning": "Skin",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Teach one sense clearly, such as skin, hide or peel; avoid implying a human skin cross-section exhausts the word's scope. Its reading かわ also matches 川 in level 1; require context if those meanings compete.",
       "suitabilityRationale": "An enlarged skin or outer-covering sample can depict a concrete intended sense.",
@@ -1511,7 +1812,16 @@
           255
         ]
       },
-      "ownerRevisionNote": "A slightly closer view of healthy forearm skin, with faint pores and fine soft creases around the pointing fingertip."
+      "ownerRevisionNote": "A slightly closer view of healthy forearm skin, with faint pores and fine soft creases around the pointing fingertip.",
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 4,
+        "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2"
+      },
+      "imageDescription": "A close view of healthy forearm skin with faint pores and creases, indicated by a pointing finger.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-26d771953f4b",
@@ -1606,10 +1916,21 @@
       "approval": {
         "scope": "artwork only",
         "date": "2026-11-09",
-        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
         "selectedVersion": 3,
         "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
-      }
+      },
+      "approvalHistory": [
+        {
+          "scope": "artwork only",
+          "date": "2026-11-09",
+          "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+          "selectedVersion": 3,
+          "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
+        }
+      ],
+      "imageDescription": "A fully clothed adult man with three small gold attention lines indicating the crotch of his trousers.",
+      "transparentBackground": true
     },
     {
       "id": "ja-v-97526e11c703",
@@ -1617,7 +1938,7 @@
       "reading": "はしる",
       "meaning": "To Run",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Keep bent arms, stride and motion cues readable; use context for vehicles or figurative senses later.",
       "suitabilityRationale": "A clear dynamic running pose is a recognizable action.",
@@ -1657,7 +1978,16 @@
           0,
           255
         ]
-      }
+      },
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Ok, let's ship this updated artwork.",
+        "selectedVersion": 1,
+        "sha256": "a3f12a249f82659912b9e1b130cfd8ebe72a33f098fdd2b0c3d711d6a476b6aa"
+      },
+      "imageDescription": "A person running with bent arms and a long airborne stride.",
+      "transparentBackground": true
     }
   ],
   "generatedVersionCount": 30,
@@ -1696,7 +2026,15 @@
     "builderFixtures": "Missing/duplicate/out-of-scope IDs, frozen-review tampering, stale hashes, missing files, unsafe paths, invalid source revision and changed identity/category reject before output replacement.",
     "ownerRevisionRound1": "Four selected cards revised; all prior versions preserved and other27 selected asset records unchanged. Final townv4/skin v3/clothed-man v3/moon-viewing v2 are square transparent RGBA.",
     "ownerRevisionRound2": "Skin v4 is slightly closer with faint pores and fine creases. Exact selected versions/hashes approved for moon viewing v2, town v4 and clothed-man cue v3. Other27 selected asset records and every prior PNG preserved.",
-    "builderApprovalFixtures": "Missing approval evidence, invalid scope, empty owner statement/date, stale hash/version, missing selected version record and duplicate version record reject before output replacement; valid three approvals render separately from source-approved reuse."
+    "builderApprovalFixtures": "Missing approval evidence, invalid scope, empty owner statement/date, stale hash/version, missing selected version record and duplicate version record reject before output replacement; valid three approvals render separately from source-approved reuse.",
+    "release": {
+      "approval": "All31 current selected PNGs accepted for shipment; exact release/individual hash/version records.",
+      "activation": "221 total active Japanese illustrations;31 new deliveries,30 transparent PNGs plus historical opaque white JPEG.",
+      "preservation": "All catalog/starter non-image fields, practice eligibility, audio and progress unchanged.",
+      "fullCheck": "npm run check: passed (664 Vitest,373 Node script tests,18 Python audio tests,27 artwork tests, metadata validator, neighbor check, lint/types/build).",
+      "browser": "E2E_PORT=4201 npm run test:e2e -- e2e/picture-artwork.spec.ts e2e/visual-reference-artwork.spec.ts e2e/vocabulary.spec.ts e2e/packs.spec.ts:14 passed across Chromium/mobile WebKit. All31 new deliveries decode; selected revised/reused cards retain paths, descriptions and containment.",
+      "device": "Actual iPhone inspection remains manual."
+    }
   },
   "styleReferences": [
     {
@@ -1747,8 +2085,240 @@
         "ja-v-d0c8497457bd"
       ],
       "approvalInterpretation": "The rest refers to the other three images in the immediately preceding four-card revision."
+    },
+    {
+      "round": 3,
+      "date": "2026-11-09",
+      "ownerStatement": "Ok, let's ship this updated artwork.",
+      "status": "complete-selected-set-approved-for-release",
+      "approvedIds": [
+        "ja-v-27d5744f36a2",
+        "ja-v-d1b6831b65c8",
+        "ja-v-6c0b9f3278dc",
+        "ja-v-a8ca5ef684b8",
+        "ja-v-0bf44d10d860",
+        "ja-v-185a632e3742",
+        "ja-v-3bcce8de9d04",
+        "ja-v-0da81020c173",
+        "ja-v-762983bc3fe7",
+        "ja-v-65df49688ef0",
+        "ja-v-afefe30bcb46",
+        "ja-v-cbda72b9dd04",
+        "ja-v-a76119b3c712",
+        "ja-v-575ec5f060f3",
+        "ja-v-f25546e67181",
+        "ja-v-c22ee5be019b",
+        "ja-v-41b543dc8fe4",
+        "ja-v-4b9dfeafcab4",
+        "ja-v-2f21cb2e8d02",
+        "ja-v-36897e1da4ac",
+        "ja-v-74043c16db5e",
+        "ja-v-09d74d630a45",
+        "ja-v-cb7d8a487c4f",
+        "ja-v-92bebda5ac98",
+        "ja-v-696107ad9e08",
+        "ja-v-9a9a5c6d448c",
+        "ja-v-bcfbced3ea21",
+        "ja-v-b639fedc63ec",
+        "ja-v-d0c8497457bd",
+        "ja-v-26d771953f4b",
+        "ja-v-97526e11c703"
+      ]
     }
   ],
-  "approvedAssetCount": 3,
-  "awaitingOwnerReviewCount": 28
+  "approvedAssetCount": 31,
+  "awaitingOwnerReviewCount": 0,
+  "releaseApproval": {
+    "ownerStatement": "Ok, let's ship this updated artwork.",
+    "date": "2026-11-09",
+    "scope": "Activate the complete selected artwork set; preserve vocabulary eligibility and progress.",
+    "selections": [
+      {
+        "id": "ja-v-27d5744f36a2",
+        "path": "artifacts/picture-art-229/ja-v-27d5744f36a2-v1.png",
+        "sha256": "be94a349440a96a1b900f60299d1cdc290f18bc39a49206249804b69bbeedfb0",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-d1b6831b65c8",
+        "path": "artifacts/picture-art-229/ja-v-d1b6831b65c8-v1.png",
+        "sha256": "777be8ef01192908420c936dc818d0a4977a23fbc94a22c9972e0711f903d814",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-6c0b9f3278dc",
+        "path": "artifacts/picture-art-229/ja-v-6c0b9f3278dc-reuse.png",
+        "sha256": "8c3503ed6f4b4c31882b2ebb65ffb6501ed8e21c4caf54bcc46146eb2bb723ee",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-a8ca5ef684b8",
+        "path": "artifacts/picture-art-229/ja-v-a8ca5ef684b8-reuse.png",
+        "sha256": "2c65f2203bbb4b7a0277ab99c0ce394593a644b941aa1f966558f71480d7c5aa",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-0bf44d10d860",
+        "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-185a632e3742",
+        "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-3bcce8de9d04",
+        "path": "artifacts/picture-art-229/ja-v-3bcce8de9d04-v1.png",
+        "sha256": "73d7c181a56abe7b95e49bced9258dd4e814f73c634b8bd6083d128c80edc372",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-0da81020c173",
+        "path": "artifacts/picture-art-229/ja-v-0da81020c173-v1.png",
+        "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-762983bc3fe7",
+        "path": "artifacts/picture-art-229/ja-v-0da81020c173-v1.png",
+        "sha256": "fcc49258feee0f16949ccf497d50a3f2311f219daa023380b4cf2982e0391588",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-65df49688ef0",
+        "path": "artifacts/picture-art-229/ja-v-65df49688ef0-reuse.png",
+        "sha256": "98c01455628f921ff9d2cb18d56b0fd93ff9d5a21f8f5aa07085fa21107d7b08",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-afefe30bcb46",
+        "path": "artifacts/picture-art-229/ja-v-afefe30bcb46-v1.png",
+        "sha256": "040f6ed3a77ddc704ad72b860d0e3d990a9bbed71510231c5a91c3551e4e3473",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-cbda72b9dd04",
+        "path": "artifacts/picture-art-229/ja-v-cbda72b9dd04-reuse.png",
+        "sha256": "2bdf00cae1f789a92662c08b36270414c620b4a4c83eeab5646fd18e10c2ca7c",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-a76119b3c712",
+        "path": "artifacts/picture-art-229/ja-v-a76119b3c712-reuse.png",
+        "sha256": "297723fe5cacd6e50e06c3a97e6d658e0495b790e9f8af9a2abd1afc0ec5fd31",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-575ec5f060f3",
+        "path": "artifacts/picture-art-229/ja-v-0bf44d10d860-v1.png",
+        "sha256": "f91ae81bea70dccc8b812b04bb9e3ae8f7e1709a67fe3a85ec2f5c7749899eda",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-f25546e67181",
+        "path": "artifacts/picture-art-229/ja-v-f25546e67181-v1.png",
+        "sha256": "1b43ca60111b99865c797309d4b44a4f292b2446f74b479fd5108e087f85ccd1",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-c22ee5be019b",
+        "path": "artifacts/picture-art-229/ja-v-c22ee5be019b-v1.png",
+        "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-41b543dc8fe4",
+        "path": "artifacts/picture-art-229/ja-v-41b543dc8fe4-v1.png",
+        "sha256": "26b4e115f916248e7c184449c9e38c75832c436adb794ec3659dc4457c7b7d4a",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-4b9dfeafcab4",
+        "path": "artifacts/picture-art-229/ja-v-4b9dfeafcab4-v1.png",
+        "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-2f21cb2e8d02",
+        "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v2.png",
+        "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-36897e1da4ac",
+        "path": "artifacts/picture-art-229/ja-v-36897e1da4ac-v1.png",
+        "sha256": "8a99b4a2f12d1ec66d5d464f2d234569416ae9e45caf24abb6aaa6a71a9139e5",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-74043c16db5e",
+        "path": "artifacts/picture-art-229/ja-v-74043c16db5e-v1.png",
+        "sha256": "4d154b483167a4223dbcd3ccc7c8e4ef11bd48f29d9534d8f5f3e6058ba8d5cb",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-09d74d630a45",
+        "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v4.png",
+        "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-cb7d8a487c4f",
+        "path": "artifacts/picture-art-229/ja-v-cb7d8a487c4f-v1.png",
+        "sha256": "7389890615e1ab974c538fbe7f2a8889e305996692b4d572655aca3a505bc2e8",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-92bebda5ac98",
+        "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+        "sha256": "69cd15888d861b97523d0c10415d8df8560b1916f35c1e503bedff04512cfdd2",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-696107ad9e08",
+        "path": "artifacts/picture-art-229/ja-v-c22ee5be019b-v1.png",
+        "sha256": "7fbb75843e1cf959b9a29aa4c06f57615aa0a835469e7538dbbd0bd74b09ff1f",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-9a9a5c6d448c",
+        "path": "artifacts/picture-art-229/ja-v-9a9a5c6d448c-v1.png",
+        "sha256": "73b1e883b5d4a33fd3ecf8c2683ad4fac11782db07334b11a57f2ef1fa959853",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-bcfbced3ea21",
+        "path": "artifacts/picture-art-229/ja-v-4b9dfeafcab4-v1.png",
+        "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-b639fedc63ec",
+        "path": "artifacts/picture-art-229/ja-v-b639fedc63ec-v1.png",
+        "sha256": "3c21c6cc1fa8450e81bc2bddc62dc10634fdf6531f9175376ddbbe5609c6516e",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-d0c8497457bd",
+        "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+        "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-26d771953f4b",
+        "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v3.png",
+        "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc",
+        "selectedVersion": 3
+      },
+      {
+        "id": "ja-v-97526e11c703",
+        "path": "artifacts/picture-art-229/ja-v-97526e11c703-v1.png",
+        "sha256": "a3f12a249f82659912b9e1b130cfd8ebe72a33f098fdd2b0c3d711d6a476b6aa",
+        "selectedVersion": 1
+      }
+    ]
+  }
 }
