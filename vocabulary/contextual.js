@@ -33,8 +33,6 @@ export function mountContextualLibrary({ container, language }) {
   const prefix = `context-library-${++mountSequence}`
   const root = element('section', 'contextual-library')
   root.setAttribute('aria-label', 'Contextual cards')
-  root.append(element('h2', 'context-library-title', 'Contextual cards'),
-    element('p', 'context-library-intro', 'Browse sentences, questions and authored answers. Listening here does not change your practice progress.'))
   const filters = element('form', 'context-filters')
   filters.setAttribute('role', 'search')
   filters.setAttribute('aria-label', 'Find contextual cards')

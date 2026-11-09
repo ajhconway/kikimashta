@@ -240,9 +240,6 @@
   }
 }
 
-@media (max-width: 500px) {
-  }
-
 .contextual-result-symbol {
   display: grid;
   place-items: center;

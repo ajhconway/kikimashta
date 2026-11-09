@@ -1,6 +1,4 @@
 .contextual-library { margin-top: 22px; }
-.contextual-library .context-library-title { margin: 12px 0; font-size: 1.8rem; }
-.contextual-library .context-library-intro { max-width: 55rem; }
 .contextual-library .context-filters { display: flex; flex-wrap: wrap; gap: 14px; padding: 18px; background: #d9eee0; border: 5px solid #8748ef; border-radius: 20px; }
 .contextual-library .context-filters label { display: flex; flex-direction: column; gap: 7px; min-width: 130px; flex: 1; }
 .contextual-library .context-filters .context-search { flex: 2; min-width: 230px; }
@@ -41,7 +39,8 @@
 .contextual-library .context-empty { padding: 18px; border: 3px solid #8748ef; border-radius: 14px; background: #fffdfa; }
 @media (max-width: 440px) {
   .contextual-library .context-filters { padding: 13px; }
-  .contextual-library .context-filters label, .contextual-library .context-filters .context-search { min-width: 0; flex-basis: 100%; }
+  .contextual-library .context-filters label { min-width: 0; flex-basis: calc(50% - 7px); }
+  .contextual-library .context-filters .context-search { flex-basis: 100%; }
   .contextual-library .context-card { padding: 15px; }
   .contextual-library .context-pagination button { padding: 8px 10px; font-size: .85rem; }
 }
