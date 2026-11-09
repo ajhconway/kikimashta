@@ -22,6 +22,7 @@ it('renders named pack badges and removes the section when no badge is available
 });
 
 it('uses a distinct illustrated background for every rank and independent accessible overlay content', () => {
+  const orderedLevels = [...masteryLevels].reverse();
   const badges = masteryLevels.map(level => ({ ...badge, level }));
   const { container } = render(<PackBadges badges={badges}/>);
   const medals = Array.from(container.querySelectorAll('.pack-badge-medal'));
@@ -29,9 +30,9 @@ it('uses a distinct illustrated background for every rank and independent access
   expect(new Set(medals.map(medal => medal.querySelector('.badge-background')!.getAttribute('href'))).size).toBe(8);
   expect(new Set(Array.from(container.querySelectorAll('textPath'), path => path.getAttribute('href'))).size).toBe(8);
   medals.forEach((medal, index) => {
-    expect(medal).toHaveAttribute('data-rank', masteryLevels[index]!.label);
+    expect(medal).toHaveAttribute('data-rank', orderedLevels[index]!.label);
     expect(medal).toHaveAttribute('data-family', 'WaniKani');
-    expect(medal.querySelector('.badge-background')).toHaveAttribute('href', '/' + badgeArtwork[masteryLevels[index]!.label].src);
+    expect(medal.querySelector('.badge-background')).toHaveAttribute('href', '/' + badgeArtwork[orderedLevels[index]!.label].src);
     expect(medal.querySelector('.badge-family')).toHaveTextContent('WK');
     expect(medal.querySelector('.badge-number')).toHaveTextContent('L1');
     expect(medal.querySelector('.badge-format-artwork')).toHaveAttribute('href', '/' + formatArtwork.picture.src);
@@ -49,7 +50,7 @@ it('selects the flower-free travel artwork and cropped suitcase slot for every r
     pack: { ...badge.pack, badgeFamily: 'suitcase', id: `es-419-travel-${level.label}-pictures`, title: 'Travel level 1' },
   }))}/>);
   container.querySelectorAll('.pack-badge-medal').forEach((medal, index) => {
-    const art = badgeArtwork[masteryLevels[index]!.label];
+    const art = badgeArtwork[[...masteryLevels].reverse()[index]!.label];
     const center = art.travelCenter ?? art.center;
     expect(medal.querySelector('.badge-background')).toHaveAttribute('href', '/' + (art.travelSrc ?? art.src));
     if (art.travelSrc) expect(medal.querySelector('.badge-background')).not.toHaveAttribute('href', '/' + art.src);

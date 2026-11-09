@@ -13,3 +13,35 @@
 .pack-badge.badge-right::after { left: auto; right: 0; }
 .pack-badge.badge-center::after { left: 50%; right: auto; transform: translateX(-50%); }
 .pack-badge:hover::after, .pack-badge:focus::after { display: block; }
+
+/* Resting medals stay still; only an earned change starts this short sequence. */
+.badge-presentation-art, .badge-current-art, .badge-previous-art { display: block; position: absolute; inset: 0; }
+.badge-previous-art { pointer-events: none; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration] { z-index: 4; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration] .badge-current-art { animation: badge-award-pop var(--badge-celebrate-duration) cubic-bezier(.2,.8,.2,1) both; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration='upgrade'] .badge-previous-art { animation: badge-upgrade-replace var(--badge-celebrate-duration) ease-out both; }
+.pack-badges[data-phase='reorder'] .pack-badge { transition: left var(--badge-reorder-duration) cubic-bezier(.22,.7,.25,1), top var(--badge-reorder-duration) cubic-bezier(.22,.7,.25,1); }
+.badge-fireworks { position: absolute; inset: 0; pointer-events: none; }
+.badge-fireworks i { position: absolute; left: calc(50% - 3px); top: calc(50% - 3px); width: 6px; height: 6px; border-radius: 2px; background: #ffcf53; box-shadow: 0 0 0 1px #6b38d6; animation: badge-firework-burst 850ms ease-out var(--spark-delay) both; }
+.badge-fireworks i:nth-child(3n + 1) { background: #ff89b3; border-radius: 50%; }
+.badge-fireworks i:nth-child(3n + 2) { background: #d9c1f4; }
+@keyframes badge-award-pop {
+  0%, 12% { opacity: 0; transform: scale(.35); }
+  42% { opacity: 1; transform: translateX(var(--badge-pop-shift, 0px)) scale(1.22); }
+  62% { transform: scale(.96); }
+  82%, 100% { opacity: 1; transform: scale(1); }
+}
+@keyframes badge-upgrade-replace {
+  0% { opacity: 1; transform: scale(1); }
+  28%, 100% { opacity: 0; transform: scale(.65); }
+}
+@keyframes badge-firework-burst {
+  0%, 10% { opacity: 0; transform: translate(0, 0) scale(.3); }
+  28% { opacity: 1; }
+  78%, 100% { opacity: 0; transform: translate(var(--spark-x), var(--spark-y)) scale(.7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pack-badges[data-phase] .pack-badge, .pack-badges[data-phase] .badge-current-art, .pack-badges[data-phase] .badge-previous-art, .badge-fireworks i { animation: none; transition: none; }
+  .pack-badges[data-phase] .badge-previous-art { display: none; }
+  .badge-fireworks i { opacity: .8; transform: translate(calc(var(--spark-x) * .55), calc(var(--spark-y) * .55)); }
+}

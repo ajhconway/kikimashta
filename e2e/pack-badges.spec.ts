@@ -1,11 +1,11 @@
-import { expect, test } from './fixtures';
+import { expect, test, type Page } from './fixtures';
 import { badgeArtwork } from '../src/core/badge-art';
 import { badgeHistory } from '../src/test/pack-badge-history';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import pool from '../content/practice-pool.json' with { type: 'json' };
 import starter from '../content/ja.json' with { type: 'json' };
 import wordPolicy from '../content/contextual/pack-1/practice-policy.json' with { type: 'json' };
-import type { PracticeCard, WordExercise, WordItem } from '../src/types';
+import type { PracticeAttempt, PracticeCard, WordExercise, WordItem } from '../src/types';
 const packPreferenceKey = 'kikimashta-card-packs-v1';
 const pack = { id: 'ja-wanikani-1-pictures', title: 'WaniKani level 1 · Pictures' };
 const poolIds = new Set([...pool.itemIds, ...starter.items.map(item => item.id)]);
@@ -151,4 +151,73 @@ test('ten upright static medals follow a circle around Kiku on a narrow screen',
   await expect(medals.first()).toHaveCSS('animation-name', 'none');
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.screenshot({ path: `test-results/pack-badges-circle-${testInfo.project.name}.png`, fullPage: true });
+});
+
+
+async function putBadgeHistory(page: Page, attempts: PracticeAttempt[]) {
+  await page.evaluate(async history => {
+    const request = indexedDB.open('kikimashta-v0', 1);
+    await new Promise<void>((resolve, reject) => {
+      request.onsuccess = () => {
+        const db = request.result, transaction = db.transaction('attempts', 'readwrite');
+        for (const attempt of history) transaction.objectStore('attempts').put(attempt);
+        transaction.oncomplete = () => { db.close(); resolve(); };
+        transaction.onerror = () => reject(transaction.error);
+      };
+      request.onerror = () => reject(request.error);
+    });
+  }, attempts);
+}
+
+test('saved badge changes celebrate on Home return before reordering and respect reduced motion', async ({ page }) => {
+  await page.addInitScript(key => localStorage.setItem(key, '[]'), packPreferenceKey);
+  await page.goto('./');
+  await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
+  const firstId = 'ja-wanikani-1-pictures', secondId = 'ja-wanikani-2-pictures';
+  const first = await badgeHistory(packCards(1, 'audio-picture'), firstId, 3);
+  const second = await badgeHistory(packCards(2, 'audio-picture'), secondId, 4);
+  await putBadgeHistory(page, [...first, ...second]);
+  await page.reload();
+  const region = page.getByRole('region', { name: 'Pack mastery badges' });
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(2);
+  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', secondId);
+  await expect(page.locator('.badge-fireworks')).toHaveCount(0);
+  const firstBadge = page.locator(`[data-pack-id="${firstId}"]`);
+  const oldSlot = await firstBadge.getAttribute('style');
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await expect(region).toHaveCount(0);
+  const upgraded = await badgeHistory(packCards(1, 'audio-picture'), firstId, 7);
+  await putBadgeHistory(page, upgraded);
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await expect(region).toHaveAttribute('data-phase', 'celebrate');
+  const replacement = await firstBadge.evaluate(element => ({
+    slot: element.getAttribute('style'), kind: element.getAttribute('data-celebration'),
+    previous: element.querySelector('.badge-previous-art .pack-badge-medal')?.getAttribute('data-rank'),
+    current: element.querySelector('.badge-current-art .pack-badge-medal')?.getAttribute('data-rank'),
+    sparks: element.querySelectorAll('.badge-fireworks i').length,
+  }));
+  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', sparks: 12 });
+  await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
+  await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', firstId);
+  expect(await firstBadge.getAttribute('style')).not.toBe(oldSlot);
+  await expect(firstBadge).toHaveCSS('transition-property', 'left, top');
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(page.locator('.badge-previous-art, .badge-fireworks')).toHaveCount(0);
+
+  const third = await badgeHistory(packCards(3, 'audio-picture'), 'ja-wanikani-3-pictures', 3);
+  await putBadgeHistory(page, third);
+  await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
+  await expect(page.locator('[data-celebration="award"]')).toHaveCount(1);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('[data-celebration="award"] .badge-current-art')).toHaveCSS('animation-name', 'none');
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(3);
+  await expect(region.getByRole('listitem').first()).toHaveCSS('transition-property', 'none');
+  const expectedIds = new Set([...first, ...second, ...upgraded, ...third].map(attempt => attempt.id));
+  expect(new Set((await savedAttempts(page)).map(attempt => attempt.id))).toEqual(expectedIds);
+  await page.reload();
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(3);
+  await expect(page.locator('.badge-fireworks')).toHaveCount(0);
 });
