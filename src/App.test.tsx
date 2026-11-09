@@ -4,7 +4,8 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
-import { practiceCards, cardKey } from './core/cards';
+import { cardKey } from './core/cards';
+import { practiceCards } from './test/cards';
 import { practicePool } from './core/practice';
 const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
@@ -120,7 +121,14 @@ describe('adaptive session flow', () => {
       for (const label of container.querySelectorAll('.choices .written-answer')) expect(['noto-serif', 'zen-maru', 'klee']).toContain(label.getAttribute('data-font'));
       const picture = container.querySelector('.practice.quiz')!.getAttribute('data-exercise') + '/' + container.querySelector('audio')!.getAttribute('src');
       expect(completed.has(picture)).toBe(false); completed.add(picture);
-      endAudio(container); await click(choice); await advance(1200);
+      if (i === 5) {
+        expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
+        loadPictures(container); await advance(480);
+        expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+      }
+      endAudio(container); await click(choice);
+      if (i === 5) expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
+      await advance(1200);
     }
     expect(completed.size).toBe(6);
     expect(screen.getByRole('heading', { name: 'Dev review complete' })).toBeInTheDocument();
@@ -179,7 +187,11 @@ describe('adaptive session flow', () => {
       const choices = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
       expect(choices).toHaveLength(4);
       expect(choices.every(button => button.querySelector('img') !== null)).toBe(exercise === 'audio-picture');
-      if (exercise === 'audio-text') for (const label of container.querySelectorAll('.choices .written-answer')) expect(label).toHaveAttribute('data-font', 'noto-sans');
+      if (exercise === 'audio-text') for (const label of container.querySelectorAll<HTMLElement>('.choices .written-answer')) {
+        expect(label).toHaveAttribute('data-font', 'noto-sans');
+        const characters = Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(label.textContent!));
+        expect(label.style.getPropertyValue('--writing-length')).toBe(String(characters.length));
+      }
       endAudio(container); await click(heardChoice(container)); await advance(1200);
     }
     expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
@@ -814,55 +826,35 @@ describe('interval mastery feedback', () => {
   });
 });
 
-describe('all-level simulated Dev review (#152)', () => {
-  it('walks all eight levels with their timers, shows changes and an untimed retry, and never saves', async () => {
+describe('simulated Dev review feedback (#152)', () => {
+  it.each([
+    { level: 'New', limit: null, correct: true, change: 'increased', arrow: '↑' },
+    { level: 'Strong', limit: 3000, correct: false, change: 'decreased', arrow: '↓' },
+  ])('renders $level mastery timing and feedback without saving', async ({ level, limit, correct, change, arrow }) => {
     records = legacy(2);
     const original = structuredClone(records);
     const onSaved = vi.fn();
     const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
     await click(screen.getByRole('button', { name: 'Dev review' }));
+    await click(screen.getByRole('button', { name: 'Clear levels' }));
+    await click(screen.getByRole('checkbox', { name: level }));
     vi.useFakeTimers();
     await click(screen.getByRole('button', { name: 'Start dev review' }));
-    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '8');
-    const levels = new Map<string, number | null>([['New', null], ['Learning', null], ['Improving', 10000], ['Familiar', 10000],
-      ['Steady', 5000], ['Strong', 3000], ['Confident', 1500], ['Mastered', 1500]]);
-    const seen = new Set<string>();
-    for (let index = 0; index < 8; index++) {
-      const context = screen.getByRole('status', { name: 'Demo mastery' });
-      const label = context.querySelector('.question-mastery-label')!.textContent!;
-      expect(seen.has(label)).toBe(false); seen.add(label);
-      expect(levels.has(label)).toBe(true);
-      const limit = levels.get(label)!;
-      expect(context).toHaveTextContent(label);
-      expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
-      expect(context.closest('.practice-actions')).not.toBeNull();
-      expect(container.querySelector('.quiz-top .question-mastery')).toBeNull();
-      endAudio(container); loadPictures(container); await advance(480); await advance(0);
-      if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
-      else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
-      await click(heardChoice(container, label !== 'Strong'));
-      if (label === 'New') expect(screen.getByLabelText('Mastery increased to Learning')).toHaveTextContent(/↑.*Learning/);
-      if (label === 'Strong') {
-        expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
-        await click(screen.getByRole('button', { name: /^continue$/i }));
-      } else await advance(1200);
-    }
-    expect([...seen].sort()).toEqual([...levels.keys()].sort());
-    expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent('LearningUntimed');
-    endAudio(container); loadPictures(container); await advance(480);
-    expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
-    await click(heardChoice(container));
-    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
-    await advance(1200);
-    expect(screen.getByRole('heading', { name: 'Dev review complete' })).toBeInTheDocument();
+    const context = screen.getByRole('status', { name: 'Demo mastery' });
+    expect(context).toHaveTextContent(level);
+    expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
+    endAudio(container); loadPictures(container); await advance(480); await advance(0);
+    if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
+    else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
+    await click(heardChoice(container, correct));
+    expect(screen.getByLabelText(`Mastery ${change} to Learning`)).toHaveTextContent(arrow + 'Learning');
+    expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
     expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
     expect(onSaved).not.toHaveBeenCalled();
     expect(records).toEqual(original);
-    await click(screen.getByRole('button', { name: 'Finish' }));
+    await click(screen.getByRole('button', { name: /kikimashta home/i }));
     expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
-    await advance(0);
-    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
     expect(records).toEqual(original);
   });
 });

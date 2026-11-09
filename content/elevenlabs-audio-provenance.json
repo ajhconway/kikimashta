@@ -5,9 +5,9 @@
   "language": "ja-JP",
   "generationIdentity": "f38056b6ae38c53be42b2c9d3f8ec11b0fdfa508bc2fccf4105f0faed4b61f41",
   "createdAt": "2026-11-06T20:19:48.092Z",
-  "cards": 445,
-  "recordings": 3560,
-  "inputCharacters": 11552,
+  "cards": 440,
+  "recordings": 3520,
+  "inputCharacters": 11456,
   "normalization": {
     "targetLufs": -22,
     "truePeakCeilingDbtp": -2,
@@ -83,5 +83,6 @@
     }
   ],
   "targetLimited": [],
-  "review": "Voice selection and loudness profile approved through audition. New word pronunciation and regional accents require listening review on the iPhone."
+  "review": "Voice selection and loudness profile approved through audition. New word pronunciation and regional accents require listening review on the iPhone.",
+  "selectionNote": "Counts describe the retained catalogue selection after cleanup #195. generationIdentity and clip planIdentity retain the original generation batch identity; retired clip records are available in Git history."
 }

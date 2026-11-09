@@ -53,33 +53,11 @@ The two ordered database migrations and rollback access-policy checks live in `s
 
 ## Voice auditions
 
-The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. The older hosted OpenAI workflow below is retained for historical comparisons.
+The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Retired recordings, generators and completed sample comparisons are recoverable from Git history; new generation uses ElevenLabs.
 
-### Existing OpenAI recordings
+### Retired recordings
 
-Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
-
-The legacy OpenAI generator runs in GitHub Actions with an `OPENAI_API_KEY` repository secret under Settings → Secrets and variables → Actions. The **Generate audio** workflow runs when `content/audio-generation-request.json` changes on `main`, or through **Run workflow**. Its request modes remain `words`, `sentences`, `bank`, and `catalog`; bank mode records every starter item with Marin and Cedar. Unrelated pushes and pull requests do not generate paid audio. Use the ElevenLabs command for new card recordings.
-
-The agent can submit a request, collect the resulting artifact, review the audio and provenance, then publish approved audition clips through a PR. Generation does not publish files automatically. Original WAVs and listening MP3s are retained in the workflow artifact for 30 days; download and preserve originals before expiry.
-
-For local generation instead:
-
-```sh
-npm run audio:audition -- --dry-run
-# Add OPENAI_API_KEY=your-key to the ignored .env.local file, then:
-npm run audio:audition
-# Four full sentences each for Marin and Cedar:
-npm run audio:audition -- --sentences
-# Both selected voices for every word in the starter bank:
-npm run audio:audition -- --bank
-```
-
-Generation requires FFmpeg and an OpenAI API account with billing and access to `gpt-realtime-2.1-mini`. Each run makes nine paid requests for word auditions, eight for sentence auditions, or two per bank item (currently twelve), without automatic retries. The key is available only to the generation tool; never prefix it with `VITE_`, put it in browser code, or commit it.
-
-Local runs preserve the provider-original WAVs, listening MP3s, and provenance under `artifacts/generated-originals/audio-audition/`. Word auditions include an `index.html`; sentence clips are added to the shared comparison after review. Choose a voice and review pronunciation, pitch accent, volume, and word endings before publishing replacement audio.
-
-The generator follows the current [OpenAI Realtime audio guide](https://developers.openai.com/api/docs/guides/realtime-conversations); the supported voices and model can be revisited as providers change. The test suite uses a fake transport and makes no API calls.
+OpenAI/Open JTalk starter and catalog recordings, the Cesar Spanish starter deliveries, and the old `/audio-review/` comparison are retired. Their binaries are recoverable from Git history before the [media cleanup (#193)](https://github.com/ajhconway/kikimashta/issues/193). Records describing only retired media are removed too; current lessons and library cards use ElevenLabs with their active provenance retained. Saved attempt paths are metadata and do not fetch retired recordings.
 
 ## Vocabulary library
 
@@ -89,11 +67,13 @@ Mastery uses the gap between the last review and the next scheduled review, so b
 
 Choose **Dev review** on Home to try all eight simulated mastery levels and their timers, or select specific levels and word/contextual review types. Sample schedules show real FSRS mastery changes without modifying progress. Dev review is the single Home entry point for these tools.
 
+Use the card library’s **Words / Contextual questions** switch to browse authored material. [Contextual questions](https://kikimashta.com/vocabulary/?view=contextual&language=ja-JP) show sentences, questions, meanings, correct answers, pictures where supported, paired audio, and revision details. Search or filter by stage, target word, question kind, answer format, and voice. Browsing includes drafts and missing-audio text inspection, bypasses selected practice packs/progression, and never saves attempts. A learning language without contextual material shows an empty state. Switching views stops playback and keeps the word filters and notes intact; the selected view survives reload and Back/Forward. Old `?review=contextual` bookmarks redirect to this view. Configurable Dev review remains normal unsaved practice with simulated mastery, timers and retries. The retired `?demo=contextual` shortcut opens Home.
+
 The library combines original SVG scenes with 168 approved replacement illustrations from batches 01–10. Delivery hashes and source manifests are recorded in [active artwork provenance](content/card-regeneration/activation.json). Context-sensitive entries retain their review notes, and synonyms have picture groups that can inform future quiz choices. Each card shows its interval mastery independently. Pack selection shows both lowest mastery and the average level rounded down, including new cards, across approved practice cards. Search, pack filters, and pagination support reviewing the collection; one shared audio player compares the eight named voices.
 
 Each card has a collapsible **Your feedback** box that saves as you type in this browser. **Export feedback** downloads all nonempty notes with stable card IDs and Japanese/English labels, across every level and page, for sharing or backup. Guest notes stay local. When optional Supabase sync is configured, signed-in notes synchronize with the account; clearing a box syncs a deletion. Each account and guest practice use separate local storage. Copying guest history and notes into an account is an explicit action in Account. Existing account note edits take precedence over imported guest notes. If saving fails, the draft stays available while the page is open and can still be exported.
 
-`npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. Hosted catalog audio runs by source level with two jobs in parallel, retaining original WAVs and partial results. Verified MP3s are staged to a review branch for integration, never deployed automatically.
+`npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. New speech generation and staging use the documented ElevenLabs tools; retired historical recordings are recoverable from Git history.
 
 ## License and media
 
@@ -103,7 +83,7 @@ The change takes effect on 2026-11-05. Versions through commit [`02dcb584`](http
 
 The app's **Code & credits** link provides the license, dependency notices, and source code. Production builds include these notices and link to their exact source revision. GitHub Pages supplies `SOURCE_REVISION` from the checked-out commit. Local builds without it and the development server link to the repository; `npm run dev` prepares the local notice downloads automatically.
 
-Media and dependencies retain separate terms. Current practice speech is AI-generated with ElevenLabs; historical OpenAI recordings are preserved with their provenance. Earlier Open JTalk clips retain their CC BY 3.0 HTS voice attribution; see [media credits](public/credits.html) and the records in `content/`. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. The six original starter SVGs remain under [MIT](LICENSES/MIT.txt), as recorded in `content/vector-provenance.json`; new catalog SVGs are AGPLv3 only, as recorded in `content/catalog/image-provenance.json`. Earlier watercolor assets and their prompts remain in the repository; full PNG originals are retained locally outside the deployment directory.
+Media and dependencies retain separate terms. Current practice speech is AI-generated with ElevenLabs. The cat mascot and icon are adapted from artwork supplied by the project owner; edit records are in `content/brand-provenance.json`. Current catalog SVGs are AGPLv3 only; retained asset records are in `content/catalog/image-provenance.json`. Provenance for retired media is removed with it and remains recoverable from Git history. See [media credits](public/credits.html) for current assets.
 
 ## Card regeneration
 
@@ -115,4 +95,4 @@ Transparent approved sources export as alpha-preserving 640px PNGs. Earlier opaq
 
 Practice packs and Japanese voice preferences are chosen in the card library and remembered on this device. Pack browsing stays independent of practice selection. Voice labels distinguish Tokyo (standard), Kansai, Kyushu, and Anime (standard).
 
-Latin American Spanish offers Travel levels 1, 2 and 3 as separate 36-word picture packs, with male/female voice pairs from Mexico City, Bogotá, Buenos Aires and Puerto Rico. The card library shows regional labels and remembers voice selections independently for each learning language. Entrance and exit are retired from this pack; existing Spanish progress and historical recordings remain preserved. The interface stays in English.
+Latin American Spanish offers Travel levels 1, 2 and 3 as separate 36-word picture packs, with male/female voice pairs from Mexico City, Bogotá, Buenos Aires and Puerto Rico. The card library shows regional labels and remembers voice selections independently for each learning language. Entrance and exit are retired from this pack; existing Spanish progress is preserved and historical recordings are recoverable from Git history. The interface stays in English.

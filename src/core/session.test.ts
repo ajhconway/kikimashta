@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { PracticeCard, WordBank } from '../types';
-import { cardKey, practiceCards } from './cards';
+import { cardKey } from './cards';
+import { practiceCards } from '../test/cards';
 import { createQuestions, requeueMissedQuestion, validateBank } from './session';
 
 function bank(): WordBank {

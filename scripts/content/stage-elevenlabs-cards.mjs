@@ -8,11 +8,11 @@ import { cardItems, generationPlan } from './generate-elevenlabs-cards.mjs'
 
 const hash = data => createHash('sha256').update(data).digest('hex')
 export async function stageCards({ root = process.cwd(), input, delivery }) {
-  const [catalog, starter, config, snapshot] = await Promise.all([
-    'content/catalog/ja.json', 'content/ja.json', 'content/elevenlabs-voices.json',
+  const [catalog, starter, config, overrides, snapshot] = await Promise.all([
+    'content/catalog/ja.json', 'content/ja.json', 'content/elevenlabs-voices.json', 'content/catalog/review-overrides.json',
   ].map(async path => JSON.parse(await readFile(join(root, path), 'utf8'))).concat([readFile(join(input, 'plan.json'), 'utf8').then(JSON.parse)]))
-  const plan = generationPlan(cardItems(catalog, starter), config)
-  if (hash(JSON.stringify(plan)) !== snapshot.identity) throw new Error('Generation plan no longer matches current cards and voices.')
+  const plan = generationPlan(cardItems(catalog, starter, overrides), config)
+  if (hash(JSON.stringify(plan)) !== snapshot.identity) throw new Error('Generation plan no longer matches selected cards and voices; use a new generation plan.')
   const records = (await readFile(join(delivery, 'deliveries.jsonl'), 'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)
   if (records.length !== plan.expectedClips) throw new Error(`Expected ${plan.expectedClips} verified deliveries, received ${records.length}.`)
   const items = new Map(plan.items.map(i => [i.id, i]))
@@ -41,8 +41,9 @@ export async function stageCards({ root = process.cwd(), input, delivery }) {
     files.push({ record, source: join(delivery, record.file), relative: `audio/elevenlabs-v1/${record.file}` })
   }
   const audioFor = item => plan.voices.map(voice => ({ src: `audio/elevenlabs-v1/${voice.voice}/${item.id}.mp3`, source: 'synthesized', voice: voice.voice, voiceName: voice.name }))
-  const updatedCatalog = { ...catalog, items: catalog.items.map(item => ({ ...item, audio: audioFor(item) })) }
-  const updatedStarter = { ...starter, items: starter.items.map(item => ({ ...item, audio: audioFor(item) })) }
+  const updateAudio = item => items.has(item.id) ? { ...item, audio: audioFor(item) } : item
+  const updatedCatalog = { ...catalog, items: catalog.items.map(updateAudio) }
+  const updatedStarter = { ...starter, items: starter.items.map(updateAudio) }
   // No writes before every identity, source hash, delivery hash, level and duration passes.
   for (const file of files) {
     const target = join(root, 'public', file.relative)
@@ -53,7 +54,8 @@ export async function stageCards({ root = process.cwd(), input, delivery }) {
   await mkdir(provenanceDirectory, { recursive: true })
   for (const voice of plan.voices) {
     const clips = files.filter(file => file.record.voice === voice.voice).map(({ record, relative }) => ({ ...record, deliverySrc: relative }))
-    await writeFile(join(provenanceDirectory, voice.voice + '.json'), JSON.stringify({ issue: 86, provider: plan.provider, model: plan.model, voice,
+    const path = join(provenanceDirectory, voice.voice + '.json')
+    await writeFile(path, JSON.stringify({ issue: 86, provider: plan.provider, model: plan.model, voice,
       generationIdentity: snapshot.identity, language: plan.language, normalization: config.normalization, clips }, null, 2) + '\n')
   }
   const limited = records.filter(r => r.targetLimited).map(r => ({ id: r.id, voice: r.voice, loudness: r.after.integratedLufs, reasons: r.limitingReasons }))

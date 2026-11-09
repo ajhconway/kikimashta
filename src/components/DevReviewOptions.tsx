@@ -32,7 +32,7 @@ export function DevReviewOptions({ availableTypes, value, onChange, onStart, dis
       ? value.masteryLevels.filter(selected => selected !== index) : [...value.masteryLevels, index] });
   }
 
-  return <section className="dev-review-options fade-in" aria-labelledby={`${id}-heading`}>
+  return <section className="dev-review-options" aria-labelledby={`${id}-heading`}>
     <div className="dev-options-intro">
       <span className="dev-options-badge">Unsaved practice</span>
       <h1 id={`${id}-heading`} ref={heading} tabIndex={-1}>Dev review options</h1>

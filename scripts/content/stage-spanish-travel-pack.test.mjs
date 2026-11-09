@@ -7,6 +7,8 @@ import art from '../../artifacts/spanish-travel-art/manifest.json' with { type: 
 import review from '../../artifacts/spanish-travel-audio-review/manifest.json' with { type: 'json' }
 import config from '../../content/es-419-voices.json' with { type: 'json' }
 import acceptance from '../../content/spanish-travel-audio/acceptance.json' with { type: 'json' }
+import { createHash } from 'node:crypto'
+import { deflateSync, crc32 } from 'node:zlib'
 import { acceptedSpanishBank, stageSpanishTravelPack } from './stage-spanish-travel-pack.mjs'
 
 test('activates the exact accepted 36×8 set with stable IDs, transparent PNG delivery and no Cesar or retired words', () => {
@@ -62,4 +64,67 @@ for (const mode of ['directory', 'dangling-file']) test(`restaging rejects ${mod
   await assert.rejects(stageSpanishTravelPack({ root }), /Production media target escapes/)
   assert.deepEqual(await readdir(outside), [])
   assert.equal(await readFile(join(root, 'content/es-419.json'), 'utf8'), '{"retained":true}')
+})
+
+
+// A complete matrix with tiny bytes keeps restaging independent of archive size.
+async function restagingFixture(t) {
+  const root = await mkdtemp(join(tmpdir(), 'spanish-level1-restage-'))
+  t.after(() => rm(root, { recursive: true, force: true }))
+  const save = async (path, bytes) => { await mkdir(dirname(join(root, path)), { recursive: true }); await writeFile(join(root, path), bytes) }
+  const saveJson = async (path, value) => { const bytes = Buffer.from(JSON.stringify(value)); await save(path, bytes); return bytes }
+  const hash = bytes => createHash('sha256').update(bytes).digest('hex')
+  const chunk = (name, data) => { const type = Buffer.from(name), size = Buffer.alloc(4), crc = Buffer.alloc(4); size.writeUInt32BE(data.length); crc.writeUInt32BE(crc32(Buffer.concat([type, data]))); return Buffer.concat([size, type, data, crc]) }
+  const header = Buffer.from([0, 0, 0, 2, 0, 0, 0, 2, 8, 6, 0, 0, 0])
+  const pixels = Buffer.from([0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+  const png = Buffer.concat([Buffer.from('89504e470d0a1a0a', 'hex'), chunk('IHDR', header), chunk('IDAT', deflateSync(pixels)), chunk('IEND', Buffer.alloc(0))])
+  const jpg = Buffer.from('approved unchanged picture fixture'), mp3 = Buffer.from('accepted normalized MP3 fixture')
+  const pictures = structuredClone(art), audio = structuredClone(review), accepted = structuredClone(acceptance)
+  const approved = []
+  for (const item of pictures.items) {
+    const picture = item.artwork, bytes = picture.status === 'reuse-approved' ? jpg : png
+    picture.sha256 = hash(bytes); await save(picture.path, bytes)
+    approved.push({ id: item.id, sha256: picture.sha256 })
+    if (picture.status === 'reuse-approved') await save(picture.sourcePath, bytes)
+  }
+  for (const clip of audio.clips) { clip.deliverySha256 = hash(mp3); clip.deliveryBytes = mp3.length; await save('artifacts/spanish-travel-audio-review/' + clip.file, mp3) }
+  accepted.artworkManifestSha256 = hash(await saveJson(accepted.artworkManifest, pictures))
+  accepted.audioReviewSha256 = hash(await saveJson(accepted.audioReviewManifest, audio))
+  await saveJson('content/spanish-travel-audio/acceptance.json', accepted)
+  await saveJson('content/es-419-voices.json', config)
+  await saveJson('artifacts/spanish-travel-art/owner-feedback.json', { finalApproval: { selectedImages: approved } })
+  return { root, save }
+}
+
+test('restages level 1 from exact active deliveries after review duplicates are removed', async t => {
+  const { root, save } = await restagingFixture(t)
+  await stageSpanishTravelPack({ root })
+  const bankPath = join(root, 'content/es-419.json'), first = await readFile(bankPath)
+  await rm(join(root, 'artifacts/spanish-travel-audio-review/audio'), { recursive: true })
+  assert.deepEqual(await stageSpanishTravelPack({ root }), { words: 36, voices: 8, recordings: 288, images: 36 })
+  assert.deepEqual(await readFile(bankPath), first)
+  await save('public/audio/es-419-travel-v2/' + review.clips.at(-1).file.slice(6), 'corrupt active delivery')
+  await assert.rejects(stageSpanishTravelPack({ root }), /Accepted recording hash mismatch/)
+  assert.deepEqual(await readFile(bankPath), first)
+})
+
+
+test('level 1 restages canonical artwork without changing accepted source identities', async t => {
+  const { root, save } = await restagingFixture(t)
+  await stageSpanishTravelPack({ root })
+  const bankPath = join(root, 'content/es-419.json')
+  const activationPath = join(root, 'content/spanish-travel-audio/activation.json')
+  const bank = await readFile(bankPath), activation = JSON.parse(await readFile(activationPath)), aliases = {}
+  for (const image of activation.images) {
+    const bytes = await readFile(join(root, 'public', image.src))
+    aliases[image.sourcePath] = { path: 'public/' + image.src, sha256: image.sha256, bytes: bytes.length }
+    await rm(join(root, image.sourcePath))
+  }
+  await save('artifacts/artwork-aliases.json', JSON.stringify({ version: 1, aliases }))
+  await stageSpanishTravelPack({ root })
+  assert.deepEqual(await readFile(bankPath), bank)
+  assert.deepEqual(JSON.parse(await readFile(activationPath)), activation)
+  await save('public/' + activation.images.at(-1).src, 'changed canonical artwork')
+  await assert.rejects(stageSpanishTravelPack({ root }), /Approved image hash mismatch/)
+  assert.deepEqual(await readFile(bankPath), bank)
 })

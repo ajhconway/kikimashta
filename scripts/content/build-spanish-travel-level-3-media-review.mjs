@@ -1,9 +1,11 @@
 /** Reproducible, hash-verified level 3 picture and voice review (#174). */
 import { createHash } from 'node:crypto'
-import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises'
-import { resolve, join } from 'node:path'
+import { readFile, writeFile } from 'node:fs/promises'
+import { resolve, join, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedAudio } from './reviewed-audio.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 import { loadSpanishTravelLevel3Plan } from './generate-spanish-travel-level-3.mjs'
 import { level3AudioReviewHtml } from './build-spanish-travel-level-3-audio-review.mjs'
 
@@ -22,7 +24,7 @@ export async function buildLevel3MediaReview(root = process.cwd()) {
   if (originallyRequested.length !== 32 || requests.issue !== 174 || requests.requests.length !== 32 ||
       new Set(requests.requests.map(q => q.id)).size !== 32 ||
       requests.requests.some(q => !originallyRequested.some(item => item.id === q.id && item.slug === q.slug))) throw new Error('Expected exactly 32 approved image requests.')
-  const images = []
+  const images = [], imagePaths = new Map()
   for (const item of bank.items) {
     const { id, slug, text, meaning, group, artwork } = item
     if (!/^[a-z0-9-]+$/.test(slug)) throw new Error('Invalid image slug.')
@@ -48,8 +50,11 @@ export async function buildLevel3MediaReview(root = process.cwd()) {
         if (extra.role !== 'strict-geometry' || extra.path !== `artifacts/spanish-travel-3-art/revisions/${slug}-geometry-reference.png` ||
             hash(await readFile(join(root, extra.path))) !== extra.sha256) throw new Error('Geometry reference hash mismatch.')
       }
-      const bytes = await readFile(join(art, record.path))
-      if (hash(bytes) !== record.sha256) throw new Error('Generated image hash mismatch.')
+      const source = reviewedImage({ root, reviewPath: 'artifacts/spanish-travel-3-art/' + record.path,
+        productionPath: `public/images/approved/${id}-${record.sha256.slice(0, 12)}.png`,
+        sha256: record.sha256, message: 'Generated image hash mismatch.' })
+      const { bytes } = source
+      imagePaths.set(id, relative(art, join(root, source.path)))
       const pixels = inspectPngAlpha(bytes)
       if (pixels.width !== pixels.height || pixels.width < 1024 || !pixels.transparentPixels || !pixels.opaquePixels) throw new Error('Image requires a square transparent canvas and opaque subject.')
       images.push({ id, slug, text, meaning, group, source: 'generated', file: record.path,
@@ -65,8 +70,9 @@ export async function buildLevel3MediaReview(root = process.cwd()) {
             record.promptSha256 !== hash(request.prompt) || record.referenceSha256 !== request.referenceSha256 ||
             hash(await readFile(join(art, superseded.file))) !== superseded.sha256) throw new Error('Superseded original provenance changed.')
       }
-      const bytes = await readFile(join(root, artwork.candidatePath))
-      if (hash(bytes) !== artwork.candidateSha256) throw new Error('Approved reuse hash mismatch.')
+      const { bytes } = reviewedImage({ root, reviewPath: artwork.candidatePath,
+        sha256: artwork.candidateSha256, message: 'Approved reuse hash mismatch.' })
+      imagePaths.set(id, relative(art, join(root, artwork.candidatePath)))
       const extension = artwork.candidatePath.endsWith('.png') ? 'png' : 'jpg'
       if (extension === 'png') inspectPngAlpha(bytes)
       images.push({ id, slug, text, meaning, group, source: 'approved-reuse', file: `reused/${slug}.${extension}`,
@@ -78,22 +84,23 @@ export async function buildLevel3MediaReview(root = process.cwd()) {
   if (audio.issue !== 174 || audio.pack !== bank.id || audio.planIdentity !== hash(JSON.stringify(plan)) ||
       JSON.stringify(audio.items) !== JSON.stringify(plan.items) || JSON.stringify(audio.voices) !== JSON.stringify(plan.voices) ||
       audio.clips.length !== 288 || new Set(audio.clips.map(c => `${c.id}:${c.voice}`)).size !== 288) throw new Error('Audio review matrix changed.')
+  const playbackPaths = new Map()
   for (const clip of audio.clips) {
     const item = plan.items.find(i => i.id === clip.id), voice = plan.voices.find(v => v.voice === clip.voice)
     if (!item || !voice || item.text !== clip.text || voice.id !== clip.voiceId ||
         clip.file !== `audio/${voice.voice}/${item.id}.mp3`) throw new Error('Audio word or voice identity changed.')
-    const bytes = await readFile(join(audioRoot, clip.file))
-    if (bytes.length !== clip.deliveryBytes || hash(bytes) !== clip.deliverySha256) throw new Error('Review recording hash mismatch.')
+    const delivery = await reviewedAudio({ root, reviewPath: 'artifacts/spanish-travel-3-audio-review/' + clip.file,
+      productionPath: `public/audio/es-419-travel-3/${voice.voice}/${item.id}.mp3`,
+      sha256: clip.deliverySha256, size: clip.deliveryBytes })
+    playbackPaths.set(clip.file, relative(art, join(root, delivery.path)))
   }
-  // Validate all media before writing the gallery or copying approved originals.
-  await mkdir(join(art, 'reused'), { recursive: true })
-  for (const image of images.filter(i => i.source === 'approved-reuse')) await copyFile(join(root, image.sourcePath), join(art, image.file))
+  // Validate all media before writing the gallery. Reused images stay in public/.
   const manifest = { issue: 174, pack: bank.id, status: 'generated-awaiting-owner-media-review',
     tool: 'built-in image_gen', generatedImages: images.filter(i => i.source === 'generated').length,
     reusedImages: images.filter(i => i.source === 'approved-reuse').length, expectedClips: 288,
     audioManifest: '../spanish-travel-3-audio-review/manifest.json', audioManifestSha256: hash(await readFile(join(audioRoot, 'manifest.json'))), images }
-  const figures = images.map(image => `<figure><a href="${escape(image.file)}"><img width="145" height="145" src="${escape(image.file)}" alt="${escape(image.meaning)}"></a><figcaption><span lang="es-419">${escape(image.text)}</span><small>${escape(image.meaning)} · ${image.source === 'generated' ? 'New artwork' : 'Reused artwork'}</small></figcaption></figure>`)
-  const galleryAudio = { ...audio, clips: audio.clips.map(c => ({ ...c, file: '../spanish-travel-3-audio-review/' + c.file })) }
+  const figures = images.map(image => `<figure><a href="${escape(imagePaths.get(image.id))}"><img width="145" height="145" src="${escape(imagePaths.get(image.id))}" alt="${escape(image.meaning)}"></a><figcaption><span lang="es-419">${escape(image.text)}</span><small>${escape(image.meaning)} · ${image.source === 'generated' ? 'New artwork' : 'Reused artwork'}</small></figcaption></figure>`)
+  const galleryAudio = { ...audio, clips: audio.clips.map(c => ({ ...c, file: playbackPaths.get(c.file) })) }
   let html = level3AudioReviewHtml(galleryAudio)
     .replace('listen to the full pack', 'pictures and voices')
     .replace('36 words · 8 voices · 4 regional pairs · 288 recordings.', '36 pictures · 8 voices · 4 regional pairs · 288 recordings.')
