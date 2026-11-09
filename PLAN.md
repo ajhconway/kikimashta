@@ -1,5 +1,9 @@
 # Listening practice app plan
 
+## Scene and contrast artwork review (#233)
+
+The owner authorized the complete unupdated “Picture with scene / contrast” batch after shipment of #229. Freeze the exact `staged-picture` category from the original source-level 2–5 suitability review: 67 cards, 24 with active updated artwork excluded, 43 selected. Proposed delivery: 40 new subjects, two exact approved PR #110 reuses (子犬 and 少ない), and one shared rest image for 休み/休む. Preserve original guidance, sources, exact prompts, reference hashes and every variant. Use the built-in image tool with genuine transparency and the established illustration style. Deliver all 43 in one clickable gallery before owner feedback; generation does not imply acceptance, activation, eligibility, audio or progress changes. Scope and verification live in `artifacts/scene-art-233/plan.json` and issue #233.
+
 ## Visual-reference artwork release (#213)
 
 The owner approved shipping the complete selected 22-image set with “Let's ship this artwork set.” Bind acceptance to the current selected versions and exact PNG hashes in `artifacts/visual-reference-art-213/manifest.json`, including the original 年 and revised inward-thumb hand pair. Preserve version history and individual approvals. Activate transparent deliveries through the existing Japanese artwork mapping and provenance, update library descriptions and any affected image-bound choice-policy evidence, and preserve vocabulary eligibility, item IDs, audio and progress. Run configured checks and relevant browser journeys, obtain current-head Codex review, merge PR #215 through the required gates, and verify publication and live artwork. Actual iPhone acceptance remains manual.
