@@ -49,5 +49,17 @@ adapted cosine rankings from Facebook Research's Spanish fastText vectors
 Model/input revisions, hashes, composition recipes and source attribution are
 recorded in that artifact's README and measured outputs. IPA preparation uses
 the separately built eSpeak-NG 1.52.0 (GPL-3.0-or-later); its full upstream GPL
-text and tool/data provenance are retained with the experiment. No Spanish
-model weights, phonemizer binary or experimental rankings enter app practice.
+text and tool/data provenance are retained with the experiment. Spanish model weights, the phonemizer binary and E5 experimental rankings stay
+outside app practice.
+
+Spanish production semantic rankings derive from Facebook Research's Spanish
+fastText model, revision c4c84c726b98d02b1f0ec92d6fc2724fe3b84276,
+under CC BY-SA 3.0. Source: https://huggingface.co/facebook/fasttext-es-vectors
+License: https://creativecommons.org/licenses/by-sa/3.0/
+Spanish phoneme neighbor preparation uses pinned eSpeak-NG 1.52.0,
+revision 4870adfa25b1a32b4361592f1be8a40337c58d6c (GPL-3.0-or-later).
+Source: https://github.com/espeak-ng/espeak-ng/tree/4870adfa25b1a32b4361592f1be8a40337c58d6c
+The browser receives only compact rankings and canonical pronunciation keys;
+models, speech synthesis and experimental E5 dependencies remain offline.
+Selected recipes, source hashes and regeneration guidance are preserved in
+content/semantic-neighbors/ alongside the Spanish preparation data.
