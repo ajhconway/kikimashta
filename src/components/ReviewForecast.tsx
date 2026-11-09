@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import type { DensityForecast } from '../core/density';
+import { forecastDayAt, type DensityForecast } from '../core/density';
 import './ReviewForecast.css';
 
 export interface ReviewForecastProps {
@@ -29,8 +29,7 @@ export function ReviewForecast({ forecast, at, loading, unavailable }: ReviewFor
     {ready ? <>
       <ol className="review-forecast-days" role="list" aria-label="Estimated daily reviews">
         {daily.map((count, index) => {
-          const date = new Date(at);
-          date.setDate(date.getDate() + index);
+          const date = new Date(forecastDayAt(at, index));
           const label = index === 0 ? 'Today' : weekday.format(date);
           const displayed = roundedCount(count);
           const accessibleCount = displayed === '<1' ? 'less than 1' : displayed;
