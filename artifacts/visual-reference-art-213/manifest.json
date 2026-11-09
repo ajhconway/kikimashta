@@ -644,15 +644,15 @@
       "text": "左手",
       "reading": "ひだりて",
       "meaning": "Left Hand",
-      "prompt": "Use case: precise-object-edit. Replace the two PALMS in this reference with the BACKS of the two hands, fingers still pointing up and wrists down. We must see knuckles and small subtle fingernails, NOT palms and NOT palm creases. Correct dorsal-view anatomy: anatomical LEFT HAND is on the LEFT with thumb at its OUTER LEFT edge; anatomical RIGHT HAND is on the RIGHT with thumb at its OUTER RIGHT edge. The two thumbs point AWAY from the gap between the hands. Each hand exactly four fingers plus one thumb (five digits). Two hands only, matching peach skin, plum outlines, no body or arms. Highlight LEFT hand only with the same three plum attention rays beside/above the left hand. Right has no attention rays. Keep equal size, same height, generous transparent spacing, soft friendly illustration treatment. Absolutely no palm lines, no palm pads, no inward-pointing thumbs, no colored hand highlight, no labels or letters. Genuine transparent background.",
-      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+      "prompt": "Use case: precise-object-edit. Edit this LEFT HAND vocabulary illustration. Keep two hands side by side, fingers up, wrists down, BACKS OF HANDS visible with fingernails and knuckles, matching peach skin, thick rounded plum outlines, restrained soft shading, and true transparent background. Correct the orientation of BOTH hands: the hand on the LEFT must have its THUMB ON ITS RIGHT EDGE pointing inward toward the central gap; the hand on the RIGHT must have its THUMB ON ITS LEFT EDGE pointing inward toward the central gap. The two thumbs face ONE ANOTHER in the middle. Mirror each individual hand in place, without moving the attention rays. This is the natural view of one's own two hands from above. Exactly four fingers and one thumb per hand. Preserve the three plum attention rays above/beside the LEFT hand ONLY, similar sizes, equal height, spacing and overall composition. No palm creases, no palms facing viewer, no body, no words, no colored hand highlight, no extra objects. Genuine transparent alpha.",
+      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
       "status": "generated-pending-owner-review",
-      "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41",
+      "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
           "role": "edit/style reference",
-          "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
+          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
         }
       ],
       "versions": [
@@ -699,9 +699,24 @@
           "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-34124b21-c452-40bb-a27c-f6fea3815e50.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+          "prompt": "Use case: precise-object-edit. Edit this LEFT HAND vocabulary illustration. Keep two hands side by side, fingers up, wrists down, BACKS OF HANDS visible with fingernails and knuckles, matching peach skin, thick rounded plum outlines, restrained soft shading, and true transparent background. Correct the orientation of BOTH hands: the hand on the LEFT must have its THUMB ON ITS RIGHT EDGE pointing inward toward the central gap; the hand on the RIGHT must have its THUMB ON ITS LEFT EDGE pointing inward toward the central gap. The two thumbs face ONE ANOTHER in the middle. Mirror each individual hand in place, without moving the attention rays. This is the natural view of one's own two hands from above. Exactly four fingers and one thumb per hand. Preserve the three plum attention rays above/beside the LEFT hand ONLY, similar sizes, equal height, spacing and overall composition. No palm creases, no palms facing viewer, no body, no words, no colored hand highlight, no extra objects. Genuine transparent alpha.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+              "role": "edit/style reference",
+              "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+            }
+          ],
+          "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2f8cec34-c510-493e-ac6b-07b8d0fba4e4.png",
+          "ownerFeedbackRound": 5
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
         "width": 1774,
         "height": 887,
@@ -775,15 +790,15 @@
       "text": "右手",
       "reading": "みぎて",
       "meaning": "Right Hand",
-      "prompt": "Use case: precise-object-edit. Make the RIGHT HAND companion to this corrected BACK-OF-HANDS illustration. Preserve EXACTLY both dorsal hands, fingernails, knuckles, thumb positions (thumbs point OUTWARD), all five digits each, normal matching peach color, plum outlines, sizes, positions, transparent background and every other element. Change ONLY the three plum attention lines: remove them from above/beside the LEFT hand and put the same three lines above/beside the RIGHT hand. No other changes. No palm creases, colored highlights, text or body.",
-      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v4.png",
+      "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion to this LEFT HAND vocabulary illustration. Preserve EXACTLY the two hands, inward-facing thumbs, dorsal view with fingernails and knuckles, peach skin, plum outlines, five digits per hand, sizes, positions, spacing and transparent background. Both thumbs must still point toward one another in the central gap: LEFT-side hand thumb on its RIGHT edge, RIGHT-side hand thumb on its LEFT edge. Change ONLY the three plum attention rays: remove them from above/beside the LEFT hand and put the same three attention rays above/beside the RIGHT hand. No other changes. No palms, body, labels, text, colored hand highlights or extra objects. Genuine transparent alpha.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
       "status": "generated-pending-owner-review",
-      "sha256": "790ab4ce0eb6f08182d446752d95392de95073c7e5e6fdaeb43270385d9cd2d3",
+      "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
       "references": [
         {
-          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
           "role": "edit/style reference",
-          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+          "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41"
         }
       ],
       "versions": [
@@ -844,9 +859,24 @@
           "sha256": "790ab4ce0eb6f08182d446752d95392de95073c7e5e6fdaeb43270385d9cd2d3",
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1bd9a578-9f69-4ccc-887d-8bd7d990970c.png",
           "ownerFeedbackRound": 3
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+          "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion to this LEFT HAND vocabulary illustration. Preserve EXACTLY the two hands, inward-facing thumbs, dorsal view with fingernails and knuckles, peach skin, plum outlines, five digits per hand, sizes, positions, spacing and transparent background. Both thumbs must still point toward one another in the central gap: LEFT-side hand thumb on its RIGHT edge, RIGHT-side hand thumb on its LEFT edge. Change ONLY the three plum attention rays: remove them from above/beside the LEFT hand and put the same three attention rays above/beside the RIGHT hand. No other changes. No palms, body, labels, text, colored hand highlights or extra objects. Genuine transparent alpha.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+              "role": "edit/style reference",
+              "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41"
+            }
+          ],
+          "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2e6d2684-84f0-4706-a43b-bece753a976c.png",
+          "ownerFeedbackRound": 5
         }
       ],
-      "selectedVersion": 4,
+      "selectedVersion": 5,
       "image": {
         "width": 1774,
         "height": 887,
@@ -1661,7 +1691,7 @@
   ],
   "status": "partially-approved",
   "generatedAssetCount": 22,
-  "generatedVersionCount": 66,
+  "generatedVersionCount": 68,
   "checks": {
     "exactScope": true,
     "noAlreadyUpdatedIds": true,
@@ -1705,6 +1735,16 @@
         "ja-v-aef5eed601c5"
       ],
       "finalSteering": "Keep arrow direction and center-door paths; gentler perspective; enlarge both arrows throughout and make entrance match exit weight."
+    },
+    {
+      "round": 5,
+      "date": "2026-11-09",
+      "ownerStatement": "The hands for both 左手 and 右手 should have the thumbs facing inward.",
+      "status": "revised-pending-owner-review",
+      "revisedIds": [
+        "ja-v-70230bf6d87c",
+        "ja-v-9553e3adbc2a"
+      ]
     }
   ],
   "exitSymbolConvention": {
