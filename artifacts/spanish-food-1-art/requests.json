@@ -1,0 +1,129 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "draftSha256": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+  "tool": "built-in image_gen",
+  "requests": [
+    {
+      "id": "es-419-food-potato",
+      "slug": "potato",
+      "version": 1,
+      "group": "vegetables",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Potato (papa).\nPrimary request: One whole oval golden-brown potato, slightly irregular, with a few small clearly visible potato eyes. No sprout, leaves, plate, other vegetables or cut pieces.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-tomato",
+      "slug": "tomato",
+      "version": 1,
+      "group": "vegetables",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Tomato (jitomate).\nPrimary request: One plump ripe round red tomato, with a small green star-shaped calyx at its top. The smooth round tomato silhouette must be distinct from the heart-shaped strawberry and the indented apple. No sliced pieces or other produce.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-carrot",
+      "slug": "carrot",
+      "version": 1,
+      "group": "vegetables",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Carrot (zanahoria).\nPrimary request: One whole long tapered orange carrot with a small cluster of green leafy tops and a few simple root texture lines. No hand, knife, plate or additional food.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "slug": "lettuce",
+      "version": 1,
+      "group": "vegetables",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Lettuce (lechuga).\nPrimary request: One fresh green head of lettuce with several broad overlapping softly ruffled leaves. The lettuce is the sole dominant object. No bowl, salad ingredients, cabbage-like white core or other vegetables.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "slug": "tortilla",
+      "version": 1,
+      "group": "staples",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Tortilla (tortilla).\nPrimary request: A small slightly offset stack of three very thin round soft maize tortillas, pale warm cream-gold with a few brown toasted spots and clearly visible thin pliable edges. No filling, folded taco, butter, syrup, plate or thick pancake texture.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-beans",
+      "slug": "beans",
+      "version": 1,
+      "group": "staples",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Beans (frijoles).\nPrimary request: A shallow simple purple-and-gold bowl containing cooked pinto beans. Large individual oval kidney-shaped beans in warm reddish-brown hues remain clear and distinct at card size. No spoon, rice, garnish, other ingredients or liquid soup.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-pasta",
+      "slug": "pasta",
+      "version": 1,
+      "group": "staples",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Pasta (pasta).\nPrimary request: A shallow simple purple-and-gold bowl containing a compact serving of golden cooked penne pasta. Several large short tubular noodles with unmistakable hollow diagonally cut ends. No fork, sauce, vegetables, cheese or other food.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "slug": "yogurt",
+      "version": 1,
+      "group": "protein-dairy",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Yogurt (yogur).\nPrimary request: One small plain yogurt pot with its foil lid peeled halfway back, revealing thick opaque creamy white yogurt with a small soft swirl. A simple purple-and-cream pot, no branding or writing. No spoon, fruit, milk carton or liquid pouring.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "slug": "sandwich",
+      "version": 1,
+      "group": "meals",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Sandwich (sándwich).\nPrimary request: One compact triangular sandwich shown at a three-quarter angle: two triangular bread slices with a thin cheese filling and a little lettuce visibly layered between them. Show the entire sandwich as one assembled food. No separated ingredients, garnish, plate, knife or drink.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-pizza",
+      "slug": "pizza",
+      "version": 1,
+      "group": "meals",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Pizza (pizza).\nPrimary request: One large triangular pizza slice with a golden raised crust, melted yellow cheese, small red pepperoni circles and a little red tomato sauce visible near the edge. A compact intact slice, no cheese pull, detached ingredients, plate or hands.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-food-tea",
+      "slug": "tea",
+      "version": 1,
+      "group": "drinks-seasonings",
+      "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 vocabulary-card illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Match its rounded friendly cartoon shapes, smooth bold deep-purple outlines and restrained soft highlights. Use natural recognizable colours for the requested food. Do not copy the strawberry, its leaves or its seeds.\nSubject: Tea (té).\nPrimary request: One simple purple-and-cream teacup containing clear amber tea, with a small partly submerged tea bag and a fine string resting over the rim to a plain blank paper tag hanging beside the cup. A couple of subtle steam curls. The tea bag and tag distinguish it from coffee. No saucer, spoon, other food, letters or symbols on the tag.\nComposition: a single centered compact complete object or serving, about 75–85 percent of the square canvas, with clear outer margins and a simple readable silhouette. Keep food and container interiors opaque.\nConstraints: genuinely transparent pixels around the illustration. True square canvas, not portrait or landscape. No text, letters, numbers, logo, watermark, brands, faces, people, cat, mascot, extra props, background scenery, ground shadow, outside glow or white background.",
+      "transparent_background": true,
+      "referenceRole": "style-only",
+      "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    }
+  ]
+}

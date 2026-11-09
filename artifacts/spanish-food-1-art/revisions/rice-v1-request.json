@@ -1,0 +1,14 @@
+{
+  "id": "es-419-travel-rice",
+  "slug": "rice",
+  "version": 1,
+  "group": "staples",
+  "concept": "A small purple-and-gold bowl filled with a modest fluffy mound of cooked white rice. Many small, short plump opaque white rice grains form a soft, slightly clumped cooked serving, with a few individual grain shapes clear around the surface. No uncooked grains, grain sack, garnish, other food, cutlery or chopsticks.",
+  "prompt": "Use case: stylized-concept\nAsset type: one SQUARE 1:1 Spanish vocabulary illustration, transparent PNG, readable at 145px.\nInput image 1: STYLE REFERENCE ONLY. Create a new cooked-rice serving matching the rounded bowl, gold rim, purple outlines and friendly shading. Do not copy the pasta noodles.\nSubject: Rice (arroz).\nPrimary request: A small purple-and-gold bowl filled with a modest fluffy mound of cooked white rice. Many small, short plump opaque white rice grains form a soft, slightly clumped cooked serving, with a few individual grain shapes clear around the surface. No uncooked grains, grain sack, garnish, other food, cutlery or chopsticks.\nComposition: single complete centered food illustration, 75–85 percent of the square canvas with clear outer margins. Keep bowl/food interiors opaque.\nConstraints: genuine transparency around the subject; no scenery, white background, ground shadow, text, letters, logo, watermark, brand, mascot, face, hand or extra props.",
+  "transparent_background": true,
+  "referenceRole": "style-only",
+  "referencePath": "artifacts/spanish-food-1-art/originals/pasta-v1.png",
+  "referenceSha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7",
+  "supersedes": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+  "supersedesSha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+}

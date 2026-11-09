@@ -1,0 +1,14 @@
+{
+  "id": "es-419-food-tomato",
+  "slug": "tomato",
+  "version": 2,
+  "group": "vegetables",
+  "concept": "Reshape the round red fruit into a recognizably ripe tomato: a broad squat gently flattened body, wide rounded shoulders, two or three subtle lobes, and a shallow stem depression with short delicate contour creases near the crown. Use a small green star-shaped calyx and a short stem. No perfectly round ball, heart/apple silhouette, giant strawberry-like leaves or pointed bottom. Preserve the red colour, bold purple outline, smooth shading and transparent background.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 Spanish vocabulary illustration, transparent PNG, readable at 145px.\nInput image 1: EDIT TARGET. Change only the requested food details below; preserve the existing illustration style and true transparent background.\nSubject: Tomato (jitomate).\nPrimary request: Reshape the round red fruit into a recognizably ripe tomato: a broad squat gently flattened body, wide rounded shoulders, two or three subtle lobes, and a shallow stem depression with short delicate contour creases near the crown. Use a small green star-shaped calyx and a short stem. No perfectly round ball, heart/apple silhouette, giant strawberry-like leaves or pointed bottom. Preserve the red colour, bold purple outline, smooth shading and transparent background.\nComposition: single complete centered food illustration, 75–85 percent of the square canvas with clear outer margins. Keep bowl/food interiors opaque.\nConstraints: genuine transparency around the subject; no scenery, white background, ground shadow, text, letters, logo, watermark, brand, mascot, face, hand or extra props.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-food-1-art/originals/tomato-v1.png",
+  "referenceSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167",
+  "supersedes": "artifacts/spanish-food-1-art/originals/tomato-v1.png",
+  "supersedesSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167"
+}

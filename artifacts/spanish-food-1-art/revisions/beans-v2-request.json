@@ -1,0 +1,14 @@
+{
+  "id": "es-419-food-beans",
+  "slug": "beans",
+  "version": 2,
+  "group": "staples",
+  "concept": "Keep the existing purple-and-gold bowl, but replace every oversized mottled bean with many smaller smoothly skinned cooked brown beans. Aim for roughly forty to sixty little plump oval/kidney-shaped beans, with about eight to ten fitting across the bowl opening. Use subtle natural crease marks and tiny soft highlights; no orange patches, speckles, pitted texture or pebble/potato appearance. A little cooking broth may appear between beans but must not dominate.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 Spanish vocabulary illustration, transparent PNG, readable at 145px.\nInput image 1: EDIT TARGET. Change only the requested food details below; preserve the existing illustration style and true transparent background.\nSubject: Beans (frijoles).\nPrimary request: Keep the existing purple-and-gold bowl, but replace every oversized mottled bean with many smaller smoothly skinned cooked brown beans. Aim for roughly forty to sixty little plump oval/kidney-shaped beans, with about eight to ten fitting across the bowl opening. Use subtle natural crease marks and tiny soft highlights; no orange patches, speckles, pitted texture or pebble/potato appearance. A little cooking broth may appear between beans but must not dominate.\nComposition: single complete centered food illustration, 75–85 percent of the square canvas with clear outer margins. Keep bowl/food interiors opaque.\nConstraints: genuine transparency around the subject; no scenery, white background, ground shadow, text, letters, logo, watermark, brand, mascot, face, hand or extra props.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-food-1-art/originals/beans-v1.png",
+  "referenceSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7",
+  "supersedes": "artifacts/spanish-food-1-art/originals/beans-v1.png",
+  "supersedesSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7"
+}

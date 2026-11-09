@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-sandwich",
+  "slug": "sandwich",
+  "version": 1,
+  "path": "originals/sandwich-v1.png",
+  "sha256": "e591dcb541320bcb74c9935287ee22264e6d76f001a18fa99a4bc613b47d9e95",
+  "promptSha256": "0e3afcd1754fbc74c20eec074e50df16191fa51a8cb522455ece547c8f96b072",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f39ad1a5-ef9e-4e9d-8004-0401d048543b.png"
+}

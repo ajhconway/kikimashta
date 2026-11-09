@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-beans",
+  "slug": "beans",
+  "version": 1,
+  "path": "originals/beans-v1.png",
+  "sha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7",
+  "promptSha256": "662e885d41d3e6e96fa7407ccf7d80160fc7c7ec052b99a1c58b7a7f9b70883b",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-7736065c-ad58-4d31-b33b-0a043feb9457.png"
+}

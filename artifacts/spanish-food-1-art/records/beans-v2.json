@@ -1,0 +1,13 @@
+{
+  "id": "es-419-food-beans",
+  "slug": "beans",
+  "version": 2,
+  "path": "originals/beans-v2.png",
+  "sha256": "ac1df9367013017fc49cfbc74d560690f57130607f8153773db6b90caa4de8bd",
+  "promptSha256": "6eebb0b7f5e1fa6c445ada339b8cbf42a06a40c6c1d24243ba323e900c64564e",
+  "referenceSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-af30e8ab-23fe-437e-b083-ab6a3843d313.png",
+  "supersedes": "artifacts/spanish-food-1-art/originals/beans-v1.png",
+  "supersedesSha256": "6afb61651bf694f8469ccd39f7630fc6d9fd957957f04fbaf8d6df33993c14f7"
+}
