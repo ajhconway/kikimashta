@@ -23,3 +23,5 @@ Serve the repository root with `python3 -m http.server 5207 --bind 127.0.0.1`, t
 The seven bare numerals 一・二・三・七・八・九・十 and ふじ山 remain word-first. 人工・人口 retain standalone recognition with homophonic distractors excluded. 下さい・力いっぱい・大した remain contextual-only; future runtime work must provide direct simple-stage entry followed by the FSRS gate. This text task does not alter runtime admission.
 
 All 116 revised contexts remain pending, contain no recordings and are outside ordinary practice. Owner approval of the actual revised text precedes speech generation. Listening acceptance and activation follow separately.
+
+The owner has approved the text snapshot at `bd6011142069354c0c60855b23606453e06af7c9`; see `text-approval.json` for exact file/text hashes. The reviewed bank stays frozen with staging flags until media preparation applies that approval. Audio has not been generated or accepted, and the bank is not active practice content.

@@ -170,6 +170,13 @@ export function validatePack1(root = projectRoot) {
   const compiled = compilePack1(root)
   assert.deepEqual(read(root, draftPath), compiled.bank, 'Expanded draft differs from its authored sources; rebuild it')
   assert.deepEqual(read(root, 'content/contextual/pack-1/comprehension-audit.json').questions, compiled.audits, 'Comprehension review differs from the authored questions; rebuild it')
+  const artifacts = {
+    'review.html': renderPack1Review(compiled),
+    'filters.js': filterScript.trim() + '\n',
+    'review.md': renderPack1Markdown(compiled),
+    'comprehension-audit.md': renderComprehensionAudit(compiled),
+  }
+  for (const [name, expected] of Object.entries(artifacts)) assert.equal(readFileSync(resolve(root, 'artifacts/contextual-pack-1', name), 'utf8'), expected, `${name} differs from authored content; rebuild it`)
   return compiled
 }
 
@@ -256,15 +263,19 @@ export function buildPack1({ root = projectRoot, write = true } = {}) {
     put(draftPath, JSON.stringify(loaded.bank, null, 2) + '\n')
     put('artifacts/contextual-pack-1/review.html', renderPack1Review(loaded))
     put('artifacts/contextual-pack-1/filters.js', filterScript.trim() + '\n')
-    let markdown = renderContextualMarkdown(bank, loaded.vocabulary).replace('Pilot text review:', 'Pack 1 text review:').replaceAll('codex/contextual-pilot-119/public/', 'codex/contextual-pack1-183/public/')
-    for (const audit of loaded.audits) markdown = markdown.replace(new RegExp(`(\\*\\*${audit.questionId}\\*\\* · )(target answer|other detail)`), `$1${audit.focus === 'target' ? 'target meaning' : 'situation meaning'}`)
-    put('artifacts/contextual-pack-1/review.md', '# WaniKani level 1 contextual text review\n\nIssue #183. All revised text remains pending; no speech generation or runtime activation. [Comprehension audit](comprehension-audit.md). 下さい・力いっぱい・大した are contextual-only.\n\n' + markdown)
+    put('artifacts/contextual-pack-1/review.md', renderPack1Markdown(loaded))
     put('artifacts/contextual-pack-1/comprehension-audit.md', renderComprehensionAudit(loaded))
     put('content/contextual/pack-1/comprehension-audit.json', JSON.stringify({ schemaVersion: 1, baselineRevision: loaded.previous.sourceRevision, questions: loaded.audits }, null, 2) + '\n')
   }
   return { ...contextualSummary(bank), auditedQuestions: loaded.audits.length,
     rewrittenQuestions: loaded.audits.filter(audit => audit.decision === 'rewritten').length,
     targetDependenceChecks: loaded.audits.filter(audit => audit.targetDependency).length }
+}
+
+export function renderPack1Markdown(loaded) {
+  let markdown = renderContextualMarkdown(loaded.bank, loaded.vocabulary).replace('Pilot text review:', 'Pack 1 text review:').replaceAll('codex/contextual-pilot-119/public/', 'codex/contextual-pack1-183/public/')
+  for (const audit of loaded.audits) markdown = markdown.replace(new RegExp(`(\\*\\*${audit.questionId}\\*\\* · )(target answer|other detail)`), `$1${audit.focus === 'target' ? 'target meaning' : 'situation meaning'}`)
+  return '# WaniKani level 1 contextual text review\n\nIssue #183. All revised text remains pending; no speech generation or runtime activation. [Comprehension audit](comprehension-audit.md). 下さい・力いっぱい・大した are contextual-only.\n\n' + markdown
 }
 
 export function renderComprehensionAudit(loaded) {
