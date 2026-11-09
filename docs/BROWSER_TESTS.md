@@ -42,9 +42,18 @@ Reports are named by their actual engine/shard, and all shards remain required.
 
 ## Measurement
 
-The reviewed baseline is `dadc123`: 55 scenarios / 110 browser executions. Its
-[hosted run](https://github.com/ajhconway/kikimashta/actions/runs/42564788201)
-spent approximately 2m42s and 1m42s in the two runners' browser execution phases.
-The consolidation has 44 scenarios / 88 executions, a 20% reduction. Local
-before/after measurements are recorded in the linked pull request; local
-timings do not predict hosted setup, scheduling or container startup time.
+After integrating main `3e813cc`, the suite has 50 scenarios / 100 browser
+executions, down from that main revision's 61 / 122 (eleven fewer scenarios,
+about 18%). This includes the contextual-pack-1 and pack-badge journeys added
+since the original review.
+
+All 100 executions passed locally on `32f1d01` in 173.51 seconds with two workers,
+no skips and no retries. Its [hosted run](https://github.com/ajhconway/kikimashta/actions/runs/42570109238)
+also passed all 100 executions: 25 per engine/shard. The paired runners spent
+approximately 119 and 137 seconds from their first engine command through the
+final engine result, including the intervening report upload.
+
+The original `dadc123` to `434affa` comparison (55 to 44 scenarios) predates
+these new journeys. Its counts and speedup do not describe this integrated
+suite. Local timings exclude build/install; hosted browser-phase timings exclude
+checkout, installation, build and runner startup.
