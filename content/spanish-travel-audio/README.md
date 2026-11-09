@@ -14,6 +14,13 @@ Commands and resume safeguards are documented in `docs/ELEVENLABS.md`.
 
 ## Accepted activation (#159)
 
-The owner approved the complete review and requested activation. `acceptance.json` binds that approval to the exact artwork/audio review manifests, including the four quieter clips. `activation.json` maps all 36 pictures and 288 recordings to verified production paths. The active bank is `content/es-419.json`; previous Cesar media and provenance remain intact. Existing hotel/water/coffee/car IDs are unchanged, while entrance/exit leave active selection without deleting their history.
+The owner approved the complete review and requested activation. `acceptance.json` binds that approval to the exact artwork/audio review manifests, including the four quieter clips. `activation.json` maps all 36 pictures and 288 recordings to verified production paths. The active bank is `content/es-419.json`; previous Cesar provenance remains intact, and retired Cesar recordings can be recovered from Git history before the #193 cleanup. Existing hotel/water/coffee/car IDs are unchanged, while entrance/exit leave active selection without deleting their history.
 
 `npm run content:spanish:activate` preflights the full accepted matrix, picture approval and source hashes, checks production target containment, preserves PNG transparency, and stages the accepted normalized MP3s. It generates no speech. Car and taxi are mutually excluded as picture distractors. Spanish library voices display regional descriptions and have an independent saved selection; Japanese preferences retain their existing key.
+
+
+## Single delivery copy (#193)
+
+The three accepted Spanish packs keep their normalized MP3s in `public/audio/` as the single repository delivery copy. Duplicate MP3s have been removed from the audio-review directories; retained standalone and combined review pages link to the exact active delivery bytes. Provider manifests, acceptance hashes and normalization records remain unchanged. Private original and normalized archives remain preserved.
+
+Restaging prefers a review source when present. When that duplicate is absent, it verifies the existing production recording against the accepted SHA-256 and byte count before reuse. A corrupt review source is never hidden by a valid production copy. A missing or changed production fallback still blocks staging before any bank or media writes.

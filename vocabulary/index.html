@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#fff0dc">
   <title>Vocabulary cards</title>
   <link rel="stylesheet" href="/vocabulary/library.css">
+  <link rel="stylesheet" href="/vocabulary/contextual.css">
   <script src="./library.js" type="module"></script>
 </head>
 <body>
@@ -15,6 +16,11 @@
       <h1>Vocabulary cards</h1>
       <p>Browse WaniKani levels 1–5 in separate picture and writing packs, and compare Japanese voices.</p>
     </header>
+    <div class="library-content-switch" role="group" aria-label="Library content">
+      <button type="button" id="show-words" aria-pressed="true" aria-controls="word-library">Words</button>
+      <button type="button" id="show-contexts" aria-pressed="false" aria-controls="contextual-library">Contextual questions</button>
+    </div>
+    <section id="word-library" aria-label="Word cards">
     <details class="practice-packs" open>
       <summary id="pack-selection-summary">Practice packs</summary>
       <p id="pack-selection-description">Choose the pictures and writing you want to practice. Lessons use cards ready for practice. Your selection stays on this device.</p>
@@ -54,6 +60,8 @@
       <button type="button" id="next" disabled>Next →</button>
     </nav>
     <section id="cards" class="cards" aria-label="Vocabulary cards"></section>
+    </section>
+    <section id="contextual-library" aria-label="Contextual questions" hidden></section>
     <noscript><p>Enable JavaScript to browse the vocabulary cards and listen to the voices.</p></noscript>
     <footer><a href="../credits.html">Credits and licenses</a></footer>
   </main>

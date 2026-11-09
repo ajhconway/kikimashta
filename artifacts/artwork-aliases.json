@@ -1,0 +1,580 @@
+{
+  "version": 1,
+  "aliases": {
+    "artifacts/card-regeneration/batch-05/44-red.png": {
+      "path": "artifacts/card-regeneration/batch-03/22-red.png",
+      "sha256": "8b08411a59b19a476fdea4fe88861d18e87a1e17595f237d8ab92e50d3bc0f6b",
+      "bytes": 1201318
+    },
+    "artifacts/card-regeneration/batch-06/56-half.png": {
+      "path": "artifacts/card-regeneration/batch-04/33-half-v3.png",
+      "sha256": "b9a1102d2978c5018a18007a03686a646c4cddbf9ad1dfac63eabe207cd7f77b",
+      "bytes": 1077771
+    },
+    "artifacts/card-regeneration/batch-10/83-50-png-r4.png": {
+      "path": "artifacts/card-regeneration/batch-07/83-number-batch10-approved.png",
+      "sha256": "290dc3f937733da431a46a08aea4c30ec31ef55730efebc9a8c72f96a5b391e3",
+      "bytes": 1064754
+    },
+    "artifacts/card-regeneration/batch-10/84-1k-png-r4.png": {
+      "path": "artifacts/card-regeneration/batch-07/84-number-batch10-approved.png",
+      "sha256": "a7ac3f774e9c94b662d222834b4ce34e66db8a8c994ff4b1de31b9df1eaf0501",
+      "bytes": 1104354
+    },
+    "artifacts/card-regeneration/batch-10/85-10-svg-guided-r5.png": {
+      "path": "artifacts/card-regeneration/batch-07/85-number-batch10-approved.png",
+      "sha256": "6beebf94c4d2384d5e5ddd401e7002ddaedbdfdbcdcd4754de2acd3242cfe690",
+      "bytes": 940339
+    },
+    "artifacts/card-regeneration/batch-10/86-4-svg-guided-r5.png": {
+      "path": "artifacts/card-regeneration/batch-08/86-number-batch10-approved.png",
+      "sha256": "b366b5c16988e1a7817b4d8c6f26d88ee6209560b7c6e58b711a80da91426881",
+      "bytes": 900945
+    },
+    "artifacts/card-regeneration/batch-10/87-16-png-r4.png": {
+      "path": "artifacts/card-regeneration/batch-08/87-number-batch10-approved.png",
+      "sha256": "a136fa8d27dc0abbadb74e55835d705bcf662e33fe232e9df1ed11dbd1a0ea2a",
+      "bytes": 1183125
+    },
+    "artifacts/spanish-travel-2-art/originals/atm-v1.png": {
+      "path": "public/images/approved/es-419-travel-atm-46dc636200fd.png",
+      "sha256": "46dc636200fde673943907a6223e1bb3d163d022db237408449d80546d5dc922",
+      "bytes": 949018
+    },
+    "artifacts/spanish-travel-2-art/originals/bakery-v1.png": {
+      "path": "public/images/approved/es-419-travel-bakery-827692feefff.png",
+      "sha256": "827692feefff108fd21d16cda847e2e30207669dc554067f3dce6236c0fe26d3",
+      "bytes": 1195449
+    },
+    "artifacts/spanish-travel-2-art/originals/bridge-v1.png": {
+      "path": "public/images/approved/es-419-travel-bridge-da15872f8046.png",
+      "sha256": "da15872f80464d3d8cfad05a03e0503240f0831c29a62bfd6f0215cbbf225c12",
+      "bytes": 950615
+    },
+    "artifacts/spanish-travel-2-art/originals/bus-stop-v1.png": {
+      "path": "public/images/approved/es-419-travel-bus-stop-718a96003986.png",
+      "sha256": "718a96003986060f2afd63f14006e391de702aa379f68320aa6cbc4e004afe60",
+      "bytes": 882886
+    },
+    "artifacts/spanish-travel-2-art/originals/chair-v1.png": {
+      "path": "public/images/approved/es-419-travel-chair-bfed79c5f2d7.png",
+      "sha256": "bfed79c5f2d708864a50d98ee72d98cddae61fa7a241740561cc8d4f0e821d10",
+      "bytes": 657842
+    },
+    "artifacts/spanish-travel-2-art/originals/charger-v1.png": {
+      "path": "public/images/approved/es-419-travel-charger-59610a541ae1.png",
+      "sha256": "59610a541ae101e05a6e6ed046f87ed504770aa93fb1ea41e7e5a12c0c60e282",
+      "bytes": 818178
+    },
+    "artifacts/spanish-travel-2-art/originals/cheese-v1.png": {
+      "path": "public/images/approved/es-419-travel-cheese-ab2ab495577e.png",
+      "sha256": "ab2ab495577e9f4c917e273dac1f96a625ae3707fa42d718aed71ad41b3128d5",
+      "bytes": 651497
+    },
+    "artifacts/spanish-travel-2-art/originals/chicken-v1.png": {
+      "path": "public/images/approved/es-419-travel-chicken-edb305036ae9.png",
+      "sha256": "edb305036ae948e7abde01bfb381135d63d1798dba0b6508d6ec045658f13d39",
+      "bytes": 640080
+    },
+    "artifacts/spanish-travel-2-art/originals/coin-v1.png": {
+      "path": "public/images/approved/es-419-travel-coin-cc8e7fce8d81.png",
+      "sha256": "cc8e7fce8d81ae88f721b78a41ce597ea2fb407f46d2c45bbcb04045c623e5f5",
+      "bytes": 880776
+    },
+    "artifacts/spanish-travel-2-art/originals/cooked-fish-v1.png": {
+      "path": "public/images/approved/es-419-travel-cooked-fish-e73bbe183caa.png",
+      "sha256": "e73bbe183caab6348300477ac968f1baa4e927d28e4b67803982e705daa1a73e",
+      "bytes": 723421
+    },
+    "artifacts/spanish-travel-2-art/originals/cup-v1.png": {
+      "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+      "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349",
+      "bytes": 802647
+    },
+    "artifacts/spanish-travel-2-art/originals/egg-v1.png": {
+      "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+      "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4",
+      "bytes": 822822
+    },
+    "artifacts/spanish-travel-2-art/originals/fork-v1.png": {
+      "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+      "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01",
+      "bytes": 421905
+    },
+    "artifacts/spanish-travel-2-art/originals/market-v1.png": {
+      "path": "public/images/approved/es-419-travel-market-b501f08571fa.png",
+      "sha256": "b501f08571fa560c7ed29c425865e9de7b7674c722905204eb3a65dd160f6b12",
+      "bytes": 1145288
+    },
+    "artifacts/spanish-travel-2-art/originals/menu-v1.png": {
+      "path": "public/images/approved/es-419-travel-menu-7356487d2dc5.png",
+      "sha256": "7356487d2dc5e597bee34237ce2d8acad3d6d75365df7dc7eed150a45a0d7833",
+      "bytes": 1024730
+    },
+    "artifacts/spanish-travel-2-art/originals/museum-v1.png": {
+      "path": "public/images/approved/es-419-travel-museum-22a089082940.png",
+      "sha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+      "bytes": 1376785
+    },
+    "artifacts/spanish-travel-2-art/originals/park-v1.png": {
+      "path": "public/images/approved/es-419-travel-park-5f3ec1ed6ad4.png",
+      "sha256": "5f3ec1ed6ad4fe9cdd6d6b2d6e7bdd00b96800a0f04bac532a416908945cc9ff",
+      "bytes": 1216631
+    },
+    "artifacts/spanish-travel-2-art/originals/receipt-v1.png": {
+      "path": "public/images/approved/es-419-travel-receipt-ce6a9404952e.png",
+      "sha256": "ce6a9404952e3084704f9bc908ae61684e24c74da75a8cf5431a25e238ef4ea0",
+      "bytes": 633231
+    },
+    "artifacts/spanish-travel-2-art/originals/room-v1.png": {
+      "path": "public/images/approved/es-419-travel-room-31977a2bb2de.png",
+      "sha256": "31977a2bb2deaaa68301da8d8a6635347b09cf5a2c192c690ec4d1a1e51d61c8",
+      "bytes": 1112811
+    },
+    "artifacts/spanish-travel-2-art/originals/salad-v1.png": {
+      "path": "public/images/approved/es-419-travel-salad-124eda7165db.png",
+      "sha256": "124eda7165dbd51dcd45d4e42a15af7fd403f6402a14185ded76253318ea3217",
+      "bytes": 890595
+    },
+    "artifacts/spanish-travel-2-art/originals/shampoo-v1.png": {
+      "path": "public/images/approved/es-419-travel-shampoo-1f65b8ceefee.png",
+      "sha256": "1f65b8ceefee3b6f8a6a1a86c7c66dcace9aefc948cb1b4a45766a00949cae7a",
+      "bytes": 864204
+    },
+    "artifacts/spanish-travel-2-art/originals/soap-v1.png": {
+      "path": "public/images/approved/es-419-travel-soap-436d74cfcdb1.png",
+      "sha256": "436d74cfcdb1603819cabb0a9877d7228e50e03e84f7558d73b3c54fadc7c02c",
+      "bytes": 864658
+    },
+    "artifacts/spanish-travel-2-art/originals/soup-v1.png": {
+      "path": "public/images/approved/es-419-travel-soup-791fbdb33db2.png",
+      "sha256": "791fbdb33db2451b8f8bb96ae879733f6fb82343331834fea24a4cbbc932ccef",
+      "bytes": 833360
+    },
+    "artifacts/spanish-travel-2-art/originals/spoon-v1.png": {
+      "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+      "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208",
+      "bytes": 396319
+    },
+    "artifacts/spanish-travel-2-art/originals/stairs-v5.png": {
+      "path": "public/images/approved/es-419-travel-stairs-ad411dfdee20.png",
+      "sha256": "ad411dfdee2034d23e7f8fc93be61ad6b6fc32ecb430abba902118c982e30e83",
+      "bytes": 673680
+    },
+    "artifacts/spanish-travel-2-art/originals/street-v1.png": {
+      "path": "public/images/approved/es-419-travel-street-584849519275.png",
+      "sha256": "5848495192753ef7f26c299d266285a0b1568c07ba22c795901b4f3d5dc0083f",
+      "bytes": 1193428
+    },
+    "artifacts/spanish-travel-2-art/originals/sunglasses-v1.png": {
+      "path": "public/images/approved/es-419-travel-sunglasses-b390b9930110.png",
+      "sha256": "b390b99301106c7da274d4c7066aff8cdd651963f79bf8a12bf697d6ad77367e",
+      "bytes": 505644
+    },
+    "artifacts/spanish-travel-2-art/originals/swimming-pool-v1.png": {
+      "path": "public/images/approved/es-419-travel-swimming-pool-723e2d651cbc.png",
+      "sha256": "723e2d651cbc56903a581b16d312eccd68ce63bcd85c1a0cb8fbe09a437a028c",
+      "bytes": 964206
+    },
+    "artifacts/spanish-travel-2-art/originals/table-v1.png": {
+      "path": "public/images/approved/es-419-travel-table-be2c092afe63.png",
+      "sha256": "be2c092afe6358619e07451a7c6ad76e486f3cb6a6ff2c73821b55d3443e651d",
+      "bytes": 578106
+    },
+    "artifacts/spanish-travel-2-art/originals/toothbrush-v1.png": {
+      "path": "public/images/approved/es-419-travel-toothbrush-4cf543c7fcd8.png",
+      "sha256": "4cf543c7fcd8d62be6c1e92cff746c40c12cc9c866664bfda0fc96aebb7eae91",
+      "bytes": 424739
+    },
+    "artifacts/spanish-travel-2-art/originals/toothpaste-v1.png": {
+      "path": "public/images/approved/es-419-travel-toothpaste-67734738d785.png",
+      "sha256": "67734738d7859ae39f9177d45b75853442c17bea1c7c9b9dcb26e0ae6e321557",
+      "bytes": 636411
+    },
+    "artifacts/spanish-travel-2-art/originals/train-station-v1.png": {
+      "path": "public/images/approved/es-419-travel-train-station-d5fe3c1c2f27.png",
+      "sha256": "d5fe3c1c2f2751479eb91e094176d3739f7c404036a774233c51af8c0fc68d80",
+      "bytes": 1186589
+    },
+    "artifacts/spanish-travel-2-art/originals/wallet-v1.png": {
+      "path": "public/images/approved/es-419-travel-wallet-3a84b1d56b57.png",
+      "sha256": "3a84b1d56b5761bfcce95eb1861fb952df78546f0ba144194390e797f6258eb2",
+      "bytes": 878215
+    },
+    "artifacts/spanish-travel-2-art/originals/window-v1.png": {
+      "path": "public/images/approved/es-419-travel-window-7397a4f881c4.png",
+      "sha256": "7397a4f881c42f37feedeb53ab3562a4856132a344fbbacc7843f3036f9321a9",
+      "bytes": 1013608
+    },
+    "artifacts/spanish-travel-2-art/reused/drinking-glass.jpg": {
+      "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "bytes": 53360
+    },
+    "artifacts/spanish-travel-2-art/reused/plate.jpg": {
+      "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+      "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+      "bytes": 61025
+    },
+    "artifacts/spanish-travel-3-art/originals/avocado-v1.png": {
+      "path": "public/images/approved/es-419-travel-avocado-b83b43b23ef2.png",
+      "sha256": "b83b43b23ef2ae3359af219ff71e1fabc2eec2f298b3313cb4da58f13606a4fd",
+      "bytes": 750539
+    },
+    "artifacts/spanish-travel-3-art/originals/bench-v1.png": {
+      "path": "public/images/approved/es-419-travel-bench-2d2797a7bfba.png",
+      "sha256": "2d2797a7bfbaafb6ba24e832098e39243216991fb7b422cdd2cf3cb18c33d3b0",
+      "bytes": 739488
+    },
+    "artifacts/spanish-travel-3-art/originals/blanket-v2.png": {
+      "path": "public/images/approved/es-419-travel-blanket-351a571a3e5c.png",
+      "sha256": "351a571a3e5c2da6d87810504740c2bc0a8ab7517fc19236691ac35b4ff6dce3",
+      "bytes": 1112906
+    },
+    "artifacts/spanish-travel-3-art/originals/church-v1.png": {
+      "path": "public/images/approved/es-419-travel-church-5e3bdf8785a2.png",
+      "sha256": "5e3bdf8785a2c517062ab83e4d7bcdfd361434bb0363ce3b073c6b6bf4580a73",
+      "bytes": 927690
+    },
+    "artifacts/spanish-travel-3-art/originals/comb-v1.png": {
+      "path": "public/images/approved/es-419-travel-comb-23c2cf49d399.png",
+      "sha256": "23c2cf49d399fceb4f8759c412537fb34d32c9d12550da8ac2351e1c71e4a418",
+      "bytes": 464671
+    },
+    "artifacts/spanish-travel-3-art/originals/crosswalk-v2.png": {
+      "path": "public/images/approved/es-419-travel-crosswalk-9ac15adb8b5d.png",
+      "sha256": "9ac15adb8b5d322e0c1653d6e2fce2d7b273ff23da14ecea8c93b1b60d74ffb4",
+      "bytes": 1280250
+    },
+    "artifacts/spanish-travel-3-art/originals/fountain-v1.png": {
+      "path": "public/images/approved/es-419-travel-fountain-d98085a1b51f.png",
+      "sha256": "d98085a1b51f9d212bf9bf7590b9796ba0067e53b19b8958b8360222afc85bad",
+      "bytes": 810223
+    },
+    "artifacts/spanish-travel-3-art/originals/gas-station-v1.png": {
+      "path": "public/images/approved/es-419-travel-gas-station-eecdaea804c5.png",
+      "sha256": "eecdaea804c5dd9143a63363aebf0cad80c7ae7cf86c78a6fee29bc0ffeaedde",
+      "bytes": 981944
+    },
+    "artifacts/spanish-travel-3-art/originals/hair-dryer-v1.png": {
+      "path": "public/images/approved/es-419-travel-hair-dryer-315e39836142.png",
+      "sha256": "315e398361420246204b7bd8727bc6ca176b5f29ea4782a8f1344555405ccf36",
+      "bytes": 651588
+    },
+    "artifacts/spanish-travel-3-art/originals/hat-v1.png": {
+      "path": "public/images/approved/es-419-travel-hat-1f1050653c2a.png",
+      "sha256": "1f1050653c2afc9fda6775474ad29e6448a853f9162711a0d61731b3510e607a",
+      "bytes": 707418
+    },
+    "artifacts/spanish-travel-3-art/originals/helmet-v1.png": {
+      "path": "public/images/approved/es-419-travel-helmet-f5b5bde3ca52.png",
+      "sha256": "f5b5bde3ca52fbb3099b007fbd678fbe0a79320593f577723cea576a4ba21939",
+      "bytes": 980922
+    },
+    "artifacts/spanish-travel-3-art/originals/ice-cream-v1.png": {
+      "path": "public/images/approved/es-419-travel-ice-cream-ff36868d092f.png",
+      "sha256": "ff36868d092f83a2a9ca747a250298cfb221a1c9a1ea08c937d99c2464e7da2a",
+      "bytes": 639727
+    },
+    "artifacts/spanish-travel-3-art/originals/island-v1.png": {
+      "path": "public/images/approved/es-419-travel-island-f6d91ce0a14b.png",
+      "sha256": "f6d91ce0a14bb8e3beb5237f866ca4709aeed97d05519b304121d480742f6b17",
+      "bytes": 996218
+    },
+    "artifacts/spanish-travel-3-art/originals/jacket-v1.png": {
+      "path": "public/images/approved/es-419-travel-jacket-795c5dab271d.png",
+      "sha256": "795c5dab271d6a8a49133f282aad0711023752d0b5029b9dd4757f11375dcd9a",
+      "bytes": 1124561
+    },
+    "artifacts/spanish-travel-3-art/originals/lake-v1.png": {
+      "path": "public/images/approved/es-419-travel-lake-0fdb6a91c9a5.png",
+      "sha256": "0fdb6a91c9a5db6a0c1df06c29fc578b6d8e01c578b320591027fed74a658cde",
+      "bytes": 989048
+    },
+    "artifacts/spanish-travel-3-art/originals/mirror-v1.png": {
+      "path": "public/images/approved/es-419-travel-mirror-e8f274922a8f.png",
+      "sha256": "e8f274922a8f0a215e76a1d5e765643183c14923253c104a13861edb836c4f2a",
+      "bytes": 656417
+    },
+    "artifacts/spanish-travel-3-art/originals/motorcycle-v1.png": {
+      "path": "public/images/approved/es-419-travel-motorcycle-1ec276168669.png",
+      "sha256": "1ec276168669e3c9597407c9ac17f901292988b3410cd3de5a86cb44f904f6b2",
+      "bytes": 899680
+    },
+    "artifacts/spanish-travel-3-art/originals/orange-v1.png": {
+      "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+      "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87",
+      "bytes": 874148
+    },
+    "artifacts/spanish-travel-3-art/originals/pants-v1.png": {
+      "path": "public/images/approved/es-419-travel-pants-90aa1bee196d.png",
+      "sha256": "90aa1bee196db6f5d700e86a8f55dae35ccaa6dd5f860467b447e283d0ad9870",
+      "bytes": 905514
+    },
+    "artifacts/spanish-travel-3-art/originals/parking-lot-v1.png": {
+      "path": "public/images/approved/es-419-travel-parking-lot-73b25dceba61.png",
+      "sha256": "73b25dceba613588d260def8a3440c85b8594ed09d223d622d2757f99bcd54fb",
+      "bytes": 891182
+    },
+    "artifacts/spanish-travel-3-art/originals/pillow-v1.png": {
+      "path": "public/images/approved/es-419-travel-pillow-a397ed3fe63d.png",
+      "sha256": "a397ed3fe63df1ea116075c1d45b811e3a0a4c0a8fbd157867fbbd218d7b3f90",
+      "bytes": 968884
+    },
+    "artifacts/spanish-travel-3-art/originals/seat-belt-v1.png": {
+      "path": "public/images/approved/es-419-travel-seat-belt-d03156958614.png",
+      "sha256": "d031569586148aae46d24908154f1b269ff2227ddd1820fc0e833ee5e702afbf",
+      "bytes": 1054329
+    },
+    "artifacts/spanish-travel-3-art/originals/shirt-v1.png": {
+      "path": "public/images/approved/es-419-travel-shirt-67800a7717f8.png",
+      "sha256": "67800a7717f8b5e94796f8ee670468c5ab897ab1018d30d88327bf6d77ec0a83",
+      "bytes": 1104787
+    },
+    "artifacts/spanish-travel-3-art/originals/shoe-v1.png": {
+      "path": "public/images/approved/es-419-travel-shoe-e1aae1902903.png",
+      "sha256": "e1aae1902903f570f8b86aff5b4bd7328b083304af4a7e6307b0d919418f2374",
+      "bytes": 807036
+    },
+    "artifacts/spanish-travel-3-art/originals/sidewalk-v1.png": {
+      "path": "public/images/approved/es-419-travel-sidewalk-ab70ae59c070.png",
+      "sha256": "ab70ae59c0700fde1ae445c22f32b2bcd253b161ea0598218c8fe9bf553947e5",
+      "bytes": 1110558
+    },
+    "artifacts/spanish-travel-3-art/originals/subway-v1.png": {
+      "path": "public/images/approved/es-419-travel-subway-0c37bde8fdbc.png",
+      "sha256": "0c37bde8fdbcc471e92a7596e59f6e42086c5b42dea5b14a6e5dd2f19eef853d",
+      "bytes": 1428874
+    },
+    "artifacts/spanish-travel-3-art/originals/swimsuit-v1.png": {
+      "path": "public/images/approved/es-419-travel-swimsuit-e1eff7e6d3df.png",
+      "sha256": "e1eff7e6d3dfc5b46caeba1c20003d3478df31012044bbb6fb4c8bab3201ed28",
+      "bytes": 798934
+    },
+    "artifacts/spanish-travel-3-art/originals/taco-v1.png": {
+      "path": "public/images/approved/es-419-travel-taco-109cf9b587d3.png",
+      "sha256": "109cf9b587d3d04bc6b6a4d58962925fb7a13cc6e773e40c6a44b0193f106127",
+      "bytes": 786640
+    },
+    "artifacts/spanish-travel-3-art/originals/toilet-paper-v3.png": {
+      "path": "public/images/approved/es-419-travel-toilet-paper-78b3759a6922.png",
+      "sha256": "78b3759a692274f509777de68c7a5f6abcbcef89e5561f95acbb924c7be1896f",
+      "bytes": 828723
+    },
+    "artifacts/spanish-travel-3-art/originals/traffic-light-v1.png": {
+      "path": "public/images/approved/es-419-travel-traffic-light-424468b5f51b.png",
+      "sha256": "424468b5f51b8fe393730157ae06e3312cfc0d81c2d509f78034d298a2c2a854",
+      "bytes": 677762
+    },
+    "artifacts/spanish-travel-3-art/originals/waterfall-v1.png": {
+      "path": "public/images/approved/es-419-travel-waterfall-2b897d66aebc.png",
+      "sha256": "2b897d66aebca128af917685b90c18ed282168e0f579fd524f3ee539444800ae",
+      "bytes": 984065
+    },
+    "artifacts/spanish-travel-3-art/reused/apple.jpg": {
+      "path": "public/images/approved/ja-apple-693c57b57b06.jpg",
+      "sha256": "4b763836b91c4aca2bc1058e911b3456ba527742bf672742e90e88acfd35850f",
+      "bytes": 58915
+    },
+    "artifacts/spanish-travel-3-art/reused/banana.jpg": {
+      "path": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+      "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af",
+      "bytes": 54465
+    },
+    "artifacts/spanish-travel-3-art/reused/forest.png": {
+      "path": "public/images/approved/ja-v-698044202165-8f2b6799af1c.png",
+      "sha256": "be4cc43854267ee04f90c1d5927c307a15021b0bed71afa7dd5a5ebe0ed85d5e",
+      "bytes": 321710
+    },
+    "artifacts/spanish-travel-3-art/reused/mountain.jpg": {
+      "path": "public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg",
+      "sha256": "ce6f40bb2fde03ae06e1f1ea9be86797617f109e00684be8a08cc2caf782bfe2",
+      "bytes": 49727
+    },
+    "artifacts/spanish-travel-3-art/reused/river.jpg": {
+      "path": "public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg",
+      "sha256": "bf0fbf654b6c97a908a5eefe05fab21d704a1d3496a6757bb8a6c63523300519",
+      "bytes": 97302
+    },
+    "artifacts/spanish-travel-art/batch-01/airplane-v1.png": {
+      "path": "public/images/approved/es-419-travel-airplane-31eb62af2c40.png",
+      "sha256": "31eb62af2c4036826cf1d2bde9dfdeffc24732ede5a63bde49b0ec8bed7c6297",
+      "bytes": 715945
+    },
+    "artifacts/spanish-travel-art/batch-01/airport-v1.png": {
+      "path": "public/images/approved/es-419-travel-airport-6642b11abd88.png",
+      "sha256": "6642b11abd88ab05d8ada9ea48e62bb6bb61ad910755eadff9102d6c7b75e145",
+      "bytes": 757854
+    },
+    "artifacts/spanish-travel-art/batch-01/bicycle-v1.png": {
+      "path": "public/images/approved/es-419-travel-bicycle-bbafd811711d.png",
+      "sha256": "bbafd811711d09ba4d2f8cafd2cd183e1c80ab4ff8fc0c4602205fd91fa6c5e8",
+      "bytes": 897305
+    },
+    "artifacts/spanish-travel-art/batch-01/bus-v1.png": {
+      "path": "public/images/approved/es-419-travel-bus-27ad0d212813.png",
+      "sha256": "27ad0d21281302b39f8a6fd2e0cb8f2cb58d6e9fa6a23b82e1c9309564cedeaf",
+      "bytes": 823031
+    },
+    "artifacts/spanish-travel-art/batch-01/taxi-v1.png": {
+      "path": "public/images/approved/es-419-travel-taxi-8bac03daf66f.png",
+      "sha256": "8bac03daf66fe033758cdd8650fbe71576ecc7140f397202027d3af0e3aa2e10",
+      "bytes": 845063
+    },
+    "artifacts/spanish-travel-art/batch-01/train-v1.png": {
+      "path": "public/images/approved/es-419-travel-train-f36bbdd0065e.png",
+      "sha256": "f36bbdd0065e3972095bd6a9e63d3d6b9fee26439369393072e50096bb09e981",
+      "bytes": 707991
+    },
+    "artifacts/spanish-travel-art/batch-02/backpack-v1.png": {
+      "path": "public/images/approved/es-419-travel-backpack-0b08a4776a44.png",
+      "sha256": "0b08a4776a4420fde360b2bcc892104a8019bba92f3e30ab5766c5632cc2e558",
+      "bytes": 1165471
+    },
+    "artifacts/spanish-travel-art/batch-02/map-v1.png": {
+      "path": "public/images/approved/es-419-travel-map-3c9adf702be2.png",
+      "sha256": "3c9adf702be2a05fc9366e45db05e5c4b3f9c4b5130bde9e0194d6815e964325",
+      "bytes": 990419
+    },
+    "artifacts/spanish-travel-art/batch-02/passport-v2.png": {
+      "path": "public/images/approved/es-419-travel-passport-3eb38fe29b5a.png",
+      "sha256": "3eb38fe29b5ad6a9eace2a132d04244aa5895996c61fcce366ded6fd0d1ca40d",
+      "bytes": 679034
+    },
+    "artifacts/spanish-travel-art/batch-02/phone-v1.png": {
+      "path": "public/images/approved/es-419-travel-phone-10dd4649216b.png",
+      "sha256": "10dd4649216bb3661b61176bec850795bb0313c316df739a055eeb067c460b22",
+      "bytes": 830265
+    },
+    "artifacts/spanish-travel-art/batch-02/suitcase-v1.png": {
+      "path": "public/images/approved/es-419-travel-suitcase-6d4224762fc6.png",
+      "sha256": "6d4224762fc6beef5c856ddd184619526a36961d7e424bd686e0563e42e4a63b",
+      "bytes": 713227
+    },
+    "artifacts/spanish-travel-art/batch-02/ticket-v1.png": {
+      "path": "public/images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
+      "sha256": "d6b16a19a7a00fd6824c782e9f9c3d0b6dacac6e7efaae1de7e50d04ca76f3af",
+      "bytes": 826487
+    },
+    "artifacts/spanish-travel-art/batch-03/bathroom-v1.png": {
+      "path": "public/images/approved/es-419-travel-bathroom-a3e9a9d56fa6.png",
+      "sha256": "a3e9a9d56fa625f6a3cd0cbbb429b3d6ba7af49cf128ac224c32ee09aff239ba",
+      "bytes": 870812
+    },
+    "artifacts/spanish-travel-art/batch-03/bed-v1.png": {
+      "path": "public/images/approved/es-419-travel-bed-52131766ae9b.png",
+      "sha256": "52131766ae9b24f94ba992b62994f63b11b475d27615aa61ec948b1b0227b9f3",
+      "bytes": 885264
+    },
+    "artifacts/spanish-travel-art/batch-03/elevator-v1.png": {
+      "path": "public/images/approved/es-419-travel-elevator-b48b27b15a6b.png",
+      "sha256": "b48b27b15a6b626c70179449508b2635a3024415f6e7b0d49da73990c55b69ed",
+      "bytes": 1144214
+    },
+    "artifacts/spanish-travel-art/batch-03/key-v1.png": {
+      "path": "public/images/approved/es-419-travel-key-5dd79de14b34.png",
+      "sha256": "5dd79de14b34eac0598d2abfb1f61c1b328078a6e0d5c02aab279bb9f3a6dd7d",
+      "bytes": 559990
+    },
+    "artifacts/spanish-travel-art/batch-03/shower-v1.png": {
+      "path": "public/images/approved/es-419-travel-shower-6ace4149ea77.png",
+      "sha256": "6ace4149ea77e8db17bf98c8ae7fd2300321e296ba12f37d2bdec2dd01204326",
+      "bytes": 701442
+    },
+    "artifacts/spanish-travel-art/batch-03/towel-v1.png": {
+      "path": "public/images/approved/es-419-travel-towel-af3dcb9df4b6.png",
+      "sha256": "af3dcb9df4b67539e845a64014c2f48d92b34088649d375f89d508b765070026",
+      "bytes": 868358
+    },
+    "artifacts/spanish-travel-art/batch-04/bread-v1.png": {
+      "path": "public/images/approved/es-419-travel-bread-843bf04cbd40.png",
+      "sha256": "843bf04cbd401ce3ba501fbbaa30360ee055b46879ebd3c64e011924a93f5992",
+      "bytes": 722968
+    },
+    "artifacts/spanish-travel-art/batch-04/juice-v1.png": {
+      "path": "public/images/approved/es-419-travel-juice-7dcfc819e448.png",
+      "sha256": "7dcfc819e448fc65d826ddc07f11cc7b4ba64d54b6e800ec2fbb07ecc92f444d",
+      "bytes": 768999
+    },
+    "artifacts/spanish-travel-art/batch-04/milk-v1.png": {
+      "path": "public/images/approved/es-419-travel-milk-ab6c590f6879.png",
+      "sha256": "ab6c590f6879bb1404982b2a7c522973333d007e6bdd233c0d390f1b4dc2f831",
+      "bytes": 892054
+    },
+    "artifacts/spanish-travel-art/batch-04/money-v1.png": {
+      "path": "public/images/approved/es-419-travel-money-cbd131037276.png",
+      "sha256": "cbd1310372763a7011d0aeb42d10c8319bfcdbcc3336985e6b2641ad9db3aba6",
+      "bytes": 1100611
+    },
+    "artifacts/spanish-travel-art/batch-04/restaurant-v1.png": {
+      "path": "public/images/approved/es-419-travel-restaurant-0df277e0e41d.png",
+      "sha256": "0df277e0e41d17ba695b9a0a4176671aa7aabaf549da9d715c17b1410eb6c2df",
+      "bytes": 1238685
+    },
+    "artifacts/spanish-travel-art/batch-05/beach-v1.png": {
+      "path": "public/images/approved/es-419-travel-beach-865816b51a61.png",
+      "sha256": "865816b51a610c23e07ba58da42dcb0e910f294315928c5ceeee464d16b61bcb",
+      "bytes": 785992
+    },
+    "artifacts/spanish-travel-art/batch-05/boat-v1.png": {
+      "path": "public/images/approved/es-419-travel-boat-0261a13c9142.png",
+      "sha256": "0261a13c914287bd5173eaf049fdd7445ee61b2eccc001791d681d659155c0ac",
+      "bytes": 824969
+    },
+    "artifacts/spanish-travel-art/batch-05/bottle-v1.png": {
+      "path": "public/images/approved/es-419-travel-bottle-beb0382d6a4a.png",
+      "sha256": "beb0382d6a4a30303d19eaef7740e9eeca77058b71906b66749231f9614f5e73",
+      "bytes": 669431
+    },
+    "artifacts/spanish-travel-art/batch-05/camera-v1.png": {
+      "path": "public/images/approved/es-419-travel-camera-c1496b53ae1c.png",
+      "sha256": "c1496b53ae1c3f3e6c5cccad3aa3489cf50cc073d937c71baee13e9dc6c49d10",
+      "bytes": 1031002
+    },
+    "artifacts/spanish-travel-art/batch-05/credit-card-v1.png": {
+      "path": "public/images/approved/es-419-travel-credit-card-b159c940b909.png",
+      "sha256": "b159c940b90939a91c8cec23fc20f962330c9936fc81dcd7978f25bc26ae8bcf",
+      "bytes": 931437
+    },
+    "artifacts/spanish-travel-art/batch-05/hospital-v1.png": {
+      "path": "public/images/approved/es-419-travel-hospital-c240ad4edc40.png",
+      "sha256": "c240ad4edc40b778b21e8546e8a4e7bc503216c6c462b152048d90d599050a5e",
+      "bytes": 1021613
+    },
+    "artifacts/spanish-travel-art/batch-05/pharmacy-v1.png": {
+      "path": "public/images/approved/es-419-travel-pharmacy-d5d214e03f72.png",
+      "sha256": "d5d214e03f72bcb770c71a43b3db422592e458625302d06306aa974f5db24b1e",
+      "bytes": 1031461
+    },
+    "artifacts/spanish-travel-art/reused/car.jpg": {
+      "path": "public/images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg",
+      "sha256": "cca51aa614f272be6bee1f7c66420eb585a5ae96094cecabb08b545a885f45ec",
+      "bytes": 74120
+    },
+    "artifacts/spanish-travel-art/reused/coffee.jpg": {
+      "path": "public/images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+      "sha256": "14ff37f9a16578db1bbff76a63e876cea1bb63b358d587367e69b36d85d7022f",
+      "bytes": 60226
+    },
+    "artifacts/spanish-travel-art/reused/hotel.jpg": {
+      "path": "public/images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+      "sha256": "550f40792cd4643d7d1f21ffbde1ed705902fac181badedcc53bd7d33d5f053b",
+      "bytes": 115833
+    },
+    "artifacts/spanish-travel-art/reused/rice.jpg": {
+      "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+      "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c",
+      "bytes": 89912
+    },
+    "artifacts/spanish-travel-art/reused/umbrella.jpg": {
+      "path": "public/images/approved/ja-umbrella-87536b6a75df.jpg",
+      "sha256": "f86d16756f43fd494e6f385a6c1056c96c1e9b806cdaec98733bc06b037e84b4",
+      "bytes": 66078
+    },
+    "artifacts/spanish-travel-art/reused/water.jpg": {
+      "path": "public/images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+      "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5",
+      "bytes": 47630
+    }
+  }
+}

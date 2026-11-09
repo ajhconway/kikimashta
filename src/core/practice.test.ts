@@ -29,11 +29,10 @@ describe('active practice pool', () => {
     }
   });
 
-  it('retains removed source identity and media while excluding it from playable selections', () => {
+  it('retains removed source identity while excluding it from playable selections', () => {
     const removedId = 'ja-v-4fd3d09440c1';
     const archived = items.find(item => item.id === removedId);
     expect(archived).toMatchObject({ text: '～形', reading: 'けい', meaning: 'Form' });
-    for (const clip of archived!.audio) expect(existsSync(resolve('public', clip.src))).toBe(true);
     expect(library.cards.some(card => card.id === removedId)).toBe(false);
     expect(practicePool.items.some(item => item.id === removedId)).toBe(false);
   });
