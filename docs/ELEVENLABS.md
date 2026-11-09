@@ -145,7 +145,7 @@ Generation reuses the sidecar/hash-verified engine with two concurrent requests,
 
 All 288 originals and normalized deliveries are complete. The existing profile fully decodes each delivery and preserves its duration. Four deliveries remain safely quieter and are listed in `content/spanish-travel-audio/generated-media.json`. A durable private copy of originals, sidecars, complete processing records and usage evidence is preserved under `~/.local/share/kikimashta/spanish-audio/155-v1`; every archived file was hash-verified. The checked-in review retains public provenance and plays the identical accepted production MP3s. No key, account usage files or provider originals enter the review or browser code.
 
-Serve the repository root with `python3 -m http.server 5180 --bind 127.0.0.1 --directory .` and open `/artifacts/spanish-travel-audio-review/index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. Final listening acceptance precedes expanded-pack activation; this preparation does not change the active starter bank or delete historical Cesar audio.
+Serve the repository root with `python3 -m http.server 5180 --bind 127.0.0.1 --directory .` and open `/artifacts/spanish-travel-audio-review/index.html` to listen. The review supports accent-insensitive Spanish/English search, voice/region filtering, native single-clip controls and Play visible clips. New listening reviews need owner acceptance before activation. Retired Cesar audio and its records are recoverable from Git history.
 
 
 ### Accepted Spanish pack activation (#159)
