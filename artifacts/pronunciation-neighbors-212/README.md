@@ -1,6 +1,37 @@
 # Pronunciation distance comparison (#212)
 
-Compare the deployed Japanese normalized mora edit distance with a controlled acoustically weighted edit distance. Production behavior is unchanged. This is an offline ranking experiment with an unfinished human listening review, not evidence of learning effectiveness.
+Compare the deployed Japanese normalized mora edit distance with a controlled acoustically weighted edit distance. Production behavior is unchanged. This is an offline ranking experiment with one completed owner listening review, not evidence of learning effectiveness.
+
+## Collected owner listening results
+
+The owner submitted all twelve responses without revealing words. The export matches the original input digest and has no unanswered, uncertain or neither responses. Exact submitted bytes, original listening report/key, presentation source and scored output are preserved under `collected/`, with hashes and source commit in `collected/provenance.json`.
+
+| Assigned voice | Acoustic weighting preferred | Baseline preferred | Tie |
+| --- | --- | --- | --- |
+| Otani | 3 | 1 | 2 |
+| Morioki | 2 | 1 | 3 |
+| Total | **5** | **2** | **5** |
+
+| Target | Otani | Morioki |
+| --- | --- | --- |
+| 犬 | Tie | Tie |
+| 口 | Acoustic weights | Acoustic weights |
+| 牛肉 | Tie | Tie |
+| 工学 | Acoustic weights | Tie |
+| 一台 | Baseline | Baseline |
+| 人工 | Acoustic weights | Acoustic weights |
+
+This favors the weighted ranked examples descriptively, while identifying a repeatable baseline preference for 一台. It is one participant judging six targets twice, not twelve independent participants. Half the predeclared targets could not enter the paired comparison, and the two synthetic ordering reversals remain unresolved. Treat weighted ranking as a promising candidate for a limited pilot, not a demonstrated learning improvement. Production's six-neighbor shuffling still limits how much a ranking-only change would affect choices; keep deployment separate from this experiment.
+
+Only 工学 among these six targets changes six-candidate membership. In particular, 口 and 人工 (the two targets favoring weighting in both voices) retain the same six candidates and differ in the illustrated ranked trios. Dropping weights into the existing shuffle would not reproduce those specific preferred groups; using that evidence would require a separately evaluated selection-policy change.
+
+Reproduce this collected review using its original revision explicitly:
+
+```sh
+node scripts/content/score-pronunciation-listening.mjs artifacts/pronunciation-neighbors-212/collected/owner-responses.json --revision artifacts/pronunciation-neighbors-212/collected
+```
+
+After collection, code review identified that presentation source should also participate in the experiment digest. New generated reports include that source and have a new digest/storage key. The exact original report/key/renderer remain archived for the collected responses, whose digest is never rewritten; the scorer rejects combining them with the newer generated report. The original renderer is additionally hash-bound in the collection provenance. No participant needs to repeat this review to preserve its validity.
 
 ## Initial measured results
 
@@ -30,7 +61,7 @@ There are **12 paired trials**: six eligible predeclared targets, each in Otani 
 
 Listen to the target and the two groups; choose which group sounds closer while remaining distinguishable. Use Tie, Neither or Uncertain where appropriate. Every clip within a trial uses the same assigned voice. A/B mappings reverse between voice passes for each target; fixed hash ordering separates repeated targets. Candidate order is canonical in both groups to avoid leaking model rank. Model names, scores and the decoding key are absent from the page. Avoid inspecting `blind-key.json`, `listening.json` or rankings before listening if you want to preserve blinding.
 
-Words stay hidden until a response is chosen. Revealing them is recorded and those responses are reported separately. Answers save under an experiment-specific localStorage key tied to the bank, scoring sources, model tables and exact MP3 hashes. They never enter practice progress or account sync. Click **Export responses** to download actual judgments; unanswered trials stay null. No human preferences have been collected or committed. Browser tests use isolated synthetic responses solely to verify persistence/export and do not contribute results.
+Words stay hidden until a response is chosen. Revealing them is recorded and those responses are reported separately. Answers save under an experiment-specific localStorage key tied to the bank, scoring and presentation sources, model tables and exact MP3 hashes. They never enter practice progress or account sync. Click **Export responses** to download actual judgments; unanswered trials stay null. The owner's original completed review is preserved separately above; this regenerated revision starts with no local responses. Browser tests use isolated synthetic responses solely to verify persistence/export and do not contribute results.
 
 Analyze an export with:
 
@@ -62,4 +93,4 @@ node --test scripts/content/acoustic-pronunciation-distance.test.mjs scripts/con
 
 The first command regenerates outputs from the frozen inputs; `--check` verifies byte-identical output. `--refresh-bank` explicitly replaces the bank/picture-policy snapshots from the current app; use it only to start a new experiment revision before collecting judgments, and update the generator's recorded `bankSourceCommit` to that revision. Preserve the baseline source revision separately if changing it. Do not overwrite earlier human-response provenance. Test fixtures validate alignment, length/gemination, normalized identity, unsupported inputs, picture validity, exact regeneration, blind presentation and missing-response handling. The original two-model semantic experiment remains unchanged.
 
-Verification: `npm run check` passed lint, TypeScript, 537 Vitest/React tests, 280 Node tests, 18 content Python tests, 27 card Python tests, runtime-neighbor validation and production build. The focused content-review journey passed in Chromium and mobile WebKit with native playback, isolated browser storage, reload and export. These browser checks do not complete human listening judgments or real-iPhone acceptance.
+Verification after collecting responses and binding the presentation source: `npm run check` passed lint, TypeScript, 537 Vitest/React tests, 281 Node tests, 18 content Python tests, 27 card Python tests, runtime-neighbor validation and production build. The focused content-review journey passed in Chromium and mobile WebKit with native playback, isolated browser storage, reload and export. These browser checks do not replace human listening judgments or real-iPhone acceptance.

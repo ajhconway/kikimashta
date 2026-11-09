@@ -106,6 +106,7 @@ export function runComparison(bank, policy, benchmark, acoustic) {
       ['ordered', 'tie', 'reversed', 'unsupported'].map(result => [result, benchmarkRows.filter(row => row.classification === group && row.distances[method].result === result).length]));
   }
   const sourceFiles = ['scripts/content/acoustic-pronunciation-distance.mjs', 'scripts/content/compare-pronunciation-neighbors.mjs',
+    'scripts/content/pronunciation-listening-review.mjs',
     'artifacts/pronunciation-neighbors-212/baseline-pronunciation.ts', ...['distance_consonants_bi.csv', 'distance_vowels_bi.csv', 'kana2phonome_bi.csv'].map(name => `artifacts/pronunciation-neighbors-212/vendor/${name}`)];
   const sourceDigests = Object.fromEntries(sourceFiles.map(path => [path, digest(readFileSync(resolve(root, path)))]));
   const audioDigests = Object.fromEntries(bank.flatMap(item => item.audio.filter(clip => ['otani', 'morioki'].includes(clip.voice))

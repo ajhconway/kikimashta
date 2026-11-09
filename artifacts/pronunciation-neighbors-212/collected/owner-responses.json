@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "pronunciation-neighbors-212",
+  "inputDigest": "39ca2ad3cd9ee9b72364aff72feb5e595901023102936e0366e745a7c8bee779",
+  "responses": [
+    {
+      "trialId": "T12-V2",
+      "voice": "morioki",
+      "preference": "B",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T01-V1",
+      "voice": "otani",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T07-V1",
+      "voice": "otani",
+      "preference": "B",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T07-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T02-V1",
+      "voice": "otani",
+      "preference": "A",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T10-V2",
+      "voice": "morioki",
+      "preference": "A",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T01-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T02-V2",
+      "voice": "morioki",
+      "preference": "B",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T10-V1",
+      "voice": "otani",
+      "preference": "B",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T04-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T12-V1",
+      "voice": "otani",
+      "preference": "A",
+      "notes": "",
+      "revealed": false
+    },
+    {
+      "trialId": "T04-V1",
+      "voice": "otani",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false
+    }
+  ]
+}

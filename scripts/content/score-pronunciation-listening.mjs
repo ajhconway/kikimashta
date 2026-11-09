@@ -21,7 +21,8 @@ export function scoreListeningResponses(saved, report, key) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   if (!process.argv[2]) throw new Error('Usage: node scripts/content/score-pronunciation-listening.mjs /path/to/exported-responses.json');
-  const folder = new URL('../../artifacts/pronunciation-neighbors-212/', import.meta.url);
+  const folder = process.argv[3] === '--revision' && process.argv[4] ? resolve(process.argv[4]) :
+    fileURLToPath(new URL('../../artifacts/pronunciation-neighbors-212/', import.meta.url));
   const read = path => JSON.parse(readFileSync(path, 'utf8'));
-  console.log(JSON.stringify(scoreListeningResponses(read(process.argv[2]), read(new URL('listening.json', folder)), read(new URL('blind-key.json', folder))), null, 2));
+  console.log(JSON.stringify(scoreListeningResponses(read(process.argv[2]), read(resolve(folder, 'listening.json')), read(resolve(folder, 'blind-key.json'))), null, 2));
 }

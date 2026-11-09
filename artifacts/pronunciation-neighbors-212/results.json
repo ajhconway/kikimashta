@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
-  "inputDigest": "39ca2ad3cd9ee9b72364aff72feb5e595901023102936e0366e745a7c8bee779",
+  "inputDigest": "8b98686942db9196ddffe6df7ea40d81e050f4a956a0a9aab4d44993d91715b1",
   "sourceDigests": {
     "scripts/content/acoustic-pronunciation-distance.mjs": "bb1d32087906807274245300da6be2cd8f8620cbe2ddaccff33c4199d3b746e3",
-    "scripts/content/compare-pronunciation-neighbors.mjs": "15ef1fb44f3db3026cdc90f3f9d98cb4332cd1d97480db776cbe05100031bad0",
+    "scripts/content/compare-pronunciation-neighbors.mjs": "f9f90e94ee39c8918e9584f614b09fbaea19ebc06061ea232d8fc9d52fbd10a1",
+    "scripts/content/pronunciation-listening-review.mjs": "bb569abd4bf4d9add83f2660646e34ba33d0aa46f34d60710ef65e63366d25b8",
     "artifacts/pronunciation-neighbors-212/baseline-pronunciation.ts": "c5785a0da8696367a85b4aacdb1eeb16ac79ff34ab6590ac22c083f7c580b923",
     "artifacts/pronunciation-neighbors-212/vendor/distance_consonants_bi.csv": "03101f602c7c9c433f3fbcae19ab618bdba817c8e46315d33dff9e679cfa4d9b",
     "artifacts/pronunciation-neighbors-212/vendor/distance_vowels_bi.csv": "2cf16b4ec38d4b88403deeddf1f11e371e8b0113a96f03d0137274f8a320aca9",
