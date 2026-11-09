@@ -1,3 +1,4 @@
+import { selectWordPractice } from './practice-selection';
 import { expectReadableHomeText } from './contrast';
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
@@ -6,6 +7,8 @@ import pool from '../content/practice-pool.json' with { type: 'json' };
 import type { Exercise, WordItem } from '../src/types';
 
 const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
+test.beforeEach(async ({ page }) => { await selectWordPractice(page); });
+
 const allWords = [...starter.items, ...catalogue.items] as WordItem[];
 // Six active WaniKani words keep the existing session journeys bounded.
 const bank = { ...starter, items: [
@@ -206,6 +209,11 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   test.setTimeout(90_000);
   await page.clock.install();
   await page.goto('./');
+  // Both formats of the same levels keep this lesson's five/five sample balanced.
+  await page.evaluate(() => localStorage.setItem('kikimashta-card-packs-v1', JSON.stringify([
+    'ja-wanikani-2-pictures', 'ja-wanikani-2-writing', 'ja-wanikani-3-pictures', 'ja-wanikani-3-writing',
+  ])));
+  await page.reload();
   await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
   await expect.poll(() => page.evaluate(() => Array.from(document.fonts).some(face => face.family.includes('Kikimashta Noto Sans JP') && face.status === 'loaded'))).toBe(true);
   const homeColor = await backgroundColor(page);

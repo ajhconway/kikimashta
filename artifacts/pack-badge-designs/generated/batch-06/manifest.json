@@ -1,0 +1,74 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "mastered-wk-base-v3",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact approved Mastered WK blank badge. The owner wants ONLY THE CREAM/WHITE FACE AREA made the SAME SIZE as the smaller faces on the other ranks. Do not shrink the entire badge. Keep the EXACT original1254x1254 canvas, full-size outer gold silhouette, crown, wings, existing ribbon and ribbon placement. Reduce the diameter of the cream circular inset from about56% to49% of the canvas width, EXTENDING THE GOLD RIM INWARD to fill the removed white space. New cream face horizontally centered x49.2%, spanning x24.7%..73.7%; top of cream face at y30.5%; ribbon still covers it at y70.5%, so the exposed cream area is about40% canvas tall. This is a visibly smaller cream inset with a thicker gold border, not a smaller outer badge and not a larger symbol. Keep the same warm creamy/pale-pink gradient and softly shaded gold rim. Move the small matching pink flower and two flanking petals into the top of the new inset, centered x49.2% y39.5%, approximately29% canvas width and12% height. Leave the remainder of the face completely empty for WK text added by app; leave the ribbon completely empty. Preserve all other original design features and their positions, exact full-size crown and wings. Do not add text, suitcase, icons or extra ornaments. Genuine transparent alpha outside the exact badge silhouette, no backdrop or glow.",
+      "reference": "artifacts/pack-badge-designs/generated/batch-05/mastered-wk-base-v2.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-ee798a8f-ddf2-46cb-9528-9acf34591021.png",
+      "file": "mastered-wk-base-v3.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        1244,
+        1254
+      ],
+      "sha256": "42bacfecef1554edbb7430cf0c78b52293175a8b228b47b640c5c34b1d8f8f44",
+      "delivery": "public/media/badges/mastered-wk-base-v3.webp",
+      "delivery_sha256": "6a943339948d2347a0f4c0ff32e19e5decd2c151e10b18fe14e74acaf7fac8d1",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "smaller cream inset, owner clarification; awaiting visual feedback"
+    },
+    {
+      "id": "mastered-travel-base-v2",
+      "prompt": "Use case: precise-object-edit. Edit this EXACT supplied Mastered badge blank to make the matching suitcase-family background. Remove ONLY the small pink sakura flower and its two flanking detached petals INSIDE the cream circular face, filling them seamlessly with the existing cream/pale-pink gradient. Preserve the newly SMALLER cream face and thicker inward gold rim exactly. Keep canvas, crown and its own emblem, wings, full outer badge silhouette, blank ribbon and all shading and placements completely unchanged. The cream face must be wholly empty. No suitcase, WK, text, icons or new objects. Genuine transparent alpha background, preserve opaque cream and pale artwork. Only the inside-face flower and two petals disappear.",
+      "reference": "artifacts/pack-badge-designs/generated/batch-06/mastered-wk-base-v3.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-f71d782a-9390-4033-8861-cfe320a8cbe1.png",
+      "file": "mastered-travel-base-v2.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        1243,
+        1254
+      ],
+      "sha256": "84b1c813b619c10832487cfa173d72a348f974a0eb226c378cb83f11a37f2501",
+      "delivery": "public/media/badges/mastered-travel-base-v2.webp",
+      "delivery_sha256": "9d23d9e5461bc54a863d4621716e5ea46a547a7212ca56bf0bc8a36c9edf6c59",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "smaller cream inset, owner clarification; awaiting visual feedback"
+    }
+  ]
+}

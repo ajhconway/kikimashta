@@ -16,6 +16,12 @@ import { quizTimeLimit } from './core/quiz-timer';
 import type { Exercise, PracticeAttempt } from './types';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
 
+vi.mock('./content/contextual-runtime', async original => {
+  const actual = await original<typeof import('./content/contextual-runtime')>();
+  const { withHistoricalJapanesePractice } = await import('./test/contextual-pilot');
+  return withHistoricalJapanesePractice(actual);
+});
+
 vi.mock('./core/density', async importOriginal => {
   const actual = await importOriginal<typeof import('./core/density')>();
   return { ...actual, forecastDensity: vi.fn(), planLessonChunk: vi.fn() };

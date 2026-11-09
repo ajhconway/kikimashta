@@ -8,11 +8,14 @@ import { deriveContextualUnlocks, selectedContextualCards } from './core/context
 import { contextualQuestion } from './core/contextual-questions';
 import { approvedContextualQuestions } from './content/contextual';
 import { contextualBanks, contextualVocabulary, readyContextualCards } from './content/contextual-runtime';
+import pack1Policy from '../content/contextual/pack-1/practice-policy.json';
 import { ContextualQuiz, type ContextualPlayback } from './components/ContextualQuiz';
 import { QuizCompanion, Speaker } from './components/QuizChrome';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevReviewOptions';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
+import { packBadges } from './core/pack-badges';
+import { PackBadges } from './components/PackBadges';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
@@ -35,6 +38,7 @@ import { availableWritingFont, createWritingFontRotation, preloadWritingFonts, t
 const asset = (path: string) => import.meta.env.BASE_URL + path;
 const defaultStore = new ProgressStore();
 const contextualCards = readyContextualCards(contextualBanks, contextualVocabulary);
+const directContextualTargets = pack1Policy.contextualOnlyItemIds.map(itemId => ({ language: pack1Policy.language, itemId }));
 const fireworkOffsets = Array.from({ length: 16 }, (_, i) => {
   const angle = i * Math.PI / 8 - Math.PI / 2;
   const radius = i % 2 === 0 ? 155 : 130;
@@ -113,17 +117,19 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
+  // Catalogue membership scopes contextual formats without admitting unreviewed word pictures.
+  const contextualScope = useMemo(() => selectedPracticeCards(languageContextualVocabulary, packIds, cardPacks), [languageContextualVocabulary, packIds, cardPacks]);
   const foundationCards = useMemo(() => (language.foundationCards ?? []).filter(card => cardPacks.some(pack =>
     packIds.includes(pack.id) && pack.language === card.item.language && pack.itemIds.includes(card.item.id))), [language, cardPacks, packIds]);
   const scopedCards = useMemo(() => [...selectedCards, ...foundationCards], [selectedCards, foundationCards]);
   const choicesFor = useCallback((exercise: Exercise) => selectedCards.filter(card => card.exercise === exercise).map(card => card.item), [selectedCards]);
   const learningSnapshot = useCallback(async (attempts: PracticeAttempt[]) => {
     const unlocks = await deriveContextualUnlocks(attempts, practicePool.language);
-    const cards = [...selectedContextualCards(selectedCards, contextualCards, unlocks), ...scopedCards];
+    const cards = [...selectedContextualCards(contextualScope, contextualCards, unlocks, directContextualTargets), ...scopedCards];
     const keys = new Set(cards.map(cardKey));
     const allSchedules = await deriveSchedules(attempts, practicePool.language);
-    return { cards, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
-  }, [selectedCards, scopedCards, practicePool]);
+    return { cards, allSchedules, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
+  }, [contextualScope, scopedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
     if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
@@ -141,7 +147,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [devOptions, setDevOptions] = useState<DevReviewOptions>(defaultDevReviewOptions);
   const [devReviewError, setDevReviewError] = useState<string | null>(null);
   const devTimerMode = useRef<DevReviewOptions['timerMode'] | null>(null);
-  const devEntries = useMemo(() => devReviewEntries(scopedCards, languageContextualBanks, languageContextualVocabulary), [scopedCards, languageContextualBanks, languageContextualVocabulary]);
+  const devEntries = useMemo(() => devReviewEntries(scopedCards, languageContextualBanks, languageContextualVocabulary, contextualScope), [scopedCards, languageContextualBanks, languageContextualVocabulary, contextualScope]);
   const devTypes = useMemo(() => availableDevReviewTypes(devEntries), [devEntries]);
   const [phase, setPhase] = useState<'review' | 'lesson'>('lesson');
   const [isDevReview, setIsDevReview] = useState(false);
@@ -174,7 +180,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [refresh, setRefresh] = useState(0);
   const forecastScope = useMemo(() => ({ store, cards: scopedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
     [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
-  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
+  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; badges: ReturnType<typeof packBadges>; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
@@ -238,20 +244,21 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules } = await learningSnapshot(attempts);
+        const { schedules, allSchedules } = await learningSnapshot(attempts);
+        const badges = packBadges(practicePool.items, cardPacks, allSchedules, language.foundationCards);
         const at = now();
         const forecast = await forecastDensity(schedules, at);
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setDensity(forecast.reviewsPerDay); setHistoryError(false);
-        setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
+        setReviewForecast({ scope: forecastScope, at, value: forecast, badges, error: false });
       } catch {
-        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
+        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, badges: [], error: true }); }
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, forecastScope]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, cardPacks, forecastScope, language.foundationCards]);
 
   useEffect(() => {
     if (screen !== 'home') return;
@@ -373,8 +380,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       history.current = attempts;
       mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
-      const due = snapshotDue(schedules, scopedCards.map(card => card.item.id), at);
-      const byId = new Map([...languageContextualVocabulary, ...practicePool.items].map(item => [item.id, item]));
+      const due = snapshotDue(schedules, cards.map(card => card.item.id), at);
+      const byId = new Map(cards.map(card => [card.item.id, card.item]));
       const candidates = cards.filter(card => isContextualExercise(card.exercise) && !mastery.current.has(cardKey(card)));
       const introductions = candidates.length ? await planContextualIntroductions({ schedules,
         cards: shuffled(candidates, random), now: at, range }) : undefined;
@@ -523,7 +530,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     <main>
       {screen === 'home' && <section className="home">
         <h1>kikimashta</h1>
-        <HomeIntensity value={density}/>
+        <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
+          <HomeIntensity value={density}/>
+          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
+        </div>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>

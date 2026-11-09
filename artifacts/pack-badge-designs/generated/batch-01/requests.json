@@ -1,0 +1,27 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "status": "owner approved as style prototypes",
+  "reference": {
+    "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+    "role": "style only"
+  },
+  "transparent_background": true,
+  "samples": [
+    {
+      "id": "strong-wk-picture-v1",
+      "prompt": "Use case: stylized-concept.\nAsset type: one illustrated achievement badge for the existing Kikimashta listening app, to display around Kiku at about 56\u201364 pixels tall.\nInput image: STYLE REFERENCE ONLY. Match the supplied approved Kiku illustration's bold deep-violet contours, chunky rounded forms, warm golden-yellow/amber, lavender and pink palette, and soft internal shading. Make an appealing illustrated object with the same gentle dimensional quality as Kiku. Do not copy the cat, headphones, landscape, flowers, footer or lettering. This should feel like a joyful game reward from that exact illustration family.\nComposition: a single centered badge, straight-on, complete silhouette and folded ribbon visible, generous transparent margin, a readable large emblem. Genuine transparent background with alpha. No white or colored rectangle, checkerboard, scene, frame, cast shadow background or watermark.\nRendering: smooth puffy rounded shapes, confident rounded purple outlines, soft gradients/shading inside each form, depth from overlapping forms and curved ribbon folds. Clear generous shapes, attractive at small size. Avoid thin vector-diagram linework, flat clip-art, photorealistic metal, brown antiquing, sharp shine streaks, and busy tiny details.\nSubject: STRONG-rank WaniKani picture-pack badge. A substantial rounded eight-point star/rosette medallion in golden amber with a few pink accents. A creamy circular central face holds exactly \"WK\" in large friendly rounded deep-purple letters, optically centered with comfortable margin. No crab or other animal.\nRibbon: a much larger curved pink banner sweeps across the lower front, with convincing soft folded ends. It carries a simple picture/landscape icon on the left and exactly \"L1\" on the right. Both the picture icon and the level lettering follow the same curved surface of the ribbon. The letters are part of the design, not a caption below it.\nExact text: \"WK\" and \"L1\" only. No word Strong or WaniKani, no extra text."
+    },
+    {
+      "id": "mastered-travel-writing-v1",
+      "prompt": "Use case: stylized-concept.\nAsset type: one illustrated achievement badge for the existing Kikimashta listening app, to display around Kiku at about 56\u201364 pixels tall.\nInput image: STYLE REFERENCE ONLY. Match the supplied approved Kiku illustration's bold deep-violet contours, chunky rounded forms, warm golden-yellow/amber, lavender and pink palette, and soft internal shading. Make an appealing illustrated object with the same gentle dimensional quality as Kiku. Do not copy the cat, headphones, landscape, flowers, footer or lettering. This should feel like a joyful game reward from that exact illustration family.\nComposition: a single centered badge, straight-on, complete silhouette and folded ribbon visible, generous transparent margin, a readable large emblem. Genuine transparent background with alpha. No white or colored rectangle, checkerboard, scene, frame, cast shadow background or watermark.\nRendering: smooth puffy rounded shapes, confident rounded purple outlines, soft gradients/shading inside each form, depth from overlapping forms and curved ribbon folds. Clear generous shapes, attractive at small size. Avoid thin vector-diagram linework, flat clip-art, photorealistic metal, brown antiquing, sharp shine streaks, and busy tiny details.\nSubject: MASTERED-rank travel writing-pack badge, a more celebratory silhouette than the Strong star. A padded golden crest with two simple rounded ornamental wings and a small lavender crown at the top. Its large creamy circular center holds a single charming rounded suitcase icon in golden yellow with deep-violet outlines and a clear handle. The suitcase is centered and occupies the badge face. No animals.\nRibbon: a much larger curved lavender banner sweeps across the lower front, with soft folded ends. It carries a simple pencil/writing icon on the left and exactly \"L2\" on the right. The icon and level lettering follow the same curved ribbon surface.\nExact text: \"L2\" only. No word Travel, no WK, no rank caption or additional text."
+    }
+  ],
+  "ownerApproval": "I'm happy with the two latest sample badges. Please prototype the rest as well.",
+  "reviewHistory": [
+    {
+      "action": "Owner approved both illustrated samples and requested remaining mastery prototypes",
+      "evidence": "I'm happy with the two latest sample badges. Please prototype the rest as well."
+    }
+  ]
+}

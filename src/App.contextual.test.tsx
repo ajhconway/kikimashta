@@ -11,6 +11,12 @@ import { forecastDensity, planLessonChunk } from './core/density';
 import { practicePool } from './core/practice';
 import { contextualVocabulary, contextualBanks } from './content/contextual-runtime';
 
+vi.mock('./content/contextual-runtime', async original => {
+  const actual = await original<typeof import('./content/contextual-runtime')>();
+  const { withHistoricalJapanesePractice } = await import('./test/contextual-pilot');
+  return withHistoricalJapanesePractice(actual);
+});
+
 vi.mock('./core/density', async original => ({ ...await original<typeof import('./core/density')>(), forecastDensity: vi.fn(), planLessonChunk: vi.fn() }));
 const forecast = { reviewsPerDay: 0, daily: [0, 0, 0, 0, 0, 0, 0], horizonDays: 7, scenarios: 32 };
 let history: PracticeAttempt[];

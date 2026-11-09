@@ -4,6 +4,7 @@ import { exercises } from './cards';
 import type { Exercise, PracticeCard, WordItem } from '../types';
 
 export interface CardPack {
+  badgeFamily?: 'wanikani' | 'suitcase';
   id: string;
   title: string;
   sourceLevel?: number;
@@ -15,6 +16,7 @@ export interface CardPack {
 /** Pack membership shares vocabulary identity; format keeps learning independent. (#108) */
 export const cardPacks: CardPack[] = [1, 2, 3, 4, 5].flatMap(sourceLevel =>
   (['pictures', 'writing'] as const).map(format => ({
+    badgeFamily: 'wanikani' as const,
     id: `ja-wanikani-${sourceLevel}-${format}`,
     title: `WaniKani level ${sourceLevel} · ${format === 'pictures' ? 'Pictures' : 'Writing'}`,
     sourceLevel,
@@ -41,6 +43,6 @@ export function selectedPracticeCards(items: readonly WordItem[], packIds: reado
   const memberships = packs.filter(pack => packIds.includes(pack.id)).map(pack => ({
     language: pack.language, exercise: pack.exercise, ids: new Set(pack.itemIds),
   }));
-  return items.flatMap(item => exercises.filter(exercise => memberships.some(pack =>
+  return items.flatMap(item => exercises.filter(exercise => (!item.wordExercises || item.wordExercises.includes(exercise)) && memberships.some(pack =>
     pack.language === item.language && pack.exercise === exercise && pack.ids.has(item.id))).map(exercise => ({ item, exercise })));
 }

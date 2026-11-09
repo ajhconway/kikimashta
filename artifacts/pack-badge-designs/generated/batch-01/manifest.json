@@ -1,0 +1,54 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "reference": {
+    "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+    "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+    "role": "style only"
+  },
+  "requests": "requests.json",
+  "assets": [
+    {
+      "id": "strong-wk-picture-v1",
+      "file": "strong-wk-picture-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-960ae2d3-466b-40bb-bd98-b101914d58b9.png",
+      "sha256": "9df226ce0b6ce54aeb58e4842b85f00de252010e6bc0c70fbe9a18bf7d195d62",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved as style prototype"
+    },
+    {
+      "id": "mastered-travel-writing-v1",
+      "file": "mastered-travel-writing-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-04846728-917c-483a-abac-71aad5c7dc44.png",
+      "sha256": "f078fa1fbae1788a5cfb9f5d0788dc3a1c7a68393ba87c2f7e9740d4d6691b86",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved as style prototype"
+    }
+  ],
+  "reviewNotes": [
+    "First illustration samples; no badge activation or progress changes.",
+    "Generated decorative flowers/stickers require owner review before finalizing the asset family."
+  ],
+  "status": "owner approved as style prototypes",
+  "ownerApproval": "I'm happy with the two latest sample badges. Please prototype the rest as well.",
+  "reviewHistory": [
+    {
+      "action": "Owner approved both illustrated samples and requested remaining mastery prototypes",
+      "evidence": "I'm happy with the two latest sample badges. Please prototype the rest as well."
+    }
+  ]
+}

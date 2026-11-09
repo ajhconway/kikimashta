@@ -1,11 +1,18 @@
 import { describe, expect, it } from 'vitest';
 import { cardKey } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
-import { contextualBanks, contextualVocabulary, readyContextualCards, recordedContextualBanks, withAcceptedMedia } from './contextual-runtime';
+import { withAnswerAmendments, type ContextualAnswerAmendments } from './contextual-answers';
+import answerAmendments from '../../content/contextual/answer-amendments.json';
+import pack1Source from '../../content/contextual/ja-wanikani-1-draft.json';
+import pack1Policy from '../../content/contextual/pack-1/practice-policy.json';
+import { spanishBasicContexts } from './spanish-basic';
+import { contextualBanks, contextualVocabulary, pack1ContextualBank, readyContextualCards, recordedContextualBanks, withAcceptedMedia } from './contextual-runtime';
+
+const historicalBanks = withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments);
 
 describe('contextual runtime content', () => {
-  it('covers all eighty questions while admitting only accepted media to practice', () => {
-    const japanese = contextualBanks.filter(bank => bank.language === 'ja-JP');
+  it('preserves all eighty accepted pilot questions and their historical practice identities', () => {
+    const japanese = historicalBanks;
     const contexts = japanese.flatMap(bank => bank.contexts);
     expect(contexts).toHaveLength(40);
     expect(contexts.flatMap(context => context.questions)).toHaveLength(80);
@@ -26,6 +33,22 @@ describe('contextual runtime content', () => {
     const cards = readyContextualCards(japanese, contextualVocabulary);
     expect(cards).toHaveLength(34);
     expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
+  });
+
+  it('switches only the three replaced pilot targets after complete listening acceptance and retains Spanish contexts', () => {
+    const accepted = pack1ContextualBank.contexts.every(context => context.review.audio === 'approved');
+    const legacy = historicalBanks.flatMap(bank => bank.contexts);
+    const superseded = new Set(pack1Policy.supersededPilotItemIds);
+    const expectedIds = accepted
+      ? [...legacy.filter(context => !superseded.has(context.targetItemId)), ...pack1Source.contexts].map(context => context.id)
+      : legacy.map(context => context.id);
+    const actual = contextualBanks.filter(bank => bank.language === 'ja-JP').flatMap(bank => bank.contexts);
+    expect(actual.map(context => context.id).sort()).toEqual(expectedIds.sort());
+    expect(actual).toHaveLength(accepted ? 144 : 40);
+    expect(actual.flatMap(context => context.questions)).toHaveLength(accepted ? 288 : 80);
+    expect(new Set(actual.map(context => context.targetItemId)).size).toBe(accepted ? 36 : 10);
+    expect(actual.every(context => context.review.text === 'approved' && context.review.audio === 'approved')).toBe(true);
+    expect(contextualBanks.find(bank => bank.id === spanishBasicContexts.id)).toEqual(spanishBasicContexts);
   });
 
   it('does not activate audio when the accepted text or revisions differ', () => {

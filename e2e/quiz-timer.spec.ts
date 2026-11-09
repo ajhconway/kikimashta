@@ -1,12 +1,13 @@
+import { selectWordPractice } from './practice-selection';
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from './fixtures';
 import { advanceSchedule } from '../src/core/scheduler';
 import { quizTimeLimit } from '../src/core/quiz-timer';
 import type { Exercise, PracticeAttempt, WordItem } from '../src/types';
 
-const pool = JSON.parse(readFileSync(new URL('../content/practice-pool.json', import.meta.url), 'utf8')) as { itemIds: string[] };
 const catalogue = JSON.parse(readFileSync(new URL('../content/catalog/ja.json', import.meta.url), 'utf8')) as { items: WordItem[] };
-const target = catalogue.items.find(item => item.id === pool.itemIds[0])!;
+const target = catalogue.items.find(item => item.id === 'ja-dog')!;
+test.beforeEach(async ({ page }) => { await selectWordPractice(page, ['ja-wanikani-2-pictures', 'ja-wanikani-2-writing']); });
 
 async function history(page: Page): Promise<PracticeAttempt[]> {
   return page.evaluate(async () => {

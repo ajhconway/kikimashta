@@ -1,0 +1,51 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "samples": [
+    {
+      "id": "new-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/new-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated new badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "learning-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/learning-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated learning badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "improving-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/improving-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated improving badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "familiar-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/familiar-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated familiar badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "steady-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/steady-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated steady badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "strong-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/strong-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated strong badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "confident-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/confident-base-v1.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this approved illustrated confident badge blank. Remove ONLY the pink flower and its two little detached pink petals INSIDE the central cream medallion face, replacing them seamlessly with the same creamy gradient. This center must be completely empty so a larger interchangeable suitcase fits. Preserve all outer rank ornaments, rim decorations, crown/laurel/sprout/wings, border, ribbon, exact canvas and subject placement, silhouette and shading. Keep any pink decorations on the outer frame; only the flower on the cream face and adjacent face petals go. The ribbon remains empty. No new symbols or lettering. Genuine transparent background, preserve cream/white opaque artwork. Exact composition and positioning as supplied."
+    },
+    {
+      "id": "picture-emblem-v2",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/strong-wk-picture-v1.png",
+      "prompt": "Use case: background-extraction. Extract ONLY the illustrated picture/landscape symbol on the lower ribbon of this approved badge. Make it an independent large, polished icon on genuine transparent alpha. Preserve the rich original style: chunky rounded dark-purple frame, warm cream picture paper, two softly shaded lavender mountains, white snow cap, pink sun, subtle purple tonal shading and friendly rounded corners. Straighten the frame so its top and bottom are horizontal and sides vertical; no perspective/tilt/curve (the app will align it to each ribbon). Crop close around the complete frame with small equal transparent margins. No ribbon, badge, lettering, WK, flower ornament or extra elements. The icon should look like the original approved illustrated picture symbol, not a generic flat SVG icon. One landscape picture icon only."
+    },
+    {
+      "id": "writing-emblem-v2",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/mastered-travel-writing-v1.png",
+      "prompt": "Use case: background-extraction. Extract ONLY the illustrated pencil on the lower ribbon of this approved badge. Make it a separate large polished icon on genuine transparent alpha. Preserve the chunky rounded deep-purple contour, golden yellow wooden pencil with rich warm shading and highlight, cream sharpened wood, dark-purple tip, lavender ferrule and round pink eraser. Keep diagonal lower-left tip to upper-right eraser, preserve the original friendly dimensional illustration. Include the two or three small purple writing accent strokes near the tip, as in the approved image. Crop close with small transparent margins. No ribbon, badge, suitcase, lettering, level text, crown or background. One illustrated pencil symbol only; no flat generic SVG substitute."
+    }
+  ]
+}

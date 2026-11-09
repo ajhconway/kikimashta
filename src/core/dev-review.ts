@@ -37,9 +37,9 @@ export interface DevReviewEntry {
 }
 
 /** Ready content only; sample mastery bypasses real unlocks, never pack/language boundaries. */
-export function devReviewEntries(cards: readonly PracticeCard[], banks: readonly ContextualBank[], vocabulary: readonly WordItem[]): DevReviewEntry[] {
+export function devReviewEntries(cards: readonly PracticeCard[], banks: readonly ContextualBank[], vocabulary: readonly WordItem[], contextualScope: readonly PracticeCard[] = cards): DevReviewEntry[] {
   const entries: DevReviewEntry[] = cards.filter(card => !isContextualExercise(card.exercise)).map(card => ({ card }));
-  const selected = new Set(cards.map(cardKey));
+  const selected = new Set([...contextualScope, ...cards].map(cardKey));
   for (const bank of banks) for (const format of ['picture', 'text'] as const) {
     for (const { context, question } of approvedContextualQuestions(bank, format)) {
       const target = vocabulary.find(item => item.id === context.targetItemId && item.language === bank.language);

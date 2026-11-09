@@ -19,6 +19,8 @@ function sorted(value) {
   if (value !== null && typeof value === 'object') return Object.fromEntries(Object.keys(value).sort().map(key => [key, sorted(value[key])]))
   return value
 }
+
+export { PROFILE as CONTEXTUAL_AUDIO_PROFILE, verifyLevel as verifyContextualAudioLevel }
 const same = (left, right) => canonical(left) === canonical(right)
 const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character])
 
@@ -116,7 +118,7 @@ ${review.samples.map(sample => `<article id="${escapeHtml(`${sample.voice}-${sam
 <p><a href="review-provenance.json">Review provenance</a></p></html>`
 }
 
-export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, stage = 'contrastive', batch = 'sample', ffmpeg = process.env.FFMPEG || 'ffmpeg' }) {
+export async function buildContextualAudioReview({ root = projectRoot, input, delivery, output, stage = 'contrastive', batch = 'sample', ffmpeg = process.env.FFMPEG || 'ffmpeg', render = contextualAudioReviewHtml }) {
   const { bank, plan } = loadContextualAudition(root, { stage, batch })
   if (![input, delivery, output].every(path => typeof path === 'string' && path.trim())) throw new Error('Choose --input originals, --delivery normalized recordings and a new --output review directory.')
   const sourceRoot = await realpath(resolve(root, input))
@@ -179,7 +181,7 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
       const sentence = clips.get(`${voice.voice}:${context.sentenceItemId}`)
       for (const question of context.questions) {
         const authoredQuestion = authoredContext.questions.find(entry => entry.id === question.id)
-        const answer = clips.get(`${voice.voice}:${question.id}`)
+        const answer = clips.get(`${voice.voice}:${question.itemId ?? question.id}`)
         const src = `samples/${voice.voice}-${question.id}.wav`
         const bytes = wave(Buffer.concat([sentence.pcm, pause, answer.pcm]))
         outputs.push({ src, bytes })
@@ -188,8 +190,9 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
           targetLimited: clip.record.targetLimited, limitingReasons: clip.record.limitingReasons })
         samples.push({ src, sha256: hash(bytes), bytes: bytes.length, frames: sentence.record.decodedFrames + gapFrames + answer.record.decodedFrames,
           voice: voice.voice, voiceName: voice.name, contextId: context.id, contextRevision: context.revision, targetItemId: context.targetItemId,
-          sentence: { text: sentence.item.text, reading: authoredContext.sentence.reading, meaning: sentence.item.meaning, ...sourceInfo(sentence) },
-          question: { ...question, text: answer.item.text, reading: authoredQuestion.prompt.reading, meaning: answer.item.meaning, ...sourceInfo(answer) } })
+          sentence: { text: sentence.item.text, reading: authoredContext.sentence.reading, meaning: authoredContext.sentence.meaning, ...sourceInfo(sentence) },
+          question: { ...question, text: answer.item.text, reading: authoredQuestion.prompt.reading, meaning: authoredQuestion.prompt.meaning,
+            ...sourceInfo(answer), id: question.id } })
       }
     }
   }
@@ -198,13 +201,14 @@ export async function buildContextualAudioReview({ root = projectRoot, input, de
     originalRecordings: originals.length, normalizationProfile: PROFILE, gapMs: plan.gapMs, gapFrames,
     previewEncoding: { container: 'WAV', codec: 'PCM signed 16-bit little-endian', sampleRate: RATE, channels: 1,
       processing: 'Decoded normalized deliveries joined with exact zero-valued pause; no additional gain or lossy encoding.' },
-    originalsPreserved: true, review: 'Listening approval pending; not active practice media.', samples }
+    originalsPreserved: true, review: 'Listening approval pending; not active practice media.',
+    ...(plan.aliases ? { aliases: plan.aliases, logicalRecordings: plan.logicalRecordings } : {}), samples }
   await mkdir(dirname(destination), { recursive: true })
   await mkdir(destination, { recursive: false })
   await mkdir(join(destination, 'samples'))
   for (const file of outputs) await writeFile(join(destination, file.src), file.bytes, { flag: 'wx' })
   await writeFile(join(destination, 'review-provenance.json'), JSON.stringify(review, null, 2) + '\n', { flag: 'wx' })
-  await writeFile(join(destination, 'index.html'), contextualAudioReviewHtml(review), { flag: 'wx' })
+  await writeFile(join(destination, 'index.html'), render(review), { flag: 'wx' })
   return { contexts: plan.contexts.length, voices: generation.voices.map(voice => voice.name), recordings: originals.length, pairs: samples.length,
     gapMs: plan.gapMs, targetLimited: normalized.filter(record => record.targetLimited).length, output: destination }
 }

@@ -19,6 +19,8 @@ export function validateBank(bank: WordBank): void {
   for (const item of bank.items) {
     if (!item.id || ids.has(item.id)) throw new Error('Word IDs must be present and unique.');
     ids.add(item.id);
+    if (item.wordExercises !== undefined && (!Array.isArray(item.wordExercises) || !item.wordExercises.length ||
+        new Set(item.wordExercises).size !== item.wordExercises.length || item.wordExercises.some(exercise => !['audio-picture', 'audio-text'].includes(exercise)))) throw new Error('Invalid word exercise eligibility: ' + item.id);
     if (item.language !== bank.language || !item.theme || !item.text || !item.image?.src || !Array.isArray(item.audio) || !item.audio.length || item.audio.some(recording => !recording.src)) throw new Error('Incomplete word: ' + item.id);
     for (const path of [item.image.src, ...item.audio.map(recording => recording.src)]) {
       if (path.startsWith('/') || path.includes('..') || /^[a-z]+:/i.test(path)) throw new Error('Media paths must be relative to the app.');
