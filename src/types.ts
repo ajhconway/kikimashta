@@ -22,6 +22,8 @@ export interface WordItem {
   reading?: string
   image: ImageAsset
   audio: AudioAsset[]
+  /** Pictures that could also reasonably answer this word's prompt. */
+  pictureDistractorExclusions?: string[]
 }
 
 export interface WordBank {

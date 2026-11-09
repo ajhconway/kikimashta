@@ -59,7 +59,7 @@ it('keeps the Japanese contextual shortcut out of Spanish practice', async () =>
 });
 
 it('loads Spanish picture history and links to its language-specific pack library', async () => {
-  vi.mocked(ProgressStore.prototype.history).mockResolvedValue(spanish.items.map(item => ({
+  vi.mocked(ProgressStore.prototype.history).mockResolvedValue(spanish.items.slice(0, 4).map(item => ({
     id: item.id, sessionId: 'spanish-lesson', itemId: item.id, language: 'es-419',
     choiceIds: [item.id], selectedId: item.id, correct: true, startedAt: 900, answeredAt: 1000, responseMs: 100,
     context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src, replays: 0, schedulerVersion },
@@ -67,7 +67,7 @@ it('loads Spanish picture history and links to its language-specific pack librar
   render(<App now={() => 1000000}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
   const schedules = vi.mocked(forecastDensity).mock.calls.at(-1)![0];
-  expect(schedules).toHaveLength(spanish.items.length);
+  expect(schedules.map(card => card.itemId).sort()).toEqual(spanish.items.slice(0, 4).map(item => item.id).sort());
   expect(schedules.every(card => card.language === 'es-419' && spanish.items.some(item => item.id === card.itemId))).toBe(true);
   expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419');
   expect(screen.getByRole('link', { name: 'Card library · 1 pack selected' })).toHaveAttribute('href', expect.stringContaining('language=es-419'));

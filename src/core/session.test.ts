@@ -127,6 +127,21 @@ describe('practice sessions', () => {
     expect(() => createQuestions([{ item: target, exercise: 'audio-text' }], duplicatedLabels)).toThrow(/distinct/i);
   });
 
+  it('keeps overlapping picture meanings apart in both directions without restricting written choices', () => {
+    const pool = bank().items;
+    const car = { ...pool[0]!, id: 'car', text: 'carro', pictureDistractorExclusions: ['taxi'] };
+    const taxi = { ...pool[1]!, id: 'taxi', text: 'taxi' };
+    const words = [car, taxi, ...pool.slice(2)];
+    for (const target of [car, taxi]) {
+      const other = target.id === 'car' ? taxi : car;
+      const [picture] = createQuestions([{ item: target, exercise: 'audio-picture' }], words, () => 0.999);
+      expect(picture!.choices.map(item => item.id)).not.toContain(other.id);
+      expect(picture!.choices).toHaveLength(4);
+      const [writing] = createQuestions([{ item: target, exercise: 'audio-text' }], words, () => 0.999);
+      expect(writing!.choices.map(item => item.id)).toContain(other.id);
+    }
+  });
+
   it('honors a shorter session and bounds a longer session to available words', () => {
     expect(createSession(bank(), 2, 3, () => 0.5)).toHaveLength(2);
     expect(createSession(bank(), 20, 4, () => 0.5)).toHaveLength(12);
@@ -178,5 +193,13 @@ describe('word bank validation', () => {
     expect(() => validateBank(words)).toThrow(/relative/i);
     words.items[0]!.audio = [];
     expect(() => validateBank(words)).toThrow(/incomplete/i);
+  });
+
+  it('rejects unknown or self-referencing picture distractor exclusions', () => {
+    for (const excluded of ['unknown', 'cat']) {
+      const words = bank();
+      words.items[0]!.pictureDistractorExclusions = [excluded];
+      expect(() => validateBank(words)).toThrow(/picture distractor/);
+    }
   });
 });

@@ -443,5 +443,3 @@ footer a:hover { color: var(--purple-dark); }
 .question-mastery .answer-result { width: 32px; height: 32px; font-size: 22px; }
 
 .pack-library-link { display: block; margin: 12px auto; padding: 10px; font-size: 14px; }
-
-.dev-context-mastery .feedback { height: 76px; margin-top: 16px; }

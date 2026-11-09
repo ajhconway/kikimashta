@@ -1,0 +1,29 @@
+{
+  "tool": "built-in image_gen",
+  "entries": [
+    {
+      "slug": "airport",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ef9734ee-2cbf-4ddb-9892-31229466c867.png"
+    },
+    {
+      "slug": "airplane",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-81693a69-6f2f-4336-9b29-3c00aeff0f8e.png"
+    },
+    {
+      "slug": "bus",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-43d9471e-1541-4b29-b959-8733022a2bce.png"
+    },
+    {
+      "slug": "taxi",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3c121ed8-72f0-43e5-bb86-e55144e2cafa.png"
+    },
+    {
+      "slug": "train",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-71458aeb-ddba-4991-aafe-7096179b28f1.png"
+    },
+    {
+      "slug": "bicycle",
+      "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8dc01cbf-894c-451e-aeab-32e9ee912e3c.png"
+    }
+  ]
+}

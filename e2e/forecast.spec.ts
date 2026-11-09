@@ -85,3 +85,28 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
   await expect(today).toHaveText('0');
   expect(await stored(page)).toEqual(after);
 });
+
+
+test.describe('forecast dates across daylight-saving changes (#156)', () => {
+  test.use({ timezoneId: 'America/New_York' });
+  for (const { transition, at, month, firstDay } of [
+    { transition: 'spring forward', at: '2026-03-08T00:30:00-05:00', month: 'March', firstDay: 8 },
+    { transition: 'fall back', at: '2026-11-01T00:30:00-04:00', month: 'November', firstDay: 1 },
+  ]) {
+    test(`shows seven consecutive local dates at ${transition}`, async ({ page }) => {
+      await page.clock.setFixedTime(new Date(at));
+      await page.goto('./');
+      const rows = page.getByRole('region', { name: 'Review forecast' }).getByRole('listitem');
+      await expect(rows).toHaveCount(7);
+      await expect(rows.locator('time')).toHaveText(['Today', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
+      const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      for (let day = 0; day < 7; day++) {
+        await expect(rows.nth(day)).toHaveAccessibleName(`${day === 0 ? 'Today, ' : ''}${weekdays[day]}, ${month} ${firstDay + day}: 0 estimated reviews`);
+      }
+      expect(await rows.locator('time').evaluateAll(elements => elements.map(element => {
+        const date = new Date(element.getAttribute('datetime')!);
+        return [date.getDate(), date.getHours(), date.getMinutes()];
+      }))).toEqual(Array.from({ length: 7 }, (_, day) => [firstDay + day, 0, 30]));
+    });
+  }
+});

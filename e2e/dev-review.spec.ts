@@ -1,5 +1,11 @@
 import { expect, test, type Page } from './fixtures';
+import { readFileSync } from 'node:fs';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
+import type { ContextualBank } from '../src/content/contextual-types';
+
+const authoredQuestions = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.json'].flatMap(file =>
+  (JSON.parse(readFileSync(new URL('../content/contextual/' + file, import.meta.url), 'utf8')) as ContextualBank).contexts.flatMap(context => context.questions));
+const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, { image?: { alt: string } }>;
 
 async function storedHistory(page: Page) {
   return page.evaluate(async () => {
@@ -56,6 +62,8 @@ test('Dev review opens options, simulates selected writing mastery and leaves re
 
 test('contextual samples use selected mastery, remain untimed and keep real progress unchanged', async ({ page }) => {
   await page.goto('./');
+  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
+  const before = await storedHistory(page);
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   await page.getByRole('checkbox', { name: 'Words · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Words · Writing', exact: true }).uncheck();
@@ -67,13 +75,40 @@ test('contextual samples use selected mastery, remain untimed and keep real prog
   await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('Strong');
   await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('Untimed');
   await expect(page.locator('.quiz-timer-fill')).toHaveCount(0);
-  await page.locator('.contextual-choices button').first().click();
+  const quiz = page.locator('.contextual-quiz');
+  const questionId = await quiz.getAttribute('data-question-id');
+  const question = authoredQuestions.find(question => question.id === questionId)!;
+  const wrong = question.options.find(option => option.id !== question.correctOptionId)!;
+  const imageId = wrong.imageItemId!;
+  const alt = overrides[imageId]?.image?.alt ?? catalogue.items.find(item => item.id === imageId)!.image.alt;
+  await quiz.getByRole('button', { name: /Choose picture/ }).filter({ has: page.getByRole('img', { name: alt, exact: true }) }).click();
+  const badge = page.getByRole('img', { name: 'Mastery decreased to Learning', exact: true });
+  await expect(badge).toHaveCount(1);
+  await expect(badge).toBeVisible();
+  const japanese = page.getByRole('button', { name: 'Show Japanese', exact: true });
+  await expect(japanese).toBeVisible();
+  const control = (await japanese.boundingBox())!;
+  expect(control.width).toBe(64);
+  expect(control.height).toBe(64);
   await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
-  expect(await storedHistory(page)).toEqual([]);
+  await japanese.click();
+  const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
+  await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeHidden();
+  const popup = await details.boundingBox();
+  await details.getByRole('button', { name: 'Show English', exact: true }).click();
+  await expect(details.getByText(question.prompt.meaning, { exact: true })).toBeVisible();
+  expect(await details.boundingBox()).toEqual(popup);
+  await details.getByRole('button', { name: 'Close Japanese', exact: true }).click();
+  await expect(japanese).toBeFocused();
+  expect(await storedHistory(page)).toEqual(before);
   await page.getByRole('button', { name: 'Continue', exact: true }).click();
   await expect(page.locator('.contextual-practice')).toHaveAttribute('data-exercise', 'context-simple-picture');
+  await expect(badge).toHaveCount(0);
+  await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText('Strong');
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
-  expect(await storedHistory(page)).toEqual([]);
+  expect(await storedHistory(page)).toEqual(before);
+  await page.reload();
+  expect(await storedHistory(page)).toEqual(before);
 });
 
 test('options respect language and handle empty selected packs', async ({ page }) => {

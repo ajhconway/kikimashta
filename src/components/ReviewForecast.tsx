@@ -9,7 +9,6 @@ export interface ReviewForecastProps {
   unavailable: boolean;
 }
 
-const dayMs = 24 * 60 * 60 * 1000;
 const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'short' });
 const fullDate = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 const roundedCount = (count: number) => count > 0 && count < 1 ? '<1' : String(Math.round(count));
@@ -30,7 +29,8 @@ export function ReviewForecast({ forecast, at, loading, unavailable }: ReviewFor
     {ready ? <>
       <ol className="review-forecast-days" role="list" aria-label="Estimated daily reviews">
         {daily.map((count, index) => {
-          const date = new Date(at + index * dayMs);
+          const date = new Date(at);
+          date.setDate(date.getDate() + index);
           const label = index === 0 ? 'Today' : weekday.format(date);
           const displayed = roundedCount(count);
           const accessibleCount = displayed === '<1' ? 'less than 1' : displayed;

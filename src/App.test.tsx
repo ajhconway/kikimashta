@@ -592,7 +592,7 @@ describe('practice pack selection', () => {
     localStorage.setItem(packPreferenceKey, '[]');
     render(<App now={fixedNow}/>);
     await screen.findByText('Select a pack in the card library to start practicing.');
-    expect(screen.getByRole('button', { name: /^start/i })).toBeDisabled();
+    expect(await screen.findByRole('button', { name: /^start/i })).toBeDisabled();
     expect(screen.getByRole('link', { name: 'Card library · 0 packs selected' })).toHaveAttribute('href', '/vocabulary/');
     expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
     localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-1-pictures']));

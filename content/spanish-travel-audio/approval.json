@@ -1,0 +1,230 @@
+{
+  "issue": 155,
+  "pack": "es-419-travel-1",
+  "language": "es-419",
+  "ownerMessage": "I'm happy with the suggestions. We can drop Cesar now. Let's go ahead and generate voice audio for all voices and all words in the first pack.",
+  "items": [
+    {
+      "id": "es-419-travel-hotel",
+      "text": "hotel",
+      "spelling": "hotel",
+      "meaning": "Hotel"
+    },
+    {
+      "id": "es-419-travel-water",
+      "text": "agua",
+      "spelling": "agua",
+      "meaning": "Water"
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "text": "café",
+      "spelling": "café",
+      "meaning": "Coffee"
+    },
+    {
+      "id": "es-419-travel-car",
+      "text": "carro",
+      "spelling": "carro",
+      "meaning": "Car"
+    },
+    {
+      "id": "es-419-travel-airport",
+      "text": "aeropuerto",
+      "spelling": "aeropuerto",
+      "meaning": "Airport"
+    },
+    {
+      "id": "es-419-travel-airplane",
+      "text": "avión",
+      "spelling": "avión",
+      "meaning": "Airplane"
+    },
+    {
+      "id": "es-419-travel-bus",
+      "text": "autobús",
+      "spelling": "autobús",
+      "meaning": "Bus"
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "text": "taxi",
+      "spelling": "taxi",
+      "meaning": "Taxi"
+    },
+    {
+      "id": "es-419-travel-train",
+      "text": "tren",
+      "spelling": "tren",
+      "meaning": "Train"
+    },
+    {
+      "id": "es-419-travel-bicycle",
+      "text": "bicicleta",
+      "spelling": "bicicleta",
+      "meaning": "Bicycle"
+    },
+    {
+      "id": "es-419-travel-passport",
+      "text": "pasaporte",
+      "spelling": "pasaporte",
+      "meaning": "Passport"
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "text": "boleto",
+      "spelling": "boleto",
+      "meaning": "Ticket"
+    },
+    {
+      "id": "es-419-travel-suitcase",
+      "text": "maleta",
+      "spelling": "maleta",
+      "meaning": "Suitcase"
+    },
+    {
+      "id": "es-419-travel-backpack",
+      "text": "mochila",
+      "spelling": "mochila",
+      "meaning": "Backpack"
+    },
+    {
+      "id": "es-419-travel-map",
+      "text": "mapa",
+      "spelling": "mapa",
+      "meaning": "Map"
+    },
+    {
+      "id": "es-419-travel-phone",
+      "text": "teléfono",
+      "spelling": "teléfono",
+      "meaning": "Phone"
+    },
+    {
+      "id": "es-419-travel-bed",
+      "text": "cama",
+      "spelling": "cama",
+      "meaning": "Bed"
+    },
+    {
+      "id": "es-419-travel-key",
+      "text": "llave",
+      "spelling": "llave",
+      "meaning": "Key"
+    },
+    {
+      "id": "es-419-travel-bathroom",
+      "text": "baño",
+      "spelling": "baño",
+      "meaning": "Bathroom"
+    },
+    {
+      "id": "es-419-travel-shower",
+      "text": "ducha",
+      "spelling": "ducha",
+      "meaning": "Shower"
+    },
+    {
+      "id": "es-419-travel-towel",
+      "text": "toalla",
+      "spelling": "toalla",
+      "meaning": "Towel"
+    },
+    {
+      "id": "es-419-travel-elevator",
+      "text": "ascensor",
+      "spelling": "ascensor",
+      "meaning": "Elevator"
+    },
+    {
+      "id": "es-419-travel-restaurant",
+      "text": "restaurante",
+      "spelling": "restaurante",
+      "meaning": "Restaurant"
+    },
+    {
+      "id": "es-419-travel-bread",
+      "text": "pan",
+      "spelling": "pan",
+      "meaning": "Bread"
+    },
+    {
+      "id": "es-419-travel-rice",
+      "text": "arroz",
+      "spelling": "arroz",
+      "meaning": "Rice"
+    },
+    {
+      "id": "es-419-travel-milk",
+      "text": "leche",
+      "spelling": "leche",
+      "meaning": "Milk"
+    },
+    {
+      "id": "es-419-travel-juice",
+      "text": "jugo",
+      "spelling": "jugo",
+      "meaning": "Juice"
+    },
+    {
+      "id": "es-419-travel-money",
+      "text": "dinero",
+      "spelling": "dinero",
+      "meaning": "Money"
+    },
+    {
+      "id": "es-419-travel-boat",
+      "text": "barco",
+      "spelling": "barco",
+      "meaning": "Boat"
+    },
+    {
+      "id": "es-419-travel-beach",
+      "text": "playa",
+      "spelling": "playa",
+      "meaning": "Beach"
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "text": "hospital",
+      "spelling": "hospital",
+      "meaning": "Hospital"
+    },
+    {
+      "id": "es-419-travel-pharmacy",
+      "text": "farmacia",
+      "spelling": "farmacia",
+      "meaning": "Pharmacy"
+    },
+    {
+      "id": "es-419-travel-bottle",
+      "text": "botella",
+      "spelling": "botella",
+      "meaning": "Bottle"
+    },
+    {
+      "id": "es-419-travel-credit-card",
+      "text": "tarjeta de crédito",
+      "spelling": "tarjeta de crédito",
+      "meaning": "Credit card"
+    },
+    {
+      "id": "es-419-travel-camera",
+      "text": "cámara",
+      "spelling": "cámara",
+      "meaning": "Camera"
+    },
+    {
+      "id": "es-419-travel-umbrella",
+      "text": "paraguas",
+      "spelling": "paraguas",
+      "meaning": "Umbrella"
+    }
+  ],
+  "itemsSha256": "66e135fc3b2063127684e63c3a276330723c6e8738077b655cdc90cdc4b63411",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "voiceConfiguration": "content/es-419-voices.json",
+  "expectedClips": 288,
+  "characters": 1824,
+  "status": "generation-authorized-listening-pending"
+}
