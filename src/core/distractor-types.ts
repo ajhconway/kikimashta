@@ -1,5 +1,6 @@
 /** Word-choice policy snapshots are local question state; attempts already save exact choices. */
 export interface DistractorCounts { semantic: number; pronunciation: number }
+export type WordChoiceKind = 'correct' | 'semantic' | 'pronunciation' | 'broad';
 export interface WordChoicePolicySnapshot {
   version: 'word-neighbors-v1';
   mastery: string;

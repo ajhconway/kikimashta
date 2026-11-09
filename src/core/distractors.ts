@@ -1,6 +1,6 @@
 import runtime from '../../content/semantic-neighbors/ja-runtime.json';
 import type { Exercise, PracticeCard, WordItem } from '../types';
-import type { JapaneseNeighborTable, WordChoicePolicySnapshot } from './distractor-types';
+import type { JapaneseNeighborTable, WordChoiceKind, WordChoicePolicySnapshot } from './distractor-types';
 import type { MasteryLevel } from './mastery';
 import { japanesePronunciationKey } from './pronunciation';
 import { shuffled } from './random';
@@ -54,7 +54,7 @@ function compatible(a: WordItem, b: WordItem, exercise: Exercise, relations?: Wo
 export function selectWordChoices(
   { item: target, exercise }: PracticeCard, pool: readonly WordItem[], level: MasteryLevel,
   random: () => number, relations: WordNeighborRelations = japaneseWordNeighbors,
-): { choices: WordItem[]; choicePolicy?: WordChoicePolicySnapshot } {
+): { choices: WordItem[]; choiceKinds: Record<string, WordChoiceKind>; choicePolicy?: WordChoicePolicySnapshot } {
   const semanticIds = target.language === relations.language ? relations.semanticIds(target.id) : undefined;
   const active = semanticIds !== undefined && (exercise === 'audio-picture' || exercise === 'audio-text');
   const candidates = shuffled(pool, random).filter(item => compatible(target, item, exercise, active ? relations : undefined) &&
@@ -67,7 +67,8 @@ export function selectWordChoices(
       seen.add(visible(item, exercise)); return true;
     }).slice(0, 3);
     if (legacy.length < 3) throw new InsufficientChoicesError();
-    return { choices: shuffled([target, ...legacy], random) };
+    return { choices: shuffled([target, ...legacy], random),
+      choiceKinds: Object.fromEntries([[target.id, 'correct'], ...legacy.map(item => [item.id, 'broad'])]) };
   }
   const byId = new Map(candidates.map(item => [item.id, item]));
   // Filter the selected scope first, then sample a small nearest-neighbor window.
@@ -123,6 +124,7 @@ export function selectWordChoices(
   for (const candidate of selected) actual[candidate.kind]++;
   return {
     choices: shuffled([target, ...selected.map(candidate => candidate.item)], random),
+    choiceKinds: Object.fromEntries([[target.id, 'correct'], ...selected.map(candidate => [candidate.item.id, candidate.kind])]),
     choicePolicy: { version: 'word-neighbors-v1', mastery: level.label, requested: { ...desired }, actual },
   };
 }

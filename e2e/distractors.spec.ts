@@ -47,6 +47,8 @@ test('saved word mastery selects semantic alternatives and keeps the shown choic
   await page.getByRole('button', { name: /^Start/ }).click();
   await page.getByRole('button', { name: 'Begin review' }).click();
   await expect(page.locator('.quiz')).toHaveAttribute('data-exercise', 'audio-text');
+  await expect(page.getByRole('group', { name: 'Word choice border legend' })).toHaveCount(0);
+  await expect(page.locator('.choice-slot[data-dev-choice-kind]')).toHaveCount(0);
   const shown = await page.locator('.choices .written-answer').allTextContents();
   expect(shown).toHaveLength(4);
   expect(shown).toContain('本');
@@ -83,6 +85,15 @@ test('Dev review uses simulated mastery to change actual picture alternatives wi
     await expect(page.getByRole('status', { name: 'Demo mastery' })).toContainText(level);
     await expect(page.locator('.choices')).toBeVisible();
     await expect(page.getByRole('button', { name: /Choose picture/ }).first()).toBeEnabled();
+    await expect(page.getByRole('group', { name: 'Word choice border legend' })).toBeVisible();
+    await expect(page.locator('.choice-slot[data-dev-choice-kind="correct"]')).toHaveCount(1);
+    const borderStyles: Record<string, string> = { correct: 'solid', semantic: 'dashed', pronunciation: 'double', broad: 'dotted' };
+    for (const slot of await page.locator('.choice-slot').all()) {
+      const kind = (await slot.getAttribute('data-dev-choice-kind'))!;
+      await expect(slot.getByRole('button')).toHaveCSS('border-top-style', borderStyles[kind]!);
+      await expect(slot.getByRole('button')).toHaveAttribute('aria-describedby', 'dev-choice-' + kind);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const src = await page.locator('.app > audio').getAttribute('src');
     const target = words.find(item => item.audio.some(clip => src?.endsWith(clip.src)))!;
     expect(target.text).toBe('犬');
@@ -91,7 +102,12 @@ test('Dev review uses simulated mastery to change actual picture alternatives wi
   }
   const closeSounds = new Set(['一', '石', '糸', '色']);
   const newChoices = await choicesAt('New');
+  await expect(page.locator('.choice-slot[data-dev-choice-kind="broad"]')).toHaveCount(3);
   expect(newChoices.some(text => closeSounds.has(text))).toBe(false);
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await choicesAt('Strong');
+  await expect(page.locator('.choice-slot[data-dev-choice-kind="semantic"]')).toHaveCount(2);
+  await expect(page.locator('.choice-slot[data-dev-choice-kind="pronunciation"]')).toHaveCount(1);
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
   const mastered = await choicesAt('Mastered');
   expect(mastered).toHaveLength(3);

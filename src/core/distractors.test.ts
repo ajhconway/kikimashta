@@ -33,6 +33,8 @@ describe('mastery-based word distractors (#200)', () => {
     expect(alternatives.filter(item => item.id.startsWith('p'))).toHaveLength(pronunciation);
     expect(alternatives.filter(item => item.id.startsWith('b'))).toHaveLength(broad);
     expect(result.choicePolicy?.actual).toEqual({ semantic, pronunciation, broad });
+    expect(result.choiceKinds[target.id]).toBe('correct');
+    for (const item of alternatives) expect(result.choiceKinds[item.id]).toBe(item.id.startsWith('s') ? 'semantic' : item.id.startsWith('p') ? 'pronunciation' : 'broad');
   });
 
   it('filters pack scope before finding neighbors and substitutes easier valid choices when needed', () => {
@@ -41,6 +43,7 @@ describe('mastery-based word distractors (#200)', () => {
     const result = selectWordChoices(card(), pool, masteryLevels[7], fixed, relations());
     expect(result.choices.map(item => item.id).sort()).toEqual(pool.map(item => item.id).sort());
     expect(result.choicePolicy).toMatchObject({ mastery: 'Mastered', actual: { semantic: 1, pronunciation: 0, broad: 2 } });
+    expect(result.choiceKinds).toEqual({ target: 'correct', s5: 'semantic', b0: 'broad', b1: 'broad' });
     expect(pool).toEqual(before);
   });
 
@@ -106,6 +109,7 @@ describe('mastery-based word distractors (#200)', () => {
     schedules.set(cardKey(writing), createMasterySample(writing, 1, Date.UTC(2026, 10, 9)));
     const retry = requeueMissedQuestion(questions, index, 'miss', fixed).find(question => question.retryOf)!;
     expect(retry.choicePolicy).toBe(second.choicePolicy);
+    expect(retry.choiceKinds).toBe(second.choiceKinds);
     expect(retry.choices.map(item => item.id).sort()).toEqual(second.choices.map(item => item.id).sort());
     expect(createQuestions([writing], practicePool.items, fixed, schedules)[0]!.choicePolicy?.mastery).toBe('Learning');
   });
