@@ -15,6 +15,8 @@ import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type S
 import { createContextualDemoSession } from './core/contextual-demo';
 import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevReviewOptions';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
+import { packBadges } from './core/pack-badges';
+import { PackBadges } from './components/PackBadges';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
@@ -179,7 +181,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [refresh, setRefresh] = useState(0);
   const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
     [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
-  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
+  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; badges: ReturnType<typeof packBadges>; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
@@ -242,20 +244,21 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules } = await learningSnapshot(attempts);
+        const { schedules, allSchedules } = await learningSnapshot(attempts);
+        const badges = packBadges(practicePool.items, cardPacks, allSchedules);
         const at = now();
         const forecast = await forecastDensity(schedules, at);
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setDensity(forecast.reviewsPerDay); setHistoryError(false);
-        setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
+        setReviewForecast({ scope: forecastScope, at, value: forecast, badges, error: false });
       } catch {
-        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
+        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, badges: [], error: true }); }
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, forecastScope]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, cardPacks, forecastScope]);
 
   useEffect(() => {
     if (screen !== 'home') return;
@@ -549,6 +552,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
+        {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
         {accountControls}
       </section>}
       {screen === 'contextual-demo-ready' && <section className="summary ready fade-in">

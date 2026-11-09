@@ -1,0 +1,17 @@
+.pack-badges { margin: 26px auto 12px; width: min(100%, 580px); }
+.pack-badges h2 { margin: 0; color: var(--purple-dark); font-size: 24px; }
+.pack-badges > p { margin: 5px 0 16px; font-size: 14px; }
+.pack-badges ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(145px, 100%), 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
+.pack-badge { --badge-fill: #ffe29a; --badge-ribbon: #ffb6cf; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 10px 16px; color: var(--purple-dark); border: 2px solid rgb(87 46 135 / .18); border-radius: 22px; background: rgb(255 255 255 / .55); }
+.pack-badge-medal { width: 70px; height: 81px; overflow: visible; stroke: var(--purple-dark); stroke-width: 3; stroke-linejoin: round; }
+.badge-ribbons { fill: var(--badge-ribbon); }
+.badge-disc { fill: var(--badge-fill); }
+.badge-ring { fill: none; stroke-width: 1.5; opacity: .45; }
+.badge-star { fill: #fff8e4; }
+.pack-badge strong { font-size: 19px; }
+.pack-badge > span { font-size: 13px; line-height: 1.4; text-align: center; overflow-wrap: anywhere; }
+.badge-familiar { --badge-fill: #ffc5df; --badge-ribbon: #ffd680; }
+.badge-steady { --badge-fill: #dbc6ff; --badge-ribbon: #ffb6cf; }
+.badge-strong { --badge-fill: #ffbc86; --badge-ribbon: #ccb0ff; }
+.badge-confident { --badge-fill: #bce2da; --badge-ribbon: #ffcf79; }
+.badge-mastered { --badge-fill: #ffcf59; --badge-ribbon: #c9a3ff; border-color: #b58ad9; }
