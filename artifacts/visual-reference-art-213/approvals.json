@@ -4,6 +4,26 @@
   "scope": "artwork only",
   "approvals": [
     {
+      "id": "ja-v-70230bf6d87c",
+      "text": "左手",
+      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+      "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+      "selectedVersion": 4,
+      "ownerStatement": "These are good-to-go.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
+      "id": "ja-v-9553e3adbc2a",
+      "text": "右手",
+      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+      "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+      "selectedVersion": 5,
+      "ownerStatement": "These are good-to-go.",
+      "date": "2026-11-09",
+      "scope": "artwork only"
+    },
+    {
       "id": "ja-v-8438eda3cfc0",
       "text": "年",
       "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
