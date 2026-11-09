@@ -4,13 +4,30 @@ export interface OfflineManifest { version: string; shell: string[]; sizes: Reco
 const base = import.meta.env.BASE_URL;
 async function worker(create: boolean): Promise<ServiceWorker | null> {
   if (!('serviceWorker' in navigator) || !import.meta.env.PROD) throw new Error('Downloads are available in the published app.');
+  const expectedScope = new URL(base, location.href).href;
   let registration = await navigator.serviceWorker.getRegistration(base);
-  // Explicit preparation also asks the browser to check for a worker update.
+  // An ancestor worker may control this page, but cannot own this build's downloads.
+  if (registration?.scope !== expectedScope) registration = undefined;
   if (create) registration = await navigator.serviceWorker.register(base + 'offline-worker.js', { scope: base });
   if (!registration) return null;
-  registration = registration.active ? registration : await navigator.serviceWorker.ready;
-  if (!registration.active) throw new Error('Offline preparation is unavailable. Reload and retry.');
-  return registration.active;
+  if (registration.scope !== expectedScope) throw new Error('Offline preparation has an unexpected scope.');
+  if (registration.active) return registration.active;
+  // ready can resolve to an ancestor registration. Wait for this registration only.
+  const candidate = registration.installing ?? registration.waiting;
+  if (!candidate) throw new Error('Offline preparation is unavailable. Reload and retry.');
+  return new Promise((resolve, reject) => {
+    const finish = (error?: Error) => {
+      clearTimeout(timer); candidate.removeEventListener('statechange', check);
+      if (error) reject(error); else resolve(registration!.active!);
+    };
+    const check = () => {
+      if (registration!.active) finish();
+      else if (candidate.state === 'redundant') finish(new Error('Offline installation failed. Reload and retry.'));
+    };
+    const timer = setTimeout(() => finish(new Error('Offline installation timed out. Reload and retry.')), 30000);
+    candidate.addEventListener('statechange', check);
+    check();
+  });
 }
 export async function offlineRequest(type: 'STATUS' | 'DOWNLOAD' | 'REMOVE', urls: readonly string[], progress?: (result: OfflineResult) => void): Promise<OfflineResult> {
   const target = await worker(type === 'DOWNLOAD');

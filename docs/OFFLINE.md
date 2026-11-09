@@ -13,3 +13,16 @@ Downloads belong to one build. Files are checked against the build's SHA-256 man
 Only known same-origin static assets are cached. Auth, API requests and account data never enter the service worker cache. The worker supports byte-range media responses for Safari and caches both practice and vocabulary navigation entry points. Development mode has no service worker; use a production build and HTTPS (or localhost) to test.
 
 Verification: `npm run check`, then build with the fake sync configuration in `docs/REVIEW.md` and run `npm run test:e2e`. `e2e/offline.spec.ts` exercises a native-audio offline lesson, reload/persistence and download removal; `e2e/sync.spec.ts` covers expired-session offline account reload and reconnect in Chromium. Its combined service-worker/fake-cloud test explicitly skips WebKit because controlled cross-origin requests bypass Playwright HTTP interception; the separate WebKit offline journey still exercises real downloads, playback and persistence. Other account tests retain Chromium/WebKit coverage. Worker tests cover incomplete/changed files, version mismatch, range responses, navigation, eviction and removal. Actual iPhone airplane-mode audio, touch, reload and reconnect acceptance remains open in #223 until the owner approves it.
+
+## Public demo path (#234)
+
+The demo is built for `/offline-demo/` and published alongside the ordinary root app. It has no additional access gate. `VITE_STORAGE_NAMESPACE=offline-demo` separates its device preferences, feedback, progress, notes and auth session from the root app. Explicit app sign-in still uses the real sync service and account history. The demo worker is registered only for `/offline-demo/`; download removal preserves root-site caches.
+
+To verify the deployment build locally:
+
+```sh
+VITE_BASE_PATH=/offline-demo/ VITE_STORAGE_NAMESPACE=offline-demo npm run build
+VITE_BASE_PATH=/offline-demo/ VITE_STORAGE_NAMESPACE=offline-demo npm run test:e2e -- --config=playwright.demo.config.ts
+```
+
+The dedicated browser fixture serves the exact built demo alongside a real root service worker. It exercises offline playback, saved answers, library navigation and separation from root device data and caches in Chromium and mobile WebKit. Ordinary root builds and storage keys remain unchanged. The Pages workflow pins the demo's reviewed source SHA independently of the root release; updating the demo requires updating that pin.

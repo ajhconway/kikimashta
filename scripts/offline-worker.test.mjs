@@ -101,10 +101,12 @@ test('version mismatches, unknown URLs and account requests cannot enter the cac
 test('removal clears only app downloads and is ordered after an in-flight download', async () => {
   const app = setup();
   app.stores.set('another-app', new Map([['x', 'preserved']]));
+  app.stores.set('kikimashta-offline-/-production', new Map([['root', 'root-preserved']]));
   const preparing = app.message('DOWNLOAD');
   const removing = app.message('REMOVE');
   assert.equal((await preparing).at(-1).ready, true);
   assert.equal((await removing).at(-1).ready, false);
   assert.equal((await app.message('STATUS')).at(-1).ready, false);
   assert.equal(app.stores.get('another-app').get('x'), 'preserved');
+  assert.equal(app.stores.get('kikimashta-offline-/-production').get('root'), 'root-preserved');
 });
