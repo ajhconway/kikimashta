@@ -74,3 +74,16 @@ Focused check: `node --test scripts/codex-review-gate.test.mjs`.
 References: [Codex review setup](https://learn.chatgpt.com/docs/third-party/github),
 [GitHub rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets),
 [workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
+
+## Focused test coverage (#179)
+
+Pure core/content tests use Node; UI, preference and storage tests retain jsdom.
+Each browser runner executes half of Chromium followed by half of mobile WebKit,
+so slower WebKit work is shared while every required journey still runs in both engines.
+Reports are retained separately for each engine and shard.
+
+Historical audition/decoder sweeps and generated contact sheets live under
+`e2e/content-review/`. Run `npm run test:content-review` after building, or use
+Actions → Review media in browsers → Run workflow when reviewing media changes.
+Ordinary browser tests continue to check native playback, failures and persisted history.
+Contact sheets are review artifacts, not screenshot baseline assertions.

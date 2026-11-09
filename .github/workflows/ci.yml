@@ -92,11 +92,22 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npm run test:e2e -- --shard=${{ matrix.shard }}/2
+      # Shard each engine separately so both runners share the slower WebKit work.
+      - run: npm run test:e2e -- --project=chromium --shard=${{ matrix.shard }}/2
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
-          name: browser-test-results-${{ matrix.shard }}
+          name: chromium-test-results-${{ matrix.shard }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+      - run: npm run test:e2e -- --project=webkit-mobile --shard=${{ matrix.shard }}/2
+        if: ${{ !cancelled() }}
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: webkit-test-results-${{ matrix.shard }}
           path: |
             playwright-report/
             test-results/

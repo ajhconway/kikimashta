@@ -28,6 +28,7 @@
     "content:contextual:comparison": "node scripts/content/build-contextual-comparison.mjs",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "test:content-review": "E2E_CONTENT_REVIEW=1 playwright test content-review",
     "check": "npm run lint && npm test && npm run test:audio && npm run test:cards && npm run build",
     "audio:spanish:elevenlabs": "node scripts/content/generate-spanish-travel-pack.mjs",
     "audio:spanish:review": "node scripts/content/build-spanish-audio-review.mjs",
