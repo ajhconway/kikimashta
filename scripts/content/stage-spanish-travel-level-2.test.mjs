@@ -115,3 +115,24 @@ for (const mode of ['directory', 'dangling-file', 'bank']) test(`rejects ${mode}
   assert.deepEqual(await readdir(outside), [])
   assert.equal(await readFile(join(root, 'content/es-419.json'), 'utf8'), 'level1 must remain unchanged')
 })
+
+
+test('restaging accepts the identical canonical artwork after duplicate sources are removed', async t => {
+  const f = await fixture(t)
+  await stageSpanishTravelLevel2(f)
+  const bankPath = join(f.root, 'content/es-419-travel-2.json')
+  const activationPath = join(f.root, 'content/spanish-travel-2/activation.json')
+  const bank = await readFile(bankPath), activation = JSON.parse(await readFile(activationPath))
+  const aliases = {}
+  for (const image of activation.images) {
+    aliases[image.sourcePath] = { path: 'public/' + image.src, sha256: image.sha256, bytes: image.bytes }
+    await rm(join(f.root, image.sourcePath))
+  }
+  await f.save('artifacts/artwork-aliases.json', JSON.stringify({ version: 1, aliases }))
+  await stageSpanishTravelLevel2(f)
+  assert.deepEqual(await readFile(bankPath), bank)
+  assert.deepEqual(JSON.parse(await readFile(activationPath)), activation)
+  await f.save('public/' + activation.images.at(-1).src, 'changed canonical artwork')
+  await assert.rejects(stageSpanishTravelLevel2(f), /Accepted image bytes changed/)
+  assert.deepEqual(await readFile(bankPath), bank)
+})

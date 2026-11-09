@@ -69,10 +69,12 @@ test('combined review includes every picture and recording with relative media l
   assert.equal(result.reusedImages, 5)
   const banana = result.images.find(image => image.slug === 'banana')
   assert.equal(banana.file, 'reused/banana.jpg')
-  assert.deepEqual(await readFile(join(root, 'artifacts/spanish-travel-3-art/' + banana.file)), await readFile(join(root, banana.sourcePath)))
+  assert.ok(html.includes(`src="../../${banana.sourcePath}"`))
+  await assert.rejects(readFile(join(root, 'artifacts/spanish-travel-3-art/' + banana.file)), { code: 'ENOENT' })
   const forest = result.images.find(image => image.slug === 'forest')
   assert.equal(forest.file, 'reused/forest.png')
-  assert.deepEqual(await readFile(join(root, 'artifacts/spanish-travel-3-art/' + forest.file)), await readFile(join(root, forest.sourcePath)))
+  assert.ok(html.includes(`src="../../${forest.sourcePath}"`))
+  await assert.rejects(readFile(join(root, 'artifacts/spanish-travel-3-art/' + forest.file)), { code: 'ENOENT' })
 })
 
 
@@ -177,4 +179,26 @@ test('an edit binds its previous version and rejects a changed reference', async
   q.referencePath = art + 'originals/blanket-v1.png'
   await save(art + 'revisions/sidewalk-v2-request.json', q)
   await assert.rejects(buildLevel3MediaReview(root), /Image request identity changed/)
+})
+
+
+test('combined review retains accepted image identity and links canonical artwork after consolidation', async t => {
+  const { root, save } = await fixture(t)
+  const first = await buildLevel3MediaReview(root), aliases = {}
+  for (const image of first.images.filter(image => image.source === 'generated')) {
+    const original = 'artifacts/spanish-travel-3-art/' + image.file
+    const canonical = `public/images/approved/${image.id}-${image.sha256.slice(0, 12)}.png`
+    await save(canonical, await readFile(join(root, original)))
+    aliases[original] = { path: canonical, sha256: image.sha256, bytes: image.bytes }
+    await rm(join(root, original))
+  }
+  await save('artifacts/artwork-aliases.json', { version: 1, aliases })
+  const second = await buildLevel3MediaReview(root)
+  assert.deepEqual(second.images, first.images)
+  const page = join(root, 'artifacts/spanish-travel-3-art/review.html')
+  const html = await readFile(page, 'utf8')
+  assert.equal((html.match(/<img[^>]+src="\.\.\/\.\.\/public\/images\/approved\//g) ?? []).length, 36)
+  await save(Object.values(aliases).at(-1).path, 'corrupt canonical image')
+  await assert.rejects(buildLevel3MediaReview(root), /Generated image hash mismatch/)
+  assert.equal(await readFile(page, 'utf8'), html)
 })

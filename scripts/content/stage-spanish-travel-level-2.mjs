@@ -5,6 +5,7 @@ import { dirname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import { reviewedAudio } from './reviewed-audio.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 
 const ART = 'artifacts/spanish-travel-2-art'
 const AUDIO = 'artifacts/spanish-travel-2-audio-review'
@@ -95,8 +96,8 @@ export async function stageSpanishTravelLevel2({ root = process.cwd() } = {}) {
   // Keep validated bytes in memory: later copies cannot race a changed source.
   for (const item of bank.items) {
     const picture = art.images.find(i => i.id === item.id), sourcePath = `${ART}/${picture.file}`
-    const bytes = await readFile(join(root, sourcePath))
-    if (hash(bytes) !== picture.sha256 || bytes.length !== picture.bytes) throw new Error('Accepted image bytes changed.')
+    const { bytes } = reviewedImage({ root, reviewPath: sourcePath, productionPath: 'public/' + item.image.src,
+      sha256: picture.sha256, size: picture.bytes, message: 'Accepted image bytes changed.' })
     if (picture.source === 'generated') {
       const pixels = inspectPngAlpha(bytes)
       if (!pixels.transparentPixels || !pixels.opaquePixels || pixels.width !== pixels.height) throw new Error('Accepted PNG lost transparency or subject.')

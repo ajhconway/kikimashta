@@ -1,10 +1,11 @@
 /** Reproducible, hash-verified level 2 picture and voice review (#166). */
 import { createHash } from 'node:crypto'
-import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { resolve, join, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import { reviewedAudio } from './reviewed-audio.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 import { loadSpanishTravelLevel2Plan } from './generate-spanish-travel-level-2.mjs'
 import { level2AudioReviewHtml } from './build-spanish-travel-level-2-audio-review.mjs'
 
@@ -23,7 +24,7 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
   if (generated.length !== 34 || requests.issue !== 166 || requests.requests.length !== 34 ||
       new Set(requests.requests.map(q => q.id)).size !== 34 ||
       requests.requests.some(q => !generated.some(item => item.id === q.id && item.slug === q.slug))) throw new Error('Expected exactly 34 approved image requests.')
-  const images = []
+  const images = [], imagePaths = new Map()
   for (const item of bank.items) {
     const { id, slug, text, meaning, group, artwork } = item
     if (!/^[a-z0-9-]+$/.test(slug)) throw new Error('Invalid image slug.')
@@ -46,16 +47,20 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
         if (extra.role !== 'strict-geometry' || extra.path !== `artifacts/spanish-travel-2-art/revisions/${slug}-geometry-reference.png` ||
             hash(await readFile(join(root, extra.path))) !== extra.sha256) throw new Error('Geometry reference hash mismatch.')
       }
-      const bytes = await readFile(join(art, record.path))
-      if (hash(bytes) !== record.sha256) throw new Error('Generated image hash mismatch.')
+      const source = reviewedImage({ root, reviewPath: 'artifacts/spanish-travel-2-art/' + record.path,
+        productionPath: `public/images/approved/${id}-${record.sha256.slice(0, 12)}.png`,
+        sha256: record.sha256, message: 'Generated image hash mismatch.' })
+      const { bytes } = source
+      imagePaths.set(id, relative(art, join(root, source.path)))
       const pixels = inspectPngAlpha(bytes)
       if (pixels.width !== pixels.height || pixels.width < 1024 || !pixels.transparentPixels || !pixels.opaquePixels) throw new Error('Image requires a square transparent canvas and opaque subject.')
       images.push({ id, slug, text, meaning, group, source: 'generated', file: record.path,
         sha256: record.sha256, bytes: bytes.length, pixels, promptSha256: hash(request.prompt),
         referenceSha256: request.referenceSha256, additionalReferences, version, reviewStatus: 'awaiting-owner-review' })
     } else if (artwork.status === 'reuse-candidate') {
-      const bytes = await readFile(join(root, artwork.candidatePath))
-      if (hash(bytes) !== artwork.candidateSha256) throw new Error('Approved reuse hash mismatch.')
+      const { bytes } = reviewedImage({ root, reviewPath: artwork.candidatePath,
+        sha256: artwork.candidateSha256, message: 'Approved reuse hash mismatch.' })
+      imagePaths.set(id, relative(art, join(root, artwork.candidatePath)))
       images.push({ id, slug, text, meaning, group, source: 'approved-reuse', file: `reused/${slug}.jpg`,
         sha256: artwork.candidateSha256, bytes: bytes.length, sourcePath: artwork.candidatePath,
         sourceId: artwork.candidateSourceId, evidence: artwork.candidateEvidence,
@@ -75,13 +80,11 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
       sha256: clip.deliverySha256, size: clip.deliveryBytes })
     playbackPaths.set(clip.file, relative(art, join(root, delivery.path)))
   }
-  // Validate all media before writing the gallery or copying approved originals.
-  await mkdir(join(art, 'reused'), { recursive: true })
-  for (const image of images.filter(i => i.source === 'approved-reuse')) await copyFile(join(root, image.sourcePath), join(art, image.file))
+  // Validate all media before writing the gallery. Reused images stay in public/.
   const manifest = { issue: 166, pack: bank.id, status: 'generated-awaiting-owner-media-review',
     tool: 'built-in image_gen', generatedImages: 34, reusedImages: 2, expectedClips: 288,
     audioManifest: '../spanish-travel-2-audio-review/manifest.json', audioManifestSha256: hash(await readFile(join(audioRoot, 'manifest.json'))), images }
-  const figures = images.map(image => `<figure><a href="${escape(image.file)}"><img width="145" height="145" src="${escape(image.file)}" alt="${escape(image.meaning)}"></a><figcaption><span lang="es-419">${escape(image.text)}</span><small>${escape(image.meaning)} · ${image.source === 'generated' ? 'New artwork' : 'Reused artwork'}</small></figcaption></figure>`)
+  const figures = images.map(image => `<figure><a href="${escape(imagePaths.get(image.id))}"><img width="145" height="145" src="${escape(imagePaths.get(image.id))}" alt="${escape(image.meaning)}"></a><figcaption><span lang="es-419">${escape(image.text)}</span><small>${escape(image.meaning)} · ${image.source === 'generated' ? 'New artwork' : 'Reused artwork'}</small></figcaption></figure>`)
   const galleryAudio = { ...audio, clips: audio.clips.map(c => ({ ...c, file: playbackPaths.get(c.file) })) }
   let html = level2AudioReviewHtml(galleryAudio)
     .replace('listen to the full pack', 'pictures and voices')

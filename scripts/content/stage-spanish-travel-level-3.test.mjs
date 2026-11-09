@@ -167,3 +167,24 @@ test('unsafe image and recording paths are rejected before public writes', async
   await assert.rejects(stageSpanishTravelLevel3({ root }), /recording identity/)
   await assertUnchanged(root)
 })
+
+
+test('restaging accepts the identical canonical artwork after duplicate sources are removed', async t => {
+  const f = await fixture(t)
+  await stageSpanishTravelLevel3(f)
+  const bankPath = join(f.root, 'content/es-419-travel-3.json')
+  const activationPath = join(f.root, 'content/spanish-travel-3/activation.json')
+  const bank = await readFile(bankPath), activation = JSON.parse(await readFile(activationPath))
+  const aliases = {}
+  for (const image of activation.images) {
+    aliases[image.sourcePath] = { path: 'public/' + image.src, sha256: image.sha256, bytes: image.bytes }
+    await rm(join(f.root, image.sourcePath))
+  }
+  await f.save('artifacts/artwork-aliases.json', JSON.stringify({ version: 1, aliases }))
+  await stageSpanishTravelLevel3(f)
+  assert.deepEqual(await readFile(bankPath), bank)
+  assert.deepEqual(JSON.parse(await readFile(activationPath)), activation)
+  await f.save('public/' + activation.images.at(-1).src, 'changed canonical artwork')
+  await assert.rejects(stageSpanishTravelLevel3(f), /Accepted image bytes changed/)
+  assert.deepEqual(await readFile(bankPath), bank)
+})

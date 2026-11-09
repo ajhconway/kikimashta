@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, w
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const read = (root, path) => JSON.parse(readFileSync(join(root, path), 'utf8'))
@@ -43,7 +44,8 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       if (seen.has(asset.id) || !allItems.some(item => item.id === asset.id) || asset.status !== 'approved') throw new Error(`Unapproved, duplicate or unknown image: ${asset.id}`)
       seen.add(asset.id)
       if (!/^ja-[a-z0-9-]+$/.test(asset.id) || typeof asset.path !== 'string' || !asset.path.startsWith(`artifacts/card-regeneration/${batch}/`) || !/^[a-zA-Z0-9_./-]+\.png$/.test(asset.path) || asset.path.split('/').includes('..')) throw new Error(`Unsafe artwork identity: ${asset.id}`)
-      const source = readFileSync(join(root, asset.path))
+      const resolved = reviewedImage({ root, reviewPath: asset.path, sha256: asset.sha256, size: asset.bytes, message: `Source hash mismatch: ${asset.id}` })
+      const source = resolved.bytes
       if (source.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a' || hash(source) !== asset.sha256) throw new Error(`Source hash mismatch: ${asset.id}`)
       if (catalog.items.some(item => item.id === asset.id) && !visuals.some(file => file.records.some(visual => visual.id === asset.id))) throw new Error(`Missing visual metadata: ${asset.id}`)
       const description = asset.imageDescription ?? asset.visualReview
@@ -51,10 +53,10 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       const format = asset.transparentBackground === true ? 'png' : 'jpeg'
       const sourceAlpha = format === 'png' ? inspectPngAlpha(source) : undefined
       if (sourceAlpha && (!sourceAlpha.transparentPixels || !sourceAlpha.opaquePixels)) throw new Error(`Source must have transparent outer pixels and opaque subject details: ${asset.id}`)
-      return { asset, manifestPath, description, format, sourceAlpha, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.${format === 'png' ? 'png' : 'jpg'}` }
+      return { asset, resolvedSource: resolved.path, manifestPath, description, format, sourceAlpha, path: `public/images/approved/${asset.id}-${asset.sha256.slice(0, 12)}.${format === 'png' ? 'png' : 'jpg'}` }
     })
   })
-  const deliveries = plan.map(({ asset, manifestPath, description, path, format, sourceAlpha }) => {
+  const deliveries = plan.map(({ asset, resolvedSource, manifestPath, description, path, format, sourceAlpha }) => {
     const target = join(root, path)
     const recorded = activation.assets.find(record => record.id === asset.id && record.path === path &&
       record.sourcePath === asset.path && record.sourceSha256 === asset.sha256 && record.manifestPath === manifestPath)
@@ -66,7 +68,7 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
       const temporary = mkdtempSync(join(dirname(target), '.artwork-'))
       try {
         const staged = join(temporary, `delivery.${format === 'png' ? 'png' : 'jpg'}`)
-        encode(join(root, asset.path), staged, { format })
+        encode(join(root, resolvedSource), staged, { format })
         bytes = readFileSync(staged)
         validateDelivery(bytes, asset, format, sourceAlpha)
         renameSync(staged, target)

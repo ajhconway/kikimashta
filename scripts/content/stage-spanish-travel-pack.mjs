@@ -5,6 +5,7 @@ import { dirname, join, resolve, relative, isAbsolute } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import { reviewedAudio } from './reviewed-audio.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const json = async path => JSON.parse(await readFile(path, 'utf8'))
@@ -82,8 +83,8 @@ export async function stageSpanishTravelPack({ root = process.cwd() } = {}) {
     const entry = art.items.find(i => i.id === item.id), picture = entry.artwork
     if (!picture.path.startsWith('artifacts/spanish-travel-art/') || picture.path.includes('..') ||
         !['owner-approved', 'reuse-approved'].includes(picture.status) || approvedPictures.get(item.id)?.sha256 !== picture.sha256) throw new Error('Picture approval changed.')
-    const bytes = await readFile(join(root, picture.path))
-    if (hash(bytes) !== picture.sha256) throw new Error('Approved image hash mismatch.')
+    const { bytes } = reviewedImage({ root, reviewPath: picture.path, productionPath: 'public/' + item.image.src,
+      sha256: picture.sha256, message: 'Approved image hash mismatch.' })
     if (picture.status !== 'reuse-approved') {
       const alpha = inspectPngAlpha(bytes)
       if (!alpha.transparentPixels || !alpha.opaquePixels) throw new Error('Approved PNG lost transparency or subject.')
@@ -108,7 +109,7 @@ export async function stageSpanishTravelPack({ root = process.cwd() } = {}) {
   const activation = { issue: 159, pack: bank.id, language: bank.language, acceptance: 'content/spanish-travel-audio/acceptance.json',
     acceptanceSha256: hash(await readFile(join(root, 'content/spanish-travel-audio/acceptance.json'))),
     words: bank.items.length, voices: config.voices, recordings, images,
-    retiredItemIds: ['es-419-travel-entrance', 'es-419-travel-exit'], historicalAudio: 'content/es-419-audio-provenance.json' }
+    retiredItemIds: ['es-419-travel-entrance', 'es-419-travel-exit'] }
   await writeFile(join(root, 'content/es-419.json'), JSON.stringify(bank, null, 2) + '\n')
   await writeFile(join(root, 'content/spanish-travel-audio/activation.json'), JSON.stringify(activation, null, 2) + '\n')
   return { words: bank.items.length, voices: config.voices.length, recordings: recordings.length, images: images.length }

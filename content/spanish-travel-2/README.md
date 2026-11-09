@@ -79,12 +79,12 @@ Owner acceptance is bound to the exact selected manifests in `acceptance.json`; 
 ## Preparation notes
 
 - Reused unchanged: approved empty plate for plato and the existing handleless glass for vaso. The asset historically named ja-cup is a glass; taza needs a handled cup image.
-- The remaining 34 subjects were generated with the built-in image tool, using the same style reference. Original PNG bytes, exact prompts, per-image request hashes and decoded transparency measurements are preserved. Review each candidate at 145px without answer text.
+- The remaining 34 subjects were generated with the built-in image tool, using the same style reference. Selected original PNG bytes live once in `public/images/approved/`; `artifacts/artwork-aliases.json` maps the historical review paths to these identical files with hashes and byte counts. Exact prompts, per-image request hashes, earlier distinct variants and decoded transparency measurements remain preserved. Staging and gallery rebuilding verify the canonical copy when a consolidated source is absent. Review each candidate at 145px without answer text.
 - Guard cup/coffee, glass/drink, coin/money, shampoo/bottle and room/bed overlap when both levels are selected. Menu, receipt and museum imagery also require careful review for recognition without labels.
 - Use pescado for fish as food. Cartera means wallet in this draft. Piscina is the selected pool term; wording remains editable.
 - Keep stable item IDs independent of pack level. The current level 1 bank and retired entrance/exit history remain intact.
 - All 288 recordings were generated in the eight existing regional voices from the exact 2240 Unicode input characters. They use the same constant-gain playback profile with no trimming or timing changes. None required quieter-level exceptions. Level 2 uses its own approved plan, batch, scope guard and private archive; level 1 approvals and recordings are untouched.
-- Provider originals, requests and normalization evidence are hash-verified in the private archive at `~/.local/share/kikimashta/spanish-audio/166-v1/` (1737 files). Public review files contain normalized recordings and provenance, with no credentials or private account usage.
+- Provider originals, requests and normalization evidence are hash-verified in the private archive at `~/.local/share/kikimashta/spanish-audio/166-v1/` (1737 files). Review galleries reuse the identical active normalized recordings; public review manifests retain their provenance, with no credentials or private account usage.
 - Rebuild and verify the combined gallery with `node scripts/content/build-spanish-travel-level-2-media-review.mjs`; serve the repository root with `python3 -m http.server 5180 --bind 127.0.0.1 --directory .`, then open `/artifacts/spanish-travel-2-art/review.html`.
 
 ## Lexical references

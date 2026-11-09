@@ -133,3 +133,25 @@ test('a selected revision replaces only its picture and keeps the first original
   await save(q.additionalReferences[0].path, 'changed reference')
   await assert.rejects(buildLevel2MediaReview(root), /Geometry reference hash mismatch/)
 })
+
+
+test('combined review retains accepted image identity and links canonical artwork after consolidation', async t => {
+  const { root, save } = await fixture(t)
+  const first = await buildLevel2MediaReview(root), aliases = {}
+  for (const image of first.images.filter(image => image.source === 'generated')) {
+    const original = 'artifacts/spanish-travel-2-art/' + image.file
+    const canonical = `public/images/approved/${image.id}-${image.sha256.slice(0, 12)}.png`
+    await save(canonical, await readFile(join(root, original)))
+    aliases[original] = { path: canonical, sha256: image.sha256, bytes: image.bytes }
+    await rm(join(root, original))
+  }
+  await save('artifacts/artwork-aliases.json', { version: 1, aliases })
+  const second = await buildLevel2MediaReview(root)
+  assert.deepEqual(second.images, first.images)
+  const page = join(root, 'artifacts/spanish-travel-2-art/review.html')
+  const html = await readFile(page, 'utf8')
+  assert.equal((html.match(/<img[^>]+src="\.\.\/\.\.\/public\/images\/approved\//g) ?? []).length, 36)
+  await save(Object.values(aliases).at(-1).path, 'corrupt canonical image')
+  await assert.rejects(buildLevel2MediaReview(root), /Generated image hash mismatch/)
+  assert.equal(await readFile(page, 'utf8'), html)
+})

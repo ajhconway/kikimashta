@@ -107,3 +107,24 @@ test('restages level 1 from exact active deliveries after review duplicates are 
   await assert.rejects(stageSpanishTravelPack({ root }), /Accepted recording hash mismatch/)
   assert.deepEqual(await readFile(bankPath), first)
 })
+
+
+test('level 1 restages canonical artwork without changing accepted source identities', async t => {
+  const { root, save } = await restagingFixture(t)
+  await stageSpanishTravelPack({ root })
+  const bankPath = join(root, 'content/es-419.json')
+  const activationPath = join(root, 'content/spanish-travel-audio/activation.json')
+  const bank = await readFile(bankPath), activation = JSON.parse(await readFile(activationPath)), aliases = {}
+  for (const image of activation.images) {
+    const bytes = await readFile(join(root, 'public', image.src))
+    aliases[image.sourcePath] = { path: 'public/' + image.src, sha256: image.sha256, bytes: bytes.length }
+    await rm(join(root, image.sourcePath))
+  }
+  await save('artifacts/artwork-aliases.json', JSON.stringify({ version: 1, aliases }))
+  await stageSpanishTravelPack({ root })
+  assert.deepEqual(await readFile(bankPath), bank)
+  assert.deepEqual(JSON.parse(await readFile(activationPath)), activation)
+  await save('public/' + activation.images.at(-1).src, 'changed canonical artwork')
+  await assert.rejects(stageSpanishTravelPack({ root }), /Approved image hash mismatch/)
+  assert.deepEqual(await readFile(bankPath), bank)
+})
