@@ -1,5 +1,9 @@
 # Listening practice app plan
 
+## Visual-reference artwork release (#213)
+
+The owner approved shipping the complete selected 22-image set with “Let's ship this artwork set.” Bind acceptance to the current selected versions and exact PNG hashes in `artifacts/visual-reference-art-213/manifest.json`, including the original 年 and revised inward-thumb hand pair. Preserve version history and individual approvals. Activate transparent deliveries through the existing Japanese artwork mapping and provenance, update library descriptions and any affected image-bound choice-policy evidence, and preserve vocabulary eligibility, item IDs, audio and progress. Run configured checks and relevant browser journeys, obtain current-head Codex review, merge PR #215 through the required gates, and verify publication and live artwork. Actual iPhone acceptance remains manual.
+
 A personal listening game, starting with Japanese and leaving room for other languages. Keep it relaxed, untimed, and simple enough to improve through use.
 
 ## Current state — November 9, 2026
@@ -21,7 +25,7 @@ Adaptive practice and optional account sync are deployed at [kikimashta.com](htt
 - Ten selectable WaniKani packs cover levels 1–5, separately for pictures and writing. Selection is remembered on this device and scopes lessons, due reviews, answer choices, dev review, and forecasts. Browsing a pack does not approve more content for practice.
 - Sessions snapshot due reviews, then offer lessons in chunks of roughly ten cards. Picture and writing cards mix within each block; each question offers one answer format. Missed cards return until answered correctly. Corrective retries are saved but excluded from retention evidence.
 - Writing lessons use Noto Sans JP. Later reviews rotate approved print and handwriting fonts, with coverage checks and a standard-font fallback. Font appearance is a local preference.
-- Each item has eight approved pregenerated ElevenLabs voices. Artwork activation covers 168 approved illustrations from batches 01–10. Batch 11 is ready to generate; later artwork still follows the owner's feedback gates.
+- Each item has eight approved pregenerated ElevenLabs voices. Artwork activation covers 190 approved illustrations: 168 from batches 01–10 and 22 visual-reference replacements in #213. Later artwork still follows the owner's feedback gates.
 - Home centers Kiku and uses the current review-intensity color across the screen. The pace selector wheels were removed in #105. The density policy still uses saved device preferences or the Light–Moderate default.
 - Answers save to IndexedDB. Optional email-code sign-in adds account-scoped history and note sync, with explicit guest-progress copy. Dev review remains unsaved.
 - Code and documentation use AGPL-3.0-only; separately licensed media retain their terms.

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto'
 import { lstatSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const sourcePath = /^artifacts\/(?:spanish-travel(?:-[23])?-art\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:png|jpg)|card-regeneration\/batch-\d{2}\/[a-zA-Z0-9_.-]+\.png)$/
+const sourcePath = /^artifacts\/(?:spanish-travel(?:-[23])?-art\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:png|jpg)|card-regeneration\/batch-\d{2}\/[a-zA-Z0-9_.-]+\.png|visual-reference-art-213\/ja-v-[a-f0-9]+-v[1-9][0-9]*\.png)$/
 const canonicalPath = /^(?:public\/images\/approved\/[a-z0-9-]+\.(?:png|jpg)|artifacts\/card-regeneration\/batch-\d{2}\/[a-zA-Z0-9_.-]+\.png)$/
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 

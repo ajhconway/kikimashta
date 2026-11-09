@@ -228,6 +228,10 @@ def prepare():
     for manifest_path in sorted((ROOT / 'artifacts/card-regeneration').glob('batch-*/manifest.json')):
         for asset in json.loads(manifest_path.read_text())['assets']:
             artwork[asset['id']] = asset
+    visual_reference = ROOT / 'artifacts/visual-reference-art-213/manifest.json'
+    if visual_reference.exists():
+        for asset in json.loads(visual_reference.read_text())['assets']:
+            artwork[asset['id']] = asset
     by_id = defaultdict(list)
     for finding in findings:
         for item_id in finding['ids']:
