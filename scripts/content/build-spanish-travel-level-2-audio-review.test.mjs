@@ -37,13 +37,10 @@ test('complete review identifies level 2 and exposes all 288 recordings with reg
   assert.doesNotMatch(html, /Cesar/)
 })
 
-test('level 2 review refuses incomplete and mismatched original/delivery matrices', async () => {
+test('level 2 review rejects another pack and propagates matrix validation', async () => {
   for (const mutate of [
     f => { f.plan.issue = 155 },
     f => { f.deliveries.pop() },
-    f => { f.originals[0].request.text = 'another word' },
-    f => { f.deliveries[0].sourceRecordSha256 = 'changed' },
-    f => { f.deliveries[0].after.truePeakDbtp = 0 },
   ]) {
     const data = await fixture(); mutate(data)
     assert.throws(() => level2AudioReviewManifest(data.plan, data.originals, data.deliveries))

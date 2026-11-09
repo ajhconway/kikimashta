@@ -27,9 +27,9 @@ const originalShow = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype
 const originalClose = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'close');
 const onChoose = vi.fn();
 const onContinue = vi.fn();
-function Harness({ question = fixture(), preview = false }: { question?: Question; preview?: boolean }) {
+function Harness({ question = fixture() }: { question?: Question }) {
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
-  return <ContextualQuiz question={question} feedback={feedback} preview={preview} onContinue={onContinue} onChoose={choice => {
+  return <ContextualQuiz question={question} feedback={feedback} onContinue={onContinue} onChoose={choice => {
     onChoose(choice);
     setFeedback({ id: 'attempt', sessionId: 'session', itemId: question.target.id, language: 'ja-JP',
       choiceIds: question.choices.map(option => option.id), selectedId: choice.id, correct: choice.id === 'teacher-answer',
@@ -192,11 +192,62 @@ describe('contextual listening and feedback', () => {
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
   });
 
-  it('reveals lesson preview text and the correct answer without grading or internal Continue', () => {
-    render(<Harness preview/>);
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
-    expect(screen.getByText(/Correct answer:/)).toHaveTextContent('先生 · teacher');
-    expect(screen.queryByRole('button', { name: 'Continue' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Choose writing/ })).not.toBeInTheDocument();
-  });
+});
+
+it.each(['picture', 'text'] as const)('delays %s choices until the final question audio tail, then keeps them on replay', async format => {
+  const { container } = render(<ContextualQuiz question={fixture({ format })} feedback={null} onChoose={onChoose} onContinue={onContinue} delayChoices/>);
+  const audio = container.querySelector('audio')!;
+  const grid = container.querySelector('.choices')!;
+  Object.defineProperty(audio, 'duration', { configurable: true, value: 2 });
+  audio.currentTime = 1.82;
+  await advance(20);
+  expect(grid).not.toBeVisible();
+  fireEvent.ended(audio);
+  await advance(649);
+  expect(grid).not.toBeVisible();
+  await advance(1);
+  expect(audio.getAttribute('src')).toContain('who-drinks');
+  expect(grid).not.toBeVisible();
+  audio.currentTime = 1.82;
+  await advance(20);
+  expect(grid).toBeVisible();
+  expect(container.querySelector('.choices button')).toBeDisabled();
+  const transform = (grid.firstElementChild as HTMLElement).style.transform;
+  expect(transform).toContain('-13.');
+  await advance(500);
+  expect((grid.firstElementChild as HTMLElement).style.transform).toBe(transform);
+  fireEvent.ended(audio);
+  expect((grid.firstElementChild as HTMLElement).style.transform).toBe('');
+  expect(container.querySelector('.choices button')).toBeEnabled();
+  await click(screen.getByRole('button', { name: 'Replay sentence and question' }));
+  await advance(20);
+  expect(grid).toBeVisible();
+  expect(container.querySelector('.choices button')).toBeEnabled();
+});
+
+it('recovers delayed choices after an audio error without revealing at the sentence endpoint', async () => {
+  const { container } = render(<ContextualQuiz question={fixture()} feedback={null} onChoose={onChoose} onContinue={onContinue} delayChoices/>);
+  const audio = container.querySelector('audio')!;
+  fireEvent.error(audio); await advance(1000);
+  expect(container.querySelector('.choices')).not.toBeVisible();
+  await click(screen.getByRole('button', { name: 'Replay sentence and question' }));
+  fireEvent.ended(audio); await advance(650);
+  expect(container.querySelector('.choices')).not.toBeVisible();
+  fireEvent.ended(audio);
+  expect(container.querySelector('.choices')).toBeVisible();
+});
+
+it('reveals delayed contextual choices without motion only after the final recording when reduced motion is requested', async () => {
+  vi.stubGlobal('matchMedia', () => ({ matches: true }));
+  try {
+    const { container } = render(<ContextualQuiz question={fixture()} feedback={null} onChoose={onChoose} onContinue={onContinue} delayChoices/>);
+    const audio = container.querySelector('audio')!;
+    fireEvent.ended(audio); await advance(650);
+    Object.defineProperty(audio, 'duration', { configurable: true, value: 2 });
+    audio.currentTime = 1.99; await advance(20);
+    expect(container.querySelector('.choices')).not.toBeVisible();
+    fireEvent.ended(audio);
+    expect(container.querySelector('.choices')).toBeVisible();
+    expect((container.querySelector('.choice-slot') as HTMLElement).style.transform).toBe('');
+  } finally { vi.unstubAllGlobals(); }
 });

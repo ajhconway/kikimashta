@@ -1,0 +1,32 @@
+name: Review media in browsers
+
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  media:
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:content-review
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: media-review-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

@@ -63,7 +63,6 @@ it('introduces unlocked contexts directly in reviews while saving initial-learni
   const before = history.length;
   const { container } = render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
-  expect(screen.queryByText(/contextual cards are ready for lessons/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: /^Start/ }));
   expect(screen.queryByRole('button', { name: 'Begin lesson' })).not.toBeInTheDocument();
   await click(await screen.findByRole('button', { name: 'Begin review' }));
@@ -109,6 +108,9 @@ it('runs the actual contextual practice screen as an unsaved demo with retries a
     const correct = authored.options.find(option => option.id === authored.correctOptionId)!;
     const format = container.querySelector('.contextual-practice')!.getAttribute('data-exercise')!;
     seen.add(format);
+    fireEvent.ended(quiz.querySelector('audio')!);
+    await act(async () => { await vi.advanceTimersByTimeAsync(650); });
+    fireEvent.ended(quiz.querySelector('audio')!);
     const buttons = screen.getAllByRole('button', { name: /^Choose (picture|writing)/ });
     const correctButton = format.endsWith('text') ? buttons.find(button => button.textContent === correct.text)! :
       buttons.find(button => within(button).getByRole('img').getAttribute('alt') === contextualVocabulary.find(word => word.id === correct.imageItemId)!.image.alt)!;
@@ -150,12 +152,11 @@ it('offers a direct contextual demo link even with no selected packs', async () 
 });
 
 
-it('keeps the demo available at high workload without Home admission copy', async () => {
+it('keeps the demo available at high workload', async () => {
   const { schedule } = await unlockedTarget();
   vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
-  expect(screen.queryByText(/contextual cards are ready for lessons|New lessons are waiting for your review workload to ease/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
   expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();

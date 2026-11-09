@@ -238,6 +238,7 @@ footer a:hover { color: var(--purple-dark); }
 .quiz .quiz-listen:active { transform: translateY(3px) scale(.86, .82); transition-duration: .05s; }
 .quiz .choices { position: relative; z-index: 1; gap: 16px; }
 .quiz .answer-choice { transition: transform .14s ease-out, border-color .12s, background .12s; }
+.quiz .choices-audio-first { visibility: hidden; }
 .quiz .choices-enter .choice-slot { --entry-x: -110vw; animation: card-slide-in .36s cubic-bezier(.2, .65, .3, 1) backwards; }
 .quiz .choices-enter .choice-slot:nth-child(even) { --entry-x: 110vw; }
 .choice-slot.is-departing { visibility: hidden; pointer-events: none; }

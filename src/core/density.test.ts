@@ -1,8 +1,16 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import * as scheduler from './scheduler';
 import type { Exercise, PracticeAttempt, PracticeCard } from '../types';
 import { advanceSchedule, deriveSchedules, schedulerVersion, type ScheduledWord } from './scheduler';
 import { DENSITY_LEVELS, MAX_DENSITY_TARGET, densityLevel, densityTargets, forecastDensity, planLessonChunk } from './density';
+
+// Exercise real DST transitions even when the host/CI defaults to UTC.
+beforeAll(() => {
+  vi.stubEnv('TZ', 'America/New_York');
+  expect(new Date('2026-01-01T12:00:00Z').getTimezoneOffset()).toBe(300);
+  expect(new Date('2026-07-01T12:00:00Z').getTimezoneOffset()).toBe(240);
+});
+afterAll(() => vi.unstubAllEnvs());
 
 const NOW = Date.UTC(2026, 10, 5, 12);
 const DAY_MS = 86_400_000;
@@ -47,8 +55,8 @@ describe('future workload forecast', () => {
   });
 
   it.each([
-    { name: 'fall-back', now: new Date(2026, 9, 31, 12).getTime(), due: new Date(2026, 10, 1, 11, 30).getTime(), expected: 1 },
-    { name: 'spring-forward', now: new Date(2026, 2, 7, 12).getTime(), due: new Date(2026, 2, 8, 12, 30).getTime(), expected: 0 },
+    { name: 'fall-back', now: Date.parse('2026-10-31T16:00:00Z'), due: Date.parse('2026-11-01T16:30:00Z'), expected: 1 },
+    { name: 'spring-forward', now: Date.parse('2026-03-07T17:00:00Z'), due: Date.parse('2026-03-08T16:30:00Z'), expected: 0 },
   ])('assigns a card around the $name session boundary to its local calendar day', async ({ now, due, expected }) => {
     const learned = await introduced('clock-change', now - 2 * DAY_MS);
     const schedule = { ...learned, dueAt: due, card: { ...learned.card, dueAt: due } };
@@ -59,10 +67,10 @@ describe('future workload forecast', () => {
   });
 
   it.each([
-    { name: 'fall-back', year: 2026, month: 9, day: 31, hour: 1 },
-    { name: 'spring-forward gap', year: 2026, month: 2, day: 7, hour: 2 },
-  ])('simulates each $name review from the original local session time', async ({ year, month, day, hour }) => {
-    const now = new Date(year, month, day, hour, 30).getTime();
+    { name: 'fall-back', timestamps: ['2026-10-31T05:30:00Z', '2026-11-01T05:30:00Z', '2026-11-02T06:30:00Z', '2026-11-03T06:30:00Z'] },
+    { name: 'spring-forward gap', timestamps: ['2026-03-07T07:30:00Z', '2026-03-08T07:30:00Z', '2026-03-09T06:30:00Z', '2026-03-10T06:30:00Z'] },
+  ])('simulates each $name review from the original local session time', async ({ timestamps }) => {
+    const now = Date.parse(timestamps[0]!);
     const learned = await introduced('daily-clock', now - 2 * DAY_MS);
     const schedule = { ...learned, dueAt: now, card: { ...learned.card, dueAt: now } };
     // Failures keep this card due at every daily session, exposing the actual
@@ -72,12 +80,7 @@ describe('future workload forecast', () => {
     try {
       const forecast = await forecastDensity([schedule], now, { scenarios: 1, horizonDays: 4 });
       expect(forecast.daily).toEqual([1, 1, 1, 1]);
-      expect(advance.mock.calls.map(([, attempt]) => attempt.answeredAt)).toEqual([
-        new Date(year, month, day, hour, 30).getTime(),
-        new Date(year, month, day + 1, hour, 30).getTime(),
-        new Date(year, month, day + 2, hour, 30).getTime(),
-        new Date(year, month, day + 3, hour, 30).getTime(),
-      ]);
+      expect(advance.mock.calls.map(([, attempt]) => attempt.answeredAt)).toEqual(timestamps.map(value => Date.parse(value)));
     } finally { recall.mockRestore(); advance.mockRestore(); }
   });
 
@@ -186,7 +189,7 @@ describe('future workload forecast', () => {
 
 describe('lesson chunk admission', () => {
   it('projects newly admitted lessons at calendar sessions through the spring-forward gap', async () => {
-    const now = new Date(2026, 2, 7, 2, 30).getTime();
+    const now = Date.parse('2026-03-07T07:30:00Z');
     const recall = vi.spyOn(scheduler, 'retrievability').mockResolvedValue(0);
     const advance = vi.spyOn(scheduler, 'advanceSchedule');
     try {
@@ -195,9 +198,9 @@ describe('lesson chunk admission', () => {
       expect(plan.items).toHaveLength(1);
       expect(plan.projectedForecast.daily).toEqual([0, 1, 1, 1]);
       expect(advance.mock.calls.filter(([, attempt]) => attempt.context?.phase === 'review').map(([, attempt]) => attempt.answeredAt)).toEqual([
-        new Date(2026, 2, 8, 2, 30).getTime(),
-        new Date(2026, 2, 9, 2, 30).getTime(),
-        new Date(2026, 2, 10, 2, 30).getTime(),
+        Date.parse('2026-03-08T07:30:00Z'),
+        Date.parse('2026-03-09T06:30:00Z'),
+        Date.parse('2026-03-10T06:30:00Z'),
       ]);
     } finally { recall.mockRestore(); advance.mockRestore(); }
   });

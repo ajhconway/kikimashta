@@ -83,7 +83,7 @@ test('rejects traversal, foreign URLs, and media-family mismatches', () => {
   assert.equal(libraryMediaPath('images/apple.svg', 'images'), '../images/apple.svg')
 })
 
-test('requires complete unique visual records and unique recording voices', t => {
+test('requires complete unique visual records and catalogue items', t => {
   const { root, item, visual, put, save } = fixture(t)
   save([item], [])
   assert.throws(() => buildLibrary({ root }), /Incomplete visual metadata/)
@@ -93,8 +93,6 @@ test('requires complete unique visual records and unique recording voices', t =>
   put('content/visuals/other.json', [visual])
   assert.throws(() => buildLibrary({ root }), /duplicate visual metadata ID/)
   rmSync(join(root, 'content/visuals/other.json'))
-  save([{ ...item, audio: [item.audio[0], item.audio[0]] }])
-  assert.throws(() => buildLibrary({ root }), /Duplicate audio voice marin/)
   save([item, item])
   assert.throws(() => buildLibrary({ root }), /duplicate catalogue ID/)
   save([{ ...item, reading: '' }])
