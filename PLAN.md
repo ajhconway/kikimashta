@@ -59,7 +59,7 @@ Spacing and retrieval practice have research support; this density controller an
 
 ## Language framework (#143)
 
-The interface stays in English and practice is scoped to the selected learning language. Japanese identifiers and preferences remain unchanged. Latin American Spanish (`es-419`) now has the approved 36-word Travel level 1 picture pack with eight selected regional voices. Spanish writing is reserved for future contextual exercises. The language-scoped card library offers pictures, Spanish text, English meanings, playback, notes and independent voice preferences. The original four retained starter words keep their IDs and existing mastery; entrance/exit attempts and historical Cesar recordings remain preserved outside active selection. The owner will perform real-iPhone tests on the deployed version.
+The interface stays in English and practice is scoped to the selected learning language. Japanese identifiers and preferences remain unchanged. Latin American Spanish (`es-419`) now has two approved 36-word travel picture packs (72 words total) with eight selected regional voices. Spanish writing is reserved for future contextual exercises. The language-scoped card library offers pictures, Spanish text, English meanings, playback, notes and independent voice preferences. The original four retained starter words keep their IDs and existing mastery; entrance/exit attempts and historical Cesar recordings remain preserved outside active selection. The owner will perform real-iPhone tests on the deployed version.
 
 ## Spanish travel artwork (#150)
 

@@ -1,6 +1,6 @@
 # Spanish travel level 2 · media review (#166)
 
-36 additional words; picture vocabulary, English interface, and the existing eight regional voices. The owner approved the word list and generation. All 36 pictures (34 new transparent PNGs and 2 unchanged approved JPGs) and all 288 recordings are ready for media acceptance. The pack is not active.
+36 additional words; picture vocabulary, English interface, and the existing eight regional voices. The owner approved the word list and generation. All 36 pictures (34 new transparent PNGs and 2 unchanged approved JPGs) and all 288 recordings are ready for media acceptance. The owner approved the complete selected media set and requested auto-merge. The pack is registered for activation after required checks and review.
 
 [Combined picture and voice review](../../artifacts/spanish-travel-2-art/review.html) · [All artwork at card size](../../artifacts/spanish-travel-2-art/artwork.html) · [Audio provenance](../../artifacts/spanish-travel-2-audio-review/manifest.json)
 
@@ -73,6 +73,8 @@
 ## Artwork feedback
 
 The earlier Japanese table and chair scenes include Kiku and teach spatial relations (on/under). They are not standalone furniture pictures. Keep the new isolated table and chair for mesa and silla. The owner rejected the original staircase taper; the gallery now selects stairs v5 with consistent-width treads. Earlier variants, their exact prompts and the geometry reference remain preserved under the artwork revisions. All other pictures and all 288 recordings are unchanged.
+
+Owner acceptance is bound to the exact selected manifests in `acceptance.json`; `activation.json` records the production copies. `content/es-419-travel-2.json` is the separate level 2 bank, registered as `es-419-travel-2-pictures`. Both levels share the existing Spanish voice and progress identities.
 
 ## Preparation notes
 

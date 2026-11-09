@@ -45,7 +45,7 @@ describe('learning languages', () => {
     expect(spanish.items.some(item => item.text === 'café')).toBe(true);
     for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
     validateBank(spanishLanguage.pool);
-    expect(spanishLanguage.pool.items).toHaveLength(36);
+    expect(spanishLanguage.pool.items).toHaveLength(72);
     for (const media of [...activation.images, ...activation.recordings]) {
       expect(createHash('sha256').update(readFileSync('public/' + media.src)).digest('hex')).toBe(media.sha256);
     }
@@ -56,10 +56,10 @@ describe('learning languages', () => {
       expect(createHash('sha256').update(delivery).digest('hex')).toBe(record.deliverySha256);
       expect(record.after.truePeakDbtp).toBeLessThanOrEqual(-2);
     }
-    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture']);
+    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-picture']);
     const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(36);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(36);
+    expect(cards).toHaveLength(72);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(72);
   });
   it('filters retired Spanish writing selections without reviving an empty selection', () => {
     const language = learningLanguages[1]!;
