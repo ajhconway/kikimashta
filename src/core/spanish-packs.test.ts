@@ -111,7 +111,7 @@ describe('Spanish travel levels', () => {
     }
   });
 
-  it('keeps ambiguous pictures out of all single-pack and combined question choices', () => {
+  it('keeps the complete picture review and symmetric exclusions consistent with approved assets', () => {
     const byId = new Map(spanish.pool.items.map(item => [item.id, item]));
     expect(digest(fourthPictureReview.selectedArtworkManifest)).toBe(fourthPictureReview.selectedArtworkManifestSha256);
     expect(new Set(fourthPictureReview.inspectedAssets.map(asset => asset.id)).size).toBe(spanish.pool.items.length);
@@ -124,8 +124,12 @@ describe('Spanish travel levels', () => {
       expect(byId.get(left!)?.pictureDistractorExclusions).toContain(right);
       expect(byId.get(right!)?.pictureDistractorExclusions).toContain(left);
     }
-    const scopes = Array.from({ length: (1 << spanish.packs.length) - 1 }, (_, index) => spanish.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id));
-    for (const packIds of scopes) {
+  });
+
+  const scopes = Array.from({ length: (1 << spanish.packs.length) - 1 }, (_, index) => ({
+    packIds: spanish.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id),
+  }));
+  it.each(scopes)('keeps ambiguous pictures out of choices for $packIds', ({ packIds }) => {
       const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
       const pool = cards.map(card => card.item);
       for (let seed = 1; seed <= 3; seed++) {
@@ -143,6 +147,5 @@ describe('Spanish travel levels', () => {
           }
         }
       }
-    }
   });
 });

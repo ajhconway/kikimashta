@@ -1,0 +1,90 @@
+{
+  "inputDigest": "8b98686942db9196ddffe6df7ea40d81e050f4a956a0a9aab4d44993d91715b1",
+  "orderSeed": "212-v1",
+  "trials": [
+    {
+      "trialId": "T01-V1",
+      "targetId": "ja-dog",
+      "voice": "otani",
+      "A": "baseline",
+      "B": "weighted"
+    },
+    {
+      "trialId": "T01-V2",
+      "targetId": "ja-dog",
+      "voice": "morioki",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T02-V1",
+      "targetId": "ja-v-9e64feeea5ea",
+      "voice": "otani",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T02-V2",
+      "targetId": "ja-v-9e64feeea5ea",
+      "voice": "morioki",
+      "A": "baseline",
+      "B": "weighted"
+    },
+    {
+      "trialId": "T04-V1",
+      "targetId": "ja-v-5dc14aea92c7",
+      "voice": "otani",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T04-V2",
+      "targetId": "ja-v-5dc14aea92c7",
+      "voice": "morioki",
+      "A": "baseline",
+      "B": "weighted"
+    },
+    {
+      "trialId": "T07-V1",
+      "targetId": "ja-v-8ce0a0ec59c4",
+      "voice": "otani",
+      "A": "baseline",
+      "B": "weighted"
+    },
+    {
+      "trialId": "T07-V2",
+      "targetId": "ja-v-8ce0a0ec59c4",
+      "voice": "morioki",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T10-V1",
+      "targetId": "ja-v-eba7f0968101",
+      "voice": "otani",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T10-V2",
+      "targetId": "ja-v-eba7f0968101",
+      "voice": "morioki",
+      "A": "baseline",
+      "B": "weighted"
+    },
+    {
+      "trialId": "T12-V1",
+      "targetId": "ja-v-3fef4445ce13",
+      "voice": "otani",
+      "A": "weighted",
+      "B": "baseline"
+    },
+    {
+      "trialId": "T12-V2",
+      "targetId": "ja-v-3fef4445ce13",
+      "voice": "morioki",
+      "A": "baseline",
+      "B": "weighted"
+    }
+  ]
+}

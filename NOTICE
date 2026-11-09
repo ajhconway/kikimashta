@@ -29,3 +29,16 @@ records their sources, hashes, and supported characters.
 The licensing change was made on 2026-11-05. Releases through commit
 02dcb58400f4971c6e54e2f7740b4d1c3328d25f were published under MIT. This change
 does not withdraw the MIT permissions granted for those earlier versions.
+
+Japanese pronunciation-neighbor ordering and the offline comparison in
+artifacts/pronunciation-neighbors-212/ use acoustic-distance CSV tables from
+Jiro Shimaya's kanasim,
+revision f067a4e8be10d818b37b8b9f08de933dae01524b, under Apache-2.0.
+Source: https://github.com/jiroshimaya/kanasim
+The unchanged production source tables and full upstream license are preserved
+in content/pronunciation-neighbors/kanasim/. The derived weighting recipe and
+provenance are documented in content/pronunciation-neighbors/README.md; historical
+experiment inputs retain their separate copy and provenance in the artifact's
+vendor/ directory. Source tables are used only during offline preparation; the
+browser receives compact neighbor indices rather than acoustic tables or model
+weights.

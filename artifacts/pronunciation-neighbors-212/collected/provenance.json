@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "ac90e563d835d1605e106b037026920afdc1fd0b",
+  "inputDigest": "39ca2ad3cd9ee9b72364aff72feb5e595901023102936e0366e745a7c8bee779",
+  "reviewer": "owner",
+  "participants": 1,
+  "targets": 6,
+  "voicePasses": 2,
+  "trials": 12,
+  "wordsRevealed": 0,
+  "sha256": {
+    "owner-responses.json": "0bb6eb171b2ee077fb1afec60a33ddef26f7f011ac0b5045857081c5e83a062e",
+    "listening.json": "0a85459b48d0b79135e1aa9375ffb0f06e49b4e69e84af5359a1ba02fbf692e7",
+    "blind-key.json": "7001cfad99fe26d1851c73ac12a5147246ed9f2c13f73229ef6f25e1acc5abd9",
+    "review-renderer.mjs": "bb569abd4bf4d9add83f2660646e34ba33d0aa46f34d60710ef65e63366d25b8",
+    "scored-responses.json": "c0b0054b6f486ab883d2e2d934a42e34624602ad7f50fe1f3a1761adc14446ca"
+  },
+  "note": "Exact submitted export and original report/key are preserved. Protocol source captured from the served revision; its hash is supplemental provenance because that original inputDigest did not include the renderer. Later revisions include renderer source in their inputDigest. Do not rewrite or migrate these responses to the new digest."
+}
