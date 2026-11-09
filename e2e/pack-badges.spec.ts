@@ -1,11 +1,12 @@
-import { expect, test } from './fixtures';
+import { expect, test, type Page } from './fixtures';
+import type { Locator } from '@playwright/test';
 import { badgeArtwork } from '../src/core/badge-art';
 import { badgeHistory } from '../src/test/pack-badge-history';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import pool from '../content/practice-pool.json' with { type: 'json' };
 import starter from '../content/ja.json' with { type: 'json' };
 import wordPolicy from '../content/contextual/pack-1/practice-policy.json' with { type: 'json' };
-import type { PracticeCard, WordExercise, WordItem } from '../src/types';
+import type { PracticeAttempt, PracticeCard, WordExercise, WordItem } from '../src/types';
 const packPreferenceKey = 'kikimashta-card-packs-v1';
 const pack = { id: 'ja-wanikani-1-pictures', title: 'WaniKani level 1 · Pictures' };
 const poolIds = new Set([...pool.itemIds, ...starter.items.map(item => item.id)]);
@@ -151,4 +152,142 @@ test('ten upright static medals follow a circle around Kiku on a narrow screen',
   await expect(medals.first()).toHaveCSS('animation-name', 'none');
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.screenshot({ path: `test-results/pack-badges-circle-${testInfo.project.name}.png`, fullPage: true });
+});
+
+
+async function putBadgeHistory(page: Page, attempts: PracticeAttempt[]) {
+  await page.evaluate(async history => {
+    const request = indexedDB.open('kikimashta-v0', 1);
+    await new Promise<void>((resolve, reject) => {
+      request.onsuccess = () => {
+        const db = request.result, transaction = db.transaction('attempts', 'readwrite');
+        for (const attempt of history) transaction.objectStore('attempts').put(attempt);
+        transaction.oncomplete = () => { db.close(); resolve(); };
+        transaction.onerror = () => reject(transaction.error);
+      };
+      request.onerror = () => reject(request.error);
+    });
+  }, attempts);
+}
+
+/** Every moving medal must share the same easing progress, without snapping when nodes reorder. */
+async function expectCalmBadgeMove(region: Locator, starts: Record<string, number>): Promise<number> {
+  const targets = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id')!, Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
+  const moving = Object.keys(targets).filter(id => Math.abs(targets[id]! - starts[id]!) > .01);
+  expect(moving.length).toBeGreaterThanOrEqual(2);
+  const frames = await region.evaluate(section => new Promise<{ id: string; radius: number; angle: number }[][]>(resolve => {
+    const samples: { id: string; radius: number; angle: number }[][] = [];
+    const frame = () => {
+      const stage = section.closest('.home-kiku-stage')!.getBoundingClientRect();
+      samples.push(Array.from(section.querySelectorAll<HTMLElement>('.pack-badge'), element => {
+        const box = element.getBoundingClientRect();
+        return { id: element.dataset.packId!, radius: Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2),
+          angle: Number.parseFloat(getComputedStyle(element).getPropertyValue('--badge-angle')) };
+      }));
+      if (section.getAttribute('data-phase') === 'reorder') requestAnimationFrame(frame);
+      else resolve(samples);
+    };
+    requestAnimationFrame(frame);
+  }));
+  expect(frames.length).toBeGreaterThan(10);
+  for (const [index, frame] of frames.entries()) {
+    const progress = moving.map(id => (frame.find(entry => entry.id === id)!.angle - starts[id]!) / (targets[id]! - starts[id]!));
+    // A cancelled transition jumps straight to 1 while its neighbors are near 0.
+    if (index === 0) progress.forEach(value => expect(value).toBeLessThan(.98));
+    expect(Math.max(...progress) - Math.min(...progress)).toBeLessThan(.025);
+    frame.forEach(entry => expect(Math.abs(entry.radius - frames[0]![0]!.radius)).toBeLessThan(1));
+  }
+  return frames[0]![0]!.radius;
+}
+
+test('saved badge changes celebrate on Home return before reordering and respect reduced motion', async ({ page }) => {
+  await page.addInitScript(key => localStorage.setItem(key, '[]'), packPreferenceKey);
+  await page.goto('./');
+  await expect(page.getByRole('button', { name: /^Start/ })).toBeDisabled();
+  const firstId = 'ja-wanikani-1-pictures', secondId = 'ja-wanikani-2-pictures';
+  const first = await badgeHistory(packCards(1, 'audio-picture'), firstId, 3);
+  const second = await badgeHistory(packCards(2, 'audio-picture'), secondId, 4);
+  const anchorId = 'ja-wanikani-3-pictures';
+  const anchor = await badgeHistory(packCards(3, 'audio-picture'), anchorId, 5);
+  await putBadgeHistory(page, [...first, ...second, ...anchor]);
+  await page.reload();
+  const region = page.getByRole('region', { name: 'Pack mastery badges' });
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(3);
+  expect(await page.locator(`[data-pack-id="${anchorId}"]`).evaluate(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')))).toBe(0);
+  await expect(page.locator('.badge-fireworks')).toHaveCount(0);
+  const firstBadge = page.locator(`[data-pack-id="${firstId}"]`);
+  const oldSlot = await firstBadge.getAttribute('style');
+  const beforeAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id')!, Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
+  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
+  await expect(region).toHaveCount(0);
+  const upgraded = await badgeHistory(packCards(1, 'audio-picture'), firstId, 7);
+  await putBadgeHistory(page, upgraded);
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await expect(region).toHaveAttribute('data-phase', 'celebrate');
+  const replacement = await firstBadge.evaluate(element => ({
+    slot: element.getAttribute('style'), kind: element.getAttribute('data-celebration'),
+    previous: element.querySelector('.badge-previous-art .pack-badge-medal')?.getAttribute('data-rank'),
+    current: element.querySelector('.badge-current-art .pack-badge-medal')?.getAttribute('data-rank'),
+    side: element.getAttribute('data-side'),
+  }));
+  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', side: 'left' });
+  const fireworks = page.locator('.badge-fireworks[data-kind="upgrade"]');
+  await expect(fireworks.locator('[data-burst]')).toHaveCount(5);
+  expect(await fireworks.locator('.firework-ray').count()).toBeGreaterThan(100);
+  // Seek the actual CSS animations to inspect the disappearance/pause/reveal deterministically.
+  await firstBadge.evaluate(element => {
+    const previous = element.querySelector('.badge-previous-art')!.getAnimations()[0]!;
+    const current = element.querySelector('.badge-current-art')!.getAnimations()[0]!;
+    if (Number(previous.effect!.getTiming().duration) !== 500 || Number(current.effect!.getTiming().delay) !== 1050) throw new Error('Unexpected upgrade pacing');
+    previous.pause(); current.pause(); previous.currentTime = 750; current.currentTime = 750;
+  });
+  await expect(firstBadge.locator('.badge-previous-art')).toHaveCSS('opacity', '0');
+  await expect(firstBadge.locator('.badge-current-art')).toHaveCSS('opacity', '0');
+  await firstBadge.evaluate(element => { const animation = element.querySelector('.badge-current-art')!.getAnimations()[0]!; animation.currentTime = 1500; animation.play(); });
+  await expect(firstBadge.locator('.badge-current-art')).toHaveCSS('opacity', '1');
+  await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
+  expect(await firstBadge.evaluate(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')))).toBe(0);
+  expect(await firstBadge.getAttribute('style')).not.toBe(oldSlot);
+  await expect(firstBadge).toHaveCSS('transition-property', '--badge-angle');
+  await expect(firstBadge).toHaveCSS('transition-duration', '1.7s');
+  const radius = await expectCalmBadgeMove(region, beforeAngles);
+  await expect(firstBadge).toHaveAttribute('data-side', 'left');
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(page.locator('.badge-previous-art, .badge-fireworks')).toHaveCount(0);
+
+  const third = await badgeHistory(packCards(4, 'audio-picture'), 'ja-wanikani-4-pictures', 3);
+  const settledSlots = await region.getByRole('listitem').evaluateAll(elements => elements.map(element => element.getAttribute('style')));
+  await putBadgeHistory(page, third);
+  await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
+  await expect(page.locator('[data-celebration="award"]')).toHaveCount(1);
+  const awardRadius = await page.locator('[data-celebration="award"]').evaluate(element => {
+    const stage = element.closest('.home-kiku-stage')!.getBoundingClientRect(), box = element.getBoundingClientRect();
+    return Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2);
+  });
+  expect(awardRadius).toBeCloseTo(radius, 0);
+  expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 3).map(element => element.getAttribute('style')))).toEqual(settledSlots);
+  const startAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id'), Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
+  await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
+  const turns = await region.getByRole('listitem').evaluateAll((elements, start) => elements.map(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')) - start[element.getAttribute('data-pack-id')!]!), startAngles);
+  turns.forEach(turn => expect(turn).toBeCloseTo(-18));
+  await expectCalmBadgeMove(region, startAngles);
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+
+  const thirdUpgrade = await badgeHistory(packCards(4, 'audio-picture'), 'ja-wanikani-4-pictures', 7);
+  await putBadgeHistory(page, thirdUpgrade);
+  await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
+  await expect(page.locator('[data-celebration="upgrade"]')).toHaveCount(1);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('[data-celebration="upgrade"] .badge-current-art')).toHaveCSS('animation-name', 'none');
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(4);
+  await expect(page.locator('[data-pack-id="ja-wanikani-4-pictures"]')).toHaveAttribute('data-side', 'right');
+  await expect(region.getByRole('listitem').first()).toHaveCSS('transition-property', 'none');
+  const expectedIds = new Set([...first, ...second, ...anchor, ...upgraded, ...third, ...thirdUpgrade].map(attempt => attempt.id));
+  expect(new Set((await savedAttempts(page)).map(attempt => attempt.id))).toEqual(expectedIds);
+  await page.reload();
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+  await expect(region.getByRole('listitem')).toHaveCount(4);
+  await expect(page.locator('.badge-fireworks')).toHaveCount(0);
 });
