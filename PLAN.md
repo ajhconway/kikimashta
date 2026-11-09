@@ -52,6 +52,7 @@ Spacing and retrieval practice have research support; this density controller an
 
 - `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio/artwork tests, the card metadata validator, and the production build. Focused tests stay beside the code.
 - After building, `npm run test:e2e` checks Chromium and mobile WebKit journeys in `e2e/`, including complete sessions, actual IndexedDB persistence, both exercise formats, pack selection, failed audio, notes, and account isolation/convergence against a simulated HTTP service.
+- Keep repeated rounds and rule/content permutations in focused tests; browser journeys retain representative native media, storage, layout and input boundaries. See [browser coverage and timing](docs/BROWSER_TESTS.md) for the consolidation in #202.
 - `npm run test:cards` runs the artwork preparation regressions and content/dependency validator. It is included in `npm run check`, so invalid metadata blocks required CI. Preparation and media generation remain manual.
 - Tests must be deterministic, isolated, and assert observable behavior. Use small fixtures, control time and randomness, mock external boundaries, and fix flaky tests instead of adding retries.
 - The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).

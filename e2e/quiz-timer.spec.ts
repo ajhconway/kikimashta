@@ -24,7 +24,7 @@ async function history(page: Page): Promise<PracticeAttempt[]> {
 }
 
 for (const [exercise, reducedMotion] of [
-  ['audio-picture', false], ['audio-text', false], ['audio-picture', true],
+  ['audio-picture', false], ['audio-text', true],
 ] as const) {
   test(`late ${exercise} answer completes with partial feedback and persists${reducedMotion ? ' with reduced motion' : ''}`, async ({ page }) => {
     if (reducedMotion) await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -155,34 +155,3 @@ for (const [exercise, reducedMotion] of [
     expect(await history(page)).toEqual(saved);
   });
 }
-
-test('Dev review offers a random timer with simulated mastery and keeps partial success unsaved', async ({ page }) => {
-  await page.addInitScript(() => { Math.random = () => .9; });
-  await page.clock.install();
-  await page.goto('./');
-  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
-  await page.getByLabel('Questions', { exact: true }).selectOption('6');
-  await page.getByLabel('Timer behavior', { exact: true }).selectOption('random');
-  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
-  await expect(page.getByText('1.5 second timer started.', { exact: true })).toBeAttached();
-  await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
-  await page.clock.runFor(3000);
-  await expect(page.getByText(/correct answer still counts as partial success/i)).toBeAttached();
-  const source = await page.locator('audio').getAttribute('src');
-  const heard = catalogue.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-  expect(heard).toBeDefined();
-  const exercise = await page.locator('.quiz').getAttribute('data-exercise');
-  const answer = exercise === 'audio-text'
-    ? page.getByRole('button', { name: 'Choose writing ' + heard.text, exact: true })
-    : page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: heard.image.alt, exact: true }) });
-  await answer.click();
-  await expect(page.getByLabel('Partial success', { exact: true })).toBeVisible();
-  expect(await history(page)).toEqual([]);
-  await expect(page.getByRole('button', { name: 'Replay word' })).toHaveText('Replay');
-  await page.clock.fastForward(1200);
-  await expect(page.locator('.app')).not.toHaveAttribute('data-answer', 'partial');
-  await page.clock.resume();
-  await page.getByRole('button', { name: 'Kikimashta home' }).click();
-  await page.reload();
-  expect(await history(page)).toEqual([]);
-});

@@ -321,7 +321,7 @@ test('writing scales by displayed length and card size across Japanese scripts',
   expect(samples.get('430/りんご')!).toBeGreaterThan(samples.get('320/りんご')!);
 });
 
-test('reviews both saved formats of one word and preserves a writing retry after reload', async ({ page }) => {
+test('reviews a mixed starting snapshot, preserves its writing retry and defers later due work', async ({ page }) => {
   await page.clock.install();
   await page.goto('./');
   await seedAttempts(page, [bank.items[0]!.id]);
@@ -346,6 +346,9 @@ test('reviews both saved formats of one word and preserves a writing retry after
   await page.getByRole('button', { name: /^start/i }).click();
   await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: /begin review/i }).click();
+  const laterWord = catalogue.items.find(item => item.text === '山')!;
+  await seedAttempts(page, [laterWord.id]);
+  const original = await savedAttempts(page);
   const completed = new Set<string>();
   let writingMissed = false;
   let firstWritingFont = '';
@@ -353,6 +356,8 @@ test('reviews both saved formats of one word and preserves a writing retry after
     const { target, exercise, cardId } = await heardWord(page);
     expect(target.id).toBe(bank.items[0]!.id);
     expect(completed.has(cardId)).toBe(false);
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '2');
+    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
     await expect(page.locator('.choices img')).toHaveCount(exercise === 'audio-picture' ? 4 : 0);
     if (exercise === 'audio-text') {
       const fonts = await page.locator('.choices .written-answer').evaluateAll(labels => labels.map(label => label.getAttribute('data-font')));
@@ -371,6 +376,9 @@ test('reviews both saved formats of one word and preserves a writing retry after
     if (exercise === 'audio-text' && !writingMissed) {
       writingMissed = true;
       await page.getByRole('button', { name: /choose writing/i }).filter({ hasNot: page.getByText(target.text, { exact: true }) }).first().click();
+      await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
+      await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
+      await expect(page.getByRole('status', { name: 'Mistakes', exact: true })).toContainText('1 incorrect answer');
       await expect(page.locator('.choices .written-answer').first()).toHaveAttribute('data-font', firstWritingFont);
       for (const label of await page.locator('.answer-departures .written-answer').all()) await expect(label).toHaveAttribute('data-font', firstWritingFont);
       await page.getByRole('button', { name: 'Continue', exact: true }).click();
@@ -382,15 +390,23 @@ test('reviews both saved formats of one word and preserves a writing retry after
   expect(completed.size).toBe(2);
   await expect(page.getByRole('heading', { name: /nice reviewing/i })).toBeVisible();
   const saved = await savedAttempts(page);
-  expect(saved).toHaveLength(5);
+  expect(saved).toHaveLength(original.length + 3);
+  for (const attempt of original) expect(saved.find(record => record.id === attempt.id)).toEqual(attempt);
+  const reviews = saved.filter(attempt => attempt.context?.phase === 'review');
+  expect(reviews).toHaveLength(3);
+  expect(reviews.filter(attempt => !attempt.context?.retryOf).map(attempt => attempt.context!.exercise).sort()).toEqual(['audio-picture', 'audio-text']);
   const miss = saved.find(attempt => attempt.context?.exercise === 'audio-text' && !attempt.correct)!;
   expect(miss).toBeDefined();
+  expect(saved.filter(attempt => attempt.context?.retryOf)).toHaveLength(1);
   expect(saved.find(attempt => attempt.context?.retryOf === miss.id)).toMatchObject({
     itemId: miss.itemId, correct: true, context: { exercise: 'audio-text', phase: 'review' },
   });
   await page.reload();
   expect(await savedAttempts(page)).toEqual(saved);
-  await expect.poll(async () => (await savedAttempts(page)).length).toBe(5);
+  await page.getByRole('button', { name: /^start/i }).click();
+  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: /begin review/i }).click();
+  expect((await heardWord(page)).target.id).toBe(laterWord.id);
 });
 
 test('Home remains readable with reachable controls at phone and desktop sizes', async ({ page }) => {
@@ -421,62 +437,6 @@ test('Home remains readable with reachable controls at phone and desktop sizes',
   await page.setViewportSize({ width: 390, height: 664 });
   await page.reload();
   await expect(density).toContainText('Minimal');
-});
-
-test('Dev review practices six random cards and a missed-word retry without saving progress', async ({ page }) => {
-  test.setTimeout(90_000);
-  // This journey checks session flow; focused timer tests cover timed Dev review.
-  await page.addInitScript(() => { Math.random = () => 0; });
-  await page.clock.install();
-  await page.goto('./');
-  await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
-  expect(await savedAttempts(page)).toEqual([]);
-  await page.getByRole('button', { name: 'Dev review', exact: true }).click();
-  await page.getByLabel('Questions', { exact: true }).selectOption('6');
-  await page.getByLabel('Timer behavior', { exact: true }).selectOption('random');
-  await page.getByRole('button', { name: 'Start dev review', exact: true }).click();
-  const completed = new Set<string>();
-  const presented: string[] = [];
-  let missedId = '';
-  for (let turn = 0; turn < 7 && completed.size < 6; turn++) {
-    const { target, exercise, cardId } = await heardWord(page);
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
-    expect(completed.has(cardId), 'correct targets are unique within the dev round').toBe(false);
-    presented.push(cardId);
-    if (turn === 0) {
-      missedId = cardId;
-      await page.getByRole('button', { name: /choose (picture|writing)/i }).filter({
-        hasNot: exercise === 'audio-picture' ? page.getByRole('img', { name: target.image.alt, exact: true }) : page.getByText(target.text, { exact: true }),
-      }).first().click();
-      await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
-      await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
-      const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
-      await expect(mistakes).toContainText('1 incorrect answer');
-      await expect(mistakes.locator('.mistake-icon')).toHaveCount(1);
-      await page.getByRole('button', { name: 'Continue', exact: true }).click();
-    } else {
-      await chooseHeardAnswer(page, target);
-      completed.add(cardId);
-    }
-    if (completed.size < 6) await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toHaveCount(0);
-  }
-  expect(completed.size).toBe(6);
-  expect(presented.filter(id => id === missedId)).toHaveLength(2);
-  await expect(page.getByRole('heading', { name: 'Dev review complete', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: /begin lesson|learn more/i })).toHaveCount(0);
-  await expect(page.getByRole('status', { name: 'Review density' })).toHaveCount(0);
-  expect(await savedAttempts(page)).toEqual([]);
-  await page.getByRole('button', { name: 'Finish', exact: true }).click();
-  await expect(page.getByRole('status', { name: 'Review density' })).toContainText('Minimal');
-  // Finishing the sandbox restores the ordinary adaptive flow without reload.
-  await page.getByRole('button', { name: /^start/i }).click();
-  await page.getByRole('button', { name: /begin lesson/i }).click();
-  await expect(page.getByRole('heading', { name: /lesson time!/i })).toBeVisible();
-  await page.getByRole('button', { name: /kikimashta home/i }).click();
-  await page.reload();
-  await expect(page.getByRole('button', { name: 'Dev review', exact: true })).toBeEnabled();
-  expect(await savedAttempts(page)).toEqual([]);
 });
 
 for (const key of ['Enter', 'Space']) {
@@ -537,117 +497,6 @@ test('a failed answer can be retried from Home and persists exactly once after r
   const saved = await savedAttempts(page);
   expect(saved).toHaveLength(original.length + 1);
   expect(saved.filter(attempt => attempt.id === expected.id)).toEqual([expected]);
-});
-
-test('future history and a backward clock leave practice usable without changing saved attempts', async ({ page }) => {
-  const now = Date.UTC(2026, 10, 8, 12);
-  await page.clock.install({ time: now });
-  await page.goto('./');
-  const future = bank.items[0]!, due = bank.items[1]!;
-  await seedAttempts(page, [future.id, due.id]);
-  await page.evaluate(async ({ item, at }) => {
-    const db = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open('kikimashta-v0', 1);
-      request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
-    });
-    try {
-      const transaction = db.transaction('attempts', 'readwrite');
-      transaction.objectStore('attempts').put({ id: 'legacy-' + item.id, sessionId: 'synced-device',
-        itemId: item.id, language: item.language, choiceIds: [item.id], selectedId: item.id, correct: true,
-        startedAt: at, answeredAt: at, responseMs: 0,
-        context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: item.audio[0]!.src,
-          replays: 0, schedulerVersion: 'fsrs-6-v2' } });
-      await new Promise<void>((resolve, reject) => {
-        transaction.oncomplete = () => resolve(); transaction.onerror = () => reject(transaction.error);
-      });
-    } finally { db.close(); }
-  }, { item: future, at: now + 60_000 });
-  const original = await savedAttempts(page);
-  await page.reload();
-  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
-  await expect(page.getByRole('alert')).toHaveCount(0);
-  await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: /begin review/i }).click();
-  expect((await heardWord(page)).target.id).toBe(due.id);
-  await page.getByRole('button', { name: /kikimashta home/i }).click();
-  await page.clock.setSystemTime(now - 60_000);
-  await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
-  await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: /kikimashta home/i }).click();
-  await page.clock.setSystemTime(now + 86_400_000);
-  await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('2 cards', { exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: /begin review/i })).toBeEnabled();
-  await expect(page.getByRole('alert')).toHaveCount(0);
-  expect(await savedAttempts(page)).toEqual(original);
-});
-
-test('a session reviews only its starting snapshot and preserves legacy history', async ({ page }) => {
-  test.setTimeout(60_000);
-  await page.clock.install();
-  await startReview(page);
-  const laterWord = catalogue.items.find(item => item.text === '山')!;
-  await seedAttempts(page, [laterWord.id]);
-  const completed = new Set<string>();
-  const presentations: string[] = [];
-  let missedId = '';
-  let misses = 0;
-  let previousMissIndex = -1;
-  for (let turn = 0; turn < 8 && completed.size < 6; turn++) {
-    const { target } = await heardWord(page);
-    expect(bank.items.some(item => item.id === target.id), 'later due words stay outside the starting snapshot').toBe(true);
-    expect(completed.has(target.id), 'correctly completed words are not repeated').toBe(false);
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuemax', '6');
-    await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
-    if (!missedId) missedId = target.id;
-    if (target.id === missedId && previousMissIndex >= 0 && completed.size < 5) {
-      expect(presentations.slice(previousMissIndex + 1).some(id => id !== missedId), 'a missed word returns after another word when one is available').toBe(true);
-    }
-    presentations.push(target.id);
-    if (target.id === missedId && misses < 2) {
-      const wrongChoice = page.getByRole('button', { name: /choose picture/i }).filter({
-        hasNot: page.getByRole('img', { name: target.image.alt, exact: true }),
-      }).first();
-      await wrongChoice.click();
-      misses++;
-      previousMissIndex = presentations.length - 1;
-      await expect(page.locator('.feedback')).toContainText('Incorrect answer.');
-      await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completed.size));
-      const mistakes = page.getByRole('status', { name: 'Mistakes', exact: true });
-      await expect(mistakes).toContainText(`${misses} incorrect ${misses === 1 ? 'answer' : 'answers'}`);
-      await expect(mistakes.locator('.mistake-icon')).toHaveCount(misses);
-      await page.getByRole('button', { name: 'Continue', exact: true }).click();
-    } else {
-      await chooseHeardAnswer(page, target);
-      completed.add(target.id);
-    }
-    if (completed.size < 6) await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toHaveCount(0);
-  }
-  expect(misses).toBe(2);
-  expect(presentations.filter(id => id === missedId)).toHaveLength(3);
-  expect([...completed].sort()).toEqual(bank.items.map(item => item.id).sort());
-  await expect(page.getByRole('heading', { name: /nice reviewing!/i })).toBeVisible();
-  await expect(page.getByRole('button', { name: /begin lesson/i })).toBeEnabled();
-  await page.getByRole('button', { name: 'Finish', exact: true }).click();
-  await page.reload();
-  await expect.poll(async () => (await savedAttempts(page)).length).toBe(15);
-  const saved = await savedAttempts(page);
-  expect(saved.filter(item => !item.context)).toHaveLength(7);
-  const reviews = saved.filter(item => item.context?.phase === 'review');
-  expect(reviews).toHaveLength(8);
-  const firstMiss = reviews.find(item => item.itemId === missedId && !item.context?.retryOf)!;
-  expect(firstMiss.correct).toBe(false);
-  const retries = reviews.filter(item => item.context?.retryOf);
-  expect(retries).toHaveLength(2);
-  expect(retries.every(item => item.itemId === missedId && item.context?.retryOf === firstMiss.id)).toBe(true);
-  expect(retries.filter(item => item.correct)).toHaveLength(1);
-  expect(reviews.filter(item => !item.context?.retryOf).map(item => item.itemId).sort()).toEqual(bank.items.map(item => item.id).sort());
-  await page.getByRole('button', { name: /^start/i }).click();
-  await expect(page.getByText('1 card', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: /begin review/i }).click();
-  expect((await heardWord(page)).target.id).toBe(laterWord.id);
 });
 
 test('a miss waits for Continue and stays usable with reduced motion', async ({ page }, testInfo) => {
