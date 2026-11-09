@@ -32,6 +32,20 @@ test('Home pack badges survive reload, remain visible for deselected packs and f
   const badges = page.getByRole('region', { name: 'Pack mastery badges' });
   const badge = page.getByRole('listitem', { name: `${pack.title}: Familiar minimum mastery` });
   await expect(badge).toBeVisible();
+  const alignment = await badge.locator('.badge-wk').evaluate(element => {
+    const box = (element as SVGGraphicsElement).getBBox();
+    return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+  });
+  expect(alignment.x).toBeCloseTo(50, 0);
+  expect(Math.abs(alignment.y - 44)).toBeLessThan(1.5);
+  const ribbon = await badge.locator('.badge-number').evaluate(element => {
+    const box = (element as SVGGraphicsElement).getBBox();
+    return { left: box.x, right: box.x + box.width, top: box.y, bottom: box.y + box.height };
+  });
+  expect(ribbon.left).toBeGreaterThanOrEqual(12);
+  expect(ribbon.right).toBeLessThanOrEqual(88);
+  expect(ribbon.top).toBeGreaterThanOrEqual(79);
+  expect(ribbon.bottom).toBeLessThanOrEqual(110);
   await expect(badges.getByRole('listitem')).toHaveCount(1);
   await page.screenshot({ path: `test-results/pack-badges-${testInfo.project.name}.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

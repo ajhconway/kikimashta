@@ -237,4 +237,6 @@ Show a badge on Home for each nonempty language/format pack whose lowest approve
 
 Display pack badges as compact medals around Kiku on Home. Show only the pack level number and picture/writing icon; mastery uses medal colors. Full pack/mastery labels remain in accessible names, focus/hover details and native titles. Arrange a loose ring with gentle independent floating motion (static for reduced motion) without covering Kiku, the density label or Start, including all ten Japanese packs on narrow screens. Remove the separate badge heading, slogan and text cards.
 
-Give all eight mastery levels distinct medal silhouettes and ornaments, while retaining Improving as the award threshold. The medallion identifies its content family (WaniKani crab/wordmark, travel suitcase). A larger folded ribbon displays the picture/writing symbol and pack level. Preserve the floating ring, accessible full labels and reduced-motion support.
+Give all eight mastery levels distinct medal silhouettes and ornaments, while retaining Improving as the award threshold. The medallion identifies its content family (centered WK monogram, travel suitcase). A larger folded ribbon displays the picture/writing symbol and pack level. Preserve the floating ring, accessible full labels and reduced-motion support.
+
+The WK monogram sits optically centered in the circular inlay. Ribbon text uses the same curved baseline as the banner, and the picture/writing mark follows its curvature. Keep SVG path references unique across repeated badges and the comparison sheet.

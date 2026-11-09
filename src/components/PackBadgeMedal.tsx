@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import type { PackBadge } from '../core/pack-badges';
 import type { MasteryLevel } from '../core/mastery';
 
@@ -14,6 +15,11 @@ const crests: Record<MasteryLevel['label'], string> = {
 };
 
 export function PackBadgeMedal({ badge: { pack, level } }: { badge: PackBadge }) {
+  const ribbonId = useId();
+  // The icon and lettering share the banner's quadratic bow.
+  const ribbonY = (x: number, y: number) => y + 14 * ((x - 12) / 76) * (1 - (x - 12) / 76);
+  const iconControl = 2 * ribbonY(33.5, 0) - (ribbonY(22, 0) + ribbonY(45, 0)) / 2;
+  const point = (x: number, y: number) => `${x} ${ribbonY(x, y)}`;
   const number = pack.sourceLevel ?? /level\s*(\d+)/i.exec(pack.title)?.[1] ?? '★';
   const waniKani = pack.id.startsWith('ja-wanikani-');
   const travel = pack.id.includes('travel');
@@ -33,10 +39,7 @@ export function PackBadgeMedal({ badge: { pack, level } }: { badge: PackBadge })
     {(rank === 'Confident' || rank === 'Mastered') && <g className="badge-laurel"><path d="M22 62Q7 44 22 28M78 62q15-18 0-34"/><path d="m19 35-7-7 1 12 6 3m-1 3-9-3 5 11 6 1m61-20 7-7-1 12-6 3m1 3 9-3-5 11-6 1"/></g>}
     {rank === 'Mastered' && <path className="badge-crown" d="m31 16-4-13 14 6 9-8 9 8 14-6-4 13Z"/>}
     <g className="badge-family">
-      {waniKani ? <>
-        <g className="badge-crab"><path d="M33 33q-10-2-9-10m43 10q10-2 9-10M28 26l-5-3 1 7m48-4 5-3-1 7M42 30v-4m16 4v-4"/><ellipse cx="50" cy="35" rx="15" ry="9"/><circle cx="43" cy="26" r="2"/><circle cx="57" cy="26" r="2"/></g>
-        <text x="50" y="55" textAnchor="middle">Wani</text><text x="50" y="68" textAnchor="middle">Kani</text>
-      </> : travel ? <>
+      {waniKani ? <text x="50" y="44" textAnchor="middle" dominantBaseline="central" className="badge-wk">WK</text> : travel ? <>
         <g className="badge-suitcase"><rect x="34" y="28" width="32" height="26" rx="5"/><path d="M43 28v-6h14v6M41 29v24m18-24v24"/></g>
         <text x="50" y="68" textAnchor="middle">Travel</text>
       </> : <><path className="badge-suitcase" d="M30 30q10-5 20 0 10-5 20 0v25q-10-5-20 0-10-5-20 0Zm20 0v25"/><text x="50" y="68" textAnchor="middle">{pack.title.split(' ')[0]!.slice(0, 9)}</text></>}
@@ -44,9 +47,14 @@ export function PackBadgeMedal({ badge: { pack, level } }: { badge: PackBadge })
     <path d="M12 82H2l6 15-6 16h22V90m64-8h10l-6 15 6 16H76V90" className="badge-ribbon-tails"/>
     <path d="m12 105 12 8v-8m64 0-12 8v-8" className="badge-ribbon-fold"/>
     <path d="M12 79q38 7 76 0v27q-38 7-76 0Z" className="badge-ribbons"/>
+    <defs><path id={ribbonId} d="M12 100Q50 107 88 100"/></defs>
     {pack.exercise.endsWith('picture')
-      ? <g className="badge-format"><rect x="22" y="87" width="23" height="17" rx="2"/><path d="m24 101 6-7 5 5 4-4 4 6"/><circle cx="39" cy="92" r="1.5"/></g>
-      : <g className="badge-format"><path d="m24 104 2-8 14-14 6 6-14 14Z M37 85l6 6 M26 96l6 6"/></g>}
-    <text x="64" y="103" textAnchor="middle" className="badge-number">{number === '★' ? '★' : `L${number}`}</text>
+      ? <g className="badge-format">
+        <path className="badge-picture-frame" d={`M${point(22, 85)}Q33.5 ${85 + iconControl} ${point(45, 85)}L${point(45, 102)}Q33.5 ${102 + iconControl} ${point(22, 102)}Z`}/>
+        <path d={`M${point(24, 99)}L${point(30, 92)} ${point(35, 97)} ${point(39, 92)} ${point(43, 99)}`}/>
+        <circle cx="39" cy={ribbonY(39, 90)} r="1.5"/>
+      </g>
+      : <g className="badge-format"><path d={`M${point(24, 102)}L${point(26, 94)} ${point(40, 80)} ${point(46, 86)} ${point(32, 100)}ZM${point(37, 83)}L${point(43, 89)}M${point(26, 94)}L${point(32, 100)}`}/></g>}
+    <text className="badge-number"><textPath href={`#${ribbonId}`} startOffset="69%" textAnchor="middle">{number === '★' ? '★' : `L${number}`}</textPath></text>
   </svg>;
 }

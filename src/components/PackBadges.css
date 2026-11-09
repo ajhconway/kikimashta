@@ -16,7 +16,7 @@
 .badge-studs, .badge-crown, .badge-wings { fill: var(--badge-ribbon); }
 .badge-engraving { fill: none; stroke-width: 1.8; }
 .badge-family text { fill: var(--purple-dark); stroke: none; font-size: 15px; font-weight: 900; letter-spacing: -.5px; }
-.badge-crab { fill: var(--badge-fill); stroke-width: 2; stroke-linecap: round; }
+.badge-family .badge-wk { font-size: 26px; letter-spacing: -1.3px; }
 .badge-suitcase { fill: var(--badge-fill); stroke-width: 2; }
 .badge-new { --badge-fill: #ece4f1; --badge-ribbon: #d6c9e6; }
 .badge-learning { --badge-fill: #d1e5b4; --badge-ribbon: #b9d8a8; }

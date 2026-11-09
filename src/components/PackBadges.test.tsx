@@ -20,12 +20,17 @@ it('gives every mastery level a unique crest and uses the medallion for family a
   const badges = masteryLevels.map((level, index) => ({ pack: { ...cardPacks[0]!, id: `ja-wanikani-${index}-pictures` }, level, cardCount: 12 }));
   const { container } = render(<PackBadges badges={badges}/>);
   expect(new Set(Array.from(container.querySelectorAll('.badge-disc'), element => element.getAttribute('d'))).size).toBe(8);
+  expect(new Set(Array.from(container.querySelectorAll('defs path'), path => path.id)).size).toBe(8);
   for (const medal of container.querySelectorAll('.pack-badge-medal')) {
     expect(medal.getAttribute('data-family')).toBe('WaniKani');
-    expect(medal.querySelector('.badge-family')?.textContent).toBe('WaniKani');
+    expect(medal.querySelector('.badge-family')?.textContent).toBe('WK');
     expect(medal.querySelector('.badge-number')?.textContent).toBe('L1');
-    expect(medal.querySelector('.badge-format rect')).not.toBeNull();
+    expect(medal.querySelector('.badge-picture-frame')).not.toBeNull();
     expect(medal.querySelector('.badge-ribbon-tails')).not.toBeNull();
+    expect(medal.querySelector('.badge-crab')).toBeNull();
+    expect(medal.querySelector('.badge-wk')).toHaveAttribute('dominant-baseline', 'central');
+    const link = medal.querySelector('textPath')!.getAttribute('href')!;
+    expect(Array.from(medal.querySelectorAll('defs path')).some(path => '#' + path.id === link)).toBe(true);
   }
 });
 
@@ -35,5 +40,5 @@ it('identifies travel contents with its own emblem and shows a writing ribbon fo
   expect(container.querySelector('.badge-suitcase')).not.toBeNull();
   expect(container.querySelector('.badge-number')).toHaveTextContent('L2');
   expect(container.querySelector('.badge-format path')).not.toBeNull();
-  expect(container.querySelector('.badge-format rect')).toBeNull();
+  expect(container.querySelector('.badge-picture-frame')).toBeNull();
 });
