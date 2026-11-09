@@ -3,7 +3,7 @@
   "id": "es-419-travel-3",
   "language": "es-419",
   "title": "Travel level 3",
-  "status": "media-generation-authorized",
+  "status": "generated-awaiting-owner-media-review",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
   "packId": "es-419-travel-3-pictures",
@@ -724,7 +724,15 @@
     "charactersPerVoice": 292,
     "inputCharacters": 2336,
     "expectedNewArtwork": 32,
-    "expectedApprovedReuse": 4
+    "expectedApprovedReuse": 4,
+    "completed": {
+      "newArtwork": 32,
+      "approvedReuse": 4,
+      "audioClips": 288,
+      "artworkManifest": "artifacts/spanish-travel-3-art/manifest.json",
+      "audioManifest": "artifacts/spanish-travel-3-audio-review/manifest.json",
+      "review": "artifacts/spanish-travel-3-art/review.html"
+    }
   },
   "activationPlan": [
     "Keep all level 1/2 words, media, stable IDs and progress intact.",

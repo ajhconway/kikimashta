@@ -1,78 +1,78 @@
-# Spanish travel level 3 · word draft (#174)
+# Spanish travel level 3 · media review (#174)
 
-36 additional concrete travel words, picture-only practice, English interface and the existing eight regional voices. This draft awaits owner word review. No new media has been generated and no level 3 pack is active.
+36 additional concrete travel words, picture-only practice, English interface and the existing eight regional voices. The owner approved the complete word list and requested media generation. All 36 pictures (32 new transparent PNGs and four unchanged approved reuses) and all 288 recordings are generated and ready for media acceptance. Level 3 is not active.
 
-[Word and picture-concept review](review.html) · [Structured draft](draft.json)
+[Combined pictures and voices](../../artifacts/spanish-travel-3-art/review.html) · [All pictures at card size](../../artifacts/spanish-travel-3-art/artwork.html) · [Word and picture concepts](review.html) · [Structured draft](draft.json)
 
 ## Walking around town
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| banqueta | Sidewalk | New picture needed |
-| cruce peatonal | Pedestrian crossing | New picture needed |
-| semáforo | Traffic light | New picture needed |
-| fuente | Fountain | New picture needed |
-| banca | Bench | New picture needed |
-| iglesia | Church | New picture needed |
+| banqueta | Sidewalk | Generated · awaiting review |
+| cruce peatonal | Pedestrian crossing | Generated · awaiting review |
+| semáforo | Traffic light | Generated · awaiting review |
+| fuente | Fountain | Generated · awaiting review |
+| banca | Bench | Generated · awaiting review |
+| iglesia | Church | Generated · awaiting review |
 
 ## Getting around
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| metro | Subway (metro) | New picture needed |
-| motocicleta | Motorcycle | New picture needed |
-| estacionamiento | Parking lot | New picture needed |
-| gasolinera | Gas station | New picture needed |
-| casco | Helmet | New picture needed |
-| cinturón de seguridad | Seat belt | New picture needed |
+| metro | Subway (metro) | Generated · awaiting review |
+| motocicleta | Motorcycle | Generated · awaiting review |
+| estacionamiento | Parking lot | Generated · awaiting review |
+| gasolinera | Gas station | Generated · awaiting review |
+| casco | Helmet | Generated · awaiting review |
+| cinturón de seguridad | Seat belt | Generated · awaiting review |
 
 ## Fruit and quick food
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| manzana | Apple | Approved reuse candidate |
-| plátano | Banana | New picture needed |
-| naranja | Orange (fruit) | New picture needed |
-| aguacate | Avocado | New picture needed |
-| taco | Taco | New picture needed |
-| helado | Ice cream | New picture needed |
+| manzana | Apple | Reused approved picture |
+| plátano | Banana | Generated · awaiting review |
+| naranja | Orange (fruit) | Generated · awaiting review |
+| aguacate | Avocado | Generated · awaiting review |
+| taco | Taco | Generated · awaiting review |
+| helado | Ice cream | Generated · awaiting review |
 
 ## Clothing
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| camisa | Shirt | New picture needed |
-| pantalones | Pants / trousers | New picture needed |
-| zapato | Shoe | New picture needed |
-| sombrero | Hat | New picture needed |
-| chamarra | Jacket | New picture needed |
-| traje de baño | Swimsuit | New picture needed |
+| camisa | Shirt | Generated · awaiting review |
+| pantalones | Pants / trousers | Generated · awaiting review |
+| zapato | Shoe | Generated · awaiting review |
+| sombrero | Hat | Generated · awaiting review |
+| chamarra | Jacket | Generated · awaiting review |
+| traje de baño | Swimsuit | Generated · awaiting review |
 
 ## Outdoors
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| montaña | Mountain | Approved reuse candidate |
-| río | River | Approved reuse candidate |
-| lago | Lake | New picture needed |
-| isla | Island | New picture needed |
-| bosque | Forest | Approved reuse candidate |
-| cascada | Waterfall | New picture needed |
+| montaña | Mountain | Reused approved picture |
+| río | River | Reused approved picture |
+| lago | Lake | Generated · awaiting review |
+| isla | Island | Generated · awaiting review |
+| bosque | Forest | Reused approved picture |
+| cascada | Waterfall | Generated · awaiting review |
 
 ## Hotel comforts and essentials
 
 | Spanish | English | Artwork |
 | --- | --- | --- |
-| almohada | Pillow | New picture needed |
-| cobija | Blanket | New picture needed |
-| secadora de pelo | Hair dryer | New picture needed |
-| papel higiénico | Toilet paper | New picture needed |
-| peine | Comb | New picture needed |
-| espejo | Mirror | New picture needed |
+| almohada | Pillow | Generated · awaiting review |
+| cobija | Blanket | Generated · awaiting review |
+| secadora de pelo | Hair dryer | Generated · awaiting review |
+| papel higiénico | Toilet paper | Generated · awaiting review |
+| peine | Comb | Generated · awaiting review |
+| espejo | Mirror | Generated · awaiting review |
 
 ## Artwork reuse audit
 
-Four suitable approved candidates were visually inspected and hash-checked before proposing new generation: **apple, mountain, river and forest**. Their exact source paths, hashes and activation evidence are recorded on the items in `draft.json`. The apple, mountain and river are unchanged opaque JPGs; the forest is an unchanged transparent PNG. The remaining 32 subjects need their own artwork after word approval.
+Four approved pictures were visually inspected, hash-checked and reused unchanged: **apple, mountain, river and forest**. Their exact source paths, hashes and activation evidence are recorded on the items in `draft.json`. The apple, mountain and river are unchanged opaque JPGs; the forest is an unchanged transparent PNG. The other 32 subjects now have new transparent PNG illustrations, produced with the built-in image tool. Exact prompts, style-reference hashes, original bytes and generation records are preserved under `artifacts/spanish-travel-3-art/`.
 
 The existing winter bench picture includes a snowy tree and ground scene. The banana appears in a basket with many apples. Existing blanket/pillow imagery includes a bed and Kiku. These are recorded as rejected direct reuses, with inspected paths/hashes. A matching incidental object does not make a scene suitable for an isolated noun card. The current contextual answer image is tea and supplies no matching subject.
 
@@ -89,7 +89,11 @@ Review the full notes in `draft.json`, especially metro/train/station, bench/par
 
 ## Audio scope
 
-The proposed text totals **292 Unicode characters per voice**, or **2336 across eight voices**: **288 recordings**. This is a scope count, not a cost estimate. Generation is explicitly disabled until the words are approved. Keep the previous batches and approvals unchanged.
+The proposed text totals **292 Unicode characters per voice**, or **2336 across eight voices**: **288 recordings**. This is a scope count, not a cost estimate. All 288 clips were generated from the approved words in the eight selected voices, using the same constant-gain playback profile without trimming or timing changes. Two clips remain slightly quieter within processing limits and are flagged: Santiago · taco (-22.57 LUFS, peak headroom) and Carlos Figueroa · isla (-23.41 LUFS, maximum 9 dB gain). All earlier batches and approvals remain unchanged.
+
+Original recordings, exact requests and normalization evidence are hash-verified in the private archive `~/.local/share/kikimashta/spanish-audio/174-v1/` (1737 files). Public review MP3s and provenance are in `artifacts/spanish-travel-3-audio-review/`.
+
+Rebuild the combined review with `node scripts/content/build-spanish-travel-level-3-media-review.mjs`. Serve the repository with `python3 -m http.server 5183 --bind 127.0.0.1 --directory .` and open `/artifacts/spanish-travel-3-art/review.html`.
 
 ## Lexical references
 
