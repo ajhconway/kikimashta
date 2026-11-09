@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { contextualSummary, validateContextualBank } from '../../src/content/contextual.ts'
 import { loadContextualPractice, projectRoot } from './validate-contextual.mjs'
 import { renderContextualMarkdown, renderContextualReview } from './build-contextual-review.mjs'
+import { contextualTextDigest } from './contextual-audio-plan.mjs'
 
 export const sourceFiles = ['counters', 'nouns', 'actions', 'relations'].map(name => `content/contextual/pack-1/${name}.json`)
 export const draftPath = 'content/contextual/ja-wanikani-1-draft.json'
@@ -165,9 +166,21 @@ export function compilePack1(root = projectRoot) {
   return { bank, banks, vocabulary, scope, audits, previous }
 }
 
+/** A rebuild cannot silently replace the owner's approved text snapshot. */
+export function validateFrozenPack1(bank, bytes, approval) {
+  assert.ok(approval?.schemaVersion === 1 && approval.bankId === bank.id && approval.language === bank.language,
+    'Pack 1 text approval is missing or identifies a different bank')
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), approval.sourceFileSha256,
+    'Pack 1 source differs from the approved frozen snapshot; obtain fresh text approval')
+  assert.equal(contextualTextDigest(bank), approval.textSha256,
+    'Pack 1 text differs from the approved digest; obtain fresh text approval')
+}
+
 /** Verify checked-in expanded content is reproducible and stays pending and inactive. */
 export function validatePack1(root = projectRoot) {
   const compiled = compilePack1(root)
+  const bytes = readFileSync(resolve(root, draftPath))
+  validateFrozenPack1(compiled.bank, bytes, read(root, 'content/contextual/pack-1/text-approval.json'))
   assert.deepEqual(read(root, draftPath), compiled.bank, 'Expanded draft differs from its authored sources; rebuild it')
   assert.deepEqual(read(root, 'content/contextual/pack-1/comprehension-audit.json').questions, compiled.audits, 'Comprehension review differs from the authored questions; rebuild it')
   const artifacts = {
@@ -258,9 +271,11 @@ export function renderPack1Review(loaded) {
 export function buildPack1({ root = projectRoot, write = true } = {}) {
   const loaded = compilePack1(root)
   const bank = combinedPack1(loaded)
+  const bytes = JSON.stringify(loaded.bank, null, 2) + '\n'
+  validateFrozenPack1(loaded.bank, bytes, read(root, 'content/contextual/pack-1/text-approval.json'))
   if (write) {
     const put = (path, text) => { mkdirSync(dirname(resolve(root, path)), { recursive: true }); writeFileSync(resolve(root, path), text) }
-    put(draftPath, JSON.stringify(loaded.bank, null, 2) + '\n')
+    put(draftPath, bytes)
     put('artifacts/contextual-pack-1/review.html', renderPack1Review(loaded))
     put('artifacts/contextual-pack-1/filters.js', filterScript.trim() + '\n')
     put('artifacts/contextual-pack-1/review.md', renderPack1Markdown(loaded))
