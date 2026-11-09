@@ -1,0 +1,11 @@
+{
+  "slug": "receipt",
+  "id": "es-419-travel-receipt",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3e7d09b1-f94a-41af-b006-7900d59e6d7f.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3e7d09b1-f94a-41af-b006-7900d59e6d7f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "path": "originals/receipt-v1.png",
+  "sha256": "ce6a9404952e3084704f9bc908ae61684e24c74da75a8cf5431a25e238ef4ea0",
+  "promptSha256": "e302b58e0531698d7400a6164346388068232ff513d3f271622d00680650870f",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen"
+}

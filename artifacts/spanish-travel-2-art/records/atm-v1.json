@@ -1,0 +1,11 @@
+{
+  "slug": "atm",
+  "id": "es-419-travel-atm",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-1012f3fa-d54b-4c26-94e0-79d60d0f5e55.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-1012f3fa-d54b-4c26-94e0-79d60d0f5e55.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "path": "originals/atm-v1.png",
+  "sha256": "46dc636200fde673943907a6223e1bb3d163d022db237408449d80546d5dc922",
+  "promptSha256": "bd637e5a298593e3708ad6902b53a4d74d5e30ca90f0aa17c66dc1ee35f99e2f",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen"
+}

@@ -18,6 +18,7 @@ beforeEach(() => {
   window.history.replaceState({}, '', '/');
   localStorage.clear();
   localStorage.setItem('kikimashta-learning-language-v1', 'es-419');
+  localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify(['es-419-travel-1-pictures']));
   vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
   vi.spyOn(ProgressStore.prototype, 'history').mockResolvedValue([]);

@@ -1,4 +1,6 @@
 import spanish from '../../content/es-419.json';
+import spanishTravel2 from '../../content/es-419-travel-2.json';
+import spanishExclusions from '../../content/spanish-picture-exclusions.json';
 import type { WordBank } from '../types';
 import { validateBank } from './session';
 import { practicePool } from './practice';
@@ -16,20 +18,24 @@ export interface LearningLanguage {
   unavailableMessage?: string;
 }
 
-const spanishBank = spanish as WordBank;
-const spanishReady = spanishBank.items.every(item => item.audio.length > 0);
-if (spanishReady) validateBank(spanishBank);
+const spanishBanks = [spanish, spanishTravel2] as WordBank[];
+const spanishPool: WordBank = { id: 'es-419-adaptive', language: 'es-419', title: 'Spanish listening',
+  items: spanishBanks.flatMap(bank => bank.items).map(item => ({ ...item,
+    pictureDistractorExclusions: [...new Set([
+      ...(item.pictureDistractorExclusions ?? []),
+      ...spanishExclusions.pairs.filter(pair => pair.ids.includes(item.id)).flatMap(pair => pair.ids.filter(id => id !== item.id)),
+    ])],
+  })),
+};
+validateBank(spanishPool);
 
 export const learningLanguages: readonly LearningLanguage[] = [
   { id: 'ja-JP', title: 'Japanese', pool: practicePool, packs: cardPacks,
     packPreferenceKey, writing: 'japanese', libraryPath: 'vocabulary/' },
-  { id: 'es-419', title: 'Latin American Spanish', pool: { id: 'es-419-adaptive', language: 'es-419', title: 'Spanish listening',
-      items: spanishReady ? spanishBank.items : [] },
-    packs: [{ id: 'es-419-travel-1-pictures', language: 'es-419',
-      title: 'Travel level 1 · Pictures', exercise: 'audio-picture',
-      itemIds: spanish.items.map(item => item.id),
-    }], packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system', libraryPath: 'vocabulary/?language=es-419&pack=es-419-travel-1-pictures',
-    unavailableMessage: 'Travel level 1 is being prepared. Spanish recordings are needed before practice is available.' },
+  { id: 'es-419', title: 'Latin American Spanish', pool: spanishPool,
+    packs: spanishBanks.map(bank => ({ id: `${bank.id}-pictures`, language: bank.language,
+      title: `${bank.title} · Pictures`, exercise: 'audio-picture' as const, itemIds: bank.items.map(item => item.id),
+    })), packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system', libraryPath: 'vocabulary/?language=es-419&pack=es-419-travel-1-pictures' },
 ];
 export const languagePreferenceKey = 'kikimashta-learning-language-v1';
 

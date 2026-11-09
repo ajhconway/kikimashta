@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 2,
+  "path": "originals/stairs-v2.png",
+  "sha256": "6ec17e11c8e49e394177f19eb977ea1c55166b19c054ecf02c9001781e4e3f43",
+  "promptSha256": "66c2c57c5d21aad1d4028ca75b85177a4ba16a968ae48825cf6734eb49005e3d",
+  "referenceSha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2dd1334e-4785-486d-9344-0fdac3076aa9.png",
+  "supersedes": "originals/stairs-v1.png"
+}

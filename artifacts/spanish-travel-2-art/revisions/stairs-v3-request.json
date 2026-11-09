@@ -1,0 +1,23 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 3,
+  "issue": 166,
+  "prompt": "Use case: style-transfer\nAsset type: one square vocabulary illustration for escaleras (stairs)\nInput image 1: STRICT GEOMETRY REFERENCE, four equal-width rectangular steps. Its structural geometry is correct. Preserve all four tread widths and their parallel front edges exactly, including the constant spacing and orthographic projection. Trace these structural proportions; do not invent perspective or make the upper steps smaller.\nInput image 2: STYLE AND MATERIAL REFERENCE ONLY, polished cartoon with golden-yellow treads, lavender/violet risers, bold deep-violet contours, rounded edge treatment and restrained soft interior shading. Its tapering geometry is wrong; do not copy that geometry.\nPrimary request: One short stairway with a visible sequence of steps and handrail.\nRender image 1's geometry in image 2's polished cartoon style. Four steps of exactly equal width and depth, equal-height risers, one straight uniform-width flight, parallel sides. Gently round the corners without changing the underlying dimensions. Each front nosing remains the same length from top to bottom. Keep the simple single handrail aligned with the geometry reference. Center the complete staircase in a square canvas, generous empty transparent margins, readable at145px.\nConstraints: geometry comes entirely from image1, color/contours/soft shading from image2. No widening at the bottom, no narrowing at the top, no fan-shaped or trapezoidal staircase, no extra step, no labels, lettering, numbers, cat, scene, frame, floor, cast shadow, checkerboard or painted background. Preserve genuinely transparent outer background and opaque subject colors.",
+  "transparent_background": true,
+  "referenceRole": "geometry-and-style",
+  "referencePath": "artifacts/spanish-travel-2-art/originals/stairs-v1.png",
+  "referenceSha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-travel-2-art/revisions/stairs-geometry-reference.png",
+      "role": "strict-geometry",
+      "sha256": "6f6515160130121f9c42a7d210362daed89e846898f9c167ff906f3a5d3ea288"
+    }
+  ],
+  "referenceOrder": [
+    "artifacts/spanish-travel-2-art/revisions/stairs-geometry-reference.png",
+    "artifacts/spanish-travel-2-art/originals/stairs-v1.png"
+  ],
+  "ownerFeedback": "The stairs are oddly wide at the bottom and narrow at the top."
+}

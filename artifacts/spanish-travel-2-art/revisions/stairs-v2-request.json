@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 2,
+  "issue": 166,
+  "prompt": "Use case: precise-object-edit\nAsset type: square vocabulary illustration for escaleras (stairs)\nInput image: EDIT TARGET. Preserve its polished cartoon treatment, bold deep-violet outlines, golden-yellow treads, lavender risers, restrained soft shading and single handrail.\nPrimary request: One short stairway with a visible sequence of steps and handrail.\nCorrection: The existing stairway incorrectly fans outward, with each lower tread wider than the one above. Redraw the staircase as one straight, uniform-width flight of FOUR rectangular steps. Every tread must have exactly the SAME width and SAME depth. Use an orthographic isometric view: parallel edges stay parallel and equally long; no perspective size changes, no trapezoids, no flaring, no widening at the bottom, no narrowing at the top. Left and right side boundaries of the flight remain parallel from the bottom step to the top step. All four front nosing edges must be parallel and equal in length. Keep equal riser heights. Fit one simple handrail along the side at a consistent height above the steps. Show the full staircase, with a generous transparent margin.\nConstraints: change the stair geometry and handrail alignment as needed to achieve consistent dimensions; preserve the recognizable simple subject, palette and cartoon style. No extra objects, words, lettering, labels, numerals, frame, white rectangle, shadow, vignette or checkerboard. Genuine transparent outer background, opaque colored subject. Readable at 145px. One square image.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-2-art/originals/stairs-v1.png",
+  "referenceSha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+  "ownerFeedback": "The stairs are oddly wide at the bottom and narrow at the top."
+}

@@ -1,0 +1,5853 @@
+{
+  "issue": 166,
+  "scope": "Media preparation only; no active pack or app changes.",
+  "ownerAcceptance": "pending",
+  "fullCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 399,
+    "nodeTests": 228,
+    "pythonAudio": 12,
+    "pythonCards": 22,
+    "artworkValidator": "passed",
+    "lint": "passed",
+    "types": "passed",
+    "productionBuild": "passed"
+  },
+  "media": {
+    "pictures": 36,
+    "newTransparentPngs": 34,
+    "unchangedApprovedJpgs": 2,
+    "recordings": 288,
+    "voices": 8,
+    "quieterExceptions": 0,
+    "checks": [
+      "Original and delivery SHA-256 and byte counts",
+      "Exact approved word and voice matrix",
+      "All PNGs decoded with CRC and alpha validation",
+      "Exact image prompts and style reference hashes bound in records",
+      "Original audio archive hash-verified, 1737 files",
+      "No credentials or private usage data in public review"
+    ]
+  },
+  "galleryBrowserChecks": [
+    {
+      "browser": "chromium",
+      "pictures": 36,
+      "recordings": 288,
+      "search": true,
+      "region": true,
+      "voice": true,
+      "sequenceAdvance": true,
+      "stop": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "pictures": 36,
+      "recordings": 288,
+      "search": true,
+      "region": true,
+      "voice": true,
+      "sequenceAdvance": true,
+      "stop": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "audioBrowserChecks": [
+    {
+      "engine": "chromium",
+      "clips": [
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-train-station.mp3",
+          "duration": 1.28,
+          "currentTime": 0.020026,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-train-station.mp3",
+          "duration": 1.44,
+          "currentTime": 0.020048,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-train-station.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020042,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-train-station.mp3",
+          "duration": 1.44,
+          "currentTime": 0.021227,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-train-station.mp3",
+          "duration": 1.28,
+          "currentTime": 0.019192,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-train-station.mp3",
+          "duration": 1.28,
+          "currentTime": 0.02108,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-train-station.mp3",
+          "duration": 1.36,
+          "currentTime": 0.019313,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-train-station.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020219,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bus-stop.mp3",
+          "duration": 1.44,
+          "currentTime": 0.019808,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bus-stop.mp3",
+          "duration": 1.52,
+          "currentTime": 0.020037,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bus-stop.mp3",
+          "duration": 1.44,
+          "currentTime": 0.020482,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bus-stop.mp3",
+          "duration": 1.52,
+          "currentTime": 0.019742,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bus-stop.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020051,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bus-stop.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020876,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bus-stop.mp3",
+          "duration": 1.44,
+          "currentTime": 0.020018,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bus-stop.mp3",
+          "duration": 1.44,
+          "currentTime": 0.019468,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-street.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019866,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-street.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019198,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-street.mp3",
+          "duration": 0.64,
+          "currentTime": 0.019802,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-street.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020111,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-street.mp3",
+          "duration": 0.8,
+          "currentTime": 0.018708,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-street.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020043,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-street.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020351,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-street.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020848,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bridge.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019881,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bridge.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020761,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bridge.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020237,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bridge.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020516,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bridge.mp3",
+          "duration": 0.72,
+          "currentTime": 0.02003,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bridge.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019174,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bridge.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019257,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bridge.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020498,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-park.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019901,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-park.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020012,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-park.mp3",
+          "duration": 0.88,
+          "currentTime": 0.018911,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-park.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-park.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-park.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019222,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-park.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-park.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019495,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-museum.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-museum.mp3",
+          "duration": 0.88,
+          "currentTime": 0.02007,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-museum.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019531,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-museum.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020026,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-museum.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019979,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-museum.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020711,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-museum.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020011,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-museum.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020038,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-menu.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019758,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-menu.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-menu.mp3",
+          "duration": 0.88,
+          "currentTime": 0.01988,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-menu.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020029,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-menu.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020019,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-menu.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019065,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-menu.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019339,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-menu.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019589,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.018666,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-plate.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019967,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019055,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019578,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020089,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019405,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-plate.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019265,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-plate.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019598,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-drinking-glass.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020347,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-drinking-glass.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019801,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-drinking-glass.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019894,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-drinking-glass.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-drinking-glass.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-drinking-glass.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019568,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-drinking-glass.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020196,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-drinking-glass.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019154,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cup.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020415,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cup.mp3",
+          "duration": 0.64,
+          "currentTime": 0.019801,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cup.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019826,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019806,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cup.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020028,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cup.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020202,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020163,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cup.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019707,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-fork.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019696,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-fork.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019679,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-fork.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019488,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-fork.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019658,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-fork.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020683,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-fork.mp3",
+          "duration": 0.8,
+          "currentTime": 0.018868,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-fork.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020051,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-fork.mp3",
+          "duration": 0.96,
+          "currentTime": 0.02003,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-spoon.mp3",
+          "duration": 0.8,
+          "currentTime": 0.021575,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-spoon.mp3",
+          "duration": 0.96,
+          "currentTime": 0.021011,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-spoon.mp3",
+          "duration": 0.8,
+          "currentTime": 0.02003,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-spoon.mp3",
+          "duration": 0.96,
+          "currentTime": 0.02065,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-spoon.mp3",
+          "duration": 0.8,
+          "currentTime": 0.01952,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-spoon.mp3",
+          "duration": 0.8,
+          "currentTime": 0.021057,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-spoon.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019568,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-spoon.mp3",
+          "duration": 1.04,
+          "currentTime": 0.02048,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-chicken.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-chicken.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020386,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-chicken.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020028,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-chicken.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020534,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-chicken.mp3",
+          "duration": 0.64,
+          "currentTime": 0.0205,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-chicken.mp3",
+          "duration": 0.64,
+          "currentTime": 0.020252,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-chicken.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020845,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-chicken.mp3",
+          "duration": 0.72,
+          "currentTime": 0.02146,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cooked-fish.mp3",
+          "duration": 1.04,
+          "currentTime": 0.02001,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cooked-fish.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020425,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cooked-fish.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020056,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cooked-fish.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019925,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cooked-fish.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019453,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cooked-fish.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020502,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cooked-fish.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019188,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cooked-fish.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019533,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-egg.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020434,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-egg.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-egg.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020082,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-egg.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020401,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-egg.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020501,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-egg.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019254,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-egg.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-egg.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019646,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cheese.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020029,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cheese.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020108,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cheese.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019561,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cheese.mp3",
+          "duration": 0.88,
+          "currentTime": 0.021049,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cheese.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019882,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cheese.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020184,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cheese.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019813,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cheese.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020217,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-soup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020395,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-soup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020744,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-soup.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020037,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-soup.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-soup.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020133,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-soup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020651,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-soup.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019897,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-soup.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-salad.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019703,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-salad.mp3",
+          "duration": 0.96,
+          "currentTime": 0.01959,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-salad.mp3",
+          "duration": 1.12,
+          "currentTime": 0.020117,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-salad.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020779,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-salad.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020078,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-salad.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-salad.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020663,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-salad.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020171,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-market.mp3",
+          "duration": 0.88,
+          "currentTime": 0.02036,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-market.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019509,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-market.mp3",
+          "duration": 1.04,
+          "currentTime": 0.018763,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-market.mp3",
+          "duration": 0.96,
+          "currentTime": 0.02025,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-market.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020025,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-market.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020391,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-market.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020914,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-market.mp3",
+          "duration": 0.96,
+          "currentTime": 0.02002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bakery.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019096,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bakery.mp3",
+          "duration": 0.96,
+          "currentTime": 0.021374,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bakery.mp3",
+          "duration": 1.2,
+          "currentTime": 0.020069,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bakery.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019746,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bakery.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020049,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bakery.mp3",
+          "duration": 1.12,
+          "currentTime": 0.020867,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bakery.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020149,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bakery.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020015,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-atm.mp3",
+          "duration": 1.52,
+          "currentTime": 0.019305,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-atm.mp3",
+          "duration": 1.6,
+          "currentTime": 0.019747,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-atm.mp3",
+          "duration": 1.6,
+          "currentTime": 0.020507,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-atm.mp3",
+          "duration": 1.76,
+          "currentTime": 0.020922,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-atm.mp3",
+          "duration": 1.36,
+          "currentTime": 0.019979,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-atm.mp3",
+          "duration": 1.44,
+          "currentTime": 0.02027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-atm.mp3",
+          "duration": 1.6,
+          "currentTime": 0.018637,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-atm.mp3",
+          "duration": 1.52,
+          "currentTime": 0.019026,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-receipt.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020011,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-receipt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019769,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-receipt.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020149,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-receipt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.018765,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-receipt.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020359,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-receipt.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019505,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-receipt.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020028,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-receipt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.021258,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-wallet.mp3",
+          "duration": 1.04,
+          "currentTime": 0.018778,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-wallet.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020926,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-wallet.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020169,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-wallet.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019732,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-wallet.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019343,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-wallet.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020047,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-wallet.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020473,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-wallet.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-coin.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020154,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-coin.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-coin.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020568,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-coin.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020013,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-coin.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020457,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-coin.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020612,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-coin.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020088,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-coin.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020078,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-room.mp3",
+          "duration": 1.2,
+          "currentTime": 0.018666,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-room.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020029,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-room.mp3",
+          "duration": 1.2,
+          "currentTime": 0.019815,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-room.mp3",
+          "duration": 1.12,
+          "currentTime": 0.018389,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-room.mp3",
+          "duration": 0.96,
+          "currentTime": 0.018941,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-room.mp3",
+          "duration": 1.12,
+          "currentTime": 0.020533,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-room.mp3",
+          "duration": 1.12,
+          "currentTime": 0.020021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-room.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020059,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-table.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020042,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-table.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020391,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-table.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020286,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-table.mp3",
+          "duration": 0.8,
+          "currentTime": 0.02006,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-table.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020042,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-table.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-table.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019843,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-table.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020038,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-chair.mp3",
+          "duration": 0.8,
+          "currentTime": 0.018733,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-chair.mp3",
+          "duration": 0.72,
+          "currentTime": 0.021007,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-chair.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020057,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-chair.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019875,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-chair.mp3",
+          "duration": 0.72,
+          "currentTime": 0.020107,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-chair.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020475,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-chair.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019598,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-chair.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020175,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-window.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020115,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-window.mp3",
+          "duration": 1.04,
+          "currentTime": 0.01999,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-window.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019894,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-window.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-window.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020031,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-window.mp3",
+          "duration": 0.88,
+          "currentTime": 0.01944,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-window.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020327,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-window.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020482,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-stairs.mp3",
+          "duration": 1.04,
+          "currentTime": 0.01875,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-stairs.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019333,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-stairs.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019674,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-stairs.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019945,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-stairs.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020034,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-stairs.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020136,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-stairs.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019797,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-stairs.mp3",
+          "duration": 1.2,
+          "currentTime": 0.020033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-swimming-pool.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020018,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-swimming-pool.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020901,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-swimming-pool.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-swimming-pool.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-swimming-pool.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020004,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-swimming-pool.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019489,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-swimming-pool.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020742,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-swimming-pool.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020014,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-soap.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019391,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-soap.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019846,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-soap.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019989,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-soap.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020026,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-soap.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020415,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-soap.mp3",
+          "duration": 0.8,
+          "currentTime": 0.018795,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-soap.mp3",
+          "duration": 0.96,
+          "currentTime": 0.018925,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-soap.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019691,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-shampoo.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020001,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-shampoo.mp3",
+          "duration": 0.96,
+          "currentTime": 0.02059,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-shampoo.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020099,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-shampoo.mp3",
+          "duration": 1.04,
+          "currentTime": 0.018995,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-shampoo.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019003,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-shampoo.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020018,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-shampoo.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020049,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-shampoo.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020038,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-toothbrush.mp3",
+          "duration": 1.52,
+          "currentTime": 0.019299,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-toothbrush.mp3",
+          "duration": 1.6,
+          "currentTime": 0.019396,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-toothbrush.mp3",
+          "duration": 1.6,
+          "currentTime": 0.021255,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-toothbrush.mp3",
+          "duration": 1.52,
+          "currentTime": 0.020309,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-toothbrush.mp3",
+          "duration": 1.52,
+          "currentTime": 0.02064,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-toothbrush.mp3",
+          "duration": 1.52,
+          "currentTime": 0.019448,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-toothbrush.mp3",
+          "duration": 1.52,
+          "currentTime": 0.01907,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-toothbrush.mp3",
+          "duration": 1.6,
+          "currentTime": 0.01962,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-toothpaste.mp3",
+          "duration": 1.36,
+          "currentTime": 0.019992,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-toothpaste.mp3",
+          "duration": 1.44,
+          "currentTime": 0.019859,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-toothpaste.mp3",
+          "duration": 1.44,
+          "currentTime": 0.019178,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-toothpaste.mp3",
+          "duration": 1.52,
+          "currentTime": 0.018359,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-toothpaste.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020576,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-toothpaste.mp3",
+          "duration": 1.36,
+          "currentTime": 0.020155,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-toothpaste.mp3",
+          "duration": 1.36,
+          "currentTime": 0.018363,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-toothpaste.mp3",
+          "duration": 1.44,
+          "currentTime": 0.019199,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-charger.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019584,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-charger.mp3",
+          "duration": 0.88,
+          "currentTime": 0.02007,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-charger.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020164,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-charger.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019915,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-charger.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019945,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-charger.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019692,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-charger.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020619,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-charger.mp3",
+          "duration": 1.04,
+          "currentTime": 0.018809,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-sunglasses.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019416,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-sunglasses.mp3",
+          "duration": 1.2,
+          "currentTime": 0.019744,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-sunglasses.mp3",
+          "duration": 1.28,
+          "currentTime": 0.019786,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-sunglasses.mp3",
+          "duration": 1.28,
+          "currentTime": 0.019477,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-sunglasses.mp3",
+          "duration": 1.12,
+          "currentTime": 0.0198,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-sunglasses.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019632,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-sunglasses.mp3",
+          "duration": 1.2,
+          "currentTime": 0.018972,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-sunglasses.mp3",
+          "duration": 1.2,
+          "currentTime": 0.019847,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        }
+      ],
+      "passed": 288,
+      "failures": [],
+      "minDuration": 0.64,
+      "maxDuration": 1.76,
+      "advanced": 288
+    },
+    {
+      "engine": "mobile-webkit",
+      "clips": [
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-train-station.mp3",
+          "duration": 1.3061224489795917,
+          "currentTime": 0.03799524996429682,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-train-station.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.035416125087067485,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-train-station.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.034147958271205425,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-train-station.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03476950014010072,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-train-station.mp3",
+          "duration": 1.3061224489795917,
+          "currentTime": 0.0334569166880101,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-train-station.mp3",
+          "duration": 1.3061224489795917,
+          "currentTime": 0.03648029174655676,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-train-station.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.035040416521951556,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-train-station",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-train-station.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03341416665352881,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bus-stop.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03524954174645245,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bus-stop.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03563624992966652,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bus-stop.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.035109875025227666,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bus-stop.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03421312500722706,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bus-stop.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03419699985533953,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bus-stop.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03408225020393729,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bus-stop.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03752858331426978,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bus-stop",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bus-stop.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.033546625170856714,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-street.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03619366674683988,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-street.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03373858332633972,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-street.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03361520846374333,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-street.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03891374985687435,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-street.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035393291618674994,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-street.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03591245831921697,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-street.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.035984083311632276,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-street",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-street.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.034488625125959516,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bridge.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03536320826970041,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bridge.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03845116659067571,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bridge.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034499374916777015,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bridge.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.033714374992996454,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bridge.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.033438041573390365,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bridge.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.033277083188295364,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bridge.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0328924166969955,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bridge",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bridge.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.036190708400681615,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-park.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03457374987192452,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-park.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03543499996885657,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-park.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03865262493491173,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-park.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0350514582823962,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-park.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03477983339689672,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-park.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03521633334457874,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-park.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03490445832721889,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-park",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-park.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03726279176771641,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-museum.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03324129153043032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-museum.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035786958411335945,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-museum.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03623987501487136,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-museum.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03502958337776363,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-museum.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03503241669386625,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-museum.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03529191669076681,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-museum.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03622024995274842,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-museum",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-museum.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.034589999821037054,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-menu.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.038841791450977325,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-menu.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03456637496128678,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-menu.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03399441670626402,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-menu.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.036696791648864746,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-menu.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035741416504606605,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-menu.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0349955833517015,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-menu.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035192833514884114,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-menu",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-menu.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03590070828795433,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03614316647872329,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-plate.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03452841658145189,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.034477500012144446,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03423124994151294,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03399991663172841,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03371441666968167,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-plate.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03693349985405803,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-plate",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-plate.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035562500124797225,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-drinking-glass.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03516149986535311,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-drinking-glass.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03467533318325877,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-drinking-glass.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03535841661505401,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-drinking-glass.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035199958365410566,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-drinking-glass.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03503958345390856,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-drinking-glass.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03448362508788705,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-drinking-glass.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03529662499204278,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-drinking-glass",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-drinking-glass.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03477270854637027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cup.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03426287486217916,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cup.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03339612507261336,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cup.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03445608331821859,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0359547499101609,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cup.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.035811125067994,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cup.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035574416629970074,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.035092375008389354,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cup",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cup.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03500750008970499,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-fork.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03399720834568143,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-fork.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03428987506777048,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-fork.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03457866655662656,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-fork.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035723499953746796,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-fork.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03363037505187094,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-fork.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03538691671565175,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-fork.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.034213791601359844,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-fork",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-fork.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03514662501402199,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-spoon.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03487450000829995,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-spoon.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03424770827405155,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-spoon.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03495983313769102,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-spoon.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035808333195745945,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-spoon.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035610249964520335,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-spoon.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035043708281591535,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-spoon.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03351358347572386,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-spoon",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-spoon.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03875720826908946,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-chicken.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.035440250067040324,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-chicken.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.035690166521817446,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-chicken.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.034914708230644464,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-chicken.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.035294541623443365,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-chicken.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03503591660410166,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-chicken.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03477179165929556,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-chicken.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03455837513320148,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chicken",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-chicken.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034987583523616195,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cooked-fish.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.033740000100806355,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cooked-fish.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.034845083486288786,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cooked-fish.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03290837490931153,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cooked-fish.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03556966665200889,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cooked-fish.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03603170835413039,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cooked-fish.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035481666680425406,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cooked-fish.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03431804175488651,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cooked-fish",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cooked-fish.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03582374984398484,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-egg.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03494329168461263,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-egg.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03424533340148628,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-egg.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03671683347783983,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-egg.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035493708215653896,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-egg.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035885208286345005,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-egg.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03620683331973851,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-egg.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03504654159769416,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-egg",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-egg.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03513037506490946,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-cheese.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03459670837037265,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-cheese.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03486799984239042,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-cheese.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.034901499981060624,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-cheese.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03320970828644931,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-cheese.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034299166640266776,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-cheese.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03404612513259053,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-cheese.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03361462499015033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-cheese",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-cheese.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03325612493790686,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-soup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034178041853010654,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-soup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03627074998803437,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-soup.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03573962510563433,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-soup.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03480708342976868,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-soup.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03553908341564238,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-soup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034875249955803156,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-soup.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.034062041668221354,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soup",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-soup.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.033907958306372166,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-salad.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03451070818118751,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-salad.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.033450499875470996,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-salad.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03614112478680909,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-salad.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0328472915571183,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-salad.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03478475008159876,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-salad.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035400166641920805,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-salad.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03561895829625428,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-salad",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-salad.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.038970541674643755,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-market.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.038526250049471855,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-market.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03476700000464916,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-market.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03520333324559033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-market.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035629749996587634,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-market.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03573620831593871,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-market.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03589900000952184,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-market.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035500833531841636,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-market",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-market.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03592237504199147,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-bakery.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03479720838367939,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-bakery.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035345041658729315,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-bakery.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.03515708330087364,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-bakery.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.033860999858006835,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-bakery.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03458983334712684,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-bakery.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03435820830054581,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-bakery.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03556095832027495,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-bakery",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-bakery.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03371004154905677,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-atm.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.033913958352059126,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-atm.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.03468237491324544,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-atm.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.03618766670115292,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-atm.mp3",
+          "duration": 1.8024489795918368,
+          "currentTime": 0.03470695833675563,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-atm.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03450058354064822,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-atm.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03494241670705378,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-atm.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.03482908336445689,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-atm",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-atm.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03424454154446721,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-receipt.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03409008332528174,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-receipt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03580058319494128,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-receipt.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03544062515720725,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-receipt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.034969583386555314,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-receipt.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03592837485484779,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-receipt.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035248458152636886,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-receipt.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035989208379760385,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-receipt",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-receipt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03628187510184944,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-wallet.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03502058330923319,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-wallet.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03484179172664881,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-wallet.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035917708184570074,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-wallet.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03391420841217041,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-wallet.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03401491674594581,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-wallet.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03519208333455026,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-wallet.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03389445831999183,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-wallet",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-wallet.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.035752000054344535,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-coin.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03528354153968394,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-coin.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.0352117083966732,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-coin.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.035269124899059534,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-coin.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03496091649867594,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-coin.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.033765750005841255,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-coin.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.034712000051513314,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-coin.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035993583500385284,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-coin",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-coin.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03372729173861444,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-room.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.0386614166200161,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-room.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03580933343619108,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-room.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.035473833326250315,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-room.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03589845821261406,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-room.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03571649990044534,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-room.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03536554146558046,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-room.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03533795825205743,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-room",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-room.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03473574994131923,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-table.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03465704177506268,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-table.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03487083315849304,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-table.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03312637493945658,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-table.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03331979154609144,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-table.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03433354152366519,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-table.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.035269791493192315,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-table.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03505562501959503,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-table",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-table.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035898208152502775,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-chair.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03531762515194714,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-chair.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0339912916533649,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-chair.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035012583481147885,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-chair.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03618391649797559,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-chair.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0345472083427012,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-chair.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03388279164209962,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-chair.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03529695840552449,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-chair",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-chair.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.034643499879166484,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-window.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035715666599571705,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-window.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.035208083456382155,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-window.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03519083349965513,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-window.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.036735583329573274,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-window.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03449029172770679,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-window.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03472633333876729,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-window.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03461316670291126,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-window",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-window.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03395604155957699,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-stairs.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03380012512207031,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-stairs.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.035722333239391446,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-stairs.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.034850958501920104,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-stairs.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03576404182240367,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-stairs.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03602016647346318,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-stairs.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03519412502646446,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-stairs.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.034981833305209875,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-stairs",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-stairs.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.03432574984617531,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-swimming-pool.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03446533344686031,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-swimming-pool.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03360487497411668,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-swimming-pool.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03389195818454027,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-swimming-pool.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.035345708252862096,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-swimming-pool.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03312820824794471,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-swimming-pool.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0345742916688323,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-swimming-pool.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03472062502987683,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-swimming-pool",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-swimming-pool.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03564699995331466,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-soap.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0388948752079159,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-soap.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03587600006721914,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-soap.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03456729161553085,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-soap.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03460558340884745,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-soap.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03441491676494479,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-soap.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.0365067501552403,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-soap.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03428416675888002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-soap",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-soap.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0361413334030658,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-shampoo.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.035648208344355226,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-shampoo.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03569725016131997,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-shampoo.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03566466667689383,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-shampoo.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03561745840124786,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-shampoo.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035250041633844376,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-shampoo.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035588999977335334,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-shampoo.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.034904916770756245,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-shampoo",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-shampoo.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03501579165458679,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-toothbrush.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03486858354881406,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-toothbrush.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.03524995828047395,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-toothbrush.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.03527262504212558,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-toothbrush.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.035415499936789274,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-toothbrush.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03550170827656984,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-toothbrush.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.0356843750923872,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-toothbrush.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03486554161645472,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothbrush",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-toothbrush.mp3",
+          "duration": 1.6457142857142857,
+          "currentTime": 0.0351302083581686,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-toothpaste.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.035508291563019156,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-toothpaste.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.034329166635870934,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-toothpaste.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03437062515877187,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-toothpaste.mp3",
+          "duration": 1.5673469387755101,
+          "currentTime": 0.03379945829510689,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-toothpaste.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.0357444582041353,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-toothpaste.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03554850001819432,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-toothpaste.mp3",
+          "duration": 1.4106122448979592,
+          "currentTime": 0.03629483329132199,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-toothpaste",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-toothpaste.mp3",
+          "duration": 1.4889795918367348,
+          "currentTime": 0.03516816650517285,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-charger.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03493954171426594,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-charger.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03486304171383381,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-charger.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03489470831118524,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-charger.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03475495846942067,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-charger.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.0349164167419076,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-charger.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03520583314821124,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-charger.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03448837506584823,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-charger",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-charger.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.0337312500923872,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "juan",
+          "file": "audio/juan/es-419-travel-sunglasses.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03602587501518428,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-travel-sunglasses.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.03405950008891523,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-travel-sunglasses.mp3",
+          "duration": 1.3061224489795917,
+          "currentTime": 0.03589524980634451,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "carito",
+          "file": "audio/carito/es-419-travel-sunglasses.mp3",
+          "duration": 1.3061224489795917,
+          "currentTime": 0.035531749948859215,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-travel-sunglasses.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03554537519812584,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-travel-sunglasses.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.035126916598528624,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-travel-sunglasses.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.03462583338841796,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-travel-sunglasses",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-travel-sunglasses.mp3",
+          "duration": 1.2277551020408164,
+          "currentTime": 0.0348684168420732,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        }
+      ],
+      "passed": 288,
+      "failures": [],
+      "minDuration": 0.6791836734693878,
+      "maxDuration": 1.8024489795918368,
+      "advanced": 288
+    }
+  ],
+  "limitations": [
+    "Real iPhone tests deferred to deployed version as requested.",
+    "Browser playback checks do not constitute owner pronunciation or artwork acceptance."
+  ],
+  "artworkRevision": {
+    "item": "es-419-travel-stairs",
+    "selectedVersion": 5,
+    "history": "artifacts/spanish-travel-2-art/revisions/history.json",
+    "other35ImageHashesUnchanged": true,
+    "audioManifestHashUnchanged": true,
+    "checks": "npm run check and Chromium/mobile WebKit gallery verification passed after revision."
+  }
+}
