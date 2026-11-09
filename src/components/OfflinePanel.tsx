@@ -113,6 +113,6 @@ export function OfflinePanel({ urls, online, open, onReady }: {
     {sizeError && <p role="alert">{sizeError} <button className="text-button" type="button" disabled={!online} onClick={() => setSizeRefresh(value => value + 1)}>Check size again</button></p>}
     {error && <p role="alert">{error}</p>}
     {enabled && !ready && action === null && <button className="text-button" type="button" disabled={!canDownload} onClick={() => void run('DOWNLOAD')}>{error ? 'Retry download' : 'Download selected packs'}</button>}
-    {!enabled && (result?.completed ?? 0) > 0 && action === null && <button className="text-button" type="button" onClick={() => void run('REMOVE')}>Remove remaining downloads</button>}
+    {!enabled && ((result?.completed ?? 0) > 0 || error) && action === null && <button className="text-button" type="button" onClick={() => void run('REMOVE')}>Remove remaining downloads</button>}
   </section>;
 }

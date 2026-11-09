@@ -127,14 +127,21 @@ it('loads size only when settings are opened and prevents new downloads offline'
   view.rerender(<OfflinePanel urls={urls} online={false} open onReady={onReady}/>);
   expect(screen.getByRole('checkbox')).toBeDisabled(); expect(downloadSize).not.toHaveBeenCalled();
 });
-it('keeps an explicit disable after a failed removal and later cache verification', async () => {
+it.each(['error result', 'rejection'])('keeps removal retry and explicit disable after a failed removal (%s)', async failure => {
   vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
   const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
   const checkbox = screen.getByRole('checkbox'); await waitFor(() => expect(checkbox).toBeChecked());
-  vi.mocked(offlineRequest).mockResolvedValueOnce({ ...empty, error: 'Removal failed.' });
+  if (failure === 'rejection') vi.mocked(offlineRequest).mockRejectedValueOnce(new Error('Removal failed.'));
+  else vi.mocked(offlineRequest).mockResolvedValueOnce({ ...empty, error: 'Removal failed.' });
   fireEvent.click(checkbox); await screen.findByRole('alert');
+  expect(screen.getByRole('button', { name: 'Remove remaining downloads' })).toBeEnabled();
   vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
-  fireEvent(window, new Event('focus'));
-  await screen.findByRole('button', { name: 'Remove remaining downloads' });
+  await act(async () => { fireEvent(window, new Event('focus')); });
+  expect(screen.getByRole('button', { name: 'Remove remaining downloads' })).toBeEnabled();
   expect(checkbox).not.toBeChecked(); expect(onReady).toHaveBeenLastCalledWith(false);
+  vi.mocked(offlineRequest).mockResolvedValueOnce(empty);
+  fireEvent.click(screen.getByRole('button', { name: 'Remove remaining downloads' }));
+  await waitFor(() => expect(screen.queryByRole('button', { name: 'Remove remaining downloads' })).not.toBeInTheDocument());
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  expect(localStorage.getItem(key)).toBe('false');
 });
