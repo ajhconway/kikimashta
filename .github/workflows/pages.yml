@@ -17,7 +17,7 @@ concurrency:
 
 env:
   # Reviewed offline feature snapshot; updating it is a separate code-reviewed change.
-  OFFLINE_DEMO_REVISION: 1000d06c1ec595f241de5c3904b46db8ea2dc23f
+  OFFLINE_DEMO_REVISION: d5d477c3971acb1f883b49bcbb182fe1a055efa7
 
 jobs:
   demo-build:
