@@ -176,6 +176,13 @@ test('rice/beans/tomato amendment verifies original snapshots and changes only t
   await save(root, recordPath, record)
   await expectUnchanged(/revision record changed/)
   await writeFile(join(root, recordPath), recordBytes)
+  for (const field of ['supersedes', 'supersedesSha256']) {
+    const missingPredecessor = JSON.parse(recordBytes)
+    delete missingPredecessor[field]
+    await save(root, recordPath, missingPredecessor)
+    await expectUnchanged(/revision record changed/)
+    await writeFile(join(root, recordPath), recordBytes)
+  }
   const revisedPath = ART + '/' + JSON.parse(recordBytes).path
   await save(root, revisedPath, 'changed revised image')
   await expectUnchanged(/Revised Food image bytes changed/)

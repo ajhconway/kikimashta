@@ -150,7 +150,7 @@ export async function inspectFoodLevel1Art(root = process.cwd()) {
         const r = JSON.parse(recordBytes), path = `${ART}/originals/${target.slug}-v${target.version}.png`
         if (r.id !== target.id || r.slug !== target.slug || r.version !== target.version || r.path !== `originals/${target.slug}-v${target.version}.png` || r.tool !== 'built-in image_gen' ||
             r.promptSha256 !== hash(q.prompt) || r.referenceSha256 !== q.referenceSha256 || (r.additionalReferences ?? []).length ||
-            (r.supersedes !== undefined && r.supersedes !== target.previousPath) || (r.supersedesSha256 !== undefined && r.supersedesSha256 !== target.previousSha256)) throw Error('Food revision record changed.')
+            r.supersedes !== target.previousPath || r.supersedesSha256 !== target.previousSha256) throw Error('Food revision record changed.')
         const data = await bytes(root, path)
         if (hash(data) !== r.sha256) throw Error('Revised Food image bytes changed.')
         const pixels = inspectPngAlpha(data)
