@@ -1,7 +1,7 @@
 {
   "issue": 218,
   "pack": "es-419-food-1",
-  "status": "generated-awaiting-owner-listening-review",
+  "status": "accepted-staged-for-release",
   "words": 36,
   "pictures": 36,
   "recordings": 288,
@@ -86,10 +86,38 @@
   },
   "preservation": "The approved draft, artwork acceptance, selected artwork, audio configuration/approval/reuse records and all 192 accepted production recordings remain unchanged. Provider originals and account-usage evidence are private; the review includes processed MP3s and public provenance.",
   "independentReview": "Read-only code, scope, provenance, source-byte and test-quality review found no material findings. All 288 recording hashes and byte counts match; reused clips also match their current accepted bank/voice/activation records.",
-  "ownerListeningAccepted": false,
-  "runtimeActivated": false,
+  "ownerListeningAccepted": true,
+  "runtimeActivated": true,
   "limitations": [
-    "New recordings await owner listening acceptance.",
-    "Actual iPhone listening and touch testing remains manual."
-  ]
+    "Required GitHub CI and current-head review precede merge; normal publication/live verification follows merge.",
+    "Actual iPhone listening and touch testing remains manual on the deployed site; issue #218 stays open."
+  ],
+  "finalAcceptance": "content/spanish-food-1/acceptance.json",
+  "finalAcceptanceSha256": "b91371fd5387f34bd397e13951f49f741dea79d8a8ed2ef5c56cd94992371023",
+  "activation": "content/spanish-food-1/activation.json",
+  "activationSha256": "179aa889213c79b03768d6e8949300935c4a97cda9b338d9fe0a70d7eb3bed60",
+  "activationVerification": {
+    "command": "VITEST_MAX_WORKERS=2 npm run check",
+    "exitCode": 0,
+    "vitest": 664,
+    "node": 322,
+    "pythonAudioContent": 18,
+    "pythonCards": 27,
+    "lint": "passed",
+    "types": "passed",
+    "validators": "passed",
+    "productionBuild": "passed",
+    "browserCommand": "npm run test:e2e -- --workers=2",
+    "browserTests": 108,
+    "browserEngines": [
+      "chromium",
+      "webkit-mobile"
+    ],
+    "syncConfiguration": "Explicit documented fake Supabase service configuration; real browser IndexedDB.",
+    "acceptedInputHashes": 27,
+    "productionMediaHashes": 324,
+    "pictureChoiceReview": "171 current Spanish pictures; twelve additional symmetric exclusions; all 63 nonempty pack combinations.",
+    "independentReview": "No blocking findings in correctness, source/provenance, integration and test-quality review.",
+    "normalizationEvidence": "Validated profile and clip/limited/short counts; exact summary and additive verification hashes bound in final acceptance. All 99 pre-existing audio review outputs remain byte-identical."
+  }
 }

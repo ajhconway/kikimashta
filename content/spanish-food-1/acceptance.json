@@ -1,0 +1,79 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "language": "es-419",
+  "status": "accepted-for-activation",
+  "ownerMessage": "I'm happy with the audio. Let's auto-merge.",
+  "words": 36,
+  "images": 36,
+  "recordings": 288,
+  "voices": 8,
+  "newWords": 12,
+  "reusedWords": 24,
+  "generatedImages": 12,
+  "reusedImages": 24,
+  "newRecordings": 96,
+  "reusedRecordings": 192,
+  "combinedMediaManifest": "artifacts/spanish-food-1-media-review/manifest.json",
+  "combinedMediaManifestSha256": "6143a08cf6c827a644e8b2b1d564836b94499c46f840723cea39d7c0509c61a2",
+  "inputs": {
+    "content/spanish-food-1/draft.json": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+    "content/spanish-food-1/artwork-acceptance.json": "e33086297c0692de7ce365aaa2ef104f9069e982a453ddfefba9576a0ad2ef34",
+    "content/spanish-food-1/audio-config.json": "51e2c1467a65e1c4855ec423fca2517c212e9080de5cfc42840b91fc89dd5d45",
+    "content/spanish-food-1/audio-approval.json": "97af6193654992f7f4d6c3e16249a57ace34ff6d0f17471e5db4449f472f2ca4",
+    "content/spanish-food-1/audio-reuse.json": "de6f11b29f33b73eb63f6b5598a9372b72e563f672576d4010107a67de6b0321",
+    "content/es-419-voices.json": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+    "artifacts/spanish-food-1-art/manifest.json": "c47af3dc7cd25a15529988ceebe323640210dc3a75e730d6774ec33c7a457e87",
+    "artifacts/spanish-food-1-audio-review/manifest.json": "3083df947944176542b6fcb6ff31db5d4aed93ccffa86e3ce199e25c7d4b12c9",
+    "artifacts/spanish-food-1-media-review/manifest.json": "6143a08cf6c827a644e8b2b1d564836b94499c46f840723cea39d7c0509c61a2",
+    "artifacts/spanish-food-1-art/selection.json": "3152f59f49346ec9b4c2014356a0cd4e1017dc1db5f4954a1e9884af69372a6f",
+    "content/spanish-food-1/artwork-revisions-v1.json": "bfa8c875997082fc0f023323170d07945319bd9bc8b206a2fda4e1a284653667",
+    "content/spanish-food-1/generation-approval.json": "a1ad6212dd18c47b149604abfc557812a421a7dd4bf37053659df1568816a579",
+    "artifacts/spanish-food-1-art/requests.json": "d4546b07396a6cc034a98be6fd3b51aac458cf038da11f3949269eb60e957577",
+    "content/es-419-travel-3.json": "2145dd0350ed01926f68de5a6fec2b8e1a780bd56930ad96569c94f18ce3b221",
+    "content/spanish-travel-3/activation.json": "573b1117ac6b2928eb1095f6ea52b8698c9a806c1597b9526033154e7a1a1b49",
+    "content/spanish-travel-3/acceptance.json": "d164abc86b4bd967d9bff8dddfe3c055acd874c0fbafbc93e430c6b1df826ba6",
+    "content/es-419-travel-4.json": "e163b025a85dfedc8c5b581d3b2e294c3c44b717a838657e10d5631af4c04cc1",
+    "content/spanish-travel-4/activation.json": "082cfc39a5a3f2edd630531a2b72f720639e26bebc5e42964b6bfaaf57410afd",
+    "content/spanish-travel-4/acceptance.json": "bdbe966b89fe6521c10969b39525d39bf19d615cfe22debddda502bbfb3c3f12",
+    "content/es-419.json": "7ce7bc2d234ef1361dfd807c5ef3d2a281fbed00b25f2ed2311b0992c00a09b6",
+    "content/spanish-travel-audio/activation.json": "10507a2043661f579c5a39243afee1a0fbb732f3ba5b2a0461f1ba41eb1e54a7",
+    "content/spanish-travel-audio/acceptance.json": "f384ed54ef5eb2914240ba6db49c60f35c6a350929a6dae0f823e7e29d1f0a38",
+    "content/es-419-travel-2.json": "d63bc583fcb7eae6c60a364c7f0f6f9aac84d20242c796c95283cd4dd25b8b3a",
+    "content/spanish-travel-2/activation.json": "8d21ce836176da0681474966ce39cce7f0ac31391df4553a567d4df0dbf47491",
+    "content/spanish-travel-2/acceptance.json": "9c0b5b480b0b1561fe32ced1b8b01a51185ba7b8fb278711504e5acfcd528513",
+    "artifacts/spanish-food-1-audio-review/normalization-summary.json": "5be2305ded30bb25b26446acb608c018fe9e69aafdbab0d38f59f9da1f19c8cf",
+    "artifacts/spanish-food-1-audio-review/normalization-verification.json": "182b77010aa5e8398888d184da67a7696ae20144a058d04e61ca92eac6e24d8c"
+  },
+  "acceptedNewQuieterClips": [
+    {
+      "id": "es-419-food-pasta",
+      "voice": "santiago",
+      "sha256": "31fb0e6d6efd0fe47c651f098f564b6d16b433b341987db010be300148c55242",
+      "integratedLufs": -22.4,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "voice": "juan",
+      "sha256": "fd709523b8f14c8476cb3246ef1c42a6ac6618e834fa63a8411ed58e1ef7eec1",
+      "integratedLufs": -22.54,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-pizza",
+      "voice": "carlos-figueroa",
+      "sha256": "859e9d64db214e27d36f37b47e2de84686cbdc97dccc5d1ece4ff04e3ed5d0d0",
+      "integratedLufs": -22.98,
+      "limitingReasons": [
+        "maximum_gain"
+      ]
+    }
+  ],
+  "cookedRicePolicy": "Use the accepted cooked-rice image for the existing Spanish rice ID across its packs; preserve Japanese uncooked rice and historical source banks.",
+  "realIPhoneTesting": "Owner will test the deployed version."
+}

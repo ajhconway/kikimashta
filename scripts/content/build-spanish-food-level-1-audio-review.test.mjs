@@ -5,7 +5,7 @@ import { mkdtemp, mkdir, writeFile, readFile, stat, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, dirname } from 'node:path'
 import { loadSpanishFoodLevel1Plan } from './generate-spanish-food-level-1.mjs'
-import { foodAudioReviewManifest, foodAudioReviewHtml, validateFoodAudioReviewManifest, buildSpanishFoodLevel1AudioReview } from './build-spanish-food-level-1-audio-review.mjs'
+import { foodAudioReviewManifest, foodAudioReviewHtml, validateFoodAudioReviewManifest, foodNormalizationVerification, buildSpanishFoodLevel1AudioReview } from './build-spanish-food-level-1-audio-review.mjs'
 const hash = value => createHash('sha256').update(value).digest('hex')
 function sorted(value) {
   if (Array.isArray(value))
@@ -30,7 +30,7 @@ async function fixture() {
     profile: {
       version: 1, targetLufs: -22, truePeakCeilingDbtp: -2, maxBoostDb: 9, rate: 44100, bitrate: '128k', dualMono: true, shortClipAnalysis: 'pad-to-500ms-only-for-measurement'
     },
-    after: { integratedLufs: -22, truePeakDbtp: -3 }, decodedFrames: 44100, deliverySha256: '2'.repeat(64), deliveryBytes: 100, targetLimited: false, gainDb: 0
+    after: { integratedLufs: -22, truePeakDbtp: -3, analysisPadding: false, measurementMethod: 'r128' }, decodedFrames: 44100, deliverySha256: '2'.repeat(64), deliveryBytes: 100, targetLimited: false, limitingReasons: [], gainDb: 0
   }))
   return {
     plan, approval, originals, deliveries
@@ -131,4 +131,82 @@ test('shared Food manifest guard rejects changed bindings, requests and loudness
     mutate(changed)
     assert.throws(() => validateFoodAudioReviewManifest(plan, approval, changed))
   }
+})
+
+test('normalization evidence binds exact existing summary bytes and reconciles the approved profile and clip counts', async () => {
+  const manifest = JSON.parse(await readFile('artifacts/spanish-food-1-audio-review/manifest.json'))
+  const summaryBytes = await readFile('artifacts/spanish-food-1-audio-review/normalization-summary.json')
+  const summary = JSON.parse(summaryBytes)
+  const evidence = foodNormalizationVerification(manifest, summaryBytes)
+  assert.equal(evidence.clips, 96)
+  assert.equal(evidence.targetLimited, 3)
+  assert.equal(evidence.shortClipMeasurements, 3)
+  assert.equal(evidence.manifestSha256, hash(await readFile('artifacts/spanish-food-1-audio-review/manifest.json')))
+  assert.equal(evidence.normalizationSummarySha256, hash(summaryBytes))
+  assert.equal(evidence.normalizationSummaryBytes, summaryBytes.length)
+  const spaced = Buffer.concat([summaryBytes, Buffer.from(' ')])
+  assert.notEqual(foodNormalizationVerification(manifest, spaced).normalizationSummarySha256, evidence.normalizationSummarySha256)
+  assert.equal(foodNormalizationVerification(manifest, spaced).manifestSha256, evidence.manifestSha256)
+  for (const change of [
+    s => { s.profile.targetLufs = -14 }, s => { s.profile.maxBoostDb = 20 },
+    s => { s.profile.rate = 48000 }, s => { s.clips = 288 },
+    s => { s.targetLimited = 0 }, s => { s.shortClipMeasurements = 0 },
+    s => { s.originalsPreserved = false }, s => { s.processing = 'Compressed and trimmed' },
+    s => { s.resumed = -1 }, s => { s.resumed = 97 }, s => { s.resumed = .5 },
+    s => { s.unverifiedData = 'must not be published' },
+  ]) {
+    const changed = structuredClone(summary); change(changed)
+    assert.throws(() => foodNormalizationVerification(manifest, Buffer.from(JSON.stringify(changed))), /normalization summary differs/)
+  }
+  const changed = structuredClone(manifest)
+  changed.clips.find(c => c.after.analysisPadding).after.analysisPadding = false
+  assert.throws(() => foodNormalizationVerification(changed, summaryBytes), /normalization summary differs/)
+})
+
+test('summary tampering fails before any review output mutation; valid builds preserve summary bytes and emit separate evidence', async t => {
+  const { plan, approval, originals, deliveries } = await fixture()
+  const folder = await mkdtemp(join(tmpdir(), 'food-normalization-evidence-'))
+  t.after(() => rm(folder, { recursive: true, force: true }))
+  const input = join(folder, 'originals'), delivery = join(folder, 'delivery')
+  await mkdir(input); await mkdir(delivery)
+  const originalData = Buffer.alloc(100, 1), deliveredData = Buffer.alloc(100, 2)
+  for (const [index, original] of originals.entries()) {
+    original.sha256 = hash(originalData)
+    const d = deliveries[index]
+    d.sha256 = original.sha256; d.originalSha256 = original.sha256
+    d.sourceRecordSha256 = hash(JSON.stringify(sorted(original)))
+    d.deliverySha256 = hash(deliveredData)
+    const originalPath = join(input, original.file), deliveryPath = join(delivery, d.file)
+    await mkdir(dirname(originalPath), { recursive: true }); await mkdir(dirname(deliveryPath), { recursive: true })
+    await writeFile(originalPath, originalData); await writeFile(deliveryPath, deliveredData)
+  }
+  await writeFile(join(input, 'originals.jsonl'), originals.map(r => JSON.stringify(r)).join('\n') + '\n')
+  await writeFile(join(delivery, 'deliveries.jsonl'), deliveries.map(r => JSON.stringify(r)).join('\n') + '\n')
+  await writeFile(join(input, 'approval.json'), JSON.stringify(approval))
+  await writeFile(join(input, 'summary.json'), JSON.stringify({ status: 'generated', completed: plan.expectedClips }))
+  const summary = { profile: deliveries[0].profile, clips: 96, resumed: 0, targetLimited: 0, shortClipMeasurements: 0,
+    originalsPreserved: true, processing: 'Constant gain; each delivered MP3 encoded directly from its provider original. No dynamics compression, trimming, or timing changes.' }
+  const output = join(folder, 'existing-review')
+  await mkdir(output)
+  const protectedFiles = ['manifest.json', 'normalization-summary.json', 'normalization-verification.json', 'index.html']
+  for (const name of protectedFiles) await writeFile(join(output, name), 'existing ' + name)
+  for (const change of [s => { s.profile.targetLufs = -14 }, s => { s.clips++ }, s => { s.targetLimited++ }, s => { s.shortClipMeasurements++ }]) {
+    const changed = structuredClone(summary); change(changed)
+    await writeFile(join(delivery, 'normalization-summary.json'), JSON.stringify(changed))
+    await assert.rejects(buildSpanishFoodLevel1AudioReview({ input, delivery, output }), /normalization summary differs/)
+    for (const name of protectedFiles) assert.equal(await readFile(join(output, name), 'utf8'), 'existing ' + name)
+    const absent = join(folder, 'not-created')
+    await assert.rejects(buildSpanishFoodLevel1AudioReview({ input, delivery, output: absent }), /normalization summary differs/)
+    await assert.rejects(stat(absent), { code: 'ENOENT' })
+  }
+  const summaryBytes = Buffer.from(JSON.stringify(summary, null, 2) + '\n')
+  await writeFile(join(delivery, 'normalization-summary.json'), summaryBytes)
+  const complete = join(folder, 'complete-review')
+  const manifest = await buildSpanishFoodLevel1AudioReview({ input, delivery, output: complete })
+  assert.equal(manifest.clips.length, 96)
+  assert.deepEqual(await readFile(join(complete, 'normalization-summary.json')), summaryBytes)
+  const evidence = JSON.parse(await readFile(join(complete, 'normalization-verification.json')))
+  assert.equal(evidence.normalizationSummarySha256, hash(summaryBytes))
+  assert.equal(evidence.manifestSha256, hash(await readFile(join(complete, 'manifest.json'))))
+  assert.equal(evidence.clips, 96)
 })

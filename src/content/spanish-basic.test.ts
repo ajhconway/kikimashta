@@ -5,8 +5,25 @@ import { contextualQuestion } from '../core/contextual-questions';
 import { learningLanguages } from '../core/languages';
 import { selectedPracticeCards } from '../core/packs';
 import draft from '../../content/spanish-basic-1/draft.json';
+import food from '../../content/es-419-food-1.json';
+import { contextualVocabulary } from './contextual-runtime';
 
 describe('Basic Spanish foundation runtime', () => {
+  it('uses the accepted cooked rice in contextual choices and library data while Japanese retains raw rice', () => {
+    const rice = food.items.find(item => item.id === 'es-419-travel-rice')!;
+    const ordinary = learningLanguages.find(language => language.id === 'es-419')!.pool.items.find(item => item.id === rice.id)!;
+    expect(ordinary.image).toEqual(rice.image);
+    expect(spanishContextualVocabulary.find(item => item.id === rice.id)!.image).toEqual(rice.image);
+    expect(contextualVocabulary.find(item => item.id === rice.id)!.image).toEqual(rice.image);
+    const contexts = spanishBasicContexts.contexts.filter(context => context.questions.some(question => question.options.some(option => option.imageItemId === rice.id)));
+    expect(contexts.length).toBeGreaterThan(0);
+    for (const context of contexts) {
+      const question = contextualQuestion(context, context.questions[0]!, 'picture', contextualVocabulary, () => 0, ['juan']);
+      const optionId = context.questions[0]!.options.find(option => option.imageItemId === rice.id)!.id;
+      expect(question.choices.find(item => item.id === optionId)!.image).toEqual(rice.image);
+    }
+    expect(contextualVocabulary.find(item => item.id === 'ja-v-0958f7553d9f')!.image.src).toBe('images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg');
+  });
   it('admits 15 ordinary pictures and nine independent foundation contexts without abstract word cards', () => {
     const language = learningLanguages.find(language => language.id === 'es-419')!;
     const cards = selectedPracticeCards(language.pool.items, ['es-419-basic-1-pictures'], language.packs);

@@ -10,6 +10,32 @@ const hash = value => createHash('sha256').update(value).digest('hex')
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 const validHash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value)
 const jsonl = text => text.trim().split('\n').filter(Boolean).map(line => JSON.parse(line))
+const PROFILE = { version: 1, targetLufs: -22, truePeakCeilingDbtp: -2, maxBoostDb: 9, rate: 44100, bitrate: '128k', dualMono: true, shortClipAnalysis: 'pad-to-500ms-only-for-measurement' }
+const PROCESSING = 'Constant gain; each delivered MP3 encoded directly from its provider original. No dynamics compression, trimming, or timing changes.'
+const ordered = value => value && typeof value === 'object' && !Array.isArray(value)
+  ? Object.fromEntries(Object.keys(value).sort().map(key => [key, ordered(value[key])])) : value
+
+/** The summary is reporting evidence, not a second authority for the playback profile. */
+export function foodNormalizationVerification(manifest, summaryBytes) {
+  const summary = JSON.parse(summaryBytes)
+  const fields = ['profile', 'clips', 'resumed', 'targetLimited', 'shortClipMeasurements', 'originalsPreserved', 'processing']
+  const limited = manifest.clips.filter(c => c.targetLimited).length
+  const short = manifest.clips.filter(c => c.decodedFrames < PROFILE.rate / 2).length
+  if (!same(Object.keys(summary ?? {}).sort(), fields.sort())
+    || !same(ordered(summary.profile), ordered(PROFILE))
+    || summary.clips !== manifest.clips.length
+    || !Number.isSafeInteger(summary.resumed) || summary.resumed < 0 || summary.resumed > summary.clips
+    || summary.targetLimited !== limited
+    || summary.shortClipMeasurements !== short
+    || summary.originalsPreserved !== true || summary.processing !== PROCESSING
+    || manifest.clips.some(c => c.after.analysisPadding !== (c.decodedFrames < PROFILE.rate / 2)
+      || c.after.measurementMethod !== (c.decodedFrames < PROFILE.rate / 2 ? 'r128-analysis-padded-to-500ms' : 'r128')))
+    throw Error('Food normalization summary differs from verified recordings.')
+  return { issue: 218, pack: 'es-419-food-1', manifest: 'manifest.json', manifestSha256: hash(JSON.stringify(manifest, null, 2) + '\n'),
+    normalizationSummary: 'normalization-summary.json', normalizationSummarySha256: hash(summaryBytes), normalizationSummaryBytes: summaryBytes.length,
+    clips: manifest.clips.length, targetLimited: limited, shortClipMeasurements: short,
+    resumed: summary.resumed, resumeEvidence: 'Reported normalization-run count, checked within 0..clips; not derivable from individual recording records.' }
+}
 /** Shared read-only validation for the audio-only and combined 36-word galleries. */
 export function validateFoodAudioReviewManifest(plan, approval, manifest) {
   if (plan.issue !== 218
@@ -110,13 +136,16 @@ export async function buildSpanishFoodLevel1AudioReview({ root = process.cwd(), 
       || bytes.length !== clip.deliveryBytes)
       throw Error('Original or delivery hash mismatch.')
   }
+  const normalizationBytes = await readFile(join(deliveryRoot, 'normalization-summary.json'))
+  const normalizationVerification = foodNormalizationVerification(manifest, normalizationBytes)
   await mkdir(destination, { recursive: false })
   for (const voice of plan.voices)
     await mkdir(join(destination, 'audio', voice.voice), { recursive: true })
   for (const clip of manifest.clips)
     await copyFile(join(deliveryRoot, clip.file.slice(6)), join(destination, clip.file))
   await writeFile(join(destination, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
-  await copyFile(join(deliveryRoot, 'normalization-summary.json'), join(destination, 'normalization-summary.json'))
+  await writeFile(join(destination, 'normalization-summary.json'), normalizationBytes)
+  await writeFile(join(destination, 'normalization-verification.json'), JSON.stringify(normalizationVerification, null, 2) + '\n')
   await writeFile(join(destination, 'index.html'), foodAudioReviewHtml(manifest))
   return manifest
 }

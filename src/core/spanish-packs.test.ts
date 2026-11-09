@@ -6,6 +6,10 @@ import first from '../../content/es-419.json';
 import second from '../../content/es-419-travel-2.json';
 import third from '../../content/es-419-travel-3.json';
 import fourth from '../../content/es-419-travel-4.json';
+import food from '../../content/es-419-food-1.json';
+import foodActivation from '../../content/spanish-food-1/activation.json';
+import foodAcceptance from '../../content/spanish-food-1/acceptance.json';
+import foodPictureReview from '../../content/spanish-food-1/picture-choice-review.json';
 import fourthActivation from '../../content/spanish-travel-4/activation.json';
 import fourthPictureReview from '../../content/spanish-travel-4/picture-ambiguity-review.json';
 import thirdActivation from '../../content/spanish-travel-3/activation.json';
@@ -16,22 +20,23 @@ import acceptance from '../../content/spanish-travel-2/acceptance.json';
 import artwork from '../../artifacts/spanish-travel-2-art/manifest.json';
 import exclusions from '../../content/spanish-picture-exclusions.json';
 import { learningLanguages } from './languages';
+import { cardKey } from './cards';
 import { initialPackIds, selectedPracticeCards } from './packs';
 import { createQuestions, validateBank } from './session';
 
 const spanish = learningLanguages.find(language => language.id === 'es-419')!;
 const digest = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
 
-describe('Spanish travel levels', () => {
+describe('Spanish picture packs', () => {
   it('keeps separate pack membership and restores existing device choices', () => {
-    expect(spanish.pool.items).toHaveLength(159);
-    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(159);
+    expect(spanish.pool.items).toHaveLength(171);
+    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(171);
     for (const bank of [first, second, third, fourth] as WordBank[]) {
       const cards = selectedPracticeCards(spanish.pool.items, [`${bank.id}-pictures`], spanish.packs);
       expect(cards.map(card => card.item.id)).toEqual(bank.items.map(item => item.id));
       expect(cards.every(card => card.exercise === 'audio-picture')).toBe(true);
       for (const item of bank.items) expect(spanish.pool.items.find(word => word.id === item.id)).toMatchObject({
-        ...item, pictureDistractorExclusions: expect.arrayContaining(item.pictureDistractorExclusions ?? []),
+        ...item, image: item.id === 'es-419-travel-rice' ? food.items.find(word => word.id === item.id)!.image : item.image, pictureDistractorExclusions: expect.arrayContaining(item.pictureDistractorExclusions ?? []),
       });
     }
     localStorage.setItem(spanish.packPreferenceKey, JSON.stringify(['es-419-travel-1-pictures']));
@@ -89,6 +94,49 @@ describe('Spanish travel levels', () => {
     }
   });
 
+  it('activates the exact accepted Food media and shares existing word identities', () => {
+    expect(food.items).toHaveLength(36);
+    expect(foodActivation.sharedItemIds).toHaveLength(24);
+    expect(foodActivation.copiedFiles).toBe(108);
+    expect(foodActivation.newWords).toBe(12);
+    expect(foodActivation.generatedImages).toBe(12);
+    expect(foodActivation.newRecordings).toBe(96);
+    expect(foodActivation.reusedRecordings).toBe(192);
+    expect(digest(foodActivation.acceptance)).toBe(foodActivation.acceptanceSha256);
+    expect(digest(foodAcceptance.combinedMediaManifest)).toBe(foodAcceptance.combinedMediaManifestSha256);
+    for (const asset of [...foodActivation.images, ...foodActivation.recordings]) expect(digest('public/' + asset.src)).toBe(asset.sha256);
+    const old = new Map([first, second, third, fourth].flatMap(bank => bank.items).map(item => [item.id, item]));
+    for (const item of food.items) {
+      const previous = old.get(item.id);
+      if (previous) expect(item).toEqual({ ...previous, image: item.id === 'es-419-travel-rice' ? item.image : previous.image });
+      else expect(item.audio.every(clip => clip.src.startsWith('audio/es-419-food-1/'))).toBe(true);
+      expect(item.audio.map(clip => clip.voice)).toEqual(first.items[0]!.audio.map(clip => clip.voice));
+    }
+    const cards = selectedPracticeCards(spanish.pool.items, ['es-419-food-1-pictures'], spanish.packs);
+    expect(new Set(cards.map(card => card.item.id))).toEqual(new Set(food.items.map(item => item.id)));
+    expect(cards.every(card => card.exercise === 'audio-picture')).toBe(true);
+  });
+
+  it('keeps shared progress keys and cooked Spanish rice across overlapping selections', () => {
+    const select = (packIds: string[]) => selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
+    const travel = select(['es-419-travel-1-pictures']);
+    const foodCards = select(['es-419-food-1-pictures']);
+    const together = select(['es-419-travel-1-pictures', 'es-419-food-1-pictures']);
+    expect(together).toHaveLength(66);
+    expect(new Set(together.map(cardKey)).size).toBe(66);
+    for (const shared of foodActivation.sharedItemIds) {
+      const foodCard = foodCards.find(card => card.item.id === shared)!;
+      const otherPacks = select(spanish.packs.filter(pack => pack.id !== 'es-419-food-1-pictures').map(pack => pack.id));
+      expect(cardKey(foodCard)).toBe(cardKey(otherPacks.find(card => card.item.id === shared)!));
+    }
+    const rice = food.items.find(item => item.id === 'es-419-travel-rice')!;
+    expect(travel.find(card => card.item.id === rice.id)!.item.image).toEqual(rice.image);
+    expect(rice.image.src).toContain('es-419-travel-rice-622cdf579932');
+    const japanese = learningLanguages.find(language => language.id === 'ja-JP')!;
+    expect(japanese.pool.items.find(item => item.id === foodPictureReview.japaneseRicePreserved.id)!.image).toEqual(foodPictureReview.japaneseRicePreserved.image);
+    expect(first.items.find(item => item.id === rice.id)!.image.src).toBe(foodPictureReview.japaneseRicePreserved.image.src);
+  });
+
   it('does not offer the milk illustration for vaso or the drinking glass for leche', () => {
     const word = (slug: string) => spanish.pool.items.find(item => item.id === `es-419-travel-${slug}`)!;
     const safe = ['table', 'chair', 'spoon'].map(word);
@@ -114,10 +162,16 @@ describe('Spanish travel levels', () => {
   it('keeps the complete picture review and symmetric exclusions consistent with approved assets', () => {
     const byId = new Map(spanish.pool.items.map(item => [item.id, item]));
     expect(digest(fourthPictureReview.selectedArtworkManifest)).toBe(fourthPictureReview.selectedArtworkManifestSha256);
-    expect(new Set(fourthPictureReview.inspectedAssets.map(asset => asset.id)).size).toBe(spanish.pool.items.length);
+    expect(new Set(fourthPictureReview.inspectedAssets.map(asset => asset.id)).size).toBe(159);
     for (const asset of fourthPictureReview.inspectedAssets) {
-      expect(digest('public/' + byId.get(asset.id)!.image.src)).toBe(asset.sha256);
+      expect(digest(asset.path)).toBe(asset.sha256);
     }
+    expect(digest(foodPictureReview.foodArtworkManifest)).toBe(foodPictureReview.foodArtworkManifestSha256);
+    expect(digest(foodPictureReview.foodArtworkAcceptance)).toBe(foodPictureReview.foodArtworkAcceptanceSha256);
+    expect(digest(foodPictureReview.historicalSpanishAudit)).toBe(foodPictureReview.historicalSpanishAuditSha256);
+    expect(new Set(foodPictureReview.inspectedAssets.map(asset => asset.id)).size).toBe(spanish.pool.items.length);
+    for (const asset of foodPictureReview.inspectedAssets) expect(digest('public/' + byId.get(asset.id)!.image.src)).toBe(asset.sha256);
+    for (const pair of foodPictureReview.addedSymmetricPairs) expect(exclusions.pairs).toContainEqual(pair);
     for (const pair of fourthPictureReview.addedSymmetricPairs) expect(exclusions.pairs).toContainEqual(pair);
     for (const pair of exclusions.pairs) {
       const [left, right] = pair.ids;
@@ -131,6 +185,7 @@ describe('Spanish travel levels', () => {
   }));
   it.each(scopes)('keeps ambiguous pictures out of choices for $packIds', ({ packIds }) => {
       const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
+      expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
       const pool = cards.map(card => card.item);
       for (let seed = 1; seed <= 3; seed++) {
         let state = seed;

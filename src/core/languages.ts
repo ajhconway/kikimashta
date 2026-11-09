@@ -1,9 +1,6 @@
 import spanishBasic from '../../content/es-419-basic-1.json';
 import { spanishFoundationCards } from '../content/spanish-basic';
-import spanish from '../../content/es-419.json';
-import spanishTravel2 from '../../content/es-419-travel-2.json';
-import spanishTravel3 from '../../content/es-419-travel-3.json';
-import spanishTravel4 from '../../content/es-419-travel-4.json';
+import { spanishBanks, spanishVocabulary } from '../content/spanish-vocabulary';
 import spanishExclusions from '../../content/spanish-picture-exclusions.json';
 import type { PracticeCard, WordBank } from '../types';
 import { validateBank } from './session';
@@ -23,9 +20,8 @@ export interface LearningLanguage {
   foundationCards?: readonly PracticeCard[];
 }
 
-const spanishBanks = [spanish, spanishTravel2, spanishTravel3, spanishTravel4, spanishBasic] as WordBank[];
 const spanishPool: WordBank = { id: 'es-419-adaptive', language: 'es-419', title: 'Spanish listening',
-  items: spanishBanks.flatMap(bank => bank.items).map(item => ({ ...item,
+  items: spanishVocabulary.map(item => ({ ...item,
     pictureDistractorExclusions: [...new Set([
       ...(item.pictureDistractorExclusions ?? []),
       ...spanishExclusions.pairs.filter(pair => pair.ids.includes(item.id)).flatMap(pair => pair.ids.filter(id => id !== item.id)),
