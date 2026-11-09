@@ -74,7 +74,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2]
+        include:
+          - shard: 1
+            webkit_shard: 2
+          - shard: 2
+            webkit_shard: 1
     container:
       image: mcr.microsoft.com/playwright:v1.64.1-noble
       options: --init --ipc=host
@@ -92,7 +96,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      # Shard each engine separately so both runners share the slower WebKit work.
+      # Pair the slower Chromium half with the faster WebKit half, rather than
+      # putting both expensive halves on one runner.
       - run: npm run test:e2e -- --project=chromium --shard=${{ matrix.shard }}/2
       - uses: actions/upload-artifact@v7.0.2
         if: always()
@@ -102,12 +107,12 @@ jobs:
             playwright-report/
             test-results/
           retention-days: 7
-      - run: npm run test:e2e -- --project=webkit-mobile --shard=${{ matrix.shard }}/2
+      - run: npm run test:e2e -- --project=webkit-mobile --shard=${{ matrix.webkit_shard }}/2
         if: ${{ !cancelled() }}
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
-          name: webkit-test-results-${{ matrix.shard }}
+          name: webkit-test-results-${{ matrix.webkit_shard }}
           path: |
             playwright-report/
             test-results/
