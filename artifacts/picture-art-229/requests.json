@@ -1,0 +1,187 @@
+{
+  "issue": 229,
+  "tool": "built-in image_gen",
+  "tasks": [
+    {
+      "id": "ja-v-27d5744f36a2",
+      "text": "子",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. CHILD: One friendly young child standing, front-facing, with clearly juvenile proportions, large head, short limbs, round cheeks, plain lavender T-shirt, golden shorts and simple shoes. Empty hands relaxed at sides, ordinary everyday pose. Keep the character generic; no role props, family members, school labels or exact age cues. Exactly two arms and two legs, natural five-digit hands where visible.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-d1b6831b65c8",
+      "text": "丸",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. CIRCLE: Exactly one plain flat perfect pink circle centered in the square, with a smooth thick uniform plum circular outline. No perspective, sphere shading, shine, texture, depth, object, ball seam, arrow or extra shape. The circle is a mathematical disk, not a ball. Transparent outside the circular outline.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-0bf44d10d860",
+      "text": "女子",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. GIRL: One ordinary friendly girl child, fully visible, standing facing viewer. Clearly juvenile proportions, round cheeks, dark plum shoulder-length hair, plain lavender T-shirt and comfortable golden trousers, simple shoes. Relaxed empty hands at sides. Use a simple everyday child portrait, no dolls, ribbons, makeup, princess cues, sports props or words. This same character will illustrate equivalent girl vocabulary; do not invent lexical differences.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-3bcce8de9d04",
+      "text": "人々",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. PEOPLE: A friendly varied group of five people standing loosely together: adults of different heights plus one child, varied natural skin tones and simple everyday lavender, gold, pink and teal clothing. Everyone visible from head to shoes, distinct silhouettes with a little overlap, no one marked as the target. Group as a whole is primary, not an exact count. No roles, uniforms, signs, props or numbered grouping. Exactly five complete human figures, each with two arms and two legs.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-0da81020c173",
+      "text": "田んぼ",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. RICE PADDY: A compact slightly elevated view of a flooded rice field. Several long parallel rows of small green rice shoots grow in shallow pale-blue reflective water, contained by low brown earthen banks. A short narrow bank divides two adjacent rectangular plots so rice agriculture is unmistakable. Field dominates; no isolated bowl of rice, buildings, text, people, mountain backdrop, labels or decorative frame. Clean isolated field footprint, transparent outside.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-afefe30bcb46",
+      "text": "火山",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. VOLCANO: A single clearly erupting volcano, broad rocky cone with a visible open summit crater. A restrained pale lavender-gray plume rises from the crater and vivid red-orange lava flows down two channels on its slopes. A small uneven ground footprint supports the mountain; no disaster victims, cities, injury, flying rocks or extra mountain peaks. Crater and lava are unmistakable at thumbnail size. Transparent outside compact volcano and plume.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-f25546e67181",
+      "text": "女の人",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. WOMAN: A single friendly adult woman standing in an ordinary relaxed pose, whole body visible. Clearly adult proportions with a smaller head relative to body and longer limbs than child illustrations. Dark plum chin-length hair, lavender casual shirt, golden trousers, simple flat shoes, empty hands by sides. Gentle smile, no occupational, maternal, fashionable or glamour props. No babies, handbags, makeup emphasis, skirts as the defining cue or childlike body proportions.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-c22ee5be019b",
+      "text": "少年",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. BOY: A single friendly boy child, whole body standing front-facing with juvenile proportions, round cheeks, simple short dark plum hair, plain golden T-shirt, lavender trousers and ordinary sneakers. Empty hands at sides, calm smile. No hats, sports gear, toy weapons, role stereotypes, writing, labels or older teenage/adult proportions. Use this same character for equivalent boy vocabulary rather than encoding wording differences.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-41b543dc8fe4",
+      "text": "宝石",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. JEWEL: One large loose cut gemstone, rich rose-pink, shown slightly in perspective with a broad polygonal table, crisp triangular facets and a pointed lower pavilion. Clear plum outline and a few clean pale-pink facets, refined rather than glossy plastic. No ring, jewelry setting, treasure chest, gold coins, sparkles, paper or other objects. The faceted gem itself is the only subject.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-4b9dfeafcab4",
+      "text": "男",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. MAN: One friendly ordinary adult man standing relaxed, fully visible. Clear adult proportions: smaller head relative to body, longer limbs and adult shoulders, unlike the child reference's proportions. Short dark plum hair, muted teal casual shirt, lavender trousers and simple shoes, hands empty by sides. No profession uniform, tools, hat, beard-as-sole-cue, business props, muscular exaggeration or childlike proportions. Same portrait will be shared by synonymous man vocabulary.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    },
+    {
+      "id": "ja-v-2f21cb2e8d02",
+      "text": "月見",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. MOON VIEWING: Compact Japanese autumn moon-viewing scene. One seated clothed person seen three-quarter from behind on a small lavender mat, head clearly tilted toward a large full pale-gold moon above. Beside the person, a small stand holds a modest pyramid of white dango dumplings and a cluster of susuki grass with feathery tops. The intentional upward gaze, full moon and traditional seasonal cues are central. No writing, lantern labels, calendar, book or generic moon-only icon. Transparent around the complete compact scene; no rectangular sky panel.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-36897e1da4ac",
+      "text": "切手",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. POSTAGE STAMP: A white sealed envelope viewed near front-on. At its UPPER RIGHT corner is a clearly attached large rectangular pink postage stamp with finely perforated/scalloped edges and a simple tiny mountain-and-sun pictorial design. The stamp is the emphasized focal point, with three small plum attention rays just outside it. Envelope has subtle lavender flap lines and two faint generic wavy postal cancellation strokes partly crossing the stamp. No addresses, handwriting, words, numerals, flags or letters. Must read as postage, not a loose sticker.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-74043c16db5e",
+      "text": "かき氷",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. SHAVED ICE: A small clear footed dessert bowl, heaped high with very fine fluffy shaved ice like fresh snow and bright strawberry-pink syrup drizzled across the upper mound. Irregular airy granular texture and uneven snowy edge are essential. Lavender bowl base and one small simple spoon tucked beside the mound. No ice cream scoop balls, wafer, cone, solid cubes, fruit garnish, labels or text. Isolated complete dessert.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "text": "町",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. TOWN: A compact coherent Japanese neighborhood streetscape in gentle three-quarter view: a short street with a close-set row of modest two-story houses and a small local shop, one neat sidewalk and a couple of green trees. Buildings share a human scale and form an inhabited neighborhood. Shop has a simple awning and window without writing or logos. No skyscrapers, rural farms, monumental government buildings, crowds, map label or administrative symbols. Transparent around compact street footprint.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-cb7d8a487c4f",
+      "text": "花見",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. CHERRY BLOSSOM VIEWING: A compact spring scene with one clearly blooming cherry tree, brown trunk and a broad airy canopy of soft pink five-petal cherry blossoms. Under it two friends sit on a small lavender picnic mat, with their heads tilted upward admiring the flowers; one gently gestures toward the blossoms. A simple closed lunchbox may rest on the mat but flowers and intentional viewing dominate. A few falling petals, green grass underfoot. No text, labels, lanterns, flower-only icon or framed landscape. Transparent outside scene.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-92bebda5ac98",
+      "text": "村",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. VILLAGE: A compact cohesive rural settlement: several small modest homes with pitched roofs nestled along one winding earth path, green trees and low cultivated fields around them. Simple traditional rural Japanese building cues without landmarks or written signs. Countryside and connected settlement are central, not an exact house count. No urban commercial row, skyscrapers, town hall, map badge or words. Gentle elevated view, transparent around the small rural landscape footprint.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-9a9a5c6d448c",
+      "text": "コンビニ",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. CONVENIENCE STORE: A compact modern Japanese convenience store seen from front three-quarter angle, single floor, bright unbranded teal-and-gold fascia stripe, large clear glass doors and windows. Through the windows show shelves of small packaged snacks, a drinks fridge and a checkout counter with a simple register. Storefront and useful interior clues must be legible at thumbnail scale. No chain logos, lettering, Japanese words, English labels, gas pumps, large supermarket parking lot or fake signs. Entire little storefront isolated on a small pavement footprint.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-b639fedc63ec",
+      "text": "肉",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. MEAT: Three plainly different uncooked edible meat cuts grouped on one simple small white plate with a lavender rim: a light pink chicken breast fillet, a pink pork chop with white fat edge, and a deeper red boneless beef slice. Use natural food colors, clean friendly illustration and clear cut shapes. This represents meat as a general category rather than beef alone. No live animals, blood puddles, butcher knife, cooked meal, garnishes, text or steak-only composition.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "text": "皮",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. SKIN: A simple clean educational cutaway of a small human skin patch, shown as a short three-dimensional rectangular tissue block. Natural warm peach top surface with two subtle pores and one fine short hair; side shows a thin peach upper layer, a thicker soft pink middle layer and rounded pale-gold fat lobules beneath. A tiny curved hair follicle descends into the middle layer. Smooth schematic anatomy, no blood, wound, injury, labels, arrows, organs, hands, face or realistic medical texture. Skin surface and layers only, isolated on transparency.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "text": "金玉",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. TESTICLES: Neutral nonsexual medical educational anatomical diagram showing exactly two oval testes side by side inside a simplified scrotal cutaway. Small curved epididymis along the outer side of each testis and two slim spermatic cords extending upward; a pale peach outline of the surrounding scrotal sac makes their location clear. Clean simple pink/lavender schematic organs with plum outlines, medically readable and nongraphic. No whole person, child or character, no pose, arousal, sexual activity, erotic context, hair, blood, injury, labels, words or other organs. Transparent outside the compact anatomy diagram.",
+      "reference": "artifacts/picture-art-229/style-object.png"
+    },
+    {
+      "id": "ja-v-97526e11c703",
+      "text": "走る",
+      "version": 1,
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary picture. Input image 1 is STYLE REFERENCE ONLY: match rounded bold plum outlines, polished friendly illustrated forms, restrained soft shading and readable shapes. Replace its subject COMPLETELY with the requested subject. Use natural subject colors with lavender/gold accents where suitable. Square composition, entire subject visible, generous clear margins, crisp at small card sizes. Genuine transparent alpha outside the subject or compact scene footprint. No white backdrop, checkerboard, glow, haze, exterior drop shadow, page, calendar, frame, caption, letters, numerals, Japanese target word, English translation, watermark or logo. TO RUN: One friendly clothed person clearly running in side three-quarter view, whole body visible. Torso leans forward slightly, both arms bent naturally at the elbows and pumping opposite the legs, long active stride with one knee forward and the trailing lower leg lifted, brief airborne running phase. Golden shirt, lavender trousers and teal running shoes; a few short plum motion ticks behind feet. Correct human anatomy, two arms and two legs, plausible joints. No finish line, numbers, stadium, trophy, clock, text or scenic background. Running action alone, transparent backdrop.",
+      "reference": "artifacts/picture-art-229/style-person.png"
+    }
+  ],
+  "additionalRequests": [
+    {
+      "id": "ja-v-09d74d630a45",
+      "version": 2,
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v2.png",
+      "sha256": "6f4d4e36de5f91bc75e8d92a35010d6f9c71264264fd690631c064619fd2ce3e",
+      "prompt": "Use case: style-transfer. Produce a SQUARE 1:1 transparent Japanese vocabulary illustration, not a landscape-format canvas. Input reference is STYLE ONLY. A compact small Japanese town street with exactly one small unbranded shop and three modest houses, one sidewalk, two green trees. Clear rounded plum outlines, simple friendly flat shapes, natural cream walls and gray/lavender roofs, restrained interior shading. All buildings fully visible and grouped at the center with generous transparent margins on ALL four sides. No text or logos. CRITICAL: exterior pixels must be fully transparent immediately outside the building/tree/street silhouettes. NO purple aura, glow, haze, shadow, gradient background, sky backdrop, vignette, bloom, blur, poster, framing panel or background wash. Preserve opaque pale walls and white windows inside the actual subjects. Compact simple coherent neighborhood scene; square canvas with clean transparent background.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/style-object.png",
+          "role": "style reference",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d5c39225-3ec6-4d27-b48a-892bbbde681c.png",
+      "tool": "built-in image_gen"
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "version": 1,
+      "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v1.png",
+      "sha256": "db80a26a18587216e00eb7f98a59a07fe182cffe548ad694f32777167f8cc062",
+      "prompt": "Use case: scientific-educational. A neutral adult medical textbook diagram of the TESTES, for vocabulary education. Show exactly two oval testicles, a small epididymis attached along the outside of each, and each spermatic cord extending straight upward. Isolated INTERNAL ORGANS ONLY, no external genitalia, no penis, no scrotal skin, no body silhouette, no person or character. Flat clean clinical schematic drawing, muted pink organs with lavender edging and simple anatomical linework. This is an internal-organ diagram, not a depiction of nudity. No decorative elements or lettering. Square 1:1 canvas, large clear organ shapes, generous transparent margins. Transparent background. Reference illustration supplies only the clean educational diagram style; replace its subject completely.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v1.png",
+          "role": "provisional same-batch medical diagram style reference",
+          "sha256": "7c9f140970eefeec8238b3bc535cc4cd2887fa86bf51ce4d68a9df4c853ee5dc"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ff1a3d3-6834-4613-957f-a94cf02b9b02.png",
+      "tool": "built-in image_gen"
+    }
+  ]
+}
