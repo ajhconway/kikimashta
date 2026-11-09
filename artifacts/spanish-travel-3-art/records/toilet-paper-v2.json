@@ -1,0 +1,13 @@
+{
+  "id": "es-419-travel-toilet-paper",
+  "slug": "toilet-paper",
+  "version": 2,
+  "path": "originals/toilet-paper-v2.png",
+  "sha256": "5a40602b3406b58161c3f80dffefb9104111fa3c1c8e72aad5dafd07193578e3",
+  "promptSha256": "40129809bf10e5760d4c71426f4eba5780441d5cca008a055e0a4ad647e866f3",
+  "referenceSha256": "5f92562c0d302b0bdb30579f786142b249de5a6be9db2598ebb357d2f8cb3ce9",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f026d877-a3f3-4dc1-9ef0-f8cd6c9d1abc.png",
+  "supersedes": "originals/toilet-paper-v1.png"
+}

@@ -1,4 +1,4 @@
-# Learning languages (#143, #159, #166)
+# Learning languages (#143, #159, #166, #174)
 
 Menus remain in English. The home selector changes the learning language, available packs, approved practice pool, history, forecast and writing presentation. Selection, pack choices and voice choices are device preferences. Account history and notes already use language/item identity and require no schema change.
 
@@ -14,7 +14,7 @@ Thirty new approved illustrations retain PNG transparency, and six pictures reus
 
 The accepted constant-gain profile targets -22 LUFS and a -2 dBTP ceiling without dynamics compression, trimming or timing changes. Four recordings remain slightly quieter within the processing limits, as recorded and accepted in provenance. No new speech is generated during activation or browser practice.
 
-Spanish uses system type including accents. The Card library link opens `vocabulary/?language=es-419&pack=es-419-travel-1-pictures`. The shared library renders both 36-word travel banks (72 words in total) with pagination, search, pictures, Spanish text, English meanings, eight regional playback buttons, mastery, notes and export. Spanish notes use `es-419`; the legacy Japanese `ja` namespace remains intact.
+Spanish uses system type including accents. The Card library link opens `vocabulary/?language=es-419&pack=es-419-travel-1-pictures`. The shared library renders all three 36-word travel banks (108 words in total) with pagination, search, pictures, Spanish text, English meanings, eight regional playback buttons, mastery, notes and export. Spanish notes use `es-419`; the legacy Japanese `ja` namespace remains intact.
 
 The owner approved the artwork and audio and requested activation. Actual iPhone audio permissions, touch/layout, picture practice and persistence tests will be performed on the deployed version; a local HTTPS tunnel remains deferred. Chromium/mobile WebKit journeys check Spanish lessons, eight-voice selection, saved-history isolation and retention of retired starter history using real browser storage.
 
@@ -25,3 +25,14 @@ The owner approved the artwork and audio and requested activation. Actual iPhone
 `content/spanish-travel-2/acceptance.json` binds the owner's approval to the exact picture/audio manifests, including stairs v5. `activation.json` records all production hashes. The level 2 staging script validates the entire accepted matrix before writing: `node scripts/content/stage-spanish-travel-level-2.mjs`. It copies 34 transparent PNGs and 288 normalized MP3s byte-for-byte, reuses the approved plate/glass JPGs, and preserves all level 1 media. Level 2 audio lives under `audio/es-419-travel-2/`. No quieter-volume exceptions are needed.
 
 Cross-pack picture ambiguity is recorded separately in `content/spanish-picture-exclusions.json` and applied symmetrically to the combined runtime pool. This avoids cup/coffee, glass/water/juice/milk, coin/money, shampoo/bottle, receipt/ticket and room/furniture conflicts without rewriting either content bank. Existing car/taxi exclusions remain.
+
+
+## Spanish travel level 3
+
+`content/es-419-travel-3.json` adds another 36 approved words and 288 recordings in the same eight voices. It registers as `es-419-travel-3-pictures`; the full Spanish pool has 108 words. Saved selections remain unchanged, including level 1/2-only and empty selections. New devices initially select all three packs. Browsing any level or all cards stays independent of practice selection.
+
+The owner accepted the complete corrected media set and requested shipment. `content/spanish-travel-3/acceptance.json` binds the exact image/audio manifests, including crosswalk v2, blanket v2, toilet-paper v3 and the approved standalone banana reuse. The staging script validates the complete accepted matrix before writing: `node scripts/content/stage-spanish-travel-level-3.mjs`. It copies 31 transparent PNGs and 288 normalized MP3s unchanged; four existing JPGs and the forest PNG are reused in place. `activation.json` records production hashes. All earlier packs, originals and superseded image variants are preserved.
+
+Two accepted recordings stay slightly quieter within processing limits: Santiago / taco and Carlos Figueroa / isla. No speech is regenerated during activation. The new audio is under `audio/es-419-travel-3/`.
+
+The selected pictures were reviewed alongside levels 1–2 at card size. `content/spanish-travel-3/picture-choice-review.json` records added exclusions and retained distinctions; the shared exclusions apply symmetrically by stable ID. Checks cover all seven nonempty pack combinations, accepted media hashes, separate membership, real-browser lesson playback, saved history and library selection. Actual iPhone checks follow deployment as requested.

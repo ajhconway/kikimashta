@@ -1,0 +1,11 @@
+{
+  "slug": "traffic-light",
+  "id": "es-419-travel-traffic-light",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-02d45159-e4bb-4e26-a73b-90b59772388d.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-02d45159-e4bb-4e26-a73b-90b59772388d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/traffic-light-v1.png",
+  "sha256": "424468b5f51b8fe393730157ae06e3312cfc0d81c2d509f78034d298a2c2a854",
+  "promptSha256": "17ff1bcc768906c86eef462d546f1dbb9c961a594661db8dd76d4407ded6efe0",
+  "tool": "built-in image_gen"
+}

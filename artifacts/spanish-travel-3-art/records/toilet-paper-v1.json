@@ -1,0 +1,11 @@
+{
+  "slug": "toilet-paper",
+  "id": "es-419-travel-toilet-paper",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-97b2856e-188c-4e91-8925-55b5201144c2.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-97b2856e-188c-4e91-8925-55b5201144c2.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/toilet-paper-v1.png",
+  "sha256": "5f92562c0d302b0bdb30579f786142b249de5a6be9db2598ebb357d2f8cb3ce9",
+  "promptSha256": "167e8bf87dc9dab52f138aa9e8ec5d41466266b0fb0d033123f2e0757a73d0de",
+  "tool": "built-in image_gen"
+}

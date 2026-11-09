@@ -1,0 +1,11 @@
+{
+  "slug": "ice-cream",
+  "id": "es-419-travel-ice-cream",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-30c1a66d-c7a5-45ec-8442-cbcaf1201f6f.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-30c1a66d-c7a5-45ec-8442-cbcaf1201f6f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/ice-cream-v1.png",
+  "sha256": "ff36868d092f83a2a9ca747a250298cfb221a1c9a1ea08c937d99c2464e7da2a",
+  "promptSha256": "c3762fedad3f24cdb4ec87a04e65c5b6a2485459a2d0fee707e9ba1038812b1c",
+  "tool": "built-in image_gen"
+}

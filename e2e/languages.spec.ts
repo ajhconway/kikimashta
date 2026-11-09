@@ -21,6 +21,7 @@ test('remembers learning language and independent pack choices across reloads', 
   await expect(page.getByRole('checkbox', { name: /Writing/ })).toHaveCount(0);
   await esPack.uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
@@ -41,6 +42,7 @@ test('remembers learning language and independent pack choices across reloads', 
 
 import spanish from '../content/es-419.json' with { type: 'json' };
 import spanishLevel2 from '../content/es-419-travel-2.json' with { type: 'json' };
+import spanishLevel3 from '../content/es-419-travel-3.json' with { type: 'json' };
 
 test('Spanish picture lessons play, save and stay isolated after reload', async ({ page }) => {
   test.setTimeout(60_000);
@@ -121,6 +123,7 @@ test('level 2 pack selection scopes a saved answer independently of level 1', as
   await expect(page.locator('#results-status')).toContainText('36 cards');
   await expect(page.locator('.card h2')).toHaveText(spanishLevel2.items.slice(0, 24).map(item => item.text));
   await page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
   await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
   await page.getByLabel('Search words').fill('stairs');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('escaleras');
@@ -133,7 +136,7 @@ test('level 2 pack selection scopes a saved answer independently of level 1', as
   await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).not.toBeChecked();
   await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('72 cards');
+  await expect(page.locator('#results-status')).toContainText('108 cards');
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: /^start/i }).click();
@@ -151,6 +154,56 @@ test('level 2 pack selection scopes a saved answer independently of level 1', as
   await expect(choices).toHaveCount(4);
   const shown = await choices.locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
   expect(shown.every(alt => spanishLevel2.items.some(item => item.image.alt === alt))).toBe(true);
+  await choices.filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(1);
+  await page.reload();
+  const saved = await savedAttempts(page, 'es-419');
+  expect(saved).toHaveLength(1);
+  expect(saved[0]!.itemId).toBe(target.id);
+  expect(await savedAttempts(page, 'ja-JP')).toEqual([]);
+});
+
+
+test('level 3 library shows accepted revisions and scopes a saved practice answer', async ({ page }) => {
+  await page.goto('vocabulary/?language=es-419&pack=es-419-travel-3-pictures');
+  await expect(page.locator('#results-status')).toContainText('36 cards');
+  await expect(page.locator('.card h2')).toHaveText(spanishLevel3.items.slice(0, 24).map(item => item.text));
+  for (const level of [1, 2]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
+  for (const slug of ['crosswalk', 'blanket', 'toilet-paper', 'banana']) {
+    const item = spanishLevel3.items.find(word => word.id === `es-419-travel-${slug}`)!;
+    await page.getByLabel('Search words').fill(item.text);
+    await expect(page.locator('.card h2')).toHaveText(item.text);
+    await expect(page.locator('.card-image')).toHaveAttribute('src', '../' + item.image.src);
+    await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect(page.getByRole('group', { name: `Latin American Spanish voices for ${item.label}`, exact: true }).getByRole('button')).toHaveCount(8);
+  }
+  await page.getByRole('button', { name: 'Juan: Banana', exact: true }).click();
+  await expect(page.locator('#audio-status')).toContainText('plátano');
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true })).toBeChecked();
+  for (const level of [1, 2]) await expect(page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true })).not.toBeChecked();
+  await page.getByLabel('Search words').fill('');
+  await page.getByLabel('Card pack').selectOption('all');
+  await expect(page.locator('#results-status')).toContainText('108 cards');
+  await expect(page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true })).toBeChecked();
+  await page.getByRole('link', { name: '← Listening practice' }).click();
+  await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
+  await page.getByRole('button', { name: /^start/i }).click();
+  await page.getByRole('button', { name: 'Begin lesson', exact: true }).click();
+  for (let turn = 0; turn < 10; turn++) {
+    const miniQuiz = page.getByRole('button', { name: /mini-quiz/i });
+    if (await miniQuiz.count()) { await miniQuiz.click(); break; }
+    await page.getByRole('button', { name: /next card/i }).click();
+  }
+  await expect(page.getByRole('button', { name: /choose picture/i }).first()).toBeEnabled();
+  const source = await page.locator('audio').getAttribute('src');
+  const target = spanishLevel3.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  expect(target).toBeDefined();
+  const choices = page.getByRole('button', { name: /choose picture/i });
+  await expect(choices).toHaveCount(4);
+  const shown = await choices.locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
+  expect(shown.every(alt => spanishLevel3.items.some(item => item.image.alt === alt))).toBe(true);
   await choices.filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
   await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(1);
