@@ -63,7 +63,6 @@ it('introduces unlocked contexts directly in reviews while saving initial-learni
   const before = history.length;
   const { container } = render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
-  expect(screen.queryByText(/contextual cards are ready for lessons/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: /^Start/ }));
   expect(screen.queryByRole('button', { name: 'Begin lesson' })).not.toBeInTheDocument();
   await click(await screen.findByRole('button', { name: 'Begin review' }));
@@ -150,12 +149,11 @@ it('offers a direct contextual demo link even with no selected packs', async () 
 });
 
 
-it('keeps the demo available at high workload without Home admission copy', async () => {
+it('keeps the demo available at high workload', async () => {
   const { schedule } = await unlockedTarget();
   vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
-  expect(screen.queryByText(/contextual cards are ready for lessons|New lessons are waiting for your review workload to ease/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
   expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();

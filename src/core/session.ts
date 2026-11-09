@@ -1,5 +1,5 @@
 import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
-import { cardKey, practiceCards } from './cards';
+import { cardKey } from './cards';
 import type { ContextualItem, ContextualQuestion, ContextualRecording } from '../content/contextual-types';
 
 export interface Question {
@@ -39,12 +39,6 @@ export function shuffled<T>(values: readonly T[], random: () => number): T[] {
   return copy;
 }
 
-export function createSession(bank: WordBank, count = 6, choiceCount = 4, random = Math.random): Question[] {
-  validateBank(bank);
-  if (!Number.isInteger(count) || count < 1 || !Number.isInteger(choiceCount) || choiceCount < 2 || choiceCount > bank.items.length) throw new Error('Invalid session size or choice count.');
-  return shuffled(practiceCards(bank.items), random).slice(0, count).map(card => questionFor(card, bank.items, choiceCount, random));
-}
-
 const normalized = (text: string) => text.normalize('NFKC').trim();
 
 function questionFor({ item: target, exercise }: PracticeCard, pool: WordItem[], choiceCount: number, random: () => number): Question {
@@ -77,7 +71,7 @@ export function requeueMissedQuestion(questions: readonly Question[], index: num
   if (questions.slice(index + 1).some(question => question.retryOf === retryOf)) return result;
   const firstPosition = Math.min(index + 2, questions.length);
   const positions = questions.length - firstPosition + 1;
-  // Keep the eight ordered mastery samples together; demo corrections follow the tour.
+  // Finish the current sample set before revisiting demo mistakes.
   const insertion = current.demoId ? questions.length
     : firstPosition + Math.min(positions - 1, Math.max(0, Math.floor(random() * positions)));
   const retry: Question = { ...current, retryOf, choices: shuffled(current.choices, random) };
