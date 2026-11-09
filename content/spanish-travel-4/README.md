@@ -1,8 +1,8 @@
-# Spanish Travel level 4 · word draft (#207)
+# Spanish Travel level 4 (#207)
 
 36 additional concrete travel words. Picture-only practice, English interface and the existing eight voices. [Review words and concepts](review.html) · [Structured draft](draft.json).
 
-The owner approved the reviewed word list and requested generation of the complete pack. [Review pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. The owner subsequently requested finishing all artwork before giving feedback, superseding the initial pauses between artwork batches. Review the complete 35 new illustrations and unchanged approved flower together; media acceptance and activation remain subsequent steps. The owner subsequently requested five artwork refinements and replaced venda with enchufe (power outlet). The current review applies that separate amendment while preserving the original approved draft and generation records. The gallery reports completion only after the revised pictures and eight replacement recordings are available.
+The owner approved the reviewed word list and requested generation of the complete pack. [Review pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. The owner subsequently requested finishing all artwork before giving feedback, superseding the initial pauses between artwork batches. The complete review contains 35 new illustrations and the unchanged approved flower. The owner subsequently requested five artwork refinements and replaced venda with enchufe (power outlet). The current review applies that separate amendment while preserving the original approved draft and generation records. The complete gallery includes the selected revisions and all eight replacement recordings.
 
 ## Places and services
 
@@ -100,10 +100,16 @@ Rebuild the progressive combined review with `node scripts/content/build-spanish
 
 [Owner replacement](word-replacement.json) retires venda from the current review and introduces **enchufe — power outlet**. The selected sense is a wall socket; contacto/tomacorriente are useful related terms. [Diccionario del español de México: enchufe](https://dem.colmex.mx/ver/enchufe) describes the fixed wall and cable pieces of the electrical connection. The picture isolates the wall receptacle. The former first-aid group is now **Practical essentials**.
 
-The current gallery shows red-and-white postal theming, blue police-station theming, butter without its thin sliver, a straighter flashlight, and a longer sleeping-bag zipper. Versioned requests and records preserve every original. Current concepts come from the selected revision requests, with the immutable initial draft retained for provenance. The complete original 288-clip audio matrix is verified before overlaying the eight exact amendment-bound enchufe recordings; the current review still contains 36 words and 288 recordings. Media acceptance and activation remain pending.
+The current gallery shows red-and-white postal theming, blue police-station theming, butter without its thin sliver, a straighter flashlight, and a longer sleeping-bag zipper. Versioned requests and records preserve every original. Current concepts come from the selected revision requests, with the immutable initial draft retained for provenance. The complete original 288-clip audio matrix is verified before overlaying the eight exact amendment-bound enchufe recordings; the current review still contains 36 words and 288 recordings. The owner subsequently approved shipping the complete pack; see final acceptance below.
 
 The owner also requested a green-themed supermarket. Selected supermarket v2 uses green/white architecture and shopping carts, preserving the existing composition; its original and exact edit prompt remain in the revision records.
 
 ## Artwork acceptance
 
-The owner accepted all 36 selected pictures with “Great, I’m happy with the artwork.” [Exact artwork acceptance](artwork-acceptance.json) binds the current manifest, selected versions and all image hashes, including the green supermarket and enchufe replacement. Listening acceptance and activation remain pending.
+The owner accepted all 36 selected pictures with “Great, I’m happy with the artwork.” [Exact artwork acceptance](artwork-acceptance.json) binds the current manifest, selected versions and all image hashes, including the green supermarket and enchufe replacement. The later “Let’s ship it!” instruction accepts the complete media set and authorizes activation.
+
+## Activation
+
+The owner requested shipment with “Let's ship it!”. [Final acceptance](acceptance.json) binds the exact current artwork acceptance, selection, word amendment, original and replacement audio manifests, and generation provenance. `node scripts/content/stage-spanish-travel-level-4.mjs` validates the complete current matrix before writing the approved bank and unchanged delivery bytes. [Activation](activation.json) records all 36 production images and 288 recordings; venda remains historical and is excluded from the active pack. No speech or artwork is regenerated during staging.
+
+The pack is `es-419-travel-4-pictures`. Existing saved selections and progress remain valid; learners can enable the new pack in the card library. New devices initially select all five Spanish packs. The Spanish picture pool now contains 159 cards, alongside Basic Spanish's nine foundation contexts. Cross-pack picture ambiguity is reviewed separately before release. The owner will perform real-iPhone listening and touch tests on the deployed version; mobile WebKit is supplementary.

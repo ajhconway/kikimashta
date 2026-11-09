@@ -330,10 +330,95 @@
         "es-419-basic-sleepiness"
       ],
       "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-library",
+        "es-419-travel-table"
+      ],
+      "reason": "The library scene prominently contains a reading table that could also answer mesa."
+    },
+    {
+      "ids": [
+        "es-419-travel-library",
+        "es-419-travel-chair"
+      ],
+      "reason": "The library scene prominently contains two chairs that could also answer silla."
+    },
+    {
+      "ids": [
+        "es-419-travel-library",
+        "es-419-travel-window"
+      ],
+      "reason": "The library scene has a large central framed window that could also answer ventana."
+    },
+    {
+      "ids": [
+        "es-419-travel-cinema",
+        "es-419-travel-chair"
+      ],
+      "reason": "The cinema scene prominently shows rows of upholstered seats; these compete with the generic chair prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-sugar",
+        "es-419-travel-spoon"
+      ],
+      "reason": "The sugar bowl includes a large visible spoon; it could also answer cuchara."
+    },
+    {
+      "ids": [
+        "es-419-travel-insect-repellent",
+        "es-419-travel-bottle"
+      ],
+      "reason": "The insect-repellent picture is a spray bottle, so it also satisfies the generic botella prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-police-car",
+        "es-419-travel-car"
+      ],
+      "reason": "The police vehicle is visibly a passenger car, and can also answer the generic carro prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-belt",
+        "es-419-travel-seat-belt"
+      ],
+      "reason": "Both accepted pictures depict a buckle and belt; bare cintur\u00f3n can also refer to the seat belt."
+    },
+    {
+      "ids": [
+        "es-419-travel-pill",
+        "es-419-travel-pharmacy"
+      ],
+      "reason": "The pharmacy sign prominently depicts a medicine capsule, creating a second pill answer at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-power-outlet",
+        "es-419-travel-charger"
+      ],
+      "reason": "The charger picture prominently shows its two-pronged electrical plug; enchufe can identify that plug as well as the selected wall-socket sense."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-sidewalk"
+      ],
+      "reason": "The sidewalk scene prominently includes three pink flowers growing in a raised planter; these can also answer flor."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-park"
+      ],
+      "reason": "The park scene includes three clearly visible pink blossoms on its main tree; these can also answer flor."
     }
   ],
   "issues": [
     166,
-    174
+    174,
+    207
   ]
 }
