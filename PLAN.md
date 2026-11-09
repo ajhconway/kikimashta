@@ -248,3 +248,8 @@ Move full authored-context inspection into the library beside word cards, select
 ## Quiet audio replay fixture (#187)
 
 The main-branch publication check for Spanish Travel level 3 (#174/#176) stalled in the existing mobile-WebKit quiet-audio fixture: its initial native playback ended, but replay stayed at media time zero with no error. Align the detached fixture's replay handler with the app's explicit pause/source/current-time reset before native play. Assert replay advances the native clock and ends while remaining muted; preserve navigation and unavailable-media coverage. Keep zero test retries. Run focused native browser coverage, configured checks and current-head review, then complete publication and live-media verification for the already approved pack.
+
+
+## Retired media cleanup (#193)
+
+Remove retired OpenAI/Open JTalk/Cesar delivery audio, the historical voice comparison page, obsolete mascot variants and superseded images from the current tree. Git history is the recovery archive; the owner explicitly prefers deletion over retaining archival binaries. Remove duplicate Spanish review deliveries and make staging verify/reuse their identical active production files. Preserve current lesson, library and contextual media, provider/approval metadata and source artifacts still needed by tooling. Verify additional old image candidates against current consumers before removal. Update stale links and file-presence checks; run lint, type checks, tests, card/audio validation, build and relevant browser journeys. This supersedes earlier instructions to keep retired binaries in the current tree.
