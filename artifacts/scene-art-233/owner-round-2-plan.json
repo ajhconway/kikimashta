@@ -3,7 +3,7 @@
   "round": 2,
   "date": "2026-11-09",
   "ownerStatement": "広げる is good but needs more obvious outward motion\n広い can we make the rooms have windows, proper interiors, etc?\n中央 let's stick with the original concept and its artwork\n車内 the interior is better, but the front seats should align more\n近い please generate several alternative concepts\n夕方 is too confusable with sunset\n下がる/上がる I like alternative A, the elevators.\n入れる/出す slightly bigger arrow\n作る Let's try several alternatives related to alternative B\n立てる Can we do alternative B with a toy figurine instead of a bottle?\n止まる Alternative A but the zebra crossing is the wrong orientation\n走行 Maybe a map showing travel route with suitcases covered in stickers; try several alternatives",
-  "status": "planned",
+  "status": "complete-pending-owner-review",
   "directRevisions": [
     {
       "id": "ja-v-01a3c397cb20",
@@ -151,5 +151,12 @@
     "Keep all prior artwork and exact prompts.",
     "New derivatives require owner review; explicit original/elevator choices bind to exact hashes.",
     "Review only; no runtime activation."
-  ]
+  ],
+  "completion": {
+    "generatedImages": 17,
+    "directedImages": 8,
+    "alternativeImages": 9,
+    "ownerChoices": 3,
+    "preservedGeneratedVersions": 97
+  }
 }

@@ -891,7 +891,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show the same blanket folded then spread by hands; distinguish the actor's action from a broad finished surface.",
       "suitabilityRationale": "Spreading something is a change of state, not a static wide object.",
-      "ownerRevisionNote": "Hands spreading open one folded map with simple roads/river/green terrain, outward gesture, no words or duplicate ghost map.",
+      "ownerRevisionNote": "Keep unfolding map; add obvious outward motion cues to both hands/map edges.",
       "versions": [
         {
           "version": 1,
@@ -936,19 +936,48 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-01a3c397cb20",
+          "text": "広げる",
+          "version": 3,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the exact ONE MAP and TWO HANDS, accordion folds and river/roads/terrain unchanged. Make the outward unfolding action MUCH MORE OBVIOUS: replace the tiny nondescript strokes beside hands with TWO CLEAR SHORT GOLD ARROWS, one immediately outside the left hand pointing LEFT and one immediately outside the right hand pointing RIGHT. Arrowheads point away from map center, balanced size, clean plum outlines. Add one or two tiny outward speed strokes behind each hand if needed. Both hands still grip map edges; no duplicate/ghost map or hand. Keep all arrows within generous square transparent margins.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+              "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-243a5db7-d478-4724-ac69-3d32c739edea.png",
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+          "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Exact map and hand composition retained; clear gold outward arrows on left/right sides plus motion strokes."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
-      "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace blanket and folded blanket comparison completely with ONE partially unfolded paper MAP being SPREAD OPEN by TWO hands, one holding each outer edge and pulling outward. The single map has three or four connected accordion folds with alternating angles, unfolding into a broad surface. Simple map graphics: a winding BLUE RIVER, thin pale roads and a few GREEN terrain patches, with no text, letters, numerals or labels. Use two tiny outward motion strokes beside the hands only if needed. No ghost map, duplicate map, small folded-map inset, before/after panels or big connecting arrow. One real map only. Correct simple hand anatomy, whole map/hands visible on square transparency.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+      "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the exact ONE MAP and TWO HANDS, accordion folds and river/roads/terrain unchanged. Make the outward unfolding action MUCH MORE OBVIOUS: replace the tiny nondescript strokes beside hands with TWO CLEAR SHORT GOLD ARROWS, one immediately outside the left hand pointing LEFT and one immediately outside the right hand pointing RIGHT. Arrowheads point away from map center, balanced size, clean plum outlines. Add one or two tiny outward speed strokes behind each hand if needed. Both hands still grip map edges; no duplicate/ghost map or hand. Keep all arrows within generous square transparent margins.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
-          "sha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998",
-          "role": "edit target"
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+          "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 3,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -958,7 +987,7 @@
           255
         ]
       },
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-7c05cb07-4275-41f6-a010-ca72ec138e52.png"
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-243a5db7-d478-4724-ac69-3d32c739edea.png"
     },
     {
       "id": "ja-v-bb8fc62cf23d",
@@ -970,7 +999,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Contrast equally viewed narrow/wide rooms or openings, keeping depth and other features fixed.",
       "suitabilityRationale": "Wide/spacious requires controlled spatial contrast rather than a general landscape.",
-      "ownerRevisionNote": "A wide open room contrasted with a narrow cramped room, plausible matching furniture at consistent scale; emphasize wide room.",
+      "ownerRevisionNote": "Furnished wide/open versus narrow/cramped rooms with windows, real interior details and matching furniture scale.",
       "versions": [
         {
           "version": 1,
@@ -1015,19 +1044,48 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-bb8fc62cf23d",
+          "text": "広い",
+          "version": 3,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the existing paired narrow-left and wide-right rooms, same-size sofa/table in both and attention rays on WIDE RIGHT ROOM. Add matching realistic INTERIOR DETAILS to BOTH rooms: one simple square window centered on each back wall with pale blue panes and a small lavender curtain; slim baseboards where walls meet floor; restrained warm wooden floorboards in coherent perspective; a small matching framed abstract picture beside each window. These should now read as proper comfortable rooms, not empty boxes. Maintain SAME furniture/window sizes, wall height/depth and decor counts across pair; only room WIDTH/walking space differs. Do not fill the wide room with more furniture, enlarge objects, alter attention target or change layout. No words, extra rays, people or backdrop outside room silhouettes.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+              "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-1f68c1bf-85e3-42fd-aaa4-ca8e275b3191.png",
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v3.png",
+          "sha256": "00d048fddfe08f1cc7fc942f242d44191ffdbd4b5469ee9def15abb82f8f1e9d",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Matching furnished rooms now have windows/curtains, framed pictures, floorboards and baseboards; wide-right room keeps attention cue and open floor."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
-      "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace the empty box-like openings with TWO PLAUSIBLE FURNISHED ROOM CUTAWAYS, same camera angle, wall height, depth, floor treatment and furniture scale. LEFT: a narrow cramped room with one small lavender sofa and one low golden coffee table squeezed together with little walking space. RIGHT: a WIDE OPEN room containing the SAME-SIZED same sofa and same table with generous empty floor/walking space around them. Do not enlarge furniture in the wide room. Warm cream walls, lavender/gold furnishings, coherent perspective. Three small GOLD ATTENTION RAYS around the OUTER right room identify the wide room as target. Two compact scenes fit inside square canvas with clean transparent exterior; no enclosing panels, labels or isolated width arrows.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v3.png",
+      "sha256": "00d048fddfe08f1cc7fc942f242d44191ffdbd4b5469ee9def15abb82f8f1e9d",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the existing paired narrow-left and wide-right rooms, same-size sofa/table in both and attention rays on WIDE RIGHT ROOM. Add matching realistic INTERIOR DETAILS to BOTH rooms: one simple square window centered on each back wall with pale blue panes and a small lavender curtain; slim baseboards where walls meet floor; restrained warm wooden floorboards in coherent perspective; a small matching framed abstract picture beside each window. These should now read as proper comfortable rooms, not empty boxes. Maintain SAME furniture/window sizes, wall height/depth and decor counts across pair; only room WIDTH/walking space differs. Do not fill the wide room with more furniture, enlarge objects, alter attention target or change layout. No words, extra rays, people or backdrop outside room silhouettes.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
-          "sha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98",
-          "role": "edit target"
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+          "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 3,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -1037,7 +1095,7 @@
           255
         ]
       },
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-86782987-090f-46bb-99c0-842a259dc042.png"
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-1f68c1bf-85e3-42fd-aaa4-ca8e275b3191.png"
     },
     {
       "id": "ja-v-f8249679701c",
@@ -1207,11 +1265,11 @@
       "reading": "ちゅうおう",
       "meaning": "Center",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "owner-selected",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a marked middle position in the same row/grid across choices; do not mix center with hidden central importance.",
       "suitabilityRationale": "Center is an observable position only in a fixed reference space.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Owner selected the original center artwork.",
       "versions": [
         {
           "version": 1,
@@ -1226,7 +1284,8 @@
             }
           ],
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-9516a74f-3478-452b-8196-2167b6c163cf.png",
-          "tool": "built-in image_gen"
+          "tool": "built-in image_gen",
+          "status": "owner-selected"
         },
         {
           "id": "ja-v-a39af9252454",
@@ -1373,11 +1432,15 @@
         ]
       },
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-9516a74f-3478-452b-8196-2167b6c163cf.png",
-      "alternativeVersions": [
-        2,
-        3,
-        4
-      ]
+      "ownerChoice": {
+        "version": 1,
+        "path": "artifacts/scene-art-233/ja-v-a39af9252454-v1.png",
+        "sha256": "3986d8786de10fe5de2c434d0a9649381070edec777361b5cd6aaa2c91b61eeb",
+        "ownerStatement": "中央 let's stick with the original concept and its artwork",
+        "round": 2,
+        "date": "2026-11-09",
+        "status": "owner-selected"
+      }
     },
     {
       "id": "ja-v-0c337ec8cbd4",
@@ -1439,7 +1502,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a car cutaway or cabin with its boundary explicit; contrast outside using the same vehicle. 車内 and 社内 are both しゃない; a full sentence must identify the car versus company sense if both are offered.",
       "suitabilityRationale": "The inside of a car is a visible bounded space.",
-      "ownerRevisionNote": "Correct car body/wheel/roof/seat/dashboard proportions while retaining clear cabin cutaway.",
+      "ownerRevisionNote": "Align both front seats on the same transverse row; retain improved car proportions.",
       "versions": [
         {
           "version": 1,
@@ -1484,19 +1547,48 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-dd1d6132fe3c",
+          "text": "車内",
+          "version": 3,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the improved compact hatchback exterior/roof/wheelbase, cutaway, dashboard and rear bench exactly. Correct ONLY the FRONT SEAT PAIR: driver and front-passenger seats must sit SIDE BY SIDE on the SAME TRANSVERSE FRONT ROW, with seat backs aligned at the same fore-aft position, matching height/tilt and headrest height. In this almost side-on cutaway they should OVERLAP IN DEPTH: the far front seat is partly occluded behind the near front seat, visible slightly higher/left only due perspective, not located farther back toward rear bench. Align cushion leading edges and backrest bases along the SAME front-row plane; no longitudinally staggered tandem front seats. Keep rear bench clearly behind the front pair, adequate legroom, two front seats total. Preserve all other car details and cabin target rays.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+              "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ddd0d04b-273c-4055-ae1f-2f1bb0284c52.png",
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v3.png",
+          "sha256": "0dcf9367c4163fe594a2b72320b785cb5eb7b6ad6ea9cd4b6cbfa0f084d2096b",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Front seats brought together with aligned cushion bases and headrest heights on the same front row; hatchback proportions/rear bench unchanged."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
-      "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Redraw this cabin-cutaway CAR with NORMAL REAL-WORLD COMPACT HATCHBACK PROPORTIONS while keeping friendly illustration style and clear car-interior concept. Overall body length approximately2.2 times total body-plus-wheel height. Two properly separated wheels with plausible wheelbase, small front hood at left, gently curved roof, rear hatch at right. Side cutaway reveals correctly scaled TWO front seats and ONE rear bench; steering wheel/dashboard at FRONT left, front seats behind dashboard, rear bench behind front seats. Roof and floor boundaries enclose a roomy but believable cabin, not a stretched limousine or swollen toy bubble. Use three small gold attention rays beside the visible cabin as target cue. Lavender exterior, cream upholstery, gentle gold cabin light. No text or external room; whole car complete in square transparent composition.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v3.png",
+      "sha256": "0dcf9367c4163fe594a2b72320b785cb5eb7b6ad6ea9cd4b6cbfa0f084d2096b",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the improved compact hatchback exterior/roof/wheelbase, cutaway, dashboard and rear bench exactly. Correct ONLY the FRONT SEAT PAIR: driver and front-passenger seats must sit SIDE BY SIDE on the SAME TRANSVERSE FRONT ROW, with seat backs aligned at the same fore-aft position, matching height/tilt and headrest height. In this almost side-on cutaway they should OVERLAP IN DEPTH: the far front seat is partly occluded behind the near front seat, visible slightly higher/left only due perspective, not located farther back toward rear bench. Align cushion leading edges and backrest bases along the SAME front-row plane; no longitudinally staggered tandem front seats. Keep rear bench clearly behind the front pair, adequate legroom, two front seats total. Preserve all other car details and cabin target rays.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
-          "sha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3",
-          "role": "edit target"
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+          "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
-      "selectedVersion": 2,
+      "selectedVersion": 3,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -1506,7 +1598,7 @@
           255
         ]
       },
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-137a829b-9d53-4051-89d6-4e1b066c51e6.png"
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ddd0d04b-273c-4055-ae1f-2f1bb0284c52.png"
     },
     {
       "id": "ja-v-ebdaef0f21db",
@@ -1894,7 +1986,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use matched near/far arrangements with identical objects and the same scale; a lone short arrow is insufficient.",
       "suitabilityRationale": "Proximity is visible only relative to a fixed reference and a contrasting distance.",
-      "ownerRevisionNote": "Controlled near/far relation using a flowerpot beside a bench; same objects and viewpoint, emphasize nearer gap.",
+      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
       "versions": [
         {
           "version": 1,
@@ -1939,6 +2031,134 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-d72e08381953",
+          "text": "近い",
+          "version": 3,
+          "candidateLabel": "A",
+          "conceptLabel": "Two matching homes, one immediately beside a small shop and one far away, emphasize short distance.",
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v3.png",
+          "sha256": "c825364fbaab0d5f3d0b20191b956f0e2ea04adede545a4b979a470793fcd087",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Three buildings on one common baseline viewed straight-on at exactly matching scale: a lavender HOME on left, a small gold SHOP immediately beside it with only a TINY GAP, and an IDENTICAL lavender HOME much FARTHER away to the right. Shop recognizable by a simple striped awning and small glass storefront but no signs, writing or logo. The shop serves as fixed reference for both houses. Three small gold attention rays immediately above the tiny LEFT house/shop gap identify the NEAR relation. Same-sized homes, clear large right gap, no roads, map, extra buildings or perspective size changes. Keep arrangement compact inside a square canvas.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8a46e9b7-116e-4171-90df-2d6e5d1afcc1.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "id": "ja-v-d72e08381953",
+          "text": "近い",
+          "version": 4,
+          "candidateLabel": "B",
+          "conceptLabel": "Kiku next to a large tree versus same Kiku farther away, controlled near/far contrast.",
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+          "sha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Two simple MATCHED rows, without frames or panels. In UPPER row the exact Kiku cat with purple headphones sits VERY CLOSE beside a green tree, separated by a small clear gap. In LOWER row the SAME-SIZED Kiku and IDENTICAL tree sit FARTHER APART with a clearly larger horizontal gap. Same front view, scale and ordering in both rows; the only variable is distance. Three small gold attention rays mark the TINY upper gap. Preserve Kiku identity faithfully. Exactly two Kikus and two trees, no ghost subjects, labels, distance lines or scenery. Input image1 is the exact Kiku character identity; input image2 is palette/outline style only.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/kiku-character.png",
+              "role": "Kiku identity reference",
+              "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+            },
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-44a5c6f9-f254-41fc-808b-6dd135f284dd.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "id": "ja-v-d72e08381953",
+          "text": "近い",
+          "version": 5,
+          "candidateLabel": "C",
+          "conceptLabel": "A ball almost touching a plain open box compared with same ball far away; emphasize tiny near gap.",
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v5.png",
+          "sha256": "a6bcd871bd84b01ab981a6caeeecaf2b38b0190c039361302a1132d4e8037cf2",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Two MATCHED rows, no trays/frames. Each row has ONE solid gold ball and ONE plain open lavender box in the SAME front-three-quarter view and exactly the SAME scale. UPPER row: ball sits immediately BESIDE box with a tiny VISIBLE gap, almost touching the OUTSIDE wall; three small gold attention rays point to that tiny gap. LOWER row: same ball and same box separated by a much LARGER gap. Both balls clearly outside, not above or inside boxes. Only distance changes. No motion arrow, hand, extra object, numbers or background.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-b0ec257f-3938-4a79-adde-5923fff802fc.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
       "path": "artifacts/scene-art-233/ja-v-d72e08381953-v2.png",
@@ -1961,7 +2181,12 @@
         ]
       },
       "selectedVersion": 2,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d03a0483-b895-413b-8282-219ce5c32acf.png"
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d03a0483-b895-413b-8282-219ce5c32acf.png",
+      "alternativeVersions": [
+        3,
+        4,
+        5
+      ]
     },
     {
       "id": "ja-v-ceaf3971ff83",
@@ -2073,7 +2298,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a short daylight-to-evening sequence or a clear descending sun; distinguish the time of day from the sunset event.",
       "suitabilityRationale": "Sunset and sunrise can look identical in a static horizon picture.",
-      "ownerRevisionNote": "One shared cottage-and-hills landscape across sunrise, early evening and the related night proposal; time is conveyed by lighting and sun/moon cues.",
+      "ownerRevisionNote": "Shared landscape family, blue-hour early evening with warm windows, no setting sun or sunset arrow; add subtle everyday returning-home cue if useful.",
       "versions": [
         {
           "version": 1,
@@ -2116,16 +2341,51 @@
               255
             ]
           }
+        },
+        {
+          "id": "ja-v-3534dd7d07d1",
+          "text": "夕方",
+          "version": 3,
+          "prompt": "Use case: lighting-weather. Asset: Japanese listening-card illustration for early evening (夕方). Input image1 is the exact landscape edit target. Preserve the same cottage on the right, its size/shape/window/chimney, hill geometry, shrubs, rounded sky silhouette, plum outlines, compact composition, transparent exterior and square1:1 framing. Change the time-of-day portrayal away from the sunset event: REMOVE the visible sun, all sun rays and downward arrow completely. Show early-evening blue hour with a light-to-medium muted periwinkle/lavender sky, lighter faint peach just at the horizon and hills still clearly visible, distinct from dark night. No moon or stars. Keep cottage window warmly lit. Add ONE small everyday adult walking toward the cottage in the foreground carrying a modest work satchel, an understated returning-home cue, fitting naturally without covering the house/window and without changing any terrain shape. Soft friendly educational illustration, simple at small card size, opaque subject fills, genuinely transparent exterior and margins. No setting sun, sunset spectacle, motion arrows, clocks, calendars, words, labels, numerals, exterior glow, shadow, background rectangle, checkerboard or watermark.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+              "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
+              "role": "exact shared landscape edit target"
+            }
+          ],
+          "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v3.png",
+          "sha256": "e0e3d20c407f54ce68f4a522bf17ff3ca4678ad4259a5aa7a671ba92dbf734df",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b6a5595f-bb4a-4235-b1d7-90205d91882a.png",
+          "tool": "built-in image_gen",
+          "ownerFeedbackRound": 2,
+          "status": "generated-pending-owner-review",
+          "qualityNote": "Same house/hill geometry; no visible sun/arrow; lighter blue-hour scene, lit window and returning-home pedestrian distinguish early evening.",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
-      "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
-      "prompt": "Use case: precise-object-edit. This is a STRICT SAME-SCENE time-of-day edit of the supplied sunrise illustration. Preserve the exact cottage position/shape/size, roof, windows, rolling hills, shrub silhouettes, horizon geometry, rounded sky outline, plum contours, composition and transparent exterior. Do not move, stretch, add or remove any ground feature. Keep SQUARE1:1 canvas and the same generous margins. Only change the time-of-day elements and lighting described below. EARLY EVENING: turn the peach dawn sky into a soft warm pink-to-lavender evening sky inside the existing outline. Keep only ONE low golden sun in exactly its current horizon position, partly behind the same hill. Replace the upward arrow with one similarly small flat DOWNWARD arrow beside the sun; delete upward movement completely. Keep rays modest. Light the cottage window with a warm gold interior glow that remains INSIDE the window frame, not outside the scene. Gently deepen the greens without changing any terrain boundaries. No floating second sun, ghost position, second panel, calendar, words, numerals, exterior glow, haze, wash, shadow, border panel or checkerboard. Same original geometry and true transparent exterior.",
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v3.png",
+      "sha256": "e0e3d20c407f54ce68f4a522bf17ff3ca4678ad4259a5aa7a671ba92dbf734df",
+      "prompt": "Use case: lighting-weather. Asset: Japanese listening-card illustration for early evening (夕方). Input image1 is the exact landscape edit target. Preserve the same cottage on the right, its size/shape/window/chimney, hill geometry, shrubs, rounded sky silhouette, plum outlines, compact composition, transparent exterior and square1:1 framing. Change the time-of-day portrayal away from the sunset event: REMOVE the visible sun, all sun rays and downward arrow completely. Show early-evening blue hour with a light-to-medium muted periwinkle/lavender sky, lighter faint peach just at the horizon and hills still clearly visible, distinct from dark night. No moon or stars. Keep cottage window warmly lit. Add ONE small everyday adult walking toward the cottage in the foreground carrying a modest work satchel, an understated returning-home cue, fitting naturally without covering the house/window and without changing any terrain shape. Soft friendly educational illustration, simple at small card size, opaque subject fills, genuinely transparent exterior and margins. No setting sun, sunset spectacle, motion arrows, clocks, calendars, words, labels, numerals, exterior glow, shadow, background rectangle, checkerboard or watermark.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
-          "role": "exact common landscape edit target",
-          "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153"
+          "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+          "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
+          "role": "exact shared landscape edit target"
         }
       ],
       "image": {
@@ -2135,10 +2395,16 @@
         "alphaRange": [
           0,
           255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
         ]
       },
-      "selectedVersion": 2,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-4cef735b-aa4a-4cd1-b348-e60d4537473e.png"
+      "selectedVersion": 3,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b6a5595f-bb4a-4235-b1d7-90205d91882a.png"
     },
     {
       "id": "ja-v-9ff4f40a3428",
@@ -2235,11 +2501,11 @@
       "reading": "さがる",
       "meaning": "To Get Lower",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "owner-selected",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use the same object or level indicator moving down, with a clear starting point; use context for prices, temperatures or other senses.",
       "suitabilityRationale": "A change to a lower level is visible across a before-and-after sequence.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Owner selected alternative A: the paired elevator scene.",
       "versions": [
         {
           "version": 1,
@@ -2283,7 +2549,7 @@
               255
             ]
           },
-          "status": "candidate-pending-owner-review",
+          "status": "owner-selected",
           "ownerFeedbackRound": 1,
           "role": "alternative",
           "qualityReview": {
@@ -2380,9 +2646,9 @@
           }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v1.png",
-      "sha256": "508d4b5c3fe7a4e6cf9c92f665b4c13bd98cfb6e75763695a0db27cdd952e6fc",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. One golden ball moving DOWN three simple lavender stair levels. Final solid ball at bottom, one subdued translucent ghost ball at upper step and a short curved downward arrow. Same complete stair geometry and ball style as rising counterpart. Friendly diagram of lower level, no falling impact, explosion or injury. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+      "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background and ample clear exterior margins. Match the reference's friendly rounded plum outlines, simple polished forms, restrained interior shading, natural subject colors and gold/lavender accents. Reference subjects are STYLE ONLY unless identified as Kiku. Full compact scene visible, no cropped subjects, no background rectangle, paper panel, collage, labels, words, letters, numerals, watermark, glow, haze, exterior shadow, faded duplicates, ghost starting objects or motion ghosts. Use only solid objects; indicate action with a small clear arrow or short motion strokes as specified. One simple elevator CABIN DESCENDING within a short vertical lavender shaft frame. Single solid gold cabin positioned in the LOWER half, one small opaque blue window and closed door. Shaft rails and upper empty space are visible so vertical movement is clear. A single thick gold DOWNWARD arrow beside shaft points straight DOWN, with two short downward movement strokes on cabin side. No people, duplicate cabin, ghost cabin, floor numbers or buttons with writing. Compact vertical composition.",
       "references": [
         {
           "path": "artifacts/scene-art-233/references/style-object.png",
@@ -2399,13 +2665,17 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-e8394e2e-ca7c-43bc-8883-a81d85bad91f.png",
-      "alternativeVersions": [
-        2,
-        3,
-        4
-      ]
+      "selectedVersion": 2,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d3177a25-7307-4ab5-aae3-890a89f30ed4.png",
+      "ownerChoice": {
+        "version": 2,
+        "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+        "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91",
+        "ownerStatement": "下がる/上がる I like alternative A, the elevators.",
+        "round": 2,
+        "date": "2026-11-09",
+        "status": "owner-selected"
+      }
     },
     {
       "id": "ja-v-86592fe77e48",
@@ -2413,11 +2683,11 @@
       "reading": "あがる",
       "meaning": "To Go Up",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "owner-selected",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use the same object moving to a higher level; distinguish motion from merely being above and teach other senses contextually.",
       "suitabilityRationale": "An upward change can be shown across a short sequence.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Owner selected alternative A: the paired elevator scene.",
       "versions": [
         {
           "version": 1,
@@ -2461,7 +2731,7 @@
               255
             ]
           },
-          "status": "candidate-pending-owner-review",
+          "status": "owner-selected",
           "ownerFeedbackRound": 1,
           "role": "alternative",
           "qualityReview": {
@@ -2558,14 +2828,14 @@
           }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v1.png",
-      "sha256": "1b3a9a449f460e2bc8209304d313f8e3264c129b596ed6f89e3a3cb4044f6481",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. One golden ball moving UP three simple lavender stair levels. Final solid ball on highest step, one subdued translucent ghost ball at bottom step and a short curved upward arrow. Same complete stair geometry and ball style as descending counterpart. No face, spring, rocket or unrelated prop. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v2.png",
+      "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2",
+      "prompt": "Use case: precise-object-edit. Edit this descending elevator illustration into its ASCENDING companion. Preserve EXACTLY the same square canvas, shaft geometry, lavender rails, gold elevator cabin shape and size, blue window, outlines and palette. Move the ONE solid cabin into the UPPER half of the SAME shaft, leaving lower shaft empty and visible. Reverse the gold direction arrow to point straight UP; short movement strokes show UPWARD movement. No duplicate cabin, ghost position, numbers, labels or background. Only one cabin, genuine transparent alpha outside the complete compact diagram.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/references/style-object.png",
-          "role": "style reference only",
-          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+          "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+          "role": "matching downward option layout/edit target",
+          "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91"
         }
       ],
       "image": {
@@ -2577,13 +2847,17 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-49fe8fb2-732d-4f3f-aca4-7dff7cf738a6.png",
-      "alternativeVersions": [
-        2,
-        3,
-        4
-      ]
+      "selectedVersion": 2,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-2c32c33e-3b49-4803-bcc0-1206f7d55e96.png",
+      "ownerChoice": {
+        "version": 2,
+        "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v2.png",
+        "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2",
+        "ownerStatement": "下がる/上がる I like alternative A, the elevators.",
+        "round": 2,
+        "date": "2026-11-09",
+        "status": "owner-selected"
+      }
     },
     {
       "id": "ja-v-b5e9e035a8be",
@@ -2595,7 +2869,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a hand moving a ball across an open box's rim in a clear sequence; contrast with entering oneself through a different action scene.",
       "suitabilityRationale": "The transitive putting-in action is observable when an actor and a container crossing are visible.",
-      "ownerRevisionNote": "One hand clearly inserting one gold ball across the rim of an open lavender box; no ghost ball.",
+      "ownerRevisionNote": "Increase arrow uniformly modestly, about20%, preserving insertion scene.",
       "versions": [
         {
           "version": 1,
@@ -2640,16 +2914,45 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-b5e9e035a8be",
+          "text": "入れる",
+          "version": 3,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD DOWN ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and downward direction. Keep arrow beside the same ball at left with a clean gap from hand/ball/rim, moving slightly left only if necessary. Preserve exact ONE HAND,ONE BALL,ONE BOX, hand contact, ball-in-rim position, box geometry and entire composition unchanged. No extra arrow, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+              "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-dd3fc960-dbf7-4074-ae3e-3db0bcd022b0.png",
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v3.png",
+          "sha256": "6866d78bea40a5f626426ea763703372a8e8342c5b9889f739993f73c799ac59",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Down-arrow enlarged modestly; exact one-hand ball/box insertion retained with no ghost."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
-      "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace prior hands/ghosts with ONE RIGHT HUMAN HAND entering from ABOVE-RIGHT, palm angled toward viewer, fingers gently pushing/holding ONE GOLD BALL downward across the rim INTO ONE OPEN LAVENDER BOX. Exactly ONE HAND, ONE BALL, ONE BOX. The ball is visibly crossing into the opening: its lower half just inside the box and upper half visible above rim, with clear FRONT RIM occluding the appropriate lower ball edge. One short DOWNWARD GOLD ARROW at left of ball shows insertion. No second hand, spare ball, translucent/ghost ball, duplicate positions or extra objects. Keep box three-quarter viewpoint with open top and visible interior, simple plum outlines, lavender surfaces. Correct natural hand anatomy, fingers contact ball. Whole hand/box fit square with generous margins. This image will be the paired reference for removal.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v3.png",
+      "sha256": "6866d78bea40a5f626426ea763703372a8e8342c5b9889f739993f73c799ac59",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD DOWN ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and downward direction. Keep arrow beside the same ball at left with a clean gap from hand/ball/rim, moving slightly left only if necessary. Preserve exact ONE HAND,ONE BALL,ONE BOX, hand contact, ball-in-rim position, box geometry and entire composition unchanged. No extra arrow, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
-          "sha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
-          "role": "edit target"
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
       "image": {
@@ -2661,8 +2964,8 @@
           255
         ]
       },
-      "selectedVersion": 2,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cefb0c41-f2ef-43ee-aeb7-ffc38cc5d6b9.png"
+      "selectedVersion": 3,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-dd3fc960-dbf7-4074-ae3e-3db0bcd022b0.png"
     },
     {
       "id": "ja-v-a4ccf0b7bace",
@@ -2674,7 +2977,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show hands assembling materials into a simple model, with a compact before-and-after sequence; avoid a finished object alone.",
       "suitabilityRationale": "Construction or preparation is visible if the resulting product follows an observable making process.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
       "versions": [
         {
           "version": 1,
@@ -2813,6 +3116,129 @@
               0
             ]
           }
+        },
+        {
+          "id": "ja-v-a4ccf0b7bace",
+          "text": "作る",
+          "version": 5,
+          "candidateLabel": "A",
+          "conceptLabel": "Hands assembling a small wooden toy car from recognizable pieces; compact construction scene.",
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+          "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept related to the birdhouse reference, but replace subject with a small WOODEN TOY CAR being assembled. Two adult hands actively fit a chunky round wooden wheel onto a clearly visible axle protruding from the partly assembled car body. Other wheels already attached so car form is recognizable; one spare wheel and one small wood piece nearby at most. Natural warm pale wood with subtle grain, gold/lavender sleeve cuffs. The fitting joint/contact is clearly visible; three short restrained action strokes near it. Compact low workbench footprint, no whole person, labels, screws scattered everywhere, ghost parts or finished duplicate toy.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+              "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+              "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-69fe17bb-27e7-45b7-966a-9174e48c45de.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "id": "ja-v-a4ccf0b7bace",
+          "text": "作る",
+          "version": 6,
+          "candidateLabel": "B",
+          "conceptLabel": "Hands assembling a little wooden stool with visible joint and a few components.",
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v6.png",
+          "sha256": "168b66ea62b5aa8a9bfe5cbb1a205ed485e5110d9d8efcb3463c5f0374c4bff7",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept related to the birdhouse reference, but replace subject with a small WOODEN STOOL being assembled. Two adult hands fit the final stout wooden leg into a visible socket under a simple square seat; the partly assembled stool is held at a natural tilted angle so three attached legs and the empty final joint are easy to understand. One hand steadies seat, other pushes final leg into joint. Natural warm pale wood with gentle grain, gold/lavender sleeve cuffs. At most one extra wood offcut, compact tabletop footprint. Show active joining, not merely a finished stool; no whole person, ghost parts, labels or text.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+              "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+              "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cd89512e-29e6-4ccb-b36d-f277ed5fd5d9.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "id": "ja-v-a4ccf0b7bace",
+          "text": "作る",
+          "version": 7,
+          "candidateLabel": "C",
+          "conceptLabel": "Hands assembling a birdhouse from wooden panels; more explicit building action.",
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v7.png",
+          "sha256": "b13c5a288d7ee59bc7b828561c2350af2475d64936a294df6f6256ad18846aa4",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept: TWO adult hands actively assemble a small WOODEN BIRDHOUSE from recognizable flat panels. Front panel with round bird opening and one side wall already joined; one hand holds the second side panel upright while the other brings one sloping roof panel into place at the top. The visible panel edges and joining contacts make construction obvious. A few simple unassembled roof/wall panels lie beside it on a compact workbench footprint. Natural warm pale wood, subtle wood grain, lavender/gold cuffs. No whole person, duplicate finished birdhouse, bird, ghost parts, diagram labels or text.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+              "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+              "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cdab2397-a517-48de-b138-81467a0cd96e.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
         }
       ],
       "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v1.png",
@@ -2837,9 +3263,9 @@
       "selectedVersion": 1,
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-f2e53e14-d7c4-48d7-8312-63a0253b6194.png",
       "alternativeVersions": [
-        2,
-        3,
-        4
+        5,
+        6,
+        7
       ]
     },
     {
@@ -2981,7 +3407,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show hands turning the same horizontal object upright; exclude a person simply standing as an equivalent picture.",
       "suitabilityRationale": "Setting an object upright is visible if the actor and orientation change are shown.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Adapt alternativeB bottle upright: a hand setting a toy figurine upright instead, clear upright action.",
       "versions": [
         {
           "version": 1,
@@ -3120,16 +3546,45 @@
               0
             ]
           }
+        },
+        {
+          "id": "ja-v-e9ad09158eb3",
+          "text": "立てる",
+          "version": 5,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Replace ONLY the lavender capped BOTTLE with a small recognizable TOY ROBOT FIGURINE being SET UPRIGHT by the same single human hand. Robot has rounded gold head, friendly simple face, lavender torso, two short arms and two distinct feet. The hand naturally grips its torso from the same left side. Figurine starts slightly tilted as the bottle was; one foot touches the tabletop and the other is about to settle, showing the hand straightening it to stand on its own. Keep the existing curved upward arrow at right to indicate setting upright, same table, hand/sleeve, proportions and viewpoint. One figurine only, no bottle cap, spare pieces, duplicate/ghost pose, separate stand or extra hand. Friendly toy, not a real person. All complete on square transparency.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+              "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-4010385a-8c7d-4219-aa0d-45e85458ef56.png",
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+          "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Bottle replaced by one gold/lavender robot toy figurine; hand grips torso and tilts it upright onto table, original curved arrow preserved."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v1.png",
-      "sha256": "59b219cafa6a5f1b319720043d9beac88e7a78f4dd8ab06b94a0a5ac89f110d9",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two ADULT hands rotate a simple lavender rectangular board from horizontal (faded starting board) to UPRIGHT (solid final board). A small curved upward arrow links positions; hands visibly supply motion, board plain, no text or numbers. Correct simple hand anatomy. No person standing or chair. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+      "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Replace ONLY the lavender capped BOTTLE with a small recognizable TOY ROBOT FIGURINE being SET UPRIGHT by the same single human hand. Robot has rounded gold head, friendly simple face, lavender torso, two short arms and two distinct feet. The hand naturally grips its torso from the same left side. Figurine starts slightly tilted as the bottle was; one foot touches the tabletop and the other is about to settle, showing the hand straightening it to stand on its own. Keep the existing curved upward arrow at right to indicate setting upright, same table, hand/sleeve, proportions and viewpoint. One figurine only, no bottle cap, spare pieces, duplicate/ghost pose, separate stand or extra hand. Friendly toy, not a real person. All complete on square transparency.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/references/style-person.png",
-          "role": "style reference only",
-          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+          "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
       "image": {
@@ -3141,13 +3596,8 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-2b3bc0ac-3447-4352-b9bd-b99b06825235.png",
-      "alternativeVersions": [
-        2,
-        3,
-        4
-      ]
+      "selectedVersion": 5,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-4010385a-8c7d-4219-aa0d-45e85458ef56.png"
     },
     {
       "id": "ja-v-bd365f430f35",
@@ -3159,7 +3609,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show an object moving and then halted, with no external agent supplying the stop; use sentence context to teach 止める versus 止まる.",
       "suitabilityRationale": "Stopping requires a change from movement to stillness and differs from someone actively stopping another object.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Adapt alternativeA pedestrian stopping at crossing; rotate zebra stripes to correct traffic geometry.",
       "versions": [
         {
           "version": 1,
@@ -3298,16 +3748,45 @@
               0
             ]
           }
+        },
+        {
+          "id": "ja-v-bd365f430f35",
+          "text": "止まる",
+          "version": 5,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Correct ONLY the orientation of the WHITE ZEBRA-CROSSING BARS. Keep this stopped person on LEFT CURB facing RIGHT, the RED pedestrian signal, curb, road patch, colors and composition unchanged. Traffic on this road travels roughly TOP-TO-BOTTOM, parallel to the curb edge. Therefore each WHITE BAR must have its LONG AXIS TOP-TO-BOTTOM, PARALLEL TO ROAD TRAFFIC AND THE CURB, rendered as a narrow perspective parallelogram extending from far road edge toward near road edge. Arrange FOUR such parallel white bars side-by-side across the road from LEFT TO RIGHT, the pedestrian's curb-to-curb crossing direction. The four bars collectively form the crossing ACROSS traffic. Remove the old horizontal bars entirely; do not make long white bars running in the pedestrian direction. Person remains STOPPED before road at red light, not walking into traffic. No added road/sign/arrow/ghost person.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+              "sha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-fc339970-21bc-4919-be52-71b7a5fe2cf1.png",
+          "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v5.png",
+          "sha256": "2fcff6c32b802fa34fc56f3dcfe5210f748f5ec8d7a280b9fad5616894cb43a4",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Zebra now has four long top-to-bottom white bars, parallel to road traffic/curb, repeated left-to-right across pedestrian direction; stopped person/red signal unchanged."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v1.png",
-      "sha256": "9725e0c561bba84d8cf4f96c1c4ab27537339d87335e5b70248758144d658107",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A simple lavender car comes to a STOP on a short isolated road strip: muted translucent earlier car at left with tiny motion streaks, solid final car at right entirely still with a small gold stop-position bar beneath wheels. Motion marks cease before final car, no impact/barrier/external person. No road signs or letters. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v5.png",
+      "sha256": "2fcff6c32b802fa34fc56f3dcfe5210f748f5ec8d7a280b9fad5616894cb43a4",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Correct ONLY the orientation of the WHITE ZEBRA-CROSSING BARS. Keep this stopped person on LEFT CURB facing RIGHT, the RED pedestrian signal, curb, road patch, colors and composition unchanged. Traffic on this road travels roughly TOP-TO-BOTTOM, parallel to the curb edge. Therefore each WHITE BAR must have its LONG AXIS TOP-TO-BOTTOM, PARALLEL TO ROAD TRAFFIC AND THE CURB, rendered as a narrow perspective parallelogram extending from far road edge toward near road edge. Arrange FOUR such parallel white bars side-by-side across the road from LEFT TO RIGHT, the pedestrian's curb-to-curb crossing direction. The four bars collectively form the crossing ACROSS traffic. Remove the old horizontal bars entirely; do not make long white bars running in the pedestrian direction. Person remains STOPPED before road at red light, not walking into traffic. No added road/sign/arrow/ghost person.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/references/style-object.png",
-          "role": "style reference only",
-          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+          "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+          "sha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
       "image": {
@@ -3319,13 +3798,8 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-6e2bd3e3-f1d1-4cd4-9355-9a887796bebe.png",
-      "alternativeVersions": [
-        2,
-        3,
-        4
-      ]
+      "selectedVersion": 5,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-fc339970-21bc-4919-be52-71b7a5fe2cf1.png"
     },
     {
       "id": "ja-v-a001b24baf12",
@@ -3337,7 +3811,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show a hand lifting a ball out of an open box with a clear rim and before-and-after positions.",
       "suitabilityRationale": "Taking something out is visible if an actor moves an object across a container boundary.",
-      "ownerRevisionNote": "Paired inverse of insertion: one hand clearly lifting one gold ball out across the same box rim; no ghost ball.",
+      "ownerRevisionNote": "Increase arrow uniformly modestly, about20%, preserving removal scene and matching insertion arrow weight.",
       "versions": [
         {
           "version": 1,
@@ -3382,16 +3856,45 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 1,
           "visualReview": "Individually inspected against exact owner-directed concept; complete subject, intended relation/action, square composition and transparent exterior."
+        },
+        {
+          "id": "ja-v-a001b24baf12",
+          "text": "出す",
+          "version": 3,
+          "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD UP ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and upward direction. Match the insertion counterpart's arrow size/visual weight. Keep arrow to left of same lifted ball with a clean gap from hand/ball/rim, moving slightly left only if needed. Preserve exact ONE HAND,ONE BALL,ONE BOX, lifted ball's clear position above rim, empty box, geometry and whole composition unchanged. No extra arrows, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+              "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+              "role": "edit target for single owner-directed refinement"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ce2c8734-5b7e-40b8-a145-6063074f5a6e.png",
+          "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v3.png",
+          "sha256": "213390eb616610c323dff6b2c72476d71c5e3657f6bca8da91850d77bcf4e280",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "generated-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "visualReview": "Up-arrow enlarged modestly with matching design weight; exact one-hand ball/box removal retained with no ghost."
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
-      "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent canvas. Turn this ONE-HAND INSERTION picture into its paired REMOVAL picture. Keep the exact same lavender box geometry, open interior/front rim, plum contours, gold ball size and lighting, right hand skin tone/sleeve and three-quarter camera. Move the SAME SINGLE RIGHT HAND upward so it naturally GRASPS and LIFTS the SINGLE GOLD BALL fully above and outside the box opening, leaving a clear small transparent gap between ball and box rim. Change the short gold DOWNWARD ARROW at left into a short gold UPWARD ARROW at left of the lifted ball. EXACTLY ONE HAND, ONE BALL, ONE BOX. No extra hand, ghost/faded ball, duplicate position, new objects or second scene. The box stays in its same place and proportions; the empty interior remains visible. Keep full hand/ball/box inside square with generous transparent margins. Friendly rounded plum outlines and restrained interior shading; real transparent alpha outside silhouettes, no glow, haze, labels, words, numeral or background wash.",
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v3.png",
+      "sha256": "213390eb616610c323dff6b2c72476d71c5e3657f6bca8da91850d77bcf4e280",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD UP ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and upward direction. Match the insertion counterpart's arrow size/visual weight. Keep arrow to left of same lifted ball with a clean gap from hand/ball/rim, moving slightly left only if needed. Preserve exact ONE HAND,ONE BALL,ONE BOX, lifted ball's clear position above rim, empty box, geometry and whole composition unchanged. No extra arrows, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
-          "role": "edit target: selected paired insertion image; preserve exact box/ball/viewpoint",
-          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628"
+          "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+          "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+          "role": "edit target for single owner-directed refinement"
         }
       ],
       "image": {
@@ -3403,8 +3906,8 @@
           255
         ]
       },
-      "selectedVersion": 2,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a2091180-e9bc-44db-9237-c16539e9c577.png"
+      "selectedVersion": 3,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ce2c8734-5b7e-40b8-a145-6063074f5a6e.png"
     },
     {
       "id": "ja-v-fa26a112a479",
@@ -3416,7 +3919,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show the same vehicle progressing along a road in a short sequence; clarify the gloss as vehicle travel or running rather than travel in general.",
       "suitabilityRationale": "Vehicle movement can be observed, whereas a travel scene may incorrectly suggest tourism.",
-      "ownerRevisionNote": "Three new concepts are offered below for owner choice; the earlier selected image is retained for comparison.",
+      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
       "versions": [
         {
           "version": 1,
@@ -3555,6 +4058,132 @@
               0
             ]
           }
+        },
+        {
+          "id": "ja-v-fa26a112a479",
+          "text": "走行",
+          "version": 5,
+          "candidateLabel": "A",
+          "conceptLabel": "A folded travel map with a clear route and one sticker-covered suitcase beside it.",
+          "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v5.png",
+          "sha256": "3c38adedaf183d6cfa5007239d3bb2587efbae1c1f739b75fa01cdfb2aae2e4c",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept A: ONE folded paper TRAVEL MAP stands partly open in a clear three-quarter zigzag fold. Pale-green land, one simple blue river and THREE broad pale road lines, with a dominant thick GOLD route connecting TWO plum map pins. Route continuous, easy to see at small card size. Beside map stands ONE medium lavender rolling SUITCASE with extended handle, covered in FOUR large colorful travel stickers: simple sun, mountain, palm tree and star pictograms. Stickers are pictures ONLY, absolutely NO letters, numbers, flags with text, dates, stamp glyphs, pseudo-writing or luggage tags. Map and suitcase both dominant, clean compact square composition. The map sheet is a physical object, not a background panel. No calendar, passport, airplane, whole person or busy extra icons.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d02364ac-498e-459d-86fb-be2f871c031b.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+          }
+        },
+        {
+          "id": "ja-v-fa26a112a479",
+          "text": "走行",
+          "version": 6,
+          "candidateLabel": "B",
+          "conceptLabel": "Two sticker-covered suitcases framing a compact map with connected travel route.",
+          "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v6.png",
+          "sha256": "d0a969cec6cc35aad493cad6e137965fe8cd04b234705e9e0cd2df426f8f66b7",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept B: A compact OPEN TRAVEL MAP viewed slightly from above is centered BETWEEN TWO differently sized standing SUITCASES framing its left/right lower corners. Map pale green with a simple river, two broad roads and one clearly connected GOLD route curving between TWO plum location pins. Suitcases gold and lavender, handles visible, each covered in THREE large picture-only stickers showing simple sun, mountain, palm-tree or star shapes. Absolutely NO writing, letters, numerals, dates, fake text, postal stamps or calendar grids anywhere. Map route must remain large and unobscured. Whole luggage/map objects visible on a genuine transparent square canvas; no backdrop rectangle, plane, passport or additional objects.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-6bb0707c-f8f8-442a-9cac-b669223cc898.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+          }
+        },
+        {
+          "id": "ja-v-fa26a112a479",
+          "text": "走行",
+          "version": 7,
+          "candidateLabel": "C",
+          "conceptLabel": "One open travel map with route, luggage and a small vehicle following the route.",
+          "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+          "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+          "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept C: ONE open paper ROAD TRAVEL MAP lies at an attractive shallow angle, pale-green land with a simple blue river and broad roads. A dominant GOLD route connects TWO plum location pins; a single tiny LAVENDER CAR is visibly driving along that highlighted route with two short movement strokes. ONE gold wheeled SUITCASE with lavender handle stands beside map's lower-right corner, carrying FOUR large picture-only stickers of sun, mountain, palm tree and star. Map route, car and luggage all readable at card size. Absolutely NO words, letters, numbers, dates, calendar grid, fake writing, luggage labels or text-bearing sticker. No ghost car, airplane, passport, extra luggage or background.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/references/style-object.png",
+              "role": "style reference only",
+              "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-43826181-d40c-461e-8588-924dddee2d94.png",
+          "tool": "built-in image_gen",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ]
+          },
+          "status": "candidate-pending-owner-review",
+          "ownerFeedbackRound": 2,
+          "role": "alternative",
+          "qualityReview": {
+            "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+            "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+          }
         }
       ],
       "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v1.png",
@@ -3579,21 +4208,21 @@
       "selectedVersion": 1,
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8923ba3d-6867-4923-b7bb-89737bbd1fcf.png",
       "alternativeVersions": [
-        2,
-        3,
-        4
+        5,
+        6,
+        7
       ]
     }
   ],
-  "generatedVersionCount": 80,
+  "generatedVersionCount": 97,
   "readyAssetCount": 43,
   "checks": {
     "scope": "43 exact staged-picture IDs from frozen review;24 active updated IDs excluded.",
     "runtime": "No active artwork, vocabulary eligibility, answer formats, audio or progress modified.",
     "selectedImageSha256": "All43 selected PNG hashes verified against files;42 unique selected images.",
-    "originals": "All80 generated versions and every earlier selected image remain preserved; all current/version/reference/original hashes verified.",
+    "originals": "All97 generated PNG versions and every earlier selected source remain preserved; all current/version/reference/original-source hashes verified.",
     "transparency": "All displayed sources are square RGBA with transparent exterior; recorded trace alpha1 corners are visually imperceptible in native rendering.",
-    "reuses": "Puppy v2 and Few v2 exact approved PR110 PNG bytes; prior approvals retained as source evidence only.",
+    "reuses": "Puppy v2 and Few v2 exact approved PR110 bytes, plus exact Spanish Basic Kiku-inside v2 source for中; source approvals remain separate from this batch.",
     "sharedImages": "休む selects exactly the new休み image path/hash.",
     "generationQualityReview": "All40 newly illustrated subjects visually inspected. Round/inside v2 correct earlier landscape+glow drafts; calf v3 mutes adult comparison, adds clean attention rays and clear margins. All4 earlier candidates preserved. Five and ten machine counts verified as5/10; image-bound semantic restrictions unchanged.",
     "exteriorCornerAlphaExceptions": [
@@ -3608,13 +4237,23 @@
         ]
       },
       {
-        "text": "止まる option B",
-        "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v3.png",
+        "text": "作る option A",
+        "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
         "cornerAlpha": [
           0,
           0,
           1,
           0
+        ]
+      },
+      {
+        "text": "作る option C",
+        "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v7.png",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          1
         ]
       }
     ],
@@ -3624,20 +4263,21 @@
         "mobile WebKit"
       ],
       "cards": 43,
-      "alternativeSets": 7,
-      "alternativeImages": 21,
+      "alternativeSets": 3,
+      "alternativeImages": 9,
       "timeFamilyImages": 4,
-      "imagesDecodedPerEngine": 68,
-      "distinctLocalResourcesPerEngine": 93,
+      "imagesDecodedPerEngine": 56,
+      "distinctLocalResourcesPerEngine": 115,
       "sourceFilterCounts": {
         "generated": 39,
         "existing-approved": 3,
         "shared-new": 1
       },
-      "search": "passed for all7 option sets and the reused Kiku inside card",
+      "ownerSelectedVersions": 3,
+      "search": "Passed for all3 active option sets and the reused Kiku inside card.",
       "horizontalOverflow": false,
       "duplicateElementIds": 0,
-      "visualInspection": "All36 new images reviewed at card size; mobile alternatives and shared sunrise/evening/night comparison are readable."
+      "visualInspection": "All17 round2 outputs reviewed individually and in native contact sheets; mobile A/B/C alternatives and the sunrise/early-evening/night strip are clear."
     },
     "builderFixtures": "Absent/partial/complete manifests render;16 scope, identity, hash, path, source-revision and frozen-review tampering cases reject before output replacement.",
     "postPictureReleaseScopeAudit": {
@@ -3686,7 +4326,82 @@
       "machineCount": "Exactly10 in3/4/3 rows.",
       "roundnessCount": "Exactly2 circular and2 noncircular objects.",
       "artworkTests": "27 passed.",
-      "builderFixtures": "23 added rejection cases covering alternatives, source override and related-family paths/hashes; failures preserve output."
+      "builderFixtures": "23 added rejection cases covering alternatives, source override and related-family paths/hashes; failures preserve output.",
+      "nativeBrowserReview": {
+        "engines": [
+          "Chromium",
+          "mobile WebKit"
+        ],
+        "cards": 43,
+        "alternativeSets": 7,
+        "alternativeImages": 21,
+        "timeFamilyImages": 4,
+        "imagesDecodedPerEngine": 68,
+        "distinctLocalResourcesPerEngine": 93,
+        "sourceFilterCounts": {
+          "generated": 39,
+          "existing-approved": 3,
+          "shared-new": 1
+        },
+        "search": "passed for all7 option sets and the reused Kiku inside card",
+        "horizontalOverflow": false,
+        "duplicateElementIds": 0,
+        "visualInspection": "All36 new images reviewed at card size; mobile alternatives and shared sunrise/evening/night comparison are readable."
+      },
+      "exteriorCornerAlphaExceptions": [
+        {
+          "text": "立つ",
+          "path": "artifacts/scene-art-233/ja-v-17e3177c62d5-v1.png",
+          "cornerAlpha": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "text": "止まる option B",
+          "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v3.png",
+          "cornerAlpha": [
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "ownerRound2": {
+      "generatedImages": 17,
+      "directedRevisions": 8,
+      "alternativeSets": 3,
+      "alternativeImages": 9,
+      "alternativeCards": [
+        "近い",
+        "作る",
+        "走行"
+      ],
+      "ownerSelectedImages": [
+        {
+          "text": "中央",
+          "version": 1,
+          "sha256": "3986d8786de10fe5de2c434d0a9649381070edec777361b5cd6aaa2c91b61eeb"
+        },
+        {
+          "text": "下がる",
+          "version": 2,
+          "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91"
+        },
+        {
+          "text": "上がる",
+          "version": 2,
+          "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2"
+        }
+      ],
+      "unmentionedAssetRecordsUnchanged": 29,
+      "checks": "All97 generator originals and every selected/version/reference hash verified; 27 artwork tests and7 persisted builder tests passed (32 invalid binding subcases and changed-file rejection).",
+      "timeOfDay": "Early evening retains shared landscape with blue-hour light, lit windows and a returning-home adult, removing the sunset sun/arrow. Night proposal/reference unchanged.",
+      "runtime": "No activation or app changes; forty selections plus relatedNight await review."
     }
   },
   "ownerFeedback": [
@@ -3701,6 +4416,16 @@
       ],
       "generatedImageCount": 36,
       "alternativeImageCount": 21
+    },
+    {
+      "round": 2,
+      "date": "2026-11-09",
+      "ownerStatement": "広げる is good but needs more obvious outward motion\n広い can we make the rooms have windows, proper interiors, etc?\n中央 let's stick with the original concept and its artwork\n車内 the interior is better, but the front seats should align more\n近い please generate several alternative concepts\n夕方 is too confusable with sunset\n下がる/上がる I like alternative A, the elevators.\n入れる/出す slightly bigger arrow\n作る Let's try several alternatives related to alternative B\n立てる Can we do alternative B with a toy figurine instead of a bottle?\n止まる Alternative A but the zebra crossing is the wrong orientation\n走行 Maybe a map showing travel route with suitcases covered in stickers; try several alternatives",
+      "status": "revised-pending-owner-review",
+      "generatedImageCount": 17,
+      "explicitOwnerChoiceCount": 3,
+      "alternativeImageCount": 9,
+      "activationAuthorized": false
     }
   ],
   "relatedFamilyCandidates": [
@@ -3742,5 +4467,5 @@
   ],
   "originalExpectedNewImageCount": 40,
   "originalExistingApprovedReuseCount": 2,
-  "alternativeImageCount": 21
+  "alternativeImageCount": 9
 }

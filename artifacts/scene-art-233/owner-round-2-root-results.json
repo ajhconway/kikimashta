@@ -1,0 +1,39 @@
+{
+  "assets": [
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "text": "夕方",
+      "version": 3,
+      "prompt": "Use case: lighting-weather. Asset: Japanese listening-card illustration for early evening (夕方). Input image1 is the exact landscape edit target. Preserve the same cottage on the right, its size/shape/window/chimney, hill geometry, shrubs, rounded sky silhouette, plum outlines, compact composition, transparent exterior and square1:1 framing. Change the time-of-day portrayal away from the sunset event: REMOVE the visible sun, all sun rays and downward arrow completely. Show early-evening blue hour with a light-to-medium muted periwinkle/lavender sky, lighter faint peach just at the horizon and hills still clearly visible, distinct from dark night. No moon or stars. Keep cottage window warmly lit. Add ONE small everyday adult walking toward the cottage in the foreground carrying a modest work satchel, an understated returning-home cue, fitting naturally without covering the house/window and without changing any terrain shape. Soft friendly educational illustration, simple at small card size, opaque subject fills, genuinely transparent exterior and margins. No setting sun, sunset spectacle, motion arrows, clocks, calendars, words, labels, numerals, exterior glow, shadow, background rectangle, checkerboard or watermark.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+          "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
+          "role": "exact shared landscape edit target"
+        }
+      ],
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v3.png",
+      "sha256": "e0e3d20c407f54ce68f4a522bf17ff3ca4678ad4259a5aa7a671ba92dbf734df",
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b6a5595f-bb4a-4235-b1d7-90205d91882a.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 2,
+      "status": "generated-pending-owner-review",
+      "qualityNote": "Same house/hill geometry; no visible sun/arrow; lighter blue-hour scene, lit window and returning-home pedestrian distinguish early evening.",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}
