@@ -1,6 +1,6 @@
 import draft from '../../content/spanish-basic-1/draft.json';
 import basic from '../../content/es-419-basic-1.json';
-import travel from '../../content/es-419.json';
+import { spanishVocabulary } from './spanish-vocabulary';
 import type { ContextualBank } from './contextual-types';
 import type { PracticeCard, WordItem } from '../types';
 
@@ -9,7 +9,7 @@ export const spanishFoundationVocabulary: WordItem[] = basic.foundationVocabular
   ...word, language: 'es-419', theme: 'basic', label: word.meaning,
   image: { src: '', alt: '', source: 'generated' }, audio: word.audio.map(clip => ({ ...clip, source: 'synthesized' })),
 }));
-export const spanishContextualVocabulary: WordItem[] = [...travel.items, ...basic.items, ...spanishFoundationVocabulary] as WordItem[];
+export const spanishContextualVocabulary: WordItem[] = [...spanishVocabulary, ...spanishFoundationVocabulary];
 const prompt = (value: { text: string; meaning: string }) => ({ ...value, reading: value.text, grammarTags: [], supportingVocabularyIds: [] });
 export const spanishBasicContexts: ContextualBank = {
   schemaVersion: 1, id: 'es-419-basic-1-contexts', language: 'es-419', grammarProfile: 'basic-spanish-1',

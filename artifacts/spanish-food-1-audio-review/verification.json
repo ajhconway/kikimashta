@@ -1,0 +1,2039 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "status": "generated-awaiting-owner-listening",
+  "newWords": 12,
+  "newClips": 96,
+  "reusedWordsUnchanged": 24,
+  "reusedClipsUnchanged": 192,
+  "voices": 8,
+  "characters": 608,
+  "tests": {
+    "focusedNode": 7,
+    "eslint": "passed"
+  },
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "clips": [
+        {
+          "id": "es-419-food-potato",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-potato.mp3",
+          "duration": 0.64,
+          "currentTime": 0.041021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-potato.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020927,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-potato.mp3",
+          "duration": 0.8,
+          "currentTime": 0.041679,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-potato.mp3",
+          "duration": 0.8,
+          "currentTime": 0.019731,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-potato.mp3",
+          "duration": 0.64,
+          "currentTime": 0.040476,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-potato.mp3",
+          "duration": 0.56,
+          "currentTime": 0.041895,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-potato.mp3",
+          "duration": 0.8,
+          "currentTime": 0.04171,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-potato.mp3",
+          "duration": 0.72,
+          "currentTime": 0.041369,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tomato.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020808,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tomato.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019849,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tomato.mp3",
+          "duration": 1.04,
+          "currentTime": 0.04099,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tomato.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019267,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tomato.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019815,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tomato.mp3",
+          "duration": 1.12,
+          "currentTime": 0.020251,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tomato.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040739,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tomato.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020602,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-onion.mp3",
+          "duration": 1.04,
+          "currentTime": 0.040859,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-onion.mp3",
+          "duration": 1.04,
+          "currentTime": 0.039995,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-onion.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041198,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-onion.mp3",
+          "duration": 0.88,
+          "currentTime": 0.01983,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-onion.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041141,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-onion.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019409,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-onion.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040238,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-onion.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041307,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-carrot.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019614,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-carrot.mp3",
+          "duration": 1.04,
+          "currentTime": 0.04093,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-carrot.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019669,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-carrot.mp3",
+          "duration": 1.04,
+          "currentTime": 0.040987,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-carrot.mp3",
+          "duration": 1.12,
+          "currentTime": 0.040856,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-carrot.mp3",
+          "duration": 1.04,
+          "currentTime": 0.041737,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-carrot.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041325,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-carrot.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019555,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-lettuce.mp3",
+          "duration": 1.04,
+          "currentTime": 0.040803,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-lettuce.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041888,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-lettuce.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020603,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-lettuce.mp3",
+          "duration": 1.12,
+          "currentTime": 0.019752,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-lettuce.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019986,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-lettuce.mp3",
+          "duration": 0.88,
+          "currentTime": 0.01999,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-lettuce.mp3",
+          "duration": 0.88,
+          "currentTime": 0.040988,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-lettuce.mp3",
+          "duration": 0.96,
+          "currentTime": 0.021032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tortilla.mp3",
+          "duration": 1.04,
+          "currentTime": 0.041032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tortilla.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040769,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tortilla.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041736,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tortilla.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040021,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tortilla.mp3",
+          "duration": 0.88,
+          "currentTime": 0.040546,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tortilla.mp3",
+          "duration": 0.88,
+          "currentTime": 0.040526,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tortilla.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041062,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tortilla.mp3",
+          "duration": 0.96,
+          "currentTime": 0.042401,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-beans.mp3",
+          "duration": 1.04,
+          "currentTime": 0.04039,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-beans.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019618,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-beans.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041235,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-beans.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019705,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-beans.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040033,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-beans.mp3",
+          "duration": 1.04,
+          "currentTime": 0.041731,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-beans.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019955,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-beans.mp3",
+          "duration": 1.04,
+          "currentTime": 0.020433,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-pasta.mp3",
+          "duration": 0.96,
+          "currentTime": 0.042079,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-pasta.mp3",
+          "duration": 0.8,
+          "currentTime": 0.041013,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-pasta.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041392,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-pasta.mp3",
+          "duration": 0.72,
+          "currentTime": 0.041521,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-pasta.mp3",
+          "duration": 0.72,
+          "currentTime": 0.019682,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-pasta.mp3",
+          "duration": 0.8,
+          "currentTime": 0.020481,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-pasta.mp3",
+          "duration": 0.72,
+          "currentTime": 0.040897,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-pasta.mp3",
+          "duration": 0.8,
+          "currentTime": 0.040947,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-yogurt.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041805,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-yogurt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041288,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-yogurt.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019047,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-yogurt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019719,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-yogurt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019884,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-yogurt.mp3",
+          "duration": 0.8,
+          "currentTime": 0.040795,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-yogurt.mp3",
+          "duration": 0.96,
+          "currentTime": 0.041362,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-yogurt.mp3",
+          "duration": 1.04,
+          "currentTime": 0.019338,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-sandwich.mp3",
+          "duration": 1.04,
+          "currentTime": 0.04001,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.020701,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.040125,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019146,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019911,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019796,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-sandwich.mp3",
+          "duration": 1.12,
+          "currentTime": 0.039544,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-sandwich.mp3",
+          "duration": 0.96,
+          "currentTime": 0.019468,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019998,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041559,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-pizza.mp3",
+          "duration": 0.8,
+          "currentTime": 0.04052,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.040605,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.019922,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-pizza.mp3",
+          "duration": 0.72,
+          "currentTime": 0.041994,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.020069,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-pizza.mp3",
+          "duration": 0.88,
+          "currentTime": 0.041155,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tea.mp3",
+          "duration": 0.64,
+          "currentTime": 0.04002,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tea.mp3",
+          "duration": 0.48,
+          "currentTime": 0.021036,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tea.mp3",
+          "duration": 0.64,
+          "currentTime": 0.042996,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tea.mp3",
+          "duration": 0.72,
+          "currentTime": 0.041011,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tea.mp3",
+          "duration": 0.64,
+          "currentTime": 0.019895,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tea.mp3",
+          "duration": 0.48,
+          "currentTime": 0.041593,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tea.mp3",
+          "duration": 0.48,
+          "currentTime": 0.020046,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tea.mp3",
+          "duration": 0.56,
+          "currentTime": 0.020032,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        }
+      ],
+      "passed": 96,
+      "advanced": 96,
+      "failures": [],
+      "minDuration": 0.48,
+      "maxDuration": 1.12
+    },
+    {
+      "engine": "mobile-webkit",
+      "clips": [
+        {
+          "id": "es-419-food-potato",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-potato.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03877991670742631,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-potato.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03713362501002848,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-potato.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.04093233332969248,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-potato.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.04269583337008953,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-potato.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03717512497678399,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-potato.mp3",
+          "duration": 0.6008163265306122,
+          "currentTime": 0.03658645832911134,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-potato.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035453666700050235,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-potato",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-potato.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.039065875113010406,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tomato.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.038254833314567804,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tomato.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03668141667731106,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tomato.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.04061016673222184,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tomato.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.039844249840825796,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tomato.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03621716657653451,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tomato.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.03854850004427135,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tomato.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.04473362513817847,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tomato",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tomato.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03897345834411681,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-onion.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.036882833344861865,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-onion.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.038838208420202136,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-onion.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.036768083460628986,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-onion.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03707237518392503,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-onion.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03445595828816295,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-onion.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03346570837311447,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-onion.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03983170841820538,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-onion",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-onion.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03451208327896893,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-carrot.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.038310916628688574,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-carrot.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03760466678068042,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-carrot.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03413033322431147,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-carrot.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03752345824614167,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-carrot.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.0377022500615567,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-carrot.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.04244191665202379,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-carrot.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.041433458449319005,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-carrot",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-carrot.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.0458854166790843,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-lettuce.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03758324985392392,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-lettuce.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03738516662269831,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-lettuce.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.0430972499307245,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-lettuce.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.046006874879822135,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-lettuce.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.036703833378851414,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-lettuce.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.046047624899074435,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-lettuce.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03530008322559297,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-lettuce",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-lettuce.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0348897916264832,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tortilla.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03127916669473052,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tortilla.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.037284958409145474,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tortilla.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03459070832468569,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tortilla.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.037470499984920025,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tortilla.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03866679151542485,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tortilla.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.038777124835178256,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tortilla.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03416158352047205,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tortilla",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tortilla.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03742583352141082,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-beans.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.04232054157182574,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-beans.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03617345844395459,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-beans.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03932083328254521,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-beans.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.05067808320745826,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-beans.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.034184500109404325,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-beans.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03807470831088722,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-beans.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03810200002044439,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-beans",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-beans.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03636308340355754,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-pasta.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.0373608332592994,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-pasta.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.037551583256572485,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-pasta.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.039239291567355394,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-pasta.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.045413916697725654,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-pasta.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.031654666643589735,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-pasta.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03541737492196262,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-pasta.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.035629458259791136,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pasta",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-pasta.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.035429833456873894,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-yogurt.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03907050006091595,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-yogurt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.036878000013530254,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-yogurt.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.038592958357185125,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-yogurt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03771591675467789,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-yogurt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.04221324995160103,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-yogurt.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.04130016686394811,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-yogurt.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.010205375030636787,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-yogurt",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-yogurt.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03739570849575102,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-sandwich.mp3",
+          "duration": 1.0710204081632653,
+          "currentTime": 0.03832741663791239,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.044523249845951796,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03793312516063452,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.037209666799753904,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03847362496890128,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.03568783332593739,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-sandwich.mp3",
+          "duration": 1.1493877551020408,
+          "currentTime": 0.04202104173600674,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-sandwich",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-sandwich.mp3",
+          "duration": 0.9926530612244898,
+          "currentTime": 0.034689499996602535,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.04176133335568011,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03327500005252659,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-pizza.mp3",
+          "duration": 0.8359183673469388,
+          "currentTime": 0.03838229179382324,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03440245823003352,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.033962666522711515,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-pizza.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.0329065416008234,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03758120839484036,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-pizza",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-pizza.mp3",
+          "duration": 0.9142857142857143,
+          "currentTime": 0.03482254152186215,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "juan",
+          "file": "audio/juan/es-419-food-tea.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.035868458449840546,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "pamela",
+          "file": "audio/pamela/es-419-food-tea.mp3",
+          "duration": 0.5224489795918368,
+          "currentTime": 0.036048541544005275,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "albeiro",
+          "file": "audio/albeiro/es-419-food-tea.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.03555766656063497,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "carito",
+          "file": "audio/carito/es-419-food-tea.mp3",
+          "duration": 0.7575510204081632,
+          "currentTime": 0.03608695836737752,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "santiago",
+          "file": "audio/santiago/es-419-food-tea.mp3",
+          "duration": 0.6791836734693878,
+          "currentTime": 0.037686583353206515,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "agustina",
+          "file": "audio/agustina/es-419-food-tea.mp3",
+          "duration": 0.5224489795918368,
+          "currentTime": 0.03768620849587023,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "carlos-figueroa",
+          "file": "audio/carlos-figueroa/es-419-food-tea.mp3",
+          "duration": 0.5224489795918368,
+          "currentTime": 0.0343427499756217,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        },
+        {
+          "id": "es-419-food-tea",
+          "voice": "veronica",
+          "file": "audio/veronica/es-419-food-tea.mp3",
+          "duration": 0.6008163265306122,
+          "currentTime": 0.04449999984353781,
+          "paused": false,
+          "nativeReadyState": 4,
+          "ok": true
+        }
+      ],
+      "passed": 96,
+      "advanced": 96,
+      "failures": [],
+      "minDuration": 0.5224489795918368,
+      "maxDuration": 1.1493877551020408
+    }
+  ],
+  "galleryChecks": [
+    {
+      "browser": "chromium",
+      "controls": 96,
+      "words": 12,
+      "accentInsensitiveSearch": true,
+      "regionFilter": true,
+      "voiceFilter": true,
+      "nativeSequenceStartStop": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "controls": 96,
+      "words": 12,
+      "accentInsensitiveSearch": true,
+      "regionFilter": true,
+      "voiceFilter": true,
+      "nativeSequenceStartStop": true,
+      "overflow": false,
+      "pageErrors": []
+    }
+  ],
+  "quieterClips": [
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "voice": "santiago",
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.4,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.2
+      },
+      "gainDb": 3.33,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "s\u00e1ndwich",
+      "voice": "juan",
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.54,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.15
+      },
+      "gainDb": 2.41,
+      "limitingReasons": [
+        "true_peak_headroom"
+      ]
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "voice": "carlos-figueroa",
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.66
+      },
+      "gainDb": 9,
+      "limitingReasons": [
+        "maximum_gain"
+      ]
+    }
+  ],
+  "archive": {
+    "path": "~/.local/share/kikimashta/spanish-audio/218-v1/",
+    "filesVerified": 584,
+    "archiveManifest": 1
+  },
+  "originalDraftArtworkAcceptanceAudioInputsAnd192ClipsUnchanged": true,
+  "limitations": [
+    "New recordings need owner listening acceptance.",
+    "Real iPhone checks remain manual.",
+    "No runtime activation."
+  ]
+}

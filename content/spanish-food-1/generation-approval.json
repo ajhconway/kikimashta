@@ -1,0 +1,18 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "language": "es-419",
+  "ownerMessage": "Great, let's generate the missing artwork.",
+  "status": "artwork-generation-authorized",
+  "draft": "content/spanish-food-1/draft.json",
+  "draftSha256": "30eda2e1748e79d400df9adb1ace34dd6140aa80a1eeeb139bc871c4ba025a95",
+  "requests": "artifacts/spanish-food-1-art/requests.json",
+  "requestsSha256": "d4546b07396a6cc034a98be6fd3b51aac458cf038da11f3949269eb60e957577",
+  "words": 36,
+  "newPictures": 11,
+  "reusedPictures": 25,
+  "scope": "artwork-only",
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "reviewWorkflow": "complete-pack-before-owner-feedback"
+}
