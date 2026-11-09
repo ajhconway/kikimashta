@@ -1,0 +1,56 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "status": "artwork-revision-generation-authorized",
+  "ownerMessage": "Let's redo vaso both here and for other \"glasses.\" It should better match the style of the other artwork.",
+  "scope": "shared-drinking-glass-artwork-only",
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "originalDraft": "content/spanish-food-2/draft.json",
+  "originalDraftSha256": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+  "originalGenerationApproval": "content/spanish-food-2/generation-approval.json",
+  "originalGenerationApprovalSha256": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
+  "originalRequests": "artifacts/spanish-food-2-art/requests.json",
+  "originalRequestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+  "previousManifest": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json",
+  "previousManifestSha256": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+  "previousSelection": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json",
+  "previousSelectionSha256": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+  "previousContactSheet": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png",
+  "previousContactSheetSha256": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+  "request": "artifacts/spanish-food-2-art/revisions/glass-v1-request.json",
+  "requestSha256": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+  "target": {
+    "id": "es-419-travel-drinking-glass",
+    "slug": "glass",
+    "version": 1,
+    "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+    "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "sharedUses": [
+      {
+        "bank": "content/es-419-travel-2.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Travel level 2"
+      },
+      {
+        "draft": "content/spanish-food-2/draft.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Food level 2"
+      },
+      {
+        "bank": "content/ja.json",
+        "id": "ja-cup",
+        "language": "ja-JP",
+        "pack": "Legacy Japanese starter glass"
+      }
+    ]
+  },
+  "expectedWords": 36,
+  "expectedNewPictures": 32,
+  "expectedReusedPictures": 4,
+  "unchangedPictureCount": 35,
+  "policy": "Select one common replacement for every current use of this drinking-glass picture. Retain stable IDs, audio and progress. Preserve historical banks/audits and the superseded JPEG; prepare shared activation targets for owner artwork acceptance and later shipping."
+}

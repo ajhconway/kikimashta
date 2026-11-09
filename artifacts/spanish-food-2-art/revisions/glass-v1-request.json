@@ -1,0 +1,20 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "id": "es-419-travel-drinking-glass",
+  "slug": "glass",
+  "version": 1,
+  "tool": "built-in image_gen",
+  "prompt": "Use case: style-transfer\nAsset type: one square transparent PNG vocabulary-card illustration, readable at 145px.\nInput image 1: EDIT TARGET / OBJECT REFERENCE. Redraw this same drinking glass in the current artwork style; preserve its recognizable simple handleless tumbler form and half-full blue water.\nInput image 2: STYLE REFERENCE ONLY. Borrow its bold smooth deep-purple outlines, rounded substantial forms, pale-blue glass shading and glossy restrained highlights. Do not copy its oil vessel, handle, stopper, neck or spout.\nPrimary request: A single attractive clear drinking glass, slightly wider at its open top than at its thick rounded bottom, half full of clean light-blue water. Give the glass convincing gentle three-dimensional depth: an elliptical open rim with a visible thick lip, softly shaded curved side walls, a thick solid base and a clean level elliptical water surface. Show the empty upper section as pale translucent blue-white glass, and the water below as richer blue. Match the friendly polished cartoon rendering of the style reference instead of flat line art. Keep the entire rim visible and the glass geometrically straight and symmetric, viewed just slightly from above.\nComposition: one complete centered tumbler filling about 80 percent of a true square canvas, with comfortable clear margins. The glass silhouette, highlights and contents should be solidly rendered within the object; only the surrounding background is genuinely transparent.\nConstraints: no text, letters, labels, logos, watermark, character, face, straw, lemon, ice, bubbles, garnish, handle, stem, lid, cork, spout, extra objects, ground shadow, scenery or white background. This is an everyday drinking glass, not eyewear or a mug. Preserve the old original; create a new replacement image.",
+  "transparent_background": true,
+  "editTarget": {
+    "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+    "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "role": "edit-target-object-reference"
+  },
+  "styleReference": {
+    "path": "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png",
+    "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+    "role": "style-only"
+  }
+}
