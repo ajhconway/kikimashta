@@ -8,8 +8,8 @@
           "stage": "simple",
           "variant": 1,
           "occurrence": [
-            "入りました",
-            "はいりました"
+            "に入りました",
+            "にはいりました"
           ],
           "sentence": [
             "先生は教室に入りました。",
@@ -313,6 +313,15 @@
                 "operation": "result-state",
                 "evidence": "Entering the classroom places the teacher inside it after the action.",
                 "noEcho": "All choices contain 教室. The heard 入りました must be interpreted as the new inside position; the correct position is not quoted."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 1,
+                "evidence": "Original: entering the classroom puts the teacher inside. Foil: leaving the same classroom puts the teacher outside.",
+                "whyNeeded": "Masking the entry/exit predicate leaves the teacher's final side of the classroom boundary unknown. The unchanged teacher and classroom nouns cannot distinguish the choices. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             },
             {
@@ -350,6 +359,15 @@
                 "operation": "relationship",
                 "evidence": "Entering entails an outside-to-inside transition, rather than leaving or remaining stationary.",
                 "noEcho": "Every choice describes a possible inside/outside relationship. No complete state description is present in the sentence."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 0,
+                "evidence": "Original: entry is an outside-to-inside transition. Foil: exit is an inside-to-outside transition.",
+                "whyNeeded": "Only the target predicate establishes the direction across the classroom boundary. No other action or starting-location clue supplies it. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             }
           ],
@@ -359,8 +377,8 @@
           "stage": "simple",
           "variant": 2,
           "occurrence": [
-            "入りました",
-            "はいりました"
+            "に入りました",
+            "にはいりました"
           ],
           "sentence": [
             "猫は箱に入りました。",
@@ -633,25 +651,25 @@
             {
               "kind": "target",
               "prompt": [
-                "今、箱の中は空ですか。",
-                "いま、はこのなかはからですか。",
-                "Is the inside of the box empty now?"
+                "今、猫は箱の中にいますか。",
+                "いま、ねこははこのなかにいますか。",
+                "Is the cat inside the box now?"
               ],
               "options": [
                 [
-                  "はい、猫は外にいます",
-                  "はい、ねこはそとにいます",
-                  "Yes, the cat is outside."
+                  "いいえ、箱の外にいます",
+                  "いいえ、はこのそとにいます",
+                  "No, it is outside the box."
                 ],
                 [
-                  "いいえ、猫が中にいます",
-                  "いいえ、ねこがなかにいます",
-                  "No, the cat is inside."
+                  "はい、箱の中にいます",
+                  "はい、はこのなかにいます",
+                  "Yes, it is inside the box."
                 ],
                 [
-                  "はい、猫は箱の上にいます",
-                  "はい、ねこははこのうえにいます",
-                  "Yes, the cat is on top of the box."
+                  "いいえ、箱の上にいます",
+                  "いいえ、はこのうえにいます",
+                  "No, it is on top of the box."
                 ],
                 [
                   "まだ猫は動いていません",
@@ -660,11 +678,20 @@
                 ]
               ],
               "correct": 1,
-              "explanation": "The cat entered the box, so the box now contains the cat and is not empty.",
+              "explanation": "The cat entered the box, so its final position is inside. No claim about other contents or an empty box is needed.",
               "comprehension": {
                 "operation": "result-state",
-                "evidence": "The cat entered the box, so the box now contains the cat and is not empty.",
-                "noEcho": "All choices mention the cat. Entering must be converted to inside occupancy, which the sentence does not state with 中."
+                "evidence": "The cat entered the box, so its final position is inside. No claim about other contents or an empty box is needed.",
+                "noEcho": "The same cat and box are present in the options; entering must be interpreted as an inside position, rather than copying a noun."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 0,
+                "evidence": "Original: entering places the cat inside the box. Foil: exiting places that same cat outside the box.",
+                "whyNeeded": "Without the entry/exit meaning, the cat's final side of the box boundary is indeterminate. Other possible box contents are irrelevant. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             },
             {
@@ -702,6 +729,15 @@
                 "operation": "relationship",
                 "evidence": "入った describes moving inward, not an outward, upward or stationary situation.",
                 "noEcho": "No answer copies 入りました. The options distinguish direction and whether movement occurred."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 0,
+                "evidence": "Original: the cat moves inward, so the outward-movement question is answered no. Foil: the cat exits, entailing outward movement and a yes answer.",
+                "whyNeeded": "The box and cat nouns stay fixed. Only the target predicate tells whether the movement crosses inward or outward. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             }
           ],
@@ -711,8 +747,8 @@
           "stage": "contrastive",
           "variant": 1,
           "occurrence": [
-            "入りました",
-            "はいりました"
+            "に入りました",
+            "にはいりました"
           ],
           "sentence": [
             "先生は教室に入りました。学生は教室から出ました。",
@@ -1016,6 +1052,15 @@
                 "operation": "result-state",
                 "evidence": "The teacher entered and is inside; the student left and is outside.",
                 "noEcho": "Both people and the classroom are heard. Selecting a person requires interpreting the opposite movements, not spotting a unique noun."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 3,
+                "evidence": "Original: the first actor enters while the second exits, leaving only the first inside. Foil: the first actor exits too, so both finish outside.",
+                "whyNeeded": "The second actor's exit does not reveal what the first actor does. With the target masked, either one-inside or both-outside remains possible. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             },
             {
@@ -1053,6 +1098,15 @@
                 "operation": "relationship",
                 "evidence": "Bind the teacher to entering and the student to leaving to derive the pair of final positions.",
                 "noEcho": "All actors recur in the choices, and the 中/外 pair is not spoken in the context."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 3,
+                "evidence": "Original: entry and exit yield first-inside/second-outside. Foil: the changed entry predicate becomes an exit, yielding both-outside.",
+                "whyNeeded": "The final pair cannot be determined from the unchanged second exit alone; interpreting the target supplies the first actor's position. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             }
           ],
@@ -1062,8 +1116,8 @@
           "stage": "contrastive",
           "variant": 2,
           "occurrence": [
-            "入りました",
-            "はいりました"
+            "に入りました",
+            "にはいりました"
           ],
           "sentence": [
             "猫は箱に入りました。犬は箱から出ました。",
@@ -1367,6 +1421,15 @@
                 "operation": "result-state",
                 "evidence": "The cat entered and remains inside at the end of the situation; the dog exited.",
                 "noEcho": "Cat and dog are both explicitly stated. Their movement meanings determine which is inside."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 2,
+                "evidence": "Original: the first actor enters while the second exits, leaving only the first inside. Foil: the first actor exits too, so both finish outside.",
+                "whyNeeded": "The second actor's exit does not reveal what the first actor does. With the target masked, either one-inside or both-outside remains possible. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             },
             {
@@ -1404,6 +1467,15 @@
                 "operation": "relationship",
                 "evidence": "The two opposite movements entail cat-inside and dog-outside, jointly.",
                 "noEcho": "All candidate pairs use the same animals and container relation; none copies the spoken verbs."
+              },
+              "targetDependency": {
+                "foil": [
+                  "から出ました",
+                  "からでました"
+                ],
+                "correct": 3,
+                "evidence": "Original: entry and exit yield first-inside/second-outside. Foil: the changed entry predicate becomes an exit, yielding both-outside.",
+                "whyNeeded": "The final pair cannot be determined from the unchanged second exit alone; interpreting the target supplies the first actor's position. The visible case marker identifies a relevant destination or origin, but does not itself entail a completed inward/outward crossing; that final-state information comes from the verb."
               }
             }
           ],
@@ -1705,6 +1777,15 @@
                 "operation": "result-state",
                 "evidence": "父 raised the hand, which entails upward movement.",
                 "noEcho": "The verb must be mapped to a direction with a different spoken form. Repeating the side of the hand would select the wrong direction."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil are opposite vertical movements of the same hand or flag: raising gives up, lowering gives down.",
+                "whyNeeded": "The target movement is the only directional fact. Masking it leaves every direction possible; the named limb side or flag cannot answer the question."
               }
             },
             {
@@ -1742,6 +1823,15 @@
                 "operation": "comparison",
                 "evidence": "Raising changes that hand's height to higher than its own previous height.",
                 "noEcho": "No answer quotes the verb. The learner must derive an increase/decrease rather than unchanged height or no movement."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil make opposite changes in that same object's height: raised is higher than before, lowered is lower than before.",
+                "whyNeeded": "No initial absolute height is assumed. The target movement alone determines whether this object ends higher or lower than its own prior position."
               }
             }
           ],
@@ -2037,6 +2127,15 @@
                 "operation": "result-state",
                 "evidence": "The flag is raised, so its movement is upward.",
                 "noEcho": "The direction words are not quoted from the context; selecting one requires the movement meaning."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil are opposite vertical movements of the same hand or flag: raising gives up, lowering gives down.",
+                "whyNeeded": "The target movement is the only directional fact. Masking it leaves every direction possible; the named limb side or flag cannot answer the question."
               }
             },
             {
@@ -2074,6 +2173,15 @@
                 "operation": "comparison",
                 "evidence": "The flag ends higher than its own earlier position.",
                 "noEcho": "The four state descriptions differ in consequence, rather than in the ending of the heard verb."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 1,
+                "evidence": "Original and foil make opposite changes in that same object's height: raised is higher than before, lowered is lower than before.",
+                "whyNeeded": "No initial absolute height is assumed. The target movement alone determines whether this object ends higher or lower than its own prior position."
               }
             }
           ],
@@ -2370,6 +2478,15 @@
                 "operation": "comparison",
                 "evidence": "Only the teacher's raised hand increases in height; the student's lowered hand decreases.",
                 "noEcho": "Both actors and hand sides occur in the sentence. The direction must be mapped to the relative-height consequence."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 3,
+                "evidence": "Original: one hand moves in the queried height-change direction and the other oppositely. Foil: the target hand moves the other way too, so neither hand has the queried height change.",
+                "whyNeeded": "The unchanged second hand gives only its own movement. Masking the target leaves whether the first hand satisfies the queried change unknown."
               }
             },
             {
@@ -2407,6 +2524,15 @@
                 "operation": "relationship",
                 "evidence": "Bind raising to the teacher and lowering to the student, then express both as directions.",
                 "noEcho": "The same actors recur across answers. The 上/下 spoken direction forms were not given in the sentence."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 3,
+                "evidence": "Original: the actors move their hands in opposite directions. Foil: changing only the target verb makes both movements point down.",
+                "whyNeeded": "Both actor names and hands remain unchanged. The first direction cannot be filled in from the second actor's verb or from the hand-side noun."
               }
             }
           ],
@@ -2704,6 +2830,15 @@
                 "operation": "comparison",
                 "evidence": "The raised red flag is higher than its own earlier position; the lowered blue flag is not.",
                 "noEcho": "Both colors are spoken. Choosing the color requires knowing which movement increases height."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 3,
+                "evidence": "Original: only the target-colored flag has the queried change in height. Foil: both flags move in the opposite direction, so neither has that change.",
+                "whyNeeded": "The fixed second flag's movement does not establish the first flag's movement. Knowing only the colors cannot select the correct resulting-height set."
               }
             },
             {
@@ -2741,6 +2876,15 @@
                 "operation": "relationship",
                 "evidence": "Raising and lowering are opposite directions, bound respectively to red and blue.",
                 "noEcho": "Color nouns alone cannot distinguish the reversed and same-direction pairs; both action meanings must be interpreted."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下げました",
+                  "さげました"
+                ],
+                "correct": 2,
+                "evidence": "Original: the two flags move oppositely. Foil: the first flag's reversed movement matches the second, so both move down.",
+                "whyNeeded": "The target verb is necessary to compare the directions. With it masked, either same-direction or opposite-direction is possible."
               }
             }
           ],
@@ -3042,6 +3186,15 @@
                 "operation": "result-state",
                 "evidence": "母 lowered the hand, which entails downward movement.",
                 "noEcho": "The verb must be mapped to a direction with a different spoken form. Repeating the side of the hand would select the wrong direction."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil are opposite vertical movements of the same hand or flag: raising gives up, lowering gives down.",
+                "whyNeeded": "The target movement is the only directional fact. Masking it leaves every direction possible; the named limb side or flag cannot answer the question."
               }
             },
             {
@@ -3079,6 +3232,15 @@
                 "operation": "comparison",
                 "evidence": "Lowering changes that hand's height to lower than its own previous height.",
                 "noEcho": "No answer quotes the verb. The learner must derive an increase/decrease rather than unchanged height or no movement."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil make opposite changes in that same object's height: raised is higher than before, lowered is lower than before.",
+                "whyNeeded": "No initial absolute height is assumed. The target movement alone determines whether this object ends higher or lower than its own prior position."
               }
             }
           ],
@@ -3374,6 +3536,15 @@
                 "operation": "result-state",
                 "evidence": "The flag is lowered, so its movement is downward.",
                 "noEcho": "The direction words are not quoted from the context; selecting one requires the movement meaning."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil are opposite vertical movements of the same hand or flag: raising gives up, lowering gives down.",
+                "whyNeeded": "The target movement is the only directional fact. Masking it leaves every direction possible; the named limb side or flag cannot answer the question."
               }
             },
             {
@@ -3411,6 +3582,15 @@
                 "operation": "comparison",
                 "evidence": "The flag ends lower than its own earlier position.",
                 "noEcho": "The four state descriptions differ in consequence, rather than in the ending of the heard verb."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 0,
+                "evidence": "Original and foil make opposite changes in that same object's height: raised is higher than before, lowered is lower than before.",
+                "whyNeeded": "No initial absolute height is assumed. The target movement alone determines whether this object ends higher or lower than its own prior position."
               }
             }
           ],
@@ -3707,6 +3887,15 @@
                 "operation": "comparison",
                 "evidence": "The mother's lowered hand decreases in height; the father's raised hand increases.",
                 "noEcho": "Both family members and both hands are heard. The answer depends on the consequence of lowering."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 3,
+                "evidence": "Original: one hand moves in the queried height-change direction and the other oppositely. Foil: the target hand moves the other way too, so neither hand has the queried height change.",
+                "whyNeeded": "The unchanged second hand gives only its own movement. Masking the target leaves whether the first hand satisfies the queried change unknown."
               }
             },
             {
@@ -3744,6 +3933,15 @@
                 "operation": "relationship",
                 "evidence": "The mother lowers and the father raises, giving opposite directional changes.",
                 "noEcho": "All choices refer to the same people. The paired directions are derived, not repeated."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 2,
+                "evidence": "Original: the actors move their hands in opposite directions. Foil: changing only the target verb makes both movements point up.",
+                "whyNeeded": "Both actor names and hands remain unchanged. The first direction cannot be filled in from the second actor's verb or from the hand-side noun."
               }
             }
           ],
@@ -4041,6 +4239,15 @@
                 "operation": "comparison",
                 "evidence": "The blue flag is lowered, so it is lower than before; the white flag moves upward.",
                 "noEcho": "Both colors appear in the context, while the decisive lower-than-before description does not."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 2,
+                "evidence": "Original: only the target-colored flag has the queried change in height. Foil: both flags move in the opposite direction, so neither has that change.",
+                "whyNeeded": "The fixed second flag's movement does not establish the first flag's movement. Knowing only the colors cannot select the correct resulting-height set."
               }
             },
             {
@@ -4078,6 +4285,15 @@
                 "operation": "relationship",
                 "evidence": "Blue is lowered and white is raised, so their directions are opposite in the stated pairing.",
                 "noEcho": "The answer requires converting both movements and retaining their colors, with no unique repeated color cue."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上げました",
+                  "あげました"
+                ],
+                "correct": 2,
+                "evidence": "Original: the two flags move oppositely. Foil: the first flag's reversed movement matches the second, so both move up.",
+                "whyNeeded": "The target verb is necessary to compare the directions. With it masked, either same-direction or opposite-direction is possible."
               }
             }
           ],
@@ -4360,9 +4576,9 @@
                   "a thing people made in the shape of flowers"
                 ],
                 [
-                  "庭で咲いた本当の花です",
-                  "にわでさいたほんとうのはなです",
-                  "real flowers that bloomed in a garden"
+                  "本当の花です",
+                  "ほんとうのはなです",
+                  "real flowers"
                 ],
                 [
                   "花を写した写真です",
@@ -4381,6 +4597,15 @@
                 "operation": "paraphrase",
                 "evidence": "The desk holds artificial flowers: made objects in the shape of flowers, rather than real flowers or an image.",
                 "noEcho": "Every option refers to flowers, and none repeats 人工. Their material status must be interpreted from the context."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本物",
+                  "ほんもの"
+                ],
+                "correct": 1,
+                "evidence": "Original: artificial flowers are manufactured replicas. Foil: 本物の花 are real flowers, without specifying where they grew.",
+                "whyNeeded": "The desk and flower nouns do not establish real-versus-replica status. The target modifier is the only evidence for that distinction."
               }
             },
             {
@@ -4392,9 +4617,9 @@
               ],
               "options": [
                 [
-                  "はい、庭で咲いた花です",
-                  "はい、にわでさいたはなです",
-                  "Yes, they are flowers that bloomed in a garden."
+                  "はい、本当の花です",
+                  "はい、ほんとうのはなです",
+                  "Yes, they are real flowers."
                 ],
                 [
                   "いいえ、花の写真です",
@@ -4418,6 +4643,15 @@
                 "operation": "relationship",
                 "evidence": "Calling these flowers artificial distinguishes a physical flower-shaped object from real flowers, photographs and seeds.",
                 "noEcho": "Flower words occur in all choices. Neither a repeated flower noun nor merely choosing no distinguishes the three negative alternatives."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本物",
+                  "ほんもの"
+                ],
+                "correct": 0,
+                "evidence": "Original: artificial flowers are not real blooms, so the flower-shaped-object description applies. Foil: real flowers make the real-flower yes answer correct.",
+                "whyNeeded": "Masking the modifier leaves real blooms, replicas and images indistinguishable from the unchanged location and noun alone."
               }
             }
           ],
@@ -4715,6 +4949,15 @@
                 "operation": "paraphrase",
                 "evidence": "A man-made pond exists because people constructed it, rather than it forming naturally or being only an image.",
                 "noEcho": "No answer repeats 人工. The pond's stated origin determines the answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "自然",
+                  "しぜん"
+                ],
+                "correct": 0,
+                "evidence": "Original: an artificial pond was made by people. Foil: a natural pond formed naturally.",
+                "whyNeeded": "A pond being in a park does not establish whether it was constructed or formed naturally. Only the target modifier specifies its origin."
               }
             },
             {
@@ -4752,6 +4995,15 @@
                 "operation": "relationship",
                 "evidence": "Artificial describes how the actual pond was made; it does not turn the pond into a photograph or drawing.",
                 "noEcho": "All choices describe a pond and two repeat the park. Origin and physical-object status distinguish the correct paraphrase."
+              },
+              "targetDependency": {
+                "foil": [
+                  "自然",
+                  "しぜん"
+                ],
+                "correct": 0,
+                "evidence": "Original: the actual pond is human-made. Foil: it is an actual naturally formed pond.",
+                "whyNeeded": "The park and pond facts establish an actual pond but not its origin. The modifier is needed to choose between the human-made and natural descriptions."
               }
             }
           ],
@@ -5022,9 +5274,9 @@
             {
               "kind": "target",
               "prompt": [
-                "花の形に作った物があるのは、どこですか。",
-                "はなのかたちにつくったものがあるのは、どこですか。",
-                "Where are the objects made in the shape of flowers?"
+                "机と棚の花では、作り物はどちらですか。",
+                "つくえとたなのはなでは、つくりものはどちらですか。",
+                "Among the desk and shelf flowers, which are replicas?"
               ],
               "options": [
                 [
@@ -5054,6 +5306,15 @@
                 "operation": "relationship",
                 "evidence": "Artificial maps to manufactured flower-shaped objects, and those objects are on the desk; the shelf holds real flowers.",
                 "noEcho": "Both desk and shelf are spoken. The paraphrased manufactured-object condition is needed to choose the location."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本物",
+                  "ほんもの"
+                ],
+                "correct": 3,
+                "evidence": "Original: the desk flowers are artificial replicas and the shelf flowers real. Foil: both specified flower groups are real, so neither group consists of replicas.",
+                "whyNeeded": "The shelf's real flowers do not determine the desk flowers' status. Masking 人工 leaves either desk-only replicas or neither group possible."
               }
             },
             {
@@ -5091,6 +5352,15 @@
                 "operation": "comparison",
                 "evidence": "The desk and shelf differ: artificial replicas on the desk versus real flowers on the shelf.",
                 "noEcho": "All choices reuse the same two places or both. The learner must interpret 人工 and retain which type belongs to each place."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本物",
+                  "ほんもの"
+                ],
+                "correct": 3,
+                "evidence": "Original: the groups differ, with desk replicas and real shelf flowers. Foil: the desk group becomes real too, so both specified groups are real.",
+                "whyNeeded": "The type of the desk flowers comes only from 人工. The unchanged shelf fact cannot establish whether the two groups match."
               }
             }
           ],
@@ -5104,9 +5374,9 @@
             "じんこう"
           ],
           "sentence": [
-            "この公園には人工の池があります。あの公園には自然の池があります。",
-            "このこうえんにはじんこうのいけがあります。あのこうえんにはしぜんのいけがあります。",
-            "This park has a man-made pond. That park has a natural pond."
+            "この公園の池は人工の池です。あの公園の池は自然の池です。",
+            "このこうえんのいけはじんこうのいけです。あのこうえんのいけはしぜんのいけです。",
+            "The pond in this park is man-made. The pond in that park is natural."
           ],
           "grammarTags": [
             "particles",
@@ -5118,7 +5388,8 @@
             "relative-clauses",
             "short-forms",
             "questions",
-            "question-words"
+            "question-words",
+            "te-form-linking"
           ],
           "vocabulary": [
             [
@@ -5366,79 +5637,97 @@
             {
               "kind": "target",
               "prompt": [
-                "人が作った池があるのは、どちらの公園ですか。",
-                "ひとがつくったいけがあるのは、どちらのこうえんですか。",
-                "Which park has a pond constructed by people?"
+                "二つの池では、人が作った池はどちらですか。",
+                "ふたつのいけでは、ひとがつくったいけはどちらですか。",
+                "Among these two ponds, which was constructed by people?"
               ],
               "options": [
                 [
-                  "あの公園だけです",
-                  "あのこうえんだけです",
-                  "only that park"
+                  "あの公園の池だけです",
+                  "あのこうえんのいけだけです",
+                  "only that park's pond"
                 ],
                 [
-                  "両方の公園です",
-                  "りょうほうのこうえんです",
-                  "both parks"
+                  "両方の池です",
+                  "りょうほうのいけです",
+                  "both specified ponds"
                 ],
                 [
-                  "どちらの公園でもありません",
-                  "どちらのこうえんでもありません",
-                  "neither park"
+                  "どちらの池でもありません",
+                  "どちらのいけでもありません",
+                  "neither specified pond"
                 ],
                 [
-                  "この公園だけです",
-                  "このこうえんだけです",
-                  "only this park"
+                  "この公園の池だけです",
+                  "このこうえんのいけだけです",
+                  "only this park's pond"
                 ]
               ],
               "correct": 3,
-              "explanation": "Only this park's pond is artificial, meaning constructed by people; the other pond formed naturally.",
+              "explanation": "The specified pond in this park is artificial, meaning human-made, while the other specified pond is natural.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "Only this park's pond is artificial, meaning constructed by people; the other pond formed naturally.",
-                "noEcho": "Both parks and ponds are stated. Interpreting the human-made condition is necessary to distinguish the four choices."
+                "evidence": "The specified pond in this park is artificial, meaning human-made, while the other specified pond is natural.",
+                "noEcho": "Both parks and both ponds recur in the options. Human-made is a paraphrase, and the question is restricted to the two described ponds."
+              },
+              "targetDependency": {
+                "foil": [
+                  "自然",
+                  "しぜん"
+                ],
+                "correct": 2,
+                "evidence": "Original: only this park's specified pond is human-made. Foil: the first specified pond becomes natural too, so neither specified pond is human-made.",
+                "whyNeeded": "The other pond's natural origin does not reveal the first pond's origin. Only 人工 resolves this-pond-only versus neither."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "二つの池は、同じようにできましたか。",
-                "ふたつのいけは、おなじようにできましたか。",
-                "Did the two ponds come into being in the same way?"
+                "二つの池は、どうやってできましたか。",
+                "ふたつのいけは、どうやってできましたか。",
+                "How did the two ponds come into being?"
               ],
               "options": [
                 [
-                  "いいえ、あちらだけ人が作りました",
-                  "いいえ、あちらだけひとがつくりました",
-                  "No, only that one was made by people."
+                  "こちらの池は自然にできて、あちらの池は人が作りました",
+                  "こちらのいけはしぜんにできて、あちらのいけはひとがつくりました",
+                  "This pond formed naturally; people constructed that pond."
                 ],
                 [
-                  "いいえ、こちらだけ人が作りました",
-                  "いいえ、こちらだけひとがつくりました",
-                  "No, only this one was made by people."
+                  "こちらの池は人が作って、あちらの池は自然にできました",
+                  "こちらのいけはひとがつくって、あちらのいけはしぜんにできました",
+                  "People constructed this pond; that pond formed naturally."
                 ],
                 [
-                  "はい、両方とも人が作りました",
-                  "はい、りょうほうともひとがつくりました",
-                  "Yes, people made both."
+                  "両方とも人が作りました",
+                  "りょうほうともひとがつくりました",
+                  "People constructed both."
                 ],
                 [
-                  "はい、両方とも自然にできました",
-                  "はい、りょうほうともしぜんにできました",
-                  "Yes, both formed naturally."
+                  "両方とも自然にできました",
+                  "りょうほうともしぜんにできました",
+                  "Both formed naturally."
                 ]
               ],
               "correct": 1,
-              "explanation": "One pond was constructed and the other formed naturally, so their origins differ; construction belongs to this park.",
+              "explanation": "人工 describes the first pond as human-made and 自然 describes the second as naturally formed. Both origins must be paired with their respective ponds.",
               "comprehension": {
-                "operation": "comparison",
-                "evidence": "One pond was constructed and the other formed naturally, so their origins differ; construction belongs to this park.",
-                "noEcho": "The answer compares the origins rather than echoing an object noun. The reversed and both/neither alternatives block a location-only shortcut."
+                "operation": "relationship",
+                "evidence": "人工 describes the first pond as human-made and 自然 describes the second as naturally formed. Both origins must be paired with their respective ponds.",
+                "noEcho": "Each alternative describes the same two ponds. The human-made origin is not quoted and cannot be inferred from either park name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "自然",
+                  "しぜん"
+                ],
+                "correct": 3,
+                "evidence": "Original: first-human-made/second-natural. Foil: first-natural/second-natural.",
+                "whyNeeded": "The fixed second origin does not determine the first. The target must be interpreted to distinguish the mixed pair from the both-natural pair."
               }
             }
           ],
-          "reviewNotes": "The same object type appears twice. Interpret the origin of each pond and compare, without guessing whether either park is prettier or better."
+          "reviewNotes": "The questions concern only the two specified ponds. They classify human-made versus natural origin, without claiming the parks contain no other ponds or that two naturally formed ponds had an identical physical formation process."
         }
       ]
     },
@@ -5450,8 +5739,8 @@
           "stage": "simple",
           "variant": 1,
           "occurrence": [
-            "人口",
-            "じんこう"
+            "の人口",
+            "のじんこう"
           ],
           "sentence": [
             "この町の人口は千人です。",
@@ -5688,6 +5977,26 @@
               "正しい",
               "ただしい",
               "correct"
+            ],
+            [
+              "暮らす",
+              "くらす",
+              "to live; reside"
+            ],
+            [
+              "数える",
+              "かぞえる",
+              "to count"
+            ],
+            [
+              "人たち",
+              "ひとたち",
+              "people"
+            ],
+            [
+              "今いる観光客の数",
+              "いまいるかんこうきゃくのかず",
+              "the number of tourists currently present"
             ]
           ],
           "questions": [
@@ -5726,47 +6035,65 @@
                 "operation": "paraphrase",
                 "evidence": "The town's population of one thousand is its resident count, not a visitor, worker or student count.",
                 "noEcho": "Every answer repeats 千人. The repeated number cannot identify which relationship to the town is stated."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 0,
+                "evidence": "Original: the one thousand are residents. Foil: the counted people are tourists currently present, so the current-visitor statement becomes correct.",
+                "whyNeeded": "Every choice shares 千人 and the town; only the target category distinguishes living there from currently visiting. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "千人は、どこの人数ですか。",
-                "せんにんは、どこのにんずうですか。",
-                "Which area does the count of one thousand cover?"
+                "千人は、どんな人たちですか。",
+                "せんにんは、どんなひとたちですか。",
+                "What relationship to the town do those one thousand people have?"
               ],
               "options": [
                 [
-                  "この町の学校だけです",
-                  "このまちのがっこうだけです",
-                  "only the town's school"
+                  "この町へ旅行に来ている人です",
+                  "このまちへりょこうにきているひとです",
+                  "people currently visiting this town"
                 ],
                 [
-                  "この町の店だけです",
-                  "このまちのみせだけです",
-                  "only the town's shop"
+                  "この町で働く人です",
+                  "このまちではたらくひとです",
+                  "people who work in this town"
                 ],
                 [
-                  "この町の駅だけです",
-                  "このまちのえきだけです",
-                  "only the town's station"
+                  "この町の学校で勉強する人です",
+                  "このまちのがっこうでべんきょうするひとです",
+                  "people who study at this town's school"
                 ],
                 [
-                  "この町全体です",
-                  "このまちぜんたいです",
-                  "the whole town"
+                  "この町で暮らす人です",
+                  "このまちでくらすひとです",
+                  "people who live in this town"
                 ]
               ],
               "correct": 3,
-              "explanation": "A population stated for the town describes residents of the whole town, not the occupants of one local institution.",
+              "explanation": "The stated population count is a count of residents, not visitors, workers or students as such.",
               "comprehension": {
-                "operation": "relationship",
-                "evidence": "A population stated for the town describes residents of the whole town, not the occupants of one local institution.",
-                "noEcho": "Every choice contains この町. The scope of its population, rather than the repeated place name, determines the answer."
+                "operation": "paraphrase",
+                "evidence": "The stated population count is a count of residents, not visitors, workers or students as such.",
+                "noEcho": "Every option names the town and people. The number is not enough to identify the relationship; 人口 must be interpreted as resident count."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 0,
+                "evidence": "Original: population counts people living in the town. Foil: the count explicitly covers tourists currently there.",
+                "whyNeeded": "The number and town remain fixed. Masking the category leaves resident-versus-current-visitor status indeterminate. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             }
           ],
-          "reviewNotes": "Apply the resident-count meaning to this specific town. All target options share the heard number and all detail options share the town, so copying either is insufficient."
+          "reviewNotes": "Every question distinguishes resident count from a current-visitor count. Counts and places are balanced across choices, so they do not reveal the correct category. The foil names current tourists explicitly to avoid an unstated historical timeframe."
         },
         {
           "stage": "simple",
@@ -6007,6 +6334,26 @@
               "正しい",
               "ただしい",
               "correct"
+            ],
+            [
+              "暮らす",
+              "くらす",
+              "to live; reside"
+            ],
+            [
+              "数える",
+              "かぞえる",
+              "to count"
+            ],
+            [
+              "人たち",
+              "ひとたち",
+              "people"
+            ],
+            [
+              "今いる観光客の数",
+              "いまいるかんこうきゃくのかず",
+              "the number of tourists currently present"
             ]
           ],
           "questions": [
@@ -6019,9 +6366,9 @@
               ],
               "options": [
                 [
-                  "旅行に来る人が少ないです",
-                  "りょこうにくるひとがすくないです",
-                  "Few people visit it."
+                  "旅行に来ている人が少ないです",
+                  "りょこうにきているひとがすくないです",
+                  "Few people are currently visiting."
                 ],
                 [
                   "働いている人が少ないです",
@@ -6045,54 +6392,72 @@
                 "operation": "paraphrase",
                 "evidence": "A small village population means a small number of residents, not a stated count of visitors, workers or teachers.",
                 "noEcho": "少ない appears in every choice. The learner must identify the resident relationship expressed by 人口."
+              },
+              "targetDependency": {
+                "foil": [
+                  "今いる観光客の数",
+                  "いまいるかんこうきゃくのかず"
+                ],
+                "correct": 0,
+                "evidence": "Original: the small count is residents. Foil: the count is tourists currently present, so the small-current-visitor statement becomes correct.",
+                "whyNeeded": "少ない occurs in every choice. The target is necessary to distinguish which group is small."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "少ないのは、何の数ですか。",
-                "すくないのは、なんのかずですか。",
-                "What is small in number?"
+                "人数が少ないのは、どんな人たちですか。",
+                "にんずうがすくないのは、どんなひとたちですか。",
+                "Which group is small in number?"
               ],
               "options": [
                 [
-                  "村全体に住む人の数です",
-                  "むらぜんたいにすむひとのかずです",
-                  "the people living across the whole village"
+                  "村で暮らす人です",
+                  "むらでくらすひとです",
+                  "people who live in the village"
                 ],
                 [
-                  "村の学校で勉強する人の数です",
-                  "むらのがっこうでべんきょうするひとのかずです",
-                  "the people studying at the village school"
+                  "村へ旅行に来ている人です",
+                  "むらへりょこうにきているひとです",
+                  "people currently visiting the village"
                 ],
                 [
-                  "村の店で働く人の数です",
-                  "むらのみせではたらくひとのかずです",
-                  "the people working at the village shop"
+                  "村の店で働く人です",
+                  "むらのみせではたらくひとです",
+                  "people working in the village shop"
                 ],
                 [
-                  "村の駅で待つ人の数です",
-                  "むらのえきでまつひとのかずです",
-                  "the people waiting at the village station"
+                  "村の学校で教える人です",
+                  "むらのがっこうでおしえるひとです",
+                  "people teaching at the village school"
                 ]
               ],
               "correct": 0,
-              "explanation": "The small count belongs to the village's residents as a whole. The statement supplies no count for a particular school, shop or station.",
+              "explanation": "The small population describes the village's residents, not a stated number of tourists or people at a particular workplace.",
               "comprehension": {
-                "operation": "relationship",
-                "evidence": "The small count belongs to the village's residents as a whole. The statement supplies no count for a particular school, shop or station.",
-                "noEcho": "Every option refers to the village and people. Interpreting the population scope is required; the sentence has no institution word to copy."
+                "operation": "paraphrase",
+                "evidence": "The small population describes the village's residents, not a stated number of tourists or people at a particular workplace.",
+                "noEcho": "All options refer to village people. The resident relationship is not quoted, and the small-number adjective alone does not identify the group."
+              },
+              "targetDependency": {
+                "foil": [
+                  "今いる観光客の数",
+                  "いまいるかんこうきゃくのかず"
+                ],
+                "correct": 1,
+                "evidence": "Original: the small group is village residents. Foil: it is tourists currently present in the village.",
+                "whyNeeded": "The village and small-number facts do not name the relationship. The target category supplies resident versus current visitor."
               }
             }
           ],
-          "reviewNotes": "Small population concerns residents and does not establish the physical size of the village or a visitor count. The questions make no zero-versus-nonzero assumption."
+          "reviewNotes": "Every question distinguishes resident count from a current-visitor count. Counts and places are balanced across choices, so they do not reveal the correct category. The foil names current tourists explicitly to avoid an unstated historical timeframe."
         },
         {
           "stage": "contrastive",
           "variant": 1,
           "occurrence": [
-            "人口",
-            "じんこう"
+            "の人口",
+            "のじんこう"
           ],
           "sentence": [
             "この町の人口は千人です。隣の町の人口は二千人です。",
@@ -6321,92 +6686,130 @@
               "二つ",
               "ふたつ",
               "two things"
+            ],
+            [
+              "暮らす",
+              "くらす",
+              "to live; reside"
+            ],
+            [
+              "数える",
+              "かぞえる",
+              "to count"
+            ],
+            [
+              "人たち",
+              "ひとたち",
+              "people"
+            ],
+            [
+              "今いる観光客の数",
+              "いまいるかんこうきゃくのかず",
+              "the number of tourists currently present"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "住んでいる人が多いのは、どちらの町ですか。",
-                "すんでいるひとがおおいのは、どちらのまちですか。",
-                "Which town has more residents?"
+                "どちらの町の、どんな人たちが多いですか。",
+                "どちらのまちの、どんなひとたちがおおいですか。",
+                "Which place has more people, and what is their relationship to it?"
               ],
               "options": [
                 [
-                  "この町です",
-                  "このまちです",
-                  "this town"
+                  "この町に住む人です",
+                  "このまちにすむひとです",
+                  "residents of this town"
                 ],
                 [
-                  "二つの町は同じです",
-                  "ふたつのまちはおなじです",
-                  "both towns have the same number"
+                  "隣の町へ旅行に来ている人です",
+                  "となりのまちへりょこうにきているひとです",
+                  "current visitors to the neighboring town"
                 ],
                 [
-                  "どちらにも人はいません",
-                  "どちらにもひとはいません",
-                  "neither town has any residents"
+                  "この町へ旅行に来ている人です",
+                  "このまちへりょこうにきているひとです",
+                  "current visitors to this town"
                 ],
                 [
-                  "隣の町です",
-                  "となりのまちです",
-                  "the neighboring town"
+                  "隣の町に住む人です",
+                  "となりのまちにすむひとです",
+                  "residents of the neighboring town"
                 ]
               ],
               "correct": 3,
-              "explanation": "Interpret population as residents and compare two thousand in the neighboring town with one thousand in this town.",
+              "explanation": "Interpret 人口 as residents, then compare the explicit counts: two thousand in the neighboring town exceeds one thousand in this town.",
               "comprehension": {
                 "operation": "comparison",
-                "evidence": "Interpret population as residents and compare two thousand in the neighboring town with one thousand in this town.",
-                "noEcho": "Both place names and both counts are heard. No option quotes a count, so the answer requires mapping population to residents and comparing them."
+                "evidence": "Interpret 人口 as residents, then compare the explicit counts: two thousand in the neighboring town exceeds one thousand in this town.",
+                "noEcho": "Every place occurs in the story and every option. The answer must combine the larger count with resident status; copying a place name or count alone cannot choose it."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 1,
+                "evidence": "Original: compare resident counts, so the larger place's residents are correct. Foil: both occurrences become current-tourist counts; the same numerical comparison now identifies that place's current visitors.",
+                "whyNeeded": "Counts and locations fix which place is larger but cannot establish resident versus current tourist. The target is essential even after the quantity comparison. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "二つの町に住む人の数は、同じですか。",
-                "ふたつのまちにすむひとのかずは、おなじですか。",
-                "Do the two towns have the same number of residents?"
+                "どちらの町の、どんな人たちが少ないですか。",
+                "どちらのまちの、どんなひとたちがすくないですか。",
+                "Which place has fewer people, and what is their relationship to it?"
               ],
               "options": [
                 [
-                  "いいえ、この町の方が多いです",
-                  "いいえ、このまちのほうがおおいです",
-                  "No, this town has more."
+                  "隣の町に住む人です",
+                  "となりのまちにすむひとです",
+                  "residents of the neighboring town"
                 ],
                 [
-                  "いいえ、隣の町の方が多いです",
-                  "いいえ、となりのまちのほうがおおいです",
-                  "No, the neighboring town has more."
+                  "この町に住む人です",
+                  "このまちにすむひとです",
+                  "residents of this town"
                 ],
                 [
-                  "はい、同じです",
-                  "はい、おなじです",
-                  "Yes, they are the same."
+                  "隣の町へ旅行に来ている人です",
+                  "となりのまちへりょこうにきているひとです",
+                  "current visitors to the neighboring town"
                 ],
                 [
-                  "二つの町に人はいません",
-                  "ふたつのまちにひとはいません",
-                  "Neither town has any residents."
+                  "この町へ旅行に来ている人です",
+                  "このまちへりょこうにきているひとです",
+                  "current visitors to this town"
                 ]
               ],
               "correct": 1,
-              "explanation": "The stated resident counts differ, and the neighboring town's count is the larger one.",
+              "explanation": "The stated populations are resident counts, and one thousand in this town is fewer than two thousand in the neighboring town.",
               "comprehension": {
                 "operation": "quantity-meaning",
-                "evidence": "The stated resident counts differ, and the neighboring town's count is the larger one.",
-                "noEcho": "All place terms recur across options, and the larger/same relation is not explicitly spoken. It must be derived from the two population facts."
+                "evidence": "The stated populations are resident counts, and one thousand in this town is fewer than two thousand in the neighboring town.",
+                "noEcho": "The four choices cross place and resident/visitor category. The smaller count fixes only the place; the target meaning is still required to select the resident relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 3,
+                "evidence": "Original: the smaller count describes residents. Foil: the unchanged smaller numerical count describes current tourists instead.",
+                "whyNeeded": "The place with fewer is still identifiable when the target is masked, but two choices share that place and differ in relationship. Only the target selects resident versus visitor. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             }
           ],
-          "reviewNotes": "Compare stated population counts only; no unrelated arithmetic or unstated land-area relationship is required."
+          "reviewNotes": "Every question distinguishes resident count from a current-visitor count. Counts and places are balanced across choices, so they do not reveal the correct category. The foil names current tourists explicitly to avoid an unstated historical timeframe."
         },
         {
           "stage": "contrastive",
           "variant": 2,
           "occurrence": [
-            "人口",
-            "じんこう"
+            "の人口",
+            "のじんこう"
           ],
           "sentence": [
             "この村の人口は三百人です。あの市の人口は千人です。",
@@ -6635,85 +7038,123 @@
               "方",
               "ほう",
               "the one; the side"
+            ],
+            [
+              "暮らす",
+              "くらす",
+              "to live; reside"
+            ],
+            [
+              "数える",
+              "かぞえる",
+              "to count"
+            ],
+            [
+              "人たち",
+              "ひとたち",
+              "people"
+            ],
+            [
+              "今いる観光客の数",
+              "いまいるかんこうきゃくのかず",
+              "the number of tourists currently present"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "村と市では、どちらに住む人が少ないですか。",
-                "むらとしでは、どちらにすむひとがすくないですか。",
-                "Which has fewer residents, the village or the city?"
+                "どちらの場所の、どんな人たちが多いですか。",
+                "どちらのばしょの、どんなひとたちがおおいですか。",
+                "Which place has more people, and what is their relationship to it?"
               ],
               "options": [
                 [
-                  "この村です",
-                  "このむらです",
-                  "this village"
+                  "あの市に住む人です",
+                  "あのしにすむひとです",
+                  "residents of that city"
                 ],
                 [
-                  "あの市です",
-                  "あのしです",
-                  "that city"
+                  "この村に住む人です",
+                  "このむらにすむひとです",
+                  "residents of this village"
                 ],
                 [
-                  "村と市は同じです",
-                  "むらとしはおなじです",
-                  "the village and city have the same number"
+                  "あの市へ旅行に来ている人です",
+                  "あのしへりょこうにきているひとです",
+                  "current visitors to that city"
                 ],
                 [
-                  "村にも市にも人はいません",
-                  "むらにもしにもひとはいません",
-                  "neither has any residents"
+                  "この村へ旅行に来ている人です",
+                  "このむらへりょこうにきているひとです",
+                  "current visitors to this village"
                 ]
               ],
               "correct": 0,
-              "explanation": "Three hundred village residents is fewer than one thousand city residents; population gives the resident counts.",
+              "explanation": "Interpret 人口 as residents, then compare the explicit counts: one thousand in the city exceeds three hundred in the village.",
               "comprehension": {
                 "operation": "comparison",
-                "evidence": "Three hundred village residents is fewer than one thousand city residents; population gives the resident counts.",
-                "noEcho": "Both places are explicitly spoken and every choice uses them. The comparative fewer-residents relation is derived rather than repeated."
+                "evidence": "Interpret 人口 as residents, then compare the explicit counts: one thousand in the city exceeds three hundred in the village.",
+                "noEcho": "Every place occurs in the story and every option. The answer must combine the larger count with resident status; copying a place name or count alone cannot choose it."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 2,
+                "evidence": "Original: compare resident counts, so the larger place's residents are correct. Foil: both occurrences become current-tourist counts; the same numerical comparison now identifies that place's current visitors.",
+                "whyNeeded": "Counts and locations fix which place is larger but cannot establish resident versus current tourist. The target is essential even after the quantity comparison. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "住んでいる人の数は、村と市で同じですか。",
-                "すんでいるひとのかずは、むらとしでおなじですか。",
-                "Are the village and city resident counts the same?"
+                "どちらの場所の、どんな人たちが少ないですか。",
+                "どちらのばしょの、どんなひとたちがすくないですか。",
+                "Which place has fewer people, and what is their relationship to it?"
               ],
               "options": [
                 [
-                  "いいえ、村の方が多いです",
-                  "いいえ、むらのほうがおおいです",
-                  "No, the village has more."
+                  "あの市に住む人です",
+                  "あのしにすむひとです",
+                  "residents of that city"
                 ],
                 [
-                  "はい、同じです",
-                  "はい、おなじです",
-                  "Yes, they are the same."
+                  "あの市へ旅行に来ている人です",
+                  "あのしへりょこうにきているひとです",
+                  "current visitors to that city"
                 ],
                 [
-                  "いいえ、市の方が多いです",
-                  "いいえ、しのほうがおおいです",
-                  "No, the city has more."
+                  "この村に住む人です",
+                  "このむらにすむひとです",
+                  "residents of this village"
                 ],
                 [
-                  "村にも市にも人はいません",
-                  "むらにもしにもひとはいません",
-                  "Neither has any residents."
+                  "この村へ旅行に来ている人です",
+                  "このむらへりょこうにきているひとです",
+                  "current visitors to this village"
                 ]
               ],
               "correct": 2,
-              "explanation": "The city's one thousand residents exceed the village's three hundred, so the counts are not equal.",
+              "explanation": "The stated populations are resident counts, and three hundred in the village is fewer than one thousand in the city.",
               "comprehension": {
                 "operation": "quantity-meaning",
-                "evidence": "The city's one thousand residents exceed the village's three hundred, so the counts are not equal.",
-                "noEcho": "The answer contains no quoted count; both population meanings and their relative quantities must be understood."
+                "evidence": "The stated populations are resident counts, and three hundred in the village is fewer than one thousand in the city.",
+                "noEcho": "The four choices cross place and resident/visitor category. The smaller count fixes only the place; the target meaning is still required to select the resident relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "に今いる観光客の数",
+                  "にいまいるかんこうきゃくのかず"
+                ],
+                "correct": 3,
+                "evidence": "Original: the smaller count describes residents. Foil: the unchanged smaller numerical count describes current tourists instead.",
+                "whyNeeded": "The place with fewer is still identifiable when the target is masked, but two choices share that place and differ in relationship. Only the target selects resident versus visitor. The visible possessive/location particle only links a place to a group; it does not identify that group as residents or tourists."
               }
             }
           ],
-          "reviewNotes": "Exact counts make the comparison determinate. Do not infer population from a place being called a city or village."
+          "reviewNotes": "Every question distinguishes resident count from a current-visitor count. Counts and places are balanced across choices, so they do not reveal the correct category. The foil names current tourists explicitly to avoid an unstated historical timeframe."
         }
       ]
     },
@@ -6729,9 +7170,9 @@
             "ください"
           ],
           "sentence": [
-            "先生は「水をください」と言いました。",
-            "せんせいは「みずをください」といいました。",
-            "The teacher said, “Water, please.”"
+            "先生は学生に「水をください」と言いました。",
+            "せんせいはがくせいに「みずをください」といいました。",
+            "The teacher said to the student, “Water, please.”"
           ],
           "grammarTags": [
             "particles",
@@ -6742,7 +7183,6 @@
             "questions",
             "question-words",
             "short-forms",
-            "te-requests",
             "relative-clauses",
             "progressive"
           ],
@@ -7031,85 +7471,133 @@
               "誰も",
               "だれも",
               "no one, with a negative"
+            ],
+            [
+              "言葉",
+              "ことば",
+              "words; utterance"
+            ],
+            [
+              "意味",
+              "いみ",
+              "meaning"
+            ],
+            [
+              "相手",
+              "あいて",
+              "other person; recipient"
+            ],
+            [
+              "運ぶ",
+              "はこぶ",
+              "to carry"
+            ],
+            [
+              "遠く",
+              "とおく",
+              "far away"
+            ],
+            [
+              "果物",
+              "くだもの",
+              "fruit"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "先生のお願いと同じなのはどれですか。",
-                "せんせいのおねがいとおなじなのはどれですか。",
-                "Which expresses the same request as the teacher's?"
+                "先生の言葉の意味はどれですか。",
+                "せんせいのことばのいみはどれですか。",
+                "Which interpretation matches the teacher's words?"
               ],
               "options": [
                 [
-                  "私の水を飲んでください",
-                  "わたしのみずをのんでください",
-                  "Please drink my water."
+                  "聞いている人の方へ水を渡す言葉です",
+                  "きいているひとのほうへみずをわたすことばです",
+                  "The words direct water toward the listener."
                 ],
                 [
-                  "私の水を捨ててください",
-                  "わたしのみずをすててください",
-                  "Please throw away my water."
+                  "二人から遠くへ水を運ぶ言葉です",
+                  "ふたりからとおくへみずをはこぶことばです",
+                  "The words direct water away from both people."
                 ],
                 [
-                  "私に水を渡してください",
-                  "わたしにみずをわたしてください",
-                  "Please hand water to me."
+                  "先生の方へ水を渡す言葉です",
+                  "せんせいのほうへみずをわたすことばです",
+                  "The words direct water toward the teacher."
                 ],
                 [
-                  "私の水を温めてください",
-                  "わたしのみずをあたためてください",
-                  "Please warm my water."
+                  "水を動かさない言葉です",
+                  "みずをうごかさないことばです",
+                  "The words direct that the water is not moved."
                 ]
               ],
               "correct": 2,
-              "explanation": "The teacher's noun request asks the listener to hand water to the speaker. The matching verbal request makes that action and recipient explicit.",
+              "explanation": "The teacher's request directs an intended handover of water toward its speaker, rather than toward the listener or away from both.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "The teacher's noun request asks the listener to hand water to the speaker. The matching verbal request makes that action and recipient explicit.",
-                "noEcho": "Every option contains 私, 水 and ください. The new handover action and its direction must be inferred; no complete option is quoted."
+                "operation": "intent",
+                "evidence": "The teacher's request directs an intended handover of water toward its speaker, rather than toward the listener or away from both.",
+                "noEcho": "All alternatives refer to the same water and describe intended actions. No option quotes ください, so its transfer direction must be understood."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 0,
+                "evidence": "Original: 水をください requests water toward the speaking teacher. Foil: 水をどうぞ offers water toward the listening student.",
+                "whyNeeded": "The same speaker, listener and water remain. Masking the expression leaves whether this is a request inward or offer outward unknown."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "先生のお願いでは、水はどちらの方へ動きますか。",
-                "せんせいのおねがいでは、みずはどちらのほうへうごきますか。",
-                "In the teacher's request, which way is the water to move?"
+                "水を渡す相手は、話す人と聞く人のどちらですか。",
+                "みずをわたすあいては、はなすひとときくひとのどちらですか。",
+                "Is the intended recipient of the water the speaker or the listener?"
               ],
               "options": [
                 [
-                  "話している人の方へ",
-                  "はなしているひとのほうへ",
-                  "toward the speaker"
+                  "話す人です",
+                  "はなすひとです",
+                  "the speaker"
                 ],
                 [
-                  "聞いている人の方へ",
-                  "きいているひとのほうへ",
-                  "toward the listener"
+                  "聞く人です",
+                  "きくひとです",
+                  "the listener"
                 ],
                 [
-                  "二人から遠い所へ",
-                  "ふたりからとおいところへ",
-                  "to a place far from both people"
+                  "二人ともです",
+                  "ふたりともです",
+                  "both people"
                 ],
                 [
-                  "誰の方へも動かしません",
-                  "だれのほうへもうごかしません",
-                  "not moved toward anyone"
+                  "どちらでもありません",
+                  "どちらでもありません",
+                  "neither person"
                 ]
               ],
               "correct": 0,
-              "explanation": "水をください directs the handover toward the person making the request, here the speaking teacher.",
+              "explanation": "The teacher says 水をください to the student, so the speaking teacher is the intended recipient.",
               "comprehension": {
-                "operation": "intent",
-                "evidence": "水をください directs the handover toward the person making the request, here the speaking teacher.",
-                "noEcho": "No answer names the teacher or repeats the request. The listener must identify the intended recipient role, rather than match the water noun."
+                "operation": "relationship",
+                "evidence": "The teacher says 水をください to the student, so the speaking teacher is the intended recipient.",
+                "noEcho": "Both conversational roles are supplied by the question and occur in the options. Selecting one requires interpreting the quoted expression, rather than matching a person's name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 1,
+                "evidence": "Original: the speaker is the intended recipient of the requested water. Foil: an offer makes the listener its intended recipient.",
+                "whyNeeded": "Speaker and listener identities alone do not determine the recipient. The target expression supplies which role the handover is directed toward."
               }
             }
           ],
-          "reviewNotes": "Interpret the noun request using a Genki I verbal request and intended handover direction. 私 in the paraphrase refers to the original speaking teacher. No statement is made that the request was obeyed, that water was consumed, or that payment occurred."
+          "reviewNotes": "Both the original request and the offer foil use the same named speaker, listener and item. Questions ask intended transfer roles/direction or compare those with explicit actions; none presupposes a request or asserts compliance without an action. No desire, specialized giving/receiving, passive, potential or conditional construction is used."
         },
         {
           "stage": "simple",
@@ -7119,9 +7607,9 @@
             "ください"
           ],
           "sentence": [
-            "母は店で「りんごを二つください」と言いました。",
-            "はははみせで「りんごをふたつください」といいました。",
-            "My mother said at the shop, “Two apples, please.”"
+            "母は店の人に「りんごを二つください」と言いました。",
+            "はははみせのひとに「りんごをふたつください」といいました。",
+            "My mother said to the shop worker, “Two apples, please.”"
           ],
           "grammarTags": [
             "particles",
@@ -7132,7 +7620,6 @@
             "questions",
             "question-words",
             "short-forms",
-            "te-requests",
             "relative-clauses",
             "progressive",
             "counting"
@@ -7417,15 +7904,45 @@
               "誰も",
               "だれも",
               "no one, with a negative"
+            ],
+            [
+              "言葉",
+              "ことば",
+              "words; utterance"
+            ],
+            [
+              "意味",
+              "いみ",
+              "meaning"
+            ],
+            [
+              "相手",
+              "あいて",
+              "other person; recipient"
+            ],
+            [
+              "運ぶ",
+              "はこぶ",
+              "to carry"
+            ],
+            [
+              "遠く",
+              "とおく",
+              "far away"
+            ],
+            [
+              "果物",
+              "くだもの",
+              "fruit"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "母のお願いでは、りんごはどちらの方へ動きますか。",
-                "ははのおねがいでは、りんごはどちらのほうへうごきますか。",
-                "In my mother's request, which way are the apples to move?"
+                "母の言葉では、りんごを渡す向きはどれですか。",
+                "ははのことばでは、りんごをわたすむきはどれですか。",
+                "Which handover direction is intended by my mother's words?"
               ],
               "options": [
                 [
@@ -7450,52 +7967,70 @@
                 ]
               ],
               "correct": 1,
-              "explanation": "The mother is speaking and asks for the two apples to be handed toward herself, not toward the listener or away from both.",
+              "explanation": "The request asks for the apples to be handed toward the mother, who is speaking. It does not assert that any action has already happened.",
               "comprehension": {
                 "operation": "intent",
-                "evidence": "The mother is speaking and asks for the two apples to be handed toward herself, not toward the listener or away from both.",
-                "noEcho": "The options describe conversational roles, not the repeated apple or quantity. Interpreting ください is required to choose the intended direction."
+                "evidence": "The request asks for the apples to be handed toward the mother, who is speaking. It does not assert that any action has already happened.",
+                "noEcho": "The apple and count do not distinguish the role-based directions. The target expression determines the intended recipient role."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 0,
+                "evidence": "Original: ください directs the handover toward the speaking mother. Foil: どうぞ offers the apples toward the listening shop worker.",
+                "whyNeeded": "The object, count and conversational roles stay fixed. Only request versus offer determines which role is the intended recipient."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "母のお願いと同じなのはどれですか。",
-                "ははのおねがいとおなじなのはどれですか。",
-                "Which expresses the same request as my mother's?"
+                "母の言葉の意味はどれですか。",
+                "ははのことばのいみはどれですか。",
+                "Which interpretation matches my mother's words?"
               ],
               "options": [
                 [
-                  "私のりんごを二つ食べてください",
-                  "わたしのりんごをふたつたべてください",
-                  "Please eat two of my apples."
+                  "店の人の方へりんごを二つ渡す言葉です",
+                  "みせのひとのほうへりんごをふたつわたすことばです",
+                  "The words direct two apples toward the shop worker."
                 ],
                 [
-                  "私のりんごを二つ洗ってください",
-                  "わたしのりんごをふたつあらってください",
-                  "Please wash two of my apples."
+                  "二人から遠くへりんごを二つ運ぶ言葉です",
+                  "ふたりからとおくへりんごをふたつはこぶことばです",
+                  "The words direct two apples away from both people."
                 ],
                 [
-                  "私のりんごを二つ捨ててください",
-                  "わたしのりんごをふたつすててください",
-                  "Please throw away two of my apples."
+                  "りんごを二つとも動かさない言葉です",
+                  "りんごをふたつともうごかさないことばです",
+                  "The words direct that both apples are left unmoved."
                 ],
                 [
-                  "私にりんごを二つ渡してください",
-                  "わたしにりんごをふたつわたしてください",
-                  "Please hand two apples to me."
+                  "母の方へりんごを二つ渡す言葉です",
+                  "ははのほうへりんごをふたつわたすことばです",
+                  "The words direct two apples toward my mother."
                 ]
               ],
               "correct": 3,
-              "explanation": "The requested service is handing the speaker two apples, not eating, washing or discarding them.",
+              "explanation": "The noun request is paraphrased as an intended handover of the stated quantity toward the speaking mother.",
               "comprehension": {
                 "operation": "paraphrase",
-                "evidence": "The requested service is handing the speaker two apples, not eating, washing or discarding them.",
-                "noEcho": "Every answer repeats 私, りんご, 二つ and ください. Those sounds cannot select an answer; the listener must identify the requested transfer action."
+                "evidence": "The noun request is paraphrased as an intended handover of the stated quantity toward the speaking mother.",
+                "noEcho": "All interpretations retain apples and two. Both mother and shop worker are spoken, so neither a repeated item, quantity nor one person's name identifies the meaning."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 0,
+                "evidence": "Original: the words request two apples toward the mother. Foil: the words offer the same two apples toward the shop worker.",
+                "whyNeeded": "The unchanged apple count and names cannot establish transfer direction. The target expression distinguishes the two plausible interpretations."
               }
             }
           ],
-          "reviewNotes": "Two complementary questions interpret the same shopping request as a transfer toward its speaker and as an explicit verbal request. All paraphrases retain the same object and quantity, blocking noun or number extraction."
+          "reviewNotes": "Both the original request and the offer foil use the same named speaker, listener and item. Questions ask intended transfer roles/direction or compare those with explicit actions; none presupposes a request or asserts compliance without an action. No desire, specialized giving/receiving, passive, potential or conditional construction is used."
         },
         {
           "stage": "contrastive",
@@ -7505,9 +8040,9 @@
             "ください"
           ],
           "sentence": [
-            "先生は「水をください」と言いました。学生は先生に水を渡しました。",
-            "せんせいは「みずをください」といいました。がくせいはせんせいにみずをわたしました。",
-            "The teacher said, “Water, please.” The student handed water to the teacher."
+            "先生は学生に「水をください」と言いました。学生は先生に水を渡しました。",
+            "せんせいはがくせいに「みずをください」といいました。がくせいはせんせいにみずをわたしました。",
+            "The teacher said to the student, “Water, please.” The student handed water to the teacher."
           ],
           "grammarTags": [
             "particles",
@@ -7518,7 +8053,6 @@
             "questions",
             "question-words",
             "short-forms",
-            "te-requests",
             "relative-clauses",
             "progressive"
           ],
@@ -7802,31 +8336,61 @@
               "誰も",
               "だれも",
               "no one, with a negative"
+            ],
+            [
+              "言葉",
+              "ことば",
+              "words; utterance"
+            ],
+            [
+              "意味",
+              "いみ",
+              "meaning"
+            ],
+            [
+              "相手",
+              "あいて",
+              "other person; recipient"
+            ],
+            [
+              "運ぶ",
+              "はこぶ",
+              "to carry"
+            ],
+            [
+              "遠く",
+              "とおく",
+              "far away"
+            ],
+            [
+              "果物",
+              "くだもの",
+              "fruit"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "先生のお願いと、学生の行動は合っていますか。",
-                "せんせいのおねがいと、がくせいのこうどうはあっていますか。",
-                "Does the student's action match the teacher's request?"
+                "先生の言葉と、学生の行動は合っていますか。",
+                "せんせいのことばと、がくせいのこうどうはあっていますか。",
+                "Does the student's action match the teacher's words?"
               ],
               "options": [
                 [
-                  "はい、同じ物を先生の方へ渡しました",
-                  "はい、おなじものをせんせいのほうへわたしました",
-                  "Yes, the same item was handed toward the teacher."
+                  "はい、物も向きも同じです",
+                  "はい、ものもむきもおなじです",
+                  "Yes, both item and direction match."
                 ],
                 [
-                  "いいえ、違う物を先生の方へ渡しました",
-                  "いいえ、ちがうものをせんせいのほうへわたしました",
-                  "No, a different item was handed toward the teacher."
+                  "いいえ、物は同じ、向きは反対です",
+                  "いいえ、ものはおなじ、むきははんたいです",
+                  "No: the item matches, but the direction is opposite."
                 ],
                 [
-                  "いいえ、同じ物を学生の方へ渡しました",
-                  "いいえ、おなじものをがくせいのほうへわたしました",
-                  "No, the same item was handed toward the student."
+                  "いいえ、向きは同じ、物は違います",
+                  "いいえ、むきはおなじ、ものはちがいます",
+                  "No: the direction matches, but the item differs."
                 ],
                 [
                   "いいえ、まだ何も渡していません",
@@ -7835,30 +8399,39 @@
                 ]
               ],
               "correct": 0,
-              "explanation": "The request is for water toward the speaking teacher, and the student explicitly hands water to that teacher, matching both item and direction.",
+              "explanation": "The teacher requests water toward the teacher, and the student hands that same item to that teacher. Both item and intended direction match.",
               "comprehension": {
                 "operation": "intent",
-                "evidence": "The request is for water toward the speaking teacher, and the student explicitly hands water to that teacher, matching both item and direction.",
-                "noEcho": "Both people and water occur in the sentence. The correct answer classifies whether the action meets the request; it does not quote a requested noun."
+                "evidence": "The teacher requests water toward the teacher, and the student hands that same item to that teacher. Both item and intended direction match.",
+                "noEcho": "The answer classifies the relationship between speech and action. Repeating water or an actor cannot establish whether direction as well as item matches."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 1,
+                "evidence": "Original: a request toward the teacher is met by water toward the teacher. Foil: the teacher offers water toward the named listening student, but the unchanged action is toward the teacher; the item still matches and direction reverses.",
+                "whyNeeded": "The later action alone fixes only actual delivery. Without the target expression, inward-request matching and outward-offer mismatch remain possible."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "お願いと実際で、渡す向きは同じですか。",
-                "おねがいとじっさいで、わたすむきはおなじですか。",
-                "Do the requested and actual handover directions match?"
+                "言葉と実際で、渡す向きは同じですか。",
+                "ことばとじっさいで、わたすむきはおなじですか。",
+                "Do the spoken and actual handover directions match?"
               ],
               "options": [
                 [
-                  "いいえ、お願いは先生、実際は学生の方へです",
-                  "いいえ、おねがいはせんせい、じっさいはがくせいのほうへです",
-                  "No: the request points toward the teacher, but the actual handover toward the student."
+                  "いいえ、言葉では先生、実際は学生の方へです",
+                  "いいえ、ことばではせんせい、じっさいはがくせいのほうへです",
+                  "No: the words point toward the teacher, but the action toward the student."
                 ],
                 [
-                  "いいえ、お願いは学生、実際は先生の方へです",
-                  "いいえ、おねがいはがくせい、じっさいはせんせいのほうへです",
-                  "No: the request points toward the student, but the actual handover toward the teacher."
+                  "いいえ、言葉では学生、実際は先生の方へです",
+                  "いいえ、ことばではがくせい、じっさいはせんせいのほうへです",
+                  "No: the words point toward the student, but the action toward the teacher."
                 ],
                 [
                   "はい、どちらも先生の方へです",
@@ -7872,15 +8445,24 @@
                 ]
               ],
               "correct": 2,
-              "explanation": "The teacher's request points toward its speaker; the stated student-to-teacher handover has that same direction.",
+              "explanation": "The request points inward toward its speaking teacher, and the action explicitly moves water from the student to the teacher.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The teacher's request points toward its speaker; the stated student-to-teacher handover has that same direction.",
-                "noEcho": "All alternatives use the same two actors. The requested direction must be interpreted and compared with the actual transfer, so copying either actor is insufficient."
+                "evidence": "The request points inward toward its speaking teacher, and the action explicitly moves water from the student to the teacher.",
+                "noEcho": "All choices use the same actors. Actual recipient information alone leaves two possible spoken directions; the target expression is needed to decide whether they match."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 1,
+                "evidence": "Original: both intended and actual directions are toward the teacher. Foil: the offer is toward the student, while actual delivery remains toward the teacher.",
+                "whyNeeded": "The actual teacher recipient does not determine the direction expressed by the utterance. Only the target distinguishes the two direction-pair choices."
               }
             }
           ],
-          "reviewNotes": "An explicit action follows the request, allowing request-response matching without assuming obedience. Compare the requested transfer direction with the actual recipient; no specialized giving/receiving constructions are introduced."
+          "reviewNotes": "Both the original request and the offer foil use the same named speaker, listener and item. Questions ask intended transfer roles/direction or compare those with explicit actions; none presupposes a request or asserts compliance without an action. No desire, specialized giving/receiving, passive, potential or conditional construction is used."
         },
         {
           "stage": "contrastive",
@@ -7890,9 +8472,9 @@
             "ください"
           ],
           "sentence": [
-            "母は「りんごを二つください」と言いました。父は母にみかんを二つ渡しました。",
-            "ははは「りんごをふたつください」といいました。ちちはははにみかんをふたつわたしました。",
-            "My mother said, “Two apples, please.” My father handed her two mandarins."
+            "母は父に「りんごを二つください」と言いました。父は母にみかんを二つ渡しました。",
+            "はははちちに「りんごをふたつください」といいました。ちちはははにみかんをふたつわたしました。",
+            "My mother said to my father, “Two apples, please.” My father handed her two mandarins."
           ],
           "grammarTags": [
             "particles",
@@ -7903,7 +8485,6 @@
             "questions",
             "question-words",
             "short-forms",
-            "te-requests",
             "relative-clauses",
             "progressive",
             "counting"
@@ -8188,58 +8769,97 @@
               "誰も",
               "だれも",
               "no one, with a negative"
+            ],
+            [
+              "言葉",
+              "ことば",
+              "words; utterance"
+            ],
+            [
+              "意味",
+              "いみ",
+              "meaning"
+            ],
+            [
+              "相手",
+              "あいて",
+              "other person; recipient"
+            ],
+            [
+              "運ぶ",
+              "はこぶ",
+              "to carry"
+            ],
+            [
+              "遠く",
+              "とおく",
+              "far away"
+            ],
+            [
+              "果物",
+              "くだもの",
+              "fruit"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "父の行動は、母のお願いと合っていますか。",
-                "ちちのこうどうは、ははのおねがいとあっていますか。",
-                "Does my father's action match my mother's request?"
+                "母の言葉と父の行動は、合っていますか。",
+                "ははのことばとちちのこうどうは、あっていますか。",
+                "Does my father's action match my mother's words?"
               ],
               "options": [
                 [
-                  "はい、種類も数も同じです",
-                  "はい、しゅるいもかずもおなじです",
-                  "Yes, both the type and number match."
+                  "はい、向きも果物も同じです",
+                  "はい、むきもくだものもおなじです",
+                  "Yes, both the direction and fruit match."
                 ],
                 [
-                  "いいえ、数だけが違います",
-                  "いいえ、かずだけがちがいます",
-                  "No, only the number differs."
+                  "いいえ、向きも果物も違います",
+                  "いいえ、むきもくだものもちがいます",
+                  "No, both the direction and fruit differ."
                 ],
                 [
-                  "いいえ、まだ何も渡していません",
-                  "いいえ、まだなにもわたしていません",
-                  "No, nothing has been handed over yet."
+                  "いいえ、果物は同じ、向きは違います",
+                  "いいえ、くだものはおなじ、むきはちがいます",
+                  "No: the fruit matches, but the direction differs."
                 ],
                 [
-                  "いいえ、種類が違います",
-                  "いいえ、しゅるいがちがいます",
-                  "No, the type of fruit is different."
+                  "いいえ、向きは同じ、果物は違います",
+                  "いいえ、むきはおなじ、くだものはちがいます",
+                  "No: the direction matches, but the fruit differs."
                 ]
               ],
               "correct": 3,
-              "explanation": "The mother requests two apples, while the father hands her two mandarins. The count matches and the recipient direction matches, but the fruit type differs.",
+              "explanation": "The mother requests apples toward herself. The father hands mandarins toward her, so direction and quantity match while fruit type differs.",
               "comprehension": {
                 "operation": "comparison",
-                "evidence": "The mother requests two apples, while the father hands her two mandarins. The count matches and the recipient direction matches, but the fruit type differs.",
-                "noEcho": "Both fruit words and the quantity two are heard. The correct answer identifies which dimension fails to match, instead of selecting a repeated fruit noun."
+                "evidence": "The mother requests apples toward herself. The father hands mandarins toward her, so direction and quantity match while fruit type differs.",
+                "noEcho": "The fruit mismatch alone leaves two possible choices. The target's transfer direction must also be interpreted to distinguish wrong-fruit-only from wrong-fruit-and-direction."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 1,
+                "evidence": "Original: request apples toward mother, actual mandarins toward mother: fruit differs, direction matches. Foil: offer apples toward the named listening father, actual mandarins toward mother: both fruit and direction differ.",
+                "whyNeeded": "The unchanged fruit mismatch cannot decide between the two mismatch combinations. The target is necessary to establish the intended direction."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "お願いと実際で、渡す向きは同じですか。",
-                "おねがいとじっさいで、わたすむきはおなじですか。",
-                "Do the requested and actual handover directions match?"
+                "言葉と実際で、渡す向きは同じですか。",
+                "ことばとじっさいで、わたすむきはおなじですか。",
+                "Do the spoken and actual handover directions match?"
               ],
               "options": [
                 [
-                  "いいえ、お願いは母、実際は父の方へです",
-                  "いいえ、おねがいははは、じっさいはちちのほうへです",
-                  "No: the request points toward my mother, but the actual handover toward my father."
+                  "いいえ、言葉では母、実際は父の方へです",
+                  "いいえ、ことばでははは、じっさいはちちのほうへです",
+                  "No: the words point toward my mother, but the action toward my father."
                 ],
                 [
                   "はい、どちらも母の方へです",
@@ -8247,9 +8867,9 @@
                   "Yes, both are toward my mother."
                 ],
                 [
-                  "いいえ、お願いは父、実際は母の方へです",
-                  "いいえ、おねがいはちち、じっさいはははのほうへです",
-                  "No: the request points toward my father, but the actual handover toward my mother."
+                  "いいえ、言葉では父、実際は母の方へです",
+                  "いいえ、ことばではちち、じっさいはははのほうへです",
+                  "No: the words point toward my father, but the action toward my mother."
                 ],
                 [
                   "はい、どちらも父の方へです",
@@ -8258,15 +8878,24 @@
                 ]
               ],
               "correct": 1,
-              "explanation": "The requested handover is toward the speaking mother. The father explicitly hands the fruit to the mother, so the direction matches even though the fruit type does not.",
+              "explanation": "The noun request directs apples toward the speaking mother, and the actual handover is also toward her despite using a different fruit.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The requested handover is toward the speaking mother. The father explicitly hands the fruit to the mother, so the direction matches even though the fruit type does not.",
-                "noEcho": "Both parents and both fruits are heard. The transfer direction must be interpreted separately from the wrong-item mismatch; a general mismatch heuristic cannot select the answer."
+                "evidence": "The noun request directs apples toward the speaking mother, and the actual handover is also toward her despite using a different fruit.",
+                "noEcho": "The fruit mismatch does not answer this direction question. The utterance's recipient role must be interpreted separately from the actual recipient."
+              },
+              "targetDependency": {
+                "foil": [
+                  "どうぞ",
+                  "どうぞ"
+                ],
+                "correct": 2,
+                "evidence": "Original: both intended and actual directions are toward mother. Foil: the offer points toward father but the actual handover remains toward mother.",
+                "whyNeeded": "Knowing who actually gets the fruit is insufficient; the target expression separately determines the intended direction in the words."
               }
             }
           ],
-          "reviewNotes": "The response has the correct count and recipient direction but the wrong fruit. The two questions test these separate dimensions, using plain direction and request-response matching without desire, giving/receiving, passive, potential or conditional grammar."
+          "reviewNotes": "Both the original request and the offer foil use the same named speaker, listener and item. Questions ask intended transfer roles/direction or compare those with explicit actions; none presupposes a request or asserts compliance without an action. No desire, specialized giving/receiving, passive, potential or conditional construction is used."
         }
       ]
     },
@@ -8458,6 +9087,15 @@
                 "operation": "quantity-meaning",
                 "evidence": "力いっぱい means the father used his full available strength, rather than a small amount or none.",
                 "noEcho": "Every plausible effort choice refers to strength, and 全部 was not spoken. Matching 押しました or 力 alone does not distinguish full from slight effort."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 1,
+                "evidence": "Original: 力いっぱい asserts full available effort. Foil: 軽く describes a gentle action with a little force, not full effort.",
+                "whyNeeded": "The push/pull action alone does not specify effort. Without the target modifier, all-versus-little effort cannot be determined."
               }
             },
             {
@@ -8495,6 +9133,15 @@
                 "operation": "paraphrase",
                 "evidence": "The stated action is a full-effort push, so a gentle push, a pull and no completed push do not describe it.",
                 "noEcho": "The affirmative and negative options both reuse the push verb. The full-effort meaning must determine whether 軽く is an accurate description."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 0,
+                "evidence": "Original: the full-effort action is not a gentle one. Foil: the same action is explicitly gentle, so the gentle-action paraphrase becomes correct.",
+                "whyNeeded": "The underlying push/pull stays the same and appears in multiple choices. The target modifier alone selects gentle versus full effort."
               }
             }
           ],
@@ -8684,6 +9331,15 @@
                 "operation": "quantity-meaning",
                 "evidence": "The student uses all their strength in pulling, not a little strength or none.",
                 "noEcho": "No answer repeats 力いっぱい. The choices distinguish the amount of effort rather than quote the rope or student noun."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 0,
+                "evidence": "Original: 力いっぱい asserts full available effort. Foil: 軽く describes a gentle action with a little force, not full effort.",
+                "whyNeeded": "The push/pull action alone does not specify effort. Without the target modifier, all-versus-little effort cannot be determined."
               }
             },
             {
@@ -8721,6 +9377,15 @@
                 "operation": "paraphrase",
                 "evidence": "A full-strength pull is contrasted with a gentle pull, pushing and no pull yet.",
                 "noEcho": "Several choices contain the heard pulling action, but the paraphrased 全部の力 must be matched to the effort meaning."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 0,
+                "evidence": "Original: the full-effort action is not a gentle one. Foil: the same action is explicitly gentle, so the gentle-action paraphrase becomes correct.",
+                "whyNeeded": "The underlying push/pull stays the same and appears in multiple choices. The target modifier alone selects gentle versus full effort."
               }
             }
           ],
@@ -8911,6 +9576,15 @@
                 "operation": "comparison",
                 "evidence": "The father pushes at full effort while the mother pushes gently, so their described effort levels differ in the stated pairing.",
                 "noEcho": "Both actors and the same push action occur in the context. The effort paraphrases and their pairing, not a uniquely repeated noun, determine the answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 3,
+                "evidence": "Original: the first actor uses full effort and the second gentle effort. Foil: both are explicitly gentle, so neither uses full effort.",
+                "whyNeeded": "The second actor's gentle action leaves the first actor's effort unknown when the target is masked; one-full versus neither-full cannot be chosen."
               }
             },
             {
@@ -8937,9 +9611,9 @@
                   "both people"
                 ],
                 [
-                  "誰も使っていません",
-                  "だれもつかっていません",
-                  "neither person used it"
+                  "全部使った人はいません",
+                  "ぜんぶつかったひとはいません",
+                  "No one used all their strength."
                 ]
               ],
               "correct": 0,
@@ -8948,6 +9622,15 @@
                 "operation": "relationship",
                 "evidence": "Full effort belongs to the father; the mother's effort is described as gentle.",
                 "noEcho": "Both parents were heard. The condition 全部の力 is a paraphrase of 力いっぱい, so copying an actor without interpreting the effort is insufficient."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 3,
+                "evidence": "Original: only the target-modified actor uses full effort. Foil: the changed actor is gentle too, so no actor uses full effort.",
+                "whyNeeded": "Both actors perform the same base action. The target modifier is the sole evidence selecting one full-effort actor instead of none."
               }
             }
           ],
@@ -9148,6 +9831,15 @@
                 "operation": "comparison",
                 "evidence": "Both pull, but the teacher uses full effort while the student pulls gently.",
                 "noEcho": "All choices use the same two actors and pulling situation. Only interpreting and binding the effort descriptions distinguishes the alternatives."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 2,
+                "evidence": "Original: the first actor uses full effort and the second gentle effort. Foil: both are explicitly gentle, so neither uses full effort.",
+                "whyNeeded": "The second actor's gentle action leaves the first actor's effort unknown when the target is masked; one-full versus neither-full cannot be chosen."
               }
             },
             {
@@ -9174,9 +9866,9 @@
                   "both people"
                 ],
                 [
-                  "誰も使っていません",
-                  "だれもつかっていません",
-                  "neither person used it"
+                  "全部使った人はいません",
+                  "ぜんぶつかったひとはいません",
+                  "No one used all their strength."
                 ]
               ],
               "correct": 1,
@@ -9185,6 +9877,15 @@
                 "operation": "relationship",
                 "evidence": "The teacher's 力いっぱい means using all their own available strength, unlike the student's gentle pull.",
                 "noEcho": "The actor words are both repeated in the context, while 全部 is absent. The correct role requires the effort meaning."
+              },
+              "targetDependency": {
+                "foil": [
+                  "軽く",
+                  "かるく"
+                ],
+                "correct": 3,
+                "evidence": "Original: only the target-modified actor uses full effort. Foil: the changed actor is gentle too, so no actor uses full effort.",
+                "whyNeeded": "Both actors perform the same base action. The target modifier is the sole evidence selecting one full-effort actor instead of none."
               }
             }
           ],
@@ -9200,8 +9901,8 @@
           "stage": "simple",
           "variant": 1,
           "occurrence": [
-            "大した",
-            "たいした"
+            "大したことはありません",
+            "たいしたことはありません"
           ],
           "sentence": [
             "太郎さんがけがをしました。大したことはありません。",
@@ -9452,6 +10153,15 @@
                 "operation": "paraphrase",
                 "evidence": "大したことはありません says the existing injury is minor, not serious; it does not deny the injury.",
                 "noEcho": "All injury choices refer to the same event. The correct adjective 軽い is not spoken; the negative significance expression must be interpreted."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいけがです",
+                  "ひどいけがです"
+                ],
+                "correct": 0,
+                "evidence": "Original: the negative significance idiom describes Taro's existing injury as minor. Foil: the substituted predicate explicitly describes it as a severe injury.",
+                "whyNeeded": "The first clause proves an injury exists but does not establish its seriousness. Without the target idiom, minor and serious answers remain possible."
               }
             },
             {
@@ -9463,9 +10173,9 @@
               ],
               "options": [
                 [
-                  "はい、とてもひどいです",
-                  "はい、とてもひどいです",
-                  "Yes, and it is very serious."
+                  "はい、重いけがです",
+                  "はい、おもいけがです",
+                  "Yes, it is a serious injury."
                 ],
                 [
                   "いいえ、ありません",
@@ -9489,17 +10199,26 @@
                 "operation": "relationship",
                 "evidence": "The first clause establishes an injury and the second limits its seriousness. Together they support yes, but minor.",
                 "noEcho": "A yes alone does not distinguish the two positive choices. The learner must keep injury existence separate from the negated significance."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいけがです",
+                  "ひどいけがです"
+                ],
+                "correct": 0,
+                "evidence": "Original: an injury exists and is minor. Foil: the same injury exists and is severe.",
+                "whyNeeded": "Injury existence alone leaves both yes answers possible. The target predicate is necessary to choose minor rather than severe."
               }
             }
           ],
-          "reviewNotes": "One coherent injury situation uses two short clauses. Negating significance is not negating injury existence; no claim about recovery, treatment or pain level is added."
+          "reviewNotes": "One coherent injury situation uses two short clauses. Negating significance is not negating injury existence; no claim about recovery, treatment or pain level is added. Dependency substitutes the whole idiomatic predicate, preserving the injury/picture and every other story fact. For the negative idiom, injury existence is retained while seriousness changes; for positive praise, the stated evaluation changes without assuming objective technique or general ability."
         },
         {
           "stage": "simple",
           "variant": 2,
           "occurrence": [
-            "大した",
-            "たいした"
+            "大したものです",
+            "たいしたものです"
           ],
           "sentence": [
             "花子さんの絵は大したものです。",
@@ -9755,6 +10474,15 @@
                 "operation": "paraphrase",
                 "evidence": "Positive 大したものです praises this picture as impressive.",
                 "noEcho": "Every answer describes the same picture, and the praise word すばらしい is new. No correct option repeats 大したもの."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 1,
+                "evidence": "Original: the idiomatic positive predicate praises Hanako's picture as impressive. Foil: the predicate criticizes that picture as terrible.",
+                "whyNeeded": "The ownership and existence of a picture do not establish its evaluation. The target expression is the only evidence for praise versus criticism."
               }
             },
             {
@@ -9792,17 +10520,26 @@
                 "operation": "comparison",
                 "evidence": "The positive praise places the picture above merely ordinary in the speaker's evaluation; it is not criticism or a denial that the picture exists.",
                 "noEcho": "The question's 普通 repeats in a wrong answer. The context's praise meaning, not a repeated noun or a no alone, must select the correct alternative."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 2,
+                "evidence": "Original: the picture is above ordinary in the stated praise. Foil: it is criticized as terrible, so the negative critical description is correct.",
+                "whyNeeded": "Both praise and criticism are compatible with merely having a picture. The target predicate is necessary to choose which non-ordinary description applies."
               }
             }
           ],
-          "reviewNotes": "Read 大したものです as sincere positive praise. The question concerns the expressed evaluation, not an unstated artistic technique or Hanako's general skill."
+          "reviewNotes": "Read 大したものです as sincere positive praise. The question concerns the expressed evaluation, not an unstated artistic technique or Hanako's general skill. Dependency substitutes the whole idiomatic predicate, preserving the injury/picture and every other story fact. For the negative idiom, injury existence is retained while seriousness changes; for positive praise, the stated evaluation changes without assuming objective technique or general ability."
         },
         {
           "stage": "contrastive",
           "variant": 1,
           "occurrence": [
-            "大した",
-            "たいした"
+            "大したことはありません",
+            "たいしたことはありません"
           ],
           "sentence": [
             "父のけがは大したことはありません。母のけがはひどいです。",
@@ -10028,9 +10765,9 @@
             {
               "kind": "target",
               "prompt": [
-                "二人のけがは、同じくらいひどいですか。",
-                "ふたりのけがは、おなじくらいひどいですか。",
-                "Are the two injuries equally serious?"
+                "二人とも、重いけがですか。",
+                "ふたりとも、おもいけがですか。",
+                "Do both people have serious injuries?"
               ],
               "options": [
                 [
@@ -10044,9 +10781,9 @@
                   "Yes, both have serious injuries."
                 ],
                 [
-                  "はい、二人とも軽いけがです",
-                  "はい、ふたりともかるいけがです",
-                  "Yes, both have minor injuries."
+                  "いいえ、二人とも軽いけがです",
+                  "いいえ、ふたりともかるいけがです",
+                  "No, both have minor injuries."
                 ],
                 [
                   "いいえ、父は軽いけが、母は重いけがです",
@@ -10060,6 +10797,15 @@
                 "operation": "comparison",
                 "evidence": "Interpret the father's negated significance as minor and the mother's ひどい as serious, retaining the different people.",
                 "noEcho": "All choices reuse the two parents or both. Neither 軽い nor 重い is quoted in the context, so the paired severity meanings must be derived."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 1,
+                "evidence": "Original: father minor, mother severe. Foil: the father's predicate becomes severe too, so both injuries are severe.",
+                "whyNeeded": "The mother's severe injury gives no information about the father's severity. Only the target idiom distinguishes a mixed pair from both-severe."
               }
             },
             {
@@ -10086,9 +10832,9 @@
                   "both people"
                 ],
                 [
-                  "二人ともけがはありません",
-                  "ふたりともけがはありません",
-                  "neither person has an injury"
+                  "軽いけがの人はいません",
+                  "かるいけがのひとはいません",
+                  "No one has a minor injury."
                 ]
               ],
               "correct": 1,
@@ -10097,17 +10843,26 @@
                 "operation": "relationship",
                 "evidence": "The father's injury is minor, while the mother's is serious; both are injuries.",
                 "noEcho": "Both people are named. The queried minor-injury condition paraphrases 大したことはありません rather than repeating a heard adjective."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 3,
+                "evidence": "Original: only father has a minor injury. Foil: both specified injuries are severe, so neither person has a minor injury.",
+                "whyNeeded": "The unchanged existence of two injuries and the mother's severity cannot identify whether a minor case exists. The target supplies the father's severity."
               }
             }
           ],
-          "reviewNotes": "Both severity and actor binding are necessary. Do not interpret 大したことはありません as no injury or as a guarantee of recovery."
+          "reviewNotes": "Both severity and actor binding are necessary. Do not interpret 大したことはありません as no injury or as a guarantee of recovery. Dependency substitutes the whole idiomatic predicate, preserving the injury/picture and every other story fact. For the negative idiom, injury existence is retained while seriousness changes; for positive praise, the stated evaluation changes without assuming objective technique or general ability. The question asks whether both injuries belong to the serious category, not whether two serious injuries have an identical medical severity."
         },
         {
           "stage": "contrastive",
           "variant": 2,
           "occurrence": [
-            "大した",
-            "たいした"
+            "大したものです",
+            "たいしたものです"
           ],
           "sentence": [
             "花子さんの絵は大したものです。太郎さんの絵は普通です。",
@@ -10365,47 +11120,65 @@
                 "operation": "comparison",
                 "evidence": "Hanako's 大したもの evaluation is impressive, while Taro's picture is only ordinary in this description.",
                 "noEcho": "Both names and pictures are spoken. The new impressive-above-ordinary condition must be applied to the appropriate evaluation."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 3,
+                "evidence": "Original: Hanako is praised as impressive and Taro called ordinary. Foil: Hanako is criticized as terrible while Taro remains ordinary, so neither is described as very impressive.",
+                "whyNeeded": "Taro's ordinary evaluation does not determine Hanako's. Without the target predicate, one-impressive and neither-impressive remain possible."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "二人の絵は、同じ評価ですか。",
-                "ふたりのえは、おなじひょうかですか。",
-                "Do the two pictures receive the same evaluation?"
+                "二人の絵では、どちらの評価が高いですか。",
+                "ふたりのえでは、どちらのひょうかがたかいですか。",
+                "Which picture receives the higher evaluation?"
               ],
               "options": [
                 [
-                  "いいえ、太郎さんの絵だけがすばらしいです",
-                  "いいえ、たろうさんのえだけがすばらしいです",
-                  "No, only Taro's picture is described as impressive."
+                  "太郎さんの絵です",
+                  "たろうさんのえです",
+                  "Taro's picture"
                 ],
                 [
-                  "はい、両方ともすばらしいです",
-                  "はい、りょうほうともすばらしいです",
-                  "Yes, both are impressive."
+                  "同じ評価です",
+                  "おなじひょうかです",
+                  "They receive the same evaluation."
                 ],
                 [
-                  "いいえ、花子さんの絵だけがすばらしいです",
-                  "いいえ、はなこさんのえだけがすばらしいです",
-                  "No, only Hanako's picture is described as impressive."
+                  "花子さんの絵です",
+                  "はなこさんのえです",
+                  "Hanako's picture"
                 ],
                 [
-                  "二人とも絵がありません",
-                  "ふたりともえがありません",
-                  "Neither person has a picture."
+                  "どちらも評価はありません",
+                  "どちらもひょうかはありません",
+                  "Neither picture receives an evaluation."
                 ]
               ],
               "correct": 2,
-              "explanation": "The first picture receives special praise and the second an ordinary evaluation, so the evaluations differ with praise belonging to Hanako.",
+              "explanation": "Hanako's picture is praised as impressive while Taro's is called ordinary, so Hanako's receives the higher stated evaluation.",
               "comprehension": {
-                "operation": "relationship",
-                "evidence": "The first picture receives special praise and the second an ordinary evaluation, so the evaluations differ with praise belonging to Hanako.",
-                "noEcho": "The answer must compare two expressed judgments; each name appears in the context and no correct answer copies 大したもの."
+                "operation": "comparison",
+                "evidence": "Hanako's picture is praised as impressive while Taro's is called ordinary, so Hanako's receives the higher stated evaluation.",
+                "noEcho": "Both owners and pictures are heard. A higher-evaluation relationship is not quoted and requires interpreting Hanako's idiomatic praise against the ordinary comparison."
+              },
+              "targetDependency": {
+                "foil": [
+                  "ひどいです",
+                  "ひどいです"
+                ],
+                "correct": 0,
+                "evidence": "Original: impressive outranks ordinary, giving Hanako the higher evaluation. Foil: terrible ranks below ordinary, giving Taro the higher evaluation.",
+                "whyNeeded": "The fixed ordinary evaluation alone does not say whether the other picture is above or below it. The target's positive or negative meaning is necessary."
               }
             }
           ],
-          "reviewNotes": "Compare the speaker's stated evaluations only. No universal claim that one picture is objectively better or technically more skillful is required."
+          "reviewNotes": "Compare the speaker's stated evaluations only. No universal claim that one picture is objectively better or technically more skillful is required. Dependency substitutes the whole idiomatic predicate, preserving the injury/picture and every other story fact. For the negative idiom, injury existence is retained while seriousness changes; for positive praise, the stated evaluation changes without assuming objective technique or general ability."
         }
       ]
     }

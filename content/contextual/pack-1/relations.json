@@ -12,17 +12,17 @@
             "うえ"
           ],
           "sentence": [
-            "猫は箱の上で眠っています。",
-            "ねこははこのうえでねむっています。",
-            "The cat is asleep on the box."
+            "猫は箱の上にいます。",
+            "ねこははこのうえにいます。",
+            "The cat is above the box."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
+            "comparisons",
             "adjectives",
-            "progressive",
-            "comparisons"
+            "questions"
           ],
           "vocabulary": [
             [
@@ -1304,6 +1304,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -1348,47 +1383,65 @@
                 "下",
                 "左",
                 "右"
-              ]
+              ],
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 0,
+                "evidence": "The original puts the box below the cat. Replacing only the target reverses that relation and the inverse-direction answer.",
+                "whyNeeded": "With the target relation unknown, the two object names alone do not determine their relative vertical positions."
+              }
             },
             {
               "kind": "detail",
               "prompt": [
-                "今、猫はどうしていますか。",
-                "いま、ねこはどうしていますか。",
-                "What is the cat doing now?"
+                "猫と箱の位置は、どうなっていますか。",
+                "ねことはこのいちは、どうなっていますか。",
+                "What is the spatial relationship between the cat and the box?"
               ],
               "options": [
                 [
-                  "起きて遊んでいます",
-                  "おきてあそんでいます",
-                  "It is awake and playing."
+                  "猫の方が高い所にいます",
+                  "ねこのほうがたかいところにいます",
+                  "The cat is higher."
                 ],
                 [
-                  "起きて食べています",
-                  "おきてたべています",
-                  "It is awake and eating."
+                  "箱の方が高い所にあります",
+                  "はこのほうがたかいところにあります",
+                  "The box is higher."
                 ],
                 [
-                  "今は起きていません",
-                  "いまはおきていません",
-                  "It is not awake now."
+                  "同じ高さで、猫が右にいます",
+                  "おなじたかさで、ねこがみぎにいます",
+                  "At the same height, with the cat on the right."
                 ],
                 [
-                  "起きて走っています",
-                  "おきてはしっています",
-                  "It is awake and running."
+                  "同じ高さで、猫が左にいます",
+                  "おなじたかさで、ねこがひだりにいます",
+                  "At the same height, with the cat on the left."
                 ]
               ],
-              "correct": 2,
-              "explanation": "The cat is asleep, which means it is not awake now.",
+              "correct": 0,
+              "explanation": "The target places the cat above the box, which determines which one is higher.",
               "comprehension": {
-                "operation": "result-state",
-                "evidence": "The cat is asleep, which means it is not awake now.",
-                "noEcho": "All options describe waking state, while the sentence uses 眠る; the listener must interpret that predicate."
+                "operation": "relationship",
+                "evidence": "The target places the cat above the box, which determines which one is higher.",
+                "noEcho": "Every choice describes both objects and a relative position. The spoken location must be interpreted as a height relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 1,
+                "evidence": "Originally the cat is above the box; the target-only foil reverses this, making the opposite height statement correct.",
+                "whyNeeded": "The target word is the only statement of vertical placement. The question cannot be answered from an unrelated action or the object names."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "simple",
@@ -1398,16 +1451,16 @@
             "うえ"
           ],
           "sentence": [
-            "友達は棚の上の時計で、今の時刻を調べました。",
-            "ともだちはたなのうえのとけいで、いまのじこくをしらべました。",
-            "My friend checked the current time using the clock above the shelf."
+            "時計は棚の上にあります。",
+            "とけいはたなのうえにあります。",
+            "The clock is above the shelf."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "polite-past",
-            "relative-clauses",
+            "comparisons",
+            "adjectives",
             "questions"
           ],
           "vocabulary": [
@@ -2695,6 +2748,41 @@
               "時刻",
               "じこく",
               "clock time"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -2739,47 +2827,65 @@
                 "下",
                 "左",
                 "右"
-              ]
+              ],
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 0,
+                "evidence": "The original puts the shelf below the clock. Replacing only the target reverses that relation and the inverse-direction answer.",
+                "whyNeeded": "With the target relation unknown, the two object names alone do not determine their relative vertical positions."
+              }
             },
             {
               "kind": "detail",
               "prompt": [
-                "友達が答えを調べた質問は、どれですか。",
-                "ともだちがこたえをしらべたしつもんは、どれですか。",
-                "Which question did my friend find the answer to?"
+                "時計と棚の位置は、どうなっていますか。",
+                "とけいとたなのいちは、どうなっていますか。",
+                "What is the spatial relationship between the clock and the shelf?"
               ],
               "options": [
                 [
-                  "今日は何曜日ですか",
-                  "きょうはなんようびですか",
-                  "What day of the week is it?"
+                  "時計の方が高い所にあります",
+                  "とけいのほうがたかいところにあります",
+                  "The clock is higher."
                 ],
                 [
-                  "今は何月ですか",
-                  "いまはなんがつですか",
-                  "What month is it?"
+                  "棚の方が高い所にあります",
+                  "たなのほうがたかいところにあります",
+                  "The shelf is higher."
                 ],
                 [
-                  "今、何歳ですか",
-                  "いま、なんさいですか",
-                  "How old are you now?"
+                  "同じ高さで、時計が右にあります",
+                  "おなじたかさで、とけいがみぎにあります",
+                  "At the same height, with the clock on the right."
                 ],
                 [
-                  "今、何時ですか",
-                  "いま、なんじですか",
-                  "What time is it now?"
+                  "同じ高さで、時計が左にあります",
+                  "おなじたかさで、とけいがひだりにあります",
+                  "At the same height, with the clock on the left."
                 ]
               ],
-              "correct": 3,
-              "explanation": "Checking the time determines what time it is, not a day, month or age.",
+              "correct": 0,
+              "explanation": "The target places the clock above the shelf, which determines which one is higher.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "Checking the current clock time determines what time it is now, not the weekday, month or an age.",
-                "noEcho": "The sentence says 時刻; all choices express different questions, so the clock-time meaning must be understood."
+                "operation": "relationship",
+                "evidence": "The target places the clock above the shelf, which determines which one is higher.",
+                "noEcho": "Every choice describes both objects and a relative position. The spoken location must be interpreted as a height relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 1,
+                "evidence": "Originally the clock is above the shelf; the target-only foil reverses this, making the opposite height statement correct.",
+                "whyNeeded": "The target word is the only statement of vertical placement. The question cannot be answered from an unrelated action or the object names."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
@@ -2789,18 +2895,17 @@
             "うえ"
           ],
           "sentence": [
-            "猫は箱の上で眠っています。犬は箱の下でご飯を食べています。",
-            "ねこははこのうえでねむっています。いぬははこのしたでごはんをたべています。",
-            "The cat is asleep on the box. The dog is eating under the box."
+            "猫は箱の上にいます。犬は箱の下にいます。",
+            "ねこははこのうえにいます。いぬははこのしたにいます。",
+            "The cat is above the box. The dog is below the box."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "progressive",
             "comparisons",
-            "relative-clauses",
-            "short-forms"
+            "adjectives",
+            "questions"
           ],
           "vocabulary": [
             [
@@ -4082,6 +4187,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -4090,7 +4230,7 @@
               "prompt": [
                 "箱より高い所にいるのは、どちらですか。",
                 "はこよりたかいところにいるのは、どちらですか。",
-                "Which animal is higher than the box?"
+                "Which is higher than the reference object?"
               ],
               "options": [
                 [
@@ -4115,19 +4255,28 @@
                 ]
               ],
               "correct": 0,
-              "explanation": "The cat is above the box while the dog is below it; only the cat is higher.",
+              "explanation": "Only the first named subject is higher than the reference; the second subject is on the opposite side.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The cat is above the box while the dog is below it; only the cat is higher.",
-                "noEcho": "Both animals and both vertical relations are stated; 高い must be mapped to 上 and bound to the correct animal."
+                "evidence": "Only the first named subject is higher than the reference; the second subject is on the opposite side.",
+                "noEcho": "Both candidates occur in the sentence. The relative adjective paraphrases the spatial relation rather than repeating a unique answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 3,
+                "evidence": "The foil moves the first subject to the same side as the second, so neither is higher than the reference.",
+                "whyNeeded": "The target determines whether the first candidate qualifies; knowing only the second candidate cannot distinguish the first-only answer from neither."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "今、眠っていないのは、どちらですか。",
-                "いま、ねむっていないのは、どちらですか。",
-                "Which animal is not asleep now?"
+                "箱より低い所にいるのは、どちらですか。",
+                "はこよりひくいところにいるのは、どちらですか。",
+                "Which is lower than the reference object?"
               ],
               "options": [
                 [
@@ -4152,15 +4301,24 @@
                 ]
               ],
               "correct": 1,
-              "explanation": "The cat is asleep; the dog is eating, so the dog is the animal not asleep.",
+              "explanation": "Only the second subject qualifies; the target places the first subject on the opposite side.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The cat is asleep; the dog is eating, so the dog is the animal not asleep.",
-                "noEcho": "Both actors are offered, and the question negates the sleeping predicate; matching 眠る to the cat would give the wrong answer."
+                "evidence": "Only the second subject qualifies; the target places the first subject on the opposite side.",
+                "noEcho": "Both candidates appear; the listener must interpret the target to exclude one of them, not just locate the other by a repeated name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 2,
+                "evidence": "The original target excludes the first subject, leaving only the second; the foil puts both on the queried side, making both correct.",
+                "whyNeeded": "Even though the second candidate is explicitly located, the target is needed to decide between only that candidate and both candidates."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
@@ -4170,19 +4328,17 @@
             "うえ"
           ],
           "sentence": [
-            "棚の上の時計で時間を調べました。棚の下のカレンダーで日付を調べました。",
-            "たなのうえのとけいでじかんをしらべました。たなのしたのカレンダーでひづけをしらべました。",
-            "I checked the time using the clock above the shelf and the date using the calendar below it."
+            "時計は棚の上にあります。カレンダーは棚の下にあります。",
+            "とけいはたなのうえにあります。カレンダーはたなのしたにあります。",
+            "The clock is above the shelf. The calendar is below it."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "polite-past",
-            "relative-clauses",
             "comparisons",
-            "questions",
-            "short-forms"
+            "adjectives",
+            "questions"
           ],
           "vocabulary": [
             [
@@ -5469,26 +5625,61 @@
               "日にち",
               "ひにち",
               "date; day of the month"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "棚より高い所にあったのは、どちらですか。",
-                "たなよりたかいところにあったのは、どちらですか。",
-                "Which object was higher than the shelf?"
+                "棚より高い所にあるのは、どちらですか。",
+                "たなよりたかいところにあるのは、どちらですか。",
+                "Which is higher than the reference object?"
               ],
               "options": [
                 [
-                  "時計です",
-                  "とけいです",
-                  "The clock."
+                  "時計だけです",
+                  "とけいだけです",
+                  "Only the clock."
                 ],
                 [
-                  "カレンダーです",
-                  "カレンダーです",
-                  "The calendar."
+                  "カレンダーだけです",
+                  "カレンダーだけです",
+                  "Only the calendar."
                 ],
                 [
                   "両方です",
@@ -5502,25 +5693,39 @@
                 ]
               ],
               "correct": 0,
-              "explanation": "The clock is above the shelf and the calendar below; only the clock is higher.",
+              "explanation": "Only the first named subject is higher than the reference; the second subject is on the opposite side.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The clock is above the shelf and the calendar below; only the clock is higher.",
-                "noEcho": "Both objects are spoken; the listener must interpret higher/above and bind the relation."
+                "evidence": "Only the first named subject is higher than the reference; the second subject is on the opposite side.",
+                "noEcho": "Both candidates occur in the sentence. The relative adjective paraphrases the spatial relation rather than repeating a unique answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 3,
+                "evidence": "The foil moves the first subject to the same side as the second, so neither is higher than the reference.",
+                "whyNeeded": "The target determines whether the first candidate qualifies; knowing only the second candidate cannot distinguish the first-only answer from neither."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "日にちは、何を見て調べましたか。",
-                "ひにちは、なにをみてしらべましたか。",
-                "What did I look at to check the date?"
+                "棚より低い所にあるのは、どちらですか。",
+                "たなよりひくいところにあるのは、どちらですか。",
+                "Which is lower than the reference object?"
               ],
               "options": [
                 [
-                  "時計です",
-                  "とけいです",
-                  "The clock."
+                  "時計だけです",
+                  "とけいだけです",
+                  "Only the clock."
+                ],
+                [
+                  "カレンダーだけです",
+                  "カレンダーだけです",
+                  "Only the calendar."
                 ],
                 [
                   "両方です",
@@ -5528,26 +5733,30 @@
                   "Both."
                 ],
                 [
-                  "カレンダーです",
-                  "カレンダーです",
-                  "The calendar."
-                ],
-                [
                   "どちらでもありません",
                   "どちらでもありません",
                   "Neither."
                 ]
               ],
-              "correct": 2,
-              "explanation": "The date was checked using the calendar; month and day paraphrase 日付.",
+              "correct": 1,
+              "explanation": "Only the second subject qualifies; the target places the first subject on the opposite side.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "The date was checked using the calendar; 日にち paraphrases 日付, while the clock was used for the time.",
-                "noEcho": "Both clock and calendar are mentioned; the prompt uses 日にち rather than the spoken 日付, so the requested meaning must be bound to its source."
+                "operation": "relationship",
+                "evidence": "Only the second subject qualifies; the target places the first subject on the opposite side.",
+                "noEcho": "Both candidates appear; the listener must interpret the target to exclude one of them, not just locate the other by a repeated name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "下",
+                  "した"
+                ],
+                "correct": 2,
+                "evidence": "The original target excludes the first subject, leaving only the second; the foil puts both on the queried side, making both correct.",
+                "whyNeeded": "Even though the second candidate is explicitly located, the target is needed to decide between only that candidate and both candidates."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         }
       ]
     },
@@ -5563,17 +5772,17 @@
             "した"
           ],
           "sentence": [
-            "子猫は椅子の下で、水を飲んでいます。",
-            "こねこはいすのしたで、みずをのんでいます。",
-            "The kitten is drinking water under the chair."
+            "子猫は椅子の下にいます。",
+            "こねこはいすのしたにいます。",
+            "The kitten is below the chair."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
+            "comparisons",
             "adjectives",
-            "progressive",
-            "comparisons"
+            "questions"
           ],
           "vocabulary": [
             [
@@ -6855,6 +7064,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -6899,47 +7143,65 @@
                 "下",
                 "左",
                 "右"
-              ]
+              ],
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 1,
+                "evidence": "The original puts the chair above the kitten. Replacing only the target reverses that relation and the inverse-direction answer.",
+                "whyNeeded": "With the target relation unknown, the two object names alone do not determine their relative vertical positions."
+              }
             },
             {
               "kind": "detail",
               "prompt": [
-                "子猫は何をしていますか。",
-                "こねこはなにをしていますか。",
-                "What is the kitten doing?"
+                "子猫と椅子の位置は、どうなっていますか。",
+                "こねこといすのいちは、どうなっていますか。",
+                "What is the spatial relationship between the kitten and the chair?"
               ],
               "options": [
                 [
-                  "食べ物を口に入れています",
-                  "たべものをくちにいれています",
-                  "Putting food into its mouth."
+                  "子猫の方が高い所にいます",
+                  "こねこのほうがたかいところにいます",
+                  "The kitten is higher."
                 ],
                 [
-                  "飲み物を床に捨てています",
-                  "のみものをゆかにすてています",
-                  "Throwing a drink onto the floor."
+                  "椅子の方が高い所にあります",
+                  "いすのほうがたかいところにあります",
+                  "The chair is higher."
                 ],
                 [
-                  "飲み物を口に入れています",
-                  "のみものをくちにいれています",
-                  "Putting a drink into its mouth."
+                  "同じ高さで、子猫が右にいます",
+                  "おなじたかさで、こねこがみぎにいます",
+                  "At the same height, with the kitten on the right."
                 ],
                 [
-                  "食べ物を床に置いています",
-                  "たべものをゆかにおいています",
-                  "Putting food onto the floor."
+                  "同じ高さで、子猫が左にいます",
+                  "おなじたかさで、こねこがひだりにいます",
+                  "At the same height, with the kitten on the left."
                 ]
               ],
-              "correct": 2,
-              "explanation": "Drinking water puts a drink into the mouth, rather than eating food or discarding it.",
+              "correct": 1,
+              "explanation": "The target places the kitten below the chair, which determines which one is higher.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "Drinking water puts a drink into the mouth, rather than eating food or discarding it.",
-                "noEcho": "All choices are new action descriptions; 飲む must be interpreted, with drink words also present in a wrong option."
+                "operation": "relationship",
+                "evidence": "The target places the kitten below the chair, which determines which one is higher.",
+                "noEcho": "Every choice describes both objects and a relative position. The spoken location must be interpreted as a height relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 0,
+                "evidence": "Originally the kitten is below the chair; the target-only foil reverses this, making the opposite height statement correct.",
+                "whyNeeded": "The target word is the only statement of vertical placement. The question cannot be answered from an unrelated action or the object names."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "simple",
@@ -6949,17 +7211,17 @@
             "した"
           ],
           "sentence": [
-            "机の下のかばんには、何も入っていません。",
-            "つくえのしたのかばんには、なにもはいっていません。",
-            "There is nothing inside the bag under the desk."
+            "かばんは机の下にあります。",
+            "かばんはつくえのしたにあります。",
+            "The bag is below the desk."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "result-state",
-            "short-forms",
-            "copula"
+            "comparisons",
+            "adjectives",
+            "questions"
           ],
           "vocabulary": [
             [
@@ -8241,6 +8503,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -8285,47 +8582,65 @@
                 "下",
                 "左",
                 "右"
-              ]
+              ],
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 1,
+                "evidence": "The original puts the desk above the bag. Replacing only the target reverses that relation and the inverse-direction answer.",
+                "whyNeeded": "With the target relation unknown, the two object names alone do not determine their relative vertical positions."
+              }
             },
             {
               "kind": "detail",
               "prompt": [
-                "かばんの中はどうなっていますか。",
-                "かばんのなかはどうなっていますか。",
-                "What is the inside of the bag like?"
+                "かばんと机の位置は、どうなっていますか。",
+                "かばんとつくえのいちは、どうなっていますか。",
+                "What is the spatial relationship between the bag and the desk?"
               ],
               "options": [
                 [
-                  "本だけが入っています",
-                  "ほんだけがはいっています",
-                  "It contains only books."
+                  "かばんの方が高い所にあります",
+                  "かばんのほうがたかいところにあります",
+                  "The bag is higher."
                 ],
                 [
-                  "空です",
-                  "からです",
-                  "It is empty."
+                  "机の方が高い所にあります",
+                  "つくえのほうがたかいところにあります",
+                  "The desk is higher."
                 ],
                 [
-                  "水だけが入っています",
-                  "みずだけがはいっています",
-                  "It contains only water."
+                  "同じ高さで、かばんが右にあります",
+                  "おなじたかさで、かばんがみぎにあります",
+                  "At the same height, with the bag on the right."
                 ],
                 [
-                  "物でいっぱいです",
-                  "ものでいっぱいです",
-                  "It is full of things."
+                  "同じ高さで、かばんが左にあります",
+                  "おなじたかさで、かばんがひだりにあります",
+                  "At the same height, with the bag on the left."
                 ]
               ],
               "correct": 1,
-              "explanation": "Nothing is inside the bag, so the bag is empty.",
+              "explanation": "The target places the bag below the desk, which determines which one is higher.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "Nothing is inside the bag, so the bag is empty.",
-                "noEcho": "The correct answer 空 is not spoken; the listener must interpret 何も plus the negative predicate."
+                "operation": "relationship",
+                "evidence": "The target places the bag below the desk, which determines which one is higher.",
+                "noEcho": "Every choice describes both objects and a relative position. The spoken location must be interpreted as a height relationship."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 0,
+                "evidence": "Originally the bag is below the desk; the target-only foil reverses this, making the opposite height statement correct.",
+                "whyNeeded": "The target word is the only statement of vertical placement. The question cannot be answered from an unrelated action or the object names."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
@@ -8335,18 +8650,17 @@
             "した"
           ],
           "sentence": [
-            "子猫は椅子の下で水を飲んでいます。大きい猫は椅子の上でご飯を食べています。",
-            "こねこはいすのしたでみずをのんでいます。おおきいねこはいすのうえでごはんをたべています。",
-            "The kitten is drinking water under the chair. The large cat is eating on the chair."
+            "子猫は椅子の下にいます。大きい猫は椅子の上にいます。",
+            "こねこはいすのしたにいます。おおきいねこはいすのうえにいます。",
+            "The kitten is below the chair. The large cat is above it."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "adjectives",
-            "progressive",
             "comparisons",
-            "relative-clauses"
+            "adjectives",
+            "questions"
           ],
           "vocabulary": [
             [
@@ -9628,6 +9942,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -9636,7 +9985,7 @@
               "prompt": [
                 "椅子より低い所にいるのは、どちらですか。",
                 "いすよりひくいところにいるのは、どちらですか。",
-                "Which cat is lower than the chair?"
+                "Which is lower than the reference object?"
               ],
               "options": [
                 [
@@ -9661,19 +10010,28 @@
                 ]
               ],
               "correct": 0,
-              "explanation": "The kitten is under the chair; the large cat is on top. Only the kitten is lower.",
+              "explanation": "Only the first named subject is lower than the reference; the second subject is on the opposite side.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The kitten is under the chair; the large cat is on top. Only the kitten is lower.",
-                "noEcho": "Both animals occur; 低い must be mapped to 下 rather than just spotting a noun."
+                "evidence": "Only the first named subject is lower than the reference; the second subject is on the opposite side.",
+                "noEcho": "Both candidates occur in the sentence. The relative adjective paraphrases the spatial relation rather than repeating a unique answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 3,
+                "evidence": "The foil moves the first subject to the same side as the second, so neither is lower than the reference.",
+                "whyNeeded": "The target determines whether the first candidate qualifies; knowing only the second candidate cannot distinguish the first-only answer from neither."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "飲み物を口に入れているのは、どちらですか。",
-                "のみものをくちにいれているのは、どちらですか。",
-                "Which cat is putting a drink into its mouth?"
+                "椅子より高い所にいるのは、どちらですか。",
+                "いすよりたかいところにいるのは、どちらですか。",
+                "Which is higher than the reference object?"
               ],
               "options": [
                 [
@@ -9697,16 +10055,25 @@
                   "Neither cat."
                 ]
               ],
-              "correct": 0,
-              "explanation": "The kitten drinks water; the large cat eats food. Drinking is the described drink-to-mouth action.",
+              "correct": 1,
+              "explanation": "Only the second subject qualifies; the target places the first subject on the opposite side.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "The kitten drinks water; the large cat eats food. Drinking is the described drink-to-mouth action.",
-                "noEcho": "Both cats and ingestion actions occur; the question paraphrases drinking rather than repeating 水 or 飲んでいます."
+                "operation": "relationship",
+                "evidence": "Only the second subject qualifies; the target places the first subject on the opposite side.",
+                "noEcho": "Both candidates appear; the listener must interpret the target to exclude one of them, not just locate the other by a repeated name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 2,
+                "evidence": "The original target excludes the first subject, leaving only the second; the foil puts both on the queried side, making both correct.",
+                "whyNeeded": "Even though the second candidate is explicitly located, the target is needed to decide between only that candidate and both candidates."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
@@ -9716,19 +10083,17 @@
             "した"
           ],
           "sentence": [
-            "机の下のかばんには何も入っていません。机の上のかばんには本がいっぱい入っています。",
-            "つくえのしたのかばんにはなにもはいっていません。つくえのうえのかばんにはほんがいっぱいはいっています。",
-            "The bag under the desk contains nothing. The bag on the desk is full of books."
+            "赤いかばんは机の下にあります。青いかばんは机の上にあります。",
+            "あかいかばんはつくえのしたにあります。あおいかばんはつくえのうえにあります。",
+            "The red bag is below the desk. The blue bag is above it."
           ],
           "grammarTags": [
             "particles",
             "noun-no",
             "location-existence",
-            "result-state",
-            "adjectives",
             "comparisons",
-            "relative-clauses",
-            "copula-negative"
+            "adjectives",
+            "questions"
           ],
           "vocabulary": [
             [
@@ -11010,85 +11375,138 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "中が空のかばんは、机と比べてどこにありますか。",
-                "なかがからのかばんは、つくえとくらべてどこにありますか。",
-                "Where is the empty bag compared with the desk?"
+                "机より低い所にあるのは、どちらですか。",
+                "つくえよりひくいところにあるのは、どちらですか。",
+                "Which is lower than the reference object?"
               ],
               "options": [
                 [
-                  "高い所です",
-                  "たかいところです",
-                  "In a higher place."
+                  "赤いかばんだけです",
+                  "あかいかばんだけです",
+                  "Only the red bag."
                 ],
                 [
-                  "同じ高さの右側です",
-                  "おなじたかさのみぎがわです",
-                  "At the same height, on the right."
+                  "青いかばんだけです",
+                  "あおいかばんだけです",
+                  "Only the blue bag."
                 ],
                 [
-                  "低い所です",
-                  "ひくいところです",
-                  "In a lower place."
+                  "両方です",
+                  "りょうほうです",
+                  "Both."
                 ],
                 [
-                  "同じ高さの左側です",
-                  "おなじたかさのひだりがわです",
-                  "At the same height, on the left."
+                  "どちらでもありません",
+                  "どちらでもありません",
+                  "Neither."
                 ]
               ],
-              "correct": 2,
-              "explanation": "The empty bag is the one below the desk, so it is lower than the desk.",
+              "correct": 0,
+              "explanation": "Only the first named subject is lower than the reference; the second subject is on the opposite side.",
               "comprehension": {
                 "operation": "relationship",
-                "evidence": "The empty bag is the one below the desk, so it is lower than the desk.",
-                "noEcho": "Both bag locations are spoken; 空 must map to 何も入っていない and 低い to 下."
+                "evidence": "Only the first named subject is lower than the reference; the second subject is on the opposite side.",
+                "noEcho": "Both candidates occur in the sentence. The relative adjective paraphrases the spatial relation rather than repeating a unique answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 3,
+                "evidence": "The foil moves the first subject to the same side as the second, so neither is lower than the reference.",
+                "whyNeeded": "The target determines whether the first candidate qualifies; knowing only the second candidate cannot distinguish the first-only answer from neither."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "机の上のかばんは、どんな状態ですか。",
-                "つくえのうえのかばんは、どんなじょうたいですか。",
-                "What is the state of the bag on the desk?"
+                "机より高い所にあるのは、どちらですか。",
+                "つくえよりたかいところにあるのは、どちらですか。",
+                "Which is higher than the reference object?"
               ],
               "options": [
                 [
-                  "中は空です",
-                  "なかはからです",
-                  "It is empty inside."
+                  "赤いかばんだけです",
+                  "あかいかばんだけです",
+                  "Only the red bag."
                 ],
                 [
-                  "本はありません",
-                  "ほんはありません",
-                  "It contains no books."
+                  "青いかばんだけです",
+                  "あおいかばんだけです",
+                  "Only the blue bag."
                 ],
                 [
-                  "水だけが入っています",
-                  "みずだけがはいっています",
-                  "It contains only water."
+                  "両方です",
+                  "りょうほうです",
+                  "Both."
                 ],
                 [
-                  "中は空ではありません",
-                  "なかはからではありません",
-                  "It is not empty inside."
+                  "どちらでもありません",
+                  "どちらでもありません",
+                  "Neither."
                 ]
               ],
-              "correct": 3,
-              "explanation": "The upper bag is full of books, so it is not empty and does contain books.",
+              "correct": 1,
+              "explanation": "Only the second subject qualifies; the target places the first subject on the opposite side.",
               "comprehension": {
-                "operation": "paraphrase",
-                "evidence": "The upper bag is full of books, so it is not empty and does contain books.",
-                "noEcho": "The choice uses a negative emptiness statement absent from the sentence; repeating a location word does not identify it."
+                "operation": "relationship",
+                "evidence": "Only the second subject qualifies; the target places the first subject on the opposite side.",
+                "noEcho": "Both candidates appear; the listener must interpret the target to exclude one of them, not just locate the other by a repeated name."
+              },
+              "targetDependency": {
+                "foil": [
+                  "上",
+                  "うえ"
+                ],
+                "correct": 2,
+                "evidence": "The original target excludes the first subject, leaving only the second; the foil puts both on the queried side, making both correct.",
+                "whyNeeded": "Even though the second candidate is explicitly located, the target is needed to decide between only that candidate and both candidates."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         }
       ]
     },
@@ -12437,6 +12855,41 @@
               "必要",
               "ひつよう",
               "necessary"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -12475,6 +12928,15 @@
                 "operation": "comparison",
                 "evidence": "The red box is large, while the other is small; identify its color through the larger physical size.",
                 "noEcho": "Both colors and both objects are named. The question describes occupied space instead of repeating 大きい, and color alone gives no size information without the audio."
+              },
+              "targetDependency": {
+                "foil": [
+                  "青い箱と同じ大きさで",
+                  "あおいはことおなじおおきさで"
+                ],
+                "correct": 2,
+                "evidence": "The original large object occupies more space than the small one. The foil explicitly makes its size equal to the other object, so equal space is the entailed alternative.",
+                "whyNeeded": "The color labels do not reveal size. Without understanding the target size predicate, greater occupied space cannot be distinguished from equality."
               }
             },
             {
@@ -12512,10 +12974,19 @@
                 "operation": "comparison",
                 "evidence": "The two color labels differ and one object is large while the other is small, so both color and size differ.",
                 "noEcho": "The answer describes sameness/difference for two attributes rather than quoting any color or size adjective; all four combinations are plausible before listening."
+              },
+              "targetDependency": {
+                "foil": [
+                  "青い箱と同じ大きさで",
+                  "あおいはことおなじおおきさで"
+                ],
+                "correct": 0,
+                "evidence": "The original objects differ in color and size. The foil explicitly equalizes only size, so only their colors differ.",
+                "whyNeeded": "Color difference alone cannot distinguish both attributes differing from only color differing; the target supplies the missing size information."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: color is independent of physical size, so neither answer can be selected from general size knowledge without hearing the facts. The two questions interpret larger size as occupying more space and compare two explicitly stated attributes."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "simple",
@@ -13858,6 +14329,41 @@
               "必要",
               "ひつよう",
               "necessary"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -13896,6 +14402,15 @@
                 "operation": "comparison",
                 "evidence": "The blue bag is large, while the other is small; identify its color through the larger physical size.",
                 "noEcho": "Both colors and both objects are named. The question describes occupied space instead of repeating 大きい, and color alone gives no size information without the audio."
+              },
+              "targetDependency": {
+                "foil": [
+                  "黄色いかばんと同じ大きさで",
+                  "きいろいかばんとおなじおおきさで"
+                ],
+                "correct": 2,
+                "evidence": "The original large object occupies more space than the small one. The foil explicitly makes its size equal to the other object, so equal space is the entailed alternative.",
+                "whyNeeded": "The color labels do not reveal size. Without understanding the target size predicate, greater occupied space cannot be distinguished from equality."
               }
             },
             {
@@ -13933,32 +14448,41 @@
                 "operation": "comparison",
                 "evidence": "The two color labels differ and one object is large while the other is small, so both color and size differ.",
                 "noEcho": "The answer describes sameness/difference for two attributes rather than quoting any color or size adjective; all four combinations are plausible before listening."
+              },
+              "targetDependency": {
+                "foil": [
+                  "黄色いかばんと同じ大きさで",
+                  "きいろいかばんとおなじおおきさで"
+                ],
+                "correct": 0,
+                "evidence": "The original objects differ in color and size. The foil explicitly equalizes only size, so only their colors differ.",
+                "whyNeeded": "Color difference alone cannot distinguish both attributes differing from only color differing; the target supplies the missing size information."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: color is independent of physical size, so neither answer can be selected from general size knowledge without hearing the facts. The two questions interpret larger size as occupying more space and compare two explicitly stated attributes."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
           "variant": 1,
           "occurrence": [
-            "大きい",
-            "おおきい"
+            "大きくて",
+            "おおきくて"
           ],
           "sentence": [
-            "大きい箱に赤い箱を入れました。小さい箱には何も入っていません。",
-            "おおきいはこにあかいはこをいれました。ちいさいはこにはなにもはいっていません。",
-            "I put a red box into the large box. There is nothing in the small box."
+            "赤い箱は大きくて、本が入っています。青い箱は小さくて、靴が入っています。",
+            "あかいはこはおおきくて、ほんがはいっています。あおいはこはちいさくて、くつがはいっています。",
+            "The red box is large and contains books. The blue box is small and contains shoes."
           ],
           "grammarTags": [
-            "particles",
-            "noun-no",
             "adjectives",
-            "polite-past",
+            "noun-adjective-linking",
+            "noun-no",
+            "particles",
             "result-state",
-            "location-existence",
+            "comparisons",
             "relative-clauses",
-            "short-forms"
+            "location-existence"
           ],
           "vocabulary": [
             [
@@ -15245,85 +15769,138 @@
               "囲む",
               "かこむ",
               "to surround; to enclose"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
             {
               "kind": "target",
               "prompt": [
-                "赤い箱を囲んでいるのは、どちらの箱ですか。",
-                "あかいはこをかこんでいるのは、どちらのはこですか。",
-                "Which box encloses the red box?"
+                "本の箱と靴の箱では、どちらが場所をたくさん取りますか。",
+                "ほんのはことくつのはこでは、どちらがばしょをたくさんとりますか。",
+                "Which takes up more space: the box with books or the box with shoes?"
               ],
               "options": [
                 [
-                  "大きい箱です",
-                  "おおきいはこです",
-                  "The large box."
+                  "本の箱です",
+                  "ほんのはこです",
+                  "The box with books."
                 ],
                 [
-                  "小さい箱です",
-                  "ちいさいはこです",
-                  "The small box."
+                  "靴の箱です",
+                  "くつのはこです",
+                  "The box with shoes."
                 ],
                 [
-                  "両方です",
-                  "りょうほうです",
-                  "Both."
+                  "同じです",
+                  "おなじです",
+                  "They take equal space."
                 ],
                 [
-                  "どちらもありません",
-                  "どちらもありません",
-                  "Neither."
+                  "大きさは話していません",
+                  "おおきさははなしていません",
+                  "The sizes were not stated."
                 ]
               ],
               "correct": 0,
-              "explanation": "The red box was put inside the large box; the large box is its outer container.",
+              "explanation": "The book box is the large red box, while the shoe box is small.",
               "comprehension": {
-                "operation": "result-state",
-                "evidence": "The red box was put inside the large box; the large box is its outer container.",
-                "noEcho": "Both large and small boxes occur; putting the red box into a container must be interpreted as that container enclosing it. Merely being somewhere outside the red box is insufficient."
+                "operation": "comparison",
+                "evidence": "The book box is the large red box, while the shoe box is small.",
+                "noEcho": "Both contents and sizes are mentioned; the question binds contents to size and expresses size as occupied space."
+              },
+              "targetDependency": {
+                "foil": [
+                  "青い箱と同じ大きさで",
+                  "あおいはことおなじおおきさで"
+                ],
+                "correct": 2,
+                "evidence": "The original book box is larger; the foil explicitly makes it the same size as the shoe box, so equal space becomes correct.",
+                "whyNeeded": "The contents do not determine container size. The target predicate is needed to compare the space taken by the two boxes."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "大きい箱と小さい箱のうち、中が空なのはどちらですか。",
-                "おおきいはことちいさいはこのうち、なかがからなのはどちらですか。",
-                "Of the large and small boxes, which is empty inside?"
+                "小さい方から並べます。最初に置くのはどちらですか。",
+                "ちいさいほうからならべます。さいしょにおくのはどちらですか。",
+                "I arrange the smaller one first. Which box goes first?"
               ],
               "options": [
                 [
-                  "大きい箱です",
-                  "おおきいはこです",
-                  "The large box."
+                  "本の箱です",
+                  "ほんのはこです",
+                  "The book box."
                 ],
                 [
-                  "小さい箱です",
-                  "ちいさいはこです",
-                  "The small box."
+                  "靴の箱です",
+                  "くつのはこです",
+                  "The shoe box."
                 ],
                 [
-                  "両方です",
-                  "りょうほうです",
-                  "Both."
+                  "同じ大きさです。どちらでも同じです",
+                  "おなじおおきさです。どちらでもおなじです",
+                  "They are the same size, so either is equivalent."
                 ],
                 [
-                  "どちらもありません",
-                  "どちらもありません",
-                  "Neither."
+                  "箱は一つだけです",
+                  "はこはひとつだけです",
+                  "There is only one box."
                 ]
               ],
               "correct": 1,
-              "explanation": "The large box contains the red box; only the small box contains nothing and is empty.",
+              "explanation": "The shoe box is smaller than the book box, so it goes first.",
               "comprehension": {
-                "operation": "relationship",
-                "evidence": "The large box contains the red box; only the small box contains nothing and is empty.",
-                "noEcho": "Both size words are repeated across sentence and choices; 空 paraphrases 何も入っていません and contrasts it with containment."
+                "operation": "comparison",
+                "evidence": "The shoe box is smaller than the book box, so it goes first.",
+                "noEcho": "The question gives an ordering rule, not a quoted content or size word that uniquely selects an answer."
+              },
+              "targetDependency": {
+                "foil": [
+                  "青い箱と同じ大きさで",
+                  "あおいはことおなじおおきさで"
+                ],
+                "correct": 2,
+                "evidence": "The original target makes the book box larger; with explicitly equal sizes either order is equivalent.",
+                "whyNeeded": "Knowing the blue box is small is not enough: the target is needed to know whether the red box is larger, equal or smaller."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         },
         {
           "stage": "contrastive",
@@ -16627,6 +17204,41 @@
               "日",
               "ひ",
               "day"
+            ],
+            [
+              "位置",
+              "いち",
+              "position"
+            ],
+            [
+              "方",
+              "ほう",
+              "side; one in a comparison"
+            ],
+            [
+              "場所",
+              "ばしょ",
+              "space; place"
+            ],
+            [
+              "少ない",
+              "すくない",
+              "few; less"
+            ],
+            [
+              "並べる",
+              "ならべる",
+              "to arrange"
+            ],
+            [
+              "最初",
+              "さいしょ",
+              "first"
+            ],
+            [
+              "同じ大きさ",
+              "おなじおおきさ",
+              "same size"
             ]
           ],
           "questions": [
@@ -16665,47 +17277,65 @@
                 "operation": "comparison",
                 "evidence": "The shoe bag is large and the book bag small, so the question reverses the stated size relationship.",
                 "noEcho": "Both objects and sizes are present; the listener must bind them, compare sizes and reject the reversed comparison."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本のかばんと同じ大きさの",
+                  "ほんのかばんとおなじおおきさの"
+                ],
+                "correct": 1,
+                "evidence": "Originally the shoe bag is larger than the book bag; the foil explicitly makes their sizes equal, so the equal-size answer replaces the original comparison.",
+                "whyNeeded": "The target supplies one side of the comparison; the book bag being small cannot establish the relative size without the shoe bag size."
               }
             },
             {
               "kind": "detail",
               "prompt": [
-                "読む物が入っているのは、どちらのかばんですか。",
-                "よむものがはいっているのは、どちらのかばんですか。",
-                "Which bag contains something to read?"
+                "読む物のかばんと靴のかばんでは、どちらが場所を少なく取りますか。",
+                "よむもののかばんとくつのかばんでは、どちらがばしょをすくなくとりますか。",
+                "Which takes less space: the bag with reading material or the bag with shoes?"
               ],
               "options": [
                 [
-                  "大きい方です",
-                  "おおきいほうです",
-                  "The larger one."
+                  "読む物のかばんです",
+                  "よむもののかばんです",
+                  "The bag with reading material."
                 ],
                 [
-                  "小さい方です",
-                  "ちいさいほうです",
-                  "The smaller one."
+                  "靴のかばんです",
+                  "くつのかばんです",
+                  "The shoe bag."
                 ],
                 [
-                  "両方です",
-                  "りょうほうです",
-                  "Both."
+                  "同じです",
+                  "おなじです",
+                  "They take equal space."
                 ],
                 [
-                  "どちらもありません",
-                  "どちらもありません",
-                  "Neither."
+                  "大きさは話していません",
+                  "おおきさははなしていません",
+                  "The sizes were not stated."
                 ]
               ],
-              "correct": 1,
-              "explanation": "Only books are in the small bag; the large bag contains only shoes. Books are the reading material.",
+              "correct": 0,
+              "explanation": "The reading material is the books in the small bag; the shoe bag is larger, so the book bag takes less space.",
               "comprehension": {
-                "operation": "relationship",
-                "evidence": "Only books are in the small bag; the large bag contains only shoes. Books are the reading material.",
-                "noEcho": "The question never says 本; it asks for its meaning as reading material and then requires the size-to-content binding."
+                "operation": "comparison",
+                "evidence": "The reading material is the books in the small bag; the shoe bag is larger, so the book bag takes less space.",
+                "noEcho": "Reading material paraphrases books, then contents must be bound to both size statements before comparing space."
+              },
+              "targetDependency": {
+                "foil": [
+                  "本のかばんと同じ大きさの",
+                  "ほんのかばんとおなじおおきさの"
+                ],
+                "correct": 2,
+                "evidence": "The book bag originally takes less space; the foil explicitly equalizes the shoe bag to the other bag, so equal space becomes correct.",
+                "whyNeeded": "The target is needed to know whether the other bag takes more, equal or less space; locating the books alone is insufficient."
               }
             }
           ],
-          "reviewNotes": "Comprehension revision: exclusive current contents are stated explicitly; the reading-material answer does not assume the absence of pre-existing books. Compare sizes and bind the item category to the correct bag."
+          "reviewNotes": "Every question requires the target meaning. The target-only counterfactual keeps actors, other facts, question and choices fixed and records a different entailed answer. Review both keys and the masking explanation; unrelated actions do not supply an answer."
         }
       ]
     }

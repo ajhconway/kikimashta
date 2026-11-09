@@ -48,6 +48,26 @@ export function validateComprehension(sentence, question) {
   assert.ok(!uniqueAnswerEcho(sentence, question), 'Only the correct answer is copied from the sentence: rewrite the question or choices')
 }
 
+/** Construct, rather than trust authored text for, the target-only contrast.
+ * Structural checks cannot establish the Japanese entailment of either key. */
+export function targetCounterfactual(context, question) {
+  const proof = question.targetDependency
+  assert.ok(proof && Array.isArray(proof.foil) && proof.foil.length === 2, 'Every question needs a target-dependence counterfactual')
+  const [surface, reading] = context.occurrence
+  const [foilText, foilReading] = proof.foil
+  assert.ok(typeof foilText === 'string' && foilText.trim() && foilText !== surface, 'Foil must replace the target expression')
+  assert.ok(typeof foilReading === 'string' && foilReading.trim() && spoken(foilReading) !== spoken(reading) && !/\p{Script=Han}/u.test(foilReading), 'Foil needs a different kana reading')
+  assert.ok(context.sentence[0].includes(surface) && context.sentence[1].includes(reading), 'Target expression must occur in sentence text and reading')
+  assert.ok(Number.isInteger(proof.correct) && proof.correct >= 0 && proof.correct < question.options.length && proof.correct !== question.correct,
+    'Changing only the target must change the correct answer')
+  for (const field of ['evidence', 'whyNeeded']) assert.ok(typeof proof[field] === 'string' && proof[field].trim().length > 25, `Missing substantive target-dependence ${field}`)
+  return { target: { text: surface, reading }, foil: { text: foilText, reading: foilReading },
+    sentence: { text: context.sentence[0].replaceAll(surface, foilText), reading: context.sentence[1].replaceAll(reading, foilReading) },
+    originalCorrect: question.correct, alternateCorrect: proof.correct,
+    originalAnswer: question.options[question.correct][0], alternateAnswer: question.options[proof.correct][0],
+    whyNeeded: proof.whyNeeded, evidence: proof.evidence }
+}
+
 export function pack1Scope(vocabulary) {
   return vocabulary.filter(word => word.sourceLevel === 1 && !word.removalReason && !wordFirstWords.includes(word.text))
 }
@@ -60,7 +80,7 @@ export function compilePack1(root = projectRoot) {
   const pictureIds = new Set(read(root, 'content/practice-pool.json').itemIds)
   const authored = sourceFiles.flatMap(file => read(root, file).targets)
   assert.deepEqual(authored.map(target => target.text).sort(), scope.map(word => word.text).sort(), 'Draft must cover each of the 29 targets once')
-  const previous = read(root, 'content/contextual/pack-1/previous-questions.json')
+  const previous = read(root, 'content/contextual/pack-1/target-dependence-baseline.json')
   assert.equal(previous.questions.length, 232, 'Keep the complete original review for comparison')
   const audits = []
   const support = new Map()
@@ -91,6 +111,8 @@ export function compilePack1(root = projectRoot) {
       assert.deepEqual(context.questions.map(question => question.kind).sort(), ['detail', 'target'])
       const questions = context.questions.map(question => {
         try { validateComprehension(context.sentence, question) } catch (error) { throw new Error(`${id}-${question.kind}: ${error.message}`, { cause: error }) }
+        let targetDependency
+        try { targetDependency = targetCounterfactual(context, question) } catch (error) { throw new Error(`${id}-${question.kind}: ${error.message}`, { cause: error }) }
         assert.equal(question.options.length, 4, `${id}: every question requires four choices`)
         assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct < 4, `${id}: invalid answer index`)
         if (question.pictureOptions) assert.equal(question.pictureOptions.length, 4)
@@ -109,19 +131,23 @@ export function compilePack1(root = projectRoot) {
         const questionId = `${id}-${question.kind}`
         const before = previous.questions.find(old => old.targetItemId === target.id && old.stage === context.stage && old.variant === context.variant && old.focus === question.kind)
         assert.ok(before, `${questionId}: missing original question audit`)
-        const changed = before.sentence.text !== context.sentence[0] || before.prompt.text !== question.prompt[0] ||
-          JSON.stringify(before.options.map(option => [option.text, option.reading, option.meaning])) !== JSON.stringify(question.options)
+        const changed = ['text', 'reading', 'meaning'].some((field, index) => before.sentence[field] !== context.sentence[index] || before.prompt[field] !== question.prompt[index]) ||
+          JSON.stringify(before.options.map(option => [option.text, option.reading, option.meaning])) !== JSON.stringify(question.options) ||
+          before.options.find(option => option.id === before.correctOptionId).text !== question.options[question.correct][0]
         audits.push({ questionId, contextId: id, targetItemId: target.id, focus: question.kind,
-          previousQuestionId: before.id, decision: changed ? 'rewritten' : 'retained-after-review', ...question.comprehension })
+          previousQuestionId: before.id, decision: changed ? 'rewritten' : 'retained-after-review', ...question.comprehension, targetDependency })
         // Authoring focus and literal answer concept are independent. A result
         // of 上げる can be 上 without falsely identifying those two vocabulary IDs.
         const kind = options[question.correct].vocabularyItemId === target.id ? 'target' : 'detail'
-        return { id: questionId, revision: before.id === questionId ? 2 : 1, kind,
+        return { id: questionId, revision: before.questionRevision + (changed ? 1 : 0), kind,
           prompt: prompt(question.prompt, [...context.grammarTags, 'questions', 'question-words'], words),
           formats: question.pictureOptions ? ['picture', 'text'] : ['text'], options,
           correctOptionId: options[question.correct].id, explanation: question.explanation }
       })
-      return { id, revision: previouslyRecordedWords.includes(target.text) ? 1 : 2, stage: context.stage,
+      const beforeContext = previous.questions.find(old => old.targetItemId === target.id && old.stage === context.stage && old.variant === context.variant)
+      const changedContext = audits.some(audit => audit.contextId === id && audit.decision === 'rewritten') ||
+        JSON.stringify(beforeContext.targetOccurrence) !== JSON.stringify({ surface: context.occurrence[0], reading: context.occurrence[1] })
+      return { id, revision: beforeContext.contextRevision + (changedContext ? 1 : 0), stage: context.stage,
         ...(context.stage === 'simple' ? { comparisonContextId: id.replace('-simple-', '-contrastive-') } : {}),
         targetItemId: target.id, targetOccurrence: { surface: context.occurrence[0], reading: context.occurrence[1] },
         sentence: prompt(context.sentence, context.grammarTags, words), questions,
@@ -205,17 +231,20 @@ export function renderPack1Review(loaded) {
     const audit = audits.get(questionId)
     const before = previous.get(audit.previousQuestionId)
     const oldChoices = before.options.map(option => `${option.text}${option.id === before.correctOptionId ? ' ✓' : ''}`).join(' / ')
+    const dependency = audit.targetDependency
+    const target = targets.get(audit.targetItemId)
+    const targetCheck = `<details class="metadata target-dependency"><summary>Target-word check · ${escape(target.text)}</summary><p><strong>Why the target is necessary:</strong> ${escape(dependency.whyNeeded)}</p><p>Change only <span lang="ja">${escape(dependency.target.text)} → ${escape(dependency.foil.text)}</span>:</p><p class="japanese" lang="ja">${escape(dependency.sentence.text)}</p><p lang="ja">${escape(dependency.sentence.reading)}</p><p><strong>Original answer:</strong> <span lang="ja">${escape(dependency.originalAnswer)}</span></p><p><strong>Answer with changed target:</strong> <span lang="ja">${escape(dependency.alternateAnswer)}</span></p><p>${escape(dependency.evidence)}</p></details>`
     const details = `<details class="metadata"><summary>Comprehension check · ${escape(audit.operation)}</summary><p><strong>Meaning required:</strong> ${escape(audit.evidence)}</p><p><strong>Copying check:</strong> ${escape(audit.noEcho)}</p><details><summary>Previous question</summary><p lang="ja">${escape(before.sentence.text)}</p><p lang="ja">${escape(before.prompt.text)}</p><p lang="ja">${escape(oldChoices)}</p><p class="identifier">${escape(before.id)} · ${escape(audit.decision)}</p></details></details>`
-    return section.replace(/<h3>[^<]+<\/h3>/, `<h3>${audit.focus === 'target' ? 'Target meaning' : 'Situation meaning'}</h3>`).replace('</section>', `${details}</section>`)
+    return section.replace(/<h3>[^<]+<\/h3>/, `<h3>${audit.focus === 'target' ? 'Target meaning' : 'Target in context'}</h3>`).replace('</section>', `${targetCheck}${details}</section>`)
   })
   const options = scope.map(word => `<option value="${escape(word.id)}">${escape(word.text)} · ${escape(word.meaning)}</option>`).join('')
   return `${head}<style>[hidden]{display:none!important}#filters{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}label{display:grid;gap:6px}select{font:inherit;padding:10px;border:1px solid #b6a7c7;border-radius:10px;background:white;max-width:100%}header{position:relative}article{scroll-margin-top:16px}</style></head><body><header>
 <h1>Pack 1 · Contextual questions</h1>
 <p>29 words · 116 sentences · 232 questions · Four choices each</p>
-<p class="notice">All 232 questions have been reviewed for comprehension. Revised text awaits approval before audio. Each question includes a meaning/copying check and its previous version.</p>
+<p class="notice">Every question must require the target word. Expand “Target-word check” to see how changing only that expression changes the correct answer. Revised text awaits approval before audio.</p>
 <form id="filters"><div><label for="target-filter">Word</label><select id="target-filter" name="target"><option value="">All words</option>${options}</select></div><div><label for="stage-filter">Stage</label><select id="stage-filter" name="stage"><option value="">Both stages</option><option value="simple">Simple</option><option value="contrastive">Contrastive</option></select></div><div><label for="origin-filter">Original source</label><select id="origin-filter" name="origin"><option value="">All questions</option><option value="expansion">Pack 1 expansion</option><option value="pilot">Replaces pilot text</option></select></div></form>
 <p id="visible-count" role="status" aria-live="polite">116 sentence contexts · 232 questions shown</p><p>Please refer to the sentence/question IDs when suggesting edits. <a href="comprehension-audit.md">Full comprehension audit</a> · <a href="review.md">Readable text</a> · <a href="${escape(bank.grammarReference)}">Genki I scope</a></p>
-<details><summary>Coverage and progression notes</summary><p>Two simple and two contrastive variants per word, each with a question focused on target meaning and another on situation meaning. The correct answer need not be the literal target word. All 116 contexts are pending, including new draft replacements for the twelve pilot contexts. Existing approved banks, speech and progress retain their original identities.</p><p><strong>Contextual only:</strong> 下さい・力いっぱい・大した. These need direct entry into simple contextual practice in a later integration. 人工・人口 retain word cards, with homophones excluded as standalone distractors. The seven bare numerals and ふじ山 remain word-first. This text review does not generate audio, activate cards or save progress.</p></details>
+<details><summary>Coverage and progression notes</summary><p>Two simple and two contrastive variants per word, each with two questions requiring the target meaning. A question about another detail must still depend on the target. The correct answer need not be the literal target word. All 116 contexts remain pending. Existing approved banks, speech and progress retain their original identities.</p><p><strong>Contextual only:</strong> 下さい・力いっぱい・大した. These need direct entry into simple contextual practice in a later integration. 人工・人口 retain word cards, with homophones excluded as standalone distractors. The seven bare numerals and ふじ山 remain word-first. This text review does not generate audio, activate cards or save progress.</p></details>
 </header>${articles}<script src="filters.js"></script></body></html>\n`
 }
 
@@ -234,7 +263,8 @@ export function buildPack1({ root = projectRoot, write = true } = {}) {
     put('content/contextual/pack-1/comprehension-audit.json', JSON.stringify({ schemaVersion: 1, baselineRevision: loaded.previous.sourceRevision, questions: loaded.audits }, null, 2) + '\n')
   }
   return { ...contextualSummary(bank), auditedQuestions: loaded.audits.length,
-    rewrittenQuestions: loaded.audits.filter(audit => audit.decision === 'rewritten').length }
+    rewrittenQuestions: loaded.audits.filter(audit => audit.decision === 'rewritten').length,
+    targetDependenceChecks: loaded.audits.filter(audit => audit.targetDependency).length }
 }
 
 export function renderComprehensionAudit(loaded) {
@@ -242,17 +272,23 @@ export function renderComprehensionAudit(loaded) {
   const previous = new Map(loaded.previous.questions.map(question => [question.id, question]))
   const questions = new Map(loaded.bank.contexts.flatMap(context => context.questions.map(question => [question.id, { context, question }])))
   const lines = ['# Pack 1 comprehension review', '',
-    'All 232 previous questions were reviewed, including the 24 pilot questions. Keep two questions per context; sentences may change. Target focus means understanding the target, not requiring it as the literal answer.', '',
-    'A structural copying check supplements individual semantic review; passing it alone does not establish comprehension quality. Each entry records the required interpretation and why matching a uniquely repeated fragment is insufficient. All revised text remains pending; original accepted media and progress are preserved.', '']
+    'All 232 questions were checked for target-word dependence. Masking the target must make the answer indeterminate. Each target-only counterfactual keeps the question, choices and other facts fixed and has a different entailed answer. Both target-focus and contextual-detail questions must meet this rule.', '',
+    'Structural checks verify the replacement and different key, not Japanese entailment. Original and counterfactual answer keys require independent semantic review. The existing non-copying and beginner-language requirements still apply. All revised text remains pending; original accepted media and progress are preserved.', '']
   for (const audit of loaded.audits) {
     const { context, question } = questions.get(audit.questionId)
     const before = previous.get(audit.previousQuestionId)
+    const dependency = audit.targetDependency
     lines.push(`## ${byId.get(audit.targetItemId).text} · ${context.stage} · ${audit.questionId}`, '',
       `**Decision:** ${audit.decision}. **Focus:** ${audit.focus}. **Operation:** ${audit.operation}.`, '',
       `**Before:** ${before.sentence.text} → ${before.prompt.text}`, '',
       `**After:** ${context.sentence.text} → ${question.prompt.text}`, '',
       `**Choices:** ${question.options.map(option => `${option.text}${option.id === question.correctOptionId ? ' ✓' : ''}`).join(' / ')}`, '',
-      `**Meaning required:** ${audit.evidence}`, '', `**Copying check:** ${audit.noEcho}`, '')
+      `**Meaning required:** ${audit.evidence}`, '', `**Copying check:** ${audit.noEcho}`, '',
+      `**Target required:** ${dependency.whyNeeded}`, '',
+      `**Change only:** ${dependency.target.text} → ${dependency.foil.text}`, '',
+      `**Counterfactual sentence:** ${dependency.sentence.text}`, '',
+      `**Answer changes:** ${dependency.originalAnswer} → ${dependency.alternateAnswer}`, '',
+      `**Counterfactual evidence:** ${dependency.evidence}`, '')
   }
   return lines.join('\n')
 }
