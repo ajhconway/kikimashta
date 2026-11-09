@@ -73,6 +73,10 @@ All 36 approved Travel level 1 words are generated in the four selected regional
 
 The owner approved the complete audio review and requested activation. Accept the exact 36-picture / 288-recording set through hash-bound `content/spanish-travel-audio/acceptance.json`. Activate all 36 words with eight regional voices, keeping existing word IDs and the picture-pack ID, retiring entrance/exit from selection and excluding Cesar from new audio. Preserve previous attempts and media. Copy approved transparent PNGs without flattening and verified normalized MP3s; expose regional voice labels in the library. Exclude car/taxi from each other's picture distractors. Verify staging and approval identities, 36×8 coverage, language/progress isolation, library membership and browser lesson flow before release. Consolidate the approved artwork/audio preparation branches into this activation release; real-iPhone tests follow deployment as requested.
 
+## Spanish travel level 3 draft (#174)
+
+Prepare the next 36 concrete travel words in six practical groups for a separate level 3 picture pack. Keep Latin American Spanish, English meanings/instructions and the same eight regional voices. Check all proposed IDs and words against the 72 selected level 1/2 words, and audit existing approved artwork before requesting new generation. Deliver a structured draft, literal picture concepts, reuse candidates with inspected source/hash evidence and a word-review page. Word review precedes media generation and activation.
+
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
