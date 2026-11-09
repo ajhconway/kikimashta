@@ -24,6 +24,37 @@ Run `npm run content:neighbors` after changing the source rankings, overrides or
 
 Pronunciation suggestions use the existing readings (or kana-only surface spellings). NFKC and katakana/hiragana normalization preserve voicing, small っ and long-vowel information. Small vowel/glide kana stay with their preceding kana in mora units. Similarity is `1 - editDistance / longerMoraCount`; candidates must score at least 0.5 and have distinct normalized readings. This is a spelling-based pronunciation proxy; it does not model pitch accent, recordings, or alternate long-vowel spellings such as コー/こう.
 
+## Adding packs and maintaining neighbors
+
+When a pack adds words to the approved Japanese practice pool, regenerate both semantic and pronunciation neighbors across the **entire approved Japanese vocabulary**, including writing-only words. New words can become neighbors of existing words, so updating only the new words' rows is insufficient. Use the same pinned pretrained fastText model; regeneration does not train or fine-tune it. This is a manual, offline content-preparation step before release, not work performed in the browser or automatically by CI.
+
+1. Update the approved bank/admission sources and confirm `japaneseSemanticBank` in `scripts/content/semantic-neighbor-utils.mjs` matches the app's expanded pool. Draft/catalog-only entries are not admitted just to generate neighbors. Preserve stable item IDs and picture/writing eligibility.
+2. Run the semantic generator from the repository root to replace `content/semantic-neighbors/ja.json` with full rankings for the expanded bank. Use a separate Python environment with `scripts/content/semantic-neighbors-requirements.txt`; Python 3.13 was used for the original preparation:
+
+   ```sh
+   python3.13 -m venv /tmp/kikimashta-word-neighbors-env
+   /tmp/kikimashta-word-neighbors-env/bin/python -m pip install -r scripts/content/semantic-neighbors-requirements.txt
+   /tmp/kikimashta-word-neighbors-env/bin/python scripts/content/semantic_neighbors.py
+   ```
+
+   The generator downloads the pinned model on first use and verifies its SHA-256. Add `--offline` to require an already cached model, or use `--model-file /path/to/model.bin` for a local copy (also hash-verified). Model files and Python environments stay outside Git and the browser bundle. If a word has no supported representation, resolve the generator error explicitly before release.
+3. Review new words' neighbors and changed shortlists for existing words. Check intended senses, close pronunciation contrasts, normalized homophones, and picture ambiguity across packs as well as within the new pack. Update bounded sense overrides, exclusion reasons and reviewed-image hashes in `ja-policy.json` where needed. Existing sense overrides replace their entire semantic row, so review whether new words belong in those rows too.
+4. Run `npm run content:neighbors` to rebuild `ja-runtime.json`. This also recomputes pronunciation neighbors for every approved word from its reading, using the mora-distance metric above; it needs no embedding model or speech generation. Commit the regenerated source/runtime data and any reviewed policy changes with the pack release. Preserve the frozen #198 comparison rather than rewriting it with the expanded bank.
+5. Run `npm run check` and the relevant pack, distractor and Dev review browser journeys. Inspect both picture and writing choices at semantic and pronunciation mastery levels, with the new pack alone and combined with existing packs. Use Dev review's source borders to inspect actual fallbacks, and complete the release's real-iPhone listening/touch checks.
+
+For smaller changes, use the following rules:
+
+| Change | Required preparation |
+| --- | --- |
+| Approved vocabulary membership, item ID, Japanese spelling or meaning/label changes | Regenerate `ja.json`, review affected choices and rebuild `ja-runtime.json`. |
+| Reading-only correction | Rebuild `ja-runtime.json` and review affected pronunciation neighbors; semantic generation is unnecessary if spelling and other semantic inputs are unchanged. |
+| Sense override or picture exclusion changes | Review the policy/evidence and rebuild `ja-runtime.json`. Re-review an excluded picture if its image changes before updating its recorded hash. |
+| Learner changes selected packs, or a pack only groups already covered words | No model regeneration is needed; runtime selection filters the prepared rankings to the selected scope and format. Check pack scope when changing pack definitions. |
+
+`npm run content:neighbors:check` (included in `npm run check` and CI) rejects mismatched semantic-bank inputs, changed reviewed images and stale runtime output, including pronunciation changes. It validates prepared data; it neither regenerates it nor judges semantic or picture quality. Running only `npm run content:neighbors` cannot repair stale semantic source rankings after adding words.
+
+This workflow currently covers Japanese word cards. Other languages need their own prepared neighbor data before receiving these policies. Contextual questions retain authored choices.
+
 ## Selection and fallback
 
 Filter the selected language, packs, answer format and target validity before taking up to six nearest candidates from each source. Shuffle within these shortlists for variety. Broad choices prefer the remaining pool. Picture exclusions apply symmetrically between the target and alternatives and between alternatives; writing keeps distinct textual choices available. Homophones of the target and repeated visible choices are excluded.
