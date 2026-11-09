@@ -44,8 +44,10 @@ function awardPosition(entries: readonly PresentedPackBadge[], side: BadgeSide):
 }
 
 /** Retain side membership; rank only within each side. The fuller side owns the top slot. */
-export function layoutPackBadges(badges: readonly PackBadge[], sides = new Map<string, BadgeSide>()): PresentedPackBadge[] {
-  const ordered = sortPackBadges(badges);
+export function layoutPackBadges(badges: readonly PackBadge[], sides = new Map<string, BadgeSide>(), previous: readonly PresentedPackBadge[] = []): PresentedPackBadge[] {
+  const priorOrder = new Map(previous.map((entry, index) => [entry.badge.pack.id, index]));
+  const stable = [...badges].sort((a, b) => (priorOrder.get(a.pack.id) ?? previous.length) - (priorOrder.get(b.pack.id) ?? previous.length));
+  const ordered = sortPackBadges(stable);
   const counts = { left: 0, right: 0 };
   for (const badge of ordered) {
     const side = sides.get(badge.pack.id);
@@ -213,7 +215,7 @@ export class BadgePresentationController {
   }
 
   private positioned(badges: readonly PackBadge[]): PresentedPackBadge[] {
-    return layoutPackBadges(badges, this.sides);
+    return layoutPackBadges(badges, this.sides, this.snapshot.entries);
   }
 
   private celebrationDuration(): number {

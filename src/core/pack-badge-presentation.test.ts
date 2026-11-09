@@ -93,13 +93,28 @@ describe('BadgePresentationController', () => {
     expect(controller.getSnapshot().phase).toBe('idle'); expect(vi.getTimerCount()).toBe(0);
   });
 
-  it('uses source order for ties after an upgrade changes the ordering', () => {
-    const controller = new BadgePresentationController(); controller.update(input([badge('a'), badge('b', 5), badge('c', 6)]));
-    expect(ids(controller)).toEqual(['c', 'a', 'b']);
+  it('celebrates reaching a neighbor’s mastery without swapping tied badges', () => {
+    const controller = new BadgePresentationController();
+    controller.update(input([badge('a'), badge('b', 5), badge('c', 6)]));
+    const before = controller.getSnapshot().entries.map(entry => ({ id: entry.badge.pack.id, position: entry.position }));
     controller.update(input([badge('a', 6), badge('b', 5), badge('c', 6)]));
+    expect(current(controller)?.celebration?.kind).toBe('upgrade');
     vi.advanceTimersByTime(BADGE_UPGRADE_MS);
-    expect(controller.getSnapshot().phase).toBe('reorder'); expect(ids(controller)).toEqual(['a', 'c', 'b']);
-    vi.advanceTimersByTime(BADGE_REORDER_MS); expect(controller.getSnapshot().phase).toBe('idle');
+    expect(controller.getSnapshot().phase).toBe('idle');
+    expect(controller.getSnapshot().entries.map(entry => ({ id: entry.badge.pack.id, position: entry.position }))).toEqual(before);
+    controller.update(input([badge('a', 6), badge('b', 5), badge('c', 6)]));
+    expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it('retains tied order after a downgrade and places new tied medals after existing ones on their side', () => {
+    const controller = new BadgePresentationController();
+    controller.update(input([badge('a', 6), badge('b', 5), badge('c', 7), badge('d', 4)]));
+    controller.update(input([badge('a', 6), badge('b', 5), badge('c', 5), badge('d', 4)]));
+    expect(controller.getSnapshot().phase).toBe('idle');
+    expect(controller.getSnapshot().entries.filter(entry => entry.side === 'left').map(entry => entry.badge.pack.id)).toEqual(['c', 'b']);
+    controller.update(input([badge('new', 5), badge('a', 6), badge('b', 5), badge('c', 5), badge('d', 4)]));
+    vi.runAllTimers();
+    expect(controller.getSnapshot().entries.filter(entry => entry.side === 'left').map(entry => entry.badge.pack.id)).toEqual(['c', 'b', 'new']);
   });
 
   it('celebrates the first earned badge after an authoritative empty baseline', () => {
