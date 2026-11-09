@@ -32,7 +32,7 @@ async function fixture(t, { opaqueForest = false } = {}) {
     await save('artifacts/spanish-travel-3-art/' + image.file, bytes)
     if (image.source === 'approved-reuse') { await save(image.sourcePath, bytes); reusable.push({ id: image.sourceId, path: image.sourcePath, sha256: image.sha256, bytes: bytes.length, ...(image.file.endsWith('.png') ? { format: 'png', alpha: 'preserved' } : {}) }) }
   }
-  for (const clip of audio.clips) { const bytes = clip.targetLimited ? await readFile(new URL('../../artifacts/spanish-travel-3-audio-review/' + clip.file, import.meta.url)) : mp3; clip.deliverySha256 = hash(bytes); clip.deliveryBytes = bytes.length; await save('artifacts/spanish-travel-3-audio-review/' + clip.file, bytes) }
+  for (const clip of audio.clips) { const bytes = clip.targetLimited ? await readFile(new URL('../../public/audio/es-419-travel-3/' + clip.file.slice(6), import.meta.url)) : mp3; clip.deliverySha256 = hash(bytes); clip.deliveryBytes = bytes.length; await save('artifacts/spanish-travel-3-audio-review/' + clip.file, bytes) }
   accepted.audioReviewSha256 = hash(await saveJson(accepted.audioReviewManifest, audio)); pictures.audioManifestSha256 = accepted.audioReviewSha256
   accepted.artworkManifestSha256 = hash(await saveJson(accepted.artworkManifest, pictures))
   await saveJson('content/spanish-travel-3/acceptance.json', accepted); await saveJson('content/spanish-travel-3/draft.json', draft)
@@ -70,6 +70,7 @@ test('staging is byte-identical and idempotent and never alters earlier levels',
   const first = await readFile(join(root, 'content/es-419-travel-3.json')), activation = JSON.parse(await readFile(join(root, 'content/spanish-travel-3/activation.json')))
   assert.equal(activation.recordings.filter(clip => clip.targetLimited).length, 2)
   for (const entry of [...activation.images, ...activation.recordings]) assert.equal(hash(await readFile(join(root, 'public/' + entry.src))), entry.sha256)
+  await rm(join(root, 'artifacts/spanish-travel-3-audio-review/audio'), { recursive: true })
   await stageSpanishTravelLevel3({ root })
   assert.deepEqual(await readFile(join(root, 'content/es-419-travel-3.json')), first)
   assert.equal(await readFile(join(root, 'content/es-419.json'), 'utf8'), 'level1 must remain unchanged'); assert.equal(await readFile(join(root, 'content/es-419-travel-2.json'), 'utf8'), 'level2 must remain unchanged')
@@ -86,6 +87,19 @@ test('changed acceptance, source picture or final recording refuses every produc
   await save(firstImage, original)
   await save('artifacts/spanish-travel-3-audio-review/' + audio.clips.at(-1).file, Buffer.from('tampered final recording'))
   await assert.rejects(stageSpanishTravelLevel3({ root }), /Accepted recording bytes changed/); await assertUnchanged(root)
+})
+
+
+test('a missing archived matrix cannot hide changed active recording bytes', async t => {
+  const { root, save } = await fixture(t)
+  await stageSpanishTravelLevel3({ root })
+  const bankPath = join(root, 'content/es-419-travel-3.json')
+  const before = await readFile(bankPath)
+  await rm(join(root, 'artifacts/spanish-travel-3-audio-review/audio'), { recursive: true })
+  const clip = review.clips.at(-1)
+  await save('public/audio/es-419-travel-3/' + clip.file.slice(6), 'corrupt active delivery')
+  await assert.rejects(stageSpanishTravelLevel3({ root }), /Accepted recording bytes changed/)
+  assert.deepEqual(await readFile(bankPath), before)
 })
 
 for (const mode of ['directory', 'dangling-file', 'bank']) test(`rejects ${mode} output symlinks before copying`, async t => {

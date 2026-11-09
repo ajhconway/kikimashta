@@ -1,9 +1,10 @@
 /** Activate only the owner's exact accepted Spanish media set (#159). No network. */
 import { createHash } from 'node:crypto'
-import { readFile, writeFile, mkdir, copyFile, realpath, lstat } from 'node:fs/promises'
+import { readFile, writeFile, mkdir, realpath, lstat } from 'node:fs/promises'
 import { dirname, join, resolve, relative, isAbsolute } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedAudio } from './reviewed-audio.mjs'
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const json = async path => JSON.parse(await readFile(path, 'utf8'))
@@ -75,7 +76,7 @@ export async function stageSpanishTravelPack({ root = process.cwd() } = {}) {
     }
   }
   const approvedPictures = new Map(feedback.finalApproval.selectedImages.map(i => [i.id, i]))
-  const images = [], recordings = []
+  const images = [], recordings = [], copies = []
   // Complete preflight before any production copy or bank change.
   for (const item of bank.items) {
     const entry = art.items.find(i => i.id === item.id), picture = entry.artwork
@@ -88,19 +89,21 @@ export async function stageSpanishTravelPack({ root = process.cwd() } = {}) {
       if (!alpha.transparentPixels || !alpha.opaquePixels) throw new Error('Approved PNG lost transparency or subject.')
     } else if (hash(await readFile(join(root, 'public', item.image.src))) !== picture.sha256) throw new Error('Reused image changed.')
     images.push({ id: item.id, src: item.image.src, sha256: picture.sha256, sourcePath: picture.path })
+    copies.push({ path: 'public/' + item.image.src, bytes })
     for (const audio of item.audio) {
       const clip = review.clips.find(c => c.id === item.id && c.voice === audio.voice)
       const sourcePath = `artifacts/spanish-travel-audio-review/${clip.file}`
-      const bytes = await readFile(join(root, sourcePath))
-      if (hash(bytes) !== clip.deliverySha256 || bytes.length !== clip.deliveryBytes) throw new Error('Accepted recording hash mismatch.')
+      const { bytes } = await reviewedAudio({ root, reviewPath: sourcePath, productionPath: 'public/' + audio.src,
+        sha256: clip.deliverySha256, size: clip.deliveryBytes, message: 'Accepted recording hash mismatch.' })
+      copies.push({ path: 'public/' + audio.src, bytes })
       recordings.push({ id: item.id, voice: audio.voice, src: audio.src, sha256: clip.deliverySha256, bytes: clip.deliveryBytes,
         originalSha256: clip.originalSha256, sourcePath, targetLimited: clip.targetLimited, after: clip.after })
     }
   }
-  for (const file of [...images, ...recordings]) {
-    const target = join(root, 'public', file.src)
+  for (const copy of copies) {
+    const target = join(root, copy.path)
     await mkdir(dirname(target), { recursive: true })
-    await copyFile(join(root, file.sourcePath), target)
+    await writeFile(target, copy.bytes)
   }
   const activation = { issue: 159, pack: bank.id, language: bank.language, acceptance: 'content/spanish-travel-audio/acceptance.json',
     acceptanceSha256: hash(await readFile(join(root, 'content/spanish-travel-audio/acceptance.json'))),

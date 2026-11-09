@@ -1,9 +1,10 @@
 /** Reproducible, hash-verified level 2 picture and voice review (#166). */
 import { createHash } from 'node:crypto'
 import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises'
-import { resolve, join } from 'node:path'
+import { resolve, join, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedAudio } from './reviewed-audio.mjs'
 import { loadSpanishTravelLevel2Plan } from './generate-spanish-travel-level-2.mjs'
 import { level2AudioReviewHtml } from './build-spanish-travel-level-2-audio-review.mjs'
 
@@ -64,12 +65,15 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
   if (audio.issue !== 166 || audio.pack !== bank.id || audio.planIdentity !== hash(JSON.stringify(plan)) ||
       JSON.stringify(audio.items) !== JSON.stringify(plan.items) || JSON.stringify(audio.voices) !== JSON.stringify(plan.voices) ||
       audio.clips.length !== 288 || new Set(audio.clips.map(c => `${c.id}:${c.voice}`)).size !== 288) throw new Error('Audio review matrix changed.')
+  const playbackPaths = new Map()
   for (const clip of audio.clips) {
     const item = plan.items.find(i => i.id === clip.id), voice = plan.voices.find(v => v.voice === clip.voice)
     if (!item || !voice || item.text !== clip.text || voice.id !== clip.voiceId ||
         clip.file !== `audio/${voice.voice}/${item.id}.mp3`) throw new Error('Audio word or voice identity changed.')
-    const bytes = await readFile(join(audioRoot, clip.file))
-    if (bytes.length !== clip.deliveryBytes || hash(bytes) !== clip.deliverySha256) throw new Error('Review recording hash mismatch.')
+    const delivery = await reviewedAudio({ root, reviewPath: 'artifacts/spanish-travel-2-audio-review/' + clip.file,
+      productionPath: `public/audio/es-419-travel-2/${voice.voice}/${item.id}.mp3`,
+      sha256: clip.deliverySha256, size: clip.deliveryBytes })
+    playbackPaths.set(clip.file, relative(art, join(root, delivery.path)))
   }
   // Validate all media before writing the gallery or copying approved originals.
   await mkdir(join(art, 'reused'), { recursive: true })
@@ -78,7 +82,7 @@ export async function buildLevel2MediaReview(root = process.cwd()) {
     tool: 'built-in image_gen', generatedImages: 34, reusedImages: 2, expectedClips: 288,
     audioManifest: '../spanish-travel-2-audio-review/manifest.json', audioManifestSha256: hash(await readFile(join(audioRoot, 'manifest.json'))), images }
   const figures = images.map(image => `<figure><a href="${escape(image.file)}"><img width="145" height="145" src="${escape(image.file)}" alt="${escape(image.meaning)}"></a><figcaption><span lang="es-419">${escape(image.text)}</span><small>${escape(image.meaning)} · ${image.source === 'generated' ? 'New artwork' : 'Reused artwork'}</small></figcaption></figure>`)
-  const galleryAudio = { ...audio, clips: audio.clips.map(c => ({ ...c, file: '../spanish-travel-2-audio-review/' + c.file })) }
+  const galleryAudio = { ...audio, clips: audio.clips.map(c => ({ ...c, file: playbackPaths.get(c.file) })) }
   let html = level2AudioReviewHtml(galleryAudio)
     .replace('listen to the full pack', 'pictures and voices')
     .replace('36 words · 8 voices · 4 regional pairs · 288 recordings.', '36 pictures · 8 voices · 4 regional pairs · 288 recordings.')

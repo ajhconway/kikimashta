@@ -69,6 +69,7 @@ test('staging is byte-identical and idempotent and never alters level 1', async 
   assert.deepEqual(await stageSpanishTravelLevel2({ root }), { words: 36, images: 36, recordings: 288, voices: 8 })
   const first = await readFile(join(root, 'content/es-419-travel-2.json')), activation = JSON.parse(await readFile(join(root, 'content/spanish-travel-2/activation.json')))
   for (const entry of [...activation.images, ...activation.recordings]) assert.equal(hash(await readFile(join(root, 'public/' + entry.src))), entry.sha256)
+  await rm(join(root, 'artifacts/spanish-travel-2-audio-review/audio'), { recursive: true })
   await stageSpanishTravelLevel2({ root })
   assert.deepEqual(await readFile(join(root, 'content/es-419-travel-2.json')), first)
   assert.equal(await readFile(join(root, 'content/es-419.json'), 'utf8'), 'level1 must remain unchanged')
@@ -85,6 +86,19 @@ test('changed acceptance, source picture or final recording refuses every produc
   await save(firstImage, original)
   await save('artifacts/spanish-travel-2-audio-review/' + audio.clips.at(-1).file, Buffer.from('tampered final recording'))
   await assert.rejects(stageSpanishTravelLevel2({ root }), /Accepted recording bytes changed/); await assertUnchanged(root)
+})
+
+
+test('a missing archived matrix cannot hide changed active recording bytes', async t => {
+  const { root, save } = await fixture(t)
+  await stageSpanishTravelLevel2({ root })
+  const bankPath = join(root, 'content/es-419-travel-2.json')
+  const before = await readFile(bankPath)
+  await rm(join(root, 'artifacts/spanish-travel-2-audio-review/audio'), { recursive: true })
+  const clip = review.clips.at(-1)
+  await save('public/audio/es-419-travel-2/' + clip.file.slice(6), 'corrupt active delivery')
+  await assert.rejects(stageSpanishTravelLevel2({ root }), /Accepted recording bytes changed/)
+  assert.deepEqual(await readFile(bankPath), before)
 })
 
 for (const mode of ['directory', 'dangling-file', 'bank']) test(`rejects ${mode} output symlinks before copying`, async t => {

@@ -4,6 +4,7 @@ import { readFile, writeFile, mkdir, lstat } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedAudio } from './reviewed-audio.mjs'
 
 const ART = 'artifacts/spanish-travel-2-art'
 const AUDIO = 'artifacts/spanish-travel-2-audio-review'
@@ -108,8 +109,8 @@ export async function stageSpanishTravelLevel2({ root = process.cwd() } = {}) {
       source: picture.source, ...(picture.version ? { version: picture.version } : {}) })
     for (const audio of item.audio) {
       const clip = review.clips.find(c => c.id === item.id && c.voice === audio.voice), sourcePath = `${AUDIO}/${clip.file}`
-      const bytes = await readFile(join(root, sourcePath))
-      if (hash(bytes) !== clip.deliverySha256 || bytes.length !== clip.deliveryBytes) throw new Error('Accepted recording bytes changed.')
+      const { bytes } = await reviewedAudio({ root, reviewPath: sourcePath, productionPath: 'public/' + audio.src,
+        sha256: clip.deliverySha256, size: clip.deliveryBytes, message: 'Accepted recording bytes changed.' })
       copies.push({ path: 'public/' + audio.src, bytes })
       recordings.push({ id: item.id, voice: audio.voice, src: audio.src, sha256: clip.deliverySha256, bytes: bytes.length,
         originalSha256: clip.originalSha256, sourcePath, targetLimited: clip.targetLimited, after: clip.after })
