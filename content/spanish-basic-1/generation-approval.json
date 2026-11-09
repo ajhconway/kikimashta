@@ -1,0 +1,13 @@
+{
+  "issue": 191,
+  "ownerMessage": "Please go ahead and generate the pictures and audio.",
+  "status": "generation-authorized-media-review-pending",
+  "draft": "content/spanish-basic-1/draft.json",
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "words": 24,
+  "contexts": 9,
+  "voices": 8,
+  "recordings": 336,
+  "newIllustrations": 9,
+  "approvedReuse": 6
+}

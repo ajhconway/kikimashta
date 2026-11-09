@@ -4,7 +4,7 @@
   "id": "es-419-basic-1",
   "language": "es-419",
   "title": "Basic Spanish level 1",
-  "status": "draft-awaiting-text-and-picture-review",
+  "status": "text-approved-media-generation-authorized",
   "interfaceLanguage": "en",
   "ownerRequest": "Please go ahead and create a level one basic pack",
   "formatDecision": "Short contextual questions for abstract words",
@@ -680,7 +680,7 @@
       "correctOptionId": "key",
       "explanation": "The key is possessed; the ticket is needed.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -746,7 +746,7 @@
       "correctOptionId": "coffee",
       "explanation": "The desired drink is coffee; the water is already possessed.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -812,7 +812,7 @@
       "correctOptionId": "ticket",
       "explanation": "The ticket is needed; the money is already possessed.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -878,7 +878,7 @@
       "correctOptionId": "hotel",
       "explanation": "The hotel is the stated destination; the beach is explicitly excluded.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -944,7 +944,7 @@
       "correctOptionId": "backpack",
       "explanation": "The backpack is carried; the suitcase is elsewhere.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -1010,7 +1010,7 @@
       "correctOptionId": "bread",
       "explanation": "Bread is bought; rice is explicitly excluded.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -1076,7 +1076,7 @@
       "correctOptionId": "hotel",
       "explanation": "Today selects the hotel, not tomorrow’s beach destination.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -1142,7 +1142,7 @@
       "correctOptionId": "airport",
       "explanation": "Tomorrow selects the airport, not today’s beach destination.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     },
@@ -1208,7 +1208,7 @@
       "correctOptionId": "milk",
       "explanation": "Milk is bought after bread.",
       "review": {
-        "text": "pending",
+        "text": "approved",
         "audio": "not-generated"
       }
     }
@@ -1246,9 +1246,10 @@
     "contextualRecordings": 144,
     "totalRecordings": 336,
     "newPictureConcepts": 9,
-    "generationAuthorized": false,
+    "generationAuthorized": true,
     "textApproval": "Context sentence/question text requires owner review before generation.",
     "activation": "Only after exact selected artwork and recordings are accepted.",
-    "approvedReuseCandidates": 6
+    "approvedReuseCandidates": 6,
+    "ownerAuthorization": "Please go ahead and generate the pictures and audio."
   }
 }
