@@ -1,13 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { cardKey } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
-import { contextualBanks, contextualVocabulary, readyContextualCards, withAcceptedMedia } from './contextual-runtime';
+import { contextualBanks, contextualVocabulary, readyContextualCards, recordedContextualBanks, withAcceptedMedia } from './contextual-runtime';
 
 describe('contextual runtime content', () => {
   it('covers all eighty questions while admitting only accepted media to practice', () => {
     const contexts = contextualBanks.flatMap(bank => bank.contexts);
     expect(contexts).toHaveLength(40);
     expect(contexts.flatMap(context => context.questions)).toHaveLength(80);
+    expect(contexts.flatMap(context => context.questions).every(question => question.options.length === 4)).toBe(true);
+    expect(contexts.flatMap(context => context.questions).filter(question => question.revision === 2)).toHaveLength(46);
     expect(new Set(contexts.map(context => context.id)).size).toBe(40);
     expect(new Set(contexts.flatMap(context => context.questions.map(question => question.id))).size).toBe(80);
     const targets = new Set(contexts.map(context => context.targetItemId));
@@ -27,17 +29,17 @@ describe('contextual runtime content', () => {
   });
 
   it('does not activate audio when the accepted text or revisions differ', () => {
-    const banks = structuredClone(contextualBanks);
+    const banks = structuredClone(recordedContextualBanks);
     banks[0]!.contexts[0]!.sentence.text += '変更';
     expect(() => withAcceptedMedia(banks)).toThrow(/differs/);
-    const changed = structuredClone(contextualBanks);
+    const changed = structuredClone(recordedContextualBanks);
     changed[0]!.contexts[0]!.questions[0]!.revision++;
     expect(() => withAcceptedMedia(changed)).toThrow(/differs/);
   });
 
   it('preserves explicit text or audio rejection despite an older acceptance manifest', () => {
     for (const rejected of ['text', 'audio'] as const) {
-      const banks = structuredClone(contextualBanks);
+      const banks = structuredClone(recordedContextualBanks);
       const context = banks[0]!.contexts[0]!;
       context.review = { text: 'approved', audio: 'pending', [rejected]: 'rejected' };
       context.recordings = [];
