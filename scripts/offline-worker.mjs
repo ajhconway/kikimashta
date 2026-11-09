@@ -31,7 +31,7 @@ async function cachedRange(response, range) {
 self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
-  if (request.method !== 'GET' || url.origin !== scope.origin) return;
+  if (request.method !== 'GET' || url.origin !== scope.origin || !url.pathname.startsWith(scope.pathname)) return;
   if (url.pathname === new URL('offline-manifest.json', scope).pathname) {
     event.respondWith(Promise.resolve(Response.json(manifest)));
     return;

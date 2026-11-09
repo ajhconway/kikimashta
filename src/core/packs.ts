@@ -1,3 +1,4 @@
+import { deviceStorage } from './device-storage';
 import catalogue from '../../content/catalog/ja.json';
 import overrides from '../../content/catalog/review-overrides.json';
 import { exercises } from './cards';
@@ -30,7 +31,7 @@ export const packPreferenceKey = 'kikimashta-card-packs-v1';
 
 export function initialPackIds(packs: readonly CardPack[] = cardPacks, preferenceKey = packPreferenceKey): string[] {
   try {
-    const saved: unknown = JSON.parse(localStorage.getItem(preferenceKey) ?? 'null');
+    const saved: unknown = JSON.parse(deviceStorage.getItem(preferenceKey) ?? 'null');
     if (Array.isArray(saved) && saved.every(id => typeof id === 'string')) {
       return packs.filter(pack => saved.includes(pack.id)).map(pack => pack.id);
     }
