@@ -212,7 +212,11 @@ test('accounts converge across browser storage, retry offline answers, and sync 
 });
 
 
-test('downloaded practice reopens the same account with expired auth offline and syncs on reconnect', async ({ page, context }) => {
+// WebKit's service-worker-controlled cross-origin requests bypass context.route,
+// reaching the deliberately nonexistent test hostname. Chromium exercises this
+// combined boundary; WebKit offline media/storage runs in offline.spec.ts.
+test('downloaded practice reopens the same account with expired auth offline and syncs on reconnect', async ({ page, context, browserName }) => {
+  test.skip(browserName === 'webkit', 'WebKit service workers bypass the fake cloud HTTP routes.');
   test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');
   test.setTimeout(120_000);
   await selectWordPractice(page, ['ja-wanikani-2-pictures']);
