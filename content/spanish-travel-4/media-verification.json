@@ -1,6 +1,6 @@
 {
   "issue": 207,
-  "status": "revised-awaiting-owner-media-review",
+  "status": "artwork-accepted-listening-pending",
   "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
   "pictures": {
     "newReady": 35,
@@ -12,7 +12,9 @@
     "revisedSelected": 6,
     "replacedWords": 1,
     "originalVersionsPreserved": 42,
-    "revisionHistory": "artifacts/spanish-travel-4-art/revisions/history.json"
+    "revisionHistory": "artifacts/spanish-travel-4-art/revisions/history.json",
+    "acceptance": "content/spanish-travel-4/artwork-acceptance.json",
+    "approved": 36
   },
   "audio": {
     "recordings": 288,
@@ -80,7 +82,7 @@
     }
   ],
   "limitations": [
-    "Media acceptance and pack activation remain pending.",
+    "Owner listening acceptance and pack activation remain pending.",
     "Browser emulation is not a real iPhone test."
   ],
   "independentReview": "Previous owner revisions independently reviewed with no material findings. Green supermarket visually inspected; current change affects only one selected picture, all41prior originals remain byte-identical, and complete gallery provenance/hash validation passes.",

@@ -103,3 +103,7 @@ Rebuild the progressive combined review with `node scripts/content/build-spanish
 The current gallery shows red-and-white postal theming, blue police-station theming, butter without its thin sliver, a straighter flashlight, and a longer sleeping-bag zipper. Versioned requests and records preserve every original. Current concepts come from the selected revision requests, with the immutable initial draft retained for provenance. The complete original 288-clip audio matrix is verified before overlaying the eight exact amendment-bound enchufe recordings; the current review still contains 36 words and 288 recordings. Media acceptance and activation remain pending.
 
 The owner also requested a green-themed supermarket. Selected supermarket v2 uses green/white architecture and shopping carts, preserving the existing composition; its original and exact edit prompt remain in the revision records.
+
+## Artwork acceptance
+
+The owner accepted all 36 selected pictures with “Great, I’m happy with the artwork.” [Exact artwork acceptance](artwork-acceptance.json) binds the current manifest, selected versions and all image hashes, including the green supermarket and enchufe replacement. Listening acceptance and activation remain pending.

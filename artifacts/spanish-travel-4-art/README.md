@@ -19,3 +19,7 @@ The gallery validates all original sources and all 288 original audio clips befo
 [Owner revision history and exact selected prompts](revisions/history.json) records the five edits and word replacement, previous/current hashes and preserved inputs. All 42 original PNG versions remain available.
 
 The owner also requested a green-themed supermarket. Selected supermarket v2 uses green/white architecture and shopping carts, preserving the existing composition; its original and exact edit prompt remain in the revision records.
+
+## Artwork acceptance
+
+The owner accepted all 36 selected pictures with “Great, I’m happy with the artwork.” [Exact artwork acceptance](../../content/spanish-travel-4/artwork-acceptance.json) binds the current manifest, selected versions and all image hashes, including the green supermarket and enchufe replacement. Listening acceptance and activation remain pending.

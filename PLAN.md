@@ -325,3 +325,5 @@ The owner requested Travel level4 revisions: red/white-led post-office colours a
 Travel level4 owner revisions are generated and selected: red/white post office, blue/white police station, butter withoutsliver, straightflashlight and longer sleeping-bagzipper. Enchufe replaces venda in the effective36wordreview, with a newpoweroutletpicture and eight matching on-target recordings. All original35artworks and288recordings remainpreserved;41PNGversions nowexist. Fullgallery and wordreview apply the amendment without rewriting approved inputs. Await consolidatedmediafeedback; noactivation.
 
 The owner requested a green-themed supermarket for Travel level4. Recolour only the existing supermarket into green/white, preserve all original images and audio, and select a versioned edit in the complete review. No vocabulary or recording changes.
+
+The owner accepted all36current Travel level4 pictures, including the green supermarket and enchufe replacement. Record exact manifest/selection/word-amendment and image hashes in `content/spanish-travel-4/artwork-acceptance.json`. This approval is artwork-only; owner listening acceptance and pack activation remain pending.
