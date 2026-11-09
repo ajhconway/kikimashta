@@ -16,6 +16,7 @@ import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevRevi
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
 import { packBadges } from './core/pack-badges';
 import { PackBadges } from './components/PackBadges';
+import { usePackBadgePresentation } from './hooks/usePackBadgePresentation';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
@@ -183,6 +184,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
   const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; badges: ReturnType<typeof packBadges>; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
+  const badgePresentation = usePackBadgePresentation({
+    badges: !loading && !accountLoading && !historyError && currentForecast ? currentForecast.badges : null,
+    active: screen === 'home', scope: store, reset: accountLoading,
+  });
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
@@ -539,7 +544,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <h1>kikimashta</h1>
         <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
           <HomeIntensity value={density}/>
-          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
+          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges} presentation={badgePresentation}/>}
         </div>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
@@ -606,6 +611,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
           outcome={feedback ? feedback.outcome ?? (feedback.correct ? 'success' : 'failure') : null}
           change={feedback && masteryChange?.id === feedback.id ? masteryChange : undefined} saving={!!feedback?.correct && saving}/>
         {isDevReview && <div className="dev-choice-legend" role="group" aria-label="Word choice border legend">{Object.entries(devChoiceLabels).map(([kind, label]) => <span id={"dev-choice-" + kind} data-dev-choice-kind={kind} key={kind}><i aria-hidden="true"/>{label}</span>)}</div>}
+        {isDevReview && questions[index]?.writingChoicePolicy && <p role="status" aria-label="Writing distractor matching">Kana ending “{questions[index]!.writingChoicePolicy!.ending}”: {questions[index]!.writingChoicePolicy!.matching} matching, {questions[index]!.writingChoicePolicy!.fallback} fallback.</p>}
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={() => { recovery.discard(); next(); }}>Continue without saving</button></div>}
         {feedback && (!feedback.correct || saveError || audioError || autoPaused) && <button className="primary" disabled={saving || saveError} onClick={next}>{saving ? 'Saving…' : index + 1 === questions.length ? 'See results' : 'Continue'} <span aria-hidden="true">→</span></button>}
         </div>

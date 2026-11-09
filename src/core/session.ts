@@ -1,7 +1,7 @@
 import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
 import { cardKey } from './cards';
 import type { ContextualItem, ContextualQuestion, ContextualRecording } from '../content/contextual-types';
-import type { WordChoiceKind, WordChoicePolicySnapshot } from './distractor-types';
+import type { WordChoiceKind, WordChoicePolicySnapshot, WritingChoicePolicySnapshot } from './distractor-types';
 import { selectWordChoices } from './distractors';
 import { cardMastery } from './mastery';
 import type { ScheduledWord } from './scheduler';
@@ -15,6 +15,7 @@ export interface Question {
   introduction?: boolean;
   choicePolicy?: WordChoicePolicySnapshot;
   choiceKinds?: Record<string, WordChoiceKind>;
+  writingChoicePolicy?: WritingChoicePolicySnapshot;
   contextual?: { context: ContextualItem; question: ContextualQuestion; recording?: ContextualRecording };
 }
 

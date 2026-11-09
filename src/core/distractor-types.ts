@@ -1,6 +1,12 @@
 /** Word-choice policy snapshots are local question state; attempts already save exact choices. */
 export interface DistractorCounts { semantic: number; pronunciation: number }
 export type WordChoiceKind = 'correct' | 'semantic' | 'pronunciation' | 'broad';
+export interface WritingChoicePolicySnapshot {
+  version: 'trailing-kana-v1';
+  ending: string;
+  matching: number;
+  fallback: number;
+}
 export interface WordChoicePolicySnapshot {
   version: 'word-neighbors-v1';
   mastery: string;

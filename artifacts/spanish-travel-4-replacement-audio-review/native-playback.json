@@ -1,0 +1,182 @@
+[
+  {
+    "engine": "chromium",
+    "clips": [
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "pamela",
+        "file": "audio/pamela/es-419-travel-power-outlet.mp3",
+        "duration": 0.96,
+        "currentTime": 0.019496,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "albeiro",
+        "file": "audio/albeiro/es-419-travel-power-outlet.mp3",
+        "duration": 1.04,
+        "currentTime": 0.041086,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "carito",
+        "file": "audio/carito/es-419-travel-power-outlet.mp3",
+        "duration": 0.96,
+        "currentTime": 0.021024,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "juan",
+        "file": "audio/juan/es-419-travel-power-outlet.mp3",
+        "duration": 1.04,
+        "currentTime": 0.019829,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "agustina",
+        "file": "audio/agustina/es-419-travel-power-outlet.mp3",
+        "duration": 0.88,
+        "currentTime": 0.040016,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "santiago",
+        "file": "audio/santiago/es-419-travel-power-outlet.mp3",
+        "duration": 1.04,
+        "currentTime": 0.040811,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "carlos-figueroa",
+        "file": "audio/carlos-figueroa/es-419-travel-power-outlet.mp3",
+        "duration": 0.96,
+        "currentTime": 0.020495,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "veronica",
+        "file": "audio/veronica/es-419-travel-power-outlet.mp3",
+        "duration": 1.12,
+        "currentTime": 0.040985,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      }
+    ],
+    "passed": 8,
+    "failures": [],
+    "minDuration": 0.88,
+    "maxDuration": 1.12,
+    "advanced": 8
+  },
+  {
+    "engine": "mobile-webkit",
+    "clips": [
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "pamela",
+        "file": "audio/pamela/es-419-travel-power-outlet.mp3",
+        "duration": 0.9926530612244898,
+        "currentTime": 0.03849387518130243,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "albeiro",
+        "file": "audio/albeiro/es-419-travel-power-outlet.mp3",
+        "duration": 1.0710204081632653,
+        "currentTime": 0.03737625014036894,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "carito",
+        "file": "audio/carito/es-419-travel-power-outlet.mp3",
+        "duration": 0.9926530612244898,
+        "currentTime": 0.034215375082567334,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "juan",
+        "file": "audio/juan/es-419-travel-power-outlet.mp3",
+        "duration": 1.0710204081632653,
+        "currentTime": 0.03592379158362746,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "agustina",
+        "file": "audio/agustina/es-419-travel-power-outlet.mp3",
+        "duration": 0.9142857142857143,
+        "currentTime": 0.03462262498214841,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "santiago",
+        "file": "audio/santiago/es-419-travel-power-outlet.mp3",
+        "duration": 1.0710204081632653,
+        "currentTime": 0.03512883326038718,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "carlos-figueroa",
+        "file": "audio/carlos-figueroa/es-419-travel-power-outlet.mp3",
+        "duration": 0.9926530612244898,
+        "currentTime": 0.03635037480853498,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      },
+      {
+        "id": "es-419-travel-power-outlet",
+        "voice": "veronica",
+        "file": "audio/veronica/es-419-travel-power-outlet.mp3",
+        "duration": 1.1493877551020408,
+        "currentTime": 0.03762554167769849,
+        "paused": false,
+        "nativeReadyState": 4,
+        "ok": true
+      }
+    ],
+    "passed": 8,
+    "failures": [],
+    "minDuration": 0.9142857142857143,
+    "maxDuration": 1.1493877551020408,
+    "advanced": 8
+  }
+]

@@ -5,6 +5,9 @@ import type { WordBank } from '../types';
 import first from '../../content/es-419.json';
 import second from '../../content/es-419-travel-2.json';
 import third from '../../content/es-419-travel-3.json';
+import fourth from '../../content/es-419-travel-4.json';
+import fourthActivation from '../../content/spanish-travel-4/activation.json';
+import fourthPictureReview from '../../content/spanish-travel-4/picture-ambiguity-review.json';
 import thirdActivation from '../../content/spanish-travel-3/activation.json';
 import thirdAcceptance from '../../content/spanish-travel-3/acceptance.json';
 import thirdArtwork from '../../artifacts/spanish-travel-3-art/manifest.json';
@@ -21,9 +24,9 @@ const digest = (path: string) => createHash('sha256').update(readFileSync(path))
 
 describe('Spanish travel levels', () => {
   it('keeps separate pack membership and restores existing device choices', () => {
-    expect(spanish.pool.items).toHaveLength(123);
-    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(123);
-    for (const bank of [first, second, third] as WordBank[]) {
+    expect(spanish.pool.items).toHaveLength(159);
+    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(159);
+    for (const bank of [first, second, third, fourth] as WordBank[]) {
       const cards = selectedPracticeCards(spanish.pool.items, [`${bank.id}-pictures`], spanish.packs);
       expect(cards.map(card => card.item.id)).toEqual(bank.items.map(item => item.id));
       expect(cards.every(card => card.exercise === 'audio-picture')).toBe(true);
@@ -69,6 +72,23 @@ describe('Spanish travel levels', () => {
     for (const item of third.items) expect(item.audio.map(clip => clip.voice)).toEqual(first.items[0]!.audio.map(clip => clip.voice));
   });
 
+  it('ships the current level 4 word amendment with all accepted pictures and voices', () => {
+    expect(fourth.items).toHaveLength(36);
+    expect(fourth.items.some(item => item.id === 'es-419-travel-bandage')).toBe(false);
+    expect(fourth.items.find(item => item.id === 'es-419-travel-power-outlet')).toMatchObject({ text: 'enchufe', label: 'Power outlet' });
+    expect(fourth.items.find(item => item.id === 'es-419-travel-flower')?.image.src).toBe('images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png');
+    expect(digest(fourthActivation.acceptance)).toBe(fourthActivation.acceptanceSha256);
+    expect(fourthActivation.images).toHaveLength(36);
+    expect(fourthActivation.recordings).toHaveLength(288);
+    for (const media of [...fourthActivation.images, ...fourthActivation.recordings]) expect(digest('public/' + media.src)).toBe(media.sha256);
+    const existingIds = new Set([first, second, third].flatMap(bank => bank.items.map(item => item.id)));
+    for (const item of fourth.items) {
+      expect(existingIds.has(item.id)).toBe(false);
+      expect(item.audio.map(clip => clip.voice)).toEqual(first.items[0]!.audio.map(clip => clip.voice));
+      expect(item.audio.every(clip => clip.src.startsWith('audio/es-419-travel-4/'))).toBe(true);
+    }
+  });
+
   it('does not offer the milk illustration for vaso or the drinking glass for leche', () => {
     const word = (slug: string) => spanish.pool.items.find(item => item.id === `es-419-travel-${slug}`)!;
     const safe = ['table', 'chair', 'spoon'].map(word);
@@ -91,15 +111,25 @@ describe('Spanish travel levels', () => {
     }
   });
 
-  it('keeps ambiguous pictures out of all single-pack and combined question choices', () => {
+  it('keeps the complete picture review and symmetric exclusions consistent with approved assets', () => {
     const byId = new Map(spanish.pool.items.map(item => [item.id, item]));
+    expect(digest(fourthPictureReview.selectedArtworkManifest)).toBe(fourthPictureReview.selectedArtworkManifestSha256);
+    expect(new Set(fourthPictureReview.inspectedAssets.map(asset => asset.id)).size).toBe(spanish.pool.items.length);
+    for (const asset of fourthPictureReview.inspectedAssets) {
+      expect(digest('public/' + byId.get(asset.id)!.image.src)).toBe(asset.sha256);
+    }
+    for (const pair of fourthPictureReview.addedSymmetricPairs) expect(exclusions.pairs).toContainEqual(pair);
     for (const pair of exclusions.pairs) {
       const [left, right] = pair.ids;
       expect(byId.get(left!)?.pictureDistractorExclusions).toContain(right);
       expect(byId.get(right!)?.pictureDistractorExclusions).toContain(left);
     }
-    const scopes = Array.from({ length: 7 }, (_, index) => spanish.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id));
-    for (const packIds of scopes) {
+  });
+
+  const scopes = Array.from({ length: (1 << spanish.packs.length) - 1 }, (_, index) => ({
+    packIds: spanish.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id),
+  }));
+  it.each(scopes)('keeps ambiguous pictures out of choices for $packIds', ({ packIds }) => {
       const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
       const pool = cards.map(card => card.item);
       for (let seed = 1; seed <= 3; seed++) {
@@ -117,6 +147,5 @@ describe('Spanish travel levels', () => {
           }
         }
       }
-    }
   });
 });

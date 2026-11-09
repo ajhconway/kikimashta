@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-salt",
+  "slug": "salt",
+  "version": 1,
+  "path": "originals/salt-v1.png",
+  "sha256": "0810a29ef637ea3342452a560ac8ddf19907902d9dd23160f533665e70af65d8",
+  "promptSha256": "cdc10555deda8e11b2963aa8aa374ff87ec0557d067bd76085f3ed85fba8745b",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-51db607e-cc02-479b-81cd-3ec2b608ff80.png"
+}

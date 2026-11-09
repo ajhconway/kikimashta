@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-library",
+  "slug": "library",
+  "version": 1,
+  "path": "originals/library-v1.png",
+  "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
+  "promptSha256": "29671bb3b6352178bd61d5e854c4ec51bb0cacf8efd9cd8e668fa3418218900f",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-5a41f9ee-be5c-40c8-a7a4-5b4df100eef4.png"
+}

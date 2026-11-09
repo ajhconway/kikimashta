@@ -1,0 +1,145 @@
+{
+  "experimentId": "pronunciation-neighbors-212",
+  "inputDigest": "39ca2ad3cd9ee9b72364aff72feb5e595901023102936e0366e745a7c8bee779",
+  "totals": {
+    "baseline": 2,
+    "weighted": 5,
+    "tie": 5,
+    "neither": 0,
+    "uncertain": 0,
+    "unanswered": 0
+  },
+  "unrevealed": {
+    "baseline": 2,
+    "weighted": 5,
+    "tie": 5,
+    "neither": 0,
+    "uncertain": 0,
+    "unanswered": 0
+  },
+  "revealed": {
+    "baseline": 0,
+    "weighted": 0,
+    "tie": 0,
+    "neither": 0,
+    "uncertain": 0,
+    "unanswered": 0
+  },
+  "byVoice": {
+    "otani": {
+      "baseline": 1,
+      "weighted": 3,
+      "tie": 2,
+      "neither": 0,
+      "uncertain": 0,
+      "unanswered": 0
+    },
+    "morioki": {
+      "baseline": 1,
+      "weighted": 2,
+      "tie": 3,
+      "neither": 0,
+      "uncertain": 0,
+      "unanswered": 0
+    }
+  },
+  "note": "Descriptive paired judgments only. Repeated voices of one target are not independent samples; no learner-difficulty or significance claim.",
+  "rows": [
+    {
+      "trialId": "T12-V2",
+      "voice": "morioki",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "outcome": "weighted"
+    },
+    {
+      "trialId": "T01-V1",
+      "voice": "otani",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "T07-V1",
+      "voice": "otani",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "outcome": "weighted"
+    },
+    {
+      "trialId": "T07-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "T02-V1",
+      "voice": "otani",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "outcome": "weighted"
+    },
+    {
+      "trialId": "T10-V2",
+      "voice": "morioki",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "outcome": "baseline"
+    },
+    {
+      "trialId": "T01-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "T02-V2",
+      "voice": "morioki",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "outcome": "weighted"
+    },
+    {
+      "trialId": "T10-V1",
+      "voice": "otani",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "outcome": "baseline"
+    },
+    {
+      "trialId": "T04-V2",
+      "voice": "morioki",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "T12-V1",
+      "voice": "otani",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "outcome": "weighted"
+    },
+    {
+      "trialId": "T04-V1",
+      "voice": "otani",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "outcome": "tie"
+    }
+  ]
+}

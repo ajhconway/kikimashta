@@ -1,0 +1,418 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4-replacement",
+  "language": "es-419",
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "status": "generated-awaiting-owner-listening",
+  "expectedClips": 8,
+  "characters": 56,
+  "planIdentity": "20811e4a898d234ee17964b41e51e72baaf3ed51f6af3b216cffcfb3ec1002b5",
+  "voices": [
+    {
+      "voice": "juan",
+      "id": "eqsD9RWsdCgHoRsbXS5q",
+      "name": "Juan",
+      "gender": "male",
+      "accent": "latin american",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/84fa22b64d4b316c81cdfe5eca59bf7a4b6ae5eaea16c2a16bc67a8694ac4749/eqsD9RWsdCgHoRsbXS5q",
+      "accentEvidence": "Adult male voice (30–40), Mexican Spanish, neutral Mexico City accent. Warm, clear baritone timbre with chest resonance and low sibilance. Crisp diction, an audible smile, and natural pauses; a medium-slow pace with falling intonation patterns that convey confidence. Conversational and instructional style without exaggeration; capable of shifting to a motivational or empathetic tone. Avoids strong regionalisms and over-dramatization. Ideal for financial explanations, storytelling, and tutorials.\n"
+    },
+    {
+      "voice": "pamela",
+      "id": "pmruOMcxgUotq2bYO5Ne",
+      "name": "Pamela",
+      "gender": "female",
+      "accent": "mexican",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "publicOwnerId": "5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/5064a405552a75cd9d3ead9d64a55d1073749d8ba09a1a9d7eda5d561135a5d3/pmruOMcxgUotq2bYO5Ne",
+      "accentEvidence": "Female voice from Mexico City, mid-30s. Warm and confident tone, conversational yet professional. Mexican accent is present but subtle, with natural pacing and clear diction. Ideal for corporate narrations and brand videos."
+    },
+    {
+      "voice": "albeiro",
+      "id": "OUfIyuG1GcVW5wnTy7Ru",
+      "name": "Albeiro O",
+      "gender": "male",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/a3d15ee7bb97f52bd8184361d6bc4d65f87603143d31a638bb3753eca4ae94e3/OUfIyuG1GcVW5wnTy7Ru",
+      "accentEvidence": "Colombian man, Bogotá accent, young, calm and measured tone.\n"
+    },
+    {
+      "voice": "carito",
+      "id": "J8BF9c7OgbHiqagCNoEj",
+      "name": "Carito",
+      "gender": "female",
+      "accent": "colombian",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "publicOwnerId": "66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/66ce2679115600b9fd12b06aa934c95e301231987a77891bdb9e94d7d9544b38/J8BF9c7OgbHiqagCNoEj",
+      "accentEvidence": "Young female voice from Bogotá. Cute, conversational delivery with natural warmth—ideal for intimate narration, casual dialogue, and relatable storytelling."
+    },
+    {
+      "voice": "santiago",
+      "id": "O1CnH2NGEehfL1nmYACp",
+      "name": "Santiago",
+      "gender": "male",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/ca4ea210dcaae65d4b8ba193f71bd505421cbe19f597f03023f7396d43c3dfdb/O1CnH2NGEehfL1nmYACp",
+      "accentEvidence": "Confident and natural Argentine Spanish with a clear Buenos Aires accent. Ideal for narration, voiceovers, educational content, and Latin American media."
+    },
+    {
+      "voice": "agustina",
+      "id": "TZvhlMgMw2P4gPSuD8v7",
+      "name": "Agustina",
+      "gender": "female",
+      "accent": "argentine",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "publicOwnerId": "64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/64cbc624eb5aab4e95a968e1f41d75402277cca6e549036ed17e56ea33bbbc9e/TZvhlMgMw2P4gPSuD8v7",
+      "accentEvidence": "A clear, middle-aged Argentine female voice with a polished Buenos Aires accent and a calm, confident cadence. Her attentive, reassuring tone builds instant trust, perfect for customer service agents, guided interactions, and professional conversations."
+    },
+    {
+      "voice": "carlos-figueroa",
+      "id": "4ex71F9amHzL0fiUD2y1",
+      "name": "Carlos Figueroa",
+      "gender": "male",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/34606eb8bb9723718d11b6ccf303a39470be550f4b4b1d868f3216e90ec1b224/4ex71F9amHzL0fiUD2y1",
+      "accentEvidence": "Puerto Rican accent male voice."
+    },
+    {
+      "voice": "veronica",
+      "id": "cryPG4aBcWsmW2cCIXjB",
+      "name": "Veronica",
+      "gender": "female",
+      "accent": "puerto rican",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "publicOwnerId": "368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f",
+      "libraryUrl": "https://elevenlabs.io/app/voice-lab/share/368d38a9dbff84d2ae4382cc6b5e422a4905a67a8ba7730ef91e8472ec60d09f/cryPG4aBcWsmW2cCIXjB",
+      "accentEvidence": "Puerto Rican Spanish-speaking female voice."
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet"
+    }
+  ],
+  "processing": "Provider originals retained separately. Review MP3s use verified constant-gain matching, without trimming or timing changes.",
+  "clips": [
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "pamela",
+      "voiceName": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/pamela/es-419-travel-power-outlet.mp3",
+      "voiceId": "pmruOMcxgUotq2bYO5Ne",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "fMCVoXvLJ9fYLBenpuj1",
+      "originalFile": "originals/pamela/es-419-travel-power-outlet.mp3",
+      "originalSha256": "09f93589f613c614c88fefded8d0165878d1fc54764e77be8e6361b7538856c8",
+      "originalBytes": 16343,
+      "deliverySha256": "2430838bf14b188c7d11e7e673a56e2c4e40b98512817789abbc38238d6ab14c",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.43
+      },
+      "gainDb": -4.91,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "albeiro",
+      "voiceName": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/albeiro/es-419-travel-power-outlet.mp3",
+      "voiceId": "OUfIyuG1GcVW5wnTy7Ru",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "eYt1XstQKLartpB9vaZZ",
+      "originalFile": "originals/albeiro/es-419-travel-power-outlet.mp3",
+      "originalSha256": "558122aa086c85b51658b9d991dcea592e99a06d454962227a11347348c2fc22",
+      "originalBytes": 17597,
+      "deliverySha256": "f4dd4a23fce88cc5c22dd2a4a1642adfcfcaa0352a0d02f596011bb5dfc8cd9e",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.92,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.52
+      },
+      "gainDb": 1.65,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "carito",
+      "voiceName": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO",
+      "file": "audio/carito/es-419-travel-power-outlet.mp3",
+      "voiceId": "J8BF9c7OgbHiqagCNoEj",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "4A0BdpRBwMGWPLgALfho",
+      "originalFile": "originals/carito/es-419-travel-power-outlet.mp3",
+      "originalSha256": "aab3b0e11413d478169a453390c5d6a157aa73183233bb71fb5b56db4a5d8e5b",
+      "originalBytes": 16343,
+      "deliverySha256": "8adab7817cb690e547691dbff49cceb2cc729b1cf4e8b525a5b3d1610725515f",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.91
+      },
+      "gainDb": -3.36,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "juan",
+      "voiceName": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX",
+      "file": "audio/juan/es-419-travel-power-outlet.mp3",
+      "voiceId": "eqsD9RWsdCgHoRsbXS5q",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "WJ0nVKv8QENkDKKWlYHI",
+      "originalFile": "originals/juan/es-419-travel-power-outlet.mp3",
+      "originalSha256": "feef66dc422c6ebb6ef2c30895782c6ea341f2f2a4da7d6466f92c80ef7cceab",
+      "originalBytes": 17597,
+      "deliverySha256": "a5b0c28a1cb79c12be81ffc838c1a42c8918d7d97d20f9d9b1e55ad7595a25f2",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.09
+      },
+      "gainDb": 0.63,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "agustina",
+      "voiceName": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/agustina/es-419-travel-power-outlet.mp3",
+      "voiceId": "TZvhlMgMw2P4gPSuD8v7",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "pig7c0wIaLhTy8VapI8H",
+      "originalFile": "originals/agustina/es-419-travel-power-outlet.mp3",
+      "originalSha256": "5aab89bbb432920847950f1e1ff291c2176dc931d689317805d4d57cf48f1c49",
+      "originalBytes": 15089,
+      "deliverySha256": "6cb3783098eeec516e183a39f941a8373d3b80d3f442d6f1ff97229306f89b64",
+      "deliveryBytes": 15089,
+      "decodedFrames": 38808,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.8
+      },
+      "gainDb": -2.86,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "santiago",
+      "voiceName": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR",
+      "file": "audio/santiago/es-419-travel-power-outlet.mp3",
+      "voiceId": "O1CnH2NGEehfL1nmYACp",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "rHz4ZTXO1ezvweQwHpAw",
+      "originalFile": "originals/santiago/es-419-travel-power-outlet.mp3",
+      "originalSha256": "53c47d322decc522b5db1fa8363ec72166c67a70263779fdcf92928dc24c60d3",
+      "originalBytes": 17597,
+      "deliverySha256": "b8dfa2079c7384e3db1b016e283a93417f157cebc87c1012786e703aa9e72601",
+      "deliveryBytes": 17597,
+      "decodedFrames": 45864,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.84
+      },
+      "gainDb": 2.68,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/carlos-figueroa/es-419-travel-power-outlet.mp3",
+      "voiceId": "4ex71F9amHzL0fiUD2y1",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "WXqFL8ard6LehWhl6gHT",
+      "originalFile": "originals/carlos-figueroa/es-419-travel-power-outlet.mp3",
+      "originalSha256": "105355a94fd8efbc3dd2a33dc9b11f72c6bda3a58b6aae72e6dcf548d0b604b1",
+      "originalBytes": 16343,
+      "deliverySha256": "37da91d285fa69e1e1110a0b24908521af8ef82c3b19388f768da586fa42f31b",
+      "deliveryBytes": 16343,
+      "decodedFrames": 42336,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.18
+      },
+      "gainDb": 5.67,
+      "targetLimited": false,
+      "limitingReasons": []
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet",
+      "voice": "veronica",
+      "voiceName": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR",
+      "file": "audio/veronica/es-419-travel-power-outlet.mp3",
+      "voiceId": "cryPG4aBcWsmW2cCIXjB",
+      "request": {
+        "text": "enchufe",
+        "model_id": "eleven_v4",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        },
+        "language_code": "es"
+      },
+      "requestId": "IDAVOJppQIBtdK1ePCcZ",
+      "originalFile": "originals/veronica/es-419-travel-power-outlet.mp3",
+      "originalSha256": "5149f7787d0d6f939a2f5784e5c5a5611fb85648d1e5e98de6f40c8a60529382",
+      "originalBytes": 18851,
+      "deliverySha256": "30d388a528fee0fcf4653f86170356e9f2662f448c3a61b397babc2752070c7b",
+      "deliveryBytes": 18851,
+      "decodedFrames": 49392,
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.25
+      },
+      "gainDb": -5.52,
+      "targetLimited": false,
+      "limitingReasons": []
+    }
+  ],
+  "replacementSha256": "46ed8d5442f5e8e5207c8088c92d9cecb223913f6153c8c7f88592d94f7fe5e7",
+  "baseDraftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62"
+}

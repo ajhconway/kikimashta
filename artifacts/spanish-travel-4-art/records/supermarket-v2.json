@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-supermarket",
+  "slug": "supermarket",
+  "version": 2,
+  "path": "originals/supermarket-v2.png",
+  "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55",
+  "promptSha256": "51249f276115b1e8aa2e65f7a2886df70a8b353be274df40551732e40c6f78c9",
+  "referenceSha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-23ace9bf-7a7f-4031-948b-197907f95c43.png",
+  "supersedes": "originals/supermarket-v1.png"
+}

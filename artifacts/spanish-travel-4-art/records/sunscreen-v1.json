@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-sunscreen",
+  "slug": "sunscreen",
+  "version": 1,
+  "path": "originals/sunscreen-v1.png",
+  "sha256": "699651b5b06ce112346a7d32db2df1e950174a588cd2d2f0375ebc40c3018b44",
+  "promptSha256": "2919ed064550cf6a1a4d1c54cb6a5add42a63e594386b503f24c9880b35917ad",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f8e79c3e-5e16-49ea-b285-1dd80a658a25.png"
+}

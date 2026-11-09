@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-glove",
+  "slug": "glove",
+  "version": 1,
+  "path": "originals/glove-v1.png",
+  "sha256": "ffd805832b731e8bc4e8739ea1f478bb1264b05b4c646ae36a1b5d42d83a9182",
+  "promptSha256": "afb3939d136173009ac922ee5ac0e66c35e503432004237ff001e7845deb434b",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-de77a9c4-9fd4-4b69-b976-83454c3c6d1a.png"
+}

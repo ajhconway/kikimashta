@@ -1,0 +1,913 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "status": "generated-awaiting-owner-media-review",
+  "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "tool": "built-in image_gen",
+  "generatedImages": 35,
+  "reusedImages": 1,
+  "pendingImages": 0,
+  "expectedNewImages": 35,
+  "expectedClips": 288,
+  "recordings": 288,
+  "audioManifest": "artifacts/spanish-travel-4-audio-review/manifest.json",
+  "audioManifestSha256": "56a41063e4c39c61802a0a349ebeaba2ca63a0357edf52f9934ad9cc1c2d7442",
+  "wordReplacement": "content/spanish-travel-4/word-replacement.json",
+  "wordReplacementSha256": "46ed8d5442f5e8e5207c8088c92d9cecb223913f6153c8c7f88592d94f7fe5e7",
+  "retiredItemId": "es-419-travel-bandage",
+  "replacementAudioManifest": "artifacts/spanish-travel-4-replacement-audio-review/manifest.json",
+  "replacementAudioManifestSha256": "b0ad675a91c63ba5a3bd49057afb13ce1f4445dc4265326dab807e523de8666d",
+  "images": [
+    {
+      "id": "es-419-travel-supermarket",
+      "slug": "supermarket",
+      "text": "supermercado",
+      "meaning": "Supermarket",
+      "group": "town",
+      "concept": "Recolour the same supermarket with a clear GREEN AND WHITE theme: rich leaf-green roof trim, green-and-white striped awning, white/cream walls, green shopping carts and green shelf accents. Let green lead instead of purple, pink and gold; use restrained yellow highlights only where helpful. Preserve the existing storefront layout, large shopping-cart pictogram, foreground cart and shelves of packaged groceries. Keep the recognizable friendly rounded cartoon shapes and dark green/deep-violet contours. Do not add lettering, logos, fruit piles or new objects.",
+      "reviewNotes": [
+        "Keep distinct from the open-air market and bakery; do not add fruit piles as the primary subject."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/supermarket-v2.png",
+      "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55",
+      "bytes": 1306283,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 542145,
+        "opaquePixels": 1015747,
+        "opaqueWhitePixels": 44742
+      },
+      "promptSha256": "51249f276115b1e8aa2e65f7a2886df70a8b353be274df40551732e40c6f78c9",
+      "referenceSha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd"
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "slug": "post-office",
+      "text": "oficina de correos",
+      "meaning": "Post office",
+      "group": "town",
+      "concept": "Change the colour treatment of this SAME post office to a clear RED AND WHITE postal theme: rich red roof trim, red-and-white awning, white/cream walls, red mail box and white envelope pictograms. Reduce the purple and gold areas substantially. Keep the recognizable envelope, mail slot, counter, parcels, friendly rounded shapes, proportions and composition. Retain subtle deep-purple or dark-red contours, but let red and white lead. No lettering, flags or postal-company logo.",
+      "reviewNotes": [
+        "Use an envelope symbol, not text; avoid a generic shop that depends on a label."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/post-office-v2.png",
+      "sha256": "6a95519dc4dbfcaff775f7b16e1ed79e8dae550a197e4e4a6391610e97fbf043",
+      "bytes": 1096949,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 661007,
+        "opaquePixels": 898812,
+        "opaqueWhitePixels": 62917
+      },
+      "promptSha256": "6e2cb81d4e7860661d63e5b1edfecfe9f566fca37757a753a03fa7692eb9098c",
+      "referenceSha256": "5a0e3c15bc95b6f19e75427daa9a748bd5c218f8f700efd63b6356845b08121e"
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "slug": "police-station",
+      "text": "estación de policía",
+      "meaning": "Police station",
+      "group": "town",
+      "concept": "Recolour this SAME police station with a strong BLUE AND WHITE police theme: deep navy roof/door/trim, white walls, cool blue windows and medium-blue shield border. Keep the gold shield/star as a small badge accent. Remove the dominant purple/pink/gold architectural palette and pink flourishes; blue and white should clearly lead. Preserve the same recognizable building, shield, entrance, proportions and friendly rounded outlines. No text or real police logo.",
+      "reviewNotes": [
+        "No police car outside: keep separate from patrulla; do not rely on written signs."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/police-station-v2.png",
+      "sha256": "36564202101cd5e954e7a93e15ff7f04998161f70d8723a12a4fa666ac457df5",
+      "bytes": 1140390,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 648542,
+        "opaquePixels": 910468,
+        "opaqueWhitePixels": 174834
+      },
+      "promptSha256": "b2b47259ff4ffa195ccc81f7f1648283fb210aabb9fa25f20289d0e90a8f41c0",
+      "referenceSha256": "f266955b2c37b1a554c1d4140d2dd726102b96641aa5cd2cdc947c70e034dc36"
+    },
+    {
+      "id": "es-419-travel-library",
+      "slug": "library",
+      "text": "biblioteca",
+      "meaning": "Library",
+      "group": "town",
+      "concept": "A quiet library interior with two tall bookshelves and a reading table; books dominate.",
+      "reviewNotes": [
+        "Keep clearly different from the standalone table card; no bookstore checkout."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/library-v1.png",
+      "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
+      "bytes": 1111420,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 714357,
+        "opaquePixels": 844040,
+        "opaqueWhitePixels": 172
+      },
+      "promptSha256": "29671bb3b6352178bd61d5e854c4ec51bb0cacf8efd9cd8e668fa3418218900f",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "slug": "cinema",
+      "text": "cine",
+      "meaning": "Movie theater",
+      "group": "town",
+      "concept": "A cinema interior with a large blank screen, rows of red seats and a film-reel pictogram.",
+      "reviewNotes": [
+        "No popcorn or snacks as the primary cue."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/cinema-v1.png",
+      "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
+      "bytes": 1324776,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 608922,
+        "opaquePixels": 950069,
+        "opaqueWhitePixels": 167
+      },
+      "promptSha256": "70230f2c3d2c07395b8347859e5310e10341f655bde518b64521f89ac23ebcbb",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "slug": "laundromat",
+      "text": "lavandería",
+      "meaning": "Laundromat",
+      "group": "town",
+      "concept": "A small laundry interior with two large front-loading washing machines and a basket of clothes.",
+      "reviewNotes": [
+        "No detergent bottle as the main object; distinguish from a hotel room."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/laundromat-v1.png",
+      "sha256": "adbd79aeeb7e2cfc91af7eb3568488e6e6e0daea3be784a9f3a52c1e6ab2ef0c",
+      "bytes": 1414695,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 537997,
+        "opaquePixels": 1021686,
+        "opaqueWhitePixels": 4586
+      },
+      "promptSha256": "e0f8ed683fc7d9d710ffd98295ec347f29bbb73fa28a5d34c0c70fa1fd5f5e4a",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "slug": "helicopter",
+      "text": "helicóptero",
+      "meaning": "Helicopter",
+      "group": "transport",
+      "concept": "One complete helicopter with a clear large main rotor and tail rotor, seen in side three-quarter view.",
+      "reviewNotes": [
+        "No airplane, pad scene or incidental vehicle; review rotor readability at card size."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/helicopter-v1.png",
+      "sha256": "d711d7130ef90a0fb9dbf3e9c68aae09f03915905da9299ab21514a2485997e7",
+      "bytes": 893080,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 966018,
+        "opaquePixels": 581264,
+        "opaqueWhitePixels": 39
+      },
+      "promptSha256": "59ec8bee6563643188c69fbd7ede19bb7d20480412fb72215265001a96e39945",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "slug": "cargo-truck",
+      "text": "camión de carga",
+      "meaning": "Cargo truck",
+      "group": "transport",
+      "concept": "One large cargo truck with an obvious enclosed cargo box behind its cab, seen side-on.",
+      "reviewNotes": [
+        "The full phrase avoids the Mexican bus sense of camión. Exclude bus/car/ambulance/patrol-car choices where needed."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/cargo-truck-v1.png",
+      "sha256": "c1f378b607a5d065e62d156aa39f7ded28ef709893f7f8e74c5128abdbd3f6a9",
+      "bytes": 956469,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 843074,
+        "opaquePixels": 716479,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "85ef117a0500c433033787f7a4ece17a0484565ca9314ac250792d0d5797acb3",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "slug": "ambulance",
+      "text": "ambulancia",
+      "meaning": "Ambulance",
+      "group": "transport",
+      "concept": "One white emergency ambulance with a blue medical star and a clear rooftop light bar.",
+      "reviewNotes": [
+        "No lettering, brand or protected red-cross emblem; keep distinct from the hospital picture and ordinary van."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/ambulance-v1.png",
+      "sha256": "0582dac5d6a94a0870646a2fd2da3a5433f0bccd570d80eba7838ac5e32173b3",
+      "bytes": 1026465,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 781711,
+        "opaquePixels": 776635,
+        "opaqueWhitePixels": 49085
+      },
+      "promptSha256": "1897ce96ee4b391c2d1c0b948c9dbd7d6b192f0c2846e32aacd0a11832fe1aeb",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "slug": "police-car",
+      "text": "patrulla",
+      "meaning": "Police car",
+      "group": "transport",
+      "concept": "One dark-and-white patrol car with a clear rooftop emergency light bar and shield badge pictogram.",
+      "reviewNotes": [
+        "Vehicle sense; not a group of officers. Compare with carro and police-station artwork before activation."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/police-car-v1.png",
+      "sha256": "d1fba76cde3d6b4ead837c58152a10ab1f3fa9bd7c9aef144b3456e2902160f3",
+      "bytes": 837060,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 950485,
+        "opaquePixels": 610526,
+        "opaqueWhitePixels": 2425
+      },
+      "promptSha256": "163429afbab67f0e3808ba8c91bc92afcab46d2bd5edcd01cf5d563e76d40938",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-tire",
+      "slug": "tire",
+      "text": "llanta",
+      "meaning": "Tire",
+      "group": "transport",
+      "concept": "One large upright black rubber tire with a clear tread and hollow center, no metal rim.",
+      "reviewNotes": [
+        "Rubber tire sense used in Mexico and much of Latin America; not a wheel rim. Avoid competing vehicle pictures containing prominent tires."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/tire-v1.png",
+      "sha256": "c1525d8e91c637a2b6a140ab8f3e0361370567072750fc2f663504308a75b260",
+      "bytes": 998500,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 803111,
+        "opaquePixels": 755714,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "fb6e637ea98cf0848e1345bcbaa7faa16ab80f36388c778d7d25a9aa52b6508c",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "slug": "steering-wheel",
+      "text": "volante",
+      "meaning": "Steering wheel",
+      "group": "transport",
+      "concept": "One isolated circular three-spoke steering wheel with a small central hub.",
+      "reviewNotes": [
+        "No dashboard, tire tread or car around it; compare with llanta for clear silhouettes."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/steering-wheel-v1.png",
+      "sha256": "0558a23d12e32931ad9f3ce9ca05a4866f7d8d42dc48c15cb56c72194fc13501",
+      "bytes": 888968,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 922127,
+        "opaquePixels": 627457,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "ad05be15e265c3dcbb07f9f43f5b76a97ceda3363859a2b96fc1452a9988692d",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-salt",
+      "slug": "salt",
+      "text": "sal",
+      "meaning": "Salt",
+      "group": "food",
+      "concept": "A compact transparent salt shaker with a perforated metal top and visible white salt grains.",
+      "reviewNotes": [
+        "Salt and sugar cannot be distinguished by the granules alone; container cues must remain clear."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/salt-v1.png",
+      "sha256": "0810a29ef637ea3342452a560ac8ddf19907902d9dd23160f533665e70af65d8",
+      "bytes": 886940,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 903904,
+        "opaquePixels": 657840,
+        "opaqueWhitePixels": 52277
+      },
+      "promptSha256": "cdc10555deda8e11b2963aa8aa374ff87ec0557d067bd76085f3ed85fba8745b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "slug": "sugar",
+      "text": "azúcar",
+      "meaning": "Sugar",
+      "group": "food",
+      "concept": "A rounded sugar bowl containing distinct white sugar cubes, with one small spoon.",
+      "reviewNotes": [
+        "Keep distinct from the salt shaker; do not reuse the standalone spoon picture."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/sugar-v1.png",
+      "sha256": "b83cada270bfe466db8b4a3702e73e4faa14fd240056fa7256cd99499ba7f7a0",
+      "bytes": 994756,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 860757,
+        "opaquePixels": 698638,
+        "opaqueWhitePixels": 45016
+      },
+      "promptSha256": "d80ac14b5fad1651cd20f7e014e1e2bcc4cc350d917b87bfa3d8a36db7b4702b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-butter",
+      "slug": "butter",
+      "text": "mantequilla",
+      "meaning": "Butter",
+      "group": "food",
+      "concept": "Remove ONLY the separate thin butter sliver lying in front of the main butter block. The dish should now contain one complete butter block, with clean empty dish surface in front. Preserve the main block, open lid, dish, colours, proportions and composition. Do not add a knife, slices, crumbs or other objects.",
+      "reviewNotes": [
+        "No cheese holes or wedge shape; inspect/exclude the cheese card and plate card if still ambiguous."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/butter-v2.png",
+      "sha256": "db1c70b619229bb9d5d57c02cfa15dc3166a55abe8c955d7e7548413b6a0752e",
+      "bytes": 1097399,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 729733,
+        "opaquePixels": 830097,
+        "opaqueWhitePixels": 160
+      },
+      "promptSha256": "fa33193bf99cfe705bf1eb51fac272c40ecffa85875e6137ec84a06306c9bfcf",
+      "referenceSha256": "2e9ed6dfa09f38d0818a84d78dec578918b9beb4db2cbed370e34e5317390f8a"
+    },
+    {
+      "id": "es-419-travel-lime",
+      "slug": "lime",
+      "text": "limón",
+      "meaning": "Lime",
+      "group": "food",
+      "concept": "One round green lime with a clearly visible cut half showing pale-green citrus segments.",
+      "reviewNotes": [
+        "Green lime sense for Mexican vocabulary focus, not a yellow lemon; compare with naranja and aguacate."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/lime-v1.png",
+      "sha256": "e74a0306ccca96cefc4b85ebf120d74bf4021a641b1007a61f00a4acf14a381c",
+      "bytes": 1106677,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 784254,
+        "opaquePixels": 771321,
+        "opaqueWhitePixels": 4
+      },
+      "promptSha256": "a2eddbd0f2a02bf35e5380b312f63299d429528a1a1fc050516b6c07e1521a97",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "slug": "strawberry",
+      "text": "fresa",
+      "meaning": "Strawberry",
+      "group": "food",
+      "concept": "One large red strawberry with a leafy green cap and clearly visible seeds.",
+      "reviewNotes": [
+        "Single fruit, no bowl, yogurt, cake or market scene."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/strawberry-v1.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "bytes": 943573,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 891517,
+        "opaquePixels": 670838,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "97754e95503943f7ebbf52896c1eabc7b084e115b5469c9b8b44f580d175d268",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "slug": "pineapple",
+      "text": "piña",
+      "meaning": "Pineapple",
+      "group": "food",
+      "concept": "One whole golden pineapple with a clear diamond-patterned skin and tall green crown.",
+      "reviewNotes": [
+        "Single fruit; no drink, fruit basket or beach scene."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/pineapple-v1.png",
+      "sha256": "bfa1ddc1824d7bcc7e728155bf7659af926a4e8dd0af5be7ae0a8abd89b3cadf",
+      "bytes": 909439,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 948856,
+        "opaquePixels": 610202,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "95d148ae79f304c8aaff972cfc1381e8f6d69368c6dd0badae16ff44a8c85ce7",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-sock",
+      "slug": "sock",
+      "text": "calcetín",
+      "meaning": "Sock",
+      "group": "clothing",
+      "concept": "One ankle sock with a clear heel, toe and ribbed cuff.",
+      "reviewNotes": [
+        "Singular; no shoe or pair of socks. Distinguish from guante."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/sock-v1.png",
+      "sha256": "5c76ff42e8992b456474658dce06e5553fdc820e78689bee7eeb1663a53f2ee4",
+      "bytes": 839779,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 916911,
+        "opaquePixels": 645122,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "fce6666a3e84ce98865a529ed5105b65ba66926ee6d96f5779a4cc545c9f989b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "slug": "skirt",
+      "text": "falda",
+      "meaning": "Skirt",
+      "group": "clothing",
+      "concept": "One simple flared knee-length skirt with an obvious waistband and open lower hem.",
+      "reviewNotes": [
+        "No torso, sleeves or trouser legs; distinguish from vestido and pantalones."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/skirt-v1.png",
+      "sha256": "339ccc59c027b65a7713843953b50bff0b67d1b5a2c3a27776886f70260d80b4",
+      "bytes": 997565,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 820188,
+        "opaquePixels": 741384,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "a3751682bc7a7954f7a34dbe837a5f29b7d5b902733cc813f5cf3f9a5273a1ca",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-dress",
+      "slug": "dress",
+      "text": "vestido",
+      "meaning": "Dress",
+      "group": "clothing",
+      "concept": "One sleeveless knee-length dress with a connected bodice and flared skirt.",
+      "reviewNotes": [
+        "No person; silhouette must differ from falda, camisa and traje de baño."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/dress-v1.png",
+      "sha256": "e4188595075b26ea8d27111e9f0a66ca470c9c708656eb51e9b9cc513d561ddb",
+      "bytes": 899330,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 889682,
+        "opaquePixels": 671023,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "45e9ec047cc4f8fcacf530ccf50fb9fa3b6f56122657d9147494a88c7299b9c1",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-glove",
+      "slug": "glove",
+      "text": "guante",
+      "meaning": "Glove",
+      "group": "clothing",
+      "concept": "One simple glove with all five fingers distinct and an obvious wrist cuff.",
+      "reviewNotes": [
+        "Singular; no mitten or hand inside it. Avoid a medical setting that narrows the word unnecessarily."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/glove-v1.png",
+      "sha256": "ffd805832b731e8bc4e8739ea1f478bb1264b05b4c646ae36a1b5d42d83a9182",
+      "bytes": 931545,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 870162,
+        "opaquePixels": 689370,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "afb3939d136173009ac922ee5ac0e66c35e503432004237ff001e7845deb434b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-belt",
+      "slug": "belt",
+      "text": "cinturón",
+      "meaning": "Belt",
+      "group": "clothing",
+      "concept": "One brown clothing belt curved into a loose oval, with a clear metal buckle and punched holes.",
+      "reviewNotes": [
+        "Clothing belt, not the already-taught seat belt. Compare/exclude cinturón de seguridad."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/belt-v1.png",
+      "sha256": "2a63c3d8b325a0ddc529f1ddc59456ee12323113cbaf500e25de8e65183fc328",
+      "bytes": 698647,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1076063,
+        "opaquePixels": 481666,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "1840e601a8ca8afc9e6580c830102431cb976f674bd69a7c3f7d9871219801d8",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "slug": "wristwatch",
+      "text": "reloj de pulsera",
+      "meaning": "Wristwatch",
+      "group": "clothing",
+      "concept": "One wristwatch with a large round dial and clearly visible upper/lower straps.",
+      "reviewNotes": [
+        "No wall clock, numerals or text needed; full phrase makes the wristwatch sense explicit."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/wristwatch-v1.png",
+      "sha256": "d54e7457f61ae894fed409b675a0517ec6037a640dc6068025e7b1f58709f416",
+      "bytes": 818196,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 968489,
+        "opaquePixels": 593839,
+        "opaqueWhitePixels": 11
+      },
+      "promptSha256": "7c0bf537b5429fe270432fc8d45e2f5ff2b3b4ecdd11f57f55608727f871a37b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-pill",
+      "slug": "pill",
+      "text": "pastilla",
+      "meaning": "Pill",
+      "group": "health",
+      "concept": "One large round tablet with a shallow score line and a small simple blister backing behind it.",
+      "reviewNotes": [
+        "A medicine tablet, not candy or soap; do not depict dosage instructions."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/pill-v1.png",
+      "sha256": "17ef216bd80a9f197e08a0dde25a38129e2eaf5ea5ad376d7e53eb459d899e28",
+      "bytes": 931608,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 908367,
+        "opaquePixels": 653147,
+        "opaqueWhitePixels": 16691
+      },
+      "promptSha256": "20a296329c0d6d044d5991c793afcd64c12397c591a4a292b9642f034d417334",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "slug": "adhesive-bandage",
+      "text": "curita",
+      "meaning": "Adhesive bandage",
+      "group": "health",
+      "concept": "One unwrapped beige adhesive strip with two rounded ends and an obvious central gauze pad.",
+      "reviewNotes": [
+        "Common American word; no brand logo. Clearly different from a roll of bandage."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/adhesive-bandage-v1.png",
+      "sha256": "bd860f54e45a5199952f9f4b09d3663f57b3db9ff86fe57e791331f81e4b8e0a",
+      "bytes": 783743,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1015270,
+        "opaquePixels": 547932,
+        "opaqueWhitePixels": 13
+      },
+      "promptSha256": "e3391a4bf1a3c82382aa22967464790b1c406761ad5e351913808969c131a282",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "slug": "power-outlet",
+      "text": "enchufe",
+      "meaning": "Power outlet",
+      "group": "health",
+      "concept": "One ivory wall plate with two vertically stacked North American type-B power receptacles; each socket has two short straight parallel vertical slots and one round grounding hole below. No plug, cord, appliance or wall scenery.",
+      "reviewNotes": [
+        "Power outlet sense chosen by owner; related terms include tomacorriente/contacto. Keep both receptacles simple and geometrically correct."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/power-outlet-v1.png",
+      "sha256": "55cc4baaeff1eee5bbd958fbfe094eb3307f46d54f5c70a30378c50296168d6a",
+      "bytes": 1076011,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 664584,
+        "opaquePixels": 896164,
+        "opaqueWhitePixels": 34959
+      },
+      "promptSha256": "d02e2206091834104e6088cfe0ee265fe95e73f7a99d5b87db5794b6839bdfb4",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "slug": "scissors",
+      "text": "tijeras",
+      "meaning": "Scissors",
+      "group": "health",
+      "concept": "One large pair of scissors with two finger loops, a clear central pivot and two slightly open blades.",
+      "reviewNotes": [
+        "Plural noun for one pair. Existing cutting-action scene includes equally prominent paper, so plan a noun-focused illustration."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/scissors-v1.png",
+      "sha256": "ba7042409bb9b5b9f390ce21b7bfb047f2fd148dabd574a37019fa040ba926f8",
+      "bytes": 683357,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1120297,
+        "opaquePixels": 434509,
+        "opaqueWhitePixels": 1077
+      },
+      "promptSha256": "575b823480075957197958c41c5e9b0fd5bf60228c373616fec3f5807915ed6b",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "slug": "sunscreen",
+      "text": "protector solar",
+      "meaning": "Sunscreen",
+      "group": "health",
+      "concept": "One broad squeeze tube with a large simple sun pictogram and a small dab of cream at its tip.",
+      "reviewNotes": [
+        "Sun icon must read at 145px; no SPF lettering. Compare with toothpaste, shampoo and insect-repellent packaging."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/sunscreen-v1.png",
+      "sha256": "699651b5b06ce112346a7d32db2df1e950174a588cd2d2f0375ebc40c3018b44",
+      "bytes": 759564,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1005018,
+        "opaquePixels": 555694,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "2919ed064550cf6a1a4d1c54cb6a5add42a63e594386b503f24c9880b35917ad",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "slug": "insect-repellent",
+      "text": "repelente",
+      "meaning": "Insect repellent",
+      "group": "health",
+      "concept": "One spray bottle with a clear mosquito pictogram inside a crossed circle.",
+      "reviewNotes": [
+        "Mosquito symbol must remain readable without words. Compare with sunscreen, shampoo and bottle cards."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/insect-repellent-v1.png",
+      "sha256": "2af61d0f84d406fe4f8fcf974d6e5730d24c32a65d77e1fbc66100fc1466c254",
+      "bytes": 777998,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 994892,
+        "opaquePixels": 566981,
+        "opaqueWhitePixels": 6146
+      },
+      "promptSha256": "b2c60ceb72eb72d42f539b886442d65300ee7de76fd8f43e61d039c67e87f288",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-tent",
+      "slug": "tent",
+      "text": "tienda de campaña",
+      "meaning": "Tent",
+      "group": "outdoors",
+      "concept": "One small dome camping tent with a clearly open triangular entrance and short guy ropes.",
+      "reviewNotes": [
+        "No shop facade; full phrase distinguishes tent from tienda meaning shop."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/tent-v1.png",
+      "sha256": "cacf2f7adc9661765c8769d461594a5710ab99b6b669ad567345f4452a899148",
+      "bytes": 788228,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 998271,
+        "opaquePixels": 562616,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "d33726d95a4cf5b799edfe09fd7d726cbc8946c33620825764d248319a250a27",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "slug": "flashlight",
+      "text": "linterna",
+      "meaning": "Flashlight",
+      "group": "outdoors",
+      "concept": "Make this flashlight rigid and STRAIGHT. The handle cylinder, neck and lamp head must share one perfectly straight longitudinal centre line; no bent joint, curved handle or kink near the pink collar. Keep the general diagonal orientation, purple/pink/gold colours, switch, broad lens and short gentle beam. Keep the complete flashlight in frame with transparent margin; do not merely rotate the existing curved geometry.",
+      "reviewNotes": [
+        "No batteries or phone beside it; keep complete handle and lens visible."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/flashlight-v2.png",
+      "sha256": "52fc58f35fa47d39362fc9c2d14e441f53809df585b747e5a3238f597833d8d6",
+      "bytes": 587905,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1171226,
+        "opaquePixels": 391271,
+        "opaqueWhitePixels": 2
+      },
+      "promptSha256": "15c46abd71def787c42c77c39fa649527282efd70d5b04273990f197a07b532d",
+      "referenceSha256": "ec5db61e2fca510b8007164ae4b81aefbff1a9474c3e4b8c694d70ecb6371197"
+    },
+    {
+      "id": "es-419-travel-compass",
+      "slug": "compass",
+      "text": "brújula",
+      "meaning": "Compass",
+      "group": "outdoors",
+      "concept": "One round compass with a prominent two-color needle and four simple directional ticks.",
+      "reviewNotes": [
+        "No letters, numbers or map; distinguish from a wristwatch by needle and absence of straps."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/compass-v1.png",
+      "sha256": "f99cd67172292569e36de26ff5bd71b72e31721aef19bcbf084274477807eb32",
+      "bytes": 1005812,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 834998,
+        "opaquePixels": 725456,
+        "opaqueWhitePixels": 677
+      },
+      "promptSha256": "a857c580c1ddff504591c3e507fcdde1172c5515dbafce23829e1718cf65ab1f",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "slug": "sleeping-bag",
+      "text": "saco de dormir",
+      "meaning": "Sleeping bag",
+      "group": "outdoors",
+      "concept": "Make the sleeping bag zipper SLIGHTLY LONGER: extend the existing zippered V opening downward by about one extra quilted band, moving the pull about 10–15 percent of the bag length toward the foot. Keep two coherent zipper tracks with matching teeth leading from the same upper opening to the new lower pull; do not add a second zipper or widen the opening dramatically. Preserve hood, overall cocoon shape, padding, colours, orientation and proportions.",
+      "reviewNotes": [
+        "No bed or pillow. Must look like a sleeping bag rather than a folded blanket or scarf."
+      ],
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/sleeping-bag-v2.png",
+      "sha256": "0b7c8595b40d556074de39088efe6f4df13f0a73d69e483c1515574271c2e7b0",
+      "bytes": 927918,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 950304,
+        "opaquePixels": 612122,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "4bfef5bd06c67be1cc40fb56c7afe7dddf12a20fbf91d2bb7839d598e338cec3",
+      "referenceSha256": "e400ba6f09bd4c9025a643452e380d156566a595a97cd62d4ccce73ec3903a11"
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "slug": "binoculars",
+      "text": "binoculares",
+      "meaning": "Binoculars",
+      "group": "outdoors",
+      "concept": "One pair of binoculars with two round objective lenses joined by a central bridge and focus wheel.",
+      "reviewNotes": [
+        "Plural noun; no neck strap dominating the silhouette or scenic background."
+      ],
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/binoculars-v1.png",
+      "sha256": "c3db8ff4fa4a2d4155fb71703d58cfabda3bc46e84b9af82e1366a99acc69bfb",
+      "bytes": 1173957,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 725051,
+        "opaquePixels": 832452,
+        "opaqueWhitePixels": 542
+      },
+      "promptSha256": "3b93f661da73609831a416e423c2105d9115420ed887d6794a107ae20bfc2e2e",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-flower",
+      "slug": "flower",
+      "text": "flor",
+      "meaning": "Flower",
+      "group": "outdoors",
+      "concept": "One pink five-petaled flower with a yellow center, green stem and two leaves.",
+      "reviewNotes": [
+        "Reuse the exact approved standalone flower; no bouquet, vase or garden."
+      ],
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+      "sha256": "ab0872808bfc7bcdb993574b60152a87e3a975f84e59cdb560872ff87a1ebba9",
+      "sourceId": "ja-v-fa6a4c8f27b4",
+      "evidence": "content/card-regeneration/activation.json"
+    }
+  ]
+}

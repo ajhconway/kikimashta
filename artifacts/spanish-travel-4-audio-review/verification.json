@@ -1,0 +1,76 @@
+{
+  "issue": 207,
+  "status": "generated-awaiting-owner-listening",
+  "clips": 288,
+  "words": 36,
+  "voices": 8,
+  "draftAuthorization": "content/spanish-travel-4/generation-approval.json",
+  "tests": {
+    "focusedNode": 6,
+    "eslint": "passed"
+  },
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "passed": 288,
+      "clips": 288,
+      "advanced": 288,
+      "failures": [],
+      "minDuration": 0.64,
+      "maxDuration": 1.76
+    },
+    {
+      "engine": "mobile-webkit",
+      "passed": 288,
+      "clips": 288,
+      "advanced": 288,
+      "failures": [],
+      "minDuration": 0.6791836734693878,
+      "maxDuration": 1.8024489795918368
+    }
+  ],
+  "archive": {
+    "path": "~/.local/share/kikimashta/spanish-audio/207-v1/",
+    "filesVerified": 1736,
+    "archiveManifest": 1
+  },
+  "quieterClips": [
+    {
+      "id": "es-419-travel-sugar",
+      "voice": "carlos-figueroa",
+      "integratedLufs": -22.65,
+      "truePeakDbtp": -5.79,
+      "gainDb": 9,
+      "reason": "maximum_gain"
+    }
+  ],
+  "limitations": [
+    "Pronunciation and listening acceptance pending.",
+    "Real iPhone testing remains manual.",
+    "No runtime activation."
+  ],
+  "galleryChecks": [
+    {
+      "browser": "chromium",
+      "controls": 288,
+      "words": 36,
+      "accentInsensitiveSearch": true,
+      "regionFilter": true,
+      "voiceFilter": true,
+      "nativeSequenceStartStop": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "controls": 288,
+      "words": 36,
+      "accentInsensitiveSearch": true,
+      "regionFilter": true,
+      "voiceFilter": true,
+      "nativeSequenceStartStop": true,
+      "overflow": false,
+      "pageErrors": []
+    }
+  ]
+}

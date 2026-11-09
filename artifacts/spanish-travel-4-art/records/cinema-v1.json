@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-cinema",
+  "slug": "cinema",
+  "version": 1,
+  "path": "originals/cinema-v1.png",
+  "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
+  "promptSha256": "70230f2c3d2c07395b8347859e5310e10341f655bde518b64521f89ac23ebcbb",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f815b345-0cba-4f4d-a9c2-6b5ac13022e7.png"
+}

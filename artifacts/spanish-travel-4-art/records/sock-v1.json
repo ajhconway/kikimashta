@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-sock",
+  "slug": "sock",
+  "version": 1,
+  "path": "originals/sock-v1.png",
+  "sha256": "5c76ff42e8992b456474658dce06e5553fdc820e78689bee7eeb1663a53f2ee4",
+  "promptSha256": "fce6666a3e84ce98865a529ed5105b65ba66926ee6d96f5779a4cc545c9f989b",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-62c31fa7-68cd-481c-b5d6-87ca4d73eaf9.png"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-scissors",
+  "slug": "scissors",
+  "version": 1,
+  "path": "originals/scissors-v1.png",
+  "sha256": "ba7042409bb9b5b9f390ce21b7bfb047f2fd148dabd574a37019fa040ba926f8",
+  "promptSha256": "575b823480075957197958c41c5e9b0fd5bf60228c373616fec3f5807915ed6b",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-7ca5ea5c-bc2b-415c-835f-39c58d0738b4.png"
+}

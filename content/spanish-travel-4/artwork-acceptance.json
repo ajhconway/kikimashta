@@ -1,0 +1,270 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "language": "es-419",
+  "status": "artwork-accepted",
+  "ownerMessage": "Great, I'm happy with the artwork.",
+  "scope": "All 36 currently selected pictures only. Listening acceptance and activation remain pending.",
+  "artworkManifest": "artifacts/spanish-travel-4-art/manifest.json",
+  "artworkManifestSha256": "a8f831251d05b434361d73a9cee1d5a7558de9ae040d1235d805c200a5921a8b",
+  "selection": "artifacts/spanish-travel-4-art/selection.json",
+  "selectionSha256": "42b1ee6b8ebbf95e7ecc68e61138c0835af27b9dfa2b5a29fc2f1303fd19412b",
+  "wordReplacement": "content/spanish-travel-4/word-replacement.json",
+  "wordReplacementSha256": "46ed8d5442f5e8e5207c8088c92d9cecb223913f6153c8c7f88592d94f7fe5e7",
+  "pictures": 36,
+  "generated": 35,
+  "reused": 1,
+  "images": [
+    {
+      "id": "es-419-travel-supermarket",
+      "path": "artifacts/spanish-travel-4-art/originals/supermarket-v2.png",
+      "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "path": "artifacts/spanish-travel-4-art/originals/post-office-v2.png",
+      "sha256": "6a95519dc4dbfcaff775f7b16e1ed79e8dae550a197e4e4a6391610e97fbf043",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "path": "artifacts/spanish-travel-4-art/originals/police-station-v2.png",
+      "sha256": "36564202101cd5e954e7a93e15ff7f04998161f70d8723a12a4fa666ac457df5",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-library",
+      "path": "artifacts/spanish-travel-4-art/originals/library-v1.png",
+      "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "path": "artifacts/spanish-travel-4-art/originals/cinema-v1.png",
+      "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "path": "artifacts/spanish-travel-4-art/originals/laundromat-v1.png",
+      "sha256": "adbd79aeeb7e2cfc91af7eb3568488e6e6e0daea3be784a9f3a52c1e6ab2ef0c",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "path": "artifacts/spanish-travel-4-art/originals/helicopter-v1.png",
+      "sha256": "d711d7130ef90a0fb9dbf3e9c68aae09f03915905da9299ab21514a2485997e7",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "path": "artifacts/spanish-travel-4-art/originals/cargo-truck-v1.png",
+      "sha256": "c1f378b607a5d065e62d156aa39f7ded28ef709893f7f8e74c5128abdbd3f6a9",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "path": "artifacts/spanish-travel-4-art/originals/ambulance-v1.png",
+      "sha256": "0582dac5d6a94a0870646a2fd2da3a5433f0bccd570d80eba7838ac5e32173b3",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "path": "artifacts/spanish-travel-4-art/originals/police-car-v1.png",
+      "sha256": "d1fba76cde3d6b4ead837c58152a10ab1f3fa9bd7c9aef144b3456e2902160f3",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-tire",
+      "path": "artifacts/spanish-travel-4-art/originals/tire-v1.png",
+      "sha256": "c1525d8e91c637a2b6a140ab8f3e0361370567072750fc2f663504308a75b260",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "path": "artifacts/spanish-travel-4-art/originals/steering-wheel-v1.png",
+      "sha256": "0558a23d12e32931ad9f3ce9ca05a4866f7d8d42dc48c15cb56c72194fc13501",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-salt",
+      "path": "artifacts/spanish-travel-4-art/originals/salt-v1.png",
+      "sha256": "0810a29ef637ea3342452a560ac8ddf19907902d9dd23160f533665e70af65d8",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "path": "artifacts/spanish-travel-4-art/originals/sugar-v1.png",
+      "sha256": "b83cada270bfe466db8b4a3702e73e4faa14fd240056fa7256cd99499ba7f7a0",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-butter",
+      "path": "artifacts/spanish-travel-4-art/originals/butter-v2.png",
+      "sha256": "db1c70b619229bb9d5d57c02cfa15dc3166a55abe8c955d7e7548413b6a0752e",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-lime",
+      "path": "artifacts/spanish-travel-4-art/originals/lime-v1.png",
+      "sha256": "e74a0306ccca96cefc4b85ebf120d74bf4021a641b1007a61f00a4acf14a381c",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "path": "artifacts/spanish-travel-4-art/originals/strawberry-v1.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "path": "artifacts/spanish-travel-4-art/originals/pineapple-v1.png",
+      "sha256": "bfa1ddc1824d7bcc7e728155bf7659af926a4e8dd0af5be7ae0a8abd89b3cadf",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sock",
+      "path": "artifacts/spanish-travel-4-art/originals/sock-v1.png",
+      "sha256": "5c76ff42e8992b456474658dce06e5553fdc820e78689bee7eeb1663a53f2ee4",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "path": "artifacts/spanish-travel-4-art/originals/skirt-v1.png",
+      "sha256": "339ccc59c027b65a7713843953b50bff0b67d1b5a2c3a27776886f70260d80b4",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-dress",
+      "path": "artifacts/spanish-travel-4-art/originals/dress-v1.png",
+      "sha256": "e4188595075b26ea8d27111e9f0a66ca470c9c708656eb51e9b9cc513d561ddb",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-glove",
+      "path": "artifacts/spanish-travel-4-art/originals/glove-v1.png",
+      "sha256": "ffd805832b731e8bc4e8739ea1f478bb1264b05b4c646ae36a1b5d42d83a9182",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-belt",
+      "path": "artifacts/spanish-travel-4-art/originals/belt-v1.png",
+      "sha256": "2a63c3d8b325a0ddc529f1ddc59456ee12323113cbaf500e25de8e65183fc328",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "path": "artifacts/spanish-travel-4-art/originals/wristwatch-v1.png",
+      "sha256": "d54e7457f61ae894fed409b675a0517ec6037a640dc6068025e7b1f58709f416",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-pill",
+      "path": "artifacts/spanish-travel-4-art/originals/pill-v1.png",
+      "sha256": "17ef216bd80a9f197e08a0dde25a38129e2eaf5ea5ad376d7e53eb459d899e28",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "path": "artifacts/spanish-travel-4-art/originals/adhesive-bandage-v1.png",
+      "sha256": "bd860f54e45a5199952f9f4b09d3663f57b3db9ff86fe57e791331f81e4b8e0a",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "path": "artifacts/spanish-travel-4-art/originals/power-outlet-v1.png",
+      "sha256": "55cc4baaeff1eee5bbd958fbfe094eb3307f46d54f5c70a30378c50296168d6a",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "path": "artifacts/spanish-travel-4-art/originals/scissors-v1.png",
+      "sha256": "ba7042409bb9b5b9f390ce21b7bfb047f2fd148dabd574a37019fa040ba926f8",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "path": "artifacts/spanish-travel-4-art/originals/sunscreen-v1.png",
+      "sha256": "699651b5b06ce112346a7d32db2df1e950174a588cd2d2f0375ebc40c3018b44",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "path": "artifacts/spanish-travel-4-art/originals/insect-repellent-v1.png",
+      "sha256": "2af61d0f84d406fe4f8fcf974d6e5730d24c32a65d77e1fbc66100fc1466c254",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-tent",
+      "path": "artifacts/spanish-travel-4-art/originals/tent-v1.png",
+      "sha256": "cacf2f7adc9661765c8769d461594a5710ab99b6b669ad567345f4452a899148",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "path": "artifacts/spanish-travel-4-art/originals/flashlight-v2.png",
+      "sha256": "52fc58f35fa47d39362fc9c2d14e441f53809df585b747e5a3238f597833d8d6",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-compass",
+      "path": "artifacts/spanish-travel-4-art/originals/compass-v1.png",
+      "sha256": "f99cd67172292569e36de26ff5bd71b72e31721aef19bcbf084274477807eb32",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "path": "artifacts/spanish-travel-4-art/originals/sleeping-bag-v2.png",
+      "sha256": "0b7c8595b40d556074de39088efe6f4df13f0a73d69e483c1515574271c2e7b0",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "path": "artifacts/spanish-travel-4-art/originals/binoculars-v1.png",
+      "sha256": "c3db8ff4fa4a2d4155fb71703d58cfabda3bc46e84b9af82e1366a99acc69bfb",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-flower",
+      "path": "public/images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+      "sha256": "ab0872808bfc7bcdb993574b60152a87e3a975f84e59cdb560872ff87a1ebba9",
+      "source": "approved-reuse"
+    }
+  ]
+}
