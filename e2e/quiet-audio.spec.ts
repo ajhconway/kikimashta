@@ -9,10 +9,16 @@ test('quiet audio really plays, ends, and replays after navigation', async ({ pa
     await page.goto('./');
     await page.evaluate(src => {
       // Detached Audio instances use the same protection as rendered <audio> tags.
-      const audio = new Audio(src);
+      const source = new URL(src, document.baseURI).href;
+      const audio = new Audio(source);
       const button = document.createElement('button');
       button.textContent = 'Play fixture recording';
-      button.onclick = () => { void audio.play(); };
+      button.onclick = () => {
+        // Match app replay; implicit restart of an ended detached player can
+        // leave WebKit stalled at zero without a media error (#187).
+        audio.pause(); audio.src = source; audio.currentTime = 0;
+        void audio.play();
+      };
       audio.addEventListener('ended', () => { button.textContent = 'Replay fixture recording'; });
       audio.id = 'fixture-audio';
       document.body.append(button);
@@ -28,6 +34,7 @@ test('quiet audio really plays, ends, and replays after navigation', async ({ pa
     await expect.poll(state).toMatchObject({ muted: true, ended: true, error: null });
     await page.getByRole('button', { name: 'Replay fixture recording', exact: true }).click();
     await expect.poll(state).toMatchObject({ muted: true, ended: false, error: null });
+    await expect.poll(async () => (await state()).time).toBeGreaterThan(0);
     await expect.poll(state).toMatchObject({ muted: true, ended: true, error: null });
   }
 });
