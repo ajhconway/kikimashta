@@ -3,7 +3,7 @@ import { deflateSync } from 'node:zlib'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync, symlinkSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync, symlinkSync, copyFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { activateArtwork } from './activate-approved-artwork.mjs'
@@ -339,34 +339,20 @@ for (const failure of ['missing release', 'artwork-only statement', 'missing sco
 function pictureFixture(t) {
   const f = transparentFixture(t)
   const directory = 'artifacts/picture-art-229'
-  const opaqueId = 'ja-v-cbda72b9dd04'
   const plan = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/plan.json', import.meta.url), 'utf8'))
-  const accepted = plan.items.map(item => item.id)
-  const acceptedIds = [...accepted.filter(id => id !== opaqueId), opaqueId]
-  const assets = Array.from({ length: 31 }, (_, index) => {
-    const id = acceptedIds[index]
-    const path = `${directory}/ja-v-${(index === 1 ? 0 : index).toString(16)}-v1.png`
-    const bytes = index === 30 ? rgbaPng(Array.from({ length: 4 }, () => [255, 255, 255, 255]).flat()) : f.source
-    mkdirSync(dirname(join(f.root, path)), { recursive: true })
-    writeFileSync(join(f.root, path), bytes)
-    return { id, path, status: 'approved', sha256: hash(bytes), selectedVersion: 1,
-      imageDescription: index === 30 ? 'White paint swatch' : 'Friendly vocabulary illustration', transparentBackground: index !== 30,
-      sourceKind: index === 1 ? 'shared-new' : index >= 26 ? 'existing-approved' : 'generated',
-      ...(index === 1 ? { sharedFromId: acceptedIds[0] } : {}),
-      versions: [{ version: 1, path, sha256: hash(bytes) }],
-      approval: { sha256: hash(bytes), selectedVersion: 1, scope: 'artwork only', ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09' } }
-  })
+  const manifest = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/manifest.json', import.meta.url), 'utf8'))
+  const assets = manifest.assets
+  for (const asset of assets) {
+    const target = join(f.root, asset.path)
+    mkdirSync(dirname(target), { recursive: true })
+    if (!existsSync(target)) copyFileSync(new URL(`../../${asset.path}`, import.meta.url), target)
+  }
   f.put('content/catalog/ja.json', { items: assets.map(asset => ({ ...f.item, id: asset.id })) })
   f.put('content/visuals/levels-1-2.json', assets.map(asset => ({ ...f.visual, id: asset.id })))
-  const sourceRevision = plan.sourceRevision
   const sourcePath = join(f.root, directory, 'sources/suitability-review.json')
   mkdirSync(dirname(sourcePath), { recursive: true })
-  writeFileSync(sourcePath, readFileSync(new URL('../../artifacts/picture-art-229/sources/suitability-review.json', import.meta.url)))
+  copyFileSync(new URL('../../artifacts/picture-art-229/sources/suitability-review.json', import.meta.url), sourcePath)
   f.put(`${directory}/plan.json`, plan)
-  const manifest = { status: 'approved', expectedAssetCount: 31, sourceRevision, assets,
-    releaseApproval: { ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09',
-      scope: 'Activate the complete selected artwork set; preserve vocabulary eligibility and progress.',
-      selections: assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion })) } }
   const save = () => f.put(`${directory}/manifest.json`, manifest)
   save()
   return { ...f, manifest, plan, save }
@@ -435,7 +421,8 @@ test('the complete picture set activates shared and approved-source selections w
   const pool = f.read('content/practice-pool.json')
   const options = { root: f.root, batches: ['picture-229'] }
   const ids = activateArtwork({ ...options, encode: (source, target, { format }) => {
-    writeFileSync(target, format === 'png' ? readFileSync(source) : Buffer.from('ffd8ffe00000ffd9', 'hex'))
+    assert.ok(existsSync(source))
+    writeFileSync(target, format === 'png' ? f.source : Buffer.from('ffd8ffe00000ffd9', 'hex'))
   } })
   assert.equal(ids.length, 31)
   const active = f.read('content/card-regeneration/activation.json')
@@ -450,12 +437,29 @@ test('the complete picture set activates shared and approved-source selections w
     assert.equal(delivery.alpha, opaque ? undefined : 'preserved')
     assert.match(item.image.src, opaque ? /\.jpg$/ : /\.png$/)
   }
-  const shared = active.assets.find(asset => asset.id === f.manifest.assets[1].id)
-  const original = active.assets.find(asset => asset.id === f.manifest.assets[0].id)
+  const shared = active.assets.find(asset => asset.id === 'ja-v-185a632e3742')
+  const original = active.assets.find(asset => asset.id === 'ja-v-0bf44d10d860')
   assert.equal(shared.sourcePath, original.sourcePath)
   assert.equal(shared.sourceSha256, original.sourceSha256)
   activateArtwork({ ...options, encode: () => assert.fail('Verified picture deliveries should be reused') })
   assert.deepEqual(f.read('content/card-regeneration/activation.json'), active)
+})
+
+test('coordinated replacement of child media and every approval binding cannot publish the circle image as a child', t => {
+  const f = pictureFixture(t)
+  const child = f.manifest.assets.find(asset => asset.text === '子')
+  const circle = f.manifest.assets.find(asset => asset.text === '丸')
+  Object.assign(child, { path: circle.path, sha256: circle.sha256, selectedVersion: circle.selectedVersion })
+  child.versions = [{ version: child.selectedVersion, path: child.path, sha256: child.sha256 }]
+  Object.assign(child.approval, { sha256: child.sha256, selectedVersion: child.selectedVersion })
+  const selection = f.manifest.releaseApproval.selections.find(selection => selection.id === child.id)
+  Object.assign(selection, { path: child.path, sha256: child.sha256, selectedVersion: child.selectedVersion })
+  f.save()
+  const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
+  const before = paths.map(path => f.read(path))
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }), /owner-approved picture media/)
+  paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
+  assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
 })
 
 for (const failure of ['pending selection', 'missing approval', 'stale approval hash', 'stale approval version', 'missing version record', 'stale version path', 'duplicate version record', 'opaque new image', 'incomplete set', 'missing release', 'wrong release statement', 'missing release date', 'missing release scope', 'missing release selection', 'duplicate release selection', 'stale release path', 'stale release hash', 'stale release version', 'duplicate asset id', 'symlink source']) {
@@ -464,13 +468,14 @@ for (const failure of ['pending selection', 'missing approval', 'stale approval 
     const asset = f.manifest.assets[29]
     const release = f.manifest.releaseApproval
     const selection = release.selections[29]
+    const selectedVersion = asset.versions.find(version => version.version === asset.selectedVersion && version.path === asset.path)
     if (failure === 'pending selection') asset.status = 'generated-pending-owner-review'
     if (failure === 'missing approval') delete asset.approval
     if (failure === 'stale approval hash') asset.approval.sha256 = '0'.repeat(64)
     if (failure === 'stale approval version') asset.approval.selectedVersion = 2
     if (failure === 'missing version record') asset.versions = []
-    if (failure === 'stale version path') asset.versions[0].path = asset.path.replace('-v1', '-v2')
-    if (failure === 'duplicate version record') asset.versions.push({ ...asset.versions[0] })
+    if (failure === 'stale version path') selectedVersion.path = asset.path.replace('.png', '-changed.png')
+    if (failure === 'duplicate version record') asset.versions.push({ ...selectedVersion })
     if (failure === 'opaque new image') asset.transparentBackground = false
     if (failure === 'incomplete set') f.manifest.assets.pop()
     if (failure === 'missing release') delete f.manifest.releaseApproval
@@ -479,7 +484,7 @@ for (const failure of ['pending selection', 'missing approval', 'stale approval 
     if (failure === 'missing release scope') delete release.scope
     if (failure === 'missing release selection') release.selections.pop()
     if (failure === 'duplicate release selection') release.selections[29] = release.selections[0]
-    if (failure === 'stale release path') selection.path = selection.path.replace('-v1', '-v2')
+    if (failure === 'stale release path') selection.path = selection.path.replace('.png', '-changed.png')
     if (failure === 'stale release hash') selection.sha256 = '0'.repeat(64)
     if (failure === 'stale release version') selection.selectedVersion = 2
     if (failure === 'duplicate asset id') asset.id = f.manifest.assets[0].id

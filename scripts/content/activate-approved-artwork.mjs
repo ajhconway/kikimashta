@@ -17,6 +17,7 @@ const reviewedSets = {
   'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04',
     // SHA-256 of JSON.stringify(sorted accepted IDs), independent of the mutable plan partition.
     selectionIdsSha256: '924e14881f03e105874f477e9e8d015f0f014dd3b1b020c06f053e24126a0a2c',
+    mediaSelectionSha256: '35769faf43c01ad7a3ae8681887be4f40fd37ae9700cc5c7e931ce08a2f4431f',
     suitabilityReviewSha256: 'cc051840c23297a4f5d3c86983fdf642e1334657daf03b94a750d6da76c0d136',
     sourceRevision: '7942fddd9f08eab3f8a4d6b5b2c9d2b80ec72030' },
 }
@@ -74,7 +75,12 @@ export function activateArtwork({ root, batches, encode = defaultEncoder }) {
     const manifest = read(root, manifestPath)
     if (manifest.status !== 'approved') throw new Error(`Batch is not approved: ${batch}`)
     if (reviewedSet && (manifest.expectedAssetCount !== reviewedSet.count || manifest.assets.length !== reviewedSet.count)) throw new Error(`Expected the complete ${reviewedSet.count}-image ${batch} set`)
-    if (batch === 'picture-229') validatePictureScope(root, manifest, directory)
+    if (batch === 'picture-229') {
+      validatePictureScope(root, manifest, directory)
+      const selections = manifest.assets.map(({ id, path, sha256, selectedVersion }) => ({ id, path, sha256, selectedVersion }))
+        .sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+      if (hash(Buffer.from(JSON.stringify(selections))) !== reviewedSet.mediaSelectionSha256) throw new Error('Selections do not match the owner-approved picture media')
+    }
     if (reviewedSet) {
       const release = manifest.releaseApproval
       if (!release || release.ownerStatement !== reviewedSet.statement ||
