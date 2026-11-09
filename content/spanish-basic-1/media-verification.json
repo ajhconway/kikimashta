@@ -1,6 +1,6 @@
 {
   "issue": 191,
-  "status": "media-generated-awaiting-owner-acceptance",
+  "status": "accepted-activation-release-checks-in-progress",
   "pictures": {
     "selected": 15,
     "generated": 9,
@@ -9,10 +9,8 @@
     "manifest": "artifacts/spanish-basic-1-art/manifest.json",
     "revisedSelected": 7,
     "revisionHistory": "artifacts/spanish-basic-1-art/revisions/history.json",
-    "approved": 14,
-    "pending": [
-      "es-419-basic-sleepiness"
-    ],
+    "approved": 15,
+    "pending": [],
     "ownerReview": "artifacts/spanish-basic-1-art/owner-review.json"
   },
   "audio": {
@@ -37,9 +35,7 @@
     "revisionScope": "Sleepiness v3 larger pillow supporting Kiku; no application behavior changes."
   },
   "limitations": [
-    "Owner acceptance of sleepiness v3 and listening remains pending.",
-    "Real iPhone tests deferred to deployed version.",
-    "Foundation admission/runtime activation not included."
+    "Real iPhone tests deferred to deployed version."
   ],
   "galleryBrowserChecks": [
     {

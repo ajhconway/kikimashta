@@ -5,7 +5,8 @@ import { contextualBanks, contextualVocabulary, readyContextualCards, recordedCo
 
 describe('contextual runtime content', () => {
   it('covers all eighty questions while admitting only accepted media to practice', () => {
-    const contexts = contextualBanks.flatMap(bank => bank.contexts);
+    const japanese = contextualBanks.filter(bank => bank.language === 'ja-JP');
+    const contexts = japanese.flatMap(bank => bank.contexts);
     expect(contexts).toHaveLength(40);
     expect(contexts.flatMap(context => context.questions)).toHaveLength(80);
     expect(contexts.flatMap(context => context.questions).every(question => question.options.length === 4)).toBe(true);
@@ -20,9 +21,9 @@ describe('contextual runtime content', () => {
     expect(contexts.filter(context => context.review.audio === 'pending')).toHaveLength(0);
     expect(contexts.filter(context => context.review.audio === 'approved')).toHaveLength(40);
     expect(contexts.filter(context => context.recordings.length === 2)).toHaveLength(40);
-    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'text'))).toHaveLength(80);
-    expect(contextualBanks.flatMap(bank => approvedContextualQuestions(bank, 'picture'))).toHaveLength(32);
-    const cards = readyContextualCards(contextualBanks, contextualVocabulary);
+    expect(japanese.flatMap(bank => approvedContextualQuestions(bank, 'text'))).toHaveLength(80);
+    expect(japanese.flatMap(bank => approvedContextualQuestions(bank, 'picture'))).toHaveLength(32);
+    const cards = readyContextualCards(japanese, contextualVocabulary);
     expect(cards).toHaveLength(34);
     expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
   });

@@ -212,3 +212,21 @@ test('select practice packs in the library and keep them after returning home an
   await page.getByRole('button', { name: 'Begin lesson' }).click();
   await expect(page.locator('.preview')).toHaveAttribute('data-exercise', 'audio-text');
 });
+
+
+test('Basic Spanish library offers fifteen pictures and nine foundation contexts', async ({ page }) => {
+  await page.goto('./vocabulary/?language=es-419&pack=es-419-basic-1-pictures');
+  await expect(page.getByLabel('Card pack')).toHaveValue('es-419-basic-1-pictures');
+  await expect(page.locator('.card')).toHaveCount(15);
+  await expect(page.locator('#results-status')).toContainText('15 cards');
+  await expect(page.getByRole('checkbox', { name: /Basic Spanish level 1/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Contextual questions', exact: true }).click();
+  await expect(page.locator('.context-card')).toHaveCount(9);
+  await expect(page.locator('.context-results-status')).toHaveText('9 contextual questions');
+  await expect(page.locator('.context-review-state').first()).toHaveText('Text approved · Audio approved');
+  await expect(page.locator('.context-card').first().getByRole('button', { name: /^Play / })).toHaveCount(8);
+  await page.getByRole('searchbox', { name: 'Search contexts' }).fill('tener');
+  await expect(page.locator('.context-card')).toHaveCount(1);
+  await expect(page.locator('.context-card-heading')).toContainText('tener');
+  await expect(page.locator('.context-answers img')).toHaveCount(4);
+});

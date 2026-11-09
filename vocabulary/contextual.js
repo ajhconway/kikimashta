@@ -1,5 +1,6 @@
 import { contextualBanks, contextualVocabulary } from '../src/content/contextual-runtime'
 import { contextualMediaPath } from '../src/content/contextual'
+import { practiceVoicesFor } from '../src/core/voices'
 
 let sharedAudio
 let stopActivePlayback
@@ -7,7 +8,7 @@ let mountSequence = 0
 const pageSize = 12
 const asset = (path, family) => import.meta.env.BASE_URL + contextualMediaPath(path, family)
 const voiceName = voice => voice.split('-').map(part => part[0].toUpperCase() + part.slice(1)).join(' ')
-const stageName = context => (context.stage ?? 'contrastive') === 'simple' ? 'Simple' : 'Contrastive'
+const stageName = context => context.introduction ? 'Foundation' : (context.stage ?? 'contrastive') === 'simple' ? 'Simple' : 'Contrastive'
 const element = (tag, className, text) => {
   const node = document.createElement(tag)
   if (className) node.className = className
@@ -40,7 +41,7 @@ export function mountContextualLibrary({ container, language }) {
   const searchLabel = element('label', 'context-search', 'Search contexts')
   const search = element('input')
   search.type = 'search'
-  search.placeholder = 'Japanese, reading, English or word'
+  search.placeholder = languageId === 'ja-JP' ? 'Japanese, reading, English or word' : 'Spanish, English or word'
   search.autocomplete = 'off'
   searchLabel.append(search)
   filters.append(searchLabel)
@@ -64,8 +65,9 @@ export function mountContextualLibrary({ container, language }) {
   })])
   const kind = select('Question kind', [['all', 'Both kinds'], ['target', 'Target-word answer'], ['detail', 'Other detail']])
   const format = select('Answer format', [['all', 'All formats'], ['picture', 'Pictures'], ['text', 'Writing']])
+  const regionalVoices = practiceVoicesFor(languageId)
   const voices = [...new Set(entries.flatMap(entry => pairs(entry).map(pair => pair.voice)))]
-  const voice = select('Context voice', [['all', 'All voices'], ...voices.map(id => [id, voiceName(id)])])
+  const voice = select('Context voice', [['all', 'All voices'], ...voices.map(id => { const v = regionalVoices.find(v => v.id === id); return [id, v ? `${v.name} · ${v.description}` : voiceName(id)] })])
   const resultStatus = element('p', 'context-results-status')
   resultStatus.setAttribute('role', 'status')
   const playbackStatus = element('p', 'context-playback-status')
@@ -189,6 +191,8 @@ export function mountContextualLibrary({ container, language }) {
     for (const pair of available) {
       const button = element('button', 'context-voice-button', `Play ${voiceName(pair.voice)}`)
       button.type = 'button'
+      const regionalVoice = regionalVoices.find(v => v.id === pair.voice)
+      if (regionalVoice) button.title = `${regionalVoice.name} · ${regionalVoice.description}`
       button.setAttribute('aria-label', `Play ${voiceName(pair.voice)}: ${question.id}`)
       button.setAttribute('aria-pressed', 'false')
       button.addEventListener('click', () => play(entry, pair, button))

@@ -22,6 +22,7 @@ test('remembers learning language and independent pack choices across reloads', 
   await esPack.uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
@@ -120,10 +121,13 @@ test('expanded Spanish pack retains old starter progress while retired words lea
 
 test('level 2 pack selection scopes a saved answer independently of level 1', async ({ page }) => {
   await page.goto('vocabulary/?language=es-419&pack=es-419-travel-2-pictures');
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await expect(page.locator('#results-status')).toContainText('36 cards');
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await expect(page.locator('.card h2')).toHaveText(spanishLevel2.items.slice(0, 24).map(item => item.text));
   await page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
   await page.getByLabel('Search words').fill('stairs');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('escaleras');
@@ -136,7 +140,7 @@ test('level 2 pack selection scopes a saved answer independently of level 1', as
   await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).not.toBeChecked();
   await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('108 cards');
+  await expect(page.locator('#results-status')).toContainText('123 cards');
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: /^start/i }).click();
@@ -168,6 +172,7 @@ test('level 2 pack selection scopes a saved answer independently of level 1', as
 test('level 3 library shows accepted revisions and scopes a saved practice answer', async ({ page }) => {
   await page.goto('vocabulary/?language=es-419&pack=es-419-travel-3-pictures');
   await expect(page.locator('#results-status')).toContainText('36 cards');
+  await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await expect(page.locator('.card h2')).toHaveText(spanishLevel3.items.slice(0, 24).map(item => item.text));
   for (const level of [1, 2]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
   for (const slug of ['crosswalk', 'blanket', 'toilet-paper', 'banana']) {
@@ -185,7 +190,7 @@ test('level 3 library shows accepted revisions and scopes a saved practice answe
   for (const level of [1, 2]) await expect(page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true })).not.toBeChecked();
   await page.getByLabel('Search words').fill('');
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('108 cards');
+  await expect(page.locator('#results-status')).toContainText('123 cards');
   await expect(page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true })).toBeChecked();
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
