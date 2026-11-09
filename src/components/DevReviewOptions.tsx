@@ -52,7 +52,7 @@ export function DevReviewOptions({ availableTypes, value, onChange, onStart, dis
       </fieldset>
       <fieldset className="dev-options-panel" disabled={disabled} aria-describedby={`${id}-mastery-note`}>
         <legend>Mastery levels</legend>
-        <p id={`${id}-mastery-note`} className="dev-options-help">Each question starts at one of these sample levels, independently of your real mastery. Times shown use Follow mastery.</p>
+        <p id={`${id}-mastery-note`} className="dev-options-help">Each question starts at one of these sample levels, independently of your real mastery. Japanese word alternatives get closer at higher levels, including with untimed practice. Times shown use Follow mastery.</p>
         <div className="dev-options-level-actions">
           <button type="button" onClick={() => onChange({ ...value, masteryLevels: masteryLevels.map((_, index) => index) })}>All levels</button>
           <button type="button" onClick={() => onChange({ ...value, masteryLevels: [] })}>Clear levels</button>

@@ -3,7 +3,7 @@ import { initialLanguage, languagePreferenceKey, learningLanguages, type Learnin
 import { initialPackIds, selectedPracticeCards } from './core/packs';
 import type { AudioAsset, Exercise, PracticeAttempt, PracticeCard, WordItem } from './types';
 import { attemptExercise, cardKey, isContextualExercise } from './core/cards';
-import { correctChoiceId, createQuestions, requeueMissedQuestion, shuffled, type Question } from './core/session';
+import { correctChoiceId, createQuestions, InsufficientChoicesError, requeueMissedQuestion, shuffled, type Question } from './core/session';
 import { deriveContextualUnlocks, selectedContextualCards } from './core/contextual-progression';
 import { contextualQuestion } from './core/contextual-questions';
 import { approvedContextualQuestions } from './content/contextual';
@@ -122,7 +122,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     return { cards, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
   }, [selectedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
-    if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
+    if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random, mastery.current);
     const format = card.exercise.endsWith('picture') ? 'picture' : 'text';
     const candidates = languageContextualBanks.flatMap(bank => approvedContextualQuestions(bank, format))
       .filter(({ context }) => context.targetItemId === card.item.id &&
@@ -398,9 +398,15 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   function startLessonQuiz() {
     const known = new Set(history.current.map(attempt => cardKey({ ...attempt, exercise: attemptExercise(attempt) })));
     const block = shuffled(lessonItems, random).flatMap(card => {
-      const choices = choicesFor(card.exercise).filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
+      const fullPool = choicesFor(card.exercise);
+      const choices = fullPool.filter(item => known.has(cardKey({ item, exercise: card.exercise })) ||
         lessonItems.some(lesson => lesson.exercise === card.exercise && lesson.item.id === item.id));
-      return createQuestions([card], choices.length >= 4 ? choices : choicesFor(card.exercise), random);
+      if (choices.length < 4) return createQuestions([card], fullPool, random);
+      try { return createQuestions([card], choices, random); }
+      catch (error) {
+        if (!(error instanceof InsufficientChoicesError)) throw error;
+        return createQuestions([card], fullPool, random);
+      }
     });
     beginQuiz(block);
   }

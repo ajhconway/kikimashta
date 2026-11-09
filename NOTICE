@@ -12,6 +12,14 @@ vocabulary illustrations in public/images/vocabulary/ are licensed under AGPL-3.
 Media records and credits are in content/ and public/credits.html.
 Runtime dependency notices are included in the production build.
 
+Japanese semantic neighbor rankings derive from Facebook Research's Japanese
+fastText vectors (Common Crawl and Wikipedia), model revision
+be286af953967df11e163522974fff118569f1fb, distributed under CC BY-SA 3.0.
+Source: https://huggingface.co/facebook/fasttext-ja-vectors
+License: https://creativecommons.org/licenses/by-sa/3.0/
+The rankings are adapted with intended-sense exceptions; the pretrained model
+weights are not included in the app. Provenance is in content/semantic-neighbors/.
+
 The self-hosted Japanese writing fonts Noto Sans JP, Noto Serif JP, Zen Maru
 Gothic, and Klee One retain the SIL Open Font License, version 1.1. Their
 copyright notices and full license texts are preserved beside each font in public/fonts/japanese/.

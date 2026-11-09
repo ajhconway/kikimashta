@@ -1,6 +1,6 @@
 # Japanese semantic neighbor comparison (#198)
 
-Selected deployment candidate: **Japanese fastText with a compositional zero-vector fallback**. The selected generator is `scripts/content/semantic_neighbors.py`; its complete per-word rankings are in `content/semantic-neighbors/ja.json`. The app does not consume these rankings yet. This experiment does not change ordinary questions, contextual questions, mastery, timers, schedules or existing exclusions.
+Selected deployment candidate: **Japanese fastText with a compositional zero-vector fallback**. The selected generator is `scripts/content/semantic_neighbors.py`; its complete per-word rankings are in `content/semantic-neighbors/ja.json`. This report preserves the #198 experiment before runtime integration. Task #200 consumes a compact derivative with reviewed sense exceptions and picture exclusions; see `content/semantic-neighbors/README.md`. The measurements below retain their original inputs and validity filters.
 
 Both models were actually run on the same 166 approved Japanese practice words at source revision `f1333b6d94e189efe3533c8ceb800596e4e95345`. All comparisons use exact cosine similarity. An independent reviewer defined the benchmark before inspecting any model output; its SHA-256 is `79aafd5fc6423a0b81910b4b42072c8dbf9ba4a019fd4a928ce085d6e4c1c1ce`.
 
