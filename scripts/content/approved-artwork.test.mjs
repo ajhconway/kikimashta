@@ -163,3 +163,21 @@ test('all 31 shipped picture selections retain exact batch acceptance, version h
   assert.equal(manifest.assets.find(asset => asset.text === '月見').selectedVersion, 2)
   assert.equal(manifest.assets.find(asset => asset.text === '金玉').selectedVersion, 3)
 })
+
+test('active review notes describe the revised child, skin and euphemistic body-part artwork', () => {
+  const visuals = ['levels-1-2.json', 'levels-3-4.json', 'level-5.json'].flatMap(file => read(`content/visuals/${file}`))
+  const expectations = [
+    ['ja-v-27d5744f36a2', /juvenile proportions/i, /toy/i],
+    ['ja-v-d0c8497457bd', /healthy forearm skin/i, /cross-section/i],
+    ['ja-v-26d771953f4b', /clothed adult crotch/i, /simplified educational anatomy/i],
+  ]
+  for (const [id, currentCue, staleCue] of expectations) {
+    const visual = visuals.find(record => record.id === id)
+    const card = library.find(record => record.id === id)
+    assert.equal(visual.reviewRequired, true)
+    assert.equal(card.reviewRequired, true)
+    assert.equal(card.reviewNote, visual.reviewNote)
+    assert.match(card.reviewNote, currentCue)
+    assert.doesNotMatch(card.reviewNote, staleCue)
+  }
+})
