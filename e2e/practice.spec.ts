@@ -166,7 +166,12 @@ async function chooseHeardAnswer(page: Page, target: WordItem) {
 
 async function chooseWithAnimationChecks(page: Page) {
   const { target } = await heardWord(page);
-  const before = await page.locator('.choices').boundingBox();
+  // Clicking may scroll the page; compare document coordinates for layout stability.
+  const bounds = () => page.locator('.choices').evaluate(grid => {
+    const box = grid.getBoundingClientRect();
+    return { x: box.x + scrollX, y: box.y + scrollY, width: box.width, height: box.height };
+  });
+  const before = await bounds();
   const completedBefore = Number(await page.getByRole('progressbar').getAttribute('aria-valuenow'));
   await page.clock.pauseAt(await page.evaluate(() => Date.now() + 1000));
   try {
@@ -177,7 +182,7 @@ async function chooseWithAnimationChecks(page: Page) {
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(completedBefore + 1));
     await expectAnswerPictures(page, [target.image.alt], 'fly');
     await expectDeparturesFinished(page, 3);
-    expect(await page.locator('.choices').boundingBox()).toEqual(before);
+    expect(await bounds()).toEqual(before);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   } finally {
     await page.clock.resume();
