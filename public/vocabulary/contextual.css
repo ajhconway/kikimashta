@@ -1,0 +1,47 @@
+.contextual-library { margin-top: 22px; }
+.contextual-library .context-library-title { margin: 12px 0; font-size: 1.8rem; }
+.contextual-library .context-library-intro { max-width: 55rem; }
+.contextual-library .context-filters { display: flex; flex-wrap: wrap; gap: 14px; padding: 18px; background: #d9eee0; border: 5px solid #8748ef; border-radius: 20px; }
+.contextual-library .context-filters label { display: flex; flex-direction: column; gap: 7px; min-width: 130px; flex: 1; }
+.contextual-library .context-filters .context-search { flex: 2; min-width: 230px; }
+.contextual-library .context-filters input, .contextual-library .context-filters select { min-height: 48px; width: 100%; padding: 9px 12px; border: 3px solid #3f2468; border-radius: 10px; background: #fffdfa; font: inherit; color: inherit; }
+.contextual-library .context-results-status { margin: 18px 0 4px; }
+.contextual-library .context-playback-status { min-height: 1.5em; margin: 0; }
+.contextual-library .context-playback-error:not([hidden]) { padding: 12px 16px; border: 3px solid #a52e55; border-radius: 12px; background: #fffdfa; color: #822342; }
+.contextual-library .context-pagination { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 16px 0; }
+.contextual-library .context-pagination button, .contextual-library .context-voice-button { min-height: 46px; padding: 8px 14px; border: 3px solid #3f2468; border-radius: 12px; font: inherit; font-weight: 750; color: inherit; background: #fffdfa; cursor: pointer; }
+.contextual-library button:disabled { opacity: .55; cursor: default; }
+.contextual-library button:hover:enabled { background: #ffe178; }
+.contextual-library :focus-visible { outline: 4px solid #c04483; outline-offset: 4px; }
+.contextual-library .context-page-status { text-align: center; font-size: .9rem; }
+.contextual-library .context-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 355px), 1fr)); gap: 22px; align-items: start; }
+.contextual-library .context-card { min-width: 0; padding: 20px; overflow: hidden; border: 5px solid #8748ef; border-radius: 23px; background: #fffdfa; box-shadow: 0 5px 0 #3f246818; }
+.contextual-library .context-card-heading { margin: 0 0 7px; font-size: 1.5rem; overflow-wrap: anywhere; }
+.contextual-library .context-card-meta { margin: 0; font-size: .85rem; font-weight: 750; }
+.contextual-library .context-review-state { display: inline-block; padding: 4px 8px; margin: 10px 0; border: 2px solid #775e8e; border-radius: 12px; font-size: .78rem; }
+.contextual-library .context-prompt { padding: 12px 0; }
+.contextual-library .context-prompt + .context-prompt { border-top: 2px solid #e1d3ef; }
+.contextual-library h4 { margin: 0 0 8px; font-size: .9rem; }
+.contextual-library .context-japanese { margin: 0; font-size: 1.35rem; line-height: 1.7; overflow-wrap: anywhere; }
+.contextual-library .context-reading, .contextual-library .context-meaning { margin: 6px 0 0; font-size: .95rem; overflow-wrap: anywhere; }
+.contextual-library .context-reading { color: #685276; }
+.contextual-library .context-voices { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 20px; }
+.contextual-library .context-voice-button { background: #ffd1e3; }
+.contextual-library .context-voice-button[aria-pressed='true'] { background: #ffe178; }
+.contextual-library .context-answers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 0; }
+.contextual-library .context-answer { display: flex; flex-direction: column; gap: 5px; min-width: 0; padding: 10px; border: 2px solid #d4c1e4; border-radius: 12px; background: #fff8f0; }
+.contextual-library .context-answer-correct { border-color: #7949b7; background: #efe5fc; }
+.contextual-library .context-correct-label { font-size: .78rem; font-weight: 800; }
+.contextual-library .context-answer-image { width: 100%; height: 120px; object-fit: contain; }
+.contextual-library .context-answer-text { font-size: 1.1rem; overflow-wrap: anywhere; }
+.contextual-library .context-answer-reading, .contextual-library .context-answer-meaning, .contextual-library .context-image-unavailable { font-size: .85rem; overflow-wrap: anywhere; }
+.contextual-library .context-content-details { margin-top: 18px; font-size: .8rem; overflow-wrap: anywhere; }
+.contextual-library .context-content-details summary { cursor: pointer; min-height: 44px; padding: 10px 0; font-weight: 750; }
+.contextual-library .context-content-details p { margin: 5px 0; }
+.contextual-library .context-empty { padding: 18px; border: 3px solid #8748ef; border-radius: 14px; background: #fffdfa; }
+@media (max-width: 440px) {
+  .contextual-library .context-filters { padding: 13px; }
+  .contextual-library .context-filters label, .contextual-library .context-filters .context-search { min-width: 0; flex-basis: 100%; }
+  .contextual-library .context-card { padding: 15px; }
+  .contextual-library .context-pagination button { padding: 8px 10px; font-size: .85rem; }
+}
