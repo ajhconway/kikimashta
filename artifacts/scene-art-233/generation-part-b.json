@@ -1,0 +1,660 @@
+{
+  "issue": 233,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "ja-v-eef9d372f5df",
+      "text": "写す",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-eef9d372f5df-v1.png",
+      "sha256": "fccbe564af0eeb79337c7e635356ff13b49030f39e58c7b55fefc534a82f42b6",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. An adult hand holding a pencil copies a simple THREE-SHAPE design (gold circle above lavender square beside a pink triangle) from a finished reference sheet at left onto a second sheet at right. Right sheet has same shapes with triangle just being completed. Sheets are literal scene objects, not background panels. Pencil tip contacts right design. No letters, written words or numerals. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-86eca67a-dffb-4fad-a7c0-e75dc44accae.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-75ac90da3b27",
+      "text": "太る",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-75ac90da3b27-v1.png",
+      "sha256": "a0bc98d44b18f3ee110adc0deebf0506cf2870a1eb064d333e7a132e05fe380c",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two neutral depictions of the SAME FICTIONAL ADULT, same teal shirt/lavender trousers, same face and height: left slimmer earlier figure, right modestly fuller-bodied later figure. A short simple rightward gold arrow between indicates GETTING LARGER over time. Both calm friendly expressions, no shame, grimacing, food, scales, tape measures, judgement, numbers or text. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d4a08c6a-5468-4dca-8f6e-cef2aec10c4c.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-385cc0d9ee98",
+      "text": "見る",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-385cc0d9ee98-v1.png",
+      "sha256": "1d8e7bf08ba831d88cd2d984b98328ec534f3c82cd0feb7ddd26f1725e6f1f38",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. An adult in teal shirt sits/leans slightly forward actively LOOKING at a large pink flower in a simple pot. Face turned in profile toward flower, open eyes and a subtle dotted gaze line to flower. Both person and target clear, no isolated eye icon, no magnifier/camera/book. Compact friendly scene. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a3b539c1-9146-4b70-99be-6a5726934fc8.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-859aec8573b3",
+      "text": "見せる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-859aec8573b3-v1.png",
+      "sha256": "fa3a4603581d98e456675b250c9fb0146731d287151fbb93a0106ee9943c541b",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two casually dressed ADULTS. Person at left holds and turns a simple picture of a pink flower TOWARD person at right; right person visibly looks at presented picture, hands relaxed. Object face fully visible to viewer and recipient. One tiny curved motion cue at picture edge conveys presenting. No text, labels or speech bubbles. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-03ffea61-ae8a-4feb-b053-0f17695bad0d.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-5dc14aea92c7",
+      "text": "牛肉",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-5dc14aea92c7-v1.png",
+      "sha256": "43cefa3704f64e56e50c98ebf2dbbde5e4a3331e7b44e561005f4d4a200057c7",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A clean appetizing red BEEF STEAK with restrained cream marbling dominant, beside a SMALL subdued cow portrait provenance bubble linked by a tiny gold connector. Cow cue clearly identifies beef source, no butcher, gore, knife, wound, anatomy or text. Picture style friendly and simple, steak whole silhouette visible. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-b870b63a-8bf6-4d4d-9d6d-6d3349b242f0.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+      "sha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two matched small arrangements side by side of identical lavender houses and one gold tree as fixed reference: left house VERY CLOSE to tree, right house FAR from tree. Same object size and baseline/viewpoint. Three small gold attention rays mark the NEAR left gap. Compact islands on transparency, no distance digits or map labels. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d03a0483-b895-413b-8282-219ce5c32acf.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-ceaf3971ff83",
+      "text": "角",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-ceaf3971ff83-v1.png",
+      "sha256": "1dca94f033a9e2950053c7a56d01aff1a13a2d649eaf3cd940e7ad594689f636",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. One simple three-quarter lavender rectangular box with clean straight edges. Three gold attention rays converge just beside its nearest sharp CORNER where three edges meet, without covering corner. Emphasize exact part, not whole box. No street scene, rounded corner, arrow/text/numeral. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-bb80a9a8-7784-4440-90eb-803647903867.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-6027e0e1c622",
+      "text": "デパート",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-6027e0e1c622-v1.png",
+      "sha256": "52dd7bcf0c9f2c8c1768268c3d96b83a70cda43f329177f0b572de700465afa4",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A compact attractive THREE-STORY DEPARTMENT STORE CUTAWAY, complete exterior silhouette with open front revealing distinct departments: clothing racks, homewares and toys; a small diagonal escalator connects floors. Warm cream/lavender building, gold accents. Clearly multiple retail departments, no generic office windows, no words, store logo, banners or written signs. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a9d37324-5691-4045-85b3-7431353dce14.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "text": "夕方",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v1.png",
+      "sha256": "6a63eb1cdd79856d51bcd5e1783d610c26b85b5d06feac5e8c593fa3ad598f29",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A compact evening scene: sun sits LOW descending behind hills, sky glow contained in soft small horizon footprint, simple house window beginning to glow warm gold. Add a small subdued earlier sun position above and one short DOWNWARD arrow toward setting sun. Evening transition, not sunrise. No moon, stars, calendar or text. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-4cef735b-aa4a-4cd1-b348-e60d4537473e.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "text": "同じ",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+      "sha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two IDENTICAL golden five-point stars side by side, exactly same size/orientation/color with three gold attention rays over pair. Below/right a smaller muted comparison pair has one star and one lavender circle. Paired counts remain two each. No equality bars, text or numerals. Identical upper pair dominant. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-017c8ecd-ba76-46cb-b8d8-338028989811.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v1.png",
+      "sha256": "508d4b5c3fe7a4e6cf9c92f665b4c13bd98cfb6e75763695a0db27cdd952e6fc",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. One golden ball moving DOWN three simple lavender stair levels. Final solid ball at bottom, one subdued translucent ghost ball at upper step and a short curved downward arrow. Same complete stair geometry and ball style as rising counterpart. Friendly diagram of lower level, no falling impact, explosion or injury. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-e8394e2e-ca7c-43bc-8883-a81d85bad91f.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v1.png",
+      "sha256": "1b3a9a449f460e2bc8209304d313f8e3264c129b596ed6f89e3a3cb4044f6481",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. One golden ball moving UP three simple lavender stair levels. Final solid ball on highest step, one subdued translucent ghost ball at bottom step and a short curved upward arrow. Same complete stair geometry and ball style as descending counterpart. No face, spring, rocket or unrelated prop. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-49fe8fb2-732d-4f3f-aca4-7dff7cf738a6.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+      "sha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two human hands gently PUT one GOLDEN BALL INTO an OPEN LAVENDER BOX. Final solid ball crossing downward just inside clearly visible rim, hands still holding it; a small faded starting ball just above and short down arrow show motion. One ball actual subject, ghost only as start position; box open with visible interior. No text or additional objects. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cefb0c41-f2ef-43ee-aeb7-ffc38cc5d6b9.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v1.png",
+      "sha256": "732ea3add63323883a37016fa18b718f714c9a9ddc02d3255640f1df6378296f",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two hands ASSEMBLE a small house from simple gold/lavender building blocks. Small loose pieces at left, dominant nearly completed house at right, hand places final roof block; a short simple arrow connects process. Entire house and hands visible, no whole person, paper labels or tools. Clearly making, not finished model alone. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-f2e53e14-d7c4-48d7-8312-63a0253b6194.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-40179481fcf6",
+      "text": "会う",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-40179481fcf6-v1.png",
+      "sha256": "12db8010dca5375c55edb81e91691b42ba091c2b44995c48a9557447004aeb7e",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two friendly casually dressed ADULTS approach from opposite sides and greet face-to-face in center, one raising a hand in small greeting wave. Small subdued earlier silhouettes at outer edges and two short inward motion arrows show convergence. Final central people dominant. No handshake anatomy tangles, speech text or hearts. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-5c509e2c-6d64-4ffb-bad5-a01e71f2a391.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "text": "回る",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+      "sha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A simple gold-and-lavender FOUR-BLADE PINWHEEL with a clearly fixed central round hub. Solid blades in current orientation, one small subdued ghost blade position offset around same hub and one short curved rotation arrow. No counting symbols or written sound words. Pinwheel rotates about its own center, not orbital motion. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-20f62380-4e06-49f8-902c-b8bfe71c025f.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v1.png",
+      "sha256": "59b219cafa6a5f1b319720043d9beac88e7a78f4dd8ab06b94a0a5ac89f110d9",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two ADULT hands rotate a simple lavender rectangular board from horizontal (faded starting board) to UPRIGHT (solid final board). A small curved upward arrow links positions; hands visibly supply motion, board plain, no text or numbers. Correct simple hand anatomy. No person standing or chair. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-person.png",
+          "role": "style reference only",
+          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-2b3bc0ac-3447-4352-b9bd-b99b06825235.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v1.png",
+      "sha256": "9725e0c561bba84d8cf4f96c1c4ab27537339d87335e5b70248758144d658107",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A simple lavender car comes to a STOP on a short isolated road strip: muted translucent earlier car at left with tiny motion streaks, solid final car at right entirely still with a small gold stop-position bar beneath wheels. Motion marks cease before final car, no impact/barrier/external person. No road signs or letters. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-6e2bd3e3-f1d1-4cd4-9355-9a887796bebe.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v1.png",
+      "sha256": "37861ff27f8be3493d3bbed375600154b43de71cd7aa9ce23212bc6579cb8505",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two human hands gently TAKE one GOLDEN BALL OUT OF an OPEN LAVENDER BOX. Solid final ball held clearly ABOVE AND OUTSIDE rim, small faded earlier ball inside box and short upward arrow show motion. Same box/ball grammar as putting-in counterpart, box interior and rim clear. No text or additional objects. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-a2091180-e9bc-44db-9237-c16539e9c577.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v1.png",
+      "sha256": "3e1d7380db88422d5259340778b03b90706b951b12b291e9f290204a8294416d",
+      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A simple lavender compact car TRAVELS along a short gently curving isolated road strip. Solid car in forward position, subtle motion streaks and one subdued earlier silhouette behind show progression. No luggage, map, airplane, tourist landmarks or holiday symbols. Vehicle travel, no speedometer/numbers/text. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8923ba3d-6867-4923-b7bb-89737bbd1fcf.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "qualityReview": {
+        "semantic": "Visually inspected against requested concept; clear scene/action or contrast.",
+        "canvas": "1254×1254 square RGBA; transparent exterior corners; opaque subject pixels.",
+        "selection": "ready for consolidated owner review"
+      }
+    }
+  ],
+  "revisionRequests": [],
+  "checks": {
+    "selectedSubjects": 20,
+    "generatedVersions": 20,
+    "allPngSourceBytesPreserved": true,
+    "allReferenceHashesVerified": true,
+    "allSelectedSquareRgba": true,
+    "allSelectedAlphaRange": [
+      0,
+      255
+    ],
+    "allExteriorCornersTransparent": true,
+    "semanticVisualReview": "All20 inspected; no rejected versions needed."
+  }
+}
