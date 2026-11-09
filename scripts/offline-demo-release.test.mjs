@@ -82,6 +82,7 @@ test('does not follow symlinks, permit manifest traversal or overwrite an existi
 
 test('publication retries use the successful demo job artifact instead of inventing the new attempt name', async () => {
   const workflow = await readFile(new URL('../.github/workflows/pages.yml', import.meta.url), 'utf8');
+  assert.match(workflow, /OFFLINE_DEMO_REVISION: [a-f0-9]{40}\b/);
   assert.match(workflow, /needs: demo-build/);
   assert.match(workflow, /name: \$\{\{ needs\.demo-build\.outputs\.artifact_name \}\}/);
   assert.match(workflow, /artifact_name: \$\{\{ steps\.demo-artifact-name\.outputs\.name \}\}/);
