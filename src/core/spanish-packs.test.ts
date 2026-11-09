@@ -43,6 +43,16 @@ describe('Spanish travel levels', () => {
     validateBank(spanish.pool);
   });
 
+  it('does not offer the milk illustration for vaso or the drinking glass for leche', () => {
+    const word = (slug: string) => spanish.pool.items.find(item => item.id === `es-419-travel-${slug}`)!;
+    const safe = ['table', 'chair', 'spoon'].map(word);
+    for (const [target, ambiguous] of [[word('drinking-glass'), word('milk')], [word('milk'), word('drinking-glass')]]) {
+      const question = createQuestions([{ item: target!, exercise: 'audio-picture' }], [target!, ambiguous!, ...safe], () => 0.5)[0]!;
+      expect(question.choices).toHaveLength(4);
+      expect(question.choices.map(choice => choice.id)).not.toContain(ambiguous!.id);
+    }
+  });
+
   it('keeps ambiguous pictures out of all single-pack and combined question choices', () => {
     const byId = new Map(spanish.pool.items.map(item => [item.id, item]));
     for (const pair of exclusions.pairs) {
