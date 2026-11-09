@@ -42,7 +42,7 @@ Keep the interface, learning rules, content, and storage separate. Speech provid
 
 Correctness maps to Good/Again; speed and replay use are recorded without grading speed. Existing fixed-round attempts remain unchanged and surface known picture cards for review without inventing delayed-retention evidence. Personal parameter fitting waits for enough relevant history.
 
-The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Valid future-dated history from clock differences waits for its original review/due times, stays known for lesson admission, and keeps its saved timestamps. Unrelated practice remains available (#117). Lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
+The due queue is fixed at session start. Newly due reviews wait for a later session, preserving their actual FSRS due times. Valid future-dated history from clock differences waits for its original review/due times, stays known for lesson admission, and keeps its saved timestamps. Unrelated practice remains available (#117). Word-card lesson previews introduce cards before a shuffled mini-quiz; learning a picture card does not mark its writing card learned.
 
 Forecast reviews over seven days with 32 deterministic scenarios, one session per day, and an initial 80% lesson success assumption. Qualitative bands are Minimal, Light, Moderate, High, and Intense. Preferred minimum and maximum guide new intake; they cannot guarantee future demand. Thresholds, forecast assumptions, chunk size, and choice count remain adjustable. The user can always stop.
 
@@ -205,3 +205,22 @@ Dev review opens a configuration screen before an unsaved session. The owner cho
 ## Contextual transcript styling (#160)
 
 Match the Japanese/English details popup to the app’s rounded cards and purple/pink controls. Enlarge the close icon and touch target, and increase both Japanese and English type. Keep translation space reserved before disclosure, support scrolling on short screens, and retain Escape dismissal and focus return. Verify phone/desktop presentation and the existing contextual browser journeys before review.
+
+## Four contextual answer choices (#163)
+
+Every current contextual question must offer exactly four authored choices, with one clear correct answer in every supported format. Add beginner-friendly distractors to the 46 three-choice questions and reuse approved pictures where required. Keep spoken sentences/questions, approved generation inputs and accepted media provenance unchanged. Apply answer-only amendments after exact media matching, increment affected question revisions for future attempts, and preserve old IDs, history and corrective retry snapshots. Enforce complete four-choice coverage and uniqueness in preflight/runtime regression checks; review all 80 questions locally with existing recordings. No new audio generation is needed. The owner chose tea as the fourth drink, with a new matching illustration; keep that answer vocabulary separate from ordinary word-card admission.
+
+## Contextual first encounters in reviews (#168)
+
+The owner approved removing contextual lessons and requested automatic merge after implementation and checks. Newly unlocked contextual cards enter the ordinary review block directly, with no sentence/answer preview. Reuse workload admission with a configurable initial cap of three new contextual cards per session. Preserve selected language/word/format scope, accepted content, independent schedules and the fixed session snapshot. New unlocks earned during a session wait until a later Start.
+
+Treat each first encounter as initial learning internally (`phase: lesson`) while the interface stays in review mode; only later scheduled reviews count toward simple→contrastive unlocks. Carry this classification through corrective retries. Keep miss feedback, optional Japanese/English and save/audio recovery. Word lessons admit only word cards and retain their previews/mini-quizzes. Existing contextual schedules and history stay unchanged. Verify first/repeat attempts, workload limits, scope, snapshots, first misses/retries/reload, no initial unlock and later qualifying unlock, word lessons and failed saves. Automatically merge once required CI/current-head review and conversations pass; verify normal publication.
+
+## Home review forecast (#156)
+
+Show a compact seven-day forecast below Start using the same existing density snapshot, selected language/packs and eligible contextual schedules. Display rounded daily estimates (fewer than one for positive fractions below one), a small accessible bar strip and day labels. Following owner feedback, omit the current-card/daily-practice caption, widen the bars, enlarge the counts, and use chunky outlined bars in varied violet, pink and golden shades for a playful game feel. Leave the forecast unboxed, directly on the Home background, and remove the heavy bottom bar shadows. Show the current due-review count as “Start · 7 reviews” in one text label without a badge, using the current scoped snapshot; hide it while loading, unavailable, or saving. Keep Kiku and Start prominent. Treat loading, history failure and zero scheduled work distinctly; do not show a stale forecast from a different scope. Refresh on Home return, saves/sync, scope changes, browser return and local midnight. Advance simulated daily sessions and visible date labels through one shared local-calendar helper, keeping review counts and dates aligned across daylight-saving transitions. Verify scoping, retry/error behavior, date labels, storage isolation and phone-width layout. Serve a localhost demo for owner review; merging waits for a new request.
+
+
+## Home copy cleanup (#164)
+
+Remove the contextual lesson-readiness/workload message and the saved-answer total from Home. Keep the forecast and Start count as the visible workload summary. Verify persistence and language/account scope through stored history and practice behavior rather than the removed count.

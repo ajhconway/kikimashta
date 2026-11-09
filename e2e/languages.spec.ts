@@ -1,3 +1,4 @@
+import { savedAttempts } from './saved-attempts';
 import { expect, test } from './fixtures';
 
 test('remembers learning language and independent pack choices across reloads', async ({ page }, testInfo) => {
@@ -66,12 +67,13 @@ test('Spanish picture lessons play, save and stay isolated after reload', async 
   await expect(page.getByRole('heading', { name: 'Nice round!' })).toBeVisible();
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
-  await expect(page.getByText(`${lessonSize} answers saved on this device`)).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(lessonSize);
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('ja-JP');
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
-  await expect(page.getByText(`${lessonSize} answers saved on this device`)).toHaveCount(0);
+  expect(await savedAttempts(page, 'ja-JP')).toEqual([]);
+  await expect(page.getByRole('button', { name: 'Start · 0 reviews', exact: true })).toBeEnabled();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
-  await expect(page.getByText(`${lessonSize} answers saved on this device`)).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(lessonSize);
 });
 
 test('expanded Spanish pack retains old starter progress while retired words leave selection', async ({ page }) => {
@@ -95,7 +97,7 @@ test('expanded Spanish pack retains old starter progress while retired words lea
     db.close(); return attempts;
   });
   await page.reload();
-  await expect(page.getByText('6 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(6);
   await page.getByRole('link', { name: /card library/i }).click();
   await expect(page.locator('#results-status')).toContainText('36 cards');
   await expect(page.locator('[data-item-id="es-419-travel-hotel"] .card-mastery')).toHaveText('Mastery: Learning');

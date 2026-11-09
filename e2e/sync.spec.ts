@@ -139,14 +139,14 @@ test('accounts converge across browser storage, retry offline answers, and sync 
   }, legacy);
   await page.reload();
   await signIn(page);
-  await expect(page.locator('.history')).toBeEmpty();
+  expect(await attempts(page, 'kikimashta-account-' + alice)).toEqual([]);
   expect(remote.tables.practice_attempts.size).toBe(0);
   expect(remote.tables.card_note_events.size).toBe(0);
   await page.getByRole('button', { name: 'Account', exact: true }).click();
   await page.getByRole('button', { name: "Copy this device's progress", exact: true }).click();
   await expect(page.getByText('Copied into this account.', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Close account' }).click();
-  await expect(page.locator('.history')).toHaveText('1 answer saved on this device');
+  await expect.poll(async () => (await attempts(page, 'kikimashta-account-' + alice)).length).toBe(1);
   expect(await attempts(page, 'kikimashta-v0')).toEqual([legacy]);
 
   const second = await browser.newContext({ baseURL: new URL(page.url()).origin, viewport: info.project.use.viewport });
@@ -155,7 +155,7 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     await remote.connect(second);
     const other = await second.newPage();
     await other.goto('./'); await signIn(other);
-    await expect(other.locator('.history')).toHaveText('1 answer saved on this device');
+    await expect.poll(async () => (await attempts(other, 'kikimashta-account-' + alice)).length).toBe(1);
     expect(await attempts(other, 'kikimashta-account-' + alice)).toEqual([legacy]);
 
     // A real answer must remain in this account's IndexedDB during a failed upload.
@@ -173,10 +173,10 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     expectReadableHomeText([await other.getByLabel('Sync status').evaluate(element => getComputedStyle(element).color)]);
     expect(remote.tables.practice_attempts.size).toBe(1);
     remote.reconnect(); await syncNow(other); await syncNow(page);
-    await expect(page.locator('.history')).toHaveText('2 answers saved on this device');
+    await expect.poll(async () => (await attempts(page, 'kikimashta-account-' + alice)).length).toBe(2);
     expect(remote.tables.practice_attempts.size).toBe(2);
     await page.reload();
-    await expect(page.locator('.history')).toHaveText('2 answers saved on this device');
+    await expect.poll(async () => (await attempts(page, 'kikimashta-account-' + alice)).length).toBe(2);
 
     const note = await firstNote(page);
     await expect(note.input).toHaveValue('Guest note');
@@ -197,7 +197,6 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     await other.getByRole('button', { name: 'Account', exact: true }).click();
     await other.getByRole('button', { name: 'Sign out', exact: true }).click();
     await signIn(other, 'bob@example.test');
-    await expect(other.locator('.history')).toBeEmpty();
     expect(await attempts(other, 'kikimashta-account-' + bob)).toEqual([]);
     const unrelated = await firstNote(other);
     await expect(unrelated.input).toHaveValue('');

@@ -778,11 +778,11 @@ describe('interval mastery feedback', () => {
     vi.mocked(ProgressStore.prototype.record).mockImplementationOnce(attempt => pending.promise.then(() => { records.push(attempt); }));
     await click(heardChoice(container));
     await click(screen.getByRole('button', { name: 'Kikimashta home' }));
-    await waitFor(() => expect(screen.getByText(`${cards.length} answers saved on this device`)).toBeInTheDocument());
+    expect(records).toHaveLength(cards.length);
     expect(screen.getByRole('button', { name: /saving/i })).toBeDisabled();
     await act(async () => pending.resolve());
-    await waitFor(() => expect(screen.getByText(`${cards.length + 1} answers saved on this device`)).toBeInTheDocument());
-    expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+    expect(records).toHaveLength(cards.length + 1);
   });
 
   it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
@@ -860,7 +860,10 @@ describe('all-level simulated Dev review (#152)', () => {
     expect(records).toEqual(original);
     await click(screen.getByRole('button', { name: 'Finish' }));
     expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
-    expect(screen.getByText('2 answers saved on this device')).toBeInTheDocument();
+    await advance(0);
+    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
+    expect(records).toEqual(original);
+    expect(screen.queryByText(/answers? saved on this device/)).not.toBeInTheDocument();
   });
 });
 
@@ -874,7 +877,8 @@ describe('learning language switching', () => {
     fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
     await waitFor(() => expect(ProgressStore.prototype.history).toHaveBeenCalledWith('es-419'));
     await act(async () => { oldHistory.resolve(legacy()); });
-    expect(screen.queryByText('6 answers saved on this device')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled();
+    expect(screen.getByRole('region', { name: 'Review forecast' })).toHaveTextContent('No reviews expected this week.');
     expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled();
     expect(screen.getByRole('link', { name: /Card library/ })).toHaveAttribute('href', expect.stringContaining('language=es-419'));
     expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveFocus();
@@ -952,4 +956,105 @@ it('keeps Home focused on a single Dev review entry point', async () => {
   expect(screen.queryByRole('button', { name: 'Contextual dev review' })).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
+});
+
+describe('Home review forecast (#156)', () => {
+  const panel = () => screen.getByRole('region', { name: 'Review forecast' });
+  const dailyCount = (index: number) => within(panel()).getAllByRole('listitem')[index]!;
+  function forecastWith(daily: number[]) {
+    return { ...forecast, daily, reviewsPerDay: daily.reduce((sum, count) => sum + count, 0) / daily.length };
+  }
+
+  it('keeps loading distinct from an empty forecast, then displays the existing model estimates', async () => {
+    const pending = deferred<typeof forecast>();
+    vi.mocked(forecastDensity).mockReturnValueOnce(pending.promise);
+    render(<App now={fixedNow}/>);
+    expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
+    expect(panel()).not.toHaveTextContent('No reviews expected this week.');
+    expect(screen.queryByRole('button', { name: /Start · \d+ reviews?/ })).not.toBeInTheDocument();
+    await act(async () => pending.resolve(forecastWith([8, 6.25, .25, 0, 3, 4, 1])));
+    expect(within(panel()).getAllByRole('listitem')).toHaveLength(7);
+    expect(within(dailyCount(0)).getByText('8', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start · 8 reviews' })).toBeEnabled();
+    expect(within(dailyCount(1)).getByText('6', { exact: true })).toBeInTheDocument();
+    expect(within(dailyCount(2)).getByText('<1', { exact: true })).toBeInTheDocument();
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  });
+
+  it('reports history failures without inventing zero counts and recovers on Retry loading', async () => {
+    vi.mocked(ProgressStore.prototype.history).mockRejectedValueOnce(new Error('Unavailable'));
+    render(<App now={fixedNow}/>);
+    await waitFor(() => expect(panel()).toHaveTextContent(/unavailable/i));
+    expect(screen.queryByRole('button', { name: /Start · \d+ reviews?/ })).not.toBeInTheDocument();
+    expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Retry loading' }));
+    await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
+    expect(panel()).toHaveTextContent('No reviews expected this week.');
+  });
+
+  it('shows loading for a new scope rather than carrying over the previous history error', async () => {
+    vi.mocked(ProgressStore.prototype.history).mockRejectedValueOnce(new Error('Old request failed'));
+    const view = render(<App now={fixedNow} historyRevision={0}/>);
+    await waitFor(() => expect(panel()).toHaveTextContent(/unavailable/i));
+    const pending = deferred<typeof forecast>();
+    vi.mocked(forecastDensity).mockReturnValueOnce(pending.promise);
+    view.rerender(<App now={fixedNow} historyRevision={1}/>);
+    expect(panel()).toHaveTextContent('Loading review forecast…');
+    expect(panel()).not.toHaveTextContent(/unavailable/i);
+    expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
+    await act(async () => pending.resolve(forecastWith([2, 0, 0, 0, 0, 0, 0])));
+    expect(within(dailyCount(0)).getByText('2', { exact: true })).toBeInTheDocument();
+  });
+
+  it('hides the previous revision while a refreshed history forecast is pending', async () => {
+    vi.mocked(forecastDensity).mockResolvedValueOnce(forecastWith([42, 42, 42, 42, 42, 42, 42]));
+    const view = render(<App now={fixedNow} historyRevision={0}/>);
+    await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
+    expect(within(dailyCount(0)).getByText('42', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('status', { name: 'Review density' })).toHaveTextContent('High');
+    const pending = deferred<typeof forecast>();
+    vi.mocked(forecastDensity).mockReturnValueOnce(pending.promise);
+    view.rerender(<App now={fixedNow} historyRevision={1}/>);
+    expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
+    expect(panel()).not.toHaveTextContent('42');
+    await act(async () => pending.resolve(forecastWith([3, 0, 0, 0, 0, 0, 0])));
+    expect(within(dailyCount(0)).getByText('3', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('status', { name: 'Review density' })).toHaveTextContent('Minimal');
+  });
+
+  it('scopes estimates to the selected language and packs and updates on browser return', async () => {
+    const spanish = (await import('../content/es-419.json')).default.items[0]!;
+    records = [...legacy(2), { ...legacy(1)[0]!, id: 'spanish', itemId: spanish.id,
+      language: 'es-419', selectedId: spanish.id, choiceIds: [spanish.id] }];
+    vi.mocked(forecastDensity).mockImplementation(async schedules => forecastWith([schedules.length, 0, 0, 0, 0, 0, 0]));
+    render(<App now={fixedNow}/>);
+    await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
+    expect(within(dailyCount(0)).getByText('2', { exact: true })).toBeInTheDocument();
+    fireEvent.change(screen.getByRole('combobox', { name: 'Learning language' }), { target: { value: 'es-419' } });
+    await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
+    expect(within(dailyCount(0)).getByText('1', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start · 1 review' })).toBeEnabled();
+    localStorage.setItem('kikimashta-card-packs-v1:es-419', '[]');
+    await act(async () => { window.dispatchEvent(new Event('pageshow')); });
+    await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
+    expect(within(dailyCount(0)).getByText('0', { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeDisabled();
+    expect(panel()).toHaveTextContent('No reviews expected this week.');
+  });
+
+  it('refreshes after focus and at local midnight with dates from the new forecast snapshot', async () => {
+    vi.useFakeTimers();
+    let at = new Date(2026, 10, 8, 23, 59, 59).getTime();
+    const now = () => at;
+    vi.mocked(forecastDensity).mockResolvedValue(forecastWith([1, 0, 0, 0, 0, 0, 0]));
+    await act(async () => { render(<App now={now}/>); });
+    expect(dailyCount(1)).toHaveTextContent('Mon');
+    vi.mocked(forecastDensity).mockResolvedValue(forecastWith([2, 0, 0, 0, 0, 0, 0]));
+    await act(async () => { window.dispatchEvent(new Event('focus')); });
+    expect(within(dailyCount(0)).getByText('2', { exact: true })).toBeInTheDocument();
+    at += 1000;
+    await advance(1000);
+    expect(dailyCount(1)).toHaveTextContent('Tue');
+    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
+  });
 });

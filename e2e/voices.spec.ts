@@ -1,3 +1,4 @@
+import { savedAttempts } from './saved-attempts';
 import { expect, test } from './fixtures';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import spanish from '../content/es-419.json' with { type: 'json' };
@@ -40,7 +41,7 @@ for (const format of ['pictures', 'writing']) {
     if (format === 'writing') await page.getByRole('button', { name: `Choose writing ${target.text}`, exact: true }).click();
     else await page.locator('.choices button').filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
     await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
-    await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+    await expect.poll(async () => (await savedAttempts(page)).length).toBe(1);
     await page.reload();
     const saved = await page.evaluate(async () => {
       const db = await new Promise<IDBDatabase>((resolve, reject) => {
@@ -100,7 +101,7 @@ test('Spanish regional voice preference persists independently and supplies prac
   expect(target).toBeDefined();
   await page.locator('.choices button').filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
-  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(1);
   await page.reload();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('kikimashta-practice-voices-v1')!))).toEqual(['lime']);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('kikimashta-practice-voices-v1:es-419')!))).toEqual(['juan']);

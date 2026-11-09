@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "language": "ja-JP",
+  "issue": 163,
+  "supportingVocabulary": [
+    {
+      "id": "sup-amendment-tea",
+      "text": "お茶",
+      "reading": "おちゃ",
+      "meaning": "tea"
+    },
+    {
+      "id": "sup-amendment-mother",
+      "text": "母",
+      "reading": "はは",
+      "meaning": "my mother"
+    },
+    {
+      "id": "sup-amendment-rest",
+      "text": "休む",
+      "reading": "やすむ",
+      "meaning": "to rest"
+    },
+    {
+      "id": "sup-amendment-very",
+      "text": "とても",
+      "reading": "とても",
+      "meaning": "very"
+    },
+    {
+      "id": "sup-amendment-sky-blue",
+      "text": "水色",
+      "reading": "みずいろ",
+      "meaning": "sky blue"
+    },
+    {
+      "id": "sup-amendment-newspaper",
+      "text": "新聞",
+      "reading": "しんぶん",
+      "meaning": "newspaper"
+    },
+    {
+      "id": "sup-amendment-early-evening",
+      "text": "夕方",
+      "reading": "ゆうがた",
+      "meaning": "early evening"
+    },
+    {
+      "id": "sup-amendment-suzuki",
+      "text": "鈴木さん",
+      "reading": "すずきさん",
+      "meaning": "Mr./Ms. Suzuki"
+    },
+    {
+      "id": "sup-amendment-nine-oclock",
+      "text": "九時",
+      "reading": "くじ",
+      "meaning": "nine o’clock"
+    },
+    {
+      "id": "sup-amendment-younger-brother",
+      "text": "弟",
+      "reading": "おとうと",
+      "meaning": "my younger brother"
+    }
+  ],
+  "amendments": [
+    {
+      "questionId": "ja-ctx-simple-mizu-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-mizu-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hashiru-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "resting",
+        "text": "休んでいます",
+        "reading": "やすんでいます",
+        "meaning": "is resting",
+        "grammarTags": [
+          "progressive"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-rest"
+        ],
+        "vocabularyItemId": "ja-v-acc3dd26ba1e"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hashiru-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-ookii-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-small",
+        "text": "とても小さい",
+        "reading": "とてもちいさい",
+        "meaning": "very small",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-small"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-ookii-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "sky-blue",
+        "text": "水色",
+        "reading": "みずいろ",
+        "meaning": "sky blue",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-sky-blue"
+        ],
+        "vocabularyItemId": "ja-v-d42b5be1c4ad",
+        "imageItemId": "ja-v-d42b5be1c4ad"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-ookii-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-small",
+        "text": "とても小さい",
+        "reading": "とてもちいさい",
+        "meaning": "very small",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-small"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-chiisai-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-large",
+        "text": "とても大きい",
+        "reading": "とてもおおきい",
+        "meaning": "very large",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-large"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-chiisai-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "sky-blue",
+        "text": "水色",
+        "reading": "みずいろ",
+        "meaning": "sky blue",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-sky-blue"
+        ],
+        "vocabularyItemId": "ja-v-d42b5be1c4ad",
+        "imageItemId": "ja-v-d42b5be1c4ad"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-chiisai-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-large",
+        "text": "とても大きい",
+        "reading": "とてもおおきい",
+        "meaning": "very large",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-large"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hon-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "newspaper",
+        "text": "新聞",
+        "reading": "しんぶん",
+        "meaning": "newspaper",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-newspaper"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hon-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-mizu-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-mizu-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "early-evening",
+        "text": "夕方",
+        "reading": "ゆうがた",
+        "meaning": "early evening",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-early-evening"
+        ],
+        "vocabularyItemId": "ja-v-3534dd7d07d1"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-koohii-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-koohii-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-koohii-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "early-evening",
+        "text": "夕方",
+        "reading": "ゆうがた",
+        "meaning": "early evening",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-early-evening"
+        ],
+        "vocabularyItemId": "ja-v-3534dd7d07d1"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-sensei-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "student",
+        "text": "学生",
+        "reading": "がくせい",
+        "meaning": "student",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-student"
+        ],
+        "vocabularyItemId": "ja-v-9567eaf8fe9b"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-sensei-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "suzuki",
+        "text": "鈴木さん",
+        "reading": "すずきさん",
+        "meaning": "Mr./Ms. Suzuki",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-suzuki"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-sensei-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-sensei-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "nine",
+        "text": "九時",
+        "reading": "くじ",
+        "meaning": "nine o’clock",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-nine-oclock"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hashiru-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "bus",
+        "text": "バスで行きます",
+        "reading": "バスでいきます",
+        "meaning": "goes by bus",
+        "grammarTags": [
+          "transport",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-bus",
+          "sup-go"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-simple-hashiru-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "younger-brother",
+        "text": "弟",
+        "reading": "おとうと",
+        "meaning": "my younger brother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-younger-brother"
+        ],
+        "vocabularyItemId": "ja-v-7e8dc4d63e82"
+      }
+    },
+    {
+      "questionId": "ja-ctx-ookii-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-small",
+        "text": "とても小さい",
+        "reading": "とてもちいさい",
+        "meaning": "very small",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-small"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-ookii-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "sky-blue",
+        "text": "水色",
+        "reading": "みずいろ",
+        "meaning": "sky blue",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-sky-blue"
+        ],
+        "vocabularyItemId": "ja-v-d42b5be1c4ad",
+        "imageItemId": "ja-v-d42b5be1c4ad"
+      }
+    },
+    {
+      "questionId": "ja-ctx-ookii-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-small",
+        "text": "とても小さい",
+        "reading": "とてもちいさい",
+        "meaning": "very small",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-small"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-chiisai-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-large",
+        "text": "とても大きい",
+        "reading": "とてもおおきい",
+        "meaning": "very large",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-large"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-chiisai-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "sky-blue",
+        "text": "水色",
+        "reading": "みずいろ",
+        "meaning": "sky blue",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-sky-blue"
+        ],
+        "vocabularyItemId": "ja-v-d42b5be1c4ad",
+        "imageItemId": "ja-v-d42b5be1c4ad"
+      }
+    },
+    {
+      "questionId": "ja-ctx-chiisai-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "very-large",
+        "text": "とても大きい",
+        "reading": "とてもおおきい",
+        "meaning": "very large",
+        "grammarTags": [
+          "adjectives"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-very",
+          "sup-large"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-hon-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "newspaper",
+        "text": "新聞",
+        "reading": "しんぶん",
+        "meaning": "newspaper",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-newspaper"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-hon-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-mizu-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-mizu-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-mizu-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-mizu-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "early-evening",
+        "text": "夕方",
+        "reading": "ゆうがた",
+        "meaning": "early evening",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-early-evening"
+        ],
+        "vocabularyItemId": "ja-v-3534dd7d07d1"
+      }
+    },
+    {
+      "questionId": "ja-ctx-koohii-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-koohii-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "tea",
+        "text": "お茶",
+        "reading": "おちゃ",
+        "meaning": "tea",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-tea"
+        ],
+        "vocabularyItemId": "ja-contextual-tea",
+        "imageItemId": "ja-contextual-tea"
+      }
+    },
+    {
+      "questionId": "ja-ctx-koohii-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "early-evening",
+        "text": "夕方",
+        "reading": "ゆうがた",
+        "meaning": "early evening",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-early-evening"
+        ],
+        "vocabularyItemId": "ja-v-3534dd7d07d1"
+      }
+    },
+    {
+      "questionId": "ja-ctx-sensei-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "student",
+        "text": "学生",
+        "reading": "がくせい",
+        "meaning": "student",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-student"
+        ],
+        "vocabularyItemId": "ja-v-9567eaf8fe9b"
+      }
+    },
+    {
+      "questionId": "ja-ctx-sensei-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "suzuki",
+        "text": "鈴木さん",
+        "reading": "すずきさん",
+        "meaning": "Mr./Ms. Suzuki",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-suzuki"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-sensei-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-sensei-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "nine",
+        "text": "九時",
+        "reading": "くじ",
+        "meaning": "nine o’clock",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-nine-oclock"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-hashiru-01-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "resting",
+        "text": "休んでいます",
+        "reading": "やすんでいます",
+        "meaning": "is resting",
+        "grammarTags": [
+          "progressive"
+        ],
+        "supportingVocabularyIds": [
+          "sup-amendment-rest"
+        ],
+        "vocabularyItemId": "ja-v-acc3dd26ba1e"
+      }
+    },
+    {
+      "questionId": "ja-ctx-hashiru-01-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "mother",
+        "text": "母",
+        "reading": "はは",
+        "meaning": "my mother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-mother"
+        ],
+        "vocabularyItemId": "ja-v-7fa86c660a00"
+      }
+    },
+    {
+      "questionId": "ja-ctx-hashiru-02-target",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "bus",
+        "text": "バスで行きます",
+        "reading": "バスでいきます",
+        "meaning": "goes by bus",
+        "grammarTags": [
+          "transport",
+          "polite-verbs"
+        ],
+        "supportingVocabularyIds": [
+          "sup-bus",
+          "sup-go"
+        ]
+      }
+    },
+    {
+      "questionId": "ja-ctx-hashiru-02-detail",
+      "sourceRevision": 1,
+      "revision": 2,
+      "addedOption": {
+        "id": "younger-brother",
+        "text": "弟",
+        "reading": "おとうと",
+        "meaning": "my younger brother",
+        "grammarTags": [],
+        "supportingVocabularyIds": [
+          "sup-amendment-younger-brother"
+        ],
+        "vocabularyItemId": "ja-v-7e8dc4d63e82"
+      }
+    }
+  ]
+}
