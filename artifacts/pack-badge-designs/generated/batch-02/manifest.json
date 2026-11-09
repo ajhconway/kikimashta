@@ -1,0 +1,124 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "requests": "requests.json",
+  "status": "owner approved style prototypes",
+  "references": [
+    {
+      "file": "../batch-01/strong-wk-picture-v1.png",
+      "sha256": "9df226ce0b6ce54aeb58e4842b85f00de252010e6bc0c70fbe9a18bf7d195d62",
+      "status": "owner approved style prototype"
+    },
+    {
+      "file": "../batch-01/mastered-travel-writing-v1.png",
+      "sha256": "f078fa1fbae1788a5cfb9f5d0788dc3a1c7a68393ba87c2f7e9740d4d6691b86",
+      "status": "owner approved style prototype"
+    }
+  ],
+  "assets": [
+    {
+      "id": "new-wk-picture-v1",
+      "level": "New",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-84de4b2a-2dd2-46bd-89bb-0b81c50a2a7c.png",
+      "file": "new-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "bebfbc2985bc6f02f99081ae5a03f3ee94df67a4e7f2933f43a7aa6ec97af617"
+    },
+    {
+      "id": "learning-wk-picture-v1",
+      "level": "Learning",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-938a61a7-787a-4d9c-8705-2c4256bd2b36.png",
+      "file": "learning-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "86dbe019d6f41c8415b23da87c85cb6f88fd50067c171ebefe6f4f968ce86e17"
+    },
+    {
+      "id": "improving-wk-picture-v1",
+      "level": "Improving",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-110404e6-3da6-4783-9034-f80721d3693e.png",
+      "file": "improving-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "4c43a6a42604a3aa68ab4e800036aaa230e7b035ccd60a343304513af82ceb05"
+    },
+    {
+      "id": "familiar-wk-picture-v1",
+      "level": "Familiar",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-e186a411-bf5f-4399-85a5-5f69b29adb0c.png",
+      "file": "familiar-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "74bb6c73750827690f58acdbcf962616b95b28d2b2218eed322d65fdefc450a6"
+    },
+    {
+      "id": "steady-wk-picture-v1",
+      "level": "Steady",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-57756b10-412c-4356-8f43-f7ea5d57c00f.png",
+      "file": "steady-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "5c2c256f13c7a390b9fa753748a682bc3abebccd3682c4ef6d9eb09539f8d3cf"
+    },
+    {
+      "id": "confident-wk-picture-v1",
+      "level": "Confident",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-c5d3c900-9c9f-49e9-a321-42e90d55b8c6.png",
+      "file": "confident-wk-picture-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "owner approved style prototype",
+      "sha256": "6b0fe08f1083a05675410e2b756a6ec650e7a947254fa2adb61931cc26b5c222"
+    }
+  ],
+  "scope": "Six remaining mastery designs; WK/Pictures/L1 for rank comparison. No active badge or progress changes.",
+  "ownerApproval": "I like them. Can they be used so that WK/Travel interchanges onto the badge and similarly the picture/writing/level writing on the ribbon.",
+  "reviewHistory": [
+    {
+      "action": "Owner approved the six additional prototypes and requested interchangeable content layers",
+      "evidence": "I like them. Can they be used so that WK/Travel interchanges onto the badge and similarly the picture/writing/level writing on the ribbon."
+    }
+  ]
+}

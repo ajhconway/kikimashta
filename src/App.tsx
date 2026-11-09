@@ -14,6 +14,8 @@ import { QuizCompanion, Speaker } from './components/QuizChrome';
 import { advanceSchedule, deriveSchedules, snapshotDue, schedulerVersion, type ScheduledWord } from './core/scheduler';
 import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevReviewOptions';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
+import { packBadges } from './core/pack-badges';
+import { PackBadges } from './components/PackBadges';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
@@ -126,7 +128,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     const cards = [...selectedContextualCards(contextualScope, contextualCards, unlocks, directContextualTargets), ...scopedCards];
     const keys = new Set(cards.map(cardKey));
     const allSchedules = await deriveSchedules(attempts, practicePool.language);
-    return { cards, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
+    return { cards, allSchedules, schedules: allSchedules.filter(card => keys.has(cardKey(card))) };
   }, [contextualScope, scopedCards, practicePool]);
   function questionForCard(card: PracticeCard): Question[] {
     if (!isContextualExercise(card.exercise)) return createQuestions([card], choicesFor(card.exercise), random);
@@ -178,7 +180,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [refresh, setRefresh] = useState(0);
   const forecastScope = useMemo(() => ({ store, cards: scopedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
     [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
-  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
+  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; badges: ReturnType<typeof packBadges>; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
@@ -242,20 +244,21 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules } = await learningSnapshot(attempts);
+        const { schedules, allSchedules } = await learningSnapshot(attempts);
+        const badges = packBadges(practicePool.items, cardPacks, allSchedules, language.foundationCards);
         const at = now();
         const forecast = await forecastDensity(schedules, at);
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
         setDensity(forecast.reviewsPerDay); setHistoryError(false);
-        setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
+        setReviewForecast({ scope: forecastScope, at, value: forecast, badges, error: false });
       } catch {
-        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
+        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, badges: [], error: true }); }
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, forecastScope]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, cardPacks, forecastScope, language.foundationCards]);
 
   useEffect(() => {
     if (screen !== 'home') return;
@@ -527,7 +530,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     <main>
       {screen === 'home' && <section className="home">
         <h1>kikimashta</h1>
-        <HomeIntensity value={density}/>
+        <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
+          <HomeIntensity value={density}/>
+          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
+        </div>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
