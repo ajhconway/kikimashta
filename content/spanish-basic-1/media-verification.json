@@ -5,8 +5,10 @@
     "selected": 15,
     "generated": 9,
     "reused": 6,
-    "versionsPreserved": 10,
-    "manifest": "artifacts/spanish-basic-1-art/manifest.json"
+    "versionsPreserved": 20,
+    "manifest": "artifacts/spanish-basic-1-art/manifest.json",
+    "revisedSelected": 7,
+    "revisionHistory": "artifacts/spanish-basic-1-art/revisions/history.json"
   },
   "audio": {
     "clips": 336,
@@ -26,7 +28,8 @@
     "lint": "passed",
     "types": "passed",
     "validator": "passed",
-    "build": "passed"
+    "build": "passed",
+    "revisionScope": "Seven artwork replacements, revised reference guards and gallery concept display."
   },
   "limitations": [
     "Owner picture and listening acceptance pending.",
@@ -42,7 +45,7 @@
       "pairButtons": 72,
       "filters": true,
       "orderedPairPlayback": true,
-      "pauseMs": 656,
+      "pauseMs": 657,
       "cancelGap": true,
       "overflow": false,
       "errors": []
@@ -55,11 +58,11 @@
       "pairButtons": 72,
       "filters": true,
       "orderedPairPlayback": true,
-      "pauseMs": 820,
+      "pauseMs": 842,
       "cancelGap": true,
       "overflow": false,
       "errors": []
     }
   ],
-  "independentReview": "Selected artwork meaning, source/prompt/reference hashes, clip/context identity and tamper guards reviewed; no remaining material findings."
+  "independentReview": "No material findings. Seven selected revisions visually match owner requests. All 20 image/record hashes and revision prompt/reference hashes checked; previous 10 originals, exact approved draft/authorization inputs and all 336 audio delivery hashes preserved. Focused gallery test passed (1/1)."
 }

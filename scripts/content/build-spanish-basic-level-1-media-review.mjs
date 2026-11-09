@@ -16,6 +16,7 @@ export function combinedBasicHtml(draft, images, audio) {
   const clips = new Map(audio.clips.map(c => [c.id + ':' + c.voice, c]))
   html = html.replace(/<article data-kind="([^"]+)">([\s\S]*?)<\/article>/g, (_, kind, body) => {
     const item = draft.items[index++], image = images.find(i => i.id === item.id), context = audio.contexts.find(c => c.targetItemId === item.id)
+    if (image?.concept) body = body.replace(`<p><strong>Picture concept</strong>: ${esc(item.artwork.concept)}</p>`, `<p><strong>Revised picture concept</strong>: ${esc(image.concept)}</p>`)
     const picture = image?.source === 'generated' ? `<figure class="new-picture"><a href="../../${esc(image.path)}"><img width="145" height="145" src="../../${esc(image.path)}" alt="${esc(item.meaning)}"></a></figure>` : ''
     const words = `<details class="word-voices"><summary>Listen to ${esc(item.text)} · eight voices</summary>${audio.voices.map(v => `<div class="voice-row"><strong>${esc(v.name)}</strong><small>${esc(v.region)}</small>${player(clips.get(item.id + ':' + v.voice))}</div>`).join('')}</details>`
     const pairs = context ? `<section class="context-voices"><h3>Hear sentence, then question</h3>${audio.voices.map(v => `<div class="pair voice-row"><strong>${esc(v.name)}</strong><small>${esc(v.region)}</small><button type="button" class="play-pair">Play sentence + question</button><label>Sentence ${player(clips.get(context.sentenceId + ':' + v.voice))}</label><label>Question ${player(clips.get(context.questionId + ':' + v.voice))}</label></div>`).join('')}</section>` : ''
@@ -62,17 +63,23 @@ export async function buildBasicMediaReview(root = process.cwd()) {
       const r = await json(join(art, 'records', `${item.slug}-v${version}.json`))
       const expectedRef = version === 1 ? 'artifacts/card-regeneration/references/cat-style-reference.png' : `artifacts/spanish-basic-1-art/originals/${item.slug}-v${version - 1}.png`
       if (q?.id !== item.id || q.slug !== item.slug || q.version !== version || q.transparent_background !== true || q.referencePath !== expectedRef ||
+          (version > 1 && (typeof q.concept !== 'string' || !q.concept.trim() || typeof q.ownerFeedback !== 'string' || !q.ownerFeedback.trim())) ||
           r.id !== item.id || r.slug !== item.slug || r.path !== `originals/${item.slug}-v${version}.png` || r.promptSha256 !== hash(q.prompt) ||
           r.referenceSha256 !== q.referenceSha256 || hash(await readFile(join(root, expectedRef))) !== q.referenceSha256 ||
           JSON.stringify(q.additionalReferences ?? []) !== JSON.stringify(r.additionalReferences ?? [])) throw Error('Artwork provenance changed.')
       for (const ref of q.additionalReferences ?? []) {
-        if (ref.role !== 'matched-counterpart' || !/^artifacts\/spanish-basic-1-art\/originals\/[a-z-]+-v1\.png$/.test(ref.path) || hash(await readFile(join(root, ref.path))) !== ref.sha256) throw Error('Counterpart reference changed.')
+        const approvedProp = ref.role === 'approved-prop' && /^public\/images\/approved\/[a-zA-Z0-9-]+\.(jpg|png)$/.test(ref.path) &&
+          approved.assets.some(a => a.id === ref.sourceId && a.path === ref.path && a.sha256 === ref.sha256)
+        const allowed = (ref.role === 'matched-counterpart' && /^artifacts\/spanish-basic-1-art\/originals\/[a-z-]+-v[1-9]\d*\.png$/.test(ref.path)) ||
+          (ref.role === 'character-pose' && ref.path === 'artifacts/card-regeneration/references/kiku-character-reference.png') || approvedProp
+        if (!allowed || hash(await readFile(join(root, ref.path))) !== ref.sha256) throw Error('Artwork reference changed.')
       }
       const path = 'artifacts/spanish-basic-1-art/' + r.path, bytes = await readFile(join(root, path))
       if (hash(bytes) !== r.sha256) throw Error('Generated picture bytes changed.')
       const pixels = inspectPngAlpha(bytes)
       if (pixels.width !== pixels.height || pixels.width < 1024 || !pixels.transparentPixels || !pixels.opaquePixels) throw Error('Picture requires a square transparent canvas and opaque subject.')
-      images.push({ id: item.id, text: item.text, meaning: item.meaning, source: 'generated', path, sha256: r.sha256, bytes: bytes.length, version, pixels, promptSha256: r.promptSha256 })
+      images.push({ id: item.id, text: item.text, meaning: item.meaning, source: 'generated', path, sha256: r.sha256, bytes: bytes.length, version, pixels, promptSha256: r.promptSha256,
+        ...(version > 1 ? { concept: q.concept, ownerFeedback: q.ownerFeedback, additionalReferences: q.additionalReferences ?? [] } : {}) })
     }
   }
   const audioBytes = await readFile(join(root, 'artifacts/spanish-basic-1-audio-review/manifest.json')), audio = JSON.parse(audioBytes), { plan } = await loadSpanishBasicLevel1Plan(root)

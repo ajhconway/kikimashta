@@ -1,0 +1,135 @@
+{
+  "issue": 191,
+  "status": "revised-awaiting-owner-media-review",
+  "tool": "built-in image_gen",
+  "ownerFeedback": [
+    "Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot. Inside should use a more rectangular box. Next to should use a chair. Hungry, thirsty and sleepy should be chiller. I think I'd prefer Kiku in her normal position as well.",
+    "Let's have a bunco of ice for cold, and a little more fire for hot"
+  ],
+  "changes": [
+    {
+      "id": "es-419-basic-cold",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/cold-v1.png",
+        "sha256": "889edba100272b43cc92d4be84a2c433eab7d42ed1156ad8762c068ac0af71d3",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/cold-v4.png",
+        "sha256": "10d51b01d85f0879a5adfcc00bfd8bb132c1661660efa642635bb4168472d0b9",
+        "version": 4
+      },
+      "request": "revisions/cold-v4-request.json"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/hot-v1.png",
+        "sha256": "918b12b9e4495568614b365af53a975349cf4950bf3cc0245ee50f9adefac699",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/hot-v3.png",
+        "sha256": "23f788a2971b17fec68c1b156af86201f37cbae7a0f5bef2eea2e906912eeb2c",
+        "version": 3
+      },
+      "request": "revisions/hot-v3-request.json"
+    },
+    {
+      "id": "es-419-basic-inside",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
+        "sha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/inside-v2.png",
+        "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df",
+        "version": 2
+      },
+      "request": "revisions/inside-v2-request.json"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/next-to-v2.png",
+        "sha256": "de206d4d900e65879db168ea1bd64b1b5a3836a9d7c12c3f032d7c9ad5603565",
+        "version": 2
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/next-to-v3.png",
+        "sha256": "8fd1c17703e9cf5b62ad3b4b95a26a04690e537a7eed799b6ff371a183ed0ffe",
+        "version": 3
+      },
+      "request": "revisions/next-to-v3-request.json"
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
+        "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/hunger-v2.png",
+        "sha256": "e2d618dfe63105abf0b86e74fcefc0a12e6e11ccd8772536dc08e3f44626b5e3",
+        "version": 2
+      },
+      "request": "revisions/hunger-v2-request.json"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/thirst-v1.png",
+        "sha256": "dd372fcbe5f0d5d9632253905bbcc1be775e4eba544bd6421786a3927c4b523b",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/thirst-v2.png",
+        "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449",
+        "version": 2
+      },
+      "request": "revisions/thirst-v2-request.json"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "previous": {
+        "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v1.png",
+        "sha256": "da502ad99e23c3178b9929f1243d521f27cad1546aa5b2abc873f41b3ac95772",
+        "version": 1
+      },
+      "selected": {
+        "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v2.png",
+        "sha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+        "version": 2
+      },
+      "request": "revisions/sleepiness-v2-request.json"
+    }
+  ],
+  "unchangedSelectedPictures": [
+    "es-419-basic-eat",
+    "es-419-basic-drink",
+    "es-419-basic-large",
+    "es-419-basic-small",
+    "es-419-basic-open",
+    "es-419-basic-closed",
+    "es-419-basic-on-top",
+    "es-419-basic-under"
+  ],
+  "allPreviousOriginalsPreserved": 10,
+  "versionsPreserved": 20,
+  "immutableInputsVerified": {
+    "content/spanish-basic-1/draft.json": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+    "content/spanish-basic-1/generation-approval.json": "6c07ee6197ad6303f5c813289cf6068a49b091f3cc73879ca342af56bb7423db",
+    "content/spanish-basic-1/audio-approval.json": "42c474c6bf7fcdbce976d14ef095b3a4bb769a81e589d6c1d42ded782d80958e",
+    "content/spanish-basic-1/audio-config.json": "8b8a217ca628edb08a60e2299dc5b7b0deac66a774859bbcf66d562a18f878ba",
+    "artifacts/spanish-basic-1-audio-review/manifest.json": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07"
+  },
+  "audioRecordingsUnchanged": 336,
+  "notes": [
+    "cold v2 preserved as a portrait draft; v3 reframed to square; v4 adds the requested ice pile.",
+    "hot v3 enlarges the flame after v2; both remain preserved.",
+    "Kiku uses the canonical low resting pose for inside, next to and the three needs.",
+    "The next-to chair uses the approved chair artwork as a furniture reference."
+  ]
+}

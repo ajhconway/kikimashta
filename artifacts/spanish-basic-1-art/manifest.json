@@ -67,36 +67,42 @@
       "text": "frío",
       "meaning": "Cold",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/cold-v1.png",
-      "sha256": "889edba100272b43cc92d4be84a2c433eab7d42ed1156ad8762c068ac0af71d3",
-      "bytes": 885550,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/cold-v4.png",
+      "sha256": "10d51b01d85f0879a5adfcc00bfd8bb132c1661660efa642635bb4168472d0b9",
+      "bytes": 542940,
+      "version": 4,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 915644,
-        "opaquePixels": 641128,
-        "opaqueWhitePixels": 10337
+        "transparentPixels": 1177557,
+        "opaquePixels": 384822,
+        "opaqueWhitePixels": 11266
       },
-      "promptSha256": "7eddf4187adc2e4ac826dec5ec83bbf3ee9fd15ca88f6781aece16406fcc4e22"
+      "promptSha256": "47a642ca48fc99f553e9be5433ec3b7bc0aa2901838ebccd3ad0002f5c4625b5",
+      "concept": "A large upright violet-outlined thermometer with low blue liquid is the primary object, with a small pile of five or six clearly visible ice cubes around its base. No drinking glass, water or text.",
+      "ownerFeedback": "Let's have a bunco of ice for cold, and a little more fire for hot",
+      "additionalReferences": []
     },
     {
       "id": "es-419-basic-hot",
       "text": "caliente",
       "meaning": "Hot",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/hot-v1.png",
-      "sha256": "918b12b9e4495568614b365af53a975349cf4950bf3cc0245ee50f9adefac699",
-      "bytes": 842053,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/hot-v3.png",
+      "sha256": "23f788a2971b17fec68c1b156af86201f37cbae7a0f5bef2eea2e906912eeb2c",
+      "bytes": 474445,
+      "version": 3,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 957885,
-        "opaquePixels": 592685,
-        "opaqueWhitePixels": 3375
+        "transparentPixels": 1215686,
+        "opaquePixels": 347762,
+        "opaqueWhitePixels": 2498
       },
-      "promptSha256": "5b0621e5a5948bd63f7c7f654fe863cdc9ec7fcf3a553aa17199f71435f74927"
+      "promptSha256": "136b4f44d06ad31bf1482e97c95b88c53d696a63815db7ed7454bfad8abadfe4",
+      "concept": "A large upright violet-outlined thermometer with high red liquid is the primary object, with a more generous orange and yellow flame at its base, roughly one third of the thermometer height. No drinking glass, ice or text.",
+      "ownerFeedback": "Let's have a bunco of ice for cold, and a little more fire for hot",
+      "additionalReferences": []
     },
     {
       "id": "es-419-basic-open",
@@ -121,18 +127,27 @@
       "text": "dentro de",
       "meaning": "Inside",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
-      "sha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e",
-      "bytes": 1063369,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/inside-v2.png",
+      "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df",
+      "bytes": 874997,
+      "version": 2,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 771971,
-        "opaquePixels": 788530,
+        "transparentPixels": 928004,
+        "opaquePixels": 631941,
         "opaqueWhitePixels": 0
       },
-      "promptSha256": "c701defb8cd7115b10f854d9599df9699c0ae5b40ab61eeb1957c5cb360184b0"
+      "promptSha256": "0080ca83516a25bfd2d5d38170bda1233420ae79d615bc7427c4ef6e78fd7e20",
+      "concept": "Kiku resting INSIDE a LOW WIDE RECTANGULAR cardboard box. The box front face is a clear horizontal rectangle about TWO TIMES as wide as tall, with straight parallel top and bottom edges and modest depth visible at the sides. No tall cube, hexagonal bowl, big V-shaped or U-shaped cutaway. The front wall is low enough that the normal resting cat face and two front paws are visible over its straight rim, while the body stays inside. Small outward side flaps may clarify cardboard. Make it obvious she is contained by the rectangular box.",
+      "ownerFeedback": "Inside should use a more rectangular box.",
+      "additionalReferences": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "character-pose",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ]
     },
     {
       "id": "es-419-basic-on-top",
@@ -157,72 +172,114 @@
       "text": "al lado de",
       "meaning": "Next to",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/next-to-v2.png",
-      "sha256": "de206d4d900e65879db168ea1bd64b1b5a3836a9d7c12c3f032d7c9ad5603565",
-      "bytes": 438169,
-      "version": 2,
+      "path": "artifacts/spanish-basic-1-art/originals/next-to-v3.png",
+      "sha256": "8fd1c17703e9cf5b62ad3b4b95a26a04690e537a7eed799b6ff371a183ed0ffe",
+      "bytes": 560033,
+      "version": 3,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 1299831,
-        "opaquePixels": 261430,
+        "transparentPixels": 1217442,
+        "opaquePixels": 331123,
         "opaqueWhitePixels": 0
       },
-      "promptSha256": "4367f06c2864bc0664399f82cc12f7ad2a46e217fb8abd8b90af31a5b0bb8ea6"
+      "promptSha256": "5c665c47a536cbf046f76a1a40552ba0731aacad91638053d21bd325875570fa",
+      "concept": "Kiku in her NORMAL LOW RESTING POSE on the ground BESIDE a single upright wooden CHAIR. Replace the cardboard box entirely with a chair matching image3: golden rounded backrest, golden legs, purple seat. Kiku is fully OUTSIDE the chair footprint, beside it with a clear narrow gap and at the same ground level. She is NOT sitting on the chair and NOT underneath it. Both cat and chair complete and readable. Make the chair small enough that Kiku is not a tiny speck. No box.",
+      "ownerFeedback": "Next to should use a chair.",
+      "additionalReferences": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "character-pose",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        },
+        {
+          "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+          "role": "approved-prop",
+          "sourceId": "ja-v-c0f58bfab324",
+          "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e"
+        }
+      ]
     },
     {
       "id": "es-419-basic-hunger",
       "text": "hambre",
       "meaning": "Hunger",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
-      "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
-      "bytes": 912658,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/hunger-v2.png",
+      "sha256": "e2d618dfe63105abf0b86e74fcefc0a12e6e11ccd8772536dc08e3f44626b5e3",
+      "bytes": 752372,
+      "version": 2,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 905672,
-        "opaquePixels": 647753,
-        "opaqueWhitePixels": 642
+        "transparentPixels": 1032995,
+        "opaquePixels": 524206,
+        "opaqueWhitePixels": 0
       },
-      "promptSha256": "a35216939ffcc079584998036aedf6d18972e457d6bd7c5ffc36f7592faa103f"
+      "promptSha256": "07510b6e57421a6963982af74b0303202f93eaeedb9180df6a8a25b6077402de",
+      "concept": "A CALM hungry Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body/tail, no upright torso, seated legs or belly gestures. Keep the usual relaxed closed-eye expression and small mouth. A modest compact thought bubble above her contains one small plain bread roll to indicate hunger. No worried eyebrows, pleading wide eyes, open crying mouth, stomach lines, pain, tears or distress. Food stays in the thought bubble; she is not eating.",
+      "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
+      "additionalReferences": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "character-pose",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ]
     },
     {
       "id": "es-419-basic-thirst",
       "text": "sed",
       "meaning": "Thirst",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/thirst-v1.png",
-      "sha256": "dd372fcbe5f0d5d9632253905bbcc1be775e4eba544bd6421786a3927c4b523b",
-      "bytes": 916085,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/thirst-v2.png",
+      "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449",
+      "bytes": 699940,
+      "version": 2,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 901064,
-        "opaquePixels": 651943,
-        "opaqueWhitePixels": 1584
+        "transparentPixels": 1074224,
+        "opaquePixels": 483579,
+        "opaqueWhitePixels": 656
       },
-      "promptSha256": "33a49f7d842e299ea4a06e6cb8e3db4ca7459cba22255ca96aa5a7776829beef"
+      "promptSha256": "5b19bf265ed33efd2403ab37a9ab23a42ad57df4267bb06f17a70ff5e49ccc11",
+      "concept": "A CALM thirsty Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body/tail, no upright torso or seated legs. Keep the usual relaxed closed-eye expression and small mouth. A modest compact thought bubble above her contains one small plain glass of water to indicate thirst. No panting tongue, dry open mouth, worried eyebrows, pleading eyes, throat gesture, distress, tears or dehydration drama. Water stays in the thought bubble; she is not drinking.",
+      "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
+      "additionalReferences": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "character-pose",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ]
     },
     {
       "id": "es-419-basic-sleepiness",
       "text": "sueño",
       "meaning": "Sleepiness",
       "source": "generated",
-      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v1.png",
-      "sha256": "da502ad99e23c3178b9929f1243d521f27cad1546aa5b2abc873f41b3ac95772",
-      "bytes": 996951,
-      "version": 1,
+      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v2.png",
+      "sha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+      "bytes": 832578,
+      "version": 2,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 864125,
-        "opaquePixels": 687780,
-        "opaqueWhitePixels": 1743
+        "transparentPixels": 977605,
+        "opaquePixels": 582370,
+        "opaqueWhitePixels": 0
       },
-      "promptSha256": "3aedaedd8a41f18454708f737a6256c59ddf3fe1e573e660a09283767a6d3f80"
+      "promptSha256": "dc79a4627798a4b92e8a634edad43b1e67b54a946dd833bd31f8d604a6c70e81",
+      "concept": "A CALM mildly sleepy Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body and tail, no upright torso or seated legs. Retain relaxed closed eyes and a TINY subtle yawn, or gently drooping eyelids. A SMALL simple purple pillow beside her can cue sleepiness. Remove the large bed and attention rays. No giant yawning mouth, raised hand, exhausted or grumpy face, distress, letters or Z symbols. She looks comfortably ready for a nap.",
+      "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
+      "additionalReferences": [
+        {
+          "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+          "role": "character-pose",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        }
+      ]
     }
   ]
 }

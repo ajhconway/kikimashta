@@ -1,0 +1,20 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-sleepiness",
+  "slug": "sleepiness",
+  "version": 2,
+  "ownerFeedback": "Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.",
+  "concept": "A CALM mildly sleepy Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body and tail, no upright torso or seated legs. Retain relaxed closed eyes and a TINY subtle yawn, or gently drooping eyelids. A SMALL simple purple pillow beside her can cue sleepiness. Remove the large bed and attention rays. No giant yawning mouth, raised hand, exhausted or grumpy face, distress, letters or Z symbols. She looks comfortably ready for a nap.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a transparent background, readable at 145px.\nInput image1: EDIT TARGET to replace its composition according to the owner correction.\nInput image2: CANONICAL KIKU CHARACTER AND NORMAL RESTING POSE reference. Copy the low resting pose, proportions and expression; do not add an upright body or seated back legs.\nOwner correction: Hungry, thirsty and sleepy should be chiller. I think I would prefer Kiku in her normal position as well.\nPrimary request: A CALM mildly sleepy Kiku in her NORMAL LOW RESTING POSE from image2: face/head close to two front paws, low curled body and tail, no upright torso or seated legs. Retain relaxed closed eyes and a TINY subtle yawn, or gently drooping eyelids. A SMALL simple purple pillow beside her can cue sleepiness. Remove the large bed and attention rays. No giant yawning mouth, raised hand, exhausted or grumpy face, distress, letters or Z symbols. She looks comfortably ready for a nap.\nStyle and constraints: preserve the established rounded friendly cartoon style, smooth bold deep-violet contours and gentle soft shading. Kiku remains golden-yellow with purple headphones, pink ear interiors, tiny whiskers and curled tail. One complete centered illustration on a square canvas with generous transparent margin. No text, numbers, logo, watermark, decorative background, outside glow or ground shadow. Preserve opaque subject interiors and genuinely transparent outside pixels.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/sleepiness-v1.png",
+  "referenceSha256": "da502ad99e23c3178b9929f1243d521f27cad1546aa5b2abc873f41b3ac95772",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ]
+}

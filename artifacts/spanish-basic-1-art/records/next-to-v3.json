@@ -1,0 +1,25 @@
+{
+  "id": "es-419-basic-next-to",
+  "slug": "next-to",
+  "version": 3,
+  "path": "originals/next-to-v3.png",
+  "sha256": "8fd1c17703e9cf5b62ad3b4b95a26a04690e537a7eed799b6ff371a183ed0ffe",
+  "promptSha256": "5c665c47a536cbf046f76a1a40552ba0731aacad91638053d21bd325875570fa",
+  "referenceSha256": "de206d4d900e65879db168ea1bd64b1b5a3836a9d7c12c3f032d7c9ad5603565",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    },
+    {
+      "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "role": "approved-prop",
+      "sourceId": "ja-v-c0f58bfab324",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3ae9cf62-6e58-48fe-b065-c4ed41539971.png",
+  "supersedes": "originals/next-to-v2.png"
+}

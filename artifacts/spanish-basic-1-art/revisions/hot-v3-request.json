@@ -1,0 +1,14 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-hot",
+  "slug": "hot",
+  "version": 3,
+  "ownerFeedback": "Let's have a bunco of ice for cold, and a little more fire for hot",
+  "concept": "A large upright violet-outlined thermometer with high red liquid is the primary object, with a more generous orange and yellow flame at its base, roughly one third of the thermometer height. No drinking glass, ice or text.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary card illustration with genuinely transparent background.\nInput image1: EDIT TARGET. Keep the complete dominant red thermometer, its exact shape, violet outline, high red fluid, proportions, position, square framing and friendly cartoon style. Change ONLY the flame at the base: enlarge it to about one third of the thermometer height, roughly 1.6 times its existing height, and broaden it slightly into a fuller flame with two or three rounded orange lobes and a yellow center. It should clearly read as MORE FIRE at 145px while remaining secondary to the large thermometer. Keep generous transparent outer margin, complete subject within square canvas, opaque interiors. No glass, ice, smoke, text, numbers, scenery or ground shadow.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/hot-v2.png",
+  "referenceSha256": "ebb9df9cc45ca0c7418827165af2f5ef9cac8e19a1dfa0f57b37ae4a42108275",
+  "additionalReferences": []
+}

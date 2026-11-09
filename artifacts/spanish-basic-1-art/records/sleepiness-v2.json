@@ -1,0 +1,19 @@
+{
+  "id": "es-419-basic-sleepiness",
+  "slug": "sleepiness",
+  "version": 2,
+  "path": "originals/sleepiness-v2.png",
+  "sha256": "13a28f2d5e058cc096c84b1835faf1778b8c4b98ae386dc93f787579bc6baa49",
+  "promptSha256": "dc79a4627798a4b92e8a634edad43b1e67b54a946dd833bd31f8d604a6c70e81",
+  "referenceSha256": "da502ad99e23c3178b9929f1243d521f27cad1546aa5b2abc873f41b3ac95772",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-0e6530da-4ec1-4721-8f62-dcfd067f957e.png",
+  "supersedes": "originals/sleepiness-v1.png"
+}
