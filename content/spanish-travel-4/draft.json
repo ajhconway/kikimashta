@@ -1,0 +1,655 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-4",
+  "language": "es-419",
+  "title": "Travel level 4",
+  "status": "draft-awaiting-word-review",
+  "exercise": "audio-picture",
+  "interfaceLanguage": "en",
+  "packId": "es-419-travel-4-pictures",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceRegistrySha256": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+  "voiceSelection": [
+    {
+      "voice": "juan",
+      "name": "Juan",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX"
+    },
+    {
+      "voice": "pamela",
+      "name": "Pamela",
+      "region": "Mexico City, Mexico",
+      "locale": "es-MX"
+    },
+    {
+      "voice": "albeiro",
+      "name": "Albeiro O",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO"
+    },
+    {
+      "voice": "carito",
+      "name": "Carito",
+      "region": "Bogotá, Colombia",
+      "locale": "es-CO"
+    },
+    {
+      "voice": "santiago",
+      "name": "Santiago",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR"
+    },
+    {
+      "voice": "agustina",
+      "name": "Agustina",
+      "region": "Buenos Aires, Argentina",
+      "locale": "es-AR"
+    },
+    {
+      "voice": "carlos-figueroa",
+      "name": "Carlos Figueroa",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR"
+    },
+    {
+      "voice": "veronica",
+      "name": "Veronica",
+      "region": "Puerto Rico · Caribbean Spanish",
+      "locale": "es-PR"
+    }
+  ],
+  "groups": [
+    {
+      "id": "town",
+      "title": "Places and services"
+    },
+    {
+      "id": "transport",
+      "title": "Roads and vehicles"
+    },
+    {
+      "id": "food",
+      "title": "Food and seasonings"
+    },
+    {
+      "id": "clothing",
+      "title": "Clothing and accessories"
+    },
+    {
+      "id": "health",
+      "title": "First aid and sun protection"
+    },
+    {
+      "id": "outdoors",
+      "title": "Outdoors and camping"
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-supermarket",
+      "slug": "supermarket",
+      "text": "supermercado",
+      "meaning": "Supermarket",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A small grocery storefront with a dominant shopping cart and shelves of packaged food visible through the wide entrance."
+      },
+      "reviewNotes": [
+        "Keep distinct from the open-air market and bakery; do not add fruit piles as the primary subject."
+      ]
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "slug": "post-office",
+      "text": "oficina de correos",
+      "meaning": "Post office",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A post-office counter and compact facade with a dominant envelope pictogram and mail slot."
+      },
+      "reviewNotes": [
+        "Use an envelope symbol, not text; avoid a generic shop that depends on a label."
+      ]
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "slug": "police-station",
+      "text": "estación de policía",
+      "meaning": "Police station",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A compact police-station facade with a large shield badge above the entrance."
+      },
+      "reviewNotes": [
+        "No police car outside: keep separate from patrulla; do not rely on written signs."
+      ]
+    },
+    {
+      "id": "es-419-travel-library",
+      "slug": "library",
+      "text": "biblioteca",
+      "meaning": "Library",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A quiet library interior with two tall bookshelves and a reading table; books dominate."
+      },
+      "reviewNotes": [
+        "Keep clearly different from the standalone table card; no bookstore checkout."
+      ]
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "slug": "cinema",
+      "text": "cine",
+      "meaning": "Movie theater",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A cinema interior with a large blank screen, rows of red seats and a film-reel pictogram."
+      },
+      "reviewNotes": [
+        "No popcorn or snacks as the primary cue."
+      ]
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "slug": "laundromat",
+      "text": "lavandería",
+      "meaning": "Laundromat",
+      "group": "town",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A small laundry interior with two large front-loading washing machines and a basket of clothes."
+      },
+      "reviewNotes": [
+        "No detergent bottle as the main object; distinguish from a hotel room."
+      ]
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "slug": "helicopter",
+      "text": "helicóptero",
+      "meaning": "Helicopter",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One complete helicopter with a clear large main rotor and tail rotor, seen in side three-quarter view."
+      },
+      "reviewNotes": [
+        "No airplane, pad scene or incidental vehicle; review rotor readability at card size."
+      ]
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "slug": "cargo-truck",
+      "text": "camión de carga",
+      "meaning": "Cargo truck",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One large cargo truck with an obvious enclosed cargo box behind its cab, seen side-on."
+      },
+      "reviewNotes": [
+        "The full phrase avoids the Mexican bus sense of camión. Exclude bus/car/ambulance/patrol-car choices where needed."
+      ]
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "slug": "ambulance",
+      "text": "ambulancia",
+      "meaning": "Ambulance",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One white emergency ambulance with a blue medical star and a clear rooftop light bar."
+      },
+      "reviewNotes": [
+        "No lettering, brand or protected red-cross emblem; keep distinct from the hospital picture and ordinary van."
+      ]
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "slug": "police-car",
+      "text": "patrulla",
+      "meaning": "Police car",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One dark-and-white patrol car with a clear rooftop emergency light bar and shield badge pictogram."
+      },
+      "reviewNotes": [
+        "Vehicle sense; not a group of officers. Compare with carro and police-station artwork before activation."
+      ]
+    },
+    {
+      "id": "es-419-travel-tire",
+      "slug": "tire",
+      "text": "llanta",
+      "meaning": "Tire",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One large upright black rubber tire with a clear tread and hollow center, no metal rim."
+      },
+      "reviewNotes": [
+        "Rubber tire sense used in Mexico and much of Latin America; not a wheel rim. Avoid competing vehicle pictures containing prominent tires."
+      ]
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "slug": "steering-wheel",
+      "text": "volante",
+      "meaning": "Steering wheel",
+      "group": "transport",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One isolated circular three-spoke steering wheel with a small central hub."
+      },
+      "reviewNotes": [
+        "No dashboard, tire tread or car around it; compare with llanta for clear silhouettes."
+      ]
+    },
+    {
+      "id": "es-419-travel-salt",
+      "slug": "salt",
+      "text": "sal",
+      "meaning": "Salt",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A compact transparent salt shaker with a perforated metal top and visible white salt grains."
+      },
+      "reviewNotes": [
+        "Salt and sugar cannot be distinguished by the granules alone; container cues must remain clear."
+      ]
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "slug": "sugar",
+      "text": "azúcar",
+      "meaning": "Sugar",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A rounded sugar bowl containing distinct white sugar cubes, with one small spoon."
+      },
+      "reviewNotes": [
+        "Keep distinct from the salt shaker; do not reuse the standalone spoon picture."
+      ]
+    },
+    {
+      "id": "es-419-travel-butter",
+      "slug": "butter",
+      "text": "mantequilla",
+      "meaning": "Butter",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A smooth pale-yellow rectangular butter stick on an open butter dish with one thin slice."
+      },
+      "reviewNotes": [
+        "No cheese holes or wedge shape; inspect/exclude the cheese card and plate card if still ambiguous."
+      ]
+    },
+    {
+      "id": "es-419-travel-lime",
+      "slug": "lime",
+      "text": "limón",
+      "meaning": "Lime",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One round green lime with a clearly visible cut half showing pale-green citrus segments."
+      },
+      "reviewNotes": [
+        "Green lime sense for Mexican vocabulary focus, not a yellow lemon; compare with naranja and aguacate."
+      ]
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "slug": "strawberry",
+      "text": "fresa",
+      "meaning": "Strawberry",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One large red strawberry with a leafy green cap and clearly visible seeds."
+      },
+      "reviewNotes": [
+        "Single fruit, no bowl, yogurt, cake or market scene."
+      ]
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "slug": "pineapple",
+      "text": "piña",
+      "meaning": "Pineapple",
+      "group": "food",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One whole golden pineapple with a clear diamond-patterned skin and tall green crown."
+      },
+      "reviewNotes": [
+        "Single fruit; no drink, fruit basket or beach scene."
+      ]
+    },
+    {
+      "id": "es-419-travel-sock",
+      "slug": "sock",
+      "text": "calcetín",
+      "meaning": "Sock",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One ankle sock with a clear heel, toe and ribbed cuff."
+      },
+      "reviewNotes": [
+        "Singular; no shoe or pair of socks. Distinguish from guante."
+      ]
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "slug": "skirt",
+      "text": "falda",
+      "meaning": "Skirt",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One simple flared knee-length skirt with an obvious waistband and open lower hem."
+      },
+      "reviewNotes": [
+        "No torso, sleeves or trouser legs; distinguish from vestido and pantalones."
+      ]
+    },
+    {
+      "id": "es-419-travel-dress",
+      "slug": "dress",
+      "text": "vestido",
+      "meaning": "Dress",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One sleeveless knee-length dress with a connected bodice and flared skirt."
+      },
+      "reviewNotes": [
+        "No person; silhouette must differ from falda, camisa and traje de baño."
+      ]
+    },
+    {
+      "id": "es-419-travel-glove",
+      "slug": "glove",
+      "text": "guante",
+      "meaning": "Glove",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One simple glove with all five fingers distinct and an obvious wrist cuff."
+      },
+      "reviewNotes": [
+        "Singular; no mitten or hand inside it. Avoid a medical setting that narrows the word unnecessarily."
+      ]
+    },
+    {
+      "id": "es-419-travel-belt",
+      "slug": "belt",
+      "text": "cinturón",
+      "meaning": "Belt",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One brown clothing belt curved into a loose oval, with a clear metal buckle and punched holes."
+      },
+      "reviewNotes": [
+        "Clothing belt, not the already-taught seat belt. Compare/exclude cinturón de seguridad."
+      ]
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "slug": "wristwatch",
+      "text": "reloj de pulsera",
+      "meaning": "Wristwatch",
+      "group": "clothing",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One wristwatch with a large round dial and clearly visible upper/lower straps."
+      },
+      "reviewNotes": [
+        "No wall clock, numerals or text needed; full phrase makes the wristwatch sense explicit."
+      ]
+    },
+    {
+      "id": "es-419-travel-pill",
+      "slug": "pill",
+      "text": "pastilla",
+      "meaning": "Pill",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One large round tablet with a shallow score line and a small simple blister backing behind it."
+      },
+      "reviewNotes": [
+        "A medicine tablet, not candy or soap; do not depict dosage instructions."
+      ]
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "slug": "adhesive-bandage",
+      "text": "curita",
+      "meaning": "Adhesive bandage",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One unwrapped beige adhesive strip with two rounded ends and an obvious central gauze pad."
+      },
+      "reviewNotes": [
+        "Common American word; no brand logo. Clearly different from a roll of bandage."
+      ]
+    },
+    {
+      "id": "es-419-travel-bandage",
+      "slug": "bandage",
+      "text": "venda",
+      "meaning": "Bandage roll",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "A white rolled gauze bandage with a broad loose tail and visible soft woven texture."
+      },
+      "reviewNotes": [
+        "Roll of bandage, not toilet paper, towel or adhesive strip; compare with those earlier cards."
+      ]
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "slug": "scissors",
+      "text": "tijeras",
+      "meaning": "Scissors",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One large pair of scissors with two finger loops, a clear central pivot and two slightly open blades."
+      },
+      "reviewNotes": [
+        "Plural noun for one pair. Existing cutting-action scene includes equally prominent paper, so plan a noun-focused illustration."
+      ]
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "slug": "sunscreen",
+      "text": "protector solar",
+      "meaning": "Sunscreen",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One broad squeeze tube with a large simple sun pictogram and a small dab of cream at its tip."
+      },
+      "reviewNotes": [
+        "Sun icon must read at 145px; no SPF lettering. Compare with toothpaste, shampoo and insect-repellent packaging."
+      ]
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "slug": "insect-repellent",
+      "text": "repelente",
+      "meaning": "Insect repellent",
+      "group": "health",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One spray bottle with a clear mosquito pictogram inside a crossed circle."
+      },
+      "reviewNotes": [
+        "Mosquito symbol must remain readable without words. Compare with sunscreen, shampoo and bottle cards."
+      ]
+    },
+    {
+      "id": "es-419-travel-tent",
+      "slug": "tent",
+      "text": "tienda de campaña",
+      "meaning": "Tent",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One small dome camping tent with a clearly open triangular entrance and short guy ropes."
+      },
+      "reviewNotes": [
+        "No shop facade; full phrase distinguishes tent from tienda meaning shop."
+      ]
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "slug": "flashlight",
+      "text": "linterna",
+      "meaning": "Flashlight",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One handheld flashlight with a broad lens and a short gentle beam showing its function."
+      },
+      "reviewNotes": [
+        "No batteries or phone beside it; keep complete handle and lens visible."
+      ]
+    },
+    {
+      "id": "es-419-travel-compass",
+      "slug": "compass",
+      "text": "brújula",
+      "meaning": "Compass",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One round compass with a prominent two-color needle and four simple directional ticks."
+      },
+      "reviewNotes": [
+        "No letters, numbers or map; distinguish from a wristwatch by needle and absence of straps."
+      ]
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "slug": "sleeping-bag",
+      "text": "saco de dormir",
+      "meaning": "Sleeping bag",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One elongated padded sleeping bag, partly unzipped to show its hollow opening and attached hood."
+      },
+      "reviewNotes": [
+        "No bed or pillow. Must look like a sleeping bag rather than a folded blanket or scarf."
+      ]
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "slug": "binoculars",
+      "text": "binoculares",
+      "meaning": "Binoculars",
+      "group": "outdoors",
+      "artwork": {
+        "status": "needs-generation",
+        "concept": "One pair of binoculars with two round objective lenses joined by a central bridge and focus wheel."
+      },
+      "reviewNotes": [
+        "Plural noun; no neck strap dominating the silhouette or scenic background."
+      ]
+    },
+    {
+      "id": "es-419-travel-flower",
+      "slug": "flower",
+      "text": "flor",
+      "meaning": "Flower",
+      "group": "outdoors",
+      "artwork": {
+        "status": "approved-reuse-candidate",
+        "concept": "One pink five-petaled flower with a yellow center, green stem and two leaves.",
+        "reuseCandidate": {
+          "sourceId": "ja-v-fa6a4c8f27b4",
+          "path": "public/images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+          "sha256": "ab0872808bfc7bcdb993574b60152a87e3a975f84e59cdb560872ff87a1ebba9",
+          "evidence": "content/card-regeneration/activation.json"
+        }
+      },
+      "reviewNotes": [
+        "Reuse the exact approved standalone flower; no bouquet, vase or garden."
+      ]
+    }
+  ],
+  "lexicalReferences": [
+    {
+      "title": "ASALE: camión (Mexican bus sense)",
+      "url": "https://www.asale.org/damer/cami%C3%B3n",
+      "note": "Use camión de carga to distinguish the proposed truck from the existing autobús card."
+    },
+    {
+      "title": "ASALE: llanta",
+      "url": "https://www.asale.org/damer/llanta",
+      "note": "Rubber tire sense explicitly includes Mexico and many American varieties."
+    },
+    {
+      "title": "ASALE: patrulla",
+      "url": "https://www.asale.org/damer/patrulla",
+      "note": "Police vehicle sense explicitly includes Mexico and many American varieties."
+    },
+    {
+      "title": "ASALE: curita",
+      "url": "https://www.asale.org/damer/curita",
+      "note": "Adhesive strip sense used across many American varieties; no brand is drawn."
+    },
+    {
+      "title": "Mexican Ministry of Agriculture: limón mexicano",
+      "url": "https://www.gob.mx/agricultura/articulos/si-la-vida-te-da-limones-ojala-que-sean-de-la-variedad-colimex?idiom=es",
+      "note": "Green-fruit Mexican lime example supporting the intended picture sense."
+    }
+  ],
+  "reuseAudit": {
+    "approvedCandidates": 1,
+    "newPicturesPlanned": 35,
+    "inspectedRejected": [
+      {
+        "path": "public/images/approved/ja-v-1ee90bf5d13a-496f50c96ca4.jpg",
+        "sha256": "3557f65aa69cf6ef607d19ebd14916c062945d8b77d2abe3e11ba0c60f954964",
+        "decision": "new-noun-picture-preferred",
+        "reason": "Cutting-action picture includes an equally prominent sheet of paper; plan isolated scissors."
+      }
+    ]
+  },
+  "generation": {
+    "authorized": false,
+    "reason": "Word review precedes artwork and audio generation.",
+    "words": 36,
+    "voices": 8,
+    "recordingsPlanned": 288,
+    "charactersPerVoice": 325,
+    "newPicturesPlanned": 35,
+    "approvedReuseCandidates": 1
+  },
+  "nextSteps": [
+    "Owner reviews word list and exact senses.",
+    "Generate only missing artwork and all 36 × 8 canonical word recordings after word approval.",
+    "Review pictures and listening, then bind media acceptance before activation.",
+    "Inspect all earlier Spanish pictures at card size and add symmetric distractor exclusions before activation."
+  ]
+}

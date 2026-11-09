@@ -1,0 +1,21 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4-replacement",
+  "status": "generation-authorized-listening-pending",
+  "ownerSelection": "Enchufe — power outlet",
+  "ownerRequest": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "replacementSha256": "46ed8d5442f5e8e5207c8088c92d9cecb223913f6153c8c7f88592d94f7fe5e7",
+  "baseDraftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "items": [
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "spelling": "enchufe",
+      "meaning": "Power outlet"
+    }
+  ],
+  "itemsSha256": "c3998192d8dce9418edfc324d9c2b6021df6edd97ed137094b08efba4e759e7e",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 8,
+  "characters": 56
+}

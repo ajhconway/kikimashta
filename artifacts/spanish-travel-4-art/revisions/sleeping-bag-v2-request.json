@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-sleeping-bag",
+  "slug": "sleeping-bag",
+  "version": 2,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "concept": "Make the sleeping bag zipper SLIGHTLY LONGER: extend the existing zippered V opening downward by about one extra quilted band, moving the pull about 10–15 percent of the bag length toward the foot. Keep two coherent zipper tracks with matching teeth leading from the same upper opening to the new lower pull; do not add a second zipper or widen the opening dramatically. Preserve hood, overall cocoon shape, padding, colours, orientation and proportions.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Make the sleeping bag zipper SLIGHTLY LONGER: extend the existing zippered V opening downward by about one extra quilted band, moving the pull about 10–15 percent of the bag length toward the foot. Keep two coherent zipper tracks with matching teeth leading from the same upper opening to the new lower pull; do not add a second zipper or widen the opening dramatically. Preserve hood, overall cocoon shape, padding, colours, orientation and proportions.\nPreserve the established smooth bold cartoon outlines and soft shading. One complete centered illustration with generous transparent outer margin on a square canvas. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/sleeping-bag-v1.png",
+  "referenceSha256": "e400ba6f09bd4c9025a643452e380d156566a595a97cd62d4ccce73ec3903a11"
+}

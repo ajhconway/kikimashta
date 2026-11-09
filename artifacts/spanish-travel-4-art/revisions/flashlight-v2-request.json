@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-flashlight",
+  "slug": "flashlight",
+  "version": 2,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "concept": "Make this flashlight rigid and STRAIGHT. The handle cylinder, neck and lamp head must share one perfectly straight longitudinal centre line; no bent joint, curved handle or kink near the pink collar. Keep the general diagonal orientation, purple/pink/gold colours, switch, broad lens and short gentle beam. Keep the complete flashlight in frame with transparent margin; do not merely rotate the existing curved geometry.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary illustration with genuinely transparent outside pixels.\nInput image1: EDIT TARGET.\nPrimary request: Make this flashlight rigid and STRAIGHT. The handle cylinder, neck and lamp head must share one perfectly straight longitudinal centre line; no bent joint, curved handle or kink near the pink collar. Keep the general diagonal orientation, purple/pink/gold colours, switch, broad lens and short gentle beam. Keep the complete flashlight in frame with transparent margin; do not merely rotate the existing curved geometry.\nPreserve the established smooth bold cartoon outlines and soft shading. One complete centered illustration with generous transparent outer margin on a square canvas. Opaque subject interiors. No text, numbers, watermark, new characters, scenery, ground shadow or outside glow. Save the edited cutout on a square transparent canvas.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-4-art/originals/flashlight-v1.png",
+  "referenceSha256": "ec5db61e2fca510b8007164ae4b81aefbff1a9474c3e4b8c694d70ecb6371197"
+}

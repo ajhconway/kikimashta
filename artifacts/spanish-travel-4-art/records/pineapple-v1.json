@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-pineapple",
+  "slug": "pineapple",
+  "version": 1,
+  "path": "originals/pineapple-v1.png",
+  "sha256": "bfa1ddc1824d7bcc7e728155bf7659af926a4e8dd0af5be7ae0a8abd89b3cadf",
+  "promptSha256": "95d148ae79f304c8aaff972cfc1381e8f6d69368c6dd0badae16ff44a8c85ce7",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6d319ffe-be1d-4ae1-8aed-0828d70f9dad.png"
+}

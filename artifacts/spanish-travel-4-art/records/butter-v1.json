@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-butter",
+  "slug": "butter",
+  "version": 1,
+  "path": "originals/butter-v1.png",
+  "sha256": "2e9ed6dfa09f38d0818a84d78dec578918b9beb4db2cbed370e34e5317390f8a",
+  "promptSha256": "b0c86cea0bd66c1bc4b56ac2a8730c05f406b8aab73c4431e543d8d6417f5c58",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-70dab4d2-a63a-4b85-8c34-94c070014f34.png"
+}

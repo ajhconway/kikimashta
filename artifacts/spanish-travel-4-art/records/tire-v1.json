@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-tire",
+  "slug": "tire",
+  "version": 1,
+  "path": "originals/tire-v1.png",
+  "sha256": "c1525d8e91c637a2b6a140ab8f3e0361370567072750fc2f663504308a75b260",
+  "promptSha256": "fb6e637ea98cf0848e1345bcbaa7faa16ab80f36388c778d7d25a9aa52b6508c",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-71fcc730-463e-4c38-8c23-ef3aa95ab262.png"
+}
