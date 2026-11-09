@@ -9,3 +9,11 @@ Original transparent square PNGs are preserved in `originals/`, with output hash
 The approved flower is reused unchanged. `selection.json` supports versioned revisions without overwriting originals; `manifest.json` verifies the selected pictures, current progress and source hashes. The immutable draft, original generation authorization, audio approvals and exact prompts retain their approved bytes; the later review-workflow amendment is recorded separately.
 
 All 288 word recordings are ready and hash-verified before the combined gallery is written. Native playback/clock checks passed for every clip in Chromium and mobile WebKit. One clip remains slightly quieter within processing limits: Carlos Figueroa / azúcar. See the audio review and verification records for details.
+
+## Owner revisions and word replacement
+
+Five selected artwork edits refine the post office, police station, butter, flashlight and sleeping bag. A new **enchufe — power outlet** illustration replaces venda in the current 36-picture set, and the group heading is now Practical essentials. The original bandage image remains preserved with the original batch. The [exact word amendment](../../content/spanish-travel-4/word-replacement.json) and versioned requests keep the original approved draft, prompts and audio approvals unchanged.
+
+The gallery validates all original sources and all 288 original audio clips before applying the current word overlay. It then replaces the retired word’s eight listening controls with the exact amendment-bound eight enchufe clips from `artifacts/spanish-travel-4-replacement-audio-review/`. Current selected concepts reflect the revised request, rather than the historical draft concept. The effective review contains 35 generated illustrations, one unchanged flower reuse, 36 words and 288 recordings once all replacement media is ready. Acceptance and activation remain pending.
+
+[Owner revision history and exact selected prompts](revisions/history.json) records the five edits and word replacement, previous/current hashes and preserved inputs. All 41 original PNG versions remain available.

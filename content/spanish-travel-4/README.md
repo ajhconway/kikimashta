@@ -2,7 +2,7 @@
 
 36 additional concrete travel words. Picture-only practice, English interface and the existing eight voices. [Review words and concepts](review.html) · [Structured draft](draft.json).
 
-The owner approved the reviewed word list and requested generation of the complete pack. [Review pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. The owner subsequently requested finishing all artwork before giving feedback, superseding the initial pauses between artwork batches. Review the complete 35 new illustrations and unchanged approved flower together; media acceptance and activation remain subsequent steps. All 35 new illustrations and the approved flower are now ready, alongside all 288 recordings; no pictures remain pending.
+The owner approved the reviewed word list and requested generation of the complete pack. [Review pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. The owner subsequently requested finishing all artwork before giving feedback, superseding the initial pauses between artwork batches. Review the complete 35 new illustrations and unchanged approved flower together; media acceptance and activation remain subsequent steps. The owner subsequently requested five artwork refinements and replaced venda with enchufe (power outlet). The current review applies that separate amendment while preserving the original approved draft and generation records. The gallery reports completion only after the revised pictures and eight replacement recordings are available.
 
 ## Places and services
 
@@ -48,13 +48,13 @@ The owner approved the reviewed word list and requested generation of the comple
 | cinturón | Belt |
 | reloj de pulsera | Wristwatch |
 
-## First aid and sun protection
+## Practical essentials
 
 | Spanish | English |
 | --- | --- |
 | pastilla | Pill |
 | curita | Adhesive bandage |
-| venda | Bandage roll |
+| enchufe | Power outlet |
 | tijeras | Scissors |
 | protector solar | Sunscreen |
 | repelente | Insect repellent |
@@ -88,10 +88,16 @@ Camión de carga explicitly means cargo truck; camión alone can mean bus in Mex
 
 ## Recording scope
 
-36 words × 8 voices = 288 recordings; 325 Unicode characters per voice. No contextual recordings are included. Future contextual sentences can combine these nouns with Basic Spanish frames such as “Necesito una curita” or “¿Dónde está la lavandería?”. Those sentences would need their own reviewed text/audio scope.
+The original approved batch contains 36 words × 8 voices = 288 recordings and 325 Unicode characters per voice. Replacing venda (five characters) with enchufe (seven characters) makes the current 36-word set 327 characters per voice; eight new enchufe clips replace the eight venda clips in the current review. Historical recordings remain preserved. No contextual recordings are included. Future contextual sentences can combine these nouns with Basic Spanish frames such as “Necesito una curita” or “¿Dónde está la lavandería?”. Those sentences would need their own reviewed text/audio scope.
 
 ## Generated audio
 
 All 288 canonical word recordings are generated in the eight existing regional voices. Exact requests, normalization records and delivery hashes are preserved. Both Chromium and mobile WebKit passed native decode/play/advancing-clock checks for every recording. Carlos Figueroa / azúcar is flagged at −22.65 LUFS after the maximum +9 dB gain, within the established processing limits; other clips meet target. The private originals/processing archive `~/.local/share/kikimashta/spanish-audio/207-v1/` has 1736 hash-verified files plus its archive manifest.
 
 Rebuild the progressive combined review with `node scripts/content/build-spanish-travel-level-4-media-review.mjs`. Full prompts, generated original artworks and image records are in `artifacts/spanish-travel-4-art/`; listening review and public deliveries are in `artifacts/spanish-travel-4-audio-review/`.
+
+## Current word and picture amendment
+
+[Owner replacement](word-replacement.json) retires venda from the current review and introduces **enchufe — power outlet**. The selected sense is a wall socket; contacto/tomacorriente are useful related terms. [Diccionario del español de México: enchufe](https://dem.colmex.mx/ver/enchufe) describes the fixed wall and cable pieces of the electrical connection. The picture isolates the wall receptacle. The former first-aid group is now **Practical essentials**.
+
+The current gallery shows red-and-white postal theming, blue police-station theming, butter without its thin sliver, a straighter flashlight, and a longer sleeping-bag zipper. Versioned requests and records preserve every original. Current concepts come from the selected revision requests, with the immutable initial draft retained for provenance. The complete original 288-clip audio matrix is verified before overlaying the eight exact amendment-bound enchufe recordings; the current review still contains 36 words and 288 recordings. Media acceptance and activation remain pending.

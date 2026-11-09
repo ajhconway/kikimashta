@@ -1,0 +1,141 @@
+{
+  "issue": 207,
+  "ownerRequest": "oficina de correos and estaci\u00f3n de polic\u00eda would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "ownerWordSelection": "Enchufe \u2014 power outlet",
+  "changes": [
+    {
+      "previous": {
+        "id": "es-419-travel-post-office",
+        "path": "artifacts/spanish-travel-4-art/originals/post-office-v1.png",
+        "sha256": "5a0e3c15bc95b6f19e75427daa9a748bd5c218f8f700efd63b6356845b08121e"
+      },
+      "selected": {
+        "id": "es-419-travel-post-office",
+        "path": "artifacts/spanish-travel-4-art/originals/post-office-v2.png",
+        "sha256": "6a95519dc4dbfcaff775f7b16e1ed79e8dae550a197e4e4a6391610e97fbf043"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/post-office-v2-request.json",
+      "promptSha256": "6e2cb81d4e7860661d63e5b1edfecfe9f566fca37757a753a03fa7692eb9098c"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-police-station",
+        "path": "artifacts/spanish-travel-4-art/originals/police-station-v1.png",
+        "sha256": "f266955b2c37b1a554c1d4140d2dd726102b96641aa5cd2cdc947c70e034dc36"
+      },
+      "selected": {
+        "id": "es-419-travel-police-station",
+        "path": "artifacts/spanish-travel-4-art/originals/police-station-v2.png",
+        "sha256": "36564202101cd5e954e7a93e15ff7f04998161f70d8723a12a4fa666ac457df5"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/police-station-v2-request.json",
+      "promptSha256": "b2b47259ff4ffa195ccc81f7f1648283fb210aabb9fa25f20289d0e90a8f41c0"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-butter",
+        "path": "artifacts/spanish-travel-4-art/originals/butter-v1.png",
+        "sha256": "2e9ed6dfa09f38d0818a84d78dec578918b9beb4db2cbed370e34e5317390f8a"
+      },
+      "selected": {
+        "id": "es-419-travel-butter",
+        "path": "artifacts/spanish-travel-4-art/originals/butter-v2.png",
+        "sha256": "db1c70b619229bb9d5d57c02cfa15dc3166a55abe8c955d7e7548413b6a0752e"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/butter-v2-request.json",
+      "promptSha256": "fa33193bf99cfe705bf1eb51fac272c40ecffa85875e6137ec84a06306c9bfcf"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-bandage",
+        "path": "artifacts/spanish-travel-4-art/originals/bandage-v1.png",
+        "sha256": "54959b4faec3ad21b99a38f6820b30162565c0cf083c2f8bea1e8e8647696b37"
+      },
+      "selected": {
+        "id": "es-419-travel-power-outlet",
+        "path": "artifacts/spanish-travel-4-art/originals/power-outlet-v1.png",
+        "sha256": "55cc4baaeff1eee5bbd958fbfe094eb3307f46d54f5c70a30378c50296168d6a"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/power-outlet-v1-request.json",
+      "promptSha256": "d02e2206091834104e6088cfe0ee265fe95e73f7a99d5b87db5794b6839bdfb4"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-flashlight",
+        "path": "artifacts/spanish-travel-4-art/originals/flashlight-v1.png",
+        "sha256": "ec5db61e2fca510b8007164ae4b81aefbff1a9474c3e4b8c694d70ecb6371197"
+      },
+      "selected": {
+        "id": "es-419-travel-flashlight",
+        "path": "artifacts/spanish-travel-4-art/originals/flashlight-v2.png",
+        "sha256": "52fc58f35fa47d39362fc9c2d14e441f53809df585b747e5a3238f597833d8d6"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/flashlight-v2-request.json",
+      "promptSha256": "15c46abd71def787c42c77c39fa649527282efd70d5b04273990f197a07b532d"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-sleeping-bag",
+        "path": "artifacts/spanish-travel-4-art/originals/sleeping-bag-v1.png",
+        "sha256": "e400ba6f09bd4c9025a643452e380d156566a595a97cd62d4ccce73ec3903a11"
+      },
+      "selected": {
+        "id": "es-419-travel-sleeping-bag",
+        "path": "artifacts/spanish-travel-4-art/originals/sleeping-bag-v2.png",
+        "sha256": "0b7c8595b40d556074de39088efe6f4df13f0a73d69e483c1515574271c2e7b0"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/sleeping-bag-v2-request.json",
+      "promptSha256": "4bfef5bd06c67be1cc40fb56c7afe7dddf12a20fbf91d2bb7839d598e338cec3"
+    }
+  ],
+  "unchangedSelectedPictures": [
+    "es-419-travel-supermarket",
+    "es-419-travel-library",
+    "es-419-travel-cinema",
+    "es-419-travel-laundromat",
+    "es-419-travel-helicopter",
+    "es-419-travel-cargo-truck",
+    "es-419-travel-ambulance",
+    "es-419-travel-police-car",
+    "es-419-travel-tire",
+    "es-419-travel-steering-wheel",
+    "es-419-travel-salt",
+    "es-419-travel-sugar",
+    "es-419-travel-lime",
+    "es-419-travel-strawberry",
+    "es-419-travel-pineapple",
+    "es-419-travel-sock",
+    "es-419-travel-skirt",
+    "es-419-travel-dress",
+    "es-419-travel-glove",
+    "es-419-travel-belt",
+    "es-419-travel-wristwatch",
+    "es-419-travel-pill",
+    "es-419-travel-adhesive-bandage",
+    "es-419-travel-scissors",
+    "es-419-travel-sunscreen",
+    "es-419-travel-insect-repellent",
+    "es-419-travel-tent",
+    "es-419-travel-compass",
+    "es-419-travel-binoculars",
+    "es-419-travel-flower"
+  ],
+  "originalVersionsPreserved": 41,
+  "baseInputHashesPreserved": {
+    "content/spanish-travel-4/draft.json": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+    "content/spanish-travel-4/generation-approval.json": "c29e79aed9057bdd0bfc13ac76c82ebb89f037ca9d6e616b4b053e7110ee6063",
+    "content/spanish-travel-4/audio-config.json": "96352efab1e1fb1a2622af3a03ce3404c21125afabbfb7a11e8977a97a221911",
+    "content/spanish-travel-4/audio-approval.json": "03a90421d203ef9bcae0217de6167b14d5991d9405fc21b7bcea2340f9a6cd7d",
+    "artifacts/spanish-travel-4-art/requests.json": "d9f89da521f00c7f53b9b9ce909430dbaf07ecbf6eb358d73e45fa307263148f",
+    "artifacts/spanish-travel-4-audio-review/manifest.json": "56a41063e4c39c61802a0a349ebeaba2ca63a0357edf52f9934ad9cc1c2d7442"
+  },
+  "replacementWord": "content/spanish-travel-4/word-replacement.json",
+  "replacementAudio": "artifacts/spanish-travel-4-replacement-audio-review/manifest.json",
+  "currentWords": 36,
+  "currentRecordings": 288,
+  "baseRecordingsRetained": 288,
+  "newRecordings": 8,
+  "status": "revised-awaiting-owner-media-review",
+  "previousManifestSha256": "304520609b1e9f1082f9ec7ba4379e0d839ddcc69210c6e950239e8228cf358e",
+  "currentManifestSha256": "fba96c465caef334fc8f947a5b77b69c02d835096e3aa154c7086d378ab5756f"
+}

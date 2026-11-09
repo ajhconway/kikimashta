@@ -1,6 +1,6 @@
 {
   "issue": 207,
-  "status": "generated-awaiting-owner-media-review",
+  "status": "revised-awaiting-owner-media-review",
   "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
   "pictures": {
     "newReady": 35,
@@ -8,7 +8,11 @@
     "newPending": 0,
     "tool": "built-in image_gen",
     "manifest": "artifacts/spanish-travel-4-art/manifest.json",
-    "selected": 36
+    "selected": 36,
+    "revisedSelected": 5,
+    "replacedWords": 1,
+    "originalVersionsPreserved": 41,
+    "revisionHistory": "artifacts/spanish-travel-4-art/revisions/history.json"
   },
   "audio": {
     "recordings": 288,
@@ -24,20 +28,26 @@
       }
     ],
     "archiveFilesVerified": 1736,
-    "archiveManifest": 1
+    "archiveManifest": 1,
+    "currentBaseClips": 280,
+    "currentReplacementClips": 8,
+    "historicalBaseClipsRetained": 288,
+    "replacementNativePlayback": "artifacts/spanish-travel-4-replacement-audio-review/verification.json",
+    "replacementArchiveFilesVerified": 56,
+    "replacementArchiveManifest": 1
   },
   "fullCheck": {
     "command": "npm run check",
     "exitCode": 0,
     "vitest": 496,
-    "node": 268,
+    "node": 275,
     "pythonAudio": 12,
     "pythonCards": 27,
     "lint": "passed",
     "types": "passed",
     "validator": "passed",
     "build": "passed",
-    "revisionScope": "Full-pack review workflow, readiness state and complete 35 generated pictures plus one approved reuse."
+    "revisionScope": "Five selected artwork edits and owner-approved enchufe replacement with eight separately authorized recordings."
   },
   "galleryBrowserChecks": [
     {
@@ -73,8 +83,8 @@
     "Media acceptance and pack activation remain pending.",
     "Browser emulation is not a real iPhone test."
   ],
-  "independentReview": "No material findings. All35generated PNGs, approved flower, prompt/reference/output hashes, square/alpha and complete36cardcontactsheet checked. Approved draft/authorization/config/prompts/firstsixoriginals/all288audio are byte-identical to efa739d. Full-pack readiness and instruction supersession verified; gallery tests3/3passed.",
+  "independentReview": "No material findings. Ten focused tests pass. Current36picture/288control review has eight enchufe clips and no venda. All sixnewPNGs, selectedhashes, prompt/reference/square/alpha, audioamendmentbindings and preservation checked.",
   "reviewWorkflow": "complete-pack-before-owner-feedback",
   "reviewWorkflowAmendment": "artifacts/spanish-travel-4-art/review-workflow.json",
-  "preservation": "Approved draft, authorization, audio config/approval, all35prompts, six prior originals, approved flower and all288recordings byte-identical to efa739d."
+  "preservation": "Original approved draft, authorization/config/approval, initial prompts, all35original artworks and288base recordings preserved. Current36wordreview overlaysenchufeforvenda and fiveeditedpictures."
 }
