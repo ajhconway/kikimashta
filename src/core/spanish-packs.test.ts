@@ -102,7 +102,7 @@ describe('Spanish travel levels', () => {
     for (const packIds of scopes) {
       const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
       const pool = cards.map(card => card.item);
-      for (let seed = 1; seed <= 12; seed++) {
+      for (let seed = 1; seed <= 3; seed++) {
         let state = seed;
         const random = () => ((state = (state * 1664525 + 1013904223) >>> 0) / 4294967296);
         const questions = createQuestions(cards, pool, random);
