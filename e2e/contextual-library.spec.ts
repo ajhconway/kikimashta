@@ -84,12 +84,12 @@ test('contextual library redirects old links, browses authored detail and retrie
   await page.goBack();
   await expect(contextual).toHaveAttribute('aria-pressed', 'true');
   const gallery = page.locator('#contextual-library');
-  await gallery.getByLabel('Context stage', { exact: true }).selectOption('simple');
-  await gallery.getByLabel('Context target', { exact: true }).selectOption(context.targetItemId);
-  await gallery.getByLabel('Question kind', { exact: true }).selectOption('target');
-  await gallery.getByLabel('Answer format', { exact: true }).selectOption('picture');
-  await gallery.getByLabel('Context voice', { exact: true }).selectOption('otani');
-  await gallery.getByLabel('Search contexts', { exact: true }).fill(context.sentence.text);
+  await gallery.getByRole('combobox', { name: 'Context stage', exact: true }).selectOption('simple');
+  await gallery.getByRole('combobox', { name: 'Context target', exact: true }).selectOption(context.targetItemId);
+  await gallery.getByRole('combobox', { name: 'Question kind', exact: true }).selectOption('target');
+  await gallery.getByRole('combobox', { name: 'Answer format', exact: true }).selectOption('picture');
+  await gallery.getByRole('combobox', { name: 'Context voice', exact: true }).selectOption('otani');
+  await gallery.getByRole('searchbox', { name: 'Search contexts', exact: true }).fill(context.sentence.text);
   const card = gallery.locator(`article[data-question-id="${question.id}"]`);
   await expect(card).toBeVisible();
   await expect(card).toContainText(context.sentence.text);
@@ -143,7 +143,7 @@ test('Spanish contextual library is explicitly empty while Spanish words remain 
   await expect(gallery).toBeVisible();
   await expect(gallery).toContainText(/no contextual cards.*this language/i);
   await expect(gallery.locator('article')).toHaveCount(0);
-  await expect(gallery.getByLabel('Context target', { exact: true }).locator('option')).toHaveCount(1);
+  await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(1);
   const views = page.getByRole('group', { name: 'Library content', exact: true });
   await views.getByRole('button', { name: 'Words', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Latin American Spanish cards', exact: true })).toBeVisible();
