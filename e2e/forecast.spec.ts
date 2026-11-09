@@ -48,11 +48,13 @@ test('Home forecast persists, follows language/pack scope and refreshes after pr
   await expect(page.getByRole('button', { name: 'Start · 3 reviews', exact: true })).toBeEnabled();
   await expect(forecast).not.toContainText('Current cards · daily practice');
   expect((await forecast.boundingBox())!.height).toBeLessThanOrEqual(145);
+  const originalViewport = page.viewportSize()!;
   for (const size of [{ width: 320, height: 568 }, { width: 390, height: 664 }, { width: 1280, height: 800 }]) {
     await page.setViewportSize(size);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByRole('button', { name: /^start/i })).toBeInViewport();
   }
+  await page.setViewportSize(originalViewport);
   expect(await stored(page)).toEqual(original);
 
   await page.evaluate(() => localStorage.setItem('kikimashta-card-packs-v1', JSON.stringify(['ja-wanikani-2-writing'])));
