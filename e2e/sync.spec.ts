@@ -1,3 +1,4 @@
+import { prepareOffline } from './offline-settings';
 import { selectWordPractice } from './practice-selection';
 import { expectReadableHomeText } from './contrast';
 import { expect, test, silenceMedia, type BrowserContext, type Page } from './fixtures';
@@ -241,9 +242,7 @@ test('downloaded practice reopens the same account with expired auth offline and
     db.close();
   }, { attempt: retained, name: 'kikimashta-account-' + alice });
   await page.reload(); await syncNow(page);
-  await page.getByText('Offline practice', { exact: true }).click();
-  await page.getByRole('button', { name: 'Download selected packs', exact: true }).click();
-  await expect(page.getByText('Selected packs are downloaded for offline practice.', { exact: true })).toBeVisible({ timeout: 90_000 });
+  await prepareOffline(page);
   await page.evaluate(() => {
     const key = 'sb-kikimashta-sync-test-auth-token';
     const session = JSON.parse(localStorage.getItem(key)!);

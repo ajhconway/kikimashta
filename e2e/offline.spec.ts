@@ -1,3 +1,4 @@
+import { prepareOffline, disableOffline } from './offline-settings';
 import { expect, test } from './fixtures';
 import { savedAttempts } from './saved-attempts';
 import spanish from '../content/es-419.json' with { type: 'json' };
@@ -10,9 +11,7 @@ test('downloaded packs play and save a complete lesson after an offline reload',
     localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify(['es-419-travel-1-pictures']));
   });
   await page.reload();
-  await page.getByText('Offline practice', { exact: true }).click();
-  await page.getByRole('button', { name: 'Download selected packs', exact: true }).click();
-  await expect(page.getByText('Selected packs are downloaded for offline practice.')).toBeVisible({ timeout: 120000 });
+  await prepareOffline(page);
   await context.setOffline(true);
   await page.reload();
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
@@ -48,9 +47,7 @@ test('downloaded packs play and save a complete lesson after an offline reload',
   await context.setOffline(false);
   await page.reload();
   expect(await savedAttempts(page, 'es-419')).toEqual(saved);
-  await page.getByText(/Offline practice/).click();
-  await page.getByRole('button', { name: 'Remove all downloads' }).click();
-  await expect(page.getByText('Download selected packs before going offline.')).toBeVisible();
+  await disableOffline(page);
   await expect.poll(() => page.evaluate(async () => {
     const names = (await caches.keys()).filter(name => name.startsWith('kikimashta-offline-'));
     const counts = await Promise.all(names.map(async name => (await (await caches.open(name)).keys()).length));

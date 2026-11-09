@@ -109,7 +109,7 @@ Prepare the next 36 concrete travel words in six practical groups for a separate
 ## Later work
 
 - Continue artwork regeneration and feedback in [#72](https://github.com/ajhconway/kikimashta/issues/72). Preserve approved sources, rejected variants, restrictions, and stable IDs. Review semantic choice policies separately in [#79](https://github.com/ajhconway/kikimashta/issues/79); artwork approval does not resolve contextual ambiguity.
-- The #48 roadmap is split into offline practice (#223, current implementation), broader sentence/phrase coverage (#224), and optional English text (#225). Adaptive timing has shipped and the owner approved iPhone evaluation in #122. See [offline operation and verification](docs/OFFLINE.md) for selected-pack downloads, versioning, storage and remaining device acceptance.
+- The #48 roadmap is split into offline practice (#223, current implementation), broader sentence/phrase coverage (#224), and optional English text (#225). Adaptive timing has shipped and the owner approved iPhone evaluation in #122. See [offline operation and verification](docs/OFFLINE.md) for selected-pack downloads, versioning, storage and device acceptance. The owner approved offline lessons, reviews and reconnect synchronization on iPhone. Add Home Settings (#241), with an explicit offline checkbox and size warning, and wait for owner visual approval before enabling feature auto-merge.
 
 Keep only the next milestone detailed. Avoid fixed dates and commitments to every later exercise. Evaluate learning and workload predictions through use before adding complexity.
 

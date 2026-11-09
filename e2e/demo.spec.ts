@@ -1,3 +1,4 @@
+import { prepareOffline, disableOffline } from './offline-settings';
 import { expect, test } from './fixtures';
 import { savedAttempts } from './saved-attempts';
 import spanish from '../content/es-419.json' with { type: 'json' };
@@ -36,9 +37,7 @@ test('subpath demo keeps root data and caches intact through an offline lesson',
   });
   await page.reload();
   await expect(page.getByRole('combobox', { name: 'Learning language' })).toHaveValue('es-419');
-  await page.getByText('Offline practice', { exact: true }).click();
-  await page.getByRole('button', { name: 'Download selected packs', exact: true }).click();
-  await expect(page.getByText('Selected packs are downloaded for offline practice.')).toBeVisible({ timeout: 120000 });
+  await prepareOffline(page);
   expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistration('/offline-demo/'))?.scope)).toMatch(/\/offline-demo\/$/);
   await context.setOffline(true); await page.reload();
   await page.getByRole('button', { name: /^start/i }).click();
@@ -65,10 +64,8 @@ test('subpath demo keeps root data and caches intact through an offline lesson',
   await page.getByRole('link', { name: /Card library/ }).click();
   await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).toBeChecked();
   await page.getByRole('link', { name: '← Listening practice' }).click();
-  await page.getByText(/Offline practice/).click();
   expect(await rootPage.evaluate(async () => (await (await caches.open('kikimashta-offline-/-production-test')).match('/production-marker'))?.text())).toBe('root-cache-preserved');
-  await page.getByRole('button', { name: 'Remove all downloads' }).click();
-  await expect(page.getByText('Download selected packs before going offline.')).toBeVisible();
+  await disableOffline(page);
   expect(await rootPage.evaluate(async () => (await (await caches.open('kikimashta-offline-/-production-test')).match('/production-marker'))?.text())).toBe('root-cache-preserved');
   expect(await page.evaluate(() => localStorage.getItem('kikimashta-learning-language-v1'))).toBe('ja-JP');
   expect(await page.evaluate(() => localStorage.getItem('sb-root-auth-token'))).toBe('root-session-sentinel');

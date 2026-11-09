@@ -1,4 +1,8 @@
-.offline-panel { width: min(100%, 32rem); margin: 1rem auto; text-align: left; font-size: .875rem; }
-.offline-panel summary { cursor: pointer; padding: .5rem 0; }
-.offline-panel p { line-height: 1.5; }
-.offline-panel .text-button { display: block; }
+.offline-panel { text-align: left; font-size: .875rem; }
+.offline-panel .offline-toggle { display: flex; align-items: center; gap: 12px; min-height: 48px; font-size: 1rem; font-weight: 750; cursor: pointer; }
+.offline-toggle input { flex: 0 0 auto; width: 23px; height: 23px; margin: 0; accent-color: #642bc0; }
+.offline-toggle input:focus-visible { outline: 3px solid #9c6ce0; outline-offset: 4px; }
+.offline-panel p { margin: 12px 0; line-height: 1.5; }
+.offline-panel .offline-size { padding: 12px 14px; border-radius: 14px; background: #f7d69d; color: #493214; }
+.offline-panel .offline-note { font-size: .8rem; }
+.offline-panel .text-button { display: block; margin: 8px 0 0; }
