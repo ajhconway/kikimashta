@@ -6,7 +6,7 @@ import { readFile, writeFile, mkdir, copyFile, mkdtemp, rm, symlink } from 'node
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { fileURLToPath } from 'node:url'
-import { inspectFoodLevel2Art, buildFoodLevel2ArtReview } from './build-spanish-food-level-2-art-review.mjs'
+import { inspectFoodLevel2Art, buildFoodLevel2ArtReview, loadFoodLevel2ArtworkAcceptance } from './build-spanish-food-level-2-art-review.mjs'
 const source = fileURLToPath(new URL('../../',import.meta.url)), FOOD='content/spanish-food-2', ART='artifacts/spanish-food-2-art'
 const hash=b=>createHash('sha256').update(b).digest('hex'), json=async p=>JSON.parse(await readFile(p,'utf8'))
 const save=async(root,p,value)=>{await mkdir(dirname(join(root,p)),{recursive:true});await writeFile(join(root,p),typeof value==='string'||Buffer.isBuffer(value)?value:JSON.stringify(value,null,2)+'\n')}
@@ -136,4 +136,32 @@ test('changed or missing amendment/reference/snapshot/supersession/shared mappin
   await save(root,'same-replacement.png',testPng);await rm(join(root,imagePath));await symlink(join(root,'same-replacement.png'),join(root,imagePath));await unchanged(/symlinks/);await rm(join(root,imagePath));await save(root,imagePath,testPng)
   await save(root,'shared-sentinel.html','unchanged');await rm(join(root,ART,'shared-glass-review.html'));await symlink(join(root,'shared-sentinel.html'),join(root,ART,'shared-glass-review.html'))
   await assert.rejects(buildFoodLevel2ArtReview(root),/symlinks/);assert.deepEqual(await outputs(root),before.slice(0,4));assert.equal(await readFile(join(root,'shared-sentinel.html'),'utf8'),'unchanged')
+})
+
+test('artwork acceptance binds exact current manifest/shared targets and changes HTML only; stale or malformed acceptance cannot rewrite outputs',async t=>{
+  const{root}=await revisionFixture(t)
+  assert.equal(await loadFoodLevel2ArtworkAcceptance(root,{}),null)
+  const acceptancePath=FOOD+'/artwork-acceptance.json',manifestPath=ART+'/manifest.json'
+  for(const p of [ART+'/originals/glass-v1.png',ART+'/records/glass-v1.json',manifestPath,acceptancePath])await copyFile(join(source,p),join(root,p))
+  const acceptedBytes=await readFile(join(root,acceptancePath)),manifestBytes=await readFile(join(root,manifestPath)),manifest=await inspectFoodLevel2Art(root)
+  assert.equal(hash(manifestBytes),'0e946432982fd6633986229ca822443e44a4ff63dcd6c861f442c4e166f885e6')
+  const accepted=await loadFoodLevel2ArtworkAcceptance(root,manifest)
+  assert.equal(accepted.status,'artwork-accepted');assert.equal(accepted.images.length,36);assert.equal(accepted.sharedReplacement.targets.length,3)
+  await buildFoodLevel2ArtReview(root)
+  assert.deepEqual(await readFile(join(root,manifestPath)),manifestBytes);assert.deepEqual(await readFile(join(root,acceptancePath)),acceptedBytes)
+  for(const p of [ART+'/review.html',ART+'/artwork.html',FOOD+'/review.html',ART+'/shared-glass-review.html']){
+    const html=await readFile(join(root,p),'utf8');assert.match(html,/Artwork accepted/);assert.match(html,/Audio generation is authorized separately/);assert.match(html,/activation remain pending/);assert.doesNotMatch(html,/<audio|Artwork acceptance remains pending|Artwork approval and production activation remain pending/)
+  }
+  const before=await revisedOutputs(root)
+  const unchanged=async pattern=>{await assert.rejects(buildFoodLevel2ArtReview(root),pattern);assert.deepEqual(await revisedOutputs(root),before)}
+  const stale=JSON.parse(acceptedBytes);stale.images.reverse();await save(root,acceptancePath,stale);await unchanged(/artwork acceptance record changed/);await save(root,acceptancePath,acceptedBytes)
+  await save(root,acceptancePath,'{malformed');await unchanged(SyntaxError);await save(root,acceptancePath,acceptedBytes)
+  const changedTargets=structuredClone(manifest);changedTargets.sharedReplacement.targets[2].id='another-id';await assert.rejects(loadFoodLevel2ArtworkAcceptance(root,changedTargets),/differs from the current verified manifest/)
+  await save(root,manifestPath,manifestBytes.toString()+' ');await assert.rejects(loadFoodLevel2ArtworkAcceptance(root,manifest),/differs from the current verified manifest/);await save(root,manifestPath,manifestBytes)
+  for(const p of [ART+'/selection.json',FOOD+'/artwork-revisions-v1.json']){
+    const original=await readFile(join(root,p));await save(root,p,original.toString()+' ');await assert.rejects(loadFoodLevel2ArtworkAcceptance(root,manifest),/selection\/amendment\/shared targets changed/);await save(root,p,original)
+  }
+  const picture=manifest.images[0].path,pictureBytes=await readFile(join(root,picture));await save(root,picture,'changed selected picture');await assert.rejects(loadFoodLevel2ArtworkAcceptance(root,manifest),/accepted picture bytes changed/);await save(root,picture,pictureBytes)
+  await save(root,'same-acceptance.json',acceptedBytes);await rm(join(root,acceptancePath));await symlink(join(root,'same-acceptance.json'),join(root,acceptancePath));await assert.rejects(loadFoodLevel2ArtworkAcceptance(root,manifest),/symlinks/)
+  assert.deepEqual(await revisedOutputs(root),before)
 })

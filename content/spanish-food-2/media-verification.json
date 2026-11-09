@@ -1,0 +1,132 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "status": "complete-audio-awaiting-owner-listening-review",
+  "words": 36,
+  "pictures": 36,
+  "recordings": 288,
+  "newRecordings": 248,
+  "reusedRecordings": 40,
+  "voices": 8,
+  "newWords": 31,
+  "characters": 1616,
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "newAudioManifest": "artifacts/spanish-food-2-audio-review/manifest.json",
+  "newAudioManifestSha256": "74690b582ce5518b3a5592958ad1c4a21023e7d1ecd05837b6846c7b9c53f6a1",
+  "combinedManifest": "artifacts/spanish-food-2-media-review/manifest.json",
+  "combinedManifestSha256": "41bdccff0343d9073d8f76fe4c3635a8f04129ad5e19211b26a330090afbc74f",
+  "artworkAcceptance": "content/spanish-food-2/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb",
+  "audioApproval": "content/spanish-food-2/audio-approval.json",
+  "audioApprovalSha256": "fc38565c1e7f87837aa7c75944f7810d2cdaad369933f19ef1ee053c086d5523",
+  "audioReuse": "content/spanish-food-2/audio-reuse.json",
+  "audioReuseSha256": "be684d79ec25885f046718033f36b4632a355d0b2311fe3c2912dce2454d78b7",
+  "normalizationSummary": "artifacts/spanish-food-2-audio-review/normalization-summary.json",
+  "normalizationSummarySha256": "b8788c044818e59ad8e03ae31f4a1c39fd6fe57b9d774180bf17d3b2e5e37aa1",
+  "normalizationEvidence": "artifacts/spanish-food-2-audio-review/normalization-verification.json",
+  "normalizationEvidenceSha256": "82f815016e9b1fbf4ba45118e6a1a3240ac9eef4d0d17b12daa672fe0875555b",
+  "review": "content/spanish-food-2/media-review.html",
+  "checks": {
+    "command": "VITEST_MAX_WORKERS=2 npm run check",
+    "exitCode": 0,
+    "vitest": 664,
+    "node": 361,
+    "pythonAudioContent": 18,
+    "pythonCards": 27,
+    "lint": "passed",
+    "types": "passed",
+    "validators": "passed",
+    "productionBuild": "passed",
+    "focusedArtTests": 6,
+    "focusedGeneratorTests": 5,
+    "focusedAudioReviewTests": 6,
+    "focusedCombinedReviewTests": 3,
+    "appBrowserRegression": "The unchanged app/runtime code previously passed all110 Chromium/mobile-WebKit journeys; this stage adds native248/both-engine and full288-gallery verification."
+  },
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "clips": 248,
+      "passed": 248,
+      "advanced": 248,
+      "failures": [],
+      "minDuration": 0.64,
+      "maxDuration": 1.2
+    },
+    {
+      "engine": "mobile-webkit",
+      "clips": 248,
+      "passed": 248,
+      "advanced": 248,
+      "failures": [],
+      "minDuration": 0.6791836734693878,
+      "maxDuration": 1.2277551020408164
+    }
+  ],
+  "nativePlaybackEvidence": "artifacts/spanish-food-2-audio-review/native-playback.json",
+  "combinedBrowserEvidence": "artifacts/spanish-food-2-media-review/browser-verification.json",
+  "combinedBrowserChecks": [
+    {
+      "engine": "chromium",
+      "words": 36,
+      "pictures": 36,
+      "clips": 288,
+      "newClips": 248,
+      "reusedClips": 40,
+      "acceptedGlass": true,
+      "sourceGroupRegionVoiceFilters": true,
+      "accentSearch": true,
+      "nativeSequenceStartStop": true,
+      "phoneOverflow": false,
+      "storageUnchanged": true,
+      "pageErrors": []
+    },
+    {
+      "engine": "mobile-webkit",
+      "words": 36,
+      "pictures": 36,
+      "clips": 288,
+      "newClips": 248,
+      "reusedClips": 40,
+      "acceptedGlass": true,
+      "sourceGroupRegionVoiceFilters": true,
+      "accentSearch": true,
+      "nativeSequenceStartStop": true,
+      "phoneOverflow": false,
+      "storageUnchanged": true,
+      "pageErrors": []
+    }
+  ],
+  "processing": {
+    "targetLufs": -22,
+    "truePeakCeilingDbtp": -2,
+    "maximumBoostDb": 9,
+    "dualMono": true,
+    "sampleRate": 44100,
+    "bitrate": "128k",
+    "targetLimited": 0,
+    "shortClipMeasurements": 0,
+    "profilePolicy": "Constant gain from provider originals; no dynamics compression, trimming or timing changes."
+  },
+  "newQuieterClips": [],
+  "privateArchive": {
+    "path": "~/.local/share/kikimashta/spanish-audio/231-v1/",
+    "filesVerified": 1496,
+    "archiveManifest": 1
+  },
+  "independentReview": "No remaining blockers. All248 provider originals/normalized/review copies, all288 combined recording hashes and all36 accepted images independently verified. Accepted artwork, source banks and production mappings remain unchanged.",
+  "resumeHardening": {
+    "status": "fixed-for-Food2",
+    "regression": "Existing descendant directory/file/dangling/control/journal symlinks reject before generation/balance/speak boundaries; regular resume remains valid. Actual batch has zero symlinks.",
+    "relatedFollowup": "https://github.com/ajhconway/kikimashta/issues/240"
+  },
+  "ownerArtworkAccepted": true,
+  "ownerListeningAccepted": false,
+  "runtimeActivated": false,
+  "limitations": [
+    "Owner listening acceptance is pending.",
+    "Current-head GitHub review/CI follow publication of this complete set.",
+    "Actual iPhone audio/touch acceptance remains manual on the deployed version."
+  ]
+}

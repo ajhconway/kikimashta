@@ -1,0 +1,32 @@
+[
+  {
+    "engine": "chromium",
+    "words": 36,
+    "pictures": 36,
+    "clips": 288,
+    "newClips": 248,
+    "reusedClips": 40,
+    "acceptedGlass": true,
+    "sourceGroupRegionVoiceFilters": true,
+    "accentSearch": true,
+    "nativeSequenceStartStop": true,
+    "phoneOverflow": false,
+    "storageUnchanged": true,
+    "pageErrors": []
+  },
+  {
+    "engine": "mobile-webkit",
+    "words": 36,
+    "pictures": 36,
+    "clips": 288,
+    "newClips": 248,
+    "reusedClips": 40,
+    "acceptedGlass": true,
+    "sourceGroupRegionVoiceFilters": true,
+    "accentSearch": true,
+    "nativeSequenceStartStop": true,
+    "phoneOverflow": false,
+    "storageUnchanged": true,
+    "pageErrors": []
+  }
+]

@@ -1,7 +1,7 @@
 {
   "issue": 231,
   "pack": "es-419-food-2",
-  "status": "artwork-accepted-audio-generation-authorized",
+  "status": "artwork-accepted-complete-listening-review-ready",
   "words": 36,
   "generatedImages": 32,
   "reusedImages": 4,
@@ -21,14 +21,14 @@
     "command": "VITEST_MAX_WORKERS=2 npm run check",
     "exitCode": 0,
     "vitest": 664,
-    "node": 346,
+    "node": 361,
     "pythonAudioContent": 18,
     "pythonCards": 27,
     "lint": "passed",
     "types": "passed",
     "validators": "passed",
     "productionBuild": "passed",
-    "focusedArtTests": 5,
+    "focusedArtTests": 6,
     "syncConfiguration": "Explicit documented fake service configuration; matching full SOURCE_REVISION for build and browsers."
   },
   "galleryBrowserEvidence": "content/spanish-food-2/browser-verification.json",
@@ -59,7 +59,6 @@
   "audioGenerationAuthorized": true,
   "runtimeActivationAuthorized": false,
   "remaining": [
-    "Generate the 248 authorized new word recordings and prepare the complete 288-clip listening review.",
     "Owner listening acceptance before runtime activation/shipping.",
     "Full cross-pack picture-choice review before activation; real-iPhone acceptance on deployed version."
   ],
@@ -75,5 +74,6 @@
   "unchangedPicturesSinceFeedback": 35,
   "sharedGlassPreview": "artifacts/spanish-food-2-art/shared-glass-review.html",
   "artworkAcceptance": "content/spanish-food-2/artwork-acceptance.json",
-  "artworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb"
+  "artworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb",
+  "audioVerification": "content/spanish-food-2/media-verification.json"
 }
