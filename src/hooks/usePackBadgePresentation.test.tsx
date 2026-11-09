@@ -87,3 +87,22 @@ it('announces a first earned badge after an empty baseline and clears timers on 
   act(() => { vi.runOnlyPendingTimers(); });
   expect(vi.getTimerCount()).toBe(0);
 });
+
+it.each(['award', 'upgrade'] as const)('clears a completed %s announcement so re-earning it changes the live text again', kind => {
+  const before = kind === 'award' ? [] : [badge(0, 2), badge(1, 5)];
+  const after = kind === 'award' ? [badge(0, 2)] : [badge(0, 7), badge(1, 5)];
+  const view = render(<Harness badges={before}/>);
+  const live = screen.getByRole('status');
+  view.rerender(<Harness badges={after}/>);
+  const announcement = live.textContent;
+  expect(announcement).toContain(kind === 'award' ? 'New badge' : 'Badge upgraded');
+  act(() => { vi.advanceTimersByTime(BADGE_CELEBRATE_MS + BADGE_REORDER_MS); });
+  expect(live).toBeEmptyDOMElement();
+  view.rerender(<Harness badges={before}/>);
+  act(() => { vi.advanceTimersByTime(BADGE_REORDER_MS); });
+  view.rerender(<Harness badges={after}/>);
+  expect(live).toHaveTextContent(announcement!);
+  act(() => { vi.advanceTimersByTime(BADGE_CELEBRATE_MS + BADGE_REORDER_MS); });
+  expect(live).toBeEmptyDOMElement();
+  view.unmount();
+});

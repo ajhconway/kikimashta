@@ -234,12 +234,22 @@ test('saved badge changes celebrate on Home return before reordering and respect
   });
   expect(awardRadius).toBeCloseTo(radii.at(-1)!, 0);
   expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 2).map(element => element.getAttribute('style')))).toEqual(settledSlots);
+  const startAngles = await region.getByRole('listitem').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-pack-id'), Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle'))])));
+  await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
+  const turns = await region.getByRole('listitem').evaluateAll((elements, start) => elements.map(element => Number.parseFloat((element as HTMLElement).style.getPropertyValue('--badge-angle')) - start[element.getAttribute('data-pack-id')!]!), startAngles);
+  turns.forEach(turn => expect(turn).toBeCloseTo(18));
+  await expect(region).toHaveAttribute('data-phase', 'idle');
+
+  const thirdUpgrade = await badgeHistory(packCards(3, 'audio-picture'), 'ja-wanikani-3-pictures', 7);
+  await putBadgeHistory(page, thirdUpgrade);
+  await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
+  await expect(page.locator('[data-celebration="upgrade"]')).toHaveCount(1);
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await expect(page.locator('[data-celebration="award"] .badge-current-art')).toHaveCSS('animation-name', 'none');
+  await expect(page.locator('[data-celebration="upgrade"] .badge-current-art')).toHaveCSS('animation-name', 'none');
   await expect(region).toHaveAttribute('data-phase', 'idle');
   await expect(region.getByRole('listitem')).toHaveCount(3);
   await expect(region.getByRole('listitem').first()).toHaveCSS('transition-property', 'none');
-  const expectedIds = new Set([...first, ...second, ...upgraded, ...third].map(attempt => attempt.id));
+  const expectedIds = new Set([...first, ...second, ...upgraded, ...third, ...thirdUpgrade].map(attempt => attempt.id));
   expect(new Set((await savedAttempts(page)).map(attempt => attempt.id))).toEqual(expectedIds);
   await page.reload();
   await expect(region).toHaveAttribute('data-phase', 'idle');

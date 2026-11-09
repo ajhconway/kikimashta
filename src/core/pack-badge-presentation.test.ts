@@ -154,6 +154,43 @@ describe('BadgePresentationController', () => {
     expect(moved.position).toEqual(packBadgePosition(8, 10));
   });
 
+  it('chooses alternating open sides so every medal makes the same small turn for a new lowest badge', () => {
+    for (let count = 1; count < 10; count++) {
+      const controller = new BadgePresentationController();
+      const before = Array.from({ length: count }, (_, index) => badge(String(index), 5));
+      controller.update(input(before));
+      const original = controller.getSnapshot().entries;
+      controller.update(input([...before, badge('new', 2)]));
+      const reveal = current(controller)!;
+      if (count % 2) expect(reveal.position.x).toBeGreaterThanOrEqual(-1e-8);
+      else expect(reveal.position.x).toBeLessThan(0);
+      expect(controller.getSnapshot().entries.slice(0, count)).toEqual(original);
+      const start = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.angle]));
+      vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+      const deltas = controller.getSnapshot().entries.map(entry => entry.angle - start.get(entry.badge.pack.id)!);
+      deltas.forEach(delta => expect(delta).toBeCloseTo(count % 2 ? -18 : 18));
+      vi.advanceTimersByTime(BADGE_REORDER_MS);
+      expect(controller.getSnapshot().phase).toBe('idle');
+    }
+  });
+
+  it('keeps a common award rotation direction even when the new badge inserts among higher ranks or ties', () => {
+    for (const level of [2, 4, 7]) {
+      const controller = new BadgePresentationController();
+      const before = [badge('a', 5), badge('b', 3), badge('c', 3), badge('d', 2)];
+      controller.update(input(before));
+      controller.update(input([badge('new', level), ...before]));
+      const start = new Map(controller.getSnapshot().entries.map(entry => [entry.badge.pack.id, entry.angle]));
+      vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+      const entries = controller.getSnapshot().entries;
+      const deltas = entries.map(entry => entry.angle - start.get(entry.badge.pack.id)!);
+      expect(new Set(deltas.filter(delta => Math.abs(delta) > 1e-8).map(Math.sign)).size).toBe(1);
+      entries.forEach((entry, index) => expect(entry.position).toEqual(packBadgePosition(index, entries.length)));
+      expect(entries.map(entry => entry.badge.pack.id)).toEqual(sortPackBadges([badge('new', level), ...before]).map(entry => entry.pack.id));
+      controller.dispose();
+    }
+  });
+
   it('queues multiple awards, holding revealed badges still until each celebration ends', () => {
     const controller = new BadgePresentationController(); controller.update(input([]));
     controller.update(input([badge('a', 5), badge('b', 7)]));

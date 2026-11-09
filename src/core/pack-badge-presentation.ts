@@ -9,7 +9,7 @@ export interface BadgeChange { kind: 'award' | 'upgrade'; badge: PackBadge; prev
 export interface PresentedPackBadge {
   badge: PackBadge;
   position: BadgePosition;
-  /** Continuous degrees, unwrapped across the bottom so movement takes the shortest arc. */
+  /** Continuous degrees, unwrapped across the bottom for a smooth circular turn. */
   angle: number;
   celebration?: BadgeChange & { token: number };
 }
@@ -29,9 +29,14 @@ export interface BadgePresentationInput {
 const rank = (badge: PackBadge) => masteryLevels.findIndex(level => level.label === badge.level.label);
 const angleOf = (position: BadgePosition) => Math.atan2(position.x, -position.y) * 180 / Math.PI;
 const nearestAngle = (target: number, from = target) => target + Math.round((from - target) / 360) * 360;
+type RotationDirection = 1 | -1;
+function rotationDelta(target: number, from: number, direction: RotationDirection): number {
+  const delta = ((target - from) * direction % 360 + 360) % 360;
+  return delta < 1e-8 || delta > 360 - 1e-8 ? 0 : delta * direction;
+}
 
-/** Add to the open end of the ring without moving or covering existing medals. */
-function awardPosition(entries: readonly PresentedPackBadge[]): BadgePosition {
+/** Choose an open end of the ring, ready to turn in the same direction as its neighbors. */
+function awardPosition(entries: readonly PresentedPackBadge[], direction: RotationDirection): BadgePosition {
   if (!entries.length) return { x: 0, y: -1 };
   const angles = entries.map(entry => (angleOf(entry.position) + 360) % 360).sort((a, b) => a - b);
   let start = angles[0]!, gap = 0;
@@ -39,8 +44,20 @@ function awardPosition(entries: readonly PresentedPackBadge[]): BadgePosition {
     const space = (angles[index + 1] ?? angles[0]! + 360) - angle;
     if (space > gap) { start = angle; gap = space; }
   });
-  const angle = (start + Math.min(360 / Math.max(10, entries.length + 1), gap / 2)) * Math.PI / 180;
+  const step = Math.min(360 / Math.max(10, entries.length + 1), gap / 2);
+  const angle = (start + (direction === 1 ? gap - step : step)) * Math.PI / 180;
   return { x: Math.sin(angle), y: -Math.cos(angle) };
+}
+
+function awardRotation(entries: readonly PresentedPackBadge[], ordered: readonly PackBadge[], awardedId: string) {
+  const destinations = new Map(ordered.map((badge, index) => [badge.pack.id, angleOf(packBadgePosition(index, ordered.length))]));
+  const choices = ([1, -1] as const).map(direction => {
+    const position = awardPosition(entries, direction);
+    const distance = entries.reduce((sum, entry) => sum + Math.abs(rotationDelta(destinations.get(entry.badge.pack.id)!, entry.angle, direction)), 0)
+      + Math.abs(rotationDelta(destinations.get(awardedId)!, angleOf(position), direction));
+    return { direction, position, distance };
+  });
+  return choices[0]!.distance <= choices[1]!.distance ? choices[0]! : choices[1]!;
 }
 
 /** Highest mastery takes the top-outward slots; equal levels keep source pack order. */
@@ -50,13 +67,13 @@ export function sortPackBadges(badges: readonly PackBadge[]): PackBadge[] {
     .map(entry => entry.badge);
 }
 
-/** Unit-circle coefficients, symmetric even when the collection has an even count. */
+/** Mirrored slots; odd pairs start on the right so a new lowest badge needs one shared turn. */
 export function packBadgePosition(index: number, count: number): BadgePosition {
   if (count < 1) return { x: 0, y: 0 };
   const step = 2 * Math.PI / Math.max(10, count);
   const slot = count % 2 === 0
     ? (Math.floor(index / 2) + .5) * (index % 2 ? 1 : -1)
-    : index === 0 ? 0 : Math.ceil(index / 2) * (index % 2 ? -1 : 1);
+    : index === 0 ? 0 : Math.ceil(index / 2) * (index % 2 ? 1 : -1);
   const angle = slot * step;
   const clean = (value: number) => Math.abs(value) < 1e-12 ? 0 : value;
   return { x: clean(Math.sin(angle)), y: clean(-Math.cos(angle)) };
@@ -87,6 +104,7 @@ export class BadgePresentationController {
   private shown: PackBadge[] = [];
   private pending: readonly PackBadge[] | null = null;
   private current: BadgeChange | null = null;
+  private rotation: RotationDirection | undefined;
   private active = false;
   private reducedMotion = false;
   private timer: ReturnType<typeof setTimeout> | null = null;
@@ -110,6 +128,7 @@ export class BadgePresentationController {
       this.shown = [];
       this.pending = null;
       this.current = null;
+      this.rotation = undefined;
       this.publish(emptyPresentation());
     }
     this.active = input.active;
@@ -135,6 +154,7 @@ export class BadgePresentationController {
         // Never finish an award/upgrade withdrawn by a newer authoritative snapshot.
         this.cancelTimer();
         this.current = null;
+        this.rotation = undefined;
         this.reconcile();
         const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry]));
         this.publish({ phase: 'idle', announcement: '', entries: this.shown.map(badge => {
@@ -163,6 +183,7 @@ export class BadgePresentationController {
     this.cancelTimer();
     this.active = false;
     this.current = null;
+    this.rotation = undefined;
     if (this.known && this.pending !== null) {
       this.shown = sortPackBadges(this.pending);
       this.snapshot = { phase: 'idle', entries: this.positioned(this.shown), announcement: '' };
@@ -193,17 +214,19 @@ export class BadgePresentationController {
     for (const listener of [...this.listeners]) listener();
   }
 
-  private positioned(badges: readonly PackBadge[]): PresentedPackBadge[] {
+  private positioned(badges: readonly PackBadge[], direction?: RotationDirection): PresentedPackBadge[] {
     const previous = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry.angle]));
     return badges.map((badge, index) => {
       const position = packBadgePosition(index, badges.length);
-      return { badge, position, angle: nearestAngle(angleOf(position), previous.get(badge.pack.id)) };
+      const from = previous.get(badge.pack.id), target = angleOf(position);
+      return { badge, position, angle: direction && from !== undefined ? from + rotationDelta(target, from, direction) : nearestAngle(target, from) };
     });
   }
 
   private settle(): void {
     this.cancelTimer();
     this.current = null;
+    this.rotation = undefined;
     if (this.known && this.pending !== null) this.shown = sortPackBadges(this.pending);
     this.publish({ phase: 'idle', entries: this.positioned(this.shown), announcement: '' });
   }
@@ -234,15 +257,18 @@ export class BadgePresentationController {
       return;
     }
     const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry]));
-    const openPosition = awardPosition(this.snapshot.entries.filter(entry => this.shown.some(badge => badge.pack.id === entry.badge.pack.id)));
     const existing = this.shown.findIndex(badge => badge.pack.id === change.badge.pack.id);
     if (existing < 0) this.shown.push(change.badge);
     else this.shown[existing] = change.badge;
     this.current = change;
+    const award = change.kind === 'award' ? awardRotation(
+      this.snapshot.entries.filter(entry => this.shown.some(badge => badge.pack.id === entry.badge.pack.id)),
+      sortPackBadges(this.visibleInSourceOrder()), change.badge.pack.id) : null;
+    this.rotation = award?.direction;
     const token = ++this.token;
     const entries = this.shown.map(badge => {
       const previous = positions.get(badge.pack.id);
-      const position = previous?.position ?? openPosition;
+      const position = previous?.position ?? award!.position;
       return { badge, position, angle: previous?.angle ?? angleOf(position),
         ...(badge.pack.id === change.badge.pack.id ? { celebration: { ...change, token } } : {}),
       };
@@ -256,7 +282,8 @@ export class BadgePresentationController {
   private reorder(): void {
     this.reconcile();
     this.shown = sortPackBadges(this.visibleInSourceOrder());
-    const entries = this.positioned(this.shown);
+    const entries = this.positioned(this.shown, this.rotation);
+    this.rotation = undefined;
     const previous = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry.position]));
     const moved = entries.some(entry => {
       const old = previous.get(entry.badge.pack.id);
@@ -265,11 +292,11 @@ export class BadgePresentationController {
     if (moved && !this.reducedMotion) {
       this.publish({ phase: 'reorder', entries, announcement: this.snapshot.announcement });
       this.schedule(() => {
-        this.publish({ ...this.snapshot, phase: 'idle' });
+        this.publish({ ...this.snapshot, phase: 'idle', announcement: '' });
         this.advance();
       }, BADGE_REORDER_MS);
     } else {
-      this.publish({ phase: 'idle', entries, announcement: this.snapshot.announcement });
+      this.publish({ phase: 'idle', entries, announcement: '' });
       // A second positive change may have arrived during the preceding celebration.
       if (this.pending && badgeChanges(this.shown, this.pending).length) this.advance();
     }
@@ -282,7 +309,7 @@ export class BadgePresentationController {
         this.reducedMotion ? BADGE_REDUCED_CELEBRATE_MS : BADGE_CELEBRATE_MS);
     } else if (this.reducedMotion) {
       this.cancelTimer();
-      this.publish({ ...this.snapshot, phase: 'idle' });
+      this.publish({ ...this.snapshot, phase: 'idle', announcement: '' });
       this.advance();
     }
   }
