@@ -1,0 +1,460 @@
+{
+  "issue": 243,
+  "id": "es-419-travel-5",
+  "packId": "es-419-travel-5-pictures",
+  "language": "es-419",
+  "title": "Travel level 5 · Art, music and culture",
+  "status": "word-list-proposal",
+  "exercise": "audio-picture",
+  "interfaceLanguage": "en",
+  "generationAuthorized": false,
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "groups": [
+    {
+      "id": "places",
+      "title": "Cultural places"
+    },
+    {
+      "id": "art",
+      "title": "Visual art"
+    },
+    {
+      "id": "instruments",
+      "title": "Musical instruments"
+    },
+    {
+      "id": "stage",
+      "title": "Stage and sound"
+    },
+    {
+      "id": "festivals",
+      "title": "Festivals and crafts"
+    },
+    {
+      "id": "books",
+      "title": "Books and keepsakes"
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-travel-museum",
+      "slug": "museum",
+      "text": "museo",
+      "meaning": "Museum",
+      "group": "places",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-museum-22a089082940.png",
+        "sha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+        "sourceId": "es-419-travel-museum"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-travel-theater",
+      "slug": "theater",
+      "text": "teatro",
+      "meaning": "Theater",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-gallery",
+      "slug": "gallery",
+      "text": "galería",
+      "meaning": "Art gallery",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-library",
+      "slug": "library",
+      "text": "biblioteca",
+      "meaning": "Library",
+      "group": "places",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-library-81ddcafae8f1.png",
+        "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
+        "sourceId": "es-419-travel-library"
+      },
+      "existingBank": "content/es-419-travel-4.json"
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "slug": "cinema",
+      "text": "cine",
+      "meaning": "Movie theater",
+      "group": "places",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-cinema-51f0fa177a8c.png",
+        "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
+        "sourceId": "es-419-travel-cinema"
+      },
+      "existingBank": "content/es-419-travel-4.json"
+    },
+    {
+      "id": "es-419-travel-bookstore",
+      "slug": "bookstore",
+      "text": "librería",
+      "meaning": "Bookstore",
+      "group": "places",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-painting",
+      "slug": "painting",
+      "text": "cuadro",
+      "meaning": "Framed painting",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-sculpture",
+      "slug": "sculpture",
+      "text": "escultura",
+      "meaning": "Sculpture",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-mural",
+      "slug": "mural",
+      "text": "mural",
+      "meaning": "Mural",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-paintbrush",
+      "slug": "paintbrush",
+      "text": "pincel",
+      "meaning": "Paintbrush",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-palette",
+      "slug": "palette",
+      "text": "paleta",
+      "meaning": "Painter’s palette",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-easel",
+      "slug": "easel",
+      "text": "caballete",
+      "meaning": "Easel",
+      "group": "art",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-guitar",
+      "slug": "guitar",
+      "text": "guitarra",
+      "meaning": "Guitar",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-piano",
+      "slug": "piano",
+      "text": "piano",
+      "meaning": "Piano",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-violin",
+      "slug": "violin",
+      "text": "violín",
+      "meaning": "Violin",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-trumpet",
+      "slug": "trumpet",
+      "text": "trompeta",
+      "meaning": "Trumpet",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-drum",
+      "slug": "drum",
+      "text": "tambor",
+      "meaning": "Drum",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-flute",
+      "slug": "flute",
+      "text": "flauta",
+      "meaning": "Flute",
+      "group": "instruments",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-stage",
+      "slug": "stage",
+      "text": "escenario",
+      "meaning": "Stage",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-microphone",
+      "slug": "microphone",
+      "text": "micrófono",
+      "meaning": "Microphone",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-speaker",
+      "slug": "speaker",
+      "text": "altavoz",
+      "meaning": "Loudspeaker",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-headphones",
+      "slug": "headphones",
+      "text": "audífonos",
+      "meaning": "Headphones",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-puppet",
+      "slug": "puppet",
+      "text": "títere",
+      "meaning": "Puppet",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-stage-curtain",
+      "slug": "stage-curtain",
+      "text": "telón",
+      "meaning": "Stage curtain",
+      "group": "stage",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-pinata",
+      "slug": "pinata",
+      "text": "piñata",
+      "meaning": "Piñata",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-candle",
+      "slug": "candle",
+      "text": "vela",
+      "meaning": "Candle",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-folding-fan",
+      "slug": "folding-fan",
+      "text": "abanico",
+      "meaning": "Folding fan",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-festival-mask",
+      "slug": "festival-mask",
+      "text": "máscara",
+      "meaning": "Festival mask",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-papel-picado",
+      "slug": "papel-picado",
+      "text": "papel picado",
+      "meaning": "Decorative cut-paper bunting",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-basket",
+      "slug": "basket",
+      "text": "canasta",
+      "meaning": "Woven basket",
+      "group": "festivals",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-book",
+      "slug": "book",
+      "text": "libro",
+      "meaning": "Book",
+      "group": "books",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-magazine",
+      "slug": "magazine",
+      "text": "revista",
+      "meaning": "Magazine",
+      "group": "books",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-newspaper",
+      "slug": "newspaper",
+      "text": "periódico",
+      "meaning": "Newspaper",
+      "group": "books",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-postcard",
+      "slug": "postcard",
+      "text": "postal",
+      "meaning": "Postcard",
+      "group": "books",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-magnet",
+      "slug": "magnet",
+      "text": "imán",
+      "meaning": "Souvenir magnet",
+      "group": "books",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "slug": "ticket",
+      "text": "boleto",
+      "meaning": "Ticket",
+      "group": "books",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
+        "sha256": "d6b16a19a7a00fd6824c782e9f9c3d0b6dacac6e7efaae1de7e50d04ca76f3af",
+        "sourceId": "es-419-travel-ticket"
+      },
+      "existingBank": "content/es-419.json"
+    }
+  ],
+  "notes": [
+    "Retain Latin American Spanish and the existing eight regional voices after audio authorization.",
+    "Reuse four existing Spanish identities/audio/progress; inspect approved artwork for the32 new Spanish nouns before generation.",
+    "Intended senses: cuadro is a framed painting; paleta is a painter’s palette; audífonos are headphones; máscara is a decorative festival mask; imán is shown as a souvenir magnet.",
+    "Use characteristic interiors/objects for venues, and review gallery/museum, library/bookstore, theater/stage/curtain and picture-component ambiguity before activation.",
+    "Word review precedes media generation; complete all artwork before consolidated feedback."
+  ]
+}
