@@ -1,6 +1,6 @@
 import { expect, test } from './fixtures';
 
-test('Home settings fit small screens, show size before enabling and restore keyboard focus', async ({ page }) => {
+test('Home settings fit small screens, show size before enabling and restore keyboard focus', async ({ page, browserName }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('./');
   const trigger = page.getByRole('button', { name: 'Settings', exact: true });
@@ -19,8 +19,11 @@ test('Home settings fit small screens, show size before enabling and restore key
     await expect(checkbox).not.toBeChecked(); await expect(checkbox).toBeEnabled();
     const close = dialog.getByRole('button', { name: 'Close settings' });
     await expect(close).toBeFocused();
-    await page.keyboard.press('Shift+Tab'); await expect(checkbox).toBeFocused();
-    await page.keyboard.press('Tab'); await expect(close).toBeFocused();
+    // WebKit follows macOS full-keyboard navigation via Option+Tab.
+    await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab');
+    await expect(checkbox).toBeFocused();
+    await page.keyboard.press(browserName === 'webkit' ? 'Alt+Shift+Tab' : 'Shift+Tab');
+    await expect(close).toBeFocused();
     const bounds = (await dialog.boundingBox())!;
     expect(bounds.x).toBeGreaterThanOrEqual(0); expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);
     await page.keyboard.press('Escape'); await expect(dialog).toBeHidden(); await expect(trigger).toBeFocused();
