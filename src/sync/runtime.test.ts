@@ -105,6 +105,24 @@ describe('account runtime lifecycle', () => {
     expect(current.snapshot().status).toBe('synced');
   });
 
+  it('retains the offline account and local attempts when reconnect session refresh rejects', async () => {
+    const account = server();
+    const identity = auth(null, { emitInitial: false });
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const current = new AccountRuntime(identity.client, { id: account.id, email: 'cached@example.test' });
+    runtimes.push(current); await current.ready();
+    await current.store().record(attempt('waiting-for-auth'));
+    identity.adapter.getSession.mockRejectedValue(new Error('Transport unavailable'));
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+    await expect(current.sync()).resolves.toBeUndefined();
+    expect(current.snapshot()).toMatchObject({ user: { id: account.id }, status: 'error', loading: false });
+    expect(await current.store().all()).toEqual([attempt('waiting-for-auth')]);
+    expect(account.remote.uploadAttempts).not.toHaveBeenCalled();
+    identity.adapter.getSession.mockResolvedValue({ data: { session: session(account.id) }, error: null });
+    await current.sync();
+    expect(account.attempts.size).toBe(1);
+  });
+
   it('does not upload cached account data under a different authenticated account', async () => {
     const a = server(), b = server();
     const identity = auth(null, { emitInitial: false });

@@ -102,7 +102,13 @@ export class AccountRuntime {
     }
     if (this.localIdentityOnly) {
       const generation = this.generation;
-      const { data, error } = await this.client.auth.getSession();
+      let result: Awaited<ReturnType<SupabaseClient['auth']['getSession']>>;
+      try { result = await this.client.auth.getSession(); }
+      catch {
+        if (!this.disposed && generation === this.generation) this.update({ status: 'error', error: 'Saved on this device. Sync will retry when connected.' });
+        return;
+      }
+      const { data, error } = result;
       if (this.disposed || generation !== this.generation) return;
       if (error || !data.session) {
         this.update({ status: 'error', error: 'Saved on this device. Sign in again to resume sync.' });
