@@ -31,6 +31,11 @@ function cloud() {
       if (url.pathname === '/auth/v1/otp') return reply(200, {});
       if (url.pathname === '/auth/v1/verify') return reply(200, session(request.postDataJSON().email));
       if (url.pathname === '/auth/v1/logout') return reply(200, {});
+      if (url.pathname === '/auth/v1/token') {
+        if (unavailable) return route.abort('internetdisconnected');
+        const id = request.postDataJSON().refresh_token?.slice('refresh-'.length);
+        return reply(200, session(id === bob ? 'bob@example.test' : 'alice@example.test'));
+      }
       const table = tables[url.pathname.split('/').at(-1) as keyof typeof tables];
       if (!table) return reply(404, { message: 'Unexpected test endpoint' });
       if (unavailable) return reply(503, { message: 'Test connection unavailable' });
@@ -204,4 +209,58 @@ test('accounts converge across browser storage, retry offline answers, and sync 
     await expect(unrelated.input).toHaveValue('');
     expect(await attempts(page, 'kikimashta-v0')).toEqual([legacy]);
   } finally { await second.close(); }
+});
+
+
+test('downloaded practice reopens the same account with expired auth offline and syncs on reconnect', async ({ page, context }) => {
+  test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');
+  test.setTimeout(120_000);
+  await selectWordPractice(page, ['ja-wanikani-2-pictures']);
+  await page.addInitScript(() => localStorage.setItem('kikimashta-practice-voices-v1', JSON.stringify(['otani'])));
+  const remote = cloud(); await remote.connect(context);
+  await page.goto('./'); await signIn(page);
+  const word = bank.items.find(item => item.id === 'ja-dog')!;
+  const retained: PracticeAttempt = { id: 'offline-account-review', sessionId: 'earlier-session', itemId: word.id,
+    language: bank.language, choiceIds: bank.items.slice(0, 4).map(item => item.id), selectedId: word.id,
+    correct: true, startedAt: Date.now() - 86_400_000, answeredAt: Date.now() - 86_400_000, responseMs: 0 };
+  await page.evaluate(async ({ attempt, name }) => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open(name, 1);
+      request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
+      request.onupgradeneeded = () => {
+        const store = request.result.createObjectStore('attempts', { keyPath: 'id' });
+        store.createIndex('language', 'language');
+      };
+    });
+    const tx = db.transaction('attempts', 'readwrite'); tx.objectStore('attempts').put(attempt);
+    await new Promise<void>((resolve, reject) => { tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error); });
+    db.close();
+  }, { attempt: retained, name: 'kikimashta-account-' + alice });
+  await page.reload(); await syncNow(page);
+  await page.getByText('Offline practice', { exact: true }).click();
+  await page.getByRole('button', { name: 'Download selected packs', exact: true }).click();
+  await expect(page.getByText('Selected packs are downloaded for offline practice.', { exact: true })).toBeVisible({ timeout: 90_000 });
+  await page.evaluate(() => {
+    const key = 'sb-kikimashta-sync-test-auth-token';
+    const session = JSON.parse(localStorage.getItem(key)!);
+    session.expires_at = Math.floor(Date.now() / 1000) - 3600;
+    localStorage.setItem(key, JSON.stringify(session));
+  });
+  remote.disconnect(); await context.setOffline(true); await page.reload();
+  await expect(page.getByRole('button', { name: 'Account', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
+  expect(await attempts(page, 'kikimashta-account-' + alice)).toEqual([retained]);
+  await page.getByRole('button', { name: /^Start/ }).click();
+  await page.getByRole('button', { name: /Begin review/ }).click();
+  await page.getByRole('button', { name: /Choose picture/ }).filter({ has: page.getByAltText(word.image.alt, { exact: true }) }).click();
+  await expect.poll(async () => (await attempts(page, 'kikimashta-account-' + alice)).length).toBe(2);
+  expect(remote.tables.practice_attempts.size).toBe(1);
+  await page.getByRole('button', { name: 'Kikimashta home' }).click();
+  remote.reconnect(); await context.setOffline(false);
+  await expect(page.getByLabel('Sync status')).toHaveText('Up to date', { timeout: 45_000 });
+  await syncNow(page);
+  expect(remote.tables.practice_attempts.size).toBe(2);
+  await page.reload();
+  expect(await attempts(page, 'kikimashta-account-' + alice)).toHaveLength(2);
+  expect(await attempts(page, 'kikimashta-v0')).toEqual([]);
 });
