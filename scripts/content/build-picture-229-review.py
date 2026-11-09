@@ -200,13 +200,16 @@ def build(root, plan_path=None, manifest_path=None, output=None):
             source_id = asset['sharedFromId']
             shared = (f'<p class="reuse-note">Shares the same new illustration as '
                       f'<a href="#{escaped(source_id)}" lang="ja">{escaped(by_id[source_id]["japanese"])}</a>.</p>')
+        revision_note = asset.get('ownerRevisionNote')
+        revision = (f'<p class="reuse-note"><b>Revised concept:</b> {escaped(revision_note)}</p>'
+                    if revision_note else '')
         review_notes = ''.join(f'<p><b>{title}:</b> {escaped(original[key])}</p>'
-                               for title, key in [('Picture choice', 'recommendation'), ('Suitability', 'rationale'),
+                               for title, key in [('Original picture recommendation' if revision_note else 'Picture choice', 'recommendation'), ('Suitability', 'rationale'),
                                                   ('Existing review note', 'currentVisualReviewNote'), ('Teaching note', 'existingTeachingNote')]
                                if original.get(key))
         if original.get('englishNote'):
             review_notes += f'<p><b>Answer note:</b> {escaped(original["englishNote"])}</p>'
-        source_data = {key: asset[key] for key in ['sourceProvenance', 'references', 'versions', 'sharedFromId', 'image', 'sha256', 'status'] if key in asset}
+        source_data = {key: asset[key] for key in ['sourceProvenance', 'references', 'versions', 'sharedFromId', 'ownerRevisionNote', 'image', 'sha256', 'status'] if key in asset}
         sources = metadata_links(root, review_folder, plan['sourceRevision'], output, source_data)
         prompt = asset.get('prompt')
         prompt_html = (f'<h3>Exact generation prompt</h3><pre>{escaped(prompt)}</pre>' if prompt else
@@ -221,7 +224,7 @@ def build(root, plan_path=None, manifest_path=None, output=None):
                      f'<div class="number">{number:02d} / {EXPECTED_COUNT} · WaniKani level {escaped(asset["level"])}</div>{media}'
                      f'<div class="body"><h2 lang="ja">{escaped(asset["text"])}</h2><p class="reading" lang="ja">{escaped(asset["reading"])}</p>'
                      f'<p class="meaning">{escaped(asset["meaning"])}</p><p class="source-kind">{label}</p>'
-                     f'<p class="status">{status}</p>{full_link}{shared}<details class="review-notes"><summary>Suitability and answer-choice notes</summary>'
+                     f'<p class="status">{status}</p>{full_link}{shared}{revision}<details class="review-notes"><summary>Suitability and answer-choice notes</summary>'
                      f'{review_notes}</details>{metadata}</div></article>')
 
     files = f'<a href="{escaped(local_url(plan_path, output))}" download>Frozen selection plan</a>'

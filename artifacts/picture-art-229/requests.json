@@ -183,5 +183,136 @@
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ff1a3d3-6834-4613-957f-a94cf02b9b02.png",
       "tool": "built-in image_gen"
     }
+  ],
+  "ownerRevisionRequests": [
+    {
+      "id": "ja-v-2f21cb2e8d02",
+      "version": 2,
+      "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v2.png",
+      "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31",
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Revise this moon-viewing illustration into an ordinary contemporary outdoor moment. Replace the entire traditionally dressed character and all the seasonal ritual props with one casually dressed person in a plain lavender hoodie, simple jeans and sneakers, sitting relaxed on a low grassy knoll and gazing up toward a large pale-gold full moon above. Three-quarter rear view; head visibly tilted upward toward the moon, clear intentional moon-watching. Simple short hair, natural proportions, calm friendly mood. Remove the kimono, obi, floral hair ornament, dumpling offering, special stand, vase and ornamental grasses completely. Keep the full moon and the polished illustration treatment. Small clean grassy footprint only, transparent surrounding space, no rectangular night-sky backdrop. No traditional costume, themed ornaments, cultural display, extra objects or text.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v1.png",
+          "role": "edit target and illustration style",
+          "sha256": "048507e23750f90dd25612dbbf47b985698cb75382152081be9d7e21277f33fb"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-56a89969-b956-4d81-bf4e-16d9ebba6db0.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "version": 3,
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v3.png",
+      "sha256": "a3b964bf5508cdaa9eb24cc01f27ce0e8025dba8838dfc1c4548385d4e8eb2f6",
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Image1 is the main composition and mood reference: its charming elevated miniature landscape, lush rounded green trees, winding route, low green hills, compact irregular ground footprint, cohesive plum outlines and soft natural colors. Reimagine Image2's town with THAT same feel and level of detail. Make a small walkable town clustered around a gently curving paved street: several modest two-story homes and two clearly visible tiny unbranded shops with striped awnings, neat sidewalks, shrubs and trees, low hills behind. Arrange buildings at several depths across a rounded landscape footprint, not a flat row or a narrow horizontal strip. Town setting is a little denser and more commercial than the village reference, while sharing the same relaxed landscape scale and attractive greenery. No crop fields or giant urban towers, no signs or text. Entire landscape centered and visible with transparent margins; no glow, framing panel or hazy outside pixels.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+          "role": "primary landscape composition and style reference",
+          "sha256": "69cd15888d861b97523d0c10415d8df8560b1916f35c1e503bedff04512cfdd2"
+        },
+        {
+          "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v2.png",
+          "role": "town subject reference",
+          "sha256": "6f4d4e36de5f91bc75e8d92a35010d6f9c71264264fd690631c064619fd2ce3e"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-10f1a97d-c1e0-4da9-be47-120c60cc7035.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "version": 4,
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v4.png",
+      "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f",
+      "prompt": "Use case: precise-object-edit. Revise the FIRST image's town layout to a CLEAR RECTILINEAR STREET GRID, while retaining its friendly miniature-landscape illustration style, plum outlines, cream/lavender buildings, lush rounded green trees, soft interior shading and low hills. SECOND image supplies only the shared village-like mood and palette. Rebuild the town in an elevated three-quarter/isometric view with FOUR RECTANGULAR BUILDING BLOCKS separated by two broad STRAIGHT streets that cross at a clear RIGHT ANGLE in the center. Additional short straight parallel street/sidewalk segments along the block edges reinforce an orderly grid. Place modest two-story houses and a couple of small unbranded awning-front shops in rows aligned with each rectangular block. Streets remain visibly straight across the entire town; the central four-way junction must be easy to see. Put trees, shrubs and tiny gardens at block corners without concealing the grid. Remove the winding S-shaped road completely. Compact coherent town on one clean landscape footprint, square 1:1 canvas with full subject and generous transparent margins. Preserve the village's warm green feel, but the street network must unmistakably form rectangular urban blocks. No winding lane, curved road, farms, crop fields, tall city towers, words, labels, numerals, road text, logos, glow, aura, background wash or frame. Genuine transparent alpha outside the town silhouette.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v3.png",
+          "role": "town edit target; retain illustration treatment",
+          "sha256": "a3b964bf5508cdaa9eb24cc01f27ce0e8025dba8838dfc1c4548385d4e8eb2f6"
+        },
+        {
+          "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+          "role": "shared greenery, palette and landscape feel",
+          "sha256": "69cd15888d861b97523d0c10415d8df8560b1916f35c1e503bedff04512cfdd2"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-419ee771-2c7f-470b-8190-8597bdca7302.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "version": 2,
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v2.png",
+      "sha256": "160b7b06a01cc4fb6184e1ddbdebf70d74708fc09e79a397c57f5da8b6f16745",
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Replace the tissue-block cutaway completely with a gentle close-up of healthy, unbroken human skin: one bare forearm extends diagonally across the square, and a hand from the opposite arm lightly points at the smooth outer forearm with one fingertip. Natural warm peach skin, friendly rounded shapes, simple plum outline, very subtle soft shading. Crop the arms cleanly at the edges of this isolated subject, while leaving transparent canvas margins; no whole person or face. Place three small golden attention rays immediately beside the indicated patch of normal forearm skin, so the skin surface is the focus. Correct simple hand anatomy with five digits, no extra fingers. The skin is entirely intact and comfortable-looking. No cutaway, layers, tissue slab, hair, pores, follicles, fat, wound, rash, lesion, medical instruments, magnifying panel, labels, skin-colored patch sticker or unpleasant texture. No background.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v1.png",
+          "role": "old illustration being replaced",
+          "sha256": "7c9f140970eefeec8238b3bc535cc4cd2887fa86bf51ce4d68a9df4c853ee5dc"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d059872d-f5ea-4d25-b53e-7b71ded9ec37.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "version": 3,
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
+      "sha256": "b45623d52b15a3c586f186f0bf25c95869a43cb06252f29d7b26c959bdd3a953",
+      "prompt": "Use case: precise-object-edit. Edit this healthy-skin illustration with ONLY a modest camera zoom/crop adjustment. Zoom in approximately15 percent, centered on the fingertip touching the smooth forearm skin. Make that contact area a little larger and more prominent, while keeping the pointing finger, most of its hand, three gold attention rays, and enough exposed forearm/wrist context visible. Keep the same diagonal view, natural peach skin, exact relaxed pointing gesture, friendly rounded plum outlines and subtle shading. This should feel only slightly closer, NOT an extreme macro or a completely different composition. Preserve healthy unbroken skin and correct five-digit hand anatomy. No cutaway, tissue layers, hair, pores, wound, rash, medical details, labels or extra marks. Same square canvas and genuine transparent background; no glow or background wash.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v2.png",
+          "role": "edit target for a modest closer view",
+          "sha256": "160b7b06a01cc4fb6184e1ddbdebf70d74708fc09e79a397c57f5da8b6f16745"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8f2951d4-d09f-4b0d-aad4-6a2149551cd8.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "version": 2,
+      "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v2.png",
+      "sha256": "8ee4ad47b35ebdd3d35a646a877ab14fb23156784b34d896bfbe481c82bf0b7e",
+      "prompt": "Use case: stylized-concept. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. A playful visual wordplay illustration of EXACTLY TWO plain golden balls side by side. Two matching smooth round gold spheres, equal in size, fully visible, with a small transparent gap between them. Warm golden-yellow fills, bold smooth plum outlines, a restrained curved highlight and gentle interior shading to read as spheres. Center the pair as one simple isolated group. The balls alone are the whole subject. No flower from the style reference, no cords, strings, stems, pouch, container, anatomy, organs, person, decorative sparkles, jewelry setting, numerals, letters or text. Clean transparent background, clear silhouette and generous margins.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/style-object.png",
+          "role": "approved outline and soft-shading style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c1318e45-ce34-452a-a9d0-6505a1d900dc.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "version": 3,
+      "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v3.png",
+      "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc",
+      "prompt": "Use case: precise-object-edit. Nonsexual educational vocabulary illustration. Use this clearly ADULT man as the character reference. Preserve his adult proportions, calm friendly expression, casual teal buttoned shirt, lavender full-length trousers, shoes and ordinary relaxed standing pose. He remains FULLY CLOTHED in opaque, normally fitting clothing from neck to feet. Add only THREE SMALL GOLD ATTENTION RAYS centered just in front of the crotch of his trousers, below the belt/hip line where the legs meet. The rays identify that clothed location simply, like an ordinary body-part learning icon. They should be easy to see at thumbnail size without dominating the figure. Hands stay relaxed at his sides, not touching or covering the marked area. Keep the trousers smooth and neutral: NO genital outlines, anatomical shapes, bulge, exposed skin there, opened clothing, transparency, suggestive posture or erotic detail. No grimace, injury, pain marks, words, labels, arrows, spheres, jewelry or extra objects. Same friendly rounded plum-outline illustration treatment, gentle interior shading, square1:1 canvas, generous margins and genuine transparent background.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-4b9dfeafcab4-v1.png",
+          "role": "same-batch adult character edit reference",
+          "sha256": "931e87e39cf76d5ca4598c8f9517b787fc62d37635334f0f1200ee487d05ad6d"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f2c46fd2-4f57-4c51-b122-9ecb97f8f3b1.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1
+    }
   ]
 }
