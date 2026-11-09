@@ -9,9 +9,9 @@
     "tool": "built-in image_gen",
     "manifest": "artifacts/spanish-travel-4-art/manifest.json",
     "selected": 36,
-    "revisedSelected": 5,
+    "revisedSelected": 6,
     "replacedWords": 1,
-    "originalVersionsPreserved": 41,
+    "originalVersionsPreserved": 42,
     "revisionHistory": "artifacts/spanish-travel-4-art/revisions/history.json"
   },
   "audio": {
@@ -47,7 +47,7 @@
     "types": "passed",
     "validator": "passed",
     "build": "passed",
-    "revisionScope": "Five selected artwork edits and owner-approved enchufe replacement with eight separately authorized recordings."
+    "revisionScope": "Green supermarket colour edit; gallery validates selected original, exact prompt/reference hash and transparent square output."
   },
   "galleryBrowserChecks": [
     {
@@ -83,7 +83,7 @@
     "Media acceptance and pack activation remain pending.",
     "Browser emulation is not a real iPhone test."
   ],
-  "independentReview": "No material findings. Ten focused tests pass. Current36picture/288control review has eight enchufe clips and no venda. All sixnewPNGs, selectedhashes, prompt/reference/square/alpha, audioamendmentbindings and preservation checked.",
+  "independentReview": "Previous owner revisions independently reviewed with no material findings. Green supermarket visually inspected; current change affects only one selected picture, all41prior originals remain byte-identical, and complete gallery provenance/hash validation passes.",
   "reviewWorkflow": "complete-pack-before-owner-feedback",
   "reviewWorkflowAmendment": "artifacts/spanish-travel-4-art/review-workflow.json",
   "preservation": "Original approved draft, authorization/config/approval, initial prompts, all35original artworks and288base recordings preserved. Current36wordreview overlaysenchufeforvenda and fiveeditedpictures."

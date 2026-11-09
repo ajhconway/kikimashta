@@ -24,24 +24,24 @@
       "text": "supermercado",
       "meaning": "Supermarket",
       "group": "town",
-      "concept": "A small grocery storefront with a dominant shopping cart and shelves of packaged food visible through the wide entrance.",
+      "concept": "Recolour the same supermarket with a clear GREEN AND WHITE theme: rich leaf-green roof trim, green-and-white striped awning, white/cream walls, green shopping carts and green shelf accents. Let green lead instead of purple, pink and gold; use restrained yellow highlights only where helpful. Preserve the existing storefront layout, large shopping-cart pictogram, foreground cart and shelves of packaged groceries. Keep the recognizable friendly rounded cartoon shapes and dark green/deep-violet contours. Do not add lettering, logos, fruit piles or new objects.",
       "reviewNotes": [
         "Keep distinct from the open-air market and bakery; do not add fruit piles as the primary subject."
       ],
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-4-art/originals/supermarket-v1.png",
-      "sha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd",
-      "bytes": 1345791,
+      "version": 2,
+      "path": "artifacts/spanish-travel-4-art/originals/supermarket-v2.png",
+      "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55",
+      "bytes": 1306283,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 542599,
-        "opaquePixels": 1014497,
-        "opaqueWhitePixels": 391
+        "transparentPixels": 542145,
+        "opaquePixels": 1015747,
+        "opaqueWhitePixels": 44742
       },
-      "promptSha256": "40b44de925c26ffdd0b80e9a4752f6434b8c1648c234e262b9b43402fa4cd987",
-      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+      "promptSha256": "51249f276115b1e8aa2e65f7a2886df70a8b353be274df40551732e40c6f78c9",
+      "referenceSha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd"
     },
     {
       "id": "es-419-travel-post-office",

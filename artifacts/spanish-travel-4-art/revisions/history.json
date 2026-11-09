@@ -86,10 +86,24 @@
       },
       "request": "artifacts/spanish-travel-4-art/revisions/sleeping-bag-v2-request.json",
       "promptSha256": "4bfef5bd06c67be1cc40fb56c7afe7dddf12a20fbf91d2bb7839d598e338cec3"
+    },
+    {
+      "previous": {
+        "id": "es-419-travel-supermarket",
+        "path": "artifacts/spanish-travel-4-art/originals/supermarket-v1.png",
+        "sha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd"
+      },
+      "selected": {
+        "id": "es-419-travel-supermarket",
+        "path": "artifacts/spanish-travel-4-art/originals/supermarket-v2.png",
+        "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55"
+      },
+      "request": "artifacts/spanish-travel-4-art/revisions/supermarket-v2-request.json",
+      "promptSha256": "51249f276115b1e8aa2e65f7a2886df70a8b353be274df40551732e40c6f78c9",
+      "ownerRequest": "Let's also have a green themed super market."
     }
   ],
   "unchangedSelectedPictures": [
-    "es-419-travel-supermarket",
     "es-419-travel-library",
     "es-419-travel-cinema",
     "es-419-travel-laundromat",
@@ -120,7 +134,7 @@
     "es-419-travel-binoculars",
     "es-419-travel-flower"
   ],
-  "originalVersionsPreserved": 41,
+  "originalVersionsPreserved": 42,
   "baseInputHashesPreserved": {
     "content/spanish-travel-4/draft.json": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
     "content/spanish-travel-4/generation-approval.json": "c29e79aed9057bdd0bfc13ac76c82ebb89f037ca9d6e616b4b053e7110ee6063",
@@ -137,5 +151,5 @@
   "newRecordings": 8,
   "status": "revised-awaiting-owner-media-review",
   "previousManifestSha256": "304520609b1e9f1082f9ec7ba4379e0d839ddcc69210c6e950239e8228cf358e",
-  "currentManifestSha256": "fba96c465caef334fc8f947a5b77b69c02d835096e3aa154c7086d378ab5756f"
+  "currentManifestSha256": "a8f831251d05b434361d73a9cee1d5a7558de9ae040d1235d805c200a5921a8b"
 }

@@ -16,4 +16,6 @@ Five selected artwork edits refine the post office, police station, butter, flas
 
 The gallery validates all original sources and all 288 original audio clips before applying the current word overlay. It then replaces the retired word’s eight listening controls with the exact amendment-bound eight enchufe clips from `artifacts/spanish-travel-4-replacement-audio-review/`. Current selected concepts reflect the revised request, rather than the historical draft concept. The effective review contains 35 generated illustrations, one unchanged flower reuse, 36 words and 288 recordings once all replacement media is ready. Acceptance and activation remain pending.
 
-[Owner revision history and exact selected prompts](revisions/history.json) records the five edits and word replacement, previous/current hashes and preserved inputs. All 41 original PNG versions remain available.
+[Owner revision history and exact selected prompts](revisions/history.json) records the five edits and word replacement, previous/current hashes and preserved inputs. All 42 original PNG versions remain available.
+
+The owner also requested a green-themed supermarket. Selected supermarket v2 uses green/white architecture and shopping carts, preserving the existing composition; its original and exact edit prompt remain in the revision records.
