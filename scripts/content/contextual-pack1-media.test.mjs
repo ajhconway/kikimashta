@@ -77,4 +77,6 @@ test('verified aliases retain logical question IDs and English, then stage every
     assert.match(html, /Play visible pairs/)
     assert.match(html, /await your listening approval/)
     assert.equal((html.match(/class="sample"/g) ?? []).length, 464)
+    assert.equal((html.match(/<audio\b/g) ?? []).length, 1, 'mobile WebKit uses one native player')
+    assert.equal((html.match(/class="play-pair"/g) ?? []).length, 464)
   })
