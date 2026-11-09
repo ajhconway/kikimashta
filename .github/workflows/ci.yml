@@ -8,6 +8,11 @@ name: Checks
 permissions:
   contents: read
 
+# Superseded PR heads cannot merge. Preserve main runs used for publication.
+concurrency:
+  group: checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   database:
     runs-on: ubuntu-latest
@@ -37,7 +42,7 @@ jobs:
           -f supabase/migrations/20261108190549_contextual_attempts.sql
           -f supabase/tests/sync.sql
 
-  checks:
+  validation:
     runs-on: ubuntu-24.04
     container:
       # Keep this version aligned with @playwright/test in package.json.
@@ -63,12 +68,51 @@ jobs:
           apt-get update && apt-get install -y --no-install-recommends ffmpeg python3
           python3 --version
       - run: npm run check
-      - run: npm run test:e2e
+
+  browsers:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --init --ipc=host
+    timeout-minutes: 15
+    env:
+      VITE_BASE_PATH: /
+      SOURCE_REVISION: ${{ github.sha }}
+      VITE_SUPABASE_URL: https://kikimashta-sync-test.supabase.co
+      VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_kikimashta_browser_test
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e -- --shard=${{ matrix.shard }}/2
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
-          name: browser-test-results
+          name: browser-test-results-${{ matrix.shard }}
           path: |
             playwright-report/
             test-results/
           retention-days: 7
+
+  # Preserve the required status name; skipped or failed dependencies must fail it.
+  checks:
+    if: always()
+    needs: [validation, browsers]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    steps:
+      - name: Require all validation and browser shards
+        env:
+          VALIDATION_RESULT: ${{ needs.validation.result }}
+          BROWSERS_RESULT: ${{ needs.browsers.result }}
+        run: |
+          test "$VALIDATION_RESULT" = success
+          test "$BROWSERS_RESULT" = success

@@ -36,6 +36,14 @@ passes. Push a new commit and verify CI and review are required again. Keep
 Codex's automatic review trigger configured for new commits; otherwise request
 the new review with `@codex review`.
 
+## Keeping validation responsive (#171)
+
+Checks cancels superseded PR runs, while main-push checks remain available for publication. Independent validation and two browser shards run concurrently. Both Chromium and mobile WebKit remain covered with zero retries. The required `checks` job accepts only successful validation and successful completion of every browser shard; failures, cancellations and skips cannot clear it. The separate `database` requirement remains unchanged.
+
+After the final commit or an update from main, request a review of the new head promptly if its summary is stale. Run review alongside CI. The gate refresh only reports review state and does not request a review. Avoid duplicate requests for a head already under review. Automatic review triggering is an account integration setting; this change does not alter it.
+
+The gate uses a filtered sparse checkout of only its trusted default-branch script. Production publication still follows successful full main checks and rebuilds with production variables. Compare Actions job timings with #171 before claiming a speedup.
+
 ## How the gate works
 
 `.github/workflows/codex-review.yml` runs on PR lifecycle events and Codex summary
