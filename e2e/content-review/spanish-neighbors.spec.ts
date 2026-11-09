@@ -1,0 +1,83 @@
+import { readFileSync } from 'node:fs';
+import { test, expect } from '../fixtures';
+
+const html = readFileSync('artifacts/spanish-neighbors-222/review.html', 'utf8');
+const reviewPath = '/artifacts/spanish-neighbors-222/review.html';
+
+test('Spanish blind review separates semantic and regional listening judgments with isolated export', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route(`**${reviewPath}`, route => route.fulfill({ contentType: 'text/html', body: html }));
+  await page.goto(reviewPath);
+  await expect(page.getByRole('status')).toContainText('0 of 40');
+  await expect(page.getByRole('tab', { name: 'Pronunciation', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('img[src]')).toHaveCount(0);
+  const listening = page.locator('#panel-pronunciation .trial:visible');
+  await expect(listening.locator('audio')).toHaveCount(7);
+  await expect(listening.locator('.reveal-content:visible')).toHaveCount(0);
+  await expect(listening.getByRole('button', { name: 'Reveal words and pictures after rating' })).toBeDisabled();
+  expect(await page.locator('body').innerText()).not.toMatch(/fasttext|multilingual|E5|espeak/iu);
+  const target = listening.locator('audio').first();
+  await target.evaluate(async element => { await (element as HTMLAudioElement).play(); });
+  await expect.poll(() => target.evaluate(element => (element as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  await listening.locator('audio').nth(1).evaluate(async element => { await (element as HTMLAudioElement).play(); });
+  await expect.poll(() => target.evaluate(element => (element as HTMLAudioElement).paused)).toBe(true);
+  await listening.getByLabel('Group A', { exact: true }).check();
+  await listening.getByLabel('Notes', { exact: true }).fill('Isolated browser fixture');
+  await listening.getByRole('button', { name: 'Reveal words and pictures after rating' }).click();
+  await expect(listening.locator('.reveal-content:visible')).toHaveCount(7);
+  await page.getByRole('button', { name: 'Next trial', exact: true }).click();
+  await page.locator('#panel-pronunciation .trial:visible').getByLabel('Uncertain / cannot judge', { exact: true }).check();
+  const beforeSemantics = await page.evaluate(() => JSON.parse(localStorage.getItem(Object.keys(localStorage)[0]!)!));
+  expect(beforeSemantics).toMatchObject({ semanticViewed: false, wordsViewed: true });
+  expect(beforeSemantics.responses[13]).toMatchObject({ semanticExposure: false, priorWordExposure: true, revealed: false });
+  await page.getByRole('button', { name: 'Previous trial', exact: true }).click();
+  await page.getByRole('tab', { name: 'Pronunciation', exact: true }).press('ArrowLeft');
+  await expect(page.getByRole('tab', { name: 'Semantic relatedness', exact: true })).toHaveAttribute('aria-selected', 'true');
+  const semantic = page.locator('#panel-semantic .trial:visible');
+  await expect(semantic.locator('img')).toHaveCount(7);
+  for (const image of await semantic.locator('img').all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).complete && (element as HTMLImageElement).naturalWidth > 0)).toBe(true);
+  }
+  await semantic.getByLabel('Tie', { exact: true }).check();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.reload();
+  await expect(page.getByRole('status')).toContainText('3 of 40');
+  await page.getByRole('tab', { name: 'Pronunciation', exact: true }).click();
+  await expect(page.locator('#panel-pronunciation .trial:visible').getByLabel('Notes', { exact: true })).toHaveValue('Isolated browser fixture');
+  const downloadEvent = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export responses' }).click();
+  const download = await downloadEvent;
+  const path = await download.path();
+  expect(path).not.toBeNull();
+  const exported = JSON.parse(readFileSync(path!, 'utf8'));
+  expect(exported.semanticViewed).toBe(true);
+  expect(exported.wordsViewed).toBe(true);
+  expect(exported.responses).toHaveLength(40);
+  expect(exported.responses.filter((row: { preference: string | null }) => row.preference !== null)).toHaveLength(3);
+  expect(exported.responses[0]).toMatchObject({ kind: 'semantic', preference: 'tie', voice: null, revealed: true, semanticExposure: false, priorWordExposure: false });
+  expect(exported.responses[12]).toMatchObject({ kind: 'pronunciation', preference: 'A', revealed: true, semanticExposure: false, priorWordExposure: false });
+  await page.locator('#panel-pronunciation .trial:visible').getByLabel('Tie', { exact: true }).check();
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem(Object.keys(localStorage)[0]!)!));
+  expect(saved.responses[12]).toMatchObject({ preference: 'tie', semanticExposure: true, priorWordExposure: true, revealed: true });
+  const keys = await page.evaluate(() => Object.keys(localStorage));
+  expect(keys).toHaveLength(1);
+  expect(keys[0]).toMatch(/^spanish-neighbors-222:responses:/u);
+  expect(errors).toEqual([]);
+});
+
+test('unblinded inspection renders every word and supports accent-insensitive search', async ({ page }) => {
+  const inspectionPath = '/artifacts/spanish-neighbors-222/inspection.html';
+  const inspection = readFileSync('artifacts/spanish-neighbors-222/inspection.html', 'utf8');
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route(`**${inspectionPath}`, route => route.fulfill({ contentType: 'text/html', body: inspection }));
+  await page.goto(inspectionPath);
+  await expect(page.locator('tbody tr')).toHaveCount(159);
+  await page.getByRole('searchbox').fill('credito');
+  await expect(page.locator('tbody tr:visible')).toHaveCount(1);
+  await expect(page.locator('tbody tr:visible')).toContainText('tarjeta de crédito');
+  await expect(page.getByRole('status')).toHaveText('1 words');
+  expect(errors).toEqual([]);
+});

@@ -1,0 +1,797 @@
+{
+  "schemaVersion": 1,
+  "issue": 222,
+  "language": "es-419",
+  "authorship": {
+    "method": "Hand-authored from the frozen approved bank before consulting fastText/E5 outputs, phonemizer outputs or generated rankings.",
+    "status": "Frozen semantic expectations and technical pronunciation probes; no human preferences collected.",
+    "bankSha256": "0b39f6b6b40b1953e7efb9d3c9cdac4b86fa01de283d96fcea205e66dbf1cab3"
+  },
+  "policy": {
+    "semanticEvaluation": "Strict cosine ordering on unfiltered semantic scores; picture collisions are independent validity constraints, not negative semantic labels.",
+    "tieTolerance": 1e-09,
+    "ties": "Report separately; ties do not satisfy strict orderings. Item-ID tie breaking is for deterministic lists, never benchmark wins.",
+    "queries": "ExpectedUsefulIds are selected examples, not exhaustive gold neighborhoods. Report recall at five on these known positives; report picture-filtered results separately with excluded-positive counts.",
+    "unsupported": "Keep unsupported items/probes visible in the declared denominator; fail incomplete bank preparation rather than silently skipping words.",
+    "phonetics": "Same-pronunciation expectations apply only to the stated canonical dialect policy. Normalization checks and exact-key tests are correctness diagnostics, not acoustic-confusability or learner-difficulty labels.",
+    "independence": "English labels inform intended-sense expectations and E5 input; neither benchmark nor model scores are independent human judgments."
+  },
+  "triplets": [
+    {
+      "id": "S01",
+      "group": "multiword",
+      "targetId": "es-419-travel-credit-card",
+      "relatedId": "es-419-travel-money",
+      "unrelatedId": "es-419-travel-mountain",
+      "reason": "Payment instrument should relate more closely to money than to a landscape."
+    },
+    {
+      "id": "S02",
+      "group": "multiword",
+      "targetId": "es-419-travel-train-station",
+      "relatedId": "es-419-travel-train",
+      "unrelatedId": "es-419-travel-shampoo",
+      "reason": "The train-station phrase should preserve its rail-transport meaning."
+    },
+    {
+      "id": "S03",
+      "group": "multiword",
+      "targetId": "es-419-travel-bus-stop",
+      "relatedId": "es-419-travel-bus",
+      "unrelatedId": "es-419-travel-milk",
+      "reason": "The bus-stop phrase should preserve its road-transport meaning."
+    },
+    {
+      "id": "S04",
+      "group": "multiword",
+      "targetId": "es-419-travel-atm",
+      "relatedId": "es-419-travel-money",
+      "unrelatedId": "es-419-travel-forest",
+      "reason": "An ATM is a money-access device rather than a natural landscape."
+    },
+    {
+      "id": "S05",
+      "group": "multiword",
+      "targetId": "es-419-travel-toothbrush",
+      "relatedId": "es-419-travel-toothpaste",
+      "unrelatedId": "es-419-travel-camera",
+      "reason": "Dental-cleaning tools and materials should be related."
+    },
+    {
+      "id": "S06",
+      "group": "multiword",
+      "targetId": "es-419-travel-toothpaste",
+      "relatedId": "es-419-travel-toothbrush",
+      "unrelatedId": "es-419-travel-helmet",
+      "reason": "Dental-care meaning should outrank unrelated protective equipment."
+    },
+    {
+      "id": "S07",
+      "group": "multiword",
+      "targetId": "es-419-travel-sunglasses",
+      "relatedId": "es-419-travel-hat",
+      "unrelatedId": "es-419-travel-receipt",
+      "reason": "Sun-protective wearable accessories should relate more than a payment document."
+    },
+    {
+      "id": "S08",
+      "group": "multiword",
+      "targetId": "es-419-travel-crosswalk",
+      "relatedId": "es-419-travel-street",
+      "unrelatedId": "es-419-travel-spoon",
+      "reason": "A pedestrian crossing is related to a street scene; picture collision is evaluated separately."
+    },
+    {
+      "id": "S09",
+      "group": "multiword",
+      "targetId": "es-419-travel-seat-belt",
+      "relatedId": "es-419-travel-belt",
+      "unrelatedId": "es-419-travel-flower",
+      "reason": "The safety-belt phrase shares the belt concept; this semantic positive is picture-excluded separately."
+    },
+    {
+      "id": "S10",
+      "group": "multiword",
+      "targetId": "es-419-travel-swimsuit",
+      "relatedId": "es-419-travel-swimming-pool",
+      "unrelatedId": "es-419-travel-police-station",
+      "reason": "Swimwear is related to swimming rather than police services."
+    },
+    {
+      "id": "S11",
+      "group": "multiword",
+      "targetId": "es-419-travel-hair-dryer",
+      "relatedId": "es-419-travel-comb",
+      "unrelatedId": "es-419-travel-salt",
+      "reason": "Hair-care tools should relate more than a food ingredient."
+    },
+    {
+      "id": "S12",
+      "group": "multiword",
+      "targetId": "es-419-travel-toilet-paper",
+      "relatedId": "es-419-travel-bathroom",
+      "unrelatedId": "es-419-travel-airplane",
+      "reason": "Bathroom paper should retain its hygiene/location meaning."
+    },
+    {
+      "id": "S13",
+      "group": "multiword",
+      "targetId": "es-419-travel-post-office",
+      "relatedId": "es-419-travel-library",
+      "unrelatedId": "es-419-travel-butter",
+      "reason": "A post office should relate more to another public-service building than a food ingredient."
+    },
+    {
+      "id": "S14",
+      "group": "multiword",
+      "targetId": "es-419-travel-police-station",
+      "relatedId": "es-419-travel-police-car",
+      "unrelatedId": "es-419-travel-milk",
+      "reason": "The police-station phrase should retain the policing domain."
+    },
+    {
+      "id": "S15",
+      "group": "multiword",
+      "targetId": "es-419-travel-cargo-truck",
+      "relatedId": "es-419-travel-car",
+      "unrelatedId": "es-419-travel-cheese",
+      "reason": "The cargo-truck phrase denotes a vehicle rather than food."
+    },
+    {
+      "id": "S16",
+      "group": "multiword",
+      "targetId": "es-419-travel-wristwatch",
+      "relatedId": "es-419-travel-belt",
+      "unrelatedId": "es-419-travel-rice",
+      "reason": "A wristwatch should relate more to a wearable accessory than a grain."
+    },
+    {
+      "id": "S17",
+      "group": "multiword",
+      "targetId": "es-419-travel-sunscreen",
+      "relatedId": "es-419-travel-beach",
+      "unrelatedId": "es-419-travel-tire",
+      "reason": "Sunscreen should retain its sun-protection/use-at-beach relation."
+    },
+    {
+      "id": "S18",
+      "group": "multiword",
+      "targetId": "es-419-travel-tent",
+      "relatedId": "es-419-travel-sleeping-bag",
+      "unrelatedId": "es-419-travel-fork",
+      "reason": "Camping shelter should relate more to camping sleep equipment than ordinary tableware."
+    },
+    {
+      "id": "S19",
+      "group": "multiword",
+      "targetId": "es-419-travel-sleeping-bag",
+      "relatedId": "es-419-travel-blanket",
+      "unrelatedId": "es-419-travel-traffic-light",
+      "reason": "A sleeping bag should retain its sleeping/bedding meaning."
+    },
+    {
+      "id": "S20",
+      "group": "multiword",
+      "targetId": "es-419-basic-inside",
+      "relatedId": "es-419-basic-under",
+      "unrelatedId": "es-419-travel-airplane",
+      "reason": "Inside and under are spatial relations; a vehicle is outside that semantic class."
+    },
+    {
+      "id": "S21",
+      "group": "multiword",
+      "targetId": "es-419-basic-on-top",
+      "relatedId": "es-419-basic-under",
+      "unrelatedId": "es-419-travel-bread",
+      "reason": "Opposite spatial relations can be close semantic distractors; unrelated food should rank lower."
+    },
+    {
+      "id": "S22",
+      "group": "multiword",
+      "targetId": "es-419-basic-under",
+      "relatedId": "es-419-basic-inside",
+      "unrelatedId": "es-419-travel-rice",
+      "reason": "Spatial-relation meanings should relate more closely than a food noun."
+    },
+    {
+      "id": "S23",
+      "group": "multiword",
+      "targetId": "es-419-basic-next-to",
+      "relatedId": "es-419-basic-inside",
+      "unrelatedId": "es-419-travel-chicken",
+      "reason": "The next-to phrase should retain spatial-relation meaning after token composition."
+    },
+    {
+      "id": "S24",
+      "group": "ordinary-nouns",
+      "targetId": "es-419-travel-water",
+      "relatedId": "es-419-travel-milk",
+      "unrelatedId": "es-419-travel-car",
+      "reason": "Beverages should share a stronger semantic relation than a vehicle."
+    },
+    {
+      "id": "S25",
+      "group": "ordinary-nouns",
+      "targetId": "es-419-travel-shirt",
+      "relatedId": "es-419-travel-pants",
+      "unrelatedId": "es-419-travel-lake",
+      "reason": "Clothing nouns should relate more than an inland body of water."
+    },
+    {
+      "id": "S26",
+      "group": "ordinary-nouns",
+      "targetId": "es-419-travel-car",
+      "relatedId": "es-419-travel-taxi",
+      "unrelatedId": "es-419-travel-fork",
+      "reason": "Vehicles should relate more than tableware; generic-car picture overlap is a separate exclusion."
+    },
+    {
+      "id": "S27",
+      "group": "ordinary-nouns",
+      "targetId": "es-419-travel-fork",
+      "relatedId": "es-419-travel-spoon",
+      "unrelatedId": "es-419-travel-mountain",
+      "reason": "Tableware should relate more than a landscape."
+    },
+    {
+      "id": "S28",
+      "group": "ordinary-nouns",
+      "targetId": "es-419-travel-lake",
+      "relatedId": "es-419-travel-river",
+      "unrelatedId": "es-419-travel-camera",
+      "reason": "Bodies of water should relate more than an electronic device."
+    },
+    {
+      "id": "S29",
+      "group": "intended-sense",
+      "targetId": "es-419-travel-lime",
+      "relatedId": "es-419-travel-orange",
+      "unrelatedId": "es-419-travel-camera",
+      "reason": "The accepted Lime sense of limón is citrus fruit, not an unrelated device; this does not by itself resolve lime versus lemon."
+    },
+    {
+      "id": "S30",
+      "group": "intended-sense",
+      "targetId": "es-419-travel-bench",
+      "relatedId": "es-419-travel-chair",
+      "unrelatedId": "es-419-travel-atm",
+      "reason": "The accepted Bench sense of banca is seating; a financial-domain association with ATM should rank lower."
+    },
+    {
+      "id": "S31",
+      "group": "intended-sense",
+      "targetId": "es-419-travel-chicken",
+      "relatedId": "es-419-travel-cooked-fish",
+      "unrelatedId": "es-419-travel-airplane",
+      "reason": "The accepted pollo sense is prepared food and should relate more to cooked fish than an aircraft; no live-animal vocabulary is admitted by this probe."
+    },
+    {
+      "id": "S32",
+      "group": "intended-sense",
+      "targetId": "es-419-travel-power-outlet",
+      "relatedId": "es-419-travel-charger",
+      "unrelatedId": "es-419-travel-pharmacy",
+      "reason": "The accepted enchufe sense is an electrical outlet; charger association should outrank an unrelated shop. The plug/outlet picture ambiguity remains excluded separately."
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q01",
+      "targetId": "es-419-travel-credit-card",
+      "expectedUsefulIds": [
+        "es-419-travel-money",
+        "es-419-travel-coin",
+        "es-419-travel-wallet",
+        "es-419-travel-atm"
+      ],
+      "reason": "Payment and money-management neighborhood.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q02",
+      "targetId": "es-419-travel-train-station",
+      "expectedUsefulIds": [
+        "es-419-travel-train",
+        "es-419-travel-subway",
+        "es-419-travel-bus-stop"
+      ],
+      "reason": "Rail transport and other transport stops.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q03",
+      "targetId": "es-419-travel-bus-stop",
+      "expectedUsefulIds": [
+        "es-419-travel-bus",
+        "es-419-travel-train-station",
+        "es-419-travel-taxi"
+      ],
+      "reason": "Road transport and stopping places.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q04",
+      "targetId": "es-419-travel-toothbrush",
+      "expectedUsefulIds": [
+        "es-419-travel-toothpaste",
+        "es-419-travel-soap",
+        "es-419-travel-shampoo"
+      ],
+      "reason": "Personal cleaning and hygiene.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q05",
+      "targetId": "es-419-travel-sunglasses",
+      "expectedUsefulIds": [
+        "es-419-travel-hat",
+        "es-419-travel-sunscreen",
+        "es-419-travel-swimsuit",
+        "es-419-travel-beach"
+      ],
+      "reason": "Sun-protection and beach-use items.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q06",
+      "targetId": "es-419-travel-cargo-truck",
+      "expectedUsefulIds": [
+        "es-419-travel-car",
+        "es-419-travel-bus",
+        "es-419-travel-police-car",
+        "es-419-travel-motorcycle"
+      ],
+      "reason": "Ground vehicles.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q07",
+      "targetId": "es-419-travel-tent",
+      "expectedUsefulIds": [
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-flashlight",
+        "es-419-travel-compass",
+        "es-419-travel-binoculars"
+      ],
+      "reason": "Camping and outdoor equipment.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q08",
+      "targetId": "es-419-travel-bench",
+      "expectedUsefulIds": [
+        "es-419-travel-chair",
+        "es-419-travel-park",
+        "es-419-travel-table"
+      ],
+      "reason": "Seating sense of banca, with scene collisions tracked separately.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q09",
+      "targetId": "es-419-travel-lime",
+      "expectedUsefulIds": [
+        "es-419-travel-orange",
+        "es-419-travel-pineapple",
+        "es-419-travel-strawberry",
+        "es-419-travel-avocado"
+      ],
+      "reason": "Fruit category, particularly citrus; no absent lemon item is invented.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q10",
+      "targetId": "es-419-travel-chicken",
+      "expectedUsefulIds": [
+        "es-419-travel-cooked-fish",
+        "es-419-travel-egg",
+        "es-419-travel-rice",
+        "es-419-travel-salad"
+      ],
+      "reason": "Food sense of pollo, retaining prepared-meal associations.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q11",
+      "targetId": "es-419-travel-power-outlet",
+      "expectedUsefulIds": [
+        "es-419-travel-charger",
+        "es-419-travel-phone",
+        "es-419-travel-hair-dryer"
+      ],
+      "reason": "Electrical supply and devices rather than unrelated polysemous senses.",
+      "evaluation": "unfiltered-semantic"
+    },
+    {
+      "id": "Q12",
+      "targetId": "es-419-basic-next-to",
+      "expectedUsefulIds": [
+        "es-419-basic-inside",
+        "es-419-basic-on-top",
+        "es-419-basic-under"
+      ],
+      "reason": "All four ordinary spatial-relation picture phrases.",
+      "evaluation": "unfiltered-semantic"
+    }
+  ],
+  "pictureInvariants": [
+    {
+      "id": "V01",
+      "itemIds": [
+        "es-419-travel-seat-belt",
+        "es-419-travel-belt"
+      ],
+      "expectedPictureExcluded": true,
+      "reason": "Both are belts; semantic relatedness must not override the accepted picture exclusion."
+    },
+    {
+      "id": "V02",
+      "itemIds": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-street"
+      ],
+      "expectedPictureExcluded": true,
+      "reason": "Crossing/street scene overlap remains excluded."
+    },
+    {
+      "id": "V03",
+      "itemIds": [
+        "es-419-travel-car",
+        "es-419-travel-taxi"
+      ],
+      "expectedPictureExcluded": true,
+      "reason": "Taxi is a semantic vehicle neighbor but not an unambiguous competing generic car picture."
+    },
+    {
+      "id": "V04",
+      "itemIds": [
+        "es-419-travel-power-outlet",
+        "es-419-travel-charger"
+      ],
+      "expectedPictureExcluded": true,
+      "reason": "The charger shows a plug that can also answer enchufe."
+    },
+    {
+      "id": "V05",
+      "itemIds": [
+        "es-419-travel-bench",
+        "es-419-travel-park"
+      ],
+      "expectedPictureExcluded": true,
+      "reason": "The approved park scene includes a bench."
+    },
+    {
+      "id": "V06",
+      "itemIds": [
+        "es-419-travel-chicken",
+        "es-419-travel-cooked-fish"
+      ],
+      "expectedPictureExcluded": false,
+      "reason": "Two food pictures are semantically related and have no declared pair exclusion; do not equate all semantic closeness with ambiguity."
+    }
+  ],
+  "phoneticProbes": [
+    {
+      "id": "P01",
+      "category": "unicode",
+      "left": "café",
+      "right": "café",
+      "expectation": "normalization-equal",
+      "assumption": "NFC normalization",
+      "reason": "Canonically equivalent accented forms must not become distinct readings."
+    },
+    {
+      "id": "P02",
+      "category": "unicode",
+      "left": "baño",
+      "right": "baño",
+      "expectation": "normalization-equal",
+      "assumption": "NFC normalization",
+      "reason": "Canonically equivalent enye must retain the nasal-palatal contrast while normalizing equally."
+    },
+    {
+      "id": "P03",
+      "category": "silent-h",
+      "left": "hola",
+      "right": "ola",
+      "expectation": "same-pronunciation",
+      "assumption": "Canonical ordinary Spanish forms",
+      "reason": "Silent h should not invent a sound contrast; controlled words outside the ordinary bank."
+    },
+    {
+      "id": "P04",
+      "category": "b-v",
+      "left": "vaca",
+      "right": "baca",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical b/v merger",
+      "reason": "Letter differences alone must not create distinct Spanish phoneme keys."
+    },
+    {
+      "id": "P05",
+      "category": "b-v",
+      "left": "tubo",
+      "right": "tuvo",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical b/v merger",
+      "reason": "A medial b/v spelling difference should not create a false distractor contrast."
+    },
+    {
+      "id": "P06",
+      "category": "seseo",
+      "left": "casa",
+      "right": "caza",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected Latin American seseo policy",
+      "reason": "The z/s spelling distinction is not an es-419 phoneme distinction."
+    },
+    {
+      "id": "P07",
+      "category": "seseo",
+      "left": "cocer",
+      "right": "coser",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected Latin American seseo policy",
+      "reason": "Soft c before e and s should share the selected pronunciation."
+    },
+    {
+      "id": "P08",
+      "category": "yeismo",
+      "left": "halla",
+      "right": "haya",
+      "expectation": "same-pronunciation",
+      "assumption": "Canonical es-419 yeísmo; not a claim that all Spanish dialects merge ll/y",
+      "reason": "Under the declared merger, these controlled forms should be excluded as same-reading candidates."
+    },
+    {
+      "id": "P09",
+      "category": "soft-g-j",
+      "left": "gira",
+      "right": "jira",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical soft-g/j pronunciation",
+      "reason": "Contextual grapheme rules are required rather than letter edit distance."
+    },
+    {
+      "id": "P10",
+      "category": "stress",
+      "left": "papa",
+      "right": "papá",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "Changing the stressed syllable must not be discarded as mere accent spelling."
+    },
+    {
+      "id": "P11",
+      "category": "stress",
+      "left": "canto",
+      "right": "cantó",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "The phoneme/stress key must distinguish final stress."
+    },
+    {
+      "id": "P12",
+      "category": "stress",
+      "left": "termino",
+      "right": "término",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "Identical base letters with different stress should not be treated as exact homophones."
+    },
+    {
+      "id": "P13",
+      "category": "tap-trill",
+      "left": "caro",
+      "right": "carro",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Tap and trill remain distinct phonemes",
+      "reason": "The existing carro target makes a tap/trill probe relevant; caro is controlled vocabulary only."
+    },
+    {
+      "id": "P14",
+      "category": "palatal-nasal",
+      "left": "ano",
+      "right": "año",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Enye is retained as a distinct segment",
+      "reason": "Do not remove the tilde from ñ during pronunciation normalization."
+    },
+    {
+      "id": "P15",
+      "category": "hiatus",
+      "left": "río",
+      "right": "frío",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Canonical stressed-i readings; compare the added initial consonant separately",
+      "reason": "These actual-bank words are distinct; inspection must also preserve stressed i and the i/o vowel sequence.",
+      "inspection": [
+        "Inspect both transcriptions for primary stress on i and separately represented i/o vowel qualities; this is not a listener-validated syllable-timing claim."
+      ]
+    },
+    {
+      "id": "P16",
+      "category": "digraphs",
+      "left": "casa",
+      "right": "queso",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Contextual qu rule with distinct vowel sequences",
+      "reason": "Qu must not be tokenized as independent q/u sounds; the words remain distinct.",
+      "inspection": [
+        "Inspect queso for the intended k onset without a pronounced u in que."
+      ]
+    },
+    {
+      "id": "P17",
+      "category": "phrase-boundaries",
+      "left": "dentro de",
+      "right": "dentrode",
+      "expectation": "retain-word-boundaries",
+      "assumption": "Whitespace-delimited lexical boundaries are retained in the prepared representation",
+      "reason": "Do not let phone concatenation silently erase the two-word phrase boundary.",
+      "inspection": [
+        "Left input has two lexical words; right joined string is only a controlled tokenization probe."
+      ]
+    },
+    {
+      "id": "P18",
+      "category": "phrase-boundaries",
+      "left": "tarjeta de crédito",
+      "right": "tarjetadecrédito",
+      "expectation": "retain-word-boundaries",
+      "assumption": "Whitespace-delimited lexical boundaries are retained in the prepared representation",
+      "reason": "The ordinary three-word item needs auditable word segmentation.",
+      "inspection": [
+        "Left input has three lexical words; right joined string is not an admitted vocabulary item."
+      ]
+    },
+    {
+      "id": "P19",
+      "category": "phrase-boundaries",
+      "left": "estación de tren",
+      "right": "estación de policía",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Full phrase phones and lexical boundaries are retained",
+      "reason": "A shared station prefix must not collapse distinct transport/police meanings into one sound key.",
+      "inspection": [
+        "Both phrases have three lexical words; retain the complete final noun rather than comparing only estación."
+      ]
+    },
+    {
+      "id": "P20",
+      "category": "regional-realization",
+      "left": "llave",
+      "right": "yave",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected canonical yeísmo only; yave is a controlled spelling probe",
+      "reason": "This tests the canonical merger, not a universal prediction of Buenos Aires or Caribbean acoustics.",
+      "inspection": [
+        "Listen to actual llave recordings in all four regions; a canonical transcription does not model voice-specific ll/y realization."
+      ]
+    }
+  ],
+  "listening": {
+    "status": "pending-human-listening",
+    "targets": [
+      {
+        "itemId": "es-419-travel-coffee",
+        "text": "café",
+        "label": "Coffee",
+        "reason": "Written final stress in a short common noun"
+      },
+      {
+        "itemId": "es-419-travel-camera",
+        "text": "cámara",
+        "label": "Camera",
+        "reason": "Written antepenultimate stress"
+      },
+      {
+        "itemId": "es-419-travel-river",
+        "text": "río",
+        "label": "River",
+        "reason": "Stressed-i vowel sequence and possible hiatus"
+      },
+      {
+        "itemId": "es-419-travel-key",
+        "text": "llave",
+        "label": "Key",
+        "reason": "Ll realization across the four selected regions"
+      },
+      {
+        "itemId": "es-419-travel-lime",
+        "text": "limón",
+        "label": "Lime",
+        "reason": "Written stress and intended Lime meaning"
+      },
+      {
+        "itemId": "es-419-travel-credit-card",
+        "text": "tarjeta de crédito",
+        "label": "Credit card",
+        "reason": "Three-word phrase with written stress"
+      },
+      {
+        "itemId": "es-419-travel-bus-stop",
+        "text": "parada de autobús",
+        "label": "Bus stop",
+        "reason": "Three-word transport phrase"
+      },
+      {
+        "itemId": "es-419-travel-power-outlet",
+        "text": "enchufe",
+        "label": "Power outlet",
+        "reason": "Electrical intended sense"
+      }
+    ],
+    "design": {
+      "methods": {
+        "semantic": [
+          "fasttext-token-mean",
+          "multilingual-e5-base-intended-meaning"
+        ],
+        "pronunciation": [
+          "normalized-letter-edit",
+          "espeak-es419-phoneme-edit-with-primary-stress-and-word-boundaries"
+        ]
+      },
+      "regions": [
+        {
+          "id": "mexico-city",
+          "voice": "juan"
+        },
+        {
+          "id": "bogota",
+          "voice": "carito"
+        },
+        {
+          "id": "buenos-aires",
+          "voice": "santiago"
+        },
+        {
+          "id": "puerto-rico",
+          "voice": "veronica"
+        }
+      ],
+      "targetSelection": "Eight primary targets fixed before rankings; four separately declared optional inspection targets are outside primary result counts. No replacements chosen after seeing model output.",
+      "maximumTrialsPerComparison": 32,
+      "blinding": "Hide method names, numeric scores, meanings and spelling before initial response. Balance A/B assignment across the four regional passes for each target using a recorded deterministic order; candidate order must not disclose rank.",
+      "promptPronunciation": "Which group sounds more similar to the target while remaining distinguishable?",
+      "promptSemantic": "Which group contains words closer in meaning while still giving unambiguous alternative pictures?",
+      "responses": [
+        "A",
+        "B",
+        "tie",
+        "neither",
+        "uncertain"
+      ],
+      "missing": "Null means pending. Omit identical candidate sets with explicit unchanged counts; preserve insufficient-candidate and unavailable-audio reasons without backfilling different targets.",
+      "scope": "Use approved ordinary picture candidates only, enforcing language, selected pack, duplicate-image and pairwise picture exclusions. Nine direct foundation contexts remain out of this pool.",
+      "analysis": "Report semantic and pronunciation judgments separately, split by region and reveal status. Repeated targets/voices from one owner are dependent observations; no significance or learning-benefit claim."
+    },
+    "optionalInspectionTargets": [
+      {
+        "itemId": "es-419-travel-car",
+        "text": "carro",
+        "label": "Car",
+        "reason": "Trill and short word"
+      },
+      {
+        "itemId": "es-419-travel-toothbrush",
+        "text": "cepillo de dientes",
+        "label": "Toothbrush",
+        "reason": "Multiword hygiene phrase"
+      },
+      {
+        "itemId": "es-419-basic-inside",
+        "text": "dentro de",
+        "label": "Inside",
+        "reason": "Short spatial phrase"
+      },
+      {
+        "itemId": "es-419-travel-seat-belt",
+        "text": "cinturón de seguridad",
+        "label": "Seat belt",
+        "reason": "Long compound phrase and picture-exclusion boundary"
+      }
+    ]
+  }
+}

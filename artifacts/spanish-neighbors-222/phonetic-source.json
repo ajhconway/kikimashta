@@ -1,0 +1,2882 @@
+{
+  "schemaVersion": 1,
+  "language": "es-419",
+  "tool": {
+    "id": "espeak-ng",
+    "version": "1.52.0",
+    "sourceCommit": "4870adfa25b1a32b4361592f1be8a40337c58d6c",
+    "source": "https://github.com/espeak-ng/espeak-ng/tree/4870adfa25b1a32b4361592f1be8a40337c58d6c",
+    "license": "GPL-3.0-or-later",
+    "flags": [
+      "-q",
+      "--ipa=1",
+      "-v",
+      "es-419"
+    ],
+    "build": {
+      "USE_LIBPCAUDIO": false,
+      "USE_LIBSONIC": false,
+      "USE_MBROLA": false,
+      "USE_SPEECHPLAYER": false,
+      "USE_KLATT": false
+    },
+    "sourceHashes": {
+      "binary": "b3720a52e11c15953c40adef914830c513c7021f6550001fe7d45838ea43a967",
+      "data/phondata": "a0b643b155cb6b12628d9e7865b57d9fca0d35844614f2594a5e009c80c80bb4",
+      "data/phonindex": "384e5fa6f714ba5356c58008249b78699c31c1ad044b243068d263fb806b7d73",
+      "data/phontab": "1b40690667e1e9aa1ba5e5234773c799e7e72ea751426e5150423d53c3f24fa2",
+      "data/intonations": "031a105bf6bb2ebcd73a2c579ccfb42469b27266db0078af65ae298fd3588b21",
+      "data/es_dict": "e7c6347e407d5c14f283eeada18b86c6d560b03b62f53659473109bbff096757",
+      "data/lang/roa/es-419": "ff0f84457ac40e3bcf61d6de58028312be74e0e6cbc3b742f31b3ce729c2aa0c",
+      "data/lang/roa/es": "966aa015ea5646d79f0ca4807cf5da7339aabd3782b55cfa5eb0d8c3fc8fc588"
+    }
+  },
+  "recipe": "NFC/casefold; eSpeak explicit phone boundaries; preserve primary stress as a token and lexical word boundary as |; ignore secondary stress; no dictionary overrides",
+  "repeatIdentical": true,
+  "entries": {
+    "abierto": {
+      "text": "abierto",
+      "normalized": "abierto",
+      "ipa": "a_β_j_ˈe_ɾ_t_o",
+      "units": [
+        "a",
+        "β",
+        "j",
+        "ˈ",
+        "e",
+        "ɾ",
+        "t",
+        "o"
+      ]
+    },
+    "aeropuerto": {
+      "text": "aeropuerto",
+      "normalized": "aeropuerto",
+      "ipa": "ˌa_e_ɾ_o_p_w_ˈe_ɾ_t_o",
+      "units": [
+        "a",
+        "e",
+        "ɾ",
+        "o",
+        "p",
+        "w",
+        "ˈ",
+        "e",
+        "ɾ",
+        "t",
+        "o"
+      ]
+    },
+    "agua": {
+      "text": "agua",
+      "normalized": "agua",
+      "ipa": "ˈa_ɣ_w_a",
+      "units": [
+        "ˈ",
+        "a",
+        "ɣ",
+        "w",
+        "a"
+      ]
+    },
+    "aguacate": {
+      "text": "aguacate",
+      "normalized": "aguacate",
+      "ipa": "ˌa_ɣ_w_a_k_ˈa_t_e",
+      "units": [
+        "a",
+        "ɣ",
+        "w",
+        "a",
+        "k",
+        "ˈ",
+        "a",
+        "t",
+        "e"
+      ]
+    },
+    "al lado de": {
+      "text": "al lado de",
+      "normalized": "al lado de",
+      "ipa": "a_l l_ˈa_ð_o ð_ˈe",
+      "units": [
+        "a",
+        "l",
+        "|",
+        "l",
+        "ˈ",
+        "a",
+        "ð",
+        "o",
+        "|",
+        "ð",
+        "ˈ",
+        "e"
+      ]
+    },
+    "almohada": {
+      "text": "almohada",
+      "normalized": "almohada",
+      "ipa": "ˌa_l_m_o_ˈa_ð_a",
+      "units": [
+        "a",
+        "l",
+        "m",
+        "o",
+        "ˈ",
+        "a",
+        "ð",
+        "a"
+      ]
+    },
+    "ambulancia": {
+      "text": "ambulancia",
+      "normalized": "ambulancia",
+      "ipa": "ˌa_m_b_u_l_ˈa_n_s_j_a",
+      "units": [
+        "a",
+        "m",
+        "b",
+        "u",
+        "l",
+        "ˈ",
+        "a",
+        "n",
+        "s",
+        "j",
+        "a"
+      ]
+    },
+    "ano": {
+      "text": "ano",
+      "normalized": "ano",
+      "ipa": "ˈa_n_o",
+      "units": [
+        "ˈ",
+        "a",
+        "n",
+        "o"
+      ]
+    },
+    "arroz": {
+      "text": "arroz",
+      "normalized": "arroz",
+      "ipa": "a_r_ˈo_s",
+      "units": [
+        "a",
+        "r",
+        "ˈ",
+        "o",
+        "s"
+      ]
+    },
+    "ascensor": {
+      "text": "ascensor",
+      "normalized": "ascensor",
+      "ipa": "ˌa_s_e_n_s_ˈo_ɾ",
+      "units": [
+        "a",
+        "s",
+        "e",
+        "n",
+        "s",
+        "ˈ",
+        "o",
+        "ɾ"
+      ]
+    },
+    "autobús": {
+      "text": "autobús",
+      "normalized": "autobús",
+      "ipa": "ˌaʊ_t_o_β_ˈu_s",
+      "units": [
+        "aʊ",
+        "t",
+        "o",
+        "β",
+        "ˈ",
+        "u",
+        "s"
+      ]
+    },
+    "avión": {
+      "text": "avión",
+      "normalized": "avión",
+      "ipa": "a_β_j_ˈo_n",
+      "units": [
+        "a",
+        "β",
+        "j",
+        "ˈ",
+        "o",
+        "n"
+      ]
+    },
+    "azúcar": {
+      "text": "azúcar",
+      "normalized": "azúcar",
+      "ipa": "a_s_ˈu_k_a_ɾ",
+      "units": [
+        "a",
+        "s",
+        "ˈ",
+        "u",
+        "k",
+        "a",
+        "ɾ"
+      ]
+    },
+    "año": {
+      "text": "año",
+      "normalized": "año",
+      "ipa": "ˈa_ɲ_o",
+      "units": [
+        "ˈ",
+        "a",
+        "ɲ",
+        "o"
+      ]
+    },
+    "baca": {
+      "text": "baca",
+      "normalized": "baca",
+      "ipa": "b_ˈa_k_a",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "k",
+        "a"
+      ]
+    },
+    "banca": {
+      "text": "banca",
+      "normalized": "banca",
+      "ipa": "b_ˈa_n_k_a",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "n",
+        "k",
+        "a"
+      ]
+    },
+    "banqueta": {
+      "text": "banqueta",
+      "normalized": "banqueta",
+      "ipa": "b_a_n_k_ˈe_t_a",
+      "units": [
+        "b",
+        "a",
+        "n",
+        "k",
+        "ˈ",
+        "e",
+        "t",
+        "a"
+      ]
+    },
+    "baño": {
+      "text": "baño",
+      "normalized": "baño",
+      "ipa": "b_ˈa_ɲ_o",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "ɲ",
+        "o"
+      ]
+    },
+    "barco": {
+      "text": "barco",
+      "normalized": "barco",
+      "ipa": "b_ˈa_ɾ_k_o",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "ɾ",
+        "k",
+        "o"
+      ]
+    },
+    "baño": {
+      "text": "baño",
+      "normalized": "baño",
+      "ipa": "b_ˈa_ɲ_o",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "ɲ",
+        "o"
+      ]
+    },
+    "beber": {
+      "text": "beber",
+      "normalized": "beber",
+      "ipa": "b_e_β_ˈe_ɾ",
+      "units": [
+        "b",
+        "e",
+        "β",
+        "ˈ",
+        "e",
+        "ɾ"
+      ]
+    },
+    "biblioteca": {
+      "text": "biblioteca",
+      "normalized": "biblioteca",
+      "ipa": "b_ˌi_β_l_i__o_t_ˈe_k_a",
+      "units": [
+        "b",
+        "i",
+        "β",
+        "l",
+        "i",
+        "o",
+        "t",
+        "ˈ",
+        "e",
+        "k",
+        "a"
+      ]
+    },
+    "bicicleta": {
+      "text": "bicicleta",
+      "normalized": "bicicleta",
+      "ipa": "b_ˌi_s_i_k_l_ˈe_t_a",
+      "units": [
+        "b",
+        "i",
+        "s",
+        "i",
+        "k",
+        "l",
+        "ˈ",
+        "e",
+        "t",
+        "a"
+      ]
+    },
+    "binoculares": {
+      "text": "binoculares",
+      "normalized": "binoculares",
+      "ipa": "b_ˌi_n_o_k_u_l_ˈa_ɾ_e_s",
+      "units": [
+        "b",
+        "i",
+        "n",
+        "o",
+        "k",
+        "u",
+        "l",
+        "ˈ",
+        "a",
+        "ɾ",
+        "e",
+        "s"
+      ]
+    },
+    "boleto": {
+      "text": "boleto",
+      "normalized": "boleto",
+      "ipa": "b_o_l_ˈe_t_o",
+      "units": [
+        "b",
+        "o",
+        "l",
+        "ˈ",
+        "e",
+        "t",
+        "o"
+      ]
+    },
+    "bosque": {
+      "text": "bosque",
+      "normalized": "bosque",
+      "ipa": "b_ˈo_s_k_e",
+      "units": [
+        "b",
+        "ˈ",
+        "o",
+        "s",
+        "k",
+        "e"
+      ]
+    },
+    "botella": {
+      "text": "botella",
+      "normalized": "botella",
+      "ipa": "b_o_t_ˈe_j_j_a",
+      "units": [
+        "b",
+        "o",
+        "t",
+        "ˈ",
+        "e",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "brújula": {
+      "text": "brújula",
+      "normalized": "brújula",
+      "ipa": "b_ɾ_ˈu_x_u_l_a",
+      "units": [
+        "b",
+        "ɾ",
+        "ˈ",
+        "u",
+        "x",
+        "u",
+        "l",
+        "a"
+      ]
+    },
+    "café": {
+      "text": "café",
+      "normalized": "café",
+      "ipa": "k_a_f_ˈe",
+      "units": [
+        "k",
+        "a",
+        "f",
+        "ˈ",
+        "e"
+      ]
+    },
+    "café": {
+      "text": "café",
+      "normalized": "café",
+      "ipa": "k_a_f_ˈe",
+      "units": [
+        "k",
+        "a",
+        "f",
+        "ˈ",
+        "e"
+      ]
+    },
+    "cajero automático": {
+      "text": "cajero automático",
+      "normalized": "cajero automático",
+      "ipa": "k_a_x_ˈe_ɾ_o ˌaʊ_t_o_m_ˈa_t_i_k_o",
+      "units": [
+        "k",
+        "a",
+        "x",
+        "ˈ",
+        "e",
+        "ɾ",
+        "o",
+        "|",
+        "aʊ",
+        "t",
+        "o",
+        "m",
+        "ˈ",
+        "a",
+        "t",
+        "i",
+        "k",
+        "o"
+      ]
+    },
+    "calcetín": {
+      "text": "calcetín",
+      "normalized": "calcetín",
+      "ipa": "k_ˌa_l_s_e_t_ˈi_n",
+      "units": [
+        "k",
+        "a",
+        "l",
+        "s",
+        "e",
+        "t",
+        "ˈ",
+        "i",
+        "n"
+      ]
+    },
+    "caliente": {
+      "text": "caliente",
+      "normalized": "caliente",
+      "ipa": "k_a_l_j_ˈɛ_n_t_e",
+      "units": [
+        "k",
+        "a",
+        "l",
+        "j",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "calle": {
+      "text": "calle",
+      "normalized": "calle",
+      "ipa": "k_ˈa_j_j_e",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "j",
+        "j",
+        "e"
+      ]
+    },
+    "cama": {
+      "text": "cama",
+      "normalized": "cama",
+      "ipa": "k_ˈa_m_a",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "m",
+        "a"
+      ]
+    },
+    "camisa": {
+      "text": "camisa",
+      "normalized": "camisa",
+      "ipa": "k_a_m_ˈi_s_a",
+      "units": [
+        "k",
+        "a",
+        "m",
+        "ˈ",
+        "i",
+        "s",
+        "a"
+      ]
+    },
+    "camión de carga": {
+      "text": "camión de carga",
+      "normalized": "camión de carga",
+      "ipa": "k_a_m_j_ˈo_n d_e k_ˈa_ɾ_ɣ_a",
+      "units": [
+        "k",
+        "a",
+        "m",
+        "j",
+        "ˈ",
+        "o",
+        "n",
+        "|",
+        "d",
+        "e",
+        "|",
+        "k",
+        "ˈ",
+        "a",
+        "ɾ",
+        "ɣ",
+        "a"
+      ]
+    },
+    "canto": {
+      "text": "canto",
+      "normalized": "canto",
+      "ipa": "k_ˈa_n_t_o",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "n",
+        "t",
+        "o"
+      ]
+    },
+    "cantó": {
+      "text": "cantó",
+      "normalized": "cantó",
+      "ipa": "k_a_n_t_ˈo",
+      "units": [
+        "k",
+        "a",
+        "n",
+        "t",
+        "ˈ",
+        "o"
+      ]
+    },
+    "cargador": {
+      "text": "cargador",
+      "normalized": "cargador",
+      "ipa": "k_ˌa_ɾ_ɣ_a_ð_ˈo_ɾ",
+      "units": [
+        "k",
+        "a",
+        "ɾ",
+        "ɣ",
+        "a",
+        "ð",
+        "ˈ",
+        "o",
+        "ɾ"
+      ]
+    },
+    "caro": {
+      "text": "caro",
+      "normalized": "caro",
+      "ipa": "k_ˈa_ɾ_o",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "ɾ",
+        "o"
+      ]
+    },
+    "carro": {
+      "text": "carro",
+      "normalized": "carro",
+      "ipa": "k_ˈa_r_o",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "r",
+        "o"
+      ]
+    },
+    "cartera": {
+      "text": "cartera",
+      "normalized": "cartera",
+      "ipa": "k_a_ɾ_t_ˈe_ɾ_a",
+      "units": [
+        "k",
+        "a",
+        "ɾ",
+        "t",
+        "ˈ",
+        "e",
+        "ɾ",
+        "a"
+      ]
+    },
+    "casa": {
+      "text": "casa",
+      "normalized": "casa",
+      "ipa": "k_ˈa_s_a",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "s",
+        "a"
+      ]
+    },
+    "cascada": {
+      "text": "cascada",
+      "normalized": "cascada",
+      "ipa": "k_a_s_k_ˈa_ð_a",
+      "units": [
+        "k",
+        "a",
+        "s",
+        "k",
+        "ˈ",
+        "a",
+        "ð",
+        "a"
+      ]
+    },
+    "casco": {
+      "text": "casco",
+      "normalized": "casco",
+      "ipa": "k_ˈa_s_k_o",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "s",
+        "k",
+        "o"
+      ]
+    },
+    "caza": {
+      "text": "caza",
+      "normalized": "caza",
+      "ipa": "k_ˈa_s_a",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "s",
+        "a"
+      ]
+    },
+    "cepillo de dientes": {
+      "text": "cepillo de dientes",
+      "normalized": "cepillo de dientes",
+      "ipa": "s_e_p_ˈi_j_j_o ð_e ð_j_ˈɛ_n_t_e_s",
+      "units": [
+        "s",
+        "e",
+        "p",
+        "ˈ",
+        "i",
+        "j",
+        "j",
+        "o",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "ð",
+        "j",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e",
+        "s"
+      ]
+    },
+    "cerrado": {
+      "text": "cerrado",
+      "normalized": "cerrado",
+      "ipa": "s_e_r_ˈa_ð_o",
+      "units": [
+        "s",
+        "e",
+        "r",
+        "ˈ",
+        "a",
+        "ð",
+        "o"
+      ]
+    },
+    "chamarra": {
+      "text": "chamarra",
+      "normalized": "chamarra",
+      "ipa": "tʃ_a_m_ˈa_r_a",
+      "units": [
+        "tʃ",
+        "a",
+        "m",
+        "ˈ",
+        "a",
+        "r",
+        "a"
+      ]
+    },
+    "champú": {
+      "text": "champú",
+      "normalized": "champú",
+      "ipa": "tʃ_a_m_p_ˈu",
+      "units": [
+        "tʃ",
+        "a",
+        "m",
+        "p",
+        "ˈ",
+        "u"
+      ]
+    },
+    "cine": {
+      "text": "cine",
+      "normalized": "cine",
+      "ipa": "s_ˈi_n_e",
+      "units": [
+        "s",
+        "ˈ",
+        "i",
+        "n",
+        "e"
+      ]
+    },
+    "cinturón": {
+      "text": "cinturón",
+      "normalized": "cinturón",
+      "ipa": "s_ˌi_n_t_u_ɾ_ˈo_n",
+      "units": [
+        "s",
+        "i",
+        "n",
+        "t",
+        "u",
+        "ɾ",
+        "ˈ",
+        "o",
+        "n"
+      ]
+    },
+    "cinturón de seguridad": {
+      "text": "cinturón de seguridad",
+      "normalized": "cinturón de seguridad",
+      "ipa": "s_ˌi_n_t_u_ɾ_ˈo_n d_e s_ˌe_ɣ_u_ɾ_i_ð_ˈa_d",
+      "units": [
+        "s",
+        "i",
+        "n",
+        "t",
+        "u",
+        "ɾ",
+        "ˈ",
+        "o",
+        "n",
+        "|",
+        "d",
+        "e",
+        "|",
+        "s",
+        "e",
+        "ɣ",
+        "u",
+        "ɾ",
+        "i",
+        "ð",
+        "ˈ",
+        "a",
+        "d"
+      ]
+    },
+    "cobija": {
+      "text": "cobija",
+      "normalized": "cobija",
+      "ipa": "k_o_β_ˈi_x_a",
+      "units": [
+        "k",
+        "o",
+        "β",
+        "ˈ",
+        "i",
+        "x",
+        "a"
+      ]
+    },
+    "cocer": {
+      "text": "cocer",
+      "normalized": "cocer",
+      "ipa": "k_o_s_ˈe_ɾ",
+      "units": [
+        "k",
+        "o",
+        "s",
+        "ˈ",
+        "e",
+        "ɾ"
+      ]
+    },
+    "comer": {
+      "text": "comer",
+      "normalized": "comer",
+      "ipa": "k_o_m_ˈe_ɾ",
+      "units": [
+        "k",
+        "o",
+        "m",
+        "ˈ",
+        "e",
+        "ɾ"
+      ]
+    },
+    "coser": {
+      "text": "coser",
+      "normalized": "coser",
+      "ipa": "k_o_s_ˈe_ɾ",
+      "units": [
+        "k",
+        "o",
+        "s",
+        "ˈ",
+        "e",
+        "ɾ"
+      ]
+    },
+    "cruce peatonal": {
+      "text": "cruce peatonal",
+      "normalized": "cruce peatonal",
+      "ipa": "k_ɾ_ˈu_s_e p_ˌe_a_t_o_n_ˈa_l",
+      "units": [
+        "k",
+        "ɾ",
+        "ˈ",
+        "u",
+        "s",
+        "e",
+        "|",
+        "p",
+        "e",
+        "a",
+        "t",
+        "o",
+        "n",
+        "ˈ",
+        "a",
+        "l"
+      ]
+    },
+    "cuchara": {
+      "text": "cuchara",
+      "normalized": "cuchara",
+      "ipa": "k_u_tʃ_ˈa_ɾ_a",
+      "units": [
+        "k",
+        "u",
+        "tʃ",
+        "ˈ",
+        "a",
+        "ɾ",
+        "a"
+      ]
+    },
+    "curita": {
+      "text": "curita",
+      "normalized": "curita",
+      "ipa": "k_u_ɾ_ˈi_t_a",
+      "units": [
+        "k",
+        "u",
+        "ɾ",
+        "ˈ",
+        "i",
+        "t",
+        "a"
+      ]
+    },
+    "cámara": {
+      "text": "cámara",
+      "normalized": "cámara",
+      "ipa": "k_ˈa_m_a_ɾ_a",
+      "units": [
+        "k",
+        "ˈ",
+        "a",
+        "m",
+        "a",
+        "ɾ",
+        "a"
+      ]
+    },
+    "debajo de": {
+      "text": "debajo de",
+      "normalized": "debajo de",
+      "ipa": "d_e_β_ˈa_x_o ð_ˈe",
+      "units": [
+        "d",
+        "e",
+        "β",
+        "ˈ",
+        "a",
+        "x",
+        "o",
+        "|",
+        "ð",
+        "ˈ",
+        "e"
+      ]
+    },
+    "dentro de": {
+      "text": "dentro de",
+      "normalized": "dentro de",
+      "ipa": "d_ˈɛ_n_t_ɾ_o ð_ˈe",
+      "units": [
+        "d",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "ɾ",
+        "o",
+        "|",
+        "ð",
+        "ˈ",
+        "e"
+      ]
+    },
+    "dentrode": {
+      "text": "dentrode",
+      "normalized": "dentrode",
+      "ipa": "d_e_n_t_ɾ_ˈo_ð_e",
+      "units": [
+        "d",
+        "e",
+        "n",
+        "t",
+        "ɾ",
+        "ˈ",
+        "o",
+        "ð",
+        "e"
+      ]
+    },
+    "dinero": {
+      "text": "dinero",
+      "normalized": "dinero",
+      "ipa": "d_i_n_ˈe_ɾ_o",
+      "units": [
+        "d",
+        "i",
+        "n",
+        "ˈ",
+        "e",
+        "ɾ",
+        "o"
+      ]
+    },
+    "ducha": {
+      "text": "ducha",
+      "normalized": "ducha",
+      "ipa": "d_ˈu_tʃ_a",
+      "units": [
+        "d",
+        "ˈ",
+        "u",
+        "tʃ",
+        "a"
+      ]
+    },
+    "enchufe": {
+      "text": "enchufe",
+      "normalized": "enchufe",
+      "ipa": "e_n_tʃ_ˈu_f_e",
+      "units": [
+        "e",
+        "n",
+        "tʃ",
+        "ˈ",
+        "u",
+        "f",
+        "e"
+      ]
+    },
+    "encima de": {
+      "text": "encima de",
+      "normalized": "encima de",
+      "ipa": "e_n_s_ˈi_m_a ð_ˈe",
+      "units": [
+        "e",
+        "n",
+        "s",
+        "ˈ",
+        "i",
+        "m",
+        "a",
+        "|",
+        "ð",
+        "ˈ",
+        "e"
+      ]
+    },
+    "ensalada": {
+      "text": "ensalada",
+      "normalized": "ensalada",
+      "ipa": "ˌe_n_s_a_l_ˈa_ð_a",
+      "units": [
+        "e",
+        "n",
+        "s",
+        "a",
+        "l",
+        "ˈ",
+        "a",
+        "ð",
+        "a"
+      ]
+    },
+    "escaleras": {
+      "text": "escaleras",
+      "normalized": "escaleras",
+      "ipa": "ˌe_s_k_a_l_ˈe_ɾ_a_s",
+      "units": [
+        "e",
+        "s",
+        "k",
+        "a",
+        "l",
+        "ˈ",
+        "e",
+        "ɾ",
+        "a",
+        "s"
+      ]
+    },
+    "espejo": {
+      "text": "espejo",
+      "normalized": "espejo",
+      "ipa": "e_s_p_ˈe_x_o",
+      "units": [
+        "e",
+        "s",
+        "p",
+        "ˈ",
+        "e",
+        "x",
+        "o"
+      ]
+    },
+    "estacionamiento": {
+      "text": "estacionamiento",
+      "normalized": "estacionamiento",
+      "ipa": "ˌe_s_t_a_s_j_ˌo_n_a_m_j_ˈɛ_n_t_o",
+      "units": [
+        "e",
+        "s",
+        "t",
+        "a",
+        "s",
+        "j",
+        "o",
+        "n",
+        "a",
+        "m",
+        "j",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "o"
+      ]
+    },
+    "estación de policía": {
+      "text": "estación de policía",
+      "normalized": "estación de policía",
+      "ipa": "ˌe_s_t_a_s_j_ˈo_n d_e p_ˌo_l_i_s_ˈi__a",
+      "units": [
+        "e",
+        "s",
+        "t",
+        "a",
+        "s",
+        "j",
+        "ˈ",
+        "o",
+        "n",
+        "|",
+        "d",
+        "e",
+        "|",
+        "p",
+        "o",
+        "l",
+        "i",
+        "s",
+        "ˈ",
+        "i",
+        "a"
+      ]
+    },
+    "estación de tren": {
+      "text": "estación de tren",
+      "normalized": "estación de tren",
+      "ipa": "ˌe_s_t_a_s_j_ˈo_n d_e t_ɾ_ˈe_n",
+      "units": [
+        "e",
+        "s",
+        "t",
+        "a",
+        "s",
+        "j",
+        "ˈ",
+        "o",
+        "n",
+        "|",
+        "d",
+        "e",
+        "|",
+        "t",
+        "ɾ",
+        "ˈ",
+        "e",
+        "n"
+      ]
+    },
+    "falda": {
+      "text": "falda",
+      "normalized": "falda",
+      "ipa": "f_ˈa_l_ð_a",
+      "units": [
+        "f",
+        "ˈ",
+        "a",
+        "l",
+        "ð",
+        "a"
+      ]
+    },
+    "farmacia": {
+      "text": "farmacia",
+      "normalized": "farmacia",
+      "ipa": "f_a_ɾ_m_ˈa_s_j_a",
+      "units": [
+        "f",
+        "a",
+        "ɾ",
+        "m",
+        "ˈ",
+        "a",
+        "s",
+        "j",
+        "a"
+      ]
+    },
+    "flor": {
+      "text": "flor",
+      "normalized": "flor",
+      "ipa": "f_l_ˈo_ɾ",
+      "units": [
+        "f",
+        "l",
+        "ˈ",
+        "o",
+        "ɾ"
+      ]
+    },
+    "fresa": {
+      "text": "fresa",
+      "normalized": "fresa",
+      "ipa": "f_ɾ_ˈe_s_a",
+      "units": [
+        "f",
+        "ɾ",
+        "ˈ",
+        "e",
+        "s",
+        "a"
+      ]
+    },
+    "frío": {
+      "text": "frío",
+      "normalized": "frío",
+      "ipa": "f_ɾ_ˈi__o",
+      "units": [
+        "f",
+        "ɾ",
+        "ˈ",
+        "i",
+        "o"
+      ]
+    },
+    "fuente": {
+      "text": "fuente",
+      "normalized": "fuente",
+      "ipa": "f_w_ˈɛ_n_t_e",
+      "units": [
+        "f",
+        "w",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "gasolinera": {
+      "text": "gasolinera",
+      "normalized": "gasolinera",
+      "ipa": "ɡ_ˌa_s_o_l_i_n_ˈe_ɾ_a",
+      "units": [
+        "ɡ",
+        "a",
+        "s",
+        "o",
+        "l",
+        "i",
+        "n",
+        "ˈ",
+        "e",
+        "ɾ",
+        "a"
+      ]
+    },
+    "gira": {
+      "text": "gira",
+      "normalized": "gira",
+      "ipa": "x_ˈi_ɾ_a",
+      "units": [
+        "x",
+        "ˈ",
+        "i",
+        "ɾ",
+        "a"
+      ]
+    },
+    "grande": {
+      "text": "grande",
+      "normalized": "grande",
+      "ipa": "ɡ_ɾ_ˈa_n_d_e",
+      "units": [
+        "ɡ",
+        "ɾ",
+        "ˈ",
+        "a",
+        "n",
+        "d",
+        "e"
+      ]
+    },
+    "guante": {
+      "text": "guante",
+      "normalized": "guante",
+      "ipa": "ɡ_w_ˈa_n_t_e",
+      "units": [
+        "ɡ",
+        "w",
+        "ˈ",
+        "a",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "habitación": {
+      "text": "habitación",
+      "normalized": "habitación",
+      "ipa": "ˌa_β_i_t_a_s_j_ˈo_n",
+      "units": [
+        "a",
+        "β",
+        "i",
+        "t",
+        "a",
+        "s",
+        "j",
+        "ˈ",
+        "o",
+        "n"
+      ]
+    },
+    "halla": {
+      "text": "halla",
+      "normalized": "halla",
+      "ipa": "ˈa_j_j_a",
+      "units": [
+        "ˈ",
+        "a",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "hambre": {
+      "text": "hambre",
+      "normalized": "hambre",
+      "ipa": "ˈa_m_b_ɾ_e",
+      "units": [
+        "ˈ",
+        "a",
+        "m",
+        "b",
+        "ɾ",
+        "e"
+      ]
+    },
+    "haya": {
+      "text": "haya",
+      "normalized": "haya",
+      "ipa": "ˈa_ʝ_a",
+      "units": [
+        "ˈ",
+        "a",
+        "ʝ",
+        "a"
+      ]
+    },
+    "helado": {
+      "text": "helado",
+      "normalized": "helado",
+      "ipa": "e_l_ˈa_ð_o",
+      "units": [
+        "e",
+        "l",
+        "ˈ",
+        "a",
+        "ð",
+        "o"
+      ]
+    },
+    "helicóptero": {
+      "text": "helicóptero",
+      "normalized": "helicóptero",
+      "ipa": "ˌe_l_i_k_ˈo_pː_t_e_ɾ_o",
+      "units": [
+        "e",
+        "l",
+        "i",
+        "k",
+        "ˈ",
+        "o",
+        "pː",
+        "t",
+        "e",
+        "ɾ",
+        "o"
+      ]
+    },
+    "hola": {
+      "text": "hola",
+      "normalized": "hola",
+      "ipa": "ˈo_l_a",
+      "units": [
+        "ˈ",
+        "o",
+        "l",
+        "a"
+      ]
+    },
+    "hospital": {
+      "text": "hospital",
+      "normalized": "hospital",
+      "ipa": "ˌo_s_p_i_t_ˈa_l",
+      "units": [
+        "o",
+        "s",
+        "p",
+        "i",
+        "t",
+        "ˈ",
+        "a",
+        "l"
+      ]
+    },
+    "hotel": {
+      "text": "hotel",
+      "normalized": "hotel",
+      "ipa": "o_t_ˈe_l",
+      "units": [
+        "o",
+        "t",
+        "ˈ",
+        "e",
+        "l"
+      ]
+    },
+    "huevo": {
+      "text": "huevo",
+      "normalized": "huevo",
+      "ipa": "w_ˈe_β_o",
+      "units": [
+        "w",
+        "ˈ",
+        "e",
+        "β",
+        "o"
+      ]
+    },
+    "iglesia": {
+      "text": "iglesia",
+      "normalized": "iglesia",
+      "ipa": "i_ɣ_l_ˈe_s_j_a",
+      "units": [
+        "i",
+        "ɣ",
+        "l",
+        "ˈ",
+        "e",
+        "s",
+        "j",
+        "a"
+      ]
+    },
+    "isla": {
+      "text": "isla",
+      "normalized": "isla",
+      "ipa": "ˈi_s_l_a",
+      "units": [
+        "ˈ",
+        "i",
+        "s",
+        "l",
+        "a"
+      ]
+    },
+    "jabón": {
+      "text": "jabón",
+      "normalized": "jabón",
+      "ipa": "x_a_β_ˈo_n",
+      "units": [
+        "x",
+        "a",
+        "β",
+        "ˈ",
+        "o",
+        "n"
+      ]
+    },
+    "jira": {
+      "text": "jira",
+      "normalized": "jira",
+      "ipa": "x_ˈi_ɾ_a",
+      "units": [
+        "x",
+        "ˈ",
+        "i",
+        "ɾ",
+        "a"
+      ]
+    },
+    "jugo": {
+      "text": "jugo",
+      "normalized": "jugo",
+      "ipa": "x_ˈu_ɣ_o",
+      "units": [
+        "x",
+        "ˈ",
+        "u",
+        "ɣ",
+        "o"
+      ]
+    },
+    "lago": {
+      "text": "lago",
+      "normalized": "lago",
+      "ipa": "l_ˈa_ɣ_o",
+      "units": [
+        "l",
+        "ˈ",
+        "a",
+        "ɣ",
+        "o"
+      ]
+    },
+    "lavandería": {
+      "text": "lavandería",
+      "normalized": "lavandería",
+      "ipa": "l_ˌa_β_a_n_d_e_ɾ_ˈi__a",
+      "units": [
+        "l",
+        "a",
+        "β",
+        "a",
+        "n",
+        "d",
+        "e",
+        "ɾ",
+        "ˈ",
+        "i",
+        "a"
+      ]
+    },
+    "leche": {
+      "text": "leche",
+      "normalized": "leche",
+      "ipa": "l_ˈe_tʃ_e",
+      "units": [
+        "l",
+        "ˈ",
+        "e",
+        "tʃ",
+        "e"
+      ]
+    },
+    "lentes de sol": {
+      "text": "lentes de sol",
+      "normalized": "lentes de sol",
+      "ipa": "l_ˈɛ_n_t_e_s ð_e s_ˈo_l",
+      "units": [
+        "l",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e",
+        "s",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "s",
+        "ˈ",
+        "o",
+        "l"
+      ]
+    },
+    "limón": {
+      "text": "limón",
+      "normalized": "limón",
+      "ipa": "l_i_m_ˈo_n",
+      "units": [
+        "l",
+        "i",
+        "m",
+        "ˈ",
+        "o",
+        "n"
+      ]
+    },
+    "linterna": {
+      "text": "linterna",
+      "normalized": "linterna",
+      "ipa": "l_i_n_t_ˈe_ɾ_n_a",
+      "units": [
+        "l",
+        "i",
+        "n",
+        "t",
+        "ˈ",
+        "e",
+        "ɾ",
+        "n",
+        "a"
+      ]
+    },
+    "llanta": {
+      "text": "llanta",
+      "normalized": "llanta",
+      "ipa": "ʝ_ˈa_n_t_a",
+      "units": [
+        "ʝ",
+        "ˈ",
+        "a",
+        "n",
+        "t",
+        "a"
+      ]
+    },
+    "llave": {
+      "text": "llave",
+      "normalized": "llave",
+      "ipa": "ʝ_ˈa_β_e",
+      "units": [
+        "ʝ",
+        "ˈ",
+        "a",
+        "β",
+        "e"
+      ]
+    },
+    "maleta": {
+      "text": "maleta",
+      "normalized": "maleta",
+      "ipa": "m_a_l_ˈe_t_a",
+      "units": [
+        "m",
+        "a",
+        "l",
+        "ˈ",
+        "e",
+        "t",
+        "a"
+      ]
+    },
+    "mantequilla": {
+      "text": "mantequilla",
+      "normalized": "mantequilla",
+      "ipa": "m_ˌa_n_t_e_k_ˈi_j_j_a",
+      "units": [
+        "m",
+        "a",
+        "n",
+        "t",
+        "e",
+        "k",
+        "ˈ",
+        "i",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "manzana": {
+      "text": "manzana",
+      "normalized": "manzana",
+      "ipa": "m_a_n_s_ˈa_n_a",
+      "units": [
+        "m",
+        "a",
+        "n",
+        "s",
+        "ˈ",
+        "a",
+        "n",
+        "a"
+      ]
+    },
+    "mapa": {
+      "text": "mapa",
+      "normalized": "mapa",
+      "ipa": "m_ˈa_p_a",
+      "units": [
+        "m",
+        "ˈ",
+        "a",
+        "p",
+        "a"
+      ]
+    },
+    "menú": {
+      "text": "menú",
+      "normalized": "menú",
+      "ipa": "m_e_n_ˈu",
+      "units": [
+        "m",
+        "e",
+        "n",
+        "ˈ",
+        "u"
+      ]
+    },
+    "mercado": {
+      "text": "mercado",
+      "normalized": "mercado",
+      "ipa": "m_e_ɾ_k_ˈa_ð_o",
+      "units": [
+        "m",
+        "e",
+        "ɾ",
+        "k",
+        "ˈ",
+        "a",
+        "ð",
+        "o"
+      ]
+    },
+    "mesa": {
+      "text": "mesa",
+      "normalized": "mesa",
+      "ipa": "m_ˈe_s_a",
+      "units": [
+        "m",
+        "ˈ",
+        "e",
+        "s",
+        "a"
+      ]
+    },
+    "metro": {
+      "text": "metro",
+      "normalized": "metro",
+      "ipa": "m_ˈe_t_ɾ_o",
+      "units": [
+        "m",
+        "ˈ",
+        "e",
+        "t",
+        "ɾ",
+        "o"
+      ]
+    },
+    "mochila": {
+      "text": "mochila",
+      "normalized": "mochila",
+      "ipa": "m_o_tʃ_ˈi_l_a",
+      "units": [
+        "m",
+        "o",
+        "tʃ",
+        "ˈ",
+        "i",
+        "l",
+        "a"
+      ]
+    },
+    "moneda": {
+      "text": "moneda",
+      "normalized": "moneda",
+      "ipa": "m_o_n_ˈe_ð_a",
+      "units": [
+        "m",
+        "o",
+        "n",
+        "ˈ",
+        "e",
+        "ð",
+        "a"
+      ]
+    },
+    "montaña": {
+      "text": "montaña",
+      "normalized": "montaña",
+      "ipa": "m_o_n_t_ˈa_ɲ_a",
+      "units": [
+        "m",
+        "o",
+        "n",
+        "t",
+        "ˈ",
+        "a",
+        "ɲ",
+        "a"
+      ]
+    },
+    "motocicleta": {
+      "text": "motocicleta",
+      "normalized": "motocicleta",
+      "ipa": "m_ˌo_t_o_s_i_k_l_ˈe_t_a",
+      "units": [
+        "m",
+        "o",
+        "t",
+        "o",
+        "s",
+        "i",
+        "k",
+        "l",
+        "ˈ",
+        "e",
+        "t",
+        "a"
+      ]
+    },
+    "museo": {
+      "text": "museo",
+      "normalized": "museo",
+      "ipa": "m_u_s_ˈe_o",
+      "units": [
+        "m",
+        "u",
+        "s",
+        "ˈ",
+        "e",
+        "o"
+      ]
+    },
+    "naranja": {
+      "text": "naranja",
+      "normalized": "naranja",
+      "ipa": "n_a_ɾ_ˈa_ŋ_x_a",
+      "units": [
+        "n",
+        "a",
+        "ɾ",
+        "ˈ",
+        "a",
+        "ŋ",
+        "x",
+        "a"
+      ]
+    },
+    "oficina de correos": {
+      "text": "oficina de correos",
+      "normalized": "oficina de correos",
+      "ipa": "ˌo_f_i_s_ˈi_n_a ð_e k_o_r_ˈe_o_s",
+      "units": [
+        "o",
+        "f",
+        "i",
+        "s",
+        "ˈ",
+        "i",
+        "n",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "k",
+        "o",
+        "r",
+        "ˈ",
+        "e",
+        "o",
+        "s"
+      ]
+    },
+    "ola": {
+      "text": "ola",
+      "normalized": "ola",
+      "ipa": "ˈo_l_a",
+      "units": [
+        "ˈ",
+        "o",
+        "l",
+        "a"
+      ]
+    },
+    "pan": {
+      "text": "pan",
+      "normalized": "pan",
+      "ipa": "p_ˈa_n",
+      "units": [
+        "p",
+        "ˈ",
+        "a",
+        "n"
+      ]
+    },
+    "panadería": {
+      "text": "panadería",
+      "normalized": "panadería",
+      "ipa": "p_ˌa_n_a_ð_e_ɾ_ˈi__a",
+      "units": [
+        "p",
+        "a",
+        "n",
+        "a",
+        "ð",
+        "e",
+        "ɾ",
+        "ˈ",
+        "i",
+        "a"
+      ]
+    },
+    "pantalones": {
+      "text": "pantalones",
+      "normalized": "pantalones",
+      "ipa": "p_ˌa_n_t_a_l_ˈo_n_e_s",
+      "units": [
+        "p",
+        "a",
+        "n",
+        "t",
+        "a",
+        "l",
+        "ˈ",
+        "o",
+        "n",
+        "e",
+        "s"
+      ]
+    },
+    "papa": {
+      "text": "papa",
+      "normalized": "papa",
+      "ipa": "p_ˈa_p_a",
+      "units": [
+        "p",
+        "ˈ",
+        "a",
+        "p",
+        "a"
+      ]
+    },
+    "papel higiénico": {
+      "text": "papel higiénico",
+      "normalized": "papel higiénico",
+      "ipa": "p_a_p_ˈe_l i_x_j_ˈe_n_i_k_o",
+      "units": [
+        "p",
+        "a",
+        "p",
+        "ˈ",
+        "e",
+        "l",
+        "|",
+        "i",
+        "x",
+        "j",
+        "ˈ",
+        "e",
+        "n",
+        "i",
+        "k",
+        "o"
+      ]
+    },
+    "papá": {
+      "text": "papá",
+      "normalized": "papá",
+      "ipa": "p_a_p_ˈa",
+      "units": [
+        "p",
+        "a",
+        "p",
+        "ˈ",
+        "a"
+      ]
+    },
+    "parada de autobús": {
+      "text": "parada de autobús",
+      "normalized": "parada de autobús",
+      "ipa": "p_a_ɾ_ˈa_ð_a ð_e ˌaʊ_t_o_β_ˈu_s",
+      "units": [
+        "p",
+        "a",
+        "ɾ",
+        "ˈ",
+        "a",
+        "ð",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "aʊ",
+        "t",
+        "o",
+        "β",
+        "ˈ",
+        "u",
+        "s"
+      ]
+    },
+    "paraguas": {
+      "text": "paraguas",
+      "normalized": "paraguas",
+      "ipa": "p_a_ɾ_ˈa_ɣ_w_a_s",
+      "units": [
+        "p",
+        "a",
+        "ɾ",
+        "ˈ",
+        "a",
+        "ɣ",
+        "w",
+        "a",
+        "s"
+      ]
+    },
+    "parque": {
+      "text": "parque",
+      "normalized": "parque",
+      "ipa": "p_ˈa_ɾ_k_e",
+      "units": [
+        "p",
+        "ˈ",
+        "a",
+        "ɾ",
+        "k",
+        "e"
+      ]
+    },
+    "pasaporte": {
+      "text": "pasaporte",
+      "normalized": "pasaporte",
+      "ipa": "p_ˌa_s_a_p_ˈo_ɾ_t_e",
+      "units": [
+        "p",
+        "a",
+        "s",
+        "a",
+        "p",
+        "ˈ",
+        "o",
+        "ɾ",
+        "t",
+        "e"
+      ]
+    },
+    "pasta de dientes": {
+      "text": "pasta de dientes",
+      "normalized": "pasta de dientes",
+      "ipa": "p_ˈa_s_t_a ð_e ð_j_ˈɛ_n_t_e_s",
+      "units": [
+        "p",
+        "ˈ",
+        "a",
+        "s",
+        "t",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "ð",
+        "j",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e",
+        "s"
+      ]
+    },
+    "pastilla": {
+      "text": "pastilla",
+      "normalized": "pastilla",
+      "ipa": "p_a_s_t_ˈi_j_j_a",
+      "units": [
+        "p",
+        "a",
+        "s",
+        "t",
+        "ˈ",
+        "i",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "patrulla": {
+      "text": "patrulla",
+      "normalized": "patrulla",
+      "ipa": "p_a_t_ɾ_ˈu_j_j_a",
+      "units": [
+        "p",
+        "a",
+        "t",
+        "ɾ",
+        "ˈ",
+        "u",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "peine": {
+      "text": "peine",
+      "normalized": "peine",
+      "ipa": "p_ˈeɪ_n_e",
+      "units": [
+        "p",
+        "ˈ",
+        "eɪ",
+        "n",
+        "e"
+      ]
+    },
+    "pequeño": {
+      "text": "pequeño",
+      "normalized": "pequeño",
+      "ipa": "p_e_k_ˈe_ɲ_o",
+      "units": [
+        "p",
+        "e",
+        "k",
+        "ˈ",
+        "e",
+        "ɲ",
+        "o"
+      ]
+    },
+    "pescado": {
+      "text": "pescado",
+      "normalized": "pescado",
+      "ipa": "p_e_s_k_ˈa_ð_o",
+      "units": [
+        "p",
+        "e",
+        "s",
+        "k",
+        "ˈ",
+        "a",
+        "ð",
+        "o"
+      ]
+    },
+    "piscina": {
+      "text": "piscina",
+      "normalized": "piscina",
+      "ipa": "p_i_s_ˈi_n_a",
+      "units": [
+        "p",
+        "i",
+        "s",
+        "ˈ",
+        "i",
+        "n",
+        "a"
+      ]
+    },
+    "piña": {
+      "text": "piña",
+      "normalized": "piña",
+      "ipa": "p_ˈi_ɲ_a",
+      "units": [
+        "p",
+        "ˈ",
+        "i",
+        "ɲ",
+        "a"
+      ]
+    },
+    "plato": {
+      "text": "plato",
+      "normalized": "plato",
+      "ipa": "p_l_ˈa_t_o",
+      "units": [
+        "p",
+        "l",
+        "ˈ",
+        "a",
+        "t",
+        "o"
+      ]
+    },
+    "playa": {
+      "text": "playa",
+      "normalized": "playa",
+      "ipa": "p_l_ˈa_ʝ_a",
+      "units": [
+        "p",
+        "l",
+        "ˈ",
+        "a",
+        "ʝ",
+        "a"
+      ]
+    },
+    "plátano": {
+      "text": "plátano",
+      "normalized": "plátano",
+      "ipa": "p_l_ˈa_t_a_n_o",
+      "units": [
+        "p",
+        "l",
+        "ˈ",
+        "a",
+        "t",
+        "a",
+        "n",
+        "o"
+      ]
+    },
+    "pollo": {
+      "text": "pollo",
+      "normalized": "pollo",
+      "ipa": "p_ˈo_j_j_o",
+      "units": [
+        "p",
+        "ˈ",
+        "o",
+        "j",
+        "j",
+        "o"
+      ]
+    },
+    "protector solar": {
+      "text": "protector solar",
+      "normalized": "protector solar",
+      "ipa": "p_ɾ_ˌo_t_e_k_t_ˈo_ɾ s_o_l_ˈa_ɾ",
+      "units": [
+        "p",
+        "ɾ",
+        "o",
+        "t",
+        "e",
+        "k",
+        "t",
+        "ˈ",
+        "o",
+        "ɾ",
+        "|",
+        "s",
+        "o",
+        "l",
+        "ˈ",
+        "a",
+        "ɾ"
+      ]
+    },
+    "puente": {
+      "text": "puente",
+      "normalized": "puente",
+      "ipa": "p_w_ˈɛ_n_t_e",
+      "units": [
+        "p",
+        "w",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "queso": {
+      "text": "queso",
+      "normalized": "queso",
+      "ipa": "k_ˈe_s_o",
+      "units": [
+        "k",
+        "ˈ",
+        "e",
+        "s",
+        "o"
+      ]
+    },
+    "recibo": {
+      "text": "recibo",
+      "normalized": "recibo",
+      "ipa": "r_e_s_ˈi_β_o",
+      "units": [
+        "r",
+        "e",
+        "s",
+        "ˈ",
+        "i",
+        "β",
+        "o"
+      ]
+    },
+    "reloj de pulsera": {
+      "text": "reloj de pulsera",
+      "normalized": "reloj de pulsera",
+      "ipa": "r_e_l_ˈo_x ð_e p_u_l_s_ˈe_ɾ_a",
+      "units": [
+        "r",
+        "e",
+        "l",
+        "ˈ",
+        "o",
+        "x",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "p",
+        "u",
+        "l",
+        "s",
+        "ˈ",
+        "e",
+        "ɾ",
+        "a"
+      ]
+    },
+    "repelente": {
+      "text": "repelente",
+      "normalized": "repelente",
+      "ipa": "r_ˌe_p_e_l_ˈɛ_n_t_e",
+      "units": [
+        "r",
+        "e",
+        "p",
+        "e",
+        "l",
+        "ˈ",
+        "ɛ",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "restaurante": {
+      "text": "restaurante",
+      "normalized": "restaurante",
+      "ipa": "r_ˌe_s_t_aʊ_ɾ_ˈa_n_t_e",
+      "units": [
+        "r",
+        "e",
+        "s",
+        "t",
+        "aʊ",
+        "ɾ",
+        "ˈ",
+        "a",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "río": {
+      "text": "río",
+      "normalized": "río",
+      "ipa": "r_ˈi__o",
+      "units": [
+        "r",
+        "ˈ",
+        "i",
+        "o"
+      ]
+    },
+    "saco de dormir": {
+      "text": "saco de dormir",
+      "normalized": "saco de dormir",
+      "ipa": "s_ˈa_k_o ð_e ð_o_ɾ_m_ˈi_ɾ",
+      "units": [
+        "s",
+        "ˈ",
+        "a",
+        "k",
+        "o",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "ð",
+        "o",
+        "ɾ",
+        "m",
+        "ˈ",
+        "i",
+        "ɾ"
+      ]
+    },
+    "sal": {
+      "text": "sal",
+      "normalized": "sal",
+      "ipa": "s_ˈa_l",
+      "units": [
+        "s",
+        "ˈ",
+        "a",
+        "l"
+      ]
+    },
+    "secadora de pelo": {
+      "text": "secadora de pelo",
+      "normalized": "secadora de pelo",
+      "ipa": "s_ˌe_k_a_ð_ˈo_ɾ_a ð_e p_ˈe_l_o",
+      "units": [
+        "s",
+        "e",
+        "k",
+        "a",
+        "ð",
+        "ˈ",
+        "o",
+        "ɾ",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "p",
+        "ˈ",
+        "e",
+        "l",
+        "o"
+      ]
+    },
+    "sed": {
+      "text": "sed",
+      "normalized": "sed",
+      "ipa": "s_ˈe_d",
+      "units": [
+        "s",
+        "ˈ",
+        "e",
+        "d"
+      ]
+    },
+    "semáforo": {
+      "text": "semáforo",
+      "normalized": "semáforo",
+      "ipa": "s_e_m_ˈa_f_o_ɾ_o",
+      "units": [
+        "s",
+        "e",
+        "m",
+        "ˈ",
+        "a",
+        "f",
+        "o",
+        "ɾ",
+        "o"
+      ]
+    },
+    "silla": {
+      "text": "silla",
+      "normalized": "silla",
+      "ipa": "s_ˈi_j_j_a",
+      "units": [
+        "s",
+        "ˈ",
+        "i",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "sombrero": {
+      "text": "sombrero",
+      "normalized": "sombrero",
+      "ipa": "s_o_m_b_ɾ_ˈe_ɾ_o",
+      "units": [
+        "s",
+        "o",
+        "m",
+        "b",
+        "ɾ",
+        "ˈ",
+        "e",
+        "ɾ",
+        "o"
+      ]
+    },
+    "sopa": {
+      "text": "sopa",
+      "normalized": "sopa",
+      "ipa": "s_ˈo_p_a",
+      "units": [
+        "s",
+        "ˈ",
+        "o",
+        "p",
+        "a"
+      ]
+    },
+    "sueño": {
+      "text": "sueño",
+      "normalized": "sueño",
+      "ipa": "s_w_ˈe_ɲ_o",
+      "units": [
+        "s",
+        "w",
+        "ˈ",
+        "e",
+        "ɲ",
+        "o"
+      ]
+    },
+    "supermercado": {
+      "text": "supermercado",
+      "normalized": "supermercado",
+      "ipa": "s_ˌu_p_e_ɾ_m_e_ɾ_k_ˈa_ð_o",
+      "units": [
+        "s",
+        "u",
+        "p",
+        "e",
+        "ɾ",
+        "m",
+        "e",
+        "ɾ",
+        "k",
+        "ˈ",
+        "a",
+        "ð",
+        "o"
+      ]
+    },
+    "taco": {
+      "text": "taco",
+      "normalized": "taco",
+      "ipa": "t_ˈa_k_o",
+      "units": [
+        "t",
+        "ˈ",
+        "a",
+        "k",
+        "o"
+      ]
+    },
+    "tarjeta de crédito": {
+      "text": "tarjeta de crédito",
+      "normalized": "tarjeta de crédito",
+      "ipa": "t_a_ɾ_x_ˈe_t_a ð_e k_ɾ_ˈe_ð_i_t_o",
+      "units": [
+        "t",
+        "a",
+        "ɾ",
+        "x",
+        "ˈ",
+        "e",
+        "t",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "k",
+        "ɾ",
+        "ˈ",
+        "e",
+        "ð",
+        "i",
+        "t",
+        "o"
+      ]
+    },
+    "tarjetadecrédito": {
+      "text": "tarjetadecrédito",
+      "normalized": "tarjetadecrédito",
+      "ipa": "t_ˌa_ɾ_x_e_t_ˌa_ð_e_k_ɾ_ˈe_ð_i_t_o",
+      "units": [
+        "t",
+        "a",
+        "ɾ",
+        "x",
+        "e",
+        "t",
+        "a",
+        "ð",
+        "e",
+        "k",
+        "ɾ",
+        "ˈ",
+        "e",
+        "ð",
+        "i",
+        "t",
+        "o"
+      ]
+    },
+    "taxi": {
+      "text": "taxi",
+      "normalized": "taxi",
+      "ipa": "t_ˈa_k_s_i",
+      "units": [
+        "t",
+        "ˈ",
+        "a",
+        "k",
+        "s",
+        "i"
+      ]
+    },
+    "taza": {
+      "text": "taza",
+      "normalized": "taza",
+      "ipa": "t_ˈa_s_a",
+      "units": [
+        "t",
+        "ˈ",
+        "a",
+        "s",
+        "a"
+      ]
+    },
+    "teléfono": {
+      "text": "teléfono",
+      "normalized": "teléfono",
+      "ipa": "t_e_l_ˈe_f_o_n_o",
+      "units": [
+        "t",
+        "e",
+        "l",
+        "ˈ",
+        "e",
+        "f",
+        "o",
+        "n",
+        "o"
+      ]
+    },
+    "tenedor": {
+      "text": "tenedor",
+      "normalized": "tenedor",
+      "ipa": "t_ˌe_n_e_ð_ˈo_ɾ",
+      "units": [
+        "t",
+        "e",
+        "n",
+        "e",
+        "ð",
+        "ˈ",
+        "o",
+        "ɾ"
+      ]
+    },
+    "termino": {
+      "text": "termino",
+      "normalized": "termino",
+      "ipa": "t_e_ɾ_m_ˈi_n_o",
+      "units": [
+        "t",
+        "e",
+        "ɾ",
+        "m",
+        "ˈ",
+        "i",
+        "n",
+        "o"
+      ]
+    },
+    "tienda de campaña": {
+      "text": "tienda de campaña",
+      "normalized": "tienda de campaña",
+      "ipa": "t_j_ˈɛ_n_d_a ð_e k_a_m_p_ˈa_ɲ_a",
+      "units": [
+        "t",
+        "j",
+        "ˈ",
+        "ɛ",
+        "n",
+        "d",
+        "a",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "k",
+        "a",
+        "m",
+        "p",
+        "ˈ",
+        "a",
+        "ɲ",
+        "a"
+      ]
+    },
+    "tijeras": {
+      "text": "tijeras",
+      "normalized": "tijeras",
+      "ipa": "t_i_x_ˈe_ɾ_a_s",
+      "units": [
+        "t",
+        "i",
+        "x",
+        "ˈ",
+        "e",
+        "ɾ",
+        "a",
+        "s"
+      ]
+    },
+    "toalla": {
+      "text": "toalla",
+      "normalized": "toalla",
+      "ipa": "t_o_ˈa_j_j_a",
+      "units": [
+        "t",
+        "o",
+        "ˈ",
+        "a",
+        "j",
+        "j",
+        "a"
+      ]
+    },
+    "traje de baño": {
+      "text": "traje de baño",
+      "normalized": "traje de baño",
+      "ipa": "t_ɾ_ˈa_x_e ð_e β_ˈa_ɲ_o",
+      "units": [
+        "t",
+        "ɾ",
+        "ˈ",
+        "a",
+        "x",
+        "e",
+        "|",
+        "ð",
+        "e",
+        "|",
+        "β",
+        "ˈ",
+        "a",
+        "ɲ",
+        "o"
+      ]
+    },
+    "tren": {
+      "text": "tren",
+      "normalized": "tren",
+      "ipa": "t_ɾ_ˈe_n",
+      "units": [
+        "t",
+        "ɾ",
+        "ˈ",
+        "e",
+        "n"
+      ]
+    },
+    "tubo": {
+      "text": "tubo",
+      "normalized": "tubo",
+      "ipa": "t_ˈu_β_o",
+      "units": [
+        "t",
+        "ˈ",
+        "u",
+        "β",
+        "o"
+      ]
+    },
+    "tuvo": {
+      "text": "tuvo",
+      "normalized": "tuvo",
+      "ipa": "t_ˈu_β_o",
+      "units": [
+        "t",
+        "ˈ",
+        "u",
+        "β",
+        "o"
+      ]
+    },
+    "término": {
+      "text": "término",
+      "normalized": "término",
+      "ipa": "t_ˈe_ɾ_m_i_n_o",
+      "units": [
+        "t",
+        "ˈ",
+        "e",
+        "ɾ",
+        "m",
+        "i",
+        "n",
+        "o"
+      ]
+    },
+    "vaca": {
+      "text": "vaca",
+      "normalized": "vaca",
+      "ipa": "b_ˈa_k_a",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "k",
+        "a"
+      ]
+    },
+    "vaso": {
+      "text": "vaso",
+      "normalized": "vaso",
+      "ipa": "b_ˈa_s_o",
+      "units": [
+        "b",
+        "ˈ",
+        "a",
+        "s",
+        "o"
+      ]
+    },
+    "ventana": {
+      "text": "ventana",
+      "normalized": "ventana",
+      "ipa": "b_e_n_t_ˈa_n_a",
+      "units": [
+        "b",
+        "e",
+        "n",
+        "t",
+        "ˈ",
+        "a",
+        "n",
+        "a"
+      ]
+    },
+    "vestido": {
+      "text": "vestido",
+      "normalized": "vestido",
+      "ipa": "b_e_s_t_ˈi_ð_o",
+      "units": [
+        "b",
+        "e",
+        "s",
+        "t",
+        "ˈ",
+        "i",
+        "ð",
+        "o"
+      ]
+    },
+    "volante": {
+      "text": "volante",
+      "normalized": "volante",
+      "ipa": "b_o_l_ˈa_n_t_e",
+      "units": [
+        "b",
+        "o",
+        "l",
+        "ˈ",
+        "a",
+        "n",
+        "t",
+        "e"
+      ]
+    },
+    "yave": {
+      "text": "yave",
+      "normalized": "yave",
+      "ipa": "ʝ_ˈa_β_e",
+      "units": [
+        "ʝ",
+        "ˈ",
+        "a",
+        "β",
+        "e"
+      ]
+    },
+    "zapato": {
+      "text": "zapato",
+      "normalized": "zapato",
+      "ipa": "s_a_p_ˈa_t_o",
+      "units": [
+        "s",
+        "a",
+        "p",
+        "ˈ",
+        "a",
+        "t",
+        "o"
+      ]
+    }
+  }
+}
