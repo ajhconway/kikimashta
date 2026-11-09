@@ -1,11 +1,20 @@
 import type { Exercise, PracticeCard, WordBank, WordItem } from '../types';
 import { cardKey } from './cards';
 import type { ContextualItem, ContextualQuestion, ContextualRecording } from '../content/contextual-types';
+import type { WordChoiceKind, WordChoicePolicySnapshot } from './distractor-types';
+import { selectWordChoices } from './distractors';
+import { cardMastery } from './mastery';
+import type { ScheduledWord } from './scheduler';
+import { shuffled } from './random';
+export { shuffled } from './random';
+export { InsufficientChoicesError } from './distractors';
 
 export interface Question {
   target: WordItem; exercise: Exercise; choices: WordItem[]; retryOf?: string; demoId?: string;
   /** First contextual encounter: review UI, initial-learning evidence. */
   introduction?: boolean;
+  choicePolicy?: WordChoicePolicySnapshot;
+  choiceKinds?: Record<string, WordChoiceKind>;
   contextual?: { context: ContextualItem; question: ContextualQuestion; recording?: ContextualRecording };
 }
 
@@ -32,35 +41,13 @@ export function validateBank(bank: WordBank): void {
   }
 }
 
-export function shuffled<T>(values: readonly T[], random: () => number): T[] {
-  const copy = [...values];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j]!, copy[i]!];
-  }
-  return copy;
-}
-
-const normalized = (text: string) => text.normalize('NFKC').trim();
-
-function questionFor({ item: target, exercise }: PracticeCard, pool: WordItem[], choiceCount: number, random: () => number): Question {
-  const visible = (item: WordItem) => exercise === 'audio-picture' ? item.image.src : normalized(item.text);
-  const seen = new Set([visible(target)]);
-  const candidates = shuffled(pool.filter(item => item.id !== target.id && item.language === target.language), random).filter(item => {
-    if (exercise === 'audio-picture' && (target.pictureDistractorExclusions?.includes(item.id) || item.pictureDistractorExclusions?.includes(target.id))) return false;
-    if (seen.has(visible(item)) || normalized(item.reading ?? item.text) === normalized(target.reading ?? target.text)) return false;
-    seen.add(visible(item));
-    return true;
-  });
-  if (candidates.length < choiceCount - 1) throw new Error('Enough distinct, unambiguous choices are required.');
-  return { target, exercise, choices: shuffled([target, ...candidates.slice(0, choiceCount - 1)], random) };
-}
-
 /** Build mixed questions for a fixed card snapshot; each question keeps one answer format. */
-export function createQuestions(targets: PracticeCard[], pool: WordItem[], random = Math.random): Question[] {
+export function createQuestions(targets: PracticeCard[], pool: WordItem[], random = Math.random,
+  schedules?: ReadonlyMap<string, ScheduledWord | undefined>): Question[] {
   if (!targets.length) return [];
   if (new Set(targets.map(cardKey)).size !== targets.length) throw new Error('Targets must be unique cards.');
-  return shuffled(targets, random).map(card => questionFor(card, pool, 4, random));
+  return shuffled(targets, random).map(card => ({ target: card.item, exercise: card.exercise,
+    ...selectWordChoices(card, pool, cardMastery(schedules?.get(cardKey(card))), random) }));
 }
 
 /** Revisit a miss within this block without admitting any new due-word targets. */
