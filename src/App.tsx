@@ -16,6 +16,7 @@ import { DevReviewOptions as DevReviewOptionsScreen } from './components/DevRevi
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries, type DevReviewOptions } from './core/dev-review';
 import { packBadges } from './core/pack-badges';
 import { PackBadges } from './components/PackBadges';
+import { usePackBadgePresentation } from './hooks/usePackBadgePresentation';
 import { cardMastery, masteryIndex } from './core/mastery';
 import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-timer';
 import { useAudioChoiceEntrance } from './hooks/useAudioChoiceEntrance';
@@ -183,6 +184,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     [store, scopedCards, historyRevision, saveState.revision, refresh, now]);
   const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; badges: ReturnType<typeof packBadges>; error: boolean } | null>(null);
   const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
+  const badgePresentation = usePackBadgePresentation({
+    badges: !loading && !accountLoading && !historyError && currentForecast ? currentForecast.badges : null,
+    active: screen === 'home', scope: store, reset: accountLoading,
+  });
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
@@ -539,7 +544,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         <h1>kikimashta</h1>
         <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
           <HomeIntensity value={density}/>
-          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
+          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges} presentation={badgePresentation}/>}
         </div>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}

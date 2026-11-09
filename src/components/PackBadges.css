@@ -1,3 +1,4 @@
+@property --badge-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 .home-kiku-stage { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
 .home-kiku-stage.has-pack-badges { display: grid; place-items: center; aspect-ratio: 1; margin-bottom: 32px; }
 .home-kiku-stage.has-pack-badges .home-intensity { margin: 0; }
@@ -5,7 +6,7 @@
 .home-kiku-stage.has-pack-badges .pace-kiku { width: clamp(120px, calc(44% - 2px), 185px); height: auto; aspect-ratio: 1; }
 .pack-badges { --badge-size: clamp(57px, 18vw, 84px); --badge-radius: min(46.6%, calc((100vw - var(--badge-size)) / 2 - 1px)); position: absolute; inset: 0; pointer-events: none; }
 .pack-badges ul { position: relative; width: 100%; height: 100%; list-style: none; margin: 0; padding: 0; }
-.pack-badge { --badge-ink: #4c087c; position: absolute; width: var(--badge-size); height: var(--badge-size); transform: translate(-50%, -50%); animation: none; pointer-events: auto; color: var(--badge-ink); border-radius: 12px; outline-offset: 3px; }
+.pack-badge { --badge-ink: #4c087c; position: absolute; left: calc(50% + var(--badge-radius) * sin(var(--badge-angle))); top: calc(50% - var(--badge-radius) * cos(var(--badge-angle))); width: var(--badge-size); height: var(--badge-size); transform: translate(-50%, -50%); animation: none; pointer-events: auto; color: var(--badge-ink); border-radius: 12px; outline-offset: 3px; }
 .pack-badge-medal { display: block; width: 100%; height: 100%; overflow: visible; }
 
 
@@ -13,3 +14,34 @@
 .pack-badge.badge-right::after { left: auto; right: 0; }
 .pack-badge.badge-center::after { left: 50%; right: auto; transform: translateX(-50%); }
 .pack-badge:hover::after, .pack-badge:focus::after { display: block; }
+
+/* Resting medals stay still; only an earned change starts this short sequence. */
+.badge-presentation-art, .badge-current-art, .badge-previous-art { display: block; position: absolute; inset: 0; }
+.badge-previous-art { pointer-events: none; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration] { z-index: 4; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration] .badge-current-art { animation: badge-award-pop var(--badge-celebrate-duration) cubic-bezier(.2,.8,.2,1) both; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration='upgrade'] .badge-previous-art { animation: badge-upgrade-replace var(--badge-upgrade-fade) ease-out both; }
+.pack-badges[data-phase='celebrate'] .pack-badge[data-celebration='upgrade'] .badge-current-art { animation: badge-upgrade-pop 850ms cubic-bezier(.2,.8,.2,1) var(--badge-upgrade-reveal-delay) both; }
+.pack-badges[data-phase='reorder'] .pack-badge { transition: --badge-angle var(--badge-reorder-duration) cubic-bezier(.42,0,.22,1); }
+.badge-effects { position: absolute; inset: -80px 0; overflow: hidden; pointer-events: none; z-index: 3; }
+.badge-effects-plane { position: absolute; inset: 80px 0; }
+.badge-effect-anchor { position: absolute; width: 0; height: 0; left: calc(50% + var(--badge-radius) * sin(var(--badge-angle))); top: calc(50% - var(--badge-radius) * cos(var(--badge-angle))); }
+@keyframes badge-award-pop {
+  0% { opacity: 0; transform: scale(.92); }
+  22% { opacity: 1; transform: translateX(var(--badge-pop-shift, 0px)) scale(1.04); }
+  42%, 100% { opacity: 1; transform: scale(1); }
+}
+@keyframes badge-upgrade-replace {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(.75); }
+}
+@keyframes badge-upgrade-pop {
+  0% { opacity: 0; transform: scale(.4); }
+  45% { opacity: 1; transform: translateX(var(--badge-pop-shift, 0px)) scale(1.18); }
+  72% { opacity: 1; transform: scale(.97); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pack-badges[data-phase] .pack-badge, .pack-badges[data-phase] .badge-current-art, .pack-badges[data-phase] .badge-previous-art { animation: none; transition: none; }
+  .pack-badges[data-phase] .badge-previous-art { display: none; }
+}

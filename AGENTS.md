@@ -22,6 +22,14 @@ Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues a
 
 - After the final PR commit (including updates from main), promptly request a Codex review of that head when the existing review is stale. Start review alongside CI instead of waiting for CI to finish. The status-refresh workflow does not launch a review. Avoid duplicate requests while that head is already being reviewed.
 
+## Issue resolution
+
+- Keep each issue's current summary and completion checklist aligned with delivered work. After a partial delivery or merge, record completed criteria, implementation PRs/commits, actual verification results, and the remaining work or acceptance. Clearly label superseded scope and preserve dated historical evidence.
+- Use `Refs #N` for partial work and `Closes #N` only when the PR completes all required criteria on merge. An open or superseded PR alone does not prove integration; link the PR or commit that actually reached the target branch.
+- Before closing, record the resolution and supporting evidence on the issue. Keep required deployment, owner/media approval, real-iPhone, and live-account checks open until accepted. Move independent remaining work only to an explicitly linked follow-up, without implying its acceptance is complete.
+- Close duplicates with a link to the canonical issue and retain any unique requirements there. Record canceled or superseded work as such rather than marking it completed.
+- Update affected repository guidance when behavior or workflow changes. The coordinator verifies issue states and residual acceptance alongside final integration checks.
+
 ## Engineering and tests
 
 - Keep the interface, learning rules, content, and storage separate. Use stable item and attempt IDs, and keep progress specific to its language and item.

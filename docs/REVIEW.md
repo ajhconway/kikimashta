@@ -6,6 +6,12 @@ The supplied workspace's Git HEAD is the initial planning commit, with an older 
 
 Follow-up for #116: `npm run test:cards` now runs the artwork tests and metadata validator inside `npm run check` and required CI. The review findings and command results below describe the original reviewed revision.
 
+## Subsequent resolution status — November 9, 2026
+
+[Housekeeping #217](https://github.com/ajhconway/kikimashta/issues/217) reconciles later work without rewriting this source-pinned review. Findings #114, #115, #116 and #117 were resolved through merged PRs #123, #126, #127 and #132 respectively; the reproduction evidence and command results below remain historical results, not new verification runs.
+
+Current Japanese word practice has 178 vocabulary items / 344 exercise cards (166 picture and 178 writing), following the twelve writing-only additions in #197/#201. Batches 01–10 still provide 168 active approved illustrations; batch 11 is already generated in open PR #110, awaiting integration rather than generation. The separate twenty-card visual-reference preparation is in PR #215 under #213. Use [PLAN.md's current summary](../PLAN.md#current-state--november-9-2026) and each issue's latest resolution status for new work. Remaining semantic counting policy stays in #79; physical-device/live-account acceptance stays in #6/#119/#143, and timer evaluation in #122.
+
 ## New issues
 
 All four findings are P2: address them in ordinary development; no critical defect was demonstrated.
@@ -27,10 +33,10 @@ No additional substantiated defect was found in question generation, pack filter
 
 ## Planning reconciliation
 
-- PLAN and README now describe shipped adaptive practice, writing/fonts, the current home, ten packs, eight voices, and deployed sync. Actual counts are 166 eligible vocabulary items / 332 cards before filtering, 440 visible library entries, and 168 active approved illustrations.
+- PLAN and README now describe shipped adaptive practice, writing/fonts, the current home, ten packs, eight voices, and deployed sync. At the reviewed revision, counts were 166 eligible vocabulary items / 332 cards before filtering, 440 visible library entries, and 168 active approved illustrations; the November 9 resolution status above records the later additions.
 - Supabase setup now requires both ordered migrations for a new project. Hosted history confirms `20261106045912_sync` and `20261107035952_audio_text_attempts`; repository migration timestamps differ historically. The hosted constraint currently supports `audio-text`.
 - Merge documentation now records the active ruleset: `checks`, `database`, and `codex-review`, strict up-to-date checks, required PRs, conversation resolution and no bypass actors. It no longer recommends globally requiring the path-filtered `artifacts` workflow, which would block unrelated PRs waiting for a missing check. [GitHub guidance](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks#handling-skipped-but-required-checks).
-- Artwork docs no longer describe a planning-only checkout. Batches 01–10 are active; batch 11 is ready to generate. Semantic-policy integration remains explicitly deferred to #79. Prompt approval, activation, and practice eligibility remain separate.
+- At the reviewed revision, artwork docs no longer described a planning-only checkout. Batches 01–10 were active, batch 11 was ready to generate, and semantic-policy integration was deferred to #79. The November 9 resolution status above supersedes those generation/policy statuses; prompt approval, activation, and practice eligibility remain separate.
 - Public source notice points to the reviewed revision. All 40 deliveries originally associated with #77 match current manifest SHA-256 hashes on the live site. That issue's deployment-pending text was stale; real-iPhone acceptance remains separate.
 - GitHub's `v0` milestone is still open with zero open / five closed issues. `Sync` is open with #6. The old #76/#77 activation records overlap; consolidate them during issue housekeeping without treating this review as device acceptance.
 
