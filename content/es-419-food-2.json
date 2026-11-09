@@ -1,0 +1,2240 @@
+{
+  "id": "es-419-food-2",
+  "language": "es-419",
+  "title": "Food level 2",
+  "status": "approved",
+  "items": [
+    {
+      "id": "es-419-food-grapes",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Grapes",
+      "text": "uvas",
+      "image": {
+        "src": "images/approved/es-419-food-grapes-eeb09681600a.png",
+        "source": "generated",
+        "alt": "Grapes"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-grapes.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-mango",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Mango",
+      "text": "mango",
+      "image": {
+        "src": "images/approved/es-419-food-mango-4d192809efab.png",
+        "source": "generated",
+        "alt": "Mango"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-mango.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-watermelon",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Watermelon",
+      "text": "sandía",
+      "image": {
+        "src": "images/approved/es-419-food-watermelon-90527843ae35.png",
+        "source": "generated",
+        "alt": "Watermelon"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-watermelon.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-melon",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Melon",
+      "text": "melón",
+      "image": {
+        "src": "images/approved/es-419-food-melon-eed2036f2c89.png",
+        "source": "generated",
+        "alt": "Melon"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-melon.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-peach",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Peach",
+      "text": "durazno",
+      "image": {
+        "src": "images/approved/es-419-food-peach-1bc48ef2cd37.png",
+        "source": "generated",
+        "alt": "Peach"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-peach.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-pear",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Pear",
+      "text": "pera",
+      "image": {
+        "src": "images/approved/es-419-food-pear-3f22f7ce2648.png",
+        "source": "generated",
+        "alt": "Pear"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-pear.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Cucumber",
+      "text": "pepino",
+      "image": {
+        "src": "images/approved/es-419-food-cucumber-8a03ecf0bea0.png",
+        "source": "generated",
+        "alt": "Cucumber"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-cucumber.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Broccoli",
+      "text": "brócoli",
+      "image": {
+        "src": "images/approved/es-419-food-broccoli-9d18bf400570.png",
+        "source": "generated",
+        "alt": "Broccoli"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-broccoli.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-cauliflower",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Cauliflower",
+      "text": "coliflor",
+      "image": {
+        "src": "images/approved/es-419-food-cauliflower-24816b9bba81.png",
+        "source": "generated",
+        "alt": "Cauliflower"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-cauliflower.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-spinach",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Spinach",
+      "text": "espinaca",
+      "image": {
+        "src": "images/approved/es-419-food-spinach-9b926e087e61.png",
+        "source": "generated",
+        "alt": "Spinach"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-spinach.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Button mushroom",
+      "text": "champiñón",
+      "image": {
+        "src": "images/approved/es-419-food-mushroom-bf635748dd67.png",
+        "source": "generated",
+        "alt": "Button mushroom"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-mushroom.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-corn",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Corn on the cob",
+      "text": "elote",
+      "image": {
+        "src": "images/approved/es-419-food-corn-521ba151d5b8.png",
+        "source": "generated",
+        "alt": "Corn on the cob"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-corn.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-steak",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Steak",
+      "text": "bistec",
+      "image": {
+        "src": "images/approved/es-419-food-steak-c816bc14ec08.png",
+        "source": "generated",
+        "alt": "Steak"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-steak.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-ham",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Ham",
+      "text": "jamón",
+      "image": {
+        "src": "images/approved/es-419-food-ham-f28fea7a16c1.png",
+        "source": "generated",
+        "alt": "Ham"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-ham.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-bacon",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Bacon",
+      "text": "tocino",
+      "image": {
+        "src": "images/approved/es-419-food-bacon-90f0f89a2ce8.png",
+        "source": "generated",
+        "alt": "Bacon"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-bacon.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-sausage",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Sausage",
+      "text": "salchicha",
+      "image": {
+        "src": "images/approved/es-419-food-sausage-dc1ab55e2182.png",
+        "source": "generated",
+        "alt": "Sausage"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-sausage.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-shrimp",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Shrimp",
+      "text": "camarón",
+      "image": {
+        "src": "images/approved/es-419-food-shrimp-dadb934773f4.png",
+        "source": "generated",
+        "alt": "Shrimp"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-shrimp.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-tuna",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Tuna",
+      "text": "atún",
+      "image": {
+        "src": "images/approved/es-419-food-tuna-dabfae054122.png",
+        "source": "generated",
+        "alt": "Tuna"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-tuna.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-garlic",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Garlic",
+      "text": "ajo",
+      "image": {
+        "src": "images/approved/es-419-food-garlic-2b49289df366.png",
+        "source": "generated",
+        "alt": "Garlic"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-garlic.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-chili-pepper",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Chili pepper",
+      "text": "chile",
+      "image": {
+        "src": "images/approved/es-419-food-chili-pepper-89d9bfe465bd.png",
+        "source": "generated",
+        "alt": "Chili pepper"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-chili-pepper.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-honey",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Honey",
+      "text": "miel",
+      "image": {
+        "src": "images/approved/es-419-food-honey-d8b57aad9c6b.png",
+        "source": "generated",
+        "alt": "Honey"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-honey.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-jam",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Jam",
+      "text": "mermelada",
+      "image": {
+        "src": "images/approved/es-419-food-jam-a6e3dd90a598.png",
+        "source": "generated",
+        "alt": "Jam"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-jam.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-cooking-oil",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Cooking oil",
+      "text": "aceite",
+      "image": {
+        "src": "images/approved/es-419-food-cooking-oil-460defe216fa.png",
+        "source": "generated",
+        "alt": "Cooking oil"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-cooking-oil.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Black pepper",
+      "text": "pimienta",
+      "image": {
+        "src": "images/approved/es-419-food-black-pepper-64e79749b675.png",
+        "source": "generated",
+        "alt": "Black pepper"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-black-pepper.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-cookie",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Cookie",
+      "text": "galleta",
+      "image": {
+        "src": "images/approved/es-419-food-cookie-c8d21225f4aa.png",
+        "source": "generated",
+        "alt": "Cookie"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-cookie.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-cake",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Cake",
+      "text": "pastel",
+      "image": {
+        "src": "images/approved/es-419-food-cake-400061e88691.png",
+        "source": "generated",
+        "alt": "Cake"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-cake.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-chocolate",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Chocolate",
+      "text": "chocolate",
+      "image": {
+        "src": "images/approved/es-419-food-chocolate-05a753c7cf4b.png",
+        "source": "generated",
+        "alt": "Chocolate"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-chocolate.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Popcorn",
+      "text": "palomitas",
+      "image": {
+        "src": "images/approved/es-419-food-popcorn-19b7d519ff4f.png",
+        "source": "generated",
+        "alt": "Popcorn"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-popcorn.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-peanut",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Peanut",
+      "text": "cacahuate",
+      "image": {
+        "src": "images/approved/es-419-food-peanut-8c5d54df6171.png",
+        "source": "generated",
+        "alt": "Peanut"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-peanut.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-gelatin",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Gelatin dessert",
+      "text": "gelatina",
+      "image": {
+        "src": "images/approved/es-419-food-gelatin-77423d95e3c6.png",
+        "source": "generated",
+        "alt": "Gelatin dessert"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-gelatin.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-plate",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Plate",
+      "text": "plato",
+      "image": {
+        "src": "images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+        "source": "generated",
+        "alt": "Plate"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-2/juan/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-travel-2/pamela/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-travel-2/albeiro/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-travel-2/carito/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-travel-2/santiago/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-travel-2/agustina/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-travel-2/carlos-figueroa/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-travel-2/veronica/es-419-travel-plate.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Drinking glass",
+      "text": "vaso",
+      "image": {
+        "src": "images/approved/es-419-travel-drinking-glass-257144ff9432.png",
+        "source": "generated",
+        "alt": "Drinking glass"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-2/juan/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-travel-2/pamela/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-travel-2/albeiro/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-travel-2/carito/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-travel-2/santiago/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-travel-2/agustina/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-travel-2/carlos-figueroa/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-travel-2/veronica/es-419-travel-drinking-glass.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-cup",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Cup",
+      "text": "taza",
+      "image": {
+        "src": "images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+        "source": "generated",
+        "alt": "Cup"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-2/juan/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-travel-2/pamela/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-travel-2/albeiro/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-travel-2/carito/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-travel-2/santiago/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-travel-2/agustina/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-travel-2/carlos-figueroa/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-travel-2/veronica/es-419-travel-cup.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-fork",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Fork",
+      "text": "tenedor",
+      "image": {
+        "src": "images/approved/es-419-travel-fork-01394a9b096e.png",
+        "source": "generated",
+        "alt": "Fork"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-2/juan/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-travel-2/pamela/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-travel-2/albeiro/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-travel-2/carito/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-travel-2/santiago/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-travel-2/agustina/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-travel-2/carlos-figueroa/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-travel-2/veronica/es-419-travel-fork.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "language": "es-419",
+      "theme": "travel",
+      "label": "Spoon",
+      "text": "cuchara",
+      "image": {
+        "src": "images/approved/es-419-travel-spoon-6315f4271e77.png",
+        "source": "generated",
+        "alt": "Spoon"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-travel-2/juan/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-travel-2/pamela/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-travel-2/albeiro/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-travel-2/carito/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-travel-2/santiago/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-travel-2/agustina/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-travel-2/carlos-figueroa/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-travel-2/veronica/es-419-travel-spoon.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-food-knife",
+      "language": "es-419",
+      "theme": "food",
+      "label": "Knife",
+      "text": "cuchillo",
+      "image": {
+        "src": "images/approved/es-419-food-knife-0e8c1bac5a8f.png",
+        "source": "generated",
+        "alt": "Knife"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-food-2/juan/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-food-2/pamela/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-food-2/albeiro/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-food-2/carito/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-food-2/santiago/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-food-2/agustina/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-food-2/carlos-figueroa/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-food-2/veronica/es-419-food-knife.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    }
+  ]
+}

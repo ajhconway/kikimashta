@@ -1,0 +1,14 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "manifest": "manifest.json",
+  "manifestSha256": "74690b582ce5518b3a5592958ad1c4a21023e7d1ecd05837b6846c7b9c53f6a1",
+  "normalizationSummary": "normalization-summary.json",
+  "normalizationSummarySha256": "b8788c044818e59ad8e03ae31f4a1c39fd6fe57b9d774180bf17d3b2e5e37aa1",
+  "normalizationSummaryBytes": 513,
+  "clips": 248,
+  "targetLimited": 0,
+  "shortClipMeasurements": 0,
+  "resumed": 0,
+  "resumeEvidence": "Reported normalization-run count, checked within 0..clips; not derivable from individual recording records."
+}

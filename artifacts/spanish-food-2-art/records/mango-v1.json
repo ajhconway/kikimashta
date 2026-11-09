@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-mango",
+  "slug": "mango",
+  "version": 1,
+  "path": "originals/mango-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "dc7104bf6a6eb919964268c6f56073ddc324571bbe9c4ccb6f2596c973629c72",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "4d192809efab1145328425e5f22e8c3ade3a09b6801ea0bd7fdc6d7aa9244021",
+  "bytes": 1192997,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-9157fe46-1f76-45b7-9e7f-9689bb33fdb4.png"
+}

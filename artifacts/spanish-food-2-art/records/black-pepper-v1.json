@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-black-pepper",
+  "slug": "black-pepper",
+  "version": 1,
+  "path": "originals/black-pepper-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "a1804d8e77058fe725c6b263657ccce376e5fa96748e2ab0f566f35b69d897ce",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "64e79749b6753ca96ed0812b778afe6f96c692703a5651ed10fcd8dd0ae302e0",
+  "bytes": 778424,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-97d04c4d-6a12-4041-b699-02bf26ae3709.png"
+}

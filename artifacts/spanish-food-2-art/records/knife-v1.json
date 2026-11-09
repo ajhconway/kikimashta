@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-knife",
+  "slug": "knife",
+  "version": 1,
+  "path": "originals/knife-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "e9efa0218106e849ed19f282487b64c8f89e60e406b397fe7ba4f29f25c9a63c",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "0e8c1bac5a8f14f4845baed5a78a250218cd63d22ebd996ae58c63626a0324aa",
+  "bytes": 565719,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-fc0a47f3-b61a-4133-a679-c9558fa15658.png"
+}

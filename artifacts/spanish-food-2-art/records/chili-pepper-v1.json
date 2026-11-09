@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-chili-pepper",
+  "slug": "chili-pepper",
+  "version": 1,
+  "path": "originals/chili-pepper-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "10027d27d2d43324ee0e9942f3c4cde51f380ba9935e94adac426a74bf9018de",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "89d9bfe465bd14a444d0901699ab312e33c2e64ee6106c07d79865dbbc379071",
+  "bytes": 498574,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-0e96d359-9cf5-4f4a-a78f-bad6358ba4ac.png"
+}

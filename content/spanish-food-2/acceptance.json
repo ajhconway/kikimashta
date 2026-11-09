@@ -1,0 +1,83 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "status": "accepted-for-activation",
+  "ownerMessage": "Let's ship. You can auto-merge",
+  "words": 36,
+  "images": 36,
+  "recordings": 288,
+  "voices": 8,
+  "newWords": 31,
+  "reusedWords": 5,
+  "generatedImages": 32,
+  "reusedImages": 4,
+  "newRecordings": 248,
+  "reusedRecordings": 40,
+  "combinedMediaManifest": "artifacts/spanish-food-2-media-review/manifest.json",
+  "combinedMediaManifestSha256": "41bdccff0343d9073d8f76fe4c3635a8f04129ad5e19211b26a330090afbc74f",
+  "inputs": {
+    "artifacts/spanish-food-2-media-review/manifest.json": "41bdccff0343d9073d8f76fe4c3635a8f04129ad5e19211b26a330090afbc74f",
+    "content/spanish-food-2/draft.json": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+    "content/spanish-food-2/artwork-acceptance.json": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb",
+    "content/spanish-food-2/audio-config.json": "a5946eded42ff455986189660c9338ad0e8a634658a12da0b6dd47ac1180e717",
+    "content/spanish-food-2/audio-approval.json": "fc38565c1e7f87837aa7c75944f7810d2cdaad369933f19ef1ee053c086d5523",
+    "content/spanish-food-2/audio-reuse.json": "be684d79ec25885f046718033f36b4632a355d0b2311fe3c2912dce2454d78b7",
+    "content/es-419-voices.json": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+    "artifacts/spanish-food-2-art/manifest.json": "0e946432982fd6633986229ca822443e44a4ff63dcd6c861f442c4e166f885e6",
+    "artifacts/spanish-food-2-audio-review/manifest.json": "74690b582ce5518b3a5592958ad1c4a21023e7d1ecd05837b6846c7b9c53f6a1",
+    "artifacts/spanish-food-2-audio-review/normalization-summary.json": "b8788c044818e59ad8e03ae31f4a1c39fd6fe57b9d774180bf17d3b2e5e37aa1",
+    "artifacts/spanish-food-2-audio-review/normalization-verification.json": "82f815016e9b1fbf4ba45118e6a1a3240ac9eef4d0d17b12daa672fe0875555b",
+    "content/spanish-food-2/generation-approval.json": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
+    "content/spanish-food-2/proposal-v1.json": "bd5df57d977a271716199af285e8405c162191a11b378e2dabc06d2c4e16d09b",
+    "artifacts/spanish-food-2-art/requests.json": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+    "artifacts/spanish-food-2-art/selection.json": "218bd14b8d22c150662c3f3d7e4278265c98c9ce9bffbd28e338f067f996c2e6",
+    "content/spanish-food-2/artwork-revisions-v1.json": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
+    "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+    "content/es-419-travel-2.json": "d63bc583fcb7eae6c60a364c7f0f6f9aac84d20242c796c95283cd4dd25b8b3a",
+    "content/spanish-travel-2/activation.json": "8d21ce836176da0681474966ce39cce7f0ac31391df4553a567d4df0dbf47491",
+    "content/spanish-travel-2/acceptance.json": "9c0b5b480b0b1561fe32ced1b8b01a51185ba7b8fb278711504e5acfcd528513",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+    "artifacts/spanish-food-2-art/revisions/glass-v1-request.json": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+    "public/images/approved/ja-cup-a6b3cf43ae54.jpg": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+    "content/ja.json": "b6a7bd1e83dcc979e2c23473b61aa14aa817148545abd0fa54ea2d00052d84b9"
+  },
+  "acceptedNewQuieterClips": [],
+  "sharedReplacement": {
+    "source": "generated",
+    "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+    "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+    "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+    "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "targets": [
+      {
+        "bank": "content/es-419-travel-2.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Travel level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "draft": "content/spanish-food-2/draft.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Food level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "bank": "content/ja.json",
+        "id": "ja-cup",
+        "language": "ja-JP",
+        "pack": "Legacy Japanese starter glass",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      }
+    ]
+  },
+  "realIPhoneTesting": "Owner will test the deployed version."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-garlic",
+  "slug": "garlic",
+  "version": 1,
+  "path": "originals/garlic-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "1825c7c6dc6c4de4d834b7008dcdc7de76109b0e5037e3666e68bc9adba67c46",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "2b49289df3661965a772b8fb9c223fef2fe91629add3dc6ecb4b8a54ef778413",
+  "bytes": 964470,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f96875d1-eda2-4bc0-8629-6f588e233cb7.png"
+}

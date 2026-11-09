@@ -1,0 +1,214 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "I'm happy with that change. Let's proceed to audio generation.",
+  "scope": "248 missing canonical word recordings only. Reuse the forty accepted recordings unchanged; preserve all accepted artwork. Listening acceptance and runtime activation follow separately.",
+  "draft": "content/spanish-food-2/draft.json",
+  "draftSha256": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+  "artworkAcceptance": "content/spanish-food-2/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb",
+  "configuration": "content/spanish-food-2/audio-config.json",
+  "configurationSha256": "a5946eded42ff455986189660c9338ad0e8a634658a12da0b6dd47ac1180e717",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceRegistrySha256": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+  "items": [
+    {
+      "id": "es-419-food-grapes",
+      "text": "uvas",
+      "spelling": "uvas",
+      "meaning": "Grapes"
+    },
+    {
+      "id": "es-419-food-mango",
+      "text": "mango",
+      "spelling": "mango",
+      "meaning": "Mango"
+    },
+    {
+      "id": "es-419-food-watermelon",
+      "text": "sandía",
+      "spelling": "sandía",
+      "meaning": "Watermelon"
+    },
+    {
+      "id": "es-419-food-melon",
+      "text": "melón",
+      "spelling": "melón",
+      "meaning": "Melon"
+    },
+    {
+      "id": "es-419-food-peach",
+      "text": "durazno",
+      "spelling": "durazno",
+      "meaning": "Peach"
+    },
+    {
+      "id": "es-419-food-pear",
+      "text": "pera",
+      "spelling": "pera",
+      "meaning": "Pear"
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "text": "pepino",
+      "spelling": "pepino",
+      "meaning": "Cucumber"
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "text": "brócoli",
+      "spelling": "brócoli",
+      "meaning": "Broccoli"
+    },
+    {
+      "id": "es-419-food-cauliflower",
+      "text": "coliflor",
+      "spelling": "coliflor",
+      "meaning": "Cauliflower"
+    },
+    {
+      "id": "es-419-food-spinach",
+      "text": "espinaca",
+      "spelling": "espinaca",
+      "meaning": "Spinach"
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "text": "champiñón",
+      "spelling": "champiñón",
+      "meaning": "Button mushroom"
+    },
+    {
+      "id": "es-419-food-corn",
+      "text": "elote",
+      "spelling": "elote",
+      "meaning": "Corn on the cob"
+    },
+    {
+      "id": "es-419-food-steak",
+      "text": "bistec",
+      "spelling": "bistec",
+      "meaning": "Steak"
+    },
+    {
+      "id": "es-419-food-ham",
+      "text": "jamón",
+      "spelling": "jamón",
+      "meaning": "Ham"
+    },
+    {
+      "id": "es-419-food-bacon",
+      "text": "tocino",
+      "spelling": "tocino",
+      "meaning": "Bacon"
+    },
+    {
+      "id": "es-419-food-sausage",
+      "text": "salchicha",
+      "spelling": "salchicha",
+      "meaning": "Sausage"
+    },
+    {
+      "id": "es-419-food-shrimp",
+      "text": "camarón",
+      "spelling": "camarón",
+      "meaning": "Shrimp"
+    },
+    {
+      "id": "es-419-food-tuna",
+      "text": "atún",
+      "spelling": "atún",
+      "meaning": "Tuna"
+    },
+    {
+      "id": "es-419-food-garlic",
+      "text": "ajo",
+      "spelling": "ajo",
+      "meaning": "Garlic"
+    },
+    {
+      "id": "es-419-food-chili-pepper",
+      "text": "chile",
+      "spelling": "chile",
+      "meaning": "Chili pepper"
+    },
+    {
+      "id": "es-419-food-honey",
+      "text": "miel",
+      "spelling": "miel",
+      "meaning": "Honey"
+    },
+    {
+      "id": "es-419-food-jam",
+      "text": "mermelada",
+      "spelling": "mermelada",
+      "meaning": "Jam"
+    },
+    {
+      "id": "es-419-food-cooking-oil",
+      "text": "aceite",
+      "spelling": "aceite",
+      "meaning": "Cooking oil"
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "text": "pimienta",
+      "spelling": "pimienta",
+      "meaning": "Black pepper"
+    },
+    {
+      "id": "es-419-food-cookie",
+      "text": "galleta",
+      "spelling": "galleta",
+      "meaning": "Cookie"
+    },
+    {
+      "id": "es-419-food-cake",
+      "text": "pastel",
+      "spelling": "pastel",
+      "meaning": "Cake"
+    },
+    {
+      "id": "es-419-food-chocolate",
+      "text": "chocolate",
+      "spelling": "chocolate",
+      "meaning": "Chocolate"
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "text": "palomitas",
+      "spelling": "palomitas",
+      "meaning": "Popcorn"
+    },
+    {
+      "id": "es-419-food-peanut",
+      "text": "cacahuate",
+      "spelling": "cacahuate",
+      "meaning": "Peanut"
+    },
+    {
+      "id": "es-419-food-gelatin",
+      "text": "gelatina",
+      "spelling": "gelatina",
+      "meaning": "Gelatin dessert"
+    },
+    {
+      "id": "es-419-food-knife",
+      "text": "cuchillo",
+      "spelling": "cuchillo",
+      "meaning": "Knife"
+    }
+  ],
+  "itemsSha256": "681f9c9e5f002d60f9e435a0c7cfc4ea87ea0ca83ee99b7381e303ce30668b83",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 248,
+  "characters": 1616,
+  "budget": 2000,
+  "reusedWords": 5,
+  "reusedClips": 40,
+  "runtimeActivationAuthorized": false,
+  "audioReuse": "content/spanish-food-2/audio-reuse.json",
+  "audioReuseSha256": "be684d79ec25885f046718033f36b4632a355d0b2311fe3c2912dce2454d78b7"
+}
