@@ -63,7 +63,7 @@ it('introduces unlocked contexts directly in reviews while saving initial-learni
   const before = history.length;
   const { container } = render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
-  expect(screen.getByText(/2 contextual cards are ready for reviews/)).toBeInTheDocument();
+  expect(screen.queryByText(/contextual cards are ready for lessons/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: /^Start/ }));
   expect(screen.queryByRole('button', { name: 'Begin lesson' })).not.toBeInTheDocument();
   await click(await screen.findByRole('button', { name: 'Begin review' }));
@@ -150,12 +150,12 @@ it('offers a direct contextual demo link even with no selected packs', async () 
 });
 
 
-it('explains when workload defers workload defers contextual introductions while leaving Dev review available', async () => {
+it('keeps the demo available at high workload without Home admission copy', async () => {
   const { schedule } = await unlockedTarget();
   vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
-  await waitFor(() => expect(screen.getByText(/2 contextual cards are ready for reviews/)).toBeInTheDocument());
-  expect(screen.getByText(/New contextual questions are waiting for your review workload to ease/)).toBeInTheDocument();
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+  expect(screen.queryByText(/contextual cards are ready for lessons|New lessons are waiting for your review workload to ease/)).not.toBeInTheDocument();
   await click(screen.getByRole('button', { name: 'Dev review' }));
   expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
   expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();
@@ -303,7 +303,7 @@ it('waits until the next Start to introduce contexts unlocked by the current rev
   const qualifying = history.pop()!;
   const { container } = render(<App now={() => qualifying.answeredAt} random={() => 0}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
-  expect(screen.queryByText(/contextual cards are ready/)).not.toBeInTheDocument();
+  expect(await deriveContextualUnlocks(history, target.language)).not.toContain(JSON.stringify([target.language, target.id, 'context-simple-text']));
   await click(screen.getByRole('button', { name: /^Start/ }));
   await click(screen.getByRole('button', { name: 'Begin review' }));
   expect(container.querySelector('.contextual-quiz')).not.toBeInTheDocument();
@@ -318,7 +318,8 @@ it('waits until the next Start to introduce contexts unlocked by the current rev
   expect(container.querySelector('.contextual-quiz')).not.toBeInTheDocument();
   vi.useRealTimers();
   await click(screen.getByRole('button', { name: 'Finish' }));
-  await waitFor(() => expect(screen.getByText(/2 contextual cards are ready for reviews/)).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled());
+  expect(await deriveContextualUnlocks(history, target.language)).toContain(JSON.stringify([target.language, target.id, 'context-simple-text']));
   await click(screen.getByRole('button', { name: /^Start/ }));
   await click(screen.getByRole('button', { name: 'Begin review' }));
   expect(container.querySelector('.contextual-quiz')).toBeInTheDocument();

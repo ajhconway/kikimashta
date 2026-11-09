@@ -20,13 +20,14 @@ import { answerOutcome, devReviewTimeLimit, quizTimeLimit } from './core/quiz-ti
 import { useQuizCountdown } from './hooks/useQuizCountdown';
 import { MasteryFeedback } from './components/MasteryFeedback';
 import { QuizTimerFill } from './components/QuizTimerFill';
-import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, densityTargets, forecastDensity, planLessonChunk, type DensityRange } from './core/density';
+import { DEFAULT_DENSITY_RANGE, DENSITY_LEVELS, densityLevel, forecastDensity, planLessonChunk, type DensityRange, type DensityForecast } from './core/density';
 import { planContextualIntroductions } from './core/contextual-admission';
 import { initialVoiceIds } from './core/voices';
 import { selectRecording } from './core/audio';
 import { ProgressStore } from './progress/store';
 import { AnswerRecovery } from './progress/recovery';
 import { intensityColors, quizFeedbackColors, themeColors } from './themes';
+import { ReviewForecast } from './components/ReviewForecast';
 import { DensityIndicator, HomeIntensity } from './components/PaceControl';
 import './styles.css';
 import './writing-fonts.css';
@@ -151,7 +152,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const demoSchedules = useRef<Map<string, ScheduledWord | undefined> | null>(null);
   const [range] = useState<DensityRange>(initialRange);
   const [density, setDensity] = useState<number | null>(null);
-  const [contextualAdmission, setContextualAdmission] = useState({ ready: 0, atCapacity: false });
   const [loading, setLoading] = useState(true);
   const [historyError, setHistoryError] = useState(false);
   const [lessonPlan, setLessonPlan] = useState<LessonPlan | null>(null);
@@ -174,8 +174,11 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const [audioFinished, setAudioFinished] = useState(false);
   const [questionTimer, setQuestionTimer] = useState<{ id: string; limitMs: number | null; masteryLabel: string }>({ id: '', limitMs: null, masteryLabel: 'New' });
   const [autoPaused, setAutoPaused] = useState(false);
-  const [total, setTotal] = useState(0);
   const [refresh, setRefresh] = useState(0);
+  const forecastScope = useMemo(() => ({ store, cards: selectedCards, historyRevision, saveRevision: saveState.revision, refresh, now }),
+    [store, selectedCards, historyRevision, saveState.revision, refresh, now]);
+  const [reviewForecast, setReviewForecast] = useState<{ scope: typeof forecastScope; at: number; value: DensityForecast | null; error: boolean } | null>(null);
+  const currentForecast = reviewForecast?.scope === forecastScope ? reviewForecast : null;
   const audio = useRef<HTMLAudioElement>(null);
   const recording = useRef<AudioAsset | null>(null);
   const active = useRef({ id: '', startedAt: 0, answered: false, sessionId: '', replays: 0 });
@@ -235,21 +238,40 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     void (async () => {
       try {
         const attempts = await store.history(practicePool.language);
-        const { schedules, cards } = await learningSnapshot(attempts);
-        const forecast = await forecastDensity(schedules, now());
+        const { schedules } = await learningSnapshot(attempts);
+        const at = now();
+        const forecast = await forecastDensity(schedules, at);
         if (cancelled || operation.current !== request) return;
         history.current = attempts;
-        const learned = new Set(schedules.map(cardKey));
-        setContextualAdmission({ ready: cards.filter(card => isContextualExercise(card.exercise) && !learned.has(cardKey(card))).length,
-          atCapacity: forecast.reviewsPerDay >= densityTargets(range.min, range.max).maximum });
         mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
-        setTotal(attempts.length); setDensity(forecast.reviewsPerDay); setHistoryError(false);
+        setDensity(forecast.reviewsPerDay); setHistoryError(false);
+        setReviewForecast({ scope: forecastScope, at, value: forecast, error: false });
       } catch {
-        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); }
+        if (!cancelled && operation.current === request) { setHistoryError(true); setDensity(null); setReviewForecast({ scope: forecastScope, at: 0, value: null, error: true }); }
       } finally { if (!cancelled && operation.current === request) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, range, practicePool]);
+  }, [screen, refresh, now, store, historyRevision, learningSnapshot, saveState.revision, practicePool, forecastScope]);
+
+  useEffect(() => {
+    if (screen !== 'home') return;
+    const refreshHome = () => {
+      if (document.visibilityState !== 'hidden') setRefresh(value => value + 1);
+    };
+    const at = now();
+    const midnight = new Date(at);
+    midnight.setHours(24, 0, 0, 0);
+    const timer = window.setTimeout(refreshHome, Math.max(1, midnight.getTime() - at));
+    window.addEventListener('focus', refreshHome);
+    window.addEventListener('pageshow', refreshHome);
+    document.addEventListener('visibilitychange', refreshHome);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('focus', refreshHome);
+      window.removeEventListener('pageshow', refreshHome);
+      document.removeEventListener('visibilitychange', refreshHome);
+    };
+  }, [screen, refresh, now]);
 
   useEffect(() => {
     const element = audio.current;
@@ -360,7 +382,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       const attempts = await store.history(practicePool.language);
       const { schedules, cards } = await learningSnapshot(attempts);
       if (operation.current !== request) return;
-      history.current = attempts; setTotal(attempts.length);
+      history.current = attempts;
       mastery.current = new Map(schedules.map(word => [cardKey(word), word]));
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards };
       const due = snapshotDue(schedules, selectedCards.map(card => card.item.id), at);
@@ -430,7 +452,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     }
     onSaved?.();
     if (!history.current.some(saved => saved.id === attempt.id)) history.current = [...history.current, attempt];
-    setTotal(history.current.length);
     setRefresh(value => value + 1);
   }
   function choose(item: WordItem) {
@@ -502,6 +523,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     else if (state === 'playing') setAutoPaused(false);
   }, []);
 
+  const dueNow = !loading && !accountLoading && !historyError && !pendingSaveCount && !saveError && currentForecast?.value
+    ? Math.round(currentForecast.value.daily[0] ?? 0) : null;
   const correct = answers.filter(answer => answer.correct).length;
   const mistakes = answers.length - correct;
   return <div className={'app app-' + screen} data-theme={theme} data-answer={response}>
@@ -513,12 +536,12 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
         <HomeIntensity value={density}/>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'} <span aria-hidden="true">↗</span></button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
+        <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
+          loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
         {failedAttempt && <div className="error" role="alert"><p>This answer hasn't been saved yet.</p><button className="text-button" onClick={() => void save(failedAttempt)}>Retry saving</button><button className="text-button" onClick={recovery.discard}>Continue without saving</button></div>}
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
-        {!loading && !historyError && contextualAdmission.ready > 0 && <p className="block-note">{contextualAdmission.ready} contextual {contextualAdmission.ready === 1 ? 'card is' : 'cards are'} ready for reviews. {contextualAdmission.atCapacity ? 'New contextual questions are waiting for your review workload to ease.' : 'They enter review sessions when your review workload allows.'}</p>}
-        <div className="history">{total ? total + (total === 1 ? ' answer' : ' answers') + ' saved on this device' : ''}</div>
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
         {accountControls}

@@ -434,7 +434,7 @@ test('learn mixed picture and writing cards, complete their quiz, and retain bot
   await expect(page.getByRole('button', { name: /learn more/i })).toBeEnabled();
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
-  await expect(page.getByText('10 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(10);
   const saved = await savedAttempts(page);
   expect(saved.map(attempt => JSON.stringify([bank.language, attempt.itemId, attempt.context?.exercise])).sort()).toEqual(introducedIds.sort());
   expect(saved.every(item => item.correct && item.context?.phase === 'lesson' && item.context.recordingSrc && item.choiceIds.length === 4)).toBe(true);
@@ -555,7 +555,7 @@ test('reviews both saved formats of one word and preserves a writing retry after
   });
   await page.reload();
   expect(await savedAttempts(page)).toEqual(saved);
-  await expect(page.getByText('5 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(5);
 });
 
 test('home centers a larger Kiku and fills the viewport with the current intensity', async ({ page }, testInfo) => {
@@ -702,7 +702,7 @@ test('a failed answer can be retried from Home and persists exactly once after r
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
   await expect(page.getByRole('alert')).toHaveCount(0);
   await page.reload();
-  await expect(page.getByText('7 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(7);
   const saved = await savedAttempts(page);
   expect(saved).toHaveLength(original.length + 1);
   expect(saved.filter(attempt => attempt.id === expected.id)).toEqual([expected]);
@@ -802,7 +802,7 @@ test('a session reviews only its starting snapshot and preserves legacy history'
   await captureScreen(page, 'adaptive-review-end-' + testInfo.project.name);
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await page.reload();
-  await expect(page.getByText('15 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(15);
   const saved = await savedAttempts(page);
   expect(saved.filter(item => !item.context)).toHaveLength(7);
   const reviews = saved.filter(item => item.context?.phase === 'review');
@@ -901,7 +901,7 @@ test('a miss drops only uninvolved pictures without shifting the grid or adding 
   }).toBe(true);
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
-  await expect(page.getByText('7 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(7);
 });
 
 test('holding a picture acts as one button press on release', async ({ page }, testInfo) => {
@@ -946,7 +946,7 @@ test('holding a picture acts as one button press on release', async ({ page }, t
   for (const button of await page.getByRole('button', { name: /choose picture/i }).all()) await expect(button).toBeDisabled();
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
-  await expect(page.getByText('7 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(7);
 });
 
 test('an unavailable recording can be retried without recording a premature answer', async ({ page }) => {
@@ -962,5 +962,5 @@ test('an unavailable recording can be retried without recording a premature answ
   await chooseHeardAnswer(page, (await heardWord(page)).target);
   await page.getByRole('button', { name: /kikimashta home/i }).click();
   await page.reload();
-  await expect(page.getByText('7 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(7);
 });

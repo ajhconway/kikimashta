@@ -1,3 +1,4 @@
+import { savedAttempts } from './saved-attempts';
 import { expect, test } from '@playwright/test';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
 import pool from '../content/practice-pool.json' with { type: 'json' };
@@ -34,9 +35,9 @@ test('selected writing pack persists and saves only its cards to real browser st
   expect(choices.every(text => eligible.some(item => item.text === text))).toBe(true);
   await page.getByRole('button', { name: 'Choose writing ' + target.text, exact: true }).click();
   await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
-  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(1);
   await page.reload();
-  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(1);
   await expect(page.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeVisible();
   await page.getByRole('link', { name: 'Card library · 1 pack selected' }).click();
   await page.getByRole('checkbox', { name: pack.title }).uncheck();
@@ -44,7 +45,7 @@ test('selected writing pack persists and saves only its cards to real browser st
   await expect(page.getByRole('button', { name: /^start/i })).toBeDisabled();
   await page.reload();
   await expect(page.getByRole('link', { name: 'Card library · 0 packs selected' })).toBeVisible();
-  await expect(page.getByText('1 answer saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(1);
 });
 
 test('retired starter selections disappear while their saved history survives reload', async ({ page }) => {
@@ -73,7 +74,7 @@ test('retired starter selections disappear while their saved history survives re
     } finally { db.close(); }
   }, { key: packPreferenceKey, packId: pack.id });
   await page.reload();
-  await expect(page.getByText('4 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(4);
   await page.getByRole('link', { name: 'Card library · 1 pack selected' }).click();
   await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox', { checked: true })).toHaveAccessibleName(pack.title);
   await expect(page.getByRole('group', { name: 'Practice packs', exact: true }).getByRole('checkbox')).toHaveCount(10);
@@ -82,6 +83,6 @@ test('retired starter selections disappear while their saved history survives re
   await expect(page.getByRole('button', { name: 'Begin review', exact: true })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Begin lesson', exact: true })).toBeVisible();
   await page.reload();
-  await expect(page.getByText('4 answers saved on this device')).toBeVisible();
+  await expect.poll(async () => (await savedAttempts(page)).length).toBe(4);
   await expect(page.getByRole('link', { name: 'Card library · 1 pack selected' })).toBeVisible();
 });

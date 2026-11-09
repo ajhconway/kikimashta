@@ -121,8 +121,6 @@ h1 em { color: var(--purple); font-style: normal; }
 .primary span { font-size: 22px; line-height: 1; }
 .text-button { display: block; margin: 0 auto; padding: 11px 6px; border: 0; background: transparent; color: var(--muted); font-size: 13px; font-weight: 700; line-height: 1.4; }
 .text-button:hover { color: var(--purple-dark); }
-.history { margin: 20px auto 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
-.history:empty { display: none; }
 
 .section-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .counter { padding: 5px 10px; border-radius: 10px; background: #eee5fa; font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
