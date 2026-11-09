@@ -328,11 +328,3 @@
   font-size: 26px;
   font-weight: 800;
 }
-
-.contextual-demo-indicator {
-  position: absolute;
-  top: max(16px, env(safe-area-inset-top));
-  right: max(16px, env(safe-area-inset-right));
-  color: var(--muted);
-  font-size: 12px;
-}

@@ -88,71 +88,19 @@ it('introduces unlocked contexts directly in reviews while saving initial-learni
 });
 
 
-it('runs the actual contextual practice screen as an unsaved demo with retries and both answer formats', async () => {
-  vi.useFakeTimers();
-  const onSaved = vi.fn();
+it.each(['ja-JP', 'es-419'])('opens normal Home for the retired contextual demo URL in %s', async language => {
+  localStorage.setItem('kikimashta-learning-language-v1', language);
   window.history.replaceState({}, '', '/?demo=contextual');
-  const { container } = render(<App random={() => 0} onSaved={onSaved}/>);
-  await click(screen.getByRole('button', { name: 'Begin review' }));
-  expect(screen.getByLabelText('Practice demo. Progress is not saved.')).toBeInTheDocument();
-  expect(screen.queryByLabelText('Jump to question')).not.toBeInTheDocument();
-  const seen = new Set<string>();
-  let firstId: string | null = null;
-  let firstSource: string | null = null;
-  let retried = false;
-  for (let step = 0; step < 5; step++) {
-    const quiz = container.querySelector('.contextual-quiz')!;
-    const id = quiz.getAttribute('data-question-id');
-    const source = quiz.querySelector('audio')!.getAttribute('src');
-    const authored = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions).find(question => question.id === id)!;
-    const correct = authored.options.find(option => option.id === authored.correctOptionId)!;
-    const format = container.querySelector('.contextual-practice')!.getAttribute('data-exercise')!;
-    seen.add(format);
-    fireEvent.ended(quiz.querySelector('audio')!);
-    await act(async () => { await vi.advanceTimersByTimeAsync(650); });
-    fireEvent.ended(quiz.querySelector('audio')!);
-    const buttons = screen.getAllByRole('button', { name: /^Choose (picture|writing)/ });
-    const correctButton = format.endsWith('text') ? buttons.find(button => button.textContent === correct.text)! :
-      buttons.find(button => within(button).getByRole('img').getAttribute('alt') === contextualVocabulary.find(word => word.id === correct.imageItemId)!.image.alt)!;
-    if (step === 0) { firstId = id; firstSource = source; }
-    else if (id === firstId) { expect(source).toBe(firstSource); retried = true; }
-    await click(step === 0 ? buttons.find(button => button !== correctButton)! : correctButton);
-    if (step === 0) {
-      expect(screen.getByRole('button', { name: 'Show Japanese' })).toBeInTheDocument();
-      expect(screen.getByRole('img', { name: 'Mastery decreased to Learning' })).toBeInTheDocument();
-      await act(async () => { await vi.advanceTimersByTimeAsync(10000); });
-      expect(container.querySelector('.contextual-quiz')!.getAttribute('data-question-id')).toBe(id);
-      await click(screen.getByRole('button', { name: 'Continue' }));
-    } else {
-      expect(screen.queryByRole('button', { name: 'Continue' })).not.toBeInTheDocument();
-      await act(async () => { await vi.advanceTimersByTimeAsync(1200); });
-    }
-  }
-  expect(retried).toBe(true);
-  expect(seen).toEqual(new Set(['context-simple-picture', 'context-simple-text', 'context-contrastive-picture', 'context-contrastive-text']));
-  expect(screen.getByRole('heading', { name: 'Contextual practice demo complete' })).toBeInTheDocument();
+  render(<App random={() => 0}/>);
+  expect(await screen.findByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
+  expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveValue(language);
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-  expect(onSaved).not.toHaveBeenCalled();
-  expect(history).toEqual([]);
-  await click(screen.getByRole('button', { name: 'Finish' }));
-  expect(screen.getByRole('button', { name: /^Start/ })).toBeInTheDocument();
 });
 
-it('offers a direct contextual demo link even with no selected packs', async () => {
-  window.history.replaceState({}, '', '/?demo=contextual');
-  localStorage.setItem('kikimashta-card-packs-v1', '[]');
-  try {
-    render(<App random={() => 0}/>);
-    expect(screen.getByRole('heading', { name: 'Contextual practice demo' })).toBeInTheDocument();
-    await click(screen.getByRole('button', { name: 'Begin review' }));
-    expect(screen.getByLabelText('Practice demo. Progress is not saved.')).toBeInTheDocument();
-    expect(screen.queryByLabelText('Jump to question')).not.toBeInTheDocument();
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-  } finally { window.history.replaceState({}, '', '/'); }
-});
-
-
-it('keeps the demo available at high workload', async () => {
+it('keeps configured contextual Dev review available at high workload', async () => {
   const { schedule } = await unlockedTarget();
   vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
   render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
@@ -163,19 +111,6 @@ it('keeps the demo available at high workload', async () => {
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
 
-
-it('keeps Japanese contextual demos out of the Spanish practice language', async () => {
-  localStorage.setItem('kikimashta-learning-language-v1', 'es-419');
-  window.history.replaceState({}, '', '/?demo=contextual');
-  try {
-    render(<App/>);
-    await waitFor(() => expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveValue('es-419'));
-    expect(screen.queryByRole('button', { name: 'Contextual practice demo' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: 'Contextual practice demo' })).not.toBeInTheDocument();
-    expect(screen.queryByText('Practice demo. Progress is not saved.')).not.toBeInTheDocument();
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-  } finally { window.history.replaceState({}, '', '/'); }
-});
 
 function correctRenderedChoice(container: HTMLElement): HTMLElement {
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
@@ -188,10 +123,16 @@ function correctRenderedChoice(container: HTMLElement): HTMLElement {
 }
 
 it('waits for a replay to finish before automatically advancing a correct contextual answer', async () => {
-  vi.useFakeTimers();
-  window.history.replaceState({}, '', '/?demo=contextual');
   const { container } = render(<App random={() => 0}/>);
-  await click(screen.getByRole('button', { name: 'Begin review' }));
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
+  await click(screen.getByRole('button', { name: 'Dev review' }));
+  await click(screen.getByRole('checkbox', { name: 'Words · Pictures' }));
+  await click(screen.getByRole('checkbox', { name: 'Words · Writing' }));
+  await click(screen.getByRole('checkbox', { name: 'Simple contexts · Writing' }));
+  await click(screen.getByRole('button', { name: 'Clear levels' }));
+  await click(screen.getByRole('checkbox', { name: 'Learning' }));
+  vi.useFakeTimers();
+  await click(screen.getByRole('button', { name: 'Start dev review' }));
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
   correctRenderedChoice(container).focus();
   await click(correctRenderedChoice(container));

@@ -4,7 +4,8 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { ProgressStore } from './progress/store';
-import { practiceCards, cardKey } from './core/cards';
+import { cardKey } from './core/cards';
+import { practiceCards } from './test/cards';
 import { practicePool } from './core/practice';
 const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
