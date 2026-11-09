@@ -1,0 +1,19 @@
+{
+  "id": "es-419-basic-thirst",
+  "slug": "thirst",
+  "version": 2,
+  "path": "originals/thirst-v2.png",
+  "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449",
+  "promptSha256": "5b19bf265ed33efd2403ab37a9ab23a42ad57df4267bb06f17a70ff5e49ccc11",
+  "referenceSha256": "dd372fcbe5f0d5d9632253905bbcc1be775e4eba544bd6421786a3927c4b523b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-e689d78c-0fc3-4dcf-adf4-10b1c231d09a.png",
+  "supersedes": "originals/thirst-v1.png"
+}

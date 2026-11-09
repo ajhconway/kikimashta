@@ -1,7 +1,7 @@
 import type { Exercise, PracticeCard, WordItem } from '../types';
 import type { ContextualAnswerFormat, ContextualBank, ContextualItem, ContextualQuestion } from '../content/contextual-types';
 import { approvedContextualQuestions } from '../content/contextual';
-import { cardKey } from './cards';
+import { cardKey, isContextualExercise } from './cards';
 import { contextualQuestion } from './contextual-questions';
 import { createMasterySample } from './mastery-demo';
 import { masteryLevels } from './mastery';
@@ -37,13 +37,14 @@ export interface DevReviewEntry {
 }
 
 /** Ready content only; sample mastery bypasses real unlocks, never pack/language boundaries. */
-export function devReviewEntries(cards: readonly PracticeCard[], banks: readonly ContextualBank[], vocabulary: readonly WordItem[]): DevReviewEntry[] {
-  const entries: DevReviewEntry[] = cards.map(card => ({ card }));
-  const selected = new Set(cards.map(cardKey));
+export function devReviewEntries(cards: readonly PracticeCard[], banks: readonly ContextualBank[], vocabulary: readonly WordItem[], contextualScope: readonly PracticeCard[] = cards): DevReviewEntry[] {
+  const entries: DevReviewEntry[] = cards.filter(card => !isContextualExercise(card.exercise)).map(card => ({ card }));
+  const selected = new Set([...contextualScope, ...cards].map(cardKey));
   for (const bank of banks) for (const format of ['picture', 'text'] as const) {
     for (const { context, question } of approvedContextualQuestions(bank, format)) {
       const target = vocabulary.find(item => item.id === context.targetItemId && item.language === bank.language);
-      if (!target || !selected.has(cardKey({ item: target, exercise: format === 'picture' ? 'audio-picture' : 'audio-text' }))) continue;
+      if (!target || (!selected.has(cardKey({ item: target, exercise: format === 'picture' ? 'audio-picture' : 'audio-text' })) &&
+          !selected.has(cardKey({ item: target, exercise: `context-${context.stage ?? 'contrastive'}-${format}` })))) continue;
       if (!context.recordings.some(recording => recording.sentenceSrc && recording.questionSrcs[question.id])) continue;
       entries.push({ card: { item: target, exercise: `context-${context.stage ?? 'contrastive'}-${format}` },
         contextual: { context, question, format } });

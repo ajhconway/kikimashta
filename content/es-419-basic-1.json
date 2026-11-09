@@ -1,0 +1,1444 @@
+{
+  "id": "es-419-basic-1",
+  "language": "es-419",
+  "title": "Basic Spanish level 1",
+  "status": "approved",
+  "items": [
+    {
+      "id": "es-419-basic-eat",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Eat",
+      "text": "comer",
+      "image": {
+        "src": "images/approved/es-419-basic-eat-c495ddb8644c.png",
+        "source": "generated",
+        "alt": "Eat"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-eat.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-drink",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Drink",
+      "text": "beber",
+      "image": {
+        "src": "images/approved/es-419-basic-drink-45313e5cd9db.png",
+        "source": "generated",
+        "alt": "Drink"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-drink.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-large",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Big",
+      "text": "grande",
+      "image": {
+        "src": "images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+        "source": "generated",
+        "alt": "Big"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-large.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-small",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Small",
+      "text": "pequeño",
+      "image": {
+        "src": "images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+        "source": "generated",
+        "alt": "Small"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-small.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-cold",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Cold",
+      "text": "frío",
+      "image": {
+        "src": "images/approved/es-419-basic-cold-10d51b01d85f.png",
+        "source": "generated",
+        "alt": "Cold"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-cold.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-hot",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Hot",
+      "text": "caliente",
+      "image": {
+        "src": "images/approved/es-419-basic-hot-23f788a2971b.png",
+        "source": "generated",
+        "alt": "Hot"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-hot.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-open",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Open",
+      "text": "abierto",
+      "image": {
+        "src": "images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+        "source": "generated",
+        "alt": "Open"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-open.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-closed",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Closed",
+      "text": "cerrado",
+      "image": {
+        "src": "images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+        "source": "generated",
+        "alt": "Closed"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-closed.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-inside",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Inside",
+      "text": "dentro de",
+      "image": {
+        "src": "images/approved/es-419-basic-inside-0a496e40c996.png",
+        "source": "generated",
+        "alt": "Inside"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-inside.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "On top of",
+      "text": "encima de",
+      "image": {
+        "src": "images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+        "source": "generated",
+        "alt": "On top of"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-on-top.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-under",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Under",
+      "text": "debajo de",
+      "image": {
+        "src": "images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+        "source": "generated",
+        "alt": "Under"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-under.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Next to",
+      "text": "al lado de",
+      "image": {
+        "src": "images/approved/es-419-basic-next-to-8fd1c17703e9.png",
+        "source": "generated",
+        "alt": "Next to"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-next-to.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Hunger",
+      "text": "hambre",
+      "image": {
+        "src": "images/approved/es-419-basic-hunger-e2d618dfe631.png",
+        "source": "generated",
+        "alt": "Hunger"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-hunger.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Thirst",
+      "text": "sed",
+      "image": {
+        "src": "images/approved/es-419-basic-thirst-0f4eff1cf54b.png",
+        "source": "generated",
+        "alt": "Thirst"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-thirst.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "language": "es-419",
+      "theme": "basic",
+      "label": "Sleepiness",
+      "text": "sueño",
+      "image": {
+        "src": "images/approved/es-419-basic-sleepiness-8a2e331b4bde.png",
+        "source": "generated",
+        "alt": "Sleepiness"
+      },
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-sleepiness.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    }
+  ],
+  "foundationVocabulary": [
+    {
+      "id": "es-419-basic-have",
+      "text": "tener",
+      "reading": "tener",
+      "meaning": "Have",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-have.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-want",
+      "text": "querer",
+      "reading": "querer",
+      "meaning": "Want",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-want.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-need",
+      "text": "necesitar",
+      "reading": "necesitar",
+      "meaning": "Need",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-need.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-go",
+      "text": "ir",
+      "reading": "ir",
+      "meaning": "Go",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-go.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-carry",
+      "text": "llevar",
+      "reading": "llevar",
+      "meaning": "Carry / take",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-carry.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-buy",
+      "text": "comprar",
+      "reading": "comprar",
+      "meaning": "Buy",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-buy.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-today",
+      "text": "hoy",
+      "reading": "hoy",
+      "meaning": "Today",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-today.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-tomorrow",
+      "text": "mañana",
+      "reading": "mañana",
+      "meaning": "Tomorrow",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-tomorrow.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    },
+    {
+      "id": "es-419-basic-afterward",
+      "text": "después",
+      "reading": "después",
+      "meaning": "Afterward",
+      "audio": [
+        {
+          "src": "audio/es-419-basic-1/juan/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "juan",
+          "voiceName": "Juan"
+        },
+        {
+          "src": "audio/es-419-basic-1/pamela/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "pamela",
+          "voiceName": "Pamela"
+        },
+        {
+          "src": "audio/es-419-basic-1/albeiro/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "albeiro",
+          "voiceName": "Albeiro O"
+        },
+        {
+          "src": "audio/es-419-basic-1/carito/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "carito",
+          "voiceName": "Carito"
+        },
+        {
+          "src": "audio/es-419-basic-1/santiago/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "santiago",
+          "voiceName": "Santiago"
+        },
+        {
+          "src": "audio/es-419-basic-1/agustina/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "agustina",
+          "voiceName": "Agustina"
+        },
+        {
+          "src": "audio/es-419-basic-1/carlos-figueroa/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "carlos-figueroa",
+          "voiceName": "Carlos Figueroa"
+        },
+        {
+          "src": "audio/es-419-basic-1/veronica/es-419-basic-afterward.mp3",
+          "source": "synthesized",
+          "voice": "veronica",
+          "voiceName": "Veronica"
+        }
+      ]
+    }
+  ]
+}

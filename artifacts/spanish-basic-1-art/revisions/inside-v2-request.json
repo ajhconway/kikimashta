@@ -1,0 +1,20 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-inside",
+  "slug": "inside",
+  "version": 2,
+  "ownerFeedback": "Inside should use a more rectangular box.",
+  "concept": "Kiku resting INSIDE a LOW WIDE RECTANGULAR cardboard box. The box front face is a clear horizontal rectangle about TWO TIMES as wide as tall, with straight parallel top and bottom edges and modest depth visible at the sides. No tall cube, hexagonal bowl, big V-shaped or U-shaped cutaway. The front wall is low enough that the normal resting cat face and two front paws are visible over its straight rim, while the body stays inside. Small outward side flaps may clarify cardboard. Make it obvious she is contained by the rectangular box.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a transparent background, readable at 145px.\nInput image1: EDIT TARGET to replace its composition according to the owner correction.\nInput image2: CANONICAL KIKU CHARACTER AND NORMAL RESTING POSE reference. Copy the low resting pose, proportions and expression; do not add an upright body or seated back legs.\nOwner correction: Inside should use a more rectangular box.\nPrimary request: Kiku resting INSIDE a LOW WIDE RECTANGULAR cardboard box. The box front face is a clear horizontal rectangle about TWO TIMES as wide as tall, with straight parallel top and bottom edges and modest depth visible at the sides. No tall cube, hexagonal bowl, big V-shaped or U-shaped cutaway. The front wall is low enough that the normal resting cat face and two front paws are visible over its straight rim, while the body stays inside. Small outward side flaps may clarify cardboard. Make it obvious she is contained by the rectangular box.\nStyle and constraints: preserve the established rounded friendly cartoon style, smooth bold deep-violet contours and gentle soft shading. Kiku remains golden-yellow with purple headphones, pink ear interiors, tiny whiskers and curled tail. One complete centered illustration on a square canvas with generous transparent margin. No text, numbers, logo, watermark, decorative background, outside glow or ground shadow. Preserve opaque subject interiors and genuinely transparent outside pixels.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
+  "referenceSha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ]
+}

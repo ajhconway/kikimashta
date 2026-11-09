@@ -1,10 +1,8 @@
 import { expect, test, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 import catalogue from '../content/catalog/ja.json' with { type: 'json' };
-import type { ContextualBank } from '../src/content/contextual-types';
+import { authoredContextualQuestion } from './contextual-content';
 
-const authoredQuestions = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.json'].flatMap(file =>
-  (JSON.parse(readFileSync(new URL('../content/contextual/' + file, import.meta.url), 'utf8')) as ContextualBank).contexts.flatMap(context => context.questions));
 const overrides = JSON.parse(readFileSync(new URL('../content/catalog/review-overrides.json', import.meta.url), 'utf8')) as Record<string, { image?: { alt: string } }>;
 
 async function storedHistory(page: Page) {
@@ -80,7 +78,7 @@ test('contextual samples use selected mastery timers and keep real progress unch
   await expect(page.locator('.contextual-choices')).toBeHidden();
   const quiz = page.locator('.contextual-quiz');
   const questionId = await quiz.getAttribute('data-question-id');
-  const question = authoredQuestions.find(question => question.id === questionId)!;
+  const question = authoredContextualQuestion(questionId);
   const wrong = question.options.find(option => option.id !== question.correctOptionId)!;
   const imageId = wrong.imageItemId!;
   const alt = overrides[imageId]?.image?.alt ?? catalogue.items.find(item => item.id === imageId)!.image.alt;
@@ -119,8 +117,9 @@ test('options respect language and handle empty selected packs', async ({ page }
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   const types = page.getByRole('group', { name: 'Review types', exact: true });
-  await expect(types.getByRole('checkbox')).toHaveCount(1);
-  await expect(types.getByRole('checkbox')).toHaveAccessibleName('Words · Pictures');
+  await expect(types.getByRole('checkbox')).toHaveCount(2);
+  await expect(types.getByRole('checkbox', { name: 'Words · Pictures', exact: true })).toBeVisible();
+  await types.getByRole('checkbox', { name: 'Simple contexts · Pictures', exact: true }).uncheck();
   await page.getByRole('button', { name: 'Start dev review' }).click();
   await expect(page.locator('.quiz')).toHaveAttribute('data-exercise', 'audio-picture');
   await expect(page.locator('.app > audio')).toHaveAttribute('src', /es-419/);
@@ -160,7 +159,7 @@ test('contextual countdown starts after paired audio, survives replay and gives 
   await expect(page.locator('.contextual-choices')).toBeVisible();
   await expect(page.locator('.contextual-choices .choice-slot').first()).toHaveCSS('transform', 'none');
   const questionId = await quiz.getAttribute('data-question-id');
-  const current = authoredQuestions.find(candidate => candidate.id === questionId)!;
+  const current = authoredContextualQuestion(questionId);
   const correct = current.options.find(option => option.id === current.correctOptionId)!;
   await page.getByRole('button', { name: 'Replay sentence and question', exact: true }).click();
   await expect(page.getByText('Take your time. A correct answer still counts as partial success.', { exact: true })).toBeAttached();

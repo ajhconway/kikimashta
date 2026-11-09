@@ -1,0 +1,10 @@
+{
+  "id": "es-419-basic-next-to",
+  "slug": "next-to",
+  "version": 2,
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/next-to-v1.png",
+  "referenceSha256": "cc0a0f571f5ec2234adce38005381e57908d05d4f8c9e0d40c188cf2d8f9e108",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary card, 1024 by 1024 square canvas.\nInput image1 is the EDIT TARGET. Preserve the same single Kiku beside the same empty tan box, both entirely visible on the same ground level, with a clear gap. Change the overall canvas from wide landscape into a SQUARE 1:1 canvas. Scale the complete cat-and-box illustration down within a square canvas and add generous TRANSPARENT margin above and below; preserve the complete scene without cropping. Do not stretch either subject. Keep Kiku entirely outside the box and the box empty. Both subjects must remain sharp and readable. Preserve the exact character, purple headphones, clean bold violet contours, tan box shape, soft shading and transparent background. No letters, text, frame, ground or shadow. Deliver one square PNG cutout, not a wide image."
+}

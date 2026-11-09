@@ -1,0 +1,111 @@
+{
+  "issue": 191,
+  "pack": "es-419-basic-1",
+  "planIdentity": "14f9504d3ed810fee5f7e677fae70466a38cdec75b5ec3dfec7bc11e56c8d132",
+  "manifestSha256": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07",
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "generationApprovalSha256": "6c07ee6197ad6303f5c813289cf6068a49b091f3cc73879ca342af56bb7423db",
+  "integrity": {
+    "issue": 191,
+    "words": 24,
+    "contexts": 9,
+    "spokenParts": 42,
+    "voices": 8,
+    "clips": 336,
+    "characters": 4760,
+    "archiveFilesHashVerified": 2027,
+    "allOriginalDeliveryReviewBytesMatch": true,
+    "registryVoicesMatch": true,
+    "authorizationMatches": true,
+    "approvedDraftSnapshotsMatch": true,
+    "credentialLiterals": 0,
+    "privateUsageOrEnvFiles": false,
+    "targetLimited": [
+      {
+        "id": "es-419-basic-go",
+        "voice": "carlos-figueroa",
+        "text": "ir",
+        "role": "word",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -23.94,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.5
+        },
+        "limitingReasons": [
+          "maximum_gain"
+        ]
+      },
+      {
+        "id": "es-419-basic-hunger",
+        "voice": "juan",
+        "text": "hambre",
+        "role": "word",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -2.21
+        },
+        "limitingReasons": [
+          "true_peak_headroom"
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "command": "npm run check",
+    "passed": true,
+    "vitest": 446,
+    "node": 265,
+    "audioPython": 12,
+    "cardPython": 22,
+    "lint": true,
+    "types": true,
+    "cardValidator": true,
+    "productionBuild": true
+  },
+  "browser": {
+    "method": "One muted native Audio element reused sequentially; every clip must load native media data, resolve play(), and advance currentTime above 0.01 seconds. No retries.",
+    "engines": [
+      {
+        "engine": "chromium",
+        "passed": 336,
+        "failures": [],
+        "minDuration": 0.56,
+        "maxDuration": 3.84,
+        "advanced": 336
+      },
+      {
+        "engine": "mobile-webkit",
+        "passed": 336,
+        "failures": [],
+        "minDuration": 0.6008163265306122,
+        "maxDuration": 3.866122448979592,
+        "advanced": 336
+      }
+    ],
+    "reviewControls": [
+      {
+        "engine": "chromium",
+        "parts": 42,
+        "clips": 336,
+        "diacriticSearch": true,
+        "voiceFilter": true,
+        "regionFilter": true,
+        "horizontalOverflow": false
+      },
+      {
+        "engine": "mobile-webkit",
+        "parts": 42,
+        "clips": 336,
+        "diacriticSearch": true,
+        "voiceFilter": true,
+        "regionFilter": true,
+        "horizontalOverflow": false
+      }
+    ],
+    "realIPhoneTested": false
+  },
+  "acceptance": "Awaiting owner listening acceptance; automated decoding/playback does not approve pronunciation."
+}

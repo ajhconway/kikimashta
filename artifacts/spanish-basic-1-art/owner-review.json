@@ -1,0 +1,83 @@
+{
+  "issue": 191,
+  "ownerMessage": "Great, let's ship it.",
+  "approvedPictures": [
+    {
+      "id": "es-419-basic-eat",
+      "path": "artifacts/spanish-basic-1-art/originals/eat-v1.png",
+      "sha256": "c495ddb8644cb6ae010606575f6718279f820d3e041434d2f3824ed2edd7641d"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "path": "artifacts/spanish-basic-1-art/originals/drink-v1.png",
+      "sha256": "45313e5cd9db24fbdaf5fda8aadce00803d5a0f0ed97b01839a3aad920658be8"
+    },
+    {
+      "id": "es-419-basic-large",
+      "path": "public/images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+      "sha256": "e4e3a7c4b4a711e9eafb2c65f99d5d9803618a42597df959dd6f54c6ab6a845b"
+    },
+    {
+      "id": "es-419-basic-small",
+      "path": "public/images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+      "sha256": "ed0a26999d386ade88cf8d363538d9562af4cba381503f7604186d016cbd6e11"
+    },
+    {
+      "id": "es-419-basic-cold",
+      "path": "artifacts/spanish-basic-1-art/originals/cold-v4.png",
+      "sha256": "10d51b01d85f0879a5adfcc00bfd8bb132c1661660efa642635bb4168472d0b9"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "path": "artifacts/spanish-basic-1-art/originals/hot-v3.png",
+      "sha256": "23f788a2971b17fec68c1b156af86201f37cbae7a0f5bef2eea2e906912eeb2c"
+    },
+    {
+      "id": "es-419-basic-open",
+      "path": "public/images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+      "sha256": "5601a95a2085bea7bd788b5207e5c3ad374780fa75ae549ff84a4a4018314a56"
+    },
+    {
+      "id": "es-419-basic-closed",
+      "path": "public/images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+      "sha256": "bed4c2f3e39f2f6b8d8b8c6cf262001618abdbb05f2ba21592fbbb26eebbc072"
+    },
+    {
+      "id": "es-419-basic-inside",
+      "path": "artifacts/spanish-basic-1-art/originals/inside-v2.png",
+      "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df"
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e"
+    },
+    {
+      "id": "es-419-basic-under",
+      "path": "public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+      "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "path": "artifacts/spanish-basic-1-art/originals/next-to-v3.png",
+      "sha256": "8fd1c17703e9cf5b62ad3b4b95a26a04690e537a7eed799b6ff371a183ed0ffe"
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "path": "artifacts/spanish-basic-1-art/originals/hunger-v2.png",
+      "sha256": "e2d618dfe63105abf0b86e74fcefc0a12e6e11ccd8772536dc08e3f44626b5e3"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "path": "artifacts/spanish-basic-1-art/originals/thirst-v2.png",
+      "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v3.png",
+      "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79"
+    }
+  ],
+  "pendingPictures": [],
+  "scope": "All final pictures and generated audio accepted for activation and deployment."
+}

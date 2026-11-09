@@ -1,3 +1,4 @@
+import { spanishBasicContexts, spanishContextualVocabulary } from './spanish-basic';
 import contrastive from '../../content/contextual/ja-pilot.json';
 import simple from '../../content/contextual/ja-simple-pilot.json';
 import expansion from '../../content/contextual/ja-simple-expansion.json';
@@ -8,16 +9,20 @@ import answerVocabulary from '../../content/contextual/answer-vocabulary.json';
 import { withAnswerAmendments, withAnswerVocabulary, type ContextualAnswerAmendments } from './contextual-answers';
 import catalogue from '../../content/catalog/ja.json';
 import overrides from '../../content/catalog/review-overrides.json';
+import pack1Source from '../../content/contextual/ja-wanikani-1-draft.json';
+import pack1Approval from '../../content/contextual/pack-1/text-approval.json';
+import pack1Policy from '../../content/contextual/pack-1/practice-policy.json';
+import { loadPack1Content, replacePack1Pilot, type Pack1Acceptance, type Pack1GeneratedMedia } from './contextual-pack1';
 import type { ContextualBank, ContextualRecording } from './contextual-types';
 import type { PracticeCard, WordItem } from '../types';
 import { contextualExercise } from '../core/cards';
 import { approvedContextualQuestions } from './contextual';
 
-export const contextualVocabulary: WordItem[] = withAnswerVocabulary(catalogue.items.flatMap(item => {
+export const contextualVocabulary: WordItem[] = [...spanishContextualVocabulary, ...withAnswerVocabulary(catalogue.items.flatMap(item => {
   const override = overrides[item.id as keyof typeof overrides] ?? {};
   if ('removalReason' in override) return [];
   return [{ ...item, ...override, label: item.meaning, theme: 'vocabulary' } as WordItem];
-}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem));
+}), answerVocabulary.items.map(item => ({ ...item, label: item.meaning, theme: 'contextual' }) as WordItem))];
 
 interface MediaEntry {
   contextId: string; contextRevision: number; targetItemId: string; stage: 'simple' | 'contrastive';
@@ -49,7 +54,25 @@ export function withAcceptedMedia(banks: readonly ContextualBank[]): ContextualB
 export const recordedContextualBanks = withAcceptedMedia(withMedia([contrastive, simple, expansion] as unknown as ContextualBank[],
   generated.contexts as unknown as MediaEntry[], 'pending'));
 
-export const contextualBanks = withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments);
+declare const __PACK1_SOURCE_SHA256__: string;
+declare const __PACK1_TEXT_APPROVAL_SHA256__: string;
+declare const __PACK1_GENERATED_MEDIA_SHA256__: string;
+const pack1Manifests = import.meta.glob('../../content/contextual/pack-1/{generated-media,acceptance}.json', { eager: true, import: 'default' });
+export const pack1ContextualBank = loadPack1Content({ bank: pack1Source as unknown as ContextualBank, approval: pack1Approval,
+  generated: pack1Manifests['../../content/contextual/pack-1/generated-media.json'] as Pack1GeneratedMedia | undefined,
+  acceptance: pack1Manifests['../../content/contextual/pack-1/acceptance.json'] as Pack1Acceptance | undefined,
+  digests: { source: __PACK1_SOURCE_SHA256__, textApproval: __PACK1_TEXT_APPROVAL_SHA256__, generatedMedia: __PACK1_GENERATED_MEDIA_SHA256__ },
+});
+// The frozen bank keeps its approved bytes. Semantic focus is display-only metadata,
+// while kind and answer vocabulary IDs continue to record the literal answer concept.
+pack1ContextualBank.contexts = pack1ContextualBank.contexts.map(context => ({ ...context, questions: context.questions.map(question => ({
+  ...question, focus: question.id.endsWith('-target') ? 'target' as const : 'detail' as const,
+})) }));
+const pilotBanks = [...withAnswerAmendments(recordedContextualBanks, answerAmendments as ContextualAnswerAmendments), spanishBasicContexts];
+export const contextualBanks = pack1ContextualBank.contexts.every(context => context.review.audio === 'approved')
+  ? replacePack1Pilot(pilotBanks, pack1ContextualBank, pack1Policy.supersededPilotItemIds) : pilotBanks;
+/** Library inspection may audition pending recordings; ordinary practice never does. */
+export const contextualInspectionBanks = [...pilotBanks, pack1ContextualBank];
 
 export function readyContextualCards(banks: readonly ContextualBank[], vocabulary: readonly WordItem[]): PracticeCard[] {
   const result = new Map<string, PracticeCard>();

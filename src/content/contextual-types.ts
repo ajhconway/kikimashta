@@ -22,6 +22,8 @@ export interface ContextualQuestion {
   id: string
   revision: number
   kind: ContextualQuestionKind
+  /** Semantic authoring focus; distinct from the literal answer-concept kind. */
+  focus?: ContextualQuestionKind
   prompt: ContextualPrompt
   formats: ContextualAnswerFormat[]
   options: ContextualOption[]
@@ -41,6 +43,8 @@ export interface ContextualItem {
   revision: number
   /** Absent on the original, approved contrastive bank. */
   stage?: 'simple' | 'contrastive'
+  /** Direct meaning/example introduction for abstract foundation vocabulary. */
+  introduction?: { text: string; meaning: string }
   comparisonContextId?: string
   targetItemId: string
   targetOccurrence: { surface: string; reading: string }
@@ -58,7 +62,7 @@ export interface ContextualBank {
   schemaVersion: 1
   id: string
   language: string
-  grammarProfile: 'genki-1'
+  grammarProfile: 'genki-1' | 'basic-spanish-1'
   grammarReference: string
   grammarPoints: { id: string; label: string; genkiLesson: number }[]
   supportingVocabulary: { id: string; text: string; reading: string; meaning: string }[]

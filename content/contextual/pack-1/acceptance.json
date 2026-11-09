@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "bankId": "ja-contextual-wanikani-1-draft-v1",
+  "textApprovalSha256": "df2e4bf831dab7007086d86690c4eeb48ccfbf372b21a2fa003c523ed398beeb",
+  "generatedMediaSha256": "676383dd0cba183d466a1db4abebf3a9d45bc88caa2a69276efaf5a6d7e869b7",
+  "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/197#issuecomment-6732801263",
+  "recordedAt": "2026-11-09T05:13:44Z",
+  "evidence": {
+    "kind": "owner-conversation",
+    "quote": "Approve both voices for activation"
+  },
+  "scope": "Complete pack 1: 116 contexts, 232 questions, Otani and Morioki; 696 logical delivery clips."
+}

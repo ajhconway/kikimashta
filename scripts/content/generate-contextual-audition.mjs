@@ -42,7 +42,9 @@ export function contextualAuditionSummary(plan) {
   return { contexts: plan.contexts.length, voices: plan.generation.voices.map(voice => voice.name),
     requests: plan.generation.expectedClips, characters: plan.generation.characters,
     budget: plan.generation.characters, pairs: plan.contexts.reduce((count, context) => count + context.questions.length, 0) * plan.generation.voices.length,
-    gapMs: plan.gapMs, textApprovalSha256: plan.approval.textSha256 }
+    gapMs: plan.gapMs, textApprovalSha256: plan.approval.textSha256,
+    ...(plan.logicalRecordings ? { logicalRecordings: plan.logicalRecordings,
+      reusedAliasRecordings: plan.logicalRecordings - plan.generation.expectedClips } : {}) }
 }
 
 async function preserveAuditionPlan(output, plan) {

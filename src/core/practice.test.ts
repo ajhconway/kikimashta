@@ -6,6 +6,7 @@ import catalogue from '../../content/catalog/ja.json';
 import library from '../../public/vocabulary/library-data.json';
 import { practicePool } from './practice';
 import type { WordItem } from '../types';
+import { createQuestions } from './session';
 
 const items = catalogue.items as (Omit<WordItem, 'theme' | 'label'> & { meaning: string })[];
 
@@ -21,11 +22,22 @@ describe('active practice pool', () => {
     expect(practicePool.items.every(item => catalogue.items.some(entry => entry.id === item.id))).toBe(true);
     expect(practicePool.items.length).toBeGreaterThan(30);
     expect(new Set(practicePool.items.map(item => item.id)).size).toBe(practicePool.items.length);
-    expect(new Set(practicePool.items.map(item => item.image.src)).size).toBe(practicePool.items.length);
-    expect(new Set(practicePool.items.map(item => item.reading ?? item.text)).size).toBe(practicePool.items.length);
+    const pictures = practicePool.items.filter(item => !item.wordExercises || item.wordExercises.includes('audio-picture'));
+    expect(new Set(pictures.map(item => item.image.src)).size).toBe(pictures.length);
+    // Homophones may both be useful targets; ambiguity is forbidden within a
+    // question, not across the entire vocabulary catalogue.
+    for (const exercise of ['audio-picture', 'audio-text'] as const) {
+      const eligible = practicePool.items.filter(item => !item.wordExercises || item.wordExercises.includes(exercise));
+      for (const question of createQuestions(eligible.map(item => ({ item, exercise })), eligible, () => .5)) {
+        expect(new Set(question.choices.map(item => item.reading ?? item.text)).size).toBe(4);
+      }
+    }
     for (const item of practicePool.items) {
-      expect(library.cards.find(card => card.id === item.id)?.reviewRequired).toBe(false);
-      for (const src of [item.image.src, ...item.audio.map(clip => clip.src)]) expect(existsSync(resolve('public', src))).toBe(true);
+      if (!item.wordExercises || item.wordExercises.includes('audio-picture')) {
+        expect(library.cards.find(card => card.id === item.id)?.reviewRequired).toBe(false);
+        expect(existsSync(resolve('public', item.image.src))).toBe(true);
+      } else expect(item.wordExercises).toEqual(['audio-text']);
+      for (const src of item.audio.map(clip => clip.src)) expect(existsSync(resolve('public', src))).toBe(true);
     }
   });
 

@@ -8,6 +8,7 @@ import { cardMastery, packMastery } from '../src/core/mastery'
 import { deriveSchedules } from '../src/core/scheduler'
 import { initialVoiceIds, practiceVoicesFor, voicePreferenceKeyFor } from '../src/core/voices'
 import { ProgressStore } from '../src/progress/store'
+import pack1Policy from '../content/contextual/pack-1/practice-policy.json'
 import { mountContextualLibrary } from './contextual'
 
 (async () => {
@@ -16,6 +17,7 @@ import { mountContextualLibrary } from './contextual'
   const language = learningLanguages.find(language => language.id === parameters.get('language')) || learningLanguages[0]
   const practicePool = language.pool
   const cardPacks = language.packs
+  const practiceCardKeys = new Set(selectedPracticeCards(practicePool.items, cardPacks.map(pack => pack.id), cardPacks).map(cardKey))
   // Preserve the existing Japanese notes namespace; new languages use their stable ID.
   const feedbackLanguage = language.id === 'ja-JP' ? 'ja' : language.id
   const japanese = language.id === 'ja-JP'
@@ -124,7 +126,7 @@ import { mountContextualLibrary } from './contextual'
   if (!japanese) {
     document.title = `${language.title} cards`
     document.querySelector('h1').textContent = `${language.title} cards`
-    document.querySelector('.page-header p').textContent = 'Browse the travel pack, inspect each picture and meaning, and listen to the pronunciation.'
+    document.querySelector('.page-header p').textContent = 'Browse Spanish pictures and meanings, listen to each voice, or switch to Contextual questions.'
     searchElement.placeholder = 'Spanish or English'
   }
   const resultsStatus = document.getElementById('results-status')
@@ -186,7 +188,7 @@ import { mountContextualLibrary } from './contextual'
     for (const update of masteryViews.values()) update()
     for (const pack of cardPacks) {
       const option = Array.from(packElement.options).find(option => option.value === pack.id)
-      const summary = schedules && packMastery(selectedPracticeCards(practicePool.items, [pack.id], cardPacks), schedules)
+      const summary = schedules && packMastery([...selectedPracticeCards(practicePool.items, [pack.id], cardPacks), ...(language.foundationCards ?? []).filter(card => pack.itemIds.includes(card.item.id))], schedules)
       const text = summary ? `Lowest: ${summary.lowest.label} · Average: ${summary.average.label}` : 'Mastery unavailable'
       option.textContent = `${pack.title} · ${text}`
       document.getElementById(`pack-mastery-${pack.id}`).textContent = text
@@ -410,7 +412,11 @@ import { mountContextualLibrary } from './contextual'
     }
     const mastery = element('p', 'card-mastery')
     const update = () => {
-      mastery.textContent = `Mastery: ${schedules ? cardMastery(schedules.get(cardKey({ language: practicePool.language, itemId: card.id, exercise }))).label : 'unavailable'}`
+      const key = cardKey({ language: practicePool.language, itemId: card.id, exercise })
+      mastery.textContent = practiceCardKeys.has(key)
+        ? `Mastery: ${schedules ? cardMastery(schedules.get(key)).label : 'unavailable'}`
+        : japanese && pack1Policy.contextualOnlyItemIds.includes(card.id) ? 'Contextual practice only'
+          : japanese && pack1Policy.writingOnlyItemIds.includes(card.id) ? 'Writing practice only' : 'Not available for practice'
     }
     masteryViews.set(headingId, update)
     update()

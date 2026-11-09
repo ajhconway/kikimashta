@@ -1,0 +1,20 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-hot",
+  "slug": "hot",
+  "version": 2,
+  "ownerFeedback": "Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot.",
+  "concept": "A LARGE upright thermometer is the primary object and occupies most of the card height, with HIGH RED liquid in its bulb and a long red column. Put ONE SMALL calm orange/yellow FLAME at its base as a supporting hot cue. Remove the drinking glass, water, steam and ice cubes. Use a rounded violet thermometer outline with three plain ticks and no numbers, letters or words. Keep the thermometer visually dominant, with the little fire much smaller than the thermometer.",
+  "prompt": "Use case: precise-object-edit\nAsset type: one SQUARE 1:1 vocabulary illustration with a transparent background, readable at 145px.\nInput image1: EDIT TARGET to replace its composition according to the owner correction.\nOwner correction: Hot and cold should be the thermometer as the primary object with a couple ice cubes for cold and a little fire for hot.\nPrimary request: A LARGE upright thermometer is the primary object and occupies most of the card height, with HIGH RED liquid in its bulb and a long red column. Put ONE SMALL calm orange/yellow FLAME at its base as a supporting hot cue. Remove the drinking glass, water, steam and ice cubes. Use a rounded violet thermometer outline with three plain ticks and no numbers, letters or words. Keep the thermometer visually dominant, with the little fire much smaller than the thermometer.\nStyle and constraints: preserve the established rounded friendly cartoon style, smooth bold deep-violet contours and gentle soft shading. Kiku remains golden-yellow with purple headphones, pink ear interiors, tiny whiskers and curled tail. One complete centered illustration on a square canvas with generous transparent margin. No text, numbers, logo, watermark, decorative background, outside glow or ground shadow. Preserve opaque subject interiors and genuinely transparent outside pixels.\nInput image2 is the matching SQUARE thermometer card. Match its square canvas, thermometer shape, scale and positioning exactly; replace blue low fluid with high red fluid and replace the two ice cubes with one SMALL flame. No water glass or ice. Keep the flame secondary to the large thermometer.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/hot-v1.png",
+  "referenceSha256": "918b12b9e4495568614b365af53a975349cf4950bf3cc0245ee50f9adefac699",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-basic-1-art/originals/cold-v3.png",
+      "role": "matched-counterpart",
+      "sha256": "eb32672bc83e231289ac5f1145b86f8902aec5b5cc7c36cac8ef77d964c38fdd"
+    }
+  ]
+}

@@ -260,6 +260,76 @@
         "es-419-travel-juice"
       ],
       "reason": "The approved juice picture includes a prominent orange half alongside the glass."
+    },
+    {
+      "ids": [
+        "es-419-travel-chair",
+        "es-419-basic-on-top"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-chair",
+        "es-419-basic-under"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-chair",
+        "es-419-basic-next-to"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-bread",
+        "es-419-basic-eat"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-bread",
+        "es-419-basic-hunger"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-basic-drink"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-basic-thirst"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-water",
+        "es-419-basic-drink"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-water",
+        "es-419-basic-thirst"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
+    },
+    {
+      "ids": [
+        "es-419-travel-pillow",
+        "es-419-basic-sleepiness"
+      ],
+      "reason": "The Basic Spanish scene also visibly contains this travel noun; avoid competing correct pictures."
     }
   ],
   "issues": [
