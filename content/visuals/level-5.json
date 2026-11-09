@@ -60,7 +60,7 @@
   },
   {
     "id": "ja-v-83365ed9e3db",
-    "concept": "Thin and heavy versions of the same geometric letterform.",
+    "concept": "A thin lavender letter A beside a bold plum letter A on a gold highlight.",
     "visualGroup": "太字",
     "reviewRequired": true,
     "reviewNote": "Typographic diagram uses letterforms, without a word caption."
@@ -152,7 +152,7 @@
   },
   {
     "id": "ja-v-9a8a0ffc08d3",
-    "concept": "Flow diagram connects a circle and three colored boxes.",
+    "concept": "A simple three-box branching diagram with arrows connecting the upper box to the two lower boxes.",
     "visualGroup": "図",
     "reviewRequired": true,
     "reviewNote": "Generic flow diagram is intentional for diagram."
@@ -467,7 +467,7 @@
   },
   {
     "id": "ja-v-aef5eed601c5",
-    "concept": "Adult portrait framed by the numeric age range 30–39.",
+    "concept": "Three adults with age badges showing 30, 35 and 39.",
     "visualGroup": "三十代",
     "reviewRequired": true,
     "reviewNote": "Numerical age range distinguishes thirties without appearance stereotypes."
@@ -842,14 +842,14 @@
   },
   {
     "id": "ja-v-6f2e359ff6c8",
-    "concept": "Compass highlights the leftward direction with a setting sun.",
+    "concept": "A compass with its west-pointing left ray highlighted in gold.",
     "visualGroup": "西",
     "reviewRequired": true,
     "reviewNote": "Map convention uses north up and west left; no direction caption."
   },
   {
     "id": "ja-v-81b56dc2a618",
-    "concept": "Building exit on the left with westward compass cue.",
+    "concept": "An open doorway with an outward gold arrow and a nearby compass highlighting west.",
     "visualGroup": "西口",
     "reviewRequired": true,
     "reviewNote": "Left exit and compass symbolize west exit; orientation requires review."

@@ -1,0 +1,160 @@
+[
+  {
+    "id": "ja-v-a19157e62dee",
+    "version": 2,
+    "refs": [
+      "ja-v-a19157e62dee-v1.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Preserve the supplied refined open lavender doorway, plum arched frame, door leaf opening left, golden handle, depth, proportions, colors, low threshold, position, style and transparent outside. Replace the EXISTING SIDEWAYS ARROW completely with a GOLD ARROW THAT COMES FROM THE CENTER OF THE DOORWAY AND MOVES OUT TOWARD THE VIEWER IN PERSPECTIVE. Its narrow distant tail must start exactly in the MIDDLE of the dark doorway opening (center horizontally and about halfway up the opening), clearly surrounded by the interior on all sides. From that center the arrow travels forward, curving down and slightly right across the threshold into the foreground. The arrow grows broader as it approaches the viewer, with a large arrowhead in the LOWER-RIGHT FOREGROUND pointing toward the viewer. Strong foreshortening: small/narrow at the center of the doorway, larger/closer outside. It must read emerging from the center/depth of the doorway, NOT sliding horizontally across its face, NOT starting at the hinge, jamb or bottom corner. No remnants of the old lateral arrow. Keep a single continuous clean golden arrow, crisp plum outline and restrained highlight. No added compass, person, text, scene, floor platform or shadow. Genuine transparent background; keep generous margin around the foreground arrowhead.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8b78f61e-d7c8-4278-b9cd-1513f4121e8f.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8b78f61e-d7c8-4278-b9cd-1513f4121e8f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a84051dc9f24",
+    "version": 7,
+    "refs": [
+      "ja-v-a84051dc9f24-v6.png",
+      "ja-v-a19157e62dee-v2.png"
+    ],
+    "prompt": "Use case: compositing / precise-object-edit. Image1 is the previous NORTH EXIT composition with small compass; image2 is the NEW center-origin perspective EXIT doorway which must replace its old doorway/arrow unchanged. Use exactly image2's doorway: lavender door open left, arched plum frame, golden arrow emerging from the CENTER of the opening and curving FORWARD DOWN/RIGHT toward the viewer with large foreground arrowhead. That primary doorway must keep its prominent size and proportions. Change compass relative to image1: enlarge its circular dial and N label to 175 PERCENT of their previous dimensions (75% larger), maintaining the compass's actual shape, colors and north-up orientation. Position this larger compass in the UPPER RIGHT, noticeably CLOSER to the door, nearly touching the upper-right arch with a small clean transparent gap, rather than floating far away. The new compass should be roughly TWO THIRDS the doorway's height. Highlight only its TOP/NORTH ray gold; other rays lavender, N stays top. Keep everything fully visible with margin; slightly increase overall canvas room if needed instead of shrinking doorway or cropping compass. No overlap obscuring the door or arrow, no connector, words, background panel or other new elements. Genuine transparent background.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-e9ee83fc-21f3-4b30-b28b-f3207d031b7e.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-e9ee83fc-21f3-4b30-b28b-f3207d031b7e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-20cbd1c15a35",
+    "version": 2,
+    "refs": [
+      "ja-v-a19157e62dee-v2.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Make the ENTRANCE companion to this revised perspective EXIT symbol. Preserve exactly the open lavender doorway, arched plum frame, left-open door, handle, threshold, proportions, palette, illustration style and transparent background. Reverse the gold arrow's FLOW along the same curved path: its broad BLUNT tail starts in the LOWER-RIGHT FOREGROUND outside the doorway, and it tapers as it travels away from the viewer toward a SMALL CLEAR ARROWHEAD that ends EXACTLY in the CENTER of the DARK DOORWAY OPENING (center horizontally and halfway up the opening). The arrowhead points INTO the deep middle of the opening, UP/LEFT and away from the viewer. The head must NOT point at a hinge, door edge or floor corner. Near tail large, distant tip smaller = visible depth into the doorway. Remove the former large outward-pointing arrowhead entirely; there must be no arrowhead in foreground. One continuous golden arrow, clean plum contours and restrained highlights. No sideways flat arrow, compass, people, text, added scene, floor platform or shadow.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2fac4f99-6cf4-4e59-973b-c9293eea0320.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2fac4f99-6cf4-4e59-973b-c9293eea0320.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a19157e62dee",
+    "version": 3,
+    "refs": [
+      "ja-v-a19157e62dee-v2.png"
+    ],
+    "prompt": "Use case: precise-object-edit. The doorway and arrow DIRECTION/PATH in this image are correct. Preserve the doorway exactly, and preserve the gold EXIT arrow's center-origin curved path from the middle of the dark opening toward the lower-right foreground. Make the arrow MUCH LESS EXAGGERATED in perspective: use a modest almost-constant-width curved shaft, only gently widening from about 60 pixels at its inner tail to about 85 pixels near the head on this 1254px canvas. Replace the oversized triangular foreground head with a tidy, moderate arrowhead about 150 pixels across (around one-third the width of the doorway opening), NOT a huge wedge. Flat readable directional arrow with a subtle gold interior highlight, very small bevel if any; no thick 3D underside. This should feel like a graceful normal arrow curving out from the center, with just a hint of depth, not a dramatic perspective ribbon. Keep the original path endpoints and foreground direction. Background around the now slimmer arrow must become clean transparent outside the door, or restore matching dark lavender where the old arrow covered the interior. Preserve door, handle, frame, threshold, colors, margins and dimensions. No new objects or text.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50658b9f-91e2-4a36-8888-63b37ebd6189.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50658b9f-91e2-4a36-8888-63b37ebd6189.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-20cbd1c15a35",
+    "version": 3,
+    "refs": [
+      "ja-v-20cbd1c15a35-v2.png",
+      "ja-v-a19157e62dee-v3.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Image1 is ENTRANCE with the correct inward direction and center-door destination, but too exaggerated arrow perspective. Image2 is the newly gentler EXIT arrow and is a STYLE/WEIGHT reference ONLY, not a direction reference. Keep image1's doorway exactly and keep its entrance arrow flowing from lower-right foreground INTO the CENTER of the dark opening, with the small arrowhead INSIDE at the center. Slim its arrow to a normal curved gold shaft, about 70px width along most of the curve with only very gentle taper (not a huge foreground ribbon). Use a tidy inward arrowhead about 110px across, centered in the doorway; near tail is a modest rounded 85px-wide end, not a large bulb. Remove dramatic 3D thickness, wide wedge and excessive foreshortening. Gentle curve and a subtle gold highlight only, matching image2's calmer arrow treatment. Preserve exact inward motion/path and all other door details. Clean transparency around slimmed arrow; restore dark-lavender interior wherever old arrow has been removed. No compass, new objects or text.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-674edd2d-9df7-4896-a169-b4631a5cb4fc.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-674edd2d-9df7-4896-a169-b4631a5cb4fc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a84051dc9f24",
+    "version": 8,
+    "refs": [
+      "ja-v-a84051dc9f24-v7.png",
+      "ja-v-a19157e62dee-v3.png"
+    ],
+    "prompt": "Use case: precise-object-edit / compositing. Image1 is the north-exit composition. Image2 is the gentler EXIT symbol, whose doorway AND slimmer center-origin arrow must replace the corresponding doorway/arrow in image1. Preserve image2's normal curved gold arrow emerging from the middle of the dark opening and pointing down/right outward, with modest arrowhead and slight taper, not the exaggerated giant ribbon. Keep this door primary and large. The north-up compass stays UPPER RIGHT and close to the doorway. Enlarge the compass DIAL from image1 by an ADDITIONAL 30 PERCENT to achieve the owner's 75-percent enlargement relative to the original small-compass proposal. Target compass circle DIAMETER about 58–60 PERCENT of the doorframe's full HEIGHT (roughly 525px dial for a 900px tall door), with N above. Move it snugly next to the upper-right arch, with only a narrow transparent gap; extend canvas to the right if needed to avoid cropping or hiding door details, rather than shrinking the door or compass. Highlight ONLY TOP/NORTH ray gold, all others lavender; N fixed at top. Keep circular rim, palette, all door details and transparent background. No other symbols, labels or connector.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7168129d-168d-492e-a7d9-5bf39f2e54e6.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7168129d-168d-492e-a7d9-5bf39f2e54e6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a19157e62dee",
+    "version": 4,
+    "refs": [
+      "ja-v-a19157e62dee-v3.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Make just ONE final subtle reduction in perspective on the existing gold EXIT arrow. Everything else, including the door, curved center-origin path, outward down/right direction, endpoint, moderate arrowhead size, colors and transparency, stays unchanged. Remove the sharp needle-like taper at the INNER TAIL inside the doorway: give that tail a small soft rounded end about 50–60px wide, not a point. Then make the curved shaft almost constant-width, about 65–75px along the full curve, with only a tiny increase toward the foreground. Keep the same tidy existing arrowhead around 150px across. Flatten the arrow's shading to a soft gold fill with only a faint highlight and no visible thick 3D side wall. It should feel like a normal elegant curved arrow with JUST A HINT of depth into/out of the door, not a perspective ribbon. Preserve door details and composition exactly. No additional changes.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07d85bbc-4d9c-4faa-a201-21250fd64027.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07d85bbc-4d9c-4faa-a201-21250fd64027.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-20cbd1c15a35",
+    "version": 4,
+    "refs": [
+      "ja-v-20cbd1c15a35-v3.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Make just a subtle final reduction in depth on this ENTRANCE arrow. Preserve the doorway exactly, and preserve the arrow's curved inward direction from lower-right foreground to its small arrowhead at the CENTER of the doorway opening. Make its shaft nearly constant-width around65–75px throughout, only a barely perceptible taper toward the doorway, instead of a wider foreground tail. The outside tail remains a modest blunt rounded end, not a bulb. Keep the same small readable arrowhead centered in the opening. Flatten the arrow to a gentle gold fill with only a faint highlight; no thick 3D side wall or dramatic perspective. Keep all existing positions, exact path, door details, colors, size and transparent background. A normal curved arrow with only a hint of depth. No other changes.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47f65600-6af9-430a-80e1-691e5827dca5.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47f65600-6af9-430a-80e1-691e5827dca5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a84051dc9f24",
+    "version": 9,
+    "refs": [
+      "ja-v-a84051dc9f24-v8.png",
+      "ja-v-a19157e62dee-v4.png"
+    ],
+    "prompt": "Use case: precise-object-edit / compositing. Image1 is NORTH EXIT with the enlarged upper-right compass and close placement. Image2 is the FINAL gentler exit doorway and normal curved arrow. Replace ONLY image1's door/arrow drawing with image2's exact door and especially its nearly uniform-width gold arrow with rounded inner tail at the doorway center, modest foreground arrowhead, flat soft-gold shading and just a hint of depth. Retain the overall doorway as primary and its large placement. Keep compass north-up and snug beside the upper-right arch. Increase the compass dial and N label by another 15 PERCENT relative to image1 so the total enlargement is about 75 percent from the original small-compass card; new circle diameter roughly60% of doorframe height. Keep the entire compass visible with narrow margin, and it can slightly overlap the outside top-right frame without hiding the dark door opening. Gold highlight ONLY on TOP/NORTH ray; other rays lavender, N fixed above top. Match existing style, sizes otherwise, clean transparent background. No other changes, text, shadows, scenery or giant arrow.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b489ccef-de89-4b4e-a85c-27c32f1f30e7.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b489ccef-de89-4b4e-a85c-27c32f1f30e7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-81b56dc2a618",
+    "version": 5,
+    "refs": [
+      "ja-v-a84051dc9f24-v9.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this FINAL NORTH EXIT composition. Preserve EVERY detail of the doorway and the newly gentle center-origin exit arrow: its rounded inner tail, almost constant curved shaft, small foreground arrowhead and flat gold shading must remain identical. Preserve the enlarged compass's close UPPER RIGHT position, circular rim, white face, N label above TOP, size, overlap with outside arch, geometry, colors and all margins. Change ONLY the compass rays' highlight: LEFT/WEST ray gold, TOP/NORTH ray lavender like right/bottom. Exactly one gold compass ray pointing left; N stays at top. Keep all other objects, proportions, pixels and transparent background as closely unchanged as possible. No further changes, perspective exaggeration or added elements.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9e961603-aad4-4e48-9b16-2d52ce435c67.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9e961603-aad4-4e48-9b16-2d52ce435c67.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a19157e62dee",
+    "version": 5,
+    "refs": [
+      "ja-v-a19157e62dee-v4.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Make this EXIT arrow BIGGER AND BOLDER THROUGHOUT while preserving its correct center-origin curved direction and gentle depth. Increase the entire curved gold shaft to about 110px width consistently along its whole length (about 1.5x the current shaft), including its rounded inner tail at the CENTER of the doorway. Give the foreground arrowhead a clear width about 210–220px, proportional to the thicker shaft. This is a uniform increase in arrow visual weight, NOT increased perspective: maintain almost constant shaft width from inner tail to head, no pointed tiny far tail, no enormous wedge, no 3D sidewall. Keep exactly the same center-origin path, endpoints, flat soft-gold shading, curve and outward lower-right direction. The rounded inner tail must be visibly substantial, not thin. The doorway, frame, handle, threshold, colors, position, dimensions and clean transparency remain unchanged. No compass or other changes.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-57f38cfe-ab55-4d23-9bb5-abdf2049fedc.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-57f38cfe-ab55-4d23-9bb5-abdf2049fedc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-20cbd1c15a35",
+    "version": 5,
+    "refs": [
+      "ja-v-20cbd1c15a35-v4.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Make this ENTRANCE arrow BIGGER AND BOLDER THROUGHOUT, matching the visual weight of an exit arrow with a 110px-wide shaft and 210–220px-wide head. Preserve its correct inward curved path: from lower-right foreground INTO the CENTER of the dark doorway opening. Make the entire gold shaft about110px wide with almost CONSTANT apparent width, from the substantial blunt rounded outside tail to the base of the arrowhead. Enlarge the inward-pointing arrowhead at the CENTER of the doorway to about210–220px across: it must NOT appear smaller, thinner or weaker than the exit arrowhead. Do not shrink the interior tip for perspective. Keep gentle depth only through the curve/path, NOT through dramatic taper. Flat soft-gold shading, no heavy 3D underside. Keep exact path endpoints, doorway details, frame, handle, threshold, colors, composition and genuine transparent background unchanged. One clear bold curved inward arrow; no compass, tiny arrowhead or other changes.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-5c7ea770-8264-44d7-ad9f-97920a39d5e4.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-5c7ea770-8264-44d7-ad9f-97920a39d5e4.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-81b56dc2a618",
+    "version": 6,
+    "direction": "LEFT/WEST",
+    "refs": [
+      "ja-v-a84051dc9f24-v9.png",
+      "ja-v-a19157e62dee-v5.png"
+    ],
+    "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY LEFT/WEST ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-373c398d-fc61-41a4-98ed-87e60f5f1c58.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-373c398d-fc61-41a4-98ed-87e60f5f1c58.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-a84051dc9f24",
+    "version": 10,
+    "direction": "TOP/NORTH",
+    "refs": [
+      "ja-v-a84051dc9f24-v9.png",
+      "ja-v-a19157e62dee-v5.png"
+    ],
+    "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY TOP/NORTH ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-fd440b89-789b-4193-844f-2d6fc62e05e0.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-fd440b89-789b-4193-844f-2d6fc62e05e0.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  {
+    "id": "ja-v-81b56dc2a618",
+    "version": 7,
+    "refs": [
+      "ja-v-81b56dc2a618-v6.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Change ONLY the gold highlight in the upper-right COMPASS. This must be WEST, not north: color the LEFT-POINTING triangular compass ray solid GOLD, and recolor the UPWARD/TOP triangular compass ray pale LAVENDER matching the bottom and right rays. Exactly ONE gold compass ray pointing LEFT toward the door. N remains fixed above the TOP and stays plum; do not rotate the compass. Preserve EVERY OTHER PART of this image exactly: enlarged compass size/position/rim, the entire doorway, the bolder center-origin outward arrow, colors, shading, margins and transparency. The gold doorway arrow remains unchanged; ONLY swap the compass's TOP gold fill to LEFT gold fill.",
+    "sourcePath": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c15cd039-8c41-4825-8f54-4c042997f65c.png",
+    "output_hint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa as /Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c15cd039-8c41-4825-8f54-4c042997f65c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+]

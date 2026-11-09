@@ -1,0 +1,2112 @@
+{
+  "issue": 213,
+  "sourceRevision": "fa1cfe382d2196f2e0efb8e515d9754f2dec5e99",
+  "tool": "built-in image_gen",
+  "ownerAuthorization": "Generate all missing visual-reference artwork as one large batch; final artwork approval pending.",
+  "assets": [
+    {
+      "id": "ja-v-7dddc1af4eb5",
+      "text": "四月",
+      "reading": "しがつ",
+      "meaning": "April",
+      "prompt": "Use case: style-transfer. Create a replacement vocabulary illustration for APRIL, 四月, a calendar MONTH, using the supplied approved calendar ONLY as the style reference. Replace 2011 and all day grids with a clear year-at-a-glance MONTH SELECTOR: exactly twelve equally sized rounded tiles arranged in three columns and four rows, containing the exact Arabic numbers 1 through 12 in row-major order, once each. Highlight ONLY tile 4 with a warm golden fill and a thick plum outline; other eleven tiles pale lavender/white. No calendar dates, no weekdays, no year number, no text outside the twelve numerals. Make month-selection visually different from a tear-off day/date page. Match the reference's charming polished illustrated style, rounded bold plum outlines, lavender, golden yellow and white palette, very restrained soft shading. Square isolated asset, generous transparent margin, clean crisp readable numerals. Transparent background with genuine alpha; no checkerboard, watermark or English/Japanese labels. Educational mathematical accuracy: exactly 12 month tiles, exactly one highlighted month, number 4.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+      "status": "approved",
+      "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "prompt": "Use case: style-transfer. Create a replacement vocabulary illustration for APRIL, 四月, a calendar MONTH, using the supplied approved calendar ONLY as the style reference. Replace 2011 and all day grids with a clear year-at-a-glance MONTH SELECTOR: exactly twelve equally sized rounded tiles arranged in three columns and four rows, containing the exact Arabic numbers 1 through 12 in row-major order, once each. Highlight ONLY tile 4 with a warm golden fill and a thick plum outline; other eleven tiles pale lavender/white. No calendar dates, no weekdays, no year number, no text outside the twelve numerals. Make month-selection visually different from a tear-off day/date page. Match the reference's charming polished illustrated style, rounded bold plum outlines, lavender, golden yellow and white palette, very restrained soft shading. Square isolated asset, generous transparent margin, clean crisp readable numerals. Transparent background with genuine alpha; no checkerboard, watermark or English/Japanese labels. Educational mathematical accuracy: exactly 12 month tiles, exactly one highlighted month, number 4.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-73a75f6b-4249-47ff-b524-bbad2c6d57d3.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 4 highlighted in gold.",
+      "bytes": 1343977,
+      "approval": {
+        "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-7003bbe10d0b",
+      "text": "正しい",
+      "reading": "ただしい",
+      "meaning": "Correct",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CORRECT: a large clear green check mark inside a white rounded circular medallion with a bold plum rim. A single check, no cross, no equation, no text. Simple universally recognizable correctness symbol.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+      "status": "approved",
+      "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CORRECT: a large clear green check mark inside a white rounded circular medallion with a bold plum rim. A single check, no cross, no equation, no text. Simple universally recognizable correctness symbol.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3c557e59-b1bf-4c21-9d3a-121954e12ec0.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A green check mark inside a white medallion with a plum rim.",
+      "bytes": 1023787,
+      "approval": {
+        "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-6eed6b905b8e",
+      "text": "二月",
+      "reading": "にがつ",
+      "meaning": "February",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 2: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 2 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+      "status": "approved",
+      "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 2: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 2 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d454a233-416e-4f74-98bf-f8d62432e499.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 2 highlighted in gold.",
+      "bytes": 1318492,
+      "approval": {
+        "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-ed82bb95d4cc",
+      "text": "一月",
+      "reading": "いちがつ",
+      "meaning": "January",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 1: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 1 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+      "status": "approved",
+      "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 1: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 1 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-675019b8-c2bc-499f-a99c-0ca72b23d37e.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 1 highlighted in gold.",
+      "bytes": 1320094,
+      "approval": {
+        "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-8ffa8462a479",
+      "text": "六月",
+      "reading": "ろくがつ",
+      "meaning": "June",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 6: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 6 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+      "status": "approved",
+      "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 6: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 6 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-575606f4-2c91-413a-a00c-2425af3b0cd1.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 6 highlighted in gold.",
+      "bytes": 1298512,
+      "approval": {
+        "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-2850d52ee4d2",
+      "text": "五月",
+      "reading": "ごがつ",
+      "meaning": "May",
+      "prompt": "Use case: precise-object-edit. Edit this MAY month-selector illustration only to remove the stray detached white/pale lavender circular blob above its left binding. That tiny unwanted mark near the top edge must become clean fully transparent background. Preserve the complete calendar shape, binding rings, all numerals 1–12, exact 3-column by 4-row layout, gold highlight ONLY behind 5, original colors, style, dimensions and all other pixels as closely as possible. Do not add anything, crop or redraw the calendar. Transparent alpha outside calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+      "status": "approved",
+      "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+          "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 5: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 5 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1171b24c-fa03-4521-90be-222a1b88c1d4.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+          "prompt": "Use case: precise-object-edit. Edit this MAY month-selector illustration only to remove the stray detached white/pale lavender circular blob above its left binding. That tiny unwanted mark near the top edge must become clean fully transparent background. Preserve the complete calendar shape, binding rings, all numerals 1–12, exact 3-column by 4-row layout, gold highlight ONLY behind 5, original colors, style, dimensions and all other pixels as closely as possible. Do not add anything, crop or redraw the calendar. Transparent alpha outside calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v1.png",
+              "sha256": "e94df207bd161e60e957a82dde7644dcd93dfa86981013a4333fe569c20604a1",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f8ac7494-cae4-48d9-8eaa-4aae46d9f648.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 5 highlighted in gold.",
+      "bytes": 1409791,
+      "approval": {
+        "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+        "selectedVersion": 2,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-cacf3a45ed07",
+      "text": "十月",
+      "reading": "じゅうがつ",
+      "meaning": "October",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 10: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 10 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+      "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+      "status": "approved",
+      "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+          "role": "style reference",
+          "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. CALENDAR MONTH 10: a clear year-at-a-glance month selector, twelve equal rounded tiles arranged three columns and four rows. Exact Arabic numerals 1 through 12 in row-major order once each. Highlight ONLY tile 10 with warm gold fill and bold plum outline, other eleven pale lavender/white. No day grids, weekday labels, year number, words, dates or month names. Exactly twelve tiles and one highlighted month. Consistent month-family composition; not a tear-off day calendar.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+              "role": "style reference",
+              "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4"
+            }
+          ],
+          "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4619acdb-b354-4dd7-b04d-c506c7c75d83.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A twelve-month calendar selector with month 10 highlighted in gold.",
+      "bytes": 1393491,
+      "approval": {
+        "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-7930a252da9b",
+      "text": "字",
+      "reading": "じ",
+      "meaning": "Character",
+      "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove the ENTIRE calendar/notepad/paper container: all binding rings, gold header, white sheet, outer plum frame and page shadow must disappear. Keep ONLY the three readable Japanese glyphs あ 木 カ, with a rounded golden highlight behind ONLY middle 木; other glyphs lavender with plum outlines. Enlarge and center this standalone three-glyph group on the transparent canvas. The gold highlight is the only backing shape; all spaces outside glyphs/highlight are transparent. No calendar, paper, frame, header, date, pencil, decorative objects or extra text. Maintain exact three glyphs, same order.",
+      "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v3.png",
+      "status": "approved",
+      "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v2.png",
+          "role": "edit/style reference",
+          "sha256": "43f2af05bd1867a71d22a274ffc55350970c921e8a5657a29086b59b52f3905c"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WRITTEN CHARACTER: white rounded paper card with exactly three large Japanese glyphs laid out horizontally: あ 木 カ. Put a golden rounded highlight box behind ONLY the middle glyph 木; others muted lavender. Precisely readable glyphs; no pencil, target word 字 or reading. The highlight singles out one written character; do not confuse character with sentence.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "3e8f62f42a7ed8b6f00f9d0d7c79b33ae09a9ceefe91d7f19f10072eda09ea56",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a30477c5-e5bf-43cb-aec3-d4b26e0ff66b.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v2.png",
+          "prompt": "Use case: precise-object-edit. Edit this clean written-character specimen card. Preserve the paper, binding, clean white surface, exactly three glyphs あ 木 カ, exact layout, style and sizes. Change ONLY the highlight: replace the wide golden rectangle behind ALL THREE glyphs with a rounded golden square behind ONLY the middle glyph 木. Recolor the unhighlighted あ and カ in pale lavender with plum outlines. Middle 木 remains dark plum. Result must clearly select just ONE written character. Clean opaque white paper without dirty marks, blur, holes, smudges or extra shadows. Preserve transparent outside background. No new text or objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+              "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "43f2af05bd1867a71d22a274ffc55350970c921e8a5657a29086b59b52f3905c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8dafe95a-f7c8-45f8-adfa-af1ebfc655cb.png"
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v3.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove the ENTIRE calendar/notepad/paper container: all binding rings, gold header, white sheet, outer plum frame and page shadow must disappear. Keep ONLY the three readable Japanese glyphs あ 木 カ, with a rounded golden highlight behind ONLY middle 木; other glyphs lavender with plum outlines. Enlarge and center this standalone three-glyph group on the transparent canvas. The gold highlight is the only backing shape; all spaces outside glyphs/highlight are transparent. No calendar, paper, frame, header, date, pencil, decorative objects or extra text. Maintain exact three glyphs, same order.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v2.png",
+              "role": "edit/style reference",
+              "sha256": "43f2af05bd1867a71d22a274ffc55350970c921e8a5657a29086b59b52f3905c"
+            }
+          ],
+          "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9030a21f-8523-4161-95a7-f69d3c3ce91d.png",
+          "ownerFeedbackRevision": true
+        }
+      ],
+      "selectedVersion": 3,
+      "image": {
+        "width": 1774,
+        "height": 887,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "Three Japanese characters with only the middle character highlighted in gold.",
+      "bytes": 908844,
+      "approval": {
+        "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+        "selectedVersion": 3,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-b0a03cee753b",
+      "text": "北",
+      "reading": "きた",
+      "meaning": "North",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH: flat front-facing compass rose with four equally spaced rays, top ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor; gold ray points straight up. No E/S/W labels, needle pointing elsewhere, map or target Japanese word.",
+      "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+      "status": "approved",
+      "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH: flat front-facing compass rose with four equally spaced rays, top ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor; gold ray points straight up. No E/S/W labels, needle pointing elsewhere, map or target Japanese word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-de1d8f93-85e4-44c0-bd98-5666b1300463.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A compass with its north-pointing top ray highlighted in gold.",
+      "bytes": 870608,
+      "approval": {
+        "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-a84051dc9f24",
+      "text": "北口",
+      "reading": "きたぐち",
+      "meaning": "North Exit",
+      "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY TOP/NORTH ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+      "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+      "status": "approved",
+      "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+          "role": "edit/style reference",
+          "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+        },
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+          "role": "edit/style reference",
+          "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. NORTH EXIT: flat overhead simple rectangular station floor plan; exactly four clear openings centered on its top, right, bottom and left edges, large empty white interior, lavender walls. Highlight ONLY top opening with a bold golden outward arrow through that top opening pointing up. Small compass N-up marker upper right outside plan. No other text, no train, no perspective doorway. Clear map north at top.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "30a4d0c421d62367aef5050b03bf6eec67aab7b0d07eb90c6fab72e587eacd28",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-45d736ed-4156-4c59-b154-9b37424f8f42.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v2.png",
+          "prompt": "Use case: precise-object-edit. Fix the supplied NORTH EXIT station-plan draft. Replace the ENTIRE irregular transparent black/gray hole and dirty blur inside the station with a SOLID OPAQUE clean white floor, continuous flat white right up to all four purple walls. Absolutely no holes, gradients, shadows, translucent interior or dark patches. Only the OUTSIDE of the station and compass badge should be transparent. Preserve simple lavender rectangular overhead station walls, exactly four centered exit gaps, prominent GOLD UPWARD ARROW through the TOP exit only, purple outline and polished illustration style. Add small crisp plum letter N above the upward-pointing compass needle in the upper-right round compass badge, with sufficient transparent outside margin so no cropping. No other text or objects. The floor must have alpha255 everywhere inside the room.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v1.png",
+              "sha256": "30a4d0c421d62367aef5050b03bf6eec67aab7b0d07eb90c6fab72e587eacd28",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "d90e4fd0396bec4620b8b3d6355b2b74353efa60b5cb686c7401aabd3e69aac6",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-6484dfa3-53f4-42b4-95b1-ffa2d37059ce.png"
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v3.png",
+          "prompt": "Use case: precise-object-edit. Repair this station-map illustration by changing the whole floor rectangle INSIDE the purple walls to a uniform solid OPAQUE pastel GOLD color #F7E2A6. Cover the entire interior including the central hole and all gray blurry fringes with that solid light-gold floor. The center is NOT a hole, not glass and not a cutout: it is an opaque colored rectangular FLOOR. No white fill or white shading on the floor anywhere. Keep its opacity255 throughout. Clean flat illustrated geometry. Preserve the lavender walls with exactly four exit gaps, ONLY top exit's large outward gold arrow, and upper-right compass badge with N pointing up. Keep the background outside the station and compass transparent. Keep generous outside margins. No gradient, blurring, shadows, extra text or objects. Replace the dark ragged hole completely with the solid opaque colored floor.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v2.png",
+              "sha256": "d90e4fd0396bec4620b8b3d6355b2b74353efa60b5cb686c7401aabd3e69aac6",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "8755aabcda59d02f017b085418117c2b21d8fe9b19e2830cff54112b76bbfb01",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a2a162f2-95a9-48a5-94c5-fc8bc496c1d7.png"
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+          "prompt": "Use case: style-transfer. Use the supplied clean compass illustration as STYLE REFERENCE ONLY. Completely redraw a NORTH EXIT MAP: one rectangular station room seen flat from directly overhead. Its floor is a solid, uniformly colored OPAQUE pale lavender rectangle, no white, no shading, no gradient or texture. Four thick dark-plum outer walls with EXACTLY one opening centered in each wall (four openings total). One large golden arrow extends outward through the TOP opening and points straight UP. Other three exit openings have no arrows. In upper right outside the station put a small matching compass badge with crisp N on top and needle pointing up. Everything has clean smooth rounded plum outlines with flat lavender and gold fills. The room interior must be a FLAT EVEN SOLID COLORED RECTANGLE with absolutely no holes, blur or eraser marks. Transparent background ONLY OUTSIDE the station and separate compass badge. Clear isolated square vocabulary icon, generous margins, no other text, objects or labels.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-bfa6532d-a051-4e7a-b6b8-2525202f6c81.png"
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v5.png",
+          "prompt": "Use case: style-transfer. Use the supplied NORTH compass as the exact compass and illustrated-style reference. Create a NORTH EXIT vocabulary illustration with TWO SIMPLE COMPONENTS side by side. LEFT: a reusable neutral EXIT SYMBOL, a plum open rectangular doorway with pale lavender interior and a short golden arrow starting inside the opening and passing out across its right edge, pointing right. The doorway-plus-outward-arrow means exit; it is identical regardless of geographic direction. RIGHT: the supplied circular compass, with white face, plum rim, lavender inset circle, exactly four rays, small plum N above top. Highlight ONLY compass TOP/NORTH ray gold; remaining three rays lavender. Components balanced in scale and visually separated, no connecting arrow. The compass alone conveys north; the doorway arrow always means exiting and stays rightward for all companion cards. Charming rounded plum/lavender/gold style, clean readable at small sizes, square isolated transparent cutout. NO floor plan, station map, enclosing room, calendar, backing panel, landscape, extra letters, labels or words. Exactly one exit glyph and one compass.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "role": "edit/style reference",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8"
+            }
+          ],
+          "sha256": "d01688fd76b65230b6e41e588b0c47f9e9ab84b2e254ca1549edd3a561f71ab0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-ec50bd73-203b-4be2-845b-a4a8357fe27b.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 6,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+          "prompt": "Use case: compositing. Image1 is the PRIMARY approved-proposal EXIT SYMBOL to preserve: open lavender door to the left, plum arched frame, gold handle, dark interior, low threshold, broad gold arrow coming OUT toward RIGHT. Image2 is supporting NORTH compass. Create NORTH EXIT with the exit symbol clearly PRIMARY: retain the large exit drawing at roughly its current size and centered slightly lower/left on a square transparent canvas. Place a SMALLER copy of the compass in the UPPER RIGHT corner, spatially separate with a little clear margin, about 40 PERCENT of the doorway's height. The exit must visually dominate; the compass must read as a secondary directional badge, never equal-size side-by-side. Compass stays north-up, with N at TOP and ONLY top/NORTH ray gold, other three lavender. Preserve all defining artwork/colors/forms of the doorway and compass. No backing panel, giant badge container, arrows connecting components, words, landscape, calendar or extra objects. Genuine transparent outside background. Do not crop either component.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "role": "edit/style reference",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8"
+            }
+          ],
+          "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f47aa710-a734-43ab-9038-f7ed135b5d5b.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 7,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v7.png",
+          "prompt": "Use case: compositing / precise-object-edit. Image1 is the previous NORTH EXIT composition with small compass; image2 is the NEW center-origin perspective EXIT doorway which must replace its old doorway/arrow unchanged. Use exactly image2's doorway: lavender door open left, arched plum frame, golden arrow emerging from the CENTER of the opening and curving FORWARD DOWN/RIGHT toward the viewer with large foreground arrowhead. That primary doorway must keep its prominent size and proportions. Change compass relative to image1: enlarge its circular dial and N label to 175 PERCENT of their previous dimensions (75% larger), maintaining the compass's actual shape, colors and north-up orientation. Position this larger compass in the UPPER RIGHT, noticeably CLOSER to the door, nearly touching the upper-right arch with a small clean transparent gap, rather than floating far away. The new compass should be roughly TWO THIRDS the doorway's height. Highlight only its TOP/NORTH ray gold; other rays lavender, N stays top. Keep everything fully visible with margin; slightly increase overall canvas room if needed instead of shrinking doorway or cropping compass. No overlap obscuring the door or arrow, no connector, words, background panel or other new elements. Genuine transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+              "role": "edit/style reference",
+              "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "c43074314d0893f267ae99e1de786a61c4449cdabc526d3bef8c4b2d39363328",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-e9ee83fc-21f3-4b30-b28b-f3207d031b7e.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 8,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v8.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 is the north-exit composition. Image2 is the gentler EXIT symbol, whose doorway AND slimmer center-origin arrow must replace the corresponding doorway/arrow in image1. Preserve image2's normal curved gold arrow emerging from the middle of the dark opening and pointing down/right outward, with modest arrowhead and slight taper, not the exaggerated giant ribbon. Keep this door primary and large. The north-up compass stays UPPER RIGHT and close to the doorway. Enlarge the compass DIAL from image1 by an ADDITIONAL 30 PERCENT to achieve the owner's 75-percent enlargement relative to the original small-compass proposal. Target compass circle DIAMETER about 58–60 PERCENT of the doorframe's full HEIGHT (roughly 525px dial for a 900px tall door), with N above. Move it snugly next to the upper-right arch, with only a narrow transparent gap; extend canvas to the right if needed to avoid cropping or hiding door details, rather than shrinking the door or compass. Highlight ONLY TOP/NORTH ray gold, all others lavender; N fixed at top. Keep circular rim, palette, all door details and transparent background. No other symbols, labels or connector.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v7.png",
+              "role": "edit/style reference",
+              "sha256": "c43074314d0893f267ae99e1de786a61c4449cdabc526d3bef8c4b2d39363328"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "bcdbc3e52f3da0779fbd6301db2cdf51488762604aee9a41088b231db101328d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7168129d-168d-492e-a7d9-5bf39f2e54e6.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 9,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 is NORTH EXIT with the enlarged upper-right compass and close placement. Image2 is the FINAL gentler exit doorway and normal curved arrow. Replace ONLY image1's door/arrow drawing with image2's exact door and especially its nearly uniform-width gold arrow with rounded inner tail at the doorway center, modest foreground arrowhead, flat soft-gold shading and just a hint of depth. Retain the overall doorway as primary and its large placement. Keep compass north-up and snug beside the upper-right arch. Increase the compass dial and N label by another 15 PERCENT relative to image1 so the total enlargement is about 75 percent from the original small-compass card; new circle diameter roughly60% of doorframe height. Keep the entire compass visible with narrow margin, and it can slightly overlap the outside top-right frame without hiding the dark door opening. Gold highlight ONLY on TOP/NORTH ray; other rays lavender, N fixed above top. Match existing style, sizes otherwise, clean transparent background. No other changes, text, shadows, scenery or giant arrow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v8.png",
+              "role": "edit/style reference",
+              "sha256": "bcdbc3e52f3da0779fbd6301db2cdf51488762604aee9a41088b231db101328d"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+              "role": "edit/style reference",
+              "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+            }
+          ],
+          "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-b489ccef-de89-4b4e-a85c-27c32f1f30e7.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 10,
+          "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY TOP/NORTH ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+              "role": "edit/style reference",
+              "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
+            }
+          ],
+          "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-fd440b89-789b-4193-844f-2d6fc62e05e0.png",
+          "ownerFeedbackRound": 4
+        }
+      ],
+      "selectedVersion": 10,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "An open doorway with an outward gold arrow and a nearby compass highlighting north.",
+      "bytes": 1158905,
+      "approval": {
+        "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+        "selectedVersion": 10,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-70230bf6d87c",
+      "text": "左手",
+      "reading": "ひだりて",
+      "meaning": "Left Hand",
+      "prompt": "Use case: precise-object-edit. Edit this LEFT HAND vocabulary illustration. Keep two hands side by side, fingers up, wrists down, BACKS OF HANDS visible with fingernails and knuckles, matching peach skin, thick rounded plum outlines, restrained soft shading, and true transparent background. Correct the orientation of BOTH hands: the hand on the LEFT must have its THUMB ON ITS RIGHT EDGE pointing inward toward the central gap; the hand on the RIGHT must have its THUMB ON ITS LEFT EDGE pointing inward toward the central gap. The two thumbs face ONE ANOTHER in the middle. Mirror each individual hand in place, without moving the attention rays. This is the natural view of one's own two hands from above. Exactly four fingers and one thumb per hand. Preserve the three plum attention rays above/beside the LEFT hand ONLY, similar sizes, equal height, spacing and overall composition. No palm creases, no palms facing viewer, no body, no words, no colored hand highlight, no extra objects. Genuine transparent alpha.",
+      "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+      "status": "approved",
+      "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+          "role": "edit/style reference",
+          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. LEFT HAND anatomical viewpoint: a single friendly stylized child viewed squarely FROM BEHIND, wearing lavender short sleeves and trousers, both arms spread slightly away from body, five-digit hands clearly visible palms pointing forward away from viewer. Highlight ONLY the child's anatomical LEFT hand, which is on the LEFT side of this rear view, in gold with subtle plum attention rays. All other skin including right hand is muted beige. Back of head and neck visible, no face at all, so perspective is unambiguous. No lettering or arrows. Full body enough for body-side reference.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-94dff37c-3514-420b-88d3-e55ce39c2ae2.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Replace the entire full-body child with JUST TWO OPEN HUMAN HANDS side by side at equal size, fingertips pointing up and short wrists down, PALMS FACING THE VIEWER. No body, head, arms, clothes, face or figure. Anatomically correct left hand on LEFT with its thumb on its RIGHT edge toward center; correct right hand on RIGHT with thumb on its LEFT edge toward center. Each hand exactly one thumb and four separate fingers, natural rounded fingers, peach skin, plum outlines, simple palm creases. Both hands must have exactly the same normal peach skin color; NO golden recoloring. Use ONLY three short bold plum ATTENTION LINES above/beside the LEFT hand to identify left. NO attention lines on right hand. Symmetric relaxed hand poses, two hands total, generous transparent space between them. Transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+              "role": "edit/style reference",
+              "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f"
+            }
+          ],
+          "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2f4d7172-3359-4381-81c6-1db7842f72c2.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+          "prompt": "Use case: precise-object-edit. Replace the two PALMS in this reference with the BACKS of the two hands, fingers still pointing up and wrists down. We must see knuckles and small subtle fingernails, NOT palms and NOT palm creases. Correct dorsal-view anatomy: anatomical LEFT HAND is on the LEFT with thumb at its OUTER LEFT edge; anatomical RIGHT HAND is on the RIGHT with thumb at its OUTER RIGHT edge. The two thumbs point AWAY from the gap between the hands. Each hand exactly four fingers plus one thumb (five digits). Two hands only, matching peach skin, plum outlines, no body or arms. Highlight LEFT hand only with the same three plum attention rays beside/above the left hand. Right has no attention rays. Keep equal size, same height, generous transparent spacing, soft friendly illustration treatment. Absolutely no palm lines, no palm pads, no inward-pointing thumbs, no colored hand highlight, no labels or letters. Genuine transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+              "role": "edit/style reference",
+              "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
+            }
+          ],
+          "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-34124b21-c452-40bb-a27c-f6fea3815e50.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+          "prompt": "Use case: precise-object-edit. Edit this LEFT HAND vocabulary illustration. Keep two hands side by side, fingers up, wrists down, BACKS OF HANDS visible with fingernails and knuckles, matching peach skin, thick rounded plum outlines, restrained soft shading, and true transparent background. Correct the orientation of BOTH hands: the hand on the LEFT must have its THUMB ON ITS RIGHT EDGE pointing inward toward the central gap; the hand on the RIGHT must have its THUMB ON ITS LEFT EDGE pointing inward toward the central gap. The two thumbs face ONE ANOTHER in the middle. Mirror each individual hand in place, without moving the attention rays. This is the natural view of one's own two hands from above. Exactly four fingers and one thumb per hand. Preserve the three plum attention rays above/beside the LEFT hand ONLY, similar sizes, equal height, spacing and overall composition. No palm creases, no palms facing viewer, no body, no words, no colored hand highlight, no extra objects. Genuine transparent alpha.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+              "role": "edit/style reference",
+              "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+            }
+          ],
+          "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2f8cec34-c510-493e-ac6b-07b8d0fba4e4.png",
+          "ownerFeedbackRound": 5
+        }
+      ],
+      "selectedVersion": 4,
+      "image": {
+        "width": 1774,
+        "height": 887,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "approval": {
+        "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+        "selectedVersion": 4,
+        "ownerStatement": "These are good-to-go.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      },
+      "transparentBackground": true,
+      "imageDescription": "The backs of two hands with thumbs facing inward and attention lines beside the left hand.",
+      "bytes": 721740
+    },
+    {
+      "id": "ja-v-69c61c85a403",
+      "text": "文字",
+      "reading": "もじ",
+      "meaning": "Letter (Of The Alphabet)",
+      "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove the ENTIRE calendar/notepad/paper container: rings, gold header, white paper and outer border. Keep ONLY exactly three readable Japanese glyphs あ 木 カ on their ONE shared gold rounded rectangle highlight, all three glyphs dark plum. Enlarge and center that highlighted three-character group as a standalone transparent cutout. Shared highlight directly behind characters, with modest padding. No page, calendar, header, binding, large empty frame, shadow, extra text or objects.",
+      "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v2.png",
+      "status": "approved",
+      "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+          "role": "edit/style reference",
+          "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WRITTEN CHARACTERS: white rounded paper card with exactly three large Japanese glyphs horizontally: あ 木 カ. Place ONE golden rounded highlight rectangle behind the ENTIRE three-character group, not individual glyphs. Glyphs clear plum. No target word 文字, no reading. Same typography specimen as single-character card, but highlight all characters. These synonyms will not be competing quiz answers.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-315cd7fc-a870-473f-afbc-78642badacbb.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v2.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove the ENTIRE calendar/notepad/paper container: rings, gold header, white paper and outer border. Keep ONLY exactly three readable Japanese glyphs あ 木 カ on their ONE shared gold rounded rectangle highlight, all three glyphs dark plum. Enlarge and center that highlighted three-character group as a standalone transparent cutout. Shared highlight directly behind characters, with modest padding. No page, calendar, header, binding, large empty frame, shadow, extra text or objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v1.png",
+              "role": "edit/style reference",
+              "sha256": "d8f40aeb5d6b379e0c9206dc4df280546ee76b52bee80894d3d12aff96af2139"
+            }
+          ],
+          "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9bfe1c21-aab2-4846-ab73-988ddf8a21f5.png",
+          "ownerFeedbackRevision": true
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1923,
+        "height": 817,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "Three Japanese characters together on one gold highlight.",
+      "bytes": 1222355,
+      "approval": {
+        "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+        "selectedVersion": 2,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-9553e3adbc2a",
+      "text": "右手",
+      "reading": "みぎて",
+      "meaning": "Right Hand",
+      "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion to this LEFT HAND vocabulary illustration. Preserve EXACTLY the two hands, inward-facing thumbs, dorsal view with fingernails and knuckles, peach skin, plum outlines, five digits per hand, sizes, positions, spacing and transparent background. Both thumbs must still point toward one another in the central gap: LEFT-side hand thumb on its RIGHT edge, RIGHT-side hand thumb on its LEFT edge. Change ONLY the three plum attention rays: remove them from above/beside the LEFT hand and put the same three attention rays above/beside the RIGHT hand. No other changes. No palms, body, labels, text, colored hand highlights or extra objects. Genuine transparent alpha.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+      "status": "approved",
+      "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+          "role": "edit/style reference",
+          "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. RIGHT HAND anatomical viewpoint: a single friendly stylized child viewed squarely FROM BEHIND, lavender short sleeves and trousers, both arms slightly spread away from body, five-digit hands clearly visible palms pointing forward away from viewer. Highlight ONLY anatomical RIGHT hand, which is on RIGHT side of this rear view, gold with subtle plum attention rays. Other skin including left hand muted beige. Back of head and neck visible, no face, unambiguous rear perspective. No lettering or arrows. Full body provides body-side reference.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "fd5d2ede2857feeac4a7139a5c27f7bc4736f544d277e01393d93157bffbddbc",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2e89f1c2-2be6-4bf5-b42d-d1d88af2ed72.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v2.png",
+          "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion from this LEFT HAND card. Preserve exactly the same child seen FROM BEHIND, hair, clothes, stance, all anatomy and hand shapes, five digits on each hand, layout, plum outlines, and transparent background. Change ONLY the highlight: recolor the LEFT-side hand back to the same normal peach skin as its arm and remove the three attention rays next to that left hand. Recolor ONLY the RIGHT-side hand golden yellow, and put three matching plum attention rays beside that right hand instead. The anatomical RIGHT hand is on the RIGHT of this rear view. No other changes, extra fingers, facial features, labels or arrows.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v1.png",
+              "sha256": "b458470a1f58e141625e686511ad36716f321590dccc2d9c07bb99dd9092aa2f",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "1db69141ea7a3caad9904c844f812090665da8f617388e48ac37279faab48d29",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-32c36698-196d-41b2-bc9c-cd1a01d1d789.png"
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v3.png",
+          "prompt": "Use case: precise-object-edit. Create RIGHT HAND companion to this two-hand LEFT HAND illustration. Preserve EXACTLY the two open palms, normal peach skin, all five digits on each hand, thumb anatomy, palm creases, wrist shapes, dimensions, positions, plum outlines, transparent background, and every other element. Change ONLY the three plum attention rays: remove them from above the LEFT hand and put the identical three rays above/beside the RIGHT hand instead. Right hand means the palm on the RIGHT side of this image (its thumb is on its left edge toward the center). Both hands keep the same normal peach color, no gold highlight, no body, no additional objects or labels.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v2.png",
+              "role": "edit/style reference",
+              "sha256": "6ddde0526c21e7638e0331c9c8406a04f5c4b57a88c194df480167538758a958"
+            }
+          ],
+          "sha256": "fdacd6e3ed138aee42640c7a46794b7e5580f049813ec3e40430ed3286439b26",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-11236d91-17db-4db6-9c30-830f52e53c1f.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v4.png",
+          "prompt": "Use case: precise-object-edit. Make the RIGHT HAND companion to this corrected BACK-OF-HANDS illustration. Preserve EXACTLY both dorsal hands, fingernails, knuckles, thumb positions (thumbs point OUTWARD), all five digits each, normal matching peach color, plum outlines, sizes, positions, transparent background and every other element. Change ONLY the three plum attention lines: remove them from above/beside the LEFT hand and put the same three lines above/beside the RIGHT hand. No other changes. No palm creases, colored highlights, text or body.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v3.png",
+              "role": "edit/style reference",
+              "sha256": "13a31d6e4ddf34445cb6b7a093d626a26ab293b567ecf1c554416cbf86179a41"
+            }
+          ],
+          "sha256": "790ab4ce0eb6f08182d446752d95392de95073c7e5e6fdaeb43270385d9cd2d3",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1bd9a578-9f69-4ccc-887d-8bd7d990970c.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+          "prompt": "Use case: precise-object-edit. Create the RIGHT HAND companion to this LEFT HAND vocabulary illustration. Preserve EXACTLY the two hands, inward-facing thumbs, dorsal view with fingernails and knuckles, peach skin, plum outlines, five digits per hand, sizes, positions, spacing and transparent background. Both thumbs must still point toward one another in the central gap: LEFT-side hand thumb on its RIGHT edge, RIGHT-side hand thumb on its LEFT edge. Change ONLY the three plum attention rays: remove them from above/beside the LEFT hand and put the same three attention rays above/beside the RIGHT hand. No other changes. No palms, body, labels, text, colored hand highlights or extra objects. Genuine transparent alpha.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+              "role": "edit/style reference",
+              "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41"
+            }
+          ],
+          "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2e6d2684-84f0-4706-a43b-bece753a976c.png",
+          "ownerFeedbackRound": 5
+        }
+      ],
+      "selectedVersion": 5,
+      "image": {
+        "width": 1774,
+        "height": 887,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "approval": {
+        "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+        "selectedVersion": 5,
+        "ownerStatement": "These are good-to-go.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      },
+      "transparentBackground": true,
+      "imageDescription": "The backs of two hands with thumbs facing inward and attention lines beside the right hand.",
+      "bytes": 719296
+    },
+    {
+      "id": "ja-v-49863ee12a96",
+      "text": "一文字",
+      "reading": "いちもんじ",
+      "meaning": "Straight Line",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. STRAIGHT HORIZONTAL LINE: exactly one long thick perfectly straight plum horizontal stroke with subtly rounded ends, centered on transparent canvas. About 70 percent canvas width. Restrained illustrated lavender edge highlight but flat frontal geometry. No paper, no vertical strokes, arrowheads, text, numeral or handwriting flourish. This one line is the whole asset.",
+      "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+      "status": "approved",
+      "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. STRAIGHT HORIZONTAL LINE: exactly one long thick perfectly straight plum horizontal stroke with subtly rounded ends, centered on transparent canvas. About 70 percent canvas width. Restrained illustrated lavender edge highlight but flat frontal geometry. No paper, no vertical strokes, arrowheads, text, numeral or handwriting flourish. This one line is the whole asset.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2c849d80-3536-4080-b7c3-c3fcb27c5611.png"
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "One straight horizontal plum line.",
+      "bytes": 155903,
+      "approval": {
+        "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+        "selectedVersion": 1,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-8438eda3cfc0",
+      "text": "年",
+      "reading": "とし",
+      "meaning": "Year",
+      "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. ONE YEAR interval: white rounded year-planner sheet with golden top binding and exactly twelve equally sized MINIATURE MONTH GRID PANELS in a 3-column by 4-row arrangement. Each panel has a tiny lavender header and unnumbered pale grid. Enclose all twelve panels together with one rounded golden brace or outline to signify the entire year. No year number, no highlighted single month, no words or tiny numerals. Exactly twelve month panels as one complete year, clean and simple.",
+      "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+      "status": "approved",
+      "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/style-calendar.png",
+          "role": "style reference",
+          "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. ONE YEAR interval: white rounded year-planner sheet with golden top binding and exactly twelve equally sized MINIATURE MONTH GRID PANELS in a 3-column by 4-row arrangement. Each panel has a tiny lavender header and unnumbered pale grid. Enclose all twelve panels together with one rounded golden brace or outline to signify the entire year. No year number, no highlighted single month, no words or tiny numerals. Exactly twelve month panels as one complete year, clean and simple.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-aa507aba-4866-4f60-a5fa-7ba21878286d.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v2.png",
+          "prompt": "An alternative visual reference illustration for ONE YEAR as a COMPLETE CYCLE OF FOUR SEASONS. Four small versions of the SAME recognizable tree are arranged around a circle: upper-left spring tree with pink blossom clusters; upper-right summer tree with full green leaves; lower-right autumn tree with orange/gold leaves; lower-left winter tree with bare branches and a little snow on the branches. One smooth golden circular clockwise arrow connects the four seasons into ONE closed complete annual cycle. Exactly four trees, balanced equal-sized scenes, no extra tree in center. Friendly polished educational illustration with plum outlines, lavender accents, gold circular arrow, simple clean natural leaf colors, white/snow details. Isolated on genuine transparent background, square composition, generous margins. No calendar, page, bindings, month names, dates, numbers, lettering, labels, landscape background, glow or giant shadow. Make the closed full-year cycle, not one isolated season, the main idea.",
+          "references": [],
+          "sha256": "3e24879d76aedecc7a96fa92daf0f145e2fe26e423af22aef8dcc5c5e27ffe8d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ca442c0-3cf0-4137-8d62-d12c85235b1f.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v3.png",
+          "prompt": "Create a beautifully CLEAN simple educational illustration of ONE YEAR as a closed FOUR-SEASON CYCLE. Square isolated graphic on genuinely transparent background. Exactly four small versions of the same tree, placed around a circle: upper left SPRING (rounded green canopy with FIVE large simple pink blossoms), upper right SUMMER (one rounded lush green canopy), lower right AUTUMN (one rounded orange/gold canopy with just a few simple leaves), lower left WINTER (a simple bare tree with smooth sturdy branches and a little opaque white snow resting on branches). Each tree has the same brown trunk and plum outlines. NO ground plates, grass, ground shadows, fallen petals or loose scattered leaves. Connect seasons clockwise with four gold curved arrows forming one complete closed circular loop, outlined dark plum, clean simple geometry. The four trees are separated with generous negative space; no fifth tree or object in center. Style: friendly polished flat illustration, solid smooth color fills, thick crisp plum boundaries, minimal interior highlights only. Absolutely NO gradients, glow, haze, blur, multicolored edge halos, rough edges, speckles, scattered pixels, drop shadows, vignette, paper, calendar, numbers, words, labels or background panel. Only the four clear trees and circular gold arrow loop, completely transparent everywhere else.",
+          "references": [],
+          "sha256": "cec9ae5461640da1e43a4cc9ad85419ce481ee7429b4bef964e53ca8647ffa28",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-7902ec10-ab93-4204-a031-c9ba819fb300.png",
+          "ownerFeedbackRound": 3,
+          "comparisonOnly": true
+        }
+      ],
+      "selectedVersion": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "approval": {
+        "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+        "selectedVersion": 1,
+        "ownerStatement": "I prefer the old year artwork, which I'm approving now.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      },
+      "transparentBackground": true,
+      "imageDescription": "A year planner showing all twelve miniature month panels together.",
+      "bytes": 1235728
+    },
+    {
+      "id": "ja-v-83365ed9e3db",
+      "text": "太字",
+      "reading": "ふとじ",
+      "meaning": "Bold Letter",
+      "prompt": "Use case: precise-object-edit. Make the comparison letter on the LEFT dramatically SKINNIER. Preserve exactly the bold dark-plum RIGHT A, its gold rounded backing, gold-filled triangular counter, typography size, baseline, positions, spacing, transparent background and all other details. Change ONLY LEFT lavender A stroke weight: reduce every left-A stroke to approximately ONE THIRD of its current thickness. It should look like an elegant extra-light/thin sans-serif A, with its diagonal stems and crossbar all distinctly thin. Same letter height and outer width, same lavender color, no outline to thicken it again. This is a very clear THIN versus BOLD weight contrast, not a change in glyph size. No calendar, page, frame, words, new objects or glow.",
+      "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+      "status": "approved",
+      "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+          "role": "edit/style reference",
+          "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. BOLD TYPE: white rounded typography specimen card showing exactly two copies of the SAME Latin letter A side by side in the SAME typeface, same height and baseline: left regular thin weight muted lavender; right very bold/heavy plum weight. Highlight only the bold RIGHT A with a soft golden rounded backing. Keep counters/openings correct; no other glyphs, labels, words or pencil. Exact text A A.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "3948c69ba70c376e96e4a0c5c25a970ce515787fe8b6b4025836da17ae171093",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0ddc9049-292b-460c-9a94-9a82eea99bdf.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove all calendar/notepad elements: rings, gold header, white sheet, page outline and outer frame. Keep ONLY exactly two letter A specimens side by side, same baseline and height and same basic typeface. LEFT A is regular/light weight in muted lavender. RIGHT A is genuinely heavy bold in dark plum, on a modest rounded golden highlight directly behind the letter. Enlarge and center the standalone AA comparison on transparent background. No paper, page, calendar, labels, dates, frame or extra glyphs. Exact text A A.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v1.png",
+              "role": "edit/style reference",
+              "sha256": "3948c69ba70c376e96e4a0c5c25a970ce515787fe8b6b4025836da17ae171093"
+            }
+          ],
+          "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-43d7f6ad-0500-40dd-9204-dd50ae400a5a.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+          "prompt": "Use case: precise-object-edit. Fix exactly ONE defect in the supplied bold-type comparison. The triangular enclosed counter inside the RIGHT dark-plum BOLD A currently has a transparent hole. Fill ONLY that enclosed triangular area with opaque warm GOLD/YELLOW matching the golden rounded backing immediately surrounding the letter. The golden backing must be continuous beneath the letter, including visible gold through its triangular counter. Do not change the letter shape, any strokes, typography, gold backing silhouette, colors elsewhere, LEFT regular lavender A, spacing or dimensions. Preserve transparency outside the objects and inside the LEFT A counter (which has no backing). No glow, paper, border, calendar, shadow or additional objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v2.png",
+              "role": "edit target",
+              "sha256": "1e98f8871fc5b6f366e463e095844f4eba2fd920bddc33cf40360c9a23b39e3d"
+            }
+          ],
+          "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9122d6da-ca35-4408-8ade-7f7d81670421.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+          "prompt": "Use case: precise-object-edit. Make the comparison letter on the LEFT dramatically SKINNIER. Preserve exactly the bold dark-plum RIGHT A, its gold rounded backing, gold-filled triangular counter, typography size, baseline, positions, spacing, transparent background and all other details. Change ONLY LEFT lavender A stroke weight: reduce every left-A stroke to approximately ONE THIRD of its current thickness. It should look like an elegant extra-light/thin sans-serif A, with its diagonal stems and crossbar all distinctly thin. Same letter height and outer width, same lavender color, no outline to thicken it again. This is a very clear THIN versus BOLD weight contrast, not a change in glyph size. No calendar, page, frame, words, new objects or glow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v3.png",
+              "role": "edit/style reference",
+              "sha256": "53a7d0417793a404412c845a58fbc79d798e110a04f9c7cb01caf3cb5b8b0d4a"
+            }
+          ],
+          "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f123ba61-0f8c-4409-8ef2-6f4773d6cdd7.png",
+          "ownerFeedbackRound": 3
+        }
+      ],
+      "selectedVersion": 4,
+      "image": {
+        "width": 1774,
+        "height": 887,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A thin lavender letter A beside a bold plum letter A on a gold highlight.",
+      "bytes": 707291,
+      "approval": {
+        "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+        "selectedVersion": 4,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-9a8a0ffc08d3",
+      "text": "図",
+      "reading": "ず",
+      "meaning": "Diagram",
+      "prompt": "A clean freestanding educational flowchart illustration on a genuinely transparent background. Exactly three rounded rectangles: a small golden-yellow node centered at top, two pale-lavender nodes side by side underneath. All three have thick crisp dark-plum outlines. A solid opaque dark-plum connector from the bottom center of the top node goes down and branches left and right into two clearly visible downward-pointing arrowheads, one above each lower node. Simple flat colors, very subtle interior highlight only, smooth rounded forms, friendly learning-game illustration. Empty nodes with NO TEXT. The complete chart centered in a square with generous transparent margins. Absolutely NO glow, aura, blur, drop shadow, background wash, haze, paper, calendar, page, outer frame, border, labels or decorative elements. Only the three boxes and connector strokes; pixels between and outside them must be fully transparent.",
+      "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v4.png",
+      "status": "approved",
+      "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+      "references": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. DIAGRAM: one simple clean flowchart on a white rounded paper card. One gold rounded rectangle at top connects downward to two lavender rounded rectangles side by side using thin plum connectors with tiny arrowheads. Empty nodes with NO TEXT. Clearly a structured diagram, all connections unambiguous, no axes, legend, extra decoration or target word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "9a2e022b9d57bda78e54c52e422b25462e90fe166e51507efd15abd8ab60d274",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9b0eab1b-b9c6-4b00-b65a-7848bf6c3477.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v2.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove the entire calendar/notepad: binding rings, gold header, white page, outside plum frame. Keep ONLY the clean flowchart: one gold rounded rectangle at top, branching via plum connectors and two downward arrowheads to two lavender rounded rectangles side by side below. Preserve clear connections and three empty nodes without text. Enlarge and center this freestanding flowchart on transparent background. Transparent between all nodes and lines; no backing sheet or large frame, calendar, paper, header, dates, words or extra objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v1.png",
+              "role": "edit/style reference",
+              "sha256": "9a2e022b9d57bda78e54c52e422b25462e90fe166e51507efd15abd8ab60d274"
+            }
+          ],
+          "sha256": "9efbbcae6227b61ef8866848f640e12145197ab3ca2cc2841d0fbb1ec2081eaa",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c659435d-3298-4468-9e77-ae2abf34e152.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v3.png",
+          "prompt": "Use case: precise-object-edit. Clean up this flowchart asset. Keep exactly its three rounded boxes (gold top box, two lavender lower boxes), plum borders, and correct branching connector with downward arrowheads. REMOVE ALL purple haze, aura, blurred shadows, colored glow and low-opacity pixels surrounding the boxes and lines. Outside each crisp box boundary and crisp connector stroke must be perfectly transparent, not purple tinted. Restore connectors and arrowheads as SOLID OPAQUE DARK PLUM readable lines with clearly defined edges. White-page-free, calendar-free, no frame, words or backing sheet. Flat clean illustrated icon, no texture, lighting effects or shadows; generous transparent margin.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v2.png",
+              "role": "edit/style reference",
+              "sha256": "9efbbcae6227b61ef8866848f640e12145197ab3ca2cc2841d0fbb1ec2081eaa"
+            }
+          ],
+          "sha256": "1589d003d5b81c02d70437be21b2d115f2fcfc552e6cc1a624bcea6237b25058",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-81fb85af-dad1-4eca-843a-776ffdafeef0.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v4.png",
+          "prompt": "A clean freestanding educational flowchart illustration on a genuinely transparent background. Exactly three rounded rectangles: a small golden-yellow node centered at top, two pale-lavender nodes side by side underneath. All three have thick crisp dark-plum outlines. A solid opaque dark-plum connector from the bottom center of the top node goes down and branches left and right into two clearly visible downward-pointing arrowheads, one above each lower node. Simple flat colors, very subtle interior highlight only, smooth rounded forms, friendly learning-game illustration. Empty nodes with NO TEXT. The complete chart centered in a square with generous transparent margins. Absolutely NO glow, aura, blur, drop shadow, background wash, haze, paper, calendar, page, outer frame, border, labels or decorative elements. Only the three boxes and connector strokes; pixels between and outside them must be fully transparent.",
+          "references": [],
+          "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f92e317c-db52-4421-b2b9-bd88d4d7ec27.png",
+          "ownerFeedbackRevision": true
+        }
+      ],
+      "selectedVersion": 4,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A simple three-box branching diagram with arrows connecting the upper box to the two lower boxes.",
+      "bytes": 587993,
+      "approval": {
+        "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+        "selectedVersion": 4,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-aef5eed601c5",
+      "text": "三十代",
+      "reading": "さんじゅうだい",
+      "meaning": "One's Thirties",
+      "prompt": "A clean friendly illustrated reference for ADULTS IN THEIR THIRTIES. Exactly three SIMPLE adult head-and-shoulder bust icons arranged evenly in one horizontal row. Warm peach faces, simple dark-plum hair and tiny friendly facial features; solid lavender clothing with a clean smoothly curved bottom silhouette, thick crisp plum outlines. Each portrait is isolated with real transparent gaps. Below left portrait a small gold rounded age badge with exact large plum text 30. Below middle badge text 35. Below right badge text 39. Three portraits, three badges, numbers exactly 30 35 39, easily legible. Keep a visible transparent gap between each bust and its number badge. Flat smooth colors and just a small interior highlight, consistent polished plum/lavender/gold educational-game aesthetic. Square transparent canvas, generous margins. NO grouping brace, underline, ribbon, shadows, glow, soft edges, smoke, haze, white outline, white trimming, rough cutouts, extra numerals, text, calendars, card frames, paper or background panel. Crisp finished silhouettes only. The age numbers provide explicit facts so no guessing anyone's age from appearance is required.",
+      "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+      "status": "approved",
+      "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+      "references": [],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. AGE RANGE THIRTIES: a clean white rounded age-range card with the exact large typography 30–39 centered in plum. Beneath, a simple golden horizontal range bar bounded by two short endpoint ticks, no arrowheads. No other digits, English words, portraits, calendar rings, yen/currency symbols, percent marks or target Japanese. Display age interval explicitly; no guessing age from appearance.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "faa7c82931d64cc41e4ee3ea43eed9a6cf6862f9402a073e352de76c234052c2",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-236094a8-9a30-4599-bad9-fe95c91f2c37.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v2.png",
+          "prompt": "Use case: precise-object-edit. User-requested revision of this Japanese listening illustration. Retain polished plum, lavender and gold illustration style, crisp forms and transparent background. Remove ALL the calendar/card/paper framing: gold header bar, white sheet, outer plum page border and shadow. Keep ONLY the exact large plum text 30–39 and the gold range bar below it bounded by two short plum endpoint ticks. Enlarge and center this floating age-range diagram on transparent background, with ample margin. Exact numbers 30 and 39, connected by a dash; no extra numbers, years, date labels, card, calendar, page, frame, binding, people, words or currency symbols.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v1.png",
+              "role": "edit/style reference",
+              "sha256": "faa7c82931d64cc41e4ee3ea43eed9a6cf6862f9402a073e352de76c234052c2"
+            }
+          ],
+          "sha256": "8ee3456fc4e8a48b905fdb3c08198a5816cc427990ef7b7207d212fa3c387c7b",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c65ddaf6-dd91-4363-9fda-2d005da1c4f7.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v3.png",
+          "prompt": "An alternative educational vocabulary illustration for PEOPLE IN THEIR THIRTIES. Show three simple friendly adult head-and-shoulder portraits in a row, lavender clothing, warm peach skin, plum outlines, varied ordinary hair, equal scale. Beneath EACH portrait put a small warm-gold oval age badge containing a clear dark-plum Arabic age: exactly 30 under left portrait, 35 under middle, 39 under right. The age numbers must be large and legible at small quiz size. A single subtle gold grouping brace underneath unites the three adults into the same age decade. Ages are explicit: do not ask the learner to guess age from appearances. Clean polished learning-game illustration, rounded plum/lavender/gold style, restrained soft interior shading, freestanding transparent cutout, generous square margins. NO paper, calendar, date, framing cards, birthday cake, candles, labels, words, age ranges, Japanese answer text or other numerals. Exactly three portraits and three badges, exact text 30 35 39.",
+          "references": [],
+          "sha256": "0c6b76e7001070e197565b8efce2a930eaa3a560b450d0dfb8d51ffc5744dd64",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3c76508d-1fb6-4439-a4fa-b8dddbfa2e67.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+          "prompt": "A clean friendly illustrated reference for ADULTS IN THEIR THIRTIES. Exactly three SIMPLE adult head-and-shoulder bust icons arranged evenly in one horizontal row. Warm peach faces, simple dark-plum hair and tiny friendly facial features; solid lavender clothing with a clean smoothly curved bottom silhouette, thick crisp plum outlines. Each portrait is isolated with real transparent gaps. Below left portrait a small gold rounded age badge with exact large plum text 30. Below middle badge text 35. Below right badge text 39. Three portraits, three badges, numbers exactly 30 35 39, easily legible. Keep a visible transparent gap between each bust and its number badge. Flat smooth colors and just a small interior highlight, consistent polished plum/lavender/gold educational-game aesthetic. Square transparent canvas, generous margins. NO grouping brace, underline, ribbon, shadows, glow, soft edges, smoke, haze, white outline, white trimming, rough cutouts, extra numerals, text, calendars, card frames, paper or background panel. Crisp finished silhouettes only. The age numbers provide explicit facts so no guessing anyone's age from appearance is required.",
+          "references": [],
+          "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4ef7f1eb-3123-4a49-822a-712e855f77f1.png",
+          "ownerFeedbackRound": 3
+        }
+      ],
+      "selectedVersion": 4,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "approval": {
+        "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+        "selectedVersion": 4,
+        "ownerStatement": "三十代 is good.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      },
+      "transparentBackground": true,
+      "imageDescription": "Three adults with age badges showing 30, 35 and 39.",
+      "bytes": 832328
+    },
+    {
+      "id": "ja-v-6f2e359ff6c8",
+      "text": "西",
+      "reading": "にし",
+      "meaning": "West",
+      "prompt": "Use case: precise-object-edit. Create the WEST companion card from this NORTH compass. Preserve exactly the circular white face, plum rim, lavender inset circle, four-ray geometry, N above the top, sizing, palette, all positions, and transparent outside. Change ONLY which ray is highlighted: the LEFT/WEST ray must be golden yellow, and the TOP/NORTH ray must become pale lavender like the bottom and right rays. Exactly one golden ray, pointing LEFT; small N remains above TOP. No W letter or new markings. Keep entire circular border, do not simplify or remove it.",
+      "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+      "status": "approved",
+      "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+          "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+          "role": "edit/style reference"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WEST: same flat front-facing four-ray compass rose; left ray prominent gold, other rays pale lavender, plum outline. Include ONLY tiny neutral N at the top as a fixed orientation anchor. Gold ray points straight left; north remains up. No W answer label, E/S labels, map or target Japanese word.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "32e63b1833b0d36e9ec83c31b7a1800efc605e30f16698981df2703f8f495a0d",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-1421ec0c-7be8-4e8b-961b-e7d1177f1a8a.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST companion card from this NORTH compass. Preserve exactly the circular white face, plum rim, lavender inset circle, four-ray geometry, N above the top, sizing, palette, all positions, and transparent outside. Change ONLY which ray is highlighted: the LEFT/WEST ray must be golden yellow, and the TOP/NORTH ray must become pale lavender like the bottom and right rays. Exactly one golden ray, pointing LEFT; small N remains above TOP. No W letter or new markings. Keep entire circular border, do not simplify or remove it.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+              "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9dab140c-4c32-48d6-a4be-7e9ee2172f1e.png"
+        }
+      ],
+      "selectedVersion": 2,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "A compass with its west-pointing left ray highlighted in gold.",
+      "bytes": 908847,
+      "approval": {
+        "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+        "selectedVersion": 2,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-81b56dc2a618",
+      "text": "西口",
+      "reading": "にしぐち",
+      "meaning": "West Exit",
+      "prompt": "Use case: precise-object-edit. Change ONLY the gold highlight in the upper-right COMPASS. This must be WEST, not north: color the LEFT-POINTING triangular compass ray solid GOLD, and recolor the UPWARD/TOP triangular compass ray pale LAVENDER matching the bottom and right rays. Exactly ONE gold compass ray pointing LEFT toward the door. N remains fixed above the TOP and stays plum; do not rotate the compass. Preserve EVERY OTHER PART of this image exactly: enlarged compass size/position/rim, the entire doorway, the bolder center-origin outward arrow, colors, shading, margins and transparency. The gold doorway arrow remains unchanged; ONLY swap the compass's TOP gold fill to LEFT gold fill.",
+      "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+      "status": "approved",
+      "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
+          "role": "edit/style reference",
+          "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05"
+        }
+      ],
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v1.png",
+          "prompt": "Use case: style-transfer. Replacement Japanese listening vocabulary card. Supplied approved calendar is STYLE REFERENCE ONLY; replace subject completely as specified. Match charming polished illustration: rounded bold plum outlines, lavender and golden yellow accents, white, restrained soft shading. Square isolated asset with generous margins, crisp at small card sizes. Genuine transparent alpha background; no checkerboard, shadow outside silhouette, watermark, English translations, Japanese target word, decorative objects or extra labels. WEST EXIT: flat overhead same rectangular station floor plan; exactly four openings centered on top, right, bottom and left edges, empty white interior, lavender walls. Highlight ONLY LEFT opening with golden outward arrow through left opening pointing left. Small compass N-up marker upper right outside plan. No other text or train. Clear map north at top.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/style-calendar.png",
+              "role": "style reference",
+              "sha256": "656ee642459a8e8299991ba49bc7667fd08e5bb43d8bf673814b6913d0437d7f"
+            }
+          ],
+          "sha256": "7be2c7af5bfa8592176dbb6cf49733b466196fa913146c16cfd921539961f6b6",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-a4efe6d3-8bd9-492b-9b90-e45e8b3b0633.png"
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v2.png",
+          "prompt": "Use case: precise-object-edit. Make a WEST EXIT companion card from this NORTH EXIT floor plan. Preserve EXACTLY the same station outline, opaque pale lavender floor, four centered exit gaps, plum wall thickness, upper-right north-up compass with N, positions, sizes, palette, transparent outer background and illustration style. Change ONLY the large exit arrow: remove the gold arrow from the TOP exit and place the same large gold outward arrow through the LEFT exit, pointing LEFT out of the room. Top/right/bottom openings remain plain and empty. Keep floor opaque and clean with no holes, smudges or blur. No other changes or added text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v4.png",
+              "sha256": "2a3e8b55a6d3e8646f54dfdb8d2b4976429a543025caae2f6302e3b1b2a15599",
+              "role": "edit/style reference"
+            }
+          ],
+          "sha256": "b905ee7b43d3eee60ccefe021e7a17311398bbb0b544ba2eb71ea113cc3fe093",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0bb45c38-6911-4f40-83f5-85ff2fa56c20.png"
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v3.png",
+          "prompt": "Use case: precise-object-edit. Make WEST EXIT companion to this NORTH EXIT illustration. Preserve EXACTLY the LEFT doorway-and-outward-right-arrow EXIT SYMBOL, including its rightward arrow, shapes, colors, location and size. That exit symbol is a reusable constant and must NOT point left or change at all. Preserve the RIGHT circular compass's whole geometry, white face, plum border, lavender inset ring, all four rays and N at TOP. Change ONLY the compass highlighting: LEFT/WEST ray becomes golden yellow; TOP/NORTH ray becomes pale lavender matching bottom/right rays. Exactly one highlighted gold compass ray pointing LEFT. Keep N fixed above TOP, north-up orientation, component positions, size, typography, transparent background and all margins identical. No other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v5.png",
+              "role": "edit/style reference",
+              "sha256": "d01688fd76b65230b6e41e588b0c47f9e9ab84b2e254ca1549edd3a561f71ab0"
+            }
+          ],
+          "sha256": "929cff941ba152e1abf8e0083217422cace7ecd7388076c23bbb378e398befa3",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-0781b697-1036-4e29-9a31-98e36fdc3a72.png",
+          "ownerFeedbackRevision": true
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v4.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this improved NORTH EXIT. Preserve the entire LARGE refined doorway and its outward right-pointing gold arrow exactly, as the primary subject; preserve the SMALL compass's UPPER RIGHT position, scale (40% door height), round border, white face, lavender inset ring, N above top, geometry and margins. Change ONLY which compass ray is gold: LEFT/WEST ray gold, TOP/NORTH ray becomes lavender like bottom/right. Exactly one highlighted gold compass ray pointing LEFT. Do not move, rotate, resize or change the doorway, arrow, handle, door leaf, compass, N label, colors or transparent background. No new words or objects.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v6.png",
+              "role": "edit/style reference",
+              "sha256": "30319d3a0754e934a31868e9e414b7f7162be6bf72a05833ce51eb2b9e7b75d8"
+            }
+          ],
+          "sha256": "6b65f19bac26a7b6413639687335e0e4300eb10acc67c9ac77ed3646669c430c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07a13347-7104-4fd0-b61c-bf4183957691.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v5.png",
+          "prompt": "Use case: precise-object-edit. Create the WEST EXIT companion to this FINAL NORTH EXIT composition. Preserve EVERY detail of the doorway and the newly gentle center-origin exit arrow: its rounded inner tail, almost constant curved shaft, small foreground arrowhead and flat gold shading must remain identical. Preserve the enlarged compass's close UPPER RIGHT position, circular rim, white face, N label above TOP, size, overlap with outside arch, geometry, colors and all margins. Change ONLY the compass rays' highlight: LEFT/WEST ray gold, TOP/NORTH ray lavender like right/bottom. Exactly one gold compass ray pointing left; N stays at top. Keep all other objects, proportions, pixels and transparent background as closely unchanged as possible. No further changes, perspective exaggeration or added elements.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            }
+          ],
+          "sha256": "735bd4b27a69e92d9d6b906a005d4ec08c26efe1d0d9395f4aecce669a6e86f0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9e961603-aad4-4e48-9b16-2d52ce435c67.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 6,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
+          "prompt": "Use case: precise-object-edit / compositing. Image1 supplies the final directional EXIT layout with its enlarged compass very close to the upper-right arch. Image2 supplies the NEW BOLDER EXIT ARROW to copy. Preserve image1's entire doorway and compass position, size, circle, N label, north-up orientation, colors and composition. Replace ONLY its thinner arrow with image2's exact fuller gold arrow: visibly thicker shaft along the whole curved path, substantial rounded tail at center of the doorway, and proportional stronger foreground arrowhead. The arrow still has almost constant width and gentle depth only; do NOT return to a giant perspective wedge. Match image2's arrow shape, width, relative scale and soft flat-gold shading as closely as possible. Compass highlight must be ONLY LEFT/WEST ray gold; other three rays lavender; N stays at TOP. Door stays primary; compass stays enlarged and near upper-right. No other changes, text, shadow or objects; preserve clean transparent background.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v9.png",
+              "role": "edit/style reference",
+              "sha256": "dbdc166d430e3eb66cf4118646dae3d491067db7cb67085e68b265e4e8cc263c"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+              "role": "edit/style reference",
+              "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba"
+            }
+          ],
+          "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-373c398d-fc61-41a4-98ed-87e60f5f1c58.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 7,
+          "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+          "prompt": "Use case: precise-object-edit. Change ONLY the gold highlight in the upper-right COMPASS. This must be WEST, not north: color the LEFT-POINTING triangular compass ray solid GOLD, and recolor the UPWARD/TOP triangular compass ray pale LAVENDER matching the bottom and right rays. Exactly ONE gold compass ray pointing LEFT toward the door. N remains fixed above the TOP and stays plum; do not rotate the compass. Preserve EVERY OTHER PART of this image exactly: enlarged compass size/position/rim, the entire doorway, the bolder center-origin outward arrow, colors, shading, margins and transparency. The gold doorway arrow remains unchanged; ONLY swap the compass's TOP gold fill to LEFT gold fill.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v6.png",
+              "role": "edit/style reference",
+              "sha256": "a1b31e3cf6b519f9968c7c9828adaffe33ce5cdd434115131ae8de6fd8066e05"
+            }
+          ],
+          "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-c15cd039-8c41-4825-8f54-4c042997f65c.png",
+          "ownerFeedbackRound": 4
+        }
+      ],
+      "selectedVersion": 7,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "An open doorway with an outward gold arrow and a nearby compass highlighting west.",
+      "bytes": 1188628,
+      "approval": {
+        "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+        "selectedVersion": 7,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-a19157e62dee",
+      "text": "出口",
+      "reading": "でぐち",
+      "meaning": "Exit",
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+          "prompt": "Create one refined, friendly illustrated EXIT symbol for a Japanese listening game. A beautiful open doorway is the main subject: softly rounded plum doorframe with a little depth, pale lavender door leaf opened toward the LEFT, neat small golden handle, clearly darker lavender doorway interior, and a clean low threshold. A broad smooth golden arrow starts INSIDE the doorway opening and passes OUT through the threshold toward the RIGHT, ending clearly outside the doorway. Exit must read as outward motion. Elegant simple polished storybook-object style, consistent bold dark-plum contours, warm gold and lavender palette, restrained dimensional highlights only within objects. Isolated centered symbol on genuine transparent background, square canvas, generous margins. No compass on this base symbol. No person, lettering, label, word EXIT, scenery, floor plan, calendar, glow, large shadow or backing card. Preserve a simple clear silhouette at small quiz size.",
+          "references": [],
+          "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-08417089-da3e-4a20-8ee2-8fd9e0f23370.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+          "prompt": "Use case: precise-object-edit. Preserve the supplied refined open lavender doorway, plum arched frame, door leaf opening left, golden handle, depth, proportions, colors, low threshold, position, style and transparent outside. Replace the EXISTING SIDEWAYS ARROW completely with a GOLD ARROW THAT COMES FROM THE CENTER OF THE DOORWAY AND MOVES OUT TOWARD THE VIEWER IN PERSPECTIVE. Its narrow distant tail must start exactly in the MIDDLE of the dark doorway opening (center horizontally and about halfway up the opening), clearly surrounded by the interior on all sides. From that center the arrow travels forward, curving down and slightly right across the threshold into the foreground. The arrow grows broader as it approaches the viewer, with a large arrowhead in the LOWER-RIGHT FOREGROUND pointing toward the viewer. Strong foreshortening: small/narrow at the center of the doorway, larger/closer outside. It must read emerging from the center/depth of the doorway, NOT sliding horizontally across its face, NOT starting at the hinge, jamb or bottom corner. No remnants of the old lateral arrow. Keep a single continuous clean golden arrow, crisp plum outline and restrained highlight. No added compass, person, text, scene, floor platform or shadow. Genuine transparent background; keep generous margin around the foreground arrowhead.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            }
+          ],
+          "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8b78f61e-d7c8-4278-b9cd-1513f4121e8f.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+          "prompt": "Use case: precise-object-edit. The doorway and arrow DIRECTION/PATH in this image are correct. Preserve the doorway exactly, and preserve the gold EXIT arrow's center-origin curved path from the middle of the dark opening toward the lower-right foreground. Make the arrow MUCH LESS EXAGGERATED in perspective: use a modest almost-constant-width curved shaft, only gently widening from about 60 pixels at its inner tail to about 85 pixels near the head on this 1254px canvas. Replace the oversized triangular foreground head with a tidy, moderate arrowhead about 150 pixels across (around one-third the width of the doorway opening), NOT a huge wedge. Flat readable directional arrow with a subtle gold interior highlight, very small bevel if any; no thick 3D underside. This should feel like a graceful normal arrow curving out from the center, with just a hint of depth, not a dramatic perspective ribbon. Keep the original path endpoints and foreground direction. Background around the now slimmer arrow must become clean transparent outside the door, or restore matching dark lavender where the old arrow covered the interior. Preserve door, handle, frame, threshold, colors, margins and dimensions. No new objects or text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50658b9f-91e2-4a36-8888-63b37ebd6189.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+          "prompt": "Use case: precise-object-edit. Make just ONE final subtle reduction in perspective on the existing gold EXIT arrow. Everything else, including the door, curved center-origin path, outward down/right direction, endpoint, moderate arrowhead size, colors and transparency, stays unchanged. Remove the sharp needle-like taper at the INNER TAIL inside the doorway: give that tail a small soft rounded end about 50–60px wide, not a point. Then make the curved shaft almost constant-width, about 65–75px along the full curve, with only a tiny increase toward the foreground. Keep the same tidy existing arrowhead around 150px across. Flatten the arrow's shading to a soft gold fill with only a faint highlight and no visible thick 3D side wall. It should feel like a normal elegant curved arrow with JUST A HINT of depth into/out of the door, not a perspective ribbon. Preserve door details and composition exactly. No additional changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-07d85bbc-4d9c-4faa-a201-21250fd64027.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+          "prompt": "Use case: precise-object-edit. Make this EXIT arrow BIGGER AND BOLDER THROUGHOUT while preserving its correct center-origin curved direction and gentle depth. Increase the entire curved gold shaft to about 110px width consistently along its whole length (about 1.5x the current shaft), including its rounded inner tail at the CENTER of the doorway. Give the foreground arrowhead a clear width about 210–220px, proportional to the thicker shaft. This is a uniform increase in arrow visual weight, NOT increased perspective: maintain almost constant shaft width from inner tail to head, no pointed tiny far tail, no enormous wedge, no 3D sidewall. Keep exactly the same center-origin path, endpoints, flat soft-gold shading, curve and outward lower-right direction. The rounded inner tail must be visibly substantial, not thin. The doorway, frame, handle, threshold, colors, position, dimensions and clean transparency remain unchanged. No compass or other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+              "role": "edit/style reference",
+              "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+            }
+          ],
+          "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-57f38cfe-ab55-4d23-9bb5-abdf2049fedc.png",
+          "ownerFeedbackRound": 4
+        }
+      ],
+      "ownerAdded": true,
+      "sourceLevel": 2,
+      "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+      "prompt": "Use case: precise-object-edit. Make this EXIT arrow BIGGER AND BOLDER THROUGHOUT while preserving its correct center-origin curved direction and gentle depth. Increase the entire curved gold shaft to about 110px width consistently along its whole length (about 1.5x the current shaft), including its rounded inner tail at the CENTER of the doorway. Give the foreground arrowhead a clear width about 210–220px, proportional to the thicker shaft. This is a uniform increase in arrow visual weight, NOT increased perspective: maintain almost constant shaft width from inner tail to head, no pointed tiny far tail, no enormous wedge, no 3D sidewall. Keep exactly the same center-origin path, endpoints, flat soft-gold shading, curve and outward lower-right direction. The rounded inner tail must be visibly substantial, not thin. The doorway, frame, handle, threshold, colors, position, dimensions and clean transparency remain unchanged. No compass or other changes.",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v4.png",
+          "role": "edit/style reference",
+          "sha256": "2f9be370644c82cb5100ab926409f7ad1ca15e504761c1e0382ada3a1a56c90c"
+        }
+      ],
+      "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+      "selectedVersion": 5,
+      "status": "approved",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "An open doorway with a thick curved gold arrow pointing outward from the center.",
+      "bytes": 928525,
+      "approval": {
+        "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+        "selectedVersion": 5,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    },
+    {
+      "id": "ja-v-20cbd1c15a35",
+      "text": "入り口",
+      "reading": "いりぐち",
+      "meaning": "Entrance",
+      "versions": [
+        {
+          "version": 1,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v1.png",
+          "prompt": "Use case: precise-object-edit. Create ENTRANCE as a matched companion to the supplied EXIT icon. Preserve EXACTLY the refined open doorway, door leaf open to LEFT, lavender panels, golden handle, plum arched frame, dark-lavender interior, low threshold, illustration style, dimensions, location, clean transparent outside background and all margins. Reverse ONLY the golden arrow so it now clearly points INTO the doorway: arrow tail starts OUTSIDE on the RIGHT and arrowhead ends INSIDE the dark doorway opening, pointing LEFT/inward. Keep arrow visibly crossing the threshold, same thickness and polished gold treatment. The right-side arrow tip of the exit must become the right-side tail of entrance, with the new left-pointing tip inside. Do not mirror the whole door, recolor anything, add a compass, words, letters, body or scenery.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v1.png",
+              "role": "edit/style reference",
+              "sha256": "8e4322638f5823c0c19668095570073ae47aa1de289adb7886db8871db2a2cd0"
+            }
+          ],
+          "sha256": "71a2f17a63aab757bf5827b05a794d332166772686a62fee06901348cbd2e3f8",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-3ecaae10-5367-4fa4-8965-52d08eb38b29.png",
+          "ownerFeedbackRound": 3
+        },
+        {
+          "version": 2,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v2.png",
+          "prompt": "Use case: precise-object-edit. Make the ENTRANCE companion to this revised perspective EXIT symbol. Preserve exactly the open lavender doorway, arched plum frame, left-open door, handle, threshold, proportions, palette, illustration style and transparent background. Reverse the gold arrow's FLOW along the same curved path: its broad BLUNT tail starts in the LOWER-RIGHT FOREGROUND outside the doorway, and it tapers as it travels away from the viewer toward a SMALL CLEAR ARROWHEAD that ends EXACTLY in the CENTER of the DARK DOORWAY OPENING (center horizontally and halfway up the opening). The arrowhead points INTO the deep middle of the opening, UP/LEFT and away from the viewer. The head must NOT point at a hinge, door edge or floor corner. Near tail large, distant tip smaller = visible depth into the doorway. Remove the former large outward-pointing arrowhead entirely; there must be no arrowhead in foreground. One continuous golden arrow, clean plum contours and restrained highlights. No sideways flat arrow, compass, people, text, added scene, floor platform or shadow.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v2.png",
+              "role": "edit/style reference",
+              "sha256": "54d9596904840656f3b3527c875f86287aa2a1c367887ea1b2f3b718663b3037"
+            }
+          ],
+          "sha256": "f0131706608c48311bcd952cb54254e8ac9d673de58f7348264c49cc654d487a",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-2fac4f99-6cf4-4e59-973b-c9293eea0320.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 3,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v3.png",
+          "prompt": "Use case: precise-object-edit. Image1 is ENTRANCE with the correct inward direction and center-door destination, but too exaggerated arrow perspective. Image2 is the newly gentler EXIT arrow and is a STYLE/WEIGHT reference ONLY, not a direction reference. Keep image1's doorway exactly and keep its entrance arrow flowing from lower-right foreground INTO the CENTER of the dark opening, with the small arrowhead INSIDE at the center. Slim its arrow to a normal curved gold shaft, about 70px width along most of the curve with only very gentle taper (not a huge foreground ribbon). Use a tidy inward arrowhead about 110px across, centered in the doorway; near tail is a modest rounded 85px-wide end, not a large bulb. Remove dramatic 3D thickness, wide wedge and excessive foreshortening. Gentle curve and a subtle gold highlight only, matching image2's calmer arrow treatment. Preserve exact inward motion/path and all other door details. Clean transparency around slimmed arrow; restore dark-lavender interior wherever old arrow has been removed. No compass, new objects or text.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v2.png",
+              "role": "edit/style reference",
+              "sha256": "f0131706608c48311bcd952cb54254e8ac9d673de58f7348264c49cc654d487a"
+            },
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v3.png",
+              "role": "edit/style reference",
+              "sha256": "7098d2dd79d9df66d891af9ca3aa2ce79832e13993d726b4bbccfab77f9894fb"
+            }
+          ],
+          "sha256": "071f35d7f46f2001907fae7c0609cfd73ee71e5881a34936e63494c0ccf99f04",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-674edd2d-9df7-4896-a169-b4631a5cb4fc.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 4,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
+          "prompt": "Use case: precise-object-edit. Make just a subtle final reduction in depth on this ENTRANCE arrow. Preserve the doorway exactly, and preserve the arrow's curved inward direction from lower-right foreground to its small arrowhead at the CENTER of the doorway opening. Make its shaft nearly constant-width around65–75px throughout, only a barely perceptible taper toward the doorway, instead of a wider foreground tail. The outside tail remains a modest blunt rounded end, not a bulb. Keep the same small readable arrowhead centered in the opening. Flatten the arrow to a gentle gold fill with only a faint highlight; no thick 3D side wall or dramatic perspective. Keep all existing positions, exact path, door details, colors, size and transparent background. A normal curved arrow with only a hint of depth. No other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v3.png",
+              "role": "edit/style reference",
+              "sha256": "071f35d7f46f2001907fae7c0609cfd73ee71e5881a34936e63494c0ccf99f04"
+            }
+          ],
+          "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47f65600-6af9-430a-80e1-691e5827dca5.png",
+          "ownerFeedbackRound": 4
+        },
+        {
+          "version": 5,
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+          "prompt": "Use case: precise-object-edit. Make this ENTRANCE arrow BIGGER AND BOLDER THROUGHOUT, matching the visual weight of an exit arrow with a 110px-wide shaft and 210–220px-wide head. Preserve its correct inward curved path: from lower-right foreground INTO the CENTER of the dark doorway opening. Make the entire gold shaft about110px wide with almost CONSTANT apparent width, from the substantial blunt rounded outside tail to the base of the arrowhead. Enlarge the inward-pointing arrowhead at the CENTER of the doorway to about210–220px across: it must NOT appear smaller, thinner or weaker than the exit arrowhead. Do not shrink the interior tip for perspective. Keep gentle depth only through the curve/path, NOT through dramatic taper. Flat soft-gold shading, no heavy 3D underside. Keep exact path endpoints, doorway details, frame, handle, threshold, colors, composition and genuine transparent background unchanged. One clear bold curved inward arrow; no compass, tiny arrowhead or other changes.",
+          "references": [
+            {
+              "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
+              "role": "edit/style reference",
+              "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707"
+            }
+          ],
+          "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-5c7ea770-8264-44d7-ad9f-97920a39d5e4.png",
+          "ownerFeedbackRound": 4
+        }
+      ],
+      "ownerAdded": true,
+      "sourceLevel": 1,
+      "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+      "prompt": "Use case: precise-object-edit. Make this ENTRANCE arrow BIGGER AND BOLDER THROUGHOUT, matching the visual weight of an exit arrow with a 110px-wide shaft and 210–220px-wide head. Preserve its correct inward curved path: from lower-right foreground INTO the CENTER of the dark doorway opening. Make the entire gold shaft about110px wide with almost CONSTANT apparent width, from the substantial blunt rounded outside tail to the base of the arrowhead. Enlarge the inward-pointing arrowhead at the CENTER of the doorway to about210–220px across: it must NOT appear smaller, thinner or weaker than the exit arrowhead. Do not shrink the interior tip for perspective. Keep gentle depth only through the curve/path, NOT through dramatic taper. Flat soft-gold shading, no heavy 3D underside. Keep exact path endpoints, doorway details, frame, handle, threshold, colors, composition and genuine transparent background unchanged. One clear bold curved inward arrow; no compass, tiny arrowhead or other changes.",
+      "references": [
+        {
+          "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v4.png",
+          "role": "edit/style reference",
+          "sha256": "bbd81293ec063176d1d0d32057f3b4c95cbe8c163170da5f4c5c84bced3de707"
+        }
+      ],
+      "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+      "selectedVersion": 5,
+      "status": "approved",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "transparentBackground": true,
+      "imageDescription": "An open doorway with a thick curved gold arrow pointing inward to the center.",
+      "bytes": 890817,
+      "approval": {
+        "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+        "selectedVersion": 5,
+        "ownerStatement": "Let's ship this artwork set.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    }
+  ],
+  "excludedUpdatedIds": [
+    "ja-v-f50fcf40e898",
+    "ja-v-a02edbda9f4c",
+    "ja-v-61c516578fee",
+    "ja-v-d4473f87e438",
+    "ja-v-b066e78531d6",
+    "ja-v-9752b818f9f8",
+    "ja-v-4ac46ddaa10f",
+    "ja-v-14be5202d5b3",
+    "ja-v-9acbf1542642",
+    "ja-v-3d24eb7fb7b5",
+    "ja-v-30d6b7d7e837",
+    "ja-v-ed6bd4d73b76",
+    "ja-v-56d52b7869ab",
+    "ja-v-0655c242d1db",
+    "ja-v-06ef406f5569",
+    "ja-v-e368e3aa9bf6",
+    "ja-v-7b2351210462",
+    "ja-v-da2913ad7e4c",
+    "ja-v-b0489d428339",
+    "ja-v-86ef0852f80f",
+    "ja-v-81e708aba22f",
+    "ja-v-d605986c3af4",
+    "ja-v-7bbba1a9506e",
+    "ja-v-16fcea5b6e6e",
+    "ja-v-a872d5e674a2",
+    "ja-v-1807218bf360",
+    "ja-v-5f29c187353e",
+    "ja-v-7707983a4026",
+    "ja-v-81893a02b959",
+    "ja-v-f623bb19b846",
+    "ja-v-13ea3220cde0",
+    "ja-v-f0588b6224d0",
+    "ja-v-96a032e15dda",
+    "ja-v-823616f3288f",
+    "ja-v-3ed4447f3492",
+    "ja-v-08e3c50181be",
+    "ja-v-190aae33ad24",
+    "ja-v-2850b5703e8b",
+    "ja-v-1a43c96593cb",
+    "ja-v-01016753b889",
+    "ja-v-cbb4297f3dd7"
+  ],
+  "status": "approved",
+  "generatedAssetCount": 22,
+  "generatedVersionCount": 68,
+  "checks": {
+    "exactScope": true,
+    "noAlreadyUpdatedIds": true,
+    "allSelectedHashesVerified": true,
+    "allSelectedHaveTransparency": true,
+    "existingCardTests": "python3 -m unittest discover -s scripts/cards -p test_*.py: 27 passed"
+  },
+  "ownerFeedback": [
+    {
+      "date": "2026-11-09",
+      "request": "Remove calendars from 字, 文字, 太字, 図 and 三十代. Show only two hands with attention lines identifying the target. Replace north/west exit floor plans with a shared exit symbol paired with a compass.",
+      "changedItems": [
+        "字",
+        "北口",
+        "左手",
+        "文字",
+        "右手",
+        "太字",
+        "図",
+        "三十代",
+        "西口"
+      ],
+      "status": "revised-pending-owner-review"
+    },
+    {
+      "round": 3,
+      "request": "Nicer primary exit symbol; update entrance and exit. Compass in upper right and slightly smaller. Thinner comparison letter. Backs of hands. New thirties concept. Show an alternative to the current year calendar before choosing.",
+      "status": "revised-pending-owner-review",
+      "addedIds": [
+        "ja-v-20cbd1c15a35",
+        "ja-v-a19157e62dee"
+      ],
+      "yearSelectionPreserved": true
+    },
+    {
+      "round": 4,
+      "request": "Arrows originate from or enter the center of the doorway, with mild perspective. Compasses75% larger and closer. 三十代 accepted; original 年v1 explicitly approved. Subsequent steering requests further reduction in arrow perspective.",
+      "status": "revised-pending-owner-review",
+      "acceptedIds": [
+        "ja-v-8438eda3cfc0",
+        "ja-v-aef5eed601c5"
+      ],
+      "finalSteering": "Keep arrow direction and center-door paths; gentler perspective; enlarge both arrows throughout and make entrance match exit weight."
+    },
+    {
+      "round": 5,
+      "date": "2026-11-09",
+      "ownerStatement": "The hands for both 左手 and 右手 should have the thumbs facing inward.",
+      "status": "approved",
+      "revisedIds": [
+        "ja-v-70230bf6d87c",
+        "ja-v-9553e3adbc2a"
+      ],
+      "ownerApproval": {
+        "ownerStatement": "These are good-to-go.",
+        "date": "2026-11-09",
+        "scope": "artwork only"
+      }
+    }
+  ],
+  "exitSymbolConvention": {
+    "meaning": "Exit/entrance",
+    "design": "Refined open lavender doorway with a thick gold curved arrow anchored at the center of its dark opening. Exit arrow points outward toward the foreground; entrance arrow points inward to the center. Shafts and arrowheads have matching stronger visual weight with only slight perspective.",
+    "direction": "Directional exits use the same exit door/arrow with a larger compass close to the upper-right arch; only north/top or west/left compass ray is gold.",
+    "cards": [
+      "ja-v-a19157e62dee",
+      "ja-v-20cbd1c15a35",
+      "ja-v-a84051dc9f24",
+      "ja-v-81b56dc2a618"
+    ]
+  },
+  "expectedAssetCount": 22,
+  "releaseApproval": {
+    "ownerStatement": "Let's ship this artwork set.",
+    "date": "2026-11-09",
+    "scope": "Activate the complete selected artwork set; preserve vocabulary eligibility and progress.",
+    "selections": [
+      {
+        "id": "ja-v-7dddc1af4eb5",
+        "path": "artifacts/visual-reference-art-213/ja-v-7dddc1af4eb5-v1.png",
+        "sha256": "99f636e02228c7eed324185e9ac76513daf2f4c099db50a7697daae227e95da4",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-7003bbe10d0b",
+        "path": "artifacts/visual-reference-art-213/ja-v-7003bbe10d0b-v1.png",
+        "sha256": "383b47c7bb895561d8baa9a58564b74780796937986eada4aa2a215ca9f9e02b",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-6eed6b905b8e",
+        "path": "artifacts/visual-reference-art-213/ja-v-6eed6b905b8e-v1.png",
+        "sha256": "768bced286d6db8b7f98176965ec32cc29aa47954043989785b9df8db06d0237",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-ed82bb95d4cc",
+        "path": "artifacts/visual-reference-art-213/ja-v-ed82bb95d4cc-v1.png",
+        "sha256": "321ab46559bfe1cdd2725aca102499e0e6c728a9d1821747afaf0856afd01507",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-8ffa8462a479",
+        "path": "artifacts/visual-reference-art-213/ja-v-8ffa8462a479-v1.png",
+        "sha256": "b93e588e66af372ff8860a2598e92e08d627a52d657fdf82a028e599c7ef136f",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-2850d52ee4d2",
+        "path": "artifacts/visual-reference-art-213/ja-v-2850d52ee4d2-v2.png",
+        "sha256": "8459bcc8fab589f499921645caada4436fc184f0d2f63c0c4e4a7d201356e7af",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-cacf3a45ed07",
+        "path": "artifacts/visual-reference-art-213/ja-v-cacf3a45ed07-v1.png",
+        "sha256": "ca9681e01a6a31e68d94d0d978872ce2c17b91cc02cfaf271e6f0012c2063694",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-7930a252da9b",
+        "path": "artifacts/visual-reference-art-213/ja-v-7930a252da9b-v3.png",
+        "sha256": "00a29bbc59935c0013371ce494de67c5fbc80d90b20b4028ade119004c923996",
+        "selectedVersion": 3
+      },
+      {
+        "id": "ja-v-b0a03cee753b",
+        "path": "artifacts/visual-reference-art-213/ja-v-b0a03cee753b-v1.png",
+        "sha256": "79c6ad4e9fa811b2872c0f449e85d5e94c87efaf43a152f2d127cbb6342ca7e8",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-a84051dc9f24",
+        "path": "artifacts/visual-reference-art-213/ja-v-a84051dc9f24-v10.png",
+        "sha256": "36d4b7cc42bf412cd26148290ac49a9d14cfd9e6aa7aa2cfbc9dd877c10aae26",
+        "selectedVersion": 10
+      },
+      {
+        "id": "ja-v-70230bf6d87c",
+        "path": "artifacts/visual-reference-art-213/ja-v-70230bf6d87c-v4.png",
+        "sha256": "02101b5d3de4a6fc49015466697da345b90cc678a999a9f50c999c4912ed7b41",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-69c61c85a403",
+        "path": "artifacts/visual-reference-art-213/ja-v-69c61c85a403-v2.png",
+        "sha256": "0f051e85438d90af1c92b1d0f8009b0d30a0cf126a73524e6dfe0c7b765e1bf4",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-9553e3adbc2a",
+        "path": "artifacts/visual-reference-art-213/ja-v-9553e3adbc2a-v5.png",
+        "sha256": "3b2aa29d48a97a12d51dd4cfd4de5599699d7e288358c54d0e4ea951a8252274",
+        "selectedVersion": 5
+      },
+      {
+        "id": "ja-v-49863ee12a96",
+        "path": "artifacts/visual-reference-art-213/ja-v-49863ee12a96-v1.png",
+        "sha256": "f0cf9ad99121f2f55572401a63ee34557e975f91d3bbf39e16f2b3f185f61488",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-8438eda3cfc0",
+        "path": "artifacts/visual-reference-art-213/ja-v-8438eda3cfc0-v1.png",
+        "sha256": "7b46f739ed37c63eda3414fa55cd187a2b789ce02ac8a0a1f1ae5dad51fcfbba",
+        "selectedVersion": 1
+      },
+      {
+        "id": "ja-v-83365ed9e3db",
+        "path": "artifacts/visual-reference-art-213/ja-v-83365ed9e3db-v4.png",
+        "sha256": "d9175fe2ddd1d617d277865437977fa02b9d9b3a799877a75310beb170ef7459",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-9a8a0ffc08d3",
+        "path": "artifacts/visual-reference-art-213/ja-v-9a8a0ffc08d3-v4.png",
+        "sha256": "13405ca900f90745bc74f65e69458c4a72a1f198a426b05eea6ef431ac019387",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-aef5eed601c5",
+        "path": "artifacts/visual-reference-art-213/ja-v-aef5eed601c5-v4.png",
+        "sha256": "1083362862f53f383488e17da824fd792ac93f19573f42b2e4f2a38e55834323",
+        "selectedVersion": 4
+      },
+      {
+        "id": "ja-v-6f2e359ff6c8",
+        "path": "artifacts/visual-reference-art-213/ja-v-6f2e359ff6c8-v2.png",
+        "sha256": "716b58ca3e30e3c02dba8c9dd16ddd6a834e1bd1d150e0ebdd39b4d70f2c9ab3",
+        "selectedVersion": 2
+      },
+      {
+        "id": "ja-v-81b56dc2a618",
+        "path": "artifacts/visual-reference-art-213/ja-v-81b56dc2a618-v7.png",
+        "sha256": "2ef5fc9d91d879cee5c1c266aae529bb3acb5356b982c19a7512757b0a4cfae0",
+        "selectedVersion": 7
+      },
+      {
+        "id": "ja-v-a19157e62dee",
+        "path": "artifacts/visual-reference-art-213/ja-v-a19157e62dee-v5.png",
+        "sha256": "4910376aa74e3c025b5cb7bca19e93d4bc6be860008d841bf5fe7a3c628ad0ba",
+        "selectedVersion": 5
+      },
+      {
+        "id": "ja-v-20cbd1c15a35",
+        "path": "artifacts/visual-reference-art-213/ja-v-20cbd1c15a35-v5.png",
+        "sha256": "6a417da9f40d0f4f693bac15ba6454bfcbeb4d45a61914e55f2285ce3f3a4a3b",
+        "selectedVersion": 5
+      }
+    ]
+  }
+}
