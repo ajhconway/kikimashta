@@ -1,0 +1,18 @@
+{
+  "profile": {
+    "version": 1,
+    "targetLufs": -22.0,
+    "truePeakCeilingDbtp": -2.0,
+    "maxBoostDb": 9.0,
+    "rate": 44100,
+    "bitrate": "128k",
+    "dualMono": true,
+    "shortClipAnalysis": "pad-to-500ms-only-for-measurement"
+  },
+  "clips": 288,
+  "resumed": 208,
+  "targetLimited": 0,
+  "shortClipMeasurements": 0,
+  "originalsPreserved": true,
+  "processing": "Constant gain; each delivered MP3 encoded directly from its provider original. No dynamics compression, trimming, or timing changes."
+}

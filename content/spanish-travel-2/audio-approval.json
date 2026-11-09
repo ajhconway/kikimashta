@@ -1,0 +1,228 @@
+{
+  "issue": 166,
+  "pack": "es-419-travel-2",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "Please go ahead and generate the artwork and audio.",
+  "items": [
+    {
+      "id": "es-419-travel-train-station",
+      "text": "estación de tren",
+      "spelling": "estación de tren",
+      "meaning": "Train station"
+    },
+    {
+      "id": "es-419-travel-bus-stop",
+      "text": "parada de autobús",
+      "spelling": "parada de autobús",
+      "meaning": "Bus stop"
+    },
+    {
+      "id": "es-419-travel-street",
+      "text": "calle",
+      "spelling": "calle",
+      "meaning": "Street"
+    },
+    {
+      "id": "es-419-travel-bridge",
+      "text": "puente",
+      "spelling": "puente",
+      "meaning": "Bridge"
+    },
+    {
+      "id": "es-419-travel-park",
+      "text": "parque",
+      "spelling": "parque",
+      "meaning": "Park"
+    },
+    {
+      "id": "es-419-travel-museum",
+      "text": "museo",
+      "spelling": "museo",
+      "meaning": "Museum"
+    },
+    {
+      "id": "es-419-travel-menu",
+      "text": "menú",
+      "spelling": "menú",
+      "meaning": "Menu"
+    },
+    {
+      "id": "es-419-travel-plate",
+      "text": "plato",
+      "spelling": "plato",
+      "meaning": "Plate"
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "text": "vaso",
+      "spelling": "vaso",
+      "meaning": "Drinking glass"
+    },
+    {
+      "id": "es-419-travel-cup",
+      "text": "taza",
+      "spelling": "taza",
+      "meaning": "Cup"
+    },
+    {
+      "id": "es-419-travel-fork",
+      "text": "tenedor",
+      "spelling": "tenedor",
+      "meaning": "Fork"
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "text": "cuchara",
+      "spelling": "cuchara",
+      "meaning": "Spoon"
+    },
+    {
+      "id": "es-419-travel-chicken",
+      "text": "pollo",
+      "spelling": "pollo",
+      "meaning": "Chicken (food)"
+    },
+    {
+      "id": "es-419-travel-cooked-fish",
+      "text": "pescado",
+      "spelling": "pescado",
+      "meaning": "Fish (food)"
+    },
+    {
+      "id": "es-419-travel-egg",
+      "text": "huevo",
+      "spelling": "huevo",
+      "meaning": "Egg"
+    },
+    {
+      "id": "es-419-travel-cheese",
+      "text": "queso",
+      "spelling": "queso",
+      "meaning": "Cheese"
+    },
+    {
+      "id": "es-419-travel-soup",
+      "text": "sopa",
+      "spelling": "sopa",
+      "meaning": "Soup"
+    },
+    {
+      "id": "es-419-travel-salad",
+      "text": "ensalada",
+      "spelling": "ensalada",
+      "meaning": "Salad"
+    },
+    {
+      "id": "es-419-travel-market",
+      "text": "mercado",
+      "spelling": "mercado",
+      "meaning": "Market"
+    },
+    {
+      "id": "es-419-travel-bakery",
+      "text": "panadería",
+      "spelling": "panadería",
+      "meaning": "Bakery"
+    },
+    {
+      "id": "es-419-travel-atm",
+      "text": "cajero automático",
+      "spelling": "cajero automático",
+      "meaning": "ATM"
+    },
+    {
+      "id": "es-419-travel-receipt",
+      "text": "recibo",
+      "spelling": "recibo",
+      "meaning": "Receipt"
+    },
+    {
+      "id": "es-419-travel-wallet",
+      "text": "cartera",
+      "spelling": "cartera",
+      "meaning": "Wallet"
+    },
+    {
+      "id": "es-419-travel-coin",
+      "text": "moneda",
+      "spelling": "moneda",
+      "meaning": "Coin"
+    },
+    {
+      "id": "es-419-travel-room",
+      "text": "habitación",
+      "spelling": "habitación",
+      "meaning": "Room"
+    },
+    {
+      "id": "es-419-travel-table",
+      "text": "mesa",
+      "spelling": "mesa",
+      "meaning": "Table"
+    },
+    {
+      "id": "es-419-travel-chair",
+      "text": "silla",
+      "spelling": "silla",
+      "meaning": "Chair"
+    },
+    {
+      "id": "es-419-travel-window",
+      "text": "ventana",
+      "spelling": "ventana",
+      "meaning": "Window"
+    },
+    {
+      "id": "es-419-travel-stairs",
+      "text": "escaleras",
+      "spelling": "escaleras",
+      "meaning": "Stairs"
+    },
+    {
+      "id": "es-419-travel-swimming-pool",
+      "text": "piscina",
+      "spelling": "piscina",
+      "meaning": "Swimming pool"
+    },
+    {
+      "id": "es-419-travel-soap",
+      "text": "jabón",
+      "spelling": "jabón",
+      "meaning": "Soap"
+    },
+    {
+      "id": "es-419-travel-shampoo",
+      "text": "champú",
+      "spelling": "champú",
+      "meaning": "Shampoo"
+    },
+    {
+      "id": "es-419-travel-toothbrush",
+      "text": "cepillo de dientes",
+      "spelling": "cepillo de dientes",
+      "meaning": "Toothbrush"
+    },
+    {
+      "id": "es-419-travel-toothpaste",
+      "text": "pasta de dientes",
+      "spelling": "pasta de dientes",
+      "meaning": "Toothpaste"
+    },
+    {
+      "id": "es-419-travel-charger",
+      "text": "cargador",
+      "spelling": "cargador",
+      "meaning": "Charger"
+    },
+    {
+      "id": "es-419-travel-sunglasses",
+      "text": "lentes de sol",
+      "spelling": "lentes de sol",
+      "meaning": "Sunglasses"
+    }
+  ],
+  "itemsSha256": "a9a6344d546c2954797da02999ff9efe50bff76537a608e245a481e10a86e7a8",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 288,
+  "characters": 2240
+}
