@@ -1,0 +1,259 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "requests": "requests.json",
+  "assets": [
+    {
+      "id": "new-base-v1",
+      "level": "New",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-9e723cf0-083d-4098-a51f-e10fc5980931.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/new-wk-picture-v1.png",
+      "file": "new-base-v1.png",
+      "delivery": "public/media/badges/new-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8caa418b4d26d3fab371d42a03c3d23580ac492739b9f8892ac2b9d2cc1c395e",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "819d7c85ab212ecc392a60fdd1aebd0bac89065805052d2cd03c535ebf3cc157",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "learning-base-v1",
+      "level": "Learning",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-fb223b90-2128-4519-a579-515e7347e8ad.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/learning-wk-picture-v1.png",
+      "file": "learning-base-v1.png",
+      "delivery": "public/media/badges/learning-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "4b8397ddfeab3a026a1191cfc858501434adba4a1e8f3ddd4b054e481d643f7d",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "0ac7b6e39698f5e610e9daa1fa8b8c7e17e45580920bfee4841168a3190d819d",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "improving-base-v1",
+      "level": "Improving",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-df159741-dbfe-4247-a6ec-a19efcd2df52.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/improving-wk-picture-v1.png",
+      "file": "improving-base-v1.png",
+      "delivery": "public/media/badges/improving-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "84e147d904be8dc5a420be6057c7536e55f0113bdbe55996cdeba167c6aed7e0",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "3e104d7ccbad1e5d93e14e2d5ed0003b316d9b8f60cdfd40c0af0627dfd29d46",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "familiar-base-v1",
+      "level": "Familiar",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-63f12f72-2687-4b4a-982e-4ed21440b503.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/familiar-wk-picture-v1.png",
+      "file": "familiar-base-v1.png",
+      "delivery": "public/media/badges/familiar-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "99a19aa202f5d2dee9686e9d11589711d22f24970c45edc3d293e74cc74a97e6",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "29f94cb3a86aa723222fb0b2fc9cb8fc9805d8a4ab24a04a1e56fbe645622511",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "steady-base-v1",
+      "level": "Steady",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-d098f8ca-49e1-42d2-9582-900c1a8d57b6.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/steady-wk-picture-v1.png",
+      "file": "steady-base-v1.png",
+      "delivery": "public/media/badges/steady-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8e701ef6b83fa82c97da8d8a4314e8419937d38fa418625b69b5912e9c361d1b",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "cab111443277e5a50fa9af9d512479bd0b7ad7cefd239b8392516c776ad0783f",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "strong-base-v1",
+      "level": "Strong",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-0d52e754-0e84-41f7-96a4-91573ac34f32.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/strong-wk-picture-v1.png",
+      "file": "strong-base-v1.png",
+      "delivery": "public/media/badges/strong-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b087c74174fde506db09f5a1ad37b16d24fcdc3619f9a055e9d93464102e895f",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "18591791aa9880bf911f62bddb1ddcadc0119f06d6b6723a5ae2ac62d041ec8f",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "confident-base-v1",
+      "level": "Confident",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-c84cfeac-8906-4e25-b067-0b7f9e8878da.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-02/confident-wk-picture-v1.png",
+      "file": "confident-base-v1.png",
+      "delivery": "public/media/badges/confident-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "2424d065c0a5464a07fa42feb9cb107abc3b0b9694baf7fdacf183e087b3cf0c",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "523a4bc94187f115a4443e64c39358331e3b8be1cf742862629f43dca45d8c47",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "mastered-base-v1",
+      "level": "Mastered",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-3595d27d-080c-4f7b-a5d8-58478d710dbc.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/mastered-travel-writing-v1.png",
+      "file": "mastered-base-v1.png",
+      "delivery": "public/media/badges/mastered-base-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "7c440949c557973a49e7c6d767533c6f3446d94ae228b269575f86ee8f04733e",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "710a559cea69a36a3888b53d6379c6a7db4885860232207916d747a6ac98294a",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "suitcase-emblem-v1",
+      "level": "Emblem",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-52585a0e-5d48-43aa-b40f-0a7b1a8df9e1.png",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/mastered-travel-writing-v1.png",
+      "file": "suitcase-emblem-v1.png",
+      "delivery": "public/media/badges/suitcase-emblem-v1.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "14b43a42230d068bc635f48aee86c9aeef17ae138b5d834f5c6f9ede2418d07a",
+      "status": "derived from owner-approved prototype",
+      "delivery_sha256": "a8ecbffb9892d1f56f181fb357360bda9f8c5d3940df35f25fadfbdf1ae68bc6",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_preparation": "cwebp -lossless -resize 384 384; preserve original PNG and transparency",
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    }
+  ]
+}

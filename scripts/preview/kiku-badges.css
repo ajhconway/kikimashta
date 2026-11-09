@@ -1,0 +1,13 @@
+.kiku-badge-demo { min-height: 100svh; transition: background .2s ease-out; }
+.kiku-badge-demo .app { max-width: 720px; }
+.kiku-badge-demo header { justify-content: space-between; font-size: 13px; font-weight: 800; }
+.kiku-badge-demo header a { text-underline-offset: 3px; }
+.kiku-badge-demo .demo-tag { opacity: .7; }
+.kiku-badge-demo .app main { flex: none; padding-top: 0; padding-bottom: 10px; }
+.kiku-badge-demo .demo-app-link { text-decoration: none; }
+.kiku-demo-controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 10px auto 0; padding: 16px; width: 100%; max-width: 620px; background: #fff7e9; border: 2px solid #d9c4ee; border-radius: 20px; }
+.kiku-demo-controls label { display: grid; gap: 6px; font-size: 12px; font-weight: 800; min-width: 0; }
+.kiku-demo-controls select { width: 100%; min-height: 44px; padding: 8px; font: inherit; color: #4c087c; background: white; border: 2px solid #ad88d4; border-radius: 12px; }
+.kiku-demo-controls select:focus-visible { outline: 3px solid #6b38d6; outline-offset: 3px; }
+.kiku-demo-note { text-align: center; margin: 16px auto 24px; max-width: 520px; font-size: 12px; line-height: 1.6; }
+@media (max-width: 540px) { .kiku-demo-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

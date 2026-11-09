@@ -242,3 +242,33 @@ Give all eight mastery levels distinct medal silhouettes and ornaments, while re
 The WK monogram sits optically centered in the circular inlay. Ribbon text uses the same curved baseline as the banner, and the picture/writing mark follows its curvature. Keep SVG path references unique across repeated badges and the comparison sheet.
 
 Remove visible Travel text from suitcase medals. Match Kiku with chunky deep-purple contours, rounded silhouettes, golden yellow/pink/lavender colors, soft tonal shading and folded ribbons. Keep Travel badges as suitcase emblems without a visible caption. Keep the centered WK and suitcase symbols, curved ribbon marks and level labels legible at Home size.
+
+The owner approved the generated Strong WK and Mastered suitcase samples and requested the remaining six mastery prototypes. Use the built-in image generator and those approved image references for New, Learning, Improving, Familiar, Steady and Confident. Keep one WK/Pictures L1 example per new rank for comparison, save exact prompts/originals/hashes and transparent alpha, and collect feedback on this prototype batch before activation or pack-specific expansion.
+
+## Interchangeable illustrated badge layers (#181)
+
+The owner approved all eight illustrated mastery prototypes and requested interchangeable WK/suitcase emblems and picture/writing/level marks. Preserve the approved originals. Use the built-in image tool to derive blank illustrated rank backgrounds and a transparent suitcase emblem, then render center and curved ribbon content as independent layers. Share one background per mastery rank across pack families, exercises and levels. Keep the current minimum-mastery award policy, independent pack identities, floating placement, accessibility and reduced motion. Preview the full rank/family/format/level matrix locally before merging.
+
+### Badge artwork refinement (#181)
+
+Keep the decorative flower inside the medallion exclusive to WK; give suitcase packs an unobstructed center and a larger emblem. Restore illustrated picture/pencil marks derived from the approved generated samples. Calibrate icon size, rotation and curved text independently for each rank ribbon, including consistent optical centering of the complete icon/level group. Preserve originals and provenance, and review both families and formats at large and Home sizes.
+
+
+### Badge emblem alignment (#181)
+
+Anchor both families to each rank’s actual cream face, whose center and visible height vary across illustrations. Center the suitcase with equal proportional top/bottom clearance; center WK in the remaining space between its flower and ribbon. Keep text scale consistent. Mastered WK uses the same central flower-and-petals motif as the other ranks; Mastered Travel retains its empty face. Preserve the approved originals and review all rank/family combinations at Home size.
+
+Mastered’s cream inset should match the other ranks, as clarified by the owner. Restore the original outer scale and use revised artwork with a smaller cream face and thicker gold rim. Keep its crown, wings and ribbon at their original size; retain the WK-only flower and fit both family emblems to the revised face. Batch-06 preserves the image-tool requests and originals.
+
+### Mastered redraw (#181)
+
+Rebuild Mastered from scratch using Strong/Confident as style and layout references. Match their cream-face size/position and ribbon bounds; add the crown and wings around that common layout. Generate matching WK-with-flower and empty-face Travel bases. Retire the previous Mastered layout and its special low ribbon coordinates. Preserve all prior originals as review history and validate the new artwork alongside the other seven ranks.
+
+Provide an isolated localhost Home preview with the actual Kiku and floating badge components. Let the owner switch mastery, WK/Travel, badge count and Kiku mood without reading or writing saved progress. Keep demo controls outside production Home.
+
+
+### Static circular badge arrangement (#181)
+
+Keep badges upright and stationary around a circle centered on Kiku. Keep left/right positions mirrored: odd counts have a top-center badge plus pairs; even counts start with a matched pair on either side of the top. Continue paired positions down the sides and back toward the bottom. Reserve ten evenly spaced positions before reducing the angular step for larger collections. Keep Kiku, density label and Start clear on phone widths. Remove all floating animation regardless of motion preference; preserve keyboard details and accessible pack labels.
+
+Enlarge Home badges by 50% at every breakpoint (57px–84px, using 18vw between limits). Expand the circular placement slightly to preserve clearance at phone widths while keeping the upright, mirrored, stationary arrangement.

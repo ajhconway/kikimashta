@@ -1,0 +1,66 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "wk-flower-emblem-v1",
+      "prompt": "Use case: background-extraction. Extract ONLY the small pink sakura flower and its two detached pink petals on either side INSIDE the cream central medallion above WK from the reference. This is a separate reusable ornament to place above WK on the Mastered badge. Match exactly the approved soft dimensional illustrated style: five rounded pink petals, small warm cream five-prong center, two flanking pink petals, gentle tonal shading, no dark outline. Keep the same horizontal arrangement and proportions. One ornament only, complete, centered with small equal transparent margins. No WK letters, ribbon, star badge, outer decorations, mountains, or background. Genuine transparent alpha. Do not add stems, leaves or extra blossoms.",
+      "reference": "artifacts/pack-badge-designs/generated/batch-01/strong-wk-picture-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-694c9a95-6664-47b0-8181-e2176c957d78.png",
+      "file": "wk-flower-emblem-v1.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        25,
+        0,
+        2154,
+        724
+      ],
+      "sha256": "eed043541efc53d5baa9ebff61cfc18f74b5e2b646efe99a97108b1e3c60b5c1",
+      "delivery": "public/media/badges/wk-flower-emblem-v1.webp",
+      "delivery_sha256": "c2b3f6fc8c6e4737e3ab7d12a5ffd092cd769de364e1d39f0f86dc52760e39bc",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "status": "rejected: pale haze around extracted ornament; do not use"
+    },
+    {
+      "id": "mastered-wk-base-v2",
+      "prompt": "Use case: precise-object-edit. Image 1 is the exact edit target: approved blank Mastered badge. Image 2 is an ornament reference ONLY. Add the SAME small pink sakura flower with warm cream center and two detached pink petals from INSIDE the cream medallion of Image 2 to the UPPER portion of the cream medallion in Image 1. Place the complete little ornament horizontally centered at x49% y35% of Image 1 canvas, spanning about29% of canvas width and12% of canvas height. This leaves clear empty space below for WK lettering to be added by the app. There must be only ONE new flower inside the cream face. Preserve Image 1's exact complete canvas, transparency, crown, crown emblem, gold frame, wings, blank ribbon, colors, shading, silhouette, alignment and ALL existing pixels outside that small flower area. Do not copy the star shape, WK letters or ribbon symbols from Image2. Leave the lower cream face and ribbon empty. Genuine transparent background outside badge, no glow or haze. Only add the matching flower ornament; no text, suitcase or extra decoration.",
+      "reference": "artifacts/pack-badge-designs/generated/batch-03/mastered-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-34f4e99f-e3b0-4228-a234-13318978f069.png",
+      "file": "mastered-wk-base-v2.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        12,
+        1,
+        1241,
+        1254
+      ],
+      "sha256": "ba1788fdccff5da1d6dd8d2eceb4bb748f406eb2f13236f24f28ac462b3177e4",
+      "delivery": "public/media/badges/mastered-wk-base-v2.webp",
+      "delivery_sha256": "d8f418f57288b0905b8fe438e7c07b7cef5a6c83d37a366fe7a8829235823a1a",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "status": "Mastered WK flower refinement; awaiting owner review",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ]
+    }
+  ]
+}

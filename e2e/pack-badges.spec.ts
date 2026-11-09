@@ -36,16 +36,18 @@ test('Home pack badges survive reload, remain visible for deselected packs and f
     const box = (element as SVGGraphicsElement).getBBox();
     return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
   });
-  expect(alignment.x).toBeCloseTo(50, 0);
-  expect(Math.abs(alignment.y - 44)).toBeLessThan(1.5);
+  // Familiar’s cream inlay is centered at x=49.2%, slightly left of its canvas.
+  expect(alignment.x).toBeCloseTo(49.2, 0);
+  expect(Math.abs(alignment.y - 47.6)).toBeLessThan(1.5);
   const ribbon = await badge.locator('.badge-number').evaluate(element => {
     const box = (element as SVGGraphicsElement).getBBox();
     return { left: box.x, right: box.x + box.width, top: box.y, bottom: box.y + box.height };
   });
   expect(ribbon.left).toBeGreaterThanOrEqual(12);
   expect(ribbon.right).toBeLessThanOrEqual(88);
-  expect(ribbon.top).toBeGreaterThanOrEqual(79);
-  expect(ribbon.bottom).toBeLessThanOrEqual(110);
+  // Allow half a viewBox unit for font metrics at the ribbon’s y=60 upper edge.
+  expect(ribbon.top).toBeGreaterThanOrEqual(59.5);
+  expect(ribbon.bottom).toBeLessThanOrEqual(90);
   await expect(badges.getByRole('listitem')).toHaveCount(1);
   await page.screenshot({ path: `test-results/pack-badges-${testInfo.project.name}.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -74,7 +76,7 @@ test('Home pack badges survive reload, remain visible for deselected packs and f
 });
 
 
-test('ten compact pack medals fit around Kiku on a narrow screen', async ({ page }, testInfo) => {
+test('ten upright static medals follow a circle around Kiku on a narrow screen', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 320, height: 740 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.addInitScript(key => localStorage.setItem(key, '[]'), packPreferenceKey);
@@ -106,6 +108,19 @@ test('ten compact pack medals fit around Kiku on a narrow screen', async ({ page
     const box = element.getBoundingClientRect();
     return { x: box.x, y: box.y, right: box.right, bottom: box.bottom };
   }));
+  const stage = (await page.locator('.home-kiku-stage').boundingBox())!;
+  const center = { x: stage.x + stage.width / 2, y: stage.y + stage.height / 2 };
+  const centers = boxes.map(box => ({ x: (box.x + box.right) / 2, y: (box.y + box.bottom) / 2 }));
+  expect(centers[0]!.x).toBeLessThan(center.x);
+  expect(centers[1]!.x).toBeGreaterThan(center.x);
+  expect(centers[0]!.y).toBeLessThan(center.y);
+  for (let index = 0; index < centers.length; index += 2) {
+    expect(centers[index]!.x + centers[index + 1]!.x).toBeCloseTo(2 * center.x, 0);
+    expect(centers[index]!.y).toBeCloseTo(centers[index + 1]!.y, 0);
+  }
+  const radii = centers.map(point => Math.hypot(point.x - center.x, point.y - center.y));
+  expect(Math.max(...radii) - Math.min(...radii)).toBeLessThan(1);
+  await expect(medals.first()).toHaveCSS('transform', /^matrix\(1, 0, 0, 1,/);
   for (const [index, box] of boxes.entries()) {
     expect(box.right <= kiku.x || box.x >= kiku.x + kiku.width || box.bottom <= kiku.y || box.y >= kiku.y + kiku.height).toBe(true);
     expect(box.bottom).toBeLessThan(start.y);
@@ -119,7 +134,7 @@ test('ten compact pack medals fit around Kiku on a narrow screen', async ({ page
   expect(await medals.first().evaluate(element => element === document.activeElement)).toBe(true);
   await medals.first().evaluate(element => (element as HTMLElement).blur());
   await page.emulateMedia({ reducedMotion: 'no-preference' });
-  await expect(medals.first()).toHaveCSS('animation-name', 'badge-float');
+  await expect(medals.first()).toHaveCSS('animation-name', 'none');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.screenshot({ path: `test-results/pack-badges-orbit-${testInfo.project.name}.png`, fullPage: true });
+  await page.screenshot({ path: `test-results/pack-badges-circle-${testInfo.project.name}.png`, fullPage: true });
 });

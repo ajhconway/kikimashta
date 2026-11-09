@@ -1,0 +1,315 @@
+{
+  "issue": 181,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "picture-emblem-v2",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/strong-wk-picture-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-0431b467-0ac1-4662-908a-bb62c11be6f4.png",
+      "file": "picture-emblem-v2.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        52,
+        1424,
+        1068
+      ],
+      "sha256": "d201d1d1870c035092fe398264edcf2261656a1cfdf7d6f393f4e27ba1395583",
+      "delivery": "public/media/badges/picture-emblem-v2.webp",
+      "delivery_sha256": "1c7bf4559224fc9e779c558155be3020fb7b231a79afc77fb89d9ca4410fc7ab",
+      "delivery_dimensions": [
+        384,
+        288
+      ],
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect, alpha and original",
+      "opaque_bbox": [
+        170,
+        140,
+        1277,
+        982
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "writing-emblem-v2",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-01/mastered-travel-writing-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-4ab2d785-b62f-4faf-b7e2-3dc45c2b9813.png",
+      "file": "writing-emblem-v2.png",
+      "dimensions": [
+        1308,
+        1202
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        70,
+        38,
+        1290,
+        1178
+      ],
+      "sha256": "6d1429afb0905efb5c1218a07944c5b7257f0ca41658f7b4201181cf1f61b292",
+      "delivery": "public/media/badges/writing-emblem-v2.webp",
+      "delivery_sha256": "2e9278a824de826572dd9ee6fbdb5d88a1ea6fb86d64c5cfbc4f1a9a7d85bfbf",
+      "delivery_dimensions": [
+        384,
+        353
+      ],
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect, alpha and original",
+      "opaque_bbox": [
+        76,
+        83,
+        1233,
+        1116
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "new-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/new-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-3317bfc2-d743-4f65-a506-df1394f2c58b.png",
+      "file": "new-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        113,
+        1219,
+        1228
+      ],
+      "sha256": "35e44d04eebf708c8bc7269363e88f073655bed8fc8cd75a04c36e96df0f82b8",
+      "delivery": "public/media/badges/new-travel-base-v1.webp",
+      "delivery_sha256": "c87a9feff9767b79cdd6951795e7063c794a19ea7afc39f88497ff438cf270f7",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "learning-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/learning-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-95eaa5e9-5811-4e3e-9b86-c1dd442abe0c.png",
+      "file": "learning-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        35,
+        1232,
+        1254
+      ],
+      "sha256": "62134396af241b507dd1121b6e3ae07a410f9fdfe2998a1e73e6cb6f93957017",
+      "delivery": "public/media/badges/learning-travel-base-v1.webp",
+      "delivery_sha256": "b9f888352f4e83fc4d357c6418466896d81ef333494dbd55dda4077c67d2d661",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "improving-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/improving-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-7137289a-1bca-4e70-a5f7-e79e135827d9.png",
+      "file": "improving-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        18,
+        38,
+        1234,
+        1254
+      ],
+      "sha256": "c65d91bd63b6751c6912f10367ddc1ec462bf9d8bdae7f6d5bdd12aae1b4475c",
+      "delivery": "public/media/badges/improving-travel-base-v1.webp",
+      "delivery_sha256": "498d8b1af5c457a0d1e533ea64e852042de6af19ef9f62f451f30a263b471e75",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "familiar-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/familiar-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-4f1f2636-c0b2-4cdb-bd09-8b9c917b8942.png",
+      "file": "familiar-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        32,
+        1218,
+        1254
+      ],
+      "sha256": "6ae0756d614369236206713412419c021a14e02c1f4f54e1169cb0f3ad89b748",
+      "delivery": "public/media/badges/familiar-travel-base-v1.webp",
+      "delivery_sha256": "a36972ce97a05868da8323d6c67439b51362d3b0a5645f30a62210f640eb5ca7",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "steady-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/steady-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-bf7964b2-617f-4a48-9799-866b29c15adf.png",
+      "file": "steady-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        35,
+        63,
+        1240,
+        1243
+      ],
+      "sha256": "61eaf9f6bb47f3a6974c9e6f14c48e423238898fe0c5e19aeb2b7085a10748dd",
+      "delivery": "public/media/badges/steady-travel-base-v1.webp",
+      "delivery_sha256": "f737176805b3f532f5e14cc68b5ad78d32805b7b6acb3e2797c99fe09eda8e06",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "strong-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/strong-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-fae437bb-d4df-4bc0-ac95-d919bd65e65f.png",
+      "file": "strong-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        18,
+        15,
+        1232,
+        1254
+      ],
+      "sha256": "5cabe4b540cba2af9a7504d815716b0909d3388d983cd5a05c8240e72dcdfa95",
+      "delivery": "public/media/badges/strong-travel-base-v1.webp",
+      "delivery_sha256": "b9d9e035c6ba36d1ce06507510216c0c88903ae1824a8f002996bd101623e7d2",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    },
+    {
+      "id": "confident-travel-base-v1",
+      "reference": "/private/tmp/kikimashta-pack-badges/artifacts/pack-badge-designs/generated/batch-03/confident-base-v1.png",
+      "source_path": "/Users/ajhconway/.codex/generated_images/01a1bdcb-d1d2-7af0-92f4-ed86560bd72d/exec-780dfb28-b4d6-468c-889e-ca0893b76a2f.png",
+      "file": "confident-travel-base-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        45,
+        1226,
+        1254
+      ],
+      "sha256": "e4581021f0efda7986454a6b5c457806c0e8c112a05e5db9626c9d2047caa741",
+      "delivery": "public/media/badges/confident-travel-base-v1.webp",
+      "delivery_sha256": "072a9a82fa693cc0897c263ef2f8f0e4363eb4bb892bdee5a490638a16946efa",
+      "preparation": "cwebp -lossless -resize 384 0; preserve aspect and originals preserved",
+      "delivery_dimensions": [
+        384,
+        384
+      ],
+      "delivery_alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "owner-requested refinement; awaiting visual feedback"
+    }
+  ]
+}
