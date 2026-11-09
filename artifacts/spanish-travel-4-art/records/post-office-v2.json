@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-post-office",
+  "slug": "post-office",
+  "version": 2,
+  "path": "originals/post-office-v2.png",
+  "sha256": "6a95519dc4dbfcaff775f7b16e1ed79e8dae550a197e4e4a6391610e97fbf043",
+  "promptSha256": "6e2cb81d4e7860661d63e5b1edfecfe9f566fca37757a753a03fa7692eb9098c",
+  "referenceSha256": "5a0e3c15bc95b6f19e75427daa9a748bd5c218f8f700efd63b6356845b08121e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-e56f1936-e975-42ce-8408-c776230f6769.png",
+  "supersedes": "originals/post-office-v1.png"
+}

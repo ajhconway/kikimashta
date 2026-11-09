@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-helicopter",
+  "slug": "helicopter",
+  "version": 1,
+  "path": "originals/helicopter-v1.png",
+  "sha256": "d711d7130ef90a0fb9dbf3e9c68aae09f03915905da9299ab21514a2485997e7",
+  "promptSha256": "59ec8bee6563643188c69fbd7ede19bb7d20480412fb72215265001a96e39945",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-50481488-9e78-4670-ab13-c1dca8873bb5.png"
+}

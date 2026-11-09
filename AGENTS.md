@@ -41,6 +41,8 @@ Use Node 24.15 or newer and `npm ci`. Run `npm run dev` for development, `npm ru
 
 Japanese word-neighbor preparation uses `npm run content:neighbors`; its deterministic data and reviewed-image check is `npm run content:neighbors:check`, included in `npm run check`. Offline semantic model regeneration remains separate; app development and ordinary checks need no Python model packages.
 
+When a pack expands approved Japanese vocabulary, regenerate semantic rankings and pronunciation neighbors across the entire approved pool, then review affected choices. Follow the [pack and neighbor maintenance checklist](content/semantic-neighbors/README.md#adding-packs-and-maintaining-neighbors), including its reading-only and selection-only rules.
+
 When another worktree is serving the default preview port, use `E2E_PORT=4199 npm run test:e2e` (or another free port). An explicit E2E_PORT starts an isolated production preview rather than reusing another server. The card library has Words and Contextual questions views. Open `vocabulary/?view=contextual&language=ja-JP` for authored contextual cards; old `?review=contextual` links redirect there. Browsing saves no attempts.
 
 Some sandboxes restrict npm network access and local listening servers. Use the available approved execution path or GitHub Actions when local preview is unavailable. Keep `SOURCE_REVISION` consistent between build and browser tests when setting it. Never claim emulated WebKit is a real iPhone test.
@@ -49,6 +51,6 @@ Contextual quiz text preparation for issue #119 uses `npm run content:contextual
 
 Local ElevenLabs generation loads `ELEVENLABS_API_KEY` from the command environment or `~/.config/kikimashta/elevenlabs.env` (private mode 600), so separate worktrees can use one secret outside Git. Read it only through `scripts/content/elevenlabs-key.mjs` for generation. Never print, copy into the repository, include in browser code, or record its value in logs/provenance. See `docs/ELEVENLABS.md` for setup.
 
-Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool and pauses for feedback after each batch. The card tests and validator run through `npm run test:cards`, included in `npm run check` and the required CI job. Preparation and gallery rendering remain manual.
+Card artwork preparation for issue #72 uses Python 3 standard-library scripts in `scripts/cards/`: `prepare.py`, `render_review.py`, `validate.py`, and `python3 -m unittest discover -s scripts/cards -p 'test_*.py'`. Generation uses the built-in image tool. Once the owner approves a pack’s generation scope, finish the full pack before requesting artwork feedback, unless the owner explicitly asks for intermediate batch reviews. Preserve every original and prompt; keep final media acceptance separate from generation authorization. The card tests and validator run through `npm run test:cards`, included in `npm run check` and the required CI job. Preparation and gallery rendering remain manual.
 
 Account-sync browser specs require the explicit fake service configuration in [docs/REVIEW.md](docs/REVIEW.md#verification), so local runs do not silently skip sync coverage.

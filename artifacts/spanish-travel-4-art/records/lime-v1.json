@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-lime",
+  "slug": "lime",
+  "version": 1,
+  "path": "originals/lime-v1.png",
+  "sha256": "e74a0306ccca96cefc4b85ebf120d74bf4021a641b1007a61f00a4acf14a381c",
+  "promptSha256": "a2eddbd0f2a02bf35e5380b312f63299d429528a1a1fc050516b6c07e1521a97",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f221e111-3ea3-48e3-8dbf-b3fc35195f9c.png"
+}

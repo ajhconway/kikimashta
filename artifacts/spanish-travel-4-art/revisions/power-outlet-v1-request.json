@@ -1,0 +1,13 @@
+{
+  "issue": 207,
+  "id": "es-419-travel-power-outlet",
+  "slug": "power-outlet",
+  "version": 1,
+  "ownerFeedback": "oficina de correos and estación de policía would be better if they bent the color guidelines a little more (so like more blue theming on the police station for example). For mantequilla, remove the strangle little butter sliver. Let's replace venda with a more useful word. linterna should be straighter. saco de dormir the zipper should be slightly longer.",
+  "ownerSelection": "Enchufe — power outlet",
+  "prompt": "Use case: stylized-concept\nAsset type: SQUARE 1:1 vocabulary picture with a transparent background, readable at145px.\nInput image1: STYLE REFERENCE ONLY for rounded shapes, smooth bold deep-violet contours and gentle shading; do not copy any building features or flower decoration.\nPrimary request: One ivory wall plate with two vertically stacked North American type-B power receptacles; each socket has two short straight parallel vertical slots and one round grounding hole below. No plug, cord, appliance or wall scenery.\nMake a simple straight-on view of the complete rectangular electrical wall plate with rounded corners, clear ivory/white opaque plastic and restrained light-grey/blue depth shading. The two oval receptacles are vertically aligned; both have the same correct slot arrangement. No extra holes, letters, numbers, face features, text, logo, watermark or flowers. Complete centered object with generous truly transparent outer margins; no wall, shadow, glow or border around the canvas.",
+  "transparent_background": true,
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-museum-22a089082940.png",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+}

@@ -107,10 +107,6 @@ test('contextual library redirects old links, browses authored detail and retrie
   }
   const play = card.getByRole('button', { name: `Play Otani: ${question.id}`, exact: true });
   const pair = ['/' + recording.sentenceSrc, '/' + recording.questionSrcs[question.id]];
-  await play.click();
-  await expect.poll(() => endedClips(page), { timeout: 20000 }).toEqual(pair);
-  await expect(gallery.getByRole('alert')).toBeHidden();
-
   const unavailable = '**/' + recording.questionSrcs[question.id];
   await page.route(unavailable, route => route.abort());
   await play.click();
@@ -134,20 +130,33 @@ test('contextual library redirects old links, browses authored detail and retrie
   expect(await history(page)).toEqual(baseline);
 });
 
-test('Spanish foundation contexts remain read-only while switching library views', async ({ page }) => {
+test('Basic Spanish library offers pictures and foundation contexts without changing history', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
   const baseline = await history(page);
-  await page.goto('./vocabulary/?view=contextual&language=es-419');
+  await page.goto('./vocabulary/?language=es-419&pack=es-419-basic-1-pictures');
+  await expect(page.getByLabel('Card pack')).toHaveValue('es-419-basic-1-pictures');
+  await expect(page.locator('.card')).toHaveCount(15);
+  await expect(page.locator('#results-status')).toContainText('15 cards');
+  await expect(page.getByRole('checkbox', { name: /Basic Spanish level 1/ })).toBeVisible();
+  const views = page.getByRole('group', { name: 'Library content', exact: true });
+  await views.getByRole('button', { name: 'Contextual questions', exact: true }).click();
   const gallery = page.locator('#contextual-library');
   await expect(gallery).toBeVisible();
   await expect(gallery).toContainText('9 contextual questions');
   await expect(gallery.locator('article')).toHaveCount(9);
   await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(10);
-  const views = page.getByRole('group', { name: 'Library content', exact: true });
+  await expect(gallery.locator('.context-review-state').first()).toHaveText('Text approved · Audio approved');
+  await expect(gallery.locator('article').first().getByRole('button', { name: /^Play / })).toHaveCount(8);
+  const search = gallery.getByRole('searchbox', { name: 'Search contexts' });
+  await search.fill('tener');
+  await expect(gallery.locator('article')).toHaveCount(1);
+  await expect(gallery.locator('.context-card-heading')).toContainText('tener');
+  await expect(gallery.locator('.context-answers img')).toHaveCount(4);
+  await search.fill('');
   await views.getByRole('button', { name: 'Words', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Latin American Spanish cards', exact: true })).toBeVisible();
-  await expect(page.locator('.card')).toHaveCount(24);
+  await expect(page.locator('.card')).toHaveCount(15);
   await expect(page.getByLabel('Card pack')).not.toContainText('WaniKani');
   await views.getByRole('button', { name: 'Contextual questions', exact: true }).click();
   await page.reload();

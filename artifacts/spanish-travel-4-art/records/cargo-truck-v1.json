@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-cargo-truck",
+  "slug": "cargo-truck",
+  "version": 1,
+  "path": "originals/cargo-truck-v1.png",
+  "sha256": "c1f378b607a5d065e62d156aa39f7ded28ef709893f7f8e74c5128abdbd3f6a9",
+  "promptSha256": "85ef117a0500c433033787f7a4ece17a0484565ca9314ac250792d0d5797acb3",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-62b4d89f-8433-4a0b-afdb-332cbd6e04fd.png"
+}

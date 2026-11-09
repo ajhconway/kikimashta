@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-tent",
+  "slug": "tent",
+  "version": 1,
+  "path": "originals/tent-v1.png",
+  "sha256": "cacf2f7adc9661765c8769d461594a5710ab99b6b669ad567345f4452a899148",
+  "promptSha256": "d33726d95a4cf5b799edfe09fd7d726cbc8946c33620825764d248319a250a27",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a82c6dcd-0d01-4a8f-97be-64c146e18920.png"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-skirt",
+  "slug": "skirt",
+  "version": 1,
+  "path": "originals/skirt-v1.png",
+  "sha256": "339ccc59c027b65a7713843953b50bff0b67d1b5a2c3a27776886f70260d80b4",
+  "promptSha256": "a3751682bc7a7954f7a34dbe837a5f29b7d5b902733cc813f5cf3f9a5273a1ca",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-bf72de9a-e397-450a-825e-ce180f150ce9.png"
+}

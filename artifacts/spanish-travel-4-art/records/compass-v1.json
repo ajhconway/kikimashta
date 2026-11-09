@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-compass",
+  "slug": "compass",
+  "version": 1,
+  "path": "originals/compass-v1.png",
+  "sha256": "f99cd67172292569e36de26ff5bd71b72e31721aef19bcbf084274477807eb32",
+  "promptSha256": "a857c580c1ddff504591c3e507fcdde1172c5515dbafce23829e1718cf65ab1f",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-9821975d-c0ea-42af-84a9-e865f8a7859a.png"
+}
