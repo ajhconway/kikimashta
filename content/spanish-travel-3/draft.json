@@ -105,7 +105,9 @@
       "group": "town",
       "artwork": {
         "status": "needs-generation",
-        "concept": "One clear zebra crossing of broad white stripes spanning a small road segment, seen from above at a slight angle; no cars, arrows, lettering or traffic signal."
+        "concept": "One single zebra crossing connecting opposite sidewalks across a straight road, seen from above; parallel white stripes run along the road direction and are arranged side by side across its width. No vehicles, words or traffic lights.",
+        "selectedVersion": 2,
+        "feedback": "The zebra crossing isn't across the road."
       }
     },
     {
@@ -241,8 +243,18 @@
       "meaning": "Banana",
       "group": "food",
       "artwork": {
-        "status": "needs-generation",
-        "concept": "One ripe yellow dessert banana, gently curved with a short stem; no other fruit, basket, cooked plantain or plate."
+        "status": "reuse-candidate",
+        "concept": "One ripe yellow dessert banana, gently curved with a short stem; no other fruit, basket, cooked plantain or plate.",
+        "candidatePath": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+        "candidateSha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af",
+        "candidateSourceId": "ja-banana",
+        "candidateEvidence": "content/card-regeneration/activation.json",
+        "inspection": "Visually inspected approved standalone banana; earlier audit mistakenly overlooked this asset.",
+        "supersededGeneratedImage": {
+          "file": "originals/banana-v1.png",
+          "sha256": "5ad4adfabd5cbddbaf0998b6f816d8aeaca43d21a9a37d8968f05b31db918d6f"
+        },
+        "feedback": "For plátano, I'm fairly sure there's an existing banana image."
       }
     },
     {
@@ -455,7 +467,9 @@
       "group": "hotel",
       "artwork": {
         "status": "needs-generation",
-        "concept": "One folded warm rectangular blanket with a clearly visible soft textile fold and small fringe; no bed, pillow, person or towel loop."
+        "concept": "One full-size thick rectangular bed blanket spread open with broad proportions, a broad sewn hem and one gently folded corner; no fringe, tassels, bed, pillow, scarf or person.",
+        "selectedVersion": 2,
+        "feedback": "The blanket looks like a scarf."
       }
     },
     {
@@ -477,7 +491,9 @@
       "group": "hotel",
       "artwork": {
         "status": "needs-generation",
-        "concept": "One toilet-paper roll with visible cardboard core and a short loose perforated paper tail; no toilet, towel, person or readable text."
+        "concept": "One toilet-paper roll with visible cardboard core and a rectangular paper tail hanging vertically, aligned to the roll width, with straight transverse perforation and bottom edges; no diagonal tear.",
+        "selectedVersion": 2,
+        "feedback": "The paper is tearing at a weird angle."
       }
     },
     {
