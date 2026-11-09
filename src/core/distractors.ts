@@ -81,7 +81,12 @@ export function selectWordChoices(
   }
   const byId = new Map(candidates.map(item => [item.id, item]));
   // Filter the selected scope first, then sample a small nearest-neighbor window.
-  const nearest = (ids: readonly string[]) => preferMatches(shuffled(preferMatches(ids.flatMap(id => byId.has(id) ? [byId.get(id)!] : [])).slice(0, 6), random));
+  const nearest = (ids: readonly string[]) => {
+    const ranked = ids.flatMap(id => byId.has(id) ? [byId.get(id)!] : []);
+    // Preserve ranked matching candidates before cutting the window; randomize only that window.
+    const window = preferMatches(ranked).slice(0, 6);
+    return preferMatches(shuffled(window, random));
+  };
   const semantic = nearest(semanticIds), pronunciation = nearest(relations.pronunciationIds(target.id));
   const closeIds = new Set([...semantic, ...pronunciation].map(item => item.id));
   const broad = preferMatches(candidates.filter(item => !closeIds.has(item.id)));
