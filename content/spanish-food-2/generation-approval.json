@@ -1,0 +1,21 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "ownerMessage": "Let's do it.",
+  "ownerReplyTo": "Does this list look good for artwork generation?",
+  "status": "artwork-generation-authorized",
+  "approvedProposal": "content/spanish-food-2/proposal-v1.json",
+  "approvedProposalSha256": "bd5df57d977a271716199af285e8405c162191a11b378e2dabc06d2c4e16d09b",
+  "draft": "content/spanish-food-2/draft.json",
+  "draftSha256": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+  "requests": "artifacts/spanish-food-2-art/requests.json",
+  "requestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+  "words": 36,
+  "newPictures": 31,
+  "reusedPictures": 5,
+  "scope": "artwork-only",
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "reviewWorkflow": "complete-pack-before-owner-feedback"
+}

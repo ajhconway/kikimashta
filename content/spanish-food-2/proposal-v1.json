@@ -1,0 +1,470 @@
+{
+  "issue": 231,
+  "id": "es-419-food-2",
+  "packId": "es-419-food-2-pictures",
+  "language": "es-419",
+  "title": "Food level 2",
+  "status": "word-list-proposal",
+  "exercise": "audio-picture",
+  "interfaceLanguage": "en",
+  "generationAuthorized": false,
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "groups": [
+    {
+      "id": "fruit",
+      "title": "More fruit"
+    },
+    {
+      "id": "vegetables",
+      "title": "More vegetables"
+    },
+    {
+      "id": "protein",
+      "title": "Meat and seafood"
+    },
+    {
+      "id": "pantry",
+      "title": "Pantry and seasoning"
+    },
+    {
+      "id": "snacks",
+      "title": "Snacks and treats"
+    },
+    {
+      "id": "tableware",
+      "title": "At the table"
+    }
+  ],
+  "items": [
+    {
+      "id": "es-419-food-grapes",
+      "slug": "grapes",
+      "text": "uvas",
+      "meaning": "Grapes",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-mango",
+      "slug": "mango",
+      "text": "mango",
+      "meaning": "Mango",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-watermelon",
+      "slug": "watermelon",
+      "text": "sandía",
+      "meaning": "Watermelon",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-melon",
+      "slug": "melon",
+      "text": "melón",
+      "meaning": "Melon",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-peach",
+      "slug": "peach",
+      "text": "durazno",
+      "meaning": "Peach",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-pear",
+      "slug": "pear",
+      "text": "pera",
+      "meaning": "Pear",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "slug": "cucumber",
+      "text": "pepino",
+      "meaning": "Cucumber",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "slug": "broccoli",
+      "text": "brócoli",
+      "meaning": "Broccoli",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-cauliflower",
+      "slug": "cauliflower",
+      "text": "coliflor",
+      "meaning": "Cauliflower",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-spinach",
+      "slug": "spinach",
+      "text": "espinaca",
+      "meaning": "Spinach",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "slug": "mushroom",
+      "text": "champiñón",
+      "meaning": "Button mushroom",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-corn",
+      "slug": "corn",
+      "text": "elote",
+      "meaning": "Corn on the cob",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-steak",
+      "slug": "steak",
+      "text": "bistec",
+      "meaning": "Steak",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-ham",
+      "slug": "ham",
+      "text": "jamón",
+      "meaning": "Ham",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-bacon",
+      "slug": "bacon",
+      "text": "tocino",
+      "meaning": "Bacon",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-sausage",
+      "slug": "sausage",
+      "text": "salchicha",
+      "meaning": "Sausage",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-shrimp",
+      "slug": "shrimp",
+      "text": "camarón",
+      "meaning": "Shrimp",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-tuna",
+      "slug": "tuna",
+      "text": "atún",
+      "meaning": "Tuna",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-garlic",
+      "slug": "garlic",
+      "text": "ajo",
+      "meaning": "Garlic",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-chili-pepper",
+      "slug": "chili-pepper",
+      "text": "chile",
+      "meaning": "Chili pepper",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-honey",
+      "slug": "honey",
+      "text": "miel",
+      "meaning": "Honey",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-jam",
+      "slug": "jam",
+      "text": "mermelada",
+      "meaning": "Jam",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-cooking-oil",
+      "slug": "cooking-oil",
+      "text": "aceite",
+      "meaning": "Cooking oil",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "slug": "black-pepper",
+      "text": "pimienta",
+      "meaning": "Black pepper",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-cookie",
+      "slug": "cookie",
+      "text": "galleta",
+      "meaning": "Cookie",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-cake",
+      "slug": "cake",
+      "text": "pastel",
+      "meaning": "Cake",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-chocolate",
+      "slug": "chocolate",
+      "text": "chocolate",
+      "meaning": "Chocolate",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "slug": "popcorn",
+      "text": "palomitas",
+      "meaning": "Popcorn",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-peanut",
+      "slug": "peanut",
+      "text": "cacahuate",
+      "meaning": "Peanut",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-food-gelatin",
+      "slug": "gelatin",
+      "text": "gelatina",
+      "meaning": "Gelatin dessert",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    },
+    {
+      "id": "es-419-travel-plate",
+      "slug": "plate",
+      "text": "plato",
+      "meaning": "Plate",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+        "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+        "sourceId": "es-419-travel-plate",
+        "evidence": "content/spanish-travel-2/activation.json"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "slug": "glass",
+      "text": "vaso",
+      "meaning": "Drinking glass",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+        "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+        "sourceId": "es-419-travel-drinking-glass",
+        "evidence": "content/spanish-travel-2/activation.json"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-travel-cup",
+      "slug": "cup",
+      "text": "taza",
+      "meaning": "Cup",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+        "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349",
+        "sourceId": "es-419-travel-cup",
+        "evidence": "content/spanish-travel-2/activation.json"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-travel-fork",
+      "slug": "fork",
+      "text": "tenedor",
+      "meaning": "Fork",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+        "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01",
+        "sourceId": "es-419-travel-fork",
+        "evidence": "content/spanish-travel-2/activation.json"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "slug": "spoon",
+      "text": "cuchara",
+      "meaning": "Spoon",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "artwork": {
+        "source": "approved-reuse",
+        "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+        "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208",
+        "sourceId": "es-419-travel-spoon",
+        "evidence": "content/spanish-travel-2/activation.json"
+      },
+      "existingBank": "content/es-419-travel-2.json"
+    },
+    {
+      "id": "es-419-food-knife",
+      "slug": "knife",
+      "text": "cuchillo",
+      "meaning": "Knife",
+      "group": "tableware",
+      "membership": "new-spanish-item",
+      "artwork": {
+        "source": "pending-reuse-review"
+      }
+    }
+  ],
+  "notes": [
+    "Build on Food level 1 without repeating its 36 words.",
+    "Use the existing eight regional voices after audio scope approval.",
+    "Reuse existing Spanish IDs, audio and progress for five tableware words.",
+    "Inspect accepted artwork before deciding which of the 31 new Spanish entries need illustrations.",
+    "Use an open tuna tin, a recognizable steak, a cooking-oil cruet and a pepper mill to keep picture meanings distinct.",
+    "Review picture-choice ambiguity across all selected Spanish packs before activation."
+  ]
+}

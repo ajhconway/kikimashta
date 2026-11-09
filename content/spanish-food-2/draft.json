@@ -4,10 +4,10 @@
   "packId": "es-419-food-2-pictures",
   "language": "es-419",
   "title": "Food level 2",
-  "status": "word-list-proposal",
+  "status": "word-list-approved-artwork-generation-authorized",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
-  "generationAuthorized": false,
+  "generationAuthorized": true,
   "audioGenerationAuthorized": false,
   "runtimeActivationAuthorized": false,
   "groups": [
@@ -45,7 +45,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One compact bunch of ripe purple grapes with many round individual grapes, a short natural green vine stem and one small leaf. No bowl or other fruit."
       }
     },
     {
@@ -56,7 +57,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One ripe elongated asymmetrical mango with golden-yellow and red peel beside one cut mango cheek scored into a simple golden cube grid. The juicy golden flesh and mango shape must read clearly; no other fruit."
       }
     },
     {
@@ -67,7 +69,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One small oval green-striped watermelon behind one large triangular red watermelon wedge with dark seeds and a green rind. No orange flesh or other fruit."
       }
     },
     {
@@ -78,7 +81,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One small round cantaloupe with pale tan netted rind beside one half showing orange flesh and a small central cavity of pale seeds. No red watermelon flesh, no wedge shape, no other fruit."
       }
     },
     {
@@ -89,7 +93,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One ripe round golden-pink peach with its characteristic deep side cleft, beside one peach half with a single brown ridged stone in its center. Smooth simple surface; no apple shape or other fruit."
       }
     },
     {
@@ -100,7 +105,8 @@
       "group": "fruit",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One plump green pear with a narrow neck, wide bulbous bottom, short brown stem and one small green leaf. Clearly pear-shaped, not a round apple."
       }
     },
     {
@@ -111,7 +117,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One long dark-green cucumber with subtle shallow ridges beside two thick round cucumber slices with pale-green flesh and a small pale seed center. No chili pepper, other produce or knife."
       }
     },
     {
@@ -122,7 +129,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One fresh compact head of broccoli with rounded dense dark-green florets and a sturdy light-green branching stalk. The florets and trunk form one complete readable vegetable."
       }
     },
     {
@@ -133,7 +141,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One compact head of cauliflower: creamy-white dense rounded florets surrounded at the base by a few short green leaves. White florets dominate. No broccoli or other produce."
       }
     },
     {
@@ -144,7 +153,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One small fresh bunch of spinach: several separate dark-green oval leaves with smooth edges and slender visible stems gathered at the bottom. Open leafy bunch, never a round lettuce head. No bowl, ribbon or other produce."
       }
     },
     {
@@ -155,7 +165,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One ivory-white button mushroom with a broad rounded cap and a short thick stem, shown at a slight angle so a little darker underside is visible. No face, spots, red cap, grass or other mushrooms."
       }
     },
     {
@@ -166,7 +177,8 @@
       "group": "vegetables",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One yellow ear of sweet corn with neat rows of many small rounded kernels, with a few green husk leaves peeled down around its base. Full straight cob, no loose kernels or other produce."
       }
     },
     {
@@ -177,7 +189,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One appetizing cooked T-bone beef steak with a recognizable central ivory T-shaped bone, warm browned surface, a few clear dark grill marks and a slightly pink thick side edge. No plate, garnish, knife or other food."
       }
     },
     {
@@ -188,7 +201,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One compact cured ham section with a golden-brown outer rind and a broad smooth pink cut face containing one small pale round bone, with one thick pink ham slice resting in front. No bacon strips, sausage, garnish or plate."
       }
     },
     {
@@ -199,7 +213,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "Three clearly separate long wavy strips of cooked bacon with alternating reddish-brown meat and pale cream fat stripes, gently overlapping as one compact serving. Crisp wavy edges. No plate, eggs or garnish."
       }
     },
     {
@@ -210,7 +225,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "Two plump smooth pink-brown frankfurter-style sausages with rounded sealed ends, arranged slightly diagonally as one compact pair. No bun, bread, mustard, sauce, knife or other food."
       }
     },
     {
@@ -221,7 +237,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One large cooked shrimp curled into a clear C shape, with a pale pink-orange segmented body and darker orange fan tail. Simple anatomically plausible shell segments, no cartoon face, no garnish, plate or other seafood."
       }
     },
     {
@@ -232,7 +249,8 @@
       "group": "protein",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One open low round silver tuna tin filled with recognizable pale-pink flaky tuna chunks, with its metal lid naturally peeled back and still attached at the back. The open tin is the main object. No label, text, whole fish, utensils or other food."
       }
     },
     {
@@ -243,7 +261,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One white garlic bulb with clearly defined curved papery clove segments and a short dry pointed neck, beside two small peeled ivory garlic cloves. Distinct from the existing golden onion. No green shoots or other vegetables."
       }
     },
     {
@@ -254,7 +273,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One long slender curved red chili pepper tapering to a pointed tip, with a short green stem. A clear glossy red chili silhouette, not a bell pepper or cucumber. No knife, slices or other produce."
       }
     },
     {
@@ -265,7 +285,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One short round clear glass jar of rich amber honey with a wooden grooved honey dipper resting across its open rim and a small connected honey drip. Clear honey identity; keep glass and honey interiors visually solid. No label, bees, bread, fruit or extra jars."
       }
     },
     {
@@ -276,7 +297,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One open squat glass jar filled with glossy deep-red berry jam, its small purple screw lid leaning beside the jar. Visible thick jam surface and simple glass highlights. No label, fruit beside it, bread, spoon or other jars."
       }
     },
     {
@@ -287,7 +309,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One elegant small glass cooking-oil cruet with a rounded body, narrow neck, short pouring spout and small side handle, visibly filled with golden-yellow oil. Keep glass and liquid interiors solid against the transparent surround. No label, olives, vinegar, glass, plate or other food."
       }
     },
     {
@@ -298,7 +321,8 @@
       "group": "pantry",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One compact warm-brown wooden pepper mill with a small silver top knob, beside a small cluster of black peppercorns at its base. The pepper mill and peppercorns clearly represent black pepper. No salt shaker, label, ground powder cloud or other seasonings."
       }
     },
     {
@@ -309,7 +333,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One round golden-brown chocolate-chip cookie with a gently irregular baked edge, several dark-brown chocolate chips and simple baked surface marks. No bite, milk, plate, wrapper or extra cookies."
       }
     },
     {
@@ -320,7 +345,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One thick triangular slice of layer cake with two golden sponge layers and pale cream filling, smooth light-pink icing on top and a neat pale frosting edge. The cake is a solid wedge, not a gelatin ring. No candle, fruit, plate, fork or decorations."
       }
     },
     {
@@ -331,7 +357,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One dark-brown chocolate bar with a clearly molded grid of raised rectangular chocolate squares, partially unwrapped from a small plain silver foil fold at its lower end. No paper label, text, nuts, cookies, milk or other foods."
       }
     },
     {
@@ -342,7 +369,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One small open cinema-style paper carton with broad purple and gold vertical stripes, filled with many fluffy white popped corn pieces with tiny warm-gold centers. Popcorn dominates the opening. No letters, numbers, brand, loose corn cob or other snacks."
       }
     },
     {
@@ -353,7 +381,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "Three small tan peanuts in shells with clear narrow waists, double-lobed shapes and a simplified fine shell grid, with one shell opened to reveal two small reddish-brown peanut kernels. No bowl, other nuts or potato-like smooth shells."
       }
     },
     {
@@ -364,7 +393,8 @@
       "group": "snacks",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One ruby-red translucent fluted gelatin dessert in a low ring mold shape with a clean center opening, resting on a small plain pale plate. Glossy wobbling jelly appearance, not a layered cake. No fruit, cream, spoon or other foods."
       }
     },
     {
@@ -455,7 +485,8 @@
       "group": "tableware",
       "membership": "new-spanish-item",
       "artwork": {
-        "source": "pending-reuse-review"
+        "source": "needs-generation",
+        "concept": "One straight kitchen knife with a broad tapered silver blade and a simple deep-purple handle with two small silver rivets. Complete intact knife at a gentle diagonal, clear blade-handle junction. No hand, food, chopping board, blood or other utensils."
       }
     }
   ],
@@ -466,5 +497,14 @@
     "Inspect accepted artwork before deciding which of the 31 new Spanish entries need illustrations.",
     "Use an open tuna tin, a recognizable steak, a cooking-oil cruet and a pepper mill to keep picture meanings distinct.",
     "Review picture-choice ambiguity across all selected Spanish packs before activation."
-  ]
+  ],
+  "scope": {
+    "words": 36,
+    "newSpanishItems": 31,
+    "existingSpanishItems": 5,
+    "newPictures": 31,
+    "artworkReuses": 5,
+    "audioGenerationAuthorized": false,
+    "runtimeActivationAuthorized": false
+  }
 }
