@@ -340,8 +340,10 @@ function pictureFixture(t) {
   const f = transparentFixture(t)
   const directory = 'artifacts/picture-art-229'
   const opaqueId = 'ja-v-cbda72b9dd04'
+  const accepted = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/plan.json', import.meta.url), 'utf8')).items.map(item => item.id)
+  const acceptedIds = [...accepted.filter(id => id !== opaqueId), opaqueId]
   const assets = Array.from({ length: 31 }, (_, index) => {
-    const id = index === 30 ? opaqueId : `ja-v-${index.toString(16)}`
+    const id = acceptedIds[index]
     const path = `${directory}/ja-v-${(index === 1 ? 0 : index).toString(16)}-v1.png`
     const bytes = index === 30 ? rgbaPng(Array.from({ length: 4 }, () => [255, 255, 255, 255]).flat()) : f.source
     mkdirSync(dirname(join(f.root, path)), { recursive: true })
@@ -349,7 +351,7 @@ function pictureFixture(t) {
     return { id, path, status: 'approved', sha256: hash(bytes), selectedVersion: 1,
       imageDescription: index === 30 ? 'White paint swatch' : 'Friendly vocabulary illustration', transparentBackground: index !== 30,
       sourceKind: index === 1 ? 'shared-new' : index >= 26 ? 'existing-approved' : 'generated',
-      ...(index === 1 ? { sharedFromId: 'ja-v-0' } : {}),
+      ...(index === 1 ? { sharedFromId: acceptedIds[0] } : {}),
       versions: [{ version: 1, path, sha256: hash(bytes) }],
       approval: { sha256: hash(bytes), selectedVersion: 1, scope: 'artwork only', ownerStatement: "Ok, let's ship this updated artwork.", date: '2026-11-09' } }
   })
@@ -372,7 +374,7 @@ function pictureFixture(t) {
   return { ...f, manifest, plan, save }
 }
 
-for (const failure of ['substituted known ID', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions']) {
+for (const failure of ['substituted known ID', 'valid selected/excluded swap', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions']) {
   test(`picture-set frozen scope rejects ${failure} before any deliveries`, t => {
     const f = pictureFixture(t)
     if (failure === 'substituted known ID') {
@@ -384,6 +386,21 @@ for (const failure of ['substituted known ID', 'changed source review', 'changed
       f.put('content/catalog/ja.json', catalog)
       const visuals = f.read('content/visuals/levels-1-2.json')
       visuals[29].id = id
+      f.put('content/visuals/levels-1-2.json', visuals)
+    }
+    if (failure === 'valid selected/excluded swap') {
+      const oldId = f.plan.items[29].id
+      const replacementId = f.plan.excludedUpdatedIds[0]
+      const source = f.read('artifacts/picture-art-229/sources/suitability-review.json')
+      f.plan.items[29] = source.items.find(item => item.id === replacementId)
+      f.plan.excludedUpdatedIds[0] = oldId
+      f.manifest.assets[29].id = replacementId
+      f.manifest.releaseApproval.selections[29].id = replacementId
+      const catalog = f.read('content/catalog/ja.json')
+      catalog.items[29].id = replacementId
+      f.put('content/catalog/ja.json', catalog)
+      const visuals = f.read('content/visuals/levels-1-2.json')
+      visuals[29].id = replacementId
       f.put('content/visuals/levels-1-2.json', visuals)
     }
     if (failure === 'changed source review') f.put('artifacts/picture-art-229/sources/suitability-review.json', { items: [] })
@@ -421,8 +438,8 @@ test('the complete picture set activates shared and approved-source selections w
     assert.equal(delivery.alpha, opaque ? undefined : 'preserved')
     assert.match(item.image.src, opaque ? /\.jpg$/ : /\.png$/)
   }
-  const shared = active.assets.find(asset => asset.id === 'ja-v-1')
-  const original = active.assets.find(asset => asset.id === 'ja-v-0')
+  const shared = active.assets.find(asset => asset.id === f.manifest.assets[1].id)
+  const original = active.assets.find(asset => asset.id === f.manifest.assets[0].id)
   assert.equal(shared.sourcePath, original.sourcePath)
   assert.equal(shared.sourceSha256, original.sourceSha256)
   activateArtwork({ ...options, encode: () => assert.fail('Verified picture deliveries should be reused') })

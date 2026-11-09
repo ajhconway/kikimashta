@@ -14,7 +14,9 @@ const write = (root, path, data) => writeFileSync(join(root, path), JSON.stringi
 const defaultEncoder = (source, target, { format }) => execFileSync('sips', ['-s', 'format', format, ...(format === 'jpeg' ? ['-s', 'formatOptions', '85'] : []), '-Z', '640', source, '--out', target], { stdio: 'pipe' })
 const reviewedSets = {
   'visual-reference-213': { directory: 'artifacts/visual-reference-art-213', count: 22, statement: "Let's ship this artwork set." },
-  'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04' },
+  'picture-229': { directory: 'artifacts/picture-art-229', count: 31, statement: "Ok, let's ship this updated artwork.", opaqueId: 'ja-v-cbda72b9dd04',
+    // SHA-256 of JSON.stringify(sorted accepted IDs), independent of the mutable plan partition.
+    selectionIdsSha256: '924e14881f03e105874f477e9e8d015f0f014dd3b1b020c06f053e24126a0a2c' },
 }
 
 function validatePictureScope(root, manifest, directory) {
@@ -26,6 +28,7 @@ function validatePictureScope(root, manifest, directory) {
   const excluded = new Set(plan.excludedUpdatedIds)
   if (plan.issue !== 229 || plan.category !== 'picture' || plan.expectedAssetCount !== 31 ||
       plan.pictureCardCount !== 92 || picture.size !== 92 || selected.size !== 31 || plan.items.length !== 31 ||
+      hash(Buffer.from(JSON.stringify([...selected.keys()].sort()))) !== reviewedSets['picture-229'].selectionIdsSha256 ||
       excluded.size !== 61 || plan.excludedUpdatedIds.length !== 61 ||
       !/^[a-f0-9]{40}$/.test(plan.sourceRevision) || manifest.sourceRevision !== plan.sourceRevision ||
       hash(originalBytes) !== plan.suitabilityReviewSha256 ||
