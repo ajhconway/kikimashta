@@ -41,6 +41,6 @@ export function selectedPracticeCards(items: readonly WordItem[], packIds: reado
   const memberships = packs.filter(pack => packIds.includes(pack.id)).map(pack => ({
     language: pack.language, exercise: pack.exercise, ids: new Set(pack.itemIds),
   }));
-  return items.flatMap(item => exercises.filter(exercise => memberships.some(pack =>
+  return items.flatMap(item => exercises.filter(exercise => (!item.wordExercises || item.wordExercises.includes(exercise)) && memberships.some(pack =>
     pack.language === item.language && pack.exercise === exercise && pack.ids.has(item.id))).map(exercise => ({ item, exercise })));
 }

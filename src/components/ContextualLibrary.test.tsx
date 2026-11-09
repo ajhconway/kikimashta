@@ -4,7 +4,7 @@ import type { ContextualBank, ContextualItem, ContextualPrompt } from '../conten
 import type { WordItem } from '../types';
 
 const content = vi.hoisted(() => ({ banks: [] as ContextualBank[], vocabulary: [] as WordItem[] }));
-vi.mock('../content/contextual-runtime', () => ({ contextualBanks: content.banks, contextualVocabulary: content.vocabulary }));
+vi.mock('../content/contextual-runtime', () => ({ contextualInspectionBanks: content.banks, contextualVocabulary: content.vocabulary }));
 interface Gallery { stop: () => void }
 interface Module { mountContextualLibrary: (options: { container: HTMLElement; language: { id: string } }) => Gallery }
 const audios: HTMLAudioElement[] = [];
@@ -58,6 +58,27 @@ afterEach(() => {
   vi.useRealTimers();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+  window.history.replaceState({}, '', '/');
+});
+
+it('retains historical cards while the pack 1 collection shows exactly 232 questions with honest semantic focus filters', async () => {
+  const { default: authored } = await import('../../content/contextual/ja-wanikani-1-draft.json');
+  const pack1 = structuredClone(authored) as unknown as ContextualBank;
+  for (const context of pack1.contexts) for (const question of context.questions) {
+    question.focus = question.id.endsWith('-target') ? 'target' : 'detail';
+  }
+  content.banks.push(pack1);
+  await mount();
+  expect(screen.getByText('246 contextual questions')).toBeVisible();
+  choose('Context collection', pack1.id);
+  expect(screen.getByText('232 contextual questions')).toBeVisible();
+  choose('Question kind', 'target');
+  expect(screen.getByText('116 contextual questions')).toBeVisible();
+  choose('Question kind', 'detail');
+  expect(screen.getByText('116 contextual questions')).toBeVisible();
+  choose('Question kind', 'all');
+  choose('Context collection', 'fixtures');
+  expect(screen.getByText('14 contextual questions')).toBeVisible();
 });
 
 it('renders bounded authored cards, meanings, correct options, pictures and revision details without autoplay or writes', async () => {
