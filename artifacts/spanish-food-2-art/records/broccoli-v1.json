@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-broccoli",
+  "slug": "broccoli",
+  "version": 1,
+  "path": "originals/broccoli-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "31b1e839880df52d72f92dfce2cb77d99ef46c8d247dc5bfd8d3e4ba1d4b5757",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "9d18bf4005700aee437bd15453731a6a466836c3427861f858f4ceee9ae6aa5b",
+  "bytes": 969525,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-be0bafd9-22e7-4eda-9190-ff7ed1aac3d8.png"
+}

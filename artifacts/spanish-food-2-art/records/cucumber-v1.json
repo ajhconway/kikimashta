@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-cucumber",
+  "slug": "cucumber",
+  "version": 1,
+  "path": "originals/cucumber-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "cb51c00b34c00bba9758e158ae04429a105ffdf73ce4bf1daaf765aa7fe5b180",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "8a03ecf0bea067c38727573aacff437011083265350af9ba9b43ba48e6f99a0d",
+  "bytes": 948778,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-e6dc6f91-e86f-458d-9c1e-9da63f43eb73.png"
+}

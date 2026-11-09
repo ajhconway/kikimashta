@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-spinach",
+  "slug": "spinach",
+  "version": 1,
+  "path": "originals/spinach-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "5fd4f9e8f7a397af0036178b1247f6fd8c8d99cf1e5a2f26a60fcac8312bfa67",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "9b926e087e618392e027f0cc2e4bebbc4a8eb939f0feceb6b9aaf551f21b697c",
+  "bytes": 1091919,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b1bb6368-16d2-49f3-8e8d-b726753e8202.png"
+}

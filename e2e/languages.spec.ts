@@ -25,6 +25,7 @@ test('remembers learning language and independent pack choices across reloads', 
   await page.getByRole('checkbox', { name: 'Travel level 4 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await page.getByRole('checkbox', { name: 'Food level 1 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Food level 2 · Pictures', exact: true }).uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
@@ -45,10 +46,11 @@ test('remembers learning language and independent pack choices across reloads', 
 
 import spanish from '../content/es-419.json' with { type: 'json' };
 import spanishFood from '../content/es-419-food-1.json' with { type: 'json' };
+import spanishFood2 from '../content/es-419-food-2.json' with { type: 'json' };
 
 test('Spanish lesson uses its selected voice and saves an isolated answer after reload', async ({ page }) => {
   await page.goto('./vocabulary/?language=es-419&pack=es-419-travel-1-pictures');
-  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures']) {
+  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures', 'Food level 2 · Pictures']) {
     await page.getByRole('checkbox', { name, exact: true }).uncheck();
   }
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
@@ -155,6 +157,7 @@ test('Food library and practice share Travel progress and stay scoped after relo
   });
   await page.goto('vocabulary/?language=es-419&pack=es-419-food-1-pictures');
   await expect(page.locator('#results-status')).toContainText('36 cards');
+  await page.getByRole('checkbox', { name: 'Food level 2 · Pictures', exact: true }).uncheck();
   for (const level of [1, 2, 3, 4]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
   await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
@@ -194,7 +197,7 @@ test('Food library and practice share Travel progress and stay scoped after relo
   })).toBe(true);
   await page.getByLabel('Search words').fill('');
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('171 cards');
+  await expect(page.locator('#results-status')).toContainText('202 cards');
   await expect(page.getByRole('checkbox', { name: 'Food level 1 · Pictures', exact: true })).toBeChecked();
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
@@ -230,4 +233,81 @@ test('Food library and practice share Travel progress and stay scoped after relo
   expect(answer.itemId).toBe(target.id);
   expect(answer.context?.recordingSrc).toBe(target.audio.find(clip => source?.endsWith(clip.src))!.src);
   expect(await savedAttempts(page, 'ja-JP')).toEqual([]);
+});
+
+test('Food2 shares glass progress and its current picture across packs, with native new speech and isolated saved answers', async ({ page }) => {
+  await page.addInitScript(() => {
+    Math.random = () => 0.5;
+    const play = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function () {
+      (window as unknown as { foodAudio: HTMLMediaElement }).foodAudio = this;
+      return play.call(this);
+    };
+  });
+  await page.goto('vocabulary/?language=es-419&pack=es-419-food-2-pictures');
+  await expect(page.locator('#results-status')).toContainText('36 cards');
+  for (const name of ['Travel level 1 · Pictures', 'Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures']) {
+    await page.getByRole('checkbox', { name, exact: true }).uncheck();
+  }
+  const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
+  for (const checkbox of await voices.getByRole('checkbox').all()) if (await checkbox.getAttribute('value') !== 'juan') await checkbox.uncheck();
+  const glass = spanishFood2.items.find(word => word.id === 'es-419-travel-drinking-glass')!;
+  const original = await page.evaluate(async recordingSrc => {
+    const attempt = { id: 'shared-travel-glass', sessionId: 'before-food2', itemId: 'es-419-travel-drinking-glass', language: 'es-419',
+      choiceIds: ['es-419-travel-drinking-glass'], selectedId: 'es-419-travel-drinking-glass', correct: true,
+      startedAt: Date.now() - 1000, answeredAt: Date.now() - 500, responseMs: 500,
+      context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc, replays: 0, schedulerVersion: 'fsrs-6-v1' } };
+    const db = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open('kikimashta-v0', 1); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
+    try {
+      await new Promise<void>((resolve, reject) => { const tx = db.transaction('attempts', 'readwrite'); tx.objectStore('attempts').put(attempt); tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error); });
+    } finally { db.close(); }
+    return attempt;
+  }, glass.audio[0]!.src);
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'Food level 2 · Pictures', exact: true })).toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'Food level 1 · Pictures', exact: true })).not.toBeChecked();
+  await page.getByLabel('Search words').fill('vaso');
+  await expect(page.locator('.card-image')).toHaveAttribute('src', '../' + glass.image.src);
+  await expect(page.locator('.card-mastery')).toHaveText('Mastery: Learning');
+  await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await page.getByLabel('Card pack').selectOption('es-419-travel-2-pictures');
+  await expect(page.locator('.card-image')).toHaveAttribute('src', '../' + glass.image.src);
+  await expect(page.locator('.card-mastery')).toHaveText('Mastery: Learning');
+  await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).not.toBeChecked();
+  await page.getByLabel('Card pack').selectOption('es-419-food-2-pictures');
+  await page.getByLabel('Search words').fill('uvas');
+  await page.getByRole('button', { name: 'Juan: Grapes', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => {
+    const audio = (window as unknown as { foodAudio: HTMLMediaElement }).foodAudio;
+    return audio.src.includes('/es-419-food-2/juan/') && audio.currentTime > 0;
+  })).toBe(true);
+  await page.getByLabel('Search words').fill('');
+  await page.getByLabel('Card pack').selectOption('all');
+  await expect(page.locator('#results-status')).toContainText('202 cards');
+  await page.getByRole('link', { name: '← Listening practice' }).click();
+  await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
+  await page.getByRole('button', { name: /^start/i }).click();
+  await page.getByRole('button', { name: 'Begin lesson', exact: true }).click();
+  for (let turn = 0; turn < 10; turn++) {
+    const source = await page.locator('audio').getAttribute('src');
+    expect(spanishFood2.items.some(word => word.audio.some(clip => source?.endsWith(clip.src)))).toBe(true);
+    const quiz = page.getByRole('button', { name: /mini-quiz/i });
+    if (await quiz.count()) { await quiz.click(); break; }
+    await page.getByRole('button', { name: /next card/i }).click();
+    await expect(page.locator('audio')).not.toHaveAttribute('src', source!);
+  }
+  const source = await page.locator('audio').getAttribute('src');
+  const target = spanishFood2.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  expect(target).toBeDefined();
+  const choices = page.getByRole('button', { name: /choose picture/i });
+  await expect(choices).toHaveCount(4);
+  await choices.filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
+  await page.getByRole('button', { name: 'Kikimashta home', exact: true }).click();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(2);
+  await page.reload();
+  const saved = await savedAttempts(page, 'es-419');
+  expect(saved).toHaveLength(2);expect(saved.find(attempt => attempt.id === original.id)).toEqual(original);
+  expect(saved.find(attempt => attempt.id !== original.id)).toMatchObject({ itemId: target.id, context: { recordingSrc: target.audio.find(clip => source?.endsWith(clip.src))!.src } });
+  expect(await savedAttempts(page, 'ja-JP')).toEqual([]);
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('kikimashta-card-packs-v1:es-419')!))).toEqual(['es-419-food-2-pictures']);
 });

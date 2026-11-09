@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-shrimp",
+  "slug": "shrimp",
+  "version": 1,
+  "path": "originals/shrimp-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "3087c6f32bf81942408fda584309ad959f78d7daf7ab2a91b7b71cf76d4e5fba",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "dadb934773f4ec6a2c3a1d3b6fe5138468745b8cda399137912474ec3ba0f8e1",
+  "bytes": 915325,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-46917a5f-af0d-4059-b5f4-afd44cacfbac.png"
+}

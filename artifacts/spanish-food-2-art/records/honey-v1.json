@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-honey",
+  "slug": "honey",
+  "version": 1,
+  "path": "originals/honey-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "670c6e1d739c16cac6c55d50d12889624c22b61c1932d60bdd28b3ea486b8f3c",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "d8b57aad9c6b72e9a4f6d8df8e5f2f1e3d19b6defc1ac4e43657c7d7dc28af8e",
+  "bytes": 1024777,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b3c49ca8-29df-419a-baac-de0bebb23286.png"
+}

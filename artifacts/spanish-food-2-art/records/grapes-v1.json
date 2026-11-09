@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-grapes",
+  "slug": "grapes",
+  "version": 1,
+  "path": "originals/grapes-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "172c42cd95886766c7c491b4173d260c75ec25a9db65edf4a879d1f37e107c47",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "eeb09681600ac4c95408728a8322536203a022b3dd635cb35d0874be4c5fa91c",
+  "bytes": 875444,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-7975c7aa-079d-4245-bc5e-91719855723b.png"
+}

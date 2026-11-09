@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-tuna",
+  "slug": "tuna",
+  "version": 1,
+  "path": "originals/tuna-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "ef8864ff718efc7d45c3c4048ad0942d371e9d94b503e4654b38cb2057587be4",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "dabfae054122b9aa44eaa95b38cfd1c4ea847f8af45adfcf007a102cca5d4b71",
+  "bytes": 1362774,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d96cec6a-60a6-40eb-b92e-859bb7b918f1.png"
+}

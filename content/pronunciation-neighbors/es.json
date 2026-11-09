@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "language": "es-419",
-  "sourceDigest": "2d9f2e3e59154ff9d7075c6db82abd5a2d4b25fde93179ed4903f4f24295498c",
+  "sourceDigest": "3212a421ed00273a594e86bc20885ca0951d5dedb856f5ce0640a990ebecd9f7",
   "recipeSha256": "6aefb848f952c5d4f249e5d9c245fe252721725c39d66b9bc541ce63b95d3d74",
   "probesSha256": "8ee7cc0d3ac601aeeef6b7e85a6123134424e2855234a1c96c3b19da54fb65b2",
   "tool": {
@@ -37,6 +37,10 @@
       "normalized": "abierto",
       "ipa": "a_β_j_ˈe_ɾ_t_o"
     },
+    "aceite": {
+      "normalized": "aceite",
+      "ipa": "a_s_ˈeɪ_t_e"
+    },
     "aeropuerto": {
       "normalized": "aeropuerto",
       "ipa": "ˌa_e_ɾ_o_p_w_ˈe_ɾ_t_o"
@@ -48,6 +52,10 @@
     "aguacate": {
       "normalized": "aguacate",
       "ipa": "ˌa_ɣ_w_a_k_ˈa_t_e"
+    },
+    "ajo": {
+      "normalized": "ajo",
+      "ipa": "ˈa_x_o"
     },
     "al lado de": {
       "normalized": "al lado de",
@@ -72,6 +80,10 @@
     "ascensor": {
       "normalized": "ascensor",
       "ipa": "ˌa_s_e_n_s_ˈo_ɾ"
+    },
+    "atún": {
+      "normalized": "atún",
+      "ipa": "a_t_ˈu_n"
     },
     "autobús": {
       "normalized": "autobús",
@@ -129,6 +141,10 @@
       "normalized": "binoculares",
       "ipa": "b_ˌi_n_o_k_u_l_ˈa_ɾ_e_s"
     },
+    "bistec": {
+      "normalized": "bistec",
+      "ipa": "b_i_s_t_ˈe_k"
+    },
     "boleto": {
       "normalized": "boleto",
       "ipa": "b_o_l_ˈe_t_o"
@@ -141,9 +157,17 @@
       "normalized": "botella",
       "ipa": "b_o_t_ˈe_j_j_a"
     },
+    "brócoli": {
+      "normalized": "brócoli",
+      "ipa": "b_ɾ_ˈo_k_o_l_i"
+    },
     "brújula": {
       "normalized": "brújula",
       "ipa": "b_ɾ_ˈu_x_u_l_a"
+    },
+    "cacahuate": {
+      "normalized": "cacahuate",
+      "ipa": "k_ˌa_k_a_w_ˈa_t_e"
     },
     "café": {
       "normalized": "café",
@@ -172,6 +196,10 @@
     "cama": {
       "normalized": "cama",
       "ipa": "k_ˈa_m_a"
+    },
+    "camarón": {
+      "normalized": "camarón",
+      "ipa": "k_ˌa_m_a_ɾ_ˈo_n"
     },
     "camisa": {
       "normalized": "camisa",
@@ -241,9 +269,21 @@
       "normalized": "chamarra",
       "ipa": "tʃ_a_m_ˈa_r_a"
     },
+    "champiñón": {
+      "normalized": "champiñón",
+      "ipa": "tʃ_ˌa_m_p_i_ɲ_ˈo_n"
+    },
     "champú": {
       "normalized": "champú",
       "ipa": "tʃ_a_m_p_ˈu"
+    },
+    "chile": {
+      "normalized": "chile",
+      "ipa": "tʃ_ˈi_l_e"
+    },
+    "chocolate": {
+      "normalized": "chocolate",
+      "ipa": "tʃ_ˌo_k_o_l_ˈa_t_e"
     },
     "cine": {
       "normalized": "cine",
@@ -265,6 +305,10 @@
       "normalized": "cocer",
       "ipa": "k_o_s_ˈe_ɾ"
     },
+    "coliflor": {
+      "normalized": "coliflor",
+      "ipa": "k_ˌo_l_i_f_l_ˈo_ɾ"
+    },
     "comer": {
       "normalized": "comer",
       "ipa": "k_o_m_ˈe_ɾ"
@@ -280,6 +324,10 @@
     "cuchara": {
       "normalized": "cuchara",
       "ipa": "k_u_tʃ_ˈa_ɾ_a"
+    },
+    "cuchillo": {
+      "normalized": "cuchillo",
+      "ipa": "k_u_tʃ_ˈi_j_j_o"
     },
     "curita": {
       "normalized": "curita",
@@ -309,6 +357,14 @@
       "normalized": "ducha",
       "ipa": "d_ˈu_tʃ_a"
     },
+    "durazno": {
+      "normalized": "durazno",
+      "ipa": "d_u_ɾ_ˈa_s_n_o"
+    },
+    "elote": {
+      "normalized": "elote",
+      "ipa": "e_l_ˈo_t_e"
+    },
     "enchufe": {
       "normalized": "enchufe",
       "ipa": "e_n_tʃ_ˈu_f_e"
@@ -328,6 +384,10 @@
     "espejo": {
       "normalized": "espejo",
       "ipa": "e_s_p_ˈe_x_o"
+    },
+    "espinaca": {
+      "normalized": "espinaca",
+      "ipa": "ˌe_s_p_i_n_ˈa_k_a"
     },
     "estacionamiento": {
       "normalized": "estacionamiento",
@@ -369,9 +429,17 @@
       "normalized": "fuente",
       "ipa": "f_w_ˈɛ_n_t_e"
     },
+    "galleta": {
+      "normalized": "galleta",
+      "ipa": "ɡ_a_j_j_ˈe_t_a"
+    },
     "gasolinera": {
       "normalized": "gasolinera",
       "ipa": "ɡ_ˌa_s_o_l_i_n_ˈe_ɾ_a"
+    },
+    "gelatina": {
+      "normalized": "gelatina",
+      "ipa": "x_ˌe_l_a_t_ˈi_n_a"
     },
     "gira": {
       "normalized": "gira",
@@ -437,6 +505,10 @@
       "normalized": "jabón",
       "ipa": "x_a_β_ˈo_n"
     },
+    "jamón": {
+      "normalized": "jamón",
+      "ipa": "x_a_m_ˈo_n"
+    },
     "jira": {
       "normalized": "jira",
       "ipa": "x_ˈi_ɾ_a"
@@ -489,6 +561,10 @@
       "normalized": "maleta",
       "ipa": "m_a_l_ˈe_t_a"
     },
+    "mango": {
+      "normalized": "mango",
+      "ipa": "m_ˈa_ŋ_ɡ_o"
+    },
     "mantequilla": {
       "normalized": "mantequilla",
       "ipa": "m_ˌa_n_t_e_k_ˈi_j_j_a"
@@ -501,6 +577,10 @@
       "normalized": "mapa",
       "ipa": "m_ˈa_p_a"
     },
+    "melón": {
+      "normalized": "melón",
+      "ipa": "m_e_l_ˈo_n"
+    },
     "menú": {
       "normalized": "menú",
       "ipa": "m_e_n_ˈu"
@@ -509,6 +589,10 @@
       "normalized": "mercado",
       "ipa": "m_e_ɾ_k_ˈa_ð_o"
     },
+    "mermelada": {
+      "normalized": "mermelada",
+      "ipa": "m_ˌe_ɾ_m_e_l_ˈa_ð_a"
+    },
     "mesa": {
       "normalized": "mesa",
       "ipa": "m_ˈe_s_a"
@@ -516,6 +600,10 @@
     "metro": {
       "normalized": "metro",
       "ipa": "m_ˈe_t_ɾ_o"
+    },
+    "miel": {
+      "normalized": "miel",
+      "ipa": "m_j_ˈe_l"
     },
     "mochila": {
       "normalized": "mochila",
@@ -548,6 +636,10 @@
     "ola": {
       "normalized": "ola",
       "ipa": "ˈo_l_a"
+    },
+    "palomitas": {
+      "normalized": "palomitas",
+      "ipa": "p_ˌa_l_o_m_ˈi_t_a_s"
     },
     "pan": {
       "normalized": "pan",
@@ -597,6 +689,10 @@
       "normalized": "pasta de dientes",
       "ipa": "p_ˈa_s_t_a ð_e ð_j_ˈɛ_n_t_e_s"
     },
+    "pastel": {
+      "normalized": "pastel",
+      "ipa": "p_a_s_t_ˈe_l"
+    },
     "pastilla": {
       "normalized": "pastilla",
       "ipa": "p_a_s_t_ˈi_j_j_a"
@@ -609,9 +705,17 @@
       "normalized": "peine",
       "ipa": "p_ˈeɪ_n_e"
     },
+    "pepino": {
+      "normalized": "pepino",
+      "ipa": "p_e_p_ˈi_n_o"
+    },
     "pequeño": {
       "normalized": "pequeño",
       "ipa": "p_e_k_ˈe_ɲ_o"
+    },
+    "pera": {
+      "normalized": "pera",
+      "ipa": "p_ˈe_ɾ_a"
     },
     "pescado": {
       "normalized": "pescado",
@@ -620,6 +724,10 @@
     "pie": {
       "normalized": "pie",
       "ipa": "p_j_ˈe"
+    },
+    "pimienta": {
+      "normalized": "pimienta",
+      "ipa": "p_i_m_j_ˈɛ_n_t_a"
     },
     "piscina": {
       "normalized": "piscina",
@@ -692,6 +800,14 @@
     "sal": {
       "normalized": "sal",
       "ipa": "s_ˈa_l"
+    },
+    "salchicha": {
+      "normalized": "salchicha",
+      "ipa": "s_a_l_tʃ_ˈi_tʃ_a"
+    },
+    "sandía": {
+      "normalized": "sandía",
+      "ipa": "s_a_n_d_ˈi__a"
     },
     "secadora de pelo": {
       "normalized": "secadora de pelo",
@@ -773,6 +889,10 @@
       "normalized": "toalla",
       "ipa": "t_o_ˈa_j_j_a"
     },
+    "tocino": {
+      "normalized": "tocino",
+      "ipa": "t_o_s_ˈi_n_o"
+    },
     "tortilla": {
       "normalized": "tortilla",
       "ipa": "t_o_ɾ_t_ˈi_j_j_a"
@@ -800,6 +920,10 @@
     "término": {
       "normalized": "término",
       "ipa": "t_ˈe_ɾ_m_i_n_o"
+    },
+    "uvas": {
+      "normalized": "uvas",
+      "ipa": "ˈu_β_a_s"
     },
     "vaca": {
       "normalized": "vaca",

@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-pear",
+  "slug": "pear",
+  "version": 1,
+  "path": "originals/pear-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "d180f84a0cebf4d5d3146e00a7d075e1626e9553e4be69b0b793c24ddbd46433",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "3f22f7ce26487563a70720407f1779c2fb447daddd30c72b79c5543d9d56cd06",
+  "bytes": 818808,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-0e10d059-343f-4ba5-af77-1781ff6fcadc.png"
+}

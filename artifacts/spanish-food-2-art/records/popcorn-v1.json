@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-popcorn",
+  "slug": "popcorn",
+  "version": 1,
+  "path": "originals/popcorn-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "06d534b629514c04d2f65349d7591a965fc7f35eda41ebf133359e50d4635491",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "19b7d519ff4ffaca5ca1ce4dd3abbbf835f48896fcdae6252f788ffd22cd27d4",
+  "bytes": 1128515,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-49214e8f-2b1b-4b28-9e54-c748cfbb7fb7.png"
+}

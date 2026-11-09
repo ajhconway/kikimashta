@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-ham",
+  "slug": "ham",
+  "version": 1,
+  "path": "originals/ham-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "86cb7a08807b4419be40cea24192ca85c6b3288929469c63ad265041d14eca79",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "f28fea7a16c16b1f1007c6c1053ff0ed5422f3409a99cd6dc67adcdea0667442",
+  "bytes": 1095820,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d4cfd71a-9a19-481a-9369-9128e14aca4e.png"
+}

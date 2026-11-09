@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-peach",
+  "slug": "peach",
+  "version": 1,
+  "path": "originals/peach-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "115cce608f532b74116507183d58e87aa81d327c1de229c5b6f2d2f31e0cf402",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "1bc48ef2cd37f39fd7233af68d8282c490bf9a1e7116680aee6a01ac4c720135",
+  "bytes": 1174731,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b08277cf-f691-494f-9489-843d4b260888.png"
+}

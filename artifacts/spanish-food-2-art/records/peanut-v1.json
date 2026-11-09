@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-peanut",
+  "slug": "peanut",
+  "version": 1,
+  "path": "originals/peanut-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "733e640de65605057d1f1c72ef3dec188e22f64c652dcd477db6b6db9c3869d8",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "8c5d54df61716be5423bdb91d2a80b883752a30924047a4e157ab1f91dd5d6d1",
+  "bytes": 1072216,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f736fda1-7085-4d48-8ef2-1c93e12f34bd.png"
+}
