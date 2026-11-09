@@ -3,7 +3,7 @@
   "id": "es-419-travel-3",
   "language": "es-419",
   "title": "Travel level 3",
-  "status": "draft-awaiting-word-review",
+  "status": "media-generation-authorized",
   "exercise": "audio-picture",
   "interfaceLanguage": "en",
   "packId": "es-419-travel-3-pictures",
@@ -716,8 +716,8 @@
     }
   ],
   "generation": {
-    "authorized": false,
-    "reason": "The proposed level 3 words and picture concepts await owner review. No level 3 generation is authorized by this draft.",
+    "authorized": true,
+    "reason": "Owner approved: I'm happy with the word choices, plaese generate the arkwork and audio.",
     "expectedWords": 36,
     "expectedVoices": 8,
     "expectedClips": 288,

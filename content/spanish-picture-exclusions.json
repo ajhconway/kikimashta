@@ -1,0 +1,90 @@
+{
+  "issue": 166,
+  "language": "es-419",
+  "pairs": [
+    {
+      "ids": [
+        "es-419-travel-cup",
+        "es-419-travel-coffee"
+      ],
+      "reason": "A coffee mug is also a cup."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-water"
+      ],
+      "reason": "The approved glass contains water."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-juice"
+      ],
+      "reason": "The juice picture uses a drinking glass."
+    },
+    {
+      "ids": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-milk"
+      ],
+      "reason": "The milk picture includes a handleless drinking glass beside its carton."
+    },
+    {
+      "ids": [
+        "es-419-travel-coin",
+        "es-419-travel-money"
+      ],
+      "reason": "A coin is also money."
+    },
+    {
+      "ids": [
+        "es-419-travel-shampoo",
+        "es-419-travel-bottle"
+      ],
+      "reason": "Shampoo is presented in a bottle."
+    },
+    {
+      "ids": [
+        "es-419-travel-receipt",
+        "es-419-travel-ticket"
+      ],
+      "reason": "Avoid ambiguous printed travel-paper distractors."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-bed"
+      ],
+      "reason": "The room contains a bed."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-table"
+      ],
+      "reason": "The room contains a table."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-chair"
+      ],
+      "reason": "The room contains a chair."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-window"
+      ],
+      "reason": "The room contains a window."
+    },
+    {
+      "ids": [
+        "es-419-travel-room",
+        "es-419-travel-suitcase"
+      ],
+      "reason": "The room contains a suitcase."
+    }
+  ]
+}

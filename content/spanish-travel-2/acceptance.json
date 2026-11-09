@@ -1,0 +1,17 @@
+{
+  "issue": 166,
+  "ownerMessage": "Ok, I approve all these, please auto-merge, then let's do the third level pack.",
+  "language": "es-419",
+  "pack": "es-419-travel-2",
+  "status": "accepted-for-activation",
+  "artworkManifest": "artifacts/spanish-travel-2-art/manifest.json",
+  "artworkManifestSha256": "677c57e9dcd13ffdecd0f3ed7652bde838fd06a1dbb55d540deec9cf6d9805ff",
+  "audioReviewManifest": "artifacts/spanish-travel-2-audio-review/manifest.json",
+  "audioReviewSha256": "b3ee667519a4b0c69665ea32aa2df069c9abe6eb856b60c0a8c266d628830ca8",
+  "recordings": 288,
+  "words": 36,
+  "voices": 8,
+  "images": 36,
+  "selectedStairsVersion": 5,
+  "realIPhoneTesting": "Owner will test deployed version."
+}

@@ -21,6 +21,7 @@ test('remembers learning language and independent pack choices across reloads', 
   const esPack = page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true });
   await expect(page.getByRole('checkbox', { name: /Writing/ })).toHaveCount(0);
   await esPack.uncheck();
+  await page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true }).uncheck();
   await expect(page.getByRole('checkbox', { name: /WaniKani/ })).toHaveCount(0);
   await expect(page.getByRole('group', { name: 'Practice voices', exact: true }).getByRole('checkbox')).toHaveCount(8);
   await page.getByRole('link', { name: '← Listening practice' }).click();
@@ -40,14 +41,15 @@ test('remembers learning language and independent pack choices across reloads', 
 });
 
 import spanish from '../content/es-419.json' with { type: 'json' };
+import spanishLevel2 from '../content/es-419-travel-2.json' with { type: 'json' };
 
-test('Spanish picture lessons play, save and stay isolated after reload', async ({ page }) => {
+for (const bank of [spanish, spanishLevel2]) test(`${bank.title} picture lessons play, save and stay isolated after reload`, async ({ page }) => {
   test.setTimeout(60_000);
   await page.goto('./');
-  await page.evaluate(() => {
+  await page.evaluate(id => {
     localStorage.setItem('kikimashta-learning-language-v1', 'es-419');
-    localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify(['es-419-travel-1-pictures']));
-  });
+    localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify([`${id}-pictures`]));
+  }, bank.id);
   await page.reload();
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: 'Begin lesson' }).click();
@@ -60,8 +62,10 @@ test('Spanish picture lessons play, save and stay isolated after reload', async 
     await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', String(i));
     await expect(page.getByRole('button', { name: /choose (picture|writing)/i }).first()).toBeEnabled();
     const source = await page.locator('audio').getAttribute('src');
-    const target = spanish.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+    const target = bank.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
     expect(target).toBeTruthy();
+    const shown = await page.getByRole('button', { name: /choose picture/i }).locator('img').evaluateAll(images => images.map(image => image.getAttribute('alt')));
+    expect(shown.every(alt => bank.items.some(item => item.image.alt === alt))).toBe(true);
     await page.getByRole('button', { name: /choose picture/i }).filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
   }
   await expect(page.getByRole('heading', { name: 'Nice round!' })).toBeVisible();
@@ -110,4 +114,25 @@ test('expanded Spanish pack retains old starter progress while retired words lea
   });
   expect(retained).toEqual(expect.arrayContaining(original));
   expect(retained).toHaveLength(6);
+});
+
+
+test('level 2 library membership and pack selection stay independent of level 1', async ({ page }) => {
+  await page.goto('vocabulary/?language=es-419&pack=es-419-travel-2-pictures');
+  await expect(page.locator('#results-status')).toContainText('36 cards');
+  await expect(page.locator('.card h2')).toHaveText(spanishLevel2.items.slice(0, 24).map(item => item.text));
+  await page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true }).uncheck();
+  await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
+  await page.getByLabel('Search words').fill('stairs');
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText('escaleras');
+  const stairs = spanishLevel2.items.find(item => item.id.endsWith('-stairs'))!;
+  await expect(page.locator('.card-image')).toHaveAttribute('src', '../' + stairs.image.src);
+  await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await page.getByRole('button', { name: 'Juan: Stairs', exact: true }).click();
+  await expect(page.locator('#audio-status')).toContainText('escaleras');
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).not.toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true })).toBeChecked();
+  await page.getByLabel('Card pack').selectOption('all');
+  await expect(page.locator('#results-status')).toContainText('72 cards');
 });

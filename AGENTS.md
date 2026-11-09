@@ -20,6 +20,8 @@ Read `PLAN.md` before starting. Keep the product and plan simple, flexible, and 
 
 Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues and linked pull requests as the durable work record. Repository setup can use task briefs in the active conversation until GitHub is ready. Issues do not launch background agents automatically.
 
+- After the final PR commit (including updates from main), promptly request a Codex review of that head when the existing review is stale. Start review alongside CI instead of waiting for CI to finish. The status-refresh workflow does not launch a review. Avoid duplicate requests while that head is already being reviewed.
+
 ## Engineering and tests
 
 - Keep the interface, learning rules, content, and storage separate. Use stable item and attempt IDs, and keep progress specific to its language and item.

@@ -1,0 +1,12 @@
+{
+  "id": "es-419-travel-stairs",
+  "slug": "stairs",
+  "version": 4,
+  "issue": 166,
+  "prompt": "Use case: precise-object-edit\nAsset type: square vocabulary illustration of stairs\nInput image: EDIT TARGET. Keep the deep-violet contours, golden-yellow steps, lavender risers, polished smooth cartoon shading, four-step subject and genuine transparent background.\nPrimary request: One short stairway with a visible sequence of steps and handrail.\nChange the camera/composition to a STRICTLY HEAD-ON ORTHOGRAPHIC FRONT VIEW of a straight staircase. Four evenly spaced golden tread strips and lavender risers. ALL FOUR steps must extend from the EXACT SAME LEFT X COORDINATE to the EXACT SAME RIGHT X COORDINATE. Their front edges must be HORIZONTAL, EXACTLY EQUAL LENGTH, and directly aligned above one another. The top step is just as wide as the bottom step. No lateral staggering. Use a simple straight vertical-sided rectangular silhouette for the entire flight. Show the narrow upper surface of each tread from a slightly elevated frontal viewpoint so this reads as stairs rather than a cupboard. Keep one simple handrail on the right side. The stair flight itself is symmetrical in width and completely uniform. Isolate the complete subject centered in a square with generous margins.\nDo not copy the tapered or diagonal staircase silhouette from the input. No perspective foreshortening, no isometric diagonal offset, no narrowing, no flared base, no trapezoidal steps. Avoid words, numbers, extra objects, checkerboard, white backdrop, shadow or surrounding scene. Transparent background; opaque subject. Readable at145px.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-2-art/originals/stairs-v1.png",
+  "referenceSha256": "44202b3c04984ae55ade00b3d22093f220ac3e853666d7a2a556883e35a589a4",
+  "ownerFeedback": "The stairs are oddly wide at the bottom and narrow at the top."
+}

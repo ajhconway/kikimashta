@@ -1,0 +1,11 @@
+{
+  "slug": "bridge",
+  "id": "es-419-travel-bridge",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2287f32e-4979-4bf4-877c-0822c1783f91.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2287f32e-4979-4bf4-877c-0822c1783f91.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "path": "originals/bridge-v1.png",
+  "sha256": "da15872f80464d3d8cfad05a03e0503240f0831c29a62bfd6f0215cbbf225c12",
+  "promptSha256": "c96489ccee8a7b5d332e4632612a507d5b51e32093da38d9dbf8d6f7b8a9ba7f",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "tool": "built-in image_gen"
+}
