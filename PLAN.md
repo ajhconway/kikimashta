@@ -2,7 +2,18 @@
 
 A personal listening game, starting with Japanese and leaving room for other languages. Keep it relaxed, untimed, and simple enough to improve through use.
 
-## Current state — November 8, 2026
+## Current state — November 9, 2026
+
+Reconciled in [#217](https://github.com/ajhconway/kikimashta/issues/217) against main `003a568becc0a7b00e224b5d695eae69f8a90a2b`. Use this summary and the current GitHub issue records for new work; the November 8 snapshot below preserves earlier review evidence.
+
+- Japanese word practice has 178 eligible vocabulary items and 344 exercise cards: 166 picture cards and 178 writing cards. The twelve writing-only additions come from the approved WaniKani level 1 practice policy in #197/#201.
+- Ordinary Japanese contextual practice has 144 contexts / 288 questions for 36 targets. Current approval, progression and historical-pilot compatibility are documented in [the contextual pack guide](content/contextual/pack-1/README.md).
+- Spanish has five picture packs (Basic Spanish and Travel levels 1–4), totaling 159 picture words plus nine Basic Spanish foundation contexts. See [the language guide](docs/LANGUAGES.md) for accepted media and release records.
+- Batches 01–10 provide 168 active approved illustrations. Batch 11 is already generated and awaits integration through [PR #110](https://github.com/ajhconway/kikimashta/pull/110); do not restart its generation. The separate twenty-card visual-reference preparation is in [PR #215](https://github.com/ajhconway/kikimashta/pull/215), awaiting owner acceptance under #213. Full regeneration remains open in #72.
+- Required CI includes the artwork tests and metadata validator (#127/#116). Fourteen reviewed picture exclusions and three sense overrides shipped in #204; generic counting/equal-quantity policy remains open in #79.
+- Real-iPhone, live-account and timer-evaluation acceptance remains explicit in #6, #119, #143 and #122. Implementation, media approval, publication and device acceptance are separate records. Follow [the issue-resolution rules](AGENTS.md#issue-resolution).
+
+## Historical snapshot — November 8, 2026
 
 Adaptive practice and optional account sync are deployed at [kikimashta.com](https://kikimashta.com). This plan was reconciled against revision `38f6619e63707df8db411a2697f21e726ea16c7e` during [review #113](https://github.com/ajhconway/kikimashta/issues/113); findings and verification are in [docs/REVIEW.md](docs/REVIEW.md).
 
