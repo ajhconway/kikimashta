@@ -1,17 +1,30 @@
-.pack-badges { margin: 26px auto 12px; width: min(100%, 580px); }
-.pack-badges h2 { margin: 0; color: var(--purple-dark); font-size: 24px; }
-.pack-badges > p { margin: 5px 0 16px; font-size: 14px; }
-.pack-badges ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(145px, 100%), 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
-.pack-badge { --badge-fill: #ffe29a; --badge-ribbon: #ffb6cf; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 10px 16px; color: var(--purple-dark); border: 2px solid rgb(87 46 135 / .18); border-radius: 22px; background: rgb(255 255 255 / .55); }
-.pack-badge-medal { width: 70px; height: 81px; overflow: visible; stroke: var(--purple-dark); stroke-width: 3; stroke-linejoin: round; }
+.home-kiku-stage { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
+.home-kiku-stage.has-pack-badges { display: grid; place-items: center; padding-inline: 62px; min-height: calc(clamp(330px, 46svh, 380px) + 56px); }
+.home-kiku-stage .home-intensity { width: 100%; }
+.home-kiku-stage.has-pack-badges .pace-kiku { width: clamp(160px, 24svh, 220px); height: auto; aspect-ratio: 1; }
+.pack-badges { position: absolute; inset: 0 0 56px; pointer-events: none; }
+.pack-badges ul { position: relative; width: 100%; height: 100%; list-style: none; margin: 0; padding: 0; }
+.pack-badge { --badge-fill: #ffe29a; --badge-ribbon: #ffb6cf; position: absolute; width: 44px; height: 50px; transform: translate(-50%, -50%); animation: badge-float var(--badge-duration) ease-in-out var(--badge-delay) infinite; pointer-events: auto; color: var(--purple-dark); border-radius: 12px; outline-offset: 3px; }
+.pack-badge-medal { display: block; width: 100%; height: 100%; overflow: visible; stroke: var(--purple-dark); stroke-width: 3; stroke-linejoin: round; }
 .badge-ribbons { fill: var(--badge-ribbon); }
 .badge-disc { fill: var(--badge-fill); }
 .badge-ring { fill: none; stroke-width: 1.5; opacity: .45; }
-.badge-star { fill: #fff8e4; }
-.pack-badge strong { font-size: 19px; }
-.pack-badge > span { font-size: 13px; line-height: 1.4; text-align: center; overflow-wrap: anywhere; }
+.badge-number { fill: var(--purple-dark); stroke: none; font-size: 28px; font-weight: 900; }
+.badge-format { fill: #fff8e4; stroke-width: 2.5; }
+.pack-badge::after { content: attr(aria-label); display: none; position: absolute; z-index: 3; top: calc(100% + 6px); left: 0; width: max-content; max-width: min(210px, 60vw); padding: 9px 12px; border: 2px solid var(--purple-dark); border-radius: 12px; color: var(--purple-dark); background: #fff8ed; font-size: 13px; line-height: 1.4; text-align: left; box-shadow: 0 3px 0 rgb(67 31 116 / .12); }
+.pack-badge.badge-right::after { left: auto; right: 0; }
+.pack-badge.badge-center::after { left: 50%; right: auto; transform: translateX(-50%); }
+.pack-badge:hover::after, .pack-badge:focus::after { display: block; }
 .badge-familiar { --badge-fill: #ffc5df; --badge-ribbon: #ffd680; }
 .badge-steady { --badge-fill: #dbc6ff; --badge-ribbon: #ffb6cf; }
 .badge-strong { --badge-fill: #ffbc86; --badge-ribbon: #ccb0ff; }
 .badge-confident { --badge-fill: #bce2da; --badge-ribbon: #ffcf79; }
-.badge-mastered { --badge-fill: #ffcf59; --badge-ribbon: #c9a3ff; border-color: #b58ad9; }
+.badge-mastered { --badge-fill: #ffcf59; --badge-ribbon: #c9a3ff; }
+
+@keyframes badge-float {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
+  45% { transform: translate(calc(-50% + 2px), calc(-50% - 4px)) rotate(2deg); }
+  75% { transform: translate(calc(-50% - 2px), calc(-50% + 2px)) rotate(0deg); }
+}
+.pack-badge:focus { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .pack-badge { animation: none; } }

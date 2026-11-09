@@ -543,7 +543,10 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     <main>
       {screen === 'home' && <section className="home fade-in">
         <h1>kikimashta</h1>
-        <HomeIntensity value={density}/>
+        <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
+          <HomeIntensity value={density}/>
+          {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
+        </div>
         <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
@@ -552,7 +555,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
-        {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges}/>}
         {accountControls}
       </section>}
       {screen === 'contextual-demo-ready' && <section className="summary ready fade-in">
