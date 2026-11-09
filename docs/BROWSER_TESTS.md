@@ -42,18 +42,21 @@ Reports are named by their actual engine/shard, and all shards remain required.
 
 ## Measurement
 
-After integrating main `3e813cc`, the suite has 50 scenarios / 100 browser
-executions, down from that main revision's 61 / 122 (eleven fewer scenarios,
-about 18%). This includes the contextual-pack-1 and pack-badge journeys added
-since the original review.
+After integrating main `cae8416`, discovery reports 52 scenarios / 104 browser
+executions, down from that main revision's 63 / 126 (eleven fewer scenarios,
+about 17%). This includes the contextual-pack-1, pack-badge and adaptive
+distractor journeys added since the original review. Each engine/shard has
+26 executions; both shards of both engines remain required.
 
-All 100 executions passed locally on `32f1d01` in 173.51 seconds with two workers,
+The preceding integration with main `3e813cc` had 50 scenarios / 100 executions.
+Those 100 executions passed locally on `32f1d01` in 173.51 seconds with two workers,
 no skips and no retries. Its [hosted run](https://github.com/ajhconway/kikimashta/actions/runs/42570109238)
 also passed all 100 executions: 25 per engine/shard. The paired runners spent
 approximately 119 and 137 seconds from their first engine command through the
 final engine result, including the intervening report upload.
 
-The original `dadc123` to `434affa` comparison (55 to 44 scenarios) predates
-these new journeys. Its counts and speedup do not describe this integrated
-suite. Local timings exclude build/install; hosted browser-phase timings exclude
+The recorded timings above and the original `dadc123` to `434affa` comparison
+(55 to 44 scenarios) predate the adaptive distractor integration. They do not
+describe the current 104-execution suite's timing. New verification results are
+recorded in PR #203. Local timings exclude build/install; hosted browser-phase timings exclude
 checkout, installation, build and runner startup.
