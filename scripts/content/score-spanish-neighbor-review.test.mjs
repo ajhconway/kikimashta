@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { scoreSpanishResponses } from './score-spanish-neighbor-review.mjs';
 
 test('Spanish scoring separates method/voice/reveal groups and preserves missing judgments', () => {
@@ -34,4 +35,28 @@ test('Spanish scoring separates method/voice/reveal groups and preserves missing
   responses[report.semanticTrials.length].revealed = true;
   assert.equal(scoreSpanishResponses(pending, report, key).pronunciationRevealed.tie, 1);
   assert.throws(() => scoreSpanishResponses({ ...pending, inputDigest: 'stale' }, report, key), /do not match/);
+});
+
+
+test('collected partial owner export retains exact revision, exposure and nine missing judgments', () => {
+  const folder = new URL('../../artifacts/spanish-neighbors-222/', import.meta.url);
+  const collected = new URL('collected/', folder);
+  const read = name => JSON.parse(readFileSync(new URL(name, collected), 'utf8'));
+  const provenance = read('provenance.json');
+  const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex');
+  for (const [name, sha] of Object.entries(provenance.files)) assert.equal(hash(new URL(name, collected)), sha, name);
+  for (const [name, sha] of Object.entries(provenance.frozenReviewFiles)) assert.equal(hash(new URL(name, folder)), sha, name);
+  const report = read('review-data.json'), key = read('blind-key.json');
+  assert.equal(report.inputDigest, provenance.inputDigest);
+  const scored = scoreSpanishResponses(read('owner-responses.json'), report, key);
+  assert.deepEqual(scored, read('scored-responses.json'));
+  assert.deepEqual(scored.semantic, { e5: 3, fasttext: 6, neither: 1, tie: 2, unanswered: 0, uncertain: 0 });
+  assert.deepEqual(scored.pronunciation, { letters: 7, neither: 0, phones: 7, tie: 5, unanswered: 9, uncertain: 0 });
+  const answered = scored.rows.filter(row => row.kind === 'pronunciation' && row.preference !== null);
+  assert.equal(answered.length, 19);
+  assert.ok(answered.every(row => row.semanticExposure && row.priorWordExposure && !row.revealed));
+  const byTrial = new Map(report.pronunciationTrials.map(trial => [trial.id, trial]));
+  assert.equal(new Set(answered.map(row => byTrial.get(row.trialId).target.id)).size, 7);
+  assert.equal(scored.pronunciationUnexposed.unanswered, 9);
+  assert.equal((scored.pronunciationUnexposed.letters ?? 0) + (scored.pronunciationUnexposed.phones ?? 0) + scored.pronunciationUnexposed.tie, 0);
 });
