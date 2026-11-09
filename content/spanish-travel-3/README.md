@@ -1,6 +1,6 @@
 # Spanish travel level 3 · media review (#174)
 
-36 additional concrete travel words, picture-only practice, English interface and the existing eight regional voices. The owner approved the complete word list and requested media generation. All 36 pictures (32 new transparent PNGs and four unchanged approved reuses) and all 288 recordings are generated and ready for media acceptance. Level 3 is not active.
+36 additional concrete travel words, picture-only practice, English interface and the existing eight regional voices. The owner approved the complete word list and requested media generation. All 36 pictures (31 new transparent PNGs and five unchanged approved reuses) and all 288 recordings are generated and ready for media acceptance. Level 3 is not active.
 
 [Combined pictures and voices](../../artifacts/spanish-travel-3-art/review.html) · [All pictures at card size](../../artifacts/spanish-travel-3-art/artwork.html) · [Word and picture concepts](review.html) · [Structured draft](draft.json)
 
@@ -31,7 +31,7 @@
 | Spanish | English | Artwork |
 | --- | --- | --- |
 | manzana | Apple | Reused approved picture |
-| plátano | Banana | Generated · awaiting review |
+| plátano | Banana | Reused approved picture |
 | naranja | Orange (fruit) | Generated · awaiting review |
 | aguacate | Avocado | Generated · awaiting review |
 | taco | Taco | Generated · awaiting review |
@@ -72,9 +72,11 @@
 
 ## Artwork reuse audit
 
-Four approved pictures were visually inspected, hash-checked and reused unchanged: **apple, mountain, river and forest**. Their exact source paths, hashes and activation evidence are recorded on the items in `draft.json`. The apple, mountain and river are unchanged opaque JPGs; the forest is an unchanged transparent PNG. The other 32 subjects now have new transparent PNG illustrations, produced with the built-in image tool. Exact prompts, style-reference hashes, original bytes and generation records are preserved under `artifacts/spanish-travel-3-art/`.
+Five approved pictures were visually inspected, hash-checked and reused unchanged: **apple, banana, mountain, river and forest**. Their exact source paths, hashes and activation evidence are recorded on the items in `draft.json`. The apple, banana, mountain and river are unchanged opaque JPGs; the forest is an unchanged transparent PNG. The other 31 subjects now have new transparent PNG illustrations, produced with the built-in image tool. Exact prompts, style-reference hashes, original bytes and generation records are preserved under `artifacts/spanish-travel-3-art/`.
 
-The existing winter bench picture includes a snowy tree and ground scene. The banana appears in a basket with many apples. Existing blanket/pillow imagery includes a bed and Kiku. These are recorded as rejected direct reuses, with inspected paths/hashes. A matching incidental object does not make a scene suitable for an isolated noun card. The current contextual answer image is tea and supplies no matching subject.
+The existing winter bench picture includes a snowy tree and ground scene. The initial audit inspected a banana in a basket with apples but overlooked the approved standalone banana. The owner identified this omission; the standalone banana is now reused unchanged. Existing blanket/pillow imagery includes a bed and Kiku. These are recorded as rejected direct reuses, with inspected paths/hashes. A matching incidental object does not make a scene suitable for an isolated noun card. The current contextual answer image is tea and supplies no matching subject.
+
+The owner requested clearer toilet-paper, blanket and crossing geometry. The selected revisions show a straight paper tail, a broad bed blanket and a crossing between opposite sidewalks. All first versions, four additional generated variants and exact edit prompts are preserved in the [revision history](../../artifacts/spanish-travel-3-art/revisions/history.json). Picture acceptance remains pending.
 
 ## Wording choices
 

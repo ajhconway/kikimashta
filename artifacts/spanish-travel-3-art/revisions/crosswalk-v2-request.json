@@ -1,0 +1,23 @@
+{
+  "issue": 174,
+  "id": "es-419-travel-crosswalk",
+  "slug": "crosswalk",
+  "version": 2,
+  "prompt": "Use case: precise-object-edit\nAsset type: one square Spanish vocabulary card\nInput image 1: EDIT TARGET and style reference.\nPrimary request: One single zebra crossing connecting opposite sidewalks across a straight road, seen from above; parallel white stripes run along the road direction and are arranged side by side across its width. No vehicles, words or traffic lights.\nOwner correction: Use image 2 as the STRICT TOP-DOWN GEOMETRY reference: a straight road runs vertically from the top of the image to the bottom, with one continuous sidewalk on the LEFT and another on the RIGHT. Place ONE compact horizontal crossing band across the road from the left curb to the right curb. Within this single band, SIX SHORT WHITE RECTANGULAR STRIPES run VERTICALLY (parallel to traffic), arranged SIDE BY SIDE horizontally across the road width. Pedestrians cross horizontally from one sidewalk to the other. Small centerline dashes ABOVE and BELOW the crossing clarify that vehicles travel vertically. Preserve this exact orientation from image 2. Do not repeat horizontal bars down the length of the road; do not place a walking path longitudinally along the road. Render the guide's correct geometry in image1's polished golden/lavender/violet cartoon style, with subtle dimensional shading. Top-down viewpoint; no horizon, sky, bushes, cars, people, labels, arrows, letters or frame. Transparent outer margin. Keep all white stripe interiors opaque.\nConstraints: one complete standalone vocabulary illustration. Bold deep-violet contours, smooth rounded forms, restrained soft shading, true transparent background. No text, logo, watermark, surrounding scene or cast shadow. Keep readable at145px. The corrected geometry takes precedence over the old image.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-3-art/originals/crosswalk-v1.png",
+  "referenceSha256": "d5ff8f26fab33b52f1c2a1ca6cd918208e061e36c69825a80d1ff6d058132314",
+  "ownerFeedback": "The zebra crossing isn't across the road.",
+  "referenceOrder": [
+    "artifacts/spanish-travel-3-art/originals/crosswalk-v1.png",
+    "artifacts/spanish-travel-3-art/revisions/crosswalk-geometry-reference.png"
+  ],
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-travel-3-art/revisions/crosswalk-geometry-reference.png",
+      "role": "strict-geometry",
+      "sha256": "dfc85224e38b2585fa2dfe5a98f06f5ca0dda68ac30a482f657ed5372151e47e"
+    }
+  ]
+}

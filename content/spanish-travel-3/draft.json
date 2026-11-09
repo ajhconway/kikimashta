@@ -492,7 +492,7 @@
       "artwork": {
         "status": "needs-generation",
         "concept": "One toilet-paper roll with visible cardboard core and a rectangular paper tail hanging vertically, aligned to the roll width, with straight transverse perforation and bottom edges; no diagonal tear.",
-        "selectedVersion": 2,
+        "selectedVersion": 3,
         "feedback": "The paper is tearing at a weird angle."
       }
     },
@@ -671,9 +671,9 @@
       "Spanish level 1 selected artwork and level 2 selected 36-picture manifest",
       "Current contextual answer artwork (tea only; no matching subject)"
     ],
-    "candidateCount": 4,
-    "newArtworkCount": 32,
-    "candidates": "The four candidates carry inspected source paths and hashes on their item records.",
+    "candidateCount": 5,
+    "newArtworkCount": 31,
+    "candidates": "Five visually inspected approved reuses carry source paths and hashes on their item records. The initial audit missed the standalone banana; corrected after owner feedback.",
     "rejectedCandidates": [
       {
         "sourceId": "ja-v-7c4d1abbdd61",
@@ -742,12 +742,13 @@
     "expectedNewArtwork": 32,
     "expectedApprovedReuse": 4,
     "completed": {
-      "newArtwork": 32,
-      "approvedReuse": 4,
+      "newArtwork": 31,
+      "approvedReuse": 5,
       "audioClips": 288,
       "artworkManifest": "artifacts/spanish-travel-3-art/manifest.json",
       "audioManifest": "artifacts/spanish-travel-3-audio-review/manifest.json",
-      "review": "artifacts/spanish-travel-3-art/review.html"
+      "review": "artifacts/spanish-travel-3-art/review.html",
+      "revisionHistory": "artifacts/spanish-travel-3-art/revisions/history.json"
     }
   },
   "activationPlan": [

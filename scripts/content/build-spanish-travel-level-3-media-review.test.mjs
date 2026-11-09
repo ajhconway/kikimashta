@@ -34,8 +34,11 @@ async function fixture(t) {
     if (item.artwork.status === 'reuse-candidate') {
       const source = item.artwork.candidatePath.endsWith('.png') ? picture : reused
       item.artwork.candidateSha256 = hash(source); await save(item.artwork.candidatePath, source)
-    } else {
+    }
+    if (item.artwork.status === 'needs-generation' || item.artwork.supersededGeneratedImage) {
+      if (item.artwork.supersededGeneratedImage) item.artwork.supersededGeneratedImage.sha256 = hash(picture)
       const q = requests.requests.find(q => q.id === item.id); q.referenceSha256 = hash(reference)
+      q.prompt = 'Primary request: ' + item.artwork.concept
       await save(q.referencePath, reference)
       await save(art + 'originals/' + item.slug + '-v1.png', picture)
       await save(art + 'records/' + item.slug + '-v1.json', { id: item.id, slug: item.slug, path: 'originals/' + item.slug + '-v1.png', sha256: hash(picture), promptSha256: hash(q.prompt), referenceSha256: q.referenceSha256 })
@@ -56,12 +59,17 @@ test('combined review includes every picture and recording with relative media l
   const { root } = await fixture(t)
   const result = await buildLevel3MediaReview(root)
   assert.equal(result.images.length, 36)
-  assert.equal(result.images.filter(i => i.source === 'generated').length, 32)
+  assert.equal(result.images.filter(i => i.source === 'generated').length, 31)
   const html = await readFile(join(root, 'artifacts/spanish-travel-3-art/review.html'), 'utf8')
   assert.equal((html.match(/<figure>/g) || []).length, 36)
   assert.equal((html.match(/<audio /g) || []).length, 288)
   assert.match(html, /\.\.\/spanish-travel-3-audio-review\/audio\/juan\/es-419-travel-sidewalk.mp3/)
   assert.match(html, /href="artwork.html"/)
+  assert.equal(result.generatedImages, 31)
+  assert.equal(result.reusedImages, 5)
+  const banana = result.images.find(image => image.slug === 'banana')
+  assert.equal(banana.file, 'reused/banana.jpg')
+  assert.deepEqual(await readFile(join(root, 'artifacts/spanish-travel-3-art/' + banana.file)), await readFile(join(root, banana.sourcePath)))
   const forest = result.images.find(image => image.slug === 'forest')
   assert.equal(forest.file, 'reused/forest.png')
   assert.deepEqual(await readFile(join(root, 'artifacts/spanish-travel-3-art/' + forest.file)), await readFile(join(root, forest.sourcePath)))
@@ -110,7 +118,7 @@ test('a selected revision replaces only its picture and keeps the first original
   await save(art + 'originals/sidewalk-v2.png', original)
   const result = await buildLevel3MediaReview(root)
   assert.equal(result.images.find(i => i.slug === 'sidewalk').file, 'originals/sidewalk-v2.png')
-  assert.equal(result.images.filter(i => i.file.endsWith('-v1.png')).length, 31)
+  assert.equal(result.images.filter(i => i.file.endsWith('-v1.png')).length, 30)
   assert.deepEqual(await readFile(join(root, art + 'originals/sidewalk-v1.png')), original)
   const html = await readFile(join(root, art + 'review.html'), 'utf8')
   assert.match(html, /src="originals\/sidewalk-v2.png"/)
@@ -120,4 +128,37 @@ test('a selected revision replaces only its picture and keeps the first original
   await save(art + 'records/sidewalk-v2.json', record)
   await save(q.additionalReferences[0].path, 'changed reference')
   await assert.rejects(buildLevel3MediaReview(root), /Geometry reference hash mismatch/)
+})
+
+
+test('switching to an approved reuse retains the superseded generated original and prompt', async t => {
+  const { root, save } = await fixture(t)
+  const art = 'artifacts/spanish-travel-3-art/'
+  const original = await readFile(join(root, art + 'originals/banana-v1.png'))
+  await buildLevel3MediaReview(root)
+  assert.deepEqual(await readFile(join(root, art + 'originals/banana-v1.png')), original)
+  await save(art + 'originals/banana-v1.png', 'changed superseded image')
+  await assert.rejects(buildLevel3MediaReview(root), /Superseded original provenance changed/)
+})
+
+test('an edit binds its previous version and rejects a changed reference', async t => {
+  const { root, save, bank } = await fixture(t)
+  const revised = bank.items.find(item => item.slug === 'sidewalk')
+  const art = 'artifacts/spanish-travel-3-art/'
+  const original = await readFile(join(root, art + 'originals/sidewalk-v1.png'))
+  const q = { id: revised.id, slug: revised.slug, version: 2, ownerFeedback: 'Clarify the curb.',
+    transparent_background: true, referenceRole: 'edit-target', referencePath: art + 'originals/sidewalk-v1.png',
+    referenceSha256: hash(original), prompt: 'Primary request: ' + revised.artwork.concept }
+  const record = { id: revised.id, slug: revised.slug, version: 2, path: 'originals/sidewalk-v2.png', sha256: hash(original), promptSha256: hash(q.prompt), referenceSha256: q.referenceSha256 }
+  revised.artwork.selectedVersion = 2
+  await save('content/spanish-travel-3/draft.json', bank)
+  await save(art + 'revisions/sidewalk-v2-request.json', q)
+  await save(art + 'records/sidewalk-v2.json', record)
+  await save(art + 'originals/sidewalk-v2.png', original)
+  assert.equal((await buildLevel3MediaReview(root)).images.find(i => i.slug === 'sidewalk').version, 2)
+  await save(q.referencePath, 'changed edit target')
+  await assert.rejects(buildLevel3MediaReview(root), /Image reference hash mismatch/)
+  q.referencePath = art + 'originals/blanket-v1.png'
+  await save(art + 'revisions/sidewalk-v2-request.json', q)
+  await assert.rejects(buildLevel3MediaReview(root), /Image request identity changed/)
 })

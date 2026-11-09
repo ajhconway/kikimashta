@@ -1,0 +1,22 @@
+{
+  "issue": 174,
+  "ownerMessage": "LTGM, ship it",
+  "language": "es-419",
+  "pack": "es-419-travel-3",
+  "status": "accepted-for-activation",
+  "artworkManifest": "artifacts/spanish-travel-3-art/manifest.json",
+  "audioReviewManifest": "artifacts/spanish-travel-3-audio-review/manifest.json",
+  "recordings": 288,
+  "words": 36,
+  "voices": 8,
+  "images": 36,
+  "selectedRevisions": {
+    "crosswalk": 2,
+    "blanket": 2,
+    "toilet-paper": 3
+  },
+  "approvedBananaSource": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+  "realIPhoneTesting": "Owner will test deployed version.",
+  "artworkManifestSha256": "4f74dc9313400761c498584cdc0e54dcb71d1b646b48443bfa22f54809484cc4",
+  "audioReviewSha256": "14d3003c181a097ebe55ab43118eb705a61786d2b1f7982696a90e7db835fe57"
+}

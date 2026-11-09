@@ -1,0 +1,15 @@
+{
+  "issue": 174,
+  "id": "es-419-travel-blanket",
+  "slug": "blanket",
+  "version": 2,
+  "prompt": "Use case: precise-object-edit\nAsset type: one square Spanish vocabulary card\nInput image 1: EDIT TARGET and style reference.\nPrimary request: One full-size thick rectangular bed blanket spread open with broad proportions, a broad sewn hem and one gently folded corner; no fringe, tassels, bed, pillow, scarf or person.\nOwner correction: Replace the long folded fringed fabric with ONE BROAD BED-SIZE BLANKET SPREAD OPEN. Almost square, approximately 1.1 times as wide as tall, with a broad stitched binding all the way around. One small corner gently folds back to reveal a soft modest thickness. A simple large-scale golden-yellow and lavender plaid with about four broad blocks across its width is allowed. The main visual cue is a large broad rectangular bedding blanket. No fringe, NO TASSELS, no narrow strip, no scarf silhouette, no rolled textile, no bed or person. Preserve the warm golden and violet palette, soft cartoon shading and bold violet outline. Fully visible, centered, about 75% of square canvas with generous transparent margin.\nConstraints: one complete standalone vocabulary illustration. Bold deep-violet contours, smooth rounded forms, restrained soft shading, true transparent background. No text, logo, watermark, surrounding scene or cast shadow. Keep readable at145px. The corrected geometry takes precedence over the old image.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-3-art/originals/blanket-v1.png",
+  "referenceSha256": "74a64e66f470fb563d8667b5154cb3ac9e57fd941418028603a970f3dd882fd8",
+  "ownerFeedback": "The blanket looks like a scarf.",
+  "referenceOrder": [
+    "artifacts/spanish-travel-3-art/originals/blanket-v1.png"
+  ]
+}

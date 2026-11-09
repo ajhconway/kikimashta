@@ -1,0 +1,13 @@
+{
+  "id": "es-419-travel-blanket",
+  "slug": "blanket",
+  "version": 2,
+  "path": "originals/blanket-v2.png",
+  "sha256": "351a571a3e5c2da6d87810504740c2bc0a8ab7517fc19236691ac35b4ff6dce3",
+  "promptSha256": "8b1e31a5a7300fb73143ba0998eeb32a47d2bebe81ccc8d58584691da887874a",
+  "referenceSha256": "74a64e66f470fb563d8667b5154cb3ac9e57fd941418028603a970f3dd882fd8",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2eec7344-430f-4bee-b566-09c819fe7360.png",
+  "supersedes": "originals/blanket-v1.png"
+}

@@ -1,12 +1,12 @@
 {
   "issue": 174,
   "scope": "Media preparation only. No active application or older-pack changes.",
-  "ownerMediaAcceptance": "pending",
+  "ownerMediaAcceptance": "Accepted: LTGM, ship it",
   "fullCheck": {
     "command": "npm run check",
     "exitCode": 0,
     "vitest": 441,
-    "nodeTests": 245,
+    "nodeTests": 247,
     "pythonAudio": 12,
     "pythonCards": 22,
     "lint": "passed",
@@ -15,15 +15,17 @@
     "productionBuild": "passed"
   },
   "pictures": {
-    "generated": 32,
-    "approvedReuse": 4,
+    "generated": 31,
+    "approvedReuse": 5,
     "total": 36,
     "checks": [
       "All image hashes and byte counts match their originals",
       "Every new PNG fully decoded with CRC and transparency checks",
       "Exact prompts and style-reference hashes bound in per-image records",
-      "Three reused JPGs and one reused PNG preserved unchanged"
-    ]
+      "Four reused JPGs and one reused PNG preserved unchanged",
+      "Only four selected picture hashes changed after owner feedback; all prior originals and 288 recordings are unchanged."
+    ],
+    "revisionHistory": "artifacts/spanish-travel-3-art/revisions/history.json"
   },
   "recordings": {
     "total": 288,
@@ -72,6 +74,7 @@
       "voice": true,
       "sequenceAdvance": true,
       "stop": true,
+      "revisedImageSelection": true,
       "overflow": false,
       "errors": []
     },
@@ -84,12 +87,12 @@
       "voice": true,
       "sequenceAdvance": true,
       "stop": true,
+      "revisedImageSelection": true,
       "overflow": false,
       "errors": []
     }
   ],
   "limitations": [
-    "Real iPhone tests remain deferred to deployed version.",
-    "Owner picture and pronunciation acceptance is pending."
+    "Real iPhone tests remain deferred to deployed version."
   ]
 }

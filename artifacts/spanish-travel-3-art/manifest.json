@@ -3,8 +3,8 @@
   "pack": "es-419-travel-3",
   "status": "generated-awaiting-owner-media-review",
   "tool": "built-in image_gen",
-  "generatedImages": 32,
-  "reusedImages": 4,
+  "generatedImages": 31,
+  "reusedImages": 5,
   "expectedClips": 288,
   "audioManifest": "../spanish-travel-3-audio-review/manifest.json",
   "audioManifestSha256": "14d3003c181a097ebe55ab43118eb705a61786d2b1f7982696a90e7db835fe57",
@@ -39,20 +39,26 @@
       "meaning": "Pedestrian crossing",
       "group": "town",
       "source": "generated",
-      "file": "originals/crosswalk-v1.png",
-      "sha256": "d5ff8f26fab33b52f1c2a1ca6cd918208e061e36c69825a80d1ff6d058132314",
-      "bytes": 1143692,
+      "file": "originals/crosswalk-v2.png",
+      "sha256": "9ac15adb8b5d322e0c1653d6e2fce2d7b273ff23da14ecea8c93b1b60d74ffb4",
+      "bytes": 1280250,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 719317,
-        "opaquePixels": 839445,
-        "opaqueWhitePixels": 219949
+        "transparentPixels": 472161,
+        "opaquePixels": 1087026,
+        "opaqueWhitePixels": 149690
       },
-      "promptSha256": "c293d4e6a64d932a2c96d7df3c0b0cd5f6be9e23037ed974f44574327d2b2da1",
-      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
-      "additionalReferences": [],
-      "version": 1,
+      "promptSha256": "d307c75cc29901f31ea383ced877d5392cb7e500042c97cb1a11b136e1e33c26",
+      "referenceSha256": "d5ff8f26fab33b52f1c2a1ca6cd918208e061e36c69825a80d1ff6d058132314",
+      "additionalReferences": [
+        {
+          "path": "artifacts/spanish-travel-3-art/revisions/crosswalk-geometry-reference.png",
+          "role": "strict-geometry",
+          "sha256": "dfc85224e38b2585fa2dfe5a98f06f5ca0dda68ac30a482f657ed5372151e47e"
+        }
+      ],
+      "version": 2,
       "reviewStatus": "awaiting-owner-review"
     },
     {
@@ -307,21 +313,14 @@
       "text": "plátano",
       "meaning": "Banana",
       "group": "food",
-      "source": "generated",
-      "file": "originals/banana-v1.png",
-      "sha256": "5ad4adfabd5cbddbaf0998b6f816d8aeaca43d21a9a37d8968f05b31db918d6f",
-      "bytes": 525948,
-      "pixels": {
-        "width": 1254,
-        "height": 1254,
-        "transparentPixels": 1210488,
-        "opaquePixels": 353357,
-        "opaqueWhitePixels": 0
-      },
-      "promptSha256": "aaf5276378f5bdbb187d53693816a0d9b5fe13c0736392d9b437620ce456ba11",
-      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
-      "additionalReferences": [],
-      "version": 1,
+      "source": "approved-reuse",
+      "file": "reused/banana.jpg",
+      "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af",
+      "bytes": 54465,
+      "sourcePath": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+      "sourceId": "ja-banana",
+      "evidence": "content/card-regeneration/activation.json",
+      "transparency": "Existing opaque JPG preserved unchanged.",
       "reviewStatus": "awaiting-owner-review"
     },
     {
@@ -701,20 +700,20 @@
       "meaning": "Blanket",
       "group": "hotel",
       "source": "generated",
-      "file": "originals/blanket-v1.png",
-      "sha256": "74a64e66f470fb563d8667b5154cb3ac9e57fd941418028603a970f3dd882fd8",
-      "bytes": 903828,
+      "file": "originals/blanket-v2.png",
+      "sha256": "351a571a3e5c2da6d87810504740c2bc0a8ab7517fc19236691ac35b4ff6dce3",
+      "bytes": 1112906,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 991926,
-        "opaquePixels": 570606,
+        "transparentPixels": 791838,
+        "opaquePixels": 768027,
         "opaqueWhitePixels": 0
       },
-      "promptSha256": "45be5556933b16e672f8d466b5fed03039254abf9598b98fb15e7a41a293aa8f",
-      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "promptSha256": "8b1e31a5a7300fb73143ba0998eeb32a47d2bebe81ccc8d58584691da887874a",
+      "referenceSha256": "74a64e66f470fb563d8667b5154cb3ac9e57fd941418028603a970f3dd882fd8",
       "additionalReferences": [],
-      "version": 1,
+      "version": 2,
       "reviewStatus": "awaiting-owner-review"
     },
     {
@@ -747,20 +746,20 @@
       "meaning": "Toilet paper",
       "group": "hotel",
       "source": "generated",
-      "file": "originals/toilet-paper-v1.png",
-      "sha256": "5f92562c0d302b0bdb30579f786142b249de5a6be9db2598ebb357d2f8cb3ce9",
-      "bytes": 761601,
+      "file": "originals/toilet-paper-v3.png",
+      "sha256": "78b3759a692274f509777de68c7a5f6abcbcef89e5561f95acbb924c7be1896f",
+      "bytes": 828723,
       "pixels": {
         "width": 1254,
         "height": 1254,
-        "transparentPixels": 1026686,
-        "opaquePixels": 535562,
-        "opaqueWhitePixels": 12816
+        "transparentPixels": 975132,
+        "opaquePixels": 586333,
+        "opaqueWhitePixels": 1026
       },
-      "promptSha256": "167e8bf87dc9dab52f138aa9e8ec5d41466266b0fb0d033123f2e0757a73d0de",
-      "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "promptSha256": "86cd5a3390f8eee7016432b052e78ab5f19834c7e20ac7f36d400109d302c586",
+      "referenceSha256": "5a40602b3406b58161c3f80dffefb9104111fa3c1c8e72aad5dafd07193578e3",
       "additionalReferences": [],
-      "version": 1,
+      "version": 3,
       "reviewStatus": "awaiting-owner-review"
     },
     {

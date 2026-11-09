@@ -1,0 +1,19 @@
+{
+  "id": "es-419-travel-crosswalk",
+  "slug": "crosswalk",
+  "version": 2,
+  "path": "originals/crosswalk-v2.png",
+  "sha256": "9ac15adb8b5d322e0c1653d6e2fce2d7b273ff23da14ecea8c93b1b60d74ffb4",
+  "promptSha256": "d307c75cc29901f31ea383ced877d5392cb7e500042c97cb1a11b136e1e33c26",
+  "referenceSha256": "d5ff8f26fab33b52f1c2a1ca6cd918208e061e36c69825a80d1ff6d058132314",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-travel-3-art/revisions/crosswalk-geometry-reference.png",
+      "role": "strict-geometry",
+      "sha256": "dfc85224e38b2585fa2dfe5a98f06f5ca0dda68ac30a482f657ed5372151e47e"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ebf045d1-e233-4e30-964d-f53ba80a9960.png",
+  "supersedes": "originals/crosswalk-v1.png"
+}
