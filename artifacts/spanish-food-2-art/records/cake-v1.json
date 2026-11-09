@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-cake",
+  "slug": "cake",
+  "version": 1,
+  "path": "originals/cake-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "3ce7feab18d096b01cdccb7b241068fcc9359a79071ba33a6ba063293c4b49d3",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "400061e886910d790a0f8fbfdc91bddfac69fd1acca95774ac282904b35be807",
+  "bytes": 1082241,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-bf754daf-9d8a-42d2-9478-7af706ed595e.png"
+}

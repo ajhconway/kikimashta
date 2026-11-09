@@ -1,0 +1,1611 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "method": "Visually inspected all202 effective unique Spanish pictures on four temporary contact sheets, fitting each image within145px. Food level2 overrides the existing glass ID in the composed pool. Enlarged uncertain soup, salad, market and menu scenes to identify visible objects, then judged overlap at145px. Temporary viewing aids did not edit source artwork.",
+  "cardImageSizePx": 145,
+  "earlierSpanishImages": 171,
+  "newSpanishItemIds": 31,
+  "sharedFoodItemIds": 5,
+  "foodPictures": 36,
+  "currentUniqueRuntimePictures": 202,
+  "foodArtworkManifest": "artifacts/spanish-food-2-art/manifest.json",
+  "foodArtworkManifestSha256": "0e946432982fd6633986229ca822443e44a4ff63dcd6c861f442c4e166f885e6",
+  "foodArtworkAcceptance": "content/spanish-food-2/artwork-acceptance.json",
+  "foodArtworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb",
+  "foodMediaManifest": "artifacts/spanish-food-2-media-review/manifest.json",
+  "foodMediaManifestSha256": "41bdccff0343d9073d8f76fe4c3635a8f04129ad5e19211b26a330090afbc74f",
+  "historicalSpanishAudit": "content/spanish-food-1/picture-choice-review.json",
+  "historicalSpanishAuditSha256": "27f53a64a48f71a6a57f4dfe3d1a1c3c95ef04fdaee2a60d295c5f45473a51af",
+  "historicalSpanishAuditPreserved": true,
+  "historicalTravelAudit": "content/spanish-travel-4/picture-ambiguity-review.json",
+  "historicalTravelAuditSha256": "44cd85e5408678082b256ad887fb57ffcf4e8f961788cc1fc645dc2a612af33a",
+  "historicalTravelAuditPreserved": true,
+  "earlierSpanishImagesUnchanged": 170,
+  "spanishRiceOverride": {
+    "id": "es-419-travel-rice",
+    "currentPath": "public/images/approved/es-419-travel-rice-622cdf579932.png",
+    "currentSha256": "622cdf579932bbc07358bd73b590d9aa7b8db44c0e21b0a0ed34f5bf4e7452b3",
+    "supersededSpanishReference": {
+      "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+      "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+    },
+    "policy": "Only the existing Spanish rice ID uses cooked rice. The earlier Spanish source banks and historical audit retain their raw-rice references; runtime composition must use this accepted cooked override even when Food is not selected."
+  },
+  "japaneseRicePreserved": {
+    "bank": "content/catalog/ja.json",
+    "bankSha256": "0c454a402dcc0d3127ef1cb1e9095dc9efeb67a32ece75b9be18c7119af0c2e5",
+    "id": "ja-v-0958f7553d9f",
+    "image": {
+      "src": "images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+      "source": "generated",
+      "alt": "An open bag spilling uncooked rice"
+    },
+    "path": "public/images/approved/ja-v-0958f7553d9f-304fac5b04e1.jpg",
+    "sha256": "d41b73e89de9c93a2d1d8e8710cf7618def3a8e525931dfc2aab562bd3977a3c"
+  },
+  "sharedGlassOverride": {
+    "id": "es-419-travel-drinking-glass",
+    "currentPath": "public/images/approved/es-419-travel-drinking-glass-257144ff9432.png",
+    "currentSha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+    "acceptedSourcePath": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+    "supersededReference": {
+      "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49"
+    },
+    "sharedTargets": [
+      {
+        "bank": "content/es-419-travel-2.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Travel level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "draft": "content/spanish-food-2/draft.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Food level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "bank": "content/ja.json",
+        "id": "ja-cup",
+        "language": "ja-JP",
+        "pack": "Legacy Japanese starter glass",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      }
+    ],
+    "policy": "Use this one accepted glass picture for the existing Spanish ID across all seven-pack combinations, ordinary and contextual answers, and the legacy Japanese ja-cup source. Keep stable IDs, recordings and progress. Historical banks/manifests retain their earlier mappings, and retired Japanese practice eligibility remains unchanged."
+  },
+  "exclusionSource": "content/spanish-picture-exclusions.json",
+  "previousExclusionSourceSha256": "14bf6e6ffbf4482be280905c4560b979d949ab009e20fb42c94abca7bc1421c8",
+  "previousPairsPreserved": 71,
+  "addedSymmetricPairs": [
+    {
+      "ids": [
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna"
+      ],
+      "reason": "Tuna is fish: the open tin of clearly visible tuna flakes is another valid pescado picture, even though the earlier fish picture is a cooked fillet."
+    },
+    {
+      "ids": [
+        "es-419-food-cucumber",
+        "es-419-travel-salad"
+      ],
+      "reason": "Two large pale-green seeded cucumber slices remain clearly identifiable in the salad at145px, creating a second pepino answer."
+    },
+    {
+      "ids": [
+        "es-419-food-grapes",
+        "es-419-travel-market"
+      ],
+      "reason": "The foreground market crate prominently contains a purple grape bunch with round grapes and a green leaf, visible at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-corn",
+        "es-419-travel-market"
+      ],
+      "reason": "The foreground market crate prominently displays two yellow corn cobs with kernel grids and green husks, creating another elote answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-cake",
+        "es-419-travel-menu"
+      ],
+      "reason": "The bottom menu illustration clearly depicts a slice of layer cake with filling and frosting; this also answers pastel at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-chocolate",
+        "es-419-food-cookie"
+      ],
+      "reason": "Several large dark chocolate chips visibly protrude from the cookie; chocolate would have both the bar and the chocolate-chip picture as valid answers."
+    },
+    {
+      "ids": [
+        "es-419-food-gelatin",
+        "es-419-travel-plate"
+      ],
+      "reason": "The gelatin dessert sits on a clearly visible pale plate extending around its base; the composite provides another plato answer."
+    },
+    {
+      "ids": [
+        "es-419-food-cooking-oil",
+        "es-419-travel-bottle"
+      ],
+      "reason": "The cooking-oil vessel has a narrow neck, stopper and round bottle body. Despite its side handle, it is also a bottle and can answer botella."
+    }
+  ],
+  "symmetry": "Each ids pair is unordered; runtime excludes both directions. Existing71 pairs are preserved in their original order and unchanged values.",
+  "inspectedAssets": [
+    {
+      "id": "es-419-travel-hotel",
+      "text": "hotel",
+      "meaning": "Hotel",
+      "path": "public/images/approved/ja-v-d5c177de5126-1b49282e86db.jpg",
+      "sha256": "550f40792cd4643d7d1f21ffbde1ed705902fac181badedcc53bd7d33d5f053b"
+    },
+    {
+      "id": "es-419-travel-water",
+      "text": "agua",
+      "meaning": "Water",
+      "path": "public/images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+      "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5"
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "text": "café",
+      "meaning": "Coffee",
+      "path": "public/images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+      "sha256": "14ff37f9a16578db1bbff76a63e876cea1bb63b358d587367e69b36d85d7022f"
+    },
+    {
+      "id": "es-419-travel-car",
+      "text": "carro",
+      "meaning": "Car",
+      "path": "public/images/approved/ja-v-f71f9de56223-05ce2f4b730f.jpg",
+      "sha256": "cca51aa614f272be6bee1f7c66420eb585a5ae96094cecabb08b545a885f45ec"
+    },
+    {
+      "id": "es-419-travel-airport",
+      "text": "aeropuerto",
+      "meaning": "Airport",
+      "path": "public/images/approved/es-419-travel-airport-6642b11abd88.png",
+      "sha256": "6642b11abd88ab05d8ada9ea48e62bb6bb61ad910755eadff9102d6c7b75e145"
+    },
+    {
+      "id": "es-419-travel-airplane",
+      "text": "avión",
+      "meaning": "Airplane",
+      "path": "public/images/approved/es-419-travel-airplane-31eb62af2c40.png",
+      "sha256": "31eb62af2c4036826cf1d2bde9dfdeffc24732ede5a63bde49b0ec8bed7c6297"
+    },
+    {
+      "id": "es-419-travel-bus",
+      "text": "autobús",
+      "meaning": "Bus",
+      "path": "public/images/approved/es-419-travel-bus-27ad0d212813.png",
+      "sha256": "27ad0d21281302b39f8a6fd2e0cb8f2cb58d6e9fa6a23b82e1c9309564cedeaf"
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "text": "taxi",
+      "meaning": "Taxi",
+      "path": "public/images/approved/es-419-travel-taxi-8bac03daf66f.png",
+      "sha256": "8bac03daf66fe033758cdd8650fbe71576ecc7140f397202027d3af0e3aa2e10"
+    },
+    {
+      "id": "es-419-travel-train",
+      "text": "tren",
+      "meaning": "Train",
+      "path": "public/images/approved/es-419-travel-train-f36bbdd0065e.png",
+      "sha256": "f36bbdd0065e3972095bd6a9e63d3d6b9fee26439369393072e50096bb09e981"
+    },
+    {
+      "id": "es-419-travel-bicycle",
+      "text": "bicicleta",
+      "meaning": "Bicycle",
+      "path": "public/images/approved/es-419-travel-bicycle-bbafd811711d.png",
+      "sha256": "bbafd811711d09ba4d2f8cafd2cd183e1c80ab4ff8fc0c4602205fd91fa6c5e8"
+    },
+    {
+      "id": "es-419-travel-passport",
+      "text": "pasaporte",
+      "meaning": "Passport",
+      "path": "public/images/approved/es-419-travel-passport-3eb38fe29b5a.png",
+      "sha256": "3eb38fe29b5ad6a9eace2a132d04244aa5895996c61fcce366ded6fd0d1ca40d"
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "text": "boleto",
+      "meaning": "Ticket",
+      "path": "public/images/approved/es-419-travel-ticket-d6b16a19a7a0.png",
+      "sha256": "d6b16a19a7a00fd6824c782e9f9c3d0b6dacac6e7efaae1de7e50d04ca76f3af"
+    },
+    {
+      "id": "es-419-travel-suitcase",
+      "text": "maleta",
+      "meaning": "Suitcase",
+      "path": "public/images/approved/es-419-travel-suitcase-6d4224762fc6.png",
+      "sha256": "6d4224762fc6beef5c856ddd184619526a36961d7e424bd686e0563e42e4a63b"
+    },
+    {
+      "id": "es-419-travel-backpack",
+      "text": "mochila",
+      "meaning": "Backpack",
+      "path": "public/images/approved/es-419-travel-backpack-0b08a4776a44.png",
+      "sha256": "0b08a4776a4420fde360b2bcc892104a8019bba92f3e30ab5766c5632cc2e558"
+    },
+    {
+      "id": "es-419-travel-map",
+      "text": "mapa",
+      "meaning": "Map",
+      "path": "public/images/approved/es-419-travel-map-3c9adf702be2.png",
+      "sha256": "3c9adf702be2a05fc9366e45db05e5c4b3f9c4b5130bde9e0194d6815e964325"
+    },
+    {
+      "id": "es-419-travel-phone",
+      "text": "teléfono",
+      "meaning": "Phone",
+      "path": "public/images/approved/es-419-travel-phone-10dd4649216b.png",
+      "sha256": "10dd4649216bb3661b61176bec850795bb0313c316df739a055eeb067c460b22"
+    },
+    {
+      "id": "es-419-travel-bed",
+      "text": "cama",
+      "meaning": "Bed",
+      "path": "public/images/approved/es-419-travel-bed-52131766ae9b.png",
+      "sha256": "52131766ae9b24f94ba992b62994f63b11b475d27615aa61ec948b1b0227b9f3"
+    },
+    {
+      "id": "es-419-travel-key",
+      "text": "llave",
+      "meaning": "Key",
+      "path": "public/images/approved/es-419-travel-key-5dd79de14b34.png",
+      "sha256": "5dd79de14b34eac0598d2abfb1f61c1b328078a6e0d5c02aab279bb9f3a6dd7d"
+    },
+    {
+      "id": "es-419-travel-bathroom",
+      "text": "baño",
+      "meaning": "Bathroom",
+      "path": "public/images/approved/es-419-travel-bathroom-a3e9a9d56fa6.png",
+      "sha256": "a3e9a9d56fa625f6a3cd0cbbb429b3d6ba7af49cf128ac224c32ee09aff239ba"
+    },
+    {
+      "id": "es-419-travel-shower",
+      "text": "ducha",
+      "meaning": "Shower",
+      "path": "public/images/approved/es-419-travel-shower-6ace4149ea77.png",
+      "sha256": "6ace4149ea77e8db17bf98c8ae7fd2300321e296ba12f37d2bdec2dd01204326"
+    },
+    {
+      "id": "es-419-travel-towel",
+      "text": "toalla",
+      "meaning": "Towel",
+      "path": "public/images/approved/es-419-travel-towel-af3dcb9df4b6.png",
+      "sha256": "af3dcb9df4b67539e845a64014c2f48d92b34088649d375f89d508b765070026"
+    },
+    {
+      "id": "es-419-travel-elevator",
+      "text": "ascensor",
+      "meaning": "Elevator",
+      "path": "public/images/approved/es-419-travel-elevator-b48b27b15a6b.png",
+      "sha256": "b48b27b15a6b626c70179449508b2635a3024415f6e7b0d49da73990c55b69ed"
+    },
+    {
+      "id": "es-419-travel-restaurant",
+      "text": "restaurante",
+      "meaning": "Restaurant",
+      "path": "public/images/approved/es-419-travel-restaurant-0df277e0e41d.png",
+      "sha256": "0df277e0e41d17ba695b9a0a4176671aa7aabaf549da9d715c17b1410eb6c2df"
+    },
+    {
+      "id": "es-419-travel-bread",
+      "text": "pan",
+      "meaning": "Bread",
+      "path": "public/images/approved/es-419-travel-bread-843bf04cbd40.png",
+      "sha256": "843bf04cbd401ce3ba501fbbaa30360ee055b46879ebd3c64e011924a93f5992"
+    },
+    {
+      "id": "es-419-travel-rice",
+      "text": "arroz",
+      "meaning": "Rice",
+      "path": "public/images/approved/es-419-travel-rice-622cdf579932.png",
+      "sha256": "622cdf579932bbc07358bd73b590d9aa7b8db44c0e21b0a0ed34f5bf4e7452b3"
+    },
+    {
+      "id": "es-419-travel-milk",
+      "text": "leche",
+      "meaning": "Milk",
+      "path": "public/images/approved/es-419-travel-milk-ab6c590f6879.png",
+      "sha256": "ab6c590f6879bb1404982b2a7c522973333d007e6bdd233c0d390f1b4dc2f831"
+    },
+    {
+      "id": "es-419-travel-juice",
+      "text": "jugo",
+      "meaning": "Juice",
+      "path": "public/images/approved/es-419-travel-juice-7dcfc819e448.png",
+      "sha256": "7dcfc819e448fc65d826ddc07f11cc7b4ba64d54b6e800ec2fbb07ecc92f444d"
+    },
+    {
+      "id": "es-419-travel-money",
+      "text": "dinero",
+      "meaning": "Money",
+      "path": "public/images/approved/es-419-travel-money-cbd131037276.png",
+      "sha256": "cbd1310372763a7011d0aeb42d10c8319bfcdbcc3336985e6b2641ad9db3aba6"
+    },
+    {
+      "id": "es-419-travel-boat",
+      "text": "barco",
+      "meaning": "Boat",
+      "path": "public/images/approved/es-419-travel-boat-0261a13c9142.png",
+      "sha256": "0261a13c914287bd5173eaf049fdd7445ee61b2eccc001791d681d659155c0ac"
+    },
+    {
+      "id": "es-419-travel-beach",
+      "text": "playa",
+      "meaning": "Beach",
+      "path": "public/images/approved/es-419-travel-beach-865816b51a61.png",
+      "sha256": "865816b51a610c23e07ba58da42dcb0e910f294315928c5ceeee464d16b61bcb"
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "text": "hospital",
+      "meaning": "Hospital",
+      "path": "public/images/approved/es-419-travel-hospital-c240ad4edc40.png",
+      "sha256": "c240ad4edc40b778b21e8546e8a4e7bc503216c6c462b152048d90d599050a5e"
+    },
+    {
+      "id": "es-419-travel-pharmacy",
+      "text": "farmacia",
+      "meaning": "Pharmacy",
+      "path": "public/images/approved/es-419-travel-pharmacy-d5d214e03f72.png",
+      "sha256": "d5d214e03f72bcb770c71a43b3db422592e458625302d06306aa974f5db24b1e"
+    },
+    {
+      "id": "es-419-travel-bottle",
+      "text": "botella",
+      "meaning": "Bottle",
+      "path": "public/images/approved/es-419-travel-bottle-beb0382d6a4a.png",
+      "sha256": "beb0382d6a4a30303d19eaef7740e9eeca77058b71906b66749231f9614f5e73"
+    },
+    {
+      "id": "es-419-travel-credit-card",
+      "text": "tarjeta de crédito",
+      "meaning": "Credit card",
+      "path": "public/images/approved/es-419-travel-credit-card-b159c940b909.png",
+      "sha256": "b159c940b90939a91c8cec23fc20f962330c9936fc81dcd7978f25bc26ae8bcf"
+    },
+    {
+      "id": "es-419-travel-camera",
+      "text": "cámara",
+      "meaning": "Camera",
+      "path": "public/images/approved/es-419-travel-camera-c1496b53ae1c.png",
+      "sha256": "c1496b53ae1c3f3e6c5cccad3aa3489cf50cc073d937c71baee13e9dc6c49d10"
+    },
+    {
+      "id": "es-419-travel-umbrella",
+      "text": "paraguas",
+      "meaning": "Umbrella",
+      "path": "public/images/approved/ja-umbrella-87536b6a75df.jpg",
+      "sha256": "f86d16756f43fd494e6f385a6c1056c96c1e9b806cdaec98733bc06b037e84b4"
+    },
+    {
+      "id": "es-419-travel-train-station",
+      "text": "estación de tren",
+      "meaning": "Train station",
+      "path": "public/images/approved/es-419-travel-train-station-d5fe3c1c2f27.png",
+      "sha256": "d5fe3c1c2f2751479eb91e094176d3739f7c404036a774233c51af8c0fc68d80"
+    },
+    {
+      "id": "es-419-travel-bus-stop",
+      "text": "parada de autobús",
+      "meaning": "Bus stop",
+      "path": "public/images/approved/es-419-travel-bus-stop-718a96003986.png",
+      "sha256": "718a96003986060f2afd63f14006e391de702aa379f68320aa6cbc4e004afe60"
+    },
+    {
+      "id": "es-419-travel-street",
+      "text": "calle",
+      "meaning": "Street",
+      "path": "public/images/approved/es-419-travel-street-584849519275.png",
+      "sha256": "5848495192753ef7f26c299d266285a0b1568c07ba22c795901b4f3d5dc0083f"
+    },
+    {
+      "id": "es-419-travel-bridge",
+      "text": "puente",
+      "meaning": "Bridge",
+      "path": "public/images/approved/es-419-travel-bridge-da15872f8046.png",
+      "sha256": "da15872f80464d3d8cfad05a03e0503240f0831c29a62bfd6f0215cbbf225c12"
+    },
+    {
+      "id": "es-419-travel-park",
+      "text": "parque",
+      "meaning": "Park",
+      "path": "public/images/approved/es-419-travel-park-5f3ec1ed6ad4.png",
+      "sha256": "5f3ec1ed6ad4fe9cdd6d6b2d6e7bdd00b96800a0f04bac532a416908945cc9ff"
+    },
+    {
+      "id": "es-419-travel-museum",
+      "text": "museo",
+      "meaning": "Museum",
+      "path": "public/images/approved/es-419-travel-museum-22a089082940.png",
+      "sha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-menu",
+      "text": "menú",
+      "meaning": "Menu",
+      "path": "public/images/approved/es-419-travel-menu-7356487d2dc5.png",
+      "sha256": "7356487d2dc5e597bee34237ce2d8acad3d6d75365df7dc7eed150a45a0d7833"
+    },
+    {
+      "id": "es-419-travel-plate",
+      "text": "plato",
+      "meaning": "Plate",
+      "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+      "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+      "foodApprovedSourcePath": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "text": "vaso",
+      "meaning": "Drinking glass",
+      "path": "public/images/approved/es-419-travel-drinking-glass-257144ff9432.png",
+      "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/glass-v1.png"
+    },
+    {
+      "id": "es-419-travel-cup",
+      "text": "taza",
+      "meaning": "Cup",
+      "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+      "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349",
+      "foodApprovedSourcePath": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png"
+    },
+    {
+      "id": "es-419-travel-fork",
+      "text": "tenedor",
+      "meaning": "Fork",
+      "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+      "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01",
+      "foodApprovedSourcePath": "public/images/approved/es-419-travel-fork-01394a9b096e.png"
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "text": "cuchara",
+      "meaning": "Spoon",
+      "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+      "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208",
+      "foodApprovedSourcePath": "public/images/approved/es-419-travel-spoon-6315f4271e77.png"
+    },
+    {
+      "id": "es-419-travel-chicken",
+      "text": "pollo",
+      "meaning": "Chicken (food)",
+      "path": "public/images/approved/es-419-travel-chicken-edb305036ae9.png",
+      "sha256": "edb305036ae948e7abde01bfb381135d63d1798dba0b6508d6ec045658f13d39"
+    },
+    {
+      "id": "es-419-travel-cooked-fish",
+      "text": "pescado",
+      "meaning": "Fish (food)",
+      "path": "public/images/approved/es-419-travel-cooked-fish-e73bbe183caa.png",
+      "sha256": "e73bbe183caab6348300477ac968f1baa4e927d28e4b67803982e705daa1a73e"
+    },
+    {
+      "id": "es-419-travel-egg",
+      "text": "huevo",
+      "meaning": "Egg",
+      "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+      "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4"
+    },
+    {
+      "id": "es-419-travel-cheese",
+      "text": "queso",
+      "meaning": "Cheese",
+      "path": "public/images/approved/es-419-travel-cheese-ab2ab495577e.png",
+      "sha256": "ab2ab495577e9f4c917e273dac1f96a625ae3707fa42d718aed71ad41b3128d5"
+    },
+    {
+      "id": "es-419-travel-soup",
+      "text": "sopa",
+      "meaning": "Soup",
+      "path": "public/images/approved/es-419-travel-soup-791fbdb33db2.png",
+      "sha256": "791fbdb33db2451b8f8bb96ae879733f6fb82343331834fea24a4cbbc932ccef"
+    },
+    {
+      "id": "es-419-travel-salad",
+      "text": "ensalada",
+      "meaning": "Salad",
+      "path": "public/images/approved/es-419-travel-salad-124eda7165db.png",
+      "sha256": "124eda7165dbd51dcd45d4e42a15af7fd403f6402a14185ded76253318ea3217"
+    },
+    {
+      "id": "es-419-travel-market",
+      "text": "mercado",
+      "meaning": "Market",
+      "path": "public/images/approved/es-419-travel-market-b501f08571fa.png",
+      "sha256": "b501f08571fa560c7ed29c425865e9de7b7674c722905204eb3a65dd160f6b12"
+    },
+    {
+      "id": "es-419-travel-bakery",
+      "text": "panadería",
+      "meaning": "Bakery",
+      "path": "public/images/approved/es-419-travel-bakery-827692feefff.png",
+      "sha256": "827692feefff108fd21d16cda847e2e30207669dc554067f3dce6236c0fe26d3"
+    },
+    {
+      "id": "es-419-travel-atm",
+      "text": "cajero automático",
+      "meaning": "ATM",
+      "path": "public/images/approved/es-419-travel-atm-46dc636200fd.png",
+      "sha256": "46dc636200fde673943907a6223e1bb3d163d022db237408449d80546d5dc922"
+    },
+    {
+      "id": "es-419-travel-receipt",
+      "text": "recibo",
+      "meaning": "Receipt",
+      "path": "public/images/approved/es-419-travel-receipt-ce6a9404952e.png",
+      "sha256": "ce6a9404952e3084704f9bc908ae61684e24c74da75a8cf5431a25e238ef4ea0"
+    },
+    {
+      "id": "es-419-travel-wallet",
+      "text": "cartera",
+      "meaning": "Wallet",
+      "path": "public/images/approved/es-419-travel-wallet-3a84b1d56b57.png",
+      "sha256": "3a84b1d56b5761bfcce95eb1861fb952df78546f0ba144194390e797f6258eb2"
+    },
+    {
+      "id": "es-419-travel-coin",
+      "text": "moneda",
+      "meaning": "Coin",
+      "path": "public/images/approved/es-419-travel-coin-cc8e7fce8d81.png",
+      "sha256": "cc8e7fce8d81ae88f721b78a41ce597ea2fb407f46d2c45bbcb04045c623e5f5"
+    },
+    {
+      "id": "es-419-travel-room",
+      "text": "habitación",
+      "meaning": "Room",
+      "path": "public/images/approved/es-419-travel-room-31977a2bb2de.png",
+      "sha256": "31977a2bb2deaaa68301da8d8a6635347b09cf5a2c192c690ec4d1a1e51d61c8"
+    },
+    {
+      "id": "es-419-travel-table",
+      "text": "mesa",
+      "meaning": "Table",
+      "path": "public/images/approved/es-419-travel-table-be2c092afe63.png",
+      "sha256": "be2c092afe6358619e07451a7c6ad76e486f3cb6a6ff2c73821b55d3443e651d"
+    },
+    {
+      "id": "es-419-travel-chair",
+      "text": "silla",
+      "meaning": "Chair",
+      "path": "public/images/approved/es-419-travel-chair-bfed79c5f2d7.png",
+      "sha256": "bfed79c5f2d708864a50d98ee72d98cddae61fa7a241740561cc8d4f0e821d10"
+    },
+    {
+      "id": "es-419-travel-window",
+      "text": "ventana",
+      "meaning": "Window",
+      "path": "public/images/approved/es-419-travel-window-7397a4f881c4.png",
+      "sha256": "7397a4f881c42f37feedeb53ab3562a4856132a344fbbacc7843f3036f9321a9"
+    },
+    {
+      "id": "es-419-travel-stairs",
+      "text": "escaleras",
+      "meaning": "Stairs",
+      "path": "public/images/approved/es-419-travel-stairs-ad411dfdee20.png",
+      "sha256": "ad411dfdee2034d23e7f8fc93be61ad6b6fc32ecb430abba902118c982e30e83"
+    },
+    {
+      "id": "es-419-travel-swimming-pool",
+      "text": "piscina",
+      "meaning": "Swimming pool",
+      "path": "public/images/approved/es-419-travel-swimming-pool-723e2d651cbc.png",
+      "sha256": "723e2d651cbc56903a581b16d312eccd68ce63bcd85c1a0cb8fbe09a437a028c"
+    },
+    {
+      "id": "es-419-travel-soap",
+      "text": "jabón",
+      "meaning": "Soap",
+      "path": "public/images/approved/es-419-travel-soap-436d74cfcdb1.png",
+      "sha256": "436d74cfcdb1603819cabb0a9877d7228e50e03e84f7558d73b3c54fadc7c02c"
+    },
+    {
+      "id": "es-419-travel-shampoo",
+      "text": "champú",
+      "meaning": "Shampoo",
+      "path": "public/images/approved/es-419-travel-shampoo-1f65b8ceefee.png",
+      "sha256": "1f65b8ceefee3b6f8a6a1a86c7c66dcace9aefc948cb1b4a45766a00949cae7a"
+    },
+    {
+      "id": "es-419-travel-toothbrush",
+      "text": "cepillo de dientes",
+      "meaning": "Toothbrush",
+      "path": "public/images/approved/es-419-travel-toothbrush-4cf543c7fcd8.png",
+      "sha256": "4cf543c7fcd8d62be6c1e92cff746c40c12cc9c866664bfda0fc96aebb7eae91"
+    },
+    {
+      "id": "es-419-travel-toothpaste",
+      "text": "pasta de dientes",
+      "meaning": "Toothpaste",
+      "path": "public/images/approved/es-419-travel-toothpaste-67734738d785.png",
+      "sha256": "67734738d7859ae39f9177d45b75853442c17bea1c7c9b9dcb26e0ae6e321557"
+    },
+    {
+      "id": "es-419-travel-charger",
+      "text": "cargador",
+      "meaning": "Charger",
+      "path": "public/images/approved/es-419-travel-charger-59610a541ae1.png",
+      "sha256": "59610a541ae101e05a6e6ed046f87ed504770aa93fb1ea41e7e5a12c0c60e282"
+    },
+    {
+      "id": "es-419-travel-sunglasses",
+      "text": "lentes de sol",
+      "meaning": "Sunglasses",
+      "path": "public/images/approved/es-419-travel-sunglasses-b390b9930110.png",
+      "sha256": "b390b99301106c7da274d4c7066aff8cdd651963f79bf8a12bf697d6ad77367e"
+    },
+    {
+      "id": "es-419-travel-sidewalk",
+      "text": "banqueta",
+      "meaning": "Sidewalk",
+      "path": "public/images/approved/es-419-travel-sidewalk-ab70ae59c070.png",
+      "sha256": "ab70ae59c0700fde1ae445c22f32b2bcd253b161ea0598218c8fe9bf553947e5"
+    },
+    {
+      "id": "es-419-travel-crosswalk",
+      "text": "cruce peatonal",
+      "meaning": "Pedestrian crossing",
+      "path": "public/images/approved/es-419-travel-crosswalk-9ac15adb8b5d.png",
+      "sha256": "9ac15adb8b5d322e0c1653d6e2fce2d7b273ff23da14ecea8c93b1b60d74ffb4"
+    },
+    {
+      "id": "es-419-travel-traffic-light",
+      "text": "semáforo",
+      "meaning": "Traffic light",
+      "path": "public/images/approved/es-419-travel-traffic-light-424468b5f51b.png",
+      "sha256": "424468b5f51b8fe393730157ae06e3312cfc0d81c2d509f78034d298a2c2a854"
+    },
+    {
+      "id": "es-419-travel-fountain",
+      "text": "fuente",
+      "meaning": "Fountain",
+      "path": "public/images/approved/es-419-travel-fountain-d98085a1b51f.png",
+      "sha256": "d98085a1b51f9d212bf9bf7590b9796ba0067e53b19b8958b8360222afc85bad"
+    },
+    {
+      "id": "es-419-travel-bench",
+      "text": "banca",
+      "meaning": "Bench",
+      "path": "public/images/approved/es-419-travel-bench-2d2797a7bfba.png",
+      "sha256": "2d2797a7bfbaafb6ba24e832098e39243216991fb7b422cdd2cf3cb18c33d3b0"
+    },
+    {
+      "id": "es-419-travel-church",
+      "text": "iglesia",
+      "meaning": "Church",
+      "path": "public/images/approved/es-419-travel-church-5e3bdf8785a2.png",
+      "sha256": "5e3bdf8785a2c517062ab83e4d7bcdfd361434bb0363ce3b073c6b6bf4580a73"
+    },
+    {
+      "id": "es-419-travel-subway",
+      "text": "metro",
+      "meaning": "Subway (metro)",
+      "path": "public/images/approved/es-419-travel-subway-0c37bde8fdbc.png",
+      "sha256": "0c37bde8fdbcc471e92a7596e59f6e42086c5b42dea5b14a6e5dd2f19eef853d"
+    },
+    {
+      "id": "es-419-travel-motorcycle",
+      "text": "motocicleta",
+      "meaning": "Motorcycle",
+      "path": "public/images/approved/es-419-travel-motorcycle-1ec276168669.png",
+      "sha256": "1ec276168669e3c9597407c9ac17f901292988b3410cd3de5a86cb44f904f6b2"
+    },
+    {
+      "id": "es-419-travel-parking-lot",
+      "text": "estacionamiento",
+      "meaning": "Parking lot",
+      "path": "public/images/approved/es-419-travel-parking-lot-73b25dceba61.png",
+      "sha256": "73b25dceba613588d260def8a3440c85b8594ed09d223d622d2757f99bcd54fb"
+    },
+    {
+      "id": "es-419-travel-gas-station",
+      "text": "gasolinera",
+      "meaning": "Gas station",
+      "path": "public/images/approved/es-419-travel-gas-station-eecdaea804c5.png",
+      "sha256": "eecdaea804c5dd9143a63363aebf0cad80c7ae7cf86c78a6fee29bc0ffeaedde"
+    },
+    {
+      "id": "es-419-travel-helmet",
+      "text": "casco",
+      "meaning": "Helmet",
+      "path": "public/images/approved/es-419-travel-helmet-f5b5bde3ca52.png",
+      "sha256": "f5b5bde3ca52fbb3099b007fbd678fbe0a79320593f577723cea576a4ba21939"
+    },
+    {
+      "id": "es-419-travel-seat-belt",
+      "text": "cinturón de seguridad",
+      "meaning": "Seat belt",
+      "path": "public/images/approved/es-419-travel-seat-belt-d03156958614.png",
+      "sha256": "d031569586148aae46d24908154f1b269ff2227ddd1820fc0e833ee5e702afbf"
+    },
+    {
+      "id": "es-419-travel-apple",
+      "text": "manzana",
+      "meaning": "Apple",
+      "path": "public/images/approved/ja-apple-693c57b57b06.jpg",
+      "sha256": "4b763836b91c4aca2bc1058e911b3456ba527742bf672742e90e88acfd35850f"
+    },
+    {
+      "id": "es-419-travel-banana",
+      "text": "plátano",
+      "meaning": "Banana",
+      "path": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+      "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af"
+    },
+    {
+      "id": "es-419-travel-orange",
+      "text": "naranja",
+      "meaning": "Orange (fruit)",
+      "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+      "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87"
+    },
+    {
+      "id": "es-419-travel-avocado",
+      "text": "aguacate",
+      "meaning": "Avocado",
+      "path": "public/images/approved/es-419-travel-avocado-b83b43b23ef2.png",
+      "sha256": "b83b43b23ef2ae3359af219ff71e1fabc2eec2f298b3313cb4da58f13606a4fd"
+    },
+    {
+      "id": "es-419-travel-taco",
+      "text": "taco",
+      "meaning": "Taco",
+      "path": "public/images/approved/es-419-travel-taco-109cf9b587d3.png",
+      "sha256": "109cf9b587d3d04bc6b6a4d58962925fb7a13cc6e773e40c6a44b0193f106127"
+    },
+    {
+      "id": "es-419-travel-ice-cream",
+      "text": "helado",
+      "meaning": "Ice cream",
+      "path": "public/images/approved/es-419-travel-ice-cream-ff36868d092f.png",
+      "sha256": "ff36868d092f83a2a9ca747a250298cfb221a1c9a1ea08c937d99c2464e7da2a"
+    },
+    {
+      "id": "es-419-travel-shirt",
+      "text": "camisa",
+      "meaning": "Shirt",
+      "path": "public/images/approved/es-419-travel-shirt-67800a7717f8.png",
+      "sha256": "67800a7717f8b5e94796f8ee670468c5ab897ab1018d30d88327bf6d77ec0a83"
+    },
+    {
+      "id": "es-419-travel-pants",
+      "text": "pantalones",
+      "meaning": "Pants / trousers",
+      "path": "public/images/approved/es-419-travel-pants-90aa1bee196d.png",
+      "sha256": "90aa1bee196db6f5d700e86a8f55dae35ccaa6dd5f860467b447e283d0ad9870"
+    },
+    {
+      "id": "es-419-travel-shoe",
+      "text": "zapato",
+      "meaning": "Shoe",
+      "path": "public/images/approved/es-419-travel-shoe-e1aae1902903.png",
+      "sha256": "e1aae1902903f570f8b86aff5b4bd7328b083304af4a7e6307b0d919418f2374"
+    },
+    {
+      "id": "es-419-travel-hat",
+      "text": "sombrero",
+      "meaning": "Hat",
+      "path": "public/images/approved/es-419-travel-hat-1f1050653c2a.png",
+      "sha256": "1f1050653c2afc9fda6775474ad29e6448a853f9162711a0d61731b3510e607a"
+    },
+    {
+      "id": "es-419-travel-jacket",
+      "text": "chamarra",
+      "meaning": "Jacket",
+      "path": "public/images/approved/es-419-travel-jacket-795c5dab271d.png",
+      "sha256": "795c5dab271d6a8a49133f282aad0711023752d0b5029b9dd4757f11375dcd9a"
+    },
+    {
+      "id": "es-419-travel-swimsuit",
+      "text": "traje de baño",
+      "meaning": "Swimsuit",
+      "path": "public/images/approved/es-419-travel-swimsuit-e1eff7e6d3df.png",
+      "sha256": "e1eff7e6d3dfc5b46caeba1c20003d3478df31012044bbb6fb4c8bab3201ed28"
+    },
+    {
+      "id": "es-419-travel-mountain",
+      "text": "montaña",
+      "meaning": "Mountain",
+      "path": "public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg",
+      "sha256": "ce6f40bb2fde03ae06e1f1ea9be86797617f109e00684be8a08cc2caf782bfe2"
+    },
+    {
+      "id": "es-419-travel-river",
+      "text": "río",
+      "meaning": "River",
+      "path": "public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg",
+      "sha256": "bf0fbf654b6c97a908a5eefe05fab21d704a1d3496a6757bb8a6c63523300519"
+    },
+    {
+      "id": "es-419-travel-lake",
+      "text": "lago",
+      "meaning": "Lake",
+      "path": "public/images/approved/es-419-travel-lake-0fdb6a91c9a5.png",
+      "sha256": "0fdb6a91c9a5db6a0c1df06c29fc578b6d8e01c578b320591027fed74a658cde"
+    },
+    {
+      "id": "es-419-travel-island",
+      "text": "isla",
+      "meaning": "Island",
+      "path": "public/images/approved/es-419-travel-island-f6d91ce0a14b.png",
+      "sha256": "f6d91ce0a14bb8e3beb5237f866ca4709aeed97d05519b304121d480742f6b17"
+    },
+    {
+      "id": "es-419-travel-forest",
+      "text": "bosque",
+      "meaning": "Forest",
+      "path": "public/images/approved/ja-v-698044202165-8f2b6799af1c.png",
+      "sha256": "be4cc43854267ee04f90c1d5927c307a15021b0bed71afa7dd5a5ebe0ed85d5e"
+    },
+    {
+      "id": "es-419-travel-waterfall",
+      "text": "cascada",
+      "meaning": "Waterfall",
+      "path": "public/images/approved/es-419-travel-waterfall-2b897d66aebc.png",
+      "sha256": "2b897d66aebca128af917685b90c18ed282168e0f579fd524f3ee539444800ae"
+    },
+    {
+      "id": "es-419-travel-pillow",
+      "text": "almohada",
+      "meaning": "Pillow",
+      "path": "public/images/approved/es-419-travel-pillow-a397ed3fe63d.png",
+      "sha256": "a397ed3fe63df1ea116075c1d45b811e3a0a4c0a8fbd157867fbbd218d7b3f90"
+    },
+    {
+      "id": "es-419-travel-blanket",
+      "text": "cobija",
+      "meaning": "Blanket",
+      "path": "public/images/approved/es-419-travel-blanket-351a571a3e5c.png",
+      "sha256": "351a571a3e5c2da6d87810504740c2bc0a8ab7517fc19236691ac35b4ff6dce3"
+    },
+    {
+      "id": "es-419-travel-hair-dryer",
+      "text": "secadora de pelo",
+      "meaning": "Hair dryer",
+      "path": "public/images/approved/es-419-travel-hair-dryer-315e39836142.png",
+      "sha256": "315e398361420246204b7bd8727bc6ca176b5f29ea4782a8f1344555405ccf36"
+    },
+    {
+      "id": "es-419-travel-toilet-paper",
+      "text": "papel higiénico",
+      "meaning": "Toilet paper",
+      "path": "public/images/approved/es-419-travel-toilet-paper-78b3759a6922.png",
+      "sha256": "78b3759a692274f509777de68c7a5f6abcbcef89e5561f95acbb924c7be1896f"
+    },
+    {
+      "id": "es-419-travel-comb",
+      "text": "peine",
+      "meaning": "Comb",
+      "path": "public/images/approved/es-419-travel-comb-23c2cf49d399.png",
+      "sha256": "23c2cf49d399fceb4f8759c412537fb34d32c9d12550da8ac2351e1c71e4a418"
+    },
+    {
+      "id": "es-419-travel-mirror",
+      "text": "espejo",
+      "meaning": "Mirror",
+      "path": "public/images/approved/es-419-travel-mirror-e8f274922a8f.png",
+      "sha256": "e8f274922a8f0a215e76a1d5e765643183c14923253c104a13861edb836c4f2a"
+    },
+    {
+      "id": "es-419-travel-supermarket",
+      "text": "supermercado",
+      "meaning": "Supermarket",
+      "path": "public/images/approved/es-419-travel-supermarket-1eb7c1d6c084.png",
+      "sha256": "1eb7c1d6c084849b2b3e0ac10540068c234bf9b77afc97d2d1f5196bf686cc55"
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "text": "oficina de correos",
+      "meaning": "Post office",
+      "path": "public/images/approved/es-419-travel-post-office-6a95519dc4db.png",
+      "sha256": "6a95519dc4dbfcaff775f7b16e1ed79e8dae550a197e4e4a6391610e97fbf043"
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "text": "estación de policía",
+      "meaning": "Police station",
+      "path": "public/images/approved/es-419-travel-police-station-36564202101c.png",
+      "sha256": "36564202101cd5e954e7a93e15ff7f04998161f70d8723a12a4fa666ac457df5"
+    },
+    {
+      "id": "es-419-travel-library",
+      "text": "biblioteca",
+      "meaning": "Library",
+      "path": "public/images/approved/es-419-travel-library-81ddcafae8f1.png",
+      "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26"
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "text": "cine",
+      "meaning": "Movie theater",
+      "path": "public/images/approved/es-419-travel-cinema-51f0fa177a8c.png",
+      "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0"
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "text": "lavandería",
+      "meaning": "Laundromat",
+      "path": "public/images/approved/es-419-travel-laundromat-adbd79aeeb7e.png",
+      "sha256": "adbd79aeeb7e2cfc91af7eb3568488e6e6e0daea3be784a9f3a52c1e6ab2ef0c"
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "text": "helicóptero",
+      "meaning": "Helicopter",
+      "path": "public/images/approved/es-419-travel-helicopter-d711d7130ef9.png",
+      "sha256": "d711d7130ef90a0fb9dbf3e9c68aae09f03915905da9299ab21514a2485997e7"
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "text": "camión de carga",
+      "meaning": "Cargo truck",
+      "path": "public/images/approved/es-419-travel-cargo-truck-c1f378b607a5.png",
+      "sha256": "c1f378b607a5d065e62d156aa39f7ded28ef709893f7f8e74c5128abdbd3f6a9"
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "text": "ambulancia",
+      "meaning": "Ambulance",
+      "path": "public/images/approved/es-419-travel-ambulance-0582dac5d6a9.png",
+      "sha256": "0582dac5d6a94a0870646a2fd2da3a5433f0bccd570d80eba7838ac5e32173b3"
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "text": "patrulla",
+      "meaning": "Police car",
+      "path": "public/images/approved/es-419-travel-police-car-d1fba76cde3d.png",
+      "sha256": "d1fba76cde3d6b4ead837c58152a10ab1f3fa9bd7c9aef144b3456e2902160f3"
+    },
+    {
+      "id": "es-419-travel-tire",
+      "text": "llanta",
+      "meaning": "Tire",
+      "path": "public/images/approved/es-419-travel-tire-c1525d8e91c6.png",
+      "sha256": "c1525d8e91c637a2b6a140ab8f3e0361370567072750fc2f663504308a75b260"
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "text": "volante",
+      "meaning": "Steering wheel",
+      "path": "public/images/approved/es-419-travel-steering-wheel-0558a23d12e3.png",
+      "sha256": "0558a23d12e32931ad9f3ce9ca05a4866f7d8d42dc48c15cb56c72194fc13501"
+    },
+    {
+      "id": "es-419-travel-salt",
+      "text": "sal",
+      "meaning": "Salt",
+      "path": "public/images/approved/es-419-travel-salt-0810a29ef637.png",
+      "sha256": "0810a29ef637ea3342452a560ac8ddf19907902d9dd23160f533665e70af65d8"
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "text": "azúcar",
+      "meaning": "Sugar",
+      "path": "public/images/approved/es-419-travel-sugar-b83cada270bf.png",
+      "sha256": "b83cada270bfe466db8b4a3702e73e4faa14fd240056fa7256cd99499ba7f7a0"
+    },
+    {
+      "id": "es-419-travel-butter",
+      "text": "mantequilla",
+      "meaning": "Butter",
+      "path": "public/images/approved/es-419-travel-butter-db1c70b61922.png",
+      "sha256": "db1c70b619229bb9d5d57c02cfa15dc3166a55abe8c955d7e7548413b6a0752e"
+    },
+    {
+      "id": "es-419-travel-lime",
+      "text": "limón",
+      "meaning": "Lime",
+      "path": "public/images/approved/es-419-travel-lime-e74a0306ccca.png",
+      "sha256": "e74a0306ccca96cefc4b85ebf120d74bf4021a641b1007a61f00a4acf14a381c"
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "text": "fresa",
+      "meaning": "Strawberry",
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e"
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "text": "piña",
+      "meaning": "Pineapple",
+      "path": "public/images/approved/es-419-travel-pineapple-bfa1ddc1824d.png",
+      "sha256": "bfa1ddc1824d7bcc7e728155bf7659af926a4e8dd0af5be7ae0a8abd89b3cadf"
+    },
+    {
+      "id": "es-419-travel-sock",
+      "text": "calcetín",
+      "meaning": "Sock",
+      "path": "public/images/approved/es-419-travel-sock-5c76ff42e899.png",
+      "sha256": "5c76ff42e8992b456474658dce06e5553fdc820e78689bee7eeb1663a53f2ee4"
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "text": "falda",
+      "meaning": "Skirt",
+      "path": "public/images/approved/es-419-travel-skirt-339ccc59c027.png",
+      "sha256": "339ccc59c027b65a7713843953b50bff0b67d1b5a2c3a27776886f70260d80b4"
+    },
+    {
+      "id": "es-419-travel-dress",
+      "text": "vestido",
+      "meaning": "Dress",
+      "path": "public/images/approved/es-419-travel-dress-e4188595075b.png",
+      "sha256": "e4188595075b26ea8d27111e9f0a66ca470c9c708656eb51e9b9cc513d561ddb"
+    },
+    {
+      "id": "es-419-travel-glove",
+      "text": "guante",
+      "meaning": "Glove",
+      "path": "public/images/approved/es-419-travel-glove-ffd805832b73.png",
+      "sha256": "ffd805832b731e8bc4e8739ea1f478bb1264b05b4c646ae36a1b5d42d83a9182"
+    },
+    {
+      "id": "es-419-travel-belt",
+      "text": "cinturón",
+      "meaning": "Belt",
+      "path": "public/images/approved/es-419-travel-belt-2a63c3d8b325.png",
+      "sha256": "2a63c3d8b325a0ddc529f1ddc59456ee12323113cbaf500e25de8e65183fc328"
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "text": "reloj de pulsera",
+      "meaning": "Wristwatch",
+      "path": "public/images/approved/es-419-travel-wristwatch-d54e7457f61a.png",
+      "sha256": "d54e7457f61ae894fed409b675a0517ec6037a640dc6068025e7b1f58709f416"
+    },
+    {
+      "id": "es-419-travel-pill",
+      "text": "pastilla",
+      "meaning": "Pill",
+      "path": "public/images/approved/es-419-travel-pill-17ef216bd80a.png",
+      "sha256": "17ef216bd80a9f197e08a0dde25a38129e2eaf5ea5ad376d7e53eb459d899e28"
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "text": "curita",
+      "meaning": "Adhesive bandage",
+      "path": "public/images/approved/es-419-travel-adhesive-bandage-bd860f54e45a.png",
+      "sha256": "bd860f54e45a5199952f9f4b09d3663f57b3db9ff86fe57e791331f81e4b8e0a"
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "text": "enchufe",
+      "meaning": "Power outlet",
+      "path": "public/images/approved/es-419-travel-power-outlet-55cc4baaeff1.png",
+      "sha256": "55cc4baaeff1eee5bbd958fbfe094eb3307f46d54f5c70a30378c50296168d6a"
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "text": "tijeras",
+      "meaning": "Scissors",
+      "path": "public/images/approved/es-419-travel-scissors-ba7042409bb9.png",
+      "sha256": "ba7042409bb9b5b9f390ce21b7bfb047f2fd148dabd574a37019fa040ba926f8"
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "text": "protector solar",
+      "meaning": "Sunscreen",
+      "path": "public/images/approved/es-419-travel-sunscreen-699651b5b06c.png",
+      "sha256": "699651b5b06ce112346a7d32db2df1e950174a588cd2d2f0375ebc40c3018b44"
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "text": "repelente",
+      "meaning": "Insect repellent",
+      "path": "public/images/approved/es-419-travel-insect-repellent-2af61d0f84d4.png",
+      "sha256": "2af61d0f84d406fe4f8fcf974d6e5730d24c32a65d77e1fbc66100fc1466c254"
+    },
+    {
+      "id": "es-419-travel-tent",
+      "text": "tienda de campaña",
+      "meaning": "Tent",
+      "path": "public/images/approved/es-419-travel-tent-cacf2f7adc96.png",
+      "sha256": "cacf2f7adc9661765c8769d461594a5710ab99b6b669ad567345f4452a899148"
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "text": "linterna",
+      "meaning": "Flashlight",
+      "path": "public/images/approved/es-419-travel-flashlight-52fc58f35fa4.png",
+      "sha256": "52fc58f35fa47d39362fc9c2d14e441f53809df585b747e5a3238f597833d8d6"
+    },
+    {
+      "id": "es-419-travel-compass",
+      "text": "brújula",
+      "meaning": "Compass",
+      "path": "public/images/approved/es-419-travel-compass-f99cd6717229.png",
+      "sha256": "f99cd67172292569e36de26ff5bd71b72e31721aef19bcbf084274477807eb32"
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "text": "saco de dormir",
+      "meaning": "Sleeping bag",
+      "path": "public/images/approved/es-419-travel-sleeping-bag-0b7c8595b40d.png",
+      "sha256": "0b7c8595b40d556074de39088efe6f4df13f0a73d69e483c1515574271c2e7b0"
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "text": "binoculares",
+      "meaning": "Binoculars",
+      "path": "public/images/approved/es-419-travel-binoculars-c3db8ff4fa4a.png",
+      "sha256": "c3db8ff4fa4a2d4155fb71703d58cfabda3bc46e84b9af82e1366a99acc69bfb"
+    },
+    {
+      "id": "es-419-travel-flower",
+      "text": "flor",
+      "meaning": "Flower",
+      "path": "public/images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+      "sha256": "ab0872808bfc7bcdb993574b60152a87e3a975f84e59cdb560872ff87a1ebba9"
+    },
+    {
+      "id": "es-419-basic-eat",
+      "text": "comer",
+      "meaning": "Eat",
+      "path": "public/images/approved/es-419-basic-eat-c495ddb8644c.png",
+      "sha256": "c495ddb8644cb6ae010606575f6718279f820d3e041434d2f3824ed2edd7641d"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "text": "beber",
+      "meaning": "Drink",
+      "path": "public/images/approved/es-419-basic-drink-45313e5cd9db.png",
+      "sha256": "45313e5cd9db24fbdaf5fda8aadce00803d5a0f0ed97b01839a3aad920658be8"
+    },
+    {
+      "id": "es-419-basic-large",
+      "text": "grande",
+      "meaning": "Big",
+      "path": "public/images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+      "sha256": "e4e3a7c4b4a711e9eafb2c65f99d5d9803618a42597df959dd6f54c6ab6a845b"
+    },
+    {
+      "id": "es-419-basic-small",
+      "text": "pequeño",
+      "meaning": "Small",
+      "path": "public/images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+      "sha256": "ed0a26999d386ade88cf8d363538d9562af4cba381503f7604186d016cbd6e11"
+    },
+    {
+      "id": "es-419-basic-cold",
+      "text": "frío",
+      "meaning": "Cold",
+      "path": "public/images/approved/es-419-basic-cold-10d51b01d85f.png",
+      "sha256": "10d51b01d85f0879a5adfcc00bfd8bb132c1661660efa642635bb4168472d0b9"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "text": "caliente",
+      "meaning": "Hot",
+      "path": "public/images/approved/es-419-basic-hot-23f788a2971b.png",
+      "sha256": "23f788a2971b17fec68c1b156af86201f37cbae7a0f5bef2eea2e906912eeb2c"
+    },
+    {
+      "id": "es-419-basic-open",
+      "text": "abierto",
+      "meaning": "Open",
+      "path": "public/images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+      "sha256": "5601a95a2085bea7bd788b5207e5c3ad374780fa75ae549ff84a4a4018314a56"
+    },
+    {
+      "id": "es-419-basic-closed",
+      "text": "cerrado",
+      "meaning": "Closed",
+      "path": "public/images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+      "sha256": "bed4c2f3e39f2f6b8d8b8c6cf262001618abdbb05f2ba21592fbbb26eebbc072"
+    },
+    {
+      "id": "es-419-basic-inside",
+      "text": "dentro de",
+      "meaning": "Inside",
+      "path": "public/images/approved/es-419-basic-inside-0a496e40c996.png",
+      "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df"
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "text": "encima de",
+      "meaning": "On top of",
+      "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e"
+    },
+    {
+      "id": "es-419-basic-under",
+      "text": "debajo de",
+      "meaning": "Under",
+      "path": "public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+      "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "text": "al lado de",
+      "meaning": "Next to",
+      "path": "public/images/approved/es-419-basic-next-to-8fd1c17703e9.png",
+      "sha256": "8fd1c17703e9cf5b62ad3b4b95a26a04690e537a7eed799b6ff371a183ed0ffe"
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "text": "hambre",
+      "meaning": "Hunger",
+      "path": "public/images/approved/es-419-basic-hunger-e2d618dfe631.png",
+      "sha256": "e2d618dfe63105abf0b86e74fcefc0a12e6e11ccd8772536dc08e3f44626b5e3"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "text": "sed",
+      "meaning": "Thirst",
+      "path": "public/images/approved/es-419-basic-thirst-0f4eff1cf54b.png",
+      "sha256": "0f4eff1cf54b6e3659f54da024d156d742e93d78f85d59f074f08d93823e2449"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "text": "sueño",
+      "meaning": "Sleepiness",
+      "path": "public/images/approved/es-419-basic-sleepiness-8a2e331b4bde.png",
+      "sha256": "8a2e331b4bde85a1dc507cba6d9cdb330a3488421b6ea22a8ca8367a5aa00a79"
+    },
+    {
+      "id": "es-419-food-potato",
+      "text": "papa",
+      "meaning": "Potato",
+      "path": "public/images/approved/es-419-food-potato-7f76e5fb1041.png",
+      "sha256": "7f76e5fb1041c5ce7d8743ec79c2a680e39d4e3c4f030379603352a630b9589c"
+    },
+    {
+      "id": "es-419-food-tomato",
+      "text": "jitomate",
+      "meaning": "Tomato",
+      "path": "public/images/approved/es-419-food-tomato-6ba3ea9ff343.png",
+      "sha256": "6ba3ea9ff343567043fd301491db992768ffd52fe3e70437a902fda7dd27d1cc"
+    },
+    {
+      "id": "es-419-food-onion",
+      "text": "cebolla",
+      "meaning": "Onion",
+      "path": "public/images/approved/ja-v-223e5321ecb8-0aa0cb8ab63e.jpg",
+      "sha256": "f75660f42b7982624afc51d4d6cecdcde85c873c8e0f24b295eff277f99b9490"
+    },
+    {
+      "id": "es-419-food-carrot",
+      "text": "zanahoria",
+      "meaning": "Carrot",
+      "path": "public/images/approved/es-419-food-carrot-5f0200534ae3.png",
+      "sha256": "5f0200534ae3d0b656bb1ddfaa77cf51a9142d661f44196b4778d224ef0dc313"
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "text": "lechuga",
+      "meaning": "Lettuce",
+      "path": "public/images/approved/es-419-food-lettuce-d8fe8f1aa24d.png",
+      "sha256": "d8fe8f1aa24da7867b2de135864cf1a8abe014f8ed31406e49bcb15d1934537f"
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "text": "tortilla",
+      "meaning": "Tortilla",
+      "path": "public/images/approved/es-419-food-tortilla-42b648544516.png",
+      "sha256": "42b64854451626a9f6161ab60f0e661cd3efb85635d7f31ec0122421bbd96339"
+    },
+    {
+      "id": "es-419-food-beans",
+      "text": "frijoles",
+      "meaning": "Beans",
+      "path": "public/images/approved/es-419-food-beans-ac1df9367013.png",
+      "sha256": "ac1df9367013017fc49cfbc74d560690f57130607f8153773db6b90caa4de8bd"
+    },
+    {
+      "id": "es-419-food-pasta",
+      "text": "pasta",
+      "meaning": "Pasta",
+      "path": "public/images/approved/es-419-food-pasta-5f01d60afa3c.png",
+      "sha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7"
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "text": "yogur",
+      "meaning": "Yogurt",
+      "path": "public/images/approved/es-419-food-yogurt-881aa6405174.png",
+      "sha256": "881aa6405174aa45b77a73ce3ae8b413f11374082c63a888761c60da84835fe1"
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "text": "sándwich",
+      "meaning": "Sandwich",
+      "path": "public/images/approved/es-419-food-sandwich-e591dcb54132.png",
+      "sha256": "e591dcb541320bcb74c9935287ee22264e6d76f001a18fa99a4bc613b47d9e95"
+    },
+    {
+      "id": "es-419-food-pizza",
+      "text": "pizza",
+      "meaning": "Pizza",
+      "path": "public/images/approved/es-419-food-pizza-9c26220d7f83.png",
+      "sha256": "9c26220d7f83bbdd179e5a2ba09ab6632c73cc51c3d3aacbfba816ddfcbdba82"
+    },
+    {
+      "id": "es-419-food-tea",
+      "text": "té",
+      "meaning": "Tea",
+      "path": "public/images/approved/es-419-food-tea-d1af5107e71b.png",
+      "sha256": "d1af5107e71b403c72855b54723b36c744edc3ed313cd71879f2372c356ae32b"
+    },
+    {
+      "id": "es-419-food-grapes",
+      "text": "uvas",
+      "meaning": "Grapes",
+      "path": "public/images/approved/es-419-food-grapes-eeb09681600a.png",
+      "sha256": "eeb09681600ac4c95408728a8322536203a022b3dd635cb35d0874be4c5fa91c",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/grapes-v1.png"
+    },
+    {
+      "id": "es-419-food-mango",
+      "text": "mango",
+      "meaning": "Mango",
+      "path": "public/images/approved/es-419-food-mango-4d192809efab.png",
+      "sha256": "4d192809efab1145328425e5f22e8c3ade3a09b6801ea0bd7fdc6d7aa9244021",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/mango-v1.png"
+    },
+    {
+      "id": "es-419-food-watermelon",
+      "text": "sandía",
+      "meaning": "Watermelon",
+      "path": "public/images/approved/es-419-food-watermelon-90527843ae35.png",
+      "sha256": "90527843ae35dbfb37bcbbf98d7d965b700e1870576456abe660137b7260826b",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/watermelon-v1.png"
+    },
+    {
+      "id": "es-419-food-melon",
+      "text": "melón",
+      "meaning": "Melon",
+      "path": "public/images/approved/es-419-food-melon-eed2036f2c89.png",
+      "sha256": "eed2036f2c899ca3a923338cf1dd83a4135b064c183a2605b6a9fc6fe0d08f29",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/melon-v1.png"
+    },
+    {
+      "id": "es-419-food-peach",
+      "text": "durazno",
+      "meaning": "Peach",
+      "path": "public/images/approved/es-419-food-peach-1bc48ef2cd37.png",
+      "sha256": "1bc48ef2cd37f39fd7233af68d8282c490bf9a1e7116680aee6a01ac4c720135",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/peach-v1.png"
+    },
+    {
+      "id": "es-419-food-pear",
+      "text": "pera",
+      "meaning": "Pear",
+      "path": "public/images/approved/es-419-food-pear-3f22f7ce2648.png",
+      "sha256": "3f22f7ce26487563a70720407f1779c2fb447daddd30c72b79c5543d9d56cd06",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/pear-v1.png"
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "text": "pepino",
+      "meaning": "Cucumber",
+      "path": "public/images/approved/es-419-food-cucumber-8a03ecf0bea0.png",
+      "sha256": "8a03ecf0bea067c38727573aacff437011083265350af9ba9b43ba48e6f99a0d",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/cucumber-v1.png"
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "text": "brócoli",
+      "meaning": "Broccoli",
+      "path": "public/images/approved/es-419-food-broccoli-9d18bf400570.png",
+      "sha256": "9d18bf4005700aee437bd15453731a6a466836c3427861f858f4ceee9ae6aa5b",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/broccoli-v1.png"
+    },
+    {
+      "id": "es-419-food-cauliflower",
+      "text": "coliflor",
+      "meaning": "Cauliflower",
+      "path": "public/images/approved/es-419-food-cauliflower-24816b9bba81.png",
+      "sha256": "24816b9bba8191f6557c00fc7ba486c02712c5af73f085a104494fb332d313cf",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/cauliflower-v1.png"
+    },
+    {
+      "id": "es-419-food-spinach",
+      "text": "espinaca",
+      "meaning": "Spinach",
+      "path": "public/images/approved/es-419-food-spinach-9b926e087e61.png",
+      "sha256": "9b926e087e618392e027f0cc2e4bebbc4a8eb939f0feceb6b9aaf551f21b697c",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/spinach-v1.png"
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "text": "champiñón",
+      "meaning": "Button mushroom",
+      "path": "public/images/approved/es-419-food-mushroom-bf635748dd67.png",
+      "sha256": "bf635748dd6741a4e96be4c6c2efec730b7ed97f8084a021ea3e2a7e40b5fd69",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/mushroom-v1.png"
+    },
+    {
+      "id": "es-419-food-corn",
+      "text": "elote",
+      "meaning": "Corn on the cob",
+      "path": "public/images/approved/es-419-food-corn-521ba151d5b8.png",
+      "sha256": "521ba151d5b8f0d4ec58771fb35a4c04dd626dbddc6c6d17030de2d52ad88f77",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/corn-v1.png"
+    },
+    {
+      "id": "es-419-food-steak",
+      "text": "bistec",
+      "meaning": "Steak",
+      "path": "public/images/approved/es-419-food-steak-c816bc14ec08.png",
+      "sha256": "c816bc14ec084290a5edb66838348abed6af769119e22896282ac2d1e54dc9aa",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/steak-v1.png"
+    },
+    {
+      "id": "es-419-food-ham",
+      "text": "jamón",
+      "meaning": "Ham",
+      "path": "public/images/approved/es-419-food-ham-f28fea7a16c1.png",
+      "sha256": "f28fea7a16c16b1f1007c6c1053ff0ed5422f3409a99cd6dc67adcdea0667442",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/ham-v1.png"
+    },
+    {
+      "id": "es-419-food-bacon",
+      "text": "tocino",
+      "meaning": "Bacon",
+      "path": "public/images/approved/es-419-food-bacon-90f0f89a2ce8.png",
+      "sha256": "90f0f89a2ce81c98cd927a5e9350a86947cf2631f469fed58485d186509b937d",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/bacon-v1.png"
+    },
+    {
+      "id": "es-419-food-sausage",
+      "text": "salchicha",
+      "meaning": "Sausage",
+      "path": "public/images/approved/es-419-food-sausage-dc1ab55e2182.png",
+      "sha256": "dc1ab55e2182f21499dc16fa0a691f4b137bf2c8efdd1e89d1a2ebe0be47a9b1",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/sausage-v1.png"
+    },
+    {
+      "id": "es-419-food-shrimp",
+      "text": "camarón",
+      "meaning": "Shrimp",
+      "path": "public/images/approved/es-419-food-shrimp-dadb934773f4.png",
+      "sha256": "dadb934773f4ec6a2c3a1d3b6fe5138468745b8cda399137912474ec3ba0f8e1",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/shrimp-v1.png"
+    },
+    {
+      "id": "es-419-food-tuna",
+      "text": "atún",
+      "meaning": "Tuna",
+      "path": "public/images/approved/es-419-food-tuna-dabfae054122.png",
+      "sha256": "dabfae054122b9aa44eaa95b38cfd1c4ea847f8af45adfcf007a102cca5d4b71",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/tuna-v1.png"
+    },
+    {
+      "id": "es-419-food-garlic",
+      "text": "ajo",
+      "meaning": "Garlic",
+      "path": "public/images/approved/es-419-food-garlic-2b49289df366.png",
+      "sha256": "2b49289df3661965a772b8fb9c223fef2fe91629add3dc6ecb4b8a54ef778413",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/garlic-v1.png"
+    },
+    {
+      "id": "es-419-food-chili-pepper",
+      "text": "chile",
+      "meaning": "Chili pepper",
+      "path": "public/images/approved/es-419-food-chili-pepper-89d9bfe465bd.png",
+      "sha256": "89d9bfe465bd14a444d0901699ab312e33c2e64ee6106c07d79865dbbc379071",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/chili-pepper-v1.png"
+    },
+    {
+      "id": "es-419-food-honey",
+      "text": "miel",
+      "meaning": "Honey",
+      "path": "public/images/approved/es-419-food-honey-d8b57aad9c6b.png",
+      "sha256": "d8b57aad9c6b72e9a4f6d8df8e5f2f1e3d19b6defc1ac4e43657c7d7dc28af8e",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/honey-v1.png"
+    },
+    {
+      "id": "es-419-food-jam",
+      "text": "mermelada",
+      "meaning": "Jam",
+      "path": "public/images/approved/es-419-food-jam-a6e3dd90a598.png",
+      "sha256": "a6e3dd90a598bc4718fc4fe90028d335d2c52d0a2631f7ae65d08560ed9daafa",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/jam-v1.png"
+    },
+    {
+      "id": "es-419-food-cooking-oil",
+      "text": "aceite",
+      "meaning": "Cooking oil",
+      "path": "public/images/approved/es-419-food-cooking-oil-460defe216fa.png",
+      "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png"
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "text": "pimienta",
+      "meaning": "Black pepper",
+      "path": "public/images/approved/es-419-food-black-pepper-64e79749b675.png",
+      "sha256": "64e79749b6753ca96ed0812b778afe6f96c692703a5651ed10fcd8dd0ae302e0",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/black-pepper-v1.png"
+    },
+    {
+      "id": "es-419-food-cookie",
+      "text": "galleta",
+      "meaning": "Cookie",
+      "path": "public/images/approved/es-419-food-cookie-c8d21225f4aa.png",
+      "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/cookie-v1.png"
+    },
+    {
+      "id": "es-419-food-cake",
+      "text": "pastel",
+      "meaning": "Cake",
+      "path": "public/images/approved/es-419-food-cake-400061e88691.png",
+      "sha256": "400061e886910d790a0f8fbfdc91bddfac69fd1acca95774ac282904b35be807",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/cake-v1.png"
+    },
+    {
+      "id": "es-419-food-chocolate",
+      "text": "chocolate",
+      "meaning": "Chocolate",
+      "path": "public/images/approved/es-419-food-chocolate-05a753c7cf4b.png",
+      "sha256": "05a753c7cf4b18b78fcef87afe544629b4e97f5209117ab095d9b14e09b20c4e",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/chocolate-v1.png"
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "text": "palomitas",
+      "meaning": "Popcorn",
+      "path": "public/images/approved/es-419-food-popcorn-19b7d519ff4f.png",
+      "sha256": "19b7d519ff4ffaca5ca1ce4dd3abbbf835f48896fcdae6252f788ffd22cd27d4",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/popcorn-v1.png"
+    },
+    {
+      "id": "es-419-food-peanut",
+      "text": "cacahuate",
+      "meaning": "Peanut",
+      "path": "public/images/approved/es-419-food-peanut-8c5d54df6171.png",
+      "sha256": "8c5d54df61716be5423bdb91d2a80b883752a30924047a4e157ab1f91dd5d6d1",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/peanut-v1.png"
+    },
+    {
+      "id": "es-419-food-gelatin",
+      "text": "gelatina",
+      "meaning": "Gelatin dessert",
+      "path": "public/images/approved/es-419-food-gelatin-77423d95e3c6.png",
+      "sha256": "77423d95e3c67445b11ac118fd76798631a9288aeb73edc99b0dc0f914ea72ca",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/gelatin-v1.png"
+    },
+    {
+      "id": "es-419-food-knife",
+      "text": "cuchillo",
+      "meaning": "Knife",
+      "path": "public/images/approved/es-419-food-knife-0e8c1bac5a8f.png",
+      "sha256": "0e8c1bac5a8f14f4845baed5a78a250218cd63d22ebd996ae58c63626a0324aa",
+      "foodApprovedSourcePath": "artifacts/spanish-food-2-art/originals/knife-v1.png"
+    }
+  ],
+  "distinctionsKept": [
+    "Garlic has a segmented white bulb and separate cloves; onion has a golden round bulb and green shoots. Their whole-vegetable silhouettes remain clear at145px.",
+    "Spinach is an open bunch of separate smooth oval leaves and stems; lettuce is a compact ruffled head. Broccoli is green with a branching stalk, while cauliflower is white with a leafy base. These remain useful distinct choices.",
+    "Watermelon shows red seeded flesh and green-striped rind; melón shows orange flesh, a central seed cavity and a tan netted rind. No blanket melon-category exclusion.",
+    "Ham has a broad pink cut face and slice; steak has brown grill marks and a T-shaped bone. Bacon has long striped strips and salchicha has sealed frankfurter ends. These remain distinguishable.",
+    "Pizza toppings are round pepperoni discs, not the new whole frankfurter-style salchicha. The sandwich has only a thin red filling without identifiable ham features. No unseen ham, sausage, tomato, onion or seasoning ingredients were inferred.",
+    "Soup has small flat three-lobed green herb sprigs, not the new broccoli florets or smooth whole spinach bunch. No broccoli/spinach soup restrictions were inferred.",
+    "Jam has a squat open jar of red contents, honey has an amber jar and dipper, and oil has a stoppered narrow-neck cruet. Their ingredients and containers remain distinct; only oil has the obvious bottle-form overlap with botella.",
+    "Chocolate chips remain visible in the cookie, warranting that specific overlap; cake is pink-frosted layered sponge and gelatin is a red fluted ring, so no blanket dessert restriction.",
+    "The market foreground corn cobs and grape bunch and the salad cucumber slices are clearly visible at145px. Tiny generic facade decorations and unidentifiable recipe contents were not treated as additional food answers.",
+    "Food level2 repeats five existing Travel2 IDs rather than creating separate same-object cards. Shared IDs are deduplicated before answer selection; the revised glass keeps its existing Spanish identity.",
+    "The existing Spanish cooked-rice override remains unchanged. Japanese uncooked rice retains its exact catalogue image and bytes. Historical171-picture and159-picture audits retain their original evidence."
+  ]
+}

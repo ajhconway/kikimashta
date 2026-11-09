@@ -1,0 +1,47 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "status": "reuse-review-complete",
+  "reviewMethod": "Compared proposed meanings/identities against the current approved Spanish banks, Japanese catalogue meanings/descriptions and approved-image registry. No standalone approved depiction matches the 31 new nouns. This is a reuse selection record, not a full visual ambiguity audit.",
+  "sources": {
+    "content/catalog/ja.json": "d4c7e12c165cec17031f11ade67ce220286117da5706db7559ad0ce6b4027caa",
+    "content/card-regeneration/activation.json": "2fc2f4d7823eea54b47100fb62b8d96e72e818e773818e600cf4c7855df04752",
+    "content/es-419.json": "7ce7bc2d234ef1361dfd807c5ef3d2a281fbed00b25f2ed2311b0992c00a09b6",
+    "content/es-419-travel-2.json": "d63bc583fcb7eae6c60a364c7f0f6f9aac84d20242c796c95283cd4dd25b8b3a",
+    "content/es-419-travel-3.json": "2145dd0350ed01926f68de5a6fec2b8e1a780bd56930ad96569c94f18ce3b221",
+    "content/es-419-travel-4.json": "e163b025a85dfedc8c5b581d3b2e294c3c44b717a838657e10d5631af4c04cc1",
+    "content/es-419-basic-1.json": "1420abcca223592de73acd3197e463cf58eb2f5a467d49d6dd35391fba5aab01",
+    "content/es-419-food-1.json": "436e241fe2b242d4c6d7e16b48e3dad09d1e41cfe4b6682c147f07aa8d8c6102"
+  },
+  "selectedSpanishReuses": [
+    "es-419-travel-plate",
+    "es-419-travel-drinking-glass",
+    "es-419-travel-cup",
+    "es-419-travel-fork",
+    "es-419-travel-spoon"
+  ],
+  "relatedJapaneseItemsNotReused": [
+    {
+      "id": "ja-v-1ee90bf5d13a",
+      "meaning": "To cut",
+      "reason": "Scissors facing paper depict an action, not a standalone kitchen knife."
+    },
+    {
+      "id": "ja-v-23d807f4f375",
+      "meaning": "Shellfish",
+      "reason": "A scallop shell does not depict shrimp."
+    },
+    {
+      "id": "ja-v-b1b10c2f6445",
+      "meaning": "Pig",
+      "reason": "A live pig does not depict ham, bacon or sausage."
+    },
+    {
+      "id": "ja-v-d215c2071f47",
+      "meaning": "Wheat",
+      "reason": "Wheat stalks do not depict a sweet-corn cob."
+    }
+  ],
+  "newPicturesRequired": 31,
+  "reusedPictures": 5
+}

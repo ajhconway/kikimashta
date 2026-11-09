@@ -20,7 +20,10 @@ test('selected Spanish production data exactly regenerate without model packages
   assert.equal(output.ids.length, bank.length);
   assert.ok(output.phonemeProbes.every(probe => probe.passed));
   assert.equal(output.phonemeProbes.length, 22);
-  assert.equal(output.pictureExclusionPairs.length, 72);
+  const declaredPairs = new Set(bank.flatMap(item => (item.pictureDistractorExclusions ?? []).map(id => [item.id, id].sort().join('|'))));
+  const preparedPairs = new Set(output.pictureExclusionPairs.map(pair => pair.map(index => output.ids[index]).sort().join('|')));
+  assert.deepEqual(preparedPairs, declaredPairs);
+  assert.equal(output.pictureExclusionPairs.length, declaredPairs.size);
   assert.equal(output.ids.length, new Set(output.ids).size);
   assert.deepEqual(output.homophoneGroups, []);
   assert.equal(output.semanticModel.id, 'facebook/fasttext-es-vectors');
