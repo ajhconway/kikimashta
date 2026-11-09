@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-steak",
+  "slug": "steak",
+  "version": 1,
+  "path": "originals/steak-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "edd89d783f640346da0f71b256ef767bae45cfa3b09ff4f552d8b824e71ab971",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "c816bc14ec084290a5edb66838348abed6af769119e22896282ac2d1e54dc9aa",
+  "bytes": 1063284,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-713cdec4-c83b-4736-ab22-54dafc9faad6.png"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-mushroom",
+  "slug": "mushroom",
+  "version": 1,
+  "path": "originals/mushroom-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "82478f0d7c04e15808d268218e6789d41612e59382eed928ee6c85177e0eedc6",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "bf635748dd6741a4e96be4c6c2efec730b7ed97f8084a021ea3e2a7e40b5fd69",
+  "bytes": 972146,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ecbd5112-b2e4-4a4a-8e75-e9bcd6348c4d.png"
+}

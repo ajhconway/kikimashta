@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-corn",
+  "slug": "corn",
+  "version": 1,
+  "path": "originals/corn-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "cea5d8b65c0ddab812f7b72f736e58ba66b562087cee4ab4fe3746fa083ad6c7",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "521ba151d5b8f0d4ec58771fb35a4c04dd626dbddc6c6d17030de2d52ad88f77",
+  "bytes": 823940,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f053ca5e-df30-438a-8680-3d7dd09d74c7.png"
+}

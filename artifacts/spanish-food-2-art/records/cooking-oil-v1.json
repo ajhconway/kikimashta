@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-cooking-oil",
+  "slug": "cooking-oil",
+  "version": 1,
+  "path": "originals/cooking-oil-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "ff3ce485bfd79835be546e04b251ac07c913f7b9987ce87c271c72dcad977d79",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+  "bytes": 761639,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-bcfc3f79-3c76-498a-ac8d-0f2d5a4290b5.png"
+}
