@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-laundromat",
+  "slug": "laundromat",
+  "version": 1,
+  "path": "originals/laundromat-v1.png",
+  "sha256": "adbd79aeeb7e2cfc91af7eb3568488e6e6e0daea3be784a9f3a52c1e6ab2ef0c",
+  "promptSha256": "e0f8ed683fc7d9d710ffd98295ec347f29bbb73fa28a5d34c0c70fa1fd5f5e4a",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3b9cecfe-fa6c-49d1-9927-6bfad2e0e7ea.png"
+}

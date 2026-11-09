@@ -2,7 +2,7 @@
 
 36 additional concrete travel words. Picture-only practice, English interface and the existing eight voices. [Review words and concepts](review.html) · [Structured draft](draft.json).
 
-Vocabulary review is pending. Artwork/audio generation and activation remain subsequent steps.
+The owner approved the reviewed word list and requested generation. [Review the first six pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. Twenty-nine new pictures remain pending, and the flower is an unchanged approved reuse. Artwork pauses after each batch for owner feedback under AGENTS.md; media acceptance and activation remain subsequent steps.
 
 ## Places and services
 
@@ -89,3 +89,9 @@ Camión de carga explicitly means cargo truck; camión alone can mean bus in Mex
 ## Recording scope
 
 36 words × 8 voices = 288 recordings; 325 Unicode characters per voice. No contextual recordings are included. Future contextual sentences can combine these nouns with Basic Spanish frames such as “Necesito una curita” or “¿Dónde está la lavandería?”. Those sentences would need their own reviewed text/audio scope.
+
+## Generated audio
+
+All 288 canonical word recordings are generated in the eight existing regional voices. Exact requests, normalization records and delivery hashes are preserved. Both Chromium and mobile WebKit passed native decode/play/advancing-clock checks for every recording. Carlos Figueroa / azúcar is flagged at −22.65 LUFS after the maximum +9 dB gain, within the established processing limits; other clips meet target. The private originals/processing archive `~/.local/share/kikimashta/spanish-audio/207-v1/` has 1736 hash-verified files plus its archive manifest.
+
+Rebuild the progressive combined review with `node scripts/content/build-spanish-travel-level-4-media-review.mjs`. Full prompts, six original artworks and image records are in `artifacts/spanish-travel-4-art/`; listening review and public deliveries are in `artifacts/spanish-travel-4-audio-review/`.

@@ -1,0 +1,416 @@
+{
+  "issue": 207,
+  "pack": "es-419-travel-4",
+  "status": "generation-in-progress-awaiting-batch-feedback",
+  "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
+  "tool": "built-in image_gen",
+  "generatedImages": 6,
+  "reusedImages": 1,
+  "pendingImages": 29,
+  "expectedNewImages": 35,
+  "expectedClips": 288,
+  "recordings": 288,
+  "audioManifest": "artifacts/spanish-travel-4-audio-review/manifest.json",
+  "audioManifestSha256": "56a41063e4c39c61802a0a349ebeaba2ca63a0357edf52f9934ad9cc1c2d7442",
+  "images": [
+    {
+      "id": "es-419-travel-supermarket",
+      "slug": "supermarket",
+      "text": "supermercado",
+      "meaning": "Supermarket",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/supermarket-v1.png",
+      "sha256": "dbeaac792397ccb1e9ef117a034b2d7ad5ab107cfa6645559eac2d38eaa853fd",
+      "bytes": 1345791,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 542599,
+        "opaquePixels": 1014497,
+        "opaqueWhitePixels": 391
+      },
+      "promptSha256": "40b44de925c26ffdd0b80e9a4752f6434b8c1648c234e262b9b43402fa4cd987",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "slug": "post-office",
+      "text": "oficina de correos",
+      "meaning": "Post office",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/post-office-v1.png",
+      "sha256": "5a0e3c15bc95b6f19e75427daa9a748bd5c218f8f700efd63b6356845b08121e",
+      "bytes": 1150029,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 657212,
+        "opaquePixels": 902005,
+        "opaqueWhitePixels": 535
+      },
+      "promptSha256": "1723ea1517bd8d33654ab16fa957fdc61df8ebae7aebcd595fd1ca53017c2fb6",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-police-station",
+      "slug": "police-station",
+      "text": "estación de policía",
+      "meaning": "Police station",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/police-station-v1.png",
+      "sha256": "f266955b2c37b1a554c1d4140d2dd726102b96641aa5cd2cdc947c70e034dc36",
+      "bytes": 1149896,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 654958,
+        "opaquePixels": 905543,
+        "opaqueWhitePixels": 7
+      },
+      "promptSha256": "390e514657810bcba990204adb259a015710deb563ff888b8001a8a7dbddd456",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-library",
+      "slug": "library",
+      "text": "biblioteca",
+      "meaning": "Library",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/library-v1.png",
+      "sha256": "81ddcafae8f1c14dc4b35a078c24308ab8ab09dbfaf947eb8d1d15a06a4c3f26",
+      "bytes": 1111420,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 714357,
+        "opaquePixels": 844040,
+        "opaqueWhitePixels": 172
+      },
+      "promptSha256": "29671bb3b6352178bd61d5e854c4ec51bb0cacf8efd9cd8e668fa3418218900f",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "slug": "cinema",
+      "text": "cine",
+      "meaning": "Movie theater",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/cinema-v1.png",
+      "sha256": "51f0fa177a8c026769180c356a7a02a7006f937b98c55fbad6a67b22cd4475b0",
+      "bytes": 1324776,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 608922,
+        "opaquePixels": 950069,
+        "opaqueWhitePixels": 167
+      },
+      "promptSha256": "70230f2c3d2c07395b8347859e5310e10341f655bde518b64521f89ac23ebcbb",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "slug": "laundromat",
+      "text": "lavandería",
+      "meaning": "Laundromat",
+      "group": "town",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-4-art/originals/laundromat-v1.png",
+      "sha256": "adbd79aeeb7e2cfc91af7eb3568488e6e6e0daea3be784a9f3a52c1e6ab2ef0c",
+      "bytes": 1414695,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 537997,
+        "opaquePixels": 1021686,
+        "opaqueWhitePixels": 4586
+      },
+      "promptSha256": "e0f8ed683fc7d9d710ffd98295ec347f29bbb73fa28a5d34c0c70fa1fd5f5e4a",
+      "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319"
+    },
+    {
+      "id": "es-419-travel-helicopter",
+      "slug": "helicopter",
+      "text": "helicóptero",
+      "meaning": "Helicopter",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "slug": "cargo-truck",
+      "text": "camión de carga",
+      "meaning": "Cargo truck",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-ambulance",
+      "slug": "ambulance",
+      "text": "ambulancia",
+      "meaning": "Ambulance",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "slug": "police-car",
+      "text": "patrulla",
+      "meaning": "Police car",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-tire",
+      "slug": "tire",
+      "text": "llanta",
+      "meaning": "Tire",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-steering-wheel",
+      "slug": "steering-wheel",
+      "text": "volante",
+      "meaning": "Steering wheel",
+      "group": "transport",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-salt",
+      "slug": "salt",
+      "text": "sal",
+      "meaning": "Salt",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "slug": "sugar",
+      "text": "azúcar",
+      "meaning": "Sugar",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-butter",
+      "slug": "butter",
+      "text": "mantequilla",
+      "meaning": "Butter",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-lime",
+      "slug": "lime",
+      "text": "limón",
+      "meaning": "Lime",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "slug": "strawberry",
+      "text": "fresa",
+      "meaning": "Strawberry",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "slug": "pineapple",
+      "text": "piña",
+      "meaning": "Pineapple",
+      "group": "food",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sock",
+      "slug": "sock",
+      "text": "calcetín",
+      "meaning": "Sock",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-skirt",
+      "slug": "skirt",
+      "text": "falda",
+      "meaning": "Skirt",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-dress",
+      "slug": "dress",
+      "text": "vestido",
+      "meaning": "Dress",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-glove",
+      "slug": "glove",
+      "text": "guante",
+      "meaning": "Glove",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-belt",
+      "slug": "belt",
+      "text": "cinturón",
+      "meaning": "Belt",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "slug": "wristwatch",
+      "text": "reloj de pulsera",
+      "meaning": "Wristwatch",
+      "group": "clothing",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-pill",
+      "slug": "pill",
+      "text": "pastilla",
+      "meaning": "Pill",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "slug": "adhesive-bandage",
+      "text": "curita",
+      "meaning": "Adhesive bandage",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-bandage",
+      "slug": "bandage",
+      "text": "venda",
+      "meaning": "Bandage roll",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "slug": "scissors",
+      "text": "tijeras",
+      "meaning": "Scissors",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "slug": "sunscreen",
+      "text": "protector solar",
+      "meaning": "Sunscreen",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-insect-repellent",
+      "slug": "insect-repellent",
+      "text": "repelente",
+      "meaning": "Insect repellent",
+      "group": "health",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-tent",
+      "slug": "tent",
+      "text": "tienda de campaña",
+      "meaning": "Tent",
+      "group": "outdoors",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "slug": "flashlight",
+      "text": "linterna",
+      "meaning": "Flashlight",
+      "group": "outdoors",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-compass",
+      "slug": "compass",
+      "text": "brújula",
+      "meaning": "Compass",
+      "group": "outdoors",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-sleeping-bag",
+      "slug": "sleeping-bag",
+      "text": "saco de dormir",
+      "meaning": "Sleeping bag",
+      "group": "outdoors",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "slug": "binoculars",
+      "text": "binoculares",
+      "meaning": "Binoculars",
+      "group": "outdoors",
+      "source": "pending",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-flower",
+      "slug": "flower",
+      "text": "flor",
+      "meaning": "Flower",
+      "group": "outdoors",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-fa6a4c8f27b4-3610d3fbdc0c.png",
+      "sha256": "ab0872808bfc7bcdb993574b60152a87e3a975f84e59cdb560872ff87a1ebba9",
+      "sourceId": "ja-v-fa6a4c8f27b4",
+      "evidence": "content/card-regeneration/activation.json"
+    }
+  ]
+}
