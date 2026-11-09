@@ -197,18 +197,43 @@ test('saved badge changes celebrate on Home return before reordering and respect
     current: element.querySelector('.badge-current-art .pack-badge-medal')?.getAttribute('data-rank'),
     sparks: element.querySelectorAll('.badge-fireworks i').length,
   }));
-  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', sparks: 12 });
+  expect(replacement).toMatchObject({ slot: oldSlot, kind: 'upgrade', previous: 'Familiar', current: 'Mastered', sparks: 48 });
   await page.waitForFunction(() => document.querySelector('.pack-badges')?.getAttribute('data-phase') === 'reorder');
   await expect(region.getByRole('listitem').first()).toHaveAttribute('data-pack-id', firstId);
   expect(await firstBadge.getAttribute('style')).not.toBe(oldSlot);
-  await expect(firstBadge).toHaveCSS('transition-property', 'left, top');
+  await expect(firstBadge).toHaveCSS('transition-property', '--badge-angle');
+  await expect(firstBadge).toHaveCSS('transition-duration', '1.7s');
+  // Sample actual rendered centers throughout the glide, not just destination styles.
+  const orbit = await firstBadge.evaluate(element => new Promise<{ radius: number; angle: number }[]>(resolve => {
+    const samples: { radius: number; angle: number }[] = [];
+    const frame = () => {
+      const stage = element.closest('.home-kiku-stage')!.getBoundingClientRect();
+      const box = element.getBoundingClientRect();
+      samples.push({ radius: Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2),
+        angle: Number.parseFloat(getComputedStyle(element).getPropertyValue('--badge-angle')) });
+      if (element.closest('.pack-badges')!.getAttribute('data-phase') === 'reorder') requestAnimationFrame(frame);
+      else resolve(samples);
+    };
+    requestAnimationFrame(frame);
+  }));
+  expect(orbit.length).toBeGreaterThan(10);
+  expect(Math.max(...orbit.map(sample => sample.angle)) - Math.min(...orbit.map(sample => sample.angle))).toBeGreaterThan(10);
+  const radii = orbit.map(sample => sample.radius);
+  expect(Math.max(...radii) - Math.min(...radii)).toBeLessThan(1);
   await expect(region).toHaveAttribute('data-phase', 'idle');
   await expect(page.locator('.badge-previous-art, .badge-fireworks')).toHaveCount(0);
 
   const third = await badgeHistory(packCards(3, 'audio-picture'), 'ja-wanikani-3-pictures', 3);
+  const settledSlots = await region.getByRole('listitem').evaluateAll(elements => elements.map(element => element.getAttribute('style')));
   await putBadgeHistory(page, third);
   await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
   await expect(page.locator('[data-celebration="award"]')).toHaveCount(1);
+  const awardRadius = await page.locator('[data-celebration="award"]').evaluate(element => {
+    const stage = element.closest('.home-kiku-stage')!.getBoundingClientRect(), box = element.getBoundingClientRect();
+    return Math.hypot(box.x + box.width / 2 - stage.x - stage.width / 2, box.y + box.height / 2 - stage.y - stage.height / 2);
+  });
+  expect(awardRadius).toBeCloseTo(radii.at(-1)!, 0);
+  expect(await region.getByRole('listitem').evaluateAll(elements => elements.slice(0, 2).map(element => element.getAttribute('style')))).toEqual(settledSlots);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(page.locator('[data-celebration="award"] .badge-current-art')).toHaveCSS('animation-name', 'none');
   await expect(region).toHaveAttribute('data-phase', 'idle');

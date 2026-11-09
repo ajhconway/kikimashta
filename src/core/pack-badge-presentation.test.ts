@@ -105,7 +105,7 @@ describe('BadgePresentationController', () => {
   it('celebrates the first earned badge after an authoritative empty baseline', () => {
     const controller = new BadgePresentationController(); controller.update(input([]));
     controller.update(input([badge('new', 2)]));
-    expect(current(controller)).toMatchObject({ position: { x: 0, y: 0 }, celebration: { kind: 'award' } });
+    expect(current(controller)).toMatchObject({ position: { x: 0, y: -1 }, celebration: { kind: 'award' } });
     expect(controller.getSnapshot().announcement).toContain('New badge: new, Improving');
     cycle();
     expect(controller.getSnapshot().entries[0]!.position).toEqual({ x: 0, y: -1 });
@@ -120,6 +120,38 @@ describe('BadgePresentationController', () => {
     vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
     expect(controller.getSnapshot().phase).toBe('idle'); expect(ids(controller)).toEqual(['a', 'b']);
     expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it('reveals a new badge on the open ring while every existing badge holds its slot', () => {
+    const controller = new BadgePresentationController();
+    const before = Array.from({ length: 6 }, (_, index) => badge(String(index), 4));
+    controller.update(input(before));
+    const old = controller.getSnapshot().entries;
+    controller.update(input([...before, badge('new', 7)]));
+    const reveal = current(controller)!;
+    expect(Math.hypot(reveal.position.x, reveal.position.y)).toBeCloseTo(1, 8);
+    expect(controller.getSnapshot().entries.slice(0, 6)).toEqual(old);
+    old.forEach(entry => expect(Math.hypot(entry.position.x - reveal.position.x, entry.position.y - reveal.position.y)).toBeGreaterThan(.6));
+    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    expect(controller.getSnapshot().phase).toBe('reorder');
+    expect(ids(controller)[0]).toBe('new');
+    expect(controller.getSnapshot().entries[0]!.position).toEqual({ x: 0, y: -1 });
+    vi.advanceTimersByTime(BADGE_REORDER_MS);
+    expect(controller.getSnapshot().phase).toBe('idle');
+  });
+
+  it('takes the short arc across the bottom instead of revolving almost a whole circle', () => {
+    const controller = new BadgePresentationController();
+    const before = Array.from({ length: 10 }, (_, index) => badge(String(index), index < 8 ? 5 : index === 8 ? 3 : 4));
+    controller.update(input(before));
+    const original = controller.getSnapshot().entries.find(entry => entry.badge.pack.id === '8')!;
+    expect(original.angle).toBeCloseTo(162);
+    controller.update(input(before.map(entry => entry.pack.id === '8' ? badge('8', 4) : entry)));
+    vi.advanceTimersByTime(BADGE_CELEBRATE_MS);
+    const moved = controller.getSnapshot().entries.find(entry => entry.badge.pack.id === '8')!;
+    expect(moved.angle).toBeCloseTo(198);
+    expect(moved.angle - original.angle).toBeCloseTo(36);
+    expect(moved.position).toEqual(packBadgePosition(8, 10));
   });
 
   it('queues multiple awards, holding revealed badges still until each celebration ends', () => {

@@ -32,7 +32,8 @@ it('celebrates a replacement before moving it to the top, including StrictMode l
   expect(upgraded.getAttribute('style')).toBe(original);
   expect(upgraded.querySelector('.badge-previous-art [data-rank="Improving"]')).not.toBeNull();
   expect(upgraded.querySelector('.badge-current-art [data-rank="Mastered"]')).not.toBeNull();
-  expect(upgraded.querySelectorAll('.badge-fireworks i')).toHaveLength(12);
+  expect(upgraded.querySelectorAll('.badge-fireworks i')).toHaveLength(48);
+  for (let wave = 0; wave < 3; wave++) expect(upgraded.querySelectorAll(`.badge-fireworks [data-wave="${wave}"]`)).toHaveLength(16);
   expect(screen.getByRole('status')).toHaveTextContent('Badge upgraded');
   act(() => { vi.advanceTimersByTime(BADGE_CELEBRATE_MS); });
   expect(region()).toHaveAttribute('data-phase', 'reorder');
@@ -78,6 +79,8 @@ it('announces a first earned badge after an empty baseline and clears timers on 
   const live = screen.getByRole('status');
   view.rerender(<Harness badges={[badge(0, 2)]}/>);
   expect(screen.getByRole('listitem')).toHaveAttribute('data-celebration', 'award');
+  expect(screen.getByRole('listitem')).toHaveStyle('--badge-angle: 0deg');
+  expect(screen.getByRole('listitem').querySelectorAll('.badge-fireworks i')).toHaveLength(12);
   expect(screen.getByRole('status')).toBe(live);
   expect(live).toHaveTextContent('New badge');
   view.unmount();

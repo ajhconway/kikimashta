@@ -5,26 +5,31 @@ import { PackBadgeMedal } from './PackBadgeMedal';
 import './PackBadges.css';
 
 export function PackBadges({ badges, presentation }: { badges: readonly PackBadge[]; presentation?: BadgePresentation }) {
-  const entries: readonly PresentedPackBadge[] = presentation?.entries ?? sortPackBadges(badges).map((badge, index) => ({ badge, position: packBadgePosition(index, badges.length) }));
+  const entries: readonly PresentedPackBadge[] = presentation?.entries ?? sortPackBadges(badges).map((badge, index) => {
+    const position = packBadgePosition(index, badges.length);
+    return { badge, position, angle: Math.atan2(position.x, -position.y) * 180 / Math.PI };
+  });
   return <>
     <span className="sr-only" role="status" aria-live="polite">{presentation?.announcement ?? ''}</span>
     {entries.length > 0 && <section className="pack-badges" aria-label="Pack mastery badges" data-phase={presentation?.phase ?? 'idle'}
     style={{ '--badge-celebrate-duration': `${BADGE_CELEBRATE_MS}ms`, '--badge-reorder-duration': `${BADGE_REORDER_MS}ms` } as CSSProperties}>
     <ul>{entries.map(entry => {
-      const { badge, position, celebration } = entry;
+      const { badge, position, angle: orbitAngle, celebration } = entry;
       const { pack, level, cardCount } = badge;
       const right = position.x > .1;
       return <li key={pack.id} data-pack-id={pack.id} data-celebration={celebration?.kind}
         className={'pack-badge badge-' + level.label.toLowerCase() + (right ? ' badge-right' : '') + (Math.abs(position.x) < .1 ? ' badge-center' : '')}
         tabIndex={0} aria-label={`${pack.title}: ${level.label} minimum mastery`}
         title={`${pack.title} · ${level.label} minimum · ${cardCount} cards`}
-        style={{ left: `calc(50% + var(--badge-radius) * ${position.x})`, top: `calc(50% + var(--badge-radius) * ${position.y})`, '--badge-pop-shift': Math.abs(position.x) > .9 ? `${position.x > 0 ? -12 : 12}px` : '0px' } as CSSProperties}>
+        style={{ '--badge-angle': `${orbitAngle}deg`, '--badge-pop-shift': Math.abs(position.x) > .9 ? `${position.x > 0 ? -4 : 4}px` : '0px' } as CSSProperties}>
         <span key={celebration?.token ?? level.label} className="badge-presentation-art" aria-hidden="true">
           {celebration?.previous && <span className="badge-previous-art"><PackBadgeMedal badge={celebration.previous}/></span>}
           <span className="badge-current-art"><PackBadgeMedal badge={badge}/></span>
-          {celebration && <span className="badge-fireworks" aria-hidden="true">{Array.from({ length: 12 }, (_, index) => {
-            const angle = index * Math.PI / 6;
-            return <i key={index} style={{ '--spark-x': `${Math.cos(angle) * (position.x < -.5 && Math.cos(angle) < 0 || position.x > .5 && Math.cos(angle) > 0 ? 18 : 70)}px`, '--spark-y': `${Math.sin(angle) * 70}px`, '--spark-delay': `${index % 3 * 35}ms` } as CSSProperties}/>;
+          {celebration && <span className="badge-fireworks" aria-hidden="true">{Array.from({ length: celebration.kind === 'upgrade' ? 48 : 12 }, (_, index) => {
+            const wave = celebration.kind === 'upgrade' ? Math.floor(index / 16) : 0;
+            const angle = index * Math.PI * 2 / (celebration.kind === 'upgrade' ? 16 : 12) + wave * .16;
+            const distance = celebration.kind === 'upgrade' ? 58 + wave * 13 : 64;
+            return <i key={index} data-wave={wave} style={{ '--spark-x': `${Math.cos(angle) * (position.x < -.5 && Math.cos(angle) < 0 || position.x > .5 && Math.cos(angle) > 0 ? 18 : distance)}px`, '--spark-y': `${Math.sin(angle) * distance}px`, '--spark-delay': `${120 + wave * 380 + index % 4 * 24}ms` } as CSSProperties}/>;
           })}</span>}
         </span>
       </li>;

@@ -1,14 +1,16 @@
 import { masteryLevels } from './mastery';
 import type { PackBadge } from './pack-badges';
 
-export const BADGE_CELEBRATE_MS = 1100;
-export const BADGE_REORDER_MS = 650;
+export const BADGE_CELEBRATE_MS = 1900;
+export const BADGE_REORDER_MS = 1700;
 export const BADGE_REDUCED_CELEBRATE_MS = 450;
 export interface BadgePosition { x: number; y: number }
 export interface BadgeChange { kind: 'award' | 'upgrade'; badge: PackBadge; previous?: PackBadge }
 export interface PresentedPackBadge {
   badge: PackBadge;
   position: BadgePosition;
+  /** Continuous degrees, unwrapped across the bottom so movement takes the shortest arc. */
+  angle: number;
   celebration?: BadgeChange & { token: number };
 }
 export interface BadgePresentation {
@@ -25,6 +27,21 @@ export interface BadgePresentationInput {
 }
 
 const rank = (badge: PackBadge) => masteryLevels.findIndex(level => level.label === badge.level.label);
+const angleOf = (position: BadgePosition) => Math.atan2(position.x, -position.y) * 180 / Math.PI;
+const nearestAngle = (target: number, from = target) => target + Math.round((from - target) / 360) * 360;
+
+/** Add to the open end of the ring without moving or covering existing medals. */
+function awardPosition(entries: readonly PresentedPackBadge[]): BadgePosition {
+  if (!entries.length) return { x: 0, y: -1 };
+  const angles = entries.map(entry => (angleOf(entry.position) + 360) % 360).sort((a, b) => a - b);
+  let start = angles[0]!, gap = 0;
+  angles.forEach((angle, index) => {
+    const space = (angles[index + 1] ?? angles[0]! + 360) - angle;
+    if (space > gap) { start = angle; gap = space; }
+  });
+  const angle = (start + Math.min(360 / Math.max(10, entries.length + 1), gap / 2)) * Math.PI / 180;
+  return { x: Math.sin(angle), y: -Math.cos(angle) };
+}
 
 /** Highest mastery takes the top-outward slots; equal levels keep source pack order. */
 export function sortPackBadges(badges: readonly PackBadge[]): PackBadge[] {
@@ -119,10 +136,11 @@ export class BadgePresentationController {
         this.cancelTimer();
         this.current = null;
         this.reconcile();
-        const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry.position]));
-        this.publish({ phase: 'idle', announcement: '', entries: this.shown.map(badge => ({
-          badge, position: positions.get(badge.pack.id) ?? { x: 0, y: 0 },
-        })) });
+        const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry]));
+        this.publish({ phase: 'idle', announcement: '', entries: this.shown.map(badge => {
+          const previous = positions.get(badge.pack.id)!;
+          return { badge, position: previous.position, angle: previous.angle };
+        }) });
         this.advance();
         return;
       }
@@ -176,7 +194,11 @@ export class BadgePresentationController {
   }
 
   private positioned(badges: readonly PackBadge[]): PresentedPackBadge[] {
-    return badges.map((badge, index) => ({ badge, position: packBadgePosition(index, badges.length) }));
+    const previous = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry.angle]));
+    return badges.map((badge, index) => {
+      const position = packBadgePosition(index, badges.length);
+      return { badge, position, angle: nearestAngle(angleOf(position), previous.get(badge.pack.id)) };
+    });
   }
 
   private settle(): void {
@@ -211,17 +233,20 @@ export class BadgePresentationController {
       this.reorder();
       return;
     }
-    const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry.position]));
+    const positions = new Map(this.snapshot.entries.map(entry => [entry.badge.pack.id, entry]));
+    const openPosition = awardPosition(this.snapshot.entries.filter(entry => this.shown.some(badge => badge.pack.id === entry.badge.pack.id)));
     const existing = this.shown.findIndex(badge => badge.pack.id === change.badge.pack.id);
     if (existing < 0) this.shown.push(change.badge);
     else this.shown[existing] = change.badge;
     this.current = change;
     const token = ++this.token;
-    const entries = this.shown.map(badge => ({
-      badge,
-      position: positions.get(badge.pack.id) ?? { x: 0, y: 0 },
-      ...(badge.pack.id === change.badge.pack.id ? { celebration: { ...change, token } } : {}),
-    }));
+    const entries = this.shown.map(badge => {
+      const previous = positions.get(badge.pack.id);
+      const position = previous?.position ?? openPosition;
+      return { badge, position, angle: previous?.angle ?? angleOf(position),
+        ...(badge.pack.id === change.badge.pack.id ? { celebration: { ...change, token } } : {}),
+      };
+    });
     this.publish({ phase: 'celebrate', entries,
       announcement: `${change.kind === 'award' ? 'New badge' : 'Badge upgraded'}: ${change.badge.pack.title}, ${change.badge.level.label}.` });
     this.schedule(() => { this.current = null; this.reorder(); },
