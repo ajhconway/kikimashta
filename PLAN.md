@@ -1,5 +1,9 @@
 # Listening practice app plan
 
+## Visual-reference artwork release (#213)
+
+The owner approved shipping the complete selected 22-image set with “Let's ship this artwork set.” Bind acceptance to the current selected versions and exact PNG hashes in `artifacts/visual-reference-art-213/manifest.json`, including the original 年 and revised inward-thumb hand pair. Preserve version history and individual approvals. Activate transparent deliveries through the existing Japanese artwork mapping and provenance, update library descriptions and any affected image-bound choice-policy evidence, and preserve vocabulary eligibility, item IDs, audio and progress. Run configured checks and relevant browser journeys, obtain current-head Codex review, merge PR #215 through the required gates, and verify publication and live artwork. Actual iPhone acceptance remains manual.
+
 A personal listening game, starting with Japanese and leaving room for other languages. Keep it relaxed, untimed, and simple enough to improve through use.
 
 ## Current state — November 9, 2026
