@@ -1,490 +1,490 @@
 # WaniKani level 1 contextual text review
 
-Issue #183. New text remains pending; no speech generation or runtime activation. 下さい・力いっぱい・大した are contextual-only.
+Issue #183. All revised text remains pending; no speech generation or runtime activation. [Comprehension audit](comprehension-audit.md). 下さい・力いっぱい・大した are contextual-only.
 
-Pack 1 text review: **29 targets, 116 contexts, 232 questions**. 46 support pictures; 232 support written choices.
+Pack 1 text review: **29 targets, 116 contexts, 232 questions**. 28 support pictures; 232 support written choices.
 
-Text approved for 12/116 contexts. This review does not generate speech or activate practice.
+Text approved for 0/116 contexts. This review does not generate speech or activate practice.
 
 Please review Japanese/readings, translations, Genki I difficulty, answer clarity, distractors and proposed pictures. Refer to the context/question IDs when requesting edits.
 
-<details><summary>1. 上 — ja-ctx-simple-ue-01</summary>
+<details><summary>1. 上 — ja-ctx-wk1-simple-ue-01</summary>
 
-**Sentence:** 本は机の上にあります。
+**Sentence:** 猫は箱の上で眠っています。
 
-ほんはつくえのうえにあります。 — The book is on the desk.
+ねこははこのうえでねむっています。 — The cat is asleep on the box.
 
-**Review note:** One short location fact introduces direct questions before the matching contrastive context. Existing 上/下 pictures show Kiku on/under a chair, and left/right use arrows; owner review should confirm that these position concepts transfer clearly to the desk sentence.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-simple-ue-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-ue-01-target** · target meaning · picture + text
 
-本はどこにありますか。 — Where is the book?
+箱は猫から見て、どちらにありますか。 — Where is the box relative to the cat?
 
-Reading: ほんはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The book is on the desk.
-
-**ja-ctx-simple-ue-01-detail** · other detail · picture + text
-
-机の上には何がありますか。 — What is on the desk?
-
-Reading: つくえのうえにはなにがありますか。
+Reading: はこはねこからみて、どちらにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Correct | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Distractor | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
+| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
+| 左 | ひだり | left | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
+| 右 | みぎ | right | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
 
-Explanation: The sentence says that a book is on the desk.
+Explanation: The cat is above the box, so the box is below the cat.
+
+**ja-ctx-wk1-simple-ue-01-detail** · situation meaning · text
+
+今、猫はどうしていますか。 — What is the cat doing now?
+
+Reading: いま、ねこはどうしていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 起きて遊んでいます | おきてあそんでいます | It is awake and playing. | Distractor | — |
+| 起きて食べています | おきてたべています | It is awake and eating. | Distractor | — |
+| 今は起きていません | いまはおきていません | It is not awake now. | Correct | — |
+| 起きて走っています | おきてはしっています | It is awake and running. | Distractor | — |
+
+Explanation: The cat is asleep, which means it is not awake now.
 
 </details>
 
-<details><summary>2. 上 — ja-ctx-simple-ue-02</summary>
+<details><summary>2. 上 — ja-ctx-wk1-simple-ue-02</summary>
 
-**Sentence:** ノートは棚の上にあります。
+**Sentence:** 友達は棚の上の時計で、今の時刻を調べました。
 
-ノートはたなのうえにあります。 — The notebook is on the shelf.
+ともだちはたなのうえのとけいで、いまのじこくをしらべました。 — My friend checked the current time using the clock above the shelf.
 
-**Review note:** One short event or fact introduces direct questions before ja-ctx-ue-02. Choices reuse the matched contrastive concepts; text and picture suitability await owner review. Position pictures show Kiku on/under a chair or direction arrows; check transfer to the sentence location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-simple-ue-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-ue-02-target** · target meaning · picture + text
 
-ノートはどこにありますか。 — Where is the notebook?
+棚は時計から見て、どちらにありますか。 — Where is the shelf relative to the clock?
 
-Reading: ノートはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The notebook is on the shelf.
-
-**ja-ctx-simple-ue-02-detail** · other detail · picture + text
-
-棚の上には何がありますか。 — What is on the shelf?
-
-Reading: たなのうえにはなにがありますか。
+Reading: たなはとけいからみて、どちらにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Distractor | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Correct | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
+| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
+| 左 | ひだり | left | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
+| 右 | みぎ | right | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
 
-Explanation: The sentence says that a notebook is on the shelf.
+Explanation: The clock is above the shelf, so the shelf is below the clock.
+
+**ja-ctx-wk1-simple-ue-02-detail** · situation meaning · text
+
+友達が答えを調べた質問は、どれですか。 — Which question did my friend find the answer to?
+
+Reading: ともだちがこたえをしらべたしつもんは、どれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 今日は何曜日ですか | きょうはなんようびですか | What day of the week is it? | Distractor | — |
+| 今は何月ですか | いまはなんがつですか | What month is it? | Distractor | — |
+| 今、何歳ですか | いま、なんさいですか | How old are you now? | Distractor | — |
+| 今、何時ですか | いま、なんじですか | What time is it now? | Correct | — |
+
+Explanation: Checking the time determines what time it is, not a day, month or age.
 
 </details>
 
-<details><summary>3. 上 — ja-ctx-ue-01</summary>
+<details><summary>3. 上 — ja-ctx-wk1-contrastive-ue-01</summary>
 
-**Sentence:** 本は机の上に、ノートは机の下にあります。
+**Sentence:** 猫は箱の上で眠っています。犬は箱の下でご飯を食べています。
 
-ほんはつくえのうえに、ノートはつくえのしたにあります。 — The book is on the desk, and the notebook is under the desk.
+ねこははこのうえでねむっています。いぬははこのしたでごはんをたべています。 — The cat is asleep on the box. The dog is eating under the box.
 
-**Review note:** The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-ue-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-ue-01-target** · target meaning · text
 
-本はどこにありますか。 — Where is the book?
+箱より高い所にいるのは、どちらですか。 — Which animal is higher than the box?
 
-Reading: ほんはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The book is on the desk; the notebook is underneath.
-
-**ja-ctx-ue-01-detail** · other detail · picture + text
-
-机の上には何がありますか。 — What is on the desk?
-
-Reading: つくえのうえにはなにがありますか。
+Reading: はこよりたかいところにいるのは、どちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Correct | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Distractor | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 猫だけです | ねこだけです | Only the cat. | Correct | — |
+| 犬だけです | いぬだけです | Only the dog. | Distractor | — |
+| 二匹ともです | にひきともです | Both animals. | Distractor | — |
+| どちらもいません | どちらもいません | Neither animal. | Distractor | — |
 
-Explanation: The book is on the desk, while the notebook is under it.
+Explanation: The cat is above the box while the dog is below it; only the cat is higher.
+
+**ja-ctx-wk1-contrastive-ue-01-detail** · situation meaning · text
+
+今、眠っていないのは、どちらですか。 — Which animal is not asleep now?
+
+Reading: いま、ねむっていないのは、どちらですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 猫だけです | ねこだけです | Only the cat. | Distractor | — |
+| 犬だけです | いぬだけです | Only the dog. | Correct | — |
+| 二匹ともです | にひきともです | Both animals. | Distractor | — |
+| どちらもいません | どちらもいません | Neither animal. | Distractor | — |
+
+Explanation: The cat is asleep; the dog is eating, so the dog is the animal not asleep.
 
 </details>
 
-<details><summary>4. 上 — ja-ctx-ue-02</summary>
+<details><summary>4. 上 — ja-ctx-wk1-contrastive-ue-02</summary>
 
-**Sentence:** ノートは棚の上に、本は棚の下にあります。
+**Sentence:** 棚の上の時計で時間を調べました。棚の下のカレンダーで日付を調べました。
 
-ノートはたなのうえに、ほんはたなのしたにあります。 — The notebook is on the shelf, and the book is under the shelf.
+たなのうえのとけいでじかんをしらべました。たなのしたのカレンダーでひづけをしらべました。 — I checked the time using the clock above the shelf and the date using the calendar below it.
 
-**Review note:** The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-ue-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-ue-02-target** · target meaning · text
 
-ノートはどこにありますか。 — Where is the notebook?
+棚より高い所にあったのは、どちらですか。 — Which object was higher than the shelf?
 
-Reading: ノートはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The notebook is on the shelf; the book is underneath.
-
-**ja-ctx-ue-02-detail** · other detail · picture + text
-
-棚の上には何がありますか。 — What is on the shelf?
-
-Reading: たなのうえにはなにがありますか。
+Reading: たなよりたかいところにあったのは、どちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Distractor | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Correct | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 時計です | とけいです | The clock. | Correct | — |
+| カレンダーです | カレンダーです | The calendar. | Distractor | — |
+| 両方です | りょうほうです | Both. | Distractor | — |
+| どちらでもありません | どちらでもありません | Neither. | Distractor | — |
 
-Explanation: The notebook is on the shelf, while the book is underneath.
+Explanation: The clock is above the shelf and the calendar below; only the clock is higher.
+
+**ja-ctx-wk1-contrastive-ue-02-detail** · situation meaning · text
+
+日にちは、何を見て調べましたか。 — What did I look at to check the date?
+
+Reading: ひにちは、なにをみてしらべましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 時計です | とけいです | The clock. | Distractor | — |
+| 両方です | りょうほうです | Both. | Distractor | — |
+| カレンダーです | カレンダーです | The calendar. | Correct | — |
+| どちらでもありません | どちらでもありません | Neither. | Distractor | — |
+
+Explanation: The date was checked using the calendar; month and day paraphrase 日付.
 
 </details>
 
 <details><summary>5. 大人 — ja-ctx-wk1-simple-otona-01</summary>
 
-**Sentence:** 部屋には大人が二人います。
+**Sentence:** 大人が子供の手を引いて、一緒に歩いています。
 
-へやにはおとながふたりいます。 — There are two adults in the room.
+おとながこどものてをひいて、いっしょにあるいています。 — An adult is leading a child by the hand as they walk together.
 
-**Review note:** Phrase choices distinguish age group and count; no generic 人 or gender labels compete with 大人.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-otona-01-target** · target answer · text
+**ja-ctx-wk1-simple-otona-01-target** · target meaning · text
 
-部屋には誰が何人いますか。 — Who is in the room, and how many are there?
+一緒に移動しているのは何人ですか。 — How many people are moving together?
 
-Reading: へやにはだれがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 子供が二人 | こどもがふたり | two children | Distractor | — |
-| 大人が三人 | おとながさんにん | three adults | Distractor | — |
-| 子供が三人 | こどもがさんにん | three children | Distractor | — |
-| 大人が二人 | おとながふたり | two adults | Correct | — |
-
-Explanation: The sentence states two adults in the room.
-
-**ja-ctx-wk1-simple-otona-01-detail** · other detail · text
-
-大人はどこにいますか。 — Where are the adults?
-
-Reading: おとなはどこにいますか。
+Reading: いっしょにいどうしているのはなんにんですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 教室 | きょうしつ | classroom | Distractor | — |
-| 部屋 | へや | room | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
+| 二人 | ふたり | two people | Correct | — |
+| 一人 | ひとり | one person | Distractor | — |
+| 三人 | さんにん | three people | Distractor | — |
+| 四人 | よにん | four people | Distractor | — |
 
-Explanation: The adults are in the room.
+Explanation: The adult and the child are distinct people walking together, giving two people in the moving pair.
+
+**ja-ctx-wk1-simple-otona-01-detail** · situation meaning · text
+
+二人はどんなふうに歩いていますか。 — How are the two people walking?
+
+Reading: ふたりはどんなふうにあるいていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 子供が、子供ではない人を案内しています | こどもが、こどもではないひとをあんないしています | the child is guiding the person who is not a child | Distractor | — |
+| 子供ではない人が、一人で歩いています | こどもではないひとが、ひとりであるいています | the person who is not a child is walking alone | Distractor | — |
+| 子供が、一人で歩いています | こどもが、ひとりであるいています | the child is walking alone | Distractor | — |
+| 子供ではない人が、子供を案内しています | こどもではないひとが、こどもをあんないしています | the person who is not a child is guiding the child | Correct | — |
+
+Explanation: Leading the child by the hand puts the adult, the person beyond childhood, in the guiding role rather than following or walking alone.
 
 </details>
 
 <details><summary>6. 大人 — ja-ctx-wk1-simple-otona-02</summary>
 
-**Sentence:** 大人は本を読んでいます。
+**Sentence:** 大人の分の切符だけ買いました。
 
-おとなはほんをよんでいます。 — The adults are reading books.
+おとなのぶんのきっぷだけかいました。 — I bought tickets only for the adults.
 
-**Review note:** Adult/child distinction; dog/cat choices are named animals, not overlapping human categories.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-otona-02-target** · target answer · text
+**ja-ctx-wk1-simple-otona-02-target** · target meaning · text
 
-誰が本を読んでいますか。 — Who is reading books?
+買った切符を使うのは、どんな人ですか。 — What kind of people will use the tickets I bought?
 
-Reading: だれがほんをよんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 子供 | こども | children | Distractor | — |
-| 大人 | おとな | adults | Correct | — |
-| 犬 | いぬ | dogs | Distractor | — |
-| 猫 | ねこ | cats | Distractor | — |
-
-Explanation: The adults are the people reading.
-
-**ja-ctx-wk1-simple-otona-02-detail** · other detail · text
-
-大人は何をしていますか。 — What are the adults doing?
-
-Reading: おとなはなにをしていますか。
+Reading: かったきっぷをつかうのは、どんなひとですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 走っています | はしっています | are running | Distractor | — |
-| 寝ています | ねています | are sleeping | Distractor | — |
-| 本を読んでいます | ほんをよんでいます | are reading books | Correct | — |
-| 食べています | たべています | are eating | Distractor | — |
+| 赤ちゃん | あかちゃん | a baby | Distractor | — |
+| 年齢に関係なく全員 | ねんれいにかんけいなくぜんいん | everyone, regardless of age | Distractor | — |
+| もう子供ではない人 | もうこどもではないひと | a person who is no longer a child | Correct | — |
+| まだ小さい子供 | まだちいさいこども | a young child | Distractor | — |
 
-Explanation: The adults are reading books.
+Explanation: The tickets were bought only for adults, meaning people who are no longer children.
+
+**ja-ctx-wk1-simple-otona-02-detail** · situation meaning · text
+
+用意した切符は、どうなっていますか。 — Which description fits the tickets prepared?
+
+Reading: よういしたきっぷは、どうなっていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 大人の分も子供の分もありません | おとなのぶんもこどものぶんもありません | neither adult nor child tickets are present | Distractor | — |
+| 大人の分はあります。子供の分はありません。 | おとなのぶんはあります。こどものぶんはありません。 | adult tickets are present, child tickets are absent | Correct | — |
+| 大人の分はありません。子供の分はあります。 | おとなのぶんはありません。こどものぶんはあります。 | adult tickets are absent, child tickets are present | Distractor | — |
+| 大人の分も子供の分もあります | おとなのぶんもこどものぶんもあります | both adult and child tickets are present | Distractor | — |
+
+Explanation: Buying only the adult share supplies adult tickets and excludes the child share from the purchase.
 
 </details>
 
 <details><summary>7. 大人 — ja-ctx-wk1-contrastive-otona-01</summary>
 
-**Sentence:** 部屋には大人が二人います。公園には子供が三人います。
+**Sentence:** 大人は子供に本を渡しました。子供は大人に玉を渡しました。
 
-へやにはおとながふたりいます。こうえんにはこどもがさんにんいます。 — There are two adults in the room. There are three children in the park.
+おとなはこどもにほんをわたしました。こどもはおとなにたまをわたしました。 — The adult handed a book to the child. The child handed a ball to the adult.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-otona-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-otona-01-target** · target meaning · text
 
-部屋には誰が何人いますか。 — Who is in the room, and how many are there?
+今、子供ではない人が持っているのはどんな物ですか。 — What kind of thing does the person who is not a child have now?
 
-Reading: へやにはだれがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 子供が二人 | こどもがふたり | two children | Distractor | — |
-| 大人が三人 | おとながさんにん | three adults | Distractor | — |
-| 子供が三人 | こどもがさんにん | three children | Distractor | — |
-| 大人が二人 | おとながふたり | two adults | Correct | — |
-
-Explanation: The room has two adults; the park has three children.
-
-**ja-ctx-wk1-contrastive-otona-01-detail** · other detail · text
-
-大人はどこにいますか。 — Where are the adults?
-
-Reading: おとなはどこにいますか。
+Reading: いま、こどもではないひとがもっているのはどんなものですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 教室 | きょうしつ | classroom | Distractor | — |
-| 部屋 | へや | room | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
+| 丸くて転がる物 | まるくてころがるもの | a round thing that rolls | Correct | — |
+| 文字を読む物 | もじをよむもの | something with writing to read | Distractor | — |
+| 水を入れるコップ | みずをいれるコップ | a glass for holding water | Distractor | — |
+| 雨の日に使う物 | あめのひにつかうもの | something used on rainy days | Distractor | — |
 
-Explanation: The adults are in the room, while the children are in the park.
+Explanation: The adult gives the book away and receives the ball from the child; the ball is the round rolling item.
+
+**ja-ctx-wk1-contrastive-otona-01-detail** · situation meaning · text
+
+二人の持ち物はどう変わりましたか。 — How did the two people’s possessions change?
+
+Reading: ふたりのもちものはどうかわりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも、最初と同じ物を持っています | ふたりとも、さいしょとおなじものをもっています | both hold the same item as at the start | Distractor | — |
+| 一人が二つとも持っています | ひとりがふたつとももっています | one person has both items | Distractor | — |
+| 二つとも誰も持っていません | ふたつともだれももっていません | neither item is held by anyone | Distractor | — |
+| それぞれ、最初に相手が持っていた物を持っています | それぞれ、さいしょにあいてがもっていたものをもっています | each holds the item the other person initially held | Correct | — |
+
+Explanation: The two opposite-direction handovers leave each person holding the item that the other person held first. This describes possession at each time, without claiming ownership.
 
 </details>
 
 <details><summary>8. 大人 — ja-ctx-wk1-contrastive-otona-02</summary>
 
-**Sentence:** 大人は本を読んでいます。子供は走っています。
+**Sentence:** 大人の切符は机の上に、子供の切符は椅子の下にあります。
 
-おとなはほんをよんでいます。こどもははしっています。 — The adults are reading books. The children are running.
+おとなのきっぷはつくえのうえに、こどものきっぷはいすのしたにあります。 — The adult tickets are on the desk, and the child tickets are under the chair.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-otona-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-otona-02-target** · target meaning · text
 
-誰が本を読んでいますか。 — Who is reading books?
+子供ではない人の分を取ります。どこを探しますか。 — I want the tickets for people who are not children. Where should I look?
 
-Reading: だれがほんをよんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 子供 | こども | children | Distractor | — |
-| 大人 | おとな | adults | Correct | — |
-| 犬 | いぬ | dogs | Distractor | — |
-| 猫 | ねこ | cats | Distractor | — |
-
-Explanation: Reading belongs to the adults; running belongs to the children.
-
-**ja-ctx-wk1-contrastive-otona-02-detail** · other detail · text
-
-大人は何をしていますか。 — What are the adults doing?
-
-Reading: おとなはなにをしていますか。
+Reading: こどもではないひとのぶんをとります。どこをさがしますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 走っています | はしっています | are running | Distractor | — |
-| 寝ています | ねています | are sleeping | Distractor | — |
-| 本を読んでいます | ほんをよんでいます | are reading books | Correct | — |
-| 食べています | たべています | are eating | Distractor | — |
+| 人が座る物の上 | ひとがすわるもののうえ | on the thing used for sitting | Distractor | — |
+| 文字を書く台の下 | もじをかくだいのした | under the stand used for writing | Distractor | — |
+| 文字を書く台の上 | もじをかくだいのうえ | on the stand used for writing | Correct | — |
+| 人が座る物の下 | ひとがすわるもののした | under the thing used for sitting | Distractor | — |
 
-Explanation: The adults read books, while the children run.
+Explanation: People who are not children are the adults; their tickets are on the desk, paraphrased as the stand used for writing.
+
+**ja-ctx-wk1-contrastive-otona-02-detail** · situation meaning · text
+
+机と椅子では、切符の高さの関係はどう違いますか。 — How does each ticket’s vertical position relate to its furniture?
+
+Reading: つくえといすでは、きっぷのたかさのかんけいはどうちがいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらも、それぞれの物より下 | どちらも、それぞれのものよりした | both below their respective furniture | Distractor | — |
+| 大人の分は台より上、子供の分は座る物より下 | おとなのぶんはだいよりうえ、こどものぶんはすわるものよりした | adult tickets above their stand, child tickets below their seat | Correct | — |
+| 大人の分は台より下、子供の分は座る物より上 | おとなのぶんはだいよりした、こどものぶんはすわるものよりうえ | adult tickets below their stand, child tickets above their seat | Distractor | — |
+| どちらも、それぞれの物より上 | どちらも、それぞれのものよりうえ | both above their respective furniture | Distractor | — |
+
+Explanation: Adult tickets are on their desk while child tickets are under their chair, giving opposite above/below relations to their own furniture.
 
 </details>
 
 <details><summary>9. 一人 — ja-ctx-wk1-simple-hitori-01</summary>
 
-**Sentence:** 公園に子どもが一人います。
+**Sentence:** 公園の中に子どもが一人います。
 
-こうえんにこどもがひとりいます。 — There is one child in the park.
+こうえんのなかにこどもがひとりいます。 — There is one child inside the park.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** 名 is introduced as a polite people counter: いちめい/にめい/さんめい/よんめい. The numeric quantities require meaning rather than repetition of ひとり/ふたり/さんにん.
 
-**ja-ctx-wk1-simple-hitori-01-target** · target answer · text
+**ja-ctx-wk1-simple-hitori-01-target** · target meaning · text
 
-公園には子どもが何人いますか。 — How many children are in the park?
+公園に入っている子どもは何名ですか。 — How many children are inside the park?
 
-Reading: こうえんにはこどもがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二人 | ふたり | two people | Distractor | — |
-| 三人 | さんにん | three people | Distractor | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Correct | — |
-
-Explanation: The stated number in the park is 1.
-
-**ja-ctx-wk1-simple-hitori-01-detail** · other detail · text
-
-子どもはどこにいますか。 — Where is the child?
-
-Reading: こどもはどこにいますか。
+Reading: こうえんにはいっているこどもはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学校 | がっこう | school | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Correct | — |
 
-Explanation: The sentence locates the child in the park.
+Explanation: 一人 (ひとり) means 1 person; the polite equivalent is １名 (いちめい). 中 also establishes that this group is in the park.
+
+**ja-ctx-wk1-simple-hitori-01-detail** · situation meaning · text
+
+子どもはどんな状態ですか。 — How is the child situated?
+
+Reading: こどもはどんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 公園へ向かっています | こうえんへむかっています | They are on their way to the park. | Distractor | — |
+| 公園から帰っています | こうえんからかえっています | They are returning from the park. | Distractor | — |
+| 公園に入っています | こうえんにはいっています | They are inside the park. | Correct | — |
+| 公園の外にいます | こうえんのそとにいます | They are outside the park. | Distractor | — |
+
+Explanation: 公園の中 means inside the park; the group is therefore contained there, not described as outside or travelling to/from it.
 
 </details>
 
 <details><summary>10. 一人 — ja-ctx-wk1-simple-hitori-02</summary>
 
-**Sentence:** 兄は一人で映画を見ます。
+**Sentence:** 兄は一人で映画を見ています。
 
-あにはひとりでえいがをみます。 — My older brother watches a movie alone.
+あにはひとりでえいがをみています。 — My older brother is watching a movie alone.
 
-**Review note:** This variant teaches 一人で (alone/by oneself), separately from the one-person counting use. 一人で naturally answers the question about a companion by explaining that he watches by himself.
+**Review note:** This variant teaches 一人で as alone. The companion question excludes the brother himself, so zero is semantic absence, not an unrelated arithmetic exercise. The second question classifies the explicitly watched medium.
 
-**ja-ctx-wk1-simple-hitori-02-target** · target answer · text
+**ja-ctx-wk1-simple-hitori-02-target** · target meaning · text
 
-兄は誰と映画を見ますか。 — Who does my older brother watch a movie with?
+兄と一緒に映画を見ている人は何名ですか。 — How many other people are watching the movie with my older brother?
 
-Reading: あにはだれとえいがをみますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 母と | ははと | with my mother | Distractor | — |
-| 父と | ちちと | with my father | Distractor | — |
-| 一人で | ひとりで | alone | Correct | — |
-| 妹と | いもうとと | with my younger sister | Distractor | — |
-
-Explanation: 一人で means that my older brother watches by himself; no companion joins him.
-
-**ja-ctx-wk1-simple-hitori-02-detail** · other detail · text
-
-兄は一人で何を見ますか。 — What does my older brother watch alone?
-
-Reading: あにはひとりでなにをみますか。
+Reading: あにといっしょにえいがをみているひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| テレビ | テレビ | television | Distractor | — |
-| 写真 | しゃしん | photograph | Distractor | — |
-| 地図 | ちず | map | Distractor | — |
-| 映画 | えいが | movie | Correct | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ０名 | ゼロめい | 0 people | Correct | — |
 
-Explanation: He watches a movie alone.
+Explanation: 一人で means by himself. Nobody else is watching together with him, so the number of companions is ０名.
+
+**ja-ctx-wk1-simple-hitori-02-detail** · situation meaning · text
+
+兄が見ているのは、どんなものですか。 — What kind of thing is my older brother watching?
+
+Reading: あにがみているのは、どんなものですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 動かない写真です | うごかないしゃしんです | A still photograph. | Distractor | — |
+| 音だけです | おとだけです | Sound only. | Distractor | — |
+| 動く映像です | うごくえいぞうです | Moving images. | Correct | — |
+| 紙に書いた文字です | かみにかいたもじです | Writing on paper. | Distractor | — |
+
+Explanation: A movie consists of moving visual images; watching a movie therefore means watching moving images, rather than merely reading paper, looking at a still photograph or hearing sound alone.
 
 </details>
 
 <details><summary>11. 一人 — ja-ctx-wk1-contrastive-hitori-01</summary>
 
-**Sentence:** 公園に子どもが一人、学校に子どもが三人います。
+**Sentence:** 子どもが一人、公園の中にいます。大人が三人、公園の外にいます。
 
-こうえんにこどもがひとり、がっこうにこどもがさんにんいます。 — There is one child in the park. There are 3 children in the school.
+こどもがひとり、こうえんのなかにいます。おとながさんにん、こうえんのそとにいます。 — 1 child is inside the park. 3 adults are outside.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** Two groups differ in both size and position. The second answer is a relative group size, not a copied person/place noun. 名 provides a different people-count form.
 
-**ja-ctx-wk1-contrastive-hitori-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-hitori-01-target** · target meaning · text
 
-公園には子どもが何人いますか。 — How many children are in the park?
+公園に入っている人は何名ですか。 — How many people are inside the park?
 
-Reading: こうえんにはこどもがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三人 | さんにん | three people | Distractor | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Correct | — |
-| 二人 | ふたり | two people | Distractor | — |
-
-Explanation: The stated number in the park is 1.
-
-**ja-ctx-wk1-contrastive-hitori-01-detail** · other detail · text
-
-子どもが一人いるのはどこですか。 — Where is there one child?
-
-Reading: こどもがひとりいるのはどこですか。
+Reading: こうえんにはいっているひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学校 | がっこう | school | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Correct | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
 
-Explanation: The park has 1; the school has 3.
+Explanation: The inside group has 一人 (1), while the outside group has 三人 (3). Interpret 中 as inside and select １名.
+
+**ja-ctx-wk1-contrastive-hitori-01-detail** · situation meaning · text
+
+公園に入っているのは、どのグループですか。 — Which group is inside the park?
+
+Reading: こうえんにはいっているのは、どのグループですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 人数が少ないグループです | にんずうがすくないグループです | The group with fewer people. | Correct | — |
+| 二つのグループです | ふたつのグループです | Both groups. | Distractor | — |
+| どちらのグループでもありません | どちらのグループでもありません | Neither group. | Distractor | — |
+| 人数が多いグループです | にんずうがおおいグループです | The group with more people. | Distractor | — |
+
+Explanation: The inside group has 1; the outside group has 3. The inside group is therefore the one with fewer people.
 
 </details>
 
 <details><summary>12. 一人 — ja-ctx-wk1-contrastive-hitori-02</summary>
 
-**Sentence:** 兄は一人で映画を見ます。妹は友達と映画を見ます。
+**Sentence:** 兄は一人で映画を見ています。妹は友達と一緒に映画を見ています。
 
-あにはひとりでえいがをみます。いもうとはともだちとえいがをみます。 — My older brother watches a movie alone. My younger sister watches a movie with a friend.
+あにはひとりでえいがをみています。いもうとはともだちといっしょにえいがをみています。 — My older brother is watching a movie alone. My younger sister is watching a movie together with a friend.
 
-**Review note:** This variant teaches 一人で (alone/by oneself), separately from the one-person counting use. 一人で naturally answers the question about a companion by explaining that he watches by himself.
+**Review note:** The two viewing groups are explicitly separate. The companion count excludes the brother himself; no fixed number of the sister&#39;s friends is inferred.
 
-**ja-ctx-wk1-contrastive-hitori-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-hitori-02-target** · target meaning · text
 
-兄は誰と映画を見ますか。 — Who does my older brother watch a movie with?
+ほかの人と一緒に見ているのは誰ですか。 — Who is watching together with someone else?
 
-Reading: あにはだれとえいがをみますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 父と | ちちと | with my father | Distractor | — |
-| 一人で | ひとりで | alone | Correct | — |
-| 妹と | いもうとと | with my younger sister | Distractor | — |
-| 友達と | ともだちと | with a friend | Distractor | — |
-
-Explanation: 一人で means that my older brother watches by himself; no companion joins him.
-
-**ja-ctx-wk1-contrastive-hitori-02-detail** · other detail · text
-
-誰が一人で映画を見ますか。 — Who watches the movie alone?
-
-Reading: だれがひとりでえいがをみますか。
+Reading: ほかのひとといっしょにみているのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 兄 | あに | my older brother | Correct | — |
-| 妹 | いもうと | my younger sister | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| 妹だけです | いもうとだけです | Only my younger sister. | Correct | — |
+| 二人ともです | ふたりともです | Both siblings. | Distractor | — |
+| どちらでもありません | どちらでもありません | Neither sibling. | Distractor | — |
+| 兄だけです | あにだけです | Only my older brother. | Distractor | — |
 
-Explanation: My older brother watches alone; my younger sister watches with a friend.
+Explanation: 一人で excludes a companion for the brother, while 友達と一緒に explicitly gives the sister a companion; only the sister watches with someone else.
+
+**ja-ctx-wk1-contrastive-hitori-02-detail** · situation meaning · text
+
+兄と一緒に見ている人は何名ですか。 — How many other people are watching with my older brother?
+
+Reading: あにといっしょにみているひとはなんめいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ０名 | ゼロめい | 0 people | Correct | — |
+| １名 | いちめい | 1 person | Distractor | — |
+
+Explanation: The brother watches 一人で, so the number of other people watching with him is zero. The sister&#39;s companion belongs to her group, not his.
 
 </details>
 
@@ -494,37 +494,37 @@ Explanation: My older brother watches alone; my younger sister watches with a fr
 
 つくえのうえにはじんこうのはながあります。 — There are artificial flowers on the desk.
 
-**Review note:** Artificial/real/image choices remain text-only because isolated illustrations cannot reliably represent the distinction.
+**Review note:** Interpret the origin/status of these particular flowers. Pictures cannot reliably distinguish real from artificial flowers; all choices remain written. 人が花の形に作った物 avoids confusing human-grown real flowers with replicas.
 
-**ja-ctx-wk1-simple-jinkou-artificial-01-target** · target answer · text
+**ja-ctx-wk1-simple-jinkou-artificial-01-target** · target meaning · text
 
-机の上の花はどんな花ですか。 — What kind of flowers are on the desk?
+机の花はどれですか。 — Which describes the flowers on the desk?
 
-Reading: つくえのうえのはなはどんなはなですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 人工の花 | じんこうのはな | artificial flowers | Correct | — |
-| 本物の花 | ほんもののはな | real flowers | Distractor | — |
-| 花の写真 | はなのしゃしん | a photograph of flowers | Distractor | — |
-| 花の絵 | はなのえ | a picture of flowers | Distractor | — |
-
-Explanation: The flowers on the desk are artificial, not real flowers or an image of flowers.
-
-**ja-ctx-wk1-simple-jinkou-artificial-01-detail** · other detail · text
-
-人工の花はどこにありますか。 — Where are the artificial flowers?
-
-Reading: じんこうのはなはどこにありますか。
+Reading: つくえのはなはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 棚の上 | たなのうえ | on the shelf | Distractor | — |
-| 窓のそば | まどのそば | by the window | Distractor | — |
-| 机の上 | つくえのうえ | on the desk | Correct | — |
-| 床の上 | ゆかのうえ | on the floor | Distractor | — |
+| 人が花の形に作った物です | ひとがはなのかたちにつくったものです | a thing people made in the shape of flowers | Correct | — |
+| 庭で咲いた本当の花です | にわでさいたほんとうのはなです | real flowers that bloomed in a garden | Distractor | — |
+| 花を写した写真です | はなをうつしたしゃしんです | a photograph showing flowers | Distractor | — |
+| 花を描いた絵です | はなをかいたえです | a drawing of flowers | Distractor | — |
 
-Explanation: The artificial flowers are on the desk.
+Explanation: The desk holds artificial flowers: made objects in the shape of flowers, rather than real flowers or an image.
+
+**ja-ctx-wk1-simple-jinkou-artificial-01-detail** · situation meaning · text
+
+机の花は、本当の花ですか。 — Are the flowers on the desk real flowers?
+
+Reading: つくえのはなは、ほんとうのはなですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| はい、庭で咲いた花です | はい、にわでさいたはなです | Yes, they are flowers that bloomed in a garden. | Distractor | — |
+| いいえ、花の写真です | いいえ、はなのしゃしんです | No, they are a photograph of flowers. | Distractor | — |
+| いいえ、花の形に作った物です | いいえ、はなのかたちにつくったものです | No, they are objects made in the shape of flowers. | Correct | — |
+| いいえ、花の種です | いいえ、はなのたねです | No, they are flower seeds. | Distractor | — |
+
+Explanation: Calling these flowers artificial distinguishes a physical flower-shaped object from real flowers, photographs and seeds.
 
 </details>
 
@@ -534,797 +534,797 @@ Explanation: The artificial flowers are on the desk.
 
 じんこうのいけはこうえんのなかにあります。 — The man-made pond is in the park.
 
-**Review note:** Use 自然 for the natural-origin contrast: a man-made pond is also real.
+**Review note:** A constructed pond is still a real pond. The options therefore distinguish human/natural origin separately from photographs/drawings, avoiding a false artificial-versus-real dichotomy for ponds.
 
-**ja-ctx-wk1-simple-jinkou-artificial-02-target** · target answer · text
+**ja-ctx-wk1-simple-jinkou-artificial-02-target** · target meaning · text
 
-公園の池はどんな池ですか。 — What kind of pond is in the park?
+この公園の池は、どうやってできましたか。 — How did this park&#39;s pond come into being?
 
-Reading: こうえんのいけはどんないけですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 自然の池 | しぜんのいけ | a natural pond | Distractor | — |
-| 人工の池 | じんこうのいけ | a man-made pond | Correct | — |
-| 池の写真 | いけのしゃしん | a photograph of a pond | Distractor | — |
-| 池の絵 | いけのえ | a picture of a pond | Distractor | — |
-
-Explanation: The pond is described as man-made rather than natural or an image of a pond.
-
-**ja-ctx-wk1-simple-jinkou-artificial-02-detail** · other detail · text
-
-人工の池はどこにありますか。 — Where is the man-made pond?
-
-Reading: じんこうのいけはどこにありますか。
+Reading: このこうえんのいけは、どうやってできましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学校 | がっこう | school | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
+| 自然にできました | しぜんにできました | It formed naturally. | Distractor | — |
+| 人が作りました | ひとがつくりました | People made it. | Correct | — |
+| 池はまだありません | いけはまだありません | There is no pond yet. | Distractor | — |
+| 写真に写っているだけです | しゃしんにうつっているだけです | It only appears in a photograph. | Distractor | — |
 
-Explanation: The stated location of the man-made pond is the park.
+Explanation: A man-made pond exists because people constructed it, rather than it forming naturally or being only an image.
+
+**ja-ctx-wk1-simple-jinkou-artificial-02-detail** · situation meaning · text
+
+この池の説明で正しいのはどれですか。 — Which description of this pond is correct?
+
+Reading: このいけのせつめいでただしいのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 自然にできた本物の池です | しぜんにできたほんもののいけです | a real pond that formed naturally | Distractor | — |
+| 公園にある池の写真です | こうえんにあるいけのしゃしんです | a photograph of a pond in the park | Distractor | — |
+| 公園にある池の絵です | こうえんにあるいけのえです | a drawing of a pond in the park | Distractor | — |
+| 人が作った本物の池です | ひとがつくったほんもののいけです | a real pond that people constructed | Correct | — |
+
+Explanation: Artificial describes how the actual pond was made; it does not turn the pond into a photograph or drawing.
 
 </details>
 
 <details><summary>15. 人工 — ja-ctx-wk1-contrastive-jinkou-artificial-01</summary>
 
-**Sentence:** 机の上には人工の花があります。棚の上には本物の花があります。
+**Sentence:** 机の花は人工の花です。棚の花は本物の花です。
 
-つくえのうえにはじんこうのはながあります。たなのうえにはほんもののはながあります。 — There are artificial flowers on the desk. There are real flowers on the shelf.
+つくえのはなはじんこうのはなです。たなのはなはほんもののはなです。 — The flowers on the desk are artificial. The flowers on the shelf are real.
 
-**Review note:** Keep each type of flower bound to its stated location.
+**Review note:** Compare the material status and bind it to the two locations; real flowers are not assumed to have grown without human cultivation.
 
-**ja-ctx-wk1-contrastive-jinkou-artificial-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-jinkou-artificial-01-target** · target meaning · text
 
-机の上の花はどんな花ですか。 — What kind of flowers are on the desk?
+花の形に作った物があるのは、どこですか。 — Where are the objects made in the shape of flowers?
 
-Reading: つくえのうえのはなはどんなはなですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 本物の花 | ほんもののはな | real flowers | Distractor | — |
-| 花の写真 | はなのしゃしん | a photograph of flowers | Distractor | — |
-| 人工の花 | じんこうのはな | artificial flowers | Correct | — |
-| 花の絵 | はなのえ | a picture of flowers | Distractor | — |
-
-Explanation: The artificial flowers belong to the desk; the real flowers belong to the shelf.
-
-**ja-ctx-wk1-contrastive-jinkou-artificial-01-detail** · other detail · text
-
-人工の花はどこにありますか。 — Where are the artificial flowers?
-
-Reading: じんこうのはなはどこにありますか。
+Reading: はなのかたちにつくったものがあるのは、どこですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 机の上 | つくえのうえ | on the desk | Correct | — |
-| 棚の上 | たなのうえ | on the shelf | Distractor | — |
-| 窓のそば | まどのそば | by the window | Distractor | — |
-| 床の上 | ゆかのうえ | on the floor | Distractor | — |
+| 棚だけです | たなだけです | only on the shelf | Distractor | — |
+| 両方です | りょうほうです | in both places | Distractor | — |
+| 机だけです | つくえだけです | only on the desk | Correct | — |
+| どちらにもありません | どちらにもありません | in neither place | Distractor | — |
 
-Explanation: The desk holds the artificial flowers; the shelf holds the real ones.
+Explanation: Artificial maps to manufactured flower-shaped objects, and those objects are on the desk; the shelf holds real flowers.
+
+**ja-ctx-wk1-contrastive-jinkou-artificial-01-detail** · situation meaning · text
+
+机と棚の花は、同じ種類ですか。 — Are the desk and shelf flowers the same kind?
+
+Reading: つくえとたなのはなは、おなじしゅるいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、机の花は作り物、棚の花は本物です | いいえ、つくえのはなはつくりもの、たなのはなはほんものです | No: the desk flowers are replicas and the shelf flowers are real. | Correct | — |
+| いいえ、机の花は本物、棚の花は作り物です | いいえ、つくえのはなはほんもの、たなのはなはつくりものです | No: the desk flowers are real and the shelf flowers are replicas. | Distractor | — |
+| はい、両方とも作り物です | はい、りょうほうともつくりものです | Yes, both are replicas. | Distractor | — |
+| はい、両方とも本物です | はい、りょうほうともほんものです | Yes, both are real. | Distractor | — |
+
+Explanation: The desk and shelf differ: artificial replicas on the desk versus real flowers on the shelf.
 
 </details>
 
 <details><summary>16. 人工 — ja-ctx-wk1-contrastive-jinkou-artificial-02</summary>
 
-**Sentence:** この公園には人工の池があります。あの公園には自然の川があります。
+**Sentence:** この公園には人工の池があります。あの公園には自然の池があります。
 
-このこうえんにはじんこうのいけがあります。あのこうえんにはしぜんのかわがあります。 — This park has a man-made pond. That park has a natural river.
+このこうえんにはじんこうのいけがあります。あのこうえんにはしぜんのいけがあります。 — This park has a man-made pond. That park has a natural pond.
 
-**Review note:** Answers contrast origin and water feature, keeping each choice distinct.
+**Review note:** The same object type appears twice. Interpret the origin of each pond and compare, without guessing whether either park is prettier or better.
 
-**ja-ctx-wk1-contrastive-jinkou-artificial-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-jinkou-artificial-02-target** · target meaning · text
 
-この公園には何がありますか。 — What is in this park?
+人が作った池があるのは、どちらの公園ですか。 — Which park has a pond constructed by people?
 
-Reading: このこうえんにはなにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 自然の池 | しぜんのいけ | a natural pond | Distractor | — |
-| 人工の川 | じんこうのかわ | a man-made river | Distractor | — |
-| 自然の川 | しぜんのかわ | a natural river | Distractor | — |
-| 人工の池 | じんこうのいけ | a man-made pond | Correct | — |
-
-Explanation: This park has the man-made pond, not either river or a natural pond.
-
-**ja-ctx-wk1-contrastive-jinkou-artificial-02-detail** · other detail · text
-
-人工の池はどこにありますか。 — Where is the man-made pond?
-
-Reading: じんこうのいけはどこにありますか。
+Reading: ひとがつくったいけがあるのは、どちらのこうえんですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| あの公園 | あのこうえん | that park | Distractor | — |
-| この公園 | このこうえん | this park | Correct | — |
-| 学校 | がっこう | school | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
+| あの公園だけです | あのこうえんだけです | only that park | Distractor | — |
+| 両方の公園です | りょうほうのこうえんです | both parks | Distractor | — |
+| どちらの公園でもありません | どちらのこうえんでもありません | neither park | Distractor | — |
+| この公園だけです | このこうえんだけです | only this park | Correct | — |
 
-Explanation: The man-made pond belongs to this park; the natural river belongs to that park.
+Explanation: Only this park&#39;s pond is artificial, meaning constructed by people; the other pond formed naturally.
+
+**ja-ctx-wk1-contrastive-jinkou-artificial-02-detail** · situation meaning · text
+
+二つの池は、同じようにできましたか。 — Did the two ponds come into being in the same way?
+
+Reading: ふたつのいけは、おなじようにできましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、あちらだけ人が作りました | いいえ、あちらだけひとがつくりました | No, only that one was made by people. | Distractor | — |
+| いいえ、こちらだけ人が作りました | いいえ、こちらだけひとがつくりました | No, only this one was made by people. | Correct | — |
+| はい、両方とも人が作りました | はい、りょうほうともひとがつくりました | Yes, people made both. | Distractor | — |
+| はい、両方とも自然にできました | はい、りょうほうともしぜんにできました | Yes, both formed naturally. | Distractor | — |
+
+Explanation: One pond was constructed and the other formed naturally, so their origins differ; construction belongs to this park.
 
 </details>
 
-<details><summary>17. 下 — ja-ctx-simple-shita-01</summary>
+<details><summary>17. 下 — ja-ctx-wk1-simple-shita-01</summary>
 
-**Sentence:** 車は橋の下に止まっています。
+**Sentence:** 子猫は椅子の下で、水を飲んでいます。
 
-くるまははしのしたにとまっています。 — The car is parked under the bridge.
+こねこはいすのしたで、みずをのんでいます。 — The kitten is drinking water under the chair.
 
-**Review note:** One short event or fact introduces direct questions before ja-ctx-shita-01. Choices reuse the matched contrastive concepts; text and picture suitability await owner review. Position pictures show Kiku on/under a chair or direction arrows; check transfer to the sentence location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-simple-shita-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-shita-01-target** · target meaning · picture + text
 
-車はどこに止まっていますか。 — Where is the car parked?
+椅子は子猫から見て、どちらにありますか。 — Where is the chair relative to the kitten?
 
-Reading: くるまはどこにとまっていますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The car is parked under the bridge.
-
-**ja-ctx-simple-shita-01-detail** · other detail · text
-
-橋の下には何が止まっていますか。 — What is stopped under the bridge?
-
-Reading: はしのしたにはなにがとまっていますか。
+Reading: いすはこねこからみて、どちらにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 車 | くるま | car | Correct | — |
-| バス | バス | bus | Distractor | — |
-| 自転車 | じてんしゃ | bicycle | Distractor | — |
-| 電車 | でんしゃ | train | Distractor | — |
+| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
+| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
+| 左 | ひだり | left | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
+| 右 | みぎ | right | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
 
-Explanation: The sentence says that a car is parked under the bridge.
+Explanation: The kitten is below the chair, so the chair is above the kitten.
+
+**ja-ctx-wk1-simple-shita-01-detail** · situation meaning · text
+
+子猫は何をしていますか。 — What is the kitten doing?
+
+Reading: こねこはなにをしていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物を口に入れています | たべものをくちにいれています | Putting food into its mouth. | Distractor | — |
+| 飲み物を床に捨てています | のみものをゆかにすてています | Throwing a drink onto the floor. | Distractor | — |
+| 飲み物を口に入れています | のみものをくちにいれています | Putting a drink into its mouth. | Correct | — |
+| 食べ物を床に置いています | たべものをゆかにおいています | Putting food onto the floor. | Distractor | — |
+
+Explanation: Drinking water puts a drink into the mouth, rather than eating food or discarding it.
 
 </details>
 
-<details><summary>18. 下 — ja-ctx-simple-shita-02</summary>
+<details><summary>18. 下 — ja-ctx-wk1-simple-shita-02</summary>
 
-**Sentence:** ノートは椅子の下にあります。
+**Sentence:** 机の下のかばんには、何も入っていません。
 
-ノートはいすのしたにあります。 — The notebook is under the chair.
+つくえのしたのかばんには、なにもはいっていません。 — There is nothing inside the bag under the desk.
 
-**Review note:** One short event or fact introduces direct questions before ja-ctx-shita-02. Choices reuse the matched contrastive concepts; text and picture suitability await owner review. Position pictures show Kiku on/under a chair or direction arrows; check transfer to the sentence location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-simple-shita-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-shita-02-target** · target meaning · picture + text
 
-ノートはどこにありますか。 — Where is the notebook?
+机はかばんから見て、どちらにありますか。 — Where is the desk relative to the bag?
 
-Reading: ノートはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The notebook is under the chair.
-
-**ja-ctx-simple-shita-02-detail** · other detail · picture + text
-
-椅子の下には何がありますか。 — What is under the chair?
-
-Reading: いすのしたにはなにがありますか。
+Reading: つくえはかばんからみて、どちらにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Distractor | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Correct | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 上 | うえ | above | Correct | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
+| 下 | した | below | Distractor | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
+| 左 | ひだり | left | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
+| 右 | みぎ | right | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
 
-Explanation: The sentence says that a notebook is under the chair.
+Explanation: The bag is below the desk, so the desk is above the bag.
+
+**ja-ctx-wk1-simple-shita-02-detail** · situation meaning · text
+
+かばんの中はどうなっていますか。 — What is the inside of the bag like?
+
+Reading: かばんのなかはどうなっていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 本だけが入っています | ほんだけがはいっています | It contains only books. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+| 水だけが入っています | みずだけがはいっています | It contains only water. | Distractor | — |
+| 物でいっぱいです | ものでいっぱいです | It is full of things. | Distractor | — |
+
+Explanation: Nothing is inside the bag, so the bag is empty.
 
 </details>
 
-<details><summary>19. 下 — ja-ctx-shita-01</summary>
+<details><summary>19. 下 — ja-ctx-wk1-contrastive-shita-01</summary>
 
-**Sentence:** 車は橋の下に、バスは橋の上に止まっています。
+**Sentence:** 子猫は椅子の下で水を飲んでいます。大きい猫は椅子の上でご飯を食べています。
 
-くるまははしのしたに、バスははしのうえにとまっています。 — The car is parked under the bridge, and the bus is stopped on the bridge.
+こねこはいすのしたでみずをのんでいます。おおきいねこはいすのうえでごはんをたべています。 — The kitten is drinking water under the chair. The large cat is eating on the chair.
 
-**Review note:** The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location. Vehicle answers stay written because matching picture assets are not available for every option. 止まっている describes a resulting state, not an action in progress.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-shita-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-shita-01-target** · target meaning · text
 
-車はどこに止まっていますか。 — Where is the car parked?
+椅子より低い所にいるのは、どちらですか。 — Which cat is lower than the chair?
 
-Reading: くるまはどこにとまっていますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The car is under the bridge; the bus is on it.
-
-**ja-ctx-shita-01-detail** · other detail · text
-
-橋の下には何が止まっていますか。 — What is stopped under the bridge?
-
-Reading: はしのしたにはなにがとまっていますか。
+Reading: いすよりひくいところにいるのは、どちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 車 | くるま | car | Correct | — |
-| バス | バス | bus | Distractor | — |
-| 自転車 | じてんしゃ | bicycle | Distractor | — |
-| 電車 | でんしゃ | train | Distractor | — |
+| 子猫だけです | こねこだけです | Only the kitten. | Correct | — |
+| 大きい猫だけです | おおきいねこだけです | Only the large cat. | Distractor | — |
+| 二匹ともです | にひきともです | Both cats. | Distractor | — |
+| どちらもいません | どちらもいません | Neither cat. | Distractor | — |
 
-Explanation: The car is under the bridge, while the bus is on it.
+Explanation: The kitten is under the chair; the large cat is on top. Only the kitten is lower.
+
+**ja-ctx-wk1-contrastive-shita-01-detail** · situation meaning · text
+
+飲み物を口に入れているのは、どちらですか。 — Which cat is putting a drink into its mouth?
+
+Reading: のみものをくちにいれているのは、どちらですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 子猫だけです | こねこだけです | Only the kitten. | Correct | — |
+| 大きい猫だけです | おおきいねこだけです | Only the large cat. | Distractor | — |
+| 二匹ともです | にひきともです | Both cats. | Distractor | — |
+| どちらもいません | どちらもいません | Neither cat. | Distractor | — |
+
+Explanation: The kitten drinks water; the large cat eats food. Drinking is the described drink-to-mouth action.
 
 </details>
 
-<details><summary>20. 下 — ja-ctx-shita-02</summary>
+<details><summary>20. 下 — ja-ctx-wk1-contrastive-shita-02</summary>
 
-**Sentence:** ノートは椅子の下に、本は椅子の上にあります。
+**Sentence:** 机の下のかばんには何も入っていません。机の上のかばんには本がいっぱい入っています。
 
-ノートはいすのしたに、ほんはいすのうえにあります。 — The notebook is under the chair, and the book is on the chair.
+つくえのしたのかばんにはなにもはいっていません。つくえのうえのかばんにはほんがいっぱいはいっています。 — The bag under the desk contains nothing. The bag on the desk is full of books.
 
-**Review note:** The 上/下 pictures show Kiku on/under a chair; left/right are arrows. They stand for relative-position concepts, not the literal desk or shelf scene. Owner review must confirm this transfer is clear. The question binds one object to one location.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-shita-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-shita-02-target** · target meaning · text
 
-ノートはどこにありますか。 — Where is the notebook?
+中が空のかばんは、机と比べてどこにありますか。 — Where is the empty bag compared with the desk?
 
-Reading: ノートはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上 | うえ | above | Distractor | <img width="96" alt="Kiku sitting on the lavender seat of a golden wooden chair, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg"> |
-| 下 | した | below | Correct | <img width="96" alt="Kiku crouching under a golden wooden chair with a lavender seat, between its legs, with attention lines around the cat." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg"> |
-| 左 | ひだり | left direction | Distractor | <img width="96" alt="A lavender direction arrow pointing left." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-14be5202d5b3-d47723e0d3e7.jpg"> |
-| 右 | みぎ | right direction | Distractor | <img width="96" alt="A lavender direction arrow pointing right." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ed6bd4d73b76-9e9780ab58a5.jpg"> |
-
-Explanation: The notebook is under the chair; the book is on it.
-
-**ja-ctx-shita-02-detail** · other detail · picture + text
-
-椅子の下には何がありますか。 — What is under the chair?
-
-Reading: いすのしたにはなにがありますか。
+Reading: なかがからのかばんは、つくえとくらべてどこにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Distractor | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Correct | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 高い所です | たかいところです | In a higher place. | Distractor | — |
+| 同じ高さの右側です | おなじたかさのみぎがわです | At the same height, on the right. | Distractor | — |
+| 低い所です | ひくいところです | In a lower place. | Correct | — |
+| 同じ高さの左側です | おなじたかさのひだりがわです | At the same height, on the left. | Distractor | — |
 
-Explanation: The notebook is underneath the chair, while the book is on it.
+Explanation: The empty bag is the one below the desk, so it is lower than the desk.
+
+**ja-ctx-wk1-contrastive-shita-02-detail** · situation meaning · text
+
+机の上のかばんは、どんな状態ですか。 — What is the state of the bag on the desk?
+
+Reading: つくえのうえのかばんは、どんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 中は空です | なかはからです | It is empty inside. | Distractor | — |
+| 本はありません | ほんはありません | It contains no books. | Distractor | — |
+| 水だけが入っています | みずだけがはいっています | It contains only water. | Distractor | — |
+| 中は空ではありません | なかはからではありません | It is not empty inside. | Correct | — |
+
+Explanation: The upper bag is full of books, so it is not empty and does contain books.
 
 </details>
 
-<details><summary>21. 大きい — ja-ctx-simple-ookii-01</summary>
+<details><summary>21. 大きい — ja-ctx-wk1-simple-ookii-01</summary>
 
-**Sentence:** 大きい車は白いです。
+**Sentence:** 赤い箱は大きくて、青い箱は小さいです。
 
-おおきいくるまはしろいです。 — The large car is white.
+あかいはこはおおきくて、あおいはこはちいさいです。 — The red box is large, and the blue box is small.
 
-**Review note:** One short event or fact introduces direct questions before ja-ctx-ookii-01. Choices reuse the matched contrastive concepts; text and picture suitability await owner review.
+**Review note:** Comprehension revision: color is independent of physical size, so neither answer can be selected from general size knowledge without hearing the facts. The two questions interpret larger size as occupying more space and compare two explicitly stated attributes.
 
-**ja-ctx-simple-ookii-01-target** · target answer · text
+**ja-ctx-wk1-simple-ookii-01-target** · target meaning · text
 
-車はどんな大きさですか。 — What size is the car?
+二つのうち、場所をたくさん取るのはどちらですか。 — Which of the two takes up more space?
 
-Reading: くるまはどんなおおきさですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 大きい | おおきい | large | Correct | — |
-| 小さい | ちいさい | small | Distractor | — |
-| 中くらい | ちゅうくらい | medium-sized | Distractor | — |
-| とても小さい | とてもちいさい | very small | Distractor | — |
-
-Explanation: The sentence describes the car as large.
-
-**ja-ctx-simple-ookii-01-detail** · other detail · picture + text
-
-車は何色ですか。 — What colour is the car?
-
-Reading: くるまはなにいろですか。
+Reading: ふたつのうち、ばしょをたくさんとるのはどちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 赤 | あか | red | Distractor | <img width="96" alt="A red paint splash and red-loaded paintbrush" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-3144539c83d3-8b08411a59b1.jpg"> |
-| 白 | しろ | white | Correct | <img width="96" alt="A white paint splash beside a brush loaded with white paint." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-d67a7d3dacc9-2bdf00cae1f7.jpg"> |
-| 青 | あお | blue | Distractor | <img width="96" alt="A blue paint splash and blue-loaded paintbrush" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-10e568715d3a-5315406ba502.jpg"> |
-| 水色 | みずいろ | sky blue | Distractor | <img width="96" alt="A sky-blue paint splash beside a brush loaded with sky-blue paint." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-d42b5be1c4ad-8e784631ad2e.jpg"> |
+| 赤い箱です | あかいはこです | The red box. | Correct | — |
+| 青い箱です | あおいはこです | The blue box. | Distractor | — |
+| 同じです | おなじです | They take the same amount of space. | Distractor | — |
+| どちらもありません | どちらもありません | Neither exists. | Distractor | — |
 
-Explanation: The large car is white.
+Explanation: The red box is described as large and the other as small; the larger object occupies more space.
+
+**ja-ctx-wk1-simple-ookii-01-detail** · situation meaning · text
+
+二つの箱の色と大きさはどうですか。 — How do the two boxes compare in color and size?
+
+Reading: ふたつのはこのいろとおおきさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 色だけ違って、大きさは同じです | いろだけちがって、おおきさはおなじです | Only their colors differ; their sizes are the same. | Distractor | — |
+| 色と大きさが違います | いろとおおきさがちがいます | Both their colors and their sizes differ. | Correct | — |
+| 大きさだけ違って、色は同じです | おおきさだけちがって、いろはおなじです | Only their sizes differ; their colors are the same. | Distractor | — |
+| 色も大きさも同じです | いろもおおきさもおなじです | Their colors and sizes are both the same. | Distractor | — |
+
+Explanation: The objects have different named colors and opposite sizes, so both attributes differ.
 
 </details>
 
-<details><summary>22. 大きい — ja-ctx-simple-ookii-02</summary>
+<details><summary>22. 大きい — ja-ctx-wk1-simple-ookii-02</summary>
 
-**Sentence:** 大きい箱に本が入っています。
+**Sentence:** 青いかばんは大きくて、黄色いかばんは小さいです。
 
-おおきいはこにほんがはいっています。 — There is a book in the large box.
+あおいかばんはおおきくて、きいろいかばんはちいさいです。 — The blue bag is large, and the yellow bag is small.
 
-**Review note:** One short event or fact introduces direct questions before ja-ctx-ookii-02. Choices reuse the matched contrastive concepts; text and picture suitability await owner review.
+**Review note:** Comprehension revision: color is independent of physical size, so neither answer can be selected from general size knowledge without hearing the facts. The two questions interpret larger size as occupying more space and compare two explicitly stated attributes.
 
-**ja-ctx-simple-ookii-02-target** · target answer · text
+**ja-ctx-wk1-simple-ookii-02-target** · target meaning · text
 
-箱はどんな大きさですか。 — What size is the box?
+二つのうち、場所をたくさん取るのはどちらですか。 — Which of the two takes up more space?
 
-Reading: はこはどんなおおきさですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 大きい | おおきい | large | Correct | — |
-| 小さい | ちいさい | small | Distractor | — |
-| 中くらい | ちゅうくらい | medium-sized | Distractor | — |
-| とても小さい | とてもちいさい | very small | Distractor | — |
-
-Explanation: The sentence describes the box as large.
-
-**ja-ctx-simple-ookii-02-detail** · other detail · picture + text
-
-箱には何が入っていますか。 — What is in the box?
-
-Reading: はこにはなにがはいっていますか。
+Reading: ふたつのうち、ばしょをたくさんとるのはどちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Correct | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Distractor | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| 青いかばんです | あおいかばんです | The blue bag. | Correct | — |
+| 黄色いかばんです | きいろいかばんです | The yellow bag. | Distractor | — |
+| 同じです | おなじです | They take the same amount of space. | Distractor | — |
+| どちらもありません | どちらもありません | Neither exists. | Distractor | — |
 
-Explanation: The sentence says that a book is in the large box.
+Explanation: The blue bag is described as large and the other as small; the larger object occupies more space.
+
+**ja-ctx-wk1-simple-ookii-02-detail** · situation meaning · text
+
+二つのかばんの色と大きさはどうですか。 — How do the two bags compare in color and size?
+
+Reading: ふたつのかばんのいろとおおきさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 色だけ違って、大きさは同じです | いろだけちがって、おおきさはおなじです | Only their colors differ; their sizes are the same. | Distractor | — |
+| 色と大きさが違います | いろとおおきさがちがいます | Both their colors and their sizes differ. | Correct | — |
+| 大きさだけ違って、色は同じです | おおきさだけちがって、いろはおなじです | Only their sizes differ; their colors are the same. | Distractor | — |
+| 色も大きさも同じです | いろもおおきさもおなじです | Their colors and sizes are both the same. | Distractor | — |
+
+Explanation: The objects have different named colors and opposite sizes, so both attributes differ.
 
 </details>
 
-<details><summary>23. 大きい — ja-ctx-ookii-01</summary>
+<details><summary>23. 大きい — ja-ctx-wk1-contrastive-ookii-01</summary>
 
-**Sentence:** 大きい車は白くて、小さい車は青いです。
+**Sentence:** 大きい箱に赤い箱を入れました。小さい箱には何も入っていません。
 
-おおきいくるまはしろくて、ちいさいくるまはあおいです。 — The large car is white, and the small car is blue.
+おおきいはこにあかいはこをいれました。ちいさいはこにはなにもはいっていません。 — I put a red box into the large box. There is nothing in the small box.
 
-**Review note:** Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box.
+**Review note:** Comprehension revision: interpret the stated relation or predicate. Each question records its semantic evidence and why unique-fragment matching is insufficient. Replaces draft use of approved pilot material without altering its recordings or history.
 
-**ja-ctx-ookii-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-ookii-01-target** · target meaning · text
 
-白い車はどんな大きさですか。 — What size is the white car?
+赤い箱を囲んでいるのは、どちらの箱ですか。 — Which box encloses the red box?
 
-Reading: しろいくるまはどんなおおきさですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 大きい | おおきい | large | Correct | — |
-| 小さい | ちいさい | small | Distractor | — |
-| 中くらい | ちゅうくらい | medium-sized | Distractor | — |
-| とても小さい | とてもちいさい | very small | Distractor | — |
-
-Explanation: The white car is the large car, while the blue car is small.
-
-**ja-ctx-ookii-01-detail** · other detail · picture + text
-
-大きい車は何色ですか。 — What colour is the large car?
-
-Reading: おおきいくるまはなにいろですか。
+Reading: あかいはこをかこんでいるのは、どちらのはこですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 赤 | あか | red | Distractor | <img width="96" alt="A red paint splash and red-loaded paintbrush" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-3144539c83d3-8b08411a59b1.jpg"> |
-| 白 | しろ | white | Correct | <img width="96" alt="A white paint splash beside a brush loaded with white paint." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-d67a7d3dacc9-2bdf00cae1f7.jpg"> |
-| 青 | あお | blue | Distractor | <img width="96" alt="A blue paint splash and blue-loaded paintbrush" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-10e568715d3a-5315406ba502.jpg"> |
-| 水色 | みずいろ | sky blue | Distractor | <img width="96" alt="A sky-blue paint splash beside a brush loaded with sky-blue paint." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-d42b5be1c4ad-8e784631ad2e.jpg"> |
+| 大きい箱です | おおきいはこです | The large box. | Correct | — |
+| 小さい箱です | ちいさいはこです | The small box. | Distractor | — |
+| 両方です | りょうほうです | Both. | Distractor | — |
+| どちらもありません | どちらもありません | Neither. | Distractor | — |
 
-Explanation: The large car is white; the small car is blue.
+Explanation: The red box was put inside the large box; the large box is its outer container.
+
+**ja-ctx-wk1-contrastive-ookii-01-detail** · situation meaning · text
+
+大きい箱と小さい箱のうち、中が空なのはどちらですか。 — Of the large and small boxes, which is empty inside?
+
+Reading: おおきいはことちいさいはこのうち、なかがからなのはどちらですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 大きい箱です | おおきいはこです | The large box. | Distractor | — |
+| 小さい箱です | ちいさいはこです | The small box. | Correct | — |
+| 両方です | りょうほうです | Both. | Distractor | — |
+| どちらもありません | どちらもありません | Neither. | Distractor | — |
+
+Explanation: The large box contains the red box; only the small box contains nothing and is empty.
 
 </details>
 
-<details><summary>24. 大きい — ja-ctx-ookii-02</summary>
+<details><summary>24. 大きい — ja-ctx-wk1-contrastive-ookii-02</summary>
 
-**Sentence:** 大きい箱には本が、小さい箱にはノートが入っています。
+**Sentence:** 大きいかばんの中は靴だけです。小さいかばんの中は本だけです。
 
-おおきいはこにはほんが、ちいさいはこにはノートがはいっています。 — There is a book in the large box and a notebook in the small box.
+おおきいかばんのなかはくつだけです。ちいさいかばんのなかはほんだけです。 — The large bag contains only shoes. The small bag contains only books.
 
-**Review note:** Size questions use written choices because the available large/small pictures do not provide a matching medium-size option. Colour and object pictures represent answer concepts. Compare the size-bound fact rather than the appearance of a pictured car or box. 入っている is taught as a resulting state. The relative-clause question reaches the later part of the Genki I grammar scope.
+**Review note:** Comprehension revision: exclusive current contents are stated explicitly; the reading-material answer does not assume the absence of pre-existing books. Compare sizes and bind the item category to the correct bag.
 
-**ja-ctx-ookii-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-ookii-02-target** · target meaning · text
 
-本が入っている箱はどんな大きさですか。 — What size is the box with the book in it?
+靴のかばんは、本のかばんより小さいですか。 — Is the bag with shoes smaller than the bag with books?
 
-Reading: ほんがはいっているはこはどんなおおきさですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 大きい | おおきい | large | Correct | — |
-| 小さい | ちいさい | small | Distractor | — |
-| 中くらい | ちゅうくらい | medium-sized | Distractor | — |
-| とても小さい | とてもちいさい | very small | Distractor | — |
-
-Explanation: The book is in the large box; the notebook is in the small box.
-
-**ja-ctx-ookii-02-detail** · other detail · picture + text
-
-大きい箱には何が入っていますか。 — What is in the large box?
-
-Reading: おおきいはこにはなにがはいっていますか。
+Reading: くつのかばんは、ほんのかばんよりちいさいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 本 | ほん | book | Correct | <img width="96" alt="An open book with white illustrated pages and a gold cover." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png"> |
-| ノート | ノート | notebook | Distractor | <img width="96" alt="A closed lavender spiral notebook." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0c144e18f1b2-ee693f23f128.png"> |
-| 皿 | さら | plate | Distractor | <img width="96" alt="An empty blue dinner plate" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg"> |
-| 玉 | たま | ball | Distractor | <img width="96" alt="An orange basketball with purple seams" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-66ccf8dd3399-546aecaf1c00.jpg"> |
+| はい、靴のかばんの方が小さいです | はい、くつのかばんのほうがちいさいです | Yes, the shoe bag is smaller. | Distractor | — |
+| 二つは同じ大きさです | ふたつはおなじおおきさです | The two are the same size. | Distractor | — |
+| いいえ、本のかばんの方が小さいです | いいえ、ほんのかばんのほうがちいさいです | No, the book bag is smaller. | Correct | — |
+| かばんは一つだけです | かばんはひとつだけです | There is only one bag. | Distractor | — |
 
-Explanation: The large box contains the book, while the small box contains the notebook.
+Explanation: The shoe bag is large and the book bag small, so the question reverses the stated size relationship.
+
+**ja-ctx-wk1-contrastive-ookii-02-detail** · situation meaning · text
+
+読む物が入っているのは、どちらのかばんですか。 — Which bag contains something to read?
+
+Reading: よむものがはいっているのは、どちらのかばんですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 大きい方です | おおきいほうです | The larger one. | Distractor | — |
+| 小さい方です | ちいさいほうです | The smaller one. | Correct | — |
+| 両方です | りょうほうです | Both. | Distractor | — |
+| どちらもありません | どちらもありません | Neither. | Distractor | — |
+
+Explanation: Only books are in the small bag; the large bag contains only shoes. Books are the reading material.
 
 </details>
 
 <details><summary>25. 八つ — ja-ctx-wk1-simple-yattsu-01</summary>
 
-**Sentence:** 石が八つあります。
+**Sentence:** 袋の中に石が八つあります。
 
-いしがやっつあります。 — There are 8 stones.
+ふくろのなかにいしがやっつあります。 — There are 8 stones inside the bag.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-yattsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-yattsu-01-target** · target meaning · picture + text
 
-石はいくつありますか。 — How many stones are there?
+石は何個ありますか。 — How many stones are there?
 
-Reading: いしはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-
-Explanation: The sentence gives 8 as the number of stones.
-
-**ja-ctx-wk1-simple-yattsu-01-detail** · other detail · text
-
-八つあるのは何ですか。 — Which item are there eight of?
-
-Reading: やっつあるのはなんですか。
+Reading: いしはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 玉 | たま | ball | Distractor | — |
-| 箱 | はこ | box | Distractor | — |
-| かばん | かばん | bag | Distractor | — |
-| 石 | いし | stone | Correct | — |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
 
-Explanation: The sentence gives eight as the number of stones.
+Explanation: 八つ (やっつ) gives a quantity of 8; the matching 個 form is ８個 (はっこ).
+
+**ja-ctx-wk1-simple-yattsu-01-detail** · situation meaning · text
+
+石はどんな状態ですか。 — How are the stones situated?
+
+Reading: いしはどんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 袋の外にあります | ふくろのそとにあります | They are outside the bag. | Distractor | — |
+| 袋の上にあります | ふくろのうえにあります | They are on top of the bag. | Distractor | — |
+| 袋の下にあります | ふくろのしたにあります | They are under the bag. | Distractor | — |
+| 袋に入っています | ふくろにはいっています | They are contained in the bag. | Correct | — |
+
+Explanation: 袋の中 means that the stones are contained inside the bag; therefore 袋に入っています is true.
 
 </details>
 
 <details><summary>26. 八つ — ja-ctx-wk1-simple-yattsu-02</summary>
 
-**Sentence:** 妹はクッキーを八つ買いました。
+**Sentence:** 皿には餃子が八つだけありました。妹は皿の上の物を全部食べました。
 
-いもうとはクッキーをやっつかいました。 — My younger sister bought 8 cookies.
+さらにはぎょうざがやっつだけありました。いもうとはさらのうえのものをぜんぶたべました。 — There were only 8 dumplings on the plate. My younger sister ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-yattsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-yattsu-02-target** · target meaning · picture + text
 
-妹はクッキーをいくつ買いましたか。 — How many cookies did my younger sister buy?
+妹は餃子を何個食べましたか。 — How many dumplings did my younger sister eat?
 
-Reading: いもうとはクッキーをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 八つ | やっつ | eight things | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-
-Explanation: My younger sister bought 8 cookies.
-
-**ja-ctx-wk1-simple-yattsu-02-detail** · other detail · text
-
-誰がクッキーを八つ買いましたか。 — Who bought 8 cookies?
-
-Reading: だれがクッキーをやっつかいましたか。
+Reading: いもうとはぎょうざをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 妹 | いもうと | my younger sister | Correct | — |
-| 兄 | あに | my older brother | Distractor | — |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
 
-Explanation: The sentence attributes the purchase of 8 to my younger sister.
+Explanation: The plate held 八つ (8) dumplings, and my younger sister ate all its food; the eaten quantity is ８個.
+
+**ja-ctx-wk1-simple-yattsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+
+Explanation: My younger sister ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>27. 八つ — ja-ctx-wk1-contrastive-yattsu-01</summary>
 
-**Sentence:** 石が八つ、玉が七つあります。
+**Sentence:** 赤い箱には石が八つ、青い箱には石が六つ入っています。
 
-いしがやっつ、たまがななつあります。 — There are 8 stones, and 7 balls.
+あかいはこにはいしがやっつ、あおいはこにはいしがむっつはいっています。 — The red box contains 8 stones; the blue box contains 6 stones.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-yattsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-yattsu-01-target** · target meaning · picture + text
 
-石はいくつありますか。 — How many stones are there?
+赤い箱の中の石は何個ありますか。 — How many stones are inside the red box?
 
-Reading: いしはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-
-Explanation: The sentence gives 8 as the number of stones.
-
-**ja-ctx-wk1-contrastive-yattsu-01-detail** · other detail · text
-
-八つあるのは何ですか。 — Which item are there eight of?
-
-Reading: やっつあるのはなんですか。
+Reading: あかいはこのなかのいしはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 箱 | はこ | box | Distractor | — |
-| かばん | かばん | bag | Distractor | — |
-| 石 | いし | stone | Correct | — |
-| 玉 | たま | ball | Distractor | — |
+| ８個 | はっこ | 8 items | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
 
-Explanation: The sentence gives eight as the number of stones.
+Explanation: The red box is paired with 八つ (8), while the blue box is paired with 六つ (6); the requested red-box quantity is ８個.
+
+**ja-ctx-wk1-contrastive-yattsu-01-detail** · situation meaning · text
+
+二つの箱の石の数はどうですか。 — How do the two boxes compare in number of stones?
+
+Reading: ふたつのはこのいしのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Correct | — |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Distractor | — |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+
+Explanation: The red box has 8 and the blue box has 6; red therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>28. 八つ — ja-ctx-wk1-contrastive-yattsu-02</summary>
 
-**Sentence:** 妹はクッキーを八つ、兄はクッキーを九つ買いました。
+**Sentence:** 妹の皿には餃子が八つだけ、兄の皿には餃子が六つだけありました。妹は自分の皿の物を全部食べました。兄は何も食べませんでした。
 
-いもうとはクッキーをやっつ、あにはクッキーをここのつかいました。 — My younger sister bought 8 cookies. My older brother bought 9 cookies.
+いもうとのさらにはぎょうざがやっつだけ、あにのさらにはぎょうざがむっつだけありました。いもうとはじぶんのさらのものをぜんぶたべました。あにはなにもたべませんでした。 — My younger sister&#39;s plate had only 8 dumplings; my older brother&#39;s plate had only 6. My younger sister ate everything on their own plate. My older brother ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-yattsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-yattsu-02-target** · target meaning · picture + text
 
-妹はクッキーをいくつ買いましたか。 — How many cookies did my younger sister buy?
+妹は餃子を何個食べましたか。 — How many dumplings did my younger sister eat?
 
-Reading: いもうとはクッキーをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 九つ | ここのつ | nine things | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-
-Explanation: My younger sister bought 8; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-yattsu-02-detail** · other detail · text
-
-誰がクッキーを八つ買いましたか。 — Who bought 8 cookies?
-
-Reading: だれがクッキーをやっつかいましたか。
+Reading: いもうとはぎょうざをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 妹 | いもうと | my younger sister | Correct | — |
-| 兄 | あに | my older brother | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| ９個 | きゅうこ | 9 items | Distractor | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Correct | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
 
-Explanation: The sentence attributes the purchase of 8 to my younger sister.
+Explanation: My younger sister&#39;s own plate held 八つ (8) dumplings, and they ate all of it. The other plate&#39;s 6 items were not eaten; the correct amount is ８個.
+
+**ja-ctx-wk1-contrastive-yattsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 妹の皿だけ空です | いもうとのさらだけからです | Only my younger sister&#39;s plate is empty. | Correct | — |
+| 兄の皿だけ空です | あにのさらだけからです | Only my older brother&#39;s plate is empty. | Distractor | — |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+
+Explanation: My younger sister ate all food on their own plate, so that plate is empty. My older brother ate nothing, so their initially nonempty plate still has its food. Only my younger sister&#39;s plate is empty.
 
 </details>
 
 <details><summary>29. 入り口 — ja-ctx-wk1-simple-iriguchi-01</summary>
 
-**Sentence:** 入り口は右にあります。
+**Sentence:** 入り口から店に入って、そこで止まりました。
 
-いりぐちはみぎにあります。 — The entrance is on the right.
+いりぐちからみせにはいって、そこでとまりました。 — I entered the shop through the entrance and stopped there.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-iriguchi-01-target** · target answer · text
+**ja-ctx-wk1-simple-iriguchi-01-target** · target meaning · text
 
-右に何がありますか。 — What is on the right?
+今いるのは、どんな場所ですか。 — Where am I now?
 
-Reading: みぎになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 出口 | でぐち | exit | Distractor | — |
-| 受付 | うけつけ | reception desk | Distractor | — |
-| トイレ | トイレ | restroom | Distractor | — |
-| 入り口 | いりぐち | entrance | Correct | — |
-
-Explanation: The entrance is stated to be on the right.
-
-**ja-ctx-wk1-simple-iriguchi-01-detail** · other detail · text
-
-入り口はどこにありますか。 — Where is the entrance?
-
-Reading: いりぐちはどこにありますか。
+Reading: いまいるのは、どんなばしょですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 右 | みぎ | right | Correct | — |
-| 左 | ひだり | left | Distractor | — |
-| 前 | まえ | front | Distractor | — |
-| 後ろ | うしろ | back | Distractor | — |
+| 建物の内側 | たてもののうちがわ | inside the building | Correct | — |
+| 建物の外側 | たてもののそとがわ | outside the building | Distractor | — |
+| 建物の屋根の上 | たてもののやねのうえ | on the roof of the building | Distractor | — |
+| 建物の地下 | たてもののちか | underground beneath the building | Distractor | — |
 
-Explanation: The entrance is on the right.
+Explanation: Entering the shop and stopping there leaves the speaker on the building’s inner side.
+
+**ja-ctx-wk1-simple-iriguchi-01-detail** · situation meaning · text
+
+通った場所の役目はどれですか。 — What is the role of the place I passed through?
+
+Reading: とおったばしょのやくめはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 建物の内側から外へ戻る所 | たてもののうちがわからそとへもどるところ | a place to go from inside back outside | Distractor | — |
+| 下の階から上の階へ行く所 | したのかいからうえのかいへいくところ | a place to go from a lower floor to an upper floor | Distractor | — |
+| 上の階から下の階へ行く所 | うえのかいからしたのかいへいくところ | a place to go from an upper floor to a lower floor | Distractor | — |
+| 外から建物の内側へ進む所 | そとからたてもののうちがわへすすむところ | a place to go from outside into the building | Correct | — |
+
+Explanation: The specified passage is the entrance used to go into the shop, so its role is outside-to-inside access.
 
 </details>
 
 <details><summary>30. 入り口 — ja-ctx-wk1-simple-iriguchi-02</summary>
 
-**Sentence:** 入り口で友達を待ちます。
+**Sentence:** 店の入り口で待っています。まだ中には入っていません。
 
-いりぐちでともだちをまちます。 — I wait for my friend at the entrance.
+みせのいりぐちでまっています。まだなかにははいっていません。 — I am waiting at the shop entrance. I have not gone inside yet.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-iriguchi-02-target** · target answer · text
+**ja-ctx-wk1-simple-iriguchi-02-target** · target meaning · text
 
-どこで友達を待ちますか。 — Where do I wait for my friend?
+今いるのは建物のどちら側ですか。 — Which side of the building am I on now?
 
-Reading: どこでともだちをまちますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 入り口 | いりぐち | entrance | Correct | — |
-| 教室 | きょうしつ | classroom | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 公園 | こうえん | park | Distractor | — |
-
-Explanation: The meeting location is the entrance.
-
-**ja-ctx-wk1-simple-iriguchi-02-detail** · other detail · text
-
-入り口で誰を待ちますか。 — Who do I wait for at the entrance?
-
-Reading: いりぐちでだれをまちますか。
+Reading: いまいるのはたてもののどちらがわですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 友達 | ともだち | friend | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| 建物の屋根の上 | たてもののやねのうえ | on the roof of the building | Distractor | — |
+| 建物の地下 | たてもののちか | underground beneath the building | Distractor | — |
+| 建物の外側 | たてもののそとがわ | outside the building | Correct | — |
+| 建物の内側 | たてもののうちがわ | inside the building | Distractor | — |
 
-Explanation: The person I wait for is my friend.
+Explanation: The speaker waits at the entrance and explicitly has not entered, so remains outside the building.
+
+**ja-ctx-wk1-simple-iriguchi-02-detail** · situation meaning · text
+
+今いる場所の説明で、正しいのはどれですか。 — Which other description fits where I am now?
+
+Reading: いまいるばしょのせつめいで、ただしいのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 建物の下の階 | たてもののしたのかい | a lower floor of the building | Distractor | — |
+| 外と中の境目 | そととなかのさかいめ | the boundary between outside and inside | Correct | — |
+| 店の一番奥 | みせのいちばんおく | the furthest part inside the shop | Distractor | — |
+| 建物の上の階 | たてもののうえのかい | an upper floor of the building | Distractor | — |
+
+Explanation: Waiting at the entrance before entering places the speaker at the boundary between outside and inside.
 
 </details>
 
 <details><summary>31. 入り口 — ja-ctx-wk1-contrastive-iriguchi-01</summary>
 
-**Sentence:** 入り口は右にあります。出口は左にあります。
+**Sentence:** 父は入り口から店に入りました。母は入り口の前で待っています。
 
-いりぐちはみぎにあります。でぐちはひだりにあります。 — The entrance is on the right. The exit is on the left.
+ちちはいりぐちからみせにはいりました。はははいりぐちのまえでまっています。 — My father entered the shop through the entrance. My mother is waiting in front of the entrance.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-iriguchi-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-iriguchi-01-target** · target meaning · text
 
-右に何がありますか。 — What is on the right?
+外と中の境目を越えたのは誰ですか。 — Who crossed the boundary from outside to inside?
 
-Reading: みぎになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 出口 | でぐち | exit | Distractor | — |
-| 受付 | うけつけ | reception desk | Distractor | — |
-| トイレ | トイレ | restroom | Distractor | — |
-| 入り口 | いりぐち | entrance | Correct | — |
-
-Explanation: The entrance is on the right, while the exit is on the left.
-
-**ja-ctx-wk1-contrastive-iriguchi-01-detail** · other detail · text
-
-入り口はどこにありますか。 — Where is the entrance?
-
-Reading: いりぐちはどこにありますか。
+Reading: そととなかのさかいめをこえたのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 右 | みぎ | right | Correct | — |
-| 左 | ひだり | left | Distractor | — |
-| 前 | まえ | front | Distractor | — |
-| 後ろ | うしろ | back | Distractor | — |
+| 父 | ちち | my father | Correct | — |
+| 母 | はは | my mother | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: Right belongs to the entrance, and left belongs to the exit.
+Explanation: The father goes through the entrance into the shop, while the mother remains waiting before it.
+
+**ja-ctx-wk1-contrastive-iriguchi-01-detail** · situation meaning · text
+
+二人の今の位置は、どの組み合わせですか。 — Which combination describes their current positions?
+
+Reading: ふたりのいまのいちは、どのくみあわせですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 父は建物の外側、母は内側 | ちちはたてもののそとがわ、はははうちがわ | father outside, mother inside | Distractor | — |
+| 二人とも建物の内側 | ふたりともたてもののうちがわ | both inside | Distractor | — |
+| 二人とも建物の外側 | ふたりともたてもののそとがわ | both outside | Distractor | — |
+| 父は建物の内側、母は外側 | ちちはたてもののうちがわ、はははそとがわ | father inside, mother outside | Correct | — |
+
+Explanation: The completed entrance puts the father inside; waiting in front of the entrance leaves the mother outside.
 
 </details>
 
 <details><summary>32. 入り口 — ja-ctx-wk1-contrastive-iriguchi-02</summary>
 
-**Sentence:** 入り口で友達を待ちます。教室で先生を待ちます。
+**Sentence:** 入り口の右に受付があります。左に出口があります。
 
-いりぐちでともだちをまちます。きょうしつでせんせいをまちます。 — I wait for my friend at the entrance. I wait for my teacher in the classroom.
+いりぐちのみぎにうけつけがあります。ひだりにでぐちがあります。 — The reception desk is to the right of the entrance. The exit is to the left.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-iriguchi-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-iriguchi-02-target** · target meaning · text
 
-どこで友達を待ちますか。 — Where do I wait for my friend?
+建物に入る所から右を見ます。そこは何をする所ですか。 — I look right from the place used to enter the building. What is that place for?
 
-Reading: どこでともだちをまちますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 入り口 | いりぐち | entrance | Correct | — |
-| 教室 | きょうしつ | classroom | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 公園 | こうえん | park | Distractor | — |
-
-Explanation: I wait for my friend at the entrance, and my teacher in the classroom.
-
-**ja-ctx-wk1-contrastive-iriguchi-02-detail** · other detail · text
-
-入り口で誰を待ちますか。 — Who do I wait for at the entrance?
-
-Reading: いりぐちでだれをまちますか。
+Reading: たてものにはいるところからみぎをみます。そこはなにをするところですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 友達 | ともだち | friend | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| 食べ物を作る所 | たべものをつくるところ | a place to prepare food | Distractor | — |
+| 車を止める所 | くるまをとめるところ | a place to park cars | Distractor | — |
+| 係の人と話す所 | かかりのひととはなすところ | a place to speak with the staff member in charge | Correct | — |
+| 建物の外へ戻る所 | たてもののそとへもどるところ | a place to leave the building | Distractor | — |
 
-Explanation: My friend belongs to the entrance location; my teacher belongs to the classroom.
+Explanation: The place used to enter is the entrance; its right side contains reception, whose role is contact with the staff in charge.
+
+**ja-ctx-wk1-contrastive-iriguchi-02-detail** · situation meaning · text
+
+建物の外に戻る場所は、入る場所から見てどちらですか。 — In which direction from the entering place is the place used to leave?
+
+Reading: たてもののそとにもどるばしょは、はいるばしょからみてどちらですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 下の方 | したのほう | downward | Distractor | — |
+| 左の方 | ひだりのほう | to the left | Correct | — |
+| 右の方 | みぎのほう | to the right | Distractor | — |
+| 上の方 | うえのほう | upward | Distractor | — |
+
+Explanation: Leaving means using the exit, and the exit is on the entrance’s left.
 
 </details>
 
 <details><summary>33. 大した — ja-ctx-wk1-simple-taishita-01</summary>
 
-**Sentence:** これは大したけがではありません。
+**Sentence:** 太郎さんがけがをしました。大したことはありません。
 
-これはたいしたけがではありません。 — This is not a serious injury.
+たろうさんがけがをしました。たいしたことはありません。 — Taro got injured. It is no big deal.
 
-**Review note:** The negative expression denies seriousness, not the existence of an injury.
+**Review note:** One coherent injury situation uses two short clauses. Negating significance is not negating injury existence; no claim about recovery, treatment or pain level is added.
 
-**ja-ctx-wk1-simple-taishita-01-target** · target answer · text
+**ja-ctx-wk1-simple-taishita-01-target** · target meaning · text
 
-このけがはどうですか。 — How is this injury described?
+太郎さんのけがはどうですか。 — How is Taro&#39;s injury described?
 
-Reading: このけがはどうですか。
+Reading: たろうさんのけがはどうですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| ひどいけがです | ひどいけがです | It is a serious injury. | Distractor | — |
-| 大したけがではありません | たいしたけがではありません | It is not a serious injury. | Correct | — |
+| 重いけがです | おもいけがです | It is a serious injury. | Distractor | — |
+| 軽いけがです | かるいけがです | It is a minor injury. | Correct | — |
 | けがはありません | けがはありません | There is no injury. | Distractor | — |
 | まだわかりません | まだわかりません | It is not known yet. | Distractor | — |
 
-Explanation: The injury is not serious; this does not mean that there is no injury.
+Explanation: 大したことはありません says the existing injury is minor, not serious; it does not deny the injury.
 
-**ja-ctx-wk1-simple-taishita-01-detail** · other detail · text
+**ja-ctx-wk1-simple-taishita-01-detail** · situation meaning · text
 
-何の話ですか。 — What is the topic?
+太郎さんにけがはありますか。 — Does Taro have an injury?
 
-Reading: なんのはなしですか。
+Reading: たろうさんにけがはありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| けが | けが | injury | Correct | — |
-| 風邪 | かぜ | a cold | Distractor | — |
-| 頭痛 | ずつう | headache | Distractor | — |
-| 熱 | ねつ | fever | Distractor | — |
+| はい、とてもひどいです | はい、とてもひどいです | Yes, and it is very serious. | Distractor | — |
+| いいえ、ありません | いいえ、ありません | No, there is none. | Distractor | — |
+| まだわかりません | まだわかりません | It is not known yet. | Distractor | — |
+| はい、少しだけです | はい、すこしだけです | Yes, but only a minor one. | Correct | — |
 
-Explanation: The stated subject is an injury, not another health problem.
+Explanation: The first clause establishes an injury and the second limits its seriousness. Together they support yes, but minor.
 
 </details>
 
@@ -1334,9 +1334,9 @@ Explanation: The stated subject is an injury, not another health problem.
 
 はなこさんのえはたいしたものです。 — Hanako&#39;s picture is impressive.
 
-**Review note:** Positive 大したものです is praise. もの belongs to this expression; no ironic reading is intended.
+**Review note:** Read 大したものです as sincere positive praise. The question concerns the expressed evaluation, not an unstated artistic technique or Hanako&#39;s general skill.
 
-**ja-ctx-wk1-simple-taishita-02-target** · target answer · text
+**ja-ctx-wk1-simple-taishita-02-target** · target meaning · text
 
 花子さんの絵はどうですか。 — How is Hanako&#39;s picture described?
 
@@ -1344,27 +1344,27 @@ Reading: はなこさんのえはどうですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 下手です | へたです | It is poorly done. | Distractor | — |
-| 普通です | ふつうです | It is ordinary. | Distractor | — |
-| 大したものです | たいしたものです | It is impressive. | Correct | — |
-| まだありません | まだありません | It does not exist yet. | Distractor | — |
+| 普通の絵です | ふつうのえです | It is an ordinary picture. | Distractor | — |
+| ひどい絵です | ひどいえです | It is a terrible picture. | Distractor | — |
+| とてもすばらしい絵です | とてもすばらしいえです | It is a very impressive picture. | Correct | — |
+| 絵はまだありません | えはまだありません | The picture does not exist yet. | Distractor | — |
 
-Explanation: 大したものです praises the picture as impressive.
+Explanation: Positive 大したものです praises this picture as impressive.
 
-**ja-ctx-wk1-simple-taishita-02-detail** · other detail · text
+**ja-ctx-wk1-simple-taishita-02-detail** · situation meaning · text
 
-誰の絵が大したものですか。 — Whose picture is impressive?
+花子さんの絵は、普通の絵ですか。 — Is Hanako&#39;s picture merely ordinary?
 
-Reading: だれのえがたいしたものですか。
+Reading: はなこさんのえは、ふつうのえですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 太郎さん | たろうさん | Taro | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 花子さん | はなこさん | Hanako | Correct | — |
+| いいえ、とてもすばらしい絵です | いいえ、とてもすばらしいえです | No, it is a very impressive picture. | Correct | — |
+| はい、普通の絵です | はい、ふつうのえです | Yes, it is ordinary. | Distractor | — |
+| いいえ、ひどい絵です | いいえ、ひどいえです | No, it is a terrible picture. | Distractor | — |
+| 絵はまだありません | えはまだありません | The picture does not exist yet. | Distractor | — |
 
-Explanation: Hanako&#39;s picture receives the praise.
+Explanation: The positive praise places the picture above merely ordinary in the speaker&#39;s evaluation; it is not criticism or a denial that the picture exists.
 
 </details>
 
@@ -1374,37 +1374,37 @@ Explanation: Hanako&#39;s picture receives the praise.
 
 ちちのけがはたいしたことはありません。ははのけがはひどいです。 — My father&#39;s injury is no big deal. My mother&#39;s injury is serious.
 
-**Review note:** 大したことはありません is the conventional no-big-deal expression. The contrast concerns seriousness, not injury versus no injury.
+**Review note:** Both severity and actor binding are necessary. Do not interpret 大したことはありません as no injury or as a guarantee of recovery.
 
-**ja-ctx-wk1-contrastive-taishita-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-taishita-01-target** · target meaning · text
 
-父のけがはどうですか。 — How is my father&#39;s injury described?
+二人のけがは、同じくらいひどいですか。 — Are the two injuries equally serious?
 
-Reading: ちちのけがはどうですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| ひどいけがです | ひどいけがです | It is a serious injury. | Distractor | — |
-| けがはありません | けがはありません | There is no injury. | Distractor | — |
-| まだわかりません | まだわかりません | It is not known yet. | Distractor | — |
-| 大したことはありません | たいしたことはありません | It is no big deal. | Correct | — |
-
-Explanation: The father&#39;s injury is no big deal; the mother&#39;s injury is serious.
-
-**ja-ctx-wk1-contrastive-taishita-01-detail** · other detail · text
-
-誰のけががひどいですか。 — Whose injury is serious?
-
-Reading: だれのけががひどいですか。
+Reading: ふたりのけがは、おなじくらいひどいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Correct | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 学生 | がくせい | student | Distractor | — |
+| いいえ、父は重いけが、母は軽いけがです | いいえ、ちちはおもいけが、はははかるいけがです | No: my father has a serious injury and my mother a minor injury. | Distractor | — |
+| はい、二人とも重いけがです | はい、ふたりともおもいけがです | Yes, both have serious injuries. | Distractor | — |
+| はい、二人とも軽いけがです | はい、ふたりともかるいけがです | Yes, both have minor injuries. | Distractor | — |
+| いいえ、父は軽いけが、母は重いけがです | いいえ、ちちはかるいけが、はははおもいけがです | No: my father has a minor injury and my mother a serious injury. | Correct | — |
 
-Explanation: The mother&#39;s injury is serious, unlike the father&#39;s.
+Explanation: Interpret the father&#39;s negated significance as minor and the mother&#39;s ひどい as serious, retaining the different people.
+
+**ja-ctx-wk1-contrastive-taishita-01-detail** · situation meaning · text
+
+軽いけがをしているのは誰ですか。 — Who has a minor injury?
+
+Reading: かるいけがをしているのはだれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 母だけです | ははだけです | only my mother | Distractor | — |
+| 父だけです | ちちだけです | only my father | Correct | — |
+| 二人ともです | ふたりともです | both people | Distractor | — |
+| 二人ともけがはありません | ふたりともけがはありません | neither person has an injury | Distractor | — |
+
+Explanation: The father&#39;s injury is minor, while the mother&#39;s is serious; both are injuries.
 
 </details>
 
@@ -1414,837 +1414,837 @@ Explanation: The mother&#39;s injury is serious, unlike the father&#39;s.
 
 はなこさんのえはたいしたものです。たろうさんのえはふつうです。 — Hanako&#39;s picture is impressive. Taro&#39;s picture is ordinary.
 
-**Review note:** 大したものです contrasts with 普通です and retains its positive praise meaning.
+**Review note:** Compare the speaker&#39;s stated evaluations only. No universal claim that one picture is objectively better or technically more skillful is required.
 
-**ja-ctx-wk1-contrastive-taishita-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-taishita-02-target** · target meaning · text
 
-花子さんの絵はどうですか。 — How is Hanako&#39;s picture described?
+とてもすばらしい絵は、どちらですか。 — Which picture is described as very impressive?
 
-Reading: はなこさんのえはどうですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 大したものです | たいしたものです | It is impressive. | Correct | — |
-| 下手です | へたです | It is poorly done. | Distractor | — |
-| 普通です | ふつうです | It is ordinary. | Distractor | — |
-| まだありません | まだありません | It does not exist yet. | Distractor | — |
-
-Explanation: Hanako&#39;s picture is impressive, while Taro&#39;s is ordinary.
-
-**ja-ctx-wk1-contrastive-taishita-02-detail** · other detail · text
-
-誰の絵が普通ですか。 — Whose picture is ordinary?
-
-Reading: だれのえがふつうですか。
+Reading: とてもすばらしいえは、どちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 花子さん | はなこさん | Hanako | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 太郎さん | たろうさん | Taro | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| 花子さんの絵だけです | はなこさんのえだけです | only Hanako&#39;s picture | Correct | — |
+| 太郎さんの絵だけです | たろうさんのえだけです | only Taro&#39;s picture | Distractor | — |
+| 両方の絵です | りょうほうのえです | both pictures | Distractor | — |
+| どちらの絵でもありません | どちらのえでもありません | neither picture | Distractor | — |
 
-Explanation: The ordinary picture belongs to Taro, not Hanako.
+Explanation: Hanako&#39;s 大したもの evaluation is impressive, while Taro&#39;s picture is only ordinary in this description.
+
+**ja-ctx-wk1-contrastive-taishita-02-detail** · situation meaning · text
+
+二人の絵は、同じ評価ですか。 — Do the two pictures receive the same evaluation?
+
+Reading: ふたりのえは、おなじひょうかですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、太郎さんの絵だけがすばらしいです | いいえ、たろうさんのえだけがすばらしいです | No, only Taro&#39;s picture is described as impressive. | Distractor | — |
+| はい、両方ともすばらしいです | はい、りょうほうともすばらしいです | Yes, both are impressive. | Distractor | — |
+| いいえ、花子さんの絵だけがすばらしいです | いいえ、はなこさんのえだけがすばらしいです | No, only Hanako&#39;s picture is described as impressive. | Correct | — |
+| 二人とも絵がありません | ふたりともえがありません | Neither person has a picture. | Distractor | — |
+
+Explanation: The first picture receives special praise and the second an ordinary evaluation, so the evaluations differ with praise belonging to Hanako.
 
 </details>
 
 <details><summary>37. 山 — ja-ctx-wk1-simple-yama-01</summary>
 
-**Sentence:** 町の北に山があります。
+**Sentence:** 山に登って、町を見下ろしました。
 
-まちのきたにやまがあります。 — There is a mountain north of town.
+やまにのぼって、まちをみおろしました。 — I climbed the mountain and looked down at the town.
 
-**Review note:** North is a relation to town, not the top of a picture. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-yama-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-yama-01-target** · target meaning · text
 
-町の北に何がありますか。 — What is north of town?
+まず、体はどちらの方へ動きましたか。 — Which direction did my body move first?
 
-Reading: まちのきたになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 川 | かわ | river | Distractor | <img width="96" alt="A winding river between green banks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg"> |
-| 山 | やま | mountain | Correct | <img width="96" alt="Two purple snow-capped mountain peaks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg"> |
-| 林 | はやし | woods | Distractor | <img width="96" alt="Five leafy trees forming a small grove." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-698044202165-8f2b6799af1c.png"> |
-| 田んぼ | たんぼ | rice field | Distractor | <img width="96" alt="Rice Paddy" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/vocabulary/ja-v-0da81020c173.svg"> |
-
-Explanation: The mountain is north of town.
-
-**ja-ctx-wk1-simple-yama-01-detail** · other detail · text
-
-山はどこにありますか。 — Where is the mountain?
-
-Reading: やまはどこにありますか。
+Reading: まず、からだはどちらのほうへうごきましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 町の南 | まちのみなみ | south of town | Distractor | — |
-| 町の北 | まちのきた | north of town | Correct | — |
-| 町の東 | まちのひがし | east of town | Distractor | — |
-| 町の西 | まちのにし | west of town | Distractor | — |
+| 上の方 | うえのほう | upward | Correct | — |
+| 下の方 | したのほう | downward | Distractor | — |
+| 右の方 | みぎのほう | to the right | Distractor | — |
+| 左の方 | ひだりのほう | to the left | Distractor | — |
 
-Explanation: The sentence locates the mountain north of town.
+Explanation: Climbing the mountain moves the body upward; looking down happens after that movement.
+
+**ja-ctx-wk1-simple-yama-01-detail** · situation meaning · text
+
+どちらに目を向けましたか。 — In which direction did I direct my gaze?
+
+Reading: どちらにめをむけましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 上の方 | うえのほう | upward | Distractor | — |
+| 右の方 | みぎのほう | to the right | Distractor | — |
+| 左の方 | ひだりのほう | to the left | Distractor | — |
+| 下の方 | したのほう | downward | Correct | — |
+
+Explanation: Looking down at the town directs the gaze downward from the higher place. No head or face posture is asserted.
 
 </details>
 
 <details><summary>38. 山 — ja-ctx-wk1-simple-yama-02</summary>
 
-**Sentence:** 山で写真を撮ります。
+**Sentence:** 山を下りて、登り始めた場所に戻りました。
 
-やまでしゃしんをとります。 — I take photographs in the mountains.
+やまをおりて、のぼりはじめたばしょにもどりました。 — I went down the mountain and returned to where I started climbing.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-yama-02-target** · target answer · text
+**ja-ctx-wk1-simple-yama-02-target** · target meaning · text
 
-どこで写真を撮りますか。 — Where do I take photographs?
+帰りは、どちらの方へ進みましたか。 — In which direction did my body move on the return?
 
-Reading: どこでしゃしんをとりますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 海 | うみ | sea | Distractor | — |
-| 公園 | こうえん | park | Distractor | — |
-| 山 | やま | mountain | Correct | — |
-| 川 | かわ | river | Distractor | — |
-
-Explanation: The photographs are taken in the mountains.
-
-**ja-ctx-wk1-simple-yama-02-detail** · other detail · text
-
-山で何をしますか。 — What do I do in the mountains?
-
-Reading: やまでなにをしますか。
+Reading: かえりは、どちらのほうへすすみましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 泳ぎます | およぎます | swim | Distractor | — |
-| 本を読みます | ほんをよみます | read a book | Distractor | — |
-| 写真を撮ります | しゃしんをとります | take photographs | Correct | — |
-| 走ります | はしります | run | Distractor | — |
+| 右の方 | みぎのほう | to the right | Distractor | — |
+| 左の方 | ひだりのほう | to the left | Distractor | — |
+| 下の方 | したのほう | downward | Correct | — |
+| 上の方 | うえのほう | upward | Distractor | — |
 
-Explanation: The activity in the mountains is taking photographs.
+Explanation: Going down the mountain describes downward motion on the return journey.
+
+**ja-ctx-wk1-simple-yama-02-detail** · situation meaning · text
+
+今、どんな所にいますか。 — What kind of place am I at now?
+
+Reading: いま、どんなところにいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 別の山の上 | べつのやまのうえ | the top of a different mountain | Distractor | — |
+| 出発した所 | しゅっぱつしたところ | the place I set out from | Correct | — |
+| 一番高い所 | いちばんたかいところ | the highest point | Distractor | — |
+| まだ道の途中 | まだみちのとちゅう | still partway along the path | Distractor | — |
+
+Explanation: Returning to where the climb began places the speaker back at the starting point.
 
 </details>
 
 <details><summary>39. 山 — ja-ctx-wk1-contrastive-yama-01</summary>
 
-**Sentence:** 町の北に山があります。町の南に川があります。
+**Sentence:** 父は山に登りました。母は山を下りました。
 
-まちのきたにやまがあります。まちのみなみにかわがあります。 — There is a mountain north of town. There is a river south of town.
+ちちはやまにのぼりました。はははやまをおりました。 — My father climbed the mountain. My mother went down the mountain.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-yama-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-yama-01-target** · target meaning · text
 
-町の北に何がありますか。 — What is north of town?
+高い方へ移動したのは誰ですか。 — Who moved toward the higher place?
 
-Reading: まちのきたになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 川 | かわ | river | Distractor | <img width="96" alt="A winding river between green banks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg"> |
-| 山 | やま | mountain | Correct | <img width="96" alt="Two purple snow-capped mountain peaks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg"> |
-| 林 | はやし | woods | Distractor | <img width="96" alt="Five leafy trees forming a small grove." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-698044202165-8f2b6799af1c.png"> |
-| 田んぼ | たんぼ | rice field | Distractor | <img width="96" alt="Rice Paddy" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/vocabulary/ja-v-0da81020c173.svg"> |
-
-Explanation: North is the mountain; south is the river.
-
-**ja-ctx-wk1-contrastive-yama-01-detail** · other detail · text
-
-山はどこにありますか。 — Where is the mountain?
-
-Reading: やまはどこにありますか。
+Reading: たかいほうへいどうしたのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 町の南 | まちのみなみ | south of town | Distractor | — |
-| 町の北 | まちのきた | north of town | Correct | — |
-| 町の東 | まちのひがし | east of town | Distractor | — |
-| 町の西 | まちのにし | west of town | Distractor | — |
+| 父 | ちち | my father | Correct | — |
+| 母 | はは | my mother | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: The mountain is north of town, while the river is south.
+Explanation: The father climbs upward; the mother descends. The father is the person moving toward higher ground.
+
+**ja-ctx-wk1-contrastive-yama-01-detail** · situation meaning · text
+
+出発した所と比べて、二人はどうなりましたか。 — Compared with where each started, where have they moved?
+
+Reading: しゅっぱつしたところとくらべて、ふたりはどうなりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 父は低い所、母は高い所 | ちちはひくいところ、はははたかいところ | father to a lower place, mother to a higher place | Distractor | — |
+| 二人とも高い所 | ふたりともたかいところ | both to higher places | Distractor | — |
+| 二人とも低い所 | ふたりともひくいところ | both to lower places | Distractor | — |
+| 父は高い所、母は低い所 | ちちはたかいところ、はははひくいところ | father to a higher place, mother to a lower place | Correct | — |
+
+Explanation: Climbing raises the father’s position, while descending lowers the mother’s position, relative to their own starting points.
 
 </details>
 
 <details><summary>40. 山 — ja-ctx-wk1-contrastive-yama-02</summary>
 
-**Sentence:** 山では写真を撮ります。海では泳ぎます。
+**Sentence:** 兄は山の上から町を見下ろしています。妹は町から山を見上げています。
 
-やまではしゃしんをとります。うみではおよぎます。 — In the mountains I take photographs. At the sea I swim.
+あにはやまのうえからまちをみおろしています。いもうとはまちからやまをみあげています。 — My older brother looks down at the town from the mountain. My younger sister looks up at the mountain from town.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-yama-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-yama-02-target** · target meaning · text
 
-どこで写真を撮りますか。 — Where do I take photographs?
+町より高い所にいるのは誰ですか。 — Who is at a higher place than the town?
 
-Reading: どこでしゃしんをとりますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 海 | うみ | sea | Distractor | — |
-| 公園 | こうえん | park | Distractor | — |
-| 山 | やま | mountain | Correct | — |
-| 川 | かわ | river | Distractor | — |
-
-Explanation: Photographs belong to the mountain activity; swimming belongs to the sea.
-
-**ja-ctx-wk1-contrastive-yama-02-detail** · other detail · text
-
-山で何をしますか。 — What do I do in the mountains?
-
-Reading: やまでなにをしますか。
+Reading: まちよりたかいところにいるのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 泳ぎます | およぎます | swim | Distractor | — |
-| 本を読みます | ほんをよみます | read a book | Distractor | — |
-| 写真を撮ります | しゃしんをとります | take photographs | Correct | — |
-| 走ります | はしります | run | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
+| 兄 | あに | my older brother | Correct | — |
+| 妹 | いもうと | my younger sister | Distractor | — |
 
-Explanation: In the mountains the activity is taking photographs, not swimming.
+Explanation: The brother looks down from the mountain, while the sister looks up from town. The brother is above the town.
+
+**ja-ctx-wk1-contrastive-yama-02-detail** · situation meaning · text
+
+二人が見ている方向はどう違いますか。 — How do the directions of their gazes differ?
+
+Reading: ふたりがみているほうこうはどうちがいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも下 | ふたりともした | both downward | Distractor | — |
+| 兄は下、妹は上 | あにはした、いもうとはうえ | brother downward, sister upward | Correct | — |
+| 兄は上、妹は下 | あにはうえ、いもうとはした | brother upward, sister downward | Distractor | — |
+| 二人とも上 | ふたりともうえ | both upward | Distractor | — |
+
+Explanation: The brother looks down toward town and the sister looks up toward the mountain. These specify opposite gaze directions, not head positions.
 
 </details>
 
 <details><summary>41. 口 — ja-ctx-wk1-simple-kuchi-01</summary>
 
-**Sentence:** 口を開けます。
+**Sentence:** 手にあった最後の飴を、口の中に入れました。
 
-くちをあけます。 — I open my mouth.
+てにあったさいごのあめを、くちのなかにいれました。 — I put the last candy from my hand into my mouth.
 
-**Review note:** Literal body-part meaning; avoid the entrance or opening sense of 口.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-kuchi-01-target** · target answer · text
+**ja-ctx-wk1-simple-kuchi-01-target** · target meaning · text
 
-何を開けますか。 — What do I open?
+飴は今、どんな所にありますか。 — Where is the candy now?
 
-Reading: なにをあけますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 目 | め | eyes | Distractor | — |
-| 窓 | まど | window | Distractor | — |
-| 口 | くち | mouth | Correct | — |
-| 本 | ほん | book | Distractor | — |
-
-Explanation: The object being opened is the mouth.
-
-**ja-ctx-wk1-simple-kuchi-01-detail** · other detail · text
-
-口をどうしますか。 — What do I do with my mouth?
-
-Reading: くちをどうしますか。
+Reading: あめはいま、どんなところにありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 閉じます | とじます | close it | Distractor | — |
-| 洗います | あらいます | wash it | Distractor | — |
-| 拭きます | ふきます | wipe it | Distractor | — |
-| 開けます | あけます | open it | Correct | — |
+| 体の中 | からだのなか | inside the body | Correct | — |
+| 服の中 | ふくのなか | inside the clothes | Distractor | — |
+| 手の上 | てのうえ | on the hand | Distractor | — |
+| 床の上 | ゆかのうえ | on the floor | Distractor | — |
 
-Explanation: The stated action is opening the mouth.
+Explanation: Putting the candy inside the mouth moves it inside the body; the statement does not say it was swallowed.
+
+**ja-ctx-wk1-simple-kuchi-01-detail** · situation meaning · text
+
+今、手の中の飴はどうなっていますか。 — What candy remains in the hand now?
+
+Reading: いま、てのなかのあめはどうなっていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 飴がまだ一つあります | あめがまだひとつあります | one candy remains | Distractor | — |
+| 飴が二つ残っています | あめがふたつのこっています | two candies remain | Distractor | — |
+| 飴が三つ残っています | あめがみっつのこっています | three candies remain | Distractor | — |
+| 飴はもうありません | あめはもうありません | no candy remains | Correct | — |
+
+Explanation: The last candy in the hand was moved into the mouth, so no candy remains in the hand. Other objects in the hand are not addressed.
 
 </details>
 
 <details><summary>42. 口 — ja-ctx-wk1-simple-kuchi-02</summary>
 
-**Sentence:** 口の中に飴があります。
+**Sentence:** 口を開けてから、すぐ閉じました。
 
-くちのなかにあめがあります。 — There is candy in my mouth.
+くちをあけてから、すぐとじました。 — I opened my mouth and then immediately closed it.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-kuchi-02-target** · target answer · text
+**ja-ctx-wk1-simple-kuchi-02-target** · target meaning · text
 
-飴はどこにありますか。 — Where is the candy?
+今、上下の唇はどうなっていますか。 — What are the upper and lower lips like now?
 
-Reading: あめはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 箱の中 | はこのなか | inside the box | Distractor | — |
-| 口の中 | くちのなか | inside the mouth | Correct | — |
-| 袋の中 | ふくろのなか | inside the bag | Distractor | — |
-| 机の上 | つくえのうえ | on the desk | Distractor | — |
-
-Explanation: The candy is inside the mouth.
-
-**ja-ctx-wk1-simple-kuchi-02-detail** · other detail · text
-
-口の中に何がありますか。 — What is inside my mouth?
-
-Reading: くちのなかになにがありますか。
+Reading: いま、じょうげのくちびるはどうなっていますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| パン | パン | bread | Distractor | — |
-| りんご | りんご | apple | Distractor | — |
-| 飴 | あめ | candy | Correct | — |
-| 水 | みず | water | Distractor | — |
+| 上だけが動き続けています | うえだけがうごきつづけています | only the upper lip keeps moving | Distractor | — |
+| 下だけが動き続けています | しただけがうごきつづけています | only the lower lip keeps moving | Distractor | — |
+| くっついています | くっついています | they are touching | Correct | — |
+| 離れています | はなれています | they are apart | Distractor | — |
 
-Explanation: Candy is the item stated to be in the mouth.
+Explanation: The final action closes the mouth, bringing the lips together rather than leaving an opening.
+
+**ja-ctx-wk1-simple-kuchi-02-detail** · situation meaning · text
+
+口の開き方は、どんな順番で変わりましたか。 — In what order did the mouth’s opening change?
+
+Reading: くちのひらきかたは、どんなじゅんばんでかわりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| ずっと狭い状態でした | ずっとせまいじょうたいでした | it stayed narrow throughout | Distractor | — |
+| 広がってから狭くなりました | ひろがってからせまくなりました | it widened and then narrowed | Correct | — |
+| 狭くなってから広がりました | せまくなってからひろがりました | it narrowed and then widened | Distractor | — |
+| ずっと広い状態でした | ずっとひろいじょうたいでした | it stayed wide throughout | Distractor | — |
+
+Explanation: Opening first widens the gap; closing afterwards narrows it. Both actions and their order matter.
 
 </details>
 
 <details><summary>43. 口 — ja-ctx-wk1-contrastive-kuchi-01</summary>
 
-**Sentence:** 口を開けます。目を閉じます。
+**Sentence:** 兄は飴を口に入れました。妹は飴を手に持っています。
 
-くちをあけます。めをとじます。 — I open my mouth. I close my eyes.
+あにはあめをくちにいれました。いもうとはあめをてにもっています。 — My older brother put candy in his mouth. My younger sister is holding candy in her hand.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-kuchi-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-kuchi-01-target** · target meaning · text
 
-何を開けますか。 — What do I open?
+飴を体の中に移したのは誰ですか。 — Who moved candy inside the body?
 
-Reading: なにをあけますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 目 | め | eyes | Distractor | — |
-| 窓 | まど | window | Distractor | — |
-| 口 | くち | mouth | Correct | — |
-| 本 | ほん | book | Distractor | — |
-
-Explanation: The mouth is opened; the eyes are closed.
-
-**ja-ctx-wk1-contrastive-kuchi-01-detail** · other detail · text
-
-口をどうしますか。 — What do I do with my mouth?
-
-Reading: くちをどうしますか。
+Reading: あめをからだのなかにうつしたのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 閉じます | とじます | close it | Distractor | — |
-| 洗います | あらいます | wash it | Distractor | — |
-| 拭きます | ふきます | wipe it | Distractor | — |
-| 開けます | あけます | open it | Correct | — |
+| 兄 | あに | my older brother | Correct | — |
+| 妹 | いもうと | my younger sister | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: Opening belongs to the mouth, while closing belongs to the eyes.
+Explanation: The brother puts candy into his mouth, whereas the sister keeps hers in her hand outside her body. No swallowing is asserted.
+
+**ja-ctx-wk1-contrastive-kuchi-01-detail** · situation meaning · text
+
+今、二人の飴はどうなっていますか。 — Where is each person’s candy now?
+
+Reading: いま、ふたりのあめはどうなっていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 兄は体の外、妹は体の中 | あにはからだのそと、いもうとはからだのなか | brother’s candy outside the body, sister’s candy inside | Distractor | — |
+| 二人とも体の中 | ふたりともからだのなか | both have their candy inside the body | Distractor | — |
+| 二人とも体の外 | ふたりともからだのそと | both have their candy outside the body | Distractor | — |
+| 兄は体の中、妹は体の外 | あにはからだのなか、いもうとはからだのそと | brother’s candy inside the body, sister’s candy outside | Correct | — |
+
+Explanation: The brother’s candy is in his mouth, inside the body; the sister’s candy remains in her hand, outside the body.
 
 </details>
 
 <details><summary>44. 口 — ja-ctx-wk1-contrastive-kuchi-02</summary>
 
-**Sentence:** 口の中に飴があります。袋の中にパンがあります。
+**Sentence:** 父は口を大きく開けました。母は口をしっかり閉じました。
 
-くちのなかにあめがあります。ふくろのなかにパンがあります。 — There is candy in my mouth. There is bread in the bag.
+ちちはくちをおおきくあけました。はははくちをしっかりとじました。 — My father opened his mouth wide. My mother closed her mouth firmly.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-kuchi-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-kuchi-02-target** · target meaning · text
 
-飴はどこにありますか。 — Where is the candy?
+上下の唇がくっついているのは誰ですか。 — Whose upper and lower lips are touching?
 
-Reading: あめはどこにありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 箱の中 | はこのなか | inside the box | Distractor | — |
-| 口の中 | くちのなか | inside the mouth | Correct | — |
-| 袋の中 | ふくろのなか | inside the bag | Distractor | — |
-| 机の上 | つくえのうえ | on the desk | Distractor | — |
-
-Explanation: The candy is inside the mouth; the bread is inside the bag.
-
-**ja-ctx-wk1-contrastive-kuchi-02-detail** · other detail · text
-
-口の中に何がありますか。 — What is inside my mouth?
-
-Reading: くちのなかになにがありますか。
+Reading: じょうげのくちびるがくっついているのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| パン | パン | bread | Distractor | — |
-| りんご | りんご | apple | Distractor | — |
-| 飴 | あめ | candy | Correct | — |
-| 水 | みず | water | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
+| 母 | はは | my mother | Correct | — |
+| 父 | ちち | my father | Distractor | — |
 
-Explanation: The mouth contains candy, while the bag contains bread.
+Explanation: The mother closes her mouth, so her lips meet; the father opens his mouth, leaving his lips apart.
+
+**ja-ctx-wk1-contrastive-kuchi-02-detail** · situation meaning · text
+
+二人の唇は、それぞれどうなっていますか。 — What is each person’s lip position?
+
+Reading: ふたりのくちびるは、それぞれどうなっていますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも離れています | ふたりともはなれています | both have their lips apart | Distractor | — |
+| 父は離れていて、母はくっついています | ちちははなれていて、はははくっついています | father’s lips are apart, mother’s lips are touching | Correct | — |
+| 父はくっついていて、母は離れています | ちちはくっついていて、ははははなれています | father’s lips are touching, mother’s lips are apart | Distractor | — |
+| 二人ともくっついています | ふたりともくっついています | both have their lips touching | Distractor | — |
+
+Explanation: The opened mouth belongs to the father and the closed mouth to the mother; these yield different contact states.
 
 </details>
 
 <details><summary>45. 九つ — ja-ctx-wk1-simple-kokonotsu-01</summary>
 
-**Sentence:** かばんが九つあります。
+**Sentence:** 皿の左にコップが九つあります。
 
-かばんがここのつあります。 — There are 9 bags.
+さらのひだりにコップがここのつあります。 — There are 9 drinking glasses to the left of the plate.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-kokonotsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-kokonotsu-01-target** · target meaning · picture + text
 
-かばんはいくつありますか。 — How many bags are there?
+コップは何個ありますか。 — How many drinking glasses are there?
 
-Reading: かばんはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-
-Explanation: The sentence gives 9 as the number of bags.
-
-**ja-ctx-wk1-simple-kokonotsu-01-detail** · other detail · text
-
-九つあるのは何ですか。 — Which item are there nine of?
-
-Reading: ここのつあるのはなんですか。
+Reading: コップはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 石 | いし | stone | Distractor | — |
-| 玉 | たま | ball | Distractor | — |
-| かばん | かばん | bag | Correct | — |
-| 箱 | はこ | box | Distractor | — |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
 
-Explanation: The sentence gives nine as the number of bags.
+Explanation: 九つ (ここのつ) gives a quantity of 9; the matching 個 form is ９個 (きゅうこ).
+
+**ja-ctx-wk1-simple-kokonotsu-01-detail** · situation meaning · text
+
+皿はどこにありますか。 — Where is the plate relative to the drinking glasses?
+
+Reading: さらはどこにありますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| コップの左です | コップのひだりです | It is left the drinking glasses. | Distractor | — |
+| コップの右です | コップのみぎです | It is right the drinking glasses. | Correct | — |
+| コップの上です | コップのうえです | It is above; on the drinking glasses. | Distractor | — |
+| コップの下です | コップのしたです | It is under; below the drinking glasses. | Distractor | — |
+
+Explanation: The drinking glasses are left the plate; reversing that relationship puts the plate right the drinking glasses.
 
 </details>
 
 <details><summary>46. 九つ — ja-ctx-wk1-simple-kokonotsu-02</summary>
 
-**Sentence:** 友達はお菓子を九つ買いました。
+**Sentence:** 皿にはクッキーが九つだけありました。友達は皿の上の物を全部食べました。
 
-ともだちはおかしをここのつかいました。 — My friend bought 9 snacks.
+さらにはクッキーがここのつだけありました。ともだちはさらのうえのものをぜんぶたべました。 — There were only 9 cookies on the plate. My friend ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-kokonotsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-kokonotsu-02-target** · target meaning · picture + text
 
-友達はお菓子をいくつ買いましたか。 — How many snacks did my friend buy?
+友達はクッキーを何個食べましたか。 — How many cookies did my friend eat?
 
-Reading: ともだちはおかしをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 九つ | ここのつ | nine things | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-
-Explanation: My friend bought 9 snacks.
-
-**ja-ctx-wk1-simple-kokonotsu-02-detail** · other detail · text
-
-誰がお菓子を九つ買いましたか。 — Who bought 9 snacks?
-
-Reading: だれがおかしをここのつかいましたか。
+Reading: ともだちはクッキーをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 友達 | ともだち | friend | Correct | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
 
-Explanation: The sentence attributes the purchase of 9 to my friend.
+Explanation: The plate held 九つ (9) cookies, and my friend ate all its food; the eaten quantity is ９個.
+
+**ja-ctx-wk1-simple-kokonotsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+
+Explanation: My friend ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>47. 九つ — ja-ctx-wk1-contrastive-kokonotsu-01</summary>
 
-**Sentence:** かばんが九つ、箱が八つあります。
+**Sentence:** 赤い箱にはコップが九つ、青い箱にはコップが八つ入っています。
 
-かばんがここのつ、はこがやっつあります。 — There are 9 bags, and 8 boxes.
+あかいはこにはコップがここのつ、あおいはこにはコップがやっつはいっています。 — The red box contains 9 drinking glasses; the blue box contains 8 drinking glasses.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-kokonotsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-kokonotsu-01-target** · target meaning · picture + text
 
-かばんはいくつありますか。 — How many bags are there?
+赤い箱の中のコップは何個ありますか。 — How many drinking glasses are inside the red box?
 
-Reading: かばんはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-
-Explanation: The sentence gives 9 as the number of bags.
-
-**ja-ctx-wk1-contrastive-kokonotsu-01-detail** · other detail · text
-
-九つあるのは何ですか。 — Which item are there nine of?
-
-Reading: ここのつあるのはなんですか。
+Reading: あかいはこのなかのコップはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 玉 | たま | ball | Distractor | — |
-| かばん | かばん | bag | Correct | — |
-| 箱 | はこ | box | Distractor | — |
-| 石 | いし | stone | Distractor | — |
+| ９個 | きゅうこ | 9 items | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
 
-Explanation: The sentence gives nine as the number of bags.
+Explanation: The red box is paired with 九つ (9), while the blue box is paired with 八つ (8); the requested red-box quantity is ９個.
+
+**ja-ctx-wk1-contrastive-kokonotsu-01-detail** · situation meaning · text
+
+二つの箱のコップの数はどうですか。 — How do the two boxes compare in number of drinking glasses?
+
+Reading: ふたつのはこのコップのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Correct | — |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Distractor | — |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+
+Explanation: The red box has 9 and the blue box has 8; red therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>48. 九つ — ja-ctx-wk1-contrastive-kokonotsu-02</summary>
 
-**Sentence:** 友達はお菓子を九つ、先生はお菓子を八つ買いました。
+**Sentence:** 友達の皿にはクッキーが九つだけ、先生の皿にはクッキーが八つだけありました。友達は自分の皿の物を全部食べました。先生は何も食べませんでした。
 
-ともだちはおかしをここのつ、せんせいはおかしをやっつかいました。 — My friend bought 9 snacks. The teacher bought 8 snacks.
+ともだちのさらにはクッキーがここのつだけ、せんせいのさらにはクッキーがやっつだけありました。ともだちはじぶんのさらのものをぜんぶたべました。せんせいはなにもたべませんでした。 — My friend&#39;s plate had only 9 cookies; the teacher&#39;s plate had only 8. My friend ate everything on their own plate. The teacher ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-kokonotsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-kokonotsu-02-target** · target meaning · picture + text
 
-友達はお菓子をいくつ買いましたか。 — How many snacks did my friend buy?
+友達はクッキーを何個食べましたか。 — How many cookies did my friend eat?
 
-Reading: ともだちはおかしをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 七つ | ななつ | seven things | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 九つ | ここのつ | nine things | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
-
-Explanation: My friend bought 9; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-kokonotsu-02-detail** · other detail · text
-
-誰がお菓子を九つ買いましたか。 — Who bought 9 snacks?
-
-Reading: だれがおかしをここのつかいましたか。
+Reading: ともだちはクッキーをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 友達 | ともだち | friend | Correct | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ７個 | ななこ | 7 items | Distractor | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ９個 | きゅうこ | 9 items | Correct | <img width="96" alt="Nine colored toy cubes in a three-by-three arrangement." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-0d0163a40587-70ff49a64681.png"> |
 
-Explanation: The sentence attributes the purchase of 9 to my friend.
+Explanation: My friend&#39;s own plate held 九つ (9) cookies, and they ate all of it. The other plate&#39;s 8 items were not eaten; the correct amount is ９個.
+
+**ja-ctx-wk1-contrastive-kokonotsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 先生の皿だけ空です | せんせいのさらだけからです | Only the teacher&#39;s plate is empty. | Distractor | — |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+| 友達の皿だけ空です | ともだちのさらだけからです | Only my friend&#39;s plate is empty. | Correct | — |
+
+Explanation: My friend ate all food on their own plate, so that plate is empty. The teacher ate nothing, so their initially nonempty plate still has its food. Only my friend&#39;s plate is empty.
 
 </details>
 
 <details><summary>49. 一つ — ja-ctx-wk1-simple-hitotsu-01</summary>
 
-**Sentence:** りんごが一つあります。
+**Sentence:** 皿の上にりんごが一つあります。
 
-りんごがひとつあります。 — There is 1 apple.
+さらのうえにりんごがひとつあります。 — There is one apple on the plate.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-hitotsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-hitotsu-01-target** · target meaning · picture + text
 
-りんごはいくつありますか。 — How many apples are there?
+りんごは何個ありますか。 — How many apples are there?
 
-Reading: りんごはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 一つ | ひとつ | one thing | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-
-Explanation: The sentence gives 1 as the number of apples.
-
-**ja-ctx-wk1-simple-hitotsu-01-detail** · other detail · text
-
-一つあるのは何ですか。 — Which item is there one of?
-
-Reading: ひとつあるのはなんですか。
+Reading: りんごはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| みかん | みかん | mandarin orange | Distractor | — |
-| 卵 | たまご | egg | Distractor | — |
-| パン | パン | bread | Distractor | — |
-| りんご | りんご | apple | Correct | — |
+| １個 | いっこ | 1 item | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
 
-Explanation: The sentence gives one as the number of apples.
+Explanation: 一つ (ひとつ) gives a quantity of one; the matching 個 form is １個 (いっこ).
+
+**ja-ctx-wk1-simple-hitotsu-01-detail** · situation meaning · text
+
+皿はどこにありますか。 — Where is the plate relative to the apple?
+
+Reading: さらはどこにありますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| りんごの下です | りんごのしたです | It is under; below the apple. | Correct | — |
+| りんごの左です | りんごのひだりです | It is left the apple. | Distractor | — |
+| りんごの右です | りんごのみぎです | It is right the apple. | Distractor | — |
+| りんごの上です | りんごのうえです | It is above; on the apple. | Distractor | — |
+
+Explanation: The apple is above; on the plate; reversing that relationship puts the plate under; below the apple.
 
 </details>
 
 <details><summary>50. 一つ — ja-ctx-wk1-simple-hitotsu-02</summary>
 
-**Sentence:** 母は卵を一つ買いました。
+**Sentence:** 皿にはりんごが一つだけありました。母は皿の上の物を全部食べました。
 
-はははたまごをひとつかいました。 — My mother bought 1 egg.
+さらにはりんごがひとつだけありました。はははさらのうえのものをぜんぶたべました。 — There was only one apple on the plate. My mother ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-hitotsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-hitotsu-02-target** · target meaning · picture + text
 
-母は卵をいくつ買いましたか。 — How many eggs did my mother buy?
+母はりんごを何個食べましたか。 — How many apples did my mother eat?
 
-Reading: はははたまごをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-
-Explanation: My mother bought 1 egg.
-
-**ja-ctx-wk1-simple-hitotsu-02-detail** · other detail · text
-
-誰が卵を一つ買いましたか。 — Who bought 1 egg?
-
-Reading: だれがたまごをひとつかいましたか。
+Reading: はははりんごをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Distractor | — |
-| 友達 | ともだち | friend | Distractor | — |
-| 母 | はは | my mother | Correct | — |
-| 父 | ちち | my father | Distractor | — |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
 
-Explanation: The sentence attributes the purchase of 1 to my mother.
+Explanation: The plate held 一つ (1) apples, and my mother ate all its food; the eaten quantity is １個.
+
+**ja-ctx-wk1-simple-hitotsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+
+Explanation: My mother ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>51. 一つ — ja-ctx-wk1-contrastive-hitotsu-01</summary>
 
-**Sentence:** りんごが一つ、みかんが二つあります。
+**Sentence:** 赤い箱にはりんごが一つ、青い箱にはりんごが三つ入っています。
 
-りんごがひとつ、みかんがふたつあります。 — There is 1 apple, and 2 mandarin oranges.
+あかいはこにはりんごがひとつ、あおいはこにはりんごがみっつはいっています。 — The red box contains 1 apple; the blue box contains 3 apples.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-hitotsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-hitotsu-01-target** · target meaning · picture + text
 
-りんごはいくつありますか。 — How many apples are there?
+赤い箱の中のりんごは何個ありますか。 — How many apples are inside the red box?
 
-Reading: りんごはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-
-Explanation: The sentence gives 1 as the number of apples.
-
-**ja-ctx-wk1-contrastive-hitotsu-01-detail** · other detail · text
-
-一つあるのは何ですか。 — Which item is there one of?
-
-Reading: ひとつあるのはなんですか。
+Reading: あかいはこのなかのりんごはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 卵 | たまご | egg | Distractor | — |
-| パン | パン | bread | Distractor | — |
-| りんご | りんご | apple | Correct | — |
-| みかん | みかん | mandarin orange | Distractor | — |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
 
-Explanation: The sentence gives one as the number of apples.
+Explanation: The red box is paired with 一つ (1), while the blue box is paired with 三つ (3); the requested red-box quantity is １個.
+
+**ja-ctx-wk1-contrastive-hitotsu-01-detail** · situation meaning · text
+
+二つの箱のりんごの数はどうですか。 — How do the two boxes compare in number of apples?
+
+Reading: ふたつのはこのりんごのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Distractor | — |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Correct | — |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+
+Explanation: The red box has 1 and the blue box has 3; blue therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>52. 一つ — ja-ctx-wk1-contrastive-hitotsu-02</summary>
 
-**Sentence:** 母は卵を一つ、父は卵を三つ買いました。
+**Sentence:** 母の皿にはりんごが一つだけ、父の皿にはりんごが三つだけありました。母は自分の皿の物を全部食べました。父は何も食べませんでした。
 
-はははたまごをひとつ、ちちはたまごをみっつかいました。 — My mother bought 1 egg. My father bought 3 eggs.
+ははのさらにはりんごがひとつだけ、ちちのさらにはりんごがみっつだけありました。はははじぶんのさらのものをぜんぶたべました。ちちはなにもたべませんでした。 — My mother&#39;s plate had only 1 apple; my father&#39;s plate had only 3. My mother ate everything on their own plate. My father ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-hitotsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-hitotsu-02-target** · target meaning · picture + text
 
-母は卵をいくつ買いましたか。 — How many eggs did my mother buy?
+母はりんごを何個食べましたか。 — How many apples did my mother eat?
 
-Reading: はははたまごをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-
-Explanation: My mother bought 1; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-hitotsu-02-detail** · other detail · text
-
-誰が卵を一つ買いましたか。 — Who bought 1 egg?
-
-Reading: だれがたまごをひとつかいましたか。
+Reading: はははりんごをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 友達 | ともだち | friend | Distractor | — |
-| 母 | はは | my mother | Correct | — |
-| 父 | ちち | my father | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Correct | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
 
-Explanation: The sentence attributes the purchase of 1 to my mother.
+Explanation: My mother&#39;s own plate held 一つ (1) apples, and they ate all of it. The other plate&#39;s 3 items were not eaten; the correct amount is １個.
+
+**ja-ctx-wk1-contrastive-hitotsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 母の皿だけ空です | ははのさらだけからです | Only my mother&#39;s plate is empty. | Correct | — |
+| 父の皿だけ空です | ちちのさらだけからです | Only my father&#39;s plate is empty. | Distractor | — |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+
+Explanation: My mother ate all food on their own plate, so that plate is empty. My father ate nothing, so their initially nonempty plate still has its food. Only my mother&#39;s plate is empty.
 
 </details>
 
 <details><summary>53. 人 — ja-ctx-wk1-simple-hito-01</summary>
 
-**Sentence:** 公園で人を見ました。
+**Sentence:** こちらから見て、人の右に犬がいます。
 
-こうえんでひとをみました。 — I saw a person in the park.
+こちらからみて、ひとのみぎにいぬがいます。 — From our viewpoint, a dog is to the right of a person.
 
-**Review note:** 人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-hito-01-target** · target answer · text
+**ja-ctx-wk1-simple-hito-01-target** · target meaning · text
 
-公園で何を見ましたか。 — What did I see in the park?
+同じ向きから見て、人は犬のどちら側にいますか。 — From the same viewpoint, on which side of the dog is the person?
 
-Reading: こうえんでなにをみましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 人 | ひと | person | Correct | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 鳥 | とり | bird | Distractor | — |
-
-Explanation: I saw a person in the park.
-
-**ja-ctx-wk1-simple-hito-01-detail** · other detail · text
-
-どこで人を見ましたか。 — Where did I see the person?
-
-Reading: どこでひとをみましたか。
+Reading: おなじむきからみて、ひとはいぬのどちらがわにいますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 川 | かわ | river | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
-| 家 | いえ | house | Distractor | — |
+| 左の方 | ひだりのほう | to the left | Correct | — |
+| 右の方 | みぎのほう | to the right | Distractor | — |
+| 上の方 | うえのほう | upward | Distractor | — |
+| 下の方 | したのほう | downward | Distractor | — |
 
-Explanation: The person was seen in the park.
+Explanation: If the dog is to the person’s right in the fixed viewpoint, the person is to the dog’s left.
+
+**ja-ctx-wk1-simple-hito-01-detail** · situation meaning · text
+
+右から順に見て、どう並んでいますか。 — What is their order when viewed from right to left?
+
+Reading: みぎからじゅんにみて、どうならんでいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 人、犬の順 | ひと、いぬのじゅん | person, then dog | Distractor | — |
+| 上下に並んでいます | じょうげにならんでいます | they are arranged vertically | Distractor | — |
+| 同じ所に重なっています | おなじところにかさなっています | they overlap at the same place | Distractor | — |
+| 犬、人の順 | いぬ、ひとのじゅん | dog, then person | Correct | — |
+
+Explanation: The dog occupies the right position and the person the left, so starting on the right gives dog then person.
 
 </details>
 
 <details><summary>54. 人 — ja-ctx-wk1-simple-hito-02</summary>
 
-**Sentence:** 駅で人を見ました。
+**Sentence:** 人はドアの向こうへ行って、また戻ってきました。
 
-えきでひとをみました。 — I saw a person at the station.
+ひとはドアのむこうへいって、またもどってきました。 — The person went to the far side of the door and then came back.
 
-**Review note:** 人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-hito-02-target** · target answer · text
+**ja-ctx-wk1-simple-hito-02-target** · target meaning · text
 
-駅で何を見ましたか。 — What did I see at the station?
+今、その人はどんな所にいますか。 — Where is the person now?
 
-Reading: えきでなにをみましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 人 | ひと | person | Correct | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 鳥 | とり | bird | Distractor | — |
-
-Explanation: I saw a person at the station.
-
-**ja-ctx-wk1-simple-hito-02-detail** · other detail · text
-
-どこで人を見ましたか。 — Where did I see the person?
-
-Reading: どこでひとをみましたか。
+Reading: いま、そのひとはどんなところにいますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学校 | がっこう | school | Distractor | — |
-| 駅 | えき | station | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 家 | いえ | house | Distractor | — |
+| まだ移動の途中 | まだいどうのとちゅう | still partway through the movement | Distractor | — |
+| 屋根の上 | やねのうえ | on the roof | Distractor | — |
+| 出発した側 | しゅっぱつしたがわ | on the side they started from | Correct | — |
+| 行った先の側 | いったさきのがわ | on the side they went to | Distractor | — |
 
-Explanation: The person was seen at the station.
+Explanation: Coming back after going through the door returns the person to the original side.
+
+**ja-ctx-wk1-simple-hito-02-detail** · situation meaning · text
+
+どんな順番で移動しましたか。 — In what order did the person move?
+
+Reading: どんなじゅんばんでいどうしましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| こちらへ来て、そこで止まりました | こちらへきて、そこでとまりました | came here and stayed here | Distractor | — |
+| 向こうへ行って、こちらへ帰りました | むこうへいって、こちらへかえりました | went to the far side, then returned here | Correct | — |
+| こちらへ来て、向こうへ帰りました | こちらへきて、むこうへかえりました | came here, then returned to the far side | Distractor | — |
+| 向こうへ行き、そこで止まりました | むこうへいき、そこでとまりました | went to the far side and stayed there | Distractor | — |
+
+Explanation: The movement is away through the door first, then back toward the original here.
 
 </details>
 
 <details><summary>55. 人 — ja-ctx-wk1-contrastive-hito-01</summary>
 
-**Sentence:** 公園で人を見ました。川で鳥を見ました。
+**Sentence:** こちらから見て、人は犬の左、猫は犬の右にいます。
 
-こうえんでひとをみました。かわでとりをみました。 — I saw a person in the park. I saw a bird at the river.
+こちらからみて、ひとはいぬのひだり、ねこはいぬのみぎにいます。 — From our viewpoint, the person is left of the dog and the cat is right of the dog.
 
-**Review note:** 人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-hito-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-hito-01-target** · target meaning · text
 
-公園で何を見ましたか。 — What did I see in the park?
+左から順に見て、どう並んでいますか。 — What is their order from left to right?
 
-Reading: こうえんでなにをみましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 人 | ひと | person | Correct | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 鳥 | とり | bird | Distractor | — |
-
-Explanation: I saw a person in the park. The other sighting concerns an animal.
-
-**ja-ctx-wk1-contrastive-hito-01-detail** · other detail · text
-
-どこで人を見ましたか。 — Where did I see the person?
-
-Reading: どこでひとをみましたか。
+Reading: ひだりからじゅんにみて、どうならんでいますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 川 | かわ | river | Distractor | — |
-| 駅 | えき | station | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
-| 家 | いえ | house | Distractor | — |
+| 人、犬、猫の順 | ひと、いぬ、ねこのじゅん | person, dog, cat | Correct | — |
+| 猫、犬、人の順 | ねこ、いぬ、ひとのじゅん | cat, dog, person | Distractor | — |
+| 犬、人、猫の順 | いぬ、ひと、ねこのじゅん | dog, person, cat | Distractor | — |
+| 人、猫、犬の順 | ひと、ねこ、いぬのじゅん | person, cat, dog | Distractor | — |
 
-Explanation: The person was seen in the park.
+Explanation: The person occupies the dog’s left and the cat its right, yielding person-dog-cat in the fixed viewpoint.
+
+**ja-ctx-wk1-contrastive-hito-01-detail** · situation meaning · text
+
+人と猫の間にいるのは、どれですか。 — Which one is between the person and the cat?
+
+Reading: ひととねこのあいだにいるのは、どれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 人 | ひと | the person | Distractor | — |
+| 猫 | ねこ | the cat | Distractor | — |
+| 間には何もいません | あいだにはなにもいません | nothing is between them | Distractor | — |
+| 犬 | いぬ | the dog | Correct | — |
+
+Explanation: Putting the person left of the dog and the cat right of the dog leaves the dog in the middle.
 
 </details>
 
 <details><summary>56. 人 — ja-ctx-wk1-contrastive-hito-02</summary>
 
-**Sentence:** 駅で人を見ました。家で犬を見ました。
+**Sentence:** 人は家に入ってから外に戻りました。犬は家に入って、そこにいます。
 
-えきでひとをみました。いえでいぬをみました。 — I saw a person at the station. I saw a dog at home.
+ひとはいえにはいってからそとにもどりました。いぬはいえにはいって、そこにいます。 — The person entered the house and then returned outside. The dog entered the house and is still there.
 
-**Review note:** 人 is the object of a sighting. 何を見ましたか naturally accepts either a human or an animal answer; avoid 人/女/大人 as competing labels.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-hito-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-hito-02-target** · target meaning · text
 
-駅で何を見ましたか。 — What did I see at the station?
+今、その人はどんな所にいますか。 — Where is the person now?
 
-Reading: えきでなにをみましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 人 | ひと | person | Correct | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 鳥 | とり | bird | Distractor | — |
-
-Explanation: I saw a person at the station. The other sighting concerns an animal.
-
-**ja-ctx-wk1-contrastive-hito-02-detail** · other detail · text
-
-どこで人を見ましたか。 — Where did I see the person?
-
-Reading: どこでひとをみましたか。
+Reading: いま、そのひとはどんなところにいますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学校 | がっこう | school | Distractor | — |
-| 駅 | えき | station | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 家 | いえ | house | Distractor | — |
+| まだ移動の途中 | まだいどうのとちゅう | still partway through the movement | Distractor | — |
+| 屋根の上 | やねのうえ | on the roof | Distractor | — |
+| 出発した側 | しゅっぱつしたがわ | on the side they started from | Correct | — |
+| 入った先の側 | はいったさきのがわ | on the side they entered | Distractor | — |
 
-Explanation: The person was seen at the station.
+Explanation: The person returns after entering the house, while the dog stays inside. The person is back on the original side.
+
+**ja-ctx-wk1-contrastive-hito-02-detail** · situation meaning · text
+
+人と犬の今の位置はどうですか。 — How do the person’s and dog’s current positions compare?
+
+Reading: ひとといぬのいまのいちはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 人も犬もドアの所です | ひともいぬもドアのところです | both are at the door | Distractor | — |
+| 建物の内と外に分かれています | たてもののうちとそとにわかれています | they are separated between inside and outside | Correct | — |
+| 人も犬も建物の中です | ひともいぬもたてもののなかです | both are inside the building | Distractor | — |
+| 人も犬も建物の外です | ひともいぬもたてもののそとです | both are outside the building | Distractor | — |
+
+Explanation: The person finishes outside the house and the dog inside, so they are on different sides of the building boundary.
 
 </details>
 
@@ -2254,37 +2254,37 @@ Explanation: The person was seen at the station.
 
 せんせいは「みずをください」といいました。 — The teacher said, “Water, please.”
 
-**Review note:** Kanaください links explicitly to catalogue 下さい. The correct target answer preserves the complete request.
+**Review note:** Interpret the noun request using a Genki I verbal request and intended handover direction. 私 in the paraphrase refers to the original speaking teacher. No statement is made that the request was obeyed, that water was consumed, or that payment occurred.
 
-**ja-ctx-wk1-simple-kudasai-01-target** · target answer · text
+**ja-ctx-wk1-simple-kudasai-01-target** · target meaning · text
 
-先生は何と言いましたか。 — What did the teacher say?
+先生のお願いと同じなのはどれですか。 — Which expresses the same request as the teacher&#39;s?
 
-Reading: せんせいはなんといいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 水を飲みます | みずをのみます | I drink water. | Distractor | — |
-| 水を買いました | みずをかいました | I bought water. | Distractor | — |
-| 水をください | みずをください | Water, please. | Correct | — |
-| 水があります | みずがあります | There is water. | Distractor | — |
-
-Explanation: The teacher makes a request, 水をください, rather than a statement about drinking, buying or having water.
-
-**ja-ctx-wk1-simple-kudasai-01-detail** · other detail · text
-
-誰が水を頼みましたか。 — Who asked for water?
-
-Reading: だれがみずをたのみましたか。
+Reading: せんせいのおねがいとおなじなのはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学生 | がくせい | student | Distractor | — |
-| 先生 | せんせい | teacher | Correct | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| 私の水を飲んでください | わたしのみずをのんでください | Please drink my water. | Distractor | — |
+| 私の水を捨ててください | わたしのみずをすててください | Please throw away my water. | Distractor | — |
+| 私に水を渡してください | わたしにみずをわたしてください | Please hand water to me. | Correct | — |
+| 私の水を温めてください | わたしのみずをあたためてください | Please warm my water. | Distractor | — |
 
-Explanation: The teacher is the speaker requesting water.
+Explanation: The teacher&#39;s noun request asks the listener to hand water to the speaker. The matching verbal request makes that action and recipient explicit.
+
+**ja-ctx-wk1-simple-kudasai-01-detail** · situation meaning · text
+
+先生のお願いでは、水はどちらの方へ動きますか。 — In the teacher&#39;s request, which way is the water to move?
+
+Reading: せんせいのおねがいでは、みずはどちらのほうへうごきますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 話している人の方へ | はなしているひとのほうへ | toward the speaker | Correct | — |
+| 聞いている人の方へ | きいているひとのほうへ | toward the listener | Distractor | — |
+| 二人から遠い所へ | ふたりからとおいところへ | to a place far from both people | Distractor | — |
+| 誰の方へも動かしません | だれのほうへもうごかしません | not moved toward anyone | Distractor | — |
+
+Explanation: 水をください directs the handover toward the person making the request, here the speaking teacher.
 
 </details>
 
@@ -2294,117 +2294,117 @@ Explanation: The teacher is the speaker requesting water.
 
 はははみせで「りんごをふたつください」といいました。 — My mother said at the shop, “Two apples, please.”
 
-**Review note:** One shopping request includes an explicit quantity. No te-form request is introduced.
+**Review note:** Two complementary questions interpret the same shopping request as a transfer toward its speaker and as an explicit verbal request. All paraphrases retain the same object and quantity, blocking noun or number extraction.
 
-**ja-ctx-wk1-simple-kudasai-02-target** · target answer · text
+**ja-ctx-wk1-simple-kudasai-02-target** · target meaning · text
 
-母は何と言いましたか。 — What did my mother say?
+母のお願いでは、りんごはどちらの方へ動きますか。 — In my mother&#39;s request, which way are the apples to move?
 
-Reading: はははなんといいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| りんごを二つください | りんごをふたつください | Two apples, please. | Correct | — |
-| りんごを二つ食べます | りんごをふたつたべます | I eat two apples. | Distractor | — |
-| りんごを二つ買いました | りんごをふたつかいました | I bought two apples. | Distractor | — |
-| りんごが二つあります | りんごがふたつあります | There are two apples. | Distractor | — |
-
-Explanation: She requests two apples using ください.
-
-**ja-ctx-wk1-simple-kudasai-02-detail** · other detail · text
-
-母はりんごをいくつ頼みましたか。 — How many apples did my mother ask for?
-
-Reading: はははりんごをいくつたのみましたか。
+Reading: ははのおねがいでは、りんごはどちらのほうへうごきますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 一つ | ひとつ | one | Distractor | — |
-| 三つ | みっつ | three | Distractor | — |
-| 四つ | よっつ | four | Distractor | — |
-| 二つ | ふたつ | two | Correct | — |
+| 聞いている人の方へ | きいているひとのほうへ | toward the listener | Distractor | — |
+| 話している人の方へ | はなしているひとのほうへ | toward the speaker | Correct | — |
+| 二人から遠い所へ | ふたりからとおいところへ | to a place far from both people | Distractor | — |
+| 誰の方へも動かしません | だれのほうへもうごかしません | not moved toward anyone | Distractor | — |
 
-Explanation: She asks for two apples.
+Explanation: The mother is speaking and asks for the two apples to be handed toward herself, not toward the listener or away from both.
+
+**ja-ctx-wk1-simple-kudasai-02-detail** · situation meaning · text
+
+母のお願いと同じなのはどれですか。 — Which expresses the same request as my mother&#39;s?
+
+Reading: ははのおねがいとおなじなのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 私のりんごを二つ食べてください | わたしのりんごをふたつたべてください | Please eat two of my apples. | Distractor | — |
+| 私のりんごを二つ洗ってください | わたしのりんごをふたつあらってください | Please wash two of my apples. | Distractor | — |
+| 私のりんごを二つ捨ててください | わたしのりんごをふたつすててください | Please throw away two of my apples. | Distractor | — |
+| 私にりんごを二つ渡してください | わたしにりんごをふたつわたしてください | Please hand two apples to me. | Correct | — |
+
+Explanation: The requested service is handing the speaker two apples, not eating, washing or discarding them.
 
 </details>
 
 <details><summary>59. 下さい — ja-ctx-wk1-contrastive-kudasai-01</summary>
 
-**Sentence:** 先生は「水をください」と言いました。学生は「お茶をください」と言いました。
+**Sentence:** 先生は「水をください」と言いました。学生は先生に水を渡しました。
 
-せんせいは「みずをください」といいました。がくせいは「おちゃをください」といいました。 — The teacher said, “Water, please.” The student said, “Tea, please.”
+せんせいは「みずをください」といいました。がくせいはせんせいにみずをわたしました。 — The teacher said, “Water, please.” The student handed water to the teacher.
 
-**Review note:** The speaker and requested drink must stay bound together.
+**Review note:** An explicit action follows the request, allowing request-response matching without assuming obedience. Compare the requested transfer direction with the actual recipient; no specialized giving/receiving constructions are introduced.
 
-**ja-ctx-wk1-contrastive-kudasai-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-kudasai-01-target** · target meaning · text
 
-先生は何と言いましたか。 — What did the teacher say?
+先生のお願いと、学生の行動は合っていますか。 — Does the student&#39;s action match the teacher&#39;s request?
 
-Reading: せんせいはなんといいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| お茶をください | おちゃをください | Tea, please. | Distractor | — |
-| 水をください | みずをください | Water, please. | Correct | — |
-| コーヒーをください | コーヒーをください | Coffee, please. | Distractor | — |
-| 牛乳をください | ぎゅうにゅうをください | Milk, please. | Distractor | — |
-
-Explanation: The teacher requests water; the student requests tea.
-
-**ja-ctx-wk1-contrastive-kudasai-01-detail** · other detail · text
-
-誰がお茶を頼みましたか。 — Who asked for tea?
-
-Reading: だれがおちゃをたのみましたか。
+Reading: せんせいのおねがいと、がくせいのこうどうはあっていますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 学生 | がくせい | student | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| はい、同じ物を先生の方へ渡しました | はい、おなじものをせんせいのほうへわたしました | Yes, the same item was handed toward the teacher. | Correct | — |
+| いいえ、違う物を先生の方へ渡しました | いいえ、ちがうものをせんせいのほうへわたしました | No, a different item was handed toward the teacher. | Distractor | — |
+| いいえ、同じ物を学生の方へ渡しました | いいえ、おなじものをがくせいのほうへわたしました | No, the same item was handed toward the student. | Distractor | — |
+| いいえ、まだ何も渡していません | いいえ、まだなにもわたしていません | No, nothing has been handed over yet. | Distractor | — |
 
-Explanation: The student asks for tea while the teacher asks for water.
+Explanation: The request is for water toward the speaking teacher, and the student explicitly hands water to that teacher, matching both item and direction.
+
+**ja-ctx-wk1-contrastive-kudasai-01-detail** · situation meaning · text
+
+お願いと実際で、渡す向きは同じですか。 — Do the requested and actual handover directions match?
+
+Reading: おねがいとじっさいで、わたすむきはおなじですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、お願いは先生、実際は学生の方へです | いいえ、おねがいはせんせい、じっさいはがくせいのほうへです | No: the request points toward the teacher, but the actual handover toward the student. | Distractor | — |
+| いいえ、お願いは学生、実際は先生の方へです | いいえ、おねがいはがくせい、じっさいはせんせいのほうへです | No: the request points toward the student, but the actual handover toward the teacher. | Distractor | — |
+| はい、どちらも先生の方へです | はい、どちらもせんせいのほうへです | Yes, both are toward the teacher. | Correct | — |
+| はい、どちらも学生の方へです | はい、どちらもがくせいのほうへです | Yes, both are toward the student. | Distractor | — |
+
+Explanation: The teacher&#39;s request points toward its speaker; the stated student-to-teacher handover has that same direction.
 
 </details>
 
 <details><summary>60. 下さい — ja-ctx-wk1-contrastive-kudasai-02</summary>
 
-**Sentence:** 母は「りんごを二つください」と言いました。父は「みかんを三つください」と言いました。
+**Sentence:** 母は「りんごを二つください」と言いました。父は母にみかんを二つ渡しました。
 
-ははは「りんごをふたつください」といいました。ちちは「みかんをみっつください」といいました。 — My mother said, “Two apples, please.” My father said, “Three mandarins, please.”
+ははは「りんごをふたつください」といいました。ちちはははにみかんをふたつわたしました。 — My mother said, “Two apples, please.” My father handed her two mandarins.
 
-**Review note:** Quantity and requested object vary together; the request form stays constant.
+**Review note:** The response has the correct count and recipient direction but the wrong fruit. The two questions test these separate dimensions, using plain direction and request-response matching without desire, giving/receiving, passive, potential or conditional grammar.
 
-**ja-ctx-wk1-contrastive-kudasai-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-kudasai-02-target** · target meaning · text
 
-父は何と言いましたか。 — What did my father say?
+父の行動は、母のお願いと合っていますか。 — Does my father&#39;s action match my mother&#39;s request?
 
-Reading: ちちはなんといいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| りんごを二つください | りんごをふたつください | Two apples, please. | Distractor | — |
-| りんごを三つください | りんごをみっつください | Three apples, please. | Distractor | — |
-| みかんを二つください | みかんをふたつください | Two mandarins, please. | Distractor | — |
-| みかんを三つください | みかんをみっつください | Three mandarins, please. | Correct | — |
-
-Explanation: The father asks for three mandarins; the mother asks for two apples.
-
-**ja-ctx-wk1-contrastive-kudasai-02-detail** · other detail · text
-
-母は何を頼みましたか。 — What did my mother ask for?
-
-Reading: はははなにをたのみましたか。
+Reading: ちちのこうどうは、ははのおねがいとあっていますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| りんご | りんご | apple | Correct | — |
-| みかん | みかん | mandarin orange | Distractor | — |
-| バナナ | バナナ | banana | Distractor | — |
-| ぶどう | ぶどう | grape | Distractor | — |
+| はい、種類も数も同じです | はい、しゅるいもかずもおなじです | Yes, both the type and number match. | Distractor | — |
+| いいえ、数だけが違います | いいえ、かずだけがちがいます | No, only the number differs. | Distractor | — |
+| いいえ、まだ何も渡していません | いいえ、まだなにもわたしていません | No, nothing has been handed over yet. | Distractor | — |
+| いいえ、種類が違います | いいえ、しゅるいがちがいます | No, the type of fruit is different. | Correct | — |
 
-Explanation: The mother requests apples while the father requests mandarins.
+Explanation: The mother requests two apples, while the father hands her two mandarins. The count matches and the recipient direction matches, but the fruit type differs.
+
+**ja-ctx-wk1-contrastive-kudasai-02-detail** · situation meaning · text
+
+お願いと実際で、渡す向きは同じですか。 — Do the requested and actual handover directions match?
+
+Reading: おねがいとじっさいで、わたすむきはおなじですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、お願いは母、実際は父の方へです | いいえ、おねがいははは、じっさいはちちのほうへです | No: the request points toward my mother, but the actual handover toward my father. | Distractor | — |
+| はい、どちらも母の方へです | はい、どちらもははのほうへです | Yes, both are toward my mother. | Correct | — |
+| いいえ、お願いは父、実際は母の方へです | いいえ、おねがいはちち、じっさいはははのほうへです | No: the request points toward my father, but the actual handover toward my mother. | Distractor | — |
+| はい、どちらも父の方へです | はい、どちらもちちのほうへです | Yes, both are toward my father. | Distractor | — |
+
+Explanation: The requested handover is toward the speaking mother. The father explicitly hands the fruit to the mother, so the direction matches even though the fruit type does not.
 
 </details>
 
@@ -2414,37 +2414,37 @@ Explanation: The mother requests apples while the father requests mandarins.
 
 このまちのじんこうはせんにんです。 — This town has a population of one thousand.
 
-**Review note:** 人工 is not used as a homophonic distractor.
+**Review note:** Apply the resident-count meaning to this specific town. All target options share the heard number and all detail options share the town, so copying either is insufficient.
 
-**ja-ctx-wk1-simple-jinkou-population-01-target** · target answer · text
+**ja-ctx-wk1-simple-jinkou-population-01-target** · target meaning · text
 
-何の話ですか。 — What is the topic?
+この町の説明で正しいのはどれですか。 — Which description of this town is correct?
 
-Reading: なんのはなしですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 天気 | てんき | weather | Distractor | — |
-| 人口 | じんこう | population | Correct | — |
-| 時間 | じかん | time | Distractor | — |
-| 場所 | ばしょ | place | Distractor | — |
-
-Explanation: The stated topic is the town&#39;s population, a count of its residents.
-
-**ja-ctx-wk1-simple-jinkou-population-01-detail** · other detail · text
-
-この町の人口は何人ですか。 — What is this town&#39;s population?
-
-Reading: このまちのじんこうはなんにんですか。
+Reading: このまちのせつめいでただしいのはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 千人 | せんにん | one thousand people | Correct | — |
-| 二千人 | にせんにん | two thousand people | Distractor | — |
-| 三千人 | さんぜんにん | three thousand people | Distractor | — |
-| 四千人 | よんせんにん | four thousand people | Distractor | — |
+| 千人が旅行に来ています | せんにんがりょこうにきています | One thousand people are visiting. | Distractor | — |
+| 千人が住んでいます | せんにんがすんでいます | One thousand people live there. | Correct | — |
+| 千人が働いています | せんにんがはたらいています | One thousand people work there. | Distractor | — |
+| 千人が学校で勉強しています | せんにんががっこうでべんきょうしています | One thousand people study at school there. | Distractor | — |
 
-Explanation: The sentence gives a population of one thousand.
+Explanation: The town&#39;s population of one thousand is its resident count, not a visitor, worker or student count.
+
+**ja-ctx-wk1-simple-jinkou-population-01-detail** · situation meaning · text
+
+千人は、どこの人数ですか。 — Which area does the count of one thousand cover?
+
+Reading: せんにんは、どこのにんずうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| この町の学校だけです | このまちのがっこうだけです | only the town&#39;s school | Distractor | — |
+| この町の店だけです | このまちのみせだけです | only the town&#39;s shop | Distractor | — |
+| この町の駅だけです | このまちのえきだけです | only the town&#39;s station | Distractor | — |
+| この町全体です | このまちぜんたいです | the whole town | Correct | — |
+
+Explanation: A population stated for the town describes residents of the whole town, not the occupants of one local institution.
 
 </details>
 
@@ -2454,37 +2454,37 @@ Explanation: The sentence gives a population of one thousand.
 
 あのむらはじんこうがすくないです。 — That village has a small population.
 
-**Review note:** 多い/少ない describe the number of residents, not physical area.
+**Review note:** Small population concerns residents and does not establish the physical size of the village or a visitor count. The questions make no zero-versus-nonzero assumption.
 
-**ja-ctx-wk1-simple-jinkou-population-02-target** · target answer · text
+**ja-ctx-wk1-simple-jinkou-population-02-target** · target meaning · text
 
-あの村は何が少ないですか。 — What is small in number in that village?
+あの村の説明で正しいのはどれですか。 — Which description of that village is correct?
 
-Reading: あのむらはなにがすくないですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 車 | くるま | cars | Distractor | — |
-| 店 | みせ | shops | Distractor | — |
-| 人口 | じんこう | population | Correct | — |
-| 学校 | がっこう | schools | Distractor | — |
-
-Explanation: The population is described as small; no other count is given.
-
-**ja-ctx-wk1-simple-jinkou-population-02-detail** · other detail · text
-
-あの村の人口はどうですか。 — How is that village&#39;s population described?
-
-Reading: あのむらのじんこうはどうですか。
+Reading: あのむらのせつめいでただしいのはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 多いです | おおいです | It is large. | Distractor | — |
-| 同じです | おなじです | It is the same. | Distractor | — |
-| わかりません | わかりません | It is not known. | Distractor | — |
-| 少ないです | すくないです | It is small. | Correct | — |
+| 旅行に来る人が少ないです | りょこうにくるひとがすくないです | Few people visit it. | Distractor | — |
+| 働いている人が少ないです | はたらいているひとがすくないです | Few people work there. | Distractor | — |
+| 住んでいる人が少ないです | すんでいるひとがすくないです | Few people live there. | Correct | — |
+| 学校で教える人が少ないです | がっこうでおしえるひとがすくないです | Few people teach at its school. | Distractor | — |
 
-Explanation: The village&#39;s population is described as small.
+Explanation: A small village population means a small number of residents, not a stated count of visitors, workers or teachers.
+
+**ja-ctx-wk1-simple-jinkou-population-02-detail** · situation meaning · text
+
+少ないのは、何の数ですか。 — What is small in number?
+
+Reading: すくないのは、なんのかずですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 村全体に住む人の数です | むらぜんたいにすむひとのかずです | the people living across the whole village | Correct | — |
+| 村の学校で勉強する人の数です | むらのがっこうでべんきょうするひとのかずです | the people studying at the village school | Distractor | — |
+| 村の店で働く人の数です | むらのみせではたらくひとのかずです | the people working at the village shop | Distractor | — |
+| 村の駅で待つ人の数です | むらのえきでまつひとのかずです | the people waiting at the village station | Distractor | — |
+
+Explanation: The small count belongs to the village&#39;s residents as a whole. The statement supplies no count for a particular school, shop or station.
 
 </details>
 
@@ -2494,2156 +2494,2156 @@ Explanation: The village&#39;s population is described as small.
 
 このまちのじんこうはせんにんです。となりのまちのじんこうはにせんにんです。 — This town has a population of one thousand. The neighboring town has a population of two thousand.
 
-**Review note:** The numerical detail requires keeping the towns separate.
+**Review note:** Compare stated population counts only; no unrelated arithmetic or unstated land-area relationship is required.
 
-**ja-ctx-wk1-contrastive-jinkou-population-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-jinkou-population-01-target** · target meaning · text
 
-何の話ですか。 — What is the topic?
+住んでいる人が多いのは、どちらの町ですか。 — Which town has more residents?
 
-Reading: なんのはなしですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 天気 | てんき | weather | Distractor | — |
-| 時間 | じかん | time | Distractor | — |
-| 場所 | ばしょ | place | Distractor | — |
-| 人口 | じんこう | population | Correct | — |
-
-Explanation: Both numerical facts describe population, rather than weather, time or location.
-
-**ja-ctx-wk1-contrastive-jinkou-population-01-detail** · other detail · text
-
-隣の町の人口は何人ですか。 — What is the neighboring town&#39;s population?
-
-Reading: となりのまちのじんこうはなんにんですか。
+Reading: すんでいるひとがおおいのは、どちらのまちですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 千人 | せんにん | one thousand people | Distractor | — |
-| 二千人 | にせんにん | two thousand people | Correct | — |
-| 三千人 | さんぜんにん | three thousand people | Distractor | — |
-| 四千人 | よんせんにん | four thousand people | Distractor | — |
+| この町です | このまちです | this town | Distractor | — |
+| 二つの町は同じです | ふたつのまちはおなじです | both towns have the same number | Distractor | — |
+| どちらにも人はいません | どちらにもひとはいません | neither town has any residents | Distractor | — |
+| 隣の町です | となりのまちです | the neighboring town | Correct | — |
 
-Explanation: The neighboring town has two thousand residents; this town has one thousand.
+Explanation: Interpret population as residents and compare two thousand in the neighboring town with one thousand in this town.
+
+**ja-ctx-wk1-contrastive-jinkou-population-01-detail** · situation meaning · text
+
+二つの町に住む人の数は、同じですか。 — Do the two towns have the same number of residents?
+
+Reading: ふたつのまちにすむひとのかずは、おなじですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、この町の方が多いです | いいえ、このまちのほうがおおいです | No, this town has more. | Distractor | — |
+| いいえ、隣の町の方が多いです | いいえ、となりのまちのほうがおおいです | No, the neighboring town has more. | Correct | — |
+| はい、同じです | はい、おなじです | Yes, they are the same. | Distractor | — |
+| 二つの町に人はいません | ふたつのまちにひとはいません | Neither town has any residents. | Distractor | — |
+
+Explanation: The stated resident counts differ, and the neighboring town&#39;s count is the larger one.
 
 </details>
 
 <details><summary>64. 人口 — ja-ctx-wk1-contrastive-jinkou-population-02</summary>
 
-**Sentence:** この村は人口が少ないです。あの市は人口が多いです。
+**Sentence:** この村の人口は三百人です。あの市の人口は千人です。
 
-このむらはじんこうがすくないです。あのしはじんこうがおおいです。 — This village has a small population. That city has a large population.
+このむらのじんこうはさんびゃくにんです。あのしのじんこうはせんにんです。 — This village has a population of three hundred. That city has a population of one thousand.
 
-**Review note:** No claim about land area is made.
+**Review note:** Exact counts make the comparison determinate. Do not infer population from a place being called a city or village.
 
-**ja-ctx-wk1-contrastive-jinkou-population-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-jinkou-population-02-target** · target meaning · text
 
-この村は何が少ないですか。 — What is small in number in this village?
+村と市では、どちらに住む人が少ないですか。 — Which has fewer residents, the village or the city?
 
-Reading: このむらはなにがすくないですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 人口 | じんこう | population | Correct | — |
-| 車 | くるま | cars | Distractor | — |
-| 店 | みせ | shops | Distractor | — |
-| 学校 | がっこう | schools | Distractor | — |
-
-Explanation: The population is described as small in the village.
-
-**ja-ctx-wk1-contrastive-jinkou-population-02-detail** · other detail · text
-
-あの市の人口はどうですか。 — How is that city&#39;s population described?
-
-Reading: あのしのじんこうはどうですか。
+Reading: むらとしでは、どちらにすむひとがすくないですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 少ないです | すくないです | It is small. | Distractor | — |
-| 同じです | おなじです | It is the same. | Distractor | — |
-| 多いです | おおいです | It is large. | Correct | — |
-| わかりません | わかりません | It is not known. | Distractor | — |
+| この村です | このむらです | this village | Correct | — |
+| あの市です | あのしです | that city | Distractor | — |
+| 村と市は同じです | むらとしはおなじです | the village and city have the same number | Distractor | — |
+| 村にも市にも人はいません | むらにもしにもひとはいません | neither has any residents | Distractor | — |
 
-Explanation: The city&#39;s population is large, unlike the village&#39;s small population.
+Explanation: Three hundred village residents is fewer than one thousand city residents; population gives the resident counts.
+
+**ja-ctx-wk1-contrastive-jinkou-population-02-detail** · situation meaning · text
+
+住んでいる人の数は、村と市で同じですか。 — Are the village and city resident counts the same?
+
+Reading: すんでいるひとのかずは、むらとしでおなじですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、村の方が多いです | いいえ、むらのほうがおおいです | No, the village has more. | Distractor | — |
+| はい、同じです | はい、おなじです | Yes, they are the same. | Distractor | — |
+| いいえ、市の方が多いです | いいえ、しのほうがおおいです | No, the city has more. | Correct | — |
+| 村にも市にも人はいません | むらにもしにもひとはいません | Neither has any residents. | Distractor | — |
+
+Explanation: The city&#39;s one thousand residents exceed the village&#39;s three hundred, so the counts are not equal.
 
 </details>
 
 <details><summary>65. 力 — ja-ctx-wk1-simple-chikara-01</summary>
 
-**Sentence:** 父は力が強いです。
+**Sentence:** 父は力を入れて箱を押して、前に動かしました。
 
-ちちはちからがつよいです。 — My father is physically strong.
+ちちはちからをいれてはこをおして、まえにうごかしました。 — My father applied force to push the box and move it forward.
 
-**Review note:** Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-chikara-01-target** · target answer · text
+**ja-ctx-wk1-simple-chikara-01-target** · target meaning · text
 
-父は何が強いですか。 — What is strong about my father?
+箱と父の関係を正しく言っているのはどれですか。 — Which statement correctly describes the relationship between the box and my father?
 
-Reading: ちちはなにがつよいですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 声 | こえ | voice | Distractor | — |
-| 名前 | なまえ | name | Distractor | — |
-| 力 | ちから | strength | Correct | — |
-| 目 | め | eyes | Distractor | — |
-
-Explanation: The strength described is my father’s physical strength.
-
-**ja-ctx-wk1-simple-chikara-01-detail** · other detail · text
-
-力が強い人は誰ですか。 — Who is physically strong?
-
-Reading: ちからがつよいひとはだれですか。
+Reading: はことちちのかんけいをただしくいっているのはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Correct | — |
-| 母 | はは | my mother | Distractor | — |
-| 兄 | あに | my older brother | Distractor | — |
-| 姉 | あね | my older sister | Distractor | — |
+| 父が箱を動かしました | ちちがはこをうごかしました | father caused the box to move | Correct | — |
+| 箱が父を動かしました | はこがちちをうごかしました | the box caused father to move | Distractor | — |
+| 父も箱も動きませんでした | ちちもはこもうごきませんでした | neither father nor box moved | Distractor | — |
+| 父ではなく風が箱を動かしました | ちちではなくかぜがはこをうごかしました | wind, rather than father, moved the box | Distractor | — |
 
-Explanation: My father is the person described as physically strong.
+Explanation: The father applies bodily force to push the box; he is the cause of the box’s movement, not the other way around.
+
+**ja-ctx-wk1-simple-chikara-01-detail** · situation meaning · text
+
+箱は最初の場所から、どうなりましたか。 — What happened to the box relative to its original location?
+
+Reading: はこはさいしょのばしょから、どうなりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 最初の場所に戻りました | さいしょのばしょにもどりました | it returned to the original location | Distractor | — |
+| 最初の場所で止まっていました | さいしょのばしょでとまっていました | it remained stopped at the original location | Distractor | — |
+| 床から高く上がりました | ゆかからたかくあがりました | it rose high above the floor | Distractor | — |
+| 最初の場所から離れました | さいしょのばしょからはなれました | it moved away from the original location | Correct | — |
+
+Explanation: Moving the box forward displaces it from where it initially was; the statement reports no lifting or return.
 
 </details>
 
 <details><summary>66. 力 — ja-ctx-wk1-simple-chikara-02</summary>
 
-**Sentence:** 兄は力が弱いです。
+**Sentence:** 力を弱くして、玉をゆっくり転がしました。
 
-あにはちからがよわいです。 — My older brother has little physical strength.
+ちからをよわくして、たまをゆっくりころがしました。 — I reduced the force and rolled the ball slowly.
 
-**Review note:** Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-chikara-02-target** · target answer · text
+**ja-ctx-wk1-simple-chikara-02-target** · target meaning · text
 
-兄は何が弱いですか。 — What is weak about my older brother?
+玉を動かす強さは、どう変わりましたか。 — How did the strength used to move the ball change?
 
-Reading: あにはなにがよわいですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 声 | こえ | voice | Distractor | — |
-| 名前 | なまえ | name | Distractor | — |
-| 力 | ちから | strength | Correct | — |
-| 目 | め | eyes | Distractor | — |
-
-Explanation: The weakness described is physical strength.
-
-**ja-ctx-wk1-simple-chikara-02-detail** · other detail · text
-
-力が弱い人は誰ですか。 — Who has little physical strength?
-
-Reading: ちからがよわいひとはだれですか。
+Reading: たまをうごかすつよさは、どうかわりましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 兄 | あに | my older brother | Correct | — |
-| 姉 | あね | my older sister | Distractor | — |
+| 前と同じにしました | まえとおなじにしました | I kept it the same as before | Distractor | — |
+| 力を全く使いませんでした | ちからをまったくつかいませんでした | I used no force at all | Distractor | — |
+| 前より小さくしました | まえよりちいさくしました | I made it smaller than before | Correct | — |
+| 前より大きくしました | まえよりおおきくしました | I made it larger than before | Distractor | — |
 
-Explanation: My older brother is the person described.
+Explanation: Weakening the force means decreasing its strength from its previous level.
+
+**ja-ctx-wk1-simple-chikara-02-detail** · situation meaning · text
+
+玉の進む速さはどうですか。 — How fast is the ball moving?
+
+Reading: たまのすすむはやさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 速さが何度も変わっています | はやさがなんどもかわっています | its speed changes repeatedly | Distractor | — |
+| 速くないです | はやくないです | it is not fast | Correct | — |
+| とても速いです | とてもはやいです | it is very fast | Distractor | — |
+| 全く動いていません | まったくうごいていません | it is not moving at all | Distractor | — |
+
+Explanation: The ball is rolled slowly, so its movement is not fast. Rolling establishes movement; no repeated speed changes are reported.
 
 </details>
 
 <details><summary>67. 力 — ja-ctx-wk1-contrastive-chikara-01</summary>
 
-**Sentence:** 父は力が強いです。兄は声が大きいです。
+**Sentence:** 父は力を入れて箱を押しました。母は力を抜いて箱を押しました。
 
-ちちはちからがつよいです。あにはこえがおおきいです。 — My father is physically strong. My older brother has a loud voice.
+ちちはちからをいれてはこをおしました。はははちからをぬいてはこをおしました。 — My father pushed the box with effort. My mother relaxed her force while pushing the box.
 
-**Review note:** Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-chikara-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-chikara-01-target** · target meaning · text
 
-父は何が強いですか。 — What is strong about my father?
+強く押したのは誰ですか。 — Who pushed strongly?
 
-Reading: ちちはなにがつよいですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 声 | こえ | voice | Distractor | — |
-| 名前 | なまえ | name | Distractor | — |
-| 力 | ちから | strength | Correct | — |
-| 目 | め | eyes | Distractor | — |
-
-Explanation: Physical strength describes my father; a loud voice describes my brother.
-
-**ja-ctx-wk1-contrastive-chikara-01-detail** · other detail · text
-
-力が強い人は誰ですか。 — Who is physically strong?
-
-Reading: ちからがつよいひとはだれですか。
+Reading: つよくおしたのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
 | 父 | ちち | my father | Correct | — |
 | 母 | はは | my mother | Distractor | — |
-| 兄 | あに | my older brother | Distractor | — |
-| 姉 | あね | my older sister | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: My father has physical strength; my brother is described by his voice.
+Explanation: 力を入れる applies strength; 力を抜く relaxes it. The father is the one applying strength to the push.
+
+**ja-ctx-wk1-contrastive-chikara-01-detail** · situation meaning · text
+
+二人の押し方はどう違いますか。 — How do their ways of pushing differ?
+
+Reading: ふたりのおしかたはどうちがいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 父は弱く、母は強く押しました | ちちはよわく、はははつよくおしました | father pushed gently, mother strongly | Distractor | — |
+| 二人とも強く押しました | ふたりともつよくおしました | both pushed strongly | Distractor | — |
+| 二人とも弱く押しました | ふたりともよわくおしました | both pushed gently | Distractor | — |
+| 父は強く、母は弱く押しました | ちちはつよく、はははよわくおしました | father pushed strongly, mother gently | Correct | — |
+
+Explanation: Applying strength describes the father’s stronger push; releasing strength describes the mother’s gentler push.
 
 </details>
 
 <details><summary>68. 力 — ja-ctx-wk1-contrastive-chikara-02</summary>
 
-**Sentence:** 兄は力が弱いです。姉は力が強いです。
+**Sentence:** 兄は力を強くして玉を転がしました。妹は力を弱くして玉を転がしました。
 
-あにはちからがよわいです。あねはちからがつよいです。 — My older brother has little physical strength. My older sister is physically strong.
+あにはちからをつよくしてたまをころがしました。いもうとはちからをよわくしてたまをころがしました。 — My older brother increased the force when rolling the ball. My younger sister reduced the force when rolling it.
 
-**Review note:** Physical strength meaning of 力. Distractors name distinct features, avoiding 体, which could overlap the physical-strength description.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-chikara-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-chikara-02-target** · target meaning · text
 
-兄は何が弱いですか。 — What is weak about my older brother?
+体から玉に加える強さを、小さくしたのは誰ですか。 — Who made the strength applied from the body to the ball smaller?
 
-Reading: あにはなにがよわいですか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 声 | こえ | voice | Distractor | — |
-| 名前 | なまえ | name | Distractor | — |
-| 力 | ちから | strength | Correct | — |
-| 目 | め | eyes | Distractor | — |
-
-Explanation: The weak attribute of my brother is physical strength.
-
-**ja-ctx-wk1-contrastive-chikara-02-detail** · other detail · text
-
-力が強い人は誰ですか。 — Who is physically strong?
-
-Reading: ちからがつよいひとはだれですか。
+Reading: からだからたまにくわえるつよさを、ちいさくしたのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
+| 妹 | いもうと | my younger sister | Correct | — |
 | 兄 | あに | my older brother | Distractor | — |
-| 姉 | あね | my older sister | Correct | — |
 
-Explanation: My sister is strong; my brother has little physical strength.
+Explanation: The sister weakens the force, which decreases the strength applied to the ball. The brother increases it.
+
+**ja-ctx-wk1-contrastive-chikara-02-detail** · situation meaning · text
+
+二人は、それぞれ強さをどう変えましたか。 — How did each person change the strength used?
+
+Reading: ふたりは、それぞれつよさをどうかえましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも小さくしました | ふたりともちいさくしました | both made it smaller | Distractor | — |
+| 兄は大きく、妹は小さくしました | あにはおおきく、いもうとはちいさくしました | brother made it larger, sister made it smaller | Correct | — |
+| 兄は小さく、妹は大きくしました | あにはちいさく、いもうとはおおきくしました | brother made it smaller, sister made it larger | Distractor | — |
+| 二人とも大きくしました | ふたりともおおきくしました | both made it larger | Distractor | — |
+
+Explanation: Strengthening the brother’s force increases it; weakening the sister’s force decreases it.
 
 </details>
 
 <details><summary>69. 川 — ja-ctx-wk1-simple-kawa-01</summary>
 
-**Sentence:** 学校の近くに川があります。
+**Sentence:** 川を橋で渡りました。
 
-がっこうのちかくにかわがあります。 — There is a river near the school.
+かわをはしでわたりました。 — I crossed the river by bridge.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-kawa-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-kawa-01-target** · target meaning · text
 
-学校の近くに何がありますか。 — What is near the school?
+どんな道を通りましたか。 — What kind of path did I take?
 
-Reading: がっこうのちかくになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 川 | かわ | river | Correct | <img width="96" alt="A winding river between green banks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg"> |
-| 山 | やま | mountain | Distractor | <img width="96" alt="Two purple snow-capped mountain peaks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg"> |
-| 林 | はやし | woods | Distractor | <img width="96" alt="Five leafy trees forming a small grove." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-698044202165-8f2b6799af1c.png"> |
-| 田んぼ | たんぼ | rice field | Distractor | <img width="96" alt="Rice Paddy" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/vocabulary/ja-v-0da81020c173.svg"> |
-
-Explanation: The sentence places a river near the school.
-
-**ja-ctx-wk1-simple-kawa-01-detail** · other detail · text
-
-川は何の近くにありますか。 — What is the river near?
-
-Reading: かわはなんのちかくにありますか。
+Reading: どんなみちをとおりましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 病院 | びょういん | hospital | Distractor | — |
-| 学校 | がっこう | school | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
+| 水の上の道 | みずのうえのみち | a path over water | Correct | — |
+| 地下の道 | ちかのみち | an underground path | Distractor | — |
+| 山の中の道 | やまのなかのみち | a path through the mountains | Distractor | — |
+| 店の中の道 | みせのなかのみち | a path through a shop | Distractor | — |
 
-Explanation: The river is near the school.
+Explanation: Crossing a river by bridge means taking a path over water.
+
+**ja-ctx-wk1-simple-kawa-01-detail** · situation meaning · text
+
+渡り始めた場所から見て、今どこにいますか。 — Relative to where I began crossing, where am I now?
+
+Reading: わたりはじめたばしょからみて、いまどこにいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 水の手前 | みずのてまえ | on the near side of the water | Distractor | — |
+| 水の中 | みずのなか | in the water | Distractor | — |
+| 水の上 | みずのうえ | above the water | Distractor | — |
+| 水の向こう | みずのむこう | on the far side of the water | Correct | — |
+
+Explanation: A completed crossing places the speaker on the opposite side of the river from the crossing’s starting point.
 
 </details>
 
 <details><summary>70. 川 — ja-ctx-wk1-simple-kawa-02</summary>
 
-**Sentence:** 川で魚を見ます。
+**Sentence:** 川の水と一緒に、ボールが流れています。
 
-かわでさかなをみます。 — I see fish in the river.
+かわのみずといっしょに、ボールがながれています。 — A ball is floating along together with the river water.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-kawa-02-target** · target answer · text
+**ja-ctx-wk1-simple-kawa-02-target** · target meaning · text
 
-どこで魚を見ますか。 — Where do I see fish?
+水とボールの進む向きはどうですか。 — How do the directions of the water and ball compare?
 
-Reading: どこでさかなをみますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 海 | うみ | sea | Distractor | — |
-| 池 | いけ | pond | Distractor | — |
-| 川 | かわ | river | Correct | — |
-| 湖 | みずうみ | lake | Distractor | — |
-
-Explanation: The fish are seen in the river.
-
-**ja-ctx-wk1-simple-kawa-02-detail** · other detail · text
-
-川で何を見ますか。 — What do I see in the river?
-
-Reading: かわでなにをみますか。
+Reading: みずとボールのすすむむきはどうですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 鳥 | とり | bird | Distractor | — |
-| 犬 | いぬ | dog | Distractor | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 魚 | さかな | fish | Correct | — |
+| 水だけ止まっています | みずだけとまっています | only the water is stopped | Distractor | — |
+| ボールだけ止まっています | ボールだけとまっています | only the ball is stopped | Distractor | — |
+| 同じ方へ進んでいます | おなじほうへすすんでいます | they are moving in the same direction | Correct | — |
+| 反対の方へ進んでいます | はんたいのほうへすすんでいます | they are moving in opposite directions | Distractor | — |
 
-Explanation: The sentence says that I see fish.
+Explanation: Floating along together with the flowing water gives the ball the same direction of travel as the water.
+
+**ja-ctx-wk1-simple-kawa-02-detail** · situation meaning · text
+
+動いている物は、どの組み合わせですか。 — Which statement about what is moving is correct?
+
+Reading: うごいているものは、どのくみあわせですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 水もボールも止まっています | みずもボールもとまっています | both the water and ball are stopped | Distractor | — |
+| 水もボールも動いています | みずもボールもうごいています | both the water and ball are moving | Correct | — |
+| 水だけ動いています | みずだけうごいています | only the water is moving | Distractor | — |
+| ボールだけ動いています | ボールだけうごいています | only the ball is moving | Distractor | — |
+
+Explanation: The ball moves together with the flowing water, so both are moving.
 
 </details>
 
 <details><summary>71. 川 — ja-ctx-wk1-contrastive-kawa-01</summary>
 
-**Sentence:** 学校の近くに川があります。駅の近くに山があります。
+**Sentence:** 兄は川を橋で渡りました。妹は同じ川の手前で待っています。
 
-がっこうのちかくにかわがあります。えきのちかくにやまがあります。 — There is a river near the school. There is a mountain near the station.
+あにはかわをはしでわたりました。いもうとはおなじかわのてまえでまっています。 — My older brother crossed the river by bridge. My younger sister is waiting on the near side of the same river.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. Proposed approved landscape pictures represent the feature categories, not the exact geography in the sentence.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-kawa-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-kawa-01-target** · target meaning · text
 
-学校の近くに何がありますか。 — What is near the school?
+水の向こう側にいるのは誰ですか。 — Who is on the far side of the water?
 
-Reading: がっこうのちかくになにがありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 川 | かわ | river | Correct | <img width="96" alt="A winding river between green banks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-46f8fe65f218-0be609b2f37f.jpg"> |
-| 山 | やま | mountain | Distractor | <img width="96" alt="Two purple snow-capped mountain peaks" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-ddd9dca106e2-e3cd97f96a43.jpg"> |
-| 林 | はやし | woods | Distractor | <img width="96" alt="Five leafy trees forming a small grove." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-698044202165-8f2b6799af1c.png"> |
-| 田んぼ | たんぼ | rice field | Distractor | <img width="96" alt="Rice Paddy" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/vocabulary/ja-v-0da81020c173.svg"> |
-
-Explanation: The river is near the school; the mountain is near the station.
-
-**ja-ctx-wk1-contrastive-kawa-01-detail** · other detail · text
-
-川は何の近くにありますか。 — What is the river near?
-
-Reading: かわはなんのちかくにありますか。
+Reading: みずのむこうがわにいるのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 病院 | びょういん | hospital | Distractor | — |
-| 学校 | がっこう | school | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
+| 兄 | あに | my older brother | Correct | — |
+| 妹 | いもうと | my younger sister | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: The river belongs to the school location, not the station location.
+Explanation: The brother completes the crossing; the sister remains on the near side. Only the brother is on the far side.
+
+**ja-ctx-wk1-contrastive-kawa-01-detail** · situation meaning · text
+
+今の二人の位置を、正しく言っているのはどれですか。 — Which statement correctly describes their current positions?
+
+Reading: いまのふたりのいちを、ただしくいっているのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人は同じ場所にいます | ふたりはおなじばしょにいます | they are in the same place | Distractor | — |
+| 二人は水の中にいます | ふたりはみずのなかにいます | they are both in the water | Distractor | — |
+| 二人は橋の上にいます | ふたりははしのうえにいます | they are both on the bridge | Distractor | — |
+| 二人の間に水があります | ふたりのあいだにみずがあります | there is water between them | Correct | — |
+
+Explanation: The brother is across the river while the sister waits before the crossing; the river separates them.
 
 </details>
 
 <details><summary>72. 川 — ja-ctx-wk1-contrastive-kawa-02</summary>
 
-**Sentence:** 川で魚を見ます。公園で鳥を見ます。
+**Sentence:** 川では水とボールが一緒に流れています。道では自転車が止まっています。
 
-かわでさかなをみます。こうえんでとりをみます。 — I see fish in the river. I see birds in the park.
+かわではみずとボールがいっしょにながれています。みちではじてんしゃがとまっています。 — In the river the water and a ball move together. On the road a bicycle is stopped.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-kawa-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-kawa-02-target** · target meaning · text
 
-どこで魚を見ますか。 — Where do I see fish?
+川の中の動きで、正しいのはどれですか。 — Which statement about movement in the river is correct?
 
-Reading: どこでさかなをみますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 海 | うみ | sea | Distractor | — |
-| 池 | いけ | pond | Distractor | — |
-| 川 | かわ | river | Correct | — |
-| 湖 | みずうみ | lake | Distractor | — |
-
-Explanation: Fish are seen in the river; birds are seen in the park.
-
-**ja-ctx-wk1-contrastive-kawa-02-detail** · other detail · text
-
-川で何を見ますか。 — What do I see in the river?
-
-Reading: かわでなにをみますか。
+Reading: かわのなかのうごきで、ただしいのはどれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 鳥 | とり | bird | Distractor | — |
-| 犬 | いぬ | dog | Distractor | — |
-| 猫 | ねこ | cat | Distractor | — |
-| 魚 | さかな | fish | Correct | — |
+| ボールだけ動いています | ボールだけうごいています | only the ball is moving | Distractor | — |
+| 水もボールも止まっています | みずもボールもとまっています | both the water and ball are stopped | Distractor | — |
+| 水もボールも動いています | みずもボールもうごいています | both the water and ball are moving | Correct | — |
+| 水だけ動いています | みずだけうごいています | only the water is moving | Distractor | — |
 
-Explanation: The river is associated with fish, while the park is associated with birds.
+Explanation: Water and ball flow together, so neither is the stationary item. The bicycle is stationary on the road.
+
+**ja-ctx-wk1-contrastive-kawa-02-detail** · situation meaning · text
+
+二つの場所の様子はどう違いますか。 — How do the situations in the two places differ?
+
+Reading: ふたつのばしょのようすはどうちがいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらの場所でも止まっています | どちらのばしょでもとまっています | things are stopped in both places | Distractor | — |
+| 水のある所では動いていて、道では止まっています | みずのあるところではうごいていて、みちではとまっています | things move where the water is, while the road item is stopped | Correct | — |
+| 水のある所では止まっていて、道では動いています | みずのあるところではとまっていて、みちではうごいています | things stop where the water is, while the road item moves | Distractor | — |
+| どちらの場所でも動いています | どちらのばしょでもうごいています | things are moving in both places | Distractor | — |
+
+Explanation: The river has flowing water and ball, while the road has a stationary bicycle.
 
 </details>
 
 <details><summary>73. 七つ — ja-ctx-wk1-simple-nanatsu-01</summary>
 
-**Sentence:** 箱が七つあります。
+**Sentence:** ドアの後ろに箱が七つあります。
 
-はこがななつあります。 — There are 7 boxes.
+ドアのうしろにはこがななつあります。 — There are 7 boxes behind the door.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-nanatsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-nanatsu-01-target** · target meaning · picture + text
 
-箱はいくつありますか。 — How many boxes are there?
+箱は何個ありますか。 — How many boxes are there?
 
-Reading: はこはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 六つ | むっつ | six things | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
-| 七つ | ななつ | seven things | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-
-Explanation: The sentence gives 7 as the number of boxes.
-
-**ja-ctx-wk1-simple-nanatsu-01-detail** · other detail · text
-
-七つあるのは何ですか。 — Which item are there seven of?
-
-Reading: ななつあるのはなんですか。
+Reading: はこはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 箱 | はこ | box | Correct | — |
-| かばん | かばん | bag | Distractor | — |
-| 玉 | たま | ball | Distractor | — |
-| 石 | いし | stone | Distractor | — |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ６個 | ろっこ | 6 items | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
+| ７個 | ななこ | 7 items | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
 
-Explanation: The sentence gives seven as the number of boxes.
+Explanation: 七つ (ななつ) gives a quantity of 7; the matching 個 form is ７個 (ななこ).
+
+**ja-ctx-wk1-simple-nanatsu-01-detail** · situation meaning · text
+
+ドアはどこにありますか。 — Where is the door relative to the boxes?
+
+Reading: ドアはどこにありますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 箱の前です | はこのまえです | It is front the boxes. | Correct | — |
+| 箱の後ろです | はこのうしろです | It is behind the boxes. | Distractor | — |
+| 箱の左です | はこのひだりです | It is left the boxes. | Distractor | — |
+| 箱の右です | はこのみぎです | It is right the boxes. | Distractor | — |
+
+Explanation: The boxes are behind the door; reversing that relationship puts the door front the boxes.
 
 </details>
 
 <details><summary>74. 七つ — ja-ctx-wk1-simple-nanatsu-02</summary>
 
-**Sentence:** 兄はコップを七つ買いました。
+**Sentence:** 皿にはいちごが七つだけありました。兄は皿の上の物を全部食べました。
 
-あにはコップをななつかいました。 — My older brother bought 7 drinking glasses.
+さらにはいちごがななつだけありました。あにはさらのうえのものをぜんぶたべました。 — There were only 7 strawberries on the plate. My older brother ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-nanatsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-nanatsu-02-target** · target meaning · picture + text
 
-兄はコップをいくつ買いましたか。 — How many drinking glasses did my older brother buy?
+兄はいちごを何個食べましたか。 — How many strawberries did my older brother eat?
 
-Reading: あにはコップをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 六つ | むっつ | six things | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
-| 七つ | ななつ | seven things | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-
-Explanation: My older brother bought 7 drinking glasses.
-
-**ja-ctx-wk1-simple-nanatsu-02-detail** · other detail · text
-
-誰がコップを七つ買いましたか。 — Who bought 7 drinking glasses?
-
-Reading: だれがコップをななつかいましたか。
+Reading: あにはいちごをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 姉 | あね | my older sister | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 兄 | あに | my older brother | Correct | — |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ６個 | ろっこ | 6 items | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
+| ７個 | ななこ | 7 items | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
 
-Explanation: The sentence attributes the purchase of 7 to my older brother.
+Explanation: The plate held 七つ (7) strawberries, and my older brother ate all its food; the eaten quantity is ７個.
+
+**ja-ctx-wk1-simple-nanatsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+
+Explanation: My older brother ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>75. 七つ — ja-ctx-wk1-contrastive-nanatsu-01</summary>
 
-**Sentence:** 箱が七つ、かばんが八つあります。
+**Sentence:** 赤い箱には玉が七つ、青い箱には玉が八つ入っています。
 
-はこがななつ、かばんがやっつあります。 — There are 7 boxes, and 8 bags.
+あかいはこにはたまがななつ、あおいはこにはたまがやっつはいっています。 — The red box contains 7 balls; the blue box contains 8 balls.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-nanatsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-nanatsu-01-target** · target meaning · picture + text
 
-箱はいくつありますか。 — How many boxes are there?
+赤い箱の中の玉は何個ありますか。 — How many balls are inside the red box?
 
-Reading: はこはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 六つ | むっつ | six things | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
-| 七つ | ななつ | seven things | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-
-Explanation: The sentence gives 7 as the number of boxes.
-
-**ja-ctx-wk1-contrastive-nanatsu-01-detail** · other detail · text
-
-七つあるのは何ですか。 — Which item are there seven of?
-
-Reading: ななつあるのはなんですか。
+Reading: あかいはこのなかのたまはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| かばん | かばん | bag | Distractor | — |
-| 玉 | たま | ball | Distractor | — |
-| 石 | いし | stone | Distractor | — |
-| 箱 | はこ | box | Correct | — |
+| ６個 | ろっこ | 6 items | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
+| ７個 | ななこ | 7 items | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
 
-Explanation: The sentence gives seven as the number of boxes.
+Explanation: The red box is paired with 七つ (7), while the blue box is paired with 八つ (8); the requested red-box quantity is ７個.
+
+**ja-ctx-wk1-contrastive-nanatsu-01-detail** · situation meaning · text
+
+二つの箱の玉の数はどうですか。 — How do the two boxes compare in number of balls?
+
+Reading: ふたつのはこのたまのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Distractor | — |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Correct | — |
+
+Explanation: The red box has 7 and the blue box has 8; blue therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>76. 七つ — ja-ctx-wk1-contrastive-nanatsu-02</summary>
 
-**Sentence:** 兄はコップを七つ、姉はコップを六つ買いました。
+**Sentence:** 兄の皿にはいちごが七つだけ、姉の皿にはいちごが八つだけありました。兄は自分の皿の物を全部食べました。姉は何も食べませんでした。
 
-あにはコップをななつ、あねはコップをむっつかいました。 — My older brother bought 7 drinking glasses. My older sister bought 6 drinking glasses.
+あにのさらにはいちごがななつだけ、あねのさらにはいちごがやっつだけありました。あにはじぶんのさらのものをぜんぶたべました。あねはなにもたべませんでした。 — My older brother&#39;s plate had only 7 strawberries; my older sister&#39;s plate had only 8. My older brother ate everything on their own plate. My older sister ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-nanatsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-nanatsu-02-target** · target meaning · picture + text
 
-兄はコップをいくつ買いましたか。 — How many drinking glasses did my older brother buy?
+兄はいちごを何個食べましたか。 — How many strawberries did my older brother eat?
 
-Reading: あにはコップをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 七つ | ななつ | seven things | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
-| 八つ | やっつ | eight things | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 六つ | むっつ | six things | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
-
-Explanation: My older brother bought 7; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-nanatsu-02-detail** · other detail · text
-
-誰がコップを七つ買いましたか。 — Who bought 7 drinking glasses?
-
-Reading: だれがコップをななつかいましたか。
+Reading: あにはいちごをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 兄 | あに | my older brother | Correct | — |
-| 姉 | あね | my older sister | Distractor | — |
+| ７個 | ななこ | 7 items | Correct | <img width="96" alt="7 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-f6bc974a7405-791f98030b8a.png"> |
+| ８個 | はっこ | 8 items | Distractor | <img width="96" alt="8 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-6c9351ae67e6-9e53a2d365c7.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ６個 | ろっこ | 6 items | Distractor | <img width="96" alt="6 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-df70a01acaec-9ae26adc5bb6.png"> |
 
-Explanation: The sentence attributes the purchase of 7 to my older brother.
+Explanation: My older brother&#39;s own plate held 七つ (7) strawberries, and they ate all of it. The other plate&#39;s 8 items were not eaten; the correct amount is ７個.
+
+**ja-ctx-wk1-contrastive-nanatsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+| 兄の皿だけ空です | あにのさらだけからです | Only my older brother&#39;s plate is empty. | Correct | — |
+| 姉の皿だけ空です | あねのさらだけからです | Only my older sister&#39;s plate is empty. | Distractor | — |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+
+Explanation: My older brother ate all food on their own plate, so that plate is empty. My older sister ate nothing, so their initially nonempty plate still has its food. Only my older brother&#39;s plate is empty.
 
 </details>
 
 <details><summary>77. 大きさ — ja-ctx-wk1-simple-ookisa-01</summary>
 
-**Sentence:** 箱の大きさを比べます。
+**Sentence:** 赤い箱と青い箱は大きさが違って、赤い方が大きいです。
 
-はこのおおきさをくらべます。 — I compare the sizes of the boxes.
+あかいはことあおいはこはおおきさがちがって、あかいほうがおおきいです。 — The red and blue boxes differ in size, and the red one is larger.
 
-**Review note:** 大きさ names the size property; other choices name color, weight and price.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-ookisa-01-target** · target answer · text
+**ja-ctx-wk1-simple-ookisa-01-target** · target meaning · text
 
-箱の何を比べますか。 — What property of the boxes do I compare?
+青い箱は赤い箱より、どうですか。 — How does the blue box compare with the red one?
 
-Reading: はこのなにをくらべますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 色 | いろ | color | Distractor | — |
-| 重さ | おもさ | weight | Distractor | — |
-| 値段 | ねだん | price | Distractor | — |
-| 大きさ | おおきさ | size | Correct | — |
-
-Explanation: The property being compared is size.
-
-**ja-ctx-wk1-simple-ookisa-01-detail** · other detail · text
-
-何の大きさを比べますか。 — What objects do I compare the sizes of?
-
-Reading: なんのおおきさをくらべますか。
+Reading: あおいはこはあかいはこより、どうですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 袋 | ふくろ | bag | Distractor | — |
-| 靴 | くつ | shoes | Distractor | — |
-| 箱 | はこ | box | Correct | — |
-| 傘 | かさ | umbrella | Distractor | — |
+| 小さいです | ちいさいです | it is smaller | Correct | — |
+| 大きいです | おおきいです | it is larger | Distractor | — |
+| 同じ大きさです | おなじおおきさです | it is the same size | Distractor | — |
+| 大きさは分かりません | おおきさはわかりません | its relative size is unknown | Distractor | — |
 
-Explanation: I compare the boxes’ sizes.
+Explanation: If the red box is larger, the blue box is smaller in the reversed comparison.
+
+**ja-ctx-wk1-simple-ookisa-01-detail** · situation meaning · text
+
+小さい方から並べます。最初に置くのはどちらですか。 — I arrange them starting with the smaller one. Which do I put down first?
+
+Reading: ちいさいほうからならべます。さいしょにおくのはどちらですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 赤い箱 | あかいはこ | the red box | Distractor | — |
+| 両方の箱 | りょうほうのはこ | both boxes | Distractor | — |
+| どちらの箱でもありません | どちらのはこでもありません | neither box | Distractor | — |
+| 青い箱 | あおいはこ | the blue box | Correct | — |
+
+Explanation: The blue box is the smaller one, so a small-first arrangement starts with blue.
 
 </details>
 
 <details><summary>78. 大きさ — ja-ctx-wk1-simple-ookisa-02</summary>
 
-**Sentence:** 靴の大きさを調べます。
+**Sentence:** このかばんの大きさは、あのかばんの半分です。
 
-くつのおおきさをしらべます。 — I check the size of the shoes.
+このかばんのおおきさは、あのかばんのはんぶんです。 — This bag is half the size of that bag.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-ookisa-02-target** · target answer · text
+**ja-ctx-wk1-simple-ookisa-02-target** · target meaning · text
 
-靴の何を調べますか。 — What property of the shoes do I check?
+あのかばんは、このかばんに比べてどうですか。 — How does that bag compare with this one?
 
-Reading: くつのなにをしらべますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 色 | いろ | color | Distractor | — |
-| 重さ | おもさ | weight | Distractor | — |
-| 値段 | ねだん | price | Distractor | — |
-| 大きさ | おおきさ | size | Correct | — |
-
-Explanation: The property being checked is the shoes’ size.
-
-**ja-ctx-wk1-simple-ookisa-02-detail** · other detail · text
-
-何の大きさを調べますか。 — What do I check the size of?
-
-Reading: なんのおおきさをしらべますか。
+Reading: あのかばんは、このかばんにくらべてどうですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 袋 | ふくろ | bag | Distractor | — |
-| 靴 | くつ | shoes | Correct | — |
-| 箱 | はこ | box | Distractor | — |
-| 傘 | かさ | umbrella | Distractor | — |
+| 同じ大きさです | おなじおおきさです | it is the same size | Distractor | — |
+| 大きさは分かりません | おおきさはわかりません | its relative size is unknown | Distractor | — |
+| 大きいです | おおきいです | it is larger | Correct | — |
+| 小さいです | ちいさいです | it is smaller | Distractor | — |
 
-Explanation: I check the shoes’ size.
+Explanation: This bag being half the other bag’s size means the other bag is the larger one.
+
+**ja-ctx-wk1-simple-ookisa-02-detail** · situation meaning · text
+
+小さい方を持って行きます。どちらを選びますか。 — I will take the smaller one. Which should I choose?
+
+Reading: ちいさいほうをもっていきます。どちらをえらびますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらのかばんでもありません | どちらのかばんでもありません | neither bag | Distractor | — |
+| このかばん | このかばん | this bag | Correct | — |
+| あのかばん | あのかばん | that bag | Distractor | — |
+| 両方のかばん | りょうほうのかばん | both bags | Distractor | — |
+
+Explanation: The this bag is half-sized and thus smaller, so the stated small-bag preference selects this bag.
 
 </details>
 
 <details><summary>79. 大きさ — ja-ctx-wk1-contrastive-ookisa-01</summary>
 
-**Sentence:** 箱の大きさを比べます。袋の重さを比べます。
+**Sentence:** 二つの箱の大きさは、赤い方が大きいです。重いのは青い方です。
 
-はこのおおきさをくらべます。ふくろのおもさをくらべます。 — I compare the sizes of the boxes. I compare the weights of the bags.
+ふたつのはこのおおきさは、あかいほうがおおきいです。おもいのはあおいほうです。 — Of the two boxes, the red one is larger in size. The blue one is greater in weight.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-ookisa-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-ookisa-01-target** · target meaning · text
 
-箱の何を比べますか。 — What property of the boxes do I compare?
+小さい方を選ぶ人は、どちらの箱を取りますか。 — Which box does someone choosing the smaller one take?
 
-Reading: はこのなにをくらべますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 色 | いろ | color | Distractor | — |
-| 重さ | おもさ | weight | Distractor | — |
-| 値段 | ねだん | price | Distractor | — |
-| 大きさ | おおきさ | size | Correct | — |
-
-Explanation: For boxes the compared property is size; for bags it is weight.
-
-**ja-ctx-wk1-contrastive-ookisa-01-detail** · other detail · text
-
-何の大きさを比べますか。 — What objects do I compare the sizes of?
-
-Reading: なんのおおきさをくらべますか。
+Reading: ちいさいほうをえらぶひとは、どちらのはこをとりますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 袋 | ふくろ | bag | Distractor | — |
-| 靴 | くつ | shoes | Distractor | — |
-| 箱 | はこ | box | Correct | — |
-| 傘 | かさ | umbrella | Distractor | — |
+| 青い箱 | あおいはこ | the blue box | Correct | — |
+| 赤い箱 | あかいはこ | the red box | Distractor | — |
+| 両方の箱 | りょうほうのはこ | both boxes | Distractor | — |
+| どちらの箱でもありません | どちらのはこでもありません | neither box | Distractor | — |
 
-Explanation: Size belongs to the boxes; weight belongs to the bags.
+Explanation: The red box is larger, so the blue box is the smaller one regardless of its greater weight.
+
+**ja-ctx-wk1-contrastive-ookisa-01-detail** · situation meaning · text
+
+青い箱より大きくて、青い箱より軽いのはどれですか。 — Which is larger than the blue box and lighter than the blue box?
+
+Reading: あおいはこよりおおきくて、あおいはこよりかるいのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 青い箱 | あおいはこ | the blue box | Distractor | — |
+| 両方の箱 | りょうほうのはこ | both boxes | Distractor | — |
+| どちらの箱でもありません | どちらのはこでもありません | neither box | Distractor | — |
+| 赤い箱 | あかいはこ | the red box | Correct | — |
+
+Explanation: Red is larger than blue, and blue is heavier than red. Therefore red is both larger and lighter than blue; no claim is made about absolute lightness.
 
 </details>
 
 <details><summary>80. 大きさ — ja-ctx-wk1-contrastive-ookisa-02</summary>
 
-**Sentence:** 靴の大きさを調べます。傘の値段を調べます。
+**Sentence:** かばんの大きさは、白が黒の半分です。値段は白と黒で同じです。
 
-くつのおおきさをしらべます。かさのねだんをしらべます。 — I check the size of the shoes. I check the price of the umbrella.
+かばんのおおきさは、しろがくろのはんぶんです。ねだんはしろとくろでおなじです。 — The white bag is half the size of the black one. White and black cost the same.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-ookisa-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-ookisa-02-target** · target meaning · text
 
-靴の何を調べますか。 — What property of the shoes do I check?
+大きい方を選びます。それはどの色ですか。 — Which color is the larger choice?
 
-Reading: くつのなにをしらべますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 色 | いろ | color | Distractor | — |
-| 重さ | おもさ | weight | Distractor | — |
-| 値段 | ねだん | price | Distractor | — |
-| 大きさ | おおきさ | size | Correct | — |
-
-Explanation: I check size for the shoes and price for the umbrella.
-
-**ja-ctx-wk1-contrastive-ookisa-02-detail** · other detail · text
-
-何の大きさを調べますか。 — What do I check the size of?
-
-Reading: なんのおおきさをしらべますか。
+Reading: おおきいほうをえらびます。それはどのいろですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 袋 | ふくろ | bag | Distractor | — |
-| 靴 | くつ | shoes | Correct | — |
-| 箱 | はこ | box | Distractor | — |
-| 傘 | かさ | umbrella | Distractor | — |
+| どちらも同じ大きさです | どちらもおなじおおきさです | both are the same size | Distractor | — |
+| どちらも大きさが分かりません | どちらもおおきさがわかりません | the size of neither is known | Distractor | — |
+| 黒です | くろです | black | Correct | — |
+| 白です | しろです | white | Distractor | — |
 
-Explanation: The shoes’ size is checked; the umbrella’s price is checked.
+Explanation: White being half black’s size makes black larger; equal price does not mean equal size.
+
+**ja-ctx-wk1-contrastive-ookisa-02-detail** · situation meaning · text
+
+大きさと払うお金の関係は、どうですか。 — How do size and the money paid compare?
+
+Reading: おおきさとはらうおかねのかんけいは、どうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 大きさもお金も違います | おおきさもおかねもちがいます | both size and amount paid differ | Distractor | — |
+| 大きさは違って、お金は変わりません | おおきさはちがって、おかねはかわりません | size differs, but the amount paid does not | Correct | — |
+| 大きさもお金も変わりません | おおきさもおかねもかわりません | neither size nor amount paid differs | Distractor | — |
+| 大きさは同じで、お金が違います | おおきさはおなじで、おかねがちがいます | size is the same, but the amount paid differs | Distractor | — |
+
+Explanation: The half-size relation gives different sizes, while the equal prices give the same payment amount.
 
 </details>
 
 <details><summary>81. 三人 — ja-ctx-wk1-simple-sannin-01</summary>
 
-**Sentence:** 学校に子どもが三人います。
+**Sentence:** 店の中に客が三人います。
 
-がっこうにこどもがさんにんいます。 — There are 3 children in the school.
+みせのなかにきゃくがさんにんいます。 — There are three customers inside the shop.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** 名 is introduced as a polite people counter: いちめい/にめい/さんめい/よんめい. The numeric quantities require meaning rather than repetition of ひとり/ふたり/さんにん.
 
-**ja-ctx-wk1-simple-sannin-01-target** · target answer · text
+**ja-ctx-wk1-simple-sannin-01-target** · target meaning · text
 
-学校には子どもが何人いますか。 — How many children are in the school?
+店に入っている客は何名ですか。 — How many customers are inside the shop?
 
-Reading: がっこうにはこどもがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Distractor | — |
-| 三人 | さんにん | three people | Correct | — |
-
-Explanation: The stated number in the school is 3.
-
-**ja-ctx-wk1-simple-sannin-01-detail** · other detail · text
-
-子どもはどこにいますか。 — Where are the children?
-
-Reading: こどもはどこにいますか。
+Reading: みせにはいっているきゃくはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 家 | いえ | home | Distractor | — |
-| 学校 | がっこう | school | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 駅 | えき | station | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Correct | — |
 
-Explanation: The sentence locates the children in the school.
+Explanation: 三人 (さんにん) means 3 people; the polite equivalent is ３名 (さんめい). 中 also establishes that this group is in the shop.
+
+**ja-ctx-wk1-simple-sannin-01-detail** · situation meaning · text
+
+客はどんな状態ですか。 — How are the customers situated?
+
+Reading: きゃくはどんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 店に入っています | みせにはいっています | They are inside the shop. | Correct | — |
+| 店の外にいます | みせのそとにいます | They are outside the shop. | Distractor | — |
+| 店へ向かっています | みせへむかっています | They are on their way to the shop. | Distractor | — |
+| 店から帰っています | みせからかえっています | They are returning from the shop. | Distractor | — |
+
+Explanation: 店の中 means inside the shop; the group is therefore contained there, not described as outside or travelling to/from it.
 
 </details>
 
 <details><summary>82. 三人 — ja-ctx-wk1-simple-sannin-02</summary>
 
-**Sentence:** 子どもが三人、公園で遊んでいます。
+**Sentence:** 空の部屋に子どもが三人入りました。
 
-こどもがさんにん、こうえんであそんでいます。 — Three children are playing in the park.
+からのへやにこどもがさんにんはいりました。 — Three children entered an empty room.
 
-**Review note:** People-count readings are さんにん and よにん. Distinguish the three playing children from the separate studying group in the contrastive version.
+**Review note:** Empty establishes that no other people are initially present. The result is limited to the immediate state after the stated three children enter.
 
-**ja-ctx-wk1-simple-sannin-02-target** · target answer · text
+**ja-ctx-wk1-simple-sannin-02-target** · target meaning · text
 
-子どもは何人で遊んでいますか。 — How many children are playing together?
+部屋に入った子どもは何名ですか。 — How many children entered the room?
 
-Reading: こどもはなんにんであそんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二人 | ふたり | two people | Distractor | — |
-| 三人 | さんにん | three people | Correct | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-
-Explanation: The playing group contains three children.
-
-**ja-ctx-wk1-simple-sannin-02-detail** · other detail · text
-
-三人の子どもはどこで遊んでいますか。 — Where are the three children playing?
-
-Reading: さんにんのこどもはどこであそんでいますか。
+Reading: へやにはいったこどもはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
-| 学校 | がっこう | school | Distractor | — |
+| ３名 | さんめい | 3 people | Correct | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Distractor | — |
 
-Explanation: The three children are playing in the park.
+Explanation: 三人 (さんにん) gives three children; the different polite people counter is ３名 (さんめい).
+
+**ja-ctx-wk1-simple-sannin-02-detail** · situation meaning · text
+
+子どもが入ったあとの部屋はどうですか。 — What is the room like just after the children enter?
+
+Reading: こどもがはいったあとのへやはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 大人だけがいます | おとなだけがいます | Only adults are there. | Distractor | — |
+| 大人と子どもがいます | おとなとこどもがいます | Both adults and children are there. | Distractor | — |
+| 誰もいません | だれもいません | Nobody is there. | Distractor | — |
+| 子どもだけがいます | こどもだけがいます | Only children are there. | Correct | — |
+
+Explanation: The room is initially empty. The only arrivals are three children, so immediately after their entry the room contains children and no adults.
 
 </details>
 
 <details><summary>83. 三人 — ja-ctx-wk1-contrastive-sannin-01</summary>
 
-**Sentence:** 学校に子どもが三人、公園に子どもが二人います。
+**Sentence:** 客が三人、店の中にいます。学生が二人、店の外にいます。
 
-がっこうにこどもがさんにん、こうえんにこどもがふたりいます。 — There are 3 children in the school. There are 2 children in the park.
+きゃくがさんにん、みせのなかにいます。がくせいがふたり、みせのそとにいます。 — 3 customers are inside the shop. 2 students are outside.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** Two groups differ in both size and position. The second answer is a relative group size, not a copied person/place noun. 名 provides a different people-count form.
 
-**ja-ctx-wk1-contrastive-sannin-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-sannin-01-target** · target meaning · text
 
-学校には子どもが何人いますか。 — How many children are in the school?
+店に入っている人は何名ですか。 — How many people are inside the shop?
 
-Reading: がっこうにはこどもがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Distractor | — |
-| 三人 | さんにん | three people | Correct | — |
-| 四人 | よにん | four people | Distractor | — |
-
-Explanation: The stated number in the school is 3.
-
-**ja-ctx-wk1-contrastive-sannin-01-detail** · other detail · text
-
-子どもが三人いるのはどこですか。 — Where are there 3 children?
-
-Reading: こどもがさんにんいるのはどこですか。
+Reading: みせにはいっているひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 家 | いえ | home | Distractor | — |
-| 学校 | がっこう | school | Correct | — |
-| 公園 | こうえん | park | Distractor | — |
-| 駅 | えき | station | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Correct | — |
 
-Explanation: The school has 3; the park has 2.
+Explanation: The inside group has 三人 (3), while the outside group has 二人 (2). Interpret 中 as inside and select ３名.
+
+**ja-ctx-wk1-contrastive-sannin-01-detail** · situation meaning · text
+
+店に入っているのは、どのグループですか。 — Which group is inside the shop?
+
+Reading: みせにはいっているのは、どのグループですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| どちらのグループでもありません | どちらのグループでもありません | Neither group. | Distractor | — |
+| 人数が多いグループです | にんずうがおおいグループです | The group with more people. | Correct | — |
+| 人数が少ないグループです | にんずうがすくないグループです | The group with fewer people. | Distractor | — |
+| 二つのグループです | ふたつのグループです | Both groups. | Distractor | — |
+
+Explanation: The inside group has 3; the outside group has 2. The inside group is therefore the one with more people.
 
 </details>
 
 <details><summary>84. 三人 — ja-ctx-wk1-contrastive-sannin-02</summary>
 
-**Sentence:** 子どもが三人、公園で遊んでいます。学生が四人、学校で勉強しています。
+**Sentence:** 子どもが三人、部屋に入りました。学生が四人、部屋から出ました。
 
-こどもがさんにん、こうえんであそんでいます。がくせいがよにん、がっこうでべんきょうしています。 — Three children are playing in the park. Four students are studying at school.
+こどもがさんにん、へやにはいりました。がくせいがよにん、へやからでました。 — Three children entered the room. Four students left it.
 
-**Review note:** People-count readings are さんにん and よにん. Distinguish the three playing children from the separate studying group in the contrastive version.
+**Review note:** The question asks where each group moves, directly after the described actions, without inventing later movement. Four choices cover all inside/outside assignments of the two named groups.
 
-**ja-ctx-wk1-contrastive-sannin-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-sannin-02-target** · target meaning · text
 
-子どもは何人で遊んでいますか。 — How many children are playing together?
+部屋の中へ移った人は何名ですか。 — How many people moved inside the room?
 
-Reading: こどもはなんにんであそんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三人 | さんにん | three people | Correct | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Distractor | — |
-
-Explanation: Three children are playing; the four students are a separate group.
-
-**ja-ctx-wk1-contrastive-sannin-02-detail** · other detail · text
-
-三人の子どもはどこで遊んでいますか。 — Where are the three children playing?
-
-Reading: さんにんのこどもはどこであそんでいますか。
+Reading: へやのなかへうつったひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 公園 | こうえん | park | Correct | — |
-| 学校 | がっこう | school | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Distractor | — |
+| ３名 | さんめい | 3 people | Correct | — |
 
-Explanation: The three children play in the park; the four students study at school.
+Explanation: The children enter, which places that 3-person group inside. The other group of 4 moves the opposite way. The requested count is ３名.
+
+**ja-ctx-wk1-contrastive-sannin-02-detail** · situation meaning · text
+
+子どもと学生は、それぞれどちらへ移りましたか。 — Where did the two groups each move?
+
+Reading: こどもとがくせいは、それぞれどちらへうつりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 子どもは外、学生は中です | こどもはそと、がくせいはなかです | The children are outside; the students are inside. | Distractor | — |
+| 子どもは中、学生は外です | こどもはなか、がくせいはそとです | The children are inside; the students are outside. | Correct | — |
+| 子どもも学生も中です | こどももがくせいもなかです | Both groups are inside. | Distractor | — |
+| 子どもも学生も外です | こどももがくせいもそとです | Both groups are outside. | Distractor | — |
+
+Explanation: 子ども enter, so they move inside; 学生 move the opposite way. Both movements must be interpreted to choose the combined resulting locations.
 
 </details>
 
 <details><summary>85. 三つ — ja-ctx-wk1-simple-mittsu-01</summary>
 
-**Sentence:** 玉が三つあります。
+**Sentence:** 机の下に玉が三つあります。
 
-たまがみっつあります。 — There are 3 balls.
+つくえのしたにたまがみっつあります。 — There are 3 balls under the desk.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-mittsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-mittsu-01-target** · target meaning · picture + text
 
-玉はいくつありますか。 — How many balls are there?
+玉は何個ありますか。 — How many balls are there?
 
-Reading: たまはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三つ | みっつ | three things | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-
-Explanation: The sentence gives 3 as the number of balls.
-
-**ja-ctx-wk1-simple-mittsu-01-detail** · other detail · text
-
-三つあるのは何ですか。 — Which item are there three of?
-
-Reading: みっつあるのはなんですか。
+Reading: たまはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| かばん | かばん | bag | Distractor | — |
-| 玉 | たま | ball | Correct | — |
-| 石 | いし | stone | Distractor | — |
-| 箱 | はこ | box | Distractor | — |
+| ３個 | さんこ | 3 items | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
 
-Explanation: The sentence gives three as the number of balls.
+Explanation: 三つ (みっつ) gives a quantity of 3; the matching 個 form is ３個 (さんこ).
+
+**ja-ctx-wk1-simple-mittsu-01-detail** · situation meaning · text
+
+机はどこにありますか。 — Where is the desk relative to the balls?
+
+Reading: つくえはどこにありますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 玉の右です | たまのみぎです | It is right the balls. | Distractor | — |
+| 玉の上です | たまのうえです | It is above; on the balls. | Correct | — |
+| 玉の下です | たまのしたです | It is under; below the balls. | Distractor | — |
+| 玉の左です | たまのひだりです | It is left the balls. | Distractor | — |
+
+Explanation: The balls are under; below the desk; reversing that relationship puts the desk above; on the balls.
 
 </details>
 
 <details><summary>86. 三つ — ja-ctx-wk1-simple-mittsu-02</summary>
 
-**Sentence:** 姉はケーキを三つ買いました。
+**Sentence:** 皿にはクッキーが三つだけありました。姉は皿の上の物を全部食べました。
 
-あねはケーキをみっつかいました。 — My older sister bought 3 cakes.
+さらにはクッキーがみっつだけありました。あねはさらのうえのものをぜんぶたべました。 — There were only 3 cookies on the plate. My older sister ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-mittsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-mittsu-02-target** · target meaning · picture + text
 
-姉はケーキをいくつ買いましたか。 — How many cakes did my older sister buy?
+姉はクッキーを何個食べましたか。 — How many cookies did my older sister eat?
 
-Reading: あねはケーキをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-
-Explanation: My older sister bought 3 cakes.
-
-**ja-ctx-wk1-simple-mittsu-02-detail** · other detail · text
-
-誰がケーキを三つ買いましたか。 — Who bought 3 cakes?
-
-Reading: だれがケーキをみっつかいましたか。
+Reading: あねはクッキーをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 姉 | あね | my older sister | Correct | — |
-| 兄 | あに | my older brother | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
 
-Explanation: The sentence attributes the purchase of 3 to my older sister.
+Explanation: The plate held 三つ (3) cookies, and my older sister ate all its food; the eaten quantity is ３個.
+
+**ja-ctx-wk1-simple-mittsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 空です | からです | It is empty. | Correct | — |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+
+Explanation: My older sister ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>87. 三つ — ja-ctx-wk1-contrastive-mittsu-01</summary>
 
-**Sentence:** 玉が三つ、石が二つあります。
+**Sentence:** 赤い箱には玉が三つ、青い箱には玉が二つ入っています。
 
-たまがみっつ、いしがふたつあります。 — There are 3 balls, and 2 stones.
+あかいはこにはたまがみっつ、あおいはこにはたまがふたつはいっています。 — The red box contains 3 balls; the blue box contains 2 balls.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-mittsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-mittsu-01-target** · target meaning · picture + text
 
-玉はいくつありますか。 — How many balls are there?
+赤い箱の中の玉は何個ありますか。 — How many balls are inside the red box?
 
-Reading: たまはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-
-Explanation: The sentence gives 3 as the number of balls.
-
-**ja-ctx-wk1-contrastive-mittsu-01-detail** · other detail · text
-
-三つあるのは何ですか。 — Which item are there three of?
-
-Reading: みっつあるのはなんですか。
+Reading: あかいはこのなかのたまはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 玉 | たま | ball | Correct | — |
-| 石 | いし | stone | Distractor | — |
-| 箱 | はこ | box | Distractor | — |
-| かばん | かばん | bag | Distractor | — |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
 
-Explanation: The sentence gives three as the number of balls.
+Explanation: The red box is paired with 三つ (3), while the blue box is paired with 二つ (2); the requested red-box quantity is ３個.
+
+**ja-ctx-wk1-contrastive-mittsu-01-detail** · situation meaning · text
+
+二つの箱の玉の数はどうですか。 — How do the two boxes compare in number of balls?
+
+Reading: ふたつのはこのたまのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Distractor | — |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Correct | — |
+
+Explanation: The red box has 3 and the blue box has 2; red therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>88. 三つ — ja-ctx-wk1-contrastive-mittsu-02</summary>
 
-**Sentence:** 姉はケーキを三つ、兄はケーキを二つ買いました。
+**Sentence:** 姉の皿にはクッキーが三つだけ、兄の皿にはクッキーが二つだけありました。姉は自分の皿の物を全部食べました。兄は何も食べませんでした。
 
-あねはケーキをみっつ、あにはケーキをふたつかいました。 — My older sister bought 3 cakes. My older brother bought 2 cakes.
+あねのさらにはクッキーがみっつだけ、あにのさらにはクッキーがふたつだけありました。あねはじぶんのさらのものをぜんぶたべました。あにはなにもたべませんでした。 — My older sister&#39;s plate had only 3 cookies; my older brother&#39;s plate had only 2. My older sister ate everything on their own plate. My older brother ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-mittsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-mittsu-02-target** · target meaning · picture + text
 
-姉はケーキをいくつ買いましたか。 — How many cakes did my older sister buy?
+姉はクッキーを何個食べましたか。 — How many cookies did my older sister eat?
 
-Reading: あねはケーキをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二つ | ふたつ | two things | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-
-Explanation: My older sister bought 3; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-mittsu-02-detail** · other detail · text
-
-誰がケーキを三つ買いましたか。 — Who bought 3 cakes?
-
-Reading: だれがケーキをみっつかいましたか。
+Reading: あねはクッキーをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 兄 | あに | my older brother | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 姉 | あね | my older sister | Correct | — |
+| ２個 | にこ | 2 items | Distractor | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Correct | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
 
-Explanation: The sentence attributes the purchase of 3 to my older sister.
+Explanation: My older sister&#39;s own plate held 三つ (3) cookies, and they ate all of it. The other plate&#39;s 2 items were not eaten; the correct amount is ３個.
+
+**ja-ctx-wk1-contrastive-mittsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+| 姉の皿だけ空です | あねのさらだけからです | Only my older sister&#39;s plate is empty. | Correct | — |
+| 兄の皿だけ空です | あにのさらだけからです | Only my older brother&#39;s plate is empty. | Distractor | — |
+
+Explanation: My older sister ate all food on their own plate, so that plate is empty. My older brother ate nothing, so their initially nonempty plate still has its food. Only my older sister&#39;s plate is empty.
 
 </details>
 
 <details><summary>89. 入る — ja-ctx-wk1-simple-hairu-01</summary>
 
-**Sentence:** 先生は教室に入ります。
+**Sentence:** 先生は教室に入りました。
 
-せんせいはきょうしつにはいります。 — The teacher enters the classroom.
+せんせいはきょうしつにはいりました。 — The teacher entered the classroom.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-hairu-01-target** · target answer · text
+**ja-ctx-wk1-simple-hairu-01-target** · target meaning · text
 
-先生はどうしますか。 — What does the teacher do?
+今、先生はどこにいますか。 — Where is the teacher now?
 
-Reading: せんせいはどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 教室に入ります | きょうしつにはいります | enters the classroom | Correct | — |
-| 教室から出ます | きょうしつからでます | leaves the classroom | Distractor | — |
-| 教室で待ちます | きょうしつでまちます | waits in the classroom | Distractor | — |
-| 教室を掃除します | きょうしつをそうじします | cleans the classroom | Distractor | — |
-
-Explanation: The teacher enters the classroom.
-
-**ja-ctx-wk1-simple-hairu-01-detail** · other detail · text
-
-先生はどこに入りますか。 — Where does the teacher enter?
-
-Reading: せんせいはどこにはいりますか。
+Reading: いま、せんせいはどこにいますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 図書館 | としょかん | library | Distractor | — |
-| 公園 | こうえん | park | Distractor | — |
-| 教室 | きょうしつ | classroom | Correct | — |
-| 店 | みせ | shop | Distractor | — |
+| 教室の中です | きょうしつのなかです | inside the classroom | Correct | — |
+| 教室の外です | きょうしつのそとです | outside the classroom | Distractor | — |
+| 教室の前です | きょうしつのまえです | in front of the classroom | Distractor | — |
+| 教室の上です | きょうしつのうえです | above the classroom | Distractor | — |
 
-Explanation: The stated destination is the classroom.
+Explanation: Entering the classroom places the teacher inside it after the action.
+
+**ja-ctx-wk1-simple-hairu-01-detail** · situation meaning · text
+
+先生の場所は、どう変わりましたか。 — How did the teacher&#39;s location change?
+
+Reading: せんせいのばしょは、どうかわりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 中から外へ動きました | なかからそとへうごきました | moved from inside to outside | Distractor | — |
+| ずっと外にいました | ずっとそとにいました | stayed outside throughout | Distractor | — |
+| 外から中へ動きました | そとからなかへうごきました | moved from outside to inside | Correct | — |
+| ずっと中にいました | ずっとなかにいました | stayed inside throughout | Distractor | — |
+
+Explanation: Entering entails an outside-to-inside transition, rather than leaving or remaining stationary.
 
 </details>
 
 <details><summary>90. 入る — ja-ctx-wk1-simple-hairu-02</summary>
 
-**Sentence:** 猫は箱に入ります。
+**Sentence:** 猫は箱に入りました。
 
-ねこははこにはいります。 — The cat goes into the box.
+ねこははこにはいりました。 — The cat went into the box.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-hairu-02-target** · target answer · text
+**ja-ctx-wk1-simple-hairu-02-target** · target meaning · text
 
-猫はどうしますか。 — What does the cat do?
+今、箱の中は空ですか。 — Is the inside of the box empty now?
 
-Reading: ねこはどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 箱の上に乗ります | はこのうえにのります | gets onto the box | Distractor | — |
-| 箱に入ります | はこにはいります | goes into the box | Correct | — |
-| 箱のそばで寝ます | はこのそばでねます | sleeps beside the box | Distractor | — |
-| 箱から出ます | はこからでます | comes out of the box | Distractor | — |
-
-Explanation: The cat moves into the box.
-
-**ja-ctx-wk1-simple-hairu-02-detail** · other detail · text
-
-何が箱に入りますか。 — What goes into the box?
-
-Reading: なにがはこにはいりますか。
+Reading: いま、はこのなかはからですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 鳥 | とり | bird | Distractor | — |
-| 猫 | ねこ | cat | Correct | — |
-| 魚 | さかな | fish | Distractor | — |
+| はい、猫は外にいます | はい、ねこはそとにいます | Yes, the cat is outside. | Distractor | — |
+| いいえ、猫が中にいます | いいえ、ねこがなかにいます | No, the cat is inside. | Correct | — |
+| はい、猫は箱の上にいます | はい、ねこははこのうえにいます | Yes, the cat is on top of the box. | Distractor | — |
+| まだ猫は動いていません | まだねこはうごいていません | The cat has not moved yet. | Distractor | — |
 
-Explanation: The cat goes into the box.
+Explanation: The cat entered the box, so the box now contains the cat and is not empty.
+
+**ja-ctx-wk1-simple-hairu-02-detail** · situation meaning · text
+
+猫は箱の外へ動きましたか。 — Did the cat move to the outside of the box?
+
+Reading: ねこははこのそとへうごきましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| はい、中から外へ動きました | はい、なかからそとへうごきました | Yes, it moved from inside to outside. | Distractor | — |
+| いいえ、ずっと中にいました | いいえ、ずっとなかにいました | No, it stayed inside throughout. | Distractor | — |
+| いいえ、箱の上に乗りました | いいえ、はこのうえにのりました | No, it got onto the box. | Distractor | — |
+| いいえ、中へ動きました | いいえ、なかへうごきました | No, it moved inside. | Correct | — |
+
+Explanation: 入った describes moving inward, not an outward, upward or stationary situation.
 
 </details>
 
 <details><summary>91. 入る — ja-ctx-wk1-contrastive-hairu-01</summary>
 
-**Sentence:** 先生は教室に入ります。学生は図書館に入ります。
+**Sentence:** 先生は教室に入りました。学生は教室から出ました。
 
-せんせいはきょうしつにはいります。がくせいはとしょかんにはいります。 — The teacher enters the classroom. The student enters the library.
+せんせいはきょうしつにはいりました。がくせいはきょうしつからでました。 — The teacher entered the classroom. The student left the classroom.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-hairu-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-hairu-01-target** · target meaning · text
 
-先生はどうしますか。 — What does the teacher do?
+今、教室の中にいるのは誰ですか。 — Who is inside the classroom now?
 
-Reading: せんせいはどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 図書館に入ります | としょかんにはいります | enters the library | Distractor | — |
-| 教室から出ます | きょうしつからでます | leaves the classroom | Distractor | — |
-| 図書館から出ます | としょかんからでます | leaves the library | Distractor | — |
-| 教室に入ります | きょうしつにはいります | enters the classroom | Correct | — |
-
-Explanation: The teacher enters the classroom; the student enters the library.
-
-**ja-ctx-wk1-contrastive-hairu-01-detail** · other detail · text
-
-図書館には誰が入りますか。 — Who enters the library?
-
-Reading: としょかんにはだれがはいりますか。
+Reading: いま、きょうしつのなかにいるのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学生 | がくせい | student | Correct | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| 学生だけです | がくせいだけです | only the student | Distractor | — |
+| 二人とも中です | ふたりともなかです | both people are inside | Distractor | — |
+| 先生だけです | せんせいだけです | only the teacher | Correct | — |
+| 二人とも外です | ふたりともそとです | both people are outside | Distractor | — |
 
-Explanation: The student, rather than the teacher, enters the library.
+Explanation: The teacher entered and is inside; the student left and is outside.
+
+**ja-ctx-wk1-contrastive-hairu-01-detail** · situation meaning · text
+
+今、先生と学生はどこにいますか。 — Where are the teacher and student now?
+
+Reading: いま、せんせいとがくせいはどこにいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 先生は中、学生は外です | せんせいはなか、がくせいはそとです | the teacher is inside and the student is outside | Correct | — |
+| 先生は外、学生は中です | せんせいはそと、がくせいはなかです | the teacher is outside and the student is inside | Distractor | — |
+| 二人とも中です | ふたりともなかです | both are inside | Distractor | — |
+| 二人とも外です | ふたりともそとです | both are outside | Distractor | — |
+
+Explanation: Bind the teacher to entering and the student to leaving to derive the pair of final positions.
 
 </details>
 
 <details><summary>92. 入る — ja-ctx-wk1-contrastive-hairu-02</summary>
 
-**Sentence:** 猫は箱に入ります。犬は部屋から出ます。
+**Sentence:** 猫は箱に入りました。犬は箱から出ました。
 
-ねこははこにはいります。いぬはへやからでます。 — The cat goes into the box. The dog leaves the room.
+ねこははこにはいりました。いぬははこからでました。 — The cat went into the box. The dog came out of the box.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-hairu-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-hairu-02-target** · target meaning · text
 
-猫はどうしますか。 — What does the cat do?
+今、箱の中にいるのはどちらですか。 — Which animal is inside the box now?
 
-Reading: ねこはどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 箱から出ます | はこからでます | comes out of the box | Distractor | — |
-| 部屋に入ります | へやにはいります | goes into the room | Distractor | — |
-| 箱に入ります | はこにはいります | goes into the box | Correct | — |
-| 部屋から出ます | へやからでます | leaves the room | Distractor | — |
-
-Explanation: The cat enters the box while the dog leaves the room.
-
-**ja-ctx-wk1-contrastive-hairu-02-detail** · other detail · text
-
-何が箱に入りますか。 — What goes into the box?
-
-Reading: なにがはこにはいりますか。
+Reading: いま、はこのなかにいるのはどちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 犬 | いぬ | dog | Distractor | — |
-| 猫 | ねこ | cat | Correct | — |
-| 鳥 | とり | bird | Distractor | — |
-| 魚 | さかな | fish | Distractor | — |
+| 犬だけです | いぬだけです | only the dog | Distractor | — |
+| 両方とも中です | りょうほうともなかです | both are inside | Distractor | — |
+| 両方とも外です | りょうほうともそとです | both are outside | Distractor | — |
+| 猫だけです | ねこだけです | only the cat | Correct | — |
 
-Explanation: Entering the box belongs to the cat, not the dog.
+Explanation: The cat entered and remains inside at the end of the situation; the dog exited.
+
+**ja-ctx-wk1-contrastive-hairu-02-detail** · situation meaning · text
+
+今、猫と犬はどこにいますか。 — Where are the cat and dog now?
+
+Reading: いま、ねこといぬはどこにいますか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 猫は外、犬は中です | ねこはそと、いぬはなかです | the cat is outside and the dog is inside | Distractor | — |
+| 猫は中、犬は外です | ねこはなか、いぬはそとです | the cat is inside and the dog is outside | Correct | — |
+| 両方とも中です | りょうほうともなかです | both are inside | Distractor | — |
+| 両方とも外です | りょうほうともそとです | both are outside | Distractor | — |
+
+Explanation: The two opposite movements entail cat-inside and dog-outside, jointly.
 
 </details>
 
 <details><summary>93. 上げる — ja-ctx-wk1-simple-ageru-01</summary>
 
-**Sentence:** 父は右手を上げます。
+**Sentence:** 父は右手を上げました。
 
-ちちはみぎてをあげます。 — My father raises his right hand.
+ちちはみぎてをあげました。 — My father raised his right hand.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-ageru-01-target** · target answer · text
+**ja-ctx-wk1-simple-ageru-01-target** · target meaning · text
 
-父は右手をどうしますか。 — What does my father do with his right hand?
+右手はどちらに動きましたか。 — Which direction did the right hand move?
 
-Reading: ちちはみぎてをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 下げます | さげます | lowers | Distractor | — |
-| 上げます | あげます | raises | Correct | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: He raises his right hand.
-
-**ja-ctx-wk1-simple-ageru-01-detail** · other detail · text
-
-父は何を上げますか。 — What does my father raise?
-
-Reading: ちちはなにをあげますか。
+Reading: みぎてはどちらにうごきましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 右手 | みぎて | right hand | Correct | — |
-| 左手 | ひだりて | left hand | Distractor | — |
-| 右足 | みぎあし | right foot | Distractor | — |
-| 左足 | ひだりあし | left foot | Distractor | — |
+| 下 | した | down | Distractor | — |
+| 上 | うえ | up | Correct | — |
+| 左 | ひだり | left | Distractor | — |
+| 右 | みぎ | right | Distractor | — |
 
-Explanation: The right hand, not another limb, is raised.
+Explanation: 父 raised the hand, which entails upward movement.
+
+**ja-ctx-wk1-simple-ageru-01-detail** · situation meaning · text
+
+今、右手の高さはどうですか。 — How is the hand&#39;s height now?
+
+Reading: いま、みぎてのたかさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 前より低いです | まえよりひくいです | It is lower than before. | Distractor | — |
+| 前と同じです | まえとおなじです | It is the same as before. | Distractor | — |
+| 前より高いです | まえよりたかいです | It is higher than before. | Correct | — |
+| 動いていません | うごいていません | It has not moved. | Distractor | — |
+
+Explanation: Raising changes that hand&#39;s height to higher than its own previous height.
 
 </details>
 
 <details><summary>94. 上げる — ja-ctx-wk1-simple-ageru-02</summary>
 
-**Sentence:** 先生は旗を上げます。
+**Sentence:** 先生は旗を上げました。
 
-せんせいははたをあげます。 — The teacher raises the flag.
+せんせいははたをあげました。 — The teacher raised the flag.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-ageru-02-target** · target answer · text
+**ja-ctx-wk1-simple-ageru-02-target** · target meaning · text
 
-先生は旗をどうしますか。 — What does the teacher do with the flag?
+旗はどちらに動きましたか。 — Which direction did the flag move?
 
-Reading: せんせいははたをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 下げます | さげます | lowers | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 上げます | あげます | raises | Correct | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: The teacher raises the flag.
-
-**ja-ctx-wk1-simple-ageru-02-detail** · other detail · text
-
-誰が旗を上げますか。 — Who raises the flag?
-
-Reading: だれがはたをあげますか。
+Reading: はたはどちらにうごきましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学生 | がくせい | student | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
-| 先生 | せんせい | teacher | Correct | — |
+| 下 | した | down | Distractor | — |
+| 左 | ひだり | left | Distractor | — |
+| 上 | うえ | up | Correct | — |
+| 右 | みぎ | right | Distractor | — |
 
-Explanation: The teacher is the person raising the flag.
+Explanation: The flag is raised, so its movement is upward.
+
+**ja-ctx-wk1-simple-ageru-02-detail** · situation meaning · text
+
+今、旗の高さはどうですか。 — How is the flag&#39;s height now?
+
+Reading: いま、はたのたかさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 前より高いです | まえよりたかいです | It is higher than before. | Correct | — |
+| 前より低いです | まえよりひくいです | It is lower than before. | Distractor | — |
+| 前と同じです | まえとおなじです | It is the same as before. | Distractor | — |
+| 動いていません | うごいていません | It has not moved. | Distractor | — |
+
+Explanation: The flag ends higher than its own earlier position.
 
 </details>
 
 <details><summary>95. 上げる — ja-ctx-wk1-contrastive-ageru-01</summary>
 
-**Sentence:** 先生は右手を上げます。学生は左手を下げます。
+**Sentence:** 先生は右手を上げました。学生は左手を下げました。
 
-せんせいはみぎてをあげます。がくせいはひだりてをさげます。 — The teacher raises their right hand. The student lowers their left hand.
+せんせいはみぎてをあげました。がくせいはひだりてをさげました。 — The teacher raised their right hand. The student lowered their left hand.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-ageru-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-ageru-01-target** · target meaning · text
 
-先生は右手をどうしますか。 — What does the teacher do with their right hand?
+前より高くなった手はどちらですか。 — Which hand became higher than before?
 
-Reading: せんせいはみぎてをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 下げます | さげます | lowers | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-| 上げます | あげます | raises | Correct | — |
-
-Explanation: The teacher raises a hand; the student lowers a hand.
-
-**ja-ctx-wk1-contrastive-ageru-01-detail** · other detail · text
-
-誰が右手を上げますか。 — Who raises their right hand?
-
-Reading: だれがみぎてをあげますか。
+Reading: まえよりたかくなったてはどちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 学生 | がくせい | student | Distractor | — |
-| 先生 | せんせい | teacher | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| 先生の右手です | せんせいのみぎてです | the teacher&#39;s right hand | Correct | — |
+| 学生の左手です | がくせいのひだりてです | the student&#39;s left hand | Distractor | — |
+| 両方の手です | りょうほうのてです | both hands | Distractor | — |
+| どちらの手でもありません | どちらのてでもありません | neither hand | Distractor | — |
 
-Explanation: The teacher is linked to raising the right hand.
+Explanation: Only the teacher&#39;s raised hand increases in height; the student&#39;s lowered hand decreases.
+
+**ja-ctx-wk1-contrastive-ageru-01-detail** · situation meaning · text
+
+二人の手の動きはどれですか。 — Which describes the two people&#39;s hand movements?
+
+Reading: ふたりのてのうごきはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 先生は下、学生は上です | せんせいはした、がくせいはうえです | the teacher moves downward and the student upward | Distractor | — |
+| 二人とも上です | ふたりともうえです | both move upward | Distractor | — |
+| 先生は上、学生は下です | せんせいはうえ、がくせいはしたです | the teacher moves upward and the student downward | Correct | — |
+| 二人とも下です | ふたりともしたです | both move downward | Distractor | — |
+
+Explanation: Bind raising to the teacher and lowering to the student, then express both as directions.
 
 </details>
 
 <details><summary>96. 上げる — ja-ctx-wk1-contrastive-ageru-02</summary>
 
-**Sentence:** 先生は赤い旗を上げます。青い旗を下げます。
+**Sentence:** 先生は赤い旗を上げました。青い旗を下げました。
 
-せんせいはあかいはたをあげます。あおいはたをさげます。 — The teacher raises the red flag. They lower the blue flag.
+せんせいはあかいはたをあげました。あおいはたをさげました。 — The teacher raised the red flag and lowered the blue flag.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-ageru-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-ageru-02-target** · target meaning · text
 
-先生は赤い旗をどうしますか。 — What does the teacher do with the red flag?
+前より高い所にあるのは、何色の旗ですか。 — Which color flag is higher than it was before?
 
-Reading: せんせいはあかいはたをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上げます | あげます | raises | Correct | — |
-| 下げます | さげます | lowers | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: The red flag is raised and the blue flag is lowered.
-
-**ja-ctx-wk1-contrastive-ageru-02-detail** · other detail · text
-
-先生は何色の旗を上げますか。 — What color flag does the teacher raise?
-
-Reading: せんせいはなにいろのはたをあげますか。
+Reading: まえよりたかいところにあるのは、なにいろのはたですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 青い旗 | あおいはた | blue flag | Distractor | — |
-| 赤い旗 | あかいはた | red flag | Correct | — |
-| 白い旗 | しろいはた | white flag | Distractor | — |
-| 緑の旗 | みどりのはた | green flag | Distractor | — |
+| 青い旗です | あおいはたです | the blue flag | Distractor | — |
+| 赤い旗です | あかいはたです | the red flag | Correct | — |
+| 両方の旗です | りょうほうのはたです | both flags | Distractor | — |
+| どちらの旗でもありません | どちらのはたでもありません | neither flag | Distractor | — |
 
-Explanation: Raising applies to the red flag.
+Explanation: The raised red flag is higher than its own earlier position; the lowered blue flag is not.
+
+**ja-ctx-wk1-contrastive-ageru-02-detail** · situation meaning · text
+
+二つの旗は同じ方向に動きましたか。 — Did the two flags move in the same direction?
+
+Reading: ふたつのはたはおなじほうこうにうごきましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、赤は下、青は上です | いいえ、あかはした、あおはうえです | No: red moved down and blue moved up. | Distractor | — |
+| はい、二つとも上です | はい、ふたつともうえです | Yes, both moved up. | Distractor | — |
+| はい、二つとも下です | はい、ふたつともしたです | Yes, both moved down. | Distractor | — |
+| いいえ、赤は上、青は下です | いいえ、あかはうえ、あおはしたです | No: red moved up and blue moved down. | Correct | — |
+
+Explanation: Raising and lowering are opposite directions, bound respectively to red and blue.
 
 </details>
 
 <details><summary>97. 下げる — ja-ctx-wk1-simple-sageru-01</summary>
 
-**Sentence:** 母は左手を下げます。
+**Sentence:** 母は左手を下げました。
 
-はははひだりてをさげます。 — My mother lowers her left hand.
+はははひだりてをさげました。 — My mother lowered her left hand.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-sageru-01-target** · target answer · text
+**ja-ctx-wk1-simple-sageru-01-target** · target meaning · text
 
-母は左手をどうしますか。 — What does my mother do with her left hand?
+左手はどちらに動きましたか。 — Which direction did the left hand move?
 
-Reading: はははひだりてをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上げます | あげます | raises | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 下げます | さげます | lowers | Correct | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: She lowers her left hand.
-
-**ja-ctx-wk1-simple-sageru-01-detail** · other detail · text
-
-母は何を下げますか。 — What does my mother lower?
-
-Reading: はははなにをさげますか。
+Reading: ひだりてはどちらにうごきましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 右手 | みぎて | right hand | Distractor | — |
-| 左手 | ひだりて | left hand | Correct | — |
-| 右足 | みぎあし | right foot | Distractor | — |
-| 左足 | ひだりあし | left foot | Distractor | — |
+| 上 | うえ | up | Distractor | — |
+| 左 | ひだり | left | Distractor | — |
+| 下 | した | down | Correct | — |
+| 右 | みぎ | right | Distractor | — |
 
-Explanation: The left hand is lowered.
+Explanation: 母 lowered the hand, which entails downward movement.
+
+**ja-ctx-wk1-simple-sageru-01-detail** · situation meaning · text
+
+今、左手の高さはどうですか。 — How is the hand&#39;s height now?
+
+Reading: いま、ひだりてのたかさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 前より高いです | まえよりたかいです | It is higher than before. | Distractor | — |
+| 前と同じです | まえとおなじです | It is the same as before. | Distractor | — |
+| 動いていません | うごいていません | It has not moved. | Distractor | — |
+| 前より低いです | まえよりひくいです | It is lower than before. | Correct | — |
+
+Explanation: Lowering changes that hand&#39;s height to lower than its own previous height.
 
 </details>
 
 <details><summary>98. 下げる — ja-ctx-wk1-simple-sageru-02</summary>
 
-**Sentence:** 学生は旗を下げます。
+**Sentence:** 学生は旗を下げました。
 
-がくせいははたをさげます。 — The student lowers the flag.
+がくせいははたをさげました。 — The student lowered the flag.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-simple-sageru-02-target** · target answer · text
+**ja-ctx-wk1-simple-sageru-02-target** · target meaning · text
 
-学生は旗をどうしますか。 — What does the student do with the flag?
+旗はどちらに動きましたか。 — Which direction did the flag move?
 
-Reading: がくせいははたをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上げます | あげます | raises | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-| 下げます | さげます | lowers | Correct | — |
-
-Explanation: The student lowers the flag.
-
-**ja-ctx-wk1-simple-sageru-02-detail** · other detail · text
-
-誰が旗を下げますか。 — Who lowers the flag?
-
-Reading: だれがはたをさげますか。
+Reading: はたはどちらにうごきましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 学生 | がくせい | student | Correct | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| 上 | うえ | up | Distractor | — |
+| 左 | ひだり | left | Distractor | — |
+| 右 | みぎ | right | Distractor | — |
+| 下 | した | down | Correct | — |
 
-Explanation: The student is the person lowering the flag.
+Explanation: The flag is lowered, so its movement is downward.
+
+**ja-ctx-wk1-simple-sageru-02-detail** · situation meaning · text
+
+今、旗の高さはどうですか。 — How is the flag&#39;s height now?
+
+Reading: いま、はたのたかさはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 前より高いです | まえよりたかいです | It is higher than before. | Distractor | — |
+| 前より低いです | まえよりひくいです | It is lower than before. | Correct | — |
+| 前と同じです | まえとおなじです | It is the same as before. | Distractor | — |
+| 動いていません | うごいていません | It has not moved. | Distractor | — |
+
+Explanation: The flag ends lower than its own earlier position.
 
 </details>
 
 <details><summary>99. 下げる — ja-ctx-wk1-contrastive-sageru-01</summary>
 
-**Sentence:** 母は左手を下げます。父は右手を上げます。
+**Sentence:** 母は左手を下げました。父は右手を上げました。
 
-はははひだりてをさげます。ちちはみぎてをあげます。 — My mother lowers her left hand. My father raises his right hand.
+はははひだりてをさげました。ちちはみぎてをあげました。 — My mother lowered her left hand. My father raised his right hand.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-sageru-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-sageru-01-target** · target meaning · text
 
-母は左手をどうしますか。 — What does my mother do with her left hand?
+前より低くなった手はどちらですか。 — Which hand became lower than before?
 
-Reading: はははひだりてをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 下げます | さげます | lowers | Correct | — |
-| 上げます | あげます | raises | Distractor | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: The mother lowers her left hand; the father raises his right hand.
-
-**ja-ctx-wk1-contrastive-sageru-01-detail** · other detail · text
-
-誰が左手を下げますか。 — Who lowers their left hand?
-
-Reading: だれがひだりてをさげますか。
+Reading: まえよりひくくなったてはどちらですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Distractor | — |
-| 学生 | がくせい | student | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Correct | — |
+| 父の右手です | ちちのみぎてです | my father&#39;s right hand | Distractor | — |
+| 両方の手です | りょうほうのてです | both hands | Distractor | — |
+| 母の左手です | ははのひだりてです | my mother&#39;s left hand | Correct | — |
+| どちらの手でもありません | どちらのてでもありません | neither hand | Distractor | — |
 
-Explanation: Lowering the left hand is the mother&#39;s action.
+Explanation: The mother&#39;s lowered hand decreases in height; the father&#39;s raised hand increases.
+
+**ja-ctx-wk1-contrastive-sageru-01-detail** · situation meaning · text
+
+二人の手の動きはどれですか。 — Which describes their hand movements?
+
+Reading: ふたりのてのうごきはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 母は下、父は上です | はははした、ちちはうえです | my mother moves downward and my father upward | Correct | — |
+| 母は上、父は下です | はははうえ、ちちはしたです | my mother moves upward and my father downward | Distractor | — |
+| 二人とも上です | ふたりともうえです | both move upward | Distractor | — |
+| 二人とも下です | ふたりともしたです | both move downward | Distractor | — |
+
+Explanation: The mother lowers and the father raises, giving opposite directional changes.
 
 </details>
 
 <details><summary>100. 下げる — ja-ctx-wk1-contrastive-sageru-02</summary>
 
-**Sentence:** 学生は青い旗を下げます。白い旗を上げます。
+**Sentence:** 学生は青い旗を下げました。白い旗を上げました。
 
-がくせいはあおいはたをさげます。しろいはたをあげます。 — The student lowers the blue flag. They raise the white flag.
+がくせいはあおいはたをさげました。しろいはたをあげました。 — The student lowered the blue flag and raised the white flag.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation. The target is recorded in its spoken inflected form; phrase answers preserve its action and arguments.
+**Review note:** Interpret the stated movement and its resulting position or relative height. Each question includes a semantic step; actor/object words recur across distractors so matching one heard noun cannot identify the answer. Comparative height means relative to that same object before its movement, not an unstated comparison of initial heights.
 
-**ja-ctx-wk1-contrastive-sageru-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-sageru-02-target** · target meaning · text
 
-学生は青い旗をどうしますか。 — What does the student do with the blue flag?
+前より低い所にあるのは、何色の旗ですか。 — Which color flag is lower than it was before?
 
-Reading: がくせいはあおいはたをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 上げます | あげます | raises | Distractor | — |
-| 下げます | さげます | lowers | Correct | — |
-| 洗います | あらいます | washes | Distractor | — |
-| 振ります | ふります | waves | Distractor | — |
-
-Explanation: The blue flag is lowered; the white flag is raised.
-
-**ja-ctx-wk1-contrastive-sageru-02-detail** · other detail · text
-
-学生は何色の旗を下げますか。 — What color flag does the student lower?
-
-Reading: がくせいはなにいろのはたをさげますか。
+Reading: まえよりひくいところにあるのは、なにいろのはたですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 青い旗 | あおいはた | blue flag | Correct | — |
-| 赤い旗 | あかいはた | red flag | Distractor | — |
-| 白い旗 | しろいはた | white flag | Distractor | — |
-| 緑の旗 | みどりのはた | green flag | Distractor | — |
+| 白い旗です | しろいはたです | the white flag | Distractor | — |
+| 両方の旗です | りょうほうのはたです | both flags | Distractor | — |
+| どちらの旗でもありません | どちらのはたでもありません | neither flag | Distractor | — |
+| 青い旗です | あおいはたです | the blue flag | Correct | — |
 
-Explanation: Lowering applies to the blue flag.
+Explanation: The blue flag is lowered, so it is lower than before; the white flag moves upward.
+
+**ja-ctx-wk1-contrastive-sageru-02-detail** · situation meaning · text
+
+二つの旗は同じ方向に動きましたか。 — Did the two flags move in the same direction?
+
+Reading: ふたつのはたはおなじほうこうにうごきましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| いいえ、青は上、白は下です | いいえ、あおはうえ、しろはしたです | No: blue moved up and white moved down. | Distractor | — |
+| いいえ、青は下、白は上です | いいえ、あおはした、しろはうえです | No: blue moved down and white moved up. | Correct | — |
+| はい、二つとも上です | はい、ふたつともうえです | Yes, both moved up. | Distractor | — |
+| はい、二つとも下です | はい、ふたつともしたです | Yes, both moved down. | Distractor | — |
+
+Explanation: Blue is lowered and white is raised, so their directions are opposite in the stated pairing.
 
 </details>
 
 <details><summary>101. 二人 — ja-ctx-wk1-simple-futari-01</summary>
 
-**Sentence:** 図書館に学生が二人います。
+**Sentence:** 教室の中に学生が二人います。
 
-としょかんにがくせいがふたりいます。 — There are 2 students in the library.
+きょうしつのなかにがくせいがふたりいます。 — There are two students inside the classroom.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** 名 is introduced as a polite people counter: いちめい/にめい/さんめい/よんめい. The numeric quantities require meaning rather than repetition of ひとり/ふたり/さんにん.
 
-**ja-ctx-wk1-simple-futari-01-target** · target answer · text
+**ja-ctx-wk1-simple-futari-01-target** · target meaning · text
 
-図書館には学生が何人いますか。 — How many students are in the library?
+教室に入っている学生は何名ですか。 — How many students are inside the classroom?
 
-Reading: としょかんにはがくせいがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三人 | さんにん | three people | Distractor | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Correct | — |
-
-Explanation: The stated number in the library is 2.
-
-**ja-ctx-wk1-simple-futari-01-detail** · other detail · text
-
-学生はどこにいますか。 — Where are the students?
-
-Reading: がくせいはどこにいますか。
+Reading: きょうしつにはいっているがくせいはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 図書館 | としょかん | library | Correct | — |
-| 教室 | きょうしつ | classroom | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Correct | — |
 
-Explanation: The sentence locates the students in the library.
+Explanation: 二人 (ふたり) means 2 people; the polite equivalent is ２名 (にめい). 中 also establishes that this group is in the classroom.
+
+**ja-ctx-wk1-simple-futari-01-detail** · situation meaning · text
+
+学生はどんな状態ですか。 — How are the students situated?
+
+Reading: がくせいはどんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 教室から帰っています | きょうしつからかえっています | They are returning from the classroom. | Distractor | — |
+| 教室に入っています | きょうしつにはいっています | They are inside the classroom. | Correct | — |
+| 教室の外にいます | きょうしつのそとにいます | They are outside the classroom. | Distractor | — |
+| 教室へ向かっています | きょうしつへむかっています | They are on their way to the classroom. | Distractor | — |
+
+Explanation: 教室の中 means inside the classroom; the group is therefore contained there, not described as outside or travelling to/from it.
 
 </details>
 
 <details><summary>102. 二人 — ja-ctx-wk1-simple-futari-02</summary>
 
-**Sentence:** 学生が二人、パンを食べています。
+**Sentence:** 部屋にいたのは学生二人だけでした。二人とも外へ出ました。
 
-がくせいがふたり、パンをたべています。 — Two students are eating bread.
+へやにいたのはがくせいふたりだけでした。ふたりともそとへでました。 — The only people in the room were two students. Both went outside.
 
-**Review note:** Two students and (in the contrastive version) three teachers are separate groups. Written choices avoid overlapping depictions of teacher/student identities.
+**Review note:** Only the two students are initially present, and both explicitly leave. The result question asks about the immediate post-exit state, not an assumed later event.
 
-**ja-ctx-wk1-simple-futari-02-target** · target answer · text
+**ja-ctx-wk1-simple-futari-02-target** · target meaning · text
 
-学生は何人いますか。 — How many students are there?
+部屋から出た学生は何名ですか。 — How many students left the room?
 
-Reading: がくせいはなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Correct | — |
-| 三人 | さんにん | three people | Distractor | — |
-| 四人 | よにん | four people | Distractor | — |
-
-Explanation: Two students are eating bread.
-
-**ja-ctx-wk1-simple-futari-02-detail** · other detail · text
-
-二人の学生は何を食べていますか。 — What are the two students eating?
-
-Reading: ふたりのがくせいはなにをたべていますか。
+Reading: へやからでたがくせいはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| りんご | りんご | apple | Distractor | — |
-| ケーキ | ケーキ | cake | Distractor | — |
-| パン | パン | bread | Correct | — |
-| ご飯 | ごはん | rice; meal | Distractor | — |
+| ２名 | にめい | 2 people | Correct | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
 
-Explanation: The sentence says the two students are eating bread.
+Explanation: The complete student group has 二人 (two), and both leave; the polite count is ２名 (にめい).
+
+**ja-ctx-wk1-simple-futari-02-detail** · situation meaning · text
+
+学生が出たあとの部屋はどうですか。 — What is the room like just after the students leave?
+
+Reading: がくせいがでたあとのへやはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 学生と先生がいます | がくせいとせんせいがいます | Both students and teachers are there. | Distractor | — |
+| 誰もいません | だれもいません | Nobody is there. | Correct | — |
+| 学生だけがいます | がくせいだけがいます | Only students are there. | Distractor | — |
+| 先生だけがいます | せんせいだけがいます | Only teachers are there. | Distractor | — |
+
+Explanation: The two students were the only people present. Both leave, so nobody remains inside immediately after that action.
 
 </details>
 
 <details><summary>103. 二人 — ja-ctx-wk1-contrastive-futari-01</summary>
 
-**Sentence:** 図書館に学生が二人、教室に学生が四人います。
+**Sentence:** 学生が二人、教室の中にいます。先生が三人、教室の外にいます。
 
-としょかんにがくせいがふたり、きょうしつにがくせいがよにんいます。 — There are 2 students in the library. There are 4 students in the classroom.
+がくせいがふたり、きょうしつのなかにいます。せんせいがさんにん、きょうしつのそとにいます。 — 2 students are inside the classroom. 3 teachers are outside.
 
-**Review note:** People are counted with 人; 一人 and 二人 use the irregular readings ひとり and ふたり. Written choices only: no unreviewed people-count pictures are assumed.
+**Review note:** Two groups differ in both size and position. The second answer is a relative group size, not a copied person/place noun. 名 provides a different people-count form.
 
-**ja-ctx-wk1-contrastive-futari-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-futari-01-target** · target meaning · text
 
-図書館には学生が何人いますか。 — How many students are in the library?
+教室に入っている人は何名ですか。 — How many people are inside the classroom?
 
-Reading: としょかんにはがくせいがなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-| 二人 | ふたり | two people | Correct | — |
-| 三人 | さんにん | three people | Distractor | — |
-
-Explanation: The stated number in the library is 2.
-
-**ja-ctx-wk1-contrastive-futari-01-detail** · other detail · text
-
-学生が二人いるのはどこですか。 — Where are there 2 students?
-
-Reading: がくせいがふたりいるのはどこですか。
+Reading: きょうしつにはいっているひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 駅 | えき | station | Distractor | — |
-| 家 | いえ | home | Distractor | — |
-| 図書館 | としょかん | library | Correct | — |
-| 教室 | きょうしつ | classroom | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Correct | — |
+| ３名 | さんめい | 3 people | Distractor | — |
 
-Explanation: The library has 2; the classroom has 4.
+Explanation: The inside group has 二人 (2), while the outside group has 三人 (3). Interpret 中 as inside and select ２名.
+
+**ja-ctx-wk1-contrastive-futari-01-detail** · situation meaning · text
+
+教室に入っているのは、どのグループですか。 — Which group is inside the classroom?
+
+Reading: きょうしつにはいっているのは、どのグループですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二つのグループです | ふたつのグループです | Both groups. | Distractor | — |
+| どちらのグループでもありません | どちらのグループでもありません | Neither group. | Distractor | — |
+| 人数が多いグループです | にんずうがおおいグループです | The group with more people. | Distractor | — |
+| 人数が少ないグループです | にんずうがすくないグループです | The group with fewer people. | Correct | — |
+
+Explanation: The inside group has 2; the outside group has 3. The inside group is therefore the one with fewer people.
 
 </details>
 
 <details><summary>104. 二人 — ja-ctx-wk1-contrastive-futari-02</summary>
 
-**Sentence:** 学生が二人、パンを食べています。先生が三人、ご飯を食べています。
+**Sentence:** 学生が二人、部屋から出ました。先生が三人、部屋に入りました。
 
-がくせいがふたり、パンをたべています。せんせいがさんにん、ごはんをたべています。 — Two students are eating bread. Three teachers are eating rice.
+がくせいがふたり、へやからでました。せんせいがさんにん、へやにはいりました。 — Two students left the room. Three teachers entered it.
 
-**Review note:** Two students and (in the contrastive version) three teachers are separate groups. Written choices avoid overlapping depictions of teacher/student identities.
+**Review note:** The question asks where each group moves, directly after the described actions, without inventing later movement. Four choices cover all inside/outside assignments of the two named groups.
 
-**ja-ctx-wk1-contrastive-futari-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-futari-02-target** · target meaning · text
 
-学生は何人いますか。 — How many students are there?
+部屋の外へ移った人は何名ですか。 — How many people moved outside the room?
 
-Reading: がくせいはなんにんいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二人 | ふたり | two people | Correct | — |
-| 三人 | さんにん | three people | Distractor | — |
-| 四人 | よにん | four people | Distractor | — |
-| 一人 | ひとり | one person | Distractor | — |
-
-Explanation: There are two students; the teachers in the contrastive version are a separate group.
-
-**ja-ctx-wk1-contrastive-futari-02-detail** · other detail · text
-
-二人の学生は何を食べていますか。 — What are the two students eating?
-
-Reading: ふたりのがくせいはなにをたべていますか。
+Reading: へやのそとへうつったひとはなんめいですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| りんご | りんご | apple | Distractor | — |
-| ケーキ | ケーキ | cake | Distractor | — |
-| パン | パン | bread | Correct | — |
-| ご飯 | ごはん | rice; meal | Distractor | — |
+| ３名 | さんめい | 3 people | Distractor | — |
+| ４名 | よんめい | 4 people | Distractor | — |
+| １名 | いちめい | 1 person | Distractor | — |
+| ２名 | にめい | 2 people | Correct | — |
 
-Explanation: The students are eating bread; the teachers in the contrastive version eat rice.
+Explanation: The students leave, which places that 2-person group outside. The other group of 3 moves the opposite way. The requested count is ２名.
+
+**ja-ctx-wk1-contrastive-futari-02-detail** · situation meaning · text
+
+学生と先生は、それぞれどちらへ移りましたか。 — Where did the two groups each move?
+
+Reading: がくせいとせんせいは、それぞれどちらへうつりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 学生も先生も外です | がくせいもせんせいもそとです | Both groups are outside. | Distractor | — |
+| 学生は外、先生は中です | がくせいはそと、せんせいはなかです | The students are outside; the teachers are inside. | Correct | — |
+| 学生は中、先生は外です | がくせいはなか、せんせいはそとです | The students are inside; the teachers are outside. | Distractor | — |
+| 学生も先生も中です | がくせいもせんせいもなかです | Both groups are inside. | Distractor | — |
+
+Explanation: 学生 exit, so they move outside; 先生 move the opposite way. Both movements must be interpreted to choose the combined resulting locations.
 
 </details>
 
 <details><summary>105. 二つ — ja-ctx-wk1-simple-futatsu-01</summary>
 
-**Sentence:** みかんが二つあります。
+**Sentence:** かごの中にみかんが二つあります。
 
-みかんがふたつあります。 — There are 2 mandarin oranges.
+かごのなかにみかんがふたつあります。 — There are 2 mandarin oranges inside the basket.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object.
 
-**ja-ctx-wk1-simple-futatsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-simple-futatsu-01-target** · target meaning · picture + text
 
-みかんはいくつありますか。 — How many mandarin oranges are there?
+みかんは何個ありますか。 — How many mandarin oranges are there?
 
-Reading: みかんはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 二つ | ふたつ | two things | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-
-Explanation: The sentence gives 2 as the number of mandarin oranges.
-
-**ja-ctx-wk1-simple-futatsu-01-detail** · other detail · text
-
-二つあるのは何ですか。 — Which item are there two of?
-
-Reading: ふたつあるのはなんですか。
+Reading: みかんはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 卵 | たまご | egg | Distractor | — |
-| パン | パン | bread | Distractor | — |
-| みかん | みかん | mandarin orange | Correct | — |
-| りんご | りんご | apple | Distractor | — |
+| ２個 | にこ | 2 items | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
 
-Explanation: The sentence gives two as the number of mandarin oranges.
+Explanation: 二つ (ふたつ) gives a quantity of 2; the matching 個 form is ２個 (にこ).
+
+**ja-ctx-wk1-simple-futatsu-01-detail** · situation meaning · text
+
+みかんはどんな状態ですか。 — How are the mandarin oranges situated?
+
+Reading: みかんはどんなじょうたいですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| かごの上にあります | かごのうえにあります | They are on top of the basket. | Distractor | — |
+| かごの下にあります | かごのしたにあります | They are under the basket. | Distractor | — |
+| かごに入っています | かごにはいっています | They are contained in the basket. | Correct | — |
+| かごの外にあります | かごのそとにあります | They are outside the basket. | Distractor | — |
+
+Explanation: かごの中 means that the mandarin oranges are contained inside the basket; therefore かごに入っています is true.
 
 </details>
 
 <details><summary>106. 二つ — ja-ctx-wk1-simple-futatsu-02</summary>
 
-**Sentence:** 父はパンを二つ買いました。
+**Sentence:** 皿にはみかんが二つだけありました。父は皿の上の物を全部食べました。
 
-ちちはパンをふたつかいました。 — My father bought 2 bread rolls.
+さらにはみかんがふたつだけありました。ちちはさらのうえのものをぜんぶたべました。 — There were only 2 mandarin oranges on the plate. My father ate everything on the plate.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The second sentence explicitly says that all items on the plate were eaten, so the empty-plate conclusion does not assume an unstated intention or a later action. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-simple-futatsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-simple-futatsu-02-target** · target meaning · picture + text
 
-父はパンをいくつ買いましたか。 — How many bread rolls did my father buy?
+父はみかんを何個食べましたか。 — How many mandarin oranges did my father eat?
 
-Reading: ちちはパンをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-
-Explanation: My father bought 2 bread rolls.
-
-**ja-ctx-wk1-simple-futatsu-02-detail** · other detail · text
-
-誰がパンを二つ買いましたか。 — Who bought 2 bread rolls?
-
-Reading: だれがパンをふたつかいましたか。
+Reading: ちちはみかんをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 友達 | ともだち | friend | Distractor | — |
-| 父 | ちち | my father | Correct | — |
-| 母 | はは | my mother | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
 
-Explanation: The sentence attributes the purchase of 2 to my father.
+Explanation: The plate held 二つ (2) mandarin oranges, and my father ate all its food; the eaten quantity is ２個.
+
+**ja-ctx-wk1-simple-futatsu-02-detail** · situation meaning · text
+
+食べたあとの皿はどうですか。 — What is the plate like after the food is eaten?
+
+Reading: たべたあとのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 食べ物が増えています | たべものがふえています | There is more food than before. | Distractor | — |
+| 空です | からです | It is empty. | Correct | — |
+| 食べ物が少し残っています | たべものがすこしのこっています | Some food remains. | Distractor | — |
+| 食べ物が全部残っています | たべものがぜんぶのこっています | All the food remains. | Distractor | — |
+
+Explanation: My father ate everything on the plate. With no food left after that completed action, the plate is empty.
 
 </details>
 
 <details><summary>107. 二つ — ja-ctx-wk1-contrastive-futatsu-01</summary>
 
-**Sentence:** みかんが二つ、りんごが三つあります。
+**Sentence:** 赤い箱にはみかんが二つ、青い箱にはみかんが四つ入っています。
 
-みかんがふたつ、りんごがみっつあります。 — There are 2 mandarin oranges, and 3 apples.
+あかいはこにはみかんがふたつ、あおいはこにはみかんがよっつはいっています。 — The red box contains 2 mandarin oranges; the blue box contains 4 mandarin oranges.
 
-**Review note:** The general ～つ counter refers to objects, not age. Quantity pictures use generic blocks and require concept transfer to the named object; they do not depict the sentence literally. Different object counts require binding each quantity to its object.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. The comparison uses only the two stated quantities; it does not introduce an unrelated calculation.
 
-**ja-ctx-wk1-contrastive-futatsu-01-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-futatsu-01-target** · target meaning · picture + text
 
-みかんはいくつありますか。 — How many mandarin oranges are there?
+赤い箱の中のみかんは何個ありますか。 — How many mandarin oranges are inside the red box?
 
-Reading: みかんはいくつありますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-
-Explanation: The sentence gives 2 as the number of mandarin oranges.
-
-**ja-ctx-wk1-contrastive-futatsu-01-detail** · other detail · text
-
-二つあるのは何ですか。 — Which item are there two of?
-
-Reading: ふたつあるのはなんですか。
+Reading: あかいはこのなかのみかんはなんこありますか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| パン | パン | bread | Distractor | — |
-| みかん | みかん | mandarin orange | Correct | — |
-| りんご | りんご | apple | Distractor | — |
-| 卵 | たまご | egg | Distractor | — |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
 
-Explanation: The sentence gives two as the number of mandarin oranges.
+Explanation: The red box is paired with 二つ (2), while the blue box is paired with 四つ (4); the requested red-box quantity is ２個.
+
+**ja-ctx-wk1-contrastive-futatsu-01-detail** · situation meaning · text
+
+二つの箱のみかんの数はどうですか。 — How do the two boxes compare in number of mandarin oranges?
+
+Reading: ふたつのはこのみかんのかずはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 赤い箱のほうが多いです | あかいはこのほうがおおいです | The red box has more. | Distractor | — |
+| 青い箱のほうが多いです | あおいはこのほうがおおいです | The blue box has more. | Correct | — |
+| 同じ数です | おなじかずです | The quantities are equal. | Distractor | — |
+| どちらも空です | どちらもからです | Both are empty. | Distractor | — |
+
+Explanation: The red box has 2 and the blue box has 4; blue therefore has more. Both quantities must be understood and attached to the correct box.
 
 </details>
 
 <details><summary>108. 二つ — ja-ctx-wk1-contrastive-futatsu-02</summary>
 
-**Sentence:** 父はパンを二つ、母はパンを四つ買いました。
+**Sentence:** 父の皿にはみかんが二つだけ、母の皿にはみかんが四つだけありました。父は自分の皿の物を全部食べました。母は何も食べませんでした。
 
-ちちはパンをふたつ、はははパンをよっつかいました。 — My father bought 2 bread rolls. My mother bought 4 bread rolls.
+ちちのさらにはみかんがふたつだけ、ははのさらにはみかんがよっつだけありました。ちちはじぶんのさらのものをぜんぶたべました。はははなにもたべませんでした。 — My father&#39;s plate had only 2 mandarin oranges; my mother&#39;s plate had only 4. My father ate everything on their own plate. My mother ate nothing.
 
-**Review note:** The general ～つ counter counts purchased objects. Family terms refer to the speaker&#39;s own family. Quantity pictures are generic counts, not literal depictions of the purchased item. The two people buy different quantities of the same item; both identity and quantity matter.
+**Review note:** Meaning-first questions convert the irregular spoken ～つ count to numeric 個 choices. Quantity pictures show the corresponding number of generic blocks; the objects are not literal scene depictions. The second question interprets a relationship or consequence rather than extracting a named object. Own-plate reference is explicit. The other person explicitly eats nothing; later actions or intentions are not inferred. Initial contents are explicitly limited with だけ; all items on the relevant plate are then eaten.
 
-**ja-ctx-wk1-contrastive-futatsu-02-target** · target answer · picture + text
+**ja-ctx-wk1-contrastive-futatsu-02-target** · target meaning · picture + text
 
-父はパンをいくつ買いましたか。 — How many bread rolls did my father buy?
+父はみかんを何個食べましたか。 — How many mandarin oranges did my father eat?
 
-Reading: ちちはパンをいくつかいましたか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 一つ | ひとつ | one thing | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
-| 二つ | ふたつ | two things | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
-| 三つ | みっつ | three things | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
-| 四つ | よっつ | four things | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
-
-Explanation: My father bought 2; the other person&#39;s quantity is irrelevant.
-
-**ja-ctx-wk1-contrastive-futatsu-02-detail** · other detail · text
-
-誰がパンを二つ買いましたか。 — Who bought 2 bread rolls?
-
-Reading: だれがパンをふたつかいましたか。
+Reading: ちちはみかんをなんこたべましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Correct | — |
-| 母 | はは | my mother | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 友達 | ともだち | friend | Distractor | — |
+| １個 | いっこ | 1 item | Distractor | <img width="96" alt="One golden toy cube." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-277587e6fa07-00b52c3d3312.png"> |
+| ２個 | にこ | 2 items | Correct | <img width="96" alt="2 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-bb85f028d944-fe528894b970.png"> |
+| ３個 | さんこ | 3 items | Distractor | <img width="96" alt="3 colored toy cubes." src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-8b887bc8af0c-10f5e376dbf7.png"> |
+| ４個 | よんこ | 4 items | Distractor | <img width="96" alt="Four separate colorful toy cubes" src="https://raw.githubusercontent.com/ajhconway/kikimashta/codex/contextual-pack1-183/public/images/approved/ja-v-947395f42397-e709a52773bc.jpg"> |
 
-Explanation: The sentence attributes the purchase of 2 to my father.
+Explanation: My father&#39;s own plate held 二つ (2) mandarin oranges, and they ate all of it. The other plate&#39;s 4 items were not eaten; the correct amount is ２個.
+
+**ja-ctx-wk1-contrastive-futatsu-02-detail** · situation meaning · text
+
+食べたあとの二つの皿はどうですか。 — What are the two plates like after the eating?
+
+Reading: たべたあとのふたつのさらはどうですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 母の皿だけ空です | ははのさらだけからです | Only my mother&#39;s plate is empty. | Distractor | — |
+| 両方の皿が空です | りょうほうのさらがからです | Both plates are empty. | Distractor | — |
+| どちらの皿も空ではありません | どちらのさらもからではありません | Neither plate is empty. | Distractor | — |
+| 父の皿だけ空です | ちちのさらだけからです | Only my father&#39;s plate is empty. | Correct | — |
+
+Explanation: My father ate all food on their own plate, so that plate is empty. My mother ate nothing, so their initially nonempty plate still has its food. Only my father&#39;s plate is empty.
 
 </details>
 
 <details><summary>109. 力いっぱい — ja-ctx-wk1-simple-chikaraippai-01</summary>
 
-**Sentence:** 父は力いっぱいドアを押します。
+**Sentence:** 父は力いっぱいドアを押しました。
 
-ちちはちからいっぱいドアをおします。 — My father pushes the door with all his strength.
+ちちはちからいっぱいドアをおしました。 — My father pushed the door with all his strength.
 
-**Review note:** Effort and pushing/pulling distinguish the options. Speed is not used as a distractor, because slow movement can still involve full strength.
+**Review note:** Full strength is relative to the person&#39;s available strength. Do not infer an opened door, moved object, exceptional absolute power, tiredness or injury.
 
-**ja-ctx-wk1-simple-chikaraippai-01-target** · target answer · text
+**ja-ctx-wk1-simple-chikaraippai-01-target** · target meaning · text
 
-父はドアをどうしますか。 — What does my father do with the door?
+父はどのくらい力を使いましたか。 — How much of his strength did my father use?
 
-Reading: ちちはドアをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 力いっぱい押します | ちからいっぱいおします | pushes with all their strength | Correct | — |
-| 軽く押します | かるくおします | pushes lightly | Distractor | — |
-| 力いっぱい引きます | ちからいっぱいひきます | pulls with all their strength | Distractor | — |
-| 軽く引きます | かるくひきます | pulls lightly | Distractor | — |
-
-Explanation: Both pushing and using all his strength are explicitly stated.
-
-**ja-ctx-wk1-simple-chikaraippai-01-detail** · other detail · text
-
-父は何を力いっぱい押しますか。 — What does my father push with all his strength?
-
-Reading: ちちはなにをちからいっぱいおしますか。
+Reading: ちちはどのくらいちからをつかいましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 机 | つくえ | desk | Distractor | — |
-| 椅子 | いす | chair | Distractor | — |
-| ドア | ドア | door | Correct | — |
-| 箱 | はこ | box | Distractor | — |
+| 力を全部使いました | ちからをぜんぶつかいました | used all their strength | Correct | — |
+| 力を少しだけ使いました | ちからをすこしだけつかいました | used only a little strength | Distractor | — |
+| 力を使いませんでした | ちからをつかいませんでした | used no strength | Distractor | — |
+| まだ押していません | まだおしていません | has not pushed yet | Distractor | — |
 
-Explanation: The door is the object he pushes with all his strength.
+Explanation: 力いっぱい means the father used his full available strength, rather than a small amount or none.
+
+**ja-ctx-wk1-simple-chikaraippai-01-detail** · situation meaning · text
+
+父は軽く押しましたか。 — Did my father push gently?
+
+Reading: ちちはかるくおしましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| はい、少しの力で押しました | はい、すこしのちからでおしました | Yes, he pushed with a little strength. | Distractor | — |
+| いいえ、ドアを引きました | いいえ、ドアをひきました | No, he pulled the door. | Distractor | — |
+| いいえ、全部の力で押しました | いいえ、ぜんぶのちからでおしました | No, he pushed with all his strength. | Correct | — |
+| まだ押していません | まだおしていません | He has not pushed yet. | Distractor | — |
+
+Explanation: The stated action is a full-effort push, so a gentle push, a pull and no completed push do not describe it.
 
 </details>
 
 <details><summary>110. 力いっぱい — ja-ctx-wk1-simple-chikaraippai-02</summary>
 
-**Sentence:** 学生は力いっぱいロープを引きます。
+**Sentence:** 学生は力いっぱいロープを引きました。
 
-がくせいはちからいっぱいロープをひきます。 — The student pulls the rope with all their strength.
+がくせいはちからいっぱいロープをひきました。 — The student pulled the rope with all their strength.
 
-**Review note:** The options cross effort with pulling/pushing, giving four distinct actions.
+**Review note:** Only action and effort are asserted. The rope is not assumed to move, break, win a contest or cause exhaustion.
 
-**ja-ctx-wk1-simple-chikaraippai-02-target** · target answer · text
+**ja-ctx-wk1-simple-chikaraippai-02-target** · target meaning · text
 
-学生はロープをどうしますか。 — What does the student do with the rope?
+学生はどのくらい力を使いましたか。 — How much of their strength did the student use?
 
-Reading: がくせいはロープをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 軽く引きます | かるくひきます | pulls lightly | Distractor | — |
-| 力いっぱい引きます | ちからいっぱいひきます | pulls with all their strength | Correct | — |
-| 力いっぱい押します | ちからいっぱいおします | pushes with all their strength | Distractor | — |
-| 軽く押します | かるくおします | pushes lightly | Distractor | — |
-
-Explanation: The student pulls using all their strength.
-
-**ja-ctx-wk1-simple-chikaraippai-02-detail** · other detail · text
-
-誰が力いっぱいロープを引きますか。 — Who pulls the rope with all their strength?
-
-Reading: だれがちからいっぱいロープをひきますか。
+Reading: がくせいはどのくらいちからをつかいましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 父 | ちち | my father | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 学生 | がくせい | student | Correct | — |
-| 母 | はは | my mother | Distractor | — |
+| 力を少しだけ使いました | ちからをすこしだけつかいました | used only a little strength | Distractor | — |
+| 力を全部使いました | ちからをぜんぶつかいました | used all their strength | Correct | — |
+| 力を使いませんでした | ちからをつかいませんでした | used no strength | Distractor | — |
+| まだ引いていません | まだひいていません | has not pulled yet | Distractor | — |
 
-Explanation: The student is the person pulling with full effort.
+Explanation: The student uses all their strength in pulling, not a little strength or none.
+
+**ja-ctx-wk1-simple-chikaraippai-02-detail** · situation meaning · text
+
+学生は軽く引きましたか。 — Did the student pull gently?
+
+Reading: がくせいはかるくひきましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| はい、少しの力で引きました | はい、すこしのちからでひきました | Yes, the student pulled with a little strength. | Distractor | — |
+| いいえ、ロープを押しました | いいえ、ロープをおしました | No, the student pushed the rope. | Distractor | — |
+| まだ引いていません | まだひいていません | The student has not pulled yet. | Distractor | — |
+| いいえ、全部の力で引きました | いいえ、ぜんぶのちからでひきました | No, the student pulled with all their strength. | Correct | — |
+
+Explanation: A full-strength pull is contrasted with a gentle pull, pushing and no pull yet.
 
 </details>
 
 <details><summary>111. 力いっぱい — ja-ctx-wk1-contrastive-chikaraippai-01</summary>
 
-**Sentence:** 父は力いっぱいドアを押します。母は軽くドアを押します。
+**Sentence:** 父は力いっぱいドアを押しました。母は軽くドアを押しました。
 
-ちちはちからいっぱいドアをおします。はははかるくドアをおします。 — My father pushes the door with all his strength. My mother pushes it lightly.
+ちちはちからいっぱいドアをおしました。はははかるくドアをおしました。 — My father pushed the door with all his strength. My mother pushed it gently.
 
-**Review note:** Both people push a door. The amount of effort is the decisive distinction.
+**Review note:** Compare the effort descriptions rather than assuming equal physical capacities or a known force measured in newtons.
 
-**ja-ctx-wk1-contrastive-chikaraippai-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-chikaraippai-01-target** · target meaning · text
 
-父はドアをどうしますか。 — What does my father do with the door?
+二人とも、力を全部使いましたか。 — Did both people use all their own strength?
 
-Reading: ちちはドアをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 軽く押します | かるくおします | pushes lightly | Distractor | — |
-| 力いっぱい引きます | ちからいっぱいひきます | pulls with all their strength | Distractor | — |
-| 力いっぱい押します | ちからいっぱいおします | pushes with all their strength | Correct | — |
-| 軽く引きます | かるくひきます | pulls lightly | Distractor | — |
-
-Explanation: The father pushes with all his strength; the mother pushes lightly.
-
-**ja-ctx-wk1-contrastive-chikaraippai-01-detail** · other detail · text
-
-誰が力いっぱいドアを押しますか。 — Who pushes the door with all their strength?
-
-Reading: だれがちからいっぱいドアをおしますか。
+Reading: ふたりとも、ちからをぜんぶつかいましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 母 | はは | my mother | Distractor | — |
-| 先生 | せんせい | teacher | Distractor | — |
-| 学生 | がくせい | student | Distractor | — |
-| 父 | ちち | my father | Correct | — |
+| いいえ、父は少しの力、母は全部の力です | いいえ、ちちはすこしのちから、はははぜんぶのちからです | No: my father used a little strength and my mother all her strength. | Distractor | — |
+| はい、二人とも全部の力です | はい、ふたりともぜんぶのちからです | Yes, both used all their strength. | Distractor | — |
+| いいえ、父は全部の力、母は少しの力です | いいえ、ちちはぜんぶのちから、はははすこしのちからです | No: my father used all his strength and my mother a little strength. | Correct | — |
+| いいえ、二人とも少しの力です | いいえ、ふたりともすこしのちからです | No, both used a little strength. | Distractor | — |
 
-Explanation: Full effort belongs to the father, not the mother.
+Explanation: The father pushes at full effort while the mother pushes gently, so their described effort levels differ in the stated pairing.
+
+**ja-ctx-wk1-contrastive-chikaraippai-01-detail** · situation meaning · text
+
+全部の力を使ったのは誰ですか。 — Who used all their strength?
+
+Reading: ぜんぶのちからをつかったのはだれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 父だけです | ちちだけです | only my father | Correct | — |
+| 母だけです | ははだけです | only my mother | Distractor | — |
+| 二人ともです | ふたりともです | both people | Distractor | — |
+| 誰も使っていません | だれもつかっていません | neither person used it | Distractor | — |
+
+Explanation: Full effort belongs to the father; the mother&#39;s effort is described as gentle.
 
 </details>
 
 <details><summary>112. 力いっぱい — ja-ctx-wk1-contrastive-chikaraippai-02</summary>
 
-**Sentence:** 先生は力いっぱいロープを引きます。学生は軽くロープを引きます。
+**Sentence:** 先生は力いっぱいロープを引きました。学生は軽くロープを引きました。
 
-せんせいはちからいっぱいロープをひきます。がくせいはかるくロープをひきます。 — The teacher pulls the rope with all their strength. The student pulls it lightly.
+せんせいはちからいっぱいロープをひきました。がくせいはかるくロープをひきました。 — The teacher pulled the rope with all their strength. The student pulled it gently.
 
-**Review note:** The shared pulling action requires distinguishing the people by effort.
+**Review note:** A shared object and action remove item-matching shortcuts. No result of the pulling is assumed.
 
-**ja-ctx-wk1-contrastive-chikaraippai-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-chikaraippai-02-target** · target meaning · text
 
-先生はロープをどうしますか。 — What does the teacher do with the rope?
+二人とも、力を全部使いましたか。 — Did both people use all their own strength?
 
-Reading: せんせいはロープをどうしますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 軽く引きます | かるくひきます | pulls lightly | Distractor | — |
-| 力いっぱい押します | ちからいっぱいおします | pushes with all their strength | Distractor | — |
-| 軽く押します | かるくおします | pushes lightly | Distractor | — |
-| 力いっぱい引きます | ちからいっぱいひきます | pulls with all their strength | Correct | — |
-
-Explanation: The teacher pulls with all their strength; the student pulls lightly.
-
-**ja-ctx-wk1-contrastive-chikaraippai-02-detail** · other detail · text
-
-誰が力いっぱいロープを引きますか。 — Who pulls the rope with all their strength?
-
-Reading: だれがちからいっぱいロープをひきますか。
+Reading: ふたりとも、ちからをぜんぶつかいましたか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 先生 | せんせい | teacher | Correct | — |
-| 学生 | がくせい | student | Distractor | — |
-| 父 | ちち | my father | Distractor | — |
-| 母 | はは | my mother | Distractor | — |
+| いいえ、先生は少しの力、学生は全部の力です | いいえ、せんせいはすこしのちから、がくせいはぜんぶのちからです | No: the teacher used a little strength and the student all their strength. | Distractor | — |
+| はい、二人とも全部の力です | はい、ふたりともぜんぶのちからです | Yes, both used all their strength. | Distractor | — |
+| いいえ、二人とも少しの力です | いいえ、ふたりともすこしのちからです | No, both used a little strength. | Distractor | — |
+| いいえ、先生は全部の力、学生は少しの力です | いいえ、せんせいはぜんぶのちから、がくせいはすこしのちからです | No: the teacher used all their strength and the student a little strength. | Correct | — |
 
-Explanation: The teacher, rather than the student, uses full effort.
+Explanation: Both pull, but the teacher uses full effort while the student pulls gently.
+
+**ja-ctx-wk1-contrastive-chikaraippai-02-detail** · situation meaning · text
+
+自分の力を全部使ったのは誰ですか。 — Who used all their own strength?
+
+Reading: じぶんのちからをぜんぶつかったのはだれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 学生だけです | がくせいだけです | only the student | Distractor | — |
+| 先生だけです | せんせいだけです | only the teacher | Correct | — |
+| 二人ともです | ふたりともです | both people | Distractor | — |
+| 誰も使っていません | だれもつかっていません | neither person used it | Distractor | — |
+
+Explanation: The teacher&#39;s 力いっぱい means using all their own available strength, unlike the student&#39;s gentle pull.
 
 </details>
 
 <details><summary>113. 女 — ja-ctx-wk1-simple-onna-01</summary>
 
-**Sentence:** 公園に女の人がいます。
+**Sentence:** こちらから見て、女の人の右に男の人がいます。
 
-こうえんにおんなのひとがいます。 — There is a woman in the park.
+こちらからみて、おんなのひとのみぎにおとこのひとがいます。 — From our viewpoint, a man is to the right of a woman.
 
-**Review note:** Use the natural neutral expression 女の人. Choices distinguish adult men/women and boys/girls, avoiding generic 人/大人 overlap.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-onna-01-target** · target answer · text
+**ja-ctx-wk1-simple-onna-01-target** · target meaning · text
 
-公園には誰がいますか。 — Who is in the park?
+同じ向きから見て、左にいるのは誰ですか。 — From that same viewpoint, who is on the left?
 
-Reading: こうえんにはだれがいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 男の人 | おとこのひと | adult man | Distractor | — |
-| 女の子 | おんなのこ | girl | Distractor | — |
-| 女の人 | おんなのひと | adult woman | Correct | — |
-| 男の子 | おとこのこ | boy | Distractor | — |
-
-Explanation: The person mentioned is an adult woman.
-
-**ja-ctx-wk1-simple-onna-01-detail** · other detail · text
-
-女の人はどこにいますか。 — Where is the woman?
-
-Reading: おんなのひとはどこにいますか。
+Reading: おなじむきからみて、ひだりにいるのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 公園 | こうえん | park | Correct | — |
-| 駅 | えき | station | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
-| 学校 | がっこう | school | Distractor | — |
+| 女の人 | おんなのひと | the woman | Correct | — |
+| 男の人 | おとこのひと | the man | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
 
-Explanation: The woman is in the park.
+Explanation: The man is to the woman’s right, so the woman is the person on the left.
+
+**ja-ctx-wk1-simple-onna-01-detail** · situation meaning · text
+
+二人の位置を正しく言っているのはどれですか。 — Which description of their positions is correct?
+
+Reading: ふたりのいちをただしくいっているのはどれですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 女の人が右、男の人が左 | おんなのひとがみぎ、おとこのひとがひだり | woman right, man left | Distractor | — |
+| 二人とも同じ位置 | ふたりともおなじいち | both in the same position | Distractor | — |
+| 二人は上下に並んでいます | ふたりはじょうげにならんでいます | the two are arranged vertically | Distractor | — |
+| 女の人が左、男の人が右 | おんなのひとがひだり、おとこのひとがみぎ | woman left, man right | Correct | — |
+
+Explanation: A man to the right of a woman yields woman on the left and man on the right in the fixed viewpoint.
 
 </details>
 
 <details><summary>114. 女 — ja-ctx-wk1-simple-onna-02</summary>
 
-**Sentence:** 女の人は本を読んでいます。
+**Sentence:** 女の人は持っていた本を、男の人に渡しました。
 
-おんなのひとはほんをよんでいます。 — The woman is reading a book.
+おんなのひとはもっていたほんを、おとこのひとにわたしました。 — The woman handed the book she had been holding to the man.
 
-**Review note:** One short fact or action supports direct questions. Confirm natural wording, target meaning and the single stated answer before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-simple-onna-02-target** · target answer · text
+**ja-ctx-wk1-simple-onna-02-target** · target meaning · text
 
-誰が本を読んでいますか。 — Who is reading a book?
+今、本を持っているのは誰ですか。 — Who has the book now?
 
-Reading: だれがほんをよんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 男の人 | おとこのひと | adult man | Distractor | — |
-| 女の子 | おんなのこ | girl | Distractor | — |
-| 女の人 | おんなのひと | adult woman | Correct | — |
-| 男の子 | おとこのこ | boy | Distractor | — |
-
-Explanation: The woman is the person reading.
-
-**ja-ctx-wk1-simple-onna-02-detail** · other detail · text
-
-女の人は何をしていますか。 — What is the woman doing?
-
-Reading: おんなのひとはなにをしていますか。
+Reading: いま、ほんをもっているのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 走っています | はしっています | is running | Distractor | — |
-| 本を読んでいます | ほんをよんでいます | is reading a book | Correct | — |
-| 食べています | たべています | is eating | Distractor | — |
-| 寝ています | ねています | is sleeping | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
+| 男の人 | おとこのひと | the man | Correct | — |
+| 女の人 | おんなのひと | the woman | Distractor | — |
 
-Explanation: The woman is reading a book.
+Explanation: Handing the book from the woman to the man changes possession to the man.
+
+**ja-ctx-wk1-simple-onna-02-detail** · situation meaning · text
+
+女の人の手元では、本はどうなりましたか。 — What happened to the book in the woman’s possession?
+
+Reading: おんなのひとのてもとでは、ほんはどうなりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 手元で開きました | てもとでひらきました | it opened in her hands | Distractor | — |
+| 手元から離れました | てもとからはなれました | it left her possession | Correct | — |
+| 手元に戻りました | てもとにもどりました | it returned to her possession | Distractor | — |
+| 手元で増えました | てもとでふえました | it increased in her possession | Distractor | — |
+
+Explanation: Passing the book to the man means the particular book leaves the woman’s possession.
 
 </details>
 
 <details><summary>115. 女 — ja-ctx-wk1-contrastive-onna-01</summary>
 
-**Sentence:** 公園に女の人がいます。駅に男の人がいます。
+**Sentence:** 女の人は男の人に本を渡しました。男の人は女の人に傘を渡しました。
 
-こうえんにおんなのひとがいます。えきにおとこのひとがいます。 — There is a woman in the park. There is a man at the station.
+おんなのひとはおとこのひとにほんをわたしました。おとこのひとはおんなのひとにかさをわたしました。 — The woman handed a book to the man. The man handed an umbrella to the woman.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-onna-01-target** · target answer · text
+**ja-ctx-wk1-contrastive-onna-01-target** · target meaning · text
 
-公園には誰がいますか。 — Who is in the park?
+今、女の人が持っているのはどんな物ですか。 — What kind of thing does the woman have now?
 
-Reading: こうえんにはだれがいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 男の人 | おとこのひと | adult man | Distractor | — |
-| 女の子 | おんなのこ | girl | Distractor | — |
-| 女の人 | おんなのひと | adult woman | Correct | — |
-| 男の子 | おとこのこ | boy | Distractor | — |
-
-Explanation: The woman is in the park; the man is at the station.
-
-**ja-ctx-wk1-contrastive-onna-01-detail** · other detail · text
-
-女の人はどこにいますか。 — Where is the woman?
-
-Reading: おんなのひとはどこにいますか。
+Reading: いま、おんなのひとがもっているのはどんなものですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 公園 | こうえん | park | Correct | — |
-| 駅 | えき | station | Distractor | — |
-| 店 | みせ | shop | Distractor | — |
-| 学校 | がっこう | school | Distractor | — |
+| 雨の日に使う物 | あめのひにつかうもの | something used on rainy days | Correct | — |
+| 文字を読む物 | もじをよむもの | something with writing to read | Distractor | — |
+| 字を書くペン | じをかくペン | a pen for writing | Distractor | — |
+| 水を入れるコップ | みずをいれるコップ | a glass for holding water | Distractor | — |
 
-Explanation: The woman belongs to the park location, not the station.
+Explanation: The woman gives away the book but receives the umbrella, the rain-use item, from the man.
+
+**ja-ctx-wk1-contrastive-onna-01-detail** · situation meaning · text
+
+二人の持ち物はどう変わりましたか。 — How did their possessions change?
+
+Reading: ふたりのもちものはどうかわりましたか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも、最初と同じ物を持っています | ふたりとも、さいしょとおなじものをもっています | both hold the same item as at the start | Distractor | — |
+| 一人が二つとも持っています | ひとりがふたつとももっています | one person has both items | Distractor | — |
+| 二つとも誰も持っていません | ふたつともだれももっていません | neither item is held by anyone | Distractor | — |
+| それぞれ、最初に相手が持っていた物を持っています | それぞれ、さいしょにあいてがもっていたものをもっています | each holds the item the other person initially held | Correct | — |
+
+Explanation: The two opposite-direction handovers leave each person holding the item that the other person held first. This describes possession at each time, without claiming ownership.
 
 </details>
 
 <details><summary>116. 女 — ja-ctx-wk1-contrastive-onna-02</summary>
 
-**Sentence:** 女の人は本を読んでいます。男の人は走っています。
+**Sentence:** 女の人は家に入りました。男の人は家から出ました。
 
-おんなのひとはほんをよんでいます。おとこのひとははしっています。 — The woman is reading a book. The man is running.
+おんなのひとはいえにはいりました。おとこのひとはいえからでました。 — The woman entered the house. The man left the house.
 
-**Review note:** Two explicit facts contrast the actors, objects, features or locations. Answers follow the stated facts; confirm the intended binding and distractor clarity before speech generation.
+**Review note:** Meaning-based replacement. The authored focus is separate from the answer concept. Written choices describe relationships or resulting states; no literal pictures are claimed. Pending fresh text review.
 
-**ja-ctx-wk1-contrastive-onna-02-target** · target answer · text
+**ja-ctx-wk1-contrastive-onna-02-target** · target meaning · text
 
-誰が本を読んでいますか。 — Who is reading a book?
+今、建物の外側にいるのは誰ですか。 — Who is outside now?
 
-Reading: だれがほんをよんでいますか。
-
-| Choice | Reading | Meaning | Authored answer | Proposed picture |
-| --- | --- | --- | --- | --- |
-| 男の人 | おとこのひと | adult man | Distractor | — |
-| 女の子 | おんなのこ | girl | Distractor | — |
-| 女の人 | おんなのひと | adult woman | Correct | — |
-| 男の子 | おとこのこ | boy | Distractor | — |
-
-Explanation: Reading is the woman activity; running is the man activity.
-
-**ja-ctx-wk1-contrastive-onna-02-detail** · other detail · text
-
-女の人は何をしていますか。 — What is the woman doing?
-
-Reading: おんなのひとはなにをしていますか。
+Reading: いま、たてもののそとがわにいるのはだれですか。
 
 | Choice | Reading | Meaning | Authored answer | Proposed picture |
 | --- | --- | --- | --- | --- |
-| 走っています | はしっています | is running | Distractor | — |
-| 本を読んでいます | ほんをよんでいます | is reading a book | Correct | — |
-| 食べています | たべています | is eating | Distractor | — |
-| 寝ています | ねています | is sleeping | Distractor | — |
+| 二人とも | ふたりとも | both of them | Distractor | — |
+| どちらもいません | どちらもいません | neither of them | Distractor | — |
+| 男の人 | おとこのひと | the man | Correct | — |
+| 女の人 | おんなのひと | the woman | Distractor | — |
 
-Explanation: The woman is reading, while the man is running.
+Explanation: Leaving puts the man outside, while entering puts the woman inside.
+
+**ja-ctx-wk1-contrastive-onna-02-detail** · situation meaning · text
+
+二人の今の位置は、どの組み合わせですか。 — Which combination describes their positions now?
+
+Reading: ふたりのいまのいちは、どのくみあわせですか。
+
+| Choice | Reading | Meaning | Authored answer | Proposed picture |
+| --- | --- | --- | --- | --- |
+| 二人とも外側 | ふたりともそとがわ | both outside | Distractor | — |
+| 女の人は内側、男の人は外側 | おんなのひとはうちがわ、おとこのひとはそとがわ | woman inside, man outside | Correct | — |
+| 女の人は外側、男の人は内側 | おんなのひとはそとがわ、おとこのひとはうちがわ | woman outside, man inside | Distractor | — |
+| 二人とも内側 | ふたりともうちがわ | both inside | Distractor | — |
+
+Explanation: The woman’s entry and the man’s exit produce opposite final positions.
 
 </details>
