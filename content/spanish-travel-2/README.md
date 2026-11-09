@@ -85,7 +85,7 @@ Owner acceptance is bound to the exact selected manifests in `acceptance.json`; 
 - Keep stable item IDs independent of pack level. The current level 1 bank and retired entrance/exit history remain intact.
 - All 288 recordings were generated in the eight existing regional voices from the exact 2240 Unicode input characters. They use the same constant-gain playback profile with no trimming or timing changes. None required quieter-level exceptions. Level 2 uses its own approved plan, batch, scope guard and private archive; level 1 approvals and recordings are untouched.
 - Provider originals, requests and normalization evidence are hash-verified in the private archive at `~/.local/share/kikimashta/spanish-audio/166-v1/` (1737 files). Public review files contain normalized recordings and provenance, with no credentials or private account usage.
-- Rebuild and verify the combined gallery with `node scripts/content/build-spanish-travel-level-2-media-review.mjs`; serve the repository artifacts directory with `python3 -m http.server 5180 --bind 127.0.0.1 --directory artifacts`, then open `/spanish-travel-2-art/review.html`.
+- Rebuild and verify the combined gallery with `node scripts/content/build-spanish-travel-level-2-media-review.mjs`; serve the repository root with `python3 -m http.server 5180 --bind 127.0.0.1 --directory .`, then open `/artifacts/spanish-travel-2-art/review.html`.
 
 ## Lexical references
 
