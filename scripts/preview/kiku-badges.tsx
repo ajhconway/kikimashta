@@ -81,7 +81,7 @@ function KikuBadgeDemo() {
         <div className="demo-celebration-actions">
           <button type="button" onClick={earnBadge} disabled={busy || badges.length >= 10}>Earn a badge</button>
           <label>Badge to upgrade<select value={selected?.pack.id ?? ''} onChange={event => setUpgradeId(event.target.value)} disabled={!selected || busy}>
-            {!selected && <option value="">All Mastered</option>}
+            {!selected && <option value="">{badges.length ? 'All Mastered' : 'No badges'}</option>}
             {upgradable.map(badge => <option key={badge.pack.id} value={badge.pack.id}>{badge.pack.title} · {badge.level.label}</option>)}
           </select></label>
           <button type="button" onClick={upgradeBadge} disabled={busy || !selected}>Upgrade badge</button>
