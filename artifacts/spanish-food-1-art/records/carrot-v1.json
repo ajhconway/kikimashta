@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-carrot",
+  "slug": "carrot",
+  "version": 1,
+  "path": "originals/carrot-v1.png",
+  "sha256": "5f0200534ae3d0b656bb1ddfaa77cf51a9142d661f44196b4778d224ef0dc313",
+  "promptSha256": "7f46fca53a2364101bd79eddd48aed13e20e4bbb9de827d8cdedc96f75dfa047",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f40feec7-9c4a-4fab-ba4d-b5f86eb7698d.png"
+}

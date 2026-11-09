@@ -1,0 +1,2383 @@
+{
+  "schemaVersion": 1,
+  "inputDigest": "91ddd694fc6fa97308bd5222851f41054f1e025a3eb0a26dc21ec8010252a782",
+  "note": "Inventory ceiling only: exact trailing kana, normalized homophones and duplicate written forms filtered. Actual semantic/pronunciation/broad source quotas can reduce selected matching counts.",
+  "scopes": [
+    {
+      "scope": "all-writing",
+      "words": 178,
+      "withEnding": 32,
+      "withAnyMatch": 20,
+      "withThreeMatches": 14,
+      "rows": [
+        {
+          "itemId": "ja-apple",
+          "text": "りんご",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-dog",
+          "text": "犬",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-001a4faf05bd",
+          "text": "出かける",
+          "ending": "かける",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-01a3c397cb20",
+          "text": "広げる",
+          "ending": "げる",
+          "matchingIds": [
+            "ja-v-06a4c07236b5",
+            "ja-v-6d1d47c9258e"
+          ]
+        },
+        {
+          "itemId": "ja-v-06a4c07236b5",
+          "text": "下げる",
+          "ending": "げる",
+          "matchingIds": [
+            "ja-v-01a3c397cb20",
+            "ja-v-6d1d47c9258e"
+          ]
+        },
+        {
+          "itemId": "ja-v-06ef406f5569",
+          "text": "六",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-084edf1fdd10",
+          "text": "五つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-08e3c50181be",
+          "text": "二十日",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0958f7553d9f",
+          "text": "米",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-09d74d630a45",
+          "text": "町",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0ac038632611",
+          "text": "本",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0c144e18f1b2",
+          "text": "ノート",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0c1b8280f1ee",
+          "text": "日の出",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0d0163a40587",
+          "text": "九つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-0da81020c173",
+          "text": "田んぼ",
+          "ending": "んぼ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10791214b2c9",
+          "text": "赤ちゃん",
+          "ending": "ちゃん",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10984ece1206",
+          "text": "里",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10e568715d3a",
+          "text": "青い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-a249b72fa923",
+            "ja-v-d67a7d3dacc9",
+            "ja-v-e5fd15d61360"
+          ]
+        },
+        {
+          "itemId": "ja-v-12025d56c403",
+          "text": "戸口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-137737e5ce1f",
+          "text": "明かり",
+          "ending": "かり",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-13ea3220cde0",
+          "text": "四日",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-14be5202d5b3",
+          "text": "左",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-188bdf18a50c",
+          "text": "羽",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-190aae33ad24",
+          "text": "二百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-19bd7db9d5d0",
+          "text": "空",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-1a43c96593cb",
+          "text": "２０１１年",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-1bedf722c04a",
+          "text": "三",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-1ee90bf5d13a",
+          "text": "切る",
+          "ending": "る",
+          "matchingIds": [
+            "ja-v-82a114897d9c",
+            "ja-v-97526e11c703"
+          ]
+        },
+        {
+          "itemId": "ja-v-20cbd1c15a35",
+          "text": "入り口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-223e5321ecb8",
+          "text": "玉ねぎ",
+          "ending": "ねぎ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-23d807f4f375",
+          "text": "貝",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-26d0ad7af566",
+          "text": "大きさ",
+          "ending": "きさ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-277587e6fa07",
+          "text": "一つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-2850b5703e8b",
+          "text": "天気",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-28ddfdc9290c",
+          "text": "水",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2a318f5ee1c8",
+          "text": "三人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2cc50c2d66a6",
+          "text": "大人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2d7d45d5614e",
+          "text": "月光",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2ef4da30cf39",
+          "text": "人口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2f734ba866d9",
+          "text": "石",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-30d6b7d7e837",
+          "text": "千円",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3144539c83d3",
+          "text": "赤",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-33c00f4a1a8b",
+          "text": "力",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3534dd7d07d1",
+          "text": "夕方",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3601c285284c",
+          "text": "心",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-36897e1da4ac",
+          "text": "切手",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-39903246fd52",
+          "text": "穴",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3bcce8de9d04",
+          "text": "人々",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3fef4445ce13",
+          "text": "人工",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4063840184cf",
+          "text": "草",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-41b543dc8fe4",
+          "text": "宝石",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4690961b5456",
+          "text": "交ぜる",
+          "ending": "ぜる",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-46f8fe65f218",
+          "text": "川",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4789ab8b6db0",
+          "text": "五台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-497356cf0646",
+          "text": "先生",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4aa5c84df90c",
+          "text": "三日月",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4ac46ddaa10f",
+          "text": "左右",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4b9574b8d3b9",
+          "text": "作文",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4d9423288cb2",
+          "text": "女",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4fa716f651b2",
+          "text": "二人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-520308b3c3b4",
+          "text": "下",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5352aea4e4bb",
+          "text": "土",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-56e27b2da5a6",
+          "text": "戸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-575c16528161",
+          "text": "矢",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-597577664a1b",
+          "text": "金",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5d8047464c5d",
+          "text": "一",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5dc14aea92c7",
+          "text": "牛肉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5f29c187353e",
+          "text": "二万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5fb1d5e308b6",
+          "text": "打つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-6027e0e1c622",
+          "text": "デパート",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-602940cfc449",
+          "text": "小皿",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-61c516578fee",
+          "text": "五十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-64289653ec1d",
+          "text": "足",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-65df49688ef0",
+          "text": "刀",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-66ccf8dd3399",
+          "text": "玉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-698044202165",
+          "text": "林",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6c0b9f3278dc",
+          "text": "目",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6c9351ae67e6",
+          "text": "八つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-6d1d47c9258e",
+          "text": "上げる",
+          "ending": "げる",
+          "matchingIds": [
+            "ja-v-01a3c397cb20",
+            "ja-v-06a4c07236b5"
+          ]
+        },
+        {
+          "itemId": "ja-v-6e098e54aa63",
+          "text": "体",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-74043c16db5e",
+          "text": "かき氷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-754e1f2ea742",
+          "text": "子牛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-760cc08e40eb",
+          "text": "十台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-769a80524957",
+          "text": "小さい",
+          "ending": "さい",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7707983a4026",
+          "text": "五百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7bbba1a9506e",
+          "text": "十万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7c4d1abbdd61",
+          "text": "冬",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7de8b40e4f57",
+          "text": "一人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7e87850c448d",
+          "text": "雨",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7fc81b0ddd17",
+          "text": "二",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-81893a02b959",
+          "text": "四十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-81e708aba22f",
+          "text": "半分",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-823616f3288f",
+          "text": "百万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-82a114897d9c",
+          "text": "入る",
+          "ending": "る",
+          "matchingIds": [
+            "ja-v-1ee90bf5d13a",
+            "ja-v-97526e11c703"
+          ]
+        },
+        {
+          "itemId": "ja-v-86ef0852f80f",
+          "text": "千",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-877b9ba07a47",
+          "text": "十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-887f569257fd",
+          "text": "市",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-88c9d9718867",
+          "text": "考古学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-8b887bc8af0c",
+          "text": "三つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-8ce0a0ec59c4",
+          "text": "工学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-8fb11237e460",
+          "text": "生ビール",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-921d54ba31ef",
+          "text": "色",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-92bebda5ac98",
+          "text": "村",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-947395f42397",
+          "text": "四つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-9567eaf8fe9b",
+          "text": "学生",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-960de5429d2e",
+          "text": "ベッドの下",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-96a032e15dda",
+          "text": "百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-97526e11c703",
+          "text": "走る",
+          "ending": "る",
+          "matchingIds": [
+            "ja-v-1ee90bf5d13a",
+            "ja-v-82a114897d9c"
+          ]
+        },
+        {
+          "itemId": "ja-v-9752b818f9f8",
+          "text": "日本",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9910372c1964",
+          "text": "大学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-99f7c98099b1",
+          "text": "テレビ",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9a9a5c6d448c",
+          "text": "コンビニ",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9e64feeea5ea",
+          "text": "口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9ff5251e6f21",
+          "text": "コーヒー",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a001b24baf12",
+          "text": "出す",
+          "ending": "す",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a249b72fa923",
+          "text": "多い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-10e568715d3a",
+            "ja-v-d67a7d3dacc9",
+            "ja-v-e5fd15d61360"
+          ]
+        },
+        {
+          "itemId": "ja-v-a47e21265374",
+          "text": "牛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a491f1acccc3",
+          "text": "工作",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a4e5df148631",
+          "text": "虫",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a5d390dc4805",
+          "text": "木",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a76119b3c712",
+          "text": "毛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a872d5e674a2",
+          "text": "一万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ac1e4f6bee13",
+          "text": "毛糸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ad7167347a2a",
+          "text": "人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-afefe30bcb46",
+          "text": "火山",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b066e78531d6",
+          "text": "四",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b1b10c2f6445",
+          "text": "豚",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b1ff052549ed",
+          "text": "手",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b34b4a2e7a98",
+          "text": "宝",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b37750755344",
+          "text": "音",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b5e9e035a8be",
+          "text": "入れる",
+          "ending": "れる",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b639fedc63ec",
+          "text": "肉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b90f6c64551b",
+          "text": "花火",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ba0c8a160c33",
+          "text": "夜",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-baa4dd2c5986",
+          "text": "皿",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-bb787ce6238a",
+          "text": "引く",
+          "ending": "く",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-bb85f028d944",
+          "text": "二つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-df70a01acaec",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-c0f58bfab324",
+          "text": "上",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-c5425c81df8c",
+          "text": "竹の子",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cb7a14590e8e",
+          "text": "日光",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cbb4297f3dd7",
+          "text": "平行",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ceb7b2a20cbd",
+          "text": "谷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cf58c5cf08d9",
+          "text": "火",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d0c9a070fa56",
+          "text": "水中",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d10df0e56846",
+          "text": "毛虫",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d19a39e4af55",
+          "text": "氷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d1b6831b65c8",
+          "text": "丸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d215c2071f47",
+          "text": "麦",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d242b38667c8",
+          "text": "お金",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d33ed6be2a48",
+          "text": "九",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d42b5be1c4ad",
+          "text": "水色",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d4473f87e438",
+          "text": "五",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d4fb59f8c32c",
+          "text": "文",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d5c177de5126",
+          "text": "ホテル",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d67a7d3dacc9",
+          "text": "白い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-10e568715d3a",
+            "ja-v-a249b72fa923",
+            "ja-v-e5fd15d61360"
+          ]
+        },
+        {
+          "itemId": "ja-v-dbe24910365e",
+          "text": "竹",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-dca5c9fc5908",
+          "text": "耳",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ddd9dca106e2",
+          "text": "山",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-df70a01acaec",
+          "text": "六つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-dfb71d269e06",
+          "text": "テーブルの上",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e05b8e36c6ca",
+          "text": "糸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e0bb1d02fee0",
+          "text": "月",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e368e3aa9bf6",
+          "text": "十六",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e5fd15d61360",
+          "text": "古い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-10e568715d3a",
+            "ja-v-a249b72fa923",
+            "ja-v-d67a7d3dacc9"
+          ]
+        },
+        {
+          "itemId": "ja-v-ea952b83ac80",
+          "text": "三角",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-eba7f0968101",
+          "text": "一台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ed2c1dbd0ee4",
+          "text": "ビー玉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ed6bd4d73b76",
+          "text": "右",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-eda9a40b0c91",
+          "text": "七",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f0588b6224d0",
+          "text": "四千",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f14d2c0c7442",
+          "text": "四角",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f5b4250aeb03",
+          "text": "二台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f623bb19b846",
+          "text": "四百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f6377dcbb564",
+          "text": "大きい",
+          "ending": "きい",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f6bc974a7405",
+          "text": "七つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10",
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-5fb1d5e308b6",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-947395f42397",
+            "ja-v-bb85f028d944",
+            "ja-v-df70a01acaec"
+          ]
+        },
+        {
+          "itemId": "ja-v-f6ed7c17c0d5",
+          "text": "八",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f71f9de56223",
+          "text": "車",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-fa6a4c8f27b4",
+          "text": "花",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    },
+    {
+      "scope": "ja-wanikani-1-writing",
+      "words": 33,
+      "withEnding": 11,
+      "withAnyMatch": 8,
+      "withThreeMatches": 6,
+      "rows": [
+        {
+          "itemId": "ja-v-06a4c07236b5",
+          "text": "下げる",
+          "ending": "げる",
+          "matchingIds": [
+            "ja-v-6d1d47c9258e"
+          ]
+        },
+        {
+          "itemId": "ja-v-0d0163a40587",
+          "text": "九つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-277587e6fa07",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-bb85f028d944",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-1bedf722c04a",
+          "text": "三",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-20cbd1c15a35",
+          "text": "入り口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-26d0ad7af566",
+          "text": "大きさ",
+          "ending": "きさ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-277587e6fa07",
+          "text": "一つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-bb85f028d944",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-2a318f5ee1c8",
+          "text": "三人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2cc50c2d66a6",
+          "text": "大人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2ef4da30cf39",
+          "text": "人口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-33c00f4a1a8b",
+          "text": "力",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3fef4445ce13",
+          "text": "人工",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-46f8fe65f218",
+          "text": "川",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4d9423288cb2",
+          "text": "女",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4fa716f651b2",
+          "text": "二人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-520308b3c3b4",
+          "text": "下",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5d8047464c5d",
+          "text": "一",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6c9351ae67e6",
+          "text": "八つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-8b887bc8af0c",
+            "ja-v-bb85f028d944",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-6d1d47c9258e",
+          "text": "上げる",
+          "ending": "げる",
+          "matchingIds": [
+            "ja-v-06a4c07236b5"
+          ]
+        },
+        {
+          "itemId": "ja-v-7de8b40e4f57",
+          "text": "一人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7fc81b0ddd17",
+          "text": "二",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-82a114897d9c",
+          "text": "入る",
+          "ending": "る",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-877b9ba07a47",
+          "text": "十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-8b887bc8af0c",
+          "text": "三つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-6c9351ae67e6",
+            "ja-v-bb85f028d944",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-9e64feeea5ea",
+          "text": "口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ad7167347a2a",
+          "text": "人",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-bb85f028d944",
+          "text": "二つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-f6bc974a7405"
+          ]
+        },
+        {
+          "itemId": "ja-v-c0f58bfab324",
+          "text": "上",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d33ed6be2a48",
+          "text": "九",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ddd9dca106e2",
+          "text": "山",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-eda9a40b0c91",
+          "text": "七",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f6377dcbb564",
+          "text": "大きい",
+          "ending": "きい",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f6bc974a7405",
+          "text": "七つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-0d0163a40587",
+            "ja-v-277587e6fa07",
+            "ja-v-6c9351ae67e6",
+            "ja-v-8b887bc8af0c",
+            "ja-v-bb85f028d944"
+          ]
+        },
+        {
+          "itemId": "ja-v-f6ed7c17c0d5",
+          "text": "八",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    },
+    {
+      "scope": "ja-wanikani-2-writing",
+      "words": 33,
+      "withEnding": 5,
+      "withAnyMatch": 2,
+      "withThreeMatches": 0,
+      "rows": [
+        {
+          "itemId": "ja-dog",
+          "text": "犬",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-06ef406f5569",
+          "text": "六",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-084edf1fdd10",
+          "text": "五つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-df70a01acaec"
+          ]
+        },
+        {
+          "itemId": "ja-v-0ac038632611",
+          "text": "本",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0da81020c173",
+          "text": "田んぼ",
+          "ending": "んぼ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-14be5202d5b3",
+          "text": "左",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-223e5321ecb8",
+          "text": "玉ねぎ",
+          "ending": "ねぎ",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-28ddfdc9290c",
+          "text": "水",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-30d6b7d7e837",
+          "text": "千円",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3bcce8de9d04",
+          "text": "人々",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4ac46ddaa10f",
+          "text": "左右",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5352aea4e4bb",
+          "text": "土",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-61c516578fee",
+          "text": "五十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-65df49688ef0",
+          "text": "刀",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-66ccf8dd3399",
+          "text": "玉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6c0b9f3278dc",
+          "text": "目",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-769a80524957",
+          "text": "小さい",
+          "ending": "さい",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-86ef0852f80f",
+          "text": "千",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9752b818f9f8",
+          "text": "日本",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a5d390dc4805",
+          "text": "木",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-afefe30bcb46",
+          "text": "火山",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b066e78531d6",
+          "text": "四",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b1ff052549ed",
+          "text": "手",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cf58c5cf08d9",
+          "text": "火",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d0c9a070fa56",
+          "text": "水中",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d1b6831b65c8",
+          "text": "丸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d4473f87e438",
+          "text": "五",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d4fb59f8c32c",
+          "text": "文",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d5c177de5126",
+          "text": "ホテル",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-df70a01acaec",
+          "text": "六つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-084edf1fdd10"
+          ]
+        },
+        {
+          "itemId": "ja-v-e0bb1d02fee0",
+          "text": "月",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e368e3aa9bf6",
+          "text": "十六",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ed6bd4d73b76",
+          "text": "右",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    },
+    {
+      "scope": "ja-wanikani-3-writing",
+      "words": 28,
+      "withEnding": 5,
+      "withAnyMatch": 0,
+      "withThreeMatches": 0,
+      "rows": [
+        {
+          "itemId": "ja-apple",
+          "text": "りんご",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-01a3c397cb20",
+          "text": "広げる",
+          "ending": "げる",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0c1b8280f1ee",
+          "text": "日の出",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-12025d56c403",
+          "text": "戸口",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-137737e5ce1f",
+          "text": "明かり",
+          "ending": "かり",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-1ee90bf5d13a",
+          "text": "切る",
+          "ending": "る",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3601c285284c",
+          "text": "心",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4789ab8b6db0",
+          "text": "五台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-56e27b2da5a6",
+          "text": "戸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-575c16528161",
+          "text": "矢",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5f29c187353e",
+          "text": "二万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-760cc08e40eb",
+          "text": "十台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7bbba1a9506e",
+          "text": "十万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7c4d1abbdd61",
+          "text": "冬",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-81e708aba22f",
+          "text": "半分",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-887f569257fd",
+          "text": "市",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-8fb11237e460",
+          "text": "生ビール",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-960de5429d2e",
+          "text": "ベッドの下",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9ff5251e6f21",
+          "text": "コーヒー",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a47e21265374",
+          "text": "牛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a76119b3c712",
+          "text": "毛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a872d5e674a2",
+          "text": "一万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-bb787ce6238a",
+          "text": "引く",
+          "ending": "く",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-dfb71d269e06",
+          "text": "テーブルの上",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e5fd15d61360",
+          "text": "古い",
+          "ending": "い",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-eba7f0968101",
+          "text": "一台",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ed2c1dbd0ee4",
+          "text": "ビー玉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f5b4250aeb03",
+          "text": "二台",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    },
+    {
+      "scope": "ja-wanikani-4-writing",
+      "words": 42,
+      "withEnding": 5,
+      "withAnyMatch": 2,
+      "withThreeMatches": 0,
+      "rows": [
+        {
+          "itemId": "ja-v-001a4faf05bd",
+          "text": "出かける",
+          "ending": "かける",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-08e3c50181be",
+          "text": "二十日",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-09d74d630a45",
+          "text": "町",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-0c144e18f1b2",
+          "text": "ノート",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10791214b2c9",
+          "text": "赤ちゃん",
+          "ending": "ちゃん",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-13ea3220cde0",
+          "text": "四日",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-190aae33ad24",
+          "text": "二百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-1a43c96593cb",
+          "text": "２０１１年",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-23d807f4f375",
+          "text": "貝",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2850b5703e8b",
+          "text": "天気",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2f734ba866d9",
+          "text": "石",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3144539c83d3",
+          "text": "赤",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-36897e1da4ac",
+          "text": "切手",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-39903246fd52",
+          "text": "穴",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-41b543dc8fe4",
+          "text": "宝石",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-497356cf0646",
+          "text": "先生",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5fb1d5e308b6",
+          "text": "打つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-947395f42397"
+          ]
+        },
+        {
+          "itemId": "ja-v-602940cfc449",
+          "text": "小皿",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-64289653ec1d",
+          "text": "足",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-74043c16db5e",
+          "text": "かき氷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-754e1f2ea742",
+          "text": "子牛",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7707983a4026",
+          "text": "五百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-81893a02b959",
+          "text": "四十",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-823616f3288f",
+          "text": "百万",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-92bebda5ac98",
+          "text": "村",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-947395f42397",
+          "text": "四つ",
+          "ending": "つ",
+          "matchingIds": [
+            "ja-v-5fb1d5e308b6"
+          ]
+        },
+        {
+          "itemId": "ja-v-96a032e15dda",
+          "text": "百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-99f7c98099b1",
+          "text": "テレビ",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a4e5df148631",
+          "text": "虫",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b34b4a2e7a98",
+          "text": "宝",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b90f6c64551b",
+          "text": "花火",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-baa4dd2c5986",
+          "text": "皿",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-c5425c81df8c",
+          "text": "竹の子",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d19a39e4af55",
+          "text": "氷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d67a7d3dacc9",
+          "text": "白い",
+          "ending": "い",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-dbe24910365e",
+          "text": "竹",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-dca5c9fc5908",
+          "text": "耳",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-e05b8e36c6ca",
+          "text": "糸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f0588b6224d0",
+          "text": "四千",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f623bb19b846",
+          "text": "四百",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f71f9de56223",
+          "text": "車",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-fa6a4c8f27b4",
+          "text": "花",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    },
+    {
+      "scope": "ja-wanikani-5-writing",
+      "words": 42,
+      "withEnding": 6,
+      "withAnyMatch": 2,
+      "withThreeMatches": 0,
+      "rows": [
+        {
+          "itemId": "ja-v-0958f7553d9f",
+          "text": "米",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10984ece1206",
+          "text": "里",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-10e568715d3a",
+          "text": "青い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-a249b72fa923"
+          ]
+        },
+        {
+          "itemId": "ja-v-188bdf18a50c",
+          "text": "羽",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-19bd7db9d5d0",
+          "text": "空",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-2d7d45d5614e",
+          "text": "月光",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-3534dd7d07d1",
+          "text": "夕方",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4063840184cf",
+          "text": "草",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4690961b5456",
+          "text": "交ぜる",
+          "ending": "ぜる",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4aa5c84df90c",
+          "text": "三日月",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-4b9574b8d3b9",
+          "text": "作文",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-597577664a1b",
+          "text": "金",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-5dc14aea92c7",
+          "text": "牛肉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6027e0e1c622",
+          "text": "デパート",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-698044202165",
+          "text": "林",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-6e098e54aa63",
+          "text": "体",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-7e87850c448d",
+          "text": "雨",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-88c9d9718867",
+          "text": "考古学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-8ce0a0ec59c4",
+          "text": "工学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-921d54ba31ef",
+          "text": "色",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9567eaf8fe9b",
+          "text": "学生",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-97526e11c703",
+          "text": "走る",
+          "ending": "る",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9910372c1964",
+          "text": "大学",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-9a9a5c6d448c",
+          "text": "コンビニ",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a001b24baf12",
+          "text": "出す",
+          "ending": "す",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-a249b72fa923",
+          "text": "多い",
+          "ending": "い",
+          "matchingIds": [
+            "ja-v-10e568715d3a"
+          ]
+        },
+        {
+          "itemId": "ja-v-a491f1acccc3",
+          "text": "工作",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ac1e4f6bee13",
+          "text": "毛糸",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b1b10c2f6445",
+          "text": "豚",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b37750755344",
+          "text": "音",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b5e9e035a8be",
+          "text": "入れる",
+          "ending": "れる",
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-b639fedc63ec",
+          "text": "肉",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ba0c8a160c33",
+          "text": "夜",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cb7a14590e8e",
+          "text": "日光",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-cbb4297f3dd7",
+          "text": "平行",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ceb7b2a20cbd",
+          "text": "谷",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d10df0e56846",
+          "text": "毛虫",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d215c2071f47",
+          "text": "麦",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d242b38667c8",
+          "text": "お金",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-d42b5be1c4ad",
+          "text": "水色",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-ea952b83ac80",
+          "text": "三角",
+          "ending": null,
+          "matchingIds": []
+        },
+        {
+          "itemId": "ja-v-f14d2c0c7442",
+          "text": "四角",
+          "ending": null,
+          "matchingIds": []
+        }
+      ]
+    }
+  ]
+}

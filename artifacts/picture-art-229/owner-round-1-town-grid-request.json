@@ -1,0 +1,17 @@
+{
+  "id": "ja-v-09d74d630a45",
+  "text": "町",
+  "version": 4,
+  "refs": [
+    {
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v3.png",
+      "role": "town edit target; retain illustration treatment"
+    },
+    {
+      "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+      "role": "shared greenery, palette and landscape feel"
+    }
+  ],
+  "note": "A green miniature town with rectangular building blocks and straight intersecting streets; same illustration feel as 村.",
+  "prompt": "Use case: precise-object-edit. Revise the FIRST image's town layout to a CLEAR RECTILINEAR STREET GRID, while retaining its friendly miniature-landscape illustration style, plum outlines, cream/lavender buildings, lush rounded green trees, soft interior shading and low hills. SECOND image supplies only the shared village-like mood and palette. Rebuild the town in an elevated three-quarter/isometric view with FOUR RECTANGULAR BUILDING BLOCKS separated by two broad STRAIGHT streets that cross at a clear RIGHT ANGLE in the center. Additional short straight parallel street/sidewalk segments along the block edges reinforce an orderly grid. Place modest two-story houses and a couple of small unbranded awning-front shops in rows aligned with each rectangular block. Streets remain visibly straight across the entire town; the central four-way junction must be easy to see. Put trees, shrubs and tiny gardens at block corners without concealing the grid. Remove the winding S-shaped road completely. Compact coherent town on one clean landscape footprint, square 1:1 canvas with full subject and generous transparent margins. Preserve the village's warm green feel, but the street network must unmistakably form rectangular urban blocks. No winding lane, curved road, farms, crop fields, tall city towers, words, labels, numerals, road text, logos, glow, aura, background wash or frame. Genuine transparent alpha outside the town silhouette."
+}

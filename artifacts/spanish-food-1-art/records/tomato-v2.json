@@ -1,0 +1,13 @@
+{
+  "id": "es-419-food-tomato",
+  "slug": "tomato",
+  "version": 2,
+  "path": "originals/tomato-v2.png",
+  "sha256": "6ba3ea9ff343567043fd301491db992768ffd52fe3e70437a902fda7dd27d1cc",
+  "promptSha256": "3e1163941004c11fb42b2acc6fcb98efe194b4af8c0dac1be3b3410d0cfac265",
+  "referenceSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-670c5c87-2fc4-482a-9b4b-f64e0df7a826.png",
+  "supersedes": "artifacts/spanish-food-1-art/originals/tomato-v1.png",
+  "supersedesSha256": "cb539398e0b017e509e73210ebc3417bebac83b68e624cfaefbec9385cc1f167"
+}

@@ -48,7 +48,7 @@
   },
   {
     "id": "ja-v-7930a252da9b",
-    "concept": "A single written character isolated on a writing sheet",
+    "concept": "Three Japanese characters with only the middle character highlighted in gold.",
     "visualGroup": "character",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -167,13 +167,13 @@
   },
   {
     "id": "ja-v-a76119b3c712",
-    "concept": "A fluffy animal tail with tufts of fur",
+    "concept": "A tuft of soft brown fur.",
     "visualGroup": "fur",
     "reviewRequired": false
   },
   {
     "id": "ja-v-575ec5f060f3",
-    "concept": "A young girl with short pigtails",
+    "concept": "A young girl standing in ordinary casual clothes.",
     "visualGroup": "girl",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -245,14 +245,14 @@
   },
   {
     "id": "ja-v-b0a03cee753b",
-    "concept": "A compass with its upper needle highlighted",
+    "concept": "A compass with its north-pointing top ray highlighted in gold.",
     "visualGroup": "north",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-a84051dc9f24",
-    "concept": "An exit doorway with a compass pointing upward",
+    "concept": "An open doorway with an outward gold arrow and a nearby compass highlighting north.",
     "visualGroup": "north-exit",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -475,7 +475,7 @@
   },
   {
     "id": "ja-v-f25546e67181",
-    "concept": "An adult woman standing confidently",
+    "concept": "An adult woman standing in ordinary casual clothes.",
     "visualGroup": "woman",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -521,7 +521,7 @@
   },
   {
     "id": "ja-v-c22ee5be019b",
-    "concept": "A young boy with a baseball cap",
+    "concept": "A young boy standing in a gold shirt and lavender trousers.",
     "visualGroup": "boy",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -750,7 +750,7 @@
   },
   {
     "id": "ja-v-41b543dc8fe4",
-    "concept": "A large faceted pink gemstone",
+    "concept": "A single loose pink faceted gemstone.",
     "visualGroup": "jewel",
     "reviewRequired": false
   },
@@ -770,14 +770,14 @@
   },
   {
     "id": "ja-v-70230bf6d87c",
-    "concept": "A left hand seen palm-forward, thumb on the viewer’s right",
+    "concept": "The backs of two hands with thumbs facing inward and attention lines beside the left hand.",
     "visualGroup": "left-hand",
     "reviewRequired": true,
-    "reviewNote": "Palm-forward left hand; check thumb orientation on the actual small-screen display."
+    "reviewNote": "The backs of both hands face the viewer, with thumbs pointing inward. Attention lines identify the intended left or right hand."
   },
   {
     "id": "ja-v-69c61c85a403",
-    "concept": "Alphabet letter on a writing card beside a pencil",
+    "concept": "Three Japanese characters together on one gold highlight.",
     "visualGroup": "letter-of-the-alphabet-",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -791,7 +791,7 @@
   },
   {
     "id": "ja-v-4b9dfeafcab4",
-    "concept": "An adult man standing confidently",
+    "concept": "An adult man standing in a teal shirt and lavender trousers.",
     "visualGroup": "man",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -832,7 +832,7 @@
   },
   {
     "id": "ja-v-2f21cb2e8d02",
-    "concept": "A person watches a full moon above autumn grass",
+    "concept": "A person in casual clothes sitting outside and looking up at a full moon.",
     "visualGroup": "moon-viewing",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -907,7 +907,7 @@
   },
   {
     "id": "ja-v-36897e1da4ac",
-    "concept": "A perforated postage stamp on an envelope",
+    "concept": "An envelope with an emphasized perforated pink postage stamp in its upper-right corner.",
     "visualGroup": "postage-stamp",
     "reviewRequired": false
   },
@@ -932,10 +932,10 @@
   },
   {
     "id": "ja-v-9553e3adbc2a",
-    "concept": "A right hand seen palm-forward, thumb on the viewer’s left",
+    "concept": "The backs of two hands with thumbs facing inward and attention lines beside the right hand.",
     "visualGroup": "right-hand",
     "reviewRequired": true,
-    "reviewNote": "Palm-forward right hand; check thumb orientation on the actual small-screen display."
+    "reviewNote": "The backs of both hands face the viewer, with thumbs pointing inward. Attention lines identify the intended left or right hand."
   },
   {
     "id": "ja-v-42bb1cd7b3cd",
@@ -953,7 +953,7 @@
   },
   {
     "id": "ja-v-74043c16db5e",
-    "concept": "A bowl of fluffy shaved ice with pink syrup",
+    "concept": "A bowl of fluffy shaved ice topped with pink syrup, with a small spoon.",
     "visualGroup": "shaved-ice",
     "reviewRequired": false
   },
@@ -984,7 +984,7 @@
   },
   {
     "id": "ja-v-49863ee12a96",
-    "concept": "A ruler draws one perfectly straight horizontal line",
+    "concept": "One straight horizontal plum line.",
     "visualGroup": "straight-line",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -1126,7 +1126,7 @@
   },
   {
     "id": "ja-v-09d74d630a45",
-    "concept": "A compact row of modest houses and one shop",
+    "concept": "A green miniature town with straight intersecting streets and rectangular building blocks.",
     "visualGroup": "town",
     "reviewRequired": false
   },
@@ -1150,14 +1150,14 @@
   },
   {
     "id": "ja-v-cb7d8a487c4f",
-    "concept": "People picnic beneath a pink flowering tree",
+    "concept": "Two people picnicking beneath a blossoming cherry tree and admiring its pink flowers.",
     "visualGroup": "viewing-cherry-blossoms",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-92bebda5ac98",
-    "concept": "A few small cottages among trees and hills",
+    "concept": "A small rural village with modest homes along a winding path among trees and fields.",
     "visualGroup": "village",
     "reviewRequired": false
   },
@@ -1203,7 +1203,7 @@
   },
   {
     "id": "ja-v-8438eda3cfc0",
-    "concept": "A bound calendar containing twelve monthly squares",
+    "concept": "A year planner showing all twelve miniature month panels together.",
     "visualGroup": "year",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."

@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-yogurt",
+  "slug": "yogurt",
+  "version": 1,
+  "path": "originals/yogurt-v1.png",
+  "sha256": "881aa6405174aa45b77a73ce3ae8b413f11374082c63a888761c60da84835fe1",
+  "promptSha256": "260c767ed37cc3b17d64c9e1088c92910f0e8f4ef3691e1a2c0daf2afeeea022",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-662bbe8a-d51a-4371-932e-9898f09b5393.png"
+}

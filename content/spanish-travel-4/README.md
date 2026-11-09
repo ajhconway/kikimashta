@@ -1,5 +1,7 @@
 # Spanish Travel level 4 (#207)
 
+`accepted-artwork-registry.json` preserves the exact registry bytes bound by the original final acceptance for the reused flower. Staging verifies that snapshot against the unchanged acceptance hash and separately checks the flower's identity and bytes against the current registry. Unrelated Japanese artwork releases can therefore add images without invalidating this accepted pack.
+
 36 additional concrete travel words. Picture-only practice, English interface and the existing eight voices. [Review words and concepts](review.html) · [Structured draft](draft.json).
 
 The owner approved the reviewed word list and requested generation of the complete pack. [Review pictures and all 288 recordings](../../artifacts/spanish-travel-4-art/review.html). The exact draft remains unchanged; generation authorization is bound separately in generation-approval.json. The owner subsequently requested finishing all artwork before giving feedback, superseding the initial pauses between artwork batches. The complete review contains 35 new illustrations and the unchanged approved flower. The owner subsequently requested five artwork refinements and replaced venda with enchufe (power outlet). The current review applies that separate amendment while preserving the original approved draft and generation records. The complete gallery includes the selected revisions and all eight replacement recordings.

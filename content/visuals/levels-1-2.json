@@ -52,7 +52,7 @@
   },
   {
     "id": "ja-v-20cbd1c15a35",
-    "concept": "An open doorway with an inward arrow",
+    "concept": "An open doorway with a thick curved gold arrow pointing inward to the center.",
     "reviewRequired": true,
     "reviewNote": "Entrance and entering share a motif; avoid pairing them as choices.",
     "visualGroup": "enter-door"
@@ -239,7 +239,7 @@
   },
   {
     "id": "ja-v-7dddc1af4eb5",
-    "concept": "A whole-month calendar with month number 4",
+    "concept": "A twelve-month calendar selector with month 4 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-4"
@@ -258,14 +258,14 @@
   },
   {
     "id": "ja-v-27d5744f36a2",
-    "concept": "A child holding a toy pinwheel",
+    "concept": "A young child in a lavender shirt and gold shorts, standing with empty hands.",
     "reviewRequired": true,
-    "reviewNote": "A child is indicated by proportions and a toy; age remains approximate.",
+    "reviewNote": "Juvenile proportions indicate a child; exact age and family role remain approximate. Keep overlapping child categories out of competing picture choices.",
     "visualGroup": "子"
   },
   {
     "id": "ja-v-d1b6831b65c8",
-    "concept": "A simple flat pink circle",
+    "concept": "A single flat pink circle with a smooth plum outline.",
     "reviewRequired": false,
     "visualGroup": "丸"
   },
@@ -278,7 +278,7 @@
   },
   {
     "id": "ja-v-7003bbe10d0b",
-    "concept": "A large green check mark in a circle",
+    "concept": "A green check mark inside a white medallion with a plum rim.",
     "reviewRequired": true,
     "reviewNote": "A conventional check mark symbolizes correctness.",
     "visualGroup": "正しい"
@@ -304,27 +304,27 @@
   },
   {
     "id": "ja-v-a19157e62dee",
-    "concept": "An open doorway with an outward arrow",
+    "concept": "An open doorway with a thick curved gold arrow pointing outward from the center.",
     "reviewRequired": true,
     "reviewNote": "Exit and exiting share a motif; avoid pairing them as choices.",
     "visualGroup": "exit-door"
   },
   {
     "id": "ja-v-6c0b9f3278dc",
-    "concept": "An eye with iris and pupil",
+    "concept": "A close-up of one open human eye.",
     "reviewRequired": false,
     "visualGroup": "eye"
   },
   {
     "id": "ja-v-a8ca5ef684b8",
-    "concept": "A round eyeball with iris and pupil",
+    "concept": "A single isolated eyeball showing the iris and pupil.",
     "reviewRequired": true,
     "reviewNote": "Eye and eyeball should not be contrasted in a picture-only quiz.",
     "visualGroup": "eye"
   },
   {
     "id": "ja-v-6eed6b905b8e",
-    "concept": "A whole-month calendar with month number 2",
+    "concept": "A twelve-month calendar selector with month 2 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-2"
@@ -375,14 +375,14 @@
   },
   {
     "id": "ja-v-0bf44d10d860",
-    "concept": "A young girl with pigtails holding a ball",
+    "concept": "A young girl standing in ordinary casual clothes.",
     "reviewRequired": true,
     "reviewNote": "Gender cannot be known from hairstyle; both source words intentionally share this scene.",
     "visualGroup": "girl"
   },
   {
     "id": "ja-v-185a632e3742",
-    "concept": "A young girl with pigtails holding a ball",
+    "concept": "A young girl standing in ordinary casual clothes.",
     "reviewRequired": true,
     "reviewNote": "Gender cannot be known from hairstyle; both source words intentionally share this scene.",
     "visualGroup": "girl"
@@ -436,7 +436,7 @@
   },
   {
     "id": "ja-v-ed82bb95d4cc",
-    "concept": "A whole-month calendar with month number 1",
+    "concept": "A twelve-month calendar selector with month 1 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-1"
@@ -449,7 +449,7 @@
   },
   {
     "id": "ja-v-8ffa8462a479",
-    "concept": "A whole-month calendar with month number 6",
+    "concept": "A twelve-month calendar selector with month 6 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-6"
@@ -482,7 +482,7 @@
   },
   {
     "id": "ja-v-2850d52ee4d2",
-    "concept": "A whole-month calendar with month number 5",
+    "concept": "A twelve-month calendar selector with month 5 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-5"
@@ -502,7 +502,7 @@
   },
   {
     "id": "ja-v-cacf3a45ed07",
-    "concept": "A whole-month calendar with month number 10",
+    "concept": "A twelve-month calendar selector with month 10 highlighted in gold.",
     "reviewRequired": true,
     "reviewNote": "Numeric month calendar requires familiarity with calendar conventions.",
     "visualGroup": "month-10"
@@ -528,7 +528,7 @@
   },
   {
     "id": "ja-v-3bcce8de9d04",
-    "concept": "A group of five people with varied skin tones",
+    "concept": "A friendly group of several different people standing together.",
     "reviewRequired": false,
     "visualGroup": "people"
   },
@@ -569,13 +569,13 @@
   },
   {
     "id": "ja-v-0da81020c173",
-    "concept": "Flooded rice paddy with rows of green shoots",
+    "concept": "A flooded rice paddy with rows of young green rice plants.",
     "reviewRequired": false,
     "visualGroup": "rice-paddy"
   },
   {
     "id": "ja-v-762983bc3fe7",
-    "concept": "Flooded rice paddy with rows of green shoots",
+    "concept": "A flooded rice paddy with rows of young green rice plants.",
     "reviewRequired": false,
     "visualGroup": "rice-paddy"
   },
@@ -638,7 +638,7 @@
   },
   {
     "id": "ja-v-65df49688ef0",
-    "concept": "A curved sword with a wrapped handle",
+    "concept": "A single curved Japanese sword with its handle and blade visible.",
     "reviewRequired": false,
     "visualGroup": "刀"
   },
@@ -711,7 +711,7 @@
   },
   {
     "id": "ja-v-afefe30bcb46",
-    "concept": "An erupting volcano with lava and smoke",
+    "concept": "A volcano erupting with glowing lava and a plume above the crater.",
     "reviewRequired": false,
     "visualGroup": "火山"
   },
@@ -723,7 +723,7 @@
   },
   {
     "id": "ja-v-cbda72b9dd04",
-    "concept": "A white paint swatch on a purple backing",
+    "concept": "A white paint swatch with a lavender outline.",
     "reviewRequired": true,
     "reviewNote": "Color swatch uses a border so white remains visible on white screens.",
     "visualGroup": "白"

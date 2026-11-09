@@ -1,0 +1,247 @@
+{
+  "issue": 218,
+  "pack": "es-419-food-1",
+  "language": "es-419",
+  "status": "artwork-accepted",
+  "ownerMessage": "I'm happy with the artwork.",
+  "scope": "All 36 currently selected pictures only. New audio and runtime activation remain separate.",
+  "artworkManifest": "artifacts/spanish-food-1-art/manifest.json",
+  "artworkManifestSha256": "c47af3dc7cd25a15529988ceebe323640210dc3a75e730d6774ec33c7a457e87",
+  "selection": "artifacts/spanish-food-1-art/selection.json",
+  "selectionSha256": "3152f59f49346ec9b4c2014356a0cd4e1017dc1db5f4954a1e9884af69372a6f",
+  "artworkAmendment": "content/spanish-food-1/artwork-revisions-v1.json",
+  "artworkAmendmentSha256": "bfa8c875997082fc0f023323170d07945319bd9bc8b206a2fda4e1a284653667",
+  "pictures": 36,
+  "generated": 12,
+  "reused": 24,
+  "images": [
+    {
+      "id": "es-419-travel-apple",
+      "path": "public/images/approved/ja-apple-693c57b57b06.jpg",
+      "sha256": "4b763836b91c4aca2bc1058e911b3456ba527742bf672742e90e88acfd35850f",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-banana",
+      "path": "public/images/approved/ja-banana-b36ca21f7582.jpg",
+      "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-orange",
+      "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+      "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-strawberry",
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-pineapple",
+      "path": "public/images/approved/es-419-travel-pineapple-bfa1ddc1824d.png",
+      "sha256": "bfa1ddc1824d7bcc7e728155bf7659af926a4e8dd0af5be7ae0a8abd89b3cadf",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-lime",
+      "path": "public/images/approved/es-419-travel-lime-e74a0306ccca.png",
+      "sha256": "e74a0306ccca96cefc4b85ebf120d74bf4021a641b1007a61f00a4acf14a381c",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-food-potato",
+      "path": "artifacts/spanish-food-1-art/originals/potato-v1.png",
+      "sha256": "7f76e5fb1041c5ce7d8743ec79c2a680e39d4e3c4f030379603352a630b9589c",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-food-tomato",
+      "path": "artifacts/spanish-food-1-art/originals/tomato-v2.png",
+      "sha256": "6ba3ea9ff343567043fd301491db992768ffd52fe3e70437a902fda7dd27d1cc",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-food-onion",
+      "path": "public/images/approved/ja-v-223e5321ecb8-0aa0cb8ab63e.jpg",
+      "sha256": "f75660f42b7982624afc51d4d6cecdcde85c873c8e0f24b295eff277f99b9490",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-food-carrot",
+      "path": "artifacts/spanish-food-1-art/originals/carrot-v1.png",
+      "sha256": "5f0200534ae3d0b656bb1ddfaa77cf51a9142d661f44196b4778d224ef0dc313",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-food-lettuce",
+      "path": "artifacts/spanish-food-1-art/originals/lettuce-v1.png",
+      "sha256": "d8fe8f1aa24da7867b2de135864cf1a8abe014f8ed31406e49bcb15d1934537f",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-avocado",
+      "path": "public/images/approved/es-419-travel-avocado-b83b43b23ef2.png",
+      "sha256": "b83b43b23ef2ae3359af219ff71e1fabc2eec2f298b3313cb4da58f13606a4fd",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-bread",
+      "path": "public/images/approved/es-419-travel-bread-843bf04cbd40.png",
+      "sha256": "843bf04cbd401ce3ba501fbbaa30360ee055b46879ebd3c64e011924a93f5992",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-rice",
+      "path": "artifacts/spanish-food-1-art/originals/rice-v1.png",
+      "sha256": "622cdf579932bbc07358bd73b590d9aa7b8db44c0e21b0a0ed34f5bf4e7452b3",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-food-tortilla",
+      "path": "artifacts/spanish-food-1-art/originals/tortilla-v1.png",
+      "sha256": "42b64854451626a9f6161ab60f0e661cd3efb85635d7f31ec0122421bbd96339",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-food-beans",
+      "path": "artifacts/spanish-food-1-art/originals/beans-v2.png",
+      "sha256": "ac1df9367013017fc49cfbc74d560690f57130607f8153773db6b90caa4de8bd",
+      "source": "generated",
+      "version": 2
+    },
+    {
+      "id": "es-419-food-pasta",
+      "path": "artifacts/spanish-food-1-art/originals/pasta-v1.png",
+      "sha256": "5f01d60afa3c5ef167411836481a0707d96ea6bafb6f0b1ce423b3c65f2f05e7",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-butter",
+      "path": "public/images/approved/es-419-travel-butter-db1c70b61922.png",
+      "sha256": "db1c70b619229bb9d5d57c02cfa15dc3166a55abe8c955d7e7548413b6a0752e",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-chicken",
+      "path": "public/images/approved/es-419-travel-chicken-edb305036ae9.png",
+      "sha256": "edb305036ae948e7abde01bfb381135d63d1798dba0b6508d6ec045658f13d39",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-cooked-fish",
+      "path": "public/images/approved/es-419-travel-cooked-fish-e73bbe183caa.png",
+      "sha256": "e73bbe183caab6348300477ac968f1baa4e927d28e4b67803982e705daa1a73e",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-egg",
+      "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+      "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-cheese",
+      "path": "public/images/approved/es-419-travel-cheese-ab2ab495577e.png",
+      "sha256": "ab2ab495577e9f4c917e273dac1f96a625ae3707fa42d718aed71ad41b3128d5",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-milk",
+      "path": "public/images/approved/es-419-travel-milk-ab6c590f6879.png",
+      "sha256": "ab6c590f6879bb1404982b2a7c522973333d007e6bdd233c0d390f1b4dc2f831",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "path": "artifacts/spanish-food-1-art/originals/yogurt-v1.png",
+      "sha256": "881aa6405174aa45b77a73ce3ae8b413f11374082c63a888761c60da84835fe1",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-soup",
+      "path": "public/images/approved/es-419-travel-soup-791fbdb33db2.png",
+      "sha256": "791fbdb33db2451b8f8bb96ae879733f6fb82343331834fea24a4cbbc932ccef",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-salad",
+      "path": "public/images/approved/es-419-travel-salad-124eda7165db.png",
+      "sha256": "124eda7165dbd51dcd45d4e42a15af7fd403f6402a14185ded76253318ea3217",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-taco",
+      "path": "public/images/approved/es-419-travel-taco-109cf9b587d3.png",
+      "sha256": "109cf9b587d3d04bc6b6a4d58962925fb7a13cc6e773e40c6a44b0193f106127",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-food-sandwich",
+      "path": "artifacts/spanish-food-1-art/originals/sandwich-v1.png",
+      "sha256": "e591dcb541320bcb74c9935287ee22264e6d76f001a18fa99a4bc613b47d9e95",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-food-pizza",
+      "path": "artifacts/spanish-food-1-art/originals/pizza-v1.png",
+      "sha256": "9c26220d7f83bbdd179e5a2ba09ab6632c73cc51c3d3aacbfba816ddfcbdba82",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-ice-cream",
+      "path": "public/images/approved/es-419-travel-ice-cream-ff36868d092f.png",
+      "sha256": "ff36868d092f83a2a9ca747a250298cfb221a1c9a1ea08c937d99c2464e7da2a",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-water",
+      "path": "public/images/approved/ja-v-28ddfdc9290c-5516b22697b4.jpg",
+      "sha256": "c4da41163e1e2b7b7a090e5645beba55d81134b08ebcc51f2cbc151c92c99ca5",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "path": "public/images/approved/ja-v-9ff5251e6f21-8e880be03de5.jpg",
+      "sha256": "14ff37f9a16578db1bbff76a63e876cea1bb63b358d587367e69b36d85d7022f",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-juice",
+      "path": "public/images/approved/es-419-travel-juice-7dcfc819e448.png",
+      "sha256": "7dcfc819e448fc65d826ddc07f11cc7b4ba64d54b6e800ec2fbb07ecc92f444d",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-food-tea",
+      "path": "artifacts/spanish-food-1-art/originals/tea-v1.png",
+      "sha256": "d1af5107e71b403c72855b54723b36c744edc3ed313cd71879f2372c356ae32b",
+      "source": "generated",
+      "version": 1
+    },
+    {
+      "id": "es-419-travel-salt",
+      "path": "public/images/approved/es-419-travel-salt-0810a29ef637.png",
+      "sha256": "0810a29ef637ea3342452a560ac8ddf19907902d9dd23160f533665e70af65d8",
+      "source": "approved-reuse"
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "path": "public/images/approved/es-419-travel-sugar-b83cada270bf.png",
+      "sha256": "b83cada270bfe466db8b4a3702e73e4faa14fd240056fa7256cd99499ba7f7a0",
+      "source": "approved-reuse"
+    }
+  ]
+}

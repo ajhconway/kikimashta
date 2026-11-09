@@ -1,0 +1,11 @@
+{
+  "id": "es-419-food-potato",
+  "slug": "potato",
+  "version": 1,
+  "path": "originals/potato-v1.png",
+  "sha256": "7f76e5fb1041c5ce7d8743ec79c2a680e39d4e3c4f030379603352a630b9589c",
+  "promptSha256": "bfe8257ef592891f1a39adf8c3cc734f4d20c9a942bff3c55a450d29abcc1c3d",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-10312f55-f779-41fe-a98c-4c43ef9d6b9c.png"
+}

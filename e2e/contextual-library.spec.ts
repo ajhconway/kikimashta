@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from './fixtures';
 import type { ContextualBank } from '../src/content/contextual-types';
 import type { PracticeAttempt } from '../src/types';
+import food from '../content/es-419-food-1.json' with { type: 'json' };
 
 const bank = JSON.parse(readFileSync(new URL('../content/contextual/ja-simple-pilot.json', import.meta.url), 'utf8')) as ContextualBank;
 const context = bank.contexts.find(context => context.id === 'ja-ctx-simple-ue-01')!;
@@ -145,6 +146,14 @@ test('Basic Spanish library offers pictures and foundation contexts without chan
   await expect(gallery).toBeVisible();
   await expect(gallery).toContainText('9 contextual questions');
   await expect(gallery.locator('article')).toHaveCount(9);
+  const rice = food.items.find(item => item.id === 'es-419-travel-rice')!;
+  const ricePictures = gallery.getByRole('img', { name: 'Rice', exact: true });
+  expect(await ricePictures.count()).toBeGreaterThan(0);
+  for (const picture of await ricePictures.all()) {
+    await expect(picture).toHaveAttribute('src', '/' + rice.image.src);
+    await picture.scrollIntoViewIfNeeded();
+    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
   await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(10);
   await expect(gallery.locator('.context-review-state').first()).toHaveText('Text approved · Audio approved');
   await expect(gallery.locator('article').first().getByRole('button', { name: /^Play / })).toHaveCount(8);
