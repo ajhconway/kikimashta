@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-sleeping-bag",
+  "slug": "sleeping-bag",
+  "version": 1,
+  "path": "originals/sleeping-bag-v1.png",
+  "sha256": "e400ba6f09bd4c9025a643452e380d156566a595a97cd62d4ccce73ec3903a11",
+  "promptSha256": "8119e77a92a056c3fdf17b68ef931a32c56d01cce5987ec8fbb4755a32ddcf99",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-5434db3f-c5da-48dc-9800-1399a294c481.png"
+}

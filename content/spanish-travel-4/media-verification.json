@@ -1,13 +1,14 @@
 {
   "issue": 207,
-  "status": "first-artwork-batch-awaiting-owner-feedback",
+  "status": "generated-awaiting-owner-media-review",
   "draftSha256": "815012b82c0c4785b57637547bd977a6fd4e71ba08101d22b8e5d096872a3c62",
   "pictures": {
-    "newReady": 6,
+    "newReady": 35,
     "approvedReuse": 1,
-    "newPending": 29,
+    "newPending": 0,
     "tool": "built-in image_gen",
-    "manifest": "artifacts/spanish-travel-4-art/manifest.json"
+    "manifest": "artifacts/spanish-travel-4-art/manifest.json",
+    "selected": 36
   },
   "audio": {
     "recordings": 288,
@@ -35,17 +36,18 @@
     "lint": "passed",
     "types": "passed",
     "validator": "passed",
-    "build": "passed"
+    "build": "passed",
+    "revisionScope": "Full-pack review workflow, readiness state and complete 35 generated pictures plus one approved reuse."
   },
   "galleryBrowserChecks": [
     {
       "browser": "chromium",
       "entries": 36,
-      "newPictures": 6,
+      "newPictures": 35,
       "approvedReuse": 1,
-      "pendingPictures": 29,
+      "pendingPictures": 0,
       "audioControls": 288,
-      "firstBatchFilter": true,
+      "groupFilter": true,
       "accentSearch": true,
       "nativeAudioClock": true,
       "stop": true,
@@ -55,11 +57,11 @@
     {
       "browser": "mobile-webkit",
       "entries": 36,
-      "newPictures": 6,
+      "newPictures": 35,
       "approvedReuse": 1,
-      "pendingPictures": 29,
+      "pendingPictures": 0,
       "audioControls": 288,
-      "firstBatchFilter": true,
+      "groupFilter": true,
       "accentSearch": true,
       "nativeAudioClock": true,
       "stop": true,
@@ -68,9 +70,11 @@
     }
   ],
   "limitations": [
-    "Twenty-nine pictures remain pending after the required batch feedback pause.",
     "Media acceptance and pack activation remain pending.",
     "Browser emulation is not a real iPhone test."
   ],
-  "independentReview": "No material findings. Nine focused tests pass; immutable draft, all7available picture hashes, all288recording hashes,1254pxalphaPNG/prompt provenance, authorization/private-output gates and absence of provider originals/credentials in review outputs independently checked."
+  "independentReview": "No material findings. All35generated PNGs, approved flower, prompt/reference/output hashes, square/alpha and complete36cardcontactsheet checked. Approved draft/authorization/config/prompts/firstsixoriginals/all288audio are byte-identical to efa739d. Full-pack readiness and instruction supersession verified; gallery tests3/3passed.",
+  "reviewWorkflow": "complete-pack-before-owner-feedback",
+  "reviewWorkflowAmendment": "artifacts/spanish-travel-4-art/review-workflow.json",
+  "preservation": "Approved draft, authorization, audio config/approval, all35prompts, six prior originals, approved flower and all288recordings byte-identical to efa739d."
 }

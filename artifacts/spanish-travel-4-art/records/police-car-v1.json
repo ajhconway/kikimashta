@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-police-car",
+  "slug": "police-car",
+  "version": 1,
+  "path": "originals/police-car-v1.png",
+  "sha256": "d1fba76cde3d6b4ead837c58152a10ab1f3fa9bd7c9aef144b3456e2902160f3",
+  "promptSha256": "163429afbab67f0e3808ba8c91bc92afcab46d2bd5edcd01cf5d563e76d40938",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-fc807817-95b8-4703-a137-c535243aecc0.png"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-dress",
+  "slug": "dress",
+  "version": 1,
+  "path": "originals/dress-v1.png",
+  "sha256": "e4188595075b26ea8d27111e9f0a66ca470c9c708656eb51e9b9cc513d561ddb",
+  "promptSha256": "45e9ec047cc4f8fcacf530ccf50fb9fa3b6f56122657d9147494a88c7299b9c1",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-691fe29a-24a5-4e81-bc87-f8cea0569912.png"
+}

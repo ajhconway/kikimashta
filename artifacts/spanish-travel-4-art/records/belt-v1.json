@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-belt",
+  "slug": "belt",
+  "version": 1,
+  "path": "originals/belt-v1.png",
+  "sha256": "2a63c3d8b325a0ddc529f1ddc59456ee12323113cbaf500e25de8e65183fc328",
+  "promptSha256": "1840e601a8ca8afc9e6580c830102431cb976f674bd69a7c3f7d9871219801d8",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8fc409f7-a5cd-43f6-8f30-60383b951020.png"
+}

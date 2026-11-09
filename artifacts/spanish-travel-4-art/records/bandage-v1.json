@@ -1,0 +1,11 @@
+{
+  "id": "es-419-travel-bandage",
+  "slug": "bandage",
+  "version": 1,
+  "path": "originals/bandage-v1.png",
+  "sha256": "54959b4faec3ad21b99a38f6820b30162565c0cf083c2f8bea1e8e8647696b37",
+  "promptSha256": "a7065cce3200200391ed2d49aa5dc419f80430ad7746f05e68a00850bdb930b1",
+  "referenceSha256": "22a089082940c1d1818955cd98be88a38e934548673ad43ba7acffdcdff60319",
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-180a2fa8-ce7c-4771-9536-18574f0b3986.png"
+}

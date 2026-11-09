@@ -35,7 +35,9 @@ test('progressive gallery keeps missing media pending and rejects changed pictur
   const gallery = join(root, ART, 'review.html'), html = await readFile(gallery, 'utf8')
   assert.equal((html.match(/<article /g) ?? []).length, 36)
   assert.equal((html.match(/<audio controls/g) ?? []).length, 0)
-  assert.ok(html.includes('First batch · Places and services')); assert.ok(html.includes('Audio generation in progress'))
+  assert.equal(result.status, 'generation-in-progress')
+  assert.ok(html.includes('Places and services')); assert.ok(!html.includes('First batch'))
+  assert.ok(html.includes('review the full pack together')); assert.ok(html.includes('Audio generation in progress'))
   await save(root, ART + '/' + record.path, 'altered PNG')
   await assert.rejects(buildLevel4MediaReview(root), /Generated artwork bytes changed/)
   assert.equal(await readFile(gallery, 'utf8'), html)
@@ -65,7 +67,7 @@ test('selected revisions require the previous original reference and exact recor
 })
 
 test('complete audio matrix exposes all voices and rejects changed audio identity or bytes without partial gallery writes', async t => {
-  const { root } = await fixture(t), { plan } = await loadSpanishTravelLevel4Plan(root), bytes = Buffer.from('isolated audio fixture')
+  const { root, requests, bytes: pictureBytes } = await fixture(t), { plan } = await loadSpanishTravelLevel4Plan(root), bytes = Buffer.from('isolated audio fixture')
   const clips = plan.items.flatMap(item => plan.voices.map(voice => ({ id: item.id, text: item.text, voice: voice.voice, voiceId: voice.id, voiceName: voice.name,
     file: `audio/${voice.voice}/${item.id}.mp3`, deliverySha256: hash(bytes), deliveryBytes: bytes.length, targetLimited: false })))
   for (const clip of clips) await save(root, AUDIO + '/' + clip.file, bytes)
@@ -73,9 +75,23 @@ test('complete audio matrix exposes all voices and rejects changed audio identit
   await save(root, AUDIO + '/manifest.json', audio)
   const result = await buildLevel4MediaReview(root)
   assert.equal(result.recordings, 288)
+  assert.equal(result.status, 'generation-in-progress')
+  for (const q of requests.requests) {
+    const path = `originals/${q.slug}-v1.png`
+    await save(root, ART + '/' + path, pictureBytes)
+    await save(root, ART + `/records/${q.slug}-v1.json`, { id: q.id, slug: q.slug, version: 1, path, sha256: hash(pictureBytes), promptSha256: hash(q.prompt), referenceSha256: q.referenceSha256 })
+  }
+  const complete = await buildLevel4MediaReview(root)
+  assert.equal(complete.status, 'generated-awaiting-owner-media-review')
+  assert.equal(complete.generatedImages, 35); assert.equal(complete.reusedImages, 1); assert.equal(complete.pendingImages, 0); assert.equal(complete.recordings, 288)
+  const artwork = await readFile(join(root, ART, 'artwork.html'), 'utf8')
+  assert.equal((artwork.match(/<img /g) ?? []).length, 36)
+  assert.ok(artwork.includes('ready for full-pack review'))
   const gallery = join(root, ART, 'review.html'), html = await readFile(gallery, 'utf8')
   assert.equal((html.match(/<audio controls/g) ?? []).length, 288)
   assert.ok(html.includes('Mexico City, Mexico')); assert.ok(html.includes('Stop audio'))
+  assert.ok(html.includes('All 36 pictures and 288 recordings are ready for full-pack review'))
+  assert.ok(!html.includes('Picture generation pending')); assert.ok(!html.includes('First batch'))
   audio.clips[0].voiceId = 'different-provider-voice'
   await save(root, AUDIO + '/manifest.json', audio)
   await assert.rejects(buildLevel4MediaReview(root), /Audio word or voice identity changed/)
