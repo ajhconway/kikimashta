@@ -313,6 +313,23 @@
       "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-f2c46fd2-4f57-4c51-b122-9ecb97f8f3b1.png",
       "tool": "built-in image_gen",
       "ownerFeedbackRound": 1
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "version": 4,
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+      "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2",
+      "prompt": "Use case: precise-object-edit. Refine this friendly healthy-skin vocabulary illustration. Zoom in a little more, approximately another 10–12 percent, centered on the pointing fingertip and the exposed forearm skin it indicates. Keep the same diagonal forearm, relaxed pointing gesture, three gold attention rays, peach palette, rounded plum outlines, gentle shading, and enough wrist/hand context to identify skin. Add LIGHT, understated surface detail: a few very fine soft skin creases and tiny faint pores around the indicated area, visible on close inspection but subtle at card size. Healthy intact ordinary skin, clean and pleasant. The detail should feel natural, not medical or magnified. No cutaway, tissue layers, wounds, rash, redness, body hair, large dots, dark pores, text, labels, glow or background wash. Preserve correct hand anatomy and the same square canvas with genuine transparent background.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
+          "role": "edit target for closer skin with light surface detail",
+          "sha256": "b45623d52b15a3c586f186f0bf25c95869a43cb06252f29d7b26c959bdd3a953"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50663b90-8087-4c22-8712-9a5a21f417dc.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 2
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "issue": 229,
+  "scope": "artwork only",
+  "date": "2026-11-09",
+  "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+  "interpretation": "Approval applies to the other three images in the immediately preceding four-card revision. Skin remains under review; other batch cards have no new approval inferred.",
+  "assets": [
+    {
+      "id": "ja-v-2f21cb2e8d02",
+      "text": "月見",
+      "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v2.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+      "selectedVersion": 2,
+      "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "text": "町",
+      "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v4.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+      "selectedVersion": 4,
+      "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "text": "金玉",
+      "path": "artifacts/picture-art-229/ja-v-26d771953f4b-v3.png",
+      "scope": "artwork only",
+      "date": "2026-11-09",
+      "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+      "selectedVersion": 3,
+      "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
+    }
+  ]
+}

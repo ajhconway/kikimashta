@@ -2,7 +2,7 @@
   "issue": 229,
   "sourceRevision": "7942fddd9f08eab3f8a4d6b5b2c9d2b80ec72030",
   "tool": "built-in image_gen",
-  "status": "generated-pending-owner-review",
+  "status": "partially-approved",
   "expectedAssetCount": 31,
   "expectedNewImageCount": 21,
   "existingApprovedReuseCount": 5,
@@ -855,7 +855,7 @@
       "reading": "つきみ",
       "meaning": "Moon Viewing",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show people intentionally viewing the moon with traditional cues; exclude a generic moon image as a competing activity answer.",
       "suitabilityRationale": "A conventional moon-viewing scene can depict the cultural activity.",
@@ -912,7 +912,14 @@
           255
         ]
       },
-      "ownerRevisionNote": "Moon watching in everyday casual clothes outdoors; the upward gaze and full moon carry the activity."
+      "ownerRevisionNote": "Moon watching in everyday casual clothes outdoors; the upward gaze and full moon carry the activity.",
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "selectedVersion": 2,
+        "sha256": "ead1dc68231491ecb9f8066da74b98dac6ecb03b319d0bc66b9daf3769ab9a31"
+      }
     },
     {
       "id": "ja-v-36897e1da4ac",
@@ -1016,7 +1023,7 @@
       "reading": "まち",
       "meaning": "Town",
       "level": 4,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use a clear town streetscape; exclude 市/村 if only building count or administrative status would distinguish them.",
       "suitabilityRationale": "A town can have a recognizable small-settlement scene.",
@@ -1126,7 +1133,14 @@
           255
         ]
       },
-      "ownerRevisionNote": "A green miniature town with rectangular building blocks and straight intersecting streets; same illustration feel as 村."
+      "ownerRevisionNote": "A green miniature town with rectangular building blocks and straight intersecting streets; same illustration feel as 村.",
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "selectedVersion": 4,
+        "sha256": "93fb2c963efb62f1750e3fc1c9527249b789583ff201aa63d60dd6cedf608f9f"
+      }
     },
     {
       "id": "ja-v-cb7d8a487c4f",
@@ -1459,19 +1473,35 @@
           "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8f2951d4-d09f-4b0d-aad4-6a2149551cd8.png",
           "tool": "built-in image_gen",
           "ownerFeedbackRound": 1
+        },
+        {
+          "version": 4,
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+          "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2",
+          "prompt": "Use case: precise-object-edit. Refine this friendly healthy-skin vocabulary illustration. Zoom in a little more, approximately another 10–12 percent, centered on the pointing fingertip and the exposed forearm skin it indicates. Keep the same diagonal forearm, relaxed pointing gesture, three gold attention rays, peach palette, rounded plum outlines, gentle shading, and enough wrist/hand context to identify skin. Add LIGHT, understated surface detail: a few very fine soft skin creases and tiny faint pores around the indicated area, visible on close inspection but subtle at card size. Healthy intact ordinary skin, clean and pleasant. The detail should feel natural, not medical or magnified. No cutaway, tissue layers, wounds, rash, redness, body hair, large dots, dark pores, text, labels, glow or background wash. Preserve correct hand anatomy and the same square canvas with genuine transparent background.",
+          "references": [
+            {
+              "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
+              "role": "edit target for closer skin with light surface detail",
+              "sha256": "b45623d52b15a3c586f186f0bf25c95869a43cb06252f29d7b26c959bdd3a953"
+            }
+          ],
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-50663b90-8087-4c22-8712-9a5a21f417dc.png",
+          "tool": "built-in image_gen",
+          "ownerFeedbackRound": 2
         }
       ],
-      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
-      "sha256": "b45623d52b15a3c586f186f0bf25c95869a43cb06252f29d7b26c959bdd3a953",
-      "prompt": "Use case: precise-object-edit. Edit this healthy-skin illustration with ONLY a modest camera zoom/crop adjustment. Zoom in approximately15 percent, centered on the fingertip touching the smooth forearm skin. Make that contact area a little larger and more prominent, while keeping the pointing finger, most of its hand, three gold attention rays, and enough exposed forearm/wrist context visible. Keep the same diagonal view, natural peach skin, exact relaxed pointing gesture, friendly rounded plum outlines and subtle shading. This should feel only slightly closer, NOT an extreme macro or a completely different composition. Preserve healthy unbroken skin and correct five-digit hand anatomy. No cutaway, tissue layers, hair, pores, wound, rash, medical details, labels or extra marks. Same square canvas and genuine transparent background; no glow or background wash.",
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+      "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2",
+      "prompt": "Use case: precise-object-edit. Refine this friendly healthy-skin vocabulary illustration. Zoom in a little more, approximately another 10–12 percent, centered on the pointing fingertip and the exposed forearm skin it indicates. Keep the same diagonal forearm, relaxed pointing gesture, three gold attention rays, peach palette, rounded plum outlines, gentle shading, and enough wrist/hand context to identify skin. Add LIGHT, understated surface detail: a few very fine soft skin creases and tiny faint pores around the indicated area, visible on close inspection but subtle at card size. Healthy intact ordinary skin, clean and pleasant. The detail should feel natural, not medical or magnified. No cutaway, tissue layers, wounds, rash, redness, body hair, large dots, dark pores, text, labels, glow or background wash. Preserve correct hand anatomy and the same square canvas with genuine transparent background.",
       "references": [
         {
-          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v2.png",
-          "role": "edit target for a modest closer view",
-          "sha256": "160b7b06a01cc4fb6184e1ddbdebf70d74708fc09e79a397c57f5da8b6f16745"
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
+          "role": "edit target for closer skin with light surface detail",
+          "sha256": "b45623d52b15a3c586f186f0bf25c95869a43cb06252f29d7b26c959bdd3a953"
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -1481,7 +1511,7 @@
           255
         ]
       },
-      "ownerRevisionNote": "A modestly closer view of healthy, intact forearm skin with a pointing finger and gentle attention marks."
+      "ownerRevisionNote": "A slightly closer view of healthy forearm skin, with faint pores and fine soft creases around the pointing fingertip."
     },
     {
       "id": "ja-v-26d771953f4b",
@@ -1489,7 +1519,7 @@
       "reading": "きんたま",
       "meaning": "Testicles",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "approved",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use an accurate simple anatomical cutaway and teach that the Japanese word is colloquial; no sexualized presentation is needed.",
       "suitabilityRationale": "A clear educational anatomical illustration can identify the body part directly.",
@@ -1572,7 +1602,14 @@
           255
         ]
       },
-      "ownerRevisionNote": "A fully clothed adult man with small attention lines at the crotch as a discreet visual cue."
+      "ownerRevisionNote": "A fully clothed adult man with small attention lines at the crotch as a discreet visual cue.",
+      "approval": {
+        "scope": "artwork only",
+        "date": "2026-11-09",
+        "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+        "selectedVersion": 3,
+        "sha256": "8ba7d3b6729f96371f3efb803f113db7cdf64cf37c42d3bedc0fb3c8dff03dfc"
+      }
     },
     {
       "id": "ja-v-97526e11c703",
@@ -1623,7 +1660,7 @@
       }
     }
   ],
-  "generatedVersionCount": 29,
+  "generatedVersionCount": 30,
   "readyAssetCount": 31,
   "checks": {
     "scope": "Exactly31 unupdated picture-category IDs from frozen review;61 already-updated picture IDs excluded.",
@@ -1638,7 +1675,7 @@
         "mobile WebKit"
       ],
       "imagesDecodedPerEngine": 31,
-      "distinctLocalResourcesPerEngine": 40,
+      "distinctLocalResourcesPerEngine": 42,
       "sourceFilterCounts": {
         "generated": 21,
         "shared-new": 5,
@@ -1646,14 +1683,20 @@
       },
       "search": "passed",
       "horizontalOverflow": false,
-      "ownerRevisionPaths": "Moon viewingv2, townv4, skinv3, clothed-man cuev3; all displayed with current owner concept notes."
+      "ownerRevisionPaths": "Moon viewing v2, town v4, skin v4, clothed-man cue v3; current concept notes displayed. Three exact approved labels and skin pending state verified.",
+      "approvalCounts": {
+        "approved": 3,
+        "awaitingOwnerReview": 28
+      }
     },
     "artworkTests": {
       "command": "python3 -m unittest discover -s scripts/cards -p 'test_*.py'",
       "passed": 27
     },
     "builderFixtures": "Missing/duplicate/out-of-scope IDs, frozen-review tampering, stale hashes, missing files, unsafe paths, invalid source revision and changed identity/category reject before output replacement.",
-    "ownerRevisionRound1": "Four selected cards revised; all prior versions preserved and other27 selected asset records unchanged. Final townv4/skin v3/clothed-man v3/moon-viewing v2 are square transparent RGBA."
+    "ownerRevisionRound1": "Four selected cards revised; all prior versions preserved and other27 selected asset records unchanged. Final townv4/skin v3/clothed-man v3/moon-viewing v2 are square transparent RGBA.",
+    "ownerRevisionRound2": "Skin v4 is slightly closer with faint pores and fine creases. Exact selected versions/hashes approved for moon viewing v2, town v4 and clothed-man cue v3. Other27 selected asset records and every prior PNG preserved.",
+    "builderApprovalFixtures": "Missing approval evidence, invalid scope, empty owner statement/date, stale hash/version, missing selected version record and duplicate version record reject before output replacement; valid three approvals render separately from source-approved reuse."
   },
   "styleReferences": [
     {
@@ -1689,6 +1732,23 @@
         "For 金玉, can we have attention lines on a man's crotch perhaps?"
       ],
       "date": "2026-11-09"
+    },
+    {
+      "round": 2,
+      "date": "2026-11-09",
+      "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+      "status": "skin-revised-pending-owner-review",
+      "approvedIds": [
+        "ja-v-2f21cb2e8d02",
+        "ja-v-09d74d630a45",
+        "ja-v-26d771953f4b"
+      ],
+      "revisedIds": [
+        "ja-v-d0c8497457bd"
+      ],
+      "approvalInterpretation": "The rest refers to the other three images in the immediately preceding four-card revision."
     }
-  ]
+  ],
+  "approvedAssetCount": 3,
+  "awaitingOwnerReviewCount": 28
 }

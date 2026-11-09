@@ -1,0 +1,24 @@
+{
+  "issue": 229,
+  "date": "2026-11-09",
+  "ownerStatement": "Can we zoom in a little more for skin and show some light detail? The rest are good.",
+  "approvedIds": [
+    "ja-v-2f21cb2e8d02",
+    "ja-v-09d74d630a45",
+    "ja-v-26d771953f4b"
+  ],
+  "requests": [
+    {
+      "id": "ja-v-d0c8497457bd",
+      "version": 4,
+      "prompt": "Use case: precise-object-edit. Refine this friendly healthy-skin vocabulary illustration. Zoom in a little more, approximately another 10–12 percent, centered on the pointing fingertip and the exposed forearm skin it indicates. Keep the same diagonal forearm, relaxed pointing gesture, three gold attention rays, peach palette, rounded plum outlines, gentle shading, and enough wrist/hand context to identify skin. Add LIGHT, understated surface detail: a few very fine soft skin creases and tiny faint pores around the indicated area, visible on close inspection but subtle at card size. Healthy intact ordinary skin, clean and pleasant. The detail should feel natural, not medical or magnified. No cutaway, tissue layers, wounds, rash, redness, body hair, large dots, dark pores, text, labels, glow or background wash. Preserve correct hand anatomy and the same square canvas with genuine transparent background.",
+      "references": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v3.png",
+          "role": "edit target"
+        }
+      ],
+      "transparent_background": true
+    }
+  ]
+}
