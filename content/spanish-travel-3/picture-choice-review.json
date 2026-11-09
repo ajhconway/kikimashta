@@ -1,0 +1,241 @@
+{
+  "issue": 174,
+  "method": "Visually inspected selected level 1/2/3 contact sheets and the four corrected level 3 pictures at 145px.",
+  "acceptedArtworkManifest": "artifacts/spanish-travel-3-art/manifest.json",
+  "exclusionsAdded": [
+    {
+      "ids": [
+        "es-419-travel-subway",
+        "es-419-travel-train"
+      ],
+      "reason": "The metro and the existing train/station pictures all depict rail transport."
+    },
+    {
+      "ids": [
+        "es-419-travel-subway",
+        "es-419-travel-train-station"
+      ],
+      "reason": "The metro and the existing train/station pictures all depict rail transport."
+    },
+    {
+      "ids": [
+        "es-419-travel-sidewalk",
+        "es-419-travel-street"
+      ],
+      "reason": "The street and crossing pictures include sidewalks; avoid competing road/sidewalk/crossing scenes."
+    },
+    {
+      "ids": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-street"
+      ],
+      "reason": "The street and crossing pictures include sidewalks; avoid competing road/sidewalk/crossing scenes."
+    },
+    {
+      "ids": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-sidewalk"
+      ],
+      "reason": "The street and crossing pictures include sidewalks; avoid competing road/sidewalk/crossing scenes."
+    },
+    {
+      "ids": [
+        "es-419-travel-bench",
+        "es-419-travel-park"
+      ],
+      "reason": "The approved scene contains a bench."
+    },
+    {
+      "ids": [
+        "es-419-travel-bench",
+        "es-419-travel-bus-stop"
+      ],
+      "reason": "The approved scene contains a bench."
+    },
+    {
+      "ids": [
+        "es-419-travel-parking-lot",
+        "es-419-travel-car"
+      ],
+      "reason": "The parking lot includes a small car."
+    },
+    {
+      "ids": [
+        "es-419-travel-parking-lot",
+        "es-419-travel-taxi"
+      ],
+      "reason": "The parking lot includes a small car."
+    },
+    {
+      "ids": [
+        "es-419-travel-apple",
+        "es-419-travel-market"
+      ],
+      "reason": "The market depicts mixed fruit, including these fruits or very similar produce at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-banana",
+        "es-419-travel-market"
+      ],
+      "reason": "The market depicts mixed fruit, including these fruits or very similar produce at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-orange",
+        "es-419-travel-market"
+      ],
+      "reason": "The market depicts mixed fruit, including these fruits or very similar produce at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-avocado",
+        "es-419-travel-market"
+      ],
+      "reason": "The market depicts mixed fruit, including these fruits or very similar produce at card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-taco",
+        "es-419-travel-menu"
+      ],
+      "reason": "The approved menu contains a pictogram of this food or drink."
+    },
+    {
+      "ids": [
+        "es-419-travel-ice-cream",
+        "es-419-travel-menu"
+      ],
+      "reason": "The approved menu contains a pictogram of this food or drink."
+    },
+    {
+      "ids": [
+        "es-419-travel-coffee",
+        "es-419-travel-menu"
+      ],
+      "reason": "The approved menu contains a pictogram of this food or drink."
+    },
+    {
+      "ids": [
+        "es-419-travel-river",
+        "es-419-travel-bridge"
+      ],
+      "reason": "The approved bridge spans a river."
+    },
+    {
+      "ids": [
+        "es-419-travel-island",
+        "es-419-travel-beach"
+      ],
+      "reason": "The small shore and palm-tree scenes can read as either an island or a beach."
+    },
+    {
+      "ids": [
+        "es-419-travel-forest",
+        "es-419-travel-park"
+      ],
+      "reason": "Both tree-covered scenes could be interpreted as a wooded park."
+    },
+    {
+      "ids": [
+        "es-419-travel-pillow",
+        "es-419-travel-bed"
+      ],
+      "reason": "The approved bed and room scenes include a pillow and blanket."
+    },
+    {
+      "ids": [
+        "es-419-travel-pillow",
+        "es-419-travel-room"
+      ],
+      "reason": "The approved bed and room scenes include a pillow and blanket."
+    },
+    {
+      "ids": [
+        "es-419-travel-blanket",
+        "es-419-travel-bed"
+      ],
+      "reason": "The approved bed and room scenes include a pillow and blanket."
+    },
+    {
+      "ids": [
+        "es-419-travel-blanket",
+        "es-419-travel-room"
+      ],
+      "reason": "The approved bed and room scenes include a pillow and blanket."
+    },
+    {
+      "ids": [
+        "es-419-travel-blanket",
+        "es-419-travel-towel"
+      ],
+      "reason": "Avoid competing rectangular bedding and towel textiles at small card size."
+    },
+    {
+      "ids": [
+        "es-419-travel-orange",
+        "es-419-travel-juice"
+      ],
+      "reason": "The approved juice picture includes a prominent orange half alongside the glass."
+    }
+  ],
+  "distinctPairsRetained": [
+    {
+      "subjects": [
+        "church",
+        "museum"
+      ],
+      "reason": "Bell tower and cross versus classical columns and statue."
+    },
+    {
+      "subjects": [
+        "bench",
+        "chair"
+      ],
+      "reason": "Long slatted seat for several people versus one chair."
+    },
+    {
+      "subjects": [
+        "seat-belt",
+        "car",
+        "taxi"
+      ],
+      "reason": "Isolated empty seat with fastened belt versus complete vehicle exteriors."
+    },
+    {
+      "subjects": [
+        "lake",
+        "river",
+        "swimming-pool"
+      ],
+      "reason": "Enclosed natural shoreline versus winding river and rectangular tiled pool."
+    },
+    {
+      "subjects": [
+        "waterfall",
+        "fountain",
+        "river",
+        "lake"
+      ],
+      "reason": "Falling water and rocky ledge versus upward fountain jet, winding river and still lake."
+    },
+    {
+      "subjects": [
+        "mirror",
+        "window",
+        "spoon"
+      ],
+      "reason": "Blue reflective handheld oval versus open window and white spoon bowl."
+    },
+    {
+      "subjects": [
+        "shirt",
+        "jacket",
+        "swimsuit",
+        "pants"
+      ],
+      "reason": "Collar and button front, zipped jacket, one-piece swim shape and two trouser legs remain distinct."
+    }
+  ],
+  "policy": "Exclusions apply symmetrically to stable IDs across selected packs; they do not change bank membership or saved attempts."
+}

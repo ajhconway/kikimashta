@@ -1,0 +1,15 @@
+{
+  "issue": 174,
+  "id": "es-419-travel-toilet-paper",
+  "slug": "toilet-paper",
+  "version": 3,
+  "prompt": "Use case: precise-object-edit\nAsset type: one square Spanish vocabulary card\nInput image 1: EDIT TARGET and style reference.\nPrimary request: One toilet-paper roll with visible cardboard core and a rectangular paper tail hanging vertically, aligned to the roll width, with straight transverse perforation and bottom edges; no diagonal tear.\nOwner correction: Rotate the roll so its cardboard tube axis is horizontal, left to right, with one circular end and its cardboard core visible at the left. A SHORT RECTANGULAR paper tail unrolls from the front of the roll and hangs STRAIGHT DOWN. Give the sheet two parallel straight side edges, a straight horizontal perforation line across its width and a straight horizontal bottom edge, parallel to each other. Correct physically coherent paper unwinding: no diagonal tearing, no slanting rip, no serrated or wavy torn edge, no curled diagonal corner. Keep the paper width consistent with the roll width. Make it obviously soft white toilet paper rather than a kitchen towel. Preserve deep-violet outlines, opaque white paper with gentle lavender shading, simple brown cardboard core and transparent outer background.\nConstraints: one complete standalone vocabulary illustration. Bold deep-violet contours, smooth rounded forms, restrained soft shading, true transparent background. No text, logo, watermark, surrounding scene or cast shadow. Keep readable at145px. The corrected geometry takes precedence over the old image.\nCRITICAL EDIT: Preserve the roll and its straight rectangular paper tail exactly as shown in the input. REMOVE ALL background glow, fuzzy lavender/gray halo, haze and shadow surrounding the object. All pixels outside the hard clean violet object outline must be fully transparent. No outer glow, no drop shadow, no ground shadow, no semi-transparent fuzzy background. Keep all white paper interiors fully opaque. A clean cutout only.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-3-art/originals/toilet-paper-v2.png",
+  "referenceSha256": "5a40602b3406b58161c3f80dffefb9104111fa3c1c8e72aad5dafd07193578e3",
+  "ownerFeedback": "The paper is tearing at a weird angle.",
+  "referenceOrder": [
+    "artifacts/spanish-travel-3-art/originals/toilet-paper-v2.png"
+  ]
+}

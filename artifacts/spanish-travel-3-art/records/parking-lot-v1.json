@@ -1,0 +1,11 @@
+{
+  "slug": "parking-lot",
+  "id": "es-419-travel-parking-lot",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6f5c64b4-96b2-478f-8c29-a0499b4650c1.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6f5c64b4-96b2-478f-8c29-a0499b4650c1.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/parking-lot-v1.png",
+  "sha256": "73b25dceba613588d260def8a3440c85b8594ed09d223d622d2757f99bcd54fb",
+  "promptSha256": "881a11962c5ff5c35b93e74a213288222d2c8ef6d320ae71c2b2b77bc228f5a4",
+  "tool": "built-in image_gen"
+}

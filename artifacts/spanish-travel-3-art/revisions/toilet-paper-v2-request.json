@@ -1,0 +1,15 @@
+{
+  "issue": 174,
+  "id": "es-419-travel-toilet-paper",
+  "slug": "toilet-paper",
+  "version": 2,
+  "prompt": "Use case: precise-object-edit\nAsset type: one square Spanish vocabulary card\nInput image 1: EDIT TARGET and style reference.\nPrimary request: One toilet-paper roll with visible cardboard core and a rectangular paper tail hanging vertically, aligned to the roll width, with straight transverse perforation and bottom edges; no diagonal tear.\nOwner correction: Rotate the roll so its cardboard tube axis is horizontal, left to right, with one circular end and its cardboard core visible at the left. A SHORT RECTANGULAR paper tail unrolls from the front of the roll and hangs STRAIGHT DOWN. Give the sheet two parallel straight side edges, a straight horizontal perforation line across its width and a straight horizontal bottom edge, parallel to each other. Correct physically coherent paper unwinding: no diagonal tearing, no slanting rip, no serrated or wavy torn edge, no curled diagonal corner. Keep the paper width consistent with the roll width. Make it obviously soft white toilet paper rather than a kitchen towel. Preserve deep-violet outlines, opaque white paper with gentle lavender shading, simple brown cardboard core and transparent outer background.\nConstraints: one complete standalone vocabulary illustration. Bold deep-violet contours, smooth rounded forms, restrained soft shading, true transparent background. No text, logo, watermark, surrounding scene or cast shadow. Keep readable at145px. The corrected geometry takes precedence over the old image.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-travel-3-art/originals/toilet-paper-v1.png",
+  "referenceSha256": "5f92562c0d302b0bdb30579f786142b249de5a6be9db2598ebb357d2f8cb3ce9",
+  "ownerFeedback": "The paper is tearing at a weird angle.",
+  "referenceOrder": [
+    "artifacts/spanish-travel-3-art/originals/toilet-paper-v1.png"
+  ]
+}

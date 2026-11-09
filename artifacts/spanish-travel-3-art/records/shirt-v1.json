@@ -1,0 +1,11 @@
+{
+  "slug": "shirt",
+  "id": "es-419-travel-shirt",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-60be7b0e-54ed-4daf-b3cf-fff43346760e.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-60be7b0e-54ed-4daf-b3cf-fff43346760e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/shirt-v1.png",
+  "sha256": "67800a7717f8b5e94796f8ee670468c5ab897ab1018d30d88327bf6d77ec0a83",
+  "promptSha256": "f914f0bba0df91837a4a659a93c380b1b6e7c9a798f1655740e9eac59d34fedb",
+  "tool": "built-in image_gen"
+}

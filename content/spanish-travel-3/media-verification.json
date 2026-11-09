@@ -1,0 +1,98 @@
+{
+  "issue": 174,
+  "scope": "Media preparation only. No active application or older-pack changes.",
+  "ownerMediaAcceptance": "Accepted: LTGM, ship it",
+  "fullCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 441,
+    "nodeTests": 247,
+    "pythonAudio": 12,
+    "pythonCards": 22,
+    "lint": "passed",
+    "types": "passed",
+    "validator": "passed",
+    "productionBuild": "passed"
+  },
+  "pictures": {
+    "generated": 31,
+    "approvedReuse": 5,
+    "total": 36,
+    "checks": [
+      "All image hashes and byte counts match their originals",
+      "Every new PNG fully decoded with CRC and transparency checks",
+      "Exact prompts and style-reference hashes bound in per-image records",
+      "Four reused JPGs and one reused PNG preserved unchanged",
+      "Only four selected picture hashes changed after owner feedback; all prior originals and 288 recordings are unchanged."
+    ],
+    "revisionHistory": "artifacts/spanish-travel-3-art/revisions/history.json"
+  },
+  "recordings": {
+    "total": 288,
+    "voices": 8,
+    "inputCharacters": 2336,
+    "privateArchiveVerifiedFiles": 1737,
+    "quieterClips": [
+      {
+        "id": "es-419-travel-taco",
+        "voice": "santiago",
+        "text": "taco",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -22.57,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -2.19
+        },
+        "limitingReasons": [
+          "true_peak_headroom"
+        ]
+      },
+      {
+        "id": "es-419-travel-island",
+        "voice": "carlos-figueroa",
+        "text": "isla",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -23.41,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.9
+        },
+        "limitingReasons": [
+          "maximum_gain"
+        ]
+      }
+    ],
+    "nativePlaybackEvidence": "artifacts/spanish-travel-3-audio-review/verification.json"
+  },
+  "galleryBrowserChecks": [
+    {
+      "browser": "chromium",
+      "pictures": 36,
+      "recordings": 288,
+      "search": true,
+      "region": true,
+      "voice": true,
+      "sequenceAdvance": true,
+      "stop": true,
+      "revisedImageSelection": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "pictures": 36,
+      "recordings": 288,
+      "search": true,
+      "region": true,
+      "voice": true,
+      "sequenceAdvance": true,
+      "stop": true,
+      "revisedImageSelection": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Real iPhone tests remain deferred to deployed version."
+  ]
+}
