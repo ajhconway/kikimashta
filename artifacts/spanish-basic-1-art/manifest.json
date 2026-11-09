@@ -1,0 +1,228 @@
+{
+  "issue": 191,
+  "pack": "es-419-basic-1",
+  "status": "generated-awaiting-owner-media-review",
+  "draftSha256": "568d9e8ac5aabea058b9121cdf5fe0324b689c5f04280878efc84e60272743bb",
+  "audioManifestSha256": "29756240868f82526f288586eba58fcc6a912fed26182240c80f25dec072ad07",
+  "generatedPictures": 9,
+  "reusedPictures": 6,
+  "recordings": 336,
+  "images": [
+    {
+      "id": "es-419-basic-eat",
+      "text": "comer",
+      "meaning": "Eat",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/eat-v1.png",
+      "sha256": "c495ddb8644cb6ae010606575f6718279f820d3e041434d2f3824ed2edd7641d",
+      "bytes": 1000925,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 788873,
+        "opaquePixels": 767510,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "60b6d74bc060aeee2fa5d7370e66dd0d1d1a2c16c826a101e87413f518b9e14f"
+    },
+    {
+      "id": "es-419-basic-drink",
+      "text": "beber",
+      "meaning": "Drink",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/drink-v1.png",
+      "sha256": "45313e5cd9db24fbdaf5fda8aadce00803d5a0f0ed97b01839a3aad920658be8",
+      "bytes": 1016537,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 818963,
+        "opaquePixels": 735031,
+        "opaqueWhitePixels": 3516
+      },
+      "promptSha256": "d733a676d8726fd1f94dd809c3af54c1701890c2ade7413ff83e50a06bedc829"
+    },
+    {
+      "id": "es-419-basic-large",
+      "text": "grande",
+      "meaning": "Big",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-f6377dcbb564-511e9b1b949b.jpg",
+      "sha256": "e4e3a7c4b4a711e9eafb2c65f99d5d9803618a42597df959dd6f54c6ab6a845b",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-small",
+      "text": "pequeño",
+      "meaning": "Small",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-769a80524957-bb9e93fe5bee.jpg",
+      "sha256": "ed0a26999d386ade88cf8d363538d9562af4cba381503f7604186d016cbd6e11",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-cold",
+      "text": "frío",
+      "meaning": "Cold",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/cold-v1.png",
+      "sha256": "889edba100272b43cc92d4be84a2c433eab7d42ed1156ad8762c068ac0af71d3",
+      "bytes": 885550,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 915644,
+        "opaquePixels": 641128,
+        "opaqueWhitePixels": 10337
+      },
+      "promptSha256": "7eddf4187adc2e4ac826dec5ec83bbf3ee9fd15ca88f6781aece16406fcc4e22"
+    },
+    {
+      "id": "es-419-basic-hot",
+      "text": "caliente",
+      "meaning": "Hot",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/hot-v1.png",
+      "sha256": "918b12b9e4495568614b365af53a975349cf4950bf3cc0245ee50f9adefac699",
+      "bytes": 842053,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 957885,
+        "opaquePixels": 592685,
+        "opaqueWhitePixels": 3375
+      },
+      "promptSha256": "5b0621e5a5948bd63f7c7f654fe863cdc9ec7fcf3a553aa17199f71435f74927"
+    },
+    {
+      "id": "es-419-basic-open",
+      "text": "abierto",
+      "meaning": "Open",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-12025d56c403-3f4750c5e972.jpg",
+      "sha256": "5601a95a2085bea7bd788b5207e5c3ad374780fa75ae549ff84a4a4018314a56",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-closed",
+      "text": "cerrado",
+      "meaning": "Closed",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-56e27b2da5a6-75c5a658149f.jpg",
+      "sha256": "bed4c2f3e39f2f6b8d8b8c6cf262001618abdbb05f2ba21592fbbb26eebbc072",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-inside",
+      "text": "dentro de",
+      "meaning": "Inside",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
+      "sha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e",
+      "bytes": 1063369,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 771971,
+        "opaquePixels": 788530,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "c701defb8cd7115b10f854d9599df9699c0ae5b40ab61eeb1957c5cb360184b0"
+    },
+    {
+      "id": "es-419-basic-on-top",
+      "text": "encima de",
+      "meaning": "On top of",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-c0f58bfab324-47c06b3b8efb.jpg",
+      "sha256": "b5c0bcdd3ee2916873f78328e6ba6542b7fc9348120c37a743329fd9a0809d6e",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-under",
+      "text": "debajo de",
+      "meaning": "Under",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-520308b3c3b4-6fb26718fa99.jpg",
+      "sha256": "1a3980b8ab94d44dc6922537ab4a3d0bc4985b8d056090aa753ad0959976bdb5",
+      "evidence": "content/card-regeneration/activation.json"
+    },
+    {
+      "id": "es-419-basic-next-to",
+      "text": "al lado de",
+      "meaning": "Next to",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/next-to-v2.png",
+      "sha256": "de206d4d900e65879db168ea1bd64b1b5a3836a9d7c12c3f032d7c9ad5603565",
+      "bytes": 438169,
+      "version": 2,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1299831,
+        "opaquePixels": 261430,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "4367f06c2864bc0664399f82cc12f7ad2a46e217fb8abd8b90af31a5b0bb8ea6"
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "text": "hambre",
+      "meaning": "Hunger",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
+      "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
+      "bytes": 912658,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 905672,
+        "opaquePixels": 647753,
+        "opaqueWhitePixels": 642
+      },
+      "promptSha256": "a35216939ffcc079584998036aedf6d18972e457d6bd7c5ffc36f7592faa103f"
+    },
+    {
+      "id": "es-419-basic-thirst",
+      "text": "sed",
+      "meaning": "Thirst",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/thirst-v1.png",
+      "sha256": "dd372fcbe5f0d5d9632253905bbcc1be775e4eba544bd6421786a3927c4b523b",
+      "bytes": 916085,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 901064,
+        "opaquePixels": 651943,
+        "opaqueWhitePixels": 1584
+      },
+      "promptSha256": "33a49f7d842e299ea4a06e6cb8e3db4ca7459cba22255ca96aa5a7776829beef"
+    },
+    {
+      "id": "es-419-basic-sleepiness",
+      "text": "sueño",
+      "meaning": "Sleepiness",
+      "source": "generated",
+      "path": "artifacts/spanish-basic-1-art/originals/sleepiness-v1.png",
+      "sha256": "da502ad99e23c3178b9929f1243d521f27cad1546aa5b2abc873f41b3ac95772",
+      "bytes": 996951,
+      "version": 1,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 864125,
+        "opaquePixels": 687780,
+        "opaqueWhitePixels": 1743
+      },
+      "promptSha256": "3aedaedd8a41f18454708f737a6256c59ddf3fe1e573e660a09283767a6d3f80"
+    }
+  ]
+}

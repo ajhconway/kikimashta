@@ -1,0 +1,18 @@
+{
+  "id": "es-419-basic-next-to",
+  "slug": "next-to",
+  "version": 1,
+  "path": "originals/next-to-v1.png",
+  "sha256": "cc0a0f571f5ec2234adce38005381e57908d05d4f8c9e0d40c188cf2d8f9e108",
+  "promptSha256": "210d8ef070c12a1ca16b62c4a6eceb62a80796bcb100431f651ae7efd181242a",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-basic-1-art/originals/inside-v1.png",
+      "role": "matched-counterpart",
+      "sha256": "b9172aadaa1017e036bdc9dfedc194e5a7d40eb53cc040969bb571477b58f17e"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d52abba6-d2a0-4a0d-a4c1-ef4155e7a859.png"
+}

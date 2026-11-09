@@ -1,0 +1,18 @@
+{
+  "id": "es-419-basic-thirst",
+  "slug": "thirst",
+  "version": 1,
+  "path": "originals/thirst-v1.png",
+  "sha256": "dd372fcbe5f0d5d9632253905bbcc1be775e4eba544bd6421786a3927c4b523b",
+  "promptSha256": "33a49f7d842e299ea4a06e6cb8e3db4ca7459cba22255ca96aa5a7776829beef",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-basic-1-art/originals/hunger-v1.png",
+      "role": "matched-counterpart",
+      "sha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-86bceab9-7e0c-4f72-87d8-9693b02cef72.png"
+}

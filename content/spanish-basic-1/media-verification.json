@@ -1,0 +1,65 @@
+{
+  "issue": 191,
+  "status": "media-generated-awaiting-owner-acceptance",
+  "pictures": {
+    "selected": 15,
+    "generated": 9,
+    "reused": 6,
+    "versionsPreserved": 10,
+    "manifest": "artifacts/spanish-basic-1-art/manifest.json"
+  },
+  "audio": {
+    "clips": 336,
+    "words": 24,
+    "contexts": 9,
+    "voices": 8,
+    "nativePlayback": "artifacts/spanish-basic-1-audio-review/verification.json",
+    "privateArchiveFilesVerified": 2027
+  },
+  "fullCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "vitest": 446,
+    "node": 266,
+    "pythonAudio": 12,
+    "pythonCards": 22,
+    "lint": "passed",
+    "types": "passed",
+    "validator": "passed",
+    "build": "passed"
+  },
+  "limitations": [
+    "Owner picture and listening acceptance pending.",
+    "Real iPhone tests deferred to deployed version.",
+    "Foundation admission/runtime activation not included."
+  ],
+  "galleryBrowserChecks": [
+    {
+      "browser": "chromium",
+      "pictures": 15,
+      "allImages": 51,
+      "recordings": 336,
+      "pairButtons": 72,
+      "filters": true,
+      "orderedPairPlayback": true,
+      "pauseMs": 656,
+      "cancelGap": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "browser": "mobile-webkit",
+      "pictures": 15,
+      "allImages": 51,
+      "recordings": 336,
+      "pairButtons": 72,
+      "filters": true,
+      "orderedPairPlayback": true,
+      "pauseMs": 820,
+      "cancelGap": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "independentReview": "Selected artwork meaning, source/prompt/reference hashes, clip/context identity and tamper guards reviewed; no remaining material findings."
+}
