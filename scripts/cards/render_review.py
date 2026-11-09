@@ -1,4 +1,6 @@
 """Build the local artwork review gallery and readable dependency graph (#72)."""
+from artwork_source import source_file
+import os
 import hashlib
 import html
 import json
@@ -76,12 +78,12 @@ def render_batch(path, lookup):
     revised_numbers = []
     for index, asset in enumerate(manifest['assets'], first_number):
         card = lookup[asset['id']]
-        file = ROOT / asset['path']
+        file = source_file(ROOT, asset['path'], asset.get('sha256'), asset.get('bytes'))
         raw = file.read_bytes()
         assert raw[:8] == b'\x89PNG\r\n\x1a\n'
         asset.update(width=struct.unpack('>I', raw[16:20])[0], height=struct.unpack('>I', raw[20:24])[0],
                      bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
-        src = html.escape(file.name)
+        src = html.escape(os.path.relpath(file, path.parent))
         name = html.escape(card['meaning'])
         jp = html.escape(card['japanese'])
         number = f'{index:02}'
@@ -98,7 +100,7 @@ def render_batch(path, lookup):
             revised_numbers.append(number)
         mini.append(f'<figure><img src="{src}" alt="{name}" width="145" height="145"><figcaption>{number} · {name}</figcaption></figure>')
         previous = asset.get('previousVersions', [])
-        previous_links = ' '.join(f'<a href="{html.escape(Path(old["path"]).name)}">Previous version {i+1}</a>' for i, old in enumerate(previous))
+        previous_links = ' '.join(f'<a href="{html.escape(os.path.relpath(source_file(ROOT, old["path"], old["sha256"]), path.parent))}">Previous version {i+1}</a>' for i, old in enumerate(previous))
         details.append(f'<details><summary>{number} · {name} — prompt and review notes</summary><p>{html.escape(asset["visualReview"])}</p><p>{previous_links}</p><pre>{html.escape(asset["prompt"])}</pre></details>')
         feedback += [f'## {number} · {card["meaning"]} / {card["japanese"]}', '', f'ID: `{card["id"]}`', '', 'User feedback: pending.', '']
     gallery = '''<!doctype html><html lang="en"><meta charset="utf-8">

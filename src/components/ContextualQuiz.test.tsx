@@ -19,9 +19,11 @@ function fixture({ recorded = true, id = 'who-drinks', format = 'text' }: {
     correctOptionId: 'teacher-answer', explanation: 'The teacher drinks water.' };
   const context: ContextualItem = { id: 'teacher-water', revision: 1, stage: 'simple', targetItemId: 'water', targetOccurrence: { surface: '水', reading: 'みず' },
     sentence: prompt('先生は水を飲みます。', 'The teacher drinks water.'), questions: [authored],
-    recordings: recorded ? [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: { [id]: `audio/${id}.mp3` } }] : [],
-    review: { text: recorded ? 'approved' : 'pending', audio: recorded ? 'approved' : 'not-generated' }, reviewNotes: 'Fixture.' };
-  return contextualQuestion(context, authored, format, vocabulary, () => 0);
+    recordings: [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: { [id]: `audio/${id}.mp3` } }],
+    review: { text: 'approved', audio: 'approved' }, reviewNotes: 'Fixture.' };
+  const question = contextualQuestion(context, authored, format, vocabulary, () => 0);
+  if (!recorded) delete question.contextual!.recording;
+  return question;
 }
 const originalShow = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'showModal');
 const originalClose = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'close');
@@ -181,14 +183,14 @@ describe('contextual listening and feedback', () => {
     expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
   });
 
-  it('marks missing audio as inspection and requires showing text before evaluating answers', async () => {
-    render(<Harness question={fixture({ recorded: false })}/>);
-    expect(screen.getByRole('status')).toHaveTextContent('Text inspection · audio not available');
+  it('reports missing recordings and blocks grading answers', async () => {
+    const onPlaybackChange = vi.fn();
+    render(<ContextualQuiz question={fixture({ recorded: false })} feedback={null} onChoose={onChoose} onContinue={onContinue} onPlaybackChange={onPlaybackChange}/>);
+    expect(screen.getByRole('alert')).toHaveTextContent('The sentence and question recordings are unavailable.');
     screen.getAllByRole('button', { name: /Choose writing/ }).forEach(button => expect(button).toBeDisabled());
-    await click(screen.getByRole('button', { name: 'Show text for inspection' }));
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: 'Choose writing 先生' }));
-    expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
+    expect(onChoose).not.toHaveBeenCalled();
+    expect(onPlaybackChange).toHaveBeenLastCalledWith('error');
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
   });
 

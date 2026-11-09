@@ -91,12 +91,3 @@ export interface PracticeAttempt {
     retryOf?: string
   }
 }
-
-export interface WordProgress {
-  itemId: string
-  language: string
-  exercise: Exercise
-  attempts: number
-  correct: number
-  lastPracticedAt: number
-}

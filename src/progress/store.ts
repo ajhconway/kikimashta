@@ -1,6 +1,5 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
-import type { PracticeAttempt, WordProgress } from '../types';
-import { attemptExercise, cardKey } from '../core/cards';
+import type { PracticeAttempt } from '../types';
 
 interface ProgressDatabase extends DBSchema {
   attempts: { key: string; value: PracticeAttempt; indexes: { language: string } };
@@ -48,19 +47,6 @@ export class ProgressStore {
   }
   async history(language: string): Promise<PracticeAttempt[]> {
     return (await this.database()).getAllFromIndex('attempts', 'language', language);
-  }
-  async summary(language: string): Promise<WordProgress[]> {
-    const words = new Map<string, WordProgress>();
-    for (const attempt of await this.history(language)) {
-      const exercise = attemptExercise(attempt);
-      const key = cardKey({ ...attempt, exercise });
-      const previous = words.get(key) ?? { itemId: attempt.itemId, language, exercise, attempts: 0, correct: 0, lastPracticedAt: 0 };
-      words.set(key, {
-        ...previous, attempts: previous.attempts + 1, correct: previous.correct + Number(attempt.correct),
-        lastPracticedAt: Math.max(previous.lastPracticedAt, attempt.answeredAt),
-      });
-    }
-    return [...words.values()];
   }
   async close(): Promise<void> { if (this.connection) (await this.connection).close(); this.connection = undefined; }
 }

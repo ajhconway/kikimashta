@@ -23,14 +23,16 @@ function fixture(t, { missingAudio = false, missingImage = false } = {}) {
     put('content/visuals/level-3.json', visuals)
   }
   save()
+  const shell = readFileSync(new URL('../../vocabulary/index.html', import.meta.url), 'utf8')
+  put('vocabulary/index.html', shell)
   if (!missingImage) put('public/images/vocabulary/flower.svg', '<svg xmlns="http://www.w3.org/2000/svg"/>')
   put('public/audio/vocabulary/marin-flower.mp3', 'fixture clip')
   if (!missingAudio) put('public/audio/vocabulary/cedar-flower.mp3', 'fixture clip')
-  return { root, put, save, item, visual, readData: () => JSON.parse(readFileSync(join(root, 'public/vocabulary/library-data.json'), 'utf8')) }
+  return { root, put, save, item, visual, shell, readData: () => JSON.parse(readFileSync(join(root, 'public/vocabulary/library-data.json'), 'utf8')) }
 }
 
 test('builds a safely nested library from catalogue and visual metadata, with actual voice availability', t => {
-  const { root, readData } = fixture(t)
+  const { root, shell, readData } = fixture(t)
   assert.deepEqual(buildLibrary({ root }), { cards: 1, availableAudio: 2, missingAudio: 0 })
   const [card] = readData().cards
   assert.equal(card.text, '花')
@@ -44,15 +46,8 @@ test('builds a safely nested library from catalogue and visual metadata, with ac
   assert.equal(card.reviewRequired, true)
   assert.equal(card.reviewNote, 'Check flower versus blossom in context.')
   const html = readFileSync(join(root, 'vocabulary/index.html'), 'utf8')
-  assert.match(html, /<title>Vocabulary cards<\/title>/)
-  assert.match(html, /src="\.\/library.js" type="module"/)
+  assert.equal(html, shell)
   assert.equal(existsSync(join(root, 'public/vocabulary/index.html')), false)
-  assert.match(html, /href="\.\.\/"/)
-  assert.match(html, /href="\.\.\/credits.html"/)
-  assert.match(html, /value="all"/)
-  assert.match(html, /<label>Card pack/)
-  assert.match(html, /id="pack" name="pack"/)
-  assert.doesNotMatch(html, /<audio\b/)
   const before = readFileSync(join(root, 'public/vocabulary/library-data.json'), 'utf8')
   buildLibrary({ root })
   assert.equal(readFileSync(join(root, 'public/vocabulary/library-data.json'), 'utf8'), before)
@@ -61,7 +56,7 @@ test('builds a safely nested library from catalogue and visual metadata, with ac
 test('default rejects missing audio before writing output; preview accurately disables only the absent clip', t => {
   const { root, readData } = fixture(t, { missingAudio: true })
   assert.throws(() => buildLibrary({ root }), /Missing 1 audio files/)
-  assert.equal(existsSync(join(root, 'vocabulary/index.html')), false)
+  assert.equal(existsSync(join(root, 'public/vocabulary/library-data.json')), false)
   assert.deepEqual(buildLibrary({ root, allowMissingAudio: true }), { cards: 1, availableAudio: 1, missingAudio: 1 })
   assert.deepEqual(readData().cards[0].audio.map(clip => clip.available), [true, false])
 })
@@ -129,10 +124,10 @@ for (const [description, audio, pattern] of [
   ['blank display name', [{ voice: 'otani', voiceName: ' ', src: 'audio/a.mp3' }], /Invalid audio voice name/],
   ['duplicate voice', [{ voice: 'otani', src: 'audio/a.mp3' }, { voice: 'otani', src: 'audio/b.mp3' }], /Duplicate audio voice/],
 ]) test(`rejects ${description} before emitting library files`, t => {
-  const { root, item, save } = fixture(t)
+  const { root, item, save, shell } = fixture(t)
   save([{ ...item, audio }])
   assert.throws(() => buildLibrary({ root, allowMissingAudio: true }), pattern)
-  assert.equal(existsSync(join(root, 'vocabulary/index.html')), false)
+  assert.equal(readFileSync(join(root, 'vocabulary/index.html'), 'utf8'), shell)
   assert.equal(existsSync(join(root, 'public/vocabulary/library-data.json')), false)
 })
 
@@ -164,20 +159,20 @@ test('optional teaching overrides refine picture groups and flag context review 
   assert.throws(() => buildLibrary({ root }), /Invalid review override/)
 })
 
-test('owner removals survive repeated library rebuilds without changing retained source entries or media', t => {
+test('owner removals survive rebuilds without requiring retired media or changing source identities', t => {
   const { root, put, item, visual, save, readData } = fixture(t)
-  const removed = { ...item, id: 'ja-removed', text: '～形', reading: 'けい', meaning: 'Form' }
+  const removed = { ...item, id: 'ja-removed', text: '～形', reading: 'けい', meaning: 'Form', audio: [{ voice: 'otani', src: 'audio/retired/form.mp3' }] }
   save([item, removed], [visual, { ...visual, id: removed.id }])
-  buildLibrary({ root })
-  const retained = readData().cards[0]
   const source = readFileSync(join(root, 'content/catalog/ja.json'))
   put('content/catalog/review-overrides.json', { [removed.id]: { removalReason: 'Owner removed this vocabulary entry.' } })
+  buildLibrary({ root })
+  const retained = readData().cards[0]
   for (let rebuild = 0; rebuild < 2; rebuild++) {
     assert.deepEqual(buildLibrary({ root }), { cards: 1, availableAudio: 2, missingAudio: 0 })
     assert.deepEqual(readData().cards, [retained])
     assert.deepEqual(readFileSync(join(root, 'content/catalog/ja.json')), source)
     assert.ok(existsSync(join(root, 'public', removed.image.src)))
-    for (const clip of removed.audio) assert.ok(existsSync(join(root, 'public', clip.src)))
+    for (const clip of removed.audio) assert.equal(existsSync(join(root, 'public', clip.src)), false)
   }
   for (const removalReason of ['', true, null]) {
     put('content/catalog/review-overrides.json', { [removed.id]: { removalReason } })
