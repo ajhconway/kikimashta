@@ -1,0 +1,4 @@
+.offline-panel { width: min(100%, 32rem); margin: 1rem auto; text-align: left; font-size: .875rem; }
+.offline-panel summary { cursor: pointer; padding: .5rem 0; }
+.offline-panel p { line-height: 1.5; }
+.offline-panel .text-button { display: block; }

@@ -1,3 +1,5 @@
+import { OfflinePanel } from './components/OfflinePanel';
+import { offlineMedia } from './offline/selection';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
 import { initialLanguage, languagePreferenceKey, learningLanguages, type LearningLanguage } from './core/languages';
 import { initialPackIds, selectedPracticeCards } from './core/packs';
@@ -118,6 +120,16 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const store = progressStore;
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
+  const downloadUrls = useMemo(() => offlineMedia(language, packIds), [language, packIds]);
+  const [downloadState, setDownloadState] = useState<{ urls: readonly string[]; ready: boolean } | null>(null);
+  const offlineReady = downloadState?.urls === downloadUrls && downloadState.ready;
+  const setOfflineReady = useCallback((ready: boolean) => setDownloadState({ urls: downloadUrls, ready }), [downloadUrls]);
+  const [online, setOnline] = useState(() => navigator.onLine);
+  useEffect(() => {
+    const changed = () => setOnline(navigator.onLine);
+    window.addEventListener('online', changed); window.addEventListener('offline', changed);
+    return () => { window.removeEventListener('online', changed); window.removeEventListener('offline', changed); };
+  }, []);
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
   // Catalogue membership scopes contextual formats without admitting unreviewed word pictures.
   const contextualScope = useMemo(() => selectedPracticeCards(languageContextualVocabulary, packIds, cardPacks), [languageContextualVocabulary, packIds, cardPacks]);
@@ -546,7 +558,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
           <HomeIntensity value={density}/>
           {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges} presentation={badgePresentation}/>}
         </div>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length || (!online && !offlineReady)} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
@@ -554,6 +566,8 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
+        {!online && !offlineReady && <p role="status">These packs are not fully downloaded. Connect to download or select previously downloaded packs.</p>}
+        <OfflinePanel key={downloadUrls.join('|')} urls={downloadUrls} online={online} onReady={setOfflineReady}/>
         {accountControls}
       </section>}
       {screen === 'dev-options' && <DevReviewOptionsScreen availableTypes={devTypes} value={devOptions} onChange={options => { setDevOptions(options); setDevReviewError(null); }} onStart={startDevReview} disabled={accountLoading || pendingSaveCount > 0 || saveError} error={devReviewError ?? undefined} libraryHref={asset(language.libraryPath ?? 'vocabulary/')}/>}
