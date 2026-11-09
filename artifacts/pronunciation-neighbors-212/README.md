@@ -1,5 +1,7 @@
 # Pronunciation distance comparison (#212)
 
+Subsequent decision (#216): the owner selected acoustic-weighted pronunciation ordering for production, retaining the existing six-neighbor shuffle. See [production preparation and provenance](../../content/pronunciation-neighbors/README.md). This report describes the experiment at measurement time; its frozen inputs and collected responses remain unchanged.
+
 Compare the deployed Japanese normalized mora edit distance with a controlled acoustically weighted edit distance. Production behavior is unchanged. This is an offline ranking experiment with one completed owner listening review, not evidence of learning effectiveness.
 
 ## Collected owner listening results
