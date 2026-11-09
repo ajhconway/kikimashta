@@ -8,6 +8,7 @@ export interface Pack1MediaEntry {
   contextId: string; contextRevision: number; targetItemId: string; stage: 'simple' | 'contrastive';
   sentenceText: string; questions: Record<string, string>; questionRevisions: Record<string, number>;
   recordings: (ContextualRecording & { hashes: Record<string, string> })[];
+  textApprovalSha256: string; generationIdentity: string;
 }
 export interface Pack1GeneratedMedia {
   schemaVersion: number; bankId: string; language: string; sourceFileSha256: string;
@@ -54,7 +55,8 @@ export function loadPack1Content({ bank, approval, generated, acceptance, digest
       requireIdentity(!audioApproved, 'accepted context is missing');
       return { ...context, review: { text: 'approved' as const, audio: 'not-generated' as const }, recordings: [] };
     }
-    requireIdentity(media.contextRevision === context.revision && media.targetItemId === context.targetItemId &&
+    requireIdentity(media.textApprovalSha256 === digests.textApproval && media.generationIdentity === generated?.generationIdentity &&
+      media.contextRevision === context.revision && media.targetItemId === context.targetItemId &&
       media.stage === context.stage && media.sentenceText === context.sentence.text &&
       Object.keys(media.questions).length === context.questions.length && Object.keys(media.questionRevisions).length === context.questions.length &&
       context.questions.every(question => media.questions[question.id] === question.prompt.text && media.questionRevisions[question.id] === question.revision),
@@ -62,7 +64,7 @@ export function loadPack1Content({ bank, approval, generated, acceptance, digest
     const voices = new Set<string>();
     requireIdentity(media.recordings.length > 0, 'recording set is empty: ' + context.id);
     for (const recording of media.recordings) {
-      requireIdentity(!voices.has(recording.voice), 'duplicate recorded voice');
+      requireIdentity(['otani', 'morioki'].includes(recording.voice) && !voices.has(recording.voice), 'unknown or duplicate recorded voice');
       voices.add(recording.voice);
       const paths = [contextualMediaPath(recording.sentenceSrc, 'audio'), ...context.questions.map(question =>
         contextualMediaPath(recording.questionSrcs[question.id], 'audio'))];

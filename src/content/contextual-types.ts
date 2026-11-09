@@ -22,6 +22,8 @@ export interface ContextualQuestion {
   id: string
   revision: number
   kind: ContextualQuestionKind
+  /** Semantic authoring focus; distinct from the literal answer-concept kind. */
+  focus?: ContextualQuestionKind
   prompt: ContextualPrompt
   formats: ContextualAnswerFormat[]
   options: ContextualOption[]

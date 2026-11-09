@@ -57,13 +57,16 @@ export async function deriveContextualUnlocks(
 /** Mastery does not bypass the selected word/format scope or content readiness. */
 export function selectedContextualCards(
   wordCards: readonly PracticeCard[], readyContextualCards: readonly PracticeCard[], unlocks: ReadonlySet<string>,
+  directEntryTargets: readonly { language: string; itemId: string }[] = [],
 ): PracticeCard[] {
   const selected = new Set(wordCards.filter(card => !isContextualExercise(card.exercise)).map(card =>
     JSON.stringify([card.item.language, card.item.id, answerFormat(card.exercise)])));
   const seen = new Set<string>();
   return readyContextualCards.filter(card => {
     const key = cardKey(card);
-    if (!isContextualExercise(card.exercise) || !unlocks.has(key) || seen.has(key) ||
+    const directSimple = card.exercise.startsWith('context-simple-') && directEntryTargets.some(target =>
+      target.language === card.item.language && target.itemId === card.item.id);
+    if (!isContextualExercise(card.exercise) || (!directSimple && !unlocks.has(key)) || seen.has(key) ||
         !selected.has(JSON.stringify([card.item.language, card.item.id, answerFormat(card.exercise)]))) return false;
     seen.add(key);
     return true;

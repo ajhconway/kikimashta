@@ -22,6 +22,8 @@ export interface WordItem {
   reading?: string
   image: ImageAsset
   audio: AudioAsset[]
+  /** Omitted for existing two-format words; some reviewed words have writing eligibility only. */
+  wordExercises?: WordExercise[]
   /** Pictures that could also reasonably answer this word's prompt. */
   pictureDistractorExclusions?: string[]
 }

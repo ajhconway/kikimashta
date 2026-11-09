@@ -1,4 +1,4 @@
-import { contextualBanks, contextualVocabulary } from '../src/content/contextual-runtime'
+import { contextualInspectionBanks, contextualVocabulary } from '../src/content/contextual-runtime'
 import { contextualMediaPath } from '../src/content/contextual'
 
 let sharedAudio
@@ -27,8 +27,8 @@ function pairs({ context, question }) {
 /** Read-only authored cards. Listening never grades answers or touches progress. */
 export function mountContextualLibrary({ container, language }) {
   const languageId = typeof language === 'string' ? language : language.id
-  const entries = contextualBanks.filter(bank => bank.language === languageId)
-    .flatMap(bank => bank.contexts.flatMap(context => context.questions.map(question => ({ context, question }))))
+  const banks = contextualInspectionBanks.filter(bank => bank.language === languageId)
+  const entries = banks.flatMap(bank => bank.contexts.flatMap(context => context.questions.map(question => ({ bankId: bank.id, context, question }))))
   const vocabulary = new Map(contextualVocabulary.filter(word => word.language === languageId).map(word => [word.id, word]))
   const prefix = `context-library-${++mountSequence}`
   const root = element('section', 'contextual-library')
@@ -57,12 +57,15 @@ export function mountContextualLibrary({ container, language }) {
     return input
   }
   const stage = select('Context stage', [['all', 'Both stages'], ['simple', 'Simple'], ['contrastive', 'Contrastive']])
+  const collection = select('Context collection', [['all', 'All collections'], ...banks.map(bank => [bank.id,
+    bank.id === 'ja-contextual-wanikani-1-draft-v1' ? 'WaniKani level 1' : bank.id])])
+  if (new URLSearchParams(location.search).get('contextPack') === '1') collection.value = 'ja-contextual-wanikani-1-draft-v1'
   const targets = [...new Set(entries.map(entry => entry.context.targetItemId))]
   const target = select('Context target', [['all', 'All words'], ...targets.map(id => {
     const word = vocabulary.get(id)
     return [id, word ? `${word.text} · ${word.label}` : id]
   })])
-  const kind = select('Question kind', [['all', 'Both kinds'], ['target', 'Target-word answer'], ['detail', 'Other detail']])
+  const kind = select('Question kind', [['all', 'Both focuses'], ['target', 'Target meaning'], ['detail', 'Situation meaning']])
   const format = select('Answer format', [['all', 'All formats'], ['picture', 'Pictures'], ['text', 'Writing']])
   const voices = [...new Set(entries.flatMap(entry => pairs(entry).map(pair => pair.voice)))]
   const voice = select('Context voice', [['all', 'All voices'], ...voices.map(id => [id, voiceName(id)])])
@@ -181,7 +184,7 @@ export function mountContextualLibrary({ container, language }) {
     heading.id = `${prefix}-card-${index}`
     article.setAttribute('aria-labelledby', heading.id)
     const available = pairs(entry).filter(pair => voice.value === 'all' || pair.voice === voice.value)
-    article.append(heading, element('p', 'context-card-meta', `${stageName(context)} · ${question.kind === 'target' ? 'Target-word answer' : 'Other detail'} · ${question.formats.map(value => value === 'text' ? 'Writing' : 'Pictures').join(' / ')}`))
+    article.append(heading, element('p', 'context-card-meta', `${stageName(context)} · ${(question.focus ?? question.kind) === 'target' ? 'Target meaning' : 'Situation meaning'} · ${question.formats.map(value => value === 'text' ? 'Writing' : 'Pictures').join(' / ')}`))
     const textState = context.review.text === 'approved' ? 'Text approved' : context.review.text === 'rejected' ? 'Text rejected' : 'Text awaiting review'
     const audioState = !available.length ? 'Audio unavailable' : context.review.audio === 'approved' ? 'Audio approved' : context.review.audio === 'rejected' ? 'Audio rejected' : 'Audio awaiting review'
     article.append(element('p', 'context-review-state', `${textState} · ${audioState}`), prompt('Sentence', context.sentence), prompt('Question', question.prompt))
@@ -242,9 +245,10 @@ export function mountContextualLibrary({ container, language }) {
       const searchable = [context.id, question.id, word?.text, word?.reading, word?.label,
         ...[context.sentence, question.prompt, ...question.options].flatMap(value => [value.text, value.reading, value.meaning])].join(' ').normalize('NFKC').toLowerCase()
       return (!query || searchable.includes(query)) &&
+        (collection.value === 'all' || entry.bankId === collection.value) &&
         (stage.value === 'all' || (context.stage ?? 'contrastive') === stage.value) &&
         (target.value === 'all' || context.targetItemId === target.value) &&
-        (kind.value === 'all' || question.kind === kind.value) &&
+        (kind.value === 'all' || (question.focus ?? question.kind) === kind.value) &&
         (format.value === 'all' || question.formats.includes(format.value)) &&
         (voice.value === 'all' || pairs(entry).some(pair => pair.voice === voice.value))
     })
@@ -258,7 +262,7 @@ export function mountContextualLibrary({ container, language }) {
     if (!filtered.length) cards.append(element('p', 'context-empty', entries.length ? 'No contextual cards match these filters.' : 'No contextual cards are available in this language yet.'))
   }
   search.addEventListener('input', () => { page = 0; render() })
-  for (const input of [stage, target, kind, format, voice]) input.addEventListener('change', () => { page = 0; render() })
+  for (const input of [stage, collection, target, kind, format, voice]) input.addEventListener('change', () => { page = 0; render() })
   previous.addEventListener('click', () => { page--; render(); (previous.disabled ? next : previous).focus() })
   next.addEventListener('click', () => { page++; render(); (next.disabled ? previous : next).focus() })
   window.addEventListener('pagehide', stop)
