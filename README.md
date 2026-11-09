@@ -53,13 +53,11 @@ The two ordered database migrations and rollback access-policy checks live in `s
 
 ## Voice auditions
 
-The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Historical OpenAI recordings remain available for comparison; new generation uses ElevenLabs.
+The owner approved eight voices and their volume-matched audition in [issue #78](https://github.com/ajhconway/kikimashta/issues/78). The full card migration is tracked in [issue #86](https://github.com/ajhconway/kikimashta/issues/86). Follow [the ElevenLabs setup guide](docs/ELEVENLABS.md) for local account connection, generation, resume, normalization, and staging. `npm run audio:audition:elevenlabs -- --dry-run` previews a small audition; `npm run audio:cards:elevenlabs -- --dry-run` previews the whole existing card bank. Retired recordings and comparisons are recoverable from Git history; new generation uses ElevenLabs.
 
-### Existing OpenAI recordings
+### Retired recordings
 
-Audio quality work is tracked in [issue #10](https://github.com/ajhconway/kikimashta/issues/10). The [voice comparison](https://kikimashta.com/audio-review/) is available separately from the lesson bank.
-
-Future OpenAI audio generation is retired. Historical comparison pages, recordings and provenance remain preserved. Use the ElevenLabs tools for new speech.
+OpenAI/Open JTalk starter and catalog recordings, the Cesar Spanish starter deliveries, and the old `/audio-review/` comparison are retired. Their binaries are recoverable from Git history before the [media cleanup (#193)](https://github.com/ajhconway/kikimashta/issues/193). Generation and approval provenance remains in `content/`; current lessons and library cards use ElevenLabs. Saved attempt paths are metadata and do not fetch retired recordings.
 
 ## Vocabulary library
 

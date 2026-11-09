@@ -99,7 +99,7 @@ npm run content:library
 npm run check
 ```
 
-Staging preflights the entire batch's card/voice identity, hashes, measured levels and durations before copying delivery audio to `public/audio/elevenlabs-v1/`. It replaces only the banks' audio arrays. Per-voice provenance is saved in `content/audio/elevenlabs/`; `content/elevenlabs-audio-provenance.json` lists the full profile and any constrained clips. The vocabulary library displays all eight names and uses the same playback behavior as before. Old recordings and their provenance are retained for reference.
+Staging preflights the entire batch's card/voice identity, hashes, measured levels and durations before copying delivery audio to `public/audio/elevenlabs-v1/`. It replaces only the banks' audio arrays. Per-voice provenance is saved in `content/audio/elevenlabs/`; `content/elevenlabs-audio-provenance.json` lists the full profile and any constrained clips. The vocabulary library displays all eight names and uses the same playback behavior as before. Retired delivery recordings are recoverable from Git history (#193); their provenance remains in the current tree.
 
 `npm run test:audio` runs the Python processing tests; set `FFMPEG=/absolute/path/to/ffmpeg` for a nonstandard test installation. CI installs FFmpeg and runs these checks together with the application checks and browser journeys.
 

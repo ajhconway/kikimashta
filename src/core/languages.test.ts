@@ -52,8 +52,6 @@ describe('learning languages', () => {
     for (const record of audioProvenance.recordings) {
       const original = readFileSync(audioProvenance.originalRoot + '/' + record.originalFile);
       expect(createHash('sha256').update(original).digest('hex')).toBe(record.originalSha256);
-      const delivery = readFileSync('public/audio/es-419-travel-v1/' + record.file);
-      expect(createHash('sha256').update(delivery).digest('hex')).toBe(record.deliverySha256);
       expect(record.after.truePeakDbtp).toBeLessThanOrEqual(-2);
     }
     expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-picture', 'audio-picture']);
