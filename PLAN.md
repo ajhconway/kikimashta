@@ -110,6 +110,8 @@ Track implementation and verification in [#200](https://github.com/ajhconway/kik
 
 The implementation uses a deterministic 178-word runtime table, including the 12 writing-only words admitted in #197/#201, with bounded sense corrections and 14 reviewed picture exclusions bound to 25 image hashes. The original 166-word comparison is frozen separately. The outdated apple/count groups were omitted after inspecting the current cube artwork. Runtime generation/staleness checks are included in `npm run check`; optional model tooling stays offline. Dev review uses the same selector with disposable mastery. Focused regressions cover maximum available close-neighbor retention when exclusions force fallbacks, and browser journeys cover persisted choices through retries/reload and actual New/Mastered alternatives. Local phone evaluation remains available through Dev review; real-iPhone acceptance is pending.
 
+Pack maintenance (#208): when approved Japanese vocabulary expands, regenerate semantic rankings with the pinned pretrained model and rebuild pronunciation neighbors across the entire approved pool so existing words can gain new neighbors too. Review affected senses, sound contrasts and cross-pack picture ambiguity before release. Reading-only changes need pronunciation/runtime rebuilding; learner pack selection uses runtime filtering. Follow the [neighbor maintenance checklist](content/semantic-neighbors/README.md#adding-packs-and-maintaining-neighbors). Generation remains manual/offline; CI rejects stale prepared data.
+
 
 ## Adaptive timer pilot (#121)
 
