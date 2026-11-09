@@ -305,14 +305,14 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     setIsDevReview(false); demoSchedules.current = null; devTimerMode.current = null;
     setLoading(true); setHistoryError(false); setScreen('home'); setRefresh(value => value + 1);
   }
-  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review', devReview = false) => {
+  const showQuestion = useCallback((next: Question, sessionId: string, questionPhase: 'lesson' | 'review') => {
     active.current = { id: crypto.randomUUID(), sessionId, startedAt: now(), answered: false, replays: 0 };
     const word = next.demoId ? demoSchedules.current?.get(next.demoId) : mastery.current.get(cardKey({ item: next.target, exercise: next.exercise }));
     const level = cardMastery(word);
     const demoLevel = next.demoId ? level : null;
-    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: demoLevel ? next.retryOf || devTimerMode.current === 'untimed' ? null : devTimerMode.current === 'random' ? devReviewTimeLimit(random) : demoLevel.timerMs : devReview ? devReviewTimeLimit(random) : questionPhase === 'review' && !next.retryOf
+    setQuestionTimer({ id: active.current.id, masteryLabel: level.label, limitMs: demoLevel ? next.retryOf || devTimerMode.current === 'untimed' ? null : devTimerMode.current === 'random' ? devReviewTimeLimit(random) : demoLevel.timerMs : questionPhase === 'review' && !next.retryOf
       ? quizTimeLimit(word) : null });
-    setAudioFirst(masteryIndex(word) >= 4 && !next.retryOf && questionPhase === 'review' && (!devReview || !!demoLevel));
+    setAudioFirst(masteryIndex(word) >= 4 && !next.retryOf && questionPhase === 'review');
     setAudioFinished(false);
     setFeedback(null); setDepartures([]);
     if (next.contextual) {
@@ -320,9 +320,9 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       recording.current = { src: next.contextual.recording!.sentenceSrc, source: 'synthesized' };
     } else present(next.target, next.exercise, questionPhase, next.choices.map(choice => choice.text));
   }, [now, present, random]);
-  function beginQuiz(block: Question[], blockPhase = phase, devReview = isDevReview) {
+  function beginQuiz(block: Question[], blockPhase = phase) {
     setQuestions(block); setQuizSize(block.length); setIndex(0); setAnswers([]); setScreen('quiz');
-    showQuestion(block[0]!, session.current.id, blockPhase, devReview);
+    showQuestion(block[0]!, session.current.id, blockPhase);
   }
   function openDevReview() {
     if (loading || accountLoading || preparing.current || recovery.snapshot().pendingId || recovery.snapshot().failed) return;
@@ -337,7 +337,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       demoSchedules.current = demo.schedules; devTimerMode.current = devOptions.timerMode;
       session.current = { id: crypto.randomUUID(), reserved: new Set(), cards: selectedCards };
       setIsDevReview(true); setPhase('review'); setLessonItems([]); setLessonPlan(null); setHistoryError(false);
-      setDevReviewError(null); beginQuiz(demo.questions, 'review', true);
+      setDevReviewError(null); beginQuiz(demo.questions, 'review');
     } catch (error) { setDevReviewError(error instanceof Error ? error.message : 'The selected review could not start. Try another selection.'); }
   }
   const prepareLessons = useCallback(async (request: number) => {
@@ -489,7 +489,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
       if (!isDevReview) void prepareLessons(operation.current);
       return;
     }
-    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase, isDevReview);
+    setIndex(index + 1); showQuestion(questions[index + 1]!, session.current.id, phase);
   }, [index, questions, showQuestion, prepareLessons, isDevReview, phase, recovery]);
   useEffect(() => {
     if (screen !== 'quiz' || !feedback?.correct || saving || saveError || audioError || playing || autoPaused) return;

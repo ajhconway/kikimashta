@@ -22,6 +22,7 @@ async function fixture(t) {
   await writeFile(join(root, 'content/catalog/ja.json'), JSON.stringify(catalog))
   await writeFile(join(root, 'content/ja.json'), JSON.stringify(starter))
   await writeFile(join(root, 'content/elevenlabs-voices.json'), JSON.stringify(config))
+  await writeFile(join(root, 'content/catalog/review-overrides.json'), '{}')
   await writeFile(join(input, 'plan.json'), JSON.stringify({ ...plan, identity }))
   const records = []
   for (const voice of config.voices) {
@@ -54,6 +55,33 @@ test('stages eight verified voices while preserving card IDs, readings and unrel
   assert.equal(starter.items[0].id, 'ja-cat')
   assert.equal(starter.items[0].theme, 'animals')
   for (const recording of catalog.items[0].audio) await access(join(f.root, 'public', recording.src))
+})
+
+test('staging excludes retired source entries without rewriting their identities or historical audio metadata', async t => {
+  const f = await fixture(t)
+  const retired = { ...f.catalog.items[0], id: 'ja-removed', text: '～形', reading: 'けい', meaning: 'Form' }
+  const starterOnly = { ...f.starter.items[0], id: 'ja-retired-starter' }
+  f.catalog.items.push(retired)
+  f.starter.items.push(starterOnly)
+  await writeFile(join(f.root, 'content/catalog/ja.json'), JSON.stringify(f.catalog))
+  await writeFile(join(f.root, 'content/ja.json'), JSON.stringify(f.starter))
+  await writeFile(join(f.root, 'content/catalog/review-overrides.json'), JSON.stringify({ [retired.id]: { removalReason: 'Owner removed this entry.' } }))
+  assert.deepEqual(await stageCards(f), { cards: 1, recordings: 8, targetLimited: 0 })
+  const catalog = JSON.parse(await readFile(join(f.root, 'content/catalog/ja.json')))
+  const starter = JSON.parse(await readFile(join(f.root, 'content/ja.json')))
+  assert.deepEqual(catalog.items[1], retired)
+  assert.deepEqual(starter.items[1], starterOnly)
+  const provenance = JSON.parse(await readFile(join(f.root, 'content/audio/elevenlabs/otani.json')))
+  assert.deepEqual(provenance.clips.map(clip => clip.id), ['ja-cat'])
+  for (const id of [retired.id, starterOnly.id]) await assert.rejects(access(join(f.root, `public/audio/elevenlabs-v1/otani/${id}.mp3`)), { code: 'ENOENT' })
+})
+
+test('rejects a historical full-selection plan rather than reinterpreting its identity', async t => {
+  const f = await fixture(t)
+  f.catalog.items.push({ ...f.catalog.items[0], id: 'ja-added' })
+  await writeFile(join(f.root, 'content/catalog/ja.json'), JSON.stringify(f.catalog))
+  await assert.rejects(stageCards(f), /use a new generation plan/)
+  await assert.rejects(access(join(f.root, 'public/audio')), { code: 'ENOENT' })
 })
 for (const [label, mutate, pattern] of [
   ['duplicate delivery', f => { f.records[7] = f.records[0] }, /identity/],

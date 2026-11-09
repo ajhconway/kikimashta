@@ -166,8 +166,6 @@ import { mountContextualLibrary } from './contextual'
   wordToggle.addEventListener('click', () => { if (wordLibrary.hidden) showLibraryView('words', true) })
   contextualToggle.addEventListener('click', () => { if (contextualLibrary.hidden) showLibraryView('contextual', true) })
   window.addEventListener('popstate', () => showLibraryView(new URLSearchParams(location.search).get('view')))
-  window.addEventListener('pagehide', () => contextView?.stop())
-  document.addEventListener('visibilitychange', () => { if (document.hidden) contextView?.stop() })
   showLibraryView(parameters.get('view'))
 
   // Resolve identity before reading feedback so guest and account notes stay separate.

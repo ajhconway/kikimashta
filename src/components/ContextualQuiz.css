@@ -99,14 +99,6 @@
   width: 100%;
 }
 
-/* Preview and draft inspection remain readable without adding panels to practice. */
-.contextual-review-state,
-.contextual-inspection {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
 .contextual-transcript {
   width: 100%;
   max-width: 380px;
@@ -133,11 +125,6 @@
 
 .contextual-japanese {
   font-size: 20px;
-}
-
-.contextual-reading {
-  color: var(--muted);
-  font-size: 15px;
 }
 
 /* Transcript details use the same rounded card and pink controls as practice. */
@@ -225,7 +212,6 @@
   }
 }
 
-/* The full content gallery keeps its separate evaluation controls. */
 @media (max-width: 600px) {
   .contextual-quiz .practice-actions.contextual-feedback {
     min-height: 124px;
