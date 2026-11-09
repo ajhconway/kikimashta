@@ -1,0 +1,160 @@
+{
+  "issue": 198,
+  "source": ".cache/semantic-198/blind-review.json",
+  "blindReview": true,
+  "rawResultsOrModelMetadataInspected": false,
+  "benchmarkLabelsChanged": false,
+  "reviews": [
+    {
+      "target": "コーヒー",
+      "preference": "B",
+      "reason": "Draft beer and shaved ice supply stronger refreshment associations. A includes river, flower, and television."
+    },
+    {
+      "target": "考古学",
+      "preference": "A",
+      "reason": "Slight preference. Engineering first, plus university, stone, and old, form a coherent discipline/material/history neighborhood. B also finds engineering/university, but underwater is a weaker association."
+    },
+    {
+      "target": "耳",
+      "preference": "tie",
+      "reason": "Both provide sound and several distinct body parts. B offers more anatomical alternatives; A has reasonable functional association with sound."
+    },
+    {
+      "target": "上",
+      "preference": "B",
+      "reason": "Below, right, and parallel better represent spatial meaning. A introduces unrelated numerals and an overlapping on-the-table phrase."
+    },
+    {
+      "target": "竹の子",
+      "preference": "B",
+      "reason": "Onion, beef, apple, and meat reflect edible-food meaning. A's baby suggests a 子 component association and its later entries are weak."
+    },
+    {
+      "target": "本",
+      "preference": "A",
+      "reason": "Clear preference. Notebook matches the intended book sense. B consists entirely of numerical/count expressions, a substantial intended-sense failure."
+    },
+    {
+      "target": "五台",
+      "preference": "B",
+      "reason": "Slight preference. The first three neighbors preserve the machine-count category. A inserts generic five-things/five earlier. Both retain some number-driven associations."
+    },
+    {
+      "target": "日光",
+      "preference": "A",
+      "reason": "Clear preference. Moonlight, sunrise, night, light, and moon form a coherent light/time neighborhood. B's city suggests possible place-name contamination; eight things is unexplained numerical noise."
+    },
+    {
+      "target": "牛",
+      "preference": "tie",
+      "reason": "Both return the same five concepts. Pig/dog are useful alternatives; calf is a possible category-overlap problem."
+    },
+    {
+      "target": "市",
+      "preference": "B",
+      "reason": "Town and village are meaningful settlement alternatives. A introduces body and hand."
+    },
+    {
+      "target": "丸",
+      "preference": "B",
+      "reason": "Slight preference. Square appears first and triangle fourth. A also finds triangle/square, but valley/night are weaker. Both require inspection of ball versus circle imagery."
+    },
+    {
+      "target": "左",
+      "preference": "B",
+      "reason": "Right, below, both directions, and above provide four spatial alternatives. A has hand and winter instead."
+    },
+    {
+      "target": "白い",
+      "preference": "B",
+      "reason": "Clear preference. Blue, sky blue, and red represent the color dimension. A mostly supplies other adjectives or weak associations such as baby/winter."
+    },
+    {
+      "target": "かき氷",
+      "preference": "B",
+      "reason": "Beer, coffee, convenience store, and apple fit food/refreshment associations. A largely supplies coldness, color, or unrelated concepts."
+    },
+    {
+      "target": "花火",
+      "preference": "A",
+      "reason": "Fire, moonlight, and volcano are closer to luminous/fiery phenomena. Flower in both lists may reflect character association; B's marble/shaved ice are weak."
+    },
+    {
+      "target": "金",
+      "preference": "A",
+      "reason": "Clear preference. Money, jewel, stone, and treasure match valuable/material associations. B clusters elemental/weekday-like kanji, suggesting meanings other than the card's gold sense."
+    },
+    {
+      "target": "毛",
+      "preference": "A",
+      "reason": "Slight preference. Dog first, then wool yarn and caterpillar, represent fur/animal covering. B has useful feathers/thread, but ball first is poor."
+    }
+  ],
+  "labelTally": {
+    "A": 6,
+    "B": 9,
+    "tie": 2
+  },
+  "overallJudgment": "One neighborhood can look plausible while reflecting the wrong sense. The lists displayed as B for 本, 金, and 日光 contain more consequential failures than minor differences between good anatomical or shape neighbors. Weight those intended-sense failures explicitly when interpreting preregistered metrics.",
+  "potentialPictureCollisions": [
+    {
+      "pair": [
+        "牛",
+        "子牛"
+      ],
+      "reason": "A calf is also a cow."
+    },
+    {
+      "pair": [
+        "竹の子",
+        "竹"
+      ],
+      "reason": "Possible plant/category overlap; inspect the images."
+    },
+    {
+      "pair": [
+        "上",
+        "テーブルの上"
+      ],
+      "reason": "The phrase contains the target spatial relation."
+    },
+    {
+      "pair": [
+        "かき氷",
+        "氷"
+      ],
+      "reason": "Shaved ice is ice."
+    },
+    {
+      "pair": [
+        "日光",
+        "明かり"
+      ],
+      "reason": "Generic light can include sunlight."
+    },
+    {
+      "pair": [
+        "丸",
+        "玉"
+      ],
+      "reason": "Depends on whether the picture clearly distinguishes a flat circle from a ball."
+    },
+    {
+      "pair": [
+        "五台",
+        "五",
+        "五つ"
+      ],
+      "reason": "Shared quantity may make the intended answer format decisive."
+    }
+  ],
+  "limitations": [
+    "The tally counts displayed labels and is not an aggregate model score unless A/B identities are consistent across all targets.",
+    "This exploratory set is small and its positive-neighbor labels are incomplete.",
+    "Category quality does not establish learner difficulty.",
+    "Potential picture collisions are review flags, not newly approved exclusion rules; pictures were not inspected.",
+    "Both candidates still need ordinary validity filtering and scoped-pack fallback behavior.",
+    "Only blind-review.json was inspected during the qualitative review. Raw result/model/generator files and metrics.json were not opened, and benchmark labels were unchanged."
+  ]
+}

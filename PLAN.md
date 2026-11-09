@@ -95,6 +95,8 @@ Compare pretrained Japanese fastText vectors for surface words with multilingual
 
 Run both approaches offline and preserve pinned model/input provenance, comparison results and a readable neighbor report. Select one approach for the deployment candidate; retain only its generator and generated neighbor data in the deployment path. Large models and experimental dependencies stay outside the browser bundle. Keep contextual questions' fixed authored distractors, current practice eligibility, FSRS mastery, timers and scheduling intact during this experiment. Review vocabulary/pack filtering and reproducibility with focused tests and configured checks. Track the experiment in [#198](https://github.com/ajhconway/kikimashta/issues/198), related to [#79](https://github.com/ajhconway/kikimashta/issues/79).
 
+The comparison selected Japanese fastText with a mean-of-kanji fallback for 17 zero-vector compounds: 30/32 semantic checks versus 28/32 for multilingual E5 base, and 62.5% versus 56.25% known-positive recall in the top five. Both cover all 166 words after fallback. Keep the selected generator and complete rankings in `scripts/content/semantic_neighbors.py` and `content/semantic-neighbors/ja.json`; preserve the two-model experiment solely under `artifacts/semantic-neighbors-198/`. The report documents static-model sense failures for 本, 金 and 日光 and separately flags staged picture collisions. Rankings remain an offline deployment candidate; ordinary question selection is unchanged pending mastery-policy integration.
+
 
 ## Adaptive timer pilot (#121)
 
