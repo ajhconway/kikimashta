@@ -1,0 +1,82 @@
+{
+  "issue": 174,
+  "pack": "es-419-travel-3",
+  "planIdentity": "329763e768bf36e81bb2e86e806cd2168e098e4fb2ab08c0c66e8e7c07729c9e",
+  "manifestSha256": "14d3003c181a097ebe55ab43118eb705a61786d2b1f7982696a90e7db835fe57",
+  "integrity": {
+    "issue": 174,
+    "words": 36,
+    "voices": 8,
+    "clips": 288,
+    "characters": 2336,
+    "archiveFilesHashVerified": 1737,
+    "allOriginalDeliveryReviewBytesMatch": true,
+    "registryVoicesMatch": true,
+    "authorizationMatches": true,
+    "credentialLiterals": 0,
+    "privateUsageOrEnvFiles": false,
+    "targetLimited": [
+      {
+        "voice": "santiago",
+        "text": "taco",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -22.57,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -2.19
+        },
+        "limitingReasons": [
+          "true_peak_headroom"
+        ]
+      },
+      {
+        "voice": "carlos-figueroa",
+        "text": "isla",
+        "after": {
+          "analysisPadding": false,
+          "integratedLufs": -23.41,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.9
+        },
+        "limitingReasons": [
+          "maximum_gain"
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "command": "npm run check",
+    "passed": true,
+    "vitest": 441,
+    "node": 240,
+    "audioPython": 12,
+    "cardPython": 22,
+    "lint": true,
+    "types": true,
+    "cardValidator": true,
+    "productionBuild": true
+  },
+  "browser": {
+    "method": "One muted native Audio element reused sequentially; each clip must load native media data, resolve play(), and advance currentTime above 0.01 seconds. No retries.",
+    "engines": [
+      {
+        "engine": "chromium",
+        "passed": 288,
+        "failures": [],
+        "minDuration": 0.64,
+        "maxDuration": 1.68,
+        "advanced": 288
+      },
+      {
+        "engine": "mobile-webkit",
+        "passed": 288,
+        "failures": [],
+        "minDuration": 0.6791836734693878,
+        "maxDuration": 1.7240816326530612,
+        "advanced": 288
+      }
+    ],
+    "realIPhoneTested": false
+  },
+  "acceptance": "Awaiting owner listening acceptance; automated decode/playback does not approve pronunciation."
+}
