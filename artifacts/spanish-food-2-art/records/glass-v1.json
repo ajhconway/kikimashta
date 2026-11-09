@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-drinking-glass",
+  "slug": "glass",
+  "version": 1,
+  "path": "originals/glass-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "ff3c97102a50c297013b3ace819fe8821589c0a07253c3f887dd6da709c4aac9",
+  "editTargetSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+  "styleReferenceSha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+  "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+  "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+  "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+  "bytes": 821916,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-67a694e7-d1fe-4c7c-b072-36ec1396ff37.png"
+}

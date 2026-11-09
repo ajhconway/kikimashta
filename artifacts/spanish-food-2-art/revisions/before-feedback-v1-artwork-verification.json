@@ -1,0 +1,68 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "status": "complete-artwork-awaiting-owner-feedback",
+  "words": 36,
+  "generatedImages": 31,
+  "reusedImages": 5,
+  "pendingImages": 0,
+  "tool": "built-in image_gen",
+  "review": "content/spanish-food-2/review.html",
+  "contactSheet": "artifacts/spanish-food-2-art/contact-sheet.png",
+  "originals": "artifacts/spanish-food-2-art/originals/",
+  "records": "artifacts/spanish-food-2-art/records/",
+  "manifest": "artifacts/spanish-food-2-art/manifest.json",
+  "manifestSha256": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+  "requests": "artifacts/spanish-food-2-art/requests.json",
+  "requestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+  "authorization": "content/spanish-food-2/generation-approval.json",
+  "authorizationSha256": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
+  "checks": {
+    "command": "VITEST_MAX_WORKERS=2 npm run check",
+    "exitCode": 0,
+    "vitest": 664,
+    "node": 344,
+    "pythonAudioContent": 18,
+    "pythonCards": 27,
+    "lint": "passed",
+    "types": "passed",
+    "validators": "passed",
+    "productionBuild": "passed",
+    "focusedArtTests": 3,
+    "browserCommand": "npm run test:e2e -- --workers=2",
+    "browserTests": 110,
+    "syncConfiguration": "Explicit documented fake service configuration; matching full SOURCE_REVISION for build and browsers."
+  },
+  "galleryBrowserEvidence": "content/spanish-food-2/browser-verification.json",
+  "galleryChecks": {
+    "engines": [
+      "chromium",
+      "mobile-webkit"
+    ],
+    "picturesLoadedPerEngine": 36,
+    "cardImageSize": 145,
+    "groupAndSourceFilters": true,
+    "accentInsensitiveSearch": true,
+    "phoneWidth": 390,
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "browserStorageUnchanged": true
+  },
+  "independentReview": "No blocking findings in source/provenance, optional metadata validation, pre-write safeguards, test quality or the complete 36-picture contact sheet. All subjects read clearly at 145px.",
+  "generatedCanvas": {
+    "width": 1254,
+    "height": 1254,
+    "alpha": "All 31 originals contain genuinely transparent pixels and opaque subject pixels."
+  },
+  "preservation": "All 36 word identities match the approved original proposal. Five accepted Travel level 2 images are unchanged. No src, public, audio, existing banks or production mappings changed.",
+  "ownerArtworkAccepted": false,
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "remaining": [
+    "Consolidated owner artwork feedback/acceptance.",
+    "Current-head GitHub CI/review after publishing this complete set.",
+    "Separate audio approval and full cross-pack picture-choice review before activation.",
+    "Real-iPhone acceptance remains on the deployed version."
+  ],
+  "futureActivationConcern": "Consider the generic pescado versus atún category relationship in the full expanded-pool picture-choice audit."
+}

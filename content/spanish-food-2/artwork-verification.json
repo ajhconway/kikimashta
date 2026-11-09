@@ -1,10 +1,10 @@
 {
   "issue": 231,
   "pack": "es-419-food-2",
-  "status": "complete-artwork-awaiting-owner-feedback",
+  "status": "artwork-accepted-audio-generation-authorized",
   "words": 36,
-  "generatedImages": 31,
-  "reusedImages": 5,
+  "generatedImages": 32,
+  "reusedImages": 4,
   "pendingImages": 0,
   "tool": "built-in image_gen",
   "review": "content/spanish-food-2/review.html",
@@ -12,7 +12,7 @@
   "originals": "artifacts/spanish-food-2-art/originals/",
   "records": "artifacts/spanish-food-2-art/records/",
   "manifest": "artifacts/spanish-food-2-art/manifest.json",
-  "manifestSha256": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+  "manifestSha256": "0e946432982fd6633986229ca822443e44a4ff63dcd6c861f442c4e166f885e6",
   "requests": "artifacts/spanish-food-2-art/requests.json",
   "requestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
   "authorization": "content/spanish-food-2/generation-approval.json",
@@ -21,16 +21,14 @@
     "command": "VITEST_MAX_WORKERS=2 npm run check",
     "exitCode": 0,
     "vitest": 664,
-    "node": 344,
+    "node": 346,
     "pythonAudioContent": 18,
     "pythonCards": 27,
     "lint": "passed",
     "types": "passed",
     "validators": "passed",
     "productionBuild": "passed",
-    "focusedArtTests": 3,
-    "browserCommand": "npm run test:e2e -- --workers=2",
-    "browserTests": 110,
+    "focusedArtTests": 5,
     "syncConfiguration": "Explicit documented fake service configuration; matching full SOURCE_REVISION for build and browsers."
   },
   "galleryBrowserEvidence": "content/spanish-food-2/browser-verification.json",
@@ -46,23 +44,36 @@
     "phoneWidth": 390,
     "horizontalOverflow": false,
     "pageErrors": [],
-    "browserStorageUnchanged": true
+    "browserStorageUnchanged": true,
+    "sharedGlassUses": 3,
+    "sharedGlassConsistent": true
   },
   "independentReview": "No blocking findings in source/provenance, optional metadata validation, pre-write safeguards, test quality or the complete 36-picture contact sheet. All subjects read clearly at 145px.",
   "generatedCanvas": {
     "width": 1254,
     "height": 1254,
-    "alpha": "All 31 originals contain genuinely transparent pixels and opaque subject pixels."
+    "alpha": "All 32 originals have genuinely transparent surrounding pixels and opaque subject pixels."
   },
-  "preservation": "All 36 word identities match the approved original proposal. Five accepted Travel level 2 images are unchanged. No src, public, audio, existing banks or production mappings changed.",
-  "ownerArtworkAccepted": false,
-  "audioGenerationAuthorized": false,
+  "preservation": "All word IDs/audio remain unchanged. Only vaso changes in the selected picture review; other35 images match the preserved first review. Original draft/proposal/auth/31requests and all historical/production banks and JPEGs remain unchanged. One candidate binds Food2,Travel2 and legacy Japanese shared-glass sources.",
+  "ownerArtworkAccepted": true,
+  "audioGenerationAuthorized": true,
   "runtimeActivationAuthorized": false,
   "remaining": [
-    "Consolidated owner artwork feedback/acceptance.",
-    "Current-head GitHub CI/review after publishing this complete set.",
-    "Separate audio approval and full cross-pack picture-choice review before activation.",
-    "Real-iPhone acceptance remains on the deployed version."
+    "Generate the 248 authorized new word recordings and prepare the complete 288-clip listening review.",
+    "Owner listening acceptance before runtime activation/shipping.",
+    "Full cross-pack picture-choice review before activation; real-iPhone acceptance on deployed version."
   ],
-  "futureActivationConcern": "Consider the generic pescado versus atún category relationship in the full expanded-pool picture-choice audit."
+  "futureActivationConcern": "Consider the generic pescado versus atún category relationship in the full expanded-pool picture-choice audit.",
+  "previousAppBrowserVerification": {
+    "command": "npm run test:e2e -- --workers=2",
+    "tests": 110,
+    "scope": "Full app suite passed for the original complete set; no app/runtime change in this shared-glass revision.",
+    "evidence": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-artwork-verification.json"
+  },
+  "artworkAmendment": "content/spanish-food-2/artwork-revisions-v1.json",
+  "artworkAmendmentSha256": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
+  "unchangedPicturesSinceFeedback": 35,
+  "sharedGlassPreview": "artifacts/spanish-food-2-art/shared-glass-review.html",
+  "artworkAcceptance": "content/spanish-food-2/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "2e2d0cdc5163578357639fd7509e149f64555ef0c62f532efd63180a67d269bb"
 }

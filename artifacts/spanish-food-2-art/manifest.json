@@ -6,10 +6,10 @@
   "words": 36,
   "newSpanishItems": 31,
   "existingSpanishItems": 5,
-  "generatedImages": 31,
-  "reusedImages": 5,
+  "generatedImages": 32,
+  "reusedImages": 4,
   "pendingImages": 0,
-  "expectedNewImages": 31,
+  "expectedNewImages": 32,
   "audioGenerationAuthorized": false,
   "runtimeActivationAuthorized": false,
   "reviewWorkflow": "complete-pack-before-owner-feedback",
@@ -22,17 +22,25 @@
   "requests": "artifacts/spanish-food-2-art/requests.json",
   "requestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
   "selection": "artifacts/spanish-food-2-art/selection.json",
-  "selectionSha256": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+  "selectionSha256": "218bd14b8d22c150662c3f3d7e4278265c98c9ce9bffbd28e338f067f996c2e6",
   "inputHashes": {
     "content/spanish-food-2/draft.json": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
     "content/spanish-food-2/generation-approval.json": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
     "content/spanish-food-2/proposal-v1.json": "bd5df57d977a271716199af285e8405c162191a11b378e2dabc06d2c4e16d09b",
     "artifacts/spanish-food-2-art/requests.json": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
-    "artifacts/spanish-food-2-art/selection.json": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "artifacts/spanish-food-2-art/selection.json": "218bd14b8d22c150662c3f3d7e4278265c98c9ce9bffbd28e338f067f996c2e6",
+    "content/spanish-food-2/artwork-revisions-v1.json": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
     "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
     "content/es-419-travel-2.json": "d63bc583fcb7eae6c60a364c7f0f6f9aac84d20242c796c95283cd4dd25b8b3a",
     "content/spanish-travel-2/activation.json": "8d21ce836176da0681474966ce39cce7f0ac31391df4553a567d4df0dbf47491",
-    "content/spanish-travel-2/acceptance.json": "9c0b5b480b0b1561fe32ced1b8b01a51185ba7b8fb278711504e5acfcd528513"
+    "content/spanish-travel-2/acceptance.json": "9c0b5b480b0b1561fe32ced1b8b01a51185ba7b8fb278711504e5acfcd528513",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+    "artifacts/spanish-food-2-art/revisions/glass-v1-request.json": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+    "public/images/approved/ja-cup-a6b3cf43ae54.jpg": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+    "content/ja.json": "b6a7bd1e83dcc979e2c23473b61aa14aa817148545abd0fa54ea2d00052d84b9"
   },
   "groups": [
     {
@@ -60,6 +68,262 @@
       "title": "At the table"
     }
   ],
+  "amendmentEvidence": {
+    "artworkAmendment": "content/spanish-food-2/artwork-revisions-v1.json",
+    "artworkAmendmentSha256": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
+    "request": "artifacts/spanish-food-2-art/revisions/glass-v1-request.json",
+    "requestSha256": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+    "previousManifest": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json",
+    "previousManifestSha256": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+    "previousSelection": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json",
+    "previousSelectionSha256": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "previousContactSheet": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png",
+    "previousContactSheetSha256": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+    "unchangedPictureCount": 35,
+    "unchangedImages": [
+      {
+        "id": "es-419-food-grapes",
+        "path": "artifacts/spanish-food-2-art/originals/grapes-v1.png",
+        "sha256": "eeb09681600ac4c95408728a8322536203a022b3dd635cb35d0874be4c5fa91c"
+      },
+      {
+        "id": "es-419-food-mango",
+        "path": "artifacts/spanish-food-2-art/originals/mango-v1.png",
+        "sha256": "4d192809efab1145328425e5f22e8c3ade3a09b6801ea0bd7fdc6d7aa9244021"
+      },
+      {
+        "id": "es-419-food-watermelon",
+        "path": "artifacts/spanish-food-2-art/originals/watermelon-v1.png",
+        "sha256": "90527843ae35dbfb37bcbbf98d7d965b700e1870576456abe660137b7260826b"
+      },
+      {
+        "id": "es-419-food-melon",
+        "path": "artifacts/spanish-food-2-art/originals/melon-v1.png",
+        "sha256": "eed2036f2c899ca3a923338cf1dd83a4135b064c183a2605b6a9fc6fe0d08f29"
+      },
+      {
+        "id": "es-419-food-peach",
+        "path": "artifacts/spanish-food-2-art/originals/peach-v1.png",
+        "sha256": "1bc48ef2cd37f39fd7233af68d8282c490bf9a1e7116680aee6a01ac4c720135"
+      },
+      {
+        "id": "es-419-food-pear",
+        "path": "artifacts/spanish-food-2-art/originals/pear-v1.png",
+        "sha256": "3f22f7ce26487563a70720407f1779c2fb447daddd30c72b79c5543d9d56cd06"
+      },
+      {
+        "id": "es-419-food-cucumber",
+        "path": "artifacts/spanish-food-2-art/originals/cucumber-v1.png",
+        "sha256": "8a03ecf0bea067c38727573aacff437011083265350af9ba9b43ba48e6f99a0d"
+      },
+      {
+        "id": "es-419-food-broccoli",
+        "path": "artifacts/spanish-food-2-art/originals/broccoli-v1.png",
+        "sha256": "9d18bf4005700aee437bd15453731a6a466836c3427861f858f4ceee9ae6aa5b"
+      },
+      {
+        "id": "es-419-food-cauliflower",
+        "path": "artifacts/spanish-food-2-art/originals/cauliflower-v1.png",
+        "sha256": "24816b9bba8191f6557c00fc7ba486c02712c5af73f085a104494fb332d313cf"
+      },
+      {
+        "id": "es-419-food-spinach",
+        "path": "artifacts/spanish-food-2-art/originals/spinach-v1.png",
+        "sha256": "9b926e087e618392e027f0cc2e4bebbc4a8eb939f0feceb6b9aaf551f21b697c"
+      },
+      {
+        "id": "es-419-food-mushroom",
+        "path": "artifacts/spanish-food-2-art/originals/mushroom-v1.png",
+        "sha256": "bf635748dd6741a4e96be4c6c2efec730b7ed97f8084a021ea3e2a7e40b5fd69"
+      },
+      {
+        "id": "es-419-food-corn",
+        "path": "artifacts/spanish-food-2-art/originals/corn-v1.png",
+        "sha256": "521ba151d5b8f0d4ec58771fb35a4c04dd626dbddc6c6d17030de2d52ad88f77"
+      },
+      {
+        "id": "es-419-food-steak",
+        "path": "artifacts/spanish-food-2-art/originals/steak-v1.png",
+        "sha256": "c816bc14ec084290a5edb66838348abed6af769119e22896282ac2d1e54dc9aa"
+      },
+      {
+        "id": "es-419-food-ham",
+        "path": "artifacts/spanish-food-2-art/originals/ham-v1.png",
+        "sha256": "f28fea7a16c16b1f1007c6c1053ff0ed5422f3409a99cd6dc67adcdea0667442"
+      },
+      {
+        "id": "es-419-food-bacon",
+        "path": "artifacts/spanish-food-2-art/originals/bacon-v1.png",
+        "sha256": "90f0f89a2ce81c98cd927a5e9350a86947cf2631f469fed58485d186509b937d"
+      },
+      {
+        "id": "es-419-food-sausage",
+        "path": "artifacts/spanish-food-2-art/originals/sausage-v1.png",
+        "sha256": "dc1ab55e2182f21499dc16fa0a691f4b137bf2c8efdd1e89d1a2ebe0be47a9b1"
+      },
+      {
+        "id": "es-419-food-shrimp",
+        "path": "artifacts/spanish-food-2-art/originals/shrimp-v1.png",
+        "sha256": "dadb934773f4ec6a2c3a1d3b6fe5138468745b8cda399137912474ec3ba0f8e1"
+      },
+      {
+        "id": "es-419-food-tuna",
+        "path": "artifacts/spanish-food-2-art/originals/tuna-v1.png",
+        "sha256": "dabfae054122b9aa44eaa95b38cfd1c4ea847f8af45adfcf007a102cca5d4b71"
+      },
+      {
+        "id": "es-419-food-garlic",
+        "path": "artifacts/spanish-food-2-art/originals/garlic-v1.png",
+        "sha256": "2b49289df3661965a772b8fb9c223fef2fe91629add3dc6ecb4b8a54ef778413"
+      },
+      {
+        "id": "es-419-food-chili-pepper",
+        "path": "artifacts/spanish-food-2-art/originals/chili-pepper-v1.png",
+        "sha256": "89d9bfe465bd14a444d0901699ab312e33c2e64ee6106c07d79865dbbc379071"
+      },
+      {
+        "id": "es-419-food-honey",
+        "path": "artifacts/spanish-food-2-art/originals/honey-v1.png",
+        "sha256": "d8b57aad9c6b72e9a4f6d8df8e5f2f1e3d19b6defc1ac4e43657c7d7dc28af8e"
+      },
+      {
+        "id": "es-419-food-jam",
+        "path": "artifacts/spanish-food-2-art/originals/jam-v1.png",
+        "sha256": "a6e3dd90a598bc4718fc4fe90028d335d2c52d0a2631f7ae65d08560ed9daafa"
+      },
+      {
+        "id": "es-419-food-cooking-oil",
+        "path": "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png",
+        "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24"
+      },
+      {
+        "id": "es-419-food-black-pepper",
+        "path": "artifacts/spanish-food-2-art/originals/black-pepper-v1.png",
+        "sha256": "64e79749b6753ca96ed0812b778afe6f96c692703a5651ed10fcd8dd0ae302e0"
+      },
+      {
+        "id": "es-419-food-cookie",
+        "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+        "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+      },
+      {
+        "id": "es-419-food-cake",
+        "path": "artifacts/spanish-food-2-art/originals/cake-v1.png",
+        "sha256": "400061e886910d790a0f8fbfdc91bddfac69fd1acca95774ac282904b35be807"
+      },
+      {
+        "id": "es-419-food-chocolate",
+        "path": "artifacts/spanish-food-2-art/originals/chocolate-v1.png",
+        "sha256": "05a753c7cf4b18b78fcef87afe544629b4e97f5209117ab095d9b14e09b20c4e"
+      },
+      {
+        "id": "es-419-food-popcorn",
+        "path": "artifacts/spanish-food-2-art/originals/popcorn-v1.png",
+        "sha256": "19b7d519ff4ffaca5ca1ce4dd3abbbf835f48896fcdae6252f788ffd22cd27d4"
+      },
+      {
+        "id": "es-419-food-peanut",
+        "path": "artifacts/spanish-food-2-art/originals/peanut-v1.png",
+        "sha256": "8c5d54df61716be5423bdb91d2a80b883752a30924047a4e157ab1f91dd5d6d1"
+      },
+      {
+        "id": "es-419-food-gelatin",
+        "path": "artifacts/spanish-food-2-art/originals/gelatin-v1.png",
+        "sha256": "77423d95e3c67445b11ac118fd76798631a9288aeb73edc99b0dc0f914ea72ca"
+      },
+      {
+        "id": "es-419-travel-plate",
+        "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+        "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6"
+      },
+      {
+        "id": "es-419-travel-cup",
+        "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+        "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349"
+      },
+      {
+        "id": "es-419-travel-fork",
+        "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+        "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01"
+      },
+      {
+        "id": "es-419-travel-spoon",
+        "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+        "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208"
+      },
+      {
+        "id": "es-419-food-knife",
+        "path": "artifacts/spanish-food-2-art/originals/knife-v1.png",
+        "sha256": "0e8c1bac5a8f14f4845baed5a78a250218cd63d22ebd996ae58c63626a0324aa"
+      }
+    ],
+    "sharedReplacement": {
+      "source": "generated",
+      "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+      "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+      "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "targets": [
+        {
+          "bank": "content/es-419-travel-2.json",
+          "id": "es-419-travel-drinking-glass",
+          "language": "es-419",
+          "pack": "Travel level 2",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        },
+        {
+          "draft": "content/spanish-food-2/draft.json",
+          "id": "es-419-travel-drinking-glass",
+          "language": "es-419",
+          "pack": "Food level 2",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        },
+        {
+          "bank": "content/ja.json",
+          "id": "ja-cup",
+          "language": "ja-JP",
+          "pack": "Legacy Japanese starter glass",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        }
+      ]
+    }
+  },
+  "sharedReplacement": {
+    "source": "generated",
+    "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+    "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+    "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+    "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "targets": [
+      {
+        "bank": "content/es-419-travel-2.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Travel level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "draft": "content/spanish-food-2/draft.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Food level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "bank": "content/ja.json",
+        "id": "ja-cup",
+        "language": "ja-JP",
+        "pack": "Legacy Japanese starter glass",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      }
+    ]
+  },
   "images": [
     {
       "id": "es-419-food-grapes",
@@ -834,12 +1098,26 @@
       "group": "tableware",
       "membership": "existing-spanish-item",
       "existingBank": "content/es-419-travel-2.json",
-      "source": "approved-reuse",
-      "path": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
-      "sha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
-      "bytes": 53360,
-      "sourceId": "es-419-travel-drinking-glass",
-      "evidence": "content/spanish-travel-2/activation.json"
+      "source": "generated",
+      "version": 1,
+      "concept": "A single attractive clear drinking glass, slightly wider at its open top than at its thick rounded bottom, half full of clean light-blue water. Give the glass convincing gentle three-dimensional depth: an elliptical open rim with a visible thick lip, softly shaded curved side walls, a thick solid base and a clean level elliptical water surface. Show the empty upper section as pale translucent blue-white glass, and the water below as richer blue. Match the friendly polished cartoon rendering of the style reference instead of flat line art. Keep the entire rim visible and the glass geometrically straight and symmetric, viewed just slightly from above.",
+      "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+      "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+      "bytes": 821916,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 942996,
+        "opaquePixels": 619512,
+        "opaqueWhitePixels": 167
+      },
+      "promptSha256": "ff3c97102a50c297013b3ace819fe8821589c0a07253c3f887dd6da709c4aac9",
+      "editTargetSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "styleReferenceSha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+      "record": "artifacts/spanish-food-2-art/records/glass-v1.json",
+      "recordSha256": "bbc219aa32f9a22b877a0c1b4123916f2d87bc3501c504f451c7825457ead6d4"
     },
     {
       "id": "es-419-travel-cup",

@@ -83,3 +83,57 @@ test('late corrupt PNGs, malformed records, wrong references and source/output s
   await save(root,'sentinel.txt','untouched');await rm(join(root,FOOD,'review.html'));await symlink(join(root,'sentinel.txt'),join(root,FOOD,'review.html'))
   await assert.rejects(buildFoodLevel2ArtReview(root),/symlinks/);assert.deepEqual((await outputs(root)).slice(0,3),before.slice(0,3));assert.equal(await readFile(join(root,'sentinel.txt'),'utf8'),'untouched')
 })
+
+async function revisionFixture(t){
+  const f=await fixture(t),{root,requests}=f
+  const paths=[FOOD+'/artwork-revisions-v1.json','content/ja.json',...['before-feedback-v1-manifest.json','before-feedback-v1-selection.json','before-feedback-v1-contact-sheet.png','glass-v1-request.json'].map(p=>ART+'/revisions/'+p)]
+  for(const q of requests)paths.push(ART+`/originals/${q.slug}-v1.png`,ART+`/records/${q.slug}-v1.json`)
+  for(const p of paths){await mkdir(dirname(join(root,p)),{recursive:true});await copyFile(join(source,p),join(root,p))}
+  const previous=await json(join(root,ART,'revisions/before-feedback-v1-manifest.json')),selection=await json(join(root,ART,'revisions/before-feedback-v1-selection.json'))
+  await save(root,ART+'/selection.json',{...selection,versions:{...selection.versions,glass:1}})
+  const q=await json(join(root,ART,'revisions/glass-v1-request.json')),amendment=await json(join(root,FOOD,'artwork-revisions-v1.json'))
+  const record={id:q.id,slug:'glass',version:1,path:'originals/glass-v1.png',tool:'built-in image_gen',promptSha256:hash(q.prompt),editTargetSha256:q.editTarget.sha256,styleReferenceSha256:q.styleReference.sha256,supersedes:amendment.target.supersedes,supersedesSha256:amendment.target.supersedesSha256,sha256:hash(testPng),bytes:testPng.length,width:1024,height:1024}
+  return{...f,paths,previous,q,record}
+}
+const revisedOutputs=async root=>[...await outputs(root),await readFile(join(root,ART,'shared-glass-review.html'))]
+
+test('pinned shared-glass amendment changes only glass, keeps35 original pictures and previews all3 stable source identities without modifying any source',async t=>{
+  const{root,paths,previous,record}=await revisionFixture(t),protectedPaths=[...paths,FOOD+'/draft.json',FOOD+'/generation-approval.json',ART+'/requests.json','content/es-419-travel-2.json','public/images/approved/ja-cup-a6b3cf43ae54.jpg']
+  const before=await Promise.all(protectedPaths.map(async p=>hash(await readFile(join(root,p)))))
+  const pending=await buildFoodLevel2ArtReview(root),target=pending.images.find(i=>i.slug==='glass')
+  assert.equal(pending.generatedImages,31);assert.equal(pending.reusedImages,4);assert.equal(pending.pendingImages,1);assert.equal(target.source,'pending');assert.equal(target.path,undefined)
+  await save(root,ART+'/originals/glass-v1.png',testPng);await save(root,ART+'/records/glass-v1.json',record)
+  const complete=await buildFoodLevel2ArtReview(root),glass=complete.images.find(i=>i.slug==='glass')
+  assert.equal(complete.generatedImages,32);assert.equal(complete.reusedImages,4);assert.equal(complete.pendingImages,0);assert.equal(complete.expectedNewImages,32)
+  assert.equal(glass.id,'es-419-travel-drinking-glass');assert.equal(glass.membership,'existing-spanish-item');assert.equal(glass.path,ART+'/originals/glass-v1.png');assert.equal(glass.sha256,hash(testPng))
+  assert.equal(complete.amendmentEvidence.unchangedPictureCount,35);assert.equal(complete.amendmentEvidence.unchangedImages.length,35)
+  assert.deepEqual(complete.images.filter(i=>i.slug!=='glass'),previous.images.filter(i=>i.slug!=='glass'))
+  assert.deepEqual(complete.sharedReplacement.targets.map(t=>[t.id,t.language]),[['es-419-travel-drinking-glass','es-419'],['es-419-travel-drinking-glass','es-419'],['ja-cup','ja-JP']])
+  for(const use of complete.sharedReplacement.targets){assert.equal(use.path,glass.path);assert.equal(use.sha256,glass.sha256)}
+  assert.equal(complete.audioGenerationAuthorized,false);assert.equal(complete.runtimeActivationAuthorized,false)
+  const html=await readFile(join(root,ART,'shared-glass-review.html'),'utf8');assert.equal((html.match(/<img /g)??[]).length,4);assert.equal((html.match(/src="..\/..\/artifacts\/spanish-food-2-art\/originals\/glass-v1.png"/g)??[]).length,3);assert.match(html,/Earlier picture/);assert.match(html,/does not enable retired Japanese practice/);assert.doesNotMatch(html,/<audio/)
+  assert.deepEqual(await Promise.all(protectedPaths.map(async p=>hash(await readFile(join(root,p))))),before)
+})
+
+test('changed or missing amendment/reference/snapshot/supersession/shared mappings and late symlinks preserve every revised output',async t=>{
+  const{root,record}=await revisionFixture(t),recordPath=ART+'/records/glass-v1.json',imagePath=ART+'/originals/glass-v1.png'
+  await save(root,imagePath,testPng);await save(root,recordPath,record);await buildFoodLevel2ArtReview(root);const before=await revisedOutputs(root)
+  const unchanged=async pattern=>{await assert.rejects(buildFoodLevel2ArtReview(root),pattern);assert.deepEqual(await revisedOutputs(root),before)}
+  for(const p of [FOOD+'/artwork-revisions-v1.json',ART+'/revisions/glass-v1-request.json',ART+'/revisions/before-feedback-v1-manifest.json',ART+'/revisions/before-feedback-v1-selection.json',ART+'/revisions/before-feedback-v1-contact-sheet.png']){
+    const original=await readFile(join(root,p));await save(root,p,Buffer.concat([original,Buffer.from(' ')]));await unchanged(/amendment bytes changed|snapshot\/request bytes changed/);await save(root,p,original)
+  }
+  const requestPath=ART+'/revisions/glass-v1-request.json',requestBytes=await readFile(join(root,requestPath));await rm(join(root,requestPath));await unchanged({code:'ENOENT'});await save(root,requestPath,requestBytes)
+  const amendmentPath=FOOD+'/artwork-revisions-v1.json',amendmentBytes=await readFile(join(root,amendmentPath));await rm(join(root,amendmentPath));await unchanged(/selected version scope/);await save(root,amendmentPath,amendmentBytes)
+  for(const patch of [{editTargetSha256:'0'.repeat(64)},{styleReferenceSha256:'0'.repeat(64)},{promptSha256:'0'.repeat(64)},{supersedes:'public/images/approved/other.jpg'},{supersedesSha256:'0'.repeat(64)}]){await save(root,recordPath,{...record,...patch});await unchanged(/revision record or supersession/);await save(root,recordPath,record)}
+  const missingSupersession={...record};delete missingSupersession.supersedes;await save(root,recordPath,missingSupersession);await unchanged(/revision record or supersession/);await save(root,recordPath,record)
+  for(const patch of [{bytes:testPng.length+1},{width:1023},{height:1023}]){await save(root,recordPath,{...record,...patch});await unchanged(/record measurements/);await save(root,recordPath,record)}
+  // A valid replacement PNG with a self-consistent record still cannot change any of the other35 pictures.
+  const unchangedImage=ART+'/originals/knife-v1.png',unchangedRecord=ART+'/records/knife-v1.json',oldUnchangedBytes=await readFile(join(root,unchangedImage)),oldUnchangedRecord=await readFile(join(root,unchangedRecord))
+  await save(root,unchangedImage,testPng);await save(root,unchangedRecord,{...JSON.parse(oldUnchangedRecord),sha256:hash(testPng),bytes:testPng.length,width:1024,height:1024});await unchanged(/original artwork or selected version snapshot changed/);await save(root,unchangedImage,oldUnchangedBytes);await save(root,unchangedRecord,oldUnchangedRecord)
+  const oldImage='public/images/approved/ja-cup-a6b3cf43ae54.jpg',oldBytes=await readFile(join(root,oldImage));await save(root,oldImage,'tampered old reference');await unchanged(/approved reuse bytes/);await save(root,oldImage,oldBytes)
+  const jaPath='content/ja.json',jaBytes=await readFile(join(root,jaPath)),ja=JSON.parse(jaBytes);ja.items.find(i=>i.id==='ja-cup').image.src='images/approved/other.jpg';await save(root,jaPath,ja);await unchanged(/current shared glass source mapping/);await save(root,jaPath,jaBytes)
+  await save(root,imagePath,'tampered replacement');await unchanged(/revision image bytes/);await save(root,imagePath,testPng)
+  await save(root,'same-replacement.png',testPng);await rm(join(root,imagePath));await symlink(join(root,'same-replacement.png'),join(root,imagePath));await unchanged(/symlinks/);await rm(join(root,imagePath));await save(root,imagePath,testPng)
+  await save(root,'shared-sentinel.html','unchanged');await rm(join(root,ART,'shared-glass-review.html'));await symlink(join(root,'shared-sentinel.html'),join(root,ART,'shared-glass-review.html'))
+  await assert.rejects(buildFoodLevel2ArtReview(root),/symlinks/);assert.deepEqual(await outputs(root),before.slice(0,4));assert.equal(await readFile(join(root,'shared-sentinel.html'),'utf8'),'unchanged')
+})
