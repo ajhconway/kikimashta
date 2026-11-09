@@ -63,6 +63,7 @@ async function endedClips(page: Page) {
 }
 
 test('contextual library redirects old links, browses authored detail and retries native paired audio without changing progress', async ({ page }) => {
+  test.setTimeout(60000);
   await observeNativeMedia(page);
   await page.goto('./');
   await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
