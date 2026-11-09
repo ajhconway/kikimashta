@@ -167,13 +167,13 @@
   },
   {
     "id": "ja-v-a76119b3c712",
-    "concept": "A fluffy animal tail with tufts of fur",
+    "concept": "A tuft of soft brown fur.",
     "visualGroup": "fur",
     "reviewRequired": false
   },
   {
     "id": "ja-v-575ec5f060f3",
-    "concept": "A young girl with short pigtails",
+    "concept": "A young girl standing in ordinary casual clothes.",
     "visualGroup": "girl",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -475,7 +475,7 @@
   },
   {
     "id": "ja-v-f25546e67181",
-    "concept": "An adult woman standing confidently",
+    "concept": "An adult woman standing in ordinary casual clothes.",
     "visualGroup": "woman",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -521,7 +521,7 @@
   },
   {
     "id": "ja-v-c22ee5be019b",
-    "concept": "A young boy with a baseball cap",
+    "concept": "A young boy standing in a gold shirt and lavender trousers.",
     "visualGroup": "boy",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -750,7 +750,7 @@
   },
   {
     "id": "ja-v-41b543dc8fe4",
-    "concept": "A large faceted pink gemstone",
+    "concept": "A single loose pink faceted gemstone.",
     "visualGroup": "jewel",
     "reviewRequired": false
   },
@@ -791,7 +791,7 @@
   },
   {
     "id": "ja-v-4b9dfeafcab4",
-    "concept": "An adult man standing confidently",
+    "concept": "An adult man standing in a teal shirt and lavender trousers.",
     "visualGroup": "man",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -832,7 +832,7 @@
   },
   {
     "id": "ja-v-2f21cb2e8d02",
-    "concept": "A person watches a full moon above autumn grass",
+    "concept": "A person in casual clothes sitting outside and looking up at a full moon.",
     "visualGroup": "moon-viewing",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -907,7 +907,7 @@
   },
   {
     "id": "ja-v-36897e1da4ac",
-    "concept": "A perforated postage stamp on an envelope",
+    "concept": "An envelope with an emphasized perforated pink postage stamp in its upper-right corner.",
     "visualGroup": "postage-stamp",
     "reviewRequired": false
   },
@@ -953,7 +953,7 @@
   },
   {
     "id": "ja-v-74043c16db5e",
-    "concept": "A bowl of fluffy shaved ice with pink syrup",
+    "concept": "A bowl of fluffy shaved ice topped with pink syrup, with a small spoon.",
     "visualGroup": "shaved-ice",
     "reviewRequired": false
   },
@@ -1126,7 +1126,7 @@
   },
   {
     "id": "ja-v-09d74d630a45",
-    "concept": "A compact row of modest houses and one shop",
+    "concept": "A green miniature town with straight intersecting streets and rectangular building blocks.",
     "visualGroup": "town",
     "reviewRequired": false
   },
@@ -1150,14 +1150,14 @@
   },
   {
     "id": "ja-v-cb7d8a487c4f",
-    "concept": "People picnic beneath a pink flowering tree",
+    "concept": "Two people picnicking beneath a blossoming cherry tree and admiring its pink flowers.",
     "visualGroup": "viewing-cherry-blossoms",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-92bebda5ac98",
-    "concept": "A few small cottages among trees and hills",
+    "concept": "A small rural village with modest homes along a winding path among trees and fields.",
     "visualGroup": "village",
     "reviewRequired": false
   },

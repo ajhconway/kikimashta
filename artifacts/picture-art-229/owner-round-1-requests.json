@@ -1,0 +1,63 @@
+{
+  "issue": 229,
+  "ownerStatement": "For 月見, can we make the character and scene less stereotypically Japanese? Can we make 町 use the same feel as 村? Can you make 皮 less gross looking? Can we come up with a euphemism for 金玉?",
+  "tool": "built-in image_gen",
+  "tasks": [
+    {
+      "id": "ja-v-2f21cb2e8d02",
+      "text": "月見",
+      "version": 2,
+      "refs": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-2f21cb2e8d02-v1.png",
+          "role": "edit target and illustration style"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Revise this moon-viewing illustration into an ordinary contemporary outdoor moment. Replace the entire traditionally dressed character and all the seasonal ritual props with one casually dressed person in a plain lavender hoodie, simple jeans and sneakers, sitting relaxed on a low grassy knoll and gazing up toward a large pale-gold full moon above. Three-quarter rear view; head visibly tilted upward toward the moon, clear intentional moon-watching. Simple short hair, natural proportions, calm friendly mood. Remove the kimono, obi, floral hair ornament, dumpling offering, special stand, vase and ornamental grasses completely. Keep the full moon and the polished illustration treatment. Small clean grassy footprint only, transparent surrounding space, no rectangular night-sky backdrop. No traditional costume, themed ornaments, cultural display, extra objects or text.",
+      "note": "Moon watching in everyday casual clothes outdoors; the upward gaze and full moon carry the activity."
+    },
+    {
+      "id": "ja-v-09d74d630a45",
+      "text": "町",
+      "version": 3,
+      "refs": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-92bebda5ac98-v1.png",
+          "role": "primary landscape composition and style reference"
+        },
+        {
+          "path": "artifacts/picture-art-229/ja-v-09d74d630a45-v2.png",
+          "role": "town subject reference"
+        }
+      ],
+      "prompt": "Use case: style-transfer. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Image1 is the main composition and mood reference: its charming elevated miniature landscape, lush rounded green trees, winding route, low green hills, compact irregular ground footprint, cohesive plum outlines and soft natural colors. Reimagine Image2's town with THAT same feel and level of detail. Make a small walkable town clustered around a gently curving paved street: several modest two-story homes and two clearly visible tiny unbranded shops with striped awnings, neat sidewalks, shrubs and trees, low hills behind. Arrange buildings at several depths across a rounded landscape footprint, not a flat row or a narrow horizontal strip. Town setting is a little denser and more commercial than the village reference, while sharing the same relaxed landscape scale and attractive greenery. No crop fields or giant urban towers, no signs or text. Entire landscape centered and visible with transparent margins; no glow, framing panel or hazy outside pixels.",
+      "note": "An elevated, green miniature town landscape matching the feel of 村; a small street and shops establish the setting."
+    },
+    {
+      "id": "ja-v-d0c8497457bd",
+      "text": "皮",
+      "version": 2,
+      "refs": [
+        {
+          "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v1.png",
+          "role": "old illustration being replaced"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. Replace the tissue-block cutaway completely with a gentle close-up of healthy, unbroken human skin: one bare forearm extends diagonally across the square, and a hand from the opposite arm lightly points at the smooth outer forearm with one fingertip. Natural warm peach skin, friendly rounded shapes, simple plum outline, very subtle soft shading. Crop the arms cleanly at the edges of this isolated subject, while leaving transparent canvas margins; no whole person or face. Place three small golden attention rays immediately beside the indicated patch of normal forearm skin, so the skin surface is the focus. Correct simple hand anatomy with five digits, no extra fingers. The skin is entirely intact and comfortable-looking. No cutaway, layers, tissue slab, hair, pores, follicles, fat, wound, rash, lesion, medical instruments, magnifying panel, labels, skin-colored patch sticker or unpleasant texture. No background.",
+      "note": "Healthy, intact forearm skin indicated gently, replacing the tissue cutaway."
+    },
+    {
+      "id": "ja-v-26d771953f4b",
+      "text": "金玉",
+      "version": 2,
+      "refs": [
+        {
+          "path": "artifacts/picture-art-229/style-object.png",
+          "role": "approved outline and soft-shading style reference only"
+        }
+      ],
+      "prompt": "Use case: stylized-concept. Asset: Japanese listening vocabulary illustration. Match the existing friendly plum outlines, gentle lavender/gold accents and restrained interior shading. Keep a square 1:1 canvas with generous margins, the whole subject visible, and genuine transparent alpha outside the compact scene. No words, letters, numerals, labels, watermark, card frame, calendar, page, background panel, aura, glow, haze or exterior shadow. A playful visual wordplay illustration of EXACTLY TWO plain golden balls side by side. Two matching smooth round gold spheres, equal in size, fully visible, with a small transparent gap between them. Warm golden-yellow fills, bold smooth plum outlines, a restrained curved highlight and gentle interior shading to read as spheres. Center the pair as one simple isolated group. The balls alone are the whole subject. No flower from the style reference, no cords, strings, stems, pouch, container, anatomy, organs, person, decorative sparkles, jewelry setting, numerals, letters or text. Clean transparent background, clear silhouette and generous margins.",
+      "note": "Proposed visual euphemism: two golden balls (“family jewels”). This is a mnemonic; the vocabulary meaning remains the colloquial body-part term."
+    }
+  ]
+}

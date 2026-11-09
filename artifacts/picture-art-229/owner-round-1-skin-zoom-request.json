@@ -1,0 +1,13 @@
+{
+  "id": "ja-v-d0c8497457bd",
+  "text": "皮",
+  "version": 3,
+  "refs": [
+    {
+      "path": "artifacts/picture-art-229/ja-v-d0c8497457bd-v2.png",
+      "role": "edit target for a modest closer view"
+    }
+  ],
+  "note": "A modestly closer view of healthy, intact forearm skin with a pointing finger and gentle attention marks.",
+  "prompt": "Use case: precise-object-edit. Edit this healthy-skin illustration with ONLY a modest camera zoom/crop adjustment. Zoom in approximately15 percent, centered on the fingertip touching the smooth forearm skin. Make that contact area a little larger and more prominent, while keeping the pointing finger, most of its hand, three gold attention rays, and enough exposed forearm/wrist context visible. Keep the same diagonal view, natural peach skin, exact relaxed pointing gesture, friendly rounded plum outlines and subtle shading. This should feel only slightly closer, NOT an extreme macro or a completely different composition. Preserve healthy unbroken skin and correct five-digit hand anatomy. No cutaway, tissue layers, hair, pores, wound, rash, medical details, labels or extra marks. Same square canvas and genuine transparent background; no glow or background wash."
+}
