@@ -1,7 +1,7 @@
 {
   "issue": 231,
   "pack": "es-419-food-2",
-  "status": "complete-audio-awaiting-owner-listening-review",
+  "status": "owner-accepted-activation-staged",
   "words": 36,
   "pictures": 36,
   "recordings": 288,
@@ -122,11 +122,12 @@
     "relatedFollowup": "https://github.com/ajhconway/kikimashta/issues/240"
   },
   "ownerArtworkAccepted": true,
-  "ownerListeningAccepted": false,
-  "runtimeActivated": false,
+  "ownerListeningAccepted": true,
+  "runtimeActivated": true,
   "limitations": [
-    "Owner listening acceptance is pending.",
-    "Current-head GitHub review/CI follow publication of this complete set.",
-    "Actual iPhone audio/touch acceptance remains manual on the deployed version."
-  ]
+    "Release CI/current-head review and normal publication precede live verification.",
+    "Owner real-iPhone acceptance remains open on #231."
+  ],
+  "finalAcceptance": "content/spanish-food-2/acceptance.json",
+  "activation": "content/spanish-food-2/activation.json"
 }

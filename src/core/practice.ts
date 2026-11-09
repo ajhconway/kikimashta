@@ -1,4 +1,5 @@
 import starter from '../../content/ja.json';
+import { withCurrentImage } from '../content/current-images';
 import catalogue from '../../content/catalog/ja.json';
 import poolSelection from '../../content/practice-pool.json';
 import reviewOverrides from '../../content/catalog/review-overrides.json';
@@ -29,6 +30,6 @@ export const practicePool: WordBank = {
       if (!item || removedIds.has(id)) throw new Error('Unknown writing-only practice item: ' + id);
       return { ...item, theme: 'vocabulary', label: item.meaning } as WordItem;
     }),
-  ].map((item): WordItem => writingOnlyIds.has(item.id) ? { ...item, wordExercises: ['audio-text'] } : item),
+  ].map(withCurrentImage).map((item): WordItem => writingOnlyIds.has(item.id) ? { ...item, wordExercises: ['audio-text'] } : item),
 };
 validateBank(practicePool);

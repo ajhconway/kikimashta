@@ -18,5 +18,7 @@ describe('Spanish evaluation bank preparation (#222)', () => {
     expect(language.foundationCards?.every(card => !ids.has(card.item.id))).toBe(true);
     expect(prepared).toHaveLength(language.pool.items.length);
     expect(prepared.find(item => item.text === 'arroz')?.packIds).toContain('es-419-food-1-pictures');
+    expect(prepared.find(item => item.text === 'vaso')?.packIds).toEqual(['es-419-food-2-pictures', 'es-419-travel-2-pictures']);
+    expect(prepared.filter(item => item.packIds.includes('es-419-food-2-pictures'))).toHaveLength(36);
   });
 });

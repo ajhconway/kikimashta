@@ -385,7 +385,7 @@
         "es-419-travel-belt",
         "es-419-travel-seat-belt"
       ],
-      "reason": "Both accepted pictures depict a buckle and belt; bare cintur\u00f3n can also refer to the seat belt."
+      "reason": "Both accepted pictures depict a buckle and belt; bare cinturón can also refer to the seat belt."
     },
     {
       "ids": [
@@ -498,12 +498,69 @@
         "es-419-travel-soup"
       ],
       "reason": "Two prominent orange carrot rounds are visible in the soup, creating another zanahoria picture even though the bowl is the main object."
+    },
+    {
+      "ids": [
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna"
+      ],
+      "reason": "Tuna is fish: the open tin of clearly visible tuna flakes is another valid pescado picture, even though the earlier fish picture is a cooked fillet."
+    },
+    {
+      "ids": [
+        "es-419-food-cucumber",
+        "es-419-travel-salad"
+      ],
+      "reason": "Two large pale-green seeded cucumber slices remain clearly identifiable in the salad at145px, creating a second pepino answer."
+    },
+    {
+      "ids": [
+        "es-419-food-grapes",
+        "es-419-travel-market"
+      ],
+      "reason": "The foreground market crate prominently contains a purple grape bunch with round grapes and a green leaf, visible at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-corn",
+        "es-419-travel-market"
+      ],
+      "reason": "The foreground market crate prominently displays two yellow corn cobs with kernel grids and green husks, creating another elote answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-cake",
+        "es-419-travel-menu"
+      ],
+      "reason": "The bottom menu illustration clearly depicts a slice of layer cake with filling and frosting; this also answers pastel at145px."
+    },
+    {
+      "ids": [
+        "es-419-food-chocolate",
+        "es-419-food-cookie"
+      ],
+      "reason": "Several large dark chocolate chips visibly protrude from the cookie; chocolate would have both the bar and the chocolate-chip picture as valid answers."
+    },
+    {
+      "ids": [
+        "es-419-food-gelatin",
+        "es-419-travel-plate"
+      ],
+      "reason": "The gelatin dessert sits on a clearly visible pale plate extending around its base; the composite provides another plato answer."
+    },
+    {
+      "ids": [
+        "es-419-food-cooking-oil",
+        "es-419-travel-bottle"
+      ],
+      "reason": "The cooking-oil vessel has a narrow neck, stopper and round bottle body. Despite its side handle, it is also a bottle and can answer botella."
     }
   ],
   "issues": [
     166,
     174,
     207,
-    218
+    218,
+    231
   ]
 }
