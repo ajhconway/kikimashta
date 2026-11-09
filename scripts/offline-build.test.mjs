@@ -38,7 +38,7 @@ test('offline versions change with build environment as well as source bytes', a
     const version = () => offlineBuild(root).config({}, { mode: 'production' }).define.__OFFLINE_VERSION__;
     const first = version();
     assert.equal(version(), first);
-    await writeFile(join(root, '.env.production'), 'VITE_BASE_PATH=/game/\n');
+    await writeFile(join(root, '.env.production'), 'VITE_OFFLINE_VERSION_TEST_INPUT=changed\n');
     assert.notEqual(version(), first);
     const configured = version();
     await writeFile(join(root, 'src/main.ts'), 'changed');
