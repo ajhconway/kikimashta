@@ -1,5 +1,6 @@
 """Validate staged card content and its generation DAG (#72)."""
 import json
+from artwork_source import source_file
 import hashlib
 import struct
 import xml.etree.ElementTree as ET
@@ -156,7 +157,7 @@ def validate():
         asset_ids = [asset['id'] for asset in manifest['assets']]
         assert len(asset_ids) == len(set(asset_ids)), 'Duplicate card in batch manifest'
         for asset in manifest['assets']:
-            path = ROOT / asset['path']
+            path = source_file(ROOT, asset['path'], asset.get('sha256'), asset.get('bytes'))
             assert asset['id'] in ids and path.is_file(), asset
             assert asset['prompt'] and asset['tool'] in {'built-in image_gen', 'reuse approved image', 'SVG renderer'}
             if asset['tool'] == 'reuse approved image':
@@ -164,7 +165,7 @@ def validate():
                            for source in json.loads(source_file.read_text())['assets']
                            if source['id'] == asset['reusedFromCard']]
                 assert len(sources) == 1 and sources[0]['status'] == 'approved', 'Reuse requires one approved source'
-                source_path = ROOT / sources[0]['path']
+                source_path = source_file(ROOT, sources[0]['path'], sources[0].get('sha256'))
                 assert source_path.read_bytes() == path.read_bytes(), 'Reused artwork must match approved source exactly'
                 assert asset['references'][0]['path'] == sources[0]['path']
             if asset['tool'] == 'SVG renderer':
@@ -176,7 +177,7 @@ def validate():
                 assert asset.get('acceptedWithKnownIssue')
                 assert asset['followUp'] == feedback['acceptedWithKnownIssues'][asset['id']]
             for old in asset.get('previousVersions', []):
-                original_path = ROOT / old['path']
+                original_path = source_file(ROOT, old['path'], old['sha256'])
                 assert original_path.is_file(), 'Original artwork must remain available'
                 assert hashlib.sha256(original_path.read_bytes()).hexdigest() == old['sha256']
             if 'sha256' in asset:
@@ -185,7 +186,7 @@ def validate():
                 assert len(raw) == asset['bytes']
                 assert struct.unpack('>II', raw[16:24]) == (asset['width'], asset['height'])
             for reference in asset['references']:
-                assert (ROOT / reference['path']).is_file()
+                assert source_file(ROOT, reference['path']).is_file()
         # Revisions of earlier approved examples are candidates until the owner
         # accepts them; they must not duplicate/reassign the generation schedule.
         for candidate in manifest.get('referenceRevisions', []) + manifest.get('approvedReferenceRevisions', []):
@@ -199,11 +200,11 @@ def validate():
                 validate_svg_asset(candidate)
             else:
                 assert candidate['tool'] == 'built-in image_gen'
-            raw = (ROOT / candidate['path']).read_bytes()
+            raw = source_file(ROOT, candidate['path'], candidate['sha256']).read_bytes()
             assert hashlib.sha256(raw).hexdigest() == candidate['sha256']
             assert struct.unpack('>II', raw[16:24]) == (candidate['width'], candidate['height'])
             for old in candidate.get('previousVersions', []):
-                assert hashlib.sha256((ROOT / old['path']).read_bytes()).hexdigest() == old['sha256']
+                assert hashlib.sha256(source_file(ROOT, old['path'], old['sha256']).read_bytes()).hexdigest() == old['sha256']
         if manifest['status'] == 'awaiting-user-feedback':
             batch = next(b for b in batches if b['id'] == filename.parent.name)
             assert {a['id'] for a in manifest['assets']} == set(batch['cardIds'])

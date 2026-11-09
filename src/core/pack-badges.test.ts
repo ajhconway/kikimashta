@@ -33,3 +33,14 @@ it('separates language and format, ignoring unrelated contextual schedules', asy
   expect(packBadges([...items, ...items.map(item => ({ ...item, language: 'es-419' }))], [pack, { ...pack, id: 'writing', exercise: 'audio-text' }, { ...pack, id: 'es', language: 'es-419' }], schedules).map(badge => badge.pack.id)).toEqual(['pictures']);
   expect(packBadges(items, [pack], schedules.map(word => ({ ...word, exercise: 'context-simple-picture' })))).toEqual([]);
 });
+
+it('requires approved foundation cards in the pack even when its word cards have higher mastery', async () => {
+  const foundation = { exercise: 'context-simple-picture' as const, item: { ...items[0]!, id: 'request' } };
+  const basicPack = { ...pack, itemIds: ['cat', 'dog', 'request'] };
+  const words = [await word('cat', 30 * 24 * hour), await word('dog', 30 * 24 * hour)];
+  expect(packBadges(items, [basicPack], words, [foundation])).toEqual([]);
+  const context = { ...await word('request', 24 * hour), exercise: foundation.exercise };
+  expect(packBadges(items, [basicPack], [...words, context], [foundation])).toMatchObject([{ level: { label: 'Familiar' }, cardCount: 3 }]);
+  expect(packBadges(items, [basicPack], words, [{ ...foundation, item: { ...foundation.item, language: 'es-419' } }])).toMatchObject([{ level: { label: 'Strong' }, cardCount: 2 }]);
+  expect(packBadges(items, [basicPack], words, [{ ...foundation, exercise: 'context-simple-text' }])).toMatchObject([{ level: { label: 'Strong' }, cardCount: 2 }]);
+});

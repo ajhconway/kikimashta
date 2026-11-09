@@ -54,13 +54,19 @@ describe('contextual question snapshots', () => {
     });
   });
 
-  it('supports draft inspection without inventing recordings and defaults older contexts to contrastive', () => {
+  it('defaults older authored contexts to contrastive', () => {
     const { context, question } = fixture();
-    context.recordings = [];
     delete context.stage;
     const quiz = contextualQuestion(context, question, 'text', vocabulary, () => 0);
-    expect(quiz.contextual?.recording).toBeUndefined();
     expect(quiz.exercise).toBe('context-contrastive-text');
+  });
+
+  it('rejects practice without a complete sentence and question recording pair', () => {
+    const { context, question } = fixture();
+    context.recordings = [];
+    expect(() => contextualQuestion(context, question, 'text', vocabulary)).toThrow(/sentence and question recordings/);
+    context.recordings = [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: {} }];
+    expect(() => contextualQuestion(context, question, 'text', vocabulary)).toThrow(/sentence and question recordings/);
   });
 
   it('rejects unsupported formats, unknown targets, missing images and questions from another context', () => {

@@ -75,3 +75,7 @@ footer { margin-top: 34px; text-align: center; font-size: .9rem; }
 .practice-packs label { flex-direction: row; align-items: center; gap: 10px; min-height: 48px; cursor: pointer; }
 .practice-packs input { width: 22px; height: 22px; min-height: 22px; flex-shrink: 0; accent-color: #8748ef; }
 .practice-packs small { display: block; font-size: .75rem; font-weight: 400; }
+
+.library-content-switch { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.library-content-switch button[aria-pressed="true"] { background: #8748ef; color: white; }
+#word-library[hidden], #contextual-library[hidden] { display: none; }

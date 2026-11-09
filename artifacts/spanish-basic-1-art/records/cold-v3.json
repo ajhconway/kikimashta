@@ -1,0 +1,13 @@
+{
+  "id": "es-419-basic-cold",
+  "slug": "cold",
+  "version": 3,
+  "path": "originals/cold-v3.png",
+  "sha256": "eb32672bc83e231289ac5f1145b86f8902aec5b5cc7c36cac8ef77d964c38fdd",
+  "promptSha256": "35d6c195bad1e1668957934fca5afceee2e271ca323b492f15ef829325370a9c",
+  "referenceSha256": "62c17e09449addeec1ca16fe326ff0342b20849899e07e0060403301dbd99e31",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b666ebb1-cb02-492c-8c41-fdc6315b5967.png",
+  "supersedes": "originals/cold-v2.png"
+}

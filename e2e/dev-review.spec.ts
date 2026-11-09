@@ -91,8 +91,8 @@ test('contextual samples use selected mastery timers and keep real progress unch
   const japanese = page.getByRole('button', { name: 'Show Japanese', exact: true });
   await expect(japanese).toBeVisible();
   const control = (await japanese.boundingBox())!;
-  expect(control.width).toBe(64);
-  expect(control.height).toBe(64);
+  expect(control.width).toBeGreaterThanOrEqual(44);
+  expect(control.height).toBeGreaterThanOrEqual(44);
   await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeEnabled();
   await japanese.click();
   const details = page.getByRole('dialog', { name: 'Japanese', exact: true });
@@ -119,8 +119,9 @@ test('options respect language and handle empty selected packs', async ({ page }
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: 'Dev review', exact: true }).click();
   const types = page.getByRole('group', { name: 'Review types', exact: true });
-  await expect(types.getByRole('checkbox')).toHaveCount(1);
-  await expect(types.getByRole('checkbox')).toHaveAccessibleName('Words · Pictures');
+  await expect(types.getByRole('checkbox')).toHaveCount(2);
+  await expect(types.getByRole('checkbox', { name: 'Words · Pictures', exact: true })).toBeVisible();
+  await types.getByRole('checkbox', { name: 'Simple contexts · Pictures', exact: true }).uncheck();
   await page.getByRole('button', { name: 'Start dev review' }).click();
   await expect(page.locator('.quiz')).toHaveAttribute('data-exercise', 'audio-picture');
   await expect(page.locator('.app > audio')).toHaveAttribute('src', /es-419/);

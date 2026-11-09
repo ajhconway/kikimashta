@@ -1,0 +1,71 @@
+{
+  "issue": 174,
+  "ownerRequest": "For papel higiénico, the paper is tearing at a weird angle. For cobija, the blanket looks like a scarf. For plátano, I'm fairly sure there's an existing banana image. For cruce peatonal, the zebra crossing isn't across the road.",
+  "changes": [
+    {
+      "id": "es-419-travel-crosswalk",
+      "slug": "crosswalk",
+      "ownerFeedback": "The zebra crossing isn't across the road.",
+      "previous": {
+        "file": "originals/crosswalk-v1.png",
+        "sha256": "d5ff8f26fab33b52f1c2a1ca6cd918208e061e36c69825a80d1ff6d058132314"
+      },
+      "selected": {
+        "file": "originals/crosswalk-v2.png",
+        "sha256": "9ac15adb8b5d322e0c1653d6e2fce2d7b273ff23da14ecea8c93b1b60d74ffb4"
+      },
+      "status": "awaiting-owner-review"
+    },
+    {
+      "id": "es-419-travel-banana",
+      "slug": "banana",
+      "ownerFeedback": "For plátano, I'm fairly sure there's an existing banana image.",
+      "previous": {
+        "file": "originals/banana-v1.png",
+        "sha256": "5ad4adfabd5cbddbaf0998b6f816d8aeaca43d21a9a37d8968f05b31db918d6f"
+      },
+      "selected": {
+        "file": "reused/banana.jpg",
+        "sha256": "b6057cd00b18394556431c5fcb2bcd9cbd365ab72998eb33ed810bfa91e482af"
+      },
+      "status": "awaiting-owner-review"
+    },
+    {
+      "id": "es-419-travel-blanket",
+      "slug": "blanket",
+      "ownerFeedback": "The blanket looks like a scarf.",
+      "previous": {
+        "file": "originals/blanket-v1.png",
+        "sha256": "74a64e66f470fb563d8667b5154cb3ac9e57fd941418028603a970f3dd882fd8"
+      },
+      "selected": {
+        "file": "originals/blanket-v2.png",
+        "sha256": "351a571a3e5c2da6d87810504740c2bc0a8ab7517fc19236691ac35b4ff6dce3"
+      },
+      "status": "awaiting-owner-review"
+    },
+    {
+      "id": "es-419-travel-toilet-paper",
+      "slug": "toilet-paper",
+      "ownerFeedback": "The paper is tearing at a weird angle.",
+      "previous": {
+        "file": "originals/toilet-paper-v1.png",
+        "sha256": "5f92562c0d302b0bdb30579f786142b249de5a6be9db2598ebb357d2f8cb3ce9"
+      },
+      "selected": {
+        "file": "originals/toilet-paper-v3.png",
+        "sha256": "78b3759a692274f509777de68c7a5f6abcbcef89e5561f95acbb924c7be1896f"
+      },
+      "status": "awaiting-owner-review"
+    }
+  ],
+  "unchangedSelectedPictures": 32,
+  "unchangedRecordings": 288,
+  "preservedFirstVersions": 32,
+  "additionalGeneratedVersions": 4,
+  "notes": [
+    "Toilet-paper v2 fixed the tail but introduced a halo; v3 removes the halo. All variants are preserved.",
+    "The previously approved standalone banana was overlooked in the initial reuse audit. Its exact approved JPG is now selected.",
+    "No audio regeneration or active pack changes."
+  ]
+}

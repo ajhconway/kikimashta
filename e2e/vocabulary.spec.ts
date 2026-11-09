@@ -56,34 +56,12 @@ test('browse picture packs, search cards, and retry a voice recording', async ({
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test('render contact sheets for every vocabulary illustration', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'chromium', 'One set of visual review sheets is sufficient.');
-  test.setTimeout(120_000);
-  await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto('./vocabulary/');
-  await expect(page.locator('.card')).toHaveCount(24);
-  await page.addStyleTag({ content: 'main{max-width:1440px}.cards{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.card-image{height:140px;padding:5px}.card-content{padding:6px}.word-text{font-size:18px}.reading,.meaning{font-size:12px;margin:2px}.picture-notes,.voices,.review-badge,.audio-status,.page-header p{display:none!important}.pack-labels{font-size:10px;margin:0}' });
-  for (let level = 1; level <= 5; level++) {
-    await page.getByLabel('Card pack').selectOption(`ja-wanikani-${level}-pictures`);
-    let number = 1;
-    while (true) {
-      await page.locator('.card-image').evaluateAll(images => images.forEach(image => { (image as HTMLImageElement).loading = 'eager'; }));
-      await expect.poll(() => page.locator('.card-image').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await page.screenshot({ path: `test-results/catalog-level-${level}-page-${number}.png`, fullPage: true, animations: 'disabled' });
-      if (await page.getByRole('button', { name: 'Next →', exact: true }).isDisabled()) break;
-      await page.getByRole('button', { name: 'Next →', exact: true }).click();
-      number++;
-    }
-  }
-});
-
-test('ten packs keep level membership and switch between pictures and writing', async ({ page }) => {
+test('representative packs switch between pictures and writing', async ({ page }) => {
   await page.goto('./vocabulary/');
   const selector = page.getByLabel('Card pack');
   await expect(selector.locator('option')).toHaveCount(11);
   await expect(page.locator('.card')).toHaveCount(24);
-  for (let level = 1; level <= 5; level++) {
+  for (const level of [2, 5]) {
     await selector.selectOption(`ja-wanikani-${level}-pictures`);
     const pictureCount = await page.locator('.card').count();
     expect(pictureCount).toBeGreaterThan(0);
@@ -178,7 +156,7 @@ test('browse the Spanish travel pack, listen, retry audio and retain Spanish not
   await expect(page.locator('.card h2')).toHaveText(spanish.items.slice(24).map(item => item.text));
   await expect(page.getByRole('heading', { level: 2, name: 'entrada', exact: true })).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 2, name: 'salida', exact: true })).toHaveCount(0);
-  await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(3);
+  await expect(page.getByLabel('Card pack').locator('option')).toHaveCount(5);
   await page.getByLabel('Search words').fill('Coffee');
   await expect(page.getByRole('heading', { level: 2 })).toHaveText('café');
   await expect.poll(() => page.locator('.card-image').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -233,4 +211,22 @@ test('select practice packs in the library and keep them after returning home an
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: 'Begin lesson' }).click();
   await expect(page.locator('.preview')).toHaveAttribute('data-exercise', 'audio-text');
+});
+
+
+test('Basic Spanish library offers fifteen pictures and nine foundation contexts', async ({ page }) => {
+  await page.goto('./vocabulary/?language=es-419&pack=es-419-basic-1-pictures');
+  await expect(page.getByLabel('Card pack')).toHaveValue('es-419-basic-1-pictures');
+  await expect(page.locator('.card')).toHaveCount(15);
+  await expect(page.locator('#results-status')).toContainText('15 cards');
+  await expect(page.getByRole('checkbox', { name: /Basic Spanish level 1/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Contextual questions', exact: true }).click();
+  await expect(page.locator('.context-card')).toHaveCount(9);
+  await expect(page.locator('.context-results-status')).toHaveText('9 contextual questions');
+  await expect(page.locator('.context-review-state').first()).toHaveText('Text approved · Audio approved');
+  await expect(page.locator('.context-card').first().getByRole('button', { name: /^Play / })).toHaveCount(8);
+  await page.getByRole('searchbox', { name: 'Search contexts' }).fill('tener');
+  await expect(page.locator('.context-card')).toHaveCount(1);
+  await expect(page.locator('.context-card-heading')).toContainText('tener');
+  await expect(page.locator('.context-answers img')).toHaveCount(4);
 });

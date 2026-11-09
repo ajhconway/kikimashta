@@ -1,0 +1,228 @@
+{
+  "issue": 174,
+  "pack": "es-419-travel-3",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "I'm happy with the word choices, plaese generate the arkwork and audio.",
+  "items": [
+    {
+      "id": "es-419-travel-sidewalk",
+      "text": "banqueta",
+      "spelling": "banqueta",
+      "meaning": "Sidewalk"
+    },
+    {
+      "id": "es-419-travel-crosswalk",
+      "text": "cruce peatonal",
+      "spelling": "cruce peatonal",
+      "meaning": "Pedestrian crossing"
+    },
+    {
+      "id": "es-419-travel-traffic-light",
+      "text": "semáforo",
+      "spelling": "semáforo",
+      "meaning": "Traffic light"
+    },
+    {
+      "id": "es-419-travel-fountain",
+      "text": "fuente",
+      "spelling": "fuente",
+      "meaning": "Fountain"
+    },
+    {
+      "id": "es-419-travel-bench",
+      "text": "banca",
+      "spelling": "banca",
+      "meaning": "Bench"
+    },
+    {
+      "id": "es-419-travel-church",
+      "text": "iglesia",
+      "spelling": "iglesia",
+      "meaning": "Church"
+    },
+    {
+      "id": "es-419-travel-subway",
+      "text": "metro",
+      "spelling": "metro",
+      "meaning": "Subway (metro)"
+    },
+    {
+      "id": "es-419-travel-motorcycle",
+      "text": "motocicleta",
+      "spelling": "motocicleta",
+      "meaning": "Motorcycle"
+    },
+    {
+      "id": "es-419-travel-parking-lot",
+      "text": "estacionamiento",
+      "spelling": "estacionamiento",
+      "meaning": "Parking lot"
+    },
+    {
+      "id": "es-419-travel-gas-station",
+      "text": "gasolinera",
+      "spelling": "gasolinera",
+      "meaning": "Gas station"
+    },
+    {
+      "id": "es-419-travel-helmet",
+      "text": "casco",
+      "spelling": "casco",
+      "meaning": "Helmet"
+    },
+    {
+      "id": "es-419-travel-seat-belt",
+      "text": "cinturón de seguridad",
+      "spelling": "cinturón de seguridad",
+      "meaning": "Seat belt"
+    },
+    {
+      "id": "es-419-travel-apple",
+      "text": "manzana",
+      "spelling": "manzana",
+      "meaning": "Apple"
+    },
+    {
+      "id": "es-419-travel-banana",
+      "text": "plátano",
+      "spelling": "plátano",
+      "meaning": "Banana"
+    },
+    {
+      "id": "es-419-travel-orange",
+      "text": "naranja",
+      "spelling": "naranja",
+      "meaning": "Orange (fruit)"
+    },
+    {
+      "id": "es-419-travel-avocado",
+      "text": "aguacate",
+      "spelling": "aguacate",
+      "meaning": "Avocado"
+    },
+    {
+      "id": "es-419-travel-taco",
+      "text": "taco",
+      "spelling": "taco",
+      "meaning": "Taco"
+    },
+    {
+      "id": "es-419-travel-ice-cream",
+      "text": "helado",
+      "spelling": "helado",
+      "meaning": "Ice cream"
+    },
+    {
+      "id": "es-419-travel-shirt",
+      "text": "camisa",
+      "spelling": "camisa",
+      "meaning": "Shirt"
+    },
+    {
+      "id": "es-419-travel-pants",
+      "text": "pantalones",
+      "spelling": "pantalones",
+      "meaning": "Pants / trousers"
+    },
+    {
+      "id": "es-419-travel-shoe",
+      "text": "zapato",
+      "spelling": "zapato",
+      "meaning": "Shoe"
+    },
+    {
+      "id": "es-419-travel-hat",
+      "text": "sombrero",
+      "spelling": "sombrero",
+      "meaning": "Hat"
+    },
+    {
+      "id": "es-419-travel-jacket",
+      "text": "chamarra",
+      "spelling": "chamarra",
+      "meaning": "Jacket"
+    },
+    {
+      "id": "es-419-travel-swimsuit",
+      "text": "traje de baño",
+      "spelling": "traje de baño",
+      "meaning": "Swimsuit"
+    },
+    {
+      "id": "es-419-travel-mountain",
+      "text": "montaña",
+      "spelling": "montaña",
+      "meaning": "Mountain"
+    },
+    {
+      "id": "es-419-travel-river",
+      "text": "río",
+      "spelling": "río",
+      "meaning": "River"
+    },
+    {
+      "id": "es-419-travel-lake",
+      "text": "lago",
+      "spelling": "lago",
+      "meaning": "Lake"
+    },
+    {
+      "id": "es-419-travel-island",
+      "text": "isla",
+      "spelling": "isla",
+      "meaning": "Island"
+    },
+    {
+      "id": "es-419-travel-forest",
+      "text": "bosque",
+      "spelling": "bosque",
+      "meaning": "Forest"
+    },
+    {
+      "id": "es-419-travel-waterfall",
+      "text": "cascada",
+      "spelling": "cascada",
+      "meaning": "Waterfall"
+    },
+    {
+      "id": "es-419-travel-pillow",
+      "text": "almohada",
+      "spelling": "almohada",
+      "meaning": "Pillow"
+    },
+    {
+      "id": "es-419-travel-blanket",
+      "text": "cobija",
+      "spelling": "cobija",
+      "meaning": "Blanket"
+    },
+    {
+      "id": "es-419-travel-hair-dryer",
+      "text": "secadora de pelo",
+      "spelling": "secadora de pelo",
+      "meaning": "Hair dryer"
+    },
+    {
+      "id": "es-419-travel-toilet-paper",
+      "text": "papel higiénico",
+      "spelling": "papel higiénico",
+      "meaning": "Toilet paper"
+    },
+    {
+      "id": "es-419-travel-comb",
+      "text": "peine",
+      "spelling": "peine",
+      "meaning": "Comb"
+    },
+    {
+      "id": "es-419-travel-mirror",
+      "text": "espejo",
+      "spelling": "espejo",
+      "meaning": "Mirror"
+    }
+  ],
+  "itemsSha256": "99178797c0bb84f6bd60abeb54d6b6a9a51f13d1dc3f0574184d0296a6bdedea",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 288,
+  "characters": 2336
+}

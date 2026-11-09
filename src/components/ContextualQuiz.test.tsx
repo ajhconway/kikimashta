@@ -19,17 +19,19 @@ function fixture({ recorded = true, id = 'who-drinks', format = 'text' }: {
     correctOptionId: 'teacher-answer', explanation: 'The teacher drinks water.' };
   const context: ContextualItem = { id: 'teacher-water', revision: 1, stage: 'simple', targetItemId: 'water', targetOccurrence: { surface: '水', reading: 'みず' },
     sentence: prompt('先生は水を飲みます。', 'The teacher drinks water.'), questions: [authored],
-    recordings: recorded ? [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: { [id]: `audio/${id}.mp3` } }] : [],
-    review: { text: recorded ? 'approved' : 'pending', audio: recorded ? 'approved' : 'not-generated' }, reviewNotes: 'Fixture.' };
-  return contextualQuestion(context, authored, format, vocabulary, () => 0);
+    recordings: [{ id: 'otani', voice: 'otani', sentenceSrc: 'audio/sentence.mp3', questionSrcs: { [id]: `audio/${id}.mp3` } }],
+    review: { text: 'approved', audio: 'approved' }, reviewNotes: 'Fixture.' };
+  const question = contextualQuestion(context, authored, format, vocabulary, () => 0);
+  if (!recorded) delete question.contextual!.recording;
+  return question;
 }
 const originalShow = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'showModal');
 const originalClose = Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, 'close');
 const onChoose = vi.fn();
 const onContinue = vi.fn();
-function Harness({ question = fixture(), preview = false }: { question?: Question; preview?: boolean }) {
+function Harness({ question = fixture() }: { question?: Question }) {
   const [feedback, setFeedback] = useState<PracticeAttempt | null>(null);
-  return <ContextualQuiz question={question} feedback={feedback} preview={preview} onContinue={onContinue} onChoose={choice => {
+  return <ContextualQuiz question={question} feedback={feedback} onContinue={onContinue} onChoose={choice => {
     onChoose(choice);
     setFeedback({ id: 'attempt', sessionId: 'session', itemId: question.target.id, language: 'ja-JP',
       choiceIds: question.choices.map(option => option.id), selectedId: choice.id, correct: choice.id === 'teacher-answer',
@@ -55,6 +57,46 @@ afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks();
 });
 
 describe('contextual listening and feedback', () => {
+  it('introduces a foundation meaning and example before listening, but skips it on later reviews', async () => {
+    const question = structuredClone(fixture()); question.introduction = true;
+    question.target.language = 'es-419';
+    question.contextual!.context.introduction = { text: 'tener', meaning: 'Have' };
+    const view = render(<Harness question={question}/>);
+    expect(screen.getByRole('heading', { name: 'tener' })).toBeInTheDocument();
+    expect(screen.getByText('Have')).toBeInTheDocument();
+    expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
+    expect(screen.queryByRole('button', { name: /Choose writing/ })).not.toBeInTheDocument();
+    await click(screen.getByRole('button', { name: 'Listen and answer' }));
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole('heading', { name: 'tener' })).not.toBeInTheDocument();
+    view.unmount();
+    const repeated = { ...question, introduction: false };
+    render(<Harness question={repeated}/>);
+    expect(screen.queryByRole('button', { name: 'Listen and answer' })).not.toBeInTheDocument();
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+  });
+
+  it('offers native canonical-word audio in the paired voice and pauses it before the foundation question', async () => {
+    const question = structuredClone(fixture()); question.introduction = true;
+    question.target.language = 'es-419';
+    question.target.audio = [
+      { src: 'audio/other-tener.mp3', source: 'synthesized', voice: 'other' },
+      { src: 'audio/matching-tener.mp3', source: 'synthesized', voice: 'otani' },
+    ];
+    question.contextual!.context.introduction = { text: 'tener', meaning: 'Have' };
+    render(<Harness question={question}/>);
+    const wordAudio = screen.getByLabelText('Hear tener');
+    expect(wordAudio).toHaveAttribute('controls');
+    expect(wordAudio).toHaveAttribute('src', '/audio/matching-tener.mp3');
+    expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
+    fireEvent.play(wordAudio);
+    vi.mocked(HTMLMediaElement.prototype.pause).mockClear();
+    await click(screen.getByRole('button', { name: 'Listen and answer' }));
+    expect(vi.mocked(HTMLMediaElement.prototype.pause).mock.contexts).toContain(wordAudio);
+    expect(screen.queryByLabelText('Hear tener')).not.toBeInTheDocument();
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+  });
+
   it.each(['text', 'picture'] as const)('lets screen-reader users identify and select %s answers by their content', async format => {
     render(<Harness question={fixture({ format })}/>);
     const teacher = format === 'text' ? 'Choose writing 先生' : /^Choose picture \d+: teacher$/;
@@ -181,24 +223,17 @@ describe('contextual listening and feedback', () => {
     expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
   });
 
-  it('marks missing audio as inspection and requires showing text before evaluating answers', async () => {
-    render(<Harness question={fixture({ recorded: false })}/>);
-    expect(screen.getByRole('status')).toHaveTextContent('Text inspection · audio not available');
+  it('reports missing recordings and blocks grading answers', async () => {
+    const onPlaybackChange = vi.fn();
+    render(<ContextualQuiz question={fixture({ recorded: false })} feedback={null} onChoose={onChoose} onContinue={onContinue} onPlaybackChange={onPlaybackChange}/>);
+    expect(screen.getByRole('alert')).toHaveTextContent('The sentence and question recordings are unavailable.');
     screen.getAllByRole('button', { name: /Choose writing/ }).forEach(button => expect(button).toBeDisabled());
-    await click(screen.getByRole('button', { name: 'Show text for inspection' }));
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
     await click(screen.getByRole('button', { name: 'Choose writing 先生' }));
-    expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
+    expect(onChoose).not.toHaveBeenCalled();
+    expect(onPlaybackChange).toHaveBeenLastCalledWith('error');
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
   });
 
-  it('reveals lesson preview text and the correct answer without grading or internal Continue', () => {
-    render(<Harness preview/>);
-    expect(screen.getByText('Who drinks water?')).toBeInTheDocument();
-    expect(screen.getByText(/Correct answer:/)).toHaveTextContent('先生 · teacher');
-    expect(screen.queryByRole('button', { name: 'Continue' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Choose writing/ })).not.toBeInTheDocument();
-  });
 });
 
 it.each(['picture', 'text'] as const)('delays %s choices until the final question audio tail, then keeps them on replay', async format => {

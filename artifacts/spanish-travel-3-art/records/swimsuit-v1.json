@@ -1,0 +1,11 @@
+{
+  "slug": "swimsuit",
+  "id": "es-419-travel-swimsuit",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b9fb68b6-2a46-4857-b359-53635d01aea5.png",
+  "outputHint": "Generated images are saved to /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d as /Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b9fb68b6-2a46-4857-b359-53635d01aea5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "referenceSha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+  "path": "originals/swimsuit-v1.png",
+  "sha256": "e1eff7e6d3dfc5b46caeba1c20003d3478df31012044bbb6fb4c8bab3201ed28",
+  "promptSha256": "a495b3a8bfe315a1cf0fced390e9bb3ad1defa90a5dd86886a947db3699c9272",
+  "tool": "built-in image_gen"
+}

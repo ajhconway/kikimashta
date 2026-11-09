@@ -14,7 +14,7 @@ async function readOptional(path) {
   catch (error) { if (error.code === 'ENOENT') return undefined; throw error }
 }
 
-export function cardItems(catalog, starter) {
+export function cardItems(catalog, starter, overrides = {}) {
   const items = new Map()
   for (const bank of [catalog, starter]) {
     if (bank.language !== 'ja-JP' || !Array.isArray(bank.items)) throw new Error('Expected Japanese card banks.')
@@ -26,7 +26,9 @@ export function cardItems(catalog, starter) {
       items.set(item.id, { id: item.id, text: item.reading ?? item.text, spelling: item.text, meaning: item.meaning ?? item.label })
     }
   }
-  return [...items.values()].sort((a, b) => a.id.localeCompare(b.id, 'en'))
+  const catalogIds = new Set(catalog.items.map(item => item.id))
+  return [...items.values()].filter(item => catalogIds.has(item.id) && !Object.hasOwn(overrides[item.id] ?? {}, 'removalReason'))
+    .sort((a, b) => a.id.localeCompare(b.id, 'en'))
 }
 
 export function generationPlan(items, config) {
@@ -176,8 +178,8 @@ export async function generateCards({ plan, output, apiKey, concurrency = 3, bud
 
 async function main() {
   const { values } = parseArgs({ options: { output: { type: 'string' }, 'dry-run': { type: 'boolean' }, concurrency: { type: 'string', default: '3' } } })
-  const [catalog, starter, config] = await Promise.all(['content/catalog/ja.json', 'content/ja.json', 'content/elevenlabs-voices.json'].map(async path => JSON.parse(await readFile(path, 'utf8'))))
-  const plan = generationPlan(cardItems(catalog, starter), config)
+  const [catalog, starter, config, overrides] = await Promise.all(['content/catalog/ja.json', 'content/ja.json', 'content/elevenlabs-voices.json', 'content/catalog/review-overrides.json'].map(async path => JSON.parse(await readFile(path, 'utf8'))))
+  const plan = generationPlan(cardItems(catalog, starter, overrides), config)
   if (values['dry-run']) { console.log(JSON.stringify({ cards: plan.items.length, voices: plan.voices.map(v => v.name), requests: plan.expectedClips, characters: plan.characters, budget: 13900 }, null, 2)); return }
   if (!values.output) throw new Error('Choose --output under artifacts/generated-originals/elevenlabs-cards/.')
   console.log(JSON.stringify(await generateCards({ plan, output: resolve(values.output), apiKey: loadElevenLabsKey(), concurrency: Number(values.concurrency) })))

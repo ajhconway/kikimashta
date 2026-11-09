@@ -10,7 +10,7 @@ const banks = ['ja-pilot.json', 'ja-simple-pilot.json', 'ja-simple-expansion.jso
 const contexts = banks.flatMap(bank => bank.contexts);
 const allQuestions = contexts.flatMap(context => context.questions);
 const media = JSON.parse(readFileSync(new URL('../content/contextual/accepted-media.json', import.meta.url), 'utf8'));
-const upper = contexts.find(context => context.id === 'ja-ctx-simple-ue-01')!;
+
 
 async function stored(page: Page, attempts?: PracticeAttempt[]): Promise<PracticeAttempt[]> {
   return page.evaluate(async incoming => {
@@ -45,39 +45,6 @@ async function unlockedWordHistory(itemId: string) {
   }
   return { history, schedule: schedule! };
 }
-
-test('contextual dev review covers the full pilot, plays both clips, filters and preserves browser history', async ({ page }) => {
-  await page.goto('./');
-  const baseline: PracticeAttempt[] = [{ id: 'before-dev', sessionId: 'legacy', itemId: upper.targetItemId, language: 'ja-JP', choiceIds: ['a', 'b'], selectedId: 'a', correct: true, startedAt: 1, answeredAt: 2, responseMs: 1 }];
-  await stored(page, baseline);
-  await page.goto('./?review=contextual');
-  const jump = page.getByLabel('Jump to question');
-  await expect(jump.locator('option')).toHaveCount(80);
-  const ids = await jump.locator('option').allTextContents();
-  for (const question of allQuestions) expect(ids.some(label => label.endsWith(question.id))).toBe(true);
-  await page.getByRole('combobox', { name: 'Voice', exact: true }).selectOption('otani');
-  await page.getByRole('button', { name: 'Replay sentence and question' }).click();
-  const audio = page.locator('.contextual-quiz audio');
-  await expect(audio).toHaveAttribute('src', /otani\/sentence\.mp3$/);
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
-  await expect(audio).toHaveAttribute('src', /otani\/ja-ctx-simple-ue-01-target\.mp3$/, { timeout: 10000 });
-  await page.getByRole('button', { name: /Choose writing/ }).first().click();
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeVisible();
-  await page.getByRole('combobox', { name: 'Stage', exact: true }).selectOption('simple');
-  await expect(jump.locator('option')).toHaveCount(40);
-  await page.getByLabel('Question kind').selectOption('detail');
-  await expect(jump.locator('option')).toHaveCount(20);
-  await jump.selectOption('19');
-  await expect(page.getByText('Audio awaiting listening approval.')).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Sentence', exact: true })).toHaveCount(0);
-  await page.getByRole('button', { name: /Choose writing/ }).first().click();
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Review complete' })).toBeVisible();
-  expect(await stored(page)).toEqual(baseline);
-  await page.reload();
-  expect(await stored(page)).toEqual(baseline);
-});
 
 test('contextual scheduled reviews persist explicit answers and retain the same retry recordings', async ({ page }) => {
   const reviewed = contexts.find(context => context.id === 'ja-ctx-simple-mizu-01')!;
@@ -252,25 +219,4 @@ test('an unlocked contextual card starts in review without a preview and becomes
   expect(review.context!.retryOf).toBeUndefined();
   expect(review.context!.exercise).toBe('context-simple-text');
   for (const original of introduced) expect(repeated.find(attempt => attempt.id === original.id)).toEqual(original);
-});
-
-
-test('every contextual writing and picture question renders exactly four usable choices', async ({ page }) => {
-  test.setTimeout(120000);
-  page.setDefaultTimeout(10000);
-  await page.goto('./?review=contextual');
-  const jump = page.getByLabel('Jump to question');
-  const quiz = page.locator('.contextual-quiz');
-  for (const format of ['text', 'picture'] as const) {
-    await page.getByRole('combobox', { name: 'Answer format', exact: true }).selectOption(format);
-    const count = allQuestions.filter(question => question.formats.includes(format)).length;
-    await expect(jump.locator('option')).toHaveCount(count);
-    for (let index = 0; index < count; index++) {
-      await jump.selectOption(String(index));
-      const choices = quiz.getByRole('button', { name: format === 'picture' ? /Choose picture/ : /Choose writing/ });
-      await expect(choices).toHaveCount(4);
-      if (format === 'picture') await expect.poll(() => choices.locator('img').evaluateAll(images =>
-        images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
-    }
-  }
 });

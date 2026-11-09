@@ -39,7 +39,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "writing-emblem-v2",
@@ -78,7 +83,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "new-travel-base-v1",
@@ -111,7 +121,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "learning-travel-base-v1",
@@ -144,7 +159,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "improving-travel-base-v1",
@@ -177,7 +197,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "familiar-travel-base-v1",
@@ -210,7 +235,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "steady-travel-base-v1",
@@ -243,7 +273,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "strong-travel-base-v1",
@@ -276,7 +311,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "confident-travel-base-v1",
@@ -309,7 +349,12 @@
         0,
         254
       ],
-      "status": "owner-requested refinement; awaiting visual feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     }
   ]
 }

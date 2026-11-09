@@ -1,0 +1,19 @@
+{
+  "id": "es-419-basic-hunger",
+  "slug": "hunger",
+  "version": 2,
+  "path": "originals/hunger-v2.png",
+  "sha256": "e2d618dfe63105abf0b86e74fcefc0a12e6e11ccd8772536dc08e3f44626b5e3",
+  "promptSha256": "07510b6e57421a6963982af74b0303202f93eaeedb9180df6a8a25b6077402de",
+  "referenceSha256": "1fe27e8ce34b4a0e566f9e087effd88041c7f6c168cf1361c40efd997677329b",
+  "additionalReferences": [
+    {
+      "path": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "role": "character-pose",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8b2bef08-c3f8-4a3d-811c-4c3596184c0a.png",
+  "supersedes": "originals/hunger-v1.png"
+}

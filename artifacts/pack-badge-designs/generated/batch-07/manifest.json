@@ -37,7 +37,12 @@
         0,
         254
       ],
-      "status": "fresh Mastered design using Strong/Confident layout; awaiting owner feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     },
     {
       "id": "mastered-travel-redraw-v1",
@@ -71,7 +76,12 @@
         0,
         254
       ],
-      "status": "fresh Mastered design using Strong/Confident layout; awaiting owner feedback"
+      "status": "owner approved for activation",
+      "approval": {
+        "date": "2026-11-09",
+        "quote": "Let's auto-merge this now.",
+        "scope": "current badge artwork, interchangeable overlays and static symmetric circular layout"
+      }
     }
   ]
 }

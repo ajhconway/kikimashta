@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "bankId": "ja-contextual-wanikani-1-draft-v1",
+  "language": "ja-JP",
+  "sourceCommit": "bd6011142069354c0c60855b23606453e06af7c9",
+  "sourceFileSha256": "02c1f3afb64cfe995609196022c89881a749755f99ee4bdbc579f01a3b85081c",
+  "textSha256": "ae535965cbda9205d26b251946cc649e4d121388e9d25faaec6139b636adba6d",
+  "recordedAt": "2026-11-09T04:32:28.444Z",
+  "evidence": {
+    "kind": "owner-conversation",
+    "quote": "LGTM, let's ship it."
+  },
+  "scope": "Actual reviewed text approved for the 116 contexts and 232 questions. Audio listening acceptance and runtime activation are separate.",
+  "evidenceUrl": "https://github.com/ajhconway/kikimashta/pull/186#issuecomment-6732303270"
+}

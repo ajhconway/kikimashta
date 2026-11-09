@@ -17,56 +17,7 @@ export function libraryMediaPath(value, family) {
   return `../${value}`
 }
 
-const html = `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff0dc">
-  <title>Vocabulary cards</title>
-  <link rel="stylesheet" href="/vocabulary/library.css">
-  <script src="./library.js" type="module"></script>
-</head>
-<body>
-  <main>
-    <header class="page-header">
-      <a class="home-link" href="../">← Listening practice</a>
-      <h1>Vocabulary cards</h1>
-      <p>Browse WaniKani levels 1–5 in separate picture and writing packs, and compare Japanese voices.</p>
-    </header>
-    <form class="filters" role="search" aria-label="Find vocabulary" id="filters">
-      <label>Card pack
-        <select id="pack" name="pack">
-          <option value="all">All pictures</option>
-        </select>
-      </label>
-      <label class="search-label">Search words
-        <input id="search" name="search" type="search" placeholder="Japanese, reading, or English" autocomplete="off">
-      </label>
-    </form>
-    <section class="feedback-tools" aria-label="Card feedback">
-      <button type="button" id="export-feedback" disabled>Export feedback</button>
-      <p id="feedback-description">Feedback stays in this browser. Export it to share or back it up.</p>
-      <p id="account-status" role="status" hidden></p>
-    </section>
-    <p id="results-status" role="status">Loading vocabulary…</p>
-    <p id="library-error" role="alert" hidden></p>
-    <p id="audio-status" role="status" class="audio-status"></p>
-    <p id="audio-error" role="alert" hidden></p>
-    <nav class="pagination" aria-label="Vocabulary pages">
-      <button type="button" id="previous" disabled>← Previous</button>
-      <span id="page-status">Page 1</span>
-      <button type="button" id="next" disabled>Next →</button>
-    </nav>
-    <section id="cards" class="cards" aria-label="Vocabulary cards"></section>
-    <noscript><p>Enable JavaScript to browse the vocabulary cards and listen to the voices.</p></noscript>
-    <footer><a href="../credits.html">Credits and licenses</a></footer>
-  </main>
-</body>
-</html>
-`
-
-/** Validate first, then emit a small manifest and HTML shell. Missing audio is never marked available. */
+/** Emit library data while preserving the authored HTML shell. Missing active audio is never marked available. */
 export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } = {}) {
   const catalog = JSON.parse(readFileSync(join(root, 'content/catalog/ja.json'), 'utf8'))
   if (!Array.isArray(catalog.items) || catalog.items.length === 0) throw new Error('Catalogue has no items')
@@ -101,6 +52,7 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
     if (!visual || !nonempty(visual.concept) || !nonempty(visual.visualGroup) || typeof visual.reviewRequired !== 'boolean' ||
         (visual.reviewRequired && !nonempty(visual.reviewNote))) throw new Error(`Incomplete visual metadata: ${item.id}`)
     const override = overrides[item.id] || {}
+    if (override.removalReason) return null
     const imageSrc = libraryMediaPath(item.image?.src, 'images')
     if (!existsSync(join(root, 'public', item.image.src))) throw new Error(`Missing image: ${item.image.src}`)
     if (!Array.isArray(item.audio) || item.audio.length === 0) throw new Error(`Expected at least one audio recording: ${item.id}`)
@@ -123,14 +75,12 @@ export function buildLibrary({ root = defaultRoot, allowMissingAudio = false } =
       ...(override.teachingNote ? { teachingNote: override.teachingNote } : {}),
       ...(visual.reviewNote ? { reviewNote: visual.reviewNote } : {}),
     }
-  }).filter(card => !overrides[card.id]?.removalReason)
+  }).filter(Boolean)
   for (const id of Object.keys(overrides)) if (!ids.has(id)) throw new Error(`Unknown review override ID: ${id}`)
   if (!allowMissingAudio && missingAudio.length) throw new Error(`Missing ${missingAudio.length} audio files; first: ${missingAudio[0]}. Use --allow-missing-audio only for a preview.`)
   const data = { cards }
   const directory = join(root, 'public/vocabulary')
   mkdirSync(directory, { recursive: true })
-  mkdirSync(join(root, 'vocabulary'), { recursive: true })
-  writeFileSync(join(root, 'vocabulary/index.html'), html)
   writeFileSync(join(directory, 'library-data.json'), JSON.stringify(data, null, 2) + '\n')
   return { cards: cards.length, availableAudio: cards.reduce((count, card) => count + card.audio.filter(clip => clip.available).length, 0), missingAudio: missingAudio.length }
 }

@@ -1,7 +1,10 @@
+import spanishBasic from '../../content/es-419-basic-1.json';
+import { spanishFoundationCards } from '../content/spanish-basic';
 import spanish from '../../content/es-419.json';
 import spanishTravel2 from '../../content/es-419-travel-2.json';
+import spanishTravel3 from '../../content/es-419-travel-3.json';
 import spanishExclusions from '../../content/spanish-picture-exclusions.json';
-import type { WordBank } from '../types';
+import type { PracticeCard, WordBank } from '../types';
 import { validateBank } from './session';
 import { practicePool } from './practice';
 import { cardPacks, packPreferenceKey, type CardPack } from './packs';
@@ -16,9 +19,10 @@ export interface LearningLanguage {
   writing: 'japanese' | 'system';
   libraryPath?: string;
   unavailableMessage?: string;
+  foundationCards?: readonly PracticeCard[];
 }
 
-const spanishBanks = [spanish, spanishTravel2] as WordBank[];
+const spanishBanks = [spanish, spanishTravel2, spanishTravel3, spanishBasic] as WordBank[];
 const spanishPool: WordBank = { id: 'es-419-adaptive', language: 'es-419', title: 'Spanish listening',
   items: spanishBanks.flatMap(bank => bank.items).map(item => ({ ...item,
     pictureDistractorExclusions: [...new Set([
@@ -33,8 +37,9 @@ export const learningLanguages: readonly LearningLanguage[] = [
   { id: 'ja-JP', title: 'Japanese', pool: practicePool, packs: cardPacks,
     packPreferenceKey, writing: 'japanese', libraryPath: 'vocabulary/' },
   { id: 'es-419', title: 'Latin American Spanish', pool: spanishPool,
+    foundationCards: spanishFoundationCards,
     packs: spanishBanks.map(bank => ({ id: `${bank.id}-pictures`, language: bank.language,
-      title: `${bank.title} · Pictures`, exercise: 'audio-picture' as const, itemIds: bank.items.map(item => item.id),
+      title: `${bank.title} · ${bank.id === spanishBasic.id ? 'Pictures + contexts' : 'Pictures'}`, exercise: 'audio-picture' as const, itemIds: [...bank.items.map(item => item.id), ...(bank.id === spanishBasic.id ? spanishFoundationCards.map(card => card.item.id) : [])],
     })), packPreferenceKey: 'kikimashta-card-packs-v1:es-419', writing: 'system', libraryPath: 'vocabulary/?language=es-419&pack=es-419-travel-1-pictures' },
 ];
 export const languagePreferenceKey = 'kikimashta-learning-language-v1';

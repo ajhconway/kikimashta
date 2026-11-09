@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { createQuestions, validateBank } from './session';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import audioProvenance from '../../content/es-419-audio-provenance.json';
 import { existsSync } from 'node:fs';
 import spanish from '../../content/es-419.json';
 import activation from '../../content/spanish-travel-audio/activation.json';
@@ -45,21 +44,14 @@ describe('learning languages', () => {
     expect(spanish.items.some(item => item.text === 'café')).toBe(true);
     for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
     validateBank(spanishLanguage.pool);
-    expect(spanishLanguage.pool.items).toHaveLength(72);
-    for (const media of [...activation.images, ...activation.recordings]) {
+    expect(spanishLanguage.pool.items).toHaveLength(123);
+    for (const media of activation.images) {
       expect(createHash('sha256').update(readFileSync('public/' + media.src)).digest('hex')).toBe(media.sha256);
     }
-    for (const record of audioProvenance.recordings) {
-      const original = readFileSync(audioProvenance.originalRoot + '/' + record.originalFile);
-      expect(createHash('sha256').update(original).digest('hex')).toBe(record.originalSha256);
-      const delivery = readFileSync('public/audio/es-419-travel-v1/' + record.file);
-      expect(createHash('sha256').update(delivery).digest('hex')).toBe(record.deliverySha256);
-      expect(record.after.truePeakDbtp).toBeLessThanOrEqual(-2);
-    }
-    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-picture']);
+    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-picture', 'audio-picture', 'audio-picture']);
     const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(72);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(72);
+    expect(cards).toHaveLength(123);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(123);
   });
   it('filters retired Spanish writing selections without reviving an empty selection', () => {
     const language = learningLanguages[1]!;

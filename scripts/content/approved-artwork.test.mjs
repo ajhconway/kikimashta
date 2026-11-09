@@ -1,15 +1,18 @@
 import test from 'node:test'
 import { inspectPngAlpha } from './png-alpha.mjs'
+import { reviewedImage } from './reviewed-image.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
 
 const root = new URL('../../', import.meta.url)
 const read = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'))
 const activation = read('content/card-regeneration/activation.json')
+const source = path => reviewedImage({ root: fileURLToPath(root), reviewPath: path }).bytes
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const banks = [read('content/ja.json'), read('content/catalog/ja.json')]
 const library = read('public/vocabulary/library-data.json').cards
@@ -23,7 +26,7 @@ test('all 168 active illustrations resolve to the approved selection in the app 
     assert.equal(manifest.status, 'approved')
     assert.equal(selected.status, 'approved')
     assert.equal(asset.sourcePath, selected.path)
-    assert.equal(hash(readFileSync(new URL(asset.sourcePath, root))), selected.sha256)
+    assert.equal(hash(source(asset.sourcePath)), selected.sha256)
     const delivery = readFileSync(new URL(asset.path, root))
     assert.equal(hash(delivery), asset.sha256)
     assert.equal(delivery.length, asset.bytes)
@@ -34,7 +37,7 @@ test('all 168 active illustrations resolve to the approved selection in the app 
       assert.equal(pixels.height, 640)
       assert.ok(pixels.transparentPixels > 0)
       assert.ok(pixels.opaquePixels > 0)
-      const sourcePixels = inspectPngAlpha(readFileSync(new URL(asset.sourcePath, root)))
+      const sourcePixels = inspectPngAlpha(source(asset.sourcePath))
       const scale = pixels.width * pixels.height / (sourcePixels.width * sourcePixels.height)
       if (sourcePixels.opaqueWhitePixels * scale >= Math.max(1, sourcePixels.opaquePixels * scale / 1000)) assert.ok(pixels.opaqueWhitePixels > 0)
     } else assert.equal(delivery.subarray(0, 2).toString('hex'), 'ffd8', 'Historical opaque delivery must retain JPEG bytes')
@@ -86,7 +89,7 @@ test('the five approved numerical reference replacements are selected in their o
     assert.equal(selected.sha256, revision.sha256)
     assert.equal(selected.status, 'approved')
     assert.ok(selected.previousVersions.some(old => old.path === revision.approvedSourcePath && old.sha256 === revision.approvedSourceSha256))
-    assert.deepEqual(readFileSync(new URL(selected.path, root)), readFileSync(new URL(revision.path, root)))
+    assert.deepEqual(source(selected.path), source(revision.path))
     const records = activation.assets.filter(record => record.id === revision.id)
     assert.equal(records.length, 1)
     assert.equal(records[0].sourcePath, selected.path)

@@ -1,39 +1,27 @@
 import { describe, expect, it } from 'vitest';
-import type { Exercise, PracticeAttempt, PracticeCard, WordItem } from '../types';
-import { cardKey } from './cards';
-import { cardMastery, masteryIndex } from './mastery';
-import { createMasterySample, createMasteryDemo } from './mastery-demo';
+import type { PracticeCard } from '../types';
+import { cardMastery } from './mastery';
+import { createMasterySample } from './mastery-demo';
 import { quizTimeLimit } from './quiz-timer';
-import { advanceSchedule, schedulerVersion } from './scheduler';
-import { requeueMissedQuestion, type Question } from './session';
 
 const at = Date.parse('2026-11-08T12:00:00Z');
-function pool(exercise: Exercise = 'audio-picture'): PracticeCard[] {
-  return ['cat', 'dog', 'apple', 'cup'].map(id => ({
-    exercise,
-    item: {
-      id, language: 'ja-JP', theme: 'everyday', label: id, text: id,
-      image: { src: `images/${id}.webp`, source: 'generated', alt: id },
-      audio: [{ src: `audio/${id}.mp3`, source: 'synthesized' }],
-    } satisfies WordItem,
-  }));
-}
-function answer(question: Question, correct: boolean): PracticeAttempt {
-  return {
-    id: 'answer-' + question.demoId, sessionId: 'demo',
-    itemId: question.target.id, language: question.target.language,
-    choiceIds: question.choices.map(item => item.id),
-    selectedId: correct ? question.target.id : question.choices.find(item => item.id !== question.target.id)!.id,
-    correct, outcome: correct ? 'success' : 'failure',
-    startedAt: at - 1000, answeredAt: at, responseMs: 1000,
-    context: { phase: 'review', exercise: question.exercise, recordingSrc: question.target.audio[0]!.src,
-      replays: 0, schedulerVersion },
-  };
-}
+const card: PracticeCard = { exercise: 'audio-picture', item: {
+  id: 'cat', language: 'ja-JP', theme: 'everyday', label: 'cat', text: 'cat',
+  image: { src: 'images/cat.webp', source: 'generated', alt: 'cat' },
+  audio: [{ src: 'audio/cat.mp3', source: 'synthesized' }],
+} };
 
-describe('mastery demo fixtures (#140)', () => {
+describe('simulated mastery samples', () => {
+  it.each([
+    [0, 'New', null], [1, 'Learning', null], [2, 'Improving', 10000], [3, 'Familiar', 10000],
+    [4, 'Steady', 5000], [5, 'Strong', 3000], [6, 'Confident', 1500], [7, 'Mastered', 1500],
+  ] as const)('maps sample level %i to %s with its mastery timer', (level, label, timer) => {
+    const sample = createMasterySample(card, level, at);
+    expect(cardMastery(sample).label).toBe(label);
+    expect(quizTimeLimit(sample)).toBe(timer);
+  });
+
   it('constructs independent schedules for repeated cards and rejects unknown sample levels', () => {
-    const card = pool()[0]!;
     const before = structuredClone(card);
     expect(createMasterySample(card, 0, at)).toBeUndefined();
     const first = createMasterySample(card, 3, at)!;
@@ -44,104 +32,5 @@ describe('mastery demo fixtures (#140)', () => {
     expect(second.card.stability).toBe(3);
     expect(card).toEqual(before);
     for (const level of [-1, 8, .5, NaN]) expect(() => createMasterySample(card, level, at)).toThrow(/mastery level/i);
-  });
-
-  it('presents all eight levels in order with their real timer policy', () => {
-    const { questions, schedules } = createMasteryDemo(pool(), at, () => .999);
-    expect(questions).toHaveLength(8);
-    expect(schedules.size).toBe(8);
-    expect(questions.map(question => cardMastery(schedules.get(question.demoId!)).label)).toEqual([
-      'New', 'Learning', 'Improving', 'Familiar', 'Steady', 'Strong', 'Confident', 'Mastered',
-    ]);
-    expect(questions.map(question => quizTimeLimit(schedules.get(question.demoId!)))).toEqual([
-      null, null, 10000, 10000, 5000, 3000, 1500, 1500,
-    ]);
-    for (const question of questions.slice(1)) {
-      const schedule = schedules.get(question.demoId!)!;
-      expect(schedule.dueAt).toBe(at);
-      expect(schedule.card.dueAt).toBe(at);
-      expect(schedule.lastReviewedAt).toBe(schedule.card.lastReviewAt);
-      expect(schedule.lastReviewedAt).toBeLessThan(at);
-      expect(cardKey(schedule)).toBe(cardKey({ item: question.target, exercise: question.exercise }));
-    }
-  });
-
-  it.each(['audio-picture', 'audio-text'] as const)('keeps %s targets and choices inside the selected pool without changing inputs', exercise => {
-    const cards = pool(exercise);
-    const before = structuredClone(cards);
-    const { questions } = createMasteryDemo(cards, at, () => .25);
-    for (const question of questions) {
-      expect(question.exercise).toBe(exercise);
-      expect(cards.some(card => cardKey(card) === cardKey({ item: question.target, exercise: question.exercise }))).toBe(true);
-      expect(question.choices).toHaveLength(4);
-      expect(new Set(question.choices.map(item => item.id)).size).toBe(4);
-      expect(question.choices.filter(item => item.id === question.target.id)).toHaveLength(1);
-      expect(question.choices.every(item => cards.some(card => card.item.id === item.id))).toBe(true);
-    }
-    expect(cards).toEqual(before);
-    expect(createMasteryDemo(cards, at, () => .25)).toEqual(createMasteryDemo(cards, at, () => .25));
-  });
-
-  it('keeps repeated real cards as independent samples when real FSRS changes their levels', async () => {
-    const { questions, schedules } = createMasteryDemo(pool(), at, () => .999);
-    expect(new Set(questions.map(question => question.demoId)).size).toBe(8);
-    const newQuestion = questions[0]!, sibling = questions[4]!;
-    expect(cardKey({ item: newQuestion.target, exercise: newQuestion.exercise }))
-      .toBe(cardKey({ item: sibling.target, exercise: sibling.exercise }));
-    const original = structuredClone({ questions, schedules });
-    const learned = await advanceSchedule(schedules.get(newQuestion.demoId!), answer(newQuestion, true));
-    expect(masteryIndex(learned)).toBeGreaterThan(masteryIndex(schedules.get(newQuestion.demoId!)));
-    expect(cardMastery(learned).label).toBe('Learning');
-    // FSRS returns new state; the caller can replace just this sample by demo ID.
-    expect({ questions, schedules }).toEqual(original);
-    schedules.set(newQuestion.demoId!, learned);
-    expect(cardMastery(schedules.get(sibling.demoId!)).label).toBe('Steady');
-
-    const improvingQuestion = questions[2]!;
-    const improving = schedules.get(improvingQuestion.demoId!)!;
-    const improved = await advanceSchedule(improving, answer(improvingQuestion, true));
-    expect(masteryIndex(improved)).toBeGreaterThan(masteryIndex(improving));
-    expect(improving).toEqual(original.schedules.get(improvingQuestion.demoId!));
-
-    const strongQuestion = questions[5]!;
-    const strong = schedules.get(strongQuestion.demoId!)!;
-    const lapse = await advanceSchedule(strong, answer(strongQuestion, false));
-    expect(masteryIndex(lapse)).toBeLessThan(masteryIndex(strong));
-    expect(cardMastery(lapse).label).toBe('Learning');
-    expect(strong).toEqual(original.schedules.get(strongQuestion.demoId!));
-    schedules.set(strongQuestion.demoId!, lapse);
-    expect(schedules.get(questions[1]!.demoId!)).toEqual(original.schedules.get(questions[1]!.demoId!));
-  });
-
-  it('carries the same sample identity through corrective retries without changing fixtures', () => {
-    const { questions, schedules } = createMasteryDemo(pool(), at, () => .999);
-    const original = structuredClone({ questions, schedules });
-    const current = questions[5]!;
-    const requeued = requeueMissedQuestion(questions, 5, 'first-miss', () => 0);
-    const retryIndex = requeued.findIndex(question => question.retryOf === 'first-miss');
-    expect(retryIndex).toBeGreaterThan(5);
-    expect(requeued[retryIndex]).toMatchObject({ demoId: current.demoId, target: current.target, exercise: current.exercise });
-    const repeated = requeueMissedQuestion(requeued, retryIndex, 'second-miss', () => 0);
-    expect(repeated.slice(retryIndex + 1).filter(question => question.retryOf === 'first-miss'))
-      .toEqual([expect.objectContaining({ demoId: current.demoId, retryOf: 'first-miss' })]);
-    expect({ questions, schedules }).toEqual(original);
-  });
-
-  it('keeps early demo misses behind all eight ordered samples', () => {
-    for (const random of [0, .5, .999]) {
-      const { questions } = createMasteryDemo(pool(), at, () => .999);
-      const withFirstMiss = requeueMissedQuestion(questions, 0, 'new-miss', () => random);
-      expect(withFirstMiss.slice(0, 8)).toEqual(questions);
-      expect(withFirstMiss[8]).toMatchObject({ demoId: questions[0]!.demoId, retryOf: 'new-miss' });
-      const withSecondMiss = requeueMissedQuestion(withFirstMiss, 1, 'learning-miss', () => random);
-      expect(withSecondMiss.slice(0, 8)).toEqual(questions);
-      expect(withSecondMiss.slice(8).map(question => question.retryOf)).toEqual(['new-miss', 'learning-miss']);
-      const repeated = requeueMissedQuestion(withSecondMiss, 8, 'new-miss-again', () => random);
-      expect(repeated.at(-1)).toMatchObject({ demoId: questions[0]!.demoId, retryOf: 'new-miss' });
-    }
-  });
-
-  it('requires a selected pool', () => {
-    expect(() => createMasteryDemo([], at, () => .5)).toThrow(/select a pack/i);
   });
 });

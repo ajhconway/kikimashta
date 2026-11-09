@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import type { PracticeCard, WordBank } from '../types';
-import { cardKey, practiceCards } from './cards';
-import { createSession, createQuestions, requeueMissedQuestion, validateBank } from './session';
+import { cardKey } from './cards';
+import { practiceCards } from '../test/cards';
+import { createQuestions, requeueMissedQuestion, validateBank } from './session';
 
 function bank(): WordBank {
   return {
@@ -14,9 +15,14 @@ function bank(): WordBank {
   };
 }
 
+function sessionQuestions(count = 6, random = () => 0.5) {
+  const words = bank();
+  return createQuestions(practiceCards(words.items).slice(0, count), words.items, random);
+}
+
 describe('practice sessions', () => {
   it.each([[0, 3], [0.5, 5], [0.999, 6]])('inserts a shuffled retry inside the remaining queue with random=%s', (random, expectedPosition) => {
-    const questions = createSession(bank(), 6, 4, () => 0.5);
+    const questions = sessionQuestions();
     const original = structuredClone(questions);
     const result = requeueMissedQuestion(questions, 1, 'original-miss', () => random);
     const retry = result[expectedPosition]!;
@@ -34,14 +40,14 @@ describe('practice sessions', () => {
   });
 
   it('retries a final miss next, while keeping the completed prefix intact', () => {
-    const questions = createSession(bank(), 2, 4, () => 0.5);
+    const questions = sessionQuestions(2);
     const result = requeueMissedQuestion(questions, 1, 'last-miss', () => 0);
     expect(result.slice(0, 2)).toEqual(questions);
     expect(result[2]).toMatchObject({ target: questions[1]!.target, retryOf: 'last-miss' });
   });
 
   it('keeps one pending retry across repeated transitions and repeated misses', () => {
-    const questions = createSession(bank(), 4, 4, () => 0.5);
+    const questions = sessionQuestions(4);
     const first = requeueMissedQuestion(questions, 0, 'original-miss', () => 0);
     expect(first[2]!.retryOf).toBe('original-miss');
     const duplicatedTransition = requeueMissedQuestion(first, 0, 'original-miss', () => 0.999);
@@ -55,7 +61,7 @@ describe('practice sessions', () => {
   });
 
   it('rejects a retry without a current question or original miss identity', () => {
-    const questions = createSession(bank());
+    const questions = sessionQuestions();
     for (const index of [-1, 0.5, questions.length]) expect(() => requeueMissedQuestion(questions, index, 'miss')).toThrow(/retry/i);
     expect(() => requeueMissedQuestion(questions, 0, '')).toThrow(/retry/i);
   });
@@ -65,7 +71,7 @@ describe('practice sessions', () => {
     const original = structuredClone(words);
     const values = [0, 0.1, 0.25, 0.55, 0.9, 0.999];
     let call = 0;
-    const session = createSession(words, 6, 4, () => values[call++ % values.length]!);
+    const session = createQuestions(practiceCards(words.items).slice(0, 6), words.items, () => values[call++ % values.length]!);
 
     expect(session).toHaveLength(6);
     expect(new Set(session.map(question => cardKey({ item: question.target, exercise: question.exercise }))).size).toBe(6);
@@ -141,17 +147,6 @@ describe('practice sessions', () => {
       expect(writing!.choices.map(item => item.id)).toContain(other.id);
     }
   });
-
-  it('honors a shorter session and bounds a longer session to available words', () => {
-    expect(createSession(bank(), 2, 3, () => 0.5)).toHaveLength(2);
-    expect(createSession(bank(), 20, 4, () => 0.5)).toHaveLength(12);
-  });
-
-  it.each([[0, 4], [1.5, 4], [6, 1], [6, 7], [6, 2.5]])(
-    'rejects an invalid session size %s or choice count %s', (count, choices) => {
-      expect(() => createSession(bank(), count, choices)).toThrow();
-    },
-  );
 });
 
 describe('word bank validation', () => {

@@ -1,0 +1,14 @@
+{
+  "issue": 191,
+  "id": "es-419-basic-cold",
+  "slug": "cold",
+  "version": 4,
+  "ownerFeedback": "Let's have a bunco of ice for cold, and a little more fire for hot",
+  "concept": "A large upright violet-outlined thermometer with low blue liquid is the primary object, with a small pile of five or six clearly visible ice cubes around its base. No drinking glass, water or text.",
+  "prompt": "Use case: precise-object-edit\nAsset type: SQUARE 1:1 vocabulary card illustration on genuinely transparent background.\nInput image1: EDIT TARGET. Keep the complete large blue thermometer, its violet outline, exact proportions, low blue fluid level, square framing and cartoon style. Change ONLY the ice: replace the two tiny ice cubes with a SMALL PILE OF FIVE OR SIX ice cubes clustered around the base. The pile should be noticeably more generous than the original pair, visible at 145px, approximately one third of the thermometer height and still secondary to the thermometer. Clear blue rounded ice cubes, opaque pale interiors, violet outlines matching the existing illustration. Preserve generous transparent outer margins and square canvas. No glass, water puddle, flames, text, numbers, scenery or shadow.",
+  "transparent_background": true,
+  "referenceRole": "edit-target",
+  "referencePath": "artifacts/spanish-basic-1-art/originals/cold-v3.png",
+  "referenceSha256": "eb32672bc83e231289ac5f1145b86f8902aec5b5cc7c36cac8ef77d964c38fdd",
+  "additionalReferences": []
+}

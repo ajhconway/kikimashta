@@ -1,0 +1,13 @@
+{
+  "id": "es-419-basic-next-to",
+  "slug": "next-to",
+  "version": 2,
+  "path": "originals/next-to-v2.png",
+  "sha256": "de206d4d900e65879db168ea1bd64b1b5a3836a9d7c12c3f032d7c9ad5603565",
+  "promptSha256": "4367f06c2864bc0664399f82cc12f7ad2a46e217fb8abd8b90af31a5b0bb8ea6",
+  "referenceSha256": "cc0a0f571f5ec2234adce38005381e57908d05d4f8c9e0d40c188cf2d8f9e108",
+  "additionalReferences": [],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-2740a120-2f27-474a-b95a-5f29480bc06b.png",
+  "supersedes": "originals/next-to-v1.png"
+}

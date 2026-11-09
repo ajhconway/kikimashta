@@ -1,0 +1,19 @@
+{
+  "id": "es-419-basic-hot",
+  "slug": "hot",
+  "version": 2,
+  "path": "originals/hot-v2.png",
+  "sha256": "ebb9df9cc45ca0c7418827165af2f5ef9cac8e19a1dfa0f57b37ae4a42108275",
+  "promptSha256": "085e6c30205dad41e1185e4124c32b91de1eedf000156b70a04eb019c1d40ff1",
+  "referenceSha256": "918b12b9e4495568614b365af53a975349cf4950bf3cc0245ee50f9adefac699",
+  "additionalReferences": [
+    {
+      "path": "artifacts/spanish-basic-1-art/originals/cold-v3.png",
+      "role": "matched-counterpart",
+      "sha256": "eb32672bc83e231289ac5f1145b86f8902aec5b5cc7c36cac8ef77d964c38fdd"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "source": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-28028856-fbf2-47d7-a9cf-168e6301cfc5.png",
+  "supersedes": "originals/hot-v1.png"
+}
