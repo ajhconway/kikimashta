@@ -38,7 +38,7 @@
         "ja-v-5dc14aea92c7",
         "ja-v-b639fedc63ec"
       ],
-      "reason": "Both current pictures show the same steak-like meat; the cow badge on the beef image does not stop it from also depicting generic meat."
+      "reason": "The generic meat picture includes several cuts, including beef. A beef-specific picture can also answer the broader meat prompt, so the overlap remains despite distinct artwork."
     },
     {
       "ids": [
@@ -59,14 +59,14 @@
         "ja-v-09d74d630a45",
         "ja-v-10984ece1206"
       ],
-      "reason": "Both current pictures depict a small settlement; the image cannot establish the personal hometown relationship."
+      "reason": "Town and village depict settlements, and the new grid-layout town cannot establish a personal hometown relationship. Preserve the broader settlement overlap restriction."
     },
     {
       "ids": [
         "ja-v-09d74d630a45",
         "ja-v-92bebda5ac98"
       ],
-      "reason": "Both current pictures depict a small group of houses without enough scale or civic context to distinguish town from village."
+      "reason": "Town and village depict settlements, and the new grid-layout town cannot establish a personal hometown relationship. Preserve the broader settlement overlap restriction."
     },
     {
       "ids": [
@@ -135,8 +135,8 @@
   "imageReview": [
     {
       "itemId": "ja-v-09d74d630a45",
-      "src": "images/vocabulary/ja-v-09d74d630a45.svg",
-      "sha256": "160f8649e80f6f29d789523ecfadfa221ef30ff42f29d5329e3b4bf5b33e4b73"
+      "src": "images/approved/ja-v-09d74d630a45-93fb2c963efb.png",
+      "sha256": "75f9c8593f84087d861e72bac7d3c76ad94103115dc55324e6e9cce414e0dd95"
     },
     {
       "itemId": "ja-v-10984ece1206",
@@ -175,8 +175,8 @@
     },
     {
       "itemId": "ja-v-74043c16db5e",
-      "src": "images/vocabulary/ja-v-74043c16db5e.svg",
-      "sha256": "a87e88cc6e86c8c786a2e1b3c4871154b4eede638291d220184964610511e49e"
+      "src": "images/approved/ja-v-74043c16db5e-4d154b483167.png",
+      "sha256": "c575db1d27f8d8e1af68d87587dd5d05135d5281a85accb1a6498fd0d433ae59"
     },
     {
       "itemId": "ja-v-754e1f2ea742",
@@ -185,8 +185,8 @@
     },
     {
       "itemId": "ja-v-92bebda5ac98",
-      "src": "images/vocabulary/ja-v-92bebda5ac98.svg",
-      "sha256": "db638c15d7746e347919ce9e1719955b40bbe700625e397f3a7dc96fcf6e8e8b"
+      "src": "images/approved/ja-v-92bebda5ac98-69cd15888d86.png",
+      "sha256": "2f10f21f98202bca994f73a96076fdee031aa2f6968a022033fb96ca6557e986"
     },
     {
       "itemId": "ja-v-960de5429d2e",
@@ -205,13 +205,13 @@
     },
     {
       "itemId": "ja-v-afefe30bcb46",
-      "src": "images/vocabulary/ja-v-afefe30bcb46.svg",
-      "sha256": "1463a8fbfa01bec986a4b8df7510a5e2b2e774b7f9865e6ee13e20f96635eeb1"
+      "src": "images/approved/ja-v-afefe30bcb46-040f6ed3a77d.png",
+      "sha256": "e99b1d3ba918399d0f4bd97e0ed3d4a2171ec42c49f698776eb0c6e1416d4c48"
     },
     {
       "itemId": "ja-v-b639fedc63ec",
-      "src": "images/vocabulary/ja-v-b639fedc63ec.svg",
-      "sha256": "c437e84246904d7ae5125c2737886b1489c61f3083185b74e3227ff883f16359"
+      "src": "images/approved/ja-v-b639fedc63ec-3c21c6cc1fa8.png",
+      "sha256": "2f707ffb39afb9a89397edc70ade1aaee402e139d26f9ded6bec5a4330c16d47"
     },
     {
       "itemId": "ja-v-baa4dd2c5986",

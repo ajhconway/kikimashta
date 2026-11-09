@@ -3,7 +3,7 @@ import { deflateSync } from 'node:zlib'
 import { inspectPngAlpha } from './png-alpha.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync, symlinkSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, rmSync, existsSync, symlinkSync, copyFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { activateArtwork } from './activate-approved-artwork.mjs'
@@ -332,6 +332,170 @@ for (const failure of ['missing release', 'artwork-only statement', 'missing sco
     const before = f.read('content/catalog/ja.json')
     assert.throws(() => activateArtwork({ root: f.root, batches: ['visual-reference-213'], encode: () => assert.fail('Must reject before encoding') }), /complete-set release approval/)
     assert.deepEqual(f.read('content/catalog/ja.json'), before)
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
+}
+
+function pictureFixture(t) {
+  const f = transparentFixture(t)
+  const directory = 'artifacts/picture-art-229'
+  const plan = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/plan.json', import.meta.url), 'utf8'))
+  const manifest = JSON.parse(readFileSync(new URL('../../artifacts/picture-art-229/manifest.json', import.meta.url), 'utf8'))
+  const assets = manifest.assets
+  for (const asset of assets) {
+    const target = join(f.root, asset.path)
+    mkdirSync(dirname(target), { recursive: true })
+    if (!existsSync(target)) copyFileSync(new URL(`../../${asset.path}`, import.meta.url), target)
+  }
+  f.put('content/catalog/ja.json', { items: assets.map(asset => ({ ...f.item, id: asset.id })) })
+  f.put('content/visuals/levels-1-2.json', assets.map(asset => ({ ...f.visual, id: asset.id })))
+  const sourcePath = join(f.root, directory, 'sources/suitability-review.json')
+  mkdirSync(dirname(sourcePath), { recursive: true })
+  copyFileSync(new URL('../../artifacts/picture-art-229/sources/suitability-review.json', import.meta.url), sourcePath)
+  f.put(`${directory}/plan.json`, plan)
+  const save = () => f.put(`${directory}/manifest.json`, manifest)
+  save()
+  return { ...f, manifest, plan, save }
+}
+
+for (const failure of ['substituted known ID', 'valid selected/excluded swap', 'changed source review', 'changed review identity', 'changed source revision', 'changed exclusions', 'coordinated source replacement', 'coordinated revision replacement']) {
+  test(`picture-set frozen scope rejects ${failure} before any deliveries`, t => {
+    const f = pictureFixture(t)
+    if (failure === 'substituted known ID') {
+      const id = 'ja-v-abcdef'
+      f.manifest.assets[29].id = id
+      f.manifest.releaseApproval.selections[29].id = id
+      const catalog = f.read('content/catalog/ja.json')
+      catalog.items[29].id = id
+      f.put('content/catalog/ja.json', catalog)
+      const visuals = f.read('content/visuals/levels-1-2.json')
+      visuals[29].id = id
+      f.put('content/visuals/levels-1-2.json', visuals)
+    }
+    if (failure === 'valid selected/excluded swap') {
+      const oldId = f.plan.items[29].id
+      const replacementId = f.plan.excludedUpdatedIds[0]
+      const source = f.read('artifacts/picture-art-229/sources/suitability-review.json')
+      f.plan.items[29] = source.items.find(item => item.id === replacementId)
+      f.plan.excludedUpdatedIds[0] = oldId
+      f.manifest.assets[29].id = replacementId
+      f.manifest.releaseApproval.selections[29].id = replacementId
+      const catalog = f.read('content/catalog/ja.json')
+      catalog.items[29].id = replacementId
+      f.put('content/catalog/ja.json', catalog)
+      const visuals = f.read('content/visuals/levels-1-2.json')
+      visuals[29].id = replacementId
+      f.put('content/visuals/levels-1-2.json', visuals)
+    }
+    if (failure === 'changed source review') f.put('artifacts/picture-art-229/sources/suitability-review.json', { items: [] })
+    if (failure === 'changed review identity') f.plan.items[0].recommendation = 'A different scene.'
+    if (failure === 'changed source revision') f.manifest.sourceRevision = 'b'.repeat(40)
+    if (failure === 'changed exclusions') f.plan.excludedUpdatedIds[0] = f.plan.items[0].id
+    if (failure === 'coordinated source replacement') {
+      const source = f.read('artifacts/picture-art-229/sources/suitability-review.json')
+      const item = source.items.find(item => item.id === f.plan.items[0].id)
+      item.recommendation = 'Replacement historical guidance.'
+      f.plan.items[0] = item
+      f.put('artifacts/picture-art-229/sources/suitability-review.json', source)
+      f.plan.suitabilityReviewSha256 = hash(readFileSync(join(f.root, 'artifacts/picture-art-229/sources/suitability-review.json')))
+      f.plan.sourceRevision = 'b'.repeat(40)
+      f.manifest.sourceRevision = f.plan.sourceRevision
+    }
+    if (failure === 'coordinated revision replacement') {
+      f.plan.sourceRevision = 'b'.repeat(40)
+      f.manifest.sourceRevision = f.plan.sourceRevision
+    }
+    f.put('artifacts/picture-art-229/plan.json', f.plan)
+    f.save()
+    const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
+    const before = paths.map(path => f.read(path))
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }), /frozen 31-card selection/)
+    paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
+    assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+  })
+}
+
+test('the complete picture set activates shared and approved-source selections while retaining opaque white and all eligibility', t => {
+  const f = pictureFixture(t)
+  const before = f.read('content/catalog/ja.json')
+  const pool = f.read('content/practice-pool.json')
+  const options = { root: f.root, batches: ['picture-229'] }
+  const ids = activateArtwork({ ...options, encode: (source, target, { format }) => {
+    assert.ok(existsSync(source))
+    writeFileSync(target, format === 'png' ? f.source : Buffer.from('ffd8ffe00000ffd9', 'hex'))
+  } })
+  assert.equal(ids.length, 31)
+  const active = f.read('content/card-regeneration/activation.json')
+  assert.equal(active.assets.length, 32)
+  assert.deepEqual(f.read('content/practice-pool.json'), pool)
+  const after = f.read('content/catalog/ja.json')
+  assert.deepEqual(after.items.map((item, index) => ({ ...item, image: before.items[index].image })), before.items)
+  for (const item of after.items) {
+    const delivery = active.assets.find(asset => asset.id === item.id)
+    assert.equal(delivery.manifestPath, 'artifacts/picture-art-229/manifest.json')
+    const opaque = item.id === 'ja-v-cbda72b9dd04'
+    assert.equal(delivery.alpha, opaque ? undefined : 'preserved')
+    assert.match(item.image.src, opaque ? /\.jpg$/ : /\.png$/)
+  }
+  const shared = active.assets.find(asset => asset.id === 'ja-v-185a632e3742')
+  const original = active.assets.find(asset => asset.id === 'ja-v-0bf44d10d860')
+  assert.equal(shared.sourcePath, original.sourcePath)
+  assert.equal(shared.sourceSha256, original.sourceSha256)
+  activateArtwork({ ...options, encode: () => assert.fail('Verified picture deliveries should be reused') })
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), active)
+})
+
+test('coordinated replacement of child media and every approval binding cannot publish the circle image as a child', t => {
+  const f = pictureFixture(t)
+  const child = f.manifest.assets.find(asset => asset.text === '子')
+  const circle = f.manifest.assets.find(asset => asset.text === '丸')
+  Object.assign(child, { path: circle.path, sha256: circle.sha256, selectedVersion: circle.selectedVersion })
+  child.versions = [{ version: child.selectedVersion, path: child.path, sha256: child.sha256 }]
+  Object.assign(child.approval, { sha256: child.sha256, selectedVersion: child.selectedVersion })
+  const selection = f.manifest.releaseApproval.selections.find(selection => selection.id === child.id)
+  Object.assign(selection, { path: child.path, sha256: child.sha256, selectedVersion: child.selectedVersion })
+  f.save()
+  const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
+  const before = paths.map(path => f.read(path))
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }), /owner-approved picture media/)
+  paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
+  assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
+})
+
+for (const failure of ['pending selection', 'missing approval', 'stale approval hash', 'stale approval version', 'missing version record', 'stale version path', 'duplicate version record', 'opaque new image', 'incomplete set', 'missing release', 'wrong release statement', 'missing release date', 'missing release scope', 'missing release selection', 'duplicate release selection', 'stale release path', 'stale release hash', 'stale release version', 'duplicate asset id', 'symlink source']) {
+  test(`picture-set preflight rejects ${failure} before any encoding or mapping changes`, t => {
+    const f = pictureFixture(t)
+    const asset = f.manifest.assets[29]
+    const release = f.manifest.releaseApproval
+    const selection = release.selections[29]
+    const selectedVersion = asset.versions.find(version => version.version === asset.selectedVersion && version.path === asset.path)
+    if (failure === 'pending selection') asset.status = 'generated-pending-owner-review'
+    if (failure === 'missing approval') delete asset.approval
+    if (failure === 'stale approval hash') asset.approval.sha256 = '0'.repeat(64)
+    if (failure === 'stale approval version') asset.approval.selectedVersion = 2
+    if (failure === 'missing version record') asset.versions = []
+    if (failure === 'stale version path') selectedVersion.path = asset.path.replace('.png', '-changed.png')
+    if (failure === 'duplicate version record') asset.versions.push({ ...selectedVersion })
+    if (failure === 'opaque new image') asset.transparentBackground = false
+    if (failure === 'incomplete set') f.manifest.assets.pop()
+    if (failure === 'missing release') delete f.manifest.releaseApproval
+    if (failure === 'wrong release statement') release.ownerStatement = 'The pictures look good.'
+    if (failure === 'missing release date') delete release.date
+    if (failure === 'missing release scope') delete release.scope
+    if (failure === 'missing release selection') release.selections.pop()
+    if (failure === 'duplicate release selection') release.selections[29] = release.selections[0]
+    if (failure === 'stale release path') selection.path = selection.path.replace('.png', '-changed.png')
+    if (failure === 'stale release hash') selection.sha256 = '0'.repeat(64)
+    if (failure === 'stale release version') selection.selectedVersion = 2
+    if (failure === 'duplicate asset id') asset.id = f.manifest.assets[0].id
+    if (failure === 'symlink source') {
+      rmSync(join(f.root, asset.path))
+      symlinkSync(join(f.root, f.manifest.assets[0].path), join(f.root, asset.path))
+    }
+    f.save()
+    const before = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json'].map(path => [path, f.read(path)])
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['picture-229'], encode: () => assert.fail('Must reject before encoding') }))
+    for (const [path, value] of before) assert.deepEqual(f.read(path), value)
     assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
   })
 }

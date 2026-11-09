@@ -67,7 +67,7 @@
   },
   {
     "id": "ja-v-696107ad9e08",
-    "concept": "Young boy in shorts holds a bright ball.",
+    "concept": "A young boy standing in a gold shirt and lavender trousers.",
     "visualGroup": "男の子",
     "reviewRequired": true,
     "reviewNote": "Age and gender identity are not reliably inferable from appearance; owner should review people cards."
@@ -120,7 +120,7 @@
   },
   {
     "id": "ja-v-9a9a5c6d448c",
-    "concept": "Small neighborhood shop with striped awning and stocked shelves.",
+    "concept": "A small convenience store with glass doors, snack shelves, a drinks fridge and a checkout.",
     "visualGroup": "コンビニ",
     "reviewRequired": false
   },
@@ -388,7 +388,7 @@
   },
   {
     "id": "ja-v-bcfbced3ea21",
-    "concept": "Adult man stands with a small shoulder bag.",
+    "concept": "An adult man standing in a teal shirt and lavender trousers.",
     "visualGroup": "男の人",
     "reviewRequired": true,
     "reviewNote": "Gender cannot reliably be inferred from an illustration; adult person is the visual cue."
@@ -408,7 +408,7 @@
   },
   {
     "id": "ja-v-b639fedc63ec",
-    "concept": "Single marbled steak on a plain plate.",
+    "concept": "Three different raw meat cuts on a plate, including poultry, pork and beef.",
     "visualGroup": "meat",
     "reviewRequired": false
   },
@@ -568,10 +568,10 @@
   },
   {
     "id": "ja-v-d0c8497457bd",
-    "concept": "Magnified layered skin patch with pores and hair.",
+    "concept": "A close view of healthy forearm skin with faint pores and creases, indicated by a pointing finger.",
     "visualGroup": "皮",
     "reviewRequired": true,
-    "reviewNote": "Educational skin cross-section; 皮 can also refer to other coverings."
+    "reviewNote": "Healthy forearm skin illustrates the human-skin sense; 皮 can also refer to other coverings."
   },
   {
     "id": "ja-v-19bd7db9d5d0",
@@ -611,10 +611,10 @@
   },
   {
     "id": "ja-v-26d771953f4b",
-    "concept": "Simple educational diagram shows paired testes in a neutral anatomical cutaway.",
+    "concept": "A fully clothed adult man with three small gold attention lines indicating the crotch of his trousers.",
     "visualGroup": "金玉",
     "reviewRequired": true,
-    "reviewNote": "Tasteful nonsexual simplified educational anatomy; verify anatomical clarity and suitability for the owner’s lesson bank."
+    "reviewNote": "The owner-approved euphemistic image uses attention lines at a clothed adult crotch to cue the intended body-part sense."
   },
   {
     "id": "ja-v-cabda7989563",
@@ -742,7 +742,7 @@
   },
   {
     "id": "ja-v-97526e11c703",
-    "concept": "Runner leans forward with bent arms and long strides.",
+    "concept": "A person running with bent arms and a long airborne stride.",
     "visualGroup": "走る",
     "reviewRequired": false
   },

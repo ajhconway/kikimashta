@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "language": "es-419",
+  "sourceDigest": "2d9f2e3e59154ff9d7075c6db82abd5a2d4b25fde93179ed4903f4f24295498c",
+  "recipeSha256": "6aefb848f952c5d4f249e5d9c245fe252721725c39d66b9bc541ce63b95d3d74",
+  "probesSha256": "8ee7cc0d3ac601aeeef6b7e85a6123134424e2855234a1c96c3b19da54fb65b2",
+  "tool": {
+    "id": "espeak-ng",
+    "version": "1.52.0",
+    "sourceCommit": "4870adfa25b1a32b4361592f1be8a40337c58d6c",
+    "source": "https://github.com/espeak-ng/espeak-ng/tree/4870adfa25b1a32b4361592f1be8a40337c58d6c",
+    "license": "GPL-3.0-or-later",
+    "flags": [
+      "-q",
+      "--ipa=1",
+      "-v",
+      "es-419"
+    ],
+    "sourceHashes": {
+      "binary": "b3720a52e11c15953c40adef914830c513c7021f6550001fe7d45838ea43a967",
+      "data/phondata": "a0b643b155cb6b12628d9e7865b57d9fca0d35844614f2594a5e009c80c80bb4",
+      "data/phonindex": "384e5fa6f714ba5356c58008249b78699c31c1ad044b243068d263fb806b7d73",
+      "data/phontab": "1b40690667e1e9aa1ba5e5234773c799e7e72ea751426e5150423d53c3f24fa2",
+      "data/intonations": "031a105bf6bb2ebcd73a2c579ccfb42469b27266db0078af65ae298fd3588b21",
+      "data/es_dict": "e7c6347e407d5c14f283eeada18b86c6d560b03b62f53659473109bbff096757",
+      "data/lang/roa/es-419": "ff0f84457ac40e3bcf61d6de58028312be74e0e6cbc3b742f31b3ce729c2aa0c",
+      "data/lang/roa/es": "966aa015ea5646d79f0ca4807cf5da7339aabd3782b55cfa5eb0d8c3fc8fc588",
+      "source/dictsource/es_rules": "a29d7c822c1f07c251f305bff09f52cd57bd8e52d5150b07054284f1103d04c9",
+      "source/dictsource/es_list": "02ce8850eeea125d3fbd4b1985a35a341435571804a0b40b66d3c728a8697bed",
+      "source/phsource/ph_spanish": "cd266030a05040bcbc6bf2739fce701504426ce268ca2fd830902d1df591d311"
+    }
+  },
+  "recipe": "NFC/casefold; pinned es-419 IPA with explicit phone boundaries; canonicalization occurs in spanish-pronunciation.ts; no dictionary overrides",
+  "repeatIdentical": true,
+  "entries": {
+    "abierto": {
+      "normalized": "abierto",
+      "ipa": "a_β_j_ˈe_ɾ_t_o"
+    },
+    "aeropuerto": {
+      "normalized": "aeropuerto",
+      "ipa": "ˌa_e_ɾ_o_p_w_ˈe_ɾ_t_o"
+    },
+    "agua": {
+      "normalized": "agua",
+      "ipa": "ˈa_ɣ_w_a"
+    },
+    "aguacate": {
+      "normalized": "aguacate",
+      "ipa": "ˌa_ɣ_w_a_k_ˈa_t_e"
+    },
+    "al lado de": {
+      "normalized": "al lado de",
+      "ipa": "a_l l_ˈa_ð_o ð_ˈe"
+    },
+    "almohada": {
+      "normalized": "almohada",
+      "ipa": "ˌa_l_m_o_ˈa_ð_a"
+    },
+    "ambulancia": {
+      "normalized": "ambulancia",
+      "ipa": "ˌa_m_b_u_l_ˈa_n_s_j_a"
+    },
+    "ano": {
+      "normalized": "ano",
+      "ipa": "ˈa_n_o"
+    },
+    "arroz": {
+      "normalized": "arroz",
+      "ipa": "a_r_ˈo_s"
+    },
+    "ascensor": {
+      "normalized": "ascensor",
+      "ipa": "ˌa_s_e_n_s_ˈo_ɾ"
+    },
+    "autobús": {
+      "normalized": "autobús",
+      "ipa": "ˌaʊ_t_o_β_ˈu_s"
+    },
+    "avión": {
+      "normalized": "avión",
+      "ipa": "a_β_j_ˈo_n"
+    },
+    "azúcar": {
+      "normalized": "azúcar",
+      "ipa": "a_s_ˈu_k_a_ɾ"
+    },
+    "año": {
+      "normalized": "año",
+      "ipa": "ˈa_ɲ_o"
+    },
+    "baca": {
+      "normalized": "baca",
+      "ipa": "b_ˈa_k_a"
+    },
+    "banca": {
+      "normalized": "banca",
+      "ipa": "b_ˈa_n_k_a"
+    },
+    "banqueta": {
+      "normalized": "banqueta",
+      "ipa": "b_a_n_k_ˈe_t_a"
+    },
+    "baño": {
+      "normalized": "baño",
+      "ipa": "b_ˈa_ɲ_o"
+    },
+    "barco": {
+      "normalized": "barco",
+      "ipa": "b_ˈa_ɾ_k_o"
+    },
+    "baño": {
+      "normalized": "baño",
+      "ipa": "b_ˈa_ɲ_o"
+    },
+    "beber": {
+      "normalized": "beber",
+      "ipa": "b_e_β_ˈe_ɾ"
+    },
+    "biblioteca": {
+      "normalized": "biblioteca",
+      "ipa": "b_ˌi_β_l_i__o_t_ˈe_k_a"
+    },
+    "bicicleta": {
+      "normalized": "bicicleta",
+      "ipa": "b_ˌi_s_i_k_l_ˈe_t_a"
+    },
+    "binoculares": {
+      "normalized": "binoculares",
+      "ipa": "b_ˌi_n_o_k_u_l_ˈa_ɾ_e_s"
+    },
+    "boleto": {
+      "normalized": "boleto",
+      "ipa": "b_o_l_ˈe_t_o"
+    },
+    "bosque": {
+      "normalized": "bosque",
+      "ipa": "b_ˈo_s_k_e"
+    },
+    "botella": {
+      "normalized": "botella",
+      "ipa": "b_o_t_ˈe_j_j_a"
+    },
+    "brújula": {
+      "normalized": "brújula",
+      "ipa": "b_ɾ_ˈu_x_u_l_a"
+    },
+    "café": {
+      "normalized": "café",
+      "ipa": "k_a_f_ˈe"
+    },
+    "café": {
+      "normalized": "café",
+      "ipa": "k_a_f_ˈe"
+    },
+    "cajero automático": {
+      "normalized": "cajero automático",
+      "ipa": "k_a_x_ˈe_ɾ_o ˌaʊ_t_o_m_ˈa_t_i_k_o"
+    },
+    "calcetín": {
+      "normalized": "calcetín",
+      "ipa": "k_ˌa_l_s_e_t_ˈi_n"
+    },
+    "caliente": {
+      "normalized": "caliente",
+      "ipa": "k_a_l_j_ˈɛ_n_t_e"
+    },
+    "calle": {
+      "normalized": "calle",
+      "ipa": "k_ˈa_j_j_e"
+    },
+    "cama": {
+      "normalized": "cama",
+      "ipa": "k_ˈa_m_a"
+    },
+    "camisa": {
+      "normalized": "camisa",
+      "ipa": "k_a_m_ˈi_s_a"
+    },
+    "camión de carga": {
+      "normalized": "camión de carga",
+      "ipa": "k_a_m_j_ˈo_n d_e k_ˈa_ɾ_ɣ_a"
+    },
+    "canto": {
+      "normalized": "canto",
+      "ipa": "k_ˈa_n_t_o"
+    },
+    "cantó": {
+      "normalized": "cantó",
+      "ipa": "k_a_n_t_ˈo"
+    },
+    "cargador": {
+      "normalized": "cargador",
+      "ipa": "k_ˌa_ɾ_ɣ_a_ð_ˈo_ɾ"
+    },
+    "caro": {
+      "normalized": "caro",
+      "ipa": "k_ˈa_ɾ_o"
+    },
+    "carro": {
+      "normalized": "carro",
+      "ipa": "k_ˈa_r_o"
+    },
+    "cartera": {
+      "normalized": "cartera",
+      "ipa": "k_a_ɾ_t_ˈe_ɾ_a"
+    },
+    "casa": {
+      "normalized": "casa",
+      "ipa": "k_ˈa_s_a"
+    },
+    "cascada": {
+      "normalized": "cascada",
+      "ipa": "k_a_s_k_ˈa_ð_a"
+    },
+    "casco": {
+      "normalized": "casco",
+      "ipa": "k_ˈa_s_k_o"
+    },
+    "caye": {
+      "normalized": "caye",
+      "ipa": "k_ˈa_ʝ_e"
+    },
+    "caza": {
+      "normalized": "caza",
+      "ipa": "k_ˈa_s_a"
+    },
+    "cebolla": {
+      "normalized": "cebolla",
+      "ipa": "s_e_β_ˈo_j_j_a"
+    },
+    "cepillo de dientes": {
+      "normalized": "cepillo de dientes",
+      "ipa": "s_e_p_ˈi_j_j_o ð_e ð_j_ˈɛ_n_t_e_s"
+    },
+    "cerrado": {
+      "normalized": "cerrado",
+      "ipa": "s_e_r_ˈa_ð_o"
+    },
+    "chamarra": {
+      "normalized": "chamarra",
+      "ipa": "tʃ_a_m_ˈa_r_a"
+    },
+    "champú": {
+      "normalized": "champú",
+      "ipa": "tʃ_a_m_p_ˈu"
+    },
+    "cine": {
+      "normalized": "cine",
+      "ipa": "s_ˈi_n_e"
+    },
+    "cinturón": {
+      "normalized": "cinturón",
+      "ipa": "s_ˌi_n_t_u_ɾ_ˈo_n"
+    },
+    "cinturón de seguridad": {
+      "normalized": "cinturón de seguridad",
+      "ipa": "s_ˌi_n_t_u_ɾ_ˈo_n d_e s_ˌe_ɣ_u_ɾ_i_ð_ˈa_d"
+    },
+    "cobija": {
+      "normalized": "cobija",
+      "ipa": "k_o_β_ˈi_x_a"
+    },
+    "cocer": {
+      "normalized": "cocer",
+      "ipa": "k_o_s_ˈe_ɾ"
+    },
+    "comer": {
+      "normalized": "comer",
+      "ipa": "k_o_m_ˈe_ɾ"
+    },
+    "coser": {
+      "normalized": "coser",
+      "ipa": "k_o_s_ˈe_ɾ"
+    },
+    "cruce peatonal": {
+      "normalized": "cruce peatonal",
+      "ipa": "k_ɾ_ˈu_s_e p_ˌe_a_t_o_n_ˈa_l"
+    },
+    "cuchara": {
+      "normalized": "cuchara",
+      "ipa": "k_u_tʃ_ˈa_ɾ_a"
+    },
+    "curita": {
+      "normalized": "curita",
+      "ipa": "k_u_ɾ_ˈi_t_a"
+    },
+    "cámara": {
+      "normalized": "cámara",
+      "ipa": "k_ˈa_m_a_ɾ_a"
+    },
+    "debajo de": {
+      "normalized": "debajo de",
+      "ipa": "d_e_β_ˈa_x_o ð_ˈe"
+    },
+    "dentro de": {
+      "normalized": "dentro de",
+      "ipa": "d_ˈɛ_n_t_ɾ_o ð_ˈe"
+    },
+    "dentrode": {
+      "normalized": "dentrode",
+      "ipa": "d_e_n_t_ɾ_ˈo_ð_e"
+    },
+    "dinero": {
+      "normalized": "dinero",
+      "ipa": "d_i_n_ˈe_ɾ_o"
+    },
+    "ducha": {
+      "normalized": "ducha",
+      "ipa": "d_ˈu_tʃ_a"
+    },
+    "enchufe": {
+      "normalized": "enchufe",
+      "ipa": "e_n_tʃ_ˈu_f_e"
+    },
+    "encima de": {
+      "normalized": "encima de",
+      "ipa": "e_n_s_ˈi_m_a ð_ˈe"
+    },
+    "ensalada": {
+      "normalized": "ensalada",
+      "ipa": "ˌe_n_s_a_l_ˈa_ð_a"
+    },
+    "escaleras": {
+      "normalized": "escaleras",
+      "ipa": "ˌe_s_k_a_l_ˈe_ɾ_a_s"
+    },
+    "espejo": {
+      "normalized": "espejo",
+      "ipa": "e_s_p_ˈe_x_o"
+    },
+    "estacionamiento": {
+      "normalized": "estacionamiento",
+      "ipa": "ˌe_s_t_a_s_j_ˌo_n_a_m_j_ˈɛ_n_t_o"
+    },
+    "estación de policía": {
+      "normalized": "estación de policía",
+      "ipa": "ˌe_s_t_a_s_j_ˈo_n d_e p_ˌo_l_i_s_ˈi__a"
+    },
+    "estación de tren": {
+      "normalized": "estación de tren",
+      "ipa": "ˌe_s_t_a_s_j_ˈo_n d_e t_ɾ_ˈe_n"
+    },
+    "falda": {
+      "normalized": "falda",
+      "ipa": "f_ˈa_l_ð_a"
+    },
+    "farmacia": {
+      "normalized": "farmacia",
+      "ipa": "f_a_ɾ_m_ˈa_s_j_a"
+    },
+    "flor": {
+      "normalized": "flor",
+      "ipa": "f_l_ˈo_ɾ"
+    },
+    "fresa": {
+      "normalized": "fresa",
+      "ipa": "f_ɾ_ˈe_s_a"
+    },
+    "frijoles": {
+      "normalized": "frijoles",
+      "ipa": "f_ɾ_i_x_ˈo_l_e_s"
+    },
+    "frío": {
+      "normalized": "frío",
+      "ipa": "f_ɾ_ˈi__o"
+    },
+    "fuente": {
+      "normalized": "fuente",
+      "ipa": "f_w_ˈɛ_n_t_e"
+    },
+    "gasolinera": {
+      "normalized": "gasolinera",
+      "ipa": "ɡ_ˌa_s_o_l_i_n_ˈe_ɾ_a"
+    },
+    "gira": {
+      "normalized": "gira",
+      "ipa": "x_ˈi_ɾ_a"
+    },
+    "grande": {
+      "normalized": "grande",
+      "ipa": "ɡ_ɾ_ˈa_n_d_e"
+    },
+    "guante": {
+      "normalized": "guante",
+      "ipa": "ɡ_w_ˈa_n_t_e"
+    },
+    "habitación": {
+      "normalized": "habitación",
+      "ipa": "ˌa_β_i_t_a_s_j_ˈo_n"
+    },
+    "halla": {
+      "normalized": "halla",
+      "ipa": "ˈa_j_j_a"
+    },
+    "hambre": {
+      "normalized": "hambre",
+      "ipa": "ˈa_m_b_ɾ_e"
+    },
+    "haya": {
+      "normalized": "haya",
+      "ipa": "ˈa_ʝ_a"
+    },
+    "helado": {
+      "normalized": "helado",
+      "ipa": "e_l_ˈa_ð_o"
+    },
+    "helicóptero": {
+      "normalized": "helicóptero",
+      "ipa": "ˌe_l_i_k_ˈo_pː_t_e_ɾ_o"
+    },
+    "hola": {
+      "normalized": "hola",
+      "ipa": "ˈo_l_a"
+    },
+    "hospital": {
+      "normalized": "hospital",
+      "ipa": "ˌo_s_p_i_t_ˈa_l"
+    },
+    "hotel": {
+      "normalized": "hotel",
+      "ipa": "o_t_ˈe_l"
+    },
+    "huevo": {
+      "normalized": "huevo",
+      "ipa": "w_ˈe_β_o"
+    },
+    "iglesia": {
+      "normalized": "iglesia",
+      "ipa": "i_ɣ_l_ˈe_s_j_a"
+    },
+    "isla": {
+      "normalized": "isla",
+      "ipa": "ˈi_s_l_a"
+    },
+    "jabón": {
+      "normalized": "jabón",
+      "ipa": "x_a_β_ˈo_n"
+    },
+    "jira": {
+      "normalized": "jira",
+      "ipa": "x_ˈi_ɾ_a"
+    },
+    "jitomate": {
+      "normalized": "jitomate",
+      "ipa": "x_ˌi_t_o_m_ˈa_t_e"
+    },
+    "jugo": {
+      "normalized": "jugo",
+      "ipa": "x_ˈu_ɣ_o"
+    },
+    "lago": {
+      "normalized": "lago",
+      "ipa": "l_ˈa_ɣ_o"
+    },
+    "lavandería": {
+      "normalized": "lavandería",
+      "ipa": "l_ˌa_β_a_n_d_e_ɾ_ˈi__a"
+    },
+    "leche": {
+      "normalized": "leche",
+      "ipa": "l_ˈe_tʃ_e"
+    },
+    "lechuga": {
+      "normalized": "lechuga",
+      "ipa": "l_e_tʃ_ˈu_ɣ_a"
+    },
+    "lentes de sol": {
+      "normalized": "lentes de sol",
+      "ipa": "l_ˈɛ_n_t_e_s ð_e s_ˈo_l"
+    },
+    "limón": {
+      "normalized": "limón",
+      "ipa": "l_i_m_ˈo_n"
+    },
+    "linterna": {
+      "normalized": "linterna",
+      "ipa": "l_i_n_t_ˈe_ɾ_n_a"
+    },
+    "llanta": {
+      "normalized": "llanta",
+      "ipa": "ʝ_ˈa_n_t_a"
+    },
+    "llave": {
+      "normalized": "llave",
+      "ipa": "ʝ_ˈa_β_e"
+    },
+    "maleta": {
+      "normalized": "maleta",
+      "ipa": "m_a_l_ˈe_t_a"
+    },
+    "mantequilla": {
+      "normalized": "mantequilla",
+      "ipa": "m_ˌa_n_t_e_k_ˈi_j_j_a"
+    },
+    "manzana": {
+      "normalized": "manzana",
+      "ipa": "m_a_n_s_ˈa_n_a"
+    },
+    "mapa": {
+      "normalized": "mapa",
+      "ipa": "m_ˈa_p_a"
+    },
+    "menú": {
+      "normalized": "menú",
+      "ipa": "m_e_n_ˈu"
+    },
+    "mercado": {
+      "normalized": "mercado",
+      "ipa": "m_e_ɾ_k_ˈa_ð_o"
+    },
+    "mesa": {
+      "normalized": "mesa",
+      "ipa": "m_ˈe_s_a"
+    },
+    "metro": {
+      "normalized": "metro",
+      "ipa": "m_ˈe_t_ɾ_o"
+    },
+    "mochila": {
+      "normalized": "mochila",
+      "ipa": "m_o_tʃ_ˈi_l_a"
+    },
+    "moneda": {
+      "normalized": "moneda",
+      "ipa": "m_o_n_ˈe_ð_a"
+    },
+    "montaña": {
+      "normalized": "montaña",
+      "ipa": "m_o_n_t_ˈa_ɲ_a"
+    },
+    "motocicleta": {
+      "normalized": "motocicleta",
+      "ipa": "m_ˌo_t_o_s_i_k_l_ˈe_t_a"
+    },
+    "museo": {
+      "normalized": "museo",
+      "ipa": "m_u_s_ˈe_o"
+    },
+    "naranja": {
+      "normalized": "naranja",
+      "ipa": "n_a_ɾ_ˈa_ŋ_x_a"
+    },
+    "oficina de correos": {
+      "normalized": "oficina de correos",
+      "ipa": "ˌo_f_i_s_ˈi_n_a ð_e k_o_r_ˈe_o_s"
+    },
+    "ola": {
+      "normalized": "ola",
+      "ipa": "ˈo_l_a"
+    },
+    "pan": {
+      "normalized": "pan",
+      "ipa": "p_ˈa_n"
+    },
+    "panadería": {
+      "normalized": "panadería",
+      "ipa": "p_ˌa_n_a_ð_e_ɾ_ˈi__a"
+    },
+    "pantalones": {
+      "normalized": "pantalones",
+      "ipa": "p_ˌa_n_t_a_l_ˈo_n_e_s"
+    },
+    "papa": {
+      "normalized": "papa",
+      "ipa": "p_ˈa_p_a"
+    },
+    "papel higiénico": {
+      "normalized": "papel higiénico",
+      "ipa": "p_a_p_ˈe_l i_x_j_ˈe_n_i_k_o"
+    },
+    "papá": {
+      "normalized": "papá",
+      "ipa": "p_a_p_ˈa"
+    },
+    "parada de autobús": {
+      "normalized": "parada de autobús",
+      "ipa": "p_a_ɾ_ˈa_ð_a ð_e ˌaʊ_t_o_β_ˈu_s"
+    },
+    "paraguas": {
+      "normalized": "paraguas",
+      "ipa": "p_a_ɾ_ˈa_ɣ_w_a_s"
+    },
+    "parque": {
+      "normalized": "parque",
+      "ipa": "p_ˈa_ɾ_k_e"
+    },
+    "pasaporte": {
+      "normalized": "pasaporte",
+      "ipa": "p_ˌa_s_a_p_ˈo_ɾ_t_e"
+    },
+    "pasta": {
+      "normalized": "pasta",
+      "ipa": "p_ˈa_s_t_a"
+    },
+    "pasta de dientes": {
+      "normalized": "pasta de dientes",
+      "ipa": "p_ˈa_s_t_a ð_e ð_j_ˈɛ_n_t_e_s"
+    },
+    "pastilla": {
+      "normalized": "pastilla",
+      "ipa": "p_a_s_t_ˈi_j_j_a"
+    },
+    "patrulla": {
+      "normalized": "patrulla",
+      "ipa": "p_a_t_ɾ_ˈu_j_j_a"
+    },
+    "peine": {
+      "normalized": "peine",
+      "ipa": "p_ˈeɪ_n_e"
+    },
+    "pequeño": {
+      "normalized": "pequeño",
+      "ipa": "p_e_k_ˈe_ɲ_o"
+    },
+    "pescado": {
+      "normalized": "pescado",
+      "ipa": "p_e_s_k_ˈa_ð_o"
+    },
+    "pie": {
+      "normalized": "pie",
+      "ipa": "p_j_ˈe"
+    },
+    "piscina": {
+      "normalized": "piscina",
+      "ipa": "p_i_s_ˈi_n_a"
+    },
+    "pizza": {
+      "normalized": "pizza",
+      "ipa": "p_ˈi_ts_a"
+    },
+    "piña": {
+      "normalized": "piña",
+      "ipa": "p_ˈi_ɲ_a"
+    },
+    "plato": {
+      "normalized": "plato",
+      "ipa": "p_l_ˈa_t_o"
+    },
+    "playa": {
+      "normalized": "playa",
+      "ipa": "p_l_ˈa_ʝ_a"
+    },
+    "plátano": {
+      "normalized": "plátano",
+      "ipa": "p_l_ˈa_t_a_n_o"
+    },
+    "pollo": {
+      "normalized": "pollo",
+      "ipa": "p_ˈo_j_j_o"
+    },
+    "protector solar": {
+      "normalized": "protector solar",
+      "ipa": "p_ɾ_ˌo_t_e_k_t_ˈo_ɾ s_o_l_ˈa_ɾ"
+    },
+    "puente": {
+      "normalized": "puente",
+      "ipa": "p_w_ˈɛ_n_t_e"
+    },
+    "píe": {
+      "normalized": "píe",
+      "ipa": "p_ˈi__e"
+    },
+    "queso": {
+      "normalized": "queso",
+      "ipa": "k_ˈe_s_o"
+    },
+    "recibo": {
+      "normalized": "recibo",
+      "ipa": "r_e_s_ˈi_β_o"
+    },
+    "reloj de pulsera": {
+      "normalized": "reloj de pulsera",
+      "ipa": "r_e_l_ˈo_x ð_e p_u_l_s_ˈe_ɾ_a"
+    },
+    "repelente": {
+      "normalized": "repelente",
+      "ipa": "r_ˌe_p_e_l_ˈɛ_n_t_e"
+    },
+    "restaurante": {
+      "normalized": "restaurante",
+      "ipa": "r_ˌe_s_t_aʊ_ɾ_ˈa_n_t_e"
+    },
+    "río": {
+      "normalized": "río",
+      "ipa": "r_ˈi__o"
+    },
+    "saco de dormir": {
+      "normalized": "saco de dormir",
+      "ipa": "s_ˈa_k_o ð_e ð_o_ɾ_m_ˈi_ɾ"
+    },
+    "sal": {
+      "normalized": "sal",
+      "ipa": "s_ˈa_l"
+    },
+    "secadora de pelo": {
+      "normalized": "secadora de pelo",
+      "ipa": "s_ˌe_k_a_ð_ˈo_ɾ_a ð_e p_ˈe_l_o"
+    },
+    "sed": {
+      "normalized": "sed",
+      "ipa": "s_ˈe_d"
+    },
+    "semáforo": {
+      "normalized": "semáforo",
+      "ipa": "s_e_m_ˈa_f_o_ɾ_o"
+    },
+    "silla": {
+      "normalized": "silla",
+      "ipa": "s_ˈi_j_j_a"
+    },
+    "sombrero": {
+      "normalized": "sombrero",
+      "ipa": "s_o_m_b_ɾ_ˈe_ɾ_o"
+    },
+    "sopa": {
+      "normalized": "sopa",
+      "ipa": "s_ˈo_p_a"
+    },
+    "sueño": {
+      "normalized": "sueño",
+      "ipa": "s_w_ˈe_ɲ_o"
+    },
+    "supermercado": {
+      "normalized": "supermercado",
+      "ipa": "s_ˌu_p_e_ɾ_m_e_ɾ_k_ˈa_ð_o"
+    },
+    "sándwich": {
+      "normalized": "sándwich",
+      "ipa": "s_ˈa_n_d_w_i_tʃ"
+    },
+    "taco": {
+      "normalized": "taco",
+      "ipa": "t_ˈa_k_o"
+    },
+    "tarjeta de crédito": {
+      "normalized": "tarjeta de crédito",
+      "ipa": "t_a_ɾ_x_ˈe_t_a ð_e k_ɾ_ˈe_ð_i_t_o"
+    },
+    "tarjetadecrédito": {
+      "normalized": "tarjetadecrédito",
+      "ipa": "t_ˌa_ɾ_x_e_t_ˌa_ð_e_k_ɾ_ˈe_ð_i_t_o"
+    },
+    "taxi": {
+      "normalized": "taxi",
+      "ipa": "t_ˈa_k_s_i"
+    },
+    "taza": {
+      "normalized": "taza",
+      "ipa": "t_ˈa_s_a"
+    },
+    "teléfono": {
+      "normalized": "teléfono",
+      "ipa": "t_e_l_ˈe_f_o_n_o"
+    },
+    "tenedor": {
+      "normalized": "tenedor",
+      "ipa": "t_ˌe_n_e_ð_ˈo_ɾ"
+    },
+    "termino": {
+      "normalized": "termino",
+      "ipa": "t_e_ɾ_m_ˈi_n_o"
+    },
+    "tienda de campaña": {
+      "normalized": "tienda de campaña",
+      "ipa": "t_j_ˈɛ_n_d_a ð_e k_a_m_p_ˈa_ɲ_a"
+    },
+    "tijeras": {
+      "normalized": "tijeras",
+      "ipa": "t_i_x_ˈe_ɾ_a_s"
+    },
+    "toalla": {
+      "normalized": "toalla",
+      "ipa": "t_o_ˈa_j_j_a"
+    },
+    "tortilla": {
+      "normalized": "tortilla",
+      "ipa": "t_o_ɾ_t_ˈi_j_j_a"
+    },
+    "traje de baño": {
+      "normalized": "traje de baño",
+      "ipa": "t_ɾ_ˈa_x_e ð_e β_ˈa_ɲ_o"
+    },
+    "tren": {
+      "normalized": "tren",
+      "ipa": "t_ɾ_ˈe_n"
+    },
+    "tubo": {
+      "normalized": "tubo",
+      "ipa": "t_ˈu_β_o"
+    },
+    "tuvo": {
+      "normalized": "tuvo",
+      "ipa": "t_ˈu_β_o"
+    },
+    "té": {
+      "normalized": "té",
+      "ipa": "t_ˈe"
+    },
+    "término": {
+      "normalized": "término",
+      "ipa": "t_ˈe_ɾ_m_i_n_o"
+    },
+    "vaca": {
+      "normalized": "vaca",
+      "ipa": "b_ˈa_k_a"
+    },
+    "vaso": {
+      "normalized": "vaso",
+      "ipa": "b_ˈa_s_o"
+    },
+    "ventana": {
+      "normalized": "ventana",
+      "ipa": "b_e_n_t_ˈa_n_a"
+    },
+    "vestido": {
+      "normalized": "vestido",
+      "ipa": "b_e_s_t_ˈi_ð_o"
+    },
+    "volante": {
+      "normalized": "volante",
+      "ipa": "b_o_l_ˈa_n_t_e"
+    },
+    "yave": {
+      "normalized": "yave",
+      "ipa": "ʝ_ˈa_β_e"
+    },
+    "yogur": {
+      "normalized": "yogur",
+      "ipa": "ʝ_o_ɣ_ˈu_ɾ"
+    },
+    "zanahoria": {
+      "normalized": "zanahoria",
+      "ipa": "s_ˌa_n_a_ˈo_ɾ_j_a"
+    },
+    "zapato": {
+      "normalized": "zapato",
+      "ipa": "s_a_p_ˈa_t_o"
+    }
+  }
+}

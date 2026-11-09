@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "spanish-neighbors-222",
+  "inputDigest": "bd158c29052ced54e528ec838872a80abae347723569411d0623230828f0d229",
+  "semanticViewed": true,
+  "wordsViewed": true,
+  "responses": [
+    {
+      "trialId": "S01",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S02",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S03",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S04",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S05",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S06",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S07",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "neither",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S08",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S09",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "tie",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S10",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "tie",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S11",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "S12",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P04-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P06-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P01-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P06-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P04-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P07-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P08-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P07-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P02-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P03-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P02-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P08-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P06-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P08-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P02-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P01-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P04-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P03-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P07-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true
+    },
+    {
+      "trialId": "P01-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P04-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P07-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P08-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P03-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P03-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P01-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P06-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    },
+    {
+      "trialId": "P02-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false
+    }
+  ]
+}
