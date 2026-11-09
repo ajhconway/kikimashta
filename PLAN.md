@@ -236,6 +236,22 @@ Word and contextual reviews use the same mastery timers: New/Learning untimed, I
 
 At Steady and higher, both picture and writing choices stay hidden until the final 360 ms of audio and land together at its endpoint, following the media clock through stalls. Contextual choices wait through the sentence and 650 ms pause before entering at the end of the question clip. Familiar and lower keep the ordinary entrance. Replays after reveal keep choices visible; reduced motion reveals at the endpoint without movement. Lessons, contextual introductions, corrective retries and content inspection keep their ordinary entrances. Real-iPhone timing acceptance remains manual.
 
+## WaniKani level 1 contextual text (#183)
+
+Prepare the 29 level 1 targets identified in the owner's word-list review, with two simple and two contrastive contexts per target and questions focused on target meaning and situation meaning. Prepare pending replacements for the twelve existing contexts for 上, 下 and 大きい, using new identities while preserving the original approved banks, answer amendments, media and history. Keep the seven bare numerals and ふじ山 word-first without dedicated contexts in this expansion. Every question has exactly four clear choices, Japanese readings, English meanings and beginner-friendly grammar/vocabulary requirements. Reuse approved pictures only where they express all four choices clearly.
+
+人工 and 人口 retain standalone recognition cards; exclude homophonic distractors from standalone questions. 下さい, 力いっぱい and 大した are designated contextual-only. Later integration must let those three enter the simple stage directly and use the existing FSRS interval gate for contrastive access, without a nonexistent word-card prerequisite. This task prepares content and records that policy; it does not change runtime admission or existing progress.
+
+Track the draft and readable filtered local review in [#183](https://github.com/ajhconway/kikimashta/issues/183). New text stays pending, recordings stay empty and the draft bank remains outside ordinary practice. Obtain approval of the actual new text before generating speech. Preserve all prior approvals and accepted recordings; no audio generation, production activation or merge is requested at this step.
+
+Review all 232 questions for comprehension, including the 24 inherited pilot questions. Keep two questions per context and rewrite sentences when necessary. Require meaning-based interpretation: a paraphrase, resulting state, request intent, quantity interpretation or a relationship that cannot be selected just by spotting the uniquely repeated answer. A changed verb ending alone is insufficient. Keep the simple stage one short coherent situation, Genki I grammar and everyday vocabulary, four plausible choices, one entailed answer and no unstated intentions, ambiguous world knowledge or unrelated arithmetic.
+
+Treat target meaning and situation detail as question focuses; the correct choice need not literally be the target vocabulary. Preserve the existing runtime `kind`/answer-concept invariant rather than falsely labeling a different word as the target. Record per-question comprehension rationale and copying-shortcut checks in authoring sources, and show them in the review. New pending replacements for the three inherited targets use new IDs and leave approved sources, audio and history intact. All revised text needs fresh owner review before speech. The independent review must assess comprehension quality in addition to naturalness and structural validity.
+
+Every question must require the target word's meaning, including questions about another detail. If masking the target still leaves the answer deducible, rewrite the question or sentence. Also reject redundant clues elsewhere that reveal the target meaning independently. Record a grammatical counterfactual for each question: replace only the spoken target expression, keep the question and choices fixed, and identify a different entailed answer. The foil must be natural, preserve the other facts and avoid contradictory actor labels; it cannot serve only as a self-certified rationale. Review both original and counterfactual answer keys independently. Keep the existing non-copying requirement and two questions per context. Explanations about the target alone do not establish this dependency.
+
+The owner approved the actual pack 1 text at `bd6011142069354c0c60855b23606453e06af7c9` and requested shipment. Merge the reviewed content after required CI and current-head review. `content/contextual/pack-1/text-approval.json` binds approval to the exact frozen bank and text digest. Audio preparation, listening acceptance and runtime activation remain separate; no unheard audio is approved.
+
 
 ## Retired evaluation and generation paths (#184)
 
@@ -248,6 +264,10 @@ Move full authored-context inspection into the library beside word cards, select
 ## Quiet audio replay fixture (#187)
 
 The main-branch publication check for Spanish Travel level 3 (#174/#176) stalled in the existing mobile-WebKit quiet-audio fixture: its initial native playback ended, but replay stayed at media time zero with no error. Align the detached fixture's replay handler with the app's explicit pause/source/current-time reset before native play. Assert replay advances the native clock and ends while remaining muted; preserve navigation and unavailable-media coverage. Keep zero test retries. Run focused native browser coverage, configured checks and current-head review, then complete publication and live-media verification for the already approved pack.
+
+## Pack 1 audio and practice integration (#197)
+
+The owner explicitly requested continuing through audio and app integration after approving the text. Use the hash-bound text approval and existing Otani/Morioki generation, private key loader, resumable requests, preserved originals and loudness processing. Prepare the full local listening review before requesting actual media acceptance; no unheard audio is accepted. Integrate the new bank behind exact media acceptance, superseding the old level 1 variants for future presentation while preserving attempts and other pilot words. Implement direct simple-stage entry for the three contextual-only targets, retain word prerequisites for others, selected scope, workload limits and FSRS gates. Audit unavailable word prerequisites. Complete configured checks, native browser review/playback and current-head review before publication.
 
 
 ## Retired media cleanup (#193)

@@ -24,6 +24,8 @@
     "content:library": "node scripts/content/build-vocabulary-library.mjs",
     "content:contextual:validate": "node scripts/content/validate-contextual.mjs",
     "content:contextual:review": "node scripts/content/build-contextual-review.mjs",
+    "content:contextual:pack1": "node scripts/content/prepare-contextual-pack-1.mjs",
+    "content:contextual:pack1:validate": "node scripts/content/prepare-contextual-pack-1.mjs --validate",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:content-review": "E2E_CONTENT_REVIEW=1 playwright test content-review",
