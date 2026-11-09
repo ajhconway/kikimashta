@@ -1,3 +1,4 @@
+import { deviceStorage } from './device-storage';
 import type { WordItem } from '../types';
 
 export const writingFonts = [
@@ -18,11 +19,11 @@ export function createWritingFontRotation(storage?: PreferenceStorage) {
     if (phase === 'lesson') return 'noto-sans';
     const key = 'kikimashta-writing-font:v1:' + JSON.stringify([item.language, item.id]);
     let previous: string | undefined = last.get(key);
-    try { previous ??= (storage ?? localStorage).getItem(key) ?? undefined; } catch { /* Memory rotation remains available. */ }
+    try { previous ??= (storage ?? deviceStorage).getItem(key) ?? undefined; } catch { /* Memory rotation remains available. */ }
     const index = reviewFonts.findIndex(font => font.id === previous);
     const next = reviewFonts[index < 0 ? Math.min(reviewFonts.length - 1, Math.max(0, Math.floor(random() * reviewFonts.length))) : (index + 1) % reviewFonts.length]!.id;
     last.set(key, next);
-    try { (storage ?? localStorage).setItem(key, next); } catch { /* Appearance must never block practice. */ }
+    try { (storage ?? deviceStorage).setItem(key, next); } catch { /* Appearance must never block practice. */ }
     return next;
   };
 }

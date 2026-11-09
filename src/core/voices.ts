@@ -1,3 +1,4 @@
+import { deviceStorage } from './device-storage';
 import registry from '../../content/elevenlabs-voices.json';
 import spanishRegistry from '../../content/es-419-voices.json';
 
@@ -32,7 +33,7 @@ export function voicePreferenceKeyFor(languageId = 'ja-JP'): string {
 export function initialVoiceIds(languageId = 'ja-JP'): string[] {
   const voices = practiceVoicesFor(languageId);
   try {
-    const saved: unknown = JSON.parse(localStorage.getItem(voicePreferenceKeyFor(languageId)) ?? 'null');
+    const saved: unknown = JSON.parse(deviceStorage.getItem(voicePreferenceKeyFor(languageId)) ?? 'null');
     if (Array.isArray(saved) && saved.every(id => typeof id === 'string')) {
       const ids = voices.filter(voice => saved.includes(voice.id)).map(voice => voice.id);
       if (ids.length) return ids;

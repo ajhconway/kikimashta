@@ -1,5 +1,6 @@
+import { deviceStorage } from '../src/core/device-storage.ts'
 /** Local card feedback, separate from learning progress (#32). */
-export function createFeedbackStore({ language, storage = () => localStorage }) {
+export function createFeedbackStore({ language, storage = () => deviceStorage }) {
   const notes = new Map()
   const key = id => `kikimashta:card-feedback:v1:${language}:${id}`
 
