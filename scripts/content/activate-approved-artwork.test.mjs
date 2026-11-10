@@ -468,7 +468,10 @@ for (const failure of ['changed source bytes', 'swapped selected and excluded ID
     f.save()
     const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
     const before = paths.map(path => f.read(path))
-    assert.throws(() => activateArtwork({ root: f.root, batches: ['scene-233'], encode: () => assert.fail('Must reject before encoding') }))
+    const expected = failure === 'primary media differs' ? /release selections differ/ :
+      failure === 'unapproved primary' ? /identity differs from the frozen review/ :
+        ['missing related Night', 'extra related image', 'changed related Night'].includes(failure) ? /exactly the approved related Night/ : /frozen 43-card selection/
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['scene-233'], encode: () => assert.fail('Must reject before encoding') }), expected)
     paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
     assert.deepEqual(readdirSync(join(f.root, 'public/images')), ['keep-night.png'])
   })
