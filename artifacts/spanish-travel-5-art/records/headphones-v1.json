@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-headphones",
+  "slug": "headphones",
+  "version": 1,
+  "path": "originals/headphones-v1.png",
+  "sha256": "50e48259481abfcffd0acac637f71db40e3142c66908ed890fd96209766057e3",
+  "promptSha256": "7da61ac67afb98e45056e8eecbd1828e057d56bcc90e6f7ab86cc4bdebc4a11d",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3c17dcac-45ee-41fd-9d92-3b3aac19c69c.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

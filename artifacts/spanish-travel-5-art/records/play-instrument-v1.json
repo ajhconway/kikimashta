@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-play-instrument",
+  "slug": "play-instrument",
+  "version": 1,
+  "path": "originals/play-instrument-v1.png",
+  "sha256": "052062e7e53c57915063e239a746341b4dc2f469428388e4e5116cdfa9331ac3",
+  "promptSha256": "69064e6cb253901d8014e14e593277f6e9e2afe5b692fff7d43431f1d2edb7f2",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8fcc0f4f-2f6e-4143-a49a-7a6665ac983c.png",
+  "references": [
+    {
+      "path": "public/brand/kikimashta-cat-v1.png",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "role": "character-identity-and-style"
+    }
+  ]
+}

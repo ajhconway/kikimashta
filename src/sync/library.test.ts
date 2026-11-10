@@ -242,8 +242,9 @@ describe('Spanish card library', () => {
     await waitFor(() => expect(document.querySelectorAll('.card')).toHaveLength(Math.min(24, spanish.items.length)));
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Latin American Spanish cards');
     expect(screen.getByLabelText('Card pack')).toHaveValue('es-419-travel-1-pictures');
-    expect(screen.getAllByRole('option')).toHaveLength(8);
+    expect(screen.getAllByRole('option')).toHaveLength(9);
     expect(screen.getByRole('option', { name: /Food level 2/ })).toHaveValue('es-419-food-2-pictures');
+    expect(screen.getByRole('option', { name: /Travel level 5/ })).toHaveValue('es-419-travel-5-pictures');
     expect(document.querySelectorAll('.word-text[lang="es-419"]')).toHaveLength(Math.min(24, spanish.items.length));
     expect(fetch).not.toHaveBeenCalled();
     fireEvent.input(screen.getByLabelText('Search words'), { target: { value: 'Coffee' } });

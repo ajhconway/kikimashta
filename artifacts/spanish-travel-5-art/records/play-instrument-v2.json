@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-play-instrument",
+  "slug": "play-instrument",
+  "version": 2,
+  "path": "originals/play-instrument-v2.png",
+  "sha256": "ff5444e6b6fa3bc96005272ad1fb8df303613c301ed523ee7dddf70d293aa685",
+  "promptSha256": "c74d23e7701bf71096fe1139e02fb350df4cf34d6852a832de62f52988d51c5a",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-db86a04c-2b90-40da-a51a-3406b5d3208f.png",
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+      "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+      "role": "human-illustration-style-only"
+    }
+  ]
+}

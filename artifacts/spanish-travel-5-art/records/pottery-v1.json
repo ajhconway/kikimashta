@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-pottery",
+  "slug": "pottery",
+  "version": 1,
+  "path": "originals/pottery-v1.png",
+  "sha256": "7534f5c2ed0373af39eacc1b94064d2950293a02619b15f507d983a8b5a6d46f",
+  "promptSha256": "bd3620ce5c7f58bca084005c886fb4cd1246a8d29eef3c07fc23adb88c9106ed",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-0d71fed4-3f4f-42ba-a25c-89cdb7bbd4f1.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-mural",
+  "slug": "mural",
+  "version": 1,
+  "path": "originals/mural-v1.png",
+  "sha256": "8af15c7a866228ef0a76839bc9f53ad1fa94eb9fd2eb62ca07d3e45e2d40a54a",
+  "promptSha256": "b60ed397be9a9673882def41daa6955f55b40d884a688b4a925eff73efc07d8e",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d349552c-77a7-44d6-a76f-e44dc3f0e306.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

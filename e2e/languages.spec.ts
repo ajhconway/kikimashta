@@ -23,6 +23,7 @@ test('remembers learning language and independent pack choices across reloads', 
   await page.getByRole('checkbox', { name: 'Travel level 2 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 3 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Travel level 4 · Pictures', exact: true }).uncheck();
+  await page.getByRole('checkbox', { name: 'Travel level 5 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   await page.getByRole('checkbox', { name: 'Food level 1 · Pictures', exact: true }).uncheck();
   await page.getByRole('checkbox', { name: 'Food level 2 · Pictures', exact: true }).uncheck();
@@ -50,7 +51,7 @@ import spanishFood2 from '../content/es-419-food-2.json' with { type: 'json' };
 
 test('Spanish lesson uses its selected voice and saves an isolated answer after reload', async ({ page }) => {
   await page.goto('./vocabulary/?language=es-419&pack=es-419-travel-1-pictures');
-  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures', 'Food level 2 · Pictures']) {
+  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Travel level 5 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures', 'Food level 2 · Pictures']) {
     await page.getByRole('checkbox', { name, exact: true }).uncheck();
   }
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
@@ -158,7 +159,7 @@ test('Food library and practice share Travel progress and stay scoped after relo
   await page.goto('vocabulary/?language=es-419&pack=es-419-food-1-pictures');
   await expect(page.locator('#results-status')).toContainText('36 cards');
   await page.getByRole('checkbox', { name: 'Food level 2 · Pictures', exact: true }).uncheck();
-  for (const level of [1, 2, 3, 4]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
+  for (const level of [1, 2, 3, 4, 5]) await page.getByRole('checkbox', { name: `Travel level ${level} · Pictures`, exact: true }).uncheck();
   await page.getByRole('checkbox', { name: /Basic Spanish level 1/ }).uncheck();
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
   for (const checkbox of await voices.getByRole('checkbox').all()) if (await checkbox.getAttribute('value') !== 'juan') await checkbox.uncheck();
@@ -197,7 +198,7 @@ test('Food library and practice share Travel progress and stay scoped after relo
   })).toBe(true);
   await page.getByLabel('Search words').fill('');
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('202 cards');
+  await expect(page.locator('#results-status')).toContainText('238 cards');
   await expect(page.getByRole('checkbox', { name: 'Food level 1 · Pictures', exact: true })).toBeChecked();
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
@@ -246,7 +247,7 @@ test('Food2 shares glass progress and its current picture across packs, with nat
   });
   await page.goto('vocabulary/?language=es-419&pack=es-419-food-2-pictures');
   await expect(page.locator('#results-status')).toContainText('36 cards');
-  for (const name of ['Travel level 1 · Pictures', 'Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures']) {
+  for (const name of ['Travel level 1 · Pictures', 'Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Travel level 5 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures']) {
     await page.getByRole('checkbox', { name, exact: true }).uncheck();
   }
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });
@@ -283,7 +284,7 @@ test('Food2 shares glass progress and its current picture across packs, with nat
   })).toBe(true);
   await page.getByLabel('Search words').fill('');
   await page.getByLabel('Card pack').selectOption('all');
-  await expect(page.locator('#results-status')).toContainText('202 cards');
+  await expect(page.locator('#results-status')).toContainText('238 cards');
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   await page.getByRole('button', { name: /^start/i }).click();

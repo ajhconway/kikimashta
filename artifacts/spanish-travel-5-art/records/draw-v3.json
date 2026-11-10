@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-draw",
+  "slug": "draw",
+  "version": 3,
+  "path": "originals/draw-v3.png",
+  "sha256": "abe98929bb46a4bc9a074f6751179caa678b5064424d8163cd024b96eccbc46e",
+  "promptSha256": "86a7d99e3febe68195cc5c0e5aededb06e3147f5bcdbc77867f71d0c77c0181c",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8b2d2a54-abf8-4395-8960-0622f9ed8c9c.png",
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/draw-v2.png",
+      "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
+      "role": "edit-target"
+    }
+  ]
+}

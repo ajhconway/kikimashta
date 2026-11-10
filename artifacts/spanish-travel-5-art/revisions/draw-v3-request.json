@@ -1,0 +1,22 @@
+{
+  "issue": 243,
+  "version": 3,
+  "ownerFeedback": "dibujar: the flower is upside down",
+  "baseManifestSha256": "4a4f9f00e4abc7dda58480abb38a543d62d4bf438024bf684a9b63c6e765cbb4",
+  "request": {
+    "id": "es-419-travel-draw",
+    "slug": "draw",
+    "version": 3,
+    "prompt": "Use case: precise-object-edit\nEdit target: the supplied illustration of an adult man drawing a flower at a desk. Change ONLY the orientation of the flower drawing on the white paper. Rotate the whole drawn flower by 180 degrees WITHIN THE PLANE OF THE PAPER so it is upright FOR THE MAN drawing it, rather than upright for us viewing the picture. The flower blossom must be on the far side of the paper FROM THE MAN: toward US, toward the FRONT/lower edge of the desk. The bottom of the stem and the leaves must be toward the MAN, near the BACK/upper edge of the paper nearest his torso. This is a flower seen upside-down by us but upright by the artist. Keep the entire outline flower inside the sheet; no extra flower. Adjust only the tiny pencil-contact area if needed so his pencil still touches the drawing naturally. Preserve the man, face, hair, clothing, body, hands, pencil, desk, chair, paper position and perspective, existing deep-purple outline style, colors, framing and transparent background exactly. No other changes. No text, labels, background or shadows. Genuine transparent alpha outside the illustration.",
+    "transparent_background": true,
+    "references": [
+      {
+        "path": "artifacts/spanish-travel-5-art/originals/draw-v2.png",
+        "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
+        "role": "edit-target"
+      }
+    ]
+  },
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false
+}

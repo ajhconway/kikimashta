@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-violin",
+  "slug": "violin",
+  "version": 1,
+  "path": "originals/violin-v1.png",
+  "sha256": "bae835286b1bb8b37ca8fbee0def05277bf3d0717e80d07e1a69e6e0752f8a43",
+  "promptSha256": "d240a169b330d07c618f5efcbff4f0a18b8acf7d6ac656661df736f314dd214b",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ed2c5b6b-3244-4cad-9441-2a6dedd30597.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

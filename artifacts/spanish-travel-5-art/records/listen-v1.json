@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-listen",
+  "slug": "listen",
+  "version": 1,
+  "path": "originals/listen-v1.png",
+  "sha256": "d8a04fb57d74f6d659aa6e21d3e45a0c6f719fc7d0c93cdd9ad85a6f4fbfd181",
+  "promptSha256": "b4526be6f20e2e367605fea7d2febd9fd3780334302c00e410d7b80a17aa65b8",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-95b9289e-6a3b-4563-9bef-c20bb9d36601.png",
+  "references": [
+    {
+      "path": "public/brand/kikimashta-cat-v1.png",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "role": "character-identity-and-style"
+    }
+  ]
+}

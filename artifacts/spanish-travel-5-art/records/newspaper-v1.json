@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-newspaper",
+  "slug": "newspaper",
+  "version": 1,
+  "path": "originals/newspaper-v1.png",
+  "sha256": "69f1c42d80c2c23e550222c333f178d262d39195f114a179315bd75fd6ff732f",
+  "promptSha256": "945cac3ab1db023e8eeecc1b4245a7bbf2e07545fdb52a088027b74836c8f392",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a98a315c-9a8a-460a-85bf-b439fa1813c2.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "review": "human-verbs-v2",
+  "results": [
+    {
+      "engine": "chromium",
+      "cards": 36,
+      "images": 36,
+      "overflow": false,
+      "storage": 0,
+      "fullResolutionLinks": 36,
+      "accentSearch": true,
+      "actionFilter": 6,
+      "pageErrors": []
+    },
+    {
+      "engine": "mobile-webkit",
+      "cards": 36,
+      "images": 36,
+      "overflow": false,
+      "storage": 0,
+      "fullResolutionLinks": 36,
+      "accentSearch": true,
+      "actionFilter": 6,
+      "pageErrors": []
+    }
+  ],
+  "realIPhoneTest": false
+}

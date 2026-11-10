@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 
 // The ordinary banks registered in src/core/languages.ts; foundation contexts are separate.
-export const spanishBankFiles = ['es-419.json', 'es-419-travel-2.json', 'es-419-travel-3.json', 'es-419-travel-4.json', 'es-419-basic-1.json', 'es-419-food-1.json', 'es-419-food-2.json'];
+export const spanishBankFiles = ['es-419.json', 'es-419-travel-2.json', 'es-419-travel-3.json', 'es-419-travel-4.json', 'es-419-travel-5.json', 'es-419-basic-1.json', 'es-419-food-1.json', 'es-419-food-2.json'];
 export function spanishNeighborBank(root) {
   const read = path => JSON.parse(readFileSync(resolve(root, path), 'utf8'));
   const exclusions = read('content/spanish-picture-exclusions.json');

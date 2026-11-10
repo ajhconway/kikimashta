@@ -1,0 +1,96 @@
+{
+  "issue": 243,
+  "version": 2,
+  "ownerFeedback": "I think the verbs with Kiku are too cute. Let's have them with people.",
+  "baseDraftSha256": "2ebd18782feba9fdd90909ace098002a893fe4b8e2d69f8ab05e7c8e6e319745",
+  "baseRequestsSha256": "fae5335dfde8148683f0296cd374d8b25d83b3e4759f4ce7830049c049e670e7",
+  "baseManifestSha256": "b484b2b133991a2f5af4a55a926182b765694bc407b5ee704a10c860421fbc64",
+  "requests": [
+    {
+      "id": "es-419-travel-dance",
+      "slug": "dance",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: bailar — To dance.\nPrimary request: One adult woman dancing, shown full length in casual trousers and a simple teal blouse. A natural fluid dance pose with one bent knee, weight on her other foot and two arms held comfortably away from her body. A couple of small curved movement marks. No instruments, headphones or music stage. Clearly dancing rather than walking or exercising.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-sing",
+      "slug": "sing",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: cantar — To sing.\nPrimary request: One adult man singing into a handheld microphone, clearly open singing mouth and an engaged but understated expression. Frame from knees up, two arms and hands anatomically clear, microphone near his mouth. Two small musical notes nearby. No headphones or instrument.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "slug": "play-instrument",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: tocar — To play an instrument.\nPrimary request: One adult woman seated on a simple stool actively playing a full-size six-string acoustic guitar. Her fretting hand wraps the neck while the other hand strums over the sound hole. Plausible natural arm and wrist anatomy. The guitar has six strings and six tuning pegs. No singing, microphone or headphones.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-listen",
+      "slug": "listen",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: escuchar — To listen.\nPrimary request: One adult man listening attentively to music through over-ear purple headphones, shown from waist up with one hand gently touching one earcup. Relaxed neutral face with a slight smile, head tilted a little toward the music. Two small musical notes nearby. No instrument or microphone.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-paint",
+      "slug": "paint",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: pintar — To paint.\nPrimary request: One adult woman in casual clothes seated on a small stool beside a wooden easel, actively applying colored paint with a thin paintbrush to a canvas. A simple partly painted colorful flower is visible. Her brush hand clearly reaches the canvas, other hand holds a small palette. Correct two-arm/two-hand anatomy. Full compact artist/easel scene, no pencil.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-draw",
+      "slug": "draw",
+      "version": 2,
+      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: dibujar — To draw.\nPrimary request: One adult man seated at a small desk, viewed from a clear three-quarter angle so the paper and pencil are visible. He actively draws a simple uncolored flower outline on a flat white sheet using a graphite pencil held naturally in one hand, the other hand steadying the paper. Casual clothing, correct two-arm/two-hand anatomy. No easel, paint, brush or palette.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "role": "human-illustration-style-only"
+        }
+      ]
+    }
+  ],
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false
+}

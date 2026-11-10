@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-festival-mask",
+  "slug": "festival-mask",
+  "version": 1,
+  "path": "originals/festival-mask-v1.png",
+  "sha256": "a23e159b323fba107f6df624e5e06514ddf2c20e853e4c2803e016702acdb50a",
+  "promptSha256": "9fe09c859fc197a4a65b1224344b9979c3b22d7a7c2cdbc848b9feb212fba62d",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-950d012c-0bc7-45fe-af61-daf7689ee9fe.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "issue": 243,
+  "pack": "es-419-travel-5",
+  "language": "es-419",
+  "status": "generation-authorized-listening-pending",
+  "ownerMessage": "Looks good, let's proceed to audio generation.",
+  "scope": "Generate288new canonical word recordings for36words/eight approvedregional voices. Preserve acceptedartwork. Ownerlisteningacceptance andruntimeactivation followseparately.",
+  "draft": "content/spanish-travel-5/draft.json",
+  "draftSha256": "2ebd18782feba9fdd90909ace098002a893fe4b8e2d69f8ab05e7c8e6e319745",
+  "artworkAcceptance": "content/spanish-travel-5/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "f2cbabfdd2f16e9d51c98f1b7ad7638edb7717a1277656cdb17ab2d72756db84",
+  "configuration": "content/spanish-travel-5/audio-config.json",
+  "configurationSha256": "357a0c8a24b1ef53a25b35a2afb50ae58f3896400cbcd4c126264704018e51e2",
+  "voiceRegistry": "content/es-419-voices.json",
+  "voiceRegistrySha256": "816ef3b8a252352c7e2082354bd792f4c7df9b576726a8fd11cac07558501aa7",
+  "items": [
+    {
+      "id": "es-419-travel-theater",
+      "text": "teatro",
+      "spelling": "teatro",
+      "meaning": "Theater"
+    },
+    {
+      "id": "es-419-travel-gallery",
+      "text": "galería",
+      "spelling": "galería",
+      "meaning": "Art gallery"
+    },
+    {
+      "id": "es-419-travel-bookstore",
+      "text": "librería",
+      "spelling": "librería",
+      "meaning": "Bookstore"
+    },
+    {
+      "id": "es-419-travel-concert",
+      "text": "concierto",
+      "spelling": "concierto",
+      "meaning": "Concert"
+    },
+    {
+      "id": "es-419-travel-festival",
+      "text": "festival",
+      "spelling": "festival",
+      "meaning": "Festival"
+    },
+    {
+      "id": "es-419-travel-stage",
+      "text": "escenario",
+      "spelling": "escenario",
+      "meaning": "Stage"
+    },
+    {
+      "id": "es-419-travel-painting",
+      "text": "cuadro",
+      "spelling": "cuadro",
+      "meaning": "Framed painting"
+    },
+    {
+      "id": "es-419-travel-sculpture",
+      "text": "escultura",
+      "spelling": "escultura",
+      "meaning": "Sculpture"
+    },
+    {
+      "id": "es-419-travel-mural",
+      "text": "mural",
+      "spelling": "mural",
+      "meaning": "Mural"
+    },
+    {
+      "id": "es-419-travel-paintbrush",
+      "text": "pincel",
+      "spelling": "pincel",
+      "meaning": "Paintbrush"
+    },
+    {
+      "id": "es-419-travel-palette",
+      "text": "paleta",
+      "spelling": "paleta",
+      "meaning": "Painter’s palette"
+    },
+    {
+      "id": "es-419-travel-easel",
+      "text": "caballete",
+      "spelling": "caballete",
+      "meaning": "Easel"
+    },
+    {
+      "id": "es-419-travel-guitar",
+      "text": "guitarra",
+      "spelling": "guitarra",
+      "meaning": "Guitar"
+    },
+    {
+      "id": "es-419-travel-piano",
+      "text": "piano",
+      "spelling": "piano",
+      "meaning": "Piano"
+    },
+    {
+      "id": "es-419-travel-violin",
+      "text": "violín",
+      "spelling": "violín",
+      "meaning": "Violin"
+    },
+    {
+      "id": "es-419-travel-trumpet",
+      "text": "trompeta",
+      "spelling": "trompeta",
+      "meaning": "Trumpet"
+    },
+    {
+      "id": "es-419-travel-drum",
+      "text": "tambor",
+      "spelling": "tambor",
+      "meaning": "Drum"
+    },
+    {
+      "id": "es-419-travel-flute",
+      "text": "flauta",
+      "spelling": "flauta",
+      "meaning": "Flute"
+    },
+    {
+      "id": "es-419-travel-microphone",
+      "text": "micrófono",
+      "spelling": "micrófono",
+      "meaning": "Microphone"
+    },
+    {
+      "id": "es-419-travel-speaker",
+      "text": "altavoz",
+      "spelling": "altavoz",
+      "meaning": "Loudspeaker"
+    },
+    {
+      "id": "es-419-travel-headphones",
+      "text": "audífonos",
+      "spelling": "audífonos",
+      "meaning": "Headphones"
+    },
+    {
+      "id": "es-419-travel-record",
+      "text": "disco",
+      "spelling": "disco",
+      "meaning": "Vinyl record"
+    },
+    {
+      "id": "es-419-travel-pottery",
+      "text": "cerámica",
+      "spelling": "cerámica",
+      "meaning": "Pottery"
+    },
+    {
+      "id": "es-419-travel-pinata",
+      "text": "piñata",
+      "spelling": "piñata",
+      "meaning": "Piñata"
+    },
+    {
+      "id": "es-419-travel-festival-mask",
+      "text": "máscara",
+      "spelling": "máscara",
+      "meaning": "Festival mask"
+    },
+    {
+      "id": "es-419-travel-basket",
+      "text": "canasta",
+      "spelling": "canasta",
+      "meaning": "Woven basket"
+    },
+    {
+      "id": "es-419-travel-book",
+      "text": "libro",
+      "spelling": "libro",
+      "meaning": "Book"
+    },
+    {
+      "id": "es-419-travel-magazine",
+      "text": "revista",
+      "spelling": "revista",
+      "meaning": "Magazine"
+    },
+    {
+      "id": "es-419-travel-newspaper",
+      "text": "periódico",
+      "spelling": "periódico",
+      "meaning": "Newspaper"
+    },
+    {
+      "id": "es-419-travel-postcard",
+      "text": "postal",
+      "spelling": "postal",
+      "meaning": "Postcard"
+    },
+    {
+      "id": "es-419-travel-dance",
+      "text": "bailar",
+      "spelling": "bailar",
+      "meaning": "To dance"
+    },
+    {
+      "id": "es-419-travel-sing",
+      "text": "cantar",
+      "spelling": "cantar",
+      "meaning": "To sing"
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "text": "tocar",
+      "spelling": "tocar",
+      "meaning": "To play an instrument"
+    },
+    {
+      "id": "es-419-travel-listen",
+      "text": "escuchar",
+      "spelling": "escuchar",
+      "meaning": "To listen"
+    },
+    {
+      "id": "es-419-travel-paint",
+      "text": "pintar",
+      "spelling": "pintar",
+      "meaning": "To paint"
+    },
+    {
+      "id": "es-419-travel-draw",
+      "text": "dibujar",
+      "spelling": "dibujar",
+      "meaning": "To draw"
+    }
+  ],
+  "itemsSha256": "c8e9b32791b50b8a6264df903294fa8ed15d27133d08ada67ff86cfbee5b6732",
+  "voicesSha256": "83b8d1b02cf531e7405b26c82967d5e99c340e25c57f6b944a2836b9841131bb",
+  "expectedClips": 288,
+  "characters": 2000,
+  "budget": 2400,
+  "runtimeActivationAuthorized": false
+}

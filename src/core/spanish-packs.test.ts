@@ -33,8 +33,8 @@ const digest = (path: string) => createHash('sha256').update(readFileSync(path))
 
 describe('Spanish picture packs', () => {
   it('keeps separate pack membership and restores existing device choices', () => {
-    expect(spanish.pool.items).toHaveLength(202);
-    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(202);
+    expect(spanish.pool.items).toHaveLength(238);
+    expect(new Set(spanish.pool.items.map(item => item.id)).size).toBe(238);
     for (const bank of [first, second, third, fourth] as WordBank[]) {
       const cards = selectedPracticeCards(spanish.pool.items, [`${bank.id}-pictures`], spanish.packs);
       expect(cards.map(card => card.item.id)).toEqual(bank.items.map(item => item.id));
