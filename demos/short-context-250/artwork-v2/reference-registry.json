@@ -1,0 +1,65 @@
+{
+  "note": "Exact reference bytes; roles and approval/candidate status remain in each generation request.",
+  "references": [
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/demos/short-context-250/artwork-v2/references/cat-style-reference.png",
+      "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/0e48ebcb9346-cat-style-reference.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-01/03-person.png",
+      "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/b26b917cda8d-03-person.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/picture-art-229/ja-v-27d5744f36a2-v1.png",
+      "sha256": "be94a349440a96a1b900f60299d1cdc290f18bc39a49206249804b69bbeedfb0",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/be94a349440a-ja-v-27d5744f36a2-v1.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-07/77-baby.png",
+      "sha256": "0d480cbb091150a3258e6d96f6718f1a253b5a3eb937130994873eb21c8c1e7f",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/0d480cbb0911-77-baby.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-09/111-cat-v3.png",
+      "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/c77f70fac7f8-111-cat-v3.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/picture-art-229/ja-v-d0c8497457bd-v4.png",
+      "sha256": "5148c79db3c3e7cf75b01f3d1a15655c354ca76b351498e5e05de42261c072d2",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/5148c79db3c3-ja-v-d0c8497457bd-v4.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-01/01-apple.png",
+      "sha256": "693c57b57b06ea4beba0ab8dbd61e6efbf6279a5cd3b6d2c371f21867a82b919",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/693c57b57b06-01-apple.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-01/05-plate.png",
+      "sha256": "d9c5d78f567cf19bf2a1df53092eee7fec43b27bffa48a4781d53595f080cc6f",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/d9c5d78f567c-05-plate.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/public/images/approved/es-419-travel-orange-4933341a8eae.png",
+      "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/4933341a8eae-es-419-travel-orange-4933341a8eae.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/public/images/approved/es-419-travel-egg-d1e13dace439.png",
+      "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/d1e13dace439-es-419-travel-egg-d1e13dace439.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/spanish-food-2-art/originals/cookie-v1.png",
+      "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/c8d21225f4aa-cookie-v1.png"
+    },
+    {
+      "sourcePath": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+      "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9",
+      "preservedPath": "demos/short-context-250/artwork-v2/references/3704df0cd14b-ja-v-6109638dac53-v1.png"
+    }
+  ]
+}

@@ -57,6 +57,24 @@ afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks();
 });
 
 describe('contextual listening and feedback', () => {
+  it('plays a sentence-only picture prompt without requiring or scheduling a question clip', async () => {
+    const question = structuredClone(fixture({ format: 'picture' }));
+    question.contextual!.question.prompt = prompt('', '');
+    question.contextual!.recording!.questionSrcs = {};
+    const finished = vi.fn();
+    const { container } = render(<ContextualQuiz question={question} feedback={null} onChoose={onChoose} onContinue={onContinue} onAudioFinished={finished}/>);
+    const audio = container.querySelector('audio')!;
+    expect(audio).toHaveAttribute('src', '/audio/sentence.mp3');
+    expect(screen.getByRole('button', { name: /^Replay sentence$/ })).toBeEnabled();
+    expect(screen.getByRole('button', { name: /^Choose picture 1/ })).toBeEnabled();
+    fireEvent.ended(audio);
+    await advance(1000);
+    expect(finished).toHaveBeenCalledTimes(1);
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+    await click(screen.getByRole('button', { name: /^Replay sentence$/ }));
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(2);
+  });
+
   it('introduces a foundation meaning and example before listening, but skips it on later reviews', async () => {
     const question = structuredClone(fixture()); question.introduction = true;
     question.target.language = 'es-419';

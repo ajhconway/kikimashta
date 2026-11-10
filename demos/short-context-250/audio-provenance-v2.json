@@ -1,0 +1,121 @@
+{
+  "voice": "macOS Kyoko (ja_JP)",
+  "rate": 155,
+  "sentenceQuestionPauseMs": 650,
+  "pauseOwner": "production ContextualQuiz component",
+  "targetLufs": -22,
+  "clips": [
+    {
+      "id": "hitotsu",
+      "part": "sentence",
+      "text": "さらにりんごがひとつあります。",
+      "path": "public/audio/hitotsu-sentence.mp3",
+      "durationSeconds": 2.24839
+    },
+    {
+      "id": "chikaraippai",
+      "part": "sentence",
+      "text": "ちからいっぱいおしてください。",
+      "path": "public/audio/chikaraippai-sentence.mp3",
+      "durationSeconds": 2.074376
+    },
+    {
+      "id": "chikaraippai",
+      "part": "question",
+      "text": "どうおしますか。",
+      "path": "public/audio/chikaraippai-question.mp3",
+      "durationSeconds": 1.179637
+    },
+    {
+      "id": "ue",
+      "part": "sentence",
+      "text": "ねこははこのうえにいます。",
+      "path": "public/audio/ue-sentence.mp3",
+      "durationSeconds": 2.03932
+    },
+    {
+      "id": "ue",
+      "part": "question",
+      "text": "はこはどこですか。",
+      "path": "public/audio/ue-question.mp3",
+      "durationSeconds": 1.451519
+    },
+    {
+      "id": "yama",
+      "part": "sentence",
+      "text": "いえはやまにあります。",
+      "path": "public/audio/yama-sentence.mp3",
+      "durationSeconds": 1.520408
+    },
+    {
+      "id": "yama",
+      "part": "question",
+      "text": "いえはどこですか。",
+      "path": "public/audio/yama-question.mp3",
+      "durationSeconds": 1.369206
+    },
+    {
+      "id": "otona",
+      "part": "sentence",
+      "text": "おとながふたりいます。",
+      "path": "public/audio/otona-sentence.mp3",
+      "durationSeconds": 1.520136
+    },
+    {
+      "id": "otona",
+      "part": "question",
+      "text": "だれがいますか。",
+      "path": "public/audio/otona-question.mp3",
+      "durationSeconds": 1.221497
+    },
+    {
+      "id": "nanatsu",
+      "part": "sentence",
+      "text": "みかんがななつあります。",
+      "path": "public/audio/nanatsu-sentence.mp3",
+      "durationSeconds": 1.841723
+    },
+    {
+      "id": "kawa",
+      "part": "sentence",
+      "text": "かわにいきます。",
+      "path": "public/audio/kawa-sentence.mp3",
+      "durationSeconds": 1.260726
+    },
+    {
+      "id": "kawa",
+      "part": "question",
+      "text": "どこにいきますか。",
+      "path": "public/audio/kawa-question.mp3",
+      "durationSeconds": 1.372472
+    },
+    {
+      "id": "taishita",
+      "part": "sentence",
+      "text": "たいしたけがではありません。",
+      "path": "public/audio/taishita-sentence.mp3",
+      "durationSeconds": 1.986712
+    },
+    {
+      "id": "taishita",
+      "part": "question",
+      "text": "どんなけがですか。",
+      "path": "public/audio/taishita-question.mp3",
+      "durationSeconds": 1.302948
+    },
+    {
+      "id": "kokonotsu",
+      "part": "sentence",
+      "text": "たまごがここのつあります。",
+      "path": "public/audio/kokonotsu-sentence.mp3",
+      "durationSeconds": 2.137642
+    },
+    {
+      "id": "futatsu",
+      "part": "sentence",
+      "text": "クッキーがふたつあります。",
+      "path": "public/audio/futatsu-sentence.mp3",
+      "durationSeconds": 2.038617
+    }
+  ]
+}

@@ -1,12 +1,13 @@
-# Demo verification — 2026-11-10
+# Revision 2 verification — 2026-11-10
 
-Scope: the standalone demo for issue #250, including the requested production styling match. The production app and its learning bank are not modified.
+The first recreated interface/SVG demo was rejected by the owner. This revision uses the actual app components and stylesheet, with reference-based generated picture cards. Earlier implementation and test evidence remain in Git history; this is the current result.
 
-- `npm run check`: passed the four JavaScript syntax checks.
-- `npm test`: 4 tests passed; first-answer immutability, score/skips, all ten targets/four distinct pictures/audio files, and exact pictured quantities.
-- `npm run test:browser`: 9 browser cases passed, 1 intentionally skipped (physical number-key input on the mobile project). Chromium desktop and WebKit iPhone-size projects both passed complete sessions, transcript/translation controls, navigation, first-answer feedback, restart, real MP3 decode/playback at reduced speed, interrupted audio, failed audio/retry, all forty pictures, and horizontal-overflow checks. The desktop keyboard case passed.
-- Visually inspected desktop and phone-size screenshots after applying the app styling.
-- The reused cat and icon exactly match the current repository Git blobs (`f2052e6daad9c377baa3462f0a858a7ae73549d6` and `678172584bef985483d8f41676ec14312e62133c`). The source stylesheet inspected matches `be7b8f991ac7ce18ec03a505f7517331e57abe3c`.
-- Ten generated MP3 clips have valid probed durations from 1.84 to 4.14 seconds. Browser tests exercised actual audio playback; native pronunciation listening acceptance remains for the owner.
+- Repository `npm run check`: passed with this worktree's own locked dependency installation. Lint, types, 523 Vitest tests, 384 Node script tests, 52 Python audio tests, 27 artwork tests, artwork/neighbor validation, and production build passed. The earlier run using another worktree's shared dependencies is superseded by this successful isolated run.
+- Demo `npm run check`: TypeScript and all forty source/image/audio bindings passed.
+- Demo `npm run build`: passed using imports of the real production quiz, feedback, shared header/progress, themes, and stylesheet.
+- Demo `npm run test:browser`: 4 passed, zero skips/retries, in 46.3 seconds. Chromium desktop and mobile WebKit each completed all ten prompts with real sentence-only/paired MP3 playback, decoded all forty raster pictures, checked feedback and the Japanese/English dialog, finished/restarted, and exercised failed audio/replay plus the artwork/source gallery. No horizontal overflow or page script errors were observed.
+- Desktop and mobile screenshots of the actual quiz were inspected. The mobile view uses the production close control, mascot/speaker placement, card sizing, feedback area, and progress beads.
+- All 36 newly selected PNGs are square RGBA with both transparent and opaque pixels. Exact quantities, actions, relations, and 145px four-background rendering were inspected. Four exact approved whole images are reused unchanged. All 39 generated outputs are preserved, including three rejected framing/glow candidates. Prompts, reference roles/hashes, generation paths, selection/version records, original bytes and hashes remain under `artwork-v2/`.
+- Independent read-only review found no material bugs in the production-component integration, header/progress extraction, sentence-only playback, or storage isolation.
 
-This is a buildless HTML/JavaScript demo. No lint, TypeScript, or separate production build command is configured. The served `dist/` files are the deployment output. The real iPhone has not been tested by the agent.
+New pictures and short prompts remain pending owner review. The actual iPhone and pronunciation acceptance have not been performed by the agent. No production content approval, practice-bank activation, progress migration, or merge authorization is inferred.

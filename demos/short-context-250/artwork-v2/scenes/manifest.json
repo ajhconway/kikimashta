@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "issue": 250,
+  "revision": 2,
+  "generator": "built-in image_gen",
+  "selectedCount": 8,
+  "preservedOriginalCount": 9,
+  "review": "pending-owner-review",
+  "assets": [
+    {
+      "id": "box-below",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-below-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-f9d00b33-8f2d-47eb-8daf-a0af277f70af.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/box-below-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 is the approved CAT IDENTITY reference, not a scene to copy: one compact golden-yellow Kiku cat WITHOUT headphones or any headband, pink inner ears, closed smiling eyes, violet nose/mouth and whiskers, round forepaws and curled tail. Use exactly ONE such cat and ONE closed kraft-cardboard box, a compact medium cuboid seen gently three-quarter from front, brown-gold sides, a pale cream packing-tape strip across its closed lid and down the front. Keep the box a normal closed package, no opening, flaps or handles. Violet exterior contours and subtle soft shading. No attention marks needed.\nPrimary scene: The BOX is BELOW the CAT: the golden cat sits physically ON the closed box lid, both paws resting on the lid and body supported by it. Cat centered above, box centered below. Exactly one cat, one box, no gap between paws and lid. Show the complete box and cat with no cropping.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-09/111-cat-v3.png",
+          "role": "approved literal-cat identity without headphones",
+          "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "52c00e6a3d65246fa590db6e96314e2f7e9f1975f33f89d47b7c0e1c8e79addc",
+      "visualReview": {
+        "fullSize": "One approved-identity bare-ear Kiku cat sits physically on the lid of one closed kraft box. Paws contact lid; box is below cat. No extra objects.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.545208,
+        "fullyOpaqueFraction": 0.001407,
+        "meaningfulBBoxAlphaAbove16": [
+          204,
+          64,
+          992,
+          1203
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "box-above",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-above-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-47a98137-3227-4fe3-9516-cc4f999d697b.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/box-above-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 is the approved CAT IDENTITY reference, not a scene to copy: one compact golden-yellow Kiku cat WITHOUT headphones or any headband, pink inner ears, closed smiling eyes, violet nose/mouth and whiskers, round forepaws and curled tail. Use exactly ONE such cat and ONE closed kraft-cardboard box, a compact medium cuboid seen gently three-quarter from front, brown-gold sides, a pale cream packing-tape strip across its closed lid and down the front. Keep the box a normal closed package, no opening, flaps or handles. Violet exterior contours and subtle soft shading. No attention marks needed.\nPrimary scene: The BOX is ABOVE the CAT: the closed box is centered in the UPPER half and the cat centered in the LOWER half, with a generous clean transparent gap between the bottom of box and cat ears. This is a simple educational spatial diagram of two separate objects; no objects touch or overlap. No added furniture, support, floor line or arrows.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-09/111-cat-v3.png",
+          "role": "approved literal-cat identity without headphones",
+          "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "42aab105677befe3f8000a36f78aa288ea0dcc83af747c1ade827fb6e65de899",
+      "visualReview": {
+        "fullSize": "One closed kraft box is centered above one bare-ear Kiku cat, with a clear transparent gap. This is a separated-object educational spatial diagram, without invented support/furniture.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.685667,
+        "fullyOpaqueFraction": 0.001425,
+        "meaningfulBBoxAlphaAbove16": [
+          276,
+          85,
+          912,
+          1176
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "box-left",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-left-v2.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-f599c525-acb1-4aa8-831b-952f7953cf0c.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/box-left-v2.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied box-left-of-cat illustration. REQUIRED OUTPUT CANVAS: SQUARE 1:1, not the current wide landscape rectangle. Keep the same two subjects, the same box on the viewer LEFT and cat on the viewer RIGHT, the same level baseline, the same compact golden cat WITHOUT headphones, kraft box with cream tape, dark-violet outlines and gentle cartoon shading. Fit both whole subjects comfortably into the middle 75% of a square canvas with generous TRANSPARENT margin above, below and to both sides. Remove ALL of the broad violet mist/glow/shadow around the silhouettes and between objects. Clean crisp antialiased cutout edges only; outside each object silhouette must be genuinely transparent alpha zero. Subject interiors, box faces, cat fur, eyes, paws and tape must be fully opaque. Do not lighten the dark-violet contour itself. Do not add anything. No backdrop, halo, vignette, cast shadow, ground, arrows, captions, labels, logos, numbers or frame. Preserve the clear gap and LEFT relation. This is one square answer-card illustration.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/demos/short-context-250/artwork-v2/scenes/originals/box-left-v1.png",
+          "role": "edit target, same-batch candidate; not an approved reference"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "inspection": {
+        "semantic": "Correct box-left / cat-right relation; literal cat identity preserved.",
+        "issues": [
+          "Generated landscape1536x1024 instead of square.",
+          "Broad violet low-alpha glow/halo around both subjects violates transparent-background policy."
+        ],
+        "nextRevision": "Built-in edit to square transparent canvas with clean alpha edges; retain objects and relation."
+      },
+      "version": 2,
+      "reason": "Reject v1 landscape canvas and broad violet alpha halo",
+      "versions": [
+        {
+          "id": "box-left",
+          "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-left-v1.png",
+          "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-76ff5de0-50e4-4968-a205-7c49e070409c.png",
+          "selectedPath": null,
+          "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 is the approved CAT IDENTITY reference, not a scene to copy: one compact golden-yellow Kiku cat WITHOUT headphones or any headband, pink inner ears, closed smiling eyes, violet nose/mouth and whiskers, round forepaws and curled tail. Use exactly ONE such cat and ONE closed kraft-cardboard box, a compact medium cuboid seen gently three-quarter from front, brown-gold sides, a pale cream packing-tape strip across its closed lid and down the front. Keep the box a normal closed package, no opening, flaps or handles. Violet exterior contours and subtle soft shading. No attention marks needed.\nPrimary scene: The BOX is LEFT of the CAT: place the closed box on the VIEWER LEFT and the cat on the VIEWER RIGHT. Both are fully visible side by side with a clear transparent gap, baseline aligned, same visual scale as other pair cards. No touching or overlap.",
+          "references": [
+            {
+              "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "style-only",
+              "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+            },
+            {
+              "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-09/111-cat-v3.png",
+              "role": "approved literal-cat identity without headphones",
+              "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f"
+            }
+          ],
+          "review": "rejected: non-square and broad violet alpha halo",
+          "status": "rejected-pending-revision",
+          "inspection": {
+            "semantic": "Correct box-left / cat-right relation; literal cat identity preserved.",
+            "issues": [
+              "Generated landscape1536x1024 instead of square.",
+              "Broad violet low-alpha glow/halo around both subjects violates transparent-background policy."
+            ],
+            "nextRevision": "Built-in edit to square transparent canvas with clean alpha edges; retain objects and relation."
+          },
+          "sha256": "48f8787e39fea5be42c8e31a3e00b45da3e74af6a641876d50accb33b1c0428c"
+        }
+      ],
+      "sha256": "eed092ae594b8a369caf213dc6467dd59dd71aa8fc1006078feda1c00b8706f5",
+      "visualReview": {
+        "fullSize": "One closed kraft box on viewer left, one bare-ear Kiku cat on viewer right; matching baseline and clear separation. v2 removes the v1 violet glow and restores square canvas.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.722433,
+        "fullyOpaqueFraction": 0.001295,
+        "meaningfulBBoxAlphaAbove16": [
+          79,
+          355,
+          1151,
+          903
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "box-right",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-right-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-8f60496d-5f25-4f4e-b5fe-fa1b8a09373c.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/box-right-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 is the approved CAT IDENTITY reference, not a scene to copy: one compact golden-yellow Kiku cat WITHOUT headphones or any headband, pink inner ears, closed smiling eyes, violet nose/mouth and whiskers, round forepaws and curled tail. Use exactly ONE such cat and ONE closed kraft-cardboard box, a compact medium cuboid seen gently three-quarter from front, brown-gold sides, a pale cream packing-tape strip across its closed lid and down the front. Keep the box a normal closed package, no opening, flaps or handles. Violet exterior contours and subtle soft shading. No attention marks needed.\nPrimary scene: The BOX is RIGHT of the CAT: place the cat on the VIEWER LEFT and the closed box on the VIEWER RIGHT. Both are fully visible side by side with a clear transparent gap, baseline aligned, same visual scale as other pair cards. No touching or overlap.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/batch-09/111-cat-v3.png",
+          "role": "approved literal-cat identity without headphones",
+          "sha256": "c77f70fac7f81d1549cdf5f466dd80b8d7f187e758c17be5aaf64d10f7e72b9f"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "4517b9400d34166f6573921fb1f0da094e7b6c3cf52e17a9ba5fd71a75f5744e",
+      "visualReview": {
+        "fullSize": "One bare-ear Kiku cat on viewer left and one closed kraft box on viewer right; matching baseline and clear separation.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.679305,
+        "fullyOpaqueFraction": 0.00147,
+        "meaningfulBBoxAlphaAbove16": [
+          38,
+          327,
+          1197,
+          964
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "house-mountain",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/house-mountain-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-828d39b4-8e39-49c8-8a05-963ba1189f06.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/house-mountain-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 supplies ONLY the simple HOUSE object proportions and broad contour treatment. Do NOT include its people, ghost figure, open cutaway door, attention rays or foreground person. Use the SAME ordinary compact warm-golden cottage design in all location cards: lavender pitched roof, pale-gold walls, one centered small wooden door, one simple blue window on each side. Whole house fully visible, no cutaway, no writing. One small simple location scene silhouette only; outer canvas remains transparent. Do not add sky rectangles, enclosing ovals or decorative borders.\nPrimary scene: The house sits on a clearly elevated GREEN MOUNTAIN HILLSIDE, with one large recognizable mountain peak rising immediately behind it and a smaller distant peak. House visibly rests on the sloping mountain terrain, not merely beside a tiny mountain icon. Broad simple mountain contours and restrained greenery; no river, beach or city buildings.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+          "role": "approved house form reference only; omit people and action",
+          "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "a00f9c269739ab733d1534a9634c35d47802ad13575b8172ee1853e27f665833",
+      "visualReview": {
+        "fullSize": "One lavender-roof golden cottage on a green sloping mountain scene with two recognizable mountain peaks; no people or unrelated reference cues.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.472105,
+        "fullyOpaqueFraction": 0.0009,
+        "meaningfulBBoxAlphaAbove16": [
+          57,
+          169,
+          1199,
+          1168
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "house-river",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/house-river-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-a823f3b9-7522-4b3c-b86d-231657add6a7.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/house-river-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 supplies ONLY the simple HOUSE object proportions and broad contour treatment. Do NOT include its people, ghost figure, open cutaway door, attention rays or foreground person. Use the SAME ordinary compact warm-golden cottage design in all location cards: lavender pitched roof, pale-gold walls, one centered small wooden door, one simple blue window on each side. Whole house fully visible, no cutaway, no writing. One small simple location scene silhouette only; outer canvas remains transparent. Do not add sky rectangles, enclosing ovals or decorative borders.\nPrimary scene: The house sits BESIDE a clearly visible winding BLUE RIVER through a small green bank silhouette. The narrow river winds from rear to front across the scene; clear water channel with distinct green banks, not an ocean or lake. House fully on dry bank. No mountain, sea, boats or city buildings.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+          "role": "approved house form reference only; omit people and action",
+          "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "7776766597ac00557da8c004e1cbc072704cea4f7a821eb64ab1e99f4efcf3f2",
+      "visualReview": {
+        "fullSize": "One matching lavender-roof golden cottage beside a clearly narrow winding blue river between green banks; no mountains or sea.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.572341,
+        "fullyOpaqueFraction": 0.000573,
+        "meaningfulBBoxAlphaAbove16": [
+          33,
+          201,
+          1210,
+          1088
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "house-sea",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/house-sea-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-e992132d-e109-4acf-b29d-0912ea4a030e.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/house-sea-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 supplies ONLY the simple HOUSE object proportions and broad contour treatment. Do NOT include its people, ghost figure, open cutaway door, attention rays or foreground person. Use the SAME ordinary compact warm-golden cottage design in all location cards: lavender pitched roof, pale-gold walls, one centered small wooden door, one simple blue window on each side. Whole house fully visible, no cutaway, no writing. One small simple location scene silhouette only; outer canvas remains transparent. Do not add sky rectangles, enclosing ovals or decorative borders.\nPrimary scene: The house sits BY THE SEA on a small sandy coastal patch. Show a broad calm blue SEA expanse alongside it with two simple soft wave lines, a curved shoreline and pale sand. Sea should read as open water, not a narrow river. No mountains, boats, palms, sun, other buildings or sky backdrop.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+          "role": "approved house form reference only; omit people and action",
+          "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "5b56a73cce5fe1b4e9d5e1958e4f519ac9ca074c88659461359591633af0da27",
+      "visualReview": {
+        "fullSize": "One matching lavender-roof golden cottage beside a broad blue sea shape, pale sandy shoreline and simple white wave lines. Opaque white wave and shoreline details preserved.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.618005,
+        "fullyOpaqueFraction": 0.000586,
+        "meaningfulBBoxAlphaAbove16": [
+          21,
+          259,
+          1233,
+          1085
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    },
+    {
+      "id": "house-city",
+      "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/house-city-v1.png",
+      "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-8694bba1-ab9e-4159-a8c6-1c9d80dba025.png",
+      "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/house-city-v1.png",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 supplies ONLY the simple HOUSE object proportions and broad contour treatment. Do NOT include its people, ghost figure, open cutaway door, attention rays or foreground person. Use the SAME ordinary compact warm-golden cottage design in all location cards: lavender pitched roof, pale-gold walls, one centered small wooden door, one simple blue window on each side. Whole house fully visible, no cutaway, no writing. One small simple location scene silhouette only; outer canvas remains transparent. Do not add sky rectangles, enclosing ovals or decorative borders.\nPrimary scene: The house sits IN A CITY: the same small golden cottage stands between two taller broad simple city buildings and a short plain gray sidewalk. Three buildings total: cottage plus two urban blocks with a few large windows. Make urban context unmistakable at145px; no cars, people, street signs, river, mountain or decorative skyline.",
+      "references": [
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "style-only",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+          "role": "approved house form reference only; omit people and action",
+          "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9"
+        }
+      ],
+      "review": "pending-owner-review",
+      "status": "inspected-pending-owner-review",
+      "sha256": "3bab27f0fb538e50113973aca98312e0d080d3e2a6b33d609b65b041ad69a387",
+      "visualReview": {
+        "fullSize": "One matching lavender-roof golden cottage between two taller broad urban buildings and one short sidewalk; exactly three buildings, no added people or signs.",
+        "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+      },
+      "alpha": {
+        "mode": "RGBA",
+        "size": [
+          1254,
+          1254
+        ],
+        "extrema": [
+          0,
+          255
+        ],
+        "fullyTransparentFraction": 0.432283,
+        "fullyOpaqueFraction": 0.001117,
+        "meaningfulBBoxAlphaAbove16": [
+          25,
+          205,
+          1229,
+          1117
+        ],
+        "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+      }
+    }
+  ],
+  "verification": {
+    "selectedAssets": 8,
+    "preservedOriginals": 9,
+    "allSelectedSquareRgba": true,
+    "alphaExtremaAllSelected": [
+      0,
+      255
+    ],
+    "browserImagesDecoded": 32,
+    "cardPreviewSizePx": 145,
+    "backgrounds": [
+      "#ffffff",
+      "#fff2c5",
+      "#fff0f5",
+      "#f6efff"
+    ],
+    "screenshot": "demos/short-context-250/artwork-v2/scenes/review-145px.png",
+    "ownerApproval": "pending"
+  }
+}

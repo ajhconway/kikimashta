@@ -1,0 +1,46 @@
+{
+  "id": "house-sea",
+  "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/house-sea-v1.png",
+  "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-e992132d-e109-4acf-b29d-0912ea4a030e.png",
+  "selectedPath": "demos/short-context-250/artwork-v2/scenes/originals/house-sea-v1.png",
+  "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nCreate ONE finished square 1:1 answer-card illustration, never a grid or sheet. Genuinely transparent outer background with alpha; preserve opaque white subject pixels. All silhouettes fully visible with generous margins, scene fills about75%of square, legible at145px. No captions, words, numerals, arrows, labels, badges, frame, card border, checkerboard, shadow or unrelated props. Reference image1 is STYLE ONLY: no logo, lettering, headphones, blossoms, Fuji, torii or enclosing scene from that reference. Use smooth substantial forms, clean bold dark-violet outlines and restrained soft dimensional cartoon shading, not flat SVG or sketch art.\nReference image2 supplies ONLY the simple HOUSE object proportions and broad contour treatment. Do NOT include its people, ghost figure, open cutaway door, attention rays or foreground person. Use the SAME ordinary compact warm-golden cottage design in all location cards: lavender pitched roof, pale-gold walls, one centered small wooden door, one simple blue window on each side. Whole house fully visible, no cutaway, no writing. One small simple location scene silhouette only; outer canvas remains transparent. Do not add sky rectangles, enclosing ovals or decorative borders.\nPrimary scene: The house sits BY THE SEA on a small sandy coastal patch. Show a broad calm blue SEA expanse alongside it with two simple soft wave lines, a curved shoreline and pale sand. Sea should read as open water, not a narrow river. No mountains, boats, palms, sun, other buildings or sky backdrop.",
+  "references": [
+    {
+      "path": "/private/tmp/kikimashta-250-review/artifacts/card-regeneration/references/cat-style-reference.png",
+      "role": "style-only",
+      "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+    },
+    {
+      "path": "/private/tmp/kikimashta-250-review/artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+      "role": "approved house form reference only; omit people and action",
+      "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9"
+    }
+  ],
+  "review": "pending-owner-review",
+  "status": "inspected-pending-owner-review",
+  "sha256": "5b56a73cce5fe1b4e9d5e1958e4f519ac9ca074c88659461359591633af0da27",
+  "visualReview": {
+    "fullSize": "One matching lavender-roof golden cottage beside a broad blue sea shape, pale sandy shoreline and simple white wave lines. Opaque white wave and shoreline details preserved.",
+    "at145pxFourBackgrounds": "Passed manual browser screenshot inspection on white #ffffff, yellow #fff2c5, pink #fff0f5 and lavender #f6efff; subject and relationship remain readable, no rectangular backdrops or visible edge halos."
+  },
+  "alpha": {
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "extrema": [
+      0,
+      255
+    ],
+    "fullyTransparentFraction": 0.618005,
+    "fullyOpaqueFraction": 0.000586,
+    "meaningfulBBoxAlphaAbove16": [
+      21,
+      259,
+      1233,
+      1085
+    ],
+    "note": "Original generated bytes preserved. Low-alpha generation edge noise is measured, not painted over or silently removed."
+  }
+}
