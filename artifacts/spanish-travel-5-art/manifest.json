@@ -15,6 +15,8 @@
     "artifacts/spanish-travel-5-art/requests.json": "fae5335dfde8148683f0296cd374d8b25d83b3e4759f4ce7830049c049e670e7",
     "artifacts/spanish-travel-5-art/revisions/people-v2-requests.json": "46905673b11a46a39d7aeab93644457d51111a9493888a574b2640d1e4e9aa9e",
     "artifacts/spanish-travel-5-art/revisions/before-people-v2-manifest.json": "b484b2b133991a2f5af4a55a926182b765694bc407b5ee704a10c860421fbc64",
+    "artifacts/spanish-travel-5-art/revisions/draw-v3-request.json": "12854bcfe82e516183049ad4564b7e4bd65ae564f6788d1e4d21c846f16db3bc",
+    "artifacts/spanish-travel-5-art/revisions/before-draw-v3-manifest.json": "4a4f9f00e4abc7dda58480abb38a543d62d4bf438024bf684a9b63c6e765cbb4",
     "artifacts/spanish-travel-5-art/reuse-review.json": "6094cfab6db8907be293004aa9e6596c9b75654e56cd686da9fab8f52e40d551",
     "artifacts/spanish-travel-5-art/records/theater-v1.json": "e071ba7a39f3998847d3597402e4ee906667528e5720173388089cac695057cb",
     "artifacts/spanish-travel-5-art/records/gallery-v1.json": "b6373a61ce09a6556018b886430418b3b500218f48891850b06e40f7d9571b49",
@@ -49,10 +51,10 @@
     "artifacts/spanish-travel-5-art/records/play-instrument-v2.json": "a17c6c0e9eed627e69a772e34dfe2c7a0e3b1deb5d5cea7bec0ccd93e9449dcb",
     "artifacts/spanish-travel-5-art/records/listen-v2.json": "d857d869a4f6cc9837e82a8eff3bf90dedd7a484c4c69e4a86f72020f7352909",
     "artifacts/spanish-travel-5-art/records/paint-v2.json": "c3cc2688527198ef3ffecc16cd97c411c600b8f8fb73ce807dc2b221119fe3cb",
-    "artifacts/spanish-travel-5-art/records/draw-v2.json": "70fc231a510bb81659bf05092a2d08f10e40a0c61212ff432217001082505a95"
+    "artifacts/spanish-travel-5-art/records/draw-v3.json": "54ab7e0e2ec4f59ba149a97b4bd12485acc8c4ae836df5fb2045ab60fcb08aa6"
   },
   "selection": "artifacts/spanish-travel-5-art/selection.json",
-  "selectionSha256": "aeae279d4fdc4cad2c31b296578752e9e7afb072524c633025a36609b60601b8",
+  "selectionSha256": "b1e8590958c4d1eb4c09a075bffcc53877c0ae5e9ffdccd00006683fbe62f90e",
   "items": [
     {
       "id": "es-419-travel-theater",
@@ -785,18 +787,18 @@
       "meaning": "To draw",
       "group": "actions",
       "source": "generated",
-      "version": 2,
-      "path": "artifacts/spanish-travel-5-art/originals/draw-v2.png",
-      "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
-      "bytes": 1061563,
-      "record": "artifacts/spanish-travel-5-art/records/draw-v2.json",
+      "version": 3,
+      "path": "artifacts/spanish-travel-5-art/originals/draw-v3.png",
+      "sha256": "abe98929bb46a4bc9a074f6751179caa678b5064424d8163cd024b96eccbc46e",
+      "bytes": 1053246,
+      "record": "artifacts/spanish-travel-5-art/records/draw-v3.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 879676,
-        "opaquePixels": 2233
+        "transparentPixels": 872728,
+        "opaquePixels": 1683
       }
     }
   ]

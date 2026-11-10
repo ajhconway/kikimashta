@@ -733,18 +733,18 @@
       "meaning": "To draw",
       "group": "actions",
       "source": "generated",
-      "version": 2,
-      "path": "artifacts/spanish-travel-5-art/originals/draw-v2.png",
-      "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
-      "bytes": 1061563,
-      "record": "artifacts/spanish-travel-5-art/records/draw-v2.json",
+      "version": 3,
+      "path": "artifacts/spanish-travel-5-art/originals/draw-v3.png",
+      "sha256": "abe98929bb46a4bc9a074f6751179caa678b5064424d8163cd024b96eccbc46e",
+      "bytes": 1053246,
+      "record": "artifacts/spanish-travel-5-art/records/draw-v3.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 879676,
-        "opaquePixels": 2233
+        "transparentPixels": 872728,
+        "opaquePixels": 1683
       }
     }
   ]

@@ -166,7 +166,7 @@ const search=document.querySelector('#search'),group=document.querySelector('#gr
 function filter(){const query=clean(search.value.trim());let count=0;for(const card of cards){card.hidden=!(clean(card.dataset.search).includes(query)&&(!group.value||card.dataset.group===group.value));if(!card.hidden)count++;}document.querySelector('#count').textContent=`${count} of ${cards.length} words`;}
 search.addEventListener('input',filter);group.addEventListener('change',filter);
 </script></html>
-'''.replace('ROUND', 'Revised artwork round' if any(row.get('version') == 2 for row in selected) else 'First artwork round').replace('GENERATED', str(counts['generated'])).replace('REUSED', str(counts['reuse'])).replace('PENDING', str(counts['pending'])).replace('OPTIONS', options).replace('CARDS', ''.join(cards))
+'''.replace('ROUND', 'Revised artwork round' if any(row.get('version', 1) >= 2 for row in selected) else 'First artwork round').replace('GENERATED', str(counts['generated'])).replace('REUSED', str(counts['reuse'])).replace('PENDING', str(counts['pending'])).replace('OPTIONS', options).replace('CARDS', ''.join(cards))
 
 
 def build(complete=False):
@@ -222,6 +222,32 @@ def build(complete=False):
         for reference in request['references']:
             verified(reference['path'], reference['sha256'])
     requests.update(replacements)
+    draw_amendment_path = ART / 'revisions/draw-v3-request.json'
+    draw_snapshot_path = ART / 'revisions/before-draw-v3-manifest.json'
+    draw_snapshot_items = {}
+    draw_id = 'es-419-travel-draw'
+    if safe_path(draw_amendment_path, exists=False).exists():
+        correction = load(draw_amendment_path)
+        request = correction.get('request', {})
+        if (not replacements or correction.get('issue') != 243 or correction.get('version') != 3
+                or not correction.get('ownerFeedback') or request.get('id') != draw_id
+                or request.get('slug') != 'draw' or request.get('version') != 3
+                or draw_id not in replacements):
+            raise ValueError('Drawing amendment may replace only draw at version 3 after the people revision')
+        draw_snapshot = json.loads(verified(draw_snapshot_path, correction.get('baseManifestSha256', '')))
+        draw_snapshot_items = unique(draw_snapshot['items'], 'id')
+        if (set(draw_snapshot_items) != set(items) or draw_snapshot.get('pack') != draft['id']
+                or draw_snapshot.get('pendingImages') != 0
+                or draw_snapshot_items[draw_id].get('version') != 2
+                or any(draw_snapshot['inputHashes'].get(str(path)) != sha(safe_path(path).read_bytes())
+                       for path in (draft_path, ART / 'requests.json', amendment_path, snapshot_path))):
+            raise ValueError('Drawing amendment requires the complete people-v2 manifest')
+        for historical_path, historical_hash in draw_snapshot['inputHashes'].items():
+            verified(historical_path, historical_hash)
+        for previous in draw_snapshot_items.values():
+            verified(previous['path'], previous['sha256'])
+        requests[draw_id] = request
+        amendment_inputs.extend((draw_amendment_path, draw_snapshot_path))
     for item_id, request in requests.items():
         if request['slug'] != items[item_id]['slug'] or request.get('transparent_background') is not True or not request['prompt'].strip():
             raise ValueError('Request identity/transparency mismatch')
@@ -237,7 +263,7 @@ def build(complete=False):
             raw = verified(entry['path'], entry['sha256'])
             selected.append({**base, 'source': 'reuse', 'path': entry['path'], 'sha256': entry['sha256'], 'bytes': len(raw), 'image': png_info(raw)})
             continue
-        version = 2 if item_id in replacements else 1
+        version = requests[item_id].get('version', 1)
         record_path = ART / 'records' / f'{item["slug"]}-v{version}.json'
         if not safe_path(record_path, exists=False).exists():
             selected.append({**base, 'source': 'pending', 'version': version})
@@ -265,6 +291,12 @@ def build(complete=False):
                 previous = snapshot_items[row['id']]
                 if any(row.get(key) != previous.get(key) for key in ('source', 'path', 'sha256', 'version')):
                     raise ValueError(f'Unaffected artwork changed during action amendment: {row["id"]}')
+    if draw_snapshot_items:
+        for row in selected:
+            if row['id'] != draw_id:
+                previous = draw_snapshot_items[row['id']]
+                if any(row.get(key) != previous.get(key) for key in ('source', 'path', 'sha256', 'version')):
+                    raise ValueError(f'Unaffected artwork changed during drawing amendment: {row["id"]}')
     pending = sum(row['source'] == 'pending' for row in selected)
     if complete and pending:
         raise ValueError(f'{pending} pictures remain pending')

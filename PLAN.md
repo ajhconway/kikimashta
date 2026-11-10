@@ -471,3 +471,5 @@ The human action revision is complete: six selected v2 people scenes, with a cle
 ### Travel5 drawing orientation correction (#243)
 
 The owner identified the dibujar flower as upside down. Edit only that picture: rotate the flower within the paper plane so it is upright from the drawing person’s viewpoint (blossom toward the viewer/front desk edge, stem base toward the person). Preserve the complete v2 round and its provenance; select a separate draw-v3 original/record bound by an exact amendment and current manifest snapshot. Keep the other35 selected pictures unchanged. No audio or runtime activation.
+
+The drawing correction is complete at draw-v3: flower upright for the artist, other35selected image hashes unchanged. Exact source/alpha/history checks and configured checks pass, including17gallery regressions; independent visual/provenance review finds no blockers. Await owner artwork feedback.

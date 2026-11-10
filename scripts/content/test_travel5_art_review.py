@@ -66,7 +66,7 @@ class ReviewProvenanceTests(unittest.TestCase):
         self.draft = {'id': 'es-419-travel-5', 'groups': [{'id': 'art', 'title': 'Art'}, {'id': 'actions', 'title': 'Actions'}], 'items': []}
         requests = []
         for number in range(36):
-            slug = f'word-{number}'
+            slug = 'draw' if number == 5 else f'word-{number}'
             item_id = f'es-419-travel-{slug}'
             self.draft['items'].append({'id': item_id, 'slug': slug, 'text': f'palabra {number}', 'meaning': f'Word {number}', 'group': 'actions' if number < 6 else 'art'})
             if number == 35:
@@ -191,6 +191,84 @@ class ReviewProvenanceTests(unittest.TestCase):
         record['originalToolPath'] = '/changed-history.png'
         self.put_json(record_path, record)
         with self.assertRaisesRegex(ValueError, 'Hash mismatch'):
+            self.build()
+
+    def prepare_drawing_amendment(self):
+        self.prepare_people_amendment()
+        self.build()
+        snapshot_path = review.ART / 'revisions/before-draw-v3-manifest.json'
+        self.put(snapshot_path, (self.root / review.ART / 'manifest.json').read_bytes())
+        original = self.read_json(review.ART / 'revisions/people-v2-requests.json')['requests'][5]
+        request = {**original, 'version': 3, 'prompt': 'Keep the flower drawing upright for the artist.'}
+        record = self.read_json(review.ART / 'records/draw-v2.json')
+        record.update(version=3, path='originals/draw-v3.png', promptSha256=review.sha(request['prompt'].encode()))
+        self.put_json(review.ART / 'records/draw-v3.json', record)
+        self.put(review.ART / record['path'], self.picture)
+        correction = {'issue': 243, 'version': 3, 'ownerFeedback': 'The flower drawing is upside-down.',
+                      'baseManifestSha256': review.sha((self.root / snapshot_path).read_bytes()), 'request': request}
+        self.put_json(review.ART / 'revisions/draw-v3-request.json', correction)
+        return correction
+
+    def test_drawing_revision_selects_only_v3_and_binds_complete_people_history(self):
+        self.prepare_drawing_amendment()
+        snapshot = self.read_json(review.ART / 'revisions/before-draw-v3-manifest.json')
+        historical = {path: (self.root / path).read_bytes() for path in snapshot['inputHashes']}
+        self.build()
+        manifest = self.read_json(review.ART / 'manifest.json')
+        previous = {row['id']: row for row in snapshot['items']}
+        for row in manifest['items']:
+            if row['slug'] == 'draw':
+                self.assertEqual(row['version'], 3)
+                self.assertTrue(row['path'].endswith('draw-v3.png'))
+            else:
+                self.assertEqual(row, previous[row['id']])
+        for path, raw in historical.items():
+            self.assertEqual((self.root / path).read_bytes(), raw)
+        for name in ('draw-v3-request.json', 'before-draw-v3-manifest.json'):
+            path = review.ART / 'revisions' / name
+            self.assertEqual(manifest['inputHashes'][str(path)], review.sha((self.root / path).read_bytes()))
+        self.assertEqual((self.root / review.ART / 'review.html').read_text().count('New artwork · v3'), 1)
+
+    def test_drawing_revision_rejects_scope_binding_and_people_history_tampering(self):
+        original = self.prepare_drawing_amendment()
+        path = review.ART / 'revisions/draw-v3-request.json'
+        cases = ({**original, 'request': {**original['request'], 'id': 'es-419-travel-word-0', 'slug': 'word-0'}},
+                 {**original, 'request': {**original['request'], 'version': 2}},
+                 {**original, 'baseManifestSha256': '0' * 64})
+        for changed in cases:
+            with self.subTest(changed=changed):
+                self.put_json(path, changed)
+                with self.assertRaises(ValueError):
+                    self.build()
+        self.put_json(path, original)
+        record_path = review.ART / 'records/draw-v2.json'
+        record = self.read_json(record_path)
+        record['originalToolPath'] = '/rewritten-people-original.png'
+        self.put_json(record_path, record)
+        with self.assertRaisesRegex(ValueError, 'Hash mismatch'):
+            self.build()
+
+    def test_drawing_revision_requires_new_record_and_locks_other_35_selections(self):
+        amendment = self.prepare_drawing_amendment()
+        before = self.output_bytes()
+        record_path = review.ART / 'records/draw-v3.json'
+        record_bytes = (self.root / record_path).read_bytes()
+        (self.root / record_path).unlink()
+        with self.assertRaisesRegex(ValueError, '1 pictures remain pending'):
+            self.build()
+        self.assertEqual(self.output_bytes(), before)
+        with contextlib.redirect_stdout(io.StringIO()):
+            review.build(complete=False)
+        selected = self.read_json(review.ART / 'selection.json')['items'][5]
+        self.assertEqual((selected['source'], selected['version']), ('pending', 3))
+        self.put(record_path, record_bytes)
+        snapshot_path = review.ART / 'revisions/before-draw-v3-manifest.json'
+        snapshot = self.read_json(snapshot_path)
+        snapshot['items'][0]['version'] = 1
+        self.put_json(snapshot_path, snapshot)
+        amendment['baseManifestSha256'] = review.sha((self.root / snapshot_path).read_bytes())
+        self.put_json(review.ART / 'revisions/draw-v3-request.json', amendment)
+        with self.assertRaisesRegex(ValueError, 'Unaffected artwork changed during drawing amendment'):
             self.build()
 
     def test_complete_review_binds_every_source_and_preserves_rectangular_picture(self):

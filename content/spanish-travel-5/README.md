@@ -27,3 +27,7 @@ The people use natural adult proportions and understated faces within the establ
 The current gallery now presents the full pack with these six replacements for owner review. These revisions do not accept other artwork, authorize speech, register the pack or change production media. The previous first-round verification is historical; current revision verification follows separately.
 
 The complete human revision passes source/alpha/provenance checks, all configured app checks and targeted gallery verification in Chromium/mobile WebKit. All six selected action paths are v2, and the other 30 hashes match the first review exactly. Fourteen focused amendment/gallery regressions and independent read-only review pass. Current evidence is in `artwork-verification.json` and `browser-verification.json`; owner feedback is pending.
+
+## Drawing orientation correction
+
+The owner identified the flower on the dibujar paper as upside down. The selected `draw-v3.png` rotates the flower within the sheet so it is upright from the artist's viewpoint: the blossom is toward the viewer/front desk edge and the stem base is toward the artist. The person, desk and general scene are retained. A [separate exact edit request](../../artifacts/spanish-travel-5-art/revisions/draw-v3-request.json) binds the previous complete manifest and `draw-v2.png` edit target. Preserve both earlier drawing versions and all prior provenance; the other 35 selected pictures remain unchanged. The current set has five human v2 scenes and the corrected drawing at v3, awaiting owner feedback.
