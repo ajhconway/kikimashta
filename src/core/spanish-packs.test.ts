@@ -27,6 +27,8 @@ import { learningLanguages } from './languages';
 import { cardKey } from './cards';
 import { initialPackIds, selectedPracticeCards } from './packs';
 import { createQuestions, validateBank } from './session';
+import { selectWordChoices, spanishWordNeighbors } from './distractors';
+import { masteryLevels } from './mastery';
 
 const spanish = learningLanguages.find(language => language.id === 'es-419')!;
 const digest = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
@@ -223,27 +225,40 @@ describe('Spanish picture packs', () => {
     }
   });
 
-  const scopes = Array.from({ length: (1 << spanish.packs.length) - 1 }, (_, index) => ({
-    packIds: spanish.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id),
-  }));
-  it.each(scopes)('keeps ambiguous pictures out of choices for $packIds', ({ packIds }) => {
-      const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
-      expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
-      const pool = cards.map(card => card.item);
-      for (let seed = 1; seed <= 3; seed++) {
-        let state = seed;
-        const random = () => ((state = (state * 1664525 + 1013904223) >>> 0) / 4294967296);
-        const questions = createQuestions(cards, pool, random);
-        expect(questions).toHaveLength(cards.length);
-        for (const question of questions) {
-          expect(question.choices).toHaveLength(4);
-          expect(question.choices.map(choice => choice.id)).toContain(question.target.id);
-          expect(question.choices.every(choice => pool.some(item => item.id === choice.id))).toBe(true);
-          for (const other of question.choices.filter(choice => choice.id !== question.target.id)) {
-            expect(question.target.pictureDistractorExclusions ?? []).not.toContain(other.id);
-            expect(other.pictureDistractorExclusions ?? []).not.toContain(question.target.id);
-          }
+  // Individual packs, the complete union, and both shared-word boundaries cover
+  // scope/deduplication without the exponentially growing power set. Synthetic
+  // selector tests own mastery quotas, source fallbacks and random-window rules.
+  const scopes = [
+    ...spanish.packs.map(pack => ({ packIds: [pack.id] })),
+    { packIds: spanish.packs.map(pack => pack.id) },
+    { packIds: ['es-419-travel-1-pictures', 'es-419-food-1-pictures'] },
+    { packIds: ['es-419-travel-2-pictures', 'es-419-food-2-pictures'] },
+  ];
+  it.each(scopes)('keeps scoped choices distinct and unambiguous for $packIds', ({ packIds }) => {
+    const cards = selectedPracticeCards(spanish.pool.items, packIds, spanish.packs);
+    expect(new Set(cards.map(cardKey)).size).toBe(cards.length);
+    const pool = cards.map(card => card.item);
+    const sampledLevels = [masteryLevels[0], masteryLevels[4], masteryLevels[7]];
+    let state = 1;
+    const random = () => ((state = (state * 1664525 + 1013904223) >>> 0) / 4294967296);
+    for (const [index, card] of cards.entries()) {
+      const result = selectWordChoices(card, pool, sampledLevels[index % sampledLevels.length]!, random);
+      expect(result.choices).toHaveLength(4);
+      expect(new Set(result.choices.map(item => item.id)).size).toBe(4);
+      expect(result.choices.map(item => item.id)).toContain(card.item.id);
+      expect(result.choices.every(item => pool.includes(item))).toBe(true);
+      const targetSound = spanishWordNeighbors.pronunciationKey?.(card.item.id);
+      expect(targetSound).toBeTruthy();
+      for (const [position, first] of result.choices.entries()) {
+        for (const second of result.choices.slice(position + 1)) {
+          expect(spanishWordNeighbors.pictureExcluded(first.id, second.id)).toBe(false);
+          expect(first.pictureDistractorExclusions ?? []).not.toContain(second.id);
+          expect(second.pictureDistractorExclusions ?? []).not.toContain(first.id);
+          expect(first.image.src).not.toBe(second.image.src);
         }
       }
+      expect(result.choices.filter(item => item.id !== card.item.id).every(item =>
+        spanishWordNeighbors.pronunciationKey?.(item.id) !== targetSound)).toBe(true);
+    }
   });
 });

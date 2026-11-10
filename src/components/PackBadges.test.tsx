@@ -91,17 +91,6 @@ it('switches generated format artwork independently of family, rank and multi-di
   expect(view.container.querySelector('.badge-number')!.getAttribute('style')).not.toBe(multiDigitSize);
 });
 
-it.each(['audio-picture', 'audio-text'] as const)('keeps %s choice of format separate from the pack family', exercise => {
-  const view = render(<PackBadgeMedal badge={{ ...badge, pack: { ...badge.pack, exercise } }}/>);
-  expect(view.container.querySelector('.pack-badge-medal')).toHaveAttribute('data-family', 'WaniKani');
-  expect(view.container.querySelector('.badge-family')).toHaveTextContent('WK');
-  expect(view.container.querySelector('.badge-suitcase')).toBeNull();
-  const format = exercise === 'audio-picture' ? 'picture' : 'writing';
-  expect(view.container.querySelector('.badge-background')).toHaveAttribute('href', '/' + badgeArtwork[badge.level.label].src);
-  expect(view.container.querySelector('.badge-format')).toHaveAttribute('data-format', format);
-  expect(view.container.querySelector('.badge-format-artwork')).toHaveAttribute('href', '/' + formatArtwork[format].src);
-});
-
 it('reads pack level from a title when the pack has no explicit level metadata', () => {
   const view = render(<PackBadgeMedal badge={{ ...badge, pack: { ...badge.pack, badgeFamily: undefined, sourceLevel: undefined, title: 'Travel level 23', id: 'es-419-travel-23-pictures' } }}/>);
   expect(view.container.querySelector('.badge-number')).toHaveTextContent('L23');

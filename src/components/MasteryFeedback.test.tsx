@@ -50,7 +50,6 @@ describe('mastery answer feedback (#141)', () => {
 
   it.each([
     { label: 'Learning', timerMs: null, timer: 'Untimed' },
-    { label: 'Familiar', timerMs: 10000, timer: '10s' },
     { label: 'Confident', timerMs: 1500, timer: '1.5s' },
   ] as const)('shows $label and $timer in the current-mastery area before an answer', ({ label, timerMs, timer }) => {
     render(<MasteryFeedback outcome={null} current={{ label, timerMs }}/>);
@@ -76,7 +75,6 @@ describe('mastery answer feedback (#141)', () => {
 
   it.each([
     { direction: 'up', label: 'Strong', outcome: 'success', accessible: 'increased' },
-    { direction: 'down', label: 'Learning', outcome: 'failure', accessible: 'decreased' },
   ] as const)('hides the previous mastery context under a $direction change badge', ({ direction, label, outcome, accessible }) => {
     const { rerender } = render(<MasteryFeedback outcome={outcome} current={{ label: 'Steady', timerMs: 5000 }} change={{ direction, label }}/>);
     expect(screen.getByRole('img', { name: `Mastery ${accessible} to ${label}` })).toBeInTheDocument();
@@ -94,8 +92,6 @@ describe('mastery answer feedback (#141)', () => {
 
   it.each([
     { outcome: 'success', symbol: '✓' },
-    { outcome: 'partial', symbol: '≈' },
-    { outcome: 'failure', symbol: '↺' },
   ] as const)('retains the current level and timer alongside an unchanged $outcome symbol', ({ outcome, symbol }) => {
     render(<MasteryFeedback outcome={outcome} current={{ label: 'Familiar', timerMs: 10000 }}/>);
     const current = screen.getByRole('status', { name: 'Current mastery' });

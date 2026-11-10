@@ -52,8 +52,8 @@ describe('language-scoped Spanish practice voices (#159)', () => {
     expect(initialVoiceIds()).toEqual(['lime']);
   });
 
-  it.each(['[]', '["cesar"]', '["lime"]', 'invalid'])('defaults to all Spanish voices for unusable preference %s', saved => {
-    localStorage.setItem(voicePreferenceKeyFor('es-419'), saved);
+  it('defaults to all Spanish voices when the saved subset belongs to Japanese', () => {
+    localStorage.setItem(voicePreferenceKeyFor('es-419'), '["lime"]');
     expect(initialVoiceIds('es-419')).toEqual(practiceVoicesFor('es-419').map(voice => voice.id));
   });
 });

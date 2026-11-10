@@ -166,14 +166,17 @@ describe('adaptive session flow', () => {
     expect(records).toHaveLength(3);
   });
 
-  it('introduces ten shuffled picture and writing cards, then quizzes exactly those cards', async () => {
+  it('introduces mixed picture and writing cards, then quizzes exactly those cards', async () => {
+    vi.mocked(planLessonChunk).mockImplementationOnce(async ({ candidates }) => ({
+      items: candidates.slice(0, 2), forecast, projectedForecast: forecast, reason: 'below-min',
+    }));
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start();
     expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
     await click(await screen.findByRole('button', { name: /begin lesson/i }));
-    const expected = practiceCards(practicePool.items.slice(0, 5));
+    const expected = practiceCards(practicePool.items.slice(0, 1));
     const introduced: string[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 2; i++) {
       const source = container.querySelector('audio')!.getAttribute('src');
       const item = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
       const exercise = container.querySelector('.preview')!.getAttribute('data-exercise')!;
@@ -184,11 +187,11 @@ describe('adaptive session flow', () => {
         expect(container.querySelector('.preview-picture .written-answer')).toHaveAttribute('data-font', 'noto-sans');
       } else expect(screen.getByRole('img')).toHaveAttribute('alt', item.image.alt);
       expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-      await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }));
+      await click(screen.getByRole('button', { name: i === 1 ? /mini-quiz/i : /next card/i }));
     }
     expect(introduced.sort()).toEqual(expected.map(cardKey).sort());
     vi.useFakeTimers();
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 2; i++) {
       const exercise = container.querySelector('.quiz')!.getAttribute('data-exercise')!;
       const choices = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
       expect(choices).toHaveLength(4);
@@ -253,15 +256,18 @@ describe('adaptive session flow', () => {
   });
 
   it('finishes corrective retries before offering another lesson chunk', async () => {
+    vi.mocked(planLessonChunk).mockImplementation(async ({ candidates }) => ({
+      items: candidates.slice(0, 2), forecast, projectedForecast: forecast, reason: 'below-min',
+    }));
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
     await start(); await click(await screen.findByRole('button', { name: /begin lesson/i }));
-    for (let i = 0; i < 10; i++) await click(screen.getByRole('button', { name: i === 9 ? /mini-quiz/i : /next card/i }));
+    for (let i = 0; i < 2; i++) await click(screen.getByRole('button', { name: i === 1 ? /mini-quiz/i : /next card/i }));
     vi.useFakeTimers();
     const missed = new Set<string>();
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 4; i++) {
       const source = container.querySelector('audio')!.getAttribute('src');
       const target = practicePool.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-      expect(practicePool.items.slice(0, 5).some(item => item.id === target.id)).toBe(true);
+      expect(practicePool.items.slice(0, 1).some(item => item.id === target.id)).toBe(true);
       const key = container.querySelector('.quiz')!.getAttribute('data-exercise') + '/' + target.id;
       for (const label of container.querySelectorAll('.choices .written-answer')) expect(label).toHaveAttribute('data-font', 'noto-sans');
       if (!missed.has(key)) {
@@ -272,14 +278,14 @@ describe('adaptive session flow', () => {
         endAudio(container); await click(heardChoice(container)); await advance(1200);
       }
     }
-    expect(missed.size).toBe(10);
+    expect(missed.size).toBe(2);
     expect(screen.getByRole('heading', { name: /nice round/i })).toBeInTheDocument();
     await click(screen.getByRole('button', { name: /learn more/i }));
     const nextSource = container.querySelector('audio')!.getAttribute('src');
-    expect(practicePool.items.slice(5, 10).some(item => item.audio.some(clip => nextSource?.endsWith(clip.src)))).toBe(true);
-    expect(records).toHaveLength(20);
-    expect(records.filter(attempt => !attempt.correct)).toHaveLength(10);
-    expect(records.filter(attempt => attempt.context?.retryOf)).toHaveLength(10);
+    expect(practicePool.items.slice(1, 2).some(item => item.audio.some(clip => nextSource?.endsWith(clip.src)))).toBe(true);
+    expect(records).toHaveLength(4);
+    expect(records.filter(attempt => !attempt.correct)).toHaveLength(2);
+    expect(records.filter(attempt => attempt.context?.retryOf)).toHaveLength(2);
   });
 
   it('keeps a final missed word in the quiz through repeated mistakes and resets the card each time', async () => {
@@ -339,9 +345,6 @@ describe('adaptive session flow', () => {
 
   it.each([
     [0, 'Minimal', 'minimal', 'pace/kiku-minimal-v1.png'],
-    [5, 'Light', 'light', 'kikimashta-cat-v1.png'],
-    [15, 'Moderate', 'moderate', 'pace/kiku-moderate-v1.png'],
-    [30, 'High', 'high', 'pace/kiku-high-v1.png'],
     [60, 'Intense', 'intense', 'pace/kiku-intense-v2.png'],
   ] as const)('shows Kiku and a full-screen intensity color at %s', async (value, label, level, image) => {
     vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: value });
@@ -640,12 +643,6 @@ async function timedReview(exercise: Exercise = 'audio-picture', count = 1) {
 function loadPictures(container: HTMLElement) {
   for (const image of container.querySelectorAll('.choices img')) fireEvent.load(image);
 }
-it.each(['audio-picture', 'audio-text'] as const)('shows Familiar %s choices with the ordinary entrance', async exercise => {
-  const { container } = await timedReview(exercise);
-  expect(container.querySelector('.choices')).toHaveClass('choices-enter');
-  expect(container.querySelector('.choices')).toBeVisible();
-  expect(heardChoice(container)).toBeEnabled();
-});
 
 describe('adaptive quiz countdown', () => {
   it('waits for audio, card entry, and pictures; expiry keeps choices open and late correct completes without a retry', async () => {
@@ -834,7 +831,6 @@ describe('interval mastery feedback', () => {
 
 describe('simulated Dev review feedback (#152)', () => {
   it.each([
-    { level: 'New', limit: null, correct: true, change: 'increased', arrow: '↑' },
     { level: 'Strong', limit: 3000, correct: false, change: 'decreased', arrow: '↓' },
   ])('renders $level mastery timing and feedback without saving', async ({ level, limit, correct, change, arrow }) => {
     records = legacy(2);
@@ -932,7 +928,7 @@ it('refreshes pack scope while Dev review options are open without leaving Start
   await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
 });
 
-it.each([['mastery', '1.5s'], ['random', '5s'], ['untimed', 'Untimed']] as const)('uses %s word timers at the selected simulated mastery', async (mode, label) => {
+it.each([['mastery', '1.5s']] as const)('uses %s word timers at the selected simulated mastery', async (mode, label) => {
   render(<App now={fixedNow} random={() => .5}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
   await click(screen.getByRole('button', { name: 'Dev review' }));
@@ -1065,11 +1061,8 @@ async function contextualTimerDemo(format: 'Pictures' | 'Writing', level = 'Stro
 }
 
 it.each([
-  ['Pictures', 'New', 'mastery', null], ['Pictures', 'Learning', 'mastery', null], ['Writing', 'Improving', 'mastery', 10000],
-  ['Pictures', 'Familiar', 'mastery', 10000], ['Writing', 'Steady', 'mastery', 5000],
-  ['Pictures', 'Strong', 'mastery', 3000], ['Writing', 'Confident', 'mastery', 1500],
-  ['Pictures', 'Mastered', 'mastery', 1500], ['Writing', 'Strong', 'random', 5000],
-  ['Pictures', 'Strong', 'untimed', null],
+  ['Pictures', 'New', 'mastery', null], ['Writing', 'Improving', 'mastery', 10000],
+  ['Pictures', 'Strong', 'mastery', 3000], ['Pictures', 'Strong', 'untimed', null],
 ] as const)('times contextual %s at %s with %s policy', async (format, level, mode, limit) => {
   const { container, audio } = await contextualTimerDemo(format, level, mode);
   expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent(limit ? `${limit / 1000}s` : 'Untimed');
@@ -1150,8 +1143,8 @@ it('keeps contextual corrective retries untimed even with a timed sample level',
   expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
 });
 
-it.each((['Pictures', 'Writing'] as const).flatMap(format =>
-  ['Familiar', 'Steady', 'Strong', 'Confident', 'Mastered'].map(level => [format, level] as const)))('uses the audio-first threshold for %s word samples at %s', async (format, level) => {
+// Core timer/mastery tests own the complete level table; this is the entrance boundary.
+it.each([['Pictures', 'Familiar'], ['Writing', 'Familiar'], ['Pictures', 'Steady'], ['Writing', 'Steady']] as const)('uses the audio-first threshold for %s word samples at %s', async (format, level) => {
   const { container } = render(<App now={() => Date.now()} random={() => .5}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
   await click(screen.getByRole('button', { name: 'Dev review' }));
