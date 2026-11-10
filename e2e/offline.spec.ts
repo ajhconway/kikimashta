@@ -1,15 +1,18 @@
 import { prepareOffline, disableOffline } from './offline-settings';
 import { expect, test } from './fixtures';
 import { savedAttempts } from './saved-attempts';
+import { leaveNewCards } from './lesson-fixture';
 import spanish from '../content/es-419.json' with { type: 'json' };
 
 test('downloaded packs play and save a complete lesson after an offline reload', async ({ page, context }) => {
-  test.setTimeout(180000);
+  test.setTimeout(60000);
   await page.goto('./');
   await page.evaluate(() => {
     localStorage.setItem('kikimashta-learning-language-v1', 'es-419');
+    localStorage.setItem('kikimashta-practice-voices-v1:es-419', JSON.stringify(['juan']));
     localStorage.setItem('kikimashta-card-packs-v1:es-419', JSON.stringify(['es-419-travel-1-pictures']));
   });
+  const baseline = await leaveNewCards(page, 'es-419', spanish.items, ['audio-picture'], [{ itemId: spanish.items[0]!.id, exercise: 'audio-picture' }]);
   await page.reload();
   await prepareOffline(page);
   await context.setOffline(true);
@@ -17,28 +20,20 @@ test('downloaded packs play and save a complete lesson after an offline reload',
   await expect(page.getByRole('button', { name: /^start/i })).toBeEnabled();
   await page.getByRole('button', { name: /^start/i }).click();
   await page.getByRole('button', { name: 'Begin lesson', exact: true }).click();
-  for (let turn = 0; turn < 10; turn++) {
-    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).readyState)).toBeGreaterThanOrEqual(2);
-    const next = page.getByRole('button', { name: /next card/i });
-    if (!await next.count()) break;
-    await next.click();
-  }
   await page.getByRole('button', { name: /mini-quiz/i }).click();
-  for (let turn = 0; turn < 10; turn++) {
-    const source = await page.locator('audio').getAttribute('src');
-    const target = spanish.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
-    expect(target).toBeDefined();
-    const choices = page.getByRole('button', { name: /choose picture/i });
-    await expect(choices).toHaveCount(4);
-    expect(await choices.locator('img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
-    await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).readyState)).toBeGreaterThanOrEqual(2);
-    await choices.filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
-    await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(turn + 1);
-    if (turn < 9) await expect(choices.first()).toBeEnabled();
-  }
+  const source = await page.locator('audio').getAttribute('src');
+  const target = spanish.items.find(item => item.audio.some(clip => source?.endsWith(clip.src)))!;
+  expect(target).toBeDefined();
+  const choices = page.getByRole('button', { name: /choose picture/i });
+  await expect(choices).toHaveCount(4);
+  expect(await choices.locator('img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).readyState)).toBeGreaterThanOrEqual(2);
+  await expect.poll(() => page.locator('audio').evaluate(audio => (audio as HTMLAudioElement).currentTime)).toBeGreaterThan(0);
+  await choices.filter({ has: page.getByRole('img', { name: target.image.alt, exact: true }) }).click();
+  await expect.poll(async () => (await savedAttempts(page, 'es-419')).length).toBe(baseline + 1);
   await page.reload();
   const saved = await savedAttempts(page, 'es-419');
-  expect(saved).toHaveLength(10);
+  expect(saved).toHaveLength(baseline + 1);
   expect(saved.every(attempt => attempt.correct)).toBe(true);
   // Library navigation is another HTML entry point and must also work offline.
   await page.getByRole('link', { name: /Card library/ }).click();

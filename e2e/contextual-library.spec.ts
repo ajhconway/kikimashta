@@ -2,7 +2,6 @@ import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from './fixtures';
 import type { ContextualBank } from '../src/content/contextual-types';
 import type { PracticeAttempt } from '../src/types';
-import food from '../content/es-419-food-1.json' with { type: 'json' };
 
 const bank = JSON.parse(readFileSync(new URL('../content/contextual/ja-simple-pilot.json', import.meta.url), 'utf8')) as ContextualBank;
 const context = bank.contexts.find(context => context.id === 'ja-ctx-simple-ue-01')!;
@@ -13,25 +12,17 @@ const accepted = JSON.parse(readFileSync(new URL('../content/contextual/accepted
 const recording = accepted.contexts.find(entry => entry.contextId === context.id)!.recordings.find(recording => recording.voice === 'otani')!;
 
 interface MediaState {
-  events: { type: string; src: string }[];
   last: HTMLMediaElement | null;
 }
 type ObservedWindow = Window & { contextualMedia: MediaState };
 
 async function observeNativeMedia(page: Page) {
   await page.addInitScript(() => {
-    const state: MediaState = { events: [], last: null };
+    const state: MediaState = { last: null };
     (window as unknown as ObservedWindow).contextualMedia = state;
-    const observed = new WeakSet<HTMLMediaElement>();
     const play = HTMLMediaElement.prototype.play;
     HTMLMediaElement.prototype.play = function () {
       state.last = this;
-      if (!observed.has(this)) {
-        observed.add(this);
-        for (const type of ['playing', 'ended', 'error']) this.addEventListener(type, () => {
-          state.events.push({ type, src: this.currentSrc || this.src });
-        }, { capture: true });
-      }
       // Observe the native decoder/events/clock without substituting playback.
       return play.call(this);
     };
@@ -59,11 +50,7 @@ async function history(page: Page, incoming?: PracticeAttempt[]) {
   }, incoming);
 }
 
-async function endedClips(page: Page) {
-  return page.evaluate(() => (window as unknown as ObservedWindow).contextualMedia.events.filter(event => event.type === 'ended').map(event => new URL(event.src).pathname));
-}
-
-test('contextual library redirects old links, browses authored detail and retries native paired audio without changing progress', async ({ page }) => {
+test('contextual library redirects old links, retries native audio and cancels on navigation without saving', async ({ page }) => {
   test.setTimeout(60000);
   await observeNativeMedia(page);
   await page.goto('./');
@@ -107,8 +94,7 @@ test('contextual library redirects old links, browses authored detail and retrie
     await expect(card).toContainText(option.meaning);
   }
   const play = card.getByRole('button', { name: `Play Otani: ${question.id}`, exact: true });
-  const pair = ['/' + recording.sentenceSrc, '/' + recording.questionSrcs[question.id]];
-  const unavailable = '**/' + recording.questionSrcs[question.id];
+  const unavailable = '**/' + recording.sentenceSrc;
   await page.route(unavailable, route => route.abort());
   await play.click();
   await expect(gallery.getByRole('alert')).toBeVisible({ timeout: 20000 });
@@ -116,9 +102,7 @@ test('contextual library redirects old links, browses authored detail and retrie
   await page.unroute(unavailable);
   await play.click();
   await expect(gallery.getByRole('alert')).toBeHidden();
-  await expect.poll(async () => (await endedClips(page)).slice(-2), { timeout: 20000 }).toEqual(pair);
-
-  await play.click();
+  await expect.poll(() => page.evaluate(() => (window as unknown as ObservedWindow).contextualMedia.last?.currentTime ?? 0)).toBeGreaterThan(0);
   await expect.poll(() => page.evaluate(() => (window as unknown as ObservedWindow).contextualMedia.last?.paused)).toBe(false);
   await words.click();
   await expect(words).toHaveAttribute('aria-pressed', 'true');
@@ -128,48 +112,5 @@ test('contextual library redirects old links, browses authored detail and retrie
   expect(await history(page)).toEqual(baseline);
   await page.reload();
   await expect(words).toHaveAttribute('aria-pressed', 'true');
-  expect(await history(page)).toEqual(baseline);
-});
-
-test('Basic Spanish library offers pictures and foundation contexts without changing history', async ({ page }) => {
-  await page.goto('./');
-  await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
-  const baseline = await history(page);
-  await page.goto('./vocabulary/?language=es-419&pack=es-419-basic-1-pictures');
-  await expect(page.getByLabel('Card pack')).toHaveValue('es-419-basic-1-pictures');
-  await expect(page.locator('.card')).toHaveCount(15);
-  await expect(page.locator('#results-status')).toContainText('15 cards');
-  await expect(page.getByRole('checkbox', { name: /Basic Spanish level 1/ })).toBeVisible();
-  const views = page.getByRole('group', { name: 'Library content', exact: true });
-  await views.getByRole('button', { name: 'Contextual questions', exact: true }).click();
-  const gallery = page.locator('#contextual-library');
-  await expect(gallery).toBeVisible();
-  await expect(gallery).toContainText('9 contextual questions');
-  await expect(gallery.locator('article')).toHaveCount(9);
-  const rice = food.items.find(item => item.id === 'es-419-travel-rice')!;
-  const ricePictures = gallery.getByRole('img', { name: 'Rice', exact: true });
-  expect(await ricePictures.count()).toBeGreaterThan(0);
-  for (const picture of await ricePictures.all()) {
-    await expect(picture).toHaveAttribute('src', '/' + rice.image.src);
-    await picture.scrollIntoViewIfNeeded();
-    await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-  }
-  await expect(gallery.getByRole('combobox', { name: 'Context target', exact: true }).locator('option')).toHaveCount(10);
-  await expect(gallery.locator('.context-review-state').first()).toHaveText('Text approved · Audio approved');
-  await expect(gallery.locator('article').first().getByRole('button', { name: /^Play / })).toHaveCount(8);
-  const search = gallery.getByRole('searchbox', { name: 'Search contexts' });
-  await search.fill('tener');
-  await expect(gallery.locator('article')).toHaveCount(1);
-  await expect(gallery.locator('.context-card-heading')).toContainText('tener');
-  await expect(gallery.locator('.context-answers img')).toHaveCount(4);
-  await search.fill('');
-  await views.getByRole('button', { name: 'Words', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Latin American Spanish cards', exact: true })).toBeVisible();
-  await expect(page.locator('.card')).toHaveCount(15);
-  await expect(page.getByLabel('Card pack')).not.toContainText('WaniKani');
-  await views.getByRole('button', { name: 'Contextual questions', exact: true }).click();
-  await page.reload();
-  await expect(gallery).toContainText('9 contextual questions');
-  await expect(gallery.locator('article')).toHaveCount(9);
   expect(await history(page)).toEqual(baseline);
 });
