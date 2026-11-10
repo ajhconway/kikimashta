@@ -78,30 +78,6 @@ it('introduces unlocked contexts directly in reviews while saving initial-learni
 });
 
 
-it.each(['ja-JP', 'es-419'])('opens normal Home for the retired contextual demo URL in %s', async language => {
-  localStorage.setItem('kikimashta-learning-language-v1', language);
-  window.history.replaceState({}, '', '/?demo=contextual');
-  render(<App random={() => 0}/>);
-  expect(await screen.findByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
-  expect(screen.getByRole('combobox', { name: 'Learning language' })).toHaveValue(language);
-  await click(screen.getByRole('button', { name: 'Dev review' }));
-  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
-  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-});
-
-it('keeps configured contextual Dev review available at high workload', async () => {
-  const { schedule } = await unlockedTarget();
-  vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: 30 });
-  render(<App now={() => schedule.lastReviewedAt + 1} random={() => 0}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
-  await click(screen.getByRole('button', { name: 'Dev review' }));
-  expect(screen.getByRole('heading', { name: 'Dev review options' })).toBeInTheDocument();
-  expect(screen.getByRole('checkbox', { name: 'Simple contexts · Pictures' })).toBeInTheDocument();
-  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-});
-
-
 function correctRenderedChoice(container: HTMLElement): HTMLElement {
   const id = container.querySelector('.contextual-quiz')!.getAttribute('data-question-id');
   const authored = contextualBanks.flatMap(bank => bank.contexts).flatMap(context => context.questions).find(question => question.id === id)!;

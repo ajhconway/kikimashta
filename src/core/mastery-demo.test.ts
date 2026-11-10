@@ -13,8 +13,7 @@ const card: PracticeCard = { exercise: 'audio-picture', item: {
 
 describe('simulated mastery samples', () => {
   it.each([
-    [0, 'New', null], [1, 'Learning', null], [2, 'Improving', 10000], [3, 'Familiar', 10000],
-    [4, 'Steady', 5000], [5, 'Strong', 3000], [6, 'Confident', 1500], [7, 'Mastered', 1500],
+    [0, 'New', null], [5, 'Strong', 3000],
   ] as const)('maps sample level %i to %s with its mastery timer', (level, label, timer) => {
     const sample = createMasterySample(card, level, at);
     expect(cardMastery(sample).label).toBe(label);

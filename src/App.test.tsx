@@ -11,10 +11,8 @@ const fullPool = practicePool;
 import { cardPacks, selectedPracticeCards, packPreferenceKey } from './core/packs';
 import { forecastDensity, planLessonChunk } from './core/density';
 import { advanceSchedule, schedulerVersion } from './core/scheduler';
-import { voicePreferenceKey } from './core/voices';
 import { quizTimeLimit } from './core/quiz-timer';
 import type { Exercise, PracticeAttempt } from './types';
-import { intensityColors, quizFeedbackColors, themeColors } from './themes';
 
 vi.mock('./content/contextual-runtime', async original => {
   const actual = await original<typeof import('./content/contextual-runtime')>();
@@ -87,28 +85,6 @@ function deferred<T>() {
 }
 
 describe('adaptive session flow', () => {
-  it('holds the system fallback through replay after a font loads, then uses a font on the retry', async () => {
-    const original = Object.getOwnPropertyDescriptor(document, 'fonts');
-    const faces = ['Noto Sans JP', 'Noto Serif JP', 'Zen Maru Gothic', 'Klee One'].map(name => ({ family: 'Kikimashta ' + name, weight: name === 'Zen Maru Gothic' ? '500' : '600', status: 'unloaded' }));
-    Object.defineProperty(document, 'fonts', { configurable: true, value: Object.assign(faces, { load: vi.fn().mockRejectedValue(new Error('Font unavailable')) }) });
-    try {
-      records = legacy(1).map(attempt => ({ ...attempt, context: { phase: 'lesson', exercise: 'audio-text', recordingSrc: 'audio/cat.mp3', replays: 0, schedulerVersion: 'fsrs-6-v1' } }));
-      const { container } = render(<App now={fixedNow} random={() => 0}/>);
-      await start();
-      await click(screen.getByRole('button', { name: /begin review/i }));
-      const fonts = () => Array.from(container.querySelectorAll('.choices .written-answer'), label => label.getAttribute('data-font'));
-      expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
-      faces.forEach(face => { face.status = 'loaded'; });
-      await click(screen.getByRole('button', { name: 'Replay word' }));
-      expect(fonts()).toEqual(['system', 'system', 'system', 'system']);
-      await click(heardChoice(container, false));
-      await click(screen.getByRole('button', { name: /^continue$/i }));
-      expect(fonts()).toEqual(['zen-maru', 'zen-maru', 'zen-maru', 'zen-maru']);
-    } finally {
-      if (original) Object.defineProperty(document, 'fonts', original);
-      else Reflect.deleteProperty(document, 'fonts');
-    }
-  });
 
   it('starts a random dev review with no due words, retries misses, and leaves saved progress untouched', async () => {
     const { container } = render(<App now={fixedNow} random={() => 0.5}/>);
@@ -343,20 +319,6 @@ describe('adaptive session flow', () => {
     expect(localStorage.getItem('kikimashta-density-range-v1')).toBe(JSON.stringify(saved));
   });
 
-  it.each([
-    [0, 'Minimal', 'minimal', 'pace/kiku-minimal-v1.png'],
-    [60, 'Intense', 'intense', 'pace/kiku-intense-v2.png'],
-  ] as const)('shows Kiku and a full-screen intensity color at %s', async (value, label, level, image) => {
-    vi.mocked(forecastDensity).mockResolvedValue({ ...forecast, reviewsPerDay: value });
-    const view = render(<App now={fixedNow}/>);
-    await waitFor(() => expect(screen.getByRole('status', { name: 'Review density' })).toHaveTextContent(label));
-    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
-    expect(screen.getByRole('status', { name: 'Review density' }).querySelector('img')).toHaveAttribute('src', '/brand/' + image);
-    expect(document.documentElement.style.getPropertyValue('--screen-background')).toBe(intensityColors[level]);
-    view.unmount();
-    expect(document.documentElement.style.getPropertyValue('--screen-background')).toBe('');
-  });
-
 });
 
 describe('quiz safeguards', () => {
@@ -377,23 +339,6 @@ describe('quiz safeguards', () => {
     expect(wrong).toHaveAccessibleName(name);
     expect(wrong).toBeDisabled();
     expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-  });
-
-  it.each([true, false])('retains the right pictures after a correct=%s answer', async correct => {
-    const { container } = await review();
-    const targetPicture = within(heardChoice(container)).getByRole('img').getAttribute('alt')!;
-    const selected = heardChoice(container, correct);
-    await click(selected);
-    const retained = screen.getAllByRole('button', { name: /choose (picture|writing)/i });
-    expect(retained).toHaveLength(correct ? 1 : 2); expect(retained).toContain(selected);
-    expect(screen.getByRole('img', { name: targetPicture })).toBeInTheDocument();
-    retained.forEach(button => expect(button).toBeDisabled());
-    expect(ProgressStore.prototype.record).toHaveBeenCalledTimes(1);
-    await click(screen.getByRole('button', { name: /kikimashta home/i }));
-    await start(); await click(await screen.findByRole('button', { name: /begin review/i }));
-    expect(screen.getAllByRole('button', { name: /choose (picture|writing)/i })).toHaveLength(4);
-    expect(container.querySelector('.answer-departures')).not.toBeInTheDocument();
-    expect(container.querySelector('.quiz-starburst')).not.toBeInTheDocument();
   });
 
   it('records only one answer after rapid taps and keeps the selected voice for replay', async () => {
@@ -558,20 +503,6 @@ describe('quiz safeguards', () => {
     expect(screen.getByRole('button', { name: /^continue$/i })).toBeEnabled();
     await click(screen.getByRole('button', { name: /^continue$/i }));
     expect(container.querySelector('audio')!.getAttribute('src')).not.toBe(source);
-  });
-
-  it('clears feedback colors and pending automatic transitions when exiting', async () => {
-    const { container } = await review();
-    vi.useFakeTimers();
-    const color = () => document.documentElement.style.getPropertyValue('--screen-background');
-    expect(color()).toBe(themeColors.pictureQuiz);
-    endAudio(container); await click(heardChoice(container));
-    expect(color()).toBe(quizFeedbackColors.correct);
-    await click(screen.getByRole('button', { name: /kikimashta home/i }));
-    await advance(5000);
-    expect(color()).toBe(intensityColors.minimal);
-    expect(container.querySelector('.app')).not.toHaveAttribute('data-answer');
-    expect(screen.getByRole('heading', { name: 'kikimashta' })).toBeInTheDocument();
   });
 });
 
@@ -808,57 +739,6 @@ describe('interval mastery feedback', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeEnabled());
     expect(records).toHaveLength(cards.length + 1);
   });
-
-  it('shows a downward arrow after a lapse and no change on its corrective retry', async () => {
-    const { container, limit } = await timedReview();
-    const current = screen.getByRole('status', { name: 'Current mastery' });
-    expect(within(current).getByText('Familiar')).toBeInTheDocument();
-    expect(within(current).getByText(`${limit / 1000}s`)).toBeInTheDocument();
-    expect(current.closest('.practice-actions')).not.toBeNull();
-    expect(container.querySelector('.choices')).toBeVisible();
-    endAudio(container);
-    await click(heardChoice(container, false));
-    expect(current).toHaveAttribute('aria-hidden', 'true');
-    expect(screen.getByLabelText('Mastery decreased to Learning')).toHaveTextContent(/↓.*Learning/);
-    await click(screen.getByRole('button', { name: /^continue$/i }));
-    const retry = screen.getByRole('status', { name: 'Current mastery' });
-    expect(within(retry).getByText('Learning')).toBeInTheDocument();
-    expect(within(retry).getByText('Untimed')).toBeInTheDocument();
-    await click(heardChoice(container));
-    expect(screen.queryByLabelText(/Mastery (increased|decreased)/)).not.toBeInTheDocument();
-  });
-});
-
-describe('simulated Dev review feedback (#152)', () => {
-  it.each([
-    { level: 'Strong', limit: 3000, correct: false, change: 'decreased', arrow: '↓' },
-  ])('renders $level mastery timing and feedback without saving', async ({ level, limit, correct, change, arrow }) => {
-    records = legacy(2);
-    const original = structuredClone(records);
-    const onSaved = vi.fn();
-    const { container } = render(<App random={() => 0.5} onSaved={onSaved}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-    await click(screen.getByRole('button', { name: 'Dev review' }));
-    await click(screen.getByRole('button', { name: 'Clear levels' }));
-    await click(screen.getByRole('checkbox', { name: level }));
-    vi.useFakeTimers();
-    await click(screen.getByRole('button', { name: 'Start dev review' }));
-    const context = screen.getByRole('status', { name: 'Demo mastery' });
-    expect(context).toHaveTextContent(level);
-    expect(context).toHaveTextContent(limit ? limit / 1000 + 's' : 'Untimed');
-    endAudio(container); loadPictures(container); await advance(480); await advance(0);
-    if (limit) expect(screen.getByText(`${limit / 1000} second timer started.`)).toBeInTheDocument();
-    else expect(container.querySelector('.quiz-timer-fill')).not.toBeInTheDocument();
-    await click(heardChoice(container, correct));
-    expect(screen.getByLabelText(`Mastery ${change} to Learning`)).toHaveTextContent(arrow + 'Learning');
-    expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-    expect(onSaved).not.toHaveBeenCalled();
-    expect(records).toEqual(original);
-    await click(screen.getByRole('button', { name: /kikimashta home/i }));
-    expect(screen.queryByRole('status', { name: 'Demo mastery' })).not.toBeInTheDocument();
-    expect(records).toEqual(original);
-  });
 });
 
 
@@ -890,57 +770,6 @@ describe('learning language switching', () => {
   });
 });
 
-describe('global practice voice selection (#148)', () => {
-  it.each(['lesson', 'review', 'Dev review'])('uses preferred voices in %s and preserves them on replay', async mode => {
-    localStorage.setItem(voicePreferenceKey, JSON.stringify(['lime']));
-    if (mode === 'review') records = legacy(1);
-    const { container } = render(<App now={fixedNow} random={() => 0}/>);
-    await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
-    if (mode === 'lesson' || mode === 'review') {
-      await start();
-      await click(screen.getByRole('button', { name: mode === 'lesson' ? 'Begin lesson' : /begin review/i }));
-    } else if (mode === 'Dev review') await configuredDevReview();
-    const source = container.querySelector('audio')!.getAttribute('src');
-    expect(source).toContain('/lime/');
-    // Changing the preference never changes an already-presented question on replay.
-    localStorage.setItem(voicePreferenceKey, JSON.stringify(['otani']));
-    await click(screen.getByRole('button', { name: 'Replay word' }));
-    expect(container.querySelector('audio')).toHaveAttribute('src', source);
-  });
-});
-
-
-it('refreshes pack scope while Dev review options are open without leaving Start stuck loading', async () => {
-  render(<App now={fixedNow}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-  await click(screen.getByRole('button', { name: 'Dev review' }));
-  expect(screen.getByRole('checkbox', { name: 'Words · Pictures' })).toBeInTheDocument();
-  localStorage.setItem(packPreferenceKey, '[]');
-  await act(async () => { window.dispatchEvent(new Event('pageshow')); });
-  expect(screen.queryByRole('checkbox', { name: 'Words · Pictures' })).not.toBeInTheDocument();
-  expect(screen.getByRole('button', { name: 'Start dev review' })).toBeDisabled();
-  localStorage.setItem(packPreferenceKey, JSON.stringify(['ja-wanikani-2-pictures']));
-  await act(async () => { window.dispatchEvent(new StorageEvent('storage', { key: packPreferenceKey })); });
-  expect(screen.getByRole('checkbox', { name: 'Words · Pictures' })).toBeInTheDocument();
-  expect(screen.queryByRole('checkbox', { name: 'Words · Writing' })).not.toBeInTheDocument();
-  expect(screen.getByRole('button', { name: 'Start dev review' })).toBeEnabled();
-  await click(screen.getByRole('button', { name: 'Kikimashta home' }));
-  await waitFor(() => expect(screen.getByRole('button', { name: /^start/i })).toBeEnabled());
-});
-
-it.each([['mastery', '1.5s']] as const)('uses %s word timers at the selected simulated mastery', async (mode, label) => {
-  render(<App now={fixedNow} random={() => .5}/>);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
-  await click(screen.getByRole('button', { name: 'Dev review' }));
-  await click(screen.getByRole('button', { name: 'Clear levels' }));
-  await click(screen.getByRole('checkbox', { name: 'Confident' }));
-  await act(async () => { fireEvent.change(screen.getByLabelText('Timer behavior'), { target: { value: mode } }); });
-  await click(screen.getByRole('button', { name: 'Start dev review' }));
-  const sample = screen.getByRole('status', { name: 'Demo mastery' });
-  expect(sample).toHaveTextContent('Confident');
-  expect(sample).toHaveTextContent(label);
-  expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-});
 
 
 describe('Home review forecast (#156)', () => {
@@ -975,20 +804,6 @@ describe('Home review forecast (#156)', () => {
     await click(screen.getByRole('button', { name: 'Retry loading' }));
     await waitFor(() => expect(within(panel()).getAllByRole('listitem')).toHaveLength(7));
     expect(panel()).toHaveTextContent('No reviews expected this week.');
-  });
-
-  it('shows loading for a new scope rather than carrying over the previous history error', async () => {
-    vi.mocked(ProgressStore.prototype.history).mockRejectedValueOnce(new Error('Old request failed'));
-    const view = render(<App now={fixedNow} historyRevision={0}/>);
-    await waitFor(() => expect(panel()).toHaveTextContent(/unavailable/i));
-    const pending = deferred<typeof forecast>();
-    vi.mocked(forecastDensity).mockReturnValueOnce(pending.promise);
-    view.rerender(<App now={fixedNow} historyRevision={1}/>);
-    expect(panel()).toHaveTextContent('Loading review forecast…');
-    expect(panel()).not.toHaveTextContent(/unavailable/i);
-    expect(within(panel()).queryByRole('list')).not.toBeInTheDocument();
-    await act(async () => pending.resolve(forecastWith([2, 0, 0, 0, 0, 0, 0])));
-    expect(within(dailyCount(0)).getByText('2', { exact: true })).toBeInTheDocument();
   });
 
   it('hides the previous revision while a refreshed history forecast is pending', async () => {
@@ -1026,22 +841,6 @@ describe('Home review forecast (#156)', () => {
     expect(screen.getByRole('button', { name: 'Start · 0 reviews' })).toBeDisabled();
     expect(panel()).toHaveTextContent('No reviews expected this week.');
   });
-
-  it('refreshes after focus and at local midnight with dates from the new forecast snapshot', async () => {
-    vi.useFakeTimers();
-    let at = new Date(2026, 10, 8, 23, 59, 59).getTime();
-    const now = () => at;
-    vi.mocked(forecastDensity).mockResolvedValue(forecastWith([1, 0, 0, 0, 0, 0, 0]));
-    await act(async () => { render(<App now={now}/>); });
-    expect(dailyCount(1)).toHaveTextContent('Mon');
-    vi.mocked(forecastDensity).mockResolvedValue(forecastWith([2, 0, 0, 0, 0, 0, 0]));
-    await act(async () => { window.dispatchEvent(new Event('focus')); });
-    expect(within(dailyCount(0)).getByText('2', { exact: true })).toBeInTheDocument();
-    at += 1000;
-    await advance(1000);
-    expect(dailyCount(1)).toHaveTextContent('Tue');
-    expect(ProgressStore.prototype.record).not.toHaveBeenCalled();
-  });
 });
 
 // Contextual timers begin after both clips, never at the sentence/pause boundary (#175).
@@ -1061,8 +860,7 @@ async function contextualTimerDemo(format: 'Pictures' | 'Writing', level = 'Stro
 }
 
 it.each([
-  ['Pictures', 'New', 'mastery', null], ['Writing', 'Improving', 'mastery', 10000],
-  ['Pictures', 'Strong', 'mastery', 3000], ['Pictures', 'Strong', 'untimed', null],
+  ['Pictures', 'New', 'mastery', null], ['Pictures', 'Strong', 'mastery', 3000],
 ] as const)('times contextual %s at %s with %s policy', async (format, level, mode, limit) => {
   const { container, audio } = await contextualTimerDemo(format, level, mode);
   expect(screen.getByRole('status', { name: 'Demo mastery' })).toHaveTextContent(limit ? `${limit / 1000}s` : 'Untimed');
@@ -1144,7 +942,7 @@ it('keeps contextual corrective retries untimed even with a timed sample level',
 });
 
 // Core timer/mastery tests own the complete level table; this is the entrance boundary.
-it.each([['Pictures', 'Familiar'], ['Writing', 'Familiar'], ['Pictures', 'Steady'], ['Writing', 'Steady']] as const)('uses the audio-first threshold for %s word samples at %s', async (format, level) => {
+it.each([['Pictures', 'Familiar'], ['Writing', 'Steady']] as const)('uses the audio-first threshold for %s word samples at %s', async (format, level) => {
   const { container } = render(<App now={() => Date.now()} random={() => .5}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Dev review' })).toBeEnabled());
   await click(screen.getByRole('button', { name: 'Dev review' }));

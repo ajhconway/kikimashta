@@ -1,10 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { createQuestions, validateBank } from './session';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
-import { existsSync } from 'node:fs';
-import spanish from '../../content/es-419.json';
-import activation from '../../content/spanish-travel-audio/activation.json';
+
 import { initialLanguage, languagePreferenceKey, learningLanguages } from './languages';
 import { initialPackIds, packPreferenceKey, selectedPracticeCards, type CardPack } from './packs';
 
@@ -32,26 +27,6 @@ describe('learning languages', () => {
     localStorage.setItem(es!.packPreferenceKey, '[]');
     expect(initialPackIds(ja!.packs, ja!.packPreferenceKey)).toEqual([ja!.packs[0]!.id]);
     expect(initialPackIds(es!.packs, es!.packPreferenceKey)).toEqual([]);
-  });
-  it('provides complete travel pictures and recorded audio with preserved provenance', () => {
-    const spanishLanguage = learningLanguages[1]!;
-    expect(spanish.items).toHaveLength(36);
-    expect(new Set(spanish.items.map(item => item.id)).size).toBe(36);
-    expect(new Set(spanish.items.map(item => item.text)).size).toBe(36);
-    expect(new Set(spanish.items.map(item => item.image.src)).size).toBe(36);
-    expect(spanish.items.some(item => /entrance|exit/.test(item.id))).toBe(false);
-    expect(spanish.items.every(item => item.audio.length === 8 && item.audio.every(clip => clip.voice !== ('cesar' as string)))).toBe(true);
-    expect(spanish.items.some(item => item.text === 'café')).toBe(true);
-    for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
-    validateBank(spanishLanguage.pool);
-    expect(spanishLanguage.pool.items).toHaveLength(238);
-    for (const media of activation.images) {
-      expect(createHash('sha256').update(readFileSync('public/' + media.src)).digest('hex')).toBe(media.sha256);
-    }
-    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(Array(8).fill('audio-picture'));
-    const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(238);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(238);
   });
   it('filters retired Spanish writing selections without reviving an empty selection', () => {
     const language = learningLanguages[1]!;

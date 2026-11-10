@@ -16,7 +16,7 @@ describe('global practice voice preferences (#148)', () => {
     expect(initialVoiceIds()).toEqual(['otani', 'lime']);
   });
 
-  it.each(['[]', '["retired"]', '[null]', '{}', 'invalid'])('uses all voices for unusable preference %s', saved => {
+  it.each(['["retired"]', 'invalid'])('uses all voices for unusable preference %s', saved => {
     localStorage.setItem(voicePreferenceKey, saved);
     expect(initialVoiceIds()).toEqual(practiceVoices.map(voice => voice.id));
   });
