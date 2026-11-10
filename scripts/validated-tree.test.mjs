@@ -8,15 +8,17 @@ const current = { workflow_id: 7, repository: { id: 1 } }
 const artifact = { name: 'validated-tree-' + tree, expired: false,
   workflow_run: { id: 99, repository_id: 1, head_repository_id: 1 } }
 const run = { id: 99, workflow_id: 7, path: '.github/workflows/ci.yml', repository: { full_name: repository },
-  head_repository: { full_name: repository }, status: 'completed', conclusion: 'success', event: 'pull_request' }
-function api({ artifacts = [artifact], completed = run } = {}) {
+  head_repository: { full_name: repository }, head_sha: 'b'.repeat(40),
+  status: 'completed', conclusion: 'success', event: 'pull_request' }
+function api({ artifacts = [artifact], completed = run, commitTree = tree } = {}) {
   const calls = []
   return { calls, request: async (url, options) => {
     calls.push(url)
     assert.equal(new URL(url).origin, 'https://api.github.com')
     assert.equal(options.headers.authorization, 'Bearer private-test-token')
     assert.equal(options.redirect, 'error')
-    const data = url.endsWith('/100') ? current : url.includes('/artifacts?') ? { artifacts } : completed
+    const data = url.endsWith('/100') ? current : url.includes('/artifacts?') ? { artifacts }
+      : url.includes('/git/commits/') ? { tree: { sha: commitTree } } : completed
     return { ok: true, json: async () => data }
   } }
 }
@@ -53,4 +55,9 @@ test('failed, pending, foreign-workflow and non-PR runs cannot waive checks', as
 test('lookup failures and invalid identities fail rather than returning reusable proof', async () => {
   await assert.rejects(validatedRun({ ...identity, request: async () => ({ ok: false, status: 403 }) }), /HTTP 403/)
   await assert.rejects(validatedRun({ ...identity, repository: '../other' }), /Invalid validation identity/)
+})
+
+test('a marker naming this tree cannot substitute for GitHub commit-tree verification', async () => {
+  assert.equal(await validatedRun({ ...identity, request: api({ commitTree: 'c'.repeat(40) }).request }), null)
+  assert.equal(await validatedRun({ ...identity, request: api({ completed: { ...run, head_sha: undefined } }).request }), null)
 })

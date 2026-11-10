@@ -79,7 +79,8 @@ branch protections remain.
 
 Only a successful canonical-repository PR Checks run may supply an unexpired
 `validated-tree-<Git tree SHA>` completion marker. Main checks its exact tree
-against those markers. A mismatch, unavailable API, fork run, failed run or
+against those markers and independently reads the candidate commit tree from
+GitHub's Git API; an artifact name alone is not proof. A mismatch, unavailable API, fork run, failed run or
 expired marker runs full validation again. The marker contains no executable
 application and no PR build artifact is deployed. Required review still gates
 the merge independently.

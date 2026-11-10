@@ -47,7 +47,8 @@ separate `database` and current-head `codex-review` requirements remain unchange
 After all PR jobs pass, `checks` uploads a small `validated-tree-<Git tree SHA>`
 completion marker. Main may reuse only an unexpired marker from a successful
 canonical-repository PR run of the same Checks workflow for exactly its checked-out
-tree. It then explicitly verifies that the expensive jobs were skipped for that
+tree, including independent Git API verification of the candidate commit tree.
+It then explicitly verifies that the expensive jobs were skipped for that
 reason. Failed/canceled/fork/other-workflow proof cannot waive checks; lookup
 failure or a different tree falls back to the full gate. Review/branch protections
 remain independent. No PR application artifact is trusted for publication.

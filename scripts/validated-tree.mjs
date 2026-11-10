@@ -10,10 +10,11 @@ export async function validatedRun({ repository, runId, tree, token, request = f
   if (!/^[a-z0-9][\w.-]*\/[a-z0-9][\w.-]*$/i.test(repository) || !/^\d+$/.test(String(runId)) || !/^[a-f0-9]{40}$/.test(tree)) {
     throw new Error('Invalid validation identity.')
   }
+  const signal = AbortSignal.timeout(10_000)
   const get = async path => {
     const response = await request('https://api.github.com/repos/' + repository + path, {
       headers: { authorization: 'Bearer ' + token, accept: 'application/vnd.github+json' },
-      signal: AbortSignal.timeout(10_000),
+      signal,
       redirect: 'error',
     })
     if (!response.ok) throw new Error('Validation lookup failed: HTTP ' + response.status)
@@ -33,7 +34,13 @@ export async function validatedRun({ repository, runId, tree, token, request = f
     if (run.workflow_id === current.workflow_id && run.path === '.github/workflows/ci.yml'
       && run.repository?.full_name === repository && run.head_repository?.full_name === repository
       && run.status === 'completed' && run.conclusion === 'success'
-      && run.event === 'pull_request') return run.id
+      && run.event === 'pull_request' && /^[a-f0-9]{40}$/.test(run.head_sha)) {
+      // Bind the marker to GitHub's commit tree, not a claim made by PR code.
+      // Strict up-to-date PRs have the same head tree as their merge candidate.
+      // If they differ, a full main run is the conservative fallback.
+      const commit = await get('/git/commits/' + run.head_sha)
+      if (commit.tree?.sha === tree) return run.id
+    }
   }
   return null
 }
