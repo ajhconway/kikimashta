@@ -15,7 +15,9 @@ with production variables: the CI artifact uses a fake account service and must
 never be deployed. User journeys run at the merge gate, not again after publishing.
 
 After Pages succeeds, `scripts/deployment-smoke.mjs` makes at most nine concurrent
-read-only requests with ten-second deadlines and no retries. It verifies the
+read-only requests with ten-second deadlines and no retries. Pages may report an
+HTTP custom-domain URL; the checker upgrades that metadata to HTTPS before making
+production requests. HTTP remains supported for local loopback previews. It verifies the
 source notice, both HTML entry points, emitted scripts, offline manifest/worker
 and representative image/audio bytes against the production build. It makes no
 account requests or saved answers. Real-iPhone and live-account acceptance remain
