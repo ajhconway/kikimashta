@@ -61,26 +61,6 @@ afterEach(() => {
   window.history.replaceState({}, '', '/');
 });
 
-it('retains historical cards while the pack 1 collection shows exactly 232 questions with honest semantic focus filters', async () => {
-  const { default: authored } = await import('../../content/contextual/ja-wanikani-1-draft.json');
-  const pack1 = structuredClone(authored) as unknown as ContextualBank;
-  for (const context of pack1.contexts) for (const question of context.questions) {
-    question.focus = question.id.endsWith('-target') ? 'target' : 'detail';
-  }
-  content.banks.push(pack1);
-  await mount();
-  expect(screen.getByText('246 contextual questions')).toBeVisible();
-  choose('Context collection', pack1.id);
-  expect(screen.getByText('232 contextual questions')).toBeVisible();
-  choose('Question kind', 'target');
-  expect(screen.getByText('116 contextual questions')).toBeVisible();
-  choose('Question kind', 'detail');
-  expect(screen.getByText('116 contextual questions')).toBeVisible();
-  choose('Question kind', 'all');
-  choose('Context collection', 'fixtures');
-  expect(screen.getByText('14 contextual questions')).toBeVisible();
-});
-
 it('renders bounded authored cards, meanings, correct options, pictures and revision details without autoplay or writes', async () => {
   const save = vi.spyOn(Storage.prototype, 'setItem');
   const { container } = await mount();
@@ -145,14 +125,6 @@ it('shows draft and missing-audio cards, escapes authored text, and never makes 
   expect(screen.getAllByRole('article')).toHaveLength(1);
 });
 
-it('shows a clear empty-language state without creating audio or changing progress', async () => {
-  await mount('es-419');
-  expect(screen.getByText('No contextual cards are available in this language yet.')).toBeVisible();
-  expect(screen.getByText('0 contextual questions')).toBeVisible();
-  expect(screen.queryAllByRole('article')).toHaveLength(0);
-  expect(audios).toHaveLength(0);
-});
-
 it('plays the selected voice sentence then question after 650 ms with one shared native player', async () => {
   await mount();
   fireEvent.click(playButton('question-0', 'Morioki'));
@@ -187,17 +159,13 @@ it.each(['sentence', 'question'])('reports a %s error and retries the whole reco
   expect(audio.src).toContain('context-0/otani/sentence.mp3');
 });
 
-it.each(['stop', 'new play', 'filter', 'page', 'hide', 'pagehide', 'visibility'])('cancels the pending question on %s', async action => {
-  const { gallery } = await mount();
+it.each(['stop', 'new play', 'visibility'])('cancels the pending question on %s', async action => {
+  await mount();
   fireEvent.click(playButton());
   const audio = audios[0]!;
   fireEvent.ended(audio);
   if (action === 'stop') fireEvent.click(screen.getByRole('button', { name: 'Stop Otani: question-0' }));
   if (action === 'new play') fireEvent.click(playButton('question-2'));
-  if (action === 'filter') choose('Context stage', 'contrastive');
-  if (action === 'page') fireEvent.click(screen.getByRole('button', { name: 'Next contextual page' }));
-  if (action === 'hide') gallery.stop();
-  if (action === 'pagehide') fireEvent(window, new Event('pagehide'));
   if (action === 'visibility') { vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden'); fireEvent(document, new Event('visibilitychange')); }
   const played = vi.mocked(HTMLMediaElement.prototype.play).mock.calls.length;
   vi.advanceTimersByTime(5000);

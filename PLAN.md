@@ -89,11 +89,14 @@ Spacing and retrieval practice have research support; this density controller an
 
 ## Testing and release
 
+- Keep the suite lean using [test ownership, budgets and measurement](docs/TESTING.md). Each behavior has one primary owner; add integration coverage only for a distinct wiring or native boundary. Prefer extending/replacing existing cases over adding another cross-product.
 - `npm run check` runs lint, type checks, Vitest/React Testing Library, JavaScript script tests, Python audio/artwork tests, the card metadata validator, and the production build. Focused tests stay beside the code.
 - After building, `npm run test:e2e` checks Chromium and mobile WebKit journeys in `e2e/`, including complete sessions, actual IndexedDB persistence, both exercise formats, pack selection, failed audio, notes, and account isolation/convergence against a simulated HTTP service.
-- Keep repeated rounds and rule/content permutations in focused tests; browser journeys retain representative native media, storage, layout and input boundaries. See [browser coverage and timing](docs/BROWSER_TESTS.md) for the consolidation in #202.
+- Keep rule/content permutations in small focused fixtures; browser journeys retain representative native media, storage, layout and input boundaries. Seed progress to complete one- or two-card sessions. Keep no more than 24 routine browser scenarios, with any increase justified in the PR. See [browser coverage and timing](docs/BROWSER_TESTS.md).
 - `npm run test:cards` runs the artwork preparation regressions and content/dependency validator. It is included in `npm run check`, so invalid metadata blocks required CI. Preparation and media generation remain manual.
 - Tests must be deterministic, isolated, and assert observable behavior. Use small fixtures, control time and randomness, mock external boundaries, and fix flaky tests instead of adding retries.
+- Validate current production media once with byte hashes and representative decoder contracts. Avoid rebuilding historical releases/galleries for every rejection field or enumerating every pack subset.
+- Run full checks at the merge gate. Main may reuse a successful same-repository Checks marker only for the identical Git tree; missing, expired or invalid proof runs full checks. Share the checked browser build, preserve production configuration separately, and keep publication smoke to a few read-only resource checks.
 - The active GitHub ruleset requires `checks`, `database`, and a current `codex-review`, plus resolved conversations. Deployment follows successful main checks. See [merge rules](docs/MERGE_RULES.md) and [deployment recovery](docs/DEPLOYMENT.md).
 - Verify pronunciation, playback, touch, layout, and VoiceOver on the real iPhone at playable milestones and releases. Hosted SQL checks and browser tests do not replace device acceptance.
 

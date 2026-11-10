@@ -219,7 +219,6 @@ async function rejectOutputDescendantLinks(destination) {
   }
 }
 export async function generateSpanishFoodLevel2Pack({ root = process.cwd(), output, apiKey, generate = generateCards }) {
-  const { plan, approval } = await loadSpanishFoodLevel2Plan(root)
   if (typeof output !== 'string' || !output.trim())
     throw new Error('Choose an originals output directory.')
   const destination = resolve(root, output)
@@ -251,6 +250,7 @@ export async function generateSpanishFoodLevel2Pack({ root = process.cwd(), outp
     }
   }
   await rejectOutputDescendantLinks(destination)
+  const { plan, approval } = await loadSpanishFoodLevel2Plan(root)
   return generate({
     plan, output: destination, apiKey, concurrency: 2, budget: 2000,
     beforeRequests: async () => {

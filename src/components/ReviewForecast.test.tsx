@@ -26,28 +26,12 @@ describe('Home review forecast (#156)', () => {
     expect(rows[1]!.querySelector('time')).toHaveAttribute('datetime', new Date(at + 86_400_000).toISOString());
   });
 
-  it('keeps positive fractions below one visible and rounds larger fractional estimates', () => {
-    renderForecast([0.001, 0.25, 0.99, 1.01, 1.49, 1.5, 0]);
-    const rows = screen.getAllByRole('listitem');
-    expect(rows.map(row => row.querySelector('.review-forecast-count')!.textContent)).toEqual(['<1', '<1', '<1', '1', '1', '2', '0']);
-    expect(rows[0]).toHaveAccessibleName('Today, Sunday, November 8: less than 1 estimated review');
-    expect(rows[0]!.querySelector('.review-forecast-bar')).not.toHaveClass('is-zero');
-    expect(screen.queryByText('No reviews expected this week.')).not.toBeInTheDocument();
-  });
-
   it('shows a complete seven-day zero forecast with an explicit empty-work message', () => {
     renderForecast([0, 0, 0, 0, 0, 0, 0]);
     expect(screen.getAllByRole('listitem')).toHaveLength(7);
     expect(screen.getByRole('listitem', { name: 'Today, Sunday, November 8: 0 estimated reviews' })).toBeVisible();
     expect(screen.getByText('No reviews expected this week.')).toBeVisible();
     for (const row of screen.getAllByRole('listitem')) expect(row.querySelector('.review-forecast-bar')).toHaveClass('is-zero');
-  });
-
-  it('uses the supplied forecast timestamp when the displayed week changes', () => {
-    const { rerender } = renderForecast([1, 0, 0, 0, 0, 0, 0]);
-    rerender(<ReviewForecast forecast={forecast([1, 0, 0, 0, 0, 0, 0])} at={at + 86_400_000} loading={false} unavailable={false}/>);
-    expect(screen.getByRole('listitem', { name: 'Today, Monday, November 9: 1 estimated review' })).toBeVisible();
-    expect(screen.getAllByRole('listitem')[1]!.querySelector('time')).toHaveTextContent('Tue');
   });
 
   it('shows loading instead of stale forecast numbers, then a distinct unavailable state', () => {

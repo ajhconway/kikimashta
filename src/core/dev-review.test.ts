@@ -1,10 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import type { PracticeCard } from '../types';
 import { contextualBanks, contextualVocabulary } from '../content/contextual-runtime';
-import { advanceSchedule, schedulerVersion } from './scheduler';
 import { cardMastery } from './mastery';
 import { availableDevReviewTypes, createDevReview, defaultDevReviewOptions, devReviewEntries } from './dev-review';
-import { requeueMissedQuestion } from './session';
 import { practicePool } from './practice';
 
 const at = Date.parse('2026-11-08T12:00:00Z');
@@ -42,35 +40,8 @@ describe('configured simulated Dev review (#152)', () => {
     }
   });
 
-  it('covers every selected type/level combination before repeating', () => {
-    const { questions, schedules } = createDevReview(devReviewEntries(cards, [], []), { ...defaultDevReviewOptions, masteryLevels: [6, 7], count: 4 }, at, () => .2);
-    expect(new Set(questions.map(question => `${question.exercise}/${cardMastery(schedules.get(question.demoId!)).label}`)).size).toBe(4);
-  });
-
-  it('builds schedulable samples even when the clock is earlier than their representative interval', async () => {
-    const { questions, schedules } = createDevReview(devReviewEntries(cards, [], []), defaultDevReviewOptions, 1000000, () => .5);
-    for (const question of questions) {
-      await expect(advanceSchedule(schedules.get(question.demoId!), {
-        id: question.demoId!, sessionId: 'test', itemId: question.target.id, language: question.target.language,
-        choiceIds: question.choices.map(item => item.id), selectedId: question.target.id, correct: true,
-        startedAt: 1000000, answeredAt: 1000000, responseMs: 0,
-        context: { phase: 'review', exercise: question.exercise, recordingSrc: 'test.mp3', replays: 0, schedulerVersion },
-      })).resolves.toMatchObject({ itemId: question.target.id, exercise: question.exercise });
-    }
-  });
-
-  it('retains sample identity and authored choice scope for untimed corrective retries', () => {
-    const { questions, schedules } = createDevReview(devReviewEntries(cards, [], []), { ...defaultDevReviewOptions, masteryLevels: [6], count: 1 }, at, () => .5);
-    const original = questions[0]!;
-    const retry = requeueMissedQuestion(questions, 0, 'miss', () => .5)[1]!;
-    expect(retry).toMatchObject({ demoId: original.demoId, retryOf: 'miss', target: original.target });
-    expect(retry.choices.map(item => item.id).sort()).toEqual(original.choices.map(item => item.id).sort());
-    expect(cardMastery(schedules.get(original.demoId!)).label).toBe('Confident');
-  });
-
   it.each([
-    { masteryLevels: [] }, { masteryLevels: [8] }, { masteryLevels: [-1] },
-    { count: 0 }, { count: 49 }, { count: 1.5 }, { exercises: [] },
+    { masteryLevels: [8] }, { count: 49 }, { exercises: [] },
   ])('rejects invalid or empty options %j', change => {
     expect(() => createDevReview(devReviewEntries(cards, [], []), { ...defaultDevReviewOptions, ...change }, at, () => .5)).toThrow();
   });

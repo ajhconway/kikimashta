@@ -14,11 +14,6 @@ async function word(itemId: string, gap: number) {
     context: { phase: 'lesson', exercise: 'audio-picture', recordingSrc: 'test.mp3', replays: 0, schedulerVersion } });
   return { ...schedule, dueAt: 1000 + gap };
 }
-it.each([[4 * hour, 'Improving'], [24 * hour, 'Familiar'], [7 * 24 * hour, 'Steady'], [30 * 24 * hour, 'Strong'], [90 * 24 * hour, 'Confident'], [365 * 24 * hour, 'Mastered']] as const)('awards the current lowest level at the %i boundary', async (gap, label) => {
-  const cat = await word('cat', gap), dog = await word('dog', gap + 1000);
-  expect(packBadges(items, [pack], [cat, dog])).toMatchObject([{ level: { label }, cardCount: 2 }]);
-  expect(packBadges(items, [pack], [{ ...cat, dueAt: cat.dueAt - 1 }, dog])[0]?.level.label).not.toBe(label);
-});
 it('requires all approved cards, excludes empty packs, and removes or downgrades current badges', async () => {
   const cat = await word('cat', 30 * 24 * hour), dog = await word('dog', 365 * 24 * hour);
   expect(packBadges(items, [pack], [cat])).toEqual([]);

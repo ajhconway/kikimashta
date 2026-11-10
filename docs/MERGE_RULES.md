@@ -38,11 +38,27 @@ the new review with `@codex review`.
 
 ## Keeping validation responsive (#171)
 
-Checks cancels superseded PR runs, while main-push checks remain available for publication. Independent validation and two browser shards run concurrently. Both Chromium and mobile WebKit remain covered with zero retries. The required `checks` job accepts only successful validation and successful completion of every browser shard; failures, cancellations and skips cannot clear it. The separate `database` requirement remains unchanged.
+Checks cancels superseded PR runs, while main-push checks remain available for
+publication. Validation builds once and shares that build with one browser job,
+which runs Chromium and mobile WebKit with two workers and zero retries. Required
+PR `checks` accepts only successful validation, database and browser jobs. The
+separate `database` and current-head `codex-review` requirements remain unchanged.
+
+After all PR jobs pass, `checks` uploads a small `validated-tree-<Git tree SHA>`
+completion marker. Main may reuse only an unexpired marker from a successful
+canonical-repository PR run of the same Checks workflow for exactly its checked-out
+tree, including independent Git API verification of the candidate commit tree.
+It then explicitly verifies that the expensive jobs were skipped for that
+reason. Failed/canceled/fork/other-workflow proof cannot waive checks; lookup
+failure or a different tree falls back to the full gate. Review/branch protections
+remain independent. No PR application artifact is trusted for publication.
 
 After the final commit or an update from main, request a review of the new head promptly if its summary is stale. Run review alongside CI. The gate refresh only reports review state and does not request a review. Avoid duplicate requests for a head already under review. Automatic review triggering is an account integration setting; this change does not alter it.
 
-The gate uses a sparse checkout of only its trusted default-branch script. Production publication still follows successful full main checks and rebuilds with production variables. Compare Actions job timings with #171 before claiming a speedup.
+The review gate uses a sparse checkout of only its trusted default-branch script.
+Publication follows successful main Checks (full validation or exact-tree reuse)
+and builds with production variables. It runs only a bounded live resource smoke.
+Compare like-for-like timings using [TESTING.md](TESTING.md) before claiming a speedup.
 
 ## How the gate works
 
@@ -78,10 +94,10 @@ References: [Codex review setup](https://learn.chatgpt.com/docs/third-party/gith
 ## Focused test coverage (#179)
 
 Pure core/content tests use Node; UI, preference and storage tests retain jsdom.
-Each browser runner executes half of Chromium followed by the opposite half of
-mobile WebKit, counterbalancing expensive halves while every required journey
-still runs in both engines. Reports are retained separately for each engine and
-actual shard. See [browser coverage and timing](BROWSER_TESTS.md).
+The browser job uses the checked build and executes each retained journey in both
+engines, apart from the documented unsupported WebKit fake-service/offline-auth
+combination. Reports retain engine identity. The routine budget is 24 scenarios;
+see [browser coverage and timing](BROWSER_TESTS.md).
 
 Historical audition/decoder sweeps and generated contact sheets live under
 `e2e/content-review/`. Run `npm run test:content-review` after building, or use

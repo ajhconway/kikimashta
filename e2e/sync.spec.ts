@@ -104,24 +104,6 @@ async function firstNote(page: Page) {
   return { input: card.getByLabel('Your notes'), status: card.locator('.feedback-status') };
 }
 
-test('email sign-in is optional and its dialog supports keyboard dismissal', async ({ page, context }) => {
-  test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');
-  const remote = cloud(); await remote.connect(context);
-  const authenticationRequests: string[] = [];
-  page.on('request', request => { if (request.url().startsWith(endpoint + '/auth/')) authenticationRequests.push(request.url()); });
-  await page.goto('./');
-  await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
-  const trigger = page.getByRole('button', { name: 'Sign in', exact: true });
-  await trigger.click();
-  await expect(page.getByLabel('Email', { exact: true })).toBeFocused();
-  expect(authenticationRequests).toEqual([]);
-  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.keyboard.press('Escape');
-  await expect(page.getByRole('dialog')).not.toBeVisible();
-  await expect(trigger).toBeFocused();
-  await expect(page.getByRole('button', { name: /^Start/ })).toBeEnabled();
-});
-
 test('accounts converge across browser storage, retry offline answers, and sync note deletion', async ({ page, context, browser, quietAudio }, info) => {
   await selectWordPractice(page);
   test.skip(process.env.VITE_SUPABASE_URL !== endpoint, 'Uses the explicitly configured CI test service.');

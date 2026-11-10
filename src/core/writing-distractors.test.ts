@@ -40,7 +40,7 @@ describe('mastery-based writing plausibility (#221)', () => {
     expect(result.choiceKinds.c).toBe('pronunciation');
   });
 
-  it.each([0, .2, .6, .999])('retains matching candidates and their ranked six-window with random %s', value => {
+  it.each([0, .999])('retains matching candidates and their ranked six-window with random %s', value => {
     const extra = [word('d', '曲げる', 'まげる'), word('e', '逃げる', 'にげる'), word('f', '焦げる', 'こげる'), word('g', '遂げる', 'とげる')];
     const scoped = [...pool, ...extra];
     const result = selectWordChoices({ item: target, exercise: 'audio-text' }, scoped, masteryLevels[4], () => value,

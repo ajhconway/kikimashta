@@ -26,7 +26,7 @@ body:
     id: verification
     attributes:
       label: Verification
-      description: Describe relevant behavior tests and any iPhone Safari checks. Keep fixtures isolated and deterministic; record actual results in the PR.
+      description: Name the primary test owner and existing coverage to extend or replace. Browser journeys need a distinct native boundary within the 24-scenario budget. For suite/CI changes record comparable counts and timings; keep real-iPhone acceptance separate. See docs/TESTING.md.
     validations:
       required: true
   - type: input

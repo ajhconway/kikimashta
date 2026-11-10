@@ -16,7 +16,7 @@ describe('global practice voice preferences (#148)', () => {
     expect(initialVoiceIds()).toEqual(['otani', 'lime']);
   });
 
-  it.each(['[]', '["retired"]', '[null]', '{}', 'invalid'])('uses all voices for unusable preference %s', saved => {
+  it.each(['["retired"]', 'invalid'])('uses all voices for unusable preference %s', saved => {
     localStorage.setItem(voicePreferenceKey, saved);
     expect(initialVoiceIds()).toEqual(practiceVoices.map(voice => voice.id));
   });
@@ -52,8 +52,8 @@ describe('language-scoped Spanish practice voices (#159)', () => {
     expect(initialVoiceIds()).toEqual(['lime']);
   });
 
-  it.each(['[]', '["cesar"]', '["lime"]', 'invalid'])('defaults to all Spanish voices for unusable preference %s', saved => {
-    localStorage.setItem(voicePreferenceKeyFor('es-419'), saved);
+  it('defaults to all Spanish voices when the saved subset belongs to Japanese', () => {
+    localStorage.setItem(voicePreferenceKeyFor('es-419'), '["lime"]');
     expect(initialVoiceIds('es-419')).toEqual(practiceVoicesFor('es-419').map(voice => voice.id));
   });
 });

@@ -41,9 +41,15 @@ Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues a
 ## Engineering and tests
 
 - Keep the interface, learning rules, content, and storage separate. Use stable item and attempt IDs, and keep progress specific to its language and item.
-- Each agent delivers relevant tests with behavior changes and meaningful regression tests with bug fixes. Follow the testing approach in `PLAN.md`.
+- Give each behavior one primary test owner: core rules, component interaction, App wiring, or a native browser boundary. Extend that owner's existing regression before adding another layer. A reversible cosmetic change usually needs no new test.
+- Include meaningful regressions for behavior changes and bug fixes. Preserve account/language isolation, stable history, failed-save recovery and paid-generation/approval boundaries; avoid repeating their permutations at every layer.
 - Assert observable behavior. Keep tests isolated and deterministic, fixtures small, time and randomness controlled, and mocks at external boundaries. Use real browser storage in end-to-end persistence checks.
-- Keep focused tests beside the code and browser journeys in `e2e/`. Reuse a small set of helpers and fix flaky tests rather than hiding them with retries.
+- Keep focused tests beside the code and browser journeys in `e2e/`. Keep at most 24 routine journey scenarios across Chromium and mobile WebKit. Prefer extending/replacing an existing journey; justify a new native boundary and its runtime in the PR before exceeding that budget.
+- Use one or two lesson cards in browser journeys by seeding real progress. Keep chunk-size, mastery, timer and content permutations in focused tests. Pack checks grow linearly: individual packs, the full union and a few meaningful overlaps, never every subset.
+- Content tests use tiny synthetic media for validator contracts and one read-only integrity pass over current deliveries. Completed release/amendment reconstruction, full gallery regeneration and decoder sweeps do not belong in the routine suite. Retain their durable approvals/provenance and distinctive regressions.
+- Remove obsolete or lower-value cases when extending a suite. Do not hide tests from discovery, merge the same work under fewer test names, or call rescheduling a test-count reduction. Fix flaky tests instead of adding retries.
+- Follow [the lean-suite policy and measurement commands](docs/TESTING.md). For suite/CI changes, report expanded case counts, comparable timings and the retained owner for removed coverage. Separate test time, setup/build time and Pages service time.
+- The merge gate owns app/database/browser validation. Main reuses only successful Checks proof for its exact Git tree and falls back to full checks otherwise. Publish one production-configured build, then run only the bounded read-only live smoke; do not repeat user journeys during deployment.
 - Review test quality as well as the implementation. Before integration, run the relevant checks and the configured lint, type checks, tests, and production build. Report actual commands and results; do not claim unavailable checks passed.
 - Check audio and interaction on the real iPhone at playable milestones and releases. Browser emulation supplements device testing.
 

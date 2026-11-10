@@ -54,12 +54,18 @@ jobs:
         uses: actions/deploy-pages@v5.0.1
         with:
           artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+      - name: Smoke-check the published revision
+        id: smoke
+        env:
+          PUBLICATION_URL: ${{ steps.deploy.outputs.page_url }}
+        run: node scripts/deployment-smoke.mjs
       - name: Summarize publication
         if: always()
         env:
           BUILD_RESULT: ${{ steps.build.outcome }}
           UPLOAD_RESULT: ${{ steps.artifact.outcome }}
           DEPLOY_RESULT: ${{ steps.deploy.outcome }}
+          SMOKE_RESULT: ${{ steps.smoke.outcome }}
           ARTIFACT_ID: ${{ steps.artifact.outputs.artifact_id }}
         run: |
           {
@@ -67,9 +73,9 @@ jobs:
             echo "Source revision: \`$SOURCE_REVISION\`"
             echo "Artifact: \`$PAGES_ARTIFACT_NAME\` (ID: $ARTIFACT_ID)"
             echo ''
-            echo '| Build | Upload | Pages service |'
-            echo '| --- | --- | --- |'
-            echo "| $BUILD_RESULT | $UPLOAD_RESULT | $DEPLOY_RESULT |"
+            echo '| Build | Upload | Pages service | Live smoke |'
+            echo '| --- | --- | --- | --- |'
+            echo "| $BUILD_RESULT | $UPLOAD_RESULT | $DEPLOY_RESULT | $SMOKE_RESULT |"
             echo ''
             if [ "$DEPLOY_RESULT" = failure ]; then
               echo 'See **Deploy through Pages service** for the last reported Pages status. After a successful build/upload, deployment_queued or syncing_files indicates waiting inside Pages.'

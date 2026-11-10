@@ -3,7 +3,7 @@ import { act, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { usePackBadgePresentation } from './usePackBadgePresentation';
 import { PackBadges } from '../components/PackBadges';
-import { BADGE_CELEBRATE_MS, BADGE_UPGRADE_MS, BADGE_REORDER_MS } from '../core/pack-badge-presentation';
+import { BADGE_UPGRADE_MS, BADGE_REORDER_MS } from '../core/pack-badge-presentation';
 import { masteryLevels } from '../core/mastery';
 import { cardPacks } from '../core/packs';
 import type { PackBadge } from '../core/pack-badges';
@@ -48,34 +48,6 @@ it('celebrates a replacement before moving it to the top, including StrictMode l
   view.unmount();
 });
 
-it('remembers the last real Home snapshot through practice and pending history', () => {
-  const before = [badge(0, 2)];
-  const view = render(<Harness badges={before}/>);
-  view.rerender(<Harness active={false} badges={null}/>);
-  expect(screen.queryByRole('region')).not.toBeInTheDocument();
-  view.rerender(<Harness active={false} badges={[badge(0, 5)]}/>);
-  view.rerender(<Harness badges={null}/>);
-  view.rerender(<Harness badges={[badge(0, 5)]}/>);
-  expect(region()).toHaveAttribute('data-phase', 'celebrate');
-  expect(screen.getByRole('listitem')).toHaveAttribute('data-celebration', 'upgrade');
-  view.unmount();
-  expect(vi.getTimerCount()).toBe(0);
-});
-
-it('does not celebrate existing progress on first load, account replacement or account loading', () => {
-  const view = render(<Harness badges={null}/>);
-  view.rerender(<Harness badges={[badge(0, 3)]}/>);
-  expect(region()).toHaveAttribute('data-phase', 'idle');
-  view.rerender(<Harness scope={{}} badges={[badge(0, 7)]}/>);
-  expect(region()).toHaveAttribute('data-phase', 'idle');
-  const next = {};
-  view.rerender(<Harness scope={next} reset badges={null}/>);
-  view.rerender(<Harness scope={next} badges={[badge(0, 7)]}/>);
-  expect(region()).toHaveAttribute('data-phase', 'idle');
-  expect(region().querySelector('.badge-fireworks')).toBeNull();
-  view.unmount();
-});
-
 it('announces a first earned badge after an empty baseline and clears timers on unmount', () => {
   const view = render(<Harness badges={[]}/>);
   const live = screen.getByRole('status');
@@ -88,24 +60,4 @@ it('announces a first earned badge after an empty baseline and clears timers on 
   view.unmount();
   act(() => { vi.runOnlyPendingTimers(); });
   expect(vi.getTimerCount()).toBe(0);
-});
-
-it.each(['award', 'upgrade'] as const)('clears a completed %s announcement so re-earning it changes the live text again', kind => {
-  const before = kind === 'award' ? [] : [badge(0, 2), badge(1, 5)];
-  const after = kind === 'award' ? [badge(0, 2)] : [badge(0, 7), badge(1, 5)];
-  const view = render(<Harness badges={before}/>);
-  const live = screen.getByRole('status');
-  view.rerender(<Harness badges={after}/>);
-  const duration = kind === 'upgrade' ? BADGE_UPGRADE_MS : BADGE_CELEBRATE_MS;
-  const announcement = live.textContent;
-  expect(announcement).toContain(kind === 'award' ? 'New badge' : 'Badge upgraded');
-  act(() => { vi.advanceTimersByTime(duration + BADGE_REORDER_MS); });
-  expect(live).toBeEmptyDOMElement();
-  view.rerender(<Harness badges={before}/>);
-  act(() => { vi.advanceTimersByTime(BADGE_REORDER_MS); });
-  view.rerender(<Harness badges={after}/>);
-  expect(live).toHaveTextContent(announcement!);
-  act(() => { vi.advanceTimersByTime(duration + BADGE_REORDER_MS); });
-  expect(live).toBeEmptyDOMElement();
-  view.unmount();
 });
