@@ -1,0 +1,26 @@
+{
+  "issue": 233,
+  "round": 4,
+  "date": "2026-11-09",
+  "ownerStatement": "立てる the bear should be angle to the right so that the motion is standing up rather than leaning it over",
+  "status": "complete-pending-owner-review",
+  "directRevisions": [
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 7,
+      "basePath": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+      "baseSha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+      "concept": "Tilt the entire rigid bear and attached base to the right, right edge of base touching tabletop, with upward-left counterclockwise motion toward upright; retain hand/table/style."
+    }
+  ],
+  "notes": [
+    "Preserve all earlier versions and exact prompts.",
+    "Review only; no activation or additional approval."
+  ],
+  "completion": {
+    "generatedImages": 1,
+    "selectedVersion": 7,
+    "preservedGeneratedVersions": 101
+  }
+}

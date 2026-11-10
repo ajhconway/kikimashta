@@ -1,0 +1,162 @@
+{
+  "issue": 233,
+  "round": 2,
+  "date": "2026-11-09",
+  "ownerStatement": "広げる is good but needs more obvious outward motion\n広い can we make the rooms have windows, proper interiors, etc?\n中央 let's stick with the original concept and its artwork\n車内 the interior is better, but the front seats should align more\n近い please generate several alternative concepts\n夕方 is too confusable with sunset\n下がる/上がる I like alternative A, the elevators.\n入れる/出す slightly bigger arrow\n作る Let's try several alternatives related to alternative B\n立てる Can we do alternative B with a toy figurine instead of a bottle?\n止まる Alternative A but the zebra crossing is the wrong orientation\n走行 Maybe a map showing travel route with suitcases covered in stickers; try several alternatives",
+  "status": "complete-pending-owner-review",
+  "directRevisions": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 3,
+      "concept": "Keep unfolding map; add obvious outward motion cues to both hands/map edges.",
+      "basePath": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+      "baseSha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e"
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 3,
+      "concept": "Furnished wide/open versus narrow/cramped rooms with windows, real interior details and matching furniture scale.",
+      "basePath": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+      "baseSha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270"
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 3,
+      "concept": "Align both front seats on the same transverse row; retain improved car proportions.",
+      "basePath": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+      "baseSha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18"
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 3,
+      "concept": "Increase arrow uniformly modestly, about20%, preserving insertion scene.",
+      "basePath": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+      "baseSha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628"
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 3,
+      "concept": "Increase arrow uniformly modestly, about20%, preserving removal scene and matching insertion arrow weight.",
+      "basePath": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+      "baseSha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023"
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 5,
+      "concept": "Adapt alternativeB bottle upright: a hand setting a toy figurine upright instead, clear upright action.",
+      "basePath": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+      "baseSha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616"
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 5,
+      "concept": "Adapt alternativeA pedestrian stopping at crossing; rotate zebra stripes to correct traffic geometry.",
+      "basePath": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+      "baseSha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318"
+    },
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "text": "夕方",
+      "version": 3,
+      "concept": "Shared landscape family, blue-hour early evening with warm windows, no setting sun or sunset arrow; add subtle everyday returning-home cue if useful.",
+      "basePath": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+      "baseSha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99"
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "versions": [
+        3,
+        4,
+        5
+      ],
+      "concepts": [
+        "Two matching homes, one immediately beside a small shop and one far away, emphasize short distance.",
+        "Kiku next to a large tree versus same Kiku farther away, controlled near/far contrast.",
+        "A ball almost touching a plain open box compared with same ball far away; emphasize tiny near gap."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-d72e08381953-v2.png",
+      "baseSha256": "93039cbaf1cfedc214dbe22323a044a0213de1b05af45ad534c53c6987429b23"
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "versions": [
+        5,
+        6,
+        7
+      ],
+      "concepts": [
+        "Hands assembling a small wooden toy car from recognizable pieces; compact construction scene.",
+        "Hands assembling a little wooden stool with visible joint and a few components.",
+        "Hands assembling a birdhouse from wooden panels; more explicit building action."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+      "baseSha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "versions": [
+        5,
+        6,
+        7
+      ],
+      "concepts": [
+        "A folded travel map with a clear route and one sticker-covered suitcase beside it.",
+        "Two sticker-covered suitcases framing a compact map with connected travel route.",
+        "One open travel map with route, luggage and a small vehicle following the route."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-fa26a112a479-v1.png",
+      "baseSha256": "3e1d7380db88422d5259340778b03b90706b951b12b291e9f290204a8294416d"
+    }
+  ],
+  "ownerChoices": [
+    {
+      "id": "ja-v-a39af9252454",
+      "text": "中央",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-a39af9252454-v1.png",
+      "sha256": "3986d8786de10fe5de2c434d0a9649381070edec777361b5cd6aaa2c91b61eeb",
+      "ownerStatement": "中央 let's stick with the original concept and its artwork"
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+      "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91",
+      "ownerStatement": "下がる/上がる I like alternative A, the elevators."
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v2.png",
+      "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2",
+      "ownerStatement": "下がる/上がる I like alternative A, the elevators."
+    }
+  ],
+  "generatedImageCount": 17,
+  "notes": [
+    "Keep all prior artwork and exact prompts.",
+    "New derivatives require owner review; explicit original/elevator choices bind to exact hashes.",
+    "Review only; no runtime activation."
+  ],
+  "completion": {
+    "generatedImages": 17,
+    "directedImages": 8,
+    "alternativeImages": 9,
+    "ownerChoices": 3,
+    "preservedGeneratedVersions": 97
+  }
+}

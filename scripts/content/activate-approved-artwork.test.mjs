@@ -499,3 +499,147 @@ for (const failure of ['pending selection', 'missing approval', 'stale approval 
     assert.equal(existsSync(join(f.root, 'public/images/approved')), false)
   })
 }
+
+function sceneFixture(t) {
+  const f = transparentFixture(t)
+  const directory = 'artifacts/scene-art-233'
+  const repoRead = path => JSON.parse(readFileSync(new URL(`../../${directory}/${path}`, import.meta.url), 'utf8'))
+  const manifest = repoRead('release-manifest.json')
+  const primary = repoRead('manifest.json')
+  const plan = repoRead('plan.json')
+  for (const asset of manifest.assets) {
+    const target = join(f.root, asset.path)
+    mkdirSync(dirname(target), { recursive: true })
+    if (!existsSync(target)) copyFileSync(new URL(`../../${asset.path}`, import.meta.url), target)
+  }
+  const originalPath = `${directory}/sources/suitability-review.json`
+  mkdirSync(dirname(join(f.root, originalPath)), { recursive: true })
+  copyFileSync(new URL(`../../${originalPath}`, import.meta.url), join(f.root, originalPath))
+  f.put('content/catalog/ja.json', { items: manifest.assets.map(asset => ({ ...f.item, id: asset.id })) })
+  f.put('content/visuals/levels-1-2.json', manifest.assets.map(asset => ({ ...f.visual, id: asset.id })))
+  f.put('content/practice-pool.json', { itemIds: [manifest.assets[0].id] })
+  const oldNight = { id: 'ja-v-ba0c8a160c33', path: 'public/images/keep-night.png', sourcePath: 'old-night.png', sha256: hash(f.source), bytes: f.source.length }
+  mkdirSync(dirname(join(f.root, oldNight.path)), { recursive: true })
+  writeFileSync(join(f.root, oldNight.path), f.source)
+  const activation = f.read('content/card-regeneration/activation.json')
+  activation.assets.push(oldNight)
+  f.put('content/card-regeneration/activation.json', activation)
+  const save = () => {
+    f.put(`${directory}/release-manifest.json`, manifest)
+    f.put(`${directory}/manifest.json`, primary)
+    f.put(`${directory}/plan.json`, plan)
+  }
+  save()
+  return { ...f, manifest, primary, plan, oldNight, save }
+}
+
+test('the full scene release activates 43 primary cards and replaces Night while preserving identity, audio, eligibility and old media', t => {
+  const f = sceneFixture(t)
+  const before = f.read('content/catalog/ja.json')
+  const pool = f.read('content/practice-pool.json')
+  const options = { root: f.root, batches: ['scene-233'] }
+  const ids = activateArtwork({ ...options, encode: (source, target, { format }) => {
+    assert.equal(format, 'png')
+    assert.ok(existsSync(source))
+    writeFileSync(target, f.source)
+  } })
+  assert.equal(ids.length, 44)
+  const active = f.read('content/card-regeneration/activation.json')
+  assert.equal(active.assets.length, 45)
+  assert.equal(active.assets.filter(asset => asset.id === f.oldNight.id).length, 1)
+  assert.deepEqual(readFileSync(join(f.root, f.oldNight.path)), f.source)
+  assert.deepEqual(f.read('content/practice-pool.json'), pool)
+  const after = f.read('content/catalog/ja.json')
+  assert.deepEqual(after.items.map((item, index) => ({ ...item, image: before.items[index].image })), before.items)
+  for (const item of after.items) {
+    const delivery = active.assets.find(asset => asset.id === item.id)
+    assert.equal(delivery.manifestPath, 'artifacts/scene-art-233/release-manifest.json')
+    assert.equal(delivery.alpha, 'preserved')
+    assert.match(item.image.src, /\.png$/)
+  }
+  const rest = active.assets.find(asset => asset.id === 'ja-v-ebdaef0f21db')
+  const shared = active.assets.find(asset => asset.id === 'ja-v-acc3dd26ba1e')
+  assert.equal(rest.sourcePath, shared.sourcePath)
+  assert.equal(rest.sourceSha256, shared.sourceSha256)
+  for (const id of ['ja-v-5849925b131d', 'ja-v-79140f0bf8e7', 'ja-v-89cc0156875d']) {
+    const selection = f.manifest.assets.find(asset => asset.id === id)
+    assert.equal(selection.sourceKind, 'existing-approved')
+    assert.equal(active.assets.find(asset => asset.id === id).sourceSha256, selection.sha256)
+  }
+  activateArtwork({ ...options, encode: () => assert.fail('Verified scene deliveries should be reused') })
+  assert.deepEqual(f.read('content/card-regeneration/activation.json'), active)
+})
+
+for (const failure of ['changed frozen review', 'changed source bytes', 'changed source revision', 'swapped selected and excluded IDs', 'missing primary card', 'primary media differs', 'unapproved primary', 'missing related Night', 'extra related image', 'changed related Night', 'missing release Night', 'extra release ID', 'missing approval', 'stale approval hash', 'stale approval version', 'missing selected version', 'duplicate selected version', 'conflicting selected version', 'pending release asset', 'opaque scene source', 'missing release authorization', 'wrong release statement', 'missing release selection', 'stale release selection', 'corrupted selected PNG', 'unsafe source path', 'reused source symlink']) {
+  test(`scene release rejects ${failure} before encoding or bank writes`, t => {
+    const f = sceneFixture(t)
+    const asset = f.manifest.assets.find(asset => asset.id === 'ja-v-e9ad09158eb3')
+    if (failure === 'changed frozen review') f.plan.items[0].review.recommendation = 'Replacement historical guidance.'
+    if (failure === 'changed source bytes') f.put('artifacts/scene-art-233/sources/suitability-review.json', { items: [] })
+    if (failure === 'changed source revision') {
+      f.plan.sourceRevision = 'b'.repeat(40)
+      f.primary.sourceRevision = f.plan.sourceRevision
+      f.manifest.sourceRevision = f.plan.sourceRevision
+    }
+    if (failure === 'swapped selected and excluded IDs') {
+      const old = f.plan.items[0].review
+      const replacement = f.plan.excludedUpdated[0].review
+      f.plan.items[0].review = replacement
+      f.plan.excludedUpdated[0].review = old
+      f.plan.excludedUpdatedIds[0] = old.id
+      f.primary.assets[0].id = replacement.id
+    }
+    if (failure === 'missing primary card') f.primary.assets.pop()
+    if (failure === 'primary media differs') f.primary.assets[0].sha256 = '0'.repeat(64)
+    if (failure === 'unapproved primary') f.primary.assets[0].status = 'generated-pending-owner-review'
+    if (failure === 'missing related Night') f.primary.relatedFamilyCandidates = []
+    if (failure === 'extra related image') f.primary.relatedFamilyCandidates.push({ ...f.primary.relatedFamilyCandidates[0], id: 'ja-v-abcdef' })
+    if (failure === 'changed related Night') f.primary.relatedFamilyCandidates[0].sha256 = '0'.repeat(64)
+    if (failure === 'missing release Night') f.manifest.assets = f.manifest.assets.filter(asset => asset.id !== f.oldNight.id)
+    if (failure === 'extra release ID') f.manifest.assets.push({ ...asset, id: 'ja-v-abcdef' })
+    if (failure === 'missing approval') delete asset.approval
+    if (failure === 'stale approval hash') asset.approval.sha256 = '0'.repeat(64)
+    if (failure === 'stale approval version') asset.approval.selectedVersion++
+    if (failure === 'missing selected version') asset.versions = []
+    if (failure === 'duplicate selected version') asset.versions.push({ ...asset.versions.find(version => version.version === asset.selectedVersion) })
+    if (failure === 'conflicting selected version') {
+      assert.equal(asset.versions.filter(version => version.version === asset.selectedVersion && version.path === asset.path && version.sha256 === asset.sha256).length, 1)
+      asset.versions.push({ version: asset.selectedVersion, path: asset.path.replace('.png', '-conflict.png'), sha256: '0'.repeat(64) })
+    }
+    if (failure === 'pending release asset') asset.status = 'generated-pending-owner-review'
+    if (failure === 'opaque scene source') asset.transparentBackground = false
+    if (failure === 'missing release authorization') delete f.manifest.releaseApproval
+    if (failure === 'wrong release statement') f.manifest.releaseApproval.ownerStatement = 'Nice images.'
+    if (failure === 'missing release selection') f.manifest.releaseApproval.selections.pop()
+    if (failure === 'stale release selection') f.manifest.releaseApproval.selections[0].sha256 = '0'.repeat(64)
+    if (failure === 'corrupted selected PNG') writeFileSync(join(f.root, asset.path), 'changed PNG bytes')
+    if (failure === 'unsafe source path') asset.path = 'artifacts/scene-art-233/../outside.png'
+    if (failure === 'reused source symlink') {
+      const reused = f.manifest.assets.find(asset => asset.id === 'ja-v-79140f0bf8e7')
+      rmSync(join(f.root, reused.path))
+      symlinkSync(join(f.root, asset.path), join(f.root, reused.path))
+    }
+    f.save()
+    const paths = ['content/catalog/ja.json', 'content/ja.json', 'content/card-regeneration/activation.json', 'content/visuals/levels-1-2.json', 'content/practice-pool.json']
+    const before = paths.map(path => f.read(path))
+    assert.throws(() => activateArtwork({ root: f.root, batches: ['scene-233'], encode: () => assert.fail('Must reject before encoding') }))
+    paths.forEach((path, index) => assert.deepEqual(f.read(path), before[index]))
+    assert.deepEqual(readdirSync(join(f.root, 'public/images')), ['keep-night.png'])
+  })
+}
+
+test('coordinated scene media replacement cannot drift accepted bytes even if primary, release and approvals agree', t => {
+  const f = sceneFixture(t)
+  const asset = f.manifest.assets.find(asset => asset.id === 'ja-v-01a3c397cb20')
+  const other = f.manifest.assets.find(asset => asset.id === 'ja-v-0c337ec8cbd4')
+  Object.assign(asset, { path: other.path, sha256: other.sha256, selectedVersion: other.selectedVersion })
+  asset.versions = [{ version: asset.selectedVersion, path: asset.path, sha256: asset.sha256 }]
+  Object.assign(asset.approval, { sha256: asset.sha256, selectedVersion: asset.selectedVersion })
+  Object.assign(f.primary.assets.find(record => record.id === asset.id), { path: asset.path, sha256: asset.sha256, selectedVersion: asset.selectedVersion })
+  Object.assign(f.manifest.releaseApproval.selections.find(record => record.id === asset.id), { path: asset.path, sha256: asset.sha256, selectedVersion: asset.selectedVersion })
+  f.save()
+  const before = f.read('content/catalog/ja.json')
+  assert.throws(() => activateArtwork({ root: f.root, batches: ['scene-233'], encode: () => assert.fail('Must reject before encoding') }), /owner-approved scene media/)
+  assert.deepEqual(f.read('content/catalog/ja.json'), before)
+  assert.deepEqual(readdirSync(join(f.root, 'public/images')), ['keep-night.png'])
+})

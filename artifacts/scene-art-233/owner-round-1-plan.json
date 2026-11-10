@@ -1,0 +1,241 @@
+{
+  "issue": 233,
+  "round": 1,
+  "date": "2026-11-09",
+  "ownerStatement": "丸い is a little busy; can we have two circular objects and two non-circular objects, using attention lines to distinguish the circular ones?\n中 there is an existing Kiku artwork of Kiku in a box\n上る let's remove the shadowed starting pose\n日の出 let's remove the left part and reposition/resize accordingly\n十台 let's do 3, 4, then 3 to make them as large as possible\n広げる Maybe spreading out a map or equivalent would be more intuitive?\n広い the objects are a little weird. Can we do rooms like a wide open room and a narrow cramped one?\n明るい the emphasis should be on the whole scene, not the lamp\n中央 it's ok, but I'd like to try something different. Can you generate several alternatives?\n車内 nice concept, but the proportions are weird.\n近い I'd like different objects.\n夕方 Let's have all the time of day cards use the same scene.\n同じ Can we do a play on the spiderman meme?\n下がる/上がる I don't like the concept. Can you generate several alternatives?\n入れる Ok, but maybe just one hand more clearly inserting, no shadow object.\n作る ok, but I'd like to see several other concepts\n回る is ok, but the shadow isn't helpful. It should have movement lines instead. I think it should spin the other direction.\n立てる let's see some other concepts\n止まる let's see some other concepts\n出す same as 入れる but inverse\n走行 lets' see some other concepts",
+  "status": "complete-pending-owner-review",
+  "directRevisions": [
+    {
+      "id": "ja-v-b1514b201acd",
+      "text": "丸い",
+      "version": 3,
+      "concept": "Exactly two circular objects and two matched noncircular objects; attention rays distinguish each circular object. No trays or extra objects.",
+      "basePath": "artifacts/scene-art-233/ja-v-b1514b201acd-v2.png",
+      "baseSha256": "3d4b11d2c4d4364f40600a9f17dd4a4a52953343b9710aca055391644c6f5442"
+    },
+    {
+      "id": "ja-v-b0a6475686ea",
+      "text": "上る",
+      "version": 2,
+      "concept": "Remove only the faded starting person; retain one solid climbing person, ladder and motion direction.",
+      "basePath": "artifacts/scene-art-233/ja-v-b0a6475686ea-v1.png",
+      "baseSha256": "f7bca911884f48284b3213dbcf2435c4582c1afb7578cf410810981a7ae3c9af"
+    },
+    {
+      "id": "ja-v-760cc08e40eb",
+      "text": "十台",
+      "version": 2,
+      "concept": "Exactly ten identical machines in three centered rows of3,4,3, maximized within a square with clean margins.",
+      "basePath": "artifacts/scene-art-233/ja-v-760cc08e40eb-v1.png",
+      "baseSha256": "35b25745ec0d88b97d8cef9cb757f3b855e2dc3d537f0a3b8556e75ba50a2577"
+    },
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 2,
+      "concept": "Hands spreading open one folded map with simple roads/river/green terrain, outward gesture, no words or duplicate ghost map.",
+      "basePath": "artifacts/scene-art-233/ja-v-01a3c397cb20-v1.png",
+      "baseSha256": "39daae79020eb8a5e9134e55c9a663de3ee59ec3a0df1eddcffb3a6431b24998"
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 2,
+      "concept": "A wide open room contrasted with a narrow cramped room, plausible matching furniture at consistent scale; emphasize wide room.",
+      "basePath": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v1.png",
+      "baseSha256": "1ca6d1c85d3c78818ca287d424c37187e3bbbe804e80c5e5d10e3405fe73fe98"
+    },
+    {
+      "id": "ja-v-f8249679701c",
+      "text": "明るい",
+      "version": 2,
+      "concept": "Same bright/dim room contrast; distribute attention around whole bright room rather than lamp.",
+      "basePath": "artifacts/scene-art-233/ja-v-f8249679701c-v1.png",
+      "baseSha256": "44569118bfc0f3358de24b139da9d355ef15ac0db4ded63d8a4ba94ce459135e"
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 2,
+      "concept": "Correct car body/wheel/roof/seat/dashboard proportions while retaining clear cabin cutaway.",
+      "basePath": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v1.png",
+      "baseSha256": "d304b931b38bec70020583856c9b34c241ae5bac11c319e73fd1d32d2e5c7ef3"
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 2,
+      "concept": "Controlled near/far relation using a flowerpot beside a bench; same objects and viewpoint, emphasize nearer gap.",
+      "basePath": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
+      "baseSha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71"
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "text": "同じ",
+      "version": 2,
+      "concept": "Play on duplicate-superhero pointing meme using two identical Kikus pointing at each other; same size/character/headphones.",
+      "basePath": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v1.png",
+      "baseSha256": "99555535faeac614d186b8214e7dbd46c2c3f83336e38ec378b4c191c9807403"
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 2,
+      "concept": "One hand clearly inserting one gold ball across the rim of an open lavender box; no ghost ball.",
+      "basePath": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v1.png",
+      "baseSha256": "49c6f1eb197d300a5900aa49d45d0c72ce8d35a6cb3b83a2b0c134d68dacb792"
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "text": "回る",
+      "version": 2,
+      "concept": "Remove faded blade, one solid pinwheel only with motion lines and counterclockwise rotation, opposite current clockwise.",
+      "basePath": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v1.png",
+      "baseSha256": "084b172017583f98e7c266aee4a6b18ca5582f9397e1904094685b7ea6e29e01"
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 2,
+      "concept": "Paired inverse of insertion: one hand clearly lifting one gold ball out across the same box rim; no ghost ball.",
+      "basePath": "artifacts/scene-art-233/ja-v-a001b24baf12-v1.png",
+      "baseSha256": "37861ff27f8be3493d3bbed375600154b43de71cd7aa9ce23212bc6579cb8505"
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "ja-v-a39af9252454",
+      "text": "中央",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "Kiku centered between two identical potted plants with equal gaps.",
+        "Kiku sitting at the exact center of a circular rug, with four small cushions symmetrically around its edge.",
+        "Concentric target rings with central gold disk and short attention rays at center; no arrow or numerals."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-a39af9252454-v1.png",
+      "baseSha256": "3986d8786de10fe5de2c434d0a9649381070edec777361b5cd6aaa2c91b61eeb",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "text": "下がる",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "A: elevator cabin descending in a short shaft.",
+        "B: water level falling in a transparent tank.",
+        "C: hot-air balloon descending above a compact ground landmark."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-415802b8c769-v1.png",
+      "baseSha256": "508d4b5c3fe7a4e6cf9c92f665b4c13bd98cfb6e75763695a0db27cdd952e6fc",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "text": "上がる",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "A: matching elevator cabin ascending in the same shaft.",
+        "B: matching water level rising in the same tank.",
+        "C: matching hot-air balloon ascending above the same landmark."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-86592fe77e48-v1.png",
+      "baseSha256": "1b3a9a449f460e2bc8209304d313f8e3264c129b596ed6f89e3a3cb4044f6481",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "Hands forming a clay bowl on a simple pottery wheel.",
+        "An adult assembling a small wooden birdhouse with simple materials and hammer.",
+        "Hands assembling a sandwich from bread and visible fillings."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v1.png",
+      "baseSha256": "732ea3add63323883a37016fa18b718f714c9a9ddc02d3255640f1df6378296f",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "A hand setting a book upright on a table.",
+        "A hand standing a bottle upright on its base.",
+        "Hands erecting a simple folding easel; clear upright orientation change."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v1.png",
+      "baseSha256": "59b219cafa6a5f1b319720043d9beac88e7a78f4dd8ab06b94a0a5ac89f110d9",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "A person halting at a crosswalk with a red pedestrian signal.",
+        "An adult cyclist braking with one foot down, bicycle halted.",
+        "A rolling ball coming to rest against a soft block, trailing motion marks ending before it."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-bd365f430f35-v1.png",
+      "baseSha256": "9725e0c561bba84d8cf4f96c1c4ab27537339d87335e5b70248758144d658107",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "versions": [
+        2,
+        3,
+        4
+      ],
+      "concepts": [
+        "A single train moving along a short track with motion lines.",
+        "An adult riding a bicycle along a short road with wheel movement lines.",
+        "One car driving along a curved road, wheel and trailing motion lines, no ghost car."
+      ],
+      "basePath": "artifacts/scene-art-233/ja-v-fa26a112a479-v1.png",
+      "baseSha256": "3e1d7380db88422d5259340778b03b90706b951b12b291e9f290204a8294416d",
+      "selectionPolicy": "Keep current selected image until owner chooses among three alternatives."
+    }
+  ],
+  "rootTasks": [
+    "Locate/reuse existing Kiku-inside-box art; if unavailable create a Kiku version from approved character reference.",
+    "Create matching single-scene sunrise/evening/night family. Sunrise removes left comparison. Night proposal is related-scope review only; retain its active approved art until separately accepted."
+  ],
+  "acceptance": "No approval inferred for unmentioned or revised cards. All new options remain for owner review.",
+  "preservation": "Keep frozen43-card source plan and original review unchanged; preserve every previous PNG and exact prompt.",
+  "completion": {
+    "newGeneratedImages": 36,
+    "directedEdits": 12,
+    "timeFamily": 3,
+    "alternatives": 21,
+    "reusedInside": 1,
+    "cardsWithAlternatives": 7,
+    "allGeneratedVersions": 80
+  }
+}

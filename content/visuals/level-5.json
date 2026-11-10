@@ -35,7 +35,7 @@
   },
   {
     "id": "ja-v-5dc14aea92c7",
-    "concept": "Steak with a small cow provenance bubble.",
+    "concept": "A marbled red beef steak linked to a small cow-head reference in a circular bubble.",
     "visualGroup": "牛肉",
     "reviewRequired": false
   },
@@ -94,10 +94,10 @@
   },
   {
     "id": "ja-v-d72e08381953",
-    "concept": "Two houses almost touch, with a very short distance marker.",
+    "concept": "Kiku and a golden dog sitting close together with gold attention marks above the gap, compared with the same pair sitting farther apart below.",
     "visualGroup": "近い",
     "reviewRequired": true,
-    "reviewNote": "Short gap between nearby houses represents proximity."
+    "reviewNote": "The short gap between Kiku and the dog represents proximity, compared with the same pair farther apart."
   },
   {
     "id": "ja-v-921d54ba31ef",
@@ -126,10 +126,10 @@
   },
   {
     "id": "ja-v-ceaf3971ff83",
-    "concept": "Street bends tightly around a building corner.",
+    "concept": "A lavender rectangular box with gold attention marks pointing toward its upper-right corner.",
     "visualGroup": "角",
     "reviewRequired": true,
-    "reviewNote": "Street corner scene; 角 can also mean the corner of an object."
+    "reviewNote": "Attention marks identify the corner of the box; 角 with the reading かど can name an object or street corner."
   },
   {
     "id": "ja-v-fd0090161525",
@@ -146,7 +146,7 @@
   },
   {
     "id": "ja-v-6027e0e1c622",
-    "concept": "Large multistory shop with display windows and shopping bags.",
+    "concept": "A multistory department-store cutaway showing clothing, homewares and toys on separate floors connected by escalators.",
     "visualGroup": "デパート",
     "reviewRequired": false
   },
@@ -173,7 +173,7 @@
   },
   {
     "id": "ja-v-3534dd7d07d1",
-    "concept": "Orange sun sets behind a low horizon and small house.",
+    "concept": "A person carrying a bag along a path toward a small cottage with glowing windows, beneath a blue-purple early-evening sky over green hills.",
     "visualGroup": "夕方",
     "reviewRequired": false
   },
@@ -440,7 +440,7 @@
   },
   {
     "id": "ja-v-ba0c8a160c33",
-    "concept": "A house under a violet night sky with a golden crescent and stars.",
+    "concept": "A small cottage with a glowing window beneath a violet sky with a gold crescent moon and three stars, surrounded by dark green hills and shrubs.",
     "visualGroup": "夜",
     "reviewRequired": false
   },
@@ -540,10 +540,10 @@
   },
   {
     "id": "ja-v-9ff4f40a3428",
-    "concept": "Two identical orange stars joined by equality bars.",
+    "concept": "Two identical headphone-wearing Kikus facing one another and pointing at each other with outstretched paws.",
     "visualGroup": "同じ",
     "reviewRequired": true,
-    "reviewNote": "Equality diagram intentionally uses identical objects."
+    "reviewNote": "Matching Kikus in mirrored pointing poses illustrate sameness."
   },
   {
     "id": "ja-v-f9d62cb2d38a",
@@ -674,10 +674,10 @@
   },
   {
     "id": "ja-v-415802b8c769",
-    "concept": "Ball descends three stair levels beside downward arrow.",
+    "concept": "A gold elevator cabin near the bottom of a lavender shaft, with a downward arrow beside it.",
     "visualGroup": "下がる",
     "reviewRequired": true,
-    "reviewNote": "Descending levels represent becoming lower, rather than physically falling."
+    "reviewNote": "The elevator moving to a lower level represents becoming lower, rather than physically falling."
   },
   {
     "id": "ja-v-a8c0f98a1f64",
@@ -695,14 +695,14 @@
   },
   {
     "id": "ja-v-86592fe77e48",
-    "concept": "Ball climbs three steps beside an upward arrow.",
+    "concept": "A gold elevator cabin near the top of a lavender shaft, with an upward arrow beside it.",
     "visualGroup": "上がる",
     "reviewRequired": true,
-    "reviewNote": "Ascending levels represent going up."
+    "reviewNote": "The elevator moving to a higher level represents going up."
   },
   {
     "id": "ja-v-b5e9e035a8be",
-    "concept": "Ball moves into an open box.",
+    "concept": "One hand pushing a gold ball down across the rim of an open lavender box, with a downward gold arrow beside the ball.",
     "visualGroup": "入れる",
     "reviewRequired": false
   },
@@ -715,14 +715,14 @@
   },
   {
     "id": "ja-v-a4ccf0b7bace",
-    "concept": "Hands assemble blocks into a small house.",
+    "concept": "Two hands assembling a wooden toy car on a small table, with one hand fitting a wheel and spare pieces nearby.",
     "visualGroup": "作る",
     "reviewRequired": true,
-    "reviewNote": "Constructing a model house represents making."
+    "reviewNote": "Assembling a wooden toy car represents making."
   },
   {
     "id": "ja-v-40179481fcf6",
-    "concept": "Two approaching people greet each other in the middle.",
+    "concept": "Two people greeting each other at the center, with smaller faded approaching positions and inward arrows at the sides.",
     "visualGroup": "会う",
     "reviewRequired": true,
     "reviewNote": "People converging and greeting symbolize meeting."
@@ -735,7 +735,7 @@
   },
   {
     "id": "ja-v-d31e008f6e8e",
-    "concept": "Pinwheel rotates around a fixed hub.",
+    "concept": "A four-bladed gold-and-lavender pinwheel with curved motion strokes and a counterclockwise arrow above it.",
     "visualGroup": "回る",
     "reviewRequired": true,
     "reviewNote": "Pinwheel and rotation arrows show revolving."
@@ -755,21 +755,21 @@
   },
   {
     "id": "ja-v-e9ad09158eb3",
-    "concept": "Hands rotate a horizontal board into an upright position.",
+    "concept": "A hand tilting a rigid bear figurine and its attached lavender base upward on a table; the figurine leans right beside a curved upward-left arrow.",
     "visualGroup": "立てる",
     "reviewRequired": true,
-    "reviewNote": "Transitive action sets a board upright; distinguish from standing up oneself."
+    "reviewNote": "The hand sets a rigid bear figurine and its attached base upright; distinguish this from standing up oneself."
   },
   {
     "id": "ja-v-bd365f430f35",
-    "concept": "Moving ball halts against a firm stop bar.",
+    "concept": "A person stopped at the curb beside a red pedestrian signal and a zebra crossing with four white bars spanning the road.",
     "visualGroup": "止まる",
     "reviewRequired": true,
-    "reviewNote": "Motion lines terminate at barrier to symbolize stopping."
+    "reviewNote": "The person has stopped before the crossing at a red pedestrian signal."
   },
   {
     "id": "ja-v-a001b24baf12",
-    "concept": "Ball is lifted out of an open box.",
+    "concept": "One hand lifting a gold ball above an open lavender box, with an upward gold arrow beside the ball.",
     "visualGroup": "出す",
     "reviewRequired": false
   },
@@ -796,10 +796,10 @@
   },
   {
     "id": "ja-v-fa26a112a479",
-    "concept": "Vehicle moves along a road with strong motion streaks.",
+    "concept": "A small car following a gold route between two pins on a folded map, beside a gold suitcase decorated with colorful travel stickers.",
     "visualGroup": "走行",
     "reviewRequired": true,
-    "reviewNote": "Vehicle motion represents traveling/running of a vehicle, rather than tourism."
+    "reviewNote": "The car following the route represents vehicle travel; the luggage does not change the vehicle-motion sense of 走行."
   },
   {
     "id": "ja-v-ea952b83ac80",

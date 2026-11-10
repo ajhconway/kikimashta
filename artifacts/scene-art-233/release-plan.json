@@ -1,0 +1,344 @@
+{
+  "issue": 233,
+  "date": "2026-11-09",
+  "ownerStatement": "Great, let's ship these. Auto-merge.",
+  "scope": "Activate the complete selected artwork set; preserve vocabulary eligibility and progress.",
+  "status": "activated-pending-merge-and-publication",
+  "reviewedRevision": "1e927a63c4f62c6df229d755dc95cbe7f6d9320f",
+  "integrationBaseRevision": "cb53bddab237e3110cfb78ddde9eacced6e59218",
+  "primaryAssetCount": 43,
+  "relatedAssetCount": 1,
+  "releaseAssetCount": 44,
+  "uniqueSelectedImages": 43,
+  "activationCountBefore": 221,
+  "newArtworkIds": [
+    "ja-v-01a3c397cb20",
+    "ja-v-0c1b8280f1ee",
+    "ja-v-0c337ec8cbd4",
+    "ja-v-17e3177c62d5",
+    "ja-v-3534dd7d07d1",
+    "ja-v-385cc0d9ee98",
+    "ja-v-40179481fcf6",
+    "ja-v-415802b8c769",
+    "ja-v-4789ab8b6db0",
+    "ja-v-5849925b131d",
+    "ja-v-5dc14aea92c7",
+    "ja-v-6027e0e1c622",
+    "ja-v-602940cfc449",
+    "ja-v-6109638dac53",
+    "ja-v-754e1f2ea742",
+    "ja-v-75ac90da3b27",
+    "ja-v-760cc08e40eb",
+    "ja-v-79140f0bf8e7",
+    "ja-v-859aec8573b3",
+    "ja-v-86592fe77e48",
+    "ja-v-89cc0156875d",
+    "ja-v-8fb11237e460",
+    "ja-v-9ff4f40a3428",
+    "ja-v-a001b24baf12",
+    "ja-v-a39af9252454",
+    "ja-v-a4ccf0b7bace",
+    "ja-v-acc3dd26ba1e",
+    "ja-v-b0a6475686ea",
+    "ja-v-b1514b201acd",
+    "ja-v-b2a9df4d0301",
+    "ja-v-b5e9e035a8be",
+    "ja-v-b7ea6f7eb013",
+    "ja-v-bb8fc62cf23d",
+    "ja-v-bd365f430f35",
+    "ja-v-ceaf3971ff83",
+    "ja-v-d31e008f6e8e",
+    "ja-v-d72e08381953",
+    "ja-v-dd1d6132fe3c",
+    "ja-v-e9ad09158eb3",
+    "ja-v-ebdaef0f21db",
+    "ja-v-eef9d372f5df",
+    "ja-v-f8249679701c",
+    "ja-v-fa26a112a479"
+  ],
+  "replacingArtworkIds": [
+    "ja-v-ba0c8a160c33"
+  ],
+  "selectionIdsSha256": "80e01ae49a6a39123cec52e87606ac93566787b7522418bff1654878a391f1dc",
+  "mediaSelectionSha256": "77535d089a4fe6f23b07801e0d4bc2fd4b06c36258a16f80c362736b050c447e",
+  "selections": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v4.png",
+      "sha256": "9306e22547a0df832eb47bc88ed205f6ed0d0cfde1bd404b99327afca05ec04a",
+      "selectedVersion": 4
+    },
+    {
+      "id": "ja-v-0c1b8280f1ee",
+      "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+      "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-0c337ec8cbd4",
+      "path": "artifacts/scene-art-233/ja-v-0c337ec8cbd4-v1.png",
+      "sha256": "25383eea90c24db78e5579f8cc190a3cf48deb4b88bea98eec9078dbfc7decbe",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-17e3177c62d5",
+      "path": "artifacts/scene-art-233/ja-v-17e3177c62d5-v1.png",
+      "sha256": "2656ff3257d5d6c9f489808fa028728c12c2de36e44b5e8e8434e68fe57d01b3",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v3.png",
+      "sha256": "e0e3d20c407f54ce68f4a522bf17ff3ca4678ad4259a5aa7a671ba92dbf734df",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-385cc0d9ee98",
+      "path": "artifacts/scene-art-233/ja-v-385cc0d9ee98-v1.png",
+      "sha256": "1d8e7bf08ba831d88cd2d984b98328ec534f3c82cd0feb7ddd26f1725e6f1f38",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-40179481fcf6",
+      "path": "artifacts/scene-art-233/ja-v-40179481fcf6-v1.png",
+      "sha256": "12db8010dca5375c55edb81e91691b42ba091c2b44995c48a9557447004aeb7e",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-415802b8c769",
+      "path": "artifacts/scene-art-233/ja-v-415802b8c769-v2.png",
+      "sha256": "15893d45a57b4df205a4cc74f9ba77034894b2b6c48d393b93a019f85e865d91",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-4789ab8b6db0",
+      "path": "artifacts/scene-art-233/ja-v-4789ab8b6db0-v1.png",
+      "sha256": "d2b826721000bddb42c7bfbb5c1b3ea9224066ea01bb485b6e811666f2b1083c",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-5849925b131d",
+      "path": "artifacts/scene-art-233/ja-v-5849925b131d-v3.png",
+      "sha256": "0a496e40c996a9f470fb4a53e3876b0f84cf5c242d8e2eed90f45911c94707df",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-5dc14aea92c7",
+      "path": "artifacts/scene-art-233/ja-v-5dc14aea92c7-v1.png",
+      "sha256": "43cefa3704f64e56e50c98ebf2dbbde5e4a3331e7b44e561005f4d4a200057c7",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-6027e0e1c622",
+      "path": "artifacts/scene-art-233/ja-v-6027e0e1c622-v1.png",
+      "sha256": "52dd7bcf0c9f2c8c1768268c3d96b83a70cda43f329177f0b572de700465afa4",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-602940cfc449",
+      "path": "artifacts/scene-art-233/ja-v-602940cfc449-v1.png",
+      "sha256": "5c720f1a44b4e55305e093f4af504fddae53f11ef67d56ac396b423c863b91a0",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-6109638dac53",
+      "path": "artifacts/scene-art-233/ja-v-6109638dac53-v1.png",
+      "sha256": "3704df0cd14b65a59842d2a95f6d20c77ae4e9b20ea971d22e05e96959abbcf9",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-754e1f2ea742",
+      "path": "artifacts/scene-art-233/ja-v-754e1f2ea742-v3.png",
+      "sha256": "5ddbbbd7838e54824933f5e7382349821627c1b0a0b6e4617e62a49fd8b3de83",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-75ac90da3b27",
+      "path": "artifacts/scene-art-233/ja-v-75ac90da3b27-v1.png",
+      "sha256": "a0bc98d44b18f3ee110adc0deebf0506cf2870a1eb064d333e7a132e05fe380c",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-760cc08e40eb",
+      "path": "artifacts/scene-art-233/ja-v-760cc08e40eb-v2.png",
+      "sha256": "784ddefde9bb398684b4df935a617e4f092669812e627704b886fa0531332b7f",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-79140f0bf8e7",
+      "path": "artifacts/scene-art-233/179-puppy-v2.png",
+      "sha256": "045f47fe71214f4854a3d78affa5f9515285bc88f145b81302000b670061cfb7",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-859aec8573b3",
+      "path": "artifacts/scene-art-233/ja-v-859aec8573b3-v1.png",
+      "sha256": "fa3a4603581d98e456675b250c9fb0146731d287151fbb93a0106ee9943c541b",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-86592fe77e48",
+      "path": "artifacts/scene-art-233/ja-v-86592fe77e48-v2.png",
+      "sha256": "f74b2a9fbdebdfe73b6d6cea50694916e62a532c77abd0512d55fef50f07d2e2",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-89cc0156875d",
+      "path": "artifacts/scene-art-233/184-few-v2.png",
+      "sha256": "5e1a35585f5e460a6e0c75b634d3b879e4d36fb47def36ee2c40a8d4dcdf6dd6",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-8fb11237e460",
+      "path": "artifacts/scene-art-233/ja-v-8fb11237e460-v1.png",
+      "sha256": "9d775291bd8cedd6d5d2c2f5a1bf5090cfc8a7763ae01c475cce7e1ecc8f62c3",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-9ff4f40a3428",
+      "path": "artifacts/scene-art-233/ja-v-9ff4f40a3428-v2.png",
+      "sha256": "c35714bc3bc5ad1b1bcb9b33ac3e22c2b1a97f69f18d64ddf2e9379aa793ebcf",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v3.png",
+      "sha256": "213390eb616610c323dff6b2c72476d71c5e3657f6bca8da91850d77bcf4e280",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-a39af9252454",
+      "path": "artifacts/scene-art-233/ja-v-a39af9252454-v1.png",
+      "sha256": "3986d8786de10fe5de2c434d0a9649381070edec777361b5cd6aaa2c91b61eeb",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+      "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+      "selectedVersion": 5
+    },
+    {
+      "id": "ja-v-acc3dd26ba1e",
+      "path": "artifacts/scene-art-233/ja-v-ebdaef0f21db-v1.png",
+      "sha256": "0a5c2a28149ed4da9a95a74637ba3828fab40afa421061e6517a99149612b490",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-b0a6475686ea",
+      "path": "artifacts/scene-art-233/ja-v-b0a6475686ea-v2.png",
+      "sha256": "86fcc2e4faca6306b2b3455434f7fb235902d2a3c514ded75bb9e67e76d515b4",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-b1514b201acd",
+      "path": "artifacts/scene-art-233/ja-v-b1514b201acd-v3.png",
+      "sha256": "fce9dd1ce9667f8f6a3e86427e7106c66514e1dd6582b813b9c3b40e72e2c352",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-b2a9df4d0301",
+      "path": "artifacts/scene-art-233/ja-v-b2a9df4d0301-v1.png",
+      "sha256": "f92fb373d8449eb03667b4ac841164e809323fdd02e73e17a5fb710f3b9dbf3a",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v3.png",
+      "sha256": "6866d78bea40a5f626426ea763703372a8e8342c5b9889f739993f73c799ac59",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-b7ea6f7eb013",
+      "path": "artifacts/scene-art-233/ja-v-b7ea6f7eb013-v1.png",
+      "sha256": "60a2454856f52dc57c61410a2d9902f7eadd64982af80a876ec05451cb96f269",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-ba0c8a160c33",
+      "path": "artifacts/scene-art-233/ja-v-ba0c8a160c33-family-v1.png",
+      "sha256": "fc2c2914e58d6c6a9224d2de8965fd19687d41233b5a5247788bf5b0870e8e98",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v3.png",
+      "sha256": "00d048fddfe08f1cc7fc942f242d44191ffdbd4b5469ee9def15abb82f8f1e9d",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v5.png",
+      "sha256": "2fcff6c32b802fa34fc56f3dcfe5210f748f5ec8d7a280b9fad5616894cb43a4",
+      "selectedVersion": 5
+    },
+    {
+      "id": "ja-v-ceaf3971ff83",
+      "path": "artifacts/scene-art-233/ja-v-ceaf3971ff83-v1.png",
+      "sha256": "1dca94f033a9e2950053c7a56d01aff1a13a2d649eaf3cd940e7ad594689f636",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-d31e008f6e8e",
+      "path": "artifacts/scene-art-233/ja-v-d31e008f6e8e-v2.png",
+      "sha256": "a0abdc9e0c132999d9e9d45a42aeb7b0f58be2614fdba94d2a796fab3b69d615",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v6.png",
+      "sha256": "cbb27cda9f3118d2138446c9e64073d2c29a5c36fb63b634e2820ef8b4332a21",
+      "selectedVersion": 6
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v3.png",
+      "sha256": "0dcf9367c4163fe594a2b72320b785cb5eb7b6ad6ea9cd4b6cbfa0f084d2096b",
+      "selectedVersion": 3
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v7.png",
+      "sha256": "45033ac04dcc1cb3a76523e349e788440d2952309c22b2158ff71c1eb9fd4948",
+      "selectedVersion": 7
+    },
+    {
+      "id": "ja-v-ebdaef0f21db",
+      "path": "artifacts/scene-art-233/ja-v-ebdaef0f21db-v1.png",
+      "sha256": "0a5c2a28149ed4da9a95a74637ba3828fab40afa421061e6517a99149612b490",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-eef9d372f5df",
+      "path": "artifacts/scene-art-233/ja-v-eef9d372f5df-v1.png",
+      "sha256": "fccbe564af0eeb79337c7e635356ff13b49030f39e58c7b55fefc534a82f42b6",
+      "selectedVersion": 1
+    },
+    {
+      "id": "ja-v-f8249679701c",
+      "path": "artifacts/scene-art-233/ja-v-f8249679701c-v2.png",
+      "sha256": "846ca6e52c0b6cc81931ee22f63f1d444ef64f2be5eef23959c4033f996c6eac",
+      "selectedVersion": 2
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+      "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+      "selectedVersion": 7
+    }
+  ],
+  "steps": [
+    "Bind all43 primary images and reviewed relatedNight image to exact version/path/hash approval, preserve frozen43-card plan and all101 generated variants.",
+    "Use a separate44-record release manifest to retain the original43-card review scope.",
+    "Extend the shared artwork activation pipeline with frozen-scope and immutable selected-media checks.",
+    "Create transparent640px deliveries; update artwork mappings, visual descriptions, library notes and affected image-bound choice evidence only.",
+    "Verify unchanged IDs/eligibility/audio/progress, complete configured checks/browser journeys and current-head Codex review.",
+    "Enable auto-merge through required gates, verify publication/live source and all44 delivery hashes; updateissue233."
+  ],
+  "verification": [
+    "Tampered release scope/media/approval must reject before encoding or bank mutations.",
+    "Actual selected image counts and source/version hashes remain verified.",
+    "Full npm run check and npm run test:e2e; independent release audit.",
+    "Live image hashes/library mapping; realiPhoneacceptance remains with#6."
+  ]
+}

@@ -92,7 +92,7 @@
   },
   {
     "id": "ja-v-8fb11237e460",
-    "concept": "A foamy golden beer mug",
+    "concept": "Golden beer pouring from a tap into a handled glass mug topped with white foam.",
     "visualGroup": "draft-beer",
     "reviewRequired": false
   },
@@ -105,7 +105,7 @@
   },
   {
     "id": "ja-v-b7ea6f7eb013",
-    "concept": "A thick rope beside a thin rope, with thick rope indicated",
+    "concept": "A thick rope beside a thin rope of the same length, with gold attention marks beside the thick rope.",
     "visualGroup": "thick",
     "reviewRequired": true,
     "reviewNote": "太い means thick in this source. The picture indicates rope thickness; avoid body-size distractors."
@@ -126,14 +126,14 @@
   },
   {
     "id": "ja-v-89cc0156875d",
-    "concept": "Only two beads in a large counting tray",
+    "concept": "A nearly empty transparent jar with three round counters, colored gold, pink and blue, resting at the bottom.",
     "visualGroup": "few",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-4789ab8b6db0",
-    "concept": "Five small washing machines in one row",
+    "concept": "Five matching lavender washing machines, arranged as three above and two below.",
     "visualGroup": "five-machines",
     "reviewRequired": false
   },
@@ -311,7 +311,7 @@
   },
   {
     "id": "ja-v-6109638dac53",
-    "concept": "A person outdoors beyond a house boundary",
+    "concept": "A person standing on grass outside a house, with gold attention marks overhead and a faded comparison figure visible inside the open doorway.",
     "visualGroup": "outside",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -339,7 +339,7 @@
   },
   {
     "id": "ja-v-0c1b8280f1ee",
-    "concept": "Sun rising above a horizon",
+    "concept": "A gold sun rising above rolling green hills beside a small cottage, with a curved upward arrow in the pale dawn sky.",
     "visualGroup": "sunrise",
     "reviewRequired": false
   },
@@ -352,7 +352,7 @@
   },
   {
     "id": "ja-v-760cc08e40eb",
-    "concept": "Ten washing machines in two counted rows",
+    "concept": "Ten matching lavender washing machines in three centered rows containing three, four and three machines.",
     "visualGroup": "ten-machines",
     "reviewRequired": false
   },
@@ -417,7 +417,7 @@
   },
   {
     "id": "ja-v-01a3c397cb20",
-    "concept": "Two hands stretch a folded blanket outward",
+    "concept": "Two hands spreading open a folded map with a blue river and green terrain, with gold arrows pointing outward at its opposite edges.",
     "visualGroup": "to-spread-something",
     "reviewRequired": false
   },
@@ -462,7 +462,7 @@
   },
   {
     "id": "ja-v-bb8fc62cf23d",
-    "concept": "A broad open arch measured with an outward arrow",
+    "concept": "Matching furnished rooms with windows, curtains, pictures and wooden floors; the wider room has more open floor space and gold attention marks overhead.",
     "visualGroup": "wide",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -528,7 +528,7 @@
   },
   {
     "id": "ja-v-f8249679701c",
-    "concept": "A radiant sun lights an open window",
+    "concept": "The same lamp and armchair in dim and brightly lit room corners, with gold attention marks around the outside of the bright room.",
     "visualGroup": "bright",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -548,7 +548,7 @@
   },
   {
     "id": "ja-v-754e1f2ea742",
-    "concept": "A small calf beside the outline of an adult cow",
+    "concept": "A young brown-and-cream calf with gold attention marks above its head, beside a smaller, muted lavender adult-cow reference.",
     "visualGroup": "calf",
     "reviewRequired": false
   },
@@ -567,7 +567,7 @@
   },
   {
     "id": "ja-v-a39af9252454",
-    "concept": "A highlighted central bead between four surrounding beads",
+    "concept": "Five cubes in a straight row, with the middle cube colored gold and marked by gold attention rays.",
     "visualGroup": "center",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -641,7 +641,7 @@
   },
   {
     "id": "ja-v-0c337ec8cbd4",
-    "concept": "A level tabletop with a spirit level and straight horizon",
+    "concept": "A bumpy lavender surface beside a flat lavender surface, with gold attention marks above the flat surface.",
     "visualGroup": "flat",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -743,7 +743,7 @@
   },
   {
     "id": "ja-v-dd1d6132fe3c",
-    "concept": "A driver sits within the enclosed car window",
+    "concept": "A lavender hatchback with an open side cutaway showing the dashboard, steering wheel, aligned front seats and rear bench, with gold attention marks above the cabin.",
     "visualGroup": "inside-the-car",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -925,7 +925,7 @@
   },
   {
     "id": "ja-v-ebdaef0f21db",
-    "concept": "A resting person reclining on a couch",
+    "concept": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair.",
     "visualGroup": "rest",
     "reviewRequired": true,
     "reviewNote": "Shares resting scene with 休む; noun versus verb cannot be reliably separated by pictures."
@@ -972,7 +972,7 @@
   },
   {
     "id": "ja-v-602940cfc449",
-    "concept": "A small side plate beside a full-size dinner plate",
+    "concept": "A small white plate beside a larger matching dinner plate, with gold attention marks above the smaller plate.",
     "visualGroup": "small-plate",
     "reviewRequired": false
   },
@@ -1051,14 +1051,14 @@
   },
   {
     "id": "ja-v-eef9d372f5df",
-    "concept": "A matching drawing is transferred from one paper to another",
+    "concept": "A hand using a pencil to copy a circle, square and triangle from one sheet onto a second sheet.",
     "visualGroup": "to-copy",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-75ac90da3b27",
-    "concept": "An arrow shows a fictional person’s silhouette growing broader",
+    "concept": "The same person in matching clothes shown slimmer on the left and fuller-bodied on the right, connected by a rightward arrow.",
     "visualGroup": "to-get-fat",
     "reviewRequired": true,
     "reviewNote": "Fictional body-size change conveys the verb; review suitability and distinction from 太い (thick)."
@@ -1091,7 +1091,7 @@
   },
   {
     "id": "ja-v-acc3dd26ba1e",
-    "concept": "A resting person reclining on a couch",
+    "concept": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair.",
     "visualGroup": "rest",
     "reviewRequired": true,
     "reviewNote": "Shares resting scene with 休み; noun versus verb cannot be reliably separated by pictures."
@@ -1105,14 +1105,14 @@
   },
   {
     "id": "ja-v-385cc0d9ee98",
-    "concept": "An eye gazes toward a flower",
+    "concept": "A kneeling person looking closely at a potted pink flower, with a dotted gaze line connecting their eyes to the flower.",
     "visualGroup": "to-see",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
   },
   {
     "id": "ja-v-859aec8573b3",
-    "concept": "A person presents a framed flower picture to another person",
+    "concept": "One person holding a flower picture toward another person who is looking at it.",
     "visualGroup": "to-show",
     "reviewRequired": true,
     "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."

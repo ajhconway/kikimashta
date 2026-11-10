@@ -2713,8 +2713,8 @@
       "meaning": "Circular",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-b1514b201acd.svg",
-        "alt": "Circular"
+        "src": "../images/approved/ja-v-b1514b201acd-fce9dd1ce966.png",
+        "alt": "Two circular objects above two square objects, with gold attention marks above each circular object."
       },
       "audio": [
         {
@@ -2766,7 +2766,7 @@
           "available": true
         }
       ],
-      "concept": "Several circular everyday objects: plate, ball, clock",
+      "concept": "Two circular objects above two square objects, with gold attention marks above each circular object.",
       "visualGroup": "丸い",
       "reviewRequired": true,
       "reviewNote": "Round/circular overlaps circle; avoid pairing them as alternatives."
@@ -4263,8 +4263,8 @@
       "meaning": "Inside",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-5849925b131d.svg",
-        "alt": "Inside"
+        "src": "../images/approved/ja-v-5849925b131d-0a496e40c996.png",
+        "alt": "Kiku wearing lavender headphones rests inside a low, wide cardboard box, with front paws visible over its rim."
       },
       "audio": [
         {
@@ -4316,10 +4316,10 @@
           "available": true
         }
       ],
-      "concept": "A pink ball visibly inside a transparent box",
+      "concept": "Kiku wearing lavender headphones rests inside a low, wide cardboard box, with front paws visible over its rim.",
       "visualGroup": "中",
       "reviewRequired": true,
-      "reviewNote": "Transparent box symbolizes inside."
+      "reviewNote": "Kiku visibly contained by the cardboard box illustrates the inside relation."
     },
     {
       "id": "ja-v-ed82bb95d4cc",
@@ -5426,8 +5426,8 @@
       "meaning": "Puppy",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-79140f0bf8e7.svg",
-        "alt": "Puppy"
+        "src": "../images/approved/ja-v-79140f0bf8e7-045f47fe7121.png",
+        "alt": "A seated golden puppy with a large round head, floppy ears, short legs and cream-colored paws and chest."
       },
       "audio": [
         {
@@ -5479,7 +5479,7 @@
           "available": true
         }
       ],
-      "concept": "A tiny floppy-eared puppy beside a large paw print",
+      "concept": "A seated golden puppy with a large round head, floppy ears, short legs and cream-colored paws and chest.",
       "visualGroup": "子犬",
       "reviewRequired": true,
       "reviewNote": "Puppy proportions convey young dog; size alone can be ambiguous."
@@ -6586,8 +6586,8 @@
       "meaning": "To Climb",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-b0a6475686ea.svg",
-        "alt": "To Climb"
+        "src": "../images/approved/ja-v-b0a6475686ea-86fcc2e4faca.png",
+        "alt": "A person climbing a wooden ladder, with a curved gold arrow pointing upward."
       },
       "audio": [
         {
@@ -6639,7 +6639,7 @@
           "available": true
         }
       ],
-      "concept": "A person climbing a ladder with an upward arrow",
+      "concept": "A person climbing a wooden ladder, with a curved gold arrow pointing upward.",
       "visualGroup": "上る",
       "reviewRequired": true,
       "reviewNote": "Climbing a ladder illustrates upward movement."
@@ -6716,8 +6716,8 @@
       "meaning": "To Exit",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-b2a9df4d0301.svg",
-        "alt": "To Exit"
+        "src": "../images/approved/ja-v-b2a9df4d0301-f92fb373d844.png",
+        "alt": "A person stepping through an open doorway onto grass, with a faded earlier position inside and an outward arrow."
       },
       "audio": [
         {
@@ -6769,7 +6769,7 @@
           "available": true
         }
       ],
-      "concept": "A person leaving through an open doorway",
+      "concept": "A person stepping through an open doorway onto grass, with a faded earlier position inside and an outward arrow.",
       "visualGroup": "exit-door",
       "reviewRequired": true,
       "reviewNote": "Action and exit are visually related."
@@ -6781,8 +6781,8 @@
       "meaning": "To Stand",
       "sourceLevel": 2,
       "image": {
-        "src": "../images/vocabulary/ja-v-17e3177c62d5.svg",
-        "alt": "To Stand"
+        "src": "../images/approved/ja-v-17e3177c62d5-2656ff3257d5.png",
+        "alt": "The same person seated on a chair in a faded starting pose and standing beside it in a solid pose, joined by an upward arrow."
       },
       "audio": [
         {
@@ -6834,10 +6834,10 @@
           "available": true
         }
       ],
-      "concept": "A person rising from a chair with an upward arrow",
+      "concept": "The same person seated on a chair in a faded starting pose and standing beside it in a solid pose, joined by an upward arrow.",
       "visualGroup": "立つ",
       "reviewRequired": true,
-      "reviewNote": "Standing up and standing still share a picture; movement arrow provides the action cue."
+      "reviewNote": "The seated-to-standing sequence supplies the action cue; distinguish standing up oneself from setting something upright."
     },
     {
       "id": "ja-v-a5d390dc4805",
@@ -8394,8 +8394,8 @@
       "meaning": "Draft Beer",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-8fb11237e460.svg",
-        "alt": "Draft Beer"
+        "src": "../images/approved/ja-v-8fb11237e460-9d775291bd8c.png",
+        "alt": "Golden beer pouring from a tap into a handled glass mug topped with white foam."
       },
       "audio": [
         {
@@ -8447,7 +8447,7 @@
           "available": true
         }
       ],
-      "concept": "A foamy golden beer mug",
+      "concept": "Golden beer pouring from a tap into a handled glass mug topped with white foam.",
       "visualGroup": "draft-beer",
       "reviewRequired": false
     },
@@ -8523,8 +8523,8 @@
       "meaning": "Fat",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-b7ea6f7eb013.svg",
-        "alt": "Fat"
+        "src": "../images/approved/ja-v-b7ea6f7eb013-60a2454856f5.png",
+        "alt": "A thick rope beside a thin rope of the same length, with gold attention marks beside the thick rope."
       },
       "audio": [
         {
@@ -8576,7 +8576,7 @@
           "available": true
         }
       ],
-      "concept": "A thick rope beside a thin rope, with thick rope indicated",
+      "concept": "A thick rope beside a thin rope of the same length, with gold attention marks beside the thick rope.",
       "visualGroup": "thick",
       "reviewRequired": true,
       "teachingNote": "Usually thick or wide; the picture should not imply body size alone.",
@@ -8719,8 +8719,8 @@
       "meaning": "Few",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-89cc0156875d.svg",
-        "alt": "Few"
+        "src": "../images/approved/ja-v-89cc0156875d-5e1a35585f5e.png",
+        "alt": "A nearly empty transparent jar with three round counters, colored gold, pink and blue, resting at the bottom."
       },
       "audio": [
         {
@@ -8772,7 +8772,7 @@
           "available": true
         }
       ],
-      "concept": "Only two beads in a large counting tray",
+      "concept": "A nearly empty transparent jar with three round counters, colored gold, pink and blue, resting at the bottom.",
       "visualGroup": "few",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -8784,8 +8784,8 @@
       "meaning": "Five Machines",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-4789ab8b6db0.svg",
-        "alt": "Five Machines"
+        "src": "../images/approved/ja-v-4789ab8b6db0-d2b826721000.png",
+        "alt": "Five matching lavender washing machines, arranged as three above and two below."
       },
       "audio": [
         {
@@ -8837,7 +8837,7 @@
           "available": true
         }
       ],
-      "concept": "Five small washing machines in one row",
+      "concept": "Five matching lavender washing machines, arranged as three above and two below.",
       "visualGroup": "five-machines",
       "reviewRequired": false
     },
@@ -10530,8 +10530,8 @@
       "meaning": "Outside",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-6109638dac53.svg",
-        "alt": "Outside"
+        "src": "../images/approved/ja-v-6109638dac53-3704df0cd14b.png",
+        "alt": "A person standing on grass outside a house, with gold attention marks overhead and a faded comparison figure visible inside the open doorway."
       },
       "audio": [
         {
@@ -10583,7 +10583,7 @@
           "available": true
         }
       ],
-      "concept": "A person outdoors beyond a house boundary",
+      "concept": "A person standing on grass outside a house, with gold attention marks overhead and a faded comparison figure visible inside the open doorway.",
       "visualGroup": "outside",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -10790,8 +10790,8 @@
       "meaning": "Sunrise",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-0c1b8280f1ee.svg",
-        "alt": "Sunrise"
+        "src": "../images/approved/ja-v-0c1b8280f1ee-483faa971251.png",
+        "alt": "A gold sun rising above rolling green hills beside a small cottage, with a curved upward arrow in the pale dawn sky."
       },
       "audio": [
         {
@@ -10843,7 +10843,7 @@
           "available": true
         }
       ],
-      "concept": "Sun rising above a horizon",
+      "concept": "A gold sun rising above rolling green hills beside a small cottage, with a curved upward arrow in the pale dawn sky.",
       "visualGroup": "sunrise",
       "reviewRequired": false
     },
@@ -10919,8 +10919,8 @@
       "meaning": "Ten Machines",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-760cc08e40eb.svg",
-        "alt": "Ten Machines"
+        "src": "../images/approved/ja-v-760cc08e40eb-784ddefde9bb.png",
+        "alt": "Ten matching lavender washing machines in three centered rows containing three, four and three machines."
       },
       "audio": [
         {
@@ -10972,7 +10972,7 @@
           "available": true
         }
       ],
-      "concept": "Ten washing machines in two counted rows",
+      "concept": "Ten matching lavender washing machines in three centered rows containing three, four and three machines.",
       "visualGroup": "ten-machines",
       "reviewRequired": false
     },
@@ -11564,8 +11564,8 @@
       "meaning": "To Spread Something",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-01a3c397cb20.svg",
-        "alt": "To Spread Something"
+        "src": "../images/approved/ja-v-01a3c397cb20-9306e22547a0.png",
+        "alt": "Two hands spreading open a folded map with a blue river and green terrain, with gold arrows pointing outward at its opposite edges."
       },
       "audio": [
         {
@@ -11617,7 +11617,7 @@
           "available": true
         }
       ],
-      "concept": "Two hands stretch a folded blanket outward",
+      "concept": "Two hands spreading open a folded map with a blue river and green terrain, with gold arrows pointing outward at its opposite edges.",
       "visualGroup": "to-spread-something",
       "reviewRequired": false
     },
@@ -12015,8 +12015,8 @@
       "meaning": "Wide",
       "sourceLevel": 3,
       "image": {
-        "src": "../images/vocabulary/ja-v-bb8fc62cf23d.svg",
-        "alt": "Wide"
+        "src": "../images/approved/ja-v-bb8fc62cf23d-00d048fddfe0.png",
+        "alt": "Matching furnished rooms with windows, curtains, pictures and wooden floors; the wider room has more open floor space and gold attention marks overhead."
       },
       "audio": [
         {
@@ -12068,7 +12068,7 @@
           "available": true
         }
       ],
-      "concept": "A broad open arch measured with an outward arrow",
+      "concept": "Matching furnished rooms with windows, curtains, pictures and wooden floors; the wider room has more open floor space and gold attention marks overhead.",
       "visualGroup": "wide",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -12661,8 +12661,8 @@
       "meaning": "Bright",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-f8249679701c.svg",
-        "alt": "Bright"
+        "src": "../images/approved/ja-v-f8249679701c-846ca6e52c0b.png",
+        "alt": "The same lamp and armchair in dim and brightly lit room corners, with gold attention marks around the outside of the bright room."
       },
       "audio": [
         {
@@ -12714,7 +12714,7 @@
           "available": true
         }
       ],
-      "concept": "A radiant sun lights an open window",
+      "concept": "The same lamp and armchair in dim and brightly lit room corners, with gold attention marks around the outside of the bright room.",
       "visualGroup": "bright",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -12855,8 +12855,8 @@
       "meaning": "Calf",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-754e1f2ea742.svg",
-        "alt": "Calf"
+        "src": "../images/approved/ja-v-754e1f2ea742-5ddbbbd7838e.png",
+        "alt": "A young brown-and-cream calf with gold attention marks above its head, beside a smaller, muted lavender adult-cow reference."
       },
       "audio": [
         {
@@ -12908,7 +12908,7 @@
           "available": true
         }
       ],
-      "concept": "A small calf beside the outline of an adult cow",
+      "concept": "A young brown-and-cream calf with gold attention marks above its head, beside a smaller, muted lavender adult-cow reference.",
       "visualGroup": "calf",
       "reviewRequired": false
     },
@@ -13048,8 +13048,8 @@
       "meaning": "Center",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-a39af9252454.svg",
-        "alt": "Center"
+        "src": "../images/approved/ja-v-a39af9252454-3986d8786de1.png",
+        "alt": "Five cubes in a straight row, with the middle cube colored gold and marked by gold attention rays."
       },
       "audio": [
         {
@@ -13101,7 +13101,7 @@
           "available": true
         }
       ],
-      "concept": "A highlighted central bead between four surrounding beads",
+      "concept": "Five cubes in a straight row, with the middle cube colored gold and marked by gold attention rays.",
       "visualGroup": "center",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -13760,8 +13760,8 @@
       "meaning": "Flat",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-0c337ec8cbd4.svg",
-        "alt": "Flat"
+        "src": "../images/approved/ja-v-0c337ec8cbd4-25383eea90c2.png",
+        "alt": "A bumpy lavender surface beside a flat lavender surface, with gold attention marks above the flat surface."
       },
       "audio": [
         {
@@ -13813,7 +13813,7 @@
           "available": true
         }
       ],
-      "concept": "A level tabletop with a spirit level and straight horizon",
+      "concept": "A bumpy lavender surface beside a flat lavender surface, with gold attention marks above the flat surface.",
       "visualGroup": "flat",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -14790,8 +14790,8 @@
       "meaning": "Inside The Car",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-dd1d6132fe3c.svg",
-        "alt": "Inside The Car"
+        "src": "../images/approved/ja-v-dd1d6132fe3c-0dcf9367c416.png",
+        "alt": "A lavender hatchback with an open side cutaway showing the dashboard, steering wheel, aligned front seats and rear bench, with gold attention marks above the cabin."
       },
       "audio": [
         {
@@ -14843,7 +14843,7 @@
           "available": true
         }
       ],
-      "concept": "A driver sits within the enclosed car window",
+      "concept": "A lavender hatchback with an open side cutaway showing the dashboard, steering wheel, aligned front seats and rear bench, with gold attention marks above the cabin.",
       "visualGroup": "inside-the-car",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -16540,8 +16540,8 @@
       "meaning": "Rest",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-ebdaef0f21db.svg",
-        "alt": "Rest"
+        "src": "../images/approved/ja-v-ebdaef0f21db-0a5c2a28149e.png",
+        "alt": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair."
       },
       "audio": [
         {
@@ -16593,7 +16593,7 @@
           "available": true
         }
       ],
-      "concept": "A resting person reclining on a couch",
+      "concept": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair.",
       "visualGroup": "rest",
       "reviewRequired": true,
       "reviewNote": "Shares resting scene with 休む; noun versus verb cannot be reliably separated by pictures."
@@ -16993,8 +16993,8 @@
       "meaning": "Small Plate",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-602940cfc449.svg",
-        "alt": "Small Plate"
+        "src": "../images/approved/ja-v-602940cfc449-5c720f1a44b4.png",
+        "alt": "A small white plate beside a larger matching dinner plate, with gold attention marks above the smaller plate."
       },
       "audio": [
         {
@@ -17046,7 +17046,7 @@
           "available": true
         }
       ],
-      "concept": "A small side plate beside a full-size dinner plate",
+      "concept": "A small white plate beside a larger matching dinner plate, with gold attention marks above the smaller plate.",
       "visualGroup": "small-plate",
       "reviewRequired": false
     },
@@ -17768,8 +17768,8 @@
       "meaning": "To Copy",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-eef9d372f5df.svg",
-        "alt": "To Copy"
+        "src": "../images/approved/ja-v-eef9d372f5df-fccbe564af0e.png",
+        "alt": "A hand using a pencil to copy a circle, square and triangle from one sheet onto a second sheet."
       },
       "audio": [
         {
@@ -17821,7 +17821,7 @@
           "available": true
         }
       ],
-      "concept": "A matching drawing is transferred from one paper to another",
+      "concept": "A hand using a pencil to copy a circle, square and triangle from one sheet onto a second sheet.",
       "visualGroup": "to-copy",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -17833,8 +17833,8 @@
       "meaning": "To Get Fat",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-75ac90da3b27.svg",
-        "alt": "To Get Fat"
+        "src": "../images/approved/ja-v-75ac90da3b27-a0bc98d44b18.png",
+        "alt": "The same person in matching clothes shown slimmer on the left and fuller-bodied on the right, connected by a rightward arrow."
       },
       "audio": [
         {
@@ -17886,7 +17886,7 @@
           "available": true
         }
       ],
-      "concept": "An arrow shows a fictional person’s silhouette growing broader",
+      "concept": "The same person in matching clothes shown slimmer on the left and fuller-bodied on the right, connected by a rightward arrow.",
       "visualGroup": "to-get-fat",
       "reviewRequired": true,
       "reviewNote": "Fictional body-size change conveys the verb; review suitability and distinction from 太い (thick)."
@@ -18156,8 +18156,8 @@
       "meaning": "To Rest",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-acc3dd26ba1e.svg",
-        "alt": "To Rest"
+        "src": "../images/approved/ja-v-acc3dd26ba1e-0a5c2a28149e.png",
+        "alt": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair."
       },
       "audio": [
         {
@@ -18209,7 +18209,7 @@
           "available": true
         }
       ],
-      "concept": "A resting person reclining on a couch",
+      "concept": "A person reclining in a lavender armchair with feet on a gold footstool and shoes placed beside the chair.",
       "visualGroup": "rest",
       "reviewRequired": true,
       "reviewNote": "Shares resting scene with 休み; noun versus verb cannot be reliably separated by pictures."
@@ -18286,8 +18286,8 @@
       "meaning": "To See",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-385cc0d9ee98.svg",
-        "alt": "To See"
+        "src": "../images/approved/ja-v-385cc0d9ee98-1d8e7bf08ba8.png",
+        "alt": "A kneeling person looking closely at a potted pink flower, with a dotted gaze line connecting their eyes to the flower."
       },
       "audio": [
         {
@@ -18339,7 +18339,7 @@
           "available": true
         }
       ],
-      "concept": "An eye gazes toward a flower",
+      "concept": "A kneeling person looking closely at a potted pink flower, with a dotted gaze line connecting their eyes to the flower.",
       "visualGroup": "to-see",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -18351,8 +18351,8 @@
       "meaning": "To Show",
       "sourceLevel": 4,
       "image": {
-        "src": "../images/vocabulary/ja-v-859aec8573b3.svg",
-        "alt": "To Show"
+        "src": "../images/approved/ja-v-859aec8573b3-fa3a4603581d.png",
+        "alt": "One person holding a flower picture toward another person who is looking at it."
       },
       "audio": [
         {
@@ -18404,7 +18404,7 @@
           "available": true
         }
       ],
-      "concept": "A person presents a framed flower picture to another person",
+      "concept": "One person holding a flower picture toward another person who is looking at it.",
       "visualGroup": "to-show",
       "reviewRequired": true,
       "reviewNote": "Symbolic scene: review the intended sense and separation from related vocabulary in picture choices."
@@ -19902,8 +19902,8 @@
       "meaning": "Beef",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-5dc14aea92c7.svg",
-        "alt": "Beef"
+        "src": "../images/approved/ja-v-5dc14aea92c7-43cefa3704f6.png",
+        "alt": "A marbled red beef steak linked to a small cow-head reference in a circular bubble."
       },
       "audio": [
         {
@@ -19955,7 +19955,7 @@
           "available": true
         }
       ],
-      "concept": "Steak with a small cow provenance bubble.",
+      "concept": "A marbled red beef steak linked to a small cow-head reference in a circular bubble.",
       "visualGroup": "牛肉",
       "reviewRequired": false
     },
@@ -20483,8 +20483,8 @@
       "meaning": "Close",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d72e08381953.svg",
-        "alt": "Close"
+        "src": "../images/approved/ja-v-d72e08381953-cbb27cda9f31.png",
+        "alt": "Kiku and a golden dog sitting close together with gold attention marks above the gap, compared with the same pair sitting farther apart below."
       },
       "audio": [
         {
@@ -20536,10 +20536,10 @@
           "available": true
         }
       ],
-      "concept": "Two houses almost touch, with a very short distance marker.",
+      "concept": "Kiku and a golden dog sitting close together with gold attention marks above the gap, compared with the same pair sitting farther apart below.",
       "visualGroup": "近い",
       "reviewRequired": true,
-      "reviewNote": "Short gap between nearby houses represents proximity."
+      "reviewNote": "The short gap between Kiku and the dog represents proximity, compared with the same pair farther apart."
     },
     {
       "id": "ja-v-921d54ba31ef",
@@ -20805,8 +20805,8 @@
       "meaning": "Corner",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-ceaf3971ff83.svg",
-        "alt": "Corner"
+        "src": "../images/approved/ja-v-ceaf3971ff83-1dca94f033a9.png",
+        "alt": "A lavender rectangular box with gold attention marks pointing toward its upper-right corner."
       },
       "audio": [
         {
@@ -20858,10 +20858,10 @@
           "available": true
         }
       ],
-      "concept": "Street bends tightly around a building corner.",
+      "concept": "A lavender rectangular box with gold attention marks pointing toward its upper-right corner.",
       "visualGroup": "角",
       "reviewRequired": true,
-      "reviewNote": "Street corner scene; 角 can also mean the corner of an object."
+      "reviewNote": "Attention marks identify the corner of the box; 角 with the reading かど can name an object or street corner."
     },
     {
       "id": "ja-v-fd0090161525",
@@ -20999,8 +20999,8 @@
       "meaning": "Department Store",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-6027e0e1c622.svg",
-        "alt": "Department Store"
+        "src": "../images/approved/ja-v-6027e0e1c622-52dd7bcf0c9f.png",
+        "alt": "A multistory department-store cutaway showing clothing, homewares and toys on separate floors connected by escalators."
       },
       "audio": [
         {
@@ -21052,7 +21052,7 @@
           "available": true
         }
       ],
-      "concept": "Large multistory shop with display windows and shopping bags.",
+      "concept": "A multistory department-store cutaway showing clothing, homewares and toys on separate floors connected by escalators.",
       "visualGroup": "デパート",
       "reviewRequired": false
     },
@@ -21259,8 +21259,8 @@
       "meaning": "Early Evening",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-3534dd7d07d1.svg",
-        "alt": "Early Evening"
+        "src": "../images/approved/ja-v-3534dd7d07d1-e0e3d20c407f.png",
+        "alt": "A person carrying a bag along a path toward a small cottage with glowing windows, beneath a blue-purple early-evening sky over green hills."
       },
       "audio": [
         {
@@ -21312,7 +21312,7 @@
           "available": true
         }
       ],
-      "concept": "Orange sun sets behind a low horizon and small house.",
+      "concept": "A person carrying a bag along a path toward a small cottage with glowing windows, beneath a blue-purple early-evening sky over green hills.",
       "visualGroup": "夕方",
       "reviewRequired": false
     },
@@ -23781,8 +23781,8 @@
       "meaning": "Night",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/approved/ja-v-ba0c8a160c33-101ba4b11c89.png",
-        "alt": "A house under a violet night sky with a golden crescent and stars."
+        "src": "../images/approved/ja-v-ba0c8a160c33-fc2c2914e58d.png",
+        "alt": "A small cottage with a glowing window beneath a violet sky with a gold crescent moon and three stars, surrounded by dark green hills and shrubs."
       },
       "audio": [
         {
@@ -23834,7 +23834,7 @@
           "available": true
         }
       ],
-      "concept": "A house under a violet night sky with a golden crescent and stars.",
+      "concept": "A small cottage with a glowing window beneath a violet sky with a gold crescent moon and three stars, surrounded by dark green hills and shrubs.",
       "visualGroup": "夜",
       "reviewRequired": false
     },
@@ -24752,8 +24752,8 @@
       "meaning": "Same",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-9ff4f40a3428.svg",
-        "alt": "Same"
+        "src": "../images/approved/ja-v-9ff4f40a3428-c35714bc3bc5.png",
+        "alt": "Two identical headphone-wearing Kikus facing one another and pointing at each other with outstretched paws."
       },
       "audio": [
         {
@@ -24805,10 +24805,10 @@
           "available": true
         }
       ],
-      "concept": "Two identical orange stars joined by equality bars.",
+      "concept": "Two identical headphone-wearing Kikus facing one another and pointing at each other with outstretched paws.",
       "visualGroup": "同じ",
       "reviewRequired": true,
-      "reviewNote": "Equality diagram intentionally uses identical objects."
+      "reviewNote": "Matching Kikus in mirrored pointing poses illustrate sameness."
     },
     {
       "id": "ja-v-f9d62cb2d38a",
@@ -26047,8 +26047,8 @@
       "meaning": "To Get Lower",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-415802b8c769.svg",
-        "alt": "To Get Lower"
+        "src": "../images/approved/ja-v-415802b8c769-15893d45a57b.png",
+        "alt": "A gold elevator cabin near the bottom of a lavender shaft, with a downward arrow beside it."
       },
       "audio": [
         {
@@ -26100,10 +26100,10 @@
           "available": true
         }
       ],
-      "concept": "Ball descends three stair levels beside downward arrow.",
+      "concept": "A gold elevator cabin near the bottom of a lavender shaft, with a downward arrow beside it.",
       "visualGroup": "下がる",
       "reviewRequired": true,
-      "reviewNote": "Descending levels represent becoming lower, rather than physically falling."
+      "reviewNote": "The elevator moving to a lower level represents becoming lower, rather than physically falling."
     },
     {
       "id": "ja-v-a8c0f98a1f64",
@@ -26242,8 +26242,8 @@
       "meaning": "To Go Up",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-86592fe77e48.svg",
-        "alt": "To Go Up"
+        "src": "../images/approved/ja-v-86592fe77e48-f74b2a9fbdeb.png",
+        "alt": "A gold elevator cabin near the top of a lavender shaft, with an upward arrow beside it."
       },
       "audio": [
         {
@@ -26295,10 +26295,10 @@
           "available": true
         }
       ],
-      "concept": "Ball climbs three steps beside an upward arrow.",
+      "concept": "A gold elevator cabin near the top of a lavender shaft, with an upward arrow beside it.",
       "visualGroup": "上がる",
       "reviewRequired": true,
-      "reviewNote": "Ascending levels represent going up."
+      "reviewNote": "The elevator moving to a higher level represents going up."
     },
     {
       "id": "ja-v-b5e9e035a8be",
@@ -26307,8 +26307,8 @@
       "meaning": "To Insert",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-b5e9e035a8be.svg",
-        "alt": "To Insert"
+        "src": "../images/approved/ja-v-b5e9e035a8be-6866d78bea40.png",
+        "alt": "One hand pushing a gold ball down across the rim of an open lavender box, with a downward gold arrow beside the ball."
       },
       "audio": [
         {
@@ -26360,7 +26360,7 @@
           "available": true
         }
       ],
-      "concept": "Ball moves into an open box.",
+      "concept": "One hand pushing a gold ball down across the rim of an open lavender box, with a downward gold arrow beside the ball.",
       "visualGroup": "入れる",
       "reviewRequired": false
     },
@@ -26436,8 +26436,8 @@
       "meaning": "To Make",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-a4ccf0b7bace.svg",
-        "alt": "To Make"
+        "src": "../images/approved/ja-v-a4ccf0b7bace-019f2335fa20.png",
+        "alt": "Two hands assembling a wooden toy car on a small table, with one hand fitting a wheel and spare pieces nearby."
       },
       "audio": [
         {
@@ -26489,10 +26489,10 @@
           "available": true
         }
       ],
-      "concept": "Hands assemble blocks into a small house.",
+      "concept": "Two hands assembling a wooden toy car on a small table, with one hand fitting a wheel and spare pieces nearby.",
       "visualGroup": "作る",
       "reviewRequired": true,
-      "reviewNote": "Constructing a model house represents making."
+      "reviewNote": "Assembling a wooden toy car represents making."
     },
     {
       "id": "ja-v-40179481fcf6",
@@ -26501,8 +26501,8 @@
       "meaning": "To Meet",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-40179481fcf6.svg",
-        "alt": "To Meet"
+        "src": "../images/approved/ja-v-40179481fcf6-12db8010dca5.png",
+        "alt": "Two people greeting each other at the center, with smaller faded approaching positions and inward arrows at the sides."
       },
       "audio": [
         {
@@ -26554,7 +26554,7 @@
           "available": true
         }
       ],
-      "concept": "Two approaching people greet each other in the middle.",
+      "concept": "Two people greeting each other at the center, with smaller faded approaching positions and inward arrows at the sides.",
       "visualGroup": "会う",
       "reviewRequired": true,
       "reviewNote": "People converging and greeting symbolize meeting."
@@ -26630,8 +26630,8 @@
       "meaning": "To Revolve",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-d31e008f6e8e.svg",
-        "alt": "To Revolve"
+        "src": "../images/approved/ja-v-d31e008f6e8e-a0abdc9e0c13.png",
+        "alt": "A four-bladed gold-and-lavender pinwheel with curved motion strokes and a counterclockwise arrow above it."
       },
       "audio": [
         {
@@ -26683,7 +26683,7 @@
           "available": true
         }
       ],
-      "concept": "Pinwheel rotates around a fixed hub.",
+      "concept": "A four-bladed gold-and-lavender pinwheel with curved motion strokes and a counterclockwise arrow above it.",
       "visualGroup": "回る",
       "reviewRequired": true,
       "reviewNote": "Pinwheel and rotation arrows show revolving."
@@ -26824,8 +26824,8 @@
       "meaning": "To Stand Something Up",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-e9ad09158eb3.svg",
-        "alt": "To Stand Something Up"
+        "src": "../images/approved/ja-v-e9ad09158eb3-45033ac04dcc.png",
+        "alt": "A hand tilting a rigid bear figurine and its attached lavender base upward on a table; the figurine leans right beside a curved upward-left arrow."
       },
       "audio": [
         {
@@ -26877,10 +26877,10 @@
           "available": true
         }
       ],
-      "concept": "Hands rotate a horizontal board into an upright position.",
+      "concept": "A hand tilting a rigid bear figurine and its attached lavender base upward on a table; the figurine leans right beside a curved upward-left arrow.",
       "visualGroup": "立てる",
       "reviewRequired": true,
-      "reviewNote": "Transitive action sets a board upright; distinguish from standing up oneself."
+      "reviewNote": "The hand sets a rigid bear figurine and its attached base upright; distinguish this from standing up oneself."
     },
     {
       "id": "ja-v-bd365f430f35",
@@ -26889,8 +26889,8 @@
       "meaning": "To Stop",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-bd365f430f35.svg",
-        "alt": "To Stop"
+        "src": "../images/approved/ja-v-bd365f430f35-2fcff6c32b80.png",
+        "alt": "A person stopped at the curb beside a red pedestrian signal and a zebra crossing with four white bars spanning the road."
       },
       "audio": [
         {
@@ -26942,10 +26942,10 @@
           "available": true
         }
       ],
-      "concept": "Moving ball halts against a firm stop bar.",
+      "concept": "A person stopped at the curb beside a red pedestrian signal and a zebra crossing with four white bars spanning the road.",
       "visualGroup": "止まる",
       "reviewRequired": true,
-      "reviewNote": "Motion lines terminate at barrier to symbolize stopping."
+      "reviewNote": "The person has stopped before the crossing at a red pedestrian signal."
     },
     {
       "id": "ja-v-a001b24baf12",
@@ -26954,8 +26954,8 @@
       "meaning": "To Take Out",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-a001b24baf12.svg",
-        "alt": "To Take Out"
+        "src": "../images/approved/ja-v-a001b24baf12-213390eb6166.png",
+        "alt": "One hand lifting a gold ball above an open lavender box, with an upward gold arrow beside the ball."
       },
       "audio": [
         {
@@ -27007,7 +27007,7 @@
           "available": true
         }
       ],
-      "concept": "Ball is lifted out of an open box.",
+      "concept": "One hand lifting a gold ball above an open lavender box, with an upward gold arrow beside the ball.",
       "visualGroup": "出す",
       "reviewRequired": false
     },
@@ -27213,8 +27213,8 @@
       "meaning": "Traveling",
       "sourceLevel": 5,
       "image": {
-        "src": "../images/vocabulary/ja-v-fa26a112a479.svg",
-        "alt": "Traveling"
+        "src": "../images/approved/ja-v-fa26a112a479-75b506b6f813.png",
+        "alt": "A small car following a gold route between two pins on a folded map, beside a gold suitcase decorated with colorful travel stickers."
       },
       "audio": [
         {
@@ -27266,10 +27266,10 @@
           "available": true
         }
       ],
-      "concept": "Vehicle moves along a road with strong motion streaks.",
+      "concept": "A small car following a gold route between two pins on a folded map, beside a gold suitcase decorated with colorful travel stickers.",
       "visualGroup": "走行",
       "reviewRequired": true,
-      "reviewNote": "Vehicle motion represents traveling/running of a vehicle, rather than tourism."
+      "reviewNote": "The car following the route represents vehicle travel; the luggage does not change the vehicle-motion sense of 走行."
     },
     {
       "id": "ja-v-ea952b83ac80",
