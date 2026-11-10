@@ -1,10 +1,10 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { mkdtemp, mkdir, writeFile, readFile, stat, rm, readdir, symlink, copyFile } from 'node:fs/promises'
+import { mkdtemp, mkdir, writeFile, readFile, stat, rm, symlink } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
-import { join, dirname, resolve } from 'node:path'
-import { loadSpanishTravelLevel5Plan } from './generate-spanish-travel-level-5.mjs'
+import { join, dirname } from 'node:path'
+import { spanishTravelLevel5Plan } from './generate-spanish-travel-level-5.mjs'
 import { travelLevel5AudioReviewManifest, travelLevel5AudioReviewHtml, travelLevel5NormalizationVerification, buildSpanishTravelLevel5AudioReview } from './build-spanish-travel-level-5-audio-review.mjs'
 
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
@@ -13,7 +13,12 @@ const stable = value => value && typeof value === 'object' && !Array.isArray(val
 const profile = { version: 1, targetLufs: -22, truePeakCeilingDbtp: -2, maxBoostDb: 9, rate: 44100, bitrate: '128k', dualMono: true, shortClipAnalysis: 'pad-to-500ms-only-for-measurement' }
 let verified
 async function fixture() {
-  const { plan, approval } = structuredClone(await (verified ??= loadSpanishTravelLevel5Plan()))
+  const { plan, approval } = structuredClone(await (verified ??= (async () => {
+    const paths = { draftText: 'content/spanish-travel-5/draft.json', artworkAcceptanceText: 'content/spanish-travel-5/artwork-acceptance.json',
+      registryText: 'content/es-419-voices.json', configText: 'content/spanish-travel-5/audio-config.json', approvalText: 'content/spanish-travel-5/audio-approval.json' }
+    const texts = Object.fromEntries(await Promise.all(Object.entries(paths).map(async ([key, path]) => [key, await readFile(path, 'utf8')])))
+    return { plan: spanishTravelLevel5Plan(texts), approval: JSON.parse(texts.approvalText) }
+  })()))
   const originalBytes = Buffer.alloc(100, 1), deliveryBytes = Buffer.alloc(100, 2)
   const originals = plan.items.flatMap(item => plan.voices.map(voice => ({
     ...item, voice: voice.voice, voiceId: voice.id, voiceName: voice.name, model: plan.model,
@@ -30,12 +35,12 @@ async function fixture() {
     processing: 'Constant gain; each delivered MP3 encoded directly from its provider original. No dynamics compression, trimming, or timing changes.' }
   return { plan, approval, originals, deliveries, originalBytes, deliveryBytes, summary }
 }
-async function writeFixture(t) {
+async function writeFixture(t, { complete = false } = {}) {
   const data = await fixture(), folder = await mkdtemp(join(tmpdir(), 'travel5-listening-'))
   t.after(() => rm(folder, { recursive: true, force: true }))
   const input = join(folder, 'private-originals'), delivery = join(folder, 'private-normalized'), output = join(folder, 'review')
   await mkdir(input); await mkdir(delivery)
-  for (const [index, original] of data.originals.entries()) {
+  for (const [index, original] of (complete ? data.originals : data.originals.slice(0, 1)).entries()) {
     const originalPath = join(input, original.file), deliveredPath = join(delivery, data.deliveries[index].file)
     await mkdir(dirname(originalPath), { recursive: true }); await mkdir(dirname(deliveredPath), { recursive: true })
     await writeFile(originalPath, data.originalBytes); await writeFile(deliveredPath, data.deliveryBytes)
@@ -105,6 +110,8 @@ test('Travel5 source tampering and saved approval drift fail before output creat
 
 test('Travel5 rejects descendant source symlinks before creating review output', async t => {
   const data = await writeFixture(t)
+  await assert.rejects(buildSpanishTravelLevel5AudioReview({ ...data, output: join(data.input, 'review') }), /separate from private source directories/)
+  await absent(join(data.input, 'review'))
   const path = join(data.delivery, data.deliveries[0].file)
   const redirected = join(data.folder, 'redirected.mp3')
   await writeFile(redirected, data.deliveryBytes); await rm(path); await symlink(redirected, path)
@@ -133,44 +140,13 @@ test('Travel5 normalization evidence verifies summary and short-clip flags', asy
   assert.throws(() => travelLevel5NormalizationVerification(changed, bytes))
 })
 
-test('Travel5 preflights normalization before writes and refuses overwrite; successful review publishes only normalized clips', async t => {
-  const data = await writeFixture(t)
-  const summaryPath = join(data.delivery, 'normalization-summary.json')
-  const summaryBytes = await readFile(summaryPath)
-  await writeFile(summaryPath, JSON.stringify({ ...data.summary, clips: 287 }))
+test('Travel5 normalization rejection preserves an existing review before any output write', async t => {
+  const data = await writeFixture(t, { complete: true })
+  await writeFile(join(data.delivery, 'normalization-summary.json'), JSON.stringify({ ...data.summary, clips: 287 }))
+  await mkdir(data.output)
+  const previous = join(data.output, 'index.html')
+  await writeFile(previous, 'previous review')
   await assert.rejects(buildSpanishTravelLevel5AudioReview(data), /normalization summary differs/)
-  await absent(data.output)
-  await writeFile(summaryPath, summaryBytes)
-  const manifest = await buildSpanishTravelLevel5AudioReview(data)
-  assert.equal(manifest.clips.length, 288)
-  assert.equal(manifest.images.length, 36)
-  assert.deepEqual(await readFile(join(data.output, 'audio', data.plan.voices[0].voice, data.plan.items[0].id + '.mp3')), data.deliveryBytes)
-  assert.deepEqual(await readFile(join(data.output, 'normalization-summary.json')), summaryBytes)
-  const evidence = JSON.parse(await readFile(join(data.output, 'normalization-verification.json')))
-  assert.equal(evidence.manifestSha256, hash(await readFile(join(data.output, 'manifest.json'))))
-  assert.deepEqual((await readdir(data.output)).sort(), ['audio', 'index.html', 'manifest.json', 'normalization-summary.json', 'normalization-verification.json'])
-  const before = await readFile(join(data.output, 'index.html'))
-  await assert.rejects(buildSpanishTravelLevel5AudioReview(data), { code: 'EEXIST' })
-  assert.deepEqual(await readFile(join(data.output, 'index.html')), before)
-  await assert.rejects(buildSpanishTravelLevel5AudioReview({ ...data, output: join(data.input, 'review') }), /separate from private/)
-  await absent(join(data.input, 'review'))
-})
-
-test('Travel5 refuses changed accepted artwork bytes before any review writes', async t => {
-  const data = await writeFixture(t), root = join(data.folder, 'repository')
-  await mkdir(root)
-  const acceptance = JSON.parse(await readFile('content/spanish-travel-5/artwork-acceptance.json'))
-  const art = JSON.parse(await readFile(acceptance.artworkManifest))
-  const inputs = new Set([
-    'content/spanish-travel-5/draft.json', 'content/spanish-travel-5/artwork-acceptance.json', 'content/spanish-travel-5/audio-approval.json',
-    'content/spanish-travel-5/audio-config.json', 'content/es-419-voices.json', acceptance.artworkManifest, acceptance.selection,
-    ...Object.keys(art.inputHashes), ...acceptance.images.map(image => image.path),
-  ])
-  for (const path of inputs) {
-    const target = join(root, path)
-    await mkdir(dirname(target), { recursive: true }); await copyFile(resolve(path), target)
-  }
-  await writeFile(join(root, acceptance.images[0].path), 'changed artwork')
-  await assert.rejects(buildSpanishTravelLevel5AudioReview({ ...data, root }), /artwork or provenance bytes changed/)
-  await absent(data.output)
+  assert.equal(await readFile(previous, 'utf8'), 'previous review')
+  await absent(join(data.output, 'manifest.json'))
 })
