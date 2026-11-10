@@ -33,7 +33,9 @@ npm run dev
 
 Local Playwright tests mute only the media elements in their test pages, before calling the real browser `play()` method. System audio and other apps are untouched. Recordings still download, decode, advance, end, replay, and report failures normally. Use `E2E_AUDIO=audible npm run test:e2e` for unchanged local playback, or `E2E_AUDIO=quiet npm run test:e2e` to explicitly request silence. This also applies to direct `npx playwright test` runs.
 
-Muted media can have different autoplay permissions. CI therefore runs the existing journeys without this muting, retaining unmuted autoplay coverage; dedicated quiet-mode regressions also run there. Use the shared `e2e/fixtures.ts` test import for new browser specs. Browser tests supplement pronunciation and interaction checks on the actual iPhone. See [issue #95](https://github.com/ajhconway/kikimashta/issues/95).
+Muted media can have different autoplay permissions. CI therefore runs the journeys without this muting, retaining unmuted autoplay coverage. Local quiet mode still exercises native playback in those same journeys. Use the shared `e2e/fixtures.ts` test import for browser specs. Browser tests supplement pronunciation and interaction checks on the actual iPhone. See [issue #95](https://github.com/ajhconway/kikimashta/issues/95).
+
+Keep the suite within the [lean testing policy](docs/TESTING.md): one primary owner per behavior, small fixtures, bounded pack scopes and at most 24 routine browser scenarios. New packs and artwork do not need another browser tour. The merge gate owns full validation; identical merged trees reuse successful premerge proof, and publication builds with production settings followed by a small read-only resource smoke. See [deployment verification](docs/DEPLOYMENT.md).
 
 Production uses GitHub Pages with `kikimashta.com` configured in the repository’s Pages settings. Domain routing is managed there; the Actions deployment does not use a repository `CNAME` file.
 

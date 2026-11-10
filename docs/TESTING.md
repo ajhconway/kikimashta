@@ -70,6 +70,40 @@ Those hosted timings must not be compared directly with local measurements.
 The owner's targets are 50% fewer maintained cases and 75% less test duration;
 state measured shortfalls instead of deleting critical coverage to change a count.
 
+### Verified reduction
+
+The final integration includes the concurrently merged Travel level 5 pack
+(`0e8084fd`), including its additional Python tests. It has **522 Vitest + 384
+Node + 52 Python content + 27 Python artwork cases**, plus **23 browser scenarios /
+46 executions**. Compared with the review baseline, that is **1,381 → 1,008
+maintained logical cases (27.0% fewer)** and **63 → 23 journeys (63.5% fewer)**.
+Count a browser scenario once here; engine executions are reported separately.
+The overall 50% maintained-case target is not met.
+
+Same-machine measurements (quiet audio, two browser workers; four Vitest workers):
+
+| Command / metric | Review baseline | Final integration | Reduction |
+| --- | ---: | ---: | ---: |
+| Vitest, `--no-cache --maxWorkers=4 --configLoader runner`, wall | 18.856s | 9.635s | 48.9% |
+| `node --test scripts/*.test.mjs scripts/content/*.test.mjs`, wall | 52.16s | 12.10s | 76.8% |
+| Playwright, `--workers=2`, wall | 240.872s | 63.110s | 73.8% |
+| Playwright, aggregate per-test time | 475.060s | 116.647s | 75.4% |
+
+The original browser run passed 125 / skipped 1; final passed 45 / skipped 1,
+with no failures, retries or flaky results. The skip is the same unsupported
+WebKit fake-service/offline-auth combination. The 75% browser wall-time target
+is narrowly unmet; aggregate time is a separate metric. Hosted gate and Pages
+wall-time changes require actual hosted results, not these local numbers.
+
+`npm run check` passed in 38.54s locally; final lint/types, both browser engines
+and actionlint passed. No matching local baseline was recorded for the entire
+check command, so that number is not a claimed whole-gate speedup.
+The local read-only publication smoke verified nine real built resources.
+Reconstructing the browser build from checked-out static media plus generated
+outputs matched all 7,397 manifest resources while transferring 6,681,166 bytes.
+SQL policy checks remain in required CI; the local environment lacks PostgreSQL
+and Docker. Real-device/live-account acceptance remains in its existing issues.
+
 ## Merge and publication
 
 PR Checks owns lint, types, focused/content/database validation, the built app

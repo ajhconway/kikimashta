@@ -73,7 +73,13 @@ Baseline `3fcddfc9` discovers 63 scenarios / 126 executions. The hosted
 passed 125 and skipped the unsupported WebKit offline-auth combination, with
 688.231 seconds aggregate per-test time across the engine executions.
 
-Record comparable local before/after measurements and their environment in
-issue #247 and its PR. Do not compare hosted aggregate time with local wall time,
-or include setup/build/Pages service waits in a test-execution speedup.
-Earlier #179/#202 timings are historical and do not describe this suite.
+The same-machine comparison used quiet audio and two workers: original 126
+executions took 240.872s wall / 475.060s aggregate; final 46 took 63.110s wall /
+116.647s aggregate. Final passed 45 and skipped the same unsupported WebKit case,
+with zero retries and no flaky results. This is 73.8% less wall time and 75.4% less
+aggregate time. The final integration includes Travel level 5; its separate tour
+is retired because generic Spanish practice plus the all-bank integrity audit own
+that coverage. See [all suite counts and limitations](TESTING.md#verified-reduction).
+
+Do not compare hosted aggregate time with local wall time or include setup/build/
+Pages waits in a test-execution speedup. Earlier #179/#202 timings are historical.
