@@ -52,7 +52,7 @@
         "ja-v-602940cfc449",
         "ja-v-baa4dd2c5986"
       ],
-      "reason": "Both current pictures depict a single plate without an external scale reference. The small-plate illustration can also answer the ordinary plate prompt."
+      "reason": "A small plate is also a plate. The small-plate scene additionally includes a full-size dinner plate as a comparison, so the broader plate prompt remains ambiguous across these pictures."
     },
     {
       "ids": [
@@ -80,7 +80,7 @@
         "ja-v-754e1f2ea742",
         "ja-v-a47e21265374"
       ],
-      "reason": "The current calf picture visibly includes an adult cow as well as its calf. Both it and the standalone cow can answer the cow prompt."
+      "reason": "The calf picture emphasizes a young calf but still includes a visible, muted adult-cow reference. A calf is also a cow, so this scene and the standalone cow remain overlapping answers to the broader cow prompt."
     },
     {
       "ids": [
@@ -165,13 +165,13 @@
     },
     {
       "itemId": "ja-v-5dc14aea92c7",
-      "src": "images/vocabulary/ja-v-5dc14aea92c7.svg",
-      "sha256": "f921bff8e76eb08e76004ea38878b6088febcaa9a2d5de03bc1f3f4fc1f10bd8"
+      "src": "images/approved/ja-v-5dc14aea92c7-43cefa3704f6.png",
+      "sha256": "42d0d11b7c7dc7e2c0cc2c9d4347b6c8e15a3a69ca2c29a2f4bfd7db33d691d4"
     },
     {
       "itemId": "ja-v-602940cfc449",
-      "src": "images/vocabulary/ja-v-602940cfc449.svg",
-      "sha256": "b21f2b36fa0894cfce6ee9845c81b078f35d720d4db66c24f5e2b47ce165fe0f"
+      "src": "images/approved/ja-v-602940cfc449-5c720f1a44b4.png",
+      "sha256": "4e658946bac13c88538e2d1dcf1085aec68aca449f160de35e34bd2a8528a4d8"
     },
     {
       "itemId": "ja-v-74043c16db5e",
@@ -180,8 +180,8 @@
     },
     {
       "itemId": "ja-v-754e1f2ea742",
-      "src": "images/vocabulary/ja-v-754e1f2ea742.svg",
-      "sha256": "5f1ffed62a39d78822de8d3aaef972fc2ced763b88b1247dd739fa9c82663232"
+      "src": "images/approved/ja-v-754e1f2ea742-5ddbbbd7838e.png",
+      "sha256": "030fa4180cacf99e6ff23e44b3c13410b9cdcd072d6fcee0eaa752f1d34724ac"
     },
     {
       "itemId": "ja-v-92bebda5ac98",

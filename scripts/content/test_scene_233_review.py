@@ -57,6 +57,64 @@ class SceneReviewTests(unittest.TestCase):
                 'ownerChoice': {'round': 2, 'date': '2026-11-09', 'ownerStatement': 'I choose this image.',
                                 'version': 2, **self.images[0], 'status': 'owner-selected'}}
 
+    def night(self, approved=False):
+        candidate = {'id': 'ja-v-ba0c8a160c33', 'text': '夜', 'reading': 'よる', 'meaning': 'Night',
+                     'family': 'time-of-day', 'version': 1, 'prompt': 'Night in the matching landscape.',
+                     'status': 'candidate-pending-owner-review', **self.images[0],
+                     'currentApprovedPath': self.images[1]['path'], 'currentApprovedSha256': self.images[1]['sha256']}
+        if approved:
+            candidate.update(status='approved', selectedVersion=1,
+                             versions=[self.version(1, 0, status='approved')],
+                             approval={'scope': 'artwork only', 'date': '2026-11-09',
+                                       'ownerStatement': "Great, let's ship these. Auto-merge.",
+                                       'selectedVersion': 1, 'sha256': self.images[0]['sha256']})
+        return candidate
+
+    def related_night(self, candidate):
+        return REVIEW.related_candidates({'relatedFamilyCandidates': [candidate]}, self.root, self.folder, set())
+
+    def test_related_night_accepts_pending_and_exact_approved_artwork(self):
+        for approved in [False, True]:
+            with self.subTest(approved=approved):
+                candidate = self.night(approved)
+                before = copy.deepcopy(candidate)
+                related = self.related_night(candidate)
+                self.assertEqual(len(related), 1)
+                self.assertEqual(related[0][1], self.root / candidate['path'])
+                self.assertEqual(related[0][2], self.root / candidate['currentApprovedPath'])
+                self.assertEqual(candidate, before)
+
+    def test_related_night_rejects_missing_stale_or_duplicate_approval_bindings(self):
+        cases = [
+            ('missing approval', lambda a: a.pop('approval')),
+            ('wrong scope', lambda a: a['approval'].update(scope='generation only')),
+            ('missing statement', lambda a: a['approval'].pop('ownerStatement')),
+            ('empty date', lambda a: a['approval'].update(date=' ')),
+            ('stale approval hash', lambda a: a['approval'].update(sha256='0' * 64)),
+            ('stale approval version', lambda a: a['approval'].update(selectedVersion=2)),
+            ('boolean selected version', lambda a: a.update(selectedVersion=True)),
+            ('missing selected record', lambda a: a['versions'].clear()),
+            ('duplicate selected record', lambda a: a['versions'].append(copy.deepcopy(a['versions'][0]))),
+            ('conflicting duplicate version', lambda a: a['versions'].append(self.version(1, 2))),
+            ('stale selected record', lambda a: a['versions'][0].update(sha256='0' * 64)),
+            ('different family version', lambda a: a.update(version=2)),
+            ('unsafe selected path', lambda a: a.update(path='../escape.png')),
+            ('unsafe reference path', lambda a: a.update(currentApprovedPath='../escape.png')),
+            ('stale reference hash', lambda a: a.update(currentApprovedSha256='0' * 64)),
+        ]
+        for label, mutate in cases:
+            with self.subTest(label=label):
+                candidate = self.night(approved=True)
+                mutate(candidate)
+                with self.assertRaises(ValueError):
+                    self.related_night(candidate)
+
+    def test_related_night_rejects_changed_approved_file(self):
+        candidate = self.night(approved=True)
+        (self.root / candidate['path']).write_bytes((self.root / self.images[2]['path']).read_bytes())
+        with self.assertRaises(ValueError):
+            self.related_night(candidate)
+
     def test_round_two_can_compare_against_version_two(self):
         asset = self.comparison()
         before = copy.deepcopy(asset)

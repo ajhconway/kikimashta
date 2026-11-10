@@ -271,7 +271,7 @@
   },
   {
     "id": "ja-v-b1514b201acd",
-    "concept": "Several circular everyday objects: plate, ball, clock",
+    "concept": "Two circular objects above two square objects, with gold attention marks above each circular object.",
     "reviewRequired": true,
     "reviewNote": "Round/circular overlaps circle; avoid pairing them as alternatives.",
     "visualGroup": "丸い"
@@ -429,9 +429,9 @@
   },
   {
     "id": "ja-v-5849925b131d",
-    "concept": "A pink ball visibly inside a transparent box",
+    "concept": "Kiku wearing lavender headphones rests inside a low, wide cardboard box, with front paws visible over its rim.",
     "reviewRequired": true,
-    "reviewNote": "Transparent box symbolizes inside.",
+    "reviewNote": "Kiku visibly contained by the cardboard box illustrates the inside relation.",
     "visualGroup": "中"
   },
   {
@@ -548,7 +548,7 @@
   },
   {
     "id": "ja-v-79140f0bf8e7",
-    "concept": "A tiny floppy-eared puppy beside a large paw print",
+    "concept": "A seated golden puppy with a large round head, floppy ears, short legs and cream-colored paws and chest.",
     "reviewRequired": true,
     "reviewNote": "Puppy proportions convey young dog; size alone can be ambiguous.",
     "visualGroup": "子犬"
@@ -664,7 +664,7 @@
   },
   {
     "id": "ja-v-b0a6475686ea",
-    "concept": "A person climbing a ladder with an upward arrow",
+    "concept": "A person climbing a wooden ladder, with a curved gold arrow pointing upward.",
     "reviewRequired": true,
     "reviewNote": "Climbing a ladder illustrates upward movement.",
     "visualGroup": "上る"
@@ -678,16 +678,16 @@
   },
   {
     "id": "ja-v-b2a9df4d0301",
-    "concept": "A person leaving through an open doorway",
+    "concept": "A person stepping through an open doorway onto grass, with a faded earlier position inside and an outward arrow.",
     "reviewRequired": true,
     "reviewNote": "Action and exit are visually related.",
     "visualGroup": "exit-door"
   },
   {
     "id": "ja-v-17e3177c62d5",
-    "concept": "A person rising from a chair with an upward arrow",
+    "concept": "The same person seated on a chair in a faded starting pose and standing beside it in a solid pose, joined by an upward arrow.",
     "reviewRequired": true,
-    "reviewNote": "Standing up and standing still share a picture; movement arrow provides the action cue.",
+    "reviewNote": "The seated-to-standing sequence supplies the action cue; distinguish standing up oneself from setting something upright.",
     "visualGroup": "立つ"
   },
   {

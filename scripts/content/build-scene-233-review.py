@@ -58,9 +58,9 @@ def approved_artwork(asset, image_path):
             or approval['selectedVersion'] != version or approval.get('sha256') != sha or asset.get('sha256') != sha):
         raise ValueError(f'{item_id}: stale artwork approval hash or selected version.')
     versions = asset.get('versions')
-    if not isinstance(versions, list) or len([
-            record for record in versions if isinstance(record, dict) and type(record.get('version')) is int
-            and record['version'] == version and record.get('path') == asset.get('path') and record.get('sha256') == sha]) != 1:
+    matching = [record for record in versions if isinstance(record, dict) and type(record.get('version')) is int
+                and record['version'] == version] if isinstance(versions, list) else []
+    if len(matching) != 1 or matching[0].get('path') != asset.get('path') or matching[0].get('sha256') != sha:
         raise ValueError(f'{item_id}: approved artwork does not match exactly one selected version record.')
     return asset.get('status') == 'approved'
 
@@ -172,11 +172,13 @@ def related_candidates(manifest, root, review_folder, selected_ids):
         if (not isinstance(candidate, dict) or candidate.get('id') != 'ja-v-ba0c8a160c33'
                 or candidate['id'] in selected_ids or candidate.get('text') != '夜' or candidate.get('reading') != 'よる'
                 or candidate.get('meaning') != 'Night' or candidate.get('family') != 'time-of-day'
-                or candidate.get('status') != 'candidate-pending-owner-review' or type(candidate.get('version')) is not int
+                or candidate.get('status') not in {'candidate-pending-owner-review', 'approved'} or type(candidate.get('version')) is not int
                 or candidate['version'] < 1 or not isinstance(candidate.get('prompt'), str) or not candidate['prompt'].strip()):
-            raise ValueError('Related family record must be the pending Night proposal outside the 43-card selection.')
+            raise ValueError('Related family record must be the separately reviewed Night artwork outside the 43-card selection.')
         proposed = review_image(root, review_folder, candidate.get('path'), candidate.get('sha256'), 'Proposed Night')
-        current = review_image(root, review_folder, candidate.get('currentApprovedPath'), candidate.get('currentApprovedSha256'), 'Current approved Night')
+        if approved_artwork(candidate, proposed) and candidate['selectedVersion'] != candidate['version']:
+            raise ValueError('Approved Night must bind its exact family version.')
+        current = review_image(root, review_folder, candidate.get('currentApprovedPath'), candidate.get('currentApprovedSha256'), 'Earlier approved Night')
         result.append((candidate, proposed, current))
     return result
 
@@ -345,6 +347,7 @@ def build(root, plan_path=None, manifest_path=None, output=None):
         counts['alternatives'] += len(alternatives_by_id[item_id])
     family_candidates = related_candidates(manifest, root, review_folder, set(by_id))
     counts['related'] = len(family_candidates)
+    counts['relatedApproved'] = sum(candidate['status'] == 'approved' for candidate, _, _ in family_candidates)
     family_selected = []
     if family_candidates:
         for text in ['日の出', '夕方']:
@@ -437,28 +440,31 @@ def build(root, plan_path=None, manifest_path=None, output=None):
         current_url = escaped(local_url(current_path, output))
         proposed_url = escaped(local_url(proposed_path, output))
         family_sources = metadata_links(root, review_folder, plan['sourceRevision'], output, candidate)
+        night_approved = candidate['status'] == 'approved'
+        night_label = 'Approved artwork' if night_approved else 'Proposal'
         selected_figures = []
         for selected in family_selected:
             selected_url = escaped(local_url(ready_paths[selected['id']], output))
+            selected_label = 'Approved artwork' if selected['id'] in approved_ids else 'Proposal'
             selected_figures.append(f'<figure><figcaption><b><span lang="ja">{escaped(selected["text"])}</span> · {escaped(selected["meaning"])}</b>'
-                                    f'<span>Proposal · version {escaped(selected.get("selectedVersion", "not recorded"))}</span></figcaption>'
+                                    f'<span>{selected_label} · version {escaped(selected.get("selectedVersion", "not recorded"))}</span></figcaption>'
                                     f'<a class="preview" href="{selected_url}" target="_blank" rel="noopener">'
-                                    f'<img src="{selected_url}" alt="{escaped(selected["meaning"])} family proposal" loading="lazy"></a>'
+                                    f'<img src="{selected_url}" alt="{selected_label} for {escaped(selected["meaning"])}" loading="lazy"></a>'
                                     f'<a href="{selected_url}" target="_blank" rel="noopener">Open {escaped(selected["meaning"])} full size ↗</a>'
                                     f' · <a href="#{escaped(selected["id"])}">View selected card ↑</a></figure>')
         family_cards.append(f'<article class="related-candidate" id="related-{escaped(candidate["id"])}">'
-                            '<h3>Matching landscape proposals</h3><div class="family-proposals">'
+                            '<h3>Matching landscape artwork</h3><div class="family-proposals">'
                             + ''.join(selected_figures)
                             + f'<figure><figcaption><b><span lang="ja">{escaped(candidate["text"])} · {escaped(candidate["reading"])}</span> · Night</b>'
-                            f'<span>Proposal · version {candidate["version"]}</span></figcaption>'
+                            f'<span>{night_label} · version {candidate["version"]}</span></figcaption>'
                             f'<a class="preview" href="{proposed_url}" target="_blank" rel="noopener"><img src="{proposed_url}" '
-                            'alt="Night family proposal" loading="lazy"></a>'
-                            f'<a href="{proposed_url}" target="_blank" rel="noopener">Open proposed Night full size ↗</a></figure></div>'
+                            f'alt="{night_label} for Night" loading="lazy"></a>'
+                            f'<a href="{proposed_url}" target="_blank" rel="noopener">Open selected Night full size ↗</a></figure></div>'
                             '<div class="family-reference"><figure><figcaption><b>Earlier approved Night reference</b></figcaption>'
                             f'<a class="preview" href="{current_url}" target="_blank" rel="noopener"><img src="{current_url}" '
                             'alt="Earlier approved Night illustration" loading="lazy"></a>'
-                            f'<a href="{current_url}" target="_blank" rel="noopener">Open current Night full size ↗</a></figure></div>'
-                            '<details><summary>Night proposal prompt and source details</summary>'
+                            f'<a href="{current_url}" target="_blank" rel="noopener">Open earlier Night full size ↗</a></figure></div>'
+                            '<details><summary>Night artwork prompt and source details</summary>'
                             f'<pre>{escaped(candidate["prompt"])}</pre>'
                             + (f'<ul class="source-links">{family_sources}</ul>' if family_sources else '')
                             + f'<pre class="technical">{escaped(json.dumps(candidate, ensure_ascii=False, indent=2))}</pre></details></article>')
@@ -466,7 +472,7 @@ def build(root, plan_path=None, manifest_path=None, output=None):
                               for asset in assets if asset['text'] in {'日の出', '夕方'})
     family_html = ('<section class="related-family" id="time-of-day-family" aria-labelledby="family-heading">'
                    '<h2 id="family-heading">Time-of-day family</h2>'
-                   '<p>Compare the matching sunrise, early-evening and night proposals. '
+                   '<p>Compare the matching sunrise, early-evening and night selections. '
                    'The earlier approved Night illustration is included as a reference.</p><p>Related selected cards: ' + family_links + '</p>'
                    + ''.join(family_cards) + '</section>') if family_cards else ''
 
@@ -479,7 +485,9 @@ def build(root, plan_path=None, manifest_path=None, output=None):
                             ('owner-round-1-time-requests.json', 'Round 1 time-family requests'),
                             ('owner-round-2-plan.json', 'Round 2 plan'), ('owner-round-2-requests.json', 'Round 2 requests'),
                             ('owner-round-2-root-request.json', 'Round 2 evening request'),
-                            ('owner-round-3-plan.json', 'Round 3 plan'), ('owner-round-3-requests.json', 'Round 3 requests')]:
+                            ('owner-round-3-plan.json', 'Round 3 plan'), ('owner-round-3-requests.json', 'Round 3 requests'),
+                            ('owner-round-4-plan.json', 'Round 4 plan'), ('owner-round-4-request.json', 'Round 4 request'),
+                            ('release-plan.json', 'Release plan'), ('release-manifest.json', 'Accepted release manifest')]:
         source_path = review_folder / filename
         if source_path.is_file():
             if not source_path.resolve().is_relative_to(review_folder):
@@ -496,17 +504,18 @@ def build(root, plan_path=None, manifest_path=None, output=None):
 .alternatives{border-top:1px solid #dfd3ed;margin-top:20px;padding-top:14px}.alternatives h3{font-size:1rem;margin:0}.alternatives>p,.family-link{font-size:.85rem}.alternative-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:14px}.alternative,.family-proposals figure,.family-reference figure{margin:0;min-width:0}.alternative figcaption,.family-proposals figcaption,.family-reference figcaption{font-size:.85rem;margin-bottom:8px}.alternative figcaption span,.family-proposals figcaption>span,.family-reference figcaption span{display:block;margin-top:4px}.alternative>a:last-child,.family-proposals figure>a,.family-reference figure>a:last-child{font-size:.8rem}.alternative .preview{border:1px solid #e4d9ef;border-radius:10px;overflow:hidden}.alternative .preview img{padding:8px}.related-family{margin-top:36px;border-top:2px solid #dfd3ed;padding-top:24px}.related-family>h2{font-size:1.5rem}.related-candidate{background:white;border:1px solid #dfd3ed;border-radius:18px;padding:20px;margin-top:20px}.related-candidate>h3{font-size:1.3rem;margin:0}.family-proposals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:18px}.family-reference{max-width:360px;margin:24px 0 0 auto}@media(min-width:900px){.card.has-alternatives{grid-column:span 2}.card.has-alternatives>.preview{aspect-ratio:auto;height:300px}.alternative-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.family-proposals{grid-template-columns:1fr}.family-reference{max-width:none;margin-top:28px}.related-candidate{padding:16px}}@media print{.card.has-alternatives{grid-column:span 3}.alternative-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.related-family{break-before:page}}
 </style></head><body><header><p class="eyebrow">Kikimashta · Artwork review · Issue #233</p>
 <h1>Picture with scene / contrast artwork</h1><p>All 43 cards categorized exactly <b>staged-picture</b> (Picture with scene / contrast) in the WaniKani source-level 2–5 suitability review that lacked published updated artwork at the frozen source revision. The 24 already updated IDs in this category are excluded.</p>
-<div class="notice"><b>Owner review: __CONFIRMED__ of 43 current selections confirmed.</b> New illustrations, shared images and existing approved reuses are identified separately. Artwork approvals and explicit version choices bind to the exact selected version and image hash. Earlier source approval does not confirm this batch’s selection. Review acceptance does not activate artwork, vocabulary or practice cards.</div>
-<div class="tallies"><span class="tally">43 selected cards</span><span class="tally">__READY__ selected images available</span><span class="tally">__APPROVED__ artwork approvals</span><span class="tally">__CHOSEN__ owner-selected versions</span><span class="tally">__AWAITING__ awaiting owner review</span><span class="tally">__NEW__ new images</span><span class="tally">__SHARED__ shared new images</span><span class="tally">__REUSED__ existing approved reuses</span><span class="tally">__PENDING__ pending generation</span><span class="tally">__ALTERNATIVES__ alternatives</span><span class="tally">__RELATED__ related family proposals</span></div>
+<div class="notice"><b>Owner review: __CONFIRMED__ of 43 current selections confirmed.</b> New illustrations, shared images and existing approved reuses are identified separately. Artwork approvals and explicit version choices bind to the exact selected version and image hash. Earlier source approval does not confirm this batch’s selection. Release activation is tracked separately from this artwork review.</div>
+<div class="tallies"><span class="tally">43 selected cards</span><span class="tally">__READY__ selected images available</span><span class="tally">__APPROVED__ artwork approvals</span><span class="tally">__CHOSEN__ owner-selected versions</span><span class="tally">__AWAITING__ awaiting owner review</span><span class="tally">__NEW__ new images</span><span class="tally">__SHARED__ shared new images</span><span class="tally">__REUSED__ existing approved reuses</span><span class="tally">__PENDING__ pending generation</span><span class="tally">__ALTERNATIVES__ alternatives</span><span class="tally">__RELATED__ related family images</span></div>
 <p>Open any picture at full size. Expand its details for exact prompts, source provenance and suitability notes, including overlapping meanings to keep out of competing answer choices.</p><p>__FILES__ · <a href="https://github.com/ajhconway/kikimashta/issues/233">GitHub issue #233</a></p>
 <div class="filters"><label>Find a card<input id="search" type="search" placeholder="Japanese, reading, English or level"></label><label>Artwork source<select id="kind"><option value="all">All sources</option><option value="generated">New illustrations</option><option value="shared-new">Shared new illustrations</option><option value="existing-approved">Existing approved reuses</option></select></label></div><p id="shown-count" role="status">Showing 43 of 43 cards</p></header>
-<main class="gallery">__CARDS__</main>__FAMILY__<footer>Source revision: <code>__REVISION__</code>. __CONFIRMED__ current selections have matching owner review records; __AWAITING__ ready selections await owner review and __PENDING__ await generation. Alternatives and related family proposals await review and do not add cards to the frozen 43-card scope. Review acceptance covers artwork only. Review preparation does not change active artwork, audio, vocabulary eligibility or progress.</footer>
+<main class="gallery">__CARDS__</main>__FAMILY__<footer>Source revision: <code>__REVISION__</code>. __CONFIRMED__ current selections have matching owner review records; __AWAITING__ ready selections await owner review and __PENDING__ await generation. Related family images remain outside the frozen 43-card scope: __RELATED_APPROVED__ approved and __RELATED_PENDING__ awaiting review. Historical alternatives retain their original review records. Review acceptance covers artwork only; release activation is tracked separately.</footer>
 <script>const cards=[...document.querySelectorAll('.card')],search=document.querySelector('#search'),kind=document.querySelector('#kind');function filter(){const term=search.value.trim().toLocaleLowerCase();let shown=0;for(const card of cards){card.hidden=!card.dataset.search.toLocaleLowerCase().includes(term)||(kind.value!=='all'&&card.dataset.kind!==kind.value);if(!card.hidden)shown++}document.querySelector('#shown-count').textContent=`Showing ${shown} of ${cards.length} cards`}search.addEventListener('input',filter);kind.addEventListener('change',filter);</script></body></html>'''
     for marker, value in {'__READY__': counts['ready'], '__NEW__': counts['generated'], '__SHARED__': counts['shared-new'],
                           '__REUSED__': counts['existing-approved'], '__PENDING__': counts['pending'], '__FILES__': files,
                           '__APPROVED__': counts['approved'], '__AWAITING__': counts['awaiting'],
                           '__CHOSEN__': counts['ownerSelected'], '__CONFIRMED__': counts['confirmed'],
                           '__ALTERNATIVES__': counts['alternatives'], '__RELATED__': counts['related'], '__FAMILY__': family_html,
+                          '__RELATED_APPROVED__': counts['relatedApproved'], '__RELATED_PENDING__': counts['related'] - counts['relatedApproved'],
                           '__CARDS__': ''.join(cards), '__REVISION__': escaped(plan.get('sourceRevision', 'Not recorded'))}.items():
         page = page.replace(marker, str(value))
     output.parent.mkdir(parents=True, exist_ok=True)
