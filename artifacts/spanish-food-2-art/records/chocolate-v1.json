@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-chocolate",
+  "slug": "chocolate",
+  "version": 1,
+  "path": "originals/chocolate-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "b8e1c5a446d1210e93a8d5ae34ced81fc5984b4b4d9eb35e6de7112ebe816653",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "05a753c7cf4b18b78fcef87afe544629b4e97f5209117ab095d9b14e09b20c4e",
+  "bytes": 1078133,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-def853c1-01f7-4807-b6f7-50579fe4c3ec.png"
+}

@@ -1,0 +1,535 @@
+{
+  "experimentId": "spanish-neighbors-222",
+  "inputDigest": "bd158c29052ced54e528ec838872a80abae347723569411d0623230828f0d229",
+  "semantic": {
+    "e5": 3,
+    "fasttext": 6,
+    "neither": 1,
+    "tie": 2,
+    "unanswered": 0,
+    "uncertain": 0
+  },
+  "pronunciation": {
+    "letters": 7,
+    "neither": 0,
+    "phones": 7,
+    "tie": 5,
+    "unanswered": 9,
+    "uncertain": 0
+  },
+  "pronunciationByVoice": {
+    "juan": {
+      "letters": 2,
+      "neither": 0,
+      "phones": 2,
+      "tie": 0,
+      "unanswered": 3,
+      "uncertain": 0
+    },
+    "carito": {
+      "letters": 1,
+      "neither": 0,
+      "phones": 3,
+      "tie": 0,
+      "unanswered": 3,
+      "uncertain": 0
+    },
+    "santiago": {
+      "letters": 2,
+      "neither": 0,
+      "phones": 1,
+      "tie": 2,
+      "unanswered": 2,
+      "uncertain": 0
+    },
+    "veronica": {
+      "letters": 2,
+      "neither": 0,
+      "phones": 1,
+      "tie": 3,
+      "unanswered": 1,
+      "uncertain": 0
+    }
+  },
+  "pronunciationUnexposed": {
+    "neither": 0,
+    "tie": 0,
+    "unanswered": 9,
+    "uncertain": 0
+  },
+  "pronunciationAfterWordExposure": {
+    "letters": 7,
+    "neither": 0,
+    "phones": 7,
+    "tie": 5,
+    "unanswered": 0,
+    "uncertain": 0
+  },
+  "pronunciationAfterSemanticExposure": {
+    "letters": 7,
+    "neither": 0,
+    "phones": 7,
+    "tie": 5,
+    "unanswered": 0,
+    "uncertain": 0
+  },
+  "pronunciationUnrevealed": {
+    "letters": 7,
+    "neither": 0,
+    "phones": 7,
+    "tie": 5,
+    "unanswered": 9,
+    "uncertain": 0
+  },
+  "pronunciationRevealed": {
+    "neither": 0,
+    "tie": 0,
+    "unanswered": 0,
+    "uncertain": 0
+  },
+  "semanticViewed": true,
+  "wordsViewed": true,
+  "note": "Semantic text is visible by design. Unexposed listening requires both no reveal and no prior word exposure from any trial or the semantic section. Repeated targets/voices from one reviewer are dependent; no significance or learner-effectiveness claim.",
+  "rows": [
+    {
+      "trialId": "S01",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "e5"
+    },
+    {
+      "trialId": "S02",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S03",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S04",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S05",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S06",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "e5"
+    },
+    {
+      "trialId": "S07",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "neither",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "neither"
+    },
+    {
+      "trialId": "S08",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "B",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S09",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "tie",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "S10",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "tie",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "S11",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "fasttext"
+    },
+    {
+      "trialId": "S12",
+      "kind": "semantic",
+      "voice": null,
+      "preference": "A",
+      "notes": "",
+      "revealed": true,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "e5"
+    },
+    {
+      "trialId": "P04-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "P06-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "P01-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P06-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "P04-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P07-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P08-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P07-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P02-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P03-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P02-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P08-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P06-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P08-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P02-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "P01-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": "A",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P04-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "phones"
+    },
+    {
+      "trialId": "P03-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "B",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "letters"
+    },
+    {
+      "trialId": "P07-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": "tie",
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": true,
+      "priorWordExposure": true,
+      "outcome": "tie"
+    },
+    {
+      "trialId": "P01-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P04-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P07-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P08-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P03-santiago",
+      "kind": "pronunciation",
+      "voice": "santiago",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P03-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P01-veronica",
+      "kind": "pronunciation",
+      "voice": "veronica",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P06-carito",
+      "kind": "pronunciation",
+      "voice": "carito",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    },
+    {
+      "trialId": "P02-juan",
+      "kind": "pronunciation",
+      "voice": "juan",
+      "preference": null,
+      "notes": "",
+      "revealed": false,
+      "semanticExposure": false,
+      "priorWordExposure": false,
+      "outcome": "unanswered"
+    }
+  ]
+}

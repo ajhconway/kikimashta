@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-melon",
+  "slug": "melon",
+  "version": 1,
+  "path": "originals/melon-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "941f4812c6bfb131e6fa73481711e59a265f3808d8afa8483523c5b63d33323d",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "eed2036f2c899ca3a923338cf1dd83a4135b064c183a2605b6a9fc6fe0d08f29",
+  "bytes": 1165229,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3ad660e7-d58b-4209-b5b3-0bc92ff571d6.png"
+}

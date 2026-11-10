@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-cauliflower",
+  "slug": "cauliflower",
+  "version": 1,
+  "path": "originals/cauliflower-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "73275648b6b57d73675fd97b9ebf7251fbd1a8e3109ebada2e4d6d4b0a052b5b",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "24816b9bba8191f6557c00fc7ba486c02712c5af73f085a104494fb332d313cf",
+  "bytes": 1278504,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-66689409-8546-4836-ab0a-77161a47beba.png"
+}

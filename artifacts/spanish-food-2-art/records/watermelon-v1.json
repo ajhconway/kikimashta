@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-watermelon",
+  "slug": "watermelon",
+  "version": 1,
+  "path": "originals/watermelon-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "62e9b0777b5f92011ccd04f65a14471d77489511227386dc260f8b21d8d86291",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "90527843ae35dbfb37bcbbf98d7d965b700e1870576456abe660137b7260826b",
+  "bytes": 1046722,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d8350ce7-0bc4-4337-80d9-5e71887079fe.png"
+}

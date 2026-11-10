@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-jam",
+  "slug": "jam",
+  "version": 1,
+  "path": "originals/jam-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "c29e255f612a2d5ba316b0b1bcadbd7ada1e1ae0a31ae9e936c604d464e8bdd6",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "a6e3dd90a598bc4718fc4fe90028d335d2c52d0a2631f7ae65d08560ed9daafa",
+  "bytes": 1053473,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-fdf58571-6d13-47e6-bc0e-e3ea0b950591.png"
+}

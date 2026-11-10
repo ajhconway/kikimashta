@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "language": "es-419",
+  "policy": "Canonical es-419 seseo and yeísmo; lexical primary stress/word boundaries retained. Phonetic proxy, not a claim about every regional voice.",
+  "probes": [
+    {
+      "id": "P01",
+      "category": "unicode",
+      "left": "café",
+      "right": "café",
+      "expectation": "normalization-equal",
+      "assumption": "NFC normalization",
+      "reason": "Canonically equivalent accented forms must not become distinct readings."
+    },
+    {
+      "id": "P02",
+      "category": "unicode",
+      "left": "baño",
+      "right": "baño",
+      "expectation": "normalization-equal",
+      "assumption": "NFC normalization",
+      "reason": "Canonically equivalent enye must retain the nasal-palatal contrast while normalizing equally."
+    },
+    {
+      "id": "P03",
+      "category": "silent-h",
+      "left": "hola",
+      "right": "ola",
+      "expectation": "same-pronunciation",
+      "assumption": "Canonical ordinary Spanish forms",
+      "reason": "Silent h should not invent a sound contrast; controlled words outside the ordinary bank."
+    },
+    {
+      "id": "P04",
+      "category": "b-v",
+      "left": "vaca",
+      "right": "baca",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical b/v merger",
+      "reason": "Letter differences alone must not create distinct Spanish phoneme keys."
+    },
+    {
+      "id": "P05",
+      "category": "b-v",
+      "left": "tubo",
+      "right": "tuvo",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical b/v merger",
+      "reason": "A medial b/v spelling difference should not create a false distractor contrast."
+    },
+    {
+      "id": "P06",
+      "category": "seseo",
+      "left": "casa",
+      "right": "caza",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected Latin American seseo policy",
+      "reason": "The z/s spelling distinction is not an es-419 phoneme distinction."
+    },
+    {
+      "id": "P07",
+      "category": "seseo",
+      "left": "cocer",
+      "right": "coser",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected Latin American seseo policy",
+      "reason": "Soft c before e and s should share the selected pronunciation."
+    },
+    {
+      "id": "P08",
+      "category": "yeismo",
+      "left": "halla",
+      "right": "haya",
+      "expectation": "same-pronunciation",
+      "assumption": "Canonical es-419 yeísmo; not a claim that all Spanish dialects merge ll/y",
+      "reason": "Under the declared merger, these controlled forms should be excluded as same-reading candidates."
+    },
+    {
+      "id": "P09",
+      "category": "soft-g-j",
+      "left": "gira",
+      "right": "jira",
+      "expectation": "same-pronunciation",
+      "assumption": "Same isolated-word context and canonical soft-g/j pronunciation",
+      "reason": "Contextual grapheme rules are required rather than letter edit distance."
+    },
+    {
+      "id": "P10",
+      "category": "stress",
+      "left": "papa",
+      "right": "papá",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "Changing the stressed syllable must not be discarded as mere accent spelling."
+    },
+    {
+      "id": "P11",
+      "category": "stress",
+      "left": "canto",
+      "right": "cantó",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "The phoneme/stress key must distinguish final stress."
+    },
+    {
+      "id": "P12",
+      "category": "stress",
+      "left": "termino",
+      "right": "término",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Primary stress is retained",
+      "reason": "Identical base letters with different stress should not be treated as exact homophones."
+    },
+    {
+      "id": "P13",
+      "category": "tap-trill",
+      "left": "caro",
+      "right": "carro",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Tap and trill remain distinct phonemes",
+      "reason": "The existing carro target makes a tap/trill probe relevant; caro is controlled vocabulary only."
+    },
+    {
+      "id": "P14",
+      "category": "palatal-nasal",
+      "left": "ano",
+      "right": "año",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Enye is retained as a distinct segment",
+      "reason": "Do not remove the tilde from ñ during pronunciation normalization."
+    },
+    {
+      "id": "P15",
+      "category": "hiatus",
+      "left": "río",
+      "right": "frío",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Canonical stressed-i readings; compare the added initial consonant separately",
+      "reason": "These actual-bank words are distinct; inspection must also preserve stressed i and the i/o vowel sequence.",
+      "inspection": [
+        "Inspect both transcriptions for primary stress on i and separately represented i/o vowel qualities; this is not a listener-validated syllable-timing claim."
+      ]
+    },
+    {
+      "id": "P16",
+      "category": "digraphs",
+      "left": "casa",
+      "right": "queso",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Contextual qu rule with distinct vowel sequences",
+      "reason": "Qu must not be tokenized as independent q/u sounds; the words remain distinct.",
+      "inspection": [
+        "Inspect queso for the intended k onset without a pronounced u in que."
+      ]
+    },
+    {
+      "id": "P17",
+      "category": "phrase-boundaries",
+      "left": "dentro de",
+      "right": "dentrode",
+      "expectation": "retain-word-boundaries",
+      "assumption": "Whitespace-delimited lexical boundaries are retained in the prepared representation",
+      "reason": "Do not let phone concatenation silently erase the two-word phrase boundary.",
+      "inspection": [
+        "Left input has two lexical words; right joined string is only a controlled tokenization probe."
+      ]
+    },
+    {
+      "id": "P18",
+      "category": "phrase-boundaries",
+      "left": "tarjeta de crédito",
+      "right": "tarjetadecrédito",
+      "expectation": "retain-word-boundaries",
+      "assumption": "Whitespace-delimited lexical boundaries are retained in the prepared representation",
+      "reason": "The ordinary three-word item needs auditable word segmentation.",
+      "inspection": [
+        "Left input has three lexical words; right joined string is not an admitted vocabulary item."
+      ]
+    },
+    {
+      "id": "P19",
+      "category": "phrase-boundaries",
+      "left": "estación de tren",
+      "right": "estación de policía",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Full phrase phones and lexical boundaries are retained",
+      "reason": "A shared station prefix must not collapse distinct transport/police meanings into one sound key.",
+      "inspection": [
+        "Both phrases have three lexical words; retain the complete final noun rather than comparing only estación."
+      ]
+    },
+    {
+      "id": "P20",
+      "category": "regional-realization",
+      "left": "llave",
+      "right": "yave",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected canonical yeísmo only; yave is a controlled spelling probe",
+      "reason": "This tests the canonical merger, not a universal prediction of Buenos Aires or Caribbean acoustics.",
+      "inspection": [
+        "Listen to actual llave recordings in all four regions; a canonical transcription does not model voice-specific ll/y realization."
+      ]
+    },
+    {
+      "id": "P21",
+      "category": "yeismo",
+      "left": "calle",
+      "right": "caye",
+      "expectation": "same-pronunciation",
+      "assumption": "Selected canonical yeísmo",
+      "reason": "Medial doubled ll allophone must map to consonantal y, without changing a single j glide."
+    },
+    {
+      "id": "P22",
+      "category": "glide-hiatus",
+      "left": "pie",
+      "right": "píe",
+      "expectation": "distinct-pronunciation",
+      "assumption": "Retain the phonemizer glide versus stressed vowel sequence",
+      "reason": "Do not erase a real glide/stressed-vowel contrast while normalizing ll."
+    }
+  ]
+}

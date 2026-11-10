@@ -15,11 +15,13 @@ export interface WordChoicePolicySnapshot {
 }
 
 /** Compact indices refer to ids; semantic rows retain full rankings for pack filtering. */
-export interface JapaneseNeighborTable {
+export interface WordNeighborTable {
   schemaVersion: number;
   language: string;
   ids: string[];
   semantic: number[][];
   pronunciation: number[][];
   pictureExclusionPairs: number[][];
+  /** Language-specific canonical phoneme keys, when supplied by preparation. */
+  pronunciationKeys?: string[];
 }

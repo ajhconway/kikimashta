@@ -1,6 +1,7 @@
-import runtime from '../../content/semantic-neighbors/ja-runtime.json';
+import japaneseRuntime from '../../content/semantic-neighbors/ja-runtime.json';
+import spanishRuntime from '../../content/semantic-neighbors/es-runtime.json';
 import type { Exercise, PracticeCard, WordItem } from '../types';
-import type { JapaneseNeighborTable, WordChoiceKind, WordChoicePolicySnapshot, WritingChoicePolicySnapshot } from './distractor-types';
+import type { WordNeighborTable, WordChoiceKind, WordChoicePolicySnapshot, WritingChoicePolicySnapshot } from './distractor-types';
 import type { MasteryLevel } from './mastery';
 import { japanesePronunciationKey } from './pronunciation';
 import { shuffled } from './random';
@@ -15,10 +16,11 @@ export interface WordNeighborRelations {
   language: string;
   semanticIds(id: string): readonly string[] | undefined;
   pronunciationIds(id: string): readonly string[];
+  pronunciationKey?(id: string): string | undefined;
   pictureExcluded(a: string, b: string): boolean;
 }
 
-export function neighborRelations(table: JapaneseNeighborTable): WordNeighborRelations {
+export function neighborRelations(table: WordNeighborTable): WordNeighborRelations {
   const indices = new Map(table.ids.map((id, index) => [id, index]));
   const pairKey = (a: number, b: number) => a < b ? `${a}:${b}` : `${b}:${a}`;
   const exclusions = new Set(table.pictureExclusionPairs.map(([a, b]) => pairKey(a!, b!)));
@@ -32,6 +34,10 @@ export function neighborRelations(table: JapaneseNeighborTable): WordNeighborRel
       const index = indices.get(id);
       return index === undefined ? [] : table.pronunciation[index]!.map(value => table.ids[value]!);
     },
+    pronunciationKey: id => {
+      const index = indices.get(id);
+      return index === undefined ? undefined : table.pronunciationKeys?.[index];
+    },
     pictureExcluded: (a, b) => {
       const first = indices.get(a), second = indices.get(b);
       return first !== undefined && second !== undefined && exclusions.has(pairKey(first, second));
@@ -39,9 +45,13 @@ export function neighborRelations(table: JapaneseNeighborTable): WordNeighborRel
   };
 }
 
-export const japaneseWordNeighbors = neighborRelations(runtime);
+export const japaneseWordNeighbors = neighborRelations(japaneseRuntime);
+export const spanishWordNeighbors = neighborRelations(spanishRuntime);
+const languageNeighbors = new Map([japaneseWordNeighbors, spanishWordNeighbors].map(relations => [relations.language, relations]));
 const normalized = (value: string) => value.normalize('NFKC').trim();
-const sound = (item: WordItem) => japanesePronunciationKey(item.reading ?? item.text) ?? normalized(item.reading ?? item.text);
+const sound = (item: WordItem, relations?: WordNeighborRelations) =>
+  (relations?.language === item.language ? relations.pronunciationKey?.(item.id) : undefined) ??
+  (item.language === 'ja-JP' ? japanesePronunciationKey(item.reading ?? item.text) : undefined) ?? normalized(item.reading ?? item.text);
 const visible = (item: WordItem, exercise: Exercise) => exercise === 'audio-picture' ? item.image.src : normalized(item.text);
 
 /** Reviewed picture collisions are symmetric, including between two alternatives. */
@@ -54,12 +64,12 @@ function compatible(a: WordItem, b: WordItem, exercise: Exercise, relations?: Wo
 /** Pure choice selection; session callers snapshot its result before presentation. */
 export function selectWordChoices(
   { item: target, exercise }: PracticeCard, pool: readonly WordItem[], level: MasteryLevel,
-  random: () => number, relations: WordNeighborRelations = japaneseWordNeighbors,
+  random: () => number, relations: WordNeighborRelations | undefined = languageNeighbors.get(target.language),
 ): { choices: WordItem[]; choiceKinds: Record<string, WordChoiceKind>; choicePolicy?: WordChoicePolicySnapshot; writingChoicePolicy?: WritingChoicePolicySnapshot } {
-  const semanticIds = target.language === relations.language ? relations.semanticIds(target.id) : undefined;
+  const semanticIds = target.language === relations?.language ? relations.semanticIds(target.id) : undefined;
   const active = semanticIds !== undefined && (exercise === 'audio-picture' || exercise === 'audio-text');
   const candidates = shuffled(pool, random).filter(item => compatible(target, item, exercise, active ? relations : undefined) &&
-    sound(target) !== sound(item));
+    sound(target, relations) !== sound(item, relations));
   const ending = target.language === 'ja-JP' && exercise === 'audio-text' && level.preferMatchingKana ? writtenKanaEnding(target.text) : undefined;
   const matchingIds = new Set(ending ? candidates.filter(item => writtenKanaEnding(item.text) === ending).map(item => item.id) : []);
   const preferMatches = (items: WordItem[]) => ending ? [...items.filter(item => matchingIds.has(item.id)), ...items.filter(item => !matchingIds.has(item.id))] : items;
@@ -87,7 +97,7 @@ export function selectWordChoices(
     const window = preferMatches(ranked).slice(0, 6);
     return preferMatches(shuffled(window, random));
   };
-  const semantic = nearest(semanticIds), pronunciation = nearest(relations.pronunciationIds(target.id));
+  const semantic = nearest(semanticIds), pronunciation = nearest(relations!.pronunciationIds(target.id));
   const closeIds = new Set([...semantic, ...pronunciation].map(item => item.id));
   const broad = preferMatches(candidates.filter(item => !closeIds.has(item.id)));
   const tagged = (items: readonly WordItem[], kind: Kind): Candidate[] => items.map(item => ({ item, kind }));

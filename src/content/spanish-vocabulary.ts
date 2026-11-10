@@ -4,9 +4,11 @@ import travel3 from '../../content/es-419-travel-3.json';
 import travel4 from '../../content/es-419-travel-4.json';
 import basic from '../../content/es-419-basic-1.json';
 import food from '../../content/es-419-food-1.json';
+import food2 from '../../content/es-419-food-2.json';
+import { withCurrentImage } from './current-images';
 import type { WordBank } from '../types';
 
-export const spanishBanks = [travel, travel2, travel3, travel4, basic, food] as WordBank[];
+export const spanishBanks = [travel, travel2, travel3, travel4, basic, food, food2] as WordBank[];
 
-/** Shared IDs retain one identity; the accepted Food rice picture is current across Spanish surfaces. */
-export const spanishVocabulary = [...new Map(spanishBanks.flatMap(bank => bank.items).map(item => [item.id, item] as const)).values()];
+/** Shared IDs retain one identity; the accepted Food rice and shared glass pictures is current across Spanish surfaces. */
+export const spanishVocabulary = [...new Map(spanishBanks.flatMap(bank => bank.items).map(item => [item.id, item] as const)).values()].map(withCurrentImage);

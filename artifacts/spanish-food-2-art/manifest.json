@@ -1,0 +1,1193 @@
+{
+  "issue": 231,
+  "pack": "es-419-food-2",
+  "language": "es-419",
+  "status": "generated-awaiting-owner-artwork-review",
+  "words": 36,
+  "newSpanishItems": 31,
+  "existingSpanishItems": 5,
+  "generatedImages": 32,
+  "reusedImages": 4,
+  "pendingImages": 0,
+  "expectedNewImages": 32,
+  "audioGenerationAuthorized": false,
+  "runtimeActivationAuthorized": false,
+  "reviewWorkflow": "complete-pack-before-owner-feedback",
+  "draft": "content/spanish-food-2/draft.json",
+  "draftSha256": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+  "authorization": "content/spanish-food-2/generation-approval.json",
+  "authorizationSha256": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
+  "approvedProposal": "content/spanish-food-2/proposal-v1.json",
+  "approvedProposalSha256": "bd5df57d977a271716199af285e8405c162191a11b378e2dabc06d2c4e16d09b",
+  "requests": "artifacts/spanish-food-2-art/requests.json",
+  "requestsSha256": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+  "selection": "artifacts/spanish-food-2-art/selection.json",
+  "selectionSha256": "218bd14b8d22c150662c3f3d7e4278265c98c9ce9bffbd28e338f067f996c2e6",
+  "inputHashes": {
+    "content/spanish-food-2/draft.json": "6c8867be8dc6ace8bf9f0957a8b4d576396721322348351875948b6f39236fb1",
+    "content/spanish-food-2/generation-approval.json": "9f745d07af3e70cf6bda3b7104549f91db4d31441b4f567757df8f642c08cd33",
+    "content/spanish-food-2/proposal-v1.json": "bd5df57d977a271716199af285e8405c162191a11b378e2dabc06d2c4e16d09b",
+    "artifacts/spanish-food-2-art/requests.json": "ca7fdda3db1307fb2b46af8085a56440f60c937bb6d4d98eb30eb9855cd11efc",
+    "artifacts/spanish-food-2-art/selection.json": "218bd14b8d22c150662c3f3d7e4278265c98c9ce9bffbd28e338f067f996c2e6",
+    "content/spanish-food-2/artwork-revisions-v1.json": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
+    "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+    "content/es-419-travel-2.json": "d63bc583fcb7eae6c60a364c7f0f6f9aac84d20242c796c95283cd4dd25b8b3a",
+    "content/spanish-travel-2/activation.json": "8d21ce836176da0681474966ce39cce7f0ac31391df4553a567d4df0dbf47491",
+    "content/spanish-travel-2/acceptance.json": "9c0b5b480b0b1561fe32ced1b8b01a51185ba7b8fb278711504e5acfcd528513",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+    "artifacts/spanish-food-2-art/revisions/glass-v1-request.json": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+    "public/images/approved/ja-cup-a6b3cf43ae54.jpg": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+    "content/ja.json": "b6a7bd1e83dcc979e2c23473b61aa14aa817148545abd0fa54ea2d00052d84b9"
+  },
+  "groups": [
+    {
+      "id": "fruit",
+      "title": "More fruit"
+    },
+    {
+      "id": "vegetables",
+      "title": "More vegetables"
+    },
+    {
+      "id": "protein",
+      "title": "Meat and seafood"
+    },
+    {
+      "id": "pantry",
+      "title": "Pantry and seasoning"
+    },
+    {
+      "id": "snacks",
+      "title": "Snacks and treats"
+    },
+    {
+      "id": "tableware",
+      "title": "At the table"
+    }
+  ],
+  "amendmentEvidence": {
+    "artworkAmendment": "content/spanish-food-2/artwork-revisions-v1.json",
+    "artworkAmendmentSha256": "4207389b25aaa31061a5046e6911e2117abee2dbc8cd991b69f971c3343909ba",
+    "request": "artifacts/spanish-food-2-art/revisions/glass-v1-request.json",
+    "requestSha256": "88f3768f8cdcf922cd573332fcca446b3b5478745de047d70fdde2cbacc8d6a0",
+    "previousManifest": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-manifest.json",
+    "previousManifestSha256": "d404abccf2ec6e00614337a8d7fb9d2c0b060ad9493e5229f0d57b840d1ad218",
+    "previousSelection": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-selection.json",
+    "previousSelectionSha256": "dcacfc5ab8c4dc5cfbe7085cb33fe4c9a5e11d467838cb2d1fa4c024d20ef72d",
+    "previousContactSheet": "artifacts/spanish-food-2-art/revisions/before-feedback-v1-contact-sheet.png",
+    "previousContactSheetSha256": "520b8ac71b02f0b92c7b70bb6db87a1947bd10fb3fd55c32ab1c75370ebcb884",
+    "unchangedPictureCount": 35,
+    "unchangedImages": [
+      {
+        "id": "es-419-food-grapes",
+        "path": "artifacts/spanish-food-2-art/originals/grapes-v1.png",
+        "sha256": "eeb09681600ac4c95408728a8322536203a022b3dd635cb35d0874be4c5fa91c"
+      },
+      {
+        "id": "es-419-food-mango",
+        "path": "artifacts/spanish-food-2-art/originals/mango-v1.png",
+        "sha256": "4d192809efab1145328425e5f22e8c3ade3a09b6801ea0bd7fdc6d7aa9244021"
+      },
+      {
+        "id": "es-419-food-watermelon",
+        "path": "artifacts/spanish-food-2-art/originals/watermelon-v1.png",
+        "sha256": "90527843ae35dbfb37bcbbf98d7d965b700e1870576456abe660137b7260826b"
+      },
+      {
+        "id": "es-419-food-melon",
+        "path": "artifacts/spanish-food-2-art/originals/melon-v1.png",
+        "sha256": "eed2036f2c899ca3a923338cf1dd83a4135b064c183a2605b6a9fc6fe0d08f29"
+      },
+      {
+        "id": "es-419-food-peach",
+        "path": "artifacts/spanish-food-2-art/originals/peach-v1.png",
+        "sha256": "1bc48ef2cd37f39fd7233af68d8282c490bf9a1e7116680aee6a01ac4c720135"
+      },
+      {
+        "id": "es-419-food-pear",
+        "path": "artifacts/spanish-food-2-art/originals/pear-v1.png",
+        "sha256": "3f22f7ce26487563a70720407f1779c2fb447daddd30c72b79c5543d9d56cd06"
+      },
+      {
+        "id": "es-419-food-cucumber",
+        "path": "artifacts/spanish-food-2-art/originals/cucumber-v1.png",
+        "sha256": "8a03ecf0bea067c38727573aacff437011083265350af9ba9b43ba48e6f99a0d"
+      },
+      {
+        "id": "es-419-food-broccoli",
+        "path": "artifacts/spanish-food-2-art/originals/broccoli-v1.png",
+        "sha256": "9d18bf4005700aee437bd15453731a6a466836c3427861f858f4ceee9ae6aa5b"
+      },
+      {
+        "id": "es-419-food-cauliflower",
+        "path": "artifacts/spanish-food-2-art/originals/cauliflower-v1.png",
+        "sha256": "24816b9bba8191f6557c00fc7ba486c02712c5af73f085a104494fb332d313cf"
+      },
+      {
+        "id": "es-419-food-spinach",
+        "path": "artifacts/spanish-food-2-art/originals/spinach-v1.png",
+        "sha256": "9b926e087e618392e027f0cc2e4bebbc4a8eb939f0feceb6b9aaf551f21b697c"
+      },
+      {
+        "id": "es-419-food-mushroom",
+        "path": "artifacts/spanish-food-2-art/originals/mushroom-v1.png",
+        "sha256": "bf635748dd6741a4e96be4c6c2efec730b7ed97f8084a021ea3e2a7e40b5fd69"
+      },
+      {
+        "id": "es-419-food-corn",
+        "path": "artifacts/spanish-food-2-art/originals/corn-v1.png",
+        "sha256": "521ba151d5b8f0d4ec58771fb35a4c04dd626dbddc6c6d17030de2d52ad88f77"
+      },
+      {
+        "id": "es-419-food-steak",
+        "path": "artifacts/spanish-food-2-art/originals/steak-v1.png",
+        "sha256": "c816bc14ec084290a5edb66838348abed6af769119e22896282ac2d1e54dc9aa"
+      },
+      {
+        "id": "es-419-food-ham",
+        "path": "artifacts/spanish-food-2-art/originals/ham-v1.png",
+        "sha256": "f28fea7a16c16b1f1007c6c1053ff0ed5422f3409a99cd6dc67adcdea0667442"
+      },
+      {
+        "id": "es-419-food-bacon",
+        "path": "artifacts/spanish-food-2-art/originals/bacon-v1.png",
+        "sha256": "90f0f89a2ce81c98cd927a5e9350a86947cf2631f469fed58485d186509b937d"
+      },
+      {
+        "id": "es-419-food-sausage",
+        "path": "artifacts/spanish-food-2-art/originals/sausage-v1.png",
+        "sha256": "dc1ab55e2182f21499dc16fa0a691f4b137bf2c8efdd1e89d1a2ebe0be47a9b1"
+      },
+      {
+        "id": "es-419-food-shrimp",
+        "path": "artifacts/spanish-food-2-art/originals/shrimp-v1.png",
+        "sha256": "dadb934773f4ec6a2c3a1d3b6fe5138468745b8cda399137912474ec3ba0f8e1"
+      },
+      {
+        "id": "es-419-food-tuna",
+        "path": "artifacts/spanish-food-2-art/originals/tuna-v1.png",
+        "sha256": "dabfae054122b9aa44eaa95b38cfd1c4ea847f8af45adfcf007a102cca5d4b71"
+      },
+      {
+        "id": "es-419-food-garlic",
+        "path": "artifacts/spanish-food-2-art/originals/garlic-v1.png",
+        "sha256": "2b49289df3661965a772b8fb9c223fef2fe91629add3dc6ecb4b8a54ef778413"
+      },
+      {
+        "id": "es-419-food-chili-pepper",
+        "path": "artifacts/spanish-food-2-art/originals/chili-pepper-v1.png",
+        "sha256": "89d9bfe465bd14a444d0901699ab312e33c2e64ee6106c07d79865dbbc379071"
+      },
+      {
+        "id": "es-419-food-honey",
+        "path": "artifacts/spanish-food-2-art/originals/honey-v1.png",
+        "sha256": "d8b57aad9c6b72e9a4f6d8df8e5f2f1e3d19b6defc1ac4e43657c7d7dc28af8e"
+      },
+      {
+        "id": "es-419-food-jam",
+        "path": "artifacts/spanish-food-2-art/originals/jam-v1.png",
+        "sha256": "a6e3dd90a598bc4718fc4fe90028d335d2c52d0a2631f7ae65d08560ed9daafa"
+      },
+      {
+        "id": "es-419-food-cooking-oil",
+        "path": "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png",
+        "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24"
+      },
+      {
+        "id": "es-419-food-black-pepper",
+        "path": "artifacts/spanish-food-2-art/originals/black-pepper-v1.png",
+        "sha256": "64e79749b6753ca96ed0812b778afe6f96c692703a5651ed10fcd8dd0ae302e0"
+      },
+      {
+        "id": "es-419-food-cookie",
+        "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+        "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+      },
+      {
+        "id": "es-419-food-cake",
+        "path": "artifacts/spanish-food-2-art/originals/cake-v1.png",
+        "sha256": "400061e886910d790a0f8fbfdc91bddfac69fd1acca95774ac282904b35be807"
+      },
+      {
+        "id": "es-419-food-chocolate",
+        "path": "artifacts/spanish-food-2-art/originals/chocolate-v1.png",
+        "sha256": "05a753c7cf4b18b78fcef87afe544629b4e97f5209117ab095d9b14e09b20c4e"
+      },
+      {
+        "id": "es-419-food-popcorn",
+        "path": "artifacts/spanish-food-2-art/originals/popcorn-v1.png",
+        "sha256": "19b7d519ff4ffaca5ca1ce4dd3abbbf835f48896fcdae6252f788ffd22cd27d4"
+      },
+      {
+        "id": "es-419-food-peanut",
+        "path": "artifacts/spanish-food-2-art/originals/peanut-v1.png",
+        "sha256": "8c5d54df61716be5423bdb91d2a80b883752a30924047a4e157ab1f91dd5d6d1"
+      },
+      {
+        "id": "es-419-food-gelatin",
+        "path": "artifacts/spanish-food-2-art/originals/gelatin-v1.png",
+        "sha256": "77423d95e3c67445b11ac118fd76798631a9288aeb73edc99b0dc0f914ea72ca"
+      },
+      {
+        "id": "es-419-travel-plate",
+        "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+        "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6"
+      },
+      {
+        "id": "es-419-travel-cup",
+        "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+        "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349"
+      },
+      {
+        "id": "es-419-travel-fork",
+        "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+        "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01"
+      },
+      {
+        "id": "es-419-travel-spoon",
+        "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+        "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208"
+      },
+      {
+        "id": "es-419-food-knife",
+        "path": "artifacts/spanish-food-2-art/originals/knife-v1.png",
+        "sha256": "0e8c1bac5a8f14f4845baed5a78a250218cd63d22ebd996ae58c63626a0324aa"
+      }
+    ],
+    "sharedReplacement": {
+      "source": "generated",
+      "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+      "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+      "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "targets": [
+        {
+          "bank": "content/es-419-travel-2.json",
+          "id": "es-419-travel-drinking-glass",
+          "language": "es-419",
+          "pack": "Travel level 2",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        },
+        {
+          "draft": "content/spanish-food-2/draft.json",
+          "id": "es-419-travel-drinking-glass",
+          "language": "es-419",
+          "pack": "Food level 2",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        },
+        {
+          "bank": "content/ja.json",
+          "id": "ja-cup",
+          "language": "ja-JP",
+          "pack": "Legacy Japanese starter glass",
+          "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+          "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+        }
+      ]
+    }
+  },
+  "sharedReplacement": {
+    "source": "generated",
+    "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+    "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+    "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+    "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+    "targets": [
+      {
+        "bank": "content/es-419-travel-2.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Travel level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "draft": "content/spanish-food-2/draft.json",
+        "id": "es-419-travel-drinking-glass",
+        "language": "es-419",
+        "pack": "Food level 2",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      },
+      {
+        "bank": "content/ja.json",
+        "id": "ja-cup",
+        "language": "ja-JP",
+        "pack": "Legacy Japanese starter glass",
+        "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+        "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c"
+      }
+    ]
+  },
+  "images": [
+    {
+      "id": "es-419-food-grapes",
+      "slug": "grapes",
+      "text": "uvas",
+      "meaning": "Grapes",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One compact bunch of ripe purple grapes with many round individual grapes, a short natural green vine stem and one small leaf. No bowl or other fruit.",
+      "path": "artifacts/spanish-food-2-art/originals/grapes-v1.png",
+      "sha256": "eeb09681600ac4c95408728a8322536203a022b3dd635cb35d0874be4c5fa91c",
+      "bytes": 875444,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 938596,
+        "opaquePixels": 620141,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "172c42cd95886766c7c491b4173d260c75ec25a9db65edf4a879d1f37e107c47",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/grapes-v1.json",
+      "recordSha256": "5388c4896c12670a6ca4b29d02c62aab076247f377dd01b93852bd67eba798d2"
+    },
+    {
+      "id": "es-419-food-mango",
+      "slug": "mango",
+      "text": "mango",
+      "meaning": "Mango",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One ripe elongated asymmetrical mango with golden-yellow and red peel beside one cut mango cheek scored into a simple golden cube grid. The juicy golden flesh and mango shape must read clearly; no other fruit.",
+      "path": "artifacts/spanish-food-2-art/originals/mango-v1.png",
+      "sha256": "4d192809efab1145328425e5f22e8c3ade3a09b6801ea0bd7fdc6d7aa9244021",
+      "bytes": 1192997,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 707287,
+        "opaquePixels": 852865,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "dc7104bf6a6eb919964268c6f56073ddc324571bbe9c4ccb6f2596c973629c72",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/mango-v1.json",
+      "recordSha256": "fc7c319a332bd303bac1ac7aa953ac2dae58eb8bba34b0db931be8e8d95e5336"
+    },
+    {
+      "id": "es-419-food-watermelon",
+      "slug": "watermelon",
+      "text": "sandía",
+      "meaning": "Watermelon",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One small oval green-striped watermelon behind one large triangular red watermelon wedge with dark seeds and a green rind. No orange flesh or other fruit.",
+      "path": "artifacts/spanish-food-2-art/originals/watermelon-v1.png",
+      "sha256": "90527843ae35dbfb37bcbbf98d7d965b700e1870576456abe660137b7260826b",
+      "bytes": 1046722,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 836954,
+        "opaquePixels": 724319,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "62e9b0777b5f92011ccd04f65a14471d77489511227386dc260f8b21d8d86291",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/watermelon-v1.json",
+      "recordSha256": "58dfbff65b8df3cd48f2af4f2f471d15258730cd68a7768715f9d2e9195f9a24"
+    },
+    {
+      "id": "es-419-food-melon",
+      "slug": "melon",
+      "text": "melón",
+      "meaning": "Melon",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One small round cantaloupe with pale tan netted rind beside one half showing orange flesh and a small central cavity of pale seeds. No red watermelon flesh, no wedge shape, no other fruit.",
+      "path": "artifacts/spanish-food-2-art/originals/melon-v1.png",
+      "sha256": "eed2036f2c899ca3a923338cf1dd83a4135b064c183a2605b6a9fc6fe0d08f29",
+      "bytes": 1165229,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 789358,
+        "opaquePixels": 771673,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "941f4812c6bfb131e6fa73481711e59a265f3808d8afa8483523c5b63d33323d",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/melon-v1.json",
+      "recordSha256": "20d4cc792581f991f221371be502ed54b430ccba51977273bf6d1bff468c694e"
+    },
+    {
+      "id": "es-419-food-peach",
+      "slug": "peach",
+      "text": "durazno",
+      "meaning": "Peach",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One ripe round golden-pink peach with its characteristic deep side cleft, beside one peach half with a single brown ridged stone in its center. Smooth simple surface; no apple shape or other fruit.",
+      "path": "artifacts/spanish-food-2-art/originals/peach-v1.png",
+      "sha256": "1bc48ef2cd37f39fd7233af68d8282c490bf9a1e7116680aee6a01ac4c720135",
+      "bytes": 1174731,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 747500,
+        "opaquePixels": 812143,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "115cce608f532b74116507183d58e87aa81d327c1de229c5b6f2d2f31e0cf402",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/peach-v1.json",
+      "recordSha256": "3736662d0e8783cca4232c67b3f2bae8f40c2f3b69d71691c7b98bbf574b38ed"
+    },
+    {
+      "id": "es-419-food-pear",
+      "slug": "pear",
+      "text": "pera",
+      "meaning": "Pear",
+      "group": "fruit",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One plump green pear with a narrow neck, wide bulbous bottom, short brown stem and one small green leaf. Clearly pear-shaped, not a round apple.",
+      "path": "artifacts/spanish-food-2-art/originals/pear-v1.png",
+      "sha256": "3f22f7ce26487563a70720407f1779c2fb447daddd30c72b79c5543d9d56cd06",
+      "bytes": 818808,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 971989,
+        "opaquePixels": 588365,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "d180f84a0cebf4d5d3146e00a7d075e1626e9553e4be69b0b793c24ddbd46433",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/pear-v1.json",
+      "recordSha256": "d8f9c9df661292114876321f2fc96ca00574c0133158a4e56cd60fdf15458029"
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "slug": "cucumber",
+      "text": "pepino",
+      "meaning": "Cucumber",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One long dark-green cucumber with subtle shallow ridges beside two thick round cucumber slices with pale-green flesh and a small pale seed center. No chili pepper, other produce or knife.",
+      "path": "artifacts/spanish-food-2-art/originals/cucumber-v1.png",
+      "sha256": "8a03ecf0bea067c38727573aacff437011083265350af9ba9b43ba48e6f99a0d",
+      "bytes": 948778,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 878012,
+        "opaquePixels": 683706,
+        "opaqueWhitePixels": 123
+      },
+      "promptSha256": "cb51c00b34c00bba9758e158ae04429a105ffdf73ce4bf1daaf765aa7fe5b180",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/cucumber-v1.json",
+      "recordSha256": "1de948865172132266eb91c18e6c464059402ea0d901bf286e12671e529a9af7"
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "slug": "broccoli",
+      "text": "brócoli",
+      "meaning": "Broccoli",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One fresh compact head of broccoli with rounded dense dark-green florets and a sturdy light-green branching stalk. The florets and trunk form one complete readable vegetable.",
+      "path": "artifacts/spanish-food-2-art/originals/broccoli-v1.png",
+      "sha256": "9d18bf4005700aee437bd15453731a6a466836c3427861f858f4ceee9ae6aa5b",
+      "bytes": 969525,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 864033,
+        "opaquePixels": 696838,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "31b1e839880df52d72f92dfce2cb77d99ef46c8d247dc5bfd8d3e4ba1d4b5757",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/broccoli-v1.json",
+      "recordSha256": "ab9821a1c082754131dd53d0417d4fe4f27448e5d07d565831e813841c750bd8"
+    },
+    {
+      "id": "es-419-food-cauliflower",
+      "slug": "cauliflower",
+      "text": "coliflor",
+      "meaning": "Cauliflower",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One compact head of cauliflower: creamy-white dense rounded florets surrounded at the base by a few short green leaves. White florets dominate. No broccoli or other produce.",
+      "path": "artifacts/spanish-food-2-art/originals/cauliflower-v1.png",
+      "sha256": "24816b9bba8191f6557c00fc7ba486c02712c5af73f085a104494fb332d313cf",
+      "bytes": 1278504,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 624961,
+        "opaquePixels": 935904,
+        "opaqueWhitePixels": 3975
+      },
+      "promptSha256": "73275648b6b57d73675fd97b9ebf7251fbd1a8e3109ebada2e4d6d4b0a052b5b",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/cauliflower-v1.json",
+      "recordSha256": "8ecbe0bc348af8db8b71a698efc1b788d3b99110c52f1a8404666f7b331806bc"
+    },
+    {
+      "id": "es-419-food-spinach",
+      "slug": "spinach",
+      "text": "espinaca",
+      "meaning": "Spinach",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One small fresh bunch of spinach: several separate dark-green oval leaves with smooth edges and slender visible stems gathered at the bottom. Open leafy bunch, never a round lettuce head. No bowl, ribbon or other produce.",
+      "path": "artifacts/spanish-food-2-art/originals/spinach-v1.png",
+      "sha256": "9b926e087e618392e027f0cc2e4bebbc4a8eb939f0feceb6b9aaf551f21b697c",
+      "bytes": 1091919,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 809770,
+        "opaquePixels": 751081,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "5fd4f9e8f7a397af0036178b1247f6fd8c8d99cf1e5a2f26a60fcac8312bfa67",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/spinach-v1.json",
+      "recordSha256": "05764fda8ad1158ca78d00476c007f627eb2e6825734bd2d0644202dafad7990"
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "slug": "mushroom",
+      "text": "champiñón",
+      "meaning": "Button mushroom",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One ivory-white button mushroom with a broad rounded cap and a short thick stem, shown at a slight angle so a little darker underside is visible. No face, spots, red cap, grass or other mushrooms.",
+      "path": "artifacts/spanish-food-2-art/originals/mushroom-v1.png",
+      "sha256": "bf635748dd6741a4e96be4c6c2efec730b7ed97f8084a021ea3e2a7e40b5fd69",
+      "bytes": 972146,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 811796,
+        "opaquePixels": 750176,
+        "opaqueWhitePixels": 88
+      },
+      "promptSha256": "82478f0d7c04e15808d268218e6789d41612e59382eed928ee6c85177e0eedc6",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/mushroom-v1.json",
+      "recordSha256": "831a92a0af3580e4cee6ccf5fd4dfb50cc54eb9d5d3afa85b2971f3c9b8d9f4c"
+    },
+    {
+      "id": "es-419-food-corn",
+      "slug": "corn",
+      "text": "elote",
+      "meaning": "Corn on the cob",
+      "group": "vegetables",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One yellow ear of sweet corn with neat rows of many small rounded kernels, with a few green husk leaves peeled down around its base. Full straight cob, no loose kernels or other produce.",
+      "path": "artifacts/spanish-food-2-art/originals/corn-v1.png",
+      "sha256": "521ba151d5b8f0d4ec58771fb35a4c04dd626dbddc6c6d17030de2d52ad88f77",
+      "bytes": 823940,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 984164,
+        "opaquePixels": 577085,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "cea5d8b65c0ddab812f7b72f736e58ba66b562087cee4ab4fe3746fa083ad6c7",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/corn-v1.json",
+      "recordSha256": "4c708691f3a9f354befa12e9a996ccd56ac9295b93d20a5f631425339b3925a4"
+    },
+    {
+      "id": "es-419-food-steak",
+      "slug": "steak",
+      "text": "bistec",
+      "meaning": "Steak",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One appetizing cooked T-bone beef steak with a recognizable central ivory T-shaped bone, warm browned surface, a few clear dark grill marks and a slightly pink thick side edge. No plate, garnish, knife or other food.",
+      "path": "artifacts/spanish-food-2-art/originals/steak-v1.png",
+      "sha256": "c816bc14ec084290a5edb66838348abed6af769119e22896282ac2d1e54dc9aa",
+      "bytes": 1063284,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 767600,
+        "opaquePixels": 794520,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "edd89d783f640346da0f71b256ef767bae45cfa3b09ff4f552d8b824e71ab971",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/steak-v1.json",
+      "recordSha256": "161a238b124108c3d86591d8c8f914faf46b2a8e2851bc7ce8204fbd3d502d83"
+    },
+    {
+      "id": "es-419-food-ham",
+      "slug": "ham",
+      "text": "jamón",
+      "meaning": "Ham",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One compact cured ham section with a golden-brown outer rind and a broad smooth pink cut face containing one small pale round bone, with one thick pink ham slice resting in front. No bacon strips, sausage, garnish or plate.",
+      "path": "artifacts/spanish-food-2-art/originals/ham-v1.png",
+      "sha256": "f28fea7a16c16b1f1007c6c1053ff0ed5422f3409a99cd6dc67adcdea0667442",
+      "bytes": 1095820,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 776725,
+        "opaquePixels": 785187,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "86cb7a08807b4419be40cea24192ca85c6b3288929469c63ad265041d14eca79",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/ham-v1.json",
+      "recordSha256": "3e32b2b8d4d6e2c6a5273337aef23106d5359016a9332910a0dc34d34b6d0d50"
+    },
+    {
+      "id": "es-419-food-bacon",
+      "slug": "bacon",
+      "text": "tocino",
+      "meaning": "Bacon",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "Three clearly separate long wavy strips of cooked bacon with alternating reddish-brown meat and pale cream fat stripes, gently overlapping as one compact serving. Crisp wavy edges. No plate, eggs or garnish.",
+      "path": "artifacts/spanish-food-2-art/originals/bacon-v1.png",
+      "sha256": "90f0f89a2ce81c98cd927a5e9350a86947cf2631f469fed58485d186509b937d",
+      "bytes": 1083528,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 761961,
+        "opaquePixels": 797392,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "37f31506b6af697cbcb4feef6bfb78e274697e75ab9b7893f1346a5880166877",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/bacon-v1.json",
+      "recordSha256": "04007adef11bd2adba201cfdcdb03ee4f16a7d8aca609547888d2a7eff585914"
+    },
+    {
+      "id": "es-419-food-sausage",
+      "slug": "sausage",
+      "text": "salchicha",
+      "meaning": "Sausage",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "Two plump smooth pink-brown frankfurter-style sausages with rounded sealed ends, arranged slightly diagonally as one compact pair. No bun, bread, mustard, sauce, knife or other food.",
+      "path": "artifacts/spanish-food-2-art/originals/sausage-v1.png",
+      "sha256": "dc1ab55e2182f21499dc16fa0a691f4b137bf2c8efdd1e89d1a2ebe0be47a9b1",
+      "bytes": 903787,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 936123,
+        "opaquePixels": 624996,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "b2964e7e025c8f47e7316b74902e37b1923def1d97c40365dd7ffad34a6f46b6",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/sausage-v1.json",
+      "recordSha256": "4f13b98e30bbb3d8aa9e42aa4c7ce3a98f794181c9776c5a021fcec56f8ff658"
+    },
+    {
+      "id": "es-419-food-shrimp",
+      "slug": "shrimp",
+      "text": "camarón",
+      "meaning": "Shrimp",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One large cooked shrimp curled into a clear C shape, with a pale pink-orange segmented body and darker orange fan tail. Simple anatomically plausible shell segments, no cartoon face, no garnish, plate or other seafood.",
+      "path": "artifacts/spanish-food-2-art/originals/shrimp-v1.png",
+      "sha256": "dadb934773f4ec6a2c3a1d3b6fe5138468745b8cda399137912474ec3ba0f8e1",
+      "bytes": 915325,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 941504,
+        "opaquePixels": 616694,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "3087c6f32bf81942408fda584309ad959f78d7daf7ab2a91b7b71cf76d4e5fba",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/shrimp-v1.json",
+      "recordSha256": "5938ef3c6f83bb672440e501c9296a9de163c9df0ed31af9d0656a649da6280f"
+    },
+    {
+      "id": "es-419-food-tuna",
+      "slug": "tuna",
+      "text": "atún",
+      "meaning": "Tuna",
+      "group": "protein",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One open low round silver tuna tin filled with recognizable pale-pink flaky tuna chunks, with its metal lid naturally peeled back and still attached at the back. The open tin is the main object. No label, text, whole fish, utensils or other food.",
+      "path": "artifacts/spanish-food-2-art/originals/tuna-v1.png",
+      "sha256": "dabfae054122b9aa44eaa95b38cfd1c4ea847f8af45adfcf007a102cca5d4b71",
+      "bytes": 1362774,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 646172,
+        "opaquePixels": 912723,
+        "opaqueWhitePixels": 1338
+      },
+      "promptSha256": "ef8864ff718efc7d45c3c4048ad0942d371e9d94b503e4654b38cb2057587be4",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/tuna-v1.json",
+      "recordSha256": "3757036b1f91db27c8eeb746eb0c73e42d7c64f07613dd8da553770e10f592f1"
+    },
+    {
+      "id": "es-419-food-garlic",
+      "slug": "garlic",
+      "text": "ajo",
+      "meaning": "Garlic",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One white garlic bulb with clearly defined curved papery clove segments and a short dry pointed neck, beside two small peeled ivory garlic cloves. Distinct from the existing golden onion. No green shoots or other vegetables.",
+      "path": "artifacts/spanish-food-2-art/originals/garlic-v1.png",
+      "sha256": "2b49289df3661965a772b8fb9c223fef2fe91629add3dc6ecb4b8a54ef778413",
+      "bytes": 964470,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 871891,
+        "opaquePixels": 689114,
+        "opaqueWhitePixels": 15887
+      },
+      "promptSha256": "1825c7c6dc6c4de4d834b7008dcdc7de76109b0e5037e3666e68bc9adba67c46",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/garlic-v1.json",
+      "recordSha256": "58784c179dc115dbd92770c64aab72294483c94bdc953ab6285eb9c2e30b05f4"
+    },
+    {
+      "id": "es-419-food-chili-pepper",
+      "slug": "chili-pepper",
+      "text": "chile",
+      "meaning": "Chili pepper",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One long slender curved red chili pepper tapering to a pointed tip, with a short green stem. A clear glossy red chili silhouette, not a bell pepper or cucumber. No knife, slices or other produce.",
+      "path": "artifacts/spanish-food-2-art/originals/chili-pepper-v1.png",
+      "sha256": "89d9bfe465bd14a444d0901699ab312e33c2e64ee6106c07d79865dbbc379071",
+      "bytes": 498574,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1224464,
+        "opaquePixels": 337882,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "10027d27d2d43324ee0e9942f3c4cde51f380ba9935e94adac426a74bf9018de",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/chili-pepper-v1.json",
+      "recordSha256": "3df74bd5205f2a5a385143a046ebcc58974f0826d44540ad17f6537aeaf96bb1"
+    },
+    {
+      "id": "es-419-food-honey",
+      "slug": "honey",
+      "text": "miel",
+      "meaning": "Honey",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One short round clear glass jar of rich amber honey with a wooden grooved honey dipper resting across its open rim and a small connected honey drip. Clear honey identity; keep glass and honey interiors visually solid. No label, bees, bread, fruit or extra jars.",
+      "path": "artifacts/spanish-food-2-art/originals/honey-v1.png",
+      "sha256": "d8b57aad9c6b72e9a4f6d8df8e5f2f1e3d19b6defc1ac4e43657c7d7dc28af8e",
+      "bytes": 1024777,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 834353,
+        "opaquePixels": 724601,
+        "opaqueWhitePixels": 281
+      },
+      "promptSha256": "670c6e1d739c16cac6c55d50d12889624c22b61c1932d60bdd28b3ea486b8f3c",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/honey-v1.json",
+      "recordSha256": "d81c2e608000b23fff6e96c85a49c3685461b71993233887c392dd6d38cc87d5"
+    },
+    {
+      "id": "es-419-food-jam",
+      "slug": "jam",
+      "text": "mermelada",
+      "meaning": "Jam",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One open squat glass jar filled with glossy deep-red berry jam, its small purple screw lid leaning beside the jar. Visible thick jam surface and simple glass highlights. No label, fruit beside it, bread, spoon or other jars.",
+      "path": "artifacts/spanish-food-2-art/originals/jam-v1.png",
+      "sha256": "a6e3dd90a598bc4718fc4fe90028d335d2c52d0a2631f7ae65d08560ed9daafa",
+      "bytes": 1053473,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 768270,
+        "opaquePixels": 793083,
+        "opaqueWhitePixels": 1
+      },
+      "promptSha256": "c29e255f612a2d5ba316b0b1bcadbd7ada1e1ae0a31ae9e936c604d464e8bdd6",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/jam-v1.json",
+      "recordSha256": "f89aacb5e1e743a20cc80b927f5b7fb6e1a891f38a2e848eb0e0218429c6d4b7"
+    },
+    {
+      "id": "es-419-food-cooking-oil",
+      "slug": "cooking-oil",
+      "text": "aceite",
+      "meaning": "Cooking oil",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One elegant small glass cooking-oil cruet with a rounded body, narrow neck, short pouring spout and small side handle, visibly filled with golden-yellow oil. Keep glass and liquid interiors solid against the transparent surround. No label, olives, vinegar, glass, plate or other food.",
+      "path": "artifacts/spanish-food-2-art/originals/cooking-oil-v1.png",
+      "sha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+      "bytes": 761639,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1007100,
+        "opaquePixels": 553077,
+        "opaqueWhitePixels": 17
+      },
+      "promptSha256": "ff3ce485bfd79835be546e04b251ac07c913f7b9987ce87c271c72dcad977d79",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/cooking-oil-v1.json",
+      "recordSha256": "82a686dd6740f96cb2eb71db3283ae77486b9e614b57402ee784523192ab188a"
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "slug": "black-pepper",
+      "text": "pimienta",
+      "meaning": "Black pepper",
+      "group": "pantry",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One compact warm-brown wooden pepper mill with a small silver top knob, beside a small cluster of black peppercorns at its base. The pepper mill and peppercorns clearly represent black pepper. No salt shaker, label, ground powder cloud or other seasonings.",
+      "path": "artifacts/spanish-food-2-art/originals/black-pepper-v1.png",
+      "sha256": "64e79749b6753ca96ed0812b778afe6f96c692703a5651ed10fcd8dd0ae302e0",
+      "bytes": 778424,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1002644,
+        "opaquePixels": 557886,
+        "opaqueWhitePixels": 145
+      },
+      "promptSha256": "a1804d8e77058fe725c6b263657ccce376e5fa96748e2ab0f566f35b69d897ce",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/black-pepper-v1.json",
+      "recordSha256": "451513c0ca971dcf5811caacb75e660acdbf93fe27de8b49f6cbc2c8a27feaff"
+    },
+    {
+      "id": "es-419-food-cookie",
+      "slug": "cookie",
+      "text": "galleta",
+      "meaning": "Cookie",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One round golden-brown chocolate-chip cookie with a gently irregular baked edge, several dark-brown chocolate chips and simple baked surface marks. No bite, milk, plate, wrapper or extra cookies.",
+      "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+      "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01",
+      "bytes": 1276100,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 658298,
+        "opaquePixels": 903287,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "ef50739816ce818e90c96f309e692ce1eaef1fa385dd08654ce4fe6864ecd11d",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/cookie-v1.json",
+      "recordSha256": "f26a7551a7dfd78e211d0dd8d2fbc0ac519364ff279a8963502083c583cf8dbf"
+    },
+    {
+      "id": "es-419-food-cake",
+      "slug": "cake",
+      "text": "pastel",
+      "meaning": "Cake",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One thick triangular slice of layer cake with two golden sponge layers and pale cream filling, smooth light-pink icing on top and a neat pale frosting edge. The cake is a solid wedge, not a gelatin ring. No candle, fruit, plate, fork or decorations.",
+      "path": "artifacts/spanish-food-2-art/originals/cake-v1.png",
+      "sha256": "400061e886910d790a0f8fbfdc91bddfac69fd1acca95774ac282904b35be807",
+      "bytes": 1082241,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 739691,
+        "opaquePixels": 821516,
+        "opaqueWhitePixels": 8
+      },
+      "promptSha256": "3ce7feab18d096b01cdccb7b241068fcc9359a79071ba33a6ba063293c4b49d3",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/cake-v1.json",
+      "recordSha256": "6485a539ff25ee9f0590594a1aaa04155cfe059f733df1d137fc8b2886ca6b52"
+    },
+    {
+      "id": "es-419-food-chocolate",
+      "slug": "chocolate",
+      "text": "chocolate",
+      "meaning": "Chocolate",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One dark-brown chocolate bar with a clearly molded grid of raised rectangular chocolate squares, partially unwrapped from a small plain silver foil fold at its lower end. No paper label, text, nuts, cookies, milk or other foods.",
+      "path": "artifacts/spanish-food-2-art/originals/chocolate-v1.png",
+      "sha256": "05a753c7cf4b18b78fcef87afe544629b4e97f5209117ab095d9b14e09b20c4e",
+      "bytes": 1078133,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 767053,
+        "opaquePixels": 793504,
+        "opaqueWhitePixels": 861
+      },
+      "promptSha256": "b8e1c5a446d1210e93a8d5ae34ced81fc5984b4b4d9eb35e6de7112ebe816653",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/chocolate-v1.json",
+      "recordSha256": "6e7c378c00952ad207a6615764668c26a55ea79bcfbe37f0cc26c3920f2158e2"
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "slug": "popcorn",
+      "text": "palomitas",
+      "meaning": "Popcorn",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One small open cinema-style paper carton with broad purple and gold vertical stripes, filled with many fluffy white popped corn pieces with tiny warm-gold centers. Popcorn dominates the opening. No letters, numbers, brand, loose corn cob or other snacks.",
+      "path": "artifacts/spanish-food-2-art/originals/popcorn-v1.png",
+      "sha256": "19b7d519ff4ffaca5ca1ce4dd3abbbf835f48896fcdae6252f788ffd22cd27d4",
+      "bytes": 1128515,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 734523,
+        "opaquePixels": 826729,
+        "opaqueWhitePixels": 17975
+      },
+      "promptSha256": "06d534b629514c04d2f65349d7591a965fc7f35eda41ebf133359e50d4635491",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/popcorn-v1.json",
+      "recordSha256": "67b6d9838c1db38ebfc490befcc034886ead3e7b121198117f242b2436ba82ff"
+    },
+    {
+      "id": "es-419-food-peanut",
+      "slug": "peanut",
+      "text": "cacahuate",
+      "meaning": "Peanut",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "Three small tan peanuts in shells with clear narrow waists, double-lobed shapes and a simplified fine shell grid, with one shell opened to reveal two small reddish-brown peanut kernels. No bowl, other nuts or potato-like smooth shells.",
+      "path": "artifacts/spanish-food-2-art/originals/peanut-v1.png",
+      "sha256": "8c5d54df61716be5423bdb91d2a80b883752a30924047a4e157ab1f91dd5d6d1",
+      "bytes": 1072216,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 836340,
+        "opaquePixels": 724316,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "733e640de65605057d1f1c72ef3dec188e22f64c652dcd477db6b6db9c3869d8",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/peanut-v1.json",
+      "recordSha256": "11fe4e2cfc98f469479588a9314492e1b7e2d4b45f811f752423dd74acd9a6bc"
+    },
+    {
+      "id": "es-419-food-gelatin",
+      "slug": "gelatin",
+      "text": "gelatina",
+      "meaning": "Gelatin dessert",
+      "group": "snacks",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One ruby-red translucent fluted gelatin dessert in a low ring mold shape with a clean center opening, resting on a small plain pale plate. Glossy wobbling jelly appearance, not a layered cake. No fruit, cream, spoon or other foods.",
+      "path": "artifacts/spanish-food-2-art/originals/gelatin-v1.png",
+      "sha256": "77423d95e3c67445b11ac118fd76798631a9288aeb73edc99b0dc0f914ea72ca",
+      "bytes": 975975,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 831705,
+        "opaquePixels": 730668,
+        "opaqueWhitePixels": 0
+      },
+      "promptSha256": "05fa98bff7675ea1c160ca77ad5b0500c9da61506ed6e826ab960ec5e14c2eed",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/gelatin-v1.json",
+      "recordSha256": "6b25b6da92c7e31e7aa5a65a88309dbfcc5f03d8bab0ca57aefce31d52e612dd"
+    },
+    {
+      "id": "es-419-travel-plate",
+      "slug": "plate",
+      "text": "plato",
+      "meaning": "Plate",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "existingBank": "content/es-419-travel-2.json",
+      "source": "approved-reuse",
+      "path": "public/images/approved/ja-v-baa4dd2c5986-d9c5d78f567c.jpg",
+      "sha256": "4e3fc3bb48ab627d3c9bf886cc256b2131e9aad412ebe50ceac27853722977e6",
+      "bytes": 61025,
+      "sourceId": "es-419-travel-plate",
+      "evidence": "content/spanish-travel-2/activation.json"
+    },
+    {
+      "id": "es-419-travel-drinking-glass",
+      "slug": "glass",
+      "text": "vaso",
+      "meaning": "Drinking glass",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "existingBank": "content/es-419-travel-2.json",
+      "source": "generated",
+      "version": 1,
+      "concept": "A single attractive clear drinking glass, slightly wider at its open top than at its thick rounded bottom, half full of clean light-blue water. Give the glass convincing gentle three-dimensional depth: an elliptical open rim with a visible thick lip, softly shaded curved side walls, a thick solid base and a clean level elliptical water surface. Show the empty upper section as pale translucent blue-white glass, and the water below as richer blue. Match the friendly polished cartoon rendering of the style reference instead of flat line art. Keep the entire rim visible and the glass geometrically straight and symmetric, viewed just slightly from above.",
+      "supersedes": "public/images/approved/ja-cup-a6b3cf43ae54.jpg",
+      "supersedesSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "path": "artifacts/spanish-food-2-art/originals/glass-v1.png",
+      "sha256": "257144ff94323c5dca29385df12c242f2476ace7d87ea89ac84b33be54b6b30c",
+      "bytes": 821916,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 942996,
+        "opaquePixels": 619512,
+        "opaqueWhitePixels": 167
+      },
+      "promptSha256": "ff3c97102a50c297013b3ace819fe8821589c0a07253c3f887dd6da709c4aac9",
+      "editTargetSha256": "b2cf1eaa1c1fb675ac5c3584fe5bc26d0b01577b93c75e298c353943f9cf3a49",
+      "styleReferenceSha256": "460defe216fa091ddf77cfb738e327cc52eb77d46ce89bac3831153552a21d24",
+      "record": "artifacts/spanish-food-2-art/records/glass-v1.json",
+      "recordSha256": "bbc219aa32f9a22b877a0c1b4123916f2d87bc3501c504f451c7825457ead6d4"
+    },
+    {
+      "id": "es-419-travel-cup",
+      "slug": "cup",
+      "text": "taza",
+      "meaning": "Cup",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "existingBank": "content/es-419-travel-2.json",
+      "source": "approved-reuse",
+      "path": "public/images/approved/es-419-travel-cup-b1c9345e9a3a.png",
+      "sha256": "b1c9345e9a3a106870668494b4bceb0ade774c37d7746bf8b2965297c908c349",
+      "bytes": 802647,
+      "sourceId": "es-419-travel-cup",
+      "evidence": "content/spanish-travel-2/activation.json"
+    },
+    {
+      "id": "es-419-travel-fork",
+      "slug": "fork",
+      "text": "tenedor",
+      "meaning": "Fork",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "existingBank": "content/es-419-travel-2.json",
+      "source": "approved-reuse",
+      "path": "public/images/approved/es-419-travel-fork-01394a9b096e.png",
+      "sha256": "01394a9b096e31cf596b7400b9ee4861b14d4c819ef324949e6785f3d2321e01",
+      "bytes": 421905,
+      "sourceId": "es-419-travel-fork",
+      "evidence": "content/spanish-travel-2/activation.json"
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "slug": "spoon",
+      "text": "cuchara",
+      "meaning": "Spoon",
+      "group": "tableware",
+      "membership": "existing-spanish-item",
+      "existingBank": "content/es-419-travel-2.json",
+      "source": "approved-reuse",
+      "path": "public/images/approved/es-419-travel-spoon-6315f4271e77.png",
+      "sha256": "6315f4271e779f92b94655da21ce42644eb3be6ca2d17f6d8e1225f8e2586208",
+      "bytes": 396319,
+      "sourceId": "es-419-travel-spoon",
+      "evidence": "content/spanish-travel-2/activation.json"
+    },
+    {
+      "id": "es-419-food-knife",
+      "slug": "knife",
+      "text": "cuchillo",
+      "meaning": "Knife",
+      "group": "tableware",
+      "membership": "new-spanish-item",
+      "source": "generated",
+      "version": 1,
+      "concept": "One straight kitchen knife with a broad tapered silver blade and a simple deep-purple handle with two small silver rivets. Complete intact knife at a gentle diagonal, clear blade-handle junction. No hand, food, chopping board, blood or other utensils.",
+      "path": "artifacts/spanish-food-2-art/originals/knife-v1.png",
+      "sha256": "0e8c1bac5a8f14f4845baed5a78a250218cd63d22ebd996ae58c63626a0324aa",
+      "bytes": 565719,
+      "pixels": {
+        "width": 1254,
+        "height": 1254,
+        "transparentPixels": 1195823,
+        "opaquePixels": 367034,
+        "opaqueWhitePixels": 3103
+      },
+      "promptSha256": "e9efa0218106e849ed19f282487b64c8f89e60e406b397fe7ba4f29f25c9a63c",
+      "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "record": "artifacts/spanish-food-2-art/records/knife-v1.json",
+      "recordSha256": "e96d87bf1676d4d228502c8dcc8df122952edbd989d685b17badc0abb2ee9e5d"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "es-419-food-bacon",
+  "slug": "bacon",
+  "version": 1,
+  "path": "originals/bacon-v1.png",
+  "tool": "built-in image_gen",
+  "promptSha256": "37f31506b6af697cbcb4feef6bfb78e274697e75ab9b7893f1346a5880166877",
+  "referenceSha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+  "referenceRole": "style-only",
+  "referencePath": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+  "sha256": "90f0f89a2ce81c98cd927a5e9350a86947cf2631f469fed58485d186509b937d",
+  "bytes": 1083528,
+  "width": 1254,
+  "height": 1254,
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-1f0c550c-9181-468f-b7b7-e79bb81cf0e6.png"
+}
