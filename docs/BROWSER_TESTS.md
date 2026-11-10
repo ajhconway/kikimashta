@@ -2,7 +2,7 @@
 
 Keep browser journeys focused on real engine boundaries: native media, IndexedDB,
 fonts/layout, pointer/keyboard input and navigation. The routine budget is
-**24 scenarios / 48 engine executions** with two workers and zero retries.
+**23 scenarios / 46 engine executions**, within the 24-scenario budget, with two workers and zero retries.
 Follow [test ownership and measurement](TESTING.md) before adding a scenario.
 
 ## Retained coverage
@@ -14,7 +14,7 @@ Follow [test ownership and measurement](TESTING.md) before adding a scenario.
 | Failed save after Home, exactly-once recovery | `practice.spec.ts` | App/save/store races |
 | Keyboard, held pointer, reduced motion, writing fit | `practice.spec.ts` | Component accessibility and timing hooks |
 | Failed audio, stable replay, premature-answer prevention | `practice.spec.ts` | Audio and App recovery |
-| Native timer and audio-first entrances | `quiz-timer.spec.ts`, picture and reduced-motion writing | Core timer table and entrance hook |
+| Native timer and audio-first entrances | `quiz-timer.spec.ts`, picture timer switching to reduced motion | Core timer table and entrance hook; mixed lesson owns writing |
 | Contextual paired audio, miss/retry, scheduled reload | `contextual.spec.ts` | Contextual interaction/progression/admission rules |
 | Authored library redirect, audio retry/cancel, unchanged history | `contextual-library.spec.ts` | ContextualLibrary component filters/details |
 | Unsaved Dev review wiring | `dev-review.spec.ts` | Core Dev-review combinations and App wiring |
@@ -57,7 +57,8 @@ in [TESTING.md](TESTING.md), then use an unused port:
 E2E_AUDIO=quiet E2E_PORT=4299 npm run test:e2e -- --workers=2
 ```
 
-CI downloads the build produced by validation and runs both engines once in a
+CI overlays validation's generated outputs onto checked-out static media, without
+transferring the media again, and runs both engines once in a
 single browser job. Main reuses successful premerge checks only for an identical
 Git tree; it does not rerun the journeys during publication.
 

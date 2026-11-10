@@ -9,7 +9,8 @@ policy](TESTING.md) for the trust boundary and fallback. Publication checks out 
 source notice to that revision. Publication remains serialized through the
 `github-pages` concurrency group.
 
-Validation shares one build with the browser job. Publication still builds once
+Validation shares generated build outputs with the browser job; static media
+comes from the same checkout. Publication still builds once
 with production variables: the CI artifact uses a fake account service and must
 never be deployed. User journeys run at the merge gate, not again after publishing.
 

@@ -73,8 +73,9 @@ state measured shortfalls instead of deleting critical coverage to change a coun
 ## Merge and publication
 
 PR Checks owns lint, types, focused/content/database validation, the built app
-and both browser engines. Validation builds once and shares that artifact with
-the browser job. The required `checks`, `database` and `codex-review` names and
+and both browser engines. Validation builds once and shares only generated
+outputs with the browser job, which copies unchanged static media from its
+checkout before overlaying those outputs. The required `checks`, `database` and `codex-review` names and
 branch protections remain.
 
 Only a successful canonical-repository PR Checks run may supply an unexpired
