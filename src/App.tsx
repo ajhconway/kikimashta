@@ -1,5 +1,4 @@
 import { SettingsMenu } from './components/SettingsMenu';
-import { deviceStorage } from './core/device-storage';
 import { OfflinePanel } from './components/OfflinePanel';
 import { offlineMedia } from './offline/selection';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
@@ -80,7 +79,7 @@ type LessonPlan = Awaited<ReturnType<typeof planLessonChunk>>;
 
 function initialRange(): DensityRange {
   try {
-    const value = JSON.parse(deviceStorage.getItem(preferenceKey) || 'null') as DensityRange | null;
+    const value = JSON.parse(localStorage.getItem(preferenceKey) || 'null') as DensityRange | null;
     if (value && DENSITY_LEVELS.findIndex(level => level.id === value.min) >= 0 &&
         DENSITY_LEVELS.findIndex(level => level.id === value.min) <= DENSITY_LEVELS.findIndex(level => level.id === value.max)) return value;
   } catch { /* Unavailable preferences never prevent practice. */ }
@@ -99,7 +98,7 @@ export default function App(props: AppProps = {}) {
   function changeLanguage(id: string) {
     const next = learningLanguages.find(candidate => candidate.id === id);
     if (!next) return;
-    try { deviceStorage.setItem(languagePreferenceKey, next.id); } catch { /* Selection works in memory. */ }
+    try { localStorage.setItem(languagePreferenceKey, next.id); } catch { /* Selection works in memory. */ }
     focusLanguage.current = true;
     setLanguage(next);
   }
@@ -557,7 +556,6 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     <main>
       {screen === 'home' && <section className="home">
         <h1>kikimashta</h1>
-        {import.meta.env.VITE_STORAGE_NAMESPACE === 'offline-demo' && <p>Offline demo · separate device history. Sign in to use synced progress.</p>}
         <div className={'home-kiku-stage' + (!loading && !accountLoading && !historyError && currentForecast?.badges.length ? ' has-pack-badges' : '')}>
           <HomeIntensity value={density}/>
           {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges} presentation={badgePresentation}/>}

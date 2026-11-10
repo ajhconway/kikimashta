@@ -1,4 +1,3 @@
-import { scopedKey } from '../core/device-storage';
 import { createClient } from '@supabase/supabase-js';
 
 export function cloudConfig(url?: string, key?: string) {
@@ -15,7 +14,7 @@ export function cloudConfig(url?: string, key?: string) {
 }
 
 export function cloudSessionKey(url: string): string {
-  return scopedKey(`sb-${new URL(url).hostname.split('.')[0]}-auth-token`);
+  return `sb-${new URL(url).hostname.split('.')[0]}-auth-token`;
 }
 
 export function createCloudClient() {

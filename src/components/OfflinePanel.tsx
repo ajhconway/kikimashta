@@ -1,15 +1,14 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { downloadSize, offlineRequest, type OfflineResult } from '../offline/client';
-import { deviceStorage } from '../core/device-storage';
 import './OfflinePanel.css';
 
 const preferenceKey = 'kikimashta-offline-enabled-v1';
 function preference(): boolean | null {
-  try { const value = deviceStorage.getItem(preferenceKey); return value === null ? null : value === 'true'; }
+  try { const value = localStorage.getItem(preferenceKey); return value === null ? null : value === 'true'; }
   catch { return null; }
 }
 function remember(value: boolean) {
-  try { deviceStorage.setItem(preferenceKey, String(value)); } catch { /* Cache readiness still works when preferences are unavailable. */ }
+  try { localStorage.setItem(preferenceKey, String(value)); } catch { /* Cache readiness still works when preferences are unavailable. */ }
 }
 
 export function OfflinePanel({ urls, online, open, onReady }: {

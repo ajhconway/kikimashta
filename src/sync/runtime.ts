@@ -1,4 +1,3 @@
-import { deviceStorage } from '../core/device-storage';
 import type { SupabaseClient, User } from '@supabase/supabase-js';
 import { ProgressStore } from '../progress/store';
 import { cachedCloudUser, createCloudClient } from './client';
@@ -165,12 +164,12 @@ export class AccountRuntime {
       const attempts = await guest.all();
       const events: NoteEvent[] = [];
       const prefix = 'kikimashta:card-feedback:v1:';
-      for (let i = 0; i < deviceStorage.length; i++) {
-        const key = deviceStorage.key(i)!;
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i)!;
         if (!key.startsWith(prefix)) continue;
         const tail = key.slice(prefix.length), separator = tail.indexOf(':');
         if (separator < 1) continue;
-        const language = tail.slice(0, separator), itemId = tail.slice(separator + 1), text = deviceStorage.getItem(key) ?? '';
+        const language = tail.slice(0, separator), itemId = tail.slice(separator + 1), text = localStorage.getItem(key) ?? '';
         // Identical imports deduplicate across devices, while different texts
         // remain distinct immutable events. Account edits supersede either.
         events.push({ id: await guestNoteId(key, text), language, itemId, text, updatedAt: 0 });

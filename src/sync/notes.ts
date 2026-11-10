@@ -1,4 +1,3 @@
-import { scopedKey } from '../core/device-storage';
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import { validateNote } from './engine';
 import type { NoteEvent } from './types';
@@ -21,7 +20,7 @@ export class NoteStore {
 
   constructor(readonly accountId: string, options: NoteOptions = {}) {
     if (!/^[A-Za-z0-9_-]{1,128}$/.test(accountId)) throw new Error('Invalid note account.');
-    this.databaseName = scopedKey(`kikimashta-notes-${accountId}`);
+    this.databaseName = `kikimashta-notes-${accountId}`;
     this.now = options.now ?? Date.now;
     this.id = options.id ?? (() => crypto.randomUUID());
   }

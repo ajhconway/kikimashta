@@ -1,4 +1,3 @@
-import { deviceStorage } from './device-storage';
 import spanishBasic from '../../content/es-419-basic-1.json';
 import { spanishFoundationCards } from '../content/spanish-basic';
 import { spanishBanks, spanishVocabulary } from '../content/spanish-vocabulary';
@@ -44,7 +43,7 @@ export const languagePreferenceKey = 'kikimashta-learning-language-v1';
 
 export function initialLanguage(): LearningLanguage {
   try {
-    const saved = deviceStorage.getItem(languagePreferenceKey);
+    const saved = localStorage.getItem(languagePreferenceKey);
     const language = learningLanguages.find(language => language.id === saved);
     if (language) return language;
   } catch { /* Device preferences are optional. */ }

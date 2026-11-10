@@ -5,6 +5,7 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { ProgressStore } from '../progress/store';
 import type { PracticeAttempt } from '../types';
 import { AccountRuntime } from './runtime';
+import { cloudSessionKey } from './client';
 
 const url = 'https://offline-signout.supabase.co';
 const accountId = 'offline-signout-account';
@@ -27,17 +28,17 @@ afterEach(async () => {
   localStorage.clear(); vi.restoreAllMocks();
 });
 
-it.each(['', 'kikimashta-scope:offline-demo:'])('the pinned SDK signs out an expired offline session and preserves other device data (%s)', async prefix => {
+it('the pinned SDK signs out an expired offline session and preserves other project and practice data', async () => {
   vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
   // Control only refresh backoff; IndexedDB keeps its real asynchronous scheduler.
   vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'Date'] });
-  const key = prefix + 'sb-offline-signout-auth-token';
-  const otherKey = (prefix ? '' : 'kikimashta-scope:offline-demo:') + 'sb-offline-signout-auth-token';
+  const key = cloudSessionKey(url);
+  const otherKey = 'sb-other-project-auth-token';
   const expired: Session = { access_token: 'expired-access-token', refresh_token: 'saved-refresh-token', expires_in: 3600,
     expires_at: Math.floor(Date.now() / 1000) - 3600, token_type: 'bearer',
     user: { id: accountId, email: 'account@example.test', aud: 'authenticated', app_metadata: {}, user_metadata: {}, created_at: '2026-01-01T00:00:00Z' } };
   localStorage.setItem(key, JSON.stringify(expired));
-  localStorage.setItem(otherKey, 'other-deployment-session');
+  localStorage.setItem(otherKey, 'other-project-session');
   localStorage.setItem('kikimashta-practice-voices-v1', '["otani"]');
   const guest = new ProgressStore(); stores.push(guest); await guest.record(attempt('guest-only'));
   const account = new ProgressStore(accountDatabase); stores.push(account); await account.record(attempt('account-only'));
@@ -56,7 +57,7 @@ it.each(['', 'kikimashta-scope:offline-demo:'])('the pinned SDK signs out an exp
   expect(transport).toHaveBeenCalled();
   expect(transport.mock.calls.every(([request]) => String(request).includes('/auth/v1/token?grant_type=refresh_token'))).toBe(true);
   expect(localStorage.getItem(key)).toBeNull();
-  expect(localStorage.getItem(otherKey)).toBe('other-deployment-session');
+  expect(localStorage.getItem(otherKey)).toBe('other-project-session');
   expect(localStorage.getItem('kikimashta-practice-voices-v1')).toBe('["otani"]');
   expect(current.snapshot().user).toBeNull();
   expect(current.notes()).toBeNull();
