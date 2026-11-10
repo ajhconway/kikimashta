@@ -51,6 +51,19 @@ test('missing resources and stale deployed bytes fail the publication smoke', as
   }
 })
 
+test('Pages HTTP metadata uses HTTPS while local preview requests remain HTTP', async t => {
+  const { dist, files } = await fixture(t)
+  for (const [baseURL, protocol] of [['http://example.test/', 'https:'], ['http://127.0.0.1:4300/', 'http:']]) {
+    const count = await deploymentSmoke({ dist, revision, baseURL, request: async url => {
+      assert.equal(url.protocol, protocol)
+      assert.equal(url.hostname, new URL(baseURL).hostname)
+      return response(files.get(resource(url)))
+    } })
+    assert.equal(count, 9)
+  }
+  await assert.rejects(deploymentSmoke({ dist, revision, baseURL: 'ftp://127.0.0.1/' }), /HTTPS publication URL/)
+})
+
 test('an incorrectly pinned build cannot pass by serving its own bytes', async t => {
   const { dist } = await fixture(t)
   await assert.rejects(deploymentSmoke({ dist, revision: 'b'.repeat(40), baseURL: 'https://example.test/',

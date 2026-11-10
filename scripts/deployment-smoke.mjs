@@ -9,7 +9,10 @@ const sha256 = bytes => createHash('sha256').update(bytes).digest('hex')
 export async function deploymentSmoke({ baseURL, revision, dist = 'dist', request = fetch }) {
   if (!/^[a-f0-9]{40}$/.test(revision)) throw new Error('Expected a full source revision.')
   const base = new URL(baseURL)
-  if (base.protocol !== 'https:' && base.hostname !== '127.0.0.1') throw new Error('Expected an HTTPS publication URL.')
+  const localPreview = base.protocol === 'http:' && base.hostname === '127.0.0.1'
+  // Pages can report an HTTP custom-domain URL even when HTTPS is available.
+  if (base.protocol === 'http:' && !localPreview) base.protocol = 'https:'
+  if (base.protocol !== 'https:' && !localPreview) throw new Error('Expected an HTTPS publication URL.')
   if (!base.pathname.endsWith('/')) base.pathname += '/'
   const read = path => readFile(join(dist, path))
   const manifest = JSON.parse(await read('offline-manifest.json'))
