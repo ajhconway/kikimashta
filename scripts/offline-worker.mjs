@@ -94,7 +94,6 @@ self.addEventListener('message', event => {
   const run = async () => {
     try {
       const { type, version, urls = [] } = event.data ?? {};
-      if (version !== manifest.version) throw new Error('The app has updated. Close all app tabs and reopen while online.');
       if (type === 'REMOVE') {
         for (const name of await caches.keys()) {
           if (name.startsWith(`kikimashta-offline-${scope.pathname}-`)) await caches.delete(name);
@@ -102,6 +101,7 @@ self.addEventListener('message', event => {
         port.postMessage({ type: 'RESULT', ready: false, completed: 0, total: 0, bytes: 0 });
         return;
       }
+      if (version !== manifest.version) throw new Error('The app has updated. Close all app tabs and reopen while online.');
       const selected = selectedUrls(urls);
       const result = type === 'STATUS' ? await status(selected) : type === 'DOWNLOAD' ? await download(selected, port) : null;
       if (!result) throw new Error('Unknown offline action.');

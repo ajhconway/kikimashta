@@ -103,9 +103,13 @@ test('removal clears only app downloads and is ordered after an in-flight downlo
   app.stores.set('another-app', new Map([['x', 'preserved']]));
   app.stores.set('kikimashta-offline-/-production', new Map([['root', 'root-preserved']]));
   const preparing = app.message('DOWNLOAD');
-  const removing = app.message('REMOVE');
+  // A newer page must be able to clear caches through its previous active worker.
+  app.stores.set('kikimashta-offline-/game/-older', new Map([['old', 'cached']]));
+  const removing = app.message('REMOVE', [], 'newer-page');
   assert.equal((await preparing).at(-1).ready, true);
   assert.equal((await removing).at(-1).ready, false);
+  assert.equal((await removing).at(-1).error, undefined);
+  assert.equal([...app.stores.keys()].some(name => name.startsWith('kikimashta-offline-/game/-')), false);
   assert.equal((await app.message('STATUS')).at(-1).ready, false);
   assert.equal(app.stores.get('another-app').get('x'), 'preserved');
   assert.equal(app.stores.get('kikimashta-offline-/-production').get('root'), 'root-preserved');
