@@ -20,6 +20,14 @@ Read `PLAN.md` before starting. Keep the product and plan simple, flexible, and 
 
 Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues and linked pull requests as the durable work record. Repository setup can use task briefs in the active conversation until GitHub is ready. Issues do not launch background agents automatically.
 
+## Merge and deployment defaults
+
+- Unless the user asks otherwise, the coordinator completes local verification, pushes the task branch, opens or updates the linked pull request, and enables GitHub auto-merge without asking for merge approval. If all required checks and reviews have already passed, merge directly.
+- Preserve required checks, reviews, and branch protections. If auto-merge is unavailable or merging is blocked, report the blocker and link the pull request.
+- After submitting the merge or auto-merge request, finish the task without waiting for the pull request to merge or for deployment to complete. Wait or monitor only when the user explicitly asks.
+- In the final response, link the pull request and state the observed merge and deployment status, including anything still pending. Do not claim that a queued merge or deployment has completed.
+- Workers continue to return their work to the coordinator; the coordinator owns pushing, merging, and deployment decisions.
+
 ## Engineering and tests
 
 - Keep the interface, learning rules, content, and storage separate. Use stable item and attempt IDs, and keep progress specific to its language and item.
