@@ -422,6 +422,7 @@ test('Home remains readable with reachable controls at phone and desktop sizes',
     textColors.push(await control.evaluate(element => getComputedStyle(element).color));
   }
   expectReadableHomeText(textColors);
+  await page.evaluate(() => window.scrollTo(0, 0));
   const picture = density.locator('img');
   await expect.poll(() => picture.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   for (const size of [{ width: 390, height: 664 }, { width: 320, height: 568 }, { width: 1280, height: 800 }]) {

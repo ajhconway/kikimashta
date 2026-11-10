@@ -13,7 +13,24 @@ export function cloudConfig(url?: string, key?: string) {
   return { url: parsed.href.replace(/\/$/, ''), key };
 }
 
+export function cloudSessionKey(url: string): string {
+  return `sb-${new URL(url).hostname.split('.')[0]}-auth-token`;
+}
+
 export function createCloudClient() {
   const config = cloudConfig(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
-  return config ? createClient(config.url, config.key, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false } }) : null;
+  return config ? createClient(config.url, config.key, { auth: { storageKey: cloudSessionKey(config.url), persistSession: true, autoRefreshToken: true, detectSessionInUrl: false } }) : null;
+}
+
+/** Local database routing only; cached identity never authorizes a cloud request. (#223) */
+export function cachedCloudUser(url = import.meta.env.VITE_SUPABASE_URL, storage: Pick<Storage, 'getItem'> = localStorage): { id: string; email: string } | null {
+  try {
+    if (!url) return null;
+    const key = cloudSessionKey(url);
+    const value: unknown = JSON.parse(storage.getItem(key) ?? 'null');
+    if (!value || typeof value !== 'object' || !('user' in value)) return null;
+    const user = value.user;
+    if (!user || typeof user !== 'object' || !('id' in user) || typeof user.id !== 'string' || !user.id.trim()) return null;
+    return { id: user.id, email: 'email' in user && typeof user.email === 'string' ? user.email : '' };
+  } catch { return null; }
 }
