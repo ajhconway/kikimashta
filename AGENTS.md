@@ -22,6 +22,14 @@ Assign roles per task; use fewer workers when work overlaps. Use GitHub Issues a
 
 - After the final PR commit (including updates from main), promptly request a Codex review of that head when the existing review is stale. Start review alongside CI instead of waiting for CI to finish. The status-refresh workflow does not launch a review. Avoid duplicate requests while that head is already being reviewed.
 
+## Merge and deployment defaults
+
+- Unless the user asks otherwise, the coordinator completes local verification, pushes the task branch, opens or updates the linked pull request, and enables GitHub auto-merge without asking for merge approval. If all required checks and reviews have already passed, merge directly.
+- Preserve required checks, reviews, and branch protections. If auto-merge is unavailable or merging is blocked, report the blocker and link the pull request.
+- After submitting the merge or auto-merge request, finish the task without waiting for the pull request to merge or for deployment to complete. Wait or monitor only when the user explicitly asks.
+- In the final response, link the pull request and state the observed merge and deployment status, including anything still pending. Do not claim that a queued merge or deployment has completed.
+- Workers continue to return their work to the coordinator; the coordinator owns pushing, merging, and deployment decisions.
+
 ## Issue resolution
 
 - Keep each issue's current summary and completion checklist aligned with delivered work. After a partial delivery or merge, record completed criteria, implementation PRs/commits, actual verification results, and the remaining work or acceptance. Clearly label superseded scope and preserve dated historical evidence.
