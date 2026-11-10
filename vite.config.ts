@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react'
+import { offlineBuild } from './scripts/offline-build'
 import { defineConfig } from 'vitest/config'
 import { verifyPack1Build } from './scripts/content/contextual-pack1-build'
 
@@ -6,7 +7,7 @@ const logicTests = ['src/core/!(packs|languages|voices|writing-fonts|spanish-pac
 const pack1Digests = verifyPack1Build(new URL('./', import.meta.url))
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), offlineBuild()],
   define: {
     __PACK1_TEXT_APPROVAL_SHA256__: JSON.stringify(pack1Digests.textApproval),
     __PACK1_SOURCE_SHA256__: JSON.stringify(pack1Digests.source),

@@ -81,6 +81,77 @@ afterEach(async () => {
 });
 
 describe('account runtime lifecycle', () => {
+  it('opens the cached account offline without waiting for expired-token refresh, then syncs once authenticated', async () => {
+    const account = server();
+    const stored = store(`kikimashta-account-${account.id}`);
+    await stored.record(attempt('before-offline'));
+    const refresh = deferred<{ data: { session: Session | null }; error: null }>();
+    const identity = auth(null, { initial: refresh.promise });
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const current = new AccountRuntime(identity.client, { id: account.id, email: 'cached@example.test' });
+    runtimes.push(current);
+    await current.ready();
+    expect(current.snapshot()).toMatchObject({ loading: false, user: { id: account.id } });
+    expect(await current.store().all()).toEqual([attempt('before-offline')]);
+    await current.store().record(attempt('while-offline'));
+    await current.sync();
+    expect(account.remote.uploadAttempts).not.toHaveBeenCalled();
+    expect(current.snapshot().status).toBe('error');
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+    refresh.resolve({ data: { session: session(account.id) }, error: null });
+    identity.emit('TOKEN_REFRESHED', session(account.id));
+    await current.sync(); await current.sync();
+    expect([...account.attempts.keys()].sort()).toEqual(['before-offline', 'while-offline']);
+    expect(current.snapshot().status).toBe('synced');
+  });
+
+  it('retains the offline account and local attempts when reconnect session refresh rejects', async () => {
+    const account = server();
+    const identity = auth(null, { emitInitial: false });
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const current = new AccountRuntime(identity.client, { id: account.id, email: 'cached@example.test' });
+    runtimes.push(current); await current.ready();
+    await current.store().record(attempt('waiting-for-auth'));
+    identity.adapter.getSession.mockRejectedValue(new Error('Transport unavailable'));
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+    await expect(current.sync()).resolves.toBeUndefined();
+    expect(current.snapshot()).toMatchObject({ user: { id: account.id }, status: 'error', loading: false });
+    expect(await current.store().all()).toEqual([attempt('waiting-for-auth')]);
+    expect(account.remote.uploadAttempts).not.toHaveBeenCalled();
+    identity.adapter.getSession.mockResolvedValue({ data: { session: session(account.id) }, error: null });
+    await current.sync();
+    expect(account.attempts.size).toBe(1);
+  });
+
+  it('does not upload cached account data under a different authenticated account', async () => {
+    const a = server(), b = server();
+    const identity = auth(null, { emitInitial: false });
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const current = new AccountRuntime(identity.client, { id: a.id, email: 'a@example.test' });
+    runtimes.push(current); await current.ready();
+    await current.store().record(attempt('only-a'));
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+    identity.adapter.getSession.mockResolvedValue({ data: { session: session(b.id) }, error: null });
+    await current.sync(); await current.sync();
+    expect(current.snapshot().user?.id).toBe(b.id);
+    expect(await current.store().all()).toEqual([]);
+    expect(a.attempts.size).toBe(0); expect(b.attempts.size).toBe(0);
+  });
+
+  it('explicit sign-out clears the offline account instead of retaining it after INITIAL_SESSION', async () => {
+    const account = server();
+    const identity = auth(null);
+    vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const current = new AccountRuntime(identity.client, { id: account.id, email: 'a@example.test' });
+    runtimes.push(current); await current.ready();
+    await current.signOut();
+    expect(current.snapshot().user).toBeNull();
+    identity.emit('INITIAL_SESSION', null);
+    await Promise.resolve();
+    expect(current.snapshot().user).toBeNull();
+    expect(account.remote.uploadAttempts).not.toHaveBeenCalled();
+  });
+
   it('leaves guest progress private until an explicit, repeatable copy and imports notes at timestamp zero', async () => {
     const guest = store();
     await guest.record(attempt());

@@ -15,49 +15,8 @@ concurrency:
   group: github-pages
   cancel-in-progress: false
 
-env:
-  # Reviewed offline feature snapshot; updating it is a separate code-reviewed change.
-  OFFLINE_DEMO_REVISION: d5d477c3971acb1f883b49bcbb182fe1a055efa7
-
 jobs:
-  demo-build:
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    outputs:
-      artifact_name: ${{ steps.demo-artifact-name.outputs.name }}
-    env:
-      VITE_BASE_PATH: /offline-demo/
-      VITE_STORAGE_NAMESPACE: offline-demo
-      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
-    steps:
-      - uses: actions/checkout@v7.0.1
-        with:
-          ref: ${{ env.OFFLINE_DEMO_REVISION }}
-          persist-credentials: false
-      - uses: actions/setup-node@v7.1.0
-        with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
-      - name: Build reviewed offline demo
-        env:
-          SOURCE_REVISION: ${{ env.OFFLINE_DEMO_REVISION }}
-        run: npm run build
-      - name: Identify demo artifact
-        id: demo-artifact-name
-        run: echo "name=offline-demo-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
-      - uses: actions/upload-artifact@v7.0.2
-        with:
-          name: ${{ steps.demo-artifact-name.outputs.name }}
-          path: dist
-          if-no-files-found: error
-          include-hidden-files: true
-          retention-days: 7
   deploy:
-    needs: demo-build
     if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
     runs-on: ubuntu-latest
     environment:
@@ -81,13 +40,6 @@ jobs:
       - name: Build production site
         id: build
         run: npm run build
-      - name: Download reviewed offline demo
-        uses: actions/download-artifact@v8.0.2
-        with:
-          name: ${{ needs.demo-build.outputs.artifact_name }}
-          path: ${{ runner.temp }}/offline-demo-build
-      - name: Preserve root and compose demo publication
-        run: node scripts/offline-demo-release.mjs dist "$RUNNER_TEMP/offline-demo-build" "$OFFLINE_DEMO_REVISION"
       - uses: actions/configure-pages@v6.0.0
         with:
           enablement: true
@@ -113,7 +65,6 @@ jobs:
           {
             echo '## Pages publication'
             echo "Source revision: \`$SOURCE_REVISION\`"
-            echo "Offline demo revision: \`$OFFLINE_DEMO_REVISION\`"
             echo "Artifact: \`$PAGES_ARTIFACT_NAME\` (ID: $ARTIFACT_ID)"
             echo ''
             echo '| Build | Upload | Pages service |'

@@ -1,3 +1,6 @@
+import { SettingsMenu } from './components/SettingsMenu';
+import { OfflinePanel } from './components/OfflinePanel';
+import { offlineMedia } from './offline/selection';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react';
 import { initialLanguage, languagePreferenceKey, learningLanguages, type LearningLanguage } from './core/languages';
 import { initialPackIds, selectedPracticeCards } from './core/packs';
@@ -118,6 +121,17 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
   const store = progressStore;
   const saveState = useSyncExternalStore(recovery.subscribe, recovery.snapshot);
   const [packIds, setPackIds] = useState(() => initialPackIds(cardPacks, packPreferenceKey));
+  const downloadUrls = useMemo(() => offlineMedia(language, packIds), [language, packIds]);
+  const [downloadState, setDownloadState] = useState<{ urls: readonly string[]; ready: boolean } | null>(null);
+  const offlineReady = downloadState?.urls === downloadUrls && downloadState.ready;
+  const setOfflineReady = useCallback((ready: boolean) => setDownloadState({ urls: downloadUrls, ready }), [downloadUrls]);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [online, setOnline] = useState(() => navigator.onLine);
+  useEffect(() => {
+    const changed = () => setOnline(navigator.onLine);
+    window.addEventListener('online', changed); window.addEventListener('offline', changed);
+    return () => { window.removeEventListener('online', changed); window.removeEventListener('offline', changed); };
+  }, []);
   const selectedCards = useMemo(() => selectedPracticeCards(practicePool.items, packIds, cardPacks), [packIds, practicePool, cardPacks]);
   // Catalogue membership scopes contextual formats without admitting unreviewed word pictures.
   const contextualScope = useMemo(() => selectedPracticeCards(languageContextualVocabulary, packIds, cardPacks), [languageContextualVocabulary, packIds, cardPacks]);
@@ -538,7 +552,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
     <audio ref={audio} preload="auto" onEnded={() => { setPlaying(false); setAudioFinished(true); }} onError={() => { setAudioError(true); setPlaying(false); }}/>
     {screen === 'quiz' && !feedback && countdown.timer && <><QuizTimerFill timer={countdown.timer} expired={countdown.expired} now={now}/><span className="sr-only" role="status">{countdown.expired ? 'Take your time. A correct answer still counts as partial success.' : `${countdown.timer.limitMs / 1000} second timer started.`}</span></>}
     {screen === 'quiz' && feedback && departures.length > 0 && <div className="answer-departures" aria-hidden="true">{departures.map((card, i) => <div className={choiceClass(card.exercise) + ' departing-card'} key={card.item.id} data-exit={feedback.outcome === 'partial' ? 'drift' : feedback.correct ? 'fly' : 'fall'} data-slot={card.slot} style={{ left: card.left, top: card.top, width: card.width, height: card.height, animationDelay: feedback.correct ? undefined : `${i * 45}ms`, '--fly-x': `${card.flyX}px`, '--fly-y': `${card.flyY}px` } as CSSProperties}><CardFace item={card.item} exercise={card.exercise} font={card.font}/></div>)}</div>}
-    <header>{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}{screen === 'home' ? <label className="language-picker"><svg className="language-globe" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><span className="sr-only">Learning language</span><select aria-label="Learning language" value={language.id} disabled={accountLoading || pendingSaveCount > 0 || saveError} onChange={event => onLanguageChange(event.target.value)}>{learningLanguages.map(option => <option key={option.id} value={option.id}>{option.title}</option>)}</select><svg className="language-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></label> : <span className="language"><i/> {language.title}</span>}</header>
+    <header>{screen === 'home' && <SettingsMenu onOpenChange={setSettingsOpen}><OfflinePanel key={downloadUrls.join('|')} urls={downloadUrls} online={online} open={settingsOpen} onReady={setOfflineReady}/></SettingsMenu>}{screen !== 'home' && <button className="brand" onClick={home} aria-label="Kikimashta home"><img className="brand-mark" src={asset('brand/kikimashta-cat-v1.png')} alt="" aria-hidden="true" draggable={false}/><svg className="practice-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg><span className="brand-name">kikimashta</span><span className="brand-dot">.</span></button>}{screen === 'home' ? <label className="language-picker"><svg className="language-globe" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><span className="sr-only">Learning language</span><select aria-label="Learning language" value={language.id} disabled={accountLoading || pendingSaveCount > 0 || saveError} onChange={event => onLanguageChange(event.target.value)}>{learningLanguages.map(option => <option key={option.id} value={option.id}>{option.title}</option>)}</select><svg className="language-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></label> : <span className="language"><i/> {language.title}</span>}</header>
     <main>
       {screen === 'home' && <section className="home">
         <h1>kikimashta</h1>
@@ -546,7 +560,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
           <HomeIntensity value={density}/>
           {!loading && !accountLoading && !historyError && currentForecast && <PackBadges badges={currentForecast.badges} presentation={badgePresentation}/>}
         </div>
-        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
+        <button className="primary start" disabled={loading || accountLoading || historyError || pendingSaveCount > 0 || saveError || !selectedCards.length || (!online && !offlineReady)} onClick={() => void startSession()}><span>{pendingSaveCount ? 'Saving…' : loading || accountLoading ? 'Getting ready…' : 'Start'}{dueNow !== null && ` · ${dueNow} ${dueNow === 1 ? 'review' : 'reviews'}`}</span><span aria-hidden="true">↗</span></button>
         <ReviewForecast forecast={currentForecast?.value ?? null} at={currentForecast?.at ?? 0}
           loading={loading || accountLoading || !currentForecast} unavailable={currentForecast?.error ?? false}/>
         <button className="text-button" disabled={loading || accountLoading || pendingSaveCount > 0 || saveError} onClick={openDevReview}>Dev review</button>
@@ -554,6 +568,7 @@ function LanguagePractice({ now = wallClock, random = Math.random, progressStore
         {historyError && <div className="error" role="alert"><p>Your practice history couldn't load.</p><button className="text-button" onClick={() => { setLoading(true); setHistoryError(false); setRefresh(value => value + 1); }}>Retry loading</button></div>}
         {language.libraryPath && <a className="pack-library-link" href={asset(language.libraryPath)}>Card library · {packIds.length} {packIds.length === 1 ? 'pack' : 'packs'} selected</a>}
         {!selectedCards.length && <p role="status">{!practicePool.items.length && language.unavailableMessage ? language.unavailableMessage : 'Select a pack in the card library to start practicing.'}</p>}
+        {!online && !offlineReady && <p role="status">Offline practice is not ready for these packs. Open Settings to check downloads.</p>}
         {accountControls}
       </section>}
       {screen === 'dev-options' && <DevReviewOptionsScreen availableTypes={devTypes} value={devOptions} onChange={options => { setDevOptions(options); setDevReviewError(null); }} onStart={startDevReview} disabled={accountLoading || pendingSaveCount > 0 || saveError} error={devReviewError ?? undefined} libraryHref={asset(language.libraryPath ?? 'vocabulary/')}/>}

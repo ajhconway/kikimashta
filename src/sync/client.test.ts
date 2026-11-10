@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cloudConfig } from './client';
+import { cachedCloudUser, cloudConfig, cloudSessionKey } from './client';
 
 function legacyKey(role: string) {
   return `fixture.${btoa(JSON.stringify({ role })).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_')}.fixture`;
@@ -35,5 +35,26 @@ describe('public Supabase configuration', () => {
       expect((error as Error).message).not.toContain(key);
       expect((error as Error).message).toMatch(/publishable/i);
     }
+  });
+});
+
+
+describe('offline account identity', () => {
+  it('keeps the production SDK session key for the configured project', () => {
+    expect(cloudSessionKey('https://project.supabase.co')).toBe('sb-project-auth-token');
+  });
+
+  it('routes only to the configured project session, even when expired, without returning tokens', () => {
+    const storage = { getItem: (key: string) => key === 'sb-project-auth-token'
+      ? JSON.stringify({ user: { id: 'account-a', email: 'a@example.test' }, expires_at: 0, access_token: 'private-token' }) : null };
+    expect(cachedCloudUser('https://project.supabase.co', storage)).toEqual({ id: 'account-a', email: 'a@example.test' });
+    expect(cachedCloudUser('https://other.supabase.co', storage)).toBeNull();
+  });
+
+  it('does not restore a removed, corrupt or unavailable session', () => {
+    for (const value of [null, 'invalid', '{}', '{"user":{"id":""}}']) {
+      expect(cachedCloudUser('https://project.supabase.co', { getItem: () => value })).toBeNull();
+    }
+    expect(cachedCloudUser('https://project.supabase.co', { getItem: () => { throw new Error('Unavailable'); } })).toBeNull();
   });
 });

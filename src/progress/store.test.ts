@@ -1,5 +1,5 @@
 import 'fake-indexeddb/auto';
-import { deleteDB } from 'idb';
+import { deleteDB, openDB } from 'idb';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { PracticeAttempt } from '../types';
 import { ProgressStore } from './store';
@@ -29,6 +29,18 @@ afterEach(async () => {
 });
 
 describe('local progress', () => {
+  it('reads existing guest attempts from the unchanged production database', async () => {
+    const name = 'kikimashta-v0', saved = attempt();
+    databaseNames.push(name);
+    const legacy = await openDB(name, 1, { upgrade(db) {
+      const attempts = db.createObjectStore('attempts', { keyPath: 'id' });
+      attempts.createIndex('language', 'language');
+    } });
+    await legacy.put('attempts', saved); legacy.close();
+    const current = new ProgressStore(); stores.push(current);
+    expect(await current.history('ja-JP')).toEqual([saved]);
+  });
+
   it('keeps writing and picture progress separate after reopening while preserving legacy attempts', async () => {
     const name = `progress-test-${sequence++}`;
     const first = openStore(name);

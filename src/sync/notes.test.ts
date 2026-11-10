@@ -1,5 +1,5 @@
 import 'fake-indexeddb/auto';
-import { deleteDB } from 'idb';
+import { deleteDB, openDB } from 'idb';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { NoteStore } from './notes';
 import type { NoteEvent } from './types';
@@ -19,6 +19,15 @@ afterEach(async () => {
 });
 
 describe('account card notes', () => {
+  it('reads existing notes from the unchanged production account database', async () => {
+    const account = 'legacy-production-notes', name = `kikimashta-notes-${account}`;
+    const legacy = await openDB(name, 1, { upgrade(db) { db.createObjectStore('events', { keyPath: 'id' }); } });
+    await legacy.put('events', event()); legacy.close();
+    const current = open(account); await current.load();
+    expect(current.databaseName).toBe(name);
+    expect(current.read('ja', 'cat')).toBe('A softer ending.');
+  });
+
   it('retains edits across reopening and orders rapid writes while keeping languages separate', async () => {
     const first = open();
     await first.write('ja', 'cat', 'First');

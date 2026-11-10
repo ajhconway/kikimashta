@@ -7,7 +7,8 @@ interface ProgressDatabase extends DBSchema {
 
 export class ProgressStore {
   private connection?: Promise<IDBPDatabase<ProgressDatabase>>;
-  constructor(private readonly name = 'kikimashta-v0') {}
+  private readonly name: string;
+  constructor(name = 'kikimashta-v0') { this.name = name; }
   private database() {
     this.connection ??= openDB<ProgressDatabase>(this.name, 1, {
       upgrade(db) {

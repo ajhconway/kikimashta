@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "node scripts/package-notices.mjs --public && vite --host 0.0.0.0",
-    "build": "tsc --noEmit && vite build && node scripts/package-notices.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/package-notices.mjs && node scripts/offline-finalize.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
