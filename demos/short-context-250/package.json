@@ -1,0 +1,12 @@
+{
+  "name": "kikimashta-short-context-demo-250",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test session.test.js",
+    "check": "node --check dist/app.js && node --check dist/artwork.js && node --check dist/questions.js && node --check dist/session.js",
+    "start": "python3 -m http.server 5310 --bind 127.0.0.1 --directory dist",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": { "@playwright/test": "1.64.1" }
+}
