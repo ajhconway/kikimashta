@@ -1,0 +1,406 @@
+{
+  "issue": 233,
+  "round": 2,
+  "tool": "built-in image_gen",
+  "selectionPolicy": "Alternatives only; preserve currently selected images until owner chooses.",
+  "assets": [
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 3,
+      "candidateLabel": "A",
+      "conceptLabel": "Two matching homes, one immediately beside a small shop and one far away, emphasize short distance.",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v3.png",
+      "sha256": "c825364fbaab0d5f3d0b20191b956f0e2ea04adede545a4b979a470793fcd087",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Three buildings on one common baseline viewed straight-on at exactly matching scale: a lavender HOME on left, a small gold SHOP immediately beside it with only a TINY GAP, and an IDENTICAL lavender HOME much FARTHER away to the right. Shop recognizable by a simple striped awning and small glass storefront but no signs, writing or logo. The shop serves as fixed reference for both houses. Three small gold attention rays immediately above the tiny LEFT house/shop gap identify the NEAR relation. Same-sized homes, clear large right gap, no roads, map, extra buildings or perspective size changes. Keep arrangement compact inside a square canvas.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8a46e9b7-116e-4171-90df-2d6e5d1afcc1.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 4,
+      "candidateLabel": "B",
+      "conceptLabel": "Kiku next to a large tree versus same Kiku farther away, controlled near/far contrast.",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+      "sha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Two simple MATCHED rows, without frames or panels. In UPPER row the exact Kiku cat with purple headphones sits VERY CLOSE beside a green tree, separated by a small clear gap. In LOWER row the SAME-SIZED Kiku and IDENTICAL tree sit FARTHER APART with a clearly larger horizontal gap. Same front view, scale and ordering in both rows; the only variable is distance. Three small gold attention rays mark the TINY upper gap. Preserve Kiku identity faithfully. Exactly two Kikus and two trees, no ghost subjects, labels, distance lines or scenery. Input image1 is the exact Kiku character identity; input image2 is palette/outline style only.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/kiku-character.png",
+          "role": "Kiku identity reference",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7"
+        },
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-44a5c6f9-f254-41fc-808b-6dd135f284dd.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 5,
+      "candidateLabel": "C",
+      "conceptLabel": "A ball almost touching a plain open box compared with same ball far away; emphasize tiny near gap.",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v5.png",
+      "sha256": "a6bcd871bd84b01ab981a6caeeecaf2b38b0190c039361302a1132d4e8037cf2",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. NEAR DISTANCE CONCEPT: Two MATCHED rows, no trays/frames. Each row has ONE solid gold ball and ONE plain open lavender box in the SAME front-three-quarter view and exactly the SAME scale. UPPER row: ball sits immediately BESIDE box with a tiny VISIBLE gap, almost touching the OUTSIDE wall; three small gold attention rays point to that tiny gap. LOWER row: same ball and same box separated by a much LARGER gap. Both balls clearly outside, not above or inside boxes. Only distance changes. No motion arrow, hand, extra object, numbers or background.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-b0ec257f-3938-4a79-adde-5923fff802fc.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 5,
+      "candidateLabel": "A",
+      "conceptLabel": "Hands assembling a small wooden toy car from recognizable pieces; compact construction scene.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+      "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept related to the birdhouse reference, but replace subject with a small WOODEN TOY CAR being assembled. Two adult hands actively fit a chunky round wooden wheel onto a clearly visible axle protruding from the partly assembled car body. Other wheels already attached so car form is recognizable; one spare wheel and one small wood piece nearby at most. Natural warm pale wood with subtle grain, gold/lavender sleeve cuffs. The fitting joint/contact is clearly visible; three short restrained action strokes near it. Compact low workbench footprint, no whole person, labels, screws scattered everywhere, ghost parts or finished duplicate toy.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+          "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+          "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-69fe17bb-27e7-45b7-966a-9174e48c45de.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 6,
+      "candidateLabel": "B",
+      "conceptLabel": "Hands assembling a little wooden stool with visible joint and a few components.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v6.png",
+      "sha256": "168b66ea62b5aa8a9bfe5cbb1a205ed485e5110d9d8efcb3463c5f0374c4bff7",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept related to the birdhouse reference, but replace subject with a small WOODEN STOOL being assembled. Two adult hands fit the final stout wooden leg into a visible socket under a simple square seat; the partly assembled stool is held at a natural tilted angle so three attached legs and the empty final joint are easy to understand. One hand steadies seat, other pushes final leg into joint. Natural warm pale wood with gentle grain, gold/lavender sleeve cuffs. At most one extra wood offcut, compact tabletop footprint. Show active joining, not merely a finished stool; no whole person, ghost parts, labels or text.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+          "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+          "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cd89512e-29e6-4ccb-b36d-f277ed5fd5d9.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-a4ccf0b7bace",
+      "text": "作る",
+      "version": 7,
+      "candidateLabel": "C",
+      "conceptLabel": "Hands assembling a birdhouse from wooden panels; more explicit building action.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v7.png",
+      "sha256": "b13c5a288d7ee59bc7b828561c2350af2475d64936a294df6f6256ad18846aa4",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept: TWO adult hands actively assemble a small WOODEN BIRDHOUSE from recognizable flat panels. Front panel with round bird opening and one side wall already joined; one hand holds the second side panel upright while the other brings one sloping roof panel into place at the top. The visible panel edges and joining contacts make construction obvious. A few simple unassembled roof/wall panels lie beside it on a compact workbench footprint. Natural warm pale wood, subtle wood grain, lavender/gold cuffs. No whole person, duplicate finished birdhouse, bird, ghost parts, diagram labels or text.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+          "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+          "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-cdab2397-a517-48de-b138-81467a0cd96e.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 5,
+      "candidateLabel": "A",
+      "conceptLabel": "A folded travel map with a clear route and one sticker-covered suitcase beside it.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v5.png",
+      "sha256": "3c38adedaf183d6cfa5007239d3bb2587efbae1c1f739b75fa01cdfb2aae2e4c",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept A: ONE folded paper TRAVEL MAP stands partly open in a clear three-quarter zigzag fold. Pale-green land, one simple blue river and THREE broad pale road lines, with a dominant thick GOLD route connecting TWO plum map pins. Route continuous, easy to see at small card size. Beside map stands ONE medium lavender rolling SUITCASE with extended handle, covered in FOUR large colorful travel stickers: simple sun, mountain, palm tree and star pictograms. Stickers are pictures ONLY, absolutely NO letters, numbers, flags with text, dates, stamp glyphs, pseudo-writing or luggage tags. Map and suitcase both dominant, clean compact square composition. The map sheet is a physical object, not a background panel. No calendar, passport, airplane, whole person or busy extra icons.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d02364ac-498e-459d-86fb-be2f871c031b.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+      }
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 6,
+      "candidateLabel": "B",
+      "conceptLabel": "Two sticker-covered suitcases framing a compact map with connected travel route.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v6.png",
+      "sha256": "d0a969cec6cc35aad493cad6e137965fe8cd04b234705e9e0cd2df426f8f66b7",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept B: A compact OPEN TRAVEL MAP viewed slightly from above is centered BETWEEN TWO differently sized standing SUITCASES framing its left/right lower corners. Map pale green with a simple river, two broad roads and one clearly connected GOLD route curving between TWO plum location pins. Suitcases gold and lavender, handles visible, each covered in THREE large picture-only stickers showing simple sun, mountain, palm-tree or star shapes. Absolutely NO writing, letters, numerals, dates, fake text, postal stamps or calendar grids anywhere. Map route must remain large and unobscured. Whole luggage/map objects visible on a genuine transparent square canvas; no backdrop rectangle, plane, passport or additional objects.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-6bb0707c-f8f8-442a-9cac-b669223cc898.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+      }
+    },
+    {
+      "id": "ja-v-fa26a112a479",
+      "text": "走行",
+      "version": 7,
+      "candidateLabel": "C",
+      "conceptLabel": "One open travel map with route, luggage and a small vehicle following the route.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+      "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept C: ONE open paper ROAD TRAVEL MAP lies at an attractive shallow angle, pale-green land with a simple blue river and broad roads. A dominant GOLD route connects TWO plum location pins; a single tiny LAVENDER CAR is visibly driving along that highlighted route with two short movement strokes. ONE gold wheeled SUITCASE with lavender handle stands beside map's lower-right corner, carrying FOUR large picture-only stickers of sun, mountain, palm tree and star. Map route, car and luggage all readable at card size. Absolutely NO words, letters, numbers, dates, calendar grid, fake writing, luggage labels or text-bearing sticker. No ghost car, airplane, passport, extra luggage or background.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/references/style-object.png",
+          "role": "style reference only",
+          "sha256": "3610d3fbdc0cf2ca6ca8b1286e279a53fadb8b157de1187005f35500aed0a94b"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-43826181-d40c-461e-8588-924dddee2d94.png",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "role": "alternative",
+      "qualityReview": {
+        "semantic": "Visually inspected; requested near-distance comparison, active woodworking assembly or map-route travel cue readable.",
+        "canvas": "Square1254×1254 RGBA with genuine transparent exterior and opaque subject pixels.",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "stickers": "Picture-only sun/mountain/palm-tree/star stickers verified; no words, numerals, dates, stamps or calendar."
+      }
+    }
+  ],
+  "checks": {
+    "candidateCount": 9,
+    "subjectCount": 3,
+    "candidatesPerSubject": 3,
+    "ownerFeedbackRound": 2,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "allSquareRgba": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "exteriorCornerAlphaMaximum": 1,
+    "allOriginalGeneratorBytesRetained": true,
+    "allReferenceHashesVerified": true,
+    "priorVersionsPreserved": true,
+    "travelStickersGlyphFree": true,
+    "semanticVisualReview": "All9 inspected; no rejected/corrected versions needed."
+  }
+}

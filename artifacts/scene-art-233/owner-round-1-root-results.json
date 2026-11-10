@@ -1,0 +1,93 @@
+{
+  "issue": 233,
+  "round": 1,
+  "assets": [
+    {
+      "id": "ja-v-0c1b8280f1ee",
+      "text": "日の出",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+      "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153",
+      "prompt": "Use case: precise-object-edit. Create ONE SQUARE 1:1 Japanese vocabulary illustration for sunrise. Image1 is the edit target: REMOVE the entire small LEFT comparison scene; keep only the large RIGHT sunrise landscape, enlarged and centered with generous clear margins. Image2 supplies the small cottage motif for a shared time-of-day family. Make one compact landscape: three gentle rolling green hills and two low rounded foreground shrubs, plus one small cream cottage with a lavender pitched roof at the lower RIGHT, front-facing at a slight three-quarter angle. Keep the cottage modest and correctly proportioned, not dominating the scene. The sun is a SINGLE golden disk low LEFT of the cottage, partly emerging above the middle hill horizon, with a few short rays and one small flat upward-curving plum/gold arrow showing sunrise. No second sun, previous position, ghost, split panel or inset. The sky is pale peach and light warm gold within a clean rounded cloud-like scene silhouette. The cottage windows are unlit. This exact house, hills, shrub positions and scene outline will be retained for evening and night variants. Match the supplied polished friendly illustration: substantial rounded plum contours, restrained internal shading, natural green terrain, calm gold/lavender accents. The entire landscape fits inside the square, about75–80 percent canvas; clear transparent margins on ALL four sides. Genuine alpha0 exterior and transparent gaps; sky remains an intentional opaque part of the compact scene. No aura, exterior gradient, haze, glow, drop shadow, white backdrop, checkerboard, calendar, letters, numerals, text, logos or watermark. SQUARE canvas; single main scene only.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v1.png",
+          "role": "edit target",
+          "sha256": "5108059b89fa97d87a9390f18b892d06965c02d6bf8b413b338c6f8ec0e94f71"
+        },
+        {
+          "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v1.png",
+          "role": "house motif for matching time family",
+          "sha256": "6a63eb1cdd79856d51bcd5e1783d610c26b85b5d06feac5e8c593fa3ad598f29"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-47ab6682-9411-4faf-a76f-0735dc0dd762.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-3534dd7d07d1",
+      "text": "夕方",
+      "version": 2,
+      "path": "artifacts/scene-art-233/ja-v-3534dd7d07d1-v2.png",
+      "sha256": "bfe11501fbec398ce5e22528a0bfeaa5bcd06d9d269f0c04838c620f72614e99",
+      "prompt": "Use case: precise-object-edit. This is a STRICT SAME-SCENE time-of-day edit of the supplied sunrise illustration. Preserve the exact cottage position/shape/size, roof, windows, rolling hills, shrub silhouettes, horizon geometry, rounded sky outline, plum contours, composition and transparent exterior. Do not move, stretch, add or remove any ground feature. Keep SQUARE1:1 canvas and the same generous margins. Only change the time-of-day elements and lighting described below. EARLY EVENING: turn the peach dawn sky into a soft warm pink-to-lavender evening sky inside the existing outline. Keep only ONE low golden sun in exactly its current horizon position, partly behind the same hill. Replace the upward arrow with one similarly small flat DOWNWARD arrow beside the sun; delete upward movement completely. Keep rays modest. Light the cottage window with a warm gold interior glow that remains INSIDE the window frame, not outside the scene. Gently deepen the greens without changing any terrain boundaries. No floating second sun, ghost position, second panel, calendar, words, numerals, exterior glow, haze, wash, shadow, border panel or checkerboard. Same original geometry and true transparent exterior.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+          "role": "exact common landscape edit target",
+          "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d57dd754-6ff6-4748-b374-e12b9f5bd1f3.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "ja-v-ba0c8a160c33",
+      "text": "夜",
+      "version": 1,
+      "path": "artifacts/scene-art-233/ja-v-ba0c8a160c33-family-v1.png",
+      "sha256": "fc2c2914e58d6c6a9224d2de8965fd19687d41233b5a5247788bf5b0870e8e98",
+      "prompt": "Use case: precise-object-edit. This is a STRICT SAME-SCENE time-of-day edit of the supplied sunrise illustration. Preserve the exact cottage position/shape/size, roof, windows, rolling hills, shrub silhouettes, horizon geometry, rounded sky outline, plum contours, composition and transparent exterior. Do not move, stretch, add or remove any ground feature. Keep SQUARE1:1 canvas and the same generous margins. Only change the time-of-day elements and lighting described below. NIGHT: remove the sun, all sun rays and the motion arrow completely, filling their old positions with uninterrupted night sky. Add one golden crescent moon higher in the upper-left sky and exactly three small gold stars. Deep violet sky contained strictly inside the unchanged rounded scene outline; softly darkened blue-green hills/shrubs with the same boundaries. Light the cottage window warm gold inside its frame. Preserve the modest small cottage, roof and house geometry exactly; do NOT replace it with a larger house or change the landscape. No sun, directional arrow, motion ghost, second panel, words, numerals, calendar, exterior glow/haze/wash/drop-shadow or checkerboard. All exterior pixels genuinely transparent.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-0c1b8280f1ee-v2.png",
+          "role": "exact common landscape edit target",
+          "sha256": "483faa971251fb9955d5c2c64a3df95917aeb7892a49b2270023b54fefe0c153"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-d9ee0658-c48f-43c1-b798-535c6a905dd8.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 1,
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "family": "time-of-day"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { beforeEach, expect, it, vi } from 'vitest';
+import { OfflinePanel } from './OfflinePanel';
+import { offlineRequest, downloadSize } from '../offline/client';
+vi.mock('../offline/client', () => ({ offlineRequest: vi.fn(), downloadSize: vi.fn() }));
+const empty = { ready: false, completed: 0, total: 4, bytes: 0 };
+const ready = { ready: true, completed: 4, total: 4, bytes: 1_000_000 };
+const urls = ['audio/word.mp3'];
+const key = 'kikimashta-offline-enabled-v1';
+beforeEach(() => {
+  localStorage.clear();
+  vi.mocked(offlineRequest).mockReset().mockResolvedValue(empty);
+  vi.mocked(downloadSize).mockReset().mockResolvedValue(1_000_000);
+});
+it('shows the size warning before enabling, then saves readiness only when preparation finishes', async () => {
+  let estimate!: (size: number) => void;
+  vi.mocked(downloadSize).mockReturnValue(new Promise(resolve => { estimate = resolve; }));
+  const onReady = vi.fn();
+  render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  const checkbox = screen.getByRole('checkbox', { name: 'Enable offline practice' });
+  expect(checkbox).toBeDisabled();
+  expect(screen.getByText('Checking download size…')).toBeInTheDocument();
+  expect(offlineRequest).not.toHaveBeenCalledWith('DOWNLOAD', expect.anything(), expect.anything());
+  await act(async () => estimate(100_000_000));
+  expect(screen.getByText('About 100.0 MB of storage.')).toBeInTheDocument();
+  let finish!: (value: typeof ready) => void;
+  vi.mocked(offlineRequest).mockImplementationOnce(async (_type, _urls, progress) => {
+    progress?.({ ...empty, completed: 2 });
+    return new Promise(resolve => { finish = resolve; });
+  });
+  fireEvent.click(checkbox);
+  expect(checkbox).toBeChecked(); expect(checkbox).toBeDisabled();
+  await screen.findByText('Downloading 2 of 4 files…');
+  expect(onReady).not.toHaveBeenCalledWith(true);
+  expect(localStorage.getItem(key)).toBe('true');
+  await act(async () => finish(ready));
+  expect(onReady).toHaveBeenLastCalledWith(true);
+  expect(screen.getByText('Selected packs are ready for offline practice.')).toBeInTheDocument();
+});
+it('keeps the preference enabled after a failed download and supports an explicit retry', async () => {
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  const checkbox = screen.getByRole('checkbox'); await waitFor(() => expect(checkbox).toBeEnabled());
+  vi.mocked(offlineRequest).mockResolvedValueOnce({ ...empty, error: 'Storage is full.' });
+  fireEvent.click(checkbox);
+  expect(await screen.findByRole('alert')).toHaveTextContent('Storage is full.');
+  expect(checkbox).toBeChecked(); expect(onReady).toHaveBeenLastCalledWith(false);
+  vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  fireEvent.click(screen.getByRole('button', { name: 'Retry download' }));
+  await waitFor(() => expect(onReady).toHaveBeenLastCalledWith(true));
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+});
+it('recognizes existing downloads and can disable/remove them while offline', async () => {
+  vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online={false} open onReady={onReady}/>);
+  const checkbox = screen.getByRole('checkbox');
+  await waitFor(() => expect(checkbox).toBeChecked());
+  expect(localStorage.getItem(key)).toBe('true');
+  expect(screen.getByText('About 1.0 MB of storage.')).toBeInTheDocument();
+  fireEvent.click(checkbox);
+  await waitFor(() => expect(offlineRequest).toHaveBeenCalledWith('REMOVE', urls, expect.any(Function)));
+  await waitFor(() => expect(checkbox).not.toBeChecked());
+  expect(localStorage.getItem(key)).toBe('false'); expect(onReady).toHaveBeenLastCalledWith(false);
+});
+it('does not re-enable an explicitly disabled preference from cached files', async () => {
+  localStorage.setItem(key, 'false'); vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  await screen.findByRole('button', { name: 'Remove remaining downloads' });
+  expect(screen.getByRole('checkbox')).not.toBeChecked(); expect(onReady).not.toHaveBeenCalledWith(true);
+});
+it('retains enabled intent for a new pack selection and requires an explicit download', async () => {
+  localStorage.setItem(key, 'true');
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  expect(screen.getByRole('checkbox')).toBeChecked();
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Download selected packs' })).toBeEnabled());
+  expect(onReady).toHaveBeenLastCalledWith(false);
+  expect(offlineRequest).not.toHaveBeenCalledWith('DOWNLOAD', expect.anything(), expect.anything());
+});
+it('does not get stuck busy when the connection drops during preparation', async () => {
+  const onReady = vi.fn(); const view = render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  const checkbox = screen.getByRole('checkbox'); await waitFor(() => expect(checkbox).toBeEnabled());
+  let reject!: (reason: Error) => void;
+  vi.mocked(offlineRequest).mockReturnValueOnce(new Promise((_resolve, fail) => { reject = fail; }));
+  fireEvent.click(checkbox);
+  view.rerender(<OfflinePanel urls={urls} online={false} open onReady={onReady}/>);
+  await act(async () => reject(new Error('Connection lost.')));
+  expect(await screen.findByRole('alert')).toHaveTextContent('Connection lost.');
+  expect(checkbox).toBeEnabled(); expect(onReady).toHaveBeenLastCalledWith(false);
+  expect(screen.getByRole('button', { name: 'Retry download' })).toBeDisabled();
+});
+it('ignores an old selection download after the settings scope is replaced', async () => {
+  const oldReady = vi.fn(), nextReady = vi.fn();
+  const view = render(<OfflinePanel key="old" urls={urls} online open onReady={oldReady}/>);
+  await waitFor(() => expect(screen.getByRole('checkbox')).toBeEnabled());
+  let finish!: (value: typeof ready) => void;
+  vi.mocked(offlineRequest).mockReturnValueOnce(new Promise(resolve => { finish = resolve; }));
+  fireEvent.click(screen.getByRole('checkbox'));
+  view.rerender(<OfflinePanel key="new" urls={['audio/other.mp3']} online open onReady={nextReady}/>);
+  await act(async () => finish(ready));
+  expect(oldReady).not.toHaveBeenCalledWith(true); expect(nextReady).not.toHaveBeenCalledWith(true);
+});
+it('reports pending preparation to the current equivalent selection', async () => {
+  const oldReady = vi.fn(), nextReady = vi.fn();
+  const view = render(<OfflinePanel urls={urls} online open onReady={oldReady}/>);
+  await waitFor(() => expect(screen.getByRole('checkbox')).toBeEnabled());
+  let finish!: (value: typeof ready) => void;
+  vi.mocked(offlineRequest).mockReturnValueOnce(new Promise(resolve => { finish = resolve; }));
+  fireEvent.click(screen.getByRole('checkbox'));
+  view.rerender(<OfflinePanel urls={[...urls]} online open onReady={nextReady}/>);
+  await act(async () => finish(ready));
+  expect(nextReady).toHaveBeenLastCalledWith(true);
+  expect(oldReady).not.toHaveBeenCalledWith(true);
+});
+it('invalidates readiness and offers preparation again after verification fails', async () => {
+  localStorage.setItem(key, 'true'); vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  await screen.findByText('Selected packs are ready for offline practice.');
+  vi.mocked(offlineRequest).mockRejectedValueOnce(new Error('Downloads could not be checked.'));
+  fireEvent(window, new Event('focus'));
+  await screen.findByText('Downloads could not be checked.');
+  expect(screen.queryByText('Selected packs are ready for offline practice.')).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Download selected packs' })).toBeEnabled();
+  expect(onReady).toHaveBeenLastCalledWith(false);
+});
+it('loads size only when settings are opened and prevents new downloads offline', async () => {
+  const onReady = vi.fn(); const view = render(<OfflinePanel urls={urls} online open={false} onReady={onReady}/>);
+  expect(downloadSize).not.toHaveBeenCalled();
+  view.rerender(<OfflinePanel urls={urls} online={false} open onReady={onReady}/>);
+  expect(screen.getByRole('checkbox')).toBeDisabled(); expect(downloadSize).not.toHaveBeenCalled();
+});
+it.each(['error result', 'rejection'])('keeps removal retry and explicit disable after a failed removal (%s)', async failure => {
+  vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  const onReady = vi.fn(); render(<OfflinePanel urls={urls} online open onReady={onReady}/>);
+  const checkbox = screen.getByRole('checkbox'); await waitFor(() => expect(checkbox).toBeChecked());
+  if (failure === 'rejection') vi.mocked(offlineRequest).mockRejectedValueOnce(new Error('Removal failed.'));
+  else vi.mocked(offlineRequest).mockResolvedValueOnce({ ...empty, error: 'Removal failed.' });
+  fireEvent.click(checkbox); await screen.findByRole('alert');
+  expect(screen.getByRole('button', { name: 'Remove remaining downloads' })).toBeEnabled();
+  vi.mocked(offlineRequest).mockResolvedValueOnce(ready);
+  await act(async () => { fireEvent(window, new Event('focus')); });
+  expect(screen.getByRole('button', { name: 'Remove remaining downloads' })).toBeEnabled();
+  expect(checkbox).not.toBeChecked(); expect(onReady).toHaveBeenLastCalledWith(false);
+  vi.mocked(offlineRequest).mockResolvedValueOnce(empty);
+  fireEvent.click(screen.getByRole('button', { name: 'Remove remaining downloads' }));
+  await waitFor(() => expect(screen.queryByRole('button', { name: 'Remove remaining downloads' })).not.toBeInTheDocument());
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  expect(localStorage.getItem(key)).toBe('false');
+});

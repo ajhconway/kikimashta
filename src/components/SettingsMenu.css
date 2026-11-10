@@ -1,0 +1,47 @@
+.settings-trigger {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 2px solid rgba(74, 38, 126, .14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .82);
+  color: var(--ink);
+}
+.settings-trigger svg { stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.settings-trigger:hover { background: #fff; border-color: rgba(74, 38, 126, .35); }
+.settings-trigger ~ .language-picker { min-width: 0; margin-left: auto; }
+.settings-trigger ~ .language-picker select { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+.settings-dialog {
+  width: min(400px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 3px solid var(--purple-dark);
+  border-radius: 24px;
+  background: #ffe4cc;
+  color: var(--ink);
+  text-align: left;
+}
+.settings-dialog::backdrop { background: #38205266; }
+.settings-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.settings-dialog-header h2 { margin: 0; color: var(--purple-dark); font-size: 25px; letter-spacing: -.5px; }
+.settings-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid var(--purple-dark);
+  border-radius: 14px;
+  background: #ffcee2;
+  color: var(--purple-dark);
+  font-size: 28px;
+}
+.settings-close:hover { background: #ffbddb; }
+.settings-dialog-content { min-width: 0; }

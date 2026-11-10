@@ -1,0 +1,24 @@
+{
+  "issue": 233,
+  "status": "activated-pending-merge-and-publication",
+  "releaseIds": 44,
+  "uniqueSourceImages": 43,
+  "activeArtworkCount": 264,
+  "generatedVersionsPreserved": 101,
+  "ownerStatement": "Great, let's ship these. Auto-merge.",
+  "releasePlan": "artifacts/scene-art-233/release-plan.json",
+  "invariants": "artifacts/scene-art-233/release-invariant-verification.json",
+  "localValidation": {
+    "baseRevision": "cb53bddab237e3110cfb78ddde9eacced6e59218",
+    "configuredCheck": "npm run check: passed lint,748 Vitest tests,473 Node tests,32 content Python tests,27 artwork Python tests,metadata/neighbors checks andproductionbuild.",
+    "finalFocusedValidation": "136 activation/source/production-artwork tests passed after duplicate-version approval hardening.",
+    "browserCommand": "VITE_SUPABASE_URL=https://kikimashta-sync-test.supabase.co VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_kikimashta_browser_test E2E_PORT=4247 npm run test:e2e -- --workers=4",
+    "browserResult": "120/120 passed across Chromium andmobileWebKit, zero skips/retries; all44newdeliveryPNGsnativedecoded and8currentlibrarycardsexercised perengine.",
+    "independentAudit": "No blocking findings; exact44selectionbindings/all101generatedversions/264mappings/invariants verified."
+  },
+  "remaining": [
+    "Required current-headCI/Codexreview after latest-main integration.",
+    "Auto-merge andpublication/live44-image hash verification.",
+    "ActualiPhone acceptance remainsin#6."
+  ]
+}

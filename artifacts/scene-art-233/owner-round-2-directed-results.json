@@ -1,0 +1,347 @@
+{
+  "issue": 233,
+  "round": 2,
+  "tool": "built-in image_gen",
+  "status": "complete-pending-owner-review",
+  "requests": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 3,
+      "concept": "Keep unfolding map; add obvious outward motion cues to both hands/map edges.",
+      "basePath": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+      "baseSha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the exact ONE MAP and TWO HANDS, accordion folds and river/roads/terrain unchanged. Make the outward unfolding action MUCH MORE OBVIOUS: replace the tiny nondescript strokes beside hands with TWO CLEAR SHORT GOLD ARROWS, one immediately outside the left hand pointing LEFT and one immediately outside the right hand pointing RIGHT. Arrowheads point away from map center, balanced size, clean plum outlines. Add one or two tiny outward speed strokes behind each hand if needed. Both hands still grip map edges; no duplicate/ghost map or hand. Keep all arrows within generous square transparent margins.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+          "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 3,
+      "concept": "Furnished wide/open versus narrow/cramped rooms with windows, real interior details and matching furniture scale.",
+      "basePath": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+      "baseSha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the existing paired narrow-left and wide-right rooms, same-size sofa/table in both and attention rays on WIDE RIGHT ROOM. Add matching realistic INTERIOR DETAILS to BOTH rooms: one simple square window centered on each back wall with pale blue panes and a small lavender curtain; slim baseboards where walls meet floor; restrained warm wooden floorboards in coherent perspective; a small matching framed abstract picture beside each window. These should now read as proper comfortable rooms, not empty boxes. Maintain SAME furniture/window sizes, wall height/depth and decor counts across pair; only room WIDTH/walking space differs. Do not fill the wide room with more furniture, enlarge objects, alter attention target or change layout. No words, extra rays, people or backdrop outside room silhouettes.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+          "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 3,
+      "concept": "Align both front seats on the same transverse row; retain improved car proportions.",
+      "basePath": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+      "baseSha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the improved compact hatchback exterior/roof/wheelbase, cutaway, dashboard and rear bench exactly. Correct ONLY the FRONT SEAT PAIR: driver and front-passenger seats must sit SIDE BY SIDE on the SAME TRANSVERSE FRONT ROW, with seat backs aligned at the same fore-aft position, matching height/tilt and headrest height. In this almost side-on cutaway they should OVERLAP IN DEPTH: the far front seat is partly occluded behind the near front seat, visible slightly higher/left only due perspective, not located farther back toward rear bench. Align cushion leading edges and backrest bases along the SAME front-row plane; no longitudinally staggered tandem front seats. Keep rear bench clearly behind the front pair, adequate legroom, two front seats total. Preserve all other car details and cabin target rays.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+          "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 3,
+      "concept": "Increase arrow uniformly modestly, about20%, preserving insertion scene.",
+      "basePath": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+      "baseSha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD DOWN ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and downward direction. Keep arrow beside the same ball at left with a clean gap from hand/ball/rim, moving slightly left only if necessary. Preserve exact ONE HAND,ONE BALL,ONE BOX, hand contact, ball-in-rim position, box geometry and entire composition unchanged. No extra arrow, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 3,
+      "concept": "Increase arrow uniformly modestly, about20%, preserving removal scene and matching insertion arrow weight.",
+      "basePath": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+      "baseSha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD UP ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and upward direction. Match the insertion counterpart's arrow size/visual weight. Keep arrow to left of same lifted ball with a clean gap from hand/ball/rim, moving slightly left only if needed. Preserve exact ONE HAND,ONE BALL,ONE BOX, lifted ball's clear position above rim, empty box, geometry and whole composition unchanged. No extra arrows, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+          "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 5,
+      "concept": "Adapt alternativeB bottle upright: a hand setting a toy figurine upright instead, clear upright action.",
+      "basePath": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+      "baseSha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Replace ONLY the lavender capped BOTTLE with a small recognizable TOY ROBOT FIGURINE being SET UPRIGHT by the same single human hand. Robot has rounded gold head, friendly simple face, lavender torso, two short arms and two distinct feet. The hand naturally grips its torso from the same left side. Figurine starts slightly tilted as the bottle was; one foot touches the tabletop and the other is about to settle, showing the hand straightening it to stand on its own. Keep the existing curved upward arrow at right to indicate setting upright, same table, hand/sleeve, proportions and viewpoint. One figurine only, no bottle cap, spare pieces, duplicate/ghost pose, separate stand or extra hand. Friendly toy, not a real person. All complete on square transparency.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+          "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 5,
+      "concept": "Adapt alternativeA pedestrian stopping at crossing; rotate zebra stripes to correct traffic geometry.",
+      "basePath": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+      "baseSha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Correct ONLY the orientation of the WHITE ZEBRA-CROSSING BARS. Keep this stopped person on LEFT CURB facing RIGHT, the RED pedestrian signal, curb, road patch, colors and composition unchanged. Traffic on this road travels roughly TOP-TO-BOTTOM, parallel to the curb edge. Therefore each WHITE BAR must have its LONG AXIS TOP-TO-BOTTOM, PARALLEL TO ROAD TRAFFIC AND THE CURB, rendered as a narrow perspective parallelogram extending from far road edge toward near road edge. Arrange FOUR such parallel white bars side-by-side across the road from LEFT TO RIGHT, the pedestrian's curb-to-curb crossing direction. The four bars collectively form the crossing ACROSS traffic. Remove the old horizontal bars entirely; do not make long white bars running in the pedestrian direction. Person remains STOPPED before road at red light, not walking into traffic. No added road/sign/arrow/ghost person.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+          "sha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "transparent_background": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the exact ONE MAP and TWO HANDS, accordion folds and river/roads/terrain unchanged. Make the outward unfolding action MUCH MORE OBVIOUS: replace the tiny nondescript strokes beside hands with TWO CLEAR SHORT GOLD ARROWS, one immediately outside the left hand pointing LEFT and one immediately outside the right hand pointing RIGHT. Arrowheads point away from map center, balanced size, clean plum outlines. Add one or two tiny outward speed strokes behind each hand if needed. Both hands still grip map edges; no duplicate/ghost map or hand. Keep all arrows within generous square transparent margins.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
+          "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-243a5db7-d478-4724-ac69-3d32c739edea.png",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+      "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Exact map and hand composition retained; clear gold outward arrows on left/right sides plus motion strokes."
+    },
+    {
+      "id": "ja-v-bb8fc62cf23d",
+      "text": "広い",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the existing paired narrow-left and wide-right rooms, same-size sofa/table in both and attention rays on WIDE RIGHT ROOM. Add matching realistic INTERIOR DETAILS to BOTH rooms: one simple square window centered on each back wall with pale blue panes and a small lavender curtain; slim baseboards where walls meet floor; restrained warm wooden floorboards in coherent perspective; a small matching framed abstract picture beside each window. These should now read as proper comfortable rooms, not empty boxes. Maintain SAME furniture/window sizes, wall height/depth and decor counts across pair; only room WIDTH/walking space differs. Do not fill the wide room with more furniture, enlarge objects, alter attention target or change layout. No words, extra rays, people or backdrop outside room silhouettes.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v2.png",
+          "sha256": "6e7f7da59469df1399745741ab18109e74788811300dfbdc9a6f02332667f270",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-1f68c1bf-85e3-42fd-aaa4-ca8e275b3191.png",
+      "path": "artifacts/scene-art-233/ja-v-bb8fc62cf23d-v3.png",
+      "sha256": "00d048fddfe08f1cc7fc942f242d44191ffdbd4b5469ee9def15abb82f8f1e9d",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Matching furnished rooms now have windows/curtains, framed pictures, floorboards and baseboards; wide-right room keeps attention cue and open floor."
+    },
+    {
+      "id": "ja-v-dd1d6132fe3c",
+      "text": "車内",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the improved compact hatchback exterior/roof/wheelbase, cutaway, dashboard and rear bench exactly. Correct ONLY the FRONT SEAT PAIR: driver and front-passenger seats must sit SIDE BY SIDE on the SAME TRANSVERSE FRONT ROW, with seat backs aligned at the same fore-aft position, matching height/tilt and headrest height. In this almost side-on cutaway they should OVERLAP IN DEPTH: the far front seat is partly occluded behind the near front seat, visible slightly higher/left only due perspective, not located farther back toward rear bench. Align cushion leading edges and backrest bases along the SAME front-row plane; no longitudinally staggered tandem front seats. Keep rear bench clearly behind the front pair, adequate legroom, two front seats total. Preserve all other car details and cabin target rays.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v2.png",
+          "sha256": "bd74280c4a13d5d0025d90f3220e5aaba83e00c7b81c8370951376d7e2677f18",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ddd0d04b-273c-4055-ae1f-2f1bb0284c52.png",
+      "path": "artifacts/scene-art-233/ja-v-dd1d6132fe3c-v3.png",
+      "sha256": "0dcf9367c4163fe594a2b72320b785cb5eb7b6ad6ea9cd4b6cbfa0f084d2096b",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Front seats brought together with aligned cushion bases and headrest heights on the same front row; hatchback proportions/rear bench unchanged."
+    },
+    {
+      "id": "ja-v-b5e9e035a8be",
+      "text": "入れる",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD DOWN ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and downward direction. Keep arrow beside the same ball at left with a clean gap from hand/ball/rim, moving slightly left only if necessary. Preserve exact ONE HAND,ONE BALL,ONE BOX, hand contact, ball-in-rim position, box geometry and entire composition unchanged. No extra arrow, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v2.png",
+          "sha256": "fe957b082fc17bdf78039da3a27c800b8dfe6585756610a6f09a1c56d4426628",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-dd3fc960-dbf7-4074-ae3e-3db0bcd022b0.png",
+      "path": "artifacts/scene-art-233/ja-v-b5e9e035a8be-v3.png",
+      "sha256": "6866d78bea40a5f626426ea763703372a8e8342c5b9889f739993f73c799ac59",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Down-arrow enlarged modestly; exact one-hand ball/box insertion retained with no ghost."
+    },
+    {
+      "id": "ja-v-a001b24baf12",
+      "text": "出す",
+      "version": 3,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Change ONLY the existing short GOLD UP ARROW to be modestly larger: scale BOTH length and width uniformly by about20percent, including arrowhead and shaft, keeping its shape, fill, plum-outline weight and upward direction. Match the insertion counterpart's arrow size/visual weight. Keep arrow to left of same lifted ball with a clean gap from hand/ball/rim, moving slightly left only if needed. Preserve exact ONE HAND,ONE BALL,ONE BOX, lifted ball's clear position above rim, empty box, geometry and whole composition unchanged. No extra arrows, ghost ball, new objects or perspective change.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v2.png",
+          "sha256": "b525a964e16e1a9a9a5f09a3c8280ad9c76d4df8aca74b475648fbcf8358f023",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-ce2c8734-5b7e-40b8-a145-6063074f5a6e.png",
+      "path": "artifacts/scene-art-233/ja-v-a001b24baf12-v3.png",
+      "sha256": "213390eb616610c323dff6b2c72476d71c5e3657f6bca8da91850d77bcf4e280",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Up-arrow enlarged modestly with matching design weight; exact one-hand ball/box removal retained with no ghost."
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 5,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Replace ONLY the lavender capped BOTTLE with a small recognizable TOY ROBOT FIGURINE being SET UPRIGHT by the same single human hand. Robot has rounded gold head, friendly simple face, lavender torso, two short arms and two distinct feet. The hand naturally grips its torso from the same left side. Figurine starts slightly tilted as the bottle was; one foot touches the tabletop and the other is about to settle, showing the hand straightening it to stand on its own. Keep the existing curved upward arrow at right to indicate setting upright, same table, hand/sleeve, proportions and viewpoint. One figurine only, no bottle cap, spare pieces, duplicate/ghost pose, separate stand or extra hand. Friendly toy, not a real person. All complete on square transparency.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
+          "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-4010385a-8c7d-4219-aa0d-45e85458ef56.png",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+      "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Bottle replaced by one gold/lavender robot toy figurine; hand grips torso and tilts it upright onto table, original curved arrow preserved."
+    },
+    {
+      "id": "ja-v-bd365f430f35",
+      "text": "止まる",
+      "version": 5,
+      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Correct ONLY the orientation of the WHITE ZEBRA-CROSSING BARS. Keep this stopped person on LEFT CURB facing RIGHT, the RED pedestrian signal, curb, road patch, colors and composition unchanged. Traffic on this road travels roughly TOP-TO-BOTTOM, parallel to the curb edge. Therefore each WHITE BAR must have its LONG AXIS TOP-TO-BOTTOM, PARALLEL TO ROAD TRAFFIC AND THE CURB, rendered as a narrow perspective parallelogram extending from far road edge toward near road edge. Arrange FOUR such parallel white bars side-by-side across the road from LEFT TO RIGHT, the pedestrian's curb-to-curb crossing direction. The four bars collectively form the crossing ACROSS traffic. Remove the old horizontal bars entirely; do not make long white bars running in the pedestrian direction. Person remains STOPPED before road at red light, not walking into traffic. No added road/sign/arrow/ghost person.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v2.png",
+          "sha256": "e7138db7b9ace2bd043feca5ac2cc246d29936f8606bf94254e7daa2e8400318",
+          "role": "edit target for single owner-directed refinement"
+        }
+      ],
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-fc339970-21bc-4919-be52-71b7a5fe2cf1.png",
+      "path": "artifacts/scene-art-233/ja-v-bd365f430f35-v5.png",
+      "sha256": "2fcff6c32b802fa34fc56f3dcfe5210f748f5ec8d7a280b9fad5616894cb43a4",
+      "tool": "built-in image_gen",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      "status": "generated-pending-owner-review",
+      "ownerFeedbackRound": 2,
+      "visualReview": "Zebra now has four long top-to-bottom white bars, parallel to road traffic/curb, repeated left-to-right across pedestrian direction; stopped person/red signal unchanged."
+    }
+  ],
+  "checks": {
+    "assets": 7,
+    "exactPlanVersions": true,
+    "allSquareRGBA": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "selectedAndOriginalSha256": "All7 saved PNGs match preserved built-in generator originals.",
+    "referenceSha256": "All7 exact edit-target hashes verified.",
+    "exteriorCornerAlphaExceptions": [],
+    "crossingGeometry": "Each white bar long axis follows road traffic/curb; four bars collectively span left-to-right curb-to-curb pedestrian direction.",
+    "preservation": "All earlier targets remain unchanged; each actual prompt and raw source path preserved.",
+    "runtime": "Worker changed only seven requested PNGs and this result record; no shared metadata or runtime files."
+  }
+}

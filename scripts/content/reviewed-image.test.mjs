@@ -121,3 +121,38 @@ for (const mode of ['file', 'directory']) test(`picture review rejects ${mode} s
   symlinkSync(join(f.root, mode === 'file' ? 'outside/ja-v-a-v1.png' : 'outside'), join(f.root, path))
   assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /symlink/)
 })
+
+for (const filename of ['ja-v-e9ad09158eb3-v7.png', 'ja-v-ba0c8a160c33-family-v1.png', '179-puppy-v2.png', '184-few-v2.png']) test(`scene review resolves hash-bound source ${filename}`, t => {
+  const f = fixture(t)
+  const reviewPath = `artifacts/scene-art-233/${filename}`
+  f.put(reviewPath)
+  assert.deepEqual(reviewedImage({ ...f.args, reviewPath }), { bytes: f.bytes, path: reviewPath })
+  f.put(reviewPath, 'changed artwork')
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /hash or size mismatch/)
+})
+
+for (const reviewPath of [
+  'artifacts/scene-art-234/ja-v-a-v1.png',
+  'artifacts/scene-art-233/../ja-v-a-v1.png',
+  'artifacts/scene-art-233/nested/ja-v-a-v1.png',
+  'artifacts/scene-art-233/ja-v-a-v0.png',
+  'artifacts/scene-art-233/ja-v-a-family-v0.png',
+  'artifacts/scene-art-233/ja-v-a-v1.jpg',
+  'artifacts/scene-art-233/180-other-v2.png',
+  'artifacts/scene-art-233/179-puppy-v3.png',
+  'artifacts/scene-art-233/references/style-object.png',
+]) test(`scene review rejects unapproved source pattern: ${reviewPath}`, t => {
+  const f = fixture(t)
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /Unsafe artwork source/)
+})
+
+for (const mode of ['file', 'directory']) test(`scene review rejects ${mode} symlinks`, t => {
+  const f = fixture(t)
+  const reviewPath = 'artifacts/scene-art-233/179-puppy-v2.png'
+  f.put('outside/179-puppy-v2.png')
+  f.put(reviewPath)
+  const path = mode === 'file' ? reviewPath : 'artifacts/scene-art-233'
+  rmSync(join(f.root, path), { recursive: true, force: true })
+  symlinkSync(join(f.root, mode === 'file' ? 'outside/179-puppy-v2.png' : 'outside'), join(f.root, path))
+  assert.throws(() => reviewedImage({ ...f.args, reviewPath }), /symlink/)
+})

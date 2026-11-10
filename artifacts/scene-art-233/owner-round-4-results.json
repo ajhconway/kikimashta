@@ -1,0 +1,42 @@
+{
+  "issue": 233,
+  "round": 4,
+  "assets": [
+    {
+      "issue": 233,
+      "round": 4,
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 7,
+      "prompt": "Use case: precise-object-edit. Input image1 is the EXACT EDIT TARGET: a rigid golden ceramic bear permanently attached to an oval lavender plinth, held by one hand over a wooden table, with a curved upward arrow at right. Correct ONLY the lean direction of the rigid bear-plus-base unit. Tilt the WHOLE rigid statue AND attached base clearly TO THE RIGHT, about25 degrees CLOCKWISE from upright: bear HEAD and torso should be noticeably to the RIGHT of the center of its base. The plinth's LEFT edge must be HIGHER; its RIGHT edge touches the horizontal tabletop as the pivot. The bear must remain rigidly perpendicular to its own tilted base, with no flexible joints. The hand from the LEFT holds the figurine to stand it upright. Keep the single arrow on the RIGHT curving UP and LEFT, indicating COUNTERCLOCKWISE rotation from this right-leaning pose toward vertical upright. This reverses the current left-leaning base orientation; DO NOT keep the left base edge down/right edge raised. Preserve exact bear identity, face, purple bow, opaque shiny ceramic surface, one-piece non-posable sculpted paws/legs, permanently attached broad oval base, hand/sleeve, tabletop, plum outlines, colors, compact framing and square1:1 canvas. Keep the table perfectly horizontal. One figurine only, no ghost pose, no duplicate, no text, labels, rays, calendar, frame, checkerboard, watermark, outside shadow or glow. Genuinely transparent exterior with generous clear margins.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+          "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+          "role": "exact edit target"
+        }
+      ],
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v7.png",
+      "sha256": "45033ac04dcc1cb3a76523e349e788440d2952309c22b2158ff71c1eb9fd4948",
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9b8f5369-daf0-4fbc-a445-acf2d332a4cc.png",
+      "tool": "built-in image_gen",
+      "ownerFeedbackRound": 4,
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}
