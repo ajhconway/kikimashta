@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-gallery",
+  "slug": "gallery",
+  "version": 1,
+  "path": "originals/gallery-v1.png",
+  "sha256": "f9940599d31b6d470512c2ca68993e575587ea50ee4e75569ec4aef4825592b6",
+  "promptSha256": "0df69e77decc2b9020fa6fa5a18d0e6012f928a7ebb360f9fa089d995c84cbc7",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-3f529f17-fe42-4dde-acb2-cfeb4ab957a4.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

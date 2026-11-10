@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-guitar",
+  "slug": "guitar",
+  "version": 1,
+  "path": "originals/guitar-v1.png",
+  "sha256": "2e2a64aa5e1994cf603ecce3d7bcdc1bcf28e3e55849a70d4a4fbce5d372bf27",
+  "promptSha256": "f2d28f6580bc0fbd61e2d1f54a25ac3a27aa6746dc9977bad06e9ed3db0c31c4",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-22f3a1fa-7762-47e9-80d6-d117c318f9e3.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

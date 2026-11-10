@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-bookstore",
+  "slug": "bookstore",
+  "version": 1,
+  "path": "originals/bookstore-v1.png",
+  "sha256": "e5efaac8d9e7639096a9a7ba7b502dea85459c0de77dc81fcdd717ceae632a76",
+  "promptSha256": "7670f4facf46e35c12a3d3a0d4594d34bea9d8542c29104a9bb4d256a2aff441",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-a59695c2-6bc9-4778-96f4-b171632a660c.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

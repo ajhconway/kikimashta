@@ -1,0 +1,449 @@
+{
+  "issue": 243,
+  "tool": "built-in image_gen",
+  "draftSha256": "2ebd18782feba9fdd90909ace098002a893fe4b8e2d69f8ab05e7c8e6e319745",
+  "requests": [
+    {
+      "id": "es-419-travel-theater",
+      "slug": "theater",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: teatro — Theater.\nPrimary request: A cutaway theater auditorium, tiered purple seats facing a distant warmly lit proscenium. Emphasize the whole indoor venue, not a standalone stage.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-gallery",
+      "slug": "gallery",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: galería — Art gallery.\nPrimary request: An airy cutaway art gallery corner with three different framed abstract paintings hung on white walls and one low bench. No ticket desk or books.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-bookstore",
+      "slug": "bookstore",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: librería — Bookstore.\nPrimary request: A compact open-front bookshop with well-stocked bookshelves and a checkout counter, two upright books on display. Clearly a shop, no readable signs.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-concert",
+      "slug": "concert",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: concierto — Concert.\nPrimary request: A small band of three friendly adult human performers with a guitar, keyboard and microphone under colorful concert spotlights, with a few audience silhouettes in foreground. A live music performance, no cats.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-festival",
+      "slug": "festival",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: festival — Festival.\nPrimary request: A cheerful small outdoor festival scene with two colorful vendor tents, a string of triangular pennants and three adult people enjoying live music and dancing on an open lawn. No text, no paper-cut decorations.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-stage",
+      "slug": "stage",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: escenario — Stage.\nPrimary request: One empty raised wooden performance stage with visible front edge and three shallow steps, overhead stage lights and two short side curtains. No audience seats, no performers; stage platform is the clear subject.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-painting",
+      "slug": "painting",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: cuadro — Framed painting.\nPrimary request: One complete rectangular framed landscape painting with a simple blue lake, green hill and sun, viewed nearly straight on. Clearly a finished framed picture, no easel.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-sculpture",
+      "slug": "sculpture",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: escultura — Sculpture.\nPrimary request: One small carved pale stone classical human head-and-shoulders bust on a short square plinth. Rounded stylized sculpture, no living person.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-mural",
+      "slug": "mural",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: mural — Mural.\nPrimary request: One low wide freestanding brick wall whose front face is painted edge-to-edge with a bold colorful stylized sun, bird and flowers. The brick edges remain visible, clearly a mural on a wall, no frame.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-paintbrush",
+      "slug": "paintbrush",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: pincel — Paintbrush.\nPrimary request: One large artists paintbrush shown diagonally, long lavender handle, silver ferrule and tapered soft bristles tipped with a little turquoise paint. Single object, no palette.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-easel",
+      "slug": "easel",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: caballete — Easel.\nPrimary request: One complete freestanding wooden A-frame artists easel with its rear leg visible and an empty cream canvas resting on its ledge. The easel legs and supporting structure are prominent. No painted image, no brushes.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-guitar",
+      "slug": "guitar",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: guitarra — Guitar.\nPrimary request: One warm wooden six-string acoustic guitar, full instrument visible upright at a slight angle. Clear curved body, round sound hole, bridge, six strings and six tuning pegs.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-piano",
+      "slug": "piano",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: piano — Piano.\nPrimary request: One small black grand piano with its lid raised and a clearly visible neat black-and-white keyboard. Whole instrument with stable legs. No bench, no player.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-violin",
+      "slug": "violin",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: violín — Violin.\nPrimary request: One warm brown wooden violin upright at a slight angle with four strings, chin rest, curved waist and two f-holes; one slim bow beside it.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-trumpet",
+      "slug": "trumpet",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: trompeta — Trumpet.\nPrimary request: One gleaming warm golden brass trumpet viewed in three-quarter side view, flared bell, three valves and compact looped tubing. No player.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-drum",
+      "slug": "drum",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: tambor — Drum.\nPrimary request: One round cylindrical marching drum with a taut cream top, purple shell and simple silver tension lugs. Two wooden drumsticks rest crossed on the top. No drum kit.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-flute",
+      "slug": "flute",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: flauta — Flute.\nPrimary request: One straight silver transverse concert flute at a gentle diagonal, with clearly spaced round keys and a side embouchure hole near its closed head. Complete instrument, no player, no recorder mouthpiece.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-microphone",
+      "slug": "microphone",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: micrófono — Microphone.\nPrimary request: One handheld microphone at a gentle diagonal with a silver rounded mesh grille and short purple handle. No stand, no singer.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-speaker",
+      "slug": "speaker",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: altavoz — Loudspeaker.\nPrimary request: One substantial upright purple loudspeaker cabinet with one large dark circular woofer, one smaller tweeter and a simple side edge. No sound waves, no person.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-headphones",
+      "slug": "headphones",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: audífonos — Headphones.\nPrimary request: One complete pair of over-ear purple headphones with a padded curved headband and two substantial soft ear cushions turned slightly inward. No head, no cat.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-record",
+      "slug": "record",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: disco — Vinyl record.\nPrimary request: One black vinyl record with visible circular grooves and a round lavender center label with a tiny center hole. A plain cream square paper sleeve sits partially behind it. No writing, no turntable.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-pottery",
+      "slug": "pottery",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: cerámica — Pottery.\nPrimary request: Three handmade glazed ceramic vessels grouped closely: a rounded turquoise decorative vase with a narrow neck, a small terracotta bowl, and a cream pot with a purple geometric band. Visibly pottery, no plants, no flowers.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-pinata",
+      "slug": "pinata",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: piñata — Piñata.\nPrimary request: One traditional colorful seven-point star piñata with bright paper fringe, a short hanging cord and two dangling tissue ribbons. Whole star clearly visible, no stick or candy.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-festival-mask",
+      "slug": "festival-mask",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: máscara — Festival mask.\nPrimary request: One decorative festival masquerade mask, full symmetrical face with two eye holes, rounded cheek shapes and simple purple, turquoise and gold painted ornament. No feathers, no person, no medical mask.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-basket",
+      "slug": "basket",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: canasta — Woven basket.\nPrimary request: One empty warm tan woven basket with a single large arched handle and an open oval rim, clear chunky wicker weave. No contents, no flowers.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-magazine",
+      "slug": "magazine",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: revista — Magazine.\nPrimary request: One thin glossy magazine lying slightly open, a bright abstract travel photograph on the cover and a few page edges; graphic blocks only, no legible letters. Clearly thin flexible paper, not a hardcover book.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-newspaper",
+      "slug": "newspaper",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: periódico — Newspaper.\nPrimary request: One neatly folded newspaper with visible paper pages, simple gray column-like line marks and one small generic picture block. No legible words or letters.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-postcard",
+      "slug": "postcard",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: STYLE ONLY. Match rounded substantial forms, clean bold deep-purple contours and restrained soft dimensional shading. Preserve natural recognizable subject colors. Do not include the strawberry, fruit, leaves or seeds unless required by the subject.\nSubject: postal — Postcard.\nPrimary request: One landscape postcard showing a simple colorful tropical beach photograph, with a second card partially behind showing address lines and a small postage stamp. No readable text. Small flat rigid cards, not a book.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. No mascot or animals unless explicitly requested; people only where requested for concert/festival.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+          "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+          "role": "style-only"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-dance",
+      "slug": "dance",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: bailar — To dance.\nPrimary request: Kiku dancing happily: standing on her two hind paws with a small relaxed sideways sway, forepaws raised slightly and one foot lifted. Two small curved motion marks show dance rhythm. No instruments, microphone or headphones.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-sing",
+      "slug": "sing",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: cantar — To sing.\nPrimary request: Kiku singing happily with a gently open mouth into a small handheld microphone held in one forepaw. Two small musical notes near her mouth. No headphones, guitar or stage.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "slug": "play-instrument",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: tocar — To play an instrument.\nPrimary request: Kiku sitting comfortably while actively playing a small acoustic guitar: one forepaw on the neck and the other strumming across the strings. Both paws clearly contact the guitar correctly. No headphones, no microphone.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-listen",
+      "slug": "listen",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: escuchar — To listen.\nPrimary request: Kiku in her usual relaxed seated pose, eyes gently closed, enjoying music through her familiar over-ear purple headphones, one forepaw lightly touching an ear cup. Two little music notes to the side. No instrument, no microphone.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-paint",
+      "slug": "paint",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: pintar — To paint.\nPrimary request: Kiku comfortably seated beside a small easel, holding a paintbrush in one forepaw and applying turquoise paint to a simple colorful flower on the upright canvas. A little palette rests near the easel. Clearly actively painting.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    },
+    {
+      "id": "es-419-travel-draw",
+      "slug": "draw",
+      "prompt": "Use case: illustration-story\nAsset type: ONE square vocabulary-card illustration, readable at145px.\nReference image: CHARACTER IDENTITY AND STYLE. Preserve Kiku the compact golden-yellow cat, deep-violet outlines, small triangular pink-inner ears, gentle face, rounded paws and curved tail. Adapt her pose minimally to teach the requested action. Headphones ONLY for escuchar; other action scenes have no headphones. No clothing.\nSubject: dibujar — To draw.\nPrimary request: Kiku in a comfortable seated pose, holding a large graphite pencil in one forepaw and actively drawing a simple uncolored flower outline on a flat white sheet of paper in front of her. No paint, no easel, no brushes.\nComposition: centered compact complete subject or minimal necessary scene, full silhouette visible with clear margins, about75–85percent of canvas. Simple readable forms, no tiny unnecessary details. Subject interiors remain opaque.\nConstraints: genuinely transparent outer background with alpha; no painted backdrop or checkerboard. No ground shadow, external glow, logo, watermark, lettering, labels or readable text. No glossy white glare streaks or photographic textures. Warm calm friendly cartoon rendering. Only the requested action props, no additional characters.",
+      "transparent_background": true,
+      "references": [
+        {
+          "path": "public/brand/kikimashta-cat-v1.png",
+          "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+          "role": "character-identity-and-style"
+        }
+      ]
+    }
+  ]
+}

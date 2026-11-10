@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-postcard",
+  "slug": "postcard",
+  "version": 1,
+  "path": "originals/postcard-v1.png",
+  "sha256": "691e74bfbff6c5cc0679bdfaf5f7d7ba185072e9bda48e5dd2ae828003f54f58",
+  "promptSha256": "c375f1c3ee1215870674dd059380bb023261e5eba321a354cf4574d3d0675de5",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-1fde5441-52ea-485d-bfbb-1fe6f9c991a1.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-sculpture",
+  "slug": "sculpture",
+  "version": 1,
+  "path": "originals/sculpture-v1.png",
+  "sha256": "ccaae82d6d3b5c694a017661ddc781a410794461cf2daedc1eb6c434bbdbdf9f",
+  "promptSha256": "1de50fa22c15045d0a14379f685f3a7109a55817fdc331386d6944a76fd807bd",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-665ebbae-ae82-4cd1-897d-368a728bb891.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-record",
+  "slug": "record",
+  "version": 1,
+  "path": "originals/record-v1.png",
+  "sha256": "e9d4297c600b17926b68515ce9a6252172f80d0c813bb04d068204d8a0de073b",
+  "promptSha256": "eb6326f0d73b14e9156f0b06dd9f5815cc87f706b818abd84ef3f5ffa611252a",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-e6c0e7ca-4ea5-4810-b264-5d8e3bf3efed.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-piano",
+  "slug": "piano",
+  "version": 1,
+  "path": "originals/piano-v1.png",
+  "sha256": "8711274fba7c2862c72b6a97a6110567ce1bc0203fa4849c017bc85255d228ee",
+  "promptSha256": "b9670ac100d9736314988769aa14ef912546e2587e46d8acd91febbac2384406",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6b5625ad-3dea-417e-9ef9-f0fe825b7c87.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

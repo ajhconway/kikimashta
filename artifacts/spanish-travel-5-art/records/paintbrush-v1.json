@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-paintbrush",
+  "slug": "paintbrush",
+  "version": 1,
+  "path": "originals/paintbrush-v1.png",
+  "sha256": "58cd2343697c24dc20c1f637d40f8fb4cc8f3f8ce87cc5445d4714184bc299d9",
+  "promptSha256": "f5fda9f2bfc90e175f87f5245f91d149c4a567168426e8c1fe2848d77bfcbbb3",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-ad04c068-cb81-4aeb-a126-25909a535c55.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

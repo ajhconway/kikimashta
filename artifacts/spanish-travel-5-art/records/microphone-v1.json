@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-microphone",
+  "slug": "microphone",
+  "version": 1,
+  "path": "originals/microphone-v1.png",
+  "sha256": "04011dece29882b809539913982eac96cbedf9a890f26cc37e1313b43d3cf290",
+  "promptSha256": "6438c1d8c5142af6cf4f0bb448b3bbc82bc65fd0827a21e8c2596bd034f7611b",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-86917819-96a5-473b-8b9c-b7411a84dc81.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

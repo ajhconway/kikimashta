@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-pinata",
+  "slug": "pinata",
+  "version": 1,
+  "path": "originals/pinata-v1.png",
+  "sha256": "1eb955c52d343dce31f457e5c907ca3bce6fc1f0533eb5385cdeda2f929c6554",
+  "promptSha256": "0f707492094a49a7083ae1a7a02d2204afc4785e84c011cef11425ad1688f5ae",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-42c4f9d5-1f61-4f34-857b-46b5bbf77f1e.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

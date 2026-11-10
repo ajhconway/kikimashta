@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-magazine",
+  "slug": "magazine",
+  "version": 1,
+  "path": "originals/magazine-v1.png",
+  "sha256": "884d817d6d156850f2f410cdea9edafd1cfdad32b39480f46cd22efe13fc6fc7",
+  "promptSha256": "a435aa080cdb07abde3ad84d76c78eb1183e54359f273f994a80e1181d70e761",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6ca5b98d-c079-4146-b1d0-26d88d951c5a.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}
