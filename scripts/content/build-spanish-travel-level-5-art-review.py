@@ -143,7 +143,7 @@ def render(draft, selected):
         relative = os.path.relpath(selection['path'], ART) if selection.get('path') else None
         picture = (f'<a class="picture" href="{esc(relative)}" target="_blank" rel="noopener" aria-label="Open full {esc(item["meaning"])} picture"><img src="{esc(relative)}" alt="{esc(item["meaning"])}" width="145" height="145"></a>'
                    if relative else '<div class="picture pending">Pending</div>')
-        label = {'generated': 'New artwork · v1', 'reuse': 'Existing artwork', 'pending': 'Pending'}[selection['source']]
+        label = {'generated': f'New artwork · v{selection.get("version", 1)}', 'reuse': 'Existing artwork', 'pending': 'Pending'}[selection['source']]
         search = ' '.join((item['text'], item['meaning'], groups[item['group']]))
         cards.append(f'<article data-group="{esc(item["group"])}" data-search="{esc(search)}">{picture}<h2 lang="es-419">{esc(item["text"])}</h2><p>{esc(item["meaning"])}</p><small>{esc(groups[item["group"]])} · {label}</small></article>')
     counts = {source: sum(row['source'] == source for row in selected) for source in ('generated', 'reuse', 'pending')}
@@ -154,7 +154,7 @@ def render(draft, selected):
 :root{font:16px/1.5 system-ui;color:#382a4a;background:#fffaf3;color-scheme:light}body{max-width:1120px;margin:auto;padding:24px}h1{font-size:1.7rem}h1,h2{color:#5b3979}a{color:#623b86}label{display:inline-block;margin:0 12px 12px 0}input,select{display:block;max-width:100%;font:inherit;border:1px solid #bfaacb;border-radius:8px;background:white;padding:9px;box-sizing:border-box}input{width:280px}#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}article{background:white;border:1px solid #e1d5e7;border-radius:16px;text-align:center;padding:18px 10px}article[hidden]{display:none}.picture{display:flex;align-items:center;justify-content:center;width:166px;height:166px;margin:auto;border-radius:10px;background-color:#fff;background-image:linear-gradient(45deg,#f0ebf3 25%,transparent 25%),linear-gradient(-45deg,#f0ebf3 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f0ebf3 75%),linear-gradient(-45deg,transparent 75%,#f0ebf3 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0}img{width:auto;height:auto;max-width:145px;max-height:145px;object-fit:contain}h2{font-size:1.2rem;margin:12px 0 2px}article p{margin:0 0 6px}small{font-size:.8rem;color:#675b6f}.pending{color:#675b6f}#count{font-variant-numeric:tabular-nums}@media(max-width:480px){body{padding:14px}#grid{grid-template-columns:1fr}label{display:block}input,select{width:100%}}
 </style>
 <h1>Travel level 5 · Art, music and culture</h1>
-<p>First artwork round · 36 words · GENERATED new pictures · REUSED existing pictures · PENDING pending.</p>
+<p>ROUND · 36 words · GENERATED new pictures · REUSED existing pictures · PENDING pending.</p>
 <p>Click any picture to inspect the original. Artwork is awaiting your feedback; audio and pack activation follow separately.</p>
 <label>Search Spanish or English<input id="search" type="search" placeholder="Search words"></label>
 <label>Group<select id="group"><option value="">All groups</option>OPTIONS</select></label>
@@ -166,7 +166,7 @@ const search=document.querySelector('#search'),group=document.querySelector('#gr
 function filter(){const query=clean(search.value.trim());let count=0;for(const card of cards){card.hidden=!(clean(card.dataset.search).includes(query)&&(!group.value||card.dataset.group===group.value));if(!card.hidden)count++;}document.querySelector('#count').textContent=`${count} of ${cards.length} words`;}
 search.addEventListener('input',filter);group.addEventListener('change',filter);
 </script></html>
-'''.replace('GENERATED', str(counts['generated'])).replace('REUSED', str(counts['reuse'])).replace('PENDING', str(counts['pending'])).replace('OPTIONS', options).replace('CARDS', ''.join(cards))
+'''.replace('ROUND', 'Revised artwork round' if any(row.get('version') == 2 for row in selected) else 'First artwork round').replace('GENERATED', str(counts['generated'])).replace('REUSED', str(counts['reuse'])).replace('PENDING', str(counts['pending'])).replace('OPTIONS', options).replace('CARDS', ''.join(cards))
 
 
 def build(complete=False):
@@ -191,6 +191,37 @@ def build(complete=False):
     reuse = unique(load(reuse_file)['items'], 'id') if safe_path(reuse_file, exists=False).exists() else {}
     if set(requests) & set(reuse) or set(requests) | set(reuse) != set(items):
         raise ValueError('Each word must have exactly one generation request or reviewed reuse')
+    amendment_path = ART / 'revisions/people-v2-requests.json'
+    snapshot_path = ART / 'revisions/before-people-v2-manifest.json'
+    amendment_inputs, replacements, snapshot_items = [], {}, {}
+    if safe_path(amendment_path, exists=False).exists():
+        amendment = load(amendment_path)
+        if (amendment.get('issue') != 243 or amendment.get('version') != 2
+                or not amendment.get('ownerFeedback')
+                or amendment.get('baseDraftSha256') != draft_hash
+                or amendment.get('baseRequestsSha256') != sha(safe_path(ART / 'requests.json').read_bytes())):
+            raise ValueError('Artwork amendment must bind the original draft and requests')
+        snapshot = json.loads(verified(snapshot_path, amendment.get('baseManifestSha256', '')))
+        snapshot_items = unique(snapshot['items'], 'id')
+        if (set(snapshot_items) != set(items) or snapshot.get('pack') != draft['id']
+                or snapshot.get('pendingImages') != 0
+                or snapshot['inputHashes'].get(str(draft_path)) != draft_hash
+                or snapshot['inputHashes'].get(str(ART / 'requests.json')) != amendment['baseRequestsSha256']):
+            raise ValueError('Artwork amendment requires the complete original manifest')
+        for historical_path, historical_hash in snapshot['inputHashes'].items():
+            verified(historical_path, historical_hash)
+        replacements = unique(amendment['requests'], 'id')
+        action_ids = {item_id for item_id, item in items.items() if item['group'] == 'actions'}
+        if (len(action_ids) != 6 or set(replacements) != action_ids
+                or not action_ids <= set(requests)
+                or any(request.get('version') != 2 for request in replacements.values())):
+            raise ValueError('Artwork amendment may replace exactly the six action pictures at version 2')
+        amendment_inputs = [amendment_path, snapshot_path]
+    # Preserve verification of historical references as well as new replacements.
+    for request in list(requests.values()) + list(replacements.values()):
+        for reference in request['references']:
+            verified(reference['path'], reference['sha256'])
+    requests.update(replacements)
     for item_id, request in requests.items():
         if request['slug'] != items[item_id]['slug'] or request.get('transparent_background') is not True or not request['prompt'].strip():
             raise ValueError('Request identity/transparency mismatch')
@@ -206,14 +237,15 @@ def build(complete=False):
             raw = verified(entry['path'], entry['sha256'])
             selected.append({**base, 'source': 'reuse', 'path': entry['path'], 'sha256': entry['sha256'], 'bytes': len(raw), 'image': png_info(raw)})
             continue
-        record_path = ART / 'records' / f'{item["slug"]}-v1.json'
+        version = 2 if item_id in replacements else 1
+        record_path = ART / 'records' / f'{item["slug"]}-v{version}.json'
         if not safe_path(record_path, exists=False).exists():
-            selected.append({**base, 'source': 'pending'})
+            selected.append({**base, 'source': 'pending', 'version': version})
             continue
         record = load(record_path)
         request = requests[item_id]
-        expected_path = f'originals/{item["slug"]}-v1.png'
-        if (record['id'] != item_id or record['slug'] != item['slug'] or record['version'] != 1
+        expected_path = f'originals/{item["slug"]}-v{version}.png'
+        if (record['id'] != item_id or record['slug'] != item['slug'] or record['version'] != version
                 or record['path'] != expected_path or record['tool'] != 'built-in image_gen'
                 or record['references'] != request['references']
                 or record['promptSha256'] != sha(request['prompt'].encode())):
@@ -226,7 +258,13 @@ def build(complete=False):
         for key in ('width', 'height'):
             if key in record and record[key] != image[key]:
                 raise ValueError(f'Recorded {key} mismatch')
-        selected.append({**base, 'source': 'generated', 'version': 1, 'path': str(path), 'sha256': record['sha256'], 'bytes': len(raw), 'record': str(record_path), 'image': image})
+        selected.append({**base, 'source': 'generated', 'version': version, 'path': str(path), 'sha256': record['sha256'], 'bytes': len(raw), 'record': str(record_path), 'image': image})
+    if snapshot_items:
+        for row in selected:
+            if row['id'] not in replacements:
+                previous = snapshot_items[row['id']]
+                if any(row.get(key) != previous.get(key) for key in ('source', 'path', 'sha256', 'version')):
+                    raise ValueError(f'Unaffected artwork changed during action amendment: {row["id"]}')
     pending = sum(row['source'] == 'pending' for row in selected)
     if complete and pending:
         raise ValueError(f'{pending} pictures remain pending')
@@ -236,7 +274,7 @@ def build(complete=False):
         safe_path(path, exists=False)
     selection = {'issue': 243, 'pack': draft['id'], 'items': selected}
     write_json(ART / 'selection.json', selection)
-    inputs = [draft_path, approval_path, ART / 'requests.json']
+    inputs = [draft_path, approval_path, ART / 'requests.json', *amendment_inputs]
     if safe_path(reuse_file, exists=False).exists():
         inputs.append(reuse_file)
     inputs.extend(Path(row['record']) for row in selected if row['source'] == 'generated')

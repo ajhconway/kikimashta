@@ -465,3 +465,5 @@ The first Travel level 5 artwork round is complete: 34 new originals plus two in
 ### Travel level 5 human action revision (#243)
 
 The owner found the six Kiku verbs too cute and requested people instead. Replace only bailar,cantar,tocar,escuchar,pintar,dibujar with adult human action illustrations using natural adult proportions and understated expressions in the existing line/color style. Generate six version2 transparent originals, preserve all first-round files and provenance, bind this amendment separately to the original draft/requests/manifest, and leave the other30 selected pictures unchanged. Complete all six replacements before consolidated owner feedback. No audio generation or runtime activation.
+
+The human action revision is complete: six selected v2 people scenes, with a clean dancer replacing the first haloed candidate; all attempts, original Kiku pictures and original provenance remain preserved. The other30 selected pictures are unchanged. Full configured checks and both-engine gallery verification pass; independent revision/provenance review finds no blockers. Await owner artwork feedback.

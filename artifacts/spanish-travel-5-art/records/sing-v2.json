@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-sing",
+  "slug": "sing",
+  "version": 2,
+  "path": "originals/sing-v2.png",
+  "sha256": "2b97db16afe92cb76345b0d411d3684f137ab40a910c04c0374ee6277d8ecf7a",
+  "promptSha256": "c754c62943db924ebf182d16a05400de9c8dcdac500ae904743b270e4c13c377",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-6d0eed7b-6dfe-4428-a2aa-c63a521711be.png",
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+      "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+      "role": "human-illustration-style-only"
+    }
+  ]
+}

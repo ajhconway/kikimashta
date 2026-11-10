@@ -63,12 +63,12 @@ class ReviewProvenanceTests(unittest.TestCase):
         self.picture_hash = review.sha(self.picture)
         self.put('refs/style.png', self.picture)
         self.reference = {'path': 'refs/style.png', 'sha256': self.picture_hash, 'role': 'style-only'}
-        self.draft = {'id': 'es-419-travel-5', 'groups': [{'id': 'art', 'title': 'Art'}], 'items': []}
+        self.draft = {'id': 'es-419-travel-5', 'groups': [{'id': 'art', 'title': 'Art'}, {'id': 'actions', 'title': 'Actions'}], 'items': []}
         requests = []
         for number in range(36):
             slug = f'word-{number}'
             item_id = f'es-419-travel-{slug}'
-            self.draft['items'].append({'id': item_id, 'slug': slug, 'text': f'palabra {number}', 'meaning': f'Word {number}', 'group': 'art'})
+            self.draft['items'].append({'id': item_id, 'slug': slug, 'text': f'palabra {number}', 'meaning': f'Word {number}', 'group': 'actions' if number < 6 else 'art'})
             if number == 35:
                 continue
             prompt = f'Draw picture {number}.'
@@ -105,6 +105,93 @@ class ReviewProvenanceTests(unittest.TestCase):
     def output_bytes(self):
         return {name: (self.root / review.ART / name).read_bytes()
                 for name in ('manifest.json', 'selection.json', 'review.html', 'artwork.html')}
+
+    def prepare_people_amendment(self):
+        self.build()
+        manifest_path = review.ART / 'manifest.json'
+        snapshot_path = review.ART / 'revisions/before-people-v2-manifest.json'
+        self.put(snapshot_path, (self.root / manifest_path).read_bytes())
+        original = self.read_json(review.ART / 'requests.json')
+        replacements = []
+        for request in original['requests'][:6]:
+            replacement = {**request, 'version': 2, 'prompt': 'An adult person: ' + request['prompt']}
+            replacements.append(replacement)
+            record = self.read_json(review.ART / 'records' / f'{request["slug"]}-v1.json')
+            record.update(version=2, path=f'originals/{request["slug"]}-v2.png', promptSha256=review.sha(replacement['prompt'].encode()))
+            self.put_json(review.ART / 'records' / f'{request["slug"]}-v2.json', record)
+            self.put(review.ART / record['path'], self.picture)
+        amendment = {'issue': 243, 'version': 2, 'ownerFeedback': 'Use adult people, less cute.',
+                     'baseDraftSha256': original['draftSha256'],
+                     'baseRequestsSha256': review.sha((self.root / review.ART / 'requests.json').read_bytes()),
+                     'baseManifestSha256': review.sha((self.root / snapshot_path).read_bytes()),
+                     'requests': replacements}
+        self.put_json(review.ART / 'revisions/people-v2-requests.json', amendment)
+        return amendment
+
+    def test_people_amendment_selects_exactly_six_v2_records_and_binds_history(self):
+        original_paths = [review.DATA / 'draft.json', review.DATA / 'generation-approval.json', review.ART / 'requests.json']
+        originals = {str(path): (self.root / path).read_bytes() for path in original_paths}
+        self.prepare_people_amendment()
+        self.build()
+        manifest = self.read_json(review.ART / 'manifest.json')
+        self.assertEqual([row['version'] for row in manifest['items'][:6]], [2] * 6)
+        self.assertEqual([row['version'] for row in manifest['items'][6:35]], [1] * 29)
+        self.assertEqual(manifest['items'][-1]['source'], 'reuse')
+        for relative, raw in originals.items():
+            self.assertEqual((self.root / relative).read_bytes(), raw)
+        for name in ('people-v2-requests.json', 'before-people-v2-manifest.json'):
+            path = review.ART / 'revisions' / name
+            self.assertEqual(manifest['inputHashes'][str(path)], review.sha((self.root / path).read_bytes()))
+        page = (self.root / review.ART / 'review.html').read_text()
+        self.assertEqual(page.count('New artwork · v2'), 6)
+
+    def test_people_amendment_rejects_tampered_bindings_and_scope(self):
+        original = self.prepare_people_amendment()
+        path = review.ART / 'revisions/people-v2-requests.json'
+        for field in ('baseDraftSha256', 'baseRequestsSha256', 'baseManifestSha256'):
+            with self.subTest(field=field):
+                self.put_json(path, {**original, field: '0' * 64})
+                with self.assertRaises(ValueError):
+                    self.build()
+        for changed in ({**original, 'requests': original['requests'][:5]},
+                        {**original, 'requests': original['requests'] + [{**original['requests'][0], 'id': 'es-419-travel-word-6', 'slug': 'word-6'}]}):
+            self.put_json(path, changed)
+            with self.assertRaisesRegex(ValueError, 'exactly the six action'):
+                self.build()
+
+    def test_people_amendment_missing_v2_never_falls_back_to_preserved_v1(self):
+        self.prepare_people_amendment()
+        before = self.output_bytes()
+        (self.root / review.ART / 'records/word-0-v2.json').unlink()
+        with self.assertRaisesRegex(ValueError, '1 pictures remain pending'):
+            self.build()
+        self.assertEqual(self.output_bytes(), before)
+        with contextlib.redirect_stdout(io.StringIO()):
+            review.build(complete=False)
+        row = self.read_json(review.ART / 'selection.json')['items'][0]
+        self.assertEqual((row['source'], row['version']), ('pending', 2))
+        self.assertNotIn('path', row)
+
+    def test_people_amendment_rejects_unaffected_selected_hash_drift(self):
+        amendment = self.prepare_people_amendment()
+        snapshot_path = review.ART / 'revisions/before-people-v2-manifest.json'
+        snapshot = self.read_json(snapshot_path)
+        # Even an internally re-bound snapshot cannot silently change a non-action selection.
+        snapshot['items'][6]['sha256'] = '0' * 64
+        self.put_json(snapshot_path, snapshot)
+        amendment['baseManifestSha256'] = review.sha((self.root / snapshot_path).read_bytes())
+        self.put_json(review.ART / 'revisions/people-v2-requests.json', amendment)
+        with self.assertRaisesRegex(ValueError, 'Unaffected artwork changed'):
+            self.build()
+
+    def test_people_amendment_rejects_rewriting_original_record(self):
+        self.prepare_people_amendment()
+        record_path = review.ART / 'records/word-0-v1.json'
+        record = self.read_json(record_path)
+        record['originalToolPath'] = '/changed-history.png'
+        self.put_json(record_path, record)
+        with self.assertRaisesRegex(ValueError, 'Hash mismatch'):
+            self.build()
 
     def test_complete_review_binds_every_source_and_preserves_rectangular_picture(self):
         self.build()

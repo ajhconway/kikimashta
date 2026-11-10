@@ -10,12 +10,12 @@
       "id": "es-419-travel-dance",
       "slug": "dance",
       "version": 2,
-      "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: bailar — To dance.\nPrimary request: One adult woman dancing, shown full length in casual trousers and a simple teal blouse. A natural fluid dance pose with one bent knee, weight on her other foot and two arms held comfortably away from her body. A couple of small curved movement marks. No instruments, headphones or music stage. Clearly dancing rather than walking or exercising.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.",
+      "prompt": "Generate ONE clean educational cartoon cutout of an adult man DANCING. Square transparent PNG. Full body, ordinary adult proportions and a mature understated face. He wears a plain orange short-sleeved shirt, blue trousers and comfortable shoes. One foot steps sideways, knees slightly bent, hips shifting and both arms bent loosely to the side to show an unmistakable relaxed dance step. Simple deep-violet outlines, flat clean natural colors and restrained shading inside the body. No music notes, backdrop, scenery, shadow, aura, glow, haze, vignette or lights. Outside his crisp outlined silhouette is completely empty transparent alpha. No text, logos, mascot, animals or chibi face. Use the reference ONLY for outline and human illustration style; do not copy its microphone, singing or pose.",
       "transparent_background": true,
       "references": [
         {
-          "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
-          "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+          "path": "artifacts/spanish-travel-5-art/originals/sing-v2.png",
+          "sha256": "2b97db16afe92cb76345b0d411d3684f137ab40a910c04c0374ee6277d8ecf7a",
           "role": "human-illustration-style-only"
         }
       ]
@@ -92,5 +92,6 @@
     }
   ],
   "audioGenerationAuthorized": false,
-  "runtimeActivationAuthorized": false
+  "runtimeActivationAuthorized": false,
+  "refinement": "Preserve dancer initial candidate and two unsuccessful halo cleanup/retry candidates under revisions. Selectedv2 regenerated as a different adult dancer with a clean silhouette. Other5 replacement requests unchanged."
 }

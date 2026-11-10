@@ -1,33 +1,39 @@
 {
   "issue": 243,
-  "scope": "First full artwork round; owner feedback pending",
-  "manifestSha256": "b484b2b133991a2f5af4a55a926182b765694bc407b5ee704a10c860421fbc64",
+  "scope": "Six human verb artwork replacements, owner feedback pending",
+  "manifestSha256": "4a4f9f00e4abc7dda58480abb38a543d62d4bf438024bf684a9b63c6e765cbb4",
+  "selectedHumanVersions": {
+    "dance": 2,
+    "sing": 2,
+    "play-instrument": 2,
+    "listen": 2,
+    "paint": 2,
+    "draw": 2
+  },
+  "unaffectedPictures": 30,
+  "historyPreserved": true,
   "checks": [
     {
       "command": "python3 scripts/content/build-spanish-travel-level-5-art-review.py --complete",
-      "result": "PASS:34 generated,2 unchanged approved reuses,0 pending;36 source hashes and provenance verified;all34 new originals have genuine alpha."
-    },
-    {
-      "command": "npm ci",
-      "result": "PASS;Node26.12.0"
+      "result": "PASS:34generated +2reused,0pending;6v2 adult scenes;exact hashes,source/prompt/reference bindings and alpha verified;original inputs andother30 pictures unchanged."
     },
     {
       "command": "npm run check",
-      "result": "PASS on rerun:lint,748 app tests,429 Node tests,31 Python content/audio tests including9 gallery regressions,27 card tests,artwork and neighbor validators,typecheck,production build. Initial run had2 app test timeouts; no source/test changes were needed for successful rerun."
+      "result": "PASS:lint,748app tests,429Node tests,36Python content/audio tests including14gallery regressions,27card tests,artwork/neighbor validators,typecheck,production build."
     },
     {
       "command": "node /private/tmp/kikimashta-243-browser.mjs",
-      "result": "PASS:Chromium and mobileWebKit:36 loaded images/fullsize links,accent search,6-action group filter,phone viewport without overflow,no page errors,no storage writes."
+      "result": "PASS:Chromium andmobileWebKit,36previews/fullsize links,6selectedv2 images,search/action filter,phone layout,no overflow/pageerrors/storage writes."
     },
     {
       "command": "git diff --check",
       "result": "PASS"
     }
   ],
-  "independentReview": "Read-only content/provenance and gallery audit:no blockers;9 focused gallery tests passed.",
+  "independentReview": "Read-only content/provenance and gallery review:no blockers;14focused tests pass.",
+  "fullAppBrowserSuite": "Not rerun for artwork-only revision;targeted gallery checks inboth engines passed.",
   "runtimeChanged": false,
   "audioGenerated": false,
   "ownerArtworkAcceptance": false,
-  "realIPhoneTest": false,
-  "fullAppBrowserSuite": "Not run for artwork-only draft; targeted static-gallery browser verification passed in both engines."
+  "realIPhoneTest": false
 }

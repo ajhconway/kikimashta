@@ -628,18 +628,18 @@
       "meaning": "To dance",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/dance-v1.png",
-      "sha256": "a7e73e6cc74cd4be327c7e468a91a8b9dd5cab6b89deadcc31ed371f08ce5452",
-      "bytes": 738392,
-      "record": "artifacts/spanish-travel-5-art/records/dance-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/dance-v2.png",
+      "sha256": "a8b31379a0ab7049baf0657f5e976803388d9fafde15eeb2cdabb47655b23a26",
+      "bytes": 688208,
+      "record": "artifacts/spanish-travel-5-art/records/dance-v2.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 1041835,
-        "opaquePixels": 1873
+        "transparentPixels": 1174288,
+        "opaquePixels": 1719
       }
     },
     {
@@ -649,18 +649,18 @@
       "meaning": "To sing",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/sing-v1.png",
-      "sha256": "96666090a7873c876f6127b0bbf062a1f4d8d6a8b42cc4bb45341211639b0804",
-      "bytes": 798131,
-      "record": "artifacts/spanish-travel-5-art/records/sing-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/sing-v2.png",
+      "sha256": "2b97db16afe92cb76345b0d411d3684f137ab40a910c04c0374ee6277d8ecf7a",
+      "bytes": 891908,
+      "record": "artifacts/spanish-travel-5-art/records/sing-v2.json",
       "image": {
         "format": "PNG",
-        "width": 1254,
-        "height": 1254,
+        "width": 1145,
+        "height": 1374,
         "colorType": 6,
-        "transparentPixels": 968059,
-        "opaquePixels": 2229
+        "transparentPixels": 959507,
+        "opaquePixels": 2208
       }
     },
     {
@@ -670,18 +670,18 @@
       "meaning": "To play an instrument",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/play-instrument-v1.png",
-      "sha256": "052062e7e53c57915063e239a746341b4dc2f469428388e4e5116cdfa9331ac3",
-      "bytes": 969014,
-      "record": "artifacts/spanish-travel-5-art/records/play-instrument-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/play-instrument-v2.png",
+      "sha256": "ff5444e6b6fa3bc96005272ad1fb8df303613c301ed523ee7dddf70d293aa685",
+      "bytes": 1083143,
+      "record": "artifacts/spanish-travel-5-art/records/play-instrument-v2.json",
       "image": {
         "format": "PNG",
-        "width": 1254,
-        "height": 1254,
+        "width": 1148,
+        "height": 1370,
         "colorType": 6,
-        "transparentPixels": 891600,
-        "opaquePixels": 2269
+        "transparentPixels": 887586,
+        "opaquePixels": 2849
       }
     },
     {
@@ -691,18 +691,18 @@
       "meaning": "To listen",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/listen-v1.png",
-      "sha256": "d8a04fb57d74f6d659aa6e21d3e45a0c6f719fc7d0c93cdd9ad85a6f4fbfd181",
-      "bytes": 916982,
-      "record": "artifacts/spanish-travel-5-art/records/listen-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/listen-v2.png",
+      "sha256": "3265bebd44d8353e976fb1211c68489a50df420c0628b9261a286bca2010228b",
+      "bytes": 1028026,
+      "record": "artifacts/spanish-travel-5-art/records/listen-v2.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 906441,
-        "opaquePixels": 1949
+        "transparentPixels": 873845,
+        "opaquePixels": 1599
       }
     },
     {
@@ -712,18 +712,18 @@
       "meaning": "To paint",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/paint-v1.png",
-      "sha256": "808c74d138be573149736568491f91624954765ce8ddc915a4ceefe5af5c2e08",
-      "bytes": 929062,
-      "record": "artifacts/spanish-travel-5-art/records/paint-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/paint-v2.png",
+      "sha256": "1baa8a7d98c9adca70b725f376a95080504915f69ddf7c5ff6cecc4c19e13de6",
+      "bytes": 1439227,
+      "record": "artifacts/spanish-travel-5-art/records/paint-v2.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 877935,
-        "opaquePixels": 2879
+        "transparentPixels": 654295,
+        "opaquePixels": 4254
       }
     },
     {
@@ -733,18 +733,18 @@
       "meaning": "To draw",
       "group": "actions",
       "source": "generated",
-      "version": 1,
-      "path": "artifacts/spanish-travel-5-art/originals/draw-v1.png",
-      "sha256": "e83ce17d6bdaa71f4ffe996f41f81c1af29108319a57150f542e781493e994e0",
-      "bytes": 909774,
-      "record": "artifacts/spanish-travel-5-art/records/draw-v1.json",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/draw-v2.png",
+      "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
+      "bytes": 1061563,
+      "record": "artifacts/spanish-travel-5-art/records/draw-v2.json",
       "image": {
         "format": "PNG",
         "width": 1254,
         "height": 1254,
         "colorType": 6,
-        "transparentPixels": 861496,
-        "opaquePixels": 2273
+        "transparentPixels": 879676,
+        "opaquePixels": 2233
       }
     }
   ]
