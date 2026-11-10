@@ -7,7 +7,7 @@ const identity = { repository, tree, runId: 100, token: 'private-test-token' }
 const current = { workflow_id: 7, repository: { id: 1 } }
 const artifact = { name: 'validated-tree-' + tree, expired: false,
   workflow_run: { id: 99, repository_id: 1, head_repository_id: 1 } }
-const run = { id: 99, workflow_id: 7, path: '.github/workflows/ci.yml', repository: { full_name: repository },
+const run = { id: 99, workflow_id: 7, path: '.github/workflows/ci.yml@main', repository: { full_name: repository },
   head_repository: { full_name: repository }, head_sha: 'b'.repeat(40),
   status: 'completed', conclusion: 'success', event: 'pull_request' }
 function api({ artifacts = [artifact], completed = run, commitTree = tree } = {}) {
@@ -27,6 +27,8 @@ test('reuses only a completed same-repository Checks run for the exact requested
   const boundary = api()
   assert.equal(await validatedRun({ ...identity, request: boundary.request }), 99)
   assert.ok(boundary.calls[1].includes('name=validated-tree-' + tree))
+  assert.equal(await validatedRun({ ...identity,
+    request: api({ completed: { ...run, path: '.github/workflows/ci.yml' } }).request }), 99)
   assert.equal(await validatedRun({ ...identity, request: api({ artifacts: [] }).request }), null)
 })
 
@@ -46,7 +48,7 @@ test('expired, different-tree, fork and current-run markers cannot waive checks'
 test('failed, pending, foreign-workflow and non-PR runs cannot waive checks', async () => {
   for (const change of [
     { conclusion: 'failure' }, { conclusion: 'cancelled' }, { status: 'in_progress' },
-    { workflow_id: 8 }, { path: '.github/workflows/other.yml' },
+    { workflow_id: 8 }, { path: '.github/workflows/other.yml' }, { path: '.github/workflows/other.yml@main' },
     { head_repository: { full_name: 'fork/app' } }, { repository: { full_name: 'owner/other' } },
     { event: 'push' },
   ]) assert.equal(await validatedRun({ ...identity, request: api({ completed: { ...run, ...change } }).request }), null)

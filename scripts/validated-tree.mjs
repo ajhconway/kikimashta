@@ -31,7 +31,9 @@ export async function validatedRun({ repository, runId, tree, token, request = f
       || !Number.isSafeInteger(artifact.workflow_run?.id)
       || artifact.workflow_run.id === Number(runId)) continue
     const run = await get('/actions/runs/' + artifact.workflow_run.id)
-    if (run.workflow_id === current.workflow_id && run.path === '.github/workflows/ci.yml'
+    // GitHub may qualify the workflow file with its ref, such as ci.yml@main.
+    const workflowPath = typeof run.path === 'string' ? run.path.split('@', 1)[0] : null
+    if (run.workflow_id === current.workflow_id && workflowPath === '.github/workflows/ci.yml'
       && run.repository?.full_name === repository && run.head_repository?.full_name === repository
       && run.status === 'completed' && run.conclusion === 'success'
       && run.event === 'pull_request' && /^[a-f0-9]{40}$/.test(run.head_sha)) {
