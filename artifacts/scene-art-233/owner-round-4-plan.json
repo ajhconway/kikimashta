@@ -3,7 +3,7 @@
   "round": 4,
   "date": "2026-11-09",
   "ownerStatement": "立てる the bear should be angle to the right so that the motion is standing up rather than leaning it over",
-  "status": "planned",
+  "status": "complete-pending-owner-review",
   "directRevisions": [
     {
       "id": "ja-v-e9ad09158eb3",
@@ -17,5 +17,10 @@
   "notes": [
     "Preserve all earlier versions and exact prompts.",
     "Review only; no activation or additional approval."
-  ]
+  ],
+  "completion": {
+    "generatedImages": 1,
+    "selectedVersion": 7,
+    "preservedGeneratedVersions": 101
+  }
 }

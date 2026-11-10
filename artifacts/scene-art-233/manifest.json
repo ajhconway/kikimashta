@@ -3486,7 +3486,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show hands turning the same horizontal object upright; exclude a person simply standing as an equivalent picture.",
       "suitabilityRationale": "Setting an object upright is visible if the actor and orientation change are shown.",
-      "ownerRevisionNote": "Replace articulated robot with a clearly rigid one-piece animal figurine permanently attached to a flat base; one hand setting the base upright on the table.",
+      "ownerRevisionNote": "The rigid bear and permanently attached base tilt to the right; the right base edge contacts the table and the upward-left arrow indicates rotation toward upright.",
       "versions": [
         {
           "version": 1,
@@ -3688,16 +3688,52 @@
               0
             ]
           }
+        },
+        {
+          "issue": 233,
+          "round": 4,
+          "id": "ja-v-e9ad09158eb3",
+          "text": "立てる",
+          "version": 7,
+          "prompt": "Use case: precise-object-edit. Input image1 is the EXACT EDIT TARGET: a rigid golden ceramic bear permanently attached to an oval lavender plinth, held by one hand over a wooden table, with a curved upward arrow at right. Correct ONLY the lean direction of the rigid bear-plus-base unit. Tilt the WHOLE rigid statue AND attached base clearly TO THE RIGHT, about25 degrees CLOCKWISE from upright: bear HEAD and torso should be noticeably to the RIGHT of the center of its base. The plinth's LEFT edge must be HIGHER; its RIGHT edge touches the horizontal tabletop as the pivot. The bear must remain rigidly perpendicular to its own tilted base, with no flexible joints. The hand from the LEFT holds the figurine to stand it upright. Keep the single arrow on the RIGHT curving UP and LEFT, indicating COUNTERCLOCKWISE rotation from this right-leaning pose toward vertical upright. This reverses the current left-leaning base orientation; DO NOT keep the left base edge down/right edge raised. Preserve exact bear identity, face, purple bow, opaque shiny ceramic surface, one-piece non-posable sculpted paws/legs, permanently attached broad oval base, hand/sleeve, tabletop, plum outlines, colors, compact framing and square1:1 canvas. Keep the table perfectly horizontal. One figurine only, no ghost pose, no duplicate, no text, labels, rays, calendar, frame, checkerboard, watermark, outside shadow or glow. Genuinely transparent exterior with generous clear margins.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+              "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+              "role": "exact edit target"
+            }
+          ],
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v7.png",
+          "sha256": "45033ac04dcc1cb3a76523e349e788440d2952309c22b2158ff71c1eb9fd4948",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9b8f5369-daf0-4fbc-a445-acf2d332a4cc.png",
+          "tool": "built-in image_gen",
+          "ownerFeedbackRound": 4,
+          "status": "generated-pending-owner-review",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
-      "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
-      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the single hand from the left, compact wooden tabletop, one figurine and single curved upward arrow at right. Replace the articulated robot with a clearly NON-POSABLE one-piece ceramic BEAR FIGURINE permanently molded to a broad flat oval plinth/base. The bear sits rigidly with paws sculpted against its body: smooth continuous surfaces, no separate arm/leg parts, no hinge circles, seams, articulation, antenna or moving joints. The solid flat lavender oval BASE is clearly visible under the golden bear and permanently attached, much wider than its feet. The hand grasps the whole rigid figurine and tips the ENTIRE statue AND attached base toward upright: one edge of its base just touches the tabletop while the opposite edge remains slightly raised, with only a modest15-degree lean. The curved gold arrow shows the whole object/base being stood upright. No isolated foot being placed, walking pose, loose separate stand, ghost or extra figurine. Clear sturdy single-piece collectible statue rather than a jointed action figure.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v7.png",
+      "sha256": "45033ac04dcc1cb3a76523e349e788440d2952309c22b2158ff71c1eb9fd4948",
+      "prompt": "Use case: precise-object-edit. Input image1 is the EXACT EDIT TARGET: a rigid golden ceramic bear permanently attached to an oval lavender plinth, held by one hand over a wooden table, with a curved upward arrow at right. Correct ONLY the lean direction of the rigid bear-plus-base unit. Tilt the WHOLE rigid statue AND attached base clearly TO THE RIGHT, about25 degrees CLOCKWISE from upright: bear HEAD and torso should be noticeably to the RIGHT of the center of its base. The plinth's LEFT edge must be HIGHER; its RIGHT edge touches the horizontal tabletop as the pivot. The bear must remain rigidly perpendicular to its own tilted base, with no flexible joints. The hand from the LEFT holds the figurine to stand it upright. Keep the single arrow on the RIGHT curving UP and LEFT, indicating COUNTERCLOCKWISE rotation from this right-leaning pose toward vertical upright. This reverses the current left-leaning base orientation; DO NOT keep the left base edge down/right edge raised. Preserve exact bear identity, face, purple bow, opaque shiny ceramic surface, one-piece non-posable sculpted paws/legs, permanently attached broad oval base, hand/sleeve, tabletop, plum outlines, colors, compact framing and square1:1 canvas. Keep the table perfectly horizontal. One figurine only, no ghost pose, no duplicate, no text, labels, rays, calendar, frame, checkerboard, watermark, outside shadow or glow. Genuinely transparent exterior with generous clear margins.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
-          "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
-          "role": "exact previous-version edit target"
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+          "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+          "role": "exact edit target"
         }
       ],
       "image": {
@@ -3715,8 +3751,8 @@
           0
         ]
       },
-      "selectedVersion": 6,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4d15cf9c-7c34-4edf-ab99-8a7b807649c5.png"
+      "selectedVersion": 7,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-9b8f5369-daf0-4fbc-a445-acf2d332a4cc.png"
     },
     {
       "id": "ja-v-bd365f430f35",
@@ -4337,13 +4373,13 @@
       }
     }
   ],
-  "generatedVersionCount": 100,
+  "generatedVersionCount": 101,
   "readyAssetCount": 43,
   "checks": {
     "scope": "43 exact staged-picture IDs from frozen review;24 active updated IDs excluded.",
     "runtime": "No active artwork, vocabulary eligibility, answer formats, audio or progress modified.",
     "selectedImageSha256": "All43 selected PNG hashes verified against files;42 unique selected images.",
-    "originals": "All100 generated PNG versions and every earlier selected source remain preserved; all current/version/reference/original-source hashes verified.",
+    "originals": "All101 generated PNG versions and earlier selected sources are preserved; all current/version/reference/original-source hashes verified.",
     "transparency": "All displayed sources are square RGBA with transparent exterior; recorded trace alpha1 corners are visually imperceptible in native rendering.",
     "reuses": "Puppy v2 and Few v2 exact approved PR110 bytes, plus exact Spanish Basic Kiku-inside v2 source for中; source approvals remain separate from this batch.",
     "sharedImages": "休む selects exactly the new休み image path/hash.",
@@ -4380,17 +4416,17 @@
       "alternativeImages": 0,
       "timeFamilyImages": 4,
       "imagesDecodedPerEngine": 47,
-      "distinctLocalResourcesPerEngine": 120,
+      "distinctLocalResourcesPerEngine": 121,
       "sourceFilterCounts": {
         "generated": 39,
         "existing-approved": 3,
         "shared-new": 1
       },
       "ownerSelectedVersions": 5,
-      "search": "Passed for the three revised cards and reused Kiku inside card.",
+      "search": "Passed for corrected立てる and reused Kiku inside card.",
       "horizontalOverflow": false,
       "duplicateElementIds": 0,
-      "visualInspection": "All3 round3 outputs inspected individually and in native mobile card screenshots; map arrows centered/larger without attention rays, consistent Kiku/dog near-far comparison, rigid bear figurine permanently attached to an oval base."
+      "visualInspection": "立てるv7 individually and in mobile card rendering: rigid statue/base lean right with right base edge contacting table; upward-left arrow indicates standing upright."
     },
     "builderFixtures": "Absent/partial/complete manifests render;16 scope, identity, hash, path, source-revision and frozen-review tampering cases reject before output replacement.",
     "postPictureReleaseScopeAudit": {
@@ -4587,7 +4623,37 @@
       "totalOwnerSelectedImages": 5,
       "unmentionedAssetRecordsUnchanged": 38,
       "checks": "All100 generator originals and every selected/version/reference hash verified;27 artwork tests and7 persisted builder tests passed.",
-      "runtime": "No activation or app changes;38 current selections and relatedNight await review."
+      "runtime": "No activation or app changes;38 current selections and relatedNight await review.",
+      "nativeBrowserReview": {
+        "engines": [
+          "Chromium",
+          "mobile WebKit"
+        ],
+        "cards": 43,
+        "alternativeSets": 0,
+        "alternativeImages": 0,
+        "timeFamilyImages": 4,
+        "imagesDecodedPerEngine": 47,
+        "distinctLocalResourcesPerEngine": 120,
+        "sourceFilterCounts": {
+          "generated": 39,
+          "existing-approved": 3,
+          "shared-new": 1
+        },
+        "ownerSelectedVersions": 5,
+        "search": "Passed for the three revised cards and reused Kiku inside card.",
+        "horizontalOverflow": false,
+        "duplicateElementIds": 0,
+        "visualInspection": "All3 round3 outputs inspected individually and in native mobile card screenshots; map arrows centered/larger without attention rays, consistent Kiku/dog near-far comparison, rigid bear figurine permanently attached to an oval base."
+      }
+    },
+    "ownerRound4": {
+      "generatedImages": 1,
+      "selectedVersion": 7,
+      "otherAssetRecordsUnchanged": 42,
+      "allGeneratedVersions": 101,
+      "checks": "All selected/version/reference and101 generator-source hashes match; square1254RGBA,alpha0–255 and zero corner alpha. Chromium/mobileWebKit each decode47 images and verify121 local resources without overflow or duplicate IDs.",
+      "runtime": "Unchanged; five exact prior choices and38 current versions awaiting review remain unchanged."
     }
   },
   "ownerFeedback": [
@@ -4621,6 +4687,14 @@
       "generatedImageCount": 3,
       "explicitOwnerChoiceCount": 2,
       "alternativeImageCount": 0,
+      "activationAuthorized": false
+    },
+    {
+      "round": 4,
+      "date": "2026-11-09",
+      "ownerStatement": "立てる the bear should be angle to the right so that the motion is standing up rather than leaning it over",
+      "status": "revised-pending-owner-review",
+      "generatedImageCount": 1,
       "activationAuthorized": false
     }
   ],

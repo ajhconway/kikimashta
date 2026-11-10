@@ -10,7 +10,7 @@ Round2 follows the owner’s latest feedback: select original 中央 and elevato
 
 Round3 selects 作るv5 and 走行v7 explicitly; refine 広げる with larger centered arrows and no attention rays, adapt 近いv4 to Kiku with a dog friend, and make 立てる a rigid figurine attached to a base. Keep new derivatives pending owner review and all earlier versions intact. See `artifacts/scene-art-233/owner-round-3-plan.json`. Round3 is complete:three new images and two exact owner selections;all100 generated versions preserved. Source/provenance checks and Chromium/mobile WebKit gallery checks pass (47 displayed images,120 local resources). Five exact versions are owner-selected;38 current selections and the relatedNight proposal await review.
 
-Round4 corrects only the tilt of the rigid bear figurine for 立てる: lean the complete figurine/base to the right, so the existing upward-left rotation shows standing it upright. Preserve earlier versions and all other selections. See `artifacts/scene-art-233/owner-round-4-plan.json`.
+Round4 corrects only the tilt of the rigid bear figurine for 立てる: lean the complete figurine/base to the right, so the existing upward-left rotation shows standing it upright. Preserve earlier versions and all other selections. See `artifacts/scene-art-233/owner-round-4-plan.json`. Complete:立てるv7 leans right from its base’s right contact point; all42 other asset records remain unchanged. All101 generated versions are preserved and hash-verified; Chromium/mobileWebKit decode47 images and verify121 local resources.
 
 ## Approved picture artwork release (#229)
 
