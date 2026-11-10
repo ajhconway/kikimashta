@@ -58,3 +58,7 @@ Record the actual results and any Pages service queue delay in the linked PR.
 ## Verified release state — November 8, 2026
 
 The public source notice identifies `38f6619e63707df8db411a2697f21e726ea16c7e`. Its [main Checks run](https://github.com/ajhconway/kikimashta/actions/runs/42496296871) completed successfully for both `checks` and `database`. All 40 original approved deliveries from batches 01–04 match the current activation-manifest SHA-256 hashes on the public site, resolving the old deployment/hash-verification concern recorded in #77. The manifest now contains 168 active approved illustrations in total. This read-only smoke check does not replace real-iPhone acceptance or demonstrate a new publication retry.
+
+## Retired offline preview (#245)
+
+Offline practice is part of the normal root app. The temporary preview page, isolated storage configuration, source pin, composition job and dedicated browser project are removed. `/offline-demo/` returns404 after publication. A small replacement at its former worker URL unregisters installed preview workers, deletes only preview caches and navigates preview tabs to `/`. It preserves all practice history, auth data and root caches. This retirement worker and its scoped cleanup regressions are the only retained preview-path implementation.
