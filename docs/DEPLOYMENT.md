@@ -1,10 +1,24 @@
 # Pages publication and recovery
 
 `Checks` runs on pull requests and main pushes. `Publish v0` publishes only after
-successful push-triggered Checks on main. It checks out the successful run's
+successful push-triggered Checks on main. PR Checks owns full validation. Main
+reuses only an unexpired successful same-repository PR Checks marker for its exact
+Git tree; absent or invalid proof runs full validation. See [the lean-suite
+policy](TESTING.md) for the trust boundary and fallback. Publication checks out the successful run's
 `head_sha`, builds with the repository's production variables, and pins the
 source notice to that revision. Publication remains serialized through the
 `github-pages` concurrency group.
+
+Validation shares one build with the browser job. Publication still builds once
+with production variables: the CI artifact uses a fake account service and must
+never be deployed. User journeys run at the merge gate, not again after publishing.
+
+After Pages succeeds, `scripts/deployment-smoke.mjs` makes at most nine concurrent
+read-only requests with ten-second deadlines and no retries. It verifies the
+source notice, both HTML entry points, emitted scripts, offline manifest/worker
+and representative image/audio bytes against the production build. It makes no
+account requests or saved answers. Real-iPhone and live-account acceptance remain
+in their existing issues.
 
 Each publication attempt uploads `github-pages-<run ID>-<attempt>` and passes that
 same name to `deploy-pages`. A retry rebuilds the original checked revision and
@@ -14,10 +28,13 @@ there is no need to delete them or rerun Checks just to avoid duplicate names.
 ## Diagnose a failure
 
 The run summary records the source revision, artifact name/ID, and build,
-upload, and Pages service outcomes. Step timings distinguish preparation from
+upload, Pages service and live-smoke outcomes. Step timings distinguish preparation from
 time spent inside Pages.
 
 - Failed build or upload: inspect that step's error before retrying.
+- Failed live smoke after successful Pages: inspect the mismatched resource or
+  revision. Retain that evidence; do not rerun the entire browser suite or
+  repeatedly republish simply to wait for a response.
 - Failed Pages step after successful build/upload: inspect **Deploy through Pages
   service** for its last status. `deployment_queued` and `syncing_files` indicate
   waiting inside Pages, rather than a slow app build. They do not by themselves
@@ -36,10 +53,10 @@ time spent inside Pages.
 3. Confirm that build, upload, and Pages all succeed. Inspect the summary's new
    artifact name and ID. If Pages is still queued, retain that evidence and retry
    later; artifact naming does not fix service-side availability.
-4. Open https://kikimashta.com and its source/license link. Confirm the published
-   source notice points to the expected commit, then smoke-check the app and card
-   library. The Pages deployment's own commit metadata can reflect the workflow
-   revision; the app's source notice identifies the revision actually built.
+4. Confirm the automated live smoke passed. The Pages deployment's own commit
+   metadata can reflect the workflow revision; the app's source notice identifies
+   the revision actually built. Open the site manually when investigating a
+   publication-specific failure or performing explicit device acceptance.
 
 ## Verification
 
@@ -51,9 +68,10 @@ selected archive, and verifies its source/run/attempt markers. Re-run its job to
 exercise a second attempt while the previous artifact remains in the same run.
 This checks retry selection without publishing unreviewed code.
 
-After merging a publication change, verify the first production publish and one
-publication retry, checking artifact IDs and the public source notice each time.
-Record the actual results and any Pages service queue delay in the linked PR.
+When changing artifact naming/selection, rerun the small PR fixture to exercise
+attempt selection. Do not trigger an extra production publication just to test a
+retry. Retry a real failed deployment only when needed. Record actual results
+and Pages service queue delay separately from test timing.
 
 ## Verified release state — November 8, 2026
 

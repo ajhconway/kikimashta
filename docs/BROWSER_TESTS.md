@@ -1,62 +1,78 @@
-# Browser journey coverage (#202)
+# Browser journey coverage (#247)
 
-Keep browser journeys focused on integration boundaries that need a real engine:
-native media, browser storage, layout/fonts, pointer/keyboard input and navigation.
-Run the required suite in both Chromium and mobile WebKit, with zero retries.
-Exhaustive content and learning-rule permutations belong in focused tests.
+Keep browser journeys focused on real engine boundaries: native media, IndexedDB,
+fonts/layout, pointer/keyboard input and navigation. The routine budget is
+**24 scenarios / 48 engine executions** with two workers and zero retries.
+Follow [test ownership and measurement](TESTING.md) before adding a scenario.
 
-## Consolidated coverage
+## Retained coverage
 
-| Boundary | Browser journey | Focused coverage for additional permutations |
+| Boundary | Journey | Focused owner for additional permutations |
 | --- | --- | --- |
-| Complete lesson and mixed-format persistence | `practice.spec.ts`: complete ten-card picture/writing lesson, summary and reload | `App.test.tsx`, `core/session.test.ts`, `core/scheduler.test.ts` |
-| Review snapshot and corrective retry | `practice.spec.ts`: two due formats, writing miss/retry, reload and a later-added card in the next session | `App.test.tsx`, `core/session.test.ts` |
-| Contextual introduction and later review | `contextual.spec.ts`: first encounter, explicit answers/revisions, stable retry audio, translation dialog, reload and scheduled review | `App.contextual.test.tsx`, `core/contextual-progression.test.ts` |
-| Native timers and reduced motion | `quiz-timer.spec.ts`: normal picture and reduced-motion writing; `dev-review.spec.ts`: paired-audio countdown | `App.test.tsx`, `core/quiz-timer.test.ts`, `components/ContextualQuiz.test.tsx` |
-| Unsaved Dev review | `dev-review.spec.ts`: configured word/contextual interaction and unchanged real browser history | `App.test.tsx`, `core/dev-review.test.ts` cover full rounds, random timers and retries |
-| Language, pack and voice preferences | `languages.spec.ts`, `voices.spec.ts`: representative scoped answers, selected recordings, reload and independent language preferences | `core/languages.test.ts`, `core/packs.test.ts`, `core/spanish-packs.test.ts`, `core/voices.test.ts` cover every pack and accepted media |
-| Library navigation and media recovery | `contextual-library.spec.ts`: old-link redirect, Back/reload, native failure then complete ordered retry, cancellation and unchanged history | `components/ContextualLibrary.test.tsx` covers filters, authored details and playback cancellation permutations |
-| Clock skew | Existing real-storage journeys retain persistence checks | `App.clock.test.tsx` exercises the real progress store with fake IndexedDB; `core/density.test.ts` covers clock/calendar rules |
+| Complete mixed lesson, summary and reload | `practice.spec.ts`, two remaining cards | App/session/scheduler tests own full chunk size and ordering |
+| Fixed due snapshot, writing miss/retry, later due work | `practice.spec.ts` | Session rules and saved-attempt regressions |
+| Failed save after Home, exactly-once recovery | `practice.spec.ts` | App/save/store races |
+| Keyboard, held pointer, reduced motion, writing fit | `practice.spec.ts` | Component accessibility and timing hooks |
+| Failed audio, stable replay, premature-answer prevention | `practice.spec.ts` | Audio and App recovery |
+| Native timer and audio-first entrances | `quiz-timer.spec.ts`, picture and reduced-motion writing | Core timer table and entrance hook |
+| Contextual paired audio, miss/retry, scheduled reload | `contextual.spec.ts` | Contextual interaction/progression/admission rules |
+| Authored library redirect, audio retry/cancel, unchanged history | `contextual-library.spec.ts` | ContextualLibrary component filters/details |
+| Unsaved Dev review wiring | `dev-review.spec.ts` | Core Dev-review combinations and App wiring |
+| Language, voice and pack preferences with isolated answer | `languages.spec.ts`, one remaining Spanish card | Language/pack/voice rules and current-media validation |
+| Basic Spanish direct contextual entry | `spanish-basic.spec.ts` | Foundation content/admission rules |
+| Library search and native voice retry | `vocabulary.spec.ts` | Library navigation and preference tests |
+| Notes/export and failed-save draft | `feedback.spec.ts` | Note-store/account convergence |
+| Forecast refresh across tabs and scope | `forecast.spec.ts` | App/core calendar, forecast and DST rules |
+| Small-screen settings and focus return | `settings.spec.ts` | Settings/OfflinePanel behavior |
+| Persisted badge rendering and reduced-motion upgrade | `pack-badges.spec.ts` | Small badge presentation contracts |
+| Offline download, one-card complete lesson, reload and cache removal | `offline.spec.ts` | Worker/client selection and interrupted-download contracts |
+| Cross-context accounts, offline answer retry, note deletion | `sync.spec.ts` | Sync engine/store/remote/account isolation |
+| Expired auth offline, reconnect and retained account history | `sync.spec.ts`, Chromium | Auth runtime plus WebKit offline media/storage journey |
 
-Retain the focused native animation/font/layout and keyboard/pointer journeys,
-quiet-audio fixture, local-save recovery, feedback downloads, forecast refresh,
-account isolation/convergence and Basic Spanish foundation introduction. Those
-boundaries are not replaced by assertions against mocked media or storage.
+WebKit service-worker requests bypass the fake cloud HTTP routes. Its combined
+offline-auth scenario is explicitly unsupported and skipped; Chromium exercises
+that combination. Both engines still test offline media/storage and ordinary
+account convergence. An emulator is not real-iPhone acceptance.
 
-## Running and comparing
+## Retired repetition
 
-Use the explicit fake sync service and matching build/test `SOURCE_REVISION` in
-[REVIEW.md](REVIEW.md#verification), then run `npm run check` and
-`npm run test:e2e -- --workers=2`. Use a free `E2E_PORT` for an isolated preview.
-Keep audio mode, worker count and machine fixed when comparing durations. Native
-media clocks continue independently of the Playwright clock.
+Per-release artwork, pack counts/prerequisites and every voice belong to current
+content/manifest validation. Distractor quotas, homophones, pack cross-products,
+DST examples and timer values belong to focused core tests. Separate quiet-audio
+fixture tests and long Dev-review/mastery/badge tours duplicate native boundaries
+already exercised by the retained flows. Detailed cosmetic animation phases are
+deliberately no longer exhaustively simulated.
 
-The default suite excludes `e2e/content-review/`. Full decoder sweeps and contact
-sheets remain available through `npm run test:content-review` and its manual
-workflow. Real-iPhone acceptance remains separate from mobile WebKit.
+The complete contextual practice journey owns native sentence/question playback;
+the library journey checks failure/retry/cancellation without playing every voice
+to completion again. Production licensing/source packaging is checked by focused
+tests and the publication smoke.
 
-CI runs Chromium shard 1 followed by WebKit shard 2 on one runner, with the inverse
-pair on the other. Each engine/shard combination still runs exactly once. This
-counterbalances expensive halves without another runner or custom test partition.
-Reports are named by their actual engine/shard, and all shards remain required.
+## Running
+
+Build with the explicit fake sync service and matching `SOURCE_REVISION` described
+in [TESTING.md](TESTING.md), then use an unused port:
+
+```sh
+E2E_AUDIO=quiet E2E_PORT=4299 npm run test:e2e -- --workers=2
+```
+
+CI downloads the build produced by validation and runs both engines once in a
+single browser job. Main reuses successful premerge checks only for an identical
+Git tree; it does not rerun the journeys during publication.
+
+The default suite excludes `e2e/content-review/`. Decoder sweeps/contact sheets
+remain available through `npm run test:content-review` and its manual workflow.
+They are content review tools, not another routine release gate.
 
 ## Measurement
 
-After integrating main `cae8416`, discovery reports 52 scenarios / 104 browser
-executions, down from that main revision's 63 / 126 (eleven fewer scenarios,
-about 17%). This includes the contextual-pack-1, pack-badge and adaptive
-distractor journeys added since the original review. Each engine/shard has
-26 executions; both shards of both engines remain required.
+Baseline `3fcddfc9` discovers 63 scenarios / 126 executions. The hosted
+[baseline run](https://github.com/ajhconway/kikimashta/actions/runs/42741531841)
+passed 125 and skipped the unsupported WebKit offline-auth combination, with
+688.231 seconds aggregate per-test time across the engine executions.
 
-The preceding integration with main `3e813cc` had 50 scenarios / 100 executions.
-Those 100 executions passed locally on `32f1d01` in 173.51 seconds with two workers,
-no skips and no retries. Its [hosted run](https://github.com/ajhconway/kikimashta/actions/runs/42570109238)
-also passed all 100 executions: 25 per engine/shard. The paired runners spent
-approximately 119 and 137 seconds from their first engine command through the
-final engine result, including the intervening report upload.
-
-The recorded timings above and the original `dadc123` to `434affa` comparison
-(55 to 44 scenarios) predate the adaptive distractor integration. They do not
-describe the current 104-execution suite's timing. New verification results are
-recorded in PR #203. Local timings exclude build/install; hosted browser-phase timings exclude
-checkout, installation, build and runner startup.
+Record comparable local before/after measurements and their environment in
+issue #247 and its PR. Do not compare hosted aggregate time with local wall time,
+or include setup/build/Pages service waits in a test-execution speedup.
+Earlier #179/#202 timings are historical and do not describe this suite.
