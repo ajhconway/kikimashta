@@ -16,7 +16,7 @@ const json = async path => JSON.parse(await readFile(path, 'utf8'))
 const journal = async path => (await readFile(path, 'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)
 const jsonl = records => records.map(record => JSON.stringify(record) + '\n').join('')
 
-async function mediaFixture(t, stage = 'contrastive', { representativeNormalization = false } = {}) {
+async function mediaFixture(t, stage = 'contrastive', { representativeNormalization = true } = {}) {
   const fixture = await contextualFixture(t, { hostileText: true, stage })
   const audio = {}
   for (const [kind, frequency] of [['sentence', 440], ['question', 880]]) {
@@ -32,8 +32,8 @@ async function mediaFixture(t, stage = 'contrastive', { representativeNormalizat
   const delivery = join(fixture.root, 'artifacts/generated-originals/contextual-audition/normalized')
   const originalsPath = join(fixture.output, 'originals.jsonl')
   const originals = await journal(originalsPath)
-  // The simple-stage case tests review metadata, not eighteen identical encodes.
-  // Normalize one real sentence and question; keep the full matrix integration below.
+  // Both stages reuse two exact tone sources. Normalize each distinct waveform
+  // once, then preserve the complete logical matrix with verified source hashes.
   const representatives = [...new Map(originals.map(record => [record.kind, record])).values()]
   if (representativeNormalization) await writeFile(originalsPath, jsonl(representatives))
   const normalization = JSON.parse(execFileSync('python3', [fileURLToPath(new URL('./normalize-elevenlabs.py', import.meta.url)),

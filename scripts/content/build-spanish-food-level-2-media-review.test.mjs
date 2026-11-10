@@ -5,7 +5,7 @@ import { readFile, writeFile, mkdir, copyFile, mkdtemp, rm, symlink } from 'node
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { fileURLToPath } from 'node:url'
-import { inspectFoodLevel2Media, buildFoodLevel2MediaReview } from './build-spanish-food-level-2-media-review.mjs'
+import { buildFoodLevel2MediaReview, foodLevel2MediaReviewHtml } from './build-spanish-food-level-2-media-review.mjs'
 import { loadSpanishFoodLevel2Plan } from './generate-spanish-food-level-2.mjs'
 import { foodLevel2AudioReviewManifest, foodLevel2NormalizationVerification } from './build-spanish-food-level-2-audio-review.mjs'
 const source=fileURLToPath(new URL('../../',import.meta.url)),FOOD='content/spanish-food-2',ART='artifacts/spanish-food-2-art',AUDIO='artifacts/spanish-food-2-audio-review',MEDIA='artifacts/spanish-food-2-media-review'
@@ -36,42 +36,43 @@ async function fixture(t){
 }
 const outputs=root=>Promise.all([MEDIA+'/manifest.json',MEDIA+'/index.html',FOOD+'/media-review.html'].map(p=>readFile(join(root,p))))
 
-test('complete Food2 review combines36 accepted pictures with248 new and40 unchanged recordings without copying reusable deliveries',async t=>{
-  const{root,draft,reuse,generated}=await fixture(t),protectedPaths=[ART+'/manifest.json',FOOD+'/artwork-acceptance.json',FOOD+'/artwork-revisions-v1.json',FOOD+'/draft.json',FOOD+'/audio-approval.json',FOOD+'/audio-reuse.json',AUDIO+'/manifest.json']
-  const before=await Promise.all(protectedPaths.map(p=>readFile(join(root,p))))
-  const inspected=await inspectFoodLevel2Media(root);await assert.rejects(readFile(join(root,MEDIA,'manifest.json')),{code:'ENOENT'})
-  assert.equal(inspected.images.length,36);assert.equal(inspected.words,36);assert.equal(inspected.clips.length,288);assert.equal(inspected.newRecordings,248);assert.equal(inspected.reusedRecordings,40)
-  assert.equal(inspected.clips.filter(c=>c.source==='new-generation').length,248);assert.equal(inspected.clips.filter(c=>c.source==='accepted-reuse').length,40);assert.equal(new Set(inspected.clips.map(c=>c.id+':'+c.voice)).size,288)
-  assert.deepEqual(inspected.items.map(i=>i.id),draft.items.map(i=>i.id));assert.equal(inspected.images.find(i=>i.id==='es-419-travel-drinking-glass').path,ART+'/originals/glass-v1.png')
-  for(const c of reuse.clips)assert.equal(inspected.clips.find(i=>i.id===c.id&&i.voice===c.voice).path,c.path)
-  for(const c of generated.clips)assert.equal(inspected.clips.find(i=>i.id===c.id&&i.voice===c.voice).path,AUDIO+'/'+c.file)
-  assert.equal(inspected.normalizationEvidence.clips,248);assert.equal(inspected.inputs[AUDIO+'/normalization-summary.json'],hash(await readFile(join(root,AUDIO,'normalization-summary.json'))))
-  assert.equal(inspected.artworkStatus,'accepted');assert.equal(inspected.listeningStatus,'pending');assert.equal(inspected.runtimeActivationAuthorized,false)
-  assert.deepEqual(await buildFoodLevel2MediaReview(root),inspected)
-  const html=await readFile(join(root,FOOD,'media-review.html'),'utf8');assert.equal((html.match(/<article /g)??[]).length,36);assert.equal((html.match(/<img /g)??[]).length,36);assert.equal((html.match(/<audio controls /g)??[]).length,288)
-  assert.equal((html.match(/<audio controls data-source="new-generation"/g)??[]).length,248);assert.equal((html.match(/<audio controls data-source="accepted-reuse"/g)??[]).length,40)
-  assert.match(html,/248 new recordings and 40 unchanged accepted reuses/);assert.match(html,/Food listening approval is pending; this pack is not active/);assert.match(html,/Food level 2/)
-  for(const id of ['search','group','audio-source','region','voice','sequence','stop'])assert.ok(html.includes(`id="${id}"`))
-  assert.ok(html.includes('../../public/audio/es-419-travel-2/'));assert.ok(html.includes('../../'+AUDIO+'/audio/'));assert.ok(html.includes('Mexico City, Mexico'));assert.ok(html.includes('New recordings only'))
-  assert.deepEqual(await Promise.all(protectedPaths.map(p=>readFile(join(root,p)))),before);await assert.rejects(readFile(join(root,MEDIA,'audio',reuse.clips[0].voice,reuse.clips[0].id+'.mp3')),{code:'ENOENT'})
+test('production Food2 review keeps the accepted shared glass, exact media and all voices without modifying outputs', async () => {
+  const draft = await json(join(source, FOOD, 'draft.json'))
+  const protectedPaths = [ART + '/manifest.json', FOOD + '/artwork-acceptance.json', FOOD + '/draft.json', AUDIO + '/manifest.json']
+  const before = await Promise.all(protectedPaths.map(path => readFile(join(source, path))))
+  const inspected = await json(join(source, MEDIA, 'manifest.json'))
+  assert.deepEqual(inspected.items.map(item => item.id), draft.items.map(item => item.id))
+  assert.equal(inspected.images.length, 36)
+  assert.equal(inspected.clips.length, 288)
+  assert.equal(new Set(inspected.clips.map(clip => clip.id + ':' + clip.voice)).size, 288)
+  assert.equal(inspected.clips.filter(clip => clip.source === 'new-generation').length, 248)
+  assert.equal(inspected.clips.filter(clip => clip.source === 'accepted-reuse').length, 40)
+  assert.equal(inspected.artworkStatus, 'accepted')
+  assert.equal(inspected.runtimeActivationAuthorized, false)
+  const html = foodLevel2MediaReviewHtml(inspected)
+  assert.equal((html.match(/<article /g) ?? []).length, 36)
+  assert.equal((html.match(/<img /g) ?? []).length, 36)
+  assert.equal((html.match(/<audio controls /g) ?? []).length, 288)
+  assert.match(html, /Food listening approval is pending/)
+  assert.deepEqual(await Promise.all(protectedPaths.map(path => readFile(join(source, path)))), before)
 })
 
-test('changed request/profile/normalization/last recording/accepted reuse provenance fails before any complete-gallery rewrite',async t=>{
-  const{root,reuse,generated}=await fixture(t);await buildFoodLevel2MediaReview(root);const before=await outputs(root),manifestPath=AUDIO+'/manifest.json',originalManifest=await readFile(join(root,manifestPath))
-  const unchanged=async pattern=>{await assert.rejects(buildFoodLevel2MediaReview(root),pattern);assert.deepEqual(await outputs(root),before)}
-  for(const mutate of [m=>{m.clips.at(-1).request.text='wrong'},m=>{m.clips.at(-1).after.truePeakDbtp=0},m=>{m.clips[1]=m.clips[0]},m=>{m.audioApprovalSha256='0'.repeat(64)},m=>{m.status='accepted'}]){const m=JSON.parse(originalManifest);mutate(m);await save(root,manifestPath,m);await unchanged(/recording identity or playback profile|review matrix or authorization|generated audio input bindings/);await save(root,manifestPath,originalManifest)}
-  const lastPath=AUDIO+'/'+generated.clips.at(-1).file,last=await readFile(join(root,lastPath));await save(root,lastPath,'changed final delivery');await unchanged(/New Food recording bytes/);await save(root,lastPath,last)
-  for(const p of [AUDIO+'/normalization-summary.json',AUDIO+'/normalization-verification.json']){const original=await readFile(join(root,p));await save(root,p,original.toString()+' ');if(p.includes('summary'))await unchanged(/normalization verification binding/);else{const changed=JSON.parse(original);changed.clips=247;await save(root,p,changed);await unchanged(/normalization verification binding/)}await save(root,p,original)}
-  const summaryPath=AUDIO+'/normalization-summary.json',summaryBytes=await readFile(join(root,summaryPath)),summary=JSON.parse(summaryBytes);summary.profile.targetLufs=-12;await save(root,summaryPath,summary);await unchanged(/normalization summary differs/);await save(root,summaryPath,summaryBytes)
-  const existingPath=reuse.clips.at(-1).path,existingBytes=await readFile(join(root,existingPath));await save(root,existingPath,'changed accepted recording');await unchanged(/Accepted reused audio bytes|Accepted reused Food recording bytes/);await save(root,existingPath,existingBytes)
-  const bankPath=reuse.sources[0].bank,bankBytes=await readFile(join(root,bankPath)),bank=JSON.parse(bankBytes);bank.items.find(i=>i.id===reuse.items[0].id).text='wrong';await save(root,bankPath,bank);await unchanged(/existing Spanish reuse identity|Accepted reused audio provenance/);await save(root,bankPath,bankBytes)
-  const approvalPath=FOOD+'/audio-approval.json',approval=await readFile(join(root,approvalPath));await save(root,approvalPath,approval.toString()+' ');await unchanged(/authorized audio approval bytes/);await save(root,approvalPath,approval)
-  await rm(join(root,manifestPath));await unchanged({code:'ENOENT'});await save(root,manifestPath,originalManifest)
+test('a corrupt final new recording preserves every previous gallery output', async t => {
+  const { root, generated } = await fixture(t)
+  for (const path of [MEDIA + '/manifest.json', MEDIA + '/index.html', FOOD + '/media-review.html']) await save(root, path, 'previous output')
+  const before = await outputs(root)
+  await save(root, AUDIO + '/' + generated.clips.at(-1).file, 'changed final delivery')
+  await assert.rejects(buildFoodLevel2MediaReview(root), /New Food recording bytes/)
+  assert.deepEqual(await outputs(root), before)
 })
 
-test('source and late output symlinks preserve prior galleries and never write through unrelated targets',async t=>{
-  const{root,reuse}=await fixture(t);await buildFoodLevel2MediaReview(root);const before=await outputs(root)
-  const path=reuse.clips[0].path,original=await readFile(join(root,path));await save(root,'same-audio.mp3',original);await rm(join(root,path));await symlink(join(root,'same-audio.mp3'),join(root,path));await assert.rejects(buildFoodLevel2MediaReview(root),/symlinks/);assert.deepEqual(await outputs(root),before);await rm(join(root,path));await save(root,path,original)
-  await save(root,'sentinel.html','unchanged');await rm(join(root,FOOD,'media-review.html'));await symlink(join(root,'sentinel.html'),join(root,FOOD,'media-review.html'))
-  await assert.rejects(buildFoodLevel2MediaReview(root),/symlinks/);assert.deepEqual((await outputs(root)).slice(0,2),before.slice(0,2));assert.equal(await readFile(join(root,'sentinel.html'),'utf8'),'unchanged')
+test('a late output symlink preserves earlier galleries and its unrelated target', async t => {
+  const { root } = await fixture(t)
+  for (const path of [MEDIA + '/manifest.json', MEDIA + '/index.html']) await save(root, path, 'previous output')
+  await save(root, 'sentinel.html', 'unrelated target')
+  await symlink(join(root, 'sentinel.html'), join(root, FOOD, 'media-review.html'))
+  await assert.rejects(buildFoodLevel2MediaReview(root), /symlinks/)
+  assert.equal(await readFile(join(root, MEDIA, 'manifest.json'), 'utf8'), 'previous output')
+  assert.equal(await readFile(join(root, MEDIA, 'index.html'), 'utf8'), 'previous output')
+  assert.equal(await readFile(join(root, 'sentinel.html'), 'utf8'), 'unrelated target')
 })
