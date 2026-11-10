@@ -51,3 +51,7 @@ The owner accepted the listening gallery and requested auto-merge with “Please
 `es-419-travel-5-pictures` is the eighth Spanish pack, bringing ordinary vocabulary to 238 unique IDs. Existing saved pack choices and progress remain unchanged. [Picture-choice review](picture-choice-review.json) binds all current images and 77 new exclusions. [Neighbor review](neighbor-review.json) records the full semantic, phoneme and compact-table refresh under the unchanged selected policy.
 
 Required checks, browser journeys and current-head review precede auto-merge. Actual iPhone acceptance remains manual and open on #243; waiting for publication is not required.
+
+## Release verification
+
+[Release evidence](release-verification.json) records passing configured checks, full browser coverage plus the corrected Travel5 journey in both engines, and the existing intentional WebKit offline-account test skip. All three code-review findings are fixed with regression coverage: historical image bytes, exact generation authorization, and hash-bound discarded attempts. The acceptance amendment preserves prior acceptance and activation snapshots; no accepted image, recording or existing bank changed. Required GitHub CI and current-head review remain the auto-merge gates.

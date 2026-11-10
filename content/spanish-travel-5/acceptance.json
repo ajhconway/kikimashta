@@ -414,7 +414,17 @@
     "artifacts/spanish-travel-5-audio-review/audio/santiago/es-419-travel-draw.mp3": "edf80a7311a0e0a35b95690265cb9c4cffcd60f6e5b7d29afea4f1da3b78fca3",
     "artifacts/spanish-travel-5-audio-review/audio/agustina/es-419-travel-draw.mp3": "86f258514cb26f740c9a0099f58f8dd3819c7dd456a6e4468e37450ae2988154",
     "artifacts/spanish-travel-5-audio-review/audio/carlos-figueroa/es-419-travel-draw.mp3": "8a0bc87426d22162fc856359dbecb4ef04b2b7c9a8c66774abcdc1abe6157d1d",
-    "artifacts/spanish-travel-5-audio-review/audio/veronica/es-419-travel-draw.mp3": "04e1fc51c1f9ac085a5e567f19a3cce4d0d1bae3dd6b54f25082bd186233d295"
+    "artifacts/spanish-travel-5-audio-review/audio/veronica/es-419-travel-draw.mp3": "04e1fc51c1f9ac085a5e567f19a3cce4d0d1bae3dd6b54f25082bd186233d295",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-initial.png": "930c74acf704489d37ae4ffac34117c7da4fa2074e7fd2fd6ad7f8a44a01f820",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-glow-edit.png": "5e0da4687a866721b5562a80e9bc54111f02b67b7b6f93e8800ac789ebfb71c7",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-glow-retry.png": "c0af56acae5cf560f03d2d0333e831e1ef5ce76b77685fc75b59934ebfb06410",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-glow-edit-request.json": "d4b9f4c8c3c7969ff3dadeabbef730e59c83adac1f5fc725a0a1add9a3284281",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-glow-retry-request.json": "b7c872ac5086948261dd2ed019bc9908cf93ac97d3b148eb3e07c1429d1ce645",
+    "artifacts/spanish-travel-5-art/revisions/dance-v2-initial-record.json": "b469335987a00446acd52d6fd870712b8ad67ce150bdc07e6873d4e650902ad4",
+    "artifacts/spanish-travel-5-art/revisions/people-v2-initial-requests.json": "ab69c7a30fb93770fe88c04f0b195efb4851fba35b3d9990d801403ccfc7effe",
+    "artifacts/spanish-travel-5-art/revisions/people-v2-attempt-history.json": "b68ae5f8e2c92aee87b8e9d6cc84c9d625254f927a32c0a688c5e280903a3bbd",
+    "content/spanish-travel-5/acceptance-before-history-binding.json": "83600d069dbae89e17c4484d22ca59d0cb81d850ec8eb71ed0f15de95973cfaf",
+    "content/spanish-travel-5/activation-before-history-binding.json": "bf96dd13086d20ec2f380a11a57e4a9b0448b477a4c3832a0f56c3c2d4300ccb"
   },
   "acceptedNewQuieterClips": [
     {
@@ -428,5 +438,6 @@
     }
   ],
   "runtimeActivationAuthorized": true,
-  "autoMergeAuthorized": true
+  "autoMergeAuthorized": true,
+  "historyBindingAmendment": "Add explicit hashes for all preserved discarded dancer attempts and exact requests. Owner-approved media, scope and quieter-clip acceptance are unchanged. Previous acceptance and activation remain preserved."
 }

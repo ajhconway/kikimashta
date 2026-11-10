@@ -81,7 +81,16 @@ class ReviewProvenanceTests(unittest.TestCase):
                 'references': [self.reference], 'bytes': len(self.picture), 'width': 2, 'height': 1})
         self.put_json(review.DATA / 'draft.json', self.draft)
         draft_hash = review.sha((self.root / review.DATA / 'draft.json').read_bytes())
-        self.put_json(review.DATA / 'generation-approval.json', {'issue': 243, 'draftSha256': draft_hash})
+        self.put_json(review.DATA / 'generation-approval.json', {
+            'issue': 243, 'draftSha256': draft_hash,
+            'scope': 'Artwork only for all36 revised words',
+            'ownerMessage': 'Looks good to me. Please go ahead and generate the first round of artwork',
+            'approvedReplacements': ['cerámica', 'disco', 'bailar', 'cantar', 'tocar', 'escuchar',
+                                     'pintar', 'dibujar', 'concierto', 'festival'],
+            'removed': ['museo', 'biblioteca', 'cine', 'boleto', 'títere', 'telón', 'vela',
+                        'abanico', 'papel picado', 'imán', 'partitura', 'maracas'],
+            'workflow': 'complete-pack-before-feedback',
+            'audioGenerationAuthorized': False, 'runtimeActivationAuthorized': False})
         self.put_json(review.ART / 'requests.json', {'issue': 243, 'draftSha256': draft_hash, 'requests': requests})
         self.put_json(review.ART / 'reuse-review.json', {'items': [{
             'id': 'es-419-travel-word-35', 'slug': 'word-35', 'path': 'refs/style.png',
@@ -181,7 +190,7 @@ class ReviewProvenanceTests(unittest.TestCase):
         self.put_json(snapshot_path, snapshot)
         amendment['baseManifestSha256'] = review.sha((self.root / snapshot_path).read_bytes())
         self.put_json(review.ART / 'revisions/people-v2-requests.json', amendment)
-        with self.assertRaisesRegex(ValueError, 'Unaffected artwork changed'):
+        with self.assertRaisesRegex(ValueError, 'Hash mismatch: .*word-6-v1.png'):
             self.build()
 
     def test_people_amendment_rejects_rewriting_original_record(self):
@@ -192,6 +201,78 @@ class ReviewProvenanceTests(unittest.TestCase):
         self.put_json(record_path, record)
         with self.assertRaisesRegex(ValueError, 'Hash mismatch'):
             self.build()
+
+    def test_people_revision_requires_changed_or_deleted_replaced_v1_image_bytes(self):
+        self.prepare_people_amendment()
+        self.build()
+        before = self.output_bytes()
+        path = self.root / review.ART / 'originals/word-0-v1.png'
+        for change in ('alter', 'delete'):
+            with self.subTest(change=change):
+                if change == 'alter':
+                    path.write_bytes(b'changed original Kiku image')
+                else:
+                    path.unlink()
+                with self.assertRaisesRegex(ValueError, 'Hash mismatch|Missing review input'):
+                    self.build()
+                self.assertEqual(self.output_bytes(), before)
+                path.write_bytes(self.picture)
+
+    def test_drawing_revision_still_requires_replaced_first_round_image_bytes(self):
+        self.prepare_drawing_amendment()
+        self.build()
+        before = self.output_bytes()
+        path = self.root / review.ART / 'originals/draw-v1.png'
+        for change in ('alter', 'delete'):
+            with self.subTest(change=change):
+                if change == 'alter':
+                    path.write_bytes(b'changed first-round drawing image')
+                else:
+                    path.unlink()
+                with self.assertRaisesRegex(ValueError, 'Hash mismatch|Missing review input'):
+                    self.build()
+                self.assertEqual(self.output_bytes(), before)
+                path.write_bytes(self.picture)
+
+    def test_changed_or_revoked_generation_authorization_fails_before_output_writes(self):
+        self.build()
+        before = self.output_bytes()
+        path = review.DATA / 'generation-approval.json'
+        original = self.read_json(path)
+        changes = {
+            'issue': 244,
+            'ownerMessage': 'Please stop generation',
+            'scope': 'Artwork for only one word',
+            'workflow': 'pause-after-each-image',
+            'approvedReplacements': ['cerámica'],
+            'removed': ['museo'],
+            'audioGenerationAuthorized': True,
+            'runtimeActivationAuthorized': True,
+            'revoked': True,
+        }
+        for field, value in changes.items():
+            with self.subTest(field=field):
+                self.put_json(path, {**original, field: value})
+                with self.assertRaisesRegex(ValueError, 'Exact owner artwork generation authorization'):
+                    self.build()
+                self.assertEqual(self.output_bytes(), before)
+        for field in ('issue', 'ownerMessage', 'scope', 'workflow', 'approvedReplacements',
+                      'audioGenerationAuthorized', 'runtimeActivationAuthorized'):
+            with self.subTest(missing=field):
+                changed = dict(original)
+                del changed[field]
+                self.put_json(path, changed)
+                with self.assertRaisesRegex(ValueError, 'Exact owner artwork generation authorization'):
+                    self.build()
+                self.assertEqual(self.output_bytes(), before)
+        # Python considers 0 equal to False; authorization flags must still be actual booleans.
+        for field in ('audioGenerationAuthorized', 'runtimeActivationAuthorized'):
+            with self.subTest(non_boolean=field):
+                self.put_json(path, {**original, field: 0})
+                with self.assertRaisesRegex(ValueError, 'Exact owner artwork generation authorization'):
+                    self.build()
+                self.assertEqual(self.output_bytes(), before)
+        self.put_json(path, original)
 
     def prepare_drawing_amendment(self):
         self.prepare_people_amendment()

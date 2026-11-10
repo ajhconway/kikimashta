@@ -13,6 +13,18 @@ import zlib
 ROOT = Path(__file__).resolve().parents[2]
 DATA = Path('content/spanish-travel-5')
 ART = Path('artifacts/spanish-travel-5-art')
+GENERATION_AUTHORIZATION = {
+    'issue': 243,
+    'scope': 'Artwork only for all36 revised words',
+    'ownerMessage': 'Looks good to me. Please go ahead and generate the first round of artwork',
+    'approvedReplacements': ['cerámica', 'disco', 'bailar', 'cantar', 'tocar', 'escuchar',
+                             'pintar', 'dibujar', 'concierto', 'festival'],
+    'removed': ['museo', 'biblioteca', 'cine', 'boleto', 'títere', 'telón', 'vela',
+                'abanico', 'papel picado', 'imán', 'partitura', 'maracas'],
+    'workflow': 'complete-pack-before-feedback',
+    'audioGenerationAuthorized': False,
+    'runtimeActivationAuthorized': False,
+}
 
 
 def sha(raw):
@@ -178,6 +190,11 @@ def build(complete=False):
     request_document = load(ART / 'requests.json')
     if approval.get('draftSha256') != draft_hash or request_document.get('draftSha256') != draft_hash:
         raise ValueError('Generation approval and requests must bind the current draft hash')
+    if (approval != {**GENERATION_AUTHORIZATION, 'draftSha256': draft_hash}
+            or type(approval.get('issue')) is not int
+            or approval.get('audioGenerationAuthorized') is not False
+            or approval.get('runtimeActivationAuthorized') is not False):
+        raise ValueError('Exact owner artwork generation authorization is required')
     items = unique(draft['items'], 'id')
     slugs = unique(draft['items'], 'slug')
     if len(items) != 36 or len(slugs) != 36:
@@ -210,6 +227,9 @@ def build(complete=False):
             raise ValueError('Artwork amendment requires the complete original manifest')
         for historical_path, historical_hash in snapshot['inputHashes'].items():
             verified(historical_path, historical_hash)
+        # Replaced pictures remain historical deliverables even when no current request uses them.
+        for previous in snapshot_items.values():
+            verified(previous['path'], previous['sha256'])
         replacements = unique(amendment['requests'], 'id')
         action_ids = {item_id for item_id, item in items.items() if item['group'] == 'actions'}
         if (len(action_ids) != 6 or set(replacements) != action_ids

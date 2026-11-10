@@ -18,6 +18,10 @@ const validHash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(va
 const REQUIRED = [
   ...['draft.json', 'proposal-v1.json', 'generation-approval.json', 'artwork-acceptance.json', 'audio-config.json', 'audio-approval.json'].map(path => DATA + '/' + path),
   'content/es-419-voices.json', ...['manifest.json', 'selection.json', 'requests.json', 'reuse-review.json', 'revisions/people-v2-requests.json', 'revisions/before-people-v2-manifest.json', 'revisions/draw-v3-request.json', 'revisions/before-draw-v3-manifest.json'].map(path => ART + '/' + path),
+  ...['dance-v2-initial.png', 'dance-v2-glow-edit.png', 'dance-v2-glow-retry.png',
+    'dance-v2-glow-edit-request.json', 'dance-v2-glow-retry-request.json',
+    'dance-v2-initial-record.json', 'people-v2-initial-requests.json',
+    'people-v2-attempt-history.json'].map(path => ART + '/revisions/' + path),
   MEDIA, REVIEW + '/normalization-summary.json', REVIEW + '/normalization-verification.json',
 ]
 

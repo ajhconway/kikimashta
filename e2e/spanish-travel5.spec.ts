@@ -13,7 +13,10 @@ test('Travel5 library, native audio and saved lessons stay scoped to its36 words
   });
   await page.goto('vocabulary/?language=es-419&pack=es-419-travel-5-pictures');
   await expect(page.locator('#results-status')).toContainText('36 cards');
-  await expect(page.locator('.card')).toHaveCount(36);
+  await expect(page.locator('.card')).toHaveCount(24);
+  await expect(page.locator('.card h2')).toHaveText(travel5.items.slice(0, 24).map(item => item.text));
+  await page.getByRole('button', { name: 'Next →', exact: true }).click();
+  await expect(page.locator('.card h2')).toHaveText(travel5.items.slice(24).map(item => item.text));
   for (const name of [
     'Travel level 1 · Pictures', 'Travel level 2 · Pictures', 'Travel level 3 · Pictures',
     'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts',
@@ -34,7 +37,7 @@ test('Travel5 library, native audio and saved lessons stay scoped to its36 words
     return audio.src.includes('/es-419-travel-5/juan/es-419-travel-draw.mp3') && audio.currentTime > 0;
   })).toBe(true);
   await page.getByLabel('Search words').fill('');
-  await expect(page.locator('.card')).toHaveCount(36);
+  await expect(page.locator('.card')).toHaveCount(24);
   expect(await savedAttempts(page, 'es-419')).toEqual([]);
   await page.getByRole('link', { name: '← Listening practice' }).click();
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
@@ -80,7 +83,7 @@ test('Travel5 library, native audio and saved lessons stay scoped to its36 words
   expect(await savedAttempts(page, 'ja-JP')).toEqual([]);
   await page.getByRole('combobox', { name: 'Learning language' }).selectOption('es-419');
   expect(await savedAttempts(page, 'es-419')).toEqual(saved);
-  await page.getByRole('link', { name: 'Card library', exact: true }).click();
+  await page.getByRole('link', { name: /^Card library/ }).click();
   await expect(page.getByRole('checkbox', { name: 'Travel level 5 · Pictures', exact: true })).toBeChecked();
   await expect(page.getByRole('checkbox', { name: 'Travel level 1 · Pictures', exact: true })).not.toBeChecked();
 });

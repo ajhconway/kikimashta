@@ -134,3 +134,41 @@ test('Travel5 preflights all destination links/conflicts and rejects late source
   await absent(join(f.root, 'content/es-419-travel-5.json'))
   assert.deepEqual(await Promise.all(f.protectedPaths.map(path => readFile(join(f.root, path)))), f.protectedBytes)
 })
+
+test('Travel5 requires unchanged discarded dancer images, records, requests and acceptance bindings before staging', async t => {
+  const f = await fixture(t)
+  const acceptancePath = join(f.root, DATA + '/acceptance.json')
+  const acceptanceBytes = await readFile(acceptancePath)
+  const firstImage = f.media.images.find(image => image.source === 'generated')
+  const firstOutput = join(f.root, `public/images/approved/${firstImage.id}-${firstImage.sha256.slice(0, 12)}.png`)
+  const noWrites = async () => {
+    await absent(firstOutput)
+    await absent(join(f.root, 'public/audio/es-419-travel-5'))
+    await absent(join(f.root, 'content/es-419-travel-5.json'))
+    await absent(join(f.root, DATA + '/activation.json'))
+  }
+  for (const name of [
+    'dance-v2-initial.png', 'dance-v2-glow-edit.png', 'dance-v2-glow-retry.png',
+    'dance-v2-glow-edit-request.json', 'dance-v2-glow-retry-request.json',
+    'dance-v2-initial-record.json', 'people-v2-initial-requests.json',
+    'people-v2-attempt-history.json',
+  ]) {
+    const relative = 'artifacts/spanish-travel-5-art/revisions/' + name
+    const path = join(f.root, relative)
+    const original = await readFile(path)
+    assert.equal(f.acceptance.inputs[relative], hash(original), `Acceptance must bind ${name}`)
+    await writeFile(path, 'changed discarded history')
+    await assert.rejects(stageSpanishTravelLevel5({ root: f.root }), /Accepted Travel input bytes changed/)
+    await noWrites()
+    await rm(path)
+    await assert.rejects(stageSpanishTravelLevel5({ root: f.root }), { code: 'ENOENT' })
+    await noWrites()
+    await writeFile(path, original)
+    const missingBinding = structuredClone(f.acceptance)
+    delete missingBinding.inputs[relative]
+    await writeFile(acceptancePath, JSON.stringify(missingBinding))
+    await assert.rejects(stageSpanishTravelLevel5({ root: f.root }), /final input bindings are incomplete/)
+    await noWrites()
+    await writeFile(acceptancePath, acceptanceBytes)
+  }
+})
