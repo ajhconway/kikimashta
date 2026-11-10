@@ -85,6 +85,7 @@ test('Travel5 acceptance, input, picture and late recording tampering reject bef
   }
   for (const change of [
     acceptance => { acceptance.status = 'pending' },
+    ...[false, undefined, null, 1, 'true'].map(value => acceptance => { acceptance.runtimeActivationAuthorized = value }),
     acceptance => { acceptance.ownerMessage = 'Only generate more audio' },
     acceptance => { acceptance.acceptedNewQuieterClips = [] },
     acceptance => { delete acceptance.inputs[REVIEW + '/normalization-verification.json'] },

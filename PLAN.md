@@ -499,3 +499,7 @@ Travel5audio is complete:288new recordings with all36accepted pictures in the li
 ### Travel5 final listening acceptance and activation (#243)
 
 The owner accepted listening and authorized activation/auto-merge with “Please go ahead and auto-merge”. Bind the exact36currentpictures/288recordings and quieter CarlosFigueroa disco clip in finalacceptance. Stage34newPNG and288MP3unchanged,reuse twoexistingJapaneseillustrations,register a separateTravel level5picturepack with36newstableSpanishIDs, andpreserve allpreviousprogress/preferences/media. Audit full-pool imagechoices and regenerate selectedsemantic/pronunciation/compactneighbors across all238ordinarywords without changingpolicy/frozenexperiments. Bringmain up todate,run configuredchecks and completebrowserjourneys with documentedfakesync configuration,requestcurrent-headreview alongsideCI,and enableautomerge through requiredgates. Keep actualiPhoneacceptanceopen; no publicationwait isrequired.
+
+### Travel5 CI follow-up (#243)
+
+CI exceeded the aggregate 30-second timeout while testing all 255 nonempty Spanish pack scopes. Keep every card and mastery assertion, but report each scope as a separate bounded test using the normal timeout. Do not raise timeouts or add retries. Also require the final runtime activation flag to be exactly true; test revoked, missing and non-boolean flags before staging writes.

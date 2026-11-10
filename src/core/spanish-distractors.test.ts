@@ -79,28 +79,30 @@ describe('selected Spanish word neighbors (#222)', () => {
     expect(Object.values(result.choiceKinds).filter(kind => kind !== 'correct')).toEqual(['broad', 'broad', 'broad']);
   });
 
-  it('keeps choices valid across every current nonempty Spanish pack combination', () => {
-    for (let mask = 1; mask < 2 ** language.packs.length; mask++) {
-      const packIds = language.packs.filter((_, index) => mask & (1 << index)).map(pack => pack.id);
-      const cards = selectedPracticeCards(language.pool.items, packIds, language.packs);
-      const pool = cards.map(card => card.item);
-      expect(new Set(pool.map(item => item.id)).size).toBe(pool.length);
-      for (const card of cards) for (const level of [masteryLevels[0], masteryLevels[4], masteryLevels[7]]) {
-        const result = selectWordChoices(card, pool, level, fixed);
-        expect(result.choices).toHaveLength(4);
-        expect(new Set(result.choices.map(item => item.id)).size).toBe(4);
-        expect(result.choices.every(item => pool.includes(item))).toBe(true);
-        const targetSound = spanishWordNeighbors.pronunciationKey?.(card.item.id);
-        expect(targetSound).toBeTruthy();
-        for (const a of result.choices) for (const b of result.choices) {
-          if (a.id === b.id) continue;
-          expect(spanishWordNeighbors.pictureExcluded(a.id, b.id)).toBe(false);
-          expect(a.pictureDistractorExclusions).not.toContain(b.id);
-          expect(a.image.src).not.toBe(b.image.src);
-        }
-        expect(result.choices.filter(item => item.id !== card.item.id).every(item => spanishWordNeighbors.pronunciationKey?.(item.id) !== targetSound)).toBe(true);
-        expect(result.writingChoicePolicy).toBeUndefined();
+  // Isolate each scope so expanded vocabulary cannot exhaust one aggregate timeout.
+  // Every nonempty pack combination still checks every card at all three mastery levels.
+  const scopes = Array.from({ length: 2 ** language.packs.length - 1 }, (_, index) => ({
+    packIds: language.packs.filter((_, bit) => (index + 1) & (1 << bit)).map(pack => pack.id),
+  }));
+  it.each(scopes)('keeps choices valid for Spanish pack scope $packIds', ({ packIds }) => {
+    const cards = selectedPracticeCards(language.pool.items, packIds, language.packs);
+    const pool = cards.map(card => card.item);
+    expect(new Set(pool.map(item => item.id)).size).toBe(pool.length);
+    for (const card of cards) for (const level of [masteryLevels[0], masteryLevels[4], masteryLevels[7]]) {
+      const result = selectWordChoices(card, pool, level, fixed);
+      expect(result.choices).toHaveLength(4);
+      expect(new Set(result.choices.map(item => item.id)).size).toBe(4);
+      expect(result.choices.every(item => pool.includes(item))).toBe(true);
+      const targetSound = spanishWordNeighbors.pronunciationKey?.(card.item.id);
+      expect(targetSound).toBeTruthy();
+      for (const a of result.choices) for (const b of result.choices) {
+        if (a.id === b.id) continue;
+        expect(spanishWordNeighbors.pictureExcluded(a.id, b.id)).toBe(false);
+        expect(a.pictureDistractorExclusions).not.toContain(b.id);
+        expect(a.image.src).not.toBe(b.image.src);
       }
+      expect(result.choices.filter(item => item.id !== card.item.id).every(item => spanishWordNeighbors.pronunciationKey?.(item.id) !== targetSound)).toBe(true);
+      expect(result.writingChoicePolicy).toBeUndefined();
     }
-  }, 30_000);
+  });
 });

@@ -43,6 +43,7 @@ export async function stageSpanishTravelLevel5({ root = process.cwd() } = {}) {
   const acceptanceBytes = await read(ACCEPTANCE)
   const acceptance = JSON.parse(acceptanceBytes)
   if (acceptance.issue !== 243 || acceptance.pack !== 'es-419-travel-5' || acceptance.language !== 'es-419'
+    || acceptance.runtimeActivationAuthorized !== true
     || acceptance.status !== 'accepted-for-activation' || acceptance.ownerMessage !== 'Please go ahead and auto-merge'
     || acceptance.words !== 36 || acceptance.images !== 36 || acceptance.recordings !== 288 || acceptance.voices !== 8
     || acceptance.newWords !== 36 || acceptance.reusedWords !== 0 || acceptance.generatedImages !== 34 || acceptance.reusedImages !== 2
