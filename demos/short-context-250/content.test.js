@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const questions=JSON.parse(readFileSync(new URL('./source/questions.json',import.meta.url)));
 const artwork=JSON.parse(readFileSync(new URL('./artwork-v2/manifest.json',import.meta.url)));
@@ -21,7 +21,24 @@ test('every answer uses its reviewed raster source and matching immutable hash',
       if(art.origin==='generated')assert.equal(art.status,'pending-owner-review');
       else assert.ok(art.approvalEvidence,choice.id);
     }
-    assert.ok(existsSync(new URL(`./public/audio/${q.id}-sentence.mp3`,import.meta.url)));
-    if(q.question)assert.ok(existsSync(new URL(`./public/audio/${q.id}-question.mp3`,import.meta.url)));
+  }
+});
+
+test('all thirty-two demo clips bind to processed ElevenLabs deliveries and exact prompt text',()=>{
+  const provenance=JSON.parse(readFileSync(new URL('./public/audio-provenance-v3.json',import.meta.url)));
+  assert.equal(provenance.recordings.length,32);
+  assert.deepEqual(provenance.plan.generation.voices.map(v=>v.voice),['otani','morioki']);
+  for(const voice of ['otani','morioki'])for(const q of questions)for(const kind of ['sentence','question']){
+    if(!q[kind])continue;
+    const id=`ja-short-demo-${q.id}-${kind}`;
+    const record=provenance.recordings.find(r=>r.voice===voice&&r.id===id);
+    assert.ok(record,id);
+    assert.equal(record.text,q[kind]);
+    assert.equal(record.model,'eleven_v4');
+    assert.equal(record.profile.targetLufs,-22);
+    assert.ok(record.after.truePeakDbtp<=-2);
+    assert.ok(record.decodedFrames>0);
+    const bytes=readFileSync(new URL(`./public/audio/${record.file}`,import.meta.url));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'),record.deliverySha256);
   }
 });

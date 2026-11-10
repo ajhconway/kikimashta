@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "issue": 250,
+  "source": "demos/short-context-250/source/questions.json",
+  "sourceCommit": "517cf97adc6535071a1b28804dc4200343ca766d",
+  "sourceFileSha256": "dc10cf677aa9ed39045692a2649b205ac6b62c925069df8209956bb2974c6e5a",
+  "textSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+  "recordedAt": "2026-11-10T22:53:24.106746+00:00",
+  "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/250",
+  "evidence": {
+    "kind": "owner-conversation",
+    "quote": "Ok, please document this in an issue, then generate audio for the contextual questions."
+  },
+  "scope": "Current ten demo prompts, exact written Japanese request text, Otani and Morioki from the approved contextual registry. Generation authorization; listening acceptance and production activation remain separate."
+}

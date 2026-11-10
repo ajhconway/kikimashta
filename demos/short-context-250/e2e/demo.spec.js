@@ -6,6 +6,8 @@ test('reviews all ten prompts with the production quiz, real media, and raster c
   test.setTimeout(90000);
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/');
+  const voice=info.project.name==='chromium'?'otani':'morioki';
+  await page.getByRole('combobox',{name:'Voice',exact:true}).selectOption(voice);
   await page.getByRole('button',{name:'Begin review'}).click();
   for(let i=0;i<questions.length;i++){
     const q=questions[i];
@@ -15,6 +17,7 @@ test('reviews all ten prompts with the production quiz, real media, and raster c
     // Real audio must decode and finish. Autoplay policies may require Replay.
     if(await page.getByText('Ready to listen.',{exact:false}).isVisible())await replay.click();
     await expect.poll(()=>page.locator('.contextual-quiz audio').evaluate(a=>a.readyState)).toBeGreaterThanOrEqual(2);
+    await expect.poll(()=>page.locator('.contextual-quiz audio').evaluate(a=>a.src)).toContain(`/audio/${voice}/`);
     if(q.question)await expect.poll(()=>page.locator('.contextual-quiz audio').evaluate(a=>a.src),{timeout:10000}).toContain(`${q.id}-question.mp3`);
     await expect.poll(()=>page.locator('.contextual-quiz audio').evaluate(a=>a.ended),{timeout:15000}).toBeTruthy();
     await expect(page.locator('.answer-choice img')).toHaveCount(4);
@@ -48,12 +51,12 @@ test('reviews all ten prompts with the production quiz, real media, and raster c
 });
 
 test('retains the production replay/error boundary and exact per-card source records',async({page})=>{
-  await page.route('**/audio/*.mp3',route=>route.abort());
+  await page.route('**/audio/**/*.mp3',route=>route.abort());
   await page.goto('/');
   await page.getByRole('button',{name:'Begin review'}).click();
   await expect(page.getByRole('alert')).toContainText('The sound couldn’t play');
   await expect(page.locator('.answer-choice').first()).toBeDisabled();
-  await page.unroute('**/audio/*.mp3');
+  await page.unroute('**/audio/**/*.mp3');
   await page.getByRole('button',{name:'Replay sentence',exact:true}).click();
   await expect(page.getByRole('alert')).toHaveCount(0);
   await expect(page.locator('.answer-choice').first()).toBeEnabled();

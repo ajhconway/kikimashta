@@ -5,8 +5,10 @@ import type { WordItem } from '@app/types';
 
 const prompt = (text = '', reading = '', meaning = ''): ContextualPrompt => ({ text, reading, meaning, grammarTags: [], supportingVocabularyIds: [] });
 export { drafts };
+export const voices = [{ id: 'otani', name: 'Otani' }, { id: 'morioki', name: 'Morioki' }] as const;
+export type DemoVoice = typeof voices[number]['id'];
 
-export function demoQuestion(index: number): Question {
+export function demoQuestion(index: number, voice: DemoVoice = 'otani'): Question {
   const draft = drafts[index];
   if (!draft) throw new Error('Unknown demo question');
   const choices: WordItem[] = draft.choices.map(choice => ({
@@ -21,8 +23,8 @@ export function demoQuestion(index: number): Question {
     explanation: draft.english,
   };
   const recording = {
-    id: `short-demo-${draft.id}-kyoko`, voice: 'kyoko', sentenceSrc: `audio/${draft.id}-sentence.mp3`,
-    questionSrcs: draft.question ? { [question.id]: `audio/${draft.id}-question.mp3` } : {},
+    id: `short-demo-${draft.id}-${voice}`, voice, sentenceSrc: `audio/${voice}/ja-short-demo-${draft.id}-sentence.mp3`,
+    questionSrcs: draft.question ? { [question.id]: `audio/${voice}/ja-short-demo-${draft.id}-question.mp3` } : {},
   };
   const context: ContextualItem = {
     id: `short-demo-${draft.id}`, revision: 2, stage: 'simple', targetItemId: draft.id,

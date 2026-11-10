@@ -6,6 +6,7 @@ import { generationPlan } from './generate-elevenlabs-cards.mjs'
 import { loadContextualPilot, projectRoot } from './validate-contextual.mjs'
 import { validateContextualBank } from '../../src/content/contextual.ts'
 import { withAnswerVocabulary } from '../../src/content/contextual-answers.ts'
+import { loadShortContextAudition } from './short-context-audio-plan.mjs'
 
 export const AUDIO_CONTEXT_IDS = ['ja-ctx-ue-01', 'ja-ctx-mizu-01', 'ja-ctx-hashiru-01']
 export const AUDIO_VOICES = ['otani', 'morioki']
@@ -128,6 +129,7 @@ export function contextualAuditionPlan({ bank, approval, config, stage = 'contra
 }
 
 export function loadContextualAudition(root = projectRoot, { stage = 'contrastive', batch = 'sample' } = {}) {
+  if (batch === 'short-demo-250') return loadShortContextAudition(root)
   const profile = auditionProfile(stage, batch)
   const read = path => JSON.parse(readFileSync(resolve(root, path), 'utf8'))
   const approval = read(profile.approvalPath)

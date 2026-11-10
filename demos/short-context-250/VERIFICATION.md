@@ -1,4 +1,17 @@
-# Revision 2 verification — 2026-11-10
+# Revision 3 audio verification — 2026-11-10
+
+- Exact current ten-draft approval gate and shared generation/resume regressions: 22 passed before paid generation.
+- Shared resumable contextual engine: 32/32 provider originals generated, Otani and Morioki, `eleven_v4`, Japanese request text, 310 Unicode input characters, one request at a time and no automatic retries.
+- Shared `normalize-elevenlabs.py`: 32/32 deliveries, −22 LUFS within tolerance, true peaks at/below −2 dBTP, no target-limited clips. Provider originals remain unchanged.
+- Shared contextual review preflight: complete request/voice/approval identities, every original and sidecar hash, normalized profile/levels/hashes and full decoding verified for all 32 clips. Local twelve-pair comparison generated; sentence-only prompts play in the demo without an added question.
+- Private durable archive: 201 files copied and SHA-256 verified, covering originals, sidecars, plans, processing and usage evidence. Public provenance omits credentials and account usage.
+- Repository `npm run check`: passed lint/types, 523 Vitest tests, 386 Node tests, 52 Python audio tests, 27 artwork tests, validators/neighbors and production build.
+- Demo `npm run check` and `npm run build`: passed TypeScript, forty immutable image bindings and all thirty-two exact audio text/delivery bindings.
+- Demo `npm run test:browser`: 4 passed, zero skips/retries, in 46.0 seconds. Chromium completed all ten prompts with Otani; mobile WebKit completed all ten with Morioki. Both checked real playback through the selected voice, four sentence-only prompts, six sentence/pause/question pairs, forty raster cards, feedback/translations, finish/restart, audio failure/replay and the art gallery. No script errors or horizontal overflow.
+
+The existing private demo is the review destination. Owner listening/pronunciation, artwork approval and actual-iPhone acceptance remain pending. PR #251 remains open; no production practice activation or merge is part of this audio update.
+
+# Revision 2 verification — 2026-11-10 (prior artwork/UI correction)
 
 The first recreated interface/SVG demo was rejected by the owner. This revision uses the actual app components and stylesheet, with reference-based generated picture cards. Earlier implementation and test evidence remain in Git history; this is the current result.
 

@@ -4,7 +4,7 @@
 
 The owner's review rejected the first version's recreated interface and hand-drawn SVG pictures. This replacement imports the real production `ContextualQuiz`, `MasteryFeedback`, `PracticeHeader`, `QuizProgress`, `themes.ts`, and `styles.css`. The shared header/progress were lifted unchanged from `App.tsx` into `PracticeChrome.tsx`; production and the review demo now use the same components. The demo has no separate quiz stylesheet or illustration renderer.
 
-The ten short Japanese drafts are unchanged. Four counting prompts play only their sentence. The production contextual component now supports that without requiring an empty question recording. Other prompts retain the same sentence–650 ms pause–question playback. Kyoko prototype audio is separate from the production voice-selection process.
+The ten short Japanese drafts are unchanged. Four counting prompts play only their sentence. The production contextual component supports that without requiring an empty question recording. Other prompts retain the same sentence–650 ms pause–question playback. The ready screen offers the approved contextual voices Otani and Morioki; all 32 clips now use the shared ElevenLabs pipeline.
 
 ## Artwork protocol
 
@@ -34,4 +34,19 @@ The local preview is http://127.0.0.1:5310. `check` validates TypeScript and eve
 
 Repository builds resolve `@app` directly to the live `src/`. `prepare-site-source.py <existing-site-checkout>` preserves a hash-verified, byte-identical production source snapshot for portable Sites builds; it does not recreate markup or styles. The Sites checkout builds that snapshot with the same demo entry and assets. The existing private project ID and audience are retained.
 
-`python3 generate-audio.py` regenerates the sixteen individual MP3 clips on macOS using the installed Kyoko voice and ffmpeg. `audio-provenance-v2.json` records exact kana, durations, normalization and the component-owned pause. Earlier prototype recording provenance remains preserved.
+## Audio protocol — revision 3
+
+`audio-text-approval.json` binds the owner's generation request to the exact ten current drafts and source commit. The shared resumable contextual generator uses the registered Japanese voices, `eleven_v4`, one request at a time, no automatic retries, and an exact 310-input-character guard. The provider receives the written Japanese sentences; kana remains reading guidance in provenance. This authorization does not imply listening acceptance.
+
+Run from the repository root (resume the same batch; never blindly repeat paid generation):
+
+```sh
+npm run audio:contextual:elevenlabs -- --batch short-demo-250 --dry-run
+npm run audio:contextual:elevenlabs -- --batch short-demo-250 --output artifacts/generated-originals/contextual-audition/250-short-demo-v1
+python3 scripts/content/normalize-elevenlabs.py --input artifacts/generated-originals/contextual-audition/250-short-demo-v1 --output artifacts/generated-originals/contextual-audition/250-short-demo-v1-normalized
+node demos/short-context-250/prepare-audio.mjs --input artifacts/generated-originals/contextual-audition/250-short-demo-v1 --delivery artifacts/generated-originals/contextual-audition/250-short-demo-v1-normalized --review artifacts/contextual-audio-review/250-short-demo-v1
+```
+
+Staging reuses the shared review preflight for all 32 originals, sidecars, exact request identities, normalized levels/hashes and complete decodes. The local comparison gallery contains the twelve sentence/question pairs; all twenty sentence-only or paired prompts are playable through the two voices in this demo. `public/audio-provenance-v3.json` preserves exact requests, original/delivery hashes and full processing records without credentials or account usage. Provider originals, sidecars and usage evidence have a separate private archive under `~/.local/share/kikimashta/contextual-audio/250-short-demo-v1/`.
+
+All 32 deliveries reached −22 LUFS within the existing tolerance and remain below −2 dBTP; none are target-limited. The original Kyoko clips/generator remain in Git history at `517cf97`; `audio-provenance-v2.json` is historical and superseded. No production bank is activated. Owner pronunciation/listening and real-iPhone acceptance remain pending.

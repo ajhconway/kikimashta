@@ -6,14 +6,15 @@ import { PracticeHeader, QuizProgress } from '@app/components/PracticeChrome';
 import { themeColors, quizFeedbackColors } from '@app/themes';
 import type { PracticeAttempt } from '@app/types';
 import '@app/styles.css';
-import { demoQuestion, drafts } from './bank';
+import { demoQuestion, drafts, voices, type DemoVoice } from './bank';
 
 function Demo() {
   const [index, setIndex] = useState<number | null>(null);
   const [answers, setAnswers] = useState<Record<string, PracticeAttempt>>({});
   const [finished, setFinished] = useState(false);
+  const [voice, setVoice] = useState<DemoVoice>('otani');
   const startedAt = useRef(Date.now());
-  const question = useMemo(() => index === null ? null : demoQuestion(index), [index]);
+  const question = useMemo(() => index === null ? null : demoQuestion(index, voice), [index, voice]);
   const feedback = question ? answers[question.target.id] ?? null : null;
   const response = feedback ? feedback.correct ? 'correct' : 'incorrect' : undefined;
   const background = question ? response ? quizFeedbackColors[response] : themeColors.contextualQuiz
@@ -46,12 +47,16 @@ function Demo() {
         <div className="finish-companion" aria-hidden="true"><img src="/brand/kikimashta-cat-v1.png" alt=""/></div>
         <h1>{finished ? 'Nice listening!' : 'Review Time!'}</h1>
         <p className="block-note">{finished ? `${score} of ${drafts.length} matched on the first try` : '10 short contextual questions · Picture answers'}</p>
+        <label className="text-button">Voice <select aria-label="Voice" value={voice} onChange={event => setVoice(event.target.value as DemoVoice)}>
+          {voices.map(v => <option key={v.id} value={v.id}>{v.name}</option>)}
+        </select></label>
         <button className="primary" onClick={() => { setAnswers({}); present(0); }}>{finished ? 'Try again' : 'Begin review'}<span aria-hidden="true">→</span></button>
         <label className="text-button">Review one prompt <select aria-label="Review one prompt" value="" onChange={event => { if(event.target.value !== '') present(Number(event.target.value)); }}>
           <option value="">Choose a word</option>{drafts.map((draft,i) => <option key={draft.id} value={i}>{i+1}. {draft.word}（{draft.reading}）</option>)}
         </select></label>
         <p className="block-note">Answers stay in this demo. New artwork is awaiting your review.</p>
         <a className="text-button" href="/artwork.html">Review artwork and source records</a>
+        <a className="text-button" href="/audio-provenance-v3.json">Audio source records</a>
       </section>}
     </main>
     <footer><span>Short context demo</span><a href="https://github.com/ajhconway/kikimashta/pull/251">Source</a></footer>
