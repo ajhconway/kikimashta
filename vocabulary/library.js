@@ -1,4 +1,3 @@
-import { deviceStorage } from '../src/core/device-storage'
 /* One shared player; render only the current page. Vocabulary library for #27. */
 import { createAccountFeedbackStore, createFeedbackStore, exportFeedback } from './feedback.js'
 import { getLibraryAccount } from '../src/sync/library-bridge'
@@ -63,7 +62,7 @@ import { mountContextualLibrary } from './contextual'
     input.addEventListener('change', () => {
       const next = cardPacks.filter(pack => pack.id === input.value ? input.checked : selectedPackIds.includes(pack.id)).map(pack => pack.id)
       try {
-        deviceStorage.setItem(packPreferenceKey, JSON.stringify(next))
+        localStorage.setItem(packPreferenceKey, JSON.stringify(next))
         selectedPackIds = next
         selectionError.hidden = true
       } catch {
@@ -108,7 +107,7 @@ import { mountContextualLibrary } from './contextual'
         voiceSelectionError.hidden = false
       } else {
         try {
-          deviceStorage.setItem(voicePreferenceKey, JSON.stringify(next))
+          localStorage.setItem(voicePreferenceKey, JSON.stringify(next))
           selectedVoiceIds = next
           voiceSelectionError.hidden = true
         } catch {
