@@ -1,0 +1,4902 @@
+{
+  "issue": 243,
+  "pool": 238,
+  "packs": 8,
+  "newWords": 36,
+  "existingWords": 202,
+  "fullPoolRegenerated": true,
+  "policyUnchanged": true,
+  "semanticModel": {
+    "id": "facebook/fasttext-es-vectors",
+    "revision": "c4c84c726b98d02b1f0ec92d6fc2724fe3b84276",
+    "sha256": "b8c800affac505d60c8a929cb90ff2ef616b4e8b5224d8f3a0a5e911a8a6546e",
+    "license": "CC-BY-SA-3.0"
+  },
+  "pronunciationModel": {
+    "id": "espeak-ng",
+    "version": "1.52.0",
+    "sourceCommit": "4870adfa25b1a32b4361592f1be8a40337c58d6c",
+    "license": "GPL-3.0-or-later",
+    "normalization": "canonical-es-419-yeismo-v1",
+    "normalizerSha256": "45f4a6b4dd3fe3c9f5619d87164c46b4c0a337774938fc0405636b96fdcae73d",
+    "sourceHashes": {
+      "binary": "b3720a52e11c15953c40adef914830c513c7021f6550001fe7d45838ea43a967",
+      "data/phondata": "a0b643b155cb6b12628d9e7865b57d9fca0d35844614f2594a5e009c80c80bb4",
+      "data/phonindex": "384e5fa6f714ba5356c58008249b78699c31c1ad044b243068d263fb806b7d73",
+      "data/phontab": "1b40690667e1e9aa1ba5e5234773c799e7e72ea751426e5150423d53c3f24fa2",
+      "data/intonations": "031a105bf6bb2ebcd73a2c579ccfb42469b27266db0078af65ae298fd3588b21",
+      "data/es_dict": "e7c6347e407d5c14f283eeada18b86c6d560b03b62f53659473109bbff096757",
+      "data/lang/roa/es-419": "ff0f84457ac40e3bcf61d6de58028312be74e0e6cbc3b742f31b3ce729c2aa0c",
+      "data/lang/roa/es": "966aa015ea5646d79f0ca4807cf5da7339aabd3782b55cfa5eb0d8c3fc8fc588",
+      "source/dictsource/es_rules": "a29d7c822c1f07c251f305bff09f52cd57bd8e52d5150b07054284f1103d04c9",
+      "source/dictsource/es_list": "02ce8850eeea125d3fbd4b1985a35a341435571804a0b40b66d3c728a8697bed",
+      "source/phsource/ph_spanish": "cd266030a05040bcbc6bf2739fce701504426ce268ca2fd830902d1df591d311"
+    }
+  },
+  "canonicalProbeCount": 22,
+  "canonicalProbesPass": true,
+  "homophoneGroups": [],
+  "inputs": {
+    "content/semantic-neighbors/es.json": "58a1ef3bdf570701292934bcf1a46749fa83e2984ce5df9a8dce1d7aafbb439d",
+    "content/pronunciation-neighbors/es.json": "a4db377036a55817643fd36d6d0c4d1ea4048937b66cb582de8f9a92219423dd",
+    "content/semantic-neighbors/es-runtime.json": "8d4fb2375baabb74837742e121bd35e89e6a862612c35beece80d9f595f89e09",
+    "content/spanish-travel-5/picture-choice-review.json": "ac5fd6be21ba482d55325d1c2746c47dda1c44d4501490828042cec12b61cc66",
+    "content/spanish-picture-exclusions.json": "464de5f505a0b53df11fa5195d941fe6149e876eccf32b378a1de09eaf6acbb1"
+  },
+  "newTargets": [
+    {
+      "id": "es-419-travel-theater",
+      "text": "teatro",
+      "semantic": [
+        "es-419-travel-festival",
+        "es-419-travel-concert",
+        "es-419-travel-museum",
+        "es-419-travel-park",
+        "es-419-travel-sculpture",
+        "es-419-travel-restaurant"
+      ],
+      "pronunciation": [
+        "es-419-travel-painting",
+        "es-419-travel-plate",
+        "es-419-travel-subway",
+        "es-419-travel-taco",
+        "es-419-travel-traffic-light",
+        "es-419-travel-banana"
+      ]
+    },
+    {
+      "id": "es-419-travel-gallery",
+      "text": "galería",
+      "semantic": [
+        "es-419-travel-camera",
+        "es-419-travel-mural",
+        "es-419-travel-tent",
+        "es-419-travel-sculpture",
+        "es-419-travel-library",
+        "es-419-travel-bookstore"
+      ],
+      "pronunciation": [
+        "es-419-travel-bakery",
+        "es-419-travel-bookstore",
+        "es-419-travel-sock",
+        "es-419-travel-laundromat",
+        "es-419-food-popcorn",
+        "es-419-food-sausage"
+      ]
+    },
+    {
+      "id": "es-419-travel-bookstore",
+      "text": "librería",
+      "semantic": [
+        "es-419-travel-tent",
+        "es-419-travel-bakery",
+        "es-419-travel-street",
+        "es-419-travel-pharmacy",
+        "es-419-travel-supermarket",
+        "es-419-travel-gallery"
+      ],
+      "pronunciation": [
+        "es-419-travel-laundromat",
+        "es-419-travel-gallery",
+        "es-419-travel-bakery",
+        "es-419-travel-flashlight",
+        "es-419-travel-butter",
+        "es-419-basic-cold"
+      ]
+    },
+    {
+      "id": "es-419-travel-concert",
+      "text": "concierto",
+      "semantic": [
+        "es-419-travel-record",
+        "es-419-travel-theater",
+        "es-419-travel-violin",
+        "es-419-travel-ticket",
+        "es-419-travel-dance",
+        "es-419-travel-museum"
+      ],
+      "pronunciation": [
+        "es-419-basic-open",
+        "es-419-basic-eat",
+        "es-419-travel-hat",
+        "es-419-travel-money",
+        "es-419-travel-ticket",
+        "es-419-travel-airport"
+      ]
+    },
+    {
+      "id": "es-419-travel-festival",
+      "text": "festival",
+      "semantic": [
+        "es-419-travel-cinema",
+        "es-419-travel-theater",
+        "es-419-travel-stage",
+        "es-419-travel-museum",
+        "es-419-travel-record",
+        "es-419-travel-park"
+      ],
+      "pronunciation": [
+        "es-419-travel-hospital",
+        "es-419-travel-postcard",
+        "es-419-travel-restaurant",
+        "es-419-food-cake",
+        "es-419-food-spinach",
+        "es-419-travel-listen"
+      ]
+    },
+    {
+      "id": "es-419-travel-stage",
+      "text": "escenario",
+      "semantic": [
+        "es-419-travel-festival",
+        "es-419-travel-microphone",
+        "es-419-travel-painting",
+        "es-419-travel-park",
+        "es-419-travel-plate",
+        "es-419-travel-map"
+      ],
+      "pronunciation": [
+        "es-419-basic-closed",
+        "es-419-food-carrot",
+        "es-419-food-spinach",
+        "es-419-travel-boat",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-elevator"
+      ]
+    },
+    {
+      "id": "es-419-travel-painting",
+      "text": "cuadro",
+      "semantic": [
+        "es-419-travel-easel",
+        "es-419-travel-mural",
+        "es-419-travel-stage",
+        "es-419-travel-mirror",
+        "es-419-travel-map",
+        "es-419-travel-menu"
+      ],
+      "pronunciation": [
+        "es-419-travel-car",
+        "es-419-travel-helmet",
+        "es-419-travel-ice-cream",
+        "es-419-travel-theater",
+        "es-419-travel-charger",
+        "es-419-travel-traffic-light"
+      ]
+    },
+    {
+      "id": "es-419-travel-sculpture",
+      "text": "escultura",
+      "semantic": [
+        "es-419-travel-pottery",
+        "es-419-travel-mural",
+        "es-419-travel-gallery",
+        "es-419-travel-easel",
+        "es-419-travel-church",
+        "es-419-travel-paint"
+      ],
+      "pronunciation": [
+        "es-419-travel-listen",
+        "es-419-travel-stairs",
+        "es-419-travel-spoon",
+        "es-419-travel-wallet",
+        "es-419-food-sausage",
+        "es-419-food-spinach"
+      ]
+    },
+    {
+      "id": "es-419-travel-mural",
+      "text": "mural",
+      "semantic": [
+        "es-419-travel-sculpture",
+        "es-419-travel-painting",
+        "es-419-travel-easel",
+        "es-419-travel-paint",
+        "es-419-travel-museum",
+        "es-419-travel-gallery"
+      ],
+      "pronunciation": [
+        "es-419-food-honey",
+        "es-419-food-peach",
+        "es-419-travel-market",
+        "es-419-travel-museum",
+        "es-419-travel-salt",
+        "es-419-travel-adhesive-bandage"
+      ]
+    },
+    {
+      "id": "es-419-travel-paintbrush",
+      "text": "pincel",
+      "semantic": [
+        "es-419-travel-palette",
+        "es-419-travel-easel",
+        "es-419-travel-draw",
+        "es-419-travel-toothbrush",
+        "es-419-travel-comb",
+        "es-419-food-knife"
+      ],
+      "pronunciation": [
+        "es-419-food-cake",
+        "es-419-travel-flashlight",
+        "es-419-basic-thirst",
+        "es-419-food-honey",
+        "es-419-food-steak",
+        "es-419-travel-hotel"
+      ]
+    },
+    {
+      "id": "es-419-travel-palette",
+      "text": "paleta",
+      "semantic": [
+        "es-419-travel-paintbrush",
+        "es-419-travel-spoon",
+        "es-419-travel-festival-mask",
+        "es-419-food-cake",
+        "es-419-food-cookie",
+        "es-419-travel-easel"
+      ],
+      "pronunciation": [
+        "es-419-travel-suitcase",
+        "es-419-food-cookie",
+        "es-419-travel-sidewalk",
+        "es-419-food-popcorn",
+        "es-419-food-pear",
+        "es-419-travel-beach"
+      ]
+    },
+    {
+      "id": "es-419-travel-easel",
+      "text": "caballete",
+      "semantic": [
+        "es-419-travel-painting",
+        "es-419-travel-mural",
+        "es-419-travel-paintbrush",
+        "es-419-travel-chair",
+        "es-419-travel-sculpture",
+        "es-419-travel-car"
+      ],
+      "pronunciation": [
+        "es-419-food-peanut",
+        "es-419-food-cookie",
+        "es-419-travel-passport",
+        "es-419-basic-hot",
+        "es-419-basic-open",
+        "es-419-food-cooking-oil"
+      ]
+    },
+    {
+      "id": "es-419-travel-guitar",
+      "text": "guitarra",
+      "semantic": [
+        "es-419-travel-violin",
+        "es-419-travel-piano",
+        "es-419-travel-flute",
+        "es-419-travel-trumpet",
+        "es-419-travel-pill",
+        "es-419-travel-sidewalk"
+      ],
+      "pronunciation": [
+        "es-419-travel-cup",
+        "es-419-travel-jacket",
+        "es-419-travel-pinata",
+        "es-419-travel-mountain",
+        "es-419-travel-window",
+        "es-419-food-spinach"
+      ]
+    },
+    {
+      "id": "es-419-travel-piano",
+      "text": "piano",
+      "semantic": [
+        "es-419-travel-violin",
+        "es-419-travel-guitar",
+        "es-419-travel-flute",
+        "es-419-travel-trumpet",
+        "es-419-travel-play-instrument",
+        "es-419-travel-sing"
+      ],
+      "pronunciation": [
+        "es-419-travel-bread",
+        "es-419-travel-plate",
+        "es-419-travel-banana",
+        "es-419-food-cucumber",
+        "es-419-food-garlic",
+        "es-419-food-peach"
+      ]
+    },
+    {
+      "id": "es-419-travel-violin",
+      "text": "violín",
+      "semantic": [
+        "es-419-travel-piano",
+        "es-419-travel-flute",
+        "es-419-travel-guitar",
+        "es-419-travel-trumpet",
+        "es-419-travel-play-instrument",
+        "es-419-travel-drum"
+      ],
+      "pronunciation": [
+        "es-419-travel-steering-wheel",
+        "es-419-food-bacon",
+        "es-419-food-melon",
+        "es-419-travel-dance",
+        "es-419-travel-ticket",
+        "es-419-travel-dress"
+      ]
+    },
+    {
+      "id": "es-419-travel-trumpet",
+      "text": "trompeta",
+      "semantic": [
+        "es-419-travel-flute",
+        "es-419-travel-guitar",
+        "es-419-travel-violin",
+        "es-419-travel-piano",
+        "es-419-travel-drum",
+        "es-419-travel-play-instrument"
+      ],
+      "pronunciation": [
+        "es-419-travel-airport",
+        "es-419-basic-eat",
+        "es-419-food-cookie",
+        "es-419-food-pear",
+        "es-419-food-tortilla",
+        "es-419-travel-bottle"
+      ]
+    },
+    {
+      "id": "es-419-travel-drum",
+      "text": "tambor",
+      "semantic": [
+        "es-419-travel-trumpet",
+        "es-419-travel-violin",
+        "es-419-travel-flute",
+        "es-419-travel-comb",
+        "es-419-travel-car",
+        "es-419-food-mango"
+      ],
+      "pronunciation": [
+        "es-419-food-ham",
+        "es-419-food-shrimp",
+        "es-419-travel-fork",
+        "es-419-food-carrot",
+        "es-419-food-mushroom",
+        "es-419-travel-charger"
+      ]
+    },
+    {
+      "id": "es-419-travel-flute",
+      "text": "flauta",
+      "semantic": [
+        "es-419-travel-trumpet",
+        "es-419-travel-violin",
+        "es-419-travel-guitar",
+        "es-419-travel-piano",
+        "es-419-travel-drum",
+        "es-419-travel-play-instrument"
+      ],
+      "pronunciation": [
+        "es-419-travel-palette",
+        "es-419-travel-suitcase",
+        "es-419-food-corn",
+        "es-419-travel-banana",
+        "es-419-travel-beach",
+        "es-419-travel-flower"
+      ]
+    },
+    {
+      "id": "es-419-travel-microphone",
+      "text": "micrófono",
+      "semantic": [
+        "es-419-travel-speaker",
+        "es-419-travel-headphones",
+        "es-419-travel-camera",
+        "es-419-travel-stage",
+        "es-419-travel-phone",
+        "es-419-travel-hat"
+      ],
+      "pronunciation": [
+        "es-419-travel-phone",
+        "es-419-food-broccoli",
+        "es-419-food-melon",
+        "es-419-food-peach",
+        "es-419-travel-headphones",
+        "es-419-travel-lime"
+      ]
+    },
+    {
+      "id": "es-419-travel-speaker",
+      "text": "altavoz",
+      "semantic": [
+        "es-419-travel-microphone",
+        "es-419-travel-headphones",
+        "es-419-travel-power-outlet",
+        "es-419-travel-phone",
+        "es-419-travel-charger",
+        "es-419-travel-flashlight"
+      ],
+      "pronunciation": [
+        "es-419-travel-pants",
+        "es-419-travel-bus",
+        "es-419-travel-rice",
+        "es-419-travel-room",
+        "es-419-travel-soap",
+        "es-419-travel-charger"
+      ]
+    },
+    {
+      "id": "es-419-travel-headphones",
+      "text": "audífonos",
+      "semantic": [
+        "es-419-travel-microphone",
+        "es-419-travel-speaker",
+        "es-419-travel-pants",
+        "es-419-travel-binoculars",
+        "es-419-travel-sunglasses",
+        "es-419-travel-helmet"
+      ],
+      "pronunciation": [
+        "es-419-travel-phone",
+        "es-419-travel-microphone",
+        "es-419-basic-cold",
+        "es-419-food-bacon",
+        "es-419-food-cauliflower",
+        "es-419-food-cucumber"
+      ]
+    },
+    {
+      "id": "es-419-travel-record",
+      "text": "disco",
+      "semantic": [
+        "es-419-travel-concert",
+        "es-419-travel-book",
+        "es-419-travel-festival",
+        "es-419-travel-stage",
+        "es-419-travel-plate",
+        "es-419-travel-drum"
+      ],
+      "pronunciation": [
+        "es-419-travel-helmet",
+        "es-419-food-peach",
+        "es-419-travel-boat",
+        "es-419-travel-book",
+        "es-419-travel-cheese",
+        "es-419-travel-drinking-glass"
+      ]
+    },
+    {
+      "id": "es-419-travel-pottery",
+      "text": "cerámica",
+      "semantic": [
+        "es-419-travel-sculpture",
+        "es-419-travel-cup",
+        "es-419-travel-mural",
+        "es-419-food-pasta",
+        "es-419-travel-toothpaste",
+        "es-419-travel-coin"
+      ],
+      "pronunciation": [
+        "es-419-travel-newspaper",
+        "es-419-basic-closed",
+        "es-419-food-onion",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-bed",
+        "es-419-travel-bench"
+      ]
+    },
+    {
+      "id": "es-419-travel-pinata",
+      "text": "piñata",
+      "semantic": [
+        "es-419-food-cookie",
+        "es-419-food-cake",
+        "es-419-travel-pineapple",
+        "es-419-travel-basket",
+        "es-419-food-watermelon",
+        "es-419-food-tortilla"
+      ],
+      "pronunciation": [
+        "es-419-food-pasta",
+        "es-419-food-potato",
+        "es-419-travel-beach",
+        "es-419-travel-guitar",
+        "es-419-travel-palette",
+        "es-419-travel-plate"
+      ]
+    },
+    {
+      "id": "es-419-travel-festival-mask",
+      "text": "máscara",
+      "semantic": [
+        "es-419-travel-hat",
+        "es-419-travel-shirt",
+        "es-419-travel-flashlight",
+        "es-419-travel-palette",
+        "es-419-travel-swimsuit",
+        "es-419-travel-camera"
+      ],
+      "pronunciation": [
+        "es-419-travel-camera",
+        "es-419-food-pasta",
+        "es-419-travel-apple",
+        "es-419-travel-bench",
+        "es-419-travel-cup",
+        "es-419-travel-helmet"
+      ]
+    },
+    {
+      "id": "es-419-travel-basket",
+      "text": "canasta",
+      "semantic": [
+        "es-419-travel-pinata",
+        "es-419-food-tortilla",
+        "es-419-travel-table",
+        "es-419-food-beans",
+        "es-419-travel-coin",
+        "es-419-travel-cup"
+      ],
+      "pronunciation": [
+        "es-419-food-pasta",
+        "es-419-travel-shirt",
+        "es-419-travel-pharmacy",
+        "es-419-food-cookie",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-apple"
+      ]
+    },
+    {
+      "id": "es-419-travel-book",
+      "text": "libro",
+      "semantic": [
+        "es-419-travel-newspaper",
+        "es-419-travel-record",
+        "es-419-travel-museum",
+        "es-419-travel-painting",
+        "es-419-travel-mural",
+        "es-419-basic-small"
+      ],
+      "pronunciation": [
+        "es-419-travel-egg",
+        "es-419-travel-lake",
+        "es-419-travel-record",
+        "es-419-travel-river",
+        "es-419-travel-subway",
+        "es-419-travel-painting"
+      ]
+    },
+    {
+      "id": "es-419-travel-magazine",
+      "text": "revista",
+      "semantic": [
+        "es-419-travel-newspaper",
+        "es-419-travel-bookstore",
+        "es-419-travel-tent",
+        "es-419-travel-library",
+        "es-419-travel-gallery",
+        "es-419-travel-post-office"
+      ],
+      "pronunciation": [
+        "es-419-food-onion",
+        "es-419-food-pasta",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-basket",
+        "es-419-travel-blanket",
+        "es-419-travel-island"
+      ]
+    },
+    {
+      "id": "es-419-travel-newspaper",
+      "text": "periódico",
+      "semantic": [
+        "es-419-travel-magazine",
+        "es-419-travel-book",
+        "es-419-travel-toilet-paper",
+        "es-419-travel-mural",
+        "es-419-travel-post-office",
+        "es-419-travel-supermarket"
+      ],
+      "pronunciation": [
+        "es-419-food-cucumber",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-market",
+        "es-419-travel-pottery",
+        "es-419-travel-toilet-paper",
+        "es-419-basic-closed"
+      ]
+    },
+    {
+      "id": "es-419-travel-postcard",
+      "text": "postal",
+      "semantic": [
+        "es-419-travel-post-office",
+        "es-419-travel-map",
+        "es-419-travel-phone",
+        "es-419-travel-credit-card",
+        "es-419-travel-passport",
+        "es-419-travel-coin"
+      ],
+      "pronunciation": [
+        "es-419-food-cake",
+        "es-419-travel-hospital",
+        "es-419-travel-hotel",
+        "es-419-travel-paint",
+        "es-419-travel-salt",
+        "es-419-travel-festival"
+      ]
+    },
+    {
+      "id": "es-419-travel-dance",
+      "text": "bailar",
+      "semantic": [
+        "es-419-travel-sing",
+        "es-419-travel-play-instrument",
+        "es-419-travel-listen",
+        "es-419-basic-drink",
+        "es-419-basic-eat",
+        "es-419-travel-draw"
+      ],
+      "pronunciation": [
+        "es-419-basic-drink",
+        "es-419-travel-flower",
+        "es-419-travel-play-instrument",
+        "es-419-travel-steering-wheel",
+        "es-419-travel-paint",
+        "es-419-travel-sing"
+      ]
+    },
+    {
+      "id": "es-419-travel-sing",
+      "text": "cantar",
+      "semantic": [
+        "es-419-travel-dance",
+        "es-419-travel-listen",
+        "es-419-travel-play-instrument",
+        "es-419-travel-paint",
+        "es-419-travel-draw",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-travel-paint",
+        "es-419-travel-wallet",
+        "es-419-travel-apple",
+        "es-419-travel-basket",
+        "es-419-travel-mountain",
+        "es-419-travel-waterfall"
+      ]
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "text": "tocar",
+      "semantic": [
+        "es-419-travel-sing",
+        "es-419-travel-dance",
+        "es-419-travel-listen",
+        "es-419-travel-piano",
+        "es-419-travel-violin",
+        "es-419-travel-paint"
+      ],
+      "pronunciation": [
+        "es-419-basic-eat",
+        "es-419-food-yogurt",
+        "es-419-travel-dance",
+        "es-419-travel-listen",
+        "es-419-travel-towel",
+        "es-419-food-chocolate"
+      ]
+    },
+    {
+      "id": "es-419-travel-listen",
+      "text": "escuchar",
+      "semantic": [
+        "es-419-travel-sing",
+        "es-419-travel-play-instrument",
+        "es-419-travel-dance",
+        "es-419-travel-microphone",
+        "es-419-basic-eat",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-travel-spoon",
+        "es-419-travel-sculpture",
+        "es-419-travel-draw",
+        "es-419-travel-play-instrument",
+        "es-419-travel-stairs",
+        "es-419-travel-sugar"
+      ]
+    },
+    {
+      "id": "es-419-travel-paint",
+      "text": "pintar",
+      "semantic": [
+        "es-419-travel-draw",
+        "es-419-travel-mural",
+        "es-419-travel-play-instrument",
+        "es-419-travel-sing",
+        "es-419-travel-dance",
+        "es-419-travel-sculpture"
+      ],
+      "pronunciation": [
+        "es-419-travel-sing",
+        "es-419-travel-postcard",
+        "es-419-travel-flashlight",
+        "es-419-travel-draw",
+        "es-419-travel-hospital",
+        "es-419-travel-mountain"
+      ]
+    },
+    {
+      "id": "es-419-travel-draw",
+      "text": "dibujar",
+      "semantic": [
+        "es-419-travel-paint",
+        "es-419-travel-paintbrush",
+        "es-419-travel-play-instrument",
+        "es-419-travel-sing",
+        "es-419-travel-dance",
+        "es-419-basic-eat"
+      ],
+      "pronunciation": [
+        "es-419-travel-listen",
+        "es-419-travel-paint",
+        "es-419-travel-binoculars",
+        "es-419-basic-drink",
+        "es-419-travel-dance",
+        "es-419-travel-money"
+      ]
+    }
+  ],
+  "existingChangedFirstSixCount": 118,
+  "existingChanges": [
+    {
+      "id": "es-419-basic-closed",
+      "beforeSemantic": [
+        "es-419-basic-open",
+        "es-419-travel-key",
+        "es-419-basic-inside",
+        "es-419-basic-small",
+        "es-419-travel-crosswalk",
+        "es-419-travel-parking-lot"
+      ],
+      "semantic": [
+        "es-419-basic-open",
+        "es-419-travel-key",
+        "es-419-basic-inside",
+        "es-419-basic-small",
+        "es-419-travel-crosswalk",
+        "es-419-travel-parking-lot"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-ice-cream",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-market",
+        "es-419-travel-shoe",
+        "es-419-travel-traffic-light",
+        "es-419-travel-dress"
+      ],
+      "pronunciation": [
+        "es-419-travel-ice-cream",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-market",
+        "es-419-travel-shoe",
+        "es-419-travel-stage",
+        "es-419-travel-traffic-light"
+      ]
+    },
+    {
+      "id": "es-419-basic-drink",
+      "beforeSemantic": [
+        "es-419-basic-eat",
+        "es-419-travel-water",
+        "es-419-travel-drinking-glass",
+        "es-419-basic-thirst",
+        "es-419-travel-bottle",
+        "es-419-travel-coffee"
+      ],
+      "semantic": [
+        "es-419-basic-eat",
+        "es-419-travel-water",
+        "es-419-travel-drinking-glass",
+        "es-419-basic-thirst",
+        "es-419-travel-bottle",
+        "es-419-travel-dance"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-eat",
+        "es-419-basic-small",
+        "es-419-food-onion",
+        "es-419-food-steak",
+        "es-419-travel-bottle",
+        "es-419-travel-money"
+      ],
+      "pronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-dance",
+        "es-419-basic-small",
+        "es-419-food-onion",
+        "es-419-food-steak",
+        "es-419-travel-bottle"
+      ]
+    },
+    {
+      "id": "es-419-basic-eat",
+      "beforeSemantic": [
+        "es-419-basic-drink",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-restaurant",
+        "es-419-food-pizza",
+        "es-419-travel-cooked-fish",
+        "es-419-basic-hunger"
+      ],
+      "semantic": [
+        "es-419-basic-drink",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-restaurant",
+        "es-419-food-pizza",
+        "es-419-travel-cooked-fish",
+        "es-419-basic-hunger"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-hat",
+        "es-419-basic-drink",
+        "es-419-food-yogurt",
+        "es-419-travel-coffee",
+        "es-419-travel-hotel",
+        "es-419-travel-wallet"
+      ],
+      "pronunciation": [
+        "es-419-travel-hat",
+        "es-419-basic-drink",
+        "es-419-food-yogurt",
+        "es-419-travel-coffee",
+        "es-419-travel-concert",
+        "es-419-travel-hotel"
+      ]
+    },
+    {
+      "id": "es-419-basic-hunger",
+      "beforeSemantic": [
+        "es-419-basic-thirst",
+        "es-419-basic-eat",
+        "es-419-basic-cold",
+        "es-419-travel-bread",
+        "es-419-basic-sleepiness",
+        "es-419-basic-drink"
+      ],
+      "semantic": [
+        "es-419-basic-thirst",
+        "es-419-basic-eat",
+        "es-419-basic-cold",
+        "es-419-travel-bread",
+        "es-419-basic-sleepiness",
+        "es-419-basic-drink"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-camera",
+        "es-419-travel-hat",
+        "es-419-food-shrimp",
+        "es-419-food-garlic",
+        "es-419-food-ham",
+        "es-419-travel-bed"
+      ],
+      "pronunciation": [
+        "es-419-travel-camera",
+        "es-419-travel-hat",
+        "es-419-travel-drum",
+        "es-419-food-shrimp",
+        "es-419-travel-festival-mask",
+        "es-419-food-garlic"
+      ]
+    },
+    {
+      "id": "es-419-basic-inside",
+      "beforeSemantic": [
+        "es-419-basic-under",
+        "es-419-basic-on-top",
+        "es-419-travel-market",
+        "es-419-basic-closed",
+        "es-419-basic-open",
+        "es-419-basic-large"
+      ],
+      "semantic": [
+        "es-419-basic-under",
+        "es-419-basic-on-top",
+        "es-419-travel-market",
+        "es-419-basic-closed",
+        "es-419-basic-open",
+        "es-419-travel-stage"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-under",
+        "es-419-travel-sunglasses",
+        "es-419-basic-next-to",
+        "es-419-basic-on-top",
+        "es-419-travel-bridge",
+        "es-419-travel-fountain"
+      ],
+      "pronunciation": [
+        "es-419-basic-under",
+        "es-419-travel-sunglasses",
+        "es-419-basic-next-to",
+        "es-419-basic-on-top",
+        "es-419-travel-bridge",
+        "es-419-travel-fountain"
+      ]
+    },
+    {
+      "id": "es-419-basic-open",
+      "beforeSemantic": [
+        "es-419-basic-closed",
+        "es-419-basic-inside",
+        "es-419-travel-crosswalk",
+        "es-419-basic-small",
+        "es-419-travel-key",
+        "es-419-basic-large"
+      ],
+      "semantic": [
+        "es-419-basic-closed",
+        "es-419-basic-inside",
+        "es-419-travel-crosswalk",
+        "es-419-basic-small",
+        "es-419-travel-key",
+        "es-419-basic-large"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-airport",
+        "es-419-travel-airplane",
+        "es-419-travel-money",
+        "es-419-travel-ticket",
+        "es-419-basic-hot",
+        "es-419-travel-passport"
+      ],
+      "pronunciation": [
+        "es-419-travel-concert",
+        "es-419-travel-airport",
+        "es-419-travel-airplane",
+        "es-419-travel-money",
+        "es-419-travel-ticket",
+        "es-419-basic-hot"
+      ]
+    },
+    {
+      "id": "es-419-basic-small",
+      "beforeSemantic": [
+        "es-419-basic-large",
+        "es-419-basic-next-to",
+        "es-419-travel-swimsuit",
+        "es-419-basic-closed",
+        "es-419-basic-inside",
+        "es-419-travel-plate"
+      ],
+      "semantic": [
+        "es-419-basic-large",
+        "es-419-travel-painting",
+        "es-419-basic-next-to",
+        "es-419-travel-swimsuit",
+        "es-419-travel-book",
+        "es-419-basic-closed"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-basic-sleepiness",
+        "es-419-food-cucumber",
+        "es-419-travel-cheese",
+        "es-419-travel-market",
+        "es-419-travel-phone"
+      ],
+      "pronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-basic-sleepiness",
+        "es-419-food-cucumber",
+        "es-419-travel-cheese",
+        "es-419-travel-market",
+        "es-419-travel-phone"
+      ]
+    },
+    {
+      "id": "es-419-food-black-pepper",
+      "beforeSemantic": [
+        "es-419-travel-salt",
+        "es-419-travel-lime",
+        "es-419-food-onion",
+        "es-419-food-garlic",
+        "es-419-travel-butter",
+        "es-419-travel-sugar"
+      ],
+      "semantic": [
+        "es-419-travel-salt",
+        "es-419-travel-lime",
+        "es-419-food-onion",
+        "es-419-food-garlic",
+        "es-419-travel-butter",
+        "es-419-travel-sugar"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-hot",
+        "es-419-travel-bridge",
+        "es-419-travel-swimming-pool",
+        "es-419-food-pasta",
+        "es-419-travel-fountain",
+        "es-419-travel-lime"
+      ],
+      "pronunciation": [
+        "es-419-basic-hot",
+        "es-419-travel-bridge",
+        "es-419-travel-pinata",
+        "es-419-travel-swimming-pool",
+        "es-419-food-pasta",
+        "es-419-travel-fountain"
+      ]
+    },
+    {
+      "id": "es-419-food-broccoli",
+      "beforeSemantic": [
+        "es-419-food-cauliflower",
+        "es-419-food-spinach",
+        "es-419-travel-avocado",
+        "es-419-food-carrot",
+        "es-419-food-lettuce",
+        "es-419-food-tomato"
+      ],
+      "semantic": [
+        "es-419-food-cauliflower",
+        "es-419-food-spinach",
+        "es-419-travel-avocado",
+        "es-419-food-carrot",
+        "es-419-food-lettuce",
+        "es-419-food-tomato"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-compass",
+        "es-419-basic-cold",
+        "es-419-travel-bathroom",
+        "es-419-travel-boat",
+        "es-419-travel-chicken",
+        "es-419-travel-drinking-glass"
+      ],
+      "pronunciation": [
+        "es-419-travel-compass",
+        "es-419-travel-microphone",
+        "es-419-basic-cold",
+        "es-419-travel-bathroom",
+        "es-419-travel-boat",
+        "es-419-travel-chicken"
+      ]
+    },
+    {
+      "id": "es-419-food-cake",
+      "beforeSemantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-bread",
+        "es-419-travel-cheese",
+        "es-419-food-cookie",
+        "es-419-travel-ice-cream",
+        "es-419-food-sandwich"
+      ],
+      "semantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-bread",
+        "es-419-travel-cheese",
+        "es-419-food-cookie",
+        "es-419-travel-ice-cream",
+        "es-419-food-sandwich"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-steak",
+        "es-419-travel-hotel",
+        "es-419-travel-wallet",
+        "es-419-travel-pants",
+        "es-419-travel-sock"
+      ],
+      "pronunciation": [
+        "es-419-travel-postcard",
+        "es-419-travel-pill",
+        "es-419-food-steak",
+        "es-419-travel-hotel",
+        "es-419-travel-paintbrush",
+        "es-419-travel-wallet"
+      ]
+    },
+    {
+      "id": "es-419-food-cookie",
+      "beforeSemantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-butter",
+        "es-419-food-jam",
+        "es-419-food-pizza",
+        "es-419-food-gelatin",
+        "es-419-food-cake"
+      ],
+      "semantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-butter",
+        "es-419-food-jam",
+        "es-419-food-pizza",
+        "es-419-food-gelatin",
+        "es-419-travel-pinata"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-suitcase",
+        "es-419-travel-sidewalk",
+        "es-419-travel-wallet",
+        "es-419-travel-gas-station",
+        "es-419-food-cooking-oil",
+        "es-419-food-pear"
+      ],
+      "pronunciation": [
+        "es-419-travel-palette",
+        "es-419-travel-suitcase",
+        "es-419-travel-sidewalk",
+        "es-419-travel-easel",
+        "es-419-travel-basket",
+        "es-419-travel-wallet"
+      ]
+    },
+    {
+      "id": "es-419-food-corn",
+      "beforeSemantic": [
+        "es-419-food-peanut",
+        "es-419-food-tomato",
+        "es-419-food-beans",
+        "es-419-travel-avocado",
+        "es-419-food-peach",
+        "es-419-travel-banana"
+      ],
+      "semantic": [
+        "es-419-food-peanut",
+        "es-419-food-tomato",
+        "es-419-food-beans",
+        "es-419-travel-avocado",
+        "es-419-food-peach",
+        "es-419-travel-banana"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-helicopter",
+        "es-419-food-cooking-oil",
+        "es-419-food-melon",
+        "es-419-travel-flower",
+        "es-419-travel-ice-cream",
+        "es-419-travel-insect-repellent"
+      ],
+      "pronunciation": [
+        "es-419-travel-helicopter",
+        "es-419-food-cooking-oil",
+        "es-419-food-melon",
+        "es-419-travel-flower",
+        "es-419-travel-flute",
+        "es-419-travel-ice-cream"
+      ]
+    },
+    {
+      "id": "es-419-food-cucumber",
+      "beforeSemantic": [
+        "es-419-food-melon",
+        "es-419-travel-avocado",
+        "es-419-food-watermelon",
+        "es-419-food-lettuce",
+        "es-419-travel-lime",
+        "es-419-travel-banana"
+      ],
+      "semantic": [
+        "es-419-food-melon",
+        "es-419-travel-avocado",
+        "es-419-food-watermelon",
+        "es-419-food-lettuce",
+        "es-419-travel-lime",
+        "es-419-travel-banana"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-small",
+        "es-419-food-bacon",
+        "es-419-travel-receipt",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-dress"
+      ],
+      "pronunciation": [
+        "es-419-basic-small",
+        "es-419-food-bacon",
+        "es-419-travel-piano",
+        "es-419-travel-receipt",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-cooked-fish"
+      ]
+    },
+    {
+      "id": "es-419-food-grapes",
+      "beforeSemantic": [
+        "es-419-food-melon",
+        "es-419-food-watermelon",
+        "es-419-food-peach",
+        "es-419-food-pear",
+        "es-419-travel-apple",
+        "es-419-travel-juice"
+      ],
+      "semantic": [
+        "es-419-food-melon",
+        "es-419-food-watermelon",
+        "es-419-food-peach",
+        "es-419-food-pear",
+        "es-419-travel-apple",
+        "es-419-travel-juice"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-sugar",
+        "es-419-travel-shower",
+        "es-419-food-peach",
+        "es-419-travel-scissors",
+        "es-419-travel-umbrella",
+        "es-419-food-popcorn"
+      ],
+      "pronunciation": [
+        "es-419-travel-sugar",
+        "es-419-travel-shower",
+        "es-419-food-peach",
+        "es-419-travel-scissors",
+        "es-419-travel-book",
+        "es-419-travel-mural"
+      ]
+    },
+    {
+      "id": "es-419-food-ham",
+      "beforeSemantic": [
+        "es-419-travel-cheese",
+        "es-419-food-bacon",
+        "es-419-travel-chicken",
+        "es-419-food-tuna",
+        "es-419-travel-bread",
+        "es-419-food-melon"
+      ],
+      "semantic": [
+        "es-419-travel-cheese",
+        "es-419-food-bacon",
+        "es-419-travel-chicken",
+        "es-419-food-tuna",
+        "es-419-travel-bread",
+        "es-419-food-melon"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-soap",
+        "es-419-travel-lime",
+        "es-419-food-shrimp",
+        "es-419-food-mushroom",
+        "es-419-food-melon",
+        "es-419-food-tuna"
+      ],
+      "pronunciation": [
+        "es-419-travel-soap",
+        "es-419-travel-lime",
+        "es-419-food-shrimp",
+        "es-419-travel-drum",
+        "es-419-food-mushroom",
+        "es-419-food-melon"
+      ]
+    },
+    {
+      "id": "es-419-food-honey",
+      "beforeSemantic": [
+        "es-419-travel-milk",
+        "es-419-food-jam",
+        "es-419-travel-sugar",
+        "es-419-travel-butter",
+        "es-419-travel-lime",
+        "es-419-travel-strawberry"
+      ],
+      "semantic": [
+        "es-419-travel-milk",
+        "es-419-food-jam",
+        "es-419-travel-sugar",
+        "es-419-travel-butter",
+        "es-419-travel-lime",
+        "es-419-travel-strawberry"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-hotel",
+        "es-419-travel-museum",
+        "es-419-food-cake",
+        "es-419-travel-backpack",
+        "es-419-travel-coin",
+        "es-419-travel-suitcase"
+      ],
+      "pronunciation": [
+        "es-419-travel-hotel",
+        "es-419-travel-mural",
+        "es-419-travel-museum",
+        "es-419-food-cake",
+        "es-419-travel-backpack",
+        "es-419-travel-coin"
+      ]
+    },
+    {
+      "id": "es-419-food-knife",
+      "beforeSemantic": [
+        "es-419-travel-scissors",
+        "es-419-travel-fork",
+        "es-419-food-mango",
+        "es-419-travel-spoon",
+        "es-419-travel-toothbrush",
+        "es-419-travel-comb"
+      ],
+      "semantic": [
+        "es-419-travel-scissors",
+        "es-419-travel-fork",
+        "es-419-food-mango",
+        "es-419-travel-spoon",
+        "es-419-travel-toothbrush",
+        "es-419-travel-paintbrush"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-spoon",
+        "es-419-basic-cold",
+        "es-419-food-bacon",
+        "es-419-food-chili-pepper",
+        "es-419-food-cucumber"
+      ],
+      "pronunciation": [
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-spoon",
+        "es-419-basic-cold",
+        "es-419-food-bacon",
+        "es-419-food-chili-pepper",
+        "es-419-food-cucumber"
+      ]
+    },
+    {
+      "id": "es-419-food-mushroom",
+      "beforeSemantic": [
+        "es-419-food-ham",
+        "es-419-food-broccoli",
+        "es-419-travel-cheese",
+        "es-419-food-cauliflower",
+        "es-419-travel-banana",
+        "es-419-travel-rice"
+      ],
+      "semantic": [
+        "es-419-food-ham",
+        "es-419-food-broccoli",
+        "es-419-travel-cheese",
+        "es-419-food-cauliflower",
+        "es-419-travel-banana",
+        "es-419-travel-rice"
+      ],
+      "beforePronunciation": [
+        "es-419-food-ham",
+        "es-419-food-shrimp",
+        "es-419-travel-shampoo",
+        "es-419-food-melon",
+        "es-419-travel-airplane",
+        "es-419-travel-lime"
+      ],
+      "pronunciation": [
+        "es-419-food-ham",
+        "es-419-food-shrimp",
+        "es-419-travel-shampoo",
+        "es-419-food-melon",
+        "es-419-travel-airplane",
+        "es-419-travel-drum"
+      ]
+    },
+    {
+      "id": "es-419-food-onion",
+      "beforeSemantic": [
+        "es-419-food-garlic",
+        "es-419-food-carrot",
+        "es-419-food-cauliflower",
+        "es-419-food-lettuce",
+        "es-419-food-spinach",
+        "es-419-travel-soup"
+      ],
+      "semantic": [
+        "es-419-food-garlic",
+        "es-419-food-carrot",
+        "es-419-food-cauliflower",
+        "es-419-food-lettuce",
+        "es-419-food-spinach",
+        "es-419-travel-soup"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-chair",
+        "es-419-travel-soup",
+        "es-419-food-carrot",
+        "es-419-travel-traffic-light",
+        "es-419-basic-closed",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-travel-chair",
+        "es-419-travel-soup",
+        "es-419-travel-magazine",
+        "es-419-food-carrot",
+        "es-419-travel-pottery",
+        "es-419-travel-traffic-light"
+      ]
+    },
+    {
+      "id": "es-419-food-pasta",
+      "beforeSemantic": [
+        "es-419-travel-toothpaste",
+        "es-419-food-pizza",
+        "es-419-travel-soup",
+        "es-419-food-gelatin",
+        "es-419-travel-salad",
+        "es-419-travel-butter"
+      ],
+      "semantic": [
+        "es-419-travel-toothpaste",
+        "es-419-food-pizza",
+        "es-419-travel-soup",
+        "es-419-food-gelatin",
+        "es-419-travel-salad",
+        "es-419-travel-butter"
+      ],
+      "beforePronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-cup",
+        "es-419-travel-tire",
+        "es-419-food-pear",
+        "es-419-food-pizza",
+        "es-419-travel-banana"
+      ],
+      "pronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-cup",
+        "es-419-travel-tire",
+        "es-419-travel-basket",
+        "es-419-travel-pinata",
+        "es-419-food-pear"
+      ]
+    },
+    {
+      "id": "es-419-food-peach",
+      "beforeSemantic": [
+        "es-419-food-melon",
+        "es-419-travel-lime",
+        "es-419-food-watermelon",
+        "es-419-travel-strawberry",
+        "es-419-travel-avocado",
+        "es-419-travel-banana"
+      ],
+      "semantic": [
+        "es-419-food-melon",
+        "es-419-travel-lime",
+        "es-419-food-watermelon",
+        "es-419-travel-strawberry",
+        "es-419-travel-avocado",
+        "es-419-travel-banana"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-helmet",
+        "es-419-travel-pharmacy",
+        "es-419-basic-closed",
+        "es-419-basic-cold",
+        "es-419-basic-large"
+      ],
+      "pronunciation": [
+        "es-419-travel-drinking-glass",
+        "es-419-travel-helmet",
+        "es-419-travel-mural",
+        "es-419-travel-piano",
+        "es-419-travel-record",
+        "es-419-travel-pharmacy"
+      ]
+    },
+    {
+      "id": "es-419-food-peanut",
+      "beforeSemantic": [
+        "es-419-travel-avocado",
+        "es-419-food-corn",
+        "es-419-food-tomato",
+        "es-419-food-peach",
+        "es-419-food-cucumber",
+        "es-419-food-chocolate"
+      ],
+      "semantic": [
+        "es-419-travel-avocado",
+        "es-419-food-corn",
+        "es-419-food-tomato",
+        "es-419-food-peach",
+        "es-419-food-cucumber",
+        "es-419-food-chocolate"
+      ],
+      "beforePronunciation": [
+        "es-419-food-chocolate",
+        "es-419-travel-avocado",
+        "es-419-travel-passport",
+        "es-419-basic-hot",
+        "es-419-food-cooking-oil",
+        "es-419-food-shrimp"
+      ],
+      "pronunciation": [
+        "es-419-travel-easel",
+        "es-419-food-chocolate",
+        "es-419-travel-avocado",
+        "es-419-travel-passport",
+        "es-419-basic-hot",
+        "es-419-food-cooking-oil"
+      ]
+    },
+    {
+      "id": "es-419-food-pear",
+      "beforeSemantic": [
+        "es-419-travel-apple",
+        "es-419-travel-pineapple",
+        "es-419-food-watermelon",
+        "es-419-food-melon",
+        "es-419-travel-strawberry",
+        "es-419-travel-orange"
+      ],
+      "semantic": [
+        "es-419-travel-apple",
+        "es-419-travel-pineapple",
+        "es-419-food-watermelon",
+        "es-419-food-melon",
+        "es-419-travel-strawberry",
+        "es-419-travel-orange"
+      ],
+      "beforePronunciation": [
+        "es-419-food-pizza",
+        "es-419-food-potato",
+        "es-419-travel-pineapple",
+        "es-419-travel-table",
+        "es-419-food-pasta",
+        "es-419-travel-beach"
+      ],
+      "pronunciation": [
+        "es-419-food-pizza",
+        "es-419-food-potato",
+        "es-419-travel-pineapple",
+        "es-419-travel-table",
+        "es-419-travel-palette",
+        "es-419-food-pasta"
+      ]
+    },
+    {
+      "id": "es-419-food-popcorn",
+      "beforeSemantic": [
+        "es-419-travel-cinema",
+        "es-419-food-chocolate",
+        "es-419-travel-coffee",
+        "es-419-food-pizza",
+        "es-419-food-tortilla",
+        "es-419-food-beans"
+      ],
+      "semantic": [
+        "es-419-travel-cinema",
+        "es-419-food-chocolate",
+        "es-419-travel-coffee",
+        "es-419-food-pizza",
+        "es-419-food-tortilla",
+        "es-419-food-beans"
+      ],
+      "beforePronunciation": [
+        "es-419-food-sausage",
+        "es-419-travel-pill",
+        "es-419-travel-shirt",
+        "es-419-travel-suitcase",
+        "es-419-food-cookie",
+        "es-419-food-gelatin"
+      ],
+      "pronunciation": [
+        "es-419-travel-palette",
+        "es-419-food-sausage",
+        "es-419-travel-gallery",
+        "es-419-travel-pill",
+        "es-419-travel-shirt",
+        "es-419-travel-suitcase"
+      ]
+    },
+    {
+      "id": "es-419-food-sausage",
+      "beforeSemantic": [
+        "es-419-food-pizza",
+        "es-419-food-steak",
+        "es-419-food-sandwich",
+        "es-419-food-ham",
+        "es-419-travel-chicken",
+        "es-419-food-bacon"
+      ],
+      "semantic": [
+        "es-419-food-pizza",
+        "es-419-food-steak",
+        "es-419-food-sandwich",
+        "es-419-food-ham",
+        "es-419-travel-chicken",
+        "es-419-food-bacon"
+      ],
+      "beforePronunciation": [
+        "es-419-food-watermelon",
+        "es-419-food-popcorn",
+        "es-419-travel-backpack",
+        "es-419-travel-chair",
+        "es-419-travel-pill",
+        "es-419-travel-shirt"
+      ],
+      "pronunciation": [
+        "es-419-food-watermelon",
+        "es-419-food-popcorn",
+        "es-419-travel-backpack",
+        "es-419-travel-chair",
+        "es-419-travel-gallery",
+        "es-419-travel-palette"
+      ]
+    },
+    {
+      "id": "es-419-food-spinach",
+      "beforeSemantic": [
+        "es-419-food-broccoli",
+        "es-419-food-lettuce",
+        "es-419-food-cauliflower",
+        "es-419-food-carrot",
+        "es-419-travel-salad",
+        "es-419-food-onion"
+      ],
+      "semantic": [
+        "es-419-food-broccoli",
+        "es-419-food-lettuce",
+        "es-419-food-cauliflower",
+        "es-419-food-carrot",
+        "es-419-travel-salad",
+        "es-419-food-onion"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-hospital",
+        "es-419-travel-gas-station",
+        "es-419-food-potato",
+        "es-419-travel-beach",
+        "es-419-travel-mirror",
+        "es-419-travel-salad"
+      ],
+      "pronunciation": [
+        "es-419-travel-hospital",
+        "es-419-travel-pinata",
+        "es-419-travel-gas-station",
+        "es-419-food-potato",
+        "es-419-travel-beach",
+        "es-419-travel-festival"
+      ]
+    },
+    {
+      "id": "es-419-food-tomato",
+      "beforeSemantic": [
+        "es-419-travel-avocado",
+        "es-419-food-broccoli",
+        "es-419-food-onion",
+        "es-419-food-corn",
+        "es-419-food-peanut",
+        "es-419-food-beans"
+      ],
+      "semantic": [
+        "es-419-travel-avocado",
+        "es-419-food-broccoli",
+        "es-419-food-onion",
+        "es-419-food-corn",
+        "es-419-food-peanut",
+        "es-419-food-beans"
+      ],
+      "beforePronunciation": [
+        "es-419-food-chocolate",
+        "es-419-travel-restaurant",
+        "es-419-food-peanut",
+        "es-419-travel-avocado",
+        "es-419-travel-steering-wheel",
+        "es-419-travel-towel"
+      ],
+      "pronunciation": [
+        "es-419-food-chocolate",
+        "es-419-travel-restaurant",
+        "es-419-food-peanut",
+        "es-419-travel-avocado",
+        "es-419-travel-guitar",
+        "es-419-travel-pinata"
+      ]
+    },
+    {
+      "id": "es-419-food-yogurt",
+      "beforeSemantic": [
+        "es-419-travel-cheese",
+        "es-419-food-jam",
+        "es-419-travel-milk",
+        "es-419-travel-ice-cream",
+        "es-419-travel-lime",
+        "es-419-food-chocolate"
+      ],
+      "semantic": [
+        "es-419-travel-cheese",
+        "es-419-food-jam",
+        "es-419-travel-milk",
+        "es-419-travel-ice-cream",
+        "es-419-travel-lime",
+        "es-419-food-chocolate"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-bus",
+        "es-419-basic-drink",
+        "es-419-food-cauliflower",
+        "es-419-food-tuna",
+        "es-419-travel-charger"
+      ],
+      "pronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-play-instrument",
+        "es-419-travel-bus",
+        "es-419-basic-drink",
+        "es-419-food-cauliflower",
+        "es-419-food-tuna"
+      ]
+    },
+    {
+      "id": "es-419-travel-adhesive-bandage",
+      "beforeSemantic": [
+        "es-419-travel-church",
+        "es-419-travel-insect-repellent",
+        "es-419-food-potato",
+        "es-419-travel-taco",
+        "es-419-travel-shirt",
+        "es-419-travel-sock"
+      ],
+      "semantic": [
+        "es-419-travel-church",
+        "es-419-travel-insect-repellent",
+        "es-419-food-potato",
+        "es-419-travel-taco",
+        "es-419-travel-shirt",
+        "es-419-travel-pinata"
+      ],
+      "beforePronunciation": [
+        "es-419-food-knife",
+        "es-419-travel-blanket",
+        "es-419-travel-shirt",
+        "es-419-travel-spoon",
+        "es-419-food-tortilla",
+        "es-419-travel-wallet"
+      ],
+      "pronunciation": [
+        "es-419-food-knife",
+        "es-419-travel-blanket",
+        "es-419-travel-shirt",
+        "es-419-travel-spoon",
+        "es-419-food-tortilla",
+        "es-419-travel-basket"
+      ]
+    },
+    {
+      "id": "es-419-travel-airport",
+      "beforeSemantic": [
+        "es-419-travel-airplane",
+        "es-419-travel-taxi",
+        "es-419-travel-hotel",
+        "es-419-travel-bus",
+        "es-419-travel-train-station",
+        "es-419-travel-train"
+      ],
+      "semantic": [
+        "es-419-travel-airplane",
+        "es-419-travel-taxi",
+        "es-419-travel-hotel",
+        "es-419-travel-bus",
+        "es-419-travel-train-station",
+        "es-419-travel-train"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-open",
+        "es-419-travel-mirror",
+        "es-419-travel-ticket",
+        "es-419-basic-drink",
+        "es-419-basic-eat",
+        "es-419-basic-sleepiness"
+      ],
+      "pronunciation": [
+        "es-419-basic-open",
+        "es-419-travel-concert",
+        "es-419-travel-mirror",
+        "es-419-travel-ticket",
+        "es-419-travel-trumpet",
+        "es-419-basic-drink"
+      ]
+    },
+    {
+      "id": "es-419-travel-apple",
+      "beforeSemantic": [
+        "es-419-food-pear",
+        "es-419-food-carrot",
+        "es-419-travel-orange",
+        "es-419-food-watermelon",
+        "es-419-travel-pineapple",
+        "es-419-travel-lime"
+      ],
+      "semantic": [
+        "es-419-food-pear",
+        "es-419-food-carrot",
+        "es-419-travel-orange",
+        "es-419-food-watermelon",
+        "es-419-travel-pineapple",
+        "es-419-travel-lime"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-mountain",
+        "es-419-travel-window",
+        "es-419-food-watermelon",
+        "es-419-travel-butter",
+        "es-419-travel-coin",
+        "es-419-travel-jacket"
+      ],
+      "pronunciation": [
+        "es-419-travel-mountain",
+        "es-419-travel-window",
+        "es-419-food-watermelon",
+        "es-419-travel-basket",
+        "es-419-travel-butter",
+        "es-419-travel-coin"
+      ]
+    },
+    {
+      "id": "es-419-travel-atm",
+      "beforeSemantic": [
+        "es-419-travel-credit-card",
+        "es-419-travel-supermarket",
+        "es-419-travel-parking-lot",
+        "es-419-travel-charger",
+        "es-419-travel-elevator",
+        "es-419-travel-traffic-light"
+      ],
+      "semantic": [
+        "es-419-travel-credit-card",
+        "es-419-travel-supermarket",
+        "es-419-travel-parking-lot",
+        "es-419-travel-charger",
+        "es-419-travel-elevator",
+        "es-419-travel-traffic-light"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-toilet-paper",
+        "es-419-travel-credit-card",
+        "es-419-food-tomato",
+        "es-419-travel-airport",
+        "es-419-travel-sock",
+        "es-419-basic-open"
+      ],
+      "pronunciation": [
+        "es-419-travel-toilet-paper",
+        "es-419-travel-credit-card",
+        "es-419-food-tomato",
+        "es-419-travel-airport",
+        "es-419-travel-newspaper",
+        "es-419-travel-pottery"
+      ]
+    },
+    {
+      "id": "es-419-travel-avocado",
+      "beforeSemantic": [
+        "es-419-travel-banana",
+        "es-419-food-broccoli",
+        "es-419-food-cucumber",
+        "es-419-travel-lime",
+        "es-419-food-tomato",
+        "es-419-food-peanut"
+      ],
+      "semantic": [
+        "es-419-travel-banana",
+        "es-419-food-broccoli",
+        "es-419-food-cucumber",
+        "es-419-travel-lime",
+        "es-419-food-tomato",
+        "es-419-food-peanut"
+      ],
+      "beforePronunciation": [
+        "es-419-food-peanut",
+        "es-419-food-chocolate",
+        "es-419-food-cooking-oil",
+        "es-419-food-tomato",
+        "es-419-travel-glove",
+        "es-419-travel-shoe"
+      ],
+      "pronunciation": [
+        "es-419-food-peanut",
+        "es-419-food-chocolate",
+        "es-419-food-cooking-oil",
+        "es-419-food-tomato",
+        "es-419-travel-easel",
+        "es-419-travel-glove"
+      ]
+    },
+    {
+      "id": "es-419-travel-bakery",
+      "beforeSemantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-pharmacy",
+        "es-419-travel-bread",
+        "es-419-travel-gas-station",
+        "es-419-travel-restaurant",
+        "es-419-travel-street"
+      ],
+      "semantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-pharmacy",
+        "es-419-travel-bread",
+        "es-419-travel-gas-station",
+        "es-419-travel-restaurant",
+        "es-419-travel-street"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-laundromat",
+        "es-419-food-carrot",
+        "es-419-food-watermelon",
+        "es-419-travel-butter",
+        "es-419-food-pear",
+        "es-419-food-shrimp"
+      ],
+      "pronunciation": [
+        "es-419-travel-laundromat",
+        "es-419-travel-gallery",
+        "es-419-food-carrot",
+        "es-419-food-watermelon",
+        "es-419-travel-bookstore",
+        "es-419-travel-butter"
+      ]
+    },
+    {
+      "id": "es-419-travel-banana",
+      "beforeSemantic": [
+        "es-419-travel-avocado",
+        "es-419-travel-pineapple",
+        "es-419-travel-lime",
+        "es-419-food-watermelon",
+        "es-419-food-melon",
+        "es-419-food-chocolate"
+      ],
+      "semantic": [
+        "es-419-travel-avocado",
+        "es-419-travel-pineapple",
+        "es-419-travel-lime",
+        "es-419-food-watermelon",
+        "es-419-food-melon",
+        "es-419-food-chocolate"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-plate",
+        "es-419-travel-beach",
+        "es-419-food-pasta",
+        "es-419-food-potato",
+        "es-419-travel-bread",
+        "es-419-travel-ice-cream"
+      ],
+      "pronunciation": [
+        "es-419-travel-plate",
+        "es-419-travel-beach",
+        "es-419-travel-piano",
+        "es-419-food-pasta",
+        "es-419-food-potato",
+        "es-419-travel-bread"
+      ]
+    },
+    {
+      "id": "es-419-travel-beach",
+      "beforeSemantic": [
+        "es-419-travel-swimming-pool",
+        "es-419-travel-island",
+        "es-419-travel-mountain",
+        "es-419-travel-towel",
+        "es-419-travel-lake",
+        "es-419-travel-street"
+      ],
+      "semantic": [
+        "es-419-travel-swimming-pool",
+        "es-419-travel-island",
+        "es-419-travel-mountain",
+        "es-419-travel-towel",
+        "es-419-travel-lake",
+        "es-419-travel-street"
+      ],
+      "beforePronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-plate",
+        "es-419-travel-towel",
+        "es-419-travel-banana",
+        "es-419-food-pasta",
+        "es-419-food-pear"
+      ],
+      "pronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-plate",
+        "es-419-travel-towel",
+        "es-419-travel-banana",
+        "es-419-travel-palette",
+        "es-419-travel-pinata"
+      ]
+    },
+    {
+      "id": "es-419-travel-belt",
+      "beforeSemantic": [
+        "es-419-travel-seat-belt",
+        "es-419-travel-helmet",
+        "es-419-travel-dress",
+        "es-419-travel-hat",
+        "es-419-travel-glove",
+        "es-419-travel-pants"
+      ],
+      "semantic": [
+        "es-419-travel-seat-belt",
+        "es-419-travel-helmet",
+        "es-419-travel-dress",
+        "es-419-travel-hat",
+        "es-419-travel-glove",
+        "es-419-travel-pants"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pants",
+        "es-419-food-shrimp",
+        "es-419-travel-lime",
+        "es-419-travel-money",
+        "es-419-travel-train",
+        "es-419-travel-room"
+      ],
+      "pronunciation": [
+        "es-419-travel-pants",
+        "es-419-food-shrimp",
+        "es-419-travel-lime",
+        "es-419-travel-money",
+        "es-419-travel-paint",
+        "es-419-travel-train"
+      ]
+    },
+    {
+      "id": "es-419-travel-bicycle",
+      "beforeSemantic": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-chair",
+        "es-419-travel-backpack",
+        "es-419-travel-mountain",
+        "es-419-travel-car",
+        "es-419-travel-tire"
+      ],
+      "semantic": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-chair",
+        "es-419-travel-backpack",
+        "es-419-travel-mountain",
+        "es-419-travel-car",
+        "es-419-travel-tire"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-sidewalk",
+        "es-419-travel-library",
+        "es-419-food-steak",
+        "es-419-travel-suitcase",
+        "es-419-travel-ticket"
+      ],
+      "pronunciation": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-sidewalk",
+        "es-419-travel-library",
+        "es-419-food-steak",
+        "es-419-travel-palette",
+        "es-419-travel-suitcase"
+      ]
+    },
+    {
+      "id": "es-419-travel-binoculars",
+      "beforeSemantic": [
+        "es-419-travel-sunglasses",
+        "es-419-travel-flashlight",
+        "es-419-travel-camera",
+        "es-419-travel-mirror",
+        "es-419-travel-umbrella",
+        "es-419-travel-pants"
+      ],
+      "semantic": [
+        "es-419-travel-sunglasses",
+        "es-419-travel-flashlight",
+        "es-419-travel-headphones",
+        "es-419-travel-camera",
+        "es-419-travel-mirror",
+        "es-419-travel-umbrella"
+      ],
+      "beforePronunciation": [
+        "es-419-food-chocolate",
+        "es-419-food-tomato",
+        "es-419-travel-bicycle",
+        "es-419-travel-pants",
+        "es-419-travel-spoon",
+        "es-419-travel-stairs"
+      ],
+      "pronunciation": [
+        "es-419-food-chocolate",
+        "es-419-food-tomato",
+        "es-419-travel-bicycle",
+        "es-419-travel-dance",
+        "es-419-travel-draw",
+        "es-419-travel-listen"
+      ]
+    },
+    {
+      "id": "es-419-travel-blanket",
+      "beforeSemantic": [
+        "es-419-travel-pillow",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-jacket",
+        "es-419-travel-bed",
+        "es-419-travel-umbrella",
+        "es-419-travel-sunscreen"
+      ],
+      "semantic": [
+        "es-419-travel-pillow",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-jacket",
+        "es-419-travel-bed",
+        "es-419-travel-umbrella",
+        "es-419-travel-sunscreen"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-backpack",
+        "es-419-travel-shirt",
+        "es-419-food-tortilla",
+        "es-419-basic-eat",
+        "es-419-food-bacon"
+      ],
+      "pronunciation": [
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-backpack",
+        "es-419-travel-shirt",
+        "es-419-food-tortilla",
+        "es-419-travel-magazine",
+        "es-419-basic-eat"
+      ]
+    },
+    {
+      "id": "es-419-travel-bread",
+      "beforeSemantic": [
+        "es-419-travel-cheese",
+        "es-419-food-ham",
+        "es-419-food-cake",
+        "es-419-food-sandwich",
+        "es-419-food-pizza",
+        "es-419-travel-rice"
+      ],
+      "semantic": [
+        "es-419-travel-cheese",
+        "es-419-food-ham",
+        "es-419-food-cake",
+        "es-419-food-sandwich",
+        "es-419-food-pizza",
+        "es-419-travel-rice"
+      ],
+      "beforePronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-comb",
+        "es-419-food-pasta",
+        "es-419-travel-banana",
+        "es-419-travel-beach",
+        "es-419-travel-bench"
+      ],
+      "pronunciation": [
+        "es-419-travel-piano",
+        "es-419-food-potato",
+        "es-419-travel-comb",
+        "es-419-food-pasta",
+        "es-419-travel-banana",
+        "es-419-travel-beach"
+      ]
+    },
+    {
+      "id": "es-419-travel-bus",
+      "beforeSemantic": [
+        "es-419-travel-bus-stop",
+        "es-419-travel-train",
+        "es-419-travel-taxi",
+        "es-419-travel-train-station",
+        "es-419-travel-subway",
+        "es-419-travel-airplane"
+      ],
+      "semantic": [
+        "es-419-travel-bus-stop",
+        "es-419-travel-train",
+        "es-419-travel-taxi",
+        "es-419-travel-train-station",
+        "es-419-travel-subway",
+        "es-419-travel-airplane"
+      ],
+      "beforePronunciation": [
+        "es-419-food-tuna",
+        "es-419-food-yogurt",
+        "es-419-travel-bus-stop",
+        "es-419-food-tomato",
+        "es-419-food-popcorn",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-travel-speaker",
+        "es-419-food-tuna",
+        "es-419-food-yogurt",
+        "es-419-travel-play-instrument",
+        "es-419-travel-bus-stop",
+        "es-419-food-tomato"
+      ]
+    },
+    {
+      "id": "es-419-travel-butter",
+      "beforeSemantic": [
+        "es-419-food-chocolate",
+        "es-419-food-jam",
+        "es-419-travel-milk",
+        "es-419-travel-cheese",
+        "es-419-travel-sugar",
+        "es-419-food-cookie"
+      ],
+      "semantic": [
+        "es-419-food-chocolate",
+        "es-419-food-jam",
+        "es-419-travel-milk",
+        "es-419-travel-cheese",
+        "es-419-travel-sugar",
+        "es-419-food-cookie"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-tortilla",
+        "es-419-food-watermelon",
+        "es-419-travel-apple",
+        "es-419-travel-bakery",
+        "es-419-travel-mountain"
+      ],
+      "pronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-tortilla",
+        "es-419-food-watermelon",
+        "es-419-travel-apple",
+        "es-419-travel-bakery",
+        "es-419-travel-gallery"
+      ]
+    },
+    {
+      "id": "es-419-travel-camera",
+      "beforeSemantic": [
+        "es-419-travel-flashlight",
+        "es-419-travel-backpack",
+        "es-419-travel-suitcase",
+        "es-419-travel-sunglasses",
+        "es-419-travel-binoculars",
+        "es-419-travel-wallet"
+      ],
+      "semantic": [
+        "es-419-travel-flashlight",
+        "es-419-travel-microphone",
+        "es-419-travel-gallery",
+        "es-419-travel-backpack",
+        "es-419-travel-festival-mask",
+        "es-419-travel-suitcase"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-bed",
+        "es-419-basic-hunger",
+        "es-419-travel-spoon",
+        "es-419-food-shrimp",
+        "es-419-food-pasta",
+        "es-419-food-pear"
+      ],
+      "pronunciation": [
+        "es-419-travel-bed",
+        "es-419-travel-festival-mask",
+        "es-419-basic-hunger",
+        "es-419-travel-spoon",
+        "es-419-food-shrimp",
+        "es-419-travel-pottery"
+      ]
+    },
+    {
+      "id": "es-419-travel-cargo-truck",
+      "beforeSemantic": [
+        "es-419-travel-car",
+        "es-419-travel-charger",
+        "es-419-travel-train",
+        "es-419-travel-train-station",
+        "es-419-travel-backpack",
+        "es-419-travel-bus-stop"
+      ],
+      "semantic": [
+        "es-419-travel-car",
+        "es-419-travel-charger",
+        "es-419-travel-train",
+        "es-419-travel-train-station",
+        "es-419-travel-backpack",
+        "es-419-travel-bus-stop"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-police-station",
+        "es-419-travel-train-station",
+        "es-419-travel-seat-belt",
+        "es-419-travel-tent",
+        "es-419-basic-hot",
+        "es-419-travel-butter"
+      ],
+      "pronunciation": [
+        "es-419-travel-police-station",
+        "es-419-travel-train-station",
+        "es-419-travel-seat-belt",
+        "es-419-travel-tent",
+        "es-419-basic-hot",
+        "es-419-travel-basket"
+      ]
+    },
+    {
+      "id": "es-419-travel-chair",
+      "beforeSemantic": [
+        "es-419-travel-table",
+        "es-419-travel-sidewalk",
+        "es-419-travel-bed",
+        "es-419-travel-bicycle",
+        "es-419-travel-pillow",
+        "es-419-travel-room"
+      ],
+      "semantic": [
+        "es-419-travel-table",
+        "es-419-travel-sidewalk",
+        "es-419-travel-bed",
+        "es-419-travel-bicycle",
+        "es-419-travel-pillow",
+        "es-419-travel-easel"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-pizza",
+        "es-419-travel-cinema",
+        "es-419-travel-pineapple",
+        "es-419-travel-soup",
+        "es-419-food-onion"
+      ],
+      "pronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-pizza",
+        "es-419-travel-cinema",
+        "es-419-travel-pineapple",
+        "es-419-travel-soup",
+        "es-419-food-onion"
+      ]
+    },
+    {
+      "id": "es-419-travel-charger",
+      "beforeSemantic": [
+        "es-419-travel-cargo-truck",
+        "es-419-travel-power-outlet",
+        "es-419-travel-flashlight",
+        "es-419-travel-atm",
+        "es-419-travel-sunscreen",
+        "es-419-travel-backpack"
+      ],
+      "semantic": [
+        "es-419-travel-cargo-truck",
+        "es-419-travel-power-outlet",
+        "es-419-travel-flashlight",
+        "es-419-travel-atm",
+        "es-419-travel-sunscreen",
+        "es-419-travel-backpack"
+      ],
+      "beforePronunciation": [
+        "es-419-food-shrimp",
+        "es-419-food-cauliflower",
+        "es-419-travel-elevator",
+        "es-419-travel-fork",
+        "es-419-travel-wallet",
+        "es-419-travel-passport"
+      ],
+      "pronunciation": [
+        "es-419-food-shrimp",
+        "es-419-food-cauliflower",
+        "es-419-travel-drum",
+        "es-419-travel-elevator",
+        "es-419-travel-fork",
+        "es-419-travel-painting"
+      ]
+    },
+    {
+      "id": "es-419-travel-chicken",
+      "beforeSemantic": [
+        "es-419-food-steak",
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna",
+        "es-419-travel-rice",
+        "es-419-food-ham",
+        "es-419-travel-egg"
+      ],
+      "semantic": [
+        "es-419-food-steak",
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna",
+        "es-419-travel-rice",
+        "es-419-food-ham",
+        "es-419-travel-egg"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-beach",
+        "es-419-travel-plate",
+        "es-419-basic-small",
+        "es-419-food-cucumber",
+        "es-419-food-knife",
+        "es-419-food-onion"
+      ],
+      "pronunciation": [
+        "es-419-travel-beach",
+        "es-419-travel-piano",
+        "es-419-travel-plate",
+        "es-419-basic-small",
+        "es-419-food-cucumber",
+        "es-419-food-knife"
+      ]
+    },
+    {
+      "id": "es-419-travel-church",
+      "beforeSemantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-street",
+        "es-419-travel-library",
+        "es-419-travel-hospital",
+        "es-419-travel-bakery",
+        "es-419-travel-museum"
+      ],
+      "semantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-street",
+        "es-419-travel-library",
+        "es-419-travel-hospital",
+        "es-419-travel-sculpture",
+        "es-419-travel-bakery"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-strawberry",
+        "es-419-travel-suitcase",
+        "es-419-travel-table",
+        "es-419-travel-ambulance",
+        "es-419-travel-flashlight",
+        "es-419-travel-pharmacy"
+      ],
+      "pronunciation": [
+        "es-419-travel-palette",
+        "es-419-travel-strawberry",
+        "es-419-travel-suitcase",
+        "es-419-travel-table",
+        "es-419-travel-ambulance",
+        "es-419-travel-flashlight"
+      ]
+    },
+    {
+      "id": "es-419-travel-cinema",
+      "beforeSemantic": [
+        "es-419-food-popcorn",
+        "es-419-travel-museum",
+        "es-419-travel-supermarket",
+        "es-419-travel-park",
+        "es-419-travel-market",
+        "es-419-travel-coffee"
+      ],
+      "semantic": [
+        "es-419-travel-theater",
+        "es-419-travel-festival",
+        "es-419-food-popcorn",
+        "es-419-travel-museum",
+        "es-419-travel-supermarket",
+        "es-419-travel-park"
+      ],
+      "beforePronunciation": [
+        "es-419-food-chili-pepper",
+        "es-419-travel-chair",
+        "es-419-travel-comb",
+        "es-419-food-bacon",
+        "es-419-travel-swimming-pool",
+        "es-419-food-cooking-oil"
+      ],
+      "pronunciation": [
+        "es-419-food-chili-pepper",
+        "es-419-travel-chair",
+        "es-419-travel-comb",
+        "es-419-food-bacon",
+        "es-419-travel-swimming-pool",
+        "es-419-food-cooking-oil"
+      ]
+    },
+    {
+      "id": "es-419-travel-coffee",
+      "beforeSemantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-cup",
+        "es-419-food-tea",
+        "es-419-travel-milk",
+        "es-419-travel-ice-cream",
+        "es-419-travel-drinking-glass"
+      ],
+      "semantic": [
+        "es-419-food-chocolate",
+        "es-419-travel-cup",
+        "es-419-food-tea",
+        "es-419-travel-milk",
+        "es-419-travel-ice-cream",
+        "es-419-travel-drinking-glass"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-wallet",
+        "es-419-basic-hot",
+        "es-419-food-peanut",
+        "es-419-food-cake",
+        "es-419-food-cookie"
+      ],
+      "pronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-wallet",
+        "es-419-basic-hot",
+        "es-419-food-peanut",
+        "es-419-travel-easel",
+        "es-419-food-cake"
+      ]
+    },
+    {
+      "id": "es-419-travel-coin",
+      "beforeSemantic": [
+        "es-419-travel-credit-card",
+        "es-419-travel-bench",
+        "es-419-travel-money",
+        "es-419-travel-cup",
+        "es-419-travel-wallet",
+        "es-419-travel-passport"
+      ],
+      "semantic": [
+        "es-419-travel-credit-card",
+        "es-419-travel-pottery",
+        "es-419-travel-bench",
+        "es-419-travel-money",
+        "es-419-travel-cup",
+        "es-419-travel-basket"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-mountain",
+        "es-419-travel-backpack",
+        "es-419-travel-bottle",
+        "es-419-travel-suitcase",
+        "es-419-travel-table",
+        "es-419-travel-apple"
+      ],
+      "pronunciation": [
+        "es-419-travel-mountain",
+        "es-419-travel-backpack",
+        "es-419-travel-bottle",
+        "es-419-travel-suitcase",
+        "es-419-travel-table",
+        "es-419-travel-apple"
+      ]
+    },
+    {
+      "id": "es-419-travel-comb",
+      "beforeSemantic": [
+        "es-419-travel-toothbrush",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-shampoo",
+        "es-419-travel-scissors",
+        "es-419-travel-soap",
+        "es-419-food-knife"
+      ],
+      "semantic": [
+        "es-419-travel-toothbrush",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-shampoo",
+        "es-419-travel-scissors",
+        "es-419-travel-soap",
+        "es-419-travel-paintbrush"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-bread",
+        "es-419-travel-cinema",
+        "es-419-travel-bridge",
+        "es-419-food-cooking-oil",
+        "es-419-travel-park",
+        "es-419-basic-large"
+      ],
+      "pronunciation": [
+        "es-419-travel-bread",
+        "es-419-travel-cinema",
+        "es-419-travel-bridge",
+        "es-419-food-cooking-oil",
+        "es-419-travel-park",
+        "es-419-travel-piano"
+      ]
+    },
+    {
+      "id": "es-419-travel-crosswalk",
+      "beforeSemantic": [
+        "es-419-travel-street",
+        "es-419-travel-bridge",
+        "es-419-travel-traffic-light",
+        "es-419-travel-parking-lot",
+        "es-419-travel-park",
+        "es-419-travel-river"
+      ],
+      "semantic": [
+        "es-419-travel-street",
+        "es-419-travel-bridge",
+        "es-419-travel-traffic-light",
+        "es-419-travel-parking-lot",
+        "es-419-travel-park",
+        "es-419-travel-river"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-bus-stop",
+        "es-419-travel-hospital",
+        "es-419-travel-swimsuit",
+        "es-419-travel-shoe",
+        "es-419-travel-sock",
+        "es-419-travel-seat-belt"
+      ],
+      "pronunciation": [
+        "es-419-travel-bus-stop",
+        "es-419-travel-hospital",
+        "es-419-travel-swimsuit",
+        "es-419-travel-concert",
+        "es-419-travel-festival",
+        "es-419-travel-postcard"
+      ]
+    },
+    {
+      "id": "es-419-travel-egg",
+      "beforeSemantic": [
+        "es-419-travel-chicken",
+        "es-419-travel-banana",
+        "es-419-travel-cheese",
+        "es-419-food-bacon",
+        "es-419-travel-milk",
+        "es-419-food-tortilla"
+      ],
+      "semantic": [
+        "es-419-travel-chicken",
+        "es-419-travel-banana",
+        "es-419-travel-cheese",
+        "es-419-food-bacon",
+        "es-419-travel-milk",
+        "es-419-food-tortilla"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-sleepiness",
+        "es-419-travel-cheese",
+        "es-419-travel-subway",
+        "es-419-basic-small",
+        "es-419-travel-mirror",
+        "es-419-travel-money"
+      ],
+      "pronunciation": [
+        "es-419-basic-sleepiness",
+        "es-419-travel-cheese",
+        "es-419-travel-book",
+        "es-419-travel-subway",
+        "es-419-basic-small",
+        "es-419-travel-mirror"
+      ]
+    },
+    {
+      "id": "es-419-travel-elevator",
+      "beforeSemantic": [
+        "es-419-travel-stairs",
+        "es-419-travel-parking-lot",
+        "es-419-travel-bathroom",
+        "es-419-travel-hotel",
+        "es-419-travel-room",
+        "es-419-travel-bus-stop"
+      ],
+      "semantic": [
+        "es-419-travel-stairs",
+        "es-419-travel-parking-lot",
+        "es-419-travel-bathroom",
+        "es-419-travel-hotel",
+        "es-419-travel-room",
+        "es-419-travel-bus-stop"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-fork",
+        "es-419-food-carrot",
+        "es-419-travel-charger",
+        "es-419-travel-passport",
+        "es-419-travel-room",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-travel-fork",
+        "es-419-food-carrot",
+        "es-419-travel-charger",
+        "es-419-travel-stage",
+        "es-419-travel-passport",
+        "es-419-travel-room"
+      ]
+    },
+    {
+      "id": "es-419-travel-flashlight",
+      "beforeSemantic": [
+        "es-419-travel-compass",
+        "es-419-travel-camera",
+        "es-419-travel-backpack",
+        "es-419-travel-charger",
+        "es-419-travel-key",
+        "es-419-travel-suitcase"
+      ],
+      "semantic": [
+        "es-419-travel-compass",
+        "es-419-travel-camera",
+        "es-419-travel-backpack",
+        "es-419-travel-charger",
+        "es-419-travel-key",
+        "es-419-travel-festival-mask"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-money",
+        "es-419-travel-wallet",
+        "es-419-travel-window",
+        "es-419-travel-gas-station",
+        "es-419-travel-library",
+        "es-419-food-carrot"
+      ],
+      "pronunciation": [
+        "es-419-travel-money",
+        "es-419-travel-paint",
+        "es-419-travel-wallet",
+        "es-419-travel-window",
+        "es-419-travel-gas-station",
+        "es-419-travel-library"
+      ]
+    },
+    {
+      "id": "es-419-travel-flower",
+      "beforeSemantic": [
+        "es-419-food-watermelon",
+        "es-419-travel-strawberry",
+        "es-419-food-peach",
+        "es-419-travel-pineapple",
+        "es-419-food-honey",
+        "es-419-travel-orange"
+      ],
+      "semantic": [
+        "es-419-food-watermelon",
+        "es-419-travel-strawberry",
+        "es-419-food-peach",
+        "es-419-travel-pineapple",
+        "es-419-food-honey",
+        "es-419-travel-orange"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cauliflower",
+        "es-419-food-corn",
+        "es-419-food-melon",
+        "es-419-basic-cold",
+        "es-419-travel-rice",
+        "es-419-travel-elevator"
+      ],
+      "pronunciation": [
+        "es-419-food-cauliflower",
+        "es-419-food-corn",
+        "es-419-food-melon",
+        "es-419-travel-dance",
+        "es-419-travel-flute",
+        "es-419-travel-drum"
+      ]
+    },
+    {
+      "id": "es-419-travel-forest",
+      "beforeSemantic": [
+        "es-419-travel-park",
+        "es-419-travel-lake",
+        "es-419-travel-river",
+        "es-419-travel-mountain",
+        "es-419-travel-ice-cream",
+        "es-419-travel-crosswalk"
+      ],
+      "semantic": [
+        "es-419-travel-park",
+        "es-419-travel-lake",
+        "es-419-travel-river",
+        "es-419-travel-mountain",
+        "es-419-travel-ice-cream",
+        "es-419-travel-crosswalk"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-bench",
+        "es-419-travel-boat",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-helmet",
+        "es-419-travel-park",
+        "es-419-food-broccoli"
+      ],
+      "pronunciation": [
+        "es-419-travel-bench",
+        "es-419-travel-boat",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-helmet",
+        "es-419-travel-park",
+        "es-419-travel-record"
+      ]
+    },
+    {
+      "id": "es-419-travel-fork",
+      "beforeSemantic": [
+        "es-419-food-knife",
+        "es-419-travel-spoon",
+        "es-419-travel-plate",
+        "es-419-food-mango",
+        "es-419-travel-toothbrush",
+        "es-419-travel-toothpaste"
+      ],
+      "semantic": [
+        "es-419-food-knife",
+        "es-419-travel-spoon",
+        "es-419-travel-plate",
+        "es-419-food-mango",
+        "es-419-travel-toothbrush",
+        "es-419-travel-paintbrush"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-elevator",
+        "es-419-travel-charger",
+        "es-419-basic-drink",
+        "es-419-food-melon",
+        "es-419-travel-flower",
+        "es-419-travel-menu"
+      ],
+      "pronunciation": [
+        "es-419-travel-drum",
+        "es-419-travel-elevator",
+        "es-419-travel-charger",
+        "es-419-basic-drink",
+        "es-419-food-melon",
+        "es-419-travel-flower"
+      ]
+    },
+    {
+      "id": "es-419-travel-gas-station",
+      "beforeSemantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-pharmacy",
+        "es-419-travel-bakery",
+        "es-419-travel-bus-stop",
+        "es-419-travel-police-station",
+        "es-419-travel-restaurant"
+      ],
+      "semantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-pharmacy",
+        "es-419-travel-bakery",
+        "es-419-travel-bus-stop",
+        "es-419-travel-police-station",
+        "es-419-travel-restaurant"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cookie",
+        "es-419-food-spinach",
+        "es-419-travel-coin",
+        "es-419-travel-flashlight",
+        "es-419-travel-hat",
+        "es-419-travel-money"
+      ],
+      "pronunciation": [
+        "es-419-food-cookie",
+        "es-419-food-spinach",
+        "es-419-travel-coin",
+        "es-419-travel-flashlight",
+        "es-419-travel-gallery",
+        "es-419-travel-hat"
+      ]
+    },
+    {
+      "id": "es-419-travel-hat",
+      "beforeSemantic": [
+        "es-419-travel-umbrella",
+        "es-419-travel-dress",
+        "es-419-travel-glove",
+        "es-419-travel-swimsuit",
+        "es-419-travel-shirt",
+        "es-419-travel-shoe"
+      ],
+      "semantic": [
+        "es-419-travel-umbrella",
+        "es-419-travel-dress",
+        "es-419-travel-glove",
+        "es-419-travel-swimsuit",
+        "es-419-travel-shirt",
+        "es-419-travel-shoe"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-gas-station",
+        "es-419-basic-hunger",
+        "es-419-basic-sleepiness",
+        "es-419-travel-money",
+        "es-419-travel-museum"
+      ],
+      "pronunciation": [
+        "es-419-basic-eat",
+        "es-419-travel-concert",
+        "es-419-travel-gas-station",
+        "es-419-basic-hunger",
+        "es-419-basic-sleepiness",
+        "es-419-travel-drum"
+      ]
+    },
+    {
+      "id": "es-419-travel-helmet",
+      "beforeSemantic": [
+        "es-419-travel-belt",
+        "es-419-travel-swimsuit",
+        "es-419-travel-seat-belt",
+        "es-419-travel-hat",
+        "es-419-travel-motorcycle",
+        "es-419-travel-boat"
+      ],
+      "semantic": [
+        "es-419-travel-belt",
+        "es-419-travel-swimsuit",
+        "es-419-travel-seat-belt",
+        "es-419-travel-hat",
+        "es-419-travel-motorcycle",
+        "es-419-travel-boat"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-boat",
+        "es-419-travel-car",
+        "es-419-travel-cheese",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-taco",
+        "es-419-food-garlic"
+      ],
+      "pronunciation": [
+        "es-419-travel-boat",
+        "es-419-travel-car",
+        "es-419-travel-cheese",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-record",
+        "es-419-travel-taco"
+      ]
+    },
+    {
+      "id": "es-419-travel-hospital",
+      "beforeSemantic": [
+        "es-419-travel-ambulance",
+        "es-419-travel-airport",
+        "es-419-travel-pharmacy",
+        "es-419-travel-museum",
+        "es-419-travel-park",
+        "es-419-travel-police-station"
+      ],
+      "semantic": [
+        "es-419-travel-ambulance",
+        "es-419-travel-airport",
+        "es-419-travel-pharmacy",
+        "es-419-travel-museum",
+        "es-419-travel-park",
+        "es-419-travel-police-station"
+      ],
+      "beforePronunciation": [
+        "es-419-food-spinach",
+        "es-419-travel-hotel",
+        "es-419-travel-salt",
+        "es-419-food-cake",
+        "es-419-travel-bread",
+        "es-419-travel-chair"
+      ],
+      "pronunciation": [
+        "es-419-travel-postcard",
+        "es-419-food-spinach",
+        "es-419-travel-festival",
+        "es-419-travel-hotel",
+        "es-419-travel-paint",
+        "es-419-travel-salt"
+      ]
+    },
+    {
+      "id": "es-419-travel-hotel",
+      "beforeSemantic": [
+        "es-419-travel-restaurant",
+        "es-419-travel-airport",
+        "es-419-travel-room",
+        "es-419-travel-taxi",
+        "es-419-travel-bus",
+        "es-419-travel-elevator"
+      ],
+      "semantic": [
+        "es-419-travel-restaurant",
+        "es-419-travel-airport",
+        "es-419-travel-room",
+        "es-419-travel-taxi",
+        "es-419-travel-bus",
+        "es-419-travel-elevator"
+      ],
+      "beforePronunciation": [
+        "es-419-food-honey",
+        "es-419-food-tea",
+        "es-419-food-cake",
+        "es-419-travel-bottle",
+        "es-419-basic-eat",
+        "es-419-travel-hospital"
+      ],
+      "pronunciation": [
+        "es-419-food-honey",
+        "es-419-food-tea",
+        "es-419-food-cake",
+        "es-419-travel-bottle",
+        "es-419-travel-postcard",
+        "es-419-basic-eat"
+      ]
+    },
+    {
+      "id": "es-419-travel-ice-cream",
+      "beforeSemantic": [
+        "es-419-food-chocolate",
+        "es-419-food-yogurt",
+        "es-419-basic-cold",
+        "es-419-travel-strawberry",
+        "es-419-travel-cheese",
+        "es-419-travel-coffee"
+      ],
+      "semantic": [
+        "es-419-food-chocolate",
+        "es-419-food-yogurt",
+        "es-419-basic-cold",
+        "es-419-travel-strawberry",
+        "es-419-travel-cheese",
+        "es-419-travel-coffee"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-lake",
+        "es-419-travel-plate",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-market",
+        "es-419-travel-salad"
+      ],
+      "pronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-lake",
+        "es-419-travel-plate",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-market",
+        "es-419-travel-painting"
+      ]
+    },
+    {
+      "id": "es-419-travel-island",
+      "beforeSemantic": [
+        "es-419-travel-beach",
+        "es-419-travel-boat",
+        "es-419-travel-mountain",
+        "es-419-travel-lake",
+        "es-419-travel-pineapple",
+        "es-419-travel-church"
+      ],
+      "semantic": [
+        "es-419-travel-beach",
+        "es-419-travel-boat",
+        "es-419-travel-mountain",
+        "es-419-travel-lake",
+        "es-419-travel-pineapple",
+        "es-419-travel-church"
+      ],
+      "beforePronunciation": [
+        "es-419-food-pasta",
+        "es-419-travel-backpack",
+        "es-419-travel-shirt",
+        "es-419-travel-swimming-pool",
+        "es-419-food-chili-pepper",
+        "es-419-food-pizza"
+      ],
+      "pronunciation": [
+        "es-419-food-pasta",
+        "es-419-travel-magazine",
+        "es-419-travel-record",
+        "es-419-travel-backpack",
+        "es-419-travel-shirt",
+        "es-419-travel-swimming-pool"
+      ]
+    },
+    {
+      "id": "es-419-travel-jacket",
+      "beforeSemantic": [
+        "es-419-travel-shirt",
+        "es-419-travel-backpack",
+        "es-419-travel-hat",
+        "es-419-travel-blanket",
+        "es-419-travel-pants",
+        "es-419-travel-suitcase"
+      ],
+      "semantic": [
+        "es-419-travel-shirt",
+        "es-419-travel-backpack",
+        "es-419-travel-hat",
+        "es-419-travel-blanket",
+        "es-419-travel-pants",
+        "es-419-travel-suitcase"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-map",
+        "es-419-travel-shirt",
+        "es-419-travel-pharmacy",
+        "es-419-travel-apple",
+        "es-419-travel-orange",
+        "es-419-travel-pillow"
+      ],
+      "pronunciation": [
+        "es-419-travel-guitar",
+        "es-419-travel-map",
+        "es-419-travel-shirt",
+        "es-419-travel-pharmacy",
+        "es-419-travel-apple",
+        "es-419-travel-basket"
+      ]
+    },
+    {
+      "id": "es-419-travel-laundromat",
+      "beforeSemantic": [
+        "es-419-travel-hair-dryer",
+        "es-419-travel-room",
+        "es-419-travel-parking-lot",
+        "es-419-travel-bathroom",
+        "es-419-travel-elevator",
+        "es-419-travel-swimming-pool"
+      ],
+      "semantic": [
+        "es-419-travel-hair-dryer",
+        "es-419-travel-room",
+        "es-419-travel-parking-lot",
+        "es-419-travel-bathroom",
+        "es-419-travel-elevator",
+        "es-419-travel-swimming-pool"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-bakery",
+        "es-419-food-watermelon",
+        "es-419-travel-butter",
+        "es-419-basic-large",
+        "es-419-basic-open",
+        "es-419-food-carrot"
+      ],
+      "pronunciation": [
+        "es-419-travel-bakery",
+        "es-419-travel-bookstore",
+        "es-419-food-watermelon",
+        "es-419-travel-gallery",
+        "es-419-travel-butter",
+        "es-419-basic-large"
+      ]
+    },
+    {
+      "id": "es-419-travel-library",
+      "beforeSemantic": [
+        "es-419-travel-museum",
+        "es-419-travel-pharmacy",
+        "es-419-travel-post-office",
+        "es-419-travel-church",
+        "es-419-travel-police-station",
+        "es-419-travel-park"
+      ],
+      "semantic": [
+        "es-419-travel-bookstore",
+        "es-419-travel-museum",
+        "es-419-travel-pharmacy",
+        "es-419-travel-post-office",
+        "es-419-travel-church",
+        "es-419-travel-gallery"
+      ],
+      "beforePronunciation": [
+        "es-419-food-steak",
+        "es-419-travel-bicycle",
+        "es-419-travel-bottle",
+        "es-419-travel-flashlight",
+        "es-419-basic-drink",
+        "es-419-food-corn"
+      ],
+      "pronunciation": [
+        "es-419-food-steak",
+        "es-419-travel-bicycle",
+        "es-419-travel-bottle",
+        "es-419-travel-flashlight",
+        "es-419-basic-drink",
+        "es-419-food-corn"
+      ]
+    },
+    {
+      "id": "es-419-travel-map",
+      "beforeSemantic": [
+        "es-419-travel-compass",
+        "es-419-travel-menu",
+        "es-419-travel-hotel",
+        "es-419-travel-park",
+        "es-419-travel-passport",
+        "es-419-travel-mirror"
+      ],
+      "semantic": [
+        "es-419-travel-painting",
+        "es-419-travel-compass",
+        "es-419-travel-stage",
+        "es-419-travel-postcard",
+        "es-419-travel-mural",
+        "es-419-travel-menu"
+      ],
+      "beforePronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-bed",
+        "es-419-travel-cup",
+        "es-419-travel-soup",
+        "es-419-travel-table",
+        "es-419-travel-jacket"
+      ],
+      "pronunciation": [
+        "es-419-food-potato",
+        "es-419-travel-bed",
+        "es-419-travel-cup",
+        "es-419-travel-soup",
+        "es-419-travel-table",
+        "es-419-travel-jacket"
+      ]
+    },
+    {
+      "id": "es-419-travel-market",
+      "beforeSemantic": [
+        "es-419-travel-supermarket",
+        "es-419-basic-inside",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-cinema",
+        "es-419-travel-restaurant",
+        "es-419-travel-wallet"
+      ],
+      "semantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-stage",
+        "es-419-basic-inside",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-cinema",
+        "es-419-travel-restaurant"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-basic-closed",
+        "es-419-travel-ice-cream",
+        "es-419-travel-supermarket",
+        "es-419-food-jam",
+        "es-419-basic-small"
+      ],
+      "pronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-basic-closed",
+        "es-419-travel-ice-cream",
+        "es-419-travel-supermarket",
+        "es-419-food-jam",
+        "es-419-basic-small"
+      ]
+    },
+    {
+      "id": "es-419-travel-menu",
+      "beforeSemantic": [
+        "es-419-travel-plate",
+        "es-419-travel-restaurant",
+        "es-419-food-sandwich",
+        "es-419-travel-salad",
+        "es-419-travel-map",
+        "es-419-basic-eat"
+      ],
+      "semantic": [
+        "es-419-travel-plate",
+        "es-419-travel-restaurant",
+        "es-419-travel-painting",
+        "es-419-food-sandwich",
+        "es-419-travel-salad",
+        "es-419-travel-map"
+      ],
+      "beforePronunciation": [
+        "es-419-food-melon",
+        "es-419-food-lettuce",
+        "es-419-travel-coin",
+        "es-419-travel-power-outlet",
+        "es-419-travel-apple",
+        "es-419-travel-elevator"
+      ],
+      "pronunciation": [
+        "es-419-food-melon",
+        "es-419-food-lettuce",
+        "es-419-travel-coin",
+        "es-419-travel-power-outlet",
+        "es-419-travel-apple",
+        "es-419-travel-elevator"
+      ]
+    },
+    {
+      "id": "es-419-travel-milk",
+      "beforeSemantic": [
+        "es-419-travel-butter",
+        "es-419-food-yogurt",
+        "es-419-food-honey",
+        "es-419-travel-sugar",
+        "es-419-food-chocolate",
+        "es-419-travel-cheese"
+      ],
+      "semantic": [
+        "es-419-travel-butter",
+        "es-419-food-yogurt",
+        "es-419-food-honey",
+        "es-419-travel-sugar",
+        "es-419-food-chocolate",
+        "es-419-travel-cheese"
+      ],
+      "beforePronunciation": [
+        "es-419-food-corn",
+        "es-419-travel-suitcase",
+        "es-419-travel-ticket",
+        "es-419-basic-thirst",
+        "es-419-food-chili-pepper",
+        "es-419-food-pear"
+      ],
+      "pronunciation": [
+        "es-419-food-corn",
+        "es-419-travel-palette",
+        "es-419-travel-suitcase",
+        "es-419-travel-ticket",
+        "es-419-basic-thirst",
+        "es-419-food-chili-pepper"
+      ]
+    },
+    {
+      "id": "es-419-travel-mirror",
+      "beforeSemantic": [
+        "es-419-travel-swimsuit",
+        "es-419-travel-bathroom",
+        "es-419-travel-sunglasses",
+        "es-419-travel-comb",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-lake"
+      ],
+      "semantic": [
+        "es-419-travel-swimsuit",
+        "es-419-travel-bathroom",
+        "es-419-travel-sunglasses",
+        "es-419-travel-comb",
+        "es-419-travel-painting",
+        "es-419-travel-drinking-glass"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-sleepiness",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-dress",
+        "es-419-travel-airport",
+        "es-419-food-spinach",
+        "es-419-basic-small"
+      ],
+      "pronunciation": [
+        "es-419-basic-sleepiness",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-dress",
+        "es-419-travel-airport",
+        "es-419-food-spinach",
+        "es-419-travel-stage"
+      ]
+    },
+    {
+      "id": "es-419-travel-money",
+      "beforeSemantic": [
+        "es-419-travel-credit-card",
+        "es-419-food-pasta",
+        "es-419-travel-receipt",
+        "es-419-travel-atm",
+        "es-419-travel-car",
+        "es-419-travel-coin"
+      ],
+      "semantic": [
+        "es-419-travel-credit-card",
+        "es-419-food-pasta",
+        "es-419-travel-receipt",
+        "es-419-travel-atm",
+        "es-419-travel-car",
+        "es-419-travel-coin"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-flashlight",
+        "es-419-basic-open",
+        "es-419-travel-scissors",
+        "es-419-travel-gas-station",
+        "es-419-travel-helicopter",
+        "es-419-travel-belt"
+      ],
+      "pronunciation": [
+        "es-419-travel-flashlight",
+        "es-419-basic-open",
+        "es-419-travel-concert",
+        "es-419-travel-scissors",
+        "es-419-travel-gas-station",
+        "es-419-travel-helicopter"
+      ]
+    },
+    {
+      "id": "es-419-travel-museum",
+      "beforeSemantic": [
+        "es-419-travel-park",
+        "es-419-travel-library",
+        "es-419-travel-hospital",
+        "es-419-travel-cinema",
+        "es-419-travel-hotel",
+        "es-419-travel-restaurant"
+      ],
+      "semantic": [
+        "es-419-travel-park",
+        "es-419-travel-library",
+        "es-419-travel-gallery",
+        "es-419-travel-mural",
+        "es-419-travel-sculpture",
+        "es-419-travel-theater"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-thirst",
+        "es-419-food-honey",
+        "es-419-travel-hat",
+        "es-419-basic-small",
+        "es-419-food-bacon",
+        "es-419-food-cake"
+      ],
+      "pronunciation": [
+        "es-419-basic-thirst",
+        "es-419-food-honey",
+        "es-419-travel-mural",
+        "es-419-travel-hat",
+        "es-419-basic-small",
+        "es-419-food-bacon"
+      ]
+    },
+    {
+      "id": "es-419-travel-orange",
+      "beforeSemantic": [
+        "es-419-travel-lime",
+        "es-419-travel-pineapple",
+        "es-419-food-carrot",
+        "es-419-travel-strawberry",
+        "es-419-travel-apple",
+        "es-419-food-watermelon"
+      ],
+      "semantic": [
+        "es-419-travel-lime",
+        "es-419-travel-pineapple",
+        "es-419-food-carrot",
+        "es-419-travel-strawberry",
+        "es-419-travel-apple",
+        "es-419-food-watermelon"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pharmacy",
+        "es-419-travel-umbrella",
+        "es-419-travel-jacket",
+        "es-419-travel-salad",
+        "es-419-basic-large",
+        "es-419-food-cookie"
+      ],
+      "pronunciation": [
+        "es-419-travel-pharmacy",
+        "es-419-travel-umbrella",
+        "es-419-travel-basket",
+        "es-419-travel-jacket",
+        "es-419-travel-pottery",
+        "es-419-travel-salad"
+      ]
+    },
+    {
+      "id": "es-419-travel-pants",
+      "beforeSemantic": [
+        "es-419-travel-shirt",
+        "es-419-travel-skirt",
+        "es-419-travel-dress",
+        "es-419-travel-swimsuit",
+        "es-419-travel-hat",
+        "es-419-travel-shoe"
+      ],
+      "semantic": [
+        "es-419-travel-shirt",
+        "es-419-travel-skirt",
+        "es-419-travel-dress",
+        "es-419-travel-swimsuit",
+        "es-419-travel-hat",
+        "es-419-travel-shoe"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cake",
+        "es-419-food-carrot",
+        "es-419-food-shrimp",
+        "es-419-travel-belt",
+        "es-419-travel-passport",
+        "es-419-travel-toothpaste"
+      ],
+      "pronunciation": [
+        "es-419-travel-speaker",
+        "es-419-food-cake",
+        "es-419-food-carrot",
+        "es-419-food-shrimp",
+        "es-419-travel-belt",
+        "es-419-travel-passport"
+      ]
+    },
+    {
+      "id": "es-419-travel-parking-lot",
+      "beforeSemantic": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-taxi",
+        "es-419-travel-park",
+        "es-419-travel-elevator",
+        "es-419-travel-car",
+        "es-419-travel-supermarket"
+      ],
+      "semantic": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-taxi",
+        "es-419-travel-park",
+        "es-419-travel-elevator",
+        "es-419-travel-car",
+        "es-419-travel-supermarket"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-train-station",
+        "es-419-travel-toothpaste",
+        "es-419-travel-police-station",
+        "es-419-basic-hot",
+        "es-419-food-black-pepper",
+        "es-419-travel-toothbrush"
+      ],
+      "pronunciation": [
+        "es-419-travel-train-station",
+        "es-419-travel-toothpaste",
+        "es-419-travel-police-station",
+        "es-419-basic-hot",
+        "es-419-food-black-pepper",
+        "es-419-travel-concert"
+      ]
+    },
+    {
+      "id": "es-419-travel-passport",
+      "beforeSemantic": [
+        "es-419-travel-ticket",
+        "es-419-travel-credit-card",
+        "es-419-travel-suitcase",
+        "es-419-travel-airplane",
+        "es-419-travel-taxi",
+        "es-419-travel-atm"
+      ],
+      "semantic": [
+        "es-419-travel-ticket",
+        "es-419-travel-credit-card",
+        "es-419-travel-suitcase",
+        "es-419-travel-airplane",
+        "es-419-travel-taxi",
+        "es-419-travel-atm"
+      ],
+      "beforePronunciation": [
+        "es-419-food-carrot",
+        "es-419-food-cooking-oil",
+        "es-419-food-peanut",
+        "es-419-travel-shoe",
+        "es-419-travel-pants",
+        "es-419-basic-hot"
+      ],
+      "pronunciation": [
+        "es-419-food-carrot",
+        "es-419-food-cooking-oil",
+        "es-419-food-peanut",
+        "es-419-travel-easel",
+        "es-419-travel-shoe",
+        "es-419-travel-pants"
+      ]
+    },
+    {
+      "id": "es-419-travel-pharmacy",
+      "beforeSemantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-bakery",
+        "es-419-travel-gas-station",
+        "es-419-travel-tent",
+        "es-419-travel-hospital",
+        "es-419-travel-library"
+      ],
+      "semantic": [
+        "es-419-travel-supermarket",
+        "es-419-travel-bakery",
+        "es-419-travel-gas-station",
+        "es-419-travel-tent",
+        "es-419-travel-hospital",
+        "es-419-travel-library"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-jacket",
+        "es-419-travel-orange",
+        "es-419-travel-shirt",
+        "es-419-travel-strawberry",
+        "es-419-travel-ambulance",
+        "es-419-food-carrot"
+      ],
+      "pronunciation": [
+        "es-419-travel-basket",
+        "es-419-travel-jacket",
+        "es-419-travel-orange",
+        "es-419-travel-shirt",
+        "es-419-travel-strawberry",
+        "es-419-travel-ambulance"
+      ]
+    },
+    {
+      "id": "es-419-travel-phone",
+      "beforeSemantic": [
+        "es-419-travel-post-office",
+        "es-419-travel-power-outlet",
+        "es-419-travel-wristwatch",
+        "es-419-travel-credit-card",
+        "es-419-travel-charger",
+        "es-419-travel-taxi"
+      ],
+      "semantic": [
+        "es-419-travel-post-office",
+        "es-419-travel-speaker",
+        "es-419-travel-microphone",
+        "es-419-travel-power-outlet",
+        "es-419-travel-wristwatch",
+        "es-419-travel-credit-card"
+      ],
+      "beforePronunciation": [
+        "es-419-food-melon",
+        "es-419-travel-traffic-light",
+        "es-419-basic-small",
+        "es-419-food-bacon",
+        "es-419-food-corn",
+        "es-419-food-cucumber"
+      ],
+      "pronunciation": [
+        "es-419-food-melon",
+        "es-419-travel-traffic-light",
+        "es-419-travel-microphone",
+        "es-419-basic-small",
+        "es-419-food-bacon",
+        "es-419-food-corn"
+      ]
+    },
+    {
+      "id": "es-419-travel-pill",
+      "beforeSemantic": [
+        "es-419-travel-soap",
+        "es-419-travel-cup",
+        "es-419-travel-pharmacy",
+        "es-419-food-gelatin",
+        "es-419-food-cookie",
+        "es-419-travel-bottle"
+      ],
+      "semantic": [
+        "es-419-travel-guitar",
+        "es-419-travel-soap",
+        "es-419-travel-cup",
+        "es-419-travel-pharmacy",
+        "es-419-food-gelatin",
+        "es-419-food-cookie"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cake",
+        "es-419-food-tortilla",
+        "es-419-travel-chair",
+        "es-419-travel-police-car",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-butter"
+      ],
+      "pronunciation": [
+        "es-419-food-cake",
+        "es-419-food-tortilla",
+        "es-419-travel-chair",
+        "es-419-travel-police-car",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-butter"
+      ]
+    },
+    {
+      "id": "es-419-travel-plate",
+      "beforeSemantic": [
+        "es-419-travel-salad",
+        "es-419-travel-rice",
+        "es-419-travel-menu",
+        "es-419-travel-soup",
+        "es-419-travel-restaurant",
+        "es-419-food-steak"
+      ],
+      "semantic": [
+        "es-419-travel-salad",
+        "es-419-travel-rice",
+        "es-419-travel-menu",
+        "es-419-travel-soup",
+        "es-419-travel-restaurant",
+        "es-419-food-steak"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-banana",
+        "es-419-travel-beach",
+        "es-419-travel-ice-cream",
+        "es-419-travel-lake",
+        "es-419-travel-shoe",
+        "es-419-travel-ticket"
+      ],
+      "pronunciation": [
+        "es-419-travel-banana",
+        "es-419-travel-beach",
+        "es-419-travel-ice-cream",
+        "es-419-travel-lake",
+        "es-419-travel-piano",
+        "es-419-travel-palette"
+      ]
+    },
+    {
+      "id": "es-419-travel-police-car",
+      "beforeSemantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-ambulance",
+        "es-419-travel-helicopter",
+        "es-419-travel-motorcycle",
+        "es-419-travel-gas-station",
+        "es-419-travel-cargo-truck"
+      ],
+      "semantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-ambulance",
+        "es-419-travel-helicopter",
+        "es-419-travel-motorcycle",
+        "es-419-travel-gas-station",
+        "es-419-travel-cargo-truck"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-tuna",
+        "es-419-travel-beach",
+        "es-419-travel-bottle",
+        "es-419-travel-butter",
+        "es-419-travel-towel"
+      ],
+      "pronunciation": [
+        "es-419-travel-pill",
+        "es-419-food-tuna",
+        "es-419-travel-beach",
+        "es-419-travel-bottle",
+        "es-419-travel-butter",
+        "es-419-travel-palette"
+      ]
+    },
+    {
+      "id": "es-419-travel-post-office",
+      "beforeSemantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-tent",
+        "es-419-travel-library",
+        "es-419-travel-phone",
+        "es-419-travel-receipt",
+        "es-419-travel-pharmacy"
+      ],
+      "semantic": [
+        "es-419-travel-police-station",
+        "es-419-travel-postcard",
+        "es-419-travel-tent",
+        "es-419-travel-library",
+        "es-419-travel-phone",
+        "es-419-travel-receipt"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-on-top",
+        "es-419-travel-bus-stop",
+        "es-419-travel-credit-card",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-tent"
+      ],
+      "pronunciation": [
+        "es-419-basic-on-top",
+        "es-419-travel-bus-stop",
+        "es-419-travel-credit-card",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-sleeping-bag",
+        "es-419-travel-tent"
+      ]
+    },
+    {
+      "id": "es-419-travel-power-outlet",
+      "beforeSemantic": [
+        "es-419-travel-charger",
+        "es-419-travel-toothbrush",
+        "es-419-travel-comb",
+        "es-419-travel-phone",
+        "es-419-travel-sunscreen",
+        "es-419-travel-swimsuit"
+      ],
+      "semantic": [
+        "es-419-travel-charger",
+        "es-419-travel-speaker",
+        "es-419-travel-toothbrush",
+        "es-419-travel-comb",
+        "es-419-travel-phone",
+        "es-419-travel-microphone"
+      ],
+      "beforePronunciation": [
+        "es-419-food-chili-pepper",
+        "es-419-food-corn",
+        "es-419-food-lettuce",
+        "es-419-travel-menu",
+        "es-419-travel-window",
+        "es-419-basic-on-top"
+      ],
+      "pronunciation": [
+        "es-419-food-chili-pepper",
+        "es-419-food-corn",
+        "es-419-food-lettuce",
+        "es-419-travel-menu",
+        "es-419-travel-window",
+        "es-419-basic-on-top"
+      ]
+    },
+    {
+      "id": "es-419-travel-receipt",
+      "beforeSemantic": [
+        "es-419-travel-post-office",
+        "es-419-travel-credit-card",
+        "es-419-travel-money",
+        "es-419-travel-atm",
+        "es-419-travel-passport",
+        "es-419-travel-ticket"
+      ],
+      "semantic": [
+        "es-419-travel-post-office",
+        "es-419-travel-credit-card",
+        "es-419-travel-money",
+        "es-419-travel-atm",
+        "es-419-travel-passport",
+        "es-419-travel-ticket"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-dress",
+        "es-419-food-bacon",
+        "es-419-food-cucumber",
+        "es-419-travel-river",
+        "es-419-travel-cooked-fish",
+        "es-419-basic-closed"
+      ],
+      "pronunciation": [
+        "es-419-travel-dress",
+        "es-419-food-bacon",
+        "es-419-food-cucumber",
+        "es-419-travel-river",
+        "es-419-travel-cooked-fish",
+        "es-419-travel-magazine"
+      ]
+    },
+    {
+      "id": "es-419-travel-restaurant",
+      "beforeSemantic": [
+        "es-419-travel-hotel",
+        "es-419-travel-menu",
+        "es-419-travel-plate",
+        "es-419-travel-supermarket",
+        "es-419-basic-eat",
+        "es-419-travel-bakery"
+      ],
+      "semantic": [
+        "es-419-travel-hotel",
+        "es-419-travel-menu",
+        "es-419-travel-plate",
+        "es-419-travel-supermarket",
+        "es-419-basic-eat",
+        "es-419-travel-bakery"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-insect-repellent",
+        "es-419-basic-large",
+        "es-419-food-tomato",
+        "es-419-travel-glove",
+        "es-419-travel-steering-wheel",
+        "es-419-travel-window"
+      ],
+      "pronunciation": [
+        "es-419-travel-insect-repellent",
+        "es-419-basic-large",
+        "es-419-food-tomato",
+        "es-419-travel-festival",
+        "es-419-travel-glove",
+        "es-419-travel-steering-wheel"
+      ]
+    },
+    {
+      "id": "es-419-travel-rice",
+      "beforeSemantic": [
+        "es-419-travel-chicken",
+        "es-419-food-beans",
+        "es-419-travel-banana",
+        "es-419-travel-plate",
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna"
+      ],
+      "semantic": [
+        "es-419-travel-chicken",
+        "es-419-food-beans",
+        "es-419-travel-banana",
+        "es-419-travel-plate",
+        "es-419-travel-cooked-fish",
+        "es-419-food-tuna"
+      ],
+      "beforePronunciation": [
+        "es-419-food-ham",
+        "es-419-travel-airplane",
+        "es-419-travel-soap",
+        "es-419-travel-shirt",
+        "es-419-food-tuna",
+        "es-419-travel-flower"
+      ],
+      "pronunciation": [
+        "es-419-food-ham",
+        "es-419-travel-airplane",
+        "es-419-travel-soap",
+        "es-419-travel-speaker",
+        "es-419-travel-drum",
+        "es-419-travel-shirt"
+      ]
+    },
+    {
+      "id": "es-419-travel-river",
+      "beforeSemantic": [
+        "es-419-travel-lake",
+        "es-419-travel-bridge",
+        "es-419-travel-water",
+        "es-419-travel-crosswalk",
+        "es-419-travel-forest",
+        "es-419-travel-waterfall"
+      ],
+      "semantic": [
+        "es-419-travel-lake",
+        "es-419-travel-bridge",
+        "es-419-travel-water",
+        "es-419-travel-crosswalk",
+        "es-419-travel-forest",
+        "es-419-travel-waterfall"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-cold",
+        "es-419-travel-receipt",
+        "es-419-basic-closed",
+        "es-419-food-bacon",
+        "es-419-food-cucumber",
+        "es-419-food-knife"
+      ],
+      "pronunciation": [
+        "es-419-basic-cold",
+        "es-419-travel-receipt",
+        "es-419-travel-book",
+        "es-419-travel-record",
+        "es-419-basic-closed",
+        "es-419-food-bacon"
+      ]
+    },
+    {
+      "id": "es-419-travel-room",
+      "beforeSemantic": [
+        "es-419-travel-bed",
+        "es-419-travel-hotel",
+        "es-419-travel-bathroom",
+        "es-419-travel-pillow",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-window"
+      ],
+      "semantic": [
+        "es-419-travel-bed",
+        "es-419-travel-hotel",
+        "es-419-travel-bathroom",
+        "es-419-travel-pillow",
+        "es-419-travel-swimming-pool",
+        "es-419-travel-window"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-airplane",
+        "es-419-food-ham",
+        "es-419-food-shrimp",
+        "es-419-food-tuna",
+        "es-419-travel-belt",
+        "es-419-travel-elevator"
+      ],
+      "pronunciation": [
+        "es-419-travel-airplane",
+        "es-419-travel-speaker",
+        "es-419-food-ham",
+        "es-419-food-shrimp",
+        "es-419-food-tuna",
+        "es-419-travel-belt"
+      ]
+    },
+    {
+      "id": "es-419-travel-salt",
+      "beforeSemantic": [
+        "es-419-food-black-pepper",
+        "es-419-travel-sugar",
+        "es-419-travel-water",
+        "es-419-travel-butter",
+        "es-419-food-cooking-oil",
+        "es-419-travel-lime"
+      ],
+      "semantic": [
+        "es-419-food-black-pepper",
+        "es-419-travel-sugar",
+        "es-419-travel-water",
+        "es-419-travel-butter",
+        "es-419-food-cooking-oil",
+        "es-419-travel-lime"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-thirst",
+        "es-419-travel-bread",
+        "es-419-travel-hospital",
+        "es-419-travel-skirt",
+        "es-419-basic-closed",
+        "es-419-food-cake"
+      ],
+      "pronunciation": [
+        "es-419-travel-postcard",
+        "es-419-basic-thirst",
+        "es-419-travel-bread",
+        "es-419-travel-hospital",
+        "es-419-travel-mural",
+        "es-419-travel-skirt"
+      ]
+    },
+    {
+      "id": "es-419-travel-scissors",
+      "beforeSemantic": [
+        "es-419-food-knife",
+        "es-419-travel-comb",
+        "es-419-travel-toothbrush",
+        "es-419-travel-toilet-paper",
+        "es-419-travel-stairs",
+        "es-419-travel-hair-dryer"
+      ],
+      "semantic": [
+        "es-419-food-knife",
+        "es-419-travel-comb",
+        "es-419-travel-toothbrush",
+        "es-419-travel-toilet-paper",
+        "es-419-travel-paintbrush",
+        "es-419-travel-stairs"
+      ],
+      "beforePronunciation": [
+        "es-419-food-pear",
+        "es-419-travel-money",
+        "es-419-travel-stairs",
+        "es-419-food-beans",
+        "es-419-travel-flashlight",
+        "es-419-basic-drink"
+      ],
+      "pronunciation": [
+        "es-419-food-pear",
+        "es-419-travel-money",
+        "es-419-travel-stairs",
+        "es-419-food-beans",
+        "es-419-travel-flashlight",
+        "es-419-basic-drink"
+      ]
+    },
+    {
+      "id": "es-419-travel-shampoo",
+      "beforeSemantic": [
+        "es-419-travel-soap",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-comb",
+        "es-419-food-yogurt",
+        "es-419-food-cooking-oil",
+        "es-419-travel-toothbrush"
+      ],
+      "semantic": [
+        "es-419-travel-soap",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-comb",
+        "es-419-food-yogurt",
+        "es-419-food-cooking-oil",
+        "es-419-travel-toothbrush"
+      ],
+      "beforePronunciation": [
+        "es-419-food-mushroom",
+        "es-419-travel-jacket",
+        "es-419-food-shrimp",
+        "es-419-travel-police-car",
+        "es-419-basic-hunger",
+        "es-419-food-ham"
+      ],
+      "pronunciation": [
+        "es-419-food-mushroom",
+        "es-419-travel-drum",
+        "es-419-travel-jacket",
+        "es-419-food-shrimp",
+        "es-419-travel-police-car",
+        "es-419-basic-hunger"
+      ]
+    },
+    {
+      "id": "es-419-travel-shirt",
+      "beforeSemantic": [
+        "es-419-travel-skirt",
+        "es-419-travel-pants",
+        "es-419-travel-jacket",
+        "es-419-travel-dress",
+        "es-419-travel-hat",
+        "es-419-travel-backpack"
+      ],
+      "semantic": [
+        "es-419-travel-skirt",
+        "es-419-travel-pants",
+        "es-419-travel-jacket",
+        "es-419-travel-dress",
+        "es-419-travel-hat",
+        "es-419-travel-backpack"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-blanket",
+        "es-419-travel-jacket",
+        "es-419-travel-table",
+        "es-419-travel-pharmacy",
+        "es-419-food-popcorn"
+      ],
+      "pronunciation": [
+        "es-419-travel-basket",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-blanket",
+        "es-419-travel-jacket",
+        "es-419-travel-table",
+        "es-419-travel-pharmacy"
+      ]
+    },
+    {
+      "id": "es-419-travel-shoe",
+      "beforeSemantic": [
+        "es-419-travel-sock",
+        "es-419-travel-taco",
+        "es-419-travel-dress",
+        "es-419-travel-glove",
+        "es-419-travel-hat",
+        "es-419-travel-pants"
+      ],
+      "semantic": [
+        "es-419-travel-sock",
+        "es-419-travel-taco",
+        "es-419-travel-dress",
+        "es-419-travel-glove",
+        "es-419-travel-hat",
+        "es-419-travel-pants"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-plate",
+        "es-419-travel-passport",
+        "es-419-food-peanut",
+        "es-419-travel-avocado",
+        "es-419-travel-salad"
+      ],
+      "pronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-plate",
+        "es-419-travel-basket",
+        "es-419-travel-passport",
+        "es-419-food-peanut",
+        "es-419-travel-avocado"
+      ]
+    },
+    {
+      "id": "es-419-travel-sidewalk",
+      "beforeSemantic": [
+        "es-419-travel-chair",
+        "es-419-travel-table",
+        "es-419-travel-street",
+        "es-419-travel-bed",
+        "es-419-travel-parking-lot",
+        "es-419-travel-stairs"
+      ],
+      "semantic": [
+        "es-419-travel-chair",
+        "es-419-travel-table",
+        "es-419-travel-street",
+        "es-419-travel-bed",
+        "es-419-travel-parking-lot",
+        "es-419-travel-stairs"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cookie",
+        "es-419-travel-suitcase",
+        "es-419-travel-bicycle",
+        "es-419-food-watermelon",
+        "es-419-travel-apple",
+        "es-419-travel-bench"
+      ],
+      "pronunciation": [
+        "es-419-food-cookie",
+        "es-419-travel-palette",
+        "es-419-travel-suitcase",
+        "es-419-travel-bicycle",
+        "es-419-food-watermelon",
+        "es-419-travel-apple"
+      ]
+    },
+    {
+      "id": "es-419-travel-sock",
+      "beforeSemantic": [
+        "es-419-travel-shoe",
+        "es-419-travel-glove",
+        "es-419-travel-hat",
+        "es-419-travel-taco",
+        "es-419-travel-swimsuit",
+        "es-419-travel-sleeping-bag"
+      ],
+      "semantic": [
+        "es-419-travel-shoe",
+        "es-419-travel-glove",
+        "es-419-travel-hat",
+        "es-419-travel-taco",
+        "es-419-travel-swimsuit",
+        "es-419-travel-sleeping-bag"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cake",
+        "es-419-food-gelatin",
+        "es-419-food-shrimp",
+        "es-419-food-tuna",
+        "es-419-travel-pill",
+        "es-419-travel-suitcase"
+      ],
+      "pronunciation": [
+        "es-419-travel-gallery",
+        "es-419-food-cake",
+        "es-419-food-gelatin",
+        "es-419-food-shrimp",
+        "es-419-food-tuna",
+        "es-419-travel-palette"
+      ]
+    },
+    {
+      "id": "es-419-travel-spoon",
+      "beforeSemantic": [
+        "es-419-travel-fork",
+        "es-419-travel-cup",
+        "es-419-travel-drinking-glass",
+        "es-419-food-knife",
+        "es-419-travel-soup",
+        "es-419-travel-plate"
+      ],
+      "semantic": [
+        "es-419-travel-fork",
+        "es-419-travel-cup",
+        "es-419-travel-drinking-glass",
+        "es-419-food-knife",
+        "es-419-travel-soup",
+        "es-419-travel-plate"
+      ],
+      "beforePronunciation": [
+        "es-419-food-knife",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-bed",
+        "es-419-travel-camera",
+        "es-419-travel-wallet",
+        "es-419-travel-waterfall"
+      ],
+      "pronunciation": [
+        "es-419-travel-listen",
+        "es-419-food-knife",
+        "es-419-travel-adhesive-bandage",
+        "es-419-travel-bed",
+        "es-419-travel-camera",
+        "es-419-travel-basket"
+      ]
+    },
+    {
+      "id": "es-419-travel-stairs",
+      "beforeSemantic": [
+        "es-419-travel-elevator",
+        "es-419-travel-street",
+        "es-419-travel-chair",
+        "es-419-travel-sidewalk",
+        "es-419-travel-subway",
+        "es-419-travel-scissors"
+      ],
+      "semantic": [
+        "es-419-travel-elevator",
+        "es-419-travel-street",
+        "es-419-travel-chair",
+        "es-419-travel-sidewalk",
+        "es-419-travel-subway",
+        "es-419-travel-scissors"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-salad",
+        "es-419-travel-scissors",
+        "es-419-travel-suitcase",
+        "es-419-travel-wallet",
+        "es-419-travel-binoculars",
+        "es-419-basic-eat"
+      ],
+      "pronunciation": [
+        "es-419-travel-sculpture",
+        "es-419-travel-listen",
+        "es-419-travel-palette",
+        "es-419-travel-salad",
+        "es-419-travel-scissors",
+        "es-419-travel-suitcase"
+      ]
+    },
+    {
+      "id": "es-419-travel-subway",
+      "beforeSemantic": [
+        "es-419-travel-train-station",
+        "es-419-travel-bus-stop",
+        "es-419-travel-train",
+        "es-419-travel-bus",
+        "es-419-travel-police-station",
+        "es-419-travel-taxi"
+      ],
+      "semantic": [
+        "es-419-travel-train-station",
+        "es-419-travel-bus-stop",
+        "es-419-travel-train",
+        "es-419-travel-bus",
+        "es-419-travel-police-station",
+        "es-419-travel-taxi"
+      ],
+      "beforePronunciation": [
+        "es-419-food-mango",
+        "es-419-food-pear",
+        "es-419-travel-cheese",
+        "es-419-travel-egg",
+        "es-419-travel-table",
+        "es-419-travel-hat"
+      ],
+      "pronunciation": [
+        "es-419-travel-theater",
+        "es-419-food-mango",
+        "es-419-food-pear",
+        "es-419-travel-book",
+        "es-419-travel-cheese",
+        "es-419-travel-egg"
+      ]
+    },
+    {
+      "id": "es-419-travel-sugar",
+      "beforeSemantic": [
+        "es-419-travel-butter",
+        "es-419-food-chocolate",
+        "es-419-travel-salt",
+        "es-419-travel-milk",
+        "es-419-travel-lime",
+        "es-419-food-honey"
+      ],
+      "semantic": [
+        "es-419-travel-butter",
+        "es-419-food-chocolate",
+        "es-419-travel-salt",
+        "es-419-travel-milk",
+        "es-419-travel-lime",
+        "es-419-food-honey"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cooking-oil",
+        "es-419-food-grapes",
+        "es-419-food-tuna",
+        "es-419-travel-chair",
+        "es-419-travel-salt",
+        "es-419-travel-shower"
+      ],
+      "pronunciation": [
+        "es-419-travel-listen",
+        "es-419-food-cooking-oil",
+        "es-419-food-grapes",
+        "es-419-food-tuna",
+        "es-419-travel-chair",
+        "es-419-travel-salt"
+      ]
+    },
+    {
+      "id": "es-419-travel-suitcase",
+      "beforeSemantic": [
+        "es-419-travel-backpack",
+        "es-419-travel-airplane",
+        "es-419-travel-passport",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-chair",
+        "es-419-travel-sleeping-bag"
+      ],
+      "semantic": [
+        "es-419-travel-backpack",
+        "es-419-travel-airplane",
+        "es-419-travel-passport",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-chair",
+        "es-419-travel-sleeping-bag"
+      ],
+      "beforePronunciation": [
+        "es-419-food-cookie",
+        "es-419-travel-sidewalk",
+        "es-419-travel-coin",
+        "es-419-travel-table",
+        "es-419-travel-ticket",
+        "es-419-food-popcorn"
+      ],
+      "pronunciation": [
+        "es-419-travel-palette",
+        "es-419-food-cookie",
+        "es-419-travel-sidewalk",
+        "es-419-travel-coin",
+        "es-419-travel-flute",
+        "es-419-travel-table"
+      ]
+    },
+    {
+      "id": "es-419-travel-sunscreen",
+      "beforeSemantic": [
+        "es-419-travel-sunglasses",
+        "es-419-travel-insect-repellent",
+        "es-419-travel-charger",
+        "es-419-travel-seat-belt",
+        "es-419-travel-umbrella",
+        "es-419-travel-helmet"
+      ],
+      "semantic": [
+        "es-419-travel-sunglasses",
+        "es-419-travel-insect-repellent",
+        "es-419-travel-charger",
+        "es-419-travel-seat-belt",
+        "es-419-travel-umbrella",
+        "es-419-travel-helmet"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-small",
+        "es-419-food-broccoli",
+        "es-419-food-cauliflower",
+        "es-419-food-chocolate",
+        "es-419-travel-butter",
+        "es-419-travel-pants"
+      ],
+      "pronunciation": [
+        "es-419-basic-small",
+        "es-419-food-broccoli",
+        "es-419-food-cauliflower",
+        "es-419-food-chocolate",
+        "es-419-travel-butter",
+        "es-419-travel-newspaper"
+      ]
+    },
+    {
+      "id": "es-419-travel-taxi",
+      "beforeSemantic": [
+        "es-419-travel-bus",
+        "es-419-travel-bus-stop",
+        "es-419-travel-airport",
+        "es-419-travel-car",
+        "es-419-travel-ambulance",
+        "es-419-travel-airplane"
+      ],
+      "semantic": [
+        "es-419-travel-bus",
+        "es-419-travel-bus-stop",
+        "es-419-travel-airport",
+        "es-419-travel-car",
+        "es-419-travel-ambulance",
+        "es-419-travel-airplane"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-cup",
+        "es-419-travel-taco",
+        "es-419-travel-drinking-glass",
+        "es-419-food-broccoli",
+        "es-419-food-sandwich",
+        "es-419-food-garlic"
+      ],
+      "pronunciation": [
+        "es-419-travel-cup",
+        "es-419-travel-taco",
+        "es-419-travel-drinking-glass",
+        "es-419-travel-theater",
+        "es-419-food-broccoli",
+        "es-419-food-sandwich"
+      ]
+    },
+    {
+      "id": "es-419-travel-tent",
+      "beforeSemantic": [
+        "es-419-travel-pharmacy",
+        "es-419-travel-bakery",
+        "es-419-travel-police-station",
+        "es-419-travel-post-office",
+        "es-419-travel-supermarket",
+        "es-419-travel-street"
+      ],
+      "semantic": [
+        "es-419-travel-bookstore",
+        "es-419-travel-pharmacy",
+        "es-419-travel-bakery",
+        "es-419-travel-police-station",
+        "es-419-travel-post-office",
+        "es-419-travel-gallery"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-swimsuit",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-post-office",
+        "es-419-travel-sunglasses",
+        "es-419-travel-credit-card",
+        "es-419-travel-bakery"
+      ],
+      "pronunciation": [
+        "es-419-travel-swimsuit",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-post-office",
+        "es-419-travel-sunglasses",
+        "es-419-travel-credit-card",
+        "es-419-travel-bakery"
+      ]
+    },
+    {
+      "id": "es-419-travel-ticket",
+      "beforeSemantic": [
+        "es-419-travel-passport",
+        "es-419-travel-bus",
+        "es-419-travel-airplane",
+        "es-419-travel-train",
+        "es-419-travel-taxi",
+        "es-419-travel-bus-stop"
+      ],
+      "semantic": [
+        "es-419-travel-passport",
+        "es-419-travel-bus",
+        "es-419-travel-airplane",
+        "es-419-travel-train",
+        "es-419-travel-taxi",
+        "es-419-travel-bus-stop"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-steering-wheel",
+        "es-419-travel-bottle",
+        "es-419-travel-plate",
+        "es-419-travel-suitcase",
+        "es-419-basic-open",
+        "es-419-travel-bicycle"
+      ],
+      "pronunciation": [
+        "es-419-travel-steering-wheel",
+        "es-419-travel-bottle",
+        "es-419-travel-palette",
+        "es-419-travel-plate",
+        "es-419-travel-suitcase",
+        "es-419-basic-open"
+      ]
+    },
+    {
+      "id": "es-419-travel-tire",
+      "beforeSemantic": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-bicycle",
+        "es-419-travel-car",
+        "es-419-travel-taco",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-chair"
+      ],
+      "semantic": [
+        "es-419-travel-motorcycle",
+        "es-419-travel-bicycle",
+        "es-419-travel-car",
+        "es-419-travel-taco",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-chair"
+      ],
+      "beforePronunciation": [
+        "es-419-food-pasta",
+        "es-419-travel-bench",
+        "es-419-travel-glove",
+        "es-419-food-potato",
+        "es-419-travel-bed",
+        "es-419-travel-bread"
+      ],
+      "pronunciation": [
+        "es-419-food-pasta",
+        "es-419-travel-bench",
+        "es-419-travel-glove",
+        "es-419-food-potato",
+        "es-419-travel-basket",
+        "es-419-travel-bed"
+      ]
+    },
+    {
+      "id": "es-419-travel-toilet-paper",
+      "beforeSemantic": [
+        "es-419-travel-soap",
+        "es-419-travel-towel",
+        "es-419-travel-swimsuit",
+        "es-419-travel-scissors",
+        "es-419-travel-sock",
+        "es-419-travel-rice"
+      ],
+      "semantic": [
+        "es-419-travel-soap",
+        "es-419-travel-towel",
+        "es-419-travel-newspaper",
+        "es-419-travel-swimsuit",
+        "es-419-travel-scissors",
+        "es-419-travel-sock"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-atm",
+        "es-419-travel-credit-card",
+        "es-419-food-cucumber",
+        "es-419-travel-toothbrush",
+        "es-419-basic-hot",
+        "es-419-basic-open"
+      ],
+      "pronunciation": [
+        "es-419-travel-atm",
+        "es-419-travel-newspaper",
+        "es-419-travel-credit-card",
+        "es-419-food-cucumber",
+        "es-419-travel-toothbrush",
+        "es-419-basic-hot"
+      ]
+    },
+    {
+      "id": "es-419-travel-traffic-light",
+      "beforeSemantic": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-bus-stop",
+        "es-419-travel-steering-wheel",
+        "es-419-travel-taxi",
+        "es-419-travel-street",
+        "es-419-travel-atm"
+      ],
+      "semantic": [
+        "es-419-travel-crosswalk",
+        "es-419-travel-bus-stop",
+        "es-419-travel-steering-wheel",
+        "es-419-travel-taxi",
+        "es-419-travel-street",
+        "es-419-travel-atm"
+      ],
+      "beforePronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-phone",
+        "es-419-food-mango",
+        "es-419-food-onion",
+        "es-419-travel-hat",
+        "es-419-travel-ice-cream"
+      ],
+      "pronunciation": [
+        "es-419-basic-closed",
+        "es-419-travel-phone",
+        "es-419-travel-theater",
+        "es-419-food-mango",
+        "es-419-food-onion",
+        "es-419-travel-hat"
+      ]
+    },
+    {
+      "id": "es-419-travel-train",
+      "beforeSemantic": [
+        "es-419-travel-train-station",
+        "es-419-travel-bus",
+        "es-419-travel-bus-stop",
+        "es-419-travel-subway",
+        "es-419-travel-airplane",
+        "es-419-travel-taxi"
+      ],
+      "semantic": [
+        "es-419-travel-train-station",
+        "es-419-travel-bus",
+        "es-419-travel-bus-stop",
+        "es-419-travel-subway",
+        "es-419-travel-airplane",
+        "es-419-travel-taxi"
+      ],
+      "beforePronunciation": [
+        "es-419-food-tea",
+        "es-419-travel-strawberry",
+        "es-419-travel-belt",
+        "es-419-travel-phone",
+        "es-419-basic-large",
+        "es-419-food-bacon"
+      ],
+      "pronunciation": [
+        "es-419-food-tea",
+        "es-419-travel-strawberry",
+        "es-419-travel-belt",
+        "es-419-travel-phone",
+        "es-419-travel-trumpet",
+        "es-419-basic-large"
+      ]
+    },
+    {
+      "id": "es-419-travel-umbrella",
+      "beforeSemantic": [
+        "es-419-travel-hat",
+        "es-419-travel-sunglasses",
+        "es-419-travel-glove",
+        "es-419-travel-swimsuit",
+        "es-419-travel-backpack",
+        "es-419-travel-sock"
+      ],
+      "semantic": [
+        "es-419-travel-hat",
+        "es-419-travel-sunglasses",
+        "es-419-travel-glove",
+        "es-419-travel-swimsuit",
+        "es-419-travel-backpack",
+        "es-419-travel-sock"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-orange",
+        "es-419-travel-water",
+        "es-419-food-pasta",
+        "es-419-food-potato",
+        "es-419-travel-beach",
+        "es-419-travel-jacket"
+      ],
+      "pronunciation": [
+        "es-419-travel-orange",
+        "es-419-travel-water",
+        "es-419-food-pasta",
+        "es-419-food-potato",
+        "es-419-travel-basket",
+        "es-419-travel-beach"
+      ]
+    },
+    {
+      "id": "es-419-travel-wallet",
+      "beforeSemantic": [
+        "es-419-travel-backpack",
+        "es-419-travel-bench",
+        "es-419-travel-credit-card",
+        "es-419-travel-suitcase",
+        "es-419-travel-post-office",
+        "es-419-travel-seat-belt"
+      ],
+      "semantic": [
+        "es-419-travel-backpack",
+        "es-419-travel-bench",
+        "es-419-travel-credit-card",
+        "es-419-travel-suitcase",
+        "es-419-travel-post-office",
+        "es-419-travel-seat-belt"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-flashlight",
+        "es-419-basic-eat",
+        "es-419-food-cake",
+        "es-419-food-cookie",
+        "es-419-food-pear",
+        "es-419-food-tortilla"
+      ],
+      "pronunciation": [
+        "es-419-travel-sing",
+        "es-419-travel-flashlight",
+        "es-419-basic-eat",
+        "es-419-food-cake",
+        "es-419-food-cookie",
+        "es-419-food-pear"
+      ]
+    },
+    {
+      "id": "es-419-travel-waterfall",
+      "beforeSemantic": [
+        "es-419-travel-lake",
+        "es-419-travel-river",
+        "es-419-travel-mountain",
+        "es-419-travel-water",
+        "es-419-travel-fountain",
+        "es-419-travel-shower"
+      ],
+      "semantic": [
+        "es-419-travel-lake",
+        "es-419-travel-river",
+        "es-419-travel-mountain",
+        "es-419-travel-water",
+        "es-419-travel-fountain",
+        "es-419-travel-shower"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-travel-salad",
+        "es-419-travel-apple",
+        "es-419-travel-bed",
+        "es-419-travel-jacket",
+        "es-419-travel-market"
+      ],
+      "pronunciation": [
+        "es-419-travel-cooked-fish",
+        "es-419-travel-salad",
+        "es-419-travel-apple",
+        "es-419-travel-basket",
+        "es-419-travel-bed",
+        "es-419-travel-festival-mask"
+      ]
+    },
+    {
+      "id": "es-419-travel-window",
+      "beforeSemantic": [
+        "es-419-travel-room",
+        "es-419-travel-bed",
+        "es-419-travel-table",
+        "es-419-travel-street",
+        "es-419-travel-key",
+        "es-419-travel-camera"
+      ],
+      "semantic": [
+        "es-419-travel-room",
+        "es-419-travel-bed",
+        "es-419-travel-table",
+        "es-419-travel-gallery",
+        "es-419-travel-street",
+        "es-419-travel-key"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-apple",
+        "es-419-travel-mountain",
+        "es-419-food-gelatin",
+        "es-419-travel-flashlight",
+        "es-419-travel-bench",
+        "es-419-travel-bottle"
+      ],
+      "pronunciation": [
+        "es-419-travel-apple",
+        "es-419-travel-mountain",
+        "es-419-food-gelatin",
+        "es-419-travel-flashlight",
+        "es-419-travel-bench",
+        "es-419-travel-bottle"
+      ]
+    },
+    {
+      "id": "es-419-travel-wristwatch",
+      "beforeSemantic": [
+        "es-419-travel-compass",
+        "es-419-travel-shoe",
+        "es-419-travel-flashlight",
+        "es-419-travel-key",
+        "es-419-travel-mirror",
+        "es-419-travel-belt"
+      ],
+      "semantic": [
+        "es-419-travel-compass",
+        "es-419-travel-shoe",
+        "es-419-travel-flashlight",
+        "es-419-travel-key",
+        "es-419-travel-mirror",
+        "es-419-travel-belt"
+      ],
+      "beforePronunciation": [
+        "es-419-travel-police-station",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-sleeping-bag",
+        "es-419-basic-under",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-swimsuit"
+      ],
+      "pronunciation": [
+        "es-419-travel-police-station",
+        "es-419-travel-hair-dryer",
+        "es-419-travel-sleeping-bag",
+        "es-419-basic-under",
+        "es-419-travel-cargo-truck",
+        "es-419-travel-sculpture"
+      ]
+    }
+  ],
+  "review": "Reviewed full-pool picture eligibility and preserved canonical meanings with new/affected semantic and pronunciation candidate windows. Model rankings remain proxies; frozen experiments and owner responses unchanged. Four-choice behavior across every nonempty pack combination is covered by existing focused tests."
+}

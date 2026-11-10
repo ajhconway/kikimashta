@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "language": "es-419",
-  "sourceDigest": "3212a421ed00273a594e86bc20885ca0951d5dedb856f5ce0640a990ebecd9f7",
+  "sourceDigest": "18cfd6c9e6f012b1be5663cadd45dd3ef3946b885903ea3ac77a657d55b5f8ec",
   "recipeSha256": "6aefb848f952c5d4f249e5d9c245fe252721725c39d66b9bc541ce63b95d3d74",
   "probesSha256": "8ee7cc0d3ac601aeeef6b7e85a6123134424e2855234a1c96c3b19da54fb65b2",
   "tool": {
@@ -65,6 +65,10 @@
       "normalized": "almohada",
       "ipa": "ˌa_l_m_o_ˈa_ð_a"
     },
+    "altavoz": {
+      "normalized": "altavoz",
+      "ipa": "ˌa_l_t_a_β_ˈo_s"
+    },
     "ambulancia": {
       "normalized": "ambulancia",
       "ipa": "ˌa_m_b_u_l_ˈa_n_s_j_a"
@@ -85,6 +89,10 @@
       "normalized": "atún",
       "ipa": "a_t_ˈu_n"
     },
+    "audífonos": {
+      "normalized": "audífonos",
+      "ipa": "aʊ_ð_ˈi_f_o_n_o_s"
+    },
     "autobús": {
       "normalized": "autobús",
       "ipa": "ˌaʊ_t_o_β_ˈu_s"
@@ -104,6 +112,10 @@
     "baca": {
       "normalized": "baca",
       "ipa": "b_ˈa_k_a"
+    },
+    "bailar": {
+      "normalized": "bailar",
+      "ipa": "b_aɪ_l_ˈa_ɾ"
     },
     "banca": {
       "normalized": "banca",
@@ -165,6 +177,10 @@
       "normalized": "brújula",
       "ipa": "b_ɾ_ˈu_x_u_l_a"
     },
+    "caballete": {
+      "normalized": "caballete",
+      "ipa": "k_ˌa_β_a_j_j_ˈe_t_e"
+    },
     "cacahuate": {
       "normalized": "cacahuate",
       "ipa": "k_ˌa_k_a_w_ˈa_t_e"
@@ -208,6 +224,14 @@
     "camión de carga": {
       "normalized": "camión de carga",
       "ipa": "k_a_m_j_ˈo_n d_e k_ˈa_ɾ_ɣ_a"
+    },
+    "canasta": {
+      "normalized": "canasta",
+      "ipa": "k_a_n_ˈa_s_t_a"
+    },
+    "cantar": {
+      "normalized": "cantar",
+      "ipa": "k_a_n_t_ˈa_ɾ"
     },
     "canto": {
       "normalized": "canto",
@@ -265,6 +289,10 @@
       "normalized": "cerrado",
       "ipa": "s_e_r_ˈa_ð_o"
     },
+    "cerámica": {
+      "normalized": "cerámica",
+      "ipa": "s_e_ɾ_ˈa_m_i_k_a"
+    },
     "chamarra": {
       "normalized": "chamarra",
       "ipa": "tʃ_a_m_ˈa_r_a"
@@ -313,6 +341,10 @@
       "normalized": "comer",
       "ipa": "k_o_m_ˈe_ɾ"
     },
+    "concierto": {
+      "normalized": "concierto",
+      "ipa": "k_o_n_s_j_ˈe_ɾ_t_o"
+    },
     "coser": {
       "normalized": "coser",
       "ipa": "k_o_s_ˈe_ɾ"
@@ -320,6 +352,10 @@
     "cruce peatonal": {
       "normalized": "cruce peatonal",
       "ipa": "k_ɾ_ˈu_s_e p_ˌe_a_t_o_n_ˈa_l"
+    },
+    "cuadro": {
+      "normalized": "cuadro",
+      "ipa": "k_w_ˈa_ð_ɾ_o"
     },
     "cuchara": {
       "normalized": "cuchara",
@@ -349,9 +385,17 @@
       "normalized": "dentrode",
       "ipa": "d_e_n_t_ɾ_ˈo_ð_e"
     },
+    "dibujar": {
+      "normalized": "dibujar",
+      "ipa": "d_ˌi_β_u_x_ˈa_ɾ"
+    },
     "dinero": {
       "normalized": "dinero",
       "ipa": "d_i_n_ˈe_ɾ_o"
+    },
+    "disco": {
+      "normalized": "disco",
+      "ipa": "d_ˈi_s_k_o"
     },
     "ducha": {
       "normalized": "ducha",
@@ -381,6 +425,18 @@
       "normalized": "escaleras",
       "ipa": "ˌe_s_k_a_l_ˈe_ɾ_a_s"
     },
+    "escenario": {
+      "normalized": "escenario",
+      "ipa": "ˌe_s_e_n_ˈa_ɾ_j_o"
+    },
+    "escuchar": {
+      "normalized": "escuchar",
+      "ipa": "ˌe_s_k_u_tʃ_ˈa_ɾ"
+    },
+    "escultura": {
+      "normalized": "escultura",
+      "ipa": "ˌe_s_k_u_l_t_ˈu_ɾ_a"
+    },
     "espejo": {
       "normalized": "espejo",
       "ipa": "e_s_p_ˈe_x_o"
@@ -409,6 +465,14 @@
       "normalized": "farmacia",
       "ipa": "f_a_ɾ_m_ˈa_s_j_a"
     },
+    "festival": {
+      "normalized": "festival",
+      "ipa": "f_ˌe_s_t_i_β_ˈa_l"
+    },
+    "flauta": {
+      "normalized": "flauta",
+      "ipa": "f_l_ˈaʊ_t_a"
+    },
     "flor": {
       "normalized": "flor",
       "ipa": "f_l_ˈo_ɾ"
@@ -428,6 +492,10 @@
     "fuente": {
       "normalized": "fuente",
       "ipa": "f_w_ˈɛ_n_t_e"
+    },
+    "galería": {
+      "normalized": "galería",
+      "ipa": "ɡ_ˌa_l_e_ɾ_ˈi__a"
     },
     "galleta": {
       "normalized": "galleta",
@@ -452,6 +520,10 @@
     "guante": {
       "normalized": "guante",
       "ipa": "ɡ_w_ˈa_n_t_e"
+    },
+    "guitarra": {
+      "normalized": "guitarra",
+      "ipa": "ɡ_i_t_ˈa_r_a"
     },
     "habitación": {
       "normalized": "habitación",
@@ -541,6 +613,14 @@
       "normalized": "lentes de sol",
       "ipa": "l_ˈɛ_n_t_e_s ð_e s_ˈo_l"
     },
+    "librería": {
+      "normalized": "librería",
+      "ipa": "l_ˌi_β_ɾ_e_ɾ_ˈi__a"
+    },
+    "libro": {
+      "normalized": "libro",
+      "ipa": "l_ˈi_β_ɾ_o"
+    },
     "limón": {
       "normalized": "limón",
       "ipa": "l_i_m_ˈo_n"
@@ -601,6 +681,10 @@
       "normalized": "metro",
       "ipa": "m_ˈe_t_ɾ_o"
     },
+    "micrófono": {
+      "normalized": "micrófono",
+      "ipa": "m_i_k_ɾ_ˈo_f_o_n_o"
+    },
     "miel": {
       "normalized": "miel",
       "ipa": "m_j_ˈe_l"
@@ -621,9 +705,17 @@
       "normalized": "motocicleta",
       "ipa": "m_ˌo_t_o_s_i_k_l_ˈe_t_a"
     },
+    "mural": {
+      "normalized": "mural",
+      "ipa": "m_u_ɾ_ˈa_l"
+    },
     "museo": {
       "normalized": "museo",
       "ipa": "m_u_s_ˈe_o"
+    },
+    "máscara": {
+      "normalized": "máscara",
+      "ipa": "m_ˈa_s_k_a_ɾ_a"
     },
     "naranja": {
       "normalized": "naranja",
@@ -636,6 +728,10 @@
     "ola": {
       "normalized": "ola",
       "ipa": "ˈo_l_a"
+    },
+    "paleta": {
+      "normalized": "paleta",
+      "ipa": "p_a_l_ˈe_t_a"
     },
     "palomitas": {
       "normalized": "palomitas",
@@ -717,9 +813,17 @@
       "normalized": "pera",
       "ipa": "p_ˈe_ɾ_a"
     },
+    "periódico": {
+      "normalized": "periódico",
+      "ipa": "p_e_ɾ_j_ˈo_ð_i_k_o"
+    },
     "pescado": {
       "normalized": "pescado",
       "ipa": "p_e_s_k_ˈa_ð_o"
+    },
+    "piano": {
+      "normalized": "piano",
+      "ipa": "p_j_ˈa_n_o"
     },
     "pie": {
       "normalized": "pie",
@@ -728,6 +832,14 @@
     "pimienta": {
       "normalized": "pimienta",
       "ipa": "p_i_m_j_ˈɛ_n_t_a"
+    },
+    "pincel": {
+      "normalized": "pincel",
+      "ipa": "p_i_n_s_ˈe_l"
+    },
+    "pintar": {
+      "normalized": "pintar",
+      "ipa": "p_i_n_t_ˈa_ɾ"
     },
     "piscina": {
       "normalized": "piscina",
@@ -740,6 +852,10 @@
     "piña": {
       "normalized": "piña",
       "ipa": "p_ˈi_ɲ_a"
+    },
+    "piñata": {
+      "normalized": "piñata",
+      "ipa": "p_i_ɲ_ˈa_t_a"
     },
     "plato": {
       "normalized": "plato",
@@ -756,6 +872,10 @@
     "pollo": {
       "normalized": "pollo",
       "ipa": "p_ˈo_j_j_o"
+    },
+    "postal": {
+      "normalized": "postal",
+      "ipa": "p_o_s_t_ˈa_l"
     },
     "protector solar": {
       "normalized": "protector solar",
@@ -788,6 +908,10 @@
     "restaurante": {
       "normalized": "restaurante",
       "ipa": "r_ˌe_s_t_aʊ_ɾ_ˈa_n_t_e"
+    },
+    "revista": {
+      "normalized": "revista",
+      "ipa": "r_e_β_ˈi_s_t_a"
     },
     "río": {
       "normalized": "río",
@@ -849,6 +973,10 @@
       "normalized": "taco",
       "ipa": "t_ˈa_k_o"
     },
+    "tambor": {
+      "normalized": "tambor",
+      "ipa": "t_a_m_b_ˈo_ɾ"
+    },
     "tarjeta de crédito": {
       "normalized": "tarjeta de crédito",
       "ipa": "t_a_ɾ_x_ˈe_t_a ð_e k_ɾ_ˈe_ð_i_t_o"
@@ -864,6 +992,10 @@
     "taza": {
       "normalized": "taza",
       "ipa": "t_ˈa_s_a"
+    },
+    "teatro": {
+      "normalized": "teatro",
+      "ipa": "t_e_ˈa_t_ɾ_o"
     },
     "teléfono": {
       "normalized": "teléfono",
@@ -889,6 +1021,10 @@
       "normalized": "toalla",
       "ipa": "t_o_ˈa_j_j_a"
     },
+    "tocar": {
+      "normalized": "tocar",
+      "ipa": "t_o_k_ˈa_ɾ"
+    },
     "tocino": {
       "normalized": "tocino",
       "ipa": "t_o_s_ˈi_n_o"
@@ -904,6 +1040,10 @@
     "tren": {
       "normalized": "tren",
       "ipa": "t_ɾ_ˈe_n"
+    },
+    "trompeta": {
+      "normalized": "trompeta",
+      "ipa": "t_ɾ_o_m_p_ˈe_t_a"
     },
     "tubo": {
       "normalized": "tubo",
@@ -940,6 +1080,10 @@
     "vestido": {
       "normalized": "vestido",
       "ipa": "b_e_s_t_ˈi_ð_o"
+    },
+    "violín": {
+      "normalized": "violín",
+      "ipa": "b_j_o_l_ˈi_n"
     },
     "volante": {
       "normalized": "volante",

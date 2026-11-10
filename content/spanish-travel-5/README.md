@@ -43,3 +43,11 @@ Generation resumes only against the exact approved plan; symlinked inputs/privat
 ## Listening review verification
 
 All288clips pass native playback and advancing-clock checks in both Chromium and mobile WebKit, with all36accepted pictures loaded. Filters,manualStop,sequence advance/Stop,phone layout,unchanged storage and no page errors are verified. [Media evidence](media-verification.json) binds the exact audio manifest and [native browser results](browser-audio-verification.json). Full configured checks pass:748app,443Node,39Python content/audio and27card tests plus lint/types/validators/build. Independent generator and listening-gallery audits verify every original,normalized/public copy and acceptance binding without blockers. The private archive `~/.local/share/kikimashta/spanish-audio/243-v1` preserves1737hash-verified originals/requests/account-usage/normalization files plus its archive manifest. No credentials are included. Listening acceptance and later shipping authorization remain pending; actual iPhone listening is manual.
+
+## Listening acceptance and activation
+
+The owner accepted the listening gallery and requested auto-merge with “Please go ahead and auto-merge”. [Final acceptance](acceptance.json) binds all 36 current pictures and 288 recordings, including the quieter disco delivery. Reproduce staging with `node scripts/content/stage-spanish-travel-level-5.mjs`: 34 new PNGs and 288 new MP3s, with two existing artwork reuses. [Activation](activation.json) records all 324 production asset hashes.
+
+`es-419-travel-5-pictures` is the eighth Spanish pack, bringing ordinary vocabulary to 238 unique IDs. Existing saved pack choices and progress remain unchanged. [Picture-choice review](picture-choice-review.json) binds all current images and 77 new exclusions. [Neighbor review](neighbor-review.json) records the full semantic, phoneme and compact-table refresh under the unchanged selected policy.
+
+Required checks, browser journeys and current-head review precede auto-merge. Actual iPhone acceptance remains manual and open on #243; waiting for publication is not required.
