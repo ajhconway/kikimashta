@@ -1,0 +1,40 @@
+{
+  "issue": 250,
+  "revision": 2,
+  "ownerFeedback": "Use actual app design and follow artwork protocol; previous hand-drawn SVG implementation rejected.",
+  "references": [
+    {
+      "role": "style-only",
+      "repositoryPath": "artifacts/card-regeneration/references/cat-style-reference.png",
+      "localPath": "/private/tmp/kikimashta-250-review/demos/short-context-250/artwork-v2/references/cat-style-reference.png",
+      "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b",
+      "approvalEvidence": "content/card-regeneration/style-overrides.json profiles.cat-png / profiles.kiku-scenes"
+    },
+    {
+      "role": "character identity and style",
+      "repositoryPath": "artifacts/card-regeneration/references/kiku-character-reference.png",
+      "localPath": "/private/tmp/kikimashta-250-review/demos/short-context-250/artwork-v2/references/kiku-character-reference.png",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "approvalEvidence": "content/card-regeneration/style-overrides.json profiles.cat-png / profiles.kiku-scenes"
+    }
+  ],
+  "style": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.",
+  "characterStyle": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: CHARACTER IDENTITY AND STYLE REFERENCE. Kiku is the compact golden-yellow cat mascot with violet/lavender headphones, pink inner ears, rounded forepaws, curved golden tail, closed smiling eyes and violet whiskers/contours. Match the approved character reference. Kiku is the default referenced subject for generic spatial and size comparisons, replacing the basketball; preserve the word’s intended relation. Use ordinary literal objects where the vocabulary specifically names them. Batch 07 Kiku scenes are approved: under/on the chair, small/big comparisons, under the bed, on the table and mixing. Future scenes still require individual user review.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: keep Kiku recognizable, preserve intended action or spatial relation, no captions, words, logos, watermark, frame or unrelated decorations.",
+  "rules": [
+    "Use the actual ContextualQuiz, QuizChrome, MasteryFeedback and styles; no CSS recreation.",
+    "Only exact semantic matches from approved images may be reused.",
+    "Use built-in image_gen once per missing image, transparent_background=true.",
+    "Preserve exact prompts, reference hashes, every generated original and selected delivery hashes.",
+    "Review exact counts and all relations at 145px; check alpha over white/yellow/pink/lavender.",
+    "New art is pending owner review; no production-bank activation."
+  ],
+  "generationRequests": [
+    "requests-001.json",
+    "requests-root.json",
+    "counts/requests.json",
+    "scenes/requests.json"
+  ],
+  "assets": [],
+  "generationAuthorizedBy": "Owner requested correction of artwork under existing demo task; draft review only.",
+  "newMediaAcceptance": "pending-owner-review"
+}

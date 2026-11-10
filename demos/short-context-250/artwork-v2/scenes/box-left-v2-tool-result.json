@@ -1,0 +1,14 @@
+{
+  "id": "box-left",
+  "version": 2,
+  "reason": "Reject v1 landscape canvas and broad violet alpha halo",
+  "prompt": "Use case: precise-object-edit. Edit the supplied box-left-of-cat illustration. REQUIRED OUTPUT CANVAS: SQUARE 1:1, not the current wide landscape rectangle. Keep the same two subjects, the same box on the viewer LEFT and cat on the viewer RIGHT, the same level baseline, the same compact golden cat WITHOUT headphones, kraft box with cream tape, dark-violet outlines and gentle cartoon shading. Fit both whole subjects comfortably into the middle 75% of a square canvas with generous TRANSPARENT margin above, below and to both sides. Remove ALL of the broad violet mist/glow/shadow around the silhouettes and between objects. Clean crisp antialiased cutout edges only; outside each object silhouette must be genuinely transparent alpha zero. Subject interiors, box faces, cat fur, eyes, paws and tape must be fully opaque. Do not lighten the dark-violet contour itself. Do not add anything. No backdrop, halo, vignette, cast shadow, ground, arrows, captions, labels, logos, numbers or frame. Preserve the clear gap and LEFT relation. This is one square answer-card illustration.",
+  "references": [
+    {
+      "path": "/private/tmp/kikimashta-250-review/demos/short-context-250/artwork-v2/scenes/originals/box-left-v1.png",
+      "role": "edit target, same-batch candidate; not an approved reference"
+    }
+  ],
+  "generatorOutputPath": "/Users/ajhconway/.codex/generated_images/01a1c789-57d9-7ce2-aa6a-61740454a315/exec-f599c525-acb1-4aa8-831b-952f7953cf0c.png",
+  "originalPath": "demos/short-context-250/artwork-v2/scenes/originals/box-left-v2.png"
+}

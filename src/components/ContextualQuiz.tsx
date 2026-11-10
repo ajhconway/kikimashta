@@ -43,7 +43,8 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   const introductionRecording = question.target.audio.find(clip => clip.voice === authored.recording?.voice) ?? question.target.audio[0];
   const sentenceSrc = authored.recording?.sentenceSrc;
   const questionSrc = authored.recording?.questionSrcs[authored.question.id];
-  const hasAudio = !!sentenceSrc && !!questionSrc;
+  const hasQuestion = Boolean(authored.question.prompt.text);
+  const hasAudio = !!sentenceSrc && (!hasQuestion || !!questionSrc);
   const audio = useRef<HTMLAudioElement>(null);
   const replayControl = useRef<HTMLButtonElement>(null);
   const request = useRef(0);
@@ -77,7 +78,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     const element = audio.current;
     if (!element || request.current !== token) return;
     segment.current = kind;
-    finalAudio.current = kind === 'question';
+    finalAudio.current = kind === 'question' || !hasQuestion;
     element.src = asset(src); element.currentTime = 0;
     setPlayback('playing');
     void element.play().catch((error: unknown) => {
@@ -89,12 +90,12 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
         setPlayback(needsGesture ? 'ready' : 'error');
       }
     });
-  }, [stop]);
+  }, [stop, hasQuestion]);
   const play = useCallback(() => {
     stop();
-    if (!sentenceSrc || !questionSrc) return;
+    if (!sentenceSrc || (hasQuestion && !questionSrc)) return;
     playSegment(sentenceSrc, 'sentence', request.current);
-  }, [stop, playSegment, sentenceSrc, questionSrc]);
+  }, [stop, playSegment, sentenceSrc, questionSrc, hasQuestion]);
   useEffect(() => {
     answered.current = false;
     replayControl.current?.focus({ preventScroll: true });
@@ -109,10 +110,10 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
   }, [play, stop, authored.context.id, authored.question.id, introducing]);
   function ended() {
     const token = request.current;
-    if (segment.current === 'sentence' && questionSrc) {
+    if (segment.current === 'sentence' && hasQuestion && questionSrc) {
       segment.current = null;
       timer.current = setTimeout(() => { timer.current = undefined; playSegment(questionSrc, 'question', token); }, 650);
-    } else if (segment.current === 'question') { segment.current = null; setPlayback('idle'); onAudioFinished?.(); }
+    } else if (segment.current === 'question' || !hasQuestion) { segment.current = null; setPlayback('idle'); onAudioFinished?.(); }
   }
   const correctId = correctChoiceId(question);
   const format = answerFormat(question.exercise);
@@ -130,7 +131,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
       <div className="quiz-top">
         <QuizCompanion listening={playback === 'playing'} response={result}/>
         <div className="quiz-audio"><button ref={replayControl} className={'listen quiz-listen contextual-replay' + (playback === 'playing' ? ' playing' : '')}
-          type="button" onClick={() => { onReplay?.(); play(); }} aria-label="Replay sentence and question">
+          type="button" onClick={() => { onReplay?.(); play(); }} aria-label={hasQuestion ? 'Replay sentence and question' : 'Replay sentence'}>
           <Speaker/><span className="sr-only">{playback === 'playing' ? 'Playing…' : 'Replay'}</span>
         </button></div>
       </div>
@@ -165,7 +166,7 @@ export function ContextualQuiz({ question, feedback, onChoose, onContinue, onRep
     {feedback && !feedback.correct && <dialog ref={details} className="contextual-details-dialog" aria-labelledby={detailsTitle}
       onClose={() => { setEnglish(false); detailsTrigger.current?.focus(); }}>
       <div className="contextual-dialog-header"><h2 id={detailsTitle}>{languageName}</h2><button ref={detailsClose} type="button" className="contextual-dialog-close" aria-label={`Close ${languageName}`} onClick={() => details.current?.close()}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg></button></div>
-      <div className="contextual-transcript"><Prompt language={language} title="Sentence" value={authored.context.sentence} english={english}/><Prompt language={language} title="Question" value={authored.question.prompt} english={english}/></div>
+      <div className="contextual-transcript"><Prompt language={language} title="Sentence" value={authored.context.sentence} english={english}/>{hasQuestion && <Prompt language={language} title="Question" value={authored.question.prompt} english={english}/>}</div>
       <button type="button" className="text-button" aria-expanded={english} onClick={() => setEnglish(value => !value)}>{english ? 'Hide English' : 'Show English'}</button>
     </dialog>}
   </section>;

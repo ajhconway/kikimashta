@@ -1,0 +1,68 @@
+{
+  "voice": "macOS Kyoko (ja_JP)",
+  "rate": 155,
+  "sentenceQuestionPauseMs": 650,
+  "targetLufs": -22,
+  "clips": [
+    {
+      "id": "hitotsu",
+      "sentence": "さらにりんごがひとつあります。",
+      "question": null,
+      "durationSeconds": 2.24839
+    },
+    {
+      "id": "chikaraippai",
+      "sentence": "ちからいっぱいおしてください。",
+      "question": "どうおしますか。",
+      "durationSeconds": 3.904036
+    },
+    {
+      "id": "ue",
+      "sentence": "ねこははこのうえにいます。",
+      "question": "はこはどこですか。",
+      "durationSeconds": 4.140862
+    },
+    {
+      "id": "yama",
+      "sentence": "いえはやまにあります。",
+      "question": "いえはどこですか。",
+      "durationSeconds": 3.539637
+    },
+    {
+      "id": "otona",
+      "sentence": "おとながふたりいます。",
+      "question": "だれがいますか。",
+      "durationSeconds": 3.391655
+    },
+    {
+      "id": "nanatsu",
+      "sentence": "みかんがななつあります。",
+      "question": null,
+      "durationSeconds": 1.841723
+    },
+    {
+      "id": "kawa",
+      "sentence": "かわにいきます。",
+      "question": "どこにいきますか。",
+      "durationSeconds": 3.28322
+    },
+    {
+      "id": "taishita",
+      "sentence": "たいしたけがではありません。",
+      "question": "どんなけがですか。",
+      "durationSeconds": 3.939683
+    },
+    {
+      "id": "kokonotsu",
+      "sentence": "たまごがここのつあります。",
+      "question": null,
+      "durationSeconds": 2.137642
+    },
+    {
+      "id": "futatsu",
+      "sentence": "クッキーがふたつあります。",
+      "question": null,
+      "durationSeconds": 2.038617
+    }
+  ]
+}

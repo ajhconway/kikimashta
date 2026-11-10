@@ -1,0 +1,301 @@
+[
+  {
+    "id": "hitotsu",
+    "word": "一つ",
+    "reading": "ひとつ",
+    "meaning": "one thing",
+    "sentence": "皿にりんごが一つあります。",
+    "kana": "さらにりんごがひとつあります。",
+    "english": "There is one apple on the plate.",
+    "correct": "apples-1",
+    "choices": [
+      {
+        "id": "apples-3",
+        "label": "3 apples"
+      },
+      {
+        "id": "apples-1",
+        "label": "1 apples"
+      },
+      {
+        "id": "apples-4",
+        "label": "4 apples"
+      },
+      {
+        "id": "apples-2",
+        "label": "2 apples"
+      }
+    ]
+  },
+  {
+    "id": "chikaraippai",
+    "word": "力いっぱい",
+    "reading": "ちからいっぱい",
+    "meaning": "with all your strength",
+    "sentence": "力いっぱい押してください。",
+    "kana": "ちからいっぱいおしてください。",
+    "english": "Please push with all your strength.",
+    "question": "どう押しますか。",
+    "questionKana": "どうおしますか。",
+    "questionEnglish": "How should you push?",
+    "correct": "push-hard",
+    "choices": [
+      {
+        "id": "pull",
+        "label": "Pulling the box"
+      },
+      {
+        "id": "push-gently",
+        "label": "Pushing gently with one finger"
+      },
+      {
+        "id": "push-hard",
+        "label": "Pushing with all your strength"
+      },
+      {
+        "id": "carry",
+        "label": "Carrying the box"
+      }
+    ]
+  },
+  {
+    "id": "ue",
+    "word": "上",
+    "reading": "うえ",
+    "meaning": "above / on",
+    "sentence": "猫は箱の上にいます。",
+    "kana": "ねこははこのうえにいます。",
+    "english": "The cat is on the box.",
+    "question": "箱はどこですか。",
+    "questionKana": "はこはどこですか。",
+    "questionEnglish": "Where is the box?",
+    "correct": "box-below",
+    "choices": [
+      {
+        "id": "box-above",
+        "label": "The box is above the cat"
+      },
+      {
+        "id": "box-left",
+        "label": "The box is to the left of the cat"
+      },
+      {
+        "id": "box-right",
+        "label": "The box is to the right of the cat"
+      },
+      {
+        "id": "box-below",
+        "label": "The box is below the cat"
+      }
+    ]
+  },
+  {
+    "id": "yama",
+    "word": "山",
+    "reading": "やま",
+    "meaning": "mountain",
+    "sentence": "家は山にあります。",
+    "kana": "いえはやまにあります。",
+    "english": "The house is on a mountain.",
+    "question": "家はどこですか。",
+    "questionKana": "いえはどこですか。",
+    "questionEnglish": "Where is the house?",
+    "correct": "house-mountain",
+    "choices": [
+      {
+        "id": "house-sea",
+        "label": "A house by the sea"
+      },
+      {
+        "id": "house-mountain",
+        "label": "A house on a mountain"
+      },
+      {
+        "id": "house-city",
+        "label": "A house in a city"
+      },
+      {
+        "id": "house-river",
+        "label": "A house beside a river"
+      }
+    ]
+  },
+  {
+    "id": "otona",
+    "word": "大人",
+    "reading": "おとな",
+    "meaning": "adult",
+    "sentence": "大人が二人います。",
+    "kana": "おとながふたりいます。",
+    "english": "There are two adults.",
+    "question": "誰がいますか。",
+    "questionKana": "だれがいますか。",
+    "questionEnglish": "Who is there?",
+    "correct": "adults",
+    "choices": [
+      {
+        "id": "children",
+        "label": "Two children"
+      },
+      {
+        "id": "cats",
+        "label": "Two cats"
+      },
+      {
+        "id": "babies",
+        "label": "Two babies"
+      },
+      {
+        "id": "adults",
+        "label": "Two adults"
+      }
+    ]
+  },
+  {
+    "id": "nanatsu",
+    "word": "七つ",
+    "reading": "ななつ",
+    "meaning": "seven things",
+    "sentence": "みかんが七つあります。",
+    "kana": "みかんがななつあります。",
+    "english": "There are seven mandarin oranges.",
+    "correct": "oranges-7",
+    "choices": [
+      {
+        "id": "oranges-7",
+        "label": "7 oranges"
+      },
+      {
+        "id": "oranges-9",
+        "label": "9 oranges"
+      },
+      {
+        "id": "oranges-6",
+        "label": "6 oranges"
+      },
+      {
+        "id": "oranges-8",
+        "label": "8 oranges"
+      }
+    ]
+  },
+  {
+    "id": "kawa",
+    "word": "川",
+    "reading": "かわ",
+    "meaning": "river",
+    "sentence": "川に行きます。",
+    "kana": "かわにいきます。",
+    "english": "I’m going to the river.",
+    "question": "どこに行きますか。",
+    "questionKana": "どこにいきますか。",
+    "questionEnglish": "Where are you going?",
+    "correct": "river",
+    "choices": [
+      {
+        "id": "mountain",
+        "label": "A mountain"
+      },
+      {
+        "id": "park",
+        "label": "A park"
+      },
+      {
+        "id": "river",
+        "label": "A river"
+      },
+      {
+        "id": "sea",
+        "label": "The sea"
+      }
+    ]
+  },
+  {
+    "id": "taishita",
+    "word": "大した",
+    "reading": "たいした",
+    "meaning": "significant / serious",
+    "sentence": "大したけがではありません。",
+    "kana": "たいしたけがではありません。",
+    "english": "It’s not a serious injury.",
+    "question": "どんなけがですか。",
+    "questionKana": "どんなけがですか。",
+    "questionEnglish": "What kind of injury is it?",
+    "note": "Review point: this negative phrase is harder than the other prompts. Do the pictures clearly distinguish a minor injury?",
+    "correct": "scratch",
+    "choices": [
+      {
+        "id": "arm",
+        "label": "A broken arm in a cast"
+      },
+      {
+        "id": "scratch",
+        "label": "A small scratch on an otherwise healthy arm"
+      },
+      {
+        "id": "leg",
+        "label": "A broken leg in a cast with crutches"
+      },
+      {
+        "id": "head",
+        "label": "A head injury with extensive bandaging"
+      }
+    ]
+  },
+  {
+    "id": "kokonotsu",
+    "word": "九つ",
+    "reading": "ここのつ",
+    "meaning": "nine things",
+    "sentence": "卵が九つあります。",
+    "kana": "たまごがここのつあります。",
+    "english": "There are nine eggs.",
+    "correct": "eggs-9",
+    "choices": [
+      {
+        "id": "eggs-8",
+        "label": "8 eggs"
+      },
+      {
+        "id": "eggs-6",
+        "label": "6 eggs"
+      },
+      {
+        "id": "eggs-7",
+        "label": "7 eggs"
+      },
+      {
+        "id": "eggs-9",
+        "label": "9 eggs"
+      }
+    ]
+  },
+  {
+    "id": "futatsu",
+    "word": "二つ",
+    "reading": "ふたつ",
+    "meaning": "two things",
+    "sentence": "クッキーが二つあります。",
+    "kana": "クッキーがふたつあります。",
+    "english": "There are two cookies.",
+    "correct": "cookies-2",
+    "choices": [
+      {
+        "id": "cookies-4",
+        "label": "4 cookies"
+      },
+      {
+        "id": "cookies-3",
+        "label": "3 cookies"
+      },
+      {
+        "id": "cookies-2",
+        "label": "2 cookies"
+      },
+      {
+        "id": "cookies-1",
+        "label": "1 cookies"
+      }
+    ]
+  }
+]

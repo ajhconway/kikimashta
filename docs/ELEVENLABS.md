@@ -125,6 +125,8 @@ The completed originals and normalized batch also have a durable private copy un
 
 ## Listening review
 
+The short contextual review demo in #250 uses `--batch short-demo-250` with the same resumable generator and normalization workflow. Its exact owner request and frozen text are bound in `demos/short-context-250/audio-text-approval.json`: ten sentences plus six questions, Otani/Morioki, 32 clips and 310 Unicode input characters. Four counting prompts are sentence-only. See the [demo audio instructions](../demos/short-context-250/README.md#audio-protocol--revision-3) for processing, shared identity/decode preflight, private originals and demo-only staging. Generation and demo publication do not approve or activate production content.
+
 Compare samples at the same volume. Listen for pronunciation, pitch accent, unwanted extra sounds, clipped endings, and natural sentence rhythm. Check the samples on the real iPhone before approving voices. Browser playback checks supplement that listening review.
 
 Voice and profile approval does not establish that every newly generated word has the right pitch accent or regional realization. Use the card library to review the complete set on the real iPhone before release. Use the local card command for new recordings; the historical OpenAI generation workflow is retired. The audition command itself never replaces production audio.

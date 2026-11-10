@@ -1,0 +1,2870 @@
+{
+  "schemaVersion": 1,
+  "issue": 250,
+  "status": "Pending owner listening review; demo only",
+  "plan": {
+    "schemaVersion": 1,
+    "issue": 250,
+    "bankId": "ja-short-context-demo-250-v2",
+    "approval": {
+      "schemaVersion": 1,
+      "issue": 250,
+      "source": "demos/short-context-250/source/questions.json",
+      "sourceCommit": "517cf97adc6535071a1b28804dc4200343ca766d",
+      "sourceFileSha256": "dc10cf677aa9ed39045692a2649b205ac6b62c925069df8209956bb2974c6e5a",
+      "textSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "recordedAt": "2026-11-10T22:53:24.106746+00:00",
+      "evidenceUrl": "https://github.com/ajhconway/kikimashta/issues/250",
+      "evidence": {
+        "kind": "owner-conversation",
+        "quote": "Ok, please document this in an issue, then generate audio for the contextual questions."
+      },
+      "scope": "Current ten demo prompts, exact written Japanese request text, Otani and Morioki from the approved contextual registry. Generation authorization; listening acceptance and production activation remain separate."
+    },
+    "gapMs": 650,
+    "contexts": [
+      {
+        "id": "ja-short-demo-hitotsu",
+        "revision": 2,
+        "targetItemId": "hitotsu",
+        "sentenceItemId": "ja-short-demo-hitotsu-sentence",
+        "questions": []
+      },
+      {
+        "id": "ja-short-demo-chikaraippai",
+        "revision": 2,
+        "targetItemId": "chikaraippai",
+        "sentenceItemId": "ja-short-demo-chikaraippai-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-chikaraippai-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "push-hard",
+            "correctMeaning": "Pushing with all your strength"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-ue",
+        "revision": 2,
+        "targetItemId": "ue",
+        "sentenceItemId": "ja-short-demo-ue-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-ue-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "box-below",
+            "correctMeaning": "The box is below the cat"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-yama",
+        "revision": 2,
+        "targetItemId": "yama",
+        "sentenceItemId": "ja-short-demo-yama-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-yama-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "house-mountain",
+            "correctMeaning": "A house on a mountain"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-otona",
+        "revision": 2,
+        "targetItemId": "otona",
+        "sentenceItemId": "ja-short-demo-otona-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-otona-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "adults",
+            "correctMeaning": "Two adults"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-nanatsu",
+        "revision": 2,
+        "targetItemId": "nanatsu",
+        "sentenceItemId": "ja-short-demo-nanatsu-sentence",
+        "questions": []
+      },
+      {
+        "id": "ja-short-demo-kawa",
+        "revision": 2,
+        "targetItemId": "kawa",
+        "sentenceItemId": "ja-short-demo-kawa-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-kawa-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "river",
+            "correctMeaning": "A river"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-taishita",
+        "revision": 2,
+        "targetItemId": "taishita",
+        "sentenceItemId": "ja-short-demo-taishita-sentence",
+        "questions": [
+          {
+            "id": "ja-short-demo-taishita-question",
+            "revision": 2,
+            "kind": "target",
+            "correctAnswer": "scratch",
+            "correctMeaning": "A small scratch on an otherwise healthy arm"
+          }
+        ]
+      },
+      {
+        "id": "ja-short-demo-kokonotsu",
+        "revision": 2,
+        "targetItemId": "kokonotsu",
+        "sentenceItemId": "ja-short-demo-kokonotsu-sentence",
+        "questions": []
+      },
+      {
+        "id": "ja-short-demo-futatsu",
+        "revision": 2,
+        "targetItemId": "futatsu",
+        "sentenceItemId": "ja-short-demo-futatsu-sentence",
+        "questions": []
+      }
+    ],
+    "generation": {
+      "issue": 250,
+      "provider": "ElevenLabs",
+      "model": "eleven_v4",
+      "language": "ja-JP",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75
+      },
+      "voices": [
+        {
+          "voice": "otani",
+          "id": "3JDquces8E8bkmvbh6Bc",
+          "name": "Otani",
+          "gender": "male",
+          "accent": "standard"
+        },
+        {
+          "voice": "morioki",
+          "id": "8EkOjt4xTPGMclNlh1pk",
+          "name": "Morioki",
+          "gender": "female",
+          "accent": "standard"
+        }
+      ],
+      "items": [
+        {
+          "id": "ja-short-demo-hitotsu-sentence",
+          "text": "皿にりんごが一つあります。",
+          "reading": "さらにりんごがひとつあります。",
+          "meaning": "There is one apple on the plate.",
+          "spelling": "皿にりんごが一つあります。",
+          "contextId": "ja-short-demo-hitotsu",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-chikaraippai-sentence",
+          "text": "力いっぱい押してください。",
+          "reading": "ちからいっぱいおしてください。",
+          "meaning": "Please push with all your strength.",
+          "spelling": "力いっぱい押してください。",
+          "contextId": "ja-short-demo-chikaraippai",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-chikaraippai-question",
+          "text": "どう押しますか。",
+          "reading": "どうおしますか。",
+          "meaning": "How should you push?",
+          "spelling": "どう押しますか。",
+          "contextId": "ja-short-demo-chikaraippai",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-ue-sentence",
+          "text": "猫は箱の上にいます。",
+          "reading": "ねこははこのうえにいます。",
+          "meaning": "The cat is on the box.",
+          "spelling": "猫は箱の上にいます。",
+          "contextId": "ja-short-demo-ue",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-ue-question",
+          "text": "箱はどこですか。",
+          "reading": "はこはどこですか。",
+          "meaning": "Where is the box?",
+          "spelling": "箱はどこですか。",
+          "contextId": "ja-short-demo-ue",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-yama-sentence",
+          "text": "家は山にあります。",
+          "reading": "いえはやまにあります。",
+          "meaning": "The house is on a mountain.",
+          "spelling": "家は山にあります。",
+          "contextId": "ja-short-demo-yama",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-yama-question",
+          "text": "家はどこですか。",
+          "reading": "いえはどこですか。",
+          "meaning": "Where is the house?",
+          "spelling": "家はどこですか。",
+          "contextId": "ja-short-demo-yama",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-otona-sentence",
+          "text": "大人が二人います。",
+          "reading": "おとながふたりいます。",
+          "meaning": "There are two adults.",
+          "spelling": "大人が二人います。",
+          "contextId": "ja-short-demo-otona",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-otona-question",
+          "text": "誰がいますか。",
+          "reading": "だれがいますか。",
+          "meaning": "Who is there?",
+          "spelling": "誰がいますか。",
+          "contextId": "ja-short-demo-otona",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-nanatsu-sentence",
+          "text": "みかんが七つあります。",
+          "reading": "みかんがななつあります。",
+          "meaning": "There are seven mandarin oranges.",
+          "spelling": "みかんが七つあります。",
+          "contextId": "ja-short-demo-nanatsu",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-kawa-sentence",
+          "text": "川に行きます。",
+          "reading": "かわにいきます。",
+          "meaning": "I’m going to the river.",
+          "spelling": "川に行きます。",
+          "contextId": "ja-short-demo-kawa",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-kawa-question",
+          "text": "どこに行きますか。",
+          "reading": "どこにいきますか。",
+          "meaning": "Where are you going?",
+          "spelling": "どこに行きますか。",
+          "contextId": "ja-short-demo-kawa",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-taishita-sentence",
+          "text": "大したけがではありません。",
+          "reading": "たいしたけがではありません。",
+          "meaning": "It’s not a serious injury.",
+          "spelling": "大したけがではありません。",
+          "contextId": "ja-short-demo-taishita",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-taishita-question",
+          "text": "どんなけがですか。",
+          "reading": "どんなけがですか。",
+          "meaning": "What kind of injury is it?",
+          "spelling": "どんなけがですか。",
+          "contextId": "ja-short-demo-taishita",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "question",
+          "questionRevision": 2
+        },
+        {
+          "id": "ja-short-demo-kokonotsu-sentence",
+          "text": "卵が九つあります。",
+          "reading": "たまごがここのつあります。",
+          "meaning": "There are nine eggs.",
+          "spelling": "卵が九つあります。",
+          "contextId": "ja-short-demo-kokonotsu",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        },
+        {
+          "id": "ja-short-demo-futatsu-sentence",
+          "text": "クッキーが二つあります。",
+          "reading": "クッキーがふたつあります。",
+          "meaning": "There are two cookies.",
+          "spelling": "クッキーが二つあります。",
+          "contextId": "ja-short-demo-futatsu",
+          "contextRevision": 2,
+          "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+          "kind": "sentence"
+        }
+      ],
+      "characters": 310,
+      "expectedClips": 32
+    }
+  },
+  "originalsPreserved": true,
+  "processing": "Shared normalize-elevenlabs.py constant-gain profile; no compression, trimming, pitch or timing changes.",
+  "recordings": [
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.08
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -21.56,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.64
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-chikaraippai",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:09.094Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "3210414f4dd8f89b72f16994a4ec711981eeca31a8cf5d21a4cf4c70aa17bbea",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -0.44,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.51
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0.01,
+          "integratedLufs": -22.01,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.08
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-chikaraippai-sentence.mp3",
+      "gainDb": 0.01,
+      "id": "ja-short-demo-chikaraippai-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "Please push with all your strength.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-chikaraippai-sentence.mp3",
+      "originalSha256": "34f7d7fd17f2af7dc9c4b83bef360877b8c1c2945099aa0d858e6b762483a44c",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "ちからいっぱいおしてください。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "力いっぱい押してください。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "SDsTrQvjCvWH4vYnk5sM",
+      "sha256": "34f7d7fd17f2af7dc9c4b83bef360877b8c1c2945099aa0d858e6b762483a44c",
+      "sourceRecordSha256": "a02f8316449309ac201d2bdcadbc5875db621ba717a7eb9c351839ed8f34c26f",
+      "spelling": "力いっぱい押してください。",
+      "targetLimited": false,
+      "text": "力いっぱい押してください。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.95
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -14.13,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.07
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-chikaraippai",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:08.339Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "33eb9d71fa53a9aec13262f85f8e275ff78674f9c63eb67768ee9c555e148274",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -7.87,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.44
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.42,
+          "integratedLufs": -21.99,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.95
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-chikaraippai-sentence.mp3",
+      "gainDb": -7.42,
+      "id": "ja-short-demo-chikaraippai-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "Please push with all your strength.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-chikaraippai-sentence.mp3",
+      "originalSha256": "7c802b5c64418c2e4665c51924603cca6079220211e4f23246ee17a425dc92d8",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "ちからいっぱいおしてください。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "力いっぱい押してください。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "aycOBH8OeEX16J9F0Wr0",
+      "sha256": "7c802b5c64418c2e4665c51924603cca6079220211e4f23246ee17a425dc92d8",
+      "sourceRecordSha256": "e57dbb38bcbc2f4bb796c321f6b4fc330a9ee5244449e4fc1f52cb3b7190e97d",
+      "spelling": "力いっぱい押してください。",
+      "targetLimited": false,
+      "text": "力いっぱい押してください。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.3
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.07,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.27
+      },
+      "bytes": 38077,
+      "contextId": "ja-short-demo-hitotsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:06.820Z",
+      "decodedFrames": 102312,
+      "deliveryBytes": 38077,
+      "deliverySha256": "885d27f103b8ecbdf86cd9dcbb8401707fc1d53f1e4034d6b9187ee0d760c399",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.93,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.54
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -8.5,
+          "integratedLufs": -22.01,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.3
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-hitotsu-sentence.mp3",
+      "gainDb": -8.5,
+      "id": "ja-short-demo-hitotsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There is one apple on the plate.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-hitotsu-sentence.mp3",
+      "originalSha256": "0140edab03a8258bd3ea7b678540f22a62b56cf2d9046362305fe2bce42b82e0",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "さらにりんごがひとつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "皿にりんごが一つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "9tOtKS9xcIpZVZCFMdk8",
+      "sha256": "0140edab03a8258bd3ea7b678540f22a62b56cf2d9046362305fe2bce42b82e0",
+      "sourceRecordSha256": "dc33c304e5840fbad8c87589f0f0f32098d7467d9e08406d96ff23e2e1513891",
+      "spelling": "皿にりんごが一つあります。",
+      "targetLimited": false,
+      "text": "皿にりんごが一つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.35
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.11,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.42
+      },
+      "bytes": 39331,
+      "contextId": "ja-short-demo-hitotsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:07.623Z",
+      "decodedFrames": 105840,
+      "deliveryBytes": 39331,
+      "deliverySha256": "654094de92f2ecf12e0e7c9321f62880f9e2815efee274886293aee6c6709994",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.11,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.71
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0.56,
+          "integratedLufs": -22.01,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.35
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-hitotsu-sentence.mp3",
+      "gainDb": 0.56,
+      "id": "ja-short-demo-hitotsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There is one apple on the plate.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-hitotsu-sentence.mp3",
+      "originalSha256": "9ed0fedc50efdcb40b2a1b78cc9d25b822d14012bcc5fb05411a48edbfa13fc9",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "さらにりんごがひとつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "皿にりんごが一つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "mGUB9na80SVmaGIyo9IW",
+      "sha256": "9ed0fedc50efdcb40b2a1b78cc9d25b822d14012bcc5fb05411a48edbfa13fc9",
+      "sourceRecordSha256": "6a8f994e6f23ce2be2263a655e4aa0edb769f387d1b39ca8b0094d2f06dfd630",
+      "spelling": "皿にりんごが一つあります。",
+      "targetLimited": false,
+      "text": "皿にりんごが一つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.07,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.75
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -23.65,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.38
+      },
+      "bytes": 21358,
+      "contextId": "ja-short-demo-chikaraippai",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:10.490Z",
+      "decodedFrames": 56448,
+      "deliveryBytes": 21358,
+      "deliverySha256": "04cde447746bdc6d1cdd36f929514c44cc043ba6bd1f5f727d0107ee4989a64b",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 1.65,
+          "integratedLufs": -22.42,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.17
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 2.07,
+          "integratedLufs": -22.07,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.75
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-chikaraippai-question.mp3",
+      "gainDb": 2.07,
+      "id": "ja-short-demo-chikaraippai-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "How should you push?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-chikaraippai-question.mp3",
+      "originalSha256": "4c12121f535477d1fe571889458646867819c4e4d3af3b8902cd27c7f54a3867",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どうおしますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どう押しますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "tfXpQJt9MxfA6Bycop9Z",
+      "sha256": "4c12121f535477d1fe571889458646867819c4e4d3af3b8902cd27c7f54a3867",
+      "sourceRecordSha256": "6f4cf516e64c482e580994c9631c88b5621cd82a7bdc447a3aaaa1a30d8ce877",
+      "spelling": "どう押しますか。",
+      "targetLimited": false,
+      "text": "どう押しますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.93,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.14
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.91,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.1
+      },
+      "bytes": 23030,
+      "contextId": "ja-short-demo-chikaraippai",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:09.773Z",
+      "decodedFrames": 59976,
+      "deliveryBytes": 23030,
+      "deliverySha256": "53637d52931f08810453fd6d25bb34cb3228c7097127305bc485e9a2e4e9e6ad",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.09,
+          "integratedLufs": -22.51,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.64
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.58,
+          "integratedLufs": -21.93,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.14
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-chikaraippai-question.mp3",
+      "gainDb": -7.58,
+      "id": "ja-short-demo-chikaraippai-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "How should you push?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-chikaraippai-question.mp3",
+      "originalSha256": "7cca5d8a228356a084f7d2b1be567e0cb2cd1f2c93e911fc7f95e4fbc9da6eff",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どうおしますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どう押しますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "tsck35zUaVCOrWvq0nkw",
+      "sha256": "7cca5d8a228356a084f7d2b1be567e0cb2cd1f2c93e911fc7f95e4fbc9da6eff",
+      "sourceRecordSha256": "90013076fade0926cc3ea02f46553cbc503318be65017a417a89646cb7c43d49",
+      "spelling": "どう押しますか。",
+      "targetLimited": false,
+      "text": "どう押しますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.33
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.81,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.15
+      },
+      "bytes": 36823,
+      "contextId": "ja-short-demo-ue",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:11.497Z",
+      "decodedFrames": 98784,
+      "deliveryBytes": 36823,
+      "deliverySha256": "0443ae16ab04c2ea12d60efe6690c1c84bea1196d0419e16b9ba9ae7150e1be3",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.19,
+          "integratedLufs": -22.46,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.83
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.73,
+          "integratedLufs": -21.98,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.33
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-ue-sentence.mp3",
+      "gainDb": -7.73,
+      "id": "ja-short-demo-ue-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "The cat is on the box.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-ue-sentence.mp3",
+      "originalSha256": "b980064f82d157716a9f171984917b0482eaa7bf8b60057b9f5d309b37639adc",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "ねこははこのうえにいます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "猫は箱の上にいます。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "2pwGQk8BCaHPZZSvgTn2",
+      "sha256": "b980064f82d157716a9f171984917b0482eaa7bf8b60057b9f5d309b37639adc",
+      "sourceRecordSha256": "29aee171cd86389648660c5b65e5f51de5ac5c0ca09447f2d6f0802ace2caaf9",
+      "spelling": "猫は箱の上にいます。",
+      "targetLimited": false,
+      "text": "猫は箱の上にいます。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.34
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.49,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.82
+      },
+      "bytes": 34315,
+      "contextId": "ja-short-demo-ue",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:12.369Z",
+      "decodedFrames": 91728,
+      "deliveryBytes": 34315,
+      "deliverySha256": "49f7223fc9c4906a9cd6053e53b26e7fe104af40809d1f8683f25c61bf9b516a",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.49,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.78
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0.94,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.34
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-ue-sentence.mp3",
+      "gainDb": 0.94,
+      "id": "ja-short-demo-ue-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "The cat is on the box.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-ue-sentence.mp3",
+      "originalSha256": "071ca578664d0bd43d05f2faf4d1058d6a70fe86592a68fdef1e961503ad67f5",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "ねこははこのうえにいます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "猫は箱の上にいます。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "gqtgia4j9wELwaPWw1yq",
+      "sha256": "071ca578664d0bd43d05f2faf4d1058d6a70fe86592a68fdef1e961503ad67f5",
+      "sourceRecordSha256": "46fc376e9000dd776a7cc5af3f7ce86cd7d28d4a4aea65422b0774f8337eba9a",
+      "spelling": "猫は箱の上にいます。",
+      "targetLimited": false,
+      "text": "猫は箱の上にいます。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.07
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -14.69,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.75
+      },
+      "bytes": 26792,
+      "contextId": "ja-short-demo-ue",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:13.049Z",
+      "decodedFrames": 70560,
+      "deliveryBytes": 26792,
+      "deliverySha256": "cf2218030dda6aa4351b461c783a070901c1aa65f08f1d9e6aa94b2fc8ab2da0",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -7.31,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.46
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -6.88,
+          "integratedLufs": -22.03,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.07
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-ue-question.mp3",
+      "gainDb": -6.88,
+      "id": "ja-short-demo-ue-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where is the box?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-ue-question.mp3",
+      "originalSha256": "f677819b642f3a82b15e135ea7994ce806b8ce0f06b6d3d186d097cb1499a99d",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "はこはどこですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "箱はどこですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "EcARQqAVtgMeV3JgD2mV",
+      "sha256": "f677819b642f3a82b15e135ea7994ce806b8ce0f06b6d3d186d097cb1499a99d",
+      "sourceRecordSha256": "da0ebaab61502606e827be55890c597234bd440d7648a779d9995d03ac147538",
+      "spelling": "箱はどこですか。",
+      "targetLimited": false,
+      "text": "箱はどこですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.28
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -24.65,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -13.91
+      },
+      "bytes": 26792,
+      "contextId": "ja-short-demo-ue",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:13.767Z",
+      "decodedFrames": 70560,
+      "deliveryBytes": 26792,
+      "deliverySha256": "19a06177985e587cf652256527e0882d03cb52b9c3d7cbd2ce40c534d460c7c7",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 2.65,
+          "integratedLufs": -22.44,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.73
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 3.09,
+          "integratedLufs": -21.99,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.28
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-ue-question.mp3",
+      "gainDb": 3.09,
+      "id": "ja-short-demo-ue-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where is the box?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-ue-question.mp3",
+      "originalSha256": "307bf8ff2e96c5a89bb1cabb5edd6be8493b1de564b51fc33d433de6a8367e05",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "はこはどこですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "箱はどこですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "CC0rCAlIVKHSVo0J73S1",
+      "sha256": "307bf8ff2e96c5a89bb1cabb5edd6be8493b1de564b51fc33d433de6a8367e05",
+      "sourceRecordSha256": "81e123cedeeb486e8d25df6a6d7a6d26ae8aa59c9463ef5133168fd322598aba",
+      "spelling": "箱はどこですか。",
+      "targetLimited": false,
+      "text": "箱はどこですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.64
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -21.57,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.07
+      },
+      "bytes": 30554,
+      "contextId": "ja-short-demo-yama",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:15.200Z",
+      "decodedFrames": 81144,
+      "deliveryBytes": 30554,
+      "deliverySha256": "55fead7dcf555de2021b28a6cf0938255484add7dc821a966e321362bb206672",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -0.43,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.98
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.64
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-yama-sentence.mp3",
+      "gainDb": 0,
+      "id": "ja-short-demo-yama-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "The house is on a mountain.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-yama-sentence.mp3",
+      "originalSha256": "040f6995bd6e4db3df80efc69634e4cc247b8385d219390b7d6fd568a17770a1",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "いえはやまにあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "家は山にあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "9cfLCim2FKYPOgp0ni73",
+      "sha256": "040f6995bd6e4db3df80efc69634e4cc247b8385d219390b7d6fd568a17770a1",
+      "sourceRecordSha256": "d2cb509166dee27c435d7ae70af563901034cb69d1425080156f943ec65fb94a",
+      "spelling": "家は山にあります。",
+      "targetLimited": false,
+      "text": "家は山にあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.15
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -12.9,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.02
+      },
+      "bytes": 31807,
+      "contextId": "ja-short-demo-yama",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:14.426Z",
+      "decodedFrames": 84672,
+      "deliveryBytes": 31807,
+      "deliverySha256": "b7d030e5674626243f193a6585fe93b76f1fc200106f56f3a0fdf29a62c3581c",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -9.1,
+          "integratedLufs": -22.41,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.58
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -8.69,
+          "integratedLufs": -22.01,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.15
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-yama-sentence.mp3",
+      "gainDb": -8.69,
+      "id": "ja-short-demo-yama-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "The house is on a mountain.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-yama-sentence.mp3",
+      "originalSha256": "cdc761840e273c89da73ff0ce4f387a4b45bbcde35a9a78843c941f1c6f68a1d",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "いえはやまにあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "家は山にあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "hqyRtz7QfFKwtLK746nG",
+      "sha256": "cdc761840e273c89da73ff0ce4f387a4b45bbcde35a9a78843c941f1c6f68a1d",
+      "sourceRecordSha256": "4941a3fe73d3967f2af79f739955dbf823e5796d66b658556412cee1e84c1078",
+      "spelling": "家は山にあります。",
+      "targetLimited": false,
+      "text": "家は山にあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.55
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.42,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.04
+      },
+      "bytes": 25538,
+      "contextId": "ja-short-demo-yama",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:15.815Z",
+      "decodedFrames": 67032,
+      "deliveryBytes": 25538,
+      "deliverySha256": "09121bcd60c5699a9021d1eaa8f822cff2aa55289393f4b27d9dfb2273bd9dde",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.58,
+          "integratedLufs": -22.49,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.06
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -8.09,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.55
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-yama-question.mp3",
+      "gainDb": -8.09,
+      "id": "ja-short-demo-yama-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where is the house?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-yama-question.mp3",
+      "originalSha256": "bf9c4848dc8e03790048abfe58c19eb37d588df4db3ac01af9cab432abb9539e",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "いえはどこですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "家はどこですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "e5oN3hIT9iGfvqXtou6I",
+      "sha256": "bf9c4848dc8e03790048abfe58c19eb37d588df4db3ac01af9cab432abb9539e",
+      "sourceRecordSha256": "261ac338b5ba10a9588e1f477c16e55413e89fee5903e63e6eb966cd42e74d69",
+      "spelling": "家はどこですか。",
+      "targetLimited": false,
+      "text": "家はどこですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.56
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.57,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.11
+      },
+      "bytes": 25538,
+      "contextId": "ja-short-demo-yama",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:16.381Z",
+      "decodedFrames": 67032,
+      "deliveryBytes": 25538,
+      "deliverySha256": "56c38411d5dcb673396e929b5c6ad4a158921d7ea6d900ea7cf09de0b1be8e1a",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.57,
+          "integratedLufs": -22.47,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.02
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 1.04,
+          "integratedLufs": -21.97,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.56
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-yama-question.mp3",
+      "gainDb": 1.04,
+      "id": "ja-short-demo-yama-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where is the house?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-yama-question.mp3",
+      "originalSha256": "788514a2ad87871127a94b60b501281881d75f6ed261df5cd6bfbf8ce96ae8e5",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "いえはどこですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "家はどこですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "6vtbnmOtMWSfe3E5oKDt",
+      "sha256": "788514a2ad87871127a94b60b501281881d75f6ed261df5cd6bfbf8ce96ae8e5",
+      "sourceRecordSha256": "8bb12e0998f344af4ba534b92d184c5846133bd2497fb1cedeca22ae538b8c57",
+      "spelling": "家はどこですか。",
+      "targetLimited": false,
+      "text": "家はどこですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.03,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.58
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.61,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -3.2
+      },
+      "bytes": 28046,
+      "contextId": "ja-short-demo-otona",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:17.131Z",
+      "decodedFrames": 74088,
+      "deliveryBytes": 28046,
+      "deliverySha256": "18054bf3518e3e0bcb57fa525566738ac15ad6efa9c8b4b1a195d9c3965b7804",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.39,
+          "integratedLufs": -22.48,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -12.04
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.91,
+          "integratedLufs": -22.03,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.58
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-otona-sentence.mp3",
+      "gainDb": -7.91,
+      "id": "ja-short-demo-otona-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are two adults.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-otona-sentence.mp3",
+      "originalSha256": "3db850347b6bf929f02542d27c84a749a28605ae26fea18f81570156a9e68a6e",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "おとながふたりいます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "大人が二人います。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "hRQxsiVRAz246IOpZ7iE",
+      "sha256": "3db850347b6bf929f02542d27c84a749a28605ae26fea18f81570156a9e68a6e",
+      "sourceRecordSha256": "bec813d6a96f8619318a69cda2f1136a12046cea8a59851c14a92ce4b887f97e",
+      "spelling": "大人が二人います。",
+      "targetLimited": false,
+      "text": "大人が二人います。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.58
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -19.83,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.41
+      },
+      "bytes": 28046,
+      "contextId": "ja-short-demo-otona",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:17.867Z",
+      "decodedFrames": 74088,
+      "deliveryBytes": 28046,
+      "deliverySha256": "a142b1168fa39edb3ef6cde7b8958aff5e68c042e35987c93cadc556f72c23b1",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -2.17,
+          "integratedLufs": -22.44,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -12.02
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -1.73,
+          "integratedLufs": -21.99,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.58
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-otona-sentence.mp3",
+      "gainDb": -1.73,
+      "id": "ja-short-demo-otona-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are two adults.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-otona-sentence.mp3",
+      "originalSha256": "a750dc319464a95ddeb56a73e9d9369a3db22fce1d206391f61bdafdbb747658",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "おとながふたりいます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "大人が二人います。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "dLtHJjoUmwpZ36NreGWI",
+      "sha256": "a750dc319464a95ddeb56a73e9d9369a3db22fce1d206391f61bdafdbb747658",
+      "sourceRecordSha256": "5e2ad81533a31c1dd08a488390d4d70bfa2ca6141321eed80d6a0fc5f3e9ebd5",
+      "spelling": "大人が二人います。",
+      "targetLimited": false,
+      "text": "大人が二人います。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.6
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.54,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.17
+      },
+      "bytes": 21358,
+      "contextId": "ja-short-demo-otona",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:18.515Z",
+      "decodedFrames": 56448,
+      "deliveryBytes": 21358,
+      "deliverySha256": "fb0178ab18c130ab0e9ed6955db2e510c14dcfe988ef47a57baab4d16281a092",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.46,
+          "integratedLufs": -22.47,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.09
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.99,
+          "integratedLufs": -21.98,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.6
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-otona-question.mp3",
+      "gainDb": -7.99,
+      "id": "ja-short-demo-otona-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Who is there?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-otona-question.mp3",
+      "originalSha256": "2884103212aa1699f7b4de095c68412f471aeda67d0f0adec5fe6f96cd6b1c1f",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "だれがいますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "誰がいますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "WhunQOoHx8SUE7DodLn3",
+      "sha256": "2884103212aa1699f7b4de095c68412f471aeda67d0f0adec5fe6f96cd6b1c1f",
+      "sourceRecordSha256": "88a7655ba8b89e84063a93002157a5858655e17ce9e61601f2359b3bfdb81821",
+      "spelling": "誰がいますか。",
+      "targetLimited": false,
+      "text": "誰がいますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.08
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.76,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.86
+      },
+      "bytes": 21358,
+      "contextId": "ja-short-demo-otona",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:19.018Z",
+      "decodedFrames": 56448,
+      "deliveryBytes": 21358,
+      "deliverySha256": "34da6c4bdf9fb08a257ced82a3410b1e7f81b7301f142118ea66a724b426da7a",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.76,
+          "integratedLufs": -22.46,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.56
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 1.22,
+          "integratedLufs": -21.98,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.08
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-otona-question.mp3",
+      "gainDb": 1.22,
+      "id": "ja-short-demo-otona-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Who is there?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-otona-question.mp3",
+      "originalSha256": "6ccf724eb1a4cd2b8bd36f1c593594c370dbf3559f154c3bbf37ba4fc48d0fdd",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "だれがいますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "誰がいますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "AXyNQtcLQZM8ajdroUe8",
+      "sha256": "6ccf724eb1a4cd2b8bd36f1c593594c370dbf3559f154c3bbf37ba4fc48d0fdd",
+      "sourceRecordSha256": "2f4df7b5bd267bcee68de831183d2aa46ded08239e27f2d3a77522edcfa34288",
+      "spelling": "誰がいますか。",
+      "targetLimited": false,
+      "text": "誰がいますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.05,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.31
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -14.77,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.04
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-nanatsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:19.727Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "1c503e096f34eba004ad33744d5b0a5feab51720fa5f3e4895c309db972a8724",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -7.23,
+          "integratedLufs": -22.41,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -8.69
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -6.82,
+          "integratedLufs": -22.05,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -8.31
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-nanatsu-sentence.mp3",
+      "gainDb": -6.82,
+      "id": "ja-short-demo-nanatsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are seven mandarin oranges.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-nanatsu-sentence.mp3",
+      "originalSha256": "30fff0a2a43a90b2a848a637dd23757d7cbf3ab1714d4e2cbee23cd2bd1a0fd4",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "みかんがななつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "みかんが七つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "inCUwpiXDvTAZ1igAhmT",
+      "sha256": "30fff0a2a43a90b2a848a637dd23757d7cbf3ab1714d4e2cbee23cd2bd1a0fd4",
+      "sourceRecordSha256": "ff096e34752e03be80ac7f9bd0d42a4ef5a266e45e91d3a77bfb9ea01590edc3",
+      "spelling": "みかんが七つあります。",
+      "targetLimited": false,
+      "text": "みかんが七つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.37
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -21.62,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.98
+      },
+      "bytes": 31807,
+      "contextId": "ja-short-demo-nanatsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:20.465Z",
+      "decodedFrames": 84672,
+      "deliveryBytes": 31807,
+      "deliverySha256": "ff7db55c417efba13a10a15284f14fe459a31debbf927320b2c32770bcee8d21",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -0.38,
+          "integratedLufs": -22.44,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.79
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0.06,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.37
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-nanatsu-sentence.mp3",
+      "gainDb": 0.06,
+      "id": "ja-short-demo-nanatsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are seven mandarin oranges.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-nanatsu-sentence.mp3",
+      "originalSha256": "cfe98e23a00c41d9d7b2f4c94855462c086cb35d123ef99169924761e2490239",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "みかんがななつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "みかんが七つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "f4nrluUN79Cav8ugtpRe",
+      "sha256": "cfe98e23a00c41d9d7b2f4c94855462c086cb35d123ef99169924761e2490239",
+      "sourceRecordSha256": "2fda85f83c4cda6d6ecafc4b9f33bfc39849b0f1795e128f108ce7a6714dc680",
+      "spelling": "みかんが七つあります。",
+      "targetLimited": false,
+      "text": "みかんが七つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.46
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -12.44,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -0.96
+      },
+      "bytes": 21358,
+      "contextId": "ja-short-demo-kawa",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:21.076Z",
+      "decodedFrames": 56448,
+      "deliveryBytes": 21358,
+      "deliverySha256": "ca72912a0aca6a80344fc2d46532f993b9ab89c615d1f0527c058ad049e7a386",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -9.56,
+          "integratedLufs": -22.44,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.86
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -9.12,
+          "integratedLufs": -22.02,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.46
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-kawa-sentence.mp3",
+      "gainDb": -9.12,
+      "id": "ja-short-demo-kawa-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "I’m going to the river.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-kawa-sentence.mp3",
+      "originalSha256": "1db45e7098130ebc5aacd989e2564f3aa37ab69d5b813048893959f4f8de3f98",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "かわにいきます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "川に行きます。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "7Nxy5sc7zPF4MxvBw11x",
+      "sha256": "1db45e7098130ebc5aacd989e2564f3aa37ab69d5b813048893959f4f8de3f98",
+      "sourceRecordSha256": "303bdaf0273b3cd52324cc4845fa72e83e9396881459fa7471269def1ffb3b8c",
+      "spelling": "川に行きます。",
+      "targetLimited": false,
+      "text": "川に行きます。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.36
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -19.6,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.98
+      },
+      "bytes": 21358,
+      "contextId": "ja-short-demo-kawa",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:21.753Z",
+      "decodedFrames": 56448,
+      "deliveryBytes": 21358,
+      "deliverySha256": "a5b6b722e7f94cd4f695219d2e493f28ca477ae7d2f3a51ad72b5e31a79d0a3c",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -2.4,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.8
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -1.97,
+          "integratedLufs": -22.02,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.36
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-kawa-sentence.mp3",
+      "gainDb": -1.97,
+      "id": "ja-short-demo-kawa-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "I’m going to the river.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-kawa-sentence.mp3",
+      "originalSha256": "3740ee3db8c6168f1680f437c0af81fb261ca07ee92157f385d98f21bf07f4fc",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "かわにいきます。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "川に行きます。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "k2njZs1nDqQAFyuKp8dY",
+      "sha256": "3740ee3db8c6168f1680f437c0af81fb261ca07ee92157f385d98f21bf07f4fc",
+      "sourceRecordSha256": "bc901b1ec3be54f957147beb6c107900cfd27a5b369243cadba52cf262aa8ea1",
+      "spelling": "川に行きます。",
+      "targetLimited": false,
+      "text": "川に行きます。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.96,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.37
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.77,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.16
+      },
+      "bytes": 23030,
+      "contextId": "ja-short-demo-kawa",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:22.503Z",
+      "decodedFrames": 59976,
+      "deliveryBytes": 23030,
+      "deliverySha256": "1d927a6adba07ec558dbedc02b0616033128b9b0a7cb3aae3ec379b159505673",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.23,
+          "integratedLufs": -22.47,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.84
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.76,
+          "integratedLufs": -21.96,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.37
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-kawa-question.mp3",
+      "gainDb": -7.76,
+      "id": "ja-short-demo-kawa-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where are you going?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-kawa-question.mp3",
+      "originalSha256": "6c653cb52d7005ef36c2dcca92de97990256f9d2b2b81e91bf37f69d02484ba6",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どこにいきますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どこに行きますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "FDtp4HFJOkcGyCZfNmqc",
+      "sha256": "6c653cb52d7005ef36c2dcca92de97990256f9d2b2b81e91bf37f69d02484ba6",
+      "sourceRecordSha256": "e0763f927c8e6e8c59bf6beb573edc9f912ecb2e400d54750a96117f7f2c69aa",
+      "spelling": "どこに行きますか。",
+      "targetLimited": false,
+      "text": "どこに行きますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.98,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.2
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.95,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.18
+      },
+      "bytes": 25538,
+      "contextId": "ja-short-demo-kawa",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:23.202Z",
+      "decodedFrames": 67032,
+      "deliveryBytes": 25538,
+      "deliverySha256": "dc47a66465941f30ac6d8681b56a03c9619c2bebb291ba10ee5e7479d6b57e9f",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.95,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.74
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 1.4,
+          "integratedLufs": -21.98,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -11.2
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-kawa-question.mp3",
+      "gainDb": 1.4,
+      "id": "ja-short-demo-kawa-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "Where are you going?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-kawa-question.mp3",
+      "originalSha256": "453d30e48ad9345b7ca6a36b561a29143d1720d68dc8cb59187bc14d32ca879f",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どこにいきますか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どこに行きますか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "BdZ0ac06eHXpC6VFwJvt",
+      "sha256": "453d30e48ad9345b7ca6a36b561a29143d1720d68dc8cb59187bc14d32ca879f",
+      "sourceRecordSha256": "d683281303429dce38c286aff8e907d77e5e08f4f7baaf746215dc3b2e70f962",
+      "spelling": "どこに行きますか。",
+      "targetLimited": false,
+      "text": "どこに行きますか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.95,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.31
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -15.26,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -3.55
+      },
+      "bytes": 31807,
+      "contextId": "ja-short-demo-taishita",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:23.967Z",
+      "decodedFrames": 84672,
+      "deliveryBytes": 31807,
+      "deliverySha256": "f3c881497eb05e85ff5c71bb7f090a60b8df2b7c68dac56b8dc6d09051fc158e",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -6.74,
+          "integratedLufs": -22.52,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.75
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -6.22,
+          "integratedLufs": -21.95,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.31
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-taishita-sentence.mp3",
+      "gainDb": -6.22,
+      "id": "ja-short-demo-taishita-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "It’s not a serious injury.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-taishita-sentence.mp3",
+      "originalSha256": "389f7e49b0f3bd0a57f3f3f28dc6b04cc30cf00b330a622e8c372394d16850c8",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "たいしたけがではありません。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "大したけがではありません。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "sCbq4X5RmvXeiFi2fEQr",
+      "sha256": "389f7e49b0f3bd0a57f3f3f28dc6b04cc30cf00b330a622e8c372394d16850c8",
+      "sourceRecordSha256": "296b5c2372f13ef207178e6772154b8ed322ae6b5417566f79636ebc42e19d47",
+      "spelling": "大したけがではありません。",
+      "targetLimited": false,
+      "text": "大したけがではありません。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.06,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.71
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -23.73,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.41
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-taishita",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:24.714Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "50ae0b293768ac49895216b9da1523b7bb0f7c9c416c50500d3c7c1301412f28",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 1.73,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -10.13
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 2.16,
+          "integratedLufs": -22.06,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.71
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-taishita-sentence.mp3",
+      "gainDb": 2.16,
+      "id": "ja-short-demo-taishita-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "It’s not a serious injury.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-taishita-sentence.mp3",
+      "originalSha256": "430c59cf02c180bf0ee2a354fb45b32322d72357e3bf5e9c160e7453e47dafc8",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "たいしたけがではありません。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "大したけがではありません。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "xSUcUiLUcG2Wpeu8nQQc",
+      "sha256": "430c59cf02c180bf0ee2a354fb45b32322d72357e3bf5e9c160e7453e47dafc8",
+      "sourceRecordSha256": "b1794be1ae7765191f78f8040e17aefec904289a76fac9846d756ca5c407a3ed",
+      "spelling": "大したけがではありません。",
+      "targetLimited": false,
+      "text": "大したけがではありません。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.48
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -13.55,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.06
+      },
+      "bytes": 23030,
+      "contextId": "ja-short-demo-taishita",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:25.278Z",
+      "decodedFrames": 59976,
+      "deliveryBytes": 23030,
+      "deliverySha256": "f31b63ea2b66766b98d1ef10bfa7a6c42364524b7acfc33fc49a60bd8a300ecf",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -8.45,
+          "integratedLufs": -22.45,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.96
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -8,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.48
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-taishita-question.mp3",
+      "gainDb": -8,
+      "id": "ja-short-demo-taishita-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "What kind of injury is it?",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-taishita-question.mp3",
+      "originalSha256": "07fa1635154a4dcec107e58f21e18223ba8ec75a40d56f992433b5ec9b45bcbf",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どんなけがですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どんなけがですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "VWOh4aWVjboB9DrqjmGi",
+      "sha256": "07fa1635154a4dcec107e58f21e18223ba8ec75a40d56f992433b5ec9b45bcbf",
+      "sourceRecordSha256": "303140cd7638481d50488086fd8d17f10549e931b11c35c69a6033c6b244e753",
+      "spelling": "どんなけがですか。",
+      "targetLimited": false,
+      "text": "どんなけがですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.34
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -24.5,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -10.86
+      },
+      "bytes": 24284,
+      "contextId": "ja-short-demo-taishita",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:25.850Z",
+      "decodedFrames": 63504,
+      "deliveryBytes": 24284,
+      "deliverySha256": "b372745dc6504d5fb77e3191dcd15f9011a0ddd3d5279097c9be4435ab2baf2b",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 2.5,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -8.82
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 2.93,
+          "integratedLufs": -22,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -8.34
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-taishita-question.mp3",
+      "gainDb": 2.93,
+      "id": "ja-short-demo-taishita-question",
+      "kind": "question",
+      "limitingReasons": [],
+      "meaning": "What kind of injury is it?",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-taishita-question.mp3",
+      "originalSha256": "768e07164c00f673746ae4079d2b405c9e03fae9116bc0c5f4175bc3f035fa23",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "questionRevision": 2,
+      "reading": "どんなけがですか。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "どんなけがですか。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "1I1C3z6462iIpZOnzHsS",
+      "sha256": "768e07164c00f673746ae4079d2b405c9e03fae9116bc0c5f4175bc3f035fa23",
+      "sourceRecordSha256": "d43432666dcc27e223dd17a69b4a91c92e599644d9762787ab511d1eb4ed5abb",
+      "spelling": "どんなけがですか。",
+      "targetLimited": false,
+      "text": "どんなけがですか。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.01,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.39
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -14.56,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -1.9
+      },
+      "bytes": 34315,
+      "contextId": "ja-short-demo-kokonotsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:26.505Z",
+      "decodedFrames": 91728,
+      "deliveryBytes": 34315,
+      "deliverySha256": "29a0a3f38333c6a40b04a2c638920e3a8768eb31295d66dc700ca683a08c3999",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -7.44,
+          "integratedLufs": -22.42,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.75
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -7.02,
+          "integratedLufs": -22.01,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.39
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-kokonotsu-sentence.mp3",
+      "gainDb": -7.02,
+      "id": "ja-short-demo-kokonotsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are nine eggs.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-kokonotsu-sentence.mp3",
+      "originalSha256": "cb1a87dc9f18cd5ff44f06911a79a5af237414a46183b72cb613d2bf3a1ecc30",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "たまごがここのつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "卵が九つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "LciTCOcVhZDk5zZOk3RY",
+      "sha256": "cb1a87dc9f18cd5ff44f06911a79a5af237414a46183b72cb613d2bf3a1ecc30",
+      "sourceRecordSha256": "9c08c329212cf4d6408d48bf124793905e099e1f38ea4962b4f4504f0fbbc67e",
+      "spelling": "卵が九つあります。",
+      "targetLimited": false,
+      "text": "卵が九つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.97,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -7.96
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -22.54,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -8.53
+      },
+      "bytes": 34315,
+      "contextId": "ja-short-demo-kokonotsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:27.142Z",
+      "decodedFrames": 91728,
+      "deliveryBytes": 34315,
+      "deliverySha256": "793c3c80e5161da82e2e39b75362a4145053ba2adc9f960e13ac6fe423fef3f1",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": 0.54,
+          "integratedLufs": -22.48,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -8.45
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 1.02,
+          "integratedLufs": -21.97,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -7.96
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-kokonotsu-sentence.mp3",
+      "gainDb": 1.02,
+      "id": "ja-short-demo-kokonotsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are nine eggs.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-kokonotsu-sentence.mp3",
+      "originalSha256": "12a4225d3768b773363e95f0663435185d0e897276d2bbc1446957af83dbf559",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "たまごがここのつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "卵が九つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "K8ycyrXezz6TcXL8YpwD",
+      "sha256": "12a4225d3768b773363e95f0663435185d0e897276d2bbc1446957af83dbf559",
+      "sourceRecordSha256": "a24a914edf3cfedc19731d777accb65ab8d7714db94689d892fee68dea8c7014",
+      "spelling": "卵が九つあります。",
+      "targetLimited": false,
+      "text": "卵が九つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -22.02,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -9.35
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -14.86,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -2.22
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-futatsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:27.889Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "584001ea71e28a5b35a93e3022f8d1228e562a7d51d2e74da43a36a04b58cb0f",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -7.14,
+          "integratedLufs": -22.43,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.82
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": -6.71,
+          "integratedLufs": -22.02,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -9.35
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "otani/ja-short-demo-futatsu-sentence.mp3",
+      "gainDb": -6.71,
+      "id": "ja-short-demo-futatsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are two cookies.",
+      "model": "eleven_v4",
+      "originalFile": "originals/otani/ja-short-demo-futatsu-sentence.mp3",
+      "originalSha256": "c751434942d4f0dd09040450f080cd704b4c8d06aca9c4400a50183fd45c7258",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "クッキーがふたつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "クッキーが二つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "SkrKKmEzeUOku6WeyD0J",
+      "sha256": "c751434942d4f0dd09040450f080cd704b4c8d06aca9c4400a50183fd45c7258",
+      "sourceRecordSha256": "0eb628f9b8e9fee4228e25b1022eaa89e86dc718208569cd3ff7ce36a705cc43",
+      "spelling": "クッキーが二つあります。",
+      "targetLimited": false,
+      "text": "クッキーが二つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "otani",
+      "voiceId": "3JDquces8E8bkmvbh6Bc",
+      "voiceName": "Otani"
+    },
+    {
+      "after": {
+        "analysisPadding": false,
+        "integratedLufs": -21.99,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -12.13
+      },
+      "before": {
+        "analysisPadding": false,
+        "integratedLufs": -21.65,
+        "measurementMethod": "r128",
+        "truePeakDbtp": -11.79
+      },
+      "bytes": 33061,
+      "contextId": "ja-short-demo-futatsu",
+      "contextRevision": 2,
+      "createdAt": "2026-11-10T22:54:28.841Z",
+      "decodedFrames": 88200,
+      "deliveryBytes": 33061,
+      "deliverySha256": "4e243a8ea3e8f7b2753802a9e81bebd1ce85069998c94f3e8f7437702de2db78",
+      "encodingTrials": [
+        {
+          "analysisPadding": false,
+          "gainDb": -0.35,
+          "integratedLufs": -22.44,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -12.6
+        },
+        {
+          "analysisPadding": false,
+          "gainDb": 0.09,
+          "integratedLufs": -21.99,
+          "measurementMethod": "r128",
+          "truePeakDbtp": -12.13
+        }
+      ],
+      "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "file": "morioki/ja-short-demo-futatsu-sentence.mp3",
+      "gainDb": 0.09,
+      "id": "ja-short-demo-futatsu-sentence",
+      "kind": "sentence",
+      "limitingReasons": [],
+      "meaning": "There are two cookies.",
+      "model": "eleven_v4",
+      "originalFile": "originals/morioki/ja-short-demo-futatsu-sentence.mp3",
+      "originalSha256": "0cb37925a9b5b2d6d3b356c94eadfae122ccd5ce9751063e98156e5be1fb9d55",
+      "planIdentity": "9fc78c8f71cc99ef72011e6c676fc9984975818b1b1f678428161cfc57ee0849",
+      "profile": {
+        "bitrate": "128k",
+        "dualMono": true,
+        "maxBoostDb": 9,
+        "rate": 44100,
+        "shortClipAnalysis": "pad-to-500ms-only-for-measurement",
+        "targetLufs": -22,
+        "truePeakCeilingDbtp": -2,
+        "version": 1
+      },
+      "reading": "クッキーがふたつあります。",
+      "request": {
+        "language_code": "ja",
+        "model_id": "eleven_v4",
+        "text": "クッキーが二つあります。",
+        "voice_settings": {
+          "similarity_boost": 0.75,
+          "stability": 0.5
+        }
+      },
+      "requestId": "LvxeXQbKUOeXktTHxdWC",
+      "sha256": "0cb37925a9b5b2d6d3b356c94eadfae122ccd5ce9751063e98156e5be1fb9d55",
+      "sourceRecordSha256": "8863cefa216502b9059522b720837c3c7e0063cf6950ff436a5e98e75d83f74a",
+      "spelling": "クッキーが二つあります。",
+      "targetLimited": false,
+      "text": "クッキーが二つあります。",
+      "textApprovalSha256": "3ce487563e571a213fa3fe511c2e8db89270ffa9e5c2029d805e2252484ed5a2",
+      "voice": "morioki",
+      "voiceId": "8EkOjt4xTPGMclNlh1pk",
+      "voiceName": "Morioki"
+    }
+  ]
+}

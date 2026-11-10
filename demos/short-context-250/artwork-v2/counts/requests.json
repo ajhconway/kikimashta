@@ -1,0 +1,267 @@
+{
+  "issue": 250,
+  "tool": "built-in image_gen",
+  "status": "requested",
+  "policy": "content/card-regeneration/README.md; style-overrides profiles.cat-png; new images pending owner review",
+  "requests": [
+    {
+      "id": "apples-4",
+      "count": 4,
+      "family": "apples",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly FOUR complete pink-red apples, each with a small green leaf and brown stem, on ONE shallow round sky-blue plate seen slightly from above. Apples form a clearly separated two-by-two arrangement, no overlap, no apple hidden behind another. The plate is supporting context and apples are the focus. Keep the plate a simple blue oval with one rim. No other fruit, food, forks, table, or duplicate plates.\nAdditional image roles: Image2: approved apple object design; Image3: approved sky-blue plate object design. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/01-apple.png",
+          "role": "approved apple object design",
+          "sha256": "693c57b57b06ea4beba0ab8dbd61e6efbf6279a5cd3b6d2c371f21867a82b919"
+        },
+        {
+          "path": "artifacts/card-regeneration/batch-01/05-plate.png",
+          "role": "approved sky-blue plate object design",
+          "sha256": "d9c5d78f567cf19bf2a1df53092eee7fec43b27bffa48a4781d53595f080cc6f"
+        }
+      ]
+    },
+    {
+      "id": "oranges-6",
+      "count": 6,
+      "family": "oranges",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 6 complete separate mandarin oranges in two rows of three. Rounded small orange fruit with gentle lobed mandarin silhouettes, a small green stem or leaf on each, vivid natural orange bodies with restrained soft shading. Every orange independently countable with transparent gaps, all approximately equal size. No segments, peeled fruit, slices, bowls, leaves detached from fruit, basket or plate.\nAdditional image roles: Image2: approved orange object design; preserve recognizable mandarin form. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+          "role": "approved orange object design; preserve recognizable mandarin form",
+          "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87"
+        }
+      ]
+    },
+    {
+      "id": "oranges-7",
+      "count": 7,
+      "family": "oranges",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 7 complete separate mandarin oranges in three on the top row and four below. Rounded small orange fruit with gentle lobed mandarin silhouettes, a small green stem or leaf on each, vivid natural orange bodies with restrained soft shading. Every orange independently countable with transparent gaps, all approximately equal size. No segments, peeled fruit, slices, bowls, leaves detached from fruit, basket or plate.\nAdditional image roles: Image2: approved orange object design; preserve recognizable mandarin form. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+          "role": "approved orange object design; preserve recognizable mandarin form",
+          "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87"
+        }
+      ]
+    },
+    {
+      "id": "oranges-8",
+      "count": 8,
+      "family": "oranges",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 8 complete separate mandarin oranges in two rows of four. Rounded small orange fruit with gentle lobed mandarin silhouettes, a small green stem or leaf on each, vivid natural orange bodies with restrained soft shading. Every orange independently countable with transparent gaps, all approximately equal size. No segments, peeled fruit, slices, bowls, leaves detached from fruit, basket or plate.\nAdditional image roles: Image2: approved orange object design; preserve recognizable mandarin form. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+          "role": "approved orange object design; preserve recognizable mandarin form",
+          "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87"
+        }
+      ]
+    },
+    {
+      "id": "oranges-9",
+      "count": 9,
+      "family": "oranges",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 9 complete separate mandarin oranges in three rows of three. Rounded small orange fruit with gentle lobed mandarin silhouettes, a small green stem or leaf on each, vivid natural orange bodies with restrained soft shading. Every orange independently countable with transparent gaps, all approximately equal size. No segments, peeled fruit, slices, bowls, leaves detached from fruit, basket or plate.\nAdditional image roles: Image2: approved orange object design; preserve recognizable mandarin form. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-orange-4933341a8eae.png",
+          "role": "approved orange object design; preserve recognizable mandarin form",
+          "sha256": "4933341a8eae3098d695b874343517ff15676fbaa18e4a6d7e580f592bff3b87"
+        }
+      ]
+    },
+    {
+      "id": "eggs-6",
+      "count": 6,
+      "family": "eggs",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 6 complete separate whole chicken eggs in two rows of three. Each egg has a recognizable oval egg silhouette, warm ivory shell, clean violet outline and one gentle shaded side. All eggs upright, approximately equal size, with transparent space separating each one. Preserve opaque ivory/white shell interiors. No broken shells, fried eggs, chicks, nests, cartons, bowls, plates or extra objects.\nAdditional image roles: Image2: approved egg illustration style/color reference ONLY; replace its cracked shell/yolk completely with whole intact shells. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+          "role": "approved egg illustration style/color reference only; replace cracked shell/yolk with whole intact eggs",
+          "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4"
+        }
+      ]
+    },
+    {
+      "id": "eggs-7",
+      "count": 7,
+      "family": "eggs",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 7 complete separate whole chicken eggs in three on the top row and four below. Each egg has a recognizable oval egg silhouette, warm ivory shell, clean violet outline and one gentle shaded side. All eggs upright, approximately equal size, with transparent space separating each one. Preserve opaque ivory/white shell interiors. No broken shells, fried eggs, chicks, nests, cartons, bowls, plates or extra objects.\nAdditional image roles: Image2: approved egg illustration style/color reference ONLY; replace its cracked shell/yolk completely with whole intact shells. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+          "role": "approved egg illustration style/color reference only; replace cracked shell/yolk with whole intact eggs",
+          "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4"
+        }
+      ]
+    },
+    {
+      "id": "eggs-8",
+      "count": 8,
+      "family": "eggs",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 8 complete separate whole chicken eggs in two rows of four. Each egg has a recognizable oval egg silhouette, warm ivory shell, clean violet outline and one gentle shaded side. All eggs upright, approximately equal size, with transparent space separating each one. Preserve opaque ivory/white shell interiors. No broken shells, fried eggs, chicks, nests, cartons, bowls, plates or extra objects.\nAdditional image roles: Image2: approved egg illustration style/color reference ONLY; replace its cracked shell/yolk completely with whole intact shells. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+          "role": "approved egg illustration style/color reference only; replace cracked shell/yolk with whole intact eggs",
+          "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4"
+        }
+      ]
+    },
+    {
+      "id": "eggs-9",
+      "count": 9,
+      "family": "eggs",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 9 complete separate whole chicken eggs in three rows of three. Each egg has a recognizable oval egg silhouette, warm ivory shell, clean violet outline and one gentle shaded side. All eggs upright, approximately equal size, with transparent space separating each one. Preserve opaque ivory/white shell interiors. No broken shells, fried eggs, chicks, nests, cartons, bowls, plates or extra objects.\nAdditional image roles: Image2: approved egg illustration style/color reference ONLY; replace its cracked shell/yolk completely with whole intact shells. Preserve the named object designs while obeying the requested group quantity and layout. References do not add extra objects.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "public/images/approved/es-419-travel-egg-d1e13dace439.png",
+          "role": "approved egg illustration style/color reference only; replace cracked shell/yolk with whole intact eggs",
+          "sha256": "d1e13dace439782b6dda97635d747af8c1ccd2946de8695c102915b3c56243f4"
+        }
+      ]
+    },
+    {
+      "id": "cookies-2",
+      "count": 2,
+      "family": "cookies",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 2 complete separate chocolate-chip cookies in one row of two, each whole and round with gently irregular baked edge and several dark-brown chocolate chips. Image2 supplies the approved cookie OBJECT DESIGN: match its golden-brown cookie silhouette, violet contour, simple chocolate chips and restrained shading, while reducing tiny details if needed for clarity. Every cookie fully visible and independently countable, with large transparent gaps. No bite marks, crumbs, milk, plate, wrapper, extra cookies or detached chocolate chips.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+          "role": "approved cookie object design reference, exact selected Food2 image",
+          "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+        }
+      ],
+      "revisions": [
+        {
+          "version": 2,
+          "reason": "First generated canvas was landscape despite square request; preserve it as unselected history.",
+          "prompt": "Use case: scientific-educational. CRITICAL OUTPUT GEOMETRY: SQUARE 1:1 CANVAS, same width and height. NOT a horizontal strip or landscape image. Genuine transparent background. Input image1: approved Kikimashta STYLE reference only (no cat, letters or scenery). Input image2: approved COOKIE OBJECT DESIGN. Match its whole round golden-brown chocolate-chip cookie with gently irregular edge, bold violet outlines and restrained interior shading. Exactly TWO separate whole cookies in a DIAGONAL arrangement: one upper-left and one lower-right, equal size, with ample transparent gap. Keep complete silhouettes. The overall arrangement fills a square footprint. The entire group should occupy about75%of a SQUARE canvas with transparent margin on ALL FOUR SIDES. Do not crop. No plate, milk, crumbs, wrappers, bite marks, numbers, letters, labels, badges, shadows or extra cookies. Preserve true alpha and opaque subject fills. Count must be exact and readable at145px.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved style reference only; do not copy cat, text or scene",
+              "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+            },
+            {
+              "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+              "role": "approved cookie object design reference, exact selected Food2 image",
+              "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cookies-3",
+      "count": 3,
+      "family": "cookies",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 3 complete separate chocolate-chip cookies in one row of three, each whole and round with gently irregular baked edge and several dark-brown chocolate chips. Image2 supplies the approved cookie OBJECT DESIGN: match its golden-brown cookie silhouette, violet contour, simple chocolate chips and restrained shading, while reducing tiny details if needed for clarity. Every cookie fully visible and independently countable, with large transparent gaps. No bite marks, crumbs, milk, plate, wrapper, extra cookies or detached chocolate chips.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+          "role": "approved cookie object design reference, exact selected Food2 image",
+          "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+        }
+      ],
+      "revisions": [
+        {
+          "version": 2,
+          "reason": "First generated canvas was landscape despite square request; preserve it as unselected history.",
+          "prompt": "Use case: scientific-educational. CRITICAL OUTPUT GEOMETRY: SQUARE 1:1 CANVAS, same width and height. NOT a horizontal strip or landscape image. Genuine transparent background. Input image1: approved Kikimashta STYLE reference only (no cat, letters or scenery). Input image2: approved COOKIE OBJECT DESIGN. Match its whole round golden-brown chocolate-chip cookie with gently irregular edge, bold violet outlines and restrained interior shading. Exactly THREE separate whole cookies in a TRIANGULAR arrangement: TWO across the upper half and ONE centered in the lower half. Equal size, ample transparent gaps, complete silhouettes. The overall arrangement fills a square footprint. The entire group should occupy about75%of a SQUARE canvas with transparent margin on ALL FOUR SIDES. Do not crop. No plate, milk, crumbs, wrappers, bite marks, numbers, letters, labels, badges, shadows or extra cookies. Preserve true alpha and opaque subject fills. Count must be exact and readable at145px.",
+          "references": [
+            {
+              "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+              "role": "approved style reference only; do not copy cat, text or scene",
+              "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+            },
+            {
+              "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+              "role": "approved cookie object design reference, exact selected Food2 image",
+              "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cookies-4",
+      "count": 4,
+      "family": "cookies",
+      "prompt": "Use case: scientific-educational\nAsset type: one square vocabulary picture for a Japanese listening game\nStyle/medium: match the supplied Kikimashta cat PNG's polished cartoon illustration language. Smooth rounded substantial forms, clean bold deep-violet contours, restrained soft tonal shading inside forms and gentle dimensional color. Warm golden-yellow/amber, rich violet/lavender and soft pink accents. Softer, calmer rendering than a glossy clip-art sticker. No bright white shine streaks, exclamation-shaped glare, photographic texture, watercolor or sketch strokes.\nInput image role: STYLE REFERENCE ONLY. Study the cat's contour treatment, gentle shading, color relationships and simple forms. Do not reproduce the cat, headphones, paws, logo, lettering, Mount Fuji, torii, blossoms, sound marks, enclosing card or footer.\nScene/backdrop: genuinely transparent outer background with an alpha channel. No painted white backdrop, checkerboard, lavender or cream tint, colored vignette, decorative scene or frame. Preserve opaque white subject details. A sky scene may contain blue sky and clouds within its intended silhouette, but no ground or horizon strip.\nComposition/framing: one clear centered primary subject or the minimal action scene required by the word, full silhouette visible, about 65–75 percent of square canvas, generous margin. Readable at 145px.\nColor: use the reference's warm golden and violet family for decorative accents. Preserve the factual/teaching color of the subject, including yellow banana, blue paint, green shoots and white clouds.\nConstraints: correct anatomy, recognizable literal vocabulary subject, no answer labels, words, letters, branding, watermark, frame or decorative extras. Match the visual style rather than copying the cat's subject or background.\nOutput: square 1:1 vocabulary illustration, genuinely transparent alpha background, isolated complete silhouettes, around 75 percent canvas, comfortable transparent outer margin. No numbers, letters, quantity badges, captions, decorative items, shadows or extra subjects. Exact quantities matter: every item fully visible, clearly separated by transparent gaps; no overlapping or hidden pieces. Match consistent apparent contour weight and simplify details for a group readable at145px.\nPrimary request: Exactly 4 complete separate chocolate-chip cookies in a two-by-two square arrangement, each whole and round with gently irregular baked edge and several dark-brown chocolate chips. Image2 supplies the approved cookie OBJECT DESIGN: match its golden-brown cookie silhouette, violet contour, simple chocolate chips and restrained shading, while reducing tiny details if needed for clarity. Every cookie fully visible and independently countable, with large transparent gaps. No bite marks, crumbs, milk, plate, wrapper, extra cookies or detached chocolate chips.",
+      "references": [
+        {
+          "path": "artifacts/card-regeneration/references/cat-style-reference.png",
+          "role": "approved style reference only; do not copy cat, text or scene",
+          "sha256": "0e48ebcb9346c77908b6573812ffee082e61695478f7e6d7d50f3d2ee8af693b"
+        },
+        {
+          "path": "artifacts/spanish-food-2-art/originals/cookie-v1.png",
+          "role": "approved cookie object design reference, exact selected Food2 image",
+          "sha256": "c8d21225f4aa9640ab892efb527bb349377bcea3574ebcfcb0eb945b1a972a01"
+        }
+      ]
+    }
+  ]
+}
