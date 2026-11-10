@@ -58,15 +58,3 @@ Record the actual results and any Pages service queue delay in the linked PR.
 ## Verified release state — November 8, 2026
 
 The public source notice identifies `38f6619e63707df8db411a2697f21e726ea16c7e`. Its [main Checks run](https://github.com/ajhconway/kikimashta/actions/runs/42496296871) completed successfully for both `checks` and `database`. All 40 original approved deliveries from batches 01–04 match the current activation-manifest SHA-256 hashes on the public site, resolving the old deployment/hash-verification concern recorded in #77. The manifest now contains 168 active approved illustrations in total. This read-only smoke check does not replace real-iPhone acceptance or demonstrate a new publication retry.
-
-## Offline demo (#234)
-
-Every normal publication also includes an explicitly pinned offline feature snapshot at [kikimashta.com/offline-demo/](https://kikimashta.com/offline-demo/). The root app still builds from the successful main Checks revision and keeps its own source notice, assets and domain configuration. This demo needs no Cloudflare Access gate or developer machine.
-
-`OFFLINE_DEMO_REVISION` in `pages.yml` is a full reviewed source commit. A separate `contents: read` build job checks out that snapshot with persisted credentials disabled, sets `VITE_BASE_PATH=/offline-demo/` and `VITE_STORAGE_NAMESPACE=offline-demo`, and builds with the public production cloud configuration. Demo browser storage and authentication sessions are separate from the root app; explicit app sign-in may sync with the same real account.
-
-The publication job builds main normally, downloads the successful demo job's named artifact, and runs `scripts/offline-demo-release.mjs` to validate its offline asset hashes, subpath HTML and pinned source notice. It nests the build under `dist/offline-demo/` and verifies that every original root file remains byte-identical. A generated `/offline-demo/offline-demo-release.json` identifies the demo revision and namespace. Updating the demo pin requires normal code review; later root releases retain that pin until it is deliberately changed or removed.
-
-A failed-job publication retry downloads the artifact name returned by the successful demo build job, even when that artifact belongs to an earlier attempt. The production Pages artifact continues to use its existing unique run/attempt name. Rerunning all jobs builds a fresh demo artifact for the new attempt.
-
-Focused composition check: `node --test scripts/offline-demo-release.test.mjs`. Before publishing a new demo pin, verify the actual built app and library at the subpath in Chromium and mobile WebKit, including worker scope, offline reload/audio/storage and root isolation. After publication, verify both source notices, demo release metadata and exact asset hashes. Physical-iPhone acceptance remains in #223.

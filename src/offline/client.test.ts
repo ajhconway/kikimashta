@@ -30,7 +30,7 @@ it('explicit download checks for updates even after checking an existing worker'
 });
 
 it('does not send status or removal to an ancestor worker', async () => {
-  vi.stubEnv('PROD', true); vi.stubEnv('BASE_URL', '/offline-demo/');
+  vi.stubEnv('PROD', true); vi.stubEnv('BASE_URL', '/practice/');
   const postMessage = vi.fn();
   vi.stubGlobal('navigator', { serviceWorker: {
     getRegistration: vi.fn().mockResolvedValue({ scope: new URL('/', location.href).href, active: { postMessage } }),
@@ -40,24 +40,24 @@ it('does not send status or removal to an ancestor worker', async () => {
   expect(await offlineRequest('REMOVE', [])).toMatchObject({ ready: false });
   expect(postMessage).not.toHaveBeenCalled();
 });
-it('waits for the demo worker even when ready already resolves to the root worker', async () => {
-  vi.stubEnv('PROD', true); vi.stubEnv('BASE_URL', '/offline-demo/');
-  vi.stubGlobal('__OFFLINE_VERSION__', 'demo-v1');
+it('waits for the application worker even when ready already resolves to the root worker', async () => {
+  vi.stubEnv('PROD', true); vi.stubEnv('BASE_URL', '/practice/');
+  vi.stubGlobal('__OFFLINE_VERSION__', 'app-v1');
   vi.stubGlobal('MessageChannel', class { port1 = { onmessage: vi.fn(), close() {} }; port2 = this.port1; });
-  const demoPost = vi.fn((_message: unknown, ports: { onmessage: (event: { data: unknown }) => void }[]) => {
+  const appPost = vi.fn((_message: unknown, ports: { onmessage: (event: { data: unknown }) => void }[]) => {
     queueMicrotask(() => ports[0]!.onmessage({ data: { type: 'RESULT', ready: true } }));
   });
   const rootPost = vi.fn();
   const candidate = Object.assign(new EventTarget(), { state: 'installing' });
-  const registration = { scope: new URL('/offline-demo/', location.href).href,
-    active: null as { postMessage: typeof demoPost } | null, installing: candidate };
+  const registration = { scope: new URL('/practice/', location.href).href,
+    active: null as { postMessage: typeof appPost } | null, installing: candidate };
   const ready = vi.fn(() => Promise.resolve({ active: { postMessage: rootPost } }));
   const serviceWorker = { getRegistration: vi.fn().mockResolvedValue(undefined), register: vi.fn().mockResolvedValue(registration), get ready() { return ready(); } };
   vi.stubGlobal('navigator', { serviceWorker });
   const { offlineRequest } = await import('./client');
   const downloading = offlineRequest('DOWNLOAD', []);
   await vi.waitFor(() => expect(serviceWorker.register).toHaveBeenCalledOnce());
-  registration.active = { postMessage: demoPost }; candidate.state = 'activated'; candidate.dispatchEvent(new Event('statechange'));
+  registration.active = { postMessage: appPost }; candidate.state = 'activated'; candidate.dispatchEvent(new Event('statechange'));
   expect(await downloading).toMatchObject({ ready: true });
-  expect(ready).not.toHaveBeenCalled(); expect(rootPost).not.toHaveBeenCalled(); expect(demoPost).toHaveBeenCalledOnce();
+  expect(ready).not.toHaveBeenCalled(); expect(rootPost).not.toHaveBeenCalled(); expect(appPost).toHaveBeenCalledOnce();
 });
