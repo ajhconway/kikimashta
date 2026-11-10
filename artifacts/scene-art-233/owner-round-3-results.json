@@ -1,0 +1,111 @@
+{
+  "issue": 233,
+  "round": 3,
+  "assets": [
+    {
+      "id": "ja-v-01a3c397cb20",
+      "text": "広げる",
+      "version": 4,
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the exact single unfolded map, both hands, folds, river and road markings. Move the two outward arrows DOWN so their horizontal shafts lie on the horizontal line through the MAP'S VERTICAL CENTER, midway between its upper and lower edges, one at each outer side. LEFT arrow points left, RIGHT arrow points right. Enlarge both arrows uniformly about25% from the reference, equally sized and centered symmetrically at map mid-height, not beside the hands. If needed reduce the map-and-hands cluster slightly to retain clear exterior margins and room for arrows. REMOVE ALL small plum/gold attention rays and motion ticks around both arrows and hands. Exactly two simple solid gold outward arrows with plum outlines, no other marks outside the map/hands. Preserve all other illustration features.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+          "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+          "role": "exact previous-version edit target"
+        }
+      ],
+      "ownerFeedbackRound": 3,
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v4.png",
+      "sha256": "9306e22547a0df832eb47bc88ed205f6ed0d0cfde1bd404b99327afca05ec04a",
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-6f5ed1d1-7ef2-41fb-878b-82a599510a74.png",
+      "tool": "built-in image_gen",
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-e9ad09158eb3",
+      "text": "立てる",
+      "version": 6,
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the single hand from the left, compact wooden tabletop, one figurine and single curved upward arrow at right. Replace the articulated robot with a clearly NON-POSABLE one-piece ceramic BEAR FIGURINE permanently molded to a broad flat oval plinth/base. The bear sits rigidly with paws sculpted against its body: smooth continuous surfaces, no separate arm/leg parts, no hinge circles, seams, articulation, antenna or moving joints. The solid flat lavender oval BASE is clearly visible under the golden bear and permanently attached, much wider than its feet. The hand grasps the whole rigid figurine and tips the ENTIRE statue AND attached base toward upright: one edge of its base just touches the tabletop while the opposite edge remains slightly raised, with only a modest15-degree lean. The curved gold arrow shows the whole object/base being stood upright. No isolated foot being placed, walking pose, loose separate stand, ghost or extra figurine. Clear sturdy single-piece collectible statue rather than a jointed action figure.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+          "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+          "role": "exact previous-version edit target"
+        }
+      ],
+      "ownerFeedbackRound": 3,
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+      "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4d15cf9c-7c34-4edf-ab99-8a7b807649c5.png",
+      "tool": "built-in image_gen",
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "ja-v-d72e08381953",
+      "text": "近い",
+      "version": 6,
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Retain the two-row near/far comparison. Replace BOTH trees with the SAME small friendly seated dog companion: tan-and-cream fur, floppy ears, happy soft expression, no accessories. TOP: Kiku and the dog sit very close side by side with a tiny clear gap, keep three modest gold attention rays above their closeness. BOTTOM: the same Kiku on left and the same dog on right sit far apart with a clearly large empty gap. Preserve Kiku's golden cat identity, purple headphones, simple face and paws. Kiku and dog each have consistent size/appearance across the two rows; distance alone is the contrast. Do not let the dog cover Kiku or touch/merge silhouettes. No trees, fences, ground strips, extra animals, people, arrows or duplicate ghost poses. Balanced compact comparison with all ears, tails and paws visible.",
+      "references": [
+        {
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+          "sha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+          "role": "exact previous-version edit target"
+        }
+      ],
+      "ownerFeedbackRound": 3,
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v6.png",
+      "sha256": "cbb27cda9f3118d2138446c9e64073d2c29a5c36fb63b634e2820ef8b4332a21",
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8ce866e7-20c3-4bf2-bf77-1ec7c550d6c5.png",
+      "tool": "built-in image_gen",
+      "status": "generated-pending-owner-review",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "generationAttempts": {
+    "initial": "Three built-in calls returned connection errors without images; retried built-in tool with identical prompts."
+  }
+}

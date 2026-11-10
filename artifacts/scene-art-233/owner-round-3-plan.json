@@ -3,7 +3,7 @@
   "round": 3,
   "date": "2026-11-09",
   "ownerStatement": "広げる the arrows should be centered with the map and a little larger, no attention lines needed\n近い version 4 but let's have Kiku with a friend (maybe a dog?)\n作る version 5 is ok\n立てる I want a clearly non-posable figurine with a base\n走行 I like version 7",
-  "status": "planned",
+  "status": "complete-pending-owner-review",
   "directRevisions": [
     {
       "id": "ja-v-01a3c397cb20",
@@ -52,5 +52,11 @@
     "Three new derivatives remain pending owner review.",
     "Preserve all prior PNGs and exact prompts; no new alternatives requested.",
     "Keep frozen43-card scope and active runtime unchanged."
-  ]
+  ],
+  "completion": {
+    "generatedImages": 3,
+    "newOwnerChoices": 2,
+    "totalOwnerChoices": 5,
+    "preservedGeneratedVersions": 100
+  }
 }

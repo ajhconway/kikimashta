@@ -478,7 +478,8 @@ def build(root, plan_path=None, manifest_path=None, output=None):
                             ('owner-round-1-requests.json', 'Round 1 requests'),
                             ('owner-round-1-time-requests.json', 'Round 1 time-family requests'),
                             ('owner-round-2-plan.json', 'Round 2 plan'), ('owner-round-2-requests.json', 'Round 2 requests'),
-                            ('owner-round-2-root-request.json', 'Round 2 evening request')]:
+                            ('owner-round-2-root-request.json', 'Round 2 evening request'),
+                            ('owner-round-3-plan.json', 'Round 3 plan'), ('owner-round-3-requests.json', 'Round 3 requests')]:
         source_path = review_folder / filename
         if source_path.is_file():
             if not source_path.resolve().is_relative_to(review_folder):

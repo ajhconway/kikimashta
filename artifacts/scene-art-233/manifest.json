@@ -891,7 +891,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show the same blanket folded then spread by hands; distinguish the actor's action from a broad finished surface.",
       "suitabilityRationale": "Spreading something is a change of state, not a static wide object.",
-      "ownerRevisionNote": "Keep unfolding map; add obvious outward motion cues to both hands/map edges.",
+      "ownerRevisionNote": "Center two slightly larger outward arrows vertically with the map; remove all attention lines. Preserve map and hands.",
       "versions": [
         {
           "version": 1,
@@ -965,19 +965,53 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 2,
           "visualReview": "Exact map and hand composition retained; clear gold outward arrows on left/right sides plus motion strokes."
+        },
+        {
+          "id": "ja-v-01a3c397cb20",
+          "text": "広げる",
+          "version": 4,
+          "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the exact single unfolded map, both hands, folds, river and road markings. Move the two outward arrows DOWN so their horizontal shafts lie on the horizontal line through the MAP'S VERTICAL CENTER, midway between its upper and lower edges, one at each outer side. LEFT arrow points left, RIGHT arrow points right. Enlarge both arrows uniformly about25% from the reference, equally sized and centered symmetrically at map mid-height, not beside the hands. If needed reduce the map-and-hands cluster slightly to retain clear exterior margins and room for arrows. REMOVE ALL small plum/gold attention rays and motion ticks around both arrows and hands. Exactly two simple solid gold outward arrows with plum outlines, no other marks outside the map/hands. Preserve all other illustration features.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+              "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+              "role": "exact previous-version edit target"
+            }
+          ],
+          "ownerFeedbackRound": 3,
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v4.png",
+          "sha256": "9306e22547a0df832eb47bc88ed205f6ed0d0cfde1bd404b99327afca05ec04a",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-6f5ed1d1-7ef2-41fb-878b-82a599510a74.png",
+          "tool": "built-in image_gen",
+          "status": "generated-pending-owner-review",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
-      "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Keep the exact ONE MAP and TWO HANDS, accordion folds and river/roads/terrain unchanged. Make the outward unfolding action MUCH MORE OBVIOUS: replace the tiny nondescript strokes beside hands with TWO CLEAR SHORT GOLD ARROWS, one immediately outside the left hand pointing LEFT and one immediately outside the right hand pointing RIGHT. Arrowheads point away from map center, balanced size, clean plum outlines. Add one or two tiny outward speed strokes behind each hand if needed. Both hands still grip map edges; no duplicate/ghost map or hand. Keep all arrows within generous square transparent margins.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v4.png",
+      "sha256": "9306e22547a0df832eb47bc88ed205f6ed0d0cfde1bd404b99327afca05ec04a",
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the exact single unfolded map, both hands, folds, river and road markings. Move the two outward arrows DOWN so their horizontal shafts lie on the horizontal line through the MAP'S VERTICAL CENTER, midway between its upper and lower edges, one at each outer side. LEFT arrow points left, RIGHT arrow points right. Enlarge both arrows uniformly about25% from the reference, equally sized and centered symmetrically at map mid-height, not beside the hands. If needed reduce the map-and-hands cluster slightly to retain clear exterior margins and room for arrows. REMOVE ALL small plum/gold attention rays and motion ticks around both arrows and hands. Exactly two simple solid gold outward arrows with plum outlines, no other marks outside the map/hands. Preserve all other illustration features.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v2.png",
-          "sha256": "e414e68857d8b49b77ace27608e1c4f6a6a224161880786159ed9920cb022d2e",
-          "role": "edit target for single owner-directed refinement"
+          "path": "artifacts/scene-art-233/ja-v-01a3c397cb20-v3.png",
+          "sha256": "6b03d8f26ff80b427f0ec5a63f8be9e95a94bfe6133d40511301cfe69139dc09",
+          "role": "exact previous-version edit target"
         }
       ],
-      "selectedVersion": 3,
+      "selectedVersion": 4,
       "image": {
         "width": 1254,
         "height": 1254,
@@ -985,9 +1019,15 @@
         "alphaRange": [
           0,
           255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
         ]
       },
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-243a5db7-d478-4724-ac69-3d32c739edea.png"
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-6f5ed1d1-7ef2-41fb-878b-82a599510a74.png"
     },
     {
       "id": "ja-v-bb8fc62cf23d",
@@ -1986,7 +2026,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Use matched near/far arrangements with identical objects and the same scale; a lone short arrow is insufficient.",
       "suitabilityRationale": "Proximity is visible only relative to a fixed reference and a contrasting distance.",
-      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
+      "ownerRevisionNote": "Preserve near/far contrast; replace both trees with the same friendly dog companion, keeping Kiku next to dog above and far apart below.",
       "versions": [
         {
           "version": 1,
@@ -2159,16 +2199,50 @@
               0
             ]
           }
+        },
+        {
+          "id": "ja-v-d72e08381953",
+          "text": "近い",
+          "version": 6,
+          "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Retain the two-row near/far comparison. Replace BOTH trees with the SAME small friendly seated dog companion: tan-and-cream fur, floppy ears, happy soft expression, no accessories. TOP: Kiku and the dog sit very close side by side with a tiny clear gap, keep three modest gold attention rays above their closeness. BOTTOM: the same Kiku on left and the same dog on right sit far apart with a clearly large empty gap. Preserve Kiku's golden cat identity, purple headphones, simple face and paws. Kiku and dog each have consistent size/appearance across the two rows; distance alone is the contrast. Do not let the dog cover Kiku or touch/merge silhouettes. No trees, fences, ground strips, extra animals, people, arrows or duplicate ghost poses. Balanced compact comparison with all ears, tails and paws visible.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+              "sha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+              "role": "exact previous-version edit target"
+            }
+          ],
+          "ownerFeedbackRound": 3,
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v6.png",
+          "sha256": "cbb27cda9f3118d2138446c9e64073d2c29a5c36fb63b634e2820ef8b4332a21",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8ce866e7-20c3-4bf2-bf77-1ec7c550d6c5.png",
+          "tool": "built-in image_gen",
+          "status": "generated-pending-owner-review",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v2.png",
-      "sha256": "93039cbaf1cfedc214dbe22323a044a0213de1b05af45ad534c53c6987429b23",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 canvas, real transparent background. Edit this vocabulary illustration in the same friendly rounded plum-outline style with restrained shading within objects. Keep the whole compact scene uncut, generous transparent margins and crisp edges at thumbnail size. No exterior glow, haze, background wash, cast shadow, checkerboard, frame, words, captions, letters or numerals. Replace houses/tree with TWO MATCHED BENCH-AND-FLOWERPOT arrangements. Same ordinary small wooden park BENCH and same small terracotta FLOWERPOT holding a simple pink flower in BOTH arrangements, identical sizes/colors/viewpoint. TOP dominant arrangement: flowerpot is VERY CLOSE to bench leg, a narrow but visible gap; three small GOLD ATTENTION RAYS emphasize that near gap. BOTTOM comparison: the identical flowerpot is farther from the identical bench with a much larger visible gap. Fixed scale so only distance changes. Compact vertical grouping in a square, each whole bench/flowerpot visible. No people, house, tree, distance numerals, labels, ruler or large arrow.\nExport priority: SQUARE canvas, genuine transparent alpha outside complete silhouettes, no exterior haze or glow.",
+      "path": "artifacts/scene-art-233/ja-v-d72e08381953-v6.png",
+      "sha256": "cbb27cda9f3118d2138446c9e64073d2c29a5c36fb63b634e2820ef8b4332a21",
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Retain the two-row near/far comparison. Replace BOTH trees with the SAME small friendly seated dog companion: tan-and-cream fur, floppy ears, happy soft expression, no accessories. TOP: Kiku and the dog sit very close side by side with a tiny clear gap, keep three modest gold attention rays above their closeness. BOTTOM: the same Kiku on left and the same dog on right sit far apart with a clearly large empty gap. Preserve Kiku's golden cat identity, purple headphones, simple face and paws. Kiku and dog each have consistent size/appearance across the two rows; distance alone is the contrast. Do not let the dog cover Kiku or touch/merge silhouettes. No trees, fences, ground strips, extra animals, people, arrows or duplicate ghost poses. Balanced compact comparison with all ears, tails and paws visible.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v1.png",
-          "sha256": "72d506556142b08bcf7bf3237ed3ba679c83cec53e5e826d3ca20c7233b46b71",
-          "role": "edit target"
+          "path": "artifacts/scene-art-233/ja-v-d72e08381953-v4.png",
+          "sha256": "e157e637b5edec34e133203f36c3d18ff35e0005b71ffad5127619d5e1370560",
+          "role": "exact previous-version edit target"
         }
       ],
       "image": {
@@ -2178,15 +2252,16 @@
         "alphaRange": [
           0,
           255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
         ]
       },
-      "selectedVersion": 2,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-d03a0483-b895-413b-8282-219ce5c32acf.png",
-      "alternativeVersions": [
-        3,
-        4,
-        5
-      ]
+      "selectedVersion": 6,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-8ce866e7-20c3-4bf2-bf77-1ec7c550d6c5.png"
     },
     {
       "id": "ja-v-ceaf3971ff83",
@@ -2973,11 +3048,11 @@
       "reading": "つくる",
       "meaning": "To Make",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "owner-selected",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show hands assembling materials into a simple model, with a compact before-and-after sequence; avoid a finished object alone.",
       "suitabilityRationale": "Construction or preparation is visible if the resulting product follows an observable making process.",
-      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
+      "ownerRevisionNote": "Owner selected the wooden toy-car construction image (version5).",
       "versions": [
         {
           "version": 1,
@@ -3144,7 +3219,7 @@
               255
             ]
           },
-          "status": "candidate-pending-owner-review",
+          "status": "owner-selected",
           "ownerFeedbackRound": 2,
           "role": "alternative",
           "qualityReview": {
@@ -3241,14 +3316,14 @@
           }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v1.png",
-      "sha256": "732ea3add63323883a37016fa18b718f714c9a9ddc02d3255640f1df6378296f",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. Two hands ASSEMBLE a small house from simple gold/lavender building blocks. Small loose pieces at left, dominant nearly completed house at right, hand places final roof block; a short simple arrow connects process. Entire house and hands visible, no whole person, paper labels or tools. Clearly making, not finished model alone. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+      "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. WOODWORKING / MAKING concept related to the birdhouse reference, but replace subject with a small WOODEN TOY CAR being assembled. Two adult hands actively fit a chunky round wooden wheel onto a clearly visible axle protruding from the partly assembled car body. Other wheels already attached so car form is recognizable; one spare wheel and one small wood piece nearby at most. Natural warm pale wood with subtle grain, gold/lavender sleeve cuffs. The fitting joint/contact is clearly visible; three short restrained action strokes near it. Compact low workbench footprint, no whole person, labels, screws scattered everywhere, ghost parts or finished duplicate toy.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/references/style-person.png",
-          "role": "style reference only",
-          "sha256": "b26b917cda8d07068cdb1ba0eab2c07adb413252448ec372e20dbd5db89d24c5"
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v3.png",
+          "role": "prior birdhouse alternative B; woodworking theme, materials and illustration style reference",
+          "sha256": "8690f01a3da0cd623a4d9b0ccf4770a20890691bc5f6b48977399ab13b91b0f4"
         }
       ],
       "image": {
@@ -3260,13 +3335,17 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-f2e53e14-d7c4-48d7-8312-63a0253b6194.png",
-      "alternativeVersions": [
-        5,
-        6,
-        7
-      ]
+      "selectedVersion": 5,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-69fe17bb-27e7-45b7-966a-9174e48c45de.png",
+      "ownerChoice": {
+        "version": 5,
+        "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+        "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e",
+        "ownerStatement": "作る version 5 is ok",
+        "round": 3,
+        "date": "2026-11-09",
+        "status": "owner-selected"
+      }
     },
     {
       "id": "ja-v-40179481fcf6",
@@ -3407,7 +3486,7 @@
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show hands turning the same horizontal object upright; exclude a person simply standing as an equivalent picture.",
       "suitabilityRationale": "Setting an object upright is visible if the actor and orientation change are shown.",
-      "ownerRevisionNote": "Adapt alternativeB bottle upright: a hand setting a toy figurine upright instead, clear upright action.",
+      "ownerRevisionNote": "Replace articulated robot with a clearly rigid one-piece animal figurine permanently attached to a flat base; one hand setting the base upright on the table.",
       "versions": [
         {
           "version": 1,
@@ -3575,16 +3654,50 @@
           "status": "generated-pending-owner-review",
           "ownerFeedbackRound": 2,
           "visualReview": "Bottle replaced by one gold/lavender robot toy figurine; hand grips torso and tilts it upright onto table, original curved arrow preserved."
+        },
+        {
+          "id": "ja-v-e9ad09158eb3",
+          "text": "立てる",
+          "version": 6,
+          "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the single hand from the left, compact wooden tabletop, one figurine and single curved upward arrow at right. Replace the articulated robot with a clearly NON-POSABLE one-piece ceramic BEAR FIGURINE permanently molded to a broad flat oval plinth/base. The bear sits rigidly with paws sculpted against its body: smooth continuous surfaces, no separate arm/leg parts, no hinge circles, seams, articulation, antenna or moving joints. The solid flat lavender oval BASE is clearly visible under the golden bear and permanently attached, much wider than its feet. The hand grasps the whole rigid figurine and tips the ENTIRE statue AND attached base toward upright: one edge of its base just touches the tabletop while the opposite edge remains slightly raised, with only a modest15-degree lean. The curved gold arrow shows the whole object/base being stood upright. No isolated foot being placed, walking pose, loose separate stand, ghost or extra figurine. Clear sturdy single-piece collectible statue rather than a jointed action figure.",
+          "references": [
+            {
+              "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+              "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+              "role": "exact previous-version edit target"
+            }
+          ],
+          "ownerFeedbackRound": 3,
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+          "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+          "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4d15cf9c-7c34-4edf-ab99-8a7b807649c5.png",
+          "tool": "built-in image_gen",
+          "status": "generated-pending-owner-review",
+          "image": {
+            "width": 1254,
+            "height": 1254,
+            "mode": "RGBA",
+            "alphaRange": [
+              0,
+              255
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
-      "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
-      "prompt": "Use case: precise-object-edit. SQUARE 1:1 transparent PNG. Make only the requested targeted change to this friendly rounded plum-outline vocabulary illustration. Preserve all other subjects, poses, colors, proportions, viewpoint and compact composition. Real transparent alpha outside the complete silhouettes, no backdrop, glow, haze, shadow wash, text, labels or numeral. Replace ONLY the lavender capped BOTTLE with a small recognizable TOY ROBOT FIGURINE being SET UPRIGHT by the same single human hand. Robot has rounded gold head, friendly simple face, lavender torso, two short arms and two distinct feet. The hand naturally grips its torso from the same left side. Figurine starts slightly tilted as the bottle was; one foot touches the tabletop and the other is about to settle, showing the hand straightening it to stand on its own. Keep the existing curved upward arrow at right to indicate setting upright, same table, hand/sleeve, proportions and viewpoint. One figurine only, no bottle cap, spare pieces, duplicate/ghost pose, separate stand or extra hand. Friendly toy, not a real person. All complete on square transparency.\nSquare format and genuine transparent exterior are required; preserve all unrelated details.",
+      "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v6.png",
+      "sha256": "8bd52ef8e8338c6d4e145441a250a088c04da0e49032aa0a3b1d55168ee87aa0",
+      "prompt": "Use case: precise-object-edit. Asset: Japanese listening vocabulary illustration. Input image1 is the exact edit target. Preserve the friendly rounded plum outlines, clean opaque fills, restrained shading, warm gold/lavender palette and clear small-card readability. Square1:1 PNG with genuinely transparent exterior and generous margins. No words, labels, numerals, calendar, panel, checkerboard, watermark, exterior glow or shadow. Keep the single hand from the left, compact wooden tabletop, one figurine and single curved upward arrow at right. Replace the articulated robot with a clearly NON-POSABLE one-piece ceramic BEAR FIGURINE permanently molded to a broad flat oval plinth/base. The bear sits rigidly with paws sculpted against its body: smooth continuous surfaces, no separate arm/leg parts, no hinge circles, seams, articulation, antenna or moving joints. The solid flat lavender oval BASE is clearly visible under the golden bear and permanently attached, much wider than its feet. The hand grasps the whole rigid figurine and tips the ENTIRE statue AND attached base toward upright: one edge of its base just touches the tabletop while the opposite edge remains slightly raised, with only a modest15-degree lean. The curved gold arrow shows the whole object/base being stood upright. No isolated foot being placed, walking pose, loose separate stand, ghost or extra figurine. Clear sturdy single-piece collectible statue rather than a jointed action figure.",
       "references": [
         {
-          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v3.png",
-          "sha256": "758a57bd715b48de3d15453a7e1b4e663251f84f28c24c48868dfa6582cea616",
-          "role": "edit target for single owner-directed refinement"
+          "path": "artifacts/scene-art-233/ja-v-e9ad09158eb3-v5.png",
+          "sha256": "f45b00f43e01b79af7993fd7f9fe1a8c0d5525ba63a1dabb65d8f6e500c4adf0",
+          "role": "exact previous-version edit target"
         }
       ],
       "image": {
@@ -3594,10 +3707,16 @@
         "alphaRange": [
           0,
           255
+        ],
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
         ]
       },
-      "selectedVersion": 5,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-2e56-7fa2-88ef-1fcfd7665c5a/exec-4010385a-8c7d-4219-aa0d-45e85458ef56.png"
+      "selectedVersion": 6,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1be9e-87e8-77f1-a1b2-dfe6ed11bdfa/exec-4d15cf9c-7c34-4edf-ab99-8a7b807649c5.png"
     },
     {
       "id": "ja-v-bd365f430f35",
@@ -3915,11 +4034,11 @@
       "reading": "そうこう",
       "meaning": "Traveling",
       "level": 5,
-      "status": "generated-pending-owner-review",
+      "status": "owner-selected",
       "sourceKind": "generated",
       "suitabilityRecommendation": "Show the same vehicle progressing along a road in a short sequence; clarify the gloss as vehicle travel or running rather than travel in general.",
       "suitabilityRationale": "Vehicle movement can be observed, whereas a travel scene may incorrectly suggest tourism.",
-      "ownerRevisionNote": "Three new round 2 concepts are offered below for owner choice; the previous selected image is retained for comparison.",
+      "ownerRevisionNote": "Owner selected the map, vehicle and sticker-covered luggage image (version7).",
       "versions": [
         {
           "version": 1,
@@ -4170,7 +4289,7 @@
               255
             ]
           },
-          "status": "candidate-pending-owner-review",
+          "status": "owner-selected",
           "ownerFeedbackRound": 2,
           "role": "alternative",
           "qualityReview": {
@@ -4186,9 +4305,9 @@
           }
         }
       ],
-      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v1.png",
-      "sha256": "3e1d7380db88422d5259340778b03b90706b951b12b291e9f290204a8294416d",
-      "prompt": "Use case: scientific-educational. Asset: one Japanese listening vocabulary illustration. Input image 1 is STYLE REFERENCE ONLY: match the friendly rounded plum outlines, simple clear forms, restrained interior shading and warm gold/lavender accent palette; replace its subject with the requested scene. Use natural subject colors. Square 1:1 canvas, whole compact scene visible with generous genuinely transparent exterior margins and transparent gaps; preserve opaque subject fills. Clear at small card size. No backdrop rectangle, painted sky panel, checkerboard, calendar, page, frame, caption, labels, words, letters, numerals, watermark, glow, haze or exterior shadow. Use only the minimal scene required. A simple lavender compact car TRAVELS along a short gently curving isolated road strip. Solid car in forward position, subtle motion streaks and one subdued earlier silhouette behind show progression. No luggage, map, airplane, tourist landmarks or holiday symbols. Vehicle travel, no speedometer/numbers/text. Output format priority: a SQUARE 1:1 PNG canvas, not landscape or portrait. Fit the entire compact composition inside the square with transparent margins; keep all subjects and comparison elements uncut.",
+      "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+      "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+      "prompt": "Use case: scientific-educational. Create ONE vocabulary illustration on a strictly SQUARE 1:1 canvas with genuine transparent background, transparent gaps and ample clear exterior margins. Match the reference's friendly rounded plum outlines, clean simple forms, restrained interior shading, natural subject colors and warm gold/lavender accents. All subjects fit fully inside a compact composition. No backdrop rectangle, background wash, glow, haze, exterior shadow, frame, caption, calendar, labels, words, letters, numerals, watermark, duplicate motion ghost or faded starting object. Use only the minimum scene elements stated. TRAVEL ROUTE / LUGGAGE concept C: ONE open paper ROAD TRAVEL MAP lies at an attractive shallow angle, pale-green land with a simple blue river and broad roads. A dominant GOLD route connects TWO plum location pins; a single tiny LAVENDER CAR is visibly driving along that highlighted route with two short movement strokes. ONE gold wheeled SUITCASE with lavender handle stands beside map's lower-right corner, carrying FOUR large picture-only stickers of sun, mountain, palm tree and star. Map route, car and luggage all readable at card size. Absolutely NO words, letters, numbers, dates, calendar grid, fake writing, luggage labels or text-bearing sticker. No ghost car, airplane, passport, extra luggage or background.",
       "references": [
         {
           "path": "artifacts/scene-art-233/references/style-object.png",
@@ -4205,22 +4324,26 @@
           255
         ]
       },
-      "selectedVersion": 1,
-      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-8923ba3d-6867-4923-b7bb-89737bbd1fcf.png",
-      "alternativeVersions": [
-        5,
-        6,
-        7
-      ]
+      "selectedVersion": 7,
+      "generatorSource": "/Users/ajhconway/.codex/generated_images/01a1c218-f01c-7083-8a55-e22011c02f90/exec-43826181-d40c-461e-8588-924dddee2d94.png",
+      "ownerChoice": {
+        "version": 7,
+        "path": "artifacts/scene-art-233/ja-v-fa26a112a479-v7.png",
+        "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c",
+        "ownerStatement": "走行 I like version 7",
+        "round": 3,
+        "date": "2026-11-09",
+        "status": "owner-selected"
+      }
     }
   ],
-  "generatedVersionCount": 97,
+  "generatedVersionCount": 100,
   "readyAssetCount": 43,
   "checks": {
     "scope": "43 exact staged-picture IDs from frozen review;24 active updated IDs excluded.",
     "runtime": "No active artwork, vocabulary eligibility, answer formats, audio or progress modified.",
     "selectedImageSha256": "All43 selected PNG hashes verified against files;42 unique selected images.",
-    "originals": "All97 generated PNG versions and every earlier selected source remain preserved; all current/version/reference/original-source hashes verified.",
+    "originals": "All100 generated PNG versions and every earlier selected source remain preserved; all current/version/reference/original-source hashes verified.",
     "transparency": "All displayed sources are square RGBA with transparent exterior; recorded trace alpha1 corners are visually imperceptible in native rendering.",
     "reuses": "Puppy v2 and Few v2 exact approved PR110 bytes, plus exact Spanish Basic Kiku-inside v2 source for中; source approvals remain separate from this batch.",
     "sharedImages": "休む selects exactly the new休み image path/hash.",
@@ -4237,23 +4360,13 @@
         ]
       },
       {
-        "text": "作る option A",
+        "text": "作る",
         "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
         "cornerAlpha": [
           0,
           0,
           1,
           0
-        ]
-      },
-      {
-        "text": "作る option C",
-        "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v7.png",
-        "cornerAlpha": [
-          0,
-          0,
-          0,
-          1
         ]
       }
     ],
@@ -4263,21 +4376,21 @@
         "mobile WebKit"
       ],
       "cards": 43,
-      "alternativeSets": 3,
-      "alternativeImages": 9,
+      "alternativeSets": 0,
+      "alternativeImages": 0,
       "timeFamilyImages": 4,
-      "imagesDecodedPerEngine": 56,
-      "distinctLocalResourcesPerEngine": 115,
+      "imagesDecodedPerEngine": 47,
+      "distinctLocalResourcesPerEngine": 120,
       "sourceFilterCounts": {
         "generated": 39,
         "existing-approved": 3,
         "shared-new": 1
       },
-      "ownerSelectedVersions": 3,
-      "search": "Passed for all3 active option sets and the reused Kiku inside card.",
+      "ownerSelectedVersions": 5,
+      "search": "Passed for the three revised cards and reused Kiku inside card.",
       "horizontalOverflow": false,
       "duplicateElementIds": 0,
-      "visualInspection": "All17 round2 outputs reviewed individually and in native contact sheets; mobile A/B/C alternatives and the sunrise/early-evening/night strip are clear."
+      "visualInspection": "All3 round3 outputs inspected individually and in native mobile card screenshots; map arrows centered/larger without attention rays, consistent Kiku/dog near-far comparison, rigid bear figurine permanently attached to an oval base."
     },
     "builderFixtures": "Absent/partial/complete manifests render;16 scope, identity, hash, path, source-revision and frozen-review tampering cases reject before output replacement.",
     "postPictureReleaseScopeAudit": {
@@ -4401,7 +4514,80 @@
       "unmentionedAssetRecordsUnchanged": 29,
       "checks": "All97 generator originals and every selected/version/reference hash verified; 27 artwork tests and7 persisted builder tests passed (32 invalid binding subcases and changed-file rejection).",
       "timeOfDay": "Early evening retains shared landscape with blue-hour light, lit windows and a returning-home adult, removing the sunset sun/arrow. Night proposal/reference unchanged.",
-      "runtime": "No activation or app changes; forty selections plus relatedNight await review."
+      "runtime": "No activation or app changes; forty selections plus relatedNight await review.",
+      "nativeBrowserReview": {
+        "engines": [
+          "Chromium",
+          "mobile WebKit"
+        ],
+        "cards": 43,
+        "alternativeSets": 3,
+        "alternativeImages": 9,
+        "timeFamilyImages": 4,
+        "imagesDecodedPerEngine": 56,
+        "distinctLocalResourcesPerEngine": 115,
+        "sourceFilterCounts": {
+          "generated": 39,
+          "existing-approved": 3,
+          "shared-new": 1
+        },
+        "ownerSelectedVersions": 3,
+        "search": "Passed for all3 active option sets and the reused Kiku inside card.",
+        "horizontalOverflow": false,
+        "duplicateElementIds": 0,
+        "visualInspection": "All17 round2 outputs reviewed individually and in native contact sheets; mobile A/B/C alternatives and the sunrise/early-evening/night strip are clear."
+      },
+      "exteriorCornerAlphaExceptions": [
+        {
+          "text": "立つ",
+          "path": "artifacts/scene-art-233/ja-v-17e3177c62d5-v1.png",
+          "cornerAlpha": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "text": "作る option A",
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v5.png",
+          "cornerAlpha": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "text": "作る option C",
+          "path": "artifacts/scene-art-233/ja-v-a4ccf0b7bace-v7.png",
+          "cornerAlpha": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "ownerRound3": {
+      "generatedImages": 3,
+      "newOwnerSelectedImages": [
+        {
+          "text": "作る",
+          "version": 5,
+          "sha256": "019f2335fa2088fd193bb04ca95639f754cb1f4bbbf06d2bc05602c5616e566e"
+        },
+        {
+          "text": "走行",
+          "version": 7,
+          "sha256": "75b506b6f813ae3d7313c4cbffdbcdbc2b751a42986a3d63abe1a17d0a5fe26c"
+        }
+      ],
+      "totalOwnerSelectedImages": 5,
+      "unmentionedAssetRecordsUnchanged": 38,
+      "checks": "All100 generator originals and every selected/version/reference hash verified;27 artwork tests and7 persisted builder tests passed.",
+      "runtime": "No activation or app changes;38 current selections and relatedNight await review."
     }
   },
   "ownerFeedback": [
@@ -4425,6 +4611,16 @@
       "generatedImageCount": 17,
       "explicitOwnerChoiceCount": 3,
       "alternativeImageCount": 9,
+      "activationAuthorized": false
+    },
+    {
+      "round": 3,
+      "date": "2026-11-09",
+      "ownerStatement": "広げる the arrows should be centered with the map and a little larger, no attention lines needed\n近い version 4 but let's have Kiku with a friend (maybe a dog?)\n作る version 5 is ok\n立てる I want a clearly non-posable figurine with a base\n走行 I like version 7",
+      "status": "revised-pending-owner-review",
+      "generatedImageCount": 3,
+      "explicitOwnerChoiceCount": 2,
+      "alternativeImageCount": 0,
       "activationAuthorized": false
     }
   ],
@@ -4467,5 +4663,5 @@
   ],
   "originalExpectedNewImageCount": 40,
   "originalExistingApprovedReuseCount": 2,
-  "alternativeImageCount": 9
+  "alternativeImageCount": 0
 }
