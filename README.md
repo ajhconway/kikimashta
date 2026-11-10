@@ -75,6 +75,8 @@ Each card has a collapsible **Your feedback** box that saves as you type in this
 
 `npm run content:illustrate` regenerates illustrations and scene metadata. `npm run content:library` validates media and builds the static library. The explicit `--allow-missing-audio` option is for previews only: absent recordings are visibly disabled. New speech generation and staging use the documented ElevenLabs tools; retired historical recordings are recoverable from Git history.
 
+By default, the coordinating agent pushes verified changes and enables pull request auto-merge, preserving required checks and reviews. Agents finish without waiting for merge or deployment unless asked to monitor them; see [agent working agreements](AGENTS.md).
+
 ## License and media
 
 Copyright (c) 2026 Alex Conway. The project's own code and documentation are licensed under [GNU AGPLv3 only](LICENSE) (`AGPL-3.0-only`), except where separate terms are identified. Commercial use is permitted subject to the license's conditions, including applicable source-sharing requirements. See [NOTICE](NOTICE) for scope and history.
