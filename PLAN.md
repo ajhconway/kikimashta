@@ -473,3 +473,7 @@ The human action revision is complete: six selected v2 people scenes, with a cle
 The owner identified the dibujar flower as upside down. Edit only that picture: rotate the flower within the paper plane so it is upright from the drawing person’s viewpoint (blossom toward the viewer/front desk edge, stem base toward the person). Preserve the complete v2 round and its provenance; select a separate draw-v3 original/record bound by an exact amendment and current manifest snapshot. Keep the other35 selected pictures unchanged. No audio or runtime activation.
 
 The drawing correction is complete at draw-v3: flower upright for the artist, other35selected image hashes unchanged. Exact source/alpha/history checks and configured checks pass, including17gallery regressions; independent visual/provenance review finds no blockers. Await owner artwork feedback.
+
+### Travel5 artwork acceptance and audio authorization (#243)
+
+The owner accepted all current artwork and requested audio: “Looks good, let’s proceed to audio generation.” Bind the exact36 selected pictures (including the five humanv2 scenes and draw-v3) and generate all36 canonical words in the eight established regional voices:288 clips, 2000 Unicode input characters, conservative 2400-credit projected budget. Preserve every provider original/request/account usage privately, use the existing fixed loudness profile, and prepare the complete picture/listening review with region/voice filters. Keep secrets through the shared ElevenLabs loader. Listening acceptance and runtime activation remain separate.
