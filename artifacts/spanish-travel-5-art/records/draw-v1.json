@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-draw",
+  "slug": "draw",
+  "version": 1,
+  "path": "originals/draw-v1.png",
+  "sha256": "e83ce17d6bdaa71f4ffe996f41f81c1af29108319a57150f542e781493e994e0",
+  "promptSha256": "e94bbf2ac8ed77dc9b6acac8dd8cb3eb594026201ea57a448c529b751bdffddf",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d2d65add-4315-450e-ab02-ce509e29ce30.png",
+  "references": [
+    {
+      "path": "public/brand/kikimashta-cat-v1.png",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "role": "character-identity-and-style"
+    }
+  ]
+}

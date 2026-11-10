@@ -1,0 +1,3496 @@
+{
+  "manifestSha256": "9653d829baeaf6c6f7a33698d766e00942fc58e9d3c88e76bbadcc7859368f4f",
+  "results": [
+    {
+      "engine": "chromium",
+      "words": 36,
+      "pictures": 36,
+      "nativePlayback": {
+        "passed": [
+          {
+            "id": "es-419-travel-theater",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.047266
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "juan",
+            "duration": 0.8,
+            "currentTime": 0.048378
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.048482
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.048638
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.045782
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.045983
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.04608
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.046159
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.043585
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.04378
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "albeiro",
+            "duration": 1.04,
+            "currentTime": 0.043878
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.044016
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.046694
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.04688
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.046978
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.047053
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.046843
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.047041
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.045835
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.045914
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.043743
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.043934
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.044029
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.0441
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.044057
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.044247
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.044359
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "albeiro",
+            "duration": 1.04,
+            "currentTime": 0.043135
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "santiago",
+            "duration": 1.12,
+            "currentTime": 0.047023
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.047225
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "agustina",
+            "duration": 1.04,
+            "currentTime": 0.04733
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.046101
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.04591
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "albeiro",
+            "duration": 1.12,
+            "currentTime": 0.046089
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "juan",
+            "duration": 1.12,
+            "currentTime": 0.046188
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.046271
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.046062
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "carlos-figueroa",
+            "duration": 1.12,
+            "currentTime": 0.046237
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.046328
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "veronica",
+            "duration": 1.12,
+            "currentTime": 0.046412
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.044689
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.044881
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.045008
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.045099
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.046514
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.046711
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.046802
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.046884
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.047339
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "pamela",
+            "duration": 0.8,
+            "currentTime": 0.047546
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "albeiro",
+            "duration": 0.72,
+            "currentTime": 0.04765
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "carito",
+            "duration": 0.72,
+            "currentTime": 0.046429
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "carlos-figueroa",
+            "duration": 0.72,
+            "currentTime": 0.04371
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "santiago",
+            "duration": 0.72,
+            "currentTime": 0.043892
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.043997
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.044089
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "pamela",
+            "duration": 1.12,
+            "currentTime": 0.043954
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "juan",
+            "duration": 1.2,
+            "currentTime": 0.04415
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "albeiro",
+            "duration": 1.2,
+            "currentTime": 0.04424
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "carito",
+            "duration": 1.28,
+            "currentTime": 0.044322
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.044445
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "agustina",
+            "duration": 1.04,
+            "currentTime": 0.044625
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "carlos-figueroa",
+            "duration": 1.12,
+            "currentTime": 0.044753
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "veronica",
+            "duration": 1.12,
+            "currentTime": 0.044845
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.045827
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.046001
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.04612
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.046215
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.044739
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.044914
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.045052
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.045141
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.043051
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.043253
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.043383
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.043525
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.045934
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.046132
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.046252
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.046355
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.044476
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "pamela",
+            "duration": 0.8,
+            "currentTime": 0.044655
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "albeiro",
+            "duration": 0.8,
+            "currentTime": 0.044765
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.044863
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.04703
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.047193
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.047277
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.047357
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.045435
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.045619
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.045724
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "albeiro",
+            "duration": 1.12,
+            "currentTime": 0.045802
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.043662
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.043845
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.043941
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.044022
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.046487
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.046677
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "albeiro",
+            "duration": 1.04,
+            "currentTime": 0.046855
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.046967
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.043023
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.043221
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.043326
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.043401
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "juan",
+            "duration": 0.8,
+            "currentTime": 0.025082
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "pamela",
+            "duration": 0.72,
+            "currentTime": 0.025237
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.025351
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "carito",
+            "duration": 0.8,
+            "currentTime": 0.025497
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.044684
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.044842
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.044962
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.045067
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.045875
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.046066
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.046171
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "carito",
+            "duration": 0.96,
+            "currentTime": 0.046256
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.04567
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.045886
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.046006
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.046109
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.045645
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.045864
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "albeiro",
+            "duration": 1.04,
+            "currentTime": 0.045971
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.046073
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.04662
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.046805
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.046911
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.045706
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "juan",
+            "duration": 0.88,
+            "currentTime": 0.045282
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.045484
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "carito",
+            "duration": 0.8,
+            "currentTime": 0.045588
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.04567
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.042114
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.042296
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.042382
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "veronica",
+            "duration": 0.8,
+            "currentTime": 0.042462
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "juan",
+            "duration": 0.8,
+            "currentTime": 0.041162
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.041339
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.041425
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.041509
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.045439
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.045643
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.045765
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.045861
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.044555
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.044776
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "albeiro",
+            "duration": 1.12,
+            "currentTime": 0.044884
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.044966
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.046454
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.04664
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.04678
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.046891
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.047951
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.048144
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.046999
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.047159
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.04655
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.046788
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "veronica",
+            "duration": 1.12,
+            "currentTime": 0.046891
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.04698
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "juan",
+            "duration": 1.12,
+            "currentTime": 0.045191
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "albeiro",
+            "duration": 1.04,
+            "currentTime": 0.045389
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "pamela",
+            "duration": 1.12,
+            "currentTime": 0.045498
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.045589
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.044047
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "agustina",
+            "duration": 1.04,
+            "currentTime": 0.044276
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "veronica",
+            "duration": 1.2,
+            "currentTime": 0.044393
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.044508
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "juan",
+            "duration": 0.8,
+            "currentTime": 0.046607
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "pamela",
+            "duration": 0.8,
+            "currentTime": 0.046831
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.046961
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.047053
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.046625
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.046811
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.046907
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.047013
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.045313
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.045484
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.045587
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.045679
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.045935
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "agustina",
+            "duration": 0.96,
+            "currentTime": 0.04617
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.046281
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.04638
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.046016
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.046294
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "albeiro",
+            "duration": 0.8,
+            "currentTime": 0.046431
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.04654
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.047026
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.047236
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.047407
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.047579
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.045103
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.045287
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.045397
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.045492
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.045616
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.045836
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "santiago",
+            "duration": 0.96,
+            "currentTime": 0.045935
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.046034
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.043866
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "juan",
+            "duration": 0.88,
+            "currentTime": 0.04407
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.044178
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.044296
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.044164
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.044379
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.044483
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.044571
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "juan",
+            "duration": 0.88,
+            "currentTime": 0.045715
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "pamela",
+            "duration": 0.8,
+            "currentTime": 0.045901
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "albeiro",
+            "duration": 0.72,
+            "currentTime": 0.045998
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "carito",
+            "duration": 0.8,
+            "currentTime": 0.046093
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.04553
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.045697
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.04579
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.045867
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.046006
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.046201
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "carito",
+            "duration": 1.12,
+            "currentTime": 0.046294
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.046498
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "agustina",
+            "duration": 1.04,
+            "currentTime": 0.044145
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.044364
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.044465
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.044579
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.04544
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "albeiro",
+            "duration": 1.12,
+            "currentTime": 0.045648
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.045739
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "pamela",
+            "duration": 1.04,
+            "currentTime": 0.04583
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.045025
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.045257
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.045386
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.045498
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.044938
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.04516
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.045273
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "carito",
+            "duration": 0.8,
+            "currentTime": 0.045351
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.043049
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.043225
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.043323
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.043404
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "juan",
+            "duration": 0.8,
+            "currentTime": 0.046583
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.046775
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.046866
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.046962
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "carlos-figueroa",
+            "duration": 0.8,
+            "currentTime": 0.044954
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "carito",
+            "duration": 0.88,
+            "currentTime": 0.045144
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.045329
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "juan",
+            "duration": 0.88,
+            "currentTime": 0.045456
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.025176
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.025361
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.025466
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.025588
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "veronica",
+            "duration": 1.04,
+            "currentTime": 0.046047
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.04628
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.046373
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "carlos-figueroa",
+            "duration": 1.04,
+            "currentTime": 0.046462
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.046375
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.046563
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "pamela",
+            "duration": 0.8,
+            "currentTime": 0.046653
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "carito",
+            "duration": 0.8,
+            "currentTime": 0.046735
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "agustina",
+            "duration": 0.72,
+            "currentTime": 0.025284
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "santiago",
+            "duration": 0.72,
+            "currentTime": 0.025469
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.025551
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.025667
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "carito",
+            "duration": 0.96,
+            "currentTime": 0.04405
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "juan",
+            "duration": 1.12,
+            "currentTime": 0.044243
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "albeiro",
+            "duration": 1.12,
+            "currentTime": 0.044346
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.044427
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "santiago",
+            "duration": 1.04,
+            "currentTime": 0.046825
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.046998
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.047107
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.047187
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "juan",
+            "duration": 1.04,
+            "currentTime": 0.025652
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "pamela",
+            "duration": 0.88,
+            "currentTime": 0.02588
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "albeiro",
+            "duration": 0.96,
+            "currentTime": 0.025973
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "carito",
+            "duration": 1.04,
+            "currentTime": 0.045958
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "santiago",
+            "duration": 0.8,
+            "currentTime": 0.043973
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "agustina",
+            "duration": 0.8,
+            "currentTime": 0.044149
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "carlos-figueroa",
+            "duration": 0.88,
+            "currentTime": 0.044247
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "veronica",
+            "duration": 0.88,
+            "currentTime": 0.042765
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "juan",
+            "duration": 0.96,
+            "currentTime": 0.041732
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "pamela",
+            "duration": 0.96,
+            "currentTime": 0.041909
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "albeiro",
+            "duration": 0.88,
+            "currentTime": 0.042013
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "carito",
+            "duration": 0.96,
+            "currentTime": 0.045853
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "santiago",
+            "duration": 0.88,
+            "currentTime": 0.043443
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "carlos-figueroa",
+            "duration": 0.96,
+            "currentTime": 0.043564
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "agustina",
+            "duration": 0.88,
+            "currentTime": 0.043655
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "veronica",
+            "duration": 0.96,
+            "currentTime": 0.044529
+          }
+        ],
+        "failed": []
+      },
+      "filters": true,
+      "manualStop": true,
+      "sequencePlayback": true,
+      "sequenceStop": true,
+      "phoneOverflow": false,
+      "pageErrors": [],
+      "storageUnchanged": true
+    },
+    {
+      "engine": "mobile-webkit",
+      "words": 36,
+      "pictures": 36,
+      "nativePlayback": {
+        "passed": [
+          {
+            "id": "es-419-travel-theater",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.08657294165133834
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "juan",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.034712458262220025
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.02833162504248321
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.344830288622296
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.03670779173262417
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.04727662494406104
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.1590611544672004
+          },
+          {
+            "id": "es-419-travel-theater",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03960624989122152
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04322304157540202
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04033812484703958
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "albeiro",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.17205700200295043
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.05229425011202693
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03952641668729484
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.15371413600159442
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.039941499941051006
+          },
+          {
+            "id": "es-419-travel-gallery",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04023562488146126
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04217712488025427
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.06962820165296256
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.035838458221405745
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.09038856989813567
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.03864895831793547
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.030841583153232932
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03141404176130891
+          },
+          {
+            "id": "es-419-travel-bookstore",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.038509874837473035
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04070141678676009
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04232795815914869
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.029174249852076173
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "albeiro",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04348895838484168
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "santiago",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.04239629162475467
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03782925009727478
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "agustina",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.05882399994879961
+          },
+          {
+            "id": "es-419-travel-concert",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.07637020115793741
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "juan",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.0256027914583683
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "albeiro",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.06468279170803726
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.035039083333685994
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.05347712500952184
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.038953375071287155
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.026414791587740183
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "carlos-figueroa",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.04849204164929688
+          },
+          {
+            "id": "es-419-travel-festival",
+            "voice": "veronica",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.06885169405988777
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.045356875052675605
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.0323574582580477
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.09283845253759777
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03204720839858055
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04230504180304706
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.16206553731537246
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03023554151877761
+          },
+          {
+            "id": "es-419-travel-stage",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.053293999982997775
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04669170849956572
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "pamela",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.0445509166456759
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "carito",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.16256216800974535
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "albeiro",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.031622708309441805
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "santiago",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.03823779174126685
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.036664375104010105
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04750920832157135
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "juan",
+            "duration": 1.2277551020408164,
+            "currentTime": 0.026970416773110628
+          },
+          {
+            "id": "es-419-travel-painting",
+            "voice": "carlos-figueroa",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.04983929172158241
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "pamela",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.17286789896329843
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "albeiro",
+            "duration": 1.2277551020408164,
+            "currentTime": 0.03621125011704862
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "carito",
+            "duration": 1.3061224489795917,
+            "currentTime": 0.0513306250795722
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04779237508773804
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "carlos-figueroa",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.15661972865303708
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "agustina",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.026112583465874195
+          },
+          {
+            "id": "es-419-travel-sculpture",
+            "voice": "veronica",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.04496637498959899
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.08997355261207378
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04429033328779042
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.08486457170668125
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.032421291805803776
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.06958208417929507
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.02546641672961414
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.027086833491921425
+          },
+          {
+            "id": "es-419-travel-mural",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.033545458456501365
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.06958002902668797
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.025366916554048657
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.02565979165956378
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.043551541632041335
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.09121270298991191
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.0481389167252928
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04977299994789064
+          },
+          {
+            "id": "es-419-travel-paintbrush",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.02919799997471273
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04117308324202895
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "pamela",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.025910458294674754
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "albeiro",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.03245024988427758
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04703466664068401
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.04758529178798199
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.02752066683024168
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.027737250085920095
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04312179167754948
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.02783674979582429
+          },
+          {
+            "id": "es-419-travel-palette",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.18374827552280093
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "albeiro",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.08202836396715785
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04050170839764178
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.0874783053414048
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04823262500576675
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.07914013106775558
+          },
+          {
+            "id": "es-419-travel-easel",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04231816646642983
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.08963858467148471
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.047454999992623925
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "albeiro",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.047791416523978114
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.043201500084251165
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.08976456389117682
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.050678666681051254
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0829431060680387
+          },
+          {
+            "id": "es-419-travel-guitar",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.029622166650369763
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "juan",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.03083608322776854
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "pamela",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.03146600001491606
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.02718929178081453
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "carito",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.03069920837879181
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.10195438483201921
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.04279258335009217
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.100039332
+          },
+          {
+            "id": "es-419-travel-piano",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04658837500028312
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.041987083153799176
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.043561500031501055
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.028386833146214485
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.02566024987027049
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "carito",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.02705550007522106
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.044872500002384186
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.031757291639223695
+          },
+          {
+            "id": "es-419-travel-violin",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.032238791696727276
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04458749992772937
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.2473911121798272
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.034154916647821665
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "albeiro",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.028031291672959924
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.060607416555285454
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0414516250602901
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.039689250057563186
+          },
+          {
+            "id": "es-419-travel-trumpet",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.06963494533972096
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "juan",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.035197708290070295
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.03550133341923356
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.03664095839485526
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "carito",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.08958235108322299
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05313754174858332
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.08195766447670734
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.03685437492094934
+          },
+          {
+            "id": "es-419-travel-drum",
+            "voice": "veronica",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.08697259459702361
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "juan",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.051121583208441734
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0512624999973923
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04160395823419094
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.10633727410736286
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.19216088825897157
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.09136358322575688
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.24727073967425633
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.07405795832164586
+          },
+          {
+            "id": "es-419-travel-flute",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.026812291471287608
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.07123296647651363
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "albeiro",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.03484416659921408
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.16586260605070866
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04852937487885356
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04475116659887135
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04550020839087665
+          },
+          {
+            "id": "es-419-travel-microphone",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03595733339898288
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.1633184497407155
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.04874779167585075
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04806429147720337
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.043078291695564985
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03258091676980257
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03684600000269711
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03768166666850448
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "juan",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.030669333413243294
+          },
+          {
+            "id": "es-419-travel-speaker",
+            "voice": "veronica",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.04124299995601177
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "pamela",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.040135791758075356
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.07826562505215406
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "albeiro",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.028278833255171776
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.02788166655227542
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "agustina",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03601329168304801
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.025164458202198148
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "juan",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.02525445818901062
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "pamela",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.034060208359733224
+          },
+          {
+            "id": "es-419-travel-headphones",
+            "voice": "veronica",
+            "duration": 1.2277551020408164,
+            "currentTime": 0.036511791637167335
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.034551916643977165
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.11892332702604723
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.16056590756096278
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.07596459011458993
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.043179000029340386
+          },
+          {
+            "id": "es-419-travel-record",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.02637775009498
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.026179000036790967
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.1648465682697153
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03703562496230006
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.08068554173223674
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.030012124916538596
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "agustina",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.029848791658878326
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.17350135741899514
+          },
+          {
+            "id": "es-419-travel-pottery",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.038983958307653666
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04514762503094971
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.19397122618665194
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "albeiro",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.027977833291515708
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.08517628906823242
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.036663749953731894
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.19671067944875276
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03596229152753949
+          },
+          {
+            "id": "es-419-travel-pinata",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.19014933732228662
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.06866035776303744
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.033153624972328544
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.033160041552037
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.048911708407104015
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.05135333351790905
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "santiago",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03850100003182888
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.1753396823787322
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "juan",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.06483633327297866
+          },
+          {
+            "id": "es-419-travel-festival-mask",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.06500262510962784
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.08429045835509896
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.0415670417714864
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.041193791665136814
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.07730545825324953
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.08784433832131804
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0640355832874775
+          },
+          {
+            "id": "es-419-travel-basket",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.06388020841404796
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "juan",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0623838750179857
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "pamela",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.047926625004038215
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "albeiro",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.047031083377078176
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "carito",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.04602824989706278
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04498770833015442
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04195350012741983
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.15900903690592896
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04895120835863054
+          },
+          {
+            "id": "es-419-travel-book",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05032704188488424
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0794366248883307
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03555583325214684
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "carito",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.16939517250670338
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.061916041653603315
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.0360317500308156
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "agustina",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.03608658327721059
+          },
+          {
+            "id": "es-419-travel-magazine",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04858083324506879
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.047465624986216426
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "albeiro",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.052899125032126904
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "pamela",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.038837125059217215
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.038603249937295914
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.02718191663734615
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.056161124957725406
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.06944592117579329
+          },
+          {
+            "id": "es-419-travel-newspaper",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.049544833367690444
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.0500153333414346
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05192954163067043
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.043991416692733765
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "carito",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.17616114954399037
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.07273504184558988
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.06165283336304128
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.031202833401039243
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "juan",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.16111572162430762
+          },
+          {
+            "id": "es-419-travel-postcard",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05513883335515857
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.0447721250820905
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.08014476347921502
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.06056329165585339
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.06070362497121096
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "carito",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.08504204172641039
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "carlos-figueroa",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.04999937489628792
+          },
+          {
+            "id": "es-419-travel-dance",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04073529154993594
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "juan",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.041501583298668265
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05192462517879903
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.027860166737809777
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.17596658700727177
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.0721107916906476
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.10183649999089539
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "veronica",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.034674708265811205
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03405845840461552
+          },
+          {
+            "id": "es-419-travel-sing",
+            "voice": "carlos-figueroa",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.06864473198615682
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "pamela",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.09074445837177336
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.20713087820249618
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "carito",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.12230141351518643
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "santiago",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.05205758335068822
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "agustina",
+            "duration": 0.7575510204081632,
+            "currentTime": 0.15630156728947425
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.03203183342702687
+          },
+          {
+            "id": "es-419-travel-play-instrument",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.15294243054250026
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "juan",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.052814000053331256
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.12176430155014455
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "carito",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.10679108346812427
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "albeiro",
+            "duration": 1.1493877551020408,
+            "currentTime": 0.0780979166738689
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.06133537506684661
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "santiago",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.061766625149175525
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.10550420824438334
+          },
+          {
+            "id": "es-419-travel-listen",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.07657670835033059
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "pamela",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.06313445838168263
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "juan",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.06339629157446325
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "carito",
+            "duration": 1.0710204081632653,
+            "currentTime": 0.05934420833364129
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "albeiro",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.05301020829938352
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "santiago",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.05237837485037744
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "agustina",
+            "duration": 0.8359183673469388,
+            "currentTime": 0.042619541520252824
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "carlos-figueroa",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.02559745847247541
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "juan",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.0549642916303128
+          },
+          {
+            "id": "es-419-travel-paint",
+            "voice": "veronica",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.38404427365321586
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "pamela",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.057862875051796436
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "albeiro",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.07169833734514498
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "carito",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.02972162514925003
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "agustina",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.06093766656704247
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "santiago",
+            "duration": 0.9142857142857143,
+            "currentTime": 0.04297816683538258
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "carlos-figueroa",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04468249995261431
+          },
+          {
+            "id": "es-419-travel-draw",
+            "voice": "veronica",
+            "duration": 0.9926530612244898,
+            "currentTime": 0.04247587500140071
+          }
+        ],
+        "failed": []
+      },
+      "filters": true,
+      "manualStop": true,
+      "sequencePlayback": true,
+      "sequenceStop": true,
+      "phoneOverflow": false,
+      "pageErrors": [],
+      "storageUnchanged": true
+    }
+  ],
+  "realIPhoneTest": false
+}

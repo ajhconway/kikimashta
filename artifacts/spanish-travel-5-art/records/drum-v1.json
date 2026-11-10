@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-drum",
+  "slug": "drum",
+  "version": 1,
+  "path": "originals/drum-v1.png",
+  "sha256": "322df46829da3c977f57d9a074fd1e4c4efa74dfccd36d94fcdf290cc8bb6419",
+  "promptSha256": "98d8ffd217297b0aafc5713658f2e0c7570c50cdcfd47354a27451321f7f9674",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-37fa2af5-5118-4228-bc8f-ed2398d9a5d7.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

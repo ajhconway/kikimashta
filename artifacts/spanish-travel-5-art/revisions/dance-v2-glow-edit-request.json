@@ -1,0 +1,14 @@
+{
+  "id": "es-419-travel-dance",
+  "slug": "dance",
+  "version": 2,
+  "prompt": "Use case: background-extraction\nEdit target: the supplied adult woman dancing illustration. Preserve her identity, face, adult proportions, teal blouse, purple trousers, footwear, full pose, outline and all opaque subject colors. Remove only the entire soft purple glow/aura and all background haze around her. Every pixel outside her clean outlined silhouette must become genuinely transparent alpha. No replacement background, checkerboard, shadow, outline glow or vignette. Retain the small solid motion marks if clean. Do not change her face or pose. Transparent-background educational vocabulary card.",
+  "transparent_background": true,
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/revisions/dance-v2-initial.png",
+      "sha256": "930c74acf704489d37ae4ffac34117c7da4fa2074e7fd2fd6ad7f8a44a01f820",
+      "role": "edit-target"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "es-419-travel-dance",
+  "slug": "dance",
+  "version": 2,
+  "prompt": "Use case: illustration-story\nAsset type: one vocabulary action-card illustration, transparent background, readable at145px.\nReference image: illustration style ONLY. Retain the established bold deep-violet outlines, smooth clean color shapes, restrained soft shading and natural object colors. Do not copy its performers, stage, framing or cartoon head proportions.\nSubject: bailar — To dance.\nPrimary request: One adult woman dancing, shown full length in casual trousers and a simple teal blouse. A natural fluid dance pose with one bent knee, weight on her other foot and two arms held comfortably away from her body. A couple of small curved movement marks. No instruments, headphones or music stage. Clearly dancing rather than walking or exercising.\nPeople: clearly adult human with realistic adult body proportions (head approximately one-sixth of standing body height), ordinary human face, small natural eyes, understated expression. Friendly editorial educational illustration, more mature and less cute. No chibi proportions, oversized head or eyes, mascot, cat or anthropomorphic animals. Vary natural skin tones and hair across the set.\nComposition: one clear centered compact person/action scene, complete requested props, generous clear margin. Opaque subject interiors. Genuinely transparent outer alpha background, no painted checkerboard, background room, backdrop or ground shadow.\nConstraints: no words, letters, captions, labels, watermark, logos, photographic textures or exaggerated glossy highlights. Simple shapes with accurate limbs and hand/prop contact.\nImportant clean-cutout requirement: exterior pixels must be fully transparent. No purple aura, no soft glow, no fog, no vignette, no cast shadow, no luminous edges. Match the reference’s clean sharp cutout. Reference is style only: do not copy its man, headphones, music notes or pose.",
+  "transparent_background": true,
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/listen-v2.png",
+      "sha256": "3265bebd44d8353e976fb1211c68489a50df420c0628b9261a286bca2010228b",
+      "role": "human-illustration-style-only"
+    }
+  ]
+}

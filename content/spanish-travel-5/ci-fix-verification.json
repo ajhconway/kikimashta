@@ -1,0 +1,15 @@
+{
+  "issue": 243,
+  "failedRun": 42744230284,
+  "cause": "The single aggregate test exceeded its 30-second timeout while checking255 nonempty pack scopes on CI.",
+  "fix": "Each scope is an independently named test with the normal timeout. All cards, three mastery levels and original assertions remain covered; no retries or coverage reduction.",
+  "reviewFix": "Staging now requires runtimeActivationAuthorized to be exactly true; false,missing,null,number andstring flags reject before writes.",
+  "verification": {
+    "focusedScopeTests": 267,
+    "focusedStagingTests": 4,
+    "npmRunCheck": "PASS:1165app,497Node,52Python content/audio,27card tests,lint,types,validators and production build.",
+    "runtimeAndAcceptedMediaChanged": false,
+    "browserJourneys": "Not rerun locally for test-organization and staging-guard changes; CI reruns the complete browser suite."
+  },
+  "githubChecks": "Pending updated head; auto-merge remains protected by required checks and review."
+}

@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-theater",
+  "slug": "theater",
+  "version": 1,
+  "path": "originals/theater-v1.png",
+  "sha256": "02c5f79c9120e1368a7ccd0a646874d38ac54357b054f75d06d5352f4b34b4c0",
+  "promptSha256": "1d25e29fc39dce377695472fd1f66975aa0397c0ac6e98d1185697fc6ea69757",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f2cf1354-df7c-4577-8bb5-baa330aceae7.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

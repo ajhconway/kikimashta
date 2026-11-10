@@ -44,14 +44,14 @@ describe('learning languages', () => {
     expect(spanish.items.some(item => item.text === 'café')).toBe(true);
     for (const item of spanish.items) expect(existsSync('public/' + item.image.src)).toBe(true);
     validateBank(spanishLanguage.pool);
-    expect(spanishLanguage.pool.items).toHaveLength(202);
+    expect(spanishLanguage.pool.items).toHaveLength(238);
     for (const media of activation.images) {
       expect(createHash('sha256').update(readFileSync('public/' + media.src)).digest('hex')).toBe(media.sha256);
     }
-    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(['audio-picture', 'audio-picture', 'audio-picture', 'audio-picture', 'audio-picture', 'audio-picture', 'audio-picture']);
+    expect(spanishLanguage.packs.map(pack => pack.exercise)).toEqual(Array(8).fill('audio-picture'));
     const cards = selectedPracticeCards(spanishLanguage.pool.items, spanishLanguage.packs.map(pack => pack.id), spanishLanguage.packs);
-    expect(cards).toHaveLength(202);
-    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(202);
+    expect(cards).toHaveLength(238);
+    expect(createQuestions(cards, spanishLanguage.pool.items, () => 0.5)).toHaveLength(238);
   });
   it('filters retired Spanish writing selections without reviving an empty selection', () => {
     const language = learningLanguages[1]!;

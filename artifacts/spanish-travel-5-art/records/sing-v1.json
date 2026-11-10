@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-sing",
+  "slug": "sing",
+  "version": 1,
+  "path": "originals/sing-v1.png",
+  "sha256": "96666090a7873c876f6127b0bbf062a1f4d8d6a8b42cc4bb45341211639b0804",
+  "promptSha256": "136a63b5dec64983cfe73b9d0278ac57663f823f7e8a3d8b31cc556c3ff56bef",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-8df0849f-ce7a-4825-8905-77b931458248.png",
+  "references": [
+    {
+      "path": "public/brand/kikimashta-cat-v1.png",
+      "sha256": "235fb631026019a4bd49527bf3e3e65d2424f66356fe7d85491d857f2df83ab7",
+      "role": "character-identity-and-style"
+    }
+  ]
+}

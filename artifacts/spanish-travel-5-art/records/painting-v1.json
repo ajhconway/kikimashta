@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-painting",
+  "slug": "painting",
+  "version": 1,
+  "path": "originals/painting-v1.png",
+  "sha256": "6d2aeb9a44b41df43d47df6879724cfb6707dd83a5b0bc280ee9acba62cabb63",
+  "promptSha256": "7d532db078d8b123f808b95cb8d9bf509c0723c419953a2caef74862c6c1a9d0",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-f889cd16-c231-47fa-a3d4-3d3987a8e254.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

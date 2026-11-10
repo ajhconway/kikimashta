@@ -10,7 +10,7 @@ The browser imports only `es-runtime.json`: compact index rankings, canonical pr
 
 The recipe matches the reviewed candidate: NFC/casefold Unicode-letter tokens; remove only de/del/la/el/los/las/y/en unless doing so leaves no tokens; average unit token vectors and normalize. Preserve accents and ñ. All current token vectors are whole-word entries; subword vectors are supported for future words and must be finite/nonzero. Each intended meaning participates in the source digest so a sense change requires deliberate regeneration/review even though fastText itself embeds the Spanish spelling. Phrase composition and static-model senses have limits; the owner rejected both compared tent sets. Inspect new/affected meanings rather than treating every top result as approved.
 
-`scripts/content/es_semantic_neighbors.py` pins the model, package versions, exact source inputs, recipe hash, token representation methods and complete rankings. It repeats inference and refuses nondeterministic vectors. The selected 202-word run repeats exactly.
+`scripts/content/es_semantic_neighbors.py` pins the model, package versions, exact source inputs, recipe hash, token representation methods and complete rankings. It repeats inference and refuses nondeterministic vectors. The selected 238-word run repeats exactly.
 
 ## Pronunciation source and canonical policy
 
@@ -20,7 +20,7 @@ Explicit phone boundaries come from eSpeak. `src/core/spanish-pronunciation.ts` 
 
 This deliberately limited canonical policy is a phonetic comparison proxy. It does not normalize every possible fortition/allophone or predict regional coda-s reduction and Buenos Aires ll/y. A single canonical output is not a transcription of all eight recorded voices. Additional mergers/variants need explicit review under [#235](https://github.com/ajhconway/kikimashta/issues/235).
 
-Pronunciation rows rank **all nonidentical canonical readings** by normalized unit Levenshtein distance, with unit insertion/deletion/substitution costs including stress and word boundaries; ties use stable item IDs. Exact same-key candidates are excluded and keys are available to the shared runtime selector at every mastery. No calibrated acoustic costs or Spanish closeness threshold are claimed; the Japanese 0.5 eligibility gate is not imported. Current 202-word preparation has no exact same-key groups. That does not establish the absence of regional homophones.
+Pronunciation rows rank **all nonidentical canonical readings** by normalized unit Levenshtein distance, with unit insertion/deletion/substitution costs including stress and word boundaries; ties use stable item IDs. Exact same-key candidates are excluded and keys are available to the shared runtime selector at every mastery. No calibrated acoustic costs or Spanish closeness threshold are claimed; the Japanese 0.5 eligibility gate is not imported. Current 238-word preparation has no exact same-key groups. That does not establish the absence of regional homophones.
 
 The separate `es-probes.json` contains 22 controlled checks: the original 20 frozen expectations plus a medial-ll merger and a glide/hiatus contrast. All 22 pass after canonical normalization, including silent h, b/v, seseo, stress, tap/trill, ñ and phrase boundaries. The frozen experiment's original raw 19/20 result remains unchanged as historical evidence.
 

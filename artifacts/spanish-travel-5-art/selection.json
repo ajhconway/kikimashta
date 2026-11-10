@@ -1,0 +1,751 @@
+{
+  "issue": 243,
+  "pack": "es-419-travel-5",
+  "items": [
+    {
+      "id": "es-419-travel-theater",
+      "slug": "theater",
+      "text": "teatro",
+      "meaning": "Theater",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/theater-v1.png",
+      "sha256": "02c5f79c9120e1368a7ccd0a646874d38ac54357b054f75d06d5352f4b34b4c0",
+      "bytes": 1442129,
+      "record": "artifacts/spanish-travel-5-art/records/theater-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 488209,
+        "opaquePixels": 2130
+      }
+    },
+    {
+      "id": "es-419-travel-gallery",
+      "slug": "gallery",
+      "text": "galería",
+      "meaning": "Art gallery",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/gallery-v1.png",
+      "sha256": "f9940599d31b6d470512c2ca68993e575587ea50ee4e75569ec4aef4825592b6",
+      "bytes": 1408600,
+      "record": "artifacts/spanish-travel-5-art/records/gallery-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 443218,
+        "opaquePixels": 2761
+      }
+    },
+    {
+      "id": "es-419-travel-bookstore",
+      "slug": "bookstore",
+      "text": "librería",
+      "meaning": "Bookstore",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/bookstore-v1.png",
+      "sha256": "e5efaac8d9e7639096a9a7ba7b502dea85459c0de77dc81fcdd717ceae632a76",
+      "bytes": 1393101,
+      "record": "artifacts/spanish-travel-5-art/records/bookstore-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 439320,
+        "opaquePixels": 2071
+      }
+    },
+    {
+      "id": "es-419-travel-concert",
+      "slug": "concert",
+      "text": "concierto",
+      "meaning": "Concert",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+      "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+      "bytes": 1698750,
+      "record": "artifacts/spanish-travel-5-art/records/concert-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 338516,
+        "opaquePixels": 2430
+      }
+    },
+    {
+      "id": "es-419-travel-festival",
+      "slug": "festival",
+      "text": "festival",
+      "meaning": "Festival",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/festival-v1.png",
+      "sha256": "0bd938619d24a0bbc9dfdef3feb5e48ce82886fd85c27fd6eaf44244fb655eae",
+      "bytes": 1567882,
+      "record": "artifacts/spanish-travel-5-art/records/festival-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 509273,
+        "opaquePixels": 1991
+      }
+    },
+    {
+      "id": "es-419-travel-stage",
+      "slug": "stage",
+      "text": "escenario",
+      "meaning": "Stage",
+      "group": "places",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/stage-v1.png",
+      "sha256": "611e2697a3ee8bacc1f4dbb010179801538e673cc15ee3f9f44e816e28754ec1",
+      "bytes": 1314276,
+      "record": "artifacts/spanish-travel-5-art/records/stage-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 538593,
+        "opaquePixels": 4219
+      }
+    },
+    {
+      "id": "es-419-travel-painting",
+      "slug": "painting",
+      "text": "cuadro",
+      "meaning": "Framed painting",
+      "group": "art",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/painting-v1.png",
+      "sha256": "6d2aeb9a44b41df43d47df6879724cfb6707dd83a5b0bc280ee9acba62cabb63",
+      "bytes": 1281801,
+      "record": "artifacts/spanish-travel-5-art/records/painting-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 509259,
+        "opaquePixels": 1889
+      }
+    },
+    {
+      "id": "es-419-travel-sculpture",
+      "slug": "sculpture",
+      "text": "escultura",
+      "meaning": "Sculpture",
+      "group": "art",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/sculpture-v1.png",
+      "sha256": "ccaae82d6d3b5c694a017661ddc781a410794461cf2daedc1eb6c434bbdbdf9f",
+      "bytes": 909545,
+      "record": "artifacts/spanish-travel-5-art/records/sculpture-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 957074,
+        "opaquePixels": 1522
+      }
+    },
+    {
+      "id": "es-419-travel-mural",
+      "slug": "mural",
+      "text": "mural",
+      "meaning": "Mural",
+      "group": "art",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/mural-v1.png",
+      "sha256": "8af15c7a866228ef0a76839bc9f53ad1fa94eb9fd2eb62ca07d3e45e2d40a54a",
+      "bytes": 1335331,
+      "record": "artifacts/spanish-travel-5-art/records/mural-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1448,
+        "height": 1086,
+        "colorType": 6,
+        "transparentPixels": 575710,
+        "opaquePixels": 1889
+      }
+    },
+    {
+      "id": "es-419-travel-paintbrush",
+      "slug": "paintbrush",
+      "text": "pincel",
+      "meaning": "Paintbrush",
+      "group": "art",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/paintbrush-v1.png",
+      "sha256": "58cd2343697c24dc20c1f637d40f8fb4cc8f3f8ce87cc5445d4714184bc299d9",
+      "bytes": 419640,
+      "record": "artifacts/spanish-travel-5-art/records/paintbrush-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1297587,
+        "opaquePixels": 1378
+      }
+    },
+    {
+      "id": "es-419-travel-palette",
+      "slug": "palette",
+      "text": "paleta",
+      "meaning": "Painter’s palette",
+      "group": "art",
+      "source": "reuse",
+      "path": "public/images/approved/ja-v-921d54ba31ef-f324e0c36280.jpg",
+      "sha256": "a3aa293ff0267a9e8f8143fa2b925d7975cb46c080b38f0fe417e50862450e84",
+      "bytes": 86049,
+      "image": {
+        "format": "original-non-PNG"
+      }
+    },
+    {
+      "id": "es-419-travel-easel",
+      "slug": "easel",
+      "text": "caballete",
+      "meaning": "Easel",
+      "group": "art",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/easel-v1.png",
+      "sha256": "cc3b5e2d2c9eb3fc5c7904483d8e9f4351fef6717c6fe08f6f3ff665d42702f4",
+      "bytes": 702953,
+      "record": "artifacts/spanish-travel-5-art/records/easel-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1029337,
+        "opaquePixels": 2062
+      }
+    },
+    {
+      "id": "es-419-travel-guitar",
+      "slug": "guitar",
+      "text": "guitarra",
+      "meaning": "Guitar",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/guitar-v1.png",
+      "sha256": "2e2a64aa5e1994cf603ecce3d7bcdc1bcf28e3e55849a70d4a4fbce5d372bf27",
+      "bytes": 708710,
+      "record": "artifacts/spanish-travel-5-art/records/guitar-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1108926,
+        "opaquePixels": 1605
+      }
+    },
+    {
+      "id": "es-419-travel-piano",
+      "slug": "piano",
+      "text": "piano",
+      "meaning": "Piano",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/piano-v1.png",
+      "sha256": "8711274fba7c2862c72b6a97a6110567ce1bc0203fa4849c017bc85255d228ee",
+      "bytes": 865741,
+      "record": "artifacts/spanish-travel-5-art/records/piano-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 935856,
+        "opaquePixels": 1907
+      }
+    },
+    {
+      "id": "es-419-travel-violin",
+      "slug": "violin",
+      "text": "violín",
+      "meaning": "Violin",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/violin-v1.png",
+      "sha256": "bae835286b1bb8b37ca8fbee0def05277bf3d0717e80d07e1a69e6e0752f8a43",
+      "bytes": 774985,
+      "record": "artifacts/spanish-travel-5-art/records/violin-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1059705,
+        "opaquePixels": 3231
+      }
+    },
+    {
+      "id": "es-419-travel-trumpet",
+      "slug": "trumpet",
+      "text": "trompeta",
+      "meaning": "Trumpet",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/trumpet-v1.png",
+      "sha256": "f750f30816746bc58100a6bae37d6f44fa740795ae05cbf34e2d61d577fe79fe",
+      "bytes": 709147,
+      "record": "artifacts/spanish-travel-5-art/records/trumpet-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1092067,
+        "opaquePixels": 2307
+      }
+    },
+    {
+      "id": "es-419-travel-drum",
+      "slug": "drum",
+      "text": "tambor",
+      "meaning": "Drum",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/drum-v1.png",
+      "sha256": "322df46829da3c977f57d9a074fd1e4c4efa74dfccd36d94fcdf290cc8bb6419",
+      "bytes": 1147966,
+      "record": "artifacts/spanish-travel-5-art/records/drum-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 687772,
+        "opaquePixels": 2275
+      }
+    },
+    {
+      "id": "es-419-travel-flute",
+      "slug": "flute",
+      "text": "flauta",
+      "meaning": "Flute",
+      "group": "instruments",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/flute-v1.png",
+      "sha256": "ffaeb62065b08f040e8cd8984652990ad35a78b54eacc797ae9efa02f9f38ce5",
+      "bytes": 416053,
+      "record": "artifacts/spanish-travel-5-art/records/flute-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1387461,
+        "opaquePixels": 982
+      }
+    },
+    {
+      "id": "es-419-travel-microphone",
+      "slug": "microphone",
+      "text": "micrófono",
+      "meaning": "Microphone",
+      "group": "sound",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/microphone-v1.png",
+      "sha256": "04011dece29882b809539913982eac96cbedf9a890f26cc37e1313b43d3cf290",
+      "bytes": 739508,
+      "record": "artifacts/spanish-travel-5-art/records/microphone-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1044591,
+        "opaquePixels": 1245
+      }
+    },
+    {
+      "id": "es-419-travel-speaker",
+      "slug": "speaker",
+      "text": "altavoz",
+      "meaning": "Loudspeaker",
+      "group": "sound",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/speaker-v1.png",
+      "sha256": "361c71c8f215881b412a583234131aebd254866deb7eec681d9a73b3305c50ad",
+      "bytes": 1183219,
+      "record": "artifacts/spanish-travel-5-art/records/speaker-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 572731,
+        "opaquePixels": 1440
+      }
+    },
+    {
+      "id": "es-419-travel-headphones",
+      "slug": "headphones",
+      "text": "audífonos",
+      "meaning": "Headphones",
+      "group": "sound",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/headphones-v1.png",
+      "sha256": "50e48259481abfcffd0acac637f71db40e3142c66908ed890fd96209766057e3",
+      "bytes": 983414,
+      "record": "artifacts/spanish-travel-5-art/records/headphones-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 854541,
+        "opaquePixels": 2537
+      }
+    },
+    {
+      "id": "es-419-travel-record",
+      "slug": "record",
+      "text": "disco",
+      "meaning": "Vinyl record",
+      "group": "sound",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/record-v1.png",
+      "sha256": "e9d4297c600b17926b68515ce9a6252172f80d0c813bb04d068204d8a0de073b",
+      "bytes": 1264289,
+      "record": "artifacts/spanish-travel-5-art/records/record-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 605757,
+        "opaquePixels": 1950
+      }
+    },
+    {
+      "id": "es-419-travel-pottery",
+      "slug": "pottery",
+      "text": "cerámica",
+      "meaning": "Pottery",
+      "group": "crafts",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/pottery-v1.png",
+      "sha256": "7534f5c2ed0373af39eacc1b94064d2950293a02619b15f507d983a8b5a6d46f",
+      "bytes": 1166437,
+      "record": "artifacts/spanish-travel-5-art/records/pottery-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 730615,
+        "opaquePixels": 1964
+      }
+    },
+    {
+      "id": "es-419-travel-pinata",
+      "slug": "pinata",
+      "text": "piñata",
+      "meaning": "Piñata",
+      "group": "crafts",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/pinata-v1.png",
+      "sha256": "1eb955c52d343dce31f457e5c907ca3bce6fc1f0533eb5385cdeda2f929c6554",
+      "bytes": 839450,
+      "record": "artifacts/spanish-travel-5-art/records/pinata-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1049913,
+        "opaquePixels": 1672
+      }
+    },
+    {
+      "id": "es-419-travel-festival-mask",
+      "slug": "festival-mask",
+      "text": "máscara",
+      "meaning": "Festival mask",
+      "group": "crafts",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/festival-mask-v1.png",
+      "sha256": "a23e159b323fba107f6df624e5e06514ddf2c20e853e4c2803e016702acdb50a",
+      "bytes": 1139484,
+      "record": "artifacts/spanish-travel-5-art/records/festival-mask-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 766840,
+        "opaquePixels": 2027
+      }
+    },
+    {
+      "id": "es-419-travel-basket",
+      "slug": "basket",
+      "text": "canasta",
+      "meaning": "Woven basket",
+      "group": "crafts",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/basket-v1.png",
+      "sha256": "0f4e198bd84af178a4f8bc32acbf925261c892a1170994c4fce2b9b31ae6d7b4",
+      "bytes": 1023576,
+      "record": "artifacts/spanish-travel-5-art/records/basket-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 797597,
+        "opaquePixels": 2191
+      }
+    },
+    {
+      "id": "es-419-travel-book",
+      "slug": "book",
+      "text": "libro",
+      "meaning": "Book",
+      "group": "books",
+      "source": "reuse",
+      "path": "public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png",
+      "sha256": "a07cadbcd4e2f5146b7b0619e7b7585d55b4e591e55d2e8690b3f4eb0a953539",
+      "bytes": 306540,
+      "image": {
+        "format": "PNG",
+        "width": 640,
+        "height": 640,
+        "colorType": 6
+      }
+    },
+    {
+      "id": "es-419-travel-magazine",
+      "slug": "magazine",
+      "text": "revista",
+      "meaning": "Magazine",
+      "group": "books",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/magazine-v1.png",
+      "sha256": "884d817d6d156850f2f410cdea9edafd1cfdad32b39480f46cd22efe13fc6fc7",
+      "bytes": 1047178,
+      "record": "artifacts/spanish-travel-5-art/records/magazine-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 780038,
+        "opaquePixels": 1498
+      }
+    },
+    {
+      "id": "es-419-travel-newspaper",
+      "slug": "newspaper",
+      "text": "periódico",
+      "meaning": "Newspaper",
+      "group": "books",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/newspaper-v1.png",
+      "sha256": "69f1c42d80c2c23e550222c333f178d262d39195f114a179315bd75fd6ff732f",
+      "bytes": 1137435,
+      "record": "artifacts/spanish-travel-5-art/records/newspaper-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 731827,
+        "opaquePixels": 1262
+      }
+    },
+    {
+      "id": "es-419-travel-postcard",
+      "slug": "postcard",
+      "text": "postal",
+      "meaning": "Postcard",
+      "group": "books",
+      "source": "generated",
+      "version": 1,
+      "path": "artifacts/spanish-travel-5-art/originals/postcard-v1.png",
+      "sha256": "691e74bfbff6c5cc0679bdfaf5f7d7ba185072e9bda48e5dd2ae828003f54f58",
+      "bytes": 1124473,
+      "record": "artifacts/spanish-travel-5-art/records/postcard-v1.json",
+      "image": {
+        "format": "PNG",
+        "width": 1261,
+        "height": 1247,
+        "colorType": 6,
+        "transparentPixels": 731153,
+        "opaquePixels": 1792
+      }
+    },
+    {
+      "id": "es-419-travel-dance",
+      "slug": "dance",
+      "text": "bailar",
+      "meaning": "To dance",
+      "group": "actions",
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/dance-v2.png",
+      "sha256": "a8b31379a0ab7049baf0657f5e976803388d9fafde15eeb2cdabb47655b23a26",
+      "bytes": 688208,
+      "record": "artifacts/spanish-travel-5-art/records/dance-v2.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 1174288,
+        "opaquePixels": 1719
+      }
+    },
+    {
+      "id": "es-419-travel-sing",
+      "slug": "sing",
+      "text": "cantar",
+      "meaning": "To sing",
+      "group": "actions",
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/sing-v2.png",
+      "sha256": "2b97db16afe92cb76345b0d411d3684f137ab40a910c04c0374ee6277d8ecf7a",
+      "bytes": 891908,
+      "record": "artifacts/spanish-travel-5-art/records/sing-v2.json",
+      "image": {
+        "format": "PNG",
+        "width": 1145,
+        "height": 1374,
+        "colorType": 6,
+        "transparentPixels": 959507,
+        "opaquePixels": 2208
+      }
+    },
+    {
+      "id": "es-419-travel-play-instrument",
+      "slug": "play-instrument",
+      "text": "tocar",
+      "meaning": "To play an instrument",
+      "group": "actions",
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/play-instrument-v2.png",
+      "sha256": "ff5444e6b6fa3bc96005272ad1fb8df303613c301ed523ee7dddf70d293aa685",
+      "bytes": 1083143,
+      "record": "artifacts/spanish-travel-5-art/records/play-instrument-v2.json",
+      "image": {
+        "format": "PNG",
+        "width": 1148,
+        "height": 1370,
+        "colorType": 6,
+        "transparentPixels": 887586,
+        "opaquePixels": 2849
+      }
+    },
+    {
+      "id": "es-419-travel-listen",
+      "slug": "listen",
+      "text": "escuchar",
+      "meaning": "To listen",
+      "group": "actions",
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/listen-v2.png",
+      "sha256": "3265bebd44d8353e976fb1211c68489a50df420c0628b9261a286bca2010228b",
+      "bytes": 1028026,
+      "record": "artifacts/spanish-travel-5-art/records/listen-v2.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 873845,
+        "opaquePixels": 1599
+      }
+    },
+    {
+      "id": "es-419-travel-paint",
+      "slug": "paint",
+      "text": "pintar",
+      "meaning": "To paint",
+      "group": "actions",
+      "source": "generated",
+      "version": 2,
+      "path": "artifacts/spanish-travel-5-art/originals/paint-v2.png",
+      "sha256": "1baa8a7d98c9adca70b725f376a95080504915f69ddf7c5ff6cecc4c19e13de6",
+      "bytes": 1439227,
+      "record": "artifacts/spanish-travel-5-art/records/paint-v2.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 654295,
+        "opaquePixels": 4254
+      }
+    },
+    {
+      "id": "es-419-travel-draw",
+      "slug": "draw",
+      "text": "dibujar",
+      "meaning": "To draw",
+      "group": "actions",
+      "source": "generated",
+      "version": 3,
+      "path": "artifacts/spanish-travel-5-art/originals/draw-v3.png",
+      "sha256": "abe98929bb46a4bc9a074f6751179caa678b5064424d8163cd024b96eccbc46e",
+      "bytes": 1053246,
+      "record": "artifacts/spanish-travel-5-art/records/draw-v3.json",
+      "image": {
+        "format": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "colorType": 6,
+        "transparentPixels": 872728,
+        "opaquePixels": 1683
+      }
+    }
+  ]
+}

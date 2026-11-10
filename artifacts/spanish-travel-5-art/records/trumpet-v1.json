@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-trumpet",
+  "slug": "trumpet",
+  "version": 1,
+  "path": "originals/trumpet-v1.png",
+  "sha256": "f750f30816746bc58100a6bae37d6f44fa740795ae05cbf34e2d61d577fe79fe",
+  "promptSha256": "e200ef6ed818c7438a2c3a3c03da04a7d6f0c8d71f464b16145c360ad187c6b0",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-d39f0b12-3dd4-4883-ac6f-d4960e90ad81.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

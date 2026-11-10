@@ -6,7 +6,7 @@ import spanish from '../content/es-419.json' with { type: 'json' };
 
 test('Spanish lesson uses its selected voice and saves an isolated answer after reload', async ({ page }) => {
   await page.goto('./vocabulary/?language=es-419&pack=es-419-travel-1-pictures');
-  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures', 'Food level 2 · Pictures']) {
+  for (const name of ['Travel level 2 · Pictures', 'Travel level 3 · Pictures', 'Travel level 4 · Pictures', 'Travel level 5 · Pictures', 'Basic Spanish level 1 · Pictures + contexts', 'Food level 1 · Pictures', 'Food level 2 · Pictures']) {
     await page.getByRole('checkbox', { name, exact: true }).uncheck();
   }
   const voices = page.getByRole('group', { name: 'Practice voices', exact: true });

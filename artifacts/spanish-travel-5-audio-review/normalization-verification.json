@@ -1,0 +1,14 @@
+{
+  "issue": 243,
+  "pack": "es-419-travel-5",
+  "manifest": "manifest.json",
+  "manifestSha256": "9653d829baeaf6c6f7a33698d766e00942fc58e9d3c88e76bbadcc7859368f4f",
+  "normalizationSummary": "normalization-summary.json",
+  "normalizationSummarySha256": "5e0825ef90467a12073db95c1fc27a3633a6ab5bfa5556f5b4236db483498c02",
+  "normalizationSummaryBytes": 513,
+  "clips": 288,
+  "targetLimited": 1,
+  "shortClipMeasurements": 0,
+  "resumed": 0,
+  "resumeEvidence": "Reported normalization-run count, checked within 0..clips; not derivable from individual recording records."
+}

@@ -1,0 +1,39 @@
+{
+  "issue": 243,
+  "scope": "Six human verb artwork replacements, owner feedback pending",
+  "manifestSha256": "4a4f9f00e4abc7dda58480abb38a543d62d4bf438024bf684a9b63c6e765cbb4",
+  "selectedHumanVersions": {
+    "dance": 2,
+    "sing": 2,
+    "play-instrument": 2,
+    "listen": 2,
+    "paint": 2,
+    "draw": 2
+  },
+  "unaffectedPictures": 30,
+  "historyPreserved": true,
+  "checks": [
+    {
+      "command": "python3 scripts/content/build-spanish-travel-level-5-art-review.py --complete",
+      "result": "PASS:34generated +2reused,0pending;6v2 adult scenes;exact hashes,source/prompt/reference bindings and alpha verified;original inputs andother30 pictures unchanged."
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS:lint,748app tests,429Node tests,36Python content/audio tests including14gallery regressions,27card tests,artwork/neighbor validators,typecheck,production build."
+    },
+    {
+      "command": "node /private/tmp/kikimashta-243-browser.mjs",
+      "result": "PASS:Chromium andmobileWebKit,36previews/fullsize links,6selectedv2 images,search/action filter,phone layout,no overflow/pageerrors/storage writes."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "independentReview": "Read-only content/provenance and gallery review:no blockers;14focused tests pass.",
+  "fullAppBrowserSuite": "Not rerun for artwork-only revision;targeted gallery checks inboth engines passed.",
+  "runtimeChanged": false,
+  "audioGenerated": false,
+  "ownerArtworkAcceptance": false,
+  "realIPhoneTest": false
+}

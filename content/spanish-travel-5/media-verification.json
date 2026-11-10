@@ -1,0 +1,77 @@
+{
+  "issue": 243,
+  "pack": "es-419-travel-5",
+  "status": "generated-awaiting-owner-listening",
+  "words": 36,
+  "voices": 8,
+  "recordings": 288,
+  "newRecordings": 288,
+  "reusedRecordings": 0,
+  "pictures": 36,
+  "manifest": "artifacts/spanish-travel-5-audio-review/manifest.json",
+  "manifestSha256": "9653d829baeaf6c6f7a33698d766e00942fc58e9d3c88e76bbadcc7859368f4f",
+  "artworkAcceptance": "content/spanish-travel-5/artwork-acceptance.json",
+  "artworkAcceptanceSha256": "f2cbabfdd2f16e9d51c98f1b7ad7638edb7717a1277656cdb17ab2d72756db84",
+  "audioApproval": "content/spanish-travel-5/audio-approval.json",
+  "audioApprovalSha256": "8bebd61dae1bc323398cfdaa16d7f435f04c7fe02001531b8271654154d73fe3",
+  "normalizationVerificationSha256": "87eb1a9a85777e76b2e3c41833cc60154e94d191aed14e26695c1f97e2e27b38",
+  "browserEvidence": "content/spanish-travel-5/browser-audio-verification.json",
+  "browserEvidenceSha256": "9301160343b0323c1de4f09ea3ae695184eea865a1aaefd34c929b40cd54ae61",
+  "targetLimited": [
+    {
+      "id": "es-419-travel-record",
+      "text": "disco",
+      "voice": "carlos-figueroa",
+      "voiceName": "Carlos Figueroa",
+      "integratedLufs": -23.67,
+      "gainDb": 9,
+      "limitingReasons": [
+        "maximum_gain"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "command": "node scripts/content/generate-spanish-travel-level-5.mjs --dry-run",
+      "result": "PASS:36words,8voices,288clips,2000Unicodecharacters,2400-credit projectedbudget."
+    },
+    {
+      "command": "node scripts/content/generate-spanish-travel-level-5.mjs --output artifacts/generated-originals/spanish-travel-5/243-v1",
+      "result": "PASS:288generated,no repeatedrequests;private originals/exactrequests preserved."
+    },
+    {
+      "command": "python3 scripts/content/normalize-elevenlabs.py --input artifacts/generated-originals/spanish-travel-5/243-v1 --output artifacts/generated-originals/spanish-travel-5/243-v1-normalized --workers 4",
+      "result": "PASS:288normalized,1target-limited,0shortclipmeasurements;originalspreserved."
+    },
+    {
+      "command": "node scripts/content/build-spanish-travel-level-5-audio-review.mjs --input artifacts/generated-originals/spanish-travel-5/243-v1 --delivery artifacts/generated-originals/spanish-travel-5/243-v1-normalized --output artifacts/spanish-travel-5-audio-review",
+      "result": "PASS:36acceptedpictures and288verifiedoriginal/deliveryidentities;publiccopiesbyte-identical."
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS:lint,748app tests,443Node tests,39Python content/audio tests,27card tests,artwork/neighborvalidators,typecheck,productionbuild."
+    },
+    {
+      "command": "node /private/tmp/kikimashta-243-audio-browser.mjs",
+      "result": "PASS:288nativeplays/clockadvance ineach Chromium/mobileWebKit;36pictures,draw-v3,accentsearch,group/voice/regionfilters,manualStop,sequenceadvance/Stop,phoneoverflow,noerrors/storagewrites."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "privateArchive": {
+    "path": "~/.local/share/kikimashta/spanish-audio/243-v1",
+    "verifiedFiles": 1737,
+    "originalsRequestsUsageAndNormalizationPreserved": true,
+    "credentialsIncluded": false
+  },
+  "independentReviews": [
+    "Generator/actualmatrixaudit:7generatorregressionspass,no blockers.",
+    "Audio-review/actualmediaaudit:7reviewregressionspass,all288original/normalized/publichashes verified,no blockers."
+  ],
+  "runtimeActivationAuthorized": false,
+  "ownerListeningAcceptance": false,
+  "realIPhoneTest": false,
+  "fullAppBrowserSuite": "Notrerun for preparatorymedia-onlychange;complete static listeninggallery andall288newclips verified natively inbothengines."
+}

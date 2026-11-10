@@ -1,0 +1,67 @@
+{
+  "issue": 243,
+  "status": "locally-verified-ready-for-auto-merge",
+  "pictures": 36,
+  "recordings": 288,
+  "productionAssets": 324,
+  "copiedNewAssets": 322,
+  "spanishUniqueWords": 238,
+  "spanishPacks": 8,
+  "newPictureExclusionPairs": 77,
+  "canonicalPronunciationProbes": 22,
+  "frozenExperimentsUnchanged": true,
+  "bindings": {
+    "content/spanish-travel-5/acceptance.json": "2e50630d1c1040d17724317d256e798cdbc501876966e05662b2ec83d4055c87",
+    "content/spanish-travel-5/activation.json": "3209e99a148692047a2b70baf172fb6b4afab836ab88c0c34cb2e541189b8bc6",
+    "content/spanish-travel-5/picture-choice-review.json": "fe4bd3364e72d2d73037453268996c86d92c2ce868bcac953f10d3da10a52720",
+    "content/spanish-travel-5/neighbor-review.json": "a80f1714da73a9f289f1a30e2e64eae260f62c99ad7ef5ccfb1ab8f0621e9e5a"
+  },
+  "checks": [
+    {
+      "command": "npm run check",
+      "configuration": "Node26.12.0; documented fake sync URL/key and consistent SOURCE_REVISION",
+      "result": "PASS:911app tests,497Node tests,52Python content/audio tests,27card tests,lint,types,artwork/neighbor validators andproduction build."
+    },
+    {
+      "command": "npm run test:e2e -- --workers=2",
+      "configuration": "E2E_PORT4263;explicit fake sync service;SOURCE_REVISION matched production build",
+      "result": "125passed,2failed assertions in the new Travel5 browser test,1intentional existing mobile-WebKit offline-account skip. Newtest incorrectly expected36cards without pagination and an exact library-link name."
+    },
+    {
+      "command": "npm run test:e2e -- e2e/spanish-travel5.spec.ts --workers=2",
+      "result": "PASS:2/2 after correcting pagination and library-link assertions. Bothengines verify nativeTravel5audio,lesson andmini-quiz scope,realIndexedDB persistence afterreload,pack/voice preferences andJapanese isolation. Combinedcurrent-product coverage:127passed and1documented intentional skip."
+    },
+    {
+      "command": "python3 scripts/content/build-spanish-travel-level-5-art-review.py --complete",
+      "result": "PASS;all acceptedgallery outputs byte-identical,including historicalv1/v2verification andexactauthorization checks."
+    },
+    {
+      "command": "node scripts/content/stage-spanish-travel-level-5.mjs",
+      "result": "PASS twice;all324acceptedproductionhashes unchanged andidempotent afterexpandedhistorybinding."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "reviewFixes": [
+    {
+      "thread": "PRRT_kwDOViSGDs61hZlk",
+      "fix": "Verify all first-round snapshot image bytes, including replaced Kiku originals."
+    },
+    {
+      "thread": "PRRT_kwDOViSGDs61hwJC",
+      "fix": "Validate exact original artwork authorization identity and scope before accepting generated records."
+    },
+    {
+      "thread": "PRRT_kwDOViSGDs61iK_i",
+      "fix": "Require hashes for all eight discarded dancer-history files in final acceptance and staging; preserve pre-amendment acceptance/activation snapshots."
+    }
+  ],
+  "acceptedMediaUnchanged": true,
+  "existingBanksVoicesAndProgressUnchanged": true,
+  "autoMergeAuthorized": true,
+  "currentHeadCIAndReview": "Pending final push and required GitHub gates",
+  "realIPhoneAcceptance": "Pending owner testing on deployed version",
+  "publicationWaitRequired": false
+}

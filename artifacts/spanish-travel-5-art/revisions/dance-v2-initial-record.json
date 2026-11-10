@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-dance",
+  "slug": "dance",
+  "version": 2,
+  "path": "originals/dance-v2.png",
+  "sha256": "930c74acf704489d37ae4ffac34117c7da4fa2074e7fd2fd6ad7f8a44a01f820",
+  "promptSha256": "130e10372adc0940fb2670c4daff742f1865a9a8782a96b50026031829b1a4c2",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-c3a735df-4d7d-498e-8a81-e50f6c7f4650.png",
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+      "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+      "role": "human-illustration-style-only"
+    }
+  ]
+}

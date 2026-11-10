@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-speaker",
+  "slug": "speaker",
+  "version": 1,
+  "path": "originals/speaker-v1.png",
+  "sha256": "361c71c8f215881b412a583234131aebd254866deb7eec681d9a73b3305c50ad",
+  "promptSha256": "df18edafcbe3f32f07eb632da3566282f00ed26130c9aa5d888c471e10ad1f92",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-385db847-f97c-49ed-a5af-8136d3a9004b.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

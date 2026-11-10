@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-draw",
+  "slug": "draw",
+  "version": 2,
+  "path": "originals/draw-v2.png",
+  "sha256": "f7ac838cb3bf27e0ced2240c97179a10d55bbe60fa1a5999f4e0c2ea57fab884",
+  "promptSha256": "7291a898f601cf8b9af9dfab4f35b270bd3bb3798bc29dbbd662bc8b64bb2eb1",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-b6b1f4d6-326b-4795-a1a7-4e165d2311fd.png",
+  "references": [
+    {
+      "path": "artifacts/spanish-travel-5-art/originals/concert-v1.png",
+      "sha256": "6f8bc13f57a94b2e29217eb95a705b81bb090221fcaa5c9b88dcf57d3499db01",
+      "role": "human-illustration-style-only"
+    }
+  ]
+}

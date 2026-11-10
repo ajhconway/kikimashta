@@ -1,0 +1,29 @@
+{
+  "issue": 243,
+  "items": [
+    {
+      "id": "es-419-travel-book",
+      "slug": "book",
+      "path": "public/images/approved/ja-v-0ac038632611-dbdeaee62c3e.png",
+      "sha256": "a07cadbcd4e2f5146b7b0619e7b7585d55b4e591e55d2e8690b3f4eb0a953539",
+      "evidence": "Visually inspected approved Japanese 本, batch08/89-book.png manifest and activation. Exact book subject; preserve accepted transparent delivery."
+    },
+    {
+      "id": "es-419-travel-palette",
+      "slug": "palette",
+      "path": "public/images/approved/ja-v-921d54ba31ef-f324e0c36280.jpg",
+      "sha256": "a3aa293ff0267a9e8f8143fa2b925d7975cb46c080b38f0fe417e50862450e84",
+      "evidence": "Visually inspected approved Japanese 色, batch04/37-color.png manifest and activation. Exact five-color painters palette with thumb hole. Preserve accepted legacy white-backed JPG unchanged."
+    }
+  ],
+  "rejected": [
+    {
+      "subject": "canasta",
+      "reason": "Existing basket image targets mainly apples; fruit dominates."
+    },
+    {
+      "subject": "pincel",
+      "reason": "Existing color-red picture targets paint splash, not brush."
+    }
+  ]
+}

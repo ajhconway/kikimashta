@@ -1,0 +1,17 @@
+{
+  "id": "es-419-travel-festival",
+  "slug": "festival",
+  "version": 1,
+  "path": "originals/festival-v1.png",
+  "sha256": "0bd938619d24a0bbc9dfdef3feb5e48ce82886fd85c27fd6eaf44244fb655eae",
+  "promptSha256": "4d9cf454bd2605fc1a8d902fbce94cd8dc829add873b15298bc463ae2768938e",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/ajhconway/.codex/generated_images/01a1bc97-584b-72e2-9c0e-2085ee72605d/exec-48fd90ac-c344-4efb-a410-59e863d68209.png",
+  "references": [
+    {
+      "path": "public/images/approved/es-419-travel-strawberry-b5b3b2ee6fe2.png",
+      "sha256": "b5b3b2ee6fe22964e29df885aae602f2c87bce8d14ac591835ee6e486735e97e",
+      "role": "style-only"
+    }
+  ]
+}

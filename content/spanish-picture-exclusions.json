@@ -554,6 +554,545 @@
         "es-419-travel-bottle"
       ],
       "reason": "The cooking-oil vessel has a narrow neck, stopper and round bottle body. Despite its side handle, it is also a bottle and can answer botella."
+    },
+    {
+      "ids": [
+        "es-419-travel-stage",
+        "es-419-travel-theater"
+      ],
+      "reason": "The scene visibly includes a lit raised performance stage, so escenario has both the empty stage and whole venue/event as valid answers."
+    },
+    {
+      "ids": [
+        "es-419-travel-stage",
+        "es-419-travel-concert"
+      ],
+      "reason": "The scene visibly includes a lit raised performance stage, so escenario has both the empty stage and whole venue/event as valid answers."
+    },
+    {
+      "ids": [
+        "es-419-travel-gallery",
+        "es-419-travel-painting"
+      ],
+      "reason": "The gallery prominently displays three framed paintings, providing other cuadro answers."
+    },
+    {
+      "ids": [
+        "es-419-travel-gallery",
+        "es-419-travel-bench"
+      ],
+      "reason": "A broad red seating bench is plainly visible in front of the gallery paintings and also answers banca."
+    },
+    {
+      "ids": [
+        "es-419-travel-book",
+        "es-419-travel-bookstore"
+      ],
+      "reason": "The venue prominently displays multiple books, giving other libro answers."
+    },
+    {
+      "ids": [
+        "es-419-travel-book",
+        "es-419-travel-library"
+      ],
+      "reason": "The venue prominently displays multiple books, giving other libro answers."
+    },
+    {
+      "ids": [
+        "es-419-travel-sculpture",
+        "es-419-travel-museum"
+      ],
+      "reason": "The existing museum prominently displays a stone classical bust inside its doorway, matching the isolated sculpture concept."
+    },
+    {
+      "ids": [
+        "es-419-travel-concert",
+        "es-419-travel-festival"
+      ],
+      "reason": "The festival depicts a singer/guitarist giving an outdoor musical performance; concierto also fits that scene."
+    },
+    {
+      "ids": [
+        "es-419-travel-concert",
+        "es-419-travel-guitar"
+      ],
+      "reason": "The music event visibly includes a prominent guitar that also answers the standalone object prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-concert",
+        "es-419-travel-microphone"
+      ],
+      "reason": "The music event visibly includes a prominent microphone that also answers the standalone object prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-concert",
+        "es-419-travel-sing"
+      ],
+      "reason": "The event picture clearly shows an open-mouthed singer at a microphone, providing another cantar answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-concert",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "The event picture clearly shows the guitar actively being played, providing another tocar answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-festival",
+        "es-419-travel-guitar"
+      ],
+      "reason": "The music event visibly includes a prominent guitar that also answers the standalone object prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-festival",
+        "es-419-travel-microphone"
+      ],
+      "reason": "The music event visibly includes a prominent microphone that also answers the standalone object prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-festival",
+        "es-419-travel-sing"
+      ],
+      "reason": "The event picture clearly shows an open-mouthed singer at a microphone, providing another cantar answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-festival",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "The event picture clearly shows the guitar actively being played, providing another tocar answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-festival",
+        "es-419-travel-dance"
+      ],
+      "reason": "The two foreground festival figures are visibly dancing, providing another bailar answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-play-instrument",
+        "es-419-travel-guitar"
+      ],
+      "reason": "The tocar scene prominently shows a complete acoustic guitar, also answering guitarra."
+    },
+    {
+      "ids": [
+        "es-419-travel-sing",
+        "es-419-travel-microphone"
+      ],
+      "reason": "The singer holds a large microphone at his mouth, also answering micrófono."
+    },
+    {
+      "ids": [
+        "es-419-travel-listen",
+        "es-419-travel-headphones"
+      ],
+      "reason": "The listening person prominently wears purple over-ear headphones, also answering audífonos."
+    },
+    {
+      "ids": [
+        "es-419-travel-paint",
+        "es-419-travel-paintbrush"
+      ],
+      "reason": "The painting action prominently contains the paintbrush, also answering its standalone noun prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-paint",
+        "es-419-travel-palette"
+      ],
+      "reason": "The painting action prominently contains the palette, also answering its standalone noun prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-paint",
+        "es-419-travel-easel"
+      ],
+      "reason": "The painting action prominently contains the easel, also answering its standalone noun prompt."
+    },
+    {
+      "ids": [
+        "es-419-travel-paint",
+        "es-419-travel-painting"
+      ],
+      "reason": "The painting action prominently contains a flower painting on canvas; cuadro can mean that artwork even without a frame."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-book"
+      ],
+      "reason": "A recognizable flower illustration remains clearly visible at145px, giving another flor answer as with prior menu pictograms."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-mural"
+      ],
+      "reason": "A recognizable flower illustration remains clearly visible at145px, giving another flor answer as with prior menu pictograms."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-paint"
+      ],
+      "reason": "A recognizable flower illustration remains clearly visible at145px, giving another flor answer as with prior menu pictograms."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-draw"
+      ],
+      "reason": "A recognizable flower illustration remains clearly visible at145px, giving another flor answer as with prior menu pictograms."
+    },
+    {
+      "ids": [
+        "es-419-travel-flower",
+        "es-419-travel-postcard"
+      ],
+      "reason": "A recognizable flower illustration remains clearly visible at145px, giving another flor answer as with prior menu pictograms."
+    },
+    {
+      "ids": [
+        "es-419-travel-draw",
+        "es-419-travel-table"
+      ],
+      "reason": "The dibujar scene prominently contains a full desk/table surface and legs, another mesa answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-draw",
+        "es-419-travel-chair"
+      ],
+      "reason": "The dibujar scene prominently includes a full chair with backrest and legs, another silla answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-theater",
+        "es-419-travel-chair"
+      ],
+      "reason": "The theater auditorium contains rows of upholstered seats, giving other silla answers as in the existing cinema/chair exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-eat"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-drink"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-large"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-small"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-inside"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-on-top"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-under"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-next-to"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-hunger"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-thirst"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-headphones",
+        "es-419-basic-sleepiness"
+      ],
+      "reason": "Kiku visibly wears purple over-ear headphones, giving another audífonos answer despite the different principal subject."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-sing"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-listen"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-draw"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-paint"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-concert"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-shirt",
+        "es-419-travel-festival"
+      ],
+      "reason": "The adult prominently wears a collared button-up shirt/blouse visible at145px, also answering camisa."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-dance"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-sing"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-draw"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-paint"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-concert"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-pants",
+        "es-419-travel-festival"
+      ],
+      "reason": "The human scene prominently shows trousers/pants on an adult, providing another pantalones answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-dance"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-paint"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-draw"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-concert"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-shoe",
+        "es-419-travel-festival"
+      ],
+      "reason": "The human scene clearly shows shoes on the full-body figure, providing another zapato answer at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-skirt",
+        "es-419-travel-festival"
+      ],
+      "reason": "The foreground festival woman wears a prominent purple skirt, another falda answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-belt",
+        "es-419-travel-sing"
+      ],
+      "reason": "The adult prominently wears a broad belt and rectangular buckle at the waist, another cinturón answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-belt",
+        "es-419-travel-listen"
+      ],
+      "reason": "The adult prominently wears a broad belt and rectangular buckle at the waist, another cinturón answer."
+    },
+    {
+      "ids": [
+        "es-419-travel-theater",
+        "es-419-travel-cinema"
+      ],
+      "reason": "Similar curtained seated auditorium interiors. Film-reel/screen icon identifies cine, but empty theater could also be a cinema. Recommend conservative exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-stage",
+        "es-419-travel-cinema"
+      ],
+      "reason": "Cinema has a curtained screen/front performance area matching the stage silhouette. Recommend conservative exclusion if the front area reads as a raised stage at145px."
+    },
+    {
+      "ids": [
+        "es-419-travel-bookstore",
+        "es-419-travel-library"
+      ],
+      "reason": "Bookshelves/book icon overlap; cash register and reading table differ, but library reception can also have a register. Recommend exclusion rather than teaching a register-only distinction."
+    },
+    {
+      "ids": [
+        "es-419-travel-book",
+        "es-419-travel-magazine"
+      ],
+      "reason": "The unlettered revista is a bound picture-covered publication that also looks like a book at145px. Recommend exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-gallery",
+        "es-419-travel-museum"
+      ],
+      "reason": "A plain fine-art display room is also a valid museum interior; existing museum exterior does not resolve this. Recommend exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-piano",
+        "es-419-travel-concert"
+      ],
+      "reason": "Concert prominently shows an electric keyboard; piano may also mean that instrument, although separate piano is an acoustic grand. Coordinator sense judgment."
+    },
+    {
+      "ids": [
+        "es-419-travel-chair",
+        "es-419-travel-paint"
+      ],
+      "reason": "Action uses a prominent four-legged stool. Silla may fit colloquially, although taburete/banco is more exact. Conservative exclusion recommended."
+    },
+    {
+      "ids": [
+        "es-419-travel-chair",
+        "es-419-travel-play-instrument"
+      ],
+      "reason": "Action uses a prominent four-legged stool. Silla may fit colloquially, although taburete/banco is more exact. Conservative exclusion recommended."
+    },
+    {
+      "ids": [
+        "es-419-travel-beach",
+        "es-419-travel-magazine"
+      ],
+      "reason": "Magazine cover prominently depicts sandy beach; another playa answer if depicted scenes count as existing menu/icon exclusions. Recommend exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-beach",
+        "es-419-travel-postcard"
+      ],
+      "reason": "Postcard prominently depicts sandy beach; another playa answer if depicted scenes count as existing menu/icon exclusions. Recommend exclusion."
+    },
+    {
+      "ids": [
+        "es-419-travel-island",
+        "es-419-travel-postcard"
+      ],
+      "reason": "Postcard includes a distant green island surrounded by sea; less prominent than main beach but visible at145px. Conservative exclusion recommended."
     }
   ],
   "issues": [

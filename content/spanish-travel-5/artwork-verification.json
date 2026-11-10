@@ -1,0 +1,30 @@
+{
+  "issue": 243,
+  "scope": "dibujar flower orientation correction v3;owner feedback pending",
+  "manifestSha256": "97f4f4c6f634f36b9da90f494a77cc1415e18d058be6b43103509cdd1a24ec04",
+  "changedPictures": [
+    "draw"
+  ],
+  "unaffectedPictures": 35,
+  "historyPreserved": true,
+  "checks": [
+    {
+      "command": "python3 scripts/content/build-spanish-travel-level-5-art-review.py --complete",
+      "result": "PASS:36 pictures complete;v3record,prompt,reference,alpha,history and35unaffected hashes verified."
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS:lint,748app,429Node,39Python content/audio (including17gallery regressions),27card tests,artwork/neighbor validators,typecheck/build."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "independentReview": "No blockers;17focused tests passed;reviewer visually confirmed flower orientation uprightforartist.",
+  "runtimeChanged": false,
+  "audioGenerated": false,
+  "ownerArtworkAcceptance": false,
+  "realIPhoneTest": false,
+  "fullAppBrowserSuite": "Notrerun for artwork-only correction;targeted gallery verification recorded separately."
+}
